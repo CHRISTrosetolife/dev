@@ -1,1 +1,5 @@
 file_new(file_new_name)
+file_line_append(line_contents)
+folder_new(folder_new_name)
+
+folderize : a_b_c file name to a/b/c directory structure
