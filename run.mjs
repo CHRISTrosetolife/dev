@@ -6,6 +6,11 @@ let args = remaining.slice(1);
 let src = 'src';
 let extension = 'mjs';
 let extension_marker = '.';
+let folder_current = '.';
 let first_with_extension = [first,extension_marker,extension].join('');
-let function_path = path.join([src,first_with_extension])
-console.log(function_path);
+let function_path = path.join(folder_current,src,first_with_extension)
+async function run() {
+    let imported = await import(function_path);
+    console.log(imported[first]);
+}
+run();
