@@ -14,5 +14,6 @@ async function run() {
     let imported = await import(function_path);
     let imported_function = imported[first];
     console.log(imported[first]);
+    console.log(...args)
 }
 run();
