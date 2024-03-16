@@ -8,7 +8,8 @@ let extension = 'mjs';
 let extension_marker = '.';
 let folder_current = '.';
 let first_with_extension = [first,extension_marker,extension].join('');
-let function_path = path.join(folder_current,src,first_with_extension)
+let function_path_second = path.join(folder_current,src,first_with_extension)
+let function_path = './' + function_path_second;
 async function run() {
     let imported = await import(function_path);
     console.log(imported[first]);
