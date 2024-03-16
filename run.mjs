@@ -1,5 +1,6 @@
 let {argv} = process;
 let remaining = argv.slice(2);
+let first = remaining[0];
 let src = 'src';
 let extension = 'mjs';
 let extension_marker = '.';
