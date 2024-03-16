@@ -13,7 +13,6 @@ let function_path = './' + function_path_second;
 async function run() {
     let imported = await import(function_path);
     let imported_function = imported[first];
-    console.log(imported_function);
     let result = await imported_function(...args);
     console.log(result);
 }
