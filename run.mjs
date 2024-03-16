@@ -12,6 +12,7 @@ let function_path_second = path.join(folder_current,src,first_with_extension)
 let function_path = './' + function_path_second;
 async function run() {
     let imported = await import(function_path);
+    let imported_function = imported[first];
     console.log(imported[first]);
 }
 run();
