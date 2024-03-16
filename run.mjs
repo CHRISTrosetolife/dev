@@ -1,1 +1,2 @@
-console.log(process.argv)
+let remaining = process.argv.slice(2);
+console.log(remaining);
