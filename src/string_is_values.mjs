@@ -8,5 +8,5 @@ export function string_is_values() {
         'ba',
         'bb',
         'abc'
-    ]
+    ];
 }
