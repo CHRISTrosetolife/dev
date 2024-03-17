@@ -1,3 +1,3 @@
-export function file_open(file_name) {
-    command_line(`code ${file_name}`);
+export async function file_open(file_name) {
+    await command_line(`code ${file_name}`);
 }
