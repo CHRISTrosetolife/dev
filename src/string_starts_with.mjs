@@ -5,6 +5,9 @@ export function string_starts_with(input, prefix) {
         return false;
     }
     for (let i of range(prefix_length)) {
-        
+        if (string_get(input, i) !== string_get(prefix, i)) {
+            return false;
+        }
     }
+    return true;
 }
