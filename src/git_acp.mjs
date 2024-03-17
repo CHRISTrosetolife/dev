@@ -4,7 +4,7 @@ export async function git_acp() {
     let commit_message = '';
     let commands = [
         'add *',
-        `commit -m "${new Date().toISOString()}"`,
+        `commit -m "${new Date().toISOString()}${commit_message}"`,
         'push'
     ];
     for (let command of commands) {
