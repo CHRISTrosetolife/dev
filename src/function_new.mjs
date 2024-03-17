@@ -6,5 +6,5 @@ export async function function_new(function_name, args) {
 export function ${function_name}(${split.join(', ')}) {
 
 }`
-    file_new(`./src/${function_name}`, contents);
+    await file_new(`./src/${function_name}`, contents);
 }
