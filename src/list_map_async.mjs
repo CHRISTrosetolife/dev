@@ -1,6 +1,11 @@
+import { list_add } from "./list_add.mjs";
+
 export async function list_map_async(list, mapper) {
-    let mapped = list_map(list, mapper);
-    for (let m of mapped) {
-        await m;
+    let result = [];
+    for (let l of list) {
+        let mapped = mapper(l);
+        let waited = await mapped;
+        list_add(result, waited);
     }
+    return result;
  }
