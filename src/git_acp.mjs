@@ -5,5 +5,5 @@ export function git_acp(command) {
         'add *',
         `commit -m "${new Date().toISOString()}"`,
         'push'
-    ]
+    ];
 }
