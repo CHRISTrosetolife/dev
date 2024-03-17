@@ -11,5 +11,5 @@ async function function_new_generic(function_name, args_joined) {
 export function ${function_name}(${args_joined}) {
 
 }`;
-    await file_new(`./src/${function_name}`, contents);
+    await file_new(`./src/${function_name}.mjs`, contents);
 }
