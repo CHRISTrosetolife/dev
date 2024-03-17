@@ -1,5 +1,4 @@
 folder_new(folder_new_name)
-function_new(argument1,argument2,...)
 file_import_add : import fs from 'fs';
 function_asyncify : adds async to a function
 run : runs a function
