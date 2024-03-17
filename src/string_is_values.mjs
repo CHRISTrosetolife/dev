@@ -1,4 +1,4 @@
-export function string_test_values() {
+export function string_is_values() {
     return [
         '',
         'a',
