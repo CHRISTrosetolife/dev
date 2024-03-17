@@ -1,10 +1,11 @@
 import path from 'path';
 import { process_argv_remaining } from './process_argv_remaining.mjs';
+import { function_extension } from './function_extension.mjs';
 export async function run() {
     let remaining = process_argv_remaining();
     let first = remaining[0];
     let args = remaining.slice(1);
-    let extension = 'mjs';
+    let extension = function_extension();
     let extension_marker = '.';
     let folder_current = '.';
     let first_with_extension = [first,extension_marker,extension].join('');
