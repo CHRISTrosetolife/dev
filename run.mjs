@@ -1,2 +1,3 @@
 import { run } from './src/run.mjs';
-run();
+let result = await run();
+console.log(result);
