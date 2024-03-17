@@ -5,6 +5,7 @@ export async function function_new_generic(function_name, args_string) {
     let contents = `export function ${function_name}(${args_string}) {
 
 }`;
-    await file_new(function_name_to_path(function_name), contents);
+    const file_path = function_name_to_path(function_name);
+    await file_new(file_path, contents);
 }
 
