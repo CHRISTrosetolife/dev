@@ -1,6 +1,7 @@
 import { command_line } from "./command_line.mjs";
 
 export async function git_acp() {
+    let commit_message;
     let commands = [
         'add *',
         `commit -m "${new Date().toISOString()}"`,
