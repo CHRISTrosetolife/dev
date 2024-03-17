@@ -1,3 +1,3 @@
-export function function_new() {
-    
+export function function_new(args) {
+
 }
