@@ -1,3 +1,4 @@
-export function function_names() {
-    let f_names = file_names()
+export async function function_names() {
+    let files = await glob(`src/**/*.mjs`);
+    return files;
 }
