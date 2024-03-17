@@ -1,4 +1,5 @@
 import path from 'path';
+import { process_argv_remaining } from './process_argv_remaining.mjs';
 export async function run() {
     let remaining = process_argv_remaining();
     let first = remaining[0];
@@ -14,9 +15,5 @@ export async function run() {
     let result = await imported_function(...args);
     return result;
 
-    function process_argv_remaining() {
-        let { argv } = process;
-        let remaining = argv.slice(2);
-        return remaining;
-    }
+    
 }
