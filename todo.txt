@@ -1,7 +1,6 @@
 file_new(file_new_name)
 file_line_append(line_contents)
 folder_new(folder_new_name)
-git_sync
 function_new(argument1,argument2,...)
 file_import_add : import fs from 'fs';
 function_asyncify : adds async to a function
