@@ -1,7 +1,6 @@
 import path from 'path';
 export async function run() {
-    let {argv} = process;
-    let remaining = argv.slice(2);
+    let remaining = process_argv_remaining();
     let first = remaining[0];
     let args = remaining.slice(1);
     let extension = 'mjs';
@@ -14,4 +13,10 @@ export async function run() {
     let imported_function = imported[first];
     let result = await imported_function(...args);
     return result;
+
+    function process_argv_remaining() {
+        let { argv } = process;
+        let remaining = argv.slice(2);
+        return remaining;
+    }
 }
