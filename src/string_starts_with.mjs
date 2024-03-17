@@ -1,3 +1,5 @@
+import {string_length} from './string_length.mjs';
+import {range} from './range.mjs';
 export function string_starts_with(input, prefix) {
     let input_length = string_length(input);
     let prefix_length = string_length(prefix);
