@@ -1,4 +1,4 @@
 import { EOL } from "os";
-export async function newline() {
+export function newline() {
     return EOL;
 }
