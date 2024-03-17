@@ -4,7 +4,7 @@ file_import_add : import fs from 'fs';
 function_asyncify : adds async to a function
 run : runs a function
 function_line_add : adds a line somewhere in a function
-run and git in same command
+run and git in same command : should have command and arguments from commandline as commit message
 
 given a line , add an await to the beginning
 mjs auto indent file - rather than handcrafting indentation better that a program chooses by convention indention at each line
