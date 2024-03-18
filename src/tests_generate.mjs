@@ -9,6 +9,7 @@ import { string_includes } from "./string_includes.mjs";
 
 export async function tests_generate(function_name, args_values_get) {
     let args_values = await function_run(args_values_get, []);
+    let max = 10;
     await list_counter_async(async count => {
         for (let args of args_values) {
             let c = count();
