@@ -1,13 +1,14 @@
 import { file_js_parse } from "./file_js_parse.mjs";
 import { visit } from "./visit.mjs";
 import { object_values } from "./object_values.mjs";
+import { js_node_is } from "./js_node_is.mjs";
 export async function file_js_identifier_rename(file_path, identifier_from, identifier_to) {
     let parsed = await file_js_parse(file_path);
     visit(parsed, n => {
-        if (string_is(n)) {
-            return false;
+        if (js_node_is(n)) {
+            return object_values(n);
         }
-        return object_values(n);
+        return []
     }, n => n.type === 'Identifier', v => {
         let {node} = v;
         console.log(node);
