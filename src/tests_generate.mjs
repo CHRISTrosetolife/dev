@@ -8,12 +8,14 @@ import { assert } from "./assert.mjs";
 import { string_includes } from "./string_includes.mjs";
 import { range } from "./range.mjs";
 import { add_1 } from "./add_1.mjs";
+import { list_random_item } from "./list_random_item.mjs";
 
 export async function tests_generate(function_name, args_values_get) {
     let args_values = await function_run(args_values_get, []);
     let max = 10;
     for (let i of range(max)) {
         let index = add_1(i);
+        let args = list_random_item(args_values)
     }
     await list_counter_async(async count => {
         for (let args of args_values) {
