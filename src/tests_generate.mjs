@@ -6,10 +6,14 @@ import { equal } from "./equal.mjs";
 import { list_map } from "./list_map.mjs";
 import { assert } from "./assert.mjs";
 import { string_includes } from "./string_includes.mjs";
+import { range } from "./range.mjs";
 
 export async function tests_generate(function_name, args_values_get) {
     let args_values = await function_run(args_values_get, []);
     let max = 10;
+    for (let i of range(10)) {
+        let index = add_1(i);
+    }
     await list_counter_async(async count => {
         for (let args of args_values) {
             let c = count();
