@@ -21,7 +21,7 @@ export async function tests_generate(function_name, args_values_get) {
                 assert(!string_includes(arg, string_delimeter));
             }
             let args_mapped = list_map(args, arg => `${string_delimeter}${arg}${string_delimeter}`)
-            await function_new_generic(`${function_name}_test_${c}`, ``, `    let ${result_name} = ${function_name}(${args.join(', ')});
+            await function_new_generic(`${function_name}_test_${c}`, ``, `    let ${result_name} = ${function_name}(${args_mapped.join(', ')});
     ${assert.name}(${equal.name}(${result_name}, ${result}))`, false, [assert.name, equal.name])
         }
     })
