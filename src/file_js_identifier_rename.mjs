@@ -4,7 +4,7 @@ import { object_values } from "./object_values.mjs";
 import { js_node_is } from "./js_node_is.mjs";
 import { list_is } from "./list_is.mjs";
 import { null_is } from "./null_is.mjs";
-import { equal } from "assert";
+import { equal } from "./equal.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 export async function file_js_identifier_rename(file_path, identifier_from, identifier_to) {
