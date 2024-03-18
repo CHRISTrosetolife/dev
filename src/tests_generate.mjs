@@ -16,29 +16,29 @@ export async function tests_generate(function_name, args_values_get) {
     let existing = {};
     let max = 10;
     for (let i of range(max)) {
-        let index = add_1(i);
+        let c = add_1(i);
         let attempts = 100;
         for (let j of range(attempts)) {
             let args = list_random_item(args_values);
             let args_json = json_to(args);
-            if (object_property_exists(existing, args_json)) {
-                continue;
+            if (!object_property_exists(existing, args_json)) {
+                let result = await function_run(function_name, args);
+                console.log(c.toString(), list_concat(args, [result]));
+                let result_name = 'result';
+                let string_delimeter = "'";
+                for (let arg of args) {
+                    assert(!string_includes(arg, string_delimeter));
+                }
+                let args_mapped = list_map(args, arg => `${string_delimeter}${arg}${string_delimeter}`)
+                await function_new_generic(`${function_name}_test_${c}`, ``, `    let ${result_name} = ${function_name}(${args_mapped.join(', ')});
+        ${assert.name}(${equal.name}(${result_name}, ${result}))`, false, [assert.name, equal.name])
+            
+                break;
             }
         }
     }
     await list_counter_async(async count => {
         for (let args of args_values) {
-            let c = count();
-            let result = await function_run(function_name, args);
-            console.log(c.toString(), list_concat(args, [result]));
-            let result_name = 'result';
-            let string_delimeter = "'";
-            for (let arg of args) {
-                assert(!string_includes(arg, string_delimeter));
-            }
-            let args_mapped = list_map(args, arg => `${string_delimeter}${arg}${string_delimeter}`)
-            await function_new_generic(`${function_name}_test_${c}`, ``, `    let ${result_name} = ${function_name}(${args_mapped.join(', ')});
-    ${assert.name}(${equal.name}(${result_name}, ${result}))`, false, [assert.name, equal.name])
-        }
+            let c = count();}
     })
 }
