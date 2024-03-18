@@ -4,6 +4,9 @@ export function string_is_values() {
         'a',
         'b',
         'aa',
-        'ab'
+        'ab',
+        'ba',
+        'bb',
+        'abc'
     ];
 }
