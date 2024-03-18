@@ -6,6 +6,7 @@ import { assert } from "./assert.mjs";
 import { equal } from "./equal.mjs";
 import { list_map } from "./list_map.mjs";
 import { assert } from "./assert.mjs";
+import { string_includes } from "./string_includes.mjs";
 
 export async function tests_generate(function_name, args_values_get) {
     let args_values = await function_run(args_values_get, []);
