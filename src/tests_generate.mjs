@@ -37,8 +37,4 @@ export async function tests_generate(function_name, args_values_get) {
             }
         }
     }
-    await list_counter_async(async count => {
-        for (let args of args_values) {
-            let c = count();}
-    })
 }
