@@ -6,6 +6,7 @@ export async function file_js_identifier_rename(file_path, identifier_from, iden
     let parsed = await file_js_parse(file_path);
     visit(parsed, n => {
         if (js_node_is(n)) {
+            console.log('here')
             return object_values(n);
         }
         return []
