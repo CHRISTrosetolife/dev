@@ -4,5 +4,6 @@ export function visit(root, children_get, filter, each) {
         if (filter(node)) {
             each({node});
         }
+        visit(node, children_get, filter, each);
     }
 }
