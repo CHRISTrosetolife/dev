@@ -1,4 +1,4 @@
 import * as acorn from 'acorn';
 export function js_parse(code) {
-    return acorn.parse(code, {ecmaVersion: 2020})
+    return acorn.parse(code, {ecmaVersion: 2020, sourceType: 'module'})
 }
