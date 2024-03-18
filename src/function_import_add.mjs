@@ -1,3 +1,3 @@
-export function function_import_add(file_name) {
+export function function_import_add(function_name, import_name) {
 
 }
