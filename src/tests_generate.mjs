@@ -8,7 +8,7 @@ export async function tests_generate(function_name, args_values_get) {
         for (let args of args_values) {
             let c = count();
             let result = await function_run(function_name, args);
-            console.log(list_concat(args, [result,c]));
+            console.log(c.toString(), list_concat(args, [result]));
         }
     })
 }
