@@ -3,6 +3,7 @@ import { visit } from "./visit.mjs";
 import { object_values } from "./object_values.mjs";
 import { js_node_is } from "./js_node_is.mjs";
 import { list_is } from "./list_is.mjs";
+import { null_is } from "./null_is.mjs";
 export async function file_js_identifier_rename(file_path, identifier_from, identifier_to) {
     let parsed = await file_js_parse(file_path);
     visit(parsed, n => {
@@ -13,7 +14,7 @@ export async function file_js_identifier_rename(file_path, identifier_from, iden
             return n;
         }
         return []
-    }, n => n.type === 'Identifier', v => {
+    }, n => !null_is(n) && n.type === 'Identifier', v => {
         let {node} = v;
         console.log(node);
     });
