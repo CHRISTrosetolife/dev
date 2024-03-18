@@ -25,5 +25,5 @@ export async function file_js_identifier_rename(file_path, identifier_from, iden
             object_property_set(node, 'name', identifier_to);
         }
     });
-    file_js_unparse(file_path)
+    await file_js_unparse(file_path, ast)
 }
