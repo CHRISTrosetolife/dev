@@ -7,8 +7,8 @@ import { list_get } from "./list_get.mjs";
 
 export async function tests_generate(function_name, args_values_get) {
     let args_values = await function_run(args_values_get, []);
-    for (let av of args_values) {
-        let result = await function_run(function_name, av);
-        console.log({av, result})
+    for (let args of args_values) {
+        let result = await function_run(function_name, args);
+        console.log({args, result})
     }
 }
