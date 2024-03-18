@@ -1,7 +1,6 @@
-import {file_read} from './file_read.mjs';
-import {js_parse} from './js_parse.mjs';
-export async function file_js_parse(file_name) {
-    let code = await file_read(file_name);
-    let parsed = js_parse(code);
-    return parsed;
+import {file_write} from './file_write.mjs';
+import {js_unparse} from './js_unparse.mjs';
+export async function file_js_unparse(file_name, ast) {
+    let code = js_unparse(ast);
+    await file_write(file_name, code);
 }
