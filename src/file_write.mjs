@@ -1,4 +1,4 @@
 import fs from 'fs';
-export async function file_read(file_name) {
-    return await fs.promises.readFile(file_name, 'utf-8');
+export async function file_read(file_name, data) {
+    return await fs.promises.writeFile(file_name, data, 'utf-8');
 }
