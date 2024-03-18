@@ -10,15 +10,15 @@ import {object_property_set} from "./object_property_set.mjs";
 import {file_js_unparse} from "./file_js_unparse.mjs";
 export async function file_js_identifier_rename(file_path, identifier_from, identifier_to) {
   let ast = await file_js_parse(file_path);
-  visit(ast, nn => {
-    if (js_node_is(nn)) {
-      return object_values(nn);
+  visit(ast, n => {
+    if (js_node_is(n)) {
+      return object_values(n);
     }
-    if (list_is(nn)) {
-      return nn;
+    if (list_is(n)) {
+      return n;
     }
     return [];
-  }, nn => !null_is(nn) && nn.type === 'Identifier', v => {
+  }, n => !null_is(n) && n.type === 'Identifier', v => {
     let {node} = v;
     let name = object_property_get(node, 'name');
     if (equal(name, identifier_from)) {
