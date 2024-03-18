@@ -7,6 +7,7 @@ import { list_map } from "./list_map.mjs";
 import { assert } from "./assert.mjs";
 import { string_includes } from "./string_includes.mjs";
 import { range } from "./range.mjs";
+import { add_1 } from "./add_1.mjs";
 
 export async function tests_generate(function_name, args_values_get) {
     let args_values = await function_run(args_values_get, []);
