@@ -10,4 +10,5 @@ export function tuples_2(names_pair) {
     let mapped = list_map_async(args_values, async av => await function_run(av, []))
     assert(equal(list_length(mapped), 2));
     let m1 = list_get(mapped, 0);
+    let m2 = list_get(mapped, 1);
 }
