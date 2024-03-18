@@ -4,6 +4,9 @@ import { object_values } from "./object_values.mjs";
 export async function file_js_identifier_rename(file_path, identifier_from, identifier_to) {
     let parsed = await file_js_parse(file_path);
     visit(parsed, n => {
+        if (string_is(n)) {
+            return false;
+        }
         return object_values(n);
     }, n => n.type === 'Identifier', v => {
         let {node} = v;
