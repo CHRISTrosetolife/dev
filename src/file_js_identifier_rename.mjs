@@ -7,9 +7,10 @@ import { null_is } from "./null_is.mjs";
 import { equal } from "./equal.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { object_property_set } from "./object_property_set.mjs";
+import { file_js_unparse } from "./file_js_unparse.mjs";
 export async function file_js_identifier_rename(file_path, identifier_from, identifier_to) {
-    let parsed = await file_js_parse(file_path);
-    visit(parsed, n => {
+    let ast = await file_js_parse(file_path);
+    visit(ast, n => {
         if (js_node_is(n)) {
             return object_values(n);
         }
@@ -24,4 +25,5 @@ export async function file_js_identifier_rename(file_path, identifier_from, iden
             object_property_set(node, 'name', identifier_to);
         }
     });
+    file_js_unparse(file_path)
 }
