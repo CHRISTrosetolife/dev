@@ -12,8 +12,9 @@ export async function tests_generate(function_name, args_values_get) {
             let c = count();
             let result = await function_run(function_name, args);
             console.log(c.toString(), list_concat(args, [result]));
-            await function_new_generic(`${function_name}_test_${c}`, ``, `    let result = ${function_name}(${args.join(', ')});
-    ${assert.name}(${equal.name}(result, ${result}))`, false)
+            let result_name = 'result';
+            await function_new_generic(`${function_name}_test_${c}`, ``, `    let ${result_name} = ${function_name}(${args.join(', ')});
+    ${assert.name}(${equal.name}(${result_name}, ${result}))`, false)
         }
     })
 }
