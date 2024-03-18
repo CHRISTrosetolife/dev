@@ -1,6 +1,5 @@
 import { function_run } from "./function_run.mjs";
 import { list_concat } from "./list_concat.mjs";
-import { list_counter_async } from "./list_counter_async.mjs";
 import { function_new_generic } from "./function_new_generic.mjs";
 import { equal } from "./equal.mjs";
 import { list_map } from "./list_map.mjs";
