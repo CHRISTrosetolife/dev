@@ -10,6 +10,7 @@ import { range } from "./range.mjs";
 import { add_1 } from "./add_1.mjs";
 import { list_random_item } from "./list_random_item.mjs";
 import { json_to } from "./json_to.mjs";
+import { object_property_exists } from "./object_property_exists.mjs";
 
 export async function tests_generate(function_name, args_values_get) {
     let args_values = await function_run(args_values_get, []);
