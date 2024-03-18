@@ -1,6 +1,7 @@
 import { function_run } from "./function_run.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { list_counter_async } from "./list_counter_async.mjs";
+import { function_new_generic } from "./function_new_generic.mjs";
 
 export async function tests_generate(function_name, args_values_get) {
     let args_values = await function_run(args_values_get, []);
@@ -9,6 +10,7 @@ export async function tests_generate(function_name, args_values_get) {
             let c = count();
             let result = await function_run(function_name, args);
             console.log(c.toString(), list_concat(args, [result]));
+            function_new_generic()
         }
     })
 }
