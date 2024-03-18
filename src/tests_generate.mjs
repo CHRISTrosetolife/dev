@@ -12,7 +12,7 @@ import { add_1 } from "./add_1.mjs";
 export async function tests_generate(function_name, args_values_get) {
     let args_values = await function_run(args_values_get, []);
     let max = 10;
-    for (let i of range(10)) {
+    for (let i of range(max)) {
         let index = add_1(i);
     }
     await list_counter_async(async count => {
