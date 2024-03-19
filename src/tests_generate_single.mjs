@@ -4,6 +4,7 @@ import { equal } from "./equal.mjs";
 import { list_map } from "./list_map.mjs";
 import { assert } from "./assert.mjs";
 import { string_includes } from "./string_includes.mjs";
+import { function_run } from "./function_run.mjs";
 
 export async function tests_generate_single(function_name, args, test_number) {
     let result = await function_run(function_name, args);
