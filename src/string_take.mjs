@@ -1,3 +1,3 @@
 export function string_take(input, count) {
-  return input.substring(count);
+  return input.substring(0, count);
 }
