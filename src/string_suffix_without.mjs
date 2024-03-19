@@ -5,5 +5,7 @@ import {string_ends_with} from "./string_ends_with.mjs";
 export function string_suffix_without(input, prefix) {
   assert(string_ends_with(input, prefix));
   let prefix_length = string_length(prefix);
-  return string_skip(input, prefix_length);
+  let input_length = string_length(input);
+  let difference = input_length - prefix_length;
+  return string_take(input, difference);
 }
