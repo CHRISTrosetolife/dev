@@ -1,5 +1,5 @@
 import {string_length} from "./string_length.mjs";
-import {string_skip} from "./string_skip.mjs";
+import {string_take} from "./string_take.mjs";
 import {assert} from "./assert.mjs";
 import {string_ends_with} from "./string_ends_with.mjs";
 export function string_suffix_without(input, prefix) {
