@@ -1,4 +1,4 @@
 import fs from 'fs';
-export async function folder_new(file_new_name, contents) {
-  await fs.promises.writeFile(file_new_name, contents);
+export async function folder_new(folder_new_name) {
+  await fs.promises.mkdir(folder_new_name);
 }
