@@ -1,6 +1,6 @@
-import { string_length } from "./string_length.mjs";
+import { string_index_last } from "./string_index_last.mjs";
 
 export function string_get_reverse(input, index) {
-    let length = string_length(input);
-  return input[length - 1 - index];
+    let last = string_index_last(input);
+  return input[last - index];
 }
