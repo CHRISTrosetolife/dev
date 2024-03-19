@@ -11,8 +11,8 @@ export async function tests_generate(function_name, args_values_get) {
     let args_values = await function_run(args_values_get, []);
     let existing = {};
     let max = 10;
-    for (let i of range(max)) {
-        let c = add_1(i);
+    for (let test_index of range(max)) {
+        let c = add_1(test_index);
         let attempts = 100;
         for (let j of range(attempts)) {
             let args = list_random_item(args_values);
