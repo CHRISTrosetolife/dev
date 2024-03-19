@@ -5,7 +5,7 @@ import {string_suffix_without} from './string_suffix_without.mjs';
 export async function function_names() {
     let prefix = `src\\`;
     let suffix = '.mjs';
-    let files = await glob(`${prefix}**\\*${suffix}`);
+    let files = await glob(`${prefix}**/*${suffix}`);
     console.log({files})
     let mapped = list_map(files, file_path => {
         let mapped2 = string_prefix_without(file_path, prefix);
