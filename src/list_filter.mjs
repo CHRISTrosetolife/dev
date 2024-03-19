@@ -1,3 +1,3 @@
-export function list_filter(list, mapper) {
-  return list.map(element => mapper(element));
+export function list_filter(list, filter) {
+  return list.filter(item => filter(item));
 }
