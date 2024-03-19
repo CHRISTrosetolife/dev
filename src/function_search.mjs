@@ -6,6 +6,7 @@ export async function function_search(query) {
     let terms = string_split_comma(query);
     let fn_names = await function_names();
     let result = list_filter(fn_names, fn_name => {
+        console.log({fn_name, terms})
         return function_search_terms_match(fn_name, terms)
     })
     return result;
