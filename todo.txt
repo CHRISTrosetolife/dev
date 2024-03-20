@@ -1,5 +1,7 @@
 function_line_add : adds a line somewhere in a function
 
+rename tests_generate to function_tests_generate
+rename tests_generate_single to function_tests_generate_single
 generate tests from functions ; run tests all ;
 
 given a line , add an await to the beginning
