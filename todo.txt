@@ -1,5 +1,6 @@
 function_line_add : adds a line somewhere in a function
 
+folderize : a_b_c file name to a/b/c directory structure however useful to have automatic imports before this
 rename function
 rename tests_generate to function_tests_generate
 rename tests_generate_single to function_tests_generate_single
@@ -9,4 +10,3 @@ given a line , add an await to the beginning
 function_asyncify : adds async to a function
 
 mjs auto indent file - rather than handcrafting indentation better that a program chooses by convention indention at each line
-folderize : a_b_c file name to a/b/c directory structure however useful to have automatic imports before this
