@@ -1,8 +1,9 @@
-function_asyncify : adds async to a function
 function_line_add : adds a line somewhere in a function
 
 generate tests from functions ; run tests all ;
 
 given a line , add an await to the beginning
+function_asyncify : adds async to a function
+
 mjs auto indent file - rather than handcrafting indentation better that a program chooses by convention indention at each line
 folderize : a_b_c file name to a/b/c directory structure however useful to have automatic imports before this
