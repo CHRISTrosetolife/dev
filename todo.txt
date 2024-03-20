@@ -1,4 +1,3 @@
-function_line_add : adds a line somewhere in a function
 
 folderize : a_b_c file name to a/b/c directory structure however useful to have automatic imports before this
 rename function
@@ -6,6 +5,7 @@ rename tests_generate to function_tests_generate
 rename tests_generate_single to function_tests_generate_single
 generate tests from functions ; run tests all ;
 
+function_line_add : adds a line somewhere in a function
 given a line , add an await to the beginning
 function_asyncify : adds async to a function
 
