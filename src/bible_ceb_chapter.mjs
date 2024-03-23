@@ -44,5 +44,5 @@ export async function bible_ceb_chapter(chapter_name) {
             }
         }
     })
-    return list_join(words_unique, ' | ')
+    let words_unique_pipe = list_join(words_unique, ' | ')
 }
