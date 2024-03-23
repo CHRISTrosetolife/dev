@@ -45,6 +45,13 @@ export async function bible_ceb_chapter(chapter_name) {
             }
         }
     })
-    let words_unique_pipe = list_join(words_unique, ' | ')
-    let translations =
+    let separator = ' | '
+    let words_unique_pipe = list_join(words_unique, separator);
+    if (false) {
+        return words_unique_pipe
+    }
+    let translations_path = path_join([
+        folder_gitignore, 'ceb', chapter_name, 'translations.txt']);
+    let translations_read = await file_read(translations_path);
+
 }
