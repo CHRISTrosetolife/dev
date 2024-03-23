@@ -28,10 +28,8 @@ export async function bible_ceb_chapter(chapter_name) {
         return { verse_number, tokens }
     })
     let symbols = [
-        [
-            ',', '1',
-            '2', '.', ';', '“', '”', ':'
-          ]
+        ',', '1',
+        '2', '.', ';', '“', '”', ':'
     ]
      list_adder_unique(la => {
         for (let m of mapped2) {
