@@ -20,6 +20,8 @@ export async function bible_ceb_chapter(chapter_name) {
         let split = string_split(m, '&#160;');
         let verse_number = list_get(split, 0);
         let text = list_get(split, 1);
+        let tokens = text.split(' ');
+        return { verse_number, tokens }
     })
-    return mapped;
+    return mapped2;
 }
