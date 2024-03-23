@@ -10,6 +10,9 @@ import {string_case_lower} from './string_case_lower.mjs'
 import {list_adder_unique} from './list_adder_unique.mjs'
 import {string_replace_multiple} from './string_replace_multiple.mjs'
 import { list_join } from './list_join.mjs';
+import { list_length } from './list_length.mjs';
+import { assert } from './assert.mjs';
+import { equal } from './equal.mjs';
 
 export async function bible_ceb_chapter(chapter_name) {
     let folder_gitignore = path_join(['.', folder_gitignore]);
@@ -53,5 +56,8 @@ export async function bible_ceb_chapter(chapter_name) {
     let translations_path = path_join([
         folder_gitignore, 'ceb', chapter_name, 'translations.txt']);
     let translations_read = await file_read(translations_path);
-
+    let translations = string_split(translations_read, separator);
+    let translations_length = list_length(translations);
+    let words_unique_length = list_length(words_unique);
+    assert(equal(translations_length,words_unique_length))
 }
