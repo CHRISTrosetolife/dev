@@ -10,11 +10,12 @@ export async function bible_ceb_chapter(chapter_name) {
     let read = await file_read(joined)
     let parsed = html_parse(read)
     let verses = parsed.querySelectorAll('.verse');
-    list_map(verses, v => {
+    let mapped = list_map(verses, v => {
         let id = v.id;
         let text = v.text;
         return {
             id,text
         }
     })
+    return mapped;
 }
