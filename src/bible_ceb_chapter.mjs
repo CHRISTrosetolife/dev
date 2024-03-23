@@ -23,5 +23,8 @@ export async function bible_ceb_chapter(chapter_name) {
         let tokens = text.split(' ');
         return { verse_number, tokens }
     })
+    let mapped3 = list_map(mapped2, m => {
+        let {tokens} = m;
+    })
     return mapped2;
 }
