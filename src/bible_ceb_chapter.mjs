@@ -15,6 +15,7 @@ import { list_includes } from './list_includes.mjs';
 import { list_filter } from './list_filter.mjs';
 import { newline } from './newline.mjs';
 import { file_write } from './file_write.mjs';
+import { string_combine_multiple } from './string_combine_multiple.mjs';
 
 export async function bible_ceb_chapter(chapter_name) {
     let folder_gitignore = path_join(['.', 'gitignore']);
@@ -62,7 +63,7 @@ export async function bible_ceb_chapter(chapter_name) {
         }
     })
     let add = list_filter(words_unique, w => !list_includes(existing, w))
-    let mapped5 = list_map(add, a => string_combine(newline(), a))
+    let mapped5 = list_map(add, a => string_combine_multiple([newline(), a, ' ']))
     let translations_read_combined = string_combine(translations_read, list_join(mapped5, ''))
     if (!equal(translations_read, translations_read_combined)) {
        await file_write(translations_path, translations_read_combined);
