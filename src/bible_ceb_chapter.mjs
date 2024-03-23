@@ -2,7 +2,7 @@ import { file_read } from './file_read.mjs';
 import {path_join} from './path_join.mjs'
 import {string_combine} from './string_combine.mjs'
 import {html_parse} from './html_parse.mjs'
-import {list_map} from './list_map.mjs'
+import {string_split} from './string_split.mjs'
 export async function bible_ceb_chapter(chapter_name) {
     let folder = '.\\gitignore\\cebulb_html';
     let chapter_path = string_combine(chapter_name, '.htm')
@@ -11,6 +11,6 @@ export async function bible_ceb_chapter(chapter_name) {
     let parsed = html_parse(read)
     let verses = parsed.querySelector('.p');
     let rawText = verses.rawText;
-    
-    return rawText;
+    let split = string_split(rawText, '  ');
+    return split;
 }
