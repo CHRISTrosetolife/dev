@@ -9,6 +9,7 @@ import {list_get} from './list_get.mjs'
 import {string_case_lower} from './string_case_lower.mjs'
 import {list_adder_unique} from './list_adder_unique.mjs'
 import {string_replace_multiple} from './string_replace_multiple.mjs'
+import { list_join } from './list_join.mjs';
 
 export async function bible_ceb_chapter(chapter_name) {
     let folder = '.\\gitignore\\cebulb_html';
@@ -31,7 +32,7 @@ export async function bible_ceb_chapter(chapter_name) {
         ',', '1',
         '2', '.', ';', '“', '”', ':'
     ]
-    return list_adder_unique(la => {
+    let words_unique = list_adder_unique(la => {
         for (let m of mapped2) {
             let {tokens} = m;
             for (let token of tokens) {
@@ -43,4 +44,5 @@ export async function bible_ceb_chapter(chapter_name) {
             }
         }
     })
+    return list_join(words_unique, ' | ')
 }
