@@ -25,15 +25,19 @@ export async function bible_ceb_chapter(chapter_name) {
         let tokens = text.split(' ');
         return { verse_number, tokens }
     })
-    return list_adder_unique(la => {
-        for (let m of mapped2) {
-            let {tokens} = m;
-            for (let token of tokens) {
-                for (let t of token) {
-                    la(t)
-                }
+    let symbols = [
+        [
+            ',', '1',
+            '2', '.', ';', '“', '”', ':'
+          ]
+    ]
+    for (let m of mapped2) {
+        let {tokens} = m;
+        for (let token of tokens) {
+            for (let t of token) {
+                la(t)
             }
         }
-    })
+    }
     return mapped2;
 }
