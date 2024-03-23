@@ -8,5 +8,5 @@ export async function bible_ceb_chapter(chapter_name) {
     let joined = path_join([folder, chapter_path]);
     let read = await file_read(joined)
     let parsed = html_parse(read)
-    return parsed.querySelector('.p');
+    return parsed.querySelector('.p').length;
 }
