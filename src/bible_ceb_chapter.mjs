@@ -39,7 +39,7 @@ export async function bible_ceb_chapter(chapter_name) {
             for (let token of tokens) {
                 let mapped3 = string_case_lower(token)
                 let mapped4 = string_replace_multiple(mapped3, symbols, '')
-                console.log(mapped4)
+                console.log({mapped3,mapped4})
                 la(mapped4)
             }
         }
