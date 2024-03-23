@@ -11,8 +11,8 @@ import {list_adder_unique} from './list_adder_unique.mjs'
 import {string_replace_multiple} from './string_replace_multiple.mjs'
 import { list_join } from './list_join.mjs';
 import { list_length } from './list_length.mjs';
-import { assert } from './assert.mjs';
-import { equal } from './equal.mjs';
+import { list_includes } from './list_includes.mjs';
+import { list_filter } from './list_filter.mjs';
 import { newline } from './newline.mjs';
 
 export async function bible_ceb_chapter(chapter_name) {
