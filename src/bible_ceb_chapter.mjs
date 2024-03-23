@@ -33,15 +33,15 @@ export async function bible_ceb_chapter(chapter_name) {
             '2', '.', ';', '“', '”', ':'
           ]
     ]
-    return list_adder_unique(la => {
+     list_adder_unique(la => {
         for (let m of mapped2) {
             let {tokens} = m;
             for (let token of tokens) {
                 let mapped3 = string_case_lower(token)
                 let mapped4 = string_replace_multiple(mapped3, symbols, '')
+                console.log(mapped4)
                 la(mapped4)
             }
         }
     })
-    return mapped2;
 }
