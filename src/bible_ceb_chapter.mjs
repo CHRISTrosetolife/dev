@@ -12,7 +12,8 @@ import {string_replace_multiple} from './string_replace_multiple.mjs'
 import { list_join } from './list_join.mjs';
 
 export async function bible_ceb_chapter(chapter_name) {
-    let folder = '.\\gitignore\\cebulb_html';
+    let folder_gitignore = path_join(['.', folder_gitignore]);
+    let folder = path_join([folder_gitignore, 'cebulb_html']);
     let chapter_path = string_combine(chapter_name, '.htm')
     let joined = path_join([folder, chapter_path]);
     let read = await file_read(joined)
@@ -45,4 +46,5 @@ export async function bible_ceb_chapter(chapter_name) {
         }
     })
     let words_unique_pipe = list_join(words_unique, ' | ')
+    let translations =
 }
