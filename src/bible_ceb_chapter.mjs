@@ -6,6 +6,8 @@ import {string_split} from './string_split.mjs'
 import {list_map} from './list_map.mjs'
 import {string_trim} from './string_trim.mjs'
 import {list_get} from './list_get.mjs'
+import {list_adder_unique} from './list_adder_unique.mjs'
+
 export async function bible_ceb_chapter(chapter_name) {
     let folder = '.\\gitignore\\cebulb_html';
     let chapter_path = string_combine(chapter_name, '.htm')
@@ -23,11 +25,13 @@ export async function bible_ceb_chapter(chapter_name) {
         let tokens = text.split(' ');
         return { verse_number, tokens }
     })
-    let mapped3 = list_map(mapped2, m => {
-        let {tokens} = m;
-        for (let token of tokens) {
-            for (let t of token) {
-                console.log(t)
+    return list_adder_unique(la => {
+        for (let m of mapped2) {
+            let {tokens} = m;
+            for (let token of tokens) {
+                for (let t of token) {
+                    la(t)
+                }
             }
         }
     })
