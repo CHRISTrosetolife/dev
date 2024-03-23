@@ -25,6 +25,11 @@ export async function bible_ceb_chapter(chapter_name) {
     })
     let mapped3 = list_map(mapped2, m => {
         let {tokens} = m;
+        for (let token of tokens) {
+            for (let t of token) {
+                console.log(t)
+            }
+        }
     })
     return mapped2;
 }
