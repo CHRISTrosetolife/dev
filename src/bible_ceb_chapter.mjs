@@ -48,8 +48,8 @@ export async function bible_ceb_chapter(chapter_name) {
             }
         }
     })
-    let separator = ' | '
-    let words_unique_pipe = list_join(words_unique, separator);
+    let separator = '|'
+    let words_unique_pipe = list_join(words_unique, ` ${separator} `);
     if (false) {
         return words_unique_pipe
     }
@@ -59,5 +59,6 @@ export async function bible_ceb_chapter(chapter_name) {
     let translations = string_split(translations_read, separator);
     let translations_length = list_length(translations);
     let words_unique_length = list_length(words_unique);
+    console.log({translations_length,words_unique_length})
     assert(equal(translations_length,words_unique_length))
 }
