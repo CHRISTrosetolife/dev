@@ -52,7 +52,7 @@ export async function bible_ceb_chapter(chapter_name) {
         }
     })
     let translations_path = path_join([
-        folder_gitignore, 'ceb', 'translations.txt']);
+        'translations', 'ceb_en.txt']);
     let translations_read = await file_read(translations_path);
     let translations = string_split(translations_read, newline());
     let existing = list_adder_unique(la => {
