@@ -50,13 +50,12 @@ export async function bible_ceb_chapter(chapter_name) {
     })
     let separator = '|'
     let words_unique_pipe = list_join(words_unique, ` ${separator} `);
-    if (false) {
-        return words_unique_pipe
-    }
+    
     let translations_path = path_join([
-        folder_gitignore, 'ceb', chapter_name, 'translations.txt']);
+        folder_gitignore, 'ceb', 'translations.txt']);
     let translations_read = await file_read(translations_path);
-    let translations = string_split(translations_read, separator);
+    let translations = string_split(translations_read, string_new_line());
+
     let translations_length = list_length(translations);
     let words_unique_length = list_length(words_unique);
     console.log({translations_length,words_unique_length})
