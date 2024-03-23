@@ -9,7 +9,7 @@ export async function bible_ceb_chapter(chapter_name) {
     let joined = path_join([folder, chapter_path]);
     let read = await file_read(joined)
     let parsed = html_parse(read)
-    let verses = parsed.querySelectorAll('.verse');
+    let verses = parsed.querySelectorAll('.p');
     let mapped = list_map(verses, v => {
         let id = v.id;
         let text = v.rawText;
