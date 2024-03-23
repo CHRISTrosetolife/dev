@@ -10,7 +10,7 @@ import {string_case_lower} from './string_case_lower.mjs'
 import {list_adder_unique} from './list_adder_unique.mjs'
 import {string_replace_multiple} from './string_replace_multiple.mjs'
 import { list_join } from './list_join.mjs';
-import { list_length } from './list_length.mjs';
+import { equal } from './equal.mjs';
 import { list_includes } from './list_includes.mjs';
 import { list_filter } from './list_filter.mjs';
 import { newline } from './newline.mjs';
@@ -63,5 +63,8 @@ export async function bible_ceb_chapter(chapter_name) {
     let add = list_filter(words_unique, w => !list_includes(existing, w))
     let mapped5 = list_map(add, a => string_combine(newline(), a))
     let translations_read_combined = string_combine(translations_read, list_join(mapped5, ''))
+    if (!equal(translations_read, translations_read_combined)) {
+       await file_write(translations_path, translations_read_combined);
+    }
     return mapped5
 }
