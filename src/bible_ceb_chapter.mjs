@@ -62,5 +62,6 @@ export async function bible_ceb_chapter(chapter_name) {
     })
     let add = list_filter(words_unique, w => !list_includes(existing, w))
     let mapped5 = list_map(add, a => string_combine(newline(), a))
+    let translations_read_combined = string_combine(translations_read, list_join(mapped5, ''))
     return mapped5
 }
