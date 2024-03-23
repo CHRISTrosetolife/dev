@@ -13,6 +13,7 @@ import { list_join } from './list_join.mjs';
 import { list_length } from './list_length.mjs';
 import { assert } from './assert.mjs';
 import { equal } from './equal.mjs';
+import { newline } from './newline.mjs';
 
 export async function bible_ceb_chapter(chapter_name) {
     let folder_gitignore = path_join(['.', 'gitignore']);
@@ -48,16 +49,18 @@ export async function bible_ceb_chapter(chapter_name) {
             }
         }
     })
-    let separator = '|'
-    let words_unique_pipe = list_join(words_unique, ` ${separator} `);
-    
     let translations_path = path_join([
         folder_gitignore, 'ceb', 'translations.txt']);
     let translations_read = await file_read(translations_path);
-    let translations = string_split(translations_read, string_new_line());
-
-    let translations_length = list_length(translations);
-    let words_unique_length = list_length(words_unique);
-    console.log({translations_length,words_unique_length})
-    assert(equal(translations_length,words_unique_length))
+    let translations = string_split(translations_read, newline());
+    let existing = list_adder_unique(la => {
+        for (let translation of translations) {
+            let split2 = string_split(translation, ' ');
+            let first = list_get(split2, 0);
+            la(first);
+        }
+    })
+    let add = list_filter(words_unique, w => !list_includes(existing, w))
+    let mapped5 = list_map(add, a => string_combine(newline(), a))
+    return mapped5
 }
