@@ -4,6 +4,7 @@ import {string_combine} from './string_combine.mjs'
 import {html_parse} from './html_parse.mjs'
 import {string_split} from './string_split.mjs'
 import {list_map} from './list_map.mjs'
+import {string_trim} from './string_trim.mjs'
 export async function bible_ceb_chapter(chapter_name) {
     let folder = '.\\gitignore\\cebulb_html';
     let chapter_path = string_combine(chapter_name, '.htm')
