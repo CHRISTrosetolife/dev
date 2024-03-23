@@ -15,5 +15,5 @@ export async function bible_ceb_chapter(chapter_name) {
     let rawText = verses.rawText;
     let split = string_split(rawText, '  ');
     let mapped = list_map(split, string_trim)
-    return split;
+    return mapped;
 }
