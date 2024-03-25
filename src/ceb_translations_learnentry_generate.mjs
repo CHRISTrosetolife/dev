@@ -4,7 +4,7 @@ import {newline} from './newline.mjs'
 import {string_split} from './string_split.mjs'
 import {string_get} from './string_get.mjs'
 import {function_new_generic} from './function_new_generic.mjs'
-import {string_join} from './string_join.mjs'
+import {list_join} from './list_join.mjs'
 import {object_property_get} from './object_property_get.mjs'
 import {string_combine_multiple} from './string_combine_multiple.mjs'
 import {list_adder} from './list_adder.mjs'
@@ -29,7 +29,7 @@ export async function ceb_translations_learnentry_generate() {
             la(string_combine_multiple([word, ',', value]))
         }
     })
-    let entries_string = string_join(pairs, ', ')
+    let entries_string = list_join(pairs, ', ')
     let body_string = `return { ${entries_string} };`;
     await function_new_generic(`ceb_translations_learnentry`, ``, body_string, false, '');
 }
