@@ -3,6 +3,7 @@ import {list_map} from './list_map.mjs';
 import {string_prefix_without} from './string_prefix_without.mjs';
 import {string_suffix_without} from './string_suffix_without.mjs';
 import {string_replace} from './string_replace.mjs';
+import {folder_read} from './folder_read.mjs';
 export async function function_names() {
     let prefix = `src/`;
     let suffix = '.mjs';
