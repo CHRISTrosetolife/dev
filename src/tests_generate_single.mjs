@@ -22,8 +22,4 @@ export async function tests_generate_single(function_name, args, test_number) {
     ${assert.name}(${equal.name}(${result_name}, ${result}))`, false, [assert.name, equal.name]);
 }
 
-function string_delimit(arg) {
-    let string_delimeter = "'";
-    let result = `${string_delimeter}${arg}${string_delimeter}`;
-    return result;
-}
+
