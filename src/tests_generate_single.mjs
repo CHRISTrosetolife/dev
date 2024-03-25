@@ -15,9 +15,15 @@ export async function tests_generate_single(function_name, args, test_number) {
         assert(!string_includes(arg, string_delimeter));
     }
     let args_mapped = list_map(args, arg => {
-        let result = `${string_delimeter}${arg}${string_delimeter}`;
+        let result = string_delimit(arg);
         return result;
     });
     await function_new_generic(`${function_name}_test_${test_number}`, ``, `    let ${result_name} = ${function_name}(${args_mapped.join(', ')});
     ${assert.name}(${equal.name}(${result_name}, ${result}))`, false, [assert.name, equal.name]);
+}
+
+function string_delimit(arg) {
+    let string_delimeter = "'";
+    let result = `${string_delimeter}${arg}${string_delimeter}`;
+    return result;
 }
