@@ -4,6 +4,7 @@ import {newline} from './newline.mjs'
 import {string_split} from './string_split.mjs'
 import {string_get} from './string_get.mjs'
 import {function_new_generic} from './function_new_generic.mjs'
+import {string_join} from './string_join.mjs'
 export async function ceb_translations_learnentry_generate() {
     let folder = `./translations/ceb/learnentry/letters/`;
     let extension = `.txt`;
@@ -19,6 +20,7 @@ export async function ceb_translations_learnentry_generate() {
             words[first] = second
         }
     }
+    let entries_string = string_join(pairs, ', ')
     let body_string = `return { ${entries_string} };`;
     await function_new_generic(`ceb_translations_learnentry`, ``, body_string, false, '');
 }
