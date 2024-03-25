@@ -6,7 +6,7 @@ import {string_replace} from './string_replace.mjs';
 export async function function_names() {
     let prefix = `src/`;
     let suffix = '.mjs';
-    let files = await glob(`${prefix}**/*${suffix}`);
+    let files = await folder_read(prefix, suffix);
     let mapped = list_map(files, file_path => {
         let replaced = string_replace(file_path, '\\', '/');
         let mapped2 = string_prefix_without(replaced, prefix);
