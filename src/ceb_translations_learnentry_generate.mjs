@@ -19,6 +19,6 @@ export async function ceb_translations_learnentry_generate() {
             words[first] = second
         }
     }
-    let body_string = `return ${object_string};`;
+    let body_string = `return { ${entries_string} };`;
     await function_new_generic(`ceb_translations_learnentry`, ``, body_string, false, '');
 }
