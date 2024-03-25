@@ -32,5 +32,5 @@ export async function ceb_translations_generate() {
   });
   let entries_string = list_join(pairs, ', ');
   let body_string = `return { ${entries_string} };`;
-  await function_new_generic(`ceb_translations_learnentry`, ``, body_string, false, []);
+  await function_new_generic(`ceb_translations`, ``, body_string, false, []);
 }
