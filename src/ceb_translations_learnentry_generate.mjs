@@ -1,12 +1,22 @@
 import {folder_read} from './folder_read.mjs'
 import {file_read} from './file_read.mjs'
+import {newline} from './newline.mjs'
+import {string_split} from './string_split.mjs'
+import {string_get} from './string_get.mjs'
 export async function ceb_translations_learnentry_generate() {
     let folder = `./translations/ceb/learnentry/letters/`;
     let extension = `.txt`;
+    let words = {};
     let files = await folder_read(folder, extension);
     for (let file of files) {
         let contents = await file_read(file)
-        console.log({contents})
+        let lines = string_split(contents, newline());
+        for (let line of lines) {
+            let split = string_split(line, '\t');
+            let first = string_get(split, 0)
+            let second = string_get(split, 1)
+            words[first] = second
+        }
     }
-    return files;
+    return words;
 }
