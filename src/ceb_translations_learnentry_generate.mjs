@@ -7,6 +7,7 @@ import {function_new_generic} from './function_new_generic.mjs'
 import {string_join} from './string_join.mjs'
 import {object_property_get} from './object_property_get.mjs'
 import {string_combine_multiple} from './string_combine_multiple.mjs'
+import {list_adder} from './list_adder.mjs'
 export async function ceb_translations_learnentry_generate() {
     let folder = `./translations/ceb/learnentry/letters/`;
     let extension = `.txt`;
