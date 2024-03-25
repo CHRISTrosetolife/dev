@@ -27,7 +27,7 @@ export async function ceb_translations_learnentry_generate() {
     let pairs = list_adder(la => {
         for (let word in words) {
             let value = object_property_get(words, word)
-            la(string_combine_multiple([string_delimit(word), ',', string_delimit(value)]))
+            la(string_combine_multiple([string_delimit(word), ':', string_delimit(value)]))
         }
     })
     let entries_string = list_join(pairs, ', ')
