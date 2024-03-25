@@ -5,7 +5,8 @@ export async function ceb_translations_learnentry_generate() {
     let extension = `.txt`;
     let files = await folder_read(folder, extension);
     for (let file of files) {
-        let contents = file_read(file)
+        let contents = await file_read(file)
+        console.log({contents})
     }
     return files;
 }
