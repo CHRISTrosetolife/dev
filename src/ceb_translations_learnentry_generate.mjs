@@ -3,6 +3,7 @@ import {file_read} from './file_read.mjs'
 import {newline} from './newline.mjs'
 import {string_split} from './string_split.mjs'
 import {string_get} from './string_get.mjs'
+import {function_new_generic} from './function_new_generic.mjs'
 export async function ceb_translations_learnentry_generate() {
     let folder = `./translations/ceb/learnentry/letters/`;
     let extension = `.txt`;
@@ -18,5 +19,6 @@ export async function ceb_translations_learnentry_generate() {
             words[first] = second
         }
     }
-    return words;
+    let body_string = `return ${object_string};`;
+    await function_new_generic(`ceb_translations_learnentry`, ``, body_string, false, '');
 }
