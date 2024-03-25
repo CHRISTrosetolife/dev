@@ -4,6 +4,7 @@ import { object_properties } from "./object_properties.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { string_length } from "./string_length.mjs";
 import { list_sort } from "./list_sort.mjs";
+import { html_element } from "./html_element.mjs";
 
 export function ceb_learn() {
     let root = document.body;
