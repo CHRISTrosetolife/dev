@@ -16,9 +16,11 @@ export function ceb_learn() {
     let button_font_size = '10vh';
     let button1 = html_element(root, 'button');
     html_style(button1, { 'font-size': button_font_size });
+    html_style(button1, { 'font-weight': 'bold' });
     html_style_width_full(button1);
     let button2 = html_element(root, 'button');
     html_style(button2, { 'font-size': button_font_size });
+    html_style(button1, { 'font-weight': 'bold' });
     html_style_width_full(button2);
     let button_previous = html_element(root, 'button');
     html_style(button_previous, { 'font-size': button_font_size });
