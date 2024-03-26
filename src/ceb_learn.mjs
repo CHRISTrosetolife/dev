@@ -34,6 +34,9 @@ export function ceb_learn() {
     html_style_width_full(button_next);
     html_inner_set(button_next, 'next');
     let input = html_element(root, 'input');
+    html_style(input, { 'font-size': button_font_size });
+    html_style(input, { 'text-align': 'center' });
+    html_style_width_full(input);
     let translations = ceb_translations();
     let keys = object_properties(translations);
     let mapped = list_map(keys, key => {
