@@ -11,6 +11,8 @@ import { html_style } from "./html_style.mjs";
 import { html_style_width_full } from "./html_style_width_full.mjs";
 import { html_on_click } from "./html_on_click.mjs";
 import { html_value_set } from "./html_value_set.mjs";
+import { html_on } from "./html_on.mjs";
+import { html_value_get } from "./html_value_get.mjs";
 
 export function ceb_learn() {
     let root = document.body;
@@ -34,6 +36,9 @@ export function ceb_learn() {
     html_style_width_full(button_next);
     html_inner_set(button_next, 'next');
     let input = html_element(root, 'input');
+    html_style(input, { 'font-size': button_font_size });
+    html_style(input, { 'text-align': 'center' });
+    html_style_width_full(input);
     let translations = ceb_translations();
     let keys = object_properties(translations);
     let mapped = list_map(keys, key => {
@@ -57,6 +62,10 @@ export function ceb_learn() {
     })
     html_on_click(button_next, () => {
         index++;
+        refresh();
+    })
+    html_on(input, 'change', () => {
+        index = parseInt(html_value_get(input), 10);
         refresh();
     })
 }
