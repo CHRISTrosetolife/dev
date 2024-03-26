@@ -45,7 +45,7 @@ export function ceb_learn() {
         refresh();
     })
     html_on_click(button_next, () => {
-        index--;
+        index++;
         refresh();
     })
 }
