@@ -12,6 +12,7 @@ import { html_style_width_full } from "./html_style_width_full.mjs";
 import { html_on_click } from "./html_on_click.mjs";
 import { html_value_set } from "./html_value_set.mjs";
 import { html_on } from "./html_on.mjs";
+import { html_value_get } from "./html_value_get.mjs";
 
 export function ceb_learn() {
     let root = document.body;
@@ -64,7 +65,8 @@ export function ceb_learn() {
         refresh();
     })
     html_on(input, 'change', () => {
-        
+        index = parseInt(html_value_get(input), 10);
+        refresh();
     })
 }
 
