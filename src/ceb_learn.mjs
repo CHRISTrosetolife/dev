@@ -35,9 +35,19 @@ export function ceb_learn() {
     })
     list_sort(mapped, item => string_length(item.key));
     let index = 0;
-    let item = list_get(mapped, index)
-    html_inner_set(button1, item.key);
-    html_inner_set(button2, item.value);
+    function refresh() {
+        let item = list_get(mapped, index);
+        html_inner_set(button1, item.key);
+        html_inner_set(button2, item.value);
+    }
+    html_on_click(button_previous, () => {
+        index--;
+        refresh();
+    })
+    html_on_click(button_next, () => {
+        index--;
+        refresh();
+    })
 }
 
 
