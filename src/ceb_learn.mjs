@@ -9,7 +9,7 @@ import { html_element } from "./html_element.mjs";
 export function ceb_learn() {
     // test
     let root = document.body;
-    let button = html_element(root, 'button');
+    let button1 = html_element(root, 'button');
     let translations = ceb_translations();
     let keys = object_properties(translations);
     let mapped = list_map(keys, key => {
