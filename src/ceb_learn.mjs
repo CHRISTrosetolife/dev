@@ -10,6 +10,7 @@ export function ceb_learn() {
     // test
     let root = document.body;
     let button1 = html_element(root, 'button');
+    let button2 = html_element(root, 'button');
     let translations = ceb_translations();
     let keys = object_properties(translations);
     let mapped = list_map(keys, key => {
