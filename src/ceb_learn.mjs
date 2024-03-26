@@ -10,6 +10,7 @@ import { html_inner_set } from "./html_inner_set.mjs";
 import { html_style } from "./html_style.mjs";
 import { html_style_width_full } from "./html_style_width_full.mjs";
 import { html_on_click } from "./html_on_click.mjs";
+import { html_value_set } from "./html_value_set.mjs";
 
 export function ceb_learn() {
     let root = document.body;
@@ -45,6 +46,7 @@ export function ceb_learn() {
     let index = 0;
     refresh();
     function refresh() {
+        html_value_set(input, index);
         let item = list_get(mapped, index);
         html_inner_set(button1, item.key);
         html_inner_set(button2, item.value);
