@@ -30,6 +30,4 @@ export function ceb_learn() {
     html_inner_set(button2, item.value);
 }
 
-function html_style_width_full(button1) {
-    html_style(button1, { 'width': '100%' });
-}
+
