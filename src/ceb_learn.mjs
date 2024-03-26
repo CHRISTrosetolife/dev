@@ -7,11 +7,14 @@ import { list_sort } from "./list_sort.mjs";
 import { html_element } from "./html_element.mjs";
 import { list_get } from "./list_get.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
+import { html_style } from "./html_style.mjs";
 
 export function ceb_learn() {
     let root = document.body;
     let button1 = html_element(root, 'button');
+    html_style(button1, {'width': '100%'});
     let button2 = html_element(root, 'button');
+    html_style(button2, {'width': '100%'});
     let translations = ceb_translations();
     let keys = object_properties(translations);
     let mapped = list_map(keys, key => {
