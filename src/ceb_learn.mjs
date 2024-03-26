@@ -15,6 +15,10 @@ export function ceb_learn() {
     html_style_width_full(button1);
     let button2 = html_element(root, 'button');
     html_style_width_full(button2);
+    let button_previous = html_element(root, 'button');
+    html_inner_set(button_previous, 'previous');
+    let button_next = html_element(root, 'button');
+    html_inner_set(button_next, 'next');
     let translations = ceb_translations();
     let keys = object_properties(translations);
     let mapped = list_map(keys, key => {
