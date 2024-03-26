@@ -14,11 +14,11 @@ import { html_on_click } from "./html_on_click.mjs";
 export function ceb_learn() {
     let root = document.body;
     let button_font_size = '5vh';
-    let button1 = html_element(root, 'button');
+    let button1 = html_element(root, 'div');
     html_style(button1, { 'font-size': button_font_size });
     html_style(button1, { 'font-weight': 'bold' });
     html_style_width_full(button1);
-    let button2 = html_element(root, 'button');
+    let button2 = html_element(root, 'div');
     html_style(button2, { 'font-size': button_font_size });
     html_style(button2, { 'font-weight': 'bold' });
     html_style_width_full(button2);
