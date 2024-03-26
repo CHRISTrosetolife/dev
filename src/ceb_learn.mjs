@@ -7,7 +7,6 @@ import { list_sort } from "./list_sort.mjs";
 import { html_element } from "./html_element.mjs";
 
 export function ceb_learn() {
-    // test
     let root = document.body;
     let button1 = html_element(root, 'button');
     let button2 = html_element(root, 'button');
