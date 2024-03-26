@@ -13,7 +13,7 @@ import { html_on_click } from "./html_on_click.mjs";
 
 export function ceb_learn() {
     let root = document.body;
-    let button_font_size = '10vh';
+    let button_font_size = '5vh';
     let button1 = html_element(root, 'button');
     html_style(button1, { 'font-size': button_font_size });
     html_style(button1, { 'font-weight': 'bold' });
