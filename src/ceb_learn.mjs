@@ -12,9 +12,9 @@ import { html_style } from "./html_style.mjs";
 export function ceb_learn() {
     let root = document.body;
     let button1 = html_element(root, 'button');
-    html_style(button1, {'width': '100%'});
+    html_style_width_full(button1);
     let button2 = html_element(root, 'button');
-    html_style(button2, {'width': '100%'});
+    html_style_width_full(button2);
     let translations = ceb_translations();
     let keys = object_properties(translations);
     let mapped = list_map(keys, key => {
@@ -28,4 +28,8 @@ export function ceb_learn() {
     let item = list_get(mapped, index)
     html_inner_set(button1, item.key);
     html_inner_set(button2, item.value);
+}
+
+function html_style_width_full(button1) {
+    html_style(button1, { 'width': '100%' });
 }
