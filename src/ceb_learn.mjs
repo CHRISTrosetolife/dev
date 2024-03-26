@@ -9,6 +9,7 @@ import { list_get } from "./list_get.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 import { html_style } from "./html_style.mjs";
 import { html_style_width_full } from "./html_style_width_full.mjs";
+import { html_on_click } from "./html_on_click.mjs";
 
 export function ceb_learn() {
     let root = document.body;
@@ -35,6 +36,7 @@ export function ceb_learn() {
     })
     list_sort(mapped, item => string_length(item.key));
     let index = 0;
+    refresh();
     function refresh() {
         let item = list_get(mapped, index);
         html_inner_set(button1, item.key);
