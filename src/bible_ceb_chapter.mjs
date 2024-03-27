@@ -51,6 +51,7 @@ export async function bible_ceb_chapter(chapter_name) {
             }
         }
     })
+    return;
     let translations_path = path_join([
         'translations', 'ceb_en.txt']);
     let translations_read = await file_read(translations_path);
