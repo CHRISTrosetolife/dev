@@ -51,6 +51,7 @@ export async function bible_ceb_chapter(chapter_name) {
             }
         }
     })
+    return words_unique;
     return;
     let translations_path = path_join([
         'translations', 'ceb_en.txt']);
