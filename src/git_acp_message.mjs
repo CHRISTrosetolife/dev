@@ -1,4 +1,4 @@
-import { command_line } from "./command_line.mjs";
+import { command_line_git } from "./command_line_git.mjs";
 export async function git_acp_message(commit_message) {
     let commands = [
         'add *',
@@ -6,6 +6,6 @@ export async function git_acp_message(commit_message) {
         'push'
     ];
     for (let command of commands) {
-        await command_line(`git ${command}`);
+        await command_line_git(command);
     }
 }
