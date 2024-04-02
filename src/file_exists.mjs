@@ -1,3 +1,4 @@
+import fs from 'fs'
 export function file_exists(file_name) {
     return new Promise((resolve, reject)=> {
         fs.stat(file_name, function(err, stat) {
