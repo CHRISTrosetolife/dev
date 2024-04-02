@@ -10,6 +10,11 @@ import {object_property_set} from "./object_property_set.mjs";
 import {file_js_unparse} from "./file_js_unparse.mjs";
 export async function file_js_identifier_rename(file_path, identifier_from, identifier_to) {
   let ast = await file_js_parse(file_path);
+  js_identifier_rename(ast, identifier_from, identifier_to);
+  await file_js_unparse(file_path, ast);
+}
+
+function js_identifier_rename(ast, identifier_from, identifier_to) {
   visit(ast, n => {
     if (js_node_is(n)) {
       return object_values(n);
@@ -19,11 +24,10 @@ export async function file_js_identifier_rename(file_path, identifier_from, iden
     }
     return [];
   }, n => !null_is(n) && n.type === 'Identifier', v => {
-    let {node} = v;
+    let { node } = v;
     let name = object_property_get(node, 'name');
     if (equal(name, identifier_from)) {
       object_property_set(node, 'name', identifier_to);
     }
   });
-  await file_js_unparse(file_path, ast);
 }
