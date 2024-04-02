@@ -4,7 +4,7 @@ import {file_js_unparse} from "./file_js_unparse.mjs";
 export async function file_js_identifier_rename(file_path, identifier_from, identifier_to) {
   let lambda = js_identifier_rename
   let ast = await file_js_parse(file_path);
-  js_identifier_rename(ast, identifier_from, identifier_to);
+  lambda(ast, identifier_from, identifier_to);
   await file_js_unparse(file_path, ast);
 }
 
