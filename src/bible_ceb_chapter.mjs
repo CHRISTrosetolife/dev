@@ -17,7 +17,7 @@ import {newline} from './newline.mjs';
 import {file_write} from './file_write.mjs';
 import {string_combine_multiple} from './string_combine_multiple.mjs';
 export async function bible_ceb_chapter(chapter_name) {
-    let folder_gitignore_result = path_join(['.', 'gitignore']);
+    let folder_gitignore_result = folder_gitignore();
     let folder = path_join([folder_gitignore_result, 'cebulb_html']);
     let chapter_path = string_combine(chapter_name, '.htm');
     let joined = path_join([folder, chapter_path]);
@@ -70,3 +70,7 @@ export async function bible_ceb_chapter(chapter_name) {
     }
     return mapped5;
 }
+function folder_gitignore() {
+    return path_join(['.', 'gitignore']);
+}
+
