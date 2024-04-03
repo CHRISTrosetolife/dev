@@ -1,3 +1,3 @@
-export function string_base64_to(input) {
-    return Buffer.from(input).toString('base64');
+export function string_base64_from(input) {
+    return Buffer.from(input).toString('ascii');
 }
