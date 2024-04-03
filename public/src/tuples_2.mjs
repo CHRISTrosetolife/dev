@@ -1,7 +1,7 @@
 import { string_split_comma } from "./string_split_comma.mjs";
 import { function_run } from "./function_run.mjs";
 import { list_map_async } from "./list_map_async.mjs";
-import { assert } from "./assert.mjs";
+import { assert } from "./assert_boolean.mjs";
 import { equal } from "./equal.mjs";
 import { list_get } from "./list_get.mjs";
 import { list_adder } from "./list_adder.mjs";

@@ -1,6 +1,6 @@
 import { string_length } from "./string_length.mjs";
 import { string_skip } from "./string_skip.mjs";
-import { assert } from "./assert.mjs";
+import { assert } from "./assert_boolean.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
 
 export function string_prefix_without(input, prefix) {
