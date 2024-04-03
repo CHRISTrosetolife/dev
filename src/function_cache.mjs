@@ -20,6 +20,7 @@ export async function function_cache(fn, args) {
     if (await file_exists(file_path)) {
         json = await file_read(file_path);
         object = json_from(json);
+        let result = object_property_get(object, 'result');
         return result;
     }
     result = await fn(...args);
