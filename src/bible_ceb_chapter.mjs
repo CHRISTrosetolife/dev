@@ -70,7 +70,5 @@ export async function bible_ceb_chapter(chapter_name) {
     }
     return mapped5;
 }
-function folder_gitignore() {
-    return path_join(['.', 'gitignore']);
-}
+
 
