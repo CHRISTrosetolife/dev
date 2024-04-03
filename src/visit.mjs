@@ -5,7 +5,7 @@ export function visit(root, children_get, filter, each) {
             each({
                 node
             });
+            visit(node, children_get, filter, each);
         }
-        visit(node, children_get, filter, each);
     }
 }
