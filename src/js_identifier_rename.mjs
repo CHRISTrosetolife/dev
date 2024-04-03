@@ -19,7 +19,7 @@ export function js_identifier_rename(ast, identifier_from, identifier_to) {
         return [];
     }, n => !null_is(n) && !undefined_is(n), v => {
         let {node} = v;
-        if (n.type !== 'Identifier') {
+        if (node.type !== 'Identifier') {
             return;
         }
         let name = object_property_get(node, 'name');
