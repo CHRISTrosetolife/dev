@@ -7,5 +7,5 @@ export async function function_transform(lambda_name, function_name, args) {
     let lambda = await function_import(lambda_name);
     let args_split = string_split_comma(args);
     let file_path = function_name_to_path(function_name);
-    file_js_transform(lambda, file_path, args_split);
+    await file_js_transform(lambda, file_path, args_split);
 }
