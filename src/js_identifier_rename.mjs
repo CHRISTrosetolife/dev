@@ -17,8 +17,11 @@ export function js_identifier_rename(ast, identifier_from, identifier_to) {
             return n;
         }
         return [];
-    }, n => !null_is(n) && !undefined_is(n) && n.type === 'Identifier', v => {
+    }, n => !null_is(n) && !undefined_is(n), v => {
         let {node} = v;
+        if (n.type !== 'Identifier') {
+            return;
+        }
         let name = object_property_get(node, 'name');
         console.log({name})
         if (equal(name, identifier_from)) {
