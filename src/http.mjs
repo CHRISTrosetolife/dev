@@ -1,4 +1,4 @@
 import fetch from 'node-fetch';
-export function http(url) {
-
+export async function http(url) {
+    
 }
