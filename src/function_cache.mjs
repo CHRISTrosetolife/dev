@@ -4,7 +4,8 @@ import {path_join} from './path_join.mjs';
 import {folder_gitignore} from './folder_gitignore.mjs';
 import { string_combine } from './string_combine.mjs';
 import { file_exists } from './file_exists.mjs';
-import { file_read } from '../public/src/file_read.mjs';
+import { file_read } from './file_read.mjs';
+import { file_write } from './file_write.mjs';
 export async function function_cache(fn, args) {
     let function_name = fn.name;
     let key = {function_name,args};
@@ -18,4 +19,6 @@ export async function function_cache(fn, args) {
         return result;
     }
     result = await fn(...args);
+    await file_write(file_path, result);
+    return result;
 }
