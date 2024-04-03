@@ -11,7 +11,7 @@ export async function function_cache(fn, args) {
     let function_name = fn.name;
     let key = {function_name,args};
     let key_json = json_to(key);
-    let key_encoded = string_encoded_to(key);
+    let key_encoded = string_encoded_to(key_json);
     let file_name = string_combine(key_encoded, '.json')
     let file_path = path_join([folder_gitignore(), 'cache', file_name]); 
     let result;
