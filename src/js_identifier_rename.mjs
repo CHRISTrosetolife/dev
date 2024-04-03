@@ -8,7 +8,6 @@ import {object_property_get} from "./object_property_get.mjs";
 import {object_property_set} from "./object_property_set.mjs";
 import {undefined_is} from "./undefined_is.mjs";
 export function js_identifier_rename(ast, identifier_from, identifier_to) {
-    console.log({identifier_from, identifier_to})
     visit(ast, n => {
         if (js_node_is(n)) {
             return object_values(n);
@@ -23,7 +22,6 @@ export function js_identifier_rename(ast, identifier_from, identifier_to) {
             return;
         }
         let name = object_property_get(node, 'name');
-        console.log({name})
         if (equal(name, identifier_from)) {
             object_property_set(node, 'name', identifier_to);
         }
