@@ -14,77 +14,77 @@ import {html_value_set} from "./html_value_set.mjs";
 import {html_on} from "./html_on.mjs";
 import {html_value_get} from "./html_value_get.mjs";
 export function ceb_learn() {
-  let root = document.body;
-  let button_font_size = '5vh';
-  let button1 = html_element(root, 'div');
-  html_style(button1, {
-    'font-size': button_font_size
-  });
-  html_style(button1, {
-    'font-weight': 'bold'
-  });
-  html_style(button1, {
-    'text-align': 'center'
-  });
-  html_style_width_full(button1);
-  let button2 = html_element(root, 'div');
-  html_style(button2, {
-    'font-size': button_font_size
-  });
-  html_style(button2, {
-    'font-weight': 'bold'
-  });
-  html_style(button2, {
-    'text-align': 'center'
-  });
-  html_style_width_full(button2);
-  let button_previous = html_element(root, 'button');
-  html_style(button_previous, {
-    'font-size': button_font_size
-  });
-  html_style_width_full(button_previous);
-  html_inner_set(button_previous, 'previous');
-  let button_next = html_element(root, 'button');
-  html_style(button_next, {
-    'font-size': button_font_size
-  });
-  html_style_width_full(button_next);
-  html_inner_set(button_next, 'next');
-  let input = html_element(root, 'input');
-  html_style(input, {
-    'font-size': button_font_size
-  });
-  html_style(input, {
-    'text-align': 'center'
-  });
-  html_style_width_full(input);
-  let translations = ceb_translations();
-  let keys = object_properties(translations);
-  let mapped = list_map(keys, key => {
-    return {
-      key,
-      value: object_property_get(translations, key)
-    };
-  });
-  list_sort(mapped, item => string_length(item.key));
-  let index = 0;
-  refresh();
-  function refresh() {
-    html_value_set(input, index);
-    let item = list_get(mapped, index);
-    html_inner_set(button1, item.key);
-    html_inner_set(button2, item.value);
-  }
-  html_on_click(button_previous, () => {
-    index--;
+    let root = document.body;
+    let button_font_size = '5vh';
+    let button1 = html_element(root, 'div');
+    html_style(button1, {
+        'font-size': button_font_size
+    });
+    html_style(button1, {
+        'font-weight': 'bold'
+    });
+    html_style(button1, {
+        'text-align': 'center'
+    });
+    html_style_width_full(button1);
+    let button2 = html_element(root, 'div');
+    html_style(button2, {
+        'font-size': button_font_size
+    });
+    html_style(button2, {
+        'font-weight': 'bold'
+    });
+    html_style(button2, {
+        'text-align': 'center'
+    });
+    html_style_width_full(button2);
+    let button_previous = html_element(root, 'button');
+    html_style(button_previous, {
+        'font-size': button_font_size
+    });
+    html_style_width_full(button_previous);
+    html_inner_set(button_previous, 'previous');
+    let button_next = html_element(root, 'button');
+    html_style(button_next, {
+        'font-size': button_font_size
+    });
+    html_style_width_full(button_next);
+    html_inner_set(button_next, 'next');
+    let input = html_element(root, 'input');
+    html_style(input, {
+        'font-size': button_font_size
+    });
+    html_style(input, {
+        'text-align': 'center'
+    });
+    html_style_width_full(input);
+    let translations = ceb_translations();
+    let keys = object_properties(translations);
+    let mapped = list_map(keys, key => {
+        return {
+            key,
+            value: object_property_get(translations, key)
+        };
+    });
+    list_sort(mapped, item => string_length(item.key));
+    let index = 0;
     refresh();
-  });
-  html_on_click(button_next, () => {
-    index++;
-    refresh();
-  });
-  html_on(input, 'change', () => {
-    index = parseInt(html_value_get(input), 10);
-    refresh();
-  });
+    function refresh() {
+        html_value_set(input, index);
+        let item = list_get(mapped, index);
+        html_inner_set(button1, item.key);
+        html_inner_set(button2, item.value);
+    }
+    html_on_click(button_previous, () => {
+        index--;
+        refresh();
+    });
+    html_on_click(button_next, () => {
+        index++;
+        refresh();
+    });
+    html_on(input, 'change', () => {
+        index = parseInt(html_value_get(input), 10);
+        refresh();
+    });
 }
