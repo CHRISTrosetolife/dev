@@ -22,6 +22,7 @@ export async function function_cache(fn, args) {
         return result;
     }
     result = await fn(...args);
-    await file_write(file_path, result);
+    json = json_to({result});
+    await file_write(file_path, json);
     return result;
 }
