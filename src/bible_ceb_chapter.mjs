@@ -17,6 +17,7 @@ import {newline} from './newline.mjs';
 import {file_write} from './file_write.mjs';
 import {string_combine_multiple} from './string_combine_multiple.mjs';
 import {http_cache} from './http_cache.mjs';
+import {folder_gitignore} from './folder_gitignore.mjs';
 export async function bible_ceb_chapter(chapter_name) {
     let folder_gitignore_result = folder_gitignore();
     let folder = path_join([folder_gitignore_result, 'cebulb_html']);
