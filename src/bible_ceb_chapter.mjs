@@ -58,7 +58,6 @@ export async function bible_ceb_chapter(chapter_name) {
             w,
             '&Search=Search']);
         await http_cache(url);
-        return;
     }
     return;
     let translations_path = path_join(['translations', 'ceb_en.txt']);
