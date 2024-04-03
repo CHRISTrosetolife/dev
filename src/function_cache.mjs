@@ -7,6 +7,7 @@ import { file_exists } from './file_exists.mjs';
 import { file_read } from './file_read.mjs';
 import { file_write } from './file_write.mjs';
 import { string_encoded_to } from './string_encoded_to.mjs';
+import { object_property_get } from './object_property_get.mjs';
 export async function function_cache(fn, args) {
     let function_name = fn.name;
     let key = {function_name,args};
