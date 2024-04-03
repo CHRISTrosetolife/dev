@@ -16,6 +16,7 @@ import {list_filter} from './list_filter.mjs';
 import {newline} from './newline.mjs';
 import {file_write} from './file_write.mjs';
 import {string_combine_multiple} from './string_combine_multiple.mjs';
+import {http_cache} from './http_cache.mjs';
 export async function bible_ceb_chapter(chapter_name) {
     let folder_gitignore_result = folder_gitignore();
     let folder = path_join([folder_gitignore_result, 'cebulb_html']);
@@ -50,7 +51,14 @@ export async function bible_ceb_chapter(chapter_name) {
             }
         }
     });
-    return words_unique;
+    for (let w of words_unique) {
+        let url = string_combine_multiple([
+            'https://www.binisaya.com/node/21?search=binisaya&word=',
+            w,
+            '&Search=Search']);
+        await http_cache(url);
+        return;
+    }
     return;
     let translations_path = path_join(['translations', 'ceb_en.txt']);
     let translations_read = await file_read(translations_path);
