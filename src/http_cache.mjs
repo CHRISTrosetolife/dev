@@ -1,3 +1,3 @@
-export function http_cache() {
+export function http_cache(url) {
 
 }
