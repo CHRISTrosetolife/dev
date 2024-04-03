@@ -16,13 +16,15 @@ export async function function_cache(fn, args) {
     let file_path = path_join([folder_gitignore(), 'cache', file_name]); 
     let result;
     let json;
+    let object;
     if (await file_exists(file_path)) {
         json = await file_read(file_path);
-        result = json_from(json);
+        object = json_from(json);
         return result;
     }
     result = await fn(...args);
-    json = json_to({result});
+    object = {result}
+    json = json_to(object);
     await file_write(file_path, json);
     return result;
 }
