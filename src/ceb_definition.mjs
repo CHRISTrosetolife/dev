@@ -6,5 +6,6 @@ export async function ceb_definition(w) {
         w,
         '&Search=Search'
     ]);
+    return url;
     await http_cache(url);
 }
