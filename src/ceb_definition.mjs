@@ -19,7 +19,7 @@ export async function ceb_definition(word) {
     let q = parsed.querySelectorAll('a[href]');
     let filtered = list_filter(q, i => {
         let href = i.getAttribute('href');
-        return string_starts_with(href, 'https://www.binisaya.com/english/')
+        return string_starts_with(href, 'http://www.binisaya.com/english/')
     })
     let mapped = list_map(filtered, i => object_property_get(i, 'text'));
     let mapped3 = list_map(mapped, i => string_trim(i));
