@@ -5,6 +5,7 @@ import { list_map } from './list_map.mjs';
 import { object_property_get } from './object_property_get.mjs';
 import { string_ends_with } from './string_ends_with.mjs';
 import { string_suffix_without } from './string_suffix_without.mjs';
+import { string_trim } from './string_trim.mjs';
 export async function ceb_definition(word) {
     let url = string_combine_multiple([
         'https://www.binisaya.com/node/21?search=binisaya&word=',
@@ -24,13 +25,6 @@ export async function ceb_definition(word) {
         }
         return i;
     });
-    let mapped3 = list_map(mapped2, i => {
-        for (let e of endings) {
-            if (string_ends_with(i, e)) {
-                return string_suffix_without(i, e);
-            }
-        }
-        return i;
-    });
-    return mapped
+    let mapped3 = list_map(mapped2, i => string_trim(i));
+    return mapped3
 }
