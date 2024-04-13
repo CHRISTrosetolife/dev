@@ -15,18 +15,9 @@ export async function ceb_definition(word) {
     ]);
     let html = await http_cache(url);
     let parsed = html_parse(html)
-    let q = parsed.querySelectorAll('td[halign="left"]');
+    let q = parsed.querySelectorAll('a[href^="https://www.binisaya.com/english/"]');
     let mapped = list_map(q, i => object_property_get(i, 'text'));
-    let endings = ['(n.)']
-    let mapped2 = list_map(mapped, i => {
-        for (let e of endings) {
-            if (string_ends_with(i, e)) {
-                return string_suffix_without(i, e);
-            }
-        }
-        return i;
-    });
-    let mapped3 = list_map(mapped2, i => string_trim(i));
+    let mapped3 = list_map(mapped, i => string_trim(i));
     let u = list_unique(mapped3);
     return u
 }
