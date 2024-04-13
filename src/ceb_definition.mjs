@@ -1,3 +1,10 @@
-export function ceb_definition(word) {
-
+import {string_combine_multiple} from './string_combine_multiple.mjs';
+import {http_cache} from './http_cache.mjs';
+export async function ceb_definition(w) {
+    let url = string_combine_multiple([
+        'https://www.binisaya.com/node/21?search=binisaya&word=',
+        w,
+        '&Search=Search'
+    ]);
+    await http_cache(url);
 }

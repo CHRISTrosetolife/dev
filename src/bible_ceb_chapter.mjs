@@ -76,12 +76,5 @@ export async function bible_ceb_chapter(chapter_name) {
 }
 
 
-async function ceb_definition(w) {
-    let url = string_combine_multiple([
-        'https://www.binisaya.com/node/21?search=binisaya&word=',
-        w,
-        '&Search=Search'
-    ]);
-    await http_cache(url);
-}
+
 
