@@ -6,6 +6,7 @@ import { object_property_get } from './object_property_get.mjs';
 import { string_ends_with } from './string_ends_with.mjs';
 import { string_suffix_without } from './string_suffix_without.mjs';
 import { string_trim } from './string_trim.mjs';
+import { list_adder_unique } from './list_adder_unique.mjs';
 export async function ceb_definition(word) {
     let url = string_combine_multiple([
         'https://www.binisaya.com/node/21?search=binisaya&word=',
@@ -26,5 +27,10 @@ export async function ceb_definition(word) {
         return i;
     });
     let mapped3 = list_map(mapped2, i => string_trim(i));
+    list_adder_unique(la => {
+        for (let m of mapped3) {
+            la(m);
+        }
+    });
     return mapped3
 }
