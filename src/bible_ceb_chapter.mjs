@@ -52,6 +52,7 @@ export async function bible_ceb_chapter(chapter_name) {
             }
         }
     });
+    let definitions = {};
     for (let w of words_unique) {
         await ceb_definition(w);
     }
