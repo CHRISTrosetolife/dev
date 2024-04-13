@@ -18,6 +18,7 @@ import {file_write} from './file_write.mjs';
 import {string_combine_multiple} from './string_combine_multiple.mjs';
 import {ceb_definition} from './ceb_definition.mjs';
 import {folder_gitignore} from './folder_gitignore.mjs';
+import {object_property_set} from './object_property_set.mjs';
 export async function bible_ceb_chapter(chapter_name) {
     let folder_gitignore_result = folder_gitignore();
     let folder = path_join([folder_gitignore_result, 'cebulb_html']);
@@ -55,8 +56,9 @@ export async function bible_ceb_chapter(chapter_name) {
     let definitions = {};
     for (let w of words_unique) {
         let d = await ceb_definition(w);
+        object_property_set(definitions, w, d);
     }
-    return words_unique;
+    return definitions;
     let translations_path = path_join(['translations', 'ceb_en.txt']);
     let translations_read = await file_read(translations_path);
     let translations = string_split(translations_read, newline());
