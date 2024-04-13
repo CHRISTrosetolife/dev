@@ -27,10 +27,14 @@ export async function ceb_definition(word) {
         return i;
     });
     let mapped3 = list_map(mapped2, i => string_trim(i));
-    list_adder_unique(la => {
+    let u = list_unique(mapped3);
+    return u
+}
+
+function list_unique(mapped3) {
+    return list_adder_unique(la => {
         for (let m of mapped3) {
             la(m);
         }
     });
-    return mapped3
 }
