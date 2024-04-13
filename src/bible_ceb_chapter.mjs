@@ -54,7 +54,7 @@ export async function bible_ceb_chapter(chapter_name) {
     });
     let definitions = {};
     for (let w of words_unique) {
-        await ceb_definition(w);
+        let d = await ceb_definition(w);
     }
     return words_unique;
     let translations_path = path_join(['translations', 'ceb_en.txt']);
