@@ -53,11 +53,7 @@ export async function bible_ceb_chapter(chapter_name) {
         }
     });
     for (let w of words_unique) {
-        let url = string_combine_multiple([
-            'https://www.binisaya.com/node/21?search=binisaya&word=',
-            w,
-            '&Search=Search']);
-        await http_cache(url);
+        await ceb_definition(w);
     }
     return words_unique;
     let translations_path = path_join(['translations', 'ceb_en.txt']);
@@ -79,4 +75,13 @@ export async function bible_ceb_chapter(chapter_name) {
     return mapped5;
 }
 
+
+async function ceb_definition(w) {
+    let url = string_combine_multiple([
+        'https://www.binisaya.com/node/21?search=binisaya&word=',
+        w,
+        '&Search=Search'
+    ]);
+    await http_cache(url);
+}
 
