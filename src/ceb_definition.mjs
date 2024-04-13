@@ -12,5 +12,5 @@ export async function ceb_definition(word) {
     let html = await http_cache(url);
     let parsed = html_parse(html)
     let q = parsed.querySelectorAll('td[halign="left"]');
-    return list_map(q, i => object_property_get(i, 'rawText'));
+    return list_map(q, i => object_property_get(i, 'text'));
 }
