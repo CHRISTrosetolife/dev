@@ -13,5 +13,6 @@ export async function ceb_definition(word) {
     let parsed = html_parse(html)
     let q = parsed.querySelectorAll('td[halign="left"]');
     let mapped = list_map(q, i => object_property_get(i, 'text'));
+    let endings = ['(n.)']
     return mapped
 }
