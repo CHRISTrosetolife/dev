@@ -31,10 +31,10 @@ export async function ceb_definition(word) {
     return u
 }
 
-function list_unique(mapped3) {
+function list_unique(list) {
     return list_adder_unique(la => {
-        for (let m of mapped3) {
-            la(m);
+        for (let e of list) {
+            la(e);
         }
     });
 }
