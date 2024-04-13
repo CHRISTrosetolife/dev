@@ -15,7 +15,7 @@ export async function ceb_definition(word) {
     ]);
     let html = await http_cache(url);
     let parsed = html_parse(html)
-    let q = parsed.querySelectorAll('a[href^="https://www.binisaya.com/english/"]');
+    let q = parsed.querySelectorAll('a[href^="https:\/\/www.binisaya.com\/english\/"]');
     let mapped = list_map(q, i => object_property_get(i, 'text'));
     let mapped3 = list_map(mapped, i => string_trim(i));
     let u = list_unique(mapped3);
