@@ -9,4 +9,5 @@ export async function ceb_definition(word) {
     ]);
     let html = await http_cache(url);
     let parsed = html_parse(html)
+    return parsed;
 }
