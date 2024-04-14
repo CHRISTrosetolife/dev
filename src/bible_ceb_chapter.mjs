@@ -52,7 +52,8 @@ export async function bible_ceb_chapter(chapter_name) {
         let d = await ceb_definition(w);
         object_property_set(definitions, w, d);
     }
-    return {ceb,eng,definitions};
+    let data = {ceb,eng,definitions};
+    return chapter_name;
     let translations_path = path_join(['translations', 'ceb_en.txt']);
     let translations_read = await file_read(translations_path);
     let translations = string_split(translations_read, newline());
