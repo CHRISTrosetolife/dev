@@ -18,6 +18,9 @@ import {file_write} from './file_write.mjs';
 import {string_combine_multiple} from './string_combine_multiple.mjs';
 import {ceb_definition} from './ceb_definition.mjs';
 import {object_property_set} from './object_property_set.mjs';
+import {equal_by} from './equal_by.mjs';
+import {assert} from './assert.mjs';
+import {list_length} from './list_length.mjs';
 export async function bible_ceb_chapter(chapter_name) {
     let parsed_bsb = await bible_chapter_parsed(
         'engbsb_html', chapter_name);
@@ -25,12 +28,13 @@ export async function bible_ceb_chapter(chapter_name) {
     let mapped6 = list_map(verses_bsb, v => v.rawText);
     let joined = list_join(mapped6, '');
     let bsb = bible_verses_parse(joined);
-    return bsb;
     let parsed_ceb = await bible_chapter_parsed(
         'cebulb_html', chapter_name);
     let verses_ceb = parsed_ceb.querySelector('.p');
     let rawText = verses_ceb.rawText;
     let ceb = bible_verses_parse(rawText);
+    assert(equal_by, [bsb, ceb, list_length])
+    return bsb;
     let symbols = [',', '1', '2', '.', ';', '“', '”', ':'];
     let words_unique = list_adder_unique(la => {
         for (let m of ceb) {
