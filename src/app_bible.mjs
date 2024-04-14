@@ -53,6 +53,7 @@ export function app_bible() {
         });
         html_spaced_tokens(second, ceb_tokens, (token_element, token) => {
             html_on_click(token_element, () => {
+                html_inner_set(bottom, '')
                 let d = object_property_get(definitions, token)
                 html_spaced_tokens(bottom, d, noop);
             })
