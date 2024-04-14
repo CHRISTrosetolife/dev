@@ -17,11 +17,11 @@ export function app_bible() {
     let length = list_length(eng);
     for (let i of range(length)) {
         let verse = html_element(root, 'div');
-        let first = html_element(verse, 'div');
+        let first = html_element(verse.element, 'div');
         let eng_i = list_get(eng, i);
         let eng_tokens = object_property_get(eng_i, 'tokens');
         let first_text = list_join(eng_tokens, ' ')
         html_inner_set(first, first_text);
-        let second = html_element(verse, 'div');
+        let second = html_element(verse.element, 'div');
     }
 }
