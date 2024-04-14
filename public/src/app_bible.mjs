@@ -8,8 +8,10 @@ import { html_inner_set } from './html_inner_set.mjs';
 import { list_get } from './list_get.mjs';
 import { object_property_get } from './object_property_get.mjs';
 import { list_join } from './list_join.mjs';
+import { html_style } from './html_style.mjs';
 export function app_bible() {
     let root = document.body;
+    html_style(root, { 'font-family': 'Sans-Serif' })
     let data = bible_data_jas01();
     let {eng} = data;
     let {ceb} = data;
