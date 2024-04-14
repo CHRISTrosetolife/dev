@@ -11,7 +11,10 @@ import { list_join } from './list_join.mjs';
 import { html_style } from './html_style.mjs';
 export function app_bible() {
     let root = document.body;
-    html_style({element:root}, { 'font-family': 'Sans-Serif' })
+    html_style({element:root}, { 
+        'font-family': 'Sans-Serif',
+        'font-size': '5vh',
+    });
     let data = bible_data_jas01();
     let {eng} = data;
     let {ceb} = data;
