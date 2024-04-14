@@ -15,7 +15,7 @@ export function app_bible() {
     for (let i of range(length)) {
         let verse = html_element(root, 'div');
         let first = html_element(verse, 'div');
-        html_inner_set(button_previous, 'previous');
+        html_inner_set(first, first_text);
         let second = html_element(verse, 'div');
     }
 }
