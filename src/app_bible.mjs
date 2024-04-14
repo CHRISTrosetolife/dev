@@ -7,4 +7,5 @@ export function app_bible() {
     let {eng} = data;
     let {ceb} = data;
     assert(equal_by, [eng, ceb, list_length])
+    let length = list_length(eng);
 }
