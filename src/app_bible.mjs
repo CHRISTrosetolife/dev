@@ -37,7 +37,7 @@ export function app_bible() {
         html_spaced_tokens(first, eng_tokens);
         let second = html_element(verse, 'div');
         html_style(second, { 
-            'color': 'darkgreen',
+            'color': 'green',
         });
         html_spaced_tokens(second, ceb_tokens);
     }
