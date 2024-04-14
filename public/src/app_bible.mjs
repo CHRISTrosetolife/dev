@@ -29,7 +29,6 @@ export function app_bible() {
     html_style(bottom, { 
         'height': '25vh',
         'overflow-y': 'scroll',
-        'border-top': '0.5vh solid black',
         'background-color': 'lightgreen'
     });
     let data = bible_data_jas01();
