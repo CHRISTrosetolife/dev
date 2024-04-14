@@ -21,6 +21,8 @@ import {object_property_set} from './object_property_set.mjs';
 import {equal_by} from './equal_by.mjs';
 import {assert} from './assert.mjs';
 import {list_length} from './list_length.mjs';
+import { json_to } from './json_to.mjs';
+import { function_new_generic } from './function_new_generic.mjs';
 export async function bible_ceb_chapter(chapter_name) {
     let parsed_bsb = await bible_chapter_parsed(
         'engbsb_html', chapter_name);
@@ -53,7 +55,9 @@ export async function bible_ceb_chapter(chapter_name) {
         object_property_set(definitions, w, d);
     }
     let data = {ceb,eng,definitions};
-    return string_case_lower(chapter_name);
+    let body_string = `return ${json_to(data)};`;
+    await function_new_generic(`bible_data_${string_case_lower(chapter_name)}`, ``, body_string, false, []);
+    return ;
     let translations_path = path_join(['translations', 'ceb_en.txt']);
     let translations_read = await file_read(translations_path);
     let translations = string_split(translations_read, newline());
