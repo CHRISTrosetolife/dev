@@ -21,12 +21,7 @@ import {folder_gitignore} from './folder_gitignore.mjs';
 import {object_property_set} from './object_property_set.mjs';
 export async function bible_ceb_chapter(chapter_name) {
     let bible_folder = 'cebulb_html';
-    let folder_gitignore_result = folder_gitignore();
-    let folder = path_join([folder_gitignore_result, bible_folder]);
-    let chapter_path = string_combine(chapter_name, '.htm');
-    let joined = path_join([folder, chapter_path]);
-    let read = await file_read(joined);
-    let parsed = html_parse(read);
+    let parsed = await bible_chapter_parsed(bible_folder, chapter_name);
     let verses = parsed.querySelector('.p');
     let rawText = verses.rawText;
     let split = string_split(rawText, '  ');
@@ -81,4 +76,14 @@ export async function bible_ceb_chapter(chapter_name) {
 
 
 
+
+async function bible_chapter_parsed(bible_folder, chapter_name) {
+    let folder_gitignore_result = folder_gitignore();
+    let folder = path_join([folder_gitignore_result, bible_folder]);
+    let chapter_path = string_combine(chapter_name, '.htm');
+    let joined = path_join([folder, chapter_path]);
+    let read = await file_read(joined);
+    let parsed = html_parse(read);
+    return parsed;
+}
 
