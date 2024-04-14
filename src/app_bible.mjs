@@ -21,13 +21,14 @@ export function app_bible() {
     });
     let top = html_element(root_component, 'div');
     html_style(top, { 
-        'height': '50vh',
+        'height': '70vh',
         'overflow-y': 'scroll',
     });
     let bottom = html_element(root_component, 'div');
     html_style(bottom, { 
-        'height': '50vh',
+        'height': '30vh',
         'overflow-y': 'scroll',
+        'border-top': '1vh solid black'
     });
     let data = bible_data_jas01();
     let {eng} = data;
