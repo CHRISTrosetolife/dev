@@ -4,6 +4,7 @@ import { equal_by } from './equal_by.mjs';
 import { html_element } from './html_element.mjs';
 import { list_length } from './list_length.mjs';
 import { range } from './range.mjs';
+import { html_inner_set } from './html_inner_set.mjs';
 export function app_bible() {
     let root = document.body;
     let data = bible_data_jas01();
