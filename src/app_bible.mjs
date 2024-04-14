@@ -44,20 +44,21 @@ export function app_bible() {
         html_style(verse_number_element, { 
             'font-weight': 'bold',
         });
-        html_spaced_tokens(first, eng_tokens);
+        html_spaced_tokens(first, eng_tokens, noop);
         let second = html_element(verse, 'div');
         html_style(second, { 
             'color': 'green',
         });
-        html_spaced_tokens(second, ceb_tokens);
+        html_spaced_tokens(second, ceb_tokens, noop);
     }
 }
 
-function html_spaced_tokens(parent, tokens) {
+function html_spaced_tokens(parent, tokens, each) {
     for (let token of tokens) {
         let spacer = html_element(parent, 'span');
         html_inner_set(spacer, ' ');
         let token_element = html_element(parent, 'span');
         html_inner_set(token_element, token);
+        each(token_element, token)
     }
 }
