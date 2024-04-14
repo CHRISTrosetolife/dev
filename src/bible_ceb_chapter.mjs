@@ -24,7 +24,8 @@ export async function bible_ceb_chapter(chapter_name) {
     let verses_bsb = parsed_bsb.querySelectorAll('.m');
     let mapped6 = list_map(verses_bsb, v => v.rawText);
     let joined = list_join(mapped6, '');
-    return joined;
+    let mapped7 = bible_verses_parse(joined);
+    return mapped7;
     let parsed_ceb = await bible_chapter_parsed(
         'cebulb_html', chapter_name);
     let verses_ceb = parsed_ceb.querySelector('.p');
