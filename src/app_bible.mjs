@@ -16,13 +16,23 @@ export function app_bible() {
         'font-family': 'Sans-Serif',
         'font-size': '5vh',
     });
+    let top = html_element(root_component, 'div');
+    html_style(top, { 
+        'height': '50vh',
+        'overflow-y': 'scroll',
+    });
+    let bottom = html_element(root_component, 'div');
+    html_style(bottom, { 
+        'height': '50vh',
+        'overflow-y': 'scroll',
+    });
     let data = bible_data_jas01();
     let {eng} = data;
     let {ceb} = data;
     assert(equal_by, [eng, ceb, list_length])
     let length = list_length(eng);
     for (let i of range(length)) {
-        let verse = html_element(root_component, 'div');
+        let verse = html_element(top, 'div');
         let first = html_element(verse, 'div');
         let eng_i = list_get(eng, i);
         let eng_tokens = object_property_get(eng_i, 'tokens');
