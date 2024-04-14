@@ -27,14 +27,14 @@ export async function bible_ceb_chapter(chapter_name) {
     let verses_bsb = parsed_bsb.querySelectorAll('.m');
     let mapped6 = list_map(verses_bsb, v => v.rawText);
     let joined = list_join(mapped6, '');
-    let bsb = bible_verses_parse(joined);
+    let eng = bible_verses_parse(joined);
     let parsed_ceb = await bible_chapter_parsed(
         'cebulb_html', chapter_name);
     let verses_ceb = parsed_ceb.querySelector('.p');
     let rawText = verses_ceb.rawText;
     let ceb = bible_verses_parse(rawText);
-    assert(equal_by, [bsb, ceb, list_length])
-    return bsb;
+    assert(equal_by, [eng, ceb, list_length])
+    return eng;
     let symbols = [',', '1', '2', '.', ';', '“', '”', ':'];
     let words_unique = list_adder_unique(la => {
         for (let m of ceb) {
