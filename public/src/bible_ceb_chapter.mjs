@@ -37,12 +37,12 @@ export async function bible_ceb_chapter(chapter_name) {
     let rawText = verses_ceb.rawText;
     let ceb = bible_verses_parse(rawText);
     assert(equal_by, [eng, ceb, list_length])
-    let symbols = [',', '1', '2', '.', ';', '“', '”', ':'];
     let words_unique = list_adder_unique(la => {
         for (let m of ceb) {
             let {tokens} = m;
             for (let token of tokens) {
                 let mapped3 = string_case_lower(token);
+                let symbols = [',', '1', '2', '.', ';', '“', '”', ':'];
                 let mapped4 = string_replace_multiple(mapped3, symbols, '');
                 if (mapped4.length >= 1) {
                     la(mapped4);
