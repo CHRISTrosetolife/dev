@@ -57,8 +57,9 @@ export async function bible_ceb_chapter(chapter_name) {
     }
     let data = {ceb,eng,definitions};
     let body_string = js_code_return(json_to(data));
-    await function_new_generic(`bible_data_${string_case_lower(chapter_name)}`, ``, body_string, false, []);
-    return ;
+    const fn_name = `bible_data_${string_case_lower(chapter_name)}`;
+    await function_new_generic(fn_name, ``, body_string, false, []);
+    return fn_name;
     let translations_path = path_join(['translations', 'ceb_en.txt']);
     let translations_read = await file_read(translations_path);
     let translations = string_split(translations_read, newline());
