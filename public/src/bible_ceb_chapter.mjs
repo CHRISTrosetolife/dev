@@ -41,9 +41,7 @@ export async function bible_ceb_chapter(chapter_name) {
         for (let m of ceb) {
             let {tokens} = m;
             for (let token of tokens) {
-                let mapped3 = string_case_lower(token);
-                let symbols = [',', '1', '2', '.', ';', '“', '”', ':'];
-                let mapped4 = string_replace_multiple(mapped3, symbols, '');
+                let mapped4 = bible_token_normalize(token);
                 if (mapped4.length >= 1) {
                     la(mapped4);
                 }
@@ -60,6 +58,13 @@ export async function bible_ceb_chapter(chapter_name) {
     const fn_name = `bible_data_${string_case_lower(chapter_name)}`;
     await function_new_generic(fn_name, ``, body_string, false, []);
     return fn_name;
+}
+
+function bible_token_normalize(token) {
+    let mapped3 = string_case_lower(token);
+    let symbols = [',', '1', '2', '.', ';', '“', '”', ':'];
+    let mapped4 = string_replace_multiple(mapped3, symbols, '');
+    return mapped4;
 }
 
 function bible_verses_parse(rawText) {
