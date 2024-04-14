@@ -32,12 +32,12 @@ export function app_bible() {
         html_style(verse_number_element, { 
             'font-weight': 'bold',
         });
-        html_spaced_tokens(eng_tokens, first);
+        html_spaced_tokens(first, eng_tokens);
         let second = html_element(verse, 'div');
     }
 }
 
-function html_spaced_tokens(eng_tokens, first) {
+function html_spaced_tokens(first, eng_tokens) {
     for (let token of eng_tokens) {
         let spacer = html_element(first, 'span');
         html_inner_set(spacer, ' ');
