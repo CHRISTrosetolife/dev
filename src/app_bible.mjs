@@ -9,6 +9,7 @@ import { list_get } from './list_get.mjs';
 import { object_property_get } from './object_property_get.mjs';
 import { noop } from './noop.mjs';
 import { html_style } from './html_style.mjs';
+import { html_on_click } from './html_on_click.mjs';
 export function app_bible() {
     let root = document.body;
     let root_component = {element:root}
@@ -29,6 +30,7 @@ export function app_bible() {
     let data = bible_data_jas01();
     let {eng} = data;
     let {ceb} = data;
+    let {definitions} = data;
     assert(equal_by, [eng, ceb, list_length])
     let length = list_length(eng);
     for (let i of range(length)) {
@@ -50,7 +52,10 @@ export function app_bible() {
             'color': 'green',
         });
         html_spaced_tokens(second, ceb_tokens, (token_element, token) => {
-            
+            html_on_click(token_element, () => {
+                let d = object_property_get(definitions, token)
+                html_spaced_tokens(bottom, d, noop);
+            })
         });
     }
 }
