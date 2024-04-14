@@ -49,7 +49,9 @@ export function app_bible() {
         html_style(second, { 
             'color': 'green',
         });
-        html_spaced_tokens(second, ceb_tokens, noop);
+        html_spaced_tokens(second, ceb_tokens, (token_element, token) => {
+            
+        });
     }
 }
 
