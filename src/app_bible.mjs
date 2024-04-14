@@ -32,9 +32,9 @@ export function app_bible() {
             'font-weight': 'bold',
         });
         for (let token of eng_tokens) {
-            let spacer = html_element(first, 'span')
+            let spacer = html_element(first.element, 'span')
             html_inner_set(spacer, ' ');
-            let token_element = html_element(first, 'span')
+            let token_element = html_element(first.element, 'span')
             html_inner_set(token_element, token);
         }
         let second = html_element(verse.element, 'div');
