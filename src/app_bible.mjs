@@ -32,12 +32,16 @@ export function app_bible() {
         html_style(verse_number_element, { 
             'font-weight': 'bold',
         });
-        for (let token of eng_tokens) {
-            let spacer = html_element(first, 'span')
-            html_inner_set(spacer, ' ');
-            let token_element = html_element(first, 'span')
-            html_inner_set(token_element, token);
-        }
+        html_spaced_tokens(eng_tokens, first);
         let second = html_element(verse, 'div');
+    }
+}
+
+function html_spaced_tokens(eng_tokens, first) {
+    for (let token of eng_tokens) {
+        let spacer = html_element(first, 'span');
+        html_inner_set(spacer, ' ');
+        let token_element = html_element(first, 'span');
+        html_inner_set(token_element, token);
     }
 }
