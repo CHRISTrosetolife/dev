@@ -26,6 +26,8 @@ export function app_bible() {
         let first = html_element(verse, 'div');
         let eng_i = list_get(eng, i);
         let eng_tokens = object_property_get(eng_i, 'tokens');
+        let ceb_i = list_get(ceb, i);
+        let ceb_tokens = object_property_get(ceb_i, 'tokens');
         let verse_number = object_property_get(eng_i, 'verse_number');
         let verse_number_element = html_element(first, 'span')
         html_inner_set(verse_number_element, verse_number);
@@ -34,6 +36,7 @@ export function app_bible() {
         });
         html_spaced_tokens(first, eng_tokens);
         let second = html_element(verse, 'div');
+        html_spaced_tokens(second, ceb_tokens);
     }
 }
 
