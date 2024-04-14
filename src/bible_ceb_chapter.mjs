@@ -34,7 +34,6 @@ export async function bible_ceb_chapter(chapter_name) {
     let rawText = verses_ceb.rawText;
     let ceb = bible_verses_parse(rawText);
     assert(equal_by, [eng, ceb, list_length])
-    return eng;
     let symbols = [',', '1', '2', '.', ';', '“', '”', ':'];
     let words_unique = list_adder_unique(la => {
         for (let m of ceb) {
@@ -53,7 +52,7 @@ export async function bible_ceb_chapter(chapter_name) {
         let d = await ceb_definition(w);
         object_property_set(definitions, w, d);
     }
-    return definitions;
+    return {ceb,eng,definitions};
     let translations_path = path_join(['translations', 'ceb_en.txt']);
     let translations_read = await file_read(translations_path);
     let translations = string_split(translations_read, newline());
