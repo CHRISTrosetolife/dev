@@ -22,7 +22,7 @@ export function app_bible() {
     assert(equal_by, [eng, ceb, list_length])
     let length = list_length(eng);
     for (let i of range(length)) {
-        let verse = html_element(root, 'div');
+        let verse = html_element(root_component.element, 'div');
         let first = html_element(verse.element, 'div');
         let eng_i = list_get(eng, i);
         let eng_tokens = object_property_get(eng_i, 'tokens');
