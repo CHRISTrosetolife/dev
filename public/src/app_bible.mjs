@@ -10,6 +10,7 @@ import { object_property_get } from './object_property_get.mjs';
 import { noop } from './noop.mjs';
 import { html_style } from './html_style.mjs';
 import { html_on_click } from './html_on_click.mjs';
+import { string_case_lower } from './string_case_lower.mjs';
 export function app_bible() {
     let root = document.body;
     let root_component = {element:root}
@@ -54,7 +55,8 @@ export function app_bible() {
         html_spaced_tokens(second, ceb_tokens, (token_element, token) => {
             html_on_click(token_element, () => {
                 html_inner_set(bottom, '')
-                let d = object_property_get(definitions, token)
+                let lower = string_case_lower(token);
+                let d = object_property_get(definitions, lower)
                 html_spaced_tokens(bottom, d, noop);
             })
         });
