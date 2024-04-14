@@ -1,5 +1,5 @@
-import {list_includes} from './list_includes.mjs'
-import {list_add} from './list_add.mjs'
+import {list_includes} from './list_includes.mjs';
+import {list_add} from './list_add.mjs';
 export function list_adder_unique(lambda) {
     let result = [];
     lambda(item => {

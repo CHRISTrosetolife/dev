@@ -1,5 +1,6 @@
-import { generate } from 'astring'
-
+import {generate} from 'astring';
 export function js_unparse(ast) {
-    return generate(ast);
+    return generate(ast, {
+        indent: '    '
+    });
 }

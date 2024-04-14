@@ -1,6 +1,6 @@
-import {file_write} from './file_write.mjs';
+import {file_overwrite} from './file_overwrite.mjs';
 import {js_unparse} from './js_unparse.mjs';
 export async function file_js_unparse(file_name, ast) {
     let code = js_unparse(ast);
-    await file_write(file_name, code);
+    await file_overwrite(file_name, code);
 }
