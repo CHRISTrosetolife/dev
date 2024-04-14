@@ -29,18 +29,7 @@ export async function bible_ceb_chapter(chapter_name) {
         'cebulb_html', chapter_name);
     let verses_ceb = parsed_ceb.querySelector('.p');
     let rawText = verses_ceb.rawText;
-    let split = string_split(rawText, '  ');
-    let mapped = list_map(split, string_trim);
-    let mapped2 = list_map(mapped, m => {
-        let split = string_split(m, '&#160;');
-        let verse_number = list_get(split, 0);
-        let text = list_get(split, 1);
-        let tokens = text.split(' ');
-        return {
-            verse_number,
-            tokens
-        };
-    });
+    let mapped2 = bible_verses_parse(rawText);
     let symbols = [',', '1', '2', '.', ';', '“', '”', ':'];
     let words_unique = list_adder_unique(la => {
         for (let m of mapped2) {
@@ -77,4 +66,20 @@ export async function bible_ceb_chapter(chapter_name) {
         await file_write(translations_path, translations_read_combined);
     }
     return mapped5;
+}
+
+function bible_verses_parse(rawText) {
+    let split = string_split(rawText, '  ');
+    let mapped = list_map(split, string_trim);
+    let mapped2 = list_map(mapped, m => {
+        let split = string_split(m, '&#160;');
+        let verse_number = list_get(split, 0);
+        let text = list_get(split, 1);
+        let tokens = text.split(' ');
+        return {
+            verse_number,
+            tokens
+        };
+    });
+    return mapped2;
 }
