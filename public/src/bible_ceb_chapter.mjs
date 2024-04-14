@@ -24,7 +24,6 @@ import {list_length} from './list_length.mjs';
 import { json_to } from './json_to.mjs';
 import { function_new_generic } from './function_new_generic.mjs';
 import { js_code_return } from './js_code_return.mjs';
-import { bible_token_normalize } from '../../src/bible_token_normalize.mjs';
 export async function bible_ceb_chapter(chapter_name) {
     let parsed_bsb = await bible_chapter_parsed(
         'engbsb_html', chapter_name);
@@ -38,11 +37,13 @@ export async function bible_ceb_chapter(chapter_name) {
     let rawText = verses_ceb.rawText;
     let ceb = bible_verses_parse(rawText);
     assert(equal_by, [eng, ceb, list_length])
+    let symbols = [',', '1', '2', '.', ';', '“', '”', ':'];
     let words_unique = list_adder_unique(la => {
         for (let m of ceb) {
             let {tokens} = m;
             for (let token of tokens) {
-                let mapped4 = bible_token_normalize(token);
+                let mapped3 = string_case_lower(token);
+                let mapped4 = string_replace_multiple(mapped3, symbols, '');
                 if (mapped4.length >= 1) {
                     la(mapped4);
                 }
@@ -60,8 +61,6 @@ export async function bible_ceb_chapter(chapter_name) {
     await function_new_generic(fn_name, ``, body_string, false, []);
     return fn_name;
 }
-
-
 
 function bible_verses_parse(rawText) {
     let split = string_split(rawText, '  ');
