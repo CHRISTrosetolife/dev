@@ -19,8 +19,7 @@ import {string_combine_multiple} from './string_combine_multiple.mjs';
 import {ceb_definition} from './ceb_definition.mjs';
 import {object_property_set} from './object_property_set.mjs';
 export async function bible_ceb_chapter(chapter_name) {
-    let bible_folder = 'cebulb_html';
-    let parsed = await bible_chapter_parsed(bible_folder, chapter_name);
+    let parsed = await bible_chapter_parsed('cebulb_html', chapter_name);
     let verses = parsed.querySelector('.p');
     let rawText = verses.rawText;
     let split = string_split(rawText, '  ');
