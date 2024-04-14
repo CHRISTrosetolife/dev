@@ -20,8 +20,9 @@ import {ceb_definition} from './ceb_definition.mjs';
 import {folder_gitignore} from './folder_gitignore.mjs';
 import {object_property_set} from './object_property_set.mjs';
 export async function bible_ceb_chapter(chapter_name) {
+    let bible_folder = 'cebulb_html';
     let folder_gitignore_result = folder_gitignore();
-    let folder = path_join([folder_gitignore_result, 'cebulb_html']);
+    let folder = path_join([folder_gitignore_result, bible_folder]);
     let chapter_path = string_combine(chapter_name, '.htm');
     let joined = path_join([folder, chapter_path]);
     let read = await file_read(joined);
