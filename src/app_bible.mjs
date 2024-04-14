@@ -13,5 +13,8 @@ export function app_bible() {
     let length = list_length(eng);
     for (let i of range(length)) {
         let verse = html_element(root, 'div');
+        let first = html_element(verse, 'div');
+        html_inner_set(button_previous, 'previous');
+        let second = html_element(verse, 'div');
     }
 }
