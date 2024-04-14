@@ -1,3 +1,3 @@
-export function list_add_beginning(list, elemenmt) {
+export function list_add_beginning(list, element) {
 
 }
