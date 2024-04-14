@@ -10,5 +10,9 @@ export async function bible_chapter_parsed(bible_folder, chapter_name) {
     let joined = path_join([folder, chapter_path]);
     let read = await file_read(joined);
     let parsed = html_parse(read);
+    let notemarks = parsed.querySelectorAll('.notemark');
+    for (let n of notemarks) {
+        n.remove();
+    }
     return parsed;
 }
