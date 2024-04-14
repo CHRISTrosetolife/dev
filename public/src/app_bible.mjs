@@ -22,12 +22,12 @@ export function app_bible() {
     });
     let top = html_element(root_component, 'div');
     html_style(top, { 
-        'height': '75vh',
+        'height': '75%',
         'overflow-y': 'scroll',
     });
     let bottom = html_element(root_component, 'div');
     html_style(bottom, { 
-        'height': '25vh',
+        'height': '25%',
         'overflow-y': 'scroll',
         'background-color': 'lightgreen'
     });
