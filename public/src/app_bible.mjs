@@ -14,13 +14,11 @@ import { string_case_lower } from './string_case_lower.mjs';
 import { bible_token_normalize } from './bible_token_normalize.mjs';
 export function app_bible() {
     let root = document.body;
-    html_style(root, { 
-        'margin': '0',
-    });
     let root_component = {element:root}
     html_style(root_component, { 
         'font-family': 'Sans-Serif',
         'font-size': '5vh',
+        'margin': '0',
     });
     let top = html_element(root_component, 'div');
     html_style(top, { 
