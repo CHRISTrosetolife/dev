@@ -57,7 +57,10 @@ export function app_bible() {
                 html_inner_set(bottom, '')
                 let lower = string_case_lower(token);
                 let d = object_property_get(definitions, lower)
-                html_spaced_tokens(bottom, d, noop);
+                html_spaced_tokens(bottom, d, () => {
+                    let spacer = html_element(bottom, 'span');
+                    html_inner_set(spacer, ',');
+                });
             })
         });
     }
