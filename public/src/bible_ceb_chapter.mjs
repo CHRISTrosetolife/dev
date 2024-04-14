@@ -60,23 +60,6 @@ export async function bible_ceb_chapter(chapter_name) {
     const fn_name = `bible_data_${string_case_lower(chapter_name)}`;
     await function_new_generic(fn_name, ``, body_string, false, []);
     return fn_name;
-    let translations_path = path_join(['translations', 'ceb_en.txt']);
-    let translations_read = await file_read(translations_path);
-    let translations = string_split(translations_read, newline());
-    let existing = list_adder_unique(la => {
-        for (let translation of translations) {
-            let split2 = string_split(translation, ' ');
-            let first = list_get(split2, 0);
-            la(first);
-        }
-    });
-    let add = list_filter(words_unique, w => !list_includes(existing, w));
-    let mapped5 = list_map(add, a => string_combine_multiple([newline(), a, ' ']));
-    let translations_read_combined = string_combine(translations_read, list_join(mapped5, ''));
-    if (!equal(translations_read, translations_read_combined)) {
-        await file_write(translations_path, translations_read_combined);
-    }
-    return mapped5;
 }
 
 function bible_verses_parse(rawText) {

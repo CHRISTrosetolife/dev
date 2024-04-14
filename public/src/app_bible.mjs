@@ -25,8 +25,18 @@ export function app_bible() {
         let first = html_element(verse.element, 'div');
         let eng_i = list_get(eng, i);
         let eng_tokens = object_property_get(eng_i, 'tokens');
-        let first_text = list_join(eng_tokens, ' ')
-        html_inner_set(first, first_text);
+        let verse_number = object_property_get(eng_i, 'verse_number');
+        let verse_number_element = html_element(first, 'span')
+        html_inner_set(verse_number_element, verse_number);
+        html_style(verse_number_element, { 
+            'font-weight': 'bold',
+        });
+        for (let token of eng_tokens) {
+            let spacer = html_element(first, 'span')
+            html_inner_set(spacer, ' ');
+            let token_element = html_element(first, 'span')
+            html_inner_set(token_element, token);
+        }
         let second = html_element(verse.element, 'div');
     }
 }
