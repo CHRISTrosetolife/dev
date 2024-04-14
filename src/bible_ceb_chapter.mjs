@@ -30,10 +30,10 @@ export async function bible_ceb_chapter(chapter_name) {
         'cebulb_html', chapter_name);
     let verses_ceb = parsed_ceb.querySelector('.p');
     let rawText = verses_ceb.rawText;
-    let mapped2 = bible_verses_parse(rawText);
+    let ceb = bible_verses_parse(rawText);
     let symbols = [',', '1', '2', '.', ';', '“', '”', ':'];
     let words_unique = list_adder_unique(la => {
-        for (let m of mapped2) {
+        for (let m of ceb) {
             let {tokens} = m;
             for (let token of tokens) {
                 let mapped3 = string_case_lower(token);
