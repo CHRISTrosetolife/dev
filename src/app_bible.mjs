@@ -7,6 +7,7 @@ import { range } from './range.mjs';
 import { html_inner_set } from './html_inner_set.mjs';
 import { list_get } from './list_get.mjs';
 import { object_property_get } from './object_property_get.mjs';
+import { list_join } from './list_join.mjs';
 export function app_bible() {
     let root = document.body;
     let data = bible_data_jas01();
@@ -19,6 +20,7 @@ export function app_bible() {
         let first = html_element(verse, 'div');
         let eng_i = list_get(eng, i);
         let eng_tokens = object_property_get(eng_i, 'tokens');
+        let first_text = list_join(eng_tokens, ' ')
         html_inner_set(first, first_text);
         let second = html_element(verse, 'div');
     }
