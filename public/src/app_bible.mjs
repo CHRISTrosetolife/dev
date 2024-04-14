@@ -26,7 +26,7 @@ export function app_bible() {
         let eng_i = list_get(eng, i);
         let eng_tokens = object_property_get(eng_i, 'tokens');
         let verse_number = object_property_get(eng_i, 'verse_number');
-        let verse_number_element = html_element(first, 'span')
+        let verse_number_element = html_element(first.element, 'span')
         html_inner_set(verse_number_element, verse_number);
         html_style(verse_number_element, { 
             'font-weight': 'bold',
