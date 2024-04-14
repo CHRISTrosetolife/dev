@@ -37,11 +37,11 @@ export function app_bible() {
     }
 }
 
-function html_spaced_tokens(first, eng_tokens) {
-    for (let token of eng_tokens) {
-        let spacer = html_element(first, 'span');
+function html_spaced_tokens(parent, tokens) {
+    for (let token of tokens) {
+        let spacer = html_element(parent, 'span');
         html_inner_set(spacer, ' ');
-        let token_element = html_element(first, 'span');
+        let token_element = html_element(parent, 'span');
         html_inner_set(token_element, token);
     }
 }
