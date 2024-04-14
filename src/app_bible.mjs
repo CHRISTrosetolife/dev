@@ -22,22 +22,22 @@ export function app_bible() {
     assert(equal_by, [eng, ceb, list_length])
     let length = list_length(eng);
     for (let i of range(length)) {
-        let verse = html_element(root_component.element, 'div');
-        let first = html_element(verse.element, 'div');
+        let verse = html_element(root_component, 'div');
+        let first = html_element(verse, 'div');
         let eng_i = list_get(eng, i);
         let eng_tokens = object_property_get(eng_i, 'tokens');
         let verse_number = object_property_get(eng_i, 'verse_number');
-        let verse_number_element = html_element(first.element, 'span')
+        let verse_number_element = html_element(first, 'span')
         html_inner_set(verse_number_element, verse_number);
         html_style(verse_number_element, { 
             'font-weight': 'bold',
         });
         for (let token of eng_tokens) {
-            let spacer = html_element(first.element, 'span')
+            let spacer = html_element(first, 'span')
             html_inner_set(spacer, ' ');
-            let token_element = html_element(first.element, 'span')
+            let token_element = html_element(first, 'span')
             html_inner_set(token_element, token);
         }
-        let second = html_element(verse.element, 'div');
+        let second = html_element(verse, 'div');
     }
 }
