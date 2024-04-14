@@ -11,7 +11,8 @@ import { list_join } from './list_join.mjs';
 import { html_style } from './html_style.mjs';
 export function app_bible() {
     let root = document.body;
-    html_style({element:root}, { 
+    let root_component = {element:root}
+    html_style(root_component, { 
         'font-family': 'Sans-Serif',
         'font-size': '5vh',
     });
