@@ -21,6 +21,9 @@ import {object_property_set} from './object_property_set.mjs';
 export async function bible_ceb_chapter(chapter_name) {
     let parsed_bsb = await bible_chapter_parsed(
         'engbsb_html', chapter_name);
+    let verses_bsb = parsed_bsb.querySelectorAll('.s');
+    let mapped6 = list_map(verses_bsb, v => v.rawText);
+    return mapped6;
     let parsed_ceb = await bible_chapter_parsed(
         'cebulb_html', chapter_name);
     let verses_ceb = parsed_ceb.querySelector('.p');
