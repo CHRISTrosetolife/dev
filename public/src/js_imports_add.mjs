@@ -25,4 +25,7 @@ export async function js_imports_add(ast) {
         let first = js_parse_first(code);
         list_add_beginning(body, first)
     }
+    if (false) {
+        todo()
+    }
 }
