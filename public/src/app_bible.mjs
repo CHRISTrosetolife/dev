@@ -69,9 +69,7 @@ export function app_bible() {
     }
 }
 
-function html_document_body() {
-    return document.body;
-}
+
 
 function html_spaced_tokens(parent, tokens, each) {
     for (let token of tokens) {
