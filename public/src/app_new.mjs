@@ -1,8 +1,9 @@
+import {file_write} from "./file_write.mjs";
 import {folder_name_public} from "./folder_name_public.mjs";
 import {path_join} from "./path_join.mjs";
 import {js_code_call} from "./js_code_call.mjs";
 import {js_code_import} from "./js_code_import.mjs";
-export function app_new(name) {
+export async function app_new(name) {
     let html = `
     <!DOCTYPE html>
     <html>
@@ -20,4 +21,5 @@ export function app_new(name) {
     </html>        
 `;
     let output_path = path_join([folder_name_public(), `${name}.html`]);
+    await file_write(output_path, html);
 }
