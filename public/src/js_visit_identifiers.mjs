@@ -5,7 +5,10 @@ import {list_is} from "./list_is.mjs";
 import {null_is} from "./null_is.mjs";
 import {undefined_is} from "./undefined_is.mjs";
 export function js_visit_identifiers(ast, lambda) {
-    let type = 'Identifier';
+    js_visit_node(ast, 'Identifier', lambda);
+}
+
+function js_visit_node(ast, type, lambda) {
     visit(ast, n => {
         if (js_node_is(n)) {
             return object_values(n);
@@ -15,7 +18,7 @@ export function js_visit_identifiers(ast, lambda) {
         }
         return [];
     }, n => !null_is(n) && !undefined_is(n), v => {
-        let {node} = v;
+        let { node } = v;
         if (node.type !== type) {
             return;
         }
