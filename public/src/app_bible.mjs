@@ -13,7 +13,7 @@ import { html_on_click } from './html_on_click.mjs';
 import { string_case_lower } from './string_case_lower.mjs';
 import { bible_token_normalize } from './bible_token_normalize.mjs';
 export function app_bible() {
-    let root = document.body;
+    let root = html_document_body();
     let root_component = {element:root}
     html_style(root_component, { 
         'font-family': 'Sans-Serif',
@@ -67,6 +67,10 @@ export function app_bible() {
             })
         });
     }
+}
+
+function html_document_body() {
+    return document.body;
 }
 
 function html_spaced_tokens(parent, tokens, each) {
