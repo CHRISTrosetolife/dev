@@ -1,3 +1,4 @@
+import {function_new} from "./function_new.mjs";
 import {file_write} from "./file_write.mjs";
 import {folder_name_public} from "./folder_name_public.mjs";
 import {path_join} from "./path_join.mjs";
@@ -22,4 +23,5 @@ export async function app_new(name) {
 `;
     let output_path = path_join([folder_name_public(), `${name}.html`]);
     await file_write(output_path, html);
+    await function_new(name);
 }
