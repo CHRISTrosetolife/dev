@@ -1,3 +1,3 @@
-export function app_new() {
+export function app_new(name) {
 
 }
