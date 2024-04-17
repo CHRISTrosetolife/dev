@@ -5,7 +5,7 @@ import {function_names} from "./function_names.mjs";
 import {list_difference} from "./list_difference.mjs";
 import {js_export_single} from "./js_export_single.mjs";
 export async function js_imports_add(ast) {
-    let e = js_export_single(ast)
+    let e = js_export_single(ast);
     let existing = js_imports_existing(ast);
     let names = await function_names();
     let identifiers = js_identifiers(ast);
