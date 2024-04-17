@@ -23,14 +23,13 @@ export async function js_imports_add(ast) {
         missing_without_self
     });
     let {body} = ast;
+    console.log(body.length);
     for (let m of missing_without_self) {
         let code = js_code_import(m);
         let first = js_parse_first(code);
         list_add_beginning(body, first);
     }
-    console.log({
-        body
-    });
+    console.log(body.length);
     if (false) {
         todo();
     }
