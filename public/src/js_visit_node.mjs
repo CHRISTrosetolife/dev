@@ -5,6 +5,16 @@ import {list_is} from "./list_is.mjs";
 import {null_is} from "./null_is.mjs";
 import {undefined_is} from "./undefined_is.mjs";
 export function js_visit_node(ast, type, lambda) {
+    js_visit(ast, lambda_outer);
+    function lambda_outer(v) {
+        let {node} = v;
+        if (node.type !== type) {
+            return;
+        }
+        lambda(v);
+    }
+}
+function js_visit(ast, lambda_outer) {
     visit(ast, n => {
         if (js_node_is(n)) {
             return object_values(n);
@@ -14,11 +24,5 @@ export function js_visit_node(ast, type, lambda) {
         }
         return [];
     }, n => !null_is(n) && !undefined_is(n), lambda_outer);
-    function lambda_outer(v) {
-        let {node} = v;
-        if (node.type !== type) {
-            return;
-        }
-        lambda(v);
-    }
 }
+
