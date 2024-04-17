@@ -1,3 +1,6 @@
+import {folder_name_public} from "./folder_name_public.mjs";
+import {path_join} from "./path_join.mjs";
+import {js_code_call} from "./js_code_call.mjs";
 import {js_code_import} from "./js_code_import.mjs";
 export function app_new(name) {
     let html = `
@@ -16,5 +19,5 @@ export function app_new(name) {
       </body>
     </html>        
 `;
-    let output_path = path_join
+    let output_path = path_join([folder_name_public(), `${name}.html`]);
 }
