@@ -19,9 +19,10 @@ export async function js_imports_add(ast) {
     let self = [name];
     let missing_without_self = list_difference(missing, self);
     for (let m of missing_without_self) {}
-    let c = js_code_import('test');
-    let d = js_parse(c);
+    let code = js_code_import('test');
+    let parsed = js_parse(code);
+    let {body} = parsed;
     console.log({
-        d
+        body
     });
 }
