@@ -23,9 +23,9 @@ export async function js_imports_add(ast) {
     for (let m of missing_without_self) {
         let code = js_code_import(m);
         let first = js_parse_first(code);
-        list_add_beginning(body, first)
+        list_add_beginning(body, first);
     }
     if (false) {
-        todo()
+        todo();
     }
 }
