@@ -5,8 +5,7 @@ import {string_suffix_without} from './string_suffix_without.mjs';
 import {string_replace} from './string_replace.mjs';
 import {folder_read} from './folder_read.mjs';
 export async function function_names() {
-    if (false) folder_path_src();
-    let prefix = `public/src/`;
+    let prefix = folder_path_src();
     let suffix = '.mjs';
     let files = await folder_read(prefix, suffix);
     let mapped = list_map(files, file_path => {
