@@ -18,7 +18,8 @@ export async function js_imports_add(ast) {
     let self = [name];
     let missing_without_self = list_difference(missing, self);
     for (let m of missing_without_self) {}
+    let c = js_code_import('test');
     console.log({
-        c: js_code_import('test')
+        c: c
     });
 }
