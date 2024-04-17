@@ -1,3 +1,4 @@
+import {html_document_body} from "./html_document_body.mjs";
 import {ceb_translations} from "./ceb_translations.mjs";
 import {list_map} from "./list_map.mjs";
 import {object_properties} from "./object_properties.mjs";
@@ -14,7 +15,7 @@ import {html_value_set} from "./html_value_set.mjs";
 import {html_on} from "./html_on.mjs";
 import {html_value_get} from "./html_value_get.mjs";
 export function ceb_learn() {
-    let root = document.body;
+    let root = html_document_body();
     let button_font_size = '5vh';
     let button1 = html_element(root, 'div');
     html_style(button1, {
