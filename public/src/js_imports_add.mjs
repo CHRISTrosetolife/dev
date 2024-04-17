@@ -17,6 +17,6 @@ export async function js_imports_add(ast) {
     let self = [name];
     let missing_without_self = list_difference(missing, self);
     console.log({
-        missing
+        missing_without_self
     });
 }
