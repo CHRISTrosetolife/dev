@@ -13,12 +13,12 @@ export async function js_imports_add(ast) {
     let {declaration} = e;
     let {id} = declaration;
     let {name} = id;
+    let self = [name];
     let existing = js_imports_existing(ast);
     let names = await function_names();
     let identifiers = js_identifiers(ast);
     let identifier_fns = list_intersect(identifiers, names);
     let missing = list_difference(identifier_fns, existing);
-    let self = [name];
     let missing_without_self = list_difference(missing, self);
     let {body} = ast;
     for (let m of missing_without_self) {
