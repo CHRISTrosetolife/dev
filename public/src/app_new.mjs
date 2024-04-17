@@ -16,4 +16,5 @@ export function app_new(name) {
       </body>
     </html>        
 `;
+    let output_path = path_join
 }
