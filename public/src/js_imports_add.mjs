@@ -7,14 +7,15 @@ import {js_export_single} from "./js_export_single.mjs";
 export async function js_imports_add(ast) {
     let e = js_export_single(ast);
     let {declaration} = e;
-    console.log({
-        declaration
-    });
+    let {id} = declaration;
+    let {name} = id;
     let existing = js_imports_existing(ast);
     let names = await function_names();
     let identifiers = js_identifiers(ast);
     let identifier_fns = list_intersect(identifiers, names);
     let missing = list_difference(identifier_fns, existing);
+    let self = [name];
+    let missing_without_self = list_difference(missing, self);
     console.log({
         missing
     });
