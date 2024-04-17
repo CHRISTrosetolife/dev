@@ -1,10 +1,10 @@
-import {js_visit_identifiers} from './js_visit_identifiers.mjs'
-import { list_adder } from './list_adder.mjs'
+import {js_visit_identifiers} from './js_visit_identifiers.mjs';
+import {list_adder_unique} from './list_adder_unique.mjs';
 export function js_identifiers(ast) {
-    return list_adder(la => {
+    return list_adder_unique(la => {
         js_visit_identifiers(ast, v => {
             let {node} = v;
             la(node);
-        })
-    })
+        });
+    });
 }
