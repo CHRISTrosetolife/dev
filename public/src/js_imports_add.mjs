@@ -6,8 +6,6 @@ import {list_difference} from "./list_difference.mjs";
 import {js_export_single} from "./js_export_single.mjs";
 import {js_code_import} from "./js_code_import.mjs";
 import {js_parse_first} from "./js_parse_first.mjs";
-
-
 export async function js_imports_add(ast) {
     let e = js_export_single(ast);
     let {declaration} = e;
@@ -27,5 +25,3 @@ export async function js_imports_add(ast) {
         first
     });
 }
-
-
