@@ -1,3 +1,3 @@
-export function folder_name_src() {
-    return 'src';
+export function folder_name_public() {
+    return 'public';
 }
