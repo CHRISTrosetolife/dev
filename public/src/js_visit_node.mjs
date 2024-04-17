@@ -13,11 +13,12 @@ export function js_visit_node(ast, type, lambda) {
             return n;
         }
         return [];
-    }, n => !null_is(n) && !undefined_is(n), function lambda_outer(v) {
+    }, n => !null_is(n) && !undefined_is(n), lambda_outer);
+    function lambda_outer(v) {
         let {node} = v;
         if (node.type !== type) {
             return;
         }
         lambda(v);
-    });
+    }
 }
