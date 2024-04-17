@@ -20,18 +20,10 @@ export async function js_imports_add(ast) {
     let missing = list_difference(identifier_fns, existing);
     let self = [name];
     let missing_without_self = list_difference(missing, self);
-    console.log({
-        missing_without_self
-    });
     let {body} = ast;
-    console.log(body.length);
     for (let m of missing_without_self) {
         let code = js_code_import(m);
         let first = js_parse_first(code);
         list_add_beginning(body, first);
-    }
-    console.log(body.length);
-    if (false) {
-        todo();
     }
 }
