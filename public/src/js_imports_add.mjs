@@ -6,6 +6,7 @@ import {list_difference} from "./list_difference.mjs";
 import {js_export_single} from "./js_export_single.mjs";
 import {js_code_import} from "./js_code_import.mjs";
 import {js_parse} from "./js_parse.mjs";
+import {list_first} from "./list_first.mjs";
 export async function js_imports_add(ast) {
     let e = js_export_single(ast);
     let {declaration} = e;
@@ -22,7 +23,8 @@ export async function js_imports_add(ast) {
     let code = js_code_import('test');
     let parsed = js_parse(code);
     let {body} = parsed;
+    let first = list_first(body);
     console.log({
-        body
+        first
     });
 }
