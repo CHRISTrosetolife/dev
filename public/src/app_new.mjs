@@ -16,7 +16,7 @@ export async function app_new(name) {
       <body>
         <script type="module">
           ${js_code_import(name)}
-          ${js_code_call(name)};
+          ${js_code_call(name)}
         </script>
       </body>
     </html>        
