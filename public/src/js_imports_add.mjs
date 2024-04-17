@@ -5,8 +5,9 @@ import {function_names} from "./function_names.mjs";
 import {list_difference} from "./list_difference.mjs";
 import {js_export_single} from "./js_export_single.mjs";
 import {js_code_import} from "./js_code_import.mjs";
-import {js_parse} from "./js_parse.mjs";
-import {list_first} from "./list_first.mjs";
+import {js_parse_first} from "./js_parse_first.mjs";
+
+
 export async function js_imports_add(ast) {
     let e = js_export_single(ast);
     let {declaration} = e;
@@ -21,10 +22,10 @@ export async function js_imports_add(ast) {
     let missing_without_self = list_difference(missing, self);
     for (let m of missing_without_self) {}
     let code = js_code_import('test');
-    let parsed = js_parse(code);
-    let {body} = parsed;
-    let first = list_first(body);
+    let first = js_parse_first(code);
     console.log({
         first
     });
 }
+
+
