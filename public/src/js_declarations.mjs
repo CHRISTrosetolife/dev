@@ -4,7 +4,7 @@ export function js_declarations(ast) {
     return list_adder_unique(la => {
         js_visit_node(ast, 'ExportNamedDeclaration', v => {
             let {node} = v;
-            la(node.name);
+            la(node);
         });
     });
 }
