@@ -1,8 +1,14 @@
+import {function_new_generic} from "./function_new_generic.mjs";
+import {js_declaration_to_name} from "./js_declaration_to_name.mjs";
 import {list_filter} from "./list_filter.mjs";
 import {js_exports} from "./js_exports.mjs";
 export function js_outside_move(ast) {
     let {body} = ast;
     let declarations = list_filter(body, b => b.type === 'FunctionDeclaration');
+    for (let declaration of declarations) {
+        let name = js_declaration_to_name(declaration);
+        function_new_generic(function_name, '', '', true, []);
+    }
     console.log({
         declarations
     });
