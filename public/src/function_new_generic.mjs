@@ -13,7 +13,7 @@ ${body_string}
     let mapped = list_map(imports, js_code_import);
     let concat = list_concat(mapped, [contents_function]);
     let contents = list_join(concat, newline());
-    const file_path = function_name_to_path(function_name);
+    let file_path = function_name_to_path(function_name);
     await file_new(file_path, contents);
     if (open) {
         await file_open(file_path);
