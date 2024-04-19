@@ -9,6 +9,7 @@ export function js_return_variablize(ast) {
     let return_statements = js_node_type_visitor(ast, 'ReturnStatement');
     for (let r of return_statements) {
         let {parent} = r;
+        assert(list_is, [parent])
         console.log({r})
     }
 }
