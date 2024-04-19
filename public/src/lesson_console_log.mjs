@@ -4,7 +4,9 @@ export function lesson_console_log() {
         screens: [parent => {
             let text = 'a computer program has three parts :';
             html_span_text(parent, text);
-            ' (1) an input , (2) a process and (3) an output';
+            ' (1) an input ,'; 
+            '(2) a process and ';
+            '(3) an output';
         }]
     };
 }
