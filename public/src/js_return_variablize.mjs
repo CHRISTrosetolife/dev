@@ -9,6 +9,7 @@ import {js_visit_node} from "./js_visit_node.mjs";
 import {list_adder} from "./list_adder.mjs";
 import { list_index } from "./list_index.mjs";
 import { js_code_statement } from "./js_code_statement.mjs";
+import { js_parse } from "./js_parse.mjs";
 export function js_return_variablize(ast) {
     let return_statements = js_node_type_visitor(ast, 'ReturnStatement');
     for (let r of return_statements) {
@@ -16,6 +17,7 @@ export function js_return_variablize(ast) {
         assert(list_is, [parent]);
         let index = list_index(parent, r);
         let code = js_code_statement(`let ${variable_name} = 0;`)
+        let parsed = js_parse(code);
         parent.splice(index, 0, s);
         console.log({
             r
