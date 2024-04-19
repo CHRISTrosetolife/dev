@@ -1,3 +1,4 @@
+import {list_join_comma} from "./list_join_comma.mjs";
 import {list_remove} from "./list_remove.mjs";
 import {js_parse} from "./js_parse.mjs";
 import {js_unparse} from "./js_unparse.mjs";
@@ -22,8 +23,7 @@ export async function js_outside_move(ast) {
         let parsed = js_parse(``);
         parsed.body = body2;
         let unparsed = js_unparse(parsed);
-        await function_new_generic(
-            function_name, args_string, unparsed, false, []);
+        await function_new_generic(function_name, args_string, unparsed, false, []);
         list_remove(declarations, declaration);
     }
 }
