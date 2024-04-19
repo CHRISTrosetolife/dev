@@ -8,7 +8,8 @@ export async function js_outside_move(ast) {
     for (let declaration of declarations) {
         let function_name = js_declaration_to_name(declaration);
         console.log({
-            function_name
+            function_name,
+            declaration
         });
         continue;
         await function_new_generic(function_name, '', '', false, []);
