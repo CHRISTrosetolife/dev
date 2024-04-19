@@ -43,10 +43,7 @@ export function js_return_variablize(ast) {
         let first = list_first(declarations)
         first.init = node.argument
         let parsed2 = js_parse_expression(variable_name);
-        console.log({
-            node
-        });
-        error()
+        node.argument = parsed2
     }
 }
 function js_parse_expression(variable_name) {
