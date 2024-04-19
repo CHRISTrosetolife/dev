@@ -36,7 +36,7 @@ export function js_return_variablize(ast) {
         parent.splice(index, 0, parsed);
         node.argument
         console.log({
-           a: node
+           parsed
         });
         error()
     }
