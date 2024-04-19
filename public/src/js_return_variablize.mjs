@@ -24,7 +24,7 @@ export function js_return_variablize(ast) {
         let variable_name;
         while (true) {
             variable_name = string_combine('v', i);
-            if (!list_includes(identifiers, v)) {
+            if (!list_includes(identifiers, variable_name)) {
                 break;
             }
         }
