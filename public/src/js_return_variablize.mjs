@@ -1,3 +1,4 @@
+import {js_parse_expression} from "./js_parse_expression.mjs";
 import {list_is} from "./list_is.mjs";
 import {assert} from "./assert.mjs";
 import {js_node_type_visitor} from "./js_node_type_visitor.mjs";
@@ -45,10 +46,4 @@ export function js_return_variablize(ast) {
         let parsed2 = js_parse_expression(variable_name);
         node.argument = parsed2;
     }
-}
-function js_parse_expression(variable_name) {
-    const identifier_code = js_code_statement(variable_name);
-    let parsed2 = js_parse_first(identifier_code);
-    let {expression} = parsed2;
-    return parsed2;
 }
