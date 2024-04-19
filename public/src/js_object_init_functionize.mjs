@@ -15,6 +15,7 @@ export function js_object_init_functionize(ast) {
         let {init} = node;
         let {properties} = init;
         for (let p of properties) {
+            let {key,value} = p;
             console.log({p})
         }
     }
