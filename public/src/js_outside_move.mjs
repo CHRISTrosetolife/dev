@@ -14,9 +14,8 @@ import {list_join} from "./list_join.mjs";
 export async function js_outside_move(ast) {
     const type = 'FunctionDeclaration';
     let {body: body_ast} = ast;
-    let {body: body_ast2} = ast;
     let declarations = list_filter(
-        body_ast2, b => b.type === type
+        body_ast, b => b.type === type
     );
     let copy = list_copy(declarations);
     for (let declaration of copy) {
