@@ -6,7 +6,8 @@ import {js_declaration_to_name} from "./js_declaration_to_name.mjs";
 import {list_filter} from "./list_filter.mjs";
 import {js_exports} from "./js_exports.mjs";
 import {list_copy} from "./list_copy.mjs";
-import { list_map } from "./list_map.mjs";
+import {list_map} from "./list_map.mjs";
+import {list_join} from "./list_join.mjs";
 export async function js_outside_move(ast) {
     let {body} = ast;
     let declarations = list_filter(body, b => b.type === 'FunctionDeclaration');
@@ -15,6 +16,7 @@ export async function js_outside_move(ast) {
         let function_name = js_declaration_to_name(declaration);
         let {params} = declaration;
         let args = list_map(params, p => p.name);
+        let args_string = list_join_comma(args);
         let {body} = declaration;
         let {body: body2} = body;
         let parsed = js_parse(``);
