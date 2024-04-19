@@ -23,7 +23,7 @@ export function app_bible() {
         'font-size': '5vh',
         'margin': '0'
     });
-    let top = html_element(root_component, 'div');
+    let top = html_div(root_component);
     html_style(top, {
         'height': '75vh',
         'overflow-y': 'scroll'
@@ -71,6 +71,10 @@ export function app_bible() {
         });
     }
 }
+function html_div(root_component) {
+    return html_element(root_component, 'div');
+}
+
 function html_spaced_tokens(parent, tokens, each) {
     for (let token of tokens) {
         let spacer = html_element(parent, 'span');
