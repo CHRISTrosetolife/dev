@@ -16,6 +16,7 @@ import { list_includes } from "./list_includes.mjs";
 import { js_parse_first } from "./js_parse_first.mjs";
 import { error } from "./error.mjs";
 import { js_unparse } from "./js_unparse.mjs";
+import { list_first } from "./list_first.mjs";
 export function js_return_variablize(ast) {
     let return_statements = js_node_type_visitor(ast, 'ReturnStatement');
     for (let r of return_statements) {
@@ -34,9 +35,11 @@ export function js_return_variablize(ast) {
         const code = `let ${variable_name} = 0;`;
         let parsed = js_parse_first(code)
         parent.splice(index, 0, parsed);
-        node.argument
+        let {declarations} = parsed
+        let first = list_first(declarations)
+        first.init = node.argument
         console.log({
-           parsed
+            first
         });
         error()
     }
