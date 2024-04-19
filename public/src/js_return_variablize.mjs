@@ -44,10 +44,6 @@ export function js_return_variablize(ast) {
         first.init = node.argument
         let parsed2 = js_parse_expression(variable_name);
         node.argument = parsed2
-        console.log({
-            parent
-        });
-        error()
     }
 }
 function js_parse_expression(variable_name) {

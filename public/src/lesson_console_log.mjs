@@ -3,7 +3,7 @@ import {html_element} from "./html_element.mjs";
 import {html_inner_set} from "./html_inner_set.mjs";
 import {html_span_text} from "./html_span_text.mjs";
 export function lesson_console_log() {
-    return {
+    let v1 = {
         description: 'outputting a string to the console',
         screens: [parent => {
             let text = 'a computer program has three parts :';
@@ -14,4 +14,6 @@ export function lesson_console_log() {
             html_li_text(ol, 'an output');
         }]
     };
+    return v1;
+    ;
 }
