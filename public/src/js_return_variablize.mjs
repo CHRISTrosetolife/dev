@@ -20,7 +20,11 @@ import { list_first } from "./list_first.mjs";
 export function js_return_variablize(ast) {
     let return_statements = js_node_type_visitor(ast, 'ReturnStatement');
     for (let r of return_statements) {
-        let {parent,node} = r;
+        let {node} = r;
+        if (node.argument.type === 'Identifier') {
+            continue;
+        }
+        let {parent} = r;
         assert(list_is, [parent]);
         let index = list_index(parent, node);
         let identifiers = js_identifiers(ast);
@@ -40,7 +44,7 @@ export function js_return_variablize(ast) {
         first.init = node.argument
         let parsed2 = js_parse_expression(variable_name);
         console.log({
-            parsed2
+            node
         });
         error()
     }
