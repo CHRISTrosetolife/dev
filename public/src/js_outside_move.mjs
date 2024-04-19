@@ -11,8 +11,9 @@ export async function js_outside_move(ast) {
         let function_name = js_declaration_to_name(declaration);
         let {body} = declaration;
         let parsed = js_parse(``);
-        parsed.body = body;
+       // parsed.body = body;
         console.log({
+            parsed,
             function_name,
             d: js_unparse(parsed)
         });
