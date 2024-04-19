@@ -10,10 +10,12 @@ export async function js_outside_move(ast) {
     for (let declaration of declarations) {
         let function_name = js_declaration_to_name(declaration);
         let {body} = declaration;
-        let {body:body2} = body;
+        let {body: body2} = body;
+        let parsed = js_parse(``);
+        parsed.body = body2;
         console.log({
             function_name,
-            d: body2
+            d: js_unparse(parsed)
         });
         continue;
         await function_new_generic(function_name, '', '', false, []);
