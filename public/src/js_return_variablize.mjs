@@ -24,14 +24,14 @@ export function js_return_variablize(ast) {
         let variable_name;
         while (true) {
             variable_name = string_combine('v', i);
-            if (list_includes(identifiers, v)) {
-                
+            if (!list_includes(identifiers, v)) {
+                break;
             }
         }
         let code = js_code_statement(`let ${variable_name} = 0;`)
         let parsed = js_parse(code);
         if (0)
-        parent.splice(index, 0, s);
+        parent.splice(index, 0, variable_name);
         console.log({
             r,
             parsed
