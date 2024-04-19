@@ -8,9 +8,10 @@ export async function js_outside_move(ast) {
     let declarations = list_filter(body, b => b.type === 'FunctionDeclaration');
     for (let declaration of declarations) {
         let function_name = js_declaration_to_name(declaration);
+        let {body} = declaration
         console.log({
             function_name,
-            d: js_unparse(declaration)
+            d: js_unparse(body)
         });
         continue;
         await function_new_generic(function_name, '', '', false, []);
