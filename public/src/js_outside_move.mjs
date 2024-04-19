@@ -1,3 +1,4 @@
+import {js_unparse} from "./js_unparse.mjs";
 import {function_new_generic} from "./function_new_generic.mjs";
 import {js_declaration_to_name} from "./js_declaration_to_name.mjs";
 import {list_filter} from "./list_filter.mjs";
@@ -9,7 +10,7 @@ export async function js_outside_move(ast) {
         let function_name = js_declaration_to_name(declaration);
         console.log({
             function_name,
-            declaration
+            d: js_unparse(declaration)
         });
         continue;
         await function_new_generic(function_name, '', '', false, []);
