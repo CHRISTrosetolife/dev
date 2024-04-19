@@ -9,9 +9,9 @@ export function lesson_console_log() {
             let text = 'a computer program has three parts :';
             html_span_text(parent, text);
             let ol = html_element(parent, 'ol');
-            html_li_text(ol, '(1) an input ,');
-            '(2) a process and';
-            '(3) an output';
+            html_li_text(ol, 'an input ,');
+            html_li_text(ol, 'a process and');
+            html_li_text(ol, 'an output');
         }]
     };
 }
