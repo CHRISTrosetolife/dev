@@ -11,5 +11,6 @@ export function js_return_variablize(ast) {
             la(node);
         });
     });
+    return_statements;
     return js_node_types(ast);
 }
