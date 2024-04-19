@@ -29,6 +29,7 @@ export async function js_outside_move(ast) {
         await function_imports_add(function_name);
         list_remove(body_ast, declaration);
     }
+    await js_imports_add(ast);
 }
 async function function_imports_add(function_name) {
     await function_transform(js_imports_add.name, function_name, 'a');
