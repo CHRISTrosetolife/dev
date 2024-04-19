@@ -11,6 +11,8 @@ import { list_index } from "./list_index.mjs";
 import { js_code_statement } from "./js_code_statement.mjs";
 import { js_parse } from "./js_parse.mjs";
 import { js_identifiers } from "./js_identifiers.mjs";
+import { string_combine } from "./string_combine.mjs";
+import { list_includes } from "./list_includes.mjs";
 export function js_return_variablize(ast) {
     let return_statements = js_node_type_visitor(ast, 'ReturnStatement');
     for (let r of return_statements) {
@@ -18,6 +20,14 @@ export function js_return_variablize(ast) {
         assert(list_is, [parent]);
         let index = list_index(parent, node);
         let identifiers = js_identifiers(ast);
+        let i = 1;
+        let variable_name;
+        while (true) {
+            variable_name = string_combine('v', i);
+            if (list_includes(identifiers, v)) {
+                
+            }
+        }
         let code = js_code_statement(`let ${variable_name} = 0;`)
         let parsed = js_parse(code);
         if (0)
