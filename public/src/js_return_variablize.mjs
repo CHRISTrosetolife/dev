@@ -8,7 +8,6 @@ import {list_adder} from "./list_adder.mjs";
 export function js_return_variablize(ast) {
     let return_statements = js_node_type_visitor(ast, 'ReturnStatement');
     for (let r of return_statements) {
-        
+        console.log({r})
     }
-    return js_node_types(ast);
 }
