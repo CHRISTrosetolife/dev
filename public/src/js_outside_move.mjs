@@ -12,6 +12,7 @@ export async function js_outside_move(ast) {
     let copy = list_copy(declarations);
     for (let declaration of copy) {
         let function_name = js_declaration_to_name(declaration);
+        let {params} = declaration;
         let {body} = declaration;
         let {body: body2} = body;
         let parsed = js_parse(``);
