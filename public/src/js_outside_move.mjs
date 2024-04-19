@@ -18,6 +18,6 @@ export async function js_outside_move(ast) {
         parsed.body = body2;
         let unparsed = js_unparse(parsed);
         await function_new_generic(function_name, '', unparsed, false, []);
-        list_remove(body, declaration);
+        list_remove(declarations, declaration);
     }
 }
