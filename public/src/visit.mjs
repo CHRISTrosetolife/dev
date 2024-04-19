@@ -3,7 +3,8 @@ export function visit(root, children_get, filter, each) {
     for (let node of children) {
         if (filter(node)) {
             each({
-                node
+                node,
+                parent: root
             });
             visit(node, children_get, filter, each);
         }
