@@ -13,8 +13,10 @@ import {list_map} from "./list_map.mjs";
 import {list_join} from "./list_join.mjs";
 export async function js_outside_move(ast) {
     let {body: body_ast} = ast;
+    const type = 'FunctionDeclaration';
     let declarations = list_filter(
-        body_ast, b => b.type === 'FunctionDeclaration');
+        body_ast, b => b.type === type
+    );
     let copy = list_copy(declarations);
     for (let declaration of copy) {
         let function_name = js_declaration_to_name(declaration);
