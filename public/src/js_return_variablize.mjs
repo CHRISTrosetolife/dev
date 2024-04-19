@@ -39,6 +39,7 @@ export function js_return_variablize(ast) {
         let first = list_first(declarations)
         first.init = node.argument
         const identifier_code = js_code_statement(variable_name);
+        let parsed2 = js_parse_first(code)
         console.log({
             first
         });
