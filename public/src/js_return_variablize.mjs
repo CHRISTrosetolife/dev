@@ -32,7 +32,7 @@ export function js_return_variablize(ast) {
                 break;
             }
         }
-        const code = `let ${variable_name} = 0;`;
+        const code = js_code_statement(`let ${variable_name} = 0`);
         let parsed = js_parse_first(code)
         parent.splice(index, 0, parsed);
         let {declarations} = parsed
