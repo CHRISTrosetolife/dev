@@ -13,6 +13,6 @@ export function js_object_init_functionize(ast) {
     for (let v of vs) {
         let {node} = v;
         let {init} = node;
-
+        console.log({init})
     }
 }
