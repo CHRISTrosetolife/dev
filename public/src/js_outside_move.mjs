@@ -9,13 +9,14 @@ import {list_copy} from "./list_copy.mjs";
 export async function js_outside_move(ast) {
     let {body} = ast;
     let declarations = list_filter(body, b => b.type === 'FunctionDeclaration');
-    for (let declaration of declarations) {
+    let copy = list_copy(declarations);
+    for (let declaration of copy) {
         let function_name = js_declaration_to_name(declaration);
         let {body} = declaration;
         let {body: body2} = body;
         let parsed = js_parse(``);
         parsed.body = body2;
-        await function_new_generic(function_name, '', '', false, []);
+        await function_new_generic(function_name, '', 0, false, []);
         list_remove(body, declaration);
     }
 }
