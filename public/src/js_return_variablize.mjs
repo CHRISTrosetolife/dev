@@ -7,5 +7,8 @@ import {js_visit_node} from "./js_visit_node.mjs";
 import {list_adder} from "./list_adder.mjs";
 export function js_return_variablize(ast) {
     let return_statements = js_node_type_visitor(ast, 'ReturnStatement');
+    for (let r of return_statements) {
+        
+    }
     return js_node_types(ast);
 }
