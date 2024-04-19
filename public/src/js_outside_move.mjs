@@ -10,7 +10,7 @@ import {list_copy} from "./list_copy.mjs";
 import {list_map} from "./list_map.mjs";
 import {list_join} from "./list_join.mjs";
 export async function js_outside_move(ast) {
-    let {body} = ast;
+    let {body: body_ast} = ast;
     let declarations = list_filter(body, b => b.type === 'FunctionDeclaration');
     let copy = list_copy(declarations);
     for (let declaration of copy) {
@@ -24,6 +24,6 @@ export async function js_outside_move(ast) {
         parsed.body = body2;
         let unparsed = js_unparse(parsed);
         await function_new_generic(function_name, args_string, unparsed, false, []);
-        list_remove(body, declaration);
+        list_remove(body_ast, declaration);
     }
 }
