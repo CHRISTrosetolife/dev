@@ -12,7 +12,7 @@ export async function js_imports_add(ast) {
     let e = js_export_single(ast);
     let {declaration} = e;
     let {id} = declaration;
-    let {name} = id;
+    let name = id.name;
     let self = [name];
     let existing = js_imports_existing(ast);
     let names = await function_names();
