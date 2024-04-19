@@ -1,3 +1,5 @@
+import {js_imports_add} from "./js_imports_add.mjs";
+import {function_transform} from "./function_transform.mjs";
 import {list_join_comma} from "./list_join_comma.mjs";
 import {list_remove} from "./list_remove.mjs";
 import {js_parse} from "./js_parse.mjs";
@@ -24,7 +26,7 @@ export async function js_outside_move(ast) {
         parsed.body = body2;
         let unparsed = js_unparse(parsed);
         await function_new_generic(function_name, args_string, unparsed, false, []);
-        await function_transform(js_imports_add.name, function_name, 'a')
+        await function_transform(js_imports_add.name, function_name, 'a');
         list_remove(body_ast, declaration);
     }
 }
