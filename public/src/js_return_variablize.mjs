@@ -14,6 +14,8 @@ import { js_identifiers } from "./js_identifiers.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { js_parse_first } from "./js_parse_first.mjs";
+import { error } from "./error.mjs";
+import { js_unparse } from "./js_unparse.mjs";
 export function js_return_variablize(ast) {
     let return_statements = js_node_type_visitor(ast, 'ReturnStatement');
     for (let r of return_statements) {
@@ -31,11 +33,11 @@ export function js_return_variablize(ast) {
         }
         const code = `let ${variable_name} = 0;`;
         let parsed = js_parse_first(code)
-        if (0)
-        parent.splice(index, 0, variable_name);
+        parent.splice(index, 0, parsed);
+        node.argument
         console.log({
-            r,
-            parsed
+           a: node
         });
+        error()
     }
 }
