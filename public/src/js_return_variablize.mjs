@@ -14,6 +14,8 @@ export function js_return_variablize(ast) {
         let {parent} = r;
         assert(list_is, [parent]);
         let index = list_index(parent, r);
+        
+        parent.splice(index, 0, s);
         console.log({
             r
         });
