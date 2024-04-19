@@ -1,3 +1,5 @@
+import {list_is} from "./list_is.mjs";
+import {assert} from "./assert.mjs";
 import {js_node_type_visitor} from "./js_node_type_visitor.mjs";
 import {js_node_type} from "./js_node_type.mjs";
 import {list_adder_unique} from "./list_adder_unique.mjs";
@@ -9,7 +11,9 @@ export function js_return_variablize(ast) {
     let return_statements = js_node_type_visitor(ast, 'ReturnStatement');
     for (let r of return_statements) {
         let {parent} = r;
-        assert(list_is, [parent])
-        console.log({r})
+        assert(list_is, [parent]);
+        console.log({
+            r
+        });
     }
 }
