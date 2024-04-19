@@ -71,16 +71,3 @@ export function app_bible() {
         });
     }
 }
-function html_div(root_component) {
-    return html_element(root_component, 'div');
-}
-
-function html_spaced_tokens(parent, tokens, each) {
-    for (let token of tokens) {
-        let spacer = html_element(parent, 'span');
-        html_inner_set(spacer, ' ');
-        let token_element = html_element(parent, 'span');
-        html_inner_set(token_element, token);
-        each(token_element, token);
-    }
-}
