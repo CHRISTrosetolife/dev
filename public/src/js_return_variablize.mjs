@@ -38,11 +38,17 @@ export function js_return_variablize(ast) {
         let {declarations} = parsed
         let first = list_first(declarations)
         first.init = node.argument
-        const identifier_code = js_code_statement(variable_name);
-        let parsed2 = js_parse_first(identifier_code)
+        let parsed2 = js_parse_expression(variable_name);
         console.log({
-            first
+            parsed2
         });
         error()
     }
 }
+function js_parse_expression(variable_name) {
+    const identifier_code = js_code_statement(variable_name);
+    let parsed2 = js_parse_first(identifier_code);
+    let { expression } = parsed2;
+    return parsed2;
+}
+
