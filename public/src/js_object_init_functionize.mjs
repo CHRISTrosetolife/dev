@@ -8,12 +8,11 @@ export function js_object_init_functionize(ast) {
             if (init.type === 'ObjectExpression') {
                 la(v);
             }
-            console.log({
-                init
-            });
         });
     });
     for (let v of vs) {
+        let {node} = v;
+        let {init} = node;
 
     }
 }
