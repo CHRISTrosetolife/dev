@@ -18,6 +18,7 @@ export function js_return_variablize(ast) {
         let index = list_index(parent, r);
         let code = js_code_statement(`let ${variable_name} = 0;`)
         let parsed = js_parse(code);
+        if (0)
         parent.splice(index, 0, s);
         console.log({
             r
