@@ -8,10 +8,3 @@ export function lesson_console_log() {
         }]
     };
 }
-function html_span_text(parent, text) {
-    let a = html_span(parent);
-    html_inner_set(a, text);
-}
-function html_span(parent) {
-    return html_element(parent, 'span');
-}
