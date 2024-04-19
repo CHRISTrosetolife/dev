@@ -15,7 +15,7 @@ export function js_return_variablize(ast) {
         let {parent} = r;
         assert(list_is, [parent]);
         let index = list_index(parent, r);
-        js_code_statement(`let ${variable_name} = 0;`)
+        let code = js_code_statement(`let ${variable_name} = 0;`)
         parent.splice(index, 0, s);
         console.log({
             r
