@@ -1,3 +1,4 @@
+import {list_get_end} from "./list_get_end.mjs";
 import {js_unparse} from "./js_unparse.mjs";
 import {js_parse_first} from "./js_parse_first.mjs";
 import {js_parse} from "./js_parse.mjs";
@@ -19,8 +20,8 @@ export function js_object_init_functionize(ast) {
     });
     for (let v of vs) {
         let {stack} = v;
+        let variable_declaration = list_get_end(stack, 1);
         let {node} = v;
-        let {parent} = v;
         let {id} = parent;
         let {init} = node;
         let {properties} = init;
@@ -33,7 +34,6 @@ export function js_object_init_functionize(ast) {
             list_add(args, id);
             list_add(args, key);
             list_add(args, value);
-           // console.log({stack,parent});
         }
     }
 }
