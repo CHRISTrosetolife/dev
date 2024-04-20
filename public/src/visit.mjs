@@ -10,8 +10,8 @@ export function visit(root, children_get, filter, each, stack) {
                 parent: root,
                 stack
             });
-            if (0) list_concat(stack, [node]);
-            visit(node, children_get, filter, each, stack);
+            let stacked = list_concat(stack, [node]);
+            visit(node, children_get, filter, each, stacked);
         }
     }
 }
