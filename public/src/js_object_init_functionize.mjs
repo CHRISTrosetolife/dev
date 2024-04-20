@@ -31,6 +31,7 @@ export function js_object_init_functionize(ast) {
         let variable_declaration_parent = list_get_end(stack, 2);
         assert(list_is, [variable_declaration_parent]);
         let index = list_index(variable_declaration_parent, variable_declaration);
+        let index_insert = add(index, 1)
         let {node} = v;
         let {id} = node;
         let {init} = node;
@@ -51,7 +52,7 @@ export function js_object_init_functionize(ast) {
         }
         let init_new = js_parse_expression('{}');
         object_property_set(node, 'init', init_new);
-        console.log(node);
+        console.log(js_unparse(ast));
         error();
     }
 }
