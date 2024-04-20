@@ -11,7 +11,7 @@ export function visit(root, children_get, filter, each, stack) {
             });
             list_add(stack, node);
             visit(node, children_get, filter, each, stack);
-            if (false) list_pop(stack);
+            list_pop(stack);
         }
     }
 }
