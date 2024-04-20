@@ -33,7 +33,7 @@ export function js_object_init_functionize(ast) {
             list_add(args, id);
             list_add(args, key);
             list_add(args, value);
-            console.log(parent);
+            console.log(stack);
         }
     }
 }
