@@ -1,3 +1,4 @@
+import {list_copy} from "./list_copy.mjs";
 import {add_1} from "./add_1.mjs";
 import {list_insert} from "./list_insert.mjs";
 import {list_index} from "./list_index.mjs";
@@ -37,6 +38,7 @@ export function js_object_init_functionize(ast) {
         let {id} = node;
         let {init} = node;
         let {properties} = init;
+        let copy = list_copy(properties);
         for (let p of properties) {
             let {key, value} = p;
             let {name: key_name} = key;
