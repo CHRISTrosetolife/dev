@@ -1,1 +1,3 @@
-export function list_reverse(list) {}
+export function list_reverse(list) {
+    list.reverse();
+}
