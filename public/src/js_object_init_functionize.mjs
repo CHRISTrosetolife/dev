@@ -23,7 +23,7 @@ export function js_object_init_functionize(ast) {
         let variable_declaration = list_get_end(stack, 1);
         let variable_declaration_parent = list_get_end(stack, 2);
         let {node} = v;
-        let {id} = variable_declaration;
+        let {id} = node;
         let {init} = node;
         let {properties} = init;
         for (let p of properties) {
@@ -31,11 +31,13 @@ export function js_object_init_functionize(ast) {
             let code = js_code_statement(js_code_call(object_property_set.name));
             let call = js_parse_first(code);
             let {expression} = call;
-            console.log(js_unparse(call));
             let {arguments: args} = expression;
+            console.log(args);
             list_add(args, id);
             list_add(args, key);
             list_add(args, value);
+            console.log(variable_declaration);
+            console.log(js_unparse(call));
         }
     }
 }
