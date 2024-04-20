@@ -1,4 +1,6 @@
-export function visit(root, children_get, filter, each) {
+import { list_add } from "./list_add.mjs";
+
+export function visit(root, children_get, filter, each, stack) {
     let children = children_get(root);
     for (let node of children) {
         if (filter(node)) {
@@ -6,7 +8,9 @@ export function visit(root, children_get, filter, each) {
                 node,
                 parent: root
             });
-            visit(node, children_get, filter, each);
+            list_add(stack, node)
+            visit(node, children_get, filter, each, stack);
+            list_pop(stack)
         }
     }
 }
