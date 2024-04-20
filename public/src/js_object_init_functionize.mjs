@@ -28,6 +28,7 @@ export function js_object_init_functionize(ast) {
             let call = js_parse_first(code);
             let {expression} = call;
             let {arguments:args}= expression
+            list_add(args, id)
             list_add(args, key)
             list_add(args, value)
             console.log({
