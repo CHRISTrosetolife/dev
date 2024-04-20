@@ -1,3 +1,4 @@
+import {js_parse_first} from "./js_parse_first.mjs";
 import {js_parse} from "./js_parse.mjs";
 import {object_property_set} from "./object_property_set.mjs";
 import {js_code_call} from "./js_code_call.mjs";
@@ -21,7 +22,7 @@ export function js_object_init_functionize(ast) {
         for (let p of properties) {
             let {key, value} = p;
             let code = js_code_statement(js_code_call(object_property_set.name));
-            let call = js_parse(code);
+            let call = js_parse_first(code);
             console.log({
                 call
             });
