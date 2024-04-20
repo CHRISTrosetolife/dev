@@ -23,6 +23,8 @@ export function js_object_init_functionize(ast) {
             let {key, value} = p;
             let code = js_code_statement(js_code_call(object_property_set.name));
             let call = js_parse_first(code);
+            let {expression} = call;
+            let {arguments:args}= expression
             console.log({
                 call
             });
