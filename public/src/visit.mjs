@@ -1,3 +1,4 @@
+import {list_concat} from "./list_concat.mjs";
 import {list_pop} from "./list_pop.mjs";
 import {list_add} from "./list_add.mjs";
 export function visit(root, children_get, filter, each, stack) {
@@ -9,9 +10,8 @@ export function visit(root, children_get, filter, each, stack) {
                 parent: root,
                 stack
             });
-            list_add(stack, node);
+            if (0) list_concat(stack, [node]);
             visit(node, children_get, filter, each, stack);
-            list_pop(stack);
         }
     }
 }
