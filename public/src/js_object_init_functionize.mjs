@@ -21,6 +21,7 @@ export function js_object_init_functionize(ast) {
     for (let v of vs) {
         let {stack} = v;
         let variable_declaration = list_get_end(stack, 1);
+        let variable_declaration_parent = list_get_end(stack, 2);
         let {node} = v;
         let {id} = parent;
         let {init} = node;
