@@ -28,6 +28,7 @@ export function js_object_init_functionize(ast) {
         let {properties} = init;
         for (let p of properties) {
             let {key, value} = p;
+            console.log({key})
             let code = js_code_statement(js_code_call(object_property_set.name));
             let call = js_parse_first(code);
             let {expression} = call;
