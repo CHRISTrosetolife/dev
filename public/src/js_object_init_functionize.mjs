@@ -41,6 +41,8 @@ export function js_object_init_functionize(ast) {
             list_add(args, key_string);
             list_add(args, value);
         }
-        console.log(variable_declaration);
+        let init_new = js_parse_expression('{}');
+        object_property_set(node, 'init', init_new)
+        console.log(node);
     }
 }
