@@ -31,11 +31,11 @@ export function js_object_init_functionize(ast) {
             let code = js_code_statement(js_code_call(object_property_set.name));
             let call = js_parse_first(code);
             let {expression} = call;
+            console.log(js_unparse(call));
             let {arguments: args} = expression;
             list_add(args, id);
             list_add(args, key);
             list_add(args, value);
-            console.log(js_unparse(call));
         }
     }
 }
