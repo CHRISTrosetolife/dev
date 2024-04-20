@@ -1,3 +1,4 @@
+import {add_1} from "./add_1.mjs";
 import {list_insert} from "./list_insert.mjs";
 import {list_index} from "./list_index.mjs";
 import {error} from "./error.mjs";
@@ -31,7 +32,7 @@ export function js_object_init_functionize(ast) {
         let variable_declaration_parent = list_get_end(stack, 2);
         assert(list_is, [variable_declaration_parent]);
         let index = list_index(variable_declaration_parent, variable_declaration);
-        let index_insert = add(index, 1)
+        let index_insert = add_1(index);
         let {node} = v;
         let {id} = node;
         let {init} = node;
