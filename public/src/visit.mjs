@@ -6,7 +6,8 @@ export function visit(root, children_get, filter, each, stack) {
         if (filter(node)) {
             each({
                 node,
-                parent: root
+                parent: root,
+                stack
             });
             list_add(stack, node)
             visit(node, children_get, filter, each, stack);
