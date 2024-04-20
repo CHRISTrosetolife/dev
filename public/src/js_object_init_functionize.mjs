@@ -1,3 +1,4 @@
+import {string_delimit} from "./string_delimit.mjs";
 import {list_get_end} from "./list_get_end.mjs";
 import {js_unparse} from "./js_unparse.mjs";
 import {js_parse_first} from "./js_parse_first.mjs";
@@ -28,9 +29,10 @@ export function js_object_init_functionize(ast) {
         let {properties} = init;
         for (let p of properties) {
             let {key, value} = p;
-            console.log({key})
-            let code = js_code_statement(js_code_call(object_property_set.name));
-            let call = js_parse_first(code);
+            let {name: key_name} = key;
+            let code_key_string = string_delimit(key_name);
+            let code_call = js_code_statement(js_code_call(object_property_set.name));
+            let call = js_parse_first(code_call);
             let {expression} = call;
             let {arguments: args} = expression;
             list_add(args, id);
