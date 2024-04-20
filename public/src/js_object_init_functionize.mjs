@@ -20,9 +20,7 @@ export function js_object_init_functionize(ast) {
         for (let p of properties) {
             let {key, value} = p;
             let code = js_code_statement(js_code_call(object_property_set.name));
-            console.log({
-                p
-            });
+            console.log({key, value});
         }
     }
 }
