@@ -18,6 +18,7 @@ export function js_object_init_functionize(ast) {
         });
     });
     for (let v of vs) {
+        let {stack} = v;
         let {node} = v;
         let {parent} = v;
         let {id} = parent;
