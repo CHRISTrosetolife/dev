@@ -1,3 +1,4 @@
+import {list_reverse} from "./list_reverse.mjs";
 import {list_copy} from "./list_copy.mjs";
 import {add_1} from "./add_1.mjs";
 import {list_insert} from "./list_insert.mjs";
@@ -39,7 +40,8 @@ export function js_object_init_functionize(ast) {
         let {init} = node;
         let {properties} = init;
         let copy = list_copy(properties);
-        for (let p of properties) {
+        list_reverse(copy);
+        for (let p of copy) {
             let {key, value} = p;
             let {name: key_name} = key;
             let code_key_string = string_delimit(key_name);
