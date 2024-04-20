@@ -1,3 +1,6 @@
+import {error} from "./error.mjs";
+import {list_is} from "./list_is.mjs";
+import {assert} from "./assert.mjs";
 import {js_parse_expression} from "./js_parse_expression.mjs";
 import {string_delimit} from "./string_delimit.mjs";
 import {list_get_end} from "./list_get_end.mjs";
@@ -24,6 +27,7 @@ export function js_object_init_functionize(ast) {
         let {stack} = v;
         let variable_declaration = list_get_end(stack, 1);
         let variable_declaration_parent = list_get_end(stack, 2);
+        assert(list_is, [variable_declaration_parent]);
         let {node} = v;
         let {id} = node;
         let {init} = node;
@@ -42,8 +46,8 @@ export function js_object_init_functionize(ast) {
             list_add(args, value);
         }
         let init_new = js_parse_expression('{}');
-        object_property_set(node, 'init', init_new)
+        object_property_set(node, 'init', init_new);
         console.log(node);
-        error()
+        error();
     }
 }
