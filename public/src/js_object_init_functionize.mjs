@@ -49,7 +49,7 @@ export function js_object_init_functionize(ast) {
             list_add(args, id);
             list_add(args, key_string);
             list_add(args, value);
-            list_insert(variable_declaration_parent, index, call);
+            list_insert(variable_declaration_parent, index_insert, call);
         }
         let init_new = js_parse_expression('{}');
         object_property_set(node, 'init', init_new);
