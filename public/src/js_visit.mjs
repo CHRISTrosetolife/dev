@@ -13,5 +13,5 @@ export function js_visit(ast, lambda) {
             return n;
         }
         return [];
-    }, n => !null_is(n) && !undefined_is(n), lambda);
+    }, n => !null_is(n) && !undefined_is(n), lambda, []);
 }
