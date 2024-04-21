@@ -1,3 +1,4 @@
+import {list_set} from "./list_set.mjs";
 import {list_copy} from "./list_copy.mjs";
 import {js_variablize} from "./js_variablize.mjs";
 import {js_name_unique_v} from "./js_name_unique_v.mjs";
@@ -10,7 +11,7 @@ import {js_node_type_visitor} from "./js_node_type_visitor.mjs";
 import {js_node_type} from "./js_node_type.mjs";
 import {js_node_types} from "./js_node_types.mjs";
 import {list_includes} from "./list_includes.mjs";
-import { each_index } from "./each_index.mjs";
+import {each_index} from "./each_index.mjs";
 export function js_call_variablize(ast) {
     let move_types = ['ArrayExpression'];
     let vs = js_node_type_visitor(ast, 'CallExpression');
@@ -31,9 +32,9 @@ export function js_call_variablize(ast) {
                     let {type: es_type} = es;
                     assert(equal, [es_type, 'ExpressionStatement']);
                     let parsed2 = js_variablize(ast, body, es, arg);
-                    list_set(args, arg_i, parsed2 )
+                    list_set(args, arg_i, parsed2);
                 }
             }
-        })
+        });
     }
 }
