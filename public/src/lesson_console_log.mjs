@@ -5,7 +5,7 @@ import {html_span_text} from "./html_span_text.mjs";
 export function lesson_console_log() {
     let v1 = {};
     object_property_set(v1, 'description', 'outputting a string to the console');
-    object_property_set(v1, 'screens', [function (parent) {
+    object_property_set(v1, 'screens', [function lesson_console_log_1(parent) {
         let text = 'a computer program has three parts :';
         html_span_text(parent, text);
         let ol = html_element(parent, 'ol');
