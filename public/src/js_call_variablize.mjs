@@ -7,6 +7,9 @@ export function js_call_variablize(ast) {
     for (let v of vs) {
         let {node} = v;
         let {arguments: args} = node;
+        for (let arg of args) {
+            let {type} = arg;
+        }
         console.log({
             args
         });
