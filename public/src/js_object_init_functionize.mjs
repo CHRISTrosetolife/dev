@@ -23,7 +23,8 @@ export function js_object_init_functionize(ast) {
         js_visit_node(ast, 'VariableDeclarator', v => {
             let {node} = v;
             let {init} = node;
-            if (init.type === 'ObjectExpression') {
+            const type = 'ObjectExpression';
+            if (init.type === type) {
                 la(v);
             }
         });
