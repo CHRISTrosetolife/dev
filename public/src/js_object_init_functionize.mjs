@@ -19,8 +19,7 @@ import {list_adder_unique} from "./list_adder_unique.mjs";
 import {js_visit_node} from "./js_visit_node.mjs";
 import {list_add} from "./list_add.mjs";
 export function js_object_init_functionize(ast) {
-    const type = 'ObjectExpression';
-    let vs = js_variable_declarators(ast, type);
+    let vs = js_variable_declarators(ast, 'ObjectExpression');
     for (let v of vs) {
         let {stack} = v;
         let variable_declaration = list_get_end(stack, 1);
