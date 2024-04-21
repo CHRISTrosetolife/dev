@@ -1,3 +1,4 @@
+import {list_1} from "./list_1.mjs";
 import {object_new} from "./object_new.mjs";
 import {lesson_console_log_intro} from "./lesson_console_log_intro.mjs";
 import {object_property_set} from "./object_property_set.mjs";
@@ -9,7 +10,7 @@ export function lesson_console_log() {
     let v1 = object_new();
     object_property_set(v1, 'description', 'outputting a string to the console');
     let item = lesson_console_log_intro;
-    let v2 = [item];
+    let v2 = list_1(item);
     object_property_set(v1, 'screens', v2);
     return v1;
     ;
