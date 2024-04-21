@@ -1,3 +1,4 @@
+import {object_copy} from "./object_copy.mjs";
 import {object_merge} from "./object_merge.mjs";
 import {equal} from "./equal.mjs";
 import {js_visit_node} from "./js_visit_node.mjs";
@@ -15,7 +16,3 @@ export function js_function_move_outside(ast, function_name) {
         let outside = object_copy(node);
     });
 }
-function object_copy(node) {
-    return object_merge({}, node);
-}
-
