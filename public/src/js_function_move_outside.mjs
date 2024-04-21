@@ -14,8 +14,16 @@ export function js_function_move_outside(ast, function_name) {
             return;
         }
         let outside = object_copy(node);
-        for (let property of object_properties(node)) {
-            delete node[property];
-        }
+        object_properties_delete(node);
     });
 }
+function object_properties_delete(node) {
+    for (let property of object_properties(node)) {
+        object_property_delete(node, property);
+    }
+}
+
+function object_property_delete(object, property) {
+    delete object[property];
+}
+
