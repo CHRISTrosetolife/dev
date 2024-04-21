@@ -29,12 +29,12 @@ export function js_return_variablize(ast) {
         }
         let {parent} = r;
         const init = node.argument;
-        let variable_name = js_variablize(parent, node, ast, init);
+        let variable_name = js_variablize(ast, parent, node, init);
         let parsed2 = js_parse_expression(variable_name);
         node.argument = parsed2;
     }
 }
-function js_variablize(parent, node, ast, init) {
+function js_variablize(ast, parent, node, init) {
     assert(list_is, [parent]);
     let index = list_index(parent, node);
     let variable_name = js_name_unique_v(ast);
