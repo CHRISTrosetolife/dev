@@ -26,6 +26,8 @@ export function js_array_init_functionize(ast) {
     for (let v of vs) {
         let index_insert = js_init_index_insert(v);
         let {node} = v;
+        console.log({node})
+        continue;
         let {id} = node;
         let {init} = node;
         let {properties} = init;
