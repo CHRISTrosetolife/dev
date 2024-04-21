@@ -29,16 +29,21 @@ export function js_return_variablize(ast) {
         }
         let {parent} = r;
         const init = node.argument;
-        assert(list_is, [parent]);
-        let index = list_index(parent, node);
-        let variable_name = js_name_unique_v(ast);
-        const code = js_code_statement(`let ${variable_name} = 0`);
-        let parsed = js_parse_first(code);
-        parent.splice(index, 0, parsed);
-        let {declarations} = parsed;
-        let first = list_first(declarations);
-        first.init = init;
+        let variable_name = js_variablize(parent, node, ast, init);
         let parsed2 = js_parse_expression(variable_name);
         node.argument = parsed2;
     }
 }
+function js_variablize(parent, node, ast, init) {
+    assert(list_is, [parent]);
+    let index = list_index(parent, node);
+    let variable_name = js_name_unique_v(ast);
+    const code = js_code_statement(`let ${variable_name} = 0`);
+    let parsed = js_parse_first(code);
+    parent.splice(index, 0, parsed);
+    let { declarations } = parsed;
+    let first = list_first(declarations);
+    first.init = init;
+    return variable_name;
+}
+
