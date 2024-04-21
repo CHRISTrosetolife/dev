@@ -1,3 +1,4 @@
+import {js_call} from "./js_call.mjs";
 import {each_reverse} from "./each_reverse.mjs";
 import {js_init_index_insert} from "./js_init_index_insert.mjs";
 import {js_variable_declarators} from "./js_variable_declarators.mjs";
@@ -34,13 +35,7 @@ export function js_object_init_functionize(ast) {
             let {name: key_name} = key;
             let code_key_string = string_delimit(key_name);
             let key_string = js_parse_expression(code_key_string);
-            let code_call = js_code_statement(js_code_call(object_property_set.name));
-            let call = js_parse_first(code_call);
-            let {expression} = call;
-            let {arguments: args} = expression;
-            list_add(args, id);
-            list_add(args, key_string);
-            list_add(args, value);
+            let call = js_call(object_property_set.name, [id, key_string, value]);
             let {stack} = v;
             let variable_declaration_parent = list_get_end(stack, 2);
             list_insert(variable_declaration_parent, index_insert, call);
