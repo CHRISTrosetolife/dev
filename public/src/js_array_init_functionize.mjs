@@ -31,8 +31,7 @@ export function js_array_init_functionize(ast) {
         let {init} = node;
         let {elements} = init;
         each_reverse(elements, e => {
-            const fn_name = list_add.name;
-            let call = js_call(fn_name, [id, e]);
+            let call = js_call(list_add.name, [id, e]);
             let {stack} = v;
             let variable_declaration_parent = list_get_end(stack, 2);
             list_insert(variable_declaration_parent, index_insert, call);
