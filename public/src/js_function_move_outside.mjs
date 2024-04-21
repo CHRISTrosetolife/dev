@@ -1,3 +1,4 @@
+import {js_node_type_visitor} from "./js_node_type_visitor.mjs";
 import {js_outside_move} from "./js_outside_move.mjs";
 import {object_replace} from "./object_replace.mjs";
 import {js_parse_expression} from "./js_parse_expression.mjs";
@@ -7,21 +8,22 @@ import {equal} from "./equal.mjs";
 import {js_visit_node} from "./js_visit_node.mjs";
 import {list_add} from "./list_add.mjs";
 export async function js_function_move_outside(ast, function_name) {
-    js_visit_node(ast, 'FunctionExpression', v => {
+    let vs = js_node_type_visitor(ast, 'FunctionExpression');
+    for (let v of vs) {
         let {node} = v;
         let {id} = node;
         if (equal(id, null)) {
-            return;
+            continue;
         }
         let {name} = id;
         if (!equal(name, function_name)) {
-            return;
+            continue;
         }
         let outside = object_copy(node);
         let parsed = js_parse_expression(function_name);
         object_replace(node, parsed);
         let {body} = ast;
         list_add(body, outside);
-    });
+    }
     await js_outside_move(ast);
 }
