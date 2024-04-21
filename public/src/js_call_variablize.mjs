@@ -21,6 +21,7 @@ export function js_call_variablize(ast) {
                     let {type:es_type} = es;
                     assert(equal, [es_type, 'ExpressionStatement'])
                     let index = list_index(body, es)
+                    let variable_name = js_name_unique_v(ast);
                 }
                 console.log({stack})
             }
