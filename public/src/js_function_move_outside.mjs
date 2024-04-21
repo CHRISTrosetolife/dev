@@ -14,8 +14,9 @@ export function js_function_move_outside(ast, function_name) {
             return;
         }
         let outside = object_copy(node);
+        let parsed = js_parse_expression(function_name)
         object_properties_delete(node);
-        let parsed = js_parse(code)
+        object_merge(node, parsed)
     });
 }
 function object_properties_delete(object) {
