@@ -30,7 +30,8 @@ export function js_array_init_functionize(ast) {
         let {init} = node;
         let {elements} = init;
         each_reverse(elements, e => {
-            let code_call = js_code_statement(js_code_call(list_add.name));
+            const fn_name = list_add.name;
+            let code_call = js_code_statement(js_code_call(fn_name));
             let call = js_parse_first(code_call);
             let {expression} = call;
             let {arguments: args} = expression;
