@@ -1,3 +1,4 @@
+import {js_call} from "./js_call.mjs";
 import {each_reverse} from "./each_reverse.mjs";
 import {js_init_index_insert} from "./js_init_index_insert.mjs";
 import {js_variable_declarators} from "./js_variable_declarators.mjs";
@@ -31,12 +32,7 @@ export function js_array_init_functionize(ast) {
         let {elements} = init;
         each_reverse(elements, e => {
             const fn_name = list_add.name;
-            let code_call = js_code_statement(js_code_call(fn_name));
-            let call = js_parse_first(code_call);
-            let {expression} = call;
-            let {arguments: args} = expression;
-            list_add(args, id);
-            list_add(args, e);
+            let call = js_call(fn_name, [id, e]);
             let {stack} = v;
             let variable_declaration_parent = list_get_end(stack, 2);
             list_insert(variable_declaration_parent, index_insert, call);
