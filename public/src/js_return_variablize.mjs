@@ -1,3 +1,4 @@
+import {js_name_unique_v} from "./js_name_unique_v.mjs";
 import {js_name_unique} from "./js_name_unique.mjs";
 import {js_parse_expression} from "./js_parse_expression.mjs";
 import {list_is} from "./list_is.mjs";
@@ -29,8 +30,7 @@ export function js_return_variablize(ast) {
         let {parent} = r;
         assert(list_is, [parent]);
         let index = list_index(parent, node);
-        const prefix = 'v';
-        let variable_name = js_name_unique(ast, prefix);
+        let variable_name = js_name_unique_v(ast);
         const code = js_code_statement(`let ${variable_name} = 0`);
         let parsed = js_parse_first(code);
         parent.splice(index, 0, parsed);
