@@ -1,3 +1,3 @@
-export function list_get(list, index) {
-    return list[index];
+export function list_set(list, index, value) {
+    list[index] = value;
 }
