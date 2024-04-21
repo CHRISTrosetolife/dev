@@ -29,6 +29,7 @@ export function js_array_init_functionize(ast) {
         let {id} = node;
         let {init} = node;
         let {elements} = init;
+        console.log({elements})
         each_reverse(elements, e => {
             console.log({e})
             return;
