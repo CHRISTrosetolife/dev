@@ -29,9 +29,9 @@ export function js_return_variablize(ast) {
         assert(list_is, [parent]);
         let index = list_index(parent, node);
         let identifiers = js_identifiers(ast);
+        const prefix = 'v';
         let i = 1;
         let variable_name;
-        const prefix = 'v';
         while (true) {
             variable_name = string_combine(prefix, i);
             if (!list_includes(identifiers, variable_name)) {
