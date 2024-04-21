@@ -1,3 +1,4 @@
+import {object_property_set} from "./object_property_set.mjs";
 import {html_li_text} from "./html_li_text.mjs";
 import {html_element} from "./html_element.mjs";
 import {html_inner_set} from "./html_inner_set.mjs";
