@@ -40,7 +40,8 @@ export function js_object_init_functionize(ast) {
             let variable_declaration_parent = list_get_end(stack, 2);
             list_insert(variable_declaration_parent, index_insert, call);
         });
-        let init_new = js_parse_expression('{}');
+        const c = '{}';
+        let init_new = js_parse_expression(c);
         object_property_set(node, 'init', init_new);
     }
 }
