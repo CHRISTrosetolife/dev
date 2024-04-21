@@ -12,6 +12,16 @@ export function js_call_variablize(ast) {
         for (let arg of args) {
             let {type} = arg;
             if (list_includes(move_types, type)) {
+                let ancestor = list_get_end(stack, 2);
+                let {type:ancestor_type} =ancestor;
+                if (equal(ancestor_type, 'BlockStatement')) {
+                    let body = list_get_end(stack, 1)
+                    assert(list_is, [body])
+                    let es = list_get_end(stack, 0)
+                    let {type:es_type} = es;
+                    assert(equal, [es_type, 'ExpressionStatement'])
+                    list_index(body, node)
+                }
                 console.log({stack})
             }
         }
