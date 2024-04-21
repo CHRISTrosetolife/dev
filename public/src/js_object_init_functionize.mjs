@@ -1,3 +1,4 @@
+import {each_reverse} from "./each_reverse.mjs";
 import {js_init_index_insert} from "./js_init_index_insert.mjs";
 import {js_variable_declarators} from "./js_variable_declarators.mjs";
 import {list_reverse} from "./list_reverse.mjs";
@@ -28,9 +29,7 @@ export function js_object_init_functionize(ast) {
         let {id} = node;
         let {init} = node;
         let {properties} = init;
-        let copy = list_copy(properties);
-        list_reverse(copy);
-        for (let p of copy) {
+        each_reverse(properties, p => {
             let {key, value} = p;
             let {name: key_name} = key;
             let code_key_string = string_delimit(key_name);
@@ -45,7 +44,7 @@ export function js_object_init_functionize(ast) {
             let {stack} = v;
             let variable_declaration_parent = list_get_end(stack, 2);
             list_insert(variable_declaration_parent, index_insert, call);
-        }
+        });
         let init_new = js_parse_expression('{}');
         object_property_set(node, 'init', init_new);
     }
