@@ -1,3 +1,4 @@
+import {js_init_index_insert} from "./js_init_index_insert.mjs";
 import {js_variable_declarators} from "./js_variable_declarators.mjs";
 import {list_reverse} from "./list_reverse.mjs";
 import {list_copy} from "./list_copy.mjs";
@@ -22,12 +23,7 @@ import {list_add} from "./list_add.mjs";
 export function js_object_init_functionize(ast) {
     let vs = js_variable_declarators(ast, 'ObjectExpression');
     for (let v of vs) {
-        let {stack} = v;
-        let variable_declaration = list_get_end(stack, 1);
-        let variable_declaration_parent = list_get_end(stack, 2);
-        assert(list_is, [variable_declaration_parent]);
-        let index = list_index(variable_declaration_parent, variable_declaration);
-        let index_insert = add_1(index);
+        let index_insert = js_init_index_insert(v);
         let {node} = v;
         let {id} = node;
         let {init} = node;
