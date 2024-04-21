@@ -1,3 +1,4 @@
+import {js_variable_declarators} from "./js_variable_declarators.mjs";
 import {list_reverse} from "./list_reverse.mjs";
 import {list_copy} from "./list_copy.mjs";
 import {add_1} from "./add_1.mjs";
@@ -51,15 +52,3 @@ export function js_object_init_functionize(ast) {
         object_property_set(node, 'init', init_new);
     }
 }
-function js_variable_declarators(ast, type) {
-    return list_adder_unique(la => {
-        js_visit_node(ast, 'VariableDeclarator', v => {
-            let { node } = v;
-            let { init } = node;
-            if (init.type === type) {
-                la(v);
-            }
-        });
-    });
-}
-
