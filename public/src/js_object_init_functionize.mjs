@@ -19,11 +19,11 @@ import {list_adder_unique} from "./list_adder_unique.mjs";
 import {js_visit_node} from "./js_visit_node.mjs";
 import {list_add} from "./list_add.mjs";
 export function js_object_init_functionize(ast) {
+    const type = 'ObjectExpression';
     let vs = list_adder_unique(la => {
         js_visit_node(ast, 'VariableDeclarator', v => {
             let {node} = v;
             let {init} = node;
-            const type = 'ObjectExpression';
             if (init.type === type) {
                 la(v);
             }
