@@ -28,8 +28,8 @@ export function js_return_variablize(ast) {
         let {parent} = r;
         assert(list_is, [parent]);
         let index = list_index(parent, node);
-        let identifiers = js_identifiers(ast);
         const prefix = 'v';
+        let identifiers = js_identifiers(ast);
         let i = 1;
         let variable_name;
         while (true) {
