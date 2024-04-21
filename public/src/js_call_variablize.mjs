@@ -32,6 +32,7 @@ export function js_call_variablize(ast) {
                     let index = list_index(body, es);
                     let variable_name = js_name_unique_v(ast);
                     let parsed2 = js_variablize(ast, body, es, arg);
+                    list_set(args )
                 }
                 console.log({
                     stack
