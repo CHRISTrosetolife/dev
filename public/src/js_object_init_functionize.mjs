@@ -22,6 +22,7 @@ import {js_code_statement} from "./js_code_statement.mjs";
 import {list_adder_unique} from "./list_adder_unique.mjs";
 import {js_visit_node} from "./js_visit_node.mjs";
 import {list_add} from "./list_add.mjs";
+import { object_new } from "./object_new.mjs";
 export function js_object_init_functionize(ast) {
     let vs = js_variable_declarators(ast, 'ObjectExpression');
     for (let v of vs) {
@@ -40,8 +41,7 @@ export function js_object_init_functionize(ast) {
             let variable_declaration_parent = list_get_end(stack, 2);
             list_insert(variable_declaration_parent, index_insert, call);
         });
-        const c = '{}';
-        let init_new = js_parse_expression(c);
+        const init_new = js_call(object_new.name, []);
         object_property_set(node, 'init', init_new);
     }
 }
