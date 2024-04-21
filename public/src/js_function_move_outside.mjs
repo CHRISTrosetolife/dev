@@ -7,6 +7,7 @@ import {object_merge} from "./object_merge.mjs";
 import {equal} from "./equal.mjs";
 import {js_visit_node} from "./js_visit_node.mjs";
 import {list_add} from "./list_add.mjs";
+import { object_property_set } from "./object_property_set.mjs";
 export async function js_function_move_outside(ast, function_name) {
     let vs = js_node_type_visitor(ast, 'FunctionExpression');
     for (let v of vs) {
@@ -20,6 +21,7 @@ export async function js_function_move_outside(ast, function_name) {
             continue;
         }
         let outside = object_copy(node);
+        object_property_set(outside, 'type', 'FunctionDeclaration')
         let parsed = js_parse_expression(function_name);
         object_replace(node, parsed);
         let {body} = ast;
