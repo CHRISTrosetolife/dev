@@ -18,7 +18,7 @@ export function js_call_variablize(ast) {
         let {stack} = v;
         let {arguments: args} = node;
         let copy = list_copy(args);
-        for (let arg of args) {
+        for (let arg of copy) {
             let {type} = arg;
             if (list_includes(move_types, type)) {
                 let ancestor = list_get_end(stack, 2);
