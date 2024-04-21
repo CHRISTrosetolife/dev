@@ -9,7 +9,7 @@ import {html_span_text} from "./html_span_text.mjs";
 export function lesson_console_log() {
     let v1 = object_new();
     object_property_set(v1, 'description', 'outputting a string to the console');
-    let v2 = {};
+    let v2 = [lesson_console_log_intro];
     object_property_set(v1, 'screens', v2);
     return v1;
     ;

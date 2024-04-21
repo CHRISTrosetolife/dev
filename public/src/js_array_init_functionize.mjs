@@ -31,24 +31,18 @@ export function js_array_init_functionize(ast) {
         let {elements} = init;
         console.log({elements})
         each_reverse(elements, e => {
-            console.log({e})
-            return;
-            let {key, value} = p;
-            let {name: key_name} = key;
-            let code_key_string = string_delimit(key_name);
-            let key_string = js_parse_expression(code_key_string);
-            let code_call = js_code_statement(js_code_call(object_property_set.name));
+            let code_call = js_code_statement(js_code_call(list_add.name));
             let call = js_parse_first(code_call);
             let {expression} = call;
             let {arguments: args} = expression;
             list_add(args, id);
-            list_add(args, key_string);
-            list_add(args, value);
+            list_add(args, e);
             let {stack} = v;
             let variable_declaration_parent = list_get_end(stack, 2);
             list_insert(variable_declaration_parent, index_insert, call);
         });
-        let init_new = js_parse_expression('{}');
+        let init_new = js_parse_expression('[]');
         object_property_set(node, 'init', init_new);
     }
+    error()
 }
