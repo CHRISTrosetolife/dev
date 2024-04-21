@@ -29,7 +29,6 @@ export function js_array_init_functionize(ast) {
         let {id} = node;
         let {init} = node;
         let {elements} = init;
-        console.log({elements})
         each_reverse(elements, e => {
             let code_call = js_code_statement(js_code_call(list_add.name));
             let call = js_parse_first(code_call);
@@ -44,5 +43,4 @@ export function js_array_init_functionize(ast) {
         let init_new = js_parse_expression('[]');
         object_property_set(node, 'init', init_new);
     }
-    error()
 }
