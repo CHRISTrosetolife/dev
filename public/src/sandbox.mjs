@@ -1,1 +1,2 @@
-console.log('hello')
+let a;
+let b = 1;
