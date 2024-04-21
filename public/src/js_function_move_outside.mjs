@@ -12,6 +12,10 @@ export function js_function_move_outside(ast, function_name) {
         if (!equal(name, function_name)) {
             return;
         }
-        let outside = object_merge({}, node);
+        let outside = object_copy(node);
     });
 }
+function object_copy(node) {
+    return object_merge({}, node);
+}
+
