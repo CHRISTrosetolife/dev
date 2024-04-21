@@ -11,9 +11,9 @@ export function js_function_move_outside(ast, function_name) {
         if (!equal(name, function_name)) {
             return;
         }
-        let {stack} = v;
+        let {parent} = v;
         console.log({
-            stack
+            parent
         });
     });
 }
