@@ -29,15 +29,7 @@ export function js_return_variablize(ast) {
         assert(list_is, [parent]);
         let index = list_index(parent, node);
         const prefix = 'v';
-        let identifiers = js_identifiers(ast);
-        let i = 1;
-        let variable_name;
-        while (true) {
-            variable_name = string_combine(prefix, i);
-            if (!list_includes(identifiers, variable_name)) {
-                break;
-            }
-        }
+        let variable_name = js_name_unique(ast, prefix);
         const code = js_code_statement(`let ${variable_name} = 0`);
         let parsed = js_parse_first(code);
         parent.splice(index, 0, parsed);
@@ -48,3 +40,16 @@ export function js_return_variablize(ast) {
         node.argument = parsed2;
     }
 }
+function js_name_unique(ast, prefix) {
+    let identifiers = js_identifiers(ast);
+    let i = 1;
+    let variable_name;
+    while (true) {
+        variable_name = string_combine(prefix, i);
+        if (!list_includes(identifiers, variable_name)) {
+            break;
+        }
+    }
+    return variable_name;
+}
+
