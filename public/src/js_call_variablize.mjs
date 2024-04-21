@@ -22,7 +22,7 @@ export function js_call_variablize(ast) {
                     assert(equal, [es_type, 'ExpressionStatement'])
                     let index = list_index(body, es)
                     let variable_name = js_name_unique_v(ast);
-                    let parsed2 = js_variablize(ast, parent, node, init);
+                    let parsed2 = js_variablize(ast, body, node, init);
                 }
                 console.log({stack})
             }
