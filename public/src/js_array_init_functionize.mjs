@@ -26,12 +26,12 @@ export function js_array_init_functionize(ast) {
     for (let v of vs) {
         let index_insert = js_init_index_insert(v);
         let {node} = v;
-        console.log({node})
-        continue;
         let {id} = node;
         let {init} = node;
         let {elements} = init;
-        each_reverse(properties, p => {
+        each_reverse(elements, e => {
+            console.log({e})
+            return;
             let {key, value} = p;
             let {name: key_name} = key;
             let code_key_string = string_delimit(key_name);
