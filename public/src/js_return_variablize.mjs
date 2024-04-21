@@ -30,8 +30,7 @@ export function js_return_variablize(ast) {
         }
         let {parent} = r;
         const init = node.argument;
-        let variable_name = js_variablize(ast, parent, node, init);
-        let parsed2 = js_parse_expression(variable_name);
+        let parsed2 = js_variablize(ast, parent, node, init);
         node.argument = parsed2;
     }
 }

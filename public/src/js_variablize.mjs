@@ -1,3 +1,4 @@
+import {js_parse_expression} from "./js_parse_expression.mjs";
 import {list_first} from "./list_first.mjs";
 import {js_parse_first} from "./js_parse_first.mjs";
 import {js_code_statement} from "./js_code_statement.mjs";
@@ -15,5 +16,6 @@ export function js_variablize(ast, parent, node, init) {
     let {declarations} = parsed;
     let first = list_first(declarations);
     first.init = init;
-    return variable_name;
+    let parsed2 = js_parse_expression(variable_name);
+    return parsed2;
 }
