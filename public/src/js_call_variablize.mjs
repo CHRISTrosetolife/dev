@@ -15,8 +15,5 @@ export function js_call_variablize(ast) {
                 console.log({stack})
             }
         }
-        console.log({
-            args
-        });
     }
 }
