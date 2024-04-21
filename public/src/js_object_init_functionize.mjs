@@ -46,6 +46,7 @@ export function js_object_init_functionize(ast) {
             list_add(args, id);
             list_add(args, key_string);
             list_add(args, value);
+            let {stack} = v;
             let variable_declaration_parent = list_get_end(stack, 2);
             list_insert(variable_declaration_parent, index_insert, call);
         }
