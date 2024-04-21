@@ -1,3 +1,4 @@
+import {js_name_unique} from "./js_name_unique.mjs";
 import {js_parse_expression} from "./js_parse_expression.mjs";
 import {list_is} from "./list_is.mjs";
 import {assert} from "./assert.mjs";
@@ -40,16 +41,3 @@ export function js_return_variablize(ast) {
         node.argument = parsed2;
     }
 }
-function js_name_unique(ast, prefix) {
-    let identifiers = js_identifiers(ast);
-    let i = 1;
-    let variable_name;
-    while (true) {
-        variable_name = string_combine(prefix, i);
-        if (!list_includes(identifiers, variable_name)) {
-            break;
-        }
-    }
-    return variable_name;
-}
-
