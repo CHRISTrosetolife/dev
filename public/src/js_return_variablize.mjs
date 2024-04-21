@@ -36,7 +36,8 @@ export function js_return_variablize(ast) {
         parent.splice(index, 0, parsed);
         let {declarations} = parsed;
         let first = list_first(declarations);
-        first.init = node.argument;
+        const init = node.argument;
+        first.init = init;
         let parsed2 = js_parse_expression(variable_name);
         node.argument = parsed2;
     }
