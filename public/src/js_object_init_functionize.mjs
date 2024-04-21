@@ -20,15 +20,7 @@ import {js_visit_node} from "./js_visit_node.mjs";
 import {list_add} from "./list_add.mjs";
 export function js_object_init_functionize(ast) {
     const type = 'ObjectExpression';
-    let vs = list_adder_unique(la => {
-        js_visit_node(ast, 'VariableDeclarator', v => {
-            let {node} = v;
-            let {init} = node;
-            if (init.type === type) {
-                la(v);
-            }
-        });
-    });
+    let vs = js_variable_declarators(ast, type);
     for (let v of vs) {
         let {stack} = v;
         let variable_declaration = list_get_end(stack, 1);
@@ -60,3 +52,15 @@ export function js_object_init_functionize(ast) {
         object_property_set(node, 'init', init_new);
     }
 }
+function js_variable_declarators(ast, type) {
+    return list_adder_unique(la => {
+        js_visit_node(ast, 'VariableDeclarator', v => {
+            let { node } = v;
+            let { init } = node;
+            if (init.type === type) {
+                la(v);
+            }
+        });
+    });
+}
+
