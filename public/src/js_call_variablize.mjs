@@ -1,3 +1,4 @@
+import {list_copy} from "./list_copy.mjs";
 import {js_variablize} from "./js_variablize.mjs";
 import {js_name_unique_v} from "./js_name_unique_v.mjs";
 import {list_index} from "./list_index.mjs";
@@ -16,6 +17,7 @@ export function js_call_variablize(ast) {
         let {node} = v;
         let {stack} = v;
         let {arguments: args} = node;
+        let copy = list_copy(args);
         for (let arg of args) {
             let {type} = arg;
             if (list_includes(move_types, type)) {
