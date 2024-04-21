@@ -20,7 +20,7 @@ export function js_call_variablize(ast) {
                     let es = list_get_end(stack, 0)
                     let {type:es_type} = es;
                     assert(equal, [es_type, 'ExpressionStatement'])
-                    list_index(body, node)
+                    let index = list_index(body, es)
                 }
                 console.log({stack})
             }
