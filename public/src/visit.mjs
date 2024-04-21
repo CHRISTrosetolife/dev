@@ -11,7 +11,6 @@ export function visit(root, children_get, filter, each, stack) {
                 stack
             });
             let stacked = list_concat(stack, [node]);
-            console.log(stacked.length)
             visit(node, children_get, filter, each, stacked);
         }
     }
