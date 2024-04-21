@@ -10,6 +10,7 @@ export function js_name_unique(ast, prefix) {
         if (!list_includes(identifiers, variable_name)) {
             break;
         }
+        i++;
     }
     return variable_name;
 }
