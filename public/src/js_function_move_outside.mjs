@@ -15,10 +15,14 @@ export function js_function_move_outside(ast, function_name) {
         }
         let outside = object_copy(node);
         let parsed = js_parse_expression(function_name)
-        object_properties_delete(node);
-        object_merge(node, parsed)
+        object_replace(node, parsed);
     });
 }
+function object_replace(original, replacement) {
+    object_properties_delete(original);
+    object_merge(original, replacement);
+}
+
 function object_properties_delete(object) {
     for (let property of object_properties(object)) {
         object_property_delete(object, property);
