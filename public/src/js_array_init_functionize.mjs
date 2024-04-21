@@ -21,7 +21,7 @@ import {js_code_statement} from "./js_code_statement.mjs";
 import {list_adder_unique} from "./list_adder_unique.mjs";
 import {js_visit_node} from "./js_visit_node.mjs";
 import {list_add} from "./list_add.mjs";
-export function js_object_init_functionize(ast) {
+export function js_array_init_functionize(ast) {
     let vs = js_variable_declarators(ast, 'ObjectExpression');
     for (let v of vs) {
         let index_insert = js_init_index_insert(v);
