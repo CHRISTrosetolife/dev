@@ -4,6 +4,7 @@ export function js_call_variablize(ast) {
     return js_node_type(ast, 'CallExpression', v => {
         let {node} = v;
         let {arguments:args} = node;
+        return;
         console.log({
             args
         });
