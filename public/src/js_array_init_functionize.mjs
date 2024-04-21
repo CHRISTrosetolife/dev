@@ -30,7 +30,7 @@ export function js_array_init_functionize(ast) {
         continue;
         let {id} = node;
         let {init} = node;
-        let {properties} = init;
+        let {elements} = init;
         each_reverse(properties, p => {
             let {key, value} = p;
             let {name: key_name} = key;
