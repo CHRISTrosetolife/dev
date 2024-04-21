@@ -22,7 +22,7 @@ import {list_adder_unique} from "./list_adder_unique.mjs";
 import {js_visit_node} from "./js_visit_node.mjs";
 import {list_add} from "./list_add.mjs";
 export function js_array_init_functionize(ast) {
-    let vs = js_variable_declarators(ast, 'ObjectExpression');
+    let vs = js_variable_declarators(ast, 'ArrayExpression');
     for (let v of vs) {
         let index_insert = js_init_index_insert(v);
         let {node} = v;
