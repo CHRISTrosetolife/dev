@@ -15,5 +15,4 @@ export function lesson_console_log() {
     list_add(v2, lesson_console_log_intro);
     object_property_set(v1, 'screens', v2);
     return v1;
-    ;
 }
