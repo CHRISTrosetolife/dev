@@ -18,8 +18,9 @@ export function js_object_pattern_functionize(ast) {
     for (let v of vs) {
         let {node} = v;
         let {properties} = node;
+        let {stack} = v;
         console.log({
-            node
+            stack
         });
         error();
         let index_insert = js_init_index_insert(v);
