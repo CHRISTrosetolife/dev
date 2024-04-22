@@ -16,15 +16,15 @@ export function js_object_pattern_functionize(ast) {
         vs
     });
     for (let v of vs) {
-        let index_insert = js_init_index_insert(v);
         let {node} = v;
+        let {properties} = node;
         console.log({
             node
         });
         error();
+        let index_insert = js_init_index_insert(v);
         let {id} = node;
         let {init} = node;
-        let {properties} = init;
         each_reverse(properties, p => {
             let {key, value} = p;
             let {name: key_name} = key;
