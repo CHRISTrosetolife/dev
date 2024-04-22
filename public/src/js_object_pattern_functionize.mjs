@@ -11,6 +11,9 @@ import {js_init_index_insert} from "./js_init_index_insert.mjs";
 import {js_variable_declarators} from "./js_variable_declarators.mjs";
 export function js_object_pattern_functionize(ast) {
     let vs = js_variable_declarators(ast, 'ObjectPattern');
+    console.log({
+        vs
+    });
     for (let v of vs) {
         let index_insert = js_init_index_insert(v);
         let {node} = v;
