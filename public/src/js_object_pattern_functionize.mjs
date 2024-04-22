@@ -33,6 +33,7 @@ export function js_object_pattern_functionize(ast) {
                 key,
                 value
             });
+            return;
             let call = js_call(object_property_get.name, [id, key_string, value]);
             let key_string = js_identifier_to_expression(key);
             let variable_declaration_parent = list_get_end(stack, 3);
