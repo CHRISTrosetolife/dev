@@ -1,3 +1,4 @@
+import {js_identifier_to_expression} from "./js_identifier_to_expression.mjs";
 import {js_call} from "./js_call.mjs";
 import {each_reverse} from "./each_reverse.mjs";
 import {js_init_index_insert} from "./js_init_index_insert.mjs";
@@ -33,9 +34,7 @@ export function js_object_init_functionize(ast) {
         let {properties} = init;
         each_reverse(properties, p => {
             let {key, value} = p;
-            let {name: key_name} = key;
-            let code_key_string = string_delimit(key_name);
-            let key_string = js_parse_expression(code_key_string);
+            let key_string = js_identifier_to_expression(key);
             let call = js_call(object_property_set.name, [id, key_string, value]);
             let {stack} = v;
             let variable_declaration_parent = list_get_end(stack, 2);
