@@ -15,6 +15,7 @@ import {js_unparse} from "./js_unparse.mjs";
 import {assert} from "./assert.mjs";
 import {list_is} from "./list_is.mjs";
 import {object_property_get} from "./object_property_get.mjs";
+import { js_variablize } from "./js_variablize.mjs";
 export function js_object_pattern_functionize(ast) {
     let vs = js_node_type_visitor(ast, 'ObjectPattern');
     for (let v of vs) {
@@ -22,6 +23,7 @@ export function js_object_pattern_functionize(ast) {
         let grandparent = list_get_end(stack, 1);
         let {parent} = v;
         let {node} = v;
+        js_variablize(ast, grandparent, parent)
         let {properties} = node;
         let index_insert = js_init_index_insert(v, 2);
         let {id} = node;
