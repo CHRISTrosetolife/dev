@@ -34,11 +34,10 @@ export function js_object_pattern_functionize(ast) {
                 value
             });
             let call = js_call(object_property_get.name, [id, key_string, value]);
-            error();
             let key_string = js_identifier_to_expression(key);
             let variable_declaration_parent = list_get_end(stack, 3);
             assert(list_is, [variable_declaration_parent]);
-            list_insert(variable_declaration_parent, index_insert, call);
+            //list_insert(variable_declaration_parent, index_insert, call);
         });
         let {parsed, variable_name} = js_name_unique_v_parsed(ast);
         console.log({parsed})
