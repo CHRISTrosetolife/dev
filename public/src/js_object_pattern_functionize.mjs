@@ -33,7 +33,6 @@ export function js_object_pattern_functionize(ast) {
         });
         const init_new = js_call(object_new.name, []);
         let {parent} = v;
-        console.log({parent})
-        object_property_set(node, 'init', init_new);
+        object_property_set(parent, 'init', init_new);
     }
 }
