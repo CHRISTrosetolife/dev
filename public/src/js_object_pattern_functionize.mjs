@@ -23,7 +23,7 @@ export function js_object_pattern_functionize(ast) {
             stack
         });
         error();
-        let index_insert = js_init_index_insert(v);
+        let index_insert = js_init_index_insert(v, 1);
         let {id} = node;
         let {init} = node;
         each_reverse(properties, p => {

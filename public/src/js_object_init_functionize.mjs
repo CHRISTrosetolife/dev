@@ -26,7 +26,7 @@ import { object_new } from "./object_new.mjs";
 export function js_object_init_functionize(ast) {
     let vs = js_variable_declarators(ast, 'ObjectExpression');
     for (let v of vs) {
-        let index_insert = js_init_index_insert(v);
+        let index_insert = js_init_index_insert(v, 1);
         let {node} = v;
         let {id} = node;
         let {init} = node;
