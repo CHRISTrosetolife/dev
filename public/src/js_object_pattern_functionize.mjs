@@ -1,5 +1,5 @@
 export function js_object_pattern_functionize(ast) {
-    let vs = js_variable_declarators(ast, 'ObjectExpression');
+    let vs = js_variable_declarators(ast, 'ObjectPattern');
     for (let v of vs) {
         let index_insert = js_init_index_insert(v);
         let {node} = v;
