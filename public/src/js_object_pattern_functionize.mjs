@@ -10,6 +10,7 @@ import {each_reverse} from "./each_reverse.mjs";
 import {error} from "./error.mjs";
 import {js_init_index_insert} from "./js_init_index_insert.mjs";
 import {js_variable_declarators} from "./js_variable_declarators.mjs";
+import { js_unparse } from "./js_unparse.mjs";
 export function js_object_pattern_functionize(ast) {
     let vs = js_node_type_visitor(ast, 'ObjectPattern');
     for (let v of vs) {
@@ -29,5 +30,6 @@ export function js_object_pattern_functionize(ast) {
         });
         const init_new = js_call(object_new.name, []);
         object_property_set(node, 'init', init_new);
+        console.log(js_unparse(ast))
     }
 }
