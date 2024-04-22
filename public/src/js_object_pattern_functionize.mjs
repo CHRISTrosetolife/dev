@@ -24,7 +24,6 @@ export function js_object_pattern_functionize(ast) {
         let grandparent = list_get_end(stack, 1);
         let {parent} = v;
         let {node} = v;
-        let {parsed, variable_name} = js_name_unique_v_parsed(ast);
         let {properties} = node;
         let index_insert = js_init_index_insert(v, 2);
         let {id} = node;
@@ -41,6 +40,7 @@ export function js_object_pattern_functionize(ast) {
             assert(list_is, [variable_declaration_parent]);
             list_insert(variable_declaration_parent, index_insert, call);
         });
+        let {parsed, variable_name} = js_name_unique_v_parsed(ast);
         const init_new = js_call(object_new.name, []);
         object_property_set(parent, 'init', init_new);
     }
