@@ -29,7 +29,7 @@ export function js_object_pattern_functionize(ast) {
             let {stack} = v;
             let variable_declaration_parent = list_get_end(stack, 3);
             assert(list_is, [variable_declaration_parent])
-            //list_insert(variable_declaration_parent, index_insert, call);
+            list_insert(variable_declaration_parent, index_insert, call);
         });
         const init_new = js_call(object_new.name, []);
         let {parent} = v;
