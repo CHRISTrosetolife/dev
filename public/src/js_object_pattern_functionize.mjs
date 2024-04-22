@@ -29,7 +29,7 @@ export function js_object_pattern_functionize(ast) {
             //list_insert(variable_declaration_parent, index_insert, call);
         });
         const init_new = js_call(object_new.name, []);
+        console.log({node})
         object_property_set(node, 'init', init_new);
-        console.log(js_unparse(ast))
     }
 }
