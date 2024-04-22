@@ -18,6 +18,7 @@ import {object_property_get} from "./object_property_get.mjs";
 export function js_object_pattern_functionize(ast) {
     let vs = js_node_type_visitor(ast, 'ObjectPattern');
     for (let v of vs) {
+        let {stack} = v;
         let {parent} = v;
         let {node} = v;
         let {properties} = node;
@@ -32,7 +33,6 @@ export function js_object_pattern_functionize(ast) {
             let call = js_call(object_property_get.name, [id, key_string, value]);
             error();
             let key_string = js_identifier_to_expression(key);
-            let {stack} = v;
             let variable_declaration_parent = list_get_end(stack, 3);
             assert(list_is, [variable_declaration_parent]);
             list_insert(variable_declaration_parent, index_insert, call);
