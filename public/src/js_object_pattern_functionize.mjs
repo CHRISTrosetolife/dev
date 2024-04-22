@@ -11,6 +11,8 @@ import {error} from "./error.mjs";
 import {js_init_index_insert} from "./js_init_index_insert.mjs";
 import {js_variable_declarators} from "./js_variable_declarators.mjs";
 import { js_unparse } from "./js_unparse.mjs";
+import { assert } from "./assert.mjs";
+import { list_is } from "./list_is.mjs";
 export function js_object_pattern_functionize(ast) {
     let vs = js_node_type_visitor(ast, 'ObjectPattern');
     for (let v of vs) {
@@ -26,6 +28,7 @@ export function js_object_pattern_functionize(ast) {
             let call = js_call(object_property_set.name, [id, key_string, value]);
             let {stack} = v;
             let variable_declaration_parent = list_get_end(stack, 3);
+            assert(list_is, [variable_declaration_parent])
             //list_insert(variable_declaration_parent, index_insert, call);
         });
         const init_new = js_call(object_new.name, []);
