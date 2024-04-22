@@ -18,6 +18,7 @@ import {object_property_get} from "./object_property_get.mjs";
 export function js_object_pattern_functionize(ast) {
     let vs = js_node_type_visitor(ast, 'ObjectPattern');
     for (let v of vs) {
+        let {parent} = v;
         let {node} = v;
         let {properties} = node;
         let index_insert = js_init_index_insert(v, 2);
@@ -37,7 +38,6 @@ export function js_object_pattern_functionize(ast) {
             list_insert(variable_declaration_parent, index_insert, call);
         });
         const init_new = js_call(object_new.name, []);
-        let {parent} = v;
         object_property_set(parent, 'init', init_new);
     }
 }
