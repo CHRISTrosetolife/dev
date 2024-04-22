@@ -1,3 +1,4 @@
+import {js_node_type_visitor} from "./js_node_type_visitor.mjs";
 import {object_new} from "./object_new.mjs";
 import {list_insert} from "./list_insert.mjs";
 import {list_get_end} from "./list_get_end.mjs";
@@ -10,7 +11,7 @@ import {error} from "./error.mjs";
 import {js_init_index_insert} from "./js_init_index_insert.mjs";
 import {js_variable_declarators} from "./js_variable_declarators.mjs";
 export function js_object_pattern_functionize(ast) {
-    let vs = js_variable_declarators(ast, 'ObjectPattern');
+    let vs = js_node_type_visitor(ast, 'ObjectPattern');
     console.log({
         vs
     });
