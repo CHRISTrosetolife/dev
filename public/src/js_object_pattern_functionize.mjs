@@ -19,6 +19,7 @@ export function js_object_pattern_functionize(ast) {
     let vs = js_node_type_visitor(ast, 'ObjectPattern');
     for (let v of vs) {
         let {stack} = v;
+        let grandparent = list_get_end(stack, 1);
         let {parent} = v;
         let {node} = v;
         let {properties} = node;
