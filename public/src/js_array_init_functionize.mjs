@@ -36,7 +36,7 @@ export function js_array_init_functionize(ast) {
             let variable_declaration_parent = list_get_end(stack, 2);
             list_insert(variable_declaration_parent, index_insert, call);
         });
-        let init_new = js_parse_expression('[]');
+        const init_new = js_call(object_new.name, []);
         object_property_set(node, 'init', init_new);
     }
 }
