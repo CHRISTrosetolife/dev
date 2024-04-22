@@ -19,11 +19,11 @@ export function js_object_pattern_functionize(ast) {
         let {node} = v;
         let {properties} = node;
         let {stack} = v;
+        let index_insert = js_init_index_insert(v, 2);
         console.log({
-            stack
+            index_insert
         });
         error();
-        let index_insert = js_init_index_insert(v, 1);
         let {id} = node;
         let {init} = node;
         each_reverse(properties, p => {
