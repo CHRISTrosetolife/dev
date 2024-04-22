@@ -25,7 +25,7 @@ export function js_object_pattern_functionize(ast) {
             let call = js_call(object_property_set.name, [id, key_string, value]);
             let {stack} = v;
             let variable_declaration_parent = list_get_end(stack, 3);
-            list_insert(variable_declaration_parent, index_insert, call);
+            //list_insert(variable_declaration_parent, index_insert, call);
         });
         const init_new = js_call(object_new.name, []);
         object_property_set(node, 'init', init_new);
