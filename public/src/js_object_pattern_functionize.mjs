@@ -1,8 +1,23 @@
+import {object_new} from "./object_new.mjs";
+import {list_insert} from "./list_insert.mjs";
+import {list_get_end} from "./list_get_end.mjs";
+import {object_property_set} from "./object_property_set.mjs";
+import {js_call} from "./js_call.mjs";
+import {js_parse_expression} from "./js_parse_expression.mjs";
+import {string_delimit} from "./string_delimit.mjs";
+import {each_reverse} from "./each_reverse.mjs";
+import {error} from "./error.mjs";
+import {js_init_index_insert} from "./js_init_index_insert.mjs";
+import {js_variable_declarators} from "./js_variable_declarators.mjs";
 export function js_object_pattern_functionize(ast) {
     let vs = js_variable_declarators(ast, 'ObjectPattern');
     for (let v of vs) {
         let index_insert = js_init_index_insert(v);
         let {node} = v;
+        console.log({
+            node
+        });
+        error();
         let {id} = node;
         let {init} = node;
         let {properties} = init;
@@ -18,4 +33,5 @@ export function js_object_pattern_functionize(ast) {
         });
         const init_new = js_call(object_new.name, []);
         object_property_set(node, 'init', init_new);
-    }}
+    }
+}
