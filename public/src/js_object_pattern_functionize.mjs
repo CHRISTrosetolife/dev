@@ -19,8 +19,6 @@ export function js_object_pattern_functionize(ast) {
         let {id} = node;
         each_reverse(properties, p => {
             let {key, value} = p;
-            console.log({key, value});
-            error();
             let {name: key_name} = key;
             let code_key_string = string_delimit(key_name);
             let key_string = js_parse_expression(code_key_string);
