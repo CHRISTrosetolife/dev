@@ -3,7 +3,7 @@ import {list_index} from "./list_index.mjs";
 import {list_is} from "./list_is.mjs";
 import {assert} from "./assert.mjs";
 import {list_get_end} from "./list_get_end.mjs";
-export function js_init_index_insert(v) {
+export function js_init_index_insert(v, offset) {
     let {stack} = v;
     let variable_declaration = list_get_end(stack, 1);
     let variable_declaration_parent = list_get_end(stack, 2);
