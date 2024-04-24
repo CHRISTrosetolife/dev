@@ -1,3 +1,5 @@
+import {string_empty_is} from "./string_empty_is.mjs";
+import {json_from} from "./json_from.mjs";
 import {js_body_nested} from "./js_body_nested.mjs";
 import {js_variable_declaration_init} from "./js_variable_declaration_init.mjs";
 import {js_export_single} from "./js_export_single.mjs";
@@ -25,7 +27,7 @@ export async function js_call_append(ast, a) {
     if (string_empty_is(result_name)) {
         node = {
             type: 'ExpressionStatement',
-            expression: call,
+            expression: call
         };
     } else {
         node = js_code_declare_assign(result_name);
