@@ -1,3 +1,4 @@
+import {string_split} from "./string_split.mjs";
 import {file_exists} from "./file_exists.mjs";
 import {function_name_to_path} from "./function_name_to_path.mjs";
 import {js_code_declare_assign} from "./js_code_declare_assign.mjs";
@@ -9,9 +10,13 @@ import {list_map} from "./list_map.mjs";
 import {object_property_set} from "./object_property_set.mjs";
 import {js_imports_add_specified} from "./js_imports_add_specified.mjs";
 export async function js_call_append(ast, fn_name, args, result_name) {
-    console.log({fn_name, args, result_name})
+    console.log({
+        fn_name,
+        args,
+        result_name
+    });
     let {body} = ast;
-    let args_list = string_split_comma(args);
+    let args_list = string_split(input, ',');
     let mapped = list_map(args_list, js_parse_expression);
     let call = js_call(fn_name, mapped);
     let parsed = js_code_declare_assign(result_name);
