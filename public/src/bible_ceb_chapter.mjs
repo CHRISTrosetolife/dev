@@ -1,3 +1,4 @@
+import {bible_verses_parse} from "./bible_verses_parse.mjs";
 import {file_read} from './file_read.mjs';
 import {path_join} from './path_join.mjs';
 import {string_combine} from './string_combine.mjs';
@@ -62,19 +63,4 @@ export async function bible_ceb_chapter(chapter_name) {
     const fn_name = `bible_data_${string_case_lower(chapter_name)}`;
     await function_new_generic(fn_name, ``, body_string, false, [], false, false);
     return fn_name;
-}
-function bible_verses_parse(rawText) {
-    let split = string_split(rawText, '  ');
-    let mapped = list_map(split, string_trim);
-    let mapped2 = list_map(mapped, m => {
-        let split = string_split(m, '&#160;');
-        let verse_number = list_get(split, 0);
-        let text = list_get(split, 1);
-        let tokens = text.split(' ');
-        return {
-            verse_number,
-            tokens
-        };
-    });
-    return mapped2;
 }
