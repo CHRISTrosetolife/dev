@@ -14,7 +14,8 @@ export function js_param_new(ast, function_name, param_name, default_value) {
         if (!equal(name, function_name)) {
             continue;
         }
-        console.log({callee})
+        let {arguments:args} = node;
+        console.log({node})
     }
     let filtered = list_filter(nodes, )
 }
