@@ -48,5 +48,8 @@ export function js_object_pattern_functionize(ast) {
         let {init} = parent;
         js_variable_declaration_init(parsed, init);
         list_insert(variable_declaration_parent, index_insert, parsed);
+        console.log(grandparent)
+        error()
+        list_remove(variable_declaration_parent)
     }
 }
