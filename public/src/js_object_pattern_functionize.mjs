@@ -1,3 +1,4 @@
+import {list_remove} from "./list_remove.mjs";
 import {js_variable_declaration_init} from "./js_variable_declaration_init.mjs";
 import {js_code_declare_assign} from "./js_code_declare_assign.mjs";
 import {json_to} from "./json_to.mjs";
@@ -23,7 +24,7 @@ import {object_property_get} from "./object_property_get.mjs";
 import {js_variablize} from "./js_variablize.mjs";
 import {list_length} from "./list_length.mjs";
 import {list_first} from "./list_first.mjs";
-import { js_parse } from "./js_parse.mjs";
+import {js_parse} from "./js_parse.mjs";
 export function js_object_pattern_functionize(ast) {
     let vs = js_node_type_visitor(ast, 'ObjectPattern');
     for (let v of vs) {
@@ -41,14 +42,14 @@ export function js_object_pattern_functionize(ast) {
             let {name: value_name} = value;
             let parsed = js_code_declare_assign(value_name);
             let key_string = js_identifier_to_expression(key);
-            let variable_name_identifier = js_parse_expression(variable_name)
+            let variable_name_identifier = js_parse_expression(variable_name);
             let call = js_call(object_property_get.name, [variable_name_identifier, key_string]);
-            js_variable_declaration_init(parsed, call); 
+            js_variable_declaration_init(parsed, call);
             list_insert(variable_declaration_parent, index_insert, parsed);
         });
         let {init} = parent;
         js_variable_declaration_init(parsed, init);
         list_insert(variable_declaration_parent, index_insert, parsed);
-        list_remove(variable_declaration_parent, variable_declaration)
+        list_remove(variable_declaration_parent, variable_declaration);
     }
 }
