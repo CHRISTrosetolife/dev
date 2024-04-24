@@ -22,6 +22,7 @@ export async function js_call_append(ast, fn_name, args, result_name) {
     let mapped = list_map(args_list, js_parse_expression);
     let call = js_call(fn_name, mapped);
     let parsed = js_code_declare_assign(result_name);
+    console.log({parsed})
     object_property_set(parsed, 'init', call);
     list_add(body, parsed);
     let path = function_name_to_path(fn_name);
