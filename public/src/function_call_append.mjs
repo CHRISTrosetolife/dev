@@ -13,6 +13,7 @@ export async function function_call_append(function_name, combined) {
     let callee = list_get(split, 0);
     let args_string = list_get(split, 1);
     let result_name = list_get(split, 2);
+    let args;
     if (equal(args_string, '')) {
         args = [];
     } else {
