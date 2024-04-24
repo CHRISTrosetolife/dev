@@ -1,3 +1,4 @@
+import {js_variable_declaration_init} from "./js_variable_declaration_init.mjs";
 import {js_export_single} from "./js_export_single.mjs";
 import {string_split} from "./string_split.mjs";
 import {file_exists} from "./file_exists.mjs";
@@ -22,8 +23,7 @@ export async function js_call_append(ast, fn_name, args, result_name) {
     let mapped = list_map(args_list, js_parse_expression);
     let call = js_call(fn_name, mapped);
     let parsed = js_code_declare_assign(result_name);
-    console.log({parsed})
-    object_property_set(parsed, 'init', call);
+    js_variable_declaration_init(parsed, call);
     list_add(body, parsed);
     let path = function_name_to_path(fn_name);
     if (await file_exists(path)) {
