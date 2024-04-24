@@ -29,7 +29,7 @@ export function js_object_pattern_functionize(ast) {
         let {node} = v;
         let {properties} = node;
         let index_insert = js_init_index_insert(v, 2);
-        let {id} = node;
+        let {parsed, variable_name} = js_name_unique_v_parsed(ast);
         each_reverse(properties, p => {
             let {key, value} = p;
             console.log({
@@ -42,16 +42,13 @@ export function js_object_pattern_functionize(ast) {
             let variable_declaration_parent = list_get_end(stack, 3);
             assert(list_is, [variable_declaration_parent]);
         });
-        let {parsed, variable_name} = js_name_unique_v_parsed(ast);
         let {declarations} = parsed;
         assert(list_is, [declarations]);
         let length = list_length(declarations);
         assert(equal, [length, 1]);
         let declaration = list_first(declarations);
-        console.log({
-            grandparent
-        });
-        return;
-        object_property_set(declaration, 'init', init_new);
+        let {init} = parent;
+        object_property_set(declaration, 'init', init);
+        list_insert(grandparent, index_insert, parsed)
     }
 }
