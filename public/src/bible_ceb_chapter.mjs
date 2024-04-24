@@ -60,7 +60,7 @@ export async function bible_ceb_chapter(chapter_name) {
     };
     let body_string = js_code_return(json_to(data));
     const fn_name = `bible_data_${string_case_lower(chapter_name)}`;
-    await function_new_generic(fn_name, ``, body_string, false, [], false);
+    await function_new_generic(fn_name, ``, body_string, false, [], false, false);
     return fn_name;
 }
 function bible_verses_parse(rawText) {

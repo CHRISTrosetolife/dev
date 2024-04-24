@@ -26,7 +26,7 @@ export async function js_outside_move(ast) {
         let parsed = js_parse(``);
         parsed.body = body;
         let unparsed = js_unparse(parsed);
-        await function_new_generic(function_name, args_string, unparsed, false, []);
+        await function_new_generic(function_name, args_string, unparsed, false, [], false);
         await function_imports_add(function_name);
         list_remove(body_ast, declaration);
     }
