@@ -19,8 +19,7 @@ export async function js_call_append(ast, a) {
     let e = js_export_single(ast);
     let {declaration} = e;
     let body = js_body_nested(declaration);
-    let args_list = string_split(args, ',');
-    let mapped = list_map(args_list, js_parse_expression);
+    let mapped = list_map(args, js_parse_expression);
     let call = js_call(function_name, mapped);
     let node;
     if (string_empty_is(result_name)) {
