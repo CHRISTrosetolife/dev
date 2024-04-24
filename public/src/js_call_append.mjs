@@ -9,7 +9,7 @@ import {list_map} from "./list_map.mjs";
 import {object_property_set} from "./object_property_set.mjs";
 import {js_imports_add_specified} from "./js_imports_add_specified.mjs";
 export async function js_call_append(ast, fn_name, args, result_name) {
-    console.log({arguments})
+    console.log({fn_name, args, result_name})
     let {body} = ast;
     let args_list = string_split_comma(args);
     let mapped = list_map(args_list, js_parse_expression);
