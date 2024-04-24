@@ -20,13 +20,14 @@ export async function js_outside_move(ast) {
     for (let declaration of copy) {
         let function_name = js_declaration_to_name(declaration);
         let {params} = declaration;
+        let {async} = declaration;
         let args = list_map(params, p => p.name);
         let args_string = list_join_comma(args);
         let body = js_body_nested(declaration);
         let parsed = js_parse(``);
         parsed.body = body;
         let unparsed = js_unparse(parsed);
-        await function_new_generic(function_name, args_string, unparsed, false, [], false);
+        await function_new_generic(function_name, args_string, unparsed, false, [], async);
         await function_imports_add(function_name);
         list_remove(body_ast, declaration);
     }
