@@ -13,7 +13,7 @@ import {list_map} from "./list_map.mjs";
 import {object_property_set} from "./object_property_set.mjs";
 import {js_imports_add_specified} from "./js_imports_add_specified.mjs";
 export async function js_call_append(ast, a) {
-    let unparsed = js_from(a);
+    let unparsed = json_from(a);
     let {function_name, args, result_name} = unparsed;
     let e = js_export_single(ast);
     let {declaration} = e;
@@ -22,8 +22,15 @@ export async function js_call_append(ast, a) {
     let mapped = list_map(args_list, js_parse_expression);
     let call = js_call(function_name, mapped);
     let node;
-    node = js_code_declare_assign(result_name);
-    js_variable_declaration_init(node, call);
+    if (string_empty_is(result_name)) {
+        node = {
+            type: 'ExpressionStatement',
+            expression: call,
+        };
+    } else {
+        node = js_code_declare_assign(result_name);
+        js_variable_declaration_init(node, call);
+    }
     list_add(body, node);
     let path = function_name_to_path(function_name);
     if (await file_exists(path)) {
