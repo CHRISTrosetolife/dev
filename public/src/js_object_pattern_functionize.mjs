@@ -39,6 +39,8 @@ export function js_object_pattern_functionize(ast) {
             let parsed = js_code_declare_assign(value);
             let key_string = js_identifier_to_expression(key);
             let call = js_call(object_property_get.name, [variable_name, key_string]);
+            
+            return;
             js_variable_declaration_init(parsed, call);
             console.log({
                 key,
