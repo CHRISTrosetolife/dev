@@ -1,3 +1,1 @@
-export function todo() {
-
-}
+export function todo() {}

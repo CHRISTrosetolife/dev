@@ -35,4 +35,3 @@ export async function ceb_translations_generate() {
     let body_string = js_code_return(`{ ${entries_string} }`);
     await function_new_generic(`ceb_translations`, ``, body_string, false, []);
 }
-
