@@ -9,10 +9,10 @@ import {js_code_import} from "./js_code_import.mjs";
 import {js_parse_first} from "./js_parse_first.mjs";
 import {list_add_beginning} from "./list_add_beginning.mjs";
 export async function js_imports_add(ast) {
+    let names = await function_names();
     let name = js_declaration_single_name(ast);
     let self = [name];
     let existing = js_imports_existing(ast);
-    let names = await function_names();
     let identifiers = js_identifiers(ast);
     let identifier_fns = list_intersect(identifiers, names);
     let missing = list_difference(identifier_fns, existing);
