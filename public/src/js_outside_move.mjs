@@ -1,3 +1,4 @@
+import {function_imports_add} from "./function_imports_add.mjs";
 import {js_body_nested} from "./js_body_nested.mjs";
 import {js_imports_add} from "./js_imports_add.mjs";
 import {function_transform} from "./function_transform.mjs";
@@ -32,7 +33,4 @@ export async function js_outside_move(ast) {
         list_remove(body_ast, declaration);
     }
     await js_imports_add(ast);
-    async function function_imports_add(function_name) {
-        await function_transform(js_imports_add.name, function_name, 'a');
-    }
 }
