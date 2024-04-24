@@ -18,5 +18,5 @@ export async function function_call_append(function_name, combined) {
     } else {
         args = string_split_comma(args_string);
     }
-    await function_transform_args_split(js_call_append.name);
+    await function_transform_args_split(js_call_append.name, function_name, [{function_name:callee, args, result_name}]);
 }
