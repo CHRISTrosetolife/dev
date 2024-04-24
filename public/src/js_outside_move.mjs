@@ -24,7 +24,8 @@ export async function js_outside_move(ast) {
         let args = list_map(params, p => p.name);
         let args_string = list_join_comma(args);
         let {body: body2} = declaration;
-        let {body} = body2;
+        let {body: body3} = body2;
+        let body = body3;
         let parsed = js_parse(``);
         parsed.body = body;
         let unparsed = js_unparse(parsed);
