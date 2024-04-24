@@ -21,9 +21,9 @@ export async function js_call_append(ast, a) {
     let args_list = string_split(args, ',');
     let mapped = list_map(args_list, js_parse_expression);
     let call = js_call(function_name, mapped);
-    let parsed = js_code_declare_assign(result_name);
-    js_variable_declaration_init(parsed, call);
-    list_add(body, parsed);
+    let node = js_code_declare_assign(result_name);
+    js_variable_declaration_init(node, call);
+    list_add(body, node);
     let path = function_name_to_path(function_name);
     if (await file_exists(path)) {
         js_imports_add_specified(ast, [function_name]);
