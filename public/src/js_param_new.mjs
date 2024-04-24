@@ -1,6 +1,7 @@
 import { equal } from "./equal.mjs";
 import { js_node_type } from "./js_node_type.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
+import { list_add } from "./list_add.mjs";
 import { list_filter } from "./list_filter.mjs";
 
 export function js_param_new(ast, function_name, param_name, default_value_string) {
@@ -17,7 +18,6 @@ export function js_param_new(ast, function_name, param_name, default_value_strin
         }
         let {arguments:args} = node;
         let default_value = js_parse_expression(default_value_string);
-        console.log({node})
+        list_add(args, default_value);
     }
-    let filtered = list_filter(nodes, )
 }
