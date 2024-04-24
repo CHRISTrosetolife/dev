@@ -10,6 +10,10 @@ export function js_param_new(ast, function_name, param_name, default_value) {
         if (!equal(type, 'Identifier')) {
             continue;
         }
+        let {name} = callee;
+        if (!equal(name, function_name)) {
+            continue;
+        }
         console.log({callee})
     }
     let filtered = list_filter(nodes, )
