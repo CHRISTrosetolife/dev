@@ -29,6 +29,7 @@ export function js_object_pattern_functionize(ast) {
     for (let v of vs) {
         let {stack} = v;
         let grandparent = list_get_end(stack, 1);
+        let variable_declaration = list_get_end(stack, 2);
         let variable_declaration_parent = list_get_end(stack, 3);
         let {parent} = v;
         let {node} = v;
@@ -48,8 +49,6 @@ export function js_object_pattern_functionize(ast) {
         let {init} = parent;
         js_variable_declaration_init(parsed, init);
         list_insert(variable_declaration_parent, index_insert, parsed);
-        console.log(grandparent)
-        error()
-        list_remove(variable_declaration_parent)
+        list_remove(variable_declaration_parent, variable_declaration)
     }
 }
