@@ -1,3 +1,4 @@
+import {js_imports_add_specified} from "./js_imports_add_specified.mjs";
 import {list_remove} from "./list_remove.mjs";
 import {js_variable_declaration_init} from "./js_variable_declaration_init.mjs";
 import {js_code_declare_assign} from "./js_code_declare_assign.mjs";
@@ -52,4 +53,5 @@ export function js_object_pattern_functionize(ast) {
         list_insert(variable_declaration_parent, index_insert, parsed);
         list_remove(variable_declaration_parent, variable_declaration);
     }
+    js_imports_add_specified(ast, [object_property_get.name]);
 }
