@@ -1,3 +1,4 @@
+import {equal} from "./equal.mjs";
 import {js_name_unique_v_parsed} from "./js_name_unique_v_parsed.mjs";
 import {js_identifier_to_expression} from "./js_identifier_to_expression.mjs";
 import {js_node_type_visitor} from "./js_node_type_visitor.mjs";
@@ -17,6 +18,8 @@ import {assert} from "./assert.mjs";
 import {list_is} from "./list_is.mjs";
 import {object_property_get} from "./object_property_get.mjs";
 import {js_variablize} from "./js_variablize.mjs";
+import {list_length} from "./list_length.mjs";
+import {list_first} from "./list_first.mjs";
 export function js_object_pattern_functionize(ast) {
     let vs = js_node_type_visitor(ast, 'ObjectPattern');
     for (let v of vs) {
@@ -38,12 +41,16 @@ export function js_object_pattern_functionize(ast) {
             let key_string = js_identifier_to_expression(key);
             let variable_declaration_parent = list_get_end(stack, 3);
             assert(list_is, [variable_declaration_parent]);
-            //list_insert(variable_declaration_parent, index_insert, call);
         });
         let {parsed, variable_name} = js_name_unique_v_parsed(ast);
         let {declarations} = parsed;
         assert(list_is, [declarations]);
-        console.log({parsed})
+        let length = list_length(declarations);
+        assert(equal, [length, 1]);
+        let declaration = list_first(declarations);
+        console.log({
+            declarations
+        });
         const init_new = js_call(object_new.name, []);
         object_property_set(parent, 'init', init_new);
     }
