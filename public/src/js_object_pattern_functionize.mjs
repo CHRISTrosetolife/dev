@@ -26,6 +26,7 @@ export function js_object_pattern_functionize(ast) {
     for (let v of vs) {
         let {stack} = v;
         let grandparent = list_get_end(stack, 1);
+        let variable_declaration_parent = list_get_end(stack, 3);
         let {parent} = v;
         let {node} = v;
         let {properties} = node;
@@ -40,7 +41,6 @@ export function js_object_pattern_functionize(ast) {
             return;
             let call = js_call(object_property_get.name, [id, key_string, value]);
             let key_string = js_identifier_to_expression(key);
-            let variable_declaration_parent = list_get_end(stack, 3);
             assert(list_is, [variable_declaration_parent]);
         });
         let {declarations} = parsed;
@@ -50,7 +50,6 @@ export function js_object_pattern_functionize(ast) {
         let declaration = list_first(declarations);
         let {init} = parent;
         object_property_set(declaration, 'init', init);
-        return json_to(parsed);
-        list_insert(grandparent, index_insert, parsed);
+        list_insert(variable_declaration_parent, index_insert, parsed);
     }
 }
