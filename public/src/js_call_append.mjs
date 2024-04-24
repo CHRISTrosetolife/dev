@@ -1,3 +1,4 @@
+import {js_export_single} from "./js_export_single.mjs";
 import {string_split} from "./string_split.mjs";
 import {file_exists} from "./file_exists.mjs";
 import {function_name_to_path} from "./function_name_to_path.mjs";
@@ -15,7 +16,8 @@ export async function js_call_append(ast, fn_name, args, result_name) {
         args,
         result_name
     });
-    let {body} = ast;
+    let e = js_export_single(ast);
+    let {body} = e;
     let args_list = string_split(args, ',');
     let mapped = list_map(args_list, js_parse_expression);
     let call = js_call(fn_name, mapped);
