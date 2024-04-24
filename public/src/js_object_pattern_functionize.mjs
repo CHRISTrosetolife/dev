@@ -36,9 +36,9 @@ export function js_object_pattern_functionize(ast) {
         let {parsed, variable_name} = js_name_unique_v_parsed(ast);
         each_reverse(properties, p => {
             let {key, value} = p;
-            let parsed = js_code_declare_assign(variable_name);
+            let parsed = js_code_declare_assign(value);
             let key_string = js_identifier_to_expression(key);
-            let call = js_call(object_property_get.name, [variable_name, key_string, value]);
+            let call = js_call(object_property_get.name, [variable_name, key_string]);
             js_variable_declaration_init(parsed, call);
             console.log({
                 key,
