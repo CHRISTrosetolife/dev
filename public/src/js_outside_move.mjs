@@ -1,3 +1,4 @@
+import {js_body_nested} from "./js_body_nested.mjs";
 import {js_imports_add} from "./js_imports_add.mjs";
 import {function_transform} from "./function_transform.mjs";
 import {list_join_comma} from "./list_join_comma.mjs";
@@ -14,18 +15,14 @@ import {list_join} from "./list_join.mjs";
 export async function js_outside_move(ast) {
     const type = 'FunctionDeclaration';
     let {body: body_ast} = ast;
-    let declarations = list_filter(
-        body_ast, b => b.type === type
-    );
+    let declarations = list_filter(body_ast, b => b.type === type);
     let copy = list_copy(declarations);
     for (let declaration of copy) {
         let function_name = js_declaration_to_name(declaration);
         let {params} = declaration;
         let args = list_map(params, p => p.name);
         let args_string = list_join_comma(args);
-        let {body: body2} = declaration;
-        let {body: body3} = body2;
-        let body = body3;
+        let body = js_body_nested(declaration);
         let parsed = js_parse(``);
         parsed.body = body;
         let unparsed = js_unparse(parsed);
@@ -34,8 +31,7 @@ export async function js_outside_move(ast) {
         list_remove(body_ast, declaration);
     }
     await js_imports_add(ast);
+    async function function_imports_add(function_name) {
+        await function_transform(js_imports_add.name, function_name, 'a');
+    }
 }
-async function function_imports_add(function_name) {
-    await function_transform(js_imports_add.name, function_name, 'a');
-}
-
