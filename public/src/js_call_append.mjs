@@ -15,8 +15,7 @@ import {list_map} from "./list_map.mjs";
 import {object_property_set} from "./object_property_set.mjs";
 import {js_imports_add_specified} from "./js_imports_add_specified.mjs";
 export async function js_call_append(ast, a) {
-    let unparsed = json_from(a);
-    let {function_name, args, result_name} = unparsed;
+    let {function_name, args, result_name} = a;
     let e = js_export_single(ast);
     let {declaration} = e;
     let body = js_body_nested(declaration);
