@@ -1,4 +1,5 @@
 import { equal } from "./equal.mjs";
+import { js_export_single } from "./js_export_single.mjs";
 import { js_node_type } from "./js_node_type.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
 import { list_add } from "./list_add.mjs";
@@ -20,4 +21,5 @@ export function js_param_new(ast, function_name, param_name, default_value_strin
         let default_value = js_parse_expression(default_value_string);
         list_add(args, default_value);
     }
+    let e = js_export_single(ast);
 }
