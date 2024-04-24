@@ -1,3 +1,4 @@
+import {js_declaration_single_name} from "./js_declaration_single_name.mjs";
 import {js_declaration_single} from "./js_declaration_single.mjs";
 import {equal} from "./equal.mjs";
 import {js_export_single} from "./js_export_single.mjs";
@@ -26,7 +27,7 @@ export function js_param_new(ast, function_name, param_name, default_value_strin
         return;
     }
     let declaration = js_declaration_single(ast);
-    let {params} = declaration
+    let {params} = declaration;
     console.log({
         params
     });
