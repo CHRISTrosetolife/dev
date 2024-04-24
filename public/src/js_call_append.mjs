@@ -12,23 +12,18 @@ import {list_add} from "./list_add.mjs";
 import {list_map} from "./list_map.mjs";
 import {object_property_set} from "./object_property_set.mjs";
 import {js_imports_add_specified} from "./js_imports_add_specified.mjs";
-export async function js_call_append(ast, fn_name, args, result_name) {
-    console.log({
-        fn_name,
-        args,
-        result_name
-    });
+export async function js_call_append(ast, function_name, args, result_name) {
     let e = js_export_single(ast);
     let {declaration} = e;
     let body = js_body_nested(declaration);
     let args_list = string_split(args, ',');
     let mapped = list_map(args_list, js_parse_expression);
-    let call = js_call(fn_name, mapped);
+    let call = js_call(function_name, mapped);
     let parsed = js_code_declare_assign(result_name);
     js_variable_declaration_init(parsed, call);
     list_add(body, parsed);
-    let path = function_name_to_path(fn_name);
+    let path = function_name_to_path(function_name);
     if (await file_exists(path)) {
-        js_imports_add_specified(ast, [fn_name]);
+        js_imports_add_specified(ast, [function_name]);
     }
 }
