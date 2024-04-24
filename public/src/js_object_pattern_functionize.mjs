@@ -49,9 +49,9 @@ export function js_object_pattern_functionize(ast) {
         assert(equal, [length, 1]);
         let declaration = list_first(declarations);
         console.log({
-            declarations
+            grandparent
         });
-        const init_new = js_call(object_new.name, []);
-        object_property_set(parent, 'init', init_new);
+        return;
+        object_property_set(declaration, 'init', init_new);
     }
 }
