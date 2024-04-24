@@ -21,8 +21,13 @@ export function js_param_new(ast, function_name, param_name, default_value_strin
         let default_value = js_parse_expression(default_value_string);
         list_add(args, default_value);
     }
+    let name = js_declaration_single_name(ast);
+    if (!equal(name, function_name)) {
+        return;
+    }
     let declaration = js_declaration_single(ast);
+    let {params} = declaration
     console.log({
-        declaration
+        params
     });
 }

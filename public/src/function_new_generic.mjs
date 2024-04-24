@@ -6,8 +6,8 @@ import {js_code_import} from './js_code_import.mjs';
 import {list_concat} from './list_concat.mjs';
 import {list_join} from './list_join.mjs';
 import {newline} from './newline.mjs';
-import { js_parse } from './js_parse.mjs';
-import { js_unparse } from './js_unparse.mjs';
+import {js_parse} from './js_parse.mjs';
+import {js_unparse} from './js_unparse.mjs';
 export async function function_new_generic(function_name, args_string, body_string, open, imports) {
     let contents_function = `export function ${function_name}(${args_string}) {
 ${body_string}
