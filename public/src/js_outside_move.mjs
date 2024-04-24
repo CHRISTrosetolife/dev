@@ -23,10 +23,10 @@ export async function js_outside_move(ast) {
         let {params} = declaration;
         let args = list_map(params, p => p.name);
         let args_string = list_join_comma(args);
-        let {body} = declaration;
-        let {body: body2} = body;
+        let {body: body2} = declaration;
+        let {body} = body2;
         let parsed = js_parse(``);
-        parsed.body = body2;
+        parsed.body = body;
         let unparsed = js_unparse(parsed);
         await function_new_generic(function_name, args_string, unparsed, false, []);
         await function_imports_add(function_name);
