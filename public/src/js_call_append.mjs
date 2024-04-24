@@ -19,6 +19,7 @@ export async function js_call_append(ast, fn_name, args, result_name) {
     });
     let e = js_export_single(ast);
     let {declaration} = e;
+    console.log({declaration})
     let {body} = declaration;
     let args_list = string_split(args, ',');
     let mapped = list_map(args_list, js_parse_expression);
