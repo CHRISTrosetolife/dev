@@ -46,7 +46,8 @@ export function js_object_pattern_functionize(ast) {
             let key_string = js_identifier_to_expression(key);
             assert(list_is, [variable_declaration_parent]);
         });
-        js_variable_declaration_init(parsed, parent);
+        let {init} = parent;
+        js_variable_declaration_init(parsed, init);
         list_insert(variable_declaration_parent, index_insert, parsed);
     }
 }
