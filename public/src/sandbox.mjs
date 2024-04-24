@@ -1,3 +1,1 @@
-let {a} = object_new();
-;
-;
+let {a} = b;
