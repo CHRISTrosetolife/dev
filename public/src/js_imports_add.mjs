@@ -10,17 +10,21 @@ import {js_parse_first} from "./js_parse_first.mjs";
 import {list_add_beginning} from "./list_add_beginning.mjs";
 export async function js_imports_add(ast) {
     let names = await function_names();
+    js_imports_add_specified(ast, names);
+}
+function js_imports_add_specified(ast, specified) {
     let name = js_declaration_single_name(ast);
     let self = [name];
     let existing = js_imports_existing(ast);
     let identifiers = js_identifiers(ast);
-    let identifier_fns = list_intersect(identifiers, names);
+    let identifier_fns = list_intersect(identifiers, specified);
     let missing = list_difference(identifier_fns, existing);
     let missing_without_self = list_difference(missing, self);
-    let {body} = ast;
+    let { body } = ast;
     for (let m of missing_without_self) {
         let code = js_code_import(m);
         let first = js_parse_first(code);
         list_add_beginning(body, first);
     }
 }
+
