@@ -1,3 +1,4 @@
+import {js_name_unique_v} from "./js_name_unique_v.mjs";
 import {js_name_unique_v_parsed} from "./js_name_unique_v_parsed.mjs";
 import {js_identifier_to_expression} from "./js_identifier_to_expression.mjs";
 import {js_node_type_visitor} from "./js_node_type_visitor.mjs";
@@ -38,10 +39,12 @@ export function js_object_pattern_functionize(ast) {
             let key_string = js_identifier_to_expression(key);
             let variable_declaration_parent = list_get_end(stack, 3);
             assert(list_is, [variable_declaration_parent]);
-            //list_insert(variable_declaration_parent, index_insert, call);
         });
-        let {parsed, variable_name} = js_name_unique_v_parsed(ast);
-        console.log({parsed})
+        let variable_name = js_name_unique_v(ast);
+        js_parse_expression(variable_name);
+        console.log({
+            parsed
+        });
         const init_new = js_call(object_new.name, []);
         object_property_set(parent, 'init', init_new);
     }
