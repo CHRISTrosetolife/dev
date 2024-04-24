@@ -1,1 +1,3 @@
-let {a:c} = b;
+export function sandbox() {
+    let {a:c} = b;
+}
