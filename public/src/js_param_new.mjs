@@ -28,7 +28,6 @@ export function js_param_new(ast, function_name, param_name, default_value_strin
     }
     let declaration = js_declaration_single(ast);
     let {params} = declaration;
-    console.log({
-        params
-    });
+    let param_new = js_parse_expression(param_name);
+    list_add(params, param_new);
 }
