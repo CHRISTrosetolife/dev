@@ -41,6 +41,8 @@ export function js_object_pattern_functionize(ast) {
             //list_insert(variable_declaration_parent, index_insert, call);
         });
         let {parsed, variable_name} = js_name_unique_v_parsed(ast);
+        let {declarations} = parsed;
+        assert(list_is, [declarations]);
         console.log({parsed})
         const init_new = js_call(object_new.name, []);
         object_property_set(parent, 'init', init_new);
