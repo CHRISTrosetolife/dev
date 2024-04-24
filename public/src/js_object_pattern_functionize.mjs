@@ -1,3 +1,4 @@
+import {json_to} from "./json_to.mjs";
 import {equal} from "./equal.mjs";
 import {js_name_unique_v_parsed} from "./js_name_unique_v_parsed.mjs";
 import {js_identifier_to_expression} from "./js_identifier_to_expression.mjs";
@@ -49,6 +50,7 @@ export function js_object_pattern_functionize(ast) {
         let declaration = list_first(declarations);
         let {init} = parent;
         object_property_set(declaration, 'init', init);
-        list_insert(grandparent, index_insert, parsed)
+        return json_to(parsed);
+        list_insert(grandparent, index_insert, parsed);
     }
 }
