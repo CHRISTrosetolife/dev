@@ -1,3 +1,4 @@
+import {js_imports_add_specified} from "./js_imports_add_specified.mjs";
 import {todo} from "./todo.mjs";
 import {js_identifiers} from "./js_identifiers.mjs";
 import {js_imports_existing} from "./js_imports_existing.mjs";
@@ -12,19 +13,3 @@ export async function js_imports_add(ast) {
     let names = await function_names();
     js_imports_add_specified(ast, names);
 }
-function js_imports_add_specified(ast, specified) {
-    let name = js_declaration_single_name(ast);
-    let self = [name];
-    let existing = js_imports_existing(ast);
-    let identifiers = js_identifiers(ast);
-    let identifier_fns = list_intersect(identifiers, specified);
-    let missing = list_difference(identifier_fns, existing);
-    let missing_without_self = list_difference(missing, self);
-    let { body } = ast;
-    for (let m of missing_without_self) {
-        let code = js_code_import(m);
-        let first = js_parse_first(code);
-        list_add_beginning(body, first);
-    }
-}
-
