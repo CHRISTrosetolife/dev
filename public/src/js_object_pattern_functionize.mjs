@@ -1,3 +1,5 @@
+import {js_variable_declaration_init} from "./js_variable_declaration_init.mjs";
+import {js_code_declare_assign} from "./js_code_declare_assign.mjs";
 import {json_to} from "./json_to.mjs";
 import {equal} from "./equal.mjs";
 import {js_name_unique_v_parsed} from "./js_name_unique_v_parsed.mjs";
@@ -34,6 +36,7 @@ export function js_object_pattern_functionize(ast) {
         let {parsed, variable_name} = js_name_unique_v_parsed(ast);
         each_reverse(properties, p => {
             let {key, value} = p;
+            let parsed = js_code_declare_assign(variable_name);
             console.log({
                 key,
                 value
@@ -43,13 +46,7 @@ export function js_object_pattern_functionize(ast) {
             let key_string = js_identifier_to_expression(key);
             assert(list_is, [variable_declaration_parent]);
         });
-        let {declarations} = parsed;
-        assert(list_is, [declarations]);
-        let length = list_length(declarations);
-        assert(equal, [length, 1]);
-        let declaration = list_first(declarations);
-        let {init} = parent;
-        object_property_set(declaration, 'init', init);
+        js_variable_declaration_init(parsed, parent);
         list_insert(variable_declaration_parent, index_insert, parsed);
     }
 }
