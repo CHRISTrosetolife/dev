@@ -16,7 +16,7 @@ export async function js_call_append(ast, fn_name, args, result_name) {
         result_name
     });
     let {body} = ast;
-    let args_list = string_split(input, ',');
+    let args_list = string_split(args, ',');
     let mapped = list_map(args_list, js_parse_expression);
     let call = js_call(fn_name, mapped);
     let parsed = js_code_declare_assign(result_name);
