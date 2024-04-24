@@ -49,7 +49,6 @@ export function js_object_pattern_functionize(ast) {
         assert(equal, [length, 1]);
         let declaration = list_first(declarations);
         let {init} = parent;
-        object_property_set(declaration, 'init', init);
         list_insert(variable_declaration_parent, index_insert, parsed);
     }
 }
