@@ -13,6 +13,12 @@ import {string_combine} from "./string_combine.mjs";
 export function lesson_console_log_analogy(parent) {
     lesson_console_log_analogy_1(parent);
     html_hr(parent);
+    lesson_console_log_analogy_2(parent);
+    html_hr(parent);
+    html_p_text(parent, 'suppose two numbers are added together to produce their sum');
+    
+}
+function lesson_console_log_analogy_2(parent) {
     html_p_text(parent, 'we could say :');
     let ol = html_ul(parent);
     let li1 = html_li(ol);
@@ -26,10 +32,8 @@ export function lesson_console_log_analogy(parent) {
     html_span_text(li3, 'the folded paper is the ');
     html_strong_text(li3, 'output');
     html_span_text(li3, ' of the folding process');
-    html_hr(parent);
-    html_p_text(parent, 'suppose two numbers are added together to produce their sum');
-    
 }
+
 function lesson_console_log_analogy_1(parent) {
     html_p_text(parent, 'suppose there is paper');
     html_img_width_full(parent, 'paper.jpg');
