@@ -1,3 +1,4 @@
+import {html_hr} from "./html_hr.mjs";
 import {html_strong_text} from "./html_strong_text.mjs";
 import {html_li} from "./html_li.mjs";
 import {html_li_text} from "./html_li_text.mjs";
@@ -16,6 +17,7 @@ export function lesson_console_log_analogy(parent) {
     html_img_width_full(parent, 'paper_folding.jpg');
     html_p_text(parent, 'then afterward there is folded paper origami');
     html_img_width_full(parent, 'paper_folded.jpg');
+    html_hr(parent);
     html_span_text(parent, 'we could say :');
     let ol = html_ul(parent);
     let li1 = html_li(ol);
