@@ -19,7 +19,8 @@ import {list_index_last} from "./list_index_last.mjs";
 import { html_style } from "./html_style.mjs";
 export function app_learn_code() {
     let root = html_document_body();
-    html_style(root, {'font-family':'sans-serif'})
+    html_style(root, {'font-family':'sans-serif',
+'font-size':'4vh'})
     let lesson = lesson_console_log();
     let screens = object_property_get(lesson, 'screens');
     let index_last = list_index_last(screens);
