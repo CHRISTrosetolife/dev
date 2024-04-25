@@ -20,13 +20,19 @@ export function app_learn_code() {
     let button_next = html_button_width_full_text(root, 'next');
     let button_previous = html_button_width_full_text(root, 'previous');
     let index = 0;
-    let screen = list_get(list, index);
-    html_clear(content);
-    screen(content);
-    if (equal(index, 0)) {
-        button_previous.disabled = true;
-    }
-    if (equal(index, index_last)) {
-        button_next.disabled = true;
+    refresh();
+
+    function refresh() {
+        let screen = list_get(list, index);
+        html_clear(content);
+        screen(content);
+        button_previous.disabled = false;
+        button_next.disabled = false;
+        if (equal(index, 0)) {
+            button_previous.disabled = true;
+        }
+        if (equal(index, index_last)) {
+            button_next.disabled = true;
+        }
     }
 }
