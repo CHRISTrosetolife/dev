@@ -9,5 +9,6 @@ export function lesson_console_log_analogy_addition(parent) {
     html_li_text(ol, 'the two numbers are the inputs to the addition process');
     html_li_text(ol, 'the sum of the two numbers is the output of the addition process');
     html_p_text(parent, 'suppose the letters "a", "b" and "c" represent numbers');
-    html_p_text(parent, 'suppose there is an equation : a + b = c');
+    html_p_text(parent, 'suppose "c" is the sum of "a" and "b"');
+    html_p_text(parent, 'then here is the equation : a + b = c');
 }
