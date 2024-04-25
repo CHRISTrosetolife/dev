@@ -3,6 +3,10 @@ export function app_learn_code_style_code(code) {
     html_style(code, {
         'padding': '0.5rem',
         'border-radius': '0.5rem',
+    });
+    html_style(code, {
+        'padding': '0.5rem',
+        'border-radius': '0.5rem',
         'font-family': 'monospace'
     });
 }
