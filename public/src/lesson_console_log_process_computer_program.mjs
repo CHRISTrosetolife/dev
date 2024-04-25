@@ -1,3 +1,4 @@
+import {app_learn_code_code_part} from "./app_learn_code_code_part.mjs";
 import {html_spacer_vertical} from "./html_spacer_vertical.mjs";
 import {html_style_margin_none} from "./html_style_margin_none.mjs";
 import {app_learn_code_style_rounded_padded} from "./app_learn_code_style_rounded_padded.mjs";
@@ -28,14 +29,10 @@ export function lesson_console_log_process_computer_program(parent) {
     });
     const title_text = 'input ( computer program ) :';
     const source_code = `console.log('hello');`;
-    let title = html_p_text(input_container, title_text);
-    html_style_margin_none(title);
-    html_spacer_vertical(input_container);
-    let code = html_p_text(input_container, source_code);
-    html_style_margin_none(code);
+    let background_color = 'black';
+    let code = app_learn_code_code_part(input_container, title_text, source_code, background_color);
     html_style(code, {
-        'color': 'white',
-        'background-color': 'black'
+        'color': 'white'
     });
     app_learn_code_style_code(code);
     html_p_text(input_container, 'output ( from computer program ) :');
