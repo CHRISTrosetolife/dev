@@ -18,7 +18,7 @@ export function lesson_console_log_analogy(parent) {
     html_p_text(parent, 'then afterward there is folded paper origami');
     html_img_width_full(parent, 'paper_folded.jpg');
     html_hr(parent);
-    html_span_text(parent, 'we could say :');
+    html_p_text(parent, 'we could say :');
     let ol = html_ul(parent);
     let li1 = html_li(ol);
     html_span_text(li1, 'the folding of the paper into origami is a ');
