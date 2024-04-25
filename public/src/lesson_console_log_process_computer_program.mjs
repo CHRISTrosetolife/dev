@@ -22,11 +22,12 @@ export function lesson_console_log_process_computer_program(parent) {
     html_p_text(parent, 'our first computer program will output a message :');
     let input_container = html_div(parent);
     app_learn_code_style_rounded_padded(input_container);
-    let input_title = html_p_text(input_container, 'input ( computer program ) :');
-    html_style_margin_none(input_title);
     html_style(input_container, {
         'background-color': 'lightgray'
     });
+    let input_title = html_p_text(input_container, 'input ( computer program ) :');
+    html_style_margin_none(input_title);
+
     let spacer_vertical = html_div(input_container);
     html_style(spacer_vertical, {
         'height': '1vh'
