@@ -24,7 +24,6 @@ export function app_learn_code() {
 
     });
     let button_previous = html_button_width_full_text(root, 'previous');
-
     refresh();
     function refresh() {
         let screen = list_get(list, index);
