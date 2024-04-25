@@ -19,10 +19,13 @@ export function app_learn_code() {
     let index_last = list_index_last(screens);
     let content = html_div(root);
     let index = 0;
-    let button_next = html_button_width_full_text(root, 'next');
-    html_on_click(button_next, () => {
-
-    });
+    const text = 'next';
+    let button_next = html_button_width_full_text(root, text);
+    html_on_click(button_next,on_click);
+    function on_click() {
+        index++;
+        refresh();
+    }
     let button_previous = html_button_width_full_text(root, 'previous');
     refresh();
     function refresh() {
