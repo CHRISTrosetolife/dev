@@ -20,8 +20,7 @@ export function app_learn_code() {
     let content = html_div(root);
     let index = 0;
     const text = 'next';
-    let button_next = html_button_width_full_text(root, text);
-    html_on_click(button_next,on_click);
+    let button_next = html_button_width_full_text_click(root, text, on_click);
     function on_click() {
         index++;
         refresh();
@@ -42,3 +41,9 @@ export function app_learn_code() {
         }
     }
 }
+function html_button_width_full_text_click(root, text, on_click) {
+    let button_next = html_button_width_full_text(root, text);
+    html_on_click(button_next, on_click);
+    return button_next;
+}
+
