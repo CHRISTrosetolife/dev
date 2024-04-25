@@ -1,3 +1,4 @@
+import {html_div} from "./html_div.mjs";
 import {equal} from "./equal.mjs";
 import {html_clear} from "./html_clear.mjs";
 import {html_button_width_full_text} from "./html_button_width_full_text.mjs";
@@ -17,6 +18,7 @@ export function app_learn_code() {
     html_clear(root);
     screen(root);
     if (equal(index, 0)) {}
+    let container = html_div(root);
     let button_next = html_button_width_full_text(root, 'next');
     let button_previous = html_button_width_full_text(root, 'previous');
 }
