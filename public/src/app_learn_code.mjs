@@ -16,8 +16,10 @@ import {html_document_body} from "./html_document_body.mjs";
 import {html_inner_set} from "./html_inner_set.mjs";
 import {list_length} from "./list_length.mjs";
 import {list_index_last} from "./list_index_last.mjs";
+import { html_style } from "./html_style.mjs";
 export function app_learn_code() {
     let root = html_document_body();
+    html_style(root, {'font-family':'sans-serif'})
     let lesson = lesson_console_log();
     let screens = object_property_get(lesson, 'screens');
     let index_last = list_index_last(screens);
