@@ -30,7 +30,7 @@ export function app_learn_code() {
     });
     refresh();
     function refresh() {
-        let screen = list_get(list, index);
+        let screen = list_get(screens, index);
         html_clear(content);
         screen(content);
         button_previous.disabled = false;
