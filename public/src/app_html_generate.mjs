@@ -9,7 +9,7 @@ import {app_prefix} from "./app_prefix.mjs";
 export async function app_html_generate(name) {
     let prefix = app_prefix();
     let name_prefixed = string_combine(prefix, name);
-    let import_path = `${folder_current()}/${folder_src()}/`;
+    let import_path = `${folder_current()}/${folder_src_name()}/`;
     let html = `
     <!DOCTYPE html>
     <html>
