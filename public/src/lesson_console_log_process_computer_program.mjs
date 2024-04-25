@@ -13,24 +13,24 @@ import {html_inner_set} from "./html_inner_set.mjs";
 import {html_div} from "./html_div.mjs";
 import {html_style} from "./html_style.mjs";
 export function lesson_console_log_process_computer_program(parent) {
-    html_p_text(parent, 'a computer runs a computer program');
-    html_p_text(parent, 'when a computer program is run , the computer program may have output');
-    html_p_text(parent, 'we could say :');
+    html_p_text(parent, 'a computer program may have inputs');
+    html_p_text(parent, 'a computer program may have outputs');
+    html_p_text(parent, 'a computer program does something&nbsp;, using any inputs and producing any outputs');
+    html_p_text(parent, 'we could say a computer program is a process that may have inputs and may have outputs');
+    html_p_text(parent, 'our first computer program will &nbsp;:');
     let ul1 = html_ul(parent);
-    html_li_text(ul1, 'when a computer runs a computer program , the running is a process');
-    html_li_text(ul1, 'the computer program is an input to the running process');
-    html_li_text(ul1, 'any output from the computer program is an output of the running process');
+    html_li_text(ul1, 'have no inputs');
+    html_li_text(ul1, 'output a message');
     html_hr(parent);
-    html_p_text(parent, 'our first computer program will output a message :');
     let container = html_div(parent);
     app_learn_code_style_rounded_padded(container);
     html_style(container, {
         'background-color': 'lightgray'
     });
-    let {code} = app_learn_code_code_part(container, 'input ( computer program ) :', `console.log('hello');`, 'black');
+    let {code} = app_learn_code_code_part(container, 'computer code ( process ) :', `console.log('hello');`, 'black');
     html_style(code, {
         'color': 'white'
     });
     html_hr(container)
-    app_learn_code_code_part(container, 'output ( from computer program ) :', `hello`, 'lightgreen');
+    app_learn_code_code_part(container, 'output :', `hello`, 'lightgreen');
 }
