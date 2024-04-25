@@ -6,6 +6,5 @@ import {object_property_set} from "./object_property_set.mjs";
 import {string_combine} from "./string_combine.mjs";
 export function lesson_console_log_analogy(parent) {
     html_p_text(parent, 'suppose there is a sheet of paper');
-    let img_name = 'paper.jpg';
-    html_img_width_full(parent, img_name);
+    html_img_width_full(parent, 'paper.jpg');
 }
