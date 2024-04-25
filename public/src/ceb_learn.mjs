@@ -1,3 +1,4 @@
+import {html_button} from "./html_button.mjs";
 import {html_document_body} from "./html_document_body.mjs";
 import {ceb_translations} from "./ceb_translations.mjs";
 import {list_map} from "./list_map.mjs";
@@ -39,7 +40,7 @@ export function ceb_learn() {
         'text-align': 'center'
     });
     html_style_width_full(button2);
-    let button_previous = html_element(root, 'button');
+    let button_previous = html_button(root);
     html_style(button_previous, {
         'font-size': button_font_size
     });
