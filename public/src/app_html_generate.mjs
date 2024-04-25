@@ -1,3 +1,4 @@
+import {folder_name_src} from "./folder_name_src.mjs";
 import {file_overwrite} from "./file_overwrite.mjs";
 import {folder_name_public} from "./folder_name_public.mjs";
 import {path_join} from "./path_join.mjs";
@@ -9,7 +10,7 @@ import {app_prefix} from "./app_prefix.mjs";
 export async function app_html_generate(name) {
     let prefix = app_prefix();
     let name_prefixed = string_combine(prefix, name);
-    let import_path = `${folder_current()}/${folder_src_name()}/`;
+    let import_path = `${folder_current()}/${folder_name_src()}/`;
     let html = `
     <!DOCTYPE html>
     <html>
