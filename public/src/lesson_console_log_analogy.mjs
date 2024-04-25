@@ -1,3 +1,4 @@
+import {html_strong_text} from "./html_strong_text.mjs";
 import {html_li} from "./html_li.mjs";
 import {html_li_text} from "./html_li_text.mjs";
 import {html_ul} from "./html_ul.mjs";
@@ -18,6 +19,6 @@ export function lesson_console_log_analogy(parent) {
     html_span_text(parent, 'we could say :');
     let ol = html_ul(parent);
     let li1 = html_li(ol);
-    html_span_text(li1, 'the folding of the paper into origami is a ')
-    html_strong_text(li1, 'process')
+    html_span_text(li1, 'the folding of the paper into origami is a ');
+    html_strong_text(li1, 'process');
 }
