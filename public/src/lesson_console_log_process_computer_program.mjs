@@ -31,10 +31,5 @@ export function lesson_console_log_process_computer_program(parent) {
     html_style(code, {
         'color': 'white'
     });
-    html_p_text(input_container, 'output ( from computer program ) :');
-    let output = html_p_text(input_container, `hello`);
-    html_style(output, {
-        'background-color': 'lightgreen'
-    });
-    app_learn_code_style_code(output);
+    app_learn_code_code_part(input_container, 'output ( from computer program ) :', `hello`, 'lightgreen');
 }
