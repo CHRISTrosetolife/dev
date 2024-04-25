@@ -5,6 +5,7 @@ import {html_hr} from "./html_hr.mjs";
 import { html_element } from "./html_element.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 import { html_div } from "./html_div.mjs";
+import { html_style } from "./html_style.mjs";
 export function lesson_console_log_process_computer_program(parent) {
     html_p_text(parent, 'a computer runs a computer program');
     html_p_text(parent, 'when a computer program is ran , the computer program may have output');
@@ -16,7 +17,12 @@ export function lesson_console_log_process_computer_program(parent) {
     html_hr(parent);
     html_p_text(parent, 'our first computer program will output a message :');
     let input_container = html_div(parent)
+    html_style(input_container, {
+        'color':'white',
+        'background-color':'black'
+    })
     html_p_text(input_container, 'input computer program :');
+    html_hr(input_container);
     let code = html_element(input_container, 'pre')
     html_inner_set(code, `console.log('hello');`)
     html_p_text(parent, 'output from computer program :');
