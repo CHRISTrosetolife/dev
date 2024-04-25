@@ -32,4 +32,5 @@ export function lesson_console_log_analogy(parent) {
     html_strong_text(li3, 'output');
     html_span_text(li3, ' of the folding process');
     html_hr(parent);
+    html_p_text(parent, 'suppose two numbers are added together to produce their sum');
 }
