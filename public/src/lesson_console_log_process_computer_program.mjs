@@ -31,5 +31,6 @@ export function lesson_console_log_process_computer_program(parent) {
     html_style(code, {
         'color': 'white'
     });
+    html_hr(input_container)
     app_learn_code_code_part(input_container, 'output ( from computer program ) :', `hello`, 'lightgreen');
 }
