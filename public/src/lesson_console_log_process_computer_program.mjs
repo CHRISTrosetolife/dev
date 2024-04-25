@@ -17,11 +17,11 @@ export function lesson_console_log_process_computer_program(parent) {
     html_p_text(parent, 'a computer program may have outputs');
     html_p_text(parent, 'a computer program does something&nbsp;, using any inputs and producing any outputs');
     html_p_text(parent, 'we could say a computer program is a process that may have inputs and may have outputs');
+    html_hr(parent);
     html_p_text(parent, 'our first computer program will &nbsp;:');
     let ul1 = html_ul(parent);
     html_li_text(ul1, 'have no inputs');
     html_li_text(ul1, 'output a message');
-    html_hr(parent);
     let container = html_div(parent);
     app_learn_code_style_rounded_padded(container);
     html_style(container, {
