@@ -20,7 +20,7 @@ export function lesson_console_log_process_computer_program(parent) {
     html_p_text(parent, 'our first computer program will output a message :');
     let input_container = html_div(parent);
     html_p_text(input_container, 'input ( computer program ) :');
-    let code = html_p(input_container, `console.log('hello');`);
+    let code = html_p_text(input_container, `console.log('hello');`);
     html_style(code, {
         'color': 'white',
         'background-color': 'black'
