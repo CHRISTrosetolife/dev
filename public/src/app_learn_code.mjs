@@ -9,10 +9,13 @@ import {list_first} from "./list_first.mjs";
 import {object_property_get} from "./object_property_get.mjs";
 import {html_document_body} from "./html_document_body.mjs";
 import {html_inner_set} from "./html_inner_set.mjs";
+import { list_length } from "./list_length.mjs";
+import { list_index_last } from "./list_index_last.mjs";
 export function app_learn_code() {
     let root = html_document_body();
     let lesson = lesson_console_log();
     let screens = object_property_get(lesson, 'screens');
+    let index_last = list_index_last(screens);
     let content = html_div(root);
     let button_next = html_button_width_full_text(root, 'next');
     let button_previous = html_button_width_full_text(root, 'previous');
@@ -20,5 +23,10 @@ export function app_learn_code() {
     let screen = list_get(list, index);
     html_clear(content);
     screen(content);
-    if (equal(index, 0)) {}
+    if (equal(index, 0)) {
+        button_previous.disabled = true;
+    }
+    if (equal(index, 0)) {
+        button_previous.disabled = true;
+    }
 }
