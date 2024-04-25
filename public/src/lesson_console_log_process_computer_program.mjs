@@ -22,15 +22,15 @@ export function lesson_console_log_process_computer_program(parent) {
     html_li_text(ul1, 'any output from the computer program is an output of the running process');
     html_hr(parent);
     html_p_text(parent, 'our first computer program will output a message :');
-    let input_container = html_div(parent);
-    app_learn_code_style_rounded_padded(input_container);
-    html_style(input_container, {
+    let container = html_div(parent);
+    app_learn_code_style_rounded_padded(container);
+    html_style(container, {
         'background-color': 'lightgray'
     });
-    let {code} = app_learn_code_code_part(input_container, 'input ( computer program ) :', `console.log('hello');`, 'black');
+    let {code} = app_learn_code_code_part(container, 'input ( computer program ) :', `console.log('hello');`, 'black');
     html_style(code, {
         'color': 'white'
     });
-    html_hr(input_container)
-    app_learn_code_code_part(input_container, 'output ( from computer program ) :', `hello`, 'lightgreen');
+    html_hr(container)
+    app_learn_code_code_part(container, 'output ( from computer program ) :', `hello`, 'lightgreen');
 }
