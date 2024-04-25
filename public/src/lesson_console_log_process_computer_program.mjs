@@ -22,7 +22,7 @@ export function lesson_console_log_process_computer_program(parent) {
     let input_container = html_div(parent);
     app_learn_code_style_rounded_padded(input_container);
     html_p_text(input_container, 'input ( computer program ) :');
-    html_style(output, {
+    html_style(input_container, {
         'background-color': 'lightgray'
     });
     let code = html_p_text(input_container, `console.log('hello');`);
