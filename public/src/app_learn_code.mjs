@@ -19,7 +19,6 @@ export function app_learn_code() {
     let screens = object_property_get(lesson, 'screens');
     let index_last = list_index_last(screens);
     let content = html_div(root);
-    let {hash} = window.location;
     let index = 0;
     let button_next = html_button_width_full_text_click(root, 'next', function on_click() {
         index++;
