@@ -18,12 +18,13 @@ export function app_learn_code() {
     let screens = object_property_get(lesson, 'screens');
     let index_last = list_index_last(screens);
     let content = html_div(root);
+    let index = 0;
     let button_next = html_button_width_full_text(root, 'next');
     html_on_click(button_next, () => {
-        
+
     });
     let button_previous = html_button_width_full_text(root, 'previous');
-    let index = 0;
+
     refresh();
     function refresh() {
         let screen = list_get(list, index);
