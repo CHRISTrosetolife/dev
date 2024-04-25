@@ -26,7 +26,7 @@ export function app_learn_code() {
     if (equal(index, 0)) {
         button_previous.disabled = true;
     }
-    if (equal(index, 0)) {
-        button_previous.disabled = true;
+    if (equal(index, index_last)) {
+        button_next.disabled = true;
     }
 }
