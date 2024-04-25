@@ -34,15 +34,19 @@ export function app_learn_code() {
         html_clear(content);
         screen(content);
         html_enable(button_previous);
-        button_next.disabled = false;
+        html_enable(button_next);
         if (equal(index, 0)) {
-            button_previous.disabled = true;
+            html_disable(button_previous);
         }
         if (equal(index, index_last)) {
-            button_next.disabled = true;
+            html_disable(button_next);
         }
     }
 }
+function html_disable(button_previous) {
+    button_previous.element.disabled = true;
+}
+
 function html_enable(button_previous) {
     button_previous.element.disabled = false;
 }
