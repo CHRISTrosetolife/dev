@@ -1,3 +1,4 @@
+import {html_clear} from "./html_clear.mjs";
 import {html_button_width_full_text} from "./html_button_width_full_text.mjs";
 import {list_get} from "./list_get.mjs";
 import {html_button_width_full} from "./html_button_width_full.mjs";
@@ -17,7 +18,3 @@ export function app_learn_code() {
     let button_next = html_button_width_full_text(root, 'next');
     let button_previous = html_button_width_full_text(root, 'previous');
 }
-function html_clear(root) {
-    html_inner_set(root, '');
-}
-
