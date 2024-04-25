@@ -11,7 +11,8 @@ export function app_learn_code_code_part(parent, title_text, source_code, backgr
     app_learn_code_style_code(code);
     html_style_margin_none(code);
     html_style(code, {
-        'background-color': background_color
+        'background-color': background_color,
+        'white-space': 'initial',
     });
     return {
         code
