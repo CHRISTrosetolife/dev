@@ -1,3 +1,4 @@
+import {html_style_default} from "./html_style_default.mjs";
 import {html_disable} from "./html_disable.mjs";
 import {html_enable} from "./html_enable.mjs";
 import {string_prefix_without} from "./string_prefix_without.mjs";
@@ -16,11 +17,16 @@ import {html_document_body} from "./html_document_body.mjs";
 import {html_inner_set} from "./html_inner_set.mjs";
 import {list_length} from "./list_length.mjs";
 import {list_index_last} from "./list_index_last.mjs";
-import { html_style } from "./html_style.mjs";
+import {html_style} from "./html_style.mjs";
+import {object_merge} from "./object_merge.mjs";
 export function app_learn_code() {
     let root = html_document_body();
-    html_style(root, {'font-family':'sans-serif',
-'font-size':'4vh'})
+    html_style(root, {
+        'font-family': 'sans-serif'
+    });
+    object_merge(html_style_default(), {
+        'font-size': '4vh'
+    });
     let lesson = lesson_console_log();
     let screens = object_property_get(lesson, 'screens');
     let index_last = list_index_last(screens);
