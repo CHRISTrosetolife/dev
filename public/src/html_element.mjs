@@ -5,7 +5,8 @@ export function html_element(parent, tag_name) {
     let e = document.createElement(tag_name);
     html_style(e, html_style_default());
     element.appendChild(e);
-    return {
+    let result = {
         element: e
     };
+    return result;
 }
