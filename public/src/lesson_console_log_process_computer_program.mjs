@@ -27,7 +27,6 @@ export function lesson_console_log_process_computer_program(parent) {
     });
     let input_title = html_p_text(input_container, 'input ( computer program ) :');
     html_style_margin_none(input_title);
-
     let spacer_vertical = html_div(input_container);
     html_style(spacer_vertical, {
         'height': '1vh'
