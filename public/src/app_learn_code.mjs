@@ -12,8 +12,12 @@ export function app_learn_code() {
     let screens = object_property_get(lesson, 'screens');
     let index = 0;
     let screen = list_get(list, index);
-    html_inner_set(root, '');
+    html_clear(root);
     screen(root);
     let button_next = html_button_width_full_text(root, 'next');
     let button_previous = html_button_width_full_text(root, 'previous');
 }
+function html_clear(root) {
+    html_inner_set(root, '');
+}
+
