@@ -21,7 +21,10 @@ export function lesson_console_log_process_computer_program(parent) {
     html_p_text(parent, 'our first computer program will output a message :');
     let input_container = html_div(parent);
     app_learn_code_style_rounded_padded(input_container);
-    html_p_text(input_container, 'input ( computer program ) :');
+    let input_title = html_p_text(input_container, 'input ( computer program ) :');
+    html_style(input_title, {
+        'margin': 'none'
+    });
     html_style(input_container, {
         'background-color': 'lightgray'
     });
