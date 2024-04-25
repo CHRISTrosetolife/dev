@@ -42,10 +42,10 @@ export function ceb_learn() {
     });
     html_style_width_full(button2);
     let button_previous = html_button_width_full(root);
+    html_inner_set(button_previous, 'previous');
     html_style(button_previous, {
         'font-size': button_font_size
     });
-    html_inner_set(button_previous, 'previous');
     let button_next = html_element(root, 'button');
     html_style(button_next, {
         'font-size': button_font_size

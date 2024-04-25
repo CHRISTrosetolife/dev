@@ -9,5 +9,5 @@ export function app_learn_code() {
     let screens = object_property_get(lesson, 'screens');
     let screen_first = list_first(screens);
     screen_first(root);
-    html_button_width_full;
+    html_button_width_full(root);
 }
