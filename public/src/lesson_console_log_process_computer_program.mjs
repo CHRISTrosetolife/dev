@@ -21,7 +21,8 @@ export function lesson_console_log_process_computer_program(parent) {
     let code = html_element(input_container, 'pre')
     html_style(code, {
         'color':'white',
-        'background-color':'black'
+        'background-color':'black',
+        'padding': '0.5rem'
     })
     html_inner_set(code, `console.log('hello');`)
     html_p_text(parent, 'output from computer program :');
