@@ -13,12 +13,12 @@ export function app_learn_code() {
     let root = html_document_body();
     let lesson = lesson_console_log();
     let screens = object_property_get(lesson, 'screens');
-    let container = html_div(root);
+    let content = html_div(root);
     let button_next = html_button_width_full_text(root, 'next');
     let button_previous = html_button_width_full_text(root, 'previous');
     let index = 0;
     let screen = list_get(list, index);
-    html_clear(container);
-    screen(container);
+    html_clear(content);
+    screen(content);
     if (equal(index, 0)) {}
 }
