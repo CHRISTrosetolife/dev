@@ -11,12 +11,7 @@ import {html_element} from "./html_element.mjs";
 import {object_property_set} from "./object_property_set.mjs";
 import {string_combine} from "./string_combine.mjs";
 export function lesson_console_log_analogy(parent) {
-    html_p_text(parent, 'suppose there is paper');
-    html_img_width_full(parent, 'paper.jpg');
-    html_p_text(parent, 'and suppose someone folds the paper into origami');
-    html_img_width_full(parent, 'paper_folding.jpg');
-    html_p_text(parent, 'then afterward there is folded paper origami');
-    html_img_width_full(parent, 'paper_folded.jpg');
+    lesson_console_log_analogy_1(parent);
     html_hr(parent);
     html_p_text(parent, 'we could say :');
     let ol = html_ul(parent);
@@ -33,4 +28,14 @@ export function lesson_console_log_analogy(parent) {
     html_span_text(li3, ' of the folding process');
     html_hr(parent);
     html_p_text(parent, 'suppose two numbers are added together to produce their sum');
+    
 }
+function lesson_console_log_analogy_1(parent) {
+    html_p_text(parent, 'suppose there is paper');
+    html_img_width_full(parent, 'paper.jpg');
+    html_p_text(parent, 'and suppose someone folds the paper into origami');
+    html_img_width_full(parent, 'paper_folding.jpg');
+    html_p_text(parent, 'then afterward there is folded paper origami');
+    html_img_width_full(parent, 'paper_folded.jpg');
+}
+
