@@ -27,10 +27,7 @@ export function lesson_console_log_process_computer_program(parent) {
     html_style(input_container, {
         'background-color': 'lightgray'
     });
-    const title_text = 'input ( computer program ) :';
-    const source_code = `console.log('hello');`;
-    let background_color = 'black';
-    let code = app_learn_code_code_part(input_container, title_text, source_code, background_color);
+    let code = app_learn_code_code_part(input_container, 'input ( computer program ) :', `console.log('hello');`, 'black');
     html_style(code, {
         'color': 'white'
     });
