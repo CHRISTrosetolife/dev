@@ -7,5 +7,6 @@ export function lesson_console_log_analogy(parent) {
     let i1 = html_element(parent, 'img')
     let img_name = 'paper_folded.jpg'
     let img_path = string_combine('./img/', img_name)
+    let {element} = i1
     object_property_set(i1, 'src', img_path)
 }
