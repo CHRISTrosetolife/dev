@@ -25,7 +25,7 @@ export function app_learn_code() {
         'font-family': 'sans-serif'
     });
     object_merge(html_style_default(), {
-        'font-size': '4vh'
+        'font-size': '3vh'
     });
     let lesson = lesson_console_log();
     let screens = object_property_get(lesson, 'screens');
