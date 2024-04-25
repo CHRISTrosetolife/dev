@@ -1,3 +1,4 @@
+import {html_button_width_full_text_click} from "./html_button_width_full_text_click.mjs";
 import {html_on_click} from "./html_on_click.mjs";
 import {html_div} from "./html_div.mjs";
 import {equal} from "./equal.mjs";
@@ -19,12 +20,10 @@ export function app_learn_code() {
     let index_last = list_index_last(screens);
     let content = html_div(root);
     let index = 0;
-    const text = 'next';
-    let button_next = html_button_width_full_text_click(root, text, on_click);
-    function on_click() {
+    let button_next = html_button_width_full_text_click(root, 'next', function on_click() {
         index++;
         refresh();
-    }
+    });
     let button_previous = html_button_width_full_text(root, 'previous');
     refresh();
     function refresh() {
@@ -41,9 +40,3 @@ export function app_learn_code() {
         }
     }
 }
-function html_button_width_full_text_click(root, text, on_click) {
-    let button_next = html_button_width_full_text(root, text);
-    html_on_click(button_next, on_click);
-    return button_next;
-}
-
