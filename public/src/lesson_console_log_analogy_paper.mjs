@@ -12,7 +12,7 @@ import {html_p_text} from "./html_p_text.mjs";
 import {html_element} from "./html_element.mjs";
 import {object_property_set} from "./object_property_set.mjs";
 import {string_combine} from "./string_combine.mjs";
-export function lesson_console_log_analogy(parent) {
+export function lesson_console_log_analogy_paper(parent) {
     html_p_text(parent, 'suppose there is paper');
     html_img_width_full(parent, 'paper.jpg');
     html_p_text(parent, 'and suppose someone folds the paper into origami');
