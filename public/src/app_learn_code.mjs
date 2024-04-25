@@ -19,7 +19,9 @@ export function app_learn_code() {
     let index_last = list_index_last(screens);
     let content = html_div(root);
     let button_next = html_button_width_full_text(root, 'next');
-    html_on_click;
+    html_on_click(button_next, () => {
+        
+    });
     let button_previous = html_button_width_full_text(root, 'previous');
     let index = 0;
     refresh();
