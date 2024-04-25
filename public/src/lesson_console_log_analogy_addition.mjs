@@ -21,4 +21,6 @@ export function lesson_console_log_analogy_addition(parent) {
     html_p_text(parent, 'we could say :');
     let ol = html_ul(parent);
     html_li_text(ol, 'the adding of the two numbers together is a process');
+    html_li_text(ol, 'the two numbers are the inputs to the addition process');
+    html_li_text(ol, 'the sum of the two numbers is the output of the addition process');
 }
