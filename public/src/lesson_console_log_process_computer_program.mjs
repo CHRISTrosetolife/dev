@@ -26,10 +26,12 @@ export function lesson_console_log_process_computer_program(parent) {
     html_style(input_container, {
         'background-color': 'lightgray'
     });
-    let title = html_p_text(input_container, 'input ( computer program ) :');
+    const title_text = 'input ( computer program ) :';
+    const source_code = `console.log('hello');`;
+    let title = html_p_text(input_container, title_text);
     html_style_margin_none(title);
     html_spacer_vertical(input_container);
-    let code = html_p_text(input_container, `console.log('hello');`);
+    let code = html_p_text(input_container, source_code);
     html_style_margin_none(code);
     html_style(code, {
         'color': 'white',
