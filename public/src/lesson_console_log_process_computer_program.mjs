@@ -27,6 +27,10 @@ export function lesson_console_log_process_computer_program(parent) {
     html_style(input_container, {
         'background-color': 'lightgray'
     });
+    let spacer_vertical = html_div(input_container);
+    html_style(spacer_vertical, {
+        'height': '1vh'
+    });
     let code = html_p_text(input_container, `console.log('hello');`);
     html_style_margin_none(code);
     html_style(code, {
