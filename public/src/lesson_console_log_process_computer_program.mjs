@@ -1,3 +1,4 @@
+import {html_spacer_vertical} from "./html_spacer_vertical.mjs";
 import {html_style_margin_none} from "./html_style_margin_none.mjs";
 import {app_learn_code_style_rounded_padded} from "./app_learn_code_style_rounded_padded.mjs";
 import {app_learn_code_style_code} from "./app_learn_code_style_code.mjs";
@@ -27,10 +28,7 @@ export function lesson_console_log_process_computer_program(parent) {
     });
     let input_title = html_p_text(input_container, 'input ( computer program ) :');
     html_style_margin_none(input_title);
-    let spacer_vertical = html_div(input_container);
-    html_style(spacer_vertical, {
-        'height': '1vh'
-    });
+    html_spacer_vertical(input_container);
     let code = html_p_text(input_container, `console.log('hello');`);
     html_style_margin_none(code);
     html_style(code, {
