@@ -11,5 +11,5 @@ export function app_learn_code_code_part(parent, title_text, source_code, backgr
     html_style(code, {
         'background-color': background_color
     });
-    return code;
+    return {code};
 }
