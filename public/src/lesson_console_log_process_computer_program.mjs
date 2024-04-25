@@ -26,8 +26,8 @@ export function lesson_console_log_process_computer_program(parent) {
     html_style(input_container, {
         'background-color': 'lightgray'
     });
-    let input_title = html_p_text(input_container, 'input ( computer program ) :');
-    html_style_margin_none(input_title);
+    let title = html_p_text(input_container, 'input ( computer program ) :');
+    html_style_margin_none(title);
     html_spacer_vertical(input_container);
     let code = html_p_text(input_container, `console.log('hello');`);
     html_style_margin_none(code);
