@@ -1,3 +1,6 @@
+import {html_disable} from "./html_disable.mjs";
+import {html_enable} from "./html_enable.mjs";
+import {string_prefix_without} from "./string_prefix_without.mjs";
 import {html_button_width_full_text_click} from "./html_button_width_full_text_click.mjs";
 import {html_on_click} from "./html_on_click.mjs";
 import {html_div} from "./html_div.mjs";
@@ -19,7 +22,9 @@ export function app_learn_code() {
     let screens = object_property_get(lesson, 'screens');
     let index_last = list_index_last(screens);
     let content = html_div(root);
-    let index = 0;
+    let {hash} = window.location;
+    hash = string_prefix_without(hash, '#');
+    let index = parseInt(hash, 10) || 0;
     let button_next = html_button_width_full_text_click(root, 'next', function on_click() {
         index++;
         refresh();
@@ -43,11 +48,3 @@ export function app_learn_code() {
         }
     }
 }
-function html_disable(button_previous) {
-    button_previous.element.disabled = true;
-}
-
-function html_enable(button_previous) {
-    button_previous.element.disabled = false;
-}
-
