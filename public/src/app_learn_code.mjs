@@ -1,3 +1,4 @@
+import {equal} from "./equal.mjs";
 import {html_clear} from "./html_clear.mjs";
 import {html_button_width_full_text} from "./html_button_width_full_text.mjs";
 import {list_get} from "./list_get.mjs";
@@ -15,6 +16,7 @@ export function app_learn_code() {
     let screen = list_get(list, index);
     html_clear(root);
     screen(root);
+    if (equal(index, 0)) {}
     let button_next = html_button_width_full_text(root, 'next');
     let button_previous = html_button_width_full_text(root, 'previous');
 }
