@@ -1,3 +1,4 @@
+import {html_style_margin_none} from "./html_style_margin_none.mjs";
 import {app_learn_code_style_rounded_padded} from "./app_learn_code_style_rounded_padded.mjs";
 import {app_learn_code_style_code} from "./app_learn_code_style_code.mjs";
 import {html_p} from "./html_p.mjs";
@@ -22,9 +23,7 @@ export function lesson_console_log_process_computer_program(parent) {
     let input_container = html_div(parent);
     app_learn_code_style_rounded_padded(input_container);
     let input_title = html_p_text(input_container, 'input ( computer program ) :');
-    html_style(input_title, {
-        'margin': '0'
-    });
+    html_style_margin_none(input_title);
     html_style(input_container, {
         'background-color': 'lightgray'
     });
