@@ -16,5 +16,5 @@ export function lesson_console_log_process_computer_program(parent) {
     html_p_text(parent, 'our first computer program will output a message');
     html_p_text(parent, 'and here is our first computer program :');
     let code = html_element(parent, 'pre')
-    html_inner_set(code, `console.log('hello')`)
+    html_inner_set(code, `console.log('hello');`)
 }
