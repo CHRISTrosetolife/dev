@@ -1,3 +1,4 @@
+import {app_learn_code_style_rounded_padded} from "./app_learn_code_style_rounded_padded.mjs";
 import {app_learn_code_style_code} from "./app_learn_code_style_code.mjs";
 import {html_p} from "./html_p.mjs";
 import {html_li_text} from "./html_li_text.mjs";
@@ -19,7 +20,11 @@ export function lesson_console_log_process_computer_program(parent) {
     html_hr(parent);
     html_p_text(parent, 'our first computer program will output a message :');
     let input_container = html_div(parent);
+    app_learn_code_style_rounded_padded(input_container);
     html_p_text(input_container, 'input ( computer program ) :');
+    html_style(output, {
+        'background-color': 'lightgray'
+    });
     let code = html_p_text(input_container, `console.log('hello');`);
     html_style(code, {
         'color': 'white',
