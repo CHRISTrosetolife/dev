@@ -1,3 +1,4 @@
+import {html_button_width_full} from "./html_button_width_full.mjs";
 import {html_button} from "./html_button.mjs";
 import {html_document_body} from "./html_document_body.mjs";
 import {ceb_translations} from "./ceb_translations.mjs";
@@ -89,9 +90,3 @@ export function ceb_learn() {
         refresh();
     });
 }
-function html_button_width_full(root) {
-    let button_previous = html_button(root);
-    html_style_width_full(button_previous);
-    return button_previous;
-}
-
