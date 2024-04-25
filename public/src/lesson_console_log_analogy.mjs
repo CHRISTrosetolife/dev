@@ -31,4 +31,5 @@ export function lesson_console_log_analogy(parent) {
     html_span_text(li3, 'the folded paper is the ');
     html_strong_text(li3, 'output');
     html_span_text(li3, ' of the folding process');
+    html_hr(parent);
 }
