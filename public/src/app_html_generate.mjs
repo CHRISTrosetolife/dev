@@ -21,7 +21,7 @@ export async function app_html_generate(name) {
       </head>
       <body>
         <script type="module">
-          ${js_code_import_path(import_path, import_name)}
+          ${js_code_import_path(import_path, name_prefixed)}
           ${js_code_call(name_prefixed)}
         </script>
       </body>
