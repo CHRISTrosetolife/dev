@@ -31,8 +31,8 @@ export function lesson_console_log_process_computer_program(parent) {
         'background-color': 'black'
     });
     app_learn_code_style_code(code);
-    html_p_text(parent, 'output ( from computer program ) :');
-    let output = html_p_text(parent, `hello`);
+    html_p_text(input_container, 'output ( from computer program ) :');
+    let output = html_p_text(input_container, `hello`);
     html_style(output, {
         'background-color': 'lightgreen'
     });
