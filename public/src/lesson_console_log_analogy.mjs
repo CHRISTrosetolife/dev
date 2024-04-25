@@ -19,8 +19,5 @@ export function lesson_console_log_analogy(parent) {
     let ol = html_ul(parent);
     let li1 = html_li(ol);
     html_span_text(li1, 'the folding of the paper into origami is a ')
-    html_span_text(li1, 'process')
-    html_li_text(ol, 'process');
-    html_li_text(ol, 'the ');
-    html_li_text(ol, 'an output');
+    html_strong_text(li1, 'process')
 }
