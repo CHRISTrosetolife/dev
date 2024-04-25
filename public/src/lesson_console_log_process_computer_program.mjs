@@ -28,6 +28,7 @@ export function lesson_console_log_process_computer_program(parent) {
         'background-color': 'lightgray'
     });
     let code = html_p_text(input_container, `console.log('hello');`);
+    html_style_margin_none(code);
     html_style(code, {
         'color': 'white',
         'background-color': 'black'
