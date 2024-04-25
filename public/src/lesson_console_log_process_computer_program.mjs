@@ -4,6 +4,7 @@ import {html_p_text} from "./html_p_text.mjs";
 import {html_hr} from "./html_hr.mjs";
 import { html_element } from "./html_element.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
+import { html_div } from "./html_div.mjs";
 export function lesson_console_log_process_computer_program(parent) {
     html_p_text(parent, 'a computer runs a computer program');
     html_p_text(parent, 'when a computer program is ran , the computer program may have output');
@@ -14,8 +15,9 @@ export function lesson_console_log_process_computer_program(parent) {
     html_li_text(ul1, 'any output from the computer program is an output of the running process');
     html_hr(parent);
     html_p_text(parent, 'our first computer program will output a message :');
-    html_p_text(parent, 'input computer program :');
-    let code = html_element(parent, 'pre')
+    let input_container = html_div(parent)
+    html_p_text(input_container, 'input computer program :');
+    let code = html_element(input_container, 'pre')
     html_inner_set(code, `console.log('hello');`)
     html_p_text(parent, 'output from computer program :');
     let output = html_element(parent, 'pre')
