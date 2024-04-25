@@ -1,5 +1,3 @@
-import {lesson_console_log_analogy_2} from "./lesson_console_log_analogy_2.mjs";
-import {lesson_console_log_analogy_1} from "./lesson_console_log_analogy_1.mjs";
 import {html_hr} from "./html_hr.mjs";
 import {html_strong_text} from "./html_strong_text.mjs";
 import {html_li} from "./html_li.mjs";
