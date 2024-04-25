@@ -23,7 +23,7 @@ export function lesson_console_log_process_computer_program(parent) {
     app_learn_code_style_rounded_padded(input_container);
     let input_title = html_p_text(input_container, 'input ( computer program ) :');
     html_style(input_title, {
-        'margin': 'none'
+        'margin': '0'
     });
     html_style(input_container, {
         'background-color': 'lightgray'
