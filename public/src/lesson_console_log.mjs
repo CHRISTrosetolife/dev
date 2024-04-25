@@ -1,4 +1,3 @@
-import {lesson_console_log_analogy} from "./lesson_console_log_analogy.mjs";
 import {list_add} from "./list_add.mjs";
 import {array_new} from "./array_new.mjs";
 import {list_1} from "./list_1.mjs";
