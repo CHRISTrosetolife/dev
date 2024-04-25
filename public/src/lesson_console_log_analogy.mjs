@@ -11,4 +11,9 @@ export function lesson_console_log_analogy(parent) {
     html_img_width_full(parent, 'paper_folding.jpg');
     html_p_text(parent, 'then afterward there is folded paper origami');
     html_img_width_full(parent, 'paper_folded.jpg');
+    html_span_text(parent, 'we could say :');
+    let ol = html_ul(parent);
+    html_li_text(ol, 'the folding of the paper into origami is a process');
+    html_li_text(ol, 'the');
+    html_li_text(ol, 'an output');
 }
