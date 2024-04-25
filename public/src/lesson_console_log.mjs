@@ -1,3 +1,4 @@
+import {lesson_console_log_analogy} from "./lesson_console_log_analogy.mjs";
 import {list_add} from "./list_add.mjs";
 import {array_new} from "./array_new.mjs";
 import {list_1} from "./list_1.mjs";
@@ -12,7 +13,7 @@ export function lesson_console_log() {
     let v1 = object_new();
     object_property_set(v1, 'description', 'outputting a string to the console');
     let v2 = array_new();
-    list_add(v2, lesson_console_log_intro);
+    list_add(v2, lesson_console_log_analogy);
     object_property_set(v1, 'screens', v2);
     return v1;
 }
