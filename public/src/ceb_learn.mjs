@@ -42,8 +42,7 @@ export function ceb_learn() {
     });
     html_style_width_full(button2);
     const button_text = 'previous';
-    let button_previous = html_button_width_full(root);
-    html_inner_set(button_previous, button_text);
+    let button_previous = html_button_width_full_text(root, button_text);
     html_style(button_previous, {
         'font-size': button_font_size
     });
@@ -91,3 +90,9 @@ export function ceb_learn() {
         refresh();
     });
 }
+function html_button_width_full_text(root, button_text) {
+    let button_previous = html_button_width_full(root);
+    html_inner_set(button_previous, button_text);
+    return button_previous;
+}
+
