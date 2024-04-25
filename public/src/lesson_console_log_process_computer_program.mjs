@@ -6,7 +6,7 @@ import { html_element } from "./html_element.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 export function lesson_console_log_process_computer_program(parent) {
     html_p_text(parent, 'a computer runs a computer program');
-    html_p_text(parent, 'when a computer program is ran , it may have output');
+    html_p_text(parent, 'when a computer program is ran , the computer program may have output');
     html_p_text(parent, 'we could say :');
     let ul1 = html_ul(parent)
     html_li_text(ul1, 'when a computer runs a computer program , the running is a process');
