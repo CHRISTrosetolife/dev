@@ -27,6 +27,9 @@ export function lesson_console_log_process_computer_program(parent) {
     });
     app_learn_code_style_code(code);
     html_p_text(parent, 'output ( from computer program ) :');
-    let output = html_element(parent, 'pre');
-    html_inner_set(output, `hello`);
+    let output = html_p(parent, `hello`);
+    html_style(output, {
+        'background-color': 'lightgreen'
+    });
+    app_learn_code_style_code(output);
 }
