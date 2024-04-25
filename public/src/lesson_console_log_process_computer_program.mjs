@@ -13,8 +13,11 @@ export function lesson_console_log_process_computer_program(parent) {
     html_li_text(ul1, 'the computer program is an input to the running process');
     html_li_text(ul1, 'any output from the computer program is an output of the running process');
     html_hr(parent);
-    html_p_text(parent, 'our first computer program will output a message');
-    html_p_text(parent, 'and here is our first computer program :');
+    html_p_text(parent, 'our first computer program will output a message :');
+    html_p_text(parent, 'input computer program :');
     let code = html_element(parent, 'pre')
     html_inner_set(code, `console.log('hello');`)
+    html_p_text(parent, 'output from computer program :');
+    let output = html_element(parent, 'pre')
+    html_inner_set(output, `hello`)
 }
