@@ -7,4 +7,5 @@ export function app_learn_code() {
     let lesson = lesson_console_log();
     let screens = object_property_get(lesson, 'screens');
     let screen_first = list_first(screens);
+    screen_first(root);;
 }
