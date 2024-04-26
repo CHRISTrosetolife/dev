@@ -13,4 +13,7 @@ export function lesson_console_log_quiz(parent) {
     let container = app_learn_code_code_container(parent);
     app_learn_code_code_part_titled_code(container, source);
     html_hr(container);
+    let choices = 4;
+    let button = html_button_width_full_text_click(root, 'previous', function on_click() {
+    });
 }
