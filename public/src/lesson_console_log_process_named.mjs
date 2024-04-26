@@ -16,7 +16,7 @@ import {html_span_text} from "./html_span_text.mjs";
 import {list_length} from "./list_length.mjs";
 import {list_get} from "./list_get.mjs";
 import {html_style_bold} from "./html_style_bold.mjs";
-import { html_spacer_vertical } from "./html_spacer_vertical.mjs";
+import {html_spacer_vertical} from "./html_spacer_vertical.mjs";
 export function lesson_console_log_process_named(parent) {
     html_p_text(parent, 'besides addition&nbsp;, there are other symbols / processes&nbsp;as well');
     html_p_text(parent, 'there is&nbsp;:');
@@ -41,11 +41,11 @@ export function lesson_console_log_process_named(parent) {
     html_hr(parent);
     html_style_alternate(parent, html_p, [noop, html_style_bold], ['here are some examples of a ', 'string', ' ( a string is text like letters and symbols ) in javascript :']);
     app_learn_code_code_part_contrast(parent, '\'hello\'');
-    html_spacer_vertical(parent)
+    html_spacer_vertical(parent);
     app_learn_code_code_part_contrast(parent, '\'strings can have spaces\'');
-    html_spacer_vertical(parent)
+    html_spacer_vertical(parent);
     app_learn_code_code_part_contrast(parent, '\'strings can have numbers like : 123\'');
-    html_spacer_vertical(parent)
+    html_spacer_vertical(parent);
     app_learn_code_code_part_contrast(parent, '\'strings can have numbers like 123\'');
     html_style_alternate(parent, html_p, [noop, html_style_monospace], ['notice that the beginning of a string has a quote ( ', '\'', ' ) and so does the end of a string']);
 }
