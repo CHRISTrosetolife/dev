@@ -28,7 +28,7 @@ export function lesson_console_log_process_computer_program(parent) {
     html_style_alternate(parent, html_p, [noop, html_style_monospace], ['suppose there is a process named ', 'console.log']);
     html_p_text(parent, 'then we can write : ');
     app_learn_code_code_part_contrast(parent, 'console.log()');
-    html_p_text(parent, 'right now there are no inputs for this process , so there is nothing in between the parenthesis');
+    html_p_text(parent, 'right now there are no inputs for this process , so there is nothing in between the parentheses');
     html_style_alternate(parent, html_p, [noop, html_style_monospace], 
     ['suppose there is a string ', '\'hello\'']);
     html_style_alternate(parent, html_p, [noop, html_style_monospace], 
