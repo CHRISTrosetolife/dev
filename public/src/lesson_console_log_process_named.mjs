@@ -38,10 +38,15 @@ export function lesson_console_log_process_named(parent) {
     html_style_alternate(parent, html_p, [noop, html_style_monospace], ['in javascript a semicolon ( ', ';', ' ) is a separator']);
     html_hr(parent);
     html_style_alternate(parent, html_p, [noop, html_style_bold], ['here are some examples of a ', 'string', ' ( a string is text like letters and symbols ) in javascript :']);
-    let code = app_learn_code_code_part(parent, '\'hello\'', 'black');
-    app_learn_code_style_code_color(code);
+    const code = '\'hello\'';
+    app_learn_code_code_part_contrast(parent, code);
     html_li_text_monospace(ol4, '\'strings can have spaces\'');
     html_li_text_monospace(ol4, '\'strings can have numbers like : 123\'');
     html_li_text_monospace(ol4, '\'strings can have numbers like 123\'');
     html_style_alternate(parent, html_p, [noop, html_style_monospace], ['notice that the beginning of a string has a quote ( ', '\'', ' ) and so does the end of a string']);
 }
+function app_learn_code_code_part_contrast(parent, code) {
+    let component = app_learn_code_code_part(parent, code, 'black');
+    app_learn_code_style_code_color(component);
+}
+
