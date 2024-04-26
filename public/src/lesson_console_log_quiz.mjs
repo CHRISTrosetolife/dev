@@ -47,7 +47,7 @@ export function lesson_console_log_quiz(parent) {
     });
     let s = subtract(list_length(choices), 1);
     let correct_index = integer_random(0, s);
-    console.log({correct_index})
+    console.log({correct_index, s})
     let correct = list_get(choices, correct_index);
     let {source} = correct;
     app_learn_code_code_part_titled_code(container, source);
