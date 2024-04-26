@@ -18,4 +18,5 @@ export function lesson_console_log_analogy_addition(parent) {
     html_li_text(ol2, 'the addition sign ( "+" ) is a process');
     html_li_text(ol2, '"a" and "b" are the inputs to the "+" process');
     html_li_text(ol2, '"c" is the output of the "+" process');
+    html_hr(parent)
 }
