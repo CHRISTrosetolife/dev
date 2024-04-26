@@ -1,3 +1,3 @@
 export function integer_random(low, high) {
-    return Math.random() * (high - low) + low;
+    return Math.floor(Math.random() * (high - low) + low + 1);
 }
