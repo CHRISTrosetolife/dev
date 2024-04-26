@@ -43,10 +43,11 @@ export function lesson_console_log_analogy_addition(parent) {
     html_li_text(ol4, 'division&nbsp;: divide(8, 4) = 2');
     html_p_text(parent, 'notice that a comma ( , ) separates the inputs');
     html_p_text(parent, 'in computers different symbols can be used as a separator so that the computer can tell two things apart');
+    let create = html_p;
+    let p1 = create(parent);
     let patterns = [noop, html_style_monospace];
     let strings = ['in javascript a semicolon ( ', ';', ') is a separator'];
     let patterns_length = list_length(patterns);
-    let p1 = html_p(parent);
     each_index(strings, (element, index) => {
         let span = html_span_text(p1, element)
         let pattern_index = mod(index, patterns_length);
