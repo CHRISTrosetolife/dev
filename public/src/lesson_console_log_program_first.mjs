@@ -19,20 +19,13 @@ import {html_div} from "./html_div.mjs";
 import {html_style} from "./html_style.mjs";
 import {app_learn_code_code_part_titled} from "./app_learn_code_code_part_titled.mjs";
 import {html_style_monospace} from "./html_style_monospace.mjs";
-export function lesson_console_log_process_computer_program(parent) {
-    html_p_text(parent, 'a computer program may have inputs');
-    html_p_text(parent, 'a computer program may have outputs');
-    html_p_text(parent, 'a computer program does something&nbsp;, using any inputs and producing any outputs');
-    html_p_text(parent, 'we could say a computer program is a process that may have inputs and may have outputs');
-    html_hr(parent);
+export function lesson_console_log_program_first(parent) {
     html_style_alternate(parent, html_p, [noop, html_style_monospace], ['suppose there is a process named ', 'console.log']);
     html_p_text(parent, 'then we can write : ');
     app_learn_code_code_part_contrast(parent, 'console.log()');
     html_p_text(parent, 'right now there are no inputs for this process , so there is nothing in between the parentheses');
-    html_style_alternate(parent, html_p, [noop, html_style_monospace], 
-    ['suppose there is a string ', '\'hello\'']);
-    html_style_alternate(parent, html_p, [noop, html_style_monospace], 
-    ['suppose the string ', '\'hello\'', ' is an input to the ', 'console.log', ' process']);
+    html_style_alternate(parent, html_p, [noop, html_style_monospace], ['suppose there is a string ', '\'hello\'']);
+    html_style_alternate(parent, html_p, [noop, html_style_monospace], ['suppose the string ', '\'hello\'', ' is an input to the ', 'console.log', ' process']);
     html_p_text(parent, 'then we can write : ');
     app_learn_code_code_part_contrast(parent, 'console.log(\'hello\')');
     html_p_text(parent, 'this is almost a finished computer program');
