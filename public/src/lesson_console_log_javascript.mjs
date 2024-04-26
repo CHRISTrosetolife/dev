@@ -21,14 +21,4 @@ export function lesson_console_log_javascript(parent) {
     html_style_alternate(parent, html_p, [noop, html_style_bold], ['in computer programming different symbols can be used as a ', 'separator', ' so that the computer can tell two things apart']);
     html_style_alternate(parent, html_p, [noop, html_style_bold], ['we will be learning a computer programming language called ', 'javascript']);
     html_style_alternate(parent, html_p, [noop, html_style_monospace], ['in javascript a semicolon ( ', ';', ' ) is a separator']);
-    html_hr(parent);
-    html_style_alternate(parent, html_p, [noop, html_style_bold], ['here are some examples of ', 'strings', ' ( a string is text , like letters and symbols ) in javascript :']);
-    app_learn_code_code_part_contrast(parent, '\'hello\'');
-    html_spacer_vertical(parent);
-    app_learn_code_code_part_contrast(parent, '\'strings can have spaces\'');
-    html_spacer_vertical(parent);
-    app_learn_code_code_part_contrast(parent, '\'strings can have numbers\'');
-    html_spacer_vertical(parent);
-    app_learn_code_code_part_contrast(parent, '\'like 123\'');
-    html_style_alternate(parent, html_p, [noop, html_style_monospace], ['notice that the beginning of a string has a quote ( ', '\'', ' ) and so does the end of a string']);
 }
