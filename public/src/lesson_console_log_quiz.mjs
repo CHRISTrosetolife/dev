@@ -47,7 +47,7 @@ export function lesson_console_log_quiz(parent) {
     let correct_index = integer_random(0, subtract(choices_count, 1))
     let correct = list_get(choices, correct_index);
     let {source} = correct;
-    // app_learn_code_code_part_titled_code(container, source);
+    app_learn_code_code_part_titled_code(container, source);
     for (let m of mapped) {
         let {messages} = m;
         let button = html_button_width_full_text_click(container, 'previous', function on_click() {});
