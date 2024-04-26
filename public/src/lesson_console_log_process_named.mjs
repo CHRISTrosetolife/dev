@@ -38,7 +38,7 @@ export function lesson_console_log_process_named(parent) {
     html_p_text(parent, 'here are some examples of a string ( text like letters and symbols ) in javascript :');
     let ol4 = html_ul(parent);
     html_li_text_monospace(ol4, '\'hello\'');
-    html_li_text(ol4, '\'strings can have spaces\'');
-    html_li_text(ol4, '\'strings can have numbers like : 123\'');
-    html_li_text(ol4, '\'strings can have numbers like 123\'');
+    html_li_text_monospace(ol4, '\'strings can have spaces\'');
+    html_li_text_monospace(ol4, '\'strings can have numbers like : 123\'');
+    html_li_text_monospace(ol4, '\'strings can have numbers like 123\'');
 }
