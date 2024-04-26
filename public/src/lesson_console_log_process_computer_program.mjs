@@ -27,7 +27,7 @@ export function lesson_console_log_process_computer_program(parent) {
     html_style(container, {
         'background-color': 'lightgray'
     });
-    let {code} = app_learn_code_code_part(container, 'computer code ( process ) :', `console.log('hello');`, 'black');
+    let {code} = app_learn_code_code_part(container, 'code :', `console.log('hello');`, 'black');
     html_style(code, {
         'color': 'white'
     });
