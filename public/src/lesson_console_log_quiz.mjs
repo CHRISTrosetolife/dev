@@ -1,3 +1,4 @@
+import {list_includes} from "./list_includes.mjs";
 import {array_new} from "./array_new.mjs";
 import {html_button_width_full_text_click} from "./html_button_width_full_text_click.mjs";
 import {html_hr} from "./html_hr.mjs";
@@ -12,6 +13,7 @@ import {integer_random} from "./integer_random.mjs";
 import {list_length} from "./list_length.mjs";
 import {string_split_space} from "./string_split_space.mjs";
 import {range} from "./range.mjs";
+import {list_add} from "./list_add.mjs";
 export function lesson_console_log_quiz(parent) {
     let container = app_learn_code_code_container(parent);
     app_learn_code_code_part_titled_code(container, source);
@@ -22,6 +24,11 @@ export function lesson_console_log_quiz(parent) {
     for (let c of r) {
         for (let i of range(100)) {
             let source = lesson_console_log_quiz_get();
+            if (list_includes(choices, source)) {
+                continue;
+            }
+            list_add(choices, source);
+            break;
         }
     }
     let button = html_button_width_full_text_click(root, 'previous', function on_click() {});
