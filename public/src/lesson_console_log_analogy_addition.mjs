@@ -19,4 +19,10 @@ export function lesson_console_log_analogy_addition(parent) {
     html_li_text(ol2, '"a" and "b" are the inputs to the "+" process');
     html_li_text(ol2, '"c" is the output of the "+" process');
     html_hr(parent)
+    html_p_text(parent, 'besides addition&nbsp;, there are other symbols / processes&nbsp;as well');
+    html_p_text(parent, 'there is&nbsp;:');
+    let ol3 = html_ul(parent);
+    html_li_text(ol3, 'subtraction&nbsp;: 3 - 2 = 1');
+    html_li_text(ol3, 'multiplication&nbsp;: 3 x 2 = 6');
+   
 }
