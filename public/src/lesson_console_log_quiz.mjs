@@ -45,7 +45,9 @@ export function lesson_console_log_quiz(parent) {
             messages
         };
     });
-    let correct_index = integer_random(0, subtract(choices_count, 1));
+    let s = subtract(list_length(choices), 1);
+    let correct_index = integer_random(0, s);
+    console.log({correct_index})
     let correct = list_get(choices, correct_index);
     let {source} = correct;
     app_learn_code_code_part_titled_code(container, source);
