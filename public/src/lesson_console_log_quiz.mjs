@@ -15,5 +15,6 @@ export function lesson_console_log_quiz() {
     let end = add(index, word_count);
     let sliced = list_slice(words, index, end);
     let message = list_join(sliced, ' ');
-    return message;
+    let code = `console.log('${message}');`
+    return code;
 }
