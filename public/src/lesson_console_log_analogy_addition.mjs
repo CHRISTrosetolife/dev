@@ -44,7 +44,5 @@ export function lesson_console_log_analogy_addition(parent) {
     html_li_text(ol4, 'division&nbsp;: divide(8, 4) = 2');
     html_p_text(parent, 'notice that a comma ( , ) separates the inputs');
     html_p_text(parent, 'in computers different symbols can be used as a separator so that the computer can tell two things apart');
-    let patterns = [noop, html_style_monospace];
-    let strings = ['in javascript a semicolon ( ', ';', ' ) is a separator'];
-    html_style_alternate(parent, html_p, patterns, strings);
+    html_style_alternate(parent, html_p, [noop, html_style_monospace], ['in javascript a semicolon ( ', ';', ' ) is a separator']);
 }
