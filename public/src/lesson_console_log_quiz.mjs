@@ -36,7 +36,7 @@ export function lesson_console_log_quiz(parent) {
         let source_augmented = `let log_old = console.log;
         let messages = [];
         console.log = message => messages.push(message);
-        ${choice};
+        ${c};
         console.log = log_old;
         messages;`;
         let messages = eval(source_augmented);
