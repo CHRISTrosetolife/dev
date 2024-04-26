@@ -1,3 +1,5 @@
+import {noop} from "./noop.mjs";
+import {html_style_alternate} from "./html_style_alternate.mjs";
 import {app_learn_code_code_part} from "./app_learn_code_code_part.mjs";
 import {html_spacer_vertical} from "./html_spacer_vertical.mjs";
 import {html_style_margin_none} from "./html_style_margin_none.mjs";
@@ -22,6 +24,8 @@ export function lesson_console_log_process_computer_program(parent) {
     let ul1 = html_ul(parent);
     html_li_text(ul1, 'have no inputs');
     html_li_text(ul1, 'output a message');
+    html_p_text(parent);
+    html_style_alternate(parent, html_p, [noop], ['when a human writes a computer program&nbsp;, the human writes code']);
     let container = html_div(parent);
     app_learn_code_style_rounded_padded(container);
     html_style(container, {
@@ -31,6 +35,6 @@ export function lesson_console_log_process_computer_program(parent) {
     html_style(code, {
         'color': 'white'
     });
-    html_hr(container)
+    html_hr(container);
     app_learn_code_code_part(container, 'output :', `hello`, 'lightgreen');
 }
