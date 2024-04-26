@@ -38,8 +38,7 @@ export function lesson_console_log_program_first(parent) {
     html_style(container, {
         'background-color': 'lightgray'
     });
-    const source = `console.log('hello');`;
-    app_learn_code_code_part_titled_code(container, source);
+    app_learn_code_code_part_titled_code(container, `console.log('hello');`);
     html_hr(container);
     app_learn_code_code_part_titled(container, 'output :', `hello`, 'lightgreen');
 }
