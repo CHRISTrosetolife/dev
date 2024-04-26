@@ -7,6 +7,7 @@ import {html_ul} from "./html_ul.mjs";
 import {html_p_text} from "./html_p_text.mjs";
 import {html_hr} from "./html_hr.mjs";
 import {html_span_text} from "./html_span_text.mjs";
+import { list_length } from "./list_length.mjs";
 export function lesson_console_log_analogy_addition(parent) {
     html_p_text(parent, 'suppose two numbers are added together to get their sum');
     html_p_text(parent, 'we could say :');
@@ -42,6 +43,9 @@ export function lesson_console_log_analogy_addition(parent) {
     html_p_text(parent, 'in computers different symbols can be used as a separator so that the computer can tell two things apart');
     let pattern = [noop, html_style_monospace];
     let strings = ['in javascript a semicolon ( ', ';', ') is a separator'];
+    let pattern_length = list_length(pattern)
     let p1 = html_p(parent);
-    each_index;
+    each_index(strings, (element, index) => {
+
+    });
 }
