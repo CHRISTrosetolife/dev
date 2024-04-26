@@ -19,8 +19,8 @@ import {string_split_space} from "./string_split_space.mjs";
 import {range} from "./range.mjs";
 import {list_add} from "./list_add.mjs";
 import {list_get} from "./list_get.mjs";
-import { html_style_monospace } from "./html_style_monospace.mjs";
-import { html_spacer_vertical } from "./html_spacer_vertical.mjs";
+import {html_style_monospace} from "./html_style_monospace.mjs";
+import {html_spacer_vertical} from "./html_spacer_vertical.mjs";
 export function lesson_console_log_quiz(parent) {
     let container = app_learn_code_code_container(parent);
     let choices_count = 4;
@@ -52,12 +52,12 @@ export function lesson_console_log_quiz(parent) {
     let source = list_random_item(choices);
     app_learn_code_code_part_titled_code(container, source);
     html_hr(container);
-    app_learn_code_code_part_title_output(parent);
+    app_learn_code_code_part_title(container, app_learn_code_code_part_title_output());
     for (let m of mapped) {
         let {messages} = m;
         let joined = list_join(messages, '<br>');
         let button = html_button_width_full_text_click(container, joined, function on_click() {});
-        html_style_monospace(button)
-        html_spacer_vertical(container)
+        html_style_monospace(button);
+        html_spacer_vertical(container);
     }
 }
