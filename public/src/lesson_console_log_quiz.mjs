@@ -1,3 +1,4 @@
+import {list_join} from "./list_join.mjs";
 import {subtract} from "./subtract.mjs";
 import {list_slice} from "./list_slice.mjs";
 import {add} from "./add.mjs";
@@ -13,6 +14,6 @@ export function lesson_console_log_quiz() {
     let index = integer_random(0, high);
     let end = add(index, word_count);
     let sliced = list_slice(words, index, end);
-    let message = list_join_space(sliced);
+    let message = list_join(sliced, ' ');
     return message;
 }
