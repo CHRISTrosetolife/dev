@@ -1,3 +1,4 @@
+import {list_map} from "./list_map.mjs";
 import {list_includes} from "./list_includes.mjs";
 import {array_new} from "./array_new.mjs";
 import {html_button_width_full_text_click} from "./html_button_width_full_text_click.mjs";
@@ -14,7 +15,7 @@ import {list_length} from "./list_length.mjs";
 import {string_split_space} from "./string_split_space.mjs";
 import {range} from "./range.mjs";
 import {list_add} from "./list_add.mjs";
-import { list_get } from "./list_get.mjs";
+import {list_get} from "./list_get.mjs";
 export function lesson_console_log_quiz(parent) {
     let container = app_learn_code_code_container(parent);
     html_hr(container);
@@ -38,21 +39,19 @@ export function lesson_console_log_quiz(parent) {
         ${choice};
         console.log = log_old;
         messages;`;
-        let messages = eval(source_augmented)
+        let messages = eval(source_augmented);
         return {
             source: c,
             messages
-        }
-    })
-    let correct_index = integer_random(0, subtract(choices_count, 1))
+        };
+    });
+    let correct_index = integer_random(0, subtract(choices_count, 1));
     let correct = list_get(choices, correct_index);
     let {source} = correct;
     app_learn_code_code_part_titled_code(container, source);
     for (let m of mapped) {
         let {messages} = m;
-        let joined = list_join(messages, '<br>')
-        let button = html_button_width_full_text_click(container, joined, function on_click() {
-            
-        });
+        let joined = list_join(messages, '<br>');
+        let button = html_button_width_full_text_click(container, joined, function on_click() {});
     }
 }
