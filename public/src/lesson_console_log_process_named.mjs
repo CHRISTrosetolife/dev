@@ -19,7 +19,7 @@ import {html_style_bold} from "./html_style_bold.mjs";
 import {html_spacer_vertical} from "./html_spacer_vertical.mjs";
 export function lesson_console_log_process_named(parent) {
     html_p_text(parent, 'besides addition&nbsp;, there are other symbols / processes&nbsp;as well');
-    html_p_text(parent, 'there is&nbsp;:');
+    html_p_text(parent, 'for example , there is&nbsp;:');
     let ol3 = html_ul(parent);
     html_li_text(ol3, 'subtraction&nbsp;: 3 − 2 = 1');
     html_li_text(ol3, 'multiplication&nbsp;: 3 × 2 = 6');
