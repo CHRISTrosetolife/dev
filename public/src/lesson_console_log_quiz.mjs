@@ -18,7 +18,6 @@ import {list_add} from "./list_add.mjs";
 import {list_get} from "./list_get.mjs";
 export function lesson_console_log_quiz(parent) {
     let container = app_learn_code_code_container(parent);
-    html_hr(container);
     let choices_count = 4;
     let r = range(choices_count);
     let choices = array_new();
@@ -47,10 +46,11 @@ export function lesson_console_log_quiz(parent) {
     });
     let s = subtract(list_length(choices), 1);
     let correct_index = integer_random(0, s);
-    console.log({correct_index, s})
     let correct = list_get(choices, correct_index);
     let {source} = correct;
+    console.log({correct, s})
     app_learn_code_code_part_titled_code(container, source);
+    html_hr(container);
     for (let m of mapped) {
         let {messages} = m;
         let joined = list_join(messages, '<br>');
