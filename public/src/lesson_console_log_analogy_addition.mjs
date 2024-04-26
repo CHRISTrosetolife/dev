@@ -24,5 +24,6 @@ export function lesson_console_log_analogy_addition(parent) {
     let ol3 = html_ul(parent);
     html_li_text(ol3, 'subtraction&nbsp;: 3 - 2 = 1');
     html_li_text(ol3, 'multiplication&nbsp;: 3 x 2 = 6');
+    html_li_text(ol3, 'division&nbsp;: 8 / 4 = 2');
    
 }
