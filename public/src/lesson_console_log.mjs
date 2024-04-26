@@ -1,3 +1,4 @@
+import {lesson_console_log_process_named} from "./lesson_console_log_process_named.mjs";
 import {lesson_console_log_process_computer_program} from "./lesson_console_log_process_computer_program.mjs";
 import {list_add} from "./list_add.mjs";
 import {array_new} from "./array_new.mjs";
@@ -11,6 +12,7 @@ export function lesson_console_log() {
     let v2 = array_new();
     list_add(v2, lesson_console_log_analogy_paper);
     list_add(v2, lesson_console_log_analogy_addition);
+    list_add(v2, lesson_console_log_process_named);
     list_add(v2, lesson_console_log_process_computer_program);
     object_property_set(v1, 'screens', v2);
     return v1;
