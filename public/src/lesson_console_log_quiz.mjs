@@ -1,3 +1,4 @@
+import {list_index} from "./list_index.mjs";
 import {app_learn_code_code_part_title_output} from "./app_learn_code_code_part_title_output.mjs";
 import {app_learn_code_code_part_title} from "./app_learn_code_code_part_title.mjs";
 import {list_random_item} from "./list_random_item.mjs";
@@ -21,7 +22,7 @@ import {list_add} from "./list_add.mjs";
 import {list_get} from "./list_get.mjs";
 import {html_style_monospace} from "./html_style_monospace.mjs";
 import {html_spacer_vertical} from "./html_spacer_vertical.mjs";
-import { each_index } from "./each_index.mjs";
+import {each_index} from "./each_index.mjs";
 export function lesson_console_log_quiz(parent) {
     let container = app_learn_code_code_container(parent);
     let choices_count = 4;
@@ -59,9 +60,9 @@ export function lesson_console_log_quiz(parent) {
         let {messages} = m;
         let joined = list_join(messages, '<br>');
         let button = html_button_width_full_text_click(container, joined, function on_click() {
-            if (index === corre)
+            if (index === correct_index) {}
         });
         html_style_monospace(button);
         html_spacer_vertical(container);
-    })
+    });
 }
