@@ -1,3 +1,4 @@
+import {array_new} from "./array_new.mjs";
 import {html_button_width_full_text_click} from "./html_button_width_full_text_click.mjs";
 import {html_hr} from "./html_hr.mjs";
 import {app_learn_code_code_part_titled_code} from "./app_learn_code_code_part_titled_code.mjs";
@@ -17,7 +18,7 @@ export function lesson_console_log_quiz(parent) {
     html_hr(container);
     let choices_count = 4;
     let r = range(choices_count);
-    let choices = list_new();
+    let choices = array_new();
     for (let c of r) {
         for (let i of range(100)) {
             let source = lesson_console_log_quiz_get();
