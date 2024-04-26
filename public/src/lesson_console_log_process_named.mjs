@@ -1,3 +1,5 @@
+import {app_learn_code_style_code_color} from "./app_learn_code_style_code_color.mjs";
+import {app_learn_code_code_part} from "./app_learn_code_code_part.mjs";
 import {html_li_text_monospace} from "./html_li_text_monospace.mjs";
 import {html_style_alternate} from "./html_style_alternate.mjs";
 import {mod} from "./mod.mjs";
@@ -35,10 +37,9 @@ export function lesson_console_log_process_named(parent) {
     html_style_alternate(parent, html_p, [noop, html_style_bold], ['we will be learning a computer programming language called ', 'javascript']);
     html_style_alternate(parent, html_p, [noop, html_style_monospace], ['in javascript a semicolon ( ', ';', ' ) is a separator']);
     html_hr(parent);
-    html_style_alternate(parent, html_p, [noop, html_style_bold], 
-        ['here are some examples of a ', 'string', ' ( a string is text like letters and symbols ) in javascript :']);
-    let ol4 = html_ul(parent);
-    html_li_text_monospace(ol4, '\'hello\'');
+    html_style_alternate(parent, html_p, [noop, html_style_bold], ['here are some examples of a ', 'string', ' ( a string is text like letters and symbols ) in javascript :']);
+    let code = app_learn_code_code_part(parent, '\'hello\'', 'black');
+    app_learn_code_style_code_color(code);
     html_li_text_monospace(ol4, '\'strings can have spaces\'');
     html_li_text_monospace(ol4, '\'strings can have numbers like : 123\'');
     html_li_text_monospace(ol4, '\'strings can have numbers like 123\'');
