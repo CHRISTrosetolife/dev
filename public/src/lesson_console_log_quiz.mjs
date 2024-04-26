@@ -12,6 +12,6 @@ export function lesson_console_log_quiz() {
     let high = subtract(length, word_count);
     let index = integer_random(0, high);
     let end = add(index, word_count);
-    let sliced = list_slice(sentence, index, end);
+    let sliced = list_slice(words, index, end);
     return sliced;
 }
