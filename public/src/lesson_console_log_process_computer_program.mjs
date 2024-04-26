@@ -33,7 +33,7 @@ export function lesson_console_log_process_computer_program(parent) {
     html_style(container, {
         'background-color': 'lightgray'
     });
-    let {code} = app_learn_code_code_part(container, 'code :', `console.log('hello');`, 'black');
+    let code = app_learn_code_code_part(container, 'code :', `console.log('hello');`, 'black');
     app_learn_code_style_code_color(code);
     html_hr(container);
     app_learn_code_code_part(container, 'output :', `hello`, 'lightgreen');
