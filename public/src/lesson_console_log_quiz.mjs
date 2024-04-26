@@ -19,6 +19,7 @@ import {string_split_space} from "./string_split_space.mjs";
 import {range} from "./range.mjs";
 import {list_add} from "./list_add.mjs";
 import {list_get} from "./list_get.mjs";
+import { html_style_monospace } from "./html_style_monospace.mjs";
 export function lesson_console_log_quiz(parent) {
     let container = app_learn_code_code_container(parent);
     let choices_count = 4;
@@ -55,5 +56,6 @@ export function lesson_console_log_quiz(parent) {
         let {messages} = m;
         let joined = list_join(messages, '<br>');
         let button = html_button_width_full_text_click(container, joined, function on_click() {});
+        html_style_monospace(button)
     }
 }
