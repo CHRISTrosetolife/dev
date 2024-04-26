@@ -13,5 +13,6 @@ export function lesson_console_log_quiz() {
     let index = integer_random(0, high);
     let end = add(index, word_count);
     let sliced = list_slice(words, index, end);
-    return sliced;
+    let message = list_join_space(sliced);
+    return message;
 }
