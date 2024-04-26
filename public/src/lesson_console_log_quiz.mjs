@@ -49,7 +49,7 @@ export function lesson_console_log_quiz(parent) {
     let source = list_random_item(choices);
     app_learn_code_code_part_titled_code(container, source);
     html_hr(container);
-    app_learn_code_code_part_title();
+    app_learn_code_code_part_title(parent, );
     for (let m of mapped) {
         let {messages} = m;
         let joined = list_join(messages, '<br>');
