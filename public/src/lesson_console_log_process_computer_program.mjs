@@ -36,14 +36,9 @@ export function lesson_console_log_process_computer_program(parent) {
     html_p_text(parent, 'then we can write : ');
     app_learn_code_code_part_contrast(parent, 'console.log(\'hello\')');
     html_p_text(parent, 'this is almost a simple finished computer program');
-
-    html_hr(parent);
+    html_p_text(parent, 'to finish this computer computer program we should add a semicolon separator to the end');
+    html_p_text(parent, 'here is the finished computer program and the output of the computer program :');
     html_style_alternate(parent, html_p, [noop, html_style_bold], ['when a human writes a computer program&nbsp;, the human writes ', 'code']);
-    html_hr(parent);
-    html_p_text(parent, 'our first computer program will &nbsp;:');
-    let ul1 = html_ul(parent);
-    html_li_text(ul1, 'have no inputs');
-    html_li_text(ul1, 'output a message');
     let container = html_div(parent);
     app_learn_code_style_rounded_padded(container);
     html_style(container, {
