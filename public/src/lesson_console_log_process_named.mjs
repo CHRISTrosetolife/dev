@@ -42,4 +42,5 @@ export function lesson_console_log_process_named(parent) {
     html_li_text_monospace(ol4, '\'strings can have spaces\'');
     html_li_text_monospace(ol4, '\'strings can have numbers like : 123\'');
     html_li_text_monospace(ol4, '\'strings can have numbers like 123\'');
+    html_style_alternate(parent, html_p, [noop, html_style_monospace], ['notice that the beginning of a string has a quote ( ', '\'', ' ) and so does the end of a string']);
 }
