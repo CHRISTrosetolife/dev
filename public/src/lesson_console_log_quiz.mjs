@@ -16,7 +16,6 @@ import {range} from "./range.mjs";
 import {list_add} from "./list_add.mjs";
 export function lesson_console_log_quiz(parent) {
     let container = app_learn_code_code_container(parent);
-    app_learn_code_code_part_titled_code(container, source);
     html_hr(container);
     let choices_count = 4;
     let r = range(choices_count);
@@ -31,6 +30,7 @@ export function lesson_console_log_quiz(parent) {
             break;
         }
     }
+    // app_learn_code_code_part_titled_code(container, source);
     for (let choice of choices) {
         let source_augmented = `let log_old = console.log;
         let messages = [];
@@ -40,6 +40,6 @@ export function lesson_console_log_quiz(parent) {
         console.log({messages})
         messages;`;
         eval(source_augmented)
-        let button = html_button_width_full_text_click(root, 'previous', function on_click() {});
+        let button = html_button_width_full_text_click(container, 'previous', function on_click() {});
     }
 }
