@@ -8,12 +8,19 @@ import {add} from "./add.mjs";
 import {integer_random} from "./integer_random.mjs";
 import {list_length} from "./list_length.mjs";
 import {string_split_space} from "./string_split_space.mjs";
+import { range } from "./range.mjs";
 export function lesson_console_log_quiz(parent) {
     let source = lesson_console_log_quiz_get();
     let container = app_learn_code_code_container(parent);
     app_learn_code_code_part_titled_code(container, source);
     html_hr(container);
-    let choices = 4;
+    let choices_count = 4;
+    let r = range(choices_count);
+    for (let c of r) {
+        for (let i of range(100)) {
+
+        }
+    }
     let button = html_button_width_full_text_click(root, 'previous', function on_click() {
     });
 }
