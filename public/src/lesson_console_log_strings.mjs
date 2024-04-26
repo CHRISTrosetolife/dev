@@ -26,5 +26,5 @@ export function lesson_console_log_strings(parent) {
     app_learn_code_code_part_contrast(parent, '\'strings can have spaces\'');
     html_spacer_vertical(parent);
     app_learn_code_code_part_contrast(parent, '\'strings can have numbers like 123\'');
-    html_style_alternate(parent, html_p, [noop, html_style_monospace], ['notice that the beginning of a string has a quote ( ', '\'', ' ) and so does the end of a string']);
+    html_style_alternate(parent, html_p, [noop, html_style_monospace], ['notice that a string has a quote ( ', '\'', ' ) at the beginning and another quote at the end']);
 }
