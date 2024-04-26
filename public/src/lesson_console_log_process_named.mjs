@@ -25,7 +25,7 @@ export function lesson_console_log_process_named(parent) {
     html_li_text(ol3, 'multiplication&nbsp;: 3 × 2 = 6');
     html_li_text(ol3, 'division&nbsp;: 6 ÷ 3 = 2');
     html_hr(parent);
-    html_p_text(parent, 'instead of symbols , we can write the name of the process&nbsp;:');
+    html_p_text(parent, 'instead of symbols ( + , − , × , ÷ ) , we can write the name of the process&nbsp;:');
     let ol5 = html_ul(parent);
     html_li_text(ol5, 'addition&nbsp;: add(1, 2) = 3');
     html_li_text(ol5, 'subtraction&nbsp;: subtract(3, 2) = 1');
