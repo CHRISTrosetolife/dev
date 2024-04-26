@@ -1,3 +1,4 @@
+import {app_learn_code_code_part_titled_code} from "./app_learn_code_code_part_titled_code.mjs";
 import {app_learn_code_code_part_contrast} from "./app_learn_code_code_part_contrast.mjs";
 import {app_learn_code_style_code_color} from "./app_learn_code_style_code_color.mjs";
 import {html_style_bold} from "./html_style_bold.mjs";
@@ -38,8 +39,7 @@ export function lesson_console_log_program_first(parent) {
         'background-color': 'lightgray'
     });
     const source = `console.log('hello');`;
-    let {code} = app_learn_code_code_part_titled(container, 'code :', source, 'black');
-    app_learn_code_style_code_color(code);
+    app_learn_code_code_part_titled_code(container, source);
     html_hr(container);
     app_learn_code_code_part_titled(container, 'output :', `hello`, 'lightgreen');
 }
