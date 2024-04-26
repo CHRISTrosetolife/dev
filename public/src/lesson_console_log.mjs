@@ -22,6 +22,7 @@ export function lesson_console_log() {
     list_add(v2, lesson_console_log_strings);
     list_add(v2, lesson_console_log_process_computer_program);
     list_add(v2, lesson_console_log_program_first);
+    list_add(v2, lesson_console_log_quiz);
     
     object_property_set(v1, 'screens', v2);
     return v1;
