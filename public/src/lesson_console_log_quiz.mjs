@@ -31,5 +31,14 @@ export function lesson_console_log_quiz(parent) {
             break;
         }
     }
-    let button = html_button_width_full_text_click(root, 'previous', function on_click() {});
+    for (let choice of choices) {
+        let source_augmented = `let log_old = console.log;
+        let messages = [];
+        console.log = message => messages.push(message);
+        ${choice};
+        console.log = log_old;
+        console.log({messages})
+        messages;`;
+        let button = html_button_width_full_text_click(root, 'previous', function on_click() {});
+    }
 }
