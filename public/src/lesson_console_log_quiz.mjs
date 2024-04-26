@@ -37,9 +37,9 @@ export function lesson_console_log_quiz(parent) {
         console.log = message => messages.push(message);
         ${choice};
         console.log = log_old;
-        console.log({messages})
         messages;`;
-        eval(source_augmented)
+        let messages = eval(source_augmented)
+        console.log({messages})
         let button = html_button_width_full_text_click(container, 'previous', function on_click() {});
     }
 }
