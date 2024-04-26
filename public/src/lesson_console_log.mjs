@@ -8,6 +8,7 @@ import {object_property_set} from "./object_property_set.mjs";
 import {lesson_console_log_analogy_paper} from "./lesson_console_log_analogy_paper.mjs";
 import {lesson_console_log_analogy_addition} from "./lesson_console_log_analogy_addition.mjs";
 import { lesson_console_log_program_first } from "./lesson_console_log_program_first.mjs";
+import { lesson_console_log_strings } from "./lesson_console_log_strings.mjs";
 export function lesson_console_log() {
     let v1 = object_new();
     object_property_set(v1, 'description', 'outputting a string to the console');
@@ -16,6 +17,7 @@ export function lesson_console_log() {
     list_add(v2, lesson_console_log_analogy_addition);
     list_add(v2, lesson_console_log_process_named);
     list_add(v2, lesson_console_log_javascript);
+    list_add(v2, lesson_console_log_strings);
     list_add(v2, lesson_console_log_process_computer_program);
     list_add(v2, lesson_console_log_program_first);
     object_property_set(v1, 'screens', v2);
