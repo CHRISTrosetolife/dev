@@ -46,6 +46,6 @@ export function lesson_console_log_analogy_addition(parent) {
     let pattern_length = list_length(pattern)
     let p1 = html_p(parent);
     each_index(strings, (element, index) => {
-
+        let pattern_index = index % pattern_length;
     });
 }
