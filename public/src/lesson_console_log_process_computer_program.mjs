@@ -23,6 +23,11 @@ export function lesson_console_log_process_computer_program(parent) {
     html_p_text(parent, 'a computer program does something&nbsp;, using any inputs and producing any outputs');
     html_p_text(parent, 'we could say a computer program is a process that may have inputs and may have outputs');
     html_hr(parent);
+    html_p_text(parent, 'suppose there is a process named console.log')
+    html_p_text(parent, 'then we can write : ')
+    app_learn_code_code_part_contrast(parent, 'console.log()');
+    html_p_text(parent, 'right now there are no inputs for this process , so there is nothing in between the parenthesis')
+    html_hr(parent);
     html_style_alternate(parent, html_p, [noop, html_style_bold], ['when a human writes a computer program&nbsp;, the human writes ', 'code']);
     html_hr(parent);
     html_p_text(parent, 'our first computer program will &nbsp;:');
