@@ -24,9 +24,15 @@ export function lesson_console_log_analogy_addition(parent) {
     let ol3 = html_ul(parent);
     html_li_text(ol3, 'subtraction&nbsp;: 3 - 2 = 1');
     html_li_text(ol3, 'multiplication&nbsp;: 3 x 2 = 6');
-    html_li_text(ol3, 'division&nbsp;: 8 / 4 = 2');
+    html_li_text(ol3, 'division&nbsp;: 6 / 3 = 2');
     html_p_text(parent, 'instead of symbols , we can write out the name of the process : ');
-    
+    html_p_text(parent, 'after the name of the process , we write a pair of parenthesis like this : process_name()');
+    html_p_text(parent, 'inside the parenthesis , we write the inputs to the process separated by commas like this : process_name(input1, input2)');
+    let ol4 = html_ul(parent);
+    html_li_text(ol4, 'addition&nbsp;: add(1, 2) = 3');
+    html_li_text(ol4, 'subtraction&nbsp;: subtract(3, 2) = 1');
+    html_li_text(ol4, 'multiplication&nbsp;: multiply(3, 2) = 6');
+    html_li_text(ol4, 'division&nbsp;: divide(8, 4) = 2');
 
    
 }
