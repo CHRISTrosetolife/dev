@@ -6,6 +6,9 @@ import {html_style_margin_none} from "./html_style_margin_none.mjs";
 import {html_p_text} from "./html_p_text.mjs";
 export function app_learn_code_code_part_titled(parent, title_text, source_code, background_color) {
     let title = html_p_text(parent, title_text);
+    html_style(title, {
+        'font-size': '2vh'
+    });
     html_style_margin_none(title);
     html_spacer_vertical(parent);
     let code = app_learn_code_code_part(parent, source_code, background_color);
