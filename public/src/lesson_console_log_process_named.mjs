@@ -11,6 +11,7 @@ import {html_hr} from "./html_hr.mjs";
 import {html_span_text} from "./html_span_text.mjs";
 import {list_length} from "./list_length.mjs";
 import {list_get} from "./list_get.mjs";
+import { html_style_bold } from "./html_style_bold.mjs";
 export function lesson_console_log_process_named(parent) {
     html_p_text(parent, 'besides addition&nbsp;, there are other symbols / processes&nbsp;as well');
     html_p_text(parent, 'there is&nbsp;:');
@@ -31,7 +32,7 @@ export function lesson_console_log_process_named(parent) {
     html_hr(parent)
     html_p_text(parent, 'in computers different symbols can be used as a separator so that the computer can tell two things apart');
     html_p_text(parent, 'we will be learning a computer programming language called javascript');
-    html_style_alternate(parent, html_p, [noop, html_style_monospace], ['in javascript a semicolon ( ', ';', ' ) is a separator']);
+    html_style_alternate(parent, html_p, [noop, html_style_monospace, noop, html_style_bold], ['in javascript a semicolon ( ', ';', ' ) is a separator']);
     html_hr(parent)
     html_p_text(parent, '');
 }
