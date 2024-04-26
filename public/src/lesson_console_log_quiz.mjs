@@ -1,3 +1,4 @@
+import {app_learn_code_code_part_title} from "./app_learn_code_code_part_title.mjs";
 import {list_random_item} from "./list_random_item.mjs";
 import {list_map} from "./list_map.mjs";
 import {list_includes} from "./list_includes.mjs";
@@ -48,6 +49,7 @@ export function lesson_console_log_quiz(parent) {
     let source = list_random_item(choices);
     app_learn_code_code_part_titled_code(container, source);
     html_hr(container);
+    app_learn_code_code_part_title();
     for (let m of mapped) {
         let {messages} = m;
         let joined = list_join(messages, '<br>');
