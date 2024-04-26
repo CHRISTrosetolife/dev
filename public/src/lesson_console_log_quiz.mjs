@@ -44,9 +44,7 @@ export function lesson_console_log_quiz(parent) {
             messages
         };
     });
-    let s = subtract(list_length(choices), 1);
-    let correct_index = integer_random(0, s);
-    let source = list_get(choices, correct_index);
+    let source = list_random_item(choices);
     app_learn_code_code_part_titled_code(container, source);
     html_hr(container);
     for (let m of mapped) {
@@ -55,3 +53,10 @@ export function lesson_console_log_quiz(parent) {
         let button = html_button_width_full_text_click(container, joined, function on_click() {});
     }
 }
+function list_random_item(list) {
+    let max = subtract(list_length(list), 1);
+    let index = integer_random(0, max);
+    let source = list_get(list, index);
+    return source;
+}
+
