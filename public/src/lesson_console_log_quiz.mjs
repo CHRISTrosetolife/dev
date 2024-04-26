@@ -50,6 +50,7 @@ export function lesson_console_log_quiz(parent) {
     app_learn_code_code_part_titled_code(container, source);
     for (let m of mapped) {
         let {messages} = m;
+        let joined = list_join(messages, '<br>')
         let button = html_button_width_full_text_click(container, 'previous', function on_click() {});
     }
 }
