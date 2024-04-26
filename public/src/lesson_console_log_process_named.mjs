@@ -1,3 +1,4 @@
+import {app_learn_code_code_part_contrast} from "./app_learn_code_code_part_contrast.mjs";
 import {app_learn_code_style_code_color} from "./app_learn_code_style_code_color.mjs";
 import {app_learn_code_code_part} from "./app_learn_code_code_part.mjs";
 import {html_li_text_monospace} from "./html_li_text_monospace.mjs";
@@ -44,8 +45,3 @@ export function lesson_console_log_process_named(parent) {
     app_learn_code_code_part_contrast(ol4, '\'strings can have numbers like 123\'');
     html_style_alternate(parent, html_p, [noop, html_style_monospace], ['notice that the beginning of a string has a quote ( ', '\'', ' ) and so does the end of a string']);
 }
-function app_learn_code_code_part_contrast(parent, code) {
-    let component = app_learn_code_code_part(parent, code, 'black');
-    app_learn_code_style_code_color(component);
-}
-
