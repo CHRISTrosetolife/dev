@@ -1,3 +1,4 @@
+import {html_style_bold} from "./html_style_bold.mjs";
 import {noop} from "./noop.mjs";
 import {html_style_alternate} from "./html_style_alternate.mjs";
 import {app_learn_code_code_part} from "./app_learn_code_code_part.mjs";
@@ -25,7 +26,7 @@ export function lesson_console_log_process_computer_program(parent) {
     html_li_text(ul1, 'have no inputs');
     html_li_text(ul1, 'output a message');
     html_p_text(parent);
-    html_style_alternate(parent, html_p, [noop], ['when a human writes a computer program&nbsp;, the human writes code']);
+    html_style_alternate(parent, html_p, [noop, html_style_bold], ['when a human writes a computer program&nbsp;, the human writes code']);
     let container = html_div(parent);
     app_learn_code_style_rounded_padded(container);
     html_style(container, {
