@@ -51,13 +51,16 @@ export function lesson_console_log_quiz(parent) {
         };
     });
     let source = list_random_item(choices);
+    let correct_index = list_index(source);
     app_learn_code_code_part_titled_code(container, source);
     html_hr(container);
     app_learn_code_code_part_title(container, app_learn_code_code_part_title_output());
     each_index(mapped, (m, index) => {
         let {messages} = m;
         let joined = list_join(messages, '<br>');
-        let button = html_button_width_full_text_click(container, joined, function on_click() {});
+        let button = html_button_width_full_text_click(container, joined, function on_click() {
+            if (index === corre)
+        });
         html_style_monospace(button);
         html_spacer_vertical(container);
     })
