@@ -1,7 +1,12 @@
+import {each_index} from "./each_index.mjs";
+import {html_p} from "./html_p.mjs";
+import {html_style_monospace} from "./html_style_monospace.mjs";
+import {noop} from "./noop.mjs";
 import {html_li_text} from "./html_li_text.mjs";
 import {html_ul} from "./html_ul.mjs";
 import {html_p_text} from "./html_p_text.mjs";
-import { html_hr } from "./html_hr.mjs";
+import {html_hr} from "./html_hr.mjs";
+import {html_span_text} from "./html_span_text.mjs";
 export function lesson_console_log_analogy_addition(parent) {
     html_p_text(parent, 'suppose two numbers are added together to get their sum');
     html_p_text(parent, 'we could say :');
@@ -9,7 +14,7 @@ export function lesson_console_log_analogy_addition(parent) {
     html_li_text(ol1, 'the adding of the two numbers together is a process');
     html_li_text(ol1, 'the two numbers are the inputs to the addition process');
     html_li_text(ol1, 'the sum of the two numbers is the output of the addition process');
-    html_hr(parent)
+    html_hr(parent);
     html_p_text(parent, 'suppose the letters "a", "b" and "c" represent numbers');
     html_p_text(parent, 'suppose "c" is the sum of "a" and "b"');
     html_p_text(parent, 'then here is the equation : a + b = c');
@@ -18,7 +23,7 @@ export function lesson_console_log_analogy_addition(parent) {
     html_li_text(ol2, 'the addition sign ( "+" ) is a process');
     html_li_text(ol2, '"a" and "b" are the inputs to the "+" process');
     html_li_text(ol2, '"c" is the output of the "+" process');
-    html_hr(parent)
+    html_hr(parent);
     html_p_text(parent, 'besides addition&nbsp;, there are other symbols / processes&nbsp;as well');
     html_p_text(parent, 'there is&nbsp;:');
     let ol3 = html_ul(parent);
@@ -35,6 +40,8 @@ export function lesson_console_log_analogy_addition(parent) {
     html_li_text(ol4, 'division&nbsp;: divide(8, 4) = 2');
     html_p_text(parent, 'notice that a comma ( , ) separates the inputs');
     html_p_text(parent, 'in computers different symbols can be used as a separator so that the computer can tell two things apart');
-    html_p_text(parent, 'in javascript a semicolon ( ; ) is a separator');
-   
+    let pattern = [noop, html_style_monospace];
+    let strings = ['in javascript a semicolon ( ', ';', ') is a separator'];
+    let p1 = html_p(parent);
+    each_index;
 }
