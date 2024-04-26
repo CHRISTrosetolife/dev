@@ -14,6 +14,7 @@ import {list_length} from "./list_length.mjs";
 import {string_split_space} from "./string_split_space.mjs";
 import {range} from "./range.mjs";
 import {list_add} from "./list_add.mjs";
+import { list_get } from "./list_get.mjs";
 export function lesson_console_log_quiz(parent) {
     let container = app_learn_code_code_container(parent);
     html_hr(container);
@@ -30,8 +31,7 @@ export function lesson_console_log_quiz(parent) {
             break;
         }
     }
-    // app_learn_code_code_part_titled_code(container, source);
-    for (let choice of choices) {
+    let mapped = list_map(choices, c => {
         let source_augmented = `let log_old = console.log;
         let messages = [];
         console.log = message => messages.push(message);
@@ -39,7 +39,17 @@ export function lesson_console_log_quiz(parent) {
         console.log = log_old;
         messages;`;
         let messages = eval(source_augmented)
-        console.log({messages})
+        return {
+            source: c,
+            messages
+        }
+    })
+    let correct_index = integer_random(0, subtract(choices_count, 1))
+    let correct = list_get(choices, correct_index);
+    let {source} = correct;
+    // app_learn_code_code_part_titled_code(container, source);
+    for (let m of mapped) {
+        let {messages} = m;
         let button = html_button_width_full_text_click(container, 'previous', function on_click() {});
     }
 }
