@@ -19,15 +19,14 @@ export function lesson_console_log_process_named(parent) {
     html_li_text(ol3, 'multiplication&nbsp;: 3 × 2 = 6');
     html_li_text(ol3, 'division&nbsp;: 6 ÷ 3 = 2');
     html_hr(parent)
-    html_p_text(parent, 'after the name of the process , we write a pair of parenthesis like this : process_name()');
-    html_p_text(parent, 'inside the parenthesis , we write the inputs to the process separated by commas like this : process_name(input1, input2)');
-    html_p_text(parent, 'instead of symbols , we can write the name of the process&nbsp;:');
+     html_p_text(parent, 'instead of symbols , we can write the name of the process&nbsp;:');
     let ol4 = html_ul(parent);
     html_li_text(ol4, 'addition&nbsp;: add(1, 2) = 3');
     html_li_text(ol4, 'subtraction&nbsp;: subtract(3, 2) = 1');
     html_li_text(ol4, 'multiplication&nbsp;: multiply(3, 2) = 6');
     html_li_text(ol4, 'division&nbsp;: divide(8, 4) = 2');
-    html_p_text(parent, 'notice that a comma ( , ) separates the inputs');
+    html_p_text(parent, 'after the name of the process , we write a pair of parenthesis like this : process_name()');
+    html_p_text(parent, 'inside the parenthesis , we write the inputs to the process separated by commas like this : process_name(input1, input2)');    html_p_text(parent, 'notice that a comma ( , ) separates the inputs');
     html_p_text(parent, 'in computers different symbols can be used as a separator so that the computer can tell two things apart');
     html_p_text(parent, 'we will be learning a computer programming language called javascript');
     html_style_alternate(parent, html_p, [noop, html_style_monospace], ['in javascript a semicolon ( ', ';', ' ) is a separator']);
