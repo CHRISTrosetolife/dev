@@ -12,4 +12,5 @@ export function lesson_console_log_quiz(parent) {
     let source = lesson_console_log_quiz_get();
     let container = app_learn_code_code_container(parent);
     app_learn_code_code_part_titled_code(container, source);
+    html_hr(container);
 }
