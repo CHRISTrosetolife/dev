@@ -39,6 +39,7 @@ export function lesson_console_log_quiz(parent) {
         console.log = log_old;
         console.log({messages})
         messages;`;
+        eval(source_augmented)
         let button = html_button_width_full_text_click(root, 'previous', function on_click() {});
     }
 }
