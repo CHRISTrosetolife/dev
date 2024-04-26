@@ -51,6 +51,8 @@ export function lesson_console_log_quiz(parent) {
     for (let m of mapped) {
         let {messages} = m;
         let joined = list_join(messages, '<br>')
-        let button = html_button_width_full_text_click(container, 'previous', function on_click() {});
+        let button = html_button_width_full_text_click(container, joined, function on_click() {
+            
+        });
     }
 }
