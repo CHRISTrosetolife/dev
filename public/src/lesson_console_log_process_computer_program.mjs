@@ -1,3 +1,4 @@
+import {app_learn_code_style_code_color} from "./app_learn_code_style_code_color.mjs";
 import {html_style_bold} from "./html_style_bold.mjs";
 import {noop} from "./noop.mjs";
 import {html_style_alternate} from "./html_style_alternate.mjs";
@@ -33,9 +34,7 @@ export function lesson_console_log_process_computer_program(parent) {
         'background-color': 'lightgray'
     });
     let {code} = app_learn_code_code_part(container, 'code :', `console.log('hello');`, 'black');
-    html_style(code, {
-        'color': 'white'
-    });
+    app_learn_code_style_code_color(code);
     html_hr(container);
     app_learn_code_code_part(container, 'output :', `hello`, 'lightgreen');
 }
