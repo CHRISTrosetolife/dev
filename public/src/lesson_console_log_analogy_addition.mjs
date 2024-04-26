@@ -25,5 +25,8 @@ export function lesson_console_log_analogy_addition(parent) {
     html_li_text(ol3, 'subtraction&nbsp;: 3 - 2 = 1');
     html_li_text(ol3, 'multiplication&nbsp;: 3 x 2 = 6');
     html_li_text(ol3, 'division&nbsp;: 8 / 4 = 2');
+    html_p_text(parent, 'instead of symbols , we can write out the name of the process : ');
+    
+
    
 }
