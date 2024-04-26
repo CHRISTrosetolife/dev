@@ -16,6 +16,7 @@ import {html_element} from "./html_element.mjs";
 import {html_inner_set} from "./html_inner_set.mjs";
 import {html_div} from "./html_div.mjs";
 import {html_style} from "./html_style.mjs";
+import { app_learn_code_code_part_titled } from "./app_learn_code_code_part_titled.mjs";
 export function lesson_console_log_process_computer_program(parent) {
     html_p_text(parent, 'a computer program may have inputs');
     html_p_text(parent, 'a computer program may have outputs');
@@ -33,7 +34,7 @@ export function lesson_console_log_process_computer_program(parent) {
     html_style(container, {
         'background-color': 'lightgray'
     });
-    let code = app_learn_code_code_part(container, 'code :', `console.log('hello');`, 'black');
+    let {code} = app_learn_code_code_part_titled(container, 'code :', `console.log('hello');`, 'black');
     app_learn_code_style_code_color(code);
     html_hr(container);
     app_learn_code_code_part(container, 'output :', `hello`, 'lightgreen');
