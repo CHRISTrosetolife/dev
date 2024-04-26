@@ -20,7 +20,7 @@ import {html_spacer_vertical} from "./html_spacer_vertical.mjs";
 export function lesson_console_log_strings(parent) {
     html_style_alternate(parent, html_p, [noop, html_style_bold], 
     ['in javascript , text , like letters and symbols , is called a ', 'string']);
-    html_p_text(parent,        'here are some examples of strings');
+    html_p_text(parent,        'here are some examples of strings :');
     app_learn_code_code_part_contrast(parent, '\'hello\'');
     html_spacer_vertical(parent);
     app_learn_code_code_part_contrast(parent, '\'strings can have spaces\'');
