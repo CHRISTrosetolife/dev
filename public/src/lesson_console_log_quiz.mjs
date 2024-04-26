@@ -1,3 +1,4 @@
+import {list_random_item} from "./list_random_item.mjs";
 import {list_map} from "./list_map.mjs";
 import {list_includes} from "./list_includes.mjs";
 import {array_new} from "./array_new.mjs";
@@ -53,10 +54,3 @@ export function lesson_console_log_quiz(parent) {
         let button = html_button_width_full_text_click(container, joined, function on_click() {});
     }
 }
-function list_random_item(list) {
-    let max = subtract(list_length(list), 1);
-    let index = integer_random(0, max);
-    let source = list_get(list, index);
-    return source;
-}
-
