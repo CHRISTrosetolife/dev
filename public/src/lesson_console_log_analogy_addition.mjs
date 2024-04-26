@@ -48,7 +48,9 @@ export function lesson_console_log_analogy_addition(parent) {
     let patterns_length = list_length(patterns);
     let p1 = html_p(parent);
     each_index(strings, (element, index) => {
+        let span = html_span_text(p1, element)
         let pattern_index = mod(index, patterns_length);
-        let patern = list_get(patterns, pattern_index)
+        let pattern = list_get(patterns, pattern_index)
+        pattern(span)
     });
 }
