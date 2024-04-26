@@ -1,5 +1,7 @@
+import {list_slice} from "./list_slice.mjs";
+import {add} from "./add.mjs";
 import {integer_random} from "./integer_random.mjs";
-import { list_length } from "./list_length.mjs";
+import {list_length} from "./list_length.mjs";
 import {string_split_space} from "./string_split_space.mjs";
 export function lesson_console_log_quiz() {
     let sentence = 'for GOD so loved the world that HE gave HIS only SON that whoever believes in HIM shall not perish but have eternal life';
@@ -8,4 +10,6 @@ export function lesson_console_log_quiz() {
     let length = list_length(words);
     let high = subtract(length, word_count);
     let index = integer_random(0, high);
+    let end = add(index, word_count);
+    list_slice(sentence, index, end);
 }
