@@ -33,6 +33,8 @@ export function lesson_console_log_analogy_addition(parent) {
     html_li_text(ol4, 'subtraction&nbsp;: subtract(3, 2) = 1');
     html_li_text(ol4, 'multiplication&nbsp;: multiply(3, 2) = 6');
     html_li_text(ol4, 'division&nbsp;: divide(8, 4) = 2');
-
+    html_p_text(parent, 'notice that a comma ( , ) separates the inputs');
+    html_p_text(parent, 'in computers different symbols can be used as a separator so that the computer can tell two things apart');
+    html_p_text(parent, 'in javascript a semicolon ( ; ) is a separator');
    
 }
