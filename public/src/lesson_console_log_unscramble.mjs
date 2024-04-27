@@ -18,6 +18,7 @@ import {html_style} from "./html_style.mjs";
 import {range} from "./range.mjs";
 import {list_length} from "./list_length.mjs";
 import { integer_random } from "./integer_random.mjs";
+import { list_get } from "./list_get.mjs";
 export function lesson_console_log_unscramble(parent) {
     let source = lesson_console_log_quiz_get();
     let messages = app_learn_code_eval(source);
@@ -47,7 +48,8 @@ export function lesson_console_log_unscramble(parent) {
     });
     let mapped_index_last = list_index_last(mapped);
     for (let i of range(list_length(mapped))) {
-        let index = integer_random(i, mapped_index_last);
+        let j = integer_random(i, mapped_index_last);
+        let temp = list_get(mapped, j);
     }
     for (let m of mapped) {
         let part = app_learn_code_code_part_generic(html_span_text, parent, m, app_learn_code_code_background());
