@@ -1,3 +1,4 @@
+import {equal} from "./equal.mjs";
 import {app_learn_code_code_background} from "./app_learn_code_code_background.mjs";
 import {html_span_text} from "./html_span_text.mjs";
 import {app_learn_code_code_part_generic} from "./app_learn_code_code_part_generic.mjs";
@@ -21,7 +22,9 @@ export function lesson_console_log_unscramble(parent) {
         }
     });
     let mapped = list_map(tokens, t => {
-        console.log({t})
+        console.log({
+            t
+        });
         let {type} = t;
         let {label} = type;
         if (equal(label, 'name')) {
