@@ -22,10 +22,11 @@ export function lesson_log_number_example(parent) {
     app_learn_code_code_part_contrast(parent, '0');
     app_learn_code_code_part_contrast(parent, '12');
     app_learn_code_code_part_contrast(parent, '345');
-    html_p_text(parent, 'sometime people write numbers with commas separating the digits , like 1,000 and 23,467')
+    html_p_text(parent, 'sometimes people write numbers with commas separating the digits , like 1,000 and 23,467')
     html_p_text(parent, 'in javascript numbers are not written with commas :')
     app_learn_code_code_part_contrast(parent, '1000');
     app_learn_code_code_part_contrast(parent, '23467');
-    html_style_alternate(parent, html_p, [noop, html_style_monospace], ['to write a number , use a negative sign ( ', '-', ' ) :']);
+    html_style_alternate(parent, html_p, [noop, html_style_monospace], ['to write a number , write a negative sign ( ', '-', ' ) just before the rest of the number :']);
     app_learn_code_code_part_contrast(parent, '-6');
+    app_learn_code_code_part_contrast(parent, '-7890');
 }
