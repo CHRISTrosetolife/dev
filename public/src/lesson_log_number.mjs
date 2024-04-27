@@ -2,7 +2,6 @@ import {app_learn_code_unscramble} from "./app_learn_code_unscramble.mjs";
 import {lesson_log_number_quiz} from "./lesson_log_number_quiz.mjs";
 import {app_learn_code_quiz} from "./app_learn_code_quiz.mjs";
 import {lesson_log_number_example} from "./lesson_log_number_example.mjs";
-import {lesson_console_log_unscramble} from "./lesson_console_log_unscramble.mjs";
 import {lesson_console_log_javascript} from "./lesson_console_log_javascript.mjs";
 import {lesson_console_log_process_named} from "./lesson_console_log_process_named.mjs";
 import {lesson_console_log_process_computer_program} from "./lesson_console_log_process_computer_program.mjs";
