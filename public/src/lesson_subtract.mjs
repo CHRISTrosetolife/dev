@@ -26,7 +26,11 @@ import {html_style_monospace} from "./html_style_monospace.mjs";
 export function lesson_subtract() {
     const example_message = 'subtracting two numbers';
     const description = example_message;
-    return lesson_simple(lesson_add_quiz, example_before, description, example_message);
+    return lesson_simple(function () {
+        let a = integer_random_digit_single();
+        let b = integer_random_digit_single();
+        return `console.log(${a} - ${b});`;
+    }, example_before, description, example_message);
     function example_before(parent) {
         html_style_alternate(parent, html_p, [noop, html_style_monospace], ['one number can be subtracted from the other using the minus ( ', '-', ' ) sign']);
     }
