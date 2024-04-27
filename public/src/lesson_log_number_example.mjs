@@ -1,3 +1,7 @@
+import {html_style_monospace} from "./html_style_monospace.mjs";
+import {noop} from "./noop.mjs";
+import {html_p} from "./html_p.mjs";
+import {html_style_alternate} from "./html_style_alternate.mjs";
 import {html_hr} from "./html_hr.mjs";
 import {html_strong_text} from "./html_strong_text.mjs";
 import {html_li} from "./html_li.mjs";
@@ -10,9 +14,8 @@ import {html_p_text} from "./html_p_text.mjs";
 import {html_element} from "./html_element.mjs";
 import {object_property_set} from "./object_property_set.mjs";
 import {string_combine} from "./string_combine.mjs";
-import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
+import {app_learn_code_code_part_contrast} from "./app_learn_code_code_part_contrast.mjs";
 export function lesson_log_number_example(parent) {
-    html_style_alternate(parent, html_p, [noop, html_style_monospace], [
-        '( review : ) in javascript , strings need a quote ( ', '\'', ' ) :']);
-        app_learn_code_code_part_contrast(parent, '\'text\'')
+    html_style_alternate(parent, html_p, [noop, html_style_monospace], ['( review : ) in javascript , strings need a quote ( ', '\'', ' ) :']);
+    app_learn_code_code_part_contrast(parent, '\'text\'');
 }
