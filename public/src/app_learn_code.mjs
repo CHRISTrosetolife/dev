@@ -1,3 +1,4 @@
+import {lesson_add} from "./lesson_add.mjs";
 import {lesson_log_number} from "./lesson_log_number.mjs";
 import {list_add_multiple} from "./list_add_multiple.mjs";
 import {html_style_default} from "./html_style_default.mjs";
@@ -33,7 +34,7 @@ export function app_learn_code() {
     let lesson_creates = [];
     list_add(lesson_creates, lesson_console_log);
     list_add(lesson_creates, lesson_log_number);
-    list_add(lesson_creates, lesson_log_number);
+    list_add(lesson_creates, lesson_add);
     let screens = [];
     for (let lesson_create of lesson_creates) {
         let lesson = lesson_create();
@@ -68,7 +69,9 @@ export function app_learn_code() {
         if (equal(index, index_last)) {
             html_disable(button_next);
         }
-        console.log({screen})
+        console.log({
+            screen
+        });
         screen(content);
     }
 }
