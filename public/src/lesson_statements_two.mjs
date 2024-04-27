@@ -32,6 +32,7 @@ export function lesson_statements_two() {
         html_p_text(parent, 'words are made up of letters')
         html_p_text(parent, 'phrases are made up of words')
         html_p_text(parent, 'sentences are made up of phrases')
+        html_p_text(parent, 'and so on')
         html_style_alternate(parent, html_p, [noop, html_style_monospace], [
         'in javascript , a semicolon ( ', ';', ' ) is a separator that means the end of a statement']);
         html_p_text(parent, 'a statement is a unit of code')
