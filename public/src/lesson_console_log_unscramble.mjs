@@ -28,8 +28,8 @@ export function lesson_console_log_unscramble(parent) {
         let {type} = t;
         let {label} = type;
         if (equal(label, 'name')) {
-            let {name} = t;
-            return name;
+            let {value} = t;
+            return value;
         }
         return label;
     });
