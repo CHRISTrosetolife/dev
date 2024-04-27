@@ -1,3 +1,4 @@
+import {app_learn_code_code} from "./app_learn_code_code.mjs";
 import {app_learn_code_code_part_titled_output} from "./app_learn_code_code_part_titled_output.mjs";
 import {app_learn_code_output_background} from "./app_learn_code_output_background.mjs";
 import {app_learn_code_code_part_title_output} from "./app_learn_code_code_part_title_output.mjs";
@@ -39,8 +40,5 @@ export function lesson_console_log_program_first(parent) {
     html_style_alternate(parent, html_p, [noop, html_style_bold], ['( when a human writes a computer program&nbsp;, the human writes ', 'code', ' )']);
     const code = `console.log('hello');`;
     const output = `hello`;
-    let container = app_learn_code_code_container(parent);
-    app_learn_code_code_part_titled_code(container, code);
-    html_hr(container);
-    app_learn_code_code_part_titled_output(container, output);
+    app_learn_code_code(parent, code, output);
 }
