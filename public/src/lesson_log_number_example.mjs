@@ -17,5 +17,5 @@ import {string_combine} from "./string_combine.mjs";
 import {app_learn_code_code_part_contrast} from "./app_learn_code_code_part_contrast.mjs";
 import { html_spacer_vertical } from "./html_spacer_vertical.mjs";
 export function lesson_log_number_example(parent) {
-    
+    console.log(parent)
 }
