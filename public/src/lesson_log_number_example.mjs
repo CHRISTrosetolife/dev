@@ -24,7 +24,7 @@ export function lesson_log_number_example(parent) {
     refresh()
     function refresh() {
         html_clear(parent)
-        let value = integer_random(1,123);
+        let value = integer_random(1,999999);
         if (integer_random(1,2) === 1) {
             value = value / 10
         }
