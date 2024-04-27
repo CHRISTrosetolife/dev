@@ -27,7 +27,8 @@ export function lesson_log_number_example(parent) {
     refresh();
     function refresh() {
         html_clear(parent);
-        html_p_text(parent, 'below is an example computer program outputting a number');
+        const message = 'computer program outputting a number';
+        html_p_text(parent, 'below is an example ' + message);
         html_p_text(parent, 'if you want to see another example , press the "another example" button below');
         let source = lesson_log_number_quiz();
         app_learn_code_code(parent, source);
