@@ -20,13 +20,18 @@ import {html_spacer_vertical} from "./html_spacer_vertical.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { integer_random } from "./integer_random.mjs";
 import { html_clear } from "./html_clear.mjs";
+import { list_random_item } from "./list_random_item.mjs";
 export function lesson_log_number_example(parent) {
     refresh()
     function refresh() {
         html_clear(parent)
-        let value = integer_random(1,999999);
+        let value = integer_random(0,999999);
+        let b = integer_random(1,2) === 1;
+        if (b) {
+            value = value / list_random_item([10,100,1000])
+        }
         if (integer_random(1,2) === 1) {
-            value = value / 10
+            value = value * -1
         }
         app_learn_code_code(parent, `console.log(${value});`);
         html_button_width_full_text_click(parent, 'another example', refresh)
