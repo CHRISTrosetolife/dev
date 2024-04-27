@@ -34,9 +34,6 @@ export function lesson_console_log_unscramble(parent) {
         }
     });
     let mapped = list_map(tokens, t => {
-        console.log({
-            t
-        });
         let {type} = t;
         let {label} = type;
         let {value} = t;
@@ -52,12 +49,10 @@ export function lesson_console_log_unscramble(parent) {
     let mapped_index_last = list_index_last(mapped);
     for (let i of range(list_length(mapped))) {
         let j = integer_random(i, mapped_index_last);
-        console.log({j})
         let temp = list_get(mapped, j);
         list_set(mapped, j, list_get(mapped, i));
         list_set(mapped, i, temp);
     }
-    console.log({mapped,copy})
     for (let m of mapped) {
         let part = app_learn_code_code_part_generic(html_span_text, parent, m, app_learn_code_code_background());
         app_learn_code_style_code_color(part);
