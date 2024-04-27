@@ -86,6 +86,7 @@ export function lesson_console_log_unscramble(parent) {
             html_style(part, {
                 display: 'none',
             });
+            current_index++;
         });
     }
 }
