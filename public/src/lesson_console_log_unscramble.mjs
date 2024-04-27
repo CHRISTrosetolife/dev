@@ -76,7 +76,6 @@ export function lesson_console_log_unscramble(parent) {
                 html_style(part, {
                     'background-color': 'red'
                 });
-                console.log('here');
                 return;
             }
             for (let p of parts) {
@@ -84,8 +83,9 @@ export function lesson_console_log_unscramble(parent) {
                     'background-color': app_learn_code_code_background()
                 });
             }
-            let {element} = part;
-            element.setAttribute('hidden', 'hidden')
+            html_style(part, {
+                display: 'none',
+            });
         });
     }
 }
