@@ -27,7 +27,9 @@ export function app_learn_code() {
     object_merge(html_style_default(), {
         'font-size': '3vh'
     });
-    let lesson_creates = [lesson_console_log]
+    let lesson_creates = [
+        lesson_console_log
+    ]
     for (let lesson_create of lesson_creates) {
         let lesson = lesson_create();
     }
