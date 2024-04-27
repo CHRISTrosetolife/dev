@@ -24,8 +24,8 @@ import {html_p_text} from "./html_p_text.mjs";
 import {noop} from "./noop.mjs";
 import {html_style_bold} from "./html_style_bold.mjs";
 import {html_style_monospace} from "./html_style_monospace.mjs";
-export function lesson_subtract() {
-    const example_message = 'subtracting two numbers';
+export function lesson_divide() {
+    const example_message = 'dividing two numbers';
     const description = example_message;
     return lesson_simple(function () {
         let a = integer_random_digit_single();
