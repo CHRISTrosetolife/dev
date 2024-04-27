@@ -56,8 +56,8 @@ export function lesson_console_log_unscramble(parent) {
         list_set(scrambled, i, temp);
     }
     let current_index = 0;
-    for (let m of scrambled) {
-        let part = app_learn_code_code_part_generic(html_span_text, parent, m, app_learn_code_code_background());
+    for (let s of scrambled) {
+        let part = app_learn_code_code_part_generic(html_span_text, parent, s, app_learn_code_code_background());
         app_learn_code_style_code_color(part);
         html_style(part, {
             margin: html_style_units(3),
@@ -66,6 +66,14 @@ export function lesson_console_log_unscramble(parent) {
         });
         html_on_click(part, () => {
             let current = list_get(answer, current_index);
+            let e = equal(s, current);
+            if (!e) {
+                html_style(part, {
+                    'border-width': html_style_units(1),
+                    'border-color': 'red',
+                });
+                return;
+            }
         })
     }
 }
