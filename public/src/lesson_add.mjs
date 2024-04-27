@@ -24,7 +24,7 @@ export function lesson_add() {
     let v1 = object_new();
     object_property_set(v1, 'description', 'outputting a number to the console');
     let v2 = array_new();
-    list_add(v2, lesson_log_number_example(lesson_log_number_quiz, 'computer program adding a number', parent => {
+    list_add(v2, lesson_log_number_example(lesson_log_number_quiz, 'adding two numbers together', parent => {
         html_style_alternate(parent, html_p_text, [noop, html_style_monospace], ['two numbers can be added together using the plus ( ', '+', ' ) sign'])
     }));
     list_add(v2, app_learn_code_quiz(lesson_log_number_quiz));
