@@ -44,5 +44,7 @@ ${lesson_console_log_quiz()}`;
     function example_before(parent) {
         html_style_alternate(parent, html_p, [noop, html_style_bold], ['in javascript , a ', 'statement', ' is analogous to a sentence in english']);
         html_style_alternate(parent, html_p, [noop, html_style_monospace], ['at the end of a statement there should be a semicolon ( ', ';', ' )']);
+        html_p_text(parent, 'statements are ran one after the other');
+        html_p_text(parent, 'if there are two statements , the first statement will run and then the second statement will run');
     }
 }
