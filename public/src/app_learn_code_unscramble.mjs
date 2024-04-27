@@ -30,86 +30,88 @@ import {object_property_set} from "./object_property_set.mjs";
 import {html_inner_set} from "./html_inner_set.mjs";
 import {list_join} from "./list_join.mjs";
 import {html_clear} from "./html_clear.mjs";
-export function app_learn_code_unscramble(parent, source_get) {
-    refresh();
-    function refresh() {
-        html_clear(parent);
-        let source = source_get();
-        let messages = app_learn_code_eval(source);
-        let joined = app_learn_code_eval_messages_to_string(messages);
-        html_p_text(parent, 'below is another quiz');
-        html_p_text(parent, 'you can take as many quizzes as you want');
-        html_p_text(parent, 'when you are done , feel free to press the "next" button below');
-        html_p_text(parent, 'write a program that outputs the following :');
-        app_learn_code_code_part_titled_output(parent, joined);
-        html_p_text(parent, 'tap or click each part of the program in the correct order');
-        let {code} = app_learn_code_code_part_titled_code(parent, 'a');
-        html_style(code, {
-            visibility: 'hidden'
-        });
-        let tokens = list_adder(la => {
-            for (let token of js_tokenize(source)) {
-                la(token);
-            }
-        });
-        let scrambled = list_map(tokens, t => {
-            let {type} = t;
-            let {label} = type;
-            let {value} = t;
-            if (equal(label, 'name')) {
-                return value;
-            }
-            if (equal(label, 'string')) {
-                return string_delimit(value);
-            }
-            return label;
-        });
-        let answer = list_copy(scrambled);
-        let mapped_index_last = list_index_last(scrambled);
-        for (let i of range(list_length(scrambled))) {
-            let j = integer_random(i, mapped_index_last);
-            let temp = list_get(scrambled, j);
-            list_set(scrambled, j, list_get(scrambled, i));
-            list_set(scrambled, i, temp);
-        }
-        let parts = array_new();
-        let current_index = 0;
-        for (let s of scrambled) {
-            let part = app_learn_code_code_part_generic(html_span_text, parent, s, app_learn_code_code_background());
-            list_add(parts, part);
-            app_learn_code_style_code_color(part);
-            html_style(part, {
-                margin: html_style_units(3),
-                display: 'inline-block',
-                cursor: 'pointer'
+export function app_learn_code_unscramble(source_get) {
+    return parent => {
+        refresh();
+        function refresh() {
+            html_clear(parent);
+            let source = source_get();
+            let messages = app_learn_code_eval(source);
+            let joined = app_learn_code_eval_messages_to_string(messages);
+            html_p_text(parent, 'below is another quiz');
+            html_p_text(parent, 'you can take as many quizzes as you want');
+            html_p_text(parent, 'when you are done , feel free to press the "next" button below');
+            html_p_text(parent, 'write a program that outputs the following :');
+            app_learn_code_code_part_titled_output(parent, joined);
+            html_p_text(parent, 'tap or click each part of the program in the correct order');
+            let {code} = app_learn_code_code_part_titled_code(parent, 'a');
+            html_style(code, {
+                visibility: 'hidden'
             });
-            html_on_click(part, () => {
-                let current = list_get(answer, current_index);
-                let e = equal(s, current);
-                if (!e) {
-                    html_style(part, {
-                        'background-color': 'red'
-                    });
-                    return;
+            let tokens = list_adder(la => {
+                for (let token of js_tokenize(source)) {
+                    la(token);
                 }
-                html_style(code, {
-                    visibility: 'visible'
-                });
-                for (let p of parts) {
-                    html_style(p, {
-                        'background-color': app_learn_code_code_background()
-                    });
+            });
+            let scrambled = list_map(tokens, t => {
+                let {type} = t;
+                let {label} = type;
+                let {value} = t;
+                if (equal(label, 'name')) {
+                    return value;
                 }
+                if (equal(label, 'string')) {
+                    return string_delimit(value);
+                }
+                return label;
+            });
+            let answer = list_copy(scrambled);
+            let mapped_index_last = list_index_last(scrambled);
+            for (let i of range(list_length(scrambled))) {
+                let j = integer_random(i, mapped_index_last);
+                let temp = list_get(scrambled, j);
+                list_set(scrambled, j, list_get(scrambled, i));
+                list_set(scrambled, i, temp);
+            }
+            let parts = array_new();
+            let current_index = 0;
+            for (let s of scrambled) {
+                let part = app_learn_code_code_part_generic(html_span_text, parent, s, app_learn_code_code_background());
+                list_add(parts, part);
+                app_learn_code_style_code_color(part);
                 html_style(part, {
-                    display: 'none'
+                    margin: html_style_units(3),
+                    display: 'inline-block',
+                    cursor: 'pointer'
                 });
-                current_index++;
-                let sliced = list_take(answer, current_index);
-                html_inner_set(code, list_join(sliced, ''));
-                if (equal(current_index, list_length(answer))) {
-                    refresh();
-                }
-            });
+                html_on_click(part, () => {
+                    let current = list_get(answer, current_index);
+                    let e = equal(s, current);
+                    if (!e) {
+                        html_style(part, {
+                            'background-color': 'red'
+                        });
+                        return;
+                    }
+                    html_style(code, {
+                        visibility: 'visible'
+                    });
+                    for (let p of parts) {
+                        html_style(p, {
+                            'background-color': app_learn_code_code_background()
+                        });
+                    }
+                    html_style(part, {
+                        display: 'none'
+                    });
+                    current_index++;
+                    let sliced = list_take(answer, current_index);
+                    html_inner_set(code, list_join(sliced, ''));
+                    if (equal(current_index, list_length(answer))) {
+                        refresh();
+                    }
+                });
+            }
         }
     }
 }
