@@ -23,12 +23,14 @@ import {html_button_width_full_text_click} from "./html_button_width_full_text_c
 import {integer_random} from "./integer_random.mjs";
 import {html_clear} from "./html_clear.mjs";
 import {list_random_item} from "./list_random_item.mjs";
-export function lesson_log_number_example(source_get, message) {
+export function lesson_log_number_example(source_get, messages) {
     return parent => {
         refresh();
         function refresh() {
             html_clear(parent);
-            html_p_text(parent, string_combine('below is an example computer program ', message));
+            for (let m of messages) {
+                html_p_text(parent, 'below is an example computer program ');
+            }
             html_p_text(parent, 'if you want to see another example , press the "another example" button below');
             let source = source_get();
             app_learn_code_code(parent, source);
