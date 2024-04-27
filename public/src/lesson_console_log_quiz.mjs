@@ -56,7 +56,7 @@ export function lesson_console_log_quiz(parent) {
             };
         });
         let source = list_random_item(choices);
-        let correct_index = list_index(source);
+        let correct_index = list_index(choices, source);
         app_learn_code_code_part_titled_code(container, source);
         html_hr(container);
         app_learn_code_code_part_title(container, app_learn_code_code_part_title_output());
