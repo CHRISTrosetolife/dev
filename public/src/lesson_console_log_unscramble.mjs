@@ -21,6 +21,7 @@ import {range} from "./range.mjs";
 import {list_length} from "./list_length.mjs";
 import {integer_random} from "./integer_random.mjs";
 import {list_get} from "./list_get.mjs";
+import { html_on_click } from "./html_on_click.mjs";
 export function lesson_console_log_unscramble(parent) {
     let source = lesson_console_log_quiz_get();
     let messages = app_learn_code_eval(source);
@@ -63,5 +64,8 @@ export function lesson_console_log_unscramble(parent) {
             display: 'inline-block',
             cursor: 'pointer'
         });
+        html_on_click(part, () => {
+            
+        })
     }
 }
