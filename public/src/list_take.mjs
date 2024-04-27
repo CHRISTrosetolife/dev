@@ -1,3 +1,3 @@
 export function list_take(list, count) {
-    return list.slice(0, end);
+    return list.slice(0, count);
 }
