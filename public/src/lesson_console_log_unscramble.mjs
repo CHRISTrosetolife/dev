@@ -21,7 +21,9 @@ import {range} from "./range.mjs";
 import {list_length} from "./list_length.mjs";
 import {integer_random} from "./integer_random.mjs";
 import {list_get} from "./list_get.mjs";
-import { html_on_click } from "./html_on_click.mjs";
+import {html_on_click} from "./html_on_click.mjs";
+import {array_new} from "./array_new.mjs";
+import {list_add} from "./list_add.mjs";
 export function lesson_console_log_unscramble(parent) {
     let source = lesson_console_log_quiz_get();
     let messages = app_learn_code_eval(source);
@@ -55,9 +57,11 @@ export function lesson_console_log_unscramble(parent) {
         list_set(scrambled, j, list_get(scrambled, i));
         list_set(scrambled, i, temp);
     }
+    let parts = array_new();
     let current_index = 0;
     for (let s of scrambled) {
         let part = app_learn_code_code_part_generic(html_span_text, parent, s, app_learn_code_code_background());
+        list_add(parts, part);
         app_learn_code_style_code_color(part);
         html_style(part, {
             margin: html_style_units(3),
@@ -69,11 +73,16 @@ export function lesson_console_log_unscramble(parent) {
             let e = equal(s, current);
             if (!e) {
                 html_style(part, {
-                    'background-color': 'red',
+                    'background-color': 'red'
                 });
-                console.log('here')
+                console.log('here');
                 return;
             }
-        })
+            for (let part of parts) {
+                html_style(part, {
+                    'background-color': app_learn_code_code_background()
+                });
+            }
+        });
     }
 }
