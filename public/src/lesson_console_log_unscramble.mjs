@@ -9,7 +9,7 @@ export function lesson_console_log_unscramble(parent) {
     let joined = app_learn_code_eval_messages_to_string(messages);
     html_p_text(parent, 'below is another quiz');
     html_p_text(parent, 'write a program that outputs : hello');
-    for (let token of js_tokenize('function test(){}')) {
+    for (let token of js_tokenize(source)) {
         console.log(token);
     }
 }
