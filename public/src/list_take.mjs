@@ -1,3 +1,3 @@
-export function list_slice(list, start, end) {
-    return list.slice(start, end);
+export function list_take(list, count) {
+    return list.slice(0, end);
 }
