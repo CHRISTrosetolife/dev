@@ -17,7 +17,6 @@ import {app_learn_code_eval_messages_to_string} from "./app_learn_code_eval_mess
 import {app_learn_code_eval} from "./app_learn_code_eval.mjs";
 import {js_tokenize} from "./js_tokenize.mjs";
 import {html_p_text} from "./html_p_text.mjs";
-import {lesson_console_log_quiz_get} from "./lesson_console_log_quiz_get.mjs";
 import {list_map} from "./list_map.mjs";
 import {html_style} from "./html_style.mjs";
 import {range} from "./range.mjs";
