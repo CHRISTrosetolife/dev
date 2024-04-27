@@ -25,6 +25,9 @@ export function lesson_log_number_example(parent) {
     function refresh() {
         html_clear(parent)
         let value = integer_random(1,123);
+        if (integer_random(1,2) === 1) {
+            value = value / 10
+        }
         app_learn_code_code(parent, `console.log(${value});`);
         html_button_width_full_text_click(parent, 'another example', refresh)
     }
