@@ -24,8 +24,8 @@ import {html_style_bold} from "./html_style_bold.mjs";
 import {html_style_monospace} from "./html_style_monospace.mjs";
 export function lesson_add() {
     const example_message = 'adding two numbers together';
-    let v1 = object_new();
     const description = 'outputting a number to the console';
+    let v1 = object_new();
     object_property_set(v1, 'description', description);
     let v2 = array_new();
     list_add(v2, lesson_log_number_example(lesson_add_quiz, example_message, ));
