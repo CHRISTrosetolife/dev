@@ -29,6 +29,7 @@ export function lesson_statements_two() {
     return lesson_simple(lesson_add_quiz, example_before, description, example_message);
     function example_before(parent) {
         html_style_alternate(parent, html_p, [noop, html_style_monospace], [
-            'two numbers can be added together using the plus ( ', '+', ' ) sign']);
+        'in javascript , a semicolon ( ', ';', ' ) is a separator that means the end of a statement']);
+        
     }
 }
