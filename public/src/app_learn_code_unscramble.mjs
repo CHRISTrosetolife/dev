@@ -31,7 +31,7 @@ import {html_inner_set} from "./html_inner_set.mjs";
 import {list_join} from "./list_join.mjs";
 import {html_clear} from "./html_clear.mjs";
 export function app_learn_code_unscramble(source_get) {
-    return parent => {
+    return function app_learn_code_unscramble_inner(parent) {
         refresh();
         function refresh() {
             html_clear(parent);
