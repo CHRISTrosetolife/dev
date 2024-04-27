@@ -34,6 +34,8 @@ export function lesson_console_log_unscramble(parent) {
     let messages = app_learn_code_eval(source);
     let joined = app_learn_code_eval_messages_to_string(messages);
     html_p_text(parent, 'below is another quiz');
+    html_p_text(parent, 'you can take as many quizzes as you want');
+    html_p_text(parent, 'when you are done , feel free to press the "next" button below');
     html_p_text(parent, 'write a program that outputs the following :');
     app_learn_code_code_part_titled_output(parent, joined);
     html_p_text(parent, 'tap or click each part of the program in the correct order');
@@ -96,6 +98,9 @@ export function lesson_console_log_unscramble(parent) {
             current_index++;
             let sliced = list_take(answer, current_index);
             html_inner_set(code, list_join(sliced, ''));
+            if (equal(current_index, list_length(answer))) {
+                refresh();
+            }
         });
     }
 }
