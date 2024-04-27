@@ -27,7 +27,7 @@ export function lesson_console_log() {
     list_add(v2, lesson_console_log_strings);
     list_add(v2, lesson_console_log_process_computer_program);
     list_add(v2, lesson_console_log_program_first);
-    list_add(v2, parent => app_learn_code_quiz_inner(parent, lesson_console_log_quiz_get));
+    list_add(v2, app_learn_code_quiz(lesson_console_log_quiz_get));
     list_add(v2, lesson_console_log_unscramble);
     object_property_set(v1, 'screens', v2);
     return v1;
