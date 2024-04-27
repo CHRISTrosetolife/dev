@@ -1,3 +1,4 @@
+import {random_50_50} from "./random_50_50.mjs";
 import {app_learn_code_code} from "./app_learn_code_code.mjs";
 import {html_style_monospace} from "./html_style_monospace.mjs";
 import {noop} from "./noop.mjs";
@@ -17,23 +18,22 @@ import {object_property_set} from "./object_property_set.mjs";
 import {string_combine} from "./string_combine.mjs";
 import {app_learn_code_code_part_contrast} from "./app_learn_code_code_part_contrast.mjs";
 import {html_spacer_vertical} from "./html_spacer_vertical.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
-import { integer_random } from "./integer_random.mjs";
-import { html_clear } from "./html_clear.mjs";
-import { list_random_item } from "./list_random_item.mjs";
+import {html_button_width_full_text_click} from "./html_button_width_full_text_click.mjs";
+import {integer_random} from "./integer_random.mjs";
+import {html_clear} from "./html_clear.mjs";
+import {list_random_item} from "./list_random_item.mjs";
 export function lesson_log_number_example(parent) {
-    refresh()
+    refresh();
     function refresh() {
-        html_clear(parent)
-        let value = integer_random(0,999999);
-        let b = integer_random(1,2) === 1;
-        if (b) {
-            value = value / list_random_item([10,100,1000])
+        html_clear(parent);
+        let value = integer_random(0, 999999);
+        if (random_50_50()) {
+            value = value / list_random_item([10, 100, 1000]);
         }
-        if (integer_random(1,2) === 1) {
-            value = value * -1
+        if (random_50_50()) {
+            value = value * -1;
         }
         app_learn_code_code(parent, `console.log(${value});`);
-        html_button_width_full_text_click(parent, 'another example', refresh)
+        html_button_width_full_text_click(parent, 'another example', refresh);
     }
 }
