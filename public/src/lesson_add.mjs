@@ -26,11 +26,12 @@ export function lesson_add() {
     let v1 = object_new();
     object_property_set(v1, 'description', 'outputting a number to the console');
     let v2 = array_new();
-    list_add(v2, lesson_log_number_example(lesson_add_quiz, 'adding two numbers together', function example_before(parent) {
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['two numbers can be added together using the plus ( ', '+', ' ) sign']);
-    }));
+    list_add(v2, lesson_log_number_example(lesson_add_quiz, 'adding two numbers together', ));
     list_add(v2, app_learn_code_quiz(lesson_add_quiz));
     list_add(v2, app_learn_code_unscramble(lesson_add_quiz));
     object_property_set(v1, 'screens', v2);
     return v1;
+    function example_before(parent) {
+        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['two numbers can be added together using the plus ( ', '+', ' ) sign']);
+    }
 }
