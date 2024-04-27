@@ -30,6 +30,7 @@ import {html_p_text} from "./html_p_text.mjs";
 import {html_disable} from "./html_disable.mjs";
 import { html_style } from "./html_style.mjs";
 export function lesson_console_log_quiz(parent) {
+    let source_get = lesson_console_log_quiz_get;
     refresh();
     function refresh() {
         html_clear(parent);
@@ -42,7 +43,6 @@ export function lesson_console_log_quiz(parent) {
         let choices = array_new();
         for (let c of r) {
             for (let i of range(100)) {
-                let source_get = lesson_console_log_quiz_get;
                 let source = source_get();
                 if (list_includes(choices, source)) {
                     continue;
