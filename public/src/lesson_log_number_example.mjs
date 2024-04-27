@@ -24,7 +24,9 @@ import {integer_random} from "./integer_random.mjs";
 import {html_clear} from "./html_clear.mjs";
 import {list_random_item} from "./list_random_item.mjs";
 export function lesson_log_number_example(source_get, message) {
+    console.log('here')
     return parent => {
+        console.log('here2')
         refresh();
         function refresh() {
             html_clear(parent);
