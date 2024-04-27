@@ -30,8 +30,11 @@ export function lesson_console_log_unscramble(parent) {
         });
         let {type} = t;
         let {label} = type;
+        let {value} = t;
         if (equal(label, 'name')) {
-            let {value} = t;
+            return value;
+        }
+        if (equal(label, 'string')) {
             return value;
         }
         return label;
