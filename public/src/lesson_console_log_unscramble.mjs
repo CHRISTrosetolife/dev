@@ -34,6 +34,7 @@ export function lesson_console_log_unscramble(parent) {
         return label;
     });
     for (let m of mapped) {
-        app_learn_code_code_part_generic(html_span_text, parent, m, app_learn_code_code_background());
+        let part = app_learn_code_code_part_generic(html_span_text, parent, m, app_learn_code_code_background());
+        app_learn_code_style_code_color(part);
     }
 }
