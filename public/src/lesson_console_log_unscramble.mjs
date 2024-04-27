@@ -65,7 +65,7 @@ export function lesson_console_log_unscramble(parent) {
             cursor: 'pointer'
         });
         html_on_click(part, () => {
-            let current = list_get()
+            let current = list_get(answer, current_index);
         })
     }
 }
