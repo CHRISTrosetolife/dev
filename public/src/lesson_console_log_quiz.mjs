@@ -25,9 +25,9 @@ import {html_spacer_vertical} from "./html_spacer_vertical.mjs";
 import {each_index} from "./each_index.mjs";
 import { html_clear } from "./html_clear.mjs";
 export function lesson_console_log_quiz(parent) {
-    html_clear(parent)
     refresh();
     function refresh() {
+        html_clear(parent)
         let container = app_learn_code_code_container(parent);
         let choices_count = 4;
         let r = range(choices_count);
