@@ -42,7 +42,8 @@ export function lesson_console_log_quiz(parent) {
         let choices = array_new();
         for (let c of r) {
             for (let i of range(100)) {
-                let source = lesson_console_log_quiz_get();
+                let source_get = lesson_console_log_quiz_get;
+                let source = source_get();
                 if (list_includes(choices, source)) {
                     continue;
                 }
