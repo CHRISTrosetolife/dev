@@ -28,9 +28,9 @@ export function lesson_log_number_example(source_get, message) {
         refresh();
         function refresh() {
             html_clear(parent);
-            html_p_text(parent, 'below is an example computer program ' + message);
+            html_p_text(parent, string_combine('below is an example computer program ', message));
             html_p_text(parent, 'if you want to see another example , press the "another example" button below');
-            let source = lesson_log_number_quiz();
+            let source = source_get();
             app_learn_code_code(parent, source);
             html_button_width_full_text_click(parent, 'another example', refresh);
         }
