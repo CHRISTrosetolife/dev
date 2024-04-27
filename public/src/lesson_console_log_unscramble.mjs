@@ -52,7 +52,7 @@ export function lesson_console_log_unscramble(parent) {
     let mapped_index_last = list_index_last(mapped);
     for (let i of range(list_length(mapped))) {
         let j = integer_random(i, mapped_index_last);
-        console.log({i, mapped_index_last})
+        console.log({j})
         let temp = list_get(mapped, j);
         list_set(mapped, j, list_get(mapped, i));
         list_set(mapped, i, temp);
