@@ -24,10 +24,10 @@ import {integer_random} from "./integer_random.mjs";
 import {html_clear} from "./html_clear.mjs";
 import {list_random_item} from "./list_random_item.mjs";
 export function lesson_log_number_example(parent) {
+    const message = 'computer program outputting a number';
     refresh();
     function refresh() {
         html_clear(parent);
-        const message = 'computer program outputting a number';
         html_p_text(parent, 'below is an example ' + message);
         html_p_text(parent, 'if you want to see another example , press the "another example" button below');
         let source = lesson_log_number_quiz();
