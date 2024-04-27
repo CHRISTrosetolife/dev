@@ -29,7 +29,7 @@ export function app_learn_code() {
     });
     let lesson_creates = [lesson_console_log]
     for (let lesson_create of lesson_creates) {
-
+        let lesson = lesson_create();
     }
     let screens = object_property_get(lesson, 'screens');
     let index_last = list_index_last(screens);
