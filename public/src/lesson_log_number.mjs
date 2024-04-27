@@ -12,20 +12,11 @@ import {lesson_console_log_analogy_addition} from "./lesson_console_log_analogy_
 import {lesson_console_log_program_first} from "./lesson_console_log_program_first.mjs";
 import {lesson_console_log_strings} from "./lesson_console_log_strings.mjs";
 import {lesson_console_log_analogy_addition_symbol} from "./lesson_console_log_analogy_addition_symbol.mjs";
-export function lesson_console_log() {
+export function lesson_log_number() {
     let v1 = object_new();
     object_property_set(v1, 'description', 'outputting a string to the console');
     let v2 = array_new();
-    list_add(v2, lesson_console_log_analogy_paper);
-    list_add(v2, lesson_console_log_analogy_addition);
-    list_add(v2, lesson_console_log_analogy_addition_symbol);
-    list_add(v2, lesson_console_log_process_named);
-    list_add(v2, lesson_console_log_javascript);
-    list_add(v2, lesson_console_log_strings);
-    list_add(v2, lesson_console_log_process_computer_program);
-    list_add(v2, lesson_console_log_program_first);
-    list_add(v2, lesson_console_log_quiz);
-    list_add(v2, lesson_console_log_unscramble);
+    list_add(v2, lesson_log_number_example);
     object_property_set(v1, 'screens', v2);
     return v1;
 }
