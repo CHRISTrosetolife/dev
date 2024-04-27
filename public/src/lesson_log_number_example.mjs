@@ -25,7 +25,5 @@ export function lesson_log_number_example(parent) {
         let value = integer_random(1,123);
         app_learn_code_code(parent, `console.log(${value});`);
     }
-    html_button_width_full_text_click(parent, 'another example', () => {
-
-    })
+    html_button_width_full_text_click(parent, 'another example', refresh)
 }
