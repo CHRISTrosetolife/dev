@@ -37,7 +37,7 @@ export function lesson_console_log_unscramble(parent) {
     html_p_text(parent, 'write a program that outputs the following :');
     app_learn_code_code_part_titled_output(parent, joined);
     html_p_text(parent, 'tap or click each part of the program in the correct order');
-    let {code} = app_learn_code_code_part_titled_code(parent, '');
+    let {code} = app_learn_code_code_part_titled_code(parent, 'a');
     let tokens = list_adder(la => {
         for (let token of js_tokenize(source)) {
             la(token);
