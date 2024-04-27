@@ -33,7 +33,7 @@ export function app_learn_code() {
         'font-family': 'sans-serif'
     });
     object_merge(html_style_default(), {
-        'font-size': '4.5vh'
+        'font-size': '3vh'
     });
     let lesson_creates = [];
     list_add(lesson_creates, lesson_console_log);
