@@ -1,3 +1,4 @@
+import {lesson_console_log_quiz} from "./lesson_console_log_quiz.mjs";
 import {lesson_simple} from "./lesson_simple.mjs";
 import {lesson_add_quiz} from "./lesson_add_quiz.mjs";
 import {html_p} from "./html_p.mjs";
@@ -27,7 +28,8 @@ export function lesson_statements_two() {
     const example_message = 'with two statements';
     const description = example_message;
     return lesson_simple(() => {
-
+        return `${lesson_console_log_quiz()}
+${lesson_console_log_quiz()}`;
     }, example_before, description, example_message, [parent => {
         html_p_text(parent, 'in english , there are letters');
         html_p_text(parent, 'words have letters');
