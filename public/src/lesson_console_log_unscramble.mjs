@@ -22,6 +22,7 @@ export function lesson_console_log_unscramble(parent) {
         return label
     })
     for (let m of mapped) {
-        
+        app_learn_code_code_part_generic(html_span_text, parent, source_code, background_color);
+
     }
 }
