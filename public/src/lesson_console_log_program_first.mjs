@@ -41,5 +41,6 @@ export function lesson_console_log_program_first(parent) {
     let container = app_learn_code_code_container(parent);
     app_learn_code_code_part_titled_code(container, code);
     html_hr(container);
-    app_learn_code_code_part_titled_output(container, `hello`);
+    const output = `hello`;
+    app_learn_code_code_part_titled_output(container, output);
 }
