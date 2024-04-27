@@ -1,3 +1,4 @@
+import {list_take} from "./list_take.mjs";
 import {app_learn_code_code_part_titled_code} from "./app_learn_code_code_part_titled_code.mjs";
 import {list_set} from "./list_set.mjs";
 import {list_copy} from "./list_copy.mjs";
@@ -26,8 +27,8 @@ import {html_on_click} from "./html_on_click.mjs";
 import {array_new} from "./array_new.mjs";
 import {list_add} from "./list_add.mjs";
 import {object_property_set} from "./object_property_set.mjs";
-import { html_inner_set } from "./html_inner_set.mjs";
-import { list_join } from "./list_join.mjs";
+import {html_inner_set} from "./html_inner_set.mjs";
+import {list_join} from "./list_join.mjs";
 export function lesson_console_log_unscramble(parent) {
     let source = lesson_console_log_quiz_get();
     let messages = app_learn_code_eval(source);
@@ -92,7 +93,7 @@ export function lesson_console_log_unscramble(parent) {
             });
             current_index++;
             let sliced = list_take(answer, current_index);
-            html_inner_set(code, list_join(sliced, ''))
+            html_inner_set(code, list_join(sliced, ''));
         });
     }
 }
