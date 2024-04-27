@@ -39,6 +39,7 @@ export function lesson_statements_two() {
         html_style_alternate(parent, html_p, [noop, html_style_bold], [
             'a hierarchy can also be called a ', 'tree']);
         html_p_text(parent, 'trees are very important in computer programming')
-        html_p_text(parent, 'a statement is a unit of code')
+        html_style_alternate(parent, html_p, [noop, html_style_bold], [
+            'in javascript , a ', 'statement', ' is analogous to a sentence in english']);
     }
 }
