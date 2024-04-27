@@ -89,6 +89,7 @@ export function lesson_console_log_unscramble(parent) {
                 display: 'none'
             });
             current_index++;
+            let sliced = list_take(answer, current_index);
         });
     }
 }
