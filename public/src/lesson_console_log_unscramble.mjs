@@ -30,6 +30,7 @@ import {object_property_set} from "./object_property_set.mjs";
 import {html_inner_set} from "./html_inner_set.mjs";
 import {list_join} from "./list_join.mjs";
 export function lesson_console_log_unscramble(parent) {
+    refresh()
     function refresh() {
         let source = lesson_console_log_quiz_get();
         let messages = app_learn_code_eval(source);
