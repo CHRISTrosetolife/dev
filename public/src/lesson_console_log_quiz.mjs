@@ -68,9 +68,11 @@ export function lesson_console_log_quiz(parent) {
             let button = html_button_width_full_text_click(container, joined, function on_click() {
                 if (index === correct_index) {
                     html_style(button, {
-                        'background-color': 'green'
+                        'background-color': 'lightgreen'
                     })
-                    refresh();
+                    setTimeout(() => {
+                        refresh();
+                    }, 200)
                 } else {
                     html_disable(button);
                 }
