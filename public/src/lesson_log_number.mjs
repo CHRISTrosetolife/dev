@@ -1,6 +1,5 @@
 import {lesson_log_number_example} from "./lesson_log_number_example.mjs";
 import {lesson_console_log_unscramble} from "./lesson_console_log_unscramble.mjs";
-import {lesson_console_log_quiz} from "./lesson_console_log_quiz.mjs";
 import {lesson_console_log_javascript} from "./lesson_console_log_javascript.mjs";
 import {lesson_console_log_process_named} from "./lesson_console_log_process_named.mjs";
 import {lesson_console_log_process_computer_program} from "./lesson_console_log_process_computer_program.mjs";
