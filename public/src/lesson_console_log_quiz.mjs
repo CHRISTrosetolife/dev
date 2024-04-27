@@ -23,46 +23,53 @@ import {list_get} from "./list_get.mjs";
 import {html_style_monospace} from "./html_style_monospace.mjs";
 import {html_spacer_vertical} from "./html_spacer_vertical.mjs";
 import {each_index} from "./each_index.mjs";
+import { html_clear } from "./html_clear.mjs";
 export function lesson_console_log_quiz(parent) {
-    let container = app_learn_code_code_container(parent);
-    let choices_count = 4;
-    let r = range(choices_count);
-    let choices = array_new();
-    for (let c of r) {
-        for (let i of range(100)) {
-            let source = lesson_console_log_quiz_get();
-            if (list_includes(choices, source)) {
-                continue;
+    html_clear(parent)
+    refresh();
+    function refresh() {
+        let container = app_learn_code_code_container(parent);
+        let choices_count = 4;
+        let r = range(choices_count);
+        let choices = array_new();
+        for (let c of r) {
+            for (let i of range(100)) {
+                let source = lesson_console_log_quiz_get();
+                if (list_includes(choices, source)) {
+                    continue;
+                }
+                list_add(choices, source);
+                break;
             }
-            list_add(choices, source);
-            break;
         }
-    }
-    let mapped = list_map(choices, c => {
-        let source_augmented = `let log_old = console.log;
-        let messages = [];
-        console.log = message => messages.push(message);
-        ${c};
-        console.log = log_old;
-        messages;`;
-        let messages = eval(source_augmented);
-        return {
-            source: c,
-            messages
-        };
-    });
-    let source = list_random_item(choices);
-    let correct_index = list_index(source);
-    app_learn_code_code_part_titled_code(container, source);
-    html_hr(container);
-    app_learn_code_code_part_title(container, app_learn_code_code_part_title_output());
-    each_index(mapped, (m, index) => {
-        let {messages} = m;
-        let joined = list_join(messages, '<br>');
-        let button = html_button_width_full_text_click(container, joined, function on_click() {
-            if (index === correct_index) {}
+        let mapped = list_map(choices, c => {
+            let source_augmented = `let log_old = console.log;
+            let messages = [];
+            console.log = message => messages.push(message);
+            ${c};
+            console.log = log_old;
+            messages;`;
+            let messages = eval(source_augmented);
+            return {
+                source: c,
+                messages
+            };
         });
-        html_style_monospace(button);
-        html_spacer_vertical(container);
-    });
+        let source = list_random_item(choices);
+        let correct_index = list_index(source);
+        app_learn_code_code_part_titled_code(container, source);
+        html_hr(container);
+        app_learn_code_code_part_title(container, app_learn_code_code_part_title_output());
+        each_index(mapped, (m, index) => {
+            let {messages} = m;
+            let joined = list_join(messages, '<br>');
+            let button = html_button_width_full_text_click(container, joined, function on_click() {
+                if (index === correct_index) {
+                    refresh()
+                }
+            });
+            html_style_monospace(button);
+            html_spacer_vertical(container);
+        });
+    }
 }
