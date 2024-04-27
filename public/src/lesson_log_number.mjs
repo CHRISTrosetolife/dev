@@ -1,3 +1,4 @@
+import {app_learn_code_unscramble} from "./app_learn_code_unscramble.mjs";
 import {lesson_log_number_quiz} from "./lesson_log_number_quiz.mjs";
 import {app_learn_code_quiz} from "./app_learn_code_quiz.mjs";
 import {lesson_log_number_example} from "./lesson_log_number_example.mjs";
@@ -22,6 +23,7 @@ export function lesson_log_number() {
     list_add(v2, lesson_log_number_explain);
     list_add(v2, lesson_log_number_example);
     list_add(v2, app_learn_code_quiz(lesson_log_number_quiz));
+    list_add(v2, app_learn_code_unscramble(lesson_log_number_quiz));
     object_property_set(v1, 'screens', v2);
     return v1;
 }
