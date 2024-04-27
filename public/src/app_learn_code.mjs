@@ -1,3 +1,4 @@
+import {lesson_statements_two} from "./lesson_statements_two.mjs";
 import {lesson_multiply} from "./lesson_multiply.mjs";
 import {lesson_subtract} from "./lesson_subtract.mjs";
 import {lesson_add} from "./lesson_add.mjs";
@@ -41,6 +42,7 @@ export function app_learn_code() {
     list_add(lesson_creates, lesson_subtract);
     list_add(lesson_creates, lesson_multiply);
     list_add(lesson_creates, lesson_divide);
+    list_add(lesson_creates, lesson_statements_two);
     let screens = [];
     for (let lesson_create of lesson_creates) {
         let lesson = lesson_create();
