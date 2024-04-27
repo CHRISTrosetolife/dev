@@ -1,3 +1,4 @@
+import {lesson_log_number} from "./lesson_log_number.mjs";
 import {list_add_multiple} from "./list_add_multiple.mjs";
 import {html_style_default} from "./html_style_default.mjs";
 import {html_disable} from "./html_disable.mjs";
@@ -29,7 +30,7 @@ export function app_learn_code() {
     object_merge(html_style_default(), {
         'font-size': '3vh'
     });
-    let lesson_creates = [lesson_console_log];
+    let lesson_creates = [lesson_console_log, lesson_log_number];
     let screens = [];
     for (let lesson_create of lesson_creates) {
         let lesson = lesson_create();
