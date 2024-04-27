@@ -23,11 +23,11 @@ import {html_p_text} from "./html_p_text.mjs";
 import {noop} from "./noop.mjs";
 import {html_style_bold} from "./html_style_bold.mjs";
 import {html_style_monospace} from "./html_style_monospace.mjs";
-export function lesson_add() {
-    const example_message = 'adding two numbers together';
-    const description = 'outputting a number to the console';
+export function lesson_subtract() {
+    const example_message = 'subtracting two numbers';
+    const description = example_message;
     return lesson_simple(lesson_add_quiz, example_before, description, example_message);
     function example_before(parent) {
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['two numbers can be added together using the plus ( ', '+', ' ) sign']);
+        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['one number can be subtracted from the other using the minus ( ', '-', ' ) sign']);
     }
 }
