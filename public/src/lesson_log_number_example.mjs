@@ -28,14 +28,19 @@ export function lesson_log_number_example(parent) {
         html_clear(parent);
         html_p_text(parent, 'below is an example computer program and the output of the computer program')
         html_p_text(parent, 'if you want to see another example , press the "another example" button below')
-        let value = integer_random(0, 999999);
-        if (random_50_50()) {
-            value = value / list_random_item([10, 100, 1000]);
-        }
-        if (random_50_50()) {
-            value = value * -1;
-        }
-        app_learn_code_code(parent, `console.log(${value});`);
+        let source = lesson_log_number_quiz();
+        app_learn_code_code(parent, source);
         html_button_width_full_text_click(parent, 'another example', refresh);
     }
 }
+function lesson_log_number_quiz() {
+    let value = integer_random(0, 999999);
+    if (random_50_50()) {
+        value = value / list_random_item([10, 100, 1000]);
+    }
+    if (random_50_50()) {
+        value = value * -1;
+    }
+    return `console.log(${value});`;
+}
+
