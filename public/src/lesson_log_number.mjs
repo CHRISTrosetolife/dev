@@ -16,7 +16,7 @@ import {lesson_console_log_analogy_addition_symbol} from "./lesson_console_log_a
 import { lesson_log_number_explain } from "./lesson_log_number_explain.mjs";
 export function lesson_log_number() {
     let v1 = object_new();
-    object_property_set(v1, 'description', 'outputting a string to the console');
+    object_property_set(v1, 'description', 'outputting a number to the console');
     let v2 = array_new();
     list_add(v2, lesson_log_number_explain);
     list_add(v2, lesson_log_number_example);
