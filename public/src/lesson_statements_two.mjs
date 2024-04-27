@@ -38,7 +38,7 @@ export function lesson_statements_two() {
             'this is a ', 'hierarchy']);
         html_style_alternate(parent, html_p, [noop, html_style_bold], [
             'a hierarchy can also be called a ', 'tree']);
-        html_p_text(parent, 'trees are very important in computers')
+        html_p_text(parent, 'trees are very important in computer programming')
         html_p_text(parent, 'a statement is a unit of code')
     }
 }
