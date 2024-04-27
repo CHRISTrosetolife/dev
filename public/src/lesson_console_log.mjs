@@ -14,7 +14,6 @@ import {lesson_console_log_analogy_addition} from "./lesson_console_log_analogy_
 import {lesson_console_log_program_first} from "./lesson_console_log_program_first.mjs";
 import {lesson_console_log_strings} from "./lesson_console_log_strings.mjs";
 import {lesson_console_log_analogy_addition_symbol} from "./lesson_console_log_analogy_addition_symbol.mjs";
-import { lesson_console_log_quiz_get } from "./lesson_console_log_quiz_get.mjs";
 export function lesson_console_log() {
     let v1 = object_new();
     object_property_set(v1, 'description', 'outputting a string to the console');
