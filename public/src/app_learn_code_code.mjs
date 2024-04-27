@@ -7,6 +7,6 @@ export function app_learn_code_code(parent, code) {
     let container = app_learn_code_code_container(parent);
     app_learn_code_code_part_titled_code(container, code);
     html_hr(container);
-    let output = app_learn_code_eval_to_string(source);
+    let output = app_learn_code_eval_to_string(code);
     app_learn_code_code_part_titled_output(container, output);
 }
