@@ -1,3 +1,4 @@
+import {lesson_simple} from "./lesson_simple.mjs";
 import {lesson_add_quiz} from "./lesson_add_quiz.mjs";
 import {html_p} from "./html_p.mjs";
 import {app_learn_code_unscramble} from "./app_learn_code_unscramble.mjs";
@@ -30,14 +31,3 @@ export function lesson_add() {
         html_style_alternate(parent, html_p, [noop, html_style_monospace], ['two numbers can be added together using the plus ( ', '+', ' ) sign']);
     }
 }
-function lesson_simple(source_get, example_before, description, example_message) {
-    let v1 = object_new();
-    object_property_set(v1, 'description', description);
-    let v2 = array_new();
-    list_add(v2, lesson_log_number_example(source_get, example_message, example_before));
-    list_add(v2, app_learn_code_quiz(source_get));
-    list_add(v2, app_learn_code_unscramble(source_get));
-    object_property_set(v1, 'screens', v2);
-    return v1;
-}
-
