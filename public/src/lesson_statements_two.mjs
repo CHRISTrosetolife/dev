@@ -23,7 +23,7 @@ import {html_p_text} from "./html_p_text.mjs";
 import {noop} from "./noop.mjs";
 import {html_style_bold} from "./html_style_bold.mjs";
 import {html_style_monospace} from "./html_style_monospace.mjs";
-export function lesson_add() {
+export function lesson_statements_two() {
     const example_message = 'adding two numbers together';
     const description = 'outputting a number to the console';
     return lesson_simple(lesson_add_quiz, example_before, description, example_message);
