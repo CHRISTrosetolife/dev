@@ -1,3 +1,4 @@
+import {lesson_log_number_quiz} from "./lesson_log_number_quiz.mjs";
 import {random_50_50} from "./random_50_50.mjs";
 import {app_learn_code_code} from "./app_learn_code_code.mjs";
 import {html_style_monospace} from "./html_style_monospace.mjs";
@@ -26,21 +27,10 @@ export function lesson_log_number_example(parent) {
     refresh();
     function refresh() {
         html_clear(parent);
-        html_p_text(parent, 'below is an example computer program and the output of the computer program')
-        html_p_text(parent, 'if you want to see another example , press the "another example" button below')
+        html_p_text(parent, 'below is an example computer program and the output of the computer program');
+        html_p_text(parent, 'if you want to see another example , press the "another example" button below');
         let source = lesson_log_number_quiz();
         app_learn_code_code(parent, source);
         html_button_width_full_text_click(parent, 'another example', refresh);
     }
 }
-function lesson_log_number_quiz() {
-    let value = integer_random(0, 999999);
-    if (random_50_50()) {
-        value = value / list_random_item([10, 100, 1000]);
-    }
-    if (random_50_50()) {
-        value = value * -1;
-    }
-    return `console.log(${value});`;
-}
-
