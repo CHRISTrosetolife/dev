@@ -1,3 +1,4 @@
+import {string_delimit} from "./string_delimit.mjs";
 import {html_style_units} from "./html_style_units.mjs";
 import {app_learn_code_style_code_color} from "./app_learn_code_style_code_color.mjs";
 import {equal} from "./equal.mjs";
@@ -35,7 +36,7 @@ export function lesson_console_log_unscramble(parent) {
             return value;
         }
         if (equal(label, 'string')) {
-            return value;
+            return string_delimit(value);
         }
         return label;
     });
