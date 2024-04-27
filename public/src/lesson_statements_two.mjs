@@ -26,7 +26,9 @@ import {html_style_monospace} from "./html_style_monospace.mjs";
 export function lesson_statements_two() {
     const example_message = 'with two statements';
     const description = example_message;
-    return lesson_simple(lesson_add_quiz, example_before, description, example_message, [parent => {
+    return lesson_simple(() => {
+
+    }, example_before, description, example_message, [parent => {
         html_p_text(parent, 'in english , there are letters');
         html_p_text(parent, 'words have letters');
         html_p_text(parent, 'phrases have words');
@@ -39,6 +41,6 @@ export function lesson_statements_two() {
     }]);
     function example_before(parent) {
         html_style_alternate(parent, html_p, [noop, html_style_bold], ['in javascript , a ', 'statement', ' is analogous to a sentence in english']);
-        html_style_alternate(parent, html_p, [noop, html_style_bold], ['in javascript , a ', 'statement', ' is analogous to a sentence in english']);
+        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['at the end of a statement there should be a semicolon ( ', ';', ' )']);
     }
 }
