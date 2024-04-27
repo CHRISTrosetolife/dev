@@ -24,6 +24,7 @@ import {list_get} from "./list_get.mjs";
 import {html_on_click} from "./html_on_click.mjs";
 import {array_new} from "./array_new.mjs";
 import {list_add} from "./list_add.mjs";
+import { object_property_set } from "./object_property_set.mjs";
 export function lesson_console_log_unscramble(parent) {
     let source = lesson_console_log_quiz_get();
     let messages = app_learn_code_eval(source);
@@ -83,7 +84,8 @@ export function lesson_console_log_unscramble(parent) {
                     'background-color': app_learn_code_code_background()
                 });
             }
-            part.element.hidden = true;
+            let {element} = part;
+            object_property_set(element, 'hidden', true)
         });
     }
 }
