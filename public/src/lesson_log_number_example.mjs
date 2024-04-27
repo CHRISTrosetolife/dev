@@ -29,4 +29,7 @@ export function lesson_log_number_example(parent) {
     html_p_text(parent, 'numbers can have a negative sign :')
     app_learn_code_code_part_contrast(parent, '-6');
     app_learn_code_code_part_contrast(parent, '-7890');
+    html_p_text(parent, 'numbers can have a decimal point :')
+    app_learn_code_code_part_contrast(parent, '6.7');
+    app_learn_code_code_part_contrast(parent, '8901.23');
 }
