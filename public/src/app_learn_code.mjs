@@ -1,3 +1,4 @@
+import {list_add_multiple} from "./list_add_multiple.mjs";
 import {html_style_default} from "./html_style_default.mjs";
 import {html_disable} from "./html_disable.mjs";
 import {html_enable} from "./html_enable.mjs";
@@ -19,6 +20,7 @@ import {list_length} from "./list_length.mjs";
 import {list_index_last} from "./list_index_last.mjs";
 import {html_style} from "./html_style.mjs";
 import {object_merge} from "./object_merge.mjs";
+import {list_add} from "./list_add.mjs";
 export function app_learn_code() {
     let root = html_document_body();
     html_style(root, {
@@ -27,13 +29,13 @@ export function app_learn_code() {
     object_merge(html_style_default(), {
         'font-size': '3vh'
     });
-    let lesson_creates = [
-        lesson_console_log
-    ]
+    let lesson_creates = [lesson_console_log];
+    let screens = [];
     for (let lesson_create of lesson_creates) {
         let lesson = lesson_create();
+        let lesson_screens = object_property_get(lesson, 'screens');
+        list_add_multiple(lesson_screens, screens);
     }
-    let screens = object_property_get(lesson, 'screens');
     let index_last = list_index_last(screens);
     let content = html_div(root);
     let {hash} = window.location;
@@ -49,7 +51,9 @@ export function app_learn_code() {
     });
     refresh();
     function refresh() {
-        window.scrollTo({ top: 0});
+        window.scrollTo({
+            top: 0
+        });
         let screen = list_get(screens, index);
         html_clear(content);
         screen(content);
