@@ -85,7 +85,7 @@ export function lesson_console_log_unscramble(parent) {
                 });
             }
             let {element} = part;
-            object_property_set(element, 'hidden', true)
+            element.setAttribute('hidden', 'hidden')
         });
     }
 }
