@@ -1,3 +1,4 @@
+import {app_learn_code_quiz} from "./app_learn_code_quiz.mjs";
 import {lesson_console_log_unscramble} from "./lesson_console_log_unscramble.mjs";
 import {lesson_console_log_quiz} from "./lesson_console_log_quiz.mjs";
 import {lesson_console_log_javascript} from "./lesson_console_log_javascript.mjs";
@@ -28,7 +29,4 @@ export function lesson_console_log() {
     list_add(v2, lesson_console_log_unscramble);
     object_property_set(v1, 'screens', v2);
     return v1;
-}
-function app_learn_code_quiz(parent, source_get) {
-    return parent => app_learn_code_quiz_inner(parent, source_get)
 }
