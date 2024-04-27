@@ -38,6 +38,7 @@ export function lesson_console_log_unscramble(parent) {
     app_learn_code_code_part_titled_output(parent, joined);
     html_p_text(parent, 'tap or click each part of the program in the correct order');
     let {code} = app_learn_code_code_part_titled_code(parent, 'a');
+    html_style(code, { visibility : 'hidden'})
     let tokens = list_adder(la => {
         for (let token of js_tokenize(source)) {
             la(token);
@@ -83,6 +84,7 @@ export function lesson_console_log_unscramble(parent) {
                 });
                 return;
             }
+            html_style(code, { visibility : 'visible'})
             for (let p of parts) {
                 html_style(p, {
                     'background-color': app_learn_code_code_background()
