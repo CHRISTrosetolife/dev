@@ -11,6 +11,8 @@ export function lesson_console_log_unscramble(parent) {
     html_p_text(parent, 'write a program that outputs the following :');
     html_p_text(parent, joined);
     let tokens = list_adder(la => {
-        js_tokenize(source)
+        for (let token of js_tokenize(source)) {
+            la(token);
+        }
     })
 }
