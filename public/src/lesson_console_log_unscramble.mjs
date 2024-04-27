@@ -1,3 +1,4 @@
+import {lesson_console_log_quiz} from "./lesson_console_log_quiz.mjs";
 import {list_take} from "./list_take.mjs";
 import {app_learn_code_code_part_titled_code} from "./app_learn_code_code_part_titled_code.mjs";
 import {list_set} from "./list_set.mjs";
@@ -29,12 +30,12 @@ import {list_add} from "./list_add.mjs";
 import {object_property_set} from "./object_property_set.mjs";
 import {html_inner_set} from "./html_inner_set.mjs";
 import {list_join} from "./list_join.mjs";
-import { html_clear } from "./html_clear.mjs";
+import {html_clear} from "./html_clear.mjs";
 export function lesson_console_log_unscramble(parent) {
-    refresh()
+    refresh();
     function refresh() {
-        html_clear(parent)
-        let source = lesson_console_log_quiz_get();
+        html_clear(parent);
+        let source = lesson_console_log_quiz();
         let messages = app_learn_code_eval(source);
         let joined = app_learn_code_eval_messages_to_string(messages);
         html_p_text(parent, 'below is another quiz');
@@ -44,7 +45,9 @@ export function lesson_console_log_unscramble(parent) {
         app_learn_code_code_part_titled_output(parent, joined);
         html_p_text(parent, 'tap or click each part of the program in the correct order');
         let {code} = app_learn_code_code_part_titled_code(parent, 'a');
-        html_style(code, { visibility : 'hidden'})
+        html_style(code, {
+            visibility: 'hidden'
+        });
         let tokens = list_adder(la => {
             for (let token of js_tokenize(source)) {
                 la(token);
@@ -90,7 +93,9 @@ export function lesson_console_log_unscramble(parent) {
                     });
                     return;
                 }
-                html_style(code, { visibility : 'visible'})
+                html_style(code, {
+                    visibility: 'visible'
+                });
                 for (let p of parts) {
                     html_style(p, {
                         'background-color': app_learn_code_code_background()
