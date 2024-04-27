@@ -30,9 +30,9 @@ export function lesson_divide() {
     return lesson_simple(function () {
         let a = integer_random_digit_single();
         let b = integer_random_digit_single();
-        return `console.log(${a} - ${b});`;
+        return `console.log(${a} / ${b});`;
     }, example_before, description, example_message);
     function example_before(parent) {
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['one number can be subtracted from the other using the minus ( ', '-', ' ) sign']);
+        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['one number can be divided by the other using the forward slash ( ', '/', ' ) symbol']);
     }
 }
