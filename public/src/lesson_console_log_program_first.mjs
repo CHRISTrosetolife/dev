@@ -40,6 +40,5 @@ export function lesson_console_log_program_first(parent) {
     html_p_text(parent, 'here is the finished computer program and the output of the computer program :');
     html_style_alternate(parent, html_p, [noop, html_style_bold], ['( when a human writes a computer program&nbsp;, the human writes ', 'code', ' )']);
     let source = `console.log('hello');`;
-    app_learn_code_eval_to_string(source);
     app_learn_code_code(parent, source);
 }
