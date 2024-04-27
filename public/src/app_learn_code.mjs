@@ -31,8 +31,8 @@ export function app_learn_code() {
         'font-size': '4.5vh'
     });
     let lesson_creates = [];
-    list_add(lesson_creates, lesson_console_log)
-    list_add(lesson_creates, lesson_log_number)
+    list_add(lesson_creates, lesson_console_log);
+    list_add(lesson_creates, lesson_log_number);
     let screens = [];
     for (let lesson_create of lesson_creates) {
         let lesson = lesson_create();
@@ -59,7 +59,13 @@ export function app_learn_code() {
         });
         let screen = list_get(screens, index);
         html_clear(content);
-        screen(content);
+        try {
+            screen(content);
+        } catch (e) {
+            log({
+                e
+            });
+        }
         html_enable(button_previous);
         html_enable(button_next);
         if (equal(index, 0)) {
