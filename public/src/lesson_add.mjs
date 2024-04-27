@@ -23,10 +23,10 @@ import {noop} from "./noop.mjs";
 import {html_style_bold} from "./html_style_bold.mjs";
 import {html_style_monospace} from "./html_style_monospace.mjs";
 export function lesson_add() {
+    const example_message = 'adding two numbers together';
     let v1 = object_new();
     object_property_set(v1, 'description', 'outputting a number to the console');
     let v2 = array_new();
-    const example_message = 'adding two numbers together';
     list_add(v2, lesson_log_number_example(lesson_add_quiz, example_message, ));
     list_add(v2, app_learn_code_quiz(lesson_add_quiz));
     list_add(v2, app_learn_code_unscramble(lesson_add_quiz));
