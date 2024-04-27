@@ -1,3 +1,4 @@
+import {integer_random_digit_single} from "./integer_random_digit_single.mjs";
 import {lesson_simple} from "./lesson_simple.mjs";
 import {lesson_add_quiz} from "./lesson_add_quiz.mjs";
 import {html_p} from "./html_p.mjs";
