@@ -1,3 +1,4 @@
+import {app_learn_code_code_part_titled_output} from "./app_learn_code_code_part_titled_output.mjs";
 import {string_delimit} from "./string_delimit.mjs";
 import {html_style_units} from "./html_style_units.mjs";
 import {app_learn_code_style_code_color} from "./app_learn_code_style_code_color.mjs";
@@ -19,7 +20,7 @@ export function lesson_console_log_unscramble(parent) {
     let joined = app_learn_code_eval_messages_to_string(messages);
     html_p_text(parent, 'below is another quiz');
     html_p_text(parent, 'write a program that outputs the following :');
-    html_p_text(parent, joined);
+    app_learn_code_code_part_titled_output(parent, joined);
     let tokens = list_adder(la => {
         for (let token of js_tokenize(source)) {
             la(token);
