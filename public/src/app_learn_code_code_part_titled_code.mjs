@@ -3,7 +3,7 @@ import {app_learn_code_style_code_color} from "./app_learn_code_style_code_color
 import {app_learn_code_code_part_titled} from "./app_learn_code_code_part_titled.mjs";
 export function app_learn_code_code_part_titled_code(container, source) {
     let result = app_learn_code_code_part_titled(container, 'code :', source, app_learn_code_code_background());
-    let {code} = result
+    let {code} = result;
     app_learn_code_style_code_color(code);
-    return result
+    return result;
 }

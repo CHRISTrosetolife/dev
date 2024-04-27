@@ -31,7 +31,7 @@ export function lesson_multiply() {
         let a = integer_random_digit_single();
         let b = integer_random_digit_single();
         return `console.log(${a} * ${b});`;
-    }, example_before, description, example_message);
+    }, example_before, description, example_message, []);
     function example_before(parent) {
         html_style_alternate(parent, html_p, [noop, html_style_monospace], ['two numbers can be multiplied together using the asterisk ( ', '*', ' ) symbol']);
     }

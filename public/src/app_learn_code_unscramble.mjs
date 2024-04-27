@@ -119,5 +119,5 @@ export function app_learn_code_unscramble(source_get) {
                 });
             }
         }
-    }
+    };
 }

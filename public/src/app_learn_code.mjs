@@ -25,7 +25,7 @@ import {list_index_last} from "./list_index_last.mjs";
 import {html_style} from "./html_style.mjs";
 import {object_merge} from "./object_merge.mjs";
 import {list_add} from "./list_add.mjs";
-import { lesson_divide } from "./lesson_divide.mjs";
+import {lesson_divide} from "./lesson_divide.mjs";
 export function app_learn_code() {
     let root = html_document_body();
     html_style(root, {

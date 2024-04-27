@@ -15,7 +15,7 @@ import {lesson_console_log_program_first} from "./lesson_console_log_program_fir
 import {lesson_console_log_strings} from "./lesson_console_log_strings.mjs";
 import {lesson_console_log_analogy_addition_symbol} from "./lesson_console_log_analogy_addition_symbol.mjs";
 import {lesson_log_number_explain} from "./lesson_log_number_explain.mjs";
-import { noop } from "./noop.mjs";
+import {noop} from "./noop.mjs";
 export function lesson_log_number() {
     let v1 = object_new();
     object_property_set(v1, 'description', 'outputting a number to the console');
