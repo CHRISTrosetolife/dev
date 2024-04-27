@@ -7,7 +7,7 @@ export function app_learn_code_code_part_titled_code(container, source) {
     let {code} = result;
     app_learn_code_style_code_color(code);
     html_style(code, {
-        'white-space': 'pre'
+        'white-space': 'pre-wrap'
     })
     return result;
 }
