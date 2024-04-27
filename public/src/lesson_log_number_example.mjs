@@ -1,3 +1,4 @@
+import {app_learn_code_code} from "./app_learn_code_code.mjs";
 import {html_style_monospace} from "./html_style_monospace.mjs";
 import {noop} from "./noop.mjs";
 import {html_p} from "./html_p.mjs";
@@ -15,6 +16,7 @@ import {html_element} from "./html_element.mjs";
 import {object_property_set} from "./object_property_set.mjs";
 import {string_combine} from "./string_combine.mjs";
 import {app_learn_code_code_part_contrast} from "./app_learn_code_code_part_contrast.mjs";
-import { html_spacer_vertical } from "./html_spacer_vertical.mjs";
+import {html_spacer_vertical} from "./html_spacer_vertical.mjs";
 export function lesson_log_number_example(parent) {
+    app_learn_code_code;
 }
