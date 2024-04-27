@@ -19,6 +19,7 @@ export function lesson_log_number_example(parent) {
     html_style_alternate(parent, html_p, [noop, html_style_monospace], ['remember , strings need quotes ( ', '\'', ' ) :']);
     app_learn_code_code_part_contrast(parent, '\'text\'');
     html_p_text(parent, 'however , numbers do not need quotes :')
+    app_learn_code_code_part_contrast(parent, '0');
     app_learn_code_code_part_contrast(parent, '12');
     app_learn_code_code_part_contrast(parent, '345');
     html_p_text(parent, 'sometime people write numbers with commas separating the digits , like 1,000 and 23,467')
