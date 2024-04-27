@@ -1,3 +1,4 @@
+import {html_style_units} from "./html_style_units.mjs";
 import {app_learn_code_style_code_color} from "./app_learn_code_style_code_color.mjs";
 import {equal} from "./equal.mjs";
 import {app_learn_code_code_background} from "./app_learn_code_code_background.mjs";
@@ -10,6 +11,7 @@ import {js_tokenize} from "./js_tokenize.mjs";
 import {html_p_text} from "./html_p_text.mjs";
 import {lesson_console_log_quiz_get} from "./lesson_console_log_quiz_get.mjs";
 import {list_map} from "./list_map.mjs";
+import {html_style} from "./html_style.mjs";
 export function lesson_console_log_unscramble(parent) {
     let source = lesson_console_log_quiz_get();
     let messages = app_learn_code_eval(source);
@@ -37,5 +39,8 @@ export function lesson_console_log_unscramble(parent) {
     for (let m of mapped) {
         let part = app_learn_code_code_part_generic(html_span_text, parent, m, app_learn_code_code_background());
         app_learn_code_style_code_color(part);
+        html_style(part, {
+            margin: html_style_units(5)
+        });
     }
 }
