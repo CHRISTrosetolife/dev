@@ -78,11 +78,12 @@ export function lesson_console_log_unscramble(parent) {
                 console.log('here');
                 return;
             }
-            for (let part of parts) {
-                html_style(part, {
+            for (let p of parts) {
+                html_style(p, {
                     'background-color': app_learn_code_code_background()
                 });
             }
+            part.element.hidden = true;
         });
     }
 }
