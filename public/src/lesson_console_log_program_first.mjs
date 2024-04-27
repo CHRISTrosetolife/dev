@@ -39,6 +39,5 @@ export function lesson_console_log_program_first(parent) {
     html_p_text(parent, 'to finish this computer program we should add a semicolon separator to the end');
     html_p_text(parent, 'here is the finished computer program and the output of the computer program :');
     html_style_alternate(parent, html_p, [noop, html_style_bold], ['( when a human writes a computer program&nbsp;, the human writes ', 'code', ' )']);
-    let source = `console.log('hello');`;
-    app_learn_code_code(parent, source);
+    app_learn_code_code(parent, `console.log('hello');`);
 }
