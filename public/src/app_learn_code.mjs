@@ -59,13 +59,6 @@ export function app_learn_code() {
         });
         let screen = list_get(screens, index);
         html_clear(content);
-        try {
-            screen(content);
-        } catch (e) {
-            log({
-                e
-            });
-        }
         html_enable(button_previous);
         html_enable(button_next);
         if (equal(index, 0)) {
@@ -74,5 +67,6 @@ export function app_learn_code() {
         if (equal(index, index_last)) {
             html_disable(button_next);
         }
+        screen(content);
     }
 }
