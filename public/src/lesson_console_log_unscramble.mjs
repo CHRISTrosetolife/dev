@@ -69,9 +69,9 @@ export function lesson_console_log_unscramble(parent) {
             let e = equal(s, current);
             if (!e) {
                 html_style(part, {
-                    'border-width': html_style_units(1),
-                    'border-color': 'red',
+                    'background-color': 'red',
                 });
+                console.log('here')
                 return;
             }
         })
