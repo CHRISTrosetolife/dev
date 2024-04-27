@@ -28,6 +28,7 @@ import {each_index} from "./each_index.mjs";
 import {html_clear} from "./html_clear.mjs";
 import {html_p_text} from "./html_p_text.mjs";
 import {html_disable} from "./html_disable.mjs";
+import { html_style } from "./html_style.mjs";
 export function lesson_console_log_quiz(parent) {
     refresh();
     function refresh() {
@@ -66,6 +67,9 @@ export function lesson_console_log_quiz(parent) {
             let joined = app_learn_code_eval_messages_to_string(messages);
             let button = html_button_width_full_text_click(container, joined, function on_click() {
                 if (index === correct_index) {
+                    html_style(button, {
+                        'background-color': 'green'
+                    })
                     refresh();
                 } else {
                     html_disable(button);
