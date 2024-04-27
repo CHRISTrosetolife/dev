@@ -18,10 +18,11 @@ import {string_combine} from "./string_combine.mjs";
 import {app_learn_code_code_part_contrast} from "./app_learn_code_code_part_contrast.mjs";
 import {html_spacer_vertical} from "./html_spacer_vertical.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
+import { integer_random } from "./integer_random.mjs";
 export function lesson_log_number_example(parent) {
     refresh()
     function refresh() {
-        let value = 123;
+        let value = integer_random(1,123);
         app_learn_code_code(parent, `console.log(${value});`);
     }
     html_button_width_full_text_click(parent, 'another example', () => {
