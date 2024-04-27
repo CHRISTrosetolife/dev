@@ -1,3 +1,4 @@
+import {app_learn_code_output_background} from "./app_learn_code_output_background.mjs";
 import {app_learn_code_code_part_title_output} from "./app_learn_code_code_part_title_output.mjs";
 import {app_learn_code_code_container} from "./app_learn_code_code_container.mjs";
 import {app_learn_code_code_part_titled_code} from "./app_learn_code_code_part_titled_code.mjs";
@@ -38,5 +39,5 @@ export function lesson_console_log_program_first(parent) {
     let container = app_learn_code_code_container(parent);
     app_learn_code_code_part_titled_code(container, `console.log('hello');`);
     html_hr(container);
-    app_learn_code_code_part_titled(container, app_learn_code_code_part_title_output(), `hello`, 'lightgreen');
+    app_learn_code_code_part_titled(container, app_learn_code_code_part_title_output(), `hello`, app_learn_code_output_background());
 }
