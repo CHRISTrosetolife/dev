@@ -16,6 +16,6 @@ import {object_property_set} from "./object_property_set.mjs";
 import {string_combine} from "./string_combine.mjs";
 import {app_learn_code_code_part_contrast} from "./app_learn_code_code_part_contrast.mjs";
 export function lesson_log_number_example(parent) {
-    html_style_alternate(parent, html_p, [noop, html_style_monospace], ['( review : ) in javascript , strings need a quote ( ', '\'', ' ) :']);
+    html_style_alternate(parent, html_p, [noop, html_style_monospace], ['remember , in javascript , strings need quotes ( ', '\'', ' ) :']);
     app_learn_code_code_part_contrast(parent, '\'text\'');
 }
