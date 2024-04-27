@@ -60,7 +60,8 @@ export function lesson_console_log_unscramble(parent) {
         app_learn_code_style_code_color(part);
         html_style(part, {
             margin: html_style_units(3),
-            display: 'inline-block'
+            display: 'inline-block',
+            cursor: 'pointer'
         });
     }
 }
