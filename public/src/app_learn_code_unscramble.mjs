@@ -54,7 +54,6 @@ export function app_learn_code_unscramble(source_get) {
                 }
             });
             let scrambled = list_map(tokens, t => {
-                console.log({t})
                 let {type} = t;
                 let {label} = type;
                 let {value} = t;
