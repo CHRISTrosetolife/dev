@@ -25,12 +25,14 @@ import {html_spacer_vertical} from "./html_spacer_vertical.mjs";
 import {each_index} from "./each_index.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { html_p_text } from "./html_p_text.mjs";
+import { html_disable } from "./html_disable.mjs";
 export function lesson_console_log_quiz(parent) {
     refresh();
     function refresh() {
         html_clear(parent)
         html_p_text(parent, 'below is a quiz')
         html_p_text(parent, 'you can answer as many quiz questions as you want')
+        html_p_text(parent, 'when you are done answering quiz questions , feel free to press the "next" button below')
         let container = app_learn_code_code_container(parent);
         let choices_count = 4;
         let r = range(choices_count);
@@ -69,6 +71,8 @@ export function lesson_console_log_quiz(parent) {
             let button = html_button_width_full_text_click(container, joined, function on_click() {
                 if (index === correct_index) {
                     refresh()
+                } else {
+                    html_disable(button)
                 }
             });
             html_style_monospace(button);
