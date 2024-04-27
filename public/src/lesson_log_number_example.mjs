@@ -26,7 +26,7 @@ export function lesson_log_number_example(parent) {
     html_p_text(parent, 'in javascript numbers are not written with commas :')
     app_learn_code_code_part_contrast(parent, '1000');
     app_learn_code_code_part_contrast(parent, '23467');
-    html_style_alternate(parent, html_p, [noop, html_style_monospace], ['to write a number , write a negative sign ( ', '-', ' ) just before the rest of the number :']);
+    html_p_text(parent, 'numbers can have a negative sign :')
     app_learn_code_code_part_contrast(parent, '-6');
     app_learn_code_code_part_contrast(parent, '-7890');
 }
