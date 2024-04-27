@@ -29,10 +29,10 @@ export function lesson_statements_two() {
     return lesson_simple(lesson_add_quiz, example_before, description, example_message);
     function example_before(parent) {
         html_p_text(parent, 'in english , there are letters')
-        html_p_text(parent, 'words are made up of letters')
-        html_p_text(parent, 'phrases are made up of words')
-        html_p_text(parent, 'sentences are made up of phrases')
-        html_p_text(parent, 'paragraphs are made up of sentences')
+        html_p_text(parent, 'words have letters')
+        html_p_text(parent, 'phrases have words')
+        html_p_text(parent, 'sentences have phrases')
+        html_p_text(parent, 'paragraphs have sentences')
         html_p_text(parent, 'and so on')
         html_style_alternate(parent, html_p, [noop, html_style_bold], [
             'this is a ', 'hierarchy']);
