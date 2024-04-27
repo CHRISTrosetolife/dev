@@ -1,3 +1,4 @@
+import {app_learn_code_code_part_titled_code} from "./app_learn_code_code_part_titled_code.mjs";
 import {list_set} from "./list_set.mjs";
 import {list_copy} from "./list_copy.mjs";
 import {list_index_last} from "./list_index_last.mjs";
@@ -24,7 +25,7 @@ import {list_get} from "./list_get.mjs";
 import {html_on_click} from "./html_on_click.mjs";
 import {array_new} from "./array_new.mjs";
 import {list_add} from "./list_add.mjs";
-import { object_property_set } from "./object_property_set.mjs";
+import {object_property_set} from "./object_property_set.mjs";
 export function lesson_console_log_unscramble(parent) {
     let source = lesson_console_log_quiz_get();
     let messages = app_learn_code_eval(source);
@@ -33,6 +34,7 @@ export function lesson_console_log_unscramble(parent) {
     html_p_text(parent, 'write a program that outputs the following :');
     app_learn_code_code_part_titled_output(parent, joined);
     html_p_text(parent, 'tap or click each part of the program in the correct order');
+    app_learn_code_code_part_titled_code(parent, '');
     let tokens = list_adder(la => {
         for (let token of js_tokenize(source)) {
             la(token);
@@ -84,7 +86,7 @@ export function lesson_console_log_unscramble(parent) {
                 });
             }
             html_style(part, {
-                display: 'none',
+                display: 'none'
             });
             current_index++;
         });
