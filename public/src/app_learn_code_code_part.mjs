@@ -4,7 +4,8 @@ import {html_spacer_vertical} from "./html_spacer_vertical.mjs";
 import {html_style_margin_none} from "./html_style_margin_none.mjs";
 import {html_p_text} from "./html_p_text.mjs";
 export function app_learn_code_code_part(parent, source_code, background_color) {
-    let code = html_p_text(parent, source_code);
+    let create = html_p_text
+    let code = create(parent, source_code);
     app_learn_code_style_code(code);
     html_style_margin_none(code);
     html_style(code, {

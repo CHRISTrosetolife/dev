@@ -19,5 +19,9 @@ export function lesson_console_log_unscramble(parent) {
     let mapped = list_map(tokens, t => {
         let {type} = t;
         let {label} = type;
+        return label
     })
+    for (let m of mapped) {
+        
+    }
 }
