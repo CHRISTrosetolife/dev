@@ -24,15 +24,15 @@ import {html_p_text} from "./html_p_text.mjs";
 import {noop} from "./noop.mjs";
 import {html_style_bold} from "./html_style_bold.mjs";
 import {html_style_monospace} from "./html_style_monospace.mjs";
-export function lesson_subtract() {
-    const example_message = 'subtracting two numbers';
+export function lesson_multiply() {
+    const example_message = 'mutiplying two numbers';
     const description = example_message;
     return lesson_simple(function () {
         let a = integer_random_digit_single();
         let b = integer_random_digit_single();
-        return `console.log(${a} - ${b});`;
+        return `console.log(${a} * ${b});`;
     }, example_before, description, example_message);
     function example_before(parent) {
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['one number can be subtracted from the other using the minus ( ', '-', ' ) sign']);
+        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['two numbers can be multiplied together using the asterisk ( ', '*', ' ) symbol']);
     }
 }
