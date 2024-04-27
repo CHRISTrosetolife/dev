@@ -1,3 +1,4 @@
+import {app_learn_code_eval_messages_to_string} from "./app_learn_code_eval_messages_to_string.mjs";
 import {app_learn_code_eval} from "./app_learn_code_eval.mjs";
 import {list_index} from "./list_index.mjs";
 import {app_learn_code_code_part_title_output} from "./app_learn_code_code_part_title_output.mjs";
@@ -62,7 +63,7 @@ export function lesson_console_log_quiz(parent) {
         app_learn_code_code_part_title(container, app_learn_code_code_part_title_output());
         each_index(mapped, (m, index) => {
             let {messages} = m;
-            let joined = list_join(messages, '<br>');
+            let joined = app_learn_code_eval_messages_to_string(messages);
             let button = html_button_width_full_text_click(container, joined, function on_click() {
                 if (index === correct_index) {
                     refresh();
