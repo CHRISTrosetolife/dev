@@ -28,8 +28,12 @@ export function lesson_statements_two() {
     const description = example_message;
     return lesson_simple(lesson_add_quiz, example_before, description, example_message);
     function example_before(parent) {
+        html_p_text(parent, 'in english , there are letters')
+        html_p_text(parent, 'words are made up of letters')
+        html_p_text(parent, 'phrases are made up of words')
+        html_p_text(parent, 'sentences are made up of phrases')
         html_style_alternate(parent, html_p, [noop, html_style_monospace], [
         'in javascript , a semicolon ( ', ';', ' ) is a separator that means the end of a statement']);
-        
+        html_p_text(parent, 'a statement is a unit of code')
     }
 }
