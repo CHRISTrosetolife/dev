@@ -30,7 +30,9 @@ import {html_p_text} from "./html_p_text.mjs";
 import {html_disable} from "./html_disable.mjs";
 import { html_style } from "./html_style.mjs";
 export function lesson_console_log_quiz(parent) {
-    let source_get = lesson_console_log_quiz_get;
+    app_learn_code_quiz_inner(parent, lesson_console_log_quiz_get);
+}
+function app_learn_code_quiz_inner(parent, source_get) {
     refresh();
     function refresh() {
         html_clear(parent);
@@ -64,16 +66,16 @@ export function lesson_console_log_quiz(parent) {
         html_hr(container);
         app_learn_code_code_part_title(container, app_learn_code_code_part_title_output());
         each_index(mapped, (m, index) => {
-            let {messages} = m;
+            let { messages } = m;
             let joined = app_learn_code_eval_messages_to_string(messages);
             let button = html_button_width_full_text_click(container, joined, function on_click() {
                 if (index === correct_index) {
                     html_style(button, {
                         'background-color': 'lightgreen'
-                    })
+                    });
                     setTimeout(() => {
                         refresh();
-                    }, 200)
+                    }, 200);
                 } else {
                     html_disable(button);
                 }
@@ -83,3 +85,4 @@ export function lesson_console_log_quiz(parent) {
         });
     }
 }
+
