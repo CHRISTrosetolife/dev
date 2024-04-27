@@ -1,3 +1,4 @@
+import {lesson_console_log_unscramble} from "./lesson_console_log_unscramble.mjs";
 import {lesson_console_log_quiz} from "./lesson_console_log_quiz.mjs";
 import {lesson_console_log_javascript} from "./lesson_console_log_javascript.mjs";
 import {lesson_console_log_process_named} from "./lesson_console_log_process_named.mjs";
@@ -24,6 +25,7 @@ export function lesson_console_log() {
     list_add(v2, lesson_console_log_process_computer_program);
     list_add(v2, lesson_console_log_program_first);
     list_add(v2, lesson_console_log_quiz);
+    list_add(v2, lesson_console_log_unscramble);
     object_property_set(v1, 'screens', v2);
     return v1;
 }
