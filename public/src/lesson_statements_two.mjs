@@ -34,11 +34,11 @@ export function lesson_statements_two() {
         html_p_text(parent, 'sentences are made up of phrases')
         html_p_text(parent, 'paragraphs are made up of sentences')
         html_p_text(parent, 'and so on')
-        html_p_text(parent, 'this is a hierarchy')
-        html_p_text(parent, 'a hierarchy can also be called a tree')
-        html_p_text(parent, 'trees are very importa')
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], [
-        'in javascript , a semicolon ( ', ';', ' ) is a separator that means the end of a statement']);
+        html_style_alternate(parent, html_p, [noop, html_style_bold], [
+            'this is a ', 'hierarchy']);
+        html_style_alternate(parent, html_p, [noop, html_style_bold], [
+            'a hierarchy can also be called a ', 'tree']);
+        html_p_text(parent, 'trees are very important in computers')
         html_p_text(parent, 'a statement is a unit of code')
     }
 }
