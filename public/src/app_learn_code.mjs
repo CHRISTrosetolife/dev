@@ -136,6 +136,9 @@ export function app_learn_code() {
         if (equal(index, index_last)) {
             html_disable(button_next);
         }
+        html_button_width_full_text_click(root, 'go back home', function on_click() {
+            refresh_main();
+        });
         button_home();
     }
     function button_home() {
