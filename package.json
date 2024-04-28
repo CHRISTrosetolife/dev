@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@mlarocca/jsgraphs": "^0.2.1",
     "acorn": "^8.11.3",
     "astring": "^1.8.6",
     "glob": "^10.3.10",
