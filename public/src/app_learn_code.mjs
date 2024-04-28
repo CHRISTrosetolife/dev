@@ -109,6 +109,7 @@ export function app_learn_code() {
             }
             html_button_width_full_text_click(root, message, () => refresh_lesson_screen(add(index_first, index)));
         });
+        button_home();
     }
     function refresh_lesson_screen(index) {
         console.log({
@@ -134,5 +135,11 @@ export function app_learn_code() {
         if (equal(index, index_last)) {
             html_disable(button_next);
         }
+        button_home();
+    }
+    function button_home() {
+        html_button_width_full_text_click(root, 'home', function on_click() {
+            refresh_main();
+        });
     }
 }
