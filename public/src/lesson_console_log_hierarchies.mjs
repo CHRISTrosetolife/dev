@@ -8,6 +8,8 @@ import { html_style_width_full } from "./html_style_width_full.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 import { string_split } from "./string_split.mjs";
 import { string_split_space } from "./string_split_space.mjs";
+import { string_length } from "./string_length.mjs";
+import { list_sum } from "./list_sum.mjs";
 export async function lesson_console_log_hierarchies(parent) {
     html_p_text(parent, 'in english , there are letters');
     html_p_text(parent, 'words have letters');
@@ -19,18 +21,28 @@ export async function lesson_console_log_hierarchies(parent) {
     html_style_alternate(parent, html_p, [noop, html_style_bold], ['a hierarchy can also be called a ', 'tree']);
     html_p_text(parent, 'trees are very important in computer programming');
     html_p_text(parent, 'here is an example of a tree or hierarchy :');
+    let phrase = 'JESUS is LORD';
+    let words = string_split_space(phrase)
     let t = html_element(parent, 'table');
     html_style_width_full(t);
     let tr1 = html_element(t, 'tr');
     let tr2 = html_element(t, 'tr');
     let tr3 = html_element(t, 'tr');
     let td_phrase = html_element(tr1, 'td');
-    let phrase = 'JESUS is LORD';
     html_inner_set(td_phrase, phrase)
-    let words = string_split_space(phrase)
+    list_sum(s => {
+        for (let word of words) {
+            let length = string_length(word);
+            s(length)
+        }
+    })
     for (let word of words) {
         let td_word = html_element(tr2, 'td');
         html_inner_set(td_word, word)
+        let length = string_length(word);
+        html_merge(td_word, {
+            colspan: length
+        })
     }
     for (let word of words) {
         for (let c of word) {
