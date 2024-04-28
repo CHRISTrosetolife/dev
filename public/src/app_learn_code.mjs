@@ -38,6 +38,10 @@ export function app_learn_code() {
         'font-size': '3vh'
     });
     object_merge(html_style_button_default(), app_learn_code_style_rounded_padded_style());
+    object_merge(html_style_button_default(),     {
+        'margin': '0.5vh'
+    });
+
     let lesson_creates = [];
     list_add(lesson_creates, lesson_console_log);
     list_add(lesson_creates, lesson_log_number);
