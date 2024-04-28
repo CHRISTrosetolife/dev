@@ -57,7 +57,7 @@ export function app_learn_code_quiz_inner(parent, source_get) {
         html_hr(container);
         app_learn_code_code_part_title(container, app_learn_code_code_part_title_output());
         each_index(choices, (c, index) => {
-            let {answer} = answer;
+            let {answer} = c;
             let button = html_button_width_full_text_click(container, answer, function on_click() {
                 if (index === correct_index) {
                     app_learn_code_style_success(button);
