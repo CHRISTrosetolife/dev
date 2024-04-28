@@ -123,7 +123,9 @@ export function app_learn_code_unscramble(source_get) {
                     let take_count = add(source_index, string_length(current.toString()));
                     html_inner_set(code, string_take(source, take_count));
                     if (equal(current_index, list_length(answer))) {
-                        app_learn_code_style_success(code);
+                        html_style(code, {
+                            'background-color': 'darkgreen'
+                        });
                         html_p_text(success, 'your answer is correct');
                         html_p_text(success, 'if you want to take another quiz , press the "another quiz" button below : ');
                         html_p_text(success, 'otherwise , press the "next" button below');
