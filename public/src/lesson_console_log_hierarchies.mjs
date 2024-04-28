@@ -37,7 +37,7 @@ export async function lesson_console_log_hierarchies(parent) {
             s(length);
         }
     });
-    html_merge(td_word, {
+    html_merge(td_phrase, {
         colspan
     });
     for (let word of words) {
