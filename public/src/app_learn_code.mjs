@@ -85,7 +85,8 @@ export function app_learn_code() {
         html_p_text(root, 'if you want to start from beginning , choose "begin" : ');
         let begin = html_button_width_full_text_click(root, 'begin', () => refresh_lesson_screen(0));
         html_style(begin, {
-            'font-size': string_combine(multiply(default_font_size, 1.5).toString(), 'vh')
+            'font-size': string_combine(multiply(default_font_size, 1.2).toString(), 'vh'),
+            'font-weight': 'bold'
         });
         html_p_text(root, 'or choose a lesson below :');
         for (let lesson of lessons) {
