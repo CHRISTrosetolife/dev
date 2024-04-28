@@ -38,21 +38,22 @@ import {html_div} from "./html_div.mjs";
 import {html_button_width_full_text_click} from "./html_button_width_full_text_click.mjs";
 export function app_learn_code_unscramble(source_get) {
     return function app_learn_code_unscramble_inner(parent) {
+        let div = html_div(parent)
         refresh();
         function refresh() {
-            html_clear(parent);
+            html_clear(div);
             let source = source_get();
             let messages = app_learn_code_eval(source);
             let joined = app_learn_code_eval_messages_to_string(messages);
-            html_p_text(parent, 'below is another quiz');
-            html_p_text(parent, 'write a program that outputs the following :');
-            app_learn_code_code_part_titled_output(parent, joined);
-            html_p_text(parent, 'tap or click each part of the program in the correct order');
-            let {code} = app_learn_code_code_part_titled_code(parent, 'a');
+            html_p_text(div, 'below is another quiz');
+            html_p_text(div, 'write a program that outputs the following :');
+            app_learn_code_code_part_titled_output(div, joined);
+            html_p_text(div, 'tap or click each part of the program in the correct order');
+            let {code} = app_learn_code_code_part_titled_code(div, 'a');
             html_style(code, {
                 visibility: 'hidden'
             });
-            let success = html_div(parent);
+            let success = html_div(div);
             let tokens = list_adder(la => {
                 for (let token of js_tokenize(source)) {
                     la(token);
@@ -88,7 +89,7 @@ export function app_learn_code_unscramble(source_get) {
             let current_index = 0;
             let source_index = 0;
             for (let s of scrambled) {
-                let part = app_learn_code_code_part_generic(html_span_text, parent, s, app_learn_code_code_background());
+                let part = app_learn_code_code_part_generic(html_span_text, div, s, app_learn_code_code_background());
                 list_add(parts, part);
                 app_learn_code_style_code_color(part);
                 html_style(part, {
