@@ -30,7 +30,7 @@ export function lesson_console_log_process_named(parent) {
     html_li_text(ol5, 'addition&nbsp;: add(1, 2) = 3');
     html_li_text(ol5, 'subtraction&nbsp;: subtract(3, 2) = 1');
     html_li_text(ol5, 'multiplication&nbsp;: multiply(3, 2) = 6');
-    html_li_text(ol5, 'division&nbsp;: divide(8, 4) = 2');
+    html_li_text(ol5, 'division&nbsp;: divide(6, 3) = 2');
     html_p_text(parent, 'after the name of the process , we write a pair of parentheses like this : process_name()');
     html_p_text(parent, 'inside the parentheses , we write any inputs to the process separated by commas like this : process_name(input1, input2)');
     html_p_text(parent, 'notice that a comma ( , ) separates the inputs');
