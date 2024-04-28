@@ -1,3 +1,4 @@
+import {html_style_button_default_border_color} from "./html_style_button_default_border_color.mjs";
 import {multiply} from "./multiply.mjs";
 import {subtract_1} from "./subtract_1.mjs";
 import {add_1} from "./add_1.mjs";
@@ -42,9 +43,9 @@ import {list_sum} from "./list_sum.mjs";
 import {each_index} from "./each_index.mjs";
 import {add} from "./add.mjs";
 import {html_spacer_vertical} from "./html_spacer_vertical.mjs";
-import { html_span_text } from "./html_span_text.mjs";
-import { html_style_bold } from "./html_style_bold.mjs";
-import { lesson_statements_three } from "./lesson_statements_three.mjs";
+import {html_span_text} from "./html_span_text.mjs";
+import {html_style_bold} from "./html_style_bold.mjs";
+import {lesson_statements_three} from "./lesson_statements_three.mjs";
 export function app_learn_code() {
     let root = html_document_body();
     html_style(root, {
@@ -57,11 +58,10 @@ export function app_learn_code() {
     object_merge(html_style_button_default(), app_learn_code_style_rounded_padded_style());
     object_merge(html_style_button_default(), {
         'margin': '0.5vh',
-        'background-color': 'lightblue',
+        'background-color': 'lightblue'
     });
-    object_merge(html_style_button_default(), {
-        'border': 'solid 0.5vh dodgerblue'
-    });
+    let border_color = 'dodgerblue';
+    html_style_button_default_border_color(border_color);
     let lesson_creates = [];
     list_add(lesson_creates, lesson_console_log);
     list_add(lesson_creates, lesson_log_number);
@@ -87,9 +87,9 @@ export function app_learn_code() {
         html_p_text(root, 'if you want to start from beginning , choose "begin" : ');
         let begin = html_button_width_full_text_click(root, 'begin', async () => await refresh_lesson_screen(0));
         html_style(begin, {
-            'font-size': string_combine(multiply(default_font_size, 1.2).toString(), 'vh'),
+            'font-size': string_combine(multiply(default_font_size, 1.2).toString(), 'vh')
         });
-        html_style_bold(begin)
+        html_style_bold(begin);
         html_p_text(root, 'or choose a lesson below :');
         for (let lesson of lessons) {
             let {description} = lesson;
@@ -118,11 +118,11 @@ export function app_learn_code() {
             let message = string_combine('screen ', add_1(index));
             let button = html_button_width_full_text_click(root, '', async () => await refresh_lesson_screen(add(index_first, index)));
             if (equal(index, 0)) {
-                let begin_lesson = html_span_text(button, `begin the lesson`)
-                html_style_bold(begin_lesson)
-                html_span_text(button, ` ( ${message} )`)
+                let begin_lesson = html_span_text(button, `begin the lesson`);
+                html_style_bold(begin_lesson);
+                html_span_text(button, ` ( ${message} )`);
             } else {
-                html_span_text(button, message)
+                html_span_text(button, message);
             }
         });
     }
