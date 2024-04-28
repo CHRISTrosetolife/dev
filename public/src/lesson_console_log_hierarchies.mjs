@@ -22,5 +22,12 @@ export async function lesson_console_log_hierarchies(parent) {
     let tr1 = html_element(t, 'tr');
     let td_phrase = html_element(tr1, 'td');
     html_inner_set(td_phrase, 'JESUS is LORD')
+    let tr2 = html_element(t, 'tr');
+    let td_word1 = html_element(tr2, 'td');
+    html_inner_set(td_word1, 'JESUS')
+    let td_word2 = html_element(tr2, 'td');
+    html_inner_set(td_word2, 'is')
+    let td_word3 = html_element(tr2, 'td');
+    html_inner_set(td_word3, 'LORD')
 
 }
