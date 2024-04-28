@@ -28,12 +28,13 @@ import {html_p_text} from "./html_p_text.mjs";
 import {html_clear} from "./html_clear.mjs";
 import {html_div} from "./html_div.mjs";
 export function app_learn_code_quiz_inner(parent, source_get) {
+    let div = html_div(parent)
     refresh(false);
     function refresh(refreshed) {
-        html_clear(parent);
-        html_p_text(parent, 'below is a quiz');
-        html_p_text(parent, 'click or tap on the correct output for the code');
-        let container = app_learn_code_code_container(parent);
+        html_clear(div);
+        html_p_text(div, 'below is a quiz');
+        html_p_text(div, 'click or tap on the correct output for the code');
+        let container = app_learn_code_code_container(div);
         let choices_count = 4;
         let r = range(choices_count);
         let choices = array_new();
@@ -76,7 +77,7 @@ export function app_learn_code_quiz_inner(parent, source_get) {
             });
             html_style_monospace(button);
         });
-        let container_bottom = html_div(parent);
+        let container_bottom = html_div(div);
         if (!refreshed) {
             container_bottom_hide();
         }

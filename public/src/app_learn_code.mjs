@@ -139,6 +139,7 @@ export function app_learn_code() {
             html_disable(button_next);
         }
         html_spacer_vertical(root)
+        html_spacer_vertical(root)
         button_home();
     }
     function button_home() {
