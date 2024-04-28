@@ -34,7 +34,7 @@ export function lesson_boolean() {
     const description = 'outputting true or false';
     return lesson_simple(source_get, example_before, description, example_message, []);
     function example_before(parent) {
-        html_p_text(parent, 'in english , some questions can be answered using a "yes" or a "no"')
+        html_p_text(parent, 'some questions can be answered using a "yes" or a "no"')
         html_style_alternate(parent, html_p, [noop, html_style_monospace], ['one number can be divided by the other using the forward slash ( ', '/', ' ) symbol']);
     }
     function source_get() {
