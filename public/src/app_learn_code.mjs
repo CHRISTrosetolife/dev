@@ -143,7 +143,7 @@ export function app_learn_code() {
         button_home();
     }
     function button_home() {
-        html_button_width_full_text_click(root, 'go back home', function on_click() {
+        html_button_width_full_text_click(root, '🏠 go back home', function on_click() {
             refresh_main();
         });
     }
