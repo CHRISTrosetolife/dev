@@ -20,6 +20,7 @@ import {range} from "./range.mjs";
 import {app_learn_code_code_container} from "./app_learn_code_code_container.mjs";
 import {html_p_text} from "./html_p_text.mjs";
 import {html_clear} from "./html_clear.mjs";
+import { html_div } from "./html_div.mjs";
 export function app_learn_code_quiz_inner(parent, source_get) {
     refresh(false);
     function refresh(refreshed) {
@@ -62,16 +63,32 @@ export function app_learn_code_quiz_inner(parent, source_get) {
                     });
                     setTimeout(() => {
                         refresh(true);
+                        container_bottom_show()
                     }, 200);
                 } else {
+                    container_bottom_hide();
                     html_disable(button);
                 }
             });
             html_style_monospace(button);
             html_spacer_vertical(container);
         });
-        html_p_text(parent, 'your answer is correct');
-        html_p_text(parent, 'if you want , take another quiz');
-        html_p_text(parent, 'otherwise , press the "next" button below');
+        let container_bottom = html_div(parent);
+        if (!refreshed) {
+            container_bottom_hide()
+        }
+        html_p_text(container_bottom, 'your answer is correct');
+        html_p_text(container_bottom, 'if you want , take another quiz');
+        html_p_text(container_bottom, 'otherwise , press the "next" button below');
+        function container_bottom_hide() {
+            html_style(container_bottom, {
+                display: 'none'
+            })
+        }
+        function container_bottom_show() {
+            html_style(container_bottom, {
+                display: 'block'
+            })
+        }
     }
 }
