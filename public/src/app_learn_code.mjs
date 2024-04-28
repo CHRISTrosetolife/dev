@@ -40,6 +40,7 @@ import {list_take} from "./list_take.mjs";
 import {list_sum} from "./list_sum.mjs";
 import {each_index} from "./each_index.mjs";
 import {add} from "./add.mjs";
+import { html_spacer_vertical } from "./html_spacer_vertical.mjs";
 export function app_learn_code() {
     let root = html_document_body();
     html_style(root, {
@@ -137,7 +138,7 @@ export function app_learn_code() {
         if (equal(index, index_last)) {
             html_disable(button_next);
         }
-        html_hr(root)
+        html_spacer_vertical(root)
         button_home();
     }
     function button_home() {
