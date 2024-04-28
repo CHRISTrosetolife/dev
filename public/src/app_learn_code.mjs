@@ -33,6 +33,8 @@ import { html_hr } from "./html_hr.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { noop } from "./noop.mjs";
 import { html_p_text } from "./html_p_text.mjs";
+import { list_index } from "./list_index.mjs";
+import { list_take } from "./list_take.mjs";
 export function app_learn_code() {
     let root = html_document_body();
     html_style(root, {
@@ -69,7 +71,7 @@ export function app_learn_code() {
         html_p_text(root, 'choose a lesson : ')
         for (let lesson of lessons) {
             let {description} = lesson;
-            html_button_width_full_text_click(root, description, noop)
+            html_button_width_full_text_click(root, description, () => refresh_lesson(lesson))
         }
     }
     refresh_main();
@@ -77,6 +79,9 @@ export function app_learn_code() {
     let index_last = list_index_last(lesson_screens);
     function refresh_lesson(lesson) {
         html_clear(root);
+        let leson_index = list_index(lessons, lesson);
+        let previous = list_take(lessons)
+        let {screens} = lesson;
     }
     function refresh_lesson_screen() {
         html_clear(root);
