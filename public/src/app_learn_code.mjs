@@ -32,6 +32,7 @@ import { app_learn_code_style_rounded_padded_style } from "./app_learn_code_styl
 import { html_hr } from "./html_hr.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { noop } from "./noop.mjs";
+import { html_p_text } from "./html_p_text.mjs";
 export function app_learn_code() {
     let root = html_document_body();
     html_style(root, {
@@ -63,9 +64,10 @@ export function app_learn_code() {
         let lesson_screens = object_property_get(lesson, 'screens');
         list_add_multiple(lesson_screens, screens);
     }
+    html_p_text(root, 'choose a lesson : ')
     for (let lesson of lessons) {
         let {description} = lesson;
-        html_button_width_full_text_click(root, string_combine('lesson : ', description), noop)
+        html_button_width_full_text_click(root, description, noop)
     }
     return;
     let index_last = list_index_last(screens);
