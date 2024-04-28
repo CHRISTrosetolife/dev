@@ -32,7 +32,7 @@ import {list_join} from "./list_join.mjs";
 export function lesson_boolean() {
     const example_message = 'boolean ( true , false )';
     const description = 'outputting true or false';
-    return lesson_simple(function () {
+    return lesson_simple(function source_get() {
         let answers = [true, false];
         list_add(answers, random_50_50());
         list_scramble(answers);
