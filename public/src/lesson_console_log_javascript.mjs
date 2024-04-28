@@ -21,7 +21,7 @@ export function lesson_console_log_javascript(parent) {
     html_style_alternate(parent, html_p, [noop, html_style_bold], [
         'we will be learning a computer programming language called ', 'javascript']);
     html_style_alternate(parent, html_p, [noop, html_style_bold], [
-        'in javascript , a ', 'statement', ' is analogous to a sentence in english']);
+        'in english , a sentence is analogous to a ', 'statement', ' in javascript']);
     html_style_alternate(parent, html_p, [noop, html_style_monospace], [
         'at the end of a statement there should be a semicolon ( ', ';', ' )']);
     html_style_alternate(parent, html_p, [noop, html_style_bold], [
