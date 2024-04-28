@@ -96,7 +96,8 @@ export function app_learn_code_unscramble(source_get) {
                     margin: html_style_units(3),
                     display: 'inline-block',
                     cursor: 'pointer',
-                    'min-width': html_style_units(6)
+                    'min-width': html_style_units(15),
+                    'text-align': 'center'
                 });
                 html_on_click(part, () => {
                     let current = list_get(answer, current_index);
