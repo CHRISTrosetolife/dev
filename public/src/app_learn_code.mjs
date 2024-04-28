@@ -35,6 +35,8 @@ import { noop } from "./noop.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { list_index } from "./list_index.mjs";
 import { list_take } from "./list_take.mjs";
+import { list_sum } from "./list_sum.mjs";
+import { each_index } from "./each_index.mjs";
 export function app_learn_code() {
     let root = html_document_body();
     html_style(root, {
@@ -80,32 +82,38 @@ export function app_learn_code() {
     function refresh_lesson(lesson) {
         html_clear(root);
         let lesson_index = list_index(lessons, lesson);
-        let previous = list_take(lessons)
+        let previous = list_take(lessons, lesson_index)
+        let index_first = list_sum(s => {
+            for (let p of previous) {
+                let {screens} = p;
+                s(list_length(screens))
+            }
+        })
         let {screens} = lesson;
+        each_index(screens, (screen, index) => {
+            html_button_width_full_text_click(root, string_combine('screen ' , add_1(index)), () => refresh_lesson(lesson))
+
+        })
     }
-    function refresh_lesson_screen() {
+    function refresh_lesson_screen(index) {
         html_clear(root);
         window.scrollTo({
             top: 0
         });
         let lesson_screen = list_get(lesson_screens, index);
-        html_enable(button_previous);
-        html_enable(button_next);
+        lesson_screen(root);
+        html_hr(root)
+        let button_next = html_button_width_full_text_click(root, 'next', function on_click() {
+            refresh_lesson_screen(add_1(index))
+        });
+        let button_previous = html_button_width_full_text_click(root, 'previous', function on_click() {
+            refresh_lesson_screen(subtract_1(index));
+        });
         if (equal(index, 0)) {
             html_disable(button_previous);
         }
         if (equal(index, index_last)) {
             html_disable(button_next);
         }
-        lesson_screen(root);
-        html_hr(root)
-        let button_next = html_button_width_full_text_click(root, 'next', function on_click() {
-            index++;
-            refresh_lesson_screen();
-        });
-        let button_previous = html_button_width_full_text_click(root, 'previous', function on_click() {
-            index--;
-            refresh_lesson_screen();
-        });
     }
 }
