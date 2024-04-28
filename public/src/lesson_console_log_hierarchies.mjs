@@ -15,5 +15,5 @@ export async function lesson_console_log_hierarchies(parent) {
     html_p_text(parent, 'trees are very important in computer programming');
     html_p_text(parent, 'here is an example of a tree or hierarchy :');
 
-    console.log(await import('@mlarocca/jsgraphs'));
+    console.log(await import('acorn'));
 }
