@@ -1,3 +1,4 @@
+import {string_take} from "./string_take.mjs";
 import {lesson_console_log_quiz} from "./lesson_console_log_quiz.mjs";
 import {list_take} from "./list_take.mjs";
 import {app_learn_code_code_part_titled_code} from "./app_learn_code_code_part_titled_code.mjs";
@@ -114,10 +115,13 @@ export function app_learn_code_unscramble(source_get) {
                         display: 'none'
                     });
                     source_index = source.indexOf(current, source_index);
-                    console.log({source_index, source})
+                    console.log({
+                        source_index,
+                        source
+                    });
                     current_index++;
                     let sliced = list_take(answer, current_index);
-                    html_inner_set(code, string_slice(source, add(source_index, string_length(current))));
+                    html_inner_set(code, string_take(source, add(source_index, string_length(current))));
                     if (equal(current_index, list_length(answer))) {
                         refresh();
                     }
