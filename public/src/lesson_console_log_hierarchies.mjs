@@ -32,7 +32,7 @@ export async function lesson_console_log_hierarchies(parent) {
     let t = html_element(parent, 'table');
     html_style(t, { 
         'border-collapse': 'separate',
-        'border-spacing': '1vh',
+        'border-spacing': '-0.5vh',
 })
     html_style_width_full(t);
     let tr1 = html_element(t, 'tr');
