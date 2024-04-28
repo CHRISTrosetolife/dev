@@ -89,7 +89,7 @@ export function app_learn_code() {
         window.scrollTo({
             top: 0
         });
-        let screen = list_get(lesson_screens, index);
+        let lesson_screen = list_get(lesson_screens, index);
         html_clear(content);
         html_enable(button_previous);
         html_enable(button_next);
@@ -100,8 +100,8 @@ export function app_learn_code() {
             html_disable(button_next);
         }
         console.log({
-            screen
+            screen: lesson_screen
         });
-        screen(content);
+        lesson_screen(content);
     }
 }
