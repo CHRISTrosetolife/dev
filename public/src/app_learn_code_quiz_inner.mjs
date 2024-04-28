@@ -38,32 +38,20 @@ export function app_learn_code_quiz_inner(parent, source_get) {
             for (let i of range(100)) {
                 let source = source_get();
                 let answer = app_learn_code_eval_to_string(source);
-                if (list_any(choices, c => equal(c.answer, answer))) {
+                if (list_any(choices, c => equal(c, answer))) {
                     continue;
                 }
-                list_add(choices, {
-                    source,
-                    answer
-                });
+                list_add(choices, answer);
                 break;
             }
         }
-        let mapped = list_map(choices, c => {
-            let messages = app_learn_code_eval(c);
-            return {
-                source: c,
-                messages
-            };
-        });
         let source = list_random_item(choices);
         let correct_index = list_index(choices, source);
         app_learn_code_code_part_titled_code(container, source);
         html_hr(container);
         app_learn_code_code_part_title(container, app_learn_code_code_part_title_output());
-        each_index(mapped, (m, index) => {
-            let {messages} = m;
-            let joined = app_learn_code_eval_messages_to_string(messages);
-            let button = html_button_width_full_text_click(container, joined, function on_click() {
+        each_index(choices, (answer, index) => {
+            let button = html_button_width_full_text_click(container, answer, function on_click() {
                 if (index === correct_index) {
                     html_style(button, {
                         'background-color': 'lightgreen'
