@@ -1,3 +1,8 @@
-export function list_filter(list, filter) {
-    return list.filter(item => filter(item));
+export function list_any(list, predicate) {
+    for (let element of list) {
+        if (predicate(element)) {
+            return true;
+        }
+    }
+    return false;
 }
