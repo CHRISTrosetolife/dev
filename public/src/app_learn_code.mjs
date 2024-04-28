@@ -76,7 +76,8 @@ export function app_learn_code() {
     }
     function refresh_main() {
         html_clear(root);
-        html_p_text(root, 'choose a lesson : ');
+        html_p_text(root, 'choose a lesson below');
+        html_p_text(root, 'if you do not know what lesson to choose , then choose the first lesson');
         for (let lesson of lessons) {
             let {description} = lesson;
             html_button_width_full_text_click(root, description, () => refresh_lesson(lesson));
