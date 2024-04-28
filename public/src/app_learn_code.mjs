@@ -83,7 +83,7 @@ export function app_learn_code() {
             top: 0
         });
         html_p_text(root, 'if you want to start from beginning , choose "begin" : ');
-        let begin = html_button_width_full_text_click(root, 'begin', () => refresh_lesson_screen(0));
+        let begin = html_button_width_full_text_click(root, 'begin', async () => await refresh_lesson_screen(0));
         html_style(begin, {
             'font-size': string_combine(multiply(default_font_size, 1.2).toString(), 'vh'),
         });
@@ -114,7 +114,7 @@ export function app_learn_code() {
         let {screens} = lesson;
         each_index(screens, (screen, index) => {
             let message = string_combine('screen ', add_1(index));
-            let button = html_button_width_full_text_click(root, '', () => refresh_lesson_screen(add(index_first, index)));
+            let button = html_button_width_full_text_click(root, '', async () => await refresh_lesson_screen(add(index_first, index)));
             if (equal(index, 0)) {
                 let begin_lesson = html_span_text(button, `begin the lesson`)
                 html_style_bold(begin_lesson)
