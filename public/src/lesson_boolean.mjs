@@ -31,7 +31,9 @@ export function lesson_boolean() {
     return lesson_simple(function () {
         let a = integer_random_digit_single_positive();
         let b = integer_random_digit_single_positive();
-        return `console.log(${a} / ${b});`;
+        return `console.log();
+console.log();
+console.log();`;
     }, example_before, description, example_message, []);
     function example_before(parent) {
         html_style_alternate(parent, html_p, [noop, html_style_monospace], ['one number can be divided by the other using the forward slash ( ', '/', ' ) symbol']);
