@@ -137,6 +137,7 @@ export function app_learn_code() {
         if (equal(index, index_last)) {
             html_disable(button_next);
         }
+        html_hr(root)
         button_home();
     }
     function button_home() {
