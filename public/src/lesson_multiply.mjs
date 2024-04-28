@@ -1,3 +1,4 @@
+import {integer_random_digit_single_positive} from "./integer_random_digit_single_positive.mjs";
 import {integer_random_digit_single} from "./integer_random_digit_single.mjs";
 import {lesson_simple} from "./lesson_simple.mjs";
 import {lesson_add_quiz} from "./lesson_add_quiz.mjs";
@@ -28,8 +29,8 @@ export function lesson_multiply() {
     const example_message = 'mutiplying two numbers';
     const description = example_message;
     return lesson_simple(function () {
-        let a = integer_random_digit_single();
-        let b = integer_random_digit_single();
+        let a = integer_random_digit_single_positive();
+        let b = integer_random_digit_single_positive();
         return `console.log(${a} * ${b});`;
     }, example_before, description, example_message, []);
     function example_before(parent) {
