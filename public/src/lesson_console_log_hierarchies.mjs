@@ -15,6 +15,7 @@ import {string_split_space} from "./string_split_space.mjs";
 import {string_length} from "./string_length.mjs";
 import {list_sum} from "./list_sum.mjs";
 import {html_style} from "./html_style.mjs";
+import { app_learn_code_style_rounded_padded } from "./app_learn_code_style_rounded_padded.mjs";
 export async function lesson_console_log_hierarchies(parent) {
     html_p_text(parent, 'in english , there are letters');
     html_p_text(parent, 'words have letters');
@@ -29,6 +30,10 @@ export async function lesson_console_log_hierarchies(parent) {
     let phrase = 'JESUS is LORD';
     let words = string_split_space(phrase);
     let t = html_element(parent, 'table');
+    html_style(t, { 
+        'border-collapse': 'separate',
+        'border-spacing': '2vh',
+})
     html_style_width_full(t);
     let tr1 = html_element(t, 'tr');
     let tr2 = html_element(t, 'tr');
@@ -60,7 +65,11 @@ export async function lesson_console_log_hierarchies(parent) {
         html_style_centered(td);
         html_inner_set(td, text);
         html_style(td, html_style_button_default_border());
+        app_learn_code_style_rounded_padded(td);
         app_learn_code_style_success(td);
+        html_style(td, {
+            margin: '10vh'
+        })
         return td;
     }
 }
