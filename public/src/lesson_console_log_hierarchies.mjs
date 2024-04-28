@@ -6,6 +6,8 @@ import {html_p_text} from "./html_p_text.mjs";
 import { html_element } from "./html_element.mjs";
 import { html_style_width_full } from "./html_style_width_full.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
+import { string_split } from "./string_split.mjs";
+import { string_split_space } from "./string_split_space.mjs";
 export async function lesson_console_log_hierarchies(parent) {
     html_p_text(parent, 'in english , there are letters');
     html_p_text(parent, 'words have letters');
@@ -21,20 +23,13 @@ export async function lesson_console_log_hierarchies(parent) {
     html_style_width_full(t);
     let tr1 = html_element(t, 'tr');
     let td_phrase = html_element(tr1, 'td');
-    html_inner_set(td_phrase, 'JESUS is LORD')
+    let phrase = 'JESUS is LORD';
+    html_inner_set(td_phrase, phrase)
     let tr2 = html_element(t, 'tr');
-    let td_word1 = html_element(tr2, 'td');
-    html_inner_set(td_word1, 'JESUS')
-    let td_word2 = html_element(tr2, 'td');
-    html_inner_set(td_word2, 'is')
-    let td_word3 = html_element(tr2, 'td');
-    html_inner_set(td_word3, 'LORD')
-    let tr3 = html_element(t, 'tr');
-    let td_letter1 = html_element(tr3, 'td');
-    html_inner_set(td_word1, 'JESUS')
-    let td_letter2 = html_element(tr3, 'td');
-    html_inner_set(td_word2, 'is')
-    let td_letter3 = html_element(tr3, 'td');
-    html_inner_set(td_word3, 'LORD')
+    let words = string_split_space(phrase)
+    for (let word of words) {
+        let td_word = html_element(tr2, 'td');
+        html_inner_set(td_word, word)
+    }
 
 }
