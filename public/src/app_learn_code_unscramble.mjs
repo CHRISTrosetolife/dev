@@ -60,7 +60,7 @@ export function app_learn_code_unscramble(source_get) {
                     la(token);
                 }
             });
-            let scrambled = list_map(tokens, t => {
+            let answer = list_map(tokens, t => {
                 let {type} = t;
                 let {label} = type;
                 let {value} = t;
@@ -78,14 +78,8 @@ export function app_learn_code_unscramble(source_get) {
                 }
                 return label;
             });
-            let answer = list_copy(scrambled);
-            let mapped_index_last = list_index_last(scrambled);
-            for (let i of range(list_length(scrambled))) {
-                let j = integer_random(i, mapped_index_last);
-                let temp = list_get(scrambled, j);
-                list_set(scrambled, j, list_get(scrambled, i));
-                list_set(scrambled, i, temp);
-            }
+            let scrambled = list_copy(answer);
+            list_scramble(scrambled);
             let parts = array_new();
             let current_index = 0;
             let source_index = 0;
@@ -138,3 +132,13 @@ export function app_learn_code_unscramble(source_get) {
         }
     };
 }
+function list_scramble(scrambled) {
+    let mapped_index_last = list_index_last(scrambled);
+    for (let i of range(list_length(scrambled))) {
+        let j = integer_random(i, mapped_index_last);
+        let temp = list_get(scrambled, j);
+        list_set(scrambled, j, list_get(scrambled, i));
+        list_set(scrambled, i, temp);
+    }
+}
+
