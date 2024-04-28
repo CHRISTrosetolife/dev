@@ -63,6 +63,9 @@ export function app_learn_code_quiz_inner(parent, source_get) {
                 } else {
                     container_bottom_hide();
                     html_disable(button);
+                    html_style(button, {
+                        'background-color': 'salmon'
+                    });
                 }
             });
             html_style_monospace(button);
