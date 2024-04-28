@@ -1,3 +1,5 @@
+import {list_get} from "./list_get.mjs";
+import {list_random_index} from "./list_random_index.mjs";
 import {app_learn_code_style_success} from "./app_learn_code_style_success.mjs";
 import {equal} from "./equal.mjs";
 import {list_any} from "./list_any.mjs";
@@ -42,17 +44,20 @@ export function app_learn_code_quiz_inner(parent, source_get) {
                 if (list_any(choices, c => equal(c, answer))) {
                     continue;
                 }
-                list_add(choices, {source,answer});
+                list_add(choices, {
+                    source,
+                    answer
+                });
                 break;
             }
         }
-        let {source} = list_random_item(choices);
-        let correct_index = list_index(choices, source);
+        let correct_index = list_random_index(list);
+        let {source} = list_get(choices, correct_index);
         app_learn_code_code_part_titled_code(container, source);
         html_hr(container);
         app_learn_code_code_part_title(container, app_learn_code_code_part_title_output());
         each_index(choices, (c, index) => {
-            let {answer} = answer
+            let {answer} = answer;
             let button = html_button_width_full_text_click(container, answer, function on_click() {
                 if (index === correct_index) {
                     app_learn_code_style_success(button);
