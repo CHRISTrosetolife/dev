@@ -68,6 +68,7 @@ export function app_learn_code() {
         list_add(lessons, lesson);
         let s = object_property_get(lesson, 'screens');
         list_add_multiple(lesson_screens, s);
+        console.log({lesson_screens,s})
     }
     function refresh_main() {
         html_clear(root);
