@@ -1,3 +1,4 @@
+import {multiply} from "./multiply.mjs";
 import {subtract_1} from "./subtract_1.mjs";
 import {add_1} from "./add_1.mjs";
 import {html_style_button_default} from "./html_style_button_default.mjs";
