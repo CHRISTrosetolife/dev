@@ -35,7 +35,9 @@ export function lesson_boolean() {
     return lesson_simple(source_get, example_before, description, example_message, []);
     function example_before(parent) {
         html_p_text(parent, 'some questions can be answered using a "yes" or a "no"')
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['one number can be divided by the other using the forward slash ( ', '/', ' ) symbol']);
+        html_p_text(parent, 'for example if someone asked "is the number two bigger than the number one ?" then the answer is "yes"')
+        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['in javascript the code for "yes" is ', 'true']);
+        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['in javascript the code for "no" is ', 'false']);
     }
     function source_get() {
         let answers = [true, false];
