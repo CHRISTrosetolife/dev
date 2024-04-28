@@ -1,3 +1,4 @@
+import {subtract_1} from "./subtract_1.mjs";
 import {add_1} from "./add_1.mjs";
 import {html_style_button_default} from "./html_style_button_default.mjs";
 import {lesson_statements_two} from "./lesson_statements_two.mjs";
@@ -68,7 +69,10 @@ export function app_learn_code() {
         list_add(lessons, lesson);
         let s = object_property_get(lesson, 'screens');
         list_add_multiple(lesson_screens, s);
-        console.log({lesson_screens,s})
+        console.log({
+            lesson_screens,
+            s
+        });
     }
     function refresh_main() {
         html_clear(root);
@@ -96,7 +100,10 @@ export function app_learn_code() {
         });
     }
     function refresh_lesson_screen(index) {
-        console.log({index,lesson_screens})
+        console.log({
+            index,
+            lesson_screens
+        });
         html_clear(root);
         window.scrollTo({
             top: 0
