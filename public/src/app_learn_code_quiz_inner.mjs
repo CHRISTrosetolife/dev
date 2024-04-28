@@ -21,8 +21,8 @@ import {app_learn_code_code_container} from "./app_learn_code_code_container.mjs
 import {html_p_text} from "./html_p_text.mjs";
 import {html_clear} from "./html_clear.mjs";
 export function app_learn_code_quiz_inner(parent, source_get) {
-    refresh();
-    function refresh() {
+    refresh(false);
+    function refresh(refreshed) {
         html_clear(parent);
         html_p_text(parent, 'below is a quiz');
         html_p_text(parent, 'you can answer as many quiz questions as you want');
@@ -62,7 +62,7 @@ export function app_learn_code_quiz_inner(parent, source_get) {
                         'background-color': 'lightgreen'
                     });
                     setTimeout(() => {
-                        refresh();
+                        refresh(true);
                     }, 200);
                 } else {
                     html_disable(button);
