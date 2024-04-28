@@ -1,3 +1,4 @@
+import {app_learn_code_style_success} from "./app_learn_code_style_success.mjs";
 import {string_take} from "./string_take.mjs";
 import {lesson_console_log_quiz} from "./lesson_console_log_quiz.mjs";
 import {list_take} from "./list_take.mjs";
@@ -33,8 +34,8 @@ import {list_join} from "./list_join.mjs";
 import {html_clear} from "./html_clear.mjs";
 import {add} from "./add.mjs";
 import {string_length} from "./string_length.mjs";
-import { html_div } from "./html_div.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
+import {html_div} from "./html_div.mjs";
+import {html_button_width_full_text_click} from "./html_button_width_full_text_click.mjs";
 export function app_learn_code_unscramble(source_get) {
     return function app_learn_code_unscramble_inner(parent) {
         refresh();
@@ -51,7 +52,7 @@ export function app_learn_code_unscramble(source_get) {
             html_style(code, {
                 visibility: 'hidden'
             });
-            let success = html_div(parent)
+            let success = html_div(parent);
             let tokens = list_adder(la => {
                 for (let token of js_tokenize(source)) {
                     la(token);
@@ -122,9 +123,10 @@ export function app_learn_code_unscramble(source_get) {
                     let take_count = add(source_index, string_length(current.toString()));
                     html_inner_set(code, string_take(source, take_count));
                     if (equal(current_index, list_length(answer))) {
-                        html_p_text(success, 'your answer is correct')
-                        html_p_text(success, 'if you want to take another quiz , press the "another quiz" button below : ')
-                        html_p_text(success, 'otherwise , press the "next" button below')
+                        app_learn_code_style_success(code);
+                        html_p_text(success, 'your answer is correct');
+                        html_p_text(success, 'if you want to take another quiz , press the "another quiz" button below : ');
+                        html_p_text(success, 'otherwise , press the "next" button below');
                         html_button_width_full_text_click(success, 'another quiz', refresh);
                     }
                 });
