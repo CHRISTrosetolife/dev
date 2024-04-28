@@ -13,4 +13,5 @@ export function lesson_console_log_hierarchies(parent) {
     html_style_alternate(parent, html_p, [noop, html_style_bold], ['this is a ', 'hierarchy']);
     html_style_alternate(parent, html_p, [noop, html_style_bold], ['a hierarchy can also be called a ', 'tree']);
     html_p_text(parent, 'trees are very important in computer programming');
+    html_p_text(parent, 'here is an example of a tree or hierarchy :');
 }
