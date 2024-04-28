@@ -25,8 +25,7 @@ export function app_learn_code_quiz_inner(parent, source_get) {
     function refresh(refreshed) {
         html_clear(parent);
         html_p_text(parent, 'below is a quiz');
-        html_p_text(parent, 'you can answer as many quiz questions as you want');
-        html_p_text(parent, 'when you are done answering quiz questions , feel free to press the "next" button below');
+        html_p_text(parent, 'click or tap on the correct output for the code');
         let container = app_learn_code_code_container(parent);
         let choices_count = 4;
         let r = range(choices_count);
@@ -71,5 +70,8 @@ export function app_learn_code_quiz_inner(parent, source_get) {
             html_style_monospace(button);
             html_spacer_vertical(container);
         });
+        html_p_text(parent, 'your answer is correct');
+        html_p_text(parent, 'if you want , take another quiz');
+        html_p_text(parent, 'otherwise , press the "next" button below');
     }
 }
