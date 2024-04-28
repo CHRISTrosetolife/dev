@@ -1,3 +1,5 @@
+import {app_learn_code_style_success} from "./app_learn_code_style_success.mjs";
+import {html_style_button_default_border_color} from "./html_style_button_default_border_color.mjs";
 import {html_style_centered} from "./html_style_centered.mjs";
 import {html_merge} from "./html_merge.mjs";
 import {html_style_bold} from "./html_style_bold.mjs";
@@ -12,6 +14,7 @@ import {string_split} from "./string_split.mjs";
 import {string_split_space} from "./string_split_space.mjs";
 import {string_length} from "./string_length.mjs";
 import {list_sum} from "./list_sum.mjs";
+import {html_style} from "./html_style.mjs";
 export async function lesson_console_log_hierarchies(parent) {
     html_p_text(parent, 'in english , there are letters');
     html_p_text(parent, 'words have letters');
@@ -52,11 +55,13 @@ export async function lesson_console_log_hierarchies(parent) {
             element_td(tr3, c);
         }
     }
-
     function element_td(parent, text) {
-        let td_word = html_element(parent, 'td');
-        html_style_centered(td_word);
-        html_inner_set(td_word, text);
-        return td_word;
+        let td = html_element(parent, 'td');
+        html_style_centered(td);
+        html_inner_set(td, text);
+        html_style(td, html_style_button_default_border_color());
+        app_learn_code_style_success(td);
+        html_style_button_default_border_color('dodgerblue');
+        return td;
     }
 }
