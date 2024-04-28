@@ -18,7 +18,10 @@ import {list_get} from "./list_get.mjs";
 import {html_style_bold} from "./html_style_bold.mjs";
 import {html_spacer_vertical} from "./html_spacer_vertical.mjs";
 export function lesson_console_log_javascript(parent) {
-    html_style_alternate(parent, html_p, [noop, html_style_bold], ['in computer programming different symbols can be used as a ', 'separator', ' so that the computer can tell two things apart']);
-    html_style_alternate(parent, html_p, [noop, html_style_bold], ['we will be learning a computer programming language called ', 'javascript']);
-    html_style_alternate(parent, html_p, [noop, html_style_monospace], ['in javascript a semicolon ( ', ';', ' ) is a separator']);
+    html_style_alternate(parent, html_p, [noop, html_style_bold], [
+        'in computer programming different symbols can be used as a ', 'separator', ' so that the computer can tell two things apart']);
+    html_style_alternate(parent, html_p, [noop, html_style_bold], [
+        'we will be learning a computer programming language called ', 'javascript']);
+    html_style_alternate(parent, html_p, [noop, html_style_monospace], [
+        'in javascript a semicolon ( ', ';', ' ) is a separator']);
 }
