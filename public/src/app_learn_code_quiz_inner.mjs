@@ -1,3 +1,4 @@
+import {app_learn_code_eval_to_string} from "./app_learn_code_eval_to_string.mjs";
 import {html_spacer_vertical} from "./html_spacer_vertical.mjs";
 import {html_style_monospace} from "./html_style_monospace.mjs";
 import {html_disable} from "./html_disable.mjs";
@@ -20,7 +21,7 @@ import {range} from "./range.mjs";
 import {app_learn_code_code_container} from "./app_learn_code_code_container.mjs";
 import {html_p_text} from "./html_p_text.mjs";
 import {html_clear} from "./html_clear.mjs";
-import { html_div } from "./html_div.mjs";
+import {html_div} from "./html_div.mjs";
 export function app_learn_code_quiz_inner(parent, source_get) {
     refresh(false);
     function refresh(refreshed) {
@@ -34,6 +35,7 @@ export function app_learn_code_quiz_inner(parent, source_get) {
         for (let c of r) {
             for (let i of range(100)) {
                 let source = source_get();
+                let answer = app_learn_code_eval_to_string(source);
                 if (list_includes(choices, source)) {
                     continue;
                 }
@@ -63,7 +65,7 @@ export function app_learn_code_quiz_inner(parent, source_get) {
                     });
                     setTimeout(() => {
                         refresh(true);
-                        container_bottom_show()
+                        container_bottom_show();
                     }, 200);
                 } else {
                     container_bottom_hide();
@@ -75,7 +77,7 @@ export function app_learn_code_quiz_inner(parent, source_get) {
         });
         let container_bottom = html_div(parent);
         if (!refreshed) {
-            container_bottom_hide()
+            container_bottom_hide();
         }
         html_p_text(container_bottom, 'your answer is correct');
         html_p_text(container_bottom, 'if you want , take another quiz above');
@@ -83,12 +85,12 @@ export function app_learn_code_quiz_inner(parent, source_get) {
         function container_bottom_hide() {
             html_style(container_bottom, {
                 display: 'none'
-            })
+            });
         }
         function container_bottom_show() {
             html_style(container_bottom, {
                 display: 'block'
-            })
+            });
         }
     }
 }
