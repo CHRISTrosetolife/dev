@@ -47,7 +47,7 @@ export function app_learn_code() {
         'font-family': 'sans-serif'
     });
     object_merge(html_style_default(), {
-        'font-size': '3vh'
+        'font-size': string_combine('3', 'vh')
     });
     object_merge(html_style_button_default(), app_learn_code_style_rounded_padded_style());
     object_merge(html_style_button_default(), {
