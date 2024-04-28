@@ -60,8 +60,7 @@ export function app_learn_code() {
         'margin': '0.5vh',
         'background-color': 'lightblue'
     });
-    let border_color = 'dodgerblue';
-    html_style_button_default_border_color(border_color);
+    html_style_button_default_border_color('dodgerblue');
     let lesson_creates = [];
     list_add(lesson_creates, lesson_console_log);
     list_add(lesson_creates, lesson_log_number);
