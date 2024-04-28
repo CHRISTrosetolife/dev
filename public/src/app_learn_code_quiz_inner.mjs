@@ -78,7 +78,7 @@ export function app_learn_code_quiz_inner(parent, source_get) {
             container_bottom_hide()
         }
         html_p_text(container_bottom, 'your answer is correct');
-        html_p_text(container_bottom, 'if you want , take another quiz');
+        html_p_text(container_bottom, 'if you want , take another quiz above');
         html_p_text(container_bottom, 'otherwise , press the "next" button below');
         function container_bottom_hide() {
             html_style(container_bottom, {
