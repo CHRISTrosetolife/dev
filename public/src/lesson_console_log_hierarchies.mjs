@@ -30,9 +30,7 @@ export async function lesson_console_log_hierarchies(parent) {
     let tr1 = html_element(t, 'tr');
     let tr2 = html_element(t, 'tr');
     let tr3 = html_element(t, 'tr');
-    let td_phrase = html_element(tr1, 'td');
-    html_style_centered(td_phrase);
-    html_inner_set(td_phrase, phrase);
+    let td_phrase = element_td(tr1, phrase);
     let colspan = list_sum(s => {
         for (let word of words) {
             let length = string_length(word);
@@ -43,9 +41,7 @@ export async function lesson_console_log_hierarchies(parent) {
         colspan
     });
     for (let word of words) {
-        let td_word = html_element(tr2, 'td');
-        html_style_centered(td_word);
-        html_inner_set(td_word, word);
+        let td_word = element_td(tr2, word);
         let length = string_length(word);
         html_merge(td_word, {
             colspan: length
@@ -53,9 +49,14 @@ export async function lesson_console_log_hierarchies(parent) {
     }
     for (let word of words) {
         for (let c of word) {
-            let td_letter = html_element(tr3, 'td');
-            html_style_centered(td_letter);
-            html_inner_set(td_letter, c);
+            element_td(tr3, c);
         }
+    }
+
+    function element_td(parent, text) {
+        let td_word = html_element(parent, 'td');
+        html_style_centered(td_word);
+        html_inner_set(td_word, text);
+        return td_word;
     }
 }
