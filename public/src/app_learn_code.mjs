@@ -30,6 +30,8 @@ import {list_add} from "./list_add.mjs";
 import {lesson_divide} from "./lesson_divide.mjs";
 import { app_learn_code_style_rounded_padded_style } from "./app_learn_code_style_rounded_padded_style.mjs";
 import { html_hr } from "./html_hr.mjs";
+import { string_combine } from "./string_combine.mjs";
+import { noop } from "./noop.mjs";
 export function app_learn_code() {
     let root = html_document_body();
     html_style(root, {
@@ -54,11 +56,18 @@ export function app_learn_code() {
     list_add(lesson_creates, lesson_divide);
     list_add(lesson_creates, lesson_statements_two);
     let screens = [];
+    let lessons = [];
     for (let lesson_create of lesson_creates) {
         let lesson = lesson_create();
+        list_add(lessons, lesson);
         let lesson_screens = object_property_get(lesson, 'screens');
         list_add_multiple(lesson_screens, screens);
     }
+    for (let lesson of lessons) {
+        let {description} = lesson;
+        html_button_width_full_text_click(root, string_combine('lesson : ', description), noop)
+    }
+    return;
     let index_last = list_index_last(screens);
     let content = html_div(root);
     let {hash} = window.location;
