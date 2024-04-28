@@ -76,6 +76,9 @@ export function app_learn_code() {
     }
     function refresh_main() {
         html_clear(root);
+        window.scrollTo({
+            top: 0
+        });
         html_p_text(root, 'choose a lesson below');
         html_p_text(root, 'if you do not know what lesson to choose , then choose the first lesson');
         for (let lesson of lessons) {
