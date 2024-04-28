@@ -61,6 +61,7 @@ export function app_learn_code() {
         'background-color': 'lightblue'
     });
     object_merge(html_style_button_default(), html_style_button_default_border());
+    console.log({a:html_style_button_default()})
     let lesson_creates = [];
     list_add(lesson_creates, lesson_console_log);
     list_add(lesson_creates, lesson_log_number);
