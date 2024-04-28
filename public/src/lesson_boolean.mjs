@@ -26,8 +26,8 @@ import {noop} from "./noop.mjs";
 import {html_style_bold} from "./html_style_bold.mjs";
 import {html_style_monospace} from "./html_style_monospace.mjs";
 export function lesson_boolean() {
-    const example_message = 'boolean ( true and false )';
-    const description = example_message;
+    const example_message = 'boolean ( true , false )';
+    const description = 'outputting true or false';
     return lesson_simple(function () {
         let a = integer_random_digit_single_positive();
         let b = integer_random_digit_single_positive();
