@@ -73,11 +73,10 @@ export function app_learn_code() {
             html_button_width_full_text_click(root, description, noop)
         }
     }
+    main();
     return;
     let index_last = list_index_last(lesson_screens);
-    let {hash} = window.location;
-    hash = string_prefix_without(hash, '#');
-    let index = parseInt(hash, 10) || 0;
+    let index = 0;
     html_hr(root)
     let button_next = html_button_width_full_text_click(root, 'next', function on_click() {
         index++;
