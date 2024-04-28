@@ -124,13 +124,13 @@ export function app_learn_code() {
             }
         });
     }
-    function refresh_lesson_screen(index) {
+    async function refresh_lesson_screen(index) {
         html_clear(root);
         window.scrollTo({
             top: 0
         });
         let lesson_screen = list_get(lesson_screens, index);
-        lesson_screen(root);
+        await lesson_screen(root);
         html_hr(root);
         let button_next = html_button_width_full_text_click(root, '➡️ next', function on_click() {
             refresh_lesson_screen(add_1(index));
