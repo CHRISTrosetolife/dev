@@ -46,7 +46,7 @@ export function app_learn_code_quiz_inner(parent, source_get) {
                 break;
             }
         }
-        let source = list_random_item(choices);
+        let {source} = list_random_item(choices);
         let correct_index = list_index(choices, source);
         app_learn_code_code_part_titled_code(container, source);
         html_hr(container);
