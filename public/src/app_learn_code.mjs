@@ -74,6 +74,7 @@ export function app_learn_code() {
         }
     }
     refresh_main();
+    let index = 0;
     let index_last = list_index_last(lesson_screens);
     function refresh_lesson_screen() {
         html_clear(content);
@@ -91,7 +92,6 @@ export function app_learn_code() {
         }
         lesson_screen(content);
         html_hr(content)
-        let index = 0;
         let button_next = html_button_width_full_text_click(content, 'next', function on_click() {
             index++;
             refresh_lesson_screen();
