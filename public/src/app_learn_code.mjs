@@ -64,14 +64,17 @@ export function app_learn_code() {
         let lesson_screens = object_property_get(lesson, 'screens');
         list_add_multiple(lesson_screens, lesson_screens);
     }
-    html_p_text(root, 'choose a lesson : ')
-    for (let lesson of lessons) {
-        let {description} = lesson;
-        html_button_width_full_text_click(root, description, noop)
+    let content = html_div(root);
+    function main() {
+        html_clear(content);
+        html_p_text(root, 'choose a lesson : ')
+        for (let lesson of lessons) {
+            let {description} = lesson;
+            html_button_width_full_text_click(root, description, noop)
+        }
     }
     return;
     let index_last = list_index_last(lesson_screens);
-    let content = html_div(root);
     let {hash} = window.location;
     hash = string_prefix_without(hash, '#');
     let index = parseInt(hash, 10) || 0;
