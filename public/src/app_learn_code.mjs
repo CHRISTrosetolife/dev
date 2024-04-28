@@ -99,9 +99,6 @@ export function app_learn_code() {
         if (equal(index, index_last)) {
             html_disable(button_next);
         }
-        console.log({
-            screen: lesson_screen
-        });
         lesson_screen(content);
     }
 }
