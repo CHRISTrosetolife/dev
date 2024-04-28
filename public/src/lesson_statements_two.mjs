@@ -8,8 +8,8 @@ import {noop} from "./noop.mjs";
 import {html_style_bold} from "./html_style_bold.mjs";
 import {html_style_monospace} from "./html_style_monospace.mjs";
 export function lesson_statements_two() {
+    const description = 'two console.log statements';
     const example_message = 'with two statements';
-    const description = example_message;
     return lesson_simple(() => {
         return `${lesson_console_log_quiz()}
 ${lesson_console_log_quiz()}`;
