@@ -79,7 +79,7 @@ export function app_learn_code() {
     let index_last = list_index_last(lesson_screens);
     function refresh_lesson(lesson) {
         html_clear(root);
-        let leson_index = list_index(lessons, lesson);
+        let lesson_index = list_index(lessons, lesson);
         let previous = list_take(lessons)
         let {screens} = lesson;
     }
