@@ -64,7 +64,8 @@ export function app_learn_code_quiz_inner(parent, source_get) {
                     container_bottom_hide();
                     html_disable(button);
                     html_style(button, {
-                        'background-color': 'salmon'
+                        'background-color': 'salmon',
+                        'border-color': 'tomato'
                     });
                 }
             });
