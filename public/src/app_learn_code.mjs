@@ -39,7 +39,8 @@ export function app_learn_code() {
     });
     object_merge(html_style_button_default(), app_learn_code_style_rounded_padded_style());
     object_merge(html_style_button_default(),     {
-        'margin': '0.5vh'
+        'margin': '0.5vh',
+        'background-color': 'lightblue'
     });
 
     let lesson_creates = [];
