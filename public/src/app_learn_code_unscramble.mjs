@@ -30,6 +30,8 @@ import {object_property_set} from "./object_property_set.mjs";
 import {html_inner_set} from "./html_inner_set.mjs";
 import {list_join} from "./list_join.mjs";
 import {html_clear} from "./html_clear.mjs";
+import {add} from "./add.mjs";
+import {string_length} from "./string_length.mjs";
 export function app_learn_code_unscramble(source_get) {
     return function app_learn_code_unscramble_inner(parent) {
         refresh();
@@ -81,6 +83,7 @@ export function app_learn_code_unscramble(source_get) {
             }
             let parts = array_new();
             let current_index = 0;
+            let source_index = 0;
             for (let s of scrambled) {
                 let part = app_learn_code_code_part_generic(html_span_text, parent, s, app_learn_code_code_background());
                 list_add(parts, part);
@@ -110,9 +113,10 @@ export function app_learn_code_unscramble(source_get) {
                     html_style(part, {
                         display: 'none'
                     });
+                    source_index = source.indexOf(current, source_index);
                     current_index++;
                     let sliced = list_take(answer, current_index);
-                    html_inner_set(code, list_join(sliced, ''));
+                    html_inner_set(code, string_slice(source, add(source_index, string_length(current))));
                     if (equal(current_index, list_length(answer))) {
                         refresh();
                     }
