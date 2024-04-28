@@ -107,7 +107,7 @@ export function app_learn_code() {
         each_index(screens, (screen, index) => {
             let message = string_combine('screen ', add_1(index));
             if (equal(index, 0)) {
-                message = 'begin the lesson'
+                message = `begin the lesson ( ${message} )`
             }
             html_button_width_full_text_click(root, message, () => refresh_lesson_screen(add(index_first, index)));
         });
