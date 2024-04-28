@@ -32,14 +32,15 @@ import {list_join} from "./list_join.mjs";
 export function lesson_boolean() {
     const example_message = 'boolean ( true , false )';
     const description = 'outputting true or false';
-    return lesson_simple(function source_get() {
+    return lesson_simple(source_get, example_before, description, example_message, []);
+    function example_before(parent) {
+        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['one number can be divided by the other using the forward slash ( ', '/', ' ) symbol']);
+    }
+    function source_get() {
         let answers = [true, false];
         list_add(answers, random_50_50());
         list_scramble(answers);
         let mapped = list_map(answers, a => `console.log(${a});`);
         return list_join(mapped, newline());
-    }, example_before, description, example_message, []);
-    function example_before(parent) {
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['one number can be divided by the other using the forward slash ( ', '/', ' ) symbol']);
     }
 }
