@@ -61,7 +61,6 @@ export async function lesson_console_log_hierarchies(parent) {
         html_inner_set(td, text);
         html_style(td, html_style_button_default_border_color());
         app_learn_code_style_success(td);
-        html_style_button_default_border_color('dodgerblue');
         return td;
     }
 }
