@@ -28,6 +28,7 @@ import {html_style} from "./html_style.mjs";
 import {object_merge} from "./object_merge.mjs";
 import {list_add} from "./list_add.mjs";
 import {lesson_divide} from "./lesson_divide.mjs";
+import { app_learn_code_style_rounded_padded_style } from "./app_learn_code_style_rounded_padded_style.mjs";
 export function app_learn_code() {
     let root = html_document_body();
     html_style(root, {
@@ -36,7 +37,7 @@ export function app_learn_code() {
     object_merge(html_style_default(), {
         'font-size': '3vh'
     });
-    object_merge(html_style_button_default(), {});
+    object_merge(html_style_button_default(), app_learn_code_style_rounded_padded_style());
     let lesson_creates = [];
     list_add(lesson_creates, lesson_console_log);
     list_add(lesson_creates, lesson_log_number);
