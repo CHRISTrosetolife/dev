@@ -3,7 +3,7 @@ import {noop} from "./noop.mjs";
 import {html_p} from "./html_p.mjs";
 import {html_style_alternate} from "./html_style_alternate.mjs";
 import {html_p_text} from "./html_p_text.mjs";
-export function lesson_console_log_hierarchies(parent) {
+export async function lesson_console_log_hierarchies(parent) {
     html_p_text(parent, 'in english , there are letters');
     html_p_text(parent, 'words have letters');
     html_p_text(parent, 'phrases have words');
@@ -14,4 +14,6 @@ export function lesson_console_log_hierarchies(parent) {
     html_style_alternate(parent, html_p, [noop, html_style_bold], ['a hierarchy can also be called a ', 'tree']);
     html_p_text(parent, 'trees are very important in computer programming');
     html_p_text(parent, 'here is an example of a tree or hierarchy :');
+
+    console.log(await import('@mlarocca/jsgraphs'));
 }
