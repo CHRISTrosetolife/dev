@@ -1,3 +1,4 @@
+import {html_style_centered} from "./html_style_centered.mjs";
 import {html_merge} from "./html_merge.mjs";
 import {html_style_bold} from "./html_style_bold.mjs";
 import {noop} from "./noop.mjs";
