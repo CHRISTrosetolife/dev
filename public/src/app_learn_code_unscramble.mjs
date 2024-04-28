@@ -34,6 +34,7 @@ import {html_clear} from "./html_clear.mjs";
 import {add} from "./add.mjs";
 import {string_length} from "./string_length.mjs";
 import { html_div } from "./html_div.mjs";
+import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export function app_learn_code_unscramble(source_get) {
     return function app_learn_code_unscramble_inner(parent) {
         refresh();
@@ -122,10 +123,11 @@ export function app_learn_code_unscramble(source_get) {
                         source
                     });
                     current_index++;
-                    html_inner_set(code, string_take(source, add(source_index, string_length(current))));
+                    let take_count = add(source_index, string_length(current));
+                    html_inner_set(code, string_take(source, take_count));
                     if (equal(current_index, list_length(answer))) {
                         html_p_text(success, 'your answer is correct')
-                        refresh();
+                        html_button_width_full_text_click(success, 'another quiz', refresh);
                     }
                 });
             }
