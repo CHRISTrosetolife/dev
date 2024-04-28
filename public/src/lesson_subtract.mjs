@@ -33,6 +33,6 @@ export function lesson_subtract() {
         return `console.log(${a} - ${b});`;
     }, example_before, description, example_message, []);
     function example_before(parent) {
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['one number can be subtracted from the other using the minus ( ', '-', ' ) sign']);
+        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['one number can be subtracted from another number using the minus ( ', '-', ' ) sign']);
     }
 }
