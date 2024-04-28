@@ -96,6 +96,7 @@ export function app_learn_code() {
         });
     }
     function refresh_lesson_screen(index) {
+        console.log({index})
         html_clear(root);
         window.scrollTo({
             top: 0
