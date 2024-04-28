@@ -42,6 +42,8 @@ import {list_sum} from "./list_sum.mjs";
 import {each_index} from "./each_index.mjs";
 import {add} from "./add.mjs";
 import {html_spacer_vertical} from "./html_spacer_vertical.mjs";
+import { html_span_text } from "./html_span_text.mjs";
+import { html_style_bold } from "./html_style_bold.mjs";
 export function app_learn_code() {
     let root = html_document_body();
     html_style(root, {
@@ -86,8 +88,8 @@ export function app_learn_code() {
         let begin = html_button_width_full_text_click(root, 'begin', () => refresh_lesson_screen(0));
         html_style(begin, {
             'font-size': string_combine(multiply(default_font_size, 1.2).toString(), 'vh'),
-            'font-weight': 'bold'
         });
+        html_style_bold(begin)
         html_p_text(root, 'or choose a lesson below :');
         for (let lesson of lessons) {
             let {description} = lesson;
@@ -114,10 +116,14 @@ export function app_learn_code() {
         let {screens} = lesson;
         each_index(screens, (screen, index) => {
             let message = string_combine('screen ', add_1(index));
+            let button = html_button_width_full_text_click(root, '', () => refresh_lesson_screen(add(index_first, index)));
             if (equal(index, 0)) {
-                message = `begin the lesson ( ${message} )`;
+                let begin_lesson = html_span_text(button, `begin the lesson`)
+                html_style_bold(begin_lesson)
+                html_span_text(button, `( ${message} )`)
+            } else {
+                html_span_text(button, message)
             }
-            html_button_width_full_text_click(root, message, () => refresh_lesson_screen(add(index_first, index)));
         });
     }
     function refresh_lesson_screen(index) {
