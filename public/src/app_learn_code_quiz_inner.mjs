@@ -33,7 +33,7 @@ export function app_learn_code_quiz_inner(parent, source_get) {
     function refresh(refreshed) {
         html_clear(div);
         html_p_text(div, 'below is a quiz');
-        html_p_text(div, 'click or tap on the correct output for the code');
+        html_p_text(div, 'choose the correct output for the code');
         let container = app_learn_code_code_container(div);
         let choices_count = 4;
         let r = range(choices_count);
