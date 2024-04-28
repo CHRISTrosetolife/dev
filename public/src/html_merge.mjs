@@ -1,5 +1,5 @@
 import {object_merge} from "./object_merge.mjs";
-export function html_style(component, styles) {
+export function html_merge(component, to_merge) {
     let {element} = component;
-    object_merge(element.style, styles);
+    object_merge(element, to_merge);
 }
