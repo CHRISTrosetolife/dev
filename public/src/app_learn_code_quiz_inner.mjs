@@ -41,7 +41,7 @@ export function app_learn_code_quiz_inner(parent, source_get) {
             for (let i of range(100)) {
                 let source = source_get();
                 let answer = app_learn_code_eval_to_string(source);
-                if (list_any(choices, c => equal(c, answer))) {
+                if (list_any(choices, c => equal(c.answer, answer))) {
                     continue;
                 }
                 list_add(choices, {
