@@ -1,3 +1,4 @@
+import {lesson_console_log_hierarchies} from "./lesson_console_log_hierarchies.mjs";
 import {app_learn_code_unscramble} from "./app_learn_code_unscramble.mjs";
 import {app_learn_code_quiz_inner} from "./app_learn_code_quiz_inner.mjs";
 import {app_learn_code_quiz} from "./app_learn_code_quiz.mjs";
@@ -22,6 +23,7 @@ export function lesson_console_log() {
     list_add(v2, lesson_console_log_analogy_addition);
     list_add(v2, lesson_console_log_analogy_addition_symbol);
     list_add(v2, lesson_console_log_process_named);
+    list_add(v2, lesson_console_log_hierarchies);
     list_add(v2, lesson_console_log_javascript);
     list_add(v2, lesson_console_log_strings);
     list_add(v2, lesson_console_log_process_computer_program);
