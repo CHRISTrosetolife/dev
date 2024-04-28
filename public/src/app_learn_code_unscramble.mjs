@@ -103,7 +103,7 @@ export function app_learn_code_unscramble(source_get) {
                     let e = equal(s, current);
                     if (!e) {
                         html_style(part, {
-                            'background-color': 'red'
+                            'background-color': 'darkred'
                         });
                         return;
                     }
@@ -126,7 +126,7 @@ export function app_learn_code_unscramble(source_get) {
                         html_style(code, {
                             'background-color': 'darkgreen'
                         });
-                        html_p_text(success, 'your answer is correct');
+                        html_p_text(success, 'your answer is correct ✅');
                         html_p_text(success, 'if you want to take another quiz , press the "another quiz" button below : ');
                         html_p_text(success, 'otherwise , press the "next" button below');
                         html_button_width_full_text_click(success, 'another quiz', refresh);

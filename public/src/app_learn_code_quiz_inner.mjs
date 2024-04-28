@@ -42,7 +42,7 @@ export function app_learn_code_quiz_inner(parent, source_get) {
                 if (list_any(choices, c => equal(c, answer))) {
                     continue;
                 }
-                list_add(choices, answer);
+                list_add(choices, {source,answer});
                 break;
             }
         }
@@ -51,7 +51,8 @@ export function app_learn_code_quiz_inner(parent, source_get) {
         app_learn_code_code_part_titled_code(container, source);
         html_hr(container);
         app_learn_code_code_part_title(container, app_learn_code_code_part_title_output());
-        each_index(choices, (answer, index) => {
+        each_index(choices, (c, index) => {
+            let {answer} = answer
             let button = html_button_width_full_text_click(container, answer, function on_click() {
                 if (index === correct_index) {
                     app_learn_code_style_success(button);
@@ -74,7 +75,7 @@ export function app_learn_code_quiz_inner(parent, source_get) {
         if (!refreshed) {
             container_bottom_hide();
         }
-        html_p_text(container_bottom, 'your answer is correct');
+        html_p_text(container_bottom, 'your answer is correct ✅');
         html_p_text(container_bottom, 'if you want , take another quiz above');
         html_p_text(container_bottom, 'otherwise , press the "next" button below');
         function container_bottom_hide() {
