@@ -31,7 +31,7 @@ import {list_map} from "./list_map.mjs";
 import {list_join} from "./list_join.mjs";
 export function lesson_less_than() {
     const example_message = 'less than ( < )';
-    const description = 'outputting true or false';
+    const description = 'outputting whether or not a number is less than another number';
     return lesson_simple(source_get, example_before, description, example_message, []);
     function example_before(parent) {
         html_p_text(parent, 'some questions can be answered using a "yes" or a "no"');
