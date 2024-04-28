@@ -58,6 +58,8 @@ export function app_learn_code() {
     object_merge(html_style_button_default(), {
         'margin': '0.5vh',
         'background-color': 'lightblue',
+    });
+    object_merge(html_style_button_default(), {
         'border': 'solid 0.5vh dodgerblue'
     });
     let lesson_creates = [];
