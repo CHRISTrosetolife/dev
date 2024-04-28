@@ -33,6 +33,7 @@ import {list_join} from "./list_join.mjs";
 import {html_clear} from "./html_clear.mjs";
 import {add} from "./add.mjs";
 import {string_length} from "./string_length.mjs";
+import { html_div } from "./html_div.mjs";
 export function app_learn_code_unscramble(source_get) {
     return function app_learn_code_unscramble_inner(parent) {
         refresh();
@@ -51,6 +52,7 @@ export function app_learn_code_unscramble(source_get) {
             html_style(code, {
                 visibility: 'hidden'
             });
+            let success = html_div(parent)
             let tokens = list_adder(la => {
                 for (let token of js_tokenize(source)) {
                     la(token);
@@ -122,6 +124,7 @@ export function app_learn_code_unscramble(source_get) {
                     current_index++;
                     html_inner_set(code, string_take(source, add(source_index, string_length(current))));
                     if (equal(current_index, list_length(answer))) {
+                        html_p_text(success, 'your answer is correct')
                         refresh();
                     }
                 });
