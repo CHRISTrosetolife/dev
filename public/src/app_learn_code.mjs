@@ -109,6 +109,7 @@ export function app_learn_code() {
             }
             html_button_width_full_text_click(root, message, () => refresh_lesson_screen(add(index_first, index)));
         });
+        html_hr(root);
         button_home();
     }
     function refresh_lesson_screen(index) {
