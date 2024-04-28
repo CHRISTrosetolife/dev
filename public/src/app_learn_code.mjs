@@ -64,9 +64,8 @@ export function app_learn_code() {
         let lesson_screens = object_property_get(lesson, 'screens');
         list_add_multiple(lesson_screens, lesson_screens);
     }
-    let content = html_div(root);
     function refresh_main() {
-        html_clear(content);
+        html_clear(root);
         html_p_text(root, 'choose a lesson : ')
         for (let lesson of lessons) {
             let {description} = lesson;
@@ -76,8 +75,11 @@ export function app_learn_code() {
     refresh_main();
     let index = 0;
     let index_last = list_index_last(lesson_screens);
+    function refresh_lesson() {
+        html_clear(root);
+    }
     function refresh_lesson_screen() {
-        html_clear(content);
+        html_clear(root);
         window.scrollTo({
             top: 0
         });
@@ -90,13 +92,13 @@ export function app_learn_code() {
         if (equal(index, index_last)) {
             html_disable(button_next);
         }
-        lesson_screen(content);
-        html_hr(content)
-        let button_next = html_button_width_full_text_click(content, 'next', function on_click() {
+        lesson_screen(root);
+        html_hr(root)
+        let button_next = html_button_width_full_text_click(root, 'next', function on_click() {
             index++;
             refresh_lesson_screen();
         });
-        let button_previous = html_button_width_full_text_click(content, 'previous', function on_click() {
+        let button_previous = html_button_width_full_text_click(root, 'previous', function on_click() {
             index--;
             refresh_lesson_screen();
         });
