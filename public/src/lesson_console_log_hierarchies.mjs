@@ -1,5 +1,5 @@
 import {app_learn_code_style_success} from "./app_learn_code_style_success.mjs";
-import {html_style_button_default_border_color} from "./html_style_button_default_border_color.mjs";
+import {html_style_button_default_border} from "./html_style_button_default_border.mjs";
 import {html_style_centered} from "./html_style_centered.mjs";
 import {html_merge} from "./html_merge.mjs";
 import {html_style_bold} from "./html_style_bold.mjs";
@@ -59,7 +59,7 @@ export async function lesson_console_log_hierarchies(parent) {
         let td = html_element(parent, 'td');
         html_style_centered(td);
         html_inner_set(td, text);
-        html_style(td, html_style_button_default_border_color());
+        html_style(td, html_style_button_default_border());
         app_learn_code_style_success(td);
         return td;
     }

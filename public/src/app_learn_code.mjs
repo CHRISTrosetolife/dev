@@ -1,4 +1,4 @@
-import {html_style_button_default_border_color} from "./html_style_button_default_border_color.mjs";
+import {html_style_button_default_border} from "./html_style_button_default_border.mjs";
 import {multiply} from "./multiply.mjs";
 import {subtract_1} from "./subtract_1.mjs";
 import {add_1} from "./add_1.mjs";
@@ -60,7 +60,7 @@ export function app_learn_code() {
         'margin': '0.5vh',
         'background-color': 'lightblue'
     });
-    object_merge(html_style_button_default(), html_style_button_default_border_color('dodgerblue'));
+    object_merge(html_style_button_default(), html_style_button_default_border());
     let lesson_creates = [];
     list_add(lesson_creates, lesson_console_log);
     list_add(lesson_creates, lesson_log_number);
