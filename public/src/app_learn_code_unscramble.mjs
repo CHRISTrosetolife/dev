@@ -36,6 +36,7 @@ import {add} from "./add.mjs";
 import {string_length} from "./string_length.mjs";
 import {html_div} from "./html_div.mjs";
 import {html_button_width_full_text_click} from "./html_button_width_full_text_click.mjs";
+import { html_style_centered } from "./html_style_centered.mjs";
 export function app_learn_code_unscramble(source_get) {
     return function app_learn_code_unscramble_inner(parent) {
         let div = html_div(parent)
@@ -97,8 +98,8 @@ export function app_learn_code_unscramble(source_get) {
                     display: 'inline-block',
                     cursor: 'pointer',
                     'min-width': html_style_units(15),
-                    'text-align': 'center'
                 });
+                html_style_centered(part);
                 html_on_click(part, () => {
                     let current = list_get(answer, current_index);
                     let e = equal(s, current);
