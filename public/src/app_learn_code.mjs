@@ -44,6 +44,7 @@ import {add} from "./add.mjs";
 import {html_spacer_vertical} from "./html_spacer_vertical.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
+import { lesson_statements_three } from "./lesson_statements_three.mjs";
 export function app_learn_code() {
     let root = html_document_body();
     html_style(root, {
@@ -67,6 +68,7 @@ export function app_learn_code() {
     list_add(lesson_creates, lesson_multiply);
     list_add(lesson_creates, lesson_divide);
     list_add(lesson_creates, lesson_statements_two);
+    list_add(lesson_creates, lesson_statements_three);
     let lesson_screens = [];
     let lessons = [];
     for (let lesson_create of lesson_creates) {
