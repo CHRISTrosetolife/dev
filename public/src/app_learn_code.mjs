@@ -75,7 +75,7 @@ export function app_learn_code() {
     refresh_main();
     let index = 0;
     let index_last = list_index_last(lesson_screens);
-    function refresh_lesson() {
+    function refresh_lesson(lesson) {
         html_clear(root);
     }
     function refresh_lesson_screen() {
