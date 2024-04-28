@@ -69,7 +69,6 @@ export function app_learn_code_quiz_inner(parent, source_get) {
                 }
             });
             html_style_monospace(button);
-            html_spacer_vertical(container);
         });
         let container_bottom = html_div(parent);
         if (!refreshed) {
