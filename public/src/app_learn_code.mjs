@@ -125,10 +125,6 @@ export function app_learn_code() {
         });
     }
     function refresh_lesson_screen(index) {
-        console.log({
-            index,
-            lesson_screens
-        });
         html_clear(root);
         window.scrollTo({
             top: 0
