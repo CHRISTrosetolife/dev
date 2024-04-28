@@ -1,3 +1,4 @@
+import {app_learn_code_style_success} from "./app_learn_code_style_success.mjs";
 import {equal} from "./equal.mjs";
 import {list_any} from "./list_any.mjs";
 import {app_learn_code_eval_to_string} from "./app_learn_code_eval_to_string.mjs";
@@ -53,9 +54,7 @@ export function app_learn_code_quiz_inner(parent, source_get) {
         each_index(choices, (answer, index) => {
             let button = html_button_width_full_text_click(container, answer, function on_click() {
                 if (index === correct_index) {
-                    html_style(button, {
-                        'background-color': 'lightgreen'
-                    });
+                    app_learn_code_style_success(button);
                     setTimeout(() => {
                         refresh(true);
                         container_bottom_show();
