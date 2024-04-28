@@ -120,7 +120,7 @@ export function app_learn_code() {
             if (equal(index, 0)) {
                 let begin_lesson = html_span_text(button, `begin the lesson`)
                 html_style_bold(begin_lesson)
-                html_span_text(button, `( ${message} )`)
+                html_span_text(button, ` ( ${message} )`)
             } else {
                 html_span_text(button, message)
             }
