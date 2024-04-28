@@ -40,14 +40,15 @@ import {list_take} from "./list_take.mjs";
 import {list_sum} from "./list_sum.mjs";
 import {each_index} from "./each_index.mjs";
 import {add} from "./add.mjs";
-import { html_spacer_vertical } from "./html_spacer_vertical.mjs";
+import {html_spacer_vertical} from "./html_spacer_vertical.mjs";
 export function app_learn_code() {
     let root = html_document_body();
     html_style(root, {
         'font-family': 'sans-serif'
     });
+    let default_font_size = 3;
     object_merge(html_style_default(), {
-        'font-size': string_combine('3', 'vh')
+        'font-size': string_combine(default_font_size.toString(), 'vh')
     });
     object_merge(html_style_button_default(), app_learn_code_style_rounded_padded_style());
     object_merge(html_style_button_default(), {
@@ -81,7 +82,10 @@ export function app_learn_code() {
             top: 0
         });
         html_p_text(root, 'if you want to start from beginning , choose "begin" : ');
-        html_button_width_full_text_click(root, 'begin', () => refresh_lesson_screen(0));
+        let begin = html_button_width_full_text_click(root, 'begin', () => refresh_lesson_screen(0));
+        html_style(begin, {
+            'font-size': string_combine(multiply(default_font_size, 1.5).toString(), 'vh')
+        });
         html_p_text(root, 'or choose a lesson below :');
         for (let lesson of lessons) {
             let {description} = lesson;
@@ -109,7 +113,7 @@ export function app_learn_code() {
         each_index(screens, (screen, index) => {
             let message = string_combine('screen ', add_1(index));
             if (equal(index, 0)) {
-                message = `begin the lesson ( ${message} )`
+                message = `begin the lesson ( ${message} )`;
             }
             html_button_width_full_text_click(root, message, () => refresh_lesson_screen(add(index_first, index)));
         });
@@ -138,8 +142,8 @@ export function app_learn_code() {
         if (equal(index, index_last)) {
             html_disable(button_next);
         }
-        html_spacer_vertical(root)
-        html_spacer_vertical(root)
+        html_spacer_vertical(root);
+        html_spacer_vertical(root);
         button_home();
     }
     function button_home() {
