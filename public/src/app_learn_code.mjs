@@ -1,4 +1,3 @@
-import {app_learn_code_style_rounded_padded} from "./app_learn_code_style_rounded_padded.mjs";
 import {html_style_button_default} from "./html_style_button_default.mjs";
 import {lesson_statements_two} from "./lesson_statements_two.mjs";
 import {lesson_multiply} from "./lesson_multiply.mjs";
@@ -37,9 +36,7 @@ export function app_learn_code() {
     object_merge(html_style_default(), {
         'font-size': '3vh'
     });
-    html_style_button_default(d => {
-        app_learn_code_style_rounded_padded(d);
-    });
+    object_merge(html_style_button_default(), {});
     let lesson_creates = [];
     list_add(lesson_creates, lesson_console_log);
     list_add(lesson_creates, lesson_log_number);
