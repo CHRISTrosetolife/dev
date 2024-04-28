@@ -44,8 +44,6 @@ export function app_learn_code_unscramble(source_get) {
             let messages = app_learn_code_eval(source);
             let joined = app_learn_code_eval_messages_to_string(messages);
             html_p_text(parent, 'below is another quiz');
-            html_p_text(parent, 'you can take as many quizzes as you want');
-            html_p_text(parent, 'when you are done , feel free to press the "next" button below');
             html_p_text(parent, 'write a program that outputs the following :');
             app_learn_code_code_part_titled_output(parent, joined);
             html_p_text(parent, 'tap or click each part of the program in the correct order');
@@ -126,6 +124,7 @@ export function app_learn_code_unscramble(source_get) {
                     if (equal(current_index, list_length(answer))) {
                         html_p_text(success, 'your answer is correct')
                         html_p_text(success, 'if you want to take another quiz , press the "another quiz" button below : ')
+                        html_p_text(success, 'otherwise , press the "next" button below')
                         html_button_width_full_text_click(success, 'another quiz', refresh);
                     }
                 });
