@@ -25,6 +25,7 @@ export function lesson_console_log_strings(parent) {
     app_learn_code_code_part_contrast(parent, '\'strings can have spaces\'');
     html_spacer_vertical(parent);
     app_learn_code_code_part_contrast(parent, '\'strings can have numbers like 123\'');
+    html_spacer_vertical(parent);
     app_learn_code_code_part_contrast(parent, '\'456\'');
     html_spacer_vertical(parent);
     app_learn_code_code_part_contrast(parent, '\'strings can have symbols : !@#$%^&*...\'');
