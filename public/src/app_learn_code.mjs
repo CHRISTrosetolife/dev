@@ -29,6 +29,7 @@ import {object_merge} from "./object_merge.mjs";
 import {list_add} from "./list_add.mjs";
 import {lesson_divide} from "./lesson_divide.mjs";
 import { app_learn_code_style_rounded_padded_style } from "./app_learn_code_style_rounded_padded_style.mjs";
+import { html_hr } from "./html_hr.mjs";
 export function app_learn_code() {
     let root = html_document_body();
     html_style(root, {
@@ -41,7 +42,7 @@ export function app_learn_code() {
     object_merge(html_style_button_default(),     {
         'margin': '0.5vh',
         'background-color': 'lightblue',
-        'border' : 0
+        'border' : 'solid 0.5vh dodgerblue'
     });
 
     let lesson_creates = [];
@@ -63,6 +64,7 @@ export function app_learn_code() {
     let {hash} = window.location;
     hash = string_prefix_without(hash, '#');
     let index = parseInt(hash, 10) || 0;
+    html_hr(root)
     let button_next = html_button_width_full_text_click(root, 'next', function on_click() {
         index++;
         refresh();
