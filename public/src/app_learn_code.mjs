@@ -79,8 +79,9 @@ export function app_learn_code() {
         window.scrollTo({
             top: 0
         });
-        html_p_text(root, 'choose a lesson below');
-        html_p_text(root, 'if you do not know what lesson to choose , then choose the first lesson');
+        html_p_text(root, 'if you want to start from beginning , choose "begin"');
+        html_button_width_full_text_click(root, description, () => refresh_lesson_screen(0));
+        html_p_text(root, 'or choose a lesson below');
         for (let lesson of lessons) {
             let {description} = lesson;
             html_button_width_full_text_click(root, description, () => refresh_lesson(lesson));
