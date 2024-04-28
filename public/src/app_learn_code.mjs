@@ -93,6 +93,8 @@ export function app_learn_code() {
         window.scrollTo({
             top: 0
         });
+        button_home();
+        html_hr(root);
         let lesson_index = list_index(lessons, lesson);
         let previous = list_take(lessons, lesson_index);
         let index_first = list_sum(s => {
@@ -109,8 +111,6 @@ export function app_learn_code() {
             }
             html_button_width_full_text_click(root, message, () => refresh_lesson_screen(add(index_first, index)));
         });
-        html_hr(root);
-        button_home();
     }
     function refresh_lesson_screen(index) {
         console.log({
