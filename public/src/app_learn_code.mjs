@@ -97,7 +97,8 @@ export function app_learn_code() {
         });
         let {screens} = lesson;
         each_index(screens, (screen, index) => {
-            html_button_width_full_text_click(root, string_combine('screen ', add_1(index)), () => refresh_lesson_screen(add(index_first, index)));
+            const message = string_combine('screen ', add_1(index));
+            html_button_width_full_text_click(root, message, () => refresh_lesson_screen(add(index_first, index)));
         });
     }
     function refresh_lesson_screen(index) {
