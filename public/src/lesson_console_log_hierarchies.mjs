@@ -22,14 +22,21 @@ export async function lesson_console_log_hierarchies(parent) {
     let t = html_element(parent, 'table');
     html_style_width_full(t);
     let tr1 = html_element(t, 'tr');
+    let tr2 = html_element(t, 'tr');
+    let tr3 = html_element(t, 'tr');
     let td_phrase = html_element(tr1, 'td');
     let phrase = 'JESUS is LORD';
     html_inner_set(td_phrase, phrase)
-    let tr2 = html_element(t, 'tr');
     let words = string_split_space(phrase)
     for (let word of words) {
         let td_word = html_element(tr2, 'td');
         html_inner_set(td_word, word)
+    }
+    for (let word of words) {
+        for (let c of word) {
+            let td_letter = html_element(tr3, 'td');
+            html_inner_set(td_letter, c)
+        }
     }
 
 }
