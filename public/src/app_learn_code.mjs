@@ -126,10 +126,10 @@ export function app_learn_code() {
         let lesson_screen = list_get(lesson_screens, index);
         lesson_screen(root);
         html_hr(root);
-        let button_next = html_button_width_full_text_click(root, 'next', function on_click() {
+        let button_next = html_button_width_full_text_click(root, '➡️ next', function on_click() {
             refresh_lesson_screen(add_1(index));
         });
-        let button_previous = html_button_width_full_text_click(root, 'previous', function on_click() {
+        let button_previous = html_button_width_full_text_click(root, '⬅️ previous', function on_click() {
             refresh_lesson_screen(subtract_1(index));
         });
         if (equal(index, 0)) {
