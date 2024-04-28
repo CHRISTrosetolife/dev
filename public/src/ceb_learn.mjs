@@ -1,3 +1,4 @@
+import {html_style_centered} from "./html_style_centered.mjs";
 import {html_button_width_full_text} from "./html_button_width_full_text.mjs";
 import {html_button_width_full} from "./html_button_width_full.mjs";
 import {html_button} from "./html_button.mjs";
@@ -27,9 +28,7 @@ export function ceb_learn() {
     html_style(button1, {
         'font-weight': 'bold'
     });
-    html_style(button1, {
-        'text-align': 'center'
-    });
+    html_style_centered(button1);
     html_style_width_full(button1);
     let button2 = html_element(root, 'div');
     html_style(button2, {
@@ -38,9 +37,7 @@ export function ceb_learn() {
     html_style(button2, {
         'font-weight': 'bold'
     });
-    html_style(button2, {
-        'text-align': 'center'
-    });
+    html_style_centered(button2);
     html_style_width_full(button2);
     const button_text = 'previous';
     let button_previous = html_button_width_full_text(root, button_text);
@@ -57,9 +54,7 @@ export function ceb_learn() {
     html_style(input, {
         'font-size': button_font_size
     });
-    html_style(input, {
-        'text-align': 'center'
-    });
+    html_style_centered(input);
     html_style_width_full(input);
     let translations = ceb_translations();
     let keys = object_properties(translations);
