@@ -56,13 +56,13 @@ export function app_learn_code() {
     list_add(lesson_creates, lesson_multiply);
     list_add(lesson_creates, lesson_divide);
     list_add(lesson_creates, lesson_statements_two);
-    let screens = [];
+    let lesson_screens = [];
     let lessons = [];
     for (let lesson_create of lesson_creates) {
         let lesson = lesson_create();
         list_add(lessons, lesson);
         let lesson_screens = object_property_get(lesson, 'screens');
-        list_add_multiple(lesson_screens, screens);
+        list_add_multiple(lesson_screens, lesson_screens);
     }
     html_p_text(root, 'choose a lesson : ')
     for (let lesson of lessons) {
@@ -70,7 +70,7 @@ export function app_learn_code() {
         html_button_width_full_text_click(root, description, noop)
     }
     return;
-    let index_last = list_index_last(screens);
+    let index_last = list_index_last(lesson_screens);
     let content = html_div(root);
     let {hash} = window.location;
     hash = string_prefix_without(hash, '#');
@@ -89,7 +89,7 @@ export function app_learn_code() {
         window.scrollTo({
             top: 0
         });
-        let screen = list_get(screens, index);
+        let screen = list_get(lesson_screens, index);
         html_clear(content);
         html_enable(button_previous);
         html_enable(button_next);
