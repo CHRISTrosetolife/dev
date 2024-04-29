@@ -1,3 +1,4 @@
+import {square} from "./square.mjs";
 import {html_style_button_default_border} from "./html_style_button_default_border.mjs";
 import {multiply} from "./multiply.mjs";
 import {subtract_1} from "./subtract_1.mjs";
@@ -46,8 +47,8 @@ import {html_spacer_vertical} from "./html_spacer_vertical.mjs";
 import {html_span_text} from "./html_span_text.mjs";
 import {html_style_bold} from "./html_style_bold.mjs";
 import {lesson_statements_three} from "./lesson_statements_three.mjs";
-import { lesson_less_than } from "./lesson_less_than.mjs";
-import { range } from "./range.mjs";
+import {lesson_less_than} from "./lesson_less_than.mjs";
+import {range} from "./range.mjs";
 export function app_learn_code() {
     let root = html_document_body();
     html_style(root, {
@@ -83,15 +84,15 @@ export function app_learn_code() {
     }
     function refresh_settings() {
         html_clear(root);
-        let base = 16
+        let base = 16;
         let max_rgb = square(base);
-        let max = 10
+        let max = 10;
         for (let i of range(max)) {
-            let percent = i/max;
+            let percent = divide(i, max);
         }
         html_button_width_full_text_click(root, '', () => html_style(root, {
-            'background-color': 
-        }))
+            'background-color': ''
+        }));
     }
     function refresh_main() {
         html_clear(root);
@@ -171,7 +172,3 @@ export function app_learn_code() {
         });
     }
 }
-function square(base) {
-    return multiply(base, base);
-}
-
