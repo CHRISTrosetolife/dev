@@ -1,3 +1,4 @@
+import {round} from "./round.mjs";
 import {number_string_to} from "./number_string_to.mjs";
 import {divide} from "./divide.mjs";
 import {square} from "./square.mjs";
@@ -92,8 +93,11 @@ export function app_learn_code() {
         for (let i of range(max)) {
             let percent = divide(i, max);
             let product = multiply(percent, max_rgb);
+            let rounded = round(product);
             let rgb_part = number_string_to(product, base);
-            console.log({rgb_part})
+            console.log({
+                rgb_part
+            });
         }
         html_button_width_full_text_click(root, '', () => html_style(root, {
             'background-color': ''
