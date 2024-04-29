@@ -34,7 +34,7 @@ import {html_ul} from "./html_ul.mjs";
 import {html_li_text} from "./html_li_text.mjs";
 export function lesson_greater_than() {
     const description = 'greater than ( > )';
-    const example_message = 'outputting whether or not a number is less than another number';
+    const example_message = 'outputting whether or not a number is greater than another number';
     return lesson_simple(source_get, example_before, description, example_message, [screen_before1, screen_before2, screen_before3]);
     function screen_before1(parent) {
         html_p_text(parent, 'if "a" and "b" are numbers , then either "a" is less than "b" or "a" is not less than "b"');
