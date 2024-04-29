@@ -107,6 +107,7 @@ export function app_learn_code() {
     list_add(lesson_creates, lesson_greater_than);
     list_add(lesson_creates, lesson_less_than_equal);
     list_add(lesson_creates, lesson_greater_than_equal);
+    list_add(lesson_creates, lesson_equal);
     list_add(lesson_creates, lesson_statements_two);
     list_add(lesson_creates, lesson_statements_three);
     let lesson_screens = [];
