@@ -50,7 +50,6 @@ export function lesson_less_than() {
             ['1', ' , ', '2', ' and ', '3', ' are numbers']);
         html_style_alternate(parent, html_p, [noop, html_style_monospace], 
             ['\'JESUS\'', ' , ', '\'is\'', ' and ', '\'LORD\'', ' are strings']);
-        html_p_text(parent, 'true and false are boolean');
         html_style_alternate(parent, html_p, [noop, html_style_bold], 
             [ 'true and false are ','boolean']);
     }
