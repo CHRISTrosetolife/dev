@@ -33,10 +33,10 @@ import {integer_random} from "./integer_random.mjs";
 import {equal} from "./equal.mjs";
 import {html_ul} from "./html_ul.mjs";
 import {html_li_text} from "./html_li_text.mjs";
-import { lesson_log_number_quiz_value } from "./lesson_log_number_quiz_value.mjs";
-import { lesson_console_log_quiz_value } from "./lesson_console_log_quiz_value.mjs";
-export function lesson_equal() {
-    const description = 'equal ( === )';
+import {lesson_log_number_quiz_value} from "./lesson_log_number_quiz_value.mjs";
+import {lesson_console_log_quiz_value} from "./lesson_console_log_quiz_value.mjs";
+export function lesson_equal_string() {
+    const description = 'equal ( === ) ( strings )';
     const example_message = 'outputting whether or not two numbers or strings are equal';
     return lesson_simple(source_get, example_before, description, example_message, [screen_before1, screen_before2]);
     function source_get() {
@@ -74,9 +74,7 @@ export function lesson_equal() {
         html_li_text(ul, '2 = 1 is false');
     }
     function example_before(parent) {
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], 
-        ['in javascript to check if two numbers are equal or not , instead of using one equal sign ( ', '=', ' ) use three equal signs ( ', '===', ' )']);
-        html_style_alternate(parent, html_p, [html_style_monospace, noop], 
-            ['===', ' also checks if two strings are the same or not']);
-        }
+        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['in javascript to check if two numbers are equal or not , instead of using one equal sign ( ', '=', ' ) use three equal signs ( ', '===', ' )']);
+        html_style_alternate(parent, html_p, [html_style_monospace, noop], ['===', ' also checks if two strings are the same or not']);
+    }
 }
