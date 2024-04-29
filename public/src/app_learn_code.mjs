@@ -1,3 +1,5 @@
+import {html_scroll_top} from "./html_scroll_top.mjs";
+import {string_multiply} from "./string_multiply.mjs";
 import {each_reverse} from "./each_reverse.mjs";
 import {round} from "./round.mjs";
 import {number_string_to} from "./number_string_to.mjs";
@@ -99,7 +101,7 @@ export function app_learn_code() {
             let rgb_part = number_string_to(rounded, base);
             let parts = 3;
             let rgb = string_multiply(rgb_part, parts);
-            let color = string_combine('#', rgb)
+            let color = string_combine('#', rgb);
             console.log({
                 percent,
                 rgb_part
@@ -107,14 +109,11 @@ export function app_learn_code() {
             let change = html_button_width_full_text_click(root, string_combine('color : ', color), () => html_style(root, {
                 'background-color': color
             }));
-
         });
     }
     function refresh_main() {
         html_clear(root);
-        window.scrollTo({
-            top: 0
-        });
+        html_scroll_top();
         let settings = html_button_width_full_text_click(root, '⚙️ settings', refresh_settings);
         html_p_text(root, 'if you want to start from beginning , choose "begin" : ');
         let begin = html_button_width_full_text_click(root, '🚀 begin', async () => await refresh_lesson_screen(0));
@@ -161,7 +160,6 @@ export function app_learn_code() {
         button_home();
         html_hr(root);
     }
-
     async function refresh_lesson_screen(index) {
         html_clear(root);
         window.scrollTo({
@@ -192,11 +190,3 @@ export function app_learn_code() {
         });
     }
 }
-function string_multiply(input, count) {
-    let s = input;
-    for (let j of range(subtract_1(count))) {
-        s = string_combine(s, input);
-    }
-    return s
-}
-
