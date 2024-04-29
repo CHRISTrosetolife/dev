@@ -56,11 +56,6 @@ export function lesson_less_than() {
             [ 'true and false are ','boolean']);
     }
     function example_before(parent) {
-
-        html_p_text(parent, 'for example if someone asked "is the number two bigger than the number one ?" then the answer is "yes"');
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], 
-        ['in javascript the code for "yes" is ', 'true']);
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['in javascript the code for "no" is ', 'false']);
     }
     function source_get() {
         let a = integer_random_digit_single_positive();
