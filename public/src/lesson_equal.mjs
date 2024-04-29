@@ -45,6 +45,7 @@ export function lesson_equal() {
             get = lesson_log_number_quiz;
         }
         let a = get();
+        let b;
         if (random_50_50()) {
             b = a;
         } else {
