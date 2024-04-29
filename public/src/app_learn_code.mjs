@@ -90,7 +90,7 @@ export function app_learn_code() {
         let base = 16;
         let max_rgb = square(base) - 1;
         let max = 10;
-        for (let i of range(max)) {
+        for (let i of range(add_1(max))) {
             let percent = divide(i, max);
             let product = multiply(percent, max_rgb);
             let rounded = round(product);
