@@ -83,7 +83,7 @@ export function app_learn_code() {
     function refresh_settings() {
         html_clear(root);
         html_button_width_full_text_click(root, '', () => html_style(root, {
-            
+            'background-color': 
         }))
     }
     function refresh_main() {
