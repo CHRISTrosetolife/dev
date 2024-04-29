@@ -62,6 +62,7 @@ import {string_length} from "./string_length.mjs";
 import {string_split} from "./string_split.mjs";
 import { assert } from "./assert.mjs";
 export function app_learn_code() {
+    let root = html_document_body();
     let hash = window.location.hash;
     if (greater_than(string_length(hash), 0)) {
         let hash_no_tag = string_prefix_without(hash, '#');
@@ -79,7 +80,6 @@ export function app_learn_code() {
             }
         }
     }
-    let root = html_document_body();
     html_style(root, {
         'font-family': 'sans-serif'
     });
