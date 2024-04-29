@@ -110,10 +110,11 @@ export function app_learn_code() {
                 font_color = 'black';
             }
             let change = html_button_width_full_text_click(root, string_combine('color : ', color), () => html_style(root, {
-                'background-color': color
+                'color': font_color,
+                'background-color': color,
             }));
             html_style(change, {
-                'color': html_style_button_default_border_color(),
+                'color': font_color,
                 'background-color': color
             });
         });
