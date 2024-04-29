@@ -96,6 +96,7 @@ export function app_learn_code() {
             let rounded = round(product);
             let rgb_part = number_string_to(rounded, base);
             console.log({
+                percent,
                 rgb_part
             });
         }
