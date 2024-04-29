@@ -1,4 +1,3 @@
-import {equal_by} from "./equal_by.mjs";
 import {greater_than} from "./greater_than.mjs";
 import {string_combine_multiple} from "./string_combine_multiple.mjs";
 import {html_style_button_default_border_color} from "./html_style_button_default_border_color.mjs";
@@ -61,15 +60,16 @@ import {lesson_less_than} from "./lesson_less_than.mjs";
 import {range} from "./range.mjs";
 import {string_length} from "./string_length.mjs";
 import {string_split} from "./string_split.mjs";
-import {assert} from "./assert.mjs";
+import { assert } from "./assert.mjs";
 export function app_learn_code() {
     let hash = window.location.hash;
     if (greater_than(string_length(hash), 0)) {
         let hash_no_tag = string_prefix_without(hash, '#');
         let split = string_split(hash_no_tag, ',');
         for (let s of split) {
-            let split2 = string_split(s, '=');
-            assert(equal_by, []);
+            let split2 = string_split(s, '=')
+            let s2_length = list_length(split2)
+            assert(equal, [s2_length, 2])
         }
     }
     let root = html_document_body();
