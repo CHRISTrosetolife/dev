@@ -35,17 +35,22 @@ import {html_ul} from "./html_ul.mjs";
 import {html_li_text} from "./html_li_text.mjs";
 export function lesson_equal() {
     const description = 'equal ( === )';
-    const example_message = 'outputting whether or not a number is equal to another number';
+    const example_message = 'outputting whether or not two numbers or strings are equal';
     return lesson_simple(source_get, example_before, description, example_message, [screen_before1, screen_before2]);
     function source_get() {
-        let a = integer_random_digit_single_positive();
-        let b;
-        if (equal(integer_random(1, 3), 1)) {
+        let get;
+        if (random_50_50()) {
+            get = integer_random_digit_single_positive;
+        } else {
+            get = lesson_log_number_quiz;
+        }
+        let a = get();
+        if (random_50_50()) {
             b = a;
         } else {
-            b = integer_random_digit_single_positive();
+            b = get();
         }
-        return `console.log(${a} ${sign} ${b});`;
+        return `console.log(${a} === ${b});`;
     }
     function screen_before1(parent) {
         html_p_text(parent, 'if "a" and "b" are numbers and a and b are the same number , then we can write : a = b');
