@@ -96,11 +96,11 @@ export function app_learn_code() {
         button_home_hr();
         let base = 16;
         let max_rgb = square(base) - 1;
-        let max = 19;
+        let max = 20;
         let index = 0;
-        each_reverse(range(add_1(max)), i => {
+        each_reverse(range(max), i => {
             index++;
-            let percent = divide(i, max);
+            let percent = divide(i, subtract_1(max));
             let product = multiply(percent, max_rgb);
             let rounded = round(product);
             let rgb_part = number_string_to(rounded, base);
