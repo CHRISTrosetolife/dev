@@ -58,8 +58,10 @@ import {lesson_statements_three} from "./lesson_statements_three.mjs";
 import {lesson_less_than} from "./lesson_less_than.mjs";
 import {range} from "./range.mjs";
 import {string_length} from "./string_length.mjs";
+import { string_split } from "./string_split.mjs";
 export function app_learn_code() {
     let hash = window.location.hash;
+    let split = string_split(hash, '+')
     let root = html_document_body();
     html_style(root, {
         'font-family': 'sans-serif'
