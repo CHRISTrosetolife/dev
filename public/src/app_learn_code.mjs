@@ -47,6 +47,7 @@ import {html_span_text} from "./html_span_text.mjs";
 import {html_style_bold} from "./html_style_bold.mjs";
 import {lesson_statements_three} from "./lesson_statements_three.mjs";
 import { lesson_less_than } from "./lesson_less_than.mjs";
+import { range } from "./range.mjs";
 export function app_learn_code() {
     let root = html_document_body();
     html_style(root, {
@@ -82,6 +83,11 @@ export function app_learn_code() {
     }
     function refresh_settings() {
         html_clear(root);
+        let base = 16
+        let max = 10
+        for (let i of range(max)) {
+
+        }
         html_button_width_full_text_click(root, '', () => html_style(root, {
             'background-color': 
         }))
