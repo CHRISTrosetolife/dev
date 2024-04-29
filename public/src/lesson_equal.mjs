@@ -43,7 +43,7 @@ export function lesson_equal() {
         let ul = html_ul(parent);
         html_li_text(ul, '1 = 1');
         html_li_text(ul, '7 = 7');
-        html_li_text(ul, '0 = 0');
+        html_li_text(ul, '10 = 10');
     }
     function screen_before2(parent) {
         html_p_text(parent, 'if "a" and "b" are numbers , and "a" and "b" are different then a = b is false');
