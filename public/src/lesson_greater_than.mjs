@@ -37,7 +37,7 @@ export function lesson_greater_than() {
     const example_message = 'outputting whether or not a number is greater than another number';
     return lesson_simple(source_get, example_before, description, example_message, [screen_before1, screen_before2, screen_before3]);
     function screen_before1(parent) {
-        html_p_text(parent, 'if "a" and "b" are numbers , then either "a" is less than "b" or "a" is not less than "b"');
+        html_p_text(parent, 'if "a" and "b" are numbers and "a" is less than "b" then "b" is greater than "a"');
         html_p_text(parent, 'we can write "a" is less than "b" as : a < b');
         html_p_text(parent, 'either a < b is true or a < b is false');
         html_p_text(parent, 'for example :');
