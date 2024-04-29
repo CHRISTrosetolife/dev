@@ -87,7 +87,7 @@ export function app_learn_code() {
         let max_rgb = square(base);
         let max = 10
         for (let i of range(max)) {
-
+            let percent = i/max;
         }
         html_button_width_full_text_click(root, '', () => html_style(root, {
             'background-color': 
