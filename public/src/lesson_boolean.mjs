@@ -1,4 +1,3 @@
-import {newline} from "./newline.mjs";
 import {integer_random_digit_single_positive} from "./integer_random_digit_single_positive.mjs";
 import {integer_random_digit_single} from "./integer_random_digit_single.mjs";
 import {lesson_simple} from "./lesson_simple.mjs";
