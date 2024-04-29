@@ -62,6 +62,7 @@ import {range} from "./range.mjs";
 import {string_length} from "./string_length.mjs";
 import {string_split} from "./string_split.mjs";
 import {assert} from "./assert.mjs";
+import { lesson_less_than_equal } from "./lesson_less_than_equal.mjs";
 export function app_learn_code() {
     let root = html_document_body();
     let hash = window.location.hash;
@@ -103,6 +104,7 @@ export function app_learn_code() {
     list_add(lesson_creates, lesson_divide);
     list_add(lesson_creates, lesson_less_than);
     list_add(lesson_creates, lesson_greater_than);
+    list_add(lesson_creates, lesson_less_than_equal);
     list_add(lesson_creates, lesson_statements_two);
     list_add(lesson_creates, lesson_statements_three);
     let lesson_screens = [];
