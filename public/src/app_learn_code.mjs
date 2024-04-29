@@ -103,8 +103,8 @@ export function app_learn_code() {
                 percent,
                 rgb_part
             });
-            html_button_width_full_text_click(root, string_combine('color : ', color), () => html_style(root, {
-                'background-color': ''
+            let change = html_button_width_full_text_click(root, string_combine('color : ', color), () => html_style(root, {
+                'background-color': color
             }));
         });
     }
