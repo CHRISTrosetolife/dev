@@ -1,3 +1,4 @@
+import {lesson_comparisons_source_get_get} from "./lesson_comparisons_source_get_get.mjs";
 import {integer_random_digit_single_positive} from "./integer_random_digit_single_positive.mjs";
 import {integer_random_digit_single} from "./integer_random_digit_single.mjs";
 import {lesson_simple} from "./lesson_simple.mjs";
