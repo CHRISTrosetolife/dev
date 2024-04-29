@@ -34,11 +34,14 @@ export function lesson_less_than() {
     const description = 'outputting whether or not a number is less than another number';
     return lesson_simple(source_get, example_before, description, example_message, []);
     function example_before(parent) {
-        html_p_text(parent, 'if "a" and "b" are numbers , then either "a" is less than "b" or it is not true that "a" is less than "b"');
+        html_p_text(parent, 'if "a" and "b" are numbers , then either "a" is less than "b" or "a" is not less than "b"');
         html_p_text(parent, 'we can write "a" is less than "b" as : a < b');
         html_p_text(parent, 'either a < b is true or a < b is false');
         html_p_text(parent, 'in javascript it is possible to check if a number is less than another number or not');
         html_p_text(parent, 'just as javascript has strings and numbers , javascript also has true and false');
+        html_p_text(parent, '1 2 and 3 are numbers');
+        html_p_text(parent, '\'JESUS\' \'is\' \'LORD\' are strings');
+        html_p_text(parent, 'true and false are boolean');
 
 
         html_p_text(parent, 'for example if someone asked "is the number two bigger than the number one ?" then the answer is "yes"');
