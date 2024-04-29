@@ -1,3 +1,4 @@
+import {number_string_to} from "./number_string_to.mjs";
 import {divide} from "./divide.mjs";
 import {square} from "./square.mjs";
 import {html_style_button_default_border} from "./html_style_button_default_border.mjs";
@@ -91,7 +92,7 @@ export function app_learn_code() {
         for (let i of range(max)) {
             let percent = divide(i, max);
             let product = multiply(percent, max_rgb);
-            let rgb_part = product.toString(base)
+            let rgb_part = number_string_to(product, base);
         }
         html_button_width_full_text_click(root, '', () => html_style(root, {
             'background-color': ''
