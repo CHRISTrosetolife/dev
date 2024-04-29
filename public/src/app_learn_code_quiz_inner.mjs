@@ -28,6 +28,7 @@ import {html_p_text} from "./html_p_text.mjs";
 import {html_clear} from "./html_clear.mjs";
 import {html_div} from "./html_div.mjs";
 import { list_sort } from "./list_sort.mjs";
+import { list_sort_string } from "./list_sort_string.mjs";
 export function app_learn_code_quiz_inner(parent, source_get) {
     let div = html_div(parent)
     refresh(false);
@@ -53,8 +54,7 @@ export function app_learn_code_quiz_inner(parent, source_get) {
                 break;
             }
         }
-        list_sort(choices, c => c.answer)
-        console.log({choices})
+        list_sort_string(choices, c => c.answer)
         let correct_index = list_random_index(choices);
         let {source} = list_get(choices, correct_index);
         app_learn_code_code_part_titled_code(container, source);
