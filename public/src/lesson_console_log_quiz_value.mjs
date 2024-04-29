@@ -15,5 +15,6 @@ export function lesson_console_log_quiz_value() {
     let end = add(index, word_count);
     let sliced = list_slice(words, index, end);
     let message = list_join(sliced, ' ');
-    return message;
+    let value = string_delimit(message)
+    return value;
 }
