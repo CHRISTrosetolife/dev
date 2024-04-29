@@ -44,7 +44,6 @@ export function lesson_less_than() {
             ['in javascript , to check if a number is less than another number or not , use the less than ( ', '<', ' ) sign']);
         html_style_alternate(parent, html_p, [noop, html_style_monospace], 
             ['just as javascript has strings and numbers , javascript also has ', 'true', ' and ', 'false']);
-        html_p_text(parent, '1 2 and 3 are numbers');
         html_style_alternate(parent, html_p, [noop, html_style_monospace], 
             ['1', ' , ', '2', ' and ', '3', ' are numbers']);
         html_style_alternate(parent, html_p, [noop, html_style_monospace], 
