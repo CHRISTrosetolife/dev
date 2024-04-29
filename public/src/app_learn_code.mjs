@@ -114,7 +114,7 @@ export function app_learn_code() {
     function refresh_main() {
         html_clear(root);
         html_scroll_top();
-        let settings = html_button_width_full_text_click(root, '⚙️ settings', refresh_settings);
+        html_button_width_full_text_click(root, '⚙️ settings', refresh_settings);
         html_p_text(root, 'if you want to start from beginning , choose "begin" : ');
         let begin = html_button_width_full_text_click(root, '🚀 begin', async () => await refresh_lesson_screen(0));
         html_style(begin, {
