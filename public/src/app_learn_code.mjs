@@ -114,7 +114,7 @@ export function app_learn_code() {
             } else {
                 font_color = 'white';
             }
-            let change = html_button_width_full_text_click(root, string_combine('color : ', color), () => html_style(root, {
+            let change = html_button_width_full_text_click(root, string_combine('background color : ', color), () => html_style(root, {
                 'color': font_color,
                 'background-color': color,
             }));
