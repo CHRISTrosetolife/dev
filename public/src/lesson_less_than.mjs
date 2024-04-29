@@ -41,8 +41,6 @@ export function lesson_less_than() {
         html_p_text(parent, 'we can write "a" is less than "b" as : a < b');
         html_p_text(parent, 'either a < b is true or a < b is false');
         html_p_text(parent, 'in javascript it is possible to check if a number is less than another number or not');
-        html_p_text(parent, 
-            'just as javascript has strings and numbers , javascript also has true and false');
         html_style_alternate(parent, html_p, [noop, html_style_monospace], 
             ['just as javascript has strings and numbers , javascript also has ', 'true', ' and ', 'false']);
         html_p_text(parent, '1 2 and 3 are numbers');
