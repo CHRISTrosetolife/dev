@@ -88,6 +88,7 @@ export function app_learn_code() {
     }
     function refresh_settings() {
         html_clear(root);
+        button_home_hr();
         let base = 16;
         let max_rgb = square(base) - 1;
         let max = 10;
