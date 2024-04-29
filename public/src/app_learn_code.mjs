@@ -93,6 +93,7 @@ export function app_learn_code() {
             let percent = divide(i, max);
             let product = multiply(percent, max_rgb);
             let rgb_part = number_string_to(product, base);
+            console.log({rgb_part})
         }
         html_button_width_full_text_click(root, '', () => html_style(root, {
             'background-color': ''
