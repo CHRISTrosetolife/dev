@@ -89,7 +89,7 @@ export function app_learn_code() {
         list_add_multiple(lesson_screens, s);
     }
     function refresh_settings() {
-        html_clear(root);
+        clear_scroll();
         button_home_hr();
         let base = 16;
         let max_rgb = square(base) - 1;
@@ -112,8 +112,7 @@ export function app_learn_code() {
         });
     }
     function refresh_main() {
-        html_clear(root);
-        html_scroll_top();
+        clear_scroll();
         html_button_width_full_text_click(root, '⚙️ settings', refresh_settings);
         html_p_text(root, 'if you want to start from beginning , choose "begin" : ');
         let begin = html_button_width_full_text_click(root, '🚀 begin', async () => await refresh_lesson_screen(0));
@@ -129,9 +128,13 @@ export function app_learn_code() {
     }
     refresh_main();
     let index_last = list_index_last(lesson_screens);
-    function refresh_lesson(lesson) {
+    function clear_scroll() {
         html_clear(root);
         html_scroll_top();
+    }
+
+    function refresh_lesson(lesson) {
+        clear_scroll();
         button_home_hr();
         let lesson_index = list_index(lessons, lesson);
         let previous = list_take(lessons, lesson_index);
@@ -159,8 +162,7 @@ export function app_learn_code() {
         html_hr(root);
     }
     async function refresh_lesson_screen(index) {
-        html_clear(root);
-        html_scroll_top();
+        clear_scroll();
         let lesson_screen = list_get(lesson_screens, index);
         await lesson_screen(root);
         html_hr(root);
