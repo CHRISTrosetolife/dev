@@ -27,10 +27,10 @@ import {app_learn_code_code_container} from "./app_learn_code_code_container.mjs
 import {html_p_text} from "./html_p_text.mjs";
 import {html_clear} from "./html_clear.mjs";
 import {html_div} from "./html_div.mjs";
-import { list_sort } from "./list_sort.mjs";
-import { list_sort_string } from "./list_sort_string.mjs";
+import {list_sort} from "./list_sort.mjs";
+import {list_sort_string} from "./list_sort_string.mjs";
 export function app_learn_code_quiz_inner(parent, source_get) {
-    let div = html_div(parent)
+    let div = html_div(parent);
     refresh(false);
     function refresh(refreshed) {
         html_clear(div);
@@ -54,7 +54,7 @@ export function app_learn_code_quiz_inner(parent, source_get) {
                 break;
             }
         }
-        list_sort_string(choices, c => c.answer)
+        list_sort_string(choices, c => c.answer);
         let correct_index = list_random_index(choices);
         let {source} = list_get(choices, correct_index);
         app_learn_code_code_part_titled_code(container, source);
@@ -84,7 +84,8 @@ export function app_learn_code_quiz_inner(parent, source_get) {
         if (!refreshed) {
             container_bottom_hide();
         }
-        html_p_text(container_bottom, 'your answer is correct ✅');
+        let p = html_p_text(container_bottom, 'your answer is correct ✅');
+        app_learn_code_style_success(p);
         html_p_text(container_bottom, 'if you want , take another quiz above');
         html_p_text(container_bottom, 'otherwise , press the "next" button below');
         function container_bottom_hide() {
