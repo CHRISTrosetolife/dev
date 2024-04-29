@@ -25,13 +25,16 @@ import {html_p_text} from "./html_p_text.mjs";
 import {noop} from "./noop.mjs";
 import {html_style_bold} from "./html_style_bold.mjs";
 import {html_style_monospace} from "./html_style_monospace.mjs";
+import {multiply} from "./multiply.mjs";
+import {integer_random} from "./integer_random.mjs";
 export function lesson_divide() {
     const example_message = 'dividing two numbers';
     const description = example_message;
     return lesson_simple(function () {
         let a = integer_random_digit_single_positive();
         let b = integer_random_digit_single_positive();
-        return `console.log(${a} / ${b});`;
+        let product = multiply(multiply(a, b), integer_random(1, 2));
+        return `console.log(${product} / ${a});`;
     }, example_before, description, example_message, []);
     function example_before(parent) {
         html_style_alternate(parent, html_p, [noop, html_style_monospace], ['one number can be divided by the other using the forward slash ( ', '/', ' ) symbol']);
