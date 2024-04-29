@@ -94,7 +94,7 @@ export function app_learn_code() {
         button_home_hr();
         let base = 16;
         let max_rgb = square(base) - 1;
-        let max = 10;
+        let max = 20;
         each_reverse(range(add_1(max)), i => {
             let percent = divide(i, max);
             let product = multiply(percent, max_rgb);
