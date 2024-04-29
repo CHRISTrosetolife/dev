@@ -38,7 +38,7 @@ export function lesson_equal() {
     const example_message = 'outputting whether or not a number is less than another number';
     return lesson_simple(lesson_comparisons_source_get_get('<'), example_before, description, example_message, [screen_before1, screen_before2, screen_before3]);
     function screen_before1(parent) {
-        html_p_text(parent, 'if "a" and "b" are numbers and a and b are the same , then we can write : a = b');
+        html_p_text(parent, 'if "a" and "b" are numbers and a and b are the same number , then we can write : a = b');
         html_p_text(parent, 'for example :');
         let ul = html_ul(parent);
         html_li_text(ul, '1 = 1');
