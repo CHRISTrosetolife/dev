@@ -111,7 +111,8 @@ export function app_learn_code() {
                 'background-color': color
             }));
             html_style(change, {
-                'color': html_style_button_default_border_color()
+                'color': html_style_button_default_border_color(),
+                'background-color': color
             });
         });
     }
