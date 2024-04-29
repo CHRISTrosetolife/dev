@@ -36,7 +36,17 @@ import {html_li_text} from "./html_li_text.mjs";
 export function lesson_equal() {
     const description = 'equal ( === )';
     const example_message = 'outputting whether or not a number is equal to another number';
-    return lesson_simple(lesson_comparisons_source_get_get('<'), example_before, description, example_message, [screen_before1, screen_before2]);
+    return lesson_simple(source_get, example_before, description, example_message, [screen_before1, screen_before2]);
+    function source_get() {
+        let a = integer_random_digit_single_positive();
+        let b;
+        if (equal(integer_random(1, 3), 1)) {
+            b = a;
+        } else {
+            b = integer_random_digit_single_positive();
+        }
+        return `console.log(${a} ${sign} ${b});`;
+    }
     function screen_before1(parent) {
         html_p_text(parent, 'if "a" and "b" are numbers and a and b are the same number , then we can write : a = b');
         html_p_text(parent, 'for example :');
