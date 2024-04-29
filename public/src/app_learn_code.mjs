@@ -1,3 +1,4 @@
+import {greater_than} from "./greater_than.mjs";
 import {string_combine_multiple} from "./string_combine_multiple.mjs";
 import {html_style_button_default_border_color} from "./html_style_button_default_border_color.mjs";
 import {html_scroll_top} from "./html_scroll_top.mjs";
@@ -58,16 +59,16 @@ import {lesson_statements_three} from "./lesson_statements_three.mjs";
 import {lesson_less_than} from "./lesson_less_than.mjs";
 import {range} from "./range.mjs";
 import {string_length} from "./string_length.mjs";
-import { string_split } from "./string_split.mjs";
+import {string_split} from "./string_split.mjs";
 export function app_learn_code() {
     let hash = window.location.hash;
-    if (greater_than(a, b)) {
-        
-    }
-    let hash_no_tag = string_prefix_without(hash, '#')
-    let split = string_split(hash, '+')
+    if (greater_than(a, b)) {}
+    let hash_no_tag = string_prefix_without(hash, '#');
+    let split = string_split(hash, '+');
     for (let s of split) {
-        console.log({s})
+        console.log({
+            s
+        });
     }
     let root = html_document_body();
     html_style(root, {
@@ -212,7 +213,3 @@ export function app_learn_code() {
         });
     }
 }
-function greater_than(a, b) {
-    return a > b;
-}
-
