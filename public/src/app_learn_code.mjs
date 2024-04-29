@@ -96,14 +96,17 @@ export function app_learn_code() {
             let product = multiply(percent, max_rgb);
             let rounded = round(product);
             let rgb_part = number_string_to(rounded, base);
+            let parts = 3;
+            let rgb = string_multiply(rgb_part, parts);
+            let color = string_combine('#', rgb)
             console.log({
                 percent,
                 rgb_part
             });
+            html_button_width_full_text_click(root, string_combine('color : ', color), () => html_style(root, {
+                'background-color': ''
+            }));
         });
-        html_button_width_full_text_click(root, '', () => html_style(root, {
-            'background-color': ''
-        }));
     }
     function refresh_main() {
         html_clear(root);
@@ -183,3 +186,10 @@ export function app_learn_code() {
         });
     }
 }
+function string_multiply(input, count) {
+    let s = input;
+    for (let j of range(subtract_1(count))) {
+        s = string_combine(s, input);
+    }
+}
+
