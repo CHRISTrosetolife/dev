@@ -66,9 +66,7 @@ export function app_learn_code() {
         let hash_no_tag = string_prefix_without(hash, '#');
         let split = string_split(hash_no_tag, ',');
         for (let s of split) {
-            console.log({
-                s
-            });
+            let split2 = string_split(s, '=')
         }
     }
     let root = html_document_body();
