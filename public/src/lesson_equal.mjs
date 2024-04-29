@@ -35,8 +35,8 @@ import {html_ul} from "./html_ul.mjs";
 import {html_li_text} from "./html_li_text.mjs";
 export function lesson_equal() {
     const description = 'equal ( === )';
-    const example_message = 'outputting whether or not a number is less than another number';
-    return lesson_simple(lesson_comparisons_source_get_get('<'), example_before, description, example_message, [screen_before1, screen_before2, screen_before3]);
+    const example_message = 'outputting whether or not a number is equal to another number';
+    return lesson_simple(lesson_comparisons_source_get_get('<'), example_before, description, example_message, [screen_before1, screen_before2]);
     function screen_before1(parent) {
         html_p_text(parent, 'if "a" and "b" are numbers and a and b are the same number , then we can write : a = b');
         html_p_text(parent, 'for example :');
@@ -55,12 +55,8 @@ export function lesson_equal() {
         html_li_text(ul, '0 = -4 is false');
         html_li_text(ul, '2 = 1 is false');
     }
-    function screen_before3(parent) {
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['in javascript , to check if a number is less than another number or not , use the less than ( ', '<', ' ) sign']);
-        html_style_alternate(parent, html_p, [html_style_monospace, noop], ['1', ' , ', '2', ' and ', '3', ' are numbers']);
-        html_style_alternate(parent, html_p, [html_style_monospace, noop], ['\'JESUS\'', ' , ', '\'is\'', ' and ', '\'LORD\'', ' are strings']);
-        html_style_alternate(parent, html_p, [html_style_monospace, noop, html_style_monospace, noop, html_style_bold], ['true', ' and ', 'false', ' are ', 'boolean']);
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['just as javascript has strings and numbers , javascript also has boolean ', 'true', ' and ', 'false']);
+    function example_before(parent) {
+        html_style_alternate(parent, html_p, [noop, html_style_monospace], 
+        ['in javascript to check if two number are equal or not , instead of using one equal sign ( ', '=', ' ) use three equal signs ( ', '===', ' )']);
     }
-    function example_before(parent) {}
 }
