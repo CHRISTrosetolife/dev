@@ -33,20 +33,17 @@ import {integer_random} from "./integer_random.mjs";
 import {equal} from "./equal.mjs";
 import {html_ul} from "./html_ul.mjs";
 import {html_li_text} from "./html_li_text.mjs";
-export function lesson_less_than() {
-    const description = 'less than ( < )';
+export function lesson_equal() {
+    const description = 'equal ( === )';
     const example_message = 'outputting whether or not a number is less than another number';
     return lesson_simple(lesson_comparisons_source_get_get('<'), example_before, description, example_message, [screen_before1, screen_before2, screen_before3]);
     function screen_before1(parent) {
-        html_p_text(parent, 'if "a" and "b" are numbers , then either "a" is less than "b" or "a" is not less than "b"');
-        html_p_text(parent, 'we can write "a" is less than "b" as : a < b');
-        html_p_text(parent, 'either a < b is true or a < b is false');
+        html_p_text(parent, 'if "a" and "b" are numbers and a and b are the same , then we can write : a = b');
         html_p_text(parent, 'for example :');
         let ul = html_ul(parent);
-        html_li_text(ul, '1 < 2 is true');
-        html_li_text(ul, '3 < 5 is true');
-        html_li_text(ul, '6 < 4 is false');
-        html_li_text(ul, '7 < 0 is false');
+        html_li_text(ul, '1 = 1');
+        html_li_text(ul, '7 = 7');
+        html_li_text(ul, '0 = 0');
     }
     function screen_before2(parent) {
         html_p_text(parent, 'if "a" and "b" are equal to each other , then "a" is not less than "b"');
