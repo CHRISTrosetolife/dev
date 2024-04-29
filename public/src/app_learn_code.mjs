@@ -90,7 +90,7 @@ export function app_learn_code() {
         let base = 16;
         let max_rgb = square(base) - 1;
         let max = 10;
-        for (let i of range(add_1(max))) {
+        each_reverse(range(add_1(max)), i => {
             let percent = divide(i, max);
             let product = multiply(percent, max_rgb);
             let rounded = round(product);
@@ -99,7 +99,7 @@ export function app_learn_code() {
                 percent,
                 rgb_part
             });
-        }
+        });
         html_button_width_full_text_click(root, '', () => html_style(root, {
             'background-color': ''
         }));
