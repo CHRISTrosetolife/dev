@@ -1,3 +1,4 @@
+import {app_learn_code_lessons} from "./app_learn_code_lessons.mjs";
 import {lesson_equal_string} from "./lesson_equal_string.mjs";
 import {lesson_equal_number} from "./lesson_equal_number.mjs";
 import {lesson_equal} from "./lesson_equal.mjs";
@@ -99,21 +100,7 @@ export function app_learn_code() {
         'background-color': 'lightblue'
     });
     object_merge(html_style_button_default(), html_style_button_default_border());
-    let lesson_creates = [];
-    list_add(lesson_creates, lesson_console_log);
-    list_add(lesson_creates, lesson_log_number);
-    list_add(lesson_creates, lesson_add);
-    list_add(lesson_creates, lesson_subtract);
-    list_add(lesson_creates, lesson_multiply);
-    list_add(lesson_creates, lesson_divide);
-    list_add(lesson_creates, lesson_less_than);
-    list_add(lesson_creates, lesson_greater_than);
-    list_add(lesson_creates, lesson_less_than_equal);
-    list_add(lesson_creates, lesson_greater_than_equal);
-    list_add(lesson_creates, lesson_equal_number);
-    list_add(lesson_creates, lesson_equal_string);
-    list_add(lesson_creates, lesson_statements_two);
-    list_add(lesson_creates, lesson_statements_three);
+    let lesson_creates = app_learn_code_lessons();
     let lesson_screens = [];
     let lessons = [];
     for (let lesson_create of lesson_creates) {
