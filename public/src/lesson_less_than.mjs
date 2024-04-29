@@ -47,10 +47,10 @@ export function lesson_less_than() {
         html_li_text(parent, '1 < 2 is true');
         html_li_text(parent, '3 < 5 is true');
         html_li_text(parent, '6 < 4 is false');
-        html_li_text(parent, '-8 < -9 is false');
-        html_li_text(parent, '-10 < -7 is true');
-        html_li_text(parent, '-11 < 0 is true');
         html_li_text(parent, '12 < 0 is false');
+        html_li_text(parent, '-11 < 0 is true');
+        html_li_text(parent, '-10 < -7 is true');
+        html_li_text(parent, '-8 < -9 is false');
     }
     function screen_before2(parent) {
         html_p_text(parent, 
