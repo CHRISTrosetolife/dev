@@ -56,6 +56,7 @@ import {html_style_bold} from "./html_style_bold.mjs";
 import {lesson_statements_three} from "./lesson_statements_three.mjs";
 import {lesson_less_than} from "./lesson_less_than.mjs";
 import {range} from "./range.mjs";
+import { string_length } from "./string_length.mjs";
 export function app_learn_code() {
     let root = html_document_body();
     html_style(root, {
@@ -100,6 +101,9 @@ export function app_learn_code() {
             let product = multiply(percent, max_rgb);
             let rounded = round(product);
             let rgb_part = number_string_to(rounded, base);
+            if (equal(string_length(rgb_part), 1)) {
+                rgb_part = string_combine('0', rgb_part) 
+            }
             let parts = 3;
             let rgb = string_multiply(rgb_part, parts);
             let color = string_combine('#', rgb);
