@@ -46,12 +46,12 @@ export function lesson_equal() {
         html_li_text(ul, '0 = 0');
     }
     function screen_before2(parent) {
-        html_p_text(parent, 'if "a" and "b" are equal to each other , then "a" is not less than "b"');
+        html_p_text(parent, 'if "a" and "b" are numbers , and "a" and "b" are different then a = b is false');
         html_p_text(parent, 'for example :');
         let ul = html_ul(parent);
-        html_li_text(ul, '8 < 8 is false');
-        html_li_text(ul, '0 < 0 is false');
-        html_li_text(ul, '-2 < -2 is false');
+        html_li_text(ul, '8 = 9 is false');
+        html_li_text(ul, '0 = -4 is false');
+        html_li_text(ul, '2 = 1 is false');
     }
     function screen_before3(parent) {
         html_style_alternate(parent, html_p, [noop, html_style_monospace], ['in javascript , to check if a number is less than another number or not , use the less than ( ', '<', ' ) sign']);
