@@ -26,7 +26,7 @@ import {noop} from "./noop.mjs";
 import {html_style_bold} from "./html_style_bold.mjs";
 import {html_style_monospace} from "./html_style_monospace.mjs";
 export function lesson_subtract() {
-    const example_message = 'subtracting two numbers';
+    const example_message = 'subtraction ( - )';
     const description = example_message;
     return lesson_simple(function () {
         let a = integer_random_digit_single_positive();
