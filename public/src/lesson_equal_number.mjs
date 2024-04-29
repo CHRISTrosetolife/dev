@@ -60,7 +60,7 @@ export function lesson_equal_number() {
         html_p_text(parent, 'if "a" and "b" are equal to each other then a = b is true');
     }
     function screen_before2(parent) {
-        html_p_text(parent, 'if "a" and "b" are numbers , and "a" and "b" are different then a = b is false');
+        html_p_text(parent, 'if "a" and "b" are numbers , and "a" and "b" are different from each other then a = b is false');
         html_p_text(parent, 'for example :');
         let ul = html_ul(parent);
         html_li_text(ul, '8 = 9 is false');
