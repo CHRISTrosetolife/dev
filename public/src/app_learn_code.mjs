@@ -73,7 +73,7 @@ export function app_learn_code() {
             let key = list_get(split2, 0);
             let value = list_get(split2, 1);
             if (equal(key, 'background_color')) {
-                html_style(change, {
+                html_style(root, {
                     'background-color': value
                 });
             }
