@@ -94,7 +94,7 @@ export function app_learn_code() {
             let percent = divide(i, max);
             let product = multiply(percent, max_rgb);
             let rounded = round(product);
-            let rgb_part = number_string_to(product, base);
+            let rgb_part = number_string_to(product, rounded);
             console.log({
                 rgb_part
             });
