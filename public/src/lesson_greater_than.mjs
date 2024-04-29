@@ -35,7 +35,7 @@ import {html_li_text} from "./html_li_text.mjs";
 export function lesson_greater_than() {
     const description = 'greater than ( > )';
     const example_message = 'outputting whether or not a number is greater than another number';
-    return lesson_simple(source_get, example_before, description, example_message, [screen_before1, screen_before2, screen_before3]);
+    return lesson_simple(lesson_comparisons_source_get_get('>'), example_before, description, example_message, [screen_before1, screen_before2, screen_before3]);
     function screen_before1(parent) {
         html_style_alternate(parent, html_p, [noop, html_style_bold], ['if "a" and "b" are numbers and "a" is less than "b" then "b" is ', 'greater than', ' "a"']);
         html_p_text(parent, 'like less than , if "a" and "b" are equal to each other , then "a" is not greater than "b"');
@@ -47,14 +47,4 @@ export function lesson_greater_than() {
         html_li_text(ul, '2 > 2 is false');
     }
     function example_before(parent) {}
-    function source_get() {
-        let a = integer_random_digit_single_positive();
-        let b;
-        if (equal(integer_random(1, 3), 1)) {
-            b = a;
-        } else {
-            b = integer_random_digit_single_positive();
-        }
-        return `console.log(${a} > ${b});`;
-    }
 }
