@@ -45,22 +45,6 @@ export function lesson_greater_than() {
         html_li_text(ul, '6 > 4 is true');
         html_li_text(ul, '3 > 5 is false');
         html_li_text(ul, '2 > 2 is false');
-        
-        html_p_text(parent, 'either a < b is true or a < b is false');
-    }
-    function screen_before2(parent) {
-        html_p_text(parent, 'for example :');
-        let ul = html_ul(parent);
-        html_li_text(ul, '8 < 8 is false');
-        html_li_text(ul, '0 < 0 is false');
-        html_li_text(ul, '-2 < -2 is false');
-    }
-    function screen_before3(parent) {
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['in javascript , to check if a number is less than another number or not , use the less than ( ', '<', ' ) sign']);
-        html_style_alternate(parent, html_p, [html_style_monospace, noop], ['1', ' , ', '2', ' and ', '3', ' are numbers']);
-        html_style_alternate(parent, html_p, [html_style_monospace, noop], ['\'JESUS\'', ' , ', '\'is\'', ' and ', '\'LORD\'', ' are strings']);
-        html_style_alternate(parent, html_p, [html_style_monospace, noop, html_style_monospace, noop, html_style_bold], ['true', ' and ', 'false', ' are ', 'boolean']);
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['just as javascript has strings and numbers , javascript also has boolean ', 'true', ' and ', 'false']);
     }
     function example_before(parent) {}
     function source_get() {
@@ -71,6 +55,6 @@ export function lesson_greater_than() {
         } else {
             b = integer_random_digit_single_positive();
         }
-        return `console.log(${a} < ${b});`;
+        return `console.log(${a} > ${b});`;
     }
 }
