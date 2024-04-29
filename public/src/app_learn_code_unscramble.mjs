@@ -1,3 +1,4 @@
+import {list_scramble} from "./list_scramble.mjs";
 import {app_learn_code_style_success} from "./app_learn_code_style_success.mjs";
 import {string_take} from "./string_take.mjs";
 import {lesson_console_log_quiz} from "./lesson_console_log_quiz.mjs";
@@ -36,11 +37,11 @@ import {add} from "./add.mjs";
 import {string_length} from "./string_length.mjs";
 import {html_div} from "./html_div.mjs";
 import {html_button_width_full_text_click} from "./html_button_width_full_text_click.mjs";
-import { html_style_centered } from "./html_style_centered.mjs";
-import { list_includes } from "./list_includes.mjs";
+import {html_style_centered} from "./html_style_centered.mjs";
+import {list_includes} from "./list_includes.mjs";
 export function app_learn_code_unscramble(source_get) {
     return function app_learn_code_unscramble_inner(parent) {
-        let div = html_div(parent)
+        let div = html_div(parent);
         refresh();
         function refresh() {
             html_clear(div);
@@ -68,7 +69,7 @@ export function app_learn_code_unscramble(source_get) {
                 if (equal(label, 'string')) {
                     return string_delimit(value);
                 }
-                let labels = ['name', 'num', '+/-', '</>/<=/>=']
+                let labels = ['name', 'num', '+/-', '</>/<=/>='];
                 if (list_includes(labels, label)) {
                     return value;
                 }
@@ -87,7 +88,7 @@ export function app_learn_code_unscramble(source_get) {
                     margin: html_style_units(3),
                     display: 'inline-block',
                     cursor: 'pointer',
-                    'min-width': html_style_units(15),
+                    'min-width': html_style_units(15)
                 });
                 html_style_centered(part);
                 html_on_click(part, () => {
@@ -128,13 +129,3 @@ export function app_learn_code_unscramble(source_get) {
         }
     };
 }
-function list_scramble(scrambled) {
-    let mapped_index_last = list_index_last(scrambled);
-    for (let i of range(list_length(scrambled))) {
-        let j = integer_random(i, mapped_index_last);
-        let temp = list_get(scrambled, j);
-        list_set(scrambled, j, list_get(scrambled, i));
-        list_set(scrambled, i, temp);
-    }
-}
-
