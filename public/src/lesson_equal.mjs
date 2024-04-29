@@ -57,6 +57,6 @@ export function lesson_equal() {
     }
     function example_before(parent) {
         html_style_alternate(parent, html_p, [noop, html_style_monospace], 
-        ['in javascript to check if two number are equal or not , instead of using one equal sign ( ', '=', ' ) use three equal signs ( ', '===', ' )']);
+        ['in javascript to check if two numbers are equal or not , instead of using one equal sign ( ', '=', ' ) use three equal signs ( ', '===', ' )']);
     }
 }
