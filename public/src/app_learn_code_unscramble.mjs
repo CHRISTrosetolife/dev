@@ -61,19 +61,23 @@ export function app_learn_code_unscramble(source_get) {
                 }
             });
             let answer = list_map(tokens, t => {
+                console.log({t})
                 let {type} = t;
                 let {label} = type;
                 let {value} = t;
-                if (equal(label, 'name')) {
-                    return value;
-                }
                 if (equal(label, 'string')) {
                     return string_delimit(value);
+                }
+                if (equal(label, 'name')) {
+                    return value;
                 }
                 if (equal(label, 'num')) {
                     return value;
                 }
                 if (equal(label, '+/-')) {
+                    return value;
+                }
+                if (equal(label, '</>/<=/>=')) {
                     return value;
                 }
                 return label;
