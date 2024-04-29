@@ -86,12 +86,7 @@ export function app_learn_code_quiz_inner(parent, source_get) {
         if (!refreshed) {
             container_bottom_hide();
         }
-        let p = html_p_text(container_bottom, 'your answer is correct ✅');
-        app_learn_code_style_success(p);
-        app_learn_code_style_rounded_padded(p);
-        html_style(p, {
-            'padding': html_style_units(5)
-        });
+        app_learn_code_answer_correct(container_bottom);
         html_p_text(container_bottom, 'if you want , take another quiz above');
         html_p_text(container_bottom, 'otherwise , press the "next" button below');
         function container_bottom_hide() {
@@ -106,3 +101,12 @@ export function app_learn_code_quiz_inner(parent, source_get) {
         }
     }
 }
+function app_learn_code_answer_correct(container_bottom) {
+    let p = html_p_text(container_bottom, 'your answer is correct ✅');
+    app_learn_code_style_success(p);
+    app_learn_code_style_rounded_padded(p);
+    html_style(p, {
+        'padding': html_style_units(3.5)
+    });
+}
+
