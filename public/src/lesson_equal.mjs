@@ -44,6 +44,8 @@ export function lesson_equal() {
         html_li_text(ul, '1 = 1');
         html_li_text(ul, '7 = 7');
         html_li_text(ul, '10 = 10');
+        html_p_text(parent, 'either two numbers are equal to each other , or they are not equal to each other');
+        html_p_text(parent, 'if "a" and "b" are equal to each other then a = b is true');
     }
     function screen_before2(parent) {
         html_p_text(parent, 'if "a" and "b" are numbers , and "a" and "b" are different then a = b is false');
