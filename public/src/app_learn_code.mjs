@@ -64,7 +64,7 @@ export function app_learn_code() {
     let hash = window.location.hash;
     if (greater_than(string_length(hash), 0)) {
         let hash_no_tag = string_prefix_without(hash, '#');
-        let split = string_split(hash_no_tag, '+');
+        let split = string_split(hash_no_tag, ',');
         for (let s of split) {
             console.log({
                 s
