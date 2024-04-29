@@ -97,7 +97,9 @@ export function app_learn_code() {
         let base = 16;
         let max_rgb = square(base) - 1;
         let max = 20;
-        each_reverse_index(range(add_1(max)), i => {
+        let index = 0;
+        each_reverse(range(add_1(max)), i => {
+            index++;
             let percent = divide(i, max);
             let product = multiply(percent, max_rgb);
             let rounded = round(product);
@@ -118,7 +120,7 @@ export function app_learn_code() {
             } else {
                 font_color = 'white';
             }
-            let change = html_button_width_full_text_click(root, string_combine_multiple(['', 'background color : ', color]), () => html_style(root, {
+            let change = html_button_width_full_text_click(root, string_combine_multiple([index, '.', ' background color : ', color]), () => html_style(root, {
                 'color': font_color,
                 'background-color': color
             }));
