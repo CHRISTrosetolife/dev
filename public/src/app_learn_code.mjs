@@ -1,3 +1,4 @@
+import {divide} from "./divide.mjs";
 import {square} from "./square.mjs";
 import {html_style_button_default_border} from "./html_style_button_default_border.mjs";
 import {multiply} from "./multiply.mjs";
