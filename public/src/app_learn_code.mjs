@@ -70,6 +70,8 @@ export function app_learn_code() {
             let split2 = string_split(s, '=')
             let s2_length = list_length(split2)
             assert(equal, [s2_length, 2])
+            let key = list_get(split2, 0);
+            let value = list_get(split2, 1);
         }
     }
     let root = html_document_body();
