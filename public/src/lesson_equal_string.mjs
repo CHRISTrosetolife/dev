@@ -37,21 +37,15 @@ import {lesson_log_number_quiz_value} from "./lesson_log_number_quiz_value.mjs";
 import {lesson_console_log_quiz_value} from "./lesson_console_log_quiz_value.mjs";
 export function lesson_equal_string() {
     const description = 'equal ( === ) ( strings )';
-    const example_message = 'outputting whether or not two numbers or strings are equal';
+    const example_message = 'outputting whether or not two strings are equal';
     return lesson_simple(source_get, example_before, description, example_message, [screen_before1, screen_before2]);
     function source_get() {
-        let get;
-        if (random_50_50()) {
-            get = integer_random_digit_single_positive;
-        } else {
-            get = lesson_console_log_quiz_value;
-        }
-        let a = get();
+        let a = lesson_console_log_quiz_value();
         let b;
         if (random_50_50()) {
             b = a;
         } else {
-            b = get();
+            b = lesson_console_log_quiz_value();
         }
         return `console.log(${a} === ${b});`;
     }
