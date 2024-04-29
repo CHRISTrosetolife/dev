@@ -105,9 +105,9 @@ export function app_learn_code() {
             let color = string_combine('#', rgb);
             let font_color 
             if (percent > 0.5) {
-                font_color = 'white';
-            } else {
                 font_color = 'black';
+            } else {
+                font_color = 'white';
             }
             let change = html_button_width_full_text_click(root, string_combine('color : ', color), () => html_style(root, {
                 'color': font_color,
