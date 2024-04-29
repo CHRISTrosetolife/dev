@@ -29,6 +29,8 @@ import {html_style_monospace} from "./html_style_monospace.mjs";
 import {random_50_50} from "./random_50_50.mjs";
 import {list_map} from "./list_map.mjs";
 import {list_join} from "./list_join.mjs";
+import { integer_random } from "./integer_random.mjs";
+import { equal } from "./equal.mjs";
 export function lesson_less_than() {
     const example_message = 'less than ( < )';
     const description = 'outputting whether or not a number is less than another number';
@@ -63,7 +65,11 @@ export function lesson_less_than() {
     function source_get() {
         let a = integer_random_digit_single_positive();
         let b;
-        b = integer_random_digit_single_positive();
+        if (equal(integer_random(1, 3), 1)) {
+            b = a;
+        } else {
+            b = integer_random_digit_single_positive();
+        }
         return `console.log(${a} < ${b});`
     }
 }
