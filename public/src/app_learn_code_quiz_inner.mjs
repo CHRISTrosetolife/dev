@@ -89,7 +89,7 @@ export function app_learn_code_quiz_inner(parent, source_get) {
         let p = html_p_text(container_bottom, 'your answer is correct ✅');
         app_learn_code_style_success(p);
         app_learn_code_style_rounded_padded(p);
-        html_style(code, {
+        html_style(p, {
             'padding': html_style_units(5)
         });
         html_p_text(container_bottom, 'if you want , take another quiz above');
