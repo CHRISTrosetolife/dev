@@ -84,6 +84,7 @@ export function app_learn_code() {
     function refresh_settings() {
         html_clear(root);
         let base = 16
+        let max_rgb = square(base);
         let max = 10
         for (let i of range(max)) {
 
@@ -170,3 +171,7 @@ export function app_learn_code() {
         });
     }
 }
+function square(base) {
+    return multiply(base, base);
+}
+
