@@ -38,17 +38,17 @@ export function lesson_greater_than() {
     return lesson_simple(source_get, example_before, description, example_message, [screen_before1, screen_before2, screen_before3]);
     function screen_before1(parent) {
         html_style_alternate(parent, html_p, [noop, html_style_bold], ['if "a" and "b" are numbers and "a" is less than "b" then "b" is ', 'greater than', ' "a"']);
-        html_p_text(parent, 'we can write "a" is less than "b" as : a < b');
-        html_p_text(parent, 'either a < b is true or a < b is false');
-        html_p_text(parent, 'for example :');
+        html_p_text(parent, 'like less than , if "a" and "b" are equal to each other , then "a" is not greater than "b"');
+        html_p_text(parent, 'we can write "a" is greater than "b" as : a > b');
+        html_p_text(parent, 'here are some examples :');
         let ul = html_ul(parent);
-        html_li_text(parent, '1 < 2 is true');
-        html_li_text(parent, '3 < 5 is true');
-        html_li_text(parent, '6 < 4 is false');
-        html_li_text(parent, '7 < 0 is false');
+        html_li_text(ul, '6 > 4 is true');
+        html_li_text(ul, '3 > 5 is false');
+        html_li_text(ul, '2 > 2 is false');
+        
+        html_p_text(parent, 'either a < b is true or a < b is false');
     }
     function screen_before2(parent) {
-        html_p_text(parent, 'if "a" and "b" are equal to each other , then "a" is not less than "b"');
         html_p_text(parent, 'for example :');
         let ul = html_ul(parent);
         html_li_text(ul, '8 < 8 is false');

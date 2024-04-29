@@ -44,10 +44,10 @@ export function lesson_less_than() {
         html_p_text(parent, 'either a < b is true or a < b is false');
         html_p_text(parent, 'for example :');
         let ul = html_ul(parent)
-        html_li_text(parent, '1 < 2 is true');
-        html_li_text(parent, '3 < 5 is true');
-        html_li_text(parent, '6 < 4 is false');
-        html_li_text(parent, '7 < 0 is false');
+        html_li_text(ul, '1 < 2 is true');
+        html_li_text(ul, '3 < 5 is true');
+        html_li_text(ul, '6 < 4 is false');
+        html_li_text(ul, '7 < 0 is false');
     }
     function screen_before2(parent) {
         html_p_text(parent, 
