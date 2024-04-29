@@ -90,6 +90,7 @@ export function app_learn_code() {
         let max = 10;
         for (let i of range(max)) {
             let percent = divide(i, max);
+            let product = multiply(percent, max_rgb);
         }
         html_button_width_full_text_click(root, '', () => html_style(root, {
             'background-color': ''
