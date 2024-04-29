@@ -40,12 +40,7 @@ export function lesson_equal_number() {
     const example_message = 'outputting whether or not two numbers are equal';
     return lesson_simple(source_get, example_before, description, example_message, [screen_before1, screen_before2]);
     function source_get() {
-        let get;
-        if (random_50_50()) {
-            get = integer_random_digit_single_positive;
-        } else {
-            get = lesson_console_log_quiz_value;
-        }
+        let get = integer_random_digit_single_positive;
         let a = get();
         let b;
         if (random_50_50()) {
