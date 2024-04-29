@@ -61,6 +61,7 @@ import {string_length} from "./string_length.mjs";
 import { string_split } from "./string_split.mjs";
 export function app_learn_code() {
     let hash = window.location.hash;
+    let hash_no_tag = string_prefix_without(hash, '#')
     let split = string_split(hash, '+')
     let root = html_document_body();
     html_style(root, {
