@@ -131,9 +131,7 @@ export function app_learn_code() {
     let index_last = list_index_last(lesson_screens);
     function refresh_lesson(lesson) {
         html_clear(root);
-        window.scrollTo({
-            top: 0
-        });
+        html_scroll_top();
         button_home_hr();
         let lesson_index = list_index(lessons, lesson);
         let previous = list_take(lessons, lesson_index);
@@ -162,9 +160,7 @@ export function app_learn_code() {
     }
     async function refresh_lesson_screen(index) {
         html_clear(root);
-        window.scrollTo({
-            top: 0
-        });
+        html_scroll_top();
         let lesson_screen = list_get(lesson_screens, index);
         await lesson_screen(root);
         html_hr(root);
