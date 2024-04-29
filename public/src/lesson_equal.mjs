@@ -33,6 +33,7 @@ import {integer_random} from "./integer_random.mjs";
 import {equal} from "./equal.mjs";
 import {html_ul} from "./html_ul.mjs";
 import {html_li_text} from "./html_li_text.mjs";
+import { lesson_log_number_quiz_value } from "./lesson_log_number_quiz_value.mjs";
 export function lesson_equal() {
     const description = 'equal ( === )';
     const example_message = 'outputting whether or not two numbers or strings are equal';
@@ -42,7 +43,7 @@ export function lesson_equal() {
         if (random_50_50()) {
             get = integer_random_digit_single_positive;
         } else {
-            get = lesson_log_number_quiz;
+            get = lesson_log_number_quiz_value;
         }
         let a = get();
         let b;
