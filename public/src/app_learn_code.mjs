@@ -46,7 +46,6 @@ import {html_spacer_vertical} from "./html_spacer_vertical.mjs";
 import {html_span_text} from "./html_span_text.mjs";
 import {html_style_bold} from "./html_style_bold.mjs";
 import {lesson_statements_three} from "./lesson_statements_three.mjs";
-import { lesson_boolean } from "./lesson_boolean.mjs";
 import { lesson_less_than } from "./lesson_less_than.mjs";
 export function app_learn_code() {
     let root = html_document_body();
