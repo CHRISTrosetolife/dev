@@ -37,6 +37,7 @@ import {string_length} from "./string_length.mjs";
 import {html_div} from "./html_div.mjs";
 import {html_button_width_full_text_click} from "./html_button_width_full_text_click.mjs";
 import { html_style_centered } from "./html_style_centered.mjs";
+import { list_includes } from "./list_includes.mjs";
 export function app_learn_code_unscramble(source_get) {
     return function app_learn_code_unscramble_inner(parent) {
         let div = html_div(parent)
@@ -68,16 +69,8 @@ export function app_learn_code_unscramble(source_get) {
                 if (equal(label, 'string')) {
                     return string_delimit(value);
                 }
-                if (equal(label, 'name')) {
-                    return value;
-                }
-                if (equal(label, 'num')) {
-                    return value;
-                }
-                if (equal(label, '+/-')) {
-                    return value;
-                }
-                if (equal(label, '</>/<=/>=')) {
+                let labels = ['name', 'num', '+/-', '</>/<=/>=']
+                if (list_includes(labels, label)) {
                     return value;
                 }
                 return label;
