@@ -62,7 +62,8 @@ export function lesson_less_than() {
     }
     function source_get() {
         let a = integer_random_digit_single_positive();
-        let b = integer_random_digit_single_positive();
+        let b;
+        b = integer_random_digit_single_positive();
         return `console.log(${a} < ${b});`
     }
 }
