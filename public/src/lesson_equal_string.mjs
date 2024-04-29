@@ -38,7 +38,7 @@ import {lesson_console_log_quiz_value} from "./lesson_console_log_quiz_value.mjs
 export function lesson_equal_string() {
     const description = 'equal ( === ) ( strings )';
     const example_message = 'outputting whether or not two strings are equal';
-    return lesson_simple(source_get, example_before, description, example_message, [screen_before1, screen_before2]);
+    return lesson_simple(source_get, example_before, description, example_message, []);
     function source_get() {
         let a = lesson_console_log_quiz_value();
         let b;
@@ -49,26 +49,7 @@ export function lesson_equal_string() {
         }
         return `console.log(${a} === ${b});`;
     }
-    function screen_before1(parent) {
-        html_p_text(parent, 'if "a" and "b" are numbers and a and b are the same number , then we can write : a = b');
-        html_p_text(parent, 'for example :');
-        let ul = html_ul(parent);
-        html_li_text(ul, '1 = 1');
-        html_li_text(ul, '7 = 7');
-        html_li_text(ul, '10 = 10');
-        html_p_text(parent, 'either two numbers are equal to each other , or they are not equal to each other');
-        html_p_text(parent, 'if "a" and "b" are equal to each other then a = b is true');
-    }
-    function screen_before2(parent) {
-        html_p_text(parent, 'if "a" and "b" are numbers , and "a" and "b" are different then a = b is false');
-        html_p_text(parent, 'for example :');
-        let ul = html_ul(parent);
-        html_li_text(ul, '8 = 9 is false');
-        html_li_text(ul, '0 = -4 is false');
-        html_li_text(ul, '2 = 1 is false');
-    }
     function example_before(parent) {
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['in javascript to check if two numbers are equal or not , instead of using one equal sign ( ', '=', ' ) use three equal signs ( ', '===', ' )']);
         html_style_alternate(parent, html_p, [html_style_monospace, noop], ['===', ' also checks if two strings are the same or not']);
     }
 }
