@@ -65,7 +65,7 @@ export function lesson_equal_number() {
         let ul = html_ul(parent);
         html_li_text(ul, '8 = 9 is false');
         html_li_text(ul, '0 = -4 is false');
-        html_li_text(ul, '2 = 1 is false');
+        html_li_text(ul, '2.0 = 2.1 is false');
     }
     function example_before(parent) {
         html_style_alternate(parent, html_p, [noop, html_style_monospace], ['in javascript to check if two numbers are equal or not , instead of using one equal sign ( ', '=', ' ) use three equal signs ( ', '===', ' )']);
