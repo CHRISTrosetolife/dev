@@ -110,10 +110,6 @@ export function app_learn_code() {
             let parts = 3;
             let rgb = string_multiply(rgb_part, parts);
             let color = string_combine('#', rgb);
-            console.log({
-                color,
-                percent
-            });
             let font_color;
             if (percent > 0.5) {
                 font_color = 'black';
