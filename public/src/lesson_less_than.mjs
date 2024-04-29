@@ -35,7 +35,7 @@ export function lesson_less_than() {
     const description = 'outputting whether or not a number is less than another number';
     return lesson_simple(source_get, example_before, description, example_message, 
         [screen_before]);
-    function screen_before() {
+    function screen_before(parent) {
         html_p_text(parent, 
             'if "a" and "b" are numbers , then either "a" is less than "b" or "a" is not less than "b"');
         html_p_text(parent, 'we can write "a" is less than "b" as : a < b');
