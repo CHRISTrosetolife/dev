@@ -33,7 +33,7 @@ import {equal} from "./equal.mjs";
 import {html_ul} from "./html_ul.mjs";
 import {html_li_text} from "./html_li_text.mjs";
 export function lesson_greater_than() {
-    const description = 'less than ( < )';
+    const description = 'greater than ( > )';
     const example_message = 'outputting whether or not a number is less than another number';
     return lesson_simple(source_get, example_before, description, example_message, [screen_before1, screen_before2, screen_before3]);
     function screen_before1(parent) {
