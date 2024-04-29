@@ -72,6 +72,11 @@ export function app_learn_code() {
             assert(equal, [s2_length, 2])
             let key = list_get(split2, 0);
             let value = list_get(split2, 1);
+            if (equal(key, 'background_color')) {
+                html_style(change, {
+                    'background-color': value
+                });
+            }
         }
     }
     let root = html_document_body();
