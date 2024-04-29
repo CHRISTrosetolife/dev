@@ -106,6 +106,7 @@ export function app_learn_code() {
             let change = html_button_width_full_text_click(root, string_combine('color : ', color), () => html_style(root, {
                 'background-color': color
             }));
+
         });
     }
     function refresh_main() {
@@ -191,5 +192,6 @@ function string_multiply(input, count) {
     for (let j of range(subtract_1(count))) {
         s = string_combine(s, input);
     }
+    return s
 }
 
