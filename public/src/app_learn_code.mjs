@@ -103,10 +103,6 @@ export function app_learn_code() {
             let parts = 3;
             let rgb = string_multiply(rgb_part, parts);
             let color = string_combine('#', rgb);
-            console.log({
-                percent,
-                rgb_part
-            });
             let change = html_button_width_full_text_click(root, string_combine('color : ', color), () => html_style(root, {
                 'background-color': color
             }));
