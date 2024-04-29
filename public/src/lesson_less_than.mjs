@@ -31,8 +31,8 @@ import {list_join} from "./list_join.mjs";
 import { integer_random } from "./integer_random.mjs";
 import { equal } from "./equal.mjs";
 export function lesson_less_than() {
-    const example_message = 'less than ( < )';
-    const description = 'outputting whether or not a number is less than another number';
+    const description = 'less than ( < )';
+    const example_message = 'outputting whether or not a number is less than another number';
     return lesson_simple(source_get, example_before, description, example_message, 
         [screen_before]);
     function screen_before(parent) {
