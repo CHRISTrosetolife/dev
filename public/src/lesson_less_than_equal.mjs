@@ -38,14 +38,15 @@ export function lesson_less_than_equal() {
     const example_message = 'outputting whether or not a number is greater than another number';
     return lesson_simple(lesson_comparisons_source_get_get('<='), example_before, description, example_message, [screen_before1]);
     function screen_before1(parent) {
-        html_style_alternate(parent, html_p, [noop, html_style_bold], ['if "a" and "b" are numbers and "a" is less than "b" then "b" is ', 'greater than', ' "a"']);
-        html_p_text(parent, 'like less than , if "a" and "b" are equal to each other , then "a" is not greater than "b"');
-        html_p_text(parent, 'we can write "a" is greater than "b" as : a > b');
-        html_p_text(parent, 'here are some examples :');
-        let ul = html_ul(parent);
-        html_li_text(ul, '3 <= 5 is true');
-        html_li_text(ul, '6 <= 4 is false');
-        html_li_text(ul, '2 <= 2 is true');
+        html_text(parent, '"less than or equal to" is almost the same as "less than"');
+        html_text(parent, 'the only difference is when the two numbers being compared are the same');
+        html_text(parent, 'if "a" and "b" are equal then "a" is less than or equal to "b"');
+        html_text(parent, 'whereas if "a" and "b" are equal then "a" is not less than "b"');
+        html_text(parent, 'here are some examples :');
+        let ul1 = html_ul(parent);
+        html_li_text(ul1, '3 <= 5 is true');
+        html_li_text(ul1, '6 <= 4 is false');
+        html_li_text(ul1, '2 <= 2 is true');
     }
     function example_before(parent) {}
 }
