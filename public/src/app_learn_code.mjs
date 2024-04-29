@@ -1,3 +1,4 @@
+import {lesson_equal} from "./lesson_equal.mjs";
 import {lesson_greater_than_equal} from "./lesson_greater_than_equal.mjs";
 import {lesson_greater_than} from "./lesson_greater_than.mjs";
 import {greater_than} from "./greater_than.mjs";
