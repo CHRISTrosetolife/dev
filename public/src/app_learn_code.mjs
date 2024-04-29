@@ -1,3 +1,5 @@
+import {lesson_equal_string} from "./lesson_equal_string.mjs";
+import {lesson_equal_number} from "./lesson_equal_number.mjs";
 import {lesson_equal} from "./lesson_equal.mjs";
 import {lesson_greater_than_equal} from "./lesson_greater_than_equal.mjs";
 import {lesson_greater_than} from "./lesson_greater_than.mjs";
@@ -108,7 +110,8 @@ export function app_learn_code() {
     list_add(lesson_creates, lesson_greater_than);
     list_add(lesson_creates, lesson_less_than_equal);
     list_add(lesson_creates, lesson_greater_than_equal);
-    list_add(lesson_creates, lesson_equal);
+    list_add(lesson_creates, lesson_equal_number);
+    list_add(lesson_creates, lesson_equal_string);
     list_add(lesson_creates, lesson_statements_two);
     list_add(lesson_creates, lesson_statements_three);
     let lesson_screens = [];
