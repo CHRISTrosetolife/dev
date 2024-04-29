@@ -1,3 +1,4 @@
+import {string_combine_multiple} from "./string_combine_multiple.mjs";
 import {html_style_button_default_border_color} from "./html_style_button_default_border_color.mjs";
 import {html_scroll_top} from "./html_scroll_top.mjs";
 import {string_multiply} from "./string_multiply.mjs";
@@ -56,7 +57,7 @@ import {html_style_bold} from "./html_style_bold.mjs";
 import {lesson_statements_three} from "./lesson_statements_three.mjs";
 import {lesson_less_than} from "./lesson_less_than.mjs";
 import {range} from "./range.mjs";
-import { string_length } from "./string_length.mjs";
+import {string_length} from "./string_length.mjs";
 export function app_learn_code() {
     let root = html_document_body();
     html_style(root, {
@@ -102,21 +103,24 @@ export function app_learn_code() {
             let rounded = round(product);
             let rgb_part = number_string_to(rounded, base);
             if (equal(string_length(rgb_part), 1)) {
-                rgb_part = string_combine('0', rgb_part) 
+                rgb_part = string_combine('0', rgb_part);
             }
             let parts = 3;
             let rgb = string_multiply(rgb_part, parts);
             let color = string_combine('#', rgb);
-            console.log({color, percent})
-            let font_color 
+            console.log({
+                color,
+                percent
+            });
+            let font_color;
             if (percent > 0.5) {
                 font_color = 'black';
             } else {
                 font_color = 'white';
             }
-            let change = html_button_width_full_text_click(root, string_combine('background color : ', color), () => html_style(root, {
+            let change = html_button_width_full_text_click(root, string_combine_multiple('background color : ', color), () => html_style(root, {
                 'color': font_color,
-                'background-color': color,
+                'background-color': color
             }));
             html_style(change, {
                 'color': font_color,
