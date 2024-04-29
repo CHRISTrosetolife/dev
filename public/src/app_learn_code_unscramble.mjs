@@ -1,3 +1,4 @@
+import {app_learn_code_answer_correct} from "./app_learn_code_answer_correct.mjs";
 import {list_scramble} from "./list_scramble.mjs";
 import {app_learn_code_style_success} from "./app_learn_code_style_success.mjs";
 import {string_take} from "./string_take.mjs";
@@ -119,7 +120,7 @@ export function app_learn_code_unscramble(source_get) {
                         html_style(code, {
                             'background-color': 'darkgreen'
                         });
-                        html_p_text(success, 'your answer is correct ✅');
+                        app_learn_code_answer_correct(success);
                         html_p_text(success, 'if you want to take another quiz , press the "another quiz" button below : ');
                         html_p_text(success, 'otherwise , press the "next" button below');
                         html_button_width_full_text_click(success, 'another quiz', refresh);
