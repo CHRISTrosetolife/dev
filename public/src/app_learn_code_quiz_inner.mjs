@@ -1,3 +1,4 @@
+import {app_learn_code_answer_correct} from "./app_learn_code_answer_correct.mjs";
 import {list_get} from "./list_get.mjs";
 import {list_random_index} from "./list_random_index.mjs";
 import {app_learn_code_style_success} from "./app_learn_code_style_success.mjs";
@@ -101,12 +102,3 @@ export function app_learn_code_quiz_inner(parent, source_get) {
         }
     }
 }
-function app_learn_code_answer_correct(container_bottom) {
-    let p = html_p_text(container_bottom, 'your answer is correct ✅');
-    app_learn_code_style_success(p);
-    app_learn_code_style_rounded_padded(p);
-    html_style(p, {
-        'padding': html_style_units(3.5)
-    });
-}
-
