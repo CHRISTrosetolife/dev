@@ -54,6 +54,7 @@ export function app_learn_code_quiz_inner(parent, source_get) {
             }
         }
         list_sort(choices, c => c.answer)
+        console.log({choices})
         let correct_index = list_random_index(choices);
         let {source} = list_get(choices, correct_index);
         app_learn_code_code_part_titled_code(container, source);
