@@ -1,3 +1,4 @@
+import {html_style_button_default_border_color} from "./html_style_button_default_border_color.mjs";
 import {html_scroll_top} from "./html_scroll_top.mjs";
 import {string_multiply} from "./string_multiply.mjs";
 import {each_reverse} from "./each_reverse.mjs";
@@ -109,6 +110,9 @@ export function app_learn_code() {
             let change = html_button_width_full_text_click(root, string_combine('color : ', color), () => html_style(root, {
                 'background-color': color
             }));
+            html_style(change, {
+                'color': html_style_button_default_border_color()
+            });
         });
     }
     function refresh_main() {
@@ -132,7 +136,6 @@ export function app_learn_code() {
         html_clear(root);
         html_scroll_top();
     }
-
     function refresh_lesson(lesson) {
         clear_scroll();
         button_home_hr();
