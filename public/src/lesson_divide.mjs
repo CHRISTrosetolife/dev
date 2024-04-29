@@ -29,7 +29,7 @@ import {multiply} from "./multiply.mjs";
 import {integer_random} from "./integer_random.mjs";
 export function lesson_divide() {
     const example_message = 'dividing two numbers';
-    const description = example_message;
+    const description = 'division ( / )';
     return lesson_simple(function () {
         let a = integer_random_digit_single_positive();
         let b = integer_random_digit_single_positive();
