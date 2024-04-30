@@ -4,6 +4,9 @@ if (typeof window === 'undefined') {
 } else {
     a = astring;
 }
+if (false) {
+    let a = await import_multi('astring', 'astring');
+}
 let {generate} = a;
 export function js_unparse(ast) {
     return generate(ast, {
