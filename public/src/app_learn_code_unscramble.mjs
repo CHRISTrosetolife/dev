@@ -44,6 +44,8 @@ import { list_first } from "./list_first.mjs";
 import { add_1 } from "./add_1.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { list_equal } from "./list_equal.mjs";
+import { list_filter } from "./list_filter.mjs";
+import { null_is } from "./null_is.mjs";
 export function app_learn_code_unscramble(source_get) {
     return function app_learn_code_unscramble_inner(parent) {
         let div = html_div(parent);
@@ -92,6 +94,7 @@ export function app_learn_code_unscramble(source_get) {
                         }
                         return null;
                     })
+                    let filtered = list_filter(mapped, m => !null_is(m))
                     let current = list_get(answer, current_index);
                     let e = equal(s, current);
                     if (!e) {
