@@ -1,6 +1,7 @@
+import {import_multi} from "./import_multi.mjs";
 let a;
 if (typeof window === 'undefined') {
-    a = await import('astring')
+    a = await import('astring');
 } else {
     a = astring;
 }
