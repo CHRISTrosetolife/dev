@@ -1,3 +1,6 @@
+import {null_not_is} from "./null_not_is.mjs";
+import {app_learn_code_source_to_tokens} from "./app_learn_code_source_to_tokens.mjs";
+import {app_learn_code_source_variations} from "./app_learn_code_source_variations.mjs";
 import {app_learn_code_answer_correct} from "./app_learn_code_answer_correct.mjs";
 import {list_scramble} from "./list_scramble.mjs";
 import {app_learn_code_style_success} from "./app_learn_code_style_success.mjs";
@@ -40,12 +43,12 @@ import {html_div} from "./html_div.mjs";
 import {html_button_width_full_text_click} from "./html_button_width_full_text_click.mjs";
 import {html_style_centered} from "./html_style_centered.mjs";
 import {list_includes} from "./list_includes.mjs";
-import { list_first } from "./list_first.mjs";
-import { add_1 } from "./add_1.mjs";
-import { list_concat } from "./list_concat.mjs";
-import { list_equal } from "./list_equal.mjs";
-import { list_filter } from "./list_filter.mjs";
-import { null_is } from "./null_is.mjs";
+import {list_first} from "./list_first.mjs";
+import {add_1} from "./add_1.mjs";
+import {list_concat} from "./list_concat.mjs";
+import {list_equal} from "./list_equal.mjs";
+import {list_filter} from "./list_filter.mjs";
+import {null_is} from "./null_is.mjs";
 export function app_learn_code_unscramble(source_get) {
     return function app_learn_code_unscramble_inner(parent) {
         let div = html_div(parent);
@@ -53,8 +56,8 @@ export function app_learn_code_unscramble(source_get) {
         function refresh() {
             html_clear(div);
             let source = source_get();
-            let variations = app_learn_code_source_variations(source)
-            source = list_first(variations)
+            let variations = app_learn_code_source_variations(source);
+            source = list_first(variations);
             let messages = app_learn_code_eval(source);
             let joined = app_learn_code_eval_messages_to_string(messages);
             html_p_text(div, 'below is another quiz');
@@ -66,14 +69,14 @@ export function app_learn_code_unscramble(source_get) {
                 visibility: 'hidden'
             });
             let success = html_div(div);
-            let answers = list_map(variations, app_learn_code_source_to_tokens)
+            let answers = list_map(variations, app_learn_code_source_to_tokens);
             let answer = app_learn_code_source_to_tokens(source);
             let scrambled = list_copy(answer);
             list_scramble(scrambled);
             let parts = array_new();
             let current_index = 0;
             let source_index = 0;
-            let choices = array_new()
+            let choices = array_new();
             for (let s of scrambled) {
                 let part = app_learn_code_code_part_generic(html_span_text, div, s, app_learn_code_code_background());
                 list_add(parts, part);
@@ -87,14 +90,14 @@ export function app_learn_code_unscramble(source_get) {
                 html_style_centered(part);
                 html_on_click(part, () => {
                     let mapped = list_map(answers, a => {
-                        let expected = list_take(a, add_1(current_index))
+                        let expected = list_take(a, add_1(current_index));
                         let actual = list_concat(choices, [s]);
                         if (list_equal(expected, actual)) {
                             return a;
                         }
                         return null;
-                    })
-                    let filtered = list_filter(mapped, m => !null_is(m))
+                    });
+                    let filtered = list_filter(mapped, m => null_not_is(m));
                     let current = list_get(answer, current_index);
                     let e = equal(s, current);
                     if (!e) {
@@ -103,7 +106,7 @@ export function app_learn_code_unscramble(source_get) {
                         });
                         return;
                     }
-                    list_add(choices, s)
+                    list_add(choices, s);
                     html_style(code, {
                         visibility: 'visible'
                     });
@@ -133,25 +136,3 @@ export function app_learn_code_unscramble(source_get) {
         }
     };
 }
-function app_learn_code_source_to_tokens(source) {
-    let tokens = list_adder(la => {
-        for (let token of js_tokenize(source)) {
-            la(token);
-        }
-    });
-    let answer = list_map(tokens, t => {
-        let { type } = t;
-        let { label } = type;
-        let { value } = t;
-        if (equal(label, 'string')) {
-            return string_delimit(value);
-        }
-        let labels = ['name', 'num', '+/-', '</>/<=/>=', '==/!=/===/!=='];
-        if (list_includes(labels, label)) {
-            return value;
-        }
-        return label;
-    });
-    return answer;
-}
-
