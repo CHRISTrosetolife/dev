@@ -41,6 +41,7 @@ import {html_button_width_full_text_click} from "./html_button_width_full_text_c
 import {html_style_centered} from "./html_style_centered.mjs";
 import {list_includes} from "./list_includes.mjs";
 import { list_first } from "./list_first.mjs";
+import { add_1 } from "./add_1.mjs";
 export function app_learn_code_unscramble(source_get) {
     return function app_learn_code_unscramble_inner(parent) {
         let div = html_div(parent);
@@ -82,7 +83,7 @@ export function app_learn_code_unscramble(source_get) {
                 html_style_centered(part);
                 html_on_click(part, () => {
                     for (let a of answers) {
-
+                        list_take(a, add_1(current_index))
                     }
                     let current = list_get(answer, current_index);
                     let e = equal(s, current);
