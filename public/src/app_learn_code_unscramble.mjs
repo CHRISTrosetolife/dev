@@ -82,7 +82,6 @@ export function app_learn_code_unscramble(source_get) {
             list_scramble(scrambled);
             let parts = array_new();
             let current_index = 0;
-            let source_index = 0;
             let choices = array_new();
             for (let s of scrambled) {
                 let part = app_learn_code_code_part_generic(html_span_text, div, s, app_learn_code_code_background());
@@ -128,8 +127,11 @@ export function app_learn_code_unscramble(source_get) {
                         display: 'none'
                     });
                     let first_source = first.source;
-                    source_index = first_source.indexOf(current, source_index);
                     current_index++;
+                    let source_index = 0;
+                    for (let c of choices) {
+                        source_index = first_source.indexOf(c, source_index);
+                    }
                     let take_count = add(source_index, string_length(current.toString()));
                     html_inner_set(code, string_take(first_source, take_count));
                     if (equal(current_index, list_length(answer))) {
