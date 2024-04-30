@@ -1,6 +1,7 @@
+import {list_get} from "./list_get.mjs";
 import {equal} from "./equal.mjs";
 import {list_length} from "./list_length.mjs";
-import { range } from "./range.mjs";
+import {range} from "./range.mjs";
 export function list_equal(a, b) {
     let a_length = list_length(a);
     let b_length = list_length(b);
@@ -8,6 +9,6 @@ export function list_equal(a, b) {
         return false;
     }
     for (let i of range(a_length)) {
-        
+        let a_i = list_get(a, i);
     }
 }
