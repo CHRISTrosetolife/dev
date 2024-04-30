@@ -4,6 +4,6 @@ export function app_learn_code_source_variations(source) {
     let parsed = js_parse(source);
     let bes = js_node_type(parsed, 'BinaryExpression');
     for (let be of bes) {
-        
+        let {operator} = be;
     }
 }
