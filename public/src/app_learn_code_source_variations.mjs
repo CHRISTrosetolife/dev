@@ -1,3 +1,4 @@
+import {list_filter} from "./list_filter.mjs";
 import {js_unparse} from "./js_unparse.mjs";
 import {object_property_swap} from "./object_property_swap.mjs";
 import {assert} from "./assert.mjs";
@@ -13,7 +14,7 @@ export function app_learn_code_source_variations(source) {
     let parsed = js_parse(source);
     let bes = js_node_type(parsed, 'BinaryExpression');
     let operators = ['+'];
-    let filtered = list_map(bes, be => {
+    let filtered = list_filter(bes, be => {
         let {operator} = be;
         return list_includes(operators, operator);
     });
@@ -21,9 +22,13 @@ export function app_learn_code_source_variations(source) {
     if (equal(length, 0)) {
         return [source];
     }
+    console.log({
+        filtered,
+        length
+    });
     assert(lesson_less_than_equal, [length, 1]);
     let first = list_first(filtered);
     object_property_swap(first, 'left', 'right');
     let alternative = js_unparse(ast);
-    return [source,alternative]
+    return [source, alternative];
 }
