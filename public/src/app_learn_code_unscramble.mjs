@@ -68,6 +68,7 @@ export function app_learn_code_unscramble(source_get) {
             let parts = array_new();
             let current_index = 0;
             let source_index = 0;
+            let choices = array_new()
             for (let s of scrambled) {
                 let part = app_learn_code_code_part_generic(html_span_text, div, s, app_learn_code_code_background());
                 list_add(parts, part);
@@ -81,7 +82,7 @@ export function app_learn_code_unscramble(source_get) {
                 html_style_centered(part);
                 html_on_click(part, () => {
                     for (let a of answers) {
-                        
+
                     }
                     let current = list_get(answer, current_index);
                     let e = equal(s, current);
