@@ -40,6 +40,7 @@ import {html_div} from "./html_div.mjs";
 import {html_button_width_full_text_click} from "./html_button_width_full_text_click.mjs";
 import {html_style_centered} from "./html_style_centered.mjs";
 import {list_includes} from "./list_includes.mjs";
+import { list_first } from "./list_first.mjs";
 export function app_learn_code_unscramble(source_get) {
     return function app_learn_code_unscramble_inner(parent) {
         let div = html_div(parent);
@@ -48,6 +49,7 @@ export function app_learn_code_unscramble(source_get) {
             html_clear(div);
             let source = source_get();
             let variations = app_learn_code_source_variations(source)
+            source = list_first(variations)
             let messages = app_learn_code_eval(source);
             let joined = app_learn_code_eval_messages_to_string(messages);
             html_p_text(div, 'below is another quiz');
