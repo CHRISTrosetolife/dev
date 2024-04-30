@@ -106,6 +106,7 @@ export function app_learn_code_unscramble(source_get) {
                         });
                         return;
                     }
+                    let first = list_first(filtered)
                     list_add(choices, s);
                     html_style(code, {
                         visibility: 'visible'
