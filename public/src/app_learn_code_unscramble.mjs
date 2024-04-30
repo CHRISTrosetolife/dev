@@ -100,7 +100,6 @@ export function app_learn_code_unscramble(source_get) {
                     });
                     let filtered = list_filter(mapped, m => null_not_is(m));
                     let current = list_get(answer, current_index);
-                    let e = equal(s, current);
                     if (list_empty_is(filtered)) {
                         html_style(part, {
                             'background-color': 'darkred'
