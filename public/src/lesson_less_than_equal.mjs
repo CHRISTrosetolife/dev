@@ -42,6 +42,8 @@ export function lesson_less_than_equal() {
         html_p_text(parent, 'the only difference is when the two numbers being compared are the same');
         html_p_text(parent, 'if "a" and "b" are equal then "a" is less than or equal to "b"');
         html_p_text(parent, 'whereas if "a" and "b" are equal then "a" is not less than "b"');
+        html_p_text(parent, 'if a < b then a ≤ b');
+        html_p_text(parent, 'if a = b then a ≤ b');
         html_p_text(parent, 'here are some examples :');
         let ul1 = html_ul(parent);
         html_li_text(ul1, '3 ≤ 5 is true');
