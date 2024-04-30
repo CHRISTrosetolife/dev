@@ -70,7 +70,12 @@ export function app_learn_code_unscramble(source_get) {
                 visibility: 'hidden'
             });
             let success = html_div(div);
-            let answers = list_map(variations, app_learn_code_source_to_tokens);
+            let answers = list_map(variations, v => {
+                return {
+                    tokens : app_learn_code_source_to_tokens(v),
+                    source : v
+                }
+            });
             let answer = app_learn_code_source_to_tokens(source);
             console.log({answer})
             let scrambled = list_copy(answer);
