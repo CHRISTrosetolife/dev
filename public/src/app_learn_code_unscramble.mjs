@@ -97,7 +97,8 @@ export function app_learn_code_unscramble(source_get) {
                 html_style_centered(part);
                 html_on_click(part, () => {
                     let mapped = list_map(answers, a => {
-                        let expected = list_take(a, add_1(current_index));
+                        let {tokens} = a;
+                        let expected = list_take(tokens, add_1(current_index));
                         let actual = list_concat(choices, [s]);
                         if (list_equal(expected, actual)) {
                             return a;
@@ -112,7 +113,8 @@ export function app_learn_code_unscramble(source_get) {
                         return;
                     }
                     let first = list_first(filtered)
-                    let current = list_get(first, current_index);
+                    let {tokens} = first;
+                    let current = list_get(tokens, current_index);
                     list_add(choices, s);
                     html_style(code, {
                         visibility: 'visible'
@@ -125,6 +127,7 @@ export function app_learn_code_unscramble(source_get) {
                     html_style(part, {
                         display: 'none'
                     });
+                    let first_source = first.source;
                     source_index = source.indexOf(current, source_index);
                     current_index++;
                     let take_count = add(source_index, string_length(current.toString()));
