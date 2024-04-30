@@ -25,7 +25,8 @@ export function app_learn_code_source_variations(source) {
     }
     console.log({
         filtered,
-        length
+        length,
+        a:less_than_equal(length, 1)
     });
     let a, b;
     less_than_equal(a, b);
