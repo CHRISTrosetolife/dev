@@ -1,5 +1,4 @@
 import {js_parse_options} from "./js_parse_options.mjs";
-import {undefined_is} from "./undefined_is.mjs";
 let acorn_imported;
 if (typeof window === 'undefined') {
     acorn_imported = await import('acorn')
