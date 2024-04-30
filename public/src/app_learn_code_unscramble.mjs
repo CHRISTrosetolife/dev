@@ -61,24 +61,8 @@ export function app_learn_code_unscramble(source_get) {
                 visibility: 'hidden'
             });
             let success = html_div(div);
-            let tokens = list_adder(la => {
-                for (let token of js_tokenize(source)) {
-                    la(token);
-                }
-            });
-            let answer = list_map(tokens, t => {
-                let {type} = t;
-                let {label} = type;
-                let {value} = t;
-                if (equal(label, 'string')) {
-                    return string_delimit(value);
-                }
-                let labels = ['name', 'num', '+/-', '</>/<=/>=', '==/!=/===/!=='];
-                if (list_includes(labels, label)) {
-                    return value;
-                }
-                return label;
-            });
+            let answers = list_map(variations, app_learn_code_source_to_tokens)
+            let answer = app_learn_code_source_to_tokens(source);
             let scrambled = list_copy(answer);
             list_scramble(scrambled);
             let parts = array_new();
@@ -133,3 +117,25 @@ export function app_learn_code_unscramble(source_get) {
         }
     };
 }
+function app_learn_code_source_to_tokens(source) {
+    let tokens = list_adder(la => {
+        for (let token of js_tokenize(source)) {
+            la(token);
+        }
+    });
+    let answer = list_map(tokens, t => {
+        let { type } = t;
+        let { label } = type;
+        let { value } = t;
+        if (equal(label, 'string')) {
+            return string_delimit(value);
+        }
+        let labels = ['name', 'num', '+/-', '</>/<=/>=', '==/!=/===/!=='];
+        if (list_includes(labels, label)) {
+            return value;
+        }
+        return label;
+    });
+    return answer;
+}
+
