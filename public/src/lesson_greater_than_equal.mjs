@@ -41,9 +41,9 @@ export function lesson_greater_than_equal() {
         html_p_text(parent, 'as "less than or equal to" was for "less than" so "greater than or equal to" is for "greater than"');
         html_p_text(parent, 'here are some examples :');
         let ul1 = html_ul(parent);
-        html_li_text(ul1, '3 >= 5 is false');
-        html_li_text(ul1, '6 >= 4 is true');
-        html_li_text(ul1, '2 >= 2 is true');
+        html_li_text(ul1, '3 ≥ 5 is false');
+        html_li_text(ul1, '6 ≥ 4 is true');
+        html_li_text(ul1, '2 ≥ 2 is true');
     }
     function example_before(parent) {}
 }
