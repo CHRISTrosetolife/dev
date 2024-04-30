@@ -47,7 +47,7 @@ export function app_learn_code_unscramble(source_get) {
         function refresh() {
             html_clear(div);
             let source = source_get();
-            let alternatives = app_learn_code_source_alternatives(source)
+            let variations = app_learn_code_source_variations(source)
             let messages = app_learn_code_eval(source);
             let joined = app_learn_code_eval_messages_to_string(messages);
             html_p_text(div, 'below is another quiz');
