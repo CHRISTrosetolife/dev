@@ -1,4 +1,5 @@
 import { assert } from "./assert.mjs";
+import { equal } from "./equal.mjs";
 import {js_node_type} from "./js_node_type.mjs";
 import {js_parse} from "./js_parse.mjs";
 import { lesson_less_than_equal } from "./lesson_less_than_equal.mjs";
@@ -14,6 +15,9 @@ export function app_learn_code_source_variations(source) {
         return list_includes(operators, operator)
     })
     let length = list_length(filtered);
+    if (equal(length, 0)) {
+        return [source]
+    }
     // code needs modification to exceed limit
     assert(lesson_less_than_equal, [length, 1])
 }
