@@ -1,1 +1,1 @@
-export function object_property_swap(a, b) {}
+export function object_property_swap(object, property_a, property_b) {}
