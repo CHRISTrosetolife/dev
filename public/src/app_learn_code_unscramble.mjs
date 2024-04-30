@@ -86,8 +86,6 @@ export function app_learn_code_unscramble(source_get) {
                     for (let a of answers) {
                         let expected = list_take(a, add_1(current_index))
                         let actual = list_concat(choices, [s]);
-                        let a_length = list_length(expected);
-                        let b_length = list_length(actual);
                     }
                     let current = list_get(answer, current_index);
                     let e = equal(s, current);
