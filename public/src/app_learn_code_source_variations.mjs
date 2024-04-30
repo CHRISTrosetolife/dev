@@ -1,3 +1,5 @@
+import {js_unparse} from "./js_unparse.mjs";
+import {object_property_swap} from "./object_property_swap.mjs";
 import {assert} from "./assert.mjs";
 import {equal} from "./equal.mjs";
 import {js_node_type} from "./js_node_type.mjs";
@@ -21,4 +23,6 @@ export function app_learn_code_source_variations(source) {
     }
     assert(lesson_less_than_equal, [length, 1]);
     let first = list_first(filtered);
+    object_property_swap(first, 'left', 'right');
+    let alternative = js_unparse();
 }
