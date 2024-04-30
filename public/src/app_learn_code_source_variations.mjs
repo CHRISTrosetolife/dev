@@ -1,3 +1,4 @@
+import {less_than_equal} from "./less_than_equal.mjs";
 import {list_filter} from "./list_filter.mjs";
 import {js_unparse} from "./js_unparse.mjs";
 import {object_property_swap} from "./object_property_swap.mjs";
@@ -26,6 +27,8 @@ export function app_learn_code_source_variations(source) {
         filtered,
         length
     });
+    let a, b;
+    less_than_equal(a, b);
     assert(less_than_equal, [length, 1]);
     let first = list_first(filtered);
     object_property_swap(first, 'left', 'right');
