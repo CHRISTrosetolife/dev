@@ -39,6 +39,8 @@ export function lesson_greater_than_equal() {
     return lesson_simple(lesson_comparisons_source_get_get('<='), example_before, description, example_message, [screen_before1]);
     function screen_before1(parent) {
         html_p_text(parent, 'as "less than or equal to" ( ≤ ) was for "less than" ( < ) so "greater than or equal to" ( ≥ ) is for "greater than" ( > )');
+        html_p_text(parent, 'if a > b then a ≥ b');
+        html_p_text(parent, 'if a = b then a ≥ b');
         html_p_text(parent, 'here are some examples :');
         let ul1 = html_ul(parent);
         html_li_text(ul1, '3 ≥ 5 is false');
