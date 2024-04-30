@@ -53,6 +53,6 @@ export function lesson_less_than_equal() {
         html_li_text(ul1, '2 ≤ 2 is true');
     }
     function example_before(parent) {
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['in javascript a ≤ b is written as ', 'a <= b']);
+        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['in javascript a ≤ b is written as : ', 'a <= b']);
     }
 }
