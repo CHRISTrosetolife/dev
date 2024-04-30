@@ -11,5 +11,9 @@ export function list_equal(a, b) {
     for (let i of range(a_length)) {
         let a_i = list_get(a, i);
         let b_i = list_get(b, i);
+        if (!equal(a_i, b_i)) {
+            return false;
+        }
     }
+    return true;
 }
