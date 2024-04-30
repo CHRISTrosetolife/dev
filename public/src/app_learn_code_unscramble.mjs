@@ -70,7 +70,7 @@ export function app_learn_code_unscramble(source_get) {
                 if (equal(label, 'string')) {
                     return string_delimit(value);
                 }
-                let labels = ['name', 'num', '+/-', '</>/<=/>='];
+                let labels = ['name', 'num', '+/-', '</>/<=/>=', '==/!=/===/!=='];
                 if (list_includes(labels, label)) {
                     return value;
                 }
