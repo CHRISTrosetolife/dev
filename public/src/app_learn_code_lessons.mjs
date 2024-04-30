@@ -23,10 +23,10 @@ export function app_learn_code_lessons() {
     list_add(lesson_creates, lesson_divide);
     list_add(lesson_creates, lesson_less_than);
     list_add(lesson_creates, lesson_greater_than);
-    list_add(lesson_creates, lesson_less_than_equal);
-    list_add(lesson_creates, lesson_greater_than_equal);
     list_add(lesson_creates, lesson_equal_number);
     list_add(lesson_creates, lesson_equal_string);
+    list_add(lesson_creates, lesson_less_than_equal);
+    list_add(lesson_creates, lesson_greater_than_equal);
     list_add(lesson_creates, lesson_statements_two);
     list_add(lesson_creates, lesson_statements_three);
     return lesson_creates;
