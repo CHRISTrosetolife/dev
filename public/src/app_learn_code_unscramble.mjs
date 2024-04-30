@@ -72,6 +72,7 @@ export function app_learn_code_unscramble(source_get) {
             let success = html_div(div);
             let answers = list_map(variations, app_learn_code_source_to_tokens);
             let answer = app_learn_code_source_to_tokens(source);
+            console.log({answer})
             let scrambled = list_copy(answer);
             list_scramble(scrambled);
             let parts = array_new();
@@ -99,7 +100,6 @@ export function app_learn_code_unscramble(source_get) {
                         return null;
                     });
                     let filtered = list_filter(mapped, m => null_not_is(m));
-                    let current = list_get(answer, current_index);
                     if (list_empty_is(filtered)) {
                         html_style(part, {
                             'background-color': 'darkred'
@@ -107,6 +107,7 @@ export function app_learn_code_unscramble(source_get) {
                         return;
                     }
                     let first = list_first(filtered)
+                    let current = list_get(first, current_index);
                     list_add(choices, s);
                     html_style(code, {
                         visibility: 'visible'
