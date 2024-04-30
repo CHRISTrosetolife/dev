@@ -1,5 +1,4 @@
 import {string_empty_is} from "./string_empty_is.mjs";
-import {json_from} from "./json_from.mjs";
 import {js_body_nested} from "./js_body_nested.mjs";
 import {js_variable_declaration_init} from "./js_variable_declaration_init.mjs";
 import {js_export_single} from "./js_export_single.mjs";
