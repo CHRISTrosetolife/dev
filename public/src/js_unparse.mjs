@@ -1,9 +1,9 @@
-let astring_import;
+let a;
 if (typeof window === 'undefined') {
-    astring_import = await import('astring')
+    a = await import('astring')
 }
 export function js_unparse(ast) {
-    let {generate} = astring_import;
+    let {generate} = a;
     return generate(ast, {
         indent: '    '
     });
