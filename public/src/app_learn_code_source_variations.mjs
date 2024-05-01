@@ -14,7 +14,7 @@ import {list_map} from "./list_map.mjs";
 export function app_learn_code_source_variations(source) {
     let ast = js_parse(source);
     let bes = js_node_type(ast, 'BinaryExpression');
-    let operators = ['+','*','===','!==='];
+    let operators = ['+','*','===','!=='];
     let filtered = list_filter(bes, be => {
         let {operator} = be;
         return list_includes(operators, operator);
