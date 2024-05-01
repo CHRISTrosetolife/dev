@@ -19,15 +19,13 @@ export async function app_memorize() {
     let verse_index = 0;
     let word_index = 0;
     each_index(verses, (verse, i) => {
-        for (let verse of verses) {
-            let section = html_element(root, 'section');
-            let {tokens, verse_number} = verse;
-            html_strong_text(section, verse_number);
-            for (let token of tokens) {
-                html_span_text(section, ' ');
-                let token_element = html_span_text(section, token);
-                and(equal(), verse);
-            }
+        let section = html_element(root, 'section');
+        let {tokens, verse_number} = verse;
+        html_strong_text(section, verse_number);
+        for (let token of tokens) {
+            html_span_text(section, ' ');
+            let token_element = html_span_text(section, token);
+            and(equal(), verse);
         }
     })
 }
