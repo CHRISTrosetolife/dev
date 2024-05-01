@@ -1,3 +1,4 @@
+import {html_style_centered} from "./html_style_centered.mjs";
 import {html_button} from "./html_button.mjs";
 import {html_div} from "./html_div.mjs";
 import {subtract} from "./subtract.mjs";
@@ -55,9 +56,10 @@ export async function app_memorize() {
     let keys = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm'];
     for (let row of keys) {
         let row_element = html_div(keyboard_element);
+        html_style_centered(row_element);
         for (let k of row) {
             let b = html_button(row_element);
-            html_inner_set(b, string_case_upper(k))
+            html_inner_set(b, string_case_upper(k));
         }
     }
     function number_to_dvh(value) {
