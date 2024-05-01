@@ -6,6 +6,6 @@ export async function storage_upload(file_path) {
         credential: admin.credential.cert(service_account),
         storageBucket: "gs://letJESUSbeexalted.appspot.com"
     });
-    var bucket = admin.storage().bucket();
+    let bucket = admin.storage().bucket();
     bucket.upload("/Users/j.milanmethodius/Desktop/hapi screenshots/demoimage.jpeg");
 }
