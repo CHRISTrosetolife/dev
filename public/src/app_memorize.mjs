@@ -29,7 +29,7 @@ export async function app_memorize() {
             html_span_text(section, ' ');
             let token_element = html_span_text(section, token);
             if (and(equal(i, verse_index), equal(j, token_index))) {
-                html_style_background_color(container, 'green');
+                html_style_background_color(token_element, 'green');
             }
         });
     });
