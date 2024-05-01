@@ -10,13 +10,16 @@ import {string_split} from "./string_split.mjs";
 import {list_index_last} from "./list_index_last.mjs";
 import {assert} from "./assert.mjs";
 import { list_adder } from "./list_adder.mjs";
+import { list_take } from "./list_take.mjs";
 export function bible_verses_parse(rawText) {
     let split = string_split(rawText, '&#160;');
     return list_adder(la => {
         each_pairs(split, (previous, current) => {
-            let verse_number = verse_number_get(previous);
+            let {verse_number} = verse_get(previous)
+            let {tokens} = verse_get(current);
             la({
-                verse_number
+                verse_number,
+                tokens
             })
         });
     })
@@ -35,12 +38,13 @@ export function bible_verses_parse(rawText) {
     });
     return mapped2;
 
-    function verse_number_get(previous) {
-        let split2 = string_split_space(previous);
-        let verse_number = list_last(split2);
+    function verse_get(previous) {
+        let split = string_split_space(previous);
+        let verse_number = list_last(split);
         let parsed = integer_parse(verse_number);
         assert(number_is, [parsed]);
         let less_1 = list_index_last(previous)
-        return {verse_number};
+        let tokens = list_take(split, less_1);
+        return {verse_number, tokens};
     }
 }
