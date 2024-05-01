@@ -8,6 +8,7 @@ export function bible_verses_parse(rawText) {
     let mapped = list_map(split, string_trim);
     let mapped2 = list_map(mapped, m => {
         let split = string_split(m, '&#160;');
+        console.log({split})
         let verse_number = list_get(split, 0);
         let text = list_get(split, 1);
         let tokens = string_split_space(text);
