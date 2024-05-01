@@ -1,3 +1,4 @@
+import {subtract} from "./subtract.mjs";
 import {string_to} from "./string_to.mjs";
 import {html_style_background_color} from "./html_style_background_color.mjs";
 import {equal} from "./equal.mjs";
@@ -47,10 +48,8 @@ export async function app_memorize() {
     });
     let keyboard_element = html_element(root, 'div');
     html_style(keyboard_element, {
-        'max-height': 'dvh',
-        'overflow': 'scroll'
+        'max-height': number_to_dvh(subtract(100, height_max))
     });
-
     function number_to_dvh(value) {
         return string_combine(string_to(value), 'dvh');
     }
