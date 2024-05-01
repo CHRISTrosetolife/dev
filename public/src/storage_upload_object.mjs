@@ -1,3 +1,4 @@
+import {storage_upload_string} from "./storage_upload_string.mjs";
 import {file_write} from "./file_write.mjs";
 import {json_to} from "./json_to.mjs";
 import {file_delete} from "./file_delete.mjs";
@@ -7,9 +8,5 @@ import {file_name_json} from "./file_name_json.mjs";
 import {storage_upload_file} from "./storage_upload_file.mjs";
 export async function storage_upload_object(object, destination) {
     let json = json_to(object);
-    let u = uuid();
-    let file_path = file_name_json(u);
-    await file_write(file_path, json);
-    storage_upload_file(file_name, destination);
-    await file_delete(file_path);
+    await storage_upload_string(json, destination);
 }
