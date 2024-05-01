@@ -1,3 +1,3 @@
-export function string_case_lower(input) {
-    return input.toLowerCase();
+export function string_case_upper(input) {
+    return input.toUpperCase();
 }

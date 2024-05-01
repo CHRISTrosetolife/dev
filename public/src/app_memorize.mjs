@@ -1,3 +1,4 @@
+import {string_case_upper} from "./string_case_upper.mjs";
 import {html_style_centered} from "./html_style_centered.mjs";
 import {html_button} from "./html_button.mjs";
 import {html_div} from "./html_div.mjs";
