@@ -7,6 +7,7 @@
     "firebase-admin": "^12.1.0",
     "glob": "^10.3.10",
     "node-fetch": "^3.3.2",
-    "node-html-parser": "^6.1.12"
+    "node-html-parser": "^6.1.12",
+    "runes": "^0.4.3"
   }
 }
