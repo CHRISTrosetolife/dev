@@ -17,20 +17,17 @@ import {string_case_lower} from './string_case_lower.mjs';
 import {bible_token_normalize} from './bible_token_normalize.mjs';
 export function app_bible() {
     let root = html_document_body();
-    let root_component = {
-        element: root
-    };
-    html_style(root_component, {
+    html_style(root, {
         'font-family': 'Sans-Serif',
         'font-size': '5vh',
         'margin': '0'
     });
-    let top = html_div(root_component);
+    let top = html_div(root);
     html_style(top, {
         'height': '75vh',
         'overflow-y': 'scroll'
     });
-    let bottom = html_element(root_component, 'div');
+    let bottom = html_element(root, 'div');
     html_style(bottom, {
         'height': '25vh',
         'overflow-y': 'scroll',
