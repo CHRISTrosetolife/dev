@@ -24,6 +24,11 @@ export async function app_memorize() {
         for (let token of tokens) {
             html_span_text(section, ' ');
             let token_element = html_span_text(section, token);
+            if (and(token, verse))
         }
     }
 }
+function and(token, verse) {
+    return token && verse;
+}
+
