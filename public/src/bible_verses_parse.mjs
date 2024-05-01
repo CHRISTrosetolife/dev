@@ -1,3 +1,4 @@
+import {number_is} from "./number_is.mjs";
 import {integer_parse} from "./integer_parse.mjs";
 import {list_last} from "./list_last.mjs";
 import {each_pairs} from "./each_pairs.mjs";
