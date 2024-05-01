@@ -69,6 +69,6 @@ export function lesson_equal_not_number() {
         html_li_text(ul, '2 ≠ 2 is false');
     }
     function example_before(parent) {
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['in javascript to check if two numbers are equal or not , instead of using one equal sign ( ', '=', ' ) use three equal signs ( ', '===', ' )']);
+        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['in javascript to check if two numbers are not equal , instead of using the not equal sign ( ', '≠', ' ) use this : ', '!==']);
     }
 }
