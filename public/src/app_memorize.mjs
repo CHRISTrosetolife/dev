@@ -34,7 +34,7 @@ export async function app_memorize() {
     let token_index = 0;
     let verses_element = html_element(root, 'div');
     let button_height = 7;
-    let keys = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm'];
+    let keys = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm⚙️'];
     let keys_length = list_length(keys);
     let keyboard_height = multiply(button_height, keys_length);
     let height_max = subtract(100, keyboard_height);
@@ -68,6 +68,7 @@ export async function app_memorize() {
             let b = html_button(row_element);
             html_inner_set(b, string_case_upper(k));
             html_style(b, {
+                'font-size': '4dvh',
                 'min-width': number_to_dvw(10 - 0.75),
                 'max-width': number_to_dvw(10 - 0.75),
                 'height': number_to_dvh(button_height - 0.5)
