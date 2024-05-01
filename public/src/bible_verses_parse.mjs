@@ -10,7 +10,7 @@ export function bible_verses_parse(rawText) {
         let split = string_split(m, '&#160;');
         let verse_number = list_get(split, 0);
         let text = list_get(split, 1);
-        let tokens = string_split_space(sentence);
+        let tokens = string_split_space(text);
         return {
             verse_number,
             tokens
