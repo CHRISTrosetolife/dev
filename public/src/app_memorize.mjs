@@ -25,6 +25,7 @@ import {html_style} from "./html_style.mjs";
 import {string_combine} from "./string_combine.mjs";
 export async function app_memorize() {
     let root = html_document_body();
+    html_style(root, {margin:'0'})
     html_style_sans_serif(root);
     html_style_default_font_size(3);
     let file_path = bible_engbsb_storage_path_file('JHN19');
@@ -67,8 +68,9 @@ export async function app_memorize() {
             let b = html_button(row_element);
             html_inner_set(b, string_case_upper(k));
             html_style(b, {
-                'width': number_to_dvw(9),
-                'height': number_to_dvh(button_height)
+                'min-width': number_to_dvw(10 - 0.75),
+                'max-width': number_to_dvw(10 - 0.75),
+                'height': number_to_dvh(button_height - 0.5)
             });
         }
     }
