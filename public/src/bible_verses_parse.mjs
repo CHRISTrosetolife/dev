@@ -17,7 +17,6 @@ export function bible_verses_parse(rawText) {
             let split2 = string_split(previous, ' ');
             let verse_number = list_last(split2);
             let parsed = integer_parse(verse_number);
-            console.log({parsed})
             assert(number_is, [parsed]);
             la({
                 verse_number
