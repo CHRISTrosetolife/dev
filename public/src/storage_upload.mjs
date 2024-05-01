@@ -3,7 +3,7 @@ export function storage_upload(file_path) {
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    storageBucket: "gs://learnfirebase-39b36.appspot.com"
+    storageBucket: "gs://letCHRISTbeexalted.appspot.com"
 });
 
 var bucket = admin.storage().bucket();
