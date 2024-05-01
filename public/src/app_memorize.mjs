@@ -57,6 +57,7 @@ export async function app_memorize() {
         let row_element = html_div(keyboard_element);
         for (let k of row) {
             let b = html_button(row_element);
+            html_inner_set(b, string_case_upper(k))
         }
     }
     function number_to_dvh(value) {
