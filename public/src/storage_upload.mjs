@@ -7,5 +7,5 @@ export async function storage_upload(file_path) {
         storageBucket: "gs://letJESUSbeexalted.appspot.com"
     });
     let bucket = admin.storage().bucket();
-    bucket.upload("/Users/j.milanmethodius/Desktop/hapi screenshots/demoimage.jpeg");
+    bucket.upload(file_path);
 }
