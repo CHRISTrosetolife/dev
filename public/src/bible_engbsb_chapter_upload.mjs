@@ -6,7 +6,6 @@ import {string_combine} from "./string_combine.mjs";
 import {file_name_json} from "./file_name_json.mjs";
 export async function bible_engbsb_chapter_upload(chapter_name) {
     let data = await bible_engbsb_chapter(chapter_name);
-    let file_name = file_name_json(chapter_name);
-    let destination = bible_engbsb_storage_path_file(file_name);
+    let destination = bible_engbsb_storage_path_file(chapter_name);
     await storage_upload_object(data, destination);
 }
