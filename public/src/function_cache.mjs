@@ -1,3 +1,4 @@
+import {file_read_json} from "./file_read_json.mjs";
 import {json_to} from './json_to.mjs';
 import {json_from} from './json_from.mjs';
 import {path_join} from './path_join.mjs';
@@ -34,9 +35,3 @@ export async function function_cache(fn, args) {
     await file_write(file_path, json);
     return result;
 }
-async function file_read_json(file_path) {
-    let json = await file_read(file_path);
-    let object = json_from(json);
-    return object;
-}
-
