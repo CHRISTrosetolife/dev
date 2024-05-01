@@ -35,9 +35,9 @@ import {html_ul} from "./html_ul.mjs";
 import {html_li_text} from "./html_li_text.mjs";
 import {lesson_log_number_quiz_value} from "./lesson_log_number_quiz_value.mjs";
 import {lesson_console_log_quiz_value} from "./lesson_console_log_quiz_value.mjs";
-export function lesson_equal_string() {
-    const description = 'equal ( === ) ( strings )';
-    const example_message = 'outputting whether or not two strings are equal';
+export function lesson_equal_not_string() {
+    const description = 'not equal ( !== ) ( strings )';
+    const example_message = 'outputting whether or not two strings are not equal';
     return lesson_simple(source_get, example_before, description, example_message, []);
     function source_get() {
         let a = lesson_console_log_quiz_value();
@@ -47,9 +47,9 @@ export function lesson_equal_string() {
         } else {
             b = lesson_console_log_quiz_value();
         }
-        return `console.log(${a} === ${b});`;
+        return `console.log(${a} !== ${b});`;
     }
     function example_before(parent) {
-        html_style_alternate(parent, html_p, [html_style_monospace, noop], ['===', ' also checks if two strings are the same or not']);
+        html_style_alternate(parent, html_p, [html_style_monospace, noop], ['!==', ' also checks whether or not two strings are not equal']);
     }
 }
