@@ -24,7 +24,7 @@ export async function app_memorize() {
     let token_index = 0;
     let verses_element = html_element(root, 'div')
     html_style(verses_element, {
-        height: '70%'
+        'max-height': '70%'
     })
     each_index(verses, (verse, i) => {
         let section = html_element(verses_element, 'section');
@@ -41,4 +41,5 @@ export async function app_memorize() {
             }
         });
     });
+    let keyboard_element = html_element(root, 'div')
 }
