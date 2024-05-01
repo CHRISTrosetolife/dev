@@ -3,7 +3,7 @@ export function storage_upload(file_path) {
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    storageBucket: "gs://letCHRISTbeexalted.appspot.com"
+    storageBucket: "gs://letJESUSbeexalted.appspot.com"
 });
 
 var bucket = admin.storage().bucket();
