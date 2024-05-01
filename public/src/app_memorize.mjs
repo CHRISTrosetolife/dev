@@ -1,3 +1,4 @@
+import {html_button} from "./html_button.mjs";
 import {html_div} from "./html_div.mjs";
 import {subtract} from "./subtract.mjs";
 import {string_to} from "./string_to.mjs";
@@ -54,6 +55,9 @@ export async function app_memorize() {
     let keys = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm'];
     for (let row of keys) {
         let row_element = html_div(keyboard_element);
+        for (let k of row) {
+            let b = html_button(row_element);
+        }
     }
     function number_to_dvh(value) {
         return string_combine(string_to(value), 'dvh');
