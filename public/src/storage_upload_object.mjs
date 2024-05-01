@@ -8,5 +8,6 @@ import {file_name_json} from "./file_name_json.mjs";
 import {storage_upload_file} from "./storage_upload_file.mjs";
 export async function storage_upload_object(object, destination) {
     let json = json_to(object);
+    console.log({json})
     await storage_upload_string(json, destination);
 }
