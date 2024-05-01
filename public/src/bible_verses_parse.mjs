@@ -36,7 +36,7 @@ export function bible_verses_parse(rawText) {
     return mapped2;
 
     function verse_number_get(previous) {
-        let split2 = string_split(previous, ' ');
+        let split2 = string_split_space(previous);
         let verse_number = list_last(split2);
         let parsed = integer_parse(verse_number);
         assert(number_is, [parsed]);
