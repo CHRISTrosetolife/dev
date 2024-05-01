@@ -15,6 +15,8 @@ export async function app_memorize() {
     html_style_default_font_size(3);
     let file_path = bible_engbsb_storage_path_file('JHN19');
     let verses = await http_get(storage_url(file_path));
+    let verse_index = 0;
+    let word_index = 0;
     for (let verse of verses) {
         let section = html_element(root, 'section');
         let {tokens, verse_number} = verse;
@@ -24,6 +26,4 @@ export async function app_memorize() {
             html_span_text(section, token);
         }
     }
-    let verse_index = 0;
-    let word_index = 0;
 }
