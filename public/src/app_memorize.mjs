@@ -13,6 +13,7 @@ import {html_span_text} from "./html_span_text.mjs";
 import {html_strong_text} from "./html_strong_text.mjs";
 import {html_style_sans_serif} from "./html_style_sans_serif.mjs";
 import {each_index} from "./each_index.mjs";
+import { html_style } from "./html_style.mjs";
 export async function app_memorize() {
     let root = html_document_body();
     html_style_sans_serif(root);
@@ -30,6 +31,9 @@ export async function app_memorize() {
             let token_element = html_span_text(section, token);
             if (and(equal(i, verse_index), equal(j, token_index))) {
                 html_style_background_color(token_element, 'green');
+                html_style(token_element, {
+                    color: 'white'
+                })
             }
         });
     });
