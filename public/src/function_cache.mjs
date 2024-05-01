@@ -1,3 +1,4 @@
+import {file_write_json} from "./file_write_json.mjs";
 import {file_read_json} from "./file_read_json.mjs";
 import {json_to} from './json_to.mjs';
 import {json_from} from './json_from.mjs';
@@ -31,7 +32,6 @@ export async function function_cache(fn, args) {
     object = {
         result
     };
-    json = json_to(object);
-    await file_write(file_path, json);
+    json = await file_write_json(file_path, object);
     return result;
 }
