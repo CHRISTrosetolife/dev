@@ -7,6 +7,7 @@ export async function storage_upload_string(string, destination) {
     let u = uuid();
     let file_path = file_name_json(u);
     await file_write(file_path, string);
+    console.log({string})
     storage_upload_file(file_path, destination);
     await file_delete(file_path);
 }
