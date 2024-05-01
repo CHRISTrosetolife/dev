@@ -1,3 +1,3 @@
 export function number_is(value) {
-    typeof value === 'number';
+    return typeof value === 'number';
 }
