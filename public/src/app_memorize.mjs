@@ -22,8 +22,12 @@ export async function app_memorize() {
     let verses = await http_get(storage_url(file_path));
     let verse_index = 0;
     let token_index = 0;
+    let verses_element = html_element(root, 'div')
+    html_style(verses_element, {
+        height: '70%'
+    })
     each_index(verses, (verse, i) => {
-        let section = html_element(root, 'section');
+        let section = html_element(verses_element, 'section');
         let {tokens, verse_number} = verse;
         html_strong_text(section, verse_number);
         each_index(tokens, (token, j) => {
