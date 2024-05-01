@@ -30,10 +30,14 @@ export async function app_memorize() {
     let verse_index = 0;
     let token_index = 0;
     let verses_element = html_element(root, 'div');
-    let height_max = 70;
+    let button_height = 7;
+    let keys = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm'];
+    let keys_length = list_length(keys);
+    let keyboard_height = multiply(button_height, keys_length)
+    let height_max = subtract(100, keyboard_height);
     html_style(verses_element, {
         'max-height': number_to_dvh(height_max),
-        'overflow': 'scroll'
+        'overflow-y': 'scroll'
     });
     each_index(verses, (verse, i) => {
         let section = html_element(verses_element, 'div');
@@ -52,9 +56,8 @@ export async function app_memorize() {
     });
     let keyboard_element = html_element(root, 'div');
     html_style(keyboard_element, {
-        'max-height': number_to_dvh(subtract(100, height_max))
+        'max-height': number_to_dvh(keyboard_height)
     });
-    let keys = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm'];
     for (let row of keys) {
         let row_element = html_div(keyboard_element);
         html_style_centered(row_element);
@@ -62,7 +65,8 @@ export async function app_memorize() {
             let b = html_button(row_element);
             html_inner_set(b, string_case_upper(k));
             html_style(b, {
-                'width': number_to_dvw(10)
+                'width': number_to_dvw(9),
+                'height': number_to_dvh(button_height)
             })
         }
     }
