@@ -7,8 +7,10 @@ import { html_inner_set } from "./html_inner_set.mjs";
 import { html_span } from "./html_span.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_strong_text } from "./html_strong_text.mjs";
+import { html_style_sans_serif } from "./html_style_sans_serif.mjs";
 export async function app_memorize() {
     let root = html_document_body();
+    html_style_sans_serif(root)
     let file_path = bible_engbsb_storage_path_file('JHN19');
     let verses = await http_get(storage_url(file_path));
     console.log({
