@@ -22,8 +22,7 @@ export async function function_cache(fn, args) {
     let json;
     let object;
     if (await file_exists(file_path)) {
-        json = await file_read(file_path);
-        object = json_from(json);
+        object = await file_read_json(file_path);
         let result = object_property_get(object, 'result');
         return result;
     }
@@ -35,3 +34,9 @@ export async function function_cache(fn, args) {
     await file_write(file_path, json);
     return result;
 }
+async function file_read_json(file_path) {
+    let json = await file_read(file_path);
+    let object = json_from(json);
+    return object;
+}
+

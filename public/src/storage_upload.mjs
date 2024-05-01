@@ -1,7 +1,7 @@
 import {file_read} from "./file_read.mjs";
 import admin from "firebase-admin";
 export async function storage_upload(file_path) {
-    await file_read();
+    await file_read('../firebase.json');
     var serviceAccount = require("path/to/serviceAccountKey.json");
     admin.initializeApp({
         credential: admin.credential.cert(serviceAccount)
