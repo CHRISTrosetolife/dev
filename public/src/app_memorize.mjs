@@ -74,11 +74,13 @@ export async function app_memorize() {
         for (let k of row) {
             let b = html_button(row_element);
             html_inner_set(b, string_case_upper(k));
+            let b_width = number_to_dvw(10 - 1)
             html_style(b, {
                 'font-size': '4dvh',
-                'min-width': number_to_dvw(10 - 0.75),
-                'max-width': number_to_dvw(10 - 0.75),
-                'height': number_to_dvh(button_height - 0.5)
+                margin:'0.25dvh',
+                'min-width': b_width,
+                'max-width': b_width,
+                'height': number_to_dvh(button_height - 0.6)
             });
         }
     }
