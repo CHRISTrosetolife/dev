@@ -50,6 +50,7 @@ import {list_concat} from "./list_concat.mjs";
 import {list_equal} from "./list_equal.mjs";
 import {list_filter} from "./list_filter.mjs";
 import {null_is} from "./null_is.mjs";
+import { html_style_background_color } from "./html_style_background_color.mjs";
 export function app_learn_code_unscramble(source_get) {
     return function app_learn_code_unscramble_inner(parent) {
         let div = html_div(parent);
@@ -106,9 +107,7 @@ export function app_learn_code_unscramble(source_get) {
                     });
                     let filtered = list_filter(mapped, m => null_not_is(m));
                     if (list_empty_is(filtered)) {
-                        html_style(part, {
-                            'background-color': 'darkred'
-                        });
+                        html_style_background_color(part, 'darkred')
                         return;
                     }
                     let first = list_first(filtered)
@@ -119,9 +118,7 @@ export function app_learn_code_unscramble(source_get) {
                         visibility: 'visible'
                     });
                     for (let p of parts) {
-                        html_style(p, {
-                            'background-color': app_learn_code_code_background()
-                        });
+                        html_style_background_color(p, app_learn_code_code_background())
                     }
                     html_style(part, {
                         display: 'none'
@@ -135,9 +132,7 @@ export function app_learn_code_unscramble(source_get) {
                     let take_count = add(source_index, string_length(current.toString()));
                     html_inner_set(code, string_take(first_source, take_count));
                     if (equal(current_index, list_length(answer))) {
-                        html_style(code, {
-                            'background-color': 'darkgreen'
-                        });
+                        html_style_background_color(code, 'darkgreen')
                         app_learn_code_answer_correct(success);
                         html_p_text(success, 'if you want to take another quiz , press the "another quiz" button below : ');
                         html_p_text(success, 'otherwise , press the "next" button below');
