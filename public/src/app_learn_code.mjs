@@ -1,3 +1,4 @@
+import {html_style_sans_serif} from "./html_style_sans_serif.mjs";
 import {app_learn_code_lessons} from "./app_learn_code_lessons.mjs";
 import {greater_than} from "./greater_than.mjs";
 import {string_combine_multiple} from "./string_combine_multiple.mjs";
@@ -82,9 +83,7 @@ export function app_learn_code() {
             }
         }
     }
-    html_style(root, {
-        'font-family': 'sans-serif'
-    });
+    html_style_sans_serif(root);
     let default_font_size = 3;
     object_merge(html_style_default(), {
         'font-size': string_combine(default_font_size.toString(), 'vh')
