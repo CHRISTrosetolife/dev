@@ -40,6 +40,7 @@ export function bible_verses_parse(rawText) {
         let verse_number = list_last(split2);
         let parsed = integer_parse(verse_number);
         assert(number_is, [parsed]);
+        let less_1 = list_index_last(previous)
         return {verse_number};
     }
 }
