@@ -1,3 +1,4 @@
+import {integer_parse} from "./integer_parse.mjs";
 import {list_last} from "./list_last.mjs";
 import {each_pairs} from "./each_pairs.mjs";
 import {string_split_space} from "./string_split_space.mjs";
@@ -10,8 +11,8 @@ export function bible_verses_parse(rawText) {
     let split = string_split(rawText, '&#160;');
     each_pairs(split, (previous, current) => {
         let split2 = string_split(previous, ' ');
-        let last = list_last(split2);
-        let verse_number = last;
+        let verse_number = list_last(split2);
+        let parsed = integer_parse(verse_number);
     });
     let mapped2 = list_map(split, m => {
         console.log({
