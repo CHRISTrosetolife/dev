@@ -1,3 +1,4 @@
+import {string_split_empty} from "./string_split_empty.mjs";
 import {multiply} from "./multiply.mjs";
 import {list_length} from "./list_length.mjs";
 import {string_case_upper} from "./string_case_upper.mjs";
@@ -67,7 +68,7 @@ export async function app_memorize() {
     for (let row of keys) {
         let row_element = html_div(keyboard_element);
         html_style_centered(row_element);
-        for (let k of string_split(row, '')) {
+        for (let k of string_split_empty(row)) {
             let b = html_button(row_element);
             html_inner_set(b, string_case_upper(k));
             html_style(b, {
