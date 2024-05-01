@@ -5,6 +5,9 @@ import {list_map} from "./list_map.mjs";
 import {string_split} from "./string_split.mjs";
 export function bible_verses_parse(rawText) {
     let split = string_split(rawText, '&#160;');
+    each_pairs(split, (previous, current) => {
+
+    })
     let mapped2 = list_map(split, m => {
         console.log({m})
         let split = string_split(m, '&#160;');
