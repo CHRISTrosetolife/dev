@@ -1,3 +1,4 @@
+import {html_style_default_font_size} from "./html_style_default_font_size.mjs";
 import {html_style_sans_serif} from "./html_style_sans_serif.mjs";
 import {app_learn_code_lessons} from "./app_learn_code_lessons.mjs";
 import {greater_than} from "./greater_than.mjs";
@@ -85,9 +86,7 @@ export function app_learn_code() {
     }
     html_style_sans_serif(root);
     let default_font_size = 3;
-    object_merge(html_style_default(), {
-        'font-size': string_combine(default_font_size.toString(), 'vh')
-    });
+    html_style_default_font_size(default_font_size);
     object_merge(html_style_button_default(), app_learn_code_style_rounded_padded_style());
     object_merge(html_style_button_default(), {
         'margin': '0.5vh',
