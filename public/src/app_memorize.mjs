@@ -13,6 +13,7 @@ export async function app_memorize() {
     });
     for (let verse of verses) {
         let section = html_element(root, 'section');
+        let {verse_tokens,verse_number} = verses;
         html_inner_set()
     }
 }
