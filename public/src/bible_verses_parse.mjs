@@ -14,10 +14,7 @@ export function bible_verses_parse(rawText) {
     let split = string_split(rawText, '&#160;');
     return list_adder(la => {
         each_pairs(split, (previous, current) => {
-            let split2 = string_split(previous, ' ');
-            let verse_number = list_last(split2);
-            let parsed = integer_parse(verse_number);
-            assert(number_is, [parsed]);
+            let verse_number = verse_number_get(previous);
             la({
                 verse_number
             })
@@ -37,4 +34,12 @@ export function bible_verses_parse(rawText) {
         };
     });
     return mapped2;
+
+    function verse_number_get(previous) {
+        let split2 = string_split(previous, ' ');
+        let verse_number = list_last(split2);
+        let parsed = integer_parse(verse_number);
+        assert(number_is, [parsed]);
+        return verse_number;
+    }
 }
