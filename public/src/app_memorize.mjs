@@ -67,7 +67,7 @@ export async function app_memorize() {
     for (let row of keys) {
         let row_element = html_div(keyboard_element);
         html_style_centered(row_element);
-        for (let k of string_split(row, string_empty())) {
+        for (let k of string_split(row, '')) {
             let b = html_button(row_element);
             html_inner_set(b, string_case_upper(k));
             html_style(b, {
