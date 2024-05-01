@@ -7,12 +7,14 @@ import {string_trim} from "./string_trim.mjs";
 import {list_map} from "./list_map.mjs";
 import {string_split} from "./string_split.mjs";
 import {list_index_last} from "./list_index_last.mjs";
+import {assert} from "./assert.mjs";
 export function bible_verses_parse(rawText) {
     let split = string_split(rawText, '&#160;');
     each_pairs(split, (previous, current) => {
         let split2 = string_split(previous, ' ');
         let verse_number = list_last(split2);
         let parsed = integer_parse(verse_number);
+        assert(number_is, [parsed]);
     });
     let mapped2 = list_map(split, m => {
         console.log({
