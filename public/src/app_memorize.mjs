@@ -23,7 +23,7 @@ export async function app_memorize() {
         html_strong_text(section, verse_number);
         for (let token of tokens) {
             html_span_text(section, ' ');
-            html_span_text(section, token);
+            let token_element = html_span_text(section, token);
         }
     }
 }
