@@ -4,9 +4,13 @@ import {list_get} from "./list_get.mjs";
 import {string_trim} from "./string_trim.mjs";
 import {list_map} from "./list_map.mjs";
 import {string_split} from "./string_split.mjs";
+import { list_index_last } from "./list_index_last.mjs";
 export function bible_verses_parse(rawText) {
     let split = string_split(rawText, '&#160;');
-    each_pairs(split, (previous, current) => {});
+    each_pairs(split, (previous, current) => {
+        let split2 = string_split(previous, ' ');
+        let last = list_last(split2)
+    });
     let mapped2 = list_map(split, m => {
         console.log({
             m
@@ -22,3 +26,7 @@ export function bible_verses_parse(rawText) {
     });
     return mapped2;
 }
+function list_last(split2) {
+    return list_get(split2, list_index_last(split2));
+}
+
