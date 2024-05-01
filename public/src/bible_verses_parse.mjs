@@ -1,3 +1,4 @@
+import {equal} from "./equal.mjs";
 import {string_empty_not_is} from "./string_empty_not_is.mjs";
 import {number_is} from "./number_is.mjs";
 import {integer_parse} from "./integer_parse.mjs";
@@ -19,10 +20,14 @@ export function bible_verses_parse(rawText) {
         let s2 = string_split_space(s);
         return list_filter(s2, string_empty_not_is);
     });
+    let last = list_last(mapped);
     return list_adder(la => {
         each_pairs(mapped, (previous, current) => {
             let {verse_number} = verse_get(previous);
             let {tokens} = verse_get(current);
+            if (equal(current, last)) {
+                tokens = current;
+            }
             la({
                 verse_number,
                 tokens
