@@ -45,6 +45,6 @@ export function bible_verses_parse(rawText) {
         assert(number_is, [parsed]);
         let less_1 = list_index_last(verse_string)
         let tokens = list_take(split, less_1);
-        return {verse_number, tokens};
+        return {verse_number, tokens:split};
     }
 }
