@@ -1,3 +1,4 @@
+import {bible_engbsb_chapter} from "./bible_engbsb_chapter.mjs";
 import {bible_verses_parse} from "./bible_verses_parse.mjs";
 import {file_read} from './file_read.mjs';
 import {path_join} from './path_join.mjs';
@@ -26,11 +27,7 @@ import {json_to} from './json_to.mjs';
 import {function_new_generic} from './function_new_generic.mjs';
 import {js_code_return} from './js_code_return.mjs';
 export async function bible_ceb_chapter(chapter_name) {
-    let parsed_bsb = await bible_chapter_parsed('engbsb_html', chapter_name);
-    let verses_bsb = parsed_bsb.querySelectorAll('.m');
-    let mapped6 = list_map(verses_bsb, v => v.rawText);
-    let joined = list_join(mapped6, '');
-    let eng = bible_verses_parse(joined);
+    let eng = await bible_engbsb_chapter(chapter_name);
     let parsed_ceb = await bible_chapter_parsed('cebulb_html', chapter_name);
     let verses_ceb = parsed_ceb.querySelector('.p');
     let rawText = verses_ceb.rawText;
