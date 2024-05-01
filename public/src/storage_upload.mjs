@@ -6,6 +6,6 @@ admin.initializeApp({
     storageBucket: "gs://letJESUSbeexalted.appspot.com"
 });
 let bucket = admin.storage().bucket();
-export async function storage_upload(file_path) {
-    await bucket.upload(file_path);
+export async function storage_upload(file_path, destination) {
+    await bucket.upload(file_path, {destination});
 }
