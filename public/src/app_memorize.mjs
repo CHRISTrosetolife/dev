@@ -22,11 +22,11 @@ export async function app_memorize() {
         let section = html_element(root, 'section');
         let {tokens, verse_number} = verse;
         html_strong_text(section, verse_number);
-        for (let token of tokens) {
+        each_index(tokens, (token, j) => {
             html_span_text(section, ' ');
             let token_element = html_span_text(section, token);
             and(equal(), verse);
-        }
+        });
     })
 }
 function and(token, verse) {
