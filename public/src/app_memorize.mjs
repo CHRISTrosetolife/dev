@@ -15,9 +15,6 @@ export async function app_memorize() {
     html_style_default_font_size(3);
     let file_path = bible_engbsb_storage_path_file('JHN19');
     let verses = await http_get(storage_url(file_path));
-    console.log({
-        data: verses
-    });
     for (let verse of verses) {
         let section = html_element(root, 'section');
         let {tokens, verse_number} = verse;
