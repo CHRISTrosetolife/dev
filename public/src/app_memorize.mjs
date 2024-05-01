@@ -1,3 +1,4 @@
+import {html_style_button_default_initialize} from "./html_style_button_default_initialize.mjs";
 import {string_split_empty} from "./string_split_empty.mjs";
 import {multiply} from "./multiply.mjs";
 import {list_length} from "./list_length.mjs";
@@ -32,6 +33,7 @@ export async function app_memorize() {
     });
     html_style_sans_serif(root);
     html_style_default_font_size(3);
+    html_style_button_default_initialize();
     let file_path = bible_engbsb_storage_path_file('JHN19');
     let verses = await http_get(storage_url(file_path));
     let verse_index = 0;
