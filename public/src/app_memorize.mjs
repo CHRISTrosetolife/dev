@@ -17,7 +17,7 @@ export async function app_memorize() {
         let section = html_element(root, 'section');
         let {tokens,verse_number} = verses;
         html_span_text(section, verse_number);
-        for (let token of verse_tokens) {
+        for (let token of tokens) {
             html_span_text(section, ' ');
             html_span_text(section, token);
         }
