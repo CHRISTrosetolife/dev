@@ -61,9 +61,15 @@ export async function app_memorize() {
         for (let k of row) {
             let b = html_button(row_element);
             html_inner_set(b, string_case_upper(k));
+            html_style(b, {
+                'width': number_to_dvw(10)
+            })
         }
     }
     function number_to_dvh(value) {
         return string_combine(string_to(value), 'dvh');
+    }
+    function number_to_dvw(value) {
+        return string_combine(string_to(value), 'dvw');
     }
 }
