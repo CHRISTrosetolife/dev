@@ -14,6 +14,7 @@ import {html_strong_text} from "./html_strong_text.mjs";
 import {html_style_sans_serif} from "./html_style_sans_serif.mjs";
 import {each_index} from "./each_index.mjs";
 import { html_style } from "./html_style.mjs";
+import { string_combine } from "./string_combine.mjs";
 export async function app_memorize() {
     let root = html_document_body();
     html_style_sans_serif(root);
@@ -23,11 +24,13 @@ export async function app_memorize() {
     let verse_index = 0;
     let token_index = 0;
     let verses_element = html_element(root, 'div')
+    let height_max = 70;
     html_style(verses_element, {
-        'max-height': '70%'
+        'max-height': string_combine(height_max.toString(), 'dvh'),
+        'overflow': 'scroll'
     })
     each_index(verses, (verse, i) => {
-        let section = html_element(verses_element, 'section');
+        let section = html_element(verses_element, 'div');
         let {tokens, verse_number} = verse;
         html_strong_text(section, verse_number);
         each_index(tokens, (token, j) => {
@@ -42,4 +45,8 @@ export async function app_memorize() {
         });
     });
     let keyboard_element = html_element(root, 'div')
+    html_style(keyboard_element, {
+        'max-height': 'dvh',
+        'overflow': 'scroll'
+    })
 }
