@@ -17,7 +17,7 @@ export async function app_memorize() {
     let file_path = bible_engbsb_storage_path_file('JHN19');
     let verses = await http_get(storage_url(file_path));
     let verse_index = 0;
-    let word_index = 0;
+    let token_index = 0;
     each_index(verses, (verse, i) => {
         let section = html_element(root, 'section');
         let {tokens, verse_number} = verse;
@@ -25,7 +25,7 @@ export async function app_memorize() {
         each_index(tokens, (token, j) => {
             html_span_text(section, ' ');
             let token_element = html_span_text(section, token);
-            and(equal(), verse);
+            and(equal(i, verse_index), equal(j, token_index));
         });
     })
 }
