@@ -27,7 +27,7 @@ export async function app_memorize() {
     let verses_element = html_element(root, 'div');
     let height_max = 70;
     html_style(verses_element, {
-        'max-height': string_combine(string_to(height_max), 'dvh'),
+        'max-height': number_to_dvh(height_max),
         'overflow': 'scroll'
     });
     each_index(verses, (verse, i) => {
@@ -50,4 +50,8 @@ export async function app_memorize() {
         'max-height': 'dvh',
         'overflow': 'scroll'
     });
+
+    function number_to_dvh(value) {
+        return string_combine(string_to(value), 'dvh');
+    }
 }
