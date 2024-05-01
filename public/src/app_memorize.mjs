@@ -6,6 +6,7 @@ import { html_element } from "./html_element.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 import { html_span } from "./html_span.mjs";
 import { html_span_text } from "./html_span_text.mjs";
+import { html_strong_text } from "./html_strong_text.mjs";
 export async function app_memorize() {
     let root = html_document_body();
     let file_path = bible_engbsb_storage_path_file('JHN19');
@@ -16,7 +17,7 @@ export async function app_memorize() {
     for (let verse of verses) {
         let section = html_element(root, 'section');
         let {tokens,verse_number} = verse;
-        let verse_number_span = html_span_text(section, verse_number);
+        html_strong_text(section, verse_number);
         for (let token of tokens) {
             html_span_text(section, ' ');
             html_span_text(section, token);
