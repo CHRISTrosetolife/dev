@@ -1,3 +1,6 @@
+import {html_style_background_color} from "./html_style_background_color.mjs";
+import {equal} from "./equal.mjs";
+import {and} from "./and.mjs";
 import {html_style_default_font_size} from "./html_style_default_font_size.mjs";
 import {bible_engbsb_storage_path_file} from "./bible_engbsb_storage_path_file.mjs";
 import {storage_url} from "./storage_url.mjs";
@@ -9,7 +12,7 @@ import {html_span} from "./html_span.mjs";
 import {html_span_text} from "./html_span_text.mjs";
 import {html_strong_text} from "./html_strong_text.mjs";
 import {html_style_sans_serif} from "./html_style_sans_serif.mjs";
-import { each_index } from "./each_index.mjs";
+import {each_index} from "./each_index.mjs";
 export async function app_memorize() {
     let root = html_document_body();
     html_style_sans_serif(root);
@@ -26,12 +29,8 @@ export async function app_memorize() {
             html_span_text(section, ' ');
             let token_element = html_span_text(section, token);
             if (and(equal(i, verse_index), equal(j, token_index))) {
-                
+                html_style_background_color(container, 'green');
             }
         });
-    })
+    });
 }
-function and(token, verse) {
-    return token && verse;
-}
-
