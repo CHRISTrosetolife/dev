@@ -13,6 +13,10 @@ import { list_adder } from "./list_adder.mjs";
 import { list_take } from "./list_take.mjs";
 export function bible_verses_parse(rawText) {
     let split = string_split(rawText, '&#160;');
+    list_map(split, s => {
+        let s2 = string_split_space(s);
+
+    })
     return list_adder(la => {
         each_pairs(split, (previous, current) => {
             let {verse_number} = verse_get(previous)
