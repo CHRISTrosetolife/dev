@@ -11,6 +11,7 @@ export function bible_verses_parse(rawText) {
     each_pairs(split, (previous, current) => {
         let split2 = string_split(previous, ' ');
         let last = list_last(split2);
+        let verse_number = last;
     });
     let mapped2 = list_map(split, m => {
         console.log({
