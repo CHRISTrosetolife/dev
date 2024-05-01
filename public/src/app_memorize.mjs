@@ -25,7 +25,9 @@ export async function app_memorize() {
         each_index(tokens, (token, j) => {
             html_span_text(section, ' ');
             let token_element = html_span_text(section, token);
-            and(equal(i, verse_index), equal(j, token_index));
+            if (and(equal(i, verse_index), equal(j, token_index))) {
+                
+            }
         });
     })
 }
