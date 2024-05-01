@@ -1,3 +1,4 @@
+import {html_style_button_default_initialize} from "./html_style_button_default_initialize.mjs";
 import {html_style_default_font_size} from "./html_style_default_font_size.mjs";
 import {html_style_sans_serif} from "./html_style_sans_serif.mjs";
 import {app_learn_code_lessons} from "./app_learn_code_lessons.mjs";
@@ -87,12 +88,7 @@ export function app_learn_code() {
     html_style_sans_serif(root);
     let default_font_size = 3;
     html_style_default_font_size(default_font_size);
-    object_merge(html_style_button_default(), app_learn_code_style_rounded_padded_style());
-    object_merge(html_style_button_default(), {
-        'margin': '0.5vh',
-        'background-color': 'lightblue'
-    });
-    object_merge(html_style_button_default(), html_style_button_default_border());
+    html_style_button_default_initialize();
     let lesson_creates = app_learn_code_lessons();
     let lesson_screens = [];
     let lessons = [];
