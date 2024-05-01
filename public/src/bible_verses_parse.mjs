@@ -43,8 +43,8 @@ export function bible_verses_parse(rawText) {
         let verse_number = list_last(split);
         let parsed = integer_parse(verse_number);
         assert(number_is, [parsed]);
-        let less_1 = list_index_last(verse_string)
+        let less_1 = list_index_last(split)
         let tokens = list_take(split, less_1);
-        return {verse_number, tokens:split};
+        return {verse_number, tokens};
     }
 }
