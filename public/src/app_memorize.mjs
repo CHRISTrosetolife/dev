@@ -50,6 +50,7 @@ export async function app_memorize() {
     html_style(keyboard_element, {
         'max-height': number_to_dvh(subtract(100, height_max))
     });
+    let keys = ['qwertyuiop','asdfghjkl','zxcvbnm']
     function number_to_dvh(value) {
         return string_combine(string_to(value), 'dvh');
     }
