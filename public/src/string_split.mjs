@@ -1,3 +1,4 @@
+let runes = await import_multi('runes', 'runes')
 export function string_split(input, delimeter) {
-    return input.split(delimeter);
+    return runes.split(input, delimeter);
 }
