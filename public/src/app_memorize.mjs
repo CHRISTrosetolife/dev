@@ -22,4 +22,6 @@ export async function app_memorize() {
             html_span_text(section, token);
         }
     }
+    let verse_index = 0;
+    let word_index = 0;
 }
