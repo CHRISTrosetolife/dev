@@ -23,9 +23,12 @@ import {html_style_sans_serif} from "./html_style_sans_serif.mjs";
 import {each_index} from "./each_index.mjs";
 import {html_style} from "./html_style.mjs";
 import {string_combine} from "./string_combine.mjs";
+import {string_split} from "./string_split.mjs";
 export async function app_memorize() {
     let root = html_document_body();
-    html_style(root, {margin:'0'})
+    html_style(root, {
+        margin: '0'
+    });
     html_style_sans_serif(root);
     html_style_default_font_size(3);
     let file_path = bible_engbsb_storage_path_file('JHN19');
@@ -64,7 +67,7 @@ export async function app_memorize() {
     for (let row of keys) {
         let row_element = html_div(keyboard_element);
         html_style_centered(row_element);
-        for (let k of row) {
+        for (let k of string_split(row, string_empty())) {
             let b = html_button(row_element);
             html_inner_set(b, string_case_upper(k));
             html_style(b, {
