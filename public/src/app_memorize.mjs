@@ -1,3 +1,5 @@
+import {multiply} from "./multiply.mjs";
+import {list_length} from "./list_length.mjs";
 import {string_case_upper} from "./string_case_upper.mjs";
 import {html_style_centered} from "./html_style_centered.mjs";
 import {html_button} from "./html_button.mjs";
@@ -33,7 +35,7 @@ export async function app_memorize() {
     let button_height = 7;
     let keys = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm'];
     let keys_length = list_length(keys);
-    let keyboard_height = multiply(button_height, keys_length)
+    let keyboard_height = multiply(button_height, keys_length);
     let height_max = subtract(100, keyboard_height);
     html_style(verses_element, {
         'max-height': number_to_dvh(height_max),
@@ -67,7 +69,7 @@ export async function app_memorize() {
             html_style(b, {
                 'width': number_to_dvw(9),
                 'height': number_to_dvh(button_height)
-            })
+            });
         }
     }
     function number_to_dvh(value) {
