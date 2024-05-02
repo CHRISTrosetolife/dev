@@ -74,6 +74,7 @@ export async function app_memorize() {
         let height_max = subtract(100, offset);
         html_style(verses_element, {
             'max-height': number_to_dvh(height_max),
+            'min-height': number_to_dvh(height_max),
             'overflow-y': 'scroll'
         });
         let verse_elements = list_adder(la => {
