@@ -66,8 +66,17 @@ import {string_length} from "./string_length.mjs";
 import {string_split} from "./string_split.mjs";
 import {assert} from "./assert.mjs";
 import {lesson_less_than_equal} from "./lesson_less_than_equal.mjs";
+import { object_properties } from "./object_properties.mjs";
 export function app_learn_code() {
     let root = html_document_body();
+    let actions = {
+        'background_color': value => {
+            html_style(root, {
+                'background-color': value
+            });
+        }
+    }
+    let action_properties = object_properties(actions)
     let hash = window.location.hash;
     if (greater_than(string_length(hash), 0)) {
         let hash_no_tag = string_prefix_without(hash, '#');
@@ -78,10 +87,9 @@ export function app_learn_code() {
             assert(equal, [s2_length, 2]);
             let key = list_get(split2, 0);
             let value = list_get(split2, 1);
-            if (equal(key, 'background_color')) {
-                html_style(root, {
-                    'background-color': value
-                });
+            if (list_contains(action_properties, key)) {
+                let action = object_property_get(actions, key);
+                action(value);
             }
         }
     }
