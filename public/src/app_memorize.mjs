@@ -1,3 +1,4 @@
+import {list_last} from "./list_last.mjs";
 import {app_memorize_group} from "./app_memorize_group.mjs";
 import {undefined_not_is} from "./undefined_not_is.mjs";
 import {html_style_font_color} from "./html_style_font_color.mjs";
@@ -57,6 +58,12 @@ export async function app_memorize() {
     let verse_index = 0;
     let token_index = 0;
     refresh_memorize();
+    function refresh_settings() {
+        html_clear(root);
+        let first = list_first(group_current);
+        let last = list_last(group_current);
+        html_button_width_full_text_click(root, 'verses : ');
+    }
     function refresh_memorize() {
         html_clear(root);
         let settings_element = html_element(root, 'div');
@@ -79,7 +86,7 @@ export async function app_memorize() {
         });
         let verse_elements = list_adder(la => {
             for (let i of group_current) {
-                let verse = list_get(verses, i)
+                let verse = list_get(verses, i);
                 let verse_element = html_element(verses_element, 'div');
                 let {tokens, verse_number} = verse;
                 let number_element = html_strong_text(verse_element, verse_number);
