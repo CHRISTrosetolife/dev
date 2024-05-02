@@ -71,7 +71,7 @@ export async function app_memorize() {
         let verse_elements = list_adder(la => {
             each_index(verses, (verse, i) => {
                 let verse_element = html_element(verses_element, 'div');
-                la(verse_element);
+                
                 let {tokens, verse_number} = verse;
                 let number_element = html_strong_text(verse_element, verse_number);
                 html_on_click(number_element, () => {
@@ -79,16 +79,20 @@ export async function app_memorize() {
                     verse_index = i;
                     html_scroll_center(verse_element);
                 })
-                each_index(tokens, (token, j) => {
-                    html_span_text(verse_element, ' ');
-                    let token_element = html_span_text(verse_element, token);
-                    if (and(equal(i, verse_index), equal(j, token_index))) {
-                        html_style_background_color(token_element, 'green');
-                        html_style(token_element, {
-                            color: 'white'
-                        });
-                    }
-                });
+                let token_elements = list_adder(la => {
+                    each_index(tokens, (token, j) => {
+                        html_span_text(verse_element, ' ');
+                        let token_element = html_span_text(verse_element, token);
+                        la(token_element);
+                        if (and(equal(i, verse_index), equal(j, token_index))) {
+                            html_style_background_color(token_element, 'green');
+                            html_style(token_element, {
+                                color: 'white'
+                            });
+                        }
+                    });
+                })
+                la({verse_element,token_elements});
             });
         });
         let keyboard_element = html_element(root, 'div');
