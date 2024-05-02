@@ -163,7 +163,9 @@ export async function app_memorize() {
                         for (let s of [spacer,spacer2]) {
                             html_style(s,{
                                 'min-width': '0.5dvh',
-                                'display':'inline-block'
+                                'display':'inline-block',
+                                'height': '100%',
+                                'vertical-align':'top'
                             })
                         }
                         let token_element = html_span_text(verse_element, token);
