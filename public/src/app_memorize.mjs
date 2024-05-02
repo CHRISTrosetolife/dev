@@ -76,10 +76,12 @@ export async function app_memorize() {
                 refresh_settings();
             });
             for (let g of groups) {
-                html_button_width_full_text_click(root,group_to_range_string(g), () => {
+                let b = html_button(root)
+                html_inner_set(b, group_to_range_string(g))
+                html_on_click(() => {
                     group_current_set(g);
                     refresh_settings()
-                });
+                })
             }
         });
     }
