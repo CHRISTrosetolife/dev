@@ -4,7 +4,6 @@ import {greater_than_equal} from "./greater_than_equal.mjs";
 import {string_case_lower} from "./string_case_lower.mjs";
 import {string_letter_first} from "./string_letter_first.mjs";
 import {html_style_button_default_initialize} from "./html_style_button_default_initialize.mjs";
-import {string_split_empty} from "./string_split_empty.mjs";
 import {multiply} from "./multiply.mjs";
 import {list_length} from "./list_length.mjs";
 import {string_case_upper} from "./string_case_upper.mjs";
