@@ -174,7 +174,8 @@ export async function app_memorize() {
                 });
             })
         });
-        let previous_token;
+        let previous_spacer2;
+        let previous_token_element;
         update_colors();
         function update_colors() {
             let current_verse = list_get(verse_elements, verse_index);
@@ -182,16 +183,17 @@ export async function app_memorize() {
             let current_token = list_get(token_objects, token_index);
             html_scroll_center(verse_element);
             let {spacer2,token_element} = current_token
-            html_style_background_color(token_element, 'green');
-            html_style_font_color(token_element, 'white');
-            if (undefined_not_is(previous_token)) {
-                html_style_background_color(previous_token, 'inherit');
-                html_style_font_color(previous_token, 'inherit');
-                html_style(previous_token, {
+            html_style_background_color(token_element, spacer2);
+            if (undefined_not_is(previous_spacer2)) {
+                html_style_background_color(previous_spacer2, 'inherit');
+            }
+            if (undefined_not_is(token_element)) {
+                html_style(token_element, {
                     visiblity: 'inherit'
                 })
             }
-            previous_token = token_element;
+            previous_spacer2 = spacer2;
+            previous_token_element = token_element;
         }
         let keyboard_element = html_element(root, 'div');
         html_style(keyboard_element, {
