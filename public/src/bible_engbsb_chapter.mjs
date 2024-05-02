@@ -7,6 +7,7 @@ export async function bible_engbsb_chapter(chapter_name) {
     let verses_bsb = parsed_bsb.querySelectorAll('.m');
     let mapped6 = list_map(verses_bsb, v => v.rawText);
     let joined = list_join(mapped6, '');
+    console.log({joined})
     let eng = bible_verses_parse(joined);
     return eng;
 }
