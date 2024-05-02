@@ -120,11 +120,11 @@ export async function app_memorize() {
             'min-height': number_to_dvh(height_max),
             'overflow-y': 'scroll'
         });
-        let tokens_all
         let verse_elements = list_adder(la => {
             for (let i of group_current) {
                 let verse = list_get(verses, i);
                 let verse_element = html_element(verses_element, 'div');
+                let patterns_length = list_length(patterns)
                 let {tokens, verse_number} = verse;
                 let number_element = html_strong_text(verse_element, verse_number);
                 html_on_click(number_element, () => {
@@ -195,6 +195,7 @@ export async function app_memorize() {
                         if (greater_than_equal(verse_index, group_current_length)) {
                             verse_index = 0;
                             pattern_index++;
+                            refresh_memorize()
                         }
                         update_colors();
                     }
