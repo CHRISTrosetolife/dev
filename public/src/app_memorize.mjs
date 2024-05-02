@@ -158,7 +158,8 @@ export async function app_memorize() {
                     each_index(tokens, (token, j) => {
                         let m = mod(token_count, pattern_length);
                         let token_pattern = list_get(pattern, m);
-                        html_span_text(verse_element, ' ');
+                        let spacer = html_span_text(verse_element, ' ');
+                        let spacer2 = html_span_text(verse_element, ' ');
                         let token_element = html_span_text(verse_element, token);
                         if (equal(token_pattern, '0')) {
                             html_style_hidden(token_element);
