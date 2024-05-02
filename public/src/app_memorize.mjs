@@ -1,3 +1,4 @@
+import {html_style_hidden} from "./html_style_hidden.mjs";
 import {html_p_text} from "./html_p_text.mjs";
 import {list_last} from "./list_last.mjs";
 import {app_memorize_group} from "./app_memorize_group.mjs";
@@ -44,7 +45,7 @@ import {html_clear} from "./html_clear.mjs";
 import {undefined_is} from "./undefined_is.mjs";
 import {list_first} from "./list_first.mjs";
 import {string_combine_multiple} from "./string_combine_multiple.mjs";
-import { mod } from "./mod.mjs";
+import {mod} from "./mod.mjs";
 export async function app_memorize() {
     let root = html_document_body();
     html_style(root, {
@@ -57,8 +58,8 @@ export async function app_memorize() {
     let verses = await http_get(storage_url(file_path));
     let verses_length = list_length(verses);
     let groups = app_memorize_group(verses_length);
-    let patterns = [['1'], ['1','0'], ['0','1'], ['0']]
-    let pattern_index = 0
+    let patterns = [['1'], ['1', '0'], ['0', '1'], ['0']];
+    let pattern_index = 0;
     let group_current;
     let verse_index;
     let token_index;
@@ -103,7 +104,7 @@ export async function app_memorize() {
     }
     function refresh_memorize() {
         html_clear(root);
-        let pattern = list_get(patterns, pattern_index)
+        let pattern = list_get(patterns, pattern_index);
         let settings_element = html_element(root, 'div');
         let settings_button = html_button_width_full_text_click(settings_element, '⚙️ settings', refresh_settings);
         html_style(settings_button, {
@@ -122,7 +123,7 @@ export async function app_memorize() {
             'min-height': number_to_dvh(height_max),
             'overflow-y': 'scroll'
         });
-        let pattern_length = list_length(pattern)
+        let pattern_length = list_length(pattern);
         let token_count = 0;
         let verse_elements = list_adder(la => {
             for (let i of group_current) {
@@ -137,12 +138,12 @@ export async function app_memorize() {
                 });
                 let token_elements = list_adder(la => {
                     each_index(tokens, (token, j) => {
-                        let m = mod(pattern_length, token_count)
+                        let m = mod(pattern_length, token_count);
                         let token_pattern = list_get(pattern, m);
                         html_span_text(verse_element, ' ');
                         let token_element = html_span_text(verse_element, token);
                         if (equal(token_pattern, '0')) {
-                            
+                            html_style_hidden(token_element);
                         }
                         la(token_element);
                         token_count++;
@@ -204,7 +205,7 @@ export async function app_memorize() {
                         if (greater_than_equal(verse_index, group_current_length)) {
                             verse_index = 0;
                             pattern_index++;
-                            refresh_memorize()
+                            refresh_memorize();
                         }
                         update_colors();
                     }
