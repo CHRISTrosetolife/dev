@@ -29,6 +29,7 @@ import {string_split} from "./string_split.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { noop } from "./noop.mjs";
 import { add } from "./add.mjs";
+import { html_on_click } from "./html_on_click.mjs";
 export async function app_memorize() {
     let root = html_document_body();
     html_style(root, {
@@ -82,15 +83,19 @@ export async function app_memorize() {
         html_style_centered(row_element);
         for (let k of row) {
             let b = html_button(row_element);
+            html_style_centered(b)
             html_inner_set(b, string_case_upper(k));
             let b_width = number_to_dvw(10 - 1)
             html_style(b, {
-                'font-size': '4dvh',
+                'font-size': '3.8dvh',
                 margin:'0.25dvh',
                 'min-width': b_width,
                 'max-width': b_width,
                 'height': number_to_dvh(button_height - 0.6)
             });
+            html_on_click(b, () => {
+                
+            })
         }
     }
     function number_to_dvh(value) {
