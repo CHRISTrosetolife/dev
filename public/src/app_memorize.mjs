@@ -78,7 +78,7 @@ export async function app_memorize() {
             for (let g of groups) {
                 let b = html_button(root)
                 html_inner_set(b, group_to_range_string(g))
-                html_on_click(() => {
+                html_on_click(b, () => {
                     group_current_set(g);
                     refresh_settings()
                 })
