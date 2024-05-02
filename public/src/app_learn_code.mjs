@@ -67,6 +67,7 @@ import {string_split} from "./string_split.mjs";
 import {assert} from "./assert.mjs";
 import {lesson_less_than_equal} from "./lesson_less_than_equal.mjs";
 import { object_properties } from "./object_properties.mjs";
+import { list_includes } from "./list_includes.mjs";
 export function app_learn_code() {
     let root = html_document_body();
     let actions = {
@@ -87,7 +88,7 @@ export function app_learn_code() {
             assert(equal, [s2_length, 2]);
             let key = list_get(split2, 0);
             let value = list_get(split2, 1);
-            if (list_contains(action_properties, key)) {
+            if (list_includes(action_properties, key)) {
                 let action = object_property_get(actions, key);
                 action(value);
             }
