@@ -1,3 +1,4 @@
+import {html_hash} from "./html_hash.mjs";
 import {html_style_button_default_initialize} from "./html_style_button_default_initialize.mjs";
 import {html_style_default_font_size} from "./html_style_default_font_size.mjs";
 import {html_style_sans_serif} from "./html_style_sans_serif.mjs";
@@ -66,8 +67,8 @@ import {string_length} from "./string_length.mjs";
 import {string_split} from "./string_split.mjs";
 import {assert} from "./assert.mjs";
 import {lesson_less_than_equal} from "./lesson_less_than_equal.mjs";
-import { object_properties } from "./object_properties.mjs";
-import { list_includes } from "./list_includes.mjs";
+import {object_properties} from "./object_properties.mjs";
+import {list_includes} from "./list_includes.mjs";
 export function app_learn_code() {
     let root = html_document_body();
     let actions = {
@@ -76,24 +77,8 @@ export function app_learn_code() {
                 'background-color': value
             });
         }
-    }
-    let action_properties = object_properties(actions)
-    let hash = window.location.hash;
-    if (greater_than(string_length(hash), 0)) {
-        let hash_no_tag = string_prefix_without(hash, '#');
-        let split = string_split(hash_no_tag, ',');
-        for (let s of split) {
-            let split2 = string_split(s, '=');
-            let s2_length = list_length(split2);
-            assert(equal, [s2_length, 2]);
-            let key = list_get(split2, 0);
-            let value = list_get(split2, 1);
-            if (list_includes(action_properties, key)) {
-                let action = object_property_get(actions, key);
-                action(value);
-            }
-        }
-    }
+    };
+    html_hash(actions);
     html_style_sans_serif(root);
     let default_font_size = 3;
     html_style_default_font_size(default_font_size);
