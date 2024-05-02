@@ -21,6 +21,9 @@ export function app_memorize_group(count) {
         let first = list_take(list, first_count)
         let second = list_skip(list, first_count)
         let both = [first, second];
+        for (let b of both) {
+            recursive(result, b)
+        }
     }
 }
 function floor(value) {
