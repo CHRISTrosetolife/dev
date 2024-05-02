@@ -53,6 +53,7 @@ import {add_1} from "./add_1.mjs";
 import {list_index} from "./list_index.mjs";
 import {list_map} from "./list_map.mjs";
 import {string_replace} from "./string_replace.mjs";
+import { html_on } from "./html_on.mjs";
 export async function app_memorize() {
     let root = html_document_body();
     html_style(root, {
@@ -71,6 +72,9 @@ export async function app_memorize() {
     let group_current;
     let verse_index;
     let token_index;
+    let previous_spacer2;
+    let previous_token_element;
+    let verse_elements;
     let mistakes = false;
     group_current_set(list_first(groups));
     html_hash({
@@ -146,9 +150,6 @@ export async function app_memorize() {
         let last_number = last_verse_number;
         return string_combine_multiple([first_number, ' - ', last_number]);
     }
-    let previous_spacer2;
-    let previous_token_element;
-    let verse_elements;
     function refresh_memorize() {
         html_clear(root);
         let p = list_get(patterns, pattern_index);
@@ -257,7 +258,10 @@ export async function app_memorize() {
         previous_spacer2 = spacer2;
         previous_token_element = token_element;
     }
-
+    html_on(root, 'keydown', (e) => {
+        let {keyCode} = e;
+        console.log({keyCode})
+    })
     function on_keydown(k) {
         let j = list_get(group_current, verse_index);
         let current_verse = list_get(verses, j);
