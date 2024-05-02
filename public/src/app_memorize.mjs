@@ -104,7 +104,7 @@ export async function app_memorize() {
                     verse_element,
                     token_elements
                 });
-            };
+            }
         });
         let previous_token;
         update_colors();
