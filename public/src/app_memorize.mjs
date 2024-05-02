@@ -160,13 +160,10 @@ export async function app_memorize() {
                         let token_pattern = list_get(pattern, m);
                         let spacer = html_span_text(verse_element, ' ');
                         let spacer2 = html_span_text(verse_element, '.');
+                        html_style_background_color(spacer2, 'green');
+                        html_style_font_color(spacer2, 'green');
                         for (let s of [spacer,spacer2]) {
-                            html_style(s, {
-                                'min-width': '0.5dvh',
-                                'display':'inline-block',
-                                'min-height': '100%',
-                                'vertical-align':'top'
-                            })
+                            html_style_hidden(s);
                         }
                         let token_element = html_span_text(verse_element, token);
                         if (equal(token_pattern, '0')) {
@@ -190,16 +187,13 @@ export async function app_memorize() {
             let {verse_element, token_objects} = current_verse;
             let current_token = list_get(token_objects, token_index);
             html_scroll_center(verse_element);
-            let {spacer2,token_element} = current_token
-            html_style_background_color(spacer2, 'green');
-            html_style_font_color(spacer2, 'green');
+            let {spacer2,token_element} = current_token;
+            html_style_visibility_inherit(spacer2);
             if (undefined_not_is(previous_spacer2)) {
-                html_style_background_color(previous_spacer2, 'inherit');
+                html_style_hidden(previous_spacer2);
             }
             if (undefined_not_is(token_element)) {
-                html_style(token_element, {
-                    visiblity: 'inherit'
-                })
+                html_style_visibility_inherit(token_element);
             }
             previous_spacer2 = spacer2;
             previous_token_element = token_element;
@@ -265,3 +259,9 @@ export async function app_memorize() {
         return string_combine(string_to(value), 'dvw');
     }
 }
+function html_style_visibility_inherit(token_element) {
+    html_style(token_element, {
+        visiblity: 'inherit'
+    });
+}
+
