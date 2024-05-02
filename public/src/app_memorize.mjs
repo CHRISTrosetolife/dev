@@ -30,6 +30,7 @@ import { html_button_width_full_text_click } from "./html_button_width_full_text
 import { noop } from "./noop.mjs";
 import { add } from "./add.mjs";
 import { html_on_click } from "./html_on_click.mjs";
+import { list_get } from "./list_get.mjs";
 export async function app_memorize() {
     let root = html_document_body();
     html_style(root, {
@@ -94,7 +95,9 @@ export async function app_memorize() {
                 'height': number_to_dvh(button_height - 0.6)
             });
             html_on_click(b, () => {
-                
+                let current_verse = list_get(verses, verse_index);
+                let {tokens} = current_verse;
+                let current_token = list_get(tokens, token_index)
             })
         }
     }
