@@ -154,7 +154,7 @@ export async function app_memorize() {
                     verse_index = j;
                     html_scroll_center(verse_element);
                 });
-                let token_elements = list_adder(la => {
+                let token_objects = list_adder(la => {
                     each_index(tokens, (token, j) => {
                         let m = mod(token_count, pattern_length);
                         let token_pattern = list_get(pattern, m);
@@ -170,7 +170,7 @@ export async function app_memorize() {
                 });
                 la({
                     verse_element,
-                    tokens
+                    token_objects
                 });
             })
         });
@@ -178,8 +178,8 @@ export async function app_memorize() {
         update_colors();
         function update_colors() {
             let current_verse = list_get(verse_elements, verse_index);
-            let {verse_element, tokens} = current_verse;
-            let current_token = list_get(tokens, token_index);
+            let {verse_element, token_objects} = current_verse;
+            let current_token = list_get(token_objects, token_index);
             html_scroll_center(verse_element);
             let {spacer2,token_element} = current_token
             html_style_background_color(token_element, 'green');
