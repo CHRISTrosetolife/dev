@@ -68,20 +68,22 @@ export async function app_memorize() {
             'max-height': number_to_dvh(height_max),
             'overflow-y': 'scroll'
         });
-        let verse_elements = list_adder();
-        each_index(verses, (verse, i) => {
-            let section = html_element(verses_element, 'div');
-            let {tokens, verse_number} = verse;
-            html_strong_text(section, verse_number);
-            each_index(tokens, (token, j) => {
-                html_span_text(section, ' ');
-                let token_element = html_span_text(section, token);
-                if (and(equal(i, verse_index), equal(j, token_index))) {
-                    html_style_background_color(token_element, 'green');
-                    html_style(token_element, {
-                        color: 'white'
-                    });
-                }
+        let verse_elements = list_adder(la => {
+            each_index(verses, (verse, i) => {
+                let section = html_element(verses_element, 'div');
+                la(section)
+                let {tokens, verse_number} = verse;
+                html_strong_text(section, verse_number);
+                each_index(tokens, (token, j) => {
+                    html_span_text(section, ' ');
+                    let token_element = html_span_text(section, token);
+                    if (and(equal(i, verse_index), equal(j, token_index))) {
+                        html_style_background_color(token_element, 'green');
+                        html_style(token_element, {
+                            color: 'white'
+                        });
+                    }
+                });
             });
         });
         let keyboard_element = html_element(root, 'div');
