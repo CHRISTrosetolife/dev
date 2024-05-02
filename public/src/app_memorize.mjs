@@ -55,7 +55,8 @@ export async function app_memorize() {
     let verses = await http_get(storage_url(file_path));
     let verses_length = list_length(verses);
     let groups = app_memorize_group(verses_length);
-    let group_current = list_first(groups);
+    const group_first = list_first(groups);
+    let group_current = group_first;
     let verse_index = 0;
     let token_index = 0;
     refresh_memorize();
@@ -64,21 +65,28 @@ export async function app_memorize() {
         html_button_width_full_text_click(root, 'back', () => {
             refresh_memorize();
         });
-        let first_verse_index = list_first(group_current);
-        let first_verse = list_get(verses, first_verse_index)
-        let {verse_number:first_verse_number} = first_verse;
-        let first_number = first_verse_number
-        let last_verse_index = list_last(group_current);
-        let last_verse = list_get(verses, last_verse_index)
-        let {verse_number:last_verse_number} = last_verse;
-        let last_number = last_verse_number
-        html_button_width_full_text_click(root, string_combine_multiple(['verses : ',first_number,' - ',last_number]), () => {
+        html_button_width_full_text_click(root,group_to_range_string(group_current), () => {
             html_clear(root);
             for (let g of groups) {
-
+                html_button_width_full_text_click(root,group_to_range_string(g), () => {
+                    group_current = g;
+                    refresh_settings()
+                });
             }
         });
     }
+    function group_to_range_string(g) {
+        let first_verse_index = list_first(g);
+        let first_verse = list_get(verses, first_verse_index);
+        let { verse_number: first_verse_number } = first_verse;
+        let first_number = first_verse_number;
+        let last_verse_index = list_last(g);
+        let last_verse = list_get(verses, last_verse_index);
+        let { verse_number: last_verse_number } = last_verse;
+        let last_number = last_verse_number;
+        return string_combine_multiple(['verses ',first_number,' - ',last_number])
+    }
+
     function refresh_memorize() {
         html_clear(root);
         let settings_element = html_element(root, 'div');
