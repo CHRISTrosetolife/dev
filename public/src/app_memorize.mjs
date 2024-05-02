@@ -55,11 +55,10 @@ export async function app_memorize() {
     let verses = await http_get(storage_url(file_path));
     let verses_length = list_length(verses);
     let groups = app_memorize_group(verses_length);
-    let group_first = list_first(groups);
     let group_current;
     let verse_index;
     let token_index;
-    group_current_set();
+    group_current_set(list_first(groups));
     refresh_memorize();
     function group_current_set(g) {
         group_current = g;
