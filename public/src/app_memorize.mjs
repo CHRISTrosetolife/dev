@@ -75,6 +75,7 @@ export async function app_memorize() {
             html_button_width_full_text_click(root, 'back', () => {
                 refresh_settings();
             });
+            html_span_text(root, 'which verse range do you want to focus on ?')
             for (let g of groups) {
                 let b = html_button(root)
                 html_inner_set(b, group_to_range_string(g))
