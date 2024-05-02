@@ -1,3 +1,4 @@
+import {html_style_hidden} from "./html_style_hidden.mjs";
 import {list_empty_is} from "./list_empty_is.mjs";
 import {null_not_is} from "./null_not_is.mjs";
 import {app_learn_code_source_to_tokens} from "./app_learn_code_source_to_tokens.mjs";
@@ -50,7 +51,7 @@ import {list_concat} from "./list_concat.mjs";
 import {list_equal} from "./list_equal.mjs";
 import {list_filter} from "./list_filter.mjs";
 import {null_is} from "./null_is.mjs";
-import { html_style_background_color } from "./html_style_background_color.mjs";
+import {html_style_background_color} from "./html_style_background_color.mjs";
 export function app_learn_code_unscramble(source_get) {
     return function app_learn_code_unscramble_inner(parent) {
         let div = html_div(parent);
@@ -67,18 +68,18 @@ export function app_learn_code_unscramble(source_get) {
             app_learn_code_code_part_titled_output(div, joined);
             html_p_text(div, 'tap or click each part of the program in the correct order');
             let {code} = app_learn_code_code_part_titled_code(div, 'a');
-            html_style(code, {
-                visibility: 'hidden'
-            });
+            html_style_hidden(code);
             let success = html_div(div);
             let answers = list_map(variations, v => {
                 return {
-                    tokens : app_learn_code_source_to_tokens(v),
-                    source : v
-                }
+                    tokens: app_learn_code_source_to_tokens(v),
+                    source: v
+                };
             });
             let answer = app_learn_code_source_to_tokens(source);
-            console.log({answer})
+            console.log({
+                answer
+            });
             let scrambled = list_copy(answer);
             list_scramble(scrambled);
             let parts = array_new();
@@ -107,10 +108,10 @@ export function app_learn_code_unscramble(source_get) {
                     });
                     let filtered = list_filter(mapped, m => null_not_is(m));
                     if (list_empty_is(filtered)) {
-                        html_style_background_color(part, 'darkred')
+                        html_style_background_color(part, 'darkred');
                         return;
                     }
-                    let first = list_first(filtered)
+                    let first = list_first(filtered);
                     let {tokens} = first;
                     let current = list_get(tokens, current_index);
                     list_add(choices, s);
@@ -118,7 +119,7 @@ export function app_learn_code_unscramble(source_get) {
                         visibility: 'visible'
                     });
                     for (let p of parts) {
-                        html_style_background_color(p, app_learn_code_code_background())
+                        html_style_background_color(p, app_learn_code_code_background());
                     }
                     html_style(part, {
                         display: 'none'
@@ -132,7 +133,7 @@ export function app_learn_code_unscramble(source_get) {
                     let take_count = add(source_index, string_length(current.toString()));
                     html_inner_set(code, string_take(first_source, take_count));
                     if (equal(current_index, list_length(answer))) {
-                        html_style_background_color(code, 'darkgreen')
+                        html_style_background_color(code, 'darkgreen');
                         app_learn_code_answer_correct(success);
                         html_p_text(success, 'if you want to take another quiz , press the "another quiz" button below : ');
                         html_p_text(success, 'otherwise , press the "next" button below');
