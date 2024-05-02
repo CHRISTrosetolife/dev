@@ -265,8 +265,8 @@ export async function app_memorize() {
                         if (greater_than_equal(verse_index, group_current_length)) {
                             verse_index = 0;
                             let pattern = list_get(patterns, pattern_index);
-                            if (and(equal(pattern, '0'), mistakes)) {
-                                
+                            if (and(equal(list_join(pattern, ''), '0'), mistakes)) {
+                                mistakes = false;
                             } else {
                                 pattern_index++;
                                 if (greater_than_equal(pattern_index, patterns_length)) {
