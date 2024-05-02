@@ -191,7 +191,8 @@ export async function app_memorize() {
             let current_token = list_get(token_objects, token_index);
             html_scroll_center(verse_element);
             let {spacer2,token_element} = current_token
-            html_style_background_color(token_element, spacer2);
+            html_style_background_color(spacer2, 'green');
+            html_style_font_color(spacer2, 'green');
             if (undefined_not_is(previous_spacer2)) {
                 html_style_background_color(previous_spacer2, 'inherit');
             }
