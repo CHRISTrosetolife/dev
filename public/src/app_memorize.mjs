@@ -146,6 +146,9 @@ export async function app_memorize() {
         let last_number = last_verse_number;
         return string_combine_multiple([first_number, ' - ', last_number]);
     }
+    let previous_spacer2;
+    let previous_token_element;
+    let verse_elements;
     function refresh_memorize() {
         html_clear(root);
         let p = list_get(patterns, pattern_index);
@@ -170,7 +173,7 @@ export async function app_memorize() {
         });
         let pattern_length = list_length(pattern);
         let token_count = 0;
-        let verse_elements = list_adder(la => {
+        verse_elements = list_adder(la => {
             each_index(group_current, (i, j) => {
                 let verse = list_get(verses, i);
                 let verse_element = html_element(verses_element, 'div');
@@ -209,25 +212,7 @@ export async function app_memorize() {
                 });
             });
         });
-        let previous_spacer2;
-        let previous_token_element;
         update_colors();
-        function update_colors() {
-            let current_verse = list_get(verse_elements, verse_index);
-            let {verse_element, token_objects} = current_verse;
-            let current_token = list_get(token_objects, token_index);
-            html_scroll_center(verse_element);
-            let {spacer2, token_element} = current_token;
-            html_style_visible(spacer2);
-            if (undefined_not_is(previous_spacer2)) {
-                html_style_hidden(previous_spacer2);
-            }
-            if (undefined_not_is(previous_token_element)) {
-                html_style_visible(previous_token_element);
-            }
-            previous_spacer2 = spacer2;
-            previous_token_element = token_element;
-        }
         let keyboard_element = html_element(root, 'div');
         html_style(keyboard_element, {
             'max-height': number_to_dvh(keyboard_height)
@@ -248,42 +233,7 @@ export async function app_memorize() {
                     'height': number_to_dvh(button_height - 0.6)
                 });
                 html_on_click(b, () => {
-                    let j = list_get(group_current, verse_index);
-                    let current_verse = list_get(verses, j);
-                    let {tokens} = current_verse;
-                    let current_token = list_get(tokens, token_index);
-                    let letter_first = string_case_lower(string_letter_first(current_token));
-                    if (equal(k, letter_first)) {
-                        token_index++;
-                        let tokens_length = list_length(tokens);
-                        if (greater_than_equal(token_index, tokens_length)) {
-                            verse_index++;
-                            token_index = 0;
-                        }
-                        let group_current_length = list_length(group_current);
-                        if (greater_than_equal(verse_index, group_current_length)) {
-                            verse_index = 0;
-                            let pattern = list_get(patterns, pattern_index);
-                            if (and(equal(pattern, '0'), mistakes)) {
-                                mistakes = false;
-                            } else {
-                                pattern_index++;
-                                if (greater_than_equal(pattern_index, patterns_length)) {
-                                    let group_current_index = list_index(groups, group_current);
-                                    let group_next_index = add_1(group_current_index);
-                                    let group_next = list_get(groups, group_next_index);
-                                    group_current_set(group_next);
-                                    
-                                }
-                            }
-                            refresh_memorize();
-                        }
-                        update_colors();
-                    } else {
-                        mistakes = true;
-                        html_style_visible(previous_token_element)
-                        html_style_font_color(previous_token_element, 'red');
-                    }
+                    on_keydown(k, update_colors, previous_token_element);
                 });
             }
         }
@@ -291,6 +241,62 @@ export async function app_memorize() {
             verse_elements
         };
     }
+    function update_colors() {
+        let current_verse = list_get(verse_elements, verse_index);
+        let { verse_element, token_objects } = current_verse;
+        let current_token = list_get(token_objects, token_index);
+        html_scroll_center(verse_element);
+        let { spacer2, token_element } = current_token;
+        html_style_visible(spacer2);
+        if (undefined_not_is(previous_spacer2)) {
+            html_style_hidden(previous_spacer2);
+        }
+        if (undefined_not_is(previous_token_element)) {
+            html_style_visible(previous_token_element);
+        }
+        previous_spacer2 = spacer2;
+        previous_token_element = token_element;
+    }
+
+    function on_keydown(k, update_colors, previous_token_element) {
+        let j = list_get(group_current, verse_index);
+        let current_verse = list_get(verses, j);
+        let { tokens } = current_verse;
+        let current_token = list_get(tokens, token_index);
+        let letter_first = string_case_lower(string_letter_first(current_token));
+        if (equal(k, letter_first)) {
+            token_index++;
+            let tokens_length = list_length(tokens);
+            if (greater_than_equal(token_index, tokens_length)) {
+                verse_index++;
+                token_index = 0;
+            }
+            let group_current_length = list_length(group_current);
+            if (greater_than_equal(verse_index, group_current_length)) {
+                verse_index = 0;
+                let pattern = list_get(patterns, pattern_index);
+                if (and(equal(pattern, '0'), mistakes)) {
+                    mistakes = false;
+                } else {
+                    pattern_index++;
+                    if (greater_than_equal(pattern_index, patterns_length)) {
+                        let group_current_index = list_index(groups, group_current);
+                        let group_next_index = add_1(group_current_index);
+                        let group_next = list_get(groups, group_next_index);
+                        group_current_set(group_next);
+
+                    }
+                }
+                refresh_memorize();
+            }
+            update_colors();
+        } else {
+            mistakes = true;
+            html_style_visible(previous_token_element);
+            html_style_font_color(previous_token_element, 'red');
+        }
+    }
+
     function number_to_dvh(value) {
         return string_combine(string_to(value), 'dvh');
     }
