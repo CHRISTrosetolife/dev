@@ -42,6 +42,7 @@ import {list_get} from "./list_get.mjs";
 import {html_clear} from "./html_clear.mjs";
 import {undefined_is} from "./undefined_is.mjs";
 import {list_first} from "./list_first.mjs";
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export async function app_memorize() {
     let root = html_document_body();
     html_style(root, {
@@ -60,18 +61,21 @@ export async function app_memorize() {
     refresh_memorize();
     function refresh_settings() {
         html_clear(root);
+        html_button_width_full_text_click(root, 'back', () => {
+            refresh_memorize();
+        });
         let first_verse_index = list_first(group_current);
         let first_verse = list_get(verses, first_verse_index)
         let {verse_number:first_number} = first_verse;
         let last_verse_index = list_last(group_current);
         let last_verse = list_get(verses, last_verse_index)
         let {verse_number:last_number} = last_verse;
-        html_button_width_full_text_click(root, 'verses : ');
+        html_button_width_full_text_click(root, string_combine_multiple(['verses : ',first_number,' - ',last_number]));
     }
     function refresh_memorize() {
         html_clear(root);
         let settings_element = html_element(root, 'div');
-        let settings_button = html_button_width_full_text_click(settings_element, '⚙️ settings', noop);
+        let settings_button = html_button_width_full_text_click(settings_element, '⚙️ settings', refresh_settings);
         html_style(settings_button, {
             'margin-left': 0,
             'margin-right': 0
