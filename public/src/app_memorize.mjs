@@ -94,6 +94,15 @@ export async function app_memorize() {
                 la({verse_element,token_elements});
             });
         });
+        function update() {
+            let current_verse = list_get(verse_elements, verse_index);
+            let {verse_element,token_elements} = current_verse
+            html_scroll_center(verse_element);
+            html_style_background_color(token_element, 'green');
+            html_style(token_element, {
+                color: 'white'
+            });
+        }
         let keyboard_element = html_element(root, 'div');
         html_style(keyboard_element, {
             'max-height': number_to_dvh(keyboard_height)
@@ -125,8 +134,7 @@ export async function app_memorize() {
                             verse_index++;
                             token_index = 0;
                         }
-                        let current_element = list_get(verse_elements, verse_index);
-                        html_scroll_center(current_element);
+
                     }
                 });
             }
