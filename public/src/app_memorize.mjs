@@ -210,7 +210,8 @@ export async function app_memorize() {
                     'height': number_to_dvh(button_height - 0.6)
                 });
                 html_on_click(b, () => {
-                    let current_verse = list_get(verses, verse_index);
+                    let j = list_get(group_current, verse_index)
+                    let current_verse = list_get(verses, j);
                     let {tokens} = current_verse;
                     let current_token = list_get(tokens, token_index);
                     let letter_first = string_case_lower(string_letter_first(current_token));
