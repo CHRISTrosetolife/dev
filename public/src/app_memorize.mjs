@@ -27,6 +27,7 @@ import {html_style} from "./html_style.mjs";
 import {string_combine} from "./string_combine.mjs";
 import {string_split} from "./string_split.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
+import { noop } from "./noop.mjs";
 export async function app_memorize() {
     let root = html_document_body();
     html_style(root, {
@@ -40,7 +41,7 @@ export async function app_memorize() {
     let verse_index = 0;
     let token_index = 0;
     let settings_element = html_element(root, 'div');
-    html_button_width_full_text_click(settings_element, '⚙️ settings');
+    html_button_width_full_text_click(settings_element, '⚙️ settings', noop);
     let verses_element = html_element(root, 'div');
     let button_height = 7;
     let keys = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm'];
