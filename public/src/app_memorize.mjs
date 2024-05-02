@@ -94,13 +94,13 @@ export async function app_memorize() {
                 la({verse_element,token_elements});
             });
         });
-        function update() {
+        function update_colors() {
             let current_verse = list_get(verse_elements, verse_index);
             let {verse_element,token_elements} = current_verse;
             let current_token = list_get(token_elements, token_index)
             html_scroll_center(verse_element);
-            html_style_background_color(token_element, 'green');
-            html_style(token_element, {
+            html_style_background_color(current_token, 'green');
+            html_style(current_token, {
                 color: 'white'
             });
         }
