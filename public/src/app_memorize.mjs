@@ -1,3 +1,4 @@
+import {html_scroll_center} from "./html_scroll_center.mjs";
 import {list_adder} from "./list_adder.mjs";
 import {greater_than_equal} from "./greater_than_equal.mjs";
 import {string_case_lower} from "./string_case_lower.mjs";
@@ -71,7 +72,7 @@ export async function app_memorize() {
         let verse_elements = list_adder(la => {
             each_index(verses, (verse, i) => {
                 let section = html_element(verses_element, 'div');
-                la(section)
+                la(section);
                 let {tokens, verse_number} = verse;
                 html_strong_text(section, verse_number);
                 each_index(tokens, (token, j) => {
@@ -118,17 +119,15 @@ export async function app_memorize() {
                             token_index = 0;
                         }
                         let {verse_elements} = refresh_memorize();
-                        let current_element = list_get(verse_elements, verse_index)
-                        current_element.scrollIntoView({
-                            behavior: 'auto',
-                            block: 'center',
-                            inline: 'center'
-                        });
+                        let current_element = list_get(verse_elements, verse_index);
+                        html_scroll_center(current_element);
                     }
                 });
             }
         }
-        return {verse_elements}
+        return {
+            verse_elements
+        };
     }
     function number_to_dvh(value) {
         return string_combine(string_to(value), 'dvh');
