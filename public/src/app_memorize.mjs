@@ -56,9 +56,12 @@ export async function app_memorize() {
     let verses_length = list_length(verses);
     let groups = app_memorize_group(verses_length);
     let group_first = list_first(groups);
-    let group_current = group_first;
-    let verse_index = 0;
-    let token_index = 0;
+    let group_current;
+    let verse_index;
+    let token_index;
+    group_current = group_first;
+    verse_index = 0;
+    token_index = 0;
     refresh_memorize();
     function refresh_settings() {
         html_clear(root);
