@@ -69,6 +69,11 @@ export async function app_memorize() {
     let verse_index;
     let token_index;
     group_current_set(list_first(groups));
+    html_hash({
+        'verses': value => {
+
+        }
+    });
     refresh_memorize();
     function group_current_set(g) {
         group_current = g;
