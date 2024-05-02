@@ -1,6 +1,7 @@
 import { add } from "./add.mjs";
 import { divide } from "./divide.mjs";
 import { list_length } from "./list_length.mjs";
+import { list_skip } from "./list_skip.mjs";
 import { list_take } from "./list_take.mjs";
 import { mod } from "./mod.mjs";
 import {range} from "./range.mjs";
@@ -13,7 +14,9 @@ export function app_memorize_group(count) {
         let half = divide(length, sub);
         let half_floor = floor(half);
         let remainder = mod(length, sub);
-        let first = list_take(list, add(half_floor, remainder))
+        let first_count = add(half_floor, remainder);
+        let first = list_take(list, first_count)
+        let second = list_skip(list, first_count)
     }
 }
 function floor(value) {
