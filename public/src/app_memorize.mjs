@@ -1,3 +1,4 @@
+import {html_style_visible} from "./html_style_visible.mjs";
 import {html_style_hidden} from "./html_style_hidden.mjs";
 import {html_p_text} from "./html_p_text.mjs";
 import {list_last} from "./list_last.mjs";
@@ -46,7 +47,7 @@ import {undefined_is} from "./undefined_is.mjs";
 import {list_first} from "./list_first.mjs";
 import {string_combine_multiple} from "./string_combine_multiple.mjs";
 import {mod} from "./mod.mjs";
-import { list_join } from "./list_join.mjs";
+import {list_join} from "./list_join.mjs";
 export async function app_memorize() {
     let root = html_document_body();
     html_style(root, {
@@ -60,7 +61,7 @@ export async function app_memorize() {
     let verses_length = list_length(verses);
     let groups = app_memorize_group(verses_length);
     let patterns = [['1'], ['1', '0'], ['0']];
-    let patterns_length = list_length(patterns)
+    let patterns_length = list_length(patterns);
     let pattern_index = 0;
     let group_current;
     let verse_index;
@@ -98,15 +99,15 @@ export async function app_memorize() {
                 refresh_settings();
             });
             html_p_text(root, 'which pattern of shown and hidden words do you want ?');
-            each_index(patterns, (p,i)=> {
+            each_index(patterns, (p, i) => {
                 let b = html_button(root);
                 let text = list_join(p, '');
                 html_inner_set(b, text);
                 html_on_click(b, () => {
-                    pattern_index = i
+                    pattern_index = i;
                     refresh_settings();
                 });
-            })
+            });
         });
     }
     function group_to_range_string(g) {
@@ -162,14 +163,17 @@ export async function app_memorize() {
                         let spacer2 = html_span_text(verse_element, '.');
                         html_style_background_color(spacer2, 'green');
                         html_style_font_color(spacer2, 'green');
-                        for (let s of [spacer,spacer2]) {
+                        for (let s of [spacer, spacer2]) {
                             html_style_hidden(s);
                         }
                         let token_element = html_span_text(verse_element, token);
                         if (equal(token_pattern, '0')) {
                             html_style_hidden(token_element);
                         }
-                        la({spacer2,token_element});
+                        la({
+                            spacer2,
+                            token_element
+                        });
                         token_count++;
                     });
                 });
@@ -177,7 +181,7 @@ export async function app_memorize() {
                     verse_element,
                     token_objects
                 });
-            })
+            });
         });
         let previous_spacer2;
         let previous_token_element;
@@ -187,13 +191,17 @@ export async function app_memorize() {
             let {verse_element, token_objects} = current_verse;
             let current_token = list_get(token_objects, token_index);
             html_scroll_center(verse_element);
-            let {spacer2,token_element} = current_token;
-            html_style_visibility_inherit(spacer2);
+            let {spacer2, token_element} = current_token;
+            html_style_visible(spacer2);
+            console.log('here', {
+                spacer2,
+                previous_spacer2
+            });
             if (undefined_not_is(previous_spacer2)) {
                 html_style_hidden(previous_spacer2);
             }
             if (undefined_not_is(token_element)) {
-                html_style_visibility_inherit(token_element);
+                html_style_visible(token_element);
             }
             previous_spacer2 = spacer2;
             previous_token_element = token_element;
@@ -218,7 +226,7 @@ export async function app_memorize() {
                     'height': number_to_dvh(button_height - 0.6)
                 });
                 html_on_click(b, () => {
-                    let j = list_get(group_current, verse_index)
+                    let j = list_get(group_current, verse_index);
                     let current_verse = list_get(verses, j);
                     let {tokens} = current_verse;
                     let current_token = list_get(tokens, token_index);
@@ -240,7 +248,7 @@ export async function app_memorize() {
                             console.log('changing pattern ', {
                                 pattern_index,
                                 pattern_length
-                            })
+                            });
                             refresh_memorize();
                         }
                         update_colors();
@@ -259,9 +267,3 @@ export async function app_memorize() {
         return string_combine(string_to(value), 'dvw');
     }
 }
-function html_style_visibility_inherit(token_element) {
-    html_style(token_element, {
-        visiblity: 'inherit'
-    });
-}
-
