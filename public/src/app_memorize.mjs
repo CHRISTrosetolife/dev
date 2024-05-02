@@ -159,12 +159,12 @@ export async function app_memorize() {
                         let m = mod(token_count, pattern_length);
                         let token_pattern = list_get(pattern, m);
                         let spacer = html_span_text(verse_element, ' ');
-                        let spacer2 = html_span_text(verse_element, ' ');
+                        let spacer2 = html_span_text(verse_element, '.');
                         for (let s of [spacer,spacer2]) {
-                            html_style(s,{
+                            html_style(s, {
                                 'min-width': '0.5dvh',
                                 'display':'inline-block',
-                                'height': '100%',
+                                'min-height': '100%',
                                 'vertical-align':'top'
                             })
                         }
