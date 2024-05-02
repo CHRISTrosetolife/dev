@@ -1,3 +1,4 @@
+import {string_letter_first} from "./string_letter_first.mjs";
 import {html_style_button_default_initialize} from "./html_style_button_default_initialize.mjs";
 import {string_split_empty} from "./string_split_empty.mjs";
 import {multiply} from "./multiply.mjs";
@@ -26,11 +27,11 @@ import {each_index} from "./each_index.mjs";
 import {html_style} from "./html_style.mjs";
 import {string_combine} from "./string_combine.mjs";
 import {string_split} from "./string_split.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
-import { noop } from "./noop.mjs";
-import { add } from "./add.mjs";
-import { html_on_click } from "./html_on_click.mjs";
-import { list_get } from "./list_get.mjs";
+import {html_button_width_full_text_click} from "./html_button_width_full_text_click.mjs";
+import {noop} from "./noop.mjs";
+import {add} from "./add.mjs";
+import {html_on_click} from "./html_on_click.mjs";
+import {list_get} from "./list_get.mjs";
 export async function app_memorize() {
     let root = html_document_body();
     html_style(root, {
@@ -47,14 +48,14 @@ export async function app_memorize() {
     let settings_button = html_button_width_full_text_click(settings_element, '⚙️ settings', noop);
     html_style(settings_button, {
         'margin-left': 0,
-        'margin-right': 0,
+        'margin-right': 0
     });
     let verses_element = html_element(root, 'div');
     let button_height = 7;
     let keys = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm'];
     let keys_length = list_length(keys);
     let keyboard_height = multiply(button_height, keys_length);
-    let offset = add(keyboard_height, 7)
+    let offset = add(keyboard_height, 7);
     let height_max = subtract(100, offset);
     html_style(verses_element, {
         'max-height': number_to_dvh(height_max),
@@ -84,12 +85,12 @@ export async function app_memorize() {
         html_style_centered(row_element);
         for (let k of row) {
             let b = html_button(row_element);
-            html_style_centered(b)
+            html_style_centered(b);
             html_inner_set(b, string_case_upper(k));
-            let b_width = number_to_dvw(10 - 1)
+            let b_width = number_to_dvw(10 - 1);
             html_style(b, {
                 'font-size': '3.8dvh',
-                margin:'0.25dvh',
+                margin: '0.25dvh',
                 'min-width': b_width,
                 'max-width': b_width,
                 'height': number_to_dvh(button_height - 0.6)
@@ -97,8 +98,9 @@ export async function app_memorize() {
             html_on_click(b, () => {
                 let current_verse = list_get(verses, verse_index);
                 let {tokens} = current_verse;
-                let current_token = list_get(tokens, token_index)
-            })
+                let current_token = list_get(tokens, token_index);
+                let letter_first = string_letter_first(current_token);
+            });
         }
     }
     function number_to_dvh(value) {
