@@ -79,7 +79,11 @@ export async function app_memorize() {
             let index = list_index(mapped2, value);
             let g = list_get(groups, index);
             group_current_set(g);
-        }
+        },
+        'pattern': value => {
+            let mapped = list_map(patterns, list_join);
+            pattern_index = list_index(mapped, value)
+        },
     });
     refresh_memorize();
     function group_current_set(g) {
