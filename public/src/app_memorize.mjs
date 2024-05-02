@@ -233,7 +233,7 @@ export async function app_memorize() {
                     'height': number_to_dvh(button_height - 0.6)
                 });
                 html_on_click(b, () => {
-                    on_keydown(k, update_colors, previous_token_element);
+                    on_keydown(k);
                 });
             }
         }
@@ -258,7 +258,7 @@ export async function app_memorize() {
         previous_token_element = token_element;
     }
 
-    function on_keydown(k, previous_token_element) {
+    function on_keydown(k) {
         let j = list_get(group_current, verse_index);
         let current_verse = list_get(verses, j);
         let { tokens } = current_verse;
