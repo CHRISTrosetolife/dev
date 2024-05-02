@@ -55,7 +55,7 @@ export async function app_memorize() {
     let verses = await http_get(storage_url(file_path));
     let verses_length = list_length(verses);
     let groups = app_memorize_group(verses_length);
-    const group_first = list_first(groups);
+    let group_first = list_first(groups);
     let group_current = group_first;
     let verse_index = 0;
     let token_index = 0;
