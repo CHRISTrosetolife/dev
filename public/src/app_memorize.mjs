@@ -94,6 +94,7 @@ export async function app_memorize() {
                 la({verse_element,token_elements});
             });
         });
+        let previous_token;
         update_colors()
         function update_colors() {
             let current_verse = list_get(verse_elements, verse_index);
@@ -104,6 +105,7 @@ export async function app_memorize() {
             html_style(current_token, {
                 color: 'white'
             });
+            previous_token = current_token;
         }
         let keyboard_element = html_element(root, 'div');
         html_style(keyboard_element, {
