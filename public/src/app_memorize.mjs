@@ -88,6 +88,12 @@ export async function app_memorize() {
     refresh_memorize();
     function group_current_set(g) {
         group_current = g;
+        if (equal(list_length(group_current), 1)) {
+            patterns = [['1'], ['0', '1', '1'], ['1','0'], ['0', '1'], ['0']];
+        } else {
+            patterns = [['1'], ['0']];
+        }
+        patterns_length = list_length(patterns);
         verse_index = 0;
         token_index = 0;
         pattern_index = 0;
