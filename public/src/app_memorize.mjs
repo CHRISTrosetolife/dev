@@ -77,7 +77,8 @@ export async function app_memorize() {
             'overflow-y': 'scroll'
         });
         let verse_elements = list_adder(la => {
-            each(group_current, (verse, i) => {
+            for (let i of group_current) {
+                let verse = list_get(verses, i)
                 let verse_element = html_element(verses_element, 'div');
                 let {tokens, verse_number} = verse;
                 let number_element = html_strong_text(verse_element, verse_number);
