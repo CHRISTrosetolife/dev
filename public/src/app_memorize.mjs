@@ -167,6 +167,9 @@ export async function app_memorize() {
             if (undefined_not_is(previous_token)) {
                 html_style_background_color(previous_token, 'inherit');
                 html_style_font_color(previous_token, 'inherit');
+                html_style(previous_token, {
+                    visiblity: 'inherit'
+                })
             }
             previous_token = current_token;
         }
