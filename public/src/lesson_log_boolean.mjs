@@ -26,6 +26,6 @@ export function lesson_log_boolean() {
     let description = example_message;
     return lesson_simple(lesson_add_quiz, example_before, description, example_message, []);
     function example_before(parent) {
-        html_style_alternate(parent, [noop, html_style_monospace], ['boolean ', 'true', ' and ', 'false', ' can be used in code :'])
+        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['boolean ', 'true', ' and ', 'false', ' can be used in code :'])
     }
 }
