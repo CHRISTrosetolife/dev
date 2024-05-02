@@ -28,6 +28,7 @@ import {string_combine} from "./string_combine.mjs";
 import {string_split} from "./string_split.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { noop } from "./noop.mjs";
+import { add } from "./add.mjs";
 export async function app_memorize() {
     let root = html_document_body();
     html_style(root, {
@@ -41,13 +42,18 @@ export async function app_memorize() {
     let verse_index = 0;
     let token_index = 0;
     let settings_element = html_element(root, 'div');
-    html_button_width_full_text_click(settings_element, '⚙️ settings', noop);
+    let settings_button = html_button_width_full_text_click(settings_element, '⚙️ settings', noop);
+    html_style(settings_button, {
+        'margin-left': 0,
+        'margin-right': 0,
+    });
     let verses_element = html_element(root, 'div');
     let button_height = 7;
     let keys = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm'];
     let keys_length = list_length(keys);
     let keyboard_height = multiply(button_height, keys_length);
-    let height_max = subtract(100, keyboard_height);
+    let offset = add(keyboard_height, 7)
+    let height_max = subtract(100, offset);
     html_style(verses_element, {
         'max-height': number_to_dvh(height_max),
         'overflow-y': 'scroll'
