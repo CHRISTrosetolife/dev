@@ -99,7 +99,7 @@ export async function app_memorize() {
                 let current_verse = list_get(verses, verse_index);
                 let {tokens} = current_verse;
                 let current_token = list_get(tokens, token_index);
-                let letter_first = string_letter_first(current_token);
+                let letter_first = string_lower_case(string_letter_first(current_token));
             });
         }
     }
