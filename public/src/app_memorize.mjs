@@ -164,13 +164,13 @@ export async function app_memorize() {
                         if (equal(token_pattern, '0')) {
                             html_style_hidden(token_element);
                         }
-                        la(token_element);
+                        la({spacer2,token_element});
                         token_count++;
                     });
                 });
                 la({
                     verse_element,
-                    token_elements
+                    tokens
                 });
             })
         });
@@ -178,11 +178,12 @@ export async function app_memorize() {
         update_colors();
         function update_colors() {
             let current_verse = list_get(verse_elements, verse_index);
-            let {verse_element, token_elements} = current_verse;
-            let current_token = list_get(token_elements, token_index);
+            let {verse_element, tokens} = current_verse;
+            let current_token = list_get(tokens, token_index);
             html_scroll_center(verse_element);
-            html_style_background_color(current_token, 'green');
-            html_style_font_color(current_token, 'white');
+            let {spacer2,token_element} = current_token
+            html_style_background_color(token_element, 'green');
+            html_style_font_color(token_element, 'white');
             if (undefined_not_is(previous_token)) {
                 html_style_background_color(previous_token, 'inherit');
                 html_style_font_color(previous_token, 'inherit');
@@ -190,7 +191,7 @@ export async function app_memorize() {
                     visiblity: 'inherit'
                 })
             }
-            previous_token = current_token;
+            previous_token = token_element;
         }
         let keyboard_element = html_element(root, 'div');
         html_style(keyboard_element, {
