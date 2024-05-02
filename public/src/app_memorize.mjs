@@ -70,20 +70,18 @@ export async function app_memorize() {
         });
         let verse_elements = list_adder(la => {
             each_index(verses, (verse, i) => {
-                let section = html_element(verses_element, 'div');
-                la(section);
+                let verse_element = html_element(verses_element, 'div');
+                la(verse_element);
                 let {tokens, verse_number} = verse;
-                let number_element = html_strong_text(section, verse_number);
+                let number_element = html_strong_text(verse_element, verse_number);
                 html_on_click(number_element, () => {
                     token_index = 0;
                     verse_index = i;
-                    let {verse_elements} = refresh_memorize();
-                    let current_element = list_get(verse_elements, verse_index);
-                    html_scroll_center(current_element);
+                    html_scroll_center(verse_element);
                 })
                 each_index(tokens, (token, j) => {
-                    html_span_text(section, ' ');
-                    let token_element = html_span_text(section, token);
+                    html_span_text(verse_element, ' ');
+                    let token_element = html_span_text(verse_element, token);
                     if (and(equal(i, verse_index), equal(j, token_index))) {
                         html_style_background_color(token_element, 'green');
                         html_style(token_element, {
@@ -124,7 +122,6 @@ export async function app_memorize() {
                             verse_index++;
                             token_index = 0;
                         }
-                        let {verse_elements} = refresh_memorize();
                         let current_element = list_get(verse_elements, verse_index);
                         html_scroll_center(current_element);
                     }
