@@ -103,6 +103,8 @@ export async function app_memorize() {
             html_scroll_center(verse_element);
             html_style_background_color(current_token, 'green');
             html_style_font_color(current_token, 'white');
+            html_style_background_color(previous_token, 'inherit');
+            html_style_font_color(previous_token, 'inherit');
             previous_token = current_token;
         }
         let keyboard_element = html_element(root, 'div');
