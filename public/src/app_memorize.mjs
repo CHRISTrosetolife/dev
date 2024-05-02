@@ -193,15 +193,11 @@ export async function app_memorize() {
             html_scroll_center(verse_element);
             let {spacer2, token_element} = current_token;
             html_style_visible(spacer2);
-            console.log('here', {
-                spacer2,
-                previous_spacer2
-            });
             if (undefined_not_is(previous_spacer2)) {
                 html_style_hidden(previous_spacer2);
             }
-            if (undefined_not_is(token_element)) {
-                html_style_visible(token_element);
+            if (undefined_not_is(previous_token_element)) {
+                html_style_visible(previous_token_element);
             }
             previous_spacer2 = spacer2;
             previous_token_element = token_element;
