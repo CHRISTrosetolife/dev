@@ -260,8 +260,9 @@ export async function app_memorize() {
     }
     html_on(root, 'keydown', (e) => {
         let {keyCode} = e;
-        let k = String.fromCharCode(keyCode)
-        on_keydown(k)
+        let c = String.fromCharCode(keyCode)
+        let c_lower = string_case_lower(c)
+        on_keydown(c_lower)
     })
     function on_keydown(k) {
         let j = list_get(group_current, verse_index);
