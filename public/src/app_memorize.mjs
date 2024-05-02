@@ -1,3 +1,5 @@
+import {undefined_not_is} from "./undefined_not_is.mjs";
+import {html_style_font_color} from "./html_style_font_color.mjs";
 import {html_scroll_center} from "./html_scroll_center.mjs";
 import {list_adder} from "./list_adder.mjs";
 import {greater_than_equal} from "./greater_than_equal.mjs";
@@ -36,6 +38,7 @@ import {add} from "./add.mjs";
 import {html_on_click} from "./html_on_click.mjs";
 import {list_get} from "./list_get.mjs";
 import {html_clear} from "./html_clear.mjs";
+import {undefined_is} from "./undefined_is.mjs";
 export async function app_memorize() {
     let root = html_document_body();
     html_style(root, {
@@ -77,7 +80,7 @@ export async function app_memorize() {
                     token_index = 0;
                     verse_index = i;
                     html_scroll_center(verse_element);
-                })
+                });
                 let token_elements = list_adder(la => {
                     each_index(tokens, (token, j) => {
                         html_span_text(verse_element, ' ');
@@ -90,21 +93,26 @@ export async function app_memorize() {
                             });
                         }
                     });
-                })
-                la({verse_element,token_elements});
+                });
+                la({
+                    verse_element,
+                    token_elements
+                });
             });
         });
         let previous_token;
-        update_colors()
+        update_colors();
         function update_colors() {
             let current_verse = list_get(verse_elements, verse_index);
-            let {verse_element,token_elements} = current_verse;
-            let current_token = list_get(token_elements, token_index)
+            let {verse_element, token_elements} = current_verse;
+            let current_token = list_get(token_elements, token_index);
             html_scroll_center(verse_element);
             html_style_background_color(current_token, 'green');
             html_style_font_color(current_token, 'white');
-            html_style_background_color(previous_token, 'inherit');
-            html_style_font_color(previous_token, 'inherit');
+            if (undefined_not_is(previous_token)) {
+                html_style_background_color(previous_token, 'inherit');
+                html_style_font_color(previous_token, 'inherit');
+            }
             previous_token = current_token;
         }
         let keyboard_element = html_element(root, 'div');
@@ -138,7 +146,7 @@ export async function app_memorize() {
                             verse_index++;
                             token_index = 0;
                         }
-                        update_colors()
+                        update_colors();
                     }
                 });
             }
@@ -154,9 +162,3 @@ export async function app_memorize() {
         return string_combine(string_to(value), 'dvw');
     }
 }
-function html_style_font_color(component, color) {
-    html_style(component, {
-        color,
-    });
-}
-
