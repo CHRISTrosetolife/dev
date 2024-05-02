@@ -82,17 +82,16 @@ export async function app_memorize() {
             group_current_set(g);
         },
         'pattern': value => {
-            let mapped = list_map(patterns, p => list_join(p, ''));
-            pattern_index = list_index(mapped, value)
+            pattern_index = list_index(patterns, value)
         },
     });
     refresh_memorize();
     function group_current_set(g) {
         group_current = g;
         if (equal(list_length(group_current), 1)) {
-            patterns = [['1'], ['0', '1', '1'], ['1','0'], ['0', '1'], ['0'], ['0']];
+            patterns = ['1', '011', '10', '01', '0', '0'];
         } else {
-            patterns = [['1'], ['0'], ['0']];
+            patterns = ['10', '0'];
         }
         patterns_length = list_length(patterns);
         verse_index = 0;
@@ -120,7 +119,7 @@ export async function app_memorize() {
                 });
             }
         });
-        html_button_width_full_text_click(root, string_combine_multiple(['pattern ', list_join(list_get(patterns, pattern_index), '')]), () => {
+        html_button_width_full_text_click(root, string_combine_multiple(['pattern ', list_get(patterns, pattern_index)]), () => {
             html_clear(root);
             html_button_width_full_text_click(root, 'back', () => {
                 refresh_settings();
@@ -128,8 +127,7 @@ export async function app_memorize() {
             html_p_text(root, 'which pattern of shown and hidden words do you want ?');
             each_index(patterns, (p, i) => {
                 let b = html_button(root);
-                let text = list_join(p, '');
-                html_inner_set(b, text);
+                html_inner_set(b, p);
                 html_on_click(b, () => {
                     pattern_index = i;
                     refresh_settings();
@@ -150,7 +148,8 @@ export async function app_memorize() {
     }
     function refresh_memorize() {
         html_clear(root);
-        let pattern = list_get(patterns, pattern_index);
+        let p = list_get(patterns, pattern_index);
+        let pattern = string_split(p, '')
         let settings_element = html_element(root, 'div');
         let settings_button = html_button_width_full_text_click(settings_element, '⚙️ settings', refresh_settings);
         html_style(settings_button, {
@@ -265,7 +264,7 @@ export async function app_memorize() {
                         if (greater_than_equal(verse_index, group_current_length)) {
                             verse_index = 0;
                             let pattern = list_get(patterns, pattern_index);
-                            if (and(equal(list_join(pattern, ''), '0'), mistakes)) {
+                            if (and(equal(pattern, '0'), mistakes)) {
                                 mistakes = false;
                             } else {
                                 pattern_index++;
