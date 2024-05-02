@@ -71,7 +71,6 @@ export async function app_memorize() {
         let verse_elements = list_adder(la => {
             each_index(verses, (verse, i) => {
                 let verse_element = html_element(verses_element, 'div');
-                
                 let {tokens, verse_number} = verse;
                 let number_element = html_strong_text(verse_element, verse_number);
                 html_on_click(number_element, () => {
