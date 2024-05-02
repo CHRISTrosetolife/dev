@@ -66,11 +66,18 @@ export async function app_memorize() {
         });
         let first_verse_index = list_first(group_current);
         let first_verse = list_get(verses, first_verse_index)
-        let {verse_number:first_number} = first_verse;
+        let {verse_number:first_verse_number} = first_verse;
+        let first_number = first_verse_number
         let last_verse_index = list_last(group_current);
         let last_verse = list_get(verses, last_verse_index)
-        let {verse_number:last_number} = last_verse;
-        html_button_width_full_text_click(root, string_combine_multiple(['verses : ',first_number,' - ',last_number]));
+        let {verse_number:last_verse_number} = last_verse;
+        let last_number = last_verse_number
+        html_button_width_full_text_click(root, string_combine_multiple(['verses : ',first_number,' - ',last_number]), () => {
+            html_clear(root);
+            for (let g of groups) {
+
+            }
+        });
     }
     function refresh_memorize() {
         html_clear(root);
