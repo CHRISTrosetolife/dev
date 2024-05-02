@@ -94,6 +94,7 @@ export async function app_memorize() {
                 la({verse_element,token_elements});
             });
         });
+        update_colors()
         function update_colors() {
             let current_verse = list_get(verse_elements, verse_index);
             let {verse_element,token_elements} = current_verse;
@@ -135,7 +136,7 @@ export async function app_memorize() {
                             verse_index++;
                             token_index = 0;
                         }
-
+                        update_colors()
                     }
                 });
             }
