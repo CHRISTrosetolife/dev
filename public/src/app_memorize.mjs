@@ -33,6 +33,7 @@ import {noop} from "./noop.mjs";
 import {add} from "./add.mjs";
 import {html_on_click} from "./html_on_click.mjs";
 import {list_get} from "./list_get.mjs";
+import { html_clear } from "./html_clear.mjs";
 export async function app_memorize() {
     let root = html_document_body();
     html_style(root, {
@@ -45,66 +46,71 @@ export async function app_memorize() {
     let verses = await http_get(storage_url(file_path));
     let verse_index = 0;
     let token_index = 0;
-    let settings_element = html_element(root, 'div');
-    let settings_button = html_button_width_full_text_click(settings_element, '⚙️ settings', noop);
-    html_style(settings_button, {
-        'margin-left': 0,
-        'margin-right': 0
-    });
-    let verses_element = html_element(root, 'div');
-    let button_height = 7;
-    let keys = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm'];
-    let keys_length = list_length(keys);
-    let keyboard_height = multiply(button_height, keys_length);
-    let offset = add(keyboard_height, 7);
-    let height_max = subtract(100, offset);
-    html_style(verses_element, {
-        'max-height': number_to_dvh(height_max),
-        'overflow-y': 'scroll'
-    });
-    each_index(verses, (verse, i) => {
-        let section = html_element(verses_element, 'div');
-        let {tokens, verse_number} = verse;
-        html_strong_text(section, verse_number);
-        each_index(tokens, (token, j) => {
-            html_span_text(section, ' ');
-            let token_element = html_span_text(section, token);
-            if (and(equal(i, verse_index), equal(j, token_index))) {
-                html_style_background_color(token_element, 'green');
-                html_style(token_element, {
-                    color: 'white'
-                });
-            }
+    refresh_memorize()
+    function refresh_memorize() {
+        html_clear(root)
+        let settings_element = html_element(root, 'div');
+        let settings_button = html_button_width_full_text_click(settings_element, '⚙️ settings', noop);
+        html_style(settings_button, {
+            'margin-left': 0,
+            'margin-right': 0
         });
-    });
-    let keyboard_element = html_element(root, 'div');
-    html_style(keyboard_element, {
-        'max-height': number_to_dvh(keyboard_height)
-    });
-    for (let row of keys) {
-        let row_element = html_div(keyboard_element);
-        html_style_centered(row_element);
-        for (let k of row) {
-            let b = html_button(row_element);
-            html_style_centered(b);
-            html_inner_set(b, string_case_upper(k));
-            let b_width = number_to_dvw(10 - 1);
-            html_style(b, {
-                'font-size': '3.8dvh',
-                margin: '0.25dvh',
-                'min-width': b_width,
-                'max-width': b_width,
-                'height': number_to_dvh(button_height - 0.6)
-            });
-            html_on_click(b, () => {
-                let current_verse = list_get(verses, verse_index);
-                let {tokens} = current_verse;
-                let current_token = list_get(tokens, token_index);
-                let letter_first = string_case_lower(string_letter_first(current_token));
-                if (equal(k, letter_first)) {
-                    token_index++;
+        let verses_element = html_element(root, 'div');
+        let button_height = 7;
+        let keys = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm'];
+        let keys_length = list_length(keys);
+        let keyboard_height = multiply(button_height, keys_length);
+        let offset = add(keyboard_height, 7);
+        let height_max = subtract(100, offset);
+        html_style(verses_element, {
+            'max-height': number_to_dvh(height_max),
+            'overflow-y': 'scroll'
+        });
+        each_index(verses, (verse, i) => {
+            let section = html_element(verses_element, 'div');
+            let {tokens, verse_number} = verse;
+            html_strong_text(section, verse_number);
+            each_index(tokens, (token, j) => {
+                html_span_text(section, ' ');
+                let token_element = html_span_text(section, token);
+                if (and(equal(i, verse_index), equal(j, token_index))) {
+                    html_style_background_color(token_element, 'green');
+                    html_style(token_element, {
+                        color: 'white'
+                    });
                 }
             });
+        });
+        let keyboard_element = html_element(root, 'div');
+        html_style(keyboard_element, {
+            'max-height': number_to_dvh(keyboard_height)
+        });
+        for (let row of keys) {
+            let row_element = html_div(keyboard_element);
+            html_style_centered(row_element);
+            for (let k of row) {
+                let b = html_button(row_element);
+                html_style_centered(b);
+                html_inner_set(b, string_case_upper(k));
+                let b_width = number_to_dvw(10 - 1);
+                html_style(b, {
+                    'font-size': '3.8dvh',
+                    margin: '0.25dvh',
+                    'min-width': b_width,
+                    'max-width': b_width,
+                    'height': number_to_dvh(button_height - 0.6)
+                });
+                html_on_click(b, () => {
+                    let current_verse = list_get(verses, verse_index);
+                    let {tokens} = current_verse;
+                    let current_token = list_get(tokens, token_index);
+                    let letter_first = string_case_lower(string_letter_first(current_token));
+                    if (equal(k, letter_first)) {
+                        token_index++;
+                        refresh_memorize()
+                    }
+                });
+            }
         }
     }
     function number_to_dvh(value) {
