@@ -72,6 +72,9 @@ export async function app_memorize() {
         });
         html_button_width_full_text_click(root,group_to_range_string(group_current), () => {
             html_clear(root);
+            html_button_width_full_text_click(root, 'back', () => {
+                refresh_settings();
+            });
             for (let g of groups) {
                 html_button_width_full_text_click(root,group_to_range_string(g), () => {
                     group_current_set(g);
