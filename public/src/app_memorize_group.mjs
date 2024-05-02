@@ -15,9 +15,9 @@ export function app_memorize_group(count) {
     recursive(result, indices)
     return result;
     function recursive(result, list) {
-        list_add(result, list);
         let length = list_length(list);
         if (less_than_equal(length, 1)) {
+            list_add(result, list);
             return;
         }
         let half = divide(length, sub);
@@ -30,6 +30,7 @@ export function app_memorize_group(count) {
         for (let b of both) {
             recursive(result, b)
         }
+        list_add(result, list);
     }
 }
 function floor(value) {
