@@ -70,7 +70,7 @@ export async function app_memorize() {
         html_button_width_full_text_click(root, 'back', () => {
             refresh_memorize();
         });
-        html_button_width_full_text_click(root,group_to_range_string(group_current), () => {
+        html_button_width_full_text_click(root,string_combine_multiple(['verses ',group_to_range_string(group_current)]), () => {
             html_clear(root);
             html_button_width_full_text_click(root, 'back', () => {
                 refresh_settings();
@@ -94,7 +94,7 @@ export async function app_memorize() {
         let last_verse = list_get(verses, last_verse_index);
         let { verse_number: last_verse_number } = last_verse;
         let last_number = last_verse_number;
-        return string_combine_multiple(['verses ',first_number,' - ',last_number])
+        return string_combine_multiple([first_number,' - ',last_number])
     }
 
     function refresh_memorize() {
