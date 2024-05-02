@@ -12,6 +12,7 @@ export function app_memorize_group(count) {
     let sub = 2
     return indices
     function recursive(result, list) {
+        list_add(result, list);
         let length = list_length(list);
         let half = divide(length, sub);
         let half_floor = floor(half);
@@ -20,7 +21,6 @@ export function app_memorize_group(count) {
         let first = list_take(list, first_count)
         let second = list_skip(list, first_count)
         let both = [first, second];
-        list_add_multiple(result, both);
     }
 }
 function floor(value) {
