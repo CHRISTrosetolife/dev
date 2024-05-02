@@ -190,6 +190,10 @@ export async function app_memorize() {
                             verse_index++;
                             token_index = 0;
                         }
+                        let group_current_length = list_length(group_current);
+                        if (greater_than_equal(verse_index, group_current_length)) {
+                            verse_index = 0;
+                        }
                         update_colors();
                     }
                 });
