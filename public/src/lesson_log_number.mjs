@@ -25,4 +25,7 @@ export function lesson_log_number() {
     let example_message = 'outputting a number to the console';
     let description = example_message;
     return lesson_simple(lesson_add_quiz, example_before, description, example_message, [lesson_log_number_explain]);
+    function example_before(parent) {
+
+    }
 }
