@@ -74,7 +74,7 @@ export async function app_memorize() {
                 let section = html_element(verses_element, 'div');
                 la(section);
                 let {tokens, verse_number} = verse;
-                html_strong_text(section, verse_number);
+                let number_element = html_strong_text(section, verse_number);
                 each_index(tokens, (token, j) => {
                     html_span_text(section, ' ');
                     let token_element = html_span_text(section, token);
@@ -97,7 +97,7 @@ export async function app_memorize() {
             for (let k of row) {
                 let b = html_button(row_element);
                 html_style_centered(b);
-                let number_element = html_inner_set(b, string_case_upper(k));
+                html_inner_set(b, string_case_upper(k));
                 let b_width = number_to_dvw(10 - 1);
                 html_style(b, {
                     'font-size': '3.8dvh',
