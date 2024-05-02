@@ -60,8 +60,8 @@ export async function app_memorize() {
     refresh_memorize();
     function refresh_settings() {
         html_clear(root);
-        let first = list_first(group_current);
-        let last = list_last(group_current);
+        let first_verse_index = list_first(group_current);
+        let last_verse_index = list_last(group_current);
         html_button_width_full_text_click(root, 'verses : ');
     }
     function refresh_memorize() {
