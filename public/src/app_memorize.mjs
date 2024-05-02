@@ -1,3 +1,4 @@
+import {greater_than_equal} from "./greater_than_equal.mjs";
 import {string_case_lower} from "./string_case_lower.mjs";
 import {string_letter_first} from "./string_letter_first.mjs";
 import {html_style_button_default_initialize} from "./html_style_button_default_initialize.mjs";
@@ -33,7 +34,7 @@ import {noop} from "./noop.mjs";
 import {add} from "./add.mjs";
 import {html_on_click} from "./html_on_click.mjs";
 import {list_get} from "./list_get.mjs";
-import { html_clear } from "./html_clear.mjs";
+import {html_clear} from "./html_clear.mjs";
 export async function app_memorize() {
     let root = html_document_body();
     html_style(root, {
@@ -46,9 +47,9 @@ export async function app_memorize() {
     let verses = await http_get(storage_url(file_path));
     let verse_index = 0;
     let token_index = 0;
-    refresh_memorize()
+    refresh_memorize();
     function refresh_memorize() {
-        html_clear(root)
+        html_clear(root);
         let settings_element = html_element(root, 'div');
         let settings_button = html_button_width_full_text_click(settings_element, '⚙️ settings', noop);
         html_style(settings_button, {
@@ -107,12 +108,12 @@ export async function app_memorize() {
                     let letter_first = string_case_lower(string_letter_first(current_token));
                     if (equal(k, letter_first)) {
                         token_index++;
-                        let tokens_length = list_length(tokens)
+                        let tokens_length = list_length(tokens);
                         if (greater_than_equal(token_index, tokens_length)) {
                             verse_index++;
                             token_index = 0;
                         }
-                        refresh_memorize()
+                        refresh_memorize();
                     }
                 });
             }
