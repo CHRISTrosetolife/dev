@@ -102,7 +102,7 @@ export async function app_memorize() {
                 let current_token = list_get(tokens, token_index);
                 let letter_first = string_case_lower(string_letter_first(current_token));
                 if (equal(k, letter_first)) {
-                    
+                    token_index++;
                 }
             });
         }
