@@ -1,3 +1,4 @@
+import {list_adder} from "./list_adder.mjs";
 import {greater_than_equal} from "./greater_than_equal.mjs";
 import {string_case_lower} from "./string_case_lower.mjs";
 import {string_letter_first} from "./string_letter_first.mjs";
@@ -67,6 +68,7 @@ export async function app_memorize() {
             'max-height': number_to_dvh(height_max),
             'overflow-y': 'scroll'
         });
+        let verse_elements = list_adder();
         each_index(verses, (verse, i) => {
             let section = html_element(verses_element, 'div');
             let {tokens, verse_number} = verse;
