@@ -24,8 +24,8 @@ import {noop} from "./noop.mjs";
 import {html_style_bold} from "./html_style_bold.mjs";
 import {html_style_monospace} from "./html_style_monospace.mjs";
 export function lesson_add() {
-    const example_message = 'adding two numbers together';
-    const description = 'addition ( + )';
+    let example_message = 'adding two numbers together';
+    let description = 'addition ( + )';
     return lesson_simple(lesson_add_quiz, example_before, description, example_message, []);
     function example_before(parent) {
         html_style_alternate(parent, html_p, [noop, html_style_monospace], ['two numbers can be added together using the plus ( ', '+', ' ) sign']);
