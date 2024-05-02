@@ -271,6 +271,9 @@ export async function app_memorize() {
                             refresh_memorize();
                         }
                         update_colors();
+                    } else {
+                        html_style_visible(previous_token_element)
+                        html_style_font_color(previous_token_element, 'red');
                     }
                 });
             }
