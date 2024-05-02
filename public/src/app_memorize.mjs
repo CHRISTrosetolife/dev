@@ -59,10 +59,13 @@ export async function app_memorize() {
     let group_current;
     let verse_index;
     let token_index;
-    group_current = group_first;
-    verse_index = 0;
-    token_index = 0;
+    group_current_set();
     refresh_memorize();
+    function group_current_set(g) {
+        group_current = g;
+        verse_index = 0;
+        token_index = 0;
+    }
     function refresh_settings() {
         html_clear(root);
         html_button_width_full_text_click(root, 'back', () => {
