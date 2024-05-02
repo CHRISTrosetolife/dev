@@ -97,6 +97,7 @@ export async function app_memorize() {
         verse_index = 0;
         token_index = 0;
         pattern_index = 0;
+        mistakes = false;
     }
     function refresh_settings() {
         html_clear(root);
@@ -210,6 +211,7 @@ export async function app_memorize() {
         });
         let previous_spacer2;
         let previous_token_element;
+        let mistakes = false;
         update_colors();
         function update_colors() {
             let current_verse = list_get(verse_elements, verse_index);
@@ -268,15 +270,13 @@ export async function app_memorize() {
                                 let group_next_index = add_1(group_current_index);
                                 let group_next = list_get(groups, group_next_index);
                                 group_current_set(group_next);
+                                
                             }
-                            console.log('changing pattern ', {
-                                pattern_index,
-                                pattern_length
-                            });
                             refresh_memorize();
                         }
                         update_colors();
                     } else {
+                        mistakes = true;
                         html_style_visible(previous_token_element)
                         html_style_font_color(previous_token_element, 'red');
                     }
