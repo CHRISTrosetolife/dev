@@ -93,12 +93,6 @@ export async function app_memorize() {
                         html_span_text(verse_element, ' ');
                         let token_element = html_span_text(verse_element, token);
                         la(token_element);
-                        if (and(equal(i, verse_index), equal(j, token_index))) {
-                            html_style_background_color(token_element, 'green');
-                            html_style(token_element, {
-                                color: 'white'
-                            });
-                        }
                     });
                 });
                 la({
