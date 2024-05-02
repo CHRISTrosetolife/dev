@@ -75,6 +75,9 @@ export async function app_memorize() {
                 la(section);
                 let {tokens, verse_number} = verse;
                 let number_element = html_strong_text(section, verse_number);
+                html_on_click(number_element, () => {
+                    html_scroll_center(section);
+                })
                 each_index(tokens, (token, j) => {
                     html_span_text(section, ' ');
                     let token_element = html_span_text(section, token);
