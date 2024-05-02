@@ -205,6 +205,9 @@ export async function app_memorize() {
                         if (greater_than_equal(verse_index, group_current_length)) {
                             verse_index = 0;
                             pattern_index++;
+                            if (greater_than_equal(pattern_index, pattern_length)) {
+                                pattern_index = 0;
+                            }
                             refresh_memorize();
                         }
                         update_colors();
