@@ -1,3 +1,4 @@
+import {string_case_lower} from "./string_case_lower.mjs";
 import {string_letter_first} from "./string_letter_first.mjs";
 import {html_style_button_default_initialize} from "./html_style_button_default_initialize.mjs";
 import {string_split_empty} from "./string_split_empty.mjs";
@@ -99,7 +100,7 @@ export async function app_memorize() {
                 let current_verse = list_get(verses, verse_index);
                 let {tokens} = current_verse;
                 let current_token = list_get(tokens, token_index);
-                let letter_first = string_lower_case(string_letter_first(current_token));
+                let letter_first = string_case_lower(string_letter_first(current_token));
             });
         }
     }
