@@ -102,9 +102,7 @@ export async function app_memorize() {
             let current_token = list_get(token_elements, token_index)
             html_scroll_center(verse_element);
             html_style_background_color(current_token, 'green');
-            html_style(current_token, {
-                color: 'white'
-            });
+            html_style_font_color(current_token, 'white');
             previous_token = current_token;
         }
         let keyboard_element = html_element(root, 'div');
@@ -154,3 +152,9 @@ export async function app_memorize() {
         return string_combine(string_to(value), 'dvw');
     }
 }
+function html_style_font_color(component, color) {
+    html_style(component, {
+        color,
+    });
+}
+
