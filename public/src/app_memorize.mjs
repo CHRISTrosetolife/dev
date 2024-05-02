@@ -48,6 +48,8 @@ import {list_first} from "./list_first.mjs";
 import {string_combine_multiple} from "./string_combine_multiple.mjs";
 import {mod} from "./mod.mjs";
 import {list_join} from "./list_join.mjs";
+import { add_1 } from "./add_1.mjs";
+import { list_index } from "./list_index.mjs";
 export async function app_memorize() {
     let root = html_document_body();
     html_style(root, {
@@ -72,6 +74,7 @@ export async function app_memorize() {
         group_current = g;
         verse_index = 0;
         token_index = 0;
+        pattern_index = 0;
     }
     function refresh_settings() {
         html_clear(root);
@@ -239,7 +242,10 @@ export async function app_memorize() {
                             verse_index = 0;
                             pattern_index++;
                             if (greater_than_equal(pattern_index, patterns_length)) {
-                                pattern_index = 0;
+                                let group_current_index = list_index(groups, group_current);
+                                let group_next_index = add_1(group_current_index)
+                                let group_next = list_get(groups, group_next_index)
+                                group_current_set(group_next)
                             }
                             console.log('changing pattern ', {
                                 pattern_index,
