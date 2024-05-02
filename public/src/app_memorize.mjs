@@ -49,6 +49,8 @@ export async function app_memorize() {
     html_style_button_default_initialize();
     let file_path = bible_engbsb_storage_path_file('JHN19');
     let verses = await http_get(storage_url(file_path));
+    let verses_length = list_length(verses)
+    let groups = app_memorize_group()
     let verse_index = 0;
     let token_index = 0;
     refresh_memorize();
