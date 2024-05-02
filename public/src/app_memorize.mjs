@@ -1,3 +1,4 @@
+import {html_p_text} from "./html_p_text.mjs";
 import {list_last} from "./list_last.mjs";
 import {app_memorize_group} from "./app_memorize_group.mjs";
 import {undefined_not_is} from "./undefined_not_is.mjs";
@@ -42,7 +43,7 @@ import {list_get} from "./list_get.mjs";
 import {html_clear} from "./html_clear.mjs";
 import {undefined_is} from "./undefined_is.mjs";
 import {list_first} from "./list_first.mjs";
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import {string_combine_multiple} from "./string_combine_multiple.mjs";
 export async function app_memorize() {
     let root = html_document_body();
     html_style(root, {
@@ -70,34 +71,33 @@ export async function app_memorize() {
         html_button_width_full_text_click(root, 'back', () => {
             refresh_memorize();
         });
-        html_button_width_full_text_click(root,string_combine_multiple(['verses ',group_to_range_string(group_current)]), () => {
+        html_button_width_full_text_click(root, string_combine_multiple(['verses ', group_to_range_string(group_current)]), () => {
             html_clear(root);
             html_button_width_full_text_click(root, 'back', () => {
                 refresh_settings();
             });
-            html_span_text(root, 'which verse range do you want to focus on ?')
+            html_p_text(root, 'which verse range do you want to focus on ?');
             for (let g of groups) {
-                let b = html_button(root)
-                html_inner_set(b, group_to_range_string(g))
+                let b = html_button(root);
+                html_inner_set(b, group_to_range_string(g));
                 html_on_click(b, () => {
                     group_current_set(g);
-                    refresh_settings()
-                })
+                    refresh_settings();
+                });
             }
         });
     }
     function group_to_range_string(g) {
         let first_verse_index = list_first(g);
         let first_verse = list_get(verses, first_verse_index);
-        let { verse_number: first_verse_number } = first_verse;
+        let {verse_number: first_verse_number} = first_verse;
         let first_number = first_verse_number;
         let last_verse_index = list_last(g);
         let last_verse = list_get(verses, last_verse_index);
-        let { verse_number: last_verse_number } = last_verse;
+        let {verse_number: last_verse_number} = last_verse;
         let last_number = last_verse_number;
-        return string_combine_multiple([first_number,' - ',last_number])
+        return string_combine_multiple([first_number, ' - ', last_number]);
     }
-
     function refresh_memorize() {
         html_clear(root);
         let settings_element = html_element(root, 'div');
