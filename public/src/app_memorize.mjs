@@ -82,7 +82,6 @@ export async function app_memorize() {
         },
         'pattern': value => {
             let mapped = list_map(patterns, p => list_join(p, ''));
-            console.log({mapped})
             pattern_index = list_index(mapped, value)
         },
     });
