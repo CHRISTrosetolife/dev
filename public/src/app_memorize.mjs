@@ -89,7 +89,7 @@ export async function app_memorize() {
     function group_current_set(g) {
         group_current = g;
         if (equal(list_length(group_current), 1)) {
-            patterns = ['1', '011', '10', '01', '0', '0'];
+            patterns = ['1', '110', '10', '01', '0', '0'];
         } else {
             patterns = ['10', '0'];
         }
