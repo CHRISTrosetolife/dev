@@ -71,6 +71,7 @@ export async function app_memorize() {
     let group_current;
     let verse_index;
     let token_index;
+    let mistakes = false;
     group_current_set(list_first(groups));
     html_hash({
         'verses': value => {
@@ -89,9 +90,9 @@ export async function app_memorize() {
     function group_current_set(g) {
         group_current = g;
         if (equal(list_length(group_current), 1)) {
-            patterns = [['1'], ['0', '1', '1'], ['1','0'], ['0', '1'], ['0']];
+            patterns = [['1'], ['0', '1', '1'], ['1','0'], ['0', '1'], ['0'], ['0']];
         } else {
-            patterns = [['1'], ['0']];
+            patterns = [['1'], ['0'], ['0']];
         }
         patterns_length = list_length(patterns);
         verse_index = 0;
@@ -119,7 +120,7 @@ export async function app_memorize() {
                 });
             }
         });
-        html_button_width_full_text_click(root, string_combine_multiple(['pattern ', list_get(patterns, pattern_index)]), () => {
+        html_button_width_full_text_click(root, string_combine_multiple(['pattern ', list_join(list_get(patterns, pattern_index), '')]), () => {
             html_clear(root);
             html_button_width_full_text_click(root, 'back', () => {
                 refresh_settings();
@@ -211,7 +212,6 @@ export async function app_memorize() {
         });
         let previous_spacer2;
         let previous_token_element;
-        let mistakes = false;
         update_colors();
         function update_colors() {
             let current_verse = list_get(verse_elements, verse_index);
@@ -264,13 +264,18 @@ export async function app_memorize() {
                         let group_current_length = list_length(group_current);
                         if (greater_than_equal(verse_index, group_current_length)) {
                             verse_index = 0;
-                            pattern_index++;
-                            if (greater_than_equal(pattern_index, patterns_length)) {
-                                let group_current_index = list_index(groups, group_current);
-                                let group_next_index = add_1(group_current_index);
-                                let group_next = list_get(groups, group_next_index);
-                                group_current_set(group_next);
+                            let pattern = list_get(patterns, pattern_index);
+                            if (and(equal(pattern, '0'), mistakes)) {
                                 
+                            } else {
+                                pattern_index++;
+                                if (greater_than_equal(pattern_index, patterns_length)) {
+                                    let group_current_index = list_index(groups, group_current);
+                                    let group_next_index = add_1(group_current_index);
+                                    let group_next = list_get(groups, group_next_index);
+                                    group_current_set(group_next);
+                                    
+                                }
                             }
                             refresh_memorize();
                         }
