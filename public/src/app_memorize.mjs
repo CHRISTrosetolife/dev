@@ -107,6 +107,11 @@ export async function app_memorize() {
                     let letter_first = string_case_lower(string_letter_first(current_token));
                     if (equal(k, letter_first)) {
                         token_index++;
+                        let tokens_length = list_length(tokens)
+                        if (greater_than_equal(token_index, tokens_length)) {
+                            verse_index++;
+                            token_index = 0;
+                        }
                         refresh_memorize()
                     }
                 });
