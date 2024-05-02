@@ -138,7 +138,7 @@ export async function app_memorize() {
                 });
                 let token_elements = list_adder(la => {
                     each_index(tokens, (token, j) => {
-                        let m = mod(pattern_length, token_count);
+                        let m = mod(token_count, pattern_length);
                         let token_pattern = list_get(pattern, m);
                         html_span_text(verse_element, ' ');
                         let token_element = html_span_text(verse_element, token);
