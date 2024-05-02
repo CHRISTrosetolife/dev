@@ -11,7 +11,7 @@ import {range} from "./range.mjs";
 export function app_memorize_group(count) {
     let indices = range(count);
     let sub = 2
-    return indices
+    return recursive([], indices)
     function recursive(result, list) {
         list_add(result, list);
         let length = list_length(list);
