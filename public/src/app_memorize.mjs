@@ -50,6 +50,8 @@ import {mod} from "./mod.mjs";
 import {list_join} from "./list_join.mjs";
 import { add_1 } from "./add_1.mjs";
 import { list_index } from "./list_index.mjs";
+import { list_map } from "./list_map.mjs";
+import { string_replace } from "./string_replace.mjs";
 export async function app_memorize() {
     let root = html_document_body();
     html_style(root, {
@@ -71,7 +73,11 @@ export async function app_memorize() {
     group_current_set(list_first(groups));
     html_hash({
         'verses': value => {
-
+            let mapped = list_map(groups, group_to_range_string)
+            let mapped2 = list_map(mapped, m => string_replace(m, ' ', ''))
+            let index = list_index(mapped2, value);
+            let g = list_get(groups, index);
+            group_current_set(g);
         }
     });
     refresh_memorize();
