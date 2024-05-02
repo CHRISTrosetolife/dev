@@ -90,6 +90,21 @@ export async function app_memorize() {
                 });
             }
         });
+        html_button_width_full_text_click(root, string_combine_multiple(['pattern ', list_get(patterns, pattern_index)]), () => {
+            html_clear(root);
+            html_button_width_full_text_click(root, 'back', () => {
+                refresh_settings();
+            });
+            html_p_text(root, 'which pattern of shown and hidden words do you want ?');
+            each_index(patterns, (p,i)=> {
+                let b = html_button(root);
+                html_inner_set(b, p);
+                html_on_click(b, () => {
+                    pattern_index = i
+                    refresh_settings();
+                });
+            })
+        });
     }
     function group_to_range_string(g) {
         let first_verse_index = list_first(g);
