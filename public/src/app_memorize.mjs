@@ -117,11 +117,18 @@ export async function app_memorize() {
                             verse_index++;
                             token_index = 0;
                         }
-                        refresh_memorize();
+                        let {verse_elements} = refresh_memorize();
+                        let current_element = list_get(verse_elements, verse_index)
+                        current_element.scrollIntoView({
+                            behavior: 'auto',
+                            block: 'center',
+                            inline: 'center'
+                        });
                     }
                 });
             }
         }
+        return {verse_elements}
     }
     function number_to_dvh(value) {
         return string_combine(string_to(value), 'dvh');
