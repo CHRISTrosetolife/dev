@@ -61,7 +61,11 @@ export async function app_memorize() {
     function refresh_settings() {
         html_clear(root);
         let first_verse_index = list_first(group_current);
+        let first_verse = list_get(verses, first_verse_index)
+        let {verse_number:first_number} = first_verse;
         let last_verse_index = list_last(group_current);
+        let last_verse = list_get(verses, last_verse_index)
+        let {verse_number:last_number} = last_verse;
         html_button_width_full_text_click(root, 'verses : ');
     }
     function refresh_memorize() {
