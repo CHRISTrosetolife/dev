@@ -71,14 +71,13 @@ import {object_properties} from "./object_properties.mjs";
 import {list_includes} from "./list_includes.mjs";
 export function app_learn_code() {
     let root = html_document_body();
-    let actions = {
+    html_hash({
         'background_color': value => {
             html_style(root, {
                 'background-color': value
             });
         }
-    };
-    html_hash(actions);
+    });
     html_style_sans_serif(root);
     let default_font_size = 3;
     html_style_default_font_size(default_font_size);
