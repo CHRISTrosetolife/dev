@@ -40,6 +40,7 @@ import {html_on_click} from "./html_on_click.mjs";
 import {list_get} from "./list_get.mjs";
 import {html_clear} from "./html_clear.mjs";
 import {undefined_is} from "./undefined_is.mjs";
+import {list_first} from "./list_first.mjs";
 export async function app_memorize() {
     let root = html_document_body();
     html_style(root, {
@@ -52,6 +53,7 @@ export async function app_memorize() {
     let verses = await http_get(storage_url(file_path));
     let verses_length = list_length(verses);
     let groups = app_memorize_group(verses_length);
+    let group_current = list_first(groups);
     let verse_index = 0;
     let token_index = 0;
     refresh_memorize();
@@ -75,7 +77,7 @@ export async function app_memorize() {
             'overflow-y': 'scroll'
         });
         let verse_elements = list_adder(la => {
-            each_index(verses, (verse, i) => {
+            each(group_current, (verse, i) => {
                 let verse_element = html_element(verses_element, 'div');
                 let {tokens, verse_number} = verse;
                 let number_element = html_strong_text(verse_element, verse_number);
