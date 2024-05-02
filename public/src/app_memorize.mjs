@@ -141,6 +141,7 @@ export async function app_memorize() {
                         let token_pattern = list_get(pattern, m);
                         html_span_text(verse_element, ' ');
                         let token_element = html_span_text(verse_element, token);
+                        if (equal(token_pattern, '0'))
                         la(token_element);
                         token_count++;
                     });
