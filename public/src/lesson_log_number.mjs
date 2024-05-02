@@ -1,3 +1,8 @@
+import {html_style_monospace} from "./html_style_monospace.mjs";
+import {html_p} from "./html_p.mjs";
+import {html_style_alternate} from "./html_style_alternate.mjs";
+import {lesson_add_quiz} from "./lesson_add_quiz.mjs";
+import {lesson_simple} from "./lesson_simple.mjs";
 import {app_learn_code_unscramble} from "./app_learn_code_unscramble.mjs";
 import {lesson_log_number_quiz} from "./lesson_log_number_quiz.mjs";
 import {app_learn_code_quiz} from "./app_learn_code_quiz.mjs";
@@ -17,6 +22,12 @@ import {lesson_console_log_analogy_addition_symbol} from "./lesson_console_log_a
 import {lesson_log_number_explain} from "./lesson_log_number_explain.mjs";
 import {noop} from "./noop.mjs";
 export function lesson_log_number() {
+    let example_message = 'adding two numbers together';
+    let description = 'addition ( + )';
+    return lesson_simple(lesson_add_quiz, example_before, description, example_message, []);
+    function example_before(parent) {
+        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['two numbers can be added together using the plus ( ', '+', ' ) sign']);
+    }
     let v1 = object_new();
     object_property_set(v1, 'description', 'outputting a number to the console');
     let v2 = array_new();
