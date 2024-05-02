@@ -46,6 +46,7 @@ import {undefined_is} from "./undefined_is.mjs";
 import {list_first} from "./list_first.mjs";
 import {string_combine_multiple} from "./string_combine_multiple.mjs";
 import {mod} from "./mod.mjs";
+import { list_join } from "./list_join.mjs";
 export async function app_memorize() {
     let root = html_document_body();
     html_style(root, {
@@ -98,7 +99,8 @@ export async function app_memorize() {
             html_p_text(root, 'which pattern of shown and hidden words do you want ?');
             each_index(patterns, (p,i)=> {
                 let b = html_button(root);
-                html_inner_set(b, p);
+                let text = list_join(p, '');
+                html_inner_set(b, text);
                 html_on_click(b, () => {
                     pattern_index = i
                     refresh_settings();
@@ -141,14 +143,14 @@ export async function app_memorize() {
         let pattern_length = list_length(pattern);
         let token_count = 0;
         let verse_elements = list_adder(la => {
-            for (let i of group_current) {
+            each_index(group_current, (i, j) => {
                 let verse = list_get(verses, i);
                 let verse_element = html_element(verses_element, 'div');
                 let {tokens, verse_number} = verse;
                 let number_element = html_strong_text(verse_element, verse_number);
                 html_on_click(number_element, () => {
                     token_index = 0;
-                    verse_index = i;
+                    verse_index = j;
                     html_scroll_center(verse_element);
                 });
                 let token_elements = list_adder(la => {
@@ -168,7 +170,7 @@ export async function app_memorize() {
                     verse_element,
                     token_elements
                 });
-            }
+            })
         });
         let previous_token;
         update_colors();
