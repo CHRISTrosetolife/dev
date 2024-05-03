@@ -60,9 +60,12 @@ ${app_learn_code_log(name)}`;
     }, example_before, description, example_message, [screen1]);
     function example_before(parent) {}
     function screen1(parent) {
-        const list = ['remember , strings need quotes ( ', '\'', ' ) :'];
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], list);
+        html_style_alternate_monospace(parent, ['remember , strings need quotes ( ', '\'', ' ) :']);
         'remember , here is code that outputs twice because there are two console.log statements :';
         app_learn_code_code_part_contrast(parent, lesson_statements_two_quiz());
     }
 }
+function html_style_alternate_monospace(parent, list) {
+    html_style_alternate(parent, html_p, [noop, html_style_monospace], list);
+}
+
