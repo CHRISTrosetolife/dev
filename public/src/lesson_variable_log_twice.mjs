@@ -1,3 +1,4 @@
+import {app_learn_code_log} from "./app_learn_code_log.mjs";
 import {lesson_variable_code_get} from "./lesson_variable_code_get.mjs";
 import {app_learn_code_random_value} from "./app_learn_code_random_value.mjs";
 import {app_learn_code_random_identifier} from "./app_learn_code_random_identifier.mjs";
@@ -54,7 +55,7 @@ export function lesson_variable_log_twice() {
         let name = app_learn_code_random_identifier();
         let value = app_learn_code_random_value();
         return `${lesson_variable_code_get(name, value)}
-console.log(${name});`;
+${app_learn_code_log(name)}`;
     }, example_before, description, example_message, [screen1, screen2, screen3, screen4, screen5, screen6]);
     function example_before(parent) {}
     function screen1(parent) {
