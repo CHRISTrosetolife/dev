@@ -76,7 +76,7 @@ export async function app_memorize() {
     let previous_spacer2;
     let previous_token_element;
     let verse_elements;
-    let mistakes = false;
+    let mistakes;
     group_current_set(list_first(groups));
     html_hash({
         'verses': value => {
@@ -153,6 +153,16 @@ export async function app_memorize() {
     }
     function refresh_memorize() {
         html_clear(root);
+        patterns = undefined;
+        patterns_length = undefined;
+        pattern_index = undefined;
+        group_current = undefined;
+        verse_index = undefined;
+        token_index = undefined;
+        previous_spacer2 = undefined;
+        previous_token_element = undefined;
+        verse_elements = undefined;
+        mistakes = undefined;
         let p = list_get(patterns, pattern_index);
         let pattern = string_split(p, '');
         let settings_element = html_element(root, 'div');
@@ -280,8 +290,6 @@ export async function app_memorize() {
             }
             let group_current_length = list_length(group_current);
             if (greater_than_equal(verse_index, group_current_length)) {
-                previous_spacer2 = undefined;
-                previous_token_element = undefined;
                 verse_index = 0;
                 let pattern = list_get(patterns, pattern_index);
                 if (and(equal(pattern, '0'), mistakes)) {
