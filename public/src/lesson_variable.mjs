@@ -30,6 +30,7 @@ import {list_sort_string} from "./list_sort_string.mjs";
 import { list_random_item } from "./list_random_item.mjs";
 import { integer_random } from "./integer_random.mjs";
 import { equal } from "./equal.mjs";
+import { integer_random_digit_single } from "./integer_random_digit_single.mjs";
 export function lesson_variable() {
     let example_message = 'outputting a variable to the console';
     let description = example_message;
@@ -39,7 +40,7 @@ export function lesson_variable() {
         let value;
         let r = integer_random(1,3)
         if (equal(r,1)) {
-            value = value;
+            value = integer_random_digit_single();
         } else if (equal(r,2)) {
             value = value;
         } else {
