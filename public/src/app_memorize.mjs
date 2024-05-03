@@ -280,6 +280,8 @@ export async function app_memorize() {
             }
             let group_current_length = list_length(group_current);
             if (greater_than_equal(verse_index, group_current_length)) {
+                previous_spacer2 = undefined;
+                previous_token_element = undefined;
                 verse_index = 0;
                 let pattern = list_get(patterns, pattern_index);
                 if (and(equal(pattern, '0'), mistakes)) {
