@@ -54,6 +54,7 @@ export function lesson_variable_log_twice() {
         let value = app_learn_code_random_value();
         return `let ${name};
 ${name} = ${value};
+console.log(${name});
 console.log(${name});`;
     }, example_before, description, example_message, [screen1, screen2, screen3, screen4, screen5, screen6]);
     function example_before(parent) {}
