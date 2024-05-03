@@ -56,11 +56,10 @@ console.log(${random_50_50()});`;
         html_style_alternate(parent, html_p, [noop, html_style_monospace], ['to tell javascript about a variable named ','variable_name',' write :']);
         app_learn_code_code_part_contrast(parent, 'let variable_name;');
         html_p_text(parent, 'eventually variables should be given a value');
-        'to give a variable named variable name a value of 123 write :';
+        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['to give a variable named variable name a value of ','123',' write :']);
         app_learn_code_code_part_contrast(parent, 'variable_name = 123;');
-        'in javascript = does not check if two things are equal';
-        'instead = can be used to give a variable a value';
-        'now , instead of writing console.log(123); we can write console.log(variable_name);'
-        
+        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['in javascript ','=',' does not check if two things are equal']);
+        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['instead ','=',' can be used to give a variable a value']);
+        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['now , instead of writing ','console.log(123);',' we can write ', 'console.log(variable_name);']);
     }
 }
