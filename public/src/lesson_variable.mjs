@@ -23,7 +23,7 @@ import {lesson_log_number_explain} from "./lesson_log_number_explain.mjs";
 import {noop} from "./noop.mjs";
 import {random_50_50} from "./random_50_50.mjs";
 export function lesson_variable() {
-    let example_message = 'outputting a boolean to the console';
+    let example_message = 'outputting a variable to the console';
     let description = example_message;
     return lesson_simple(function () {
         return `let ${name};
