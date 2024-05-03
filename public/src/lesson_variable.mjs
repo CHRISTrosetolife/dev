@@ -1,3 +1,5 @@
+import {app_learn_code_code_part_contrast} from "./app_learn_code_code_part_contrast.mjs";
+import {html_p_text} from "./html_p_text.mjs";
 import {identity} from "./identity.mjs";
 import {keyboard_keys} from "./keyboard_keys.mjs";
 import {html_style_monospace} from "./html_style_monospace.mjs";
@@ -27,12 +29,12 @@ import {random_50_50} from "./random_50_50.mjs";
 import {list_concat} from "./list_concat.mjs";
 import {list_concat_multiple} from "./list_concat_multiple.mjs";
 import {list_sort_string} from "./list_sort_string.mjs";
-import { list_random_item } from "./list_random_item.mjs";
-import { integer_random } from "./integer_random.mjs";
-import { equal } from "./equal.mjs";
-import { integer_random_digit_single } from "./integer_random_digit_single.mjs";
-import { lesson_console_log_quiz_value } from "./lesson_console_log_quiz_value.mjs";
-import { html_style_bold } from "./html_style_bold.mjs";
+import {list_random_item} from "./list_random_item.mjs";
+import {integer_random} from "./integer_random.mjs";
+import {equal} from "./equal.mjs";
+import {integer_random_digit_single} from "./integer_random_digit_single.mjs";
+import {lesson_console_log_quiz_value} from "./lesson_console_log_quiz_value.mjs";
+import {html_style_bold} from "./html_style_bold.mjs";
 export function lesson_variable() {
     let example_message = 'outputting a variable to the console';
     let description = example_message;
@@ -40,10 +42,10 @@ export function lesson_variable() {
         let ks = keyboard_keys();
         let name = list_random_item(ks);
         let value;
-        let r = integer_random(1,3)
-        if (equal(r,1)) {
+        let r = integer_random(1, 3);
+        if (equal(r, 1)) {
             value = integer_random_digit_single();
-        } else if (equal(r,2)) {
+        } else if (equal(r, 2)) {
             value = random_50_50();
         } else {
             value = lesson_console_log_quiz_value();
@@ -53,17 +55,17 @@ ${name} = ${value};
 console.log(${random_50_50()});`;
     }, example_before, description, example_message, []);
     function example_before(parent) {
-        html_style_alternate(parent, html_p, [noop, html_style_bold], ['in javascript , ','variables',' have a ','name',' and a ','value']);
-        html_p_text(parent,'variables can be given a value using their name');
-        html_p_text(parent,'the value given to a variable can be used later using the name of the variable');
+        html_style_alternate(parent, html_p, [noop, html_style_bold], ['in javascript , ', 'variables', ' have a ', 'name', ' and a ', 'value']);
+        html_p_text(parent, 'variables can be given a value using their name');
+        html_p_text(parent, 'the value given to a variable can be used later using the name of the variable');
         html_p_text(parent, 'to use a variable , javascript must know about the variable');
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['to tell javascript about a variable named ','variable_name',' write :']);
+        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['to tell javascript about a variable named ', 'variable_name', ' write :']);
         app_learn_code_code_part_contrast(parent, 'let variable_name;');
         html_p_text(parent, 'eventually variables should be given a value');
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['to give a variable named variable name a value of ','123',' write :']);
+        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['to give a variable named variable name a value of ', '123', ' write :']);
         app_learn_code_code_part_contrast(parent, 'variable_name = 123;');
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['in javascript ','=',' does not check if two things are equal']);
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['instead ','=',' can be used to give a variable a value']);
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['now , instead of writing ','console.log(123);',' we can write ', 'console.log(variable_name);']);
+        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['in javascript ', '=', ' does not check if two things are equal']);
+        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['instead ', '=', ' can be used to give a variable a value']);
+        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['now , instead of writing ', 'console.log(123);', ' we can write ', 'console.log(variable_name);']);
     }
 }
