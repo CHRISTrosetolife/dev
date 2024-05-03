@@ -28,6 +28,8 @@ import {list_concat} from "./list_concat.mjs";
 import {list_concat_multiple} from "./list_concat_multiple.mjs";
 import {list_sort_string} from "./list_sort_string.mjs";
 import { list_random_item } from "./list_random_item.mjs";
+import { integer_random } from "./integer_random.mjs";
+import { equal } from "./equal.mjs";
 export function lesson_variable() {
     let example_message = 'outputting a variable to the console';
     let description = example_message;
@@ -35,6 +37,10 @@ export function lesson_variable() {
         let ks = keyboard_keys();
         let name = list_random_item(ks);
         let value;
+        let r = integer_random(1,3)
+        if (equal(r,1)) {
+            
+        }
         return `let ${name};
 ${name} = ${value};
 console.log(${random_50_50()});`;
