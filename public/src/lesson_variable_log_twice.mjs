@@ -58,7 +58,7 @@ export function lesson_variable_log_twice() {
 ${app_learn_code_log(name)}`;
     }, example_before, description, example_message, [screen1, screen2, screen3, screen4, screen5, screen6]);
     function example_before(parent) {
-        'remember , here code that logs the same thing twice :'
+        'remember , here code that logs twice :'
     }
     function screen1(parent) {
         html_style_alternate(parent, html_p, [noop, html_style_bold], ['in javascript , ', 'variables', ' have a ', 'name', ' and a ', 'value']);
