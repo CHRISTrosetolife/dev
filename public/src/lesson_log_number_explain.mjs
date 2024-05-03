@@ -21,21 +21,16 @@ export function lesson_log_number_explain(parent) {
     app_learn_code_code_part_contrast(parent, '\'text\'');
     html_p_text(parent, 'however , numbers do not need quotes :');
     app_learn_code_code_part_contrast(parent, '0');
-    html_spacer_vertical(parent);
     app_learn_code_code_part_contrast(parent, '12');
-    html_spacer_vertical(parent);
     app_learn_code_code_part_contrast(parent, '345');
     html_p_text(parent, 'sometimes people write numbers with commas separating the digits , like 1,000 and 23,467,890');
     html_p_text(parent, 'in javascript numbers are not written with commas :');
     app_learn_code_code_part_contrast(parent, '1000');
-    html_spacer_vertical(parent);
     app_learn_code_code_part_contrast(parent, '23467890');
     html_p_text(parent, 'numbers can have a negative sign :');
     app_learn_code_code_part_contrast(parent, '-6');
-    html_spacer_vertical(parent);
     app_learn_code_code_part_contrast(parent, '-7890');
     html_p_text(parent, 'numbers can have a decimal point :');
     app_learn_code_code_part_contrast(parent, '6.7');
-    html_spacer_vertical(parent);
     app_learn_code_code_part_contrast(parent, '8901.23');
 }
