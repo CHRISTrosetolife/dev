@@ -39,6 +39,8 @@ export function lesson_variable() {
         let value;
         let r = integer_random(1,3)
         if (equal(r,1)) {
+
+        } else if (equal(r,2)) {
             
         }
         return `let ${name};
