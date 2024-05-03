@@ -1,3 +1,4 @@
+import {lesson_statements_two_quiz} from "./lesson_statements_two_quiz.mjs";
 import {app_learn_code_log} from "./app_learn_code_log.mjs";
 import {lesson_variable_code_get} from "./lesson_variable_code_get.mjs";
 import {app_learn_code_random_value} from "./app_learn_code_random_value.mjs";
@@ -58,7 +59,8 @@ export function lesson_variable_log_twice() {
 ${app_learn_code_log(name)}`;
     }, example_before, description, example_message, [screen1, screen2, screen3, screen4, screen5, screen6]);
     function example_before(parent) {
-        'remember , here code that outputs twice because there are two console.log statements :'
+        'remember , here is code that outputs twice because there are two console.log statements :';
+        lesson_statements_two_quiz();
     }
     function screen1(parent) {
         html_style_alternate(parent, html_p, [noop, html_style_bold], ['in javascript , ', 'variables', ' have a ', 'name', ' and a ', 'value']);
