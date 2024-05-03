@@ -71,9 +71,9 @@ ${app_learn_code_log(name)}`;
         let value_string;
         if (string_is(value)) {
             value_string = string_delimit(value);
-        } else {
+        } 
             value_string = string_to(value);
-        }
+        
         html_style_alternate_monospace(parent, ['here is code that will set the value of a variable named ', name, ' to a value of ', value, ' :']);
         app_learn_code_code_part_contrast(parent, js_code_statement_assign(name, value));
         html_style_alternate_monospace(parent, ['if ', name, ' already has a value , then the value of ', name, ' will be changed to ', value]);
