@@ -90,9 +90,9 @@ console.log(${name});`;
     function screen4(parent) {
         html_p_text(parent, 'variable names cannot begin with a number');
         html_p_text(parent, 'the case of the letters matter');
-        'for example JESUS and jesus are two different variables , even though they contain the same letters';
+        html_style_alternate(ul, html_p, [noop, html_style_monospace], ['for example JESUS and jesus are two different variables , even though they contain the same letters']);
         html_p_text(parent, 'some words cannot be used as variables');
-        'for example if , else , for and while cannot be used as variable names because they already have meaning in javascript';
+        html_style_alternate(ul, html_p, [noop, html_style_monospace], ['for example if , else , for and while cannot be used as variable names because they already have meaning in javascript']);
     }
     function screen5(parent) {
         html_p_text(parent, 'eventually variables should be given a value');
