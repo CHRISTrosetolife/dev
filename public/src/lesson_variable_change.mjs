@@ -51,8 +51,8 @@ import {html_ul} from "./html_ul.mjs";
 import {html_hr} from "./html_hr.mjs";
 import {range} from "./range.mjs";
 import {string_combine} from "./string_combine.mjs";
-export function lesson_variable_log_twice() {
-    let example_message = 'outputting a variable to the console twice';
+export function lesson_variable_change() {
+    let example_message = 'changing a variable and logging to the console twice';
     let description = example_message;
     return lesson_simple(function () {
         let name = app_learn_code_random_identifier();
