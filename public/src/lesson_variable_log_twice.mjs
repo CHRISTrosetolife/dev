@@ -1,3 +1,4 @@
+import {html_style_alternate_monospace} from "./html_style_alternate_monospace.mjs";
 import {lesson_statements_two_quiz} from "./lesson_statements_two_quiz.mjs";
 import {app_learn_code_log} from "./app_learn_code_log.mjs";
 import {lesson_variable_code_get} from "./lesson_variable_code_get.mjs";
@@ -65,7 +66,3 @@ ${app_learn_code_log(name)}`;
         app_learn_code_code_part_contrast(parent, lesson_statements_two_quiz());
     }
 }
-function html_style_alternate_monospace(parent, list) {
-    html_style_alternate(parent, html_p, [noop, html_style_monospace], list);
-}
-
