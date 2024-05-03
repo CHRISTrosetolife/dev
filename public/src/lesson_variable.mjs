@@ -76,7 +76,6 @@ console.log(${name});`;
         html_li_text(ul, 'letters');
         html_li_text(ul, 'digits');
         html_style_alternate(parent, html_li, [noop, html_style_monospace], ['underscores ( ', '_', ' )']);
-        let li2 = html_li(parent);
         html_style_alternate(parent, html_li, [noop, html_style_monospace], ['dollar signs ( ', '$', ' )']);
         'here are some valid variable names :';
         'a';
