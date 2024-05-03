@@ -40,6 +40,7 @@ import {lesson_console_log_quiz_value} from "./lesson_console_log_quiz_value.mjs
 import {html_style_bold} from "./html_style_bold.mjs";
 import {html_spacer_vertical} from "./html_spacer_vertical.mjs";
 import {html_ul} from "./html_ul.mjs";
+import { html_hr } from "./html_hr.mjs";
 export function lesson_variable() {
     let example_message = 'outputting a variable to the console';
     let description = example_message;
@@ -89,10 +90,11 @@ console.log(${name});`;
     }
     function screen4(parent) {
         html_p_text(parent, 'variable names cannot begin with a number');
+        html_hr(parent)
         html_p_text(parent, 'the case of the letters matter');
-        html_style_alternate(ul, html_p, [noop, html_style_monospace], ['for example ','JESUS',' and ','jesus',' are two different variables , even though they contain the same letters']);
+        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['for example ','JESUS',' and ','jesus',' are two different variables , even though they contain the same letters']);
         html_p_text(parent, 'some words cannot be used as variables');
-        html_style_alternate(ul, html_p, [noop, html_style_monospace], ['for example ','if',' , ','else',' , ','for',' and ','while',' cannot be used as variable names because they already have meaning in javascript']);
+        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['for example ','if',' , ','else',' , ','for',' and ','while',' cannot be used as variable names because they already have meaning in javascript']);
     }
     function screen5(parent) {
         html_p_text(parent, 'eventually variables should be given a value');
