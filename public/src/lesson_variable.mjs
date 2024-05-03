@@ -106,7 +106,10 @@ console.log(${name});`;
         html_style_alternate(parent, html_p, [noop, html_style_monospace], ['instead ', '=', ' can be used to give a variable a value']);
     }
     function screen6(parent) {
-        html_p_text(parent, 'now either of these will output 123 :');
+        html_p_text(parent, 'here was the code from earlier :');
+        app_learn_code_code_part_contrast(parent, 'let variable_name;');
+        app_learn_code_code_part_contrast(parent, 'variable_name = 123;');
+        html_p_text(parent, 'and now either of these will output 123 :');
         app_learn_code_code_part_contrast(parent, 'console.log(123);');
         app_learn_code_code_part_contrast(parent, 'console.log(variable_name);');
     }
