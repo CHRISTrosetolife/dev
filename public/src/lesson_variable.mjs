@@ -74,7 +74,6 @@ console.log(${name});`;
         html_p_text(parent,'in javascript , variable names can contain :');
         let ul = html_ul(parent);
         html_li_text(ul, 'letters');
-        html_li_text(ul, 'digits');
         html_style_alternate(ul, html_li, [noop, html_style_monospace], ['digits ( ','0',' , ','1',' , ','2',' , ','3',' ... , ','9',' )']);
         html_style_alternate(ul, html_li, [noop, html_style_monospace], ['underscores ( ', '_', ' )']);
         html_style_alternate(ul, html_li, [noop, html_style_monospace], ['dollar signs ( ', '$', ' )']);
