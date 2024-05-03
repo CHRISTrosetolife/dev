@@ -67,7 +67,7 @@ console.log(${name});`;
     }
     function screen2(parent) {
         html_p_text(parent, 'to use a variable , javascript must know about the variable');
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['to tell javascript about a variable named ', 'variable_name', ' we can write a statement with ', 'let', ' like this :']);
+        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['to tell javascript about a variable named ', 'variable_name', ' we can write a statement using ', 'let', ' like this :']);
         app_learn_code_code_part_contrast(parent, 'let variable_name;');
         html_style_alternate(parent, html_p, [noop, html_style_monospace], ['because this is a statement , it ends in semicolon ( ', ';', ' )']);
     }
