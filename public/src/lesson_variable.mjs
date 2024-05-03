@@ -27,13 +27,14 @@ import {random_50_50} from "./random_50_50.mjs";
 import {list_concat} from "./list_concat.mjs";
 import {list_concat_multiple} from "./list_concat_multiple.mjs";
 import {list_sort_string} from "./list_sort_string.mjs";
+import { list_random_item } from "./list_random_item.mjs";
 export function lesson_variable() {
     let example_message = 'outputting a variable to the console';
     let description = example_message;
     return lesson_simple(function () {
         let ks = keyboard_keys();
-        let concat = list_concat_multiple(ks);
-
+        let name = list_random_item(ks);
+        let value;
         return `let ${name};
 ${name} = ${value};
 console.log(${random_50_50()});`;
