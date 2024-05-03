@@ -63,6 +63,6 @@ ${app_learn_code_log(name)}`;
     function example_before(parent) {}
     function screen1(parent) {
         html_style_alternate_monospace(parent, ['remember , here is code that outputs twice because there are two ', 'console.log', ' statements :']);
-        app_learn_code_code(parent, lesson_statements_two_quiz());
+        app_learn_code_code_part_contrast(parent, lesson_statements_two_quiz());
     }
 }
