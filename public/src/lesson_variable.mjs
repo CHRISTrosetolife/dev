@@ -88,10 +88,10 @@ console.log(${name});`;
         app_learn_code_code_part_contrast(parent, 'd8$_');
     }
     function screen4(parent) {
-        'variable names cannot begin with a number';
-        'the case of the letters matter';
+        html_p_text(parent, 'variable names cannot begin with a number');
+        html_p_text(parent, 'the case of the letters matter');
         'for example JESUS and jesus are two different variables , even though they contain the same letters';
-        'some words cannot be used as variables';
+        html_p_text(parent, 'some words cannot be used as variables');
         'for example if , else , for and while cannot be used as variable names because they already have meaning in javascript';
     }
     function screen5(parent) {
