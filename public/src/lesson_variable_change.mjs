@@ -73,7 +73,7 @@ ${app_learn_code_log(name)}`;
         value_string = string_to(value);
         html_style_alternate_monospace(parent, ['here is code that will set the value of a variable named ', name, ' to a value of ', value, ' :']);
         app_learn_code_code_part_contrast(parent, js_code_statement_assign(name, value));
-        html_style_alternate_monospace(parent, ['if ', name, ' already has a value , then the value of ', name, ' will be changed to ', value]);
+        html_style_alternate_monospace(parent, ['if ', name, ' already has a value , and ',name,' does not already have a value of ',value,' , then the value of ', name, ' will be changed to ', value]);
         '= can be used to change the value of a variable';
         html_style_alternate_monospace(parent, ['remember , here is code that outputs twice because there are two ', 'console.log', ' statements :']);
     }
