@@ -153,10 +153,6 @@ export async function app_memorize() {
     }
     function refresh_memorize() {
         html_clear(root);
-        patterns = undefined;
-        patterns_length = undefined;
-        pattern_index = undefined;
-        group_current = undefined;
         verse_index = undefined;
         token_index = undefined;
         previous_spacer2 = undefined;
