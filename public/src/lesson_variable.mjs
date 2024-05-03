@@ -71,7 +71,7 @@ console.log(${name});`;
         html_style_alternate(parent, html_p, [noop, html_style_monospace], ['because this is a statement , it ends in semicolon ( ', ';', ' )']);
     }
     function screen3(parent) {
-        html_p_text('in javascript , variable names can contain :');
+        html_p_text(parent,'in javascript , variable names can contain :');
         let ul = html_ul(parent);
         html_li_text(ul, 'letters');
         html_li_text(ul, 'digits');
