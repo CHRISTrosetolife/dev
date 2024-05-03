@@ -158,7 +158,7 @@ export async function app_memorize() {
         previous_spacer2 = undefined;
         previous_token_element = undefined;
         verse_elements = undefined;
-        mistakes = undefined;
+        mistakes = false;
         let p = list_get(patterns, pattern_index);
         let pattern = string_split(p, '');
         let settings_element = html_element(root, 'div');
