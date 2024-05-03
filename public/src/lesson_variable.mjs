@@ -52,7 +52,7 @@ ${name} = ${value};
 console.log(${random_50_50()});`;
     }, example_before, description, example_message, []);
     function example_before(parent) {
-        'to use a variable , javascript must know about the variable';
+        html_p_text(parent, 'to use a variable , javascript must know about the variable');
         'to tell javascript about a variable named variable_name write :';
         'let variable_name;';
         'eventually variables should be given a value';
@@ -60,6 +60,11 @@ console.log(${random_50_50()});`;
         'variable_name = 123;';
         'in javascript = does not check if two things are equal';
         'instead = can be used to give a variable a value';
+        'now , instead of writing console.log(123); we can write console.log(variable_name);'
         html_style_alternate(parent, html_p, [noop, html_style_monospace], ['boolean ', 'true', ' and ', 'false', ' can be used in code :']);
+    
+        html_style_alternate(parent, html_p, [noop, html_style_bold], ['in javascript , text , like letters and symbols , is called a ', 'string']);
+        'here are some examples of strings :');
+        app_learn_code_code_part_contrast(parent, '\'hello\'');
     }
 }
