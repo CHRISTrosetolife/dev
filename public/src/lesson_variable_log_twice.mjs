@@ -58,10 +58,9 @@ export function lesson_variable_log_twice() {
         return `${lesson_variable_code_get(name, value)}
 ${app_learn_code_log(name)}`;
     }, example_before, description, example_message, [screen1]);
-    function example_before(parent) {
-    }
+    function example_before(parent) {}
     function screen1(parent) {
         'remember , here is code that outputs twice because there are two console.log statements :';
-        lesson_statements_two_quiz();
+        app_learn_code_code_part_contrast(parent, lesson_statements_two_quiz());
     }
 }
