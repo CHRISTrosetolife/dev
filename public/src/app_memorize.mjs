@@ -82,6 +82,7 @@ export async function app_memorize() {
     let verse_elements;
     let keyboard_buttons;
     let mistakes;
+    let button_height = 7;
     group_current_set(list_first(groups));
     html_hash({
         'verses': value => {
@@ -174,7 +175,6 @@ export async function app_memorize() {
             'margin-right': 0
         });
         let verses_element = html_element(root, 'div');
-        let button_height = 7;
         let keys = keyboard_keys_rows();
         let keys_length = list_length(keys);
         let keyboard_height = multiply(button_height, keys_length);
@@ -243,15 +243,7 @@ export async function app_memorize() {
                 let b = html_button(row_element);
                 object_property_set(keyboard_buttons, k, b);
                 html_inner_set(b, string_case_upper(k));
-                let b_width = number_to_dvw(10 - 1);
-                html_style_centered(b);
-                html_style(b, {
-                    'font-size': '3.8dvh',
-                    margin: '0.25dvh',
-                    'min-width': b_width,
-                    'max-width': b_width,
-                    'height': number_to_dvh(button_height - 0.6)
-                });
+                button_stylize(b);
                 html_on_click(b, () => {
                     on_keydown(k);
                 });
@@ -261,6 +253,18 @@ export async function app_memorize() {
             verse_elements
         };
     }
+    function button_stylize(b) {
+        let b_width = number_to_dvw(10 - 1);
+        html_style_centered(b);
+        html_style(b, {
+            'font-size': '3.8dvh',
+            margin: '0.25dvh',
+            'min-width': b_width,
+            'max-width': b_width,
+            'height': number_to_dvh(button_height - 0.6)
+        });
+    }
+
     function update_colors() {
         let current_verse = list_get(verse_elements, verse_index);
         let {verse_element, token_objects} = current_verse;
@@ -319,6 +323,7 @@ export async function app_memorize() {
             }
             for (let errored_key of errored_keys) {
                 html_style(errored_key, html_style_button_default());
+                button_stylize(b, button_height);
             }
         } else {
             mistakes = true;
