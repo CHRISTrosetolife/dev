@@ -72,7 +72,26 @@ console.log(${name});`;
         html_style_alternate(parent, html_p, [noop, html_style_monospace], ['to tell javascript about a variable named ', 'variable_name', ' we can write a statement with ','let',' like this :']);
         app_learn_code_code_part_contrast(parent, 'let variable_name;');
         html_style_alternate(parent, html_p, [noop, html_style_monospace], ['because this is a statement , it ends in semicolon ( ',';',' )']);
-
+        'in javascript , variable names can contain :'
+        'letters'
+        'digits'
+        'underscores ( _ )'
+        'dollar signs ( $ )'
+        'here are some valid variable names :'
+        'a'
+        'A'
+        'z'
+        'Z'
+        '_'
+        '$'
+        '$$'
+        '_$'
+        'b1$_'
+        'variable names cannot begin with a number'
+        'the case of the letters matters'
+        'for example JESUS and jesus are two different variables , even though they contain the same letters'
+        'some words cannot be used as variables'
+        'for example if , else , for and while cannot be used as variable names because they already have meaning in javascript'
     }
     function screen3(parent) {
         html_p_text(parent, 'eventually variables should be given a value');
