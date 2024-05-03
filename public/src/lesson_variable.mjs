@@ -101,7 +101,8 @@ console.log(${name});`;
         html_p_text(parent, 'after telling javascript about a variable , eventually variables should be given a value');
         html_style_alternate(parent, html_p, [noop, html_style_monospace], ['to give a variable named ', 'variable_name', ' a value of ', '123', ' write :']);
         app_learn_code_code_part_contrast(parent, 'variable_name = 123;');
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['in javascript ', '=', ' does not check if two things are equal']);
+        html_p_text(parent, 'in math x = y says x and y are equal');
+        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['in javascript , ', '=', ' does not check if two things are equal']);
         html_style_alternate(parent, html_p, [noop, html_style_monospace], ['instead ', '=', ' can be used to give a variable a value']);
     }
     function screen6(parent) {
