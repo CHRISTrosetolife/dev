@@ -56,6 +56,7 @@ import {list_map} from "./list_map.mjs";
 import {string_replace} from "./string_replace.mjs";
 import {html_on} from "./html_on.mjs";
 import { object_property_set } from "./object_property_set.mjs";
+import { object_property_get } from "./object_property_get.mjs";
 export async function app_memorize() {
     let root = html_document_body();
     html_style(root, {
@@ -77,6 +78,7 @@ export async function app_memorize() {
     let previous_spacer2;
     let previous_token_element;
     let verse_elements;
+    let keyboard_buttons;
     let mistakes;
     group_current_set(list_first(groups));
     html_hash({
@@ -160,6 +162,7 @@ export async function app_memorize() {
         previous_token_element = undefined;
         verse_elements = undefined;
         mistakes = false;
+        keyboard_buttons = {};
         let p = list_get(patterns, pattern_index);
         let pattern = string_split(p, '');
         let settings_element = html_element(root, 'div');
@@ -227,7 +230,6 @@ export async function app_memorize() {
         html_style(keyboard_element, {
             'max-height': number_to_dvh(keyboard_height)
         });
-        let keyboard_buttons = {};
         for (let row of keys) {
             let row_element = html_div(keyboard_element);
             html_style_centered(row_element);
@@ -312,6 +314,7 @@ export async function app_memorize() {
             mistakes = true;
             html_style_visible(previous_token_element);
             html_style_font_color(previous_token_element, 'red');
+            let keyboard_button = object_property_get(keyboard_buttons, k)
         }
     }
     function number_to_dvh(value) {
