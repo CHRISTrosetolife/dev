@@ -57,63 +57,11 @@ export function lesson_variable_log_twice() {
         let value = app_learn_code_random_value();
         return `${lesson_variable_code_get(name, value)}
 ${app_learn_code_log(name)}`;
-    }, example_before, description, example_message, [screen1, screen2, screen3, screen4, screen5, screen6]);
+    }, example_before, description, example_message, [screen1]);
     function example_before(parent) {
-        'remember , here is code that outputs twice because there are two console.log statements :';
-        lesson_statements_two_quiz();
     }
     function screen1(parent) {
-        html_style_alternate(parent, html_p, [noop, html_style_bold], ['in javascript , ', 'variables', ' have a ', 'name', ' and a ', 'value']);
-        html_p_text(parent, 'variables can be given a value using their name');
-        html_p_text(parent, 'the value given to a variable can be used later using the name of the variable');
-    }
-    function screen2(parent) {
-        html_p_text(parent, 'to use a variable , javascript must know about the variable');
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['to tell javascript about a variable named ', 'variable_name', ' we can write a statement using ', 'let', ' like this :']);
-        app_learn_code_code_part_contrast(parent, 'let variable_name;');
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['because this is a statement , it ends in semicolon ( ', ';', ' )']);
-    }
-    function screen3(parent) {
-        html_p_text(parent, 'in javascript , variable names can contain :');
-        let ul = html_ul(parent);
-        html_style_alternate(ul, html_li, [noop, html_style_monospace], ['letters ( ', 'a', ' , ', 'b', ' , ', 'c', ' , ... , ', 'z', ' and ', 'A', ' , ', 'B', ' , ', 'C', ' , ... , ', 'Z', ' )']);
-        html_style_alternate(ul, html_li, [noop, html_style_monospace], ['digits ( ', '0', ' , ', '1', ' , ', '2', ' , ', '3', ' , ... , ', '9', ' )']);
-        html_style_alternate(ul, html_li, [noop, html_style_monospace], ['underscores ( ', '_', ' )']);
-        html_style_alternate(ul, html_li, [noop, html_style_monospace], ['dollar signs ( ', '$', ' )']);
-        html_p_text(parent, 'here are some examples of valid variable names :');
-        app_learn_code_code_part_contrast(parent, 'y');
-        app_learn_code_code_part_contrast(parent, 'Y');
-        app_learn_code_code_part_contrast(parent, '_');
-        app_learn_code_code_part_contrast(parent, '$');
-        app_learn_code_code_part_contrast(parent, '$$');
-        app_learn_code_code_part_contrast(parent, '__$');
-        app_learn_code_code_part_contrast(parent, 'd8$_');
-    }
-    function screen4(parent) {
-        html_p_text(parent, 'variable names cannot begin with a number');
-        html_hr(parent);
-        html_p_text(parent, 'in a variable name , the case of the letters matter');
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['for example ', 'JESUS', ' , ', 'jesus', ' and ', 'Jesus', ' are all different variable names , even though they contain the same letters']);
-        html_hr(parent);
-        html_p_text(parent, 'some words cannot be used as variables');
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['for example ', 'if', ' , ', 'else', ' , ', 'for', ' and ', 'while', ' cannot be used as variable names because they already have meaning in javascript']);
-    }
-    function screen5(parent) {
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['remember the code from earlier that told javascript about ', 'variable_name', ' :']);
-        app_learn_code_code_part_contrast(parent, 'let variable_name;');
-        html_p_text(parent, 'after telling javascript about a variable , eventually variables should be given a value');
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['to give a variable named ', 'variable_name', ' a value of ', '123', ' write :']);
-        app_learn_code_code_part_contrast(parent, 'variable_name = 123;');
-        html_p_text(parent, 'in math x = y says x and y are equal');
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['in javascript , ', '=', ' does not check if two things are equal']);
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['instead , ', '=', ' can be used to give a variable a value']);
-    }
-    function screen6(parent) {
-        html_p_text(parent, 'here was the code from earlier :');
-        app_learn_code_code_part_contrast(parent, 'let variable_name;');
-        app_learn_code_code_part_contrast(parent, 'variable_name = 123;');
-        html_p_text(parent, 'and now either of the following will output 123 :');
-        app_learn_code_code_part_contrast(parent, 'console.log(123);');
-        app_learn_code_code_part_contrast(parent, 'console.log(variable_name);');
+        'remember , here is code that outputs twice because there are two console.log statements :';
+        lesson_statements_two_quiz();
     }
 }
