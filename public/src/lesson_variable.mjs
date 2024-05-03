@@ -105,7 +105,7 @@ console.log(${name});`;
         app_learn_code_code_part_contrast(parent, 'variable_name = 123;');
         html_p_text(parent, 'in math x = y says x and y are equal');
         html_style_alternate(parent, html_p, [noop, html_style_monospace], ['in javascript , ', '=', ' does not check if two things are equal']);
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['instead ', '=', ' can be used to give a variable a value']);
+        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['instead , ', '=', ' can be used to give a variable a value']);
     }
     function screen6(parent) {
         html_p_text(parent, 'here was the code from earlier :');
