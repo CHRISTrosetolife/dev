@@ -35,6 +35,7 @@ import {equal} from "./equal.mjs";
 import {integer_random_digit_single} from "./integer_random_digit_single.mjs";
 import {lesson_console_log_quiz_value} from "./lesson_console_log_quiz_value.mjs";
 import {html_style_bold} from "./html_style_bold.mjs";
+import { html_spacer_vertical } from "./html_spacer_vertical.mjs";
 export function lesson_variable() {
     let example_message = 'outputting a variable to the console';
     let description = example_message;
@@ -66,6 +67,10 @@ console.log(${random_50_50()});`;
         app_learn_code_code_part_contrast(parent, 'variable_name = 123;');
         html_style_alternate(parent, html_p, [noop, html_style_monospace], ['in javascript ', '=', ' does not check if two things are equal']);
         html_style_alternate(parent, html_p, [noop, html_style_monospace], ['instead ', '=', ' can be used to give a variable a value']);
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['now , instead of writing ', 'console.log(123);', ' we can write ', 'console.log(variable_name);']);
+        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['both of these will output 123 :', '123', ' we can write ', '']);
+        html_p_text(parent, 'now both of these will output 123 :');
+        app_learn_code_code_part_contrast(parent, 'console.log(123);');
+        html_spacer_vertical(parent)
+        app_learn_code_code_part_contrast(parent, 'console.log(variable_name);');
     }
 }
