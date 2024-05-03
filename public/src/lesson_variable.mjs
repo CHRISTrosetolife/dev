@@ -1,3 +1,5 @@
+import {html_li} from "./html_li.mjs";
+import {html_li_text} from "./html_li_text.mjs";
 import {app_learn_code_code_part_contrast} from "./app_learn_code_code_part_contrast.mjs";
 import {html_p_text} from "./html_p_text.mjs";
 import {identity} from "./identity.mjs";
@@ -35,8 +37,8 @@ import {equal} from "./equal.mjs";
 import {integer_random_digit_single} from "./integer_random_digit_single.mjs";
 import {lesson_console_log_quiz_value} from "./lesson_console_log_quiz_value.mjs";
 import {html_style_bold} from "./html_style_bold.mjs";
-import { html_spacer_vertical } from "./html_spacer_vertical.mjs";
-import { html_ul } from "./html_ul.mjs";
+import {html_spacer_vertical} from "./html_spacer_vertical.mjs";
+import {html_ul} from "./html_ul.mjs";
 export function lesson_variable() {
     let example_message = 'outputting a variable to the console';
     let description = example_message;
@@ -55,16 +57,8 @@ export function lesson_variable() {
         return `let ${name};
 ${name} = ${value};
 console.log(${name});`;
-    }, example_before, description, example_message, [
-        screen1,
-        screen2,
-        screen3,
-        screen4,
-        screen5,
-        screen6,
-    ]);
-    function example_before(parent) {
-    }
+    }, example_before, description, example_message, [screen1, screen2, screen3, screen4, screen5, screen6]);
+    function example_before(parent) {}
     function screen1(parent) {
         html_style_alternate(parent, html_p, [noop, html_style_bold], ['in javascript , ', 'variables', ' have a ', 'name', ' and a ', 'value']);
         html_p_text(parent, 'variables can be given a value using their name');
@@ -72,38 +66,38 @@ console.log(${name});`;
     }
     function screen2(parent) {
         html_p_text(parent, 'to use a variable , javascript must know about the variable');
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['to tell javascript about a variable named ', 'variable_name', ' we can write a statement with ','let',' like this :']);
+        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['to tell javascript about a variable named ', 'variable_name', ' we can write a statement with ', 'let', ' like this :']);
         app_learn_code_code_part_contrast(parent, 'let variable_name;');
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['because this is a statement , it ends in semicolon ( ',';',' )']);
+        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['because this is a statement , it ends in semicolon ( ', ';', ' )']);
     }
     function screen3(parent) {
-        let ul = html_ul(parent)
-        'in javascript , variable names can contain :'
-        'letters'
-        'digits'
-        'underscores ( _ )'
-        'dollar signs ( $ )'
-        'here are some valid variable names :'
-        'a'
-        'A'
-        'z'
-        'Z'
-        '_'
-        '$'
-        '$$'
-        '_$'
-        'b1$_'
+        html_p_text('in javascript , variable names can contain :');
+        let ul = html_ul(parent);
+        html_li_text(ul, 'letters');
+        html_li_text(ul, 'digits');
+        let li = html_li('underscores ( _ )');
+        'dollar signs ( $ )';
+        'here are some valid variable names :';
+        'a';
+        'A';
+        'z';
+        'Z';
+        '_';
+        '$';
+        '$$';
+        '_$';
+        'b1$_';
     }
     function screen4(parent) {
-        'variable names cannot begin with a number'
-        'the case of the letters matters'
-        'for example JESUS and jesus are two different variables , even though they contain the same letters'
-        'some words cannot be used as variables'
-        'for example if , else , for and while cannot be used as variable names because they already have meaning in javascript'
+        'variable names cannot begin with a number';
+        'the case of the letters matters';
+        'for example JESUS and jesus are two different variables , even though they contain the same letters';
+        'some words cannot be used as variables';
+        'for example if , else , for and while cannot be used as variable names because they already have meaning in javascript';
     }
     function screen5(parent) {
         html_p_text(parent, 'eventually variables should be given a value');
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['to give a variable named ','variable_name',' a value of ', '123', ' write :']);
+        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['to give a variable named ', 'variable_name', ' a value of ', '123', ' write :']);
         app_learn_code_code_part_contrast(parent, 'variable_name = 123;');
         html_style_alternate(parent, html_p, [noop, html_style_monospace], ['in javascript ', '=', ' does not check if two things are equal']);
         html_style_alternate(parent, html_p, [noop, html_style_monospace], ['instead ', '=', ' can be used to give a variable a value']);
@@ -111,7 +105,7 @@ console.log(${name});`;
     function screen6(parent) {
         html_p_text(parent, 'now either of these will output 123 :');
         app_learn_code_code_part_contrast(parent, 'console.log(123);');
-        html_spacer_vertical(parent)
+        html_spacer_vertical(parent);
         app_learn_code_code_part_contrast(parent, 'console.log(variable_name);');
     }
 }
