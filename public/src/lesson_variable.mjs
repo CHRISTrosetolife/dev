@@ -79,15 +79,13 @@ console.log(${name});`;
         html_style_alternate(ul, html_li, [noop, html_style_monospace], ['dollar signs ( ', '$', ' )']);
         html_p_text(parent, 'here are some valid variable names :');
         let ul2 = html_ul(parent);
-        'a';
-        'A';
-        'z';
-        'Z';
+        'y';
+        'Y';
         '_';
         '$';
         '$$';
-        '_$';
-        'b1$_';
+        '__$';
+        'd8$_';
     }
     function screen4(parent) {
         'variable names cannot begin with a number';
