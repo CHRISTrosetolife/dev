@@ -55,6 +55,7 @@ console.log(${random_50_50()});`;
         'to use a variable , javascript must know about the variable';
         'to tell javascript about a variable named variable_name write :';
         'let variable_name;';
+        'eventually variables should be given a value';
         html_style_alternate(parent, html_p, [noop, html_style_monospace], ['boolean ', 'true', ' and ', 'false', ' can be used in code :']);
     }
 }
