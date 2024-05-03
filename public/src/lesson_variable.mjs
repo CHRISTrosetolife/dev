@@ -80,13 +80,13 @@ console.log(${name});`;
         html_style_alternate(ul, html_li, [noop, html_style_monospace], ['dollar signs ( ', '$', ' )']);
         html_p_text(parent, 'here are some valid variable names :');
         let ul2 = html_ul(parent);
-        html_li_text_monospace(ul2, 'y');
-        html_li_text_monospace(ul2, 'Y');
-        html_li_text_monospace(ul2, '_');
-        html_li_text_monospace(ul2, '$');
-        html_li_text_monospace(ul2, '$$');
-        html_li_text_monospace(ul2, '__$');
-        html_li_text_monospace(ul2, 'd8$_');
+        app_learn_code_code_part_contrast(ul2, 'y');
+        app_learn_code_code_part_contrast(ul2, 'Y');
+        app_learn_code_code_part_contrast(ul2, '_');
+        app_learn_code_code_part_contrast(ul2, '$');
+        app_learn_code_code_part_contrast(ul2, '$$');
+        app_learn_code_code_part_contrast(ul2, '__$');
+        app_learn_code_code_part_contrast(ul2, 'd8$_');
     }
     function screen4(parent) {
         'variable names cannot begin with a number';
