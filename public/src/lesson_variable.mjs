@@ -52,7 +52,9 @@ ${name} = ${value};
 console.log(${random_50_50()});`;
     }, example_before, description, example_message, []);
     function example_before(parent) {
-        'a variable has a name and a value';
+        'to use a variable , javascript must know about the variable';
+        'to tell javascript about a variable named variable_name write :';
+        'let variable_name;';
         html_style_alternate(parent, html_p, [noop, html_style_monospace], ['boolean ', 'true', ' and ', 'false', ' can be used in code :']);
     }
 }
