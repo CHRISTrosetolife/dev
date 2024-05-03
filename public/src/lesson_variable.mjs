@@ -49,15 +49,7 @@ export function lesson_variable() {
     let description = example_message;
     return lesson_simple(function () {
         let name = app_learn_code_random_identifier();
-        let value;
-        let r = integer_random(1, 3);
-        if (equal(r, 1)) {
-            value = integer_random_digit_single();
-        } else if (equal(r, 2)) {
-            value = random_50_50();
-        } else {
-            value = lesson_console_log_quiz_value();
-        }
+        let value = app_learn_code_random_value();
         return `let ${name};
 ${name} = ${value};
 console.log(${name});`;
@@ -118,6 +110,19 @@ console.log(${name});`;
         app_learn_code_code_part_contrast(parent, 'console.log(variable_name);');
     }
 }
+function app_learn_code_random_value() {
+    let value;
+    let r = integer_random(1, 3);
+    if (equal(r, 1)) {
+        value = integer_random_digit_single();
+    } else if (equal(r, 2)) {
+        value = random_50_50();
+    } else {
+        value = lesson_console_log_quiz_value();
+    }
+    return value;
+}
+
 function app_learn_code_random_identifier() {
     let count = integer_random(1, 3);
     let name = '';
