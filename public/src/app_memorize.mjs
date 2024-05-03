@@ -315,6 +315,8 @@ export async function app_memorize() {
             html_style_visible(previous_token_element);
             html_style_font_color(previous_token_element, 'red');
             let keyboard_button = object_property_get(keyboard_buttons, k)
+            html_style(keyboard_button, {'border-color':'red'})
+            html_style_background_color(keyboard_button, 'light_red')
         }
     }
     function number_to_dvh(value) {
