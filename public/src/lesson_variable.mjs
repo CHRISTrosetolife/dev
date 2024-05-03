@@ -81,12 +81,12 @@ console.log(${name});`;
         html_p_text(parent, 'here are some valid variable names :');
         let ul2 = html_ul(parent);
         html_li_text_monospace(ul2, 'y');
-        'Y';
-        '_';
-        '$';
-        '$$';
-        '__$';
-        'd8$_';
+        html_li_text_monospace(ul2, 'Y');
+        html_li_text_monospace(ul2, '_');
+        html_li_text_monospace(ul2, '$');
+        html_li_text_monospace(ul2, '$$');
+        html_li_text_monospace(ul2, '__$');
+        html_li_text_monospace(ul2, 'd8$_');
     }
     function screen4(parent) {
         'variable names cannot begin with a number';
