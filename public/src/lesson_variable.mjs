@@ -1,3 +1,5 @@
+import {app_learn_code_random_value} from "./app_learn_code_random_value.mjs";
+import {app_learn_code_random_identifier} from "./app_learn_code_random_identifier.mjs";
 import {string_case_upper} from "./string_case_upper.mjs";
 import {html_li_text_monospace} from "./html_li_text_monospace.mjs";
 import {html_li} from "./html_li.mjs";
@@ -42,8 +44,8 @@ import {html_style_bold} from "./html_style_bold.mjs";
 import {html_spacer_vertical} from "./html_spacer_vertical.mjs";
 import {html_ul} from "./html_ul.mjs";
 import {html_hr} from "./html_hr.mjs";
-import { range } from "./range.mjs";
-import { string_combine } from "./string_combine.mjs";
+import {range} from "./range.mjs";
+import {string_combine} from "./string_combine.mjs";
 export function lesson_variable() {
     let example_message = 'outputting a variable to the console';
     let description = example_message;
@@ -110,34 +112,3 @@ console.log(${name});`;
         app_learn_code_code_part_contrast(parent, 'console.log(variable_name);');
     }
 }
-function app_learn_code_random_value() {
-    let value;
-    let r = integer_random(1, 3);
-    if (equal(r, 1)) {
-        value = integer_random_digit_single();
-    } else if (equal(r, 2)) {
-        value = random_50_50();
-    } else {
-        value = lesson_console_log_quiz_value();
-    }
-    return value;
-}
-
-function app_learn_code_random_identifier() {
-    let count = integer_random(1, 3);
-    let name = '';
-    for (let i of range(count)) {
-        name = string_combine(name, string_random_letter());
-    }
-    return name;
-}
-
-function string_random_letter() {
-    let ks = keyboard_keys();
-    let name = list_random_item(ks);
-    if (random_50_50()) {
-        name = string_case_upper(name);
-    }
-    return name;
-}
-
