@@ -32,6 +32,7 @@ import { integer_random } from "./integer_random.mjs";
 import { equal } from "./equal.mjs";
 import { integer_random_digit_single } from "./integer_random_digit_single.mjs";
 import { lesson_console_log_quiz_value } from "./lesson_console_log_quiz_value.mjs";
+import { html_style_bold } from "./html_style_bold.mjs";
 export function lesson_variable() {
     let example_message = 'outputting a variable to the console';
     let description = example_message;
@@ -52,7 +53,7 @@ ${name} = ${value};
 console.log(${random_50_50()});`;
     }, example_before, description, example_message, []);
     function example_before(parent) {
-        'in javascript , variables have a name and a value'
+        html_style_alternate(parent, html_p, [noop, html_style_bold], ['in javascript , ','variables',' have a name and a value']);
         html_p_text(parent,'variables can be given a value using their name');
         html_p_text(parent,'the value given to a variable can be used later using the name of the variable');
         html_p_text(parent, 'to use a variable , javascript must know about the variable');
