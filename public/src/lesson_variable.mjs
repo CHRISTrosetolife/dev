@@ -42,7 +42,7 @@ export function lesson_variable() {
         if (equal(r,1)) {
             value = integer_random_digit_single();
         } else if (equal(r,2)) {
-            value = value;
+            value = random_50_50();
         } else {
             value = value;
         }
