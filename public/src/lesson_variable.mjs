@@ -52,6 +52,7 @@ ${name} = ${value};
 console.log(${random_50_50()});`;
     }, example_before, description, example_message, []);
     function example_before(parent) {
+        ''
         html_style_alternate(parent, html_p, [noop, html_style_monospace], ['boolean ', 'true', ' and ', 'false', ' can be used in code :']);
     }
 }
