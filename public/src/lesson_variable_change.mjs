@@ -63,6 +63,7 @@ export function lesson_variable_change() {
         let name = app_learn_code_random_identifier();
         let value = app_learn_code_random_value();
         return `${lesson_variable_code_get(name, value)}
+${js_code_statement_assign(name, value)}
 ${app_learn_code_log(name)}`;
     }, example_before, description, example_message, [screen1]);
     function example_before(parent) {}
