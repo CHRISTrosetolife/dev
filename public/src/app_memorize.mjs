@@ -242,9 +242,9 @@ export async function app_memorize() {
             for (let k of row) {
                 let b = html_button(row_element);
                 object_property_set(keyboard_buttons, k, b);
-                html_style_centered(b);
                 html_inner_set(b, string_case_upper(k));
                 let b_width = number_to_dvw(10 - 1);
+                html_style_centered(b);
                 html_style(b, {
                     'font-size': '3.8dvh',
                     margin: '0.25dvh',
