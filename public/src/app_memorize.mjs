@@ -1,3 +1,4 @@
+import {keyboard_keys} from "./keyboard_keys.mjs";
 import {html_hash} from "./html_hash.mjs";
 import {html_style_visible} from "./html_style_visible.mjs";
 import {html_style_hidden} from "./html_style_hidden.mjs";
@@ -53,7 +54,7 @@ import {add_1} from "./add_1.mjs";
 import {list_index} from "./list_index.mjs";
 import {list_map} from "./list_map.mjs";
 import {string_replace} from "./string_replace.mjs";
-import { html_on } from "./html_on.mjs";
+import {html_on} from "./html_on.mjs";
 export async function app_memorize() {
     let root = html_document_body();
     html_style(root, {
@@ -86,8 +87,8 @@ export async function app_memorize() {
             group_current_set(g);
         },
         'pattern': value => {
-            pattern_index = list_index(patterns, value)
-        },
+            pattern_index = list_index(patterns, value);
+        }
     });
     refresh_memorize();
     function group_current_set(g) {
@@ -153,7 +154,7 @@ export async function app_memorize() {
     function refresh_memorize() {
         html_clear(root);
         let p = list_get(patterns, pattern_index);
-        let pattern = string_split(p, '')
+        let pattern = string_split(p, '');
         let settings_element = html_element(root, 'div');
         let settings_button = html_button_width_full_text_click(settings_element, '⚙️ settings', refresh_settings);
         html_style(settings_button, {
@@ -162,7 +163,7 @@ export async function app_memorize() {
         });
         let verses_element = html_element(root, 'div');
         let button_height = 7;
-        let keys = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm'];
+        let keys = keyboard_keys();
         let keys_length = list_length(keys);
         let keyboard_height = multiply(button_height, keys_length);
         let offset = add(keyboard_height, 7);
@@ -244,10 +245,10 @@ export async function app_memorize() {
     }
     function update_colors() {
         let current_verse = list_get(verse_elements, verse_index);
-        let { verse_element, token_objects } = current_verse;
+        let {verse_element, token_objects} = current_verse;
         let current_token = list_get(token_objects, token_index);
         html_scroll_center(verse_element);
-        let { spacer2, token_element } = current_token;
+        let {spacer2, token_element} = current_token;
         html_style_visible(spacer2);
         if (undefined_not_is(previous_spacer2)) {
             html_style_hidden(previous_spacer2);
@@ -258,16 +259,16 @@ export async function app_memorize() {
         previous_spacer2 = spacer2;
         previous_token_element = token_element;
     }
-    html_on(root, 'keydown', (e) => {
+    html_on(root, 'keydown', e => {
         let {keyCode} = e;
-        let c = String.fromCharCode(keyCode)
-        let c_lower = string_case_lower(c)
-        on_keydown(c_lower)
-    })
+        let c = String.fromCharCode(keyCode);
+        let c_lower = string_case_lower(c);
+        on_keydown(c_lower);
+    });
     function on_keydown(k) {
         let j = list_get(group_current, verse_index);
         let current_verse = list_get(verses, j);
-        let { tokens } = current_verse;
+        let {tokens} = current_verse;
         let current_token = list_get(tokens, token_index);
         let letter_first = string_case_lower(string_letter_first(current_token));
         if (equal(k, letter_first)) {
@@ -290,7 +291,6 @@ export async function app_memorize() {
                         let group_next_index = add_1(group_current_index);
                         let group_next = list_get(groups, group_next_index);
                         group_current_set(group_next);
-
                     }
                 }
                 refresh_memorize();
@@ -302,7 +302,6 @@ export async function app_memorize() {
             html_style_font_color(previous_token_element, 'red');
         }
     }
-
     function number_to_dvh(value) {
         return string_combine(string_to(value), 'dvh');
     }
