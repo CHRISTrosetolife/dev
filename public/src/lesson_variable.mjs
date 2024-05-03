@@ -92,7 +92,7 @@ console.log(${name});`;
         html_p_text(parent, 'variable names cannot begin with a number');
         html_hr(parent)
         html_p_text(parent, 'the case of the letters matter');
-        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['for example ','JESUS',' , ','jesus',' and ','Jesus','are all different variables , even though they contain the same letters']);
+        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['for example ','JESUS',' , ','jesus',' and ','Jesus',' are all different variables , even though they contain the same letters']);
         html_p_text(parent, 'some words cannot be used as variables');
         html_style_alternate(parent, html_p, [noop, html_style_monospace], ['for example ','if',' , ','else',' , ','for',' and ','while',' cannot be used as variable names because they already have meaning in javascript']);
     }
