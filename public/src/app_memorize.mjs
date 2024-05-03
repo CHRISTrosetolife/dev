@@ -55,6 +55,7 @@ import {list_index} from "./list_index.mjs";
 import {list_map} from "./list_map.mjs";
 import {string_replace} from "./string_replace.mjs";
 import {html_on} from "./html_on.mjs";
+import { object_property_set } from "./object_property_set.mjs";
 export async function app_memorize() {
     let root = html_document_body();
     html_style(root, {
@@ -226,11 +227,13 @@ export async function app_memorize() {
         html_style(keyboard_element, {
             'max-height': number_to_dvh(keyboard_height)
         });
+        let keyboard_buttons = {};
         for (let row of keys) {
             let row_element = html_div(keyboard_element);
             html_style_centered(row_element);
             for (let k of row) {
                 let b = html_button(row_element);
+                object_property_set(keyboard_buttons, k, b);
                 html_style_centered(b);
                 html_inner_set(b, string_case_upper(k));
                 let b_width = number_to_dvw(10 - 1);
