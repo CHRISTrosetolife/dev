@@ -1,3 +1,4 @@
+import {js_code_statement_assign} from "./js_code_statement_assign.mjs";
 import {app_learn_code_code} from "./app_learn_code_code.mjs";
 import {html_style_alternate_monospace} from "./html_style_alternate_monospace.mjs";
 import {lesson_statements_two_quiz} from "./lesson_statements_two_quiz.mjs";
@@ -62,7 +63,10 @@ ${app_learn_code_log(name)}`;
     }, example_before, description, example_message, [screen1]);
     function example_before(parent) {}
     function screen1(parent) {
-        'here is code that will set the value of a variable :'
+        let name = app_learn_code_random_identifier();
+        let value = app_learn_code_random_value();
+        'here is code that will set the value of a variable named name to a value of value :';
+        js_code_statement_assign(name, value);
         html_style_alternate_monospace(parent, ['remember , here is code that outputs twice because there are two ', 'console.log', ' statements :']);
         app_learn_code_code_part_contrast(parent, lesson_statements_two_quiz());
     }
