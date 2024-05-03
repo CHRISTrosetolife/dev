@@ -1,3 +1,4 @@
+import {app_learn_code_range_retry} from "./app_learn_code_range_retry.mjs";
 import {string_delimit_if} from "./string_delimit_if.mjs";
 import {string_is} from "./string_is.mjs";
 import {string_to} from "./string_to.mjs";
@@ -62,6 +63,13 @@ export function lesson_variable_change() {
     return lesson_simple(function () {
         let name = app_learn_code_random_identifier();
         let value = app_learn_code_random_value();
+        let value2;
+        for (let i of app_learn_code_range_retry()) {
+            value2 = app_learn_code_random_value();
+            if (equal_not(value, value2)) {
+                break;
+            }
+        }
         return `${lesson_variable_code_get(name, value)}
 ${js_code_statement_assign(name, value)}
 ${app_learn_code_log(name)}`;
@@ -74,7 +82,7 @@ ${app_learn_code_log(name)}`;
         value_string = string_to(value);
         html_style_alternate_monospace(parent, ['here is code that will set the value of a variable named ', name, ' to a value of ', value, ' :']);
         app_learn_code_code_part_contrast(parent, js_code_statement_assign(name, value));
-        html_style_alternate_monospace(parent, ['if ', name, ' already has a value , and ',name,' does not already have a value of ',value,' , then the value of ', name, ' will be changed to ', value]);
-        html_style_alternate_monospace(parent, ['','=',' can be used to change the value of a variable']);
+        html_style_alternate_monospace(parent, ['if ', name, ' already has a value , and ', name, ' does not already have a value of ', value, ' , then the value of ', name, ' will be changed to ', value]);
+        html_style_alternate_monospace(parent, ['', '=', ' can be used to change the value of a variable']);
     }
 }
