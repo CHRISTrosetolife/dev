@@ -80,8 +80,7 @@ console.log(${name});`;
         html_p_text(parent, 'here are some valid variable names :');
         let ul2 = html_ul(parent);
         let text =  'y'
-        let li = html_li_text(ul2,text)
-        html_style_monospace(li);
+        html_li_text_monospace(ul2, text);
         'Y';
         '_';
         '$';
@@ -110,3 +109,8 @@ console.log(${name});`;
         app_learn_code_code_part_contrast(parent, 'console.log(variable_name);');
     }
 }
+function html_li_text_monospace(ul2, text) {
+    let li = html_li_text(ul2, text);
+    html_style_monospace(li);
+}
+
