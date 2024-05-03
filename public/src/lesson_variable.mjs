@@ -98,6 +98,8 @@ console.log(${name});`;
         html_style_alternate(parent, html_p, [noop, html_style_monospace], ['for example ','if',' , ','else',' , ','for',' and ','while',' cannot be used as variable names because they already have meaning in javascript']);
     }
     function screen5(parent) {
+        html_style_alternate(parent, html_p, [noop, html_style_monospace], ['remember the code from earlier that told javascript about ','variable_name']);
+        app_learn_code_code_part_contrast(parent, 'let variable_name;');
         html_p_text(parent, 'after telling javascript about a variable , eventually variables should be given a value');
         html_style_alternate(parent, html_p, [noop, html_style_monospace], ['to give a variable named ', 'variable_name', ' a value of ', '123', ' write :']);
         app_learn_code_code_part_contrast(parent, 'variable_name = 123;');
