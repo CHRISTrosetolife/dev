@@ -1,3 +1,4 @@
+import {html_li_text_monospace} from "./html_li_text_monospace.mjs";
 import {html_li} from "./html_li.mjs";
 import {html_li_text} from "./html_li_text.mjs";
 import {app_learn_code_code_part_contrast} from "./app_learn_code_code_part_contrast.mjs";
@@ -71,16 +72,15 @@ console.log(${name});`;
         html_style_alternate(parent, html_p, [noop, html_style_monospace], ['because this is a statement , it ends in semicolon ( ', ';', ' )']);
     }
     function screen3(parent) {
-        html_p_text(parent,'in javascript , variable names can contain :');
+        html_p_text(parent, 'in javascript , variable names can contain :');
         let ul = html_ul(parent);
-        html_style_alternate(ul, html_li, [noop, html_style_monospace], ['letters ( ','a',' , ','b',' , ','c',' , ... , ','z',' and ','A',' , ','B',' , ','C',' , ... , ','Z',' )']);
-        html_style_alternate(ul, html_li, [noop, html_style_monospace], ['digits ( ','0',' , ','1',' , ','2',' , ','3',' , ... , ','9',' )']);
+        html_style_alternate(ul, html_li, [noop, html_style_monospace], ['letters ( ', 'a', ' , ', 'b', ' , ', 'c', ' , ... , ', 'z', ' and ', 'A', ' , ', 'B', ' , ', 'C', ' , ... , ', 'Z', ' )']);
+        html_style_alternate(ul, html_li, [noop, html_style_monospace], ['digits ( ', '0', ' , ', '1', ' , ', '2', ' , ', '3', ' , ... , ', '9', ' )']);
         html_style_alternate(ul, html_li, [noop, html_style_monospace], ['underscores ( ', '_', ' )']);
         html_style_alternate(ul, html_li, [noop, html_style_monospace], ['dollar signs ( ', '$', ' )']);
         html_p_text(parent, 'here are some valid variable names :');
         let ul2 = html_ul(parent);
-        let text =  'y'
-        html_li_text_monospace(ul2, text);
+        html_li_text_monospace(ul2, 'y');
         'Y';
         '_';
         '$';
@@ -109,8 +109,3 @@ console.log(${name});`;
         app_learn_code_code_part_contrast(parent, 'console.log(variable_name);');
     }
 }
-function html_li_text_monospace(ul2, text) {
-    let li = html_li_text(ul2, text);
-    html_style_monospace(li);
-}
-
