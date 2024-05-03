@@ -1,3 +1,4 @@
+import {identity} from "./identity.mjs";
 import {keyboard_keys} from "./keyboard_keys.mjs";
 import {html_style_monospace} from "./html_style_monospace.mjs";
 import {html_p} from "./html_p.mjs";
@@ -23,11 +24,16 @@ import {lesson_console_log_analogy_addition_symbol} from "./lesson_console_log_a
 import {lesson_log_number_explain} from "./lesson_log_number_explain.mjs";
 import {noop} from "./noop.mjs";
 import {random_50_50} from "./random_50_50.mjs";
+import {list_concat} from "./list_concat.mjs";
+import {list_concat_multiple} from "./list_concat_multiple.mjs";
+import {list_sort_string} from "./list_sort_string.mjs";
 export function lesson_variable() {
     let example_message = 'outputting a variable to the console';
     let description = example_message;
     return lesson_simple(function () {
         let ks = keyboard_keys();
+        let concat = list_concat_multiple(ks);
+        list_sort_string(concat, identity);
         return `let ${name};
 ${name} = ${value};
 console.log(${random_50_50()});`;
