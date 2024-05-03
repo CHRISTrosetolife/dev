@@ -1,5 +1,6 @@
+import {js_code_assign} from "./js_code_assign.mjs";
 export function lesson_variable_code_get(name, value) {
     return `let ${name};
-${`${name} = ${value};`}
+${`${js_code_assign(name, value)};`}
 console.log(${name});`;
 }
