@@ -54,7 +54,12 @@ export function lesson_variable() {
         return `let ${name};
 ${name} = ${value};
 console.log(${random_50_50()});`;
-    }, example_before, description, example_message, []);
+    }, example_before, description, example_message, [
+        screen1,
+        screen2,
+        screen3,
+        screen4,
+    ]);
     function example_before(parent) {
     }
     function screen1(parent) {
