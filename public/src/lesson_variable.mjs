@@ -39,9 +39,11 @@ export function lesson_variable() {
         let value;
         let r = integer_random(1,3)
         if (equal(r,1)) {
-
+            value = value;
         } else if (equal(r,2)) {
-            
+            value = value;
+        } else {
+            value = value;
         }
         return `let ${name};
 ${name} = ${value};
