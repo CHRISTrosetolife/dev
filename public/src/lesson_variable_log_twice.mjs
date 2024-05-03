@@ -1,3 +1,4 @@
+import {app_learn_code_code} from "./app_learn_code_code.mjs";
 import {html_style_alternate_monospace} from "./html_style_alternate_monospace.mjs";
 import {lesson_statements_two_quiz} from "./lesson_statements_two_quiz.mjs";
 import {app_learn_code_log} from "./app_learn_code_log.mjs";
@@ -61,11 +62,7 @@ ${app_learn_code_log(name)}`;
     }, example_before, description, example_message, [screen1]);
     function example_before(parent) {}
     function screen1(parent) {
-        html_style_alternate_monospace(parent, [
-            'remember , here is code that outputs twice because there are two ', 
-            'console.log', 
-            ' statements :'
-        ]);
-        app_learn_code_code_part_contrast(parent, lesson_statements_two_quiz());
+        html_style_alternate_monospace(parent, ['remember , here is code that outputs twice because there are two ', 'console.log', ' statements :']);
+        app_learn_code_code(parent, lesson_statements_two_quiz());
     }
 }
