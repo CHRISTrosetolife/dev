@@ -48,11 +48,7 @@ export function lesson_variable() {
     let example_message = 'outputting a variable to the console';
     let description = example_message;
     return lesson_simple(function () {
-        let count = integer_random(1, 3);
-        let name = '';
-        for (let i of range(count)) {
-            name = string_combine(name, string_random_letter());
-        }
+        let name = app_learn_code_random_identifier();
         let value;
         let r = integer_random(1, 3);
         if (equal(r, 1)) {
@@ -122,6 +118,15 @@ console.log(${name});`;
         app_learn_code_code_part_contrast(parent, 'console.log(variable_name);');
     }
 }
+function app_learn_code_random_identifier() {
+    let count = integer_random(1, 3);
+    let name = '';
+    for (let i of range(count)) {
+        name = string_combine(name, string_random_letter());
+    }
+    return name;
+}
+
 function string_random_letter() {
     let ks = keyboard_keys();
     let name = list_random_item(ks);
