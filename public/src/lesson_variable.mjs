@@ -79,7 +79,9 @@ console.log(${name});`;
         html_style_alternate(ul, html_li, [noop, html_style_monospace], ['dollar signs ( ', '$', ' )']);
         html_p_text(parent, 'here are some valid variable names :');
         let ul2 = html_ul(parent);
-        'y';
+        let text =  'y'
+        let li = html_li_text(ul2,text)
+        html_style_monospace(li);
         'Y';
         '_';
         '$';
