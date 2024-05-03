@@ -1,3 +1,4 @@
+import {app_learn_code_range_retry} from "./app_learn_code_range_retry.mjs";
 import {app_learn_code_retry_count} from "./app_learn_code_retry_count.mjs";
 import {app_learn_code_answer_correct} from "./app_learn_code_answer_correct.mjs";
 import {list_get} from "./list_get.mjs";
@@ -45,7 +46,7 @@ export function app_learn_code_quiz_inner(parent, source_get) {
         let r = range(choices_count);
         let choices = array_new();
         for (let c of r) {
-            for (let i of range(app_learn_code_retry_count())) {
+            for (let i of app_learn_code_range_retry()) {
                 let source = source_get();
                 let answer = app_learn_code_eval_to_string(source);
                 if (list_any(choices, c => equal(c.answer, answer))) {
