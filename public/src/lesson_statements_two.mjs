@@ -1,3 +1,4 @@
+import {lesson_statements_two_quiz} from "./lesson_statements_two_quiz.mjs";
 import {lesson_console_log_quiz} from "./lesson_console_log_quiz.mjs";
 import {lesson_simple} from "./lesson_simple.mjs";
 import {lesson_add_quiz} from "./lesson_add_quiz.mjs";
@@ -11,8 +12,7 @@ export function lesson_statements_two() {
     const description = 'two console.log statements';
     const example_message = 'with two statements';
     return lesson_simple(() => {
-        return `${lesson_console_log_quiz()}
-${lesson_console_log_quiz()}`;
+        return lesson_statements_two_quiz();
     }, example_before, description, example_message, []);
     function example_before(parent) {
         html_p_text(parent, 'statements are ran one after the other');
