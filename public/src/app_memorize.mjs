@@ -1,4 +1,4 @@
-import {keyboard_keys} from "./keyboard_keys.mjs";
+import {keyboard_keys_rows} from "./keyboard_keys_rows.mjs";
 import {html_hash} from "./html_hash.mjs";
 import {html_style_visible} from "./html_style_visible.mjs";
 import {html_style_hidden} from "./html_style_hidden.mjs";
@@ -163,7 +163,7 @@ export async function app_memorize() {
         });
         let verses_element = html_element(root, 'div');
         let button_height = 7;
-        let keys = keyboard_keys();
+        let keys = keyboard_keys_rows();
         let keys_length = list_length(keys);
         let keyboard_height = multiply(button_height, keys_length);
         let offset = add(keyboard_height, 7);
