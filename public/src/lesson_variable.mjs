@@ -78,7 +78,7 @@ console.log(${name});`;
         html_style_alternate(ul, html_li, [noop, html_style_monospace], ['digits ( ', '0', ' , ', '1', ' , ', '2', ' , ', '3', ' , ... , ', '9', ' )']);
         html_style_alternate(ul, html_li, [noop, html_style_monospace], ['underscores ( ', '_', ' )']);
         html_style_alternate(ul, html_li, [noop, html_style_monospace], ['dollar signs ( ', '$', ' )']);
-        html_p_text(parent, 'here are some valid variable names :');
+        html_p_text(parent, 'here are some examples of valid variable names :');
         app_learn_code_code_part_contrast(parent, 'y');
         app_learn_code_code_part_contrast(parent, 'Y');
         app_learn_code_code_part_contrast(parent, '_');
