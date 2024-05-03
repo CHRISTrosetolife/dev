@@ -1,3 +1,4 @@
+import {keyboard_keys} from "./keyboard_keys.mjs";
 import {html_style_monospace} from "./html_style_monospace.mjs";
 import {html_p} from "./html_p.mjs";
 import {html_style_alternate} from "./html_style_alternate.mjs";
@@ -26,6 +27,7 @@ export function lesson_variable() {
     let example_message = 'outputting a variable to the console';
     let description = example_message;
     return lesson_simple(function () {
+        let ks = keyboard_keys();
         return `let ${name};
 ${name} = ${value};
 console.log(${random_50_50()});`;
