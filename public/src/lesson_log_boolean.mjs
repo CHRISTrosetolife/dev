@@ -21,10 +21,14 @@ import {lesson_console_log_strings} from "./lesson_console_log_strings.mjs";
 import {lesson_console_log_analogy_addition_symbol} from "./lesson_console_log_analogy_addition_symbol.mjs";
 import {lesson_log_number_explain} from "./lesson_log_number_explain.mjs";
 import {noop} from "./noop.mjs";
+import { random_50_50 } from "./random_50_50.mjs";
 export function lesson_log_boolean() {
     let example_message = 'outputting a boolean to the console';
     let description = example_message;
-    return lesson_simple(lesson_add_quiz, example_before, description, example_message, []);
+    return lesson_simple(function () {
+        return `console.log(${random_50_50()});
+console.log(${random_50_50()});`;
+    }, example_before, description, example_message, []);
     function example_before(parent) {
         html_style_alternate(parent, html_p, [noop, html_style_monospace], ['boolean ', 'true', ' and ', 'false', ' can be used in code :'])
     }
