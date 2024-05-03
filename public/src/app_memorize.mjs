@@ -1,3 +1,4 @@
+import {html_style_button_default} from "./html_style_button_default.mjs";
 import {keyboard_keys_rows} from "./keyboard_keys_rows.mjs";
 import {html_hash} from "./html_hash.mjs";
 import {html_style_visible} from "./html_style_visible.mjs";
@@ -55,8 +56,9 @@ import {list_index} from "./list_index.mjs";
 import {list_map} from "./list_map.mjs";
 import {string_replace} from "./string_replace.mjs";
 import {html_on} from "./html_on.mjs";
-import { object_property_set } from "./object_property_set.mjs";
-import { object_property_get } from "./object_property_get.mjs";
+import {object_property_set} from "./object_property_set.mjs";
+import {object_property_get} from "./object_property_get.mjs";
+import {list_add} from "./list_add.mjs";
 export async function app_memorize() {
     let root = html_document_body();
     html_style(root, {
@@ -210,7 +212,11 @@ export async function app_memorize() {
                         let token_element = html_span_text(verse_element, token);
                         if (equal(token_pattern, '0')) {
                             html_style_hidden(token_element);
-                            console.log({verse_index,j,token_element})
+                            console.log({
+                                verse_index,
+                                j,
+                                token_element
+                            });
                         }
                         la({
                             spacer2,
@@ -267,7 +273,7 @@ export async function app_memorize() {
         }
         if (undefined_not_is(previous_token_element)) {
             html_style_visible(previous_token_element);
-            console.log('here', previous_token_element)
+            console.log('here', previous_token_element);
         }
         previous_spacer2 = spacer2;
         previous_token_element = token_element;
@@ -278,6 +284,7 @@ export async function app_memorize() {
         let c_lower = string_case_lower(c);
         on_keydown(c_lower);
     });
+    let errored_keys = [];
     function on_keydown(k) {
         let j = list_get(group_current, verse_index);
         let current_verse = list_get(verses, j);
@@ -310,13 +317,19 @@ export async function app_memorize() {
             } else {
                 update_colors();
             }
+            for (let errored_key of errored_keys) {
+                html_style(errored_key, html_style_button_default());
+            }
         } else {
             mistakes = true;
             html_style_visible(previous_token_element);
             html_style_font_color(previous_token_element, 'red');
-            let keyboard_button = object_property_get(keyboard_buttons, k)
-            html_style(keyboard_button, {'border-color':'red'})
-            html_style_background_color(keyboard_button, 'light_red')
+            let keyboard_button = object_property_get(keyboard_buttons, k);
+            html_style(keyboard_button, {
+                'border-color': 'red'
+            });
+            html_style_background_color(keyboard_button, 'salmon');
+            list_add(errored_keys, keyboard_button);
         }
     }
     function number_to_dvh(value) {
