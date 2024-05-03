@@ -78,6 +78,7 @@ console.log(${name});`;
         html_style_alternate(ul, html_li, [noop, html_style_monospace], ['underscores ( ', '_', ' )']);
         html_style_alternate(ul, html_li, [noop, html_style_monospace], ['dollar signs ( ', '$', ' )']);
         html_p_text(parent, 'here are some valid variable names :');
+        let ul2 = html_ul(parent);
         'a';
         'A';
         'z';
