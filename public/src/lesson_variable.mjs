@@ -33,7 +33,7 @@ export function lesson_variable() {
     return lesson_simple(function () {
         let ks = keyboard_keys();
         let concat = list_concat_multiple(ks);
-        list_sort_string(concat, identity);
+
         return `let ${name};
 ${name} = ${value};
 console.log(${random_50_50()});`;
