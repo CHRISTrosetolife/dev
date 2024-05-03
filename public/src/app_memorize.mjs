@@ -96,7 +96,7 @@ export async function app_memorize() {
         if (equal(list_length(group_current), 1)) {
             patterns = ['1', '110', '10', '01', '01001', '001', '0', '0', '0', '0'];
         } else {
-            patterns = ['10', '0', '0', '0', '0'];
+            patterns = ['1', '10', '0', '0', '0', '0'];
         }
         patterns_length = list_length(patterns);
         verse_index = 0;
@@ -206,6 +206,7 @@ export async function app_memorize() {
                         let token_element = html_span_text(verse_element, token);
                         if (equal(token_pattern, '0')) {
                             html_style_hidden(token_element);
+                            console.log({verse_index,j,token_element})
                         }
                         la({
                             spacer2,
@@ -261,6 +262,7 @@ export async function app_memorize() {
         }
         if (undefined_not_is(previous_token_element)) {
             html_style_visible(previous_token_element);
+            console.log('here', previous_token_element)
         }
         previous_spacer2 = spacer2;
         previous_token_element = token_element;
@@ -300,8 +302,9 @@ export async function app_memorize() {
                     }
                 }
                 refresh_memorize();
+            } else {
+                update_colors();
             }
-            update_colors();
         } else {
             mistakes = true;
             html_style_visible(previous_token_element);
