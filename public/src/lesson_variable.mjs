@@ -42,13 +42,17 @@ import {html_style_bold} from "./html_style_bold.mjs";
 import {html_spacer_vertical} from "./html_spacer_vertical.mjs";
 import {html_ul} from "./html_ul.mjs";
 import {html_hr} from "./html_hr.mjs";
+import { range } from "./range.mjs";
+import { string_combine } from "./string_combine.mjs";
 export function lesson_variable() {
     let example_message = 'outputting a variable to the console';
     let description = example_message;
     return lesson_simple(function () {
         let count = integer_random(1, 3);
         let name;
-        name = string_random_letter();
+        for (let i of range(count)) {
+            name = string_combine(name, string_random_letter());
+        }
         let value;
         let r = integer_random(1, 3);
         if (equal(r, 1)) {
