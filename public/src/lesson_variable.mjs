@@ -105,7 +105,6 @@ console.log(${name});`;
     function screen6(parent) {
         html_p_text(parent, 'now either of these will output 123 :');
         app_learn_code_code_part_contrast(parent, 'console.log(123);');
-        html_spacer_vertical(parent);
         app_learn_code_code_part_contrast(parent, 'console.log(variable_name);');
     }
 }
