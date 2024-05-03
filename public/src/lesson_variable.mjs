@@ -31,6 +31,7 @@ import { list_random_item } from "./list_random_item.mjs";
 import { integer_random } from "./integer_random.mjs";
 import { equal } from "./equal.mjs";
 import { integer_random_digit_single } from "./integer_random_digit_single.mjs";
+import { lesson_console_log_quiz_value } from "./lesson_console_log_quiz_value.mjs";
 export function lesson_variable() {
     let example_message = 'outputting a variable to the console';
     let description = example_message;
@@ -44,7 +45,7 @@ export function lesson_variable() {
         } else if (equal(r,2)) {
             value = random_50_50();
         } else {
-            value = value;
+            value = lesson_console_log_quiz_value();
         }
         return `let ${name};
 ${name} = ${value};
