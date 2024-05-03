@@ -16,6 +16,7 @@ import {lesson_console_log} from "./lesson_console_log.mjs";
 import {list_add} from "./list_add.mjs";
 import {lesson_equal_not_number} from "./lesson_equal_not_number.mjs";
 import {lesson_equal_not_string} from "./lesson_equal_not_string.mjs";
+import { lesson_variable } from "./lesson_variable.mjs";
 export function app_learn_code_lessons() {
     let lesson_creates = [];
     list_add(lesson_creates, lesson_console_log);
@@ -35,5 +36,6 @@ export function app_learn_code_lessons() {
     list_add(lesson_creates, lesson_statements_two);
     list_add(lesson_creates, lesson_statements_three);
     list_add(lesson_creates, lesson_log_boolean);
+    list_add(lesson_creates, lesson_variable);
     return lesson_creates;
 }
