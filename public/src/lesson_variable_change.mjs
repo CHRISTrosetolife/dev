@@ -1,3 +1,5 @@
+import {string_to} from "./string_to.mjs";
+import {string_is} from "./string_is.mjs";
 import {js_code_statement_assign} from "./js_code_statement_assign.mjs";
 import {app_learn_code_code} from "./app_learn_code_code.mjs";
 import {html_style_alternate_monospace} from "./html_style_alternate_monospace.mjs";
@@ -52,6 +54,7 @@ import {html_ul} from "./html_ul.mjs";
 import {html_hr} from "./html_hr.mjs";
 import {range} from "./range.mjs";
 import {string_combine} from "./string_combine.mjs";
+import {string_delimit} from "./string_delimit.mjs";
 export function lesson_variable_change() {
     let example_message = 'changing a variable and logging to the console twice';
     let description = example_message;
@@ -65,10 +68,16 @@ ${app_learn_code_log(name)}`;
     function screen1(parent) {
         let name = app_learn_code_random_identifier();
         let value = app_learn_code_random_value();
-        html_style_alternate_monospace(parent, ['here is code that will set the value of a variable named ',name,' to a value of ',value,' :']);
+        let value_string;
+        if (string_is(value)) {
+            value_string = string_delimit(value);
+        } else {
+            value_string = string_to(value);
+        }
+        html_style_alternate_monospace(parent, ['here is code that will set the value of a variable named ', name, ' to a value of ', value, ' :']);
         app_learn_code_code_part_contrast(parent, js_code_statement_assign(name, value));
-        html_style_alternate_monospace(parent, ['if ',name,' already has a value , then the value of ',name,' will be changed to ', value]);
-        '= can be used to change the value of a variable'
+        html_style_alternate_monospace(parent, ['if ', name, ' already has a value , then the value of ', name, ' will be changed to ', value]);
+        '= can be used to change the value of a variable';
         html_style_alternate_monospace(parent, ['remember , here is code that outputs twice because there are two ', 'console.log', ' statements :']);
     }
 }
