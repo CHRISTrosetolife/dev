@@ -27,7 +27,7 @@ export function lesson_variable() {
     let description = example_message;
     return lesson_simple(function () {
         return `let ${name};
-${name} = ${value}
+${name} = ${value};
 console.log(${random_50_50()});`;
     }, example_before, description, example_message, []);
     function example_before(parent) {
