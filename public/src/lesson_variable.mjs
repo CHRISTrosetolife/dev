@@ -89,7 +89,7 @@ console.log(${name});`;
     }
     function screen4(parent) {
         'variable names cannot begin with a number';
-        'the case of the letters matters';
+        'the case of the letters matter';
         'for example JESUS and jesus are two different variables , even though they contain the same letters';
         'some words cannot be used as variables';
         'for example if , else , for and while cannot be used as variable names because they already have meaning in javascript';
