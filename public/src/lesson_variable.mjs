@@ -55,7 +55,7 @@ console.log(${random_50_50()});`;
         html_p_text(parent, 'to use a variable , javascript must know about the variable');
         'to tell javascript about a variable named variable_name write :';
         'let variable_name;';
-        'eventually variables should be given a value';
+        html_p_text(parent, 'eventually variables should be given a value');
         'to give a variable named variable name a value of 123 write :';
         'variable_name = 123;';
         'in javascript = does not check if two things are equal';
