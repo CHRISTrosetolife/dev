@@ -65,13 +65,10 @@ ${app_learn_code_log(name)}`;
     function screen1(parent) {
         let name = app_learn_code_random_identifier();
         let value = app_learn_code_random_value();
-        ;
         html_style_alternate_monospace(parent, ['here is code that will set the value of a variable named ','name',' to a value of ','value',' :']);
-
-        js_code_statement_assign(name, value);
+        app_learn_code_code_part_contrast(parent, js_code_statement_assign(name, value));
         'if name already has a value , then the value of name will be changed to value'
         '= can be used to change the value of a variable'
         html_style_alternate_monospace(parent, ['remember , here is code that outputs twice because there are two ', 'console.log', ' statements :']);
-        app_learn_code_code_part_contrast(parent, lesson_statements_two_quiz());
     }
 }
