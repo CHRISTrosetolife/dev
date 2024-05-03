@@ -1,3 +1,4 @@
+import {string_delimit_if} from "./string_delimit_if.mjs";
 import {string_is} from "./string_is.mjs";
 import {string_to} from "./string_to.mjs";
 import {js_code_statement_assign} from "./js_code_statement_assign.mjs";
@@ -68,12 +69,8 @@ ${app_learn_code_log(name)}`;
     function screen1(parent) {
         let name = app_learn_code_random_identifier();
         let value = app_learn_code_random_value();
-        let value_string;
-        if (string_is(value)) {
-            value_string = string_delimit(value);
-        } 
-            value_string = string_to(value);
-        
+        let value_string = string_delimit_if(value);
+        value_string = string_to(value);
         html_style_alternate_monospace(parent, ['here is code that will set the value of a variable named ', name, ' to a value of ', value, ' :']);
         app_learn_code_code_part_contrast(parent, js_code_statement_assign(name, value));
         html_style_alternate_monospace(parent, ['if ', name, ' already has a value , then the value of ', name, ' will be changed to ', value]);
