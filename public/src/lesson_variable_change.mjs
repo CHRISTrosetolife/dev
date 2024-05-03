@@ -72,7 +72,7 @@ export function lesson_variable_change() {
             }
         }
         return `${lesson_variable_code_get(name, value)}
-${js_code_statement_assign(name, value)}
+${js_code_statement_assign(name, value2)}
 ${app_learn_code_log(name)}`;
     }, example_before, description, example_message, [screen1]);
     function example_before(parent) {}
