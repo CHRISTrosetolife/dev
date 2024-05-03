@@ -32,8 +32,8 @@ export function app_learn_code_lessons() {
     list_add(lesson_creates, lesson_greater_than_equal);
     list_add(lesson_creates, lesson_equal_not_number);
     list_add(lesson_creates, lesson_equal_not_string);
-    list_add(lesson_creates, lesson_log_boolean);
     list_add(lesson_creates, lesson_statements_two);
     list_add(lesson_creates, lesson_statements_three);
+    list_add(lesson_creates, lesson_log_boolean);
     return lesson_creates;
 }
