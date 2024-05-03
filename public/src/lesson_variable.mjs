@@ -49,7 +49,7 @@ export function lesson_variable() {
     let description = example_message;
     return lesson_simple(function () {
         let count = integer_random(1, 3);
-        let name;
+        let name = '';
         for (let i of range(count)) {
             name = string_combine(name, string_random_letter());
         }
