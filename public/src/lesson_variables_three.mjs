@@ -73,10 +73,9 @@ export function lesson_variables_three() {
     let description = 'three variables';
     let example_message = string_combine('with ', description);
     return lesson_simple(function () {
-        let [a, b, c] = call_multiple(integer_random_digit_single_positive, 3);
         let count = 3;
-        let value_get = app_learn_code_random_identifier;
-        let names = app_learn_code_unique_multiple(value_get, count);
+        let [a, b, c] = call_multiple(integer_random_digit_single_positive, count);
+        let names = app_learn_code_unique_multiple(app_learn_code_random_identifier, count);
         let [name_a, name_b, name_c] = names;
         return `${js_code_statement_let_assign(name_a, a)}
 ${js_code_statement_let_assign(name_b, b)}
