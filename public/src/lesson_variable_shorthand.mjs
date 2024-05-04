@@ -76,7 +76,8 @@ ${app_learn_code_log(name)}`;
         let value = app_learn_code_random_value();
         let value_string = string_delimit_if(value);
         value_string = string_to(value);
-        'remember the code to tell javascript about a variable named name :';
+        html_style_alternate_monospace(parent, [
+            'remember the code to tell javascript about a variable named name :']);
         js_code_statement_let(name);
         'this is called declaring a variable';
         html_hr(parent);
