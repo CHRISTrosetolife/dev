@@ -27,7 +27,7 @@ export function app_learn_code_source_variations(source) {
     }
     let count = Math.pow(2, length)
     for (let i of range(count)) {
-        
+        let base2 = i.toString(2);
     }
     assert(less_than_equal, [length, 1]);
     let first = list_first(filtered);
