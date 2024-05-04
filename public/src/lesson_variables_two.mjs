@@ -73,8 +73,9 @@ export function lesson_variables_two() {
         let b = integer_random_digit_single_positive();
         let name_a = app_learn_code_random_identifier();
         let name_b = app_learn_code_unique(app_learn_code_random_identifier, [name_a]);
-        return `${js_code_statement_let_assign(name, value)}
-${app_learn_code_log_add(a, b)}`;
+        return `${js_code_statement_let_assign(name_a, a)}
+${js_code_statement_let_assign(name_b, b)}
+${app_learn_code_log_add(name_a, name_b)}`;
     }, example_before, description, example_message, [screen1]);
     function example_before(parent) {
         html_p_text(parent, 'a program can have more than one variable');
