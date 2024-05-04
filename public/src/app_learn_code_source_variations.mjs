@@ -25,6 +25,7 @@ export function app_learn_code_source_variations(source) {
         return [s];
     }
     let count = Math.pow(2, length)
+    return count;
     assert(less_than_equal, [length, 1]);
     let first = list_first(filtered);
     object_property_swap(first, 'left', 'right');
