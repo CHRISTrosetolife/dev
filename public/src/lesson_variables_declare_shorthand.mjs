@@ -69,8 +69,8 @@ import {string_delimit} from "./string_delimit.mjs";
 import {js_code_statement_let} from "./js_code_statement_let.mjs";
 import {js_code_assign} from "./js_code_assign.mjs";
 export function lesson_variables_declare_shorthand() {
-    let description = 'three variables';
-    let example_message = string_combine('with ', description);
+    let description = 'declaring and assigning multiple variables in a single statement';
+    let example_message = description
     let count = 2;
     return lesson_simple(function () {
         let [a, b] = call_multiple(integer_random_digit_single_positive, count);
