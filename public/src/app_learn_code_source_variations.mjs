@@ -19,12 +19,7 @@ import {string_split} from "./string_split.mjs";
 import {list_get} from "./list_get.mjs";
 export function app_learn_code_source_variations(source) {
     let operators = ['+', '*', '===', '!=='];
-    let ast = js_parse(source);
-    let bes = js_node_type(ast, 'BinaryExpression');
-    let filtered = list_filter(bes, be => {
-        let {operator} = be;
-        return list_includes(operators, operator);
-    });
+    let { filtered, ast } = ast_filtered();
     let length = list_length(filtered);
     let s = js_unparse(ast);
     if (equal(length, 0)) {
@@ -50,4 +45,14 @@ export function app_learn_code_source_variations(source) {
     assert(less_than_equal, [length, 1]);
     let alternative = js_unparse(ast);
     return [s, alternative];
+
+    function ast_filtered() {
+        let ast = js_parse(source);
+        let bes = js_node_type(ast, 'BinaryExpression');
+        let filtered = list_filter(bes, be => {
+            let { operator } = be;
+            return list_includes(operators, operator);
+        });
+        return { filtered, ast };
+    }
 }
