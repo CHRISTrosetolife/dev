@@ -36,10 +36,10 @@ export function app_learn_code_source_variations(source) {
         let b_split = string_split_empty(base2);
         let b_split_length = list_length(b_split);
         for (let n of range(length)) {
+            let swap = false;
             if (less_than(n, b_split_length)) {
-                console.log(list_get(b_split, n));
-            } else {
-                console.log('here');
+                let b_split_n = list_get(b_split, n)
+                swap = equal(b_split_n, '0')
             }
         }
     }
