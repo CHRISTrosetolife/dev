@@ -20,18 +20,18 @@ import {list_get} from "./list_get.mjs";
 export function app_learn_code_source_variations(source) {
     let operators = ['+', '*', '===', '!=='];
     let { filtered, ast } = ast_filtered();
-    let length = list_length(filtered);
+    let filtered_length = list_length(filtered);
     let s = js_unparse(ast);
-    if (equal(length, 0)) {
+    if (equal(filtered_length, 0)) {
         return [s];
     }
-    let count = Math.pow(2, length);
+    let count = Math.pow(2, filtered_length);
     for (let i of range(count)) {
         let { filtered, ast } = ast_filtered();
         let base2 = number_string_to(i, 2);
         let b_split = string_split_empty(base2);
         let b_split_length = list_length(b_split);
-        for (let n of range(length)) {
+        for (let n of range(filtered_length)) {
             let swap = false;
             if (less_than(n, b_split_length)) {
                 let b_split_n = list_get(b_split, n)
@@ -43,7 +43,7 @@ export function app_learn_code_source_variations(source) {
             }
         }
     }
-    assert(less_than_equal, [length, 1]);
+    assert(less_than_equal, [filtered_length, 1]);
     let alternative = js_unparse(ast);
     return [s, alternative];
 
