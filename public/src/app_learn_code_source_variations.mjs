@@ -17,6 +17,8 @@ import {list_map} from "./list_map.mjs";
 import {range} from "./range.mjs";
 import {string_split} from "./string_split.mjs";
 import {list_get} from "./list_get.mjs";
+import { string_combine } from "./string_combine.mjs";
+import { string_length } from "./string_length.mjs";
 export function app_learn_code_source_variations(source) {
     let operators = ['+', '*', '===', '!=='];
     let { filtered, ast } = ast_filtered();
@@ -29,6 +31,9 @@ export function app_learn_code_source_variations(source) {
     for (let i of range(count)) {
         let { filtered, ast } = ast_filtered();
         let base2 = number_string_to(i, 2);
+        while(less_than(string_length(base2), filtered_length)) {
+            base2 = string_combine( "0" , base2);
+        }
         let b_split = string_split_empty(base2);
         let b_split_length = list_length(b_split);
         for (let n of range(filtered_length)) {
