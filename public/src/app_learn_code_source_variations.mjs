@@ -11,6 +11,7 @@ import {list_first} from "./list_first.mjs";
 import {list_includes} from "./list_includes.mjs";
 import {list_length} from "./list_length.mjs";
 import {list_map} from "./list_map.mjs";
+import { range } from "./range.mjs";
 export function app_learn_code_source_variations(source) {
     let ast = js_parse(source);
     let bes = js_node_type(ast, 'BinaryExpression');
@@ -25,7 +26,9 @@ export function app_learn_code_source_variations(source) {
         return [s];
     }
     let count = Math.pow(2, length)
-    return count;
+    for (let i of range(count)) {
+        
+    }
     assert(less_than_equal, [length, 1]);
     let first = list_first(filtered);
     object_property_swap(first, 'left', 'right');
