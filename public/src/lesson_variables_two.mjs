@@ -66,8 +66,8 @@ import {string_delimit} from "./string_delimit.mjs";
 import {js_code_statement_let} from "./js_code_statement_let.mjs";
 import {js_code_assign} from "./js_code_assign.mjs";
 export function lesson_variables_two() {
-    let example_message = 'two variables';
-    let description = example_message;
+    let example_message = 'with two variables';
+    let description = 'two variables';
     return lesson_simple(function () {
         let a = integer_random_digit_single_positive();
         let b = integer_random_digit_single_positive();
