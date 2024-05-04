@@ -75,9 +75,13 @@ ${js_code_statement_assign(name, value2)}
 ${app_learn_code_log(name)}`;
     }, example_before, description, example_message, [screen1]);
     function example_before(parent) {
-        'every time a variable is assigned , the value of the variable changes'
     }
     function screen1(parent) {
+        html_style_alternate_monospace(parent, [
+        'every time a variable is assigned a different value , the value of the variable changes']);
+        'console.log(variable_name); will output the most recent and last value of variable_name'
+        'if variable_name has had multiple assignments , console.log(variable_name); will not output the previous values of variable_name'
+    
         let name = app_learn_code_random_identifier();
         let value = app_learn_code_random_value();
         let value_string = string_delimit_if(value);
