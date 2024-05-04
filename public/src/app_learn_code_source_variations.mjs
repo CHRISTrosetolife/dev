@@ -54,6 +54,7 @@ export function app_learn_code_source_variations(source) {
         }
         js_visit_node(ast, 'BinaryExpression', v => {
             let {node} = v;
+            let {right} = node;
             let nt = js_node_types(node);
             console.log({
                 nt
