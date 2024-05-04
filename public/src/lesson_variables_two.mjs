@@ -82,6 +82,12 @@ ${app_learn_code_log_add(name_a, name_b)}`;
     }, example_before, description, example_message, []);
     function screen1(parent) {
         html_p_text(parent, 'a program can have more than one variable');
+        'where there is more than one variable is declared at once , the variables will be ordered alphabetically'
+        'for example in the alphabet , A comes before B'
+        'therefore varable a will come before variable b , like this :'
+
+        'b will not come before a'
+        'it will not be like this :'
     }
     function example_before(parent) {
     }
