@@ -79,7 +79,7 @@ ${app_learn_code_log(name)}`;
         html_style_alternate_monospace(parent, [
             'remember the code to tell javascript about a variable named ',name,' :']);
         js_code_statement_let(name);
-        'this is called declaring a variable';
+        html_p_text('this is called declaring a variable');
         html_hr(parent);
         'remember the code to give name a value of value :';
         js_code_assign(name, value);
