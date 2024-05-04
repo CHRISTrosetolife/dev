@@ -81,7 +81,8 @@ ${app_learn_code_log(name)}`;
         js_code_statement_let(name);
         html_p_text('this is called declaring a variable');
         html_hr(parent);
-        'remember the code to give name a value of value :';
+        html_style_alternate_monospace(parent, [
+        'remember the code to give ',name,' a value of ',value,' :']);
         js_code_assign(name, value);
         'this is called assigning a variable a value';
         html_hr(parent);
