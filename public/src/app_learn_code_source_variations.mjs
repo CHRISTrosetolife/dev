@@ -1,3 +1,4 @@
+import {list_includes_not} from "./list_includes_not.mjs";
 import {list_remove} from "./list_remove.mjs";
 import {identity} from "./identity.mjs";
 import {list_sort_string} from "./list_sort_string.mjs";
@@ -26,8 +27,8 @@ import {string_combine} from "./string_combine.mjs";
 import {string_length} from "./string_length.mjs";
 import {list_add} from "./list_add.mjs";
 import {array_new} from "./array_new.mjs";
-import { list_empty_is } from "./list_empty_is.mjs";
-import { object_property_set } from "./object_property_set.mjs";
+import {list_empty_is} from "./list_empty_is.mjs";
+import {object_property_set} from "./object_property_set.mjs";
 export function app_learn_code_source_variations(source) {
     let operators = ['+', '*', '===', '!=='];
     let {filtered, ast} = ast_filtered();
@@ -37,54 +38,63 @@ export function app_learn_code_source_variations(source) {
         return [s];
     }
     let result = [s];
-    let count = Math.pow(2, filtered_length);
-    for (let i of range(count)) {
-        let {filtered, ast} = ast_filtered();
-        let base2 = number_string_to(i, 2);
-        while (less_than(string_length(base2), filtered_length)) {
-            base2 = string_combine("0", base2);
-        }
-        let b_split = string_split_empty(base2);
-        let b_split_length = list_length(b_split);
-        for (let n of range(filtered_length)) {
-            let swap = false;
-            if (less_than(n, b_split_length)) {
-                let b_split_n = list_get(b_split, n);
-                swap = equal(b_split_n, '0');
+    while (true) {
+        let changed = false;
+        let count = Math.pow(2, filtered_length);
+        for (let i of range(count)) {
+            let {filtered, ast} = ast_filtered();
+            let base2 = number_string_to(i, 2);
+            while (less_than(string_length(base2), filtered_length)) {
+                base2 = string_combine("0", base2);
             }
-            if (swap) {
-                let filtered_n = list_get(filtered, n);
-                object_property_swap(filtered_n, 'left', 'right');
-            }
-        }
-        js_visit_node(ast, 'BinaryExpression', v => {
-            let {node} = v;
-            let nt = js_node_types(node);
-            let valid = ['BinaryExpression', 'Identifier', 'Literal'];
-            for (let v of valid) {
-                if (list_includes(nt, v)) {
-                    list_remove(nt, v);
+            let b_split = string_split_empty(base2);
+            let b_split_length = list_length(b_split);
+            for (let n of range(filtered_length)) {
+                let swap = false;
+                if (less_than(n, b_split_length)) {
+                    let b_split_n = list_get(b_split, n);
+                    swap = equal(b_split_n, '0');
+                }
+                if (swap) {
+                    let filtered_n = list_get(filtered, n);
+                    object_property_swap(filtered_n, 'left', 'right');
                 }
             }
-            if (list_empty_is(nt)) {
-                let {right} = node;
-                let {type} = right;
-                if (equal(type, 'BinaryExpression')) {
-                    let {operator} = node;
-                    let {operator: operator_r} = right;
-                    if (equal(operator_r, operator)) {
-                        let {left} = node;
-                        let {left:left_r,right:right_r} = right;
-                        object_property_set(node, 'left', right);
-                        object_property_set(right, 'left', left);
-                        object_property_set(right, 'right', left_r);
-                        object_property_set(node, 'right', right_r);
+            js_visit_node(ast, 'BinaryExpression', v => {
+                let {node} = v;
+                let nt = js_node_types(node);
+                let valid = ['BinaryExpression', 'Identifier', 'Literal'];
+                for (let v of valid) {
+                    if (list_includes(nt, v)) {
+                        list_remove(nt, v);
                     }
                 }
+                if (list_empty_is(nt)) {
+                    let {right} = node;
+                    let {type} = right;
+                    if (equal(type, 'BinaryExpression')) {
+                        let {operator} = node;
+                        let {operator: operator_r} = right;
+                        if (equal(operator_r, operator)) {
+                            let {left} = node;
+                            let {left: left_r, right: right_r} = right;
+                            object_property_set(node, 'left', right);
+                            object_property_set(right, 'left', left);
+                            object_property_set(right, 'right', left_r);
+                            object_property_set(node, 'right', right_r);
+                        }
+                    }
+                }
+            });
+            let alternative = js_unparse(ast);
+            if (list_includes_not(result, alternative)) {
+                list_add(result, alternative);
+                changed = true;
             }
-        });
-        let alternative = js_unparse(ast);
-        list_add(result, alternative);
+        }
+        if (!changed) {
+            break;
+        }
     }
     return result;
     function ast_filtered() {
