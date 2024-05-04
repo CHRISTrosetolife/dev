@@ -79,16 +79,9 @@ ${app_learn_code_log(name)}`;
     function screen1(parent) {
         html_style_alternate_monospace(parent, [
         'every time a variable is assigned a different value , the value of the variable changes']);
-        'console.log(variable_name); will output the most recent and last value of variable_name'
-        'if variable_name has had multiple assignments , console.log(variable_name); will not output the previous values of variable_name'
-    
-        let name = app_learn_code_random_identifier();
-        let value = app_learn_code_random_value();
-        let value_string = string_delimit_if(value);
-        value_string = string_to(value);
-        html_style_alternate_monospace(parent, ['here is code that will set the value of a variable named ', name, ' to a value of ', value, ' :']);
-        app_learn_code_code_part_contrast(parent, js_code_statement_assign(name, value));
-        html_style_alternate_monospace(parent, ['if ', name, ' already has a value , and ', name, ' does not already have a value of ', value, ' , then the value of ', name, ' will be changed to ', value]);
-        html_style_alternate_monospace(parent, ['', '=', ' can be used to change the value of a variable']);
+        html_style_alternate_monospace(parent, 
+        ['','console.log(variable_name);',' will output the most recent and last value of ','variable_name']);
+        html_style_alternate_monospace(parent,
+        ['if ','variable_name',' has had multiple assignments , ','console.log(variable_name);',' will not output the previous values of ','variable_name']);
     }
 }
