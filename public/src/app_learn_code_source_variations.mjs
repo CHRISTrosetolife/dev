@@ -1,3 +1,4 @@
+import {number_string_to} from "./number_string_to.mjs";
 import {less_than_equal} from "./less_than_equal.mjs";
 import {list_filter} from "./list_filter.mjs";
 import {js_unparse} from "./js_unparse.mjs";
@@ -11,11 +12,11 @@ import {list_first} from "./list_first.mjs";
 import {list_includes} from "./list_includes.mjs";
 import {list_length} from "./list_length.mjs";
 import {list_map} from "./list_map.mjs";
-import { range } from "./range.mjs";
+import {range} from "./range.mjs";
 export function app_learn_code_source_variations(source) {
     let ast = js_parse(source);
     let bes = js_node_type(ast, 'BinaryExpression');
-    let operators = ['+','*','===','!=='];
+    let operators = ['+', '*', '===', '!=='];
     let filtered = list_filter(bes, be => {
         let {operator} = be;
         return list_includes(operators, operator);
@@ -25,9 +26,9 @@ export function app_learn_code_source_variations(source) {
     if (equal(length, 0)) {
         return [s];
     }
-    let count = Math.pow(2, length)
+    let count = Math.pow(2, length);
     for (let i of range(count)) {
-        let base2 = i.toString(2);
+        let base2 = number_string_to(i, 2);
     }
     assert(less_than_equal, [length, 1]);
     let first = list_first(filtered);
