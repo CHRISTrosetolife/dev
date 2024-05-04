@@ -79,10 +79,14 @@ ${app_learn_code_log(name)}`;
     function example_before(parent) {}
     function screen1(parent) {
         let name = app_learn_code_random_identifier();
+        let value = app_learn_code_random_value();
         'remember the code to tell javascript about a variable named name :'
         js_code_statement_let(name)
         'this is called declaring a variable'
-        let value = app_learn_code_random_value();
+        html_hr(parent);
+        'remember the code to give name a value of value'
+    }
+    function screen1(parent) {
         let value_string = string_delimit_if(value);
         value_string = string_to(value);
         html_style_alternate_monospace(parent, ['here is code that will set the value of a variable named ', name, ' to a value of ', value, ' :']);
