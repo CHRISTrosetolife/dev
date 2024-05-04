@@ -1,3 +1,4 @@
+import {js_node_types} from "./js_node_types.mjs";
 import {js_visit_node} from "./js_visit_node.mjs";
 import {less_than} from "./less_than.mjs";
 import {string_split_empty} from "./string_split_empty.mjs";
@@ -52,8 +53,10 @@ export function app_learn_code_source_variations(source) {
             }
         }
         js_visit_node(ast, 'BinaryExpression', v => {
+            let {node} = v;
+            let nt = js_node_types(node);
             console.log({
-                v
+                nt
             });
         });
         let alternative = js_unparse(ast);
