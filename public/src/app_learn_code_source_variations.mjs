@@ -65,7 +65,7 @@ export function app_learn_code_source_variations(source) {
                 if (equal(operator_r, operator)) {}
             }
             let nt = js_node_types(node);
-            let valid = ['BinaryExpression', 'Identifier'];
+            let valid = ['BinaryExpression', 'Identifier', 'Literal'];
             for (let v of valid) {
                 if (list_includes(nt, v)) {
                     list_remove(nt, v);
