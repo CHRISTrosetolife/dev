@@ -78,7 +78,7 @@ ${app_learn_code_log(name)}`;
         value_string = string_to(value);
         html_style_alternate_monospace(parent, [
             'remember the code to tell javascript about a variable named ',name,' :']);
-            app_learn_code_code_part_contrast(parent, js_code_statement_let(name));
+        app_learn_code_code_part_contrast(parent, js_code_statement_let(name));
         html_p_text('this is called declaring a variable');
         html_hr(parent);
         html_style_alternate_monospace(parent, [
