@@ -84,7 +84,7 @@ ${app_learn_code_log(name)}`;
         html_hr(parent);
         html_style_alternate_monospace(parent, ['remember the code to give ', name, ' a value of ', value, ' :']);
         app_learn_code_code_part_contrast(parent, js_code_assign(name, value));
-        html_style_alternate_bold(parent, 'this is called assigning a variable a value');
+        html_style_alternate_bold(parent, 'this is called ','assigning',' a variable a value');
         html_hr(parent);
         'in javascript it is possible to declare and assign a variable in a single statement , like this :';
         app_learn_code_code_part_contrast(parent, js_code_statement_let_assign(name, value));
