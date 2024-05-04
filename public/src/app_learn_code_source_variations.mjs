@@ -38,7 +38,7 @@ export function app_learn_code_source_variations(source) {
                 swap = equal(b_split_n, '0')
             }
             if (swap) {
-                let first = list_first(filtered);
+                let first = list_get(filtered, n);
                 object_property_swap(first, 'left', 'right');
             }
         }
