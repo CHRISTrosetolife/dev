@@ -1,3 +1,4 @@
+import {js_code_statement_let_assign_multiple} from "./js_code_statement_let_assign_multiple.mjs";
 import {js_code_statement_let_assign_2} from "./js_code_statement_let_assign_2.mjs";
 import {app_learn_code_unique_multiple} from "./app_learn_code_unique_multiple.mjs";
 import {call_multiple} from "./call_multiple.mjs";
@@ -70,12 +71,12 @@ import {js_code_statement_let} from "./js_code_statement_let.mjs";
 import {js_code_assign} from "./js_code_assign.mjs";
 export function lesson_variables_declare_shorthand() {
     let description = 'declaring and assigning multiple variables in a single statement';
-    let example_message = description
+    let example_message = description;
     let count = 2;
     return lesson_simple(function () {
-        let [a, b] = call_multiple(integer_random_digit_single_positive, count);
-        let [name_a, name_b] = app_learn_code_unique_multiple(app_learn_code_random_identifier, count);
-        return `${js_code_statement_let_assign_2(name_a, a, name_b, b)}
+        let values = call_multiple(integer_random_digit_single_positive, count);
+        let names = app_learn_code_unique_multiple(app_learn_code_random_identifier, count);
+        return `${js_code_statement_let_assign_multiple(names, values)}
 ${app_learn_code_log_add(name_a, name_b)}`;
     }, example_before, description, example_message, [screen1]);
     function screen1(parent) {
@@ -84,8 +85,8 @@ ${app_learn_code_log_add(name_a, name_b)}`;
         html_p_text(parent, 'here is some code :');
         app_learn_code_code_part_contrast(parent, `${js_code_statement_let_assign(name_a, a)}
 ${js_code_statement_let_assign(name_b, b)}`);
-html_p_text(parent, 'that code can be shortened to the following :');
-        app_learn_code_code_part_contrast(parent, js_code_statement_let_assign_2(name_a, a, name_b, b))
+        html_p_text(parent, 'that code can be shortened to the following :');
+        app_learn_code_code_part_contrast(parent, js_code_statement_let_assign_2(name_a, a, name_b, b));
     }
     function example_before(parent) {}
 }
