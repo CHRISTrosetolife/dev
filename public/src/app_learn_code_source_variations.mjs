@@ -19,13 +19,15 @@ import {string_split} from "./string_split.mjs";
 import {list_get} from "./list_get.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { string_length } from "./string_length.mjs";
+import { list_add } from "./list_add.mjs";
 export function app_learn_code_source_variations(source) {
     let operators = ['+', '*', '===', '!=='];
     let { filtered, ast } = ast_filtered();
     let filtered_length = list_length(filtered);
     let s = js_unparse(ast);
+    const result = [s];
     if (equal(filtered_length, 0)) {
-        return [s];
+        return result;
     }
     let count = Math.pow(2, filtered_length);
     for (let i of range(count)) {
@@ -47,10 +49,10 @@ export function app_learn_code_source_variations(source) {
                 object_property_swap(filtered_n, 'left', 'right');
             }
         }
+        let alternative = js_unparse(ast);
+        list_add(result, alternative)
     }
-    assert(less_than_equal, [filtered_length, 1]);
-    let alternative = js_unparse(ast);
-    return [s, alternative];
+    return result;
 
     function ast_filtered() {
         let ast = js_parse(source);
