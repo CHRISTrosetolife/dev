@@ -323,7 +323,7 @@ export async function app_memorize() {
             }
             for (let errored_key of errored_keys) {
                 html_style(errored_key, html_style_button_default());
-                button_stylize(b, button_height);
+                button_stylize(errored_key, button_height);
             }
         } else {
             mistakes = true;
