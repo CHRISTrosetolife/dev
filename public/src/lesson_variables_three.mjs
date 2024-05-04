@@ -74,11 +74,7 @@ export function lesson_variables_three() {
         let [a, b, c] = call_multiple(integer_random_digit_single_positive, 3);
         let count = 3;
         let value_get = app_learn_code_random_identifier;
-        let names = array_new();
-        for (let i of range(count)) {
-            let name = app_learn_code_unique(value_get, names);
-            list_add(names, name);
-        }
+        let names = app_learn_code_unique_multiple(value_get, count);
         let [name_a, name_b, name_c] = names
         return `${js_code_statement_let_assign(name_a, a)}
 ${js_code_statement_let_assign(name_b, b)}
@@ -88,3 +84,12 @@ ${app_learn_code_log_add(name_a, name_b)}`;
         html_p_text(parent, 'a program can have more than one variable');
     }
 }
+function app_learn_code_unique_multiple(value_get, count) {
+    let names = array_new();
+    for (let i of range(count)) {
+        let name = app_learn_code_unique(value_get, names);
+        list_add(names, name);
+    }
+    return names;
+}
+
