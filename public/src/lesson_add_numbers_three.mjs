@@ -1,3 +1,4 @@
+import {call_multiple} from "./call_multiple.mjs";
 import {app_learn_code_log_add_3} from "./app_learn_code_log_add_3.mjs";
 import {js_code_add_3} from "./js_code_add_3.mjs";
 import {js_code_add} from "./js_code_add.mjs";
@@ -72,9 +73,7 @@ export function lesson_add_numbers_three() {
     let example_message = 'adding three numbers';
     let description = example_message;
     return lesson_simple(function () {
-        let a = integer_random_digit_single_positive();
-        let b = integer_random_digit_single_positive();
-        let c = integer_random_digit_single_positive();
+        let [a, b, c] = call_multiple(integer_random_digit_single_positive, 3);
         return app_learn_code_log_add_3(a, b, c);
     }, example_before, description, example_message, []);
     function example_before(parent) {
