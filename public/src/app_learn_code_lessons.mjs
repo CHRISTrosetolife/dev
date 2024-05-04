@@ -50,8 +50,8 @@ export function app_learn_code_lessons() {
     list_add(lesson_creates, lesson_variable_shorthand);
     list_add(lesson_creates, lesson_variable_change_2);
     list_add(lesson_creates, lesson_variables_two);
+    list_add(lesson_creates, lesson_variables_declare_shorthand);
     list_add(lesson_creates, lesson_add_numbers_three);
     list_add(lesson_creates, lesson_variables_three);
-    list_add(lesson_creates, lesson_variables_declare_shorthand);
     return lesson_creates;
 }
