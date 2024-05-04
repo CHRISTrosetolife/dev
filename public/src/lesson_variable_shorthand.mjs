@@ -58,6 +58,7 @@ import {html_hr} from "./html_hr.mjs";
 import {range} from "./range.mjs";
 import {string_combine} from "./string_combine.mjs";
 import {string_delimit} from "./string_delimit.mjs";
+import { js_code_statement_let } from "./js_code_statement_let.mjs";
 export function lesson_variable_shorthand() {
     let example_message = 'declaring and assigning a variable';
     let description = example_message;
@@ -77,8 +78,9 @@ ${app_learn_code_log(name)}`;
     }, example_before, description, example_message, [screen1]);
     function example_before(parent) {}
     function screen1(parent) {
-        'remember the code to tell javascript about a variable :'
         let name = app_learn_code_random_identifier();
+        'remember the code to tell javascript about a variable named name :'
+        js_code_statement_let(name)
         let value = app_learn_code_random_value();
         let value_string = string_delimit_if(value);
         value_string = string_to(value);
