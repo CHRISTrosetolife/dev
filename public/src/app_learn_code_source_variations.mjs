@@ -14,6 +14,7 @@ import {list_length} from "./list_length.mjs";
 import {list_map} from "./list_map.mjs";
 import {range} from "./range.mjs";
 import { string_split } from "./string_split.mjs";
+import { list_get } from "./list_get.mjs";
 export function app_learn_code_source_variations(source) {
     let ast = js_parse(source);
     let bes = js_node_type(ast, 'BinaryExpression');
@@ -32,7 +33,11 @@ export function app_learn_code_source_variations(source) {
         let base2 = number_string_to(i, 2);
         let b_split = string_split_empty(base2)
         for (let n of range(length)) {
-            if (list_length())
+            if (less_than_equal(n, list_length(b_split))) {
+                console.log(list_get(b_split, n))
+            } else {
+                console.log('here')
+            }
         }
     }
     assert(less_than_equal, [length, 1]);
