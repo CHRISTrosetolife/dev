@@ -81,11 +81,11 @@ ${app_learn_code_log_add(name_a, name_b)}`;
     function screen1(parent) {
         let [a, b] = call_multiple(integer_random_digit_single_positive, count);
         let [name_a, name_b] = app_learn_code_unique_multiple(app_learn_code_random_identifier, count);
-        'here is some code :';
-        `${js_code_statement_let_assign(name_a, a)}
-${js_code_statement_let_assign(name_b, b)}`;
-        'that code can be shortened to the following :';
-        js_code_statement_let_assign_2(name_a, a, name_b, b)
+        html_p_text('here is some code :');
+        app_learn_code_code_part_contrast(parent, `${js_code_statement_let_assign(name_a, a)}
+${js_code_statement_let_assign(name_b, b)}`);
+html_p_text('that code can be shortened to the following :');
+        app_learn_code_code_part_contrast(parent, js_code_statement_let_assign_2(name_a, a, name_b, b))
     }
     function example_before(parent) {}
 }
