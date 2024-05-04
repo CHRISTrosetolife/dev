@@ -78,16 +78,16 @@ ${app_learn_code_log(name)}`;
         value_string = string_to(value);
         html_style_alternate_monospace(parent, [
             'remember the code to tell javascript about a variable named ',name,' :']);
-        js_code_statement_let(name);
+            app_learn_code_code_part_contrast(parent, js_code_statement_let(name));
         html_p_text('this is called declaring a variable');
         html_hr(parent);
         html_style_alternate_monospace(parent, [
         'remember the code to give ',name,' a value of ',value,' :']);
-        js_code_assign(name, value);
+        app_learn_code_code_part_contrast(parent, js_code_assign(name, value));
         'this is called assigning a variable a value';
         html_hr(parent);
         'in javascript it is possible to declare and assign a variable in a single statement , like this :';
-        js_code_statement_let_assign(name, value);
+        app_learn_code_code_part_contrast(parent, js_code_statement_let_assign(name, value));
     }
     function screen2(parent) {
         html_style_alternate_monospace(parent, ['here is code that will set the value of a variable named ', name, ' to a value of ', value, ' :']);
