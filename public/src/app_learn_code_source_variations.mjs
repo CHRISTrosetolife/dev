@@ -72,7 +72,7 @@ export function app_learn_code_source_variations(source) {
                     let {operator} = node;
                     let {operator: operator_r} = right;
                     if (equal(operator_r, operator)) {
-                        
+                        let {left} = node;
                     }
                 }
             }
