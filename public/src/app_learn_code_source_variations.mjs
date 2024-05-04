@@ -18,9 +18,9 @@ import {range} from "./range.mjs";
 import {string_split} from "./string_split.mjs";
 import {list_get} from "./list_get.mjs";
 export function app_learn_code_source_variations(source) {
+    let operators = ['+', '*', '===', '!=='];
     let ast = js_parse(source);
     let bes = js_node_type(ast, 'BinaryExpression');
-    let operators = ['+', '*', '===', '!=='];
     let filtered = list_filter(bes, be => {
         let {operator} = be;
         return list_includes(operators, operator);
