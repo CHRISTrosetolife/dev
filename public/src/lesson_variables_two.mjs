@@ -1,3 +1,5 @@
+import {app_learn_code_log_add} from "./app_learn_code_log_add.mjs";
+import {integer_random_digit_single_positive} from "./integer_random_digit_single_positive.mjs";
 import {html_style_alternate_bold} from "./html_style_alternate_bold.mjs";
 import {js_code_statement_let_assign} from "./js_code_statement_let_assign.mjs";
 import {equal_not} from "./equal_not.mjs";
@@ -68,13 +70,13 @@ export function lesson_variables_two() {
     return lesson_simple(function () {
         let a = integer_random_digit_single_positive();
         let b = integer_random_digit_single_positive();
-        let name = app_learn_code_random_identifier();
-        let value = app_learn_code_random_value();
+        let name_a = app_learn_code_random_identifier();
+        let name_b = app_learn_code_unique(app_learn_code_random_identifier, [name_a]);
         return `${js_code_statement_let_assign(name, value)}
 ${app_learn_code_log_add(a, b)}`;
     }, example_before, description, example_message, [screen1]);
     function example_before(parent) {
-        html_p_text(parent, 'a program can have more than one variable')
+        html_p_text(parent, 'a program can have more than one variable');
     }
     function screen1(parent) {
         let name = app_learn_code_random_identifier();
