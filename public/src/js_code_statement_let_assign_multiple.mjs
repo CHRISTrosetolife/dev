@@ -9,5 +9,6 @@ export function js_code_statement_let_assign_multiple(names, values) {
     let length_n = list_length(names);
     let length_v = list_length(values);
     assert(equal, [length_n, length_v])
-    return js_code_statement_let(list_join([js_code_assign(name_a, a), js_code_assign(name_b, b)], ', '));
+    let list = [js_code_assign(name_a, a), js_code_assign(name_b, b)];
+    return js_code_statement_let(list_join(list, ', '));
 }
