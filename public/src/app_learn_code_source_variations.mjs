@@ -32,8 +32,9 @@ export function app_learn_code_source_variations(source) {
     for (let i of range(count)) {
         let base2 = number_string_to(i, 2);
         let b_split = string_split_empty(base2)
+        let b_split_length = list_length(b_split);
         for (let n of range(length)) {
-            if (less_than_equal(n, list_length(b_split))) {
+            if (less_than(n, b_split_length)) {
                 console.log(list_get(b_split, n))
             } else {
                 console.log('here')
