@@ -67,15 +67,7 @@ export function lesson_variable_shorthand() {
     return lesson_simple(function () {
         let name = app_learn_code_random_identifier();
         let value = app_learn_code_random_value();
-        let value2;
-        for (let i of app_learn_code_range_retry()) {
-            value2 = app_learn_code_random_value();
-            if (equal_not(value, value2)) {
-                break;
-            }
-        }
-        return `${lesson_variable_code_get(name, value)}
-${js_code_statement_assign(name, value2)}
+        return `${js_code_statement_let_assign(name, value)}
 ${app_learn_code_log(name)}`;
     }, example_before, description, example_message, [screen1]);
     function example_before(parent) {}
