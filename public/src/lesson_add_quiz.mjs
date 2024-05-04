@@ -6,5 +6,5 @@ import {integer_random} from "./integer_random.mjs";
 export function lesson_add_quiz() {
     let a = integer_random_digit_single_positive();
     let b = integer_random_digit_single_positive();
-    return `console.log(${a} + ${b});`;
+    return app_learn_code_log(`${a} + ${b}`);
 }
