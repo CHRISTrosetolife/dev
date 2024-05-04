@@ -69,13 +69,7 @@ export function lesson_variable_change() {
         let value = app_learn_code_random_value();
         let existing = [value];
         let value_get = app_learn_code_random_value
-        let value2;
-        for (let i of app_learn_code_range_retry()) {
-            value2 = value_get();
-            if (list_includes_not(existing, value2)) {
-                break;
-            }
-        }
+        let value2 = app_learn_code_unique(value_get, existing);
         return `${lesson_variable_code_get(name, value)}
 ${js_code_statement_assign(name, value2)}
 ${app_learn_code_log(name)}`;
@@ -92,3 +86,14 @@ ${app_learn_code_log(name)}`;
         html_style_alternate_monospace(parent, ['', '=', ' can be used to change the value of a variable']);
     }
 }
+function app_learn_code_unique(value_get, existing) {
+    let value2;
+    for (let i of app_learn_code_range_retry()) {
+        value2 = value_get();
+        if (list_includes_not(existing, value2)) {
+            break;
+        }
+    }
+    return value2;
+}
+
