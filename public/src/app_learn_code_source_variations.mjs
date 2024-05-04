@@ -26,6 +26,7 @@ import {string_combine} from "./string_combine.mjs";
 import {string_length} from "./string_length.mjs";
 import {list_add} from "./list_add.mjs";
 import {array_new} from "./array_new.mjs";
+import { list_empty_is } from "./list_empty_is.mjs";
 export function app_learn_code_source_variations(source) {
     let operators = ['+', '*', '===', '!=='];
     let {filtered, ast} = ast_filtered();
@@ -56,19 +57,21 @@ export function app_learn_code_source_variations(source) {
             }
         }
         js_visit_node(ast, 'BinaryExpression', v => {
-            let {node} = v;
-            let {right} = node;
-            let {type} = right;
-            if (equal(type, 'BinaryExpression')) {
-                let {operator} = node;
-                let {operator: operator_r} = right;
-                if (equal(operator_r, operator)) {}
-            }
             let nt = js_node_types(node);
             let valid = ['BinaryExpression', 'Identifier', 'Literal'];
             for (let v of valid) {
                 if (list_includes(nt, v)) {
                     list_remove(nt, v);
+                }
+            }
+            if (list_empty_is(nt)) {
+                let {node} = v;
+                let {right} = node;
+                let {type} = right;
+                if (equal(type, 'BinaryExpression')) {
+                    let {operator} = node;
+                    let {operator: operator_r} = right;
+                    if (equal(operator_r, operator)) {}
                 }
             }
             console.log({
