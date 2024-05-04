@@ -87,6 +87,7 @@ ${app_learn_code_log(name)}`;
         html_hr(parent);
         'remember the code to give name a value of value :'
         js_code_assign(name, value)
+        'this is called assigning a variable a value'
     }
     function screen1(parent) {
         let value_string = string_delimit_if(value);
