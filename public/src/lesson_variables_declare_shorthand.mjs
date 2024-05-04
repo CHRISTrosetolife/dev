@@ -77,12 +77,10 @@ export function lesson_variables_declare_shorthand() {
         return `${js_code_statement_let(list_join_comma(js_code_assign(name_a, a),js_code_assign(name_b, b)))}
 ${app_learn_code_log_add(name_a, name_b)}`;
     }, example_before, description, example_message, [screen1]);
-    function screen1() {
-        
-    }
-    function example_before(parent) {
+    function screen1(parent) {
         'here is some code :'
         'that code can be shortened to the following :'
-        html_p_text(parent, 'a program can have more than one variable');
+    }
+    function example_before(parent) {
     }
 }
