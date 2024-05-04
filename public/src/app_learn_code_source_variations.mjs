@@ -1,3 +1,4 @@
+import {identity} from "./identity.mjs";
 import {list_sort_string} from "./list_sort_string.mjs";
 import {js_node_types} from "./js_node_types.mjs";
 import {js_visit_node} from "./js_visit_node.mjs";
@@ -63,7 +64,7 @@ export function app_learn_code_source_variations(source) {
                 if (equal(operator_r, operator)) {}
             }
             let nt = js_node_types(node);
-            list_sort_string(nt);
+            list_sort_string(nt, identity);
             console.log({
                 nt
             });
