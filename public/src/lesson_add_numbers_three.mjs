@@ -72,7 +72,7 @@ export function lesson_add_numbers_three() {
         let a = integer_random_digit_single_positive();
         let b = integer_random_digit_single_positive();
         let c = integer_random_digit_single_positive();
-        return app_learn_code_log(js_code_add(a, b));
+        return app_learn_code_log(js_code_add(js_code_add(a, b), c));
     }, example_before, description, example_message, []);
     function example_before(parent) {
         html_p_text(parent, 'a program can have more than one variable');
