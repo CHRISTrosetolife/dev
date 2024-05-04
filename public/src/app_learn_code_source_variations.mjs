@@ -1,3 +1,4 @@
+import {list_remove} from "./list_remove.mjs";
 import {identity} from "./identity.mjs";
 import {list_sort_string} from "./list_sort_string.mjs";
 import {js_node_types} from "./js_node_types.mjs";
@@ -64,7 +65,12 @@ export function app_learn_code_source_variations(source) {
                 if (equal(operator_r, operator)) {}
             }
             let nt = js_node_types(node);
-            list_sort_string(nt, identity);
+            let valid = ['BinaryExpression', 'Identifier'];
+            for (let v of valid) {
+                if (list_includes(nt, v)) {
+                    list_remove(nt, v);
+                }
+            }
             console.log({
                 nt
             });
