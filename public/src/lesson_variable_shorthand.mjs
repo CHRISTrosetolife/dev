@@ -89,7 +89,7 @@ ${app_learn_code_log(name)}`;
         js_code_assign(name, value)
         'this is called assigning a variable a value'
     }
-    function screen1(parent) {
+    function screen2(parent) {
         let value_string = string_delimit_if(value);
         value_string = string_to(value);
         html_style_alternate_monospace(parent, ['here is code that will set the value of a variable named ', name, ' to a value of ', value, ' :']);
