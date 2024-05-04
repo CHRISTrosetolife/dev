@@ -13,6 +13,7 @@ import {list_includes} from "./list_includes.mjs";
 import {list_length} from "./list_length.mjs";
 import {list_map} from "./list_map.mjs";
 import {range} from "./range.mjs";
+import { string_split } from "./string_split.mjs";
 export function app_learn_code_source_variations(source) {
     let ast = js_parse(source);
     let bes = js_node_type(ast, 'BinaryExpression');
@@ -29,8 +30,9 @@ export function app_learn_code_source_variations(source) {
     let count = Math.pow(2, length);
     for (let i of range(count)) {
         let base2 = number_string_to(i, 2);
+        let b_split = string_split_empty(base2)
         for (let n of range(length)) {
-            
+            if (list_length())
         }
     }
     assert(less_than_equal, [length, 1]);
@@ -39,3 +41,7 @@ export function app_learn_code_source_variations(source) {
     let alternative = js_unparse(ast);
     return [s, alternative];
 }
+function string_split_empty(base2) {
+    return string_split(base2, '');
+}
+
