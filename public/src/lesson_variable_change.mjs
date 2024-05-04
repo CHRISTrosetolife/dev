@@ -68,8 +68,7 @@ export function lesson_variable_change() {
         let name = app_learn_code_random_identifier();
         let value = app_learn_code_random_value();
         let existing = [value];
-        let value_get = app_learn_code_random_value
-        let value2 = app_learn_code_unique(value_get, existing);
+        let value2 = app_learn_code_unique(app_learn_code_random_value, existing);
         return `${lesson_variable_code_get(name, value)}
 ${js_code_statement_assign(name, value2)}
 ${app_learn_code_log(name)}`;
