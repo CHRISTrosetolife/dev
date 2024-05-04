@@ -41,11 +41,14 @@ export function app_learn_code_source_variations(source) {
                 let b_split_n = list_get(b_split, n)
                 swap = equal(b_split_n, '0')
             }
+            if (swap) {
+                
+            }
+            let first = list_first(filtered);
+            object_property_swap(first, 'left', 'right');
         }
     }
     assert(less_than_equal, [length, 1]);
-    let first = list_first(filtered);
-    object_property_swap(first, 'left', 'right');
     let alternative = js_unparse(ast);
     return [s, alternative];
 }
