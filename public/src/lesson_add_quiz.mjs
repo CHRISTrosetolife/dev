@@ -1,3 +1,4 @@
+import {app_learn_code_log_add} from "./app_learn_code_log_add.mjs";
 import {js_code_add} from "./js_code_add.mjs";
 import {app_learn_code_log} from "./app_learn_code_log.mjs";
 import {integer_random_digit_single_positive} from "./integer_random_digit_single_positive.mjs";
@@ -8,5 +9,5 @@ import {integer_random} from "./integer_random.mjs";
 export function lesson_add_quiz() {
     let a = integer_random_digit_single_positive();
     let b = integer_random_digit_single_positive();
-    return app_learn_code_log(js_code_add(a, b));
+    return app_learn_code_log_add(a, b);
 }
