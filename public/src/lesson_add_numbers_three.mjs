@@ -65,12 +65,13 @@ import {string_combine} from "./string_combine.mjs";
 import {string_delimit} from "./string_delimit.mjs";
 import {js_code_statement_let} from "./js_code_statement_let.mjs";
 import {js_code_assign} from "./js_code_assign.mjs";
-export function lesson_variables_two() {
+export function lesson_add_numbers_three() {
     let example_message = 'with two variables';
     let description = 'two variables';
     return lesson_simple(function () {
         let a = integer_random_digit_single_positive();
         let b = integer_random_digit_single_positive();
+        let c = integer_random_digit_single_positive();
         let name_a = app_learn_code_random_identifier();
         let name_b = app_learn_code_unique(app_learn_code_random_identifier, [name_a]);
         return `${js_code_statement_let_assign(name_a, a)}
