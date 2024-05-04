@@ -83,6 +83,7 @@ ${app_learn_code_log_add(name_a, name_b)}`;
         let [name_a, name_b] = app_learn_code_unique_multiple(app_learn_code_random_identifier, count);
         'here is some code :';
         'that code can be shortened to the following :';
+        js_code_statement_let_assign_2(name_a, a, name_b, b)
     }
     function example_before(parent) {}
 }
