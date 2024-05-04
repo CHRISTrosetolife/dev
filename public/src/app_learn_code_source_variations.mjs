@@ -57,7 +57,11 @@ export function app_learn_code_source_variations(source) {
             let {right} = node;
             let {type} = right;
             if (equal(type, 'BinaryExpression')) {
-                
+                let {operator} = node;
+                let {operator: operator_r} = right;
+                if (equal(operator_r, operator)) {
+                    
+                }
             }
             let nt = js_node_types(node);
             console.log({
