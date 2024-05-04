@@ -8,7 +8,8 @@ export function app_learn_code_random_identifier() {
     'therefore setting to 1'
     let name = '';
     for (let i of range(count)) {
-        name = string_combine(name, string_random_letter());
+        const l = string_random_letter();
+        name = string_combine(name, l);
     }
     return name;
 }
