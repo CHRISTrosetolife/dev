@@ -86,7 +86,7 @@ ${app_learn_code_log_add(name_a, name_b)}`;
         app_learn_code_code_part_contrast(parent, `${js_code_statement_let_assign(name_a, a)}
 ${js_code_statement_let_assign(name_b, b)}`);
         html_p_text(parent, 'that code can be shortened to the following :');
-        app_learn_code_code_part_contrast(parent, js_code_statement_let_assign_2(name_a, a, name_b, b));
+        app_learn_code_code_part_contrast(parent, js_code_statement_let_assign_multiple(names, values));
     }
     function example_before(parent) {}
 }
