@@ -49,6 +49,7 @@ export function app_learn_code_source_variations(source) {
                 object_property_swap(filtered_n, 'left', 'right');
             }
         }
+        js_visit_node(ast, 'BinaryExpression', )
         let alternative = js_unparse(ast);
         list_add(result, alternative)
     }
