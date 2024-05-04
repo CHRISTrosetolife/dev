@@ -1,3 +1,4 @@
+import {js_code_statement_let_assign} from "./js_code_statement_let_assign.mjs";
 import {app_learn_code_unique} from "./app_learn_code_unique.mjs";
 import {list_includes_not} from "./list_includes_not.mjs";
 import {equal_not} from "./equal_not.mjs";
@@ -62,14 +63,14 @@ import {string_combine} from "./string_combine.mjs";
 import {string_delimit} from "./string_delimit.mjs";
 import {list_includes} from "./list_includes.mjs";
 import {assert} from "./assert.mjs";
-export function lesson_variable_change() {
+export function lesson_variable_change_2() {
     let example_message = 'changing a variable and logging to the console before and after the change';
     let description = example_message;
     return lesson_simple(function () {
         let name = app_learn_code_random_identifier();
         let value = app_learn_code_random_value();
         let value2 = app_learn_code_unique(app_learn_code_random_value, [value]);
-        return `${lesson_variable_code_get(name, value)}
+        return `${js_code_statement_let_assign(name, value)}
 ${js_code_statement_assign(name, value2)}
 ${app_learn_code_log(name)}`;
     }, example_before, description, example_message, [screen1]);
