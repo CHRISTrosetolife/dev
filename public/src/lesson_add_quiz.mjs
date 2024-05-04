@@ -1,3 +1,4 @@
+import {app_learn_code_log} from "./app_learn_code_log.mjs";
 import {integer_random_digit_single_positive} from "./integer_random_digit_single_positive.mjs";
 import {integer_random_digit_single} from "./integer_random_digit_single.mjs";
 import {list_random_item} from "./list_random_item.mjs";
