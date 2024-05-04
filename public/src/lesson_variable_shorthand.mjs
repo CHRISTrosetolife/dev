@@ -1,3 +1,4 @@
+import {js_code_statement_let_assign} from "./js_code_statement_let_assign.mjs";
 import {equal_not} from "./equal_not.mjs";
 import {app_learn_code_range_retry} from "./app_learn_code_range_retry.mjs";
 import {string_delimit_if} from "./string_delimit_if.mjs";
@@ -58,8 +59,8 @@ import {html_hr} from "./html_hr.mjs";
 import {range} from "./range.mjs";
 import {string_combine} from "./string_combine.mjs";
 import {string_delimit} from "./string_delimit.mjs";
-import { js_code_statement_let } from "./js_code_statement_let.mjs";
-import { js_code_assign } from "./js_code_assign.mjs";
+import {js_code_statement_let} from "./js_code_statement_let.mjs";
+import {js_code_assign} from "./js_code_assign.mjs";
 export function lesson_variable_shorthand() {
     let example_message = 'declaring and assigning a variable in a single statement';
     let description = example_message;
@@ -83,16 +84,16 @@ ${app_learn_code_log(name)}`;
         let value = app_learn_code_random_value();
         let value_string = string_delimit_if(value);
         value_string = string_to(value);
-        'remember the code to tell javascript about a variable named name :'
-        js_code_statement_let(name)
-        'this is called declaring a variable'
+        'remember the code to tell javascript about a variable named name :';
+        js_code_statement_let(name);
+        'this is called declaring a variable';
         html_hr(parent);
-        'remember the code to give name a value of value :'
-        js_code_assign(name, value)
-        'this is called assigning a variable a value'
-        html_hr(parent)
-        'in javascript it is possible to declare and assign a variable in a single statement , like this :'
-        js_code_statement_let(js_code_assign(name, value))
+        'remember the code to give name a value of value :';
+        js_code_assign(name, value);
+        'this is called assigning a variable a value';
+        html_hr(parent);
+        'in javascript it is possible to declare and assign a variable in a single statement , like this :';
+        js_code_statement_let_assign(name, value);
     }
     function screen2(parent) {
         html_style_alternate_monospace(parent, ['here is code that will set the value of a variable named ', name, ' to a value of ', value, ' :']);
