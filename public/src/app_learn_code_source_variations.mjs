@@ -36,7 +36,7 @@ export function app_learn_code_source_variations(source) {
     if (equal(filtered_length, 0)) {
         return [s];
     }
-    let result = array_new();
+    let result = [s];
     let count = Math.pow(2, filtered_length);
     for (let i of range(count)) {
         let {filtered, ast} = ast_filtered();
