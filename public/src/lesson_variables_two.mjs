@@ -81,13 +81,18 @@ ${js_code_statement_let_assign(name_b, b)}
 ${app_learn_code_log_add(name_a, name_b)}`;
     }, example_before, description, example_message, []);
     function screen1(parent) {
+        let a = 'a';
+        let b = 'b';
         html_p_text(parent, 'a program can have more than one variable');
         'where there is more than one variable is declared at once , the variables will be ordered alphabetically'
         'for example in the alphabet , A comes before B'
         'therefore varable a will come before variable b , like this :'
-
+`${js_code_statement_let(a)}
+${js_code_statement_let(b)}`
         'b will not come before a'
         'it will not be like this :'
+        `${js_code_statement_let(b)}
+        ${js_code_statement_let(a)}`
     }
     function example_before(parent) {
     }
