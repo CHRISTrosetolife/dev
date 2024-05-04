@@ -27,6 +27,7 @@ export function app_learn_code_source_variations(source) {
     }
     let count = Math.pow(2, length);
     for (let i of range(count)) {
+        let { filtered, ast } = ast_filtered();
         let base2 = number_string_to(i, 2);
         let b_split = string_split_empty(base2);
         let b_split_length = list_length(b_split);
