@@ -74,7 +74,9 @@ export function lesson_variable_change_2() {
 ${js_code_statement_assign(name, value2)}
 ${app_learn_code_log(name)}`;
     }, example_before, description, example_message, [screen1]);
-    function example_before(parent) {}
+    function example_before(parent) {
+        'every time a variable is assigned , the value of the variable changes'
+    }
     function screen1(parent) {
         let name = app_learn_code_random_identifier();
         let value = app_learn_code_random_value();
