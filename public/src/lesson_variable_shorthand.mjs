@@ -59,6 +59,7 @@ import {range} from "./range.mjs";
 import {string_combine} from "./string_combine.mjs";
 import {string_delimit} from "./string_delimit.mjs";
 import { js_code_statement_let } from "./js_code_statement_let.mjs";
+import { js_code_assign } from "./js_code_assign.mjs";
 export function lesson_variable_shorthand() {
     let example_message = 'declaring and assigning a variable';
     let description = example_message;
@@ -84,7 +85,8 @@ ${app_learn_code_log(name)}`;
         js_code_statement_let(name)
         'this is called declaring a variable'
         html_hr(parent);
-        'remember the code to give name a value of value'
+        'remember the code to give name a value of value :'
+        js_code_assign(name, value)
     }
     function screen1(parent) {
         let value_string = string_delimit_if(value);
