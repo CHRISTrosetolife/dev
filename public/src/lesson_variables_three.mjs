@@ -65,9 +65,9 @@ import {string_combine} from "./string_combine.mjs";
 import {string_delimit} from "./string_delimit.mjs";
 import {js_code_statement_let} from "./js_code_statement_let.mjs";
 import {js_code_assign} from "./js_code_assign.mjs";
-export function lesson_variables_two() {
-    let example_message = 'with two variables';
-    let description = 'two variables';
+export function lesson_variables_three() {
+    let description = 'three variables';
+    let example_message = string_combine('with ', description);
     return lesson_simple(function () {
         let a = integer_random_digit_single_positive();
         let b = integer_random_digit_single_positive();
