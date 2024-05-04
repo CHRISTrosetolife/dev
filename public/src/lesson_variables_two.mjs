@@ -68,7 +68,7 @@ import {string_delimit} from "./string_delimit.mjs";
 import {js_code_statement_let} from "./js_code_statement_let.mjs";
 import {js_code_assign} from "./js_code_assign.mjs";
 export function lesson_variables_two() {
-    let description = 'three variables';
+    let description = 'two variables';
     let example_message = string_combine('with ', description);
     return lesson_simple(function () {
         let count = 2;
