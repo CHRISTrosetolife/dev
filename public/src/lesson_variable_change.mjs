@@ -76,7 +76,6 @@ export function lesson_variable_change() {
                 break;
             }
         }
-        assert(list_includes_not, [existing, value2])
         return `${lesson_variable_code_get(name, value)}
 ${js_code_statement_assign(name, value2)}
 ${app_learn_code_log(name)}`;
