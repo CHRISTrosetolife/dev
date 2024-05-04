@@ -72,8 +72,6 @@ export function lesson_add_numbers_three() {
         let a = integer_random_digit_single_positive();
         let b = integer_random_digit_single_positive();
         let c = integer_random_digit_single_positive();
-        let name_a = app_learn_code_random_identifier();
-        let name_b = app_learn_code_unique(app_learn_code_random_identifier, [name_a]);
         return `${js_code_statement_let_assign(name_a, a)}
 ${js_code_statement_let_assign(name_b, b)}
 ${app_learn_code_log_add(name_a, name_b)}`;
