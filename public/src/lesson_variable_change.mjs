@@ -64,6 +64,7 @@ export function lesson_variable_change() {
     return lesson_simple(function () {
         let name = app_learn_code_random_identifier();
         let value = app_learn_code_random_value();
+        let existing = [value]
         let value2;
         for (let i of app_learn_code_range_retry()) {
             value2 = app_learn_code_random_value();

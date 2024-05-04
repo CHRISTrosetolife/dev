@@ -66,10 +66,12 @@ export function lesson_variables_two() {
     let example_message = 'two variables';
     let description = example_message;
     return lesson_simple(function () {
+        let a = integer_random_digit_single_positive();
+        let b = integer_random_digit_single_positive();
         let name = app_learn_code_random_identifier();
         let value = app_learn_code_random_value();
         return `${js_code_statement_let_assign(name, value)}
-${app_learn_code_log(name)}`;
+${app_learn_code_log_add(a, b)}`;
     }, example_before, description, example_message, [screen1]);
     function example_before(parent) {
         html_p_text(parent, 'a program can have more than one variable')
