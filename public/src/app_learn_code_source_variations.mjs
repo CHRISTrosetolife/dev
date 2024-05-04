@@ -1,3 +1,4 @@
+import {list_empty_not_is} from "./list_empty_not_is.mjs";
 import {list_includes_not} from "./list_includes_not.mjs";
 import {list_remove} from "./list_remove.mjs";
 import {identity} from "./identity.mjs";
@@ -38,7 +39,8 @@ export function app_learn_code_source_variations(source) {
         return [s];
     }
     let result = [];
-    while (true) {
+    let remaining = [s];
+    while (list_empty_not_is(remaining)) {
         let changed = false;
         let count = Math.pow(2, filtered_length);
         for (let a of result) {
