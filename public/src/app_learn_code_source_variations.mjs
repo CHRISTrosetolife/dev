@@ -57,6 +57,7 @@ export function app_learn_code_source_variations(source) {
                 object_property_swap(filtered_n, 'left', 'right');
             }
         }
+        console.log(js_unparse(ast))
         js_visit_node(ast, 'BinaryExpression', v => {
             let {node} = v;
             let nt = js_node_types(node);
@@ -83,6 +84,7 @@ export function app_learn_code_source_variations(source) {
                 }
             }
         });
+        console.log(js_unparse(ast))
         let alternative = js_unparse(ast);
         list_add(result, alternative);
     }
