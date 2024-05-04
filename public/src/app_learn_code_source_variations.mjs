@@ -42,10 +42,9 @@ export function app_learn_code_source_variations(source) {
                 swap = equal(b_split_n, '0')
             }
             if (swap) {
-                
+                let first = list_first(filtered);
+                object_property_swap(first, 'left', 'right');
             }
-            let first = list_first(filtered);
-            object_property_swap(first, 'left', 'right');
         }
     }
     assert(less_than_equal, [length, 1]);
