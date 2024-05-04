@@ -62,7 +62,7 @@ import {string_combine} from "./string_combine.mjs";
 import {string_delimit} from "./string_delimit.mjs";
 import {js_code_statement_let} from "./js_code_statement_let.mjs";
 import {js_code_assign} from "./js_code_assign.mjs";
-export function lesson_variable_shorthand() {
+export function lesson_variables_two() {
     let example_message = 'declaring and assigning a variable in a single statement';
     let description = example_message;
     return lesson_simple(function () {
@@ -71,7 +71,9 @@ export function lesson_variable_shorthand() {
         return `${js_code_statement_let_assign(name, value)}
 ${app_learn_code_log(name)}`;
     }, example_before, description, example_message, [screen1]);
-    function example_before(parent) {}
+    function example_before(parent) {
+        html_p_text(parent, 'a program can have more than one variable')
+    }
     function screen1(parent) {
         let name = app_learn_code_random_identifier();
         let value = app_learn_code_random_value();
@@ -79,11 +81,11 @@ ${app_learn_code_log(name)}`;
         value_string = string_to(value);
         html_style_alternate_monospace(parent, ['remember the code to tell javascript about a variable named ', name, ' :']);
         app_learn_code_code_part_contrast(parent, js_code_statement_let(name));
-        html_style_alternate_bold(parent, ['this is called ','declaring',' a variable']);
+        html_style_alternate_bold(parent, ['this is called ', 'declaring', ' a variable']);
         html_hr(parent);
         html_style_alternate_monospace(parent, ['remember the code to give ', name, ' a value of ', value, ' :']);
         app_learn_code_code_part_contrast(parent, js_code_statement_assign(name, value));
-        html_style_alternate_bold(parent, ['this is called ','assigning',' a variable a value']);
+        html_style_alternate_bold(parent, ['this is called ', 'assigning', ' a variable a value']);
         html_hr(parent);
         html_p_text(parent, 'in javascript it is possible to declare and assign a variable in a single statement , like this :');
         app_learn_code_code_part_contrast(parent, js_code_statement_let_assign(name, value));
