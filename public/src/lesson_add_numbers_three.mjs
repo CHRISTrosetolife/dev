@@ -1,3 +1,4 @@
+import {js_code_add_3} from "./js_code_add_3.mjs";
 import {js_code_add} from "./js_code_add.mjs";
 import {app_learn_code_unique} from "./app_learn_code_unique.mjs";
 import {app_learn_code_log_add} from "./app_learn_code_log_add.mjs";
@@ -73,7 +74,7 @@ export function lesson_add_numbers_three() {
         let a = integer_random_digit_single_positive();
         let b = integer_random_digit_single_positive();
         let c = integer_random_digit_single_positive();
-        return app_learn_code_log(js_code_add(js_code_add(a, b), c));
+        return app_learn_code_log(js_code_add_3(a, b, c));
     }, example_before, description, example_message, []);
     function example_before(parent) {
         html_p_text(parent, 'more than two numbers can be added together at once');
