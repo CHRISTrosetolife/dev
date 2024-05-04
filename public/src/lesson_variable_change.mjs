@@ -1,3 +1,4 @@
+import {list_includes_not} from "./list_includes_not.mjs";
 import {equal_not} from "./equal_not.mjs";
 import {app_learn_code_range_retry} from "./app_learn_code_range_retry.mjs";
 import {string_delimit_if} from "./string_delimit_if.mjs";
@@ -58,20 +59,22 @@ import {html_hr} from "./html_hr.mjs";
 import {range} from "./range.mjs";
 import {string_combine} from "./string_combine.mjs";
 import {string_delimit} from "./string_delimit.mjs";
+import {list_includes} from "./list_includes.mjs";
 export function lesson_variable_change() {
     let example_message = 'changing a variable and logging to the console before and after the change';
     let description = example_message;
     return lesson_simple(function () {
         let name = app_learn_code_random_identifier();
         let value = app_learn_code_random_value();
-        let existing = [value]
+        let existing = [value];
         let value2;
         for (let i of app_learn_code_range_retry()) {
             value2 = app_learn_code_random_value();
-            if (equal_not(value, value2)) {
+            if (list_includes_not(existing, value2)) {
                 break;
             }
         }
+        if (list_includes(existing, value2)) {}
         return `${lesson_variable_code_get(name, value)}
 ${js_code_statement_assign(name, value2)}
 ${app_learn_code_log(name)}`;
