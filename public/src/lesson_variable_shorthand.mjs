@@ -77,6 +77,7 @@ ${app_learn_code_log(name)}`;
     }, example_before, description, example_message, [screen1]);
     function example_before(parent) {}
     function screen1(parent) {
+        'remember the code to tell javascript about a variable :'
         let name = app_learn_code_random_identifier();
         let value = app_learn_code_random_value();
         let value_string = string_delimit_if(value);
