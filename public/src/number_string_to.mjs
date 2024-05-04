@@ -1,3 +1,3 @@
-export function number_string_to(product, base) {
-    return product.toString(base);
+export function number_string_to(value, base) {
+    return value.toString(base);
 }
