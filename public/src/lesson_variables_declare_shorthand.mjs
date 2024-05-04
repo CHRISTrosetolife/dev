@@ -1,3 +1,5 @@
+import {app_learn_code_unique_multiple} from "./app_learn_code_unique_multiple.mjs";
+import {call_multiple} from "./call_multiple.mjs";
 import {app_learn_code_unique} from "./app_learn_code_unique.mjs";
 import {app_learn_code_log_add} from "./app_learn_code_log_add.mjs";
 import {integer_random_digit_single_positive} from "./integer_random_digit_single_positive.mjs";
@@ -65,14 +67,13 @@ import {string_combine} from "./string_combine.mjs";
 import {string_delimit} from "./string_delimit.mjs";
 import {js_code_statement_let} from "./js_code_statement_let.mjs";
 import {js_code_assign} from "./js_code_assign.mjs";
-export function lesson_variables_two() {
+export function lesson_variables_declare_shorthand() {
     let description = 'three variables';
     let example_message = string_combine('with ', description);
     return lesson_simple(function () {
-        let a = integer_random_digit_single_positive();
-        let b = integer_random_digit_single_positive();
-        let name_a = app_learn_code_random_identifier();
-        let name_b = app_learn_code_unique(app_learn_code_random_identifier, [name_a]);
+        let count = 2;
+        let [a, b] = call_multiple(integer_random_digit_single_positive, count);
+        let [name_a, name_b] = app_learn_code_unique_multiple(app_learn_code_random_identifier, count);
         return `${js_code_statement_let_assign(name_a, a)}
 ${js_code_statement_let_assign(name_b, b)}
 ${app_learn_code_log_add(name_a, name_b)}`;
