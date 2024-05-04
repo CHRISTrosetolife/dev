@@ -1,3 +1,4 @@
+import {less_than} from "./less_than.mjs";
 import {string_split_empty} from "./string_split_empty.mjs";
 import {number_string_to} from "./number_string_to.mjs";
 import {less_than_equal} from "./less_than_equal.mjs";
@@ -35,7 +36,7 @@ export function app_learn_code_source_variations(source) {
         let b_split = string_split_empty(base2);
         let b_split_length = list_length(b_split);
         for (let n of range(length)) {
-            if (less_than(n, b_split_length)) {
+            if (less_than(less_than(n, b_split_length))) {
                 console.log(list_get(b_split, n));
             } else {
                 console.log('here');
