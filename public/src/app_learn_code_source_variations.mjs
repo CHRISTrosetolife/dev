@@ -31,7 +31,7 @@ import {list_empty_is} from "./list_empty_is.mjs";
 import {object_property_set} from "./object_property_set.mjs";
 export function app_learn_code_source_variations(source) {
     let operators = ['+', '*', '===', '!=='];
-    let {filtered, ast} = ast_filtered();
+    let {filtered, ast} = ast_filtered(source);
     let filtered_length = list_length(filtered);
     let s = js_unparse(ast);
     if (equal(filtered_length, 0)) {
@@ -42,7 +42,7 @@ export function app_learn_code_source_variations(source) {
         let changed = false;
         let count = Math.pow(2, filtered_length);
         for (let i of range(count)) {
-            let {filtered, ast} = ast_filtered();
+            let {filtered, ast} = ast_filtered(source);
             let base2 = number_string_to(i, 2);
             while (less_than(string_length(base2), filtered_length)) {
                 base2 = string_combine("0", base2);
@@ -97,7 +97,7 @@ export function app_learn_code_source_variations(source) {
         }
     }
     return result;
-    function ast_filtered() {
+    function ast_filtered(source) {
         let ast = js_parse(source);
         let bes = js_node_type(ast, 'BinaryExpression');
         let filtered = list_filter(bes, be => {
