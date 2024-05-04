@@ -80,6 +80,9 @@ export function lesson_variables_two() {
 ${js_code_statement_let_assign(name_b, b)}
 ${app_learn_code_log_add(name_a, name_b)}`;
     }, example_before, description, example_message, []);
+    function screen1() {
+        
+    }
     function example_before(parent) {
         html_p_text(parent, 'a program can have more than one variable');
     }
