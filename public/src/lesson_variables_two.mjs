@@ -84,12 +84,12 @@ ${app_learn_code_log_add(name_a, name_b)}`;
         let a = 'a';
         let b = 'b';
         html_p_text(parent, 'a program can have more than one variable');
-        html_p_text(parent, 'where there is more than one variable is declared at once , the variables will be ordered alphabetically')
-        'for example in the alphabet , A comes before B'
-        'therefore varable a will come before variable b , like this :'
+        html_p_text(parent, 'where there is more than one variable is declared at once , in this application the variables will be ordered alphabetically')
+        html_p_text(parent, 'for example in the alphabet , A comes before B')
+        html_style_alternate_monospace(parent, ['therefore varable ','a',' will come before variable ','b',' , like this :'])
 `${js_code_statement_let(a)}
 ${js_code_statement_let(b)}`
-        'b will not come before a'
+html_style_alternate_monospace(parent, ['','b',' will not come before ','a'])
         'it will not be like this :'
         `${js_code_statement_let(b)}
         ${js_code_statement_let(a)}`
