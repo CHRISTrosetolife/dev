@@ -1,3 +1,4 @@
+import {string_split_empty} from "./string_split_empty.mjs";
 import {number_string_to} from "./number_string_to.mjs";
 import {less_than_equal} from "./less_than_equal.mjs";
 import {list_filter} from "./list_filter.mjs";
@@ -13,8 +14,8 @@ import {list_includes} from "./list_includes.mjs";
 import {list_length} from "./list_length.mjs";
 import {list_map} from "./list_map.mjs";
 import {range} from "./range.mjs";
-import { string_split } from "./string_split.mjs";
-import { list_get } from "./list_get.mjs";
+import {string_split} from "./string_split.mjs";
+import {list_get} from "./list_get.mjs";
 export function app_learn_code_source_variations(source) {
     let ast = js_parse(source);
     let bes = js_node_type(ast, 'BinaryExpression');
@@ -31,13 +32,13 @@ export function app_learn_code_source_variations(source) {
     let count = Math.pow(2, length);
     for (let i of range(count)) {
         let base2 = number_string_to(i, 2);
-        let b_split = string_split_empty(base2)
+        let b_split = string_split_empty(base2);
         let b_split_length = list_length(b_split);
         for (let n of range(length)) {
             if (less_than(n, b_split_length)) {
-                console.log(list_get(b_split, n))
+                console.log(list_get(b_split, n));
             } else {
-                console.log('here')
+                console.log('here');
             }
         }
     }
@@ -47,7 +48,3 @@ export function app_learn_code_source_variations(source) {
     let alternative = js_unparse(ast);
     return [s, alternative];
 }
-function string_split_empty(base2) {
-    return string_split(base2, '');
-}
-
