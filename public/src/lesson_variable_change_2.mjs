@@ -64,7 +64,7 @@ import {string_delimit} from "./string_delimit.mjs";
 import {list_includes} from "./list_includes.mjs";
 import {assert} from "./assert.mjs";
 export function lesson_variable_change_2() {
-    let example_message = 'changing a variable and logging to the console before and after the change';
+    let example_message = 'changing a variable and logging to the console after the change';
     let description = example_message;
     return lesson_simple(function () {
         let name = app_learn_code_random_identifier();
