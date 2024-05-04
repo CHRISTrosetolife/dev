@@ -68,9 +68,10 @@ export function lesson_variable_change() {
         let name = app_learn_code_random_identifier();
         let value = app_learn_code_random_value();
         let existing = [value];
+        let value_get = app_learn_code_random_value
         let value2;
         for (let i of app_learn_code_range_retry()) {
-            value2 = app_learn_code_random_value();
+            value2 = value_get();
             if (list_includes_not(existing, value2)) {
                 break;
             }
