@@ -1,3 +1,4 @@
+import {app_learn_code_unique} from "./app_learn_code_unique.mjs";
 import {list_includes_not} from "./list_includes_not.mjs";
 import {equal_not} from "./equal_not.mjs";
 import {app_learn_code_range_retry} from "./app_learn_code_range_retry.mjs";
@@ -60,7 +61,7 @@ import {range} from "./range.mjs";
 import {string_combine} from "./string_combine.mjs";
 import {string_delimit} from "./string_delimit.mjs";
 import {list_includes} from "./list_includes.mjs";
-import { assert } from "./assert.mjs";
+import {assert} from "./assert.mjs";
 export function lesson_variable_change() {
     let example_message = 'changing a variable and logging to the console before and after the change';
     let description = example_message;
@@ -84,14 +85,3 @@ ${app_learn_code_log(name)}`;
         html_style_alternate_monospace(parent, ['', '=', ' can be used to change the value of a variable']);
     }
 }
-function app_learn_code_unique(value_get, existing) {
-    let value2;
-    for (let i of app_learn_code_range_retry()) {
-        value2 = value_get();
-        if (list_includes_not(existing, value2)) {
-            break;
-        }
-    }
-    return value2;
-}
-
