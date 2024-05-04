@@ -16,7 +16,7 @@ export function js_code_statement_let_assign_multiple(names, values) {
     let list = array_new();
     for (let i of range(length_n)) {
         let n = list_get(names, i);
-        let v = list_get(values, v);
+        let v = list_get(values, i);
         list_add(list, js_code_assign(n, v))
     }
     return js_code_statement_let(list_join(list, ', '));
