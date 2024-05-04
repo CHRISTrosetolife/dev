@@ -58,8 +58,8 @@ import {html_hr} from "./html_hr.mjs";
 import {range} from "./range.mjs";
 import {string_combine} from "./string_combine.mjs";
 import {string_delimit} from "./string_delimit.mjs";
-export function lesson_variable_change() {
-    let example_message = 'changing a variable and logging to the console before and after the change';
+export function lesson_variable_shorthand() {
+    let example_message = 'declaring and assigning a variable';
     let description = example_message;
     return lesson_simple(function () {
         let name = app_learn_code_random_identifier();
