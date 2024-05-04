@@ -1,3 +1,4 @@
+import {html_style_alternate_bold} from "./html_style_alternate_bold.mjs";
 import {js_code_statement_let_assign} from "./js_code_statement_let_assign.mjs";
 import {equal_not} from "./equal_not.mjs";
 import {app_learn_code_range_retry} from "./app_learn_code_range_retry.mjs";
@@ -76,13 +77,13 @@ ${app_learn_code_log(name)}`;
         let value = app_learn_code_random_value();
         let value_string = string_delimit_if(value);
         value_string = string_to(value);
-        html_style_alternate_monospace(parent, [
-            'remember the code to tell javascript about a variable named ',name,' :']);
+        html_style_alternate_monospace(parent, ['remember the code to tell javascript about a variable named ', name, ' :']);
         app_learn_code_code_part_contrast(parent, js_code_statement_let(name));
+        let list;
+        html_style_alternate_bold(parent, list);
         html_p_text('this is called declaring a variable');
         html_hr(parent);
-        html_style_alternate_monospace(parent, [
-        'remember the code to give ',name,' a value of ',value,' :']);
+        html_style_alternate_monospace(parent, ['remember the code to give ', name, ' a value of ', value, ' :']);
         app_learn_code_code_part_contrast(parent, js_code_assign(name, value));
         'this is called assigning a variable a value';
         html_hr(parent);
