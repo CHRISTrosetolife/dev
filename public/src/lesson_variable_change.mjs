@@ -60,6 +60,7 @@ import {range} from "./range.mjs";
 import {string_combine} from "./string_combine.mjs";
 import {string_delimit} from "./string_delimit.mjs";
 import {list_includes} from "./list_includes.mjs";
+import { assert } from "./assert.mjs";
 export function lesson_variable_change() {
     let example_message = 'changing a variable and logging to the console before and after the change';
     let description = example_message;
@@ -74,6 +75,7 @@ export function lesson_variable_change() {
                 break;
             }
         }
+        assert(list_includes_not, [existing, value2])
         if (list_includes(existing, value2)) {}
         return `${lesson_variable_code_get(name, value)}
 ${js_code_statement_assign(name, value2)}
