@@ -73,9 +73,10 @@ export function lesson_variables_three() {
     return lesson_simple(function () {
         let [a, b, c] = call_multiple(integer_random_digit_single_positive, 3);
         let count = 3;
+        let value_get = app_learn_code_random_identifier;
         let names = array_new();
         for (let i of range(count)) {
-            let name = app_learn_code_unique(app_learn_code_random_identifier, names);
+            let name = app_learn_code_unique(, names);
             list_add(names, name);
         }
         let [name_a, name_b, name_c] = names
