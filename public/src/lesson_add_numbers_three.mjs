@@ -75,6 +75,6 @@ export function lesson_add_numbers_three() {
         return app_learn_code_log(js_code_add(js_code_add(a, b), c));
     }, example_before, description, example_message, []);
     function example_before(parent) {
-        html_p_text(parent, 'a program can have more than one variable');
+        html_p_text(parent, 'more than two numbers can be added together at once');
     }
 }
