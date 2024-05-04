@@ -1,3 +1,5 @@
+import {app_learn_code_log_add_3} from "./app_learn_code_log_add_3.mjs";
+import {app_learn_code_unique_multiple} from "./app_learn_code_unique_multiple.mjs";
 import {call_multiple} from "./call_multiple.mjs";
 import {app_learn_code_unique} from "./app_learn_code_unique.mjs";
 import {app_learn_code_log_add} from "./app_learn_code_log_add.mjs";
@@ -66,7 +68,7 @@ import {string_combine} from "./string_combine.mjs";
 import {string_delimit} from "./string_delimit.mjs";
 import {js_code_statement_let} from "./js_code_statement_let.mjs";
 import {js_code_assign} from "./js_code_assign.mjs";
-import { list_adder } from "./list_adder.mjs";
+import {list_adder} from "./list_adder.mjs";
 export function lesson_variables_three() {
     let description = 'three variables';
     let example_message = string_combine('with ', description);
@@ -75,21 +77,13 @@ export function lesson_variables_three() {
         let count = 3;
         let value_get = app_learn_code_random_identifier;
         let names = app_learn_code_unique_multiple(value_get, count);
-        let [name_a, name_b, name_c] = names
+        let [name_a, name_b, name_c] = names;
         return `${js_code_statement_let_assign(name_a, a)}
 ${js_code_statement_let_assign(name_b, b)}
-${app_learn_code_log_add(name_a, name_b)}`;
+${js_code_statement_let_assign(name_c, c)}
+${app_learn_code_log_add_3(name_a, name_b, name_c)}`;
     }, example_before, description, example_message, []);
     function example_before(parent) {
-        html_p_text(parent, 'a program can have more than one variable');
+        html_p_text(parent, 'a program can have more than two variables');
     }
 }
-function app_learn_code_unique_multiple(value_get, count) {
-    let names = array_new();
-    for (let i of range(count)) {
-        let name = app_learn_code_unique(value_get, names);
-        list_add(names, name);
-    }
-    return names;
-}
-
