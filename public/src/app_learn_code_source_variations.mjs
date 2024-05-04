@@ -37,7 +37,7 @@ export function app_learn_code_source_variations(source) {
     if (equal(filtered_length, 0)) {
         return [s];
     }
-    let result = [s];
+    let result = [];
     while (true) {
         let changed = false;
         let count = Math.pow(2, filtered_length);
