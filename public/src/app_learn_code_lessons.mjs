@@ -23,6 +23,7 @@ import { lesson_variable_shorthand } from "./lesson_variable_shorthand.mjs";
 import { lesson_variables_two } from "./lesson_variables_two.mjs";
 import { lesson_variable_change_2 } from "./lesson_variable_change_2.mjs";
 import { lesson_add_numbers_three } from "./lesson_add_numbers_three.mjs";
+import { lesson_variables_three } from "./lesson_variables_three.mjs";
 export function app_learn_code_lessons() {
     let lesson_creates = [];
     list_add(lesson_creates, lesson_console_log);
@@ -49,5 +50,7 @@ export function app_learn_code_lessons() {
     list_add(lesson_creates, lesson_variable_change_2);
     list_add(lesson_creates, lesson_variables_two);
     list_add(lesson_creates, lesson_add_numbers_three);
+    list_add(lesson_creates, lesson_variables_three);
+    
     return lesson_creates;
 }
