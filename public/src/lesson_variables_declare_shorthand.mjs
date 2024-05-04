@@ -76,6 +76,7 @@ export function lesson_variables_declare_shorthand() {
     return lesson_simple(function () {
         let values = call_multiple(integer_random_digit_single_positive, count);
         let names = app_learn_code_unique_multiple(app_learn_code_random_identifier, count);
+        let [name_a, name_b] = names;
         return `${js_code_statement_let_assign_multiple(names, values)}
 ${app_learn_code_log_add(name_a, name_b)}`;
     }, example_before, description, example_message, [screen1]);
