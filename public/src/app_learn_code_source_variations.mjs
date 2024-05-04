@@ -27,6 +27,7 @@ import {string_length} from "./string_length.mjs";
 import {list_add} from "./list_add.mjs";
 import {array_new} from "./array_new.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
+import { object_property_set } from "./object_property_set.mjs";
 export function app_learn_code_source_variations(source) {
     let operators = ['+', '*', '===', '!=='];
     let {filtered, ast} = ast_filtered();
@@ -57,6 +58,7 @@ export function app_learn_code_source_variations(source) {
             }
         }
         js_visit_node(ast, 'BinaryExpression', v => {
+            let {node} = v;
             let nt = js_node_types(node);
             let valid = ['BinaryExpression', 'Identifier', 'Literal'];
             for (let v of valid) {
@@ -65,7 +67,6 @@ export function app_learn_code_source_variations(source) {
                 }
             }
             if (list_empty_is(nt)) {
-                let {node} = v;
                 let {right} = node;
                 let {type} = right;
                 if (equal(type, 'BinaryExpression')) {
@@ -74,12 +75,13 @@ export function app_learn_code_source_variations(source) {
                     if (equal(operator_r, operator)) {
                         let {left} = node;
                         let {left:left_r,right:right_r} = right;
+                        object_property_set(node, 'left', right);
+                        object_property_set(right, 'left', left);
+                        object_property_set(right, 'right', left_r);
+                        object_property_set(node, 'right', right_r);
                     }
                 }
             }
-            console.log({
-                nt
-            });
         });
         let alternative = js_unparse(ast);
         list_add(result, alternative);
