@@ -42,10 +42,9 @@ export function app_learn_code_source_variations(source) {
     let result = [];
     let remaining = [s];
     while (list_empty_not_is(remaining)) {
-        let changed = false;
+        let r = list_pop(remaining);
         let count = Math.pow(2, filtered_length);
         for (let i of range(count)) {
-            let r = list_pop(remaining);
             let {filtered, ast} = ast_filtered(r);
             let base2 = number_string_to(i, 2);
             while (less_than(string_length(base2), filtered_length)) {
