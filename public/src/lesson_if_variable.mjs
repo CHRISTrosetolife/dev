@@ -77,38 +77,35 @@ import {js_code_assign} from "./js_code_assign.mjs";
 import {list_adder} from "./list_adder.mjs";
 import {app_learn_code_random_identifiers} from "./app_learn_code_random_identifiers.mjs";
 import {list_includes} from "./list_includes.mjs";
-export function lesson_if_binary() {
-    let description = 'if with < , <= , > , >= , === or !==';
-    let example_message = string_combine('with an ', description);
+export function lesson_if_variable() {
+    let description = 'if with a variable';
+    let example_message = description
     return lesson_simple(function () {
         let operators = ['<', '<=', '>', '>=', '===', '!=='];
         let operator = list_random_item(operators);
         let operators_equality = ['===', '!=='];
         let values = call_multiple(integer_random_digit_single_positive, 2);
         list_sort(values, identity);
-        let [a,b] = values;
+        let [a, b] = values;
         if (list_includes(operators_equality, operator) && random_50_50()) {
             b = a;
         }
-        let statements = [app_learn_code_log_random_value(), `if (${a} ${operator} ${b}) {
+        let statements = [js_code_statement_let_assign(name, `${a} ${operator} ${b}`) app_learn_code_log_random_value(), `if () {
 ${app_learn_code_log_random_value()}
 }`, app_learn_code_log_random_value()];
         return list_join(statements, '\n');
     }, example_before, description, example_message, [screen1, screen2]);
-    function example_before(){
-
+    function example_before() {
+        html_style_alternate_monospace(parent, ['inside the parenthesis of an ', 'if', ' could also be a variable']);
     }
     function screen1(parent) {
-        html_p_text(parent,'in this lesson the numbers will appear from smallest to greatest');
-        html_p_text(parent,'for example :');
+        html_p_text(parent, 'in this lesson the numbers will appear from smallest to greatest');
+        html_p_text(parent, 'for example :');
         let ul = html_ul(parent);
-        html_style_alternate_code_li(ul, ['','1 < 2',' could appear :']);
-        html_style_alternate_code_li(ul, ['','2 < 1',' will not appear']);
-        html_style_alternate_code_li(ul, ['although ','1 > 2',' could appear']);
+        html_style_alternate_code_li(ul, ['', '1 < 2', ' could appear :']);
+        html_style_alternate_code_li(ul, ['', '2 < 1', ' will not appear']);
+        html_style_alternate_code_li(ul, ['although ', '1 > 2', ' could appear']);
     }
     function screen2(parent) {
-        html_style_alternate_monospace(parent, ['inside the parenthesis of an ', 'if', ' can be more than just ', 'true', ' and ', 'false']);
-        html_style_alternate_monospace(parent, ['remember ', '<', ' , ', '<=', ' , ', '>', ' , ', '>=', ' , ', '===', ' and ', '!==', ' all return ', 'true', ' or ', 'false']);
-        html_style_alternate_monospace(parent, ['therefore inside the parenthesis of an ', 'if', ' could be one of those']);
     }
 }
