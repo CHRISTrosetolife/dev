@@ -75,14 +75,17 @@ import {js_code_statement_let} from "./js_code_statement_let.mjs";
 import {js_code_assign} from "./js_code_assign.mjs";
 import {list_adder} from "./list_adder.mjs";
 import {app_learn_code_random_identifiers} from "./app_learn_code_random_identifiers.mjs";
+import { list_includes } from "./list_includes.mjs";
 export function lesson_if_binary() {
     let description = 'if with < , <= , > , >= , === or !==';
     let example_message = string_combine('with an if with ', description);
     return lesson_simple(function () {
         let operators = ['<','<=','>','>=','===','!==']
+        let operator = list_random_item(operators);
+        let operators_equality = ['===','!==']
         let a = integer_random_digit_single_positive();
         let b;
-        if (random_50_50()) {
+        if (list_includes(operators_equality, operator) &&  random_50_50()) {
             b = a;
         } else {
             b = integer_random_digit_single_positive();
