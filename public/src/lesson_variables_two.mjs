@@ -104,10 +104,10 @@ ${js_code_statement_let(a)}`);
         html_p_text(parent, 'for example 1 is smaller than 2')
         html_style_alternate_monospace(parent, ['therefore the assignment of ','1',' will come before the assignment of ','2',' , like this :'])
         app_learn_code_code_part_contrast(parent,`${js_code_statement_let_assign(a, '1')}
-${js_code_statement_let_assign(a, '2')}`);
+${js_code_statement_let_assign(b, '2')}`);
 html_p_text(parent, 'it will not be like this :');
 app_learn_code_code_part_contrast(parent,`${js_code_statement_let_assign(a, '2')}
-${js_code_statement_let_assign(a, '1')}`);
+${js_code_statement_let_assign(b, '1')}`);
 html_p_text(parent, 'this should make quizzing easier');
 html_p_text(parent, 'however javascript allows numbers to be assigned either way');
     }
