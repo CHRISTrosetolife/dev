@@ -67,19 +67,22 @@ import {string_combine} from "./string_combine.mjs";
 import {string_delimit} from "./string_delimit.mjs";
 import {js_code_statement_let} from "./js_code_statement_let.mjs";
 import {js_code_assign} from "./js_code_assign.mjs";
+import { list_sort } from "./list_sort.mjs";
 export function lesson_variables_two() {
     let description = 'two variables';
     let example_message = string_combine('with ', description);
     return lesson_simple(function () {
         let count = 2;
-        let [a, b] = call_multiple(integer_random_digit_single_positive, count);
+        let values = call_multiple(integer_random_digit_single_positive, count);
+        list_sort(values, identity)
+        let [a, b] = values;
         let names = app_learn_code_unique_multiple(app_learn_code_random_identifier, count);
         list_sort_string(names, identity)
         let [name_a, name_b] = names;
         return `${js_code_statement_let_assign(name_a, a)}
 ${js_code_statement_let_assign(name_b, b)}
 ${app_learn_code_log_add(name_a, name_b)}`;
-    }, example_before, description, example_message, [screen1]);
+    }, example_before, description, example_message, [screen1, screen2]);
     function screen1(parent) {
         let a = 'a';
         let b = 'b';
@@ -95,6 +98,9 @@ html_style_alternate_monospace(parent, ['','b',' will not come before ','a'])
         ${js_code_statement_let(a)}`);
         html_p_text(parent, 'this should make quizzing easier');
         html_p_text(parent, 'however javascript allows variables to be declared either way');
+    }
+    function screen1(parent) {
+        html_p_text(parent, 'in this lesson the numbers will appear from smallest to largest');
     }
     function example_before(parent) {
     }
