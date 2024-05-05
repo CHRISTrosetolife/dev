@@ -1,3 +1,4 @@
+import {lesson_divide_numbers} from "./lesson_divide_numbers.mjs";
 import {integer_random_digit_single_positive} from "./integer_random_digit_single_positive.mjs";
 import {integer_random_digit_single} from "./integer_random_digit_single.mjs";
 import {lesson_simple} from "./lesson_simple.mjs";
@@ -31,11 +32,8 @@ export function lesson_divide() {
     const example_message = 'dividing two numbers';
     const description = 'division ( / )';
     return lesson_simple(function () {
-        let a = integer_random_digit_single_positive();
-        let b = integer_random_digit_single_positive();
-        let dividend = multiply(a, b);
-        let divisor = multiply(a, integer_random(1, 2));
-        return `console.log(${dividend} / ${ divisor });`;
+        let {dividend, divisor} = lesson_divide_numbers();
+        return `console.log(${dividend} / ${divisor});`;
     }, example_before, description, example_message, []);
     function example_before(parent) {
         html_style_alternate(parent, html_p, [noop, html_style_monospace], ['one number can be divided by the other using the forward slash ( ', '/', ' ) symbol']);
