@@ -82,12 +82,7 @@ if (true) {
 }`;
     }, example_before, description, example_message, [screen1]);
     function example_before(parent) {
-        html_p_text(parent, 'a program can have more than two variables');
     }
     function screen1(parent) {
-        html_p_text(parent, 'in this lesson :');
-        let ul = html_ul(parent);
-        html_li_text(ul, 'the declared variables will be ordered alphabetically');
-        html_li_text(ul, 'the numbers will be assigned from smallest to largest');
     }
 }
