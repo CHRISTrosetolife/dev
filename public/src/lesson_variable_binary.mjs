@@ -81,7 +81,12 @@ export function lesson_variable_binary() {
     let description = 'if with a variable';
     let example_message = description;
     return lesson_simple(function () {
-        let operators = ['<', '<=', '>', '>=', '===', '!==', '+', '-', '*', '/'];
+        let operators;
+        if (random_50_50()) {
+            operators = ['+', '-', '*', '/'];
+        } else {
+            operators = ['<', '<=', '>', '>=', '===', '!==']
+        }
         let operator = list_random_item(operators);
         let values = call_multiple(integer_random_digit_single_positive, 2);
         let [a, b] = values;
