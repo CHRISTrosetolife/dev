@@ -94,7 +94,13 @@ ${app_learn_code_log_random_value()}
         return list_join(statements, '\n');
     }, example_before, description, example_message, [screen1]);
     function example_before(parent) {
-        'in this lesson'
+        'in this lesson the numbers will appear from smallest to greatest'
+        'here is something that could appear :'
+        '1 < 2'
+        'the following will not appear : '
+        '2 < 1'
+        'although the following could appear : '
+        '1 > 2'
     }
     function screen1() {
         html_style_alternate_monospace(parent, ['inside the parenthesis of an ','if',' can be more than just ','true',' and ','false']);
