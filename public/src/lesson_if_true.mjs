@@ -82,8 +82,8 @@ export function lesson_if_true() {
     let example_message = 'with an if with true passed in';
     return lesson_simple(function () {
         let statements = [app_learn_code_log_random_value(), `if (true) {
-            ${app_learn_code_log_random_value()}
-        }`,app_learn_code_log_random_value()];
+${app_learn_code_log_random_value()}
+}`,app_learn_code_log_random_value()];
         return list_join(statements, '\n');
     }, example_before, description, example_message, [screen1, screen2, screen3]);
     function example_before(parent) {
