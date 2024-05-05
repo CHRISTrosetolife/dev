@@ -76,8 +76,8 @@ import {js_code_assign} from "./js_code_assign.mjs";
 import {list_adder} from "./list_adder.mjs";
 import {app_learn_code_random_identifiers} from "./app_learn_code_random_identifiers.mjs";
 export function lesson_if_binary() {
-    let description = 'if with false';
-    let example_message = 'with an if with false passed in';
+    let description = 'if with < , <= , > , >= , === or !==';
+    let example_message = string_combine('with an if with ', description);
     return lesson_simple(function () {
         let statements = [app_learn_code_log_random_value(), `if (false) {
 ${app_learn_code_log_random_value()}
