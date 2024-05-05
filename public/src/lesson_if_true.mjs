@@ -83,7 +83,11 @@ if (true) {
     ${app_learn_code_log(app_learn_code_random_value())}
 }`;
     }, example_before, description, example_message, [screen1, screen2]);
-    function example_before(parent) {}
+    function example_before(parent) {
+        html_style_alternate_monospace(parent, [ 'in the example below , what is in between the parentheses of the if is ','true']);
+       html_p_text(parent,'therefore what is inside the braces is ran');
+       html_style_alternate_monospace(parent, [ 'therefore both ',',console.log();',' statements are ran']);
+    }
     function screen1(parent) {
         html_p_text(parent, 'a pencil may be used for writing');
         html_img_limited_centered(parent, 'pencil.jpg');
