@@ -10,9 +10,17 @@ import {html_p_text} from "./html_p_text.mjs";
 import {html_element} from "./html_element.mjs";
 import {object_property_set} from "./object_property_set.mjs";
 import {string_combine} from "./string_combine.mjs";
+import { html_img } from "./html_img.mjs";
+import { html_div } from "./html_div.mjs";
+import { html_style_centered } from "./html_style_centered.mjs";
 export function lesson_console_log_analogy_paper(parent) {
     html_p_text(parent, 'suppose there is paper');
-    html_img_width_full(parent, 'paper.jpg');
+    let container = html_div(parent);
+    html_style_centered(container)
+    let i1 = html_img(container, 'paper.jpg');
+    html_style(i1, {
+        'max-height':'50dvh'
+    })
     html_p_text(parent, 'and suppose someone folds the paper into origami');
     html_img_width_full(parent, 'paper_folding.jpg');
     html_p_text(parent, 'then afterward there is folded paper origami');
