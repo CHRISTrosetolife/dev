@@ -94,8 +94,8 @@ ${app_learn_code_log_random_value()}
         html_hr(parent);
     }
     function screen1() {
-        ['inside the parenthesis of an ','if',' can be more than just ','true',' and ','false']
-        ['remember ','<',' , ','<=',' , ','>',' , ','>=',' , ','===',' and ','!==',' all return ','true',' or ','false']
-        ['therefore inside the parenthesis of an ','if',' could be one of those']
+        html_style_alternate_monospace(parent, ['inside the parenthesis of an ','if',' can be more than just ','true',' and ','false']);
+        html_style_alternate_monospace(parent, ['remember ','<',' , ','<=',' , ','>',' , ','>=',' , ','===',' and ','!==',' all return ','true',' or ','false']);
+        html_style_alternate_monospace(parent, ['therefore inside the parenthesis of an ','if',' could be one of those']);
     }
 }
