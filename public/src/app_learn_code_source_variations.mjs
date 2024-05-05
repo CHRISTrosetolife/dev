@@ -1,3 +1,4 @@
+import {js_unparse_indent_none} from "./js_unparse_indent_none.mjs";
 import {list_empty_not_is} from "./list_empty_not_is.mjs";
 import {list_includes_not} from "./list_includes_not.mjs";
 import {list_remove} from "./list_remove.mjs";
@@ -30,7 +31,7 @@ import {list_add} from "./list_add.mjs";
 import {array_new} from "./array_new.mjs";
 import {list_empty_is} from "./list_empty_is.mjs";
 import {object_property_set} from "./object_property_set.mjs";
-import { list_pop } from "./list_pop.mjs";
+import {list_pop} from "./list_pop.mjs";
 export function app_learn_code_source_variations(source) {
     let operators = ['+', '*', '===', '!=='];
     let {filtered, ast} = ast_filtered(source);
@@ -89,7 +90,7 @@ export function app_learn_code_source_variations(source) {
                     }
                 }
             });
-            let alternative = js_unparse(ast);
+            let alternative = js_unparse_indent_none(ast);
             if (list_includes_not(result, alternative)) {
                 list_add(result, alternative);
                 list_add(remaining, alternative);
