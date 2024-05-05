@@ -33,7 +33,9 @@ export function lesson_divide() {
     return lesson_simple(function () {
         let a = integer_random_digit_single_positive();
         let b = integer_random_digit_single_positive();
-        return `console.log(${multiply(a, b)} / ${ multiply(a, integer_random(1, 2))});`;
+        let dividend = multiply(a, b);
+        let divisor = multiply(a, integer_random(1, 2));
+        return `console.log(${dividend} / ${ divisor });`;
     }, example_before, description, example_message, []);
     function example_before(parent) {
         html_style_alternate(parent, html_p, [noop, html_style_monospace], ['one number can be divided by the other using the forward slash ( ', '/', ' ) symbol']);

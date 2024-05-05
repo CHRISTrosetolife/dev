@@ -81,7 +81,7 @@ export function lesson_variable_binary() {
     let description = 'if with a variable';
     let example_message = description;
     return lesson_simple(function () {
-        let operators = ['<', '<=', '>', '>=', '===', '!==', '+', '-', '*'];
+        let operators = ['<', '<=', '>', '>=', '===', '!==', '+', '-', '*', '/'];
         let operator = list_random_item(operators);
         let operators_equality = ['===', '!=='];
         let values = call_multiple(integer_random_digit_single_positive, 2);
@@ -98,13 +98,5 @@ ${app_learn_code_log_random_value()}
     }, example_before, description, example_message, [screen1]);
     function example_before(parent) {
         html_style_alternate_monospace(parent, ['inside the parenthesis of an ', 'if', ' could also be a variable']);
-    }
-    function screen1(parent) {
-        html_p_text(parent, 'in this lesson the numbers will appear from smallest to greatest');
-        html_p_text(parent, 'for example :');
-        let ul = html_ul(parent);
-        html_style_alternate_code_li(ul, ['', '1 < 2', ' could appear :']);
-        html_style_alternate_code_li(ul, ['', '2 < 1', ' will not appear']);
-        html_style_alternate_code_li(ul, ['although ', '1 > 2', ' could appear']);
     }
 }
