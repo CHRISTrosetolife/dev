@@ -71,9 +71,9 @@ import {string_delimit} from "./string_delimit.mjs";
 import {js_code_statement_let} from "./js_code_statement_let.mjs";
 import {js_code_assign} from "./js_code_assign.mjs";
 import {list_adder} from "./list_adder.mjs";
-import { app_learn_code_random_identifiers } from "./app_learn_code_random_identifiers.mjs";
-export function lesson_variables_three() {
-    let description = 'three variables';
+import {app_learn_code_random_identifiers} from "./app_learn_code_random_identifiers.mjs";
+export function lesson_if_true() {
+    let description = 'if with true';
     let example_message = string_combine('with ', description);
     return lesson_simple(function () {
         let count = 3;
