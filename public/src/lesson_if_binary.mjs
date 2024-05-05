@@ -84,15 +84,7 @@ ${app_learn_code_log_random_value()}
 }`, app_learn_code_log_random_value()];
         return list_join(statements, '\n');
     }, example_before, description, example_message, []);
-    function example_before(parent) {
-        html_style_alternate_monospace(parent, ['if there is an ', 'if', ' and what is in between the parentheses results in ', 'false', ' , the code in between the braces will not be ran']);
-        html_hr(parent);
-        html_style_alternate_monospace(parent, ['in the example below , ', 'false', ' is in between the parentheses of the ', 'if']);
-        html_style_alternate_monospace(parent, ['therefore what is inside the braces of the ', 'if', ' is not ran']);
-        html_style_alternate_monospace(parent, ['therefore the ', 'console.log();', ' statement inside the ', 'if', ' braces is not ran']);
-        html_style_alternate_monospace(parent, ['therefore only ', 'console.log();', ' statements before and after the ', 'if', ' braces are ran']);
-        html_hr(parent);
-    }
+    function example_before(parent) {}
     function screen1() {
         html_style_alternate_monospace(parent, ['inside the parenthesis of an ','if',' can be more than just ','true',' and ','false']);
         html_style_alternate_monospace(parent, ['remember ','<',' , ','<=',' , ','>',' , ','>=',' , ','===',' and ','!==',' all return ','true',' or ','false']);
