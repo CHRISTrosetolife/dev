@@ -1,3 +1,4 @@
+import {app_learn_code_log_random_value} from "./app_learn_code_log_random_value.mjs";
 import {html_img_limited_centered} from "./html_img_limited_centered.mjs";
 import {js_code_statement_let_assign_multiple} from "./js_code_statement_let_assign_multiple.mjs";
 import {list_sort} from "./list_sort.mjs";
@@ -73,24 +74,27 @@ import {js_code_statement_let} from "./js_code_statement_let.mjs";
 import {js_code_assign} from "./js_code_assign.mjs";
 import {list_adder} from "./list_adder.mjs";
 import {app_learn_code_random_identifiers} from "./app_learn_code_random_identifiers.mjs";
-import { app_learn_code_style_code_colored } from "./app_learn_code_style_code_colored.mjs";
-import { list_join } from "./list_join.mjs";
-import { list_scramble } from "./list_scramble.mjs";
+import {app_learn_code_style_code_colored} from "./app_learn_code_style_code_colored.mjs";
+import {list_join} from "./list_join.mjs";
+import {list_scramble} from "./list_scramble.mjs";
 export function lesson_if_true() {
     let description = 'if with true';
     let example_message = 'with an if with true passed in';
     return lesson_simple(function () {
-        let statements = [app_learn_code_log(app_learn_code_random_value()), `if (true) {
-            ${app_learn_code_log(app_learn_code_random_value())}
-        }`]
-        list_scramble(statements)
+        let statements = [app_learn_code_log_random_value(), `if (true) {
+            ${app_learn_code_log_random_value()}
+        }`];
+        if (random_50_50()) {
+            list_add(statements, app_learn_code_log_random_value());
+        }
+        list_scramble(statements);
         return list_join(statements, '\n');
     }, example_before, description, example_message, [screen1, screen2]);
     function example_before(parent) {
-        html_style_alternate_monospace(parent, [ 'in the example below , ','true',' is in between the parentheses of the ','if']);
-       html_p_text(parent,'therefore what is inside the braces is ran');
-       html_style_alternate_monospace(parent, [ 'therefore both ','console.log();',' statements are ran']);
-        html_hr(parent)
+        html_style_alternate_monospace(parent, ['in the example below , ', 'true', ' is in between the parentheses of the ', 'if']);
+        html_p_text(parent, 'therefore what is inside the braces is ran');
+        html_style_alternate_monospace(parent, ['therefore both ', 'console.log();', ' statements are ran']);
+        html_hr(parent);
     }
     function screen1(parent) {
         html_p_text(parent, 'a pencil may be used for writing');
@@ -104,7 +108,7 @@ export function lesson_if_true() {
         html_p_text(parent, 'otherwise they are free to use a pen');
     }
     function screen2(parent) {
-        html_style_alternate_monospace(parent, ['in programming , sometimes there is need to code : if "a" is ','true',' , then do "b"']);
+        html_style_alternate_monospace(parent, ['in programming , sometimes there is need to code : if "a" is ', 'true', ' , then do "b"']);
         html_style_alternate_monospace(parent, ['"b" is something that should happen only if "a" is ', 'true']);
         html_p_text(parent, 'below is some code that could represent using a pencil if an eraser is needed');
         app_learn_code_code_part_contrast(parent, `let need_eraser = true;
@@ -116,7 +120,7 @@ use_pencil = true;
         html_style_alternate_monospace(parent, ['for now , in between the parentheses there should be something that results in either ', 'true', ' or ', 'false']);
         html_style_alternate_monospace(parent, ['javascript allows other values besides ', 'true', ' and ', 'false', ' in between the parentheses of an ', 'if']);
         html_p_text(parent, 'however , that will not be covered at this time');
-        html_style_alternate(parent, html_p, [noop, html_style_bold, noop, app_learn_code_style_code_colored, noop, app_learn_code_style_code_colored], ['after the parenthesis should be a pair of ','braces',' : ', '{', ' ', '}']);
+        html_style_alternate(parent, html_p, [noop, html_style_bold, noop, app_learn_code_style_code_colored, noop, app_learn_code_style_code_colored], ['after the parenthesis should be a pair of ', 'braces', ' : ', '{', ' ', '}']);
         html_style_alternate_monospace(parent, ['in between the braces should be the code that should be ran if what is in between the parenthesis is ', 'true']);
     }
 }
