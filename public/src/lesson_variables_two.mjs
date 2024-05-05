@@ -101,6 +101,8 @@ html_style_alternate_monospace(parent, ['','b',' will not come before ','a'])
     }
     function screen2(parent) {
         html_p_text(parent, 'in this lesson the numbers will appear from smallest to largest');
+        html_p_text(parent, 'for example 1 is smaller than 2')
+
     }
     function example_before(parent) {
     }
