@@ -82,8 +82,10 @@ export function lesson_if_true() {
         let names = app_learn_code_random_identifiers(count);
         list_sort_string(names, identity);
         let [name_a, name_b, name_c] = names;
-        return `${js_code_statement_let_assign_multiple(names, values)}
-${app_learn_code_log_add_3(name_a, name_b, name_c)}`;
+        return `${app_learn_code_log(app_learn_code_random_value())}
+if (true) {
+    ${app_learn_code_log(app_learn_code_random_value())}
+}`;
     }, example_before, description, example_message, [screen1]);
     function example_before(parent) {
         html_p_text(parent, 'a program can have more than two variables');
