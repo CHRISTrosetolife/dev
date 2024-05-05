@@ -84,20 +84,20 @@ if (true) {
     function example_before(parent) {
     }
     function screen1(parent) {
-        html_p_text(parent, 'a pencil may be used for writing'
+        html_p_text(parent, 'a pencil may be used for writing');
         html_img_limited_centered(parent, 'pencil.jpg');
-        html_p_text(parent, 'a pen may be used for writing'
+        html_p_text(parent, 'a pen may be used for writing');
         html_img_limited_centered(parent, 'pen.jpg');
-        html_p_text(parent, 'however pencil writing may be erased'
+        html_p_text(parent, 'however pencil writing may be erased');
         html_img_limited_centered(parent, 'pencil_eraser.jpg');
         html_hr(parent)
-        html_p_text(parent, 'if someone needs to erase , they should use a pencil'
-        html_p_text(parent, 'otherwise they are free to use a pen'
+        html_p_text(parent, 'if someone needs to erase , they should use a pencil');
+        html_p_text(parent, 'otherwise they are free to use a pen');
     }
     function screen2(parent) {
-        'in programming sometimes there is need to code : if "a" is true , then do "b"'
+        html_p_text(parent, 'in programming sometimes there is need to code : if "a" is true , then do "b"');
         '"b" is something that should happen only if "a" is true'
-        'below is some code that could represent using a pencil if an eraser is needed'
+        html_p_text(parent, 'below is some code that could represent using a pencil if an eraser is needed');
         `let need_eraser = true, use_pencil = false;'
 if (need_eraser) {
 use_pencil = true;
@@ -105,7 +105,7 @@ use_pencil = true;
         'after the if should be parentheses : ( )'
         'for now , in between the parentheses should be something that results in true or false'
         'javascript allows other values besides true and false in between parentheses'
-        'however that will not be covered at this time'
+        html_p_text(parent, 'however that will not be covered at this time');
         'after the parenthesis should be braces : { }'
         'in between the braces should be the code that should be ran if what is in between the parenthesis is true'
     }
