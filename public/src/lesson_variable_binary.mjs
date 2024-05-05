@@ -79,7 +79,7 @@ import {app_learn_code_random_identifiers} from "./app_learn_code_random_identif
 import {list_includes} from "./list_includes.mjs";
 export function lesson_variable_binary() {
     let description = 'variable assigned from the output of : < , <= , > , >= , === , !== , + , - , * , /';
-    let example_message = description;
+    let example_message = string_combine('with a ', description);
     return lesson_simple(function () {
         let operators;
         if (random_50_50()) {
