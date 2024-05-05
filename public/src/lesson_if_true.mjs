@@ -109,7 +109,7 @@ if (need_eraser) {
 use_pencil = true;
 }`);
         html_style_alternate_monospace(parent, ['after the ', 'if', ' there should be a pair of parentheses : ', '(', ' ', ')']);
-        html_style_alternate_monospace(parent, ['for now , in between the parentheses there should be something that results in ', 'true', ' or ', 'false']);
+        html_style_alternate_monospace(parent, ['for now , in between the parentheses there should be something that results in either ', 'true', ' or ', 'false']);
         html_style_alternate_monospace(parent, ['javascript allows other values besides ', 'true', ' and ', 'false', ' in between parentheses']);
         html_p_text(parent, 'however , that will not be covered at this time');
         html_style_alternate(parent, html_p, [noop, html_style_bold, noop, app_learn_code_style_code_colored, noop, app_learn_code_style_code_colored], ['after the parenthesis should be a pair of ','braces',' : ', '{', ' ', '}']);
