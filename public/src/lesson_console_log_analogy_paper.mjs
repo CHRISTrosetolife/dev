@@ -1,4 +1,4 @@
-import {html_img_max_height_centered} from "./html_img_max_height_centered.mjs";
+import {html_img_limited_centered} from "./html_img_limited_centered.mjs";
 import {html_hr} from "./html_hr.mjs";
 import {html_strong_text} from "./html_strong_text.mjs";
 import {html_li} from "./html_li.mjs";
@@ -16,8 +16,7 @@ import {html_div} from "./html_div.mjs";
 import {html_style_centered} from "./html_style_centered.mjs";
 export function lesson_console_log_analogy_paper(parent) {
     html_p_text(parent, 'suppose there is paper');
-    const img_src = 'paper.jpg';
-    html_img_max_height_centered(parent, img_src);
+    html_img_limited_centered(parent, 'paper.jpg');
     html_p_text(parent, 'and suppose someone folds the paper into origami');
     html_img_width_full(parent, 'paper_folding.jpg');
     html_p_text(parent, 'then afterward there is folded paper origami');
