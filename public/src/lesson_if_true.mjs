@@ -84,11 +84,12 @@ if (true) {
     function example_before(parent) {
         'a pencil may be used for writing'
         'a pen may be used for writing'
-        'however pencils have an eraser'
+        'however pencil writing may be erased'
         'if someone needs to erase , they should use a pencil'
         'otherwise they are free to use a pen'
         'in programming sometimes there is need to code : if "a" is true , then do "b"'
         '"b" is something that should happen only if "a" is true'
+        'below is some code that could represent using a pencil if an eraser is needed'
         `let need_eraser = true, use_pencil = false;'
 if (need_eraser) {
 use_pencil = true;
