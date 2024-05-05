@@ -102,7 +102,7 @@ ${app_learn_code_log_random_value()}
         html_style_alternate_code_li(ul, ['','2 < 1',' will not appear']);
         html_style_alternate_code_li(ul, ['although ','1 > 2',' could appear']);
     }
-    function screen1() {
+    function screen1(parent) {
         html_style_alternate_monospace(parent, ['inside the parenthesis of an ', 'if', ' can be more than just ', 'true', ' and ', 'false']);
         html_style_alternate_monospace(parent, ['remember ', '<', ' , ', '<=', ' , ', '>', ' , ', '>=', ' , ', '===', ' and ', '!==', ' all return ', 'true', ' or ', 'false']);
         html_style_alternate_monospace(parent, ['therefore inside the parenthesis of an ', 'if', ' could be one of those']);
