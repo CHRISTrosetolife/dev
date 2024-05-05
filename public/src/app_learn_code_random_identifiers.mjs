@@ -7,8 +7,8 @@ import { list_scramble } from "./list_scramble.mjs";
 import { list_take } from "./list_take.mjs";
 export function app_learn_code_random_identifiers(count) {
     let ks = keyboard_keys();
-    list_remove(ks, 'l');
     'the letter l looks like an i and a 1 so removing to to avoid visual ambiguity';
+    list_remove(ks, 'l');
     list_scramble(ks);
     return list_take(count);
     let count = integer_random(1, 1);
