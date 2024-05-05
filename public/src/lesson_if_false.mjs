@@ -84,8 +84,10 @@ ${app_learn_code_log(app_learn_code_random_value())}
     }, example_before, description, example_message, []);
     function example_before(parent) {
         html_style_alternate_monospace(parent, ['if there is an ','if',' and what is in between the parentheses results in ','false',' , the code in between the braces will not be ran']);
+        html_hr(parent)
         html_style_alternate_monospace(parent, [ 'in the example below , ','false',' is in between the parentheses of the ','if']);
        html_p_text(parent,'therefore what is inside the braces is not ran');
        html_style_alternate_monospace(parent, [ 'therefore only the first ','console.log();',' statement is ran']);
+       html_hr(parent)
     }
 }
