@@ -25,6 +25,7 @@ import {lesson_variables_two} from "./lesson_variables_two.mjs";
 import {lesson_variable_change_2} from "./lesson_variable_change_2.mjs";
 import {lesson_add_numbers_three} from "./lesson_add_numbers_three.mjs";
 import {lesson_variables_three} from "./lesson_variables_three.mjs";
+import { lesson_if_true } from "./lesson_if_true.mjs";
 export function app_learn_code_lessons() {
     let lesson_creates = [];
     list_add(lesson_creates, lesson_console_log);
@@ -53,5 +54,6 @@ export function app_learn_code_lessons() {
     list_add(lesson_creates, lesson_variables_declare_shorthand);
     list_add(lesson_creates, lesson_add_numbers_three);
     list_add(lesson_creates, lesson_variables_three);
+    list_add(lesson_creates, lesson_if_true);
     return lesson_creates;
 }
