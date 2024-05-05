@@ -107,6 +107,7 @@ export function lesson_if_true() {
     function screen2(parent) {
         html_style_alternate_monospace(parent, ['in programming , sometimes there is need to code : if "a" is ', 'true', ' , then do "b"']);
         html_style_alternate_monospace(parent, ['"b" is something that should happen only if "a" is ', 'true']);
+        html_hr(parent)
         html_p_text(parent, 'below is some code that could represent using a pencil if an eraser is needed');
         app_learn_code_code_part_contrast(parent, `let need_eraser = true;
 let use_pencil = false;
