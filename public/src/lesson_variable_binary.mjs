@@ -1,3 +1,4 @@
+import {lesson_divide_numbers} from "./lesson_divide_numbers.mjs";
 import {html_style_alternate_code_li} from "./html_style_alternate_code_li.mjs";
 import {list_join} from "./list_join.mjs";
 import {app_learn_code_log_random_value} from "./app_learn_code_log_random_value.mjs";
@@ -85,7 +86,7 @@ export function lesson_variable_binary() {
         if (random_50_50()) {
             operators = ['+', '-', '*', '/'];
         } else {
-            operators = ['<', '<=', '>', '>=', '===', '!==']
+            operators = ['<', '<=', '>', '>=', '===', '!=='];
         }
         let operator = list_random_item(operators);
         let values = call_multiple(integer_random_digit_single_positive, 2);
@@ -96,14 +97,14 @@ export function lesson_variable_binary() {
         }
         if (operator === '/') {
             let {dividend, divisor} = lesson_divide_numbers();
-            a = dividend
-            b=divisor
+            a = dividend;
+            b = divisor;
         }
         let name = app_learn_code_random_identifier();
         let statements = [js_code_statement_let_assign(name, `${a} ${operator} ${b}`), app_learn_code_log(name)];
         return list_join(statements, '\n');
     }, example_before, description, example_message, []);
     function example_before(parent) {
-        html_style_alternate_monospace(parent, ['a variable can be assigned the output of : ', '<', ' ', '<=', ' ', '>', ' ', '>=', ' ', '===',' ',  '!==', ' ', '+', ' ', '-', ' ', '*',' or ',  '/']);
+        html_style_alternate_monospace(parent, ['a variable can be assigned the output of : ', '<', ' ', '<=', ' ', '>', ' ', '>=', ' ', '===', ' ', '!==', ' ', '+', ' ', '-', ' ', '*', ' or ', '/']);
     }
 }
