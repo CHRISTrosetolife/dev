@@ -95,7 +95,7 @@ if (need_eraser) {
 use_pencil = true;
 }`
         'after the if should be parentheses : ( )'
-        'in between the parentheses'
+        'in between the parentheses should be something that results in true or false'
     }
     function screen1(parent) {
     }
