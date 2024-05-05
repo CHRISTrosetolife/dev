@@ -74,14 +74,17 @@ import {js_code_assign} from "./js_code_assign.mjs";
 import {list_adder} from "./list_adder.mjs";
 import {app_learn_code_random_identifiers} from "./app_learn_code_random_identifiers.mjs";
 import { app_learn_code_style_code_colored } from "./app_learn_code_style_code_colored.mjs";
+import { list_join } from "./list_join.mjs";
+import { list_scramble } from "./list_scramble.mjs";
 export function lesson_if_true() {
     let description = 'if with true';
     let example_message = 'with an if with true passed in';
     return lesson_simple(function () {
-        return `${app_learn_code_log(app_learn_code_random_value())}
-if (true) {
-    ${app_learn_code_log(app_learn_code_random_value())}
-}`;
+        let statements = [app_learn_code_log(app_learn_code_random_value()), `if (true) {
+            ${app_learn_code_log(app_learn_code_random_value())}
+        }`]
+        list_scramble(statements)
+        return list_join(statements, '\n');
     }, example_before, description, example_message, [screen1, screen2]);
     function example_before(parent) {
         html_style_alternate_monospace(parent, [ 'in the example below , ','true',' is in between the parentheses of the ','if']);
