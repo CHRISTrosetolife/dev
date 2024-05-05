@@ -76,12 +76,6 @@ export function lesson_if_true() {
     let description = 'if with true';
     let example_message = 'with an if with true passed in';
     return lesson_simple(function () {
-        let count = 3;
-        let values = call_multiple(integer_random_digit_single_positive, count);
-        list_sort(values, identity);
-        let names = app_learn_code_random_identifiers(count);
-        list_sort_string(names, identity);
-        let [name_a, name_b, name_c] = names;
         return `${app_learn_code_log(app_learn_code_random_value())}
 if (true) {
     ${app_learn_code_log(app_learn_code_random_value())}
