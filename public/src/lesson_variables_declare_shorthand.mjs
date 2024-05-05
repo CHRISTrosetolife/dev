@@ -90,8 +90,10 @@ ${app_learn_code_log_add(name_a, name_b)}`;
     }
     function screen2(parent) {
         let values = call_multiple(integer_random_digit_single_positive, count);
+        list_sort(values, identity)
         let [a, b] = values;
         let names = app_learn_code_unique_multiple(app_learn_code_random_identifier, count);
+        list_sort_string(names, identity);
         let [name_a, name_b] = names;
         html_p_text(parent, 'here is some code :');
         app_learn_code_code_part_contrast(parent, `${js_code_statement_let_assign(name_a, a)}
