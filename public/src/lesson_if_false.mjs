@@ -73,9 +73,9 @@ import {js_code_statement_let} from "./js_code_statement_let.mjs";
 import {js_code_assign} from "./js_code_assign.mjs";
 import {list_adder} from "./list_adder.mjs";
 import {app_learn_code_random_identifiers} from "./app_learn_code_random_identifiers.mjs";
-export function lesson_if_true() {
-    let description = 'if with true';
-    let example_message = 'with an if with true passed in';
+export function lesson_if_false() {
+    let description = 'if with false';
+    let example_message = 'with an if with false passed in';
     return lesson_simple(function () {
         return `${app_learn_code_log(app_learn_code_random_value())}
 if (true) {
@@ -95,7 +95,7 @@ if (true) {
         html_p_text(parent, 'otherwise they are free to use a pen');
     }
     function screen2(parent) {
-        html_style_alternate_monospace(parent, ['in programming , sometimes there is need to code : if "a" is ','true',' , then do "b"']);
+        html_style_alternate_monospace(parent, ['in programming , sometimes there is need to code : if "a" is ', 'true', ' , then do "b"']);
         html_style_alternate_monospace(parent, ['"b" is something that should happen only if "a" is ', 'true']);
         html_p_text(parent, 'below is some code that could represent using a pencil if an eraser is needed');
         app_learn_code_code_part_contrast(parent, `let need_eraser = true;
