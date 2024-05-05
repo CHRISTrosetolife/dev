@@ -80,16 +80,21 @@ export function lesson_if_true() {
 if (true) {
     ${app_learn_code_log(app_learn_code_random_value())}
 }`;
-    }, example_before, description, example_message, [screen1]);
+    }, example_before, description, example_message, [screen1,screen2]);
     function example_before(parent) {
-        'a pencil may be used for writing'
+    }
+    function screen1(parent) {
+        html_p_text(parent, 'a pencil may be used for writing'
         html_img_limited_centered(parent, 'pencil.jpg');
-        'a pen may be used for writing'
+        html_p_text(parent, 'a pen may be used for writing'
         html_img_limited_centered(parent, 'pen.jpg');
-        'however pencil writing may be erased'
+        html_p_text(parent, 'however pencil writing may be erased'
         html_img_limited_centered(parent, 'pencil_eraser.jpg');
-        'if someone needs to erase , they should use a pencil'
-        'otherwise they are free to use a pen'
+        html_hr(parent)
+        html_p_text(parent, 'if someone needs to erase , they should use a pencil'
+        html_p_text(parent, 'otherwise they are free to use a pen'
+    }
+    function screen2(parent) {
         'in programming sometimes there is need to code : if "a" is true , then do "b"'
         '"b" is something that should happen only if "a" is true'
         'below is some code that could represent using a pencil if an eraser is needed'
@@ -103,7 +108,5 @@ use_pencil = true;
         'however that will not be covered at this time'
         'after the parenthesis should be braces : { }'
         'in between the braces should be the code that should be ran if what is in between the parenthesis is true'
-    }
-    function screen1(parent) {
     }
 }
