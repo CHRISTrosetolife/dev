@@ -79,7 +79,7 @@ import {list_adder} from "./list_adder.mjs";
 import {app_learn_code_random_identifiers} from "./app_learn_code_random_identifiers.mjs";
 import {list_includes} from "./list_includes.mjs";
 export function lesson_variable_binary() {
-    let description = 'variable assigned from the output of : < , <= , > , >= , === , !== , + , - , * , /';
+    let description = 'variable assigned from the output of a process';
     let example_message = string_combine('with a ', description);
     return lesson_simple(function () {
         let operators;

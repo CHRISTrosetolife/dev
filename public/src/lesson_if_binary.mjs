@@ -78,7 +78,7 @@ import {list_adder} from "./list_adder.mjs";
 import {app_learn_code_random_identifiers} from "./app_learn_code_random_identifiers.mjs";
 import {list_includes} from "./list_includes.mjs";
 export function lesson_if_binary() {
-    let description = 'if with < , <= , > , >= , === or !==';
+    let description = 'if with a process';
     let example_message = string_combine('with an ', description);
     return lesson_simple(function () {
         let operators = ['<', '<=', '>', '>=', '===', '!=='];
