@@ -87,7 +87,7 @@ ${app_learn_code_log_add(name_a, name_b)}`;
     }, example_before, description, example_message, [screen1, screen2]);
     function screen1(parent) {
         html_p_text(parent, 'a program can have more than one variable');
-        html_p_text(parent, 'where there is more than one variable is declared at once , in this application the variables will be ordered alphabetically')
+        html_p_text(parent, 'in this application the declared variables will be ordered alphabetically')
         html_p_text(parent, 'for example in the alphabet , A comes before B')
         html_style_alternate_monospace(parent, ['therefore varable ','a',' will come before variable ','b',' , like this :'])
         app_learn_code_code_part_contrast(parent,`${js_code_statement_let(a)}
