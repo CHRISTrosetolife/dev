@@ -75,6 +75,7 @@ export function lesson_variables_declare_shorthand() {
     let count = 2;
     return lesson_simple(function () {
         let values = call_multiple(integer_random_digit_single_positive, count);
+        list_sort(values, identity)
         let names = app_learn_code_unique_multiple(app_learn_code_random_identifier, count);
         list_sort_string(names, identity);
         let [name_a, name_b] = names;
