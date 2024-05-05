@@ -87,7 +87,8 @@ ${app_learn_code_log(app_learn_code_random_value())}
         html_hr(parent)
         html_style_alternate_monospace(parent, [ 'in the example below , ','false',' is in between the parentheses of the ','if']);
        html_p_text(parent,'therefore what is inside the braces is not ran');
-       html_style_alternate_monospace(parent, [ 'therefore only the first ','console.log();',' statement is ran']);
+       html_style_alternate_monospace(parent, [ 'therefore the ','console.log();',' inside the ','if',' braces is not ran']);
+       html_style_alternate_monospace(parent, [ 'therefore only ','console.log();',' statements outside the ','if',' braces are ran']);
        html_hr(parent)
     }
 }
