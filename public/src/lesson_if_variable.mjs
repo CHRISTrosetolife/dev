@@ -97,7 +97,7 @@ export function lesson_if_variable() {
 ${app_learn_code_log_random_value()}
 }`, app_learn_code_log_random_value()];
         return list_join(statements, '\n');
-    }, example_before, description, example_message, [screen1]);
+    }, example_before, description, example_message, []);
     function example_before(parent) {
         html_style_alternate_monospace(parent, ['inside the parenthesis of an ', 'if', ' could also be a variable']);
     }

@@ -85,7 +85,6 @@ export function lesson_if_binary() {
         let operator = list_random_item(operators);
         let operators_equality = ['===', '!=='];
         let values = call_multiple(integer_random_digit_single_positive, 2);
-        list_sort(values, identity);
         let [a,b] = values;
         if (list_includes(operators_equality, operator) && random_50_50()) {
             b = a;
@@ -94,7 +93,7 @@ export function lesson_if_binary() {
 ${app_learn_code_log_random_value()}
 }`, app_learn_code_log_random_value()];
         return list_join(statements, '\n');
-    }, example_before, description, example_message, [screen1, screen2]);
+    }, example_before, description, example_message, [screen2]);
     function example_before(){
 
     }
