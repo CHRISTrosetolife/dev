@@ -97,12 +97,13 @@ export function lesson_if_true() {
         html_hr(parent);
     }
     function screen1(parent) {
-        html_p_text(parent, 'a pencil may be used for writing');
-        html_img_limited_centered(parent, 'pencil.jpg');
-        html_p_text(parent, 'a pen may also be used for writing');
+        html_p_text(parent, 'a pen may be used for writing');
         html_img_limited_centered(parent, 'pen.jpg');
-        html_p_text(parent, 'however only pencil writing may be erased , not pen writing');
+        html_p_text(parent, 'a pencil may also be used for writing');
+        html_img_limited_centered(parent, 'pencil.jpg');
+        html_p_text(parent, 'an eraser can erase pencil writing');
         html_img_limited_centered(parent, 'pencil_eraser.jpg');
+        html_p_text(parent, 'bowever , an eraser cannot erase pen writing');
         html_hr(parent);
         html_p_text(parent, 'if someone needs to erase , they should use a pencil');
         html_p_text(parent, 'otherwise they are free to use a pen');
