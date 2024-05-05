@@ -83,19 +83,19 @@ export function lesson_if_binary() {
         let operators = ['<','<=','>','>=','===','!==']
         let operator = list_random_item(operators);
         let operators_equality = ['===','!==']
-        let a = integer_random_digit_single_positive();
-        let b;
+        let values = call_multiple(integer_random_digit_single_positive, 2)
+        list_sort(values, identity);
         if (list_includes(operators_equality, operator) && random_50_50()) {
             b = a;
-        } else {
-            b = integer_random_digit_single_positive();
         }
         let statements = [app_learn_code_log_random_value(), `if (${a} ${operator} ${b}) {
 ${app_learn_code_log_random_value()}
 }`, app_learn_code_log_random_value()];
         return list_join(statements, '\n');
     }, example_before, description, example_message, [screen1]);
-    function example_before(parent) {}
+    function example_before(parent) {
+        'in this lesson'
+    }
     function screen1() {
         html_style_alternate_monospace(parent, ['inside the parenthesis of an ','if',' can be more than just ','true',' and ','false']);
         html_style_alternate_monospace(parent, ['remember ','<',' , ','<=',' , ','>',' , ','>=',' , ','===',' and ','!==',' all return ','true',' or ','false']);
