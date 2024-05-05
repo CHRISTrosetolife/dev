@@ -83,7 +83,7 @@ export function lesson_if_binary() {
 ${app_learn_code_log_random_value()}
 }`, app_learn_code_log_random_value()];
         return list_join(statements, '\n');
-    }, example_before, description, example_message, []);
+    }, example_before, description, example_message, [screen1]);
     function example_before(parent) {}
     function screen1() {
         html_style_alternate_monospace(parent, ['inside the parenthesis of an ','if',' can be more than just ','true',' and ','false']);
