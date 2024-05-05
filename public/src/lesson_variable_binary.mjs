@@ -83,9 +83,9 @@ export function lesson_variable_binary() {
     return lesson_simple(function () {
         let operators = ['<', '<=', '>', '>=', '===', '!==', '+', '-', '*', '/'];
         let operator = list_random_item(operators);
-        let operators_equality = ['===', '!=='];
         let values = call_multiple(integer_random_digit_single_positive, 2);
         let [a, b] = values;
+        let operators_equality = ['===', '!=='];
         if (list_includes(operators_equality, operator) && random_50_50()) {
             b = a;
         }
