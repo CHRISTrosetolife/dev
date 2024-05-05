@@ -73,6 +73,7 @@ import {js_code_statement_let} from "./js_code_statement_let.mjs";
 import {js_code_assign} from "./js_code_assign.mjs";
 import {list_adder} from "./list_adder.mjs";
 import {app_learn_code_random_identifiers} from "./app_learn_code_random_identifiers.mjs";
+import { app_learn_code_style_code_colored } from "./app_learn_code_style_code_colored.mjs";
 export function lesson_if_true() {
     let description = 'if with true';
     let example_message = 'with an if with true passed in';
@@ -107,7 +108,7 @@ use_pencil = true;
         html_style_alternate_monospace(parent, ['for now , in between the parentheses there should be something that results in ', 'true', ' or ', 'false']);
         html_style_alternate_monospace(parent, ['javascript allows other values besides ', 'true', ' and ', 'false', ' in between parentheses']);
         html_p_text(parent, 'however , that will not be covered at this time');
-        html_style_alternate_monospace(parent, ['after the parenthesis should be a pair of braces : ', '{', ' ', '}']);
+        html_style_alternate(parent, html_p, [noop, html_style_bold, noop, app_learn_code_style_code_colored], ['after the parenthesis should be a pair of ','braces',' : ', '{', ' ', '}']);
         html_style_alternate_monospace(parent, ['in between the braces should be the code that should be ran if what is in between the parenthesis is ', 'true']);
     }
 }

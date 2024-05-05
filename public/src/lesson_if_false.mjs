@@ -95,7 +95,7 @@ if (false) {
         html_p_text(parent, 'otherwise they are free to use a pen');
     }
     function screen2(parent) {
-        html_style_alternate_monospace(parent, ['in programming , sometimes there is need to code : if "a" is ', 'true', ' , then do "b"']);
+        html_style_alternate_monospace(parent, ['if there is an if and what is in between the parentheses results in false , the code in between the braces will not be ran']);
         html_style_alternate_monospace(parent, ['"b" is something that should happen only if "a" is ', 'true']);
         html_p_text(parent, 'below is some code that could represent using a pencil if an eraser is needed');
         app_learn_code_code_part_contrast(parent, `let need_eraser = true;
