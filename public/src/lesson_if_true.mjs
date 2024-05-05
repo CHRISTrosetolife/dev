@@ -88,7 +88,7 @@ ${app_learn_code_log_random_value()}
     }, example_before, description, example_message, [screen1, screen2, screen3]);
     function example_before(parent) {
         html_style_alternate_monospace(parent, ['in the example below , ', 'true', ' is in between the parentheses of the ', 'if']);
-        html_p_text(parent, 'therefore what is inside the braces is ran');
+        html_style_alternate_monospace(parent, ['therefore what is inside the braces of the ','if',' is ran']);
         html_style_alternate_monospace(parent, ['therefore all three ', 'console.log();', ' statements are ran']);
         html_hr(parent);
     }
