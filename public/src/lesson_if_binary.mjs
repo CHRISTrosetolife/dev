@@ -75,7 +75,7 @@ import {js_code_statement_let} from "./js_code_statement_let.mjs";
 import {js_code_assign} from "./js_code_assign.mjs";
 import {list_adder} from "./list_adder.mjs";
 import {app_learn_code_random_identifiers} from "./app_learn_code_random_identifiers.mjs";
-export function lesson_if_false() {
+export function lesson_if_binary() {
     let description = 'if with false';
     let example_message = 'with an if with false passed in';
     return lesson_simple(function () {
@@ -88,9 +88,14 @@ ${app_learn_code_log_random_value()}
         html_style_alternate_monospace(parent, ['if there is an ', 'if', ' and what is in between the parentheses results in ', 'false', ' , the code in between the braces will not be ran']);
         html_hr(parent);
         html_style_alternate_monospace(parent, ['in the example below , ', 'false', ' is in between the parentheses of the ', 'if']);
-        html_style_alternate_monospace(parent, ['therefore what is inside the braces of the ','if',' is not ran']);
+        html_style_alternate_monospace(parent, ['therefore what is inside the braces of the ', 'if', ' is not ran']);
         html_style_alternate_monospace(parent, ['therefore the ', 'console.log();', ' statement inside the ', 'if', ' braces is not ran']);
         html_style_alternate_monospace(parent, ['therefore only ', 'console.log();', ' statements before and after the ', 'if', ' braces are ran']);
         html_hr(parent);
+    }
+    function screen1() {
+        ['inside the parenthesis of an ','if',' can be more than just ','true',' and ','false']
+        ['remember ','<',' , ','<=',' , ','>',' , ','>=',' , ','===',' and ','!==',' all return ','true',' or ','false']
+        ['therefore inside the parenthesis of an ','if',' could be one of those']
     }
 }
