@@ -86,6 +86,7 @@ export function lesson_if_binary() {
         let operators_equality = ['===', '!=='];
         let values = call_multiple(integer_random_digit_single_positive, 2);
         list_sort(values, identity);
+        let [a,b] = values;
         if (list_includes(operators_equality, operator) && random_50_50()) {
             b = a;
         }
