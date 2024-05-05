@@ -96,17 +96,17 @@ if (true) {
     }
     function screen2(parent) {
         html_p_text(parent, 'in programming sometimes there is need to code : if "a" is true , then do "b"');
-        html_style_alternate_monospace(['"b" is something that should happen only if "a" is ','true']);
+        html_style_alternate_monospace(parent, ['"b" is something that should happen only if "a" is ','true']);
         html_p_text(parent, 'below is some code that could represent using a pencil if an eraser is needed');
         `let need_eraser = true, use_pencil = false;'
 if (need_eraser) {
 use_pencil = true;
 }`
-        ['after the if should be a pair of parentheses : ','(',' ',')']
-        ['for now , in between the parentheses should be something that results in ','true',' or ','false']
-        ['javascript allows other values besides ','true',' and ','false',' in between parentheses']
+html_style_alternate_monospace(parent, ['after the if should be a pair of parentheses : ','(',' ',')']);
+html_style_alternate_monospace(parent, ['for now , in between the parentheses should be something that results in ','true',' or ','false']);
+html_style_alternate_monospace(parent, ['javascript allows other values besides ','true',' and ','false',' in between parentheses']);
         html_p_text(parent, 'however that will not be covered at this time');
-        ['after the parenthesis should be a pair of braces : ','{',' ','}']
-        ['in between the braces should be the code that should be ran if what is in between the parenthesis is ','true']
+        html_style_alternate_monospace(parent, ['after the parenthesis should be a pair of braces : ','{',' ','}']);
+        html_style_alternate_monospace(parent, ['in between the braces should be the code that should be ran if what is in between the parenthesis is ','true']);
     }
 }
