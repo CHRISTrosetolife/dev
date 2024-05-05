@@ -1,3 +1,4 @@
+import {list_sort} from "./list_sort.mjs";
 import {app_learn_code_log_add_3} from "./app_learn_code_log_add_3.mjs";
 import {app_learn_code_unique_multiple} from "./app_learn_code_unique_multiple.mjs";
 import {call_multiple} from "./call_multiple.mjs";
@@ -74,7 +75,9 @@ export function lesson_variables_three() {
     let example_message = string_combine('with ', description);
     return lesson_simple(function () {
         let count = 3;
-        let [a, b, c] = call_multiple(integer_random_digit_single_positive, count);
+        let values = call_multiple(integer_random_digit_single_positive, count);
+        list_sort(values, identity);
+        let [a, b, c] = values;
         let names = app_learn_code_unique_multiple(app_learn_code_random_identifier, count);
         list_sort_string(names, identity);
         let [name_a, name_b, name_c] = names;
@@ -82,8 +85,14 @@ export function lesson_variables_three() {
 ${js_code_statement_let_assign(name_b, b)}
 ${js_code_statement_let_assign(name_c, c)}
 ${app_learn_code_log_add_3(name_a, name_b, name_c)}`;
-    }, example_before, description, example_message, []);
+    }, example_before, description, example_message, [screen1]);
     function example_before(parent) {
         html_p_text(parent, 'a program can have more than two variables');
+    }
+    function screen1(parent) {
+        html_p_text(parent, 'in this lesson :');
+        let ul = html_ul(parent);
+        html_li_text(ul, 'the declared variables will be ordered alphabetically');
+        html_li_text(ul, 'the numbers will be assigned from smallest to largest');
     }
 }
