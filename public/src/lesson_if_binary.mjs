@@ -95,8 +95,8 @@ ${app_learn_code_log_random_value()}
         return list_join(statements, '\n');
     }, example_before, description, example_message, [screen1]);
     function example_before(parent) {
-        html_p_text('in this lesson the numbers will appear from smallest to greatest');
-        html_p_text('for example :');
+        html_p_text(parent,'in this lesson the numbers will appear from smallest to greatest');
+        html_p_text(parent,'for example :');
         let ul = html_ul(parent);
         html_style_alternate_code_li(ul, ['','1 < 2',' could appear :']);
         html_style_alternate_code_li(ul, ['','2 < 1',' will not appear']);
