@@ -79,7 +79,14 @@ export function lesson_if_binary() {
     let description = 'if with < , <= , > , >= , === or !==';
     let example_message = string_combine('with an if with ', description);
     return lesson_simple(function () {
-        let statements = [app_learn_code_log_random_value(), `if (false) {
+        let a = integer_random_digit_single_positive();
+        let b;
+        if (random_50_50()) {
+            b = a;
+        } else {
+            b = integer_random_digit_single_positive();
+        }
+        let statements = [app_learn_code_log_random_value(), `if (${a} ${operator} ${b}) {
 ${app_learn_code_log_random_value()}
 }`, app_learn_code_log_random_value()];
         return list_join(statements, '\n');
