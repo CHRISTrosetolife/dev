@@ -88,7 +88,7 @@ if (true) {
         html_img_limited_centered(parent, 'pencil.jpg');
         html_p_text(parent, 'a pen may be used for writing');
         html_img_limited_centered(parent, 'pen.jpg');
-        html_p_text(parent, 'however pencil writing may be erased');
+        html_p_text(parent, 'however only pencil writing may be erased , not pen writing');
         html_img_limited_centered(parent, 'pencil_eraser.jpg');
         html_hr(parent);
         html_p_text(parent, 'if someone needs to erase , they should use a pencil');
