@@ -79,7 +79,7 @@ export function lesson_variables_two() {
         return `${js_code_statement_let_assign(name_a, a)}
 ${js_code_statement_let_assign(name_b, b)}
 ${app_learn_code_log_add(name_a, name_b)}`;
-    }, example_before, description, example_message, []);
+    }, example_before, description, example_message, [screen1]);
     function screen1(parent) {
         let a = 'a';
         let b = 'b';
@@ -87,12 +87,14 @@ ${app_learn_code_log_add(name_a, name_b)}`;
         html_p_text(parent, 'where there is more than one variable is declared at once , in this application the variables will be ordered alphabetically')
         html_p_text(parent, 'for example in the alphabet , A comes before B')
         html_style_alternate_monospace(parent, ['therefore varable ','a',' will come before variable ','b',' , like this :'])
-`${js_code_statement_let(a)}
-${js_code_statement_let(b)}`
+        app_learn_code_code_part_contrast(parent,`${js_code_statement_let(a)}
+${js_code_statement_let(b)}`);
 html_style_alternate_monospace(parent, ['','b',' will not come before ','a'])
         'it will not be like this :'
-        `${js_code_statement_let(b)}
-        ${js_code_statement_let(a)}`
+        app_learn_code_code_part_contrast(parent,`${js_code_statement_let(b)}
+        ${js_code_statement_let(a)}`);
+        html_p_text(parent, 'this should make quizzing easier');
+        html_p_text(parent, 'however javascript allows variables to be declared either way');
     }
     function example_before(parent) {
     }
