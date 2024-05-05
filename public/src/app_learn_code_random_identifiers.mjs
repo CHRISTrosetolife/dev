@@ -11,5 +11,5 @@ export function app_learn_code_random_identifiers(count) {
     'the letter l looks like an i and a 1 so removing to to avoid visual ambiguity';
     list_remove(ks, 'l');
     list_scramble(ks);
-    return list_take(count);
+    return list_take(ks,count);
 }
