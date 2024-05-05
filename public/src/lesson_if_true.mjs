@@ -109,12 +109,13 @@ export function lesson_if_true() {
         html_style_alternate_monospace(parent, ['"b" is something that should happen only if "a" is ', 'true']);
     }
     function screen3(parent) {
-        html_p_text(parent, 'below is some code that could represent using a pencil if an eraser is needed');
+        html_p_text(parent, 'below is some code that could represent using a pencil if an eraser is needed :');
         app_learn_code_code_part_contrast(parent, `let need_eraser = true;
 let use_pencil = false;
 if (need_eraser) {
 use_pencil = true;
 }`);
+html_hr(parent)
         html_style_alternate_monospace(parent, ['after the ', 'if', ' there should be a pair of parentheses : ', '(', ' ', ')']);
         html_style_alternate_monospace(parent, ['for now , in between the parentheses there should be something that results in either ', 'true', ' or ', 'false']);
         html_style_alternate_monospace(parent, ['javascript allows other values besides ', 'true', ' and ', 'false', ' in between the parentheses of an ', 'if']);
