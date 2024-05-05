@@ -18,9 +18,9 @@ export function lesson_console_log_analogy_paper(parent) {
     html_p_text(parent, 'suppose there is paper');
     html_img_limited_centered(parent, 'paper.jpg');
     html_p_text(parent, 'and suppose someone folds the paper into origami');
-    html_img_width_full(parent, 'paper_folding.jpg');
+    html_img_limited_centered(parent, 'paper_folding.jpg');
     html_p_text(parent, 'then afterward there is folded paper origami');
-    html_img_width_full(parent, 'paper_folded.jpg');
+    html_img_limited_centered(parent, 'paper_folded.jpg');
     html_hr(parent);
     html_p_text(parent, 'we could say :');
     let ol = html_ul(parent);
