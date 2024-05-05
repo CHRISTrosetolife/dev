@@ -87,6 +87,12 @@ if (true) {
         'however pencils have an eraser'
         'if someone needs to erase , they should use a pencil'
         'otherwise they are free to use a pen'
+        'in programming sometimes there is need to code : if "a" is true , then do "b"'
+        '"b" is something that should happen only if "a" is true'
+        `let need_eraser = true, use_pencil = false;'
+if (need_eraser) {
+use_pencil = true;
+}`
     }
     function screen1(parent) {
     }
