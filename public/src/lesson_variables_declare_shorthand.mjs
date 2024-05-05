@@ -1,3 +1,4 @@
+import {list_sort} from "./list_sort.mjs";
 import {js_code_statement_let_assign_multiple} from "./js_code_statement_let_assign_multiple.mjs";
 import {js_code_statement_let_assign_2} from "./js_code_statement_let_assign_2.mjs";
 import {app_learn_code_unique_multiple} from "./app_learn_code_unique_multiple.mjs";
@@ -75,7 +76,7 @@ export function lesson_variables_declare_shorthand() {
     let count = 2;
     return lesson_simple(function () {
         let values = call_multiple(integer_random_digit_single_positive, count);
-        list_sort(values, identity)
+        list_sort(values, identity);
         let names = app_learn_code_unique_multiple(app_learn_code_random_identifier, count);
         list_sort_string(names, identity);
         let [name_a, name_b] = names;
@@ -83,14 +84,14 @@ export function lesson_variables_declare_shorthand() {
 ${app_learn_code_log_add(name_a, name_b)}`;
     }, example_before, description, example_message, [screen1, screen2]);
     function screen1(parent) {
-        html_p_text(parent, 'in this lesson :')
-        let ul = html_ul(parent)
-        html_li_text(ul, 'the declared variables will be ordered alphabetically')
+        html_p_text(parent, 'in this lesson :');
+        let ul = html_ul(parent);
+        html_li_text(ul, 'the declared variables will be ordered alphabetically');
         html_li_text(ul, 'the numbers will be assigned from smallest to largest');
     }
     function screen2(parent) {
         let values = call_multiple(integer_random_digit_single_positive, count);
-        list_sort(values, identity)
+        list_sort(values, identity);
         let [a, b] = values;
         let names = app_learn_code_unique_multiple(app_learn_code_random_identifier, count);
         list_sort_string(names, identity);
