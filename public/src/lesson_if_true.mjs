@@ -85,6 +85,8 @@ if (true) {
         'a pencil may be used for writing'
         'a pen may be used for writing'
         'however pencils have an eraser'
+        'if someone needs to erase , they should use a pencil'
+        'otherwise they are free to use a pen'
     }
     function screen1(parent) {
     }
