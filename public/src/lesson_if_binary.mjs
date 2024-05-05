@@ -95,12 +95,12 @@ ${app_learn_code_log_random_value()}
         return list_join(statements, '\n');
     }, example_before, description, example_message, [screen1]);
     function example_before(parent) {
-        'in this lesson the numbers will appear from smallest to greatest';
-        'for example :';
+        html_p_text('in this lesson the numbers will appear from smallest to greatest');
+        html_p_text('for example :');
         let ul = html_ul(parent);
-        html_style_alternate_code_li(ul, ['1 < 2 could appear :']);
-        html_style_alternate_code_li(ul, ['2 < 1 will not appear']);
-        html_style_alternate_code_li(ul, ['although 1 > 2 could appear']);
+        html_style_alternate_code_li(ul, ['','1 < 2',' could appear :']);
+        html_style_alternate_code_li(ul, ['','2 < 1',' will not appear']);
+        html_style_alternate_code_li(ul, ['although ','1 > 2',' could appear']);
     }
     function screen1() {
         html_style_alternate_monospace(parent, ['inside the parenthesis of an ', 'if', ' can be more than just ', 'true', ' and ', 'false']);
