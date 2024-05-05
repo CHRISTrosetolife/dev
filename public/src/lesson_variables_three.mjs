@@ -1,3 +1,4 @@
+import {js_code_statement_let_assign_multiple} from "./js_code_statement_let_assign_multiple.mjs";
 import {list_sort} from "./list_sort.mjs";
 import {app_learn_code_log_add_3} from "./app_learn_code_log_add_3.mjs";
 import {app_learn_code_unique_multiple} from "./app_learn_code_unique_multiple.mjs";
