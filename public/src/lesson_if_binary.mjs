@@ -79,7 +79,7 @@ import {app_learn_code_random_identifiers} from "./app_learn_code_random_identif
 import {list_includes} from "./list_includes.mjs";
 export function lesson_if_binary() {
     let description = 'if with < , <= , > , >= , === or !==';
-    let example_message = string_combine('with an if with ', description);
+    let example_message = string_combine('with an ', description);
     return lesson_simple(function () {
         let operators = ['<', '<=', '>', '>=', '===', '!=='];
         let operator = list_random_item(operators);
@@ -96,7 +96,7 @@ ${app_learn_code_log_random_value()}
         return list_join(statements, '\n');
     }, example_before, description, example_message, [screen1, screen2]);
     function example_before(){
-        
+
     }
     function screen1(parent) {
         html_p_text(parent,'in this lesson the numbers will appear from smallest to greatest');
