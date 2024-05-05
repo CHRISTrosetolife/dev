@@ -85,7 +85,7 @@ export function lesson_if_true() {
             ${app_learn_code_log_random_value()}
         }`,app_learn_code_log_random_value()];
         return list_join(statements, '\n');
-    }, example_before, description, example_message, [screen1, screen2]);
+    }, example_before, description, example_message, [screen1, screen2, screen3]);
     function example_before(parent) {
         html_style_alternate_monospace(parent, ['in the example below , ', 'true', ' is in between the parentheses of the ', 'if']);
         html_p_text(parent, 'therefore what is inside the braces is ran');
@@ -107,7 +107,8 @@ export function lesson_if_true() {
     function screen2(parent) {
         html_style_alternate_monospace(parent, ['in programming , sometimes there is need to code : if "a" is ', 'true', ' , then do "b"']);
         html_style_alternate_monospace(parent, ['"b" is something that should happen only if "a" is ', 'true']);
-        html_hr(parent)
+    }
+    function screen3(parent) {
         html_p_text(parent, 'below is some code that could represent using a pencil if an eraser is needed');
         app_learn_code_code_part_contrast(parent, `let need_eraser = true;
 let use_pencil = false;
