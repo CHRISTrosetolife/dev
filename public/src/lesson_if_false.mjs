@@ -82,32 +82,7 @@ if (false) {
     ${app_learn_code_log(app_learn_code_random_value())}
 }`;
     }, example_before, description, example_message, [screen1, screen2]);
-    function example_before(parent) {}
-    function screen1(parent) {
-        html_p_text(parent, 'a pencil may be used for writing');
-        html_img_limited_centered(parent, 'pencil.jpg');
-        html_p_text(parent, 'a pen may be used for writing');
-        html_img_limited_centered(parent, 'pen.jpg');
-        html_p_text(parent, 'however only pencil writing may be erased , not pen writing');
-        html_img_limited_centered(parent, 'pencil_eraser.jpg');
-        html_hr(parent);
-        html_p_text(parent, 'if someone needs to erase , they should use a pencil');
-        html_p_text(parent, 'otherwise they are free to use a pen');
-    }
-    function screen2(parent) {
-        html_style_alternate_monospace(parent, ['if there is an if and what is in between the parentheses results in false , the code in between the braces will not be ran']);
-        html_style_alternate_monospace(parent, ['"b" is something that should happen only if "a" is ', 'true']);
-        html_p_text(parent, 'below is some code that could represent using a pencil if an eraser is needed');
-        app_learn_code_code_part_contrast(parent, `let need_eraser = true;
-let use_pencil = false;
-if (need_eraser) {
-use_pencil = true;
-}`);
-        html_style_alternate_monospace(parent, ['after the ', 'if', ' there should be a pair of parentheses : ', '(', ' ', ')']);
-        html_style_alternate_monospace(parent, ['for now , in between the parentheses there should be something that results in ', 'true', ' or ', 'false']);
-        html_style_alternate_monospace(parent, ['javascript allows other values besides ', 'true', ' and ', 'false', ' in between parentheses']);
-        html_p_text(parent, 'however , that will not be covered at this time');
-        html_style_alternate_monospace(parent, ['after the parenthesis should be a pair of braces : ', '{', ' ', '}']);
-        html_style_alternate_monospace(parent, ['in between the braces should be the code that should be ran if what is in between the parenthesis is ', 'true']);
+    function example_before(parent) {
+        html_style_alternate_monospace(parent, ['if there is an ','if',' and what is in between the parentheses results in ','false',' , the code in between the braces will not be ran']);
     }
 }
