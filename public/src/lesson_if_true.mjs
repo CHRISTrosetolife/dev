@@ -98,6 +98,8 @@ use_pencil = true;
         'for now , in between the parentheses should be something that results in true or false'
         'javascript allows other values besides true and false in between parentheses'
         'however that will not be covered at this time'
+        'after the parenthesis should be braces : { }'
+        'in between the braces should be the code that should be ran if what is in between the parenthesis is true'
     }
     function screen1(parent) {
     }
