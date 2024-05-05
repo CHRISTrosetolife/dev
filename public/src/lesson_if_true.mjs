@@ -93,7 +93,7 @@ export function lesson_if_true() {
     function example_before(parent) {
         html_style_alternate_monospace(parent, ['in the example below , ', 'true', ' is in between the parentheses of the ', 'if']);
         html_p_text(parent, 'therefore what is inside the braces is ran');
-        html_style_alternate_monospace(parent, ['therefore both ', 'console.log();', ' statements are ran']);
+        html_style_alternate_monospace(parent, ['therefore all ', 'console.log();', ' statements are ran']);
         html_hr(parent);
     }
     function screen1(parent) {
