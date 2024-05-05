@@ -99,7 +99,7 @@ html_style_alternate_monospace(parent, ['','b',' will not come before ','a'])
         html_p_text(parent, 'this should make quizzing easier');
         html_p_text(parent, 'however javascript allows variables to be declared either way');
     }
-    function screen1(parent) {
+    function screen2(parent) {
         html_p_text(parent, 'in this lesson the numbers will appear from smallest to largest');
     }
     function example_before(parent) {
