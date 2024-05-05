@@ -68,6 +68,7 @@ import {string_delimit} from "./string_delimit.mjs";
 import {js_code_statement_let} from "./js_code_statement_let.mjs";
 import {js_code_assign} from "./js_code_assign.mjs";
 import { list_sort } from "./list_sort.mjs";
+import { app_learn_code_random_identifiers } from "./app_learn_code_random_identifiers.mjs";
 export function lesson_variables_two() {
     let a = 'a';
     let b = 'b';
@@ -78,7 +79,7 @@ export function lesson_variables_two() {
         let values = call_multiple(integer_random_digit_single_positive, count);
         list_sort(values, identity)
         let [v_a, v_b] = values;
-        let names = app_learn_code_unique_multiple(app_learn_code_random_identifier, count);
+        let names = app_learn_code_random_identifiers(count);
         list_sort_string(names, identity)
         let [name_a, name_b] = names;
         return `${js_code_statement_let_assign(name_a, v_a)}

@@ -71,6 +71,7 @@ import {string_delimit} from "./string_delimit.mjs";
 import {js_code_statement_let} from "./js_code_statement_let.mjs";
 import {js_code_assign} from "./js_code_assign.mjs";
 import {list_adder} from "./list_adder.mjs";
+import { app_learn_code_random_identifiers } from "./app_learn_code_random_identifiers.mjs";
 export function lesson_variables_three() {
     let description = 'three variables';
     let example_message = string_combine('with ', description);
@@ -78,7 +79,7 @@ export function lesson_variables_three() {
         let count = 3;
         let values = call_multiple(integer_random_digit_single_positive, count);
         list_sort(values, identity);
-        let names = app_learn_code_unique_multiple(app_learn_code_random_identifier, count);
+        let names = app_learn_code_random_identifiers(count);
         list_sort_string(names, identity);
         let [name_a, name_b, name_c] = names;
         return `${js_code_statement_let_assign_multiple(names, values)}

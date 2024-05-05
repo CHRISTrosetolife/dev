@@ -70,6 +70,7 @@ import {string_combine} from "./string_combine.mjs";
 import {string_delimit} from "./string_delimit.mjs";
 import {js_code_statement_let} from "./js_code_statement_let.mjs";
 import {js_code_assign} from "./js_code_assign.mjs";
+import { app_learn_code_random_identifiers } from "./app_learn_code_random_identifiers.mjs";
 export function lesson_variables_declare_shorthand() {
     let description = 'declaring and assigning multiple variables in a single statement';
     let example_message = description;
@@ -77,7 +78,7 @@ export function lesson_variables_declare_shorthand() {
     return lesson_simple(function () {
         let values = call_multiple(integer_random_digit_single_positive, count);
         list_sort(values, identity);
-        let names = app_learn_code_unique_multiple(app_learn_code_random_identifier, count);
+        let names = app_learn_code_random_identifiers(count);
         list_sort_string(names, identity);
         let [name_a, name_b] = names;
         return `${js_code_statement_let_assign_multiple(names, values)}
@@ -93,7 +94,7 @@ ${app_learn_code_log_add(name_a, name_b)}`;
         let values = call_multiple(integer_random_digit_single_positive, count);
         list_sort(values, identity);
         let [a, b] = values;
-        let names = app_learn_code_unique_multiple(app_learn_code_random_identifier, count);
+        let names = app_learn_code_random_identifiers(count);
         list_sort_string(names, identity);
         let [name_a, name_b] = names;
         html_p_text(parent, 'here is some code :');
