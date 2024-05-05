@@ -81,7 +81,7 @@ export function lesson_if_false() {
 if (false) {
     ${app_learn_code_log(app_learn_code_random_value())}
 }`;
-    }, example_before, description, example_message, [screen1, screen2]);
+    }, example_before, description, example_message, []);
     function example_before(parent) {
         html_style_alternate_monospace(parent, ['if there is an ','if',' and what is in between the parentheses results in ','false',' , the code in between the braces will not be ran']);
     }
