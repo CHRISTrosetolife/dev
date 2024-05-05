@@ -83,8 +83,11 @@ if (true) {
     }, example_before, description, example_message, [screen1]);
     function example_before(parent) {
         'a pencil may be used for writing'
+        html_img_limited_centered(parent, 'pencil.jpg');
         'a pen may be used for writing'
+        html_img_limited_centered(parent, 'pen.jpg');
         'however pencil writing may be erased'
+        html_img_limited_centered(parent, 'pencil_eraser.jpg');
         'if someone needs to erase , they should use a pencil'
         'otherwise they are free to use a pen'
         'in programming sometimes there is need to code : if "a" is true , then do "b"'
