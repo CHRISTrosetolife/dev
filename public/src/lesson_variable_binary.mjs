@@ -102,7 +102,7 @@ export function lesson_variable_binary() {
         let name = app_learn_code_random_identifier();
         let statements = [js_code_statement_let_assign(name, `${a} ${operator} ${b}`), app_learn_code_log(name)];
         return list_join(statements, '\n');
-    }, example_before, description, example_message, [screen1]);
+    }, example_before, description, example_message, []);
     function example_before(parent) {
         html_style_alternate_monospace(parent, ['a variable can be assigned the output of : ', '<', ' ', '<=', ' ', '>', ' ', '>=', ' ', '===',' ',  '!==', ' ', '+', ' ', '-', ' ', '*',' or ',  '/']);
     }
