@@ -90,7 +90,10 @@ export function lesson_if_variable() {
         if (list_includes(operators_equality, operator) && random_50_50()) {
             b = a;
         }
-        let statements = [js_code_statement_let_assign(name, `${a} ${operator} ${b}`) app_learn_code_log_random_value(), `if () {
+        let name = app_learn_code_random_identifier();
+        let statements = [
+            js_code_statement_let_assign(name, `${a} ${operator} ${b}`), 
+            app_learn_code_log_random_value(), `if (${name}) {
 ${app_learn_code_log_random_value()}
 }`, app_learn_code_log_random_value()];
         return list_join(statements, '\n');
