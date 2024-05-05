@@ -83,17 +83,13 @@ export function lesson_if_true() {
     return lesson_simple(function () {
         let statements = [app_learn_code_log_random_value(), `if (true) {
             ${app_learn_code_log_random_value()}
-        }`];
-        if (random_50_50()) {
-            list_add(statements, app_learn_code_log_random_value());
-        }
-        list_scramble(statements);
+        }`,app_learn_code_log_random_value()];
         return list_join(statements, '\n');
     }, example_before, description, example_message, [screen1, screen2]);
     function example_before(parent) {
         html_style_alternate_monospace(parent, ['in the example below , ', 'true', ' is in between the parentheses of the ', 'if']);
         html_p_text(parent, 'therefore what is inside the braces is ran');
-        html_style_alternate_monospace(parent, ['therefore all ', 'console.log();', ' statements are ran']);
+        html_style_alternate_monospace(parent, ['therefore all three ', 'console.log();', ' statements are ran']);
         html_hr(parent);
     }
     function screen1(parent) {
