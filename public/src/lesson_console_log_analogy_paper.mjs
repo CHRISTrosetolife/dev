@@ -15,9 +15,10 @@ import { html_div } from "./html_div.mjs";
 import { html_style_centered } from "./html_style_centered.mjs";
 export function lesson_console_log_analogy_paper(parent) {
     html_p_text(parent, 'suppose there is paper');
+    const img_src = 'paper.jpg';
     let container = html_div(parent);
     html_style_centered(container)
-    let i1 = html_img(container, 'paper.jpg');
+    let i1 = html_img(container, img_src);
     html_style(i1, {
         'max-height':'50dvh'
     })
