@@ -78,7 +78,7 @@ export function lesson_if_false() {
     let example_message = 'with an if with false passed in';
     return lesson_simple(function () {
         return `${app_learn_code_log(app_learn_code_random_value())}
-if (true) {
+if (false) {
     ${app_learn_code_log(app_learn_code_random_value())}
 }`;
     }, example_before, description, example_message, [screen1, screen2]);
