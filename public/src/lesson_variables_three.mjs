@@ -77,13 +77,10 @@ export function lesson_variables_three() {
         let count = 3;
         let values = call_multiple(integer_random_digit_single_positive, count);
         list_sort(values, identity);
-        let [a, b, c] = values;
         let names = app_learn_code_unique_multiple(app_learn_code_random_identifier, count);
         list_sort_string(names, identity);
         let [name_a, name_b, name_c] = names;
-        return `${js_code_statement_let_assign(name_a, a)}
-${js_code_statement_let_assign(name_b, b)}
-${js_code_statement_let_assign(name_c, c)}
+        return `${js_code_statement_let_assign_multiple(names, values)}
 ${app_learn_code_log_add_3(name_a, name_b, name_c)}`;
     }, example_before, description, example_message, [screen1]);
     function example_before(parent) {
