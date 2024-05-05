@@ -79,7 +79,7 @@ export function lesson_if_false() {
     return lesson_simple(function () {
         return `${app_learn_code_log(app_learn_code_random_value())}
 if (false) {
-    ${app_learn_code_log(app_learn_code_random_value())}
+${app_learn_code_log(app_learn_code_random_value())}
 }`;
     }, example_before, description, example_message, []);
     function example_before(parent) {
