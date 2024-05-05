@@ -85,10 +85,14 @@ export function lesson_variable_binary() {
         let operator = list_random_item(operators);
         let operators_equality = ['===', '!=='];
         let values = call_multiple(integer_random_digit_single_positive, 2);
-        list_sort(values, identity);
         let [a, b] = values;
         if (list_includes(operators_equality, operator) && random_50_50()) {
             b = a;
+        }
+        if (operator === '/') {
+            let {dividend, divisor} = lesson_divide_numbers();
+            a = dividend
+            b=divisor
         }
         let name = app_learn_code_random_identifier();
         let statements = [js_code_statement_let_assign(name, `${a} ${operator} ${b}`), app_learn_code_log_random_value(), `if (${name}) {
