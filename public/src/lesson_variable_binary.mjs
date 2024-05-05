@@ -77,11 +77,11 @@ import {js_code_assign} from "./js_code_assign.mjs";
 import {list_adder} from "./list_adder.mjs";
 import {app_learn_code_random_identifiers} from "./app_learn_code_random_identifiers.mjs";
 import {list_includes} from "./list_includes.mjs";
-export function lesson_if_variable() {
+export function lesson_variable_binary() {
     let description = 'if with a variable';
-    let example_message = description
+    let example_message = description;
     return lesson_simple(function () {
-        let operators = ['<', '<=', '>', '>=', '===', '!=='];
+        let operators = ['<', '<=', '>', '>=', '===', '!==', '+', '-', '*'];
         let operator = list_random_item(operators);
         let operators_equality = ['===', '!=='];
         let values = call_multiple(integer_random_digit_single_positive, 2);
@@ -91,9 +91,7 @@ export function lesson_if_variable() {
             b = a;
         }
         let name = app_learn_code_random_identifier();
-        let statements = [
-            js_code_statement_let_assign(name, `${a} ${operator} ${b}`), 
-            app_learn_code_log_random_value(), `if (${name}) {
+        let statements = [js_code_statement_let_assign(name, `${a} ${operator} ${b}`), app_learn_code_log_random_value(), `if (${name}) {
 ${app_learn_code_log_random_value()}
 }`, app_learn_code_log_random_value()];
         return list_join(statements, '\n');
