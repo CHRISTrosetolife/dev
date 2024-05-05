@@ -69,23 +69,23 @@ import {js_code_statement_let} from "./js_code_statement_let.mjs";
 import {js_code_assign} from "./js_code_assign.mjs";
 import { list_sort } from "./list_sort.mjs";
 export function lesson_variables_two() {
+    let a = 'a';
+    let b = 'b';
     let description = 'two variables';
     let example_message = string_combine('with ', description);
     return lesson_simple(function () {
         let count = 2;
         let values = call_multiple(integer_random_digit_single_positive, count);
         list_sort(values, identity)
-        let [a, b] = values;
+        let [v_a, v_b] = values;
         let names = app_learn_code_unique_multiple(app_learn_code_random_identifier, count);
         list_sort_string(names, identity)
         let [name_a, name_b] = names;
-        return `${js_code_statement_let_assign(name_a, a)}
-${js_code_statement_let_assign(name_b, b)}
+        return `${js_code_statement_let_assign(name_a, v_a)}
+${js_code_statement_let_assign(name_b, v_b)}
 ${app_learn_code_log_add(name_a, name_b)}`;
     }, example_before, description, example_message, [screen1, screen2]);
     function screen1(parent) {
-        let a = 'a';
-        let b = 'b';
         html_p_text(parent, 'a program can have more than one variable');
         html_p_text(parent, 'where there is more than one variable is declared at once , in this application the variables will be ordered alphabetically')
         html_p_text(parent, 'for example in the alphabet , A comes before B')
@@ -93,16 +93,23 @@ ${app_learn_code_log_add(name_a, name_b)}`;
         app_learn_code_code_part_contrast(parent,`${js_code_statement_let(a)}
 ${js_code_statement_let(b)}`);
 html_style_alternate_monospace(parent, ['','b',' will not come before ','a'])
-        'it will not be like this :'
+html_p_text(parent, 'it will not be like this :');
         app_learn_code_code_part_contrast(parent,`${js_code_statement_let(b)}
-        ${js_code_statement_let(a)}`);
+${js_code_statement_let(a)}`);
         html_p_text(parent, 'this should make quizzing easier');
         html_p_text(parent, 'however javascript allows variables to be declared either way');
     }
     function screen2(parent) {
-        html_p_text(parent, 'in this lesson the numbers will appear from smallest to largest');
+        html_p_text(parent, 'in this lesson the numbers will be assigned from smallest to largest');
         html_p_text(parent, 'for example 1 is smaller than 2')
-
+        html_style_alternate_monospace(parent, ['therefore the assignment of ','1',' will come before the assignment of ','2',' , like this :'])
+        app_learn_code_code_part_contrast(parent,`${js_code_statement_let_assign(a, '1')}
+${js_code_statement_let_assign(a, '2')}`);
+html_p_text(parent, 'it will not be like this :');
+app_learn_code_code_part_contrast(parent,`${js_code_statement_let_assign(a, '2')}
+${js_code_statement_let_assign(a, '1')}`);
+html_p_text(parent, 'this should make quizzing easier');
+html_p_text(parent, 'however javascript allows numbers to be assigned either way');
     }
     function example_before(parent) {
     }
