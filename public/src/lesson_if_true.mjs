@@ -82,6 +82,9 @@ if (true) {
 }`;
     }, example_before, description, example_message, [screen1]);
     function example_before(parent) {
+        'a pencil may be used for writing'
+        'a pen may be used for writing'
+        'however pencils have an eraser'
     }
     function screen1(parent) {
     }
