@@ -93,7 +93,7 @@ export function lesson_if_else_if() {
         }
         let lines = [`if (${a} === 0) {`, app_learn_code_log('number is zero'), `} else {`, app_learn_code_log('number is not zero'), `}`];
         return list_join_newline(lines);
-    }, example_before, description, example_message, [screen1, screen2, screen3]);
+    }, example_before, description, example_message, []);
     function example_before(parent) {
         'a number is positive if the number is greater than zero'
         'a number is negative if the number is less than zero'
