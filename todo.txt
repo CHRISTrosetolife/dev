@@ -1,11 +1,19 @@
+good whitespace max width
+
+mod => is even or not => nested if even positive odd positive etc lessons
+
+programming language syntax sugar 
+[fn name a1 a2 - output
+add a1 a2 - sum
+string_combine 'hello world' sum - combined
+log combined
+]
 
 folderize : a_b_c file name to a/b/c directory structure however useful to have automatic imports before this
 rename function
 rename tests_generate_single to function_tests_generate_single
 generate tests from functions ; run tests all ;
 
-function_line_add : adds a line somewhere in a function
-given a line , add an await to the beginning
 function_asyncify : adds async to a function
 
 mjs auto indent file - rather than handcrafting indentation better that a program chooses by convention indention at each line
