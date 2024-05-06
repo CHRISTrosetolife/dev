@@ -170,6 +170,10 @@ export function lesson_mod() {
                 html_style_background_color(td, color)
             })
         })
+        html_p_text(parent, 'did you notice how the remainder alternates between 0 and 1 ?')
+        html_p_text(parent, 'did you notice that when the number is even the remainder is 0 ?')
+        html_p_text(parent, 'did you notice that when the number is odd the remainder is 1 ?')
+
     }
 }
 function mod(index, divisor) {
