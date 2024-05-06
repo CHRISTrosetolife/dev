@@ -123,6 +123,7 @@ export function lesson_mod() {
         html_li_text(ul,'q is the quotient')
         html_li_text(ul,'r is the remainder')
         let table = html_element(parent, 'table');
+        html_style_width_full(table)
         let thead = html_element(table, 'thead');
         let tr_head = html_element(thead, 'tr');
         let columns_head = ['a', 'b', 'a / b', 'q', 'r'];
