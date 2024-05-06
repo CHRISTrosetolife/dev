@@ -17,7 +17,7 @@ export async function functions_source() {
     let result = {};
     for (let fc of mapped) {
         let {file_path, contents} = await fc;
-        object_property_set(fc, file_path, contents);
+        object_property_set(result, file_path, contents);
     }
     return result;
 }
