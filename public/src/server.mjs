@@ -12,9 +12,9 @@ export function server() {
      app.use(cors(corsOptions)) 
     
     app.post('/', async (req, res) => {
-        let json = await req.json();
-        console.log()
-      res.send('hi')
+        let json = req.body
+        console.log(json)
+      res.send(json)
     })
     
     app.listen(port, () => {
