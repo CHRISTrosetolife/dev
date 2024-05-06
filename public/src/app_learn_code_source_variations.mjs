@@ -36,7 +36,7 @@ export function app_learn_code_source_variations(source) {
     let operators = ['+', '*', '===', '!=='];
     let {filtered, ast} = ast_filtered(source);
     let filtered_length = list_length(filtered);
-    let s = js_unparse(ast);
+    let s = js_unparse_indent_none(ast);
     if (equal(filtered_length, 0)) {
         return [s];
     }
