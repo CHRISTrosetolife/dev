@@ -116,6 +116,10 @@ export function lesson_mod() {
     }
     function screen3(parent) {
         let divisor = 2;
+        'in the table below :'
+        'a is the dividend'
+        'b is the divisor'
+        'b is the divisor'
         let table = html_element(parent, 'table');
         let thead = html_element(table, 'thead');
         let tr_head = html_element(thead, 'tr');
