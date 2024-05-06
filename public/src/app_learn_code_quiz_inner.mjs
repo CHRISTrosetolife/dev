@@ -35,6 +35,7 @@ import {list_sort_string} from "./list_sort_string.mjs";
 import {app_learn_code_style_rounded_padded} from "./app_learn_code_style_rounded_padded.mjs";
 import {html_style_units} from "./html_style_units.mjs";
 export function app_learn_code_quiz_inner(parent, source_get) {
+    let previous;
     let div = html_div(parent);
     refresh(false);
     function refresh(refreshed) {
@@ -52,6 +53,9 @@ export function app_learn_code_quiz_inner(parent, source_get) {
                 if (list_any(choices, c => equal(c.answer, answer))) {
                     continue;
                 }
+                if (equal(source,previous)) {
+                    continue;
+                }
                 list_add(choices, {
                     source,
                     answer
@@ -62,6 +66,7 @@ export function app_learn_code_quiz_inner(parent, source_get) {
         list_sort_string(choices, c => c.answer);
         let correct_index = list_random_index(choices);
         let {source} = list_get(choices, correct_index);
+        previous = source;
         app_learn_code_code_part_titled_code(container, source);
         html_hr(container);
         app_learn_code_code_part_title(container, app_learn_code_code_part_title_output());
