@@ -99,7 +99,7 @@ export function lesson_mod() {
         'when a number is divided by another number , the first number is called the dividend'
         'the second number is called the divisor'
         'after the divisor divides the dividend , there is a quotient and a remainder'
-        
+        'this formula will give the answer with a decimal point : quotient + ( remainder / divisor )'
         html_p_text(parent, 'in this lesson , the code will first check whether or not the number is positive');
         html_p_text(parent, 'if the number is not positive , then the code will check whether or not the number is negative');
         html_hr(parent);
