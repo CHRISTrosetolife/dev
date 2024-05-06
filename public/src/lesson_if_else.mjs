@@ -1,3 +1,4 @@
+import {list_join_newine} from "./list_join_newine.mjs";
 import {app_learn_code_random_boolean_binary} from "./app_learn_code_random_boolean_binary.mjs";
 import {html_style_alternate_code_li} from "./html_style_alternate_code_li.mjs";
 import {list_join} from "./list_join.mjs";
@@ -79,54 +80,37 @@ import {list_adder} from "./list_adder.mjs";
 import {app_learn_code_random_identifiers} from "./app_learn_code_random_identifiers.mjs";
 import {list_includes} from "./list_includes.mjs";
 import {lesson_console_log_quiz} from "./lesson_console_log_quiz.mjs";
-import { list_map } from "./list_map.mjs";
+import {list_map} from "./list_map.mjs";
 export function lesson_if_else() {
     let description = 'if with a process';
     let example_message = string_combine('with an ', description);
     return lesson_simple(function () {
         let boolean = app_learn_code_random_boolean_binary();
-        let values = app_learn_code_unique_multiple(app_learn_code_random_value)
-        let mapped = list_map(values, app_learn_code_log)
-        let [a,b] = mapped
-        let lines = [
-            `if (${boolean}) {`,
-            a,
-            `} else {`,
-            b,
-            `}`
-        ];
-        return list_join(lines, '\n');
+        let values = app_learn_code_unique_multiple(app_learn_code_random_value);
+        let mapped = list_map(values, app_learn_code_log);
+        let [a, b] = mapped;
+        let lines = [`if (${boolean}) {`, a, `} else {`, b, `}`];
+        return list_join_newine(lines);
     }, example_before, description, example_message, [screen2]);
-    function example_before(parent) {
-    }
+    function example_before(parent) {}
     function screen1(parent) {
-        'in javascript , code in between a /* and a */ is ignored'
-        'this is called a comment'
-        'comments are for humans and code is for computers'
-        'here is an example comment :'
+        'in javascript , code in between a /* and a */ is ignored';
+        'this is called a comment';
+        'comments are for humans and code is for computers';
+        'here is an example comment :';
         '/* console.log(0) */';
-        'even though it says console.log(0); that will not get ran because it is inside of a comment'
+        'even though it says console.log(0); that will not get ran because it is inside of a comment';
     }
-    function screen2(parent) {   
-        'another way to write a comment is to use //'
-        '// begins a comment and the comment continues until the end of the current line'
-        'here is an example // comment :'
-        'let a; // a is the first letter of the alphabet'
+    function screen2(parent) {
+        'another way to write a comment is to use //';
+        '// begins a comment and the comment continues until the end of the current line';
+        'here is an example // comment :';
+        'let a; // a is the first letter of the alphabet';
     }
     function screen3(parent) {
-        html_style_alternate_monospace(parent, [
-            'in programming , sometimes there is need to code : if "a" is ', 
-            'true', 
-            ' , then do "b" , otherwise , if "a" is ',
-            'false',
-            ' , then do "c"',
-        ]);
-        html_p_text(parent,'in other words , choose between "b" and "c" , depending on the value of "a"');
-        'the code to represent that uses else :'
-        'if (a) {',
-        '// b',
-        '} else {',
-        '// c',
-        '}'
+        html_style_alternate_monospace(parent, ['in programming , sometimes there is need to code : if "a" is ', 'true', ' , then do "b" , otherwise , if "a" is ', 'false', ' , then do "c"']);
+        html_p_text(parent, 'in other words , choose between "b" and "c" , depending on the value of "a"');
+        'the code to represent that uses else :';
+        ('if (a) {', '// b', '} else {', '// c', '}');
     }
 }
