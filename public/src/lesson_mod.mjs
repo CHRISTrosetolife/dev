@@ -173,7 +173,7 @@ export function lesson_mod() {
         html_p_text(parent, 'did you notice how the remainder alternates between 0 and 1 ?')
         html_p_text(parent, 'did you notice that when the number is even the remainder is 0 ?')
         html_p_text(parent, 'did you notice that when the number is odd the remainder is 1 ?')
-        html_p_text(parent, 'therefore the remainder can be used to check whether or not a number is even or odd')
+        html_p_text(parent, 'the remainder can be used to check whether or not a number is even or odd')
     }
     function screen4(parent) {
 
