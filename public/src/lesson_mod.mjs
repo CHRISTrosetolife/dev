@@ -144,14 +144,14 @@ export function lesson_mod() {
             let quotient = n / divisor;
             let columns_body = [n, divisor, quotient, floor(quotient), n % divisor];
             let index_last = list_index_last(columns_body)
-            each_index(columns_body, (c) => {
+            each_index(columns_body, (c, c_index) => {
                 let divisor = 2;
                 let td = html_element(tr_body, 'td');
                 html_inner_set(td, c);
                 html_style_centered(td)
                 app_learn_code_style_rounded_padded(td)
                 let color;
-                if (equal(index, index_last)) {
+                if (equal(c_index, index_last)) {
                     color = even ? '#F9E79F' : '#F7DC6F';
                 } else {
                     color = even ? '#D6EAF8' : '#AED6F1';
