@@ -83,8 +83,8 @@ import {list_includes} from "./list_includes.mjs";
 import {lesson_console_log_quiz} from "./lesson_console_log_quiz.mjs";
 import {list_map} from "./list_map.mjs";
 export function lesson_if_else_if() {
-    let description = 'if with else about zero or not';
-    let example_message = 'outputting whether or not a number is zero';
+    let description = 'if with else if';
+    let example_message = 'outputting whether or not a number is positive , negative or zero';
     return lesson_simple(function () {
         let a;
         if (random_50_50()) {
