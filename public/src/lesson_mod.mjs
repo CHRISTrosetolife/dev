@@ -105,10 +105,12 @@ export function lesson_mod() {
         return list_join_newline(lines);
     }, example_before, description, example_message, [screen1, screen2, screen3]);
     function example_before(parent) {
-        'in javascript , to get the remainder of dividend use % like this : dividend % divisor'
+        html_style_alternate_monospace(parent, ['in javascript , to get the remainder of ','dividend',' use ','%',' like this : ','dividend % divisor'])
     }
+}
     function screen1(parent) {
-        html_style_alternate_bold(parent, ['when a number is divided by another number , the first number is called the ','dividend']);
+        html_p_text(parent, 'here is an example of division in math : a / b');
+        html_style_alternate_bold(parent, ['when a number ( like "a" ) is divided by another number ( like "b" ) , the first number is called the ','dividend']);
         html_style_alternate_bold(parent, ['the second number is called the ','divisor']);
         html_p_text(parent, 'for example in 7 / 4 the dividend is 7 and the divisor is 4');
     }
@@ -173,10 +175,6 @@ export function lesson_mod() {
         html_p_text(parent, 'did you notice that when the number is odd the remainder is 1 ?')
         html_p_text(parent, 'the remainder can be used to check whether or not a number is even or odd')
     }
-    function screen4(parent) {
-        html_style_alternate_monospace(parent, ['in javascript , to get the remainder of ','dividend',' use ','%',' like this : ','dividend % divisor'])
-    }
-}
 function mod(index, divisor) {
     return index % divisor;
 }
