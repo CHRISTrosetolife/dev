@@ -110,6 +110,6 @@ export function lesson_if_else_if() {
         html_style_alternate_monospace(parent, ['if there are two choices , then one ', 'if', ' ', 'else', ' can be used']);
         html_p_text(parent, 'this lesson will check a number to be either "positive" , "negative" or "zero"');
         html_p_text(parent, '"positive" , "negative" and "zero" are three choices');
-        html_style_alternate_monospace(parent, ['if there are three choices , then two ', 'if', ' ', 'else', ' can be used , as will be shown later']);
+        html_style_alternate_monospace(parent, ['if there are three choices , then two ', 'if', ' ', 'else', ' can be used , as will be shown later in this lesson']);
     }
 }
