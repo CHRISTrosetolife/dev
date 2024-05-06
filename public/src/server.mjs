@@ -25,6 +25,7 @@ export function server() {
         let args_json = json_to({args});
         let replaced = string_replace(args_json, '\'', '\'\'');
         let command = `node ${run_git.name}.mjs ${function_run_json.name} ${function_name} '${replaced}'`;
+        console.log(command)
         let result = await command_line(command);
         res.end(json_to(result));
     });
