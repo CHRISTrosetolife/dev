@@ -101,6 +101,9 @@ export function lesson_if_else() {
         'in javascript , code in between a /* and a */ is ignored'
         'this is called a comment'
         'comments are for humans and code is for computers'
+        'here is an example comment :'
+        '/* console.log(0) */';
+        'even though it says console.log(0); that will not get ran because it is inside of a comment'
         'another way to write a comment is to use //'
         '// begins a comment and the comment continues until the end of the current line'
         html_style_alternate_monospace(parent, [
