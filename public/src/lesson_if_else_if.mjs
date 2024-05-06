@@ -92,7 +92,7 @@ export function lesson_if_else_if() {
         } else {
             a = integer_random_digit_single();
         }
-        let lines = [`if (${a} === 0) {`, app_learn_code_log_delimit('number is zero'), `} else {`, app_learn_code_log_delimit('number is not zero'), `}`];
+        let lines = [js_code_statement_let_assign('n', a),`if (n > 0) {`, app_learn_code_log_delimit('number is positive'), `} else if (n < 0) {`, app_learn_code_log_delimit('number is negative'), `} else if (n < 0) {`, app_learn_code_log_delimit('number is not zero') `}`];
         return list_join_newline(lines);
     }, example_before, description, example_message, [screen1]);
     function example_before(parent) {
