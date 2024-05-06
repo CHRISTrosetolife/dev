@@ -91,7 +91,6 @@ export function lesson_if_else_negative() {
         if (integer_random(1, 3) === 1) {
             a = 0;
         }
-        
         let lines = [js_code_statement_let_assign('n',a),
         js_code_statement_let_assign(`is_${category}`,`n < 0`), `if (is_${category}) {`, app_learn_code_log_delimit(`number is ${category}`), `} else {`, app_learn_code_log_delimit(`number is not ${category}`), `}`];
         return list_join_newline(lines);
