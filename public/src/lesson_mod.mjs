@@ -82,6 +82,7 @@ import {app_learn_code_random_identifiers} from "./app_learn_code_random_identif
 import {list_includes} from "./list_includes.mjs";
 import {lesson_console_log_quiz} from "./lesson_console_log_quiz.mjs";
 import {list_map} from "./list_map.mjs";
+import { html_element } from "./html_element.mjs";
 export function lesson_mod() {
     let description = 'if with else if';
     let example_message = 'outputting whether or not a number is positive , negative or zero';
@@ -112,6 +113,7 @@ export function lesson_mod() {
         '1 + ( 3 / 4 ) = 1 + 0.75 = 1.75';
     }
     function screen3(parent) {
-        
+        let table = html_element(parent, 'table');
+        let thead = html_element(table, 'thead');
     }
 }
