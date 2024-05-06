@@ -122,5 +122,11 @@ export function lesson_if_else() {
             ' , then do "c"',
         ]);
         html_p_text(parent,'in other words , choose between "b" and "c" , depending on the value of "a"');
+        'the code to represent that uses else :'
+        'if (a) {',
+        '// b',
+        '} else {',
+        '// c',
+        '}'
     }
 }
