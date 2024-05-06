@@ -123,5 +123,8 @@ export function lesson_mod() {
             html_inner_set(th, c)
         }
         let tbody = html_element(table, 'tbody');
+        for (let n of range(11)) {
+
+        }
     }
 }
