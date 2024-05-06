@@ -89,6 +89,7 @@ import { html_style_width_full } from "./html_style_width_full.mjs";
 import { html_style_centered } from "./html_style_centered.mjs";
 import { app_learn_code_style_rounded_padded } from "./app_learn_code_style_rounded_padded.mjs";
 import { list_index_last } from "./list_index_last.mjs";
+import { html_style_background_color } from "./html_style_background_color.mjs";
 export function lesson_mod() {
     let description = 'if with else if';
     let example_message = 'outputting whether or not a number is positive , negative or zero';
@@ -146,6 +147,9 @@ export function lesson_mod() {
                 html_inner_set(td, c);
                 html_style_centered(td)
                 app_learn_code_style_rounded_padded(td)
+                if (equal(index, index_last)) {
+                    html_style_background_color(td, 'yellow')
+                }
             })
         }
     }
