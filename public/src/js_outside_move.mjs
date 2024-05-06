@@ -10,6 +10,7 @@ import {js_declaration_to_name} from "./js_declaration_to_name.mjs";
 import {list_filter} from "./list_filter.mjs";
 import {list_copy} from "./list_copy.mjs";
 import {list_map} from "./list_map.mjs";
+import { js_imports_add_specified } from "./js_imports_add_specified.mjs";
 export async function js_outside_move(ast) {
     const type = 'FunctionDeclaration';
     let {body: body_ast} = ast;
@@ -26,8 +27,12 @@ export async function js_outside_move(ast) {
         parsed.body = body;
         let unparsed = js_unparse(parsed);
         await function_new_generic(function_name, args_string, unparsed, false, [], async);
+    }
+    for (let declaration of copy) {
+        let function_name = js_declaration_to_name(declaration);
         await function_imports_add(function_name);
         list_remove(body_ast, declaration);
     }
-    await js_imports_add(ast);
+    let names = list_map(copy, js_declaration_to_name)
+    js_imports_add_specified(ast, names);
 }
