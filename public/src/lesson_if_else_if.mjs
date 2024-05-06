@@ -94,16 +94,16 @@ export function lesson_if_else_if() {
         }
         let lines = [`if (${a} === 0) {`, app_learn_code_log_delimit('number is zero'), `} else {`, app_learn_code_log_delimit('number is not zero'), `}`];
         return list_join_newline(lines);
-    }, example_before, description, example_message, []);
+    }, example_before, description, example_message, [screen1]);
     function example_before(parent) {
         html_style_alternate_monospace(parent, ['multiple ', 'if', ' and ', 'else', ' can be used to output whether or not a number is positive , negative , or zero']);
-        'in this lesson , the code will first check whether or not the number is positive'
-        'if the number is not positive , then the code will check whether or not the number is zero'
+        html_p_text(parent, 'in this lesson , the code will first check whether or not the number is positive')
+        html_p_text(parent, 'if the number is not positive , then the code will check whether or not the number is zero')
     }
     function screen1(parent) {
-        'zero is not positive';
-        'zero is not negative';
-        'if a number is not positive and the number is not negative , then the number must be zero'
-        'a number is either positive , negative or zero'
+        html_p_text(parent, 'zero is not positive');
+        html_p_text(parent, 'zero is not negative');
+        html_p_text(parent, 'if a number is not positive and the number is not negative , then the number must be zero')
+        html_p_text(parent, 'a number is either positive , negative or zero')
     }
 }
