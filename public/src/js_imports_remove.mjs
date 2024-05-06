@@ -10,6 +10,7 @@ export function js_imports_remove(ast) {
     let extra = list_difference(existing, used);
     return {
         existing,
-        extra
+        extra,
+        used
     };
 }
