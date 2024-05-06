@@ -83,6 +83,7 @@ import {list_includes} from "./list_includes.mjs";
 import {lesson_console_log_quiz} from "./lesson_console_log_quiz.mjs";
 import {list_map} from "./list_map.mjs";
 import { html_element } from "./html_element.mjs";
+import { html_inner_set } from "./html_inner_set.mjs";
 export function lesson_mod() {
     let description = 'if with else if';
     let example_message = 'outputting whether or not a number is positive , negative or zero';
@@ -115,10 +116,11 @@ export function lesson_mod() {
     function screen3(parent) {
         let table = html_element(parent, 'table');
         let thead = html_element(table, 'thead');
-        let tr_head = html_element(table, 'tr');
+        let tr_head = html_element(thead, 'tr');
         let columns = ['dividend', 'divisor', 'answer', 'quotient', 'remainder']
         for (let c of columns) {
             let th = html_element(tr_head, 'th')
+            html_inner_set(th, c)
         }
         let tbody = html_element(table, 'tbody');
     }
