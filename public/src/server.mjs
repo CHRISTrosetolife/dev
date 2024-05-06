@@ -4,17 +4,18 @@ import {server_port} from "./server_port.mjs";
 import express from 'express';
 import cors from 'cors';
 export function server() {
-    const app = express();
-    const port = server_port();
-    let corsOptions = {
+    let app = express();
+    let port = server_port();
+    let options = {
         origin: ['http://localhost:8080']
     };
-    app.use(cors(corsOptions));
+    app.use(cors(options));
     app.use(express.json());
     app.post('/', async (req, res) => {
         let {body} = req;
         let unparsed = json_from(body);
-        await function_run;
+        let {function_name, args} = unparsed;
+        await function_run(function_name, args);
     });
     app.listen(port, () => {
         console.log(`Example app listening on port ${port}`);
