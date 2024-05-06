@@ -116,7 +116,7 @@ export function lesson_mod() {
     }
     function screen3(parent) {
         let divisor = 2;
-        html_p_text('in the table below :')
+        html_p_text(parent, 'in the table below :')
         let ul = html_ul(parent);
         html_li_text(ul, 'a is the dividend')
         html_li_text(ul,'b is the divisor')
