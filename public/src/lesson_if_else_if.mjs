@@ -101,8 +101,8 @@ export function lesson_if_else_if() {
         html_p_text(parent, 'if the number is not positive , then the code will check whether or not the number is zero')
     }
     function screen1(parent) {
-        html_p_text(parent, 'zero is not positive');
-        html_p_text(parent, 'zero is not negative');
+        html_p_text(parent, 'the number zero is not positive');
+        html_p_text(parent, 'the number zero is not negative');
         html_p_text(parent, 'if a number is not positive and the number is not negative , then the number must be zero')
         html_p_text(parent, 'a number is either positive , negative or zero')
     }
