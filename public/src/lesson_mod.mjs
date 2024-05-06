@@ -138,14 +138,14 @@ export function lesson_mod() {
             html_inner_set(th, c);
         }
         let tbody = html_element(table, 'tbody');
-        for (let n of range(11)) {
+        each_index(range(11), (n, index) => {
+            let even = equal(mod(index, divisor), 0);
             let tr_body = html_element(tbody, 'tr');
             let quotient = n / divisor;
             let columns_body = [n, divisor, quotient, floor(quotient), n % divisor];
             let index_last = list_index_last(columns_body)
-            each_index(columns_body, (c, index) => {
+            each_index(columns_body, (c) => {
                 let divisor = 2;
-                let even = equal(mod(index, divisor), 0);
                 let td = html_element(tr_body, 'td');
                 html_inner_set(td, c);
                 html_style_centered(td)
@@ -158,7 +158,7 @@ export function lesson_mod() {
                 }
                 html_style_background_color(td, color)
             })
-        }
+        })
     }
 }
 function mod(index, divisor) {
