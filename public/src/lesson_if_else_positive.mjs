@@ -95,6 +95,6 @@ export function lesson_if_else_positive() {
         html_style_alternate_bold(parent, ['a number is ','positive',' if the number is greater than zero']);
         'a number is negative if the number is less than zero';
         'if a number is neither positive nor negative , the number must be 0';
-        html_style_alternate_monospace(parent, ['', 'if', ' and ', 'else', ' can be used to output whether or not a number is ', '0']);
+        html_style_alternate_monospace(parent, ['', 'if', ' and ', 'else', ` can be used to output whether or not a number is ${category}`]);
     }
 }
