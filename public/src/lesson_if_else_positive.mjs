@@ -88,7 +88,7 @@ export function lesson_if_else_positive() {
     let example_message = `outputting whether or not a number is ${category}`;
     return lesson_simple(function () {
         let a = integer_random_digit_single();
-        let lines = [`if (${a} > 0) {`, app_learn_code_log_delimit(`number is ${category}`), `} else {`, app_learn_code_log_delimit(`number is not ${category}`), `}`];
+        let lines = [`let is_positive = ${a} > 0;`,`if (is_positive) {`, app_learn_code_log_delimit(`number is ${category}`), `} else {`, app_learn_code_log_delimit(`number is not ${category}`), `}`];
         return list_join_newline(lines);
     }, example_before, description, example_message, []);
     function example_before(parent) {
