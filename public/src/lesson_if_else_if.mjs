@@ -1,3 +1,4 @@
+import {app_learn_code_log_delimit} from "./app_learn_code_log_delimit.mjs";
 import {list_join_newline} from "./list_join_newline.mjs";
 import {app_learn_code_random_boolean_binary} from "./app_learn_code_random_boolean_binary.mjs";
 import {html_style_alternate_code_li} from "./html_style_alternate_code_li.mjs";
@@ -91,13 +92,13 @@ export function lesson_if_else_if() {
         } else {
             a = integer_random_digit_single();
         }
-        let lines = [`if (${a} === 0) {`, app_learn_code_log('number is zero'), `} else {`, app_learn_code_log('number is not zero'), `}`];
+        let lines = [`if (${a} === 0) {`, app_learn_code_log_delimit('number is zero'), `} else {`, app_learn_code_log_delimit('number is not zero'), `}`];
         return list_join_newline(lines);
     }, example_before, description, example_message, []);
     function example_before(parent) {
-        'a number is positive if the number is greater than zero'
-        'a number is negative if the number is less than zero'
-        'if a number is neither positive nor negative , the number must be 0'
-        html_style_alternate_monospace(parent, ['','if',' and ','else',' can be used to output whether or not a number is ','0'])
+        'a number is positive if the number is greater than zero';
+        'a number is negative if the number is less than zero';
+        'if a number is neither positive nor negative , the number must be 0';
+        html_style_alternate_monospace(parent, ['', 'if', ' and ', 'else', ' can be used to output whether or not a number is ', '0']);
     }
 }
