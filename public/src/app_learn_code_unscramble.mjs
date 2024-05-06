@@ -53,6 +53,7 @@ import {list_filter} from "./list_filter.mjs";
 import {null_is} from "./null_is.mjs";
 import {html_style_background_color} from "./html_style_background_color.mjs";
 import { app_learn_code_range_retry } from "./app_learn_code_range_retry.mjs";
+import { equal_not } from "./equal_not.mjs";
 export function app_learn_code_unscramble(source_get) {
     return function app_learn_code_unscramble_inner(parent) {
         let previous;
@@ -63,8 +64,8 @@ export function app_learn_code_unscramble(source_get) {
             let source;
             for (let i of app_learn_code_range_retry()) {
                 source = source_get();
-                if (equal(source, previous)) {
-                    continue;
+                if (equal_not(source, previous)) {
+                    break;
                 }
             }
             previous = source;
