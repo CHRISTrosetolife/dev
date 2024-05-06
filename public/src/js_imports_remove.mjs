@@ -1,3 +1,4 @@
+import {js_identifiers} from "./js_identifiers.mjs";
 import {js_export_single} from "./js_export_single.mjs";
 import {js_imports_existing} from "./js_imports_existing.mjs";
 export function js_imports_remove(ast) {
