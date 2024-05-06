@@ -88,7 +88,6 @@ export function lesson_if_else() {
         let boolean = app_learn_code_random_boolean_binary();
         let values = app_learn_code_unique_multiple(app_learn_code_random_value, 2);
         let mapped = list_map(values, app_learn_code_log);
-        console.log({values,mapped})
         let [a, b] = mapped;
         let lines = [`if (${boolean}) {`, a, `} else {`, b, `}`];
         return list_join_newline(lines);
