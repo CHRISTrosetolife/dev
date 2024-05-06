@@ -92,12 +92,11 @@ export function lesson_if_else_if() {
         } else {
             a = integer_random_digit_single();
         }
-        let lines = [js_code_statement_let_assign('n', a),`if (n > 0) {`, app_learn_code_log_delimit('number is positive'), `} else if (n < 0) {`, app_learn_code_log_delimit('number is negative'), `} else if (n < 0) {`, app_learn_code_log_delimit('number is not zero'), `}`];
+        let lines = [js_code_statement_let_assign('n', a),`if (n > 0) {`, app_learn_code_log_delimit('number is positive'), `} else if (n < 0) {`, app_learn_code_log_delimit('number is negative'), `} else {`, app_learn_code_log_delimit('number is zero'), `}`];
         return list_join_newline(lines);
-    }, example_before, description, example_message, [screen1]);
+    }, example_before, description, example_message, [screen1,screen2]);
     function example_before(parent) {
-        html_style_alternate_monospace(parent, ['multiple ', 'if', ' and ', 'else', ' can be used to output whether or not a number is positive , negative , or zero']);
-        html_p_text(parent, 'in this lesson , the code will first check whether or not the number is positive')
+         html_p_text(parent, 'in this lesson , the code will first check whether or not the number is positive')
         html_p_text(parent, 'if the number is not positive , then the code will check whether or not the number is zero')
     }
     function screen1(parent) {
@@ -105,5 +104,11 @@ export function lesson_if_else_if() {
         html_p_text(parent, 'the number zero is not negative');
         html_p_text(parent, 'if a number is not positive and the number is not negative , then the number must be zero')
         html_p_text(parent, 'a number is either positive , negative or zero')
+    }
+    function screen2(parent) {
+        html_style_alternate_monospace(parent, ['if there are two choices , then one ','if',' ','else',' can be used'])
+        html_style_alternate_monospace(parent, ['if there are three choices , then two ','if',' ','else',' can be used , as in the example below'])
+        html_p_text('because a number is either positive , negative or zero , there are three choices');
+       
     }
 }
