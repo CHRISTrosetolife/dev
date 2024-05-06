@@ -11,8 +11,9 @@ export function server() {
        
      app.use(cors(corsOptions)) 
     
-    app.post('/', (req, res) => {
-        console.log(req.read())
+    app.post('/', async (req, res) => {
+        let json = await req.json();
+        console.log()
       res.send('hi')
     })
     
