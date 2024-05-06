@@ -24,10 +24,8 @@ export function server() {
         let replaced = string_replace(args_json, '\'', '\'\'');
         replaced = string_replace(replaced, '"', '\\"');
         let command = `node ${run.name}.mjs ${function_run_json.name} ${function_name} '${replaced}'`;
-        let result = await command_line(command);
-        console.log({command})
-        console.log({result})
-        res.end(json_to(result));
+        let {stdout} = await command_line(command);
+        res.end(json_to(stdout));
     });
     app.listen(port, () => {
         console.log(`Example app listening on port ${port}`);
