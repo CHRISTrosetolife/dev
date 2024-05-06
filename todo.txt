@@ -12,6 +12,8 @@ sc 'hello world' output - c
 l c
 end]
 
+rename
+
 get rid of extra imports
 
 create ide
