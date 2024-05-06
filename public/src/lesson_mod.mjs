@@ -150,10 +150,13 @@ export function lesson_mod() {
                 html_inner_set(td, c);
                 html_style_centered(td)
                 app_learn_code_style_rounded_padded(td)
+                let color;
                 if (equal(index, index_last)) {
-                    let yellow = even ? '#F9E79F' : '#F7DC6F';
-                    html_style_background_color(td, yellow)
+                    color = even ? '#F9E79F' : '#F7DC6F';
+                } else {
+                    color = even ? '#D6EAF8' : '#AED6F1';
                 }
+                html_style_background_color(td, color)
             })
         }
     }
