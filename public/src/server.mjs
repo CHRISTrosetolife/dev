@@ -24,7 +24,8 @@ export function server() {
         let {function_name, args} = body;
         let args_json = json_to(args);
         let replaced = string_replace(args_json, '\'', '\'\'');
-        let result = await command_line(`node ${run_git.name}.mjs ${function_run_json.name} ${function_name} '${replaced}`);
+        let command = `node ${run_git.name}.mjs ${function_run_json.name} ${function_name} '${replaced}'`;
+        let result = await command_line(command);
         res.end(json_to(result));
     });
     app.listen(port, () => {
