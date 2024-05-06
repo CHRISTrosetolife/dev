@@ -103,14 +103,15 @@ export function lesson_mod() {
         }
         let lines = [js_code_statement_let_assign('n', a), `if (n > 0) {`, app_learn_code_log_delimit('number is positive'), `} else if (n < 0) {`, app_learn_code_log_delimit('number is negative'), `} else {`, app_learn_code_log_delimit('number is zero'), `}`];
         return list_join_newline(lines);
-    }, example_before, description, example_message, [screen1, screen2, screen3, screen4]);
+    }, example_before, description, example_message, [screen1, screen2, screen3]);
     function example_before(parent) {
         'in javascript , to get the remainder of dividend use % like this : dividend % divisor'
     }
     function screen1(parent) {
-        'when a number is divided by another number , the first number is called the dividend';
-        'the second number is called the divisor';
-        'for example in 7 / 4 the dividend is 7 and the divisor is 4';
+    function screen1(parent) {
+        html_style_alternate_bold(parent, ['when a number is divided by another number , the first number is called the ','dividend']);
+        html_style_alternate_bold(parent, ['the second number is called the ','divisor']);
+        html_p_text(parent, 'for example in 7 / 4 the dividend is 7 and the divisor is 4');
     }
     function screen2(parent) {
         'after the divisor divides the dividend , there is a quotient and a remainder';
