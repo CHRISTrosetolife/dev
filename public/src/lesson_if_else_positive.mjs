@@ -83,11 +83,12 @@ import {list_includes} from "./list_includes.mjs";
 import {lesson_console_log_quiz} from "./lesson_console_log_quiz.mjs";
 import {list_map} from "./list_map.mjs";
 export function lesson_if_else_positive() {
-    let description = 'if with else about positive or not';
-    let example_message = 'outputting whether or not a number is positive';
+    let category = 'positive'
+    let description = `if with else about ${category} or not`;
+    let example_message = `outputting whether or not a number is ${category}`;
     return lesson_simple(function () {
         let a = integer_random_digit_single();
-        let lines = [`if (${a} > 0) {`, app_learn_code_log_delimit('number is positive'), `} else {`, app_learn_code_log_delimit('number is not positive'), `}`];
+        let lines = [`if (${a} > 0) {`, app_learn_code_log_delimit(`number is ${category}`), `} else {`, app_learn_code_log_delimit(`number is not ${category}`), `}`];
         return list_join_newline(lines);
     }, example_before, description, example_message, []);
     function example_before(parent) {
