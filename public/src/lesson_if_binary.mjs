@@ -82,15 +82,8 @@ export function lesson_if_binary() {
     let description = 'if with a process';
     let example_message = string_combine('with an ', description);
     return lesson_simple(function () {
-        let operators = ['<', '<=', '>', '>=', '===', '!=='];
-        let operator = list_random_item(operators);
-        let operators_equality = ['===', '!=='];
-        let values = call_multiple(integer_random_digit_single_positive, 2);
-        let [a,b] = values;
-        if (list_includes(operators_equality, operator) && random_50_50()) {
-            b = a;
-        }
-        let statements = [lesson_console_log_quiz(), `if (${a} ${operator} ${b}) {
+        let boolean = app_learn_code_random_boolean_binary();
+        let statements = [lesson_console_log_quiz(), `if (${boolean}) {
 ${lesson_console_log_quiz()}
 }`, lesson_console_log_quiz()];
         return list_join(statements, '\n');
