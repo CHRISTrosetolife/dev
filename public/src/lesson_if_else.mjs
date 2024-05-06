@@ -86,9 +86,9 @@ export function lesson_if_else() {
         let boolean = app_learn_code_random_boolean_binary();
         let lines = [
             `if (${boolean}) {`,
-            lesson_console_log_quiz(),
+            app_learn_code_log_random_value(),
             `} else {`,
-            lesson_console_log_quiz(),
+            app_learn_code_log_random_value(),
             `}`
         ];
         return list_join(lines, '\n');
