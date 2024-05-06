@@ -1,3 +1,4 @@
+import {app_learn_code_log_delimit} from "./app_learn_code_log_delimit.mjs";
 import {list_join_newline} from "./list_join_newline.mjs";
 import {app_learn_code_random_boolean_binary} from "./app_learn_code_random_boolean_binary.mjs";
 import {html_style_alternate_code_li} from "./html_style_alternate_code_li.mjs";
@@ -91,7 +92,7 @@ export function lesson_if_else_zero() {
         } else {
             a = integer_random_digit_single();
         }
-        let lines = [`if (${a} === 0) {`, app_learn_code_log('number is zero'), `} else {`, app_learn_code_log('number is not zero'), `}`];
+        let lines = [`if (${a} === 0) {`, app_learn_code_log_delimit('number is zero'), `} else {`, app_learn_code_log_delimit('number is not zero'), `}`];
         return list_join_newline(lines);
     }, example_before, description, example_message, []);
     function example_before(parent) {
