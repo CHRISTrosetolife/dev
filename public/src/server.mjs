@@ -13,6 +13,7 @@ export function server() {
     app.use(express.json());
     app.post('/', async (req, res) => {
         let {body} = req;
+        console.log({body})
         let unparsed = json_from(body);
         let {function_name, args} = unparsed;
         await function_run(function_name, args);
