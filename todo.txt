@@ -9,8 +9,7 @@ l=log
 [fn_name a1 a2 - o=output
 a a1 a2 - o
 sc 'hello world'
-| log
-end]
+| log]
 
 rename
 
