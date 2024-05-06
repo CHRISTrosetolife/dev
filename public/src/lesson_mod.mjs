@@ -85,6 +85,8 @@ import {lesson_console_log_quiz} from "./lesson_console_log_quiz.mjs";
 import {list_map} from "./list_map.mjs";
 import {html_element} from "./html_element.mjs";
 import {html_inner_set} from "./html_inner_set.mjs";
+import { html_style_width_full } from "./html_style_width_full.mjs";
+import { html_style_centered } from "./html_style_centered.mjs";
 export function lesson_mod() {
     let description = 'if with else if';
     let example_message = 'outputting whether or not a number is positive , negative or zero';
@@ -139,6 +141,7 @@ export function lesson_mod() {
             for (let c of columns_body) {
                 let td = html_element(tr_body, 'td');
                 html_inner_set(td, c);
+                html_style_centered(td)
             }
         }
     }
