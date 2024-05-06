@@ -86,13 +86,8 @@ export function lesson_if_else_positive() {
     let description = 'if with else about positive or not';
     let example_message = 'outputting whether or not a number is positive';
     return lesson_simple(function () {
-        let a;
-        if (random_50_50()) {
-            a = 0;
-        } else {
-            a = integer_random_digit_single();
-        }
-        let lines = [`if (${a} === 0) {`, app_learn_code_log_delimit('number is zero'), `} else {`, app_learn_code_log_delimit('number is not zero'), `}`];
+        let a = integer_random_digit_single();
+        let lines = [`if (${a} > 0) {`, app_learn_code_log_delimit('number is positive'), `} else {`, app_learn_code_log_delimit('number is not positive'), `}`];
         return list_join_newline(lines);
     }, example_before, description, example_message, []);
     function example_before(parent) {
