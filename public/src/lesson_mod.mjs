@@ -133,7 +133,7 @@ export function lesson_mod() {
         let thead = html_element(table, 'thead');
         let tr_head = html_element(thead, 'tr');
         let columns_head = ['a', 'b', 'a / b', 'q', 'r'];
-        each_index(columns_body, (c, c_index) => {
+        each_index(columns_head, (c, c_index) => {
             let th = html_element(tr_head, 'th');
             html_inner_set(th, c);
             
