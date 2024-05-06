@@ -82,9 +82,9 @@ import {app_learn_code_random_identifiers} from "./app_learn_code_random_identif
 import {list_includes} from "./list_includes.mjs";
 import {lesson_console_log_quiz} from "./lesson_console_log_quiz.mjs";
 import {list_map} from "./list_map.mjs";
-export function lesson_if_else_zero() {
-    let description = 'if with else about zero or not';
-    let example_message = 'outputting whether or not a number is zero';
+export function lesson_if_else_positive() {
+    let description = 'if with else about positive or not';
+    let example_message = 'outputting whether or not a number is positive';
     return lesson_simple(function () {
         let a;
         if (random_50_50()) {
