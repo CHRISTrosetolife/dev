@@ -103,7 +103,7 @@ export function lesson_mod() {
         }
         let lines = [js_code_statement_let_assign('n', a), `if (n > 0) {`, app_learn_code_log_delimit('number is positive'), `} else if (n < 0) {`, app_learn_code_log_delimit('number is negative'), `} else {`, app_learn_code_log_delimit('number is zero'), `}`];
         return list_join_newline(lines);
-    }, example_before, description, example_message, [screen1, screen2, screen3]);
+    }, example_before, description, example_message, [screen1, screen2, screen3, screen4]);
     function example_before(parent) {
         html_p_text(parent, 'in this lesson , the code will first check whether or not the number is positive');
         html_p_text(parent, 'if the number is not positive , then the code will check whether or not the number is negative');
@@ -176,7 +176,7 @@ export function lesson_mod() {
         html_p_text(parent, 'therefore the remainder can be used to check whether or not a number is even or odd')
     }
     function screen4(parent) {
-        
+
     }
 }
 function mod(index, divisor) {
