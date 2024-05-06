@@ -8,6 +8,7 @@ export function js_imports_remove(ast) {
     let export_ = js_export_single(ast);
     let used = js_identifiers(export_);
     let extra = list_difference(existing, used);
+    let {body} = ast;
     return {
         existing,
         extra,
