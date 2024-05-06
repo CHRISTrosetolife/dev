@@ -82,14 +82,16 @@ import {list_includes} from "./list_includes.mjs";
 import {lesson_console_log_quiz} from "./lesson_console_log_quiz.mjs";
 import {list_map} from "./list_map.mjs";
 export function lesson_if_else_if() {
-    let description = 'if with else';
+    let description = 'if with else about zero or not';
     let example_message = string_combine('with an ', description);
     return lesson_simple(function () {
-        let boolean = app_learn_code_random_boolean_binary();
-        let values = app_learn_code_unique_multiple(app_learn_code_random_value, 2);
-        let mapped = list_map(values, app_learn_code_log);
-        let [a, b] = mapped;
-        let lines = [`if (${boolean}) {`, app_learn_code_log('zero'), `} else {`, app_learn_code_log('not zero'), `}`];
+        let a;
+        if (random_50_50()) {
+            a = 0;
+        } else {
+            a = integer_random_digit_single();
+        }
+        let lines = [`if (${a} === 0) {`, app_learn_code_log('zero'), `} else {`, app_learn_code_log('not zero'), `}`];
         return list_join_newline(lines);
     }, example_before, description, example_message, [screen1, screen2, screen3]);
     function example_before(parent) {
@@ -98,6 +100,6 @@ export function lesson_if_else_if() {
         'if a number is neither positive nor negative , the number must be 0'
     }
     function screen1(parent) {
-        'if else can be used to output whether or not a number is positive'
+        'if else can be used to output whether or not a number is zero'
     }
 }
