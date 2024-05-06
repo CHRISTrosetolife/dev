@@ -4,7 +4,7 @@ import {app_learn_code_style_rounded_padded} from "./app_learn_code_style_rounde
 import {app_learn_code_style_success} from "./app_learn_code_style_success.mjs";
 import {html_p_text} from "./html_p_text.mjs";
 export function app_learn_code_answer_correct(container_bottom) {
-    let p = html_p_text(container_bottom, 'your answer is correct ✅');
+    let p = html_p_text(container_bottom, '✅ your answer is correct');
     app_learn_code_style_success(p);
     app_learn_code_style_rounded_padded(p);
     html_style(p, {
