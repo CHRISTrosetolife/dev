@@ -98,14 +98,22 @@ export function lesson_if_else() {
         return list_join(lines, '\n');
     }, example_before, description, example_message, [screen2]);
     function example_before(parent) {
+    }
+    function screen1(parent) {
         'in javascript , code in between a /* and a */ is ignored'
         'this is called a comment'
         'comments are for humans and code is for computers'
         'here is an example comment :'
         '/* console.log(0) */';
         'even though it says console.log(0); that will not get ran because it is inside of a comment'
+    }
+    function screen2(parent) {   
         'another way to write a comment is to use //'
         '// begins a comment and the comment continues until the end of the current line'
+        'here is an example // comment :'
+        'let a; // a is the first letter of the alphabet'
+    }
+    function screen3(parent) {
         html_style_alternate_monospace(parent, [
             'in programming , sometimes there is need to code : if "a" is ', 
             'true', 
@@ -114,10 +122,5 @@ export function lesson_if_else() {
             ' , then do "c"',
         ]);
         html_p_text(parent,'in other words , choose between "b" and "c" , depending on the value of "a"');
-    }
-    function screen2(parent) {
-        html_style_alternate_monospace(parent, ['inside the parenthesis of an ', 'if', ' can be more than just ', 'true', ' and ', 'false']);
-        html_style_alternate_monospace(parent, ['remember ', '<', ' , ', '<=', ' , ', '>', ' , ', '>=', ' , ', '===', ' and ', '!==', ' all return ', 'true', ' or ', 'false']);
-        html_style_alternate_monospace(parent, ['therefore inside the parenthesis of an ', 'if', ' could be one of those']);
     }
 }
