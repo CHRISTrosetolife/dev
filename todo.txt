@@ -7,6 +7,7 @@ programming language syntax sugar
 add a1 a2 - sum
 string_combine 'hello world' sum - combined
 log combined
+end
 ]
 
 folderize : a_b_c file name to a/b/c directory structure however useful to have automatic imports before this
