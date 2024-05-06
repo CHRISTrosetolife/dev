@@ -116,11 +116,12 @@ export function lesson_mod() {
     }
     function screen3(parent) {
         let divisor = 2;
-        'in the table below :'
-        'a is the dividend'
-        'b is the divisor'
-        'q is the quotient'
-        'r is the remainder'
+        html_p_text('in the table below :')
+        let ul = html_ul(parent);
+        html_li_text(ul, 'a is the dividend')
+        html_li_text(ul,'b is the divisor')
+        html_li_text(ul,'q is the quotient')
+        html_li_text(ul,'r is the remainder')
         let table = html_element(parent, 'table');
         let thead = html_element(table, 'thead');
         let tr_head = html_element(thead, 'tr');
