@@ -93,12 +93,4 @@ ${lesson_console_log_quiz()}
     function example_before(parent) {
         html_style_alternate_monospace(parent, ['inside the parenthesis of an ', 'if', ' could also be a variable']);
     }
-    function screen1(parent) {
-        html_p_text(parent, 'in this lesson the numbers will appear from smallest to greatest');
-        html_p_text(parent, 'for example :');
-        let ul = html_ul(parent);
-        html_style_alternate_code_li(ul, ['', '1 < 2', ' could appear :']);
-        html_style_alternate_code_li(ul, ['', '2 < 1', ' will not appear']);
-        html_style_alternate_code_li(ul, ['although ', '1 > 2', ' could appear']);
-    }
 }
