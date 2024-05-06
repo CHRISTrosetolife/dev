@@ -136,7 +136,15 @@ export function lesson_mod() {
         for (let c of columns_head) {
             let th = html_element(tr_head, 'th');
             html_inner_set(th, c);
-            '#29B6F6'
+            
+            app_learn_code_style_rounded_padded(td)
+            let color;
+            if (equal(c_index, index_last)) {
+                color = '#FFEB3B'
+            } else {
+                color = '#29B6F6'
+            }
+            html_style_background_color(td, color)
         }
         let tbody = html_element(table, 'tbody');
         each_index(range(11), (n, n_index) => {
