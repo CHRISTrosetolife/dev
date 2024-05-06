@@ -92,16 +92,11 @@ import { list_index_last } from "./list_index_last.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
 import { each_index } from "./each_index.mjs";
 export function lesson_mod() {
-    let description = 'if with else if';
-    let example_message = 'outputting whether or not a number is positive , negative or zero';
+    let description = 'remainder ( % ) 2';
+    let example_message = 'outputting the remainder of a number mod 2';
     return lesson_simple(function () {
-        let a;
-        if (random_50_50()) {
-            a = 0;
-        } else {
-            a = integer_random_digit_single();
-        }
-        let lines = [js_code_statement_let_assign('n', a), `if (n > 0) {`, app_learn_code_log_delimit('number is positive'), `} else if (n < 0) {`, app_learn_code_log_delimit('number is negative'), `} else {`, app_learn_code_log_delimit('number is zero'), `}`];
+        let a = integer_random_digit_single();
+        let lines = [app_learn_code_log(`${a} % 2`)];
         return list_join_newline(lines);
     }, example_before, description, example_message, [screen1, screen2, screen3]);
     function example_before(parent) {
