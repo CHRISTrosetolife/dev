@@ -79,16 +79,20 @@ import {list_adder} from "./list_adder.mjs";
 import {app_learn_code_random_identifiers} from "./app_learn_code_random_identifiers.mjs";
 import {list_includes} from "./list_includes.mjs";
 import {lesson_console_log_quiz} from "./lesson_console_log_quiz.mjs";
+import { list_map } from "./list_map.mjs";
 export function lesson_if_else() {
     let description = 'if with a process';
     let example_message = string_combine('with an ', description);
     return lesson_simple(function () {
         let boolean = app_learn_code_random_boolean_binary();
+        let values = app_learn_code_unique_multiple(app_learn_code_random_value)
+        let mapped = list_map(values, app_learn_code_log)
+        let [a,b] = mapped
         let lines = [
             `if (${boolean}) {`,
-            app_learn_code_log_random_value(),
+            a,
             `} else {`,
-            app_learn_code_log_random_value(),
+            b,
             `}`
         ];
         return list_join(lines, '\n');
