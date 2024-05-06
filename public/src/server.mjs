@@ -22,7 +22,7 @@ export function server() {
             body
         });
         let {function_name, args} = body;
-        let args_json = json_to(args);
+        let args_json = json_to({args});
         let replaced = string_replace(args_json, '\'', '\'\'');
         let command = `node ${run_git.name}.mjs ${function_run_json.name} ${function_name} '${replaced}'`;
         let result = await command_line(command);
