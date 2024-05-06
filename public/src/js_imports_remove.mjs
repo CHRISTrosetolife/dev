@@ -6,7 +6,7 @@ import {noop} from "./noop.mjs";
 export function js_imports_remove(ast) {
     let existing = js_imports_existing(ast);
     let e = js_export_single(ast);
-    let used = js_identifiers(ast);
+    let used = js_identifiers(e);
     let extra = list_difference(existing, used);
     return {
         existing,
