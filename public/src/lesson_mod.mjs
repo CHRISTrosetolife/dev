@@ -108,7 +108,6 @@ export function lesson_mod() {
         'in javascript , to get the remainder of dividend use % like this : dividend % divisor'
     }
     function screen1(parent) {
-    function screen1(parent) {
         html_style_alternate_bold(parent, ['when a number is divided by another number , the first number is called the ','dividend']);
         html_style_alternate_bold(parent, ['the second number is called the ','divisor']);
         html_p_text(parent, 'for example in 7 / 4 the dividend is 7 and the divisor is 4');
