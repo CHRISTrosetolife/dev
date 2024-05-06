@@ -82,7 +82,7 @@ import {app_learn_code_random_identifiers} from "./app_learn_code_random_identif
 import {list_includes} from "./list_includes.mjs";
 import {lesson_console_log_quiz} from "./lesson_console_log_quiz.mjs";
 import {list_map} from "./list_map.mjs";
-export function lesson_if_else_if() {
+export function lesson_mod() {
     let description = 'if with else if';
     let example_message = 'outputting whether or not a number is positive , negative or zero';
     return lesson_simple(function () {
@@ -96,9 +96,13 @@ export function lesson_if_else_if() {
         return list_join_newline(lines);
     }, example_before, description, example_message, [screen1, screen2]);
     function example_before(parent) {
+        'when a number is divided by another number , the first number is called the dividend'
+        'the second number is called the divisor'
+        'after the divisor divides the dividend , there is a quotient and a remainder'
+        
         html_p_text(parent, 'in this lesson , the code will first check whether or not the number is positive');
         html_p_text(parent, 'if the number is not positive , then the code will check whether or not the number is negative');
-        html_hr(parent)
+        html_hr(parent);
     }
     function screen1(parent) {
         html_p_text(parent, 'the number zero is not positive');
