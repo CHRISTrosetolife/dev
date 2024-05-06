@@ -1,4 +1,4 @@
-import path from 'path';
+import {import_node} from './import_node.mjs';let path = await import_node('path');
 import {function_extension} from './function_extension.mjs';
 export async function function_import(function_name) {
     let extension = function_extension();
