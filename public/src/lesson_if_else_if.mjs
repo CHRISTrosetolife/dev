@@ -96,7 +96,7 @@ export function lesson_if_else_if() {
         return list_join_newline(lines);
     }, example_before, description, example_message, []);
     function example_before(parent) {
-        html_style_alternate_monospace(parent, ['', 'if', ' and ', 'else', ' can be used to output whether or not a number is ', '0']);
+        html_style_alternate_monospace(parent, ['multiple ', 'if', ' and ', 'else', ' can be used to output whether or not a number is positive , negative , or zero']);
     }
     function screen1(parent) {
         'zero is not positive';
