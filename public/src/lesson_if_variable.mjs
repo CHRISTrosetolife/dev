@@ -86,7 +86,6 @@ export function lesson_if_variable() {
         let operator = list_random_item(operators);
         let operators_equality = ['===', '!=='];
         let values = call_multiple(integer_random_digit_single_positive, 2);
-        if (false)list_sort(values, identity);
         let [a, b] = values;
         if (list_includes(operators_equality, operator) && random_50_50()) {
             b = a;
