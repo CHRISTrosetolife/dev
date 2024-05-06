@@ -96,28 +96,19 @@ export function lesson_mod() {
         return list_join_newline(lines);
     }, example_before, description, example_message, [screen1, screen2]);
     function example_before(parent) {
-        'when a number is divided by another number , the first number is called the dividend';
-        'the second number is called the divisor';
-        'for example in 7 / 4 the dividend is 7 and the divisor is 4';
-        'after the divisor divides the dividend , there is a quotient and a remainder';
-        'this formula will give the answer with a decimal point : quotient + ( remainder / divisor )';
-        'for example 7 / 4 has a quotient of 1 and a remainder of 3';
-        '1 + ( 3 / 4 ) = 1 + 0.75 = 1.75';
         html_p_text(parent, 'in this lesson , the code will first check whether or not the number is positive');
         html_p_text(parent, 'if the number is not positive , then the code will check whether or not the number is negative');
         html_hr(parent);
     }
     function screen1(parent) {
-        html_p_text(parent, 'the number zero is not positive');
-        html_p_text(parent, 'the number zero is not negative');
-        html_p_text(parent, 'if a number is not positive and the number is not negative , then the number must be zero');
-        html_p_text(parent, 'a number is either positive , negative or zero');
+        'when a number is divided by another number , the first number is called the dividend';
+        'the second number is called the divisor';
+        'for example in 7 / 4 the dividend is 7 and the divisor is 4';
     }
     function screen2(parent) {
-        html_p_text(parent, 'a number is either positive , or is it not positive , so "positive" and "not positive" are two choices');
-        html_style_alternate_monospace(parent, ['if there are two choices , then one ', 'if', ' ', 'else', ' can be used']);
-        html_p_text(parent, 'this lesson will check a number to be either "positive" , "negative" or "zero"');
-        html_p_text(parent, '"positive" , "negative" and "zero" are three choices');
-        html_style_alternate_monospace(parent, ['if there are three choices , then two ', 'if', ' ', 'else', ' can be used , as will be shown later in this lesson']);
+        'after the divisor divides the dividend , there is a quotient and a remainder';
+        'this formula will give the answer with a decimal point : quotient + ( remainder / divisor )';
+        'for example 7 / 4 has a quotient of 1 and a remainder of 3';
+        '1 + ( 3 / 4 ) = 1 + 0.75 = 1.75';
     }
 }
