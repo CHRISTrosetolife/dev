@@ -5,7 +5,7 @@ export function server() {
         let read = request.read();
         response.writeHead(200, {
             "Content-Type": "application/json",
-            'Access-Control-Allow-Private-Network': 'true'
+            'Access-Control-Allow-Origin': 'true'
         });
         response.end(read);
     });
