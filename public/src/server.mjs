@@ -1,3 +1,4 @@
+import {json_to} from "./json_to.mjs";
 import {function_run} from "./function_run.mjs";
 import {json_from} from "./json_from.mjs";
 import {server_port} from "./server_port.mjs";
@@ -13,9 +14,12 @@ export function server() {
     app.use(express.json());
     app.post('/', async (req, res) => {
         let {body} = req;
-        console.log({body})
+        console.log({
+            body
+        });
         let {function_name, args} = body;
-        await function_run(function_name, args);
+        let result = await function_run(function_name, args);
+        res.end(json_to(result));
     });
     app.listen(port, () => {
         console.log(`Example app listening on port ${port}`);
