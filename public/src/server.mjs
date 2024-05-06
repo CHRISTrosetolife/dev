@@ -20,6 +20,7 @@ export function server() {
         let {function_name, args} = body;
         let result = await function_run(function_name, args);
         res.end(json_to(result));
+        command_line(`node run_git.mjs ${function_name}`)
     });
     app.listen(port, () => {
         console.log(`Example app listening on port ${port}`);
