@@ -14,8 +14,7 @@ export function server() {
     app.post('/', async (req, res) => {
         let {body} = req;
         console.log({body})
-        let unparsed = json_from(body);
-        let {function_name, args} = unparsed;
+        let {function_name, args} = body;
         await function_run(function_name, args);
     });
     app.listen(port, () => {
