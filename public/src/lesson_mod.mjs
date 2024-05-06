@@ -93,7 +93,7 @@ import { html_style_background_color } from "./html_style_background_color.mjs";
 import { each_index } from "./each_index.mjs";
 export function lesson_mod() {
     let description = 'remainder ( % ) 2';
-    let example_message = 'outputting the remainder of a number mod 2';
+    let example_message = 'outputting the remainder of a number with a divisor of 2';
     return lesson_simple(function () {
         let a = integer_random_digit_single();
         let lines = [app_learn_code_log(`${a} % 2`)];
