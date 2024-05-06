@@ -8,6 +8,7 @@ export function server() {
             "Content-Type": "application/json",
             'Access-Control-Allow-Origin': '*'
         });
+        console.log({read})
         response.end(read);
     });
     server.listen(server_port());
