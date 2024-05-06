@@ -102,7 +102,7 @@ export function lesson_mod() {
         'after the divisor divides the dividend , there is a quotient and a remainder';
         'this formula will give the answer with a decimal point : quotient + ( remainder / divisor )';
         'for example 7 / 4 has a quotient of 1 and a remainder of 3';
-        '1 + 3/4 = 1 + 0.75 = 1.75';
+        '1 + ( 3 / 4 ) = 1 + 0.75 = 1.75';
         html_p_text(parent, 'in this lesson , the code will first check whether or not the number is positive');
         html_p_text(parent, 'if the number is not positive , then the code will check whether or not the number is negative');
         html_hr(parent);
