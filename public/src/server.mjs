@@ -8,6 +8,7 @@ import express from 'express';
 import cors from 'cors';
 import {function_run_json} from "./function_run_json.mjs";
 import {string_replace} from "./string_replace.mjs";
+import { run } from "./run.mjs";
 export function server() {
     let app = express();
     let port = server_port();
@@ -24,7 +25,7 @@ export function server() {
         let {function_name, args} = body;
         let args_json = json_to({args});
         let replaced = string_replace(args_json, '\'', '\'\'');
-        let command = `node ${run_git.name}.mjs ${function_run_json.name} ${function_name} '${replaced}'`;
+        let command = `node ${run.name}.mjs ${function_run_json.name} ${function_name} '${replaced}'`;
         console.log(command)
         let result = await command_line(command);
         res.end(json_to(result));
