@@ -176,7 +176,7 @@ export function lesson_mod() {
         html_p_text(parent, 'the remainder can be used to check whether or not a number is even or odd')
     }
     function screen4(parent) {
-
+        'in javascript , to get the remainder of dividend use % like this : dividend % divisor'
     }
 }
 function mod(index, divisor) {
