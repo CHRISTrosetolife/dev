@@ -101,9 +101,11 @@ export function lesson_if_else() {
         html_style_alternate_monospace(parent, [
             'in programming , sometimes there is need to code : if "a" is ', 
             'true', 
-            ' , then do "b"'
-        ]
-    );
+            ' , then do "b" , otherwise , if "a" is ',
+            'false',
+            ' , then do "c"',
+        ]);
+        html_p_text(parent,'in other words , choose between "b" and "c" , depending on the value of "a"');
     }
     function screen2(parent) {
         html_style_alternate_monospace(parent, ['inside the parenthesis of an ', 'if', ' can be more than just ', 'true', ' and ', 'false']);
