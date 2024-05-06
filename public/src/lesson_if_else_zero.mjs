@@ -81,7 +81,7 @@ import {app_learn_code_random_identifiers} from "./app_learn_code_random_identif
 import {list_includes} from "./list_includes.mjs";
 import {lesson_console_log_quiz} from "./lesson_console_log_quiz.mjs";
 import {list_map} from "./list_map.mjs";
-export function lesson_if_else_if() {
+export function lesson_if_else_zero() {
     let description = 'if with else about zero or not';
     let example_message = 'outputting whether or not a number is zero';
     return lesson_simple(function () {
@@ -95,9 +95,9 @@ export function lesson_if_else_if() {
         return list_join_newline(lines);
     }, example_before, description, example_message, []);
     function example_before(parent) {
-        'a number is positive if the number is greater than zero'
-        'a number is negative if the number is less than zero'
-        'if a number is neither positive nor negative , the number must be 0'
-        html_style_alternate_monospace(parent, ['','if',' and ','else',' can be used to output whether or not a number is ','0'])
+        'a number is positive if the number is greater than zero';
+        'a number is negative if the number is less than zero';
+        'if a number is neither positive nor negative , the number must be 0';
+        html_style_alternate_monospace(parent, ['', 'if', ' and ', 'else', ' can be used to output whether or not a number is ', '0']);
     }
 }
