@@ -19,9 +19,6 @@ export function server() {
     app.use(express.json());
     app.post('/', async (req, res) => {
         let {body} = req;
-        console.log({
-            body
-        });
         let {function_name, args} = body;
         let args_json = json_to({args});
         let replaced = string_replace(args_json, '\'', '\'\'');
