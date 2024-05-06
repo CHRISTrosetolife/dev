@@ -1,3 +1,4 @@
+import {run_git} from "./run_git.mjs";
 import {command_line} from "./command_line.mjs";
 import {json_to} from "./json_to.mjs";
 import {function_run} from "./function_run.mjs";
@@ -23,7 +24,7 @@ export function server() {
         let {function_name, args} = body;
         let args_json = json_to(args);
         let replaced = string_replace(args_json, '\'', '\'\'');
-        let result = await command_line(`node run_git.mjs ${function_run_json.name} ${function_name} '${replaced}`);
+        let result = await command_line(`node ${run_git.name}.mjs ${function_run_json.name} ${function_name} '${replaced}`);
         res.end(json_to(result));
     });
     app.listen(port, () => {
