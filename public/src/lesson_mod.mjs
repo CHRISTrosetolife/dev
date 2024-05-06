@@ -136,6 +136,7 @@ export function lesson_mod() {
         for (let c of columns_head) {
             let th = html_element(tr_head, 'th');
             html_inner_set(th, c);
+            '#29B6F6'
         }
         let tbody = html_element(table, 'tbody');
         each_index(range(11), (n, n_index) => {
