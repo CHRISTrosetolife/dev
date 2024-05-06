@@ -122,6 +122,7 @@ export function lesson_mod() {
     }
     function screen3(parent) {
         let divisor = 2;
+        html_p_text(parent, string_combine('in the table below are the quotient and remainders for a divisor of ', divisor))
         html_p_text(parent, 'in the table below :')
         let ul = html_ul(parent);
         html_li_text(ul, 'a is the dividend')
