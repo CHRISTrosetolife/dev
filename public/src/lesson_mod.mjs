@@ -88,6 +88,7 @@ import {html_inner_set} from "./html_inner_set.mjs";
 import { html_style_width_full } from "./html_style_width_full.mjs";
 import { html_style_centered } from "./html_style_centered.mjs";
 import { app_learn_code_style_rounded_padded } from "./app_learn_code_style_rounded_padded.mjs";
+import { list_index_last } from "./list_index_last.mjs";
 export function lesson_mod() {
     let description = 'if with else if';
     let example_message = 'outputting whether or not a number is positive , negative or zero';
@@ -139,7 +140,8 @@ export function lesson_mod() {
             let tr_body = html_element(tbody, 'tr');
             let quotient = n / divisor;
             let columns_body = [n, divisor, quotient, floor(quotient), n % divisor];
-            each_index(columns_body, c => {
+            let index_last = list_index_last(columns_body)
+            each_index(columns_body, (c, index) => {
                 let td = html_element(tr_body, 'td');
                 html_inner_set(td, c);
                 html_style_centered(td)
