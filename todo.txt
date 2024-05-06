@@ -8,8 +8,8 @@ string_combine:sc
 log:l
 [fn_name a1 a2 - output
 a a1 a2 - output
-sc 'hello world' output - combined
-l combined
+sc 'hello world' output - c
+l c
 end
 ]
 
