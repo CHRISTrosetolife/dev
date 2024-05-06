@@ -98,6 +98,7 @@ export function lesson_if_else_if() {
     function example_before(parent) {
         html_p_text(parent, 'in this lesson , the code will first check whether or not the number is positive');
         html_p_text(parent, 'if the number is not positive , then the code will check whether or not the number is negative');
+        html_hr(parent)
     }
     function screen1(parent) {
         html_p_text(parent, 'the number zero is not positive');
