@@ -79,14 +79,16 @@ import {list_adder} from "./list_adder.mjs";
 import {app_learn_code_random_identifiers} from "./app_learn_code_random_identifiers.mjs";
 import {list_includes} from "./list_includes.mjs";
 import {lesson_console_log_quiz} from "./lesson_console_log_quiz.mjs";
-export function lesson_if_binary() {
+export function lesson_if_else() {
     let description = 'if with a process';
     let example_message = string_combine('with an ', description);
     return lesson_simple(function () {
         let boolean = app_learn_code_random_boolean_binary();
-        let statements = [lesson_console_log_quiz(), `if (${boolean}) {
+        let statements = [`if (${boolean}) {
 ${lesson_console_log_quiz()}
-}`, lesson_console_log_quiz()];
+} else {
+${lesson_console_log_quiz()}
+}`];
         return list_join(statements, '\n');
     }, example_before, description, example_message, [screen2]);
     function example_before() {}
