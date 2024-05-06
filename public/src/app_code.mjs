@@ -1,11 +1,8 @@
+import { functions_source } from "./functions_source.mjs";
 import { http_post } from "./http_post.mjs";
 import { server_port } from "./server_port.mjs";
 
 export async function app_code() {
-    const function_name = 'functions_source';
-    const args = [];
-    let result = await http_post(
-        `http://localhost:${server_port()}/`, 
-        { function_name: function_name, args: args })
+    let result = function_run(functions_source.name, [])
     console.log({result})
 }
