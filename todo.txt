@@ -8,7 +8,8 @@ sc'string_combine
 l'log
 [fn_name a1 a2 - o'output
 a a1 a2 - o
-sc 'hello world' o | l
+sc 'hello world'
+| log
 end]
 
 rename
