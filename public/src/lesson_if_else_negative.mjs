@@ -91,7 +91,7 @@ export function lesson_if_else_negative() {
         if (integer_random(1, 3) === 1) {
             a = 0;
         }
-        let lines = [`let is_${category} = ${a} < 0;`, `if (is_${category}) {`, app_learn_code_log_delimit(`number is ${category}`), `} else {`, app_learn_code_log_delimit(`number is not ${category}`), `}`];
+        let lines = [`let n = ${a};`,`let is_${category} = n < 0;`, `if (is_${category}) {`, app_learn_code_log_delimit(`number is ${category}`), `} else {`, app_learn_code_log_delimit(`number is not ${category}`), `}`];
         return list_join_newline(lines);
     }, example_before, description, example_message, []);
     function example_before(parent) {
