@@ -1,4 +1,4 @@
-import fs from 'fs';
+import {import_node} from './import_node.mjs';let fs = await import_node('fs');
 import {file_open} from './file_open.mjs';
 import {assert_not_async} from './assert_not_async.mjs';
 import {file_exists} from './file_exists.mjs';
