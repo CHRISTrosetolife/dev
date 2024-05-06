@@ -3,7 +3,7 @@ import {http} from 'http';
 export function server() {
     let server = http.createServer(function (request, response) {
         response.writeHead(200, {
-            "Content-Type": "text\plain"
+            "Content-Type": "text\\plain"
         });
         if (request.method == "GET") {
             response.end("received GET request.");
