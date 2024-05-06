@@ -97,7 +97,7 @@ export function lesson_if_else_if() {
     }, example_before, description, example_message, [screen1, screen2]);
     function example_before(parent) {
         html_p_text(parent, 'in this lesson , the code will first check whether or not the number is positive');
-        html_p_text(parent, 'if the number is not positive , then the code will check whether or not the number is zero');
+        html_p_text(parent, 'if the number is not positive , then the code will check whether or not the number is negative');
     }
     function screen1(parent) {
         html_p_text(parent, 'the number zero is not positive');
