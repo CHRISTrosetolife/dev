@@ -32,6 +32,7 @@ import { lesson_if_variable } from "./lesson_if_variable.mjs";
 import { lesson_variable_binary } from "./lesson_variable_binary.mjs";
 import { lesson_if_else } from "./lesson_if_else.mjs";
 import { lesson_if_else_zero } from "./lesson_if_else_zero.mjs";
+import { lesson_if_else_positive } from "./lesson_if_else_positive.mjs";
 export function app_learn_code_lessons() {
     let lesson_creates = [];
     list_add(lesson_creates, lesson_console_log);
@@ -67,6 +68,7 @@ export function app_learn_code_lessons() {
     list_add(lesson_creates, lesson_if_variable);
     list_add(lesson_creates, lesson_if_else);
     list_add(lesson_creates, lesson_if_else_zero);
+    list_add(lesson_creates, lesson_if_else_positive);
     
     return lesson_creates;
 }
