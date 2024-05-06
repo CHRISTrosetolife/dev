@@ -6,8 +6,9 @@ import {add} from "./add.mjs";
 import {integer_random} from "./integer_random.mjs";
 import {list_length} from "./list_length.mjs";
 import {string_split_space} from "./string_split_space.mjs";
+import { app_learn_code_log } from "./app_learn_code_log.mjs";
 export function lesson_console_log_quiz() {
     let value = lesson_console_log_quiz_value();
-    let code = `console.log(${value});`;
+    let code = app_learn_code_log(value);
     return code;
 }
