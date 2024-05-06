@@ -133,7 +133,7 @@ export function lesson_mod() {
         let thead = html_element(table, 'thead');
         let tr_head = html_element(thead, 'tr');
         let columns_head = ['a', 'b', 'a / b', 'q', 'r'];
-        for (let c of columns_head) {
+        each_index(columns_body, (c, c_index) => {
             let th = html_element(tr_head, 'th');
             html_inner_set(th, c);
             
@@ -145,7 +145,7 @@ export function lesson_mod() {
                 color = '#29B6F6'
             }
             html_style_background_color(th, color)
-        }
+        })
         let tbody = html_element(table, 'tbody');
         each_index(range(11), (n, n_index) => {
             let even = equal(mod(n_index, divisor), 0);
