@@ -123,7 +123,7 @@ export function lesson_mod() {
     }
     function screen3(parent) {
         let divisor = 2;
-        html_p_text(parent, string_combine('in the table below are quotient and remainders for a divisor of ', divisor))
+        html_p_text(parent, string_combine('in the table below are some quotient and remainders for a divisor of ', divisor))
         html_p_text(parent, 'pay attention to the remainder')
         html_p_text(parent, 'here are what the letters mean :')
         let ul = html_ul(parent);
