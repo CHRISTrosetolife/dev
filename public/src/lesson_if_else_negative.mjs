@@ -82,23 +82,23 @@ import {app_learn_code_random_identifiers} from "./app_learn_code_random_identif
 import {list_includes} from "./list_includes.mjs";
 import {lesson_console_log_quiz} from "./lesson_console_log_quiz.mjs";
 import {list_map} from "./list_map.mjs";
-export function lesson_if_else_positive() {
-    let category = 'positive'
+export function lesson_if_else_negative() {
+    let category = 'negative';
     let description = `if with else about ${category} or not`;
     let example_message = `outputting whether or not a number is ${category}`;
     return lesson_simple(function () {
         let a = integer_random_digit_single();
-        if (integer_random(1,3) === 1) {
+        if (integer_random(1, 3) === 1) {
             a = 0;
         }
-        let lines = [`let is_positive = ${a} > 0;`,`if (is_positive) {`, app_learn_code_log_delimit(`number is ${category}`), `} else {`, app_learn_code_log_delimit(`number is not ${category}`), `}`];
+        let lines = [`let is_${category} = ${a} < 0;`, `if (is_${category}) {`, app_learn_code_log_delimit(`number is ${category}`), `} else {`, app_learn_code_log_delimit(`number is not ${category}`), `}`];
         return list_join_newline(lines);
     }, example_before, description, example_message, []);
     function example_before(parent) {
-        html_style_alternate_bold(parent, ['a number is ','positive',' if the number is greater than zero']);
+        html_style_alternate_bold(parent, ['a number is ', 'positive', ' if the number is greater than zero']);
         'a number is negative if the number is less than zero';
         'if a number is neither positive nor negative , the number must be 0';
         html_style_alternate_monospace(parent, ['', 'if', ' and ', 'else', ` can be used to output whether or not a number is ${category}`]);
-        html_hr(parent)
+        html_hr(parent);
     }
 }
