@@ -86,7 +86,7 @@ export function lesson_if_else() {
     let example_message = string_combine('with an ', description);
     return lesson_simple(function () {
         let boolean = app_learn_code_random_boolean_binary();
-        let values = app_learn_code_unique_multiple(app_learn_code_random_value);
+        let values = app_learn_code_unique_multiple(app_learn_code_random_value, 2);
         let mapped = list_map(values, app_learn_code_log);
         console.log({values,mapped})
         let [a, b] = mapped;
