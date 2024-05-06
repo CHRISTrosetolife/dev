@@ -77,6 +77,7 @@ import {js_code_assign} from "./js_code_assign.mjs";
 import {list_adder} from "./list_adder.mjs";
 import {app_learn_code_random_identifiers} from "./app_learn_code_random_identifiers.mjs";
 import {list_includes} from "./list_includes.mjs";
+import { lesson_console_log_quiz } from "./lesson_console_log_quiz.mjs";
 export function lesson_if_binary() {
     let description = 'if with a process';
     let example_message = string_combine('with an ', description);
@@ -89,9 +90,9 @@ export function lesson_if_binary() {
         if (list_includes(operators_equality, operator) && random_50_50()) {
             b = a;
         }
-        let statements = [app_learn_code_log_random_value(), `if (${a} ${operator} ${b}) {
-${app_learn_code_log_random_value()}
-}`, app_learn_code_log_random_value()];
+        let statements = [lesson_console_log_quiz(), `if (${a} ${operator} ${b}) {
+${lesson_console_log_quiz()}
+}`, lesson_console_log_quiz()];
         return list_join(statements, '\n');
     }, example_before, description, example_message, [screen2]);
     function example_before(){
