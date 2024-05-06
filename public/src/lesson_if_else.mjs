@@ -98,6 +98,11 @@ export function lesson_if_else() {
         return list_join(lines, '\n');
     }, example_before, description, example_message, [screen2]);
     function example_before(parent) {
+        'in javascript , code in between a /* and a */ is ignored'
+        'this is called a comment'
+        'comments are for humans and code is for computers'
+        'another way to write a comment is to use //'
+        '// begins a comment and the comment continues until the end of the current line'
         html_style_alternate_monospace(parent, [
             'in programming , sometimes there is need to code : if "a" is ', 
             'true', 
