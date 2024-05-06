@@ -139,12 +139,12 @@ export function lesson_mod() {
             let tr_body = html_element(tbody, 'tr');
             let quotient = n / divisor;
             let columns_body = [n, divisor, quotient, floor(quotient), n % divisor];
-            for (let c of columns_body) {
+            each_index(columns_body, c => {
                 let td = html_element(tr_body, 'td');
                 html_inner_set(td, c);
                 html_style_centered(td)
                 app_learn_code_style_rounded_padded(td)
-            }
+            })
         }
     }
 }
