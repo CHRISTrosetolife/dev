@@ -19,8 +19,9 @@ export function js_imports_remove(ast) {
     for (let e of extra) {
         let existing2 = js_imports_existing_named(ast, e);
         let e2 = list_single(existing2);
-        console.log(e2);
+        let {stack} = e2;
+        let ancestor = list_get_end(stack, 2);
+        console.log(ancestor);
         list_remove(body, e2);
-        list_get_end();
     }
 }
