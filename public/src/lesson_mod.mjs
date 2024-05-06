@@ -115,7 +115,11 @@ export function lesson_mod() {
     function screen3(parent) {
         let table = html_element(parent, 'table');
         let thead = html_element(table, 'thead');
+        let tr_head = html_element(table, 'tr');
         let columns = ['dividend', 'divisor', 'answer', 'quotient', 'remainder']
+        for (let c of columns) {
+            let th = html_element(tr_head, 'th')
+        }
         let tbody = html_element(table, 'tbody');
     }
 }
