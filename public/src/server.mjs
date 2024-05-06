@@ -1,10 +1,11 @@
 import {server_port} from "./server_port.mjs";
-import {http} from 'http';
+import http from 'http';
 export function server() {
     let server = http.createServer(function (request, response) {
         response.writeHead(200, {
-            "Content-Type": "text\\plain"
+            "Content-Type": "application/json"
         });
+        response.write()
         if (request.method == "GET") {
             response.end("received GET request.");
         } else if (request.method == "POST") {
