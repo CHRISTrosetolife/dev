@@ -107,7 +107,8 @@ export function lesson_if_else_if() {
     }
     function screen2(parent) {
         html_style_alternate_monospace(parent, ['if there are two choices , then one ','if',' ','else',' can be used'])
-        html_style_alternate_monospace(parent, ['if there are three choices , then two ','if',' ','else',' can be used , as in the example below'])
+        html_p(parent, 'for example , a number is either positive , or is it not positive , so "positive" and "not positive" are two choices')
+        html_style_alternate_monospace(parent, ['if there are three choices , then two ','if',' ','else',' can be used , as in this lesson'])
         html_p_text(parent, 'because a number is either positive , negative or zero , there are three choices');
        
     }
