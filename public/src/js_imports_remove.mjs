@@ -5,8 +5,8 @@ import {js_imports_existing} from "./js_imports_existing.mjs";
 import {noop} from "./noop.mjs";
 export function js_imports_remove(ast) {
     let existing = js_imports_existing(ast);
-    let e = js_export_single(ast);
-    let used = js_identifiers(e);
+    let $export = js_export_single(ast);
+    let used = js_identifiers($export);
     let extra = list_difference(existing, used);
     return {
         existing,
