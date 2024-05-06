@@ -106,7 +106,7 @@ export function lesson_if_else_if() {
         html_p_text(parent, 'a number is either positive , negative or zero');
     }
     function screen2(parent) {
-        html_p(parent, 'a number is either positive , or is it not positive , so "positive" and "not positive" are two choices');
+        html_p_text(parent, 'a number is either positive , or is it not positive , so "positive" and "not positive" are two choices');
         html_style_alternate_monospace(parent, ['if there are two choices , then one ', 'if', ' ', 'else', ' can be used']);
         html_p_text(parent, 'this lesson will check a number to be either "positive" , "negative" or "zero"');
         html_p_text(parent, '"positive" , "negative" and "zero" are three choices');
