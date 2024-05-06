@@ -52,13 +52,22 @@ import {list_equal} from "./list_equal.mjs";
 import {list_filter} from "./list_filter.mjs";
 import {null_is} from "./null_is.mjs";
 import {html_style_background_color} from "./html_style_background_color.mjs";
+import { app_learn_code_range_retry } from "./app_learn_code_range_retry.mjs";
 export function app_learn_code_unscramble(source_get) {
     return function app_learn_code_unscramble_inner(parent) {
+        let previous;
         let div = html_div(parent);
         refresh();
         function refresh() {
             html_clear(div);
-            let source = source_get();
+            let source;
+            for (let i of app_learn_code_range_retry()) {
+                source = source_get();
+                if (equal(source, previous)) {
+                    continue;
+                }
+            }
+            previous = source;
             let variations = app_learn_code_source_variations(source);
             source = list_first(variations);
             let messages = app_learn_code_eval(source);
