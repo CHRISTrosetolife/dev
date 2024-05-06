@@ -137,14 +137,14 @@ export function lesson_mod() {
             let th = html_element(tr_head, 'th');
             html_inner_set(th, c);
             
-            app_learn_code_style_rounded_padded(td)
+            app_learn_code_style_rounded_padded(th)
             let color;
             if (equal(c_index, index_last)) {
                 color = '#FFEB3B'
             } else {
                 color = '#29B6F6'
             }
-            html_style_background_color(td, color)
+            html_style_background_color(th, color)
         }
         let tbody = html_element(table, 'tbody');
         each_index(range(11), (n, n_index) => {
