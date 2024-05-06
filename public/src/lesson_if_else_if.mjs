@@ -91,7 +91,7 @@ export function lesson_if_else_if() {
         } else {
             a = integer_random_digit_single();
         }
-        let lines = [`if (${a} === 0) {`, app_learn_code_log('zero'), `} else {`, app_learn_code_log('not zero'), `}`];
+        let lines = [`if (${a} === 0) {`, app_learn_code_log('number is zero'), `} else {`, app_learn_code_log('number is not zero'), `}`];
         return list_join_newline(lines);
     }, example_before, description, example_message, [screen1, screen2, screen3]);
     function example_before(parent) {
