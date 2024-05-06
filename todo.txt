@@ -10,8 +10,7 @@ log:l
 a a1 a2 - output
 sc 'hello world' output - c
 l c
-end
-]
+end]
 
 get rid of extra imports
 
