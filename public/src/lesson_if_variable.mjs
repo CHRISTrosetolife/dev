@@ -90,9 +90,10 @@ export function lesson_if_variable() {
         if (list_includes(operators_equality, operator) && random_50_50()) {
             b = a;
         }
+        let boolean = `${a} ${operator} ${b}`;
         let name = app_learn_code_random_identifier();
         let statements = [
-            js_code_statement_let_assign(name, `${a} ${operator} ${b}`), 
+            js_code_statement_let_assign(name, boolean), 
             lesson_console_log_quiz(), `if (${name}) {
 ${lesson_console_log_quiz()}
 }`, lesson_console_log_quiz()];
