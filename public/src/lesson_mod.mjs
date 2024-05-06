@@ -105,9 +105,7 @@ export function lesson_mod() {
         return list_join_newline(lines);
     }, example_before, description, example_message, [screen1, screen2, screen3, screen4]);
     function example_before(parent) {
-        html_p_text(parent, 'in this lesson , the code will first check whether or not the number is positive');
-        html_p_text(parent, 'if the number is not positive , then the code will check whether or not the number is negative');
-        html_hr(parent);
+        'in javascript , to get the remainder of dividend use % like this : dividend % divisor'
     }
     function screen1(parent) {
         'when a number is divided by another number , the first number is called the dividend';
