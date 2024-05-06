@@ -1,3 +1,4 @@
+import {server_port} from "./server_port.mjs";
 import {http} from 'http';
 export function server() {
     var server = http.createServer(function (request, response) {
@@ -12,6 +13,6 @@ export function server() {
             response.end("Undefined request .");
         }
     });
-    server.listen(8000);
+    server.listen(server_port());
     console.log("Server running on port 8000");
 }
