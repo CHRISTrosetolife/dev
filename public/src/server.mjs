@@ -4,10 +4,11 @@ export function server() {
     let server = http.createServer(function (request, response) {
         let read = request.read();
         response.writeHead(200, {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            'Access-Control-Allow-Private-Network': 'true'
         });
         response.end(read);
     });
     server.listen(server_port());
-    console.log("Server running on port 8000");
+    console.log("server running on port 8000");
 }
