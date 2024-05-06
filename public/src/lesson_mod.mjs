@@ -144,14 +144,14 @@ export function lesson_mod() {
             let columns_body = [n, divisor, quotient, floor(quotient), n % divisor];
             let index_last = list_index_last(columns_body)
             each_index(columns_body, (c, index) => {
-                const divisor = 2;
+                let divisor = 2;
                 let even = equal(mod(index, divisor), 0);
                 let td = html_element(tr_body, 'td');
                 html_inner_set(td, c);
                 html_style_centered(td)
                 app_learn_code_style_rounded_padded(td)
                 if (equal(index, index_last)) {
-                    let yellow = '#F9E79F';
+                    let yellow = even ? '#F9E79F' : '#F7DC6F';
                     html_style_background_color(td, yellow)
                 }
             })
