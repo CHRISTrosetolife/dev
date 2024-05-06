@@ -97,7 +97,14 @@ export function lesson_if_else() {
         ];
         return list_join(lines, '\n');
     }, example_before, description, example_message, [screen2]);
-    function example_before() {}
+    function example_before(parent) {
+        html_style_alternate_monospace(parent, [
+            'in programming , sometimes there is need to code : if "a" is ', 
+            'true', 
+            ' , then do "b"'
+        ]
+    );
+    }
     function screen2(parent) {
         html_style_alternate_monospace(parent, ['inside the parenthesis of an ', 'if', ' can be more than just ', 'true', ' and ', 'false']);
         html_style_alternate_monospace(parent, ['remember ', '<', ' , ', '<=', ' , ', '>', ' , ', '>=', ' , ', '===', ' and ', '!==', ' all return ', 'true', ' or ', 'false']);
