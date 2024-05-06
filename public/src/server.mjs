@@ -10,7 +10,8 @@ export function server() {
      } 
        
      app.use(cors(corsOptions)) 
-    
+     app.use(express.json());
+     
     app.post('/', async (req, res) => {
         let json = req.body
         console.log(json)
