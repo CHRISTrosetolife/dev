@@ -5,7 +5,7 @@ export function server() {
         let read = request.read();
         response.writeHead(200, {
             "Content-Type": "application/json",
-            'Access-Control-Allow-Origin': 'true'
+            'Access-Control-Allow-Origin': '*'
         });
         response.end(read);
     });
