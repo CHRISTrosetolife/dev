@@ -21,11 +21,12 @@ import {app_learn_code_style_rounded_padded} from "./app_learn_code_style_rounde
 import {list_index_last} from "./list_index_last.mjs";
 import {html_style_background_color} from "./html_style_background_color.mjs";
 import {each_index} from "./each_index.mjs";
+import { integer_random_digit_single_positive } from "./integer_random_digit_single_positive.mjs";
 export function lesson_mod() {
     let description = 'remainder ( % ) 2';
     let example_message = 'outputting the remainder of a number with a divisor of 2';
     return lesson_simple(function () {
-        let a = integer_random_digit_single();
+        let a = integer_random_digit_single_positive();
         let lines = [app_learn_code_log(`${a} % 2`)];
         return list_join_newline(lines);
     }, example_before, description, example_message, [screen1, screen2, screen3]);
