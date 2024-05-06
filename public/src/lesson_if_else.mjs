@@ -84,12 +84,14 @@ export function lesson_if_else() {
     let example_message = string_combine('with an ', description);
     return lesson_simple(function () {
         let boolean = app_learn_code_random_boolean_binary();
-        let statements = [`if (${boolean}) {
-${lesson_console_log_quiz()}
-} else {
-${lesson_console_log_quiz()}
-}`];
-        return list_join(statements, '\n');
+        let lines = [
+            `if (${boolean}) {`,
+            lesson_console_log_quiz(),
+            `} else {`,
+            lesson_console_log_quiz(),
+            `}`
+        ];
+        return list_join(lines, '\n');
     }, example_before, description, example_message, [screen2]);
     function example_before() {}
     function screen2(parent) {
