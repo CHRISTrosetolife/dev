@@ -3,7 +3,7 @@ good whitespace max width
 mod => is even or not => nested if even positive odd positive etc lessons
 
 programming language syntax sugar 
-[fn name a1 a2 - output
+[fn_name a1 a2 - output
 add a1 a2 - sum
 string_combine 'hello world' sum - combined
 log combined
