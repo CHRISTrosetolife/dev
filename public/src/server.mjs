@@ -1,7 +1,7 @@
 import {server_port} from "./server_port.mjs";
 import {http} from 'http';
 export function server() {
-    var server = http.createServer(function (request, response) {
+    let server = http.createServer(function (request, response) {
         response.writeHead(200, {
             "Content-Type": "text\plain"
         });
