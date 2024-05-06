@@ -1,4 +1,4 @@
-import {list_join_newine} from "./list_join_newine.mjs";
+import {list_join_newline} from "./list_join_newline.mjs";
 import {app_learn_code_random_boolean_binary} from "./app_learn_code_random_boolean_binary.mjs";
 import {html_style_alternate_code_li} from "./html_style_alternate_code_li.mjs";
 import {list_join} from "./list_join.mjs";
@@ -90,7 +90,7 @@ export function lesson_if_else() {
         let mapped = list_map(values, app_learn_code_log);
         let [a, b] = mapped;
         let lines = [`if (${boolean}) {`, a, `} else {`, b, `}`];
-        return list_join_newine(lines);
+        return list_join_newline(lines);
     }, example_before, description, example_message, [screen2]);
     function example_before(parent) {}
     function screen1(parent) {
