@@ -89,7 +89,7 @@ export function lesson_if_else_if() {
         let values = app_learn_code_unique_multiple(app_learn_code_random_value, 2);
         let mapped = list_map(values, app_learn_code_log);
         let [a, b] = mapped;
-        let lines = [`if (${boolean}) {`, a, `} else {`, b, `}`];
+        let lines = [`if (${boolean}) {`, app_learn_code_log('zero'), `} else {`, app_learn_code_log('not zero'), `}`];
         return list_join_newline(lines);
     }, example_before, description, example_message, [screen1, screen2, screen3]);
     function example_before(parent) {
@@ -98,6 +98,6 @@ export function lesson_if_else_if() {
         'if a number is neither positive nor negative , the number must be 0'
     }
     function screen1(parent) {
-        
+        'if else can be used to output whether or not a number is positive'
     }
 }
