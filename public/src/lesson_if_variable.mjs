@@ -1,3 +1,4 @@
+import {app_learn_code_random_boolean_binary} from "./app_learn_code_random_boolean_binary.mjs";
 import {html_style_alternate_code_li} from "./html_style_alternate_code_li.mjs";
 import {list_join} from "./list_join.mjs";
 import {app_learn_code_log_random_value} from "./app_learn_code_log_random_value.mjs";
@@ -77,24 +78,14 @@ import {js_code_assign} from "./js_code_assign.mjs";
 import {list_adder} from "./list_adder.mjs";
 import {app_learn_code_random_identifiers} from "./app_learn_code_random_identifiers.mjs";
 import {list_includes} from "./list_includes.mjs";
-import { lesson_console_log_quiz } from "./lesson_console_log_quiz.mjs";
+import {lesson_console_log_quiz} from "./lesson_console_log_quiz.mjs";
 export function lesson_if_variable() {
     let description = 'if with a variable';
-    let example_message = description
+    let example_message = description;
     return lesson_simple(function () {
-        let operators = ['<', '<=', '>', '>=', '===', '!=='];
-        let operator = list_random_item(operators);
-        let operators_equality = ['===', '!=='];
-        let values = call_multiple(integer_random_digit_single_positive, 2);
-        let [a, b] = values;
-        if (list_includes(operators_equality, operator) && random_50_50()) {
-            b = a;
-        }
-        let boolean = `${a} ${operator} ${b}`;
+        let boolean = app_learn_code_random_boolean_binary();
         let name = app_learn_code_random_identifier();
-        let statements = [
-            js_code_statement_let_assign(name, boolean), 
-            lesson_console_log_quiz(), `if (${name}) {
+        let statements = [js_code_statement_let_assign(name, boolean), lesson_console_log_quiz(), `if (${name}) {
 ${lesson_console_log_quiz()}
 }`, lesson_console_log_quiz()];
         return list_join(statements, '\n');
