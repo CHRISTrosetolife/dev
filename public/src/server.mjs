@@ -1,8 +1,15 @@
 import {server_port} from "./server_port.mjs";
 import express from 'express';
+import cors from 'cors';
 export function server() {
     const app = express()
     const port = server_port()
+
+    let corsOptions = { 
+        origin : ['http://localhost:*'], 
+     } 
+       
+     app.use(cors(corsOptions)) 
     
     app.get('/', (req, res) => {
       res.send('Hello World!')
