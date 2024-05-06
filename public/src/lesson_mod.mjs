@@ -1,3 +1,4 @@
+import {floor} from "./floor.mjs";
 import {app_learn_code_log_delimit} from "./app_learn_code_log_delimit.mjs";
 import {list_join_newline} from "./list_join_newline.mjs";
 import {app_learn_code_random_boolean_binary} from "./app_learn_code_random_boolean_binary.mjs";
@@ -82,8 +83,8 @@ import {app_learn_code_random_identifiers} from "./app_learn_code_random_identif
 import {list_includes} from "./list_includes.mjs";
 import {lesson_console_log_quiz} from "./lesson_console_log_quiz.mjs";
 import {list_map} from "./list_map.mjs";
-import { html_element } from "./html_element.mjs";
-import { html_inner_set } from "./html_inner_set.mjs";
+import {html_element} from "./html_element.mjs";
+import {html_inner_set} from "./html_inner_set.mjs";
 export function lesson_mod() {
     let description = 'if with else if';
     let example_message = 'outputting whether or not a number is positive , negative or zero';
@@ -118,15 +119,15 @@ export function lesson_mod() {
         let table = html_element(parent, 'table');
         let thead = html_element(table, 'thead');
         let tr_head = html_element(thead, 'tr');
-        let columns_head = ['dividend', 'divisor', 'answer', 'quotient', 'remainder']
+        let columns_head = ['dividend', 'divisor', 'answer', 'quotient', 'remainder'];
         for (let c of columns_head) {
-            let th = html_element(tr_head, 'th')
-            html_inner_set(th, c)
+            let th = html_element(tr_head, 'th');
+            html_inner_set(th, c);
         }
         let tbody = html_element(table, 'tbody');
         for (let n of range(11)) {
             let tr_body = html_element(tbody, 'tr');
-            let columns_body = [n, divisor, ]
+            let columns_body = [n, divisor, n / divisor, floor(n)];
         }
     }
 }
