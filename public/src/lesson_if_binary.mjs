@@ -1,3 +1,4 @@
+import {app_learn_code_random_boolean_binary} from "./app_learn_code_random_boolean_binary.mjs";
 import {html_style_alternate_code_li} from "./html_style_alternate_code_li.mjs";
 import {list_join} from "./list_join.mjs";
 import {app_learn_code_log_random_value} from "./app_learn_code_log_random_value.mjs";
@@ -77,7 +78,7 @@ import {js_code_assign} from "./js_code_assign.mjs";
 import {list_adder} from "./list_adder.mjs";
 import {app_learn_code_random_identifiers} from "./app_learn_code_random_identifiers.mjs";
 import {list_includes} from "./list_includes.mjs";
-import { lesson_console_log_quiz } from "./lesson_console_log_quiz.mjs";
+import {lesson_console_log_quiz} from "./lesson_console_log_quiz.mjs";
 export function lesson_if_binary() {
     let description = 'if with a process';
     let example_message = string_combine('with an ', description);
@@ -88,16 +89,14 @@ ${lesson_console_log_quiz()}
 }`, lesson_console_log_quiz()];
         return list_join(statements, '\n');
     }, example_before, description, example_message, [screen2]);
-    function example_before(){
-
-    }
+    function example_before() {}
     function screen1(parent) {
-        html_p_text(parent,'in this lesson the numbers will appear from smallest to greatest');
-        html_p_text(parent,'for example :');
+        html_p_text(parent, 'in this lesson the numbers will appear from smallest to greatest');
+        html_p_text(parent, 'for example :');
         let ul = html_ul(parent);
-        html_style_alternate_code_li(ul, ['','1 < 2',' could appear :']);
-        html_style_alternate_code_li(ul, ['','2 < 1',' will not appear']);
-        html_style_alternate_code_li(ul, ['although ','1 > 2',' could appear']);
+        html_style_alternate_code_li(ul, ['', '1 < 2', ' could appear :']);
+        html_style_alternate_code_li(ul, ['', '2 < 1', ' will not appear']);
+        html_style_alternate_code_li(ul, ['although ', '1 > 2', ' could appear']);
     }
     function screen2(parent) {
         html_style_alternate_monospace(parent, ['inside the parenthesis of an ', 'if', ' can be more than just ', 'true', ' and ', 'false']);
