@@ -14,7 +14,7 @@ export function js_imports_remove(ast) {
     let extra = list_difference(existing, used);
     for (let e of extra) {
         let existing2 = js_imports_existing_named(ast, e);
-        assert(list_length_1, [existing]);
+        let e2 = list_single(existing2);
     }
     return {
         existing,
