@@ -16,7 +16,7 @@ export async function functions_source() {
     await promise_all(mapped);
     let result = {};
     for (let fc of mapped) {
-        let {file_path, contents} = fc;
+        let {file_path, contents} = await fc;
         object_property_set(fc, file_path, contents);
     }
     return result;
