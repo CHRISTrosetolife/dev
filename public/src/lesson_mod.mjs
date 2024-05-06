@@ -119,11 +119,12 @@ export function lesson_mod() {
         'in the table below :'
         'a is the dividend'
         'b is the divisor'
-        'b is the divisor'
+        'q is the quotient'
+        'r is the remainder'
         let table = html_element(parent, 'table');
         let thead = html_element(table, 'thead');
         let tr_head = html_element(thead, 'tr');
-        let columns_head = ['a', 'b', 'a / b', 'quotient', 'remainder'];
+        let columns_head = ['a', 'b', 'a / b', 'q', 'r'];
         for (let c of columns_head) {
             let th = html_element(tr_head, 'th');
             html_inner_set(th, c);
