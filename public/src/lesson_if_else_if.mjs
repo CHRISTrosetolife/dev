@@ -100,6 +100,6 @@ export function lesson_if_else_if() {
         'if a number is neither positive nor negative , the number must be 0'
     }
     function screen1(parent) {
-        'if else can be used to output whether or not a number is 0'
+        'if and else can be used to output whether or not a number is 0'
     }
 }
