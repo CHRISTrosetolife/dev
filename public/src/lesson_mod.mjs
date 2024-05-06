@@ -113,10 +113,10 @@ export function lesson_mod() {
         html_p_text(parent, 'for example in 7 / 4 the dividend is 7 and the divisor is 4');
     }
     function screen2(parent) {
-        'after the divisor divides the dividend , there is a quotient and a remainder';
-        'this formula will give the answer with a decimal point : quotient + ( remainder / divisor )';
-        'for example 7 / 4 has a quotient of 1 and a remainder of 3';
-        '1 + ( 3 / 4 ) = 1 + 0.75 = 1.75';
+        html_p_text(parent, 'after the divisor divides the dividend , there is a quotient and a remainder');
+        html_p_text(parent, 'this formula will give the answer with a decimal point : quotient + ( remainder / divisor )');
+        html_p_text(parent, 'for example 7 / 4 has a quotient of 1 and a remainder of 3');
+        html_p_text(parent, '1 + ( 3 / 4 ) = 1 + 0.75 = 1.75');
     }
     function screen3(parent) {
         let divisor = 2;
