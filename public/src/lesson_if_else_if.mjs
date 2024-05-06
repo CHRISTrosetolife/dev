@@ -97,6 +97,8 @@ export function lesson_if_else_if() {
     }, example_before, description, example_message, []);
     function example_before(parent) {
         html_style_alternate_monospace(parent, ['multiple ', 'if', ' and ', 'else', ' can be used to output whether or not a number is positive , negative , or zero']);
+        'in this lesson , the code will first check whether or not the number is positive'
+        'if the number is not positive , then the code will check whether or not the number is zero'
     }
     function screen1(parent) {
         'zero is not positive';
