@@ -114,6 +114,7 @@ export function lesson_mod() {
         '1 + ( 3 / 4 ) = 1 + 0.75 = 1.75';
     }
     function screen3(parent) {
+        let divisor = 2;
         let table = html_element(parent, 'table');
         let thead = html_element(table, 'thead');
         let tr_head = html_element(thead, 'tr');
@@ -125,7 +126,7 @@ export function lesson_mod() {
         let tbody = html_element(table, 'tbody');
         for (let n of range(11)) {
             let tr_body = html_element(tbody, 'tr');
-            let columns_body
+            let columns_body = [n, divisor, ]
         }
     }
 }
