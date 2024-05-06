@@ -6,7 +6,7 @@ export function server() {
         response.writeHead(200, {
             "Content-Type": "application/json"
         });
-        res.end(read);
+        response.end(read);
     });
     server.listen(server_port());
     console.log("Server running on port 8000");
