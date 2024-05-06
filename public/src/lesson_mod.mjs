@@ -117,14 +117,15 @@ export function lesson_mod() {
         let table = html_element(parent, 'table');
         let thead = html_element(table, 'thead');
         let tr_head = html_element(thead, 'tr');
-        let columns = ['dividend', 'divisor', 'answer', 'quotient', 'remainder']
-        for (let c of columns) {
+        let columns_head = ['dividend', 'divisor', 'answer', 'quotient', 'remainder']
+        for (let c of columns_head) {
             let th = html_element(tr_head, 'th')
             html_inner_set(th, c)
         }
         let tbody = html_element(table, 'tbody');
         for (let n of range(11)) {
-
+            let tr_body = html_element(tbody, 'tr');
+            let columns_body
         }
     }
 }
