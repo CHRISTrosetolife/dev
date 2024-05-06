@@ -3,12 +3,12 @@ good whitespace max width
 mod => is even or not => nested if even positive odd positive etc lessons
 
 programming language syntax sugar 
-add:a
-string_combine:sc
-log:l
-[fn_name a1 a2 - output
-a a1 a2 - output
-sc 'hello world' output - c
+a'add
+sc'string_combine
+l'log
+[fn_name a1 a2 - o'output
+a a1 a2 - o
+sc 'hello world' o - c'combined
 l c
 end]
 
