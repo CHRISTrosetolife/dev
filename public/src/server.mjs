@@ -12,8 +12,8 @@ export function server() {
      app.use(cors(corsOptions)) 
     
     app.post('/', (req, res) => {
-        
-      res.send(req.read())
+        console.log(req.read())
+      res.send('hi')
     })
     
     app.listen(port, () => {
