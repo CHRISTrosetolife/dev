@@ -138,8 +138,8 @@ export function lesson_mod() {
             html_inner_set(th, c);
         }
         let tbody = html_element(table, 'tbody');
-        each_index(range(11), (n, index) => {
-            let even = equal(mod(index, divisor), 0);
+        each_index(range(11), (n, n_index) => {
+            let even = equal(mod(n_index, divisor), 0);
             let tr_body = html_element(tbody, 'tr');
             let quotient = n / divisor;
             let columns_body = [n, divisor, quotient, floor(quotient), n % divisor];
