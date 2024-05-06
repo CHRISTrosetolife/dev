@@ -1,5 +1,4 @@
 import {js_declaration_single} from "./js_declaration_single.mjs";
-import {js_export_single} from "./js_export_single.mjs";
 export function js_declaration_single_name(ast) {
     let declaration = js_declaration_single(ast);
     let {id} = declaration;

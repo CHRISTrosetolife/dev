@@ -13,7 +13,6 @@ import {object_property_get} from './object_property_get.mjs';
 import {noop} from './noop.mjs';
 import {html_style} from './html_style.mjs';
 import {html_on_click} from './html_on_click.mjs';
-import {string_case_lower} from './string_case_lower.mjs';
 import {bible_token_normalize} from './bible_token_normalize.mjs';
 export function app_bible() {
     let root = html_document_body();

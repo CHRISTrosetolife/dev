@@ -1,7 +1,6 @@
 import {function_imports_add} from "./function_imports_add.mjs";
 import {js_body_nested} from "./js_body_nested.mjs";
 import {js_imports_add} from "./js_imports_add.mjs";
-import {function_transform} from "./function_transform.mjs";
 import {list_join_comma} from "./list_join_comma.mjs";
 import {list_remove} from "./list_remove.mjs";
 import {js_parse} from "./js_parse.mjs";
@@ -9,10 +8,8 @@ import {js_unparse} from "./js_unparse.mjs";
 import {function_new_generic} from "./function_new_generic.mjs";
 import {js_declaration_to_name} from "./js_declaration_to_name.mjs";
 import {list_filter} from "./list_filter.mjs";
-import {js_exports} from "./js_exports.mjs";
 import {list_copy} from "./list_copy.mjs";
 import {list_map} from "./list_map.mjs";
-import {list_join} from "./list_join.mjs";
 export async function js_outside_move(ast) {
     const type = 'FunctionDeclaration';
     let {body: body_ast} = ast;

@@ -1,21 +1,8 @@
-import {app_learn_code_style_success} from "./app_learn_code_style_success.mjs";
-import {html_style_button_default_border} from "./html_style_button_default_border.mjs";
-import {html_style_centered} from "./html_style_centered.mjs";
-import {html_merge} from "./html_merge.mjs";
 import {html_style_bold} from "./html_style_bold.mjs";
 import {noop} from "./noop.mjs";
 import {html_p} from "./html_p.mjs";
 import {html_style_alternate} from "./html_style_alternate.mjs";
 import {html_p_text} from "./html_p_text.mjs";
-import {html_element} from "./html_element.mjs";
-import {html_style_width_full} from "./html_style_width_full.mjs";
-import {html_inner_set} from "./html_inner_set.mjs";
-import {string_split} from "./string_split.mjs";
-import {string_split_space} from "./string_split_space.mjs";
-import {string_length} from "./string_length.mjs";
-import {list_sum} from "./list_sum.mjs";
-import {html_style} from "./html_style.mjs";
-import { app_learn_code_style_rounded_padded } from "./app_learn_code_style_rounded_padded.mjs";
 export async function lesson_console_log_hierarchies(parent) {
     html_p_text(parent, 'in english , there are letters');
     html_p_text(parent, 'words have letters');

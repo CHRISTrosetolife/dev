@@ -1,7 +1,5 @@
 import {html_style_centered} from "./html_style_centered.mjs";
 import {html_button_width_full_text} from "./html_button_width_full_text.mjs";
-import {html_button_width_full} from "./html_button_width_full.mjs";
-import {html_button} from "./html_button.mjs";
 import {html_document_body} from "./html_document_body.mjs";
 import {ceb_translations} from "./ceb_translations.mjs";
 import {list_map} from "./list_map.mjs";

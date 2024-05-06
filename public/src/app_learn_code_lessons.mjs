@@ -25,17 +25,17 @@ import {lesson_variables_two} from "./lesson_variables_two.mjs";
 import {lesson_variable_change_2} from "./lesson_variable_change_2.mjs";
 import {lesson_add_numbers_three} from "./lesson_add_numbers_three.mjs";
 import {lesson_variables_three} from "./lesson_variables_three.mjs";
-import { lesson_if_true } from "./lesson_if_true.mjs";
-import { lesson_if_false } from "./lesson_if_false.mjs";
-import { lesson_if_binary } from "./lesson_if_binary.mjs";
-import { lesson_if_variable } from "./lesson_if_variable.mjs";
-import { lesson_variable_binary } from "./lesson_variable_binary.mjs";
-import { lesson_if_else } from "./lesson_if_else.mjs";
-import { lesson_if_else_zero } from "./lesson_if_else_zero.mjs";
-import { lesson_if_else_positive } from "./lesson_if_else_positive.mjs";
-import { lesson_if_else_negative } from "./lesson_if_else_negative.mjs";
-import { lesson_if_else_if } from "./lesson_if_else_if.mjs";
-import { lesson_mod } from "./lesson_mod.mjs";
+import {lesson_if_true} from "./lesson_if_true.mjs";
+import {lesson_if_false} from "./lesson_if_false.mjs";
+import {lesson_if_binary} from "./lesson_if_binary.mjs";
+import {lesson_if_variable} from "./lesson_if_variable.mjs";
+import {lesson_variable_binary} from "./lesson_variable_binary.mjs";
+import {lesson_if_else} from "./lesson_if_else.mjs";
+import {lesson_if_else_zero} from "./lesson_if_else_zero.mjs";
+import {lesson_if_else_positive} from "./lesson_if_else_positive.mjs";
+import {lesson_if_else_negative} from "./lesson_if_else_negative.mjs";
+import {lesson_if_else_if} from "./lesson_if_else_if.mjs";
+import {lesson_mod} from "./lesson_mod.mjs";
 export function app_learn_code_lessons() {
     let lesson_creates = [];
     list_add(lesson_creates, lesson_console_log);
@@ -75,6 +75,5 @@ export function app_learn_code_lessons() {
     list_add(lesson_creates, lesson_if_else_negative);
     list_add(lesson_creates, lesson_if_else_if);
     list_add(lesson_creates, lesson_mod);
-    
     return lesson_creates;
 }

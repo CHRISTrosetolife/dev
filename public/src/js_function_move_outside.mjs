@@ -3,9 +3,7 @@ import {js_outside_move} from "./js_outside_move.mjs";
 import {object_replace} from "./object_replace.mjs";
 import {js_parse_expression} from "./js_parse_expression.mjs";
 import {object_copy} from "./object_copy.mjs";
-import {object_merge} from "./object_merge.mjs";
 import {equal} from "./equal.mjs";
-import {js_visit_node} from "./js_visit_node.mjs";
 import {list_add} from "./list_add.mjs";
 import {object_property_set} from "./object_property_set.mjs";
 export async function js_function_move_outside(ast, function_name) {

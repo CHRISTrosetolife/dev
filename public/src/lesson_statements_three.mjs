@@ -1,12 +1,6 @@
 import {lesson_console_log_quiz} from "./lesson_console_log_quiz.mjs";
 import {lesson_simple} from "./lesson_simple.mjs";
-import {lesson_add_quiz} from "./lesson_add_quiz.mjs";
-import {html_p} from "./html_p.mjs";
-import {html_style_alternate} from "./html_style_alternate.mjs";
 import {html_p_text} from "./html_p_text.mjs";
-import {noop} from "./noop.mjs";
-import {html_style_bold} from "./html_style_bold.mjs";
-import {html_style_monospace} from "./html_style_monospace.mjs";
 export function lesson_statements_three() {
     const description = 'three console.log statements';
     const example_message = 'with three statements';
