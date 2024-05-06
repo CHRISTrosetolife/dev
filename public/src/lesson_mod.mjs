@@ -127,7 +127,12 @@ export function lesson_mod() {
         let tbody = html_element(table, 'tbody');
         for (let n of range(11)) {
             let tr_body = html_element(tbody, 'tr');
-            let columns_body = [n, divisor, n / divisor, floor(n)];
+            let quotient = n / divisor;
+            let columns_body = [n, divisor, quotient, floor(quotient), n % divisor];
+            for (let c of columns_body) {
+                let td = html_element(tr_body, 'td');
+                html_inner_set(td, c);
+            }
         }
     }
 }
