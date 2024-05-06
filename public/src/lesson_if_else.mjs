@@ -91,26 +91,27 @@ export function lesson_if_else() {
         let [a, b] = mapped;
         let lines = [`if (${boolean}) {`, a, `} else {`, b, `}`];
         return list_join_newline(lines);
-    }, example_before, description, example_message, [screen2]);
+    }, example_before, description, example_message, [screen1,screen2,screen3]);
     function example_before(parent) {}
     function screen1(parent) {
-        'in javascript , code in between a /* and a */ is ignored';
-        'this is called a comment';
-        'comments are for humans and code is for computers';
-        'here is an example comment :';
-        '/* console.log(0) */';
-        'even though it says console.log(0); that will not get ran because it is inside of a comment';
+        html_style_alternate_monospace(parent, ['in javascript , code in between a ','/*',' and a ','*/',' is ignored']);
+        html_style_alternate_bold(parent, ['this is called a ','comment']);
+        html_p_text(parent, 'comments are for humans and code is for computers');
+        html_p_text(parent, 'here is an example comment :');
+        app_learn_code_code_part_contrast(parent, '/* console.log(0); */');
+        html_style_alternate_monospace(parent, ['even though it says ','console.log(0);',' that will not get ran because it is inside of a comment']);
     }
     function screen2(parent) {
-        'another way to write a comment is to use //';
-        '// begins a comment and the comment continues until the end of the current line';
-        'here is an example // comment :';
-        'let a; // a is the first letter of the alphabet';
+        html_style_alternate_monospace(parent, ['another way to write a comment is to use ','//']);
+        html_style_alternate_monospace(parent, ['','//',' begins a comment and the comment continues until the end of the current line']);
+        html_style_alternate_monospace(parent, ['here is an example ','//',' comment :']);
+        app_learn_code_code_part_contrast(parent, 'let a; // a is the first letter of the alphabet');
     }
     function screen3(parent) {
         html_style_alternate_monospace(parent, ['in programming , sometimes there is need to code : if "a" is ', 'true', ' , then do "b" , otherwise , if "a" is ', 'false', ' , then do "c"']);
         html_p_text(parent, 'in other words , choose between "b" and "c" , depending on the value of "a"');
-        'the code to represent that uses else :';
-        ('if (a) {', '// b', '} else {', '// c', '}');
+        html_style_alternate_monospace(parent, ['the code to represent that uses ','else',' :']);
+        app_learn_code_code_part_contrast(parent, 
+            list_join_newline(['if (a) {', '// b', '} else {', '// c', '}']));
     }
 }
