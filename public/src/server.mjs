@@ -3,12 +3,11 @@ import http from 'http';
 export function server() {
     let server = http.createServer(function (request, response) {
         response.setHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
-        let read = request.read();
         response.writeHead(200, {
             "Content-Type": "application/json",
             'Access-Control-Allow-Origin': '*'
         });
-        console.log({read})
+        console.log({request})
         response.end(read);
     });
     server.listen(server_port());
