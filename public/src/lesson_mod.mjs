@@ -136,7 +136,7 @@ export function lesson_mod() {
         each_index(columns_head, (c, c_index) => {
             let th = html_element(tr_head, 'th');
             html_inner_set(th, c);
-            
+            let index_last = list_index_last(columns_head)
             app_learn_code_style_rounded_padded(th)
             let color;
             if (equal(c_index, index_last)) {
