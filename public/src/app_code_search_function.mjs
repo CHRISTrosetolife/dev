@@ -1,8 +1,8 @@
+import {html_style_margin_x_0} from "./html_style_margin_x_0.mjs";
 import {html_input} from "./html_input.mjs";
 import {html_document_body_clear} from "./html_document_body_clear.mjs";
 import {app_code_edit} from "./app_code_edit.mjs";
 import {html_style_word_break_all} from "./html_style_word_break_all.mjs";
-import {html_style_margin_x} from "./html_style_margin_x.mjs";
 import {html_button_width_full_text_click} from "./html_button_width_full_text_click.mjs";
 import {function_path_to_name} from "./function_path_to_name.mjs";
 import {object_properties} from "./object_properties.mjs";
@@ -24,7 +24,7 @@ export function app_code_search_function(context) {
         let b = html_button_width_full_text_click(root, name, () => {
             app_code_edit(context, p);
         });
-        html_style_margin_x(b, '0');
+        html_style_margin_x_0(b);
         html_style_word_break_all(b);
     }
 }
