@@ -1,4 +1,5 @@
-import {import_node} from './import_node.mjs';let path = await import_node('path');
+import { list_join } from "./list_join.mjs";
+
 export function path_join(paths) {
-    return path.join(...paths);
+    return list_join(paths, '/')
 }
