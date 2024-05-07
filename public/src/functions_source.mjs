@@ -1,3 +1,4 @@
+import {list_first} from "./list_first.mjs";
 import {file_read} from "./file_read.mjs";
 import {function_name_to_path} from "./function_name_to_path.mjs";
 import {promise_all} from "./promise_all.mjs";
@@ -6,6 +7,7 @@ import {list_map} from "./list_map.mjs";
 import {object_property_set} from "./object_property_set.mjs";
 export async function functions_source() {
     let names = await function_names();
+    names = [list_first(names)];
     let mapped = list_map(names, async n => {
         let file_path = function_name_to_path(n);
         return {
