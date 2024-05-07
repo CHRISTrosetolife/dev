@@ -14,7 +14,8 @@ import {html_button_width_full_text_click} from "./html_button_width_full_text_c
 import {html_button} from "./html_button.mjs";
 import {html_on_click} from "./html_on_click.mjs";
 import {html_div} from "./html_div.mjs";
-export function app_code_edit(context, file_path) {
+import { global_get } from "./global_get.mjs";
+export function app_code_edit(file_path) {
     let root = html_document_body_clear();
     let container = html_div(root);
     html_style(container, {
@@ -28,7 +29,7 @@ export function app_code_edit(context, file_path) {
         let root = html_document_body_clear();
         let choices = {
             'search': () => {
-                app_code_search_function(context);
+                app_code_search_function();
             },
             'add new function': () => {
                 let root = html_document_body_clear();
@@ -46,7 +47,7 @@ export function app_code_edit(context, file_path) {
             html_style_margin_x_0(b);
         }
     });
-    let {files} = context;
+    let {files} = global_get();
     let contents = object_property_get(files, file_path);
     let ta = html_element(container, 'textarea');
     html_spellcheck_none(ta);

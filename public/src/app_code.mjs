@@ -26,10 +26,10 @@ export async function app_code() {
         html_hash({
             'function_name': function_name => {
                 let p = function_name_to_path(function_name);
-                app_code_edit(context, p);
+                app_code_edit(p);
             }
         });
     } else {
-        app_code_search_function(context);
+        app_code_search_function();
     }
 }

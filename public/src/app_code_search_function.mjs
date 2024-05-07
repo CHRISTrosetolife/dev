@@ -13,8 +13,9 @@ import {object_properties} from "./object_properties.mjs";
 import {html_focus} from "./html_focus.mjs";
 import {html_on} from "./html_on.mjs";
 import {list_adder} from "./list_adder.mjs";
-export function app_code_search_function(context) {
-    let {files} = context;
+import { global_get } from "./global_get.mjs";
+export function app_code_search_function() {
+    let {files} = global_get();
     let root = html_document_body_clear();
     let input = app_code_input(root);
     html_focus(input);
@@ -23,7 +24,7 @@ export function app_code_search_function(context) {
         for (let p of paths) {
             let name = function_path_to_name(p);
             let button = html_button_width_full_text_click(root, name, () => {
-                app_code_edit(context, p);
+                app_code_edit(p);
             });
             html_style_margin_x_0(button);
             html_style_word_break_all(button);
