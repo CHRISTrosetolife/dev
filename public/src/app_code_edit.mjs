@@ -35,8 +35,8 @@ export function app_code_edit(file_path) {
         'flex-direction': 'column'
     });
     html_style_height_full(container);
-    let b = html_button(container);
     const text = 'menu';
+    let b = html_button(container);
     html_inner_set(b, text);
     html_on_click(b, () => {
         let root = html_document_body_clear();
