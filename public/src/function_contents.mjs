@@ -11,10 +11,5 @@ export async function function_contents() {
             contents: await file_read(file_path)
         };
     });
-    await promise_all(mapped);
-    return await list_adder_async(async la => {
-        for (let m of mapped) {
-            la(await m);
-        }
-    });
+    return await promise_all(mapped);
 }
