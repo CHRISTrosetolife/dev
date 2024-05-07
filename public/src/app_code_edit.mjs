@@ -36,8 +36,7 @@ export function app_code_edit(file_path) {
     });
     html_style_height_full(container);
     const text = 'menu';
-    let b = html_button(container);
-    html_inner_set(b, text);
+    let b = html_button_text(container, text);
     html_on_click(b, () => {
         let root = html_document_body_clear();
         function back() {
@@ -94,3 +93,9 @@ export function app_code_edit(file_path) {
     html_style_width_full(ta);
     html_style_height_full(ta);
 }
+function html_button_text(container, text) {
+    let b = html_button(container);
+    html_inner_set(b, text);
+    return b;
+}
+
