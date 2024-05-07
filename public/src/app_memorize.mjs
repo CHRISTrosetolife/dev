@@ -252,9 +252,9 @@ export async function app_memorize() {
     function button_stylize(b) {
         let b_width = number_to_dvw(10 - 1);
         html_style_centered(b);
+        html_style_margin_default(b);
         html_style(b, {
             'font-size': '3.8dvh',
-            margin: '0.25dvh',
             'min-width': b_width,
             'max-width': b_width,
             'height': number_to_dvh(button_height - 0.6)
@@ -339,3 +339,9 @@ export async function app_memorize() {
         return string_combine(string_to(value), 'dvw');
     }
 }
+function html_style_margin_default(b) {
+    html_style(b, {
+        margin: '0.25dvh',
+    });
+}
+
