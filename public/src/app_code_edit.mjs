@@ -16,7 +16,7 @@ export function app_code_edit(context, file_path) {
         'display': 'flex',
         'flex-direction': 'column'
     })
-    let b = html_button(root, 'menu')
+    let b = html_button(root)
     html_inner_set(b, 'menu')
     html_on_click(b, () => {
 
