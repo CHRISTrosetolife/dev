@@ -13,7 +13,10 @@ export async function app_code() {
     html_style_default_initialize();
     let root = html_document_body();
     html_style_margin_none(root);
-    html_style_height_full(root);
+    let html = document.documentElement;
+    for (let e of [html, root]) {
+        html_style_height_full(root);
+    }
     let files = await function_run(functions_source.name, []);
     let context = {
         files
