@@ -1,4 +1,4 @@
-import {file_new} from './file_new.mjs';
+import {file_write} from "./file_write.mjs";
 import {file_open} from './file_open.mjs';
 import {function_name_to_path} from './function_name_to_path.mjs';
 import {list_map} from './list_map.mjs';
@@ -19,7 +19,7 @@ ${body_string}
     let parsed = js_parse(contents);
     let unparsed = js_unparse(parsed);
     let file_path = function_name_to_path(function_name);
-    await file_new(file_path, unparsed);
+    await file_write(file_path, unparsed);
     if (open) {
         await file_open(file_path);
     }
