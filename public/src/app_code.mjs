@@ -1,3 +1,4 @@
+import {html_root} from "./html_root.mjs";
 import {html_style_height_full} from "./html_style_height_full.mjs";
 import {html_style_margin_none} from "./html_style_margin_none.mjs";
 import {html_document_body} from "./html_document_body.mjs";
@@ -13,7 +14,7 @@ export async function app_code() {
     html_style_default_initialize();
     let root = html_document_body();
     html_style_margin_none(root);
-    let html = document.documentElement;
+    let html = html_root();
     for (let e of [html, root]) {
         html_style_height_full(e);
     }
