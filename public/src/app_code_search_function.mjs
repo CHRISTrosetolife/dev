@@ -46,7 +46,9 @@ export function app_code_search_function(context) {
                 button
             } = e;
             if (string_includes(name, value)) {
-                
+                html_style_display_block(button);
+            } else {
+                html_style_display_none(button);
             }
         }
     });
