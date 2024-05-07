@@ -5,7 +5,17 @@ import {string_prefix_without} from './string_prefix_without.mjs';
 import {string_suffix_without} from './string_suffix_without.mjs';
 import {string_replace} from './string_replace.mjs';
 import {folder_read} from './folder_read.mjs';
+import { web_is } from "./web_is.mjs";
+import { global_get } from "./global_get.mjs";
+import { object_properties } from "./object_properties.mjs";
+import { function_path_to_name } from "./function_path_to_name.mjs";
 export async function function_names() {
+    if (web_is()) {
+        let {files} = global_get();
+        let function_paths = object_properties(files);
+        let result = list_map(function_paths, function_path_to_name);
+        return result;
+    }
     let prefix = folder_path_src();
     let suffix = '.mjs';
     let files = await folder_read(prefix, suffix);
