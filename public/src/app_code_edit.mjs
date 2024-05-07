@@ -40,7 +40,7 @@ export function app_code_edit(file_path) {
         'display': 'flex',
         'flex-direction': 'row'
     });
-    html_button_text_click(container_top, '⚡', noop);
+    html_button_text_click(container_top, '⚡', auto);
     html_button_width_full_text_click(container_top, 'menu', lambda);
     function back() {
         app_code_edit(file_path);
