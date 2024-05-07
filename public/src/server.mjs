@@ -48,7 +48,8 @@ export function server() {
                     r
                 });
                 let contents = await file_read(file_path_output);
-                res.end(contents);
+                let {result} = contents
+                res.end(result);
             });
         });
     });
