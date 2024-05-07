@@ -13,5 +13,5 @@ export function app_code_edit(context, file_path) {
     let ast = js_parse(contents);
     let node = ast;
     let parent = container;
-    app_code_edit_recursive(node, parent);
+    
 }
