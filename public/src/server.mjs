@@ -1,3 +1,4 @@
+import {file_read_json} from "./file_read_json.mjs";
 import {uuid_file} from "./uuid_file.mjs";
 import {command_line} from "./command_line.mjs";
 import {json_to} from "./json_to.mjs";
@@ -8,12 +9,9 @@ import {function_run_json} from "./function_run_json.mjs";
 import {string_replace} from "./string_replace.mjs";
 import {run} from "./run.mjs";
 import {file_overwrite} from "./file_overwrite.mjs";
-import {file_read} from "./file_read.mjs";
 import bodyParser from "body-parser";
-import { error } from "./error.mjs";
-import { assert } from "./assert.mjs";
-import { list_is } from "./list_is.mjs";
-import { object_properties } from "./object_properties.mjs";
+import {assert} from "./assert.mjs";
+import {list_is} from "./list_is.mjs";
 export function server() {
     let app = express();
     let port = server_port();
@@ -31,7 +29,7 @@ export function server() {
     app.post('/', async (req, res) => {
         let {body} = req;
         let {function_name, args} = body;
-        assert(list_is, [args])
+        assert(list_is, [args]);
         let args_json = json_to({
             args
         });
@@ -48,9 +46,8 @@ export function server() {
                 console.log({
                     r
                 });
-                let contents = await file_read(file_path_output);
-                let {result} = contents
-                await file_overwrite('log.txt', contents)
+                let contents = await file_read_json(file_path_output);
+                let {result} = contents;
                 res.end(json_to(result));
             });
         });
