@@ -19,22 +19,27 @@ export function app_code_edit(context, file_path) {
     let ast = js_parse(contents);
     let node = ast;
     let parent = container;
+    app_code_edit_recursive(node, parent);
+}
+function app_code_edit_recursive(node, parent) {
     let {type} = node;
-    let lookup = {
-        'Program': () => {
+    switch (type) {
+        case 'Program': 
             let {body} = node;
             for (let b of body) {
                 let child = html_div(parent);
                 app_learn_code_style_rounded_padded(child);
-                html_style_background_color(child, 'darkgray');
+                html_style_background_color(child, 'hsl(0, 0%, 20%)');
                 html_style_font_color(child, 'white');
                 html_style(child, {
                     'margin':'0.1dvh'
                 });
-                html_inner_set(child, json_to(b));
+                app_code_edit_recursive(b, child);
             }
-        }
-    };
-    let choice = object_property_get(lookup, type);
-    choice();
+            break;
+        case 'ImportDeclaration':
+            break;
+        default:
+            html_inner_set(parent, json_to(child));
+    }
 }
