@@ -20,6 +20,9 @@ export async function app_html_generate(name) {
         <title>${name}</title>
       </head>
       <body>
+        <script>
+          let global = {};
+        </script>
         <script type="module">
           ${js_code_import_path(import_path, name_prefixed)}
           ${js_code_call(name_prefixed)}
