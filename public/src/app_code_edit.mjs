@@ -29,7 +29,7 @@ export function app_code_edit(context, file_path) {
         let choices = {
             'search': () => {
                 app_code_search_function(context);
-            }
+            },
         };
         each_object(choices, lambda);
         function lambda(key, value) {
