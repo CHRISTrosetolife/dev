@@ -1,3 +1,5 @@
+import {json_to} from "./json_to.mjs";
+import {functions_source_set} from "./functions_source_set.mjs";
 import {function_new_generic} from "./function_new_generic.mjs";
 import {html_focus} from "./html_focus.mjs";
 import {app_code_input} from "./app_code_input.mjs";
@@ -19,7 +21,8 @@ import {html_on_click} from "./html_on_click.mjs";
 import {html_div} from "./html_div.mjs";
 import {global_get} from "./global_get.mjs";
 import {function_name_to_path} from "./function_name_to_path.mjs";
-import { html_value_get } from "./html_value_get.mjs";
+import {html_value_get} from "./html_value_get.mjs";
+import {function_run} from "./function_run.mjs";
 export function app_code_edit(file_path) {
     let root = html_document_body_clear();
     let container = html_div(root);
@@ -41,12 +44,16 @@ export function app_code_edit(file_path) {
                 let input = app_code_input(root);
                 html_focus(input);
                 let b = html_button_width_full_text_click(root, 'add new function', async () => {
-                    let function_name = html_value_get(input)
+                    let function_name = html_value_get(input);
                     await function_new_generic(function_name, '', '', false, [], false);
                     let file_path = function_name_to_path(function_name);
                     app_code_edit(file_path);
                 });
                 html_style_margin_x_0(b);
+            },
+            'save functions': async () => {
+                let {files} = global_get();
+                await function_run(functions_source_set.name, json_to(files));
             }
         };
         each_object(choices, lambda);
