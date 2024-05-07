@@ -3,6 +3,7 @@
     "@mlarocca/jsgraphs": "^0.2.1",
     "acorn": "^8.11.3",
     "astring": "^1.8.6",
+    "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "firebase": "^10.11.1",
