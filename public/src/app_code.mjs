@@ -10,7 +10,6 @@ import {html_element} from "./html_element.mjs";
 import {html_style_default_initialize} from "./html_style_default_initialize.mjs";
 import {html_style_width_full} from "./html_style_width_full.mjs";
 import {object_properties} from "./object_properties.mjs";
-import {html_style} from "./html_style.mjs";
 export async function app_code() {
     html_style_default_initialize();
     let result = await function_run(functions_source.name, []);
@@ -33,9 +32,7 @@ function html_style_border_box(input) {
         'box-sizing': 'border-box'
     });
 }
-
 function html_focus(input) {
-    let { element } = input;
+    let {element} = input;
     element.focus();
 }
-
