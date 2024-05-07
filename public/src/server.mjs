@@ -8,6 +8,7 @@ import {function_run_json} from "./function_run_json.mjs";
 import {string_replace} from "./string_replace.mjs";
 import {run} from "./run.mjs";
 import {file_overwrite} from "./file_overwrite.mjs";
+import { file_read } from "./file_read.mjs";
 export function server() {
     let app = express();
     let port = server_port();
@@ -25,16 +26,11 @@ export function server() {
         let replaced = string_replace(args_json, '\'', '\'\'');
         replaced = string_replace(replaced, '"', '\\"');
         await uuid_file(async file_path => {
-            let command = `node ${run.name}.mjs ${function_run_json.name} ${function_name} '${replaced}'`;
-            let {stdout} = await command_line(command);
-            await file_overwrite('log.txt', stdout);
-            stdout = string_replace(stdout, '\n', '');
-            let parsed = eval(stdout);
-            let json = json_to(parsed);
-            console.log({
-                json
-            });
-            res.end(json);
+            let command = `node ${run.name}.mjs ${function_run_json.name} ${function_name} '${replaced}' > ${file_path}`;
+            await command_line(command);
+            let contents = await file_read(file_path)
+            await file_overwrite('log.txt', contents);
+            res.end(contents);
         })
     });
     app.listen(port, () => {
