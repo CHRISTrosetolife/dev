@@ -1,3 +1,4 @@
+import {html_on_input_value} from "./html_on_input_value.mjs";
 import {app_code_download} from "./app_code_download.mjs";
 import {functions_source_set} from "./functions_source_set.mjs";
 import {function_new_generic} from "./function_new_generic.mjs";
@@ -23,7 +24,7 @@ import {global_get} from "./global_get.mjs";
 import {function_name_to_path} from "./function_name_to_path.mjs";
 import {html_value_get} from "./html_value_get.mjs";
 import {function_run} from "./function_run.mjs";
-import { object_property_set } from "./object_property_set.mjs";
+import {object_property_set} from "./object_property_set.mjs";
 export function app_code_edit(file_path) {
     let root = html_document_body_clear();
     let container = html_div(root);
@@ -69,8 +70,8 @@ export function app_code_edit(file_path) {
     let {files} = global_get();
     let contents = object_property_get(files, file_path);
     let ta = html_element(container, 'textarea');
-    html_on_input_value(ta, (value) => {
-        object_property_set(files, file_path, value)
+    html_on_input_value(ta, value => {
+        object_property_set(files, file_path, value);
     });
     html_spellcheck_none(ta);
     html_style(ta, {
