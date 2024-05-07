@@ -16,6 +16,7 @@ export async function app_code() {
     let result = await function_run(functions_source.name, []);
     let root = html_document_body();
     let input = html_element(root, 'input');
+    html_focus(input);
     html_style_width_full(input);
     html_style(input, {
         'box-sizing': 'border-box'
@@ -29,3 +30,8 @@ export async function app_code() {
         html_style_word_break_all(b);
     }
 }
+function html_focus(input) {
+    let { element } = input;
+    element.focus();
+}
+
