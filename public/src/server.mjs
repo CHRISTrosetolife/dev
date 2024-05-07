@@ -40,7 +40,6 @@ export function server() {
                 console.log({
                     command
                 });
-                error(';her')
                 let r = await command_line(command);
                 console.log({
                     r
