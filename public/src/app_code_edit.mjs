@@ -1,3 +1,4 @@
+import {list_pop} from "./list_pop.mjs";
 import {app_code_backable} from "./app_code_backable.mjs";
 import {html_button_text_click} from "./html_button_text_click.mjs";
 import {function_auto} from "./function_auto.mjs";
@@ -43,12 +44,14 @@ export function app_code_edit(file_path) {
     html_button_text_click(container_top, '⚡', auto);
     html_button_width_full_text_click(container_top, 'menu', lambda);
     function back() {
-        app_code_edit(file_path);
+        let {back_stack} = global_get();
+        let p = list_pop(back_stack);
+        p();
     }
     async function auto() {
         let function_name = function_path_to_name(file_path);
         await function_auto(function_name);
-        back();
+        app_code_edit(file_path);
     }
     function lambda() {
         let root = html_document_body_clear();
