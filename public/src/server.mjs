@@ -9,6 +9,7 @@ import {string_replace} from "./string_replace.mjs";
 import {run} from "./run.mjs";
 import {file_overwrite} from "./file_overwrite.mjs";
 import { file_read } from "./file_read.mjs";
+import bodyParser from "body-parser";
 export function server() {
     let app = express();
     let port = server_port();
@@ -17,6 +18,8 @@ export function server() {
     };
     app.use(cors(options));
     app.use(express.json());
+    app.use(bodyParser.json({limit: '5mb'}));
+    app.use(bodyParser.urlencoded({limit: '5mb'}));
     app.post('/', async (req, res) => {
         let {body} = req;
         let {function_name, args} = body;
