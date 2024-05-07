@@ -40,6 +40,11 @@ export function app_code_search_function(context) {
     })
     html_on(input, 'input', () => {
         let value = html_value_get(input);
-        
+        for (let e of list) {
+            let {
+                name,
+                button
+            } = e;
+        }
     });
 }
