@@ -12,10 +12,14 @@ import { object_properties } from "./object_properties.mjs";
 import {server_port} from "./server_port.mjs";
 export async function app_code() {
     let root = html_document_body();
-    html_style_default_initialize(root);
     let result = await function_run(functions_source.name, []);
+        console.log({result})
+        return;
+        html_style_default_initialize(root);
     let paths = object_properties(result);
     for (let p of paths) {
+        console.log({p})
         html_button_width_full_text(root, p);
+        break;
     }
 }
