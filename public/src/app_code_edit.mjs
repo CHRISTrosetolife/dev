@@ -34,8 +34,7 @@ export function app_code_edit(file_path) {
         'flex-direction': 'column'
     });
     html_style_height_full(container);
-    const text = 'menu';
-    html_button_text_click(container, text, lambda);
+    html_button_text_click(container, 'menu', lambda);
     function lambda() {
         let root = html_document_body_clear();
         function back() {
