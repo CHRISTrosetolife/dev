@@ -27,7 +27,8 @@ export function server() {
         replaced = string_replace(replaced, '"', '\\"');
         await uuid_file(async file_path => {
             let command = `node ${run.name}.mjs ${function_run_json.name} ${function_name} '${replaced}' ${file_path}`;
-            await command_line(command);
+            let r = await command_line(command);
+            console.log({r})
             let contents = await file_read(file_path)
             await file_overwrite('log.txt', contents);
             res.end(contents);
