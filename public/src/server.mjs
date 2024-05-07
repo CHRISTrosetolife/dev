@@ -50,7 +50,7 @@ export function server() {
                 });
                 let contents = await file_read(file_path_output);
                 let {result} = contents
-                console.log(object_properties(result))
+                console.log(object_properties(contents))
                 res.end(json_to(result));
             });
         });
