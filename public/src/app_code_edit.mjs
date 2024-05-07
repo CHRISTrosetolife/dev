@@ -31,7 +31,13 @@ export function app_code_edit(context, file_path) {
                 app_code_search_function(context);
             },
             'add new function': () => {
-                
+                let root = html_document_body_clear();
+                let input = app_code_input(root);
+                html_focus(input);
+                let b = html_button_width_full_text_click(root, 'add new function', async ()=>{
+                    await function_new_generic(function_name, '', '', open, [], false)
+                });
+                html_style_margin_x_0(b);
             }
         };
         each_object(choices, lambda);
