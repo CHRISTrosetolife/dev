@@ -1,3 +1,4 @@
+import {html_style_height_full} from "./html_style_height_full.mjs";
 import {html_document_body_clear} from "./html_document_body_clear.mjs";
 import {object_property_get} from "./object_property_get.mjs";
 import {html_element} from "./html_element.mjs";
@@ -11,9 +12,4 @@ export function app_code_edit(context, file_path) {
     html_inner_set(ta, contents);
     html_style_width_full(ta);
     html_style_height_full(ta);
-}
-function html_style_height_full(ta) {
-    html_style(ta, {
-        'height': '100%'
-    });
 }
