@@ -11,6 +11,8 @@ import {file_overwrite} from "./file_overwrite.mjs";
 import {file_read} from "./file_read.mjs";
 import bodyParser from "body-parser";
 import { error } from "./error.mjs";
+import { assert } from "./assert.mjs";
+import { list_is } from "./list_is.mjs";
 export function server() {
     let app = express();
     let port = server_port();
@@ -28,6 +30,7 @@ export function server() {
     app.post('/', async (req, res) => {
         let {body} = req;
         let {function_name, args} = body;
+        assert(list_is, [args])
         let args_json = json_to({
             args
         });
