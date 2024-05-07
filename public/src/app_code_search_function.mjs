@@ -22,19 +22,17 @@ export function app_code_search_function(context) {
     html_style_width_full(input);
     html_style_border_box(input);
     app_learn_code_style_rounded_padded(input);
-    html_on(input, 'keydown', () => {
-        let value = html_value_get(input);
-        console.log({
-            value
-        });
-    });
     let paths = object_properties(files);
     for (let p of paths) {
         let name = function_path_to_name(p);
-        let b = html_button_width_full_text_click(root, name, () => {
+        let button = html_button_width_full_text_click(root, name, () => {
             app_code_edit(context, p);
         });
-        html_style_margin_x_0(b);
-        html_style_word_break_all(b);
+        html_style_margin_x_0(button);
+        html_style_word_break_all(button);
     }
+    html_on(input, 'input', () => {
+        let value = html_value_get(input);
+        
+    });
 }
