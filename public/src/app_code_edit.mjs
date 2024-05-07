@@ -1,3 +1,4 @@
+import {html_button_text_click} from "./html_button_text_click.mjs";
 import {function_auto} from "./function_auto.mjs";
 import {html_on_input_value} from "./html_on_input_value.mjs";
 import {app_code_download} from "./app_code_download.mjs";
@@ -18,8 +19,6 @@ import {html_inner_set} from "./html_inner_set.mjs";
 import {html_style_width_full} from "./html_style_width_full.mjs";
 import {html_style} from "./html_style.mjs";
 import {html_button_width_full_text_click} from "./html_button_width_full_text_click.mjs";
-import {html_button} from "./html_button.mjs";
-import {html_on_click} from "./html_on_click.mjs";
 import {html_div} from "./html_div.mjs";
 import {global_get} from "./global_get.mjs";
 import {function_name_to_path} from "./function_name_to_path.mjs";
@@ -93,14 +92,3 @@ export function app_code_edit(file_path) {
     html_style_width_full(ta);
     html_style_height_full(ta);
 }
-function html_button_text_click(container, text, lambda) {
-    let b = html_button_text(container, text);
-    html_on_click(b, lambda);
-}
-
-function html_button_text(container, text) {
-    let b = html_button(container);
-    html_inner_set(b, text);
-    return b;
-}
-
