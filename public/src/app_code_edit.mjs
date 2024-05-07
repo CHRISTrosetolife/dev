@@ -54,7 +54,6 @@ export function app_code_edit(file_path) {
             'save functions': async () => {
                 let {files} = global_get();
                 await function_run(functions_source_set.name, [files]);
-                console.log('here')
             }
         };
         each_object(choices, lambda);
