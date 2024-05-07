@@ -8,5 +8,5 @@ export async function app_code() {
     let context = {
         files
     };
-    app_code_search_function(root, context);
+    app_code_search_function(context);
 }
