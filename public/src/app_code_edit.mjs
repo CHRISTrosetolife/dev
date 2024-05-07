@@ -45,7 +45,7 @@ export function app_code_edit(file_path) {
             },
             'auto': async () => {
                 let function_name = function_path_to_name(file_path);
-                await function_run(function_auto.name, [function_name]);
+                await function_auto(function_name);
             },
             'search': () => {
                 app_code_search_function();
