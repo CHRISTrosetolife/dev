@@ -15,7 +15,6 @@ export async function app_code() {
     html_style_default_initialize();
     let result = await function_run(functions_source.name, []);
     let root = html_document_body();
-    html_style_margin_none(root);
     let input = html_element(root, 'input');
     html_style_width_full(input);
     html_style(input, {
