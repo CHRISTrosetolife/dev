@@ -12,19 +12,22 @@ import {html_element} from "./html_element.mjs";
 import {html_style_default_initialize} from "./html_style_default_initialize.mjs";
 import {html_style_width_full} from "./html_style_width_full.mjs";
 import {object_properties} from "./object_properties.mjs";
+import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export async function app_code() {
     html_style_default_initialize();
-    let result = await function_run(functions_source.name, []);
+    let files = await function_run(functions_source.name, []);
     let root = html_document_body();
     let input = html_element(root, 'input');
     html_focus(input);
     html_style_width_full(input);
     html_style_border_box(input);
     app_learn_code_style_rounded_padded(input);
-    let paths = object_properties(result);
+    let paths = object_properties(files);
     for (let p of paths) {
         let name = function_path_to_name(p);
-        let b = html_button_width_full_text(root, name);
+        let b = html_button_width_full_text_click(root, name, () => {
+
+        });
         html_style_margin_x(b, '0');
         html_style_word_break_all(b);
     }
