@@ -7,8 +7,8 @@ import {list_map} from "./list_map.mjs";
 import {object_property_set} from "./object_property_set.mjs";
 export async function functions_source() {
     let names = await function_names();
-    let mapped = list_map(names, async n => {
-        let file_path = function_name_to_path(n);
+    let paths = list_map(names, function_name_to_path);
+    let mapped = list_map(paths, async file_path => {
         return {
             file_path,
             contents: await file_read(file_path)
