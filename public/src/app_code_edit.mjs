@@ -7,8 +7,16 @@ import {html_element} from "./html_element.mjs";
 import {html_inner_set} from "./html_inner_set.mjs";
 import {html_style_width_full} from "./html_style_width_full.mjs";
 import {html_style} from "./html_style.mjs";
+import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export function app_code_edit(context, file_path) {
     let root = html_document_body_clear();
+    html_style(root, {
+        'display': 'flex',
+        'flex-direction': 'column',
+    })
+    html_button_width_full_text_click(root, 'menu', () => {
+
+    })
     let {files} = context;
     let contents = object_property_get(files, file_path);
     let ta = html_element(root, 'textarea');
