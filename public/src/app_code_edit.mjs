@@ -38,6 +38,9 @@ export function app_code_edit(file_path) {
     html_on_click(b, () => {
         let root = html_document_body_clear();
         let choices = {
+            'back': () => {
+                app_code_edit(file_path);
+            },
             'search': () => {
                 app_code_search_function();
             },
