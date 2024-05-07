@@ -1,3 +1,4 @@
+import {list_reverse} from "./list_reverse.mjs";
 import {folder_path_src} from "./folder_path_src.mjs";
 import {list_map} from './list_map.mjs';
 import {string_prefix_without} from './string_prefix_without.mjs';
@@ -14,5 +15,6 @@ export async function function_names() {
         let mapped3 = string_suffix_without(mapped2, suffix);
         return mapped3;
     });
+    if (false) list_reverse(mapped);
     return mapped;
 }
