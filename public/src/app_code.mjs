@@ -1,3 +1,4 @@
+import {function_path_to_name} from "./function_path_to_name.mjs";
 import {function_run} from "./function_run.mjs";
 import {functions_source} from "./functions_source.mjs";
 import {html_button_width_full_text} from "./html_button_width_full_text.mjs";
@@ -10,6 +11,7 @@ export async function app_code() {
     html_style_default_initialize(root);
     let paths = object_properties(result);
     for (let p of paths) {
+        let name = function_path_to_name(p);
         html_button_width_full_text(root, p);
     }
 }
