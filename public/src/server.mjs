@@ -27,6 +27,7 @@ export function server() {
         let command = `node ${run.name}.mjs ${function_run_json.name} ${function_name} '${replaced}'`;
         let {stdout} = await command_line(command);
         await file_overwrite('log.txt', stdout)
+        stdout = string_replace(stdout, '\n', '')
         let parsed = eval(stdout);
         let json = json_to(parsed);
         console.log({json})
