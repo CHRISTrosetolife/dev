@@ -1,3 +1,4 @@
+import {html_on_input} from "./html_on_input.mjs";
 import {app_code_input} from "./app_code_input.mjs";
 import {html_style_display_none} from "./html_style_display_none.mjs";
 import {html_style_display_block} from "./html_style_display_block.mjs";
@@ -11,18 +12,17 @@ import {html_button_width_full_text_click} from "./html_button_width_full_text_c
 import {function_path_to_name} from "./function_path_to_name.mjs";
 import {object_properties} from "./object_properties.mjs";
 import {html_focus} from "./html_focus.mjs";
-import {html_on} from "./html_on.mjs";
 import {list_adder} from "./list_adder.mjs";
-import { global_get } from "./global_get.mjs";
-import { list_sort_string } from "./list_sort_string.mjs";
-import { identity } from "./identity.mjs";
+import {global_get} from "./global_get.mjs";
+import {list_sort_string} from "./list_sort_string.mjs";
+import {identity} from "./identity.mjs";
 export function app_code_search_function() {
     let {files} = global_get();
     let root = html_document_body_clear();
     let input = app_code_input(root);
     html_focus(input);
     let paths = object_properties(files);
-    list_sort_string(paths, identity)
+    list_sort_string(paths, identity);
     let list = list_adder(la => {
         for (let p of paths) {
             let name = function_path_to_name(p);
@@ -37,7 +37,8 @@ export function app_code_search_function() {
             });
         }
     });
-    html_on(input, 'input', () => {
+    html_on_input(input, lambda);
+    function lambda() {
         let value = html_value_get(input);
         for (let e of list) {
             let {name, button} = e;
@@ -47,5 +48,5 @@ export function app_code_search_function() {
                 html_style_display_none(button);
             }
         }
-    });
+    }
 }
