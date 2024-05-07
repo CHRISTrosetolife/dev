@@ -22,7 +22,7 @@ export function app_code_search_function(context) {
     for (let p of paths) {
         let name = function_path_to_name(p);
         let b = html_button_width_full_text_click(root, name, () => {
-            app_code_edit(context);
+            app_code_edit(context, p);
         });
         html_style_margin_x(b, '0');
         html_style_word_break_all(b);
