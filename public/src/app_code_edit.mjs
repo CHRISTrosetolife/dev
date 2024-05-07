@@ -20,6 +20,9 @@ export function app_code_edit(context, file_path) {
     let {files} = context;
     let contents = object_property_get(files, file_path);
     let ta = html_element(root, 'textarea');
+    html_style(ta, {
+        'flex': '1'
+    })
     html_spellcheck_none(ta);
     html_style(ta, {
         'display': 'block'
