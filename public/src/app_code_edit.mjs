@@ -8,8 +8,8 @@ export function app_code_edit(context, file_path) {
     let container = html_div(root);
     let {files} = context;
     let contents = object_property_get(files, file_path);
-    let parsed = js_parse(contents);
-    let d= js_declaration_single(parsed);
+    let ast = js_parse(contents);
+    let d= js_declaration_single(ast);
     console.log({
         d
     });
