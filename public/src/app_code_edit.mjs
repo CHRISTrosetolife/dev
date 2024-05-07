@@ -15,6 +15,7 @@ import {html_button} from "./html_button.mjs";
 import {html_on_click} from "./html_on_click.mjs";
 import {html_div} from "./html_div.mjs";
 import { global_get } from "./global_get.mjs";
+import { function_name_to_path } from "./function_name_to_path.mjs";
 export function app_code_edit(file_path) {
     let root = html_document_body_clear();
     let container = html_div(root);
@@ -37,6 +38,8 @@ export function app_code_edit(file_path) {
                 html_focus(input);
                 let b = html_button_width_full_text_click(root, 'add new function', async ()=>{
                     await function_new_generic(function_name, '', '', open, [], false)
+                    let file_path = function_name_to_path(function_name)
+                    app_code_edit(file_path)
                 });
                 html_style_margin_x_0(b);
             }
