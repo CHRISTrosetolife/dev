@@ -1,3 +1,4 @@
+import {function_paths} from "./function_paths.mjs";
 import {list_reverse} from "./list_reverse.mjs";
 import {folder_path_src} from "./folder_path_src.mjs";
 import {list_map} from './list_map.mjs';
@@ -5,10 +6,10 @@ import {string_prefix_without} from './string_prefix_without.mjs';
 import {string_suffix_without} from './string_suffix_without.mjs';
 import {string_replace} from './string_replace.mjs';
 import {folder_read} from './folder_read.mjs';
-import { web_is } from "./web_is.mjs";
-import { global_get } from "./global_get.mjs";
-import { object_properties } from "./object_properties.mjs";
-import { function_path_to_name } from "./function_path_to_name.mjs";
+import {web_is} from "./web_is.mjs";
+import {global_get} from "./global_get.mjs";
+import {object_properties} from "./object_properties.mjs";
+import {function_path_to_name} from "./function_path_to_name.mjs";
 export async function function_names() {
     if (web_is()) {
         let {files} = global_get();
