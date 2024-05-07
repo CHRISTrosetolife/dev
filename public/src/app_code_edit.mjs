@@ -49,7 +49,7 @@ export function app_code_edit(file_path) {
         }
         let choices = {
             'back': back,
-            'auto': async () => {
+            'auto': async function auto() {
                 let function_name = function_path_to_name(file_path);
                 await function_auto(function_name);
                 back();
