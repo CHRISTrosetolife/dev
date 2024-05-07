@@ -1,4 +1,4 @@
-import {noop} from "./noop.mjs";
+import {app_code_backable} from "./app_code_backable.mjs";
 import {html_button_text_click} from "./html_button_text_click.mjs";
 import {function_auto} from "./function_auto.mjs";
 import {html_on_input_value} from "./html_on_input_value.mjs";
@@ -55,19 +55,21 @@ export function app_code_edit(file_path) {
         let choices = {
             'back': back,
             'search': () => {
-                app_code_search_function();
+                app_code_backable(() => app_code_search_function());
             },
             'add new function': () => {
-                let root = html_document_body_clear();
-                let input = app_code_input(root);
-                html_focus(input);
-                let b = html_button_width_full_text_click(root, 'add new function', async () => {
-                    let function_name = html_value_get(input);
-                    await function_new_generic(function_name, '', '', false, [], false);
-                    let file_path = function_name_to_path(function_name);
-                    app_code_edit(file_path);
+                app_code_backable(() => {
+                    let root = html_document_body_clear();
+                    let input = app_code_input(root);
+                    html_focus(input);
+                    let b = html_button_width_full_text_click(root, 'add new function', async () => {
+                        let function_name = html_value_get(input);
+                        await function_new_generic(function_name, '', '', false, [], false);
+                        let file_path = function_name_to_path(function_name);
+                        app_code_edit(file_path);
+                    });
+                    html_style_margin_x_0(b);
                 });
-                html_style_margin_x_0(b);
             },
             'save functions': async () => {
                 let {files} = global_get();
