@@ -74,9 +74,6 @@ export function app_learn_code_unscramble(source_get) {
                 };
             });
             let answer = app_learn_code_source_to_tokens(source);
-            console.log({
-                answer
-            });
             let scrambled = list_copy(answer);
             list_scramble(scrambled);
             let parts = array_new();

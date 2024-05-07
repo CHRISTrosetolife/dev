@@ -208,11 +208,6 @@ export async function app_memorize() {
                         let token_element = html_span_text(verse_element, token);
                         if (equal(token_pattern, '0')) {
                             html_style_hidden(token_element);
-                            console.log({
-                                verse_index,
-                                j,
-                                token_element
-                            });
                         }
                         la({
                             spacer2,
