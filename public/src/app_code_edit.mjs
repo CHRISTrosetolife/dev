@@ -36,8 +36,7 @@ export function app_code_edit(file_path) {
     });
     html_style_height_full(container);
     const text = 'menu';
-    let b = html_button_text(container, text);
-    html_on_click(b, lambda);
+    html_button_text_click(container, text, lambda);
     function lambda() {
         let root = html_document_body_clear();
         function back() {
@@ -94,6 +93,11 @@ export function app_code_edit(file_path) {
     html_style_width_full(ta);
     html_style_height_full(ta);
 }
+function html_button_text_click(container, text, lambda) {
+    let b = html_button_text(container, text);
+    html_on_click(b, lambda);
+}
+
 function html_button_text(container, text) {
     let b = html_button(container);
     html_inner_set(b, text);
