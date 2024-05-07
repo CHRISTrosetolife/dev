@@ -1,3 +1,4 @@
+import {each_object} from "./each_object.mjs";
 import {html_style_margin_x_0} from "./html_style_margin_x_0.mjs";
 import {app_code_search_function} from "./app_code_search_function.mjs";
 import {html_spellcheck_none} from "./html_spellcheck_none.mjs";
@@ -25,10 +26,16 @@ export function app_code_edit(context, file_path) {
     html_inner_set(b, 'menu');
     html_on_click(b, () => {
         let root = html_document_body_clear();
-        let b = html_button_width_full_text_click(root, 'search', () => {
-            app_code_search_function(context);
-        });
-        html_style_margin_x_0(b);
+        let choices = {
+            'search': () => {
+                app_code_search_function(context);
+            }
+        };
+        each_object(choices, lambda);
+        function lambda(key, value) {
+            let b = html_button_width_full_text_click(root, key, value);
+            html_style_margin_x_0(b);
+        }
     });
     let {files} = context;
     let contents = object_property_get(files, file_path);
