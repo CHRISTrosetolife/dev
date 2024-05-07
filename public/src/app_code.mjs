@@ -1,3 +1,5 @@
+import {html_style_margin_none} from "./html_style_margin_none.mjs";
+import {html_document_body} from "./html_document_body.mjs";
 import {html_hash_exists} from "./html_hash_exists.mjs";
 import {app_code_edit} from "./app_code_edit.mjs";
 import {html_hash} from "./html_hash.mjs";
@@ -8,6 +10,8 @@ import {functions_source} from "./functions_source.mjs";
 import {html_style_default_initialize} from "./html_style_default_initialize.mjs";
 export async function app_code() {
     html_style_default_initialize();
+    let root = html_document_body();
+    html_style_margin_none(root);
     let files = await function_run(functions_source.name, []);
     let context = {
         files

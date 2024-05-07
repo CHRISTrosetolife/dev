@@ -13,6 +13,7 @@ import {html_style_background_color} from "./html_style_background_color.mjs";
 export function app_code_edit(context, file_path) {
     let root = html_document_body_clear();
     let container = html_div(root);
+    html_style_background_color(container, 'black');
     let {files} = context;
     let contents = object_property_get(files, file_path);
     let ast = js_parse(contents);
@@ -25,9 +26,11 @@ export function app_code_edit(context, file_path) {
             for (let b of body) {
                 let child = html_div(parent);
                 app_learn_code_style_rounded_padded(child);
-                html_style_background_color(child, 'black');
+                html_style_background_color(child, 'darkgray');
                 html_style_font_color(child, 'white');
-                html_style(child, html_style_margin_default_value());
+                html_style(child, {
+                    'margin':'0.1dvh'
+                });
                 html_inner_set(child, json_to(b));
             }
         }
