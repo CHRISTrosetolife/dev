@@ -9,6 +9,7 @@ import cors from 'cors';
 import {function_run_json} from "./function_run_json.mjs";
 import {string_replace} from "./string_replace.mjs";
 import { run } from "./run.mjs";
+import { file_overwrite } from "./file_overwrite.mjs";
 export function server() {
     let app = express();
     let port = server_port();
@@ -25,7 +26,7 @@ export function server() {
         replaced = string_replace(replaced, '"', '\\"');
         let command = `node ${run.name}.mjs ${function_run_json.name} ${function_name} '${replaced}'`;
         let {stdout} = await command_line(command);
-        console.log({stdout})
+        await file_overwrite('log.txt', stdout)
         let parsed = eval(stdout);
         let json = json_to(parsed);
         console.log({json})
