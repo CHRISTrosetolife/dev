@@ -1,3 +1,5 @@
+import {html_style_border_box} from "./html_style_border_box.mjs";
+import {html_focus} from "./html_focus.mjs";
 import {html_style_margin_x} from "./html_style_margin_x.mjs";
 import {html_style_word_break_all} from "./html_style_word_break_all.mjs";
 import {app_learn_code_style_rounded_padded} from "./app_learn_code_style_rounded_padded.mjs";
@@ -26,13 +28,4 @@ export async function app_code() {
         html_style_margin_x(b, '0');
         html_style_word_break_all(b);
     }
-}
-function html_style_border_box(input) {
-    html_style(input, {
-        'box-sizing': 'border-box'
-    });
-}
-function html_focus(input) {
-    let {element} = input;
-    element.focus();
 }
