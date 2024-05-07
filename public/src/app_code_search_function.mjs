@@ -13,6 +13,7 @@ import {html_style_border_box} from "./html_style_border_box.mjs";
 import {html_style_width_full} from "./html_style_width_full.mjs";
 import {html_focus} from "./html_focus.mjs";
 import {html_on} from "./html_on.mjs";
+import { list_adder } from "./list_adder.mjs";
 export function app_code_search_function(context) {
     let {files} = context;
     let root = html_document_body_clear();
@@ -23,14 +24,19 @@ export function app_code_search_function(context) {
     html_style_border_box(input);
     app_learn_code_style_rounded_padded(input);
     let paths = object_properties(files);
-    for (let p of paths) {
-        let name = function_path_to_name(p);
-        let button = html_button_width_full_text_click(root, name, () => {
-            app_code_edit(context, p);
-        });
-        html_style_margin_x_0(button);
-        html_style_word_break_all(button);
-    }
+    let list = list_adder(la => {
+        for (let p of paths) {
+            let name = function_path_to_name(p);
+            let button = html_button_width_full_text_click(root, name, () => {
+                app_code_edit(context, p);
+            });
+            html_style_margin_x_0(button);
+            html_style_word_break_all(button);
+        }
+        la({
+            
+        })
+    })
     html_on(input, 'input', () => {
         let value = html_value_get(input);
         
