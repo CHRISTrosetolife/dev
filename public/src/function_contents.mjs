@@ -11,6 +11,9 @@ export async function function_contents() {
         };
     });
     await promise_all(mapped);
-    list_adder_async();
-    return mapped;
+    return await list_adder_async(async la => {
+        for (let m of mapped) {
+            la(await m);
+        }
+    });
 }
