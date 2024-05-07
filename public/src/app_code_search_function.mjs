@@ -19,7 +19,6 @@ import {identity} from "./identity.mjs";
 import {object_property_set} from "./object_property_set.mjs";
 export function app_code_search_function() {
     let global = global_get();
-    object_property_set(global, 'back_stack', []);
     let {files} = global;
     let root = html_document_body_clear();
     let input = app_code_input(root);

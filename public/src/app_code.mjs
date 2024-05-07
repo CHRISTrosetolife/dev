@@ -1,3 +1,5 @@
+import {object_property_set} from "./object_property_set.mjs";
+import {global_get} from "./global_get.mjs";
 import {app_code_download} from "./app_code_download.mjs";
 import {html_root} from "./html_root.mjs";
 import {html_style_height_full} from "./html_style_height_full.mjs";
@@ -10,6 +12,8 @@ import {app_code_search_function} from "./app_code_search_function.mjs";
 import {function_name_to_path} from "./function_name_to_path.mjs";
 import {html_style_default_initialize} from "./html_style_default_initialize.mjs";
 export async function app_code() {
+    let global = global_get();
+    object_property_set(global, 'back_stack', []);
     html_style_default_initialize();
     let root = html_document_body();
     html_style_margin_none(root);
