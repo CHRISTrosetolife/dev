@@ -48,7 +48,6 @@ export function server() {
                     r
                 });
                 let contents = await file_read(file_path_output);
-                let {result} = contents;
                 res.end(contents);
             });
         });
