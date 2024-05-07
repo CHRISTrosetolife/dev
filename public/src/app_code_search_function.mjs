@@ -1,3 +1,4 @@
+import {greater_than_equal} from "./greater_than_equal.mjs";
 import {app_code_backable} from "./app_code_backable.mjs";
 import {html_on_input_value} from "./html_on_input_value.mjs";
 import {app_code_input} from "./app_code_input.mjs";
@@ -16,11 +17,12 @@ import {list_adder} from "./list_adder.mjs";
 import {global_get} from "./global_get.mjs";
 import {list_sort_string} from "./list_sort_string.mjs";
 import {identity} from "./identity.mjs";
-import {object_property_set} from "./object_property_set.mjs";
+import {list_length} from "./list_length.mjs";
 export function app_code_search_function() {
     let global = global_get();
-    let {files} = global;
+    let {files, back_stack} = global;
     let root = html_document_body_clear();
+    if (greater_than_equal(list_length(back_stack), 2)) {}
     let input = app_code_input(root);
     html_focus(input);
     let paths = object_properties(files);
