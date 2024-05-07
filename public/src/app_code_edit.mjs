@@ -9,8 +9,8 @@ export function app_code_edit(context, file_path) {
     let {files} = context;
     let contents = object_property_get(files, file_path);
     let parsed = js_parse(contents);
-    let e = js_declaration_single(parsed);
+    let d= js_declaration_single(parsed);
     console.log({
-        e
+        d
     });
 }
