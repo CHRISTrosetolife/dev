@@ -17,9 +17,10 @@ export async function functions_source_set(contents) {
     async function lambda(file_path, contents) {
         if (object_property_exists(existing, file_path)) {
             let contents_existing = object_property_get(existing, file_path);
-            if (equal_not(contents, contents_existing)) {
-                await file_overwrite(file_path, contents)
+            if (equal(contents, contents_existing)) {
+                return;
             }
         }
+        await file_overwrite(file_path, contents)
     }
 }
