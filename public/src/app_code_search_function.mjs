@@ -1,3 +1,4 @@
+import {html_document_body_clear} from "./html_document_body_clear.mjs";
 import {app_code_edit} from "./app_code_edit.mjs";
 import {html_style_word_break_all} from "./html_style_word_break_all.mjs";
 import {html_style_margin_x} from "./html_style_margin_x.mjs";
@@ -9,12 +10,9 @@ import {html_style_border_box} from "./html_style_border_box.mjs";
 import {html_style_width_full} from "./html_style_width_full.mjs";
 import {html_focus} from "./html_focus.mjs";
 import {html_element} from "./html_element.mjs";
-import {html_document_body} from "./html_document_body.mjs";
-import {html_clear} from "./html_clear.mjs";
 export function app_code_search_function(context) {
     let {files} = context;
-    let root = html_document_body();
-    html_clear(root);
+    let root = html_document_body_clear();
     let input = html_element(root, 'input');
     html_focus(input);
     html_style_width_full(input);
