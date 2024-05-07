@@ -47,7 +47,7 @@ export function app_learn_code() {
             });
         }
     });
-    html_style_default_initialize(root);
+    html_style_default_initialize();
     let default_font_size = html_style_default_font_size_value();
     let lesson_creates = app_learn_code_lessons();
     let lesson_screens = [];

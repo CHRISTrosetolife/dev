@@ -7,7 +7,7 @@ import {html_style_default_initialize} from "./html_style_default_initialize.mjs
 import {object_properties} from "./object_properties.mjs";
 export async function app_code() {
     let root = html_document_body();
-    html_style_default_initialize(root);
+    html_style_default_initialize();
     let result = await function_run(functions_source.name, []);
     let paths = object_properties(result);
     for (let p of paths) {
