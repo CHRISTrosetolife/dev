@@ -11,6 +11,8 @@ export function app_code_edit(context, file_path) {
     let {files} = context;
     let contents = object_property_get(files, file_path);
     let ta = html_element(root, 'textarea');
+    let {element} = ta;
+    element.spellcheck = false
     html_style(ta,{'display': 'block'})
     html_style_border_box(ta);
     html_inner_set(ta, contents);
