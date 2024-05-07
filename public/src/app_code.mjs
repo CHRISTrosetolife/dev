@@ -13,7 +13,7 @@ import {server_port} from "./server_port.mjs";
 export async function app_code() {
     let root = html_document_body();
     let json = await function_run(functions_source.name, []);
-    console.log({json})
+    json = Regex.Unescape(json)
     let result = json_from(json);
         html_style_default_initialize(root);
     let paths = object_properties(result);
