@@ -1,3 +1,4 @@
+import {noop} from "./noop.mjs";
 import {html_button_text_click} from "./html_button_text_click.mjs";
 import {function_auto} from "./function_auto.mjs";
 import {html_on_input_value} from "./html_on_input_value.mjs";
