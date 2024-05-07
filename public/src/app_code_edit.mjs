@@ -1,3 +1,4 @@
+import {html_style_margin_default_value} from "./html_style_margin_default_value.mjs";
 import {html_style_default_border_value} from "./html_style_default_border_value.mjs";
 import {app_learn_code_style_rounded_padded} from "./app_learn_code_style_rounded_padded.mjs";
 import {json_to} from "./json_to.mjs";
@@ -23,6 +24,7 @@ export function app_code_edit(context, file_path) {
                 let child = html_div(parent);
                 app_learn_code_style_rounded_padded(child);
                 html_style(child, html_style_default_border_value('lightblue'));
+                html_style(child, html_style_margin_default_value());
                 html_inner_set(child, json_to(b));
             }
         }
