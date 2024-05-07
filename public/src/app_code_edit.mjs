@@ -32,13 +32,14 @@ function app_code_edit_recursive(node, parent) {
                 html_style_background_color(child, 'hsl(0, 0%, 20%)');
                 html_style_font_color(child, 'white');
                 html_style(child, {
-                    'margin':'0.1dvh'
+                    'margin':'0.3dvh'
                 });
                 app_code_edit_recursive(b, child);
             }
             break;
         case 'ImportDeclaration':
-            html_inner_set(parent, json_to(node));
+            let {specifiers} = node;
+            html_inner_set(parent, json_to(specifiers));
             break;
         default:
             html_inner_set(parent, json_to(node));
