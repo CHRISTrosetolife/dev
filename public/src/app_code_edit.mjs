@@ -39,13 +39,15 @@ export function app_code_edit(file_path) {
     html_inner_set(b, 'menu');
     html_on_click(b, () => {
         let root = html_document_body_clear();
+        function back() {
+            app_code_edit(file_path);
+        }
         let choices = {
-            'back': () => {
-                app_code_edit(file_path);
-            },
+            'back': back,
             'auto': async () => {
                 let function_name = function_path_to_name(file_path);
                 await function_auto(function_name);
+                back();
             },
             'search': () => {
                 app_code_search_function();
