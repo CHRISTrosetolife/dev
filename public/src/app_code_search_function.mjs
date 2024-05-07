@@ -15,13 +15,14 @@ import {html_on} from "./html_on.mjs";
 import {list_adder} from "./list_adder.mjs";
 import { global_get } from "./global_get.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
+import { identity } from "./identity.mjs";
 export function app_code_search_function() {
     let {files} = global_get();
     let root = html_document_body_clear();
     let input = app_code_input(root);
     html_focus(input);
     let paths = object_properties(files);
-    list_sort_string(paths)
+    list_sort_string(paths, identity)
     let list = list_adder(la => {
         for (let p of paths) {
             let name = function_path_to_name(p);
