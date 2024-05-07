@@ -42,18 +42,19 @@ export function app_code_edit(file_path) {
     });
     html_button_text_click(container_top, '⚡', noop);
     html_button_width_full_text_click(container_top, 'menu', lambda);
+    function back() {
+        app_code_edit(file_path);
+    }
+    async function auto() {
+        let function_name = function_path_to_name(file_path);
+        await function_auto(function_name);
+        back();
+    }
     function lambda() {
         let root = html_document_body_clear();
-        function back() {
-            app_code_edit(file_path);
-        }
         let choices = {
             'back': back,
-            'auto': async function auto() {
-                let function_name = function_path_to_name(file_path);
-                await function_auto(function_name);
-                back();
-            },
+            'auto': auto,
             'search': () => {
                 app_code_search_function();
             },
