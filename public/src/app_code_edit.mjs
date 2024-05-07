@@ -10,4 +10,5 @@ export function app_code_edit(context, file_path) {
     let contents = object_property_get(files, file_path);
     let parsed = js_parse(contents);
     let e = js_export_single(parsed);
+    console.log({e})
 }
