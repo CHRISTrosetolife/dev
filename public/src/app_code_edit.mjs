@@ -88,7 +88,7 @@ export function app_code_edit(file_path) {
                 let b = html_button_width_full_text_click(root, key, value);
                 html_style_margin_x_0(b);
             }
-        })
+        });
     }
     let {files} = global_get();
     let contents = object_property_get(files, file_path);
