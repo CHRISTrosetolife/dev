@@ -1,3 +1,5 @@
+import {html_hash_exists} from "./html_hash_exists.mjs";
+import {html_hash_get} from "./html_hash_get.mjs";
 import {object_property_get} from "./object_property_get.mjs";
 import {list_includes} from "./list_includes.mjs";
 import {list_get} from "./list_get.mjs";
@@ -6,13 +8,11 @@ import {assert} from "./assert.mjs";
 import {list_length} from "./list_length.mjs";
 import {string_split} from "./string_split.mjs";
 import {string_prefix_without} from "./string_prefix_without.mjs";
-import {string_length} from "./string_length.mjs";
-import {greater_than} from "./greater_than.mjs";
 import {object_properties} from "./object_properties.mjs";
 export function html_hash(actions) {
     let action_properties = object_properties(actions);
-    let hash = window.location.hash;
-    if (greater_than(string_length(hash), 0)) {
+    let hash = html_hash_get();
+    if (html_hash_exists()) {
         let hash_no_tag = string_prefix_without(hash, '#');
         let split = string_split(hash_no_tag, ',');
         for (let s of split) {
