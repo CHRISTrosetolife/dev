@@ -1,3 +1,4 @@
+import {app_code_button_back_text} from "./app_code_button_back_text.mjs";
 import {app_code_back} from "./app_code_back.mjs";
 import {app_code_backable} from "./app_code_backable.mjs";
 import {html_button_text_click} from "./html_button_text_click.mjs";
@@ -52,7 +53,7 @@ export function app_code_edit(file_path) {
         app_code_backable(() => {
             let root = html_document_body_clear();
             let choices = {
-                'back': app_code_back,
+                [app_code_button_back_text()]: app_code_back,
                 'search': () => {
                     app_code_backable(() => app_code_search_function());
                 },
