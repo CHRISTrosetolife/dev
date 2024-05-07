@@ -37,7 +37,7 @@ export function app_code_edit(file_path) {
     html_style_height_full(container);
     const text = 'menu';
     let b = html_button_text(container, text);
-    html_on_click(b, () => {
+    html_on_click(b, function lambda() {
         let root = html_document_body_clear();
         function back() {
             app_code_edit(file_path);
