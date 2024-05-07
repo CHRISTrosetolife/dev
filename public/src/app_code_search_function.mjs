@@ -21,10 +21,9 @@ export function app_code_search_function(context) {
     let {files} = context;
     let root = html_document_body_clear();
     let input = html_input(root);
-    html_style_border_box(input);
     html_spellcheck_none(input);
-    html_focus(input);
     html_style_width_full(input);
+    html_focus(input);
     app_learn_code_style_rounded_padded(input);
     let paths = object_properties(files);
     let list = list_adder(la => {
