@@ -13,7 +13,7 @@ export async function functions_source_set(contents) {
         let value = object_property_get(contents, key);
         return await lambda(key, value);
     });
-    let mapped2 = await promise_all(mapped);
+    await promise_all(mapped);
     async function lambda(file_path, contents) {
         if (object_property_exists(existing, file_path)) {
             let contents_existing = object_property_get(existing, file_path);
