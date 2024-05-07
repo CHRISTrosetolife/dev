@@ -13,8 +13,5 @@ export async function app_code() {
     html_style_button_default_initialize();
     let result = await function_run(functions_source.name, []);
     let paths = object_properties(result);
-    console.log({
-        result
-    });
-    html_inner_set(root, json_to(result));
+    for (let )
 }

@@ -1,7 +1,6 @@
+import {html_style_default_font_size_value} from "./html_style_default_font_size_value.mjs";
+import {html_style_default_initialize} from "./html_style_default_initialize.mjs";
 import {html_hash} from "./html_hash.mjs";
-import {html_style_button_default_initialize} from "./html_style_button_default_initialize.mjs";
-import {html_style_default_font_size} from "./html_style_default_font_size.mjs";
-import {html_style_sans_serif} from "./html_style_sans_serif.mjs";
 import {app_learn_code_lessons} from "./app_learn_code_lessons.mjs";
 import {string_combine_multiple} from "./string_combine_multiple.mjs";
 import {html_scroll_top} from "./html_scroll_top.mjs";
@@ -48,10 +47,8 @@ export function app_learn_code() {
             });
         }
     });
-    html_style_sans_serif(root);
-    let default_font_size = 3;
-    html_style_default_font_size(default_font_size);
-    html_style_button_default_initialize();
+    html_style_default_initialize(root);
+    let default_font_size = html_style_default_font_size_value();
     let lesson_creates = app_learn_code_lessons();
     let lesson_screens = [];
     let lessons = [];
