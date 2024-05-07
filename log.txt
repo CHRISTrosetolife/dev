@@ -1,17 +1,1 @@
-{
-  './public/src/visit.mjs': 'import {list_concat} from "./list_concat.mjs";\n' +
-    'export function visit(root, children_get, filter, each, stack) {\n' +
-    '    let children = children_get(root);\n' +
-    '    for (let node of children) {\n' +
-    '        if (filter(node)) {\n' +
-    '            each({\n' +
-    '                node,\n' +
-    '                parent: root,\n' +
-    '                stack\n' +
-    '            });\n' +
-    '            let stacked = list_concat(stack, [node]);\n' +
-    '            visit(node, children_get, filter, each, stacked);\n' +
-    '        }\n' +
-    '    }\n' +
-    '}\n'
-}
+{"./public/src/visit.mjs":"import {list_concat} from \"./list_concat.mjs\";\nexport function visit(root, children_get, filter, each, stack) {\n    let children = children_get(root);\n    for (let node of children) {\n        if (filter(node)) {\n            each({\n                node,\n                parent: root,\n                stack\n            });\n            let stacked = list_concat(stack, [node]);\n            visit(node, children_get, filter, each, stacked);\n        }\n    }\n}\n"}
