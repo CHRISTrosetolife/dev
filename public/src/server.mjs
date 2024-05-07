@@ -49,7 +49,7 @@ export function server() {
                 });
                 let contents = await file_read(file_path_output);
                 let {result} = contents
-                console.log({result})
+                console.log(contents)
                 res.end(json_to(result));
             });
         });
