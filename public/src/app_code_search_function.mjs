@@ -25,7 +25,7 @@ export function app_code_search_function() {
     let {files, back_stack} = global;
     let root = html_document_body_clear();
     if (greater_than_equal(list_length(back_stack), 2)) {
-        html_button_width_full_text_click(root, app_code_button_back_text(), app_code_back);
+        lambda_button(app_code_button_back_text(), app_code_back);
     }
     let input = app_code_input(root);
     html_focus(input);
@@ -34,18 +34,24 @@ export function app_code_search_function() {
     let list = list_adder(la => {
         for (let p of paths) {
             let name = function_path_to_name(p);
-            let button = html_button_width_full_text_click(root, name, function on_click() {
+            function on_click() {
                 app_code_backable(() => app_code_edit(p));
-            });
-            html_style_margin_x_0(button);
-            html_style_word_break_all(button);
+            }
+            let button = lambda_button(name, on_click);
             la({
                 name,
-                button
+                button:button
             });
         }
     });
     html_on_input_value(input, lambda);
+    function lambda_button(name, on_click) {
+        let b = html_button_width_full_text_click(root, name, on_click);
+        html_style_margin_x_0(b);
+        html_style_word_break_all(b);
+        return b;
+    }
+
     function lambda(value) {
         for (let e of list) {
             let {name, button} = e;
