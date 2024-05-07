@@ -54,7 +54,6 @@ export function app_code_edit(file_path) {
         let root = html_document_body_clear();
         let choices = {
             'back': back,
-            'auto': auto,
             'search': () => {
                 app_code_search_function();
             },
