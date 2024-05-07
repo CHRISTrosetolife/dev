@@ -1,3 +1,4 @@
+import {function_auto} from "./function_auto.mjs";
 import {html_on_input_value} from "./html_on_input_value.mjs";
 import {app_code_download} from "./app_code_download.mjs";
 import {functions_source_set} from "./functions_source_set.mjs";
@@ -25,6 +26,7 @@ import {function_name_to_path} from "./function_name_to_path.mjs";
 import {html_value_get} from "./html_value_get.mjs";
 import {function_run} from "./function_run.mjs";
 import {object_property_set} from "./object_property_set.mjs";
+import {function_path_to_name} from "./function_path_to_name.mjs";
 export function app_code_edit(file_path) {
     let root = html_document_body_clear();
     let container = html_div(root);
@@ -42,7 +44,8 @@ export function app_code_edit(file_path) {
                 app_code_edit(file_path);
             },
             'auto': async () => {
-                await function_run(function_auto.name, [files]);
+                let function_name = function_path_to_name(file_path);
+                await function_run(function_auto.name, [function_name]);
             },
             'search': () => {
                 app_code_search_function();
