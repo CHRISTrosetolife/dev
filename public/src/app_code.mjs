@@ -1,4 +1,4 @@
-import {html_style_margin_none} from "./html_style_margin_none.mjs";
+import {html_style_margin_y} from "./html_style_margin_y.mjs";
 import {html_style_word_break_all} from "./html_style_word_break_all.mjs";
 import {app_learn_code_style_rounded_padded} from "./app_learn_code_style_rounded_padded.mjs";
 import {function_path_to_name} from "./function_path_to_name.mjs";
@@ -25,6 +25,7 @@ export async function app_code() {
     for (let p of paths) {
         let name = function_path_to_name(p);
         let b = html_button_width_full_text(root, name);
+        html_style_margin_y(b);
         html_style_word_break_all(b);
     }
 }
