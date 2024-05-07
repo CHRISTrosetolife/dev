@@ -1,1 +1,4 @@
-export function global_get() {}
+let global = {};
+export function global_get() {
+    return global;
+}
