@@ -37,7 +37,8 @@ export function app_code_edit(file_path) {
     html_style_height_full(container);
     const text = 'menu';
     let b = html_button_text(container, text);
-    html_on_click(b, function lambda() {
+    html_on_click(b, lambda);
+    function lambda() {
         let root = html_document_body_clear();
         function back() {
             app_code_edit(file_path);
@@ -72,12 +73,12 @@ export function app_code_edit(file_path) {
                 await app_code_download();
             }
         };
-        each_object(choices, lambda);
-        function lambda(key, value) {
+        each_object(choices, lambda2);
+        function lambda2(key, value) {
             let b = html_button_width_full_text_click(root, key, value);
             html_style_margin_x_0(b);
         }
-    });
+    }
     let {files} = global_get();
     let contents = object_property_get(files, file_path);
     let ta = html_element(container, 'textarea');
