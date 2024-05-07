@@ -13,13 +13,16 @@ export function app_code_edit(context, file_path) {
     html_inner_set(container,ast.type)
     let node = ast;
     let parent = container;
+    let {type} = node;
     let lookup = {
         'Program': () => {
             let {body} = node;
             for (let b of body) {
                 let child = html_div(parent)
-                html_inner_set(child, json_to(child))
+                html_inner_set(child, json_to(b))
             }
         }
     }
+    let choice = object_property_get(lookup, type)
+    choice();
 }
