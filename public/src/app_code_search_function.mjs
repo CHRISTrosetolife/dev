@@ -11,6 +11,8 @@ import {app_learn_code_style_rounded_padded} from "./app_learn_code_style_rounde
 import {html_style_border_box} from "./html_style_border_box.mjs";
 import {html_style_width_full} from "./html_style_width_full.mjs";
 import {html_focus} from "./html_focus.mjs";
+import { html_on } from "./html_on.mjs";
+import { object_property_get } from "./object_property_get.mjs";
 export function app_code_search_function(context) {
     let {files} = context;
     let root = html_document_body_clear();
@@ -20,6 +22,10 @@ export function app_code_search_function(context) {
     html_style_width_full(input);
     html_style_border_box(input);
     app_learn_code_style_rounded_padded(input);
+    html_on(input, 'keydown', () => {
+        let value = html_value_get(input);
+        console.log({value})
+    })
     let paths = object_properties(files);
     for (let p of paths) {
         let name = function_path_to_name(p);
@@ -30,3 +36,9 @@ export function app_code_search_function(context) {
         html_style_word_break_all(b);
     }
 }
+function html_value_get(input) {
+    let { element } = input;
+    let value = object_property_get(element, 'value');
+    return value;
+}
+
