@@ -12,6 +12,6 @@ export async function app_code() {
     let paths = object_properties(result);
     for (let p of paths) {
         let name = function_path_to_name(p);
-        html_button_width_full_text(root, p);
+        html_button_width_full_text(root, name);
     }
 }
