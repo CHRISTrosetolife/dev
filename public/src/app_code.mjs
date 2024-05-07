@@ -8,10 +8,12 @@ import {function_name_to_path} from "./function_name_to_path.mjs";
 import {function_run} from "./function_run.mjs";
 import {functions_source} from "./functions_source.mjs";
 import {html_style_default_initialize} from "./html_style_default_initialize.mjs";
+import { html_style } from "./html_style.mjs";
 export async function app_code() {
     html_style_default_initialize();
     let root = html_document_body();
     html_style_margin_none(root);
+    html_style_height_full(root)
     let files = await function_run(functions_source.name, []);
     let context = {
         files
