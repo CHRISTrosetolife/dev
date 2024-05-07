@@ -40,6 +40,6 @@ function app_code_edit_recursive(node, parent) {
         case 'ImportDeclaration':
             break;
         default:
-            html_inner_set(parent, json_to(child));
+            html_inner_set(parent, json_to(node));
     }
 }
