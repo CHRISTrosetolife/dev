@@ -15,8 +15,11 @@ import {list_adder} from "./list_adder.mjs";
 import {global_get} from "./global_get.mjs";
 import {list_sort_string} from "./list_sort_string.mjs";
 import {identity} from "./identity.mjs";
+import { object_property_set } from "./object_property_set.mjs";
 export function app_code_search_function() {
-    let {files} = global_get();
+    let global = global_get();
+    object_property_set(global, 'back_stack', [])
+    let {files} = global
     let root = html_document_body_clear();
     let input = app_code_input(root);
     html_focus(input);
@@ -26,7 +29,7 @@ export function app_code_search_function() {
         for (let p of paths) {
             let name = function_path_to_name(p);
             let button = html_button_width_full_text_click(root, name, () => {
-                app_code_edit(p);
+                app_code_backable(() => app_code_edit(p))
             });
             html_style_margin_x_0(button);
             html_style_word_break_all(button);
@@ -47,4 +50,7 @@ export function app_code_search_function() {
             }
         }
     }
+}
+function app_code_backable(lambda) {
+
 }
