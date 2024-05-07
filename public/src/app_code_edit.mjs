@@ -1,3 +1,4 @@
+import {app_learn_code_style_rounded_padded} from "./app_learn_code_style_rounded_padded.mjs";
 import {json_to} from "./json_to.mjs";
 import {html_div} from "./html_div.mjs";
 import {html_document_body_clear} from "./html_document_body_clear.mjs";
@@ -19,6 +20,7 @@ export function app_code_edit(context, file_path) {
             let {body} = node;
             for (let b of body) {
                 let child = html_div(parent);
+                app_learn_code_style_rounded_padded(child);
                 html_inner_set(child, json_to(b));
             }
         }
