@@ -7,8 +7,8 @@ import {html_style_default_initialize} from "./html_style_default_initialize.mjs
 import {object_properties} from "./object_properties.mjs";
 export async function app_code() {
     let root = html_document_body();
-    let result = await function_run(functions_source.name, []);
     html_style_default_initialize(root);
+    let result = await function_run(functions_source.name, []);
     let paths = object_properties(result);
     for (let p of paths) {
         let name = function_path_to_name(p);
