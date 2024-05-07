@@ -24,17 +24,18 @@ export function server() {
         });
         let replaced = string_replace(args_json, '\'', '\'\'');
         replaced = string_replace(replaced, '"', '\\"');
-        uuid_file;
-        let command = `node ${run.name}.mjs ${function_run_json.name} ${function_name} '${replaced}'`;
-        let {stdout} = await command_line(command);
-        await file_overwrite('log.txt', stdout);
-        stdout = string_replace(stdout, '\n', '');
-        let parsed = eval(stdout);
-        let json = json_to(parsed);
-        console.log({
-            json
-        });
-        res.end(json);
+        await uuid_file(async file_path => {
+            let command = `node ${run.name}.mjs ${function_run_json.name} ${function_name} '${replaced}'`;
+            let {stdout} = await command_line(command);
+            await file_overwrite('log.txt', stdout);
+            stdout = string_replace(stdout, '\n', '');
+            let parsed = eval(stdout);
+            let json = json_to(parsed);
+            console.log({
+                json
+            });
+            res.end(json);
+        })
     });
     app.listen(port, () => {
         console.log(`Example app listening on port ${port}`);
