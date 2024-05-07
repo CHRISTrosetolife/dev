@@ -27,7 +27,6 @@ export function app_code_edit(context, file_path) {
                 app_learn_code_style_rounded_padded(child);
                 html_style_background_color(child, 'black');
                 html_style_font_color(child, 'white');
-                html_style(child, html_style_default_border_value('lightblue'));
                 html_style(child, html_style_margin_default_value());
                 html_inner_set(child, json_to(b));
             }
