@@ -54,39 +54,41 @@ export function app_code_edit(file_path) {
         app_code_edit(file_path);
     }
     function lambda() {
-        let root = html_document_body_clear();
-        let choices = {
-            'back': back,
-            'search': () => {
-                app_code_backable(() => app_code_search_function());
-            },
-            'add new function': () => {
-                app_code_backable(() => {
-                    let root = html_document_body_clear();
-                    let input = app_code_input(root);
-                    html_focus(input);
-                    let b = html_button_width_full_text_click(root, 'add new function', async () => {
-                        let function_name = html_value_get(input);
-                        await function_new_generic(function_name, '', '', false, [], false);
-                        let file_path = function_name_to_path(function_name);
-                        app_code_edit(file_path);
+        app_code_backable(() => {
+            let root = html_document_body_clear();
+            let choices = {
+                'back': back,
+                'search': () => {
+                    app_code_backable(() => app_code_search_function());
+                },
+                'add new function': () => {
+                    app_code_backable(() => {
+                        let root = html_document_body_clear();
+                        let input = app_code_input(root);
+                        html_focus(input);
+                        let b = html_button_width_full_text_click(root, 'add new function', async () => {
+                            let function_name = html_value_get(input);
+                            await function_new_generic(function_name, '', '', false, [], false);
+                            let file_path = function_name_to_path(function_name);
+                            app_code_edit(file_path);
+                        });
+                        html_style_margin_x_0(b);
                     });
-                    html_style_margin_x_0(b);
-                });
-            },
-            'save functions': async () => {
-                let {files} = global_get();
-                await function_run(functions_source_set.name, [files]);
-            },
-            'download functions': async () => {
-                await app_code_download();
+                },
+                'save functions': async () => {
+                    let {files} = global_get();
+                    await function_run(functions_source_set.name, [files]);
+                },
+                'download functions': async () => {
+                    await app_code_download();
+                }
+            };
+            each_object(choices, lambda2);
+            function lambda2(key, value) {
+                let b = html_button_width_full_text_click(root, key, value);
+                html_style_margin_x_0(b);
             }
-        };
-        each_object(choices, lambda2);
-        function lambda2(key, value) {
-            let b = html_button_width_full_text_click(root, key, value);
-            html_style_margin_x_0(b);
-        }
+        })
     }
     let {files} = global_get();
     let contents = object_property_get(files, file_path);
