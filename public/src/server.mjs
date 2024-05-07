@@ -10,6 +10,7 @@ import {run} from "./run.mjs";
 import {file_overwrite} from "./file_overwrite.mjs";
 import {file_read} from "./file_read.mjs";
 import bodyParser from "body-parser";
+import { error } from "./error.mjs";
 export function server() {
     let app = express();
     let port = server_port();
@@ -36,6 +37,10 @@ export function server() {
             await uuid_file(async file_path_output => {
                 await file_overwrite(file_path_input, args_json);
                 let command = `node ${run.name}.mjs ${function_run_json.name} ${function_name} ${file_path_input} ${file_path_output}`;
+                console.log({
+                    command
+                });
+                error(';her')
                 let r = await command_line(command);
                 console.log({
                     r
