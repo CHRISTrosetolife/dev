@@ -7,7 +7,7 @@ export async function file_overwrite(file_name, data) {
         let {files} = global_get();
         object_property_set(files, file_name, data);
     } else {
-        let fs = await import_node('fs');
+        let fs = await import('fs');
         return await fs.promises.writeFile(file_name, data, 'utf-8');
     }
 }
