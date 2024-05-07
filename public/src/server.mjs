@@ -13,6 +13,7 @@ import bodyParser from "body-parser";
 import { error } from "./error.mjs";
 import { assert } from "./assert.mjs";
 import { list_is } from "./list_is.mjs";
+import { object_properties } from "./object_properties.mjs";
 export function server() {
     let app = express();
     let port = server_port();
@@ -49,7 +50,7 @@ export function server() {
                 });
                 let contents = await file_read(file_path_output);
                 let {result} = contents
-                console.log(contents)
+                console.log(object_properties(result))
                 res.end(json_to(result));
             });
         });
