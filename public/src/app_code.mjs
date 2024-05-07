@@ -1,3 +1,4 @@
+import {html_style_margin_none} from "./html_style_margin_none.mjs";
 import {html_style_word_break_all} from "./html_style_word_break_all.mjs";
 import {app_learn_code_style_rounded_padded} from "./app_learn_code_style_rounded_padded.mjs";
 import {function_path_to_name} from "./function_path_to_name.mjs";
@@ -9,16 +10,17 @@ import {html_element} from "./html_element.mjs";
 import {html_style_default_initialize} from "./html_style_default_initialize.mjs";
 import {html_style_width_full} from "./html_style_width_full.mjs";
 import {object_properties} from "./object_properties.mjs";
-import { html_style } from "./html_style.mjs";
+import {html_style} from "./html_style.mjs";
 export async function app_code() {
     html_style_default_initialize();
     let result = await function_run(functions_source.name, []);
     let root = html_document_body();
+    html_style_margin_none(root);
     let input = html_element(root, 'input');
-    html_style_width_full(input)
+    html_style_width_full(input);
     html_style(input, {
-        'display': 'block',
-    })
+        'display': 'block'
+    });
     app_learn_code_style_rounded_padded(input);
     let paths = object_properties(result);
     for (let p of paths) {
