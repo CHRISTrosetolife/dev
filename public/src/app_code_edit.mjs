@@ -41,6 +41,9 @@ export function app_code_edit(file_path) {
             'back': () => {
                 app_code_edit(file_path);
             },
+            'auto': async () => {
+                await function_run(function_auto.name, [files]);
+            },
             'search': () => {
                 app_code_search_function();
             },
