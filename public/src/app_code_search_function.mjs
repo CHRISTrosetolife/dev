@@ -1,3 +1,5 @@
+import {app_code_back} from "./app_code_back.mjs";
+import {app_code_button_back_text} from "./app_code_button_back_text.mjs";
 import {greater_than_equal} from "./greater_than_equal.mjs";
 import {app_code_backable} from "./app_code_backable.mjs";
 import {html_on_input_value} from "./html_on_input_value.mjs";
@@ -22,7 +24,9 @@ export function app_code_search_function() {
     let global = global_get();
     let {files, back_stack} = global;
     let root = html_document_body_clear();
-    if (greater_than_equal(list_length(back_stack), 2)) {}
+    if (greater_than_equal(list_length(back_stack), 2)) {
+        html_button_width_full_text_click(root, app_code_button_back_text(), app_code_back);
+    }
     let input = app_code_input(root);
     html_focus(input);
     let paths = object_properties(files);
