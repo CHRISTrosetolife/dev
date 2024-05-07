@@ -13,7 +13,6 @@ export function app_code_edit(context, file_path) {
     let {files} = context;
     let contents = object_property_get(files, file_path);
     let ast = js_parse(contents);
-    html_inner_set(container, ast.type);
     let node = ast;
     let parent = container;
     let {type} = node;
