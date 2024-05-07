@@ -49,7 +49,8 @@ export function server() {
                 });
                 let contents = await file_read(file_path_output);
                 let {result} = contents
-                res.end('123');
+                console.log({result})
+                res.end(json_to(result));
             });
         });
     });
