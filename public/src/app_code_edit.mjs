@@ -9,6 +9,7 @@ export function app_code_edit(context, file_path) {
     let {files} = context;
     let contents = object_property_get(files, file_path);
     let ta = html_element(root, 'textarea');
+    html_style_border_box(ta);
     html_inner_set(ta, contents);
     html_style_width_full(ta);
     html_style_height_full(ta);
