@@ -1,3 +1,6 @@
+import {function_new_generic} from "./function_new_generic.mjs";
+import {html_focus} from "./html_focus.mjs";
+import {app_code_input} from "./app_code_input.mjs";
 import {each_object} from "./each_object.mjs";
 import {html_style_margin_x_0} from "./html_style_margin_x_0.mjs";
 import {app_code_search_function} from "./app_code_search_function.mjs";
@@ -14,8 +17,8 @@ import {html_button_width_full_text_click} from "./html_button_width_full_text_c
 import {html_button} from "./html_button.mjs";
 import {html_on_click} from "./html_on_click.mjs";
 import {html_div} from "./html_div.mjs";
-import { global_get } from "./global_get.mjs";
-import { function_name_to_path } from "./function_name_to_path.mjs";
+import {global_get} from "./global_get.mjs";
+import {function_name_to_path} from "./function_name_to_path.mjs";
 export function app_code_edit(file_path) {
     let root = html_document_body_clear();
     let container = html_div(root);
@@ -36,10 +39,10 @@ export function app_code_edit(file_path) {
                 let root = html_document_body_clear();
                 let input = app_code_input(root);
                 html_focus(input);
-                let b = html_button_width_full_text_click(root, 'add new function', async ()=>{
-                    await function_new_generic(function_name, '', '', open, [], false)
-                    let file_path = function_name_to_path(function_name)
-                    app_code_edit(file_path)
+                let b = html_button_width_full_text_click(root, 'add new function', async () => {
+                    await function_new_generic(function_name, '', '', open, [], false);
+                    let file_path = function_name_to_path(function_name);
+                    app_code_edit(file_path);
                 });
                 html_style_margin_x_0(b);
             }
