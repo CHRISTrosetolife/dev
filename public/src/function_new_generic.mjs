@@ -19,7 +19,6 @@ ${body_string}
     let parsed = js_parse(contents);
     let unparsed = js_unparse(parsed);
     let file_path = function_name_to_path(function_name);
-    console.log({file_path})
     await file_write(file_path, unparsed);
     if (open) {
         await file_open(file_path);
