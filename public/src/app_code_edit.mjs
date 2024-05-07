@@ -11,4 +11,9 @@ export function app_code_edit(context, file_path) {
     let contents = object_property_get(files, file_path);
     let ast = js_parse(contents);
     html_inner_set(container,ast.type)
+    let lookup = {
+        'Program': (parent, node) => {
+            
+        }
+    }
 }
