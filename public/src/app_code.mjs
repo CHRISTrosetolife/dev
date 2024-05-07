@@ -18,7 +18,7 @@ export async function app_code() {
     let input = html_element(root, 'input');
     html_style_width_full(input);
     html_style(input, {
-        'display': 'block'
+        'box-sizing': 'border-box'
     });
     app_learn_code_style_rounded_padded(input);
     let paths = object_properties(result);
