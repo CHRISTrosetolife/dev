@@ -15,7 +15,7 @@ export async function app_code() {
     html_style_margin_none(root);
     let html = document.documentElement;
     for (let e of [html, root]) {
-        html_style_height_full(root);
+        html_style_height_full(e);
     }
     let files = await function_run(functions_source.name, []);
     let context = {
