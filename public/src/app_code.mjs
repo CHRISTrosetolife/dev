@@ -1,3 +1,4 @@
+import { app_learn_code_style_rounded_padded } from "./app_learn_code_style_rounded_padded.mjs";
 import {function_path_to_name} from "./function_path_to_name.mjs";
 import {function_run} from "./function_run.mjs";
 import {functions_source} from "./functions_source.mjs";
@@ -13,6 +14,7 @@ export async function app_code() {
     let root = html_document_body();
     let input = html_element(root, 'input')
     html_style_width_full(input)
+    app_learn_code_style_rounded_padded(input)
     let paths = object_properties(result);
     for (let p of paths) {
         let name = function_path_to_name(p);
