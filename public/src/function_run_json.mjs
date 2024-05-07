@@ -1,3 +1,4 @@
+import { error } from "./error.mjs";
 import {file_overwrite} from "./file_overwrite.mjs";
 import {file_read} from "./file_read.mjs";
 import {function_run} from "./function_run.mjs";
@@ -9,4 +10,5 @@ export async function function_run_json(function_name, input_file_path, output_f
     let result = await function_run(function_name, args);
     let json = json_to(result);
     await file_overwrite(output_file_path, json);
+    error('here')
 }
