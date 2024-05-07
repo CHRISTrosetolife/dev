@@ -1,3 +1,4 @@
+import {html_spellcheck_none} from "./html_spellcheck_none.mjs";
 import {html_style_margin_x_0} from "./html_style_margin_x_0.mjs";
 import {html_input} from "./html_input.mjs";
 import {html_document_body_clear} from "./html_document_body_clear.mjs";
@@ -14,6 +15,7 @@ export function app_code_search_function(context) {
     let {files} = context;
     let root = html_document_body_clear();
     let input = html_input(root);
+    html_spellcheck_none(input);
     html_focus(input);
     html_style_width_full(input);
     html_style_border_box(input);
