@@ -1,3 +1,5 @@
+import {html_style_display_block} from "./html_style_display_block.mjs";
+import {html_style_display_none} from "./html_style_display_none.mjs";
 import {app_learn_code_range_retry} from "./app_learn_code_range_retry.mjs";
 import {app_learn_code_answer_correct} from "./app_learn_code_answer_correct.mjs";
 import {list_get} from "./list_get.mjs";
@@ -87,14 +89,10 @@ export function app_learn_code_quiz_inner(parent, source_get) {
         html_p_text(container_bottom, 'if you want , take another quiz above');
         html_p_text(container_bottom, 'otherwise , press the "next" button below');
         function container_bottom_hide() {
-            html_style(container_bottom, {
-                display: 'none'
-            });
+            html_style_display_none(container_bottom);
         }
         function container_bottom_show() {
-            html_style(container_bottom, {
-                display: 'block'
-            });
+            html_style_display_block(container_bottom);
         }
     }
 }
