@@ -19,9 +19,7 @@ export function server() {
     app.use(cors(options));
     app.use(express.json());
     app.use(bodyParser.json({limit: '50mb', type:'application/json'}));
-    app.use(bodyParser.text({limit: '50mb'}));
-    app.use(bodyParser.raw({limit: '50mb'}));
-    app.use(express.urlencoded({limit: '50mb'}));
+    app.use(bodyParser.urlencoded({limit: '50mb'}));
     app.post('/', async (req, res) => {
         let {body} = req;
         let {function_name, args} = body;
