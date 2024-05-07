@@ -36,7 +36,11 @@ export function app_code_edit(file_path) {
     });
     html_style_height_full(container);
     let container_top = html_div(container);
-    html_button_text_click(container_top, 'auto', noop);
+    html_style(container_top, {
+        'display': 'flex',
+        'flex-direction': 'row'
+    });
+    html_button_text_click(container_top, '⚡', noop);
     html_button_width_full_text_click(container_top, 'menu', lambda);
     function lambda() {
         let root = html_document_body_clear();
