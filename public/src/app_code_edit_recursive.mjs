@@ -29,6 +29,7 @@ export function app_code_edit_recursive(node, parent) {
             html_style_word_break_all(parent);
             let {specifiers} = node;
             let specifier = list_single(specifiers);
+            let {local,imported} = specifier;
             html_inner_set(parent, json_to(specifiers));
             break;
         default:
