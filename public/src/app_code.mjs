@@ -18,9 +18,7 @@ export async function app_code() {
     let input = html_element(root, 'input');
     html_focus(input);
     html_style_width_full(input);
-    html_style(input, {
-        'box-sizing': 'border-box'
-    });
+    html_style_border_box(input);
     app_learn_code_style_rounded_padded(input);
     let paths = object_properties(result);
     for (let p of paths) {
@@ -30,6 +28,12 @@ export async function app_code() {
         html_style_word_break_all(b);
     }
 }
+function html_style_border_box(input) {
+    html_style(input, {
+        'box-sizing': 'border-box'
+    });
+}
+
 function html_focus(input) {
     let { element } = input;
     element.focus();
