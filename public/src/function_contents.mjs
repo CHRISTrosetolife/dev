@@ -11,5 +11,6 @@ export async function function_contents() {
         };
     });
     await promise_all(mapped);
+    list_adder_async();
     return mapped;
 }
