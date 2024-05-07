@@ -34,7 +34,7 @@ export function app_code_search_function() {
     let list = list_adder(la => {
         for (let p of paths) {
             let name = function_path_to_name(p);
-            let button = html_button_width_full_text_click(root, name, () => {
+            let button = html_button_width_full_text_click(root, name, function on_click() {
                 app_code_backable(() => app_code_edit(p));
             });
             html_style_margin_x_0(button);
