@@ -35,6 +35,8 @@ export function app_code_edit_recursive(node, parent) {
                 let {type} = a;
                 assert(equal, [type, 'Identifier'])
             }
+            let {name:local_name} = local;
+            let {name:imported_name} = imported;
             html_inner_set(parent, json_to(specifiers));
             break;
         default:
