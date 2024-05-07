@@ -45,8 +45,9 @@ export function app_code_edit(file_path) {
     html_button_width_full_text_click(container_top, 'menu', lambda);
     function back() {
         let {back_stack} = global_get();
-        let p = list_pop(back_stack);
-        p();
+        list_pop(back_stack);
+        let last = list_last(back_stack)
+        p(last);
     }
     async function auto() {
         let function_name = function_path_to_name(file_path);
