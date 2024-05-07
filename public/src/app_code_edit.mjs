@@ -1,3 +1,4 @@
+import {list_last} from "./list_last.mjs";
 import {list_pop} from "./list_pop.mjs";
 import {app_code_backable} from "./app_code_backable.mjs";
 import {html_button_text_click} from "./html_button_text_click.mjs";
@@ -46,7 +47,7 @@ export function app_code_edit(file_path) {
     function back() {
         let {back_stack} = global_get();
         list_pop(back_stack);
-        let last = list_last(back_stack)
+        let last = list_last(back_stack);
         p(last);
     }
     async function auto() {
