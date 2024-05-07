@@ -9,9 +9,9 @@ import {html_hash} from "./html_hash.mjs";
 import {app_code_search_function} from "./app_code_search_function.mjs";
 import {function_name_to_path} from "./function_name_to_path.mjs";
 import {function_run} from "./function_run.mjs";
-import {functions_source} from "./functions_source.mjs";
 import {html_style_default_initialize} from "./html_style_default_initialize.mjs";
 import {object_property_set} from "./object_property_set.mjs";
+import { functions_source_get } from "./functions_source_get.mjs";
 export async function app_code() {
     html_style_default_initialize();
     let root = html_document_body();
@@ -20,7 +20,7 @@ export async function app_code() {
     for (let e of [html, root]) {
         html_style_height_full(e);
     }
-    let files = await function_run(functions_source.name, []);
+    let files = await function_run(functions_source_get.name, []);
     object_property_set(global_get(), 'files', files);
     if (html_hash_exists()) {
         html_hash({
