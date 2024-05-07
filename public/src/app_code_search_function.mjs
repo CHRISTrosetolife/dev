@@ -32,10 +32,11 @@ export function app_code_search_function(context) {
             });
             html_style_margin_x_0(button);
             html_style_word_break_all(button);
+            la({
+                name,
+                button
+            })
         }
-        la({
-            
-        })
     })
     html_on(input, 'input', () => {
         let value = html_value_get(input);
