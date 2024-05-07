@@ -8,6 +8,7 @@ import {js_parse} from "./js_parse.mjs";
 import {object_property_get} from "./object_property_get.mjs";
 import {html_inner_set} from "./html_inner_set.mjs";
 import {html_style} from "./html_style.mjs";
+import { html_style_background_color } from "./html_style_background_color.mjs";
 export function app_code_edit(context, file_path) {
     let root = html_document_body_clear();
     let container = html_div(root);
@@ -23,6 +24,7 @@ export function app_code_edit(context, file_path) {
             for (let b of body) {
                 let child = html_div(parent);
                 app_learn_code_style_rounded_padded(child);
+                html_style_background_color(child, 'black')
                 html_style(child, html_style_default_border_value('lightblue'));
                 html_style(child, html_style_margin_default_value());
                 html_inner_set(child, json_to(b));
