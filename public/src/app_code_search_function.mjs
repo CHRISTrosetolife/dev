@@ -1,9 +1,8 @@
-import {html_on_input} from "./html_on_input.mjs";
+import {html_on_input_value} from "./html_on_input_value.mjs";
 import {app_code_input} from "./app_code_input.mjs";
 import {html_style_display_none} from "./html_style_display_none.mjs";
 import {html_style_display_block} from "./html_style_display_block.mjs";
 import {string_includes} from "./string_includes.mjs";
-import {html_value_get} from "./html_value_get.mjs";
 import {html_style_margin_x_0} from "./html_style_margin_x_0.mjs";
 import {html_document_body_clear} from "./html_document_body_clear.mjs";
 import {app_code_edit} from "./app_code_edit.mjs";
@@ -37,9 +36,8 @@ export function app_code_search_function() {
             });
         }
     });
-    html_on_input(input, lambda);
-    function lambda() {
-        let value = html_value_get(input);
+    html_on_input_value(input, lambda);
+    function lambda(value) {
         for (let e of list) {
             let {name, button} = e;
             if (string_includes(name, value)) {
