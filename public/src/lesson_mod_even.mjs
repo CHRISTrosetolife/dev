@@ -31,7 +31,7 @@ export function lesson_mod_even() {
         return list_join_newline(lines);
     }, example_before, description, example_message, [screen1, screen2, screen3]);
     function example_before(parent) {
-        'suppose `n` is a number in javascipt'
+        let message = 'suppose `n` is a number in javascipt'
         'if `n % 2` is `0` , then `n` is an even number'
         'if `n % 2 === 0` is true , then `n` is an even number'
         'otherwise , `n` is an odd number'
