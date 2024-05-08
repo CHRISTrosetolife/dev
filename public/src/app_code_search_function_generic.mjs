@@ -32,7 +32,7 @@ import {string_get} from "./string_get.mjs";
 export function app_code_search_function_generic(input_value_initial, on_click_get) {
     let global = global_get();
     let {files, back_stack} = global;
-    let paths = object_properties(files);
+    let choices = object_properties(files);
     let root = html_document_body_clear();
     if (greater_than_equal(list_length(back_stack), 2)) {
         lambda_button(root, app_code_button_back_text(), app_code_back);
@@ -40,8 +40,8 @@ export function app_code_search_function_generic(input_value_initial, on_click_g
     let input = app_code_input(root);
     html_focus(input);
     let container_buttons = html_div(root);
-    list_sort_string(paths, identity);
-    list_sort(paths, p => string_length(p));
+    list_sort_string(choices, identity);
+    list_sort(choices, p => string_length(p));
     html_on_input_value(input, lambda);
     html_value_set(input, input_value_initial);
     lambda(input_value_initial);
@@ -53,7 +53,7 @@ export function app_code_search_function_generic(input_value_initial, on_click_g
     function lambda(value) {
         html_clear(container_buttons);
         let value_list = list_to(value);
-        let filtered = list_filter(paths, p => {
+        let filtered = list_filter(choices, p => {
             let name = function_path_to_name(p);
             let regex = list_join(value_list, '.*');
             return string_regex_match(name, regex);
