@@ -1,3 +1,4 @@
+import {html_button_width_full_text_click_x_0} from "./html_button_width_full_text_click_x_0.mjs";
 import {app_code_button_back_text} from "./app_code_button_back_text.mjs";
 import {app_code_back} from "./app_code_back.mjs";
 import {app_code_backable} from "./app_code_backable.mjs";
@@ -10,7 +11,6 @@ import {function_new_generic} from "./function_new_generic.mjs";
 import {html_focus} from "./html_focus.mjs";
 import {app_code_input} from "./app_code_input.mjs";
 import {each_object} from "./each_object.mjs";
-import {html_style_margin_x_0} from "./html_style_margin_x_0.mjs";
 import {app_code_search_function} from "./app_code_search_function.mjs";
 import {html_spellcheck_none} from "./html_spellcheck_none.mjs";
 import {html_style_border_box} from "./html_style_border_box.mjs";
@@ -60,16 +60,15 @@ export function app_code_edit(file_path) {
                 'add new function': () => {
                     app_code_backable(() => {
                         let root = html_document_body_clear();
-                        html_button_width_full_text_click(root, app_code_button_back_text(), app_code_back)
+                        html_button_width_full_text_click_x_0(root, app_code_button_back_text(), app_code_back);
                         let input = app_code_input(root);
                         html_focus(input);
-                        let add_new = html_button_width_full_text_click(root, 'add new function', async () => {
+                        let add_new = html_button_width_full_text_click_x_0(root, 'add new function', async () => {
                             let function_name = html_value_get(input);
                             await function_new_generic(function_name, '', '', false, [], false);
                             let file_path = function_name_to_path(function_name);
                             app_code_edit(file_path);
                         });
-                        html_style_margin_x_0(add_new);
                     });
                 },
                 'save functions': async () => {
@@ -82,8 +81,7 @@ export function app_code_edit(file_path) {
             };
             each_object(choices, lambda2);
             function lambda2(key, value) {
-                let b = html_button_width_full_text_click(root, key, value);
-                html_style_margin_x_0(b);
+                html_button_width_full_text_click_x_0(root, key, value);
             }
         });
     }
