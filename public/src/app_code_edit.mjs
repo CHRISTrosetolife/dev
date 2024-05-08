@@ -1,3 +1,6 @@
+import {js_identifier_rename} from "./js_identifier_rename.mjs";
+import {function_transform_args_split} from "./function_transform_args_split.mjs";
+import {app_code_search_function_generic} from "./app_code_search_function_generic.mjs";
 import {app_learn_code_source_to_tokens} from "./app_learn_code_source_to_tokens.mjs";
 import {html_style_hide_until} from "./html_style_hide_until.mjs";
 import {html_button_width_full_text_click_x_0} from "./html_button_width_full_text_click_x_0.mjs";
@@ -56,6 +59,8 @@ export function app_code_edit(file_path) {
         let filtered = list_filter(tokens, t => string_starts_with(t, search_prefix));
         app_code_search_function_generic(file_path_choice => {
             let function_name = function_path_to_name(file_path_choice);
+            function_transform_args_split;
+            js_identifier_rename;
         });
         let function_name = function_path_to_name(file_path);
         await function_auto(function_name);
