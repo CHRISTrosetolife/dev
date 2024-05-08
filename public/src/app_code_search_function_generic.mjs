@@ -49,6 +49,7 @@ export function app_code_search_function_generic(input_value_initial, on_click_g
         html_clear(container_buttons);
         let value_list = list_to(value);
         let filtered = list_filter(paths, p => {
+            let name = function_path_to_name(p);
             let regex = list_join(value_list, '.*');
             return string_regex_match(name, regex);
         });
