@@ -148,13 +148,15 @@ export function app_code_edit(file_path) {
             });
             html_button_width_full_text_click_x_0(root, 'rename identifier', () => {
                 app_code_backable(() => app_code_search_function_generic('', (identifier_from) => {
-                    let root = html_document_body_clear();
-                    let input = app_code_input(root);
-                    html_focus(input);
-                    html_button_width_full_text_click_x_0(root, 'rename identifier', async () => {
-                        let identifier_to = html_value_get(input);
-                        await function_transform_args_split(js_identifier_rename.name, function_name, [identifier_from,identifier_to]);
-                    });
+                    return () => {
+                        let root = html_document_body_clear();
+                        let input = app_code_input(root);
+                        html_focus(input);
+                        html_button_width_full_text_click_x_0(root, 'rename identifier', async () => {
+                            let identifier_to = html_value_get(input);
+                            await function_transform_args_split(js_identifier_rename.name, function_name, [identifier_from,identifier_to]);
+                        });
+                    }
                 }, js_identifiers(js_parse(object_property_get(files, file_path))), identity));
             });
             html_button_width_full_text_click_x_0(root, 'copy function', () => {
