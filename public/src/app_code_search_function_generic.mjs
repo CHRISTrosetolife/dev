@@ -60,7 +60,7 @@ export function app_code_search_function_generic(input_value_initial, on_click_g
         for (let p of taken) {
             let name = function_path_to_name(p);
             let button = lambda_button(container_buttons, 'name', on_click_get(p));
-            list_adder(la => {
+            let found = list_adder(la => {
                 let v = 0;
                 for (let i of range(string_length(name))) {
                     if (equal(string_get(name, i),string_get(value, v))) {
@@ -69,6 +69,7 @@ export function app_code_search_function_generic(input_value_initial, on_click_g
                     }
                 }
             })
+            console.log({name,found})
             html_style_monospace(button);
         }
     }
