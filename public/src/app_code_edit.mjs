@@ -105,7 +105,7 @@ export function app_code_edit(file_path) {
                 })();`;
                 console.log({
                     code,
-                    e: eval(code)
+                    e: eval(code) || 'ee'
                 });
             });
             html_inner_set(transform, 'run function_transform');
