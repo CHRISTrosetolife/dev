@@ -47,25 +47,20 @@ export function app_code_search_function_generic(input_value_initial, on_click_g
     }
     function lambda(value) {
         html_clear(container_buttons)
-        let list = list_adder(la => {
-            for (let p of paths) {
-                let name = function_path_to_name(p);
-                let button = lambda_button(container_buttons, name, on_click_get(p));
-                html_style_monospace(button);
-                la({
-                    name,
-                    button: button
-                });
-            }
-        });
-        for (let e of list) {
-            let {name, button} = e;
+        for (let p of paths) {
+            let name = function_path_to_name(p);
+            let button = lambda_button(container_buttons, name, on_click_get(p));
+            html_style_monospace(button);
             let regex = list_join(list_to(value), '.*');
             if (name.match(regex)) {
                 html_style_display_block(button);
             } else {
                 html_style_display_none(button);
             }
+            la({
+                name,
+                button: button
+            });
         }
     }
 }
