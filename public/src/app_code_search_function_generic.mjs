@@ -18,7 +18,7 @@ import {list_length} from "./list_length.mjs";
 import {greater_than_equal} from "./greater_than_equal.mjs";
 import {html_document_body_clear} from "./html_document_body_clear.mjs";
 import {global_get} from "./global_get.mjs";
-export function app_code_search_function_generic(on_click_get) {
+export function app_code_search_function_generic(input_value_initial, on_click_get) {
     let global = global_get();
     let {files, back_stack} = global;
     let root = html_document_body_clear();
