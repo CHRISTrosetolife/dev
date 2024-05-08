@@ -71,10 +71,6 @@ export function app_code_search_function_generic(input_value_initial, on_click_g
                     html_style_background_color(character, 'yellow');
                 }
             }
-            console.log({
-                name,
-                found
-            });
             html_style_monospace(button);
         }
     }
