@@ -6,7 +6,7 @@ import {js_code_statement_let_assign} from "./js_code_statement_let_assign.mjs";
 import {app_learn_code_log_delimit} from "./app_learn_code_log_delimit.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
 export function lesson_if_else_nested_if() {
-    let description = 'checking if a number is even';
+    let description = 'nested if';
     let example_message = 'outputting whether or not a number is even';
     return lesson_simple(function () {
         let a = integer_random_digit_single_positive();
