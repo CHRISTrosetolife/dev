@@ -57,6 +57,7 @@ import {html_span_text} from "./html_span_text.mjs";
 import { identity } from "./identity.mjs";
 import { js_identifiers } from "./js_identifiers.mjs";
 import { string_combine } from "./string_combine.mjs";
+import { html_value_set } from "./html_value_set.mjs";
 export function app_code_edit(file_path) {
     console.log({
         g: global_get()
@@ -152,6 +153,7 @@ export function app_code_edit(file_path) {
                         let root = html_document_body_clear();
                         html_button_width_full_text_click_x_0(root, app_code_button_back_text(), app_code_back);
                         let input = app_code_input(root);
+                        html_value_set(input, identifier_from)
                         html_focus(input);
                         html_button_width_full_text_click_x_0(root, 'rename identifier', async () => {
                             let identifier_to = html_value_get(input);
