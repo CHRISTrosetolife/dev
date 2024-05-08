@@ -7,6 +7,6 @@ export function app_learn_code_code_part_generic(create, parent, source_code, ba
     app_learn_code_style_code(code);
     html_style_margin_none(code);
     html_style_word_break_all(code);
-    html_style_background_color(background_color);
+    html_style_background_color(code, background_color);
     return code;
 }
