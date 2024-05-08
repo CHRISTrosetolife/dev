@@ -9,10 +9,18 @@ export function lesson_if_else_nested_if() {
     let example_message = 'outputting whether or not a number is even';
     return lesson_simple(function () {
         let a = integer_random_digit_single_positive();
-        let lines = [js_code_statement_let_assign('is_even', `${a} % 2 === 0`), `if (is_even) {`, app_learn_code_log_delimit('number is even'), `} else {`, app_learn_code_log_delimit('number is odd'), `}`];
+        
+        let lines2 = [
+        js_code_statement_let_assign('is_positive', `${a} > 0`),
+        js_code_statement_let_assign('is_even', `${a} % 2 === 0`)
+        `if (is_positive) {`, app_learn_code_log_delimit(`number is ${category}`), `} else {`, app_learn_code_log_delimit(`number is not ${category}`), `}`];
+        
+        let lines = [, `if (is_even) {`, app_learn_code_log_delimit('number is even'), `} else {`, app_learn_code_log_delimit('number is odd'), `}`];
         return list_join_newline(lines);
     }, example_before, description, example_message, [screen1]);
-    function example_before(parent) {}
+    function example_before(parent) {
+        'an if can be inside another if'
+    }
     function screen1(parent) {
         html_style_alternate_monospace_short(parent, 'suppose `n` is a number in javascipt');
         html_style_alternate_monospace_short(parent, 'if `n % 2` is `0` , then `n` is an even number');

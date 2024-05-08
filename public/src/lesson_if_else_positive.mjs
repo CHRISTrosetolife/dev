@@ -1,3 +1,4 @@
+import {js_code_statement_let_assign} from "./js_code_statement_let_assign.mjs";
 import {app_learn_code_log_delimit} from "./app_learn_code_log_delimit.mjs";
 import {list_join_newline} from "./list_join_newline.mjs";
 import {html_style_alternate_bold} from "./html_style_alternate_bold.mjs";
@@ -15,7 +16,7 @@ export function lesson_if_else_positive() {
         if (integer_random(1, 3) === 1) {
             a = 0;
         }
-        let lines = [`let is_positive = ${a} > 0;`, `if (is_positive) {`, app_learn_code_log_delimit(`number is ${category}`), `} else {`, app_learn_code_log_delimit(`number is not ${category}`), `}`];
+        let lines = [js_code_statement_let_assign('is_positive', `${a} > 0`), `if (is_positive) {`, app_learn_code_log_delimit(`number is ${category}`), `} else {`, app_learn_code_log_delimit(`number is not ${category}`), `}`];
         return list_join_newline(lines);
     }, example_before, description, example_message, []);
     function example_before(parent) {
