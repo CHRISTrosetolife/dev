@@ -1,1 +1,3 @@
-export function js_data(ast) {}
+export function js_data(ast) {
+    $;
+}
