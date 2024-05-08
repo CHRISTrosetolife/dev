@@ -1,3 +1,4 @@
+import {js_code_call_args} from "./js_code_call_args.mjs";
 import {object_values} from "./object_values.mjs";
 import {list_empty_is} from "./list_empty_is.mjs";
 import {js_identifier_rename} from "./js_identifier_rename.mjs";
@@ -40,8 +41,8 @@ import {string_starts_with} from "./string_starts_with.mjs";
 import {list_first} from "./list_first.mjs";
 import {string_skip} from "./string_skip.mjs";
 import {string_length} from "./string_length.mjs";
-import { list_join } from "./list_join.mjs";
-import { newline } from "./newline.mjs";
+import {list_join} from "./list_join.mjs";
+import {newline} from "./newline.mjs";
 export function app_code_edit(file_path) {
     let function_name = function_path_to_name(file_path);
     let root = html_document_body_clear();
@@ -91,8 +92,10 @@ export function app_code_edit(file_path) {
                 let code = `(() => {
                     ${js_code_call_args(function_transform_args_split.name, [function_name])}
                     ${list_join(sources, newline())}
-                })();`
-                console.log({e:eval(code)})
+                })();`;
+                console.log({
+                    e: eval(code)
+                });
             });
             html_inner_set(transform, 'run function_transform');
             html_button_width_full_text_click_x_0(root, 'add new function', () => {
