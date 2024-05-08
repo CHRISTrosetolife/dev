@@ -38,7 +38,7 @@ export function lesson_mod_even() {
     function screen1(parent) {
         html_style_alternate_monospace_short(parent, 'suppose `n` is a number in javascipt');
         html_style_alternate_monospace_short(parent, 'if `n % 2` is `0` , then `n` is an even number');
-        html_style_alternate_monospace_short(parent, 'if `n % 2 === 0` is true , then `n` is an even number');
+        html_style_alternate_monospace_short(parent, 'if `n % 2 === 0` is `true` , then `n` is an even number');
         html_style_alternate_monospace_short(parent, 'otherwise , `n` is an odd number');
     }
 }
