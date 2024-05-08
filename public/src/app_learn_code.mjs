@@ -105,7 +105,9 @@ export function app_learn_code() {
         html_p_text(root, 'or choose a lesson below :');
         for (let lesson of lessons) {
             let {description} = lesson;
-            html_button_width_full_text_click(root, description, () => refresh_lesson(lesson));
+            let b = html_button_width_full_text_click(root, '', () => refresh_lesson(lesson));
+            html_style_alternate_monospace_short(b, description);
+
         }
     }
     refresh_main();
