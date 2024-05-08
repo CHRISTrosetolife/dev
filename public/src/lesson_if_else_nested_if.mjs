@@ -15,7 +15,7 @@ export function lesson_if_else_nested_if() {
         return list_join_newline(lines);
     }, example_before, description, example_message, []);
     function example_before(parent) {
-        'an `if` can be inside another `if`';
-        'this is called a nested `if`'
+        html_style_alternate_monospace_short(parent, 'an `if` can be inside another `if`');
+        html_style_alternate_monospace_short(parent, 'this is called a nested `if`')
     }
 }
