@@ -34,26 +34,26 @@ export function app_code_search_function_generic(input_value_initial, on_click_g
     let paths = object_properties(files);
     list_sort_string(paths, identity);
     list_sort(paths, p => string_length(p));
-    let list = list_adder(la => {
-        for (let p of paths) {
-            let name = function_path_to_name(p);
-            let button = lambda_button(name, on_click_get(p));
-            html_style_monospace(button);
-            la({
-                name,
-                button: button
-            });
-        }
-    });
     html_on_input_value(input, lambda);
     html_value_set(input, input_value_initial);
     lambda(input_value_initial);
-    function lambda_button(name, on_click) {
-        let b = html_button_width_full_text_click_x_0(root, name, on_click);
+    function lambda_button(parent, name, on_click) {
+        let b = html_button_width_full_text_click_x_0(parent, name, on_click);
         html_style_word_break_all(b);
         return b;
     }
     function lambda(value) {
+        let list = list_adder(la => {
+            for (let p of paths) {
+                let name = function_path_to_name(p);
+                let button = lambda_button(root, name, on_click_get(p));
+                html_style_monospace(button);
+                la({
+                    name,
+                    button: button
+                });
+            }
+        });
         for (let e of list) {
             let {name, button} = e;
             let regex = list_join(list_to(value), '.*');
