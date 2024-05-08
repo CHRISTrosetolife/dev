@@ -103,6 +103,7 @@ export function app_code_edit(file_path) {
                     ${list_join(mapped, newline())}
                 })();`;
                 console.log({
+                    code,
                     e: eval(code)
                 });
             });
