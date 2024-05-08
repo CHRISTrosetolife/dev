@@ -68,7 +68,7 @@ export function app_code_search_function_generic(input_value_initial, on_click_g
                 let character = html_span_text(button, n);
                 if (equal(n, string_get(value, v))) {
                     v++;
-                    html_style_background_color;
+                    html_style_background_color(character, 'yellow');
                 }
             }
             console.log({
