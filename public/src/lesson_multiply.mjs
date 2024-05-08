@@ -6,7 +6,7 @@ import {noop} from "./noop.mjs";
 import {html_style_monospace} from "./html_style_monospace.mjs";
 export function lesson_multiply() {
     const example_message = 'mutiplying two numbers';
-    const description = 'multiplication ( * )';
+    const description = 'multiplication ( `*` )';
     return lesson_simple(function () {
         let a = integer_random_digit_single_positive();
         let b = integer_random_digit_single_positive();

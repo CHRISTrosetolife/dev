@@ -5,7 +5,7 @@ import {html_style_alternate} from "./html_style_alternate.mjs";
 import {noop} from "./noop.mjs";
 import {html_style_monospace} from "./html_style_monospace.mjs";
 export function lesson_subtract() {
-    const example_message = 'subtraction ( - )';
+    const example_message = 'subtraction ( `-` )';
     const description = example_message;
     return lesson_simple(function () {
         let a = integer_random_digit_single_positive();

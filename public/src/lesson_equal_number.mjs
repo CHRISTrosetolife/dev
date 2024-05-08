@@ -9,7 +9,7 @@ import {random_50_50} from "./random_50_50.mjs";
 import {html_ul} from "./html_ul.mjs";
 import {html_li_text} from "./html_li_text.mjs";
 export function lesson_equal_number() {
-    const description = 'equal ( === ) ( numbers )';
+    const description = 'equal ( `===` ) ( numbers )';
     const example_message = 'outputting whether or not two numbers are equal';
     return lesson_simple(source_get, example_before, description, example_message, [screen_before1, screen_before2]);
     function source_get() {

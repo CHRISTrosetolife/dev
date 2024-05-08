@@ -6,7 +6,7 @@ import {noop} from "./noop.mjs";
 import {html_style_monospace} from "./html_style_monospace.mjs";
 export function lesson_divide() {
     const example_message = 'dividing two numbers';
-    const description = 'division ( / )';
+    const description = 'division ( `/` )';
     return lesson_simple(function () {
         let {dividend, divisor} = lesson_divide_numbers();
         return `console.log(${dividend} / ${divisor});`;

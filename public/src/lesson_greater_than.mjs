@@ -8,7 +8,7 @@ import {html_style_bold} from "./html_style_bold.mjs";
 import {html_ul} from "./html_ul.mjs";
 import {html_li_text} from "./html_li_text.mjs";
 export function lesson_greater_than() {
-    const description = 'greater than ( > )';
+    const description = 'greater than ( `>` )';
     const example_message = 'outputting whether or not a number is greater than another number';
     return lesson_simple(lesson_comparisons_source_get_get('>'), example_before, description, example_message, [screen_before1]);
     function screen_before1(parent) {
