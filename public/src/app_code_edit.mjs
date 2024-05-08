@@ -50,6 +50,7 @@ import {js_declaration_single} from "./js_declaration_single.mjs";
 import {js_unparse} from "./js_unparse.mjs";
 import {json_to} from "./json_to.mjs";
 import {html_style_monospace} from "./html_style_monospace.mjs";
+import { html_span_text } from "./html_span_text.mjs";
 export function app_code_edit(file_path) {
     console.log({
         g: global_get()
@@ -118,7 +119,10 @@ export function app_code_edit(file_path) {
                     html_inner_set(result_div,json_to(result));
                 });
             });
-            html_inner_set(transform, 'run function_transform');
+            html_inner_set(transform, );
+            html_span_text(transform, 'run ')
+            let s = html_span_text(transform, function_transform_args_split.name)
+            html_style_monospace(s)
             html_button_width_full_text_click_x_0(root, 'add new function', () => {
                 app_code_backable(() => {
                     let root = html_document_body_clear();
