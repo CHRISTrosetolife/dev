@@ -13,7 +13,14 @@ export function lesson_if_else_nested_if() {
         let lines2 = [
         js_code_statement_let_assign('is_positive', `${a} > 0`),
         js_code_statement_let_assign('is_even', `${a} % 2 === 0`)
-        `if (is_positive) {`, app_learn_code_log_delimit(`number is ${category}`), `} else {`, app_learn_code_log_delimit(`number is not ${category}`), `}`];
+        `if (is_positive) {`,
+            app_learn_code_log_delimit(`number is positive`), 
+            `if (is_even) {`, 
+                app_learn_code_log_delimit('number is even'), 
+            `}`,
+        `} else {`, 
+            app_learn_code_log_delimit(`number is not positive`), 
+        `}`];
         
         let lines = [, `if (is_even) {`, app_learn_code_log_delimit('number is even'), `} else {`, app_learn_code_log_delimit('number is odd'), `}`];
         return list_join_newline(lines);
