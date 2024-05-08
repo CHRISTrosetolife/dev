@@ -1,3 +1,5 @@
+import {a} from "./a.mjs";
+import {html_style_alternate_monospace_short} from "./html_style_alternate_monospace_short.mjs";
 import {mod} from "./mod.mjs";
 import {floor} from "./floor.mjs";
 import {list_join_newline} from "./list_join_newline.mjs";
@@ -8,7 +10,6 @@ import {html_li_text} from "./html_li_text.mjs";
 import {html_p_text} from "./html_p_text.mjs";
 import {lesson_simple} from "./lesson_simple.mjs";
 import {equal} from "./equal.mjs";
-import {integer_random_digit_single} from "./integer_random_digit_single.mjs";
 import {html_ul} from "./html_ul.mjs";
 import {html_hr} from "./html_hr.mjs";
 import {range} from "./range.mjs";
@@ -22,7 +23,6 @@ import {list_index_last} from "./list_index_last.mjs";
 import {html_style_background_color} from "./html_style_background_color.mjs";
 import {each_index} from "./each_index.mjs";
 import {integer_random_digit_single_positive} from "./integer_random_digit_single_positive.mjs";
-import { string_split } from "./string_split.mjs";
 export function lesson_mod_even() {
     let description = 'checking if a number is even';
     let example_message = 'outputting whether or not a number is even';
@@ -32,11 +32,11 @@ export function lesson_mod_even() {
         return list_join_newline(lines);
     }, example_before, description, example_message, [screen1, screen2, screen3]);
     function example_before(parent) {
-        let message = 'suppose `n` is a number in javascipt'
+        let message = 'suppose `n` is a number in javascipt';
         html_style_alternate_monospace_short(parent, message);
-        'if `n % 2` is `0` , then `n` is an even number'
-        'if `n % 2 === 0` is true , then `n` is an even number'
-        'otherwise , `n` is an odd number'
+        'if `n % 2` is `0` , then `n` is an even number';
+        'if `n % 2 === 0` is true , then `n` is an even number';
+        'otherwise , `n` is an odd number';
         html_style_alternate_monospace(parent, ['in javascript , to get the remainder of ', 'dividend', ' use ', '%', ' like this : ', 'dividend % divisor']);
     }
     function screen1(parent) {
@@ -178,8 +178,3 @@ export function lesson_mod_even() {
         html_p_text(parent, 'the remainder can be used to check whether a number is even or odd');
     }
 }
-function html_style_alternate_monospace_short(parent, message) {
-    let split = string_split(message, '`');
-    html_style_alternate_monospace(parent, split);
-}
-
