@@ -336,7 +336,6 @@ export async function app_memorize() {
 }
 function html_style_margin_default(b) {
     html_style(b, {
-        margin: '0.25dvh',
+        margin: '0.25dvh'
     });
 }
-

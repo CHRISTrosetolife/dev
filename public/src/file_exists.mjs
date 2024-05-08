@@ -1,8 +1,8 @@
 import {global_get} from "./global_get.mjs";
 import {web_is} from './web_is.mjs';
 import {import_node} from './import_node.mjs';
-import { object_properties } from "./object_properties.mjs";
-import { list_includes } from "./list_includes.mjs";
+import {object_properties} from "./object_properties.mjs";
+import {list_includes} from "./list_includes.mjs";
 let fs = await import_node('fs');
 export function file_exists(file_name) {
     if (web_is()) {

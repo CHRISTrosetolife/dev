@@ -1,7 +1,7 @@
 import {server_port} from "./server_port.mjs";
 import {http_post} from "./http_post.mjs";
 import {function_import} from './function_import.mjs';
-import { web_is } from "./web_is.mjs";
+import {web_is} from "./web_is.mjs";
 export async function function_run(function_name, args) {
     let result;
     if (web_is()) {

@@ -90,7 +90,7 @@ export function app_code_edit(file_path) {
                     await function_transform_args_split(js_identifier_rename.name, function_name, [first, function_name_choice]);
                     await auto();
                 };
-            });
+            }, undefined);
         }
     }
     function lambda() {
@@ -151,8 +151,11 @@ export function app_code_edit(file_path) {
                     html_button_width_full_text_click_x_0(root, 'copy function', async () => {
                         let function_name_copy = html_value_get(input);
                         await function_copy(function_name, function_name_copy);
-                        let file_path_copy = function_name_to_path(function_name_copy)
-                        console.log({file_path_copy, g:object_property_get(global_get(), file_path_copy)})
+                        let file_path_copy = function_name_to_path(function_name_copy);
+                        console.log({
+                            file_path_copy,
+                            g: object_property_get(global_get(), file_path_copy)
+                        });
                         app_code_backable(() => app_code_edit(file_path_copy));
                     });
                 });

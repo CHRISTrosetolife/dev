@@ -10,7 +10,7 @@ import {html_p_text} from "./html_p_text.mjs";
 import {lesson_simple} from "./lesson_simple.mjs";
 import {string_combine} from "./string_combine.mjs";
 import {list_map} from "./list_map.mjs";
-import { lesson_console_log_quiz_value } from "./lesson_console_log_quiz_value.mjs";
+import {lesson_console_log_quiz_value} from "./lesson_console_log_quiz_value.mjs";
 export function lesson_if_else() {
     let description = 'if with else';
     let example_message = string_combine('with an ', description);
