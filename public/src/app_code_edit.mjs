@@ -1,3 +1,4 @@
+import {app_code_back_multiple} from "./app_code_back_multiple.mjs";
 import {function_copy} from "./function_copy.mjs";
 import {html_style_pre_wrap} from "./html_style_pre_wrap.mjs";
 import {js_code_call_args} from "./js_code_call_args.mjs";
@@ -52,10 +53,6 @@ import {js_unparse} from "./js_unparse.mjs";
 import {json_to} from "./json_to.mjs";
 import {html_style_monospace} from "./html_style_monospace.mjs";
 import {html_span_text} from "./html_span_text.mjs";
-import {assert} from "./assert.mjs";
-import {greater_than_equal} from "./greater_than_equal.mjs";
-import {list_length} from "./list_length.mjs";
-import {range} from "./range.mjs";
 export function app_code_edit(file_path) {
     console.log({
         g: global_get()
@@ -120,11 +117,7 @@ export function app_code_edit(file_path) {
                     html_button_width_full_text_click_x_0(root, app_code_button_back_text(), app_code_back);
                     html_button_width_full_text_click_x_0(root, 'back to edit', () => {
                         let count = 2;
-                        let {back_stack} = global_get();
-                        assert(greater_than_equal, [list_length(back_stack), count]);
-                        for (let i of range(count)) {
-                            app_code_back();
-                        }
+                        app_code_back_multiple(count);
                     });
                     let result_div = html_div(root);
                     html_style_monospace(result_div);
@@ -157,7 +150,8 @@ export function app_code_edit(file_path) {
                     html_focus(input);
                     html_button_width_full_text_click_x_0(root, 'copy', async () => {
                         let function_name_copy = html_value_get(input);
-                        await function_copy(function_name, function_name_copy)
+                        await function_copy(function_name, function_name_copy);
+                        app_code_back_multiple(2);
                         app_code_backable(() => app_code_edit(file_path));
                     });
                 });
