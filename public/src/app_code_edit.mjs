@@ -100,7 +100,7 @@ export function app_code_edit(file_path) {
                 });
                 let code = `(() => {
                     ${list_join(mapped, newline())}
-                    return ${js_code_call_args(function_transform_args_split.name, [`${function_name}.name`, function_name])}
+                    return ${js_code_call_args(function_transform_args_split.name, [`${function_name}.name`, function_name, []])}
                 })();`;
                 console.log({
                     code,
