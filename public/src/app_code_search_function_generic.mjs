@@ -19,6 +19,7 @@ import {list_length} from "./list_length.mjs";
 import {greater_than_equal} from "./greater_than_equal.mjs";
 import {html_document_body_clear} from "./html_document_body_clear.mjs";
 import {global_get} from "./global_get.mjs";
+import { string_length } from "./string_length.mjs";
 export function app_code_search_function_generic(input_value_initial, on_click_get) {
     let global = global_get();
     let {files, back_stack} = global;
@@ -30,6 +31,7 @@ export function app_code_search_function_generic(input_value_initial, on_click_g
     html_focus(input);
     let paths = object_properties(files);
     list_sort_string(paths, identity);
+    list_sort(paths, p => string_length(p))
     let list = list_adder(la => {
         for (let p of paths) {
             let name = function_path_to_name(p);
