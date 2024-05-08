@@ -53,8 +53,8 @@ export function app_code_search_function_generic(input_value_initial, on_click_g
     function lambda(value) {
         html_clear(container_buttons);
         let value_list = list_to(value);
-        let filtered = list_filter(choices, p => {
-            let name = function_path_to_name(p);
+        let filtered = list_filter(choices, choice => {
+            let name = function_path_to_name(choice);
             let regex = list_join(value_list, '.*');
             return string_regex_match(name, regex);
         });
