@@ -56,8 +56,8 @@ export function app_code_search_function() {
     function lambda(value) {
         for (let e of list) {
             let {name, button} = e;
-            let regex = list_join(Array.from(value), '.*')
-            if (string_includes(name, value)) {
+            let regex = list_join(list_to(value), '.*')
+            if (name.match(regex)) {
                 html_style_display_block(button);
             } else {
                 html_style_display_none(button);
@@ -65,3 +65,7 @@ export function app_code_search_function() {
         }
     }
 }
+function list_to(value) {
+    return Array.from(value);
+}
+
