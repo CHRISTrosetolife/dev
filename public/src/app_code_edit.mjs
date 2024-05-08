@@ -48,6 +48,7 @@ import {js_parse} from "./js_parse.mjs";
 import {js_declaration_single} from "./js_declaration_single.mjs";
 import {js_unparse} from "./js_unparse.mjs";
 import { json_to } from "./json_to.mjs";
+import { html_style_monospace } from "./html_style_monospace.mjs";
 export function app_code_edit(file_path) {
     console.log({
         g: global_get()
@@ -111,8 +112,9 @@ export function app_code_edit(file_path) {
                     let result = await eval(code);
                     html_button_width_full_text_click(root, app_code_button_back_text(), app_code_back);
                     let result_div = html_div(result);
-                    html_inner_set(json_to(result))
+                    html_style_monospace(result_div)
                     html_style_pre_wrap(result_div);
+                    html_inner_set(json_to(result))
                 });
             });
             html_inner_set(transform, 'run function_transform');
