@@ -99,7 +99,7 @@ export function app_code_edit(file_path) {
                     return js_unparse(d);
                 });
                 let code = `(() => {
-                    ${js_code_call_args(function_transform_args_split.name, [function_name])}
+                    ${js_code_call_args(function_transform_args_split.name, [`${function_name}.name`])}
                     ${list_join(mapped, newline())}
                 })();`;
                 code = '1+2'
