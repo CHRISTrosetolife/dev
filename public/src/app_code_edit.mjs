@@ -75,10 +75,7 @@ export function app_code_edit(file_path) {
                 },
                 'save functions': async () => {
                     let {files} = global_get();
-                    let lambda3 = async () => await function_run(functions_source_set.name, [files]);
-                    html_style_hidden(root);
-                    await lambda3();
-                    html_style_visible(root);
+                    await html_style_hide_until(root, async () => await function_run(functions_source_set.name, [files]));
                 },
                 'download functions': async () => {
                     await app_code_download();
@@ -105,3 +102,9 @@ export function app_code_edit(file_path) {
     html_style_width_full(ta);
     html_style_height_full(ta);
 }
+async function html_style_hide_until(root, lambda3) {
+    html_style_hidden(root);
+    await lambda3();
+    html_style_visible(root);
+}
+
