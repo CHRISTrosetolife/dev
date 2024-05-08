@@ -157,9 +157,7 @@ export function app_code_edit(file_path) {
                     html_focus(input);
                     html_button_width_full_text_click_x_0(root, 'copy', async () => {
                         let function_name_copy = html_value_get(input);
-                        function_copy;
-                        await function_new_generic(function_name, '', '', false, [], false);
-                        let file_path = function_name_to_path(function_name);
+                        await function_copy(function_name, function_name_copy)
                         app_code_backable(() => app_code_edit(file_path));
                     });
                 });
