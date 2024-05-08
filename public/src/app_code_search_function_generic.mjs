@@ -29,9 +29,7 @@ import {html_clear} from "./html_clear.mjs";
 import {list_filter} from "./list_filter.mjs";
 import {range} from "./range.mjs";
 import {string_get} from "./string_get.mjs";
-export function app_code_search_function_generic(input_value_initial, on_click_get, choices) {
-    let choices = app_code_global_file_paths();
-    let choice_to_name = function_path_to_name;
+export function app_code_search_function_generic(input_value_initial, on_click_get, choices, choice_to_name) {
     let global = global_get();
     let {back_stack} = global;
     let root = html_document_body_clear();

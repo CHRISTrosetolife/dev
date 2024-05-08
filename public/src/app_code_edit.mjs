@@ -91,7 +91,7 @@ export function app_code_edit(file_path) {
                     await function_transform_args_split(js_identifier_rename.name, function_name, [first, function_name_choice]);
                     await auto();
                 };
-            }, app_code_global_file_paths());
+            }, app_code_global_file_paths(), function_path_to_name);
         }
     }
     function lambda() {
