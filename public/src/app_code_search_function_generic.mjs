@@ -1,3 +1,4 @@
+import {equal} from "./equal.mjs";
 import {list_take} from "./list_take.mjs";
 import {string_regex_match} from "./string_regex_match.mjs";
 import {html_style_monospace} from "./html_style_monospace.mjs";
@@ -24,9 +25,9 @@ import {string_length} from "./string_length.mjs";
 import {html_div} from "./html_div.mjs";
 import {html_clear} from "./html_clear.mjs";
 import {list_filter} from "./list_filter.mjs";
-import { range } from "./range.mjs";
-import { string_get } from "./string_get.mjs";
-import { list_adder } from "./list_adder.mjs";
+import {range} from "./range.mjs";
+import {string_get} from "./string_get.mjs";
+import {list_adder} from "./list_adder.mjs";
 export function app_code_search_function_generic(input_value_initial, on_click_get) {
     let global = global_get();
     let {files, back_stack} = global;
@@ -63,13 +64,16 @@ export function app_code_search_function_generic(input_value_initial, on_click_g
             let found = list_adder(la => {
                 let v = 0;
                 for (let i of range(string_length(name))) {
-                    if (equal(string_get(name, i),string_get(value, v))) {
+                    if (equal(string_get(name, i), string_get(value, v))) {
                         la(v);
                         v++;
                     }
                 }
-            })
-            console.log({name,found})
+            });
+            console.log({
+                name,
+                found
+            });
             html_style_monospace(button);
         }
     }
