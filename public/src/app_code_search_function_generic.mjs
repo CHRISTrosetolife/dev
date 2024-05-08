@@ -1,3 +1,4 @@
+import {html_value_set} from "./html_value_set.mjs";
 import {html_style_display_none} from "./html_style_display_none.mjs";
 import {html_style_display_block} from "./html_style_display_block.mjs";
 import {list_to} from "./list_to.mjs";
@@ -26,6 +27,7 @@ export function app_code_search_function_generic(input_value_initial, on_click_g
         lambda_button(app_code_button_back_text(), app_code_back);
     }
     let input = app_code_input(root);
+    html_value_set(input, input_value_initial);
     html_focus(input);
     let paths = object_properties(files);
     list_sort_string(paths, identity);
