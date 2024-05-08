@@ -93,10 +93,11 @@ export function app_code_edit(file_path) {
                 app_code_backable(() => app_code_search_function());
             });
             let transform = html_button_width_full_text_click_x_0(root, '', async () => {
-                app_code_backable(() => {
+                app_code_backable(async () => {
                     
                     let root = html_document_body_clear();
-                })
+
+                    
                 let sources = object_values(files);
                 let mapped = list_map(sources, s => {
                     let ast = js_parse(s);
@@ -107,10 +108,9 @@ export function app_code_edit(file_path) {
                     ${list_join(mapped, newline())}
                     return ${js_code_call_args(function_transform_args_split.name, [`${function_name}.name`, `${function_name}.name`, '[]'])}
                 })();`;
-                console.log({
-                    code,
-                    e: await eval(code) || 'ee'
-                });
+                let result = await eval(code) 
+
+                })
             });
             html_inner_set(transform, 'run function_transform');
             html_button_width_full_text_click_x_0(root, 'add new function', () => {
