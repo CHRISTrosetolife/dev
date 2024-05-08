@@ -31,6 +31,7 @@ export function lesson_mod_even() {
         return list_join_newline(lines);
     }, example_before, description, example_message, [screen1, screen2, screen3]);
     function example_before(parent) {
+        'suppose n is a number in javascipt'
         html_style_alternate_monospace(parent, ['in javascript , to get the remainder of ', 'dividend', ' use ', '%', ' like this : ', 'dividend % divisor']);
     }
     function screen1(parent) {
