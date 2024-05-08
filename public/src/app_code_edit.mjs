@@ -62,13 +62,13 @@ export function app_code_edit(file_path) {
                         let root = html_document_body_clear();
                         let input = app_code_input(root);
                         html_focus(input);
-                        let b = html_button_width_full_text_click(root, 'add new function', async () => {
+                        let add_new = html_button_width_full_text_click(root, 'add new function', async () => {
                             let function_name = html_value_get(input);
                             await function_new_generic(function_name, '', '', false, [], false);
                             let file_path = function_name_to_path(function_name);
                             app_code_edit(file_path);
                         });
-                        html_style_margin_x_0(b);
+                        html_style_margin_x_0(add_new);
                     });
                 },
                 'save functions': async () => {
