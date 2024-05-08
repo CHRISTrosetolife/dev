@@ -40,6 +40,7 @@ import {range} from "./range.mjs";
 import {string_length} from "./string_length.mjs";
 import {html_style_margin_none} from "./html_style_margin_none.mjs";
 export function app_learn_code() {
+    let lesson_creates = app_learn_code_lessons();
     let root = html_document_body();
     html_hash({
         'background_color': value => {
@@ -50,7 +51,6 @@ export function app_learn_code() {
     });
     html_style_default_initialize();
     let default_font_size = html_style_default_font_size_value();
-    let lesson_creates = app_learn_code_lessons();
     let lesson_screens = [];
     let lessons = [];
     for (let lesson_create of lesson_creates) {
