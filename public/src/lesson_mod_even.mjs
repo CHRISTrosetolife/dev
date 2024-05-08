@@ -22,6 +22,7 @@ import {list_index_last} from "./list_index_last.mjs";
 import {html_style_background_color} from "./html_style_background_color.mjs";
 import {each_index} from "./each_index.mjs";
 import {integer_random_digit_single_positive} from "./integer_random_digit_single_positive.mjs";
+import { string_split } from "./string_split.mjs";
 export function lesson_mod_even() {
     let description = 'checking if a number is even';
     let example_message = 'outputting whether or not a number is even';
@@ -32,6 +33,7 @@ export function lesson_mod_even() {
     }, example_before, description, example_message, [screen1, screen2, screen3]);
     function example_before(parent) {
         let message = 'suppose `n` is a number in javascipt'
+        let split = string_split(message, '`');
         'if `n % 2` is `0` , then `n` is an even number'
         'if `n % 2 === 0` is true , then `n` is an even number'
         'otherwise , `n` is an odd number'
