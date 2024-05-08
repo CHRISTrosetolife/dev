@@ -1,4 +1,7 @@
-import {html_style_alternate_monospace_short} from "./html_style_alternate_monospace_short.mjs";
+import {app_learn_code_style_code_colored} from "./app_learn_code_style_code_colored.mjs";
+import {noop} from "./noop.mjs";
+import {html_style_alternate} from "./html_style_alternate.mjs";
+import {html_style_alternate_split} from "./html_style_alternate_split.mjs";
 import {html_style_default_font_size_value} from "./html_style_default_font_size_value.mjs";
 import {html_style_default_initialize} from "./html_style_default_initialize.mjs";
 import {html_hash} from "./html_hash.mjs";
@@ -39,6 +42,7 @@ import {html_span_text} from "./html_span_text.mjs";
 import {html_style_bold} from "./html_style_bold.mjs";
 import {range} from "./range.mjs";
 import {string_length} from "./string_length.mjs";
+import {html_span} from "./html_span.mjs";
 export function app_learn_code() {
     let lesson_creates = app_learn_code_lessons();
     let root = html_document_body();
@@ -107,7 +111,8 @@ export function app_learn_code() {
         for (let lesson of lessons) {
             let {description} = lesson;
             let b = html_button_width_full_text_click(root, '', () => refresh_lesson(lesson));
-            html_style_alternate_monospace_short(b, description);
+            let split = html_style_alternate_split(description);
+            html_style_alternate(b, html_span, [noop, app_learn_code_style_code_colored], split);
         }
     }
     refresh_main();
