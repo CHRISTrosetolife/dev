@@ -102,7 +102,6 @@ export function app_code_edit(file_path) {
                     ${list_join(mapped, newline())}
                     return ${js_code_call_args(function_transform_args_split.name, [`${function_name}.name`])}
                 })();`;
-                code = '1+2'
                 console.log({
                     code,
                     e: eval(code)
