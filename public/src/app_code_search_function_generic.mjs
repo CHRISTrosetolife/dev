@@ -1,3 +1,4 @@
+import {list_sort} from "./list_sort.mjs";
 import {html_value_set} from "./html_value_set.mjs";
 import {html_style_display_none} from "./html_style_display_none.mjs";
 import {html_style_display_block} from "./html_style_display_block.mjs";
@@ -19,7 +20,7 @@ import {list_length} from "./list_length.mjs";
 import {greater_than_equal} from "./greater_than_equal.mjs";
 import {html_document_body_clear} from "./html_document_body_clear.mjs";
 import {global_get} from "./global_get.mjs";
-import { string_length } from "./string_length.mjs";
+import {string_length} from "./string_length.mjs";
 export function app_code_search_function_generic(input_value_initial, on_click_get) {
     let global = global_get();
     let {files, back_stack} = global;
@@ -31,7 +32,7 @@ export function app_code_search_function_generic(input_value_initial, on_click_g
     html_focus(input);
     let paths = object_properties(files);
     list_sort_string(paths, identity);
-    list_sort(paths, p => string_length(p))
+    list_sort(paths, p => string_length(p));
     let list = list_adder(la => {
         for (let p of paths) {
             let name = function_path_to_name(p);
@@ -44,7 +45,7 @@ export function app_code_search_function_generic(input_value_initial, on_click_g
     });
     html_on_input_value(input, lambda);
     html_value_set(input, input_value_initial);
-    lambda(input_value_initial)
+    lambda(input_value_initial);
     function lambda_button(name, on_click) {
         let b = html_button_width_full_text_click_x_0(root, name, on_click);
         html_style_word_break_all(b);
