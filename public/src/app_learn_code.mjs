@@ -1,3 +1,4 @@
+import {html_style_alternate_monospace_short} from "./html_style_alternate_monospace_short.mjs";
 import {html_style_default_font_size_value} from "./html_style_default_font_size_value.mjs";
 import {html_style_default_initialize} from "./html_style_default_initialize.mjs";
 import {html_hash} from "./html_hash.mjs";
@@ -107,7 +108,6 @@ export function app_learn_code() {
             let {description} = lesson;
             let b = html_button_width_full_text_click(root, '', () => refresh_lesson(lesson));
             html_style_alternate_monospace_short(b, description);
-
         }
     }
     refresh_main();
