@@ -40,6 +40,8 @@ import {string_starts_with} from "./string_starts_with.mjs";
 import {list_first} from "./list_first.mjs";
 import {string_skip} from "./string_skip.mjs";
 import {string_length} from "./string_length.mjs";
+import { list_join } from "./list_join.mjs";
+import { newline } from "./newline.mjs";
 export function app_code_edit(file_path) {
     let root = html_document_body_clear();
     let container = html_div(root);
@@ -86,6 +88,9 @@ export function app_code_edit(file_path) {
             });
             let transform = html_button_width_full_text_click_x_0(root, '', () => {
                 let sources = object_values(files);
+                let code = `(() => {
+                    ${list_join(sources, newline())}
+                })();`
             });
             html_inner_set(transform, 'run function_transform');
             html_button_width_full_text_click_x_0(root, 'add new function', () => {
