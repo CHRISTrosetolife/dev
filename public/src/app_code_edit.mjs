@@ -1,3 +1,5 @@
+import {html_style_visible} from "./html_style_visible.mjs";
+import {html_style_hidden} from "./html_style_hidden.mjs";
 import {html_button_width_full_text_click_x_0} from "./html_button_width_full_text_click_x_0.mjs";
 import {app_code_button_back_text} from "./app_code_button_back_text.mjs";
 import {app_code_back} from "./app_code_back.mjs";
@@ -73,7 +75,9 @@ export function app_code_edit(file_path) {
                 },
                 'save functions': async () => {
                     let {files} = global_get();
+                    html_style_hidden(root);
                     await function_run(functions_source_set.name, [files]);
+                    html_style_visible(root);
                 },
                 'download functions': async () => {
                     await app_code_download();
