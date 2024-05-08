@@ -54,7 +54,9 @@ export function app_code_edit(file_path) {
         let tokens = app_learn_code_source_to_tokens(source);
         let search_prefix = '$';
         let filtered = list_filter(tokens, t => string_starts_with(t, search_prefix));
-        
+        app_code_search_function_generic(file_path_choice => {
+            let function_name = function_path_to_name(file_path_choice);
+        });
         let function_name = function_path_to_name(file_path);
         await function_auto(function_name);
         app_code_edit(file_path);
