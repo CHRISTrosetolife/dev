@@ -10,7 +10,6 @@ import {app_learn_code_log} from "./app_learn_code_log.mjs";
 import {string_combine} from "./string_combine.mjs";
 import {noop} from "./noop.mjs";
 import {html_style_bold} from "./html_style_bold.mjs";
-import {html_style_monospace} from "./html_style_monospace.mjs";
 export function lesson_if_else_nested_if() {
     let description = 'nested if';
     let example_message = string_combine('with a ', description);
