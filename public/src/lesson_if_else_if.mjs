@@ -8,7 +8,7 @@ import {random_50_50} from "./random_50_50.mjs";
 import {integer_random_digit_single} from "./integer_random_digit_single.mjs";
 import {html_hr} from "./html_hr.mjs";
 export function lesson_if_else_if() {
-    let description = 'if with else if';
+    let description = '`if` with `else if`';
     let example_message = 'outputting whether or not a number is positive , negative or zero';
     return lesson_simple(function () {
         let a;
