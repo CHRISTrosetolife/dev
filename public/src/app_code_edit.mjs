@@ -150,6 +150,7 @@ export function app_code_edit(file_path) {
                 app_code_backable(() => app_code_search_function_generic('', (identifier_from) => {
                     return () => {
                         let root = html_document_body_clear();
+                        html_button_width_full_text_click_x_0(root, app_code_button_back_text(), app_code_back);
                         let input = app_code_input(root);
                         html_focus(input);
                         html_button_width_full_text_click_x_0(root, 'rename identifier', async () => {
