@@ -6,9 +6,6 @@ export async function file_read(file_name) {
     if (web_is()) {
         let g = global_get();
         let {files} = g;
-        console.log({
-            g
-        });
         return object_property_get(files, file_name);
     }
     let fs = await import_node('fs');

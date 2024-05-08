@@ -59,9 +59,6 @@ import { js_identifiers } from "./js_identifiers.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { html_value_set } from "./html_value_set.mjs";
 export function app_code_edit(file_path) {
-    console.log({
-        g: global_get()
-    });
     let function_name = function_path_to_name(file_path);
     let root = html_document_body_clear();
     let container = html_div(root);
