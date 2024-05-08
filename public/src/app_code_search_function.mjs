@@ -1,3 +1,4 @@
+import {list_to} from "./list_to.mjs";
 import {app_code_back} from "./app_code_back.mjs";
 import {app_code_button_back_text} from "./app_code_button_back_text.mjs";
 import {greater_than_equal} from "./greater_than_equal.mjs";
@@ -6,12 +7,9 @@ import {html_on_input_value} from "./html_on_input_value.mjs";
 import {app_code_input} from "./app_code_input.mjs";
 import {html_style_display_none} from "./html_style_display_none.mjs";
 import {html_style_display_block} from "./html_style_display_block.mjs";
-import {string_includes} from "./string_includes.mjs";
-import {html_style_margin_x_0} from "./html_style_margin_x_0.mjs";
 import {html_document_body_clear} from "./html_document_body_clear.mjs";
 import {app_code_edit} from "./app_code_edit.mjs";
 import {html_style_word_break_all} from "./html_style_word_break_all.mjs";
-import {html_button_width_full_text_click} from "./html_button_width_full_text_click.mjs";
 import {function_path_to_name} from "./function_path_to_name.mjs";
 import {object_properties} from "./object_properties.mjs";
 import {html_focus} from "./html_focus.mjs";
@@ -20,8 +18,8 @@ import {global_get} from "./global_get.mjs";
 import {list_sort_string} from "./list_sort_string.mjs";
 import {identity} from "./identity.mjs";
 import {list_length} from "./list_length.mjs";
-import { list_join } from "./list_join.mjs";
-import { html_button_width_full_text_click_x_0 } from "./html_button_width_full_text_click_x_0.mjs";
+import {list_join} from "./list_join.mjs";
+import {html_button_width_full_text_click_x_0} from "./html_button_width_full_text_click_x_0.mjs";
 export function app_code_search_function() {
     let global = global_get();
     let {files, back_stack} = global;
@@ -42,7 +40,7 @@ export function app_code_search_function() {
             let button = lambda_button(name, on_click);
             la({
                 name,
-                button:button
+                button: button
             });
         }
     });
@@ -52,11 +50,10 @@ export function app_code_search_function() {
         html_style_word_break_all(b);
         return b;
     }
-
     function lambda(value) {
         for (let e of list) {
             let {name, button} = e;
-            let regex = list_join(list_to(value), '.*')
+            let regex = list_join(list_to(value), '.*');
             if (name.match(regex)) {
                 html_style_display_block(button);
             } else {
@@ -65,7 +62,3 @@ export function app_code_search_function() {
         }
     }
 }
-function list_to(value) {
-    return Array.from(value);
-}
-

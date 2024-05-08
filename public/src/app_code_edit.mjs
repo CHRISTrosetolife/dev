@@ -52,14 +52,9 @@ export function app_code_edit(file_path) {
         let {files} = global_get();
         let source = object_property_get(files, file_path);
         let tokens = app_learn_code_source_to_tokens(source);
-        console.log({
-            tokens
-        });
         let search_prefix = '$';
         let filtered = list_filter(tokens, t => string_starts_with(t, search_prefix));
-        console.log({
-            filtered
-        });
+        
         let function_name = function_path_to_name(file_path);
         await function_auto(function_name);
         app_code_edit(file_path);
