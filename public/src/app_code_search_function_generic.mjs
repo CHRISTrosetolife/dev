@@ -1,3 +1,4 @@
+import {html_style_background_color} from "./html_style_background_color.mjs";
 import {html_span_text} from "./html_span_text.mjs";
 import {equal} from "./equal.mjs";
 import {list_take} from "./list_take.mjs";
@@ -67,7 +68,8 @@ export function app_code_search_function_generic(input_value_initial, on_click_g
                 let character = html_span_text(button, n);
                 if (equal(n, string_get(value, v))) {
                     v++;
-                } else {}
+                    html_style_background_color;
+                }
             }
             console.log({
                 name,
