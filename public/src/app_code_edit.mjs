@@ -75,8 +75,9 @@ export function app_code_edit(file_path) {
                 },
                 'save functions': async () => {
                     let {files} = global_get();
+                    let lambda3 = async () => await function_run(functions_source_set.name, [files]);
                     html_style_hidden(root);
-                    await function_run(functions_source_set.name, [files]);
+                    await lambda3();
                     html_style_visible(root);
                 },
                 'download functions': async () => {
