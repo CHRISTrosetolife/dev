@@ -1,3 +1,4 @@
+import {html_style_monospace} from "./html_style_monospace.mjs";
 import {list_sort} from "./list_sort.mjs";
 import {html_value_set} from "./html_value_set.mjs";
 import {html_style_display_none} from "./html_style_display_none.mjs";
@@ -37,6 +38,7 @@ export function app_code_search_function_generic(input_value_initial, on_click_g
         for (let p of paths) {
             let name = function_path_to_name(p);
             let button = lambda_button(name, on_click_get(p));
+            html_style_monospace(button);
             la({
                 name,
                 button: button
