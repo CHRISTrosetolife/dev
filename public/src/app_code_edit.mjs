@@ -65,7 +65,7 @@ export function app_code_edit(file_path) {
                         html_button_width_full_text_click_x_0(root, app_code_button_back_text(), app_code_back);
                         let input = app_code_input(root);
                         html_focus(input);
-                        let add_new = html_button_width_full_text_click_x_0(root, 'add new function', async () => {
+                        html_button_width_full_text_click_x_0(root, 'add new function', async () => {
                             let function_name = html_value_get(input);
                             await function_new_generic(function_name, '', '', false, [], false);
                             let file_path = function_name_to_path(function_name);
