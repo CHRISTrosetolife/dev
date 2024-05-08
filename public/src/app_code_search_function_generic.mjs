@@ -57,10 +57,6 @@ export function app_code_search_function_generic(input_value_initial, on_click_g
             } else {
                 html_style_display_none(button);
             }
-            la({
-                name,
-                button: button
-            });
         }
     }
 }
