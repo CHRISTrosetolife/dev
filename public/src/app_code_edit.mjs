@@ -60,6 +60,7 @@ export function app_code_edit(file_path) {
                 'add new function': () => {
                     app_code_backable(() => {
                         let root = html_document_body_clear();
+                        html_button_width_full_text_click(root, app_code_button_back_text(), app_code_back)
                         let input = app_code_input(root);
                         html_focus(input);
                         let add_new = html_button_width_full_text_click(root, 'add new function', async () => {
