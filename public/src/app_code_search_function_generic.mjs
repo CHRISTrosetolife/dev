@@ -33,6 +33,7 @@ export function app_code_search_function_generic(input_value_initial, on_click_g
     let global = global_get();
     let {files, back_stack} = global;
     let choices = object_properties(files);
+    let choice_to_name= function_path_to_name;
     let root = html_document_body_clear();
     if (greater_than_equal(list_length(back_stack), 2)) {
         lambda_button(root, app_code_button_back_text(), app_code_back);
@@ -54,13 +55,13 @@ export function app_code_search_function_generic(input_value_initial, on_click_g
         html_clear(container_buttons);
         let value_list = list_to(value);
         let filtered = list_filter(choices, choice => {
-            let name = function_path_to_name(choice);
+            let name = value_to_name(choice);
             let regex = list_join(value_list, '.*');
             return string_regex_match(name, regex);
         });
         let taken = list_take(filtered, 20);
         for (let p of taken) {
-            let name = function_path_to_name(p);
+            let name = choice_to_name(p);
             let button = lambda_button(container_buttons, '', on_click_get(p));
             let v = 0;
             for (let i of range(string_length(name))) {
