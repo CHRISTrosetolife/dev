@@ -1,3 +1,4 @@
+import {list_empty_is} from "./list_empty_is.mjs";
 import {js_identifier_rename} from "./js_identifier_rename.mjs";
 import {function_transform_args_split} from "./function_transform_args_split.mjs";
 import {app_code_search_function_generic} from "./app_code_search_function_generic.mjs";
@@ -36,6 +37,7 @@ import {object_property_set} from "./object_property_set.mjs";
 import {function_path_to_name} from "./function_path_to_name.mjs";
 import {list_filter} from "./list_filter.mjs";
 import {string_starts_with} from "./string_starts_with.mjs";
+import {list_first} from "./list_first.mjs";
 export function app_code_edit(file_path) {
     let root = html_document_body_clear();
     let container = html_div(root);
@@ -57,12 +59,13 @@ export function app_code_edit(file_path) {
         let tokens = app_learn_code_source_to_tokens(source);
         let search_prefix = '$';
         let filtered = list_filter(tokens, t => string_starts_with(t, search_prefix));
-        app_code_search_function_generic(file_path_choice => {
-            let function_name = function_path_to_name(file_path_choice);
-            function_transform_args_split;
-            js_identifier_rename;
-        });
         let function_name = function_path_to_name(file_path);
+        if (list_empty_is) {}
+        let first = list_first(filtered);
+        app_code_search_function_generic(file_path_choice => {
+            let function_name_choice = function_path_to_name(file_path_choice);
+            function_transform_args_split(js_identifier_rename.name, function_name, [first, function_name_choice]);
+        });
         await function_auto(function_name);
         app_code_edit(file_path);
     }
