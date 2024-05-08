@@ -1,9 +1,8 @@
+import {list_take} from "./list_take.mjs";
 import {string_regex_match} from "./string_regex_match.mjs";
 import {html_style_monospace} from "./html_style_monospace.mjs";
 import {list_sort} from "./list_sort.mjs";
 import {html_value_set} from "./html_value_set.mjs";
-import {html_style_display_none} from "./html_style_display_none.mjs";
-import {html_style_display_block} from "./html_style_display_block.mjs";
 import {list_to} from "./list_to.mjs";
 import {list_join} from "./list_join.mjs";
 import {html_style_word_break_all} from "./html_style_word_break_all.mjs";
@@ -24,6 +23,7 @@ import {global_get} from "./global_get.mjs";
 import {string_length} from "./string_length.mjs";
 import {html_div} from "./html_div.mjs";
 import {html_clear} from "./html_clear.mjs";
+import {list_filter} from "./list_filter.mjs";
 export function app_code_search_function_generic(input_value_initial, on_click_get) {
     let global = global_get();
     let {files, back_stack} = global;
@@ -47,16 +47,16 @@ export function app_code_search_function_generic(input_value_initial, on_click_g
     }
     function lambda(value) {
         html_clear(container_buttons);
-        for (let p of paths) {
+        let value_list = list_to(value);
+        let filtered = list_filter(paths, p => {
+            let regex = list_join(value_list, '.*');
+            return string_regex_match(name, regex);
+        });
+        let taken = list_take(filtered, 20);
+        for (let p of taken) {
             let name = function_path_to_name(p);
             let button = lambda_button(container_buttons, name, on_click_get(p));
             html_style_monospace(button);
-            let regex = list_join(list_to(value), '.*');
-            if (string_regex_match(name, regex)) {
-                html_style_display_block(button);
-            } else {
-                html_style_display_none(button);
-            }
         }
     }
 }
