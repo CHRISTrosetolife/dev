@@ -115,7 +115,7 @@ export function app_code_edit(file_path) {
                     let result_div = html_div(root);
                     html_style_monospace(result_div);
                     html_style_pre_wrap(result_div);
-                    html_inner_set(json_to(result));
+                    html_inner_set(result_div,json_to(result));
                 });
             });
             html_inner_set(transform, 'run function_transform');
