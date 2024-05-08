@@ -60,14 +60,15 @@ export function app_code_edit(file_path) {
         let search_prefix = '$';
         let filtered = list_filter(tokens, t => string_starts_with(t, search_prefix));
         let function_name = function_path_to_name(file_path);
-        if (list_empty_is) {}
+        if (list_empty_is(filtered)) {
+            await function_auto(function_name);
+            app_code_edit(file_path);
+        }
         let first = list_first(filtered);
         app_code_search_function_generic(file_path_choice => {
             let function_name_choice = function_path_to_name(file_path_choice);
             function_transform_args_split(js_identifier_rename.name, function_name, [first, function_name_choice]);
         });
-        await function_auto(function_name);
-        app_code_edit(file_path);
     }
     function lambda() {
         app_code_backable(() => {
