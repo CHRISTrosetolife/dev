@@ -1,3 +1,4 @@
+import {string_regex_match} from "./string_regex_match.mjs";
 import {html_style_monospace} from "./html_style_monospace.mjs";
 import {list_sort} from "./list_sort.mjs";
 import {html_value_set} from "./html_value_set.mjs";
@@ -9,7 +10,6 @@ import {html_style_word_break_all} from "./html_style_word_break_all.mjs";
 import {html_button_width_full_text_click_x_0} from "./html_button_width_full_text_click_x_0.mjs";
 import {html_on_input_value} from "./html_on_input_value.mjs";
 import {function_path_to_name} from "./function_path_to_name.mjs";
-import {list_adder} from "./list_adder.mjs";
 import {identity} from "./identity.mjs";
 import {list_sort_string} from "./list_sort_string.mjs";
 import {object_properties} from "./object_properties.mjs";
@@ -22,8 +22,8 @@ import {greater_than_equal} from "./greater_than_equal.mjs";
 import {html_document_body_clear} from "./html_document_body_clear.mjs";
 import {global_get} from "./global_get.mjs";
 import {string_length} from "./string_length.mjs";
-import { html_div } from "./html_div.mjs";
-import { html_clear } from "./html_clear.mjs";
+import {html_div} from "./html_div.mjs";
+import {html_clear} from "./html_clear.mjs";
 export function app_code_search_function_generic(input_value_initial, on_click_get) {
     let global = global_get();
     let {files, back_stack} = global;
@@ -46,13 +46,13 @@ export function app_code_search_function_generic(input_value_initial, on_click_g
         return b;
     }
     function lambda(value) {
-        html_clear(container_buttons)
+        html_clear(container_buttons);
         for (let p of paths) {
             let name = function_path_to_name(p);
             let button = lambda_button(container_buttons, name, on_click_get(p));
             html_style_monospace(button);
             let regex = list_join(list_to(value), '.*');
-            if (name.match(regex)) {
+            if (string_regex_match(name, regex)) {
                 html_style_display_block(button);
             } else {
                 html_style_display_none(button);
