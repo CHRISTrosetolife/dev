@@ -111,7 +111,7 @@ export function app_code_edit(file_path) {
                 })();`;
                     let result = await eval(code);
                     html_button_width_full_text_click(root, app_code_button_back_text(), app_code_back);
-                    let result_div = html_div(result);
+                    let result_div = html_div(root);
                     html_style_monospace(result_div)
                     html_style_pre_wrap(result_div);
                     html_inner_set(json_to(result))
