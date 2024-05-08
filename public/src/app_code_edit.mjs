@@ -80,37 +80,34 @@ export function app_code_edit(file_path) {
     function lambda() {
         app_code_backable(() => {
             let root = html_document_body_clear();
-            let choices = {
-                [app_code_button_back_text()]: app_code_back,
-                'search': () => {
-                    app_code_backable(() => app_code_search_function());
-                },
-                'add new function': () => {
-                    app_code_backable(() => {
-                        let root = html_document_body_clear();
-                        html_button_width_full_text_click_x_0(root, app_code_button_back_text(), app_code_back);
-                        let input = app_code_input(root);
-                        html_focus(input);
-                        html_button_width_full_text_click_x_0(root, 'add new function', async () => {
-                            let function_name = html_value_get(input);
-                            await function_new_generic(function_name, '', '', false, [], false);
-                            let file_path = function_name_to_path(function_name);
-                            app_code_backable(() => app_code_edit(file_path));
-                        });
+            html_button_width_full_text_click_x_0(root, app_code_button_back_text(), app_code_back);
+            html_button_width_full_text_click_x_0(root, 'search', () => {
+                app_code_backable(() => app_code_search_function());
+            });
+            html_button_width_full_text_click_x_0(root, 'run function_transform', () => {
+
+            });
+            html_button_width_full_text_click_x_0(root, 'add new function',  () => {
+                app_code_backable(() => {
+                    let root = html_document_body_clear();
+                    html_button_width_full_text_click_x_0(root, app_code_button_back_text(), app_code_back);
+                    let input = app_code_input(root);
+                    html_focus(input);
+                    html_button_width_full_text_click_x_0(root, 'add new function', async () => {
+                        let function_name = html_value_get(input);
+                        await function_new_generic(function_name, '', '', false, [], false);
+                        let file_path = function_name_to_path(function_name);
+                        app_code_backable(() => app_code_edit(file_path));
                     });
-                },
-                'save functions': async () => {
-                    let {files} = global_get();
-                    await html_style_hide_until(root, async () => await function_run(functions_source_set.name, [files]));
-                },
-                'download functions': async () => {
-                    await html_style_hide_until(root, async () => await app_code_download());
-                }
-            };
-            each_object(choices, lambda2);
-            function lambda2(key, value) {
-                html_button_width_full_text_click_x_0(root, key, value);
-            }
+                });
+            });
+            html_button_width_full_text_click_x_0(root, 'upload functions', async () => {
+                let {files} = global_get();
+                await html_style_hide_until(root, async () => await function_run(functions_source_set.name, [files]));
+            });
+            html_button_width_full_text_click_x_0(root, 'download functions', async () => {
+                await html_style_hide_until(root, async () => await app_code_download());
+            });
         });
     }
     let {files} = global_get();
