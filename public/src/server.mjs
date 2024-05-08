@@ -1,3 +1,4 @@
+import {log} from "./log.mjs";
 import {file_read_json} from "./file_read_json.mjs";
 import {uuid_file} from "./uuid_file.mjs";
 import {command_line} from "./command_line.mjs";
@@ -39,11 +40,11 @@ export function server() {
             await uuid_file(async file_path_output => {
                 await file_overwrite(file_path_input, args_json);
                 let command = `node ${run.name}.mjs ${function_run_json.name} ${function_name} ${file_path_input} ${file_path_output}`;
-                console.log({
+                log({
                     command
                 });
                 let r = await command_line(command);
-                console.log({
+                log({
                     r
                 });
                 let contents = await file_read_json(file_path_output);
