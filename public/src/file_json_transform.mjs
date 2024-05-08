@@ -1,8 +1,8 @@
-import {file_js_parse} from "./file_js_parse.mjs";
-import {file_js_unparse} from "./file_js_unparse.mjs";
+import {file_write_json} from "./file_write_json.mjs";
+import {file_read_json} from "./file_read_json.mjs";
 export async function file_json_transform(lambda, file_path, args) {
-    let ast = await file_js_parse(file_path);
+    let ast = await file_read_json(file_path);
     let result = await lambda(ast, ...args);
-    await file_js_unparse(file_path, ast);
+    await file_write_json(file_path, ast);
     return result;
 }

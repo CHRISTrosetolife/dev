@@ -142,13 +142,13 @@ export function app_code_edit(file_path) {
                     });
                 });
             });
-            html_button_width_full_text_click_x_0(root, 'copy', () => {
+            html_button_width_full_text_click_x_0(root, 'copy function', () => {
                 app_code_backable(() => {
                     let root = html_document_body_clear();
                     html_button_width_full_text_click_x_0(root, app_code_button_back_text(), app_code_back);
                     let input = app_code_input(root);
                     html_focus(input);
-                    html_button_width_full_text_click_x_0(root, 'copy', async () => {
+                    html_button_width_full_text_click_x_0(root, 'copy function', async () => {
                         let function_name_copy = html_value_get(input);
                         await function_copy(function_name, function_name_copy);
                         let file_path_copy = function_name_to_path(function_name_copy)
