@@ -121,7 +121,9 @@ export function app_code_edit(file_path) {
                         let count = 2;
                         let {back_stack} = global_get();
                         assert(greater_than_equal, [list_length(back_stack), count]);
-                        for (let i of range(count)) app_code_back();
+                        for (let i of range(count)) {
+                            app_code_back();
+                        }
                     });
                     let result_div = html_div(root);
                     html_style_monospace(result_div);
