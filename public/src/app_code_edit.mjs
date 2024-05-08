@@ -84,9 +84,10 @@ export function app_code_edit(file_path) {
             html_button_width_full_text_click_x_0(root, 'search', () => {
                 app_code_backable(() => app_code_search_function());
             });
-            html_button_width_full_text_click_x_0(root, 'run function_transform', () => {
+            let transform = html_button_width_full_text_click_x_0(root, '', () => {
 
             });
+            html_inner_set(transform, 'run function_transform')
             html_button_width_full_text_click_x_0(root, 'add new function',  () => {
                 app_code_backable(() => {
                     let root = html_document_body_clear();
