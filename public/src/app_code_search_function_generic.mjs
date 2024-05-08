@@ -27,7 +27,6 @@ export function app_code_search_function_generic(input_value_initial, on_click_g
         lambda_button(app_code_button_back_text(), app_code_back);
     }
     let input = app_code_input(root);
-    html_value_set(input, input_value_initial);
     html_focus(input);
     let paths = object_properties(files);
     list_sort_string(paths, identity);
@@ -42,6 +41,7 @@ export function app_code_search_function_generic(input_value_initial, on_click_g
         }
     });
     html_on_input_value(input, lambda);
+    html_value_set(input, input_value_initial);
     function lambda_button(name, on_click) {
         let b = html_button_width_full_text_click_x_0(root, name, on_click);
         html_style_word_break_all(b);

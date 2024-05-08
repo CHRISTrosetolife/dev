@@ -38,6 +38,8 @@ import {function_path_to_name} from "./function_path_to_name.mjs";
 import {list_filter} from "./list_filter.mjs";
 import {string_starts_with} from "./string_starts_with.mjs";
 import {list_first} from "./list_first.mjs";
+import { string_skip } from "./string_skip.mjs";
+import { string_length } from "./string_length.mjs";
 export function app_code_edit(file_path) {
     let root = html_document_body_clear();
     let container = html_div(root);
@@ -65,7 +67,8 @@ export function app_code_edit(file_path) {
             app_code_edit(file_path);
         } else {
             let first = list_first(filtered);
-            app_code_search_function_generic(file_path_choice => {
+            let remaining = string_skip(first, string_length(search_prefix))
+            app_code_search_function_generic(remaining, file_path_choice => {
                 return async () => {
                     let function_name_choice = function_path_to_name(file_path_choice);
                     await function_transform_args_split(js_identifier_rename.name, function_name, [first, function_name_choice]);
