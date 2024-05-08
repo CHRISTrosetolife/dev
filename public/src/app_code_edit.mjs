@@ -43,6 +43,7 @@ import {string_length} from "./string_length.mjs";
 import { list_join } from "./list_join.mjs";
 import { newline } from "./newline.mjs";
 export function app_code_edit(file_path) {
+    let function_name = function_path_to_name(file_path);
     let root = html_document_body_clear();
     let container = html_div(root);
     html_style(container, {
@@ -63,7 +64,6 @@ export function app_code_edit(file_path) {
         let tokens = app_learn_code_source_to_tokens(source);
         let search_prefix = '$';
         let filtered = list_filter(tokens, t => string_starts_with(t, search_prefix));
-        let function_name = function_path_to_name(file_path);
         if (list_empty_is(filtered)) {
             await function_auto(function_name);
             app_code_edit(file_path);
