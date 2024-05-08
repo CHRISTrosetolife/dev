@@ -22,6 +22,6 @@ export function lesson_if_else_nested_if() {
     function example_before(parent) {
         html_style_monospace_bold(a);
         html_style_alternate_monospace_short(parent, 'an `if` can be inside another `if`');
-        html_style_alternate_short_p(parent, [noop, html_style_bold, html_style_monospace_bold], 'this is called a `nested `if`');
+        html_style_alternate_short_p(parent, [noop, html_style_bold, html_style_monospace_bold], 'this is called a `nested `if');
     }
 }
