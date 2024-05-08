@@ -1,1 +1,1 @@
-export function a() {a}
+export function a() {$ad}
