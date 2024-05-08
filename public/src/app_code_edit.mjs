@@ -67,7 +67,7 @@ export function app_code_edit(file_path) {
                             let function_name = html_value_get(input);
                             await function_new_generic(function_name, '', '', false, [], false);
                             let file_path = function_name_to_path(function_name);
-                            app_code_edit(file_path);
+                            app_code_backable(() => app_code_edit(file_path));
                         });
                     });
                 },
