@@ -9,7 +9,7 @@ export function lesson_mod_even() {
     let example_message = 'outputting whether or not a number is even';
     return lesson_simple(function () {
         let a = integer_random_digit_single_positive();
-        let lines = [(js_code_statement_let_assign('is_even', a))`if (is_even) {`, app_learn_code_log('number is even'), `} else {`, app_learn_code_log('number is odd'), `}`];
+        let lines = [js_code_statement_let_assign('is_even', a),`if (is_even) {`, app_learn_code_log('number is even'), `} else {`, app_learn_code_log('number is odd'), `}`];
         return list_join_newline(lines);
     }, example_before, description, example_message, [screen1]);
     function example_before(parent) {}
