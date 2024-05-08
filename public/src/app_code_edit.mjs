@@ -89,6 +89,7 @@ export function app_code_edit(file_path) {
             let transform = html_button_width_full_text_click_x_0(root, '', () => {
                 let sources = object_values(files);
                 let code = `(() => {
+                    ${}
                     ${list_join(sources, newline())}
                 })();`
             });
