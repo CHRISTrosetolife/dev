@@ -108,6 +108,7 @@ export function app_code_edit(file_path) {
                     return ${js_code_call_args(function_transform_args_split.name, [`${function_name}.name`, `${function_name}.name`, '[]'])}
                 })();`;
                     let result = await eval(code);
+                    html_button_width_full_text_click(root, app_code_button_back_text(), app_code_back);
                 });
             });
             html_inner_set(transform, 'run function_transform');
