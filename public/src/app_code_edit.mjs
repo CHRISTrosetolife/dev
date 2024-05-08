@@ -1,4 +1,4 @@
-import {js_tokenize} from "./js_tokenize.mjs";
+import {app_learn_code_source_to_tokens} from "./app_learn_code_source_to_tokens.mjs";
 import {html_style_hide_until} from "./html_style_hide_until.mjs";
 import {html_button_width_full_text_click_x_0} from "./html_button_width_full_text_click_x_0.mjs";
 import {app_code_button_back_text} from "./app_code_button_back_text.mjs";
@@ -31,8 +31,8 @@ import {html_value_get} from "./html_value_get.mjs";
 import {function_run} from "./function_run.mjs";
 import {object_property_set} from "./object_property_set.mjs";
 import {function_path_to_name} from "./function_path_to_name.mjs";
-import { list_filter } from "./list_filter.mjs";
-import { string_starts_with } from "./string_starts_with.mjs";
+import {list_filter} from "./list_filter.mjs";
+import {string_starts_with} from "./string_starts_with.mjs";
 export function app_code_edit(file_path) {
     let root = html_document_body_clear();
     let container = html_div(root);
@@ -51,11 +51,15 @@ export function app_code_edit(file_path) {
     async function auto() {
         let {files} = global_get();
         let source = object_property_get(files, file_path);
-        let tokens = js_tokenize(source);
-        console.log({tokens})
-        let search_prefix = '$'
-        let filtered=list_filter(tokens, t => string_starts_with(t, search_prefix))
-        console.log({filtered})
+        let tokens = app_learn_code_source_to_tokens(source);
+        console.log({
+            tokens
+        });
+        let search_prefix = '$';
+        let filtered = list_filter(tokens, t => string_starts_with(t, search_prefix));
+        console.log({
+            filtered
+        });
         let function_name = function_path_to_name(file_path);
         await function_auto(function_name);
         app_code_edit(file_path);
