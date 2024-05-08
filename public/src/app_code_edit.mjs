@@ -1,5 +1,5 @@
-import {html_style_visible} from "./html_style_visible.mjs";
-import {html_style_hidden} from "./html_style_hidden.mjs";
+import {js_tokenize} from "./js_tokenize.mjs";
+import {html_style_hide_until} from "./html_style_hide_until.mjs";
 import {html_button_width_full_text_click_x_0} from "./html_button_width_full_text_click_x_0.mjs";
 import {app_code_button_back_text} from "./app_code_button_back_text.mjs";
 import {app_code_back} from "./app_code_back.mjs";
@@ -48,7 +48,7 @@ export function app_code_edit(file_path) {
     html_button_width_full_text_click(container_top, 'menu', lambda);
     async function auto() {
         let {files} = global_get();
-        let source = object_property_get(files, file_path)
+        let source = object_property_get(files, file_path);
         let tokens = js_tokenize(source);
         let function_name = function_path_to_name(file_path);
         await function_auto(function_name);
@@ -105,9 +105,3 @@ export function app_code_edit(file_path) {
     html_style_width_full(ta);
     html_style_height_full(ta);
 }
-async function html_style_hide_until(root, lambda3) {
-    html_style_hidden(root);
-    await lambda3();
-    html_style_visible(root);
-}
-
