@@ -5,5 +5,5 @@ export function app_code_back() {
     let {back_stack} = global_get();
     list_pop(back_stack);
     let last = list_last(back_stack);
-    last(last);
+    last();
 }
