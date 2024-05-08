@@ -1,3 +1,4 @@
+import {app_code_global_file_paths} from "./app_code_global_file_paths.mjs";
 import {html_style_background_color} from "./html_style_background_color.mjs";
 import {html_span_text} from "./html_span_text.mjs";
 import {equal} from "./equal.mjs";
@@ -14,7 +15,6 @@ import {html_on_input_value} from "./html_on_input_value.mjs";
 import {function_path_to_name} from "./function_path_to_name.mjs";
 import {identity} from "./identity.mjs";
 import {list_sort_string} from "./list_sort_string.mjs";
-import {object_properties} from "./object_properties.mjs";
 import {html_focus} from "./html_focus.mjs";
 import {app_code_input} from "./app_code_input.mjs";
 import {app_code_back} from "./app_code_back.mjs";
@@ -30,9 +30,8 @@ import {list_filter} from "./list_filter.mjs";
 import {range} from "./range.mjs";
 import {string_get} from "./string_get.mjs";
 export function app_code_search_function_generic(input_value_initial, on_click_get) {
-    let {files} = global_get();
-    let choices = object_properties(files);
-    let choice_to_name= function_path_to_name;
+    let choices = app_code_global_file_paths();
+    let choice_to_name = function_path_to_name;
     let global = global_get();
     let {back_stack} = global;
     let root = html_document_body_clear();
