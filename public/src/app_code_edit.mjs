@@ -48,7 +48,9 @@ import {js_parse} from "./js_parse.mjs";
 import {js_declaration_single} from "./js_declaration_single.mjs";
 import {js_unparse} from "./js_unparse.mjs";
 export function app_code_edit(file_path) {
-    console.log({g:global_get()})
+    console.log({
+        g: global_get()
+    });
     let function_name = function_path_to_name(file_path);
     let root = html_document_body_clear();
     let container = html_div(root);
@@ -94,23 +96,19 @@ export function app_code_edit(file_path) {
             });
             let transform = html_button_width_full_text_click_x_0(root, '', async () => {
                 app_code_backable(async () => {
-                    
                     let root = html_document_body_clear();
-
-                    
-                let sources = object_values(files);
-                let mapped = list_map(sources, s => {
-                    let ast = js_parse(s);
-                    let d = js_declaration_single(ast);
-                    return js_unparse(d);
-                });
-                let code = `(async () => {
+                    let sources = object_values(files);
+                    let mapped = list_map(sources, s => {
+                        let ast = js_parse(s);
+                        let d = js_declaration_single(ast);
+                        return js_unparse(d);
+                    });
+                    let code = `(async () => {
                     ${list_join(mapped, newline())}
                     return ${js_code_call_args(function_transform_args_split.name, [`${function_name}.name`, `${function_name}.name`, '[]'])}
                 })();`;
-                let result = await eval(code) 
-
-                })
+                    let result = await eval(code);
+                });
             });
             html_inner_set(transform, 'run function_transform');
             html_button_width_full_text_click_x_0(root, 'add new function', () => {
