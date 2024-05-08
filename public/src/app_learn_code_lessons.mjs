@@ -77,5 +77,6 @@ export function app_learn_code_lessons() {
     list_add(lesson_creates, lesson_if_else_if);
     list_add(lesson_creates, lesson_mod);
     list_add(lesson_creates, lesson_mod_even);
+    list_add(lesson_creates, lesson_if_else_nested_if);
     return lesson_creates;
 }
