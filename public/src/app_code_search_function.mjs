@@ -20,6 +20,7 @@ import {global_get} from "./global_get.mjs";
 import {list_sort_string} from "./list_sort_string.mjs";
 import {identity} from "./identity.mjs";
 import {list_length} from "./list_length.mjs";
+import { list_join } from "./list_join.mjs";
 export function app_code_search_function() {
     let global = global_get();
     let {files, back_stack} = global;
@@ -55,6 +56,7 @@ export function app_code_search_function() {
     function lambda(value) {
         for (let e of list) {
             let {name, button} = e;
+            let regex = list_join(Array.from(value), '.*')
             if (string_includes(name, value)) {
                 html_style_display_block(button);
             } else {
