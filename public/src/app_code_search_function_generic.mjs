@@ -23,6 +23,7 @@ import {html_document_body_clear} from "./html_document_body_clear.mjs";
 import {global_get} from "./global_get.mjs";
 import {string_length} from "./string_length.mjs";
 import { html_div } from "./html_div.mjs";
+import { html_clear } from "./html_clear.mjs";
 export function app_code_search_function_generic(input_value_initial, on_click_get) {
     let global = global_get();
     let {files, back_stack} = global;
@@ -45,6 +46,7 @@ export function app_code_search_function_generic(input_value_initial, on_click_g
         return b;
     }
     function lambda(value) {
+        html_clear(container_buttons)
         let list = list_adder(la => {
             for (let p of paths) {
                 let name = function_path_to_name(p);
