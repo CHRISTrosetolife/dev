@@ -4,8 +4,8 @@ import {html_style_alternate_monospace} from "./html_style_alternate_monospace.m
 import {lesson_simple} from "./lesson_simple.mjs";
 import {html_hr} from "./html_hr.mjs";
 export function lesson_if_false() {
-    let description = 'if with false';
-    let example_message = 'with an if with false passed in';
+    let description = '`if` with `false`';
+    let example_message = 'with an `if` with `false` passed in';
     return lesson_simple(function () {
         let statements = [app_learn_code_log_random_value(), `if (false) {
 ${app_learn_code_log_random_value()}

@@ -2,8 +2,8 @@ import {lesson_console_log_quiz} from "./lesson_console_log_quiz.mjs";
 import {lesson_simple} from "./lesson_simple.mjs";
 import {html_p_text} from "./html_p_text.mjs";
 export function lesson_statements_three() {
-    const description = 'three console.log statements';
-    const example_message = 'with three statements';
+    const description = 'three `console.log` statements';
+    const example_message = 'with three `console.log` statements';
     return lesson_simple(() => {
         return `${lesson_console_log_quiz()}
 ${lesson_console_log_quiz()}

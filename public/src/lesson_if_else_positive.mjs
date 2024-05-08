@@ -1,3 +1,4 @@
+import {string_combine_multiple} from "./string_combine_multiple.mjs";
 import {js_code_statement_let_assign} from "./js_code_statement_let_assign.mjs";
 import {app_learn_code_log_delimit} from "./app_learn_code_log_delimit.mjs";
 import {list_join_newline} from "./list_join_newline.mjs";
@@ -9,7 +10,7 @@ import {integer_random_digit_single} from "./integer_random_digit_single.mjs";
 import {html_hr} from "./html_hr.mjs";
 export function lesson_if_else_positive() {
     let category = 'positive';
-    let description = `if with else about ${category} or not`;
+    let description = string_combine_multiple(['`if` with `else` about ', category, ' or not']);
     let example_message = `outputting whether or not a number is ${category}`;
     return lesson_simple(function () {
         let a = integer_random_digit_single();

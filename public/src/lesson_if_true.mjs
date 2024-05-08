@@ -12,8 +12,8 @@ import {html_hr} from "./html_hr.mjs";
 import {app_learn_code_style_code_colored} from "./app_learn_code_style_code_colored.mjs";
 import {list_join} from "./list_join.mjs";
 export function lesson_if_true() {
-    let description = 'if with true';
-    let example_message = 'with an if with true passed in';
+    let description = '`if` with `true`';
+    let example_message = 'with an `if` with `true` passed in';
     return lesson_simple(function () {
         let statements = [app_learn_code_log_random_value(), `if (true) {
 ${app_learn_code_log_random_value()}

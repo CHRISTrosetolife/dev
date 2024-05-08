@@ -6,7 +6,7 @@ import {app_learn_code_random_identifier} from "./app_learn_code_random_identifi
 import {lesson_simple} from "./lesson_simple.mjs";
 import {lesson_console_log_quiz} from "./lesson_console_log_quiz.mjs";
 export function lesson_if_variable() {
-    let description = 'if with a variable';
+    let description = '`if` with a variable';
     let example_message = description;
     return lesson_simple(function () {
         let boolean = app_learn_code_random_boolean_binary();

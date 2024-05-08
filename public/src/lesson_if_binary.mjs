@@ -5,7 +5,7 @@ import {lesson_simple} from "./lesson_simple.mjs";
 import {string_combine} from "./string_combine.mjs";
 import {lesson_console_log_quiz} from "./lesson_console_log_quiz.mjs";
 export function lesson_if_binary() {
-    let description = 'if with a process';
+    let description = '`if` with a process';
     let example_message = string_combine('with an ', description);
     return lesson_simple(function () {
         let boolean = app_learn_code_random_boolean_binary();
