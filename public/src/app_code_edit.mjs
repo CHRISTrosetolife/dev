@@ -50,7 +50,11 @@ import {js_declaration_single} from "./js_declaration_single.mjs";
 import {js_unparse} from "./js_unparse.mjs";
 import {json_to} from "./json_to.mjs";
 import {html_style_monospace} from "./html_style_monospace.mjs";
-import { html_span_text } from "./html_span_text.mjs";
+import {html_span_text} from "./html_span_text.mjs";
+import {assert} from "./assert.mjs";
+import {greater_than_equal} from "./greater_than_equal.mjs";
+import {list_length} from "./list_length.mjs";
+import {range} from "./range.mjs";
 export function app_code_edit(file_path) {
     console.log({
         g: global_get()
@@ -113,16 +117,21 @@ export function app_code_edit(file_path) {
                 })();`;
                     let result = await eval(code);
                     html_button_width_full_text_click_x_0(root, app_code_button_back_text(), app_code_back);
-                    html_button_width_full_text_click_x_0(root, app_code_button_back_text(), app_code_back);
+                    html_button_width_full_text_click_x_0(root, 'back to edit', () => {
+                        let count = 2;
+                        let {back_stack} = global_get();
+                        assert(greater_than_equal, [list_length(back_stack), count]);
+                        for (let i of range(count)) app_code_back();
+                    });
                     let result_div = html_div(root);
                     html_style_monospace(result_div);
                     html_style_pre_wrap(result_div);
-                    html_inner_set(result_div,json_to(result));
+                    html_inner_set(result_div, json_to(result));
                 });
             });
-            html_span_text(transform, 'run ')
-            let s = html_span_text(transform, function_transform_args_split.name)
-            html_style_monospace(s)
+            html_span_text(transform, 'run ');
+            let s = html_span_text(transform, function_transform_args_split.name);
+            html_style_monospace(s);
             html_button_width_full_text_click_x_0(root, 'add new function', () => {
                 app_code_backable(() => {
                     let root = html_document_body_clear();
