@@ -1,3 +1,4 @@
+import {app_code_global_file_paths} from "./app_code_global_file_paths.mjs";
 import {app_code_back_multiple} from "./app_code_back_multiple.mjs";
 import {function_copy} from "./function_copy.mjs";
 import {html_style_pre_wrap} from "./html_style_pre_wrap.mjs";
@@ -90,7 +91,7 @@ export function app_code_edit(file_path) {
                     await function_transform_args_split(js_identifier_rename.name, function_name, [first, function_name_choice]);
                     await auto();
                 };
-            }, undefined);
+            }, app_code_global_file_paths());
         }
     }
     function lambda() {
