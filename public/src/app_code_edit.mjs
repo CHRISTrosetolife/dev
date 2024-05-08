@@ -63,6 +63,8 @@ export function app_code_edit(file_path) {
         if (list_empty_is(filtered)) {
             await function_auto(function_name);
             app_code_edit(file_path);
+        } else {
+            
         }
         let first = list_first(filtered);
         app_code_search_function_generic(file_path_choice => {
