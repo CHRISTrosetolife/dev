@@ -53,7 +53,7 @@ export function app_code_search_function_generic(input_value_initial, on_click_g
         html_clear(container_buttons);
         let value_list = list_to(value);
         let filtered = list_filter(choices, choice => {
-            let name = value_to_name(choice);
+            let name = choice_to_name(choice);
             let regex = list_join(value_list, '.*');
             return string_regex_match(name, regex);
         });

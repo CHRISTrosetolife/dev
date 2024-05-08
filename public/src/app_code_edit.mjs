@@ -151,15 +151,9 @@ export function app_code_edit(file_path) {
                     let root = html_document_body_clear();
                     let input = app_code_input(root);
                     html_focus(input);
-                    html_button_width_full_text_click_x_0(root, string_combine('rename identifier ', identifier_from), async () => {
-                        let function_name_copy = html_value_get(input);
-                        await function_copy(function_name, function_name_copy);
-                        let file_path_copy = function_name_to_path(function_name_copy);
-                        console.log({
-                            file_path_copy,
-                            g: object_property_get(global_get(), file_path_copy)
-                        });
-                        app_code_backable(() => app_code_edit(file_path_copy));
+                    html_button_width_full_text_click_x_0(root, 'rename identifier', async () => {
+                        let identifier_to = html_value_get(input);
+                        await function_transform_args_split(js_identifier_rename.name, function_name, [identifier_from,identifier_to]);
                     });
                 }, js_identifiers(js_parse(object_property_get(files, file_path))), identity));
             });
@@ -173,10 +167,6 @@ export function app_code_edit(file_path) {
                         let function_name_copy = html_value_get(input);
                         await function_copy(function_name, function_name_copy);
                         let file_path_copy = function_name_to_path(function_name_copy);
-                        console.log({
-                            file_path_copy,
-                            g: object_property_get(global_get(), file_path_copy)
-                        });
                         app_code_backable(() => app_code_edit(file_path_copy));
                     });
                 });
