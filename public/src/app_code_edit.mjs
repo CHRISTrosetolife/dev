@@ -92,6 +92,7 @@ export function app_code_edit(file_path) {
                     ${js_code_call_args(function_transform_args_split.name, [function_name])}
                     ${list_join(sources, newline())}
                 })();`
+                console.log({e:eval(code)})
             });
             html_inner_set(transform, 'run function_transform');
             html_button_width_full_text_click_x_0(root, 'add new function', () => {
