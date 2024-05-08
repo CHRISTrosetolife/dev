@@ -154,6 +154,7 @@ export function app_code_edit(file_path) {
                         html_button_width_full_text_click_x_0(root, app_code_button_back_text(), app_code_back);
                         let input = app_code_input(root);
                         html_value_set(input, identifier_from)
+                        html_element_select(input);
                         html_focus(input);
                         html_button_width_full_text_click_x_0(root, 'rename identifier', async () => {
                             let identifier_to = html_value_get(input);
@@ -200,3 +201,8 @@ export function app_code_edit(file_path) {
     html_style_width_full(ta);
     html_style_height_full(ta);
 }
+function html_element_select(input) {
+    let { element } = input;
+    element.select();
+}
+
