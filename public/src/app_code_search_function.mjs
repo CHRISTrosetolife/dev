@@ -21,6 +21,7 @@ import {list_sort_string} from "./list_sort_string.mjs";
 import {identity} from "./identity.mjs";
 import {list_length} from "./list_length.mjs";
 import { list_join } from "./list_join.mjs";
+import { html_button_width_full_text_click_x_0 } from "./html_button_width_full_text_click_x_0.mjs";
 export function app_code_search_function() {
     let global = global_get();
     let {files, back_stack} = global;
@@ -47,8 +48,7 @@ export function app_code_search_function() {
     });
     html_on_input_value(input, lambda);
     function lambda_button(name, on_click) {
-        let b = html_button_width_full_text_click(root, name, on_click);
-        html_style_margin_x_0(b);
+        let b = html_button_width_full_text_click_x_0(root, name, on_click);
         html_style_word_break_all(b);
         return b;
     }
