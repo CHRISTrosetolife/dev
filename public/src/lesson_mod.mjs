@@ -33,6 +33,7 @@ export function lesson_mod() {
     function example_before(parent) {
         html_style_alternate_monospace(parent, ['in javascript , to get the remainder of ', 'dividend', ' use ', '%', ' like this : ', 'dividend % divisor']);
     }
+    
     function screen1(parent) {
         html_p_text(parent, 'here is an example of division in math : a / b');
         html_style_alternate_bold(parent, ['when a number ( like "a" ) is divided by another number ( like "b" ) , the first number is called the ', 'dividend']);
