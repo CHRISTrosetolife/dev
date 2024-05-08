@@ -52,6 +52,7 @@ export function app_code_edit(file_path) {
         let {files} = global_get();
         let source = object_property_get(files, file_path);
         let tokens = js_tokenize(source);
+        console.log({tokens})
         let search_prefix = '$'
         let filtered=list_filter(tokens, t => string_starts_with(t, search_prefix))
         console.log({filtered})
