@@ -115,9 +115,9 @@ export function app_code_edit(file_path) {
                 })();`;
                     let result = await eval(code);
                     html_button_width_full_text_click_x_0(root, app_code_button_back_text(), app_code_back);
-                    html_button_width_full_text_click_x_0(root, 'back to edit', () => {
+                    html_button_width_full_text_click_x_0(root, 'back to edit', async () => {
                         let count = 2;
-                        app_code_back_multiple(count);
+                        await app_code_back_multiple(count);
                     });
                     let result_div = html_div(root);
                     html_style_monospace(result_div);
@@ -151,8 +151,9 @@ export function app_code_edit(file_path) {
                     html_button_width_full_text_click_x_0(root, 'copy', async () => {
                         let function_name_copy = html_value_get(input);
                         await function_copy(function_name, function_name_copy);
-                        app_code_back_multiple(2);
+                        await app_code_back_multiple(2);
                         let file_path_copy = function_name_to_path(function_name_copy)
+                        console.log({file_path_copy, g:object_property_get(global_get(), file_path_copy)})
                         app_code_backable(() => app_code_edit(file_path_copy));
                     });
                 });
