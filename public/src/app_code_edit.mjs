@@ -78,7 +78,7 @@ export function app_code_edit(file_path) {
                     await html_style_hide_until(root, async () => await function_run(functions_source_set.name, [files]));
                 },
                 'download functions': async () => {
-                    html_style_hide_until(root, async () => await app_code_download());
+                    await html_style_hide_until(root, async () => await app_code_download());
                 }
             };
             each_object(choices, lambda2);
