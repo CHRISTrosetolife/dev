@@ -13,7 +13,7 @@ a a1 a2 - o
 sc 'hello world'
 | log]
 
-rename
+rename function
 
 create ide
 
