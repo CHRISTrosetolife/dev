@@ -99,9 +99,9 @@ export function app_code_edit(file_path) {
                     let d = js_declaration_single(ast);
                     return js_unparse(d);
                 });
-                let code = `(() => {
+                let code = `await (async () => {
                     ${list_join(mapped, newline())}
-                    return ${js_code_call_args(function_transform_args_split.name, [`${function_name}.name`, `${function_name}.name`, '[]'])}
+                    return await ${js_code_call_args(function_transform_args_split.name, [`${function_name}.name`, `${function_name}.name`, '[]'])}
                 })();`;
                 console.log({
                     code,
