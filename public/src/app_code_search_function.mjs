@@ -34,10 +34,10 @@ export function app_code_search_function() {
     let list = list_adder(la => {
         for (let p of paths) {
             let name = function_path_to_name(p);
-            function on_click() {
-                app_code_backable(() => app_code_edit(p));
+            function on_click_get(p) {
+                return () => app_code_backable(() => app_code_edit(p));
             }
-            let button = lambda_button(name, on_click);
+            let button = lambda_button(name, on_click_get(p));
             la({
                 name,
                 button: button
