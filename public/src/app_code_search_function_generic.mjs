@@ -63,10 +63,11 @@ export function app_code_search_function_generic(input_value_initial, on_click_g
             let button = lambda_button(container_buttons, '', on_click_get(p));
             let v = 0;
             for (let i of range(string_length(name))) {
-                if (equal(string_get(name, i), string_get(value, v))) {
+                let n = string_get(name, i);
+                if (equal(n, string_get(value, v))) {
                     v++;
                 } else {
-                    html_span_text;
+                    html_span_text(button, i);
                 }
             }
             console.log({
