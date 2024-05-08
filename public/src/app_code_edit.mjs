@@ -152,7 +152,8 @@ export function app_code_edit(file_path) {
                         let function_name_copy = html_value_get(input);
                         await function_copy(function_name, function_name_copy);
                         app_code_back_multiple(2);
-                        app_code_backable(() => app_code_edit(file_path));
+                        let file_path_copy = function_name_to_path(function_name_copy)
+                        app_code_backable(() => app_code_edit(file_path_copy));
                     });
                 });
             });
