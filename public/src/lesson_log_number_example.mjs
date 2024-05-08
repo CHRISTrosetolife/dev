@@ -1,3 +1,4 @@
+import {html_style_alternate_monospace_short} from "./html_style_alternate_monospace_short.mjs";
 import {app_learn_code_code} from "./app_learn_code_code.mjs";
 import {html_p_text} from "./html_p_text.mjs";
 import {string_combine} from "./string_combine.mjs";
@@ -14,7 +15,7 @@ export function lesson_log_number_example(source_get, message, before) {
         function refresh() {
             html_clear(div);
             before(div);
-            html_p_text(div, string_combine('below is an example computer program ', message));
+            html_style_alternate_monospace_short(parent, string_combine('below is an example computer program ', message));
             html_p_text(div, 'if you want to see another example , press the "another example" button below');
             let source;
             for (let i of app_learn_code_range_retry()) {
