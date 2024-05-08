@@ -1,3 +1,4 @@
+import {function_copy} from "./function_copy.mjs";
 import {html_style_pre_wrap} from "./html_style_pre_wrap.mjs";
 import {js_code_call_args} from "./js_code_call_args.mjs";
 import {object_values} from "./object_values.mjs";
@@ -142,6 +143,21 @@ export function app_code_edit(file_path) {
                     html_focus(input);
                     html_button_width_full_text_click_x_0(root, 'add new function', async () => {
                         let function_name = html_value_get(input);
+                        await function_new_generic(function_name, '', '', false, [], false);
+                        let file_path = function_name_to_path(function_name);
+                        app_code_backable(() => app_code_edit(file_path));
+                    });
+                });
+            });
+            html_button_width_full_text_click_x_0(root, 'copy', () => {
+                app_code_backable(() => {
+                    let root = html_document_body_clear();
+                    html_button_width_full_text_click_x_0(root, app_code_button_back_text(), app_code_back);
+                    let input = app_code_input(root);
+                    html_focus(input);
+                    html_button_width_full_text_click_x_0(root, 'copy', async () => {
+                        let function_name_copy = html_value_get(input);
+                        function_copy;
                         await function_new_generic(function_name, '', '', false, [], false);
                         let file_path = function_name_to_path(function_name);
                         app_code_backable(() => app_code_edit(file_path));
