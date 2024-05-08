@@ -15,6 +15,7 @@ export function lesson_if_else_nested_if() {
     }, example_before, description, example_message, [screen1]);
     function example_before(parent) {
         'an `if` can be inside another `if`';
+        'this is called a nested `if`'
         'for now we assume the code in the parenthesis of an `if` returns `true` or `false`'
         'the code inside the braces of the `if` on the inside only runs if the code in parenthesis of the `if` on the outside is `true`';
 
