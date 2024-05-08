@@ -64,13 +64,12 @@ export function app_code_edit(file_path) {
             await function_auto(function_name);
             app_code_edit(file_path);
         } else {
-            
+            let first = list_first(filtered);
+            app_code_search_function_generic(file_path_choice => {
+                let function_name_choice = function_path_to_name(file_path_choice);
+                function_transform_args_split(js_identifier_rename.name, function_name, [first, function_name_choice]);
+            });
         }
-        let first = list_first(filtered);
-        app_code_search_function_generic(file_path_choice => {
-            let function_name_choice = function_path_to_name(file_path_choice);
-            function_transform_args_split(js_identifier_rename.name, function_name, [first, function_name_choice]);
-        });
     }
     function lambda() {
         app_code_backable(() => {
