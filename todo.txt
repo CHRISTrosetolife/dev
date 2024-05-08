@@ -15,8 +15,6 @@ sc 'hello world'
 
 rename
 
-get rid of extra imports
-
 create ide
 
 folderize : a_b_c file name to a/b/c directory structure however useful to have automatic imports before this
