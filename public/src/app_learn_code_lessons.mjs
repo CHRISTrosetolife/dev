@@ -36,6 +36,7 @@ import {lesson_if_else_positive} from "./lesson_if_else_positive.mjs";
 import {lesson_if_else_negative} from "./lesson_if_else_negative.mjs";
 import {lesson_if_else_if} from "./lesson_if_else_if.mjs";
 import {lesson_mod} from "./lesson_mod.mjs";
+import { lesson_mod_even } from "./lesson_mod_even.mjs";
 export function app_learn_code_lessons() {
     let lesson_creates = [];
     list_add(lesson_creates, lesson_console_log);
@@ -75,5 +76,6 @@ export function app_learn_code_lessons() {
     list_add(lesson_creates, lesson_if_else_negative);
     list_add(lesson_creates, lesson_if_else_if);
     list_add(lesson_creates, lesson_mod);
+    list_add(lesson_creates, lesson_mod_even);
     return lesson_creates;
 }
