@@ -159,6 +159,7 @@ export function app_code_edit(file_path) {
                         html_button_width_full_text_click_x_0(root, 'rename identifier', async () => {
                             let identifier_to = html_value_get(input);
                             await function_transform_args_split(js_identifier_rename.name, function_name, [identifier_from,identifier_to]);
+                            app_code_back_multiple(2)
                         });
                     }
                 }, js_identifiers(js_parse(object_property_get(files, file_path))), identity));
