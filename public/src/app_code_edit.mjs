@@ -54,6 +54,9 @@ import {js_unparse} from "./js_unparse.mjs";
 import {json_to} from "./json_to.mjs";
 import {html_style_monospace} from "./html_style_monospace.mjs";
 import {html_span_text} from "./html_span_text.mjs";
+import { identity } from "./identity.mjs";
+import { js_identifiers } from "./js_identifiers.mjs";
+import { string_combine } from "./string_combine.mjs";
 export function app_code_edit(file_path) {
     console.log({
         g: global_get()
@@ -142,6 +145,23 @@ export function app_code_edit(file_path) {
                         app_code_backable(() => app_code_edit(file_path));
                     });
                 });
+            });
+            html_button_width_full_text_click_x_0(root, 'rename identifier', () => {
+                app_code_backable(() => app_code_search_function_generic('', (identifier_from) => {
+                    let root = html_document_body_clear();
+                    let input = app_code_input(root);
+                    html_focus(input);
+                    html_button_width_full_text_click_x_0(root, string_combine('rename identifier ', identifier_from), async () => {
+                        let function_name_copy = html_value_get(input);
+                        await function_copy(function_name, function_name_copy);
+                        let file_path_copy = function_name_to_path(function_name_copy);
+                        console.log({
+                            file_path_copy,
+                            g: object_property_get(global_get(), file_path_copy)
+                        });
+                        app_code_backable(() => app_code_edit(file_path_copy));
+                    });
+                }, js_identifiers(js_parse(object_property_get(files, file_path))), identity));
             });
             html_button_width_full_text_click_x_0(root, 'copy function', () => {
                 app_code_backable(() => {
