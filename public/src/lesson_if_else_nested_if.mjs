@@ -19,7 +19,7 @@ export function lesson_if_else_nested_if() {
         return list_join_newline(lines);
     }, example_before, description, example_message, [screen1]);
     function example_before(parent) {
-        'an if can be inside another if'
+        'an `if` can be inside another `if`'
     }
     function screen1(parent) {
         html_style_alternate_monospace_short(parent, 'suppose `n` is a number in javascipt');
