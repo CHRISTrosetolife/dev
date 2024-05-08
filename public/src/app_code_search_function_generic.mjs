@@ -56,7 +56,7 @@ export function app_code_search_function_generic(input_value_initial, on_click_g
         let taken = list_take(filtered, 20);
         for (let p of taken) {
             let name = function_path_to_name(p);
-            let button = lambda_button(container_buttons, name, on_click_get(p));
+            let button = lambda_button(container_buttons, '', on_click_get(p));
             html_style_monospace(button);
         }
     }
