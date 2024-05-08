@@ -48,6 +48,7 @@ import {js_parse} from "./js_parse.mjs";
 import {js_declaration_single} from "./js_declaration_single.mjs";
 import {js_unparse} from "./js_unparse.mjs";
 export function app_code_edit(file_path) {
+    console.log({g:global_get()})
     let function_name = function_path_to_name(file_path);
     let root = html_document_body_clear();
     let container = html_div(root);
