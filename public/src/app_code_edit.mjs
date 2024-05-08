@@ -43,6 +43,10 @@ import {string_skip} from "./string_skip.mjs";
 import {string_length} from "./string_length.mjs";
 import {list_join} from "./list_join.mjs";
 import {newline} from "./newline.mjs";
+import {list_map} from "./list_map.mjs";
+import {js_parse} from "./js_parse.mjs";
+import {js_declaration_single} from "./js_declaration_single.mjs";
+import {js_unparse} from "./js_unparse.mjs";
 export function app_code_edit(file_path) {
     let function_name = function_path_to_name(file_path);
     let root = html_document_body_clear();
@@ -89,6 +93,11 @@ export function app_code_edit(file_path) {
             });
             let transform = html_button_width_full_text_click_x_0(root, '', () => {
                 let sources = object_values(files);
+                let mapped = list_map(sources, s => {
+                    let ast = js_parse(s);
+                    let d = js_declaration_single(ast);
+                    return js_unparse(d);
+                });
                 let code = `(() => {
                     ${js_code_call_args(function_transform_args_split.name, [function_name])}
                     ${list_join(sources, newline())}
