@@ -31,9 +31,10 @@ import {range} from "./range.mjs";
 import {string_get} from "./string_get.mjs";
 export function app_code_search_function_generic(input_value_initial, on_click_get) {
     let global = global_get();
-    let {files, back_stack} = global;
+    let {files} = global;
     let choices = object_properties(files);
     let choice_to_name= function_path_to_name;
+    let {back_stack} = global;
     let root = html_document_body_clear();
     if (greater_than_equal(list_length(back_stack), 2)) {
         lambda_button(root, app_code_button_back_text(), app_code_back);
