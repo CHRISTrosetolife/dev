@@ -92,20 +92,20 @@ export function app_code_edit(file_path) {
             html_button_width_full_text_click_x_0(root, 'search', () => {
                 app_code_backable(() => app_code_search_function());
             });
-            let transform = html_button_width_full_text_click_x_0(root, '', () => {
+            let transform = html_button_width_full_text_click_x_0(root, '', async () => {
                 let sources = object_values(files);
                 let mapped = list_map(sources, s => {
                     let ast = js_parse(s);
                     let d = js_declaration_single(ast);
                     return js_unparse(d);
                 });
-                let code = `await (async () => {
+                let code = `(async () => {
                     ${list_join(mapped, newline())}
-                    return await ${js_code_call_args(function_transform_args_split.name, [`${function_name}.name`, `${function_name}.name`, '[]'])}
+                    return ${js_code_call_args(function_transform_args_split.name, [`${function_name}.name`, `${function_name}.name`, '[]'])}
                 })();`;
                 console.log({
                     code,
-                    e: eval(code) || 'ee'
+                    e: await eval(code) || 'ee'
                 });
             });
             html_inner_set(transform, 'run function_transform');
