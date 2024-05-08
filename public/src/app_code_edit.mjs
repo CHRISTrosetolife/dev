@@ -1,3 +1,4 @@
+import {object_values} from "./object_values.mjs";
 import {list_empty_is} from "./list_empty_is.mjs";
 import {js_identifier_rename} from "./js_identifier_rename.mjs";
 import {function_transform_args_split} from "./function_transform_args_split.mjs";
@@ -16,7 +17,6 @@ import {functions_source_set} from "./functions_source_set.mjs";
 import {function_new_generic} from "./function_new_generic.mjs";
 import {html_focus} from "./html_focus.mjs";
 import {app_code_input} from "./app_code_input.mjs";
-import {each_object} from "./each_object.mjs";
 import {app_code_search_function} from "./app_code_search_function.mjs";
 import {html_spellcheck_none} from "./html_spellcheck_none.mjs";
 import {html_style_border_box} from "./html_style_border_box.mjs";
@@ -38,8 +38,8 @@ import {function_path_to_name} from "./function_path_to_name.mjs";
 import {list_filter} from "./list_filter.mjs";
 import {string_starts_with} from "./string_starts_with.mjs";
 import {list_first} from "./list_first.mjs";
-import { string_skip } from "./string_skip.mjs";
-import { string_length } from "./string_length.mjs";
+import {string_skip} from "./string_skip.mjs";
+import {string_length} from "./string_length.mjs";
 export function app_code_edit(file_path) {
     let root = html_document_body_clear();
     let container = html_div(root);
@@ -67,7 +67,7 @@ export function app_code_edit(file_path) {
             app_code_edit(file_path);
         } else {
             let first = list_first(filtered);
-            let remaining = string_skip(first, string_length(search_prefix))
+            let remaining = string_skip(first, string_length(search_prefix));
             app_code_search_function_generic(remaining, file_path_choice => {
                 return async () => {
                     let function_name_choice = function_path_to_name(file_path_choice);
@@ -85,10 +85,10 @@ export function app_code_edit(file_path) {
                 app_code_backable(() => app_code_search_function());
             });
             let transform = html_button_width_full_text_click_x_0(root, '', () => {
-
+                let sources = object_values(files);
             });
-            html_inner_set(transform, 'run function_transform')
-            html_button_width_full_text_click_x_0(root, 'add new function',  () => {
+            html_inner_set(transform, 'run function_transform');
+            html_button_width_full_text_click_x_0(root, 'add new function', () => {
                 app_code_backable(() => {
                     let root = html_document_body_clear();
                     html_button_width_full_text_click_x_0(root, app_code_button_back_text(), app_code_back);
