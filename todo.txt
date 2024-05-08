@@ -2,8 +2,6 @@ good whitespace max width
 
 mod => is even or not => nested if even positive odd positive etc lessons
 
-fix outside_move bug when ultiple functions reference each other
-
 shadowing should not be allowed
 
 programming language syntax sugar 
