@@ -23,8 +23,8 @@ import {html_style_background_color} from "./html_style_background_color.mjs";
 import {each_index} from "./each_index.mjs";
 import {integer_random_digit_single_positive} from "./integer_random_digit_single_positive.mjs";
 export function lesson_mod_even() {
-    let description = 'remainder ( % ) 2';
-    let example_message = 'outputting the remainder of a number with a divisor of 2';
+    let description = 'checking if a number is even';
+    let example_message = 'outputting whether or not a number is even';
     return lesson_simple(function () {
         let a = integer_random_digit_single_positive();
         let lines = [app_learn_code_log(`${a} % 2`)];
