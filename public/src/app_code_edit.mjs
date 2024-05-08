@@ -47,6 +47,9 @@ export function app_code_edit(file_path) {
     html_button_text_click(container_top, '⚡', auto);
     html_button_width_full_text_click(container_top, 'menu', lambda);
     async function auto() {
+        let {files} = global_get();
+        let source = object_property_get(files, file_path)
+        let tokens = js_tokenize(source);
         let function_name = function_path_to_name(file_path);
         await function_auto(function_name);
         app_code_edit(file_path);
