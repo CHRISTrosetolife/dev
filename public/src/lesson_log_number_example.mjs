@@ -15,7 +15,7 @@ export function lesson_log_number_example(source_get, message, before) {
         function refresh() {
             html_clear(div);
             before(div);
-            html_style_alternate_monospace_short(parent, string_combine('below is an example computer program ', message));
+            html_style_alternate_monospace_short(div, string_combine('below is an example computer program ', message));
             html_p_text(div, 'if you want to see another example , press the "another example" button below');
             let source;
             for (let i of app_learn_code_range_retry()) {
