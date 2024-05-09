@@ -18,16 +18,16 @@ export function lesson_if_else_nested_if_else() {
         let lines = [
             app_learn_code_log(a), 
             `if (${a} > 0) {`, 
-            app_learn_code_log_delimit(`positive`), 
             `if (${a} % 2 === 0) {`, 
             app_learn_code_log_delimit('positive and even'), 
+            `} else {`,
+            app_learn_code_log_delimit(`positive and odds`), 
             `}`, 
             `}`
         ];        
         return list_join_newline(lines);
     }, example_before, description, example_message, []);
     function example_before(parent) {
-        html_style_alternate_monospace_short(parent, 'an `if` can be inside another `if`');
-        html_style_alternate_short_p(parent, [noop, html_style_bold, html_style_monospace_bold], 'this is called a `nested `if');
+        html_style_alternate_monospace_short(parent, 'an `if` `else` can be inside of an `if`');
     }
 }
