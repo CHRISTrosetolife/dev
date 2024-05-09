@@ -14,7 +14,7 @@ import { app_learn_code_log_delimit } from "./app_learn_code_log_delimit.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { list_join } from "./list_join.mjs";
 export function lesson_if_else_string_concat_if() {
-    let description = 'string combined with two variables';
+    let description = 'string concatentation with an `if';
     let example_message = string_combine('with ', description);
     return lesson_simple(function () {
         let n = integer_random_digit_single();
@@ -30,13 +30,7 @@ export function lesson_if_else_string_concat_if() {
         return list_join_newline(lines)
     }, example_before, description, example_message, [screen1]);
     function example_before(parent) {
-        html_style_alternate_monospace_short(parent, 'strings can be concatentated with multiple variables');
     }
     function screen1(parent) {
-        html_p_text(parent, 'in this lesson variable names will be declared in alphabetical order');
-        html_p_text(parent, 'for example , this is allowed :');
-        app_learn_code_code_part_contrast(parent, list_join_newline(['let a;', 'let b;']));
-        html_p_text(parent, 'however , this is not allowed :');
-        app_learn_code_code_part_contrast(parent, list_join_newline(['let b;', 'let a;']));
     }
 }
