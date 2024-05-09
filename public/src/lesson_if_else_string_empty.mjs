@@ -18,8 +18,8 @@ import { lesson_console_log_quiz_words } from "./lesson_console_log_quiz_words.m
 import { list_random_item } from "./list_random_item.mjs";
 import { list_scramble } from "./list_scramble.mjs";
 export function lesson_if_else_string_empty() {
-    let description = 'string concatentation with an `if';
-    let example_message = string_combine('with ', description);
+    let description = 'empty string ( `\'\'` ) concatentation';
+    let example_message = string_combine('with a string being concatenated with an ', description);
     return lesson_simple(function () {
         let words = lesson_console_log_quiz_words();
         let word = list_random_item(words);
