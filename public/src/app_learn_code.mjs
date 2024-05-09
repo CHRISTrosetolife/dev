@@ -59,6 +59,7 @@ export function app_learn_code() {
     let lessons = [];
     for (let module of modules) {
         let {lessons:module_lesson_creates} = module
+        let module_lessons = []
         for (let lesson_create of module_lesson_creates) {
             let lesson = lesson_create();
             list_add(lessons, lesson);
