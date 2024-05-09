@@ -27,7 +27,7 @@ export function lesson_if_else_string_concat_if() {
             `}`,
             app_learn_code_log(list_join(['before', 'middle', 'after'], ' + '))
         ]
-        return lesson_if_else_string_concat_variables_quiz(2);
+        return list_join_newline(lines)
     }, example_before, description, example_message, [screen1]);
     function example_before(parent) {
         html_style_alternate_monospace_short(parent, 'strings can be concatentated with multiple variables');
