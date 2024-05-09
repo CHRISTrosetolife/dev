@@ -16,9 +16,12 @@ export function app_learn_code_review(lessons) {
             let div = html_div(parent);
             let quizzes = list_map(lessons, lesson => object_property_get(lesson, 'quiz'));
             let wrongs;
-            wrongs = [];
-            list_scramble(quizzes);
+            initialize();
             quiz_next();
+            function initialize() {
+                wrongs = [];
+                list_scramble(quizzes);
+            }
             function quiz_next() {
                 let quiz = list_pop(quizzes);
                 app_learn_code_quiz_inner_refresh(div, quiz, undefined, () => {
