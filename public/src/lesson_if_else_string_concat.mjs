@@ -16,7 +16,7 @@ export function lesson_if_else_string_concat() {
     let example_message = string_combine('with ', description);
     return lesson_simple(function () {
         let words = lesson_console_log_quiz_words();
-        let wl = list_length(words)
+        let words_length = list_length(words)
         let remain
         list_scramble(words);
         let w = list_take(words, 2);
