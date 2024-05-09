@@ -42,7 +42,7 @@ export function app_learn_code_modules() {
     let modules = [];
     let module_current;
     module_current = [];
-    list_add(modules, module_current);
+    list_add(modules, { name: 'output , operators , statements', lessons: module_current });
     list_add(module_current, lesson_console_log);
     list_add(module_current, lesson_log_number);
     list_add(module_current, lesson_add);
@@ -60,7 +60,7 @@ export function app_learn_code_modules() {
     list_add(module_current, lesson_statements_two);
     list_add(module_current, lesson_statements_three);
     module_current = []
-    list_add(modules, module_current);
+    list_add(modules, { name: 'variables', lessons: module_current });
     list_add(module_current, lesson_log_boolean);
     list_add(module_current, lesson_variable);
     list_add(module_current, lesson_variable_log_twice);
@@ -73,7 +73,7 @@ export function app_learn_code_modules() {
     list_add(module_current, lesson_variables_three);
     list_add(module_current, lesson_variable_binary);
     module_current = []
-    list_add(modules, module_current);
+    list_add(modules, { name: '`if` `else`', lessons: module_current });
     list_add(module_current, lesson_if_true);
     list_add(module_current, lesson_if_false);
     list_add(module_current, lesson_if_binary);
