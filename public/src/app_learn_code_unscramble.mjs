@@ -42,6 +42,9 @@ import {list_filter} from "./list_filter.mjs";
 import {html_style_background_color} from "./html_style_background_color.mjs";
 import {app_learn_code_range_retry} from "./app_learn_code_range_retry.mjs";
 import {equal_not} from "./equal_not.mjs";
+import {list_includes} from "./list_includes.mjs";
+import {list_sort_string} from "./list_sort_string.mjs";
+import {identity} from "./identity.mjs";
 export function app_learn_code_unscramble(source_get) {
     return function app_learn_code_unscramble_inner(parent) {
         let previous;
@@ -75,6 +78,14 @@ export function app_learn_code_unscramble(source_get) {
                 };
             });
             let answer = app_learn_code_source_to_tokens(source);
+            let sorted = [];
+            for (let a of answer) {
+                if (list_includes(sorted, a)) {
+                    continue;
+                }
+                list_add(sorted, a);
+            }
+            list_sort_string(sorted, identity);
             let scrambled = list_copy(answer);
             list_scramble(scrambled);
             let parts = array_new();

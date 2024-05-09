@@ -19,7 +19,7 @@ export function app_learn_code_source_to_tokens(source) {
         }
         let labels = ['name', 'num', '+/-', '</>/<=/>=', '==/!=/===/!=='];
         if (list_includes(labels, label)) {
-            return value;
+            return value.toString();
         }
         return label;
     });
