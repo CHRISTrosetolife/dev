@@ -16,20 +16,17 @@ import {list_join} from "./list_join.mjs";
 import { html_style_alternate_bold_short } from "./html_style_alternate_bold_short.mjs";
 import { lesson_console_log_quiz_words } from "./lesson_console_log_quiz_words.mjs";
 import { list_random_item } from "./list_random_item.mjs";
+import { list_scramble } from "./list_scramble.mjs";
 export function lesson_if_else_string_empty() {
     let description = 'string concatentation with an `if';
     let example_message = string_combine('with ', description);
     return lesson_simple(function () {
         let words = lesson_console_log_quiz_words();
         let word = list_random_item(words);
-        let n = integer_random_digit_single();
+        let items = [word, string_delimit('')];
+        list_scramble(items);
         let lines = [
-            js_code_statement_let_assign('before', string_delimit('')), 
-            app_learn_code_log(n),
-            `if (${n} >= 0) {`,
-            js_code_statement_assign('before', string_delimit('not ')),
-            `}`,
-            app_learn_code_log(list_join(['before', string_delimit('negative')], ' + '))
+            app_learn_code_log(list_join(items, ' + '))
         ]
         return list_join_newline(lines)
     }, example_before, description, example_message, []);
