@@ -105,9 +105,9 @@ export function app_learn_code_modules() {
     list_add(module_current, lesson_if_else_zero);
     list_add(module_current, lesson_if_else_positive);
     list_add(module_current, lesson_if_else_negative);
-    list_add(module_current, lesson_if_else_if);
     list_add(module_current, lesson_mod);
     list_add(module_current, lesson_mod_even);
+    list_add(module_current, lesson_if_else_if);
     list_add(module_current, lesson_if_else_nested_if);
     list_add(module_current, lesson_if_else_nested_if_else);
     list_add(module_current, lesson_if_else_if_inside_else);
