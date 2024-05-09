@@ -15,7 +15,7 @@ import {list_scramble} from "./list_scramble.mjs";
 import {list_take} from "./list_take.mjs";
 import {list_add} from "./list_add.mjs";
 export function lesson_if_else_string_concat_variables_two() {
-    let description = 'string combined a variable';
+    let description = 'string combined with two variables';
     let example_message = string_combine('with ', description);
     return lesson_simple(function () {
         let variable_count = 2;
