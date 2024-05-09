@@ -2,7 +2,6 @@ import {app_learn_code_log_join_plus} from "./app_learn_code_log_join_plus.mjs";
 import {html_style_alternate_monospace_short} from "./html_style_alternate_monospace_short.mjs";
 import {lesson_simple} from "./lesson_simple.mjs";
 import {string_combine} from "./string_combine.mjs";
-import {list_join_newline} from "./list_join_newline.mjs";
 import {html_p_text} from "./html_p_text.mjs";
 import {string_delimit} from "./string_delimit.mjs";
 import {html_style_alternate_bold_short} from "./html_style_alternate_bold_short.mjs";
@@ -19,8 +18,7 @@ export function lesson_if_else_string_empty() {
         let items = [word, ''];
         let mapped = list_map(items, string_delimit);
         list_scramble(mapped);
-        let lines = [app_learn_code_log_join_plus(mapped)];
-        return list_join_newline(lines);
+        return app_learn_code_log_join_plus(mapped);
     }, example_before, description, example_message, [screen1]);
     function example_before(parent) {}
     function screen1(parent) {
