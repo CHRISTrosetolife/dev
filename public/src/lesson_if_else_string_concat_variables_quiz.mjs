@@ -1,7 +1,5 @@
+import {app_learn_code_log_join_plus} from "./app_learn_code_log_join_plus.mjs";
 import {list_join_newline} from "./list_join_newline.mjs";
-import {list_join} from "./list_join.mjs";
-import {app_learn_code_log} from "./app_learn_code_log.mjs";
-import {js_code_statement_let_assign} from "./js_code_statement_let_assign.mjs";
 import {list_add} from "./list_add.mjs";
 import {list_set} from "./list_set.mjs";
 import {list_get} from "./list_get.mjs";
@@ -14,7 +12,7 @@ import {list_scramble} from "./list_scramble.mjs";
 import {list_indices} from "./list_indices.mjs";
 import {add_1} from "./add_1.mjs";
 import {lesson_if_else_string_concat_quiz_parts} from "./lesson_if_else_string_concat_quiz_parts.mjs";
-import { js_code_statement_let_assign_multiple } from "./js_code_statement_let_assign_multiple.mjs";
+import {js_code_statement_let_assign_multiple} from "./js_code_statement_let_assign_multiple.mjs";
 export function lesson_if_else_string_concat_variables_quiz(variable_count) {
     let parts = lesson_if_else_string_concat_quiz_parts(add_1(variable_count));
     let indices = list_indices(parts);
@@ -31,6 +29,6 @@ export function lesson_if_else_string_concat_variables_quiz(variable_count) {
     });
     let lines = [];
     list_add(lines, js_code_statement_let_assign_multiple(taken_names, values));
-    list_add(lines, app_learn_code_log(list_join(parts, ' + ')));
+    list_add(lines, app_learn_code_log_join_plus(parts));
     return list_join_newline(lines);
 }
