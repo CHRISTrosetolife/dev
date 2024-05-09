@@ -43,5 +43,6 @@ export function lesson_if_else_string_concat_quiz(concat_count) {
         list_set(w, i, string_combine(list_first(w), ' '));
     }
     let mapped = list_map(w, string_delimit);
+    console.log({w})
     return app_learn_code_log(list_join(mapped, ' + '));
 }
