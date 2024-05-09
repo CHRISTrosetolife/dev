@@ -1,9 +1,7 @@
+import {html_button_width_full_text_click_alternate_code} from "./html_button_width_full_text_click_alternate_code.mjs";
+import {add_1_string} from "./add_1_string.mjs";
 import {app_learn_code_review} from "./app_learn_code_review.mjs";
 import {app_learn_code_modules} from "./app_learn_code_modules.mjs";
-import {app_learn_code_style_code_colored} from "./app_learn_code_style_code_colored.mjs";
-import {noop} from "./noop.mjs";
-import {html_style_alternate} from "./html_style_alternate.mjs";
-import {html_style_alternate_split} from "./html_style_alternate_split.mjs";
 import {html_style_default_font_size_value} from "./html_style_default_font_size_value.mjs";
 import {html_style_default_initialize} from "./html_style_default_initialize.mjs";
 import {html_hash} from "./html_hash.mjs";
@@ -43,11 +41,8 @@ import {html_span_text} from "./html_span_text.mjs";
 import {html_style_bold} from "./html_style_bold.mjs";
 import {range} from "./range.mjs";
 import {string_length} from "./string_length.mjs";
-import {html_span} from "./html_span.mjs";
-import { list_copy } from "./list_copy.mjs";
-import { list_single } from "./list_single.mjs";
-import { object_property_set } from "./object_property_set.mjs";
-import { string_to } from "./string_to.mjs";
+import {list_single} from "./list_single.mjs";
+import {object_property_set} from "./object_property_set.mjs";
 export function app_learn_code() {
     let modules = app_learn_code_modules();
     let root = html_document_body();
@@ -76,7 +71,7 @@ export function app_learn_code() {
         list_add(lessons, review);
         list_add(lesson_screens, list_single(object_property_get(review, 'screens')));
         list_add(module_lessons, review);
-        object_property_set(module, 'lessons', module_lessons)
+        object_property_set(module, 'lessons', module_lessons);
     }
     function refresh_settings() {
         clear_scroll();
@@ -124,20 +119,23 @@ export function app_learn_code() {
         html_style_bold(begin);
         html_p_text(root, 'or choose a module below :');
         each_index(modules, (module, index) => {
-            let index_1 = add_1(index);
-            let index_1_s = string_to(index_1);
+            let index_1_s = add_1_string(index);
             let {name} = module;
             html_button_width_full_text_click_alternate_code(root, string_combine(index_1_s, name), () => refresh_module(module));
-        })
+        });
     }
     function refresh_module(module) {
         clear_scroll();
         button_home_hr();
         let {lessons} = module;
-        for (let lesson of lessons) {
-            let {description} = lesson;function on_click() {refresh_lesson(lesson)}
-            html_button_width_full_text_click_alternate_code(root, description, on_click);
-        }
+        each_index(lessons, (lesson, index) => {
+            let index_1_s = add_1_string(index);
+            let {description} = lesson;
+            function on_click() {
+                refresh_lesson(lesson);
+            }
+            html_button_width_full_text_click_alternate_code(root, string_combine(index_1_s, description), on_click);
+        });
     }
     refresh_main();
     let index_last = list_index_last(lesson_screens);
@@ -200,9 +198,3 @@ export function app_learn_code() {
         });
     }
 }
-function html_button_width_full_text_click_alternate_code(root, description, on_click) {
-    let b = html_button_width_full_text_click(root, '', on_click);
-    let split = html_style_alternate_split(description);
-    html_style_alternate(b, html_span, [noop, app_learn_code_style_code_colored], split);
-}
-
