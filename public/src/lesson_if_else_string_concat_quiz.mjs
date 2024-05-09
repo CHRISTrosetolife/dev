@@ -19,7 +19,6 @@ import {lesson_console_log_quiz_words} from "./lesson_console_log_quiz_words.mjs
 import { range } from "./range.mjs";
 import { list_index_last } from "./list_index_last.mjs";
 export function lesson_if_else_string_concat_quiz(concat_count) {
-    concat_count = 3
     let words_total = 4;
     let words = lesson_console_log_quiz_words();
     if (0) words = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
