@@ -12,6 +12,7 @@ import {js_code_statement_let_assign} from "./js_code_statement_let_assign.mjs";
 import {list_get} from "./list_get.mjs";
 import {list_set} from "./list_set.mjs";
 import {add_1} from "./add_1.mjs";
+import { list_scramble } from "./list_scramble.mjs";
 export function lesson_if_else_string_concat_variables_two() {
     let description = 'string combined a variable';
     let example_message = string_combine('with ', description);
@@ -19,6 +20,7 @@ export function lesson_if_else_string_concat_variables_two() {
         let variable_count = 2;
         let parts = lesson_if_else_string_concat_quiz_parts(add_1(variable_count));
         let indices = list_indices(parts);
+        list_scramble(indices);
         let parts_variable_index = list_random_index(parts);
         let parts_at_variable_index = list_get(parts, parts_variable_index);
         let name = app_learn_code_random_identifier();
