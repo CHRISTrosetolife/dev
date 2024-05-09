@@ -16,7 +16,7 @@ export function lesson_if_else_string_concat() {
     return lesson_simple(function () {
         let a = integer_random_digit_single();
         let lines = [`if (${a} >= 0) {`, app_learn_code_log_delimit('positive or zero'), `} else {`, `if (${a} % 2 === 0) {`, app_learn_code_log_delimit('negative and even'), `} else {`, app_learn_code_log_delimit(`negative and odd`), `}`, `}`];
-        return list_join_newline(lines);
+        return app_learn_code_log(lines);
     }, example_before, description, example_message, []);
     function example_before(parent) {
         html_style_alternate_monospace_short(parent, 'an `if` `else` can be inside of an `if`');
