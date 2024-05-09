@@ -1,3 +1,4 @@
+import {app_learn_code_modules} from "./app_learn_code_modules.mjs";
 import {app_learn_code_style_code_colored} from "./app_learn_code_style_code_colored.mjs";
 import {noop} from "./noop.mjs";
 import {html_style_alternate} from "./html_style_alternate.mjs";
@@ -5,7 +6,6 @@ import {html_style_alternate_split} from "./html_style_alternate_split.mjs";
 import {html_style_default_font_size_value} from "./html_style_default_font_size_value.mjs";
 import {html_style_default_initialize} from "./html_style_default_initialize.mjs";
 import {html_hash} from "./html_hash.mjs";
-import {app_learn_code_lessons} from "./app_learn_code_lessons.mjs";
 import {string_combine_multiple} from "./string_combine_multiple.mjs";
 import {html_scroll_top} from "./html_scroll_top.mjs";
 import {string_multiply} from "./string_multiply.mjs";
@@ -44,7 +44,7 @@ import {range} from "./range.mjs";
 import {string_length} from "./string_length.mjs";
 import {html_span} from "./html_span.mjs";
 export function app_learn_code() {
-    let lesson_creates = app_learn_code_lessons();
+    let lesson_creates = app_learn_code_modules();
     let root = html_document_body();
     html_hash({
         'background_color': value => {
