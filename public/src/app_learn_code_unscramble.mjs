@@ -1,4 +1,3 @@
-import {log} from "./log.mjs";
 import {app_learn_code_index_of_tokens} from "./app_learn_code_index_of_tokens.mjs";
 import {html_style_hidden} from "./html_style_hidden.mjs";
 import {list_empty_is} from "./list_empty_is.mjs";
@@ -123,29 +122,22 @@ export function app_learn_code_unscramble(source_get) {
                     let current = list_get(tokens, current_index);
                     list_add(choices, s);
                     let remaining = list_skip(tokens, add_1(current_index));
-                    console.log({
-                        remaining,
-                        current
+                    html_style(code, {
+                        visibility: 'visible'
                     });
-                    if (list_includes_not(remaining, current)) {
-                        html_style(code, {
-                            visibility: 'visible'
-                        });
-                    }
                     for (let p of parts) {
                         html_style_background_color(p, app_learn_code_code_background());
                     }
-                    html_style(part, {
-                        display: 'none'
-                    });
+                    if (list_includes_not(remaining, current)) {
+                        html_style(part, {
+                            display: 'none'
+                        });
+                    }
                     let first_source = first.source;
                     current_index++;
                     let source_index = app_learn_code_index_of_tokens(first_source, choices);
                     let take_count = add(source_index, string_length(current.toString()));
                     let take = string_take(first_source, take_count);
-                    console.log({
-                        take
-                    });
                     html_inner_set(code, take);
                     if (equal(current_index, list_length(answer))) {
                         html_style_background_color(code, 'darkgreen');
