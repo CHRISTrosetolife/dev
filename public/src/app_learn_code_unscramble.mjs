@@ -124,7 +124,7 @@ export function app_learn_code_unscramble(source_get) {
                     let current = list_get(tokens, current_index);
                     list_add(choices, s);
                     let remaining = list_skip(tokens, add_1(current_index))
-                    if (list_includes_not(remaining)) {
+                    if (list_includes_not(remaining, current)) {
                         html_style(code, {
                             visibility: 'visible'
                         });
