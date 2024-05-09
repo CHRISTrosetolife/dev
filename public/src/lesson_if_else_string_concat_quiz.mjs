@@ -21,7 +21,7 @@ import { list_index_last } from "./list_index_last.mjs";
 export function lesson_if_else_string_concat_quiz(concat_count) {
     let words_total = 4;
     let words = lesson_console_log_quiz_words();
-    if (0) words = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
+    if (1) words = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
     let words_length = list_length(words);
     let count = integer_random(concat_count, words_total);
     let remaining = list_skip(words, integer_random(0, subtract(words_length, count)));
