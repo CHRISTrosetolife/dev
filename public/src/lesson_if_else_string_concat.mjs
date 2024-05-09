@@ -11,8 +11,8 @@ import {string_combine} from "./string_combine.mjs";
 import {noop} from "./noop.mjs";
 import {html_style_bold} from "./html_style_bold.mjs";
 export function lesson_if_else_string_concat() {
-    let description = '`if` `else` nested inside of an `else';
-    let example_message = string_combine('with an ', description);
+    let description = 'two strings combined';
+    let example_message = string_combine('with ', description);
     return lesson_simple(function () {
         let a = integer_random_digit_single();
         let lines = [`if (${a} >= 0) {`, app_learn_code_log_delimit('positive or zero'), `} else {`, `if (${a} % 2 === 0) {`, app_learn_code_log_delimit('negative and even'), `} else {`, app_learn_code_log_delimit(`negative and odd`), `}`, `}`];
