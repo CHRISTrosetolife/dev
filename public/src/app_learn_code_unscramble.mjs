@@ -1,3 +1,6 @@
+import {app_learn_code_ms_correct} from "./app_learn_code_ms_correct.mjs";
+import {timeout_set} from "./timeout_set.mjs";
+import {app_learn_code_background_color_correct_dark} from "./app_learn_code_background_color_correct_dark.mjs";
 import {app_learn_code_index_of_tokens} from "./app_learn_code_index_of_tokens.mjs";
 import {html_style_hidden} from "./html_style_hidden.mjs";
 import {list_empty_is} from "./list_empty_is.mjs";
@@ -128,6 +131,8 @@ export function app_learn_code_unscramble(source_get) {
                     for (let p of parts) {
                         html_style_background_color(p, app_learn_code_code_background());
                     }
+                    app_learn_code_background_color_correct_dark(part);
+                    timeout_set(() => html_style_background_color(p, app_learn_code_code_background()), app_learn_code_ms_correct());
                     if (list_includes_not(remaining, current)) {
                         html_style(part, {
                             display: 'none'
@@ -140,7 +145,7 @@ export function app_learn_code_unscramble(source_get) {
                     let take = string_take(first_source, take_count);
                     html_inner_set(code, take);
                     if (equal(current_index, list_length(answer))) {
-                        html_style_background_color(code, 'darkgreen');
+                        app_learn_code_background_color_correct_dark(code);
                         app_learn_code_answer_correct(success);
                         html_p_text(success, 'if you want to take another quiz , press the "another quiz" button below : ');
                         html_p_text(success, 'otherwise , press the "next" button below');
