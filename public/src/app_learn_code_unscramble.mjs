@@ -1,3 +1,4 @@
+import {log} from "./log.mjs";
 import {app_learn_code_index_of_tokens} from "./app_learn_code_index_of_tokens.mjs";
 import {html_style_hidden} from "./html_style_hidden.mjs";
 import {list_empty_is} from "./list_empty_is.mjs";
@@ -5,11 +6,9 @@ import {null_not_is} from "./null_not_is.mjs";
 import {app_learn_code_source_to_tokens} from "./app_learn_code_source_to_tokens.mjs";
 import {app_learn_code_source_variations} from "./app_learn_code_source_variations.mjs";
 import {app_learn_code_answer_correct} from "./app_learn_code_answer_correct.mjs";
-import {list_scramble} from "./list_scramble.mjs";
 import {string_take} from "./string_take.mjs";
 import {list_take} from "./list_take.mjs";
 import {app_learn_code_code_part_titled_code} from "./app_learn_code_code_part_titled_code.mjs";
-import {list_copy} from "./list_copy.mjs";
 import {app_learn_code_code_part_titled_output} from "./app_learn_code_code_part_titled_output.mjs";
 import {html_style_units} from "./html_style_units.mjs";
 import {app_learn_code_style_code_color} from "./app_learn_code_style_code_color.mjs";
@@ -45,9 +44,9 @@ import {equal_not} from "./equal_not.mjs";
 import {list_includes} from "./list_includes.mjs";
 import {list_sort_string} from "./list_sort_string.mjs";
 import {identity} from "./identity.mjs";
-import { list_skip } from "./list_skip.mjs";
-import { list_includes_not } from "./list_includes_not.mjs";
-import { list_sort } from "./list_sort.mjs";
+import {list_skip} from "./list_skip.mjs";
+import {list_includes_not} from "./list_includes_not.mjs";
+import {list_sort} from "./list_sort.mjs";
 export function app_learn_code_unscramble(source_get) {
     return function app_learn_code_unscramble_inner(parent) {
         let previous;
@@ -89,9 +88,7 @@ export function app_learn_code_unscramble(source_get) {
                 list_add(sorted, a);
             }
             list_sort_string(sorted, identity);
-            list_sort(sorted, string_length)
-            let scrambled = list_copy(answer);
-            list_scramble(scrambled);
+            list_sort(sorted, string_length);
             let parts = array_new();
             let current_index = 0;
             let choices = array_new();
@@ -125,7 +122,11 @@ export function app_learn_code_unscramble(source_get) {
                     let {tokens} = first;
                     let current = list_get(tokens, current_index);
                     list_add(choices, s);
-                    let remaining = list_skip(tokens, add_1(current_index))
+                    let remaining = list_skip(tokens, add_1(current_index));
+                    console.log({
+                        remaining,
+                        current
+                    });
                     if (list_includes_not(remaining, current)) {
                         html_style(code, {
                             visibility: 'visible'
@@ -142,6 +143,9 @@ export function app_learn_code_unscramble(source_get) {
                     let source_index = app_learn_code_index_of_tokens(first_source, choices);
                     let take_count = add(source_index, string_length(current.toString()));
                     let take = string_take(first_source, take_count);
+                    console.log({
+                        take
+                    });
                     html_inner_set(code, take);
                     if (equal(current_index, list_length(answer))) {
                         html_style_background_color(code, 'darkgreen');
