@@ -18,7 +18,7 @@ export function lesson_if_else_if_inside_else() {
         let lines = [
             app_learn_code_log(a), 
             `if (${a} <= 0) {`, 
-            app_learn_code_log_delimit(`not positive`), 
+            app_learn_code_log_delimit(`zero or negative`), 
             `} else {`,
             app_learn_code_log_delimit('positive'), 
             `if (${a} % 2 === 0) {`, 

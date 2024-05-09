@@ -1,3 +1,4 @@
+import {lesson_if_else_if_else_inside_else} from "./lesson_if_else_if_else_inside_else.mjs";
 import {lesson_if_else_if_inside_else} from "./lesson_if_else_if_inside_else.mjs";
 import {lesson_variables_declare_shorthand} from "./lesson_variables_declare_shorthand.mjs";
 import {lesson_variable_change} from "./lesson_variable_change.mjs";
@@ -106,5 +107,6 @@ export function app_learn_code_modules() {
     list_add(module_current, lesson_if_else_nested_if);
     list_add(module_current, lesson_if_else_nested_if_else);
     list_add(module_current, lesson_if_else_if_inside_else);
+    list_add(module_current, lesson_if_else_if_else_inside_else);
     return modules;
 }
