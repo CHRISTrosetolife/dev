@@ -66,7 +66,7 @@ export function app_learn_code_quiz_inner(parent, source_get) {
             let button = html_button_width_full_text_click(container, answer, function on_click() {
                 if (index === correct_index) {
                     app_learn_code_style_success(button);
-                    setTimeout(function () {
+                    setTimeout(function on_success() {
                         refresh(true);
                         container_bottom_show();
                     }, 200);
