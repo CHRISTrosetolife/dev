@@ -6,12 +6,13 @@ import {string_combine} from "./string_combine.mjs";
 import {list_join_newline} from "./list_join_newline.mjs";
 import {html_p_text} from "./html_p_text.mjs";
 export function lesson_if_else_string_concat_variables_two() {
-    let description = 'empty string ( `\'\'` ) concatentation';
-    let example_message = string_combine('with a string being concatenated with an ', description);
+    let description = 'string combined with two variables';
+    let example_message = string_combine('with ', description);
     return lesson_simple(function () {
         return lesson_if_else_string_concat_variables_quiz(2);
     }, example_before, description, example_message, [screen1]);
     function example_before(parent) {
+        html_style_alternate_monospace_short(parent, 'strings can be concatentated with multiple variables');
     }
     function screen1(parent) {
         html_p_text(parent, 'in this lesson variable names will be declared in alphabetical order');
