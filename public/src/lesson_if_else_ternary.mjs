@@ -26,4 +26,7 @@ export function lesson_if_else_ternary() {
         return list_join_newline(lines);
     }, example_before, description, example_message, []);
     function example_before(parent) {}
+    function screen1(parent) {
+        
+    }
 }
