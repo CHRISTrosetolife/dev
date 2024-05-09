@@ -71,7 +71,7 @@ export function app_learn_code() {
         }
         let review = app_learn_code_review(module_lessons);
         list_add(lessons, review);
-        list_add(lesson_screens, list_single(object_property_get(list, 'screens')));
+        list_add(lesson_screens, list_single(object_property_get(review, 'screens')));
     }
     function refresh_settings() {
         clear_scroll();
