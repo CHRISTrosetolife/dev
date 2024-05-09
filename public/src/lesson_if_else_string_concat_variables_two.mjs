@@ -1,5 +1,5 @@
+import {app_learn_code_random_identifiers} from "./app_learn_code_random_identifiers.mjs";
 import {list_indices} from "./list_indices.mjs";
-import {app_learn_code_random_identifier} from "./app_learn_code_random_identifier.mjs";
 import {list_join} from "./list_join.mjs";
 import {app_learn_code_log} from "./app_learn_code_log.mjs";
 import {lesson_if_else_string_concat_quiz_parts} from "./lesson_if_else_string_concat_quiz_parts.mjs";
@@ -14,6 +14,8 @@ import {add_1} from "./add_1.mjs";
 import {list_scramble} from "./list_scramble.mjs";
 import {list_take} from "./list_take.mjs";
 import {list_add} from "./list_add.mjs";
+import {list_sort_string} from "./list_sort_string.mjs";
+import {identity} from "./identity.mjs";
 export function lesson_if_else_string_concat_variables_two() {
     let description = 'string combined with two variables';
     let example_message = string_combine('with ', description);
@@ -24,6 +26,7 @@ export function lesson_if_else_string_concat_variables_two() {
         list_scramble(indices);
         let taken = list_take(indices, variable_count);
         let taken_names = app_learn_code_random_identifiers(variable_count);
+        list_sort_string(taken_names, identity);
         let lines = [];
         for (let t of taken) {
             let parts_at_variable_index = list_get(parts, t);
