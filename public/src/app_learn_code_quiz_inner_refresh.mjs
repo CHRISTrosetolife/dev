@@ -22,10 +22,10 @@ import {app_learn_code_code_container} from "./app_learn_code_code_container.mjs
 import {html_p_text} from "./html_p_text.mjs";
 import {html_clear} from "./html_clear.mjs";
 export function app_learn_code_quiz_inner_refresh(parent, source_get, previous_source, on_answer_right, on_answer_wrong) {
-    html_clear(div);
-    html_p_text(div, 'below is a quiz');
-    html_p_text(div, 'choose the correct output for the code');
-    let container = app_learn_code_code_container(div);
+    html_clear(parent);
+    html_p_text(parent, 'below is a quiz');
+    html_p_text(parent, 'choose the correct output for the code');
+    let container = app_learn_code_code_container(parent);
     let choices_count = 4;
     let r = range(choices_count);
     let choices = array_new();
