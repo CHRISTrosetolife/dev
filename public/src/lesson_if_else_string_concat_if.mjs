@@ -23,14 +23,12 @@ export function lesson_if_else_string_concat_if() {
             js_code_statement_let_assign('middle', string_delimit(' ')),
             js_code_statement_let_assign('after', string_delimit('negative')),
             `if (${n} >= 0) {`,
-            js_code_statement_assign('middle', ' not '),
+            js_code_statement_assign('middle', string_delimit(' not ')),
             `}`,
             app_learn_code_log(list_join(['before', 'middle', 'after'], ' + '))
         ]
         return list_join_newline(lines)
-    }, example_before, description, example_message, [screen1]);
+    }, example_before, description, example_message, []);
     function example_before(parent) {
-    }
-    function screen1(parent) {
     }
 }
