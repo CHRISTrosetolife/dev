@@ -11,8 +11,8 @@ import {string_combine} from "./string_combine.mjs";
 import {noop} from "./noop.mjs";
 import {html_style_bold} from "./html_style_bold.mjs";
 export function lesson_if_else_if_inside_else() {
-    let description = 'nested `if';
-    let example_message = string_combine('with a ', description);
+    let description = '`if` inside of an `else';
+    let example_message = string_combine('with an ', description);
     return lesson_simple(function () {
         let a = integer_random_digit_single();
         let lines = [
