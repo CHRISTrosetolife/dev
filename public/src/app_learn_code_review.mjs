@@ -15,7 +15,7 @@ export function app_learn_code_review(lessons) {
                 quiz_next();
                 function quiz_next() {
                     let quiz = list_pop(quizzes);
-                    console.log({quiz})
+                    console.log({lessons})
                     app_learn_code_quiz_inner_refresh(parent, quiz, undefined, () => {
                         if (list_empty_not_is(quizzes)) {
                             quiz_next();
