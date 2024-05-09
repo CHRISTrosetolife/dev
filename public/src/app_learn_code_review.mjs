@@ -8,13 +8,18 @@ import {list_pop} from "./list_pop.mjs";
 import {noop} from "./noop.mjs";
 import {html_p_text} from "./html_p_text.mjs";
 import {string_combine} from "./string_combine.mjs";
+import { error } from "./error.mjs";
+import { list_filter } from "./list_filter.mjs";
+import { undefined_not_is } from "./undefined_not_is.mjs";
+import { html_clear } from "./html_clear.mjs";
 export function app_learn_code_review(lessons) {
     let description = 'module review';
     return {
         description,
         screens: [function app_learn_code_review_inner(parent) {
             let div = html_div(parent);
-            let quizzes = list_map(lessons, lesson => object_property_get(lesson, 'quiz'));
+            let mapped = list_map(lessons, lesson => object_property_get(lesson, 'quiz'));
+            let quizzes = list_filter(mapped, undefined_not_is);
             let wrongs;
             initialize();
             quiz_next();
@@ -27,7 +32,8 @@ export function app_learn_code_review(lessons) {
                 app_learn_code_quiz_inner_refresh(div, quiz, undefined, () => {
                     if (list_empty_is(quizzes)) {
                         if (list_empty_is(wrongs)) {
-                            html_p_text(string_combine('you completed the ', description));
+                            html_clear(div);
+                            html_p_text(div, string_combine('you completed the ', description));
                             return;
                         } else {
                             quizzes = wrongs;

@@ -45,6 +45,8 @@ export function app_learn_code_modules() {
     list_add(modules, { name: 'output , processes , statements', lessons: module_current });
     list_add(module_current, lesson_console_log);
     list_add(module_current, lesson_log_number);
+    module_current = [];
+    list_add(modules, { name: 'temp', lessons: module_current });
     list_add(module_current, lesson_add);
     list_add(module_current, lesson_subtract);
     list_add(module_current, lesson_multiply);
