@@ -7,20 +7,21 @@ import {string_delimit} from "./string_delimit.mjs";
 import {integer_random_digit_single} from "./integer_random_digit_single.mjs";
 import {js_code_statement_assign} from "./js_code_statement_assign.mjs";
 import {app_learn_code_log} from "./app_learn_code_log.mjs";
+import { js_code_statement_let } from "./js_code_statement_let.mjs";
 export function lesson_if_else_string_concat_if_else() {
     let description = 'string concatentation with an `if';
     let example_message = string_combine('with ', description);
     return lesson_simple(function () {
         let n = integer_random_digit_single();
         let lines = [
-            js_code_statement_let_assign('before', string_delimit('')), 
             app_learn_code_log(n), 
-            `if (${n} >= 0) {`, 
+            js_code_statement_let('before'), 
+            `if (${n} <= 0) {`, 
             js_code_statement_assign('before', string_delimit('not ')), 
             `} else {`, 
             js_code_statement_assign('before', string_delimit('')), 
             `}`, 
-            app_learn_code_log_join_plus(['before', string_delimit('negative')])
+            app_learn_code_log_join_plus(['before', string_delimit('positive')])
         ];
         return list_join_newline(lines);
     }, example_before, description, example_message, []);
