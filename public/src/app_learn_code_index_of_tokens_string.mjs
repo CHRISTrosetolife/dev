@@ -17,7 +17,7 @@ export function app_learn_code_index_of_tokens_string(input, tokens_string) {
     }
     `;
     let index = app_learn_code_index_of_tokens(input, tokens);
-    let take_count = add(source_index, string_length(current.toString()));
-    let take = string_take(first_source, take_count);
+    let take_count = add(index, string_length("".toString()));
+    let take = string_take(input, take_count);
     return take;
 }
