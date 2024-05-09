@@ -7,9 +7,10 @@ import {lesson_simple} from "./lesson_simple.mjs";
 import {random_50_50} from "./random_50_50.mjs";
 import {integer_random_digit_single} from "./integer_random_digit_single.mjs";
 import {html_hr} from "./html_hr.mjs";
+import { string_combine } from "./string_combine.mjs";
 export function lesson_if_else_if_two() {
-    let description = '`if` with `else if`';
-    let example_message = 'outputting whether or not a number is positive , negative or zero';
+    let description = 'two `if`';
+    let example_message = string_combine('with ', description);
     return lesson_simple(function () {
         let a;
         if (random_50_50()) {
