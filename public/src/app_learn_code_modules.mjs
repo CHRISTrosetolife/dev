@@ -100,7 +100,7 @@ export function app_learn_code_modules() {
     list_add(module_current, lesson_variable_binary);
     module_current = [];
     list_add(modules, {
-        name: '`if` `else`',
+        name: '`if` `else` simple',
         lessons: module_current
     });
     list_add(module_current, lesson_if_true);
@@ -113,6 +113,10 @@ export function app_learn_code_modules() {
     list_add(module_current, lesson_if_else_negative);
     list_add(module_current, lesson_mod);
     list_add(module_current, lesson_mod_even);
+    list_add(modules, {
+        name: '`if` `else` compound',
+        lessons: module_current
+    });
     list_add(module_current, lesson_if_else_if_two);
     list_add(module_current, lesson_if_else_if);
     list_add(module_current, lesson_if_else_nested_if);
