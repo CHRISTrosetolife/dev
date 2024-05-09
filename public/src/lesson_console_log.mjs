@@ -30,5 +30,6 @@ export function lesson_console_log() {
     list_add(v2, app_learn_code_quiz(lesson_console_log_quiz));
     list_add(v2, app_learn_code_unscramble(lesson_console_log_quiz));
     object_property_set(v1, 'screens', v2);
+    object_property_set(v1, 'quiz', lesson_console_log_quiz);
     return v1;
 }
