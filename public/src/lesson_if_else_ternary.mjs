@@ -17,12 +17,7 @@ export function lesson_if_else_ternary() {
         let n = integer_random_digit_single();
         let lines = [
             app_learn_code_log(n), 
-            js_code_statement_let('before'), 
-            `if (${n} <= 0) {`, 
-            js_code_statement_assign('before', string_delimit('not ')), 
-            `} else {`, 
-            js_code_statement_assign('before', string_delimit('')), 
-            `}`, 
+            js_code_statement_let_assign('before', js_code_ternary(`${n} <= 0`, string_delimit('not '), string_delimit(''))), 
             app_learn_code_log_join_plus(['before', string_delimit('positive')])
         ];
         return list_join_newline(lines);
@@ -40,6 +35,10 @@ export function lesson_if_else_ternary() {
         ];
         app_learn_code_code_part_contrast(parent, list_join_newline(lines));
         html_p_text(parent, 'that code can be shortened to the following :');
-        app_learn_code_code_part_contrast(parent, js_code_statement_let_assign('a', 'b ? c : d'));
+        app_learn_code_code_part_contrast(parent, js_code_statement_let_assign('a', js_code_ternary()));
     }
 }
+function js_code_ternary(a,b,c) {
+    return `${a} ? ${b} : ${c}`;
+}
+
