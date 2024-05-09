@@ -28,5 +28,9 @@ export function lesson_if_else_string_empty() {
         ]
         return list_join_newline(lines)
     }, example_before, description, example_message, []);
-    function example_before(parent) {}
+    function example_before(parent) {
+        'a string can have nothing in it'
+        'this is called an empty string'
+        'if a string is concatenated with an empty string , then the result is the same as before'
+    }
 }
