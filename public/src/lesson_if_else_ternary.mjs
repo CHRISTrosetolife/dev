@@ -40,6 +40,6 @@ export function lesson_if_else_ternary() {
         ];
         app_learn_code_code_part_contrast(parent, list_join_newline(lines));
         html_p_text(parent, 'that code can be shortened to the following :');
-        js_code_statement_let_assign('a', 'b ? c : d')
+        app_learn_code_code_part_contrast(parent, js_code_statement_let_assign('a', 'b ? c : d'));
     }
 }
