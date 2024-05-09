@@ -23,23 +23,16 @@ export function lesson_if_else_if_two() {
         `}`
         ];
         return list_join_newline(lines);
-    }, example_before, description, example_message, [screen1, screen2]);
+    }, example_before, description, example_message, [screen1]);
     function example_before(parent) {
-        html_p_text(parent, 'in this lesson , the code will first check whether or not the number is positive');
-        html_p_text(parent, 'if the number is not positive , then the code will check whether or not the number is negative');
-        html_hr(parent);
+
     }
     function screen1(parent) {
-        html_p_text(parent, 'the number zero is not positive');
-        html_p_text(parent, 'the number zero is not negative');
-        html_p_text(parent, 'if a number is not positive and the number is not negative , then the number must be zero');
-        html_p_text(parent, 'a number is either positive , negative or zero');
-    }
-    function screen2(parent) {
-        html_p_text(parent, 'a number is either positive , or is it not positive , so "positive" and "not positive" are two choices');
-        html_style_alternate_monospace(parent, ['if there are two choices , then one ', 'if', ' ', 'else', ' can be used']);
-        html_p_text(parent, 'this lesson will check a number to be either "positive" , "negative" or "zero"');
-        html_p_text(parent, '"positive" , "negative" and "zero" are three choices');
-        html_style_alternate_monospace(parent, ['if there are three choices , then two ', 'if', ' ', 'else', ' can be used , as will be shown later in this lesson']);
+        html_p_text(parent, 'a program can have multiple `if`\'s');
+        html_p_text(parent, 'in this lesson there will be two `if`\'s');
+        html_p_text(parent, 'sometimes only the first `if` will run');
+        html_p_text(parent, 'sometimes only the second `if` will run');
+        html_p_text(parent, 'sometimes both `if`\'s will run');
+        html_p_text(parent, 'sometimes none of the `if`\'s will run');
     }
 }
