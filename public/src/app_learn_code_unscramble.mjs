@@ -121,7 +121,7 @@ export function app_learn_code_unscramble(source_get) {
                     let first_source = first.source;
                     current_index++;
                     let source_index = 0;
-                    let c_previous;
+                    let c_previous = '';
                     for (let c of choices) {
                         source_index = first_source.indexOf(c, source_index);
                         c_previous = c;
