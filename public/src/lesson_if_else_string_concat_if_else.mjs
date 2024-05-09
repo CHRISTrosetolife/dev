@@ -18,6 +18,7 @@ export function lesson_if_else_string_concat_if_else() {
             `if (${n} >= 0) {`, 
             js_code_statement_assign('before', 
             string_delimit('not ')), 
+            `} else {`, 
             `}`, 
             app_learn_code_log_join_plus(['before', string_delimit('negative')])
         ];
