@@ -1,3 +1,4 @@
+import {lesson_if_else_if_inside_else} from "./lesson_if_else_if_inside_else.mjs";
 import {lesson_variables_declare_shorthand} from "./lesson_variables_declare_shorthand.mjs";
 import {lesson_variable_change} from "./lesson_variable_change.mjs";
 import {lesson_log_boolean} from "./lesson_log_boolean.mjs";
@@ -38,17 +39,23 @@ import {lesson_if_else_if} from "./lesson_if_else_if.mjs";
 import {lesson_mod} from "./lesson_mod.mjs";
 import {lesson_mod_even} from "./lesson_mod_even.mjs";
 import {lesson_if_else_nested_if} from "./lesson_if_else_nested_if.mjs";
-import { lesson_if_else_nested_if_else } from "./lesson_if_else_nested_if_else.mjs";
+import {lesson_if_else_nested_if_else} from "./lesson_if_else_nested_if_else.mjs";
 export function app_learn_code_modules() {
     let modules = [];
     let module_current;
     module_current = [];
-    list_add(modules, { name: 'output , processes , statements', lessons: module_current });
+    list_add(modules, {
+        name: 'output , processes , statements',
+        lessons: module_current
+    });
     list_add(module_current, lesson_console_log);
     list_add(module_current, lesson_log_number);
     if (0) {
         module_current = [];
-        list_add(modules, { name: 'temp', lessons: module_current });
+        list_add(modules, {
+            name: 'temp',
+            lessons: module_current
+        });
     }
     list_add(module_current, lesson_add);
     list_add(module_current, lesson_subtract);
@@ -64,8 +71,11 @@ export function app_learn_code_modules() {
     list_add(module_current, lesson_equal_not_string);
     list_add(module_current, lesson_statements_two);
     list_add(module_current, lesson_statements_three);
-    module_current = []
-    list_add(modules, { name: 'variables', lessons: module_current });
+    module_current = [];
+    list_add(modules, {
+        name: 'variables',
+        lessons: module_current
+    });
     list_add(module_current, lesson_log_boolean);
     list_add(module_current, lesson_variable);
     list_add(module_current, lesson_variable_log_twice);
@@ -77,8 +87,11 @@ export function app_learn_code_modules() {
     list_add(module_current, lesson_add_numbers_three);
     list_add(module_current, lesson_variables_three);
     list_add(module_current, lesson_variable_binary);
-    module_current = []
-    list_add(modules, { name: '`if` `else`', lessons: module_current });
+    module_current = [];
+    list_add(modules, {
+        name: '`if` `else`',
+        lessons: module_current
+    });
     list_add(module_current, lesson_if_true);
     list_add(module_current, lesson_if_false);
     list_add(module_current, lesson_if_binary);
@@ -92,5 +105,6 @@ export function app_learn_code_modules() {
     list_add(module_current, lesson_mod_even);
     list_add(module_current, lesson_if_else_nested_if);
     list_add(module_current, lesson_if_else_nested_if_else);
+    list_add(module_current, lesson_if_else_if_inside_else);
     return modules;
 }
