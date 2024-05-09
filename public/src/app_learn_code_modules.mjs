@@ -57,17 +57,17 @@ export function app_learn_code_modules() {
     list_add(module_intro, lesson_statements_two);
     list_add(module_intro, lesson_statements_three);
     let module_variables = []
-    list_add(module_intro, lesson_log_boolean);
-    list_add(module_intro, lesson_variable);
-    list_add(module_intro, lesson_variable_log_twice);
-    list_add(module_intro, lesson_variable_change);
-    list_add(module_intro, lesson_variable_shorthand);
-    list_add(module_intro, lesson_variable_change_2);
-    list_add(module_intro, lesson_variables_two);
-    list_add(module_intro, lesson_variables_declare_shorthand);
-    list_add(module_intro, lesson_add_numbers_three);
-    list_add(module_intro, lesson_variables_three);
-    list_add(module_intro, lesson_variable_binary);
+    list_add(module_variables, lesson_log_boolean);
+    list_add(module_variables, lesson_variable);
+    list_add(module_variables, lesson_variable_log_twice);
+    list_add(module_variables, lesson_variable_change);
+    list_add(module_variables, lesson_variable_shorthand);
+    list_add(module_variables, lesson_variable_change_2);
+    list_add(module_variables, lesson_variables_two);
+    list_add(module_variables, lesson_variables_declare_shorthand);
+    list_add(module_variables, lesson_add_numbers_three);
+    list_add(module_variables, lesson_variables_three);
+    list_add(module_variables, lesson_variable_binary);
     let module_if_else = []
     list_add(module_intro, lesson_if_true);
     list_add(module_intro, lesson_if_false);
