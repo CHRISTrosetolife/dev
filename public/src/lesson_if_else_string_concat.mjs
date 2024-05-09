@@ -1,3 +1,4 @@
+import {list_remove_at} from "./list_remove_at.mjs";
 import {html_style_alternate_bold_short} from "./html_style_alternate_bold_short.mjs";
 import {lesson_console_log_quiz_words} from "./lesson_console_log_quiz_words.mjs";
 import {html_style_alternate_monospace_short} from "./html_style_alternate_monospace_short.mjs";
@@ -13,7 +14,9 @@ import {list_length} from "./list_length.mjs";
 import {subtract} from "./subtract.mjs";
 import {integer_random} from "./integer_random.mjs";
 import {list_first} from "./list_first.mjs";
-import { random_50_50 } from "./random_50_50.mjs";
+import {random_50_50} from "./random_50_50.mjs";
+import {list_get} from "./list_get.mjs";
+import {add_1} from "./add_1.mjs";
 export function lesson_if_else_string_concat() {
     let description = 'two strings combined';
     let example_message = string_combine('with ', description);
@@ -21,17 +24,19 @@ export function lesson_if_else_string_concat() {
         let words = lesson_console_log_quiz_words();
         if (0) words = ['a', 'b', 'c'];
         let words_length = list_length(words);
-        let count = integer_random(2, 4)
+        let count = integer_random(2, 4);
         let remaining = list_skip(words, integer_random(0, subtract(words_length, count)));
         let w = list_take(remaining, count);
         while (list_length(w) > 2) {
-            let i , j;
+            let i;
             if (random_50_50()) {
                 i = 0;
             } else {
                 i = list_length(w) - 2;
             }
-            j = i+1;
+            let w_i = list_get(w, i);
+            let w_j = list_get(w, add_1(i));
+            list_remove_at(list, i);
         }
         list_set(w, 0, string_combine(list_first(w), ' '));
         let mapped = list_map(w, string_delimit);
