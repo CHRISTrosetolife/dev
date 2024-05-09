@@ -64,18 +64,25 @@ export function app_learn_code_source_variations(source) {
                     }
                 }
                 if (list_empty_is(nt)) {
-                    let {right} = node;
-                    let {type} = right;
-                    if (equal(type, 'BinaryExpression')) {
-                        let {operator} = node;
-                        let {operator: operator_r} = right;
-                        if (equal(operator_r, operator)) {
-                            let {left} = node;
-                            let {left: left_r, right: right_r} = right;
-                            object_property_set(node, 'left', right);
-                            object_property_set(right, 'left', left);
-                            object_property_set(right, 'right', left_r);
-                            object_property_set(node, 'right', right_r);
+                    let literals = js_node_type(node, 'Literal')
+                    let literal_strings = list_filter(literals, l => {
+                        let {value} = l;
+                        return typeof value === 'string'
+                    })
+                    if (list_empty_is(literal_strings)) {
+                        let {right} = node;
+                        let {type} = right;
+                        if (equal(type, 'BinaryExpression')) {
+                            let {operator} = node;
+                            let {operator: operator_r} = right;
+                            if (equal(operator_r, operator)) {
+                                let {left} = node;
+                                let {left: left_r, right: right_r} = right;
+                                object_property_set(node, 'left', right);
+                                object_property_set(right, 'left', left);
+                                object_property_set(right, 'right', left_r);
+                                object_property_set(node, 'right', right_r);
+                            }
                         }
                     }
                 }
