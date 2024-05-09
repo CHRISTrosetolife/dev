@@ -12,11 +12,17 @@ import {js_code_statement_let} from "./js_code_statement_let.mjs";
 import {html_p_text} from "./html_p_text.mjs";
 import {app_learn_code_code_part_contrast} from "./app_learn_code_code_part_contrast.mjs";
 export function lesson_if_else_ternary_parity() {
-    let description = 'two ternaries';
+    let description = 'ternary for even / odd';
     let example_message = string_combine('with ', description);
     return lesson_simple(function () {
         let n = integer_random_digit_single();
-        let lines = [app_learn_code_log(n), js_code_statement_let_assign('positive', js_code_ternary(`${n} <= 0`, string_delimit('not '), string_delimit(''))), app_learn_code_log_join_plus(['positive', string_delimit('positive')]), js_code_statement_let_assign('even', js_code_ternary(`${n} % 2 === 0`, string_delimit('even'), string_delimit('odd'))), app_learn_code_log('even')];
+        let lines = [
+            app_learn_code_log(n), 
+            js_code_statement_let_assign(
+                'even', 
+                js_code_ternary(`${n} % 2 === 0`, string_delimit('even'), string_delimit('odd'))), 
+            app_learn_code_log('even')
+        ];
         return list_join_newline(lines);
     }, example_before, description, example_message, []);
     function example_before(parent) {}
