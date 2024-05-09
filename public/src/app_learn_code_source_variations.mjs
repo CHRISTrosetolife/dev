@@ -55,9 +55,11 @@ export function app_learn_code_source_variations(source) {
                     });
                     let b_split_n = list_get(b_split, n);
                     let no_literal_strings = list_empty_is(literal_strings);
-                    let { left , right } = filtered_n
-                    let left_or_right_is_empty_string;
-                    swap = equal(b_split_n, '0') && no_literal_strings;
+                    let { left , right } = filtered_n;
+                    let both = [left,right];
+                    let empty_strings = list_filter(both, b => left.type === 'Literal' && left.value === '')
+                    let left_or_right_is_empty_string = list_empty_not_is(empty_strings);
+                    swap = equal(b_split_n, '0') && (no_literal_strings || left_or_right_is_empty_string);
                 }
                 if (swap) {
                     object_property_swap(filtered_n, 'left', 'right');
