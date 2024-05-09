@@ -18,7 +18,7 @@ export function lesson_if_else_string_concat() {
     let example_message = string_combine('with ', description);
     return lesson_simple(function () {
         let words = lesson_console_log_quiz_words();
-        words = ['a', 'b', 'c'];
+        if (0) words = ['a', 'b', 'c'];
         let words_length = list_length(words);
         let remaining = list_skip(words, integer_random(0, subtract(words_length, 2)));
         let w = list_take(remaining, 2);
