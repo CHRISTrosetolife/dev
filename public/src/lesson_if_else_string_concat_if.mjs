@@ -20,11 +20,11 @@ export function lesson_if_else_string_concat_if() {
         let n = integer_random_digit_single();
         let lines = [
             js_code_statement_let_assign('before', string_delimit('')), 
-            js_code_statement_let_assign('after', string_delimit('negative')),
+            app_learn_code_log(n),
             `if (${n} >= 0) {`,
             js_code_statement_assign('before', string_delimit('not ')),
             `}`,
-            app_learn_code_log(list_join(['before', 'after'], ' + '))
+            app_learn_code_log(list_join(['before', string_delimit('negative')], ' + '))
         ]
         return list_join_newline(lines)
     }, example_before, description, example_message, []);
