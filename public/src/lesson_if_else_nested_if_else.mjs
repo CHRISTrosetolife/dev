@@ -11,8 +11,8 @@ import {string_combine} from "./string_combine.mjs";
 import {noop} from "./noop.mjs";
 import {html_style_bold} from "./html_style_bold.mjs";
 export function lesson_if_else_nested_if_else() {
-    let description = 'nested `if';
-    let example_message = string_combine('with a ', description);
+    let description = '`if` `else` nested inside of an `if';
+    let example_message = string_combine('with an ', description);
     return lesson_simple(function () {
         let a = integer_random_digit_single();
         let lines = [app_learn_code_log(a), `if (${a} > 0) {`, app_learn_code_log_delimit(`positive`), `if (${a} % 2 === 0) {`, app_learn_code_log_delimit('positive and even'), `}`, `}`];
