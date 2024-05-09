@@ -45,6 +45,8 @@ import {equal_not} from "./equal_not.mjs";
 import {list_includes} from "./list_includes.mjs";
 import {list_sort_string} from "./list_sort_string.mjs";
 import {identity} from "./identity.mjs";
+import { list_skip } from "./list_skip.mjs";
+import { list_includes_not } from "./list_includes_not.mjs";
 export function app_learn_code_unscramble(source_get) {
     return function app_learn_code_unscramble_inner(parent) {
         let previous;
@@ -91,7 +93,7 @@ export function app_learn_code_unscramble(source_get) {
             let parts = array_new();
             let current_index = 0;
             let choices = array_new();
-            for (let s of scrambled) {
+            for (let s of sorted) {
                 let part = app_learn_code_code_part_generic(html_span_text, div, s, app_learn_code_code_background());
                 list_add(parts, part);
                 app_learn_code_style_code_color(part);
@@ -121,9 +123,12 @@ export function app_learn_code_unscramble(source_get) {
                     let {tokens} = first;
                     let current = list_get(tokens, current_index);
                     list_add(choices, s);
-                    html_style(code, {
-                        visibility: 'visible'
-                    });
+                    let remaining = list_skip(tokens, add_1(current_index))
+                    if (list_includes_not(remaining)) {
+                        html_style(code, {
+                            visibility: 'visible'
+                        });
+                    }
                     for (let p of parts) {
                         html_style_background_color(p, app_learn_code_code_background());
                     }
