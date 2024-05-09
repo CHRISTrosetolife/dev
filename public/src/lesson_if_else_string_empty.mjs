@@ -20,7 +20,7 @@ import { list_scramble } from "./list_scramble.mjs";
 import { list_map } from "./list_map.mjs";
 export function lesson_if_else_string_empty() {
     let description = 'empty string ( `\'\'` ) concatentation';
-    let example_message = string_combine('with a string being concatenated with an ', description);
+    let example_message = string_combine('with an ', description);
     return lesson_simple(function () {
         let words = lesson_console_log_quiz_words();
         let word = list_random_item(words);
