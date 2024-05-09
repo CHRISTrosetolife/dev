@@ -32,8 +32,8 @@ export function lesson_if_else_string_empty() {
         ]
         return list_join_newline(lines)
     }, example_before, description, example_message, [screen1]);
-    function example_before() {
-        
+    function example_before(parent) {
+
     }
     function screen1(parent) {
         html_p_text(parent, 'a string can have nothing in it')
