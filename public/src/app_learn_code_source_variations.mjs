@@ -1,3 +1,4 @@
+import {string_empty_not_is} from "./string_empty_not_is.mjs";
 import {js_unparse_indent_none} from "./js_unparse_indent_none.mjs";
 import {list_empty_not_is} from "./list_empty_not_is.mjs";
 import {list_includes_not} from "./list_includes_not.mjs";
@@ -47,13 +48,13 @@ export function app_learn_code_source_variations(source) {
                 let swap = false;
                 let filtered_n = list_get(filtered, n);
                 if (less_than(n, b_split_length)) {
-                    let literals = js_node_type(filtered_n, 'Literal')
+                    let literals = js_node_type(filtered_n, 'Literal');
                     let literal_strings = list_filter(literals, l => {
                         let {value} = l;
-                        return typeof value === 'string'
-                    })
+                        return typeof value === 'string' && string_empty_not_is(value);
+                    });
                     let b_split_n = list_get(b_split, n);
-                    swap = equal(b_split_n, '0') && list_empty_is(literal_strings)
+                    swap = equal(b_split_n, '0') && list_empty_is(literal_strings);
                 }
                 if (swap) {
                     object_property_swap(filtered_n, 'left', 'right');
@@ -69,20 +70,20 @@ export function app_learn_code_source_variations(source) {
                     }
                 }
                 if (list_empty_is(nt)) {
-                        let {right} = node;
-                        let {type} = right;
-                        if (equal(type, 'BinaryExpression')) {
-                            let {operator} = node;
-                            let {operator: operator_r} = right;
-                            if (equal(operator_r, operator)) {
-                                let {left} = node;
-                                let {left: left_r, right: right_r} = right;
-                                object_property_set(node, 'left', right);
-                                object_property_set(right, 'left', left);
-                                object_property_set(right, 'right', left_r);
-                                object_property_set(node, 'right', right_r);
-                            }
+                    let {right} = node;
+                    let {type} = right;
+                    if (equal(type, 'BinaryExpression')) {
+                        let {operator} = node;
+                        let {operator: operator_r} = right;
+                        if (equal(operator_r, operator)) {
+                            let {left} = node;
+                            let {left: left_r, right: right_r} = right;
+                            object_property_set(node, 'left', right);
+                            object_property_set(right, 'left', left);
+                            object_property_set(right, 'right', left_r);
+                            object_property_set(node, 'right', right_r);
                         }
+                    }
                 }
             });
             let alternative = js_unparse_indent_none(ast);
