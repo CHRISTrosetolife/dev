@@ -128,6 +128,8 @@ export function app_learn_code() {
         }
     }
     function refresh_module(module) {
+        clear_scroll();
+        button_home_hr();
         let {lessons} = module;
         for (let lesson of lessons) {
             let {description} = lesson;function on_click() {refresh_lesson(lesson)}
