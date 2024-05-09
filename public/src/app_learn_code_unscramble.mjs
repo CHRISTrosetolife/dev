@@ -123,7 +123,7 @@ export function app_learn_code_unscramble(source_get) {
                     let source_index = 0;
                     let c_previous = '';
                     for (let c of choices) {
-                        source_index = first_source.indexOf(c, source_index);
+                        source_index = first_source.indexOf(c, add(source_index, string_length(c_previous)));
                         c_previous = c;
                     }
                     let take_count = add(source_index, string_length(current.toString()));
