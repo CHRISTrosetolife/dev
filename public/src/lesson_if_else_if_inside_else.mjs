@@ -28,6 +28,6 @@ export function lesson_if_else_if_inside_else() {
         return list_join_newline(lines);
     }, example_before, description, example_message, []);
     function example_before(parent) {
-        html_style_alternate_monospace_short(parent, 'an `if` can be inside another `if`');
+        html_style_alternate_monospace_short(parent, 'an `if` can be inside an `else`');
     }
 }
