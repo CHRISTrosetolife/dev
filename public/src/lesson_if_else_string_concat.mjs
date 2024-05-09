@@ -18,8 +18,10 @@ export function lesson_if_else_string_concat() {
         let mapped = list_map(w, string_delimit);
         let [a, b] = mapped;
         return app_learn_code_log(`${a} + ${b}`);
-    }, example_before, description, example_message, []);
+    }, example_before, description, example_message, [screen1]);
     function example_before(parent) {
+    }
+    function screen1(parent) {
         html_style_alternate_monospace_short(parent, 'remember , in javascript if `a` and `b` are numbers then `a + b` will add the two numbers together');
         html_style_alternate_monospace_short(parent, 'however , if `a` and `b` are strings then `a + b` will combine two strings together');
         html_style_alternate_bold_short(parent, 'when two strings are conbined , it is called `concatentation');
