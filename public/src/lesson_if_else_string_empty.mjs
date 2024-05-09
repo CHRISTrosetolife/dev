@@ -29,9 +29,9 @@ export function lesson_if_else_string_empty() {
         return list_join_newline(lines)
     }, example_before, description, example_message, []);
     function example_before(parent) {
-        'a string can have nothing in it'
-        'this is called an empty string'
-        'if a string is concatenated with an empty string , then the result is the same as before'
-        'an empty string can look like this : \'\''
+        html_p_text(parent, 'a string can have nothing in it')
+        html_p_text(parent, 'this is called an empty string')
+        html_p_text(parent, 'if a string is concatenated with an empty string , then the result is the same as before')
+        app_learn_code_code_part_contrast(parent, 'an empty string can look like this : \'\'')
     }
 }
