@@ -12,7 +12,14 @@ export function lesson_if_else_string_concat_if_else() {
     let example_message = string_combine('with ', description);
     return lesson_simple(function () {
         let n = integer_random_digit_single();
-        let lines = [js_code_statement_let_assign('before', string_delimit('')), app_learn_code_log(n), `if (${n} >= 0) {`, js_code_statement_assign('before', string_delimit('not ')), `}`, app_learn_code_log_join_plus(['before', string_delimit('negative')])];
+        let lines = [
+            js_code_statement_let_assign('before', string_delimit('')), 
+            app_learn_code_log(n), 
+            `if (${n} >= 0) {`, 
+            js_code_statement_assign('before', 
+            string_delimit('not ')), `}`, 
+            app_learn_code_log_join_plus(['before', string_delimit('negative')])
+        ];
         return list_join_newline(lines);
     }, example_before, description, example_message, []);
     function example_before(parent) {}
