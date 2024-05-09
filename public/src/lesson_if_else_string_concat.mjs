@@ -44,8 +44,7 @@ export function lesson_if_else_string_concat() {
         }
         list_set(w, 0, string_combine(list_first(w), ' '));
         let mapped = list_map(w, string_delimit);
-        let [a, b] = mapped;
-        return app_learn_code_log(`${a} + ${b}`);
+        return app_learn_code_log(list_join(mapped, ' + '));
     }, example_before, description, example_message, [screen1]);
     function example_before(parent) {}
     function screen1(parent) {
