@@ -38,5 +38,6 @@ export function lesson_if_else_ternary() {
         ];
         list_join_newline(lines);
         'that code can be shortened to the following :'
+        'let a = b ? c : d;'
     }
 }
