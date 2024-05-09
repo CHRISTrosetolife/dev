@@ -1,4 +1,4 @@
-import {list_remove_at} from "./list_remove_at.mjs";
+import {list_remove_multiple_at} from "./list_remove_multiple_at.mjs";
 import {html_style_alternate_bold_short} from "./html_style_alternate_bold_short.mjs";
 import {lesson_console_log_quiz_words} from "./lesson_console_log_quiz_words.mjs";
 import {html_style_alternate_monospace_short} from "./html_style_alternate_monospace_short.mjs";
@@ -36,7 +36,7 @@ export function lesson_if_else_string_concat() {
             }
             let w_i = list_get(w, i);
             let w_j = list_get(w, add_1(i));
-            list_remove_at(list, i);
+            list_remove_multiple_at(list, i, 2);
         }
         list_set(w, 0, string_combine(list_first(w), ' '));
         let mapped = list_map(w, string_delimit);
