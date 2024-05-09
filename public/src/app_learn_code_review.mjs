@@ -15,6 +15,7 @@ export function app_learn_code_review(lessons) {
         screens: [function app_learn_code_review_inner(parent) {
             let div = html_div(parent);
             let quizzes = list_map(lessons, lesson => object_property_get(lesson, 'quiz'));
+            let wrongs = [];
             list_scramble(quizzes);
             quiz_next();
             function quiz_next() {
