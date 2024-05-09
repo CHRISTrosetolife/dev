@@ -1,3 +1,3 @@
-export function list_skip(list, index) {
-    return list.slice(index);
+export function list_skip(list, count) {
+    return list.slice(count);
 }
