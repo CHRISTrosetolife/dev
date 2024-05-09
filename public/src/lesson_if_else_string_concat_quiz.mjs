@@ -16,6 +16,8 @@ import {list_skip} from "./list_skip.mjs";
 import {integer_random} from "./integer_random.mjs";
 import {list_length} from "./list_length.mjs";
 import {lesson_console_log_quiz_words} from "./lesson_console_log_quiz_words.mjs";
+import { range } from "./range.mjs";
+import { list_index_last } from "./list_index_last.mjs";
 export function lesson_if_else_string_concat_quiz(concat_count) {
     let words_total = 4;
     let words = lesson_console_log_quiz_words();
@@ -37,7 +39,9 @@ export function lesson_if_else_string_concat_quiz(concat_count) {
         list_remove_multiple_at(w, i, 2);
         list_insert(w, i, combined);
     }
-    list_set(w, 0, string_combine(list_first(w), ' '));
+    for (let i of range(list_index_last(w))) {
+        list_set(w, i, string_combine(list_first(w), ' '));
+    }
     let mapped = list_map(w, string_delimit);
     return app_learn_code_log(list_join(mapped, ' + '));
 }
