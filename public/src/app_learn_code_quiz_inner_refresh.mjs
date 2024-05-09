@@ -49,7 +49,6 @@ export function app_learn_code_quiz_inner_refresh(parent, source_get, previous_s
     list_sort_string(choices, c => c.answer);
     let correct_index = list_random_index(choices);
     let {source} = list_get(choices, correct_index);
-    previous_source = source;
     app_learn_code_code_part_titled_code(container, source);
     html_hr(container);
     app_learn_code_code_part_title(container, app_learn_code_code_part_title_output());
@@ -70,5 +69,5 @@ export function app_learn_code_quiz_inner_refresh(parent, source_get, previous_s
         });
         html_style_monospace(button);
     });
-    return previous_source;
+    return source;
 }
