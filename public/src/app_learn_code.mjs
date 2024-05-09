@@ -119,11 +119,13 @@ export function app_learn_code() {
         });
         html_style_bold(begin);
         html_p_text(root, 'or choose a lesson below :');
+        for (let module of modules) {
+            let {name} = module;
+
+        }
         for (let lesson of lessons) {
-            let {description} = lesson;
-            let b = html_button_width_full_text_click(root, '', () => refresh_lesson(lesson));
-            let split = html_style_alternate_split(description);
-            html_style_alternate(b, html_span, [noop, app_learn_code_style_code_colored], split);
+            let {description} = lesson;function on_click() {refresh_lesson(lesson)}
+            html_button_width_full_text_click_alternate_code(root, description, on_click);
         }
     }
     refresh_main();
@@ -187,3 +189,9 @@ export function app_learn_code() {
         });
     }
 }
+function html_button_width_full_text_click_alternate_code(root, description, on_click) {
+    let b = html_button_width_full_text_click(root, '', on_click);
+    let split = html_style_alternate_split(description);
+    html_style_alternate(b, html_span, [noop, app_learn_code_style_code_colored], split);
+}
+
