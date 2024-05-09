@@ -54,8 +54,8 @@ export function app_learn_code_source_variations(source) {
                         return typeof value === 'string';
                     });
                     let b_split_n = list_get(b_split, n);
-                    let strings_okay = list_empty_is(literal_strings);
-                    swap = equal(b_split_n, '0') && strings_okay;
+                    let no_literal_strings = list_empty_is(literal_strings);
+                    swap = equal(b_split_n, '0') && no_literal_strings;
                 }
                 if (swap) {
                     object_property_swap(filtered_n, 'left', 'right');
