@@ -13,7 +13,16 @@ export function lesson_if_else_ternary() {
     let example_message = string_combine('with ', description);
     return lesson_simple(function () {
         let n = integer_random_digit_single();
-        let lines = [app_learn_code_log(n), js_code_statement_let('before'), `if (${n} <= 0) {`, js_code_statement_assign('before', string_delimit('not ')), `} else {`, js_code_statement_assign('before', string_delimit('')), `}`, app_learn_code_log_join_plus(['before', string_delimit('positive')])];
+        let lines = [
+            app_learn_code_log(n), 
+            js_code_statement_let('before'), 
+            `if (${n} <= 0) {`, 
+            js_code_statement_assign('before', string_delimit('not ')), 
+            `} else {`, 
+            js_code_statement_assign('before', string_delimit('')), 
+            `}`, 
+            app_learn_code_log_join_plus(['before', string_delimit('positive')])
+        ];
         return list_join_newline(lines);
     }, example_before, description, example_message, []);
     function example_before(parent) {}
