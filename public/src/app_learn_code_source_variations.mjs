@@ -51,10 +51,11 @@ export function app_learn_code_source_variations(source) {
                     let literals = js_node_type(filtered_n, 'Literal');
                     let literal_strings = list_filter(literals, l => {
                         let {value} = l;
-                        return typeof value === 'string' && string_empty_not_is(value);
+                        return typeof value === 'string';
                     });
                     let b_split_n = list_get(b_split, n);
-                    swap = equal(b_split_n, '0') && list_empty_is(literal_strings);
+                    let strings_okay = list_empty_is(literal_strings);
+                    swap = equal(b_split_n, '0') && strings_okay;
                 }
                 if (swap) {
                     object_property_swap(filtered_n, 'left', 'right');
