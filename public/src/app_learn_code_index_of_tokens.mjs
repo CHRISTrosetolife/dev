@@ -4,6 +4,7 @@ export function app_learn_code_index_of_tokens(input, tokens) {
     let source_index = 0;
     let c_previous = '';
     for (let c of tokens) {
+        c = c.toString();
         source_index = input.indexOf(c, add(source_index, string_length(c_previous)));
         c_previous = c;
     }
