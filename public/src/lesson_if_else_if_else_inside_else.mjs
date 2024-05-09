@@ -19,11 +19,12 @@ export function lesson_if_else_if_else_inside_else() {
             app_learn_code_log(a), 
             `if (${a} >= 0) {`, 
             app_learn_code_log_delimit('positive or zero'), 
-            `} else {`
+            `} else {`,
             `if (${a} % 2 === 0) {`, 
             app_learn_code_log_delimit('negative and even'), 
             `} else {`,
             app_learn_code_log_delimit(`negative and odd`), 
+            `}`, 
             `}`, 
         ];        
         return list_join_newline(lines);
