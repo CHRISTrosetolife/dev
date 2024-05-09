@@ -126,7 +126,8 @@ export function app_learn_code_unscramble(source_get) {
                         first_source, choices, source_index
                     })
                     let take_count = add(source_index, string_length(current.toString()));
-                    html_inner_set(code, string_take(first_source, take_count));
+                    let take = string_take(first_source, take_count);
+                    html_inner_set(code, take);
                     if (equal(current_index, list_length(answer))) {
                         html_style_background_color(code, 'darkgreen');
                         app_learn_code_answer_correct(success);
