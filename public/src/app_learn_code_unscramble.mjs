@@ -132,7 +132,7 @@ export function app_learn_code_unscramble(source_get) {
                         html_style_background_color(p, app_learn_code_code_background());
                     }
                     app_learn_code_background_color_correct_dark(part);
-                    timeout_set(() => html_style_background_color(p, app_learn_code_code_background()), app_learn_code_ms_correct());
+                    timeout_set(() => html_style_background_color(part, app_learn_code_code_background()), app_learn_code_ms_correct());
                     if (list_includes_not(remaining, current)) {
                         html_style(part, {
                             display: 'none'
