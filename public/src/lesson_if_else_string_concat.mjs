@@ -10,11 +10,20 @@ import {app_learn_code_log} from "./app_learn_code_log.mjs";
 import {string_combine} from "./string_combine.mjs";
 import {noop} from "./noop.mjs";
 import {html_style_bold} from "./html_style_bold.mjs";
+import { call_multiple } from "./call_multiple.mjs";
+import { list_random_item } from "./list_random_item.mjs";
+import { list_scramble } from "./list_scramble.mjs";
+import { list_take } from "./list_take.mjs";
+import { list_map } from "./list_map.mjs";
+import { string_delimit } from "./string_delimit.mjs";
 export function lesson_if_else_string_concat() {
     let description = 'two strings combined';
     let example_message = string_combine('with ', description);
     return lesson_simple(function () {
-        let a = integer_random_digit_single();
+        let words = lesson_console_log_quiz_words();
+        let scrambled = list_scramble(words);
+        let w = list_take(scrambled, 2);
+        let mapped = list_map(w, string_delimit)
         let lines = [`if (${a} >= 0) {`, app_learn_code_log_delimit('positive or zero'), `} else {`, `if (${a} % 2 === 0) {`, app_learn_code_log_delimit('negative and even'), `} else {`, app_learn_code_log_delimit(`negative and odd`), `}`, `}`];
         return app_learn_code_log(lines);
     }, example_before, description, example_message, []);
