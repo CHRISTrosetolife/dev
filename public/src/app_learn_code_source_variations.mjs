@@ -55,7 +55,8 @@ export function app_learn_code_source_variations(source) {
                     });
                     let b_split_n = list_get(b_split, n);
                     let no_literal_strings = list_empty_is(literal_strings);
-                    let left_or_right_is_empty_string ;
+                    let { left , right } = filtered_n
+                    let left_or_right_is_empty_string;
                     swap = equal(b_split_n, '0') && no_literal_strings;
                 }
                 if (swap) {
