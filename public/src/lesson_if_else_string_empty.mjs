@@ -17,16 +17,18 @@ import { html_style_alternate_bold_short } from "./html_style_alternate_bold_sho
 import { lesson_console_log_quiz_words } from "./lesson_console_log_quiz_words.mjs";
 import { list_random_item } from "./list_random_item.mjs";
 import { list_scramble } from "./list_scramble.mjs";
+import { list_map } from "./list_map.mjs";
 export function lesson_if_else_string_empty() {
     let description = 'empty string ( `\'\'` ) concatentation';
     let example_message = string_combine('with a string being concatenated with an ', description);
     return lesson_simple(function () {
         let words = lesson_console_log_quiz_words();
         let word = list_random_item(words);
-        let items = [word, string_delimit('')];
-        list_scramble(items);
+        let items = [word, ''];
+        let mapped = list_map(items, string_delimit)
+        list_scramble(mapped);
         let lines = [
-            app_learn_code_log(list_join(items, ' + '))
+            app_learn_code_log(list_join(mapped, ' + '))
         ]
         return list_join_newline(lines)
     }, example_before, description, example_message, []);
