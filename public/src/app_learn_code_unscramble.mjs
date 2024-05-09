@@ -122,6 +122,9 @@ export function app_learn_code_unscramble(source_get) {
                     let first_source = first.source;
                     current_index++;
                     let source_index = app_learn_code_index_of_tokens(first_source, choices);
+                    console.log({
+                        first_source, choices, source_index
+                    })
                     let take_count = add(source_index, string_length(current.toString()));
                     html_inner_set(code, string_take(first_source, take_count));
                     if (equal(current_index, list_length(answer))) {
