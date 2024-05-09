@@ -46,6 +46,7 @@ import {string_length} from "./string_length.mjs";
 import {html_span} from "./html_span.mjs";
 import { list_copy } from "./list_copy.mjs";
 import { list_single } from "./list_single.mjs";
+import { object_property_set } from "./object_property_set.mjs";
 export function app_learn_code() {
     let modules = app_learn_code_modules();
     let root = html_document_body();
@@ -74,6 +75,7 @@ export function app_learn_code() {
         list_add(lessons, review);
         list_add(lesson_screens, list_single(object_property_get(review, 'screens')));
         list_add(module_lessons, review);
+        object_property_set(module, 'lessons', module_lessons)
     }
     function refresh_settings() {
         clear_scroll();
@@ -126,6 +128,7 @@ export function app_learn_code() {
         }
     }
     function refresh_module(module) {
+        let {lessons} = module;
         for (let lesson of lessons) {
             let {description} = lesson;function on_click() {refresh_lesson(lesson)}
             html_button_width_full_text_click_alternate_code(root, description, on_click);
