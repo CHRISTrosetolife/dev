@@ -15,7 +15,16 @@ export function lesson_if_else_if_inside_else() {
     let example_message = string_combine('with a ', description);
     return lesson_simple(function () {
         let a = integer_random_digit_single();
-        let lines = [app_learn_code_log(a), `if (${a} > 0) {`, app_learn_code_log_delimit(`positive`), `if (${a} % 2 === 0) {`, app_learn_code_log_delimit('positive and even'), `}`, `}`];
+        let lines = [
+            app_learn_code_log(a), 
+            `if (${a} < 0) {`, 
+            `if (${a} % 2 === 0) {`, 
+            app_learn_code_log_delimit('negative and even'), 
+            `} else {`,
+            app_learn_code_log_delimit(`negative and odd`), 
+            `}`, 
+            `}`
+        ];        
         return list_join_newline(lines);
     }, example_before, description, example_message, []);
     function example_before(parent) {
