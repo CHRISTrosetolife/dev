@@ -47,6 +47,7 @@ import {html_span} from "./html_span.mjs";
 import { list_copy } from "./list_copy.mjs";
 import { list_single } from "./list_single.mjs";
 import { object_property_set } from "./object_property_set.mjs";
+import { string_to } from "./string_to.mjs";
 export function app_learn_code() {
     let modules = app_learn_code_modules();
     let root = html_document_body();
@@ -122,10 +123,12 @@ export function app_learn_code() {
         });
         html_style_bold(begin);
         html_p_text(root, 'or choose a module below :');
-        for (let module of modules) {
+        each_index(modules, (module, index) => {
+            let index_1 = add_1(index);
+            let index_1_s = string_to(index_1);
             let {name} = module;
-            html_button_width_full_text_click_alternate_code(root, name, () => refresh_module(module));
-        }
+            html_button_width_full_text_click_alternate_code(root, string_combine(index_1_s, name), () => refresh_module(module));
+        })
     }
     function refresh_module(module) {
         clear_scroll();
