@@ -56,6 +56,7 @@ export function app_learn_code_modules() {
     list_add(module_intro, lesson_equal_not_string);
     list_add(module_intro, lesson_statements_two);
     list_add(module_intro, lesson_statements_three);
+    let module_variables = []
     list_add(module_intro, lesson_log_boolean);
     list_add(module_intro, lesson_variable);
     list_add(module_intro, lesson_variable_log_twice);
