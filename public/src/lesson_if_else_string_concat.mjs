@@ -36,7 +36,7 @@ export function lesson_if_else_string_concat() {
             }
             let w_i = list_get(w, i);
             let w_j = list_get(w, add_1(i));
-            let combined = list_join_space([w_i, w_j]);
+            let combined = list_join([w_i, w_j], ' ');
             list_remove_multiple_at(list, i, 2);
         }
         list_set(w, 0, string_combine(list_first(w), ' '));
