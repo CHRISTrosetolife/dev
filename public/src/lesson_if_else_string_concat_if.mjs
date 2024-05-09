@@ -5,10 +5,15 @@ import {lesson_simple} from "./lesson_simple.mjs";
 import {string_combine} from "./string_combine.mjs";
 import {list_join_newline} from "./list_join_newline.mjs";
 import {html_p_text} from "./html_p_text.mjs";
+import { js_code_let } from "./js_code_let.mjs";
+import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 export function lesson_if_else_string_concat_if() {
     let description = 'string combined with two variables';
     let example_message = string_combine('with ', description);
     return lesson_simple(function () {
+        let lines = [
+            js_code_statement_let_assign()
+        ]
         return lesson_if_else_string_concat_variables_quiz(2);
     }, example_before, description, example_message, [screen1]);
     function example_before(parent) {
