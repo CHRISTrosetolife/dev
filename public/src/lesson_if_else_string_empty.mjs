@@ -31,8 +31,11 @@ export function lesson_if_else_string_empty() {
             app_learn_code_log(list_join(mapped, ' + '))
         ]
         return list_join_newline(lines)
-    }, example_before, description, example_message, []);
-    function example_before(parent) {
+    }, example_before, description, example_message, [screen1]);
+    function example_before() {
+        
+    }
+    function screen1(parent) {
         html_p_text(parent, 'a string can have nothing in it')
         html_style_alternate_bold_short(parent, 'this is called an `empty string')
         html_style_alternate_monospace_short(parent, 'an empty string can look like this : `\'\'')
