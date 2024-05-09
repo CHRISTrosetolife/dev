@@ -12,8 +12,8 @@ import {js_code_statement_let} from "./js_code_statement_let.mjs";
 import {html_p_text} from "./html_p_text.mjs";
 import {app_learn_code_code_part_contrast} from "./app_learn_code_code_part_contrast.mjs";
 export function lesson_if_else_ternary_two() {
-    let description = 'ternary ( `a ? b : c` )';
-    let example_message = string_combine('with a ', description);
+    let description = 'two ternaries';
+    let example_message = string_combine('with ', description);
     return lesson_simple(function () {
         let n = integer_random_digit_single();
         let lines = [app_learn_code_log(n), js_code_statement_let_assign('before', js_code_ternary(`${n} <= 0`, string_delimit('not '), string_delimit(''))), app_learn_code_log_join_plus(['before', string_delimit('positive')])];
