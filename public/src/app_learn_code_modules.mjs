@@ -1,3 +1,4 @@
+import {lesson_if_else_string_concat_three} from "./lesson_if_else_string_concat_three.mjs";
 import {lesson_if_else_if_else_inside_else} from "./lesson_if_else_if_else_inside_else.mjs";
 import {lesson_if_else_if_inside_else} from "./lesson_if_else_if_inside_else.mjs";
 import {lesson_variables_declare_shorthand} from "./lesson_variables_declare_shorthand.mjs";
@@ -41,7 +42,7 @@ import {lesson_mod} from "./lesson_mod.mjs";
 import {lesson_mod_even} from "./lesson_mod_even.mjs";
 import {lesson_if_else_nested_if} from "./lesson_if_else_nested_if.mjs";
 import {lesson_if_else_nested_if_else} from "./lesson_if_else_nested_if_else.mjs";
-import { lesson_if_else_string_concat } from "./lesson_if_else_string_concat.mjs";
+import {lesson_if_else_string_concat} from "./lesson_if_else_string_concat.mjs";
 export function app_learn_code_modules() {
     let modules = [];
     let module_current;
@@ -110,6 +111,6 @@ export function app_learn_code_modules() {
     list_add(module_current, lesson_if_else_if_inside_else);
     list_add(module_current, lesson_if_else_if_else_inside_else);
     list_add(module_current, lesson_if_else_string_concat);
-    
+    list_add(module_current, lesson_if_else_string_concat_three);
     return modules;
 }
