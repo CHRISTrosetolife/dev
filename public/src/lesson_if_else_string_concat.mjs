@@ -25,8 +25,7 @@ export function lesson_if_else_string_concat() {
         let w = list_take(scrambled, 2);
         let mapped = list_map(w, string_delimit)
         let [a,b] = mapped;
-        let lines = [`if (${a} >= 0) {`, app_learn_code_log_delimit('positive or zero'), `} else {`, `if (${a} % 2 === 0) {`, app_learn_code_log_delimit('negative and even'), `} else {`, app_learn_code_log_delimit(`negative and odd`), `}`, `}`];
-        return app_learn_code_log(lines);
+        return app_learn_code_log(`${a} + ${b}`);
     }, example_before, description, example_message, []);
     function example_before(parent) {
         html_style_alternate_monospace_short(parent, 'an `if` `else` can be inside of an `if`');
