@@ -49,6 +49,7 @@ import {lesson_if_else_string_concat} from "./lesson_if_else_string_concat.mjs";
 import {lesson_if_else_string_concat_variable} from "./lesson_if_else_string_concat_variable.mjs";
 import {lesson_if_else_if_two} from "./lesson_if_else_if_two.mjs";
 import {lesson_if_else_string_empty} from "./lesson_if_else_string_empty.mjs";
+import { lesson_if_else_ternary } from "./lesson_if_else_ternary.mjs";
 export function app_learn_code_modules() {
     let modules = [];
     let module_current;
@@ -124,5 +125,6 @@ export function app_learn_code_modules() {
     list_add(module_current, lesson_if_else_string_empty);
     list_add(module_current, lesson_if_else_string_concat_if);
     list_add(module_current, lesson_if_else_string_concat_if_else);
+    list_add(module_current, lesson_if_else_ternary);
     return modules;
 }
