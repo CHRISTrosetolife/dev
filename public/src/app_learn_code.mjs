@@ -44,7 +44,7 @@ import {range} from "./range.mjs";
 import {string_length} from "./string_length.mjs";
 import {html_span} from "./html_span.mjs";
 export function app_learn_code() {
-    let lesson_creates = app_learn_code_modules();
+    let modules = app_learn_code_modules();
     let root = html_document_body();
     html_hash({
         'background_color': value => {
@@ -57,11 +57,13 @@ export function app_learn_code() {
     let default_font_size = html_style_default_font_size_value();
     let lesson_screens = [];
     let lessons = [];
-    for (let lesson_create of lesson_creates) {
-        let lesson = lesson_create();
-        list_add(lessons, lesson);
-        let s = object_property_get(lesson, 'screens');
-        list_add_multiple(lesson_screens, s);
+    for (let module of modules) {
+        for (let lesson_create of module) {
+            let lesson = lesson_create();
+            list_add(lessons, lesson);
+            let s = object_property_get(lesson, 'screens');
+            list_add_multiple(lesson_screens, s);
+        }
     }
     function refresh_settings() {
         clear_scroll();
