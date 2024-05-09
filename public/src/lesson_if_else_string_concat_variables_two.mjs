@@ -23,6 +23,7 @@ export function lesson_if_else_string_concat_variables_two() {
         let indices = list_indices(parts);
         list_scramble(indices);
         let taken = list_take(indices, variable_count);
+        let taken_names = list_take(indices, variable_count);
         let lines = [];
         for (let t of taken) {
             let parts_at_variable_index = list_get(parts, t);
