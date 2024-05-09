@@ -30,11 +30,4 @@ export function lesson_if_else_ternary_two() {
         return list_join_newline(lines);
     }, example_before, description, example_message, [screen1]);
     function example_before(parent) {}
-    function screen1(parent) {
-        html_p_text(parent, 'here is some code :');
-        let lines = [js_code_statement_let('a'), `if (b) {`, js_code_statement_assign('a', 'c'), `} else {`, js_code_statement_assign('a', 'd'), `}`];
-        app_learn_code_code_part_contrast(parent, list_join_newline(lines));
-        html_p_text(parent, 'that code can be shortened to the following :');
-        app_learn_code_code_part_contrast(parent, js_code_statement_let_assign('a', js_code_ternary('b', 'c', 'd')));
-    }
 }
