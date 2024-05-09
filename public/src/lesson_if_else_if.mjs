@@ -7,12 +7,13 @@ import {lesson_simple} from "./lesson_simple.mjs";
 import {random_50_50} from "./random_50_50.mjs";
 import {integer_random_digit_single} from "./integer_random_digit_single.mjs";
 import {html_hr} from "./html_hr.mjs";
+import { integer_random } from "./integer_random.mjs";
 export function lesson_if_else_if() {
     let description = '`if` with `else if`';
     let example_message = 'outputting whether or not a number is positive , negative or zero';
     return lesson_simple(function () {
         let a;
-        if (random_50_50()) {
+        if (integer_random(1,3) === 1) {
             a = 0;
         } else {
             a = integer_random_digit_single();
