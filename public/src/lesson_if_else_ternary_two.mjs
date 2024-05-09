@@ -19,9 +19,13 @@ export function lesson_if_else_ternary_two() {
         let lines = [
             app_learn_code_log(n), 
             js_code_statement_let_assign(
-                'before', 
-                js_code_ternary(`${n} <= 0`, string_delimit('not '), string_delimit(''))), 
-            app_learn_code_log_join_plus(['before', string_delimit('positive')])
+                'positive', 
+                js_code_ternary(`${n} > 0`, string_delimit(''), string_delimit('not '))), 
+            app_learn_code_log_join_plus(['positive', string_delimit('positive')]), 
+            js_code_statement_let_assign(
+                'negative', 
+                js_code_ternary(`${n} < 0`, string_delimit(''), string_delimit('not '))), 
+            app_learn_code_log_join_plus(['negative', string_delimit('negative')])
         ];
         return list_join_newline(lines);
     }, example_before, description, example_message, [screen1]);
