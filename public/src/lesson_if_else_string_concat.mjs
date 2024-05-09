@@ -1,3 +1,4 @@
+import {html_style_alternate_bold_short} from "./html_style_alternate_bold_short.mjs";
 import {lesson_console_log_quiz_words} from "./lesson_console_log_quiz_words.mjs";
 import {html_style_alternate_monospace_short} from "./html_style_alternate_monospace_short.mjs";
 import {lesson_simple} from "./lesson_simple.mjs";
