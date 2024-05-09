@@ -18,6 +18,7 @@ import {list_add} from "./list_add.mjs";
 import {list_sort_string} from "./list_sort_string.mjs";
 import {identity} from "./identity.mjs";
 import {html_p_text} from "./html_p_text.mjs";
+import { each_index } from "./each_index.mjs";
 export function lesson_if_else_string_concat_variables_two() {
     let description = 'string combined with two variables';
     let example_message = string_combine('with ', description);
@@ -30,12 +31,12 @@ export function lesson_if_else_string_concat_variables_two() {
         let taken_names = app_learn_code_random_identifiers(variable_count);
         list_sort_string(taken_names, identity);
         let lines = [];
-        for (let t of taken) {
+        each_index(taken, (t, index) => {
             let parts_at_variable_index = list_get(parts, t);
-            let name = app_learn_code_random_identifiers(variable_count);
+            let name = list_get(taken_names, index)
             list_set(parts, t, name);
             list_add(lines, js_code_statement_let_assign(name, parts_at_variable_index));
-        }
+        })
         list_add(lines, app_learn_code_log(list_join(parts, ' + ')));
         return list_join_newline(lines);
     }, example_before, description, example_message, [screen1]);
