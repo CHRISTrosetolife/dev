@@ -65,6 +65,7 @@ export function app_learn_code() {
             list_add(lessons, lesson);
             let s = object_property_get(lesson, 'screens');
             list_add_multiple(lesson_screens, s);
+            let q = object_property_get(lesson, 'quiz');
         }
     }
     function refresh_settings() {
