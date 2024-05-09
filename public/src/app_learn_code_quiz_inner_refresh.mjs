@@ -1,4 +1,3 @@
-import {html_div} from "./html_div.mjs";
 import {html_style_monospace} from "./html_style_monospace.mjs";
 import {html_style} from "./html_style.mjs";
 import {html_disable} from "./html_disable.mjs";
@@ -23,7 +22,6 @@ import {app_learn_code_code_container} from "./app_learn_code_code_container.mjs
 import {html_p_text} from "./html_p_text.mjs";
 import {html_clear} from "./html_clear.mjs";
 export function app_learn_code_quiz_inner_refresh(parent, source_get, previous_source, on_answer_right, on_answer_wrong) {
-    let div = html_div(parent);
     html_clear(div);
     html_p_text(div, 'below is a quiz');
     html_p_text(div, 'choose the correct output for the code');
