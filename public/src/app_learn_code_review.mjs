@@ -12,6 +12,7 @@ import { error } from "./error.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
 import { html_clear } from "./html_clear.mjs";
+import { list_add } from "./list_add.mjs";
 export function app_learn_code_review(lessons) {
     let description = 'module review';
     return {
@@ -41,7 +42,9 @@ export function app_learn_code_review(lessons) {
                         }
                     }
                     quiz_next();
-                }, noop);
+                }, () => {
+                    list_add(wrongs, quiz);
+                });
             }
         }]
     };
