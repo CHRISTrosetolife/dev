@@ -1,4 +1,4 @@
-import {app_learn_code_style_code} from "./app_learn_code_style_code.mjs";
+import {app_learn_code_code_part_contrast} from "./app_learn_code_code_part_contrast.mjs";
 import {app_learn_code_random_identifiers} from "./app_learn_code_random_identifiers.mjs";
 import {list_indices} from "./list_indices.mjs";
 import {list_join} from "./list_join.mjs";
@@ -45,8 +45,8 @@ export function lesson_if_else_string_concat_variables_two() {
     function screen1(parent) {
         html_p_text(parent, 'in this lesson variable names will be declared in alphabetical order');
         html_p_text(parent, 'for example , this is allowed :');
-        app_learn_code_style_code(parent, list_join_newline(['let a;', 'let b;']));
+        app_learn_code_code_part_contrast(parent, list_join_newline(['let a;', 'let b;']));
         html_p_text(parent, 'however , this is not allowed :');
-        app_learn_code_style_code(parent, list_join_newline(['let b;', 'let a;']));
+        app_learn_code_code_part_contrast(parent, list_join_newline(['let b;', 'let a;']));
     }
 }
