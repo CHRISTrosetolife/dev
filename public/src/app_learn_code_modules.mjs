@@ -68,6 +68,7 @@ export function app_learn_code_modules() {
     list_add(module_intro, lesson_add_numbers_three);
     list_add(module_intro, lesson_variables_three);
     list_add(module_intro, lesson_variable_binary);
+    let module_if_else = []
     list_add(module_intro, lesson_if_true);
     list_add(module_intro, lesson_if_false);
     list_add(module_intro, lesson_if_binary);
