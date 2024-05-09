@@ -15,8 +15,15 @@ export function lesson_if_else_nested_if_else() {
     let example_message = string_combine('with an ', description);
     return lesson_simple(function () {
         let a = integer_random_digit_single();
-        let lines = [app_learn_code_log(a), `if (${a} > 0) {`, app_learn_code_log_delimit(`positive`), `if (${a} % 2 === 0) {`, app_learn_code_log_delimit('positive and even'), `}`, `}`];
-        return list_join_newline(lines);
+        let lines = [
+            app_learn_code_log(a), 
+            `if (${a} > 0) {`, 
+            app_learn_code_log_delimit(`positive`), 
+            `if (${a} % 2 === 0) {`, 
+            app_learn_code_log_delimit('positive and even'), 
+            `}`, 
+            `}`
+           ];        return list_join_newline(lines);
     }, example_before, description, example_message, []);
     function example_before(parent) {
         html_style_alternate_monospace_short(parent, 'an `if` can be inside another `if`');
