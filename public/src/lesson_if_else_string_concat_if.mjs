@@ -19,7 +19,7 @@ export function lesson_if_else_string_concat_if() {
     return lesson_simple(function () {
         let n = integer_random_digit_single();
         let lines = [
-            js_code_statement_let_assign('before', string_delimit('number is')), 
+            js_code_statement_let_assign('before', string_delimit('is')), 
             js_code_statement_let_assign('middle', string_delimit(' ')),
             js_code_statement_let_assign('after', string_delimit('negative')),
             `if (${n} >= 0) {`,
