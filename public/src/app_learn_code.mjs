@@ -1,3 +1,4 @@
+import {app_learn_code_review} from "./app_learn_code_review.mjs";
 import {app_learn_code_modules} from "./app_learn_code_modules.mjs";
 import {app_learn_code_style_code_colored} from "./app_learn_code_style_code_colored.mjs";
 import {noop} from "./noop.mjs";
@@ -58,16 +59,16 @@ export function app_learn_code() {
     let lesson_screens = [];
     let lessons = [];
     for (let module of modules) {
-        let {lessons:module_lesson_creates} = module
-        let module_lessons = []
+        let {lessons: module_lesson_creates} = module;
+        let module_lessons = [];
         for (let lesson_create of module_lesson_creates) {
             let lesson = lesson_create();
             list_add(lessons, lesson);
             let s = object_property_get(lesson, 'screens');
             list_add_multiple(lesson_screens, s);
             let q = object_property_get(lesson, 'quiz');
-            list_add(app_learn_code_review(q))
         }
+        list_add(app_learn_code_review(module_lessons));
     }
     function refresh_settings() {
         clear_scroll();
