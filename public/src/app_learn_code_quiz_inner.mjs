@@ -30,58 +30,7 @@ export function app_learn_code_quiz_inner(parent, source_get) {
     let div = html_div(parent);
     refresh(false);
     function refresh(refreshed) {
-        html_clear(div);
-        html_p_text(div, 'below is a quiz');
-        html_p_text(div, 'choose the correct output for the code');
-        let container = app_learn_code_code_container(div);
-        let choices_count = 4;
-        let r = range(choices_count);
-        let choices = array_new();
-        for (let c of r) {
-            for (let i of app_learn_code_range_retry()) {
-                let source = source_get();
-                let answer = app_learn_code_eval_to_string(source);
-                if (list_any(choices, c => equal(c.answer, answer))) {
-                    continue;
-                }
-                if (equal(source, previous)) {
-                    continue;
-                }
-                list_add(choices, {
-                    source,
-                    answer
-                });
-                break;
-            }
-        }
-        list_sort_string(choices, c => c.answer);
-        let correct_index = list_random_index(choices);
-        let {source} = list_get(choices, correct_index);
-        previous = source;
-        app_learn_code_code_part_titled_code(container, source);
-        html_hr(container);
-        app_learn_code_code_part_title(container, app_learn_code_code_part_title_output());
-        each_index(choices, (c, index) => {
-            let {answer} = c;
-            let button = html_button_width_full_text_click(container, answer, function on_click() {
-                if (index === correct_index) {
-                    app_learn_code_style_success(button);
-                    setTimeout(on_success, 200);
-                    function on_success() {
-                        refresh(true);
-                        container_bottom_show();
-                    }
-                } else {
-                    container_bottom_hide();
-                    html_disable(button);
-                    html_style(button, {
-                        'background-color': 'salmon',
-                        'border-color': 'tomato'
-                    });
-                }
-            });
-            html_style_monospace(button);
-        });
+        previous = app_learn_code_quiz_inner(div, source_get, previous, on_success, container_bottom_hide);
         let container_bottom = html_div(div);
         if (!refreshed) {
             container_bottom_hide();
@@ -95,5 +44,61 @@ export function app_learn_code_quiz_inner(parent, source_get) {
         function container_bottom_show() {
             html_style_display_block(container_bottom);
         }
+        function on_success() {
+            refresh(true);
+            container_bottom_show();
+        }
     }
 }
+function app_learn_code_quiz_inner(parent, source_get, previous_source, on_answer_right, on_answer_wrong) {
+    html_clear(parent);
+    html_p_text(parent, 'below is a quiz');
+    html_p_text(parent, 'choose the correct output for the code');
+    let container = app_learn_code_code_container(parent);
+    let choices_count = 4;
+    let r = range(choices_count);
+    let choices = array_new();
+    for (let c of r) {
+        for (let i of app_learn_code_range_retry()) {
+            let source = source_get();
+            let answer = app_learn_code_eval_to_string(source);
+            if (list_any(choices, c => equal(c.answer, answer))) {
+                continue;
+            }
+            if (equal(source, previous_source)) {
+                continue;
+            }
+            list_add(choices, {
+                source,
+                answer
+            });
+            break;
+        }
+    }
+    list_sort_string(choices, c => c.answer);
+    let correct_index = list_random_index(choices);
+    let { source } = list_get(choices, correct_index);
+    previous_source = source;
+    app_learn_code_code_part_titled_code(container, source);
+    html_hr(container);
+    app_learn_code_code_part_title(container, app_learn_code_code_part_title_output());
+    each_index(choices, (c, index) => {
+        let { answer } = c;
+        let button = html_button_width_full_text_click(container, answer, function on_click() {
+            if (index === correct_index) {
+                app_learn_code_style_success(button);
+                setTimeout(on_answer_right, 200);
+            } else {
+                on_answer_wrong();
+                html_disable(button);
+                html_style(button, {
+                    'background-color': 'salmon',
+                    'border-color': 'tomato'
+                });
+            }
+        });
+        html_style_monospace(button);
+    });
+    return previous_source;
+}
+
