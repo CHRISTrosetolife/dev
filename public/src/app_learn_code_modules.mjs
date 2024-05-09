@@ -113,6 +113,7 @@ export function app_learn_code_modules() {
     list_add(module_current, lesson_if_else_negative);
     list_add(module_current, lesson_mod);
     list_add(module_current, lesson_mod_even);
+    module_current = [];
     list_add(modules, {
         name: '`if` `else` compound',
         lessons: module_current
