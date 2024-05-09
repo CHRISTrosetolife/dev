@@ -20,8 +20,9 @@ export function lesson_if_else_string_concat() {
         let words = lesson_console_log_quiz_words();
         if (0) words = ['a', 'b', 'c'];
         let words_length = list_length(words);
-        let remaining = list_skip(words, integer_random(0, subtract(words_length, 2)));
-        let w = list_take(remaining, 2);
+        let count = integer_random(2, 4)
+        let remaining = list_skip(words, integer_random(0, subtract(words_length, count)));
+        let w = list_take(remaining, count);
         list_set(w, 0, string_combine(list_first(w), ' '));
         let mapped = list_map(w, string_delimit);
         let [a, b] = mapped;
