@@ -9,7 +9,7 @@ import {integer_random_digit_single} from "./integer_random_digit_single.mjs";
 import {html_hr} from "./html_hr.mjs";
 import { string_combine } from "./string_combine.mjs";
 export function lesson_if_else_if_two() {
-    let description = 'two `if`';
+    let description = 'two `if`\'s';
     let example_message = string_combine('with ', description);
     return lesson_simple(function () {
         let a = integer_random_digit_single();
