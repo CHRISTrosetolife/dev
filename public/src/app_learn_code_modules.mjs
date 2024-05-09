@@ -42,7 +42,7 @@ export function app_learn_code_modules() {
     let modules = [];
     let module_current;
     module_current = [];
-    list_add(modules, { name: 'output , operators , statements', lessons: module_current });
+    list_add(modules, { name: 'output , processes , statements', lessons: module_current });
     list_add(module_current, lesson_console_log);
     list_add(module_current, lesson_log_number);
     list_add(module_current, lesson_add);
