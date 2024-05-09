@@ -1,3 +1,4 @@
+import {timeout_set} from "./timeout_set.mjs";
 import {html_style_monospace} from "./html_style_monospace.mjs";
 import {html_style} from "./html_style.mjs";
 import {html_disable} from "./html_disable.mjs";
@@ -57,7 +58,7 @@ export function app_learn_code_quiz_inner_refresh(parent, source_get, previous_s
         let button = html_button_width_full_text_click(container, answer, function on_click() {
             if (index === correct_index) {
                 app_learn_code_style_success(button);
-                setTimeout(on_answer_right, 200);
+                timeout_set(on_answer_right, 200);
             } else {
                 on_answer_wrong();
                 html_disable(button);
