@@ -28,6 +28,15 @@ export function lesson_if_else_ternary() {
     function example_before(parent) {}
     function screen1(parent) {
         'here is some code :'
+        let lines = [
+            js_code_statement_let('a'), 
+            `if (b) {`, 
+            js_code_statement_assign('a', 'c'), 
+            `} else {`, 
+            js_code_statement_assign('a', 'd'), 
+            `}`, 
+        ];
+        list_join_newline(lines);
         'that code can be shortened to the following :'
     }
 }
