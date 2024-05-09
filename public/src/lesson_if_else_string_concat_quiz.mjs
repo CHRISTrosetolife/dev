@@ -26,7 +26,7 @@ export function lesson_if_else_string_concat_quiz(concat_count) {
     let count = integer_random(concat_count, words_total);
     let remaining = list_skip(words, integer_random(0, subtract(words_length, count)));
     let w = list_take(remaining, count);
-    while (list_length(w) > 2) {
+    while (list_length(w) > concat_count) {
         let i;
         if (random_50_50()) {
             i = 0;
