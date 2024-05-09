@@ -13,7 +13,7 @@ import {html_p_text} from "./html_p_text.mjs";
 import {app_learn_code_code_part_contrast} from "./app_learn_code_code_part_contrast.mjs";
 export function lesson_if_else_ternary() {
     let description = 'ternary ( `a ? b : c` )';
-    let example_message = string_combine('with ', description);
+    let example_message = string_combine('with a ', description);
     return lesson_simple(function () {
         let n = integer_random_digit_single();
         let lines = [
@@ -29,6 +29,6 @@ export function lesson_if_else_ternary() {
         let lines = [js_code_statement_let('a'), `if (b) {`, js_code_statement_assign('a', 'c'), `} else {`, js_code_statement_assign('a', 'd'), `}`];
         app_learn_code_code_part_contrast(parent, list_join_newline(lines));
         html_p_text(parent, 'that code can be shortened to the following :');
-        app_learn_code_code_part_contrast(parent, js_code_statement_let_assign('a', js_code_ternary()));
+        app_learn_code_code_part_contrast(parent, js_code_statement_let_assign('a', js_code_ternary('b', 'c', 'd')));
     }
 }
