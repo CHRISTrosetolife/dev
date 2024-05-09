@@ -27,7 +27,7 @@ export function lesson_if_else_ternary() {
     }, example_before, description, example_message, []);
     function example_before(parent) {}
     function screen1(parent) {
-        'here is some code'
-        'that code can be shortened to the following'
+        'here is some code :'
+        'that code can be shortened to the following :'
     }
 }
