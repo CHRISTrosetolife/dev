@@ -32,5 +32,6 @@ export function lesson_if_else_string_empty() {
         'a string can have nothing in it'
         'this is called an empty string'
         'if a string is concatenated with an empty string , then the result is the same as before'
+        'an empty string can look like this : \'\''
     }
 }
