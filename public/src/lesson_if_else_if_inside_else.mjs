@@ -17,11 +17,12 @@ export function lesson_if_else_if_inside_else() {
         let a = integer_random_digit_single();
         let lines = [
             app_learn_code_log(a), 
-            `if (${a} < 0) {`, 
-            `if (${a} % 2 === 0) {`, 
-            app_learn_code_log_delimit('negative and even'), 
+            `if (${a} <= 0) {`, 
+            app_learn_code_log_delimit(`not positive`), 
             `} else {`,
-            app_learn_code_log_delimit(`negative and odd`), 
+            app_learn_code_log_delimit('positive'), 
+            `if (${a} % 2 === 0) {`, 
+            app_learn_code_log_delimit('positive and even'), 
             `}`, 
             `}`
         ];        
