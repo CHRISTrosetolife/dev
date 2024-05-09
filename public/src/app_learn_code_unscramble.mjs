@@ -47,6 +47,7 @@ import {list_sort_string} from "./list_sort_string.mjs";
 import {identity} from "./identity.mjs";
 import { list_skip } from "./list_skip.mjs";
 import { list_includes_not } from "./list_includes_not.mjs";
+import { list_sort } from "./list_sort.mjs";
 export function app_learn_code_unscramble(source_get) {
     return function app_learn_code_unscramble_inner(parent) {
         let previous;
@@ -88,6 +89,7 @@ export function app_learn_code_unscramble(source_get) {
                 list_add(sorted, a);
             }
             list_sort_string(sorted, identity);
+            list_sort(sorted, string_length)
             let scrambled = list_copy(answer);
             list_scramble(scrambled);
             let parts = array_new();
