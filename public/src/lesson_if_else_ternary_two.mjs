@@ -20,7 +20,7 @@ export function lesson_if_else_ternary_two() {
             app_learn_code_log(n), 
             js_code_statement_let_assign(
                 'positive', 
-                js_code_ternary(`${n} > 0`, string_delimit(''), string_delimit('not '))), 
+                js_code_ternary(`${n} <= 0`, string_delimit('not '), string_delimit(''))), 
             app_learn_code_log_join_plus(['positive', string_delimit('positive')]), 
             js_code_statement_let_assign(
                 'even', 
