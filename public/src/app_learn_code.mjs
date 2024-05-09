@@ -121,7 +121,7 @@ export function app_learn_code() {
             'font-size': string_combine(multiply(default_font_size, 1.2).toString(), 'vh')
         });
         html_style_bold(begin);
-        html_p_text(root, 'or choose a lesson below :');
+        html_p_text(root, 'or choose a module below :');
         for (let module of modules) {
             let {name} = module;
             html_button_width_full_text_click_alternate_code(root, name, () => refresh_module(module));
