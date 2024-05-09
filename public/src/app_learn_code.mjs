@@ -73,6 +73,7 @@ export function app_learn_code() {
         let review = app_learn_code_review(module_lessons);
         list_add(lessons, review);
         list_add(lesson_screens, list_single(object_property_get(review, 'screens')));
+        list_add(module_lessons, review);
     }
     function refresh_settings() {
         clear_scroll();
@@ -121,8 +122,10 @@ export function app_learn_code() {
         html_p_text(root, 'or choose a lesson below :');
         for (let module of modules) {
             let {name} = module;
-
+            html_button_width_full_text_click_alternate_code(root, name, () => refresh_module(module));
         }
+    }
+    function refresh_module(module) {
         for (let lesson of lessons) {
             let {description} = lesson;function on_click() {refresh_lesson(lesson)}
             html_button_width_full_text_click_alternate_code(root, description, on_click);
