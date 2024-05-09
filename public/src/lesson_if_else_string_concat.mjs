@@ -13,6 +13,7 @@ import {list_length} from "./list_length.mjs";
 import {subtract} from "./subtract.mjs";
 import {integer_random} from "./integer_random.mjs";
 import {list_first} from "./list_first.mjs";
+import { random_50_50 } from "./random_50_50.mjs";
 export function lesson_if_else_string_concat() {
     let description = 'two strings combined';
     let example_message = string_combine('with ', description);
@@ -23,6 +24,15 @@ export function lesson_if_else_string_concat() {
         let count = integer_random(2, 4)
         let remaining = list_skip(words, integer_random(0, subtract(words_length, count)));
         let w = list_take(remaining, count);
+        while (list_length(w) > 2) {
+            let i , j;
+            if (random_50_50()) {
+                i = 0;
+            } else {
+                i = list_length(w) - 2;
+            }
+            j = i+1;
+        }
         list_set(w, 0, string_combine(list_first(w), ' '));
         let mapped = list_map(w, string_delimit);
         let [a, b] = mapped;
