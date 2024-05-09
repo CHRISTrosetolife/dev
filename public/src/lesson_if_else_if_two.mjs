@@ -8,6 +8,8 @@ import {random_50_50} from "./random_50_50.mjs";
 import {integer_random_digit_single} from "./integer_random_digit_single.mjs";
 import {html_hr} from "./html_hr.mjs";
 import { string_combine } from "./string_combine.mjs";
+import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
+import { app_learn_code_log } from "./app_learn_code_log.mjs";
 export function lesson_if_else_if_two() {
     let description = 'two `if`\'s';
     let example_message = string_combine('with ', description);
@@ -28,11 +30,11 @@ export function lesson_if_else_if_two() {
 
     }
     function screen1(parent) {
-        html_p_text(parent, 'a program can have multiple `if`\'s');
-        html_p_text(parent, 'in this lesson there will be two `if`\'s');
-        html_p_text(parent, 'sometimes only the first `if` will run');
-        html_p_text(parent, 'sometimes only the second `if` will run');
-        html_p_text(parent, 'sometimes both `if`\'s will run');
-        html_p_text(parent, 'sometimes none of the `if`\'s will run');
+        html_style_alternate_monospace_short(parent, 'a program can have multiple `if`\'s');
+        html_style_alternate_monospace_short(parent, 'in this lesson there will be two `if`\'s');
+        html_style_alternate_monospace_short(parent, 'sometimes only the first `if` will run');
+        html_style_alternate_monospace_short(parent, 'sometimes only the second `if` will run');
+        html_style_alternate_monospace_short(parent, 'sometimes both `if`\'s will run');
+        html_style_alternate_monospace_short(parent, 'sometimes none of the `if`\'s will run');
     }
 }
