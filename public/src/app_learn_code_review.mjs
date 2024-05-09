@@ -28,12 +28,13 @@ export function app_learn_code_review(lessons) {
                     if (list_empty_is(quizzes)) {
                         if (list_empty_is(wrongs)) {
                             html_p_text(string_combine('you completed the ', description));
+                            return;
                         } else {
                             quizzes = wrongs;
+                            initialize();
                         }
-                    } else {
-                        quiz_next();
                     }
+                    quiz_next();
                 }, noop);
             }
         }]
