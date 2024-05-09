@@ -38,6 +38,7 @@ import {lesson_if_else_if} from "./lesson_if_else_if.mjs";
 import {lesson_mod} from "./lesson_mod.mjs";
 import {lesson_mod_even} from "./lesson_mod_even.mjs";
 import {lesson_if_else_nested_if} from "./lesson_if_else_nested_if.mjs";
+import { lesson_if_else_nested_if_else } from "./lesson_if_else_nested_if_else.mjs";
 export function app_learn_code_modules() {
     let modules = [];
     let module_current;
@@ -90,5 +91,6 @@ export function app_learn_code_modules() {
     list_add(module_current, lesson_mod);
     list_add(module_current, lesson_mod_even);
     list_add(module_current, lesson_if_else_nested_if);
+    list_add(module_current, lesson_if_else_nested_if_else);
     return modules;
 }
