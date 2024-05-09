@@ -58,7 +58,8 @@ export function app_learn_code() {
     let lesson_screens = [];
     let lessons = [];
     for (let module of modules) {
-        for (let lesson_create of module) {
+        let {lessons:module_lessons} = module
+        for (let lesson_create of module_lessons) {
             let lesson = lesson_create();
             list_add(lessons, lesson);
             let s = object_property_get(lesson, 'screens');
