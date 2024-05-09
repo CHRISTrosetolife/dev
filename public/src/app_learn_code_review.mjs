@@ -15,14 +15,19 @@ export function app_learn_code_review(lessons) {
         screens: [function app_learn_code_review_inner(parent) {
             let div = html_div(parent);
             let quizzes = list_map(lessons, lesson => object_property_get(lesson, 'quiz'));
-            let wrongs = [];
+            let wrongs;
+            wrongs = [];
             list_scramble(quizzes);
             quiz_next();
             function quiz_next() {
                 let quiz = list_pop(quizzes);
                 app_learn_code_quiz_inner_refresh(div, quiz, undefined, () => {
                     if (list_empty_is(quizzes)) {
-                        html_p_text(string_combine('you completed the ', description));
+                        if (list_empty_is(wrongs)) {
+                            html_p_text(string_combine('you completed the ', description));
+                        } else {
+                            quizzes = wrongs;
+                        }
                     } else {
                         quiz_next();
                     }
