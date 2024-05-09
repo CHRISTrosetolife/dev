@@ -121,12 +121,13 @@ export function app_learn_code() {
         each_index(modules, (module, index) => {
             let index_1_s = add_1_string(index);
             let {name} = module;
-            html_button_width_full_text_click_alternate_code(root, string_combine_multiple([index_1_s, ' ', name]), () => refresh_module(module));
+            html_button_width_full_text_click_alternate_code(root, string_combine_multiple([index_1_s, ' : ', name]), () => refresh_module(module));
         });
     }
     function refresh_module(module) {
         clear_scroll();
         button_home_hr();
+        html_p_text(root, 'choose a lesson below :');
         let {lessons} = module;
         each_index(lessons, (lesson, index) => {
             let index_1_s = add_1_string(index);
@@ -134,7 +135,7 @@ export function app_learn_code() {
             function on_click() {
                 refresh_lesson(lesson);
             }
-            html_button_width_full_text_click_alternate_code(root, string_combine_multiple([index_1_s, ' ', description]), on_click);
+            html_button_width_full_text_click_alternate_code(root, string_combine_multiple([index_1_s, ' : ', description]), on_click);
         });
     }
     refresh_main();
@@ -146,6 +147,7 @@ export function app_learn_code() {
     function refresh_lesson(lesson) {
         clear_scroll();
         button_home_hr();
+        html_p_text(root, 'choose a screen below :');
         let lesson_index = list_index(lessons, lesson);
         let previous = list_take(lessons, lesson_index);
         let index_first = list_sum(s => {
