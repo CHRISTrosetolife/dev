@@ -27,7 +27,6 @@ export function lesson_if_else_string_concat_quiz(concat_count) {
     let count = integer_random(concat_count, words_total);
     let remaining = list_skip(words, integer_random(0, subtract(words_length, count)));
     let w = list_take(remaining, count);
-    console.log({w})
     while (list_length(w) > concat_count) {
         let i = integer_random(0, list_length(w) - 2)
         let w_i = list_get(w, i);
@@ -35,7 +34,6 @@ export function lesson_if_else_string_concat_quiz(concat_count) {
         let combined = list_join([w_i, w_j], ' ');
         list_remove_multiple_at(w, i, 2);
         list_insert(w, i, combined);
-        console.log({w})
     }
     for (let i of range(list_index_last(w))) {
         list_set(w, i, string_combine(list_get(w, i), ' '));
