@@ -44,6 +44,7 @@ import {html_style_bold} from "./html_style_bold.mjs";
 import {range} from "./range.mjs";
 import {string_length} from "./string_length.mjs";
 import {html_span} from "./html_span.mjs";
+import { list_copy } from "./list_copy.mjs";
 export function app_learn_code() {
     let modules = app_learn_code_modules();
     let root = html_document_body();
@@ -66,7 +67,6 @@ export function app_learn_code() {
             list_add(lessons, lesson);
             let s = object_property_get(lesson, 'screens');
             list_add_multiple(lesson_screens, s);
-            let q = object_property_get(lesson, 'quiz');
         }
         list_add(app_learn_code_review(module_lessons));
     }
