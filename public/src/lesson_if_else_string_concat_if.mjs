@@ -7,12 +7,18 @@ import {list_join_newline} from "./list_join_newline.mjs";
 import {html_p_text} from "./html_p_text.mjs";
 import { js_code_let } from "./js_code_let.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
+import { string_delimit } from "./string_delimit.mjs";
+import { integer_random_digit_single } from "./integer_random_digit_single.mjs";
 export function lesson_if_else_string_concat_if() {
     let description = 'string combined with two variables';
     let example_message = string_combine('with ', description);
     return lesson_simple(function () {
+        let n = integer_random_digit_single();
         let lines = [
-            js_code_statement_let_assign()
+            js_code_statement_let_assign('before', string_delimit('number is')), 
+            js_code_statement_let_assign('middle', string_delimit(' ')),
+            js_code_statement_let_assign('after', string_delimit('negative')),
+            ``
         ]
         return lesson_if_else_string_concat_variables_quiz(2);
     }, example_before, description, example_message, [screen1]);
