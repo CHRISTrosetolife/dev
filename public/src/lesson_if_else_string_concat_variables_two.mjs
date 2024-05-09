@@ -16,6 +16,7 @@ import {list_take} from "./list_take.mjs";
 import {list_add} from "./list_add.mjs";
 import {list_sort_string} from "./list_sort_string.mjs";
 import {identity} from "./identity.mjs";
+import { html_p_text } from "./html_p_text.mjs";
 export function lesson_if_else_string_concat_variables_two() {
     let description = 'string combined with two variables';
     let example_message = string_combine('with ', description);
@@ -39,5 +40,8 @@ export function lesson_if_else_string_concat_variables_two() {
     }, example_before, description, example_message, []);
     function example_before(parent) {
         html_style_alternate_monospace_short(parent, 'strings can be concatentated with a variable');
+    }
+    function screen1(parent) {
+        html_p_text(parent, 'in this lesson ')
     }
 }
