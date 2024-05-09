@@ -45,6 +45,7 @@ import {range} from "./range.mjs";
 import {string_length} from "./string_length.mjs";
 import {html_span} from "./html_span.mjs";
 import { list_copy } from "./list_copy.mjs";
+import { list_single } from "./list_single.mjs";
 export function app_learn_code() {
     let modules = app_learn_code_modules();
     let root = html_document_body();
@@ -68,7 +69,9 @@ export function app_learn_code() {
             let s = object_property_get(lesson, 'screens');
             list_add_multiple(lesson_screens, s);
         }
-        list_add(app_learn_code_review(module_lessons));
+        let review = app_learn_code_review(module_lessons);
+        list_add(lessons, review);
+        list_add(lesson_screens, list_single(object_property_get(list, 'screens')));
     }
     function refresh_settings() {
         clear_scroll();
