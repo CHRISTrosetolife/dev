@@ -1,3 +1,4 @@
+import {app_learn_code_style_code} from "./app_learn_code_style_code.mjs";
 import {app_learn_code_random_identifiers} from "./app_learn_code_random_identifiers.mjs";
 import {list_indices} from "./list_indices.mjs";
 import {list_join} from "./list_join.mjs";
@@ -16,7 +17,7 @@ import {list_take} from "./list_take.mjs";
 import {list_add} from "./list_add.mjs";
 import {list_sort_string} from "./list_sort_string.mjs";
 import {identity} from "./identity.mjs";
-import { html_p_text } from "./html_p_text.mjs";
+import {html_p_text} from "./html_p_text.mjs";
 export function lesson_if_else_string_concat_variables_two() {
     let description = 'string combined with two variables';
     let example_message = string_combine('with ', description);
@@ -42,11 +43,10 @@ export function lesson_if_else_string_concat_variables_two() {
         html_style_alternate_monospace_short(parent, 'strings can be concatentated with a variable');
     }
     function screen1(parent) {
-        html_p_text(parent, 'in this lesson variable names will be declared in alphabetical order')
-        html_p_text(parent, 'for example , this is allowed :')
-        app_learn_code_style_code(parent, list_join_newline(['let a;','let b;']))
-        html_p_text(parent, 'however , this is not allowed :')
-        app_learn_code_style_code(parent, list_join_newline(['let b;','let a;']))
-
+        html_p_text(parent, 'in this lesson variable names will be declared in alphabetical order');
+        html_p_text(parent, 'for example , this is allowed :');
+        app_learn_code_style_code(parent, list_join_newline(['let a;', 'let b;']));
+        html_p_text(parent, 'however , this is not allowed :');
+        app_learn_code_style_code(parent, list_join_newline(['let b;', 'let a;']));
     }
 }
