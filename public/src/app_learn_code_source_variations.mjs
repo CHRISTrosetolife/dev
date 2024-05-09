@@ -64,12 +64,6 @@ export function app_learn_code_source_variations(source) {
                     }
                 }
                 if (list_empty_is(nt)) {
-                    let literals = js_node_type(node, 'Literal')
-                    let literal_strings = list_filter(literals, l => {
-                        let {value} = l;
-                        return typeof value === 'string'
-                    })
-                    if (list_empty_is(literal_strings)) {
                         let {right} = node;
                         let {type} = right;
                         if (equal(type, 'BinaryExpression')) {
@@ -84,7 +78,6 @@ export function app_learn_code_source_variations(source) {
                                 object_property_set(node, 'right', right_r);
                             }
                         }
-                    }
                 }
             });
             let alternative = js_unparse_indent_none(ast);
