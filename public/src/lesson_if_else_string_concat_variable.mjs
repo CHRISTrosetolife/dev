@@ -9,8 +9,8 @@ export function lesson_if_else_string_concat_variable() {
     let example_message = string_combine('with ', description);
     return lesson_simple(function () {
         let concat_count = 3;
-        let mapped = lesson_if_else_string_concat_quiz_parts(concat_count);
-        return app_learn_code_log(list_join(mapped, ' + '));
+        let parts = lesson_if_else_string_concat_quiz_parts(concat_count);
+        return app_learn_code_log(list_join(parts, ' + '));
     }, example_before, description, example_message, []);
     function example_before(parent) {
         html_style_alternate_monospace_short(parent, 'strings can be concatentated with a variable');
