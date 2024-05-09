@@ -40,7 +40,7 @@ export function lesson_if_else_string_concat() {
             let w_j = list_get(w, add_1(i));
             let combined = list_join([w_i, w_j], ' ');
             list_remove_multiple_at(w, i, 2);
-            list_insert(w, 0, combined);
+            list_insert(w, i, combined);
         }
         list_set(w, 0, string_combine(list_first(w), ' '));
         let mapped = list_map(w, string_delimit);
