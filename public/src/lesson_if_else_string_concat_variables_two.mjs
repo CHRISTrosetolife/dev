@@ -41,7 +41,7 @@ export function lesson_if_else_string_concat_variables_two() {
         return list_join_newline(lines);
     }, example_before, description, example_message, [screen1]);
     function example_before(parent) {
-        html_style_alternate_monospace_short(parent, 'strings can be concatentated with a variable');
+        html_style_alternate_monospace_short(parent, 'strings can be concatentated with multiple variables');
     }
     function screen1(parent) {
         html_p_text(parent, 'in this lesson variable names will be declared in alphabetical order');
