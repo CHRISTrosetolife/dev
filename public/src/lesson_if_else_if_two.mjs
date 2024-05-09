@@ -13,7 +13,15 @@ export function lesson_if_else_if_two() {
     let example_message = string_combine('with ', description);
     return lesson_simple(function () {
         let a = integer_random_digit_single();
-        let lines = [js_code_statement_let_assign('n', a), `if (n > 0) {`, app_learn_code_log_delimit('number is positive'), `} else if (n < 0) {`, app_learn_code_log_delimit('number is negative'), `} else {`, app_learn_code_log_delimit('number is zero'), `}`];
+        let lines = [
+        app_learn_code_log(a), 
+        `if (${a} > 0) {`, 
+        app_learn_code_log_delimit('positive'), 
+        `}`,
+        `if (${a} % 2 === 0) {`,
+        app_learn_code_log_delimit('even'), 
+        `}`
+        ];
         return list_join_newline(lines);
     }, example_before, description, example_message, [screen1, screen2]);
     function example_before(parent) {
