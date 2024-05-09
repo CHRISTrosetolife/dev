@@ -27,7 +27,7 @@ export function lesson_if_else_string_concat_variables_two() {
         for (let t of taken) {
             let parts_at_variable_index = list_get(parts, t);
             let name = app_learn_code_random_identifier();
-            list_set(parts, parts_variable_index, name);
+            list_set(parts, t, name);
             list_add(lines, js_code_statement_let_assign(name, parts_at_variable_index));
         }
         list_add(lines, app_learn_code_log(list_join(parts, ' + ')));
