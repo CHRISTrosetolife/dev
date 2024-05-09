@@ -23,7 +23,8 @@ export function lesson_if_else_nested_if_else() {
             app_learn_code_log_delimit('positive and even'), 
             `}`, 
             `}`
-           ];        return list_join_newline(lines);
+        ];        
+        return list_join_newline(lines);
     }, example_before, description, example_message, []);
     function example_before(parent) {
         html_style_alternate_monospace_short(parent, 'an `if` can be inside another `if`');
