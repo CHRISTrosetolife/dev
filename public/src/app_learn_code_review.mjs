@@ -10,7 +10,7 @@ export function app_learn_code_review(lessons) {
         description: 'module review',
         screens: [
             function app_learn_code_review_inner(parent) {
-                let quizzes = list_map(lessons, object_property_get(lesson, 'quiz'));
+                let quizzes = list_map(lessons, lesson => object_property_get(lesson, 'quiz'));
                 list_scramble(quizzes);
                 quiz_next();
                 function quiz_next() {
