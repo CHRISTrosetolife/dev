@@ -9,6 +9,7 @@ import { list_join_newline } from "./list_join_newline.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { integer_random_digit_single_positive } from "./integer_random_digit_single_positive.mjs";
 import { html_p_text } from "./html_p_text.mjs";
+import { list_add_multiple } from "./list_add_multiple.mjs";
 export function lesson_while_increment_multiple() {
   let description = "multiple increments";
   let example_message = string_combine("with an ", description);
@@ -17,7 +18,10 @@ export function lesson_while_increment_multiple() {
       let name = app_learn_code_random_identifier();
       let value = integer_random_digit_single_positive();
       let lines = [js_code_statement_let_assign(name, value)];
-      [js_code_statement_increment(name), app_learn_code_log(name)];
+      list_add_multiple(lines, [
+        js_code_statement_increment(name),
+        app_learn_code_log(name),
+      ]);
       return list_join_newline(lines);
     },
     example_before,
