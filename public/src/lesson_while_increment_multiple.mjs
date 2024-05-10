@@ -18,7 +18,7 @@ export function lesson_while_increment_multiple() {
       let name = app_learn_code_random_identifier();
       let value = integer_random_digit_single_positive();
       let lines = [js_code_statement_let_assign(name, value)];
-      for (let i of range(integer_random(2, 4))) {
+      for (let i of range(integer_random(2, 3))) {
         list_add(lines, js_code_statement_increment(name));
       }
       list_add(lines, app_learn_code_log(name));
