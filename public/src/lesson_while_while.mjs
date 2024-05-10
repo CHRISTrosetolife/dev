@@ -1,3 +1,4 @@
+import { html_style_alternate_monospace_short_multiple } from "./html_style_alternate_monospace_short_multiple.mjs";
 import { js_code_statement_increment } from "./js_code_statement_increment.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 import { app_learn_code_random_identifier } from "./app_learn_code_random_identifier.mjs";
@@ -34,4 +35,12 @@ export function lesson_while_while() {
     [],
   );
   function example_before(parent) {}
+  function screen1(parent) {
+    html_style_alternate_monospace_short_multiple(messages, [
+      "an `if` is ran only once",
+      "a `while` is similar to an `if`",
+      "a `while` is an `if` that runs over and over",
+      "a `while` will be ran until what is in between the parenthesis is `false`",
+    ]);
+  }
 }
