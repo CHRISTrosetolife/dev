@@ -15,12 +15,12 @@ export function lesson_while_increment() {
   let example_message = string_combine("with an ", description);
   return lesson_simple(
     function () {
-      let n = app_learn_code_random_identifier();
+      let name = app_learn_code_random_identifier();
       let value = integer_random_digit_single_positive();
       let lines = [
-        js_code_statement_let_assign(n, value),
-        js_code_increment(a),
-        app_learn_code_log(a),
+        js_code_statement_let_assign(name, value),
+        js_code_increment(name),
+        app_learn_code_log(name),
       ];
       return list_join_newline(lines);
     },
