@@ -8,6 +8,7 @@ import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { integer_random } from "./integer_random.mjs";
 import { subtract } from "./subtract.mjs";
 import { string_combine } from "./string_combine.mjs";
+import { add_1 } from "./add_1.mjs";
 export function lesson_while_false() {
   let description = "`while` loop";
   let example_message = string_combine("with a ", description);
@@ -17,7 +18,7 @@ export function lesson_while_false() {
       let iterations = integer_random(2, 3);
       let max_value = 10;
       let offset = integer_random(0, subtract(max_value, iterations));
-      let value = 1 + offset;
+      let value = add_1(max_value);
       let loop_end = iterations + offset;
       let lines = [
         js_code_statement_let_assign(name, value),
