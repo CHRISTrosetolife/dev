@@ -16,8 +16,8 @@ export function lesson_while_assign_add() {
   let example_message = string_combine("with an ", description);
   return lesson_simple(
     function () {
-      let n = app_learn_code_random_identifiers(2);
-      let [a, b] = call_multiple(integer_random_digit_single_positive, 2);
+      let names = app_learn_code_random_identifiers(2);
+      let values = call_multiple(integer_random_digit_single_positive, 2);
       let lines = [
         js_code_statement_let_assign(n, b),
         js_code_statement_add_assign(n, a),
