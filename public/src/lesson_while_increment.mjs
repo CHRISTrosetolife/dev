@@ -1,7 +1,6 @@
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 import { app_learn_code_random_identifier } from "./app_learn_code_random_identifier.mjs";
 import { js_code_increment } from "./js_code_increment.mjs";
-import { lesson_screen_variables_numbers_sorted } from "./lesson_screen_variables_numbers_sorted.mjs";
 import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
 import { js_code_statement_add_assign } from "./js_code_statement_add_assign.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
@@ -10,6 +9,7 @@ import { list_join_newline } from "./list_join_newline.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { integer_random_digit_single_positive } from "./integer_random_digit_single_positive.mjs";
 import { html_p_text } from "./html_p_text.mjs";
+import { js_code_statement } from "./js_code_statement.mjs";
 export function lesson_while_increment() {
   let description = "increment ( `++` )";
   let example_message = string_combine("with an ", description);
@@ -38,6 +38,9 @@ export function lesson_while_increment() {
       js_code_statement_add_assign(a, "1"),
     );
     html_p_text(parent, "that code can be shortened to :");
-    app_learn_code_code_part_contrast(parent, js_code_increment(a));
+    app_learn_code_code_part_contrast(
+      parent,
+      js_code_statement(js_code_increment(a)),
+    );
   }
 }
