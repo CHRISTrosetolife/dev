@@ -11,13 +11,18 @@ import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
 import { integer_random_digit_single_positive } from "./integer_random_digit_single_positive.mjs";
 import { call_multiple } from "./call_multiple.mjs";
 import { html_p_text } from "./html_p_text.mjs";
+import { list_sort } from "./list_sort.mjs";
+import { identity } from "./identity.mjs";
+import { list_sort_string } from "./list_sort_string.mjs";
 export function lesson_while_assign_add() {
   let description = "assign add shorthand ( `+=` )";
   let example_message = string_combine("with an ", description);
   return lesson_simple(
     function () {
       let names = app_learn_code_random_identifiers(2);
+      list_sort_string(names, identity);
       let values = call_multiple(integer_random_digit_single_positive, 2);
+      list_sort(values, identity);
       let lines = [
         js_code_statement_let_assign(n, b),
         js_code_statement_add_assign(n, a),
