@@ -18,8 +18,8 @@ export function lesson_while_false() {
       let iterations = integer_random(2, 3);
       let max_value = 10;
       let offset = integer_random(0, subtract(max_value, iterations));
-      let value = add_1(max_value);
       let loop_end = iterations + offset;
+      let value = add_1(loop_end);
       let lines = [
         js_code_statement_let_assign(name, value),
         `while (${name} <= ${loop_end}) {`,
