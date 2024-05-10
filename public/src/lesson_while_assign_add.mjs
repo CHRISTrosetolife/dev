@@ -1,3 +1,4 @@
+import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
 import { js_code_statement_add_assign } from "./js_code_statement_add_assign.mjs";
 import { js_code_ternary } from "./js_code_ternary.mjs";
 import { app_learn_code_log_join_plus } from "./app_learn_code_log_join_plus.mjs";
@@ -50,6 +51,6 @@ export function lesson_while_assign_add() {
     ("that code can be shortened to :");
     let a = "a";
     let b = "b";
-    js_code_statement_add_assign(a, b);
+    app_learn_code_code_part_contrast, js_code_statement_add_assign(a, b);
   }
 }
