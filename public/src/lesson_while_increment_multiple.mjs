@@ -16,11 +16,8 @@ export function lesson_while_increment_multiple() {
     function () {
       let name = app_learn_code_random_identifier();
       let value = integer_random_digit_single_positive();
-      let lines = [
-        js_code_statement_let_assign(name, value),
-        js_code_statement_increment(name),
-        app_learn_code_log(name),
-      ];
+      let lines = [js_code_statement_let_assign(name, value)];
+      [js_code_statement_increment(name), app_learn_code_log(name)];
       return list_join_newline(lines);
     },
     example_before,
