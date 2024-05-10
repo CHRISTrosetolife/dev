@@ -11,7 +11,7 @@ import { integer_random_digit_single_positive } from "./integer_random_digit_sin
 import { call_multiple } from "./call_multiple.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 export function lesson_while_assign_add() {
-  let description = "assign add shorthand ( += )";
+  let description = "assign add shorthand ( `+=` )";
   let example_message = string_combine("with an ", description);
   return lesson_simple(
     function () {
