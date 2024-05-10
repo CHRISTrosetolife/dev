@@ -14,7 +14,7 @@ export function lesson_while_if_increment() {
   return lesson_simple(
     function () {
       let name = app_learn_code_random_identifier();
-      let iterations = 3;
+      let iterations = integer_random(2, 3);
       let max_value = 10;
       let offset = integer_random(0, subtract(max_value, iterations));
       let value = 1 + offset;
