@@ -4,7 +4,7 @@ import { html_style_alternate_monospace_short } from "./html_style_alternate_mon
 import { lesson_simple } from "./lesson_simple.mjs";
 import { string_combine } from "./string_combine.mjs";
 export function lesson_while_string_other_concat() {
-  let description = "two strings combined";
+  let description = "a string combined with something that is not a string";
   let example_message = string_combine("with ", description);
   return lesson_simple(
     function () {
