@@ -56,6 +56,7 @@ import { lesson_if_else_ternary_two } from "./lesson_if_else_ternary_two.mjs";
 import { lesson_if_else_ternary_parity } from "./lesson_if_else_ternary_parity.mjs";
 import { lesson_while_assign_add } from "./lesson_while_assign_add.mjs";
 import { lesson_while_if_increment } from "./lesson_while_if_increment.mjs";
+import { lesson_while_string_other_concat } from "./lesson_while_string_other_concat.mjs";
 export function app_learn_code_modules() {
   let modules = [];
   let module_current;
@@ -123,6 +124,8 @@ export function app_learn_code_modules() {
   list_add(module_current, lesson_while_assign_add);
   list_add(module_current, lesson_while_increment);
   list_add(module_current, lesson_while_increment_multiple);
+  list_add(module_current, lesson_while_string_other_concat);
+  
   list_add(module_current, lesson_while_if_increment);
   
   return modules;
