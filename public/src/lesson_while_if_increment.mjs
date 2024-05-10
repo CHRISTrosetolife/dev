@@ -3,7 +3,6 @@ import { js_code_statement_increment } from "./js_code_statement_increment.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 import { app_learn_code_random_identifier } from "./app_learn_code_random_identifier.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
-import { string_combine } from "./string_combine.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { integer_random } from "./integer_random.mjs";
