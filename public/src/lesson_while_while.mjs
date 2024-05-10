@@ -6,9 +6,10 @@ import { list_join_newline } from "./list_join_newline.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { integer_random } from "./integer_random.mjs";
 import { subtract } from "./subtract.mjs";
+import { string_combine } from "./string_combine.mjs";
 export function lesson_while_while() {
-  let description = "increment inside two `if`'s";
-  let example_message = "with an increment inside of two `if`'s";
+  let description = "`while` loop";
+  let example_message = string_combine("with a ", description);
   return lesson_simple(
     function () {
       let name = app_learn_code_random_identifier();
