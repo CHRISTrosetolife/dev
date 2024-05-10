@@ -14,6 +14,7 @@ import { html_p_text } from "./html_p_text.mjs";
 import { list_sort } from "./list_sort.mjs";
 import { identity } from "./identity.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
+import { js_code_statement_let_assign_multiple } from "./js_code_statement_let_assign_multiple.mjs";
 export function lesson_while_assign_add() {
   let description = "assign add shorthand ( `+=` )";
   let example_message = string_combine("with an ", description);
@@ -21,12 +22,13 @@ export function lesson_while_assign_add() {
     function () {
       let names = app_learn_code_random_identifiers(2);
       list_sort_string(names, identity);
+      let [a,b] = names
       let values = call_multiple(integer_random_digit_single_positive, 2);
       list_sort(values, identity);
       let lines = [
-        js_code_statement_let_assign(n, b),
-        js_code_statement_add_assign(n, a),
-        app_learn_code_log(n),
+        js_code_statement_let_assign_multiple(names, values),
+        js_code_statement_add_assign(a, b),
+        app_learn_code_log(a),
       ];
       return list_join_newline(lines);
     },
