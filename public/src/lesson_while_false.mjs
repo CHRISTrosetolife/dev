@@ -10,7 +10,7 @@ import { subtract } from "./subtract.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { add_1 } from "./add_1.mjs";
 export function lesson_while_false() {
-  let description = "`while` loop";
+  let description = "`while` loop that is skipped";
   let example_message = string_combine("with a ", description);
   return lesson_simple(
     function () {
@@ -35,13 +35,9 @@ export function lesson_while_false() {
     example_message,
     [screen1],
   );
-  function example_before(parent) {}
-  function screen1(parent) {
+  function example_before(parent) {
     html_style_alternate_monospace_short_multiple(parent, [
-      "an `if` is ran only once",
-      "a `while` is similar to an `if`",
-      "a `while` is an `if` that runs over and over",
-      "a `while` will be ran until what is in between the parenthesis is `false`",
-    ]);
+    'suppose there is a `while','if what is in between the parenthesis the first time is `false` then the rest of the `while` will not be ran'
+  ]);
   }
 }
