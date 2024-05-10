@@ -17,9 +17,10 @@ export function lesson_while_if_increment() {
     function () {
       let name = app_learn_code_random_identifier();
       let iterations = 3;
-      let max = 10;
+      let max_value = 10;
       let offset = integer_random(0, subtract(max, iterations));
-      let value = "integer_random_digit_single_positive()";
+      let value = 1 + offset;
+      let loop_end = iterations + offset
       let lines = [js_code_statement_let_assign(name, value)];
       for (let i of range(integer_random(2, 3))) {
         list_add(lines, js_code_statement_increment(name));
