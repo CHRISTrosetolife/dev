@@ -1,5 +1,5 @@
+import { lesson_screen_variables_numbers_sorted } from "./lesson_screen_variables_numbers_sorted.mjs";
 import { app_learn_code_random_identifiers } from "./app_learn_code_random_identifiers.mjs";
-import { lesson_screen_variables_alphabetical } from "./lesson_screen_variables_alphabetical.mjs";
 import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
 import { js_code_statement_add_assign } from "./js_code_statement_add_assign.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
@@ -34,7 +34,7 @@ export function lesson_while_assign_add() {
     example_before,
     description,
     example_message,
-    [screen1, lesson_screen_variables_alphabetical],
+    [screen1, lesson_screen_variables_numbers_sorted],
   );
   function example_before(parent) {}
   function screen1(parent) {
@@ -49,22 +49,6 @@ export function lesson_while_assign_add() {
     app_learn_code_code_part_contrast(
       parent,
       js_code_statement_add_assign(a, b),
-    );
-  }
-  function screen3(parent) {
-    html_p_text(
-      parent,
-      "in this lesson variable values will be declared from smallest to largest",
-    );
-    html_p_text(parent, "for example , this is allowed :");
-    app_learn_code_code_part_contrast(
-      parent,
-      list_join_newline(["let a = 1, b = 2;"]),
-    );
-    html_p_text(parent, "however , this is not allowed :");
-    app_learn_code_code_part_contrast(
-      parent,
-      list_join_newline(["let a = 2, b = 1;"]),
     );
   }
 }
