@@ -10,6 +10,8 @@ import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { integer_random_digit_single_positive } from "./integer_random_digit_single_positive.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { list_add } from "./list_add.mjs";
+import { range } from "./range.mjs";
+import { integer_random } from "./integer_random.mjs";
 export function lesson_while_increment_multiple() {
   let description = "multiple increments";
   let example_message = string_combine("with an ", description);
@@ -18,7 +20,9 @@ export function lesson_while_increment_multiple() {
       let name = app_learn_code_random_identifier();
       let value = integer_random_digit_single_positive();
       let lines = [js_code_statement_let_assign(name, value)];
-      list_add(lines, js_code_statement_increment(name));
+      for (let i of range(integer_random(2,4))) {
+        list_add(lines, js_code_statement_increment(name));
+      }
       list_add(lines, app_learn_code_log(name));
       return list_join_newline(lines);
     },
@@ -27,7 +31,9 @@ export function lesson_while_increment_multiple() {
     example_message,
     [screen1],
   );
-  function example_before(parent) {}
+  function example_before(parent) {
+    'a variable may be incremented ( `++` ) multiple times'
+  }
   function screen1(parent) {
     html_p_text(parent, "here is some code :");
     let a = "a";
