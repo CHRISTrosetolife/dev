@@ -4,6 +4,6 @@ export function html_style_alternate_monospace_short_multiple(
   messages,
 ) {
   for (let message of messages) {
-    html_style_alternate_monospace_short(parent, messages);
+    html_style_alternate_monospace_short(parent, message);
   }
 }
