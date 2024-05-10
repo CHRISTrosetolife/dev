@@ -55,10 +55,7 @@ import { lesson_if_else_ternary_parity } from "./lesson_if_else_ternary_parity.m
 export function app_learn_code_modules() {
   let modules = [];
   let module_current;
-  module_current = module_new(
-    modules,
-    "output , processes , statements",
-  );
+  module_current = module_new(modules, "output , processes , statements");
   list_add(module_current, lesson_console_log);
   list_add(module_current, lesson_log_number);
   if (0) {
