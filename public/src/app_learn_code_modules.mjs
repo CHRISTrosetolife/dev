@@ -83,9 +83,10 @@ export function app_learn_code_modules() {
   list_add(module_current, lesson_equal_not_string);
   list_add(module_current, lesson_statements_two);
   list_add(module_current, lesson_statements_three);
+  const module_name = "variables";
   module_current = [];
   list_add(modules, {
-    name: "variables",
+    name: module_name,
     lessons: module_current,
   });
   list_add(module_current, lesson_log_boolean);
