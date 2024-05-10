@@ -20,7 +20,7 @@ export function lesson_if_else_string_concat() {
   function screen1(parent) {
     html_style_alternate_monospace_short(
       parent,
-      "remember , in javascript if `a` and `b` are numbers then `a + b` will add the two numbers together",
+      "remember , in javascript , if `a` and `b` are numbers then `a + b` will add the two numbers together",
     );
     html_style_alternate_monospace_short(
       parent,
