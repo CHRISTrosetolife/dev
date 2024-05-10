@@ -27,7 +27,7 @@ export function lesson_while_increment() {
     example_before,
     description,
     example_message,
-    [screen1, lesson_screen_variables_numbers_sorted],
+    [screen1],
   );
   function example_before(parent) {}
   function screen1(parent) {
