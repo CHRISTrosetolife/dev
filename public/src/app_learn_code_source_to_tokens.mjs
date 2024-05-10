@@ -17,6 +17,7 @@ export function app_learn_code_source_to_tokens(source) {
     if (equal(label, "string")) {
       return string_delimit(value);
     }
+    console.log({label,t})
     let labels = ["name", "num", "+/-", "</>/<=/>=", "==/!=/===/!=="];
     if (list_includes(labels, label)) {
       return value.toString();
