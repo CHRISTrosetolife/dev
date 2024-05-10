@@ -56,7 +56,6 @@ export function app_learn_code_modules() {
   let modules = [];
   let module_current;
   module_current = module_new(
-    module_current,
     modules,
     "output , processes , statements",
   );
