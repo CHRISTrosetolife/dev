@@ -55,19 +55,11 @@ import { lesson_if_else_ternary_parity } from "./lesson_if_else_ternary_parity.m
 export function app_learn_code_modules() {
   let modules = [];
   let module_current;
-  module_current = [];
-  list_add(modules, {
-    name: "output , processes , statements",
-    lessons: module_current,
-  });
+  module_current = module_new(module_current, modules, "output , processes , statements");
   list_add(module_current, lesson_console_log);
   list_add(module_current, lesson_log_number);
   if (0) {
-    module_current = [];
-    list_add(modules, {
-      name: "temp",
-      lessons: module_current,
-    });
+    module_current = module_new(modules, "temp");
   }
   list_add(module_current, lesson_add);
   list_add(module_current, lesson_subtract);
@@ -83,7 +75,7 @@ export function app_learn_code_modules() {
   list_add(module_current, lesson_equal_not_string);
   list_add(module_current, lesson_statements_two);
   list_add(module_current, lesson_statements_three);
-  module_current = module_new(module_current, modules, "variables");
+  module_current = module_new(modules, "variables");
   list_add(module_current, lesson_log_boolean);
   list_add(module_current, lesson_variable);
   list_add(module_current, lesson_variable_log_twice);
@@ -132,13 +124,13 @@ export function app_learn_code_modules() {
   list_add(module_current, lesson_if_else_ternary_parity);
   list_add(module_current, lesson_if_else_ternary_two);
   return modules;
+  function module_new(modules, module_name) {
+    let module_current = [];
+    list_add(modules, {
+      name: module_name,
+      lessons: module_current,
+    });
+    return module_current;
+  }
+  
 }
-function module_new(module_current, modules, module_name) {
-  module_current = [];
-  list_add(modules, {
-    name: module_name,
-    lessons: module_current,
-  });
-  return module_current;
-}
-
