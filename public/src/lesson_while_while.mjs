@@ -20,12 +20,8 @@ export function lesson_while_while() {
       let loop_end = iterations + offset;
       let lines = [
         js_code_statement_let_assign(name, value),
-        `if (${name} <= ${loop_end}) {`,
-        app_learn_code_log(`'inside first ' + ${name}`),
-        js_code_statement_increment(name),
-        `}`,
-        `if (${name} <= ${loop_end}) {`,
-        app_learn_code_log(`'inside second ' + ${name}`),
+        `while (${name} <= ${loop_end}) {`,
+        app_learn_code_log(`'inside ' + ${name}`),
         js_code_statement_increment(name),
         `}`,
         app_learn_code_log(`'after ' + ${name}`),
