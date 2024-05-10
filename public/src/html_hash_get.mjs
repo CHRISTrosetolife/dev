@@ -1,3 +1,3 @@
 export function html_hash_get() {
-    return window.location.hash;
+  return window.location.hash;
 }

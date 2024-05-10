@@ -1,3 +1,3 @@
 export function list_index_first() {
-    return 0;
+  return 0;
 }

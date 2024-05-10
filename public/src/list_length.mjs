@@ -1,3 +1,3 @@
 export function list_length(list) {
-    return list.length;
+  return list.length;
 }

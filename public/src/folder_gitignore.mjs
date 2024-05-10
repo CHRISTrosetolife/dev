@@ -1,4 +1,4 @@
-import {path_join} from './path_join.mjs';
+import { path_join } from "./path_join.mjs";
 export function folder_gitignore() {
-    return path_join(['.', 'gitignore']);
+  return path_join([".", "gitignore"]);
 }

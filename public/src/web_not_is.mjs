@@ -1,3 +1,3 @@
 export function web_not_is() {
-    return typeof window === 'undefined';
+  return typeof window === "undefined";
 }

@@ -1,4 +1,4 @@
-import {list_join} from "./list_join.mjs";
+import { list_join } from "./list_join.mjs";
 export function list_join_comma(list) {
-    return list_join(list, ',');
+  return list_join(list, ",");
 }

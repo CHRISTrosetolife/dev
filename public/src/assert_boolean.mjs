@@ -1,6 +1,6 @@
-import {error} from "./error.mjs";
+import { error } from "./error.mjs";
 export function assert_boolean(condition) {
-    if (condition === false) {
-        error('assert');
-    }
+  if (condition === false) {
+    error("assert");
+  }
 }

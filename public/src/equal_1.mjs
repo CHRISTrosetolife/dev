@@ -1,4 +1,4 @@
-import {equal} from "./equal.mjs";
+import { equal } from "./equal.mjs";
 export function equal_1(length) {
-    return equal(length, 1);
+  return equal(length, 1);
 }

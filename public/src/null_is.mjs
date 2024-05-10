@@ -1,4 +1,4 @@
-import {equal} from "./equal.mjs";
+import { equal } from "./equal.mjs";
 export function null_is(candidate) {
-    return equal(candidate, null);
+  return equal(candidate, null);
 }

@@ -1,4 +1,4 @@
-import {multiply} from "./multiply.mjs";
+import { multiply } from "./multiply.mjs";
 export function square(base) {
-    return multiply(base, base);
+  return multiply(base, base);
 }

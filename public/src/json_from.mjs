@@ -1,3 +1,3 @@
 export function json_from(input) {
-    return JSON.parse(input);
+  return JSON.parse(input);
 }

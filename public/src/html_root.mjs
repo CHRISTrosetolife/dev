@@ -1,5 +1,5 @@
 export function html_root() {
-    return {
-        element: document.documentElement
-    };
+  return {
+    element: document.documentElement,
+  };
 }

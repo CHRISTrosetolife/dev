@@ -1,3 +1,3 @@
 export function sandbox() {
-    return a + b;
+  return a + b;
 }

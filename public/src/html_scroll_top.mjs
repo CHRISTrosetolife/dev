@@ -1,5 +1,5 @@
 export function html_scroll_top() {
-    window.scrollTo({
-        top: 0
-    });
+  window.scrollTo({
+    top: 0,
+  });
 }

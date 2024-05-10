@@ -1,3 +1,3 @@
 export function newline() {
-    return '\n';
+  return "\n";
 }

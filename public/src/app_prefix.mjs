@@ -1,3 +1,3 @@
 export function app_prefix() {
-    return 'app_';
+  return "app_";
 }

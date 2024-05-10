@@ -1,3 +1,3 @@
 export function error(message) {
-    throw new Error(message);
+  throw new Error(message);
 }
