@@ -32,7 +32,7 @@ export function lesson_while_while() {
     example_before,
     description,
     example_message,
-    [],
+    [screen1],
   );
   function example_before(parent) {}
   function screen1(parent) {
