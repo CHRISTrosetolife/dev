@@ -84,11 +84,7 @@ export function app_learn_code_modules() {
   list_add(module_current, lesson_statements_two);
   list_add(module_current, lesson_statements_three);
   const module_name = "variables";
-  module_current = [];
-  list_add(modules, {
-    name: module_name,
-    lessons: module_current,
-  });
+  module_current = module_new(module_current, modules, module_name);
   list_add(module_current, lesson_log_boolean);
   list_add(module_current, lesson_variable);
   list_add(module_current, lesson_variable_log_twice);
@@ -138,3 +134,12 @@ export function app_learn_code_modules() {
   list_add(module_current, lesson_if_else_ternary_two);
   return modules;
 }
+function module_new(module_current, modules, module_name) {
+  module_current = [];
+  list_add(modules, {
+    name: module_name,
+    lessons: module_current,
+  });
+  return module_current;
+}
+
