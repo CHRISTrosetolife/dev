@@ -6,8 +6,6 @@ import { lesson_simple } from "./lesson_simple.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
-import { list_add } from "./list_add.mjs";
-import { range } from "./range.mjs";
 import { integer_random } from "./integer_random.mjs";
 import { subtract } from "./subtract.mjs";
 export function lesson_while_if_increment() {
@@ -16,16 +14,19 @@ export function lesson_while_if_increment() {
   return lesson_simple(
     function () {
       let name = app_learn_code_random_identifier();
-      let iterations = 3;
+      let iterations = 2;
       let max_value = 10;
-      let offset = integer_random(0, subtract(max, iterations));
+      let offset = integer_random(0, subtract(max_value, iterations));
       let value = 1 + offset;
-      let loop_end = iterations + offset
-      let lines = [js_code_statement_let_assign(name, value)];
-      for (let i of range(integer_random(2, 3))) {
-        list_add(lines, js_code_statement_increment(name));
-      }
-      list_add(lines, app_learn_code_log(name));
+      let loop_end = iterations + offset;
+      let lines = [
+        js_code_statement_let_assign(name, value),
+        `if (${name} <= ${loop_end}) {`,
+        app_learn_code_log(`'inside ' + ${name}`),
+        js_code_statement_increment(name),
+        `}`,
+        app_learn_code_log(`'after ' + ${name}`),
+      ];
       return list_join_newline(lines);
     },
     example_before,
