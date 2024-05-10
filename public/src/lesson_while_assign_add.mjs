@@ -8,8 +8,8 @@ import { string_delimit } from "./string_delimit.mjs";
 import { integer_random_digit_single } from "./integer_random_digit_single.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
 export function lesson_while_assign_add() {
-  let description = "two ternaries";
-  let example_message = string_combine("with ", description);
+  let description = "assign add shorthand ( += )";
+  let example_message = string_combine("with an ", description);
   return lesson_simple(
     function () {
       let n = integer_random_digit_single();
@@ -42,4 +42,7 @@ export function lesson_while_assign_add() {
     [],
   );
   function example_before(parent) {}
+  function screen1(parent) {
+    
+  }
 }
