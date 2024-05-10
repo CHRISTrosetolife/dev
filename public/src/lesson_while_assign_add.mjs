@@ -5,7 +5,6 @@ import { js_code_statement_add_assign } from "./js_code_statement_add_assign.mjs
 import { lesson_simple } from "./lesson_simple.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
-import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
 import { integer_random_digit_single_positive } from "./integer_random_digit_single_positive.mjs";
@@ -22,7 +21,7 @@ export function lesson_while_assign_add() {
     function () {
       let names = app_learn_code_random_identifiers(2);
       list_sort_string(names, identity);
-      let [a,b] = names
+      let [a, b] = names;
       let values = call_multiple(integer_random_digit_single_positive, 2);
       list_sort(values, identity);
       let lines = [
@@ -53,17 +52,19 @@ export function lesson_while_assign_add() {
     );
   }
   function screen3(parent) {
-    html_p_text(parent, "here is some code :");
-    app_learn_code_code_part_contrast(
+    html_p_text(
       parent,
-      js_code_statement_assign("a", "a + b"),
+      "in this lesson variable values will be declared from smallest to largest",
     );
-    html_p_text(parent, "that code can be shortened to :");
-    let a = "a";
-    let b = "b";
+    html_p_text(parent, "for example , this is allowed :");
     app_learn_code_code_part_contrast(
       parent,
-      js_code_statement_add_assign(a, b),
+      list_join_newline(["let a = 1, b = 2;"]),
+    );
+    html_p_text(parent, "however , this is not allowed :");
+    app_learn_code_code_part_contrast(
+      parent,
+      list_join_newline(["let a = 2, b = 1;"]),
     );
   }
 }
