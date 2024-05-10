@@ -52,6 +52,7 @@ import { lesson_if_else_string_empty } from "./lesson_if_else_string_empty.mjs";
 import { lesson_if_else_ternary } from "./lesson_if_else_ternary.mjs";
 import { lesson_if_else_ternary_two } from "./lesson_if_else_ternary_two.mjs";
 import { lesson_if_else_ternary_parity } from "./lesson_if_else_ternary_parity.mjs";
+import { lesson_while_assign_add } from "./lesson_while_assign_add.mjs";
 export function app_learn_code_modules() {
   let modules = [];
   let module_current;
@@ -116,6 +117,7 @@ export function app_learn_code_modules() {
   list_add(module_current, lesson_if_else_ternary_parity);
   list_add(module_current, lesson_if_else_ternary_two);
   module_current = module_new(modules, "`while` loops");
+  list_add(module_current, lesson_while_assign_add);
   return modules;
   function module_new(modules, module_name) {
     let module_current = [];
