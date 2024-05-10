@@ -1,13 +1,14 @@
 import { lesson_if_else_string_concat_quiz } from "./lesson_if_else_string_concat_quiz.mjs";
-import { html_style_alternate_bold_short } from "./html_style_alternate_bold_short.mjs";
 import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
 import { string_combine } from "./string_combine.mjs";
+import { app_learn_code_random_identifier } from "./app_learn_code_random_identifier.mjs";
 export function lesson_while_string_other_concat() {
   let description = "a string combined with something that is not a string";
   let example_message = string_combine("with ", description);
   return lesson_simple(
     function () {
+      let letter = app_learn_code_random_identifier();
       let concat_count = 2;
       return lesson_if_else_string_concat_quiz(concat_count);
     },
