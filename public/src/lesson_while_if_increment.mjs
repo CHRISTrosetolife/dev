@@ -9,8 +9,8 @@ import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { integer_random } from "./integer_random.mjs";
 import { subtract } from "./subtract.mjs";
 export function lesson_while_if_increment() {
-  let description = "multiple increments";
-  let example_message = string_combine("with an ", description);
+  let description = "increment inside `if`";
+  let example_message = string_combine("with an increment inside of an `if`");
   return lesson_simple(
     function () {
       let name = app_learn_code_random_identifier();
