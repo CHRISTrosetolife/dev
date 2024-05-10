@@ -10,7 +10,7 @@ import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { integer_random_digit_single_positive } from "./integer_random_digit_single_positive.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 export function lesson_while_increment_multiple() {
-  let description = "increment ( `++` )";
+  let description = "multiple increments";
   let example_message = string_combine("with an ", description);
   return lesson_simple(
     function () {
