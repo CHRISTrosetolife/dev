@@ -1,3 +1,4 @@
+import { app_learn_code_random_identifiers } from "./app_learn_code_random_identifiers.mjs";
 import { lesson_screen_variables_alphabetical } from "./lesson_screen_variables_alphabetical.mjs";
 import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
 import { js_code_statement_add_assign } from "./js_code_statement_add_assign.mjs";
@@ -7,7 +8,6 @@ import { list_join_newline } from "./list_join_newline.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
-import { app_learn_code_random_identifier } from "./app_learn_code_random_identifier.mjs";
 import { integer_random_digit_single_positive } from "./integer_random_digit_single_positive.mjs";
 import { call_multiple } from "./call_multiple.mjs";
 import { html_p_text } from "./html_p_text.mjs";
@@ -16,7 +16,7 @@ export function lesson_while_assign_add() {
   let example_message = string_combine("with an ", description);
   return lesson_simple(
     function () {
-      let n = app_learn_code_random_identifier();
+      let n = app_learn_code_random_identifiers(2);
       let [a, b] = call_multiple(integer_random_digit_single_positive, 2);
       let lines = [
         js_code_statement_let_assign(n, b),
