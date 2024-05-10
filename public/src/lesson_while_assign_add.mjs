@@ -1,3 +1,4 @@
+import { lesson_screen_variables_alphabetical } from "./lesson_screen_variables_alphabetical.mjs";
 import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
 import { js_code_statement_add_assign } from "./js_code_statement_add_assign.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
@@ -27,11 +28,25 @@ export function lesson_while_assign_add() {
     example_before,
     description,
     example_message,
-    [screen1],
+    [screen1, lesson_screen_variables_alphabetical],
   );
   function example_before(parent) {}
   function screen1(parent) {
-    html_p_text(parent,  "here is some code :");
+    html_p_text(parent, "here is some code :");
+    app_learn_code_code_part_contrast(
+      parent,
+      js_code_statement_assign("a", "a + b"),
+    );
+    html_p_text(parent, "that code can be shortened to :");
+    let a = "a";
+    let b = "b";
+    app_learn_code_code_part_contrast(
+      parent,
+      js_code_statement_add_assign(a, b),
+    );
+  }
+  function screen3(parent) {
+    html_p_text(parent, "here is some code :");
     app_learn_code_code_part_contrast(
       parent,
       js_code_statement_assign("a", "a + b"),
