@@ -55,7 +55,11 @@ import { lesson_if_else_ternary_parity } from "./lesson_if_else_ternary_parity.m
 export function app_learn_code_modules() {
   let modules = [];
   let module_current;
-  module_current = module_new(module_current, modules, "output , processes , statements");
+  module_current = module_new(
+    module_current,
+    modules,
+    "output , processes , statements",
+  );
   list_add(module_current, lesson_console_log);
   list_add(module_current, lesson_log_number);
   if (0) {
@@ -87,7 +91,7 @@ export function app_learn_code_modules() {
   list_add(module_current, lesson_add_numbers_three);
   list_add(module_current, lesson_variables_three);
   list_add(module_current, lesson_variable_binary);
-  module_current = module_new(modules,"`if` `else` simple");
+  module_current = module_new(modules, "`if` `else` simple");
   list_add(module_current, lesson_if_true);
   list_add(module_current, lesson_if_false);
   list_add(module_current, lesson_if_binary);
@@ -98,7 +102,7 @@ export function app_learn_code_modules() {
   list_add(module_current, lesson_if_else_negative);
   list_add(module_current, lesson_mod);
   list_add(module_current, lesson_mod_even);
-  module_current = module_new(modules,"`if` `else` compound");
+  module_current = module_new(modules, "`if` `else` compound");
   list_add(module_current, lesson_if_else_if_two);
   list_add(module_current, lesson_if_else_if);
   list_add(module_current, lesson_if_else_nested_if);
@@ -124,5 +128,4 @@ export function app_learn_code_modules() {
     });
     return module_current;
   }
-  
 }
