@@ -115,6 +115,7 @@ export function app_learn_code_modules() {
   list_add(module_current, lesson_if_else_ternary);
   list_add(module_current, lesson_if_else_ternary_parity);
   list_add(module_current, lesson_if_else_ternary_two);
+  module_current = module_new(modules, "`while` loops");
   return modules;
   function module_new(modules, module_name) {
     let module_current = [];
