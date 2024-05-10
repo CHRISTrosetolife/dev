@@ -9,6 +9,7 @@ import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
 import { app_learn_code_random_identifier } from "./app_learn_code_random_identifier.mjs";
 import { integer_random_digit_single_positive } from "./integer_random_digit_single_positive.mjs";
 import { call_multiple } from "./call_multiple.mjs";
+import { html_p_text } from "./html_p_text.mjs";
 export function lesson_while_assign_add() {
   let description = "assign add shorthand ( += )";
   let example_message = string_combine("with an ", description);
@@ -30,12 +31,12 @@ export function lesson_while_assign_add() {
   );
   function example_before(parent) {}
   function screen1(parent) {
-    "here is some code";
+    html_p_text(parent,  "here is some code");
     app_learn_code_code_part_contrast(
       parent,
       js_code_statement_assign("a", "a + b"),
     );
-    ("that code can be shortened to :");
+    html_p_text(parent, "that code can be shortened to :");
     let a = "a";
     let b = "b";
     app_learn_code_code_part_contrast(
