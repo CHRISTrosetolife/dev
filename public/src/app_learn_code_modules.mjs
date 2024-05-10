@@ -1,3 +1,4 @@
+import { lesson_while_increment_multiple } from "./lesson_while_increment_multiple.mjs";
 import { lesson_while_increment } from "./lesson_while_increment.mjs";
 import { lesson_if_else_string_concat_if_else } from "./lesson_if_else_string_concat_if_else.mjs";
 import { lesson_if_else_string_concat_if } from "./lesson_if_else_string_concat_if.mjs";
@@ -120,6 +121,7 @@ export function app_learn_code_modules() {
   module_current = module_new(modules, "`while` loops");
   list_add(module_current, lesson_while_assign_add);
   list_add(module_current, lesson_while_increment);
+  list_add(module_current, lesson_while_increment_multiple);
   return modules;
   function module_new(modules, module_name) {
     let module_current = [];
