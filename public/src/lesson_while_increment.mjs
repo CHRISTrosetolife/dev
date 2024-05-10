@@ -1,7 +1,6 @@
 import { js_code_statement_increment } from "./js_code_statement_increment.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 import { app_learn_code_random_identifier } from "./app_learn_code_random_identifier.mjs";
-import { js_code_increment } from "./js_code_increment.mjs";
 import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
 import { js_code_statement_add_assign } from "./js_code_statement_add_assign.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
@@ -19,7 +18,7 @@ export function lesson_while_increment() {
       let value = integer_random_digit_single_positive();
       let lines = [
         js_code_statement_let_assign(name, value),
-        js_code_increment(name),
+        js_code_statement_increment(name),
         app_learn_code_log(name),
       ];
       return list_join_newline(lines);
