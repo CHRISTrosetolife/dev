@@ -31,7 +31,7 @@ export function lesson_while_assign_add() {
   );
   function example_before(parent) {}
   function screen1(parent) {
-    html_p_text(parent,  "here is some code");
+    html_p_text(parent,  "here is some code :");
     app_learn_code_code_part_contrast(
       parent,
       js_code_statement_assign("a", "a + b"),
