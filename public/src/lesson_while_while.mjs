@@ -36,7 +36,7 @@ export function lesson_while_while() {
   );
   function example_before(parent) {}
   function screen1(parent) {
-    html_style_alternate_monospace_short_multiple(messages, [
+    html_style_alternate_monospace_short_multiple(parent, [
       "an `if` is ran only once",
       "a `while` is similar to an `if`",
       "a `while` is an `if` that runs over and over",
