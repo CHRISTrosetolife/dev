@@ -37,7 +37,7 @@ export function lesson_while_if_increment() {
   function example_before(parent) {
     html_style_alternate_monospace_short(
       parent,
-      "a variable may be incremented ( `++` ) multiple times",
+      "a variable may be incremented inside of an `if",
     );
   }
 }
