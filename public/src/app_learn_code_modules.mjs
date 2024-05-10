@@ -83,8 +83,7 @@ export function app_learn_code_modules() {
   list_add(module_current, lesson_equal_not_string);
   list_add(module_current, lesson_statements_two);
   list_add(module_current, lesson_statements_three);
-  const module_name = "variables";
-  module_current = module_new(module_current, modules, module_name);
+  module_current = module_new(module_current, modules, "variables");
   list_add(module_current, lesson_log_boolean);
   list_add(module_current, lesson_variable);
   list_add(module_current, lesson_variable_log_twice);
