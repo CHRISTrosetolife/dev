@@ -19,7 +19,7 @@ export function lesson_while_increment_multiple() {
       let name = app_learn_code_random_identifier();
       let value = integer_random_digit_single_positive();
       let lines = [js_code_statement_let_assign(name, value)];
-      list_add_multiple(lines, [js_code_statement_increment(name), ,]);
+      list_add_multiple(lines, [js_code_statement_increment(name)]);
       list_add(lines, app_learn_code_log(name));
       return list_join_newline(lines);
     },
