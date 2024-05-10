@@ -125,7 +125,6 @@ export function app_learn_code_modules() {
   list_add(module_current, lesson_while_increment);
   list_add(module_current, lesson_while_increment_multiple);
   list_add(module_current, lesson_while_string_other_concat);
-  
   list_add(module_current, lesson_while_if_increment);
   
   return modules;

@@ -7,12 +7,13 @@ import { random_50_50 } from "./random_50_50.mjs";
 import { list_random_item } from "./list_random_item.mjs";
 import { integer_random_digit_single_positive } from "./integer_random_digit_single_positive.mjs";
 import { list_scramble } from "./list_scramble.mjs";
+import { string_delimit } from "./string_delimit.mjs";
 export function lesson_while_string_other_concat() {
   let description = "a string combined with something that is not a string";
   let example_message = string_combine("with ", description);
   return lesson_simple(
     function () {
-      let letter = app_learn_code_random_identifier();
+      let letter = string_delimit(app_learn_code_random_identifier());
       let other = random_50_50()
         ? list_random_item([true, false])
         : integer_random_digit_single_positive();
