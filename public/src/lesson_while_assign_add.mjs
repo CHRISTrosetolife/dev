@@ -10,31 +10,18 @@ import { string_delimit } from "./string_delimit.mjs";
 import { integer_random_digit_single } from "./integer_random_digit_single.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
+import { app_learn_code_random_identifier } from "./app_learn_code_random_identifier.mjs";
+import { integer_random_digit_single_positive } from "./integer_random_digit_single_positive.mjs";
+import { call_multiple } from "./call_multiple.mjs";
 export function lesson_while_assign_add() {
   let description = "assign add shorthand ( += )";
   let example_message = string_combine("with an ", description);
   return lesson_simple(
     function () {
-      let n = integer_random_digit_single();
+      let a = app_learn_code_random_identifier();
+      let values = call_multiple(integer_random_digit_single_positive, 2);
       let lines = [
-        app_learn_code_log(n),
-        js_code_statement_let_assign(
-          "positive",
-          js_code_ternary(
-            `${n} <= 0`,
-            string_delimit("not "),
-            string_delimit(""),
-          ),
-        ),
-        app_learn_code_log_join_plus(["positive", string_delimit("positive")]),
-        js_code_statement_let_assign(
-          "even",
-          js_code_ternary(
-            `${n} % 2 === 0`,
-            string_delimit("even"),
-            string_delimit("odd"),
-          ),
-        ),
+        js_code_statement_add_assign(a, b),
         app_learn_code_log("even"),
       ];
       return list_join_newline(lines);
@@ -42,15 +29,15 @@ export function lesson_while_assign_add() {
     example_before,
     description,
     example_message,
-    [],
+    [screen1],
   );
   function example_before(parent) {}
   function screen1(parent) {
     "here is some code";
-    js_code_statement_assign("a", "a + b");
+    app_learn_code_code_part_contrast(parent, js_code_statement_assign("a", "a + b"));
     ("that code can be shortened to :");
     let a = "a";
     let b = "b";
-    app_learn_code_code_part_contrast, js_code_statement_add_assign(a, b);
+    app_learn_code_code_part_contrast(parent, js_code_statement_add_assign(a, b));
   }
 }
