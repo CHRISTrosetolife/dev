@@ -13,12 +13,14 @@ import { list_add } from "./list_add.mjs";
 import { list_scramble } from "./list_scramble.mjs";
 import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
 import { html_p_text } from "./html_p_text.mjs";
+import { add_1 } from "./add_1.mjs";
 export function lesson_if_else_string_concat_variable() {
   let description = "string combined a variable";
   let example_message = string_combine("with ", description);
   return lesson_simple(
     function () {
-      let strings = app_learn_code_random_identifiers(2);
+      let variable_count = 1;
+      let strings = app_learn_code_random_identifiers(add_1(variable_count));
       list_sort_string(strings, identity);
       let [m, n] = list_map(strings, string_delimit);
       let names = app_learn_code_random_identifiers(1);
