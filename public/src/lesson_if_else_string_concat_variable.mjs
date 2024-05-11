@@ -33,12 +33,22 @@ export function lesson_if_else_string_concat_variable() {
     example_before,
     description,
     example_message,
-    [],
+    [screen1],
   );
   function example_before(parent) {
     html_style_alternate_monospace_short(
       parent,
       "strings can be concatentated with a variable",
     );
+  }
+  function screen1() {
+    'in this lesson , strings will appear in alphabetical order'
+    'for example , this is allowed :'
+    `let a = 'b';
+console.log('c' + a);`
+    'because \'b\' comes before \'c\''
+    'however , this is not allowed :'
+    `let a = 'c';
+console.log('b' + a);`
   }
 }
