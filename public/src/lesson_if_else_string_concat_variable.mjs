@@ -1,3 +1,4 @@
+import { list_last } from "./list_last.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { app_learn_code_log_join_plus } from "./app_learn_code_log_join_plus.mjs";
 import { js_code_statement_let_assign_multiple } from "./js_code_statement_let_assign_multiple.mjs";
@@ -14,6 +15,7 @@ import { list_scramble } from "./list_scramble.mjs";
 import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { add_1 } from "./add_1.mjs";
+import { list_take } from "./list_take.mjs";
 export function lesson_if_else_string_concat_variable() {
   let description = "string combined a variable";
   let example_message = string_combine("with ", description);
@@ -22,15 +24,19 @@ export function lesson_if_else_string_concat_variable() {
       let variable_count = 1;
       let strings = app_learn_code_random_identifiers(add_1(variable_count));
       list_sort_string(strings, identity);
-      let [m, n] = list_map(strings, string_delimit);
+      let mapped = list_map(strings, string_delimit);
+      let mapped_taken = list_take(mapped, variable_count);
       let names = app_learn_code_random_identifiers(1);
-      let parts = [n];
+      let parts = [list_last(mapped)];
       for (let name of names) {
         list_add(parts, name);
       }
       list_scramble(parts);
       let lines = [];
-      list_add(lines, js_code_statement_let_assign_multiple(names, [m]));
+      list_add(
+        lines,
+        js_code_statement_let_assign_multiple(names, mapped_taken),
+      );
       list_add(lines, app_learn_code_log_join_plus(parts));
       return list_join_newline(lines);
     },
