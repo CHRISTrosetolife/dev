@@ -34,7 +34,7 @@ export function lesson_while_decrement() {
     let a = "a";
     app_learn_code_code_part_contrast(
       parent,
-      js_code_statement_add_assign(a, "1"),
+      js_code_statement_subtract_assign(a, "1"),
     );
     html_p_text(parent, "that code can be shortened to :");
     app_learn_code_code_part_contrast(parent, js_code_statement_increment(a));
