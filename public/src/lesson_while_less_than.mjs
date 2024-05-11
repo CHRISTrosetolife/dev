@@ -14,11 +14,11 @@ export function lesson_while_less_than() {
   return lesson_simple(
     function () {
       let name = app_learn_code_random_identifier();
-      let iterations = integer_random(2, 3);
-      let max_value = 11;
+      let iterations = integer_random(2, 3) + 1;
+      let max_value = 10;
       let offset = integer_random(0, subtract(max_value, iterations));
       let value = 1 + offset;
-      let loop_end = iterations + offset + 1;
+      let loop_end = iterations + offset;
       let lines = [
         js_code_statement_let_assign(name, value),
         `while (${name} < ${loop_end}) {`,
