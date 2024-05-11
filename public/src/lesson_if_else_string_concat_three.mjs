@@ -18,7 +18,7 @@ export function lesson_if_else_string_concat_three() {
   function example_before(parent) {
     html_style_alternate_monospace_short(
       parent,
-      "three strings can be concatentated using multiple `+",
+      "three strings can be concatenated  using multiple `+",
     );
   }
 }

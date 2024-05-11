@@ -40,7 +40,7 @@ export function lesson_if_else_string_concat_variable() {
   function example_before(parent) {
     html_style_alternate_monospace_short(
       parent,
-      "strings can be concatentated with a variable",
+      "strings can be concatenated  with a variable",
     );
   }
   function screen1(parent) {

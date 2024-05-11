@@ -18,7 +18,7 @@ export function lesson_if_else_string_concat_variables_two() {
   function example_before(parent) {
     html_style_alternate_monospace_short(
       parent,
-      "strings can be concatentated with multiple variables",
+      "strings can be concatenated  with multiple variables",
     );
   }
 }
