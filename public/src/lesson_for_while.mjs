@@ -29,11 +29,19 @@ export function lesson_for_while() {
   );
   function example_before(parent) {}
   function screen1(parent) {
-    html_style_alternate_monospace_short_multiple(parent, [
-      "an `if` is ran only once",
-      "a `while` is similar to an `if`",
-      "a `while` is an `if` that runs over and over",
-      "a `while` will be ran until what is in between the parenthesis is `false`",
-    ]);
+    html_p_text(parent, "here is some code :");
+    let lines = [
+      `while (a) {`,
+      `// b`
+      `}`,
+    ];
+    app_learn_code_code_part_contrast(parent, list_join_newline(lines));
+    html_p_text(parent, "that code can be rewritten to the following :");
+    let lines2 = [
+      `for ( ; a; ) {`,
+      `// b`
+      `}`,
+    ];
+    app_learn_code_code_part_contrast(parent, list_join_newline(lines2));
   }
 }
