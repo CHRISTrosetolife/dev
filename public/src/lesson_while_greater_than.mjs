@@ -30,11 +30,11 @@ export function lesson_while_greater_than() {
   function example_before(parent) {}
   function screen1(parent) {
     html_style_alternate_monospace_short_multiple(parent, [
-      "a `while` loop can use a `<` instead of `<=`",
-      "if a `while` loop says `while (a <= 10)` then if `a` is `10` then the `while` loop will run",
-      "remember , `10 === 10` is `true`",
-      "if a `while` loop says `while (a < 10)` then if `a` is `10` then the `while` loop will not run",
-      "remember , `10 < 10` is `false`",
+      "a `while` loop can use a `>` instead of `>=`",
+      "if a `while` loop says `while (a >= 1)` then if `a` is `1` then the `while` loop will run",
+      "remember , `1 === 1` is `true`",
+      "if a `while` loop says `while (a > 1)` then if `a` is `1` then the `while` loop will not run",
+      "remember , `1 > 1` is `false`",
     ]);
   }
 }
