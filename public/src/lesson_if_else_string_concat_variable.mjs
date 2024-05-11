@@ -11,6 +11,8 @@ import { list_map } from "./list_map.mjs";
 import { string_delimit } from "./string_delimit.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_scramble } from "./list_scramble.mjs";
+import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
+import { html_p_text } from "./html_p_text.mjs";
 export function lesson_if_else_string_concat_variable() {
   let description = "string combined a variable";
   let example_message = string_combine("with ", description);
@@ -41,14 +43,14 @@ export function lesson_if_else_string_concat_variable() {
       "strings can be concatentated with a variable",
     );
   }
-  function screen1() {
-    'in this lesson , strings will appear in alphabetical order'
-    'for example , this is allowed :'
-    `let a = 'b';
-console.log('c' + a);`
-    'because \'b\' comes before \'c\''
-    'however , this is not allowed :'
-    `let a = 'c';
-console.log('b' + a);`
+  function screen1(parent) {
+    html_p_text(parent, 'in this lesson , strings will appear in alphabetical order');
+    html_p_text(parent, 'for example , this is allowed :');
+    app_learn_code_code_part_contrast(parent, `let a = 'b';
+console.log('c' + a);`);
+html_style_alternate_monospace_short(parent, 'because `\'b\'` comes before `\'c\'` in the alphabet');
+html_p_text(parent, 'however , this is not allowed :');
+    app_learn_code_code_part_contrast(parent, `let a = 'c';
+console.log('b' + a);`)
   }
 }
