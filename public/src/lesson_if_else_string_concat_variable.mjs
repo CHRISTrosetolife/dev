@@ -26,7 +26,7 @@ export function lesson_if_else_string_concat_variable() {
       list_sort_string(strings, identity);
       let mapped = list_map(strings, string_delimit);
       let mapped_taken = list_take(mapped, variable_count);
-      let names = app_learn_code_random_identifiers(1);
+      let names = app_learn_code_random_identifiers(variable_count);
       let parts = [list_last(mapped)];
       for (let name of names) {
         list_add(parts, name);
