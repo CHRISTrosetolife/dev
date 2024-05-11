@@ -35,7 +35,7 @@ export function lesson_while_add_two() {
     example_before,
     description,
     example_message,
-    [screen1],
+    [],
   );
   function example_before(parent) {
     html_style_alternate_monospace_short(
