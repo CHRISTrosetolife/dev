@@ -1,5 +1,5 @@
+import { lesson_while_generic_1 } from "./lesson_while_generic_1.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
-import { lesson_while_generic } from "./lesson_while_generic.mjs";
 import { html_style_alternate_monospace_short_multiple } from "./html_style_alternate_monospace_short_multiple.mjs";
 import { js_code_statement_increment } from "./js_code_statement_increment.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
@@ -12,7 +12,7 @@ export function lesson_while_less_than() {
   let example_message = string_combine("with a ", description);
   return lesson_simple(
     function () {
-      let { name, value, loop_end } = lesson_while_generic(1);
+      let { name, value, loop_end } = lesson_while_generic_1();
       let lines = [
         js_code_statement_let_assign(name, subtract_1(value)),
         `while (${name} < ${loop_end}) {`,
