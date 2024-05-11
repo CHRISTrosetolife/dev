@@ -1,3 +1,4 @@
+import { lesson_while_reverse } from "./lesson_while_reverse.mjs";
 import { lesson_while_if_decrement } from "./lesson_while_if_decrement.mjs";
 import { lesson_while_decrement_multiple } from "./lesson_while_decrement_multiple.mjs";
 import { lesson_while_decrement } from "./lesson_while_decrement.mjs";
@@ -147,7 +148,7 @@ export function app_learn_code_modules() {
   list_add(module_current, lesson_while_decrement_multiple);
   list_add(module_current, lesson_while_if_decrement);
   list_add(module_current, lesson_while_if_decrement_two);
-  
+  list_add(module_current, lesson_while_reverse);
   return modules;
   function module_new(modules, module_name) {
     let module_current = [];
