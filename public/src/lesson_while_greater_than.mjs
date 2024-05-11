@@ -1,3 +1,4 @@
+import { add_1 } from "./add_1.mjs";
 import { js_code_statement_decrement } from "./js_code_statement_decrement.mjs";
 import { lesson_while_generic_1 } from "./lesson_while_generic_1.mjs";
 import { html_style_alternate_monospace_short_multiple } from "./html_style_alternate_monospace_short_multiple.mjs";
