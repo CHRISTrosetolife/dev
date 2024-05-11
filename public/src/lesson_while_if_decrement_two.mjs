@@ -11,13 +11,13 @@ export function lesson_while_if_decrement_two() {
     function () {
       let { name, value, loop_end } = lesson_while_generic_1();
       let lines = [
-        js_code_statement_let_assign(name, value),
-        `if (${name} <= ${loop_end}) {`,
+        js_code_statement_let_assign(name, loop_end),
+        `if (${name} >= ${value}) {`,
         app_learn_code_log(`'inside first ' + ${name}`),
         js_code_statement_increment(name),
         `}`,
-        `if (${name} <= ${loop_end}) {`,
-        app_learn_code_log(`'inside second ' + ${name}`),
+        `if (${name} >= ${loop_end}) {`,
+        app_learn_code_log(`'value second ' + ${name}`),
         js_code_statement_increment(name),
         `}`,
         app_learn_code_log(`'after ' + ${name}`),
