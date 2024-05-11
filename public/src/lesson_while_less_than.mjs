@@ -18,7 +18,7 @@ export function lesson_while_less_than() {
       let max_value = 10;
       let offset = integer_random(0, subtract(max_value, iterations));
       let value = 1 + offset;
-      let loop_end = iterations + offset;
+      let loop_end = iterations + offset + 1;
       let lines = [
         js_code_statement_let_assign(name, value),
         `while (${name} < ${loop_end}) {`,
