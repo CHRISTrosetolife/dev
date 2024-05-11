@@ -1,3 +1,5 @@
+import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
+import { html_p_text } from "./html_p_text.mjs";
 import { lesson_screen_variables_alphabetical } from "./lesson_screen_variables_alphabetical.mjs";
 import { lesson_if_else_string_concat_variables_quiz } from "./lesson_if_else_string_concat_variables_quiz.mjs";
 import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
@@ -13,7 +15,7 @@ export function lesson_if_else_string_concat_variables_two() {
     example_before,
     description,
     example_message,
-    [lesson_screen_variables_alphabetical],
+    [lesson_screen_variables_alphabetical, screen2],
   );
   function example_before(parent) {
     html_style_alternate_monospace_short(
