@@ -6,7 +6,6 @@ import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs
 import { lesson_simple } from "./lesson_simple.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
-import { string_combine } from "./string_combine.mjs";
 export function lesson_for_while_2() {
   let description = "`for` loop without last statement";
   let example_message = "with a `for` loop without the last statement";
