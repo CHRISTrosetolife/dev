@@ -10,7 +10,7 @@ import { list_random_item } from "./list_random_item.mjs";
 import { list_scramble } from "./list_scramble.mjs";
 import { list_map } from "./list_map.mjs";
 export function lesson_if_else_string_empty() {
-  let description = "empty string ( `''` ) concatentation";
+  let description = "empty string ( `''` ) concatenation";
   let example_message = string_combine("with an ", description);
   return lesson_simple(
     function () {

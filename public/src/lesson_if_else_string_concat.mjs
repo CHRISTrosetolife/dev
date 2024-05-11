@@ -28,7 +28,7 @@ export function lesson_if_else_string_concat() {
     );
     html_style_alternate_bold_short(
       parent,
-      "when two strings are conbined , it is called `concatentation",
+      "when two strings are conbined , it is called `concatenation",
     );
   }
 }

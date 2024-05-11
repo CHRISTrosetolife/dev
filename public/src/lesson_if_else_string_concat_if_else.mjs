@@ -9,7 +9,7 @@ import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { js_code_statement_let } from "./js_code_statement_let.mjs";
 export function lesson_if_else_string_concat_if_else() {
-  let description = "string concatentation with an `if` `else";
+  let description = "string concatenation with an `if` `else";
   let example_message = string_combine("with ", description);
   return lesson_simple(
     function () {
