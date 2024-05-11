@@ -30,10 +30,10 @@ export function lesson_for_while_2() {
   function example_before(parent) {}
   function screen1(parent) {
     html_p_text(parent, "here is some code :");
-    let lines = [`while (a) {`, `// b`, `}`];
+    let lines = [`a;`, `while (b) {`, `// c`, `}`];
     app_learn_code_code_part_contrast(parent, list_join_newline(lines));
     html_p_text(parent, "that code can be rewritten as :");
-    let lines2 = [`for ( ; a; ) {`, `// b`, `}`];
+    let lines2 = [`for (a; b; ) {`, `// c`, `}`];
     app_learn_code_code_part_contrast(parent, list_join_newline(lines2));
   }
 }
