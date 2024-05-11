@@ -44,13 +44,25 @@ export function lesson_if_else_string_concat_variable() {
     );
   }
   function screen1(parent) {
-    html_p_text(parent, 'in this lesson , strings will appear in alphabetical order');
-    html_p_text(parent, 'for example , this is allowed :');
-    app_learn_code_code_part_contrast(parent, `let a = 'b';
-console.log('c' + a);`);
-html_style_alternate_monospace_short(parent, 'because `\'b\'` comes before `\'c\'` in the alphabet');
-html_p_text(parent, 'however , this is not allowed :');
-    app_learn_code_code_part_contrast(parent, `let a = 'c';
-console.log('b' + a);`)
+    html_p_text(
+      parent,
+      "in this lesson , strings will appear in alphabetical order",
+    );
+    html_p_text(parent, "for example , this is allowed :");
+    app_learn_code_code_part_contrast(
+      parent,
+      `let a = 'b';
+console.log('c' + a);`,
+    );
+    html_style_alternate_monospace_short(
+      parent,
+      "because `'b'` comes before `'c'` in the alphabet",
+    );
+    html_p_text(parent, "however , this is not allowed :");
+    app_learn_code_code_part_contrast(
+      parent,
+      `let a = 'c';
+console.log('b' + a);`,
+    );
   }
 }
