@@ -1,5 +1,5 @@
+import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
 import { js_code_statement_add_assign } from "./js_code_statement_add_assign.mjs";
-import { html_style_alternate_monospace_short_multiple } from "./html_style_alternate_monospace_short_multiple.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 import { app_learn_code_random_identifier } from "./app_learn_code_random_identifier.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
@@ -10,8 +10,8 @@ import { subtract } from "./subtract.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { multiply } from "./multiply.mjs";
 export function lesson_while_add_two() {
-  let description = "`while` loop";
-  let example_message = string_combine("with a ", description);
+  let description = "`while` loop with `+=` `2` or `3`";
+  let example_message = string_combine("with `while` loop with `+=`");
   return lesson_simple(
     function () {
       let name = app_learn_code_random_identifier();
@@ -37,13 +37,10 @@ export function lesson_while_add_two() {
     example_message,
     [screen1],
   );
-  function example_before(parent) {}
-  function screen1(parent) {
-    html_style_alternate_monospace_short_multiple(parent, [
-      "an `if` is ran only once",
-      "a `while` is similar to an `if`",
-      "a `while` is an `if` that runs over and over",
-      "a `while` will be ran until what is in between the parenthesis is `false`",
-    ]);
+  function example_before(parent) {
+    html_style_alternate_monospace_short(
+      parent,
+      "a `while` loop can use `a += b;` instead of `a++;`",
+    );
   }
 }
