@@ -31,18 +31,14 @@ export function lesson_if_else_string_concat_variables_two() {
     html_p_text(parent, "for example , this is allowed :");
     app_learn_code_code_part_contrast(
       parent,
-      `let a = 'b' , c = 'd';
-console.log(c + 'e' + a);`,
-    );
-    html_style_alternate_monospace_short(
-      parent,
-      "because `'b'` comes before `'d'` and `'d'` comes before `'e'` in the alphabet",
+      `let d = 'a' , e = 'b';
+console.log(e + 'c' + d);`,
     );
     html_p_text(parent, "however , this is not allowed :");
     app_learn_code_code_part_contrast(
       parent,
-      `let a = 'e' , c = 'd';
-console.log(c + 'b' + a);`,
+      `let d = 'c' , e = 'b';
+console.log(e + 'a' + d);`,
     );
   }
 }
