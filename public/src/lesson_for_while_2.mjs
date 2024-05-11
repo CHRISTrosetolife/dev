@@ -1,8 +1,9 @@
+import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
+import { js_code_statement_let } from "./js_code_statement_let.mjs";
 import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { lesson_while_generic_1 } from "./lesson_while_generic_1.mjs";
 import { js_code_statement_increment } from "./js_code_statement_increment.mjs";
-import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
@@ -13,7 +14,8 @@ export function lesson_for_while_2() {
     function () {
       let { name, value, loop_end } = lesson_while_generic_1();
       let lines = [
-        `for (${js_code_statement_let_assign(name, value)} ${name} <= ${loop_end}; ) {`,
+        js_code_statement_let(name),
+        `for (${js_code_statement_assign(name, value)} ${name} <= ${loop_end}; ) {`,
         app_learn_code_log(`'inside ' + ${name}`),
         js_code_statement_increment(name),
         `}`,
