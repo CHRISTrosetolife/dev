@@ -28,8 +28,9 @@ export function lesson_for_less_than() {
     [],
   );
   function example_before(parent) {
-    html_style_alternate_monospace_short(parent, [
+    html_style_alternate_monospace_short(
+      parent,
       "a `for` loop can use a `<` instead of `<=`",
-    ]);
+    );
   }
 }
