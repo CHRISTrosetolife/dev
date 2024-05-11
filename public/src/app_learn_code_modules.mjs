@@ -61,6 +61,7 @@ import { lesson_while_string_other_concat } from "./lesson_while_string_other_co
 import { lesson_while_while } from "./lesson_while_while.mjs";
 import { lesson_while_false } from "./lesson_while_false.mjs";
 import { lesson_while_less_than } from "./lesson_while_less_than.mjs";
+import { lesson_while_add_two } from "./lesson_while_add_two.mjs";
 export function app_learn_code_modules() {
   let modules = [];
   let module_current;
@@ -134,6 +135,7 @@ export function app_learn_code_modules() {
   list_add(module_current, lesson_while_while);
   list_add(module_current, lesson_while_false);
   list_add(module_current, lesson_while_less_than);
+  list_add(module_current, lesson_while_add_two);
   
   return modules;
   function module_new(modules, module_name) {
