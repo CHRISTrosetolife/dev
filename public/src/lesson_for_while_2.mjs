@@ -8,7 +8,7 @@ import { list_join_newline } from "./list_join_newline.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { string_combine } from "./string_combine.mjs";
 export function lesson_for_while_2() {
-  let description = "`for` loop";
+  let description = "`for` loop without last statement";
   let example_message = string_combine("with a ", description);
   return lesson_simple(
     function () {
