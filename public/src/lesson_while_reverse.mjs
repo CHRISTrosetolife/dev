@@ -1,6 +1,5 @@
+import { js_code_statement_decrement } from "./js_code_statement_decrement.mjs";
 import { lesson_while_generic_1 } from "./lesson_while_generic_1.mjs";
-import { html_style_alternate_monospace_short_multiple } from "./html_style_alternate_monospace_short_multiple.mjs";
-import { js_code_statement_increment } from "./js_code_statement_increment.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
@@ -16,7 +15,7 @@ export function lesson_while_reverse() {
         js_code_statement_let_assign(name, loop_end),
         `while (${name} >= ${value}) {`,
         app_learn_code_log(`'inside ' + ${name}`),
-        js_code_statement_increment(name),
+        js_code_statement_decrement(name),
         `}`,
         app_learn_code_log(`'after ' + ${name}`),
       ];
