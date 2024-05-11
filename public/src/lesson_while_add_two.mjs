@@ -14,9 +14,9 @@ export function lesson_while_add_two() {
   let example_message = string_combine("with `while` loop with `+=`");
   return lesson_simple(
     function () {
+      let increment = integer_random(2, 3);
       let name = app_learn_code_random_identifier();
       let iterations = integer_random(2, 3) - 1;
-      let increment = integer_random(2, 3);
       let product = multiply(iterations, increment);
       let max_value = 10;
       let offset = integer_random(0, subtract(max_value, product));

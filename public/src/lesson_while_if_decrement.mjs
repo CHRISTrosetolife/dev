@@ -19,8 +19,8 @@ export function lesson_while_if_decrement() {
       let value = 1 + offset;
       let loop_end = iterations + offset;
       let lines = [
-        js_code_statement_let_assign(name, value),
-        `if (${name} <= ${loop_end}) {`,
+        js_code_statement_let_assign(name, loop_end),
+        `if (${name} >= ${value}) {`,
         app_learn_code_log(`'inside ' + ${name}`),
         js_code_statement_decrement(name),
         `}`,
