@@ -1,3 +1,4 @@
+import { lesson_for } from "./lesson_for.mjs";
 import { lesson_for_while_2 } from "./lesson_for_while_2.mjs";
 import { lesson_for_while } from "./lesson_for_while.mjs";
 import { lesson_while_reverse } from "./lesson_while_reverse.mjs";
@@ -156,6 +157,7 @@ export function app_learn_code_modules() {
   module_current = module_new(modules, "`for` loops");
   list_add(module_current, lesson_for_while);
   list_add(module_current, lesson_for_while_2);
+  list_add(module_current, lesson_for);
   return modules;
   function module_new(modules, module_name) {
     let module_current = [];
