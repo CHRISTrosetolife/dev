@@ -1,6 +1,5 @@
 import { js_code_statement_decrement } from "./js_code_statement_decrement.mjs";
 import { js_code_statement_subtract_assign } from "./js_code_statement_subtract_assign.mjs";
-import { js_code_statement_increment } from "./js_code_statement_increment.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 import { app_learn_code_random_identifier } from "./app_learn_code_random_identifier.mjs";
 import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
@@ -38,6 +37,6 @@ export function lesson_while_decrement() {
       js_code_statement_subtract_assign(a, "1"),
     );
     html_p_text(parent, "that code can be shortened to :");
-    app_learn_code_code_part_contrast(parent, js_code_statement_increment(a));
+    app_learn_code_code_part_contrast(parent, js_code_statement_decrement(a));
   }
 }
