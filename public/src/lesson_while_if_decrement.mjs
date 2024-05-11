@@ -1,23 +1,16 @@
+import { lesson_while_generic_1 } from "./lesson_while_generic_1.mjs";
 import { js_code_statement_decrement } from "./js_code_statement_decrement.mjs";
 import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
-import { app_learn_code_random_identifier } from "./app_learn_code_random_identifier.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
-import { integer_random } from "./integer_random.mjs";
-import { subtract } from "./subtract.mjs";
 export function lesson_while_if_decrement() {
   let description = "decrement inside `if";
   let example_message = "with a decrement inside of an `if";
   return lesson_simple(
     function () {
-      let name = app_learn_code_random_identifier();
-      let iterations = integer_random(2, 3);
-      let max_value = 10;
-      let offset = integer_random(0, subtract(max_value, iterations));
-      let value = 1 + offset;
-      let loop_end = iterations + offset;
+      let { name, value, loop_end } = lesson_while_generic_1();
       let lines = [
         js_code_statement_let_assign(name, loop_end),
         `if (${name} >= ${value}) {`,
