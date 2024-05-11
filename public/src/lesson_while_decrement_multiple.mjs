@@ -32,7 +32,7 @@ export function lesson_while_decrement_multiple() {
   function example_before(parent) {
     html_style_alternate_monospace_short(
       parent,
-      "a variable may be incremented ( `++` ) multiple times",
+      "a variable may be decremented ( `--` ) multiple times",
     );
   }
 }
