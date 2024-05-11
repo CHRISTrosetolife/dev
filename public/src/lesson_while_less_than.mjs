@@ -9,7 +9,7 @@ import { integer_random } from "./integer_random.mjs";
 import { subtract } from "./subtract.mjs";
 import { string_combine } from "./string_combine.mjs";
 export function lesson_while_less_than() {
-  let description = "`while` loop";
+  let description = "`while` loop with less than ( `<` )";
   let example_message = string_combine("with a ", description);
   return lesson_simple(
     function () {
@@ -21,7 +21,7 @@ export function lesson_while_less_than() {
       let loop_end = iterations + offset;
       let lines = [
         js_code_statement_let_assign(name, value),
-        `while (${name} <= ${loop_end}) {`,
+        `while (${name} < ${loop_end}) {`,
         app_learn_code_log(`'inside ' + ${name}`),
         js_code_statement_increment(name),
         `}`,
@@ -37,10 +37,10 @@ export function lesson_while_less_than() {
   function example_before(parent) {}
   function screen1(parent) {
     html_style_alternate_monospace_short_multiple(parent, [
-      "an `if` is ran only once",
-      "a `while` is similar to an `if`",
-      "a `while` is an `if` that runs over and over",
-      "a `while` will be ran until what is in between the parenthesis is `false`",
+      'a `while` loop can use a `<` instead of `<=`',
+      'if a `while` loop says `a <= 10` then if `a` is `10` then the `while` loop will run',
+      'if a `while` loop says `a < 10` then if `a` is `10` then the `while` loop will not run',
+      'remember , `10 < 10` is `false`'
     ]);
   }
 }
