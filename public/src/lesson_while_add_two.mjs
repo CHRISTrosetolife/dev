@@ -12,7 +12,8 @@ export function lesson_while_add_two() {
   let example_message = string_combine("with `while` loop with `+=`");
   return lesson_simple(
     function () {
-      let { name, value, loop_end } = lesson_while_generic(integer_random(2, 3));
+      const increment = integer_random(2, 3);
+      let { name, value, loop_end } = lesson_while_generic(increment);
       let lines = [
         js_code_statement_let_assign(name, value),
         `while (${name} <= ${loop_end}) {`,
