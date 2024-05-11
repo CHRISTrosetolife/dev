@@ -10,8 +10,8 @@ import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { integer_random_digit_single_positive } from "./integer_random_digit_single_positive.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 export function lesson_while_decrement() {
-  let description = "increment ( `++` )";
-  let example_message = string_combine("with an ", description);
+  let description = "decrement ( `--` )";
+  let example_message = string_combine("with a ", description);
   return lesson_simple(
     function () {
       let name = app_learn_code_random_identifier();
