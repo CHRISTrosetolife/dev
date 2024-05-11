@@ -11,7 +11,7 @@ import { list_add } from "./list_add.mjs";
 import { range } from "./range.mjs";
 import { integer_random } from "./integer_random.mjs";
 export function lesson_while_decrement_multiple() {
-  let description = "multiple increments";
+  let description = "multiple decrements";
   let example_message = string_combine("with an ", description);
   return lesson_simple(
     function () {
