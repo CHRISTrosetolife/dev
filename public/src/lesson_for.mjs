@@ -31,7 +31,7 @@ export function lesson_for() {
   function example_before(parent) {}
   function screen1(parent) {
     html_p_text(parent, "here is some code :");
-    let lines = [`a;`, `while (b) {`, `// c`, `d`, `}`];
+    let lines = [`a;`, `while (b) {`, `// c`, `d;`, `}`];
     app_learn_code_code_part_contrast(parent, list_join_newline(lines));
     html_p_text(parent, "that code can be rewritten as :");
     let lines2 = [`for (a; b; d) {`, `// c`, `}`];
