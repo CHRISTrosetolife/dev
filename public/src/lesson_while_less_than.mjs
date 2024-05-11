@@ -38,8 +38,9 @@ export function lesson_while_less_than() {
   function screen1(parent) {
     html_style_alternate_monospace_short_multiple(parent, [
       'a `while` loop can use a `<` instead of `<=`',
-      'if a `while` loop says `a <= 10` then if `a` is `10` then the `while` loop will run',
-      'if a `while` loop says `a < 10` then if `a` is `10` then the `while` loop will not run',
+      'if a `while` loop says `while (a <= 10)` then if `a` is `10` then the `while` loop will run',
+      'remember , `10 === 10` is `true`',
+      'if a `while` loop says `while (a < 10)` then if `a` is `10` then the `while` loop will not run',
       'remember , `10 < 10` is `false`'
     ]);
   }
