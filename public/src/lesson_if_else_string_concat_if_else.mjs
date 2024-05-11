@@ -2,7 +2,6 @@ import { app_learn_code_log_join_plus } from "./app_learn_code_log_join_plus.mjs
 import { lesson_simple } from "./lesson_simple.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
-import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 import { string_delimit } from "./string_delimit.mjs";
 import { integer_random_digit_single } from "./integer_random_digit_single.mjs";
 import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
