@@ -14,8 +14,10 @@ import { list_sort } from "./list_sort.mjs";
 import { identity } from "./identity.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { js_code_statement_let_assign_multiple } from "./js_code_statement_let_assign_multiple.mjs";
+import { list_set } from "./list_set.mjs";
+import { add } from "./add.mjs";
 export function lesson_while_assign_subtract() {
-  let description = "assign add shorthand ( `+=` )";
+  let description = "assign subtract shorthand ( `-=` )";
   let example_message = string_combine("with an ", description);
   return lesson_simple(
     function () {
@@ -23,6 +25,8 @@ export function lesson_while_assign_subtract() {
       list_sort_string(names, identity);
       let [a, b] = names;
       let values = call_multiple(integer_random_digit_single_positive, 2);
+      let [v_a, v_b] = values;
+      list_set(values, 0, add(v_a, v_b))
       list_sort(values, identity);
       let lines = [
         js_code_statement_let_assign_multiple(names, values),
