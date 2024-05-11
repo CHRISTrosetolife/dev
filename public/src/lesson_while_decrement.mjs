@@ -1,3 +1,4 @@
+import { js_code_statement_decrement } from "./js_code_statement_decrement.mjs";
 import { js_code_statement_subtract_assign } from "./js_code_statement_subtract_assign.mjs";
 import { js_code_statement_increment } from "./js_code_statement_increment.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
@@ -18,7 +19,7 @@ export function lesson_while_decrement() {
       let value = integer_random_digit_single_positive();
       let lines = [
         js_code_statement_let_assign(name, value),
-        js_code_statement_increment(name),
+        js_code_statement_decrement(name),
         app_learn_code_log(name),
       ];
       return list_join_newline(lines);
