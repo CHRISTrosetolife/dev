@@ -12,7 +12,7 @@ export function lesson_while_reverse() {
     function () {
       let { name, value, loop_end } = lesson_while_generic_1();
       let lines = [
-        js_code_statement_let_assign(name, (loop_end)),
+        js_code_statement_let_assign(name, loop_end),
         `while (${name} >= ${value}) {`,
         app_learn_code_log(`'inside ' + ${name}`),
         js_code_statement_decrement(name),
