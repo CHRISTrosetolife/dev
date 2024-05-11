@@ -26,12 +26,11 @@ export function lesson_while_assign_subtract() {
       let [a, b] = names;
       let values = call_multiple(integer_random_digit_single_positive, 2);
       let [v_a, v_b] = values;
-      list_set(values, 0, add(v_a, v_b));
-      list_sort(values, identity);
+      list_set(values, 1, add(v_a, v_b));
       let lines = [
         js_code_statement_let_assign_multiple(names, values),
-        js_code_statement_subtract_assign(a, b),
-        app_learn_code_log(a),
+        js_code_statement_subtract_assign(b, a),
+        app_learn_code_log(b),
       ];
       return list_join_newline(lines);
     },
