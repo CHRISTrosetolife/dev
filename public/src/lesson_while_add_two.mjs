@@ -9,7 +9,7 @@ import { integer_random } from "./integer_random.mjs";
 import { string_combine } from "./string_combine.mjs";
 export function lesson_while_add_two() {
   let description = "`while` loop with `+=` `2` or `3`";
-  let example_message = string_combine("with `while` loop with `+=`");
+  let example_message = "with `while` loop with `+=`";
   return lesson_simple(
     function () {
       const increment = integer_random(2, 3);
