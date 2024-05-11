@@ -1,5 +1,5 @@
+import { js_code_statement_decrement } from "./js_code_statement_decrement.mjs";
 import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
-import { js_code_statement_increment } from "./js_code_statement_increment.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 import { app_learn_code_random_identifier } from "./app_learn_code_random_identifier.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
@@ -19,7 +19,7 @@ export function lesson_while_decrement_multiple() {
       let value = integer_random_digit_single_positive();
       let lines = [js_code_statement_let_assign(name, value)];
       for (let i of range(integer_random(2, 3))) {
-        list_add(lines, js_code_statement_increment(name));
+        list_add(lines, js_code_statement_decrement(name));
       }
       list_add(lines, app_learn_code_log(name));
       return list_join_newline(lines);
