@@ -14,7 +14,7 @@ export function lesson_for_while() {
       let { name, value, loop_end } = lesson_while_generic_1();
       let lines = [
         js_code_statement_let_assign(name, value),
-        `while (${name} <= ${loop_end}) {`,
+        `for ( ; ${name} <= ${loop_end}; ) {`,
         app_learn_code_log(`'inside ' + ${name}`),
         js_code_statement_increment(name),
         `}`,
