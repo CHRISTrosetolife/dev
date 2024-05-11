@@ -34,7 +34,7 @@ export function lesson_for_while() {
     let lines = [`while (a) {`, `// b`, `}`];
     app_learn_code_code_part_contrast(parent, list_join_newline(lines));
     html_p_text(parent, "that code can be rewritten to the following :");
-    let lines2 = [`for ( ; a; ) {`, `// b``}`];
+    let lines2 = [`for ( ; a; ) {`, `// b`, `}`];
     app_learn_code_code_part_contrast(parent, list_join_newline(lines2));
   }
 }
