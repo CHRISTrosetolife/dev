@@ -17,10 +17,10 @@ export function lesson_while_decrement_multiple() {
   return lesson_simple(
     function () {
       let name = app_learn_code_random_identifier();
-      let times = range(integer_random(2, 3));
+      let times = integer_random(2, 3);
       let value = add(integer_random_digit_single_positive(), times);
       let lines = [js_code_statement_let_assign(name, value)];
-      for (let i of times) {
+      for (let i of range(times)) {
         list_add(lines, js_code_statement_decrement(name));
       }
       list_add(lines, app_learn_code_log(name));
