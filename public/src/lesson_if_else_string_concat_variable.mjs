@@ -26,7 +26,7 @@ export function lesson_if_else_string_concat_variable() {
       }
       list_scramble(parts);
       let lines = [];
-      list_add(lines, js_code_statement_let_assign_multiple(taken_names, [m]));
+      list_add(lines, js_code_statement_let_assign_multiple(names, [m]));
       list_add(lines, app_learn_code_log_join_plus(parts));
       return list_join_newline(lines);
     },
