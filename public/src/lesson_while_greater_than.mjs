@@ -7,7 +7,7 @@ import { lesson_simple } from "./lesson_simple.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { string_combine } from "./string_combine.mjs";
-export function lesson_while_less_than_reverse() {
+export function lesson_while_greater_than() {
   let description = "`while` loop with less than ( `<` )";
   let example_message = string_combine("with a ", description);
   return lesson_simple(
