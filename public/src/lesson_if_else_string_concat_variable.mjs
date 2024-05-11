@@ -13,7 +13,7 @@ export function lesson_if_else_string_concat_variable() {
     function () {
       let strings = app_learn_code_random_identifiers(2);
       list_sort_string(strings, identity);
-      let mapped = list_map(strings, string_delimit)
+      let [m, n] = list_map(strings, string_delimit)
       return lesson_if_else_string_concat_variables_quiz(1);
     },
     example_before,
