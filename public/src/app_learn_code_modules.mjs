@@ -139,8 +139,9 @@ export function app_learn_code_modules() {
   list_add(module_current, lesson_while_add_two);
   module_current = module_new(modules, "reverse `while` loops");
   list_add(module_current, lesson_while_assign_subtract);
+  list_add(module_current, lesson_while_decrement);
   
-  
+  x
   return modules;
   function module_new(modules, module_name) {
     let module_current = [];
