@@ -7,6 +7,7 @@ export function lesson_if_else_string_concat_variable() {
   let example_message = string_combine("with ", description);
   return lesson_simple(
     function () {
+      
       return lesson_if_else_string_concat_variables_quiz(1);
     },
     example_before,
