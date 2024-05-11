@@ -6,16 +6,13 @@ import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs
 import { lesson_simple } from "./lesson_simple.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
-import { integer_random } from "./integer_random.mjs";
 import { string_combine } from "./string_combine.mjs";
 export function lesson_while_less_than() {
   let description = "`while` loop with less than ( `<` )";
   let example_message = string_combine("with a ", description);
   return lesson_simple(
     function () {
-      let { name, value, loop_end } = lesson_while_generic(
-        integer_random(2, 3),
-      );
+      let { name, value, loop_end } = lesson_while_generic(1);
       let lines = [
         js_code_statement_let_assign(name, subtract_1(value)),
         `while (${name} < ${loop_end}) {`,
