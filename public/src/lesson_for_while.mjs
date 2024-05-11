@@ -6,10 +6,9 @@ import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs
 import { lesson_simple } from "./lesson_simple.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
-import { string_combine } from "./string_combine.mjs";
 export function lesson_for_while() {
   let description = "`for` loop with middle only";
-  let example_message = string_combine("with a ", description);
+  let example_message = "with a `for` loop with the middle statement only";
   return lesson_simple(
     function () {
       let { name, value, loop_end } = lesson_while_generic_1();

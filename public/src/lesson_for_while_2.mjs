@@ -9,7 +9,7 @@ import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { string_combine } from "./string_combine.mjs";
 export function lesson_for_while_2() {
   let description = "`for` loop without last statement";
-  let example_message = string_combine("with a ", description);
+  let example_message = "with a `for` loop without the last statement";
   return lesson_simple(
     function () {
       let { name, value, loop_end } = lesson_while_generic_1();
