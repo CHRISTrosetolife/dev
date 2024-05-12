@@ -17,7 +17,7 @@ export function lesson_for_iterations() {
     function () {
       let { name, value, loop_end } = lesson_while_generic_1();
       let lines = [
-        js_code_statement_let_assign("counter"),
+        js_code_statement_let_assign("counter", '0'),
         js_code_statement_let(name),
         `for (${js_code_statement_assign(name, value)} ${name} <= ${loop_end}; ${js_code_increment(name)}) {`,
         js_code_statement_increment("counter"),
