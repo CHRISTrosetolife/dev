@@ -1,7 +1,8 @@
+import { integer_random } from "./integer_random.mjs";
+import { lesson_while_generic } from "./lesson_while_generic.mjs";
 import { html_style_alternate_monospace_short_multiple } from "./html_style_alternate_monospace_short_multiple.mjs";
 import { js_code_statement_increment } from "./js_code_statement_increment.mjs";
 import { js_code_increment } from "./js_code_increment.mjs";
-import { lesson_while_generic_1 } from "./lesson_while_generic_1.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
@@ -15,7 +16,10 @@ export function lesson_for_iterations_log_outside_large() {
     "with a `for` loop with a counter with no `console.log` inside of the `for` loop with a larger count";
   return lesson_simple(
     function () {
-      let { name, value, loop_end } = lesson_while_generic_1();
+      let { name, value, loop_end } = lesson_while_generic(
+        increment,
+        integer_random(2, 3),
+      );
       let lines = [
         js_code_statement_let_assign("counter", "0"),
         `for (${js_code_statement_let_assign(name, value)} ${name} <= ${loop_end}; ${js_code_increment(name)}) {`,
