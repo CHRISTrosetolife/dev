@@ -7,6 +7,7 @@ import { noop } from "./noop.mjs";
 import { html_style_monospace } from "./html_style_monospace.mjs";
 import { html_ul } from "./html_ul.mjs";
 import { html_li_text } from "./html_li_text.mjs";
+import { app_learn_code_style_code_colored } from "./app_learn_code_style_code_colored.mjs";
 export function lesson_less_than_equal() {
   const description = "less than or equal to ( `<=` )";
   const example_message =
@@ -49,7 +50,7 @@ export function lesson_less_than_equal() {
     html_style_alternate(
       parent,
       html_p,
-      [noop, html_style_monospace],
+      [noop, app_learn_code_style_code_colored],
       ["in javascript a ≤ b is written as : ", "a <= b"],
     );
   }

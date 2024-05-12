@@ -5,6 +5,7 @@ import { html_style_monospace } from "./html_style_monospace.mjs";
 import { noop } from "./noop.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
+import { app_learn_code_style_code_colored } from "./app_learn_code_style_code_colored.mjs";
 export function lesson_console_log_strings(parent) {
   html_style_alternate(
     parent,
@@ -30,7 +31,7 @@ export function lesson_console_log_strings(parent) {
   html_style_alternate(
     parent,
     html_p,
-    [noop, html_style_monospace],
+    [noop, app_learn_code_style_code_colored],
     [
       "notice that a string has a quote ( ",
       "'",

@@ -4,11 +4,12 @@ import { html_p } from "./html_p.mjs";
 import { html_style_alternate } from "./html_style_alternate.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
+import { app_learn_code_style_code_colored } from "./app_learn_code_style_code_colored.mjs";
 export function lesson_log_number_explain(parent) {
   html_style_alternate(
     parent,
     html_p,
-    [noop, html_style_monospace],
+    [noop, app_learn_code_style_code_colored],
     ["remember , strings need quotes ( ", "'", " ) :"],
   );
   app_learn_code_code_part_contrast(parent, "'text'");

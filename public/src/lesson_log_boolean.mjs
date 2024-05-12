@@ -4,6 +4,7 @@ import { html_style_alternate } from "./html_style_alternate.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
 import { noop } from "./noop.mjs";
 import { random_50_50 } from "./random_50_50.mjs";
+import { app_learn_code_style_code_colored } from "./app_learn_code_style_code_colored.mjs";
 export function lesson_log_boolean() {
   let example_message = "outputting a boolean to the console";
   let description = example_message;
@@ -21,7 +22,7 @@ console.log(${random_50_50()});`;
     html_style_alternate(
       parent,
       html_p,
-      [noop, html_style_monospace],
+      [noop, app_learn_code_style_code_colored],
       ["boolean ", "true", " and ", "false", " can be used in code :"],
     );
   }

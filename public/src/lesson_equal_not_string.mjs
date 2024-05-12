@@ -5,6 +5,7 @@ import { noop } from "./noop.mjs";
 import { html_style_monospace } from "./html_style_monospace.mjs";
 import { random_50_50 } from "./random_50_50.mjs";
 import { lesson_console_log_quiz_value } from "./lesson_console_log_quiz_value.mjs";
+import { app_learn_code_style_code_colored } from "./app_learn_code_style_code_colored.mjs";
 export function lesson_equal_not_string() {
   const description = "not equal ( `!==` ) ( strings )";
   const example_message = "outputting whether or not two strings are not equal";
@@ -29,7 +30,7 @@ export function lesson_equal_not_string() {
     html_style_alternate(
       parent,
       html_p,
-      [html_style_monospace, noop],
+      [app_learn_code_style_code_colored, noop],
       ["!==", " also checks whether or not two strings are not equal"],
     );
   }
