@@ -14,7 +14,7 @@ export function lesson_for_iterations_log_outside_large() {
   return lesson_simple(
     function () {
       let { name, value, loop_end } = lesson_while_generic(
-        increment,
+        1,
         integer_random(4, 5),
       );
       let lines = [
