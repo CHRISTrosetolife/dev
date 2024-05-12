@@ -6,14 +6,16 @@ import { lesson_simple } from "./lesson_simple.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { integer_random } from "./integer_random.mjs";
-import { string_combine } from "./string_combine.mjs";
 export function lesson_while_add_two() {
   let description = "`while` loop with `+=` `2` or `3`";
   let example_message = "with `while` loop with `+=`";
   return lesson_simple(
     function () {
       const increment = integer_random(2, 3);
-      let { name, value, loop_end } = lesson_while_generic(increment, integer_random(2, 3));
+      let { name, value, loop_end } = lesson_while_generic(
+        increment,
+        integer_random(2, 3),
+      );
       let lines = [
         js_code_statement_let_assign(name, value),
         `while (${name} <= ${loop_end}) {`,
