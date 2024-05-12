@@ -1,7 +1,7 @@
+import { js_code_add_assign } from "./js_code_add_assign.mjs";
 import { lesson_while_generic } from "./lesson_while_generic.mjs";
 import { integer_random } from "./integer_random.mjs";
 import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
-import { subtract_1 } from "./subtract_1.mjs";
 import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
 import { js_code_statement_let } from "./js_code_statement_let.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
