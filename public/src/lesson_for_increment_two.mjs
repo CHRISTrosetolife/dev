@@ -16,7 +16,7 @@ export function lesson_for_increment_two() {
       let { name, value, loop_end } = lesson_while_generic(increment);
       let lines = [
         js_code_statement_let(name),
-        `for (${js_code_statement_assign(name, subtract_1(value))} ${name} < ${loop_end}; ${js_code_add_assign(name, increment)}) {`,
+        `for (${js_code_statement_assign(name, value)} ${name} <= ${loop_end}; ${js_code_add_assign(name, increment)}) {`,
         app_learn_code_log(`'inside ' + ${name}`),
         `}`,
         app_learn_code_log(`'after ' + ${name}`),

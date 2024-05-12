@@ -1,3 +1,4 @@
+import { lesson_for_increment_two } from "./lesson_for_increment_two.mjs";
 import { lesson_for_iterations } from "./lesson_for_iterations.mjs";
 import { lesson_for } from "./lesson_for.mjs";
 import { lesson_for_while_2 } from "./lesson_for_while_2.mjs";
@@ -164,6 +165,7 @@ export function app_learn_code_modules() {
   list_add(module_current, lesson_for);
   list_add(module_current, lesson_for_less_than);
   list_add(module_current, lesson_for_greater_than_equal);
+  list_add(module_current, lesson_for_increment_two);
   list_add(module_current, lesson_for_iterations);
   list_add(module_current, lesson_for_iterations_log_outside);
   return modules;
