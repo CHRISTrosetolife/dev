@@ -1,10 +1,10 @@
+import { app_learn_code_style_code_colored } from "./app_learn_code_style_code_colored.mjs";
 import { lesson_variable_code_get } from "./lesson_variable_code_get.mjs";
 import { app_learn_code_random_value } from "./app_learn_code_random_value.mjs";
 import { app_learn_code_random_identifier } from "./app_learn_code_random_identifier.mjs";
 import { html_li } from "./html_li.mjs";
 import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
 import { html_p_text } from "./html_p_text.mjs";
-import { html_style_monospace } from "./html_style_monospace.mjs";
 import { html_p } from "./html_p.mjs";
 import { html_style_alternate } from "./html_style_alternate.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
@@ -48,7 +48,7 @@ export function lesson_variable() {
     html_style_alternate(
       parent,
       html_p,
-      [noop, html_style_monospace],
+      [noop, app_learn_code_style_code_colored],
       [
         "to tell javascript about a variable named ",
         "variable_name",
@@ -61,7 +61,7 @@ export function lesson_variable() {
     html_style_alternate(
       parent,
       html_p,
-      [noop, html_style_monospace],
+      [noop, app_learn_code_style_code_colored],
       ["because this is a statement , it ends in semicolon ( ", ";", " )"],
     );
   }
@@ -71,7 +71,7 @@ export function lesson_variable() {
     html_style_alternate(
       ul,
       html_li,
-      [noop, html_style_monospace],
+      [noop, app_learn_code_style_code_colored],
       [
         "letters ( ",
         "a",
@@ -95,7 +95,7 @@ export function lesson_variable() {
     html_style_alternate(
       ul,
       html_li,
-      [noop, html_style_monospace],
+      [noop, app_learn_code_style_code_colored],
       [
         "digits ( ",
         "0",
@@ -113,13 +113,13 @@ export function lesson_variable() {
     html_style_alternate(
       ul,
       html_li,
-      [noop, html_style_monospace],
+      [noop, app_learn_code_style_code_colored],
       ["underscores ( ", "_", " )"],
     );
     html_style_alternate(
       ul,
       html_li,
-      [noop, html_style_monospace],
+      [noop, app_learn_code_style_code_colored],
       ["dollar signs ( ", "$", " )"],
     );
     html_p_text(parent, "here are some examples of valid variable names :");
@@ -138,7 +138,7 @@ export function lesson_variable() {
     html_style_alternate(
       parent,
       html_p,
-      [noop, html_style_monospace],
+      [noop, app_learn_code_style_code_colored],
       [
         "for example ",
         "JESUS",
@@ -154,7 +154,7 @@ export function lesson_variable() {
     html_style_alternate(
       parent,
       html_p,
-      [noop, html_style_monospace],
+      [noop, app_learn_code_style_code_colored],
       [
         "for example ",
         "if",
@@ -172,7 +172,7 @@ export function lesson_variable() {
     html_style_alternate(
       parent,
       html_p,
-      [noop, html_style_monospace],
+      [noop, app_learn_code_style_code_colored],
       [
         "remember the code from earlier that told javascript about ",
         "variable_name",
@@ -187,7 +187,7 @@ export function lesson_variable() {
     html_style_alternate(
       parent,
       html_p,
-      [noop, html_style_monospace],
+      [noop, app_learn_code_style_code_colored],
       [
         "to give a variable named ",
         "variable_name",
@@ -201,13 +201,13 @@ export function lesson_variable() {
     html_style_alternate(
       parent,
       html_p,
-      [noop, html_style_monospace],
+      [noop, app_learn_code_style_code_colored],
       ["in javascript , ", "=", " does not check if two things are equal"],
     );
     html_style_alternate(
       parent,
       html_p,
-      [noop, html_style_monospace],
+      [noop, app_learn_code_style_code_colored],
       ["instead , ", "=", " can be used to give a variable a value"],
     );
   }
