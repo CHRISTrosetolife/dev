@@ -43,7 +43,7 @@ export function lesson_variable() {
   function screen2(parent) {
     html_p_text(
       parent,
-      "to use a variable , javascript must know about the variable",
+      "to use a variable , javascript should know about the variable",
     );
     html_style_alternate(
       parent,
