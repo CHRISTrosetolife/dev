@@ -6,6 +6,8 @@ import { lesson_simple } from "./lesson_simple.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
+import { html_p_text } from "./html_p_text.mjs";
+import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
 export function lesson_for_iterations_log_outside() {
   let description = "`for` loop with a counter with no `console.log` inside";
   let example_message =
@@ -38,11 +40,22 @@ export function lesson_for_iterations_log_outside() {
   }
   function screen2(parent) {
     html_style_alternate_monospace_short_multiple(parent, [
-      "however , if the loop repeats a hundred times , then the `console.log` would run 100 times",
-      "reading through 100 console.log's takes a long time",
+      "however , if the loop repeats a 100 times , then the `console.log` would run 100 times",
+      "reading through the output of 100 `console.log`'s takes a long time",
       "it is useful to be able to read the code and think about what it does than have to always use `console.log`",
       "of course if you get stuck it is okay to use `console.log` or whatever else helps",
       "in this lesson , the goal is to be able to read the code and figure out how many times it runs without having a `console.log` on the inside of the `for` loop",
+    ]);
+  }
+  function screen3(parent) {
+    html_p_text(parent, "here is some code :");
+    app_learn_code_code_part_contrast(`for (let i = 2; i <= 4; i++)`);
+    html_style_alternate_monospace_short_multiple(parent, [
+      "because `let i = 2;` , then at first `i` is `2`",
+      "because `i++` , then each time `1` is added to `i`",
+      "because `i <= 4` , then if `i` is `4` the `for` loop will run , but when `i` is `5` the `for` loop will not run",
+      "therefore the loop will run when `i` is `2` then `3` then `4`",
+      "therefore the loop will run a total of 3 times",
     ]);
   }
 }
