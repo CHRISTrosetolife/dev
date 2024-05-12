@@ -10,7 +10,7 @@ import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 import { html_hr } from "./html_hr.mjs";
-export function lesson_for_iterations() {
+export function lesson_for_iterations_log_outside() {
   let description = "`for` loop with a counter";
   let example_message = string_combine("with a ", description);
   return lesson_simple(
