@@ -9,6 +9,7 @@ import { list_join_newline } from "./list_join_newline.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
+import { html_hr } from "./html_hr.mjs";
 export function lesson_for_iterations() {
   let description = "`for` loop with a counter";
   let example_message = string_combine("with a ", description);
@@ -37,5 +38,6 @@ export function lesson_for_iterations() {
       "`counter` will increment by `1` each time the code inside the braces of the `for` loop runs",
       "after the `for` loop runs , the value of `counter` will be the total number of times the code ran inside the braces of the `for` loop",
     ]);
+    html_hr(parent);
   }
 }
