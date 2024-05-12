@@ -49,13 +49,13 @@ export function lesson_for_iterations_log_outside() {
   }
   function screen3(parent) {
     html_p_text(parent, "here is some example code :");
-    app_learn_code_code_part_contrast(`for (let i = 2; i <= 4; i++)`);
+    app_learn_code_code_part_contrast(parent, `for (let i = 2; i <= 4; i++)`);
     html_style_alternate_monospace_short_multiple(parent, [
       "because `let i = 2;` , then at first `i` is `2`",
       "because `i++` , then each time `1` is added to `i`",
       "because `i <= 4` , then if `i` is `4` the `for` loop will run , but when `i` is `5` the `for` loop will not run",
-      "therefore the loop will run when `i` is `2` then `3` then `4`",
-      "therefore the loop will run a total of 3 times",
+      "therefore the `for` loop will run when `i` is `2` then `3` then `4`",
+      "therefore the `for` loop will run a total of 3 times",
     ]);
   }
 }
