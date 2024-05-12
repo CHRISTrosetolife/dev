@@ -31,7 +31,7 @@ export function lesson_for_increment_two() {
   function example_before(parent) {
     html_style_alternate_monospace_short(
       parent,
-      "a `for` loop can use a `<` instead of `<=`",
+      "a `for` loop can use `a += b;` instead of `a++;`",
     );
   }
 }
