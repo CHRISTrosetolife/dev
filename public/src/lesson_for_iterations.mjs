@@ -1,3 +1,5 @@
+import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
+import { js_code_statement_let } from "./js_code_statement_let.mjs";
 import { js_code_statement_increment } from "./js_code_statement_increment.mjs";
 import { js_code_increment } from "./js_code_increment.mjs";
 import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
@@ -16,7 +18,8 @@ export function lesson_for_iterations() {
       let { name, value, loop_end } = lesson_while_generic_1();
       let lines = [
         js_code_statement_let_assign("counter"),
-        `for (${js_code_statement_let_assign(name, value)} ${name} <= ${loop_end}; ${js_code_increment(name)}) {`,
+        js_code_statement_let(name),
+        `for (${js_code_statement_assign(name, value)} ${name} <= ${loop_end}; ${js_code_increment(name)}) {`,
         js_code_statement_increment("counter"),
         app_learn_code_log(`'inside ' + ${name} + ' ' + counter`),
         `}`,
