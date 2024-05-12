@@ -9,9 +9,10 @@ import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs
 import { html_p_text } from "./html_p_text.mjs";
 import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
 export function lesson_for_iterations_log_outside_large() {
-  let description = "`for` loop with a counter with no `console.log` inside";
+  let description =
+    "`for` loop with a counter with no `console.log` inside - larger";
   let example_message =
-    "with a `for` loop with a counter with no `console.log` inside of the `for` loop";
+    "with a `for` loop with a counter with no `console.log` inside of the `for` loop with a larger count";
   return lesson_simple(
     function () {
       let { name, value, loop_end } = lesson_while_generic_1();
