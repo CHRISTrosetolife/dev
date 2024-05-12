@@ -27,7 +27,7 @@ export function lesson_for_iterations_log_outside() {
     example_before,
     description,
     example_message,
-    [screen1, screen2],
+    [screen1, screen2, screen3],
   );
   function example_before(parent) {}
   function screen1(parent) {
@@ -48,7 +48,7 @@ export function lesson_for_iterations_log_outside() {
     ]);
   }
   function screen3(parent) {
-    html_p_text(parent, "here is some code :");
+    html_p_text(parent, "here is some example code :");
     app_learn_code_code_part_contrast(`for (let i = 2; i <= 4; i++)`);
     html_style_alternate_monospace_short_multiple(parent, [
       "because `let i = 2;` , then at first `i` is `2`",
