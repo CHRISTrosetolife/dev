@@ -11,8 +11,8 @@ import { string_combine } from "./string_combine.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 import { html_hr } from "./html_hr.mjs";
 export function lesson_for_iterations_log_outside() {
-  let description = "`for` loop with a counter";
-  let example_message = string_combine("with a ", description);
+  let description = "`for` loop with a counter with no logging inside";
+  let example_message = "with a `for` loop with a counter with no logging inside of the `for` loop"
   return lesson_simple(
     function () {
       let { name, value, loop_end } = lesson_while_generic_1();
@@ -21,7 +21,6 @@ export function lesson_for_iterations_log_outside() {
         js_code_statement_let(name),
         `for (${js_code_statement_assign(name, value)} ${name} <= ${loop_end}; ${js_code_increment(name)}) {`,
         js_code_statement_increment("counter"),
-        app_learn_code_log(`'inside ' + ${name} + ' ' + counter`),
         `}`,
         app_learn_code_log(`'after ' + ${name} + ' ' + counter`),
       ];
@@ -33,11 +32,18 @@ export function lesson_for_iterations_log_outside() {
     [],
   );
   function example_before(parent) {
+  }
+  function screen1(parent) {
     html_style_alternate_monospace_short_multiple(parent, [
-      "in this lesson there will be a variable named `counter`",
-      "`counter` will increment by `1` each time the code inside the braces of the `for` loop runs",
-      "after the `for` loop runs , the value of `counter` will be the total number of times the code ran inside the braces of the `for` loop",
+      'suppose there is a program with a `for` loop',
+      'suppose there is a `console.log` inside the `for` loop',
+      'suppose the `for` loop repeats only 3 times',
+      'then , the `console.log` will only run 3 times',
+      'however , if the loop repeats a hundred times , then the `console.log` would run 100 times',
+      'reading through 100 console.log\'s takes a long time',
+      'it is useful to be able to read the code and think about what it does than have to always use `console.log`',
+      'of course if you get stuck it is okay to use console.log or whatever else helps',
+      'in this lesson , the goal is to be able to read the code and figure out how many times it runs without having a `console.log` on the inside of the `for` loop'
     ]);
-    html_hr(parent);
   }
 }
