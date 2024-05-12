@@ -44,7 +44,7 @@ export function lesson_for_iterations_log_outside() {
       "reading through the output of 100 `console.log`'s takes a long time",
       "it is useful to be able to read the code and think about what it does than have to always use `console.log`",
       "of course if you get stuck it is okay to use `console.log` or whatever else helps",
-      "in this lesson , the goal is to be able to read the code and figure out how many times it runs without having a `console.log` on the inside of the `for` loop",
+      "in this lesson , the goal is to be able to read the code and figure out how many times the `for` loop runs without having a `console.log` on the inside of the `for` loop",
     ]);
   }
   function screen3(parent) {
