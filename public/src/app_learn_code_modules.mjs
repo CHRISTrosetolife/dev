@@ -168,6 +168,7 @@ export function app_learn_code_modules() {
   list_add(module_current, lesson_for_increment_two);
   list_add(module_current, lesson_for_iterations);
   list_add(module_current, lesson_for_iterations_log_outside);
+  list_add(module_current, lesson_for_iterations_log_large);
   return modules;
   function module_new(modules, module_name) {
     let module_current = [];
