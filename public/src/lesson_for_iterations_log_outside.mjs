@@ -7,9 +7,9 @@ import { list_join_newline } from "./list_join_newline.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 export function lesson_for_iterations_log_outside() {
-  let description = "`for` loop with a counter with no logging inside";
+  let description = "`for` loop with a counter with no `console.log` inside";
   let example_message =
-    "with a `for` loop with a counter with no logging inside of the `for` loop";
+    "with a `for` loop with a counter with no `console.log` inside of the `for` loop";
   return lesson_simple(
     function () {
       let { name, value, loop_end } = lesson_while_generic_1();
