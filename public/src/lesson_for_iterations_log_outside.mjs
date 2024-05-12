@@ -25,7 +25,7 @@ export function lesson_for_iterations_log_outside() {
     example_before,
     description,
     example_message,
-    [],
+    [screen1, screen2],
   );
   function example_before(parent) {}
   function screen1(parent) {
