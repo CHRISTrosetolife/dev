@@ -13,7 +13,7 @@ export function lesson_while_add_two() {
   return lesson_simple(
     function () {
       const increment = integer_random(2, 3);
-      let { name, value, loop_end } = lesson_while_generic(increment);
+      let { name, value, loop_end } = lesson_while_generic(increment, integer_random(2, 3));
       let lines = [
         js_code_statement_let_assign(name, value),
         `while (${name} <= ${loop_end}) {`,

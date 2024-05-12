@@ -3,8 +3,7 @@ import { subtract } from "./subtract.mjs";
 import { multiply } from "./multiply.mjs";
 import { integer_random } from "./integer_random.mjs";
 import { app_learn_code_random_identifier } from "./app_learn_code_random_identifier.mjs";
-export function lesson_while_generic(increment) {
-  const iterations = integer_random(2, 3);
+export function lesson_while_generic(increment, iterations) {
   let name = app_learn_code_random_identifier();
   let iterations_less_1 = iterations - 1;
   let product = multiply(iterations_less_1, increment);
