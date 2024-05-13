@@ -1,3 +1,4 @@
+import { html_style_default_font_size } from "./html_style_default_font_size.mjs";
 import { html_button_width_full_text_click_alternate_code } from "./html_button_width_full_text_click_alternate_code.mjs";
 import { add_1_string } from "./add_1_string.mjs";
 import { app_learn_code_review } from "./app_learn_code_review.mjs";
@@ -54,6 +55,7 @@ export function app_learn_code() {
     },
   });
   html_style_default_initialize();
+  html_style_default_font_size(6);
   let default_font_size = html_style_default_font_size_value();
   let lesson_screens = [];
   let lessons = [];
