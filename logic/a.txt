@@ -10,4 +10,4 @@ and(false(), y) false()
 zero()
 number(zero())
 number(x) number(increment(x))
-
+sum(x,increment(y)) sum(increment(x),y)
