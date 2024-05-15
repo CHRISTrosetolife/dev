@@ -1,0 +1,4 @@
+function(true())
+function(false())
+equal(not(true()), false())
+equal(not(false()), true())
