@@ -2,4 +2,6 @@ true()
 false()
 not(true()) false()
 not(false()) true()
-and(x,y) 
+if(true(),x,y) x
+if(false(),x,y) y
+and(true(),y) y
