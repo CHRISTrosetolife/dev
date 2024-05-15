@@ -55,8 +55,9 @@ export function app_learn_code() {
     },
   });
   html_style_default_initialize();
-  html_style_default_font_size(6);
   let default_font_size = html_style_default_font_size_value();
+  default_font_size = 6;
+  html_style_default_font_size(default_font_size);
   let lesson_screens = [];
   let lessons = [];
   for (let module of modules) {
