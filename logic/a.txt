@@ -7,5 +7,7 @@ if(false(),x,y) y
 and(true(), y) y
 and(false(), y) false()
 
+zero()
+number(zero())
+number(x) number(increment(x))
 
-and(x, false()) false()
