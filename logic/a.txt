@@ -4,5 +4,8 @@ not(true()) false()
 not(false()) true()
 if(true(),x,y) x
 if(false(),x,y) y
-and(true(),y) y
+and(true(), y) y
 and(false(), y) false()
+
+
+and(x, false()) false()
