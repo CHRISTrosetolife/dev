@@ -11,3 +11,4 @@ zero()
 number(zero())
 number(x) number(increment(x))
 sum(x,increment(y)) sum(increment(x),y)
+sum(x,zero()) x
