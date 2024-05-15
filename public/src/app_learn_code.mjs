@@ -56,7 +56,7 @@ export function app_learn_code() {
   });
   html_style_default_initialize();
   let default_font_size = html_style_default_font_size_value();
-  default_font_size = 6;
+  default_font_size = 3;
   html_style_default_font_size(default_font_size);
   let lesson_screens = [];
   let lessons = [];
