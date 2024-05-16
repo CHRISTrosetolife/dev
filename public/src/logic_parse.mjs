@@ -6,12 +6,14 @@ export function logic_parse(input) {
   for (let c of input) {
     if (string_letters_is(c)) {
       identifier = string_combine(identifier, c);
-    } else if (c === '(') {
+    } else if (c === "(") {
       result = {
         name: identifier,
-        type: 'function',
-        args: []
-      }
+        type: "function",
+        args: [],
+      };
+    } else if (c === ")") {
+      return result;
     }
   }
 }
