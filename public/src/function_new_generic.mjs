@@ -25,7 +25,7 @@ ${body_string}
   let concat = list_concat(mapped, [contents_function]);
   let contents = list_join(concat, newline());
   let parsed = js_parse(contents);
-  js_imports_fix;
+  await js_imports_fix(parsed);
   let unparsed = js_unparse(parsed);
   let file_path = function_name_to_path(function_name);
   await file_write(file_path, unparsed);
