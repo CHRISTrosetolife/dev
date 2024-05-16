@@ -26,14 +26,14 @@ export async function tests_generate_single(function_name, args, test_number) {
   });
   console.log({args_mapped})
     const body_string = `    let ${result_name} = ${function_name}(${args_mapped.join(", ")});
-    ${assert_boolean.name}(${equal.name}(${result_name}, ${json_to(result)}))`;
+    ${assert_boolean.name}(${equal_json.name}(${result_name}, ${json_to(result)}))`;
     console.log({body_string})
   await function_new_generic(
     `${function_name}_test_${test_number}`,
     ``,
     body_string,
     false,
-    [assert_boolean.name, equal.name],
+    [],
     false,
   );
 }
