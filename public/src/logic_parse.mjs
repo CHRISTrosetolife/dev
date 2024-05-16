@@ -43,7 +43,7 @@ export function logic_parse(input) {
           open = true;
           result = {
             type: "call",
-            name: identifier,
+            caller: logic_parse_variable(identifier),
             args: [],
           };
         }
@@ -78,11 +78,15 @@ export function logic_parse(input) {
     assert(not, [open]);
     assert(greater_than_equal, [string_length(identifier), 1]);
     return {
-      result: {
-        type: "variable",
-        name: identifier
-      },
+      result: logic_parse_variable(identifier),
       next: index,
     };
   }
 }
+function logic_parse_variable(identifier) {
+  return {
+    type: "variable",
+    name: identifier
+  };
+}
+
