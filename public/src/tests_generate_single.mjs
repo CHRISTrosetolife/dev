@@ -9,6 +9,7 @@ import { list_map } from "./list_map.mjs";
 import { assert_boolean } from "./assert_boolean.mjs";
 import { string_includes } from "./string_includes.mjs";
 import { function_run } from "./function_run.mjs";
+import { error } from "./error.mjs";
 export async function tests_generate_single(function_name, args, test_number) {
   let result = await function_run(function_name, args);
   console.log(test_number.toString(), list_concat(args, [result]));
@@ -21,10 +22,12 @@ export async function tests_generate_single(function_name, args, test_number) {
     if (string_is(arg)) {
       return string_delimit(arg);
     }
-    return json_to(arg);
+    error()
   });
+  console.log({args_mapped})
     const body_string = `    let ${result_name} = ${function_name}(${args_mapped.join(", ")});
-    ${assert_boolean.name}(${equal.name}(${result_name}, ${result}))`;
+    ${assert_boolean.name}(${equal.name}(${result_name}, ${json_to(result)}))`;
+    console.log({body_string})
   await function_new_generic(
     `${function_name}_test_${test_number}`,
     ``,
