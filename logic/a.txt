@@ -1,16 +1,2 @@
-true()
-false()
-not(true()) false()
-not(false()) true()
-if(true(),x,y) x
-if(false(),x,y) y
-and(true(), y) y
-and(false(), y) false()
-
-zero()
-number(zero())
-number(x) number(increment(x))
-sum(x,increment(y)) sum(increment(x),y)
-sum(x,zero()) x
-
-sum(x,y)=z implies x<=z
+equal(add(a,successor(b)),add(successor(a),b))
+equal(add(a,zero()),a)
