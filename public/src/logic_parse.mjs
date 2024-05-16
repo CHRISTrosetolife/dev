@@ -23,13 +23,15 @@ export function logic_parse(input) {
         identifier = string_combine(identifier, c);
         index = add_1(index)
       } else if (c === "(" || c === ',') {
-        open = true;
-        let args = []
-        result = {
-          name: identifier,
-          type: "function",
-          args,
-        };
+        if (c === '(') {
+          open = true;
+          let args = []
+          result = {
+            name: identifier,
+            type: "function",
+            args,
+          };
+        }
         let r = logic_parse_recursive(input, add_1(index))
         console.log({r})
         let {result:child} =r;
