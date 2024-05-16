@@ -80,6 +80,7 @@ export function logic_parse(input) {
     return {
       result: {
         type: "variable",
+        name: identifier
       },
       next: index,
     };
