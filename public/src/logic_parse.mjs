@@ -74,7 +74,6 @@ export function logic_parse(input) {
         };
       }
     }
-    not();
     assert(not, [open]);
     error();
   }
