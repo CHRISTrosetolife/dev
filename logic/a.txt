@@ -1,5 +1,5 @@
 equal(add(.x)(successor(.y)))(add(successor(.x))(.y))
 equal(add(.x)(_zero))(.x)
 equal(add(_zero)(_zero))(_zero)
-equal(replace(.a)(.b)(.a))(.b)
+equal(replace(.a)(.b)(.c))(if(same(.a)(.c))(.b)(.c))
 equal(visit(.v(.f(.x))))(visit(.v(.f))(visit(.v(.x))))
