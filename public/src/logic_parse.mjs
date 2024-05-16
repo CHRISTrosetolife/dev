@@ -1,3 +1,4 @@
+import { not } from "./not.mjs";
 import { equal_0 } from "./equal_0.mjs";
 import { log } from "./log.mjs";
 import { add_1 } from "./add_1.mjs";
@@ -73,6 +74,7 @@ export function logic_parse(input) {
         };
       }
     }
+    not();
     assert(not, [open]);
     error();
   }
