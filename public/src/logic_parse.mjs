@@ -26,8 +26,8 @@ export function logic_parse(input) {
         if (c === '(') {
           open = true;
           result = {
-            name: identifier,
             type: "function",
+            name: identifier,
             args: [],
           };
         }
