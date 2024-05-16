@@ -1,4 +1,4 @@
-import { function_transform_args_split } from "./function_transform_args_split.mjs";
+import { js_imports_fix } from "./js_imports_fix.mjs";
 import { file_write } from "./file_write.mjs";
 import { file_open } from "./file_open.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
@@ -25,7 +25,7 @@ ${body_string}
   let concat = list_concat(mapped, [contents_function]);
   let contents = list_join(concat, newline());
   let parsed = js_parse(contents);
-  function_transform_args_split;
+  js_imports_fix;
   let unparsed = js_unparse(parsed);
   let file_path = function_name_to_path(function_name);
   await file_write(file_path, unparsed);
