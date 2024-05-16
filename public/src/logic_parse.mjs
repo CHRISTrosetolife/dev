@@ -42,7 +42,7 @@ export function logic_parse(input) {
         if (c === "(") {
           open = true;
           result = {
-            type: "function",
+            type: "call",
             name: identifier,
             args: [],
           };
