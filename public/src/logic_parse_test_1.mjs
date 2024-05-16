@@ -4,8 +4,8 @@ import {logic_parse} from "./logic_parse.mjs";
 export function logic_parse_test_1() {
     let result = logic_parse('a()');
     assert_boolean(equal_json(result, {
-        "name": "a",
         "type": "function",
+        "name": "a",
         "args": []
     }));
 }

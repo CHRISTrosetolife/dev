@@ -7,12 +7,12 @@ export async function sandbox() {
     "a()",
     "a(b())",
     "a(b(c()))",
-    "a(b(),c()))",
-    "a(b(),c(d())))",
-    "a(b(),c(d(),e())))",
-    "a(b(),c(d(),e(),f())))",
+    "a(b(),c())",
+    "a(b(),c(d()))",
+    "a(b(),c(d(),e()))",
+    "a(b(),c(d(),e(),f()))",
   ];
-  await each_index_async(inputs, (input, index) => {
-    tests_generate_single(logic_parse.name, [input], add_1(index));
+  await each_index_async(inputs, async (input, index) => {
+    await tests_generate_single(logic_parse.name, [input], add_1(index));
   });
 }

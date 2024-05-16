@@ -1,4 +1,6 @@
 import { add_1 } from "./add_1.mjs";
+import { assert } from "./assert.mjs";
+import { equal } from "./equal.mjs";
 import { error } from "./error.mjs";
 import { list_add } from "./list_add.mjs";
 import { number_less_than } from "./number_less_than.mjs";
@@ -9,7 +11,9 @@ import { string_letters_is } from "./string_letters_is.mjs";
 export function logic_parse(input) {
   let index = 0;
   let r = logic_parse_recursive(input, index)
-  let {result} = r;
+  let {result,next} = r;
+  console.log({input,r})
+  assert(equal, [next, string_length(input)])
   return result;
   function logic_parse_recursive(input, index) {
     console.log({input,index})
