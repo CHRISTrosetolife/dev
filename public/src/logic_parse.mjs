@@ -1,3 +1,4 @@
+import { logic_parse_variable } from "./logic_parse_variable.mjs";
 import { greater_than_equal } from "./greater_than_equal.mjs";
 import { not } from "./not.mjs";
 import { equal_0 } from "./equal_0.mjs";
@@ -5,7 +6,6 @@ import { log } from "./log.mjs";
 import { add_1 } from "./add_1.mjs";
 import { assert } from "./assert.mjs";
 import { equal } from "./equal.mjs";
-import { error } from "./error.mjs";
 import { list_add } from "./list_add.mjs";
 import { number_less_than } from "./number_less_than.mjs";
 import { string_combine } from "./string_combine.mjs";
@@ -83,10 +83,3 @@ export function logic_parse(input) {
     };
   }
 }
-function logic_parse_variable(identifier) {
-  return {
-    type: "variable",
-    name: identifier
-  };
-}
-
