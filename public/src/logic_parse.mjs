@@ -22,9 +22,10 @@ export function logic_parse(input) {
         };
         let r = logic_parse_recursive(input, add_1(index))
         let {result:child} =r;
-        let {index:child_index} = r;
+        let {next} = r;
+        index = next
       } else if (c === ")") {
-        return {result,index};
+        return {result,next:add_1(index)};
       }
     }
   }
