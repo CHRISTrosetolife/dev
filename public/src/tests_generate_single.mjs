@@ -1,3 +1,4 @@
+import { json_to } from "./json_to.mjs";
 import { string_is } from "./string_is.mjs";
 import { string_delimit } from "./string_delimit.mjs";
 import { log } from "./log.mjs";
@@ -20,7 +21,7 @@ export async function tests_generate_single(function_name, args, test_number) {
     if (string_is(arg)) {
       return string_delimit(arg);
     }
-    return arg;
+    return json_to(arg);
   });
   await function_new_generic(
     `${function_name}_test_${test_number}`,
