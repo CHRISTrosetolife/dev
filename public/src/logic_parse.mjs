@@ -1,3 +1,4 @@
+import { greater_than_equal } from "./greater_than_equal.mjs";
 import { not } from "./not.mjs";
 import { equal_0 } from "./equal_0.mjs";
 import { log } from "./log.mjs";
@@ -75,6 +76,7 @@ export function logic_parse(input) {
       }
     }
     assert(not, [open]);
+    assert(greater_than_equal, [string_length(identifier)]);
     error();
   }
 }
