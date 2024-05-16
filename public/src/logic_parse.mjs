@@ -8,7 +8,9 @@ import { string_length } from "./string_length.mjs";
 import { string_letters_is } from "./string_letters_is.mjs";
 export function logic_parse(input) {
   let index = 0;
-  return logic_parse_recursive(input, index)
+  let r = logic_parse_recursive(input, index)
+  let {result} = r;
+  return result;
   function logic_parse_recursive(input, index) {
     console.log({input,index})
     let open = false;
