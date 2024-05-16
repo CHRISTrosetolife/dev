@@ -36,7 +36,7 @@ export function logic_parse(input) {
         if (open) {
           return {result,next:add_1(index)};
         }
-        return {type:'empty', next:index}
+        return {result:{type:'empty'}, next:index}
       }
       index = add_1(index)
     }
