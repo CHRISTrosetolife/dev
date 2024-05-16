@@ -16,8 +16,10 @@ export async function tests_generate_single(function_name, args, test_number) {
     assert_boolean(!string_includes(arg, string_delimeter));
   }
   let args_mapped = list_map(args, (arg) => {
-    let result = string_delimit(arg);
-    return result;
+    if (string_is(arg)) {
+        return string_delimit(arg);
+    }
+    return arg;
   });
   await function_new_generic(
     `${function_name}_test_${test_number}`,
