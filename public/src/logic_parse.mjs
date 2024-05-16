@@ -77,6 +77,11 @@ export function logic_parse(input) {
     }
     assert(not, [open]);
     assert(greater_than_equal, [string_length(identifier), 1]);
-    error();
+    return {
+      result: {
+        type: "variable",
+      },
+      next: index,
+    };
   }
 }
