@@ -1,3 +1,4 @@
+import { string_is } from "./string_is.mjs";
 import { string_delimit } from "./string_delimit.mjs";
 import { log } from "./log.mjs";
 import { list_concat } from "./list_concat.mjs";
@@ -17,7 +18,7 @@ export async function tests_generate_single(function_name, args, test_number) {
   }
   let args_mapped = list_map(args, (arg) => {
     if (string_is(arg)) {
-        return string_delimit(arg);
+      return string_delimit(arg);
     }
     return arg;
   });
