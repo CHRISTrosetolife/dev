@@ -29,7 +29,10 @@ export function logic_parse(input) {
         };
         let r = logic_parse_recursive(input, add_1(index))
         let {result:child} =r;
-        list_add(args,child)
+        let {type:child_type} = child;
+        if (child_type !== 'empty') {
+          list_add(args,child)
+        }
         let {next} = r;
         index = next
       } else if (c === ")") {
