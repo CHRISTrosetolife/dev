@@ -16,25 +16,14 @@ export function logic_parse(input) {
   let index = 0;
   let r = logic_parse_recursive(input, index);
   let { result, next } = r;
-  console.log({
-    input,
-    r,
-  });
   assert(equal, [next, string_length(input)]);
   return result;
   function logic_parse_recursive(input, index) {
-    console.log({
-      input,
-      index,
-    });
     let open = false;
     let result;
     let identifier = "";
     while (number_less_than(index, string_length(input))) {
       let c = string_get(input, index);
-      console.log({
-        c,
-      });
       if (string_letters_is(c)) {
         identifier = string_combine(identifier, c);
         index = add_1(index);
@@ -49,9 +38,6 @@ export function logic_parse(input) {
         }
         let { args } = result;
         let r = logic_parse_recursive(input, add_1(index));
-        console.log({
-          r,
-        });
         let { result: child } = r;
         let { type: child_type } = child;
         if (child_type !== "empty") {
