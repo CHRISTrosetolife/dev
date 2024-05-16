@@ -1,3 +1,3 @@
 export function not(b) {
-  !b;
+  return !b;
 }
