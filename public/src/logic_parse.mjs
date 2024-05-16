@@ -1,4 +1,4 @@
-import { logic_parse_variable } from "./logic_parse_variable.mjs";
+import { logic_parse_identifier } from "./logic_parse_identifier.mjs";
 import { greater_than_equal } from "./greater_than_equal.mjs";
 import { not } from "./not.mjs";
 import { equal_0 } from "./equal_0.mjs";
@@ -43,7 +43,7 @@ export function logic_parse(input) {
           open = true;
           result = {
             type: "call",
-            caller: logic_parse_variable(identifier),
+            callee: logic_parse_identifier(identifier),
             args: [],
           };
         }
@@ -66,11 +66,16 @@ export function logic_parse(input) {
             next: add_1(index),
           };
         }
-        assert(equal_0, [string_length(identifier)]);
+        if (equal_0(string_length(identifier))){
+          return {
+            result: {
+              type: "empty",
+            },
+            next: index,
+          };
+        }
         return {
-          result: {
-            type: "empty",
-          },
+          result: logic_parse_identifier(identifier),
           next: index,
         };
       }
@@ -78,7 +83,7 @@ export function logic_parse(input) {
     assert(not, [open]);
     assert(greater_than_equal, [string_length(identifier), 1]);
     return {
-      result: logic_parse_variable(identifier),
+      result: logic_parse_identifier(identifier),
       next: index,
     };
   }
