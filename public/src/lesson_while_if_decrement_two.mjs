@@ -17,7 +17,7 @@ export function lesson_while_if_decrement_two() {
         js_code_statement_decrement(name),
         `}`,
         `if (${name} >= ${value}) {`,
-        app_learn_code_log(`'value second ' + ${name}`),
+        app_learn_code_log(`'inside second ' + ${name}`),
         js_code_statement_decrement(name),
         `}`,
         app_learn_code_log(`'after ' + ${name}`),
