@@ -73,6 +73,7 @@ export function logic_parse(input) {
         };
       }
     }
+    assert(not, [open]);
     error();
   }
 }
