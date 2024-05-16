@@ -1,5 +1,16 @@
 import { tests_generate_single } from "./tests_generate_single.mjs";
 import { logic_parse } from "./logic_parse.mjs";
-export function sandbox() {
-  tests_generate_single(logic_parse.name, ["a(b(),c(d(),e(),f()))"], 7);
+export async function sandbox() {
+  let inputs = [
+    "a()",
+    "a(b())",
+    "a(b(c()))",
+    "a(b(c(),d()))",
+    "a(b(c(),d(e())))",
+    "a(b(c(),d(e(),f())))",
+    "a(b(c(),d(e(),f(),g())))",
+  ];
+  await each_index_async(inputs, (input, index) => {
+    tests_generate_single(logic_parse.name, ["a(b(),c(d(),e(),f()))"], 7);
+  });
 }
