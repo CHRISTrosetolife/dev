@@ -22,6 +22,7 @@ export function logic_parse(input) {
         };
         let r = logic_parse_recursive(input, add_1(index))
         let {result:child} =r;
+        let {index:child_index} = r;
       } else if (c === ")") {
         return {result,index};
       }
