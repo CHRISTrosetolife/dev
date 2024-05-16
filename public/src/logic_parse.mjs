@@ -19,7 +19,6 @@ export function logic_parse(input) {
   assert(equal, [next, string_length(input)]);
   return result;
   function logic_parse_recursive(input, index) {
-    console.log('enter',{input,index})
     let open = false;
     let result;
     let identifier = "";
@@ -38,7 +37,6 @@ export function logic_parse(input) {
           };
         }
         if (not(open)) {
-          console.log('here')
           return {
             result: logic_parse_identifier(identifier),
             next: index,
