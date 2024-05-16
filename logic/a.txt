@@ -1,2 +1,3 @@
 equal(add(a,successor(b)),add(successor(a),b))
 equal(add(a,zero()),a)
+equal(visit(a,b(c)),visit(a,b)(visit(a,c)))
