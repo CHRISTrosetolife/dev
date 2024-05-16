@@ -19,6 +19,7 @@ export function logic_parse(input) {
       console.log({c})
       if (string_letters_is(c)) {
         identifier = string_combine(identifier, c);
+        index = add_1(index)
       } else if (c === "(") {
         open = true;
         let args = []
@@ -28,6 +29,7 @@ export function logic_parse(input) {
           args,
         };
         let r = logic_parse_recursive(input, add_1(index))
+        console.log({r})
         let {result:child} =r;
         let {type:child_type} = child;
         if (child_type !== 'empty') {
@@ -41,7 +43,6 @@ export function logic_parse(input) {
         }
         return {result:{type:'empty'}, next:index}
       }
-      index = add_1(index)
     }
     error()
   }
