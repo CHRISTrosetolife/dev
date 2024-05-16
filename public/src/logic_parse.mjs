@@ -10,13 +10,17 @@ export function logic_parse(input) {
   let index = 0;
   return logic_parse_recursive(input, index)
   function logic_parse_recursive(input, index) {
+    console.log({input,index})
+    let open = false;
     let result;
     let identifier = "";
     while (number_less_than(index, string_length(input))) {
       let c = string_get(input, index);
+      console.log({c})
       if (string_letters_is(c)) {
         identifier = string_combine(identifier, c);
       } else if (c === "(") {
+        open = true;
         let args = []
         result = {
           name: identifier,
@@ -29,7 +33,10 @@ export function logic_parse(input) {
         let {next} = r;
         index = next
       } else if (c === ")") {
-        return {result,next:add_1(index)};
+        if (open) {
+          return {result,next:add_1(index)};
+        }
+        return {type:'empty', next:index}
       }
       index = add_1(index)
     }
