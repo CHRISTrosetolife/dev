@@ -22,7 +22,7 @@ export function logic_parse(input) {
       if (string_letters_is(c)) {
         identifier = string_combine(identifier, c);
         index = add_1(index)
-      } else if (c === "(") {
+      } else if (c === "(" || c === ',') {
         open = true;
         let args = []
         result = {
