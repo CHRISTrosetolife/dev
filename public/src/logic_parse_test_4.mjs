@@ -7,6 +7,10 @@ export function logic_parse_test_4() {
         "name": "a",
         "type": "function",
         "args": [{
+            "name": "b",
+            "type": "function",
+            "args": []
+        }, {
             "name": "c",
             "type": "function",
             "args": []
