@@ -5,7 +5,7 @@ import { string_replace } from "./string_replace.mjs";
 import { file_transform } from "./file_transform.mjs";
 import { marker } from "./marker.mjs";
 import { string_combine } from "./string_combine.mjs";
-import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
+import { list_add } from "./list_add.mjs";
 export function lesson_new(name) {
   file_transform(
     (before) => {
@@ -15,7 +15,8 @@ export function lesson_new(name) {
         before,
         search,
         string_combine(
-          js_code_statement_assign(module_current, js_code_call_args),
+          js_code_statement_call_args(list_add.name, js_code_call_args),
+          search,
         ),
       );
       let parsed = js_parse(after);
