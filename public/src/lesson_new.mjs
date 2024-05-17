@@ -29,7 +29,7 @@ export async function lesson_new(previous, name) {
         ),
       );
       let parsed = js_parse(after);
-      js_imports_add(parsed);
+      await js_imports_add(parsed);
       return js_unparse(parsed);
     },
     file_path,
