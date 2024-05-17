@@ -6,11 +6,10 @@ import { lesson_simple } from "./lesson_simple.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
+import { string_combine } from "./string_combine.mjs";
 export function lesson_array_two() {
-  let description =
-    "`for` loop with a counter with no `console.log` inside - larger";
-  let example_message =
-    "with a `for` loop with a counter with no `console.log` inside of the `for` loop with a larger count";
+  let description = "array with two items";
+  let example_message = string_combine("with an ", description);
   return lesson_simple(
     function () {
       let { name, value, loop_end } = lesson_while_generic(
