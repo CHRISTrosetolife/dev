@@ -1,3 +1,4 @@
+import { lesson_new_name } from "./lesson_new_name.mjs";
 import { js_unparse } from "./js_unparse.mjs";
 import { js_imports_add } from "./js_imports_add.mjs";
 import { js_parse } from "./js_parse.mjs";
@@ -10,7 +11,8 @@ import { marker } from "./marker.mjs";
 import { file_transform } from "./file_transform.mjs";
 import { app_learn_code_modules } from "./app_learn_code_modules.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
-export async function lesson_new_modules_add(lesson_name) {
+export async function lesson_new_modules_add(name) {
+  let lesson_name = lesson_new_name(name);
   let file_path = function_name_to_path(app_learn_code_modules.name);
   await file_transform(
     async (before) => {

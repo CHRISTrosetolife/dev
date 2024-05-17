@@ -4,5 +4,5 @@ import { function_copy } from "./function_copy.mjs";
 export async function lesson_new(name, previous) {
   let lesson_name = lesson_new_name(name);
   await function_copy(previous, lesson_name);
-  await lesson_new_modules_add(lesson_name);
+  await lesson_new_modules_add(name);
 }
