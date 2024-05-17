@@ -1,3 +1,5 @@
+import { html_style_bold } from "./html_style_bold.mjs";
+import { html_style_monospace_bold } from "./html_style_monospace_bold.mjs";
 import { html_style_alternate_short_p } from "./html_style_alternate_short_p.mjs";
 import { lesson_while_generic_1 } from "./lesson_while_generic_1.mjs";
 import { html_style_alternate_monospace_short_multiple } from "./html_style_alternate_monospace_short_multiple.mjs";
@@ -38,8 +40,18 @@ export function lesson_while_while() {
       "a `while` is an `if` that runs over and over",
       "a `while` will be ran until what is in between the parenthesis is `false`",
     ]);
-    html_style_alternate_short_p(parent, [noop, app_learn_code_style_code_colored, noop, ], [
-      "because a `while` runs over and over , sometimes it is called a `while` loop",
-    ]);
+    html_style_alternate_short_p(
+      parent,
+      [
+        noop,
+        app_learn_code_style_code_colored,
+        noop,
+        html_style_monospace_bold,
+        html_style_bold,
+      ],
+      [
+        "because a `while` runs over and over , sometimes it is called a `while` loop",
+      ],
+    );
   }
 }
