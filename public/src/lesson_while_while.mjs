@@ -34,6 +34,7 @@ export function lesson_while_while() {
       "a `while` is similar to an `if`",
       "a `while` is an `if` that runs over and over",
       "a `while` will be ran until what is in between the parenthesis is `false`",
+      "because a `while` runs over and over , sometimes it is called a `while` loop",
     ]);
   }
 }
