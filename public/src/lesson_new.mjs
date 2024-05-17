@@ -1,5 +1,5 @@
+import { js_code_statement_call_args } from "./js_code_statement_call_args.mjs";
 import { js_parse } from "./js_parse.mjs";
-import { js_code_call_args } from "./js_code_call_args.mjs";
 import { js_code_statement_call } from "./js_code_statement_call.mjs";
 import { string_replace } from "./string_replace.mjs";
 import { file_transform } from "./file_transform.mjs";
@@ -14,10 +14,7 @@ export function lesson_new(name) {
       let after = string_replace(
         before,
         search,
-        string_combine(
-          js_code_statement_call_args(list_add.name, js_code_call_args),
-          search,
-        ),
+        string_combine(js_code_statement_call_args(list_add.name), search),
       );
       let parsed = js_parse(after);
     },
