@@ -49,9 +49,7 @@ export function lesson_while_while() {
         html_style_monospace_bold,
         html_style_bold,
       ],
-      [
-        "because a `while` runs over and over , sometimes it is called a `while` loop",
-      ],
+      "because a `while` runs over and over , sometimes it is called a `while` loop",
     );
   }
 }
