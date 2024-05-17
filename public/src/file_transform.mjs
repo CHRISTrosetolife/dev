@@ -1,8 +1,8 @@
-import { file_write_json } from "./file_write_json.mjs";
-import { file_read_json } from "./file_read_json.mjs";
+import { file_overwrite } from "./file_overwrite.mjs";
+import { file_read } from "./file_read.mjs";
 export async function file_transform(lambda, file_path, args) {
-  let obj = await file_read_json(file_path);
+  let obj = await file_read(file_path);
   let result = await lambda(obj, ...args);
-  await file_write_json(file_path, obj);
+  await file_overwrite(file_path, obj);
   return result;
 }
