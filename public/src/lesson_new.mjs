@@ -9,10 +9,10 @@ import { string_combine } from "./string_combine.mjs";
 import { list_add } from "./list_add.mjs";
 import { js_imports_add } from "./js_imports_add.mjs";
 import { js_unparse } from "./js_unparse.mjs";
-export async function lesson_new(name, previous) {
+export async function lesson_new(previous, name) {
   const prefix = "lesson_";
   let lesson_name = string_combine(prefix, name);
-  await function_copy();
+  await function_copy(previous, lesson_name);
   await file_transform(
     async (before) => {
       let name = marker.name;
