@@ -10,10 +10,12 @@ import { list_add } from "./list_add.mjs";
 import { js_imports_add } from "./js_imports_add.mjs";
 import { js_unparse } from "./js_unparse.mjs";
 import { file_open } from "./file_open.mjs";
+import { function_name_to_path } from "./function_name_to_path.mjs";
 export async function lesson_new(name, previous) {
   const prefix = "lesson_";
   let lesson_name = string_combine(prefix, name);
   await function_copy(previous, lesson_name);
+  let file_path = function_name_to_path(lesson_name)
   await file_transform(
     async (before) => {
       let name = marker.name;
@@ -36,5 +38,6 @@ export async function lesson_new(name, previous) {
     file_path,
     [],
   );
+  if (0)
   await file_open(lesson_name)
 }
