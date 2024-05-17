@@ -1,9 +1,26 @@
+import { js_parse } from "./js_parse.mjs";
+import { js_code_call_args } from "./js_code_call_args.mjs";
+import { js_code_statement_call } from "./js_code_statement_call.mjs";
 import { string_replace } from "./string_replace.mjs";
 import { file_transform } from "./file_transform.mjs";
+import { marker } from "./marker.mjs";
+import { string_combine } from "./string_combine.mjs";
+import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
 export function lesson_new(name) {
-  file_transform((before) => {
-    let after = string_replace(before, )
-    
-  let parsed = js_parse(after);
-  }, file_path, []);
+  file_transform(
+    (before) => {
+      let name = marker.name;
+      const search = js_code_statement_call(name);
+      let after = string_replace(
+        before,
+        search,
+        string_combine(
+          js_code_statement_assign(module_current, js_code_call_args),
+        ),
+      );
+      let parsed = js_parse(after);
+    },
+    file_path,
+    [],
+  );
 }
