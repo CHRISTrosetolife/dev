@@ -18,7 +18,6 @@ export async function lesson_new_modules_add(name) {
     async (before) => {
       let name = marker.name;
       const search = js_code_statement_call(name);
-      console.log({search,before})
       let after = string_replace(
         before,
         search,
@@ -30,6 +29,7 @@ export async function lesson_new_modules_add(name) {
           search,
         ),
       );
+      console.log(after)
       let parsed = js_parse(after);
       await js_imports_add(parsed);
       return js_unparse(parsed);
