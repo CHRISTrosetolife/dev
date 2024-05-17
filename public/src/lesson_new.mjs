@@ -9,6 +9,7 @@ import { string_combine } from "./string_combine.mjs";
 import { list_add } from "./list_add.mjs";
 import { js_imports_add } from "./js_imports_add.mjs";
 import { js_unparse } from "./js_unparse.mjs";
+import { file_open } from "./file_open.mjs";
 export async function lesson_new(previous, name) {
   const prefix = "lesson_";
   let lesson_name = string_combine(prefix, name);
@@ -35,4 +36,5 @@ export async function lesson_new(previous, name) {
     file_path,
     [],
   );
+  await file_open(lesson_name)
 }
