@@ -1,4 +1,4 @@
-import { function_auto_transforms } from "./function_auto_transforms.mjs";
+import { function_copy } from "./function_copy.mjs";
 import { js_code_statement_call_args } from "./js_code_statement_call_args.mjs";
 import { js_parse } from "./js_parse.mjs";
 import { js_code_statement_call } from "./js_code_statement_call.mjs";
@@ -7,10 +7,13 @@ import { file_transform } from "./file_transform.mjs";
 import { marker } from "./marker.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { list_add } from "./list_add.mjs";
-export function lesson_new(name) {
+import { js_imports_add } from "./js_imports_add.mjs";
+import { js_unparse } from "./js_unparse.mjs";
+export async function lesson_new(name, previous) {
   let lesson_name = string_combine("lesson_", name);
-  file_transform(
-    (before) => {
+  function_copy();
+  await file_transform(
+    async (before) => {
       let name = marker.name;
       const search = js_code_statement_call(name);
       let after = string_replace(
@@ -25,8 +28,8 @@ export function lesson_new(name) {
         ),
       );
       let parsed = js_parse(after);
-      for (let t of function_auto_transforms()) {
-      }
+      js_imports_add(parsed);
+      return js_unparse(parsed);
     },
     file_path,
     [],
