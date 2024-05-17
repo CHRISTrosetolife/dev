@@ -7,6 +7,8 @@ import { lesson_simple } from "./lesson_simple.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { string_combine } from "./string_combine.mjs";
+import { noop } from "./noop.mjs";
+import { app_learn_code_style_code_colored } from "./app_learn_code_style_code_colored.mjs";
 export function lesson_while_while() {
   let description = "`while` loop";
   let example_message = string_combine("with a ", description);
@@ -36,7 +38,7 @@ export function lesson_while_while() {
       "a `while` is an `if` that runs over and over",
       "a `while` will be ran until what is in between the parenthesis is `false`",
     ]);
-    html_style_alternate_short_p(parent, [
+    html_style_alternate_short_p(parent, [noop, app_learn_code_style_code_colored, noop, ], [
       "because a `while` runs over and over , sometimes it is called a `while` loop",
     ]);
   }
