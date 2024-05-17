@@ -1,6 +1,6 @@
 equal(add(.x)(successor(.y)))(add(successor(.x))(.y))
 equal(add(.x)(_zero))(.x)
 equal(add(_zero)(_zero))(_zero)
-equal(replace(.a)(.b)(.c))(if(and(any_zero(.a))(same(.a)(.c)))(.b)(.c))
+equal(replace(.a)(.b)(.c))(if(and(any_zeroed(.a))(same(.a)(.c)))(.b)(.c))
 equal(visit(.f(.x)))(visit(.f)(visit(.x)))
-equal(any_zero(any(.a)))()
+equal(any_zeroed(any(.a)))()
