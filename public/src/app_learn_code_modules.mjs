@@ -1,3 +1,4 @@
+import { marker } from "./marker.mjs";
 import { lesson_array_two } from "./lesson_array_two.mjs";
 import { lesson_for_increment_two } from "./lesson_for_increment_two.mjs";
 import { lesson_for_iterations } from "./lesson_for_iterations.mjs";
@@ -172,7 +173,7 @@ export function app_learn_code_modules() {
   list_add(module_current, lesson_for_iterations_log_outside);
   list_add(module_current, lesson_for_iterations_log_outside_large);
   module_current = module_new(modules, "objects");
-  marker()
+  marker();
   module_current = module_new(modules, "arrays ( lists )");
   list_add(module_current, lesson_array_two);
   return modules;
