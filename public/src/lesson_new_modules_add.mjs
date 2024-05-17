@@ -29,10 +29,11 @@ export async function lesson_new_modules_add(name) {
           search,
         ),
       );
-      console.log(after)
       let parsed = js_parse(after);
       await js_imports_add(parsed);
-      return js_unparse(parsed);
+      let result = js_unparse(parsed);
+      console.log(result)
+      return result;
     },
     file_path,
     [],
