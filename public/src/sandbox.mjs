@@ -32,7 +32,6 @@ export async function sandbox() {
     let { text } = TEI;
     let { body } = text;
     assert(equal_json, [object_properties(body), ["div"]]);
-    let { div } = body;
     assert(equal_json, [object_properties(div), ["head", "p"]]);
     let parts = list_adder((la) => {
       let { p, head } = div;
