@@ -19,8 +19,7 @@ export function lesson_object_properties_two() {
         js_code_statement_let_assign(a, js_code_braces()),
         js_code_assign(js_code_dot(a, b), d),
         js_code_assign(js_code_dot(a, c), e),
-        app_learn_code_log(js_code_dot(a, b)),
-        app_learn_code_log(js_code_dot(a, c)),
+        app_learn_code_log(`${js_code_dot(a, b)} + ' ' + ${js_code_dot(a, c)}`),
       ];
       return list_join_newline(lines);
     },
