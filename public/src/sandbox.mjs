@@ -5,7 +5,7 @@ import { yyy8Uu_parts } from "./yyy8Uu_parts.mjs";
 import { each_index_async } from "./each_index_async.mjs";
 import { yyy8Uu_file_path_to_parts } from "./yyy8Uu_file_path_to_parts.mjs";
 export async function sandbox() {
-  gcloud_translate("en", "es", sandbox_texts, ["john"]);
+  gcloud_translate("en", "es", sandbox_texts.name, ["john"]);
   let index = 0;
   let result = await yyy8Uu_parts(index);
   return result;
