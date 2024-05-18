@@ -221,10 +221,11 @@ export function app_learn_code() {
     let button_previous = html_button_width_full_text_click(
       root,
       "⬅️ previous",
-      async function on_click() {
-        await refresh_lesson_screen(subtract_1(index));
-      },
+      previous_on_click,
     );
+    async function previous_on_click() {
+      await refresh_lesson_screen(subtract_1(index));
+    }
     if (equal(index, 0)) {
       html_disable(button_previous);
     }
