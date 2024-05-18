@@ -3,13 +3,16 @@ import { TranslationServiceClient } from "@google-cloud/translate";
 export async function gcloud_translate(
   sourceLanguageCode,
   targetLanguageCode,
+  mimeType,
   text,
 ) {
+    "text/plain"
+    "text/html"
   const translationClient = new TranslationServiceClient();
   const request = {
     parent: `projects/letjesusbeexalted/locations/global`,
     contents: [text],
-    mimeType: "text/plain",
+    mimeType,
     sourceLanguageCode: sourceLanguageCode,
     targetLanguageCode: targetLanguageCode,
   };
