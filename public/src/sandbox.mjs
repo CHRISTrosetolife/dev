@@ -18,6 +18,6 @@ export async function sandbox() {
     let { body } = text;
     assert(equal_json, [object_properties(body), ["div"]]);
     let {div} = body;
-    console.log({div})
+    console.log(object_properties(div))
   }
 }
