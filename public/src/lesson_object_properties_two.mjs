@@ -34,5 +34,8 @@ export function lesson_object_properties_two() {
     "an `object` can store more than one value";
     "`{}` creates a new object";
     "here is code to create a new object and assign it to a variable: ";
+    "an object can have its own variables called `properties`";
+    "a variable has a name and a value";
+    "a property has a name and a value";
   }
 }
