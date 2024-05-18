@@ -10,9 +10,9 @@ export async function sandbox() {
   for (let f of filtered) {
     let input_string = await file_read(f);
     let parsed = xml_parse(input_string);
-    let {TEI} = parsed;
-    let {text} = TEI;
-    let {body } = text;
+    let { TEI } = parsed;
+    let { text } = TEI;
+    let { body } = text;
     return body;
   }
 }
