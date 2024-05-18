@@ -10,6 +10,8 @@ import { html_style_default_initialize } from "./html_style_default_initialize.m
 import { html_inner_set } from "./html_inner_set.mjs";
 import { json_to } from "./json_to.mjs";
 import { range } from "./range.mjs";
+import { html_p_text } from "./html_p_text.mjs";
+import { list_get } from "./list_get.mjs";
 export async function app_yyy8Uu() {
   html_style_default_initialize();
   let root = html_document_body();
@@ -21,6 +23,8 @@ export async function app_yyy8Uu() {
     let { english, latin } = chapter;
     let indices = range(english);
     for (let i of indices) {
+        html_p_text(root, list_get(latin, i))
+        html_p_text(root, list_get(english, i))
     }
     html_inner_set(root, json_to(chapter));
     html_hr(root);
