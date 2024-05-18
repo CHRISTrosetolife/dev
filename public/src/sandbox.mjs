@@ -13,6 +13,7 @@ import { file_read } from "./file_read.mjs";
 import { assert } from "./assert.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_single } from "./list_single.mjs";
+import { object_property_get } from "./object_property_get.mjs";
 export async function sandbox() {
   let path = "C:\\Users\\JESUS\\Downloads\\yyy8Uu-master\\yyy8Uu-master";
   let files = await folder_read(path, ".xml");
@@ -27,7 +28,8 @@ export async function sandbox() {
     let divs = list_single(bodies).getElementsByTagName("div");
     assert(equal, [list_length(divs), 1]);
     let div = list_single(divs)
-    return div
+    let {childNodes} = div
+    return list_map(childNodes, c => object_property_get(c, 'rawText'))
     continue;
     let { TEI } = parsed;
     let { text } = TEI;
