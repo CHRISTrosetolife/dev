@@ -11,8 +11,8 @@ import { yyy8Uu_file_path_to_parts } from "./yyy8Uu_file_path_to_parts.mjs";
 import { list_single } from "./list_single.mjs";
 export async function sandbox() {
   for (let index of [0, 1]) {
-    let la = await yyy8Uu_parts(index);
-    let en = await list_adder_async(async (la) => {
+    let latin = await yyy8Uu_parts(index);
+    let english = await list_adder_async(async (la) => {
       await each_index_async(la, async (part, index2) => {
         let translateds = await gcloud_translate_cache(
           "la",
@@ -27,8 +27,8 @@ export async function sandbox() {
     let destination = yyy8Uu_storage_path(index);
     await storage_upload_object(
       {
-        en,
-        la,
+        english,
+        latin,
       },
       destination,
     );
