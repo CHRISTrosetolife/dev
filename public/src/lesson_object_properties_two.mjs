@@ -1,3 +1,4 @@
+import { js_code_braces } from "./js_code_braces.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 import { app_learn_code_random_identifiers } from "./app_learn_code_random_identifiers.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
@@ -15,7 +16,10 @@ export function lesson_object_properties_two() {
       let identifiers = app_learn_code_random_identifiers(3);
       let a = list_get(identifiers, 0);
       list_sort_string(identifiers, identity);
-      let lines = [js_code_statement_let_assign(a,'{}'), app_learn_code_log(`counter`)];
+      let lines = [
+        js_code_statement_let_assign(a, js_code_braces()),
+        app_learn_code_log(`counter`),
+      ];
       return list_join_newline(lines);
     },
     example_before,
