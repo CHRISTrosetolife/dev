@@ -19,7 +19,8 @@ export async function sandbox() {
   for (let f of filtered) {
     let input_string = await file_read(f);
     let parsed = html_parse(input_string);
-    assert(equal, [list_length(parsed.childNodes), 2]);
+    let teis = parsed.getElementsByTagName('TEI')
+    assert(equal, [list_length(teis), 1]);
     continue;
     let { TEI } = parsed;
     let { text } = TEI;
