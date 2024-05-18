@@ -6,6 +6,7 @@ import { yyy8Uu_file_paths } from "./yyy8Uu_file_paths.mjs";
 import { yyy8Uu_parts } from "./yyy8Uu_parts.mjs";
 import { each_index_async } from "./each_index_async.mjs";
 import { yyy8Uu_file_path_to_parts } from "./yyy8Uu_file_path_to_parts.mjs";
+import { list_single } from "./list_single.mjs";
 export async function sandbox() {
   for (let index of [0, 1]) {
     let parts = await yyy8Uu_parts(index);
@@ -15,10 +16,11 @@ export async function sandbox() {
           index,
           index2,
         });
-        let translated = await gcloud_translate_cache("la", "en", yyy8Uu_part.name, [
+        let translateds = await gcloud_translate_cache("la", "en", yyy8Uu_part.name, [
           index,
           index2,
         ]);
+        let translated = list_single(translateds)
         console.log({translated})
       });
     });
