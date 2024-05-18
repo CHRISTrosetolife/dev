@@ -24,6 +24,8 @@ export async function sandbox() {
     assert(equal, [list_length(teis), 1]);
     let bodies = list_single(teis).getElementsByTagName("body");
     assert(equal, [list_length(bodies), 1]);
+    let divs = list_single(bodies).getElementsByTagName("div");
+    assert(equal, [list_length(divs), 1]);
     continue;
     let { TEI } = parsed;
     let { text } = TEI;
