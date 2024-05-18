@@ -12,7 +12,7 @@ import { list_single } from "./list_single.mjs";
 import { list_first } from "./list_first.mjs";
 export async function sandbox() {
   for (let index of [2,3,4,5,6]) {
-    let chapters = await list_adder_async(async la_outer => {
+    let firsts = await list_adder_async(async la_outer => {
         let latin = await yyy8Uu_parts(index);
         let english = await list_adder_async(async (la) => {
           await each_index_async(latin, async (part, index2) => {
@@ -36,7 +36,14 @@ export async function sandbox() {
           },
           destination,
         );
-    })
+    });
+    let destination = yyy8Uu_storage_path('index');
+    await storage_upload_object(
+      {
+        firsts,
+      },
+      destination,
+    );
   }
   return;
   let filtered = await yyy8Uu_file_paths();
