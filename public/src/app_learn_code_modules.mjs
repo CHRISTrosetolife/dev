@@ -175,8 +175,8 @@ export function app_learn_code_modules() {
     list_add(module_current, lesson_for_iterations_log_outside);
     list_add(module_current, lesson_for_iterations_log_outside_large);
     module_current = module_new(modules, "objects");
-    list_add(module_current, lesson_object_properties_two);
     list_add(module_current, lesson_object_property);
+    list_add(module_current, lesson_object_properties_two);
     marker();
     module_current = module_new(modules, "arrays ( lists )");
     list_add(module_current, lesson_array_two);
