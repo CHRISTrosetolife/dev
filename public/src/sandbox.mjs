@@ -12,10 +12,6 @@ export async function sandbox() {
     let parts = await yyy8Uu_parts(index);
     let list = await list_adder_async(async (la) => {
       await each_index_async(parts, async (part, index2) => {
-        log({
-          index,
-          index2,
-        });
         let translateds = await gcloud_translate_cache("la", "en", yyy8Uu_part.name, [
           index,
           index2,
