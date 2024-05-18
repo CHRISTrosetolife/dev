@@ -19,6 +19,7 @@ export async function sandbox() {
   let files = await folder_read(path, ".xml");
   let filtered = list_filter(files, (f) => string_includes(f, "\\cod-"));
   for (let f of filtered) {
+    log(f)
     let input_string = await file_read(f);
     let parsed = html_parse(input_string);
     let teis = parsed.getElementsByTagName("TEI");
