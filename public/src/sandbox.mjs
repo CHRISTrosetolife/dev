@@ -17,6 +17,7 @@ export async function sandbox() {
     let { text } = TEI;
     let { body } = text;
     assert(equal_json, [object_properties(body), ["div"]]);
-    console.log({body})
+    let {div} = body;
+    console.log({div})
   }
 }
