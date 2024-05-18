@@ -20,7 +20,7 @@ export async function gcloud_translate(
     sourceLanguageCode: sourceLanguageCode,
     targetLanguageCode: targetLanguageCode,
   };
-  const response = await translationClient.translateText(request);
+  const [response] = await translationClient.translateText(request);
   let { translations } = response;
   return translations;
   let result = list_map(translations, (t) => t.translatedText);
