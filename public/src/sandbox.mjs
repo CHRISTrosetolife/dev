@@ -27,15 +27,16 @@ export async function sandbox() {
         });
       });
       la_outer(list_first(english));
-      return;
-      let destination = yyy8Uu_storage_path(index);
-      await storage_upload_object(
-        {
-          english,
-          latin,
-        },
-        destination,
-      );
+      if (false) {
+        let destination = yyy8Uu_storage_path(index);
+        await storage_upload_object(
+          {
+            english,
+            latin,
+          },
+          destination,
+        );
+      }
     });
     let destination = yyy8Uu_storage_path("index");
     await storage_upload_object(
