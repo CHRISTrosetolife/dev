@@ -1,6 +1,6 @@
 import { string_replace } from "./string_replace.mjs";
 import { folder_read } from "./folder_read.mjs";
 export async function sandbox() {
-  let path = "C:\\Users\\JESUS\\Downloads\\yyy8Uu-master\\yyy8Uu-master\\";
+  let path = "C:\\Users\\JESUS\\Downloads\\yyy8Uu-master\\yyy8Uu-master";
   return await folder_read(path, ".xml");
 }
