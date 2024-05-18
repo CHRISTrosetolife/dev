@@ -12,6 +12,7 @@ import { list_filter } from "./list_filter.mjs";
 import { file_read } from "./file_read.mjs";
 import { assert } from "./assert.mjs";
 import { list_map } from "./list_map.mjs";
+import { list_single } from "./list_single.mjs";
 export async function sandbox() {
   let path = "C:\\Users\\JESUS\\Downloads\\yyy8Uu-master\\yyy8Uu-master";
   let files = await folder_read(path, ".xml");
@@ -19,8 +20,10 @@ export async function sandbox() {
   for (let f of filtered) {
     let input_string = await file_read(f);
     let parsed = html_parse(input_string);
-    let teis = parsed.getElementsByTagName('TEI')
+    let teis = parsed.getElementsByTagName("TEI");
     assert(equal, [list_length(teis), 1]);
+    let bodies = list_single(teis).getElementsByTagName("body");
+    assert(equal, [list_length(bodies), 1]);
     continue;
     let { TEI } = parsed;
     let { text } = TEI;
