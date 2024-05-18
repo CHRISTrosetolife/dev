@@ -28,8 +28,8 @@ export async function js_call_append(ast, a) {
     js_variable_declaration_init(node, call);
   }
   list_add(body, node);
-  let path = function_name_to_path(function_name);
-  if (await file_exists(path)) {
+  let function_path = function_name_to_path(function_name);
+  if (await file_exists(function_path)) {
     js_imports_add_specified(ast, [function_name]);
   }
 }

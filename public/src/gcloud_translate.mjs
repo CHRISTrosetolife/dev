@@ -8,7 +8,6 @@ export async function gcloud_translate(
   args,
 ) {
   let contents = await function_run(function_name, args);
-  console.log({contents});
   ("mimeTypes:");
   ("text/plain");
   ("text/html");
