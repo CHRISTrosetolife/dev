@@ -1,13 +1,14 @@
+import { xml_parse } from "./xml_parse.mjs";
 import { string_includes } from "./string_includes.mjs";
-import { log } from "./log.mjs";
 import { folder_read } from "./folder_read.mjs";
 import { list_filter } from "./list_filter.mjs";
+import { file_read } from "./file_read.mjs";
 export async function sandbox() {
   let path = "C:\\Users\\JESUS\\Downloads\\yyy8Uu-master\\yyy8Uu-master";
   let files = await folder_read(path, ".xml");
   let filtered = list_filter(files, (f) => string_includes(f, "\\cod-"));
   for (let f of filtered) {
-    log(f);
-    return;
+    let text = await file_read(f);
+    return xml_parse(text);
   }
 }
