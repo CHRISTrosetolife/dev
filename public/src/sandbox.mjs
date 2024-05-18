@@ -14,6 +14,7 @@ export async function sandbox() {
       targetLanguageCode: targetLanguageCode,
     };
     const [response] = await translationClient.translateText(request);
+    let { translations } = response;
     for (const translation of response.translations) {
       log(`Translation: ${translation.translatedText}`);
     }
