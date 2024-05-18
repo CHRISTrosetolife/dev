@@ -13,5 +13,6 @@ export async function sandbox() {
     let {TEI} = parsed;
     let {text} = TEI;
     let {body } = text;
+    return body;
   }
 }
