@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { equal_json } from "./equal_json.mjs";
 import { object_properties } from "./object_properties.mjs";
 import { xml_parse } from "./xml_parse.mjs";
@@ -17,7 +18,8 @@ export async function sandbox() {
     let { text } = TEI;
     let { body } = text;
     assert(equal_json, [object_properties(body), ["div"]]);
-    let {div} = body;
-    console.log(object_properties(div))
+    let { div } = body;
+    assert(equal_json, [object_properties(div), ["head", "p"]]);
+    console.log(object_properties(div));
   }
 }
