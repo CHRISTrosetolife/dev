@@ -15,6 +15,7 @@ import { string_trim } from "./string_trim.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { list_get } from "./list_get.mjs";
 import { error } from "./error.mjs";
+import { string_replace } from "./string_replace.mjs";
 export async function sandbox() {
   let index = 0;
   let path = "C:\\Users\\JESUS\\Downloads\\yyy8Uu-master\\yyy8Uu-master";
@@ -35,7 +36,8 @@ export async function sandbox() {
   let normalized = list_map(parts, string_whitespace_normalize);
   let trimmed = list_map(normalized, string_trim);
   let non_empty = list_filter(trimmed, string_empty_not_is);
-  for (let part of non_empty) {
+  let mapped = list_map(non_empty, p => string_replace(p, '&amp;'))
+  for (let part of mapped) {
     if (part.match(/.*&[a-z]+;.*/)) {
       log(part);
       error();
