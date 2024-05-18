@@ -23,7 +23,9 @@ export async function app_yyy8Uu() {
     let { english, latin } = chapter;
     let indices = range(english);
     for (let i of indices) {
-        html_p_text(root, list_get(latin, i))
+        const l = list_get(latin, i);
+        console.log({l})
+        html_p_text(root, l)
         html_p_text(root, list_get(english, i))
     }
     html_hr(root);
