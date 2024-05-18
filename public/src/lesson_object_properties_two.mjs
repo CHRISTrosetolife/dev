@@ -8,7 +8,7 @@ export function lesson_object_properties_two() {
   let example_message = string_combine("with an ", description);
   return lesson_simple(
     function () {
-      app_learn_code_random_identifiers;
+      let identifiers = app_learn_code_random_identifiers(3);
       let lines = [app_learn_code_log(`counter`)];
       return list_join_newline(lines);
     },
