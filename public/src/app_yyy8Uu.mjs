@@ -1,6 +1,5 @@
+import { http_storage } from "./http_storage.mjs";
 import { html_style_font_color } from "./html_style_font_color.mjs";
-import { storage_url } from "./storage_url.mjs";
-import { http_get } from "./http_get.mjs";
 import { yyy8Uu_storage_path } from "./yyy8Uu_storage_path.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { add_1 } from "./add_1.mjs";
@@ -15,17 +14,18 @@ import { list_length } from "./list_length.mjs";
 export async function app_yyy8Uu() {
   html_style_default_initialize();
   let root = html_document_body();
+  let indices = range(7);
   await refresh_chapter(0);
   async function refresh_chapter(index) {
     html_clear_scroll_top(root);
     let file_path = yyy8Uu_storage_path(index);
-    let chapter = await http_get(storage_url(file_path));
+    let chapter = await http_storage(file_path);
     let { english, latin } = chapter;
     let indices = range(list_length(english));
     for (let i of indices) {
       const l = list_get(latin, i);
       let latin_p = html_p_text(root, l);
-      html_style_font_color(latin_p, 'darkblue');
+      html_style_font_color(latin_p, "darkblue");
       html_p_text(root, list_get(english, i));
       html_hr(root);
     }
