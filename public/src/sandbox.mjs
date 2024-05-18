@@ -1,3 +1,4 @@
+import { list_map } from "./list_map.mjs";
 import { log } from "./log.mjs";
 import { TranslationServiceClient } from "@google-cloud/translate";
 export async function sandbox() {
@@ -15,9 +16,10 @@ export async function sandbox() {
     };
     const [response] = await translationClient.translateText(request);
     let { translations } = response;
+    let result = list_map(translations, (t) => t.translatedText);
     for (const translation of response.translations) {
       log(`Translation: ${translation.translatedText}`);
     }
   }
-  translateText();
+  await translateText();
 }
