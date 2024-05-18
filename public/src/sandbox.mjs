@@ -6,6 +6,7 @@ import { each_index_async } from "./each_index_async.mjs";
 import { yyy8Uu_file_path_to_parts } from "./yyy8Uu_file_path_to_parts.mjs";
 export async function sandbox() {
   let filtered = await yyy8Uu_file_paths();
+  return filtered
   await each_index_async(filtered, async (file_path, index) => {
     let parts = await gcloud_translate_cache("la", "en", yyy8Uu_parts.name, [
       index,
