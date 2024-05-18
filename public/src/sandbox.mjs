@@ -8,7 +8,10 @@ export async function sandbox() {
   let files = await folder_read(path, ".xml");
   let filtered = list_filter(files, (f) => string_includes(f, "\\cod-"));
   for (let f of filtered) {
-    let text = await file_read(f);
-    return xml_parse(text);
+    let input_string = await file_read(f);
+    let parsed = xml_parse(input_string);
+    let {TEI} = parsed;
+    let {text} = TEI;
+    let {body } = text;
   }
 }
