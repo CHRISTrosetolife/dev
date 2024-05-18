@@ -1,3 +1,4 @@
+import { object_properties } from "./object_properties.mjs";
 import { xml_parse } from "./xml_parse.mjs";
 import { string_includes } from "./string_includes.mjs";
 import { folder_read } from "./folder_read.mjs";
@@ -13,6 +14,6 @@ export async function sandbox() {
     let { TEI } = parsed;
     let { text } = TEI;
     let { body } = text;
-    return object_keys(body);
+    return object_properties(body);
   }
 }
