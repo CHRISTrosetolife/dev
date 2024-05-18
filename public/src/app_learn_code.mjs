@@ -134,7 +134,7 @@ export function app_learn_code() {
     html_style(begin, {
       "font-size": string_combine(
         multiply(default_font_size, 1.2).toString(),
-        "dvh",
+        "vh",
       ),
     });
     html_style_bold(begin);
