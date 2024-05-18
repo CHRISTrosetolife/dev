@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { gcloud_translate_cache } from "./gcloud_translate_cache.mjs";
 import { yyy8Uu_file_paths } from "./yyy8Uu_file_paths.mjs";
 import { yyy8Uu_parts } from "./yyy8Uu_parts.mjs";
@@ -9,6 +10,7 @@ export async function sandbox() {
     let parts = await gcloud_translate_cache("la", "en", yyy8Uu_parts.name, [
       index,
     ]);
+    console.log(parts);
   });
   return;
   let result = await yyy8Uu_parts(index);
