@@ -29,5 +29,8 @@ export function lesson_object_properties_two() {
     [screen1],
   );
   function example_before(parent) {}
-  function screen1(parent) {}
+  function screen1(parent) {
+    "a variable stores one value";
+    "an `object` can store more than one value";
+  }
 }
