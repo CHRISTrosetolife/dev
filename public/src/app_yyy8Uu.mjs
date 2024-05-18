@@ -26,6 +26,7 @@ export async function app_yyy8Uu() {
     for (let i of indices) {
         const l = list_get(latin, i);
         let latin_p = html_p_text(root, l)
+        html_style_font_color
         html_p_text(root, list_get(english, i))
         html_hr(root);
     }
