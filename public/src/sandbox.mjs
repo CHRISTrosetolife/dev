@@ -1,14 +1,15 @@
 import { log } from "./log.mjs";
 const { TranslationServiceClient } = require("@google-cloud/translate");
 export async function sandbox() {
+  let text = "hello";
   const translationClient = new TranslationServiceClient();
   async function translateText() {
     const request = {
-      parent: `projects/${projectId}/locations/${location}`,
+      parent: `projects/letjesusbeexalted/locations/global`,
       contents: [text],
       mimeType: "text/plain",
       sourceLanguageCode: "en",
-      targetLanguageCode: "sr-Latn",
+      targetLanguageCode: "es",
     };
     const [response] = await translationClient.translateText(request);
     for (const translation of response.translations) {
