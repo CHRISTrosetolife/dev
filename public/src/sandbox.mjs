@@ -3,9 +3,14 @@ import { yyy8Uu_file_paths } from "./yyy8Uu_file_paths.mjs";
 import { yyy8Uu_parts } from "./yyy8Uu_parts.mjs";
 import { each_index_async } from "./each_index_async.mjs";
 import { yyy8Uu_file_path_to_parts } from "./yyy8Uu_file_path_to_parts.mjs";
+import { log } from "./log.mjs";
 export async function sandbox() {
   let index = 0;
-  return await gcloud_translate_cache("la", "en", yyy8Uu_parts.name, [index]);
+  let parts = await gcloud_translate_cache("la", "en", yyy8Uu_parts.name, [index]);
+  for (let part of parts) {
+    log(part);
+    log(part)
+  }
   let result = await yyy8Uu_parts(index);
   return result;
   return;
