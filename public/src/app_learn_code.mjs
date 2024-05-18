@@ -215,10 +215,11 @@ export function app_learn_code() {
     let button_next = html_button_width_full_text_click(
       root,
       "➡️ next",
-      async function on_click() {
-        await refresh_lesson_screen(add_1(index));
-      },
+      next_on_click,
     );
+    async function next_on_click() {
+      await refresh_lesson_screen(add_1(index));
+    }
     let button_previous = html_button_width_full_text_click_previous(
       root,
       async function previous_on_click() {
