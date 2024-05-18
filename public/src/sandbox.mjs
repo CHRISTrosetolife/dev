@@ -37,16 +37,16 @@ export async function sandbox() {
           destination,
         );
       }
-      return firsts;
-      let destination = yyy8Uu_storage_path("index");
-      await storage_upload_object(
-        {
-          firsts,
-        },
-        destination,
-      );
     }
   });
+  return firsts;
+  let destination = yyy8Uu_storage_path("index");
+  await storage_upload_object(
+    {
+      firsts,
+    },
+    destination,
+  );
   return;
   let filtered = await yyy8Uu_file_paths();
   await each_index_async(filtered, async (file_path, index) => {
