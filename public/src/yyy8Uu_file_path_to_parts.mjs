@@ -32,7 +32,6 @@ export async function yyy8Uu_file_path_to_parts(file_path, index) {
   let trimmed = list_map(normalized, string_trim);
   let non_empty = list_filter(trimmed, string_empty_not_is);
   let mapped = list_map(non_empty, (p) => string_replace(p, "&amp;", "&"));
-  console.log(list_last(mapped));
   for (let part of mapped) {
     if (part.match(/.*&[a-z]+;.*/g)) {
       log(file_path);
