@@ -21,9 +21,10 @@ export async function sandbox() {
           index2,
         ]);
         let translated = list_single(translateds)
-        console.log({translated})
+        la(translated)
       });
     });
+    log({list})
   }
   return;
   let filtered = await yyy8Uu_file_paths();
