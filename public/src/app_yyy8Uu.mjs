@@ -25,8 +25,9 @@ export async function app_yyy8Uu() {
     let indices = range(list_length(english));
     for (let i of indices) {
         const l = list_get(latin, i);
-        html_p_text(root, l)
+        let latin_p = html_p_text(root, l)
         html_p_text(root, list_get(english, i))
+        html_hr(root);
     }
     html_hr(root);
     let button_next = html_button_width_full_text_click_next(
