@@ -1,3 +1,4 @@
+import { html_button_width_full_text_click_previous } from "./html_button_width_full_text_click_previous.mjs";
 import { html_style_default_font_size } from "./html_style_default_font_size.mjs";
 import { html_button_width_full_text_click_alternate_code } from "./html_button_width_full_text_click_alternate_code.mjs";
 import { add_1_string } from "./add_1_string.mjs";
@@ -218,14 +219,12 @@ export function app_learn_code() {
         await refresh_lesson_screen(add_1(index));
       },
     );
-    let button_previous = html_button_width_full_text_click(
+    let button_previous = html_button_width_full_text_click_previous(
       root,
-      "⬅️ previous",
-      previous_on_click,
+      async function previous_on_click() {
+        await refresh_lesson_screen(subtract_1(index));
+      },
     );
-    async function previous_on_click() {
-      await refresh_lesson_screen(subtract_1(index));
-    }
     if (equal(index, 0)) {
       html_disable(button_previous);
     }
