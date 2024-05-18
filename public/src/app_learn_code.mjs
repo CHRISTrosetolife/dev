@@ -82,7 +82,7 @@ export function app_learn_code() {
     object_property_set(module, "lessons", module_lessons);
   }
   function refresh_settings() {
-    clear_scroll();
+    html_clear_scroll_top();
     button_home_hr();
     let base = 16;
     let max_rgb = square(base) - 1;
@@ -122,7 +122,7 @@ export function app_learn_code() {
     });
   }
   function refresh_main() {
-    clear_scroll();
+    html_clear_scroll_top();
     html_button_width_full_text_click(root, "⚙️ settings", refresh_settings);
     html_p_text(
       root,
@@ -152,7 +152,7 @@ export function app_learn_code() {
     });
   }
   function refresh_module(module) {
-    clear_scroll();
+    html_clear_scroll_top();
     button_home_hr();
     html_p_text(root, "choose a lesson below :");
     let { lessons } = module;
@@ -171,12 +171,12 @@ export function app_learn_code() {
   }
   refresh_main();
   let index_last = list_index_last(lesson_screens);
-  function clear_scroll() {
+  function html_clear_scroll_top() {
     html_clear(root);
     html_scroll_top();
   }
   function refresh_lesson(lesson) {
-    clear_scroll();
+    html_clear_scroll_top();
     button_home_hr();
     html_p_text(root, "choose a screen below :");
     let lesson_index = list_index(lessons, lesson);
@@ -209,7 +209,7 @@ export function app_learn_code() {
     html_hr(root);
   }
   async function refresh_lesson_screen(index) {
-    clear_scroll();
+    html_clear_scroll_top();
     let lesson_screen = list_get(lesson_screens, index);
     await lesson_screen(root);
     html_hr(root);
