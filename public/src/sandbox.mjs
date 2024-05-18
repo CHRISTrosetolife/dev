@@ -1,3 +1,5 @@
+import { list_length } from "./list_length.mjs";
+import { equal } from "./equal.mjs";
 import { log } from "./log.mjs";
 import { html_parse } from "./html_parse.mjs";
 import { string_whitespace_normalize } from "./string_whitespace_normalize.mjs";
@@ -17,7 +19,8 @@ export async function sandbox() {
   for (let f of filtered) {
     let input_string = await file_read(f);
     let parsed = html_parse(input_string);
-    return parsed.childNodes;
+    assert(equal, [list_length(parsed.childNodes), 2]);
+    continue;
     let { TEI } = parsed;
     let { text } = TEI;
     let { body } = text;
