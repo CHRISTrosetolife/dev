@@ -12,7 +12,7 @@ export async function sandbox() {
     };
     const [response] = await translationClient.translateText(request);
     for (const translation of response.translations) {
-      console.log(`Translation: ${translation.translatedText}`);
+      log(`Translation: ${translation.translatedText}`);
     }
   }
   translateText();
