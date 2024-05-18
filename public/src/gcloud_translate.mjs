@@ -22,7 +22,6 @@ export async function gcloud_translate(
   };
   const [response] = await translationClient.translateText(request);
   let { translations } = response;
-  return translations;
   let result = list_map(translations, (t) => t.translatedText);
   return result;
 }
