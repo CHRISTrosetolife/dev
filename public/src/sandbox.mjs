@@ -20,7 +20,7 @@ export async function sandbox() {
     assert(equal_json, [object_properties(body), ["div"]]);
     let { div } = body;
     assert(equal_json, [object_properties(div), ["head", "p"]]);
-    let {p} = div
-    return p;
+    let {p,head} = div
+    return head;
   }
 }
