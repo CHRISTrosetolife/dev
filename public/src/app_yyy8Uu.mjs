@@ -1,3 +1,6 @@
+import { storage_url } from "./storage_url.mjs";
+import { http_get } from "./http_get.mjs";
+import { yyy8Uu_storage_path } from "./yyy8Uu_storage_path.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { add_1 } from "./add_1.mjs";
 import { html_button_width_full_text_click_next } from "./html_button_width_full_text_click_next.mjs";
@@ -10,6 +13,7 @@ export async function app_yyy8Uu() {
   await refresh_chapter(0);
   async function refresh_chapter(index) {
     html_clear_scroll_top(root);
+    let file_path = yyy8Uu_storage_path(index);
     let verses = await http_get(storage_url(file_path));
     html_hr(root);
     let button_next = html_button_width_full_text_click_next(
