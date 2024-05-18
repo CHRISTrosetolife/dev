@@ -17,6 +17,7 @@ export async function sandbox() {
   for (let f of filtered) {
     let input_string = await file_read(f);
     let parsed = html_parse(input_string);
+    return parsed;
     let { TEI } = parsed;
     let { text } = TEI;
     let { body } = text;
