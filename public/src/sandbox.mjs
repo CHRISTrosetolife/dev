@@ -11,33 +11,33 @@ import { yyy8Uu_file_path_to_parts } from "./yyy8Uu_file_path_to_parts.mjs";
 import { list_single } from "./list_single.mjs";
 import { list_first } from "./list_first.mjs";
 export async function sandbox() {
-  for (let index of [2,3,4,5,6]) {
-    let firsts = await list_adder_async(async la_outer => {
-        let latin = await yyy8Uu_parts(index);
-        let english = await list_adder_async(async (la) => {
-          await each_index_async(latin, async (part, index2) => {
-            let translateds = await gcloud_translate_cache(
-              "la",
-              "en",
-              yyy8Uu_part.name,
-              [index, index2],
-            );
-            let translated = list_single(translateds);
-            la(translated);
-          });
+  for (let index of [2, 3, 4, 5, 6]) {
+    let firsts = await list_adder_async(async (la_outer) => {
+      let latin = await yyy8Uu_parts(index);
+      let english = await list_adder_async(async (la) => {
+        await each_index_async(latin, async (part, index2) => {
+          let translateds = await gcloud_translate_cache(
+            "la",
+            "en",
+            yyy8Uu_part.name,
+            [index, index2],
+          );
+          let translated = list_single(translateds);
+          la(translated);
         });
-        la_outer(list_first(english))
-        return;
-        let destination = yyy8Uu_storage_path(index);
-        await storage_upload_object(
-          {
-            english,
-            latin,
-          },
-          destination,
-        );
+      });
+      la_outer(list_first(english));
+      return;
+      let destination = yyy8Uu_storage_path(index);
+      await storage_upload_object(
+        {
+          english,
+          latin,
+        },
+        destination,
+      );
     });
-    let destination = yyy8Uu_storage_path('index');
+    let destination = yyy8Uu_storage_path("index");
     await storage_upload_object(
       {
         firsts,

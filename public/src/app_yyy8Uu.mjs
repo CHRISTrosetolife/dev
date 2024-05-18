@@ -14,7 +14,9 @@ import { list_length } from "./list_length.mjs";
 export async function app_yyy8Uu() {
   html_style_default_initialize();
   let root = html_document_body();
-  let indices = range(7);
+  let file_path = yyy8Uu_storage_path('index');
+  let {firsts} = await http_storage(file_path);
+  console.log({firsts})
   await refresh_chapter(0);
   async function refresh_chapter(index) {
     html_clear_scroll_top(root);
