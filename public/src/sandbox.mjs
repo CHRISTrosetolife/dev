@@ -1,9 +1,11 @@
+import { equal_json } from "./equal_json.mjs";
 import { object_properties } from "./object_properties.mjs";
 import { xml_parse } from "./xml_parse.mjs";
 import { string_includes } from "./string_includes.mjs";
 import { folder_read } from "./folder_read.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { file_read } from "./file_read.mjs";
+import { assert } from "./assert.mjs";
 export async function sandbox() {
   let path = "C:\\Users\\JESUS\\Downloads\\yyy8Uu-master\\yyy8Uu-master";
   let files = await folder_read(path, ".xml");
@@ -14,6 +16,6 @@ export async function sandbox() {
     let { TEI } = parsed;
     let { text } = TEI;
     let { body } = text;
-    return object_properties(body);
+    assert(equal_json, [object_properties(body), ["div"]]);
   }
 }
