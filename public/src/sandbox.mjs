@@ -4,6 +4,7 @@ import { yyy8Uu_file_path_to_parts } from "./yyy8Uu_file_path_to_parts.mjs";
 export async function sandbox() {
   let index = 0;
   let filtered = await yyy8Uu_file_paths();
-  each_index_async;
-  return await yyy8Uu_file_path_to_parts(filtered, index);
+  await each_index_async(filtered, async (file_path) => {
+    await yyy8Uu_file_path_to_parts(filtered, index);
+  });
 }
