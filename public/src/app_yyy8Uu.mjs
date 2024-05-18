@@ -12,6 +12,7 @@ import { json_to } from "./json_to.mjs";
 import { range } from "./range.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { list_get } from "./list_get.mjs";
+import { list_length } from "./list_length.mjs";
 export async function app_yyy8Uu() {
   html_style_default_initialize();
   let root = html_document_body();
@@ -21,11 +22,9 @@ export async function app_yyy8Uu() {
     let file_path = yyy8Uu_storage_path(index);
     let chapter = await http_get(storage_url(file_path));
     let { english, latin } = chapter;
-    let indices = range(english);
-    console.log({indices})
+    let indices = range(list_length(english));
     for (let i of indices) {
         const l = list_get(latin, i);
-        console.log({l})
         html_p_text(root, l)
         html_p_text(root, list_get(english, i))
     }
