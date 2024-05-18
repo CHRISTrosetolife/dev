@@ -6,14 +6,16 @@ import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { identity } from "./identity.mjs";
+import { list_get } from "./list_get.mjs";
 export function lesson_object_properties_two() {
   let description = "object with two properties";
   let example_message = string_combine("with an ", description);
   return lesson_simple(
     function () {
       let identifiers = app_learn_code_random_identifiers(3);
+      let a = list_get(identifiers, 0);
       list_sort_string(identifiers, identity);
-      let lines = [js_code_statement_let_assign, app_learn_code_log(`counter`)];
+      let lines = [js_code_statement_let_assign(a,'{}'), app_learn_code_log(`counter`)];
       return list_join_newline(lines);
     },
     example_before,
