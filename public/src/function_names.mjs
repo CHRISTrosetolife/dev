@@ -26,6 +26,5 @@ export async function function_names() {
     let mapped3 = string_suffix_without(mapped2, suffix);
     return mapped3;
   });
-  list_reverse(mapped);
   return mapped;
 }
