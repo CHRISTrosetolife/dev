@@ -12,7 +12,7 @@ export async function app_yyy8Uu() {
     let button_next = html_button_width_full_text_click_next(
       root,
       async function next_on_click() {
-        await refresh_lesson_screen(add_1(index));
+        await refresh_chapter(add_1(index));
       },
     );
   }
