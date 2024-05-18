@@ -6,8 +6,9 @@ export async function gcloud_translate(
   mimeType,
   text,
 ) {
-    "text/plain"
-    "text/html"
+  "mimeTypes:";
+  "text/plain";
+  "text/html";
   const translationClient = new TranslationServiceClient();
   const request = {
     parent: `projects/letjesusbeexalted/locations/global`,
