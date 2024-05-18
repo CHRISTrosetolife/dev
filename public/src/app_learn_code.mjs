@@ -1,3 +1,4 @@
+import { html_button_width_full_text_click_next } from "./html_button_width_full_text_click_next.mjs";
 import { html_button_width_full_text_click_previous } from "./html_button_width_full_text_click_previous.mjs";
 import { html_style_default_font_size } from "./html_style_default_font_size.mjs";
 import { html_button_width_full_text_click_alternate_code } from "./html_button_width_full_text_click_alternate_code.mjs";
@@ -212,14 +213,12 @@ export function app_learn_code() {
     let lesson_screen = list_get(lesson_screens, index);
     await lesson_screen(root);
     html_hr(root);
-    let button_next = html_button_width_full_text_click(
+    let button_next = html_button_width_full_text_click_next(
       root,
-      "➡️ next",
-      next_on_click,
+      async function next_on_click() {
+        await refresh_lesson_screen(add_1(index));
+      },
     );
-    async function next_on_click() {
-      await refresh_lesson_screen(add_1(index));
-    }
     let button_previous = html_button_width_full_text_click_previous(
       root,
       async function previous_on_click() {
