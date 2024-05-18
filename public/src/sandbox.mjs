@@ -9,7 +9,7 @@ export async function sandbox() {
   let parts = await gcloud_translate_cache("la", "en", yyy8Uu_parts.name, [index]);
   for (let part of parts) {
     log(part);
-    log()
+    log('')
   }
   let result = await yyy8Uu_parts(index);
   return result;
