@@ -25,11 +25,14 @@ export async function sandbox() {
         la(translated);
       });
     });
-    let file_name = file_name_json(chapter_name);
+    let file_name = file_name_json(index);
     let destination = string_combine(`yyy8Uu/`, file_name);
-    await storage_upload_object({
-      list,
-    });
+    await storage_upload_object(
+      {
+        list,
+      },
+      destination,
+    );
   }
   return;
   let filtered = await yyy8Uu_file_paths();
