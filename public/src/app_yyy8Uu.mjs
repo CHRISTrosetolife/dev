@@ -9,6 +9,7 @@ import { html_document_body } from "./html_document_body.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 import { json_to } from "./json_to.mjs";
+import { range } from "./range.mjs";
 export async function app_yyy8Uu() {
   html_style_default_initialize();
   let root = html_document_body();
@@ -17,10 +18,11 @@ export async function app_yyy8Uu() {
     html_clear_scroll_top(root);
     let file_path = yyy8Uu_storage_path(index);
     let chapter = await http_get(storage_url(file_path));
-    let {
-        english,
-        latin,} = chapter;
-    html_inner_set(root, json_to(chapter))
+    let { english, latin } = chapter;
+    let indices = range(english);
+    for (let i of indices) {
+    }
+    html_inner_set(root, json_to(chapter));
     html_hr(root);
     let button_next = html_button_width_full_text_click_next(
       root,
