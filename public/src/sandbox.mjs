@@ -29,8 +29,8 @@ export async function sandbox() {
     let { childNodes } = div;
     let parts = list_map(childNodes, (c) => object_property_get(c, "rawText"));
     let normalized = list_map(parts, string_whitespace_normalize);
-    let trimmed = list_map(normalized, string_trim);
-    let non_empty = list_map(trimmed, string_empty_not_is);
+    let trimmed = list_filter(normalized, string_trim);
+    let non_empty = list_filter(trimmed, string_empty_not_is);
     return non_empty;
   }
 }
