@@ -1,5 +1,5 @@
 import { log } from "./log.mjs";
-const { TranslationServiceClient } = require("@google-cloud/translate");
+import { TranslationServiceClient } from "@google-cloud/translate";
 export async function sandbox() {
   let text = "hello";
   const translationClient = new TranslationServiceClient();
