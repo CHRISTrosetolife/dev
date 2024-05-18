@@ -29,6 +29,6 @@ export async function sandbox() {
       }
     });
     let normalized = list_map(parts, string_whitespace_normalize);
-    return parts;
+    return normalized;
   }
 }
