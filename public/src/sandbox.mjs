@@ -1,8 +1,9 @@
+import { log } from "./log.mjs";
+import { html_parse } from "./html_parse.mjs";
 import { string_whitespace_normalize } from "./string_whitespace_normalize.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { equal_json } from "./equal_json.mjs";
 import { object_properties } from "./object_properties.mjs";
-import { xml_parse } from "./xml_parse.mjs";
 import { string_includes } from "./string_includes.mjs";
 import { folder_read } from "./folder_read.mjs";
 import { list_filter } from "./list_filter.mjs";
@@ -15,7 +16,7 @@ export async function sandbox() {
   let filtered = list_filter(files, (f) => string_includes(f, "\\cod-"));
   for (let f of filtered) {
     let input_string = await file_read(f);
-    let parsed = xml_parse(input_string);
+    let parsed = html_parse(input_string);
     let { TEI } = parsed;
     let { text } = TEI;
     let { body } = text;
@@ -27,7 +28,7 @@ export async function sandbox() {
       for (let h of head) {
         la(h);
       }
-      console.log(p)
+      console.log(p);
     });
     let normalized = list_map(parts, string_whitespace_normalize);
     return normalized;
