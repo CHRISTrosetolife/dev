@@ -1,3 +1,4 @@
+import {lesson_object_property} from "./lesson_object_property.mjs";
 import {lesson_object_properties_two} from "./lesson_object_properties_two.mjs";
 import {marker} from "./marker.mjs";
 import {lesson_array_two} from "./lesson_array_two.mjs";
@@ -175,6 +176,7 @@ export function app_learn_code_modules() {
     list_add(module_current, lesson_for_iterations_log_outside_large);
     module_current = module_new(modules, "objects");
     list_add(module_current, lesson_object_properties_two);
+    list_add(module_current, lesson_object_property);
     marker();
     module_current = module_new(modules, "arrays ( lists )");
     list_add(module_current, lesson_array_two);
