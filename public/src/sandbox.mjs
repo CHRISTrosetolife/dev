@@ -1,3 +1,4 @@
+import { string_whitespace_normalize } from "./string_whitespace_normalize.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { equal_json } from "./equal_json.mjs";
 import { object_properties } from "./object_properties.mjs";
@@ -7,6 +8,7 @@ import { folder_read } from "./folder_read.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { file_read } from "./file_read.mjs";
 import { assert } from "./assert.mjs";
+import { list_map } from "./list_map.mjs";
 export async function sandbox() {
   let path = "C:\\Users\\JESUS\\Downloads\\yyy8Uu-master\\yyy8Uu-master";
   let files = await folder_read(path, ".xml");
@@ -26,6 +28,7 @@ export async function sandbox() {
         la(h);
       }
     });
+    let normalized = list_map(parts, string_whitespace_normalize);
     return parts;
   }
 }
