@@ -15,6 +15,8 @@ export function lesson_object_properties_two() {
     function () {
       let identifiers = app_learn_code_random_identifiers(3);
       let a = list_get(identifiers, 0);
+      let b = list_get(identifiers, 1);
+      let c = list_get(identifiers, 2);
       list_sort_string(identifiers, identity);
       let lines = [
         js_code_statement_let_assign(a, js_code_braces()),
