@@ -1,11 +1,7 @@
 import { list_length } from "./list_length.mjs";
 import { equal } from "./equal.mjs";
-import { log } from "./log.mjs";
 import { html_parse } from "./html_parse.mjs";
 import { string_whitespace_normalize } from "./string_whitespace_normalize.mjs";
-import { list_adder } from "./list_adder.mjs";
-import { equal_json } from "./equal_json.mjs";
-import { object_properties } from "./object_properties.mjs";
 import { string_includes } from "./string_includes.mjs";
 import { folder_read } from "./folder_read.mjs";
 import { list_filter } from "./list_filter.mjs";
@@ -14,6 +10,8 @@ import { assert } from "./assert.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_single } from "./list_single.mjs";
 import { object_property_get } from "./object_property_get.mjs";
+import { string_trim } from "./string_trim.mjs";
+import { string_empty_not_is } from "./string_empty_not_is.mjs";
 export async function sandbox() {
   let path = "C:\\Users\\JESUS\\Downloads\\yyy8Uu-master\\yyy8Uu-master";
   let files = await folder_read(path, ".xml");
@@ -27,10 +25,12 @@ export async function sandbox() {
     assert(equal, [list_length(bodies), 1]);
     let divs = list_single(bodies).getElementsByTagName("div");
     assert(equal, [list_length(divs), 1]);
-    let div = list_single(divs)
-    let {childNodes} = div
-    let parts = list_map(childNodes, c => object_property_get(c, 'rawText'))
+    let div = list_single(divs);
+    let { childNodes } = div;
+    let parts = list_map(childNodes, (c) => object_property_get(c, "rawText"));
     let normalized = list_map(parts, string_whitespace_normalize);
-    return normalized
+    let trimmed = list_map(normalized, string_trim);
+    let non_empty = list_map(trimmed, string_empty_not_is);
+    return non_empty;
   }
 }
