@@ -1,3 +1,6 @@
+import { storage_upload_object } from "./storage_upload_object.mjs";
+import { string_combine } from "./string_combine.mjs";
+import { file_name_json } from "./file_name_json.mjs";
 import { list_adder_async } from "./list_adder_async.mjs";
 import { yyy8Uu_part } from "./yyy8Uu_part.mjs";
 import { log } from "./log.mjs";
@@ -12,15 +15,21 @@ export async function sandbox() {
     let parts = await yyy8Uu_parts(index);
     let list = await list_adder_async(async (la) => {
       await each_index_async(parts, async (part, index2) => {
-        let translateds = await gcloud_translate_cache("la", "en", yyy8Uu_part.name, [
-          index,
-          index2,
-        ]);
-        let translated = list_single(translateds)
-        la(translated)
+        let translateds = await gcloud_translate_cache(
+          "la",
+          "en",
+          yyy8Uu_part.name,
+          [index, index2],
+        );
+        let translated = list_single(translateds);
+        la(translated);
       });
     });
-    log({list})
+    let file_name = file_name_json(chapter_name);
+    let destination = string_combine(`yyy8Uu/`, file_name);
+    await storage_upload_object({
+      list,
+    });
   }
   return;
   let filtered = await yyy8Uu_file_paths();
