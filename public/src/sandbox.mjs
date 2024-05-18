@@ -7,6 +7,7 @@ import { each_index_async } from "./each_index_async.mjs";
 import { yyy8Uu_file_path_to_parts } from "./yyy8Uu_file_path_to_parts.mjs";
 export async function sandbox() {
   for (let index of [0, 1]) {
+    let parts = await yyy8Uu_parts(index);
   }
   return;
   let filtered = await yyy8Uu_file_paths();
