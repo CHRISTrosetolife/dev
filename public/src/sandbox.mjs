@@ -1,3 +1,4 @@
+import { list_adder_async } from "./list_adder_async.mjs";
 import { yyy8Uu_part } from "./yyy8Uu_part.mjs";
 import { log } from "./log.mjs";
 import { gcloud_translate_cache } from "./gcloud_translate_cache.mjs";
@@ -8,6 +9,7 @@ import { yyy8Uu_file_path_to_parts } from "./yyy8Uu_file_path_to_parts.mjs";
 export async function sandbox() {
   for (let index of [0, 1]) {
     let parts = await yyy8Uu_parts(index);
+    list_adder_async;
   }
   return;
   let filtered = await yyy8Uu_file_paths();
