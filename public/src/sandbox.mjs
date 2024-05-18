@@ -1,6 +1,8 @@
-import { string_replace } from "./string_replace.mjs";
 import { folder_read } from "./folder_read.mjs";
+import { list_filter } from "./list_filter.mjs";
 export async function sandbox() {
   let path = "C:\\Users\\JESUS\\Downloads\\yyy8Uu-master\\yyy8Uu-master";
-  return await folder_read(path, ".xml");
+  let files = await folder_read(path, ".xml");
+  let filtered = list_filter(files, "\\cod-");
+  return filtered;
 }
