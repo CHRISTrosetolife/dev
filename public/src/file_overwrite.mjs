@@ -8,6 +8,8 @@ export async function file_overwrite(file_name, data) {
     object_property_set(files, file_name, data);
   } else {
     let fs = await import("fs");
+    let path = await import("path");
+    let parent = path.dirname(file_name);
     return await fs.promises.writeFile(file_name, data, "utf-8");
   }
 }
