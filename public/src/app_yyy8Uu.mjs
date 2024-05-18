@@ -10,6 +10,7 @@ export async function app_yyy8Uu() {
   await refresh_chapter(0);
   async function refresh_chapter(index) {
     html_clear_scroll_top(root);
+    let verses = await http_get(storage_url(file_path));
     html_hr(root);
     let button_next = html_button_width_full_text_click_next(
       root,

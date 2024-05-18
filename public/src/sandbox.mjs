@@ -1,6 +1,5 @@
+import { yyy8Uu_storage_path } from "./yyy8Uu_storage_path.mjs";
 import { storage_upload_object } from "./storage_upload_object.mjs";
-import { string_combine } from "./string_combine.mjs";
-import { file_name_json } from "./file_name_json.mjs";
 import { list_adder_async } from "./list_adder_async.mjs";
 import { yyy8Uu_part } from "./yyy8Uu_part.mjs";
 import { log } from "./log.mjs";
@@ -25,8 +24,7 @@ export async function sandbox() {
         la(translated);
       });
     });
-    let file_name = file_name_json(index);
-    let destination = string_combine(`yyy8Uu/`, file_name);
+    let destination = yyy8Uu_storage_path(index);
     await storage_upload_object(
       {
         list,
