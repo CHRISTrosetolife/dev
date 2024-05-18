@@ -9,7 +9,7 @@ export async function sandbox() {
   let filtered = await yyy8Uu_file_paths();
   await each_index_async(filtered, async (file_path, index) => {
     log({index})
-    let parts = await yyy8Uu_parts()
+    let parts = await yyy8Uu_parts(index)
     await each_index_async(parts, async (part, index2) => {
         log({index, index2});
         await gcloud_translate_cache("la", "en", yyy8Uu_part.name, [
