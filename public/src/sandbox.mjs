@@ -15,10 +15,11 @@ export async function sandbox() {
           index,
           index2,
         });
-        await gcloud_translate_cache("la", "en", yyy8Uu_part.name, [
+        let translated = await gcloud_translate_cache("la", "en", yyy8Uu_part.name, [
           index,
           index2,
         ]);
+        console.log({translated})
       });
     });
   }
