@@ -1,3 +1,4 @@
+import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_button_width_full_text_click_next } from "./html_button_width_full_text_click_next.mjs";
 import { html_button_width_full_text_click_previous } from "./html_button_width_full_text_click_previous.mjs";
 import { html_style_default_font_size } from "./html_style_default_font_size.mjs";
@@ -9,7 +10,6 @@ import { html_style_default_font_size_value } from "./html_style_default_font_si
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { html_hash } from "./html_hash.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { html_scroll_top } from "./html_scroll_top.mjs";
 import { string_multiply } from "./string_multiply.mjs";
 import { each_reverse } from "./each_reverse.mjs";
 import { round } from "./round.mjs";
@@ -23,7 +23,6 @@ import { list_add_multiple } from "./list_add_multiple.mjs";
 import { html_disable } from "./html_disable.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { equal } from "./equal.mjs";
-import { html_clear } from "./html_clear.mjs";
 import { list_get } from "./list_get.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_document_body } from "./html_document_body.mjs";
@@ -82,7 +81,7 @@ export function app_learn_code() {
     object_property_set(module, "lessons", module_lessons);
   }
   function refresh_settings() {
-    html_clear_scroll_top();
+    html_clear_scroll_top(root);
     button_home_hr();
     let base = 16;
     let max_rgb = square(base) - 1;
@@ -122,7 +121,7 @@ export function app_learn_code() {
     });
   }
   function refresh_main() {
-    html_clear_scroll_top();
+    html_clear_scroll_top(root);
     html_button_width_full_text_click(root, "⚙️ settings", refresh_settings);
     html_p_text(
       root,
@@ -152,7 +151,7 @@ export function app_learn_code() {
     });
   }
   function refresh_module(module) {
-    html_clear_scroll_top();
+    html_clear_scroll_top(root);
     button_home_hr();
     html_p_text(root, "choose a lesson below :");
     let { lessons } = module;
@@ -171,12 +170,8 @@ export function app_learn_code() {
   }
   refresh_main();
   let index_last = list_index_last(lesson_screens);
-  function html_clear_scroll_top() {
-    html_clear(root);
-    html_scroll_top();
-  }
   function refresh_lesson(lesson) {
-    html_clear_scroll_top();
+    html_clear_scroll_top(root);
     button_home_hr();
     html_p_text(root, "choose a screen below :");
     let lesson_index = list_index(lessons, lesson);
@@ -209,7 +204,7 @@ export function app_learn_code() {
     html_hr(root);
   }
   async function refresh_lesson_screen(index) {
-    html_clear_scroll_top();
+    html_clear_scroll_top(root);
     let lesson_screen = list_get(lesson_screens, index);
     await lesson_screen(root);
     html_hr(root);
