@@ -19,7 +19,6 @@ export async function sandbox() {
   let files = await folder_read(path, ".xml");
   let filtered = list_filter(files, (f) => string_includes(f, "\\cod-"));
   for (let f of filtered) {
-    log(f)
     let input_string = await file_read(f);
     let parsed = html_parse(input_string);
     let teis = parsed.getElementsByTagName("TEI");
@@ -30,21 +29,8 @@ export async function sandbox() {
     assert(equal, [list_length(divs), 1]);
     let div = list_single(divs)
     let {childNodes} = div
-    return list_map(childNodes, c => object_property_get(c, 'rawText'))
-    continue;
-    let { TEI } = parsed;
-    let { text } = TEI;
-    let { body } = text;
-    assert(equal_json, [object_properties(body), ["div"]]);
-    assert(equal_json, [object_properties(div), ["head", "p"]]);
-    let parts = list_adder((la) => {
-      let { p, head } = div;
-      for (let h of head) {
-        la(h);
-      }
-      console.log(p);
-    });
+    let parts = list_map(childNodes, c => object_property_get(c, 'rawText'))
     let normalized = list_map(parts, string_whitespace_normalize);
-    return normalized;
+    return normalized
   }
 }
