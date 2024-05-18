@@ -14,8 +14,7 @@ export function lesson_object_properties_two() {
     function () {
       let identifiers = app_learn_code_random_identifiers_sorted(3);
       let [a, b, c] = identifiers;
-      const count = 2;
-      let values = integer_random_digit_single_positive_multiple_sorted(count);
+      let values = integer_random_digit_single_positive_multiple_sorted(2);
       let [d, e] = values;
       let lines = [
         js_code_statement_let_assign(a, js_code_braces()),
