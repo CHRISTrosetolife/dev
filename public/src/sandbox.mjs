@@ -9,7 +9,18 @@ import { yyy8Uu_file_path_to_parts } from "./yyy8Uu_file_path_to_parts.mjs";
 export async function sandbox() {
   for (let index of [0, 1]) {
     let parts = await yyy8Uu_parts(index);
-    list_adder_async;
+    let list = await list_adder_async(async (la) => {
+      await each_index_async(parts, async (part, index2) => {
+        log({
+          index,
+          index2,
+        });
+        await gcloud_translate_cache("la", "en", yyy8Uu_part.name, [
+          index,
+          index2,
+        ]);
+      });
+    });
   }
   return;
   let filtered = await yyy8Uu_file_paths();
