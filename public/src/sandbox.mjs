@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { equal_json } from "./equal_json.mjs";
 import { object_properties } from "./object_properties.mjs";
 import { xml_parse } from "./xml_parse.mjs";
@@ -7,12 +6,12 @@ import { folder_read } from "./folder_read.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { file_read } from "./file_read.mjs";
 import { assert } from "./assert.mjs";
+import { list_add } from "./list_add.mjs";
 export async function sandbox() {
   let path = "C:\\Users\\JESUS\\Downloads\\yyy8Uu-master\\yyy8Uu-master";
   let files = await folder_read(path, ".xml");
   let filtered = list_filter(files, (f) => string_includes(f, "\\cod-"));
   for (let f of filtered) {
-    log(f)
     let input_string = await file_read(f);
     let parsed = xml_parse(input_string);
     let { TEI } = parsed;
@@ -21,7 +20,12 @@ export async function sandbox() {
     assert(equal_json, [object_properties(body), ["div"]]);
     let { div } = body;
     assert(equal_json, [object_properties(div), ["head", "p"]]);
-    let {p,head} = div
-    return head;
+    let parts = list_add((la) => {
+      let { p, head } = div;
+      for (let h of head) {
+        la(h);
+      }
+    });
+    return parts;
   }
 }
