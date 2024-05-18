@@ -12,10 +12,8 @@ export function lesson_object_properties_two() {
   let example_message = string_combine("with an ", description);
   return lesson_simple(
     function () {
-      let identifiers = app_learn_code_random_identifiers_sorted(3);
-      let [a, b, c] = identifiers;
-      let values = integer_random_digit_single_positive_multiple_sorted(2);
-      let [d, e] = values;
+      let [a, b, c] = app_learn_code_random_identifiers_sorted(3);
+      let [d, e] = integer_random_digit_single_positive_multiple_sorted(2);
       let lines = [
         js_code_statement_let_assign(a, js_code_braces()),
         js_code_assign(`${a}.${b}`, d),
