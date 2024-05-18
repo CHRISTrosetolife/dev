@@ -39,5 +39,6 @@ export function lesson_object_properties_two() {
     "an object can have its own variables called `properties`";
     "a variable has a name and a value";
     "a property has a name and a value";
+    "here is code to create an object and assign its properties values :";
   }
 }
