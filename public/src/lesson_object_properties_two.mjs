@@ -8,7 +8,7 @@ import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 import { string_combine } from "./string_combine.mjs";
 export function lesson_object_properties_two() {
-  let description = "array with two items";
+  let description = "object with two properties";
   let example_message = string_combine("with an ", description);
   return lesson_simple(
     function () {
