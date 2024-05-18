@@ -31,6 +31,6 @@ export async function sandbox() {
     let normalized = list_map(parts, string_whitespace_normalize);
     let trimmed = list_filter(normalized, string_trim);
     let non_empty = list_filter(trimmed, string_empty_not_is);
-    return non_empty;
+    return ' ' === ' ';
   }
 }
