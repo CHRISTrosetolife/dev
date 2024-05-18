@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_length } from "./list_length.mjs";
 import { equal } from "./equal.mjs";
 import { html_parse } from "./html_parse.mjs";
@@ -13,6 +14,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { string_trim } from "./string_trim.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { list_get } from "./list_get.mjs";
+import { error } from "./error.mjs";
 export async function sandbox() {
   let index = 0;
   let path = "C:\\Users\\JESUS\\Downloads\\yyy8Uu-master\\yyy8Uu-master";
@@ -33,5 +35,11 @@ export async function sandbox() {
   let normalized = list_map(parts, string_whitespace_normalize);
   let trimmed = list_map(normalized, string_trim);
   let non_empty = list_filter(trimmed, string_empty_not_is);
+  for (let part of non_empty) {
+    if (part.match(/.*&[a-z]+;.*/)) {
+      log(part);
+      error();
+    }
+  }
   return non_empty;
 }
