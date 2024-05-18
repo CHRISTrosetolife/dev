@@ -10,7 +10,7 @@ import { each_index_async } from "./each_index_async.mjs";
 import { yyy8Uu_file_path_to_parts } from "./yyy8Uu_file_path_to_parts.mjs";
 import { list_single } from "./list_single.mjs";
 export async function sandbox() {
-  for (let index of [0, 1]) {
+  for (let index of [2,3,4,5,6]) {
     let latin = await yyy8Uu_parts(index);
     let english = await list_adder_async(async (la) => {
       await each_index_async(latin, async (part, index2) => {
