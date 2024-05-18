@@ -22,6 +22,7 @@ export async function app_yyy8Uu() {
     let chapter = await http_get(storage_url(file_path));
     let { english, latin } = chapter;
     let indices = range(english);
+    console.log({indices})
     for (let i of indices) {
         const l = list_get(latin, i);
         console.log({l})
