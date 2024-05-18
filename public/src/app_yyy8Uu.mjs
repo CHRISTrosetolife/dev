@@ -26,7 +26,6 @@ export async function app_yyy8Uu() {
         html_p_text(root, list_get(latin, i))
         html_p_text(root, list_get(english, i))
     }
-    html_inner_set(root, json_to(chapter));
     html_hr(root);
     let button_next = html_button_width_full_text_click_next(
       root,
