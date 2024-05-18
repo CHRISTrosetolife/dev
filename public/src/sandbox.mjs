@@ -27,6 +27,7 @@ export async function sandbox() {
       for (let h of head) {
         la(h);
       }
+      console.log(p)
     });
     let normalized = list_map(parts, string_whitespace_normalize);
     return normalized;
