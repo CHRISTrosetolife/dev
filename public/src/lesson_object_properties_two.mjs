@@ -26,7 +26,8 @@ export function lesson_object_properties_two() {
     example_before,
     description,
     example_message,
-    [],
+    [screen1],
   );
   function example_before(parent) {}
+  function screen1(parent) {}
 }
