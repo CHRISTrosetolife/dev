@@ -25,11 +25,10 @@ export async function app_yyy8Uu() {
     for (let i of indices) {
       const l = list_get(latin, i);
       let latin_p = html_p_text(root, l);
-      html_style_font_color;
+      html_style_font_color(latin_p, 'darkblue');
       html_p_text(root, list_get(english, i));
       html_hr(root);
     }
-    html_hr(root);
     let button_next = html_button_width_full_text_click_next(
       root,
       async function next_on_click() {
