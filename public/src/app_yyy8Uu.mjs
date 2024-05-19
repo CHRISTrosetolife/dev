@@ -24,6 +24,7 @@ import { string_combine } from "./string_combine.mjs";
 import { each_index } from "./each_index.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { list_index } from "./list_index.mjs";
 export async function app_yyy8Uu() {
   html_style_default_initialize();
   let root = html_document_body();
@@ -59,8 +60,17 @@ export async function app_yyy8Uu() {
     let chapter_numbers = list_map(chapter_names, (b) =>
       string_prefix_without(b, "c"),
     );
-    let chapter_labels = list_map(chapter_numbers, (b) => {
-      string_combine_multiple([book_label, " chapter ", b]);
+    let chapter_labels = list_map(chapter_numbers, (b) =>
+      string_combine_multiple([book_label, " chapter ", b]),
+    );
+    each_index(chapter_labels, (c, chapter_book_index) => {
+      html_button_width_full_text_click(root, c, () => {
+        let chapter_index = list_index(
+          split,
+          list_get(filtered, chapter_book_index),
+        );
+        refresh_chapter(chapter_index);
+      });
     });
   }
   async function refresh_chapter(chapter_index) {
