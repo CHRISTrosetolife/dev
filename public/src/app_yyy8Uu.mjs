@@ -23,6 +23,7 @@ export async function app_yyy8Uu() {
   let { chapter_names } = await http_storage(file_path);
   let split = list_map(chapter_names, (c) => string_split("-"));
   for (let s of split) {
+    console.log({s})
     assert(equal, [list_length(s), 2]);
   }
   console.log({
