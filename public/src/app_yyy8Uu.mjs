@@ -21,6 +21,7 @@ import { list_first } from "./list_first.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { each_index } from "./each_index.mjs";
+import { list_filter } from "./list_filter.mjs";
 export async function app_yyy8Uu() {
   html_style_default_initialize();
   let root = html_document_body();
@@ -48,7 +49,8 @@ export async function app_yyy8Uu() {
   refresh_home();
   function refresh_book(book_index) {
     let book_name_unique = list_get(book_names_unique, book_index);
-    let prefix = string_combine(book_name_unique, separator);
+    let filtered = list_filter(split, s => equal(list_first(s), book_name_unique));
+    let chapter_names = list_map(filtered, f => list_get(f, 1));
   }
   async function refresh_chapter(chapter_index) {
     html_clear_scroll_top(root);
