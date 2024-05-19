@@ -103,8 +103,8 @@ export async function app_yyy8Uu() {
       let latin_p = html_p_text(root, l);
       html_style_font_color(latin_p, "darkblue");
       html_p_text(root, list_get(english, i));
+      html_hr(root);
     }
-    html_hr(root);
     buttons_navigation();
     function buttons_navigation() {
       button_home();
