@@ -50,9 +50,13 @@ export function app_demo_2024_05_19() {
         "then , a local commit is made to git ( `git add` , `git commit -m ...` )",
         "therefore , anytime a command is ran git can be kept up-to-date",
       ]);
-      html_img_limited_centered(parent, "demo\\2024_05_19\\6.png");
       html_style_alternate_monospace_short_multiple(parent, [
-        "if we click the sync icon to push changes to github , then we can run `github_open` ...",
+        "if we click the sync icon to push changes to github ...",
+      ]);
+      html_img_limited_centered(parent, "demo\\2024_05_19\\6.png");
+      
+      html_style_alternate_monospace_short_multiple(parent, [
+        "... then we can run `github_open` ...",
       ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\7.png");
       html_style_alternate_monospace_short_multiple(parent, [
@@ -62,7 +66,7 @@ export function app_demo_2024_05_19() {
     },
     (parent) => {
       html_style_alternate_monospace_short_multiple(parent, [
-        "to make a new function , run function_new and provide a function name :",
+        "to make a new function , run `function_new` and provide a function name :",
       ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\9.png");
       html_style_alternate_monospace_short_multiple(parent, [
@@ -81,7 +85,7 @@ export function app_demo_2024_05_19() {
       html_img_limited_centered(parent, "demo\\2024_05_19\\15.png");
       html_img_limited_centered(parent, "demo\\2024_05_19\\12.png");
       html_style_alternate_monospace_short_multiple(parent, [
-        "we can run `greetings` from the command-line - again , easy to test functions",
+        "we can run `greetings` from the command-line :",
       ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\13.png");
     },
@@ -114,7 +118,7 @@ export function app_demo_2024_05_19() {
       ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\20.png");
       html_style_alternate_monospace_short_multiple(parent, [
-        "`function_auto` automatically manages all imports",
+        "`function_auto` automatically manages all function `import`s",
       ]);
     },
     (parent) => {
@@ -133,7 +137,7 @@ export function app_demo_2024_05_19() {
       ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\23.png");
       html_style_alternate_monospace_short_multiple(parent, [
-        "an import is automatically added :",
+        "an `import` is automatically added :",
       ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\24.png");
     },
