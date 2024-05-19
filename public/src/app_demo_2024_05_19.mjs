@@ -127,9 +127,17 @@ export function app_demo_2024_05_19() {
       ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\23.png");
       html_style_alternate_monospace_short_multiple(parent, [
-        "an import is automatically added",
+        "an import is automatically added :",
       ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\24.png");
+    },
+    (parent) => {
+      html_style_alternate_monospace_short_multiple(parent, [
+        "if we refactor greeting to use multiple functons ...",
+      ]);
+      html_img_limited_centered(parent, "demo\\2024_05_19\\25.png");
+      html_img_limited_centered(parent, "demo\\2024_05_19\\26.png");
+      html_img_limited_centered(parent, "demo\\2024_05_19\\27.png");
     },
   ];
   screen = 7;
