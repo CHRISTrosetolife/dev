@@ -12,9 +12,10 @@ import { each_index_async } from "./each_index_async.mjs";
 import { yyy8Uu_file_path_to_parts } from "./yyy8Uu_file_path_to_parts.mjs";
 import { list_single } from "./list_single.mjs";
 import { list_first } from "./list_first.mjs";
+import { string_combine } from "./string_combine.mjs";
 export async function sandbox() {
   let folder_path = yyy8Uu_path_base();
-  let files = await folder_read(folder_path, ".xml");
+  let files = await folder_read(string_combine(folder_path, 'symlinks'), ".xml");
   return files;
   let firsts = await list_adder_async(async (la_outer) => {
     for (let index of [2, 3, 4, 5, 6]) {
