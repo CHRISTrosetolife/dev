@@ -70,13 +70,17 @@ export function app_demo_2024_05_19() {
       ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\11.png");
       html_style_alternate_monospace_short_multiple(parent, [
-        "...and run `function_auto` then whitespace is automatically fixed",
+        "... and run `function_auto` then whitespace is automatically fixed",
       ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\15.png");
       html_img_limited_centered(parent, "demo\\2024_05_19\\12.png");
+      
+      html_style_alternate_monospace_short_multiple(parent, [
+        "we can run `greetings` from the command-line - again , easy to test functions",
+      ]);
+      html_img_limited_centered(parent, "demo\\2024_05_19\\13.png");
     },
     (parent) => {
-      html_img_limited_centered(parent, "demo\\2024_05_19\\13.png");
       html_img_limited_centered(parent, "demo\\2024_05_19\\14.png");
       html_img_limited_centered(parent, "demo\\2024_05_19\\16.png");
     },
