@@ -98,25 +98,25 @@ export async function app_yyy8Uu() {
     }
     html_hr(root);
     buttons_navigation();
-      function buttons_navigation() {
-          let button_previous = html_button_width_full_text_click_previous(
-              root,
-              async function previous_on_click() {
-                  await refresh_chapter(subtract_1(chapter_index));
-              }
-          );
-          let button_next = html_button_width_full_text_click_next(
-              root,
-              async function next_on_click() {
-                  await refresh_chapter(add_1(chapter_index));
-              }
-          );
-          if (equal(chapter_index, 0)) {
-              html_disable(button_previous);
-          }
-          if (equal(chapter_index, index_last)) {
-              html_disable(button_next);
-          }
+    function buttons_navigation() {
+      let button_previous = html_button_width_full_text_click_previous(
+        root,
+        async function previous_on_click() {
+          await refresh_chapter(subtract_1(chapter_index));
+        },
+      );
+      let button_next = html_button_width_full_text_click_next(
+        root,
+        async function next_on_click() {
+          await refresh_chapter(add_1(chapter_index));
+        },
+      );
+      if (equal(chapter_index, 0)) {
+        html_disable(button_previous);
       }
+      if (equal(chapter_index, index_last)) {
+        html_disable(button_next);
+      }
+    }
   }
 }
