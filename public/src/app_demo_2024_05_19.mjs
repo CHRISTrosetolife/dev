@@ -8,7 +8,7 @@ import { list_get } from "./list_get.mjs";
 import { list_index_last } from "./list_index_last.mjs";
 export function app_demo_2024_05_19() {
   let root = html_style_default_initialize();
-  let screen = 2;
+  let screen = 0;
   let screens = [
     (parent) => {
       html_style_alternate_monospace_short(
@@ -59,9 +59,29 @@ export function app_demo_2024_05_19() {
         "to make a new function , run function_new and provide a function name :",
       ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\9.png");
+      html_style_alternate_monospace_short_multiple(parent, [
+        "a function is created :",
+      ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\10.png");
     },
+    (parent) => {
+      html_style_alternate_monospace_short_multiple(parent, [
+        "if we add a function body ...",
+      ]);
+      html_img_limited_centered(parent, "demo\\2024_05_19\\11.png");
+      html_style_alternate_monospace_short_multiple(parent, [
+        "...and run `function_auto` then whitespace is automatically fixed",
+      ]);
+      html_img_limited_centered(parent, "demo\\2024_05_19\\15.png");
+      html_img_limited_centered(parent, "demo\\2024_05_19\\12.png");
+    },
+    (parent) => {
+      html_img_limited_centered(parent, "demo\\2024_05_19\\13.png");
+      html_img_limited_centered(parent, "demo\\2024_05_19\\14.png");
+      html_img_limited_centered(parent, "demo\\2024_05_19\\16.png");
+    },
   ];
+  screen = 4;
   let screen_last = list_index_last(screens);
   refresh_lesson_screen(screen);
   async function refresh_lesson_screen(screen) {
