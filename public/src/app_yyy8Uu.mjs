@@ -96,7 +96,7 @@ export async function app_yyy8Uu() {
     html_hr(root);
     html_button_width_full_text_click(
       root,
-      (show_latin ? "show" : "hide") + " latin",
+      (show_latin ? "hide" : "show") + " latin",
       async function on_click() {
         show_latin = !show_latin;
         await refresh_chapter(chapter_index);
