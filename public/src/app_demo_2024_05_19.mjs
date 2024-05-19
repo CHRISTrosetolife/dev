@@ -41,7 +41,7 @@ export function app_demo_2024_05_19() {
         "suppose we make a change to `noop` :",
       ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\4.png");
-      html_style_alternate_monospace_short_multiple(parent, [
+      html_style_alternate_short_p(parent, [
         "then , if we change `run.mjs` to `run_git.mjs` ...",
       ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\5.png");
