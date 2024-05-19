@@ -16,9 +16,10 @@ export async function app_yyy8Uu() {
   html_style_default_initialize();
   let root = html_document_body();
   let file_path = yyy8Uu_storage_path("chapter_names");
-  let { chapter_names } = await http_storage(file_path);
+  let result = await http_storage(file_path);
+  let { chapter_names } = result
   console.log({
-    chapter_names,
+    result,
   });
   await refresh_chapter(0);
   async function refresh_chapter(index) {
