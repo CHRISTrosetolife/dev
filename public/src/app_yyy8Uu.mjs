@@ -1,3 +1,4 @@
+import { list_map } from "./list_map.mjs";
 import { log } from "./log.mjs";
 import { http_storage } from "./http_storage.mjs";
 import { html_style_font_color } from "./html_style_font_color.mjs";
@@ -20,9 +21,9 @@ export async function app_yyy8Uu() {
   let root = html_document_body();
   let file_path = yyy8Uu_storage_path("chapter_names");
   let { chapter_names } = await http_storage(file_path);
-  let split = list_map(chapter_names, c => string_split('-'));
+  let split = list_map(chapter_names, (c) => string_split("-"));
   for (let s of split) {
-    assert(equal, [list_length(s), 2])
+    assert(equal, [list_length(s), 2]);
   }
   console.log({
     result,
