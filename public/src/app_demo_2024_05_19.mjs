@@ -36,11 +36,11 @@ export function app_demo_2024_05_19() {
       html_img_limited_centered(parent, "demo\\2024_05_19\\3.png");
     },
   ];
-  let index_last = list_index_last(screens);
+  let screen_last = list_index_last(screens);
   refresh_lesson_screen(screen);
   async function refresh_lesson_screen(screen) {
     html_clear_scroll_top(root);
     list_get(screens, screen)(root);
-    html_buttons_next_previous(root, refresh_lesson_screen, index, index_last);
+    html_buttons_next_previous(root, refresh_lesson_screen, screen, screen_last);
   }
 }
