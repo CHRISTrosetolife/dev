@@ -84,12 +84,8 @@ export async function app_yyy8Uu() {
   }
   async function refresh_chapter(chapter_index) {
     html_clear_scroll_top(root);
-    let button_previous = html_button_width_full_text_click_previous(
-      root,
-      async function previous_on_click() {
-        await refresh_chapter(subtract_1(chapter_index));
-      },
-    );
+    buttons_navigation();
+    html_hr(root);
     let file_path = yyy8Uu_storage_path(chapter_index);
     let chapter = await http_storage(file_path);
     let { english, latin } = chapter;
@@ -99,19 +95,28 @@ export async function app_yyy8Uu() {
       let latin_p = html_p_text(root, l);
       html_style_font_color(latin_p, "darkblue");
       html_p_text(root, list_get(english, i));
-      html_hr(root);
     }
-    let button_next = html_button_width_full_text_click_next(
-      root,
-      async function next_on_click() {
-        await refresh_chapter(add_1(chapter_index));
-      },
-    );
-    if (equal(chapter_index, 0)) {
-      html_disable(button_previous);
-    }
-    if (equal(chapter_index, index_last)) {
-      html_disable(button_next);
-    }
+    html_hr(root);
+    buttons_navigation();
+      function buttons_navigation() {
+          let button_previous = html_button_width_full_text_click_previous(
+              root,
+              async function previous_on_click() {
+                  await refresh_chapter(subtract_1(chapter_index));
+              }
+          );
+          let button_next = html_button_width_full_text_click_next(
+              root,
+              async function next_on_click() {
+                  await refresh_chapter(add_1(chapter_index));
+              }
+          );
+          if (equal(chapter_index, 0)) {
+              html_disable(button_previous);
+          }
+          if (equal(chapter_index, index_last)) {
+              html_disable(button_next);
+          }
+      }
   }
 }
