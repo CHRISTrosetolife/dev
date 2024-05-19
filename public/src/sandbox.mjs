@@ -14,7 +14,7 @@ import { string_combine } from "./string_combine.mjs";
 export async function sandbox() {
   let file_paths = await folder_read(
     "C:\\Users\\JESUS\\Pictures\\Screenshots",
-    "",
+    ".png",
   );
   await each_index_async(file_paths, async (file_path, index) => {
     let dirname = path_dirname(file_path);
