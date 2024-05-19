@@ -116,10 +116,23 @@ export function app_demo_2024_05_19() {
         "to search for a function , use `function_search` and provide search terms that match separated by `,`",
       ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\21.png");
+    },
+    (parent) => {
+      html_style_alternate_monospace_short_multiple(parent, [
+        "if we refactor greetings to randomly select a greeting word ...",
+      ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\22.png");
+      html_style_alternate_monospace_short_multiple(parent, [
+        "... and run `function_auto` ...",
+      ]);
+      html_img_limited_centered(parent, "demo\\2024_05_19\\23.png");
+      html_style_alternate_monospace_short_multiple(parent, [
+        "an import is automatically added",
+      ]);
+      html_img_limited_centered(parent, "demo\\2024_05_19\\24.png");
     },
   ];
-  screen = 5;
+  screen = 7;
   let screen_last = list_index_last(screens);
   refresh_lesson_screen(screen);
   async function refresh_lesson_screen(screen) {
