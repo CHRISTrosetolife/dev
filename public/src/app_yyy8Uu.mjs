@@ -1,3 +1,4 @@
+import { html_spacer_vertical_2 } from "./html_spacer_vertical_2.mjs";
 import { html_button_width_full_text_click_home } from "./html_button_width_full_text_click_home.mjs";
 import { html_disable } from "./html_disable.mjs";
 import { list_second } from "./list_second.mjs";
@@ -105,6 +106,8 @@ export async function app_yyy8Uu() {
     html_hr(root);
     buttons_navigation();
     function buttons_navigation() {
+      button_home();
+      html_spacer_vertical_2(root);
       let button_previous = html_button_width_full_text_click_previous(
         root,
         async function previous_on_click() {
