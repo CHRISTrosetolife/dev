@@ -6,7 +6,7 @@ import { import_node } from "./import_node.mjs";
 import { assert } from "./assert.mjs";
 export async function folder_read(folder, file_extension) {
   let g = await import_node("glob");
-  assert(string_is, file_extension);
+  assert(string_is, [file_extension]);
   folder = string_replace(folder, "\\", "/");
   folder += "/";
   let { glob } = g;
