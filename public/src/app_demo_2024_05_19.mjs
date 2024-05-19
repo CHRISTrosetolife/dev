@@ -74,18 +74,16 @@ export function app_demo_2024_05_19() {
       ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\15.png");
       html_img_limited_centered(parent, "demo\\2024_05_19\\12.png");
-      
       html_style_alternate_monospace_short_multiple(parent, [
         "we can run `greetings` from the command-line - again , easy to test functions",
       ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\13.png");
     },
     (parent) => {
-        html_style_alternate_monospace_short_multiple(parent, [
-          "sometimes visual studio code does not automatically add `import`s :",
-        ]);
+      html_style_alternate_monospace_short_multiple(parent, [
+        "sometimes visual studio code does not automatically add `import`s :",
+      ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\14.png");
-      
       html_style_alternate_monospace_short_multiple(parent, [
         "if we write a parsable javascript file ...",
       ]);
@@ -97,16 +95,24 @@ export function app_demo_2024_05_19() {
       html_img_limited_centered(parent, "demo\\2024_05_19\\17.png");
     },
     (parent) => {
-        
       html_style_alternate_monospace_short_multiple(parent, [
         "if we refactor so that an import is no longer needed ...",
       ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\18.png");
+      html_style_alternate_monospace_short_multiple(parent, [
+        "... and run `function_auto` again ...",
+      ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\19.png");
+      html_style_alternate_monospace_short_multiple(parent, [
+        "... then the `import` is automatically removed",
+      ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\20.png");
+      html_style_alternate_monospace_short_multiple(parent, [
+        "`function_auto` automatically manages all imports",
+      ]);
     },
   ];
-  screen = 6;
+  screen = 5;
   let screen_last = list_index_last(screens);
   refresh_lesson_screen(screen);
   async function refresh_lesson_screen(screen) {
