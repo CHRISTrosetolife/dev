@@ -100,10 +100,14 @@ export async function app_yyy8Uu() {
     let indices = range(list_length(english));
     for (let i of indices) {
       const l = list_get(latin, i);
-      let latin_p = html_p_text(root, l);
-      html_style_font_color(latin_p, "darkblue");
+      if (latin_show) {
+        let latin_p = html_p_text(root, l);
+        html_style_font_color(latin_p, "darkblue");
+      }
       html_p_text(root, list_get(english, i));
-      html_hr(root);
+      if (latin_show) {
+        html_hr(root);
+      }
     }
     buttons_navigation();
     function buttons_navigation() {
