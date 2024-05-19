@@ -1,3 +1,4 @@
+import { yyy8Uu_chapter_names } from "./yyy8Uu_chapter_names.mjs";
 import { yyy8Uu_translate } from "./yyy8Uu_translate.mjs";
 import { yyy8Uu_storage_path } from "./yyy8Uu_storage_path.mjs";
 import { storage_upload_object } from "./storage_upload_object.mjs";
@@ -10,6 +11,13 @@ import { yyy8Uu_file_path_to_parts } from "./yyy8Uu_file_path_to_parts.mjs";
 import { list_single } from "./list_single.mjs";
 import { list_first } from "./list_first.mjs";
 export async function sandbox() {
+  await storage_upload_object(
+    {
+      chapter_names: yyy8Uu_chapter_names(),
+    },
+    yyy8Uu_storage_path("chapter_names"),
+  );
+  return;
   if (false) {
     let firsts = await list_adder_async(async (la_outer) => {
       for (let index of [2, 3, 4, 5, 6]) {
