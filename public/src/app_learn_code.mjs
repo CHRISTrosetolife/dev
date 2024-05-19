@@ -208,17 +208,18 @@ export function app_learn_code() {
     html_clear_scroll_top(root);
     let lesson_screen = list_get(lesson_screens, index);
     await lesson_screen(root);
+    let on_click = refresh_lesson_screen;
     html_hr(root);
     let button_next = html_button_width_full_text_click_next(
       root,
       async function next_on_click() {
-        await refresh_lesson_screen(add_1(index));
+        await on_click(add_1(index));
       },
     );
     let button_previous = html_button_width_full_text_click_previous(
       root,
       async function previous_on_click() {
-        await refresh_lesson_screen(subtract_1(index));
+        await on_click(subtract_1(index));
       },
     );
     if (equal(index, 0)) {
