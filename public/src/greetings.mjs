@@ -1,5 +1,5 @@
-import { list_random_item } from "./list_random_item.mjs";
+import { greetings_word_get } from "./greetings_word_get.mjs";
 export function greetings(name) {
-  let greeting_word = list_random_item(["hello", "hey", "howdy"]);
+  let greeting_word = greetings_word_get();
   return greeting_word + " " + name;
 }
