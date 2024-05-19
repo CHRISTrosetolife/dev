@@ -23,6 +23,7 @@ import { string_prefix_without } from "./string_prefix_without.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { each_index } from "./each_index.mjs";
 import { list_filter } from "./list_filter.mjs";
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export async function app_yyy8Uu() {
   html_style_default_initialize();
   let root = html_document_body();
@@ -49,6 +50,7 @@ export async function app_yyy8Uu() {
   }
   refresh_home();
   function refresh_book(book_index) {
+    let book_label = list_get(book_labels, book_index);
     let book_name_unique = list_get(book_names_unique, book_index);
     let filtered = list_filter(split, (s) =>
       equal(list_first(s), book_name_unique),
@@ -58,7 +60,7 @@ export async function app_yyy8Uu() {
       string_prefix_without(b, "c"),
     );
     let chapter_labels = list_map(chapter_numbers, (b) =>
-      string_combine("chapter ", b),
+      string_combine_multiple([book_label, " chapter ", b]),
     );
   }
   async function refresh_chapter(chapter_index) {
