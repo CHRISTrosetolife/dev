@@ -98,6 +98,7 @@ export async function app_yyy8Uu() {
       root,
       (show_latin ? "show" : "hide") + " latin",
       async function on_click() {
+        show_latin = !show_latin;
         await refresh_chapter(chapter_index);
       },
     );
