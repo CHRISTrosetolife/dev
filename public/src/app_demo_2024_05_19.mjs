@@ -165,6 +165,9 @@ export function app_demo_2024_05_19() {
         "... and it works !",
       ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\32.png");
+      html_style_alternate_monospace_short_multiple(parent, [
+        "there are many more features , but this hopefully gives an idea",
+      ]);
       html_hr(parent);
       html_style_alternate_monospace_short_multiple(parent, [
         " congratulations , you made it to the end !",
