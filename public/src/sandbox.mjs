@@ -1,3 +1,5 @@
+import { add_1 } from "./add_1.mjs";
+import { string_to } from "./string_to.mjs";
 import { yyy8Uu_translate_upload } from "./yyy8Uu_translate_upload.mjs";
 import { yyy8Uu_translate } from "./yyy8Uu_translate.mjs";
 import { yyy8Uu_parts } from "./yyy8Uu_parts.mjs";
@@ -17,7 +19,9 @@ export async function sandbox() {
   await each_index_async(file_paths, async (file_path, index) => {
     let dirname = path_dirname(file_path);
     let extension = path_extname(file_path);
-    log(path_join([dirname, string_combine()]));
+    log(
+      path_join([dirname, string_combine(string_to(add_1(index)), extension)]),
+    );
   });
   return;
   if (false) {
