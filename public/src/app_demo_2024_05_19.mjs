@@ -111,6 +111,13 @@ export function app_demo_2024_05_19() {
         "`function_auto` automatically manages all imports",
       ]);
     },
+    (parent) => {
+      html_style_alternate_monospace_short_multiple(parent, [
+        "to search for a function , use `function_search` and provide search terms that match separated by `,`",
+      ]);
+      html_img_limited_centered(parent, "demo\\2024_05_19\\21.png");
+      html_img_limited_centered(parent, "demo\\2024_05_19\\22.png");
+    },
   ];
   screen = 5;
   let screen_last = list_index_last(screens);
