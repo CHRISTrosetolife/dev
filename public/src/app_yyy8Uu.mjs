@@ -94,9 +94,13 @@ export async function app_yyy8Uu() {
     html_clear_scroll_top(root);
     buttons_navigation();
     html_hr(root);
-    html_button_width_full_text_click(root, "", async function on_click() {
-      await refresh_chapter(chapter_index);
-    });
+    html_button_width_full_text_click(
+      root,
+      (show_latin ? "show" : "hide") + " latin",
+      async function on_click() {
+        await refresh_chapter(chapter_index);
+      },
+    );
     let file_path = yyy8Uu_storage_path(chapter_index);
     let chapter = await http_storage(file_path);
     let { english, latin } = chapter;
