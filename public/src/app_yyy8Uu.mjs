@@ -12,12 +12,18 @@ import { range } from "./range.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { list_get } from "./list_get.mjs";
 import { list_length } from "./list_length.mjs";
+import { string_split } from "./string_split.mjs";
+import { assert } from "./assert.mjs";
+import { equal } from "./equal.mjs";
 export async function app_yyy8Uu() {
   html_style_default_initialize();
   let root = html_document_body();
   let file_path = yyy8Uu_storage_path("chapter_names");
-  let result = await http_storage(file_path);
-  let { chapter_names } = result
+  let { chapter_names } = await http_storage(file_path);
+  let split = list_map(chapter_names, c => string_split('-'));
+  for (let s of split) {
+    assert(equal, [list_length(s), 2])
+  }
   console.log({
     result,
   });
