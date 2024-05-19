@@ -59,9 +59,9 @@ export async function app_yyy8Uu() {
     let chapter_numbers = list_map(chapter_names, (b) =>
       string_prefix_without(b, "c"),
     );
-    let chapter_labels = list_map(chapter_numbers, (b) =>
-      string_combine_multiple([book_label, " chapter ", b]),
-    );
+    let chapter_labels = list_map(chapter_numbers, (b) => {
+      string_combine_multiple([book_label, " chapter ", b]);
+    });
   }
   async function refresh_chapter(chapter_index) {
     html_clear_scroll_top(root);
