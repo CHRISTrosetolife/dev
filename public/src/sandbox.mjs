@@ -6,6 +6,7 @@ import { each_index_async } from "./each_index_async.mjs";
 import { yyy8Uu_file_path_to_parts } from "./yyy8Uu_file_path_to_parts.mjs";
 export async function sandbox() {
   const input_directory = "C:\\Users\\JESUS\\Pictures\\Screenshots";
+  let output_directory = "C:\\Users\\JESUS\\dev\\public\\img\\demo\\2024_05_19";
   const file_extension = ".png";
   await folder_files_rename_incrementing(input_directory, file_extension);
   return;
