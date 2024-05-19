@@ -1,3 +1,5 @@
+import { folder_read } from "./folder_read.mjs";
+import { yyy8Uu_path_base } from "./yyy8Uu_path_base.mjs";
 import { yyy8Uu_storage_path } from "./yyy8Uu_storage_path.mjs";
 import { storage_upload_object } from "./storage_upload_object.mjs";
 import { list_adder_async } from "./list_adder_async.mjs";
@@ -11,6 +13,9 @@ import { yyy8Uu_file_path_to_parts } from "./yyy8Uu_file_path_to_parts.mjs";
 import { list_single } from "./list_single.mjs";
 import { list_first } from "./list_first.mjs";
 export async function sandbox() {
+  let folder_path = yyy8Uu_path_base();
+  let files = await folder_read(folder_path, ".xml");
+  return files;
   let firsts = await list_adder_async(async (la_outer) => {
     for (let index of [2, 3, 4, 5, 6]) {
       let latin = await yyy8Uu_parts(index);
