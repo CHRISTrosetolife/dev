@@ -1,3 +1,4 @@
+import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { list_unique } from "./list_unique.mjs";
 import { list_map } from "./list_map.mjs";
 import { log } from "./log.mjs";
@@ -20,6 +21,7 @@ import { equal } from "./equal.mjs";
 import { list_first } from "./list_first.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 import { string_combine } from "./string_combine.mjs";
+import { each_index } from "./each_index.mjs";
 export async function app_yyy8Uu() {
   html_style_default_initialize();
   let root = html_document_body();
@@ -35,13 +37,21 @@ export async function app_yyy8Uu() {
     string_prefix_without(b, "l"),
   );
   let book_labels = list_map(book_numbers, (b) => string_combine("book ", b));
+  function refresh_home() {
+    html_clear_scroll_top(root);
+    each_index(book_labels, (b, book_index) => {
+      html_button_width_full_text_click(root, b, () => {
+        refresh_book(book_index);
+      });
+    });
+  }
   console.log({
     book_labels,
   });
   await refresh_chapter(0);
-  async function refresh_chapter(index) {
+  async function refresh_chapter(chapter_index) {
     html_clear_scroll_top(root);
-    let file_path = yyy8Uu_storage_path(index);
+    let file_path = yyy8Uu_storage_path(chapter_index);
     let chapter = await http_storage(file_path);
     let { english, latin } = chapter;
     let indices = range(list_length(english));
@@ -55,7 +65,7 @@ export async function app_yyy8Uu() {
     let button_next = html_button_width_full_text_click_next(
       root,
       async function next_on_click() {
-        await refresh_chapter(add_1(index));
+        await refresh_chapter(add_1(chapter_index));
       },
     );
   }
