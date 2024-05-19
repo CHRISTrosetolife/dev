@@ -9,10 +9,10 @@ import { html_style_default_initialize } from "./html_style_default_initialize.m
 import { list_get } from "./list_get.mjs";
 export function app_demo_2024_05_19() {
   let root = html_style_default_initialize();
-  let index = 0;
+  let screen = 0;
   html_hash({
-    index: (value) => {
-      index = integer_parse(value);
+    screen: (value) => {
+      screen = integer_parse(value);
     },
   });
   let index_last = 0;
@@ -36,10 +36,10 @@ export function app_demo_2024_05_19() {
       html_img_limited_centered(parent, "demo\\2024_05_19\\3.png");
     },
   ];
-  refresh_lesson_screen(index);
+  refresh_lesson_screen(screen);
   async function refresh_lesson_screen(index) {
     html_clear_scroll_top(root);
-    list_get(screens, 0)(root);
+    list_get(screens, screen)(root);
     html_buttons_next_previous(root, refresh_lesson_screen, index, index_last);
   }
 }
