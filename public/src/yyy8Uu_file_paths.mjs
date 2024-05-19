@@ -11,12 +11,13 @@ import { yyy8Uu_path_base } from "./yyy8Uu_path_base.mjs";
 export async function yyy8Uu_file_paths() {
   let folder_path = yyy8Uu_path_base();
   let symlinks = await folder_read(string_combine(folder_path, "symlinks"), "");
-  return await list_map_async(symlinks, async (s) => {
+  return await list_map_async(symlinks, each_symlink);
+  async function each_symlink(s) {
     let dirname = path_dirname(s);
     let contents = await file_read(s);
     let joined = path_join([dirname, contents]);
     let xmls = await folder_read(joined, ".xml");
     let filtered = list_filter(xmls, (f) => string_includes(f, "\\cod-"));
     return list_single(filtered);
-  });
+  }
 }
