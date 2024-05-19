@@ -89,7 +89,7 @@ export async function app_yyy8Uu() {
   function button_home() {
     html_button_width_full_text_click_home(root, refresh_home);
   }
-  let latin_show = true;
+  let show_latin = true;
   async function refresh_chapter(chapter_index) {
     html_clear_scroll_top(root);
     buttons_navigation();
@@ -108,16 +108,16 @@ export async function app_yyy8Uu() {
     let indices = range(list_length(english));
     for (let i of indices) {
       const l = list_get(latin, i);
-      if (latin_show) {
+      if (show_latin) {
         let latin_p = html_p_text(root, l);
         html_style_font_color(latin_p, "darkblue");
       }
       html_p_text(root, list_get(english, i));
-      if (latin_show) {
+      if (show_latin) {
         html_hr(root);
       }
     }
-    if (!latin_show) {
+    if (!show_latin) {
       html_hr(root);
     }
     buttons_navigation();
