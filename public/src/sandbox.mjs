@@ -1,4 +1,4 @@
-import { yyy8Uu_chapter_names_upload } from "./yyy8Uu_chapter_names_upload.mjs";
+import { range } from "./range.mjs";
 import { yyy8Uu_translate } from "./yyy8Uu_translate.mjs";
 import { yyy8Uu_storage_path } from "./yyy8Uu_storage_path.mjs";
 import { storage_upload_object } from "./storage_upload_object.mjs";
@@ -13,7 +13,7 @@ import { list_first } from "./list_first.mjs";
 export async function sandbox() {
   if (false) {
     let firsts = await list_adder_async(async (la_outer) => {
-      for (let index of [2, 3, 4, 5, 6]) {
+      for (let index of range(16)) {
         let latin = await yyy8Uu_parts(index);
         let english = await list_adder_async(async (la) => {
           await each_index_async(latin, async (part, index2) => {
