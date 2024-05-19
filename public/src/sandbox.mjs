@@ -25,16 +25,14 @@ export async function sandbox() {
           la(translated);
         });
       });
-      if (false) {
-        let destination = yyy8Uu_storage_path(index);
-        await storage_upload_object(
-          {
-            english,
-            latin,
-          },
-          destination,
-        );
-      }
+      let destination = yyy8Uu_storage_path(index);
+      await storage_upload_object(
+        {
+          english,
+          latin,
+        },
+        destination,
+      );
     }
   }
   let filtered = await yyy8Uu_translate();
