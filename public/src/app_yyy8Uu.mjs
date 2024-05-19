@@ -1,7 +1,6 @@
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { list_unique } from "./list_unique.mjs";
 import { list_map } from "./list_map.mjs";
-import { log } from "./log.mjs";
 import { http_storage } from "./http_storage.mjs";
 import { html_style_font_color } from "./html_style_font_color.mjs";
 import { yyy8Uu_storage_path } from "./yyy8Uu_storage_path.mjs";
@@ -45,9 +44,9 @@ export async function app_yyy8Uu() {
       });
     });
   }
-  refresh_home()
+  refresh_home();
   function refresh_book(book_index) {
-    let book_name_unique = list_get(book_names_unique, book_index)
+    let book_name_unique = list_get(book_names_unique, book_index);
   }
   async function refresh_chapter(chapter_index) {
     html_clear_scroll_top(root);
