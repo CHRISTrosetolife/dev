@@ -45,8 +45,17 @@ export function app_demo_2024_05_19() {
         "then , if we change `run.mjs` to `run<b>_git</b>.mjs` ...",
       ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\5.png");
+      
+      html_style_alternate_monospace_short_multiple(parent, [
+        "a local commit is made ( `git add` , `git commit -m ...`",
+      ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\6.png");
+      html_img_limited_centered(parent, "demo\\2024_05_19\\7.png");
+      html_img_limited_centered(parent, "demo\\2024_05_19\\8.png");
     },
+    parent => {
+        html_img_limited_centered(parent, "demo\\2024_05_19\\9.png");
+    }
   ];
   let screen_last = list_index_last(screens);
   refresh_lesson_screen(screen);
