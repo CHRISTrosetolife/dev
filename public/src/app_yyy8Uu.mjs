@@ -89,6 +89,7 @@ export async function app_yyy8Uu() {
   function button_home() {
     html_button_width_full_text_click_home(root, refresh_home);
   }
+  let latin_show = true;
   async function refresh_chapter(chapter_index) {
     html_clear_scroll_top(root);
     buttons_navigation();
