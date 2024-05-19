@@ -1,3 +1,4 @@
+import { html_spacer_vertical_2 } from "./html_spacer_vertical_2.mjs";
 import { html_button_width_full_text_click_home } from "./html_button_width_full_text_click_home.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_button_width_full_text_click_next } from "./html_button_width_full_text_click_next.mjs";
@@ -39,7 +40,6 @@ import { list_take } from "./list_take.mjs";
 import { list_sum } from "./list_sum.mjs";
 import { each_index } from "./each_index.mjs";
 import { add } from "./add.mjs";
-import { html_spacer_vertical } from "./html_spacer_vertical.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { range } from "./range.mjs";
@@ -227,8 +227,7 @@ export function app_learn_code() {
     if (equal(index, index_last)) {
       html_disable(button_next);
     }
-    html_spacer_vertical(root);
-    html_spacer_vertical(root);
+    html_spacer_vertical_2(root);
     button_home();
   }
   function button_home() {
