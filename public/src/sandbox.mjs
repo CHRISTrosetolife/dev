@@ -8,20 +8,19 @@ import { yyy8Uu_file_path_to_parts } from "./yyy8Uu_file_path_to_parts.mjs";
 import { folder_read } from "./folder_read.mjs";
 import { path_dirname } from "./path_dirname.mjs";
 import { path_extname } from "./path_extname.mjs";
-import { log } from "./log.mjs";
 import { path_join } from "./path_join.mjs";
 import { string_combine } from "./string_combine.mjs";
 export async function sandbox() {
-  let file_paths = await folder_read(
-    "C:\\Users\\JESUS\\Pictures\\Screenshots",
-    ".png",
-  );
+  const input_directory = "C:\\Users\\JESUS\\Pictures\\Screenshots";
+  const file_extension = ".png";
+  let file_paths = await folder_read(input_directory, file_extension);
   await each_index_async(file_paths, async (file_path, index) => {
     let dirname = path_dirname(file_path);
     let extension = path_extname(file_path);
-    log(
-      path_join([dirname, string_combine(string_to(add_1(index)), extension)]),
-    );
+    let file_path_new = path_join([
+      dirname,
+      string_combine(string_to(add_1(index)), extension),
+    ]);
   });
   return;
   if (false) {
