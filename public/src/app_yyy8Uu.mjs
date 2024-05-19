@@ -16,6 +16,7 @@ import { list_length } from "./list_length.mjs";
 import { string_split } from "./string_split.mjs";
 import { assert } from "./assert.mjs";
 import { equal } from "./equal.mjs";
+import { list_first } from "./list_first.mjs";
 export async function app_yyy8Uu() {
   html_style_default_initialize();
   let root = html_document_body();
@@ -25,6 +26,7 @@ export async function app_yyy8Uu() {
   for (let s of split) {
     assert(equal, [list_length(s), 2]);
   }
+  let book_names = list_map(split, s => list_first(s))
   console.log({
     chapter_names,
   });
