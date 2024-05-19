@@ -18,8 +18,9 @@ import { string_combine } from "./string_combine.mjs";
 export async function sandbox() {
   let folder_path = yyy8Uu_path_base();
   let symlinks = await folder_read(string_combine(folder_path, "symlinks"), "");
-  list_map_async(symlinks, async (s) => {
+  return await list_map_async(symlinks, async (s) => {
     let dirname = path_dirname(s);
+    return dirname;
   });
   return symlinks;
   let firsts = await list_adder_async(async (la_outer) => {
