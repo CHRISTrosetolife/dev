@@ -1,3 +1,4 @@
+import { file_rename } from "./file_rename.mjs";
 import { add_1 } from "./add_1.mjs";
 import { string_to } from "./string_to.mjs";
 import { yyy8Uu_translate_upload } from "./yyy8Uu_translate_upload.mjs";
@@ -21,6 +22,7 @@ export async function sandbox() {
       dirname,
       string_combine(string_to(add_1(index)), extension),
     ]);
+    await file_rename(file_path, file_path_new);
   });
   return;
   if (false) {
