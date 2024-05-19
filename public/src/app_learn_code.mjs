@@ -24,7 +24,6 @@ import { html_button_width_full_text_click } from "./html_button_width_full_text
 import { equal } from "./equal.mjs";
 import { list_get } from "./list_get.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { html_document_body } from "./html_document_body.mjs";
 import { list_length } from "./list_length.mjs";
 import { list_index_last } from "./list_index_last.mjs";
 import { html_style } from "./html_style.mjs";
@@ -45,7 +44,6 @@ import { list_single } from "./list_single.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 export function app_learn_code() {
   let modules = app_learn_code_modules();
-  let root = html_document_body();
   html_hash({
     background_color: (value) => {
       html_style(root, {
@@ -53,7 +51,7 @@ export function app_learn_code() {
       });
     },
   });
-  html_style_default_initialize();
+  let root = html_style_default_initialize();
   let default_font_size = html_style_default_font_size_value();
   default_font_size = 3;
   html_style_default_font_size(default_font_size);
