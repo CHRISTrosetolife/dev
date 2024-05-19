@@ -1,3 +1,5 @@
+import { integer_parse } from "./integer_parse.mjs";
+import { html_hash } from "./html_hash.mjs";
 import { html_style_alternate_monospace_short_multiple } from "./html_style_alternate_monospace_short_multiple.mjs";
 import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
 import { html_img_limited_centered } from "./html_img_limited_centered.mjs";
@@ -8,6 +10,11 @@ import { list_get } from "./list_get.mjs";
 export function app_demo_2024_05_19() {
   let root = html_style_default_initialize();
   let index = 0;
+  html_hash({
+    index: (value) => {
+      index = integer_parse(value);
+    },
+  });
   let index_last = 0;
   let screens = [
     (parent) => {
