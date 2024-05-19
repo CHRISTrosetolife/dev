@@ -1,3 +1,4 @@
+import { path_dirname } from "./path_dirname.mjs";
 import { list_map_async } from "./list_map_async.mjs";
 import { folder_read } from "./folder_read.mjs";
 import { yyy8Uu_path_base } from "./yyy8Uu_path_base.mjs";
@@ -17,7 +18,9 @@ import { string_combine } from "./string_combine.mjs";
 export async function sandbox() {
   let folder_path = yyy8Uu_path_base();
   let symlinks = await folder_read(string_combine(folder_path, "symlinks"), "");
-  list_map_async;
+  list_map_async(symlinks, async (s) => {
+    let dirname = path_dirname(s);
+  });
   return symlinks;
   let firsts = await list_adder_async(async (la_outer) => {
     for (let index of [2, 3, 4, 5, 6]) {
