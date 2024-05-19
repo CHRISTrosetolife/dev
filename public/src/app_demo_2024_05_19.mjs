@@ -47,7 +47,7 @@ export function app_demo_2024_05_19() {
       html_img_limited_centered(parent, "demo\\2024_05_19\\5.png");
       
       html_style_alternate_monospace_short_multiple(parent, [
-        "a local commit is made ( `git add` , `git commit -m ...`",
+        "a local commit is made to git ( `git add` , `git commit -m ...` )",
       ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\6.png");
       html_img_limited_centered(parent, "demo\\2024_05_19\\7.png");
