@@ -1,3 +1,4 @@
+import { html_disable } from "./html_disable.mjs";
 import { list_second } from "./list_second.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { list_unique } from "./list_unique.mjs";
@@ -25,6 +26,8 @@ import { each_index } from "./each_index.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_index } from "./list_index.mjs";
+import { html_button_width_full_text_click_previous } from "./html_button_width_full_text_click_previous.mjs";
+import { subtract_1 } from "./subtract_1.mjs";
 export async function app_yyy8Uu() {
   html_style_default_initialize();
   let root = html_document_body();
@@ -76,6 +79,12 @@ export async function app_yyy8Uu() {
   }
   async function refresh_chapter(chapter_index) {
     html_clear_scroll_top(root);
+    let button_previous = html_button_width_full_text_click_previous(
+      root,
+      async function previous_on_click() {
+        await refresh_chapter(subtract_1(chapter_index));
+      },
+    );
     let file_path = yyy8Uu_storage_path(chapter_index);
     let chapter = await http_storage(file_path);
     let { english, latin } = chapter;
@@ -93,5 +102,11 @@ export async function app_yyy8Uu() {
         await refresh_chapter(add_1(chapter_index));
       },
     );
+    if (equal(index, 0)) {
+      html_disable(button_previous);
+    }
+    if (equal(index, index_last)) {
+      html_disable(button_next);
+    }
   }
 }
