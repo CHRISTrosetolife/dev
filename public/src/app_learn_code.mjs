@@ -1,3 +1,4 @@
+import { html_button_width_full_text_click_home } from "./html_button_width_full_text_click_home.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_button_width_full_text_click_next } from "./html_button_width_full_text_click_next.mjs";
 import { html_button_width_full_text_click_previous } from "./html_button_width_full_text_click_previous.mjs";
@@ -231,12 +232,6 @@ export function app_learn_code() {
     button_home();
   }
   function button_home() {
-    html_button_width_full_text_click(
-      root,
-      "🏠 go back home",
-      function on_click() {
-        refresh_main();
-      },
-    );
+    html_button_width_full_text_click_home(root, refresh_main);
   }
 }

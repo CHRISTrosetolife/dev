@@ -51,6 +51,7 @@ export async function app_yyy8Uu() {
   }
   refresh_home();
   function refresh_book(book_index) {
+    html_clear_scroll_top(root);
     let book_label = list_get(book_labels, book_index);
     let book_name_unique = list_get(book_names_unique, book_index);
     let filtered = list_filter(split, (s) =>
