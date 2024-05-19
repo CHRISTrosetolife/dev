@@ -45,10 +45,10 @@ export async function app_yyy8Uu() {
       });
     });
   }
-  console.log({
-    book_labels,
-  });
-  await refresh_chapter(0);
+  refresh_home()
+  function refresh_book(book_index) {
+    let book_name_unique = list_get(book_names_unique, book_index)
+  }
   async function refresh_chapter(chapter_index) {
     html_clear_scroll_top(root);
     let file_path = yyy8Uu_storage_path(chapter_index);
