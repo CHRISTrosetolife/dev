@@ -23,7 +23,7 @@ export async function sandbox() {
   return await list_map_async(symlinks, async (s) => {
     let dirname = path_dirname(s);
     let contents = await file_read(s);
-    let joined = path_join(dirname, contents);
+    let joined = path_join([dirname, contents]);
     return joined;
   });
   return symlinks;
