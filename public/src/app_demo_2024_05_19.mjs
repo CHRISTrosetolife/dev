@@ -7,6 +7,7 @@ import { html_buttons_next_previous } from "./html_buttons_next_previous.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { list_get } from "./list_get.mjs";
+import { list_index_last } from "./list_index_last.mjs";
 export function app_demo_2024_05_19() {
   let root = html_style_default_initialize();
   let screen = 0;
@@ -15,7 +16,6 @@ export function app_demo_2024_05_19() {
       screen = integer_parse(value);
     },
   });
-  let index_last = 0;
   let screens = [
     (parent) => {
       html_style_alternate_monospace_short(
@@ -36,8 +36,9 @@ export function app_demo_2024_05_19() {
       html_img_limited_centered(parent, "demo\\2024_05_19\\3.png");
     },
   ];
+  let index_last = list_index_last(screens);
   refresh_lesson_screen(screen);
-  async function refresh_lesson_screen(index) {
+  async function refresh_lesson_screen(screen) {
     html_clear_scroll_top(root);
     list_get(screens, screen)(root);
     html_buttons_next_previous(root, refresh_lesson_screen, index, index_last);
