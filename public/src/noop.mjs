@@ -1,1 +1,1 @@
-export function noop() {/*hello*/}
+export function noop() {}
