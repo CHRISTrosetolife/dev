@@ -6,11 +6,17 @@ import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { list_get } from "./list_get.mjs";
 import { list_index_last } from "./list_index_last.mjs";
+import { html_hr } from "./html_hr.mjs";
 export function app_demo_2024_05_19() {
   let root = html_style_default_initialize();
   let screen = 0;
   let screens = [
     (parent) => {
+      html_style_alternate_monospace_short(
+        parent,
+        "here is something i have been working on recently :",
+      );
+      html_hr(parent);
       html_style_alternate_monospace_short(
         parent,
         "`string_combine` is a function that concatenates two strings",
@@ -138,7 +144,6 @@ export function app_demo_2024_05_19() {
       html_img_limited_centered(parent, "demo\\2024_05_19\\25.png");
       html_img_limited_centered(parent, "demo\\2024_05_19\\26.png");
       html_img_limited_centered(parent, "demo\\2024_05_19\\27.png");
-      
       html_style_alternate_monospace_short_multiple(parent, [
         "... and run `function_auto` ...",
       ]);
