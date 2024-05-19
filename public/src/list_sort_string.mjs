@@ -1,3 +1,4 @@
 export function list_sort_string(list, element_mapper) {
-  list.sort((a, b) => element_mapper(a).localeCompare(element_mapper(b)));
+    var collator = new Intl.Collator([], {numeric: true});
+  list.sort((a, b) =>  collator.compare(element_mapper(a), element_mapper(b)));
 }
