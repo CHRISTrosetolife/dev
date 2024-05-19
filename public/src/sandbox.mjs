@@ -15,7 +15,7 @@ import { list_first } from "./list_first.mjs";
 import { string_combine } from "./string_combine.mjs";
 export async function sandbox() {
   let folder_path = yyy8Uu_path_base();
-  let files = await folder_read(string_combine(folder_path, 'symlinks'), ".xml");
+  let files = await folder_read(string_combine(folder_path, 'symlinks'), "");
   return files;
   let firsts = await list_adder_async(async (la_outer) => {
     for (let index of [2, 3, 4, 5, 6]) {
