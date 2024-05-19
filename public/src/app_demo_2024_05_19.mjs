@@ -4,6 +4,7 @@ import { html_style_default_initialize } from "./html_style_default_initialize.m
 export function app_demo_2024_05_19() {
   let root = html_style_default_initialize();
   let index = 0;
+  let index_last = 0;
   refresh_lesson_screen(index);
   async function refresh_lesson_screen(index) {
     html_clear_scroll_top(root);
