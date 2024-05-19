@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { http_storage } from "./http_storage.mjs";
 import { html_style_font_color } from "./html_style_font_color.mjs";
 import { yyy8Uu_storage_path } from "./yyy8Uu_storage_path.mjs";
@@ -14,9 +15,11 @@ import { list_length } from "./list_length.mjs";
 export async function app_yyy8Uu() {
   html_style_default_initialize();
   let root = html_document_body();
-  let file_path = yyy8Uu_storage_path('index');
-  let {firsts} = await http_storage(file_path);
-  console.log({firsts})
+  let file_path = yyy8Uu_storage_path("chapter_names");
+  let { chapter_names } = await http_storage(file_path);
+  console.log({
+    chapter_names,
+  });
   await refresh_chapter(0);
   async function refresh_chapter(index) {
     html_clear_scroll_top(root);
