@@ -133,14 +133,28 @@ export function app_demo_2024_05_19() {
     },
     (parent) => {
       html_style_alternate_monospace_short_multiple(parent, [
-        "if we refactor greeting to use multiple functons ...",
+        "if we refactor greeting to use multiple functions ...",
       ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\25.png");
       html_img_limited_centered(parent, "demo\\2024_05_19\\26.png");
       html_img_limited_centered(parent, "demo\\2024_05_19\\27.png");
+      
+      html_style_alternate_monospace_short_multiple(parent, [
+        "... and run `function_auto` ...",
+      ]);
+      html_img_limited_centered(parent, "demo\\2024_05_19\\28.png");
+      html_style_alternate_monospace_short_multiple(parent, [
+        "... the each function will receive its own file , and all `import`s will be fixed ...",
+      ]);
+      html_img_limited_centered(parent, "demo\\2024_05_19\\29.png");
+      html_img_limited_centered(parent, "demo\\2024_05_19\\30.png");
+      html_img_limited_centered(parent, "demo\\2024_05_19\\31.png");
+      html_style_alternate_monospace_short_multiple(parent, [
+        "... and it works !",
+      ]);
+      html_img_limited_centered(parent, "demo\\2024_05_19\\32.png");
     },
   ];
-  screen = 7;
   let screen_last = list_index_last(screens);
   refresh_lesson_screen(screen);
   async function refresh_lesson_screen(screen) {
