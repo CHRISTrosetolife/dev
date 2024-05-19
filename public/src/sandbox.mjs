@@ -5,7 +5,10 @@ import { each_index_async } from "./each_index_async.mjs";
 import { yyy8Uu_file_path_to_parts } from "./yyy8Uu_file_path_to_parts.mjs";
 import { folder_read } from "./folder_read.mjs";
 export async function sandbox() {
-    return await folder_read('C:\\Users\\JESUS\\Pictures\\Screenshots', '')
+    let file_paths = await folder_read('C:\\Users\\JESUS\\Pictures\\Screenshots', '');
+    for (let file_path of file_paths) {
+        
+    }
     return;
   if (false) {
     await yyy8Uu_translate_upload();
