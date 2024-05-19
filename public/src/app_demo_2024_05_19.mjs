@@ -33,7 +33,15 @@ export function app_demo_2024_05_19() {
       ]);
     },
     (parent) => {
+      html_style_alternate_monospace_short_multiple(parent, [
+        "`noop` is a function that does nothing and has no arguments",
+      ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\3.png");
+      html_style_alternate_monospace_short_multiple(parent, [
+        "suppose we make a change to `noop` :",
+      ]);
+      html_img_limited_centered(parent, "demo\\2024_05_19\\4.png");
+      html_img_limited_centered(parent, "demo\\2024_05_19\\5.png");
     },
   ];
   let screen_last = list_index_last(screens);
@@ -41,6 +49,11 @@ export function app_demo_2024_05_19() {
   async function refresh_lesson_screen(screen) {
     html_clear_scroll_top(root);
     list_get(screens, screen)(root);
-    html_buttons_next_previous(root, refresh_lesson_screen, screen, screen_last);
+    html_buttons_next_previous(
+      root,
+      refresh_lesson_screen,
+      screen,
+      screen_last,
+    );
   }
 }
