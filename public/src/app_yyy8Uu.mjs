@@ -109,6 +109,9 @@ export async function app_yyy8Uu() {
         html_hr(root);
       }
     }
+    if (!latin_show) {
+      html_hr(root);
+    }
     buttons_navigation();
     function buttons_navigation() {
       button_home();
