@@ -7,7 +7,11 @@ import { path_join } from "./path_join.mjs";
 import { path_dirname } from "./path_dirname.mjs";
 import { each_index_async } from "./each_index_async.mjs";
 import { folder_read } from "./folder_read.mjs";
-export async function folder_files_move(input_directory, file_extension) {
+export async function folder_files_move(
+  input_directory,
+  file_extension,
+  output_directory,
+) {
   let file_paths = await folder_read(input_directory, file_extension);
   await each_index_async(file_paths, async (file_path, index) => {
     let dirname = path_dirname(file_path);
