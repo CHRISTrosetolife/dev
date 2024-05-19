@@ -19,6 +19,7 @@ import { assert } from "./assert.mjs";
 import { equal } from "./equal.mjs";
 import { list_first } from "./list_first.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
+import { string_combine } from "./string_combine.mjs";
 export async function app_yyy8Uu() {
   html_style_default_initialize();
   let root = html_document_body();
@@ -30,9 +31,12 @@ export async function app_yyy8Uu() {
   }
   let book_names = list_map(split, (s) => list_first(s));
   let book_names_unique = list_unique(book_names);
-  let book_numbers = list_map(book_names_unique, b => string_prefix_without(b, 'l'));
+  let book_numbers = list_map(book_names_unique, (b) =>
+    string_prefix_without(b, "l"),
+  );
+  let book_labels = list_map(book_numbers, (b) => string_combine("book ", b));
   console.log({
-    book_names_unique,
+    book_labels,
   });
   await refresh_chapter(0);
   async function refresh_chapter(index) {
