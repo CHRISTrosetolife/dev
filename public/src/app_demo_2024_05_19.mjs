@@ -153,15 +153,22 @@ export function app_demo_2024_05_19() {
       ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\28.png");
       html_style_alternate_monospace_short_multiple(parent, [
-        "... the each function will receive its own file , and all `import`s will be fixed ...",
+        "... then each function will receive its own file , and all `import`s will be fixed ...",
       ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\29.png");
       html_img_limited_centered(parent, "demo\\2024_05_19\\30.png");
       html_img_limited_centered(parent, "demo\\2024_05_19\\31.png");
       html_style_alternate_monospace_short_multiple(parent, [
+        "`function_auto` moves functions in the module scope to their own file and fixes the imports",
+      ]);
+      html_style_alternate_monospace_short_multiple(parent, [
         "... and it works !",
       ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\32.png");
+      html_hr(parent);
+      html_style_alternate_monospace_short_multiple(parent, [
+        " congratulations , you made it to the end !",
+      ]);
     },
   ];
   let screen_last = list_index_last(screens);
