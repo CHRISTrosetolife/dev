@@ -107,10 +107,10 @@ export async function app_yyy8Uu() {
         await refresh_chapter(add_1(chapter_index));
       },
     );
-    if (equal(index, 0)) {
+    if (equal(chapter_index, 0)) {
       html_disable(button_previous);
     }
-    if (equal(index, index_last)) {
+    if (equal(chapter_index, index_last)) {
       html_disable(button_next);
     }
   }
