@@ -1,3 +1,5 @@
+import { string_includes } from "./string_includes.mjs";
+import { list_filter } from "./list_filter.mjs";
 import { path_join } from "./path_join.mjs";
 import { path_dirname } from "./path_dirname.mjs";
 import { list_map_async } from "./list_map_async.mjs";
@@ -24,7 +26,9 @@ export async function sandbox() {
     let dirname = path_dirname(s);
     let contents = await file_read(s);
     let joined = path_join([dirname, contents]);
-    return joined;
+    let xmls = await folder_read(joined, ".xml");
+    let filtered = list_filter(xmls, (f) => string_includes(f, "\\cod-"));
+    return list_single(filtered);
   });
   return symlinks;
   let firsts = await list_adder_async(async (la_outer) => {
