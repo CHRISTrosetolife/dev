@@ -8,7 +8,7 @@ export async function sandbox() {
   const input_directory = "C:\\Users\\JESUS\\Pictures\\Screenshots";
   let output_directory = "C:\\Users\\JESUS\\dev\\public\\img\\demo\\2024_05_19";
   const file_extension = ".png";
-  await folder_files_rename_incrementing(input_directory, file_extension);
+  await folder_files_rename_incrementing(input_directory, file_extension, output_directory);
   return;
   if (false) {
     await yyy8Uu_translate_upload();
