@@ -13,16 +13,22 @@ export function app_demo_2024_05_19() {
     (parent) => {
       html_style_alternate_monospace_short(
         parent,
-        "`string_combine` is a function that concatenate two strings",
+        "`string_combine` is a function that concatenates two strings",
       );
       html_img_limited_centered(parent, "demo\\2024_05_19\\1.png");
-      html_style_alternate_monospace_short_multiple([
+      html_style_alternate_monospace_short_multiple(parent, [
         "any function can be ran from the command line using `run.mjs`",
-        "just pass in any arguments like `hello` and `' world` like this:",
-        "this speeds up developing a new function",
+        "just pass in any arguments like `hello` and `' world\'` like this:",
       ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\2.png");
+      html_style_alternate_monospace_short_multiple(parent, [
+        "this speeds up developing a new function",
+      ]);
     },
+    (parent) => {
+        html_img_limited_centered(parent, "demo\\2024_05_19\\3.png");
+
+    }
   ];
   refresh_lesson_screen(index);
   async function refresh_lesson_screen(index) {
