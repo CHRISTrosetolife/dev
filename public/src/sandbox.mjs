@@ -1,4 +1,4 @@
-import { folder_files_rename_incrementing } from "./folder_files_rename_incrementing.mjs";
+import { folder_files_move } from "./folder_files_move.mjs";
 import { yyy8Uu_translate_upload } from "./yyy8Uu_translate_upload.mjs";
 import { yyy8Uu_translate } from "./yyy8Uu_translate.mjs";
 import { yyy8Uu_parts } from "./yyy8Uu_parts.mjs";
@@ -8,7 +8,7 @@ export async function sandbox() {
   const input_directory = "C:\\Users\\JESUS\\Pictures\\Screenshots";
   let output_directory = "C:\\Users\\JESUS\\dev\\public\\img\\demo\\2024_05_19";
   const file_extension = ".png";
-  await folder_files_rename_incrementing(input_directory, file_extension, output_directory);
+  await folder_files_move(input_directory, file_extension, output_directory);
   return;
   if (false) {
     await yyy8Uu_translate_upload();
