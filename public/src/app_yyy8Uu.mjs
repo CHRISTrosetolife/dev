@@ -1,3 +1,4 @@
+import { list_second } from "./list_second.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { list_unique } from "./list_unique.mjs";
 import { list_map } from "./list_map.mjs";
@@ -49,8 +50,10 @@ export async function app_yyy8Uu() {
   refresh_home();
   function refresh_book(book_index) {
     let book_name_unique = list_get(book_names_unique, book_index);
-    let filtered = list_filter(split, s => equal(list_first(s), book_name_unique));
-    let chapter_names = list_map(filtered, f => list_get(f, 1));
+    let filtered = list_filter(split, (s) =>
+      equal(list_first(s), book_name_unique),
+    );
+    let chapter_names = list_map(filtered, (f) => list_second(f));
   }
   async function refresh_chapter(chapter_index) {
     html_clear_scroll_top(root);
