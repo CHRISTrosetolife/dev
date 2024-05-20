@@ -12,10 +12,22 @@ export function lesson_array_two() {
     example_before,
     description,
     example_message,
-    [],
+    [screen1],
   );
   function example_before(parent) {}
   function screen1(parent) {
-    "in javascript , lists are called `arrays";
+    let a = app_learn_code_random_identifier();
+    html_style_alternate_bold_short(
+      parent,
+      "in javascript , lists are called `arrays",
+    );
+    html_style_alternate_monospace_short_multiple(parent, [
+      "`[]` creates a new list",
+      "here is code to create a new array and assign the newly created array to a variable: ",
+    ]);
+    app_learn_code_code_part_contrast(
+      parent,
+      js_code_statement_let_assign(a, js_code_braces()),
+    );
   }
 }
