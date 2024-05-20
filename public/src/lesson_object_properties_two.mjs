@@ -1,3 +1,6 @@
+import { html_p_text } from "./html_p_text.mjs";
+import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
+import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
 import { js_code_dot } from "./js_code_dot.mjs";
 import { integer_random_digit_single_positive_multiple_sorted } from "./integer_random_digit_single_positive_multiple_sorted.mjs";
@@ -26,11 +29,57 @@ export function lesson_object_properties_two() {
     example_before,
     description,
     example_message,
-    [screen1],
+    [screen1, screen2],
   );
-  function example_before(parent) {'an object can have more than one property'}
+  function example_before(parent) {
+    "an object can have more than one property";
+  }
   function screen1(parent) {
+    html_p_text_multiple(parent, [
+      "in this lesson , variable names will appear alphabetically",
+      "for example , this is allowed :",
+    ]);
+    let [d, e] = integer_random_digit_single_positive_multiple_sorted(2);
+    app_learn_code_code_part_contrast(
+      parent,
+      list_join_newline([
+        js_code_statement_let_assign("a", js_code_braces()),
+        js_code_statement_assign(js_code_dot("a", "b"), d),
+        js_code_statement_assign(js_code_dot("a", "c"), e),
+      ]),
+    );
+    html_p_text(parent, ["however , this is not allowed :"]);
+    app_learn_code_code_part_contrast(
+      parent,
+      list_join_newline([
+        js_code_statement_let_assign("c", js_code_braces()),
+        js_code_statement_assign(js_code_dot("c", "b"), d),
+        js_code_statement_assign(js_code_dot("c", "a"), e),
+      ]),
+    );
   }
   function screen2(parent) {
+    html_p_text_multiple(parent, [
+      "in this lesson , numbers will appear from smallest to largest",
+      "for example , this is allowed :",
+    ]);
+    let [d, e] = integer_random_digit_single_positive_multiple_sorted(2);
+    app_learn_code_code_part_contrast(
+      parent,
+      list_join_newline([
+        js_code_statement_let_assign("a", js_code_braces()),
+        js_code_statement_assign(js_code_dot("a", "b"), d),
+        js_code_statement_assign(js_code_dot("a", "c"), e),
+      ]),
+    );
+    html_p_text(parent, ["however , this is not allowed :"]);
+    app_learn_code_code_part_contrast(
+      parent,
+      list_join_newline([
+        js_code_statement_let_assign("a", js_code_braces()),
+        js_code_statement_assign(js_code_dot("a", "b"), e),
+        js_code_statement_assign(js_code_dot("a", "c"), d),
+      ]),
+    );
   }
 }
