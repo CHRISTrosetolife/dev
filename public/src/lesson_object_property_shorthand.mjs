@@ -13,7 +13,7 @@ import { list_join_newline } from "./list_join_newline.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { string_combine } from "./string_combine.mjs";
 export function lesson_object_property_shorthand() {
-  let description = "object with one property";
+  let description = "object with one property shorthand";
   let example_message = string_combine("with an ", description);
   return lesson_simple(
     function () {
