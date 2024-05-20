@@ -1,3 +1,10 @@
+import { js_code_array } from "./js_code_array.mjs";
+import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
+import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
+import { html_style_alternate_monospace_short_multiple } from "./html_style_alternate_monospace_short_multiple.mjs";
+import { html_style_alternate_bold_short } from "./html_style_alternate_bold_short.mjs";
+import { integer_random_digit_single_positive_multiple_sorted } from "./integer_random_digit_single_positive_multiple_sorted.mjs";
+import { app_learn_code_random_identifier } from "./app_learn_code_random_identifier.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { string_combine } from "./string_combine.mjs";
@@ -17,6 +24,7 @@ export function lesson_array_two() {
   function example_before(parent) {}
   function screen1(parent) {
     let a = app_learn_code_random_identifier();
+    let values = integer_random_digit_single_positive_multiple_sorted(2);
     html_style_alternate_bold_short(
       parent,
       "in javascript , lists are called `arrays",
@@ -27,7 +35,7 @@ export function lesson_array_two() {
     ]);
     app_learn_code_code_part_contrast(
       parent,
-      js_code_statement_let_assign(a, js_code_braces()),
+      js_code_statement_let_assign(a, js_code_array()),
     );
   }
 }
