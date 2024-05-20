@@ -42,5 +42,12 @@ export function lesson_object_property() {
     "a variable has a name and a value";
     "a property has a name and a value";
     "here is code to create an object and assign it a property :";
+    let [a, b] = app_learn_code_random_identifiers_sorted(2);
+    let c = integer_random_digit_single_positive();
+    let lines = [
+      js_code_statement_let_assign(a, js_code_braces()),
+      js_code_statement_assign(js_code_dot(a, b), c),
+    ];
+    list_join_newline(lines);
   }
 }
