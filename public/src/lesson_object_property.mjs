@@ -25,7 +25,7 @@ export function lesson_object_property() {
       let lines = [
         js_code_statement_let_assign(a, js_code_braces()),
         js_code_statement_assign(js_code_dot(a, b), c),
-        app_learn_code_log(`${js_code_dot(a, b)} + ' ' + ${js_code_dot(a, c)}`),
+        app_learn_code_log(js_code_dot(a, b)),
       ];
       return list_join_newline(lines);
     },
