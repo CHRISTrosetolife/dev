@@ -68,6 +68,7 @@ export function lesson_array_two() {
     ]);
   }
   function screen3(parent) {
+    let a = app_learn_code_random_identifier();
     html_p_text_multiple(parent, [
       "in this lesson numbers will appear from smallest to largest",
       "for example , this is allowed :",
