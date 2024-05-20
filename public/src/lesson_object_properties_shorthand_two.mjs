@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { list_add } from "./list_add.mjs";
 import { js_code_object_properties } from "./js_code_object_properties.mjs";
 import { integer_random_digit_single_positive_multiple } from "./integer_random_digit_single_positive_multiple.mjs";
@@ -15,7 +14,6 @@ import { list_join_newline } from "./list_join_newline.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { list_skip } from "./list_skip.mjs";
-import { each_two } from "./each_two.mjs";
 export function lesson_object_properties_shorthand_two() {
   let description = "object with two properties shorthand";
   let example_message = string_combine("with an ", description);
@@ -31,13 +29,10 @@ export function lesson_object_properties_shorthand_two() {
           js_code_object_properties(names, values),
         ),
       ];
-      each_two(names, values, (name, value) => {
-        list_add(lines, app_learn_code_log(js_code_dot(name, value)));
+      each(names, (name) => {
+        list_add(lines, app_learn_code_log(js_code_dot(a, name)));
       });
       let result = list_join_newline(lines);
-      console.log({
-        result,
-      });
       return result;
     },
     example_before,
