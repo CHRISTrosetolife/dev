@@ -30,12 +30,17 @@ export function lesson_array_two() {
       "in javascript , lists are called `arrays",
     );
     html_style_alternate_monospace_short_multiple(parent, [
-      "`[]` creates a new list",
-      "here is code to create a new array and assign the newly created array to a variable: ",
+      "`[]` creates a new array",
+      "here is code to create a new array with two elements and assign the newly created array to a variable: ",
     ]);
     app_learn_code_code_part_contrast(
       parent,
-      js_code_statement_let_assign(a, js_code_array()),
+      js_code_statement_let_assign(a, js_code_array(values)),
     );
+  }
+  function screen2(parent) {
+    "in this lesson numbers will appear from smallest to largest";
+    "for example , this is allowed :";
+    app_learn_code_code_part_contrast(parent, js_code_array(values));
   }
 }
