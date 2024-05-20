@@ -42,7 +42,7 @@ export function lesson_array_two() {
   }
   function screen2(parent) {
     let a = "list";
-    let values = integer_random_digit_single_positive_multiple_sorted(2);
+    let values = [3.2, 4.5];
     html_p_text_multiple(parent, [
       "normally , to count , start at 1 and keep going , like this : 1 , 2 , 3 , 4 , 5 , ...",
       "instead of starting at 1 , we could start with 0 like this : 0 , 1 , 2 , 3 , 4",
@@ -55,8 +55,8 @@ export function lesson_array_two() {
     ]);
     app_learn_code_code_part_contrast(parent, [
       js_code_statement_let_assign(a, js_code_array(values)),
-      `${js_code_array_get(a, 0)} // use 0 for the first item`,
-      `${js_code_array_get(a, 1)} // use 1 for the first item`,
+      `${js_code_array_get(a, 0)} // use 0 for the first item , 3.2`,
+      `${js_code_array_get(a, 1)} // use 1 for the first item , 4.5`,
     ]);
   }
   function screen3(parent) {
