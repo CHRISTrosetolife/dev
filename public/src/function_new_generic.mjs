@@ -1,4 +1,4 @@
-import { file_overwrite } from "./file_overwrite.mjs";
+import { file_write } from "./file_write.mjs";
 import { js_imports_fix } from "./js_imports_fix.mjs";
 import { file_open } from "./file_open.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
@@ -28,7 +28,7 @@ ${body_string}
   await js_imports_fix(parsed);
   let unparsed = js_unparse(parsed);
   let file_path = function_name_to_path(function_name);
-  await file_overwrite(file_path, unparsed);
+  await file_write(file_path, unparsed);
   if (open) {
     await file_open(file_path);
   }
