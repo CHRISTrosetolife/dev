@@ -51,7 +51,6 @@ export function lesson_array_two() {
     html_style_alternate_monospace_short_multiple(parent, [
       "the number 0 refers to the first item",
       "the number 1 refers to the second item",
-      ,
       "like this :",
     ]);
     app_learn_code_code_part_contrast(parent, [
