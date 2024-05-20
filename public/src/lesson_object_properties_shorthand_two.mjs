@@ -1,10 +1,16 @@
+import { js_code_key_value } from "./js_code_key_value.mjs";
+import { list_add } from "./list_add.mjs";
+import { list_get } from "./list_get.mjs";
+import { range } from "./range.mjs";
+import { list_length } from "./list_length.mjs";
+import { equal_by } from "./equal_by.mjs";
+import { assert } from "./assert.mjs";
 import { js_code_object_properties } from "./js_code_object_properties.mjs";
 import { integer_random_digit_single_positive_multiple } from "./integer_random_digit_single_positive_multiple.mjs";
 import { js_code_object_property } from "./js_code_object_property.mjs";
 import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
-import { integer_random_digit_single_positive } from "./integer_random_digit_single_positive.mjs";
 import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
 import { js_code_dot } from "./js_code_dot.mjs";
 import { app_learn_code_random_identifiers_sorted } from "./app_learn_code_random_identifiers_sorted.mjs";
@@ -20,13 +26,24 @@ export function lesson_object_properties_shorthand_two() {
   let example_message = string_combine("with an ", description);
   return lesson_simple(
     function () {
-      let [a, b] = app_learn_code_random_identifiers_sorted(2);
-      let c = integer_random_digit_single_positive();
+      let identifiers = app_learn_code_random_identifiers_sorted(3);
+      let [a, b, c] = identifiers;
+      let names = list_skip(identifiers, 1);
+      let values = integer_random_digit_single_positive_multiple(2);
+      let [d, e] = values;
       let lines = [
-        js_code_statement_let_assign(a, js_code_object_property(b, c)),
-        app_learn_code_log(js_code_dot(a, b)),
+        js_code_statement_let_assign(
+          a,
+          js_code_object_properties(names, values),
+        ),
       ];
-      return list_join_newline(lines);
+      app_learn_code_log(js_code_dot(a, b));
+      assert(equal_by, [names, values], list_length);
+      for (let i of range(list_length(names))) {
+        let name = list_get(names, i);
+        let value = list_get(values, i);
+        list_add(result, js_code_key_value(name, value));
+      }
     },
     example_before,
     description,
