@@ -21,6 +21,7 @@ import { list_join_newline } from "./list_join_newline.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { list_skip } from "./list_skip.mjs";
+import { each_two } from "./each_two.mjs";
 export function lesson_object_properties_shorthand_two() {
   let description = "object with two properties shorthand";
   let example_message = string_combine("with an ", description);
@@ -37,13 +38,10 @@ export function lesson_object_properties_shorthand_two() {
           js_code_object_properties(names, values),
         ),
       ];
-      assert(equal_by, [names, values], list_length);
-      for (let i of range(list_length(names))) {
-        let name = list_get(names, i);
-        let value = list_get(values, i);
+      each_two(names, values, (name, value) => {
         app_learn_code_log(js_code_dot(name, value));
         list_add(result, js_code_key_value(name, value));
-      }
+      })
     },
     example_before,
     description,
