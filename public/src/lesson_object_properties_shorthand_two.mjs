@@ -1,10 +1,5 @@
 import { js_code_key_value } from "./js_code_key_value.mjs";
 import { list_add } from "./list_add.mjs";
-import { list_get } from "./list_get.mjs";
-import { range } from "./range.mjs";
-import { list_length } from "./list_length.mjs";
-import { equal_by } from "./equal_by.mjs";
-import { assert } from "./assert.mjs";
 import { js_code_object_properties } from "./js_code_object_properties.mjs";
 import { integer_random_digit_single_positive_multiple } from "./integer_random_digit_single_positive_multiple.mjs";
 import { js_code_object_property } from "./js_code_object_property.mjs";
@@ -41,7 +36,7 @@ export function lesson_object_properties_shorthand_two() {
       each_two(names, values, (name, value) => {
         app_learn_code_log(js_code_dot(name, value));
         list_add(result, js_code_key_value(name, value));
-      })
+      });
     },
     example_before,
     description,
