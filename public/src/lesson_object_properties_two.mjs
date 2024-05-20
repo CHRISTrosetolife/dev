@@ -28,7 +28,7 @@ export function lesson_object_properties_two() {
     example_message,
     [screen1],
   );
-  function example_before(parent) {}
+  function example_before(parent) {'an object can have more than one property'}
   function screen1(parent) {
   }
   function screen2(parent) {

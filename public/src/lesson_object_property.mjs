@@ -73,4 +73,26 @@ export function lesson_object_property() {
       `in this code , the property name is \`${b}\` and the property value is \`${c}\``,
     );
   }
+  function screen3(parent) {
+    html_p_text_multiple(parent, [
+      "in this lesson , variable names will appear alphabetically",
+      "for example , this is allowed :",
+    ]);
+    let c = integer_random_digit_single_positive();
+    app_learn_code_code_part_contrast(
+      parent,
+      list_join_newline([
+        js_code_statement_let_assign("a", js_code_braces()),
+        js_code_statement_assign(js_code_dot("a", "b"), c),
+      ]),
+    );
+    html_p_text(parent, ["however , this is not allowed :"]);
+    app_learn_code_code_part_contrast(
+      parent,
+      list_join_newline([
+        js_code_statement_let_assign("b", js_code_braces()),
+        js_code_statement_assign(js_code_dot("b", "a"), c),
+      ]),
+    );
+  }
 }
