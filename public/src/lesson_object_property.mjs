@@ -1,3 +1,5 @@
+import { html_style_alternate_bold_short } from "./html_style_alternate_bold_short.mjs";
+import { app_learn_code_code_part } from "./app_learn_code_code_part.mjs";
 import { html_style_alternate_monospace_short_multiple } from "./html_style_alternate_monospace_short_multiple.mjs";
 import { app_learn_code_random_identifier } from "./app_learn_code_random_identifier.mjs";
 import { integer_random_digit_single_positive } from "./integer_random_digit_single_positive.mjs";
@@ -38,13 +40,19 @@ export function lesson_object_property() {
       "`{}` creates a new object",
       "here is code to create a new object and assign it to a variable: ",
     ]);
-    app_learn_code_code_part(parent, js_code_statement_let_assign(a, js_code_braces()));
+    app_learn_code_code_part(
+      parent,
+      js_code_statement_let_assign(a, js_code_braces()),
+    );
   }
   function screen2(parent) {
-    "an object can have its own variables called `properties`";
-    "a variable has a name and a value";
-    "a property has a name and a value";
-    "here is code to create an object and assign it a property :";
+    html_style_alternate_bold_short(
+      parent,
+      "an object can have its own variables called `properties`",
+    );
+    ("a variable has a name and a value");
+    ("a property has a name and a value");
+    ("here is code to create an object and assign it a property :");
     let [a, b] = app_learn_code_random_identifiers_sorted(2);
     let c = integer_random_digit_single_positive();
     let lines = [
