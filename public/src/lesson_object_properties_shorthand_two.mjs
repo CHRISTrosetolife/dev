@@ -45,13 +45,7 @@ export function lesson_object_properties_shorthand_two() {
     let a = list_first(identifiers);
     let names = list_skip(identifiers, 1);
     let values = integer_random_digit_single_positive_multiple(2);
-    let result = [];
-    assert(equal_by, [names, values], list_length);
-    for (let i of range(list_length(names))) {
-      let name = list_get(names, i);
-      let value = list_get(values, i);
-      list_add(result, js_code_object_property(name, value));
-    }
+    js_code_object_properties(names, values);
     html_p_text(parent, "here is some code :");
     let lines = [
       js_code_statement_let_assign(a, js_code_braces()),
@@ -81,3 +75,13 @@ export function lesson_object_properties_shorthand_two() {
     );
   }
 }
+function js_code_object_properties(names, values) {
+    let result = [];
+    assert(equal_by, [names, values], list_length);
+    for (let i of range(list_length(names))) {
+        let name = list_get(names, i);
+        let value = list_get(values, i);
+        list_add(result, js_code_object_property(name, value));
+    }
+}
+
