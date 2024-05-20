@@ -39,13 +39,12 @@ export function lesson_object_properties_two() {
       "in this lesson , variable names will appear alphabetically",
       "for example , this is allowed :",
     ]);
-    let [d, e] = integer_random_digit_single_positive_multiple_sorted(2);
     app_learn_code_code_part_contrast(
       parent,
       list_join_newline([
         js_code_statement_let_assign("a", js_code_braces()),
-        js_code_statement_assign(js_code_dot("a", "b"), d),
-        js_code_statement_assign(js_code_dot("a", "c"), e),
+        js_code_statement_assign(js_code_dot("a", "b"), 1),
+        js_code_statement_assign(js_code_dot("a", "c"), 2),
       ]),
     );
     html_p_text(parent, ["however , this is not allowed :"]);
@@ -53,8 +52,8 @@ export function lesson_object_properties_two() {
       parent,
       list_join_newline([
         js_code_statement_let_assign("c", js_code_braces()),
-        js_code_statement_assign(js_code_dot("c", "b"), d),
-        js_code_statement_assign(js_code_dot("c", "a"), e),
+        js_code_statement_assign(js_code_dot("c", "b"), 1),
+        js_code_statement_assign(js_code_dot("c", "a"), 2),
       ]),
     );
   }
