@@ -55,7 +55,7 @@ export function lesson_object_property() {
       parent,
       "an object can have its own variables called `properties`",
     );
-    html_p_text_multiple(paragraphs, [
+    html_p_text_multiple(parent, [
       "a variable has a name and a value",
       "a property has a name and a value",
       "here is code to create an object and assign it a property :",
