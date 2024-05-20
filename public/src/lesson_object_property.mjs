@@ -1,3 +1,4 @@
+import { html_p_text } from "./html_p_text.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 import { html_style_alternate_bold_short } from "./html_style_alternate_bold_short.mjs";
 import { app_learn_code_code_part } from "./app_learn_code_code_part.mjs";
@@ -35,9 +36,12 @@ export function lesson_object_property() {
   function example_before(parent) {}
   function screen1(parent) {
     let a = app_learn_code_random_identifier();
-    html_style_alternate_monospace_short_multiple(parent, [
-      "a variable stores one value",
+    html_p_text(parent, "a variable stores one value");
+    html_style_alternate_bold_short(
+      parent,
       "an `object` can store more than one value",
+    );
+    html_style_alternate_monospace_short_multiple(parent, [
       "`{}` creates a new object",
       "here is code to create a new object and assign it to a variable: ",
     ]);
