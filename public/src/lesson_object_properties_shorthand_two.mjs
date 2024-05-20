@@ -1,7 +1,6 @@
 import { list_add } from "./list_add.mjs";
 import { js_code_object_properties } from "./js_code_object_properties.mjs";
 import { integer_random_digit_single_positive_multiple } from "./integer_random_digit_single_positive_multiple.mjs";
-import { js_code_object_property } from "./js_code_object_property.mjs";
 import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
@@ -68,14 +67,18 @@ export function lesson_object_properties_shorthand_two() {
     ]);
     app_learn_code_code_part_contrast(
       parent,
-      js_code_statement_let_assign("a", js_code_object_property("b", 1)),
-      js_code_statement_let_assign("a", js_code_object_property("c", 2)),
+      js_code_statement_let_assign(
+        "a",
+        js_code_object_properties(["b", "c"], [1, 2]),
+      ),
     );
     html_p_text(parent, ["however , this is not allowed :"]);
     app_learn_code_code_part_contrast(
       parent,
-      js_code_statement_let_assign("c", js_code_object_property("b", 1)),
-      js_code_statement_let_assign("c", js_code_object_property("a", 2)),
+      js_code_statement_let_assign(
+        "c",
+        js_code_object_properties(["b", "a"], [1, 2]),
+      ),
     );
   }
 }
