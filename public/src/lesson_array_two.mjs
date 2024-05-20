@@ -28,8 +28,10 @@ export function lesson_array_two() {
   function screen1(parent) {
     let a = app_learn_code_random_identifier();
     let values = integer_random_digit_single_positive_multiple_sorted(2);
-    const lines = ["in javascript , lists are called `arrays"];
-    html_style_alternate_bold_short_multiple(parent, lines);
+    html_style_alternate_bold_short_multiple(parent, [
+      "in javascript , lists are called `arrays",
+      "the items inside of an array are called `elements",
+    ]);
     html_style_alternate_monospace_short_multiple(parent, [
       "`[]` creates a new array",
       "here is code to create a new array with two elements and assign the newly created array to a variable: ",
