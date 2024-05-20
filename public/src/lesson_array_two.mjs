@@ -47,9 +47,13 @@ export function lesson_array_two() {
       "normally , to count , start at 1 and keep going , like this : 1 , 2 , 3 , 4 , 5 , ...",
       "instead of starting at 1 , we could start with 0 like this : 0 , 1 , 2 , 3 , 4",
       "to tell javascript that you want the first item in the list , you use the number 0",
-    ])("the number 0 refers to the first item")(
+    ]);
+    html_style_alternate_monospace_short_multiple(parent, [
+      "the number 0 refers to the first item",
       "the number 1 refers to the second item",
-    )("like this :");
+      ,
+      "like this :",
+    ]);
     app_learn_code_code_part_contrast(parent, [
       js_code_statement_let_assign(a, js_code_array(values)),
       `${js_code_array_get(a, 0)} // use 0 for the first item`,
