@@ -78,7 +78,7 @@ export function lesson_object_properties_shorthand_three() {
       parent,
       js_code_statement_let_assign(
         "d",
-        js_code_object_properties(["c", "b", "a"], [1, 2]),
+        js_code_object_properties(["c", "b", "a"], [1, 2, 3]),
       ),
     );
   }
