@@ -32,7 +32,7 @@ export function lesson_object_property() {
     example_before,
     description,
     example_message,
-    [screen1, screen2],
+    [screen1, screen2, screen3],
   );
   function example_before(parent) {}
   function screen1(parent) {
