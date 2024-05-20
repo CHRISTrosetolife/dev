@@ -43,7 +43,7 @@ export function lesson_object_property() {
     );
     html_style_alternate_monospace_short_multiple(parent, [
       "`{}` creates a new object",
-      "here is code to create a new object and assign it to a variable: ",
+      "here is code to create a new object and assign the newly created object to a variable: ",
     ]);
     app_learn_code_code_part_contrast(
       parent,
