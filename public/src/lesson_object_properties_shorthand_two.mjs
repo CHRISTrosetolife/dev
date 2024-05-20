@@ -29,9 +29,9 @@ export function lesson_object_properties_shorthand_two() {
           js_code_object_properties(names, values),
         ),
       ];
-      each(names, (name) => {
+      for (let name of names) {
         list_add(lines, app_learn_code_log(js_code_dot(a, name)));
-      });
+      }
       let result = list_join_newline(lines);
       return result;
     },
