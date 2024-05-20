@@ -1,4 +1,5 @@
-import { js_code_object_properties } from "./js_code_object_properties.mjs";
+import { range } from "./range.mjs";
+import { equal_by } from "./equal_by.mjs";
 import { integer_random_digit_single_positive_multiple } from "./integer_random_digit_single_positive_multiple.mjs";
 import { js_code_object_property } from "./js_code_object_property.mjs";
 import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
@@ -16,6 +17,11 @@ import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { list_skip } from "./list_skip.mjs";
 import { list_first } from "./list_first.mjs";
+import { assert } from "./assert.mjs";
+import { list_length } from "./list_length.mjs";
+import { list_add } from "./list_add.mjs";
+import { list_get } from "./list_get.mjs";
+import { list_join } from "./list_join.mjs";
 export function lesson_object_properties_shorthand_two() {
   let description = "object with two properties shorthand";
   let example_message = string_combine("with an ", description);
@@ -70,3 +76,14 @@ export function lesson_object_properties_shorthand_two() {
     );
   }
 }
+function js_code_object_properties(names, values) {
+    let result = [];
+    assert(equal_by, [names, values], list_length);
+    for (let i of range(list_length(names))) {
+        let name = list_get(names, i);
+        let value = list_get(values, i);
+        list_add(result, js_code_key_value(name, value));
+    }
+    return js_code_braces_inside(list_join(result, ', '))
+}
+
