@@ -39,9 +39,12 @@ export function lesson_object_property_shorthand() {
       js_code_statement_let_assign(a, js_code_braces()),
       js_code_statement_assign(js_code_dot(a, b), c),
     ];
-    list_join_newline(lines);
+    app_learn_code_code_part_contrast(parent, list_join_newline(lines));
     html_p_text(parent, "that code can be shortened to :");
-    js_code_statement_let_assign(a, js_code_object_property(b, c));
+    app_learn_code_code_part_contrast(
+      parent,
+      js_code_statement_let_assign(a, js_code_object_property(b, c)),
+    );
   }
   function screen2(parent) {
     html_p_text_multiple(parent, [
