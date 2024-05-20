@@ -16,14 +16,14 @@ import { list_skip } from "./list_skip.mjs";
 import { list_join } from "./list_join.mjs";
 import { list_map } from "./list_map.mjs";
 export function lesson_object_properties_shorthand_three() {
-  let description = "object with two properties shorthand";
+  let description = "object with three properties shorthand";
   let example_message = string_combine("with an ", description);
   return lesson_simple(
     function () {
-      let identifiers = app_learn_code_random_identifiers_sorted(3);
+      let identifiers = app_learn_code_random_identifiers_sorted(4);
       let [a] = identifiers;
       let names = list_skip(identifiers, 1);
-      let values = integer_random_digit_single_positive_multiple(2);
+      let values = integer_random_digit_single_positive_multiple(3);
       let outputs = list_map(names, (name) => js_code_dot(a, name));
       let lines = [
         js_code_statement_let_assign(
@@ -42,10 +42,10 @@ export function lesson_object_properties_shorthand_three() {
   );
   function example_before(parent) {}
   function screen1(parent) {
-    let identifiers = app_learn_code_random_identifiers_sorted(3);
+    let identifiers = app_learn_code_random_identifiers_sorted(4);
     let [a, b, c] = identifiers;
     let names = list_skip(identifiers, 1);
-    let values = integer_random_digit_single_positive_multiple(2);
+    let values = integer_random_digit_single_positive_multiple(3);
     let [d, e] = values;
     html_p_text(parent, "here is some code :");
     let lines = [
@@ -69,15 +69,15 @@ export function lesson_object_properties_shorthand_three() {
       parent,
       js_code_statement_let_assign(
         "a",
-        js_code_object_properties(["b", "c"], [1, 2]),
+        js_code_object_properties(["b", "c", "d"], [1, 2, 3]),
       ),
     );
     html_p_text(parent, ["however , this is not allowed :"]);
     app_learn_code_code_part_contrast(
       parent,
       js_code_statement_let_assign(
-        "c",
-        js_code_object_properties(["b", "a"], [1, 2]),
+        "d",
+        js_code_object_properties(["c", "b", "a"], [1, 2]),
       ),
     );
   }
