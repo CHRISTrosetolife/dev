@@ -1,9 +1,9 @@
+import { html_style_alternate_bold_short_multiple } from "./html_style_alternate_bold_short_multiple.mjs";
 import { js_code_array_get } from "./js_code_array_get.mjs";
 import { js_code_array } from "./js_code_array.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
 import { html_style_alternate_monospace_short_multiple } from "./html_style_alternate_monospace_short_multiple.mjs";
-import { html_style_alternate_bold_short } from "./html_style_alternate_bold_short.mjs";
 import { integer_random_digit_single_positive_multiple_sorted } from "./integer_random_digit_single_positive_multiple_sorted.mjs";
 import { app_learn_code_random_identifier } from "./app_learn_code_random_identifier.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
@@ -28,10 +28,8 @@ export function lesson_array_two() {
   function screen1(parent) {
     let a = app_learn_code_random_identifier();
     let values = integer_random_digit_single_positive_multiple_sorted(2);
-    html_style_alternate_bold_short(
-      parent,
-      "in javascript , lists are called `arrays",
-    );
+    const lines = ["in javascript , lists are called `arrays"];
+    html_style_alternate_bold_short_multiple(parent, lines);
     html_style_alternate_monospace_short_multiple(parent, [
       "`[]` creates a new array",
       "here is code to create a new array with two elements and assign the newly created array to a variable: ",
