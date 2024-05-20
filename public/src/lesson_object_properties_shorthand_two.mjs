@@ -1,3 +1,4 @@
+import { app_learn_code_log_combined } from "./app_learn_code_log_combined.mjs";
 import { js_code_object_properties } from "./js_code_object_properties.mjs";
 import { integer_random_digit_single_positive_multiple } from "./integer_random_digit_single_positive_multiple.mjs";
 import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
@@ -10,10 +11,8 @@ import { js_code_braces } from "./js_code_braces.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
-import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { list_skip } from "./list_skip.mjs";
-import { list_join } from "./list_join.mjs";
 import { list_map } from "./list_map.mjs";
 export function lesson_object_properties_shorthand_two() {
   let description = "object with two properties shorthand";
@@ -30,7 +29,7 @@ export function lesson_object_properties_shorthand_two() {
           a,
           js_code_object_properties(names, values),
         ),
-        app_learn_code_log(list_join(outputs, " + ' ' + ")),
+        app_learn_code_log_combined(outputs),
       ];
       let result = list_join_newline(lines);
       return result;
