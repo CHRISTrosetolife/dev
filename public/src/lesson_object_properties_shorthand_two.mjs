@@ -68,11 +68,13 @@ export function lesson_object_properties_shorthand_two() {
     app_learn_code_code_part_contrast(
       parent,
       js_code_statement_let_assign("a", js_code_object_property("b", 1)),
+      js_code_statement_let_assign("a", js_code_object_property("c", 2)),
     );
     html_p_text(parent, ["however , this is not allowed :"]);
     app_learn_code_code_part_contrast(
       parent,
-      js_code_statement_let_assign("b", js_code_object_property("a", 1)),
+      js_code_statement_let_assign("c", js_code_object_property("b", 1)),
+      js_code_statement_let_assign("c", js_code_object_property("a", 2)),
     );
   }
 }

@@ -32,7 +32,7 @@ export function lesson_object_properties_three() {
     example_before,
     description,
     example_message,
-    [screen1, screen2],
+    [screen1],
   );
   function example_before(parent) {
     html_p_text(parent, "an object can have three properties");
