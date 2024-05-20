@@ -16,8 +16,14 @@ export function lesson_array_two() {
   let example_message = string_combine("with an ", description);
   return lesson_simple(
     function () {
-      let lines = [];
-      return list_join_newline(lines);
+      let a = app_learn_code_random_identifier();
+      let values = integer_random_digit_single_positive_multiple_sorted(2);
+      const list = [
+        js_code_statement_let_assign(a, js_code_array(values)),
+        `${js_code_statement(js_code_array_get(a, 0))}`,
+        `${js_code_statement(js_code_array_get(a, 1))}`,
+      ];
+      return list_join_newline(list);
     },
     example_before,
     description,
