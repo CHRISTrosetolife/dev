@@ -17,7 +17,7 @@ export function lesson_object_properties_three() {
   return lesson_simple(
     function () {
       let [a, b, c, d] = app_learn_code_random_identifiers_sorted(4);
-      let [e, f, g] = integer_random_digit_single_positive_multiple_sorted(3);
+      let [e, f, g] = integer_random_digit_single_positive_multiple(3);
       let lines = [
         js_code_statement_let_assign(a, js_code_braces()),
         js_code_statement_assign(js_code_dot(a, b), e),

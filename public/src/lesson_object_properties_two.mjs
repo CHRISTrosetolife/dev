@@ -29,7 +29,7 @@ export function lesson_object_properties_two() {
     example_before,
     description,
     example_message,
-    [screen1, screen2],
+    [screen1],
   );
   function example_before(parent) {
     html_p_text(parent, "an object can have more than one property");
@@ -54,29 +54,6 @@ export function lesson_object_properties_two() {
         js_code_statement_let_assign("c", js_code_braces()),
         js_code_statement_assign(js_code_dot("c", "b"), 1),
         js_code_statement_assign(js_code_dot("c", "a"), 2),
-      ]),
-    );
-  }
-  function screen2(parent) {
-    html_p_text_multiple(parent, [
-      "in this lesson , numbers will appear from smallest to largest",
-      "for example , this is allowed :",
-    ]);
-    app_learn_code_code_part_contrast(
-      parent,
-      list_join_newline([
-        js_code_statement_let_assign("a", js_code_braces()),
-        js_code_statement_assign(js_code_dot("a", "b"), 1),
-        js_code_statement_assign(js_code_dot("a", "c"), 2),
-      ]),
-    );
-    html_p_text(parent, ["however , this is not allowed :"]);
-    app_learn_code_code_part_contrast(
-      parent,
-      list_join_newline([
-        js_code_statement_let_assign("a", js_code_braces()),
-        js_code_statement_assign(js_code_dot("a", "b"), 2),
-        js_code_statement_assign(js_code_dot("a", "c"), 1),
       ]),
     );
   }
