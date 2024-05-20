@@ -52,7 +52,7 @@ export function lesson_array_two() {
       "to tell javascript that you want the first element in an array , you use the number `0` , not the number `1`",
       "the number `0` refers to the first element",
       "the number `1` refers to the second element",
-      "like this :",
+      "here is some example code :",
     ]);
     app_learn_code_code_part_contrast(
       parent,
@@ -62,6 +62,10 @@ export function lesson_array_two() {
         `${js_code_statement(js_code_array_get(a, 1))} // use 1 for the first element , 4.5`,
       ]),
     );
+    html_style_alternate_monospace_short_multiple(parent, [
+      "notice that `list[0]` is used to refer to the first element",
+      "notice that `list[1]` is used to refer to the second element",
+    ]);
   }
   function screen3(parent) {
     html_p_text_multiple(parent, [
