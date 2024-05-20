@@ -34,6 +34,7 @@ export function lesson_object_properties_shorthand_two() {
       each_two(names, values, (name, value) => {
         list_add(lines, app_learn_code_log(js_code_dot(name, value)));
       });
+      return list_join_newline(lines);
     },
     example_before,
     description,
