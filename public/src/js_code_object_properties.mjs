@@ -16,5 +16,4 @@ export function js_code_object_properties(names, values) {
     list_add(result, js_code_key_value(name, value));
   }
   return js_code_braces_inside(list_join(result, ", "));
-  return;
 }
