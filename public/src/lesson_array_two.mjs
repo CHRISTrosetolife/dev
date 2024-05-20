@@ -11,18 +11,20 @@ import { list_join_newline } from "./list_join_newline.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 import { js_code_statement } from "./js_code_statement.mjs";
+import { range } from "./range.mjs";
+import { list_add } from "./list_add.mjs";
 export function lesson_array_two() {
   let description = "array with two items";
   let example_message = string_combine("with an ", description);
+  let count = 2;
   return lesson_simple(
     function () {
       let a = app_learn_code_random_identifier();
-      let values = integer_random_digit_single_positive_multiple_sorted(2);
-      const list = [
-        js_code_statement_let_assign(a, js_code_array(values)),
-        `${js_code_statement(js_code_array_get(a, 0))}`,
-        `${js_code_statement(js_code_array_get(a, 1))}`,
-      ];
+      let values = integer_random_digit_single_positive_multiple_sorted(count);
+      const list = [js_code_statement_let_assign(a, js_code_array(values))];
+      for (let i of range(count)) {
+        list_add(list, js_code_statement(js_code_array_get(a, i)));
+      }
       return list_join_newline(list);
     },
     example_before,
@@ -33,7 +35,7 @@ export function lesson_array_two() {
   function example_before(parent) {}
   function screen1(parent) {
     let a = app_learn_code_random_identifier();
-    let values = integer_random_digit_single_positive_multiple_sorted(2);
+    let values = integer_random_digit_single_positive_multiple_sorted(count);
     html_style_alternate_bold_short_multiple(parent, [
       "in javascript , lists are called `arrays",
       "the items inside of an array are called `elements",
