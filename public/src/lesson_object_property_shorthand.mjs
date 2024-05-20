@@ -32,9 +32,21 @@ export function lesson_object_property_shorthand() {
     example_before,
     description,
     example_message,
-    [screen1, screen2, screen3],
+    [],
   );
   function example_before(parent) {}
+  function screen1(parent) {
+    let [a, b] = app_learn_code_random_identifiers_sorted(2);
+    let c = integer_random_digit_single_positive();
+    'here is some code :'
+    let lines = [
+        js_code_statement_let_assign(a, js_code_braces()),
+        js_code_statement_assign(js_code_dot(a, b), c),
+      ];
+       list_join_newline(lines)
+    'that code can be shortened to :'
+      
+  }
   function screen1(parent) {
     let a = app_learn_code_random_identifier();
     html_p_text(parent, "a variable stores one value");

@@ -1,3 +1,4 @@
 export function js_code_braces() {
-  return "{}";
+  let inside = "";
+  return `{${inside}}`;
 }
