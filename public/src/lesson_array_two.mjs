@@ -52,7 +52,7 @@ export function lesson_array_two() {
     let index;
     app_learn_code_code_part_contrast(parent, [
       js_code_statement_let_assign(a, js_code_array(values)),
-      `${js_code_array_get(a, index)} // use 0 to get the first item`,
+      `${js_code_array_get(a, index)} // use 0 for the first item`,
     ]);
   }
   function screen3(parent) {
