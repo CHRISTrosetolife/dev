@@ -43,15 +43,16 @@ export function lesson_object_properties_shorthand_three() {
   function example_before(parent) {}
   function screen1(parent) {
     let identifiers = app_learn_code_random_identifiers_sorted(4);
-    let [a, b, c] = identifiers;
+    let [a, b, c, d] = identifiers;
     let names = list_skip(identifiers, 1);
     let values = integer_random_digit_single_positive_multiple(3);
-    let [d, e] = values;
+    let [e, f, g] = values;
     html_p_text(parent, "here is some code :");
     let lines = [
       js_code_statement_let_assign(a, js_code_braces()),
-      js_code_statement_assign(js_code_dot(a, b), d),
-      js_code_statement_assign(js_code_dot(a, c), e),
+      js_code_statement_assign(js_code_dot(a, b), e),
+      js_code_statement_assign(js_code_dot(a, c), f),
+      js_code_statement_assign(js_code_dot(a, d), g),
     ];
     app_learn_code_code_part_contrast(parent, list_join_newline(lines));
     html_p_text(parent, "that code can be shortened to :");
