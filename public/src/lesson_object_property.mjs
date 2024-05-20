@@ -1,3 +1,4 @@
+import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
 import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
@@ -57,7 +58,7 @@ export function lesson_object_property() {
     );
     html_p_text_multiple(parent, [
       "a variable has a name and a value",
-      "a property has a name and a value",
+      "a property also has a name and a value",
       "here is code to create an object and assign it a property :",
     ]);
     let [a, b] = app_learn_code_random_identifiers_sorted(2);
@@ -67,5 +68,9 @@ export function lesson_object_property() {
       js_code_statement_assign(js_code_dot(a, b), c),
     ];
     app_learn_code_code_part_contrast(parent, list_join_newline(lines));
+    html_style_alternate_monospace_short(
+      parent,
+      `in this code , the property name is \`${b}\` and the property value is \`${c}\``,
+    );
   }
 }
