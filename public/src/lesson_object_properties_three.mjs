@@ -62,29 +62,4 @@ export function lesson_object_properties_three() {
       ]),
     );
   }
-  function screen2(parent) {
-    html_p_text_multiple(parent, [
-      "in this lesson , numbers will appear from smallest to largest",
-      "for example , this is allowed :",
-    ]);
-    app_learn_code_code_part_contrast(
-      parent,
-      list_join_newline([
-        js_code_statement_let_assign("a", js_code_braces()),
-        js_code_statement_assign(js_code_dot("a", "b"), 1),
-        js_code_statement_assign(js_code_dot("a", "c"), 2),
-        js_code_statement_assign(js_code_dot("a", "d"), 3),
-      ]),
-    );
-    html_p_text(parent, ["however , this is not allowed :"]);
-    app_learn_code_code_part_contrast(
-      parent,
-      list_join_newline([
-        js_code_statement_let_assign("a", js_code_braces()),
-        js_code_statement_assign(js_code_dot("a", "b"), 3),
-        js_code_statement_assign(js_code_dot("a", "c"), 2),
-        js_code_statement_assign(js_code_dot("a", "d"), 1),
-      ]),
-    );
-  }
 }
