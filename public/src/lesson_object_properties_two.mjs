@@ -32,7 +32,7 @@ export function lesson_object_properties_two() {
     [screen1, screen2],
   );
   function example_before(parent) {
-    "an object can have more than one property";
+    html_p_text(parent, "an object can have more than one property");
   }
   function screen1(parent) {
     html_p_text_multiple(parent, [
