@@ -1,3 +1,4 @@
+import { app_learn_code_random_identifier } from "./app_learn_code_random_identifier.mjs";
 import { integer_random_digit_single_positive } from "./integer_random_digit_single_positive.mjs";
 import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
 import { js_code_dot } from "./js_code_dot.mjs";
@@ -29,11 +30,12 @@ export function lesson_object_property() {
   );
   function example_before(parent) {}
   function screen1(parent) {
-    "a variable stores one value";
-    "an `object` can store more than one value";
-    "`{}` creates a new object";
-    "here is code to create a new object and assign it to a variable: ";
-    js_code_statement_let_assign("a", js_code_braces());
+    let a = app_learn_code_random_identifier();
+    ("a variable stores one value");
+    ("an `object` can store more than one value");
+    ("`{}` creates a new object");
+    ("here is code to create a new object and assign it to a variable: ");
+    js_code_statement_let_assign(a, js_code_braces());
   }
   function screen2(parent) {
     "an object can have its own variables called `properties`";
