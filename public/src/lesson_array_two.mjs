@@ -8,6 +8,7 @@ import { app_learn_code_random_identifier } from "./app_learn_code_random_identi
 import { lesson_simple } from "./lesson_simple.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { string_combine } from "./string_combine.mjs";
+import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 export function lesson_array_two() {
   let description = "array with two items";
   let example_message = string_combine("with an ", description);
@@ -39,8 +40,12 @@ export function lesson_array_two() {
     );
   }
   function screen2(parent) {
-    "in this lesson numbers will appear from smallest to largest";
-    "for example , this is allowed :";
-    app_learn_code_code_part_contrast(parent, js_code_array(values));
+    html_p_text_multiple(parent, [
+      "in this lesson numbers will appear from smallest to largest",
+      "for example , this is allowed :",
+    ]);
+    app_learn_code_code_part_contrast(parent, js_code_array([1, 2]));
+    html_p_text_multiple(parent, ["however , this is not allowed :"]);
+    app_learn_code_code_part_contrast(parent, js_code_array([2, 1]));
   }
 }
