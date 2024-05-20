@@ -1,3 +1,4 @@
+import { html_p_text } from "./html_p_text.mjs";
 import { html_style_alternate_bold_short } from "./html_style_alternate_bold_short.mjs";
 import { app_learn_code_code_part } from "./app_learn_code_code_part.mjs";
 import { html_style_alternate_monospace_short_multiple } from "./html_style_alternate_monospace_short_multiple.mjs";
@@ -50,9 +51,14 @@ export function lesson_object_property() {
       parent,
       "an object can have its own variables called `properties`",
     );
-    ("a variable has a name and a value");
-    ("a property has a name and a value");
-    ("here is code to create an object and assign it a property :");
+    let paragraphs = [
+      "a variable has a name and a value",
+      "a property has a name and a value",
+      "here is code to create an object and assign it a property :",
+    ];
+    for (let p of paragraphs) {
+      html_p_text(parent, p);
+    }
     let [a, b] = app_learn_code_random_identifiers_sorted(2);
     let c = integer_random_digit_single_positive();
     let lines = [
