@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_add } from "./list_add.mjs";
 import { js_code_object_properties } from "./js_code_object_properties.mjs";
 import { integer_random_digit_single_positive_multiple } from "./integer_random_digit_single_positive_multiple.mjs";
@@ -33,7 +34,11 @@ export function lesson_object_properties_shorthand_two() {
       each_two(names, values, (name, value) => {
         list_add(lines, app_learn_code_log(js_code_dot(name, value)));
       });
-      return list_join_newline(lines);
+      let result = list_join_newline(lines);
+      console.log({
+        result,
+      });
+      return result;
     },
     example_before,
     description,
