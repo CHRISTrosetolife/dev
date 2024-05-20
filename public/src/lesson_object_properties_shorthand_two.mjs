@@ -1,4 +1,3 @@
-import { list_add } from "./list_add.mjs";
 import { js_code_object_properties } from "./js_code_object_properties.mjs";
 import { integer_random_digit_single_positive_multiple } from "./integer_random_digit_single_positive_multiple.mjs";
 import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
@@ -14,6 +13,8 @@ import { list_join_newline } from "./list_join_newline.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { list_skip } from "./list_skip.mjs";
+import { list_join } from "./list_join.mjs";
+import { list_map } from "./list_map.mjs";
 export function lesson_object_properties_shorthand_two() {
   let description = "object with two properties shorthand";
   let example_message = string_combine("with an ", description);
@@ -23,15 +24,14 @@ export function lesson_object_properties_shorthand_two() {
       let [a] = identifiers;
       let names = list_skip(identifiers, 1);
       let values = integer_random_digit_single_positive_multiple(2);
+      let outputs = list_map(names, (name) => js_code_dot(a, name));
       let lines = [
         js_code_statement_let_assign(
           a,
           js_code_object_properties(names, values),
         ),
+        app_learn_code_log(list_join(outputs, " + ' ' + ")),
       ];
-      for (let name of names) {
-        list_add(lines, app_learn_code_log(js_code_dot(a, name)));
-      }
       let result = list_join_newline(lines);
       return result;
     },
