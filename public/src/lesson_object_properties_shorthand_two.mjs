@@ -22,10 +22,9 @@ export function lesson_object_properties_shorthand_two() {
   return lesson_simple(
     function () {
       let identifiers = app_learn_code_random_identifiers_sorted(3);
-      let [a, b, c] = identifiers;
+      let [a] = identifiers;
       let names = list_skip(identifiers, 1);
       let values = integer_random_digit_single_positive_multiple(2);
-      let [d, e] = values;
       let lines = [
         js_code_statement_let_assign(
           a,
