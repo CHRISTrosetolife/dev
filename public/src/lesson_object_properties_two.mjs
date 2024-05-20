@@ -30,15 +30,7 @@ export function lesson_object_properties_two() {
   );
   function example_before(parent) {}
   function screen1(parent) {
-    "a variable stores one value";
-    "an `object` can store more than one value";
-    "`{}` creates a new object";
-    "here is code to create a new object and assign it to a variable: ";
   }
   function screen2(parent) {
-    "an object can have its own variables called `properties`";
-    "a variable has a name and a value";
-    "a property has a name and a value";
-    "here is code to create an object and assign it a property :";
   }
 }
