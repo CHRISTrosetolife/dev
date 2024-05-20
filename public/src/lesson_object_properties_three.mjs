@@ -1,9 +1,9 @@
+import { integer_random_digit_single_positive_multiple } from "./integer_random_digit_single_positive_multiple.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
 import { js_code_dot } from "./js_code_dot.mjs";
-import { integer_random_digit_single_positive_multiple_sorted } from "./integer_random_digit_single_positive_multiple_sorted.mjs";
 import { app_learn_code_random_identifiers_sorted } from "./app_learn_code_random_identifiers_sorted.mjs";
 import { js_code_braces } from "./js_code_braces.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
