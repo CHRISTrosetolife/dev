@@ -15,4 +15,7 @@ export function lesson_array_two() {
     [],
   );
   function example_before(parent) {}
+  function screen1(parent) {
+    "in javascript , lists are called `arrays";
+  }
 }
