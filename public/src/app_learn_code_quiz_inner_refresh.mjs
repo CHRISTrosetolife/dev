@@ -1,3 +1,4 @@
+import { js_code_format } from "./js_code_format.mjs";
 import { app_learn_code_ms_correct } from "./app_learn_code_ms_correct.mjs";
 import { timeout_set } from "./timeout_set.mjs";
 import { html_style_monospace } from "./html_style_monospace.mjs";
@@ -57,6 +58,7 @@ export function app_learn_code_quiz_inner_refresh(
   list_sort_string(choices, (c) => c.answer);
   let correct_index = list_random_index(choices);
   let { source } = list_get(choices, correct_index);
+  source = js_code_format(source);
   app_learn_code_code_part_titled_code(container, source);
   html_hr(container);
   app_learn_code_code_part_title(

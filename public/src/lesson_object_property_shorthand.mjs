@@ -58,7 +58,7 @@ export function lesson_object_property_shorthand() {
     html_p_text(parent, ["however , this is not allowed :"]);
     app_learn_code_code_part_contrast(
       parent,
-      js_code_statement_let_assign("b", js_code_object_property("c", 1)),
+      js_code_statement_let_assign("b", js_code_object_property("a", 1)),
     );
   }
 }
