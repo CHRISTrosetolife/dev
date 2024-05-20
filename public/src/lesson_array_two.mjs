@@ -20,7 +20,7 @@ export function lesson_array_two() {
     example_before,
     description,
     example_message,
-    [screen1],
+    [screen1, screen2, screen3],
   );
   function example_before(parent) {}
   function screen1(parent) {
@@ -39,7 +39,8 @@ export function lesson_array_two() {
       js_code_statement_let_assign(a, js_code_array(values)),
     );
   }
-  function screen2(parent) {
+  function screen2(parent) {}
+  function screen3(parent) {
     html_p_text_multiple(parent, [
       "in this lesson numbers will appear from smallest to largest",
       "for example , this is allowed :",
