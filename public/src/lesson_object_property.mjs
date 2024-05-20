@@ -1,7 +1,7 @@
+import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 import { html_style_alternate_bold_short } from "./html_style_alternate_bold_short.mjs";
-import { app_learn_code_code_part } from "./app_learn_code_code_part.mjs";
 import { html_style_alternate_monospace_short_multiple } from "./html_style_alternate_monospace_short_multiple.mjs";
 import { app_learn_code_random_identifier } from "./app_learn_code_random_identifier.mjs";
 import { integer_random_digit_single_positive } from "./integer_random_digit_single_positive.mjs";
@@ -45,7 +45,7 @@ export function lesson_object_property() {
       "`{}` creates a new object",
       "here is code to create a new object and assign it to a variable: ",
     ]);
-    app_learn_code_code_part(
+    app_learn_code_code_part_contrast(
       parent,
       js_code_statement_let_assign(a, js_code_braces()),
     );
@@ -66,6 +66,6 @@ export function lesson_object_property() {
       js_code_statement_let_assign(a, js_code_braces()),
       js_code_statement_assign(js_code_dot(a, b), c),
     ];
-    app_learn_code_code_part(parent, list_join_newline(lines));
+    app_learn_code_code_part_contrast(parent, list_join_newline(lines));
   }
 }
