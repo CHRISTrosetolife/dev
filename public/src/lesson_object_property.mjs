@@ -38,7 +38,7 @@ export function lesson_object_property() {
       "`{}` creates a new object",
       "here is code to create a new object and assign it to a variable: ",
     ]);
-    js_code_statement_let_assign(a, js_code_braces());
+    app_learn_code_code_part(parent, js_code_statement_let_assign(a, js_code_braces()));
   }
   function screen2(parent) {
     "an object can have its own variables called `properties`";
