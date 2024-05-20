@@ -129,7 +129,7 @@ export function app_demo_2024_05_19() {
     },
     (parent) => {
       html_style_alternate_monospace_short_multiple(parent, [
-        "if we refactor greetings to randomly select a greeting word ...",
+        "if we refactor `greetings` to randomly select a greeting word ...",
       ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\22.png");
       html_style_alternate_monospace_short_multiple(parent, [
@@ -143,7 +143,7 @@ export function app_demo_2024_05_19() {
     },
     (parent) => {
       html_style_alternate_monospace_short_multiple(parent, [
-        "if we refactor greeting to use multiple functions ...",
+        "if we refactor `greeting` to use multiple functions ...",
       ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\25.png");
       html_img_limited_centered(parent, "demo\\2024_05_19\\26.png");
