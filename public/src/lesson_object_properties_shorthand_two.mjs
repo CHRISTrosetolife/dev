@@ -37,11 +37,11 @@ export function lesson_object_properties_shorthand_two() {
           js_code_object_properties(names, values),
         ),
       ];
-      app_learn_code_log(js_code_dot(a, b));
       assert(equal_by, [names, values], list_length);
       for (let i of range(list_length(names))) {
         let name = list_get(names, i);
         let value = list_get(values, i);
+        app_learn_code_log(js_code_dot(name, value));
         list_add(result, js_code_key_value(name, value));
       }
     },
