@@ -16,13 +16,16 @@ export function lesson_object_properties_three() {
   let example_message = string_combine("with an ", description);
   return lesson_simple(
     function () {
-      let [a, b, c] = app_learn_code_random_identifiers_sorted(3);
-      let [d, e] = integer_random_digit_single_positive_multiple_sorted(2);
+      let [a, b, c, d] = app_learn_code_random_identifiers_sorted(4);
+      let [e, f, g] = integer_random_digit_single_positive_multiple_sorted(3);
       let lines = [
         js_code_statement_let_assign(a, js_code_braces()),
-        js_code_statement_assign(js_code_dot(a, b), d),
-        js_code_statement_assign(js_code_dot(a, c), e),
-        app_learn_code_log(`${js_code_dot(a, b)} + ' ' + ${js_code_dot(a, c)}`),
+        js_code_statement_assign(js_code_dot(a, b), e),
+        js_code_statement_assign(js_code_dot(a, c), f),
+        js_code_statement_assign(js_code_dot(a, d), g),
+        app_learn_code_log(
+          `${js_code_dot(a, b)} + ' ' + ${js_code_dot(a, c)} + ' ' + ${js_code_dot(a, d)}`,
+        ),
       ];
       return list_join_newline(lines);
     },
@@ -32,7 +35,7 @@ export function lesson_object_properties_three() {
     [screen1, screen2],
   );
   function example_before(parent) {
-    html_p_text(parent, "an object can have more than one property");
+    html_p_text(parent, "an object can have three properties");
   }
   function screen1(parent) {
     html_p_text_multiple(parent, [
@@ -45,15 +48,17 @@ export function lesson_object_properties_three() {
         js_code_statement_let_assign("a", js_code_braces()),
         js_code_statement_assign(js_code_dot("a", "b"), 1),
         js_code_statement_assign(js_code_dot("a", "c"), 2),
+        js_code_statement_assign(js_code_dot("a", "d"), 3),
       ]),
     );
     html_p_text(parent, ["however , this is not allowed :"]);
     app_learn_code_code_part_contrast(
       parent,
       list_join_newline([
-        js_code_statement_let_assign("c", js_code_braces()),
-        js_code_statement_assign(js_code_dot("c", "b"), 1),
-        js_code_statement_assign(js_code_dot("c", "a"), 2),
+        js_code_statement_let_assign("d", js_code_braces()),
+        js_code_statement_assign(js_code_dot("d", "c"), 1),
+        js_code_statement_assign(js_code_dot("d", "b"), 2),
+        js_code_statement_assign(js_code_dot("d", "a"), 3),
       ]),
     );
   }
@@ -68,6 +73,7 @@ export function lesson_object_properties_three() {
         js_code_statement_let_assign("a", js_code_braces()),
         js_code_statement_assign(js_code_dot("a", "b"), 1),
         js_code_statement_assign(js_code_dot("a", "c"), 2),
+        js_code_statement_assign(js_code_dot("a", "d"), 3),
       ]),
     );
     html_p_text(parent, ["however , this is not allowed :"]);
@@ -75,8 +81,9 @@ export function lesson_object_properties_three() {
       parent,
       list_join_newline([
         js_code_statement_let_assign("a", js_code_braces()),
-        js_code_statement_assign(js_code_dot("a", "b"), 2),
-        js_code_statement_assign(js_code_dot("a", "c"), 1),
+        js_code_statement_assign(js_code_dot("a", "b"), 3),
+        js_code_statement_assign(js_code_dot("a", "c"), 2),
+        js_code_statement_assign(js_code_dot("a", "d"), 1),
       ]),
     );
   }
