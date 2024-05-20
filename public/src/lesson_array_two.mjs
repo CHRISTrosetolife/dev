@@ -54,11 +54,14 @@ export function lesson_array_two() {
       "the number `1` refers to the second item",
       "like this :",
     ]);
-    app_learn_code_code_part_contrast(parent, [
-      js_code_statement_let_assign(a, js_code_array(values)),
-      `${js_code_statement(js_code_array_get(a, 0))} // use 0 for the first item , 3.2`,
-      `${js_code_statement(js_code_array_get(a, 1))} // use 1 for the first item , 4.5`,
-    ]);
+    app_learn_code_code_part_contrast(
+      parent,
+      list_join_newline([
+        js_code_statement_let_assign(a, js_code_array(values)),
+        `${js_code_statement(js_code_array_get(a, 0))} // use 0 for the first item , 3.2`,
+        `${js_code_statement(js_code_array_get(a, 1))} // use 1 for the first item , 4.5`,
+      ]),
+    );
   }
   function screen3(parent) {
     html_p_text_multiple(parent, [
