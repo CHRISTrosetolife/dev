@@ -1,3 +1,4 @@
+import { html_style_alternate_monospace_short_multiple } from "./html_style_alternate_monospace_short_multiple.mjs";
 import { app_learn_code_random_identifier } from "./app_learn_code_random_identifier.mjs";
 import { integer_random_digit_single_positive } from "./integer_random_digit_single_positive.mjs";
 import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
@@ -31,10 +32,12 @@ export function lesson_object_property() {
   function example_before(parent) {}
   function screen1(parent) {
     let a = app_learn_code_random_identifier();
-    (parent, "a variable stores one value");
-    (parent, "an `object` can store more than one value");
-    (parent, "`{}` creates a new object");
-    (parent, "here is code to create a new object and assign it to a variable: ");
+    html_style_alternate_monospace_short_multiple(parent, [
+      "a variable stores one value",
+      "an `object` can store more than one value",
+      "`{}` creates a new object",
+      "here is code to create a new object and assign it to a variable: ",
+    ]);
     js_code_statement_let_assign(a, js_code_braces());
   }
   function screen2(parent) {
