@@ -1,4 +1,3 @@
-import { js_code_format_indent_none } from "./js_code_format_indent_none.mjs";
 import { html_style_word_break_all } from "./html_style_word_break_all.mjs";
 import { html_style_margin_none } from "./html_style_margin_none.mjs";
 import { app_learn_code_style_code } from "./app_learn_code_style_code.mjs";
@@ -9,7 +8,6 @@ export function app_learn_code_code_part_generic(
   source_code,
   background_color,
 ) {
-  source_code = js_code_format_indent_none(source_code);
   let code = create(parent, source_code);
   app_learn_code_style_code(code);
   html_style_margin_none(code);
