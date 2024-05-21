@@ -8,10 +8,10 @@ export function logic_unparse(parse) {
   let { type } = parse;
   if (equal(type, "identifier")) {
     let { name } = parse;
-    assert(string_is(name));
+    assert(string_is, [name]);
     return name;
   }
-  assert(equal(type, "call"));
+  assert(equal, [type, "call"]);
   let { callee, args } = parse;
   let mapped = list_map(args, logic_unparse);
   return string_combine_multiple([
