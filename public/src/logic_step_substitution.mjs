@@ -32,9 +32,10 @@ export function logic_step_substitution(statement, substitution) {
     tautology,
     (v) => {
       let { node } = v;
-      let { type, callee, args } = node;
-      if (equal(type, "call")) {
-        return list_concat([callee], args);
+      let { type, name } = node;
+      if (equal(type, "identifier")) {
+        if (equal(name, variable_name)) {
+        }
       }
     },
     [],
