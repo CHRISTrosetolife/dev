@@ -30,7 +30,13 @@ export function logic_step_substitution(statement, substitution) {
       return [];
     },
     tautology,
-    (v) => {},
+    (v) => {
+      let { node } = v;
+      let { type, callee, args } = node;
+      if (equal(type, "call")) {
+        return list_concat([callee], args);
+      }
+    },
     [],
   );
 }
