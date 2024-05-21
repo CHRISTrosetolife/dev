@@ -36,7 +36,8 @@ export function logic_step_substitution(statement, substitution) {
       let { type, name } = node;
       if (equal(type, "identifier")) {
         if (equal(name, variable_name)) {
-          object_replace;
+          let copy_inner = logic_copy(inner);
+          object_replace(node, copy_inner);
         }
       }
     },
