@@ -39,7 +39,10 @@ export async function tests_generate_single_generic(
   });
   let args_mapped2 = list_map_index(args_mapped, (a, index) => {
     let mapper = list_get(args, index);
-    return mapper(a);
+    if (equal(mapper, identity)) {
+      return a;
+    }
+    return js_code_call_args(mapper.name, [a]);
   });
   const body_string = `    let ${result_name} = ${function_name}(${args_mapped.join(", ")});
     ${equal(result_mapper, identity) ? "" : js_code_statement_assign(result_name, js_code_call_args(result_mapper.name, [result_name]))} 
