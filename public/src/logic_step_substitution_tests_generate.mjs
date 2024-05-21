@@ -1,7 +1,6 @@
+import { logic_unparse } from "./logic_unparse.mjs";
 import { logic_step_substitution } from "./logic_step_substitution.mjs";
-import { tests } from "./tests.mjs";
 import { add_1 } from "./add_1.mjs";
-import { tests_generate_single } from "./tests_generate_single.mjs";
 import { each_index_async } from "./each_index_async.mjs";
 import { tests_generate_single_generic } from "./tests_generate_single_generic.mjs";
 import { logic_parse } from "./logic_parse.mjs";
