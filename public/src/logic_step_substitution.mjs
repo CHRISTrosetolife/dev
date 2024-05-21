@@ -1,3 +1,4 @@
+import { object_replace } from "./object_replace.mjs";
 import { tautology } from "./tautology.mjs";
 import { logic_copy } from "./logic_copy.mjs";
 import { assert } from "./assert.mjs";
@@ -35,6 +36,7 @@ export function logic_step_substitution(statement, substitution) {
       let { type, name } = node;
       if (equal(type, "identifier")) {
         if (equal(name, variable_name)) {
+          object_replace;
         }
       }
     },
