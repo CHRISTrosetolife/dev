@@ -8,4 +8,5 @@ export function logic_unparse(parse) {
     assert(string_is(name));
     return name;
   }
+  assert(equal(type, "call"));
 }
