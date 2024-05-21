@@ -9,4 +9,6 @@ export function logic_unparse(parse) {
     return name;
   }
   assert(equal(type, "call"));
+  let { callee } = parse;
+  return logic_unparse(callee);
 }
