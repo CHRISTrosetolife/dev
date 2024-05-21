@@ -16,6 +16,7 @@ export async function function_new_generic(
   open,
   imports,
   async_is,
+  writer,
 ) {
   let space = async_is ? ` async ` : " ";
   let contents_function = `export${space}function ${function_name}(${args_string}) {

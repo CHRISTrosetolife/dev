@@ -1,3 +1,4 @@
+import { file_write } from "./file_write.mjs";
 import { js_imports_remove } from "./js_imports_remove.mjs";
 import { function_imports_add } from "./function_imports_add.mjs";
 import { js_body_nested } from "./js_body_nested.mjs";
@@ -34,6 +35,7 @@ export async function js_outside_move(ast) {
       false,
       [],
       async,
+      file_write,
     );
   }
   for (let declaration of copy) {

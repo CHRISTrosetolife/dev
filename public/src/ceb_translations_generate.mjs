@@ -1,3 +1,4 @@
+import { file_write } from "./file_write.mjs";
 import { folder_read } from "./folder_read.mjs";
 import { file_read } from "./file_read.mjs";
 import { newline } from "./newline.mjs";
@@ -46,5 +47,6 @@ export async function ceb_translations_generate() {
     false,
     [],
     false,
+    file_write,
   );
 }

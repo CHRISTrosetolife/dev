@@ -1,3 +1,4 @@
+import { file_write } from "./file_write.mjs";
 import { js_code_await } from "./js_code_await.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { js_code_statement_call } from "./js_code_statement_call.mjs";
@@ -16,6 +17,14 @@ export async function tests_generate() {
   let mapped2 = list_map(mapped, js_code_await);
   let body_string = list_join_newline(mapped2);
   await function_delete_if_exists(function_name);
-  await function_new_generic(function_name, "", body_string, false, [], true);
+  await function_new_generic(
+    function_name,
+    "",
+    body_string,
+    false,
+    [],
+    true,
+    file_write,
+  );
   return await function_run(function_name, []);
 }

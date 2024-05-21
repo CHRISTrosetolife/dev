@@ -1,3 +1,4 @@
+import { file_write } from "./file_write.mjs";
 import { app_code_global_file_paths } from "./app_code_global_file_paths.mjs";
 import { app_code_back_multiple } from "./app_code_back_multiple.mjs";
 import { function_copy } from "./function_copy.mjs";
@@ -179,6 +180,7 @@ export function app_code_edit(file_path) {
                 false,
                 [],
                 false,
+                file_write,
               );
               let file_path = function_name_to_path(function_name);
               app_code_backable(() => app_code_edit(file_path));
