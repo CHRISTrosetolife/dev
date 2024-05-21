@@ -22,7 +22,7 @@ export function logic_step_substitution(statement, substitution) {
   assert(equal, [variable_type, "identifier"]);
   assert(string_is, [variable_name]);
   visit(
-    copy,
+    inner,
     (node) => {
       let { type, callee, args } = node;
       if (equal(type, "call")) {
@@ -36,8 +36,8 @@ export function logic_step_substitution(statement, substitution) {
       let { type, name } = node;
       if (equal(type, "identifier")) {
         if (equal(name, variable_name)) {
-          let copy_inner = logic_copy(inner);
-          object_replace(node, copy_inner);
+          let copy_substitution = logic_copy(substitution);
+          object_replace(node, copy_substitution);
         }
       }
     },
