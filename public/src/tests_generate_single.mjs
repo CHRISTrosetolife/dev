@@ -12,7 +12,7 @@ import { function_run } from "./function_run.mjs";
 import { error } from "./error.mjs";
 export async function tests_generate_single(function_name, args, test_number) {
   let result = await function_run(function_name, args);
-  console.log(test_number.toString(), list_concat(args, [result]));
+  log(test_number.toString(), list_concat(args, [result]));
   let result_name = "result";
   let string_delimeter = "'";
   for (let arg of args) {
