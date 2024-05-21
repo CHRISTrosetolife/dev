@@ -17,6 +17,7 @@ import { list_concat } from "./list_concat.mjs";
 import { log } from "./log.mjs";
 import { function_run } from "./function_run.mjs";
 import { identity } from "./identity.mjs";
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export async function tests_generate_single_generic(
   function_name,
   args,
@@ -30,7 +31,7 @@ export async function tests_generate_single_generic(
   });
   let result = await function_run(function_name, args_mapped3);
   result = result_mapper(result);
-  log(test_number.toString(), list_concat(args, [result]));
+  log(string_combine_multiple(test_number.toString(), ' ', list_concat(args, [result])));
   let result_name = "result";
   let string_delimeter = "'";
   for (let arg of args) {
