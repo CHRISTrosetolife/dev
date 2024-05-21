@@ -4,12 +4,14 @@ import { equal } from "./equal.mjs";
 import { js_node_type } from "./js_node_type.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
 import { list_add } from "./list_add.mjs";
-export function js_param_new(
+import { js_imports_add } from "./js_imports_add.mjs";
+export async function js_param_new(
   ast,
   function_name,
   param_name,
   default_value_string,
 ) {
+  let needs_imports_add = false;
   let nodes = js_node_type(ast, "CallExpression");
   for (let node of nodes) {
     let { callee } = node;
@@ -24,6 +26,10 @@ export function js_param_new(
     let { arguments: args } = node;
     let default_value = js_parse_expression(default_value_string);
     list_add(args, default_value);
+    needs_imports_add = true;
+  }
+  if (needs_imports_add) {
+    await js_imports_add(ast);
   }
   let name = js_declaration_single_name(ast);
   if (!equal(name, function_name)) {
