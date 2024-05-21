@@ -12,6 +12,7 @@ import { assert_boolean } from "./assert_boolean.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { log } from "./log.mjs";
 import { function_run } from "./function_run.mjs";
+import { identity } from "./identity.mjs";
 export async function tests_generate_single_generic(
   function_name,
   args,
@@ -20,6 +21,7 @@ export async function tests_generate_single_generic(
   result_mapper,
 ) {
   let result = await function_run(function_name, args);
+  result = result_mapper(result)
   log(test_number.toString(), list_concat(args, [result]));
   let result_name = "result";
   let string_delimeter = "'";
