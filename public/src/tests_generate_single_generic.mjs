@@ -44,7 +44,7 @@ export async function tests_generate_single_generic(
     }
     return js_code_call_args(mapper.name, [a]);
   });
-  const body_string = `    let ${result_name} = ${function_name}(${args_mapped.join(", ")});
+  const body_string = `    let ${result_name} = ${function_name}(${args_mapped2.join(", ")});
     ${equal(result_mapper, identity) ? "" : js_code_statement_assign(result_name, js_code_call_args(result_mapper.name, [result_name]))} 
     ${assert_boolean.name}(${equal_json.name}(${result_name}, ${json_to(result)}))`;
   await function_new_generic(
