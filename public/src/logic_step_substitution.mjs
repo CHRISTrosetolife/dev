@@ -11,4 +11,6 @@ export function logic_step_substitution(statement, substitution) {
   assert(equal, [callee_type, "identifier"]);
   assert(equal, [name, "all"]);
   assert(equal, [list_length(args), 2]);
+  let { type: variable_type, name: variable_name } = variable;
+  assert(equal, [variable_type, "identifier"]);
 }
