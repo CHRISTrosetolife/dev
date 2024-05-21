@@ -34,11 +34,11 @@ export async function yyy8Uu_file_path_to_parts(file_path, index) {
   let mapped = list_map(non_empty, (p) => string_replace(p, "&amp;", "&"));
   for (let part of mapped) {
     if (0)
-    if (part.match(/.*&[a-z]+;.*/g)) {
-      log(file_path);
-      log(part);
-      error();
-    }
+      if (part.match(/.*&[a-z]+;.*/g)) {
+        log(file_path);
+        log(part);
+        error();
+      }
   }
   return mapped;
 }

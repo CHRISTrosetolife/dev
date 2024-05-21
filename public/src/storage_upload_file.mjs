@@ -1,5 +1,5 @@
 import admin from "firebase-admin";
-import {file_read_json}from'./file_read_json.mjs'
+import { file_read_json } from "./file_read_json.mjs";
 let service_account = await file_read_json("../firebase.json");
 admin.initializeApp({
   credential: admin.credential.cert(service_account),

@@ -37,7 +37,8 @@ export function lesson_while_false() {
   );
   function example_before(parent) {
     html_style_alternate_monospace_short_multiple(parent, [
-    'suppose there is a `while','if what is in between the parenthesis the first time is `false` then the rest of the `while` will not be ran'
-  ]);
+      "suppose there is a `while",
+      "if what is in between the parenthesis the first time is `false` then the rest of the `while` will not be ran",
+    ]);
   }
 }

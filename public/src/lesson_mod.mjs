@@ -47,7 +47,6 @@ export function lesson_mod() {
       "dividend % divisor",
     ]);
   }
-
   function screen1(parent) {
     html_p_text(parent, "here is an example of division in math : a / b");
     html_style_alternate_bold(parent, [

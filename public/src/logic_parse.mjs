@@ -58,7 +58,7 @@ export function logic_parse(input) {
             next: add_1(index),
           };
         }
-        if (equal_0(string_length(identifier))){
+        if (equal_0(string_length(identifier))) {
           return {
             result: {
               type: "empty",

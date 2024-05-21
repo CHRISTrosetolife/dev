@@ -13,7 +13,7 @@ export async function logic_step_substitution_tests_generate() {
       input,
       add_1(index),
       [logic_parse],
-      logic_unparse
+      logic_unparse,
     );
   });
 }

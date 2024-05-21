@@ -65,7 +65,9 @@ export function app_learn_code_unscramble(source_get) {
       }
       previous = source;
       let variations = app_learn_code_source_variations(source);
-      console.log({ variations });
+      console.log({
+        variations,
+      });
       source = list_first(variations);
       let messages = app_learn_code_eval(source);
       let joined = app_learn_code_eval_messages_to_string(messages);
