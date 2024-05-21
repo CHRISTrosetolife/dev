@@ -1,1 +1,1 @@
-export function logic_step_substitution(statement, variable, substitution) {}
+export function logic_step_substitution(statement, substitution) {}
