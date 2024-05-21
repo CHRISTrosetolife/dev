@@ -1,42 +1,50 @@
-import {equal_json} from "./equal_json.mjs";
-import {assert_boolean} from "./assert_boolean.mjs";
-import {logic_parse} from "./logic_parse.mjs";
+import { equal_json } from "./equal_json.mjs";
+import { assert_boolean } from "./assert_boolean.mjs";
+import { logic_parse } from "./logic_parse.mjs";
 export function logic_parse_test_6() {
-    let result = logic_parse('a(b(),c(d(),e()))');
-    assert_boolean(equal_json(result, {
-        "type": "call",
-        "callee": {
-            "type": "identifier",
-            "name": "a"
+  let result = logic_parse("a(b(),c(d(),e()))");
+  assert_boolean(
+    equal_json(result, {
+      type: "call",
+      callee: {
+        type: "identifier",
+        name: "a",
+      },
+      args: [
+        {
+          type: "call",
+          callee: {
+            type: "identifier",
+            name: "b",
+          },
+          args: [],
         },
-        "args": [{
-            "type": "call",
-            "callee": {
-                "type": "identifier",
-                "name": "b"
+        {
+          type: "call",
+          callee: {
+            type: "identifier",
+            name: "c",
+          },
+          args: [
+            {
+              type: "call",
+              callee: {
+                type: "identifier",
+                name: "d",
+              },
+              args: [],
             },
-            "args": []
-        }, {
-            "type": "call",
-            "callee": {
-                "type": "identifier",
-                "name": "c"
+            {
+              type: "call",
+              callee: {
+                type: "identifier",
+                name: "e",
+              },
+              args: [],
             },
-            "args": [{
-                "type": "call",
-                "callee": {
-                    "type": "identifier",
-                    "name": "d"
-                },
-                "args": []
-            }, {
-                "type": "call",
-                "callee": {
-                    "type": "identifier",
-                    "name": "e"
-                },
-                "args": []
-            }]
-        }]
-    }));
+          ],
+        },
+      ],
+    }),
+  );
 }

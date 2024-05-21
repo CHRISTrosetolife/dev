@@ -8,9 +8,13 @@ import { list_filter } from "./list_filter.mjs";
 import { function_names } from "./function_names.mjs";
 import { list_map } from "./list_map.mjs";
 import { function_run } from "./function_run.mjs";
+import { function_auto } from "./function_auto.mjs";
 export async function tests_generate() {
   let names = await function_names();
   let filtered = list_filter(names, (n) => string_includes(n, "_test_"));
+  for (let f of filtered) {
+    await function_auto(f);
+  }
   let function_name = "tests";
   let mapped = list_map(filtered, js_code_statement_call);
   let mapped2 = list_map(mapped, js_code_await);
