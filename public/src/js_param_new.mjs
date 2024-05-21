@@ -5,12 +5,16 @@ import { js_node_type } from "./js_node_type.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
 import { list_add } from "./list_add.mjs";
 import { js_imports_add } from "./js_imports_add.mjs";
+import { assert } from "./assert.mjs";
+import { string_is } from "./string_is.mjs";
 export async function js_param_new(
   ast,
   function_name,
   param_name,
   default_value_string,
 ) {
+    assert(string_is,[param_name]);
+    assert(string_is,[default_value_string]);
   let needs_imports_add = false;
   let nodes = js_node_type(ast, "CallExpression");
   for (let node of nodes) {
