@@ -11,7 +11,6 @@ export function logic_unparse(parse) {
     assert(string_is, [name]);
     return name;
   }
-  console.log({parse})
   assert(equal, [type, "call"]);
   let { callee, args } = parse;
   let mapped = list_map(args, logic_unparse);
