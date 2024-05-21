@@ -1,3 +1,4 @@
+import { tautology } from "./tautology.mjs";
 import { logic_copy } from "./logic_copy.mjs";
 import { assert } from "./assert.mjs";
 import { equal } from "./equal.mjs";
@@ -28,7 +29,7 @@ export function logic_step_substitution(statement, substitution) {
       }
       return [];
     },
-    () => true,
+    tautology,
     (v) => {},
     [],
   );
