@@ -23,7 +23,7 @@ export async function tests_generate_single_generic(
   args_mappers,
   result_mapper,
 ) {
-  let args_mapped3 = list_map_index(args_mapped, (a, index) => {
+  let args_mapped3 = list_map_index(args, (a, index) => {
     let mapper = list_get(args_mappers, index);
     return mapper(a);
   });
