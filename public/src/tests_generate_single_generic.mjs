@@ -31,7 +31,7 @@ export async function tests_generate_single_generic(
   });
   let result = await function_run(function_name, args_mapped3);
   result = result_mapper(result);
-  log(string_combine_multiple(test_number.toString(), ' ', list_concat(args, [result])));
+  log(string_combine_multiple([test_number.toString(), ' ', list_concat(args, [result])]));
   let result_name = "result";
   let string_delimeter = "'";
   for (let arg of args) {
