@@ -10,7 +10,10 @@ import { assert_boolean } from "./assert_boolean.mjs";
 import { string_includes } from "./string_includes.mjs";
 import { function_run } from "./function_run.mjs";
 import { error } from "./error.mjs";
+import { identity } from "./identity.mjs";
 export async function tests_generate_single(function_name, args, test_number) {
+    let args_mappers = [identity, identity]
+    let result_mapper = identity;
   await tests_generate_single_generic(function_name, args, test_number);
 }
 
