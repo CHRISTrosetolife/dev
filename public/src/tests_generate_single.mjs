@@ -11,27 +11,31 @@ import { string_includes } from "./string_includes.mjs";
 import { function_run } from "./function_run.mjs";
 import { error } from "./error.mjs";
 export async function tests_generate_single(function_name, args, test_number) {
-  let result = await function_run(function_name, args);
-  log(test_number.toString(), list_concat(args, [result]));
-  let result_name = "result";
-  let string_delimeter = "'";
-  for (let arg of args) {
-    assert_boolean(!string_includes(arg, string_delimeter));
-  }
-  let args_mapped = list_map(args, (arg) => {
-    if (string_is(arg)) {
-      return string_delimit(arg);
+  await tests_generate_single_generic(function_name, args, test_number);
+}
+
+async function tests_generate_single_generic(function_name, args, test_number) {
+    let result = await function_run(function_name, args);
+    log(test_number.toString(), list_concat(args, [result]));
+    let result_name = "result";
+    let string_delimeter = "'";
+    for (let arg of args) {
+        assert_boolean(!string_includes(arg, string_delimeter));
     }
-    error();
-  });
-  const body_string = `    let ${result_name} = ${function_name}(${args_mapped.join(", ")});
+    let args_mapped = list_map(args, (arg) => {
+        if (string_is(arg)) {
+            return string_delimit(arg);
+        }
+        error();
+    });
+    const body_string = `    let ${result_name} = ${function_name}(${args_mapped.join(", ")});
     ${assert_boolean.name}(${equal_json.name}(${result_name}, ${json_to(result)}))`;
-  await function_new_generic(
-    `${function_name}_test_${test_number}`,
-    ``,
-    body_string,
-    false,
-    [],
-    false,
-  );
+    await function_new_generic(
+        `${function_name}_test_${test_number}`,
+        ``,
+        body_string,
+        false,
+        [],
+        false
+    );
 }
