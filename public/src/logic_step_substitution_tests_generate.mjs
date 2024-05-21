@@ -6,6 +6,6 @@ export async function logic_step_substitution_tests_generate() {
   let inputs = [
   ];
   await each_index_async(inputs, async (input, index) => {
-    await tests_generate_single(logic_parse.name, [input], add_1(index));
+    await tests_generate_single( logic_step_substitution.name, [input], add_1(index));
   });
 }
