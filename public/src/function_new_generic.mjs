@@ -29,7 +29,7 @@ ${body_string}
   await js_imports_fix(parsed);
   let unparsed = js_unparse(parsed);
   let file_path = function_name_to_path(function_name);
-  await file_write(file_path, unparsed);
+  await writer(file_path, unparsed);
   if (open) {
     await file_open(file_path);
   }

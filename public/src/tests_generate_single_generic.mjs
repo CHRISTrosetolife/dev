@@ -1,4 +1,4 @@
-import { file_write } from "./file_write.mjs";
+import { file_overwrite } from "./file_overwrite.mjs";
 import { equal } from "./equal.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
@@ -59,6 +59,6 @@ export async function tests_generate_single_generic(
     false,
     [],
     false,
-    file_write,
+    file_overwrite,
   );
 }
