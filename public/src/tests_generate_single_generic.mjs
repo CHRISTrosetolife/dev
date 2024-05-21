@@ -23,7 +23,11 @@ export async function tests_generate_single_generic(
   args_mappers,
   result_mapper,
 ) {
-  let result = await function_run(function_name, args);
+  let args_mapped3 = list_map_index(args_mapped, (a, index) => {
+    let mapper = list_get(args_mappers, index);
+    return mapper(a);
+  });
+  let result = await function_run(function_name, args_mapped3);
   result = result_mapper(result);
   log(test_number.toString(), list_concat(args, [result]));
   let result_name = "result";
@@ -38,7 +42,7 @@ export async function tests_generate_single_generic(
     error();
   });
   let args_mapped2 = list_map_index(args_mapped, (a, index) => {
-    let mapper = list_get(args, index);
+    let mapper = list_get(args_mappers, index);
     if (equal(mapper, identity)) {
       return a;
     }
