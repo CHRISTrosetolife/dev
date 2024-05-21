@@ -19,11 +19,17 @@ export function logic_step_substitution(statement, substitution) {
   let { type: variable_type, name: variable_name } = variable;
   assert(equal, [variable_type, "identifier"]);
   assert(string_is, [variable_name]);
-  visit(copy, (node) => {
-    let { type, callee, args } = node;
-    if (equal(type, "call")) {
-      return list_concat([callee], args);
-    }
-    return [];
-  });
+  visit(
+    copy,
+    (node) => {
+      let { type, callee, args } = node;
+      if (equal(type, "call")) {
+        return list_concat([callee], args);
+      }
+      return [];
+    },
+    () => true,
+    (v) => {},
+    [],
+  );
 }
