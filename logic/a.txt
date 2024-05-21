@@ -1,4 +1,4 @@
 equal(and(true,false),false)
-
+all(x,equal(x,x))
 equal(and(and(true,false),true),and(and(true,false),true))
 and(false,true)
