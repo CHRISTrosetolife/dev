@@ -1,5 +1,4 @@
-equal(add(.x)(successor(.y)))(add(successor(.x))(.y))
-equal(add(.x)(zero))(.x)
-equal(add(zero)(zero))(zero)
-equal(replace(.a)(.b)(.c))(if(and(any_zeroed(.a))(same(.a)(.c)))(.b)(.c))
-equal(visit(.f(.x)))(visit(.f)(visit(.x)))
+equal(and(true,false),false)
+
+equal(and(and(true,false),true),and(and(true,false),true))
+and(false,true)
