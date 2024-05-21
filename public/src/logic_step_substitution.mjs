@@ -12,8 +12,9 @@ export function logic_step_substitution(statement, substitution) {
   let {
     type,
     callee: { type: callee_type, name },
-    args: [variable, inner],
+    args,
   } = copy;
+  let [variable, inner] = args;
   assert(equal, [type, "call"]);
   assert(equal, [callee_type, "identifier"]);
   assert(equal, [name, "all"]);
