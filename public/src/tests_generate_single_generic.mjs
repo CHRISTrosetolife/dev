@@ -1,4 +1,5 @@
-import { js_code_call } from "./js_code_call.mjs";
+import { js_code_call_args } from "./js_code_call_args.mjs";
+import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
 import { function_new_generic } from "./function_new_generic.mjs";
 import { json_to } from "./json_to.mjs";
 import { equal_json } from "./equal_json.mjs";
@@ -38,7 +39,7 @@ export async function tests_generate_single_generic(
     let mapper = list_get(args);
   });
   const body_string = `    let ${result_name} = ${function_name}(${args_mapped.join(", ")});
-    result = ${js_code_call}
+    ${js_code_statement_assign(result_name, js_code_call_args(result_mapper.name, [result_name]))} 
     ${assert_boolean.name}(${equal_json.name}(${result_name}, ${json_to(result)}))`;
   await function_new_generic(
     `${function_name}_test_${test_number}`,
