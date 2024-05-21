@@ -1,3 +1,4 @@
+import { equal } from "./equal.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
 import { function_new_generic } from "./function_new_generic.mjs";
@@ -14,6 +15,7 @@ import { assert_boolean } from "./assert_boolean.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { log } from "./log.mjs";
 import { function_run } from "./function_run.mjs";
+import { identity } from "./identity.mjs";
 export async function tests_generate_single_generic(
   function_name,
   args,
@@ -39,7 +41,7 @@ export async function tests_generate_single_generic(
     let mapper = list_get(args);
   });
   const body_string = `    let ${result_name} = ${function_name}(${args_mapped.join(", ")});
-    ${js_code_statement_assign(result_name, js_code_call_args(result_mapper.name, [result_name]))} 
+    ${equal(result_mapper, identity) ? "" : js_code_statement_assign(result_name, js_code_call_args(result_mapper.name, [result_name]))} 
     ${assert_boolean.name}(${equal_json.name}(${result_name}, ${json_to(result)}))`;
   await function_new_generic(
     `${function_name}_test_${test_number}`,
