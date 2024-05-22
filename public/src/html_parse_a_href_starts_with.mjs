@@ -9,7 +9,7 @@ export function html_parse_a_href_starts_with(parsed, prefix) {
     let href = i.getAttribute("href");
     return string_starts_with(href, prefix);
   });
-  console.log({filtered})
+  console.log({q})
   let mapped = list_map(filtered, (i) => object_property_get(i, "text"));
   let mapped3 = list_map(mapped, (i) => string_trim(i));
   return mapped3;
