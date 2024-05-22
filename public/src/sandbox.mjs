@@ -23,12 +23,13 @@ export async function sandbox() {
     while (true) {
       let prefix = `https://www.learnentry.com/english-to-cebuano/dictionary/words-start-with-${letter}?page=`;
       const url = string_combine_multiple([prefix, page_number]);
+      let parsed = await html_cache_parse(url);
       log({
         url,
         letter,
         page_number,
+        parsed
       });
-      let parsed = await html_cache_parse(url);
       let mapped3 = html_parse_a_href_starts_with(parsed, prefix);
       page_number = add_1(page_number);
       let page_number_string = string_to(page_number);
