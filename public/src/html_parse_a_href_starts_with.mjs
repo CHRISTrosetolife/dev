@@ -8,10 +8,6 @@ export function html_parse_a_href_starts_with(parsed, prefix) {
   let q = parsed.querySelectorAll("a[href]");
   let filtered = list_filter(q, (i) => {
     let href = i.getAttribute("href");
-    console.log({
-      href,
-      prefix,
-    });
     return string_starts_with(href, prefix);
   });
   let mapped = list_map(filtered, (i) => object_property_get(i, "text"));
