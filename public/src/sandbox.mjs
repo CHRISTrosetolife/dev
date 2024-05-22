@@ -1,5 +1,4 @@
-import { list_length_1 } from "./list_length_1.mjs";
-import { assert } from "./assert.mjs";
+import { list_single } from "./list_single.mjs";
 import { ceb_dictionary_page_each } from "./ceb_dictionary_page_each.mjs";
 import { log } from "./log.mjs";
 export async function sandbox() {
@@ -8,7 +7,7 @@ export async function sandbox() {
     if (letter === "a" && page_number === 1) {
       log(url);
       let tables = parsed.querySelectorAll(".table-responsive");
-      assert(list_length_1, [tables]);
+      let table = list_single(tables);
     }
   });
 }
