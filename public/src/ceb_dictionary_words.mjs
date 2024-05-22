@@ -1,3 +1,4 @@
+import { each_object } from "./each_object.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -27,5 +28,5 @@ export async function ceb_dictionary_words() {
       list_add(list, left);
     }
   });
-  return lookup;
+  each_object();
 }
