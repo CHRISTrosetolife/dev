@@ -15,11 +15,11 @@ export async function ceb_dictionary_words() {
       let div = list_single(tables);
       let rows = div.querySelectorAll("tr");
       if (false)
-      log({
-        letter,
-        page_number,
-        r: list_length(rows),
-      });
+        log({
+          letter,
+          page_number,
+          r: list_length(rows),
+        });
       for (let r of rows) {
         let columns = r.querySelectorAll("td");
         assert(equal, [list_length(columns), 2]);
