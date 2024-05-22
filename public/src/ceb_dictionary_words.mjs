@@ -9,6 +9,7 @@ import { ceb_dictionary_page_each } from "./ceb_dictionary_page_each.mjs";
 import { list_adder_async } from "./list_adder_async.mjs";
 import { string_trim } from "./string_trim.mjs";
 export async function ceb_dictionary_words() {
+  let lookup = {};
   return await list_adder_async(async (la) => {
     await ceb_dictionary_page_each((v) => {
       let { parsed } = v;
