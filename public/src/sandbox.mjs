@@ -7,10 +7,12 @@ import { yyy8Uu_parts } from "./yyy8Uu_parts.mjs";
 import { each_index_async } from "./each_index_async.mjs";
 import { yyy8Uu_file_path_to_parts } from "./yyy8Uu_file_path_to_parts.mjs";
 import { string_combine } from "./string_combine.mjs";
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export async function sandbox() {
-  let prefix = `https://www.learnentry.com/english-to-cebuano/dictionary/words-start-with-a/?page=`;
+    let base =`https://www.learnentry.com`
+  let prefix = `/english-to-cebuano/dictionary/words-start-with-a/?page=`;
   let page_number = 1;
-  let parsed = await html_cache_parse(string_combine(prefix, page_number));
+  let parsed = await html_cache_parse(string_combine_multiple([base,prefix, page_number]));
   let mapped3 = html_parse_a_href_starts_with(parsed, prefix);
   return mapped3;
   const input_directory = "C:\\Users\\JESUS\\Pictures\\Screenshots";
