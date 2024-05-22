@@ -30,6 +30,9 @@ export async function ceb_dictionary_words() {
       let mapped = list_map(texts, string_case_lower);
       let mapped2 = list_map(mapped, string_trim);
       let [left, right] = mapped2;
+      if (right === 'billion') {
+        console.log(columns)
+      }
       let list = object_property_initialize(lookup, right, []);
       list_add(list, left);
     }
