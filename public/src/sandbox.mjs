@@ -14,9 +14,10 @@ import { yyy8Uu_file_path_to_parts } from "./yyy8Uu_file_path_to_parts.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
+import { identity } from "./identity.mjs";
 export async function sandbox() {
   let letters = keyboard_keys();
-  list_sort_string(letters);
+  list_sort_string(letters, identity);
   for (let letter of letters) {
     let page_number = 1;
     while (true) {
