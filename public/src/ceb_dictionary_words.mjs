@@ -28,5 +28,5 @@ export async function ceb_dictionary_words() {
       list_add(list, left);
     }
   });
-  each_object();
+  each_object(lookup, (key, value) => {});
 }
