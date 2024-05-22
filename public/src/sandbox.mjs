@@ -16,8 +16,9 @@ export async function sandbox() {
       for (let r of rows) {
         let columns = r.querySelectorAll("td");
         assert(equal, [list_length(columns), 2]);
+        let texts = list_map(columns, (c) => object_property_get(c, "text"));
+        log(texts);
       }
-      log(list_map(rows, (r) => object_property_get(r, "text")));
     }
   });
 }
