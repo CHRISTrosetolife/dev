@@ -1,3 +1,4 @@
+import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_remove_if_exists } from "./list_remove_if_exists.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { list_adder } from "./list_adder.mjs";
@@ -39,7 +40,9 @@ export async function ceb_dictionary_words() {
   let list = list_adder((la) => {
     each_object(lookup, (key, value) => {
       list_remove_if_exists(value, key);
-      la([key, value]);
+      if (list_empty_not_is(value)) {
+        la([key, value]);
+      }
     });
   });
   list_sort_string(list, list_first);
