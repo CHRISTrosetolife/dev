@@ -11,6 +11,10 @@ import { list_single } from "./list_single.mjs";
 import { ceb_dictionary_page_each } from "./ceb_dictionary_page_each.mjs";
 import { string_trim } from "./string_trim.mjs";
 import { list_add } from "./list_add.mjs";
+import { list_sort_string } from "./list_sort_string.mjs";
+import { identity } from "./identity.mjs";
+import { list_get } from "./list_get.mjs";
+import { list_first } from "./list_first.mjs";
 export async function ceb_dictionary_words() {
   let lookup = {};
   await ceb_dictionary_page_each((v) => {
@@ -34,5 +38,6 @@ export async function ceb_dictionary_words() {
       la([key, value]);
     });
   });
+  list_sort_string(list, list_first);
   return list;
 }
