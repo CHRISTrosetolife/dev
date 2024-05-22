@@ -1,3 +1,4 @@
+import { list_adder } from "./list_adder.mjs";
 import { each_object } from "./each_object.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
@@ -28,5 +29,10 @@ export async function ceb_dictionary_words() {
       list_add(list, left);
     }
   });
-  each_object(lookup, (key, value) => {});
+  let list = list_adder((la) => {
+    each_object(lookup, (key, value) => {
+      la([key, value]);
+    });
+  });
+  return list;
 }
