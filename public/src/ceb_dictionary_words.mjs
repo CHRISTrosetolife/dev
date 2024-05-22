@@ -15,6 +15,7 @@ import { list_sort_string } from "./list_sort_string.mjs";
 import { identity } from "./identity.mjs";
 import { list_get } from "./list_get.mjs";
 import { list_first } from "./list_first.mjs";
+import { string_length } from "./string_length.mjs";
 export async function ceb_dictionary_words() {
   let lookup = {};
   await ceb_dictionary_page_each((v) => {
@@ -39,5 +40,6 @@ export async function ceb_dictionary_words() {
     });
   });
   list_sort_string(list, list_first);
+  list_sort_string(list, l =>string_length( list_first(l)));
   return list;
 }
