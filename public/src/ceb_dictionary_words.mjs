@@ -11,7 +11,7 @@ import { string_trim } from "./string_trim.mjs";
 export async function ceb_dictionary_words() {
   return await list_adder_async(async (la) => {
     await ceb_dictionary_page_each((v) => {
-      let { letter, page_number, parsed } = v;
+      let { parsed } = v;
       let tables = parsed.querySelectorAll(".table-responsive");
       let div = list_single(tables);
       let rows = div.querySelectorAll("tr");
