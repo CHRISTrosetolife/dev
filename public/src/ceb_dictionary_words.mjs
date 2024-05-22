@@ -31,7 +31,7 @@ export async function ceb_dictionary_words() {
       let mapped2 = list_map(mapped, string_trim);
       let [left, right] = mapped2;
       if (right === '') {
-        console.log(columns)
+        console.log(object_property_get(r, "text"))
       }
       let list = object_property_initialize(lookup, right, []);
       list_add(list, left);
