@@ -26,8 +26,9 @@ export async function ceb_dictionary_words() {
         let mapped = list_map(texts, string_case_lower);
         let mapped2 = list_map(mapped, string_trim);
         let [left, right] = mapped2;
+        const initial = [];
         if (not(object_property_exists(lookup, right))) {
-          object_property_set(lookup, right, []);
+          object_property_set(lookup, right, initial);
         }
         la(mapped2);
       }
