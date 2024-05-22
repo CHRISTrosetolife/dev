@@ -7,6 +7,7 @@ export function html_parse_a_href_starts_with(parsed, prefix) {
   let q = parsed.querySelectorAll("a[href]");
   let filtered = list_filter(q, (i) => {
     let href = i.getAttribute("href")
+    console.log({href,prefix})
     return string_starts_with(href, prefix);
   });
   console.log({filtered})

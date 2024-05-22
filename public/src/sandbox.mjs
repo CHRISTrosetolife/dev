@@ -9,11 +9,10 @@ import { yyy8Uu_file_path_to_parts } from "./yyy8Uu_file_path_to_parts.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export async function sandbox() {
-    let base =`https://www.learnentry.com`
-  let prefix = `/english-to-cebuano/dictionary/words-start-with-a`;
-  let page_number = `/?page=1`;
-  let parsed = await html_cache_parse(string_combine_multiple([base,prefix, page_number]));
-  let mapped3 = html_parse_a_href_starts_with(parsed, 'https://www.learnentry.com/english-to-cebuano/dictionary/words-start-with-a?page=');
+  let prefix = 'https://www.learnentry.com/english-to-cebuano/dictionary/words-start-with-a?page=';
+  let page_number = `1`;
+  let parsed = await html_cache_parse(string_combine_multiple([prefix, page_number]));
+  let mapped3 = html_parse_a_href_starts_with(parsed, prefix);
   return mapped3;
   const input_directory = "C:\\Users\\JESUS\\Pictures\\Screenshots";
   let output_directory = "C:\\Users\\JESUS\\dev\\public\\img\\demo\\2024_05_19";
