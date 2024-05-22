@@ -40,7 +40,7 @@ export async function ceb_dictionary_words() {
   let list = list_adder((la) => {
     each_object(lookup, (key, value) => {
       if (list_includes(value, key)) {
-        list_remove;
+        list_remove(value, key);
       }
       la([key, value]);
     });
