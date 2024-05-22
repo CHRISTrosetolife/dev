@@ -19,7 +19,7 @@ import { string_length } from "./string_length.mjs";
 export async function ceb_dictionary_words() {
   let lookup = {};
   await ceb_dictionary_page_each((v) => {
-    let { parsed } = v;
+    let { parsed, page_number, letter } = v;
     let tables = parsed.querySelectorAll(".table-responsive");
     let div = list_single(tables);
     let rows = div.querySelectorAll("tr");
@@ -31,7 +31,7 @@ export async function ceb_dictionary_words() {
       let mapped2 = list_map(mapped, string_trim);
       let [left, right] = mapped2;
       if (right === '') {
-        console.log(object_property_get(r, "text"))
+        console.log({page_number, letter,t:object_property_get(r, "text")})
       }
       let list = object_property_initialize(lookup, right, []);
       list_add(list, left);
