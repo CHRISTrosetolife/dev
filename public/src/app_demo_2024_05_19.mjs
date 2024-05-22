@@ -69,7 +69,7 @@ export function app_demo_2024_05_19() {
       ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\9.png");
       html_style_alternate_monospace_short_multiple(parent, [
-        "a function is created :",
+        "a function is created it is automatically opened in the ide :",
       ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\10.png");
     },
@@ -79,9 +79,13 @@ export function app_demo_2024_05_19() {
       ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\11.png");
       html_style_alternate_monospace_short_multiple(parent, [
-        "... and run `function_auto` then whitespace is automatically fixed",
+        "... and run `function_auto` ...",
       ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\15.png");
+      
+      html_style_alternate_monospace_short_multiple(parent, [
+        "... then whitespace is automatically fixed",
+      ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\12.png");
       html_style_alternate_monospace_short_multiple(parent, [
         "we can run `greetings` from the command-line :",
