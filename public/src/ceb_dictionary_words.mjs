@@ -1,3 +1,5 @@
+import { object_property_exists } from "./object_property_exists.mjs";
+import { not } from "./not.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_map } from "./list_map.mjs";
@@ -8,6 +10,7 @@ import { list_single } from "./list_single.mjs";
 import { ceb_dictionary_page_each } from "./ceb_dictionary_page_each.mjs";
 import { list_adder_async } from "./list_adder_async.mjs";
 import { string_trim } from "./string_trim.mjs";
+import { object_property_set } from "./object_property_set.mjs";
 export async function ceb_dictionary_words() {
   let lookup = {};
   return await list_adder_async(async (la) => {
@@ -23,6 +26,8 @@ export async function ceb_dictionary_words() {
         let mapped = list_map(texts, string_case_lower);
         let mapped2 = list_map(mapped, string_trim);
         let [left, right] = mapped2;
+        if (not(object_property_exists()))
+          object_property_set(lookup, right, []);
         la(mapped2);
       }
     });
