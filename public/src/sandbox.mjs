@@ -7,7 +7,7 @@ export async function sandbox() {
     if (letter === "a" && page_number === 1) {
       log(url);
       let tables = parsed.querySelectorAll(".table-responsive");
-      assert(list_length_is_1, [tables]);
+      assert(list_length_1, [tables]);
     }
   });
 }
