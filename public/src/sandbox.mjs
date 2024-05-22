@@ -1,3 +1,5 @@
+import { not } from "./not.mjs";
+import { log } from "./log.mjs";
 import { string_to } from "./string_to.mjs";
 import { add_1 } from "./add_1.mjs";
 import { html_parse_a_href_starts_with } from "./html_parse_a_href_starts_with.mjs";
@@ -14,12 +16,15 @@ export async function sandbox() {
   while (true) {
     let prefix =
       "https://www.learnentry.com/english-to-cebuano/dictionary/words-start-with-a?page=";
-    let parsed = await html_cache_parse(
-      string_combine_multiple([prefix, page_number]),
-    );
+    const url = string_combine_multiple([prefix, page_number]);
+    log(url);
+    let parsed = await html_cache_parse(url);
     let mapped3 = html_parse_a_href_starts_with(parsed, prefix);
     let next = add_1(page_number);
     let next_string = string_to(next);
+    if (not(list_contains(mapped3, next_string))) {
+      break;
+    }
   }
   return mapped3;
   const input_directory = "C:\\Users\\JESUS\\Pictures\\Screenshots";
