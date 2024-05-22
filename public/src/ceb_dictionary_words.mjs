@@ -22,6 +22,7 @@ export async function ceb_dictionary_words() {
         let texts = list_map(columns, (c) => object_property_get(c, "text"));
         let mapped = list_map(texts, string_case_lower);
         let mapped2 = list_map(mapped, string_trim);
+        let [left, right] = mapped2;
         la(mapped2);
       }
     });
