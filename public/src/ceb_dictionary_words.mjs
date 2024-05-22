@@ -1,3 +1,4 @@
+import { string_case_lower } from "./string_case_lower.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_map } from "./list_map.mjs";
 import { equal } from "./equal.mjs";
@@ -17,6 +18,7 @@ export async function ceb_dictionary_words() {
         let columns = r.querySelectorAll("td");
         assert(equal, [list_length(columns), 2]);
         let texts = list_map(columns, (c) => object_property_get(c, "text"));
+        let mapped = list_map(texts, string_case_lower);
         la(texts);
       }
     });
