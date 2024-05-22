@@ -6,11 +6,11 @@ import { yyy8Uu_translate } from "./yyy8Uu_translate.mjs";
 import { yyy8Uu_parts } from "./yyy8Uu_parts.mjs";
 import { each_index_async } from "./each_index_async.mjs";
 import { yyy8Uu_file_path_to_parts } from "./yyy8Uu_file_path_to_parts.mjs";
+import { string_combine } from "./string_combine.mjs";
 export async function sandbox() {
-  let parsed = await html_cache_parse(
-    `https://www.learnentry.com/english-to-cebuano/dictionary/words-start-with-a/?page=1`,
-  );
-  let prefix = "http://www.binisaya.com/english/";
+  let prefix = `https://www.learnentry.com/english-to-cebuano/dictionary/words-start-with-a/?page=`;
+  let page_number = 1;
+  let parsed = await html_cache_parse(string_combine(prefix, page_number));
   let mapped3 = html_parse_a_href_starts_with(parsed, prefix);
   return;
   const input_directory = "C:\\Users\\JESUS\\Pictures\\Screenshots";
