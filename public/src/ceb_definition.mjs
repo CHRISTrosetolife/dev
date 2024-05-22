@@ -15,10 +15,10 @@ export async function ceb_definition(word) {
   ]);
   let html = await http_cache(url);
   let parsed = html_parse(html);
+  const prefix = "http://www.binisaya.com/english/";
   let q = parsed.querySelectorAll("a[href]");
   let filtered = list_filter(q, (i) => {
     let href = i.getAttribute("href");
-      const prefix = "http://www.binisaya.com/english/";
     return string_starts_with(href, prefix);
   });
   let mapped = list_map(filtered, (i) => object_property_get(i, "text"));
