@@ -12,7 +12,7 @@ export async function sandbox() {
   let page_number = 1;
   let parsed = await html_cache_parse(string_combine(prefix, page_number));
   let mapped3 = html_parse_a_href_starts_with(parsed, prefix);
-  return;
+  return mapped3;
   const input_directory = "C:\\Users\\JESUS\\Pictures\\Screenshots";
   let output_directory = "C:\\Users\\JESUS\\dev\\public\\img\\demo\\2024_05_19";
   const file_extension = ".png";
