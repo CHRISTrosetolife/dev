@@ -16,7 +16,17 @@ import { list_includes } from "./list_includes.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { identity } from "./identity.mjs";
 export async function sandbox() {
-  await ceb_dictionary_page_each(log);
+  await ceb_dictionary_page_each(v => {
+    let {
+        url,
+        letter,
+        page_number,
+        parsed
+    } = v;
+    if (letter === 'a' && page_number === 1) {
+        log(url)
+    }
+  });
   return;
   const input_directory = "C:\\Users\\JESUS\\Pictures\\Screenshots";
   let output_directory = "C:\\Users\\JESUS\\dev\\public\\img\\demo\\2024_05_19";
