@@ -16,28 +16,7 @@ import { list_includes } from "./list_includes.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { identity } from "./identity.mjs";
 export async function sandbox() {
-  let letters = keyboard_keys();
-  list_sort_string(letters, identity);
-  for (let letter of letters) {
-    let page_number = 1;
-    while (true) {
-      let prefix = `https://www.learnentry.com/english-to-cebuano/dictionary/words-start-with-${letter}?page=`;
-      const url = string_combine_multiple([prefix, page_number]);
-      let parsed = await html_cache_parse(url);
-      log({
-        url,
-        letter,
-        page_number,
-        parsed
-      });
-      let mapped3 = html_parse_a_href_starts_with(parsed, prefix);
-      page_number = add_1(page_number);
-      let page_number_string = string_to(page_number);
-      if (not(list_includes(mapped3, page_number_string))) {
-        break;
-      }
-    }
-  }
+  await ceb_dictionary_page_each(log);
   return;
   const input_directory = "C:\\Users\\JESUS\\Pictures\\Screenshots";
   let output_directory = "C:\\Users\\JESUS\\dev\\public\\img\\demo\\2024_05_19";
@@ -56,3 +35,29 @@ export async function sandbox() {
     await yyy8Uu_file_path_to_parts(filtered, index);
   });
 }
+async function ceb_dictionary_page_each(lambda) {
+    let letters = keyboard_keys();
+    list_sort_string(letters, identity);
+    for (let letter of letters) {
+        let page_number = 1;
+        while (true) {
+            let prefix = `https://www.learnentry.com/english-to-cebuano/dictionary/words-start-with-${letter}?page=`;
+            const url = string_combine_multiple([prefix, page_number]);
+            let parsed = await html_cache_parse(url);
+            const v = {
+                url,
+                letter,
+                page_number,
+                parsed
+            };
+            lambda(v);
+            let mapped3 = html_parse_a_href_starts_with(parsed, prefix);
+            page_number = add_1(page_number);
+            let page_number_string = string_to(page_number);
+            if (not(list_includes(mapped3, page_number_string))) {
+                break;
+            }
+        }
+    }
+}
+
