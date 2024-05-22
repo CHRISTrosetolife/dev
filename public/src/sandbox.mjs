@@ -13,7 +13,7 @@ export async function sandbox() {
   let prefix = `/english-to-cebuano/dictionary/words-start-with-a`;
   let page_number = `/?page=1`;
   let parsed = await html_cache_parse(string_combine_multiple([base,prefix, page_number]));
-  let mapped3 = html_parse_a_href_starts_with(parsed, prefix);
+  let mapped3 = html_parse_a_href_starts_with(parsed, 'https://www.learnentry.com/english-to-cebuano/dictionary/words-start-with-a?page=');
   return mapped3;
   const input_directory = "C:\\Users\\JESUS\\Pictures\\Screenshots";
   let output_directory = "C:\\Users\\JESUS\\dev\\public\\img\\demo\\2024_05_19";
