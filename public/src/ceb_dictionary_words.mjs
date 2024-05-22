@@ -1,3 +1,4 @@
+import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { each_object } from "./each_object.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
@@ -12,8 +13,6 @@ import { ceb_dictionary_page_each } from "./ceb_dictionary_page_each.mjs";
 import { string_trim } from "./string_trim.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
-import { identity } from "./identity.mjs";
-import { list_get } from "./list_get.mjs";
 import { list_first } from "./list_first.mjs";
 import { string_length } from "./string_length.mjs";
 export async function ceb_dictionary_words() {
@@ -30,11 +29,10 @@ export async function ceb_dictionary_words() {
       let mapped = list_map(texts, string_case_lower);
       let mapped2 = list_map(mapped, string_trim);
       let [left, right] = mapped2;
-      if (right === '') {
-        console.log({page_number, letter,t:object_property_get(r, "text")})
+      if (string_empty_not_is(right)) {
+        let list = object_property_initialize(lookup, right, []);
+        list_add(list, left);
       }
-      let list = object_property_initialize(lookup, right, []);
-      list_add(list, left);
     }
   });
   let list = list_adder((la) => {
@@ -43,6 +41,6 @@ export async function ceb_dictionary_words() {
     });
   });
   list_sort_string(list, list_first);
-  list_sort_string(list, l =>string_length( list_first(l)));
+  list_sort_string(list, (l) => string_length(list_first(l)));
   return list;
 }
