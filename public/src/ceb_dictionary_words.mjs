@@ -1,4 +1,4 @@
-import { list_remove } from "./list_remove.mjs";
+import { list_remove_if_exists } from "./list_remove_if_exists.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { each_object } from "./each_object.mjs";
@@ -16,7 +16,6 @@ import { list_add } from "./list_add.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { list_first } from "./list_first.mjs";
 import { string_length } from "./string_length.mjs";
-import { list_includes } from "./list_includes.mjs";
 export async function ceb_dictionary_words() {
   let lookup = {};
   await ceb_dictionary_page_each((v) => {
@@ -39,9 +38,7 @@ export async function ceb_dictionary_words() {
   });
   let list = list_adder((la) => {
     each_object(lookup, (key, value) => {
-      if (list_includes(value, key)) {
-        list_remove(value, key);
-      }
+      list_remove_if_exists(value, key);
       la([key, value]);
     });
   });
