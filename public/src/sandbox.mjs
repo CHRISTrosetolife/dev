@@ -11,18 +11,19 @@ import { yyy8Uu_parts } from "./yyy8Uu_parts.mjs";
 import { each_index_async } from "./each_index_async.mjs";
 import { yyy8Uu_file_path_to_parts } from "./yyy8Uu_file_path_to_parts.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { list_includes } from "./list_includes.mjs";
 export async function sandbox() {
   let page_number = 1;
   while (true) {
     let prefix =
       "https://www.learnentry.com/english-to-cebuano/dictionary/words-start-with-a?page=";
     const url = string_combine_multiple([prefix, page_number]);
-    log(url);
+    log({url,page_number});
     let parsed = await html_cache_parse(url);
     let mapped3 = html_parse_a_href_starts_with(parsed, prefix);
-    let next = add_1(page_number);
-    let next_string = string_to(next);
-    if (not(list_contains(mapped3, next_string))) {
+    page_number = add_1(page_number);
+    let page_number_string = string_to(page_number);
+    if (not(list_includes(mapped3, page_number_string))) {
       break;
     }
   }
