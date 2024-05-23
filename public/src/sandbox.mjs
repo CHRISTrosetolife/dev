@@ -17,7 +17,8 @@ export async function sandbox() {
       ),
     ),
   );
-  let lambda = () => {};
-  each_range(atom_count, lambda);
+  let atom_result = list_adder((la) => {
+    each_range(atom_count, (i) => {});
+  });
   return pairs;
 }
