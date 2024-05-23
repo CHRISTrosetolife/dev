@@ -19,6 +19,8 @@ import { html_style_bold } from "./html_style_bold.mjs";
 import { html_style_centered } from "./html_style_centered.mjs";
 import { list_index_last } from "./list_index_last.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
+import { floor } from "./floor.mjs";
+import { divide } from "./divide.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -31,6 +33,7 @@ export async function app_ceb() {
     let [cebuano, english] = pair;
     let split_size = 1;
     let max_index = string_index_last(english);
+    let adjusted = floor(divide(max_index, split_size));
   }
   async function refresh_pair(pair_index) {
     html_clear_scroll_top(root);
