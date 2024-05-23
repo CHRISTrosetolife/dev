@@ -7,12 +7,12 @@ export async function sandbox() {
   return await ceb_definition("sa");
   let words = await ceb_bible_words();
   let length = list_length(words);
-    let t=list_take(words,128)
-  await each_index_async(words, async (word, index) => {
-    await ceb_definition(word);
+    let t=list_take(words,32)
+  await each_index_async(t, async (word, index) => {
+    let d=await ceb_definition(word);
     log({
       word,
-      length,
+      d,
       index,
     });
   });
