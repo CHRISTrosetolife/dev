@@ -13,10 +13,11 @@ export async function sandbox() {
   let t = list_take(words, count);
   let lookup = {};
   await each_index_async(t, async (bible_word, index) => {
-    log({
-      bible_word,
-      index,
-    });
+    if (0)
+      log({
+        bible_word,
+        index,
+      });
     let { word, definitions } = await ceb_definition(bible_word);
     object_property_set(lookup, word, definitions);
   });
