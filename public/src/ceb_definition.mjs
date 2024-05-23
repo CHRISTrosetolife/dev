@@ -21,5 +21,5 @@ export async function ceb_definition(word) {
   let first = list_first(mapped3);
   let index = list_index(mapped3, first);
   let index_at =list_get(filtered,index)
-  return index;
+  return index_at;
 }
