@@ -22,6 +22,7 @@ export async function ceb_definition(word) {
   let first = list_first(mapped3);
   let index = list_index(mapped3, first);
   let index_at = list_get(filtered, index);
-  let parent = object_property_get(index_at, "parentNode");
+  let parent;
+  parent = object_property_get(index_at, "parentNode");
   return index_at;
 }
