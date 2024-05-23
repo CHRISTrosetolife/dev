@@ -47,7 +47,7 @@ import { object_property_exists } from "./object_property_exists.mjs";
 export async function ceb_definition(word) {
   let known = {
     apan: ["but", "yet"],
-    hari: ["heads", "king", "pratfall", "royalty"],
+    hari: ["king", "royalty"],
   };
   if (object_property_exists(known, word)) {
     return {
