@@ -1,3 +1,4 @@
+import { list_add_multiple } from "./list_add_multiple.mjs";
 import { add } from "./add.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { string_includes } from "./string_includes.mjs";
@@ -19,6 +20,7 @@ import { assert } from "./assert.mjs";
 import { equal } from "./equal.mjs";
 import { list_length } from "./list_length.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
+import { list_map } from "./list_map.mjs";
 export async function ceb_definition(word) {
   let url = string_combine_multiple([
     "https://www.binisaya.com/node/21?search=binisaya&word=",
@@ -48,24 +50,26 @@ export async function ceb_definition(word) {
   let prefix = "http://www.binisaya.com/";
   let prefix_1 = string_combine(prefix, "cebuano/");
   let prefix_2 = string_combine(prefix, "english/");
-  let filtered = html_parse_a_href_starts_with(parsed, prefix_1);
-  let mapped3 = list_map_property_text_trim(filtered);
-  let filtered3 = list_filter(mapped3, (m) => equal(m, word));
-  let first_list = filtered3;
-  if (list_empty_is(filtered3)) {
-    first_list = mapped3;
+  let a_href_lefts = html_parse_a_href_starts_with(parsed, prefix_1);
+  let mapped3 = list_map_property_text_trim(a_href_lefts);
+  let matches = list_filter(mapped3, (m) => equal(m, word));
+  if (list_empty_is(matches)) {
+    matches = [list_first(first_list)];
   }
-  let first = list_first(first_list);
-  let index = list_index(mapped3, first);
-  let index_at = list_get(filtered, index);
-  let parent = index_at;
-  do {
-    parent = object_property_get(parent, "parentNode");
-  } while (equal_not(object_property_get(parent, "rawTagName"), "tr"));
-  let { childNodes } = parent;
-  assert(equal, [list_length(childNodes), 2]);
-  let right = list_second(childNodes);
-  let definitions = html_parse_a_href_starts_with_text(right, prefix_2);
+  let indices = list_map(matches, (m) => list_index(mapped3, m));
+  let indices_at = list_map(indices, (i) => list_get(a_href_lefts, i));
+  let definitions = [];
+  for (let index_at of indices_at) {
+    let parent = index_at;
+    do {
+      parent = object_property_get(parent, "parentNode");
+    } while (equal_not(object_property_get(parent, "rawTagName"), "tr"));
+    let { childNodes } = parent;
+    assert(equal, [list_length(childNodes), 2]);
+    let right = list_second(childNodes);
+    let d = html_parse_a_href_starts_with_text(right, prefix_2);
+    list_add_multiple(definitions, d);
+  }
   return {
     word,
     definitions,
