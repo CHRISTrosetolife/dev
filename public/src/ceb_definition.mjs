@@ -22,6 +22,7 @@ import { list_length } from "./list_length.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { list_map } from "./list_map.mjs";
 export async function ceb_definition(word) {
+  let prefix = "http://www.binisaya.com/";
   let url = string_combine_multiple([
     "https://www.binisaya.com/node/21?search=binisaya&word=",
     word,
@@ -47,7 +48,6 @@ export async function ceb_definition(word) {
     assert(equal, [f4_first_a_tag, "b"]);
     word = f4_first_a_text;
   }
-  let prefix = "http://www.binisaya.com/";
   let prefix_1 = string_combine(prefix, "cebuano/");
   let prefix_2 = string_combine(prefix, "english/");
   let a_href_lefts = html_parse_a_href_starts_with(parsed, prefix_1);
@@ -67,8 +67,11 @@ export async function ceb_definition(word) {
     let { childNodes } = parent;
     assert(equal, [list_length(childNodes), 2]);
     let right = list_second(childNodes);
-    let d = html_parse_a_href_starts_with_text(right, prefix_2);
-    list_add_multiple(definitions, d);
+    let defs = html_parse_a_href_starts_with_text(right, prefix_2);
+    list_add_multiple(definitions, defs);
+  }
+  for (let d of definitions) {
+    let url = string_combine("https://www.binisaya.com/english/", d);
   }
   return {
     word,
