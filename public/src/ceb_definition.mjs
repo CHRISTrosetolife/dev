@@ -112,6 +112,7 @@ export async function ceb_definition(word) {
     let mapped6 = list_map(filtered5, (f) =>
       string_prefix_without(f, prefix_1),
     );
+    return equal(list_first(mapped6),word)
     return list_includes(mapped6, word);
   });
   definitions = list_filter(definitions, (d) => {
