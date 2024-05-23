@@ -1,5 +1,10 @@
+import { file_overwrite_generic } from "./file_overwrite_generic.mjs";
 import textToSpeech from "@google-cloud/text-to-speech";
+import { file_exists } from "./file_exists.mjs";
 export async function gcloud_tts(language_code, text, output_path) {
+  if (await file_exists(output_path)) {
+    return;
+  }
   const client = new textToSpeech.TextToSpeechClient();
   const request = {
     input: {
@@ -14,5 +19,5 @@ export async function gcloud_tts(language_code, text, output_path) {
     },
   };
   const [response] = await client.synthesizeSpeech(request);
-  await file_overwrite_generic(output_path, response.audioContent, "binary")
+  await file_overwrite_generic(output_path, response.audioContent, "binary");
 }
