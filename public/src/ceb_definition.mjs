@@ -1,3 +1,4 @@
+import { html_parse_parent } from "./html_parse_parent.mjs";
 import { html_parse_tag_not } from "./html_parse_tag_not.mjs";
 import { ceb_form1 } from "./ceb_form1.mjs";
 import { log } from "./log.mjs";
@@ -76,7 +77,7 @@ export async function ceb_definition(word) {
   for (let index_at of indices_at) {
     let parent = index_at;
     do {
-      parent = object_property_get(parent, "parentNode");
+      parent = html_parse_parent(parent);
     } while (html_parse_tag_not(parent, "tr"));
     let { childNodes } = parent;
     assert(equal, [list_length(childNodes), 2]);
