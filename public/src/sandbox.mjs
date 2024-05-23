@@ -10,7 +10,9 @@ export async function sandbox() {
   let ds = await ceb_bible_words_definitions(skip, limit);
   let pairs = list_adder((la) =>
     each(ds, (w) =>
-      each(object_property_get(w, "definitions"), (d) => la([w, d])),
+      each(object_property_get(w, "definitions"), (d) =>
+        la([object_property_get(w, "word"), d]),
+      ),
     ),
   );
   return pairs;
