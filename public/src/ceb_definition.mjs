@@ -1,3 +1,4 @@
+import { list_filter_starts_with } from "./list_filter_starts_with.mjs";
 import { html_parse_href } from "./html_parse_href.mjs";
 import { html_parse_tag } from "./html_parse_tag.mjs";
 import { html_parse_parent } from "./html_parse_parent.mjs";
@@ -33,7 +34,6 @@ import { string_replace } from "./string_replace.mjs";
 import { string_index } from "./string_index.mjs";
 import { string_trim } from "./string_trim.mjs";
 import { string_take } from "./string_take.mjs";
-import { string_starts_with } from "./string_starts_with.mjs";
 export async function ceb_definition(word) {
   let prefix = "http://www.binisaya.com/";
   let url = string_combine_multiple([
@@ -107,9 +107,7 @@ export async function ceb_definition(word) {
     let q_children2 = ceb_form1(parsed2);
     let as = list_filter(q_children2, (c) => html_parse_tag(c, "a"));
     let mapped5 = list_map(as, html_parse_href);
-    let filtered5 = list_filter(mapped5, (m) =>
-      string_starts_with(m, prefix_1),
-    );
+    let filtered5 = list_filter_starts_with(mapped5, prefix_1);
     console.log({
       filtered5,
     });
