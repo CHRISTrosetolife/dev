@@ -1,3 +1,4 @@
+import { string_index_last } from "./string_index_last.mjs";
 import { storage_url } from "./storage_url.mjs";
 import { html_audio } from "./html_audio.mjs";
 import { ceb_audio_path } from "./ceb_audio_path.mjs";
@@ -25,7 +26,12 @@ export async function app_ceb() {
   let atom = list_first(group);
   let copy = list_copy(atom);
   list_scramble(copy);
-  refresh_pair(0);
+  function refresh_quiz(pair_index) {
+    let pair = list_get(copy, pair_index);
+    let [cebuano, english] = pair;
+    let split_size = 1;
+    let max_index = string_index_last(english);
+  }
   async function refresh_pair(pair_index) {
     html_clear_scroll_top(root);
     let pair = list_get(copy, pair_index);
@@ -33,7 +39,7 @@ export async function app_ceb() {
     let file_path = ceb_audio_path(0, cebuano);
     let cebuano_p = html_button_width_full_text_click(
       root,
-      string_combine("🔊", cebuano),
+      string_combine("👂", cebuano),
       async () => {
         return await html_audio(storage_url(file_path));
       },
