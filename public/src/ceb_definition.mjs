@@ -107,7 +107,7 @@ export async function ceb_definition(word) {
     let as = list_filter(q_children2, (c) => html_parse_tag(c, "a"));
     let mapped5 = list_map(as, html_parse_href);
     console.log({
-      as,
+        mapped5,
     });
   }
   return {
