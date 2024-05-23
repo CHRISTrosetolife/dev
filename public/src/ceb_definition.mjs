@@ -25,7 +25,6 @@ import { equal } from "./equal.mjs";
 import { list_length } from "./list_length.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { list_map } from "./list_map.mjs";
-import { http_cache } from "./http_cache.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { string_replace } from "./string_replace.mjs";
 import { string_index } from "./string_index.mjs";
@@ -102,7 +101,7 @@ export async function ceb_definition(word) {
   for (let d of definitions) {
     let url = string_combine(prefix_2, d);
     url = string_replace(url, " ", "+");
-    await http_cache(url);
+    let parsed2 = await html_cache_parse(url);
   }
   return {
     word,
