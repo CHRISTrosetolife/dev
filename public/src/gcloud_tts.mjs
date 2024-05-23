@@ -1,11 +1,11 @@
 import { log } from "./log.mjs";
-export async function gcloud_tts(text) {
+export async function gcloud_tts(text,language_code) {
   const request = {
     input: {
       text: text,
     },
     voice: {
-      languageCode: "en-US",
+      languageCode: language_code,
       ssmlGender: "NEUTRAL",
     },
     audioConfig: {
