@@ -10,12 +10,12 @@ export async function sandbox() {
   let length = list_length(words);
   const count = 32;
   let t = list_take(words, count);
-  await each_index_async(t, async (word, index) => {
+  await each_index_async(t, async (bible_word, index) => {
     log({
-      word,
+      bible_word,
       index,
     });
-    let d = await ceb_definition(word);
+    let { word, definitions } = await ceb_definition(bible_word);
     log({
       d,
     });
