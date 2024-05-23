@@ -38,6 +38,7 @@ import { string_trim } from "./string_trim.mjs";
 import { string_take } from "./string_take.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { log } from "./log.mjs";
+import { equal_not } from "./equal_not.mjs";
 export async function ceb_definition(word) {
   let prefix = "http://www.binisaya.com/";
   let url = string_combine_multiple([
@@ -117,7 +118,10 @@ export async function ceb_definition(word) {
   });
   definitions = list_filter(definitions, (d) => {
     const replaced = string_replace(d, "s", "z");
-      const includes_not = list_includes_not(definitions, replaced);
+    if (equal(replaced,d)) {
+        return true;
+    }
+      const includes_not =list_includes_not(definitions, replaced);
       log({d,replaced,includes_not})
     return includes_not;
   });
