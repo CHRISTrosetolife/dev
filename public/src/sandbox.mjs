@@ -1,4 +1,5 @@
-import { folder_gitignore } from "./folder_gitignore.mjs";
+import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
+import { gcloud_audio_path } from "./gcloud_audio_path.mjs";
 import { gcloud_tts } from "./gcloud_tts.mjs";
 import { ceb_group_path } from "./ceb_group_path.mjs";
 import { storage_upload_object } from "./storage_upload_object.mjs";
@@ -8,9 +9,7 @@ import { list_take } from "./list_take.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_map } from "./list_map.mjs";
 import { each_async } from "./each_async.mjs";
-import { string_encoded_to } from "./string_encoded_to.mjs";
 import { log } from "./log.mjs";
-import { path_join } from "./path_join.mjs";
 import { storage_upload_file } from "./storage_upload_file.mjs";
 export async function sandbox() {
   if (0) return await ceb_definition("kamo");
@@ -23,10 +22,10 @@ export async function sandbox() {
   let mapped = list_map(atom, list_first);
   let language_code = "fil-PH";
   let voice = "Standard-A";
-  let text='sa'
-  const file_path = `audio/${language_code}/${string_encoded_to(text)}/${voice}.mp3`;
-  let output_path = path_join([folder_gitignore(), file_path]);
-  await gcloud_tts(language_code, voice, text, output_path)
+  let text = "sa";
+  const file_path = gcloud_audio_path(language_code, text, voice);
+  let output_path = folder_gitignore_path(file_path);
+  await gcloud_tts(language_code, voice, text, output_path);
   await each_async(mapped, async (m) => {
     log(output_path);
     let { created } = await gcloud_tts(language_code, voice, m, output_path);
