@@ -3,13 +3,16 @@ import { log } from "./log.mjs";
 import { yyy8Uu_parts } from "./yyy8Uu_parts.mjs";
 import { list_get } from "./list_get.mjs";
 import { list_map } from "./list_map.mjs";
+import { string_length } from "./string_length.mjs";
 export async function yyy8Uu_part(index, index2) {
   const parts = await yyy8Uu_parts(index);
   console.log({
     p: parts.length,
   });
   console.log({
-    a: list_map(parts, (p) => string_take(p, 3)),
+    a: list_map(parts, (p) => {
+      return string_take(p, Math.min(string_length(p), 3));
+    }),
   });
   return [list_get(parts, index2)];
 }
