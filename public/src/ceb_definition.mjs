@@ -32,6 +32,8 @@ export async function ceb_definition(word) {
       "Word - rootword - affixes",
     ),
   );
+  if (list_empty_not(filtered4)) {
+  }
   return filtered4;
   let prefix = "http://www.binisaya.com/";
   let prefix_1 = string_combine(prefix, "cebuano/");
