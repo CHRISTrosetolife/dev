@@ -20,7 +20,7 @@ export async function sandbox() {
   let mapped = list_map(atom, list_first);
   await each_async(mapped, async (m) => {
     let language_code = "fil-PH-Standard-A";
-    let output_path = `audio/${string_encoded_to(m)}/${language_code}`;
+    let output_path = `audio/${string_encoded_to(m)}/${language_code}.mp3`;
     log(output_path);
     gcloud_tts;
   });
