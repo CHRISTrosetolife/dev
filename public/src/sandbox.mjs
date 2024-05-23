@@ -5,6 +5,7 @@ import { ceb_definition } from "./ceb_definition.mjs";
 import { ceb_bible_words } from "./ceb_bible_words.mjs";
 import { list_length } from "./list_length.mjs";
 import { object_property_set } from "./object_property_set.mjs";
+import { list_empty_not_is } from "./list_empty_not_is.mjs";
 export async function sandbox() {
   if (0) return await ceb_definition("jehova");
   let words = await ceb_bible_words();
@@ -19,7 +20,9 @@ export async function sandbox() {
         index,
       });
     let { word, definitions } = await ceb_definition(bible_word);
-    object_property_set(lookup, word, definitions);
+    if (list_empty_not_is(definitions)) {
+      object_property_set(lookup, word, definitions);
+    }
   });
   return lookup;
 }
