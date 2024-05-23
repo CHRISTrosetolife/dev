@@ -1,3 +1,4 @@
+import { list_second } from "./list_second.mjs";
 import { equal_not } from "./equal_not.mjs";
 import { list_index } from "./list_index.mjs";
 import { list_first } from "./list_first.mjs";
@@ -31,6 +32,7 @@ export async function ceb_definition(word) {
     parent = object_property_get(parent, "parentNode");
   } while (equal_not(object_property_get(parent, "rawTagName"), "tr"));
   let { childNodes } = parent;
-  assert(equal, [list_length(childNodes), 2]);let right=list_get(childNodes,1)
+  assert(equal, [list_length(childNodes), 2]);
+  let right = list_second(childNodes);
   return parent;
 }
