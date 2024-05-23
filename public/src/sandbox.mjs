@@ -8,9 +8,10 @@ import { object_property_set } from "./object_property_set.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 export async function sandbox() {
   if (0) return await ceb_definition("ila");
+  let count = 75;
   let words = await ceb_bible_words();
   let length = list_length(words);
-  const count = 32;
+  count = 100;
   let t = list_take(words, count);
   let lookup = {};
   await each_index_async(t, async (bible_word, index) => {
