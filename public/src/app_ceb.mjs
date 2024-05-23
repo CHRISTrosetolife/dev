@@ -1,3 +1,4 @@
+import { html_style_font_color } from "./html_style_font_color.mjs";
 import { list_length } from "./list_length.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
@@ -24,6 +25,7 @@ export async function app_ceb() {
     let pair = list_get(copy, pair_index);
     let [cebuano, english] = pair;
     let cebuano_p = html_p_text(root, cebuano);
+    html_style_font_color(cebuano_p, "darkgreen");
     let english_p = html_p_text(root, english);
     each([cebuano_p, english_p], html_style_bold);
     html_buttons_next_previous(
