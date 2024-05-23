@@ -1,3 +1,4 @@
+import { folder_gitignore } from "./folder_gitignore.mjs";
 import { gcloud_tts } from "./gcloud_tts.mjs";
 import { ceb_group_path } from "./ceb_group_path.mjs";
 import { storage_upload_object } from "./storage_upload_object.mjs";
@@ -9,6 +10,7 @@ import { list_map } from "./list_map.mjs";
 import { each_async } from "./each_async.mjs";
 import { string_encoded_to } from "./string_encoded_to.mjs";
 import { log } from "./log.mjs";
+import { path_join } from "./path_join.mjs";
 export async function sandbox() {
   if (0) return await ceb_definition("kamo");
   let limit = 75;
@@ -20,7 +22,8 @@ export async function sandbox() {
   let mapped = list_map(atom, list_first);
   await each_async(mapped, async (m) => {
     let language_code = "fil-PH-Standard-A";
-    let output_path = `audio/${string_encoded_to(m)}/${language_code}.mp3`;
+    const file_path = `audio/${string_encoded_to(m)}/${language_code}.mp3`;
+    let output_path = path_join([folder_gitignore(), file_path]);
     log(output_path);
     gcloud_tts;
   });
