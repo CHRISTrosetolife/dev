@@ -1,3 +1,4 @@
+import { list_filter_async } from "./list_filter_async.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 import { list_filter_starts_with } from "./list_filter_starts_with.mjs";
 import { html_parse_href } from "./html_parse_href.mjs";
@@ -101,7 +102,7 @@ export async function ceb_definition(word) {
     }
     return d;
   });
-  definitions = awaitlist_filter_async(definitions, (d) => {});
+  definitions = await list_filter_async(definitions, async (d) => {});
   for (let d of definitions) {
     let url = string_combine(prefix_2, d);
     url = string_replace(url, " ", "+");
