@@ -12,11 +12,8 @@ import { each_range } from "./each_range.mjs";
 import { tautology } from "./tautology.mjs";
 import { list_any } from "./list_any.mjs";
 import { list_adder } from "./list_adder.mjs";
-export async function ceb_bible_words_definitions_atoms(
-  skip,
-  limit,
-  atom_count,
-) {
+export async function ceb_bible_words_definitions_atoms(skip, limit) {
+  let atom_count = ceb_atom_count();
   let pairs = await ceb_bible_words_definitions_pairs(skip, limit);
   let atoms = list_adder((la) => {
     while (list_any(pairs, tautology)) {
