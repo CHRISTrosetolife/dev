@@ -7,7 +7,8 @@ import { http_cache } from "./http_cache.mjs";
 export async function sandbox() {
   let url = "https://www.ccel.org/ccel/b/bible/ceb_p/cache/ceb_p.txt";
   let text = await http_cache(url);
-  let index = string_index("^1");
+  const verse_1 = "^1";
+  let index = text.indexOf(verse_1);
   return index;
   let replace = "_,;:!?.'\"()¶/`^|0123456789";
   let replace_list = string_split_empty(replace);
