@@ -1,3 +1,4 @@
+import { string_combine } from "./string_combine.mjs";
 import { html_style_font_color } from "./html_style_font_color.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
@@ -27,7 +28,11 @@ export async function app_ceb() {
     html_clear_scroll_top(root);
     let pair = list_get(copy, pair_index);
     let [cebuano, english] = pair;
-    let cebuano_p = html_button_width_full_text_click(root, cebuano, noop);
+    let cebuano_p = html_button_width_full_text_click(
+      root,
+      string_combine("🔊", cebuano),
+      noop,
+    );
     html_style_font_color(cebuano_p, "darkgreen");
     let english_p = html_p_text(root, english);
     each([html_style_bold, html_style_centered], (style) =>
