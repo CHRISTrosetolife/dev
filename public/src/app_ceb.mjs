@@ -1,3 +1,4 @@
+import { html_buttons_next_previous } from "./html_buttons_next_previous.mjs";
 import { list_scramble } from "./list_scramble.mjs";
 import { list_copy } from "./list_copy.mjs";
 import { http_storage } from "./http_storage.mjs";
@@ -11,4 +12,5 @@ export async function app_ceb() {
   list_scramble(copy);
   let pair = list_first(copy);
   let [cebuano, english] = pair;
+  html_buttons_next_previous;
 }
