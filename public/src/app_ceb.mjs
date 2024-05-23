@@ -39,6 +39,9 @@ export async function app_ceb() {
   function refresh_quiz(pair_index) {
     let pair = list_get(copy, pair_index);
     let [cebuano, english] = pair;
+    log({
+      cebuano,
+    });
     let split_size = 1;
     let max_index = string_index_last(english);
     let adjusted = floor(divide(max_index, split_size));
