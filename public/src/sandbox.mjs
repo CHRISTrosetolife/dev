@@ -43,5 +43,5 @@ export async function sandbox() {
       }),
     ),
   );
-  return lookup;
+  return list;
 }
