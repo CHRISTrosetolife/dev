@@ -14,6 +14,5 @@ export async function gcloud_tts(language_code, text, output_path) {
     },
   };
   const [response] = await client.synthesizeSpeech(request);
-  const writeFile = util.promisify(fs.writeFile);
-  await writeFile(output_path, response.audioContent, "binary");
+  await file_overwrite_generic(output_path, response.audioContent, "binary")
 }
