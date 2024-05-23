@@ -1,5 +1,7 @@
 import { log } from "./log.mjs";
-export async function gcloud_tts(language_code,text) {
+import textToSpeech from "@google-cloud/text-to-speech";
+export async function gcloud_tts(language_code, text) {
+  const client = new textToSpeech.TextToSpeechClient();
   const request = {
     input: {
       text: text,
