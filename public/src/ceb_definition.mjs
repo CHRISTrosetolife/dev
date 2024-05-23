@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
 import { add } from "./add.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
@@ -59,6 +60,9 @@ export async function ceb_definition(word) {
     matches = [list_first(mapped3)];
   }
   let indices = list_map(matches, (m) => list_index(mapped3, m));
+  log({
+    indices,
+  });
   let indices_at = list_map(indices, (i) => list_get(a_href_lefts, i));
   let definitions = [];
   for (let index_at of indices_at) {
