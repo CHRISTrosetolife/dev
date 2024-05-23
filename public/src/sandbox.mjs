@@ -1,3 +1,4 @@
+import { gcloud_tts } from "./gcloud_tts.mjs";
 import { ceb_group_path } from "./ceb_group_path.mjs";
 import { storage_upload_object } from "./storage_upload_object.mjs";
 import { ceb_bible_words_definitions_atoms } from "./ceb_bible_words_definitions_atoms.mjs";
@@ -17,6 +18,7 @@ export async function sandbox() {
   let mapped = list_map(atom, list_first);
   await each_async(mapped, async (m) => {
     let language_code = "fil-PH-Standard-A";
+    gcloud_tts;
   });
   return mapped;
   let group_index = 0;
