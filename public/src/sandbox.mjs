@@ -7,6 +7,7 @@ import { list_adder } from "./list_adder.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_any } from "./list_any.mjs";
 import { list_first } from "./list_first.mjs";
+import { assert } from "./assert.mjs";
 export async function sandbox() {
   if (0) return await ceb_definition("kamo");
   let atom_count = 6;
@@ -22,11 +23,15 @@ export async function sandbox() {
   );
   let atom_result = [];
   each_range(atom_count, () => {
+    let next;
     for (let p of pairs) {
       if (list_any(atom_result, (a) => equal_by(a, p, list_first))) {
         continue;
       }
+      next = p;
+      break;
     }
+    assert(defined_is, [next]);
   });
   return pairs;
 }
