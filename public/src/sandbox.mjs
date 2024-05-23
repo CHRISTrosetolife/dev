@@ -20,10 +20,10 @@ export async function sandbox() {
       ),
     ),
   );
-  let atom_result = pairs;
-  each_range(atom_count, (i) => {
-    for (let d of ds) {
-      if (list_any(atom_result, (a) => equal_by(a, d, list_first))) {
+  let atom_result = [];
+  each_range(atom_count, () => {
+    for (let p of pairs) {
+      if (list_any(atom_result, (a) => equal_by(a, p, list_first))) {
         continue;
       }
     }
