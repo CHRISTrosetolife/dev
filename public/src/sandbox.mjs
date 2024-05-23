@@ -1,3 +1,4 @@
+import { string_take } from "./string_take.mjs";
 import { string_trim } from "./string_trim.mjs";
 import { string_skip } from "./string_skip.mjs";
 import { string_index } from "./string_index.mjs";
@@ -15,6 +16,7 @@ export async function sandbox() {
   text = string_skip(text, index);
   let end = "This document is from the Christian Classics Ethereal";
   let index_end = string_index(text, end);
+  string_take;
   let replace = "_,;:!?.'\"()¶/`^|0123456789";
   let replace_list = string_split_empty(replace);
   const replacement = " ";
