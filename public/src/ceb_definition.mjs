@@ -1,6 +1,5 @@
 import { list_filter_property } from "./list_filter_property.mjs";
 import { list_map_index } from "./list_map_index.mjs";
-import { log } from "./log.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
 import { add } from "./add.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
@@ -26,6 +25,7 @@ import { list_empty_is } from "./list_empty_is.mjs";
 import { list_map } from "./list_map.mjs";
 import { http_cache } from "./http_cache.mjs";
 import { list_map_property } from "./list_map_property.mjs";
+import { string_replace } from "./string_replace.mjs";
 export async function ceb_definition(word) {
   let prefix = "http://www.binisaya.com/";
   let url = string_combine_multiple([
@@ -84,6 +84,7 @@ export async function ceb_definition(word) {
   }
   for (let d of definitions) {
     let url = string_combine(prefix_2, d);
+    url = string_replace(url, " ", "+");
     await http_cache(url);
   }
   return {
