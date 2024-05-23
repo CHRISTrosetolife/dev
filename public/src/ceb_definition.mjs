@@ -1,3 +1,4 @@
+import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { string_includes } from "./string_includes.mjs";
 import { list_single } from "./list_single.mjs";
 import { list_filter } from "./list_filter.mjs";
@@ -33,7 +34,7 @@ export async function ceb_definition(word) {
       "Word - rootword - affixes",
     ),
   );
-  if (list_empty_not(filtered4)) {
+  if (list_empty_not_is(filtered4)) {
     let f4_first = list_first(filtered4);
     let f4_first_index = list_index(q_children, f4_first);
     let f4_first_index_a = list_add(f4_first_index, 3);
