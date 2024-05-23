@@ -12,6 +12,7 @@ import { each_async } from "./each_async.mjs";
 import { log } from "./log.mjs";
 import { storage_upload_file } from "./storage_upload_file.mjs";
 import { each_index_async } from "./each_index_async.mjs";
+import { list_get } from "./list_get.mjs";
 export async function sandbox() {
   if (0) return await ceb_definition("kamo");
   let limit = 75;
@@ -22,9 +23,10 @@ export async function sandbox() {
   let atom = list_first(group);
   let mapped = list_map(atom, list_first);
   await each_async(mapped, async (m) => {
-    let language_code = "fil-PH";
-    let voices = ["Standard-A"];
-    each_index_async(voices, async (voice, voice_index) => {
+    each_index_async(voices, async (v, voice_index) => {
+      let language_code = "fil-PH";
+      let voices = ["Standard-A"];
+      let voice = list_get(voices, voice_index);
       let file_path = gcloud_audio_path(language_code, m, voice);
       let output_path = folder_gitignore_path(file_path);
       log(output_path);
