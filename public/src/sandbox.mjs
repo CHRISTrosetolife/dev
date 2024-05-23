@@ -11,6 +11,7 @@ import { each_async } from "./each_async.mjs";
 import { string_encoded_to } from "./string_encoded_to.mjs";
 import { log } from "./log.mjs";
 import { path_join } from "./path_join.mjs";
+import { storage_upload_file } from "./storage_upload_file.mjs";
 export async function sandbox() {
   if (0) return await ceb_definition("kamo");
   let limit = 75;
@@ -25,7 +26,10 @@ export async function sandbox() {
     const file_path = `audio/${string_encoded_to(m)}/${language_code}.mp3`;
     let output_path = path_join([folder_gitignore(), file_path]);
     log(output_path);
-    gcloud_tts(language_code, m, output_path);
+    if (await gcloud_tts(language_code, m, output_path)) {
+      await storage_upload_file(output_path, file_path);
+      log("uploaded");
+    }
   });
   return mapped;
   let group_index = 0;
