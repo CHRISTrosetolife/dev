@@ -1,3 +1,4 @@
+import { html_parse_href } from "./html_parse_href.mjs";
 import { html_parse_tag } from "./html_parse_tag.mjs";
 import { html_parse_parent } from "./html_parse_parent.mjs";
 import { html_parse_tag_not } from "./html_parse_tag_not.mjs";
@@ -104,7 +105,7 @@ export async function ceb_definition(word) {
     let parsed2 = await html_cache_parse(url);
     let q_children2 = ceb_form1(parsed2);
     let as = list_filter(q_children2, (c) => html_parse_tag(c, "a"));
-    let mapped5 = list_map(as, (a) => object_property_get(a, "href"));
+    let mapped5 = list_map(as, html_parse_href);
     console.log({
       as,
     });
