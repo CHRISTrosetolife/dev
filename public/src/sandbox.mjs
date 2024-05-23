@@ -1,3 +1,4 @@
+import { list_sort } from "./list_sort.mjs";
 import { each_object } from "./each_object.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { add_1 } from "./add_1.mjs";
@@ -13,6 +14,8 @@ import { string_replace_multiple } from "./string_replace_multiple.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 import { http_cache } from "./http_cache.mjs";
 import { object_property_set } from "./object_property_set.mjs";
+import { object_property_get } from "./object_property_get.mjs";
+import { string_length } from "./string_length.mjs";
 export async function sandbox() {
   let url = "https://www.ccel.org/ccel/b/bible/ceb_p/cache/ceb_p.txt";
   let text = await http_cache(url);
@@ -43,5 +46,7 @@ export async function sandbox() {
       }),
     ),
   );
+  list_sort(list, (l) => string_length(object_property_get(l, "word")));
+  list_sort(list, (l) => -object_property_get(l, "count"));
   return list;
 }
