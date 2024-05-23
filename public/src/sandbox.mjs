@@ -10,7 +10,7 @@ export async function sandbox() {
   for (let w of t) {
     log(w);
   }
-  return t;
+  return;
   let lookup = {};
   await each_index_async(t, async (bible_word, index) => {
     if (0)
