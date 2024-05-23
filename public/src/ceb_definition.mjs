@@ -40,7 +40,7 @@ import { list_includes } from "./list_includes.mjs";
 import { equal_not } from "./equal_not.mjs";
 export async function ceb_definition(word) {
     let skipped = ["nevus"];
-    let skipped_pairs = ["ka,quantifier","siya,chair"];
+    let skipped_pairs = ["ka,quantifier","siya,chair","ila,birthmark","kanila,cinnamon"];
   let prefix = "http://www.binisaya.com/";
   let url = string_combine_multiple([
     prefix,
