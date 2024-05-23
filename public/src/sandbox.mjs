@@ -1,3 +1,5 @@
+import { each_object } from "./each_object.mjs";
+import { list_adder } from "./list_adder.mjs";
 import { add_1 } from "./add_1.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { string_take } from "./string_take.mjs";
@@ -33,5 +35,13 @@ export async function sandbox() {
     let count = object_property_initialize(lookup, word, 0);
     object_property_set(lookup, word, add_1(count));
   }
+  let list = list_adder((la) =>
+    each_object(lookup, (word, count) =>
+      la({
+        word,
+        count,
+      }),
+    ),
+  );
   return lookup;
 }
