@@ -1,3 +1,4 @@
+import { list_first } from "./list_first.mjs";
 import { list_map_property_text_trim } from "./list_map_property_text_trim.mjs";
 import { html_parse_a_href_starts_with } from "./html_parse_a_href_starts_with.mjs";
 import { html_cache_parse } from "./html_cache_parse.mjs";
@@ -15,5 +16,6 @@ export async function ceb_definition(word) {
   let prefix_2 = string_combine(prefix, "english/");
   let filtered = html_parse_a_href_starts_with(parsed, prefix_1);
   let mapped3 = list_map_property_text_trim(filtered);
+  let first = list_first(mapped3);
   return mapped3;
 }
