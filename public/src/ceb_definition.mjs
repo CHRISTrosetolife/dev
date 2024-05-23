@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_map_split_comma } from "./list_map_split_comma.mjs";
 import { and } from "./and.mjs";
 import { list_any } from "./list_any.mjs";
@@ -177,10 +178,14 @@ export async function ceb_definition(word) {
     ) {
       return false;
     }
-    let split_d = string_split_space(d)
-    if (greater_than_equal(list_length(split_d),2)) {
-        log({skip_because:'contains spaces',d,word})
-        return false;
+    let split_d = string_split_space(d);
+    if (greater_than_equal(list_length(split_d), 2)) {
+      log({
+        skip_because: "contains spaces",
+        d,
+        word,
+      });
+      return false;
     }
     return true;
   });

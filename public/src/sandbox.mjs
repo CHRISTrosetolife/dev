@@ -9,7 +9,7 @@ import { list_take } from "./list_take.mjs";
 export async function sandbox() {
   if (0) return await ceb_definition("kamo");
   let t = await ceb_bible_words_top(75);
-  t = list_take(t, 32);
+  t = list_skip(t, 32);
   let lookup = {};
   await each_index_async(t, async (bible_word, index) => {
     if (0)
