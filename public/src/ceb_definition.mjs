@@ -1,3 +1,4 @@
+import { list_multiple_is } from "./list_multiple_is.mjs";
 import { log } from "./log.mjs";
 import { list_map_split_comma } from "./list_map_split_comma.mjs";
 import { and } from "./and.mjs";
@@ -179,7 +180,7 @@ export async function ceb_definition(word) {
       return false;
     }
     let split_d = string_split_space(d);
-    if (greater_than_equal(list_length(split_d), 2)) {
+    if (list_multiple_is(split_d)) {
       log({
         word,
         d,
