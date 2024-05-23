@@ -8,6 +8,9 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { list_get } from "./list_get.mjs";
 import { object_property_get } from "./object_property_get.mjs";
+import { assert } from "./assert.mjs";
+import { equal } from "./equal.mjs";
+import { list_length } from "./list_length.mjs";
 export async function ceb_definition(word) {
   let url = string_combine_multiple([
     "https://www.binisaya.com/node/21?search=binisaya&word=",
@@ -26,6 +29,6 @@ export async function ceb_definition(word) {
   let parent=index_at;
   do {
     parent = object_property_get(parent, "parentNode");
-  } while (equal_not(object_property_get(parent, "rawTagName"), "tr"));
+  } while (equal_not(object_property_get(parent, "rawTagName"), "tr"));let{childNodes}=parent;assert(equal,[list_length(childNodes),2])
   return parent;
 }
