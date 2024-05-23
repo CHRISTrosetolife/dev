@@ -1,3 +1,4 @@
+import { list_filter } from "./list_filter.mjs";
 import { html_parse_a_href_starts_with_text } from "./html_parse_a_href_starts_with_text.mjs";
 import { list_second } from "./list_second.mjs";
 import { equal_not } from "./equal_not.mjs";
@@ -25,7 +26,8 @@ export async function ceb_definition(word) {
   let prefix_2 = string_combine(prefix, "english/");
   let filtered = html_parse_a_href_starts_with(parsed, prefix_1);
   let mapped3 = list_map_property_text_trim(filtered);
-  let first = list_first(mapped3);
+  let filtered3 = list_filter(mapped3, (m) => equal(m, word));
+  let first = list_first(filtered3);
   let index = list_index(mapped3, first);
   let index_at = list_get(filtered, index);
   let parent = index_at;
