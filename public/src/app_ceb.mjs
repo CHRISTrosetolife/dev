@@ -1,6 +1,6 @@
+import { number_min } from "./number_min.mjs";
 import { log } from "./log.mjs";
 import { range } from "./range.mjs";
-import { number_max } from "./number_max.mjs";
 import { string_index_last } from "./string_index_last.mjs";
 import { storage_url } from "./storage_url.mjs";
 import { html_audio } from "./html_audio.mjs";
@@ -46,7 +46,7 @@ export async function app_ceb() {
       let scaled = multiply(i, split_size);
       let skipped = string_skip(cebuano, scaled);
       let limit = string_length(skipped);
-      let taken = string_take(skipped, number_max(split_size, limit));
+      let taken = string_take(skipped, number_min(split_size, limit));
       log({
         taken,
       });
