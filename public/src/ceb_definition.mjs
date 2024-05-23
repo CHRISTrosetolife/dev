@@ -43,10 +43,14 @@ import { string_trim } from "./string_trim.mjs";
 import { string_take } from "./string_take.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { equal_not } from "./equal_not.mjs";
+import { object_property_exists } from "./object_property_exists.mjs";
 export async function ceb_definition(word) {
   let known = {
     apan: ["but", "yet"],
   };
+  if (object_property_exists(known, word)) {
+    return {word,definitions:object_property_get(known, word)}
+  }
   let skipped = ["nevus"];
   let skipped_pairs = [
     "ka,quantifier",
