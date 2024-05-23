@@ -1,4 +1,4 @@
-import { not } from "./not.mjs";
+import { list_includes_not } from "./list_includes_not.mjs";
 import { list_filter_async } from "./list_filter_async.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 import { list_filter_starts_with } from "./list_filter_starts_with.mjs";
@@ -115,7 +115,8 @@ export async function ceb_definition(word) {
     return list_includes(mapped6, word);
   });
   definitions = list_filter(definitions, (d) => {
-    not(list_includes(definitions, string_replace(d, "s", "z")));
+    const replaced = string_replace(d, "s", "z");
+    return list_includes_not(definitions, replaced);
   });
   return {
     word,
