@@ -99,7 +99,6 @@ export async function ceb_definition(word) {
     }
     return d;
   });
-  console.log({definitions})
   definitions = await list_filter_async(definitions, async (d) => {
     let url = string_combine(prefix_2, d);
     url = string_replace(url, " ", "+");
@@ -111,6 +110,7 @@ export async function ceb_definition(word) {
     let mapped6 = list_map(filtered5, (f) =>
       string_prefix_without(f, prefix_1),
     );
+    console.log({mapped6})
     return list_includes(mapped6, word);
   });
   return {
