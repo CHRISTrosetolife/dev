@@ -1,7 +1,6 @@
 import { number_min } from "./number_min.mjs";
 import { log } from "./log.mjs";
 import { range } from "./range.mjs";
-import { string_index_last } from "./string_index_last.mjs";
 import { storage_url } from "./storage_url.mjs";
 import { html_audio } from "./html_audio.mjs";
 import { ceb_audio_path } from "./ceb_audio_path.mjs";
@@ -43,8 +42,8 @@ export async function app_ceb() {
       cebuano,
     });
     let split_size = 1;
-    let max_index = string_index_last(english);
-    let adjusted = floor(divide(max_index, split_size));
+    let length = string_length(english);
+    let adjusted = floor(divide(length, split_size));
     for (let i of range(adjusted)) {
       let scaled = multiply(i, split_size);
       let skipped = string_skip(cebuano, scaled);
