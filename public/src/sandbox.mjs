@@ -18,7 +18,11 @@ export async function sandbox() {
     ),
   );
   let atom_result = list_adder((la) => {
-    each_range(atom_count, (i) => {});
+    each_range(atom_count, (i) => {
+      for (let d of ds) {
+        let { word } = d;
+      }
+    });
   });
   return pairs;
 }
