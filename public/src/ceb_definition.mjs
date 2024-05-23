@@ -102,6 +102,9 @@ export async function ceb_definition(word) {
     url = string_replace(url, " ", "+");
     let parsed2 = await html_cache_parse(url);
     let q_children2 = ceb_form1(parsed2);
+    q_children2 = list_filter(q_children2, (c) =>
+      html_parse_tag_not(c, "table"),
+    );
   }
   return {
     word,
