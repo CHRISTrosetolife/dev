@@ -7,9 +7,5 @@ export function ceb_audio_path(voice_index, text) {
   let voices = ceb_audio_voices();
   let voice = list_get(voices, voice_index);
   let file_path = gcloud_audio_path(language_code, text, voice);
-  return {
-    file_path,
-    language_code,
-    voice,
-  };
+  return file_path;
 }
