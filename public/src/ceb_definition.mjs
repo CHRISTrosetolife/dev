@@ -1,3 +1,4 @@
+import { string_split_comma } from "./string_split_comma.mjs";
 import { list_includes_not } from "./list_includes_not.mjs";
 import { list_filter_async } from "./list_filter_async.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
@@ -46,6 +47,9 @@ export async function ceb_definition(word) {
     "ila,birthmark",
     "kanila,cinnamon",
   ];
+  let skipped_pairs_split = list_map(skipped_pairs, (s) =>
+    string_split_comma(s),
+  );
   let prefix = "http://www.binisaya.com/";
   let url = string_combine_multiple([
     prefix,
