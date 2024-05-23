@@ -1,3 +1,5 @@
+import { range } from "./range.mjs";
+import { number_max } from "./number_max.mjs";
 import { string_index_last } from "./string_index_last.mjs";
 import { storage_url } from "./storage_url.mjs";
 import { html_audio } from "./html_audio.mjs";
@@ -24,6 +26,7 @@ import { divide } from "./divide.mjs";
 import { multiply } from "./multiply.mjs";
 import { string_take } from "./string_take.mjs";
 import { string_skip } from "./string_skip.mjs";
+import { string_length } from "./string_length.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -38,8 +41,10 @@ export async function app_ceb() {
     let max_index = string_index_last(english);
     let adjusted = floor(divide(max_index, split_size));
     for (let i of range(adjusted)) {
-        let scaled =multiply(i,split_size);
-        let skipped=string_skip(cebuano,scaled);
+      let scaled = multiply(i, split_size);
+      let skipped = string_skip(cebuano, scaled);
+      let limit = string_length(skipped);
+      skipped = string_take(skipped, number_max(split_size, limit));
     }
   }
   async function refresh_pair(pair_index) {
