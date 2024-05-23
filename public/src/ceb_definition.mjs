@@ -101,6 +101,7 @@ export async function ceb_definition(word) {
   });
   console.log({definitions})
   definitions = await list_filter_async(definitions, async (d) => {
+    console.log({d})
     let url = string_combine(prefix_2, d);
     url = string_replace(url, " ", "+");
     let parsed2 = await html_cache_parse(url);
