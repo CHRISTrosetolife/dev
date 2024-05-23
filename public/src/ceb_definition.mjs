@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { add } from "./add.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { string_includes } from "./string_includes.mjs";
@@ -39,7 +40,14 @@ export async function ceb_definition(word) {
     let f4_first_index = list_index(q_children, f4_first);
     let f4_first_index_a = add(f4_first_index, 3);
     let f4_first_a = list_get(q_children, f4_first_index_a);
-    assert(equal, [object_property_get(f4_first_index_a, "rawTagName"), "b"]);
+    const f4_first_index_a_tag = object_property_get(
+      f4_first_index_a,
+      "rawTagName",
+    );
+    log({
+      f4_first_index_a_tag,
+    });
+    assert(equal, [f4_first_index_a_tag, "b"]);
     let f4_first_a_text = object_property_get(f4_first_a, "text");
     word = f4_first_a_text;
   }
