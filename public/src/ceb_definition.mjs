@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { greater_than_equal } from "./greater_than_equal.mjs";
 import { list_filter_property } from "./list_filter_property.mjs";
 import { list_map_index } from "./list_map_index.mjs";
@@ -89,7 +90,12 @@ export async function ceb_definition(word) {
   definitions = list_map(definitions, (d) => {
     const index = string_index(d, "[");
     if (greater_than_equal(index, 0)) {
-      return string_trim(string_take(d, index));
+      const result = string_trim(string_take(d, index));
+      console.log({
+        d,
+        result,
+      });
+      return result;
     }
     return d;
   });
