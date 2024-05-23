@@ -23,10 +23,12 @@ export async function sandbox() {
   let language_code = "fil-PH";
   let voice = "Standard-A";
   let text = "sa";
-  const file_path = gcloud_audio_path(language_code, text, voice);
+  let file_path = gcloud_audio_path(language_code, text, voice);
   let output_path = folder_gitignore_path(file_path);
   await gcloud_tts(language_code, voice, text, output_path);
   await each_async(mapped, async (m) => {
+    let file_path = gcloud_audio_path(language_code, m, voice);
+    let output_path = folder_gitignore_path(file_path);
     log(output_path);
     let { created } = await gcloud_tts(language_code, voice, m, output_path);
     if (created) {
