@@ -1,3 +1,4 @@
+import { ceb_form1 } from "./ceb_form1.mjs";
 import { log } from "./log.mjs";
 import { greater_than_equal } from "./greater_than_equal.mjs";
 import { list_filter_property } from "./list_filter_property.mjs";
@@ -6,7 +7,6 @@ import { list_add_multiple } from "./list_add_multiple.mjs";
 import { add } from "./add.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { string_includes } from "./string_includes.mjs";
-import { list_single } from "./list_single.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { html_parse_a_href_starts_with_text } from "./html_parse_a_href_starts_with_text.mjs";
 import { list_second } from "./list_second.mjs";
@@ -39,9 +39,7 @@ export async function ceb_definition(word) {
     "&Search=Search",
   ]);
   let parsed = await html_cache_parse(url);
-  let q = parsed.querySelectorAll("form[name=form1]");
-  let q_single = list_single(q);
-  let { childNodes: q_children } = q_single;
+  let q_children = ceb_form1(parsed);
   let filtered4 = list_filter(q_children, (c) =>
     string_includes(
       object_property_get(c, "text"),
