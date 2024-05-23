@@ -114,10 +114,7 @@ export async function ceb_definition(word) {
       string_prefix_without(f, prefix_1),
     );
     if (list_empty_is(mapped6)) {
-      log({
-        word,
-        d,
-      });
+return false;
     }
     return equal(list_first(mapped6), word);
     return list_includes(mapped6, word);
