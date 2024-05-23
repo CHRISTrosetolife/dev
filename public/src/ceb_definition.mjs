@@ -57,6 +57,7 @@ export async function ceb_definition(word) {
     };
   }
   let replaced = ["distuinguish,distinguish"];
+  let replaced_split = list_map_split_comma(replaced);
   let skipped = ["nevus"];
   let skipped_pairs = [
     "ka,quantifier",
@@ -67,7 +68,9 @@ export async function ceb_definition(word) {
     "uban,mate",
   ];
   let skipped_pairs_split = list_map_split_comma(skipped_pairs);
-  each(skipped_pairs_split, (s) => assert(list_length_2, [s]));
+  each([skipped_pairs_split, replaced_split], (split) =>
+    each(split, (s) => assert(list_length_2, [s])),
+  );
   let prefix = "http://www.binisaya.com/";
   let url = string_combine_multiple([
     prefix,
