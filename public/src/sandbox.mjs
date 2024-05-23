@@ -1,5 +1,5 @@
-import { ceb_dictionary_words } from "./ceb_dictionary_words.mjs";
+import { http_cache } from "./http_cache.mjs";
 export async function sandbox() {
-  let dictionary = await ceb_dictionary_words();
-  return dictionary;
+  let url = "https://www.ccel.org/ccel/b/bible/ceb_p/cache/ceb_p.txt";
+  return await http_cache(url);
 }
