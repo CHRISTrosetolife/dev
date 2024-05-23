@@ -31,6 +31,6 @@ export async function ceb_definition(word) {
     parent = object_property_get(parent, "parentNode");
   } while (equal_not(object_property_get(parent, "rawTagName"), "tr"));
   let { childNodes } = parent;
-  assert(equal, [list_length(childNodes), 2]);
+  assert(equal, [list_length(childNodes), 2]);let right=list_get(childNodes,1)
   return parent;
 }
