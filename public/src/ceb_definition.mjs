@@ -36,6 +36,7 @@ import { string_replace } from "./string_replace.mjs";
 import { string_index } from "./string_index.mjs";
 import { string_trim } from "./string_trim.mjs";
 import { string_take } from "./string_take.mjs";
+import { list_includes } from "./list_includes.mjs";
 export async function ceb_definition(word) {
   let prefix = "http://www.binisaya.com/";
   let url = string_combine_multiple([
@@ -102,8 +103,7 @@ export async function ceb_definition(word) {
     }
     return d;
   });
-  definitions = await list_filter_async(definitions, async (d) => {});
-  for (let d of definitions) {
+  definitions = await list_filter_async(definitions, async (d) => {
     let url = string_combine(prefix_2, d);
     url = string_replace(url, " ", "+");
     let parsed2 = await html_cache_parse(url);
@@ -114,10 +114,8 @@ export async function ceb_definition(word) {
     let mapped6 = list_map(filtered5, (f) =>
       string_prefix_without(f, prefix_1),
     );
-    console.log({
-      mapped6,
-    });
-  }
+    return list_includes(mapped6, word);
+  });
   return {
     word,
     definitions,
