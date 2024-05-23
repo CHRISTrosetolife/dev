@@ -1,3 +1,4 @@
+import { list_filter_property } from "./list_filter_property.mjs";
 import { list_map_index } from "./list_map_index.mjs";
 import { log } from "./log.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
@@ -62,7 +63,7 @@ export async function ceb_definition(word) {
       index,
     };
   });
-  let matches = list_filter(mapped3, (m) => equal(m, word));
+  let matches = list_filter_property(mapped4, "text", word);
   if (list_empty_is(matches)) {
     matches = [list_first(mapped3)];
   }
