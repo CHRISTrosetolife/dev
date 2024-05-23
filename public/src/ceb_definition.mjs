@@ -47,9 +47,13 @@ import { object_property_exists } from "./object_property_exists.mjs";
 export async function ceb_definition(word) {
   let known = {
     apan: ["but", "yet"],
+    hari: ["heads", "king", "pratfall", "royalty"],
   };
   if (object_property_exists(known, word)) {
-    return {word,definitions:object_property_get(known, word)}
+    return {
+      word,
+      definitions: object_property_get(known, word),
+    };
   }
   let skipped = ["nevus"];
   let skipped_pairs = [
@@ -57,6 +61,7 @@ export async function ceb_definition(word) {
     "siya,chair",
     "ila,birthmark",
     "kanila,cinnamon",
+    "ingon,say",
   ];
   let skipped_pairs_split = list_map(skipped_pairs, (s) =>
     string_split_comma(s),
