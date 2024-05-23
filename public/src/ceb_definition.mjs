@@ -69,9 +69,6 @@ export async function ceb_definition(word) {
     matches = [list_first(mapped4)];
   }
   let indices = list_map_property(matches, "index");
-  log({
-    indices,
-  });
   let indices_at = list_map(indices, (i) => list_get(a_href_lefts, i));
   let definitions = [];
   for (let index_at of indices_at) {
