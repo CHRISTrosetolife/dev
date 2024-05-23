@@ -63,9 +63,6 @@ export async function ceb_definition(word) {
     assert(equal, [f4_first_a_tag, "b"]);
     word = f4_first_a_text;
   }
-  console.log({
-    filtered4,
-  });
   let prefix_1 = string_combine(prefix, "cebuano/");
   let prefix_2 = string_combine(prefix, "english/");
   let a_href_lefts = html_parse_a_href_starts_with(parsed, prefix_1);
