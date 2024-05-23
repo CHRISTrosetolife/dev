@@ -3,15 +3,13 @@ import { log } from "./log.mjs";
 import { each_index_async } from "./each_index_async.mjs";
 import { ceb_definition } from "./ceb_definition.mjs";
 import { ceb_bible_words } from "./ceb_bible_words.mjs";
-import { list_length } from "./list_length.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 export async function sandbox() {
   if (0) return await ceb_definition("ila");
   let count = 75;
-  let words = await ceb_bible_words();
-  let length = list_length(words);
   count = 100;
+  let words = await ceb_bible_words();
   let t = list_take(words, count);
   let lookup = {};
   await each_index_async(t, async (bible_word, index) => {
