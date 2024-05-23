@@ -26,9 +26,11 @@ export async function ceb_definition(word) {
   let first = list_first(mapped3);
   let index = list_index(mapped3, first);
   let index_at = list_get(filtered, index);
-  let parent=index_at;
+  let parent = index_at;
   do {
     parent = object_property_get(parent, "parentNode");
-  } while (equal_not(object_property_get(parent, "rawTagName"), "tr"));let{childNodes}=parent;assert(equal,[list_length(childNodes),2])
+  } while (equal_not(object_property_get(parent, "rawTagName"), "tr"));
+  let { childNodes } = parent;
+  assert(equal, [list_length(childNodes), 2]);
   return parent;
 }
