@@ -1,3 +1,4 @@
+import { string_prefix_without } from "./string_prefix_without.mjs";
 import { list_filter_starts_with } from "./list_filter_starts_with.mjs";
 import { html_parse_href } from "./html_parse_href.mjs";
 import { html_parse_tag } from "./html_parse_tag.mjs";
@@ -108,8 +109,11 @@ export async function ceb_definition(word) {
     let as = list_filter(q_children2, (c) => html_parse_tag(c, "a"));
     let mapped5 = list_map(as, html_parse_href);
     let filtered5 = list_filter_starts_with(mapped5, prefix_1);
+    let mapped6 = list_map(filtered5, (f) =>
+      string_prefix_without(f, prefix_1),
+    );
     console.log({
-      filtered5,
+      mapped6,
     });
   }
   return {
