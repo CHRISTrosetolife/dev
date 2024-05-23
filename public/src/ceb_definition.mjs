@@ -179,7 +179,7 @@ export async function ceb_definition(word) {
     }
     let split_d = string_split_space(d)
     if (greater_than_equal(list_length(split_d),2)) {
-        log({skip_because:'contains spaces',d})
+        log({skip_because:'contains spaces',d,word})
         return false;
     }
     return true;
