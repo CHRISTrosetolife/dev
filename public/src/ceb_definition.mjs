@@ -33,6 +33,7 @@ export async function ceb_definition(word) {
     ),
   );
   if (list_empty_not(filtered4)) {
+    let f4_first = list_first(filtered4);
   }
   return filtered4;
   let prefix = "http://www.binisaya.com/";
