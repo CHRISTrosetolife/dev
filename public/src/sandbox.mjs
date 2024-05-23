@@ -1,3 +1,4 @@
+import { list_remove } from "./list_remove.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
 import { equal_by } from "./equal_by.mjs";
 import { each_range } from "./each_range.mjs";
@@ -9,6 +10,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { list_any } from "./list_any.mjs";
 import { list_first } from "./list_first.mjs";
 import { assert } from "./assert.mjs";
+import { list_add } from "./list_add.mjs";
 export async function sandbox() {
   if (0) return await ceb_definition("kamo");
   let atom_count = 6;
@@ -33,6 +35,8 @@ export async function sandbox() {
       break;
     }
     assert(undefined_not_is, [next]);
+    list_remove(pairs, p);
+    list_add(atom_result, next);
   });
   return pairs;
 }
