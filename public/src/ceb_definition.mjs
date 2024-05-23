@@ -54,7 +54,7 @@ export async function ceb_definition(word) {
   let mapped3 = list_map_property_text_trim(a_href_lefts);
   let matches = list_filter(mapped3, (m) => equal(m, word));
   if (list_empty_is(matches)) {
-    matches = [list_first(first_list)];
+    matches = [list_first(mapped3)];
   }
   let indices = list_map(matches, (m) => list_index(mapped3, m));
   let indices_at = list_map(indices, (i) => list_get(a_href_lefts, i));
