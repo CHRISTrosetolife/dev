@@ -1,9 +1,5 @@
+import { string_count } from "./string_count.mjs";
 import { list_map_property } from "./list_map_property.mjs";
-import { list_sort } from "./list_sort.mjs";
-import { each_object } from "./each_object.mjs";
-import { list_adder } from "./list_adder.mjs";
-import { add_1 } from "./add_1.mjs";
-import { object_property_initialize } from "./object_property_initialize.mjs";
 import { string_take } from "./string_take.mjs";
 import { string_trim } from "./string_trim.mjs";
 import { string_skip } from "./string_skip.mjs";
@@ -14,9 +10,6 @@ import { string_whitespace_normalize } from "./string_whitespace_normalize.mjs";
 import { string_replace_multiple } from "./string_replace_multiple.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 import { http_cache } from "./http_cache.mjs";
-import { object_property_set } from "./object_property_set.mjs";
-import { object_property_get } from "./object_property_get.mjs";
-import { string_length } from "./string_length.mjs";
 export async function sandbox() {
   let url = "https://www.ccel.org/ccel/b/bible/ceb_p/cache/ceb_p.txt";
   let text = await http_cache(url);
@@ -34,21 +27,7 @@ export async function sandbox() {
   text = string_case_lower(text);
   text = string_trim(text);
   let text_split = string_split_space(text);
-  let lookup = {};
-  for (let word of text_split) {
-    let count = object_property_initialize(lookup, word, 0);
-    object_property_set(lookup, word, add_1(count));
-  }
-  let list = list_adder((la) =>
-    each_object(lookup, (word, count) =>
-      la({
-        word,
-        count,
-      }),
-    ),
-  );
-  list_sort(list, (l) => string_length(object_property_get(l, "word")));
-  list_sort(list, (l) => -object_property_get(l, "count"));
+  let list = string_count(text_split);
   const property_name = "word";
   let mapped = list_map_property(list, property_name);
   return mapped;
