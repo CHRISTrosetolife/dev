@@ -1,3 +1,4 @@
+import { list_map_property } from "./list_map_property.mjs";
 import { list_sort } from "./list_sort.mjs";
 import { each_object } from "./each_object.mjs";
 import { list_adder } from "./list_adder.mjs";
@@ -48,5 +49,7 @@ export async function sandbox() {
   );
   list_sort(list, (l) => string_length(object_property_get(l, "word")));
   list_sort(list, (l) => -object_property_get(l, "count"));
-  return list;
+  const property_name = "word";
+  let mapped = list_map_property(list, property_name);
+  return mapped;
 }
