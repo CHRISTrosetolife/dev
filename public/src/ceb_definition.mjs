@@ -63,7 +63,9 @@ export async function ceb_definition(word) {
     assert(equal, [f4_first_a_tag, "b"]);
     word = f4_first_a_text;
   }
-  console.log({filtered4})
+  console.log({
+    filtered4,
+  });
   let prefix_1 = string_combine(prefix, "cebuano/");
   let prefix_2 = string_combine(prefix, "english/");
   let a_href_lefts = html_parse_a_href_starts_with(parsed, prefix_1);
@@ -76,7 +78,8 @@ export async function ceb_definition(word) {
   });
   let matches = list_filter_property(mapped4, "text", word);
   if (list_empty_is(matches)) {
-      const first = list_first(mapped4);
+    const first = list_first(mapped4);
+    word = object_property_get(first, "text");
     matches = [first];
   }
   let indices = list_map_property(matches, "index");
