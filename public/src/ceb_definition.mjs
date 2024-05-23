@@ -1,3 +1,4 @@
+import { string_includes } from "./string_includes.mjs";
 import { list_single } from "./list_single.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { html_parse_a_href_starts_with_text } from "./html_parse_a_href_starts_with_text.mjs";
@@ -24,7 +25,11 @@ export async function ceb_definition(word) {
   let parsed = await html_cache_parse(url);
   let q = parsed.querySelectorAll("form[name=form1]");
   let q_single = list_single(q);
-  return object_property_get(q_single, "text");
+  let { childNodes: q_children } = q_single;
+  let filtered4 = list_filter(q_children, (c) =>
+    string_includes(object_property_get(c, text), "Word - rootword - affixes"),
+  );
+  return filtered4;
   let prefix = "http://www.binisaya.com/";
   let prefix_1 = string_combine(prefix, "cebuano/");
   let prefix_2 = string_combine(prefix, "english/");
