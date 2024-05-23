@@ -9,6 +9,6 @@ export async function sandbox() {
   let symbols = string_symbols(text);
   list_sort_string(symbols, identity);
   let joined = list_join_empty(symbols);
-  let replace = "_-,;:!?.'\"()¶/`^|0123456789";
+  let replace = "_,;:!?.'\"()¶/`^|0123456789";
   return joined;
 }
