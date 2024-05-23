@@ -1,3 +1,5 @@
+import { and } from "./and.mjs";
+import { list_any } from "./list_any.mjs";
 import { list_length_2 } from "./list_length_2.mjs";
 import { each } from "./each.mjs";
 import { string_split_comma } from "./string_split_comma.mjs";
@@ -142,7 +144,12 @@ export async function ceb_definition(word) {
     if (list_includes(skipped, d)) {
       return false;
     }
-    if (list_includes(skipped, d)) {
+    if (
+      list_any(skipped_pairs_split, (s) => {
+        let [left, right] = s;
+        return and(equal(word, left), equal(right, d));
+      })
+    ) {
       return false;
     }
     return true;
