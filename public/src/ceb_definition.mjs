@@ -1,3 +1,4 @@
+import { html_parse_a_href_starts_with_text } from "./html_parse_a_href_starts_with_text.mjs";
 import { list_second } from "./list_second.mjs";
 import { equal_not } from "./equal_not.mjs";
 import { list_index } from "./list_index.mjs";
@@ -34,6 +35,6 @@ export async function ceb_definition(word) {
   let { childNodes } = parent;
   assert(equal, [list_length(childNodes), 2]);
   let right = list_second(childNodes);
-  let filtered2 = html_parse_a_href_starts_with_text_trim(right, prefix_2);
+  let filtered2 = html_parse_a_href_starts_with_text(right, prefix_2);
   return filtered2;
 }
