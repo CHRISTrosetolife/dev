@@ -1,3 +1,4 @@
-export function list_filter_async(list, filter) {
-  return list.filter((item) => filter(item));
+import { list_adder_async } from "./list_adder_async.mjs";
+export async function list_filter_async(list, filter) {
+  return await list_adder_async(async (la) => {});
 }
