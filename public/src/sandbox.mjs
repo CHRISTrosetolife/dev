@@ -26,7 +26,8 @@ export async function sandbox() {
     const file_path = `audio/${string_encoded_to(m)}/${language_code}.mp3`;
     let output_path = path_join([folder_gitignore(), file_path]);
     log(output_path);
-    if (await gcloud_tts(language_code, m, output_path)) {
+    let { created } = await gcloud_tts(language_code, m, output_path);
+    if (created) {
       await storage_upload_file(output_path, file_path);
       log("uploaded");
     }
