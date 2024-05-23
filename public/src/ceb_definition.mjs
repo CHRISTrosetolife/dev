@@ -142,6 +142,9 @@ export async function ceb_definition(word) {
     if (list_includes(skipped, d)) {
       return false;
     }
+    if (list_includes(skipped, d)) {
+      return false;
+    }
     return true;
   });
   return {
