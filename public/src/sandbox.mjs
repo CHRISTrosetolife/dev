@@ -1,3 +1,4 @@
+import { equal_by } from "./equal_by.mjs";
 import { each_range } from "./each_range.mjs";
 import { ceb_bible_words_definitions } from "./ceb_bible_words_definitions.mjs";
 import { ceb_definition } from "./ceb_definition.mjs";
@@ -6,7 +7,6 @@ import { list_adder } from "./list_adder.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_any } from "./list_any.mjs";
 import { list_first } from "./list_first.mjs";
-import { equal } from "./equal.mjs";
 export async function sandbox() {
   if (0) return await ceb_definition("kamo");
   let atom_count = 6;
@@ -23,7 +23,7 @@ export async function sandbox() {
   let atom_result = pairs;
   each_range(atom_count, (i) => {
     for (let d of ds) {
-      if (list_any(atom_result, (a) => equal(list_first(a), list_first(d)))) {
+      if (list_any(atom_result, (a) => equal_by(a, d, list_first))) {
         continue;
       }
     }
