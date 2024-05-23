@@ -5,6 +5,7 @@ import { list_adder } from "./list_adder.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 export async function sandbox() {
   if (0) return await ceb_definition("kamo");
+  let atom_count = 6;
   let limit = 75;
   let skip = 0;
   let ds = await ceb_bible_words_definitions(skip, limit);
