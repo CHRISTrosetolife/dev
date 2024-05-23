@@ -21,6 +21,9 @@ import { list_index_last } from "./list_index_last.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { floor } from "./floor.mjs";
 import { divide } from "./divide.mjs";
+import { multiply } from "./multiply.mjs";
+import { string_take } from "./string_take.mjs";
+import { string_skip } from "./string_skip.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -34,6 +37,10 @@ export async function app_ceb() {
     let split_size = 1;
     let max_index = string_index_last(english);
     let adjusted = floor(divide(max_index, split_size));
+    for (let i of range(adjusted)) {
+        let scaled =multiply(i,split_size);
+        let skipped=string_skip(cebuano,scaled);
+    }
   }
   async function refresh_pair(pair_index) {
     html_clear_scroll_top(root);
