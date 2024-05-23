@@ -7,6 +7,9 @@ import { list_empty_not_is } from "./list_empty_not_is.mjs";
 export async function sandbox() {
   if (0) return await ceb_definition("ila");
   let t = await ceb_bible_words_100();
+  for (let w of t) {
+    log(w);
+  }
   return t;
   let lookup = {};
   await each_index_async(t, async (bible_word, index) => {
