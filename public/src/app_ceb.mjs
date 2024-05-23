@@ -1,5 +1,4 @@
 import { html_style_font_color } from "./html_style_font_color.mjs";
-import { list_length } from "./list_length.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { html_buttons_next_previous } from "./html_buttons_next_previous.mjs";
@@ -13,6 +12,9 @@ import { html_p_text } from "./html_p_text.mjs";
 import { each } from "./each.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { html_style_centered } from "./html_style_centered.mjs";
+import { list_index_last } from "./list_index_last.mjs";
+import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
+import { noop } from "./noop.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -25,7 +27,7 @@ export async function app_ceb() {
     html_clear_scroll_top(root);
     let pair = list_get(copy, pair_index);
     let [cebuano, english] = pair;
-    let cebuano_p = html_p_text(root, cebuano);
+    let cebuano_p = html_button_width_full_text_click(root, cebuano, noop);
     html_style_font_color(cebuano_p, "darkgreen");
     let english_p = html_p_text(root, english);
     each([html_style_bold, html_style_centered], (style) =>
@@ -35,7 +37,7 @@ export async function app_ceb() {
       root,
       refresh_pair,
       pair_index,
-      list_length(copy),
+      list_index_last(copy),
     );
   }
 }
