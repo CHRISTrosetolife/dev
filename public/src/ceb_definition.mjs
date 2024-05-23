@@ -44,6 +44,7 @@ import { string_take } from "./string_take.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { equal_not } from "./equal_not.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
+import { object_property_set } from "./object_property_set.mjs";
 export async function ceb_definition(word) {
   let known = {
     apan: ["but", "yet"],
@@ -70,6 +71,10 @@ export async function ceb_definition(word) {
   let skipped_pairs_split = list_map_split_comma(skipped_pairs);
   each([skipped_pairs_split, replaced_split], (split) =>
     each(split, (s) => assert(list_length_2, [s])),
+  );
+  let lookup = {};
+  each(skipped_pairs_split, (s) =>
+    object_property_set(lookup, list_first(s), list_second(s)),
   );
   let prefix = "http://www.binisaya.com/";
   let url = string_combine_multiple([
@@ -127,6 +132,9 @@ export async function ceb_definition(word) {
     list_add_multiple(definitions, defs);
   }
   definitions = list_map(definitions, (d) => {
+    if (object_property_exists(lookup, d)) {
+      return object_property_get(lookup, d);
+    }
     const index = string_index(d, "[");
     if (greater_than_equal(index, 0)) {
       const result = string_trim(string_take(d, index));
