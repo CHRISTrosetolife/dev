@@ -5,6 +5,7 @@ import { list_copy } from "./list_copy.mjs";
 import { http_storage } from "./http_storage.mjs";
 import { ceb_group_path } from "./ceb_group_path.mjs";
 import { list_first } from "./list_first.mjs";
+import { list_get } from "./list_get.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -12,7 +13,10 @@ export async function app_ceb() {
   let atom = list_first(group);
   let copy = list_copy(atom);
   list_scramble(copy);
-  let pair = list_first(copy);
-  let [cebuano, english] = pair;
-  html_buttons_next_previous;
+  refresh_pair(0);
+  function refresh_pair(pair_index) {
+    let pair = list_get(copy, pair_index);
+    let [cebuano, english] = pair;
+    html_buttons_next_previous(root, (pair_index) =>{});
+  } 
 }
