@@ -1,4 +1,3 @@
-import { list_includes_not } from "./list_includes_not.mjs";
 import { list_filter_async } from "./list_filter_async.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 import { list_filter_starts_with } from "./list_filter_starts_with.mjs";
@@ -37,6 +36,7 @@ import { string_index } from "./string_index.mjs";
 import { string_trim } from "./string_trim.mjs";
 import { string_take } from "./string_take.mjs";
 import { list_includes } from "./list_includes.mjs";
+import { equal_not } from "./equal_not.mjs";
 export async function ceb_definition(word) {
   let skipped = ["nevus"];
   let prefix = "http://www.binisaya.com/";
@@ -116,16 +116,20 @@ export async function ceb_definition(word) {
     if (list_empty_is(mapped6)) {
       return false;
     }
-    return equal(list_first(mapped6), word);
-    return list_includes(mapped6, word);
-  });
-  definitions = list_filter(definitions, (d) => {
-    const replaced = string_replace(d, "s", "z");
-    if (equal(replaced, d)) {
-      return true;
+    if (equal_not(list_first(mapped6), word)) {
+      return false;
+      list_includes(mapped6, word);
     }
-    const includes_not = list_includes_not(definitions, replaced);
-    return includes_not;
+    const replaced = string_replace(d, "s", "z");
+    if (equal_not(replaced, d)) {
+      if (list_includes(definitions, replaced)) {
+        return false;
+      }
+    }
+    if (list_includes(skipped, d)) {
+      return false;
+    }
+    return true;
   });
   return {
     word,
