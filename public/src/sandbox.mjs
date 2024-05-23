@@ -8,6 +8,7 @@ import { list_first } from "./list_first.mjs";
 import { list_map } from "./list_map.mjs";
 import { each_async } from "./each_async.mjs";
 import { string_encoded_to } from "./string_encoded_to.mjs";
+import { log } from "./log.mjs";
 export async function sandbox() {
   if (0) return await ceb_definition("kamo");
   let limit = 75;
@@ -20,7 +21,7 @@ export async function sandbox() {
   await each_async(mapped, async (m) => {
     let language_code = "fil-PH-Standard-A";
     let output_path = `audio/${string_encoded_to(m)}/${language_code}`;
-    return output_path;
+    log(output_path);
     gcloud_tts;
   });
   return mapped;
