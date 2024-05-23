@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { tautology } from "./tautology.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
@@ -49,8 +50,13 @@ export async function sandbox() {
       });
       if (equal(list_length(atom_result), atom_count)) {
         la(atom_result);
+      } else {
+        log({
+          atom_result,
+        });
       }
     }
   });
+  return;
   return atoms;
 }
