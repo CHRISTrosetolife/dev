@@ -1,3 +1,4 @@
+import { tautology } from "./tautology.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
 import { equal_by } from "./equal_by.mjs";
@@ -11,6 +12,8 @@ import { list_any } from "./list_any.mjs";
 import { list_first } from "./list_first.mjs";
 import { assert } from "./assert.mjs";
 import { list_add } from "./list_add.mjs";
+import { equal } from "./equal.mjs";
+import { list_length } from "./list_length.mjs";
 export async function sandbox() {
   if (0) return await ceb_definition("kamo");
   let atom_count = 6;
@@ -24,19 +27,26 @@ export async function sandbox() {
       ),
     ),
   );
-  let atom_result = [];
-  each_range(atom_count, () => {
-    let next;
-    for (let p of pairs) {
-      if (list_any(atom_result, (a) => equal_by(a, p, list_first))) {
-        continue;
+  let atoms = list_adder((la) => {
+    while (list_any(pairs, tautology)) {
+      let atom_result = [];
+      each_range(atom_count, () => {
+        let next;
+        for (let p of pairs) {
+          if (list_any(atom_result, (a) => equal_by(a, p, list_first))) {
+            continue;
+          }
+          next = p;
+          break;
+        }
+        assert(undefined_not_is, [next]);
+        list_remove(pairs, p);
+        list_add(atom_result, next);
+      });
+      if (equal(list_length(atom_result), atom_count)) {
+        la(atom_result);
       }
-      next = p;
-      break;
     }
-    assert(undefined_not_is, [next]);
-    list_remove(pairs, p);
-    list_add(atom_result, next);
   });
   return pairs;
 }
