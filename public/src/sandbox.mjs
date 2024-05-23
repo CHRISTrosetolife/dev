@@ -25,7 +25,7 @@ export async function sandbox() {
     const file_path = `audio/${string_encoded_to(m)}/${language_code}.mp3`;
     let output_path = path_join([folder_gitignore(), file_path]);
     log(output_path);
-    gcloud_tts;
+    gcloud_tts(language_code, m, output_path);
   });
   return mapped;
   let group_index = 0;
