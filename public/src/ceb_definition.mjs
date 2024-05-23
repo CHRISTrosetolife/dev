@@ -21,6 +21,7 @@ import { equal } from "./equal.mjs";
 import { list_length } from "./list_length.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { list_map } from "./list_map.mjs";
+import { http_cache } from "./http_cache.mjs";
 export async function ceb_definition(word) {
   let prefix = "http://www.binisaya.com/";
   let url = string_combine_multiple([
@@ -72,7 +73,8 @@ export async function ceb_definition(word) {
     list_add_multiple(definitions, defs);
   }
   for (let d of definitions) {
-    let url = string_combine("https://www.binisaya.com/english/", d);
+    let url = string_combine(prefix_2, d);
+    await http_cache(url);
   }
   return {
     word,
