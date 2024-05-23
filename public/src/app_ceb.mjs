@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { range } from "./range.mjs";
 import { number_max } from "./number_max.mjs";
 import { string_index_last } from "./string_index_last.mjs";
@@ -34,6 +35,7 @@ export async function app_ceb() {
   let atom = list_first(group);
   let copy = list_copy(atom);
   list_scramble(copy);
+  refresh_quiz(0);
   function refresh_quiz(pair_index) {
     let pair = list_get(copy, pair_index);
     let [cebuano, english] = pair;
@@ -44,7 +46,10 @@ export async function app_ceb() {
       let scaled = multiply(i, split_size);
       let skipped = string_skip(cebuano, scaled);
       let limit = string_length(skipped);
-      skipped = string_take(skipped, number_max(split_size, limit));
+      let taken = string_take(skipped, number_max(split_size, limit));
+      log({
+        taken,
+      });
     }
   }
   async function refresh_pair(pair_index) {
