@@ -40,15 +40,16 @@ export async function ceb_definition(word) {
     let f4_first_index = list_index(q_children, f4_first);
     let f4_first_index_a = add(f4_first_index, 3);
     let f4_first_a = list_get(q_children, f4_first_index_a);
+    let f4_first_a_text = object_property_get(f4_first_a, "text");
     const f4_first_index_a_tag = object_property_get(
       f4_first_index_a,
       "rawTagName",
     );
     log({
       f4_first_index_a_tag,
+      f4_first_a_text,
     });
     assert(equal, [f4_first_index_a_tag, "b"]);
-    let f4_first_a_text = object_property_get(f4_first_a, "text");
     word = f4_first_a_text;
   }
   return filtered4;
