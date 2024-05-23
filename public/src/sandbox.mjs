@@ -1,3 +1,4 @@
+import { undefined_not_is } from "./undefined_not_is.mjs";
 import { equal_by } from "./equal_by.mjs";
 import { each_range } from "./each_range.mjs";
 import { ceb_bible_words_definitions } from "./ceb_bible_words_definitions.mjs";
@@ -31,7 +32,7 @@ export async function sandbox() {
       next = p;
       break;
     }
-    assert(defined_is, [next]);
+    assert(undefined_not_is, [next]);
   });
   return pairs;
 }
