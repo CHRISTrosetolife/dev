@@ -16,6 +16,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { assert } from "./assert.mjs";
 import { equal } from "./equal.mjs";
 import { list_length } from "./list_length.mjs";
+import { list_add } from "./list_add.mjs";
 export async function ceb_definition(word) {
   let url = string_combine_multiple([
     "https://www.binisaya.com/node/21?search=binisaya&word=",
@@ -35,6 +36,7 @@ export async function ceb_definition(word) {
   if (list_empty_not(filtered4)) {
     let f4_first = list_first(filtered4);
     let f4_first_index = list_index(q_children, f4_first);
+    let f4_first_index_a_2 = list_add(f4_first_index, 2);
   }
   return filtered4;
   let prefix = "http://www.binisaya.com/";
