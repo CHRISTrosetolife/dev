@@ -101,6 +101,7 @@ export async function ceb_definition(word) {
     }
     return d;
   });
+  definitions = awaitlist_filter_async(definitions, (d) => {});
   for (let d of definitions) {
     let url = string_combine(prefix_2, d);
     url = string_replace(url, " ", "+");
