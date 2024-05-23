@@ -7,7 +7,7 @@ import { list_length } from "./list_length.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 export async function sandbox() {
-  if (10) return await ceb_definition("ila");
+  if (0) return await ceb_definition("ila");
   let words = await ceb_bible_words();
   let length = list_length(words);
   const count = 32;
