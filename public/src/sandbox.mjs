@@ -16,7 +16,7 @@ export async function sandbox() {
   text = string_skip(text, index);
   let end = "This document is from the Christian Classics Ethereal";
   let index_end = string_index(text, end);
-  string_take;
+  text = string_take(text, index_end);
   let replace = "_,;:!?.'\"()¶/`^|0123456789";
   let replace_list = string_split_empty(replace);
   const replacement = " ";
