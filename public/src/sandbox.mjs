@@ -15,5 +15,6 @@ export async function sandbox() {
   let replace_list = string_split_empty(replace);
   const replacement = " ";
   text = string_replace_multiple(text, replace_list, replacement);
+  text = string_whitespace_normalize(text)
   return text;
 }
