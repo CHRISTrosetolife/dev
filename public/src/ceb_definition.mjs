@@ -108,7 +108,7 @@ export async function ceb_definition(word) {
   if (list_empty_is(matches)) {
     const first = list_first(mapped4);
     word = object_property_get(first, "text");
-    matches = [first];
+    matches = list_filter_property(mapped4, "text", word);
   }
   let indices = list_map_property(matches, "index");
   let indices_at = list_map(indices, (i) => list_get(a_href_lefts, i));

@@ -11,7 +11,7 @@ export async function sandbox() {
   t = list_skip(t, 32);
   let lookup = {};
   await each_index_async(t, async (bible_word, index) => {
-    if (10)
+    if (0)
       log({
         bible_word,
         index,
@@ -20,6 +20,7 @@ export async function sandbox() {
     if (list_empty_not_is(definitions)) {
       object_property_set(lookup, word, definitions);
     }
+    if(0)
     log({word,definitions})
   });return;
   return lookup;
