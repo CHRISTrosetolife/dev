@@ -27,7 +27,10 @@ export async function ceb_definition(word) {
   let q_single = list_single(q);
   let { childNodes: q_children } = q_single;
   let filtered4 = list_filter(q_children, (c) =>
-    string_includes(object_property_get(c, text), "Word - rootword - affixes"),
+    string_includes(
+      object_property_get(c, "text"),
+      "Word - rootword - affixes",
+    ),
   );
   return filtered4;
   let prefix = "http://www.binisaya.com/";
