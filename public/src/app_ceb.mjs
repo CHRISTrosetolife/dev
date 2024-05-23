@@ -26,7 +26,7 @@ export async function app_ceb() {
   let copy = list_copy(atom);
   list_scramble(copy);
   refresh_pair(0);
-  function refresh_pair(pair_index) {
+  async function refresh_pair(pair_index) {
     html_clear_scroll_top(root);
     let pair = list_get(copy, pair_index);
     let [cebuano, english] = pair;
@@ -34,8 +34,8 @@ export async function app_ceb() {
     let cebuano_p = html_button_width_full_text_click(
       root,
       string_combine("🔊", cebuano),
-      () => {
-        html_audio(storage_url(file_path));
+      async () => {
+        return await html_audio(storage_url(file_path));
       },
     );
     html_style_font_color(cebuano_p, "darkgreen");
@@ -49,5 +49,6 @@ export async function app_ceb() {
       pair_index,
       list_index_last(copy),
     );
+    await html_audio(storage_url(file_path));
   }
 }
