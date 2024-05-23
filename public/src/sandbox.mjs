@@ -1,3 +1,5 @@
+import { string_case_lower } from "./string_case_lower.mjs";
+import { string_whitespace_normalize } from "./string_whitespace_normalize.mjs";
 import { string_replace_multiple } from "./string_replace_multiple.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 import { identity } from "./identity.mjs";
@@ -15,6 +17,7 @@ export async function sandbox() {
   let replace_list = string_split_empty(replace);
   const replacement = " ";
   text = string_replace_multiple(text, replace_list, replacement);
-  text = string_whitespace_normalize(text)
+  text = string_whitespace_normalize(text);
+  text = string_case_lower(text);
   return text;
 }
