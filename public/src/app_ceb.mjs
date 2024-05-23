@@ -12,6 +12,7 @@ import { list_get } from "./list_get.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { each } from "./each.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
+import { html_style_centered } from "./html_style_centered.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -27,7 +28,9 @@ export async function app_ceb() {
     let cebuano_p = html_p_text(root, cebuano);
     html_style_font_color(cebuano_p, "darkgreen");
     let english_p = html_p_text(root, english);
-    each([cebuano_p, english_p], html_style_bold);
+    each([html_style_bold, html_style_centered], (style) =>
+      each([cebuano_p, english_p], style),
+    );
     html_buttons_next_previous(
       root,
       refresh_pair,
