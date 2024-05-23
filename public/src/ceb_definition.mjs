@@ -51,12 +51,11 @@ export async function ceb_definition(word) {
   let filtered = html_parse_a_href_starts_with(parsed, prefix_1);
   let mapped3 = list_map_property_text_trim(filtered);
   let filtered3 = list_filter(mapped3, (m) => equal(m, word));
-  let first;
   let first_list = filtered3;
   if (list_empty_is(filtered3)) {
     first_list = mapped3;
   }
-  first = list_first(first_list);
+  let first = list_first(first_list);
   let index = list_index(mapped3, first);
   let index_at = list_get(filtered, index);
   let parent = index_at;
