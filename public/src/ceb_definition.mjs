@@ -115,11 +115,13 @@ export async function ceb_definition(word) {
     );
     return list_includes(mapped6, word);
   });
+  log({definitions})
   definitions = list_filter(definitions, (d) => {
     const replaced = string_replace(d, "s", "z");
     log({d,replaced})
     return list_includes_not(definitions, replaced);
   });
+  log({definitions})
   return {
     word,
     definitions,
