@@ -54,7 +54,7 @@ export async function ceb_definition(word) {
   let first;
   let first_list = filtered3;
   if (list_empty_is(filtered3)) {
-    first_list = filtered;
+    first_list = mapped3;
   }
   first = list_first(first_list);
   let index = list_index(mapped3, first);
