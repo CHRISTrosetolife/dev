@@ -25,6 +25,7 @@ import { list_length } from "./list_length.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { list_map } from "./list_map.mjs";
 import { http_cache } from "./http_cache.mjs";
+import { list_map_property } from "./list_map_property.mjs";
 export async function ceb_definition(word) {
   let prefix = "http://www.binisaya.com/";
   let url = string_combine_multiple([
@@ -65,9 +66,9 @@ export async function ceb_definition(word) {
   });
   let matches = list_filter_property(mapped4, "text", word);
   if (list_empty_is(matches)) {
-    matches = [list_first(mapped3)];
+    matches = [list_first(mapped4)];
   }
-  let indices = list_map(matches, (m) => list_index(mapped3, m));
+  let indices = list_map_property(matches, "index");
   log({
     indices,
   });
