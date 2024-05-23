@@ -22,6 +22,8 @@ export async function sandbox() {
     }
     if(0)
     log({word,definitions})
-  });return;
+  });
+  if (0)
+  return;
   return lookup;
 }
