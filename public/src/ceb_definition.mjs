@@ -24,7 +24,7 @@ export async function ceb_definition(word) {
   let parsed = await html_cache_parse(url);
   let q = parsed.querySelectorAll("form[name=form1]");
   let q_single = list_single(q);
-  return q;
+  return object_property_get(q_single, "text");
   let prefix = "http://www.binisaya.com/";
   let prefix_1 = string_combine(prefix, "cebuano/");
   let prefix_2 = string_combine(prefix, "english/");
