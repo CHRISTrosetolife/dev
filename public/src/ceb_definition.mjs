@@ -36,7 +36,11 @@ export async function ceb_definition(word) {
   if (list_empty_not(filtered4)) {
     let f4_first = list_first(filtered4);
     let f4_first_index = list_index(q_children, f4_first);
-    let f4_first_index_a_2 = list_add(f4_first_index, 2);
+    let f4_first_index_a = list_add(f4_first_index, 3);
+    let f4_first_a = list_get(q_children, f4_first_index_a);
+    assert(equal, [object_property_get(f4_first_index_a, "rawTagName"), "b"]);
+    let f4_first_a_text = object_property_get(f4_first_a, "text");
+    word = f4_first_a_text;
   }
   return filtered4;
   let prefix = "http://www.binisaya.com/";
