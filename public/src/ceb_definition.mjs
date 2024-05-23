@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { list_includes_not } from "./list_includes_not.mjs";
 import { list_filter_async } from "./list_filter_async.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
@@ -39,6 +38,7 @@ import { string_trim } from "./string_trim.mjs";
 import { string_take } from "./string_take.mjs";
 import { list_includes } from "./list_includes.mjs";
 export async function ceb_definition(word) {
+  let skipped = ["nevus"];
   let prefix = "http://www.binisaya.com/";
   let url = string_combine_multiple([
     prefix,
@@ -114,7 +114,7 @@ export async function ceb_definition(word) {
       string_prefix_without(f, prefix_1),
     );
     if (list_empty_is(mapped6)) {
-return false;
+      return false;
     }
     return equal(list_first(mapped6), word);
     return list_includes(mapped6, word);
