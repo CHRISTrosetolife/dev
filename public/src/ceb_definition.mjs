@@ -76,7 +76,8 @@ export async function ceb_definition(word) {
   });
   let matches = list_filter_property(mapped4, "text", word);
   if (list_empty_is(matches)) {
-    matches = [list_first(mapped4)];
+      const first = list_first(mapped4);
+    matches = [first];
   }
   let indices = list_map_property(matches, "index");
   let indices_at = list_map(indices, (i) => list_get(a_href_lefts, i));
