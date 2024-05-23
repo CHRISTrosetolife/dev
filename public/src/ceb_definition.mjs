@@ -1,3 +1,4 @@
+import { html_parse_tag_not } from "./html_parse_tag_not.mjs";
 import { ceb_form1 } from "./ceb_form1.mjs";
 import { log } from "./log.mjs";
 import { greater_than_equal } from "./greater_than_equal.mjs";
@@ -10,7 +11,6 @@ import { string_includes } from "./string_includes.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { html_parse_a_href_starts_with_text } from "./html_parse_a_href_starts_with_text.mjs";
 import { list_second } from "./list_second.mjs";
-import { equal_not } from "./equal_not.mjs";
 import { list_index } from "./list_index.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_map_property_text_trim } from "./list_map_property_text_trim.mjs";
@@ -77,7 +77,7 @@ export async function ceb_definition(word) {
     let parent = index_at;
     do {
       parent = object_property_get(parent, "parentNode");
-    } while (equal_not(object_property_get(parent, "rawTagName"), "tr"));
+    } while (html_parse_tag_not(parent, "tr"));
     let { childNodes } = parent;
     assert(equal, [list_length(childNodes), 2]);
     let right = list_second(childNodes);
@@ -100,6 +100,7 @@ export async function ceb_definition(word) {
     let url = string_combine(prefix_2, d);
     url = string_replace(url, " ", "+");
     let parsed2 = await html_cache_parse(url);
+    let q_children2 = ceb_form1(parsed2);
   }
   return {
     word,
