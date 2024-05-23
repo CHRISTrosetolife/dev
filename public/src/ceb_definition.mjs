@@ -82,6 +82,7 @@ export async function ceb_definition(word) {
     let defs = html_parse_a_href_starts_with_text(right, prefix_2);
     list_add_multiple(definitions, defs);
   }
+  definitions = list_map(definitions, (d) => {});
   for (let d of definitions) {
     let url = string_combine(prefix_2, d);
     url = string_replace(url, " ", "+");
