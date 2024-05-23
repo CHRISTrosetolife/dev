@@ -28,6 +28,8 @@ import { http_cache } from "./http_cache.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { string_replace } from "./string_replace.mjs";
 import { string_index } from "./string_index.mjs";
+import { string_trim } from "./string_trim.mjs";
+import { string_take } from "./string_take.mjs";
 export async function ceb_definition(word) {
   let prefix = "http://www.binisaya.com/";
   let url = string_combine_multiple([
@@ -87,7 +89,9 @@ export async function ceb_definition(word) {
   definitions = list_map(definitions, (d) => {
     const index = string_index(d, "[");
     if (greater_than_equal(index, 0)) {
+      return string_trim(string_take(d, index));
     }
+    return d;
   });
   for (let d of definitions) {
     let url = string_combine(prefix_2, d);
