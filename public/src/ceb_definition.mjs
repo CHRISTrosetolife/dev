@@ -1,3 +1,4 @@
+import { add } from "./add.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { string_includes } from "./string_includes.mjs";
 import { list_single } from "./list_single.mjs";
@@ -17,7 +18,6 @@ import { object_property_get } from "./object_property_get.mjs";
 import { assert } from "./assert.mjs";
 import { equal } from "./equal.mjs";
 import { list_length } from "./list_length.mjs";
-import { list_add } from "./list_add.mjs";
 export async function ceb_definition(word) {
   let url = string_combine_multiple([
     "https://www.binisaya.com/node/21?search=binisaya&word=",
@@ -37,7 +37,7 @@ export async function ceb_definition(word) {
   if (list_empty_not_is(filtered4)) {
     let f4_first = list_first(filtered4);
     let f4_first_index = list_index(q_children, f4_first);
-    let f4_first_index_a = list_add(f4_first_index, 3);
+    let f4_first_index_a = add(f4_first_index, 3);
     let f4_first_a = list_get(q_children, f4_first_index_a);
     assert(equal, [object_property_get(f4_first_index_a, "rawTagName"), "b"]);
     let f4_first_a_text = object_property_get(f4_first_a, "text");
