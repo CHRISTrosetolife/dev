@@ -1,3 +1,4 @@
+import { string_trim } from "./string_trim.mjs";
 import { string_skip } from "./string_skip.mjs";
 import { string_index } from "./string_index.mjs";
 import { string_split_space } from "./string_split_space.mjs";
@@ -18,7 +19,7 @@ export async function sandbox() {
   text = string_replace_multiple(text, replace_list, replacement);
   text = string_whitespace_normalize(text);
   text = string_case_lower(text);
-  text = string_trim(text)
+  text = string_trim(text);
   let text_split = string_split_space(text);
   return text_split;
 }
