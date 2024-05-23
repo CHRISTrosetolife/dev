@@ -1,5 +1,5 @@
 import { log } from "./log.mjs";
-export async function gcloud_tts(text,language_code) {
+export async function gcloud_tts(language_code,text) {
   const request = {
     input: {
       text: text,
