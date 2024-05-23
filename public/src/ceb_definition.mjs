@@ -1,4 +1,5 @@
-import { html_parse_a_href_starts_with_text } from "./html_parse_a_href_starts_with_text.mjs";
+import { list_map_property_text_trim } from "./list_map_property_text_trim.mjs";
+import { html_parse_a_href_starts_with } from "./html_parse_a_href_starts_with.mjs";
 import { html_cache_parse } from "./html_cache_parse.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_combine } from "./string_combine.mjs";
@@ -12,6 +13,7 @@ export async function ceb_definition(word) {
   let prefix = "http://www.binisaya.com/";
   let prefix_1 = string_combine(prefix, "cebuano/");
   let prefix_2 = string_combine(prefix, "english/");
-  let mapped3 = html_parse_a_href_starts_with_text(parsed, prefix_1);
+  let filtered = html_parse_a_href_starts_with(parsed, prefix_1);
+  let mapped3 = list_map_property_text_trim(filtered);
   return mapped3;
 }
