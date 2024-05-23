@@ -1,3 +1,4 @@
+import { greater_than_equal } from "./greater_than_equal.mjs";
 import { list_filter_property } from "./list_filter_property.mjs";
 import { list_map_index } from "./list_map_index.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
@@ -26,6 +27,7 @@ import { list_map } from "./list_map.mjs";
 import { http_cache } from "./http_cache.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { string_replace } from "./string_replace.mjs";
+import { string_index } from "./string_index.mjs";
 export async function ceb_definition(word) {
   let prefix = "http://www.binisaya.com/";
   let url = string_combine_multiple([
@@ -82,7 +84,11 @@ export async function ceb_definition(word) {
     let defs = html_parse_a_href_starts_with_text(right, prefix_2);
     list_add_multiple(definitions, defs);
   }
-  definitions = list_map(definitions, (d) => {});
+  definitions = list_map(definitions, (d) => {
+    const index = string_index(d, "[");
+    if (greater_than_equal(index, 0)) {
+    }
+  });
   for (let d of definitions) {
     let url = string_combine(prefix_2, d);
     url = string_replace(url, " ", "+");
