@@ -8,6 +8,9 @@ import { http_storage } from "./http_storage.mjs";
 import { ceb_group_path } from "./ceb_group_path.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_get } from "./list_get.mjs";
+import { html_p_text } from "./html_p_text.mjs";
+import { each } from "./each.mjs";
+import { html_style_bold } from "./html_style_bold.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -20,6 +23,9 @@ export async function app_ceb() {
     html_clear_scroll_top(root);
     let pair = list_get(copy, pair_index);
     let [cebuano, english] = pair;
+    let cebuano_p = html_p_text(root, cebuano);
+    let english_p = html_p_text(root, english);
+    each([cebuano_p, english_p], html_style_bold);
     html_buttons_next_previous(
       root,
       refresh_pair,
