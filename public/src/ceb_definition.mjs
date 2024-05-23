@@ -1,3 +1,4 @@
+import { equal_not } from "./equal_not.mjs";
 import { list_index } from "./list_index.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_map_property_text_trim } from "./list_map_property_text_trim.mjs";
@@ -23,6 +24,8 @@ export async function ceb_definition(word) {
   let index = list_index(mapped3, first);
   let index_at = list_get(filtered, index);
   let parent;
-  parent = object_property_get(index_at, "parentNode");
+  do {
+    parent = object_property_get(index_at, "parentNode");
+  } while (equal_not(object_property_get(rawTagName, "parentNode"), "tr"));
   return index_at;
 }
