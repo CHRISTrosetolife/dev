@@ -1,3 +1,4 @@
+import { string_replace } from "./string_replace.mjs";
 import { identity } from "./identity.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { list_join_empty } from "./list_join_empty.mjs";
@@ -10,5 +11,6 @@ export async function sandbox() {
   list_sort_string(symbols, identity);
   let joined = list_join_empty(symbols);
   let replace = "_,;:!?.'\"()¶/`^|0123456789";
+  let replaced = string_replace();
   return joined;
 }
