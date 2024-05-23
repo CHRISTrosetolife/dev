@@ -21,12 +21,15 @@ export async function sandbox() {
   let group = list_take(atoms, group_count);
   let atom = list_first(group);
   let mapped = list_map(atom, list_first);
+  let language_code = "fil-PH";
+  let voice = "Standard-A";
+  let text='sa'
+  const file_path = `audio/${language_code}/${string_encoded_to(text)}/${voice}.mp3`;
+  let output_path = path_join([folder_gitignore(), file_path]);
+  await gcloud_tts(language_code, voice, text, output_path)
   await each_async(mapped, async (m) => {
-    let language_code = "fil-PH-Standard-A";
-    const file_path = `audio/${string_encoded_to(m)}/${language_code}.mp3`;
-    let output_path = path_join([folder_gitignore(), file_path]);
     log(output_path);
-    let { created } = await gcloud_tts(language_code, m, output_path);
+    let { created } = await gcloud_tts(language_code, voice, m, output_path);
     if (created) {
       await storage_upload_file(output_path, file_path);
       log("uploaded");
