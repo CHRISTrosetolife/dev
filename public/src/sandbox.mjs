@@ -9,6 +9,7 @@ export async function sandbox() {
   each_index_async(words, async (word, index) => {
     await ceb_definition(word);
     log({
+      word,
       length,
       index,
     });
