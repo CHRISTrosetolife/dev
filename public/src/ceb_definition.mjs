@@ -1,3 +1,4 @@
+import { list_single } from "./list_single.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { html_parse_a_href_starts_with_text } from "./html_parse_a_href_starts_with_text.mjs";
 import { list_second } from "./list_second.mjs";
@@ -22,6 +23,7 @@ export async function ceb_definition(word) {
   ]);
   let parsed = await html_cache_parse(url);
   let q = parsed.querySelectorAll("form[name=form1]");
+  let q_single = list_single(q);
   return q;
   let prefix = "http://www.binisaya.com/";
   let prefix_1 = string_combine(prefix, "cebuano/");
