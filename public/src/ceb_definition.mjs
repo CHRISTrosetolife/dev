@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { add } from "./add.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { string_includes } from "./string_includes.mjs";
@@ -19,6 +18,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { assert } from "./assert.mjs";
 import { equal } from "./equal.mjs";
 import { list_length } from "./list_length.mjs";
+import { list_empty_is } from "./list_empty_is.mjs";
 export async function ceb_definition(word) {
   let url = string_combine_multiple([
     "https://www.binisaya.com/node/21?search=binisaya&word=",
@@ -41,10 +41,7 @@ export async function ceb_definition(word) {
     let f4_first_index_a = add(f4_first_index, 3);
     let f4_first_a = list_get(q_children, f4_first_index_a);
     let f4_first_a_text = object_property_get(f4_first_a, "text");
-    let f4_first_a_tag = object_property_get(
-        f4_first_a,
-      "rawTagName",
-    );
+    let f4_first_a_tag = object_property_get(f4_first_a, "rawTagName");
     assert(equal, [f4_first_a_tag, "b"]);
     word = f4_first_a_text;
   }
@@ -54,6 +51,8 @@ export async function ceb_definition(word) {
   let filtered = html_parse_a_href_starts_with(parsed, prefix_1);
   let mapped3 = list_map_property_text_trim(filtered);
   let filtered3 = list_filter(mapped3, (m) => equal(m, word));
+  if (list_empty_is(filtered3)) {
+  }
   let first = list_first(filtered3);
   let index = list_index(mapped3, first);
   let index_at = list_get(filtered, index);
@@ -65,5 +64,8 @@ export async function ceb_definition(word) {
   assert(equal, [list_length(childNodes), 2]);
   let right = list_second(childNodes);
   let definitions = html_parse_a_href_starts_with_text(right, prefix_2);
-  return {word,definitions};
+  return {
+    word,
+    definitions,
+  };
 }
