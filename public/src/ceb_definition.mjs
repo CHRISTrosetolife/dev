@@ -1,3 +1,4 @@
+import { list_map_index } from "./list_map_index.mjs";
 import { log } from "./log.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
 import { add } from "./add.mjs";
@@ -55,6 +56,12 @@ export async function ceb_definition(word) {
   let prefix_2 = string_combine(prefix, "english/");
   let a_href_lefts = html_parse_a_href_starts_with(parsed, prefix_1);
   let mapped3 = list_map_property_text_trim(a_href_lefts);
+  let mapped4 = list_map_index(mapped3, (m, index) => {
+    return {
+      text: m,
+      index,
+    };
+  });
   let matches = list_filter(mapped3, (m) => equal(m, word));
   if (list_empty_is(matches)) {
     matches = [list_first(mapped3)];
