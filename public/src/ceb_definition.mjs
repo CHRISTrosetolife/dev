@@ -45,6 +45,7 @@ import { list_includes } from "./list_includes.mjs";
 import { equal_not } from "./equal_not.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_set } from "./object_property_set.mjs";
+import { string_split_space } from "./string_split_space.mjs";
 export async function ceb_definition(word) {
   let known = {
     apan: ["but", "yet"],
@@ -175,6 +176,11 @@ export async function ceb_definition(word) {
       })
     ) {
       return false;
+    }
+    let split_d = string_split_space(d)
+    if (greater_than_equal(list_length(split_d),2)) {
+        log({skip_because:'contains spaces',d})
+        return false;
     }
     return true;
   });
