@@ -45,10 +45,6 @@ export async function ceb_definition(word) {
         f4_first_a,
       "rawTagName",
     );
-    log({
-      f4_first_index_a_tag: f4_first_a_tag,
-      f4_first_a_text,
-    });
     assert(equal, [f4_first_a_tag, "b"]);
     word = f4_first_a_text;
   }
