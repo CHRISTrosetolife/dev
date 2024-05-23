@@ -31,7 +31,7 @@ export async function app_ceb() {
     let cebuano_p = html_button_width_full_text_click(
       root,
       string_combine("🔊", cebuano),
-      noop,
+      ()=>{},
     );
     html_style_font_color(cebuano_p, "darkgreen");
     let english_p = html_p_text(root, english);

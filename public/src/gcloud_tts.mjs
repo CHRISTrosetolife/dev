@@ -22,9 +22,6 @@ export async function gcloud_tts(language_code, voice, text, output_path) {
       audioEncoding: "MP3",
     },
   };
-  log({
-    request,
-  });
   const [response] = await client.synthesizeSpeech(request);
   await file_overwrite_generic(output_path, response.audioContent, "binary");
   return {
