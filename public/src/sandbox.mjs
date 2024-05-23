@@ -57,6 +57,8 @@ export async function sandbox() {
       }
     }
   });
-  return;
-  return atoms;
+  return {
+    atoms,
+    c: list_length(atoms),
+  };
 }
