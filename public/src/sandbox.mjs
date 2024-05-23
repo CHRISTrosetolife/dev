@@ -18,6 +18,7 @@ export async function sandbox() {
   text = string_replace_multiple(text, replace_list, replacement);
   text = string_whitespace_normalize(text);
   text = string_case_lower(text);
+  text = string_trim(text)
   let text_split = string_split_space(text);
   return text_split;
 }
