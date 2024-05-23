@@ -34,5 +34,6 @@ export async function ceb_definition(word) {
   let { childNodes } = parent;
   assert(equal, [list_length(childNodes), 2]);
   let right = list_second(childNodes);
-  return parent;
+  let filtered2 = html_parse_a_href_starts_with_text_trim(right, prefix_2);
+  return filtered2;
 }
