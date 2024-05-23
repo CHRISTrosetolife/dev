@@ -25,7 +25,9 @@ export async function sandbox() {
   let text = "sa";
   let file_path = gcloud_audio_path(language_code, text, voice);
   let output_path = folder_gitignore_path(file_path);
-  await gcloud_tts(language_code, voice, text, output_path);
+  await storage_upload_file(output_path, file_path);
+  log("uploaded");
+  return;
   await each_async(mapped, async (m) => {
     let file_path = gcloud_audio_path(language_code, m, voice);
     let output_path = folder_gitignore_path(file_path);
