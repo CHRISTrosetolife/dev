@@ -20,6 +20,7 @@ export async function sandbox() {
     if (list_empty_not_is(definitions)) {
       object_property_set(lookup, word, definitions);
     }
-  });
+    log({word,definitions})
+  });return;
   return lookup;
 }
