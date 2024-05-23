@@ -95,10 +95,6 @@ export async function ceb_definition(word) {
     const index = string_index(d, "[");
     if (greater_than_equal(index, 0)) {
       const result = string_trim(string_take(d, index));
-      console.log({
-        d,
-        result,
-      });
       return result;
     }
     return d;
