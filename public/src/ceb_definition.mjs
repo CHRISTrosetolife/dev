@@ -24,7 +24,8 @@ import { list_map } from "./list_map.mjs";
 export async function ceb_definition(word) {
   let prefix = "http://www.binisaya.com/";
   let url = string_combine_multiple([
-    "https://www.binisaya.com/node/21?search=binisaya&word=",
+    prefix,
+    "node/21?search=binisaya&word=",
     word,
     "&Search=Search",
   ]);
