@@ -114,9 +114,9 @@ export async function ceb_definition(word) {
     );
     return list_includes(mapped6, word);
   });
-  definitions = list_filter(definitions, (d) =>
-    not(list_includes(definitions, string_replace(d, "s", "z"))),
-  );
+  definitions = list_filter(definitions, (d) => {
+    not(list_includes(definitions, string_replace(d, "s", "z")));
+  });
   return {
     word,
     definitions,
