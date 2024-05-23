@@ -9,8 +9,10 @@ import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { list_add } from "./list_add.mjs";
 export async function sandbox() {
   if (0) return await ceb_definition("kamo");
-  let t = await ceb_bible_words_top(75);
-  t = list_skip(t, 32);
+  let limit = 75;
+  let skip = 32;
+  let t = await ceb_bible_words_top(limit);
+  t = list_skip(t, skip);
   let existing = {};
   let result = [];
   await each_index_async(t, async (bible_word, index) => {
