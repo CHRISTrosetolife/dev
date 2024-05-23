@@ -1,3 +1,6 @@
+import { storage_url } from "./storage_url.mjs";
+import { html_audio } from "./html_audio.mjs";
+import { ceb_audio_path } from "./ceb_audio_path.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { html_style_font_color } from "./html_style_font_color.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
@@ -15,7 +18,6 @@ import { html_style_bold } from "./html_style_bold.mjs";
 import { html_style_centered } from "./html_style_centered.mjs";
 import { list_index_last } from "./list_index_last.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
-import { noop } from "./noop.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -28,10 +30,13 @@ export async function app_ceb() {
     html_clear_scroll_top(root);
     let pair = list_get(copy, pair_index);
     let [cebuano, english] = pair;
+    let file_path = ceb_audio_path(0, cebuano);
     let cebuano_p = html_button_width_full_text_click(
       root,
       string_combine("🔊", cebuano),
-      ()=>{html_audio(storage_url(file_path))},
+      () => {
+        html_audio(storage_url(file_path));
+      },
     );
     html_style_font_color(cebuano_p, "darkgreen");
     let english_p = html_p_text(root, english);
