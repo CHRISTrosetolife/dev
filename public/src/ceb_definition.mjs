@@ -1,3 +1,4 @@
+import { not } from "./not.mjs";
 import { list_filter_async } from "./list_filter_async.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 import { list_filter_starts_with } from "./list_filter_starts_with.mjs";
@@ -6,7 +7,6 @@ import { html_parse_tag } from "./html_parse_tag.mjs";
 import { html_parse_parent } from "./html_parse_parent.mjs";
 import { html_parse_tag_not } from "./html_parse_tag_not.mjs";
 import { ceb_form1 } from "./ceb_form1.mjs";
-import { log } from "./log.mjs";
 import { greater_than_equal } from "./greater_than_equal.mjs";
 import { list_filter_property } from "./list_filter_property.mjs";
 import { list_map_index } from "./list_map_index.mjs";
@@ -114,6 +114,9 @@ export async function ceb_definition(word) {
     );
     return list_includes(mapped6, word);
   });
+  definitions = list_filter(definitions, (d) =>
+    not(list_includes(definitions, string_replace(d, "s", "z"))),
+  );
   return {
     word,
     definitions,
