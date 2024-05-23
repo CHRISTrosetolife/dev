@@ -5,6 +5,7 @@ import { html_parse_a_href_starts_with } from "./html_parse_a_href_starts_with.m
 import { html_cache_parse } from "./html_cache_parse.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_combine } from "./string_combine.mjs";
+import { list_get } from "./list_get.mjs";
 export async function ceb_definition(word) {
   let url = string_combine_multiple([
     "https://www.binisaya.com/node/21?search=binisaya&word=",
@@ -19,5 +20,6 @@ export async function ceb_definition(word) {
   let mapped3 = list_map_property_text_trim(filtered);
   let first = list_first(mapped3);
   let index = list_index(mapped3, first);
+  let index_at =list_get(filtered,index)
   return index;
 }
