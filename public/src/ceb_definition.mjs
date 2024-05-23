@@ -11,8 +11,8 @@ export async function ceb_definition(word) {
   ]);
   let parsed = await html_cache_parse(url);
   let prefix = "http://www.binisaya.com/";
-  let prefix_2 = string_combine(prefix, "cebuano/");
-  let prefix_1 = string_combine(prefix, "english/");
+  let prefix_1 = string_combine(prefix, "cebuano/");
+  let prefix_2 = string_combine(prefix, "english/");
   let mapped3 = html_parse_a_href_starts_with(parsed, prefix);
   let u = list_unique(mapped3);
   return u;
