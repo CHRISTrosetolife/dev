@@ -1,3 +1,4 @@
+import { each_range } from "./each_range.mjs";
 import { ceb_bible_words_definitions } from "./ceb_bible_words_definitions.mjs";
 import { ceb_definition } from "./ceb_definition.mjs";
 import { each } from "./each.mjs";
@@ -16,5 +17,7 @@ export async function sandbox() {
       ),
     ),
   );
+  let lambda = () => {};
+  each_range(atom_count, lambda);
   return pairs;
 }
