@@ -11,6 +11,7 @@ import { list_map } from "./list_map.mjs";
 import { each_async } from "./each_async.mjs";
 import { log } from "./log.mjs";
 import { storage_upload_file } from "./storage_upload_file.mjs";
+import { each_index_async } from "./each_index_async.mjs";
 export async function sandbox() {
   if (0) return await ceb_definition("kamo");
   let limit = 75;
@@ -20,17 +21,19 @@ export async function sandbox() {
   let group = list_take(atoms, group_count);
   let atom = list_first(group);
   let mapped = list_map(atom, list_first);
-  let language_code = "fil-PH";
-  let voice = "Standard-A";
   await each_async(mapped, async (m) => {
-    let file_path = gcloud_audio_path(language_code, m, voice);
-    let output_path = folder_gitignore_path(file_path);
-    log(output_path);
-    let { created } = await gcloud_tts(language_code, voice, m, output_path);
-    if (created) {
-      await storage_upload_file(output_path, file_path);
-      log("uploaded");
-    }
+    let language_code = "fil-PH";
+    let voices = ["Standard-A"];
+    each_index_async(voices, async (voice, voice_index) => {
+      let file_path = gcloud_audio_path(language_code, m, voice);
+      let output_path = folder_gitignore_path(file_path);
+      log(output_path);
+      let { created } = await gcloud_tts(language_code, voice, m, output_path);
+      if (created) {
+        await storage_upload_file(output_path, file_path);
+        log("uploaded");
+      }
+    });
   });
   return mapped;
   let group_index = 0;
