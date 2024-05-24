@@ -43,6 +43,7 @@ import { html_style } from "./html_style.mjs";
 import { greater_than_equal } from "./greater_than_equal.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { list_adder } from "./list_adder.mjs";
+import { not } from "./not.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -136,7 +137,9 @@ export async function app_ceb() {
             html_style_display_none(button);
             if (last_is) {
               app_learn_code_style_success(answer_element);
-              await app_ceb_audio(cebuano);
+              if (not(forwards)) {
+                await app_ceb_audio(cebuano);
+              }
               let after = list_after(settings_choices, settings);
               refresh_quiz(after);
             }
