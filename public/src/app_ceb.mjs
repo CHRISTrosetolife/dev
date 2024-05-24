@@ -117,7 +117,8 @@ export async function app_ceb() {
       });
     }
     app_ceb_learn();
-    html_button_width_full_text_click_next(root, () => {
+    html_button_width_full_text_click_next(root, app_ceb_next);
+    function app_ceb_next() {
       let { left, right } = position;
       let n = add_1(subtract(right, left));
       let count = integer_log(n, level_size);
@@ -135,7 +136,7 @@ export async function app_ceb() {
         };
       }
       refresh_node();
-    });
+    }
     html_button_width_full_text_click(root, "⬆️ up", () => {
       let { left, right } = position;
     });
