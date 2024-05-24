@@ -1,12 +1,10 @@
+import { app_ceb_word_button } from "./app_ceb_word_button.mjs";
 import { ceiling } from "./ceiling.mjs";
 import { number_min } from "./number_min.mjs";
 import { log } from "./log.mjs";
 import { range } from "./range.mjs";
 import { storage_url } from "./storage_url.mjs";
 import { html_audio } from "./html_audio.mjs";
-import { ceb_audio_path } from "./ceb_audio_path.mjs";
-import { string_combine } from "./string_combine.mjs";
-import { html_style_font_color } from "./html_style_font_color.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { html_buttons_next_previous } from "./html_buttons_next_previous.mjs";
@@ -21,7 +19,6 @@ import { each } from "./each.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { html_style_centered } from "./html_style_centered.mjs";
 import { list_index_last } from "./list_index_last.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { divide } from "./divide.mjs";
 import { multiply } from "./multiply.mjs";
 import { string_take } from "./string_take.mjs";
@@ -55,15 +52,7 @@ export async function app_ceb() {
     html_clear_scroll_top(root);
     let pair = list_get(copy, pair_index);
     let [cebuano, english] = pair;
-    let cebuano_p = html_button_width_full_text_click(
-      root,
-      string_combine("👂", cebuano),
-      async () => {
-        let file_path = ceb_audio_path(0, cebuano);
-        return await html_audio(storage_url(file_path));
-      },
-    );
-    html_style_font_color(cebuano_p, "darkgreen");
+    let cebuano_p = app_ceb_word_button(root, cebuano);
     let english_p = html_p_text(root, english);
     each([html_style_bold, html_style_centered], (style) =>
       each([cebuano_p, english_p], style),
