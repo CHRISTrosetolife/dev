@@ -1,7 +1,6 @@
+import { app_learn_code_correct_timeout } from "./app_learn_code_correct_timeout.mjs";
 import { html_style_click_width_min } from "./html_style_click_width_min.mjs";
 import { log } from "./log.mjs";
-import { app_learn_code_ms_correct } from "./app_learn_code_ms_correct.mjs";
-import { timeout_set } from "./timeout_set.mjs";
 import { app_learn_code_background_color_correct_dark } from "./app_learn_code_background_color_correct_dark.mjs";
 import { app_learn_code_index_of_tokens } from "./app_learn_code_index_of_tokens.mjs";
 import { html_style_hidden } from "./html_style_hidden.mjs";
@@ -145,13 +144,8 @@ export function app_learn_code_unscramble(source_get) {
             html_style_background_color(p, app_learn_code_code_background());
           }
           app_learn_code_background_color_correct_dark(part);
-          timeout_set(
-            () =>
-              html_style_background_color(
-                part,
-                app_learn_code_code_background(),
-              ),
-            app_learn_code_ms_correct(),
+          app_learn_code_correct_timeout(() =>
+            html_style_background_color(part, app_learn_code_code_background()),
           );
           if (list_includes_not(remaining, current)) {
             html_style(part, {

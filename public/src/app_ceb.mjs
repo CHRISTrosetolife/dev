@@ -57,6 +57,7 @@ export async function app_ceb() {
             answer,
             string_combine(string_take(english, index), last),
           );
+          app_learn_code_style_success(button)
           html_style_display_none(button);
         }
       });
