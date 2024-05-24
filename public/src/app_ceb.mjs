@@ -132,7 +132,6 @@ export async function app_ceb() {
         level,
       });
       if (mod_last_is(right, level)) {
-        let a = or(a);
         if (or(equal_0(left), equal_1(level))) {
           log("here1");
           const r1 = add_1(right);
