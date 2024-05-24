@@ -68,6 +68,7 @@ import { app_ceb_word_style } from "./app_ceb_word_style.mjs";
 import { list_index } from "./list_index.mjs";
 import { subtract } from "./subtract.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
+import { divide } from "./divide.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -84,7 +85,7 @@ export async function app_ceb() {
     html_clear_scroll_top(root);
     each_range(level_size, (i) => {
       let { left, right } = position;
-      subtract(right, left);
+      divide(add_1(subtract(right, left)), 2);
       let atom_i = list_get(group, i);
       let mapped = list_map_nested(atom_i, string_delimit_backtick);
       let position_text = string_combine_multiple([
