@@ -279,10 +279,6 @@ export async function app_ceb() {
     html_clear_scroll_top_centered(root);
     let atoms = atoms_slice();
     let concat = list_concat_multiple(atoms);
-    log({
-      concat,
-      atoms,
-    });
     let pair = list_get(concat, pair_index);
     let [cebuano, english] = pair;
     app_ceb_word_button(root, cebuano);
@@ -297,7 +293,7 @@ export async function app_ceb() {
         }
       },
       pair_index,
-      list_length(atom),
+      list_length(concat),
     );
   }
   function quizzes_start(chunk_sizes) {
