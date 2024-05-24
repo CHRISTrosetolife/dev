@@ -1,3 +1,4 @@
+import { html_style_default_border_margin } from "./html_style_default_border_margin.mjs";
 import { app_learn_code_correct_timeout } from "./app_learn_code_correct_timeout.mjs";
 import { app_learn_code_style_success } from "./app_learn_code_style_success.mjs";
 import { html_style_display_none } from "./html_style_display_none.mjs";
@@ -41,6 +42,10 @@ export async function app_ceb() {
     let [cebuano, english] = pair;
     let cebuano_p = app_ceb_word_button(root, cebuano);
     let answer = html_p_text(root, "?");
+    let {
+      element: { style },
+    } = answer;
+    html_style_default_border_margin(style);
     let index = 0;
     log({
       english,
