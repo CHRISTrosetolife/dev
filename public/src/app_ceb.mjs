@@ -84,7 +84,11 @@ export async function app_ceb() {
     let pairs_other = list_copy(atom);
     list_remove(pairs_other, pair);
     let [cebuano, english] = pair;
-    let cebuano_p = app_ceb_word_button(root, cebuano);
+    if (forwards) {
+        app_ceb_word_button(root, cebuano);
+    } else {
+        
+    }
     let answer = html_p_text(root, "?");
     let style = html_element_style(answer);
     html_style_default_border_margin(style);
