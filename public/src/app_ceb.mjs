@@ -140,7 +140,7 @@ export async function app_ceb() {
           };
         } else {
           position = {
-            left,
+            left: add_1(subtract(right, level)),
             right: right,
           };
         }
