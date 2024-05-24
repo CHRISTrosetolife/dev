@@ -293,7 +293,8 @@ export async function app_ceb() {
     );
   }
   function quizzes_start(chunk_sizes) {
-    settings_choices = app_ceb_quiz_settings(atom, chunk_sizes);
+    let { left, right } = position;
+    settings_choices = app_ceb_quiz_settings([atom], chunk_sizes);
     refresh_quiz(list_first(settings_choices));
   }
 }
