@@ -1,4 +1,3 @@
-import { ceb_group_size } from "./ceb_group_size.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each_range } from "./each_range.mjs";
 import { html_style_button_default } from "./html_style_button_default.mjs";
@@ -58,18 +57,24 @@ import { equal_1 } from "./equal_1.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_adder } from "./list_adder.mjs";
+import { list_join } from "./list_join.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
   let group = await http_storage(ceb_group_path(group_index));
-  let atom = list_get(group, 1);
   let settings_choices;
   function refresh_group() {
     each_range(2, (i) => {
-      let m = multiply(i, ceb_group_size());
+      let atom = list_get(group, i);
+      let f = list_first(atom);
       html_button_width_full_text_click(
         root,
-        string_combine_multiple(["words ", , "-"]),
+        string_combine_multiple([
+          "words ",
+          list_join(f, " : "),
+          " through ",
+          add_1(index_low),
+        ]),
       );
     });
   }
