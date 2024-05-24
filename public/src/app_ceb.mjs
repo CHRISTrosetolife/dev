@@ -30,6 +30,8 @@ import { string_take } from "./string_take.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { string_length } from "./string_length.mjs";
 import { list_remove } from "./list_remove.mjs";
+import { list_second } from "./list_second.mjs";
+import { list_add_multiple } from "./list_add_multiple.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -54,7 +56,10 @@ export async function app_ceb() {
     let split_size = 1;
     let correct_choices = string_chunk(english, split_size);
     let pair_other = list_random_item(pairs_other);
+    let english_other = list_second(pair_other);
+    let other_choices = string_chunk(english_other, split_size);
     let choices = list_copy(correct_choices);
+    list_add_multiple(choices, other_choices);
     list_scramble(choices);
     each(choices, (choice) => {
       let button = html_button_text_click(root, choice, () => {
