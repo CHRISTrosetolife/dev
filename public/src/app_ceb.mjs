@@ -126,11 +126,13 @@ export async function app_ceb() {
       let n = add_1(subtract(right, left));
       let count = integer_log(n, level_size);
       let level = number_power(level_size, add_1(count));
+      let promote = false;
       if (mod_last_is(right, level) && equal_not(left, 0)) {
         position = {
           left: add_1(subtract(right, level)),
           right: right,
         };
+        promote = true;
       } else {
         const r1 = add_1(right);
         position = {
@@ -138,10 +140,17 @@ export async function app_ceb() {
           right: r1,
         };
       }
+      return {
+        promote,
+      };
     }
     html_button_width_full_text_click(root, "⬆️ up", () => {
-      let { left, right } = position;
-      app_ceb_next();
+      let p;
+      do {
+        let { promote } = app_ceb_next();
+        p = promote;
+      } while (!p);
+      refresh_node();
     });
   }
   function app_ceb_learn() {
