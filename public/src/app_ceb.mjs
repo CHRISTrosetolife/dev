@@ -1,3 +1,4 @@
+import { object_copy } from "./object_copy.mjs";
 import { list_last } from "./list_last.mjs";
 import { html_style_display_block } from "./html_style_display_block.mjs";
 import { greater_than } from "./greater_than.mjs";
@@ -50,6 +51,7 @@ import { not } from "./not.mjs";
 import { list_length } from "./list_length.mjs";
 import { equal_1 } from "./equal_1.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
+import { list_add } from "./list_add.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -158,6 +160,8 @@ export async function app_ceb() {
               }
             }
           });
+        } else {
+          list_add(settings_choices, object_copy(settings));
         }
       });
       html_style_click_width_min(button);
