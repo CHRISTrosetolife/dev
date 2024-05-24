@@ -162,7 +162,7 @@ export async function app_ceb() {
       root,
       (pair_index) => {
         if (greater_than(pair_index, list_index_last(atom))) {
-          quizzes_start();
+          refresh_splash();
         } else {
           refresh_pair(pair_index);
         }
