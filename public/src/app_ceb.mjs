@@ -49,11 +49,11 @@ export async function app_ceb() {
   let atom = list_first(group);
   let atom_copy;
   let settings = list_adder((la) =>
-    each([true, false], (forwards) => {
+    each([true, false], (forwards) =>
       la({
         forwards,
-      });
-    }),
+      }),
+    ),
   );
   function refresh_splash() {
     html_clear_scroll_top(root);
