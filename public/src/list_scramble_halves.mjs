@@ -9,4 +9,5 @@ export function list_scramble_halves(list) {
   let mid = floor(divide(high, 2));
   list_scramble_from(low, mid, list);
   list_scramble_from(add_1(mid), high, list);
+  return list;
 }
