@@ -85,9 +85,8 @@ export async function app_ceb() {
     list_remove(pairs_other, pair);
     let [cebuano, english] = pair;
     if (forwards) {
-        app_ceb_word_button(root, cebuano);
+      app_ceb_word_button(root, cebuano);
     } else {
-        
     }
     let answer = html_p_text(root, "?");
     let style = html_element_style(answer);
@@ -154,7 +153,7 @@ export async function app_ceb() {
     let [cebuano, english] = pair;
     let cebuano_p = app_ceb_word_button(root, cebuano);
     let english_p = html_p_text(root, english);
-    each([cebuano_p, english_p], html_style_bold);
+    html_style_bold(english_p);
     html_buttons_next_previous(
       root,
       refresh_pair,
