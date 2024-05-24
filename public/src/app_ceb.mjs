@@ -70,7 +70,8 @@ export async function app_ceb() {
       html_button_width_full_text_click(
         root,
         string_combine_multiple([
-          "words ",
+          add_1(i),
+          ". words ",
           list_join_colon_spaces(f),
           " through ",
           list_join_colon_spaces(list_last(atom)),
