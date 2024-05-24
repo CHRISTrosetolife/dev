@@ -1,7 +1,6 @@
 import { mod_last_is } from "./mod_last_is.mjs";
 import { list_map_nested } from "./list_map_nested.mjs";
 import { html_button_width_full_text_click_next } from "./html_button_width_full_text_click_next.mjs";
-import { add } from "./add.mjs";
 import { noop } from "./noop.mjs";
 import { html_button_width_full_text_click_alternate_short } from "./html_button_width_full_text_click_alternate_short.mjs";
 import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
@@ -84,7 +83,7 @@ export async function app_ceb() {
   function refresh_group() {
     html_clear_scroll_top(root);
     each_range(level_size, (i) => {
-      let atom_i = list_get(group, add(i, index_min));
+      let atom_i = list_get(group, i);
       let mapped = list_map_nested(atom_i, string_delimit_backtick);
       let position_text = string_combine_multiple([
         "words ",
