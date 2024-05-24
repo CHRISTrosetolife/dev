@@ -85,7 +85,7 @@ export async function app_ceb() {
     html_clear_scroll_top(root);
     each_range(level_size, (i) => {
       let { left, right } = position;
-      divide(add_1(subtract(right, left)), 2);
+      divide(add_1(subtract(right, left)), level_size);
       let atom_i = list_get(group, i);
       let mapped = list_map_nested(atom_i, string_delimit_backtick);
       let position_text = string_combine_multiple([
