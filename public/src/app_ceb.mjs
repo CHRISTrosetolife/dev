@@ -1,3 +1,4 @@
+import { number_is } from "./number_is.mjs";
 import { list_random_item } from "./list_random_item.mjs";
 import { html_element_style } from "./html_element_style.mjs";
 import { html_style_width_full } from "./html_style_width_full.mjs";
@@ -33,6 +34,7 @@ import { list_remove } from "./list_remove.mjs";
 import { list_second } from "./list_second.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
+import { assert } from "./assert.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -42,6 +44,7 @@ export async function app_ceb() {
   list_scramble(atom_copy);
   refresh_quiz(0);
   function refresh_quiz(pair_index, chunk_size) {
+    assert(number_is, [chunk_size]);
     html_clear_scroll_top(root);
     html_style_centered(root);
     let pair = list_get(atom_copy, pair_index);
