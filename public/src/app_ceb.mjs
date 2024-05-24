@@ -142,8 +142,11 @@ export async function app_ceb() {
     });
   }
   function app_ceb_title() {
-    let atom = app_ceb_atom_get();
-    let text = app_ceb_atom_title(atom, atom);
+    let { left, right } = position;
+    let text = app_ceb_atom_title(
+      list_get(group, left),
+      list_get(group, right),
+    );
     html_style_alternate_short_p(root, app_ceb_atom_title_patterns(), text);
   }
   function app_ceb_atom_get() {
