@@ -1,3 +1,4 @@
+import { html_style_visible } from "./html_style_visible.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_style_hidden } from "./html_style_hidden.mjs";
 import { list_without } from "./list_without.mjs";
@@ -94,11 +95,14 @@ export async function app_ceb() {
       answer = cebuano;
       answer_other_get = list_second;
     }
-    let button_read = html_button_text_click(root, "ready", () =>
-      html_style_hidden(button_read),
-    );
+    let quiz_container = html_div(root);
+    html_style_hidden(quiz_container);
+    let button_read = html_button_text_click(root, "ready", () => {
+      html_style_hidden(button_read);
+      html_style_visible(quiz_container);
+    });
     let answer_other = answer_other_get(pair_other);
-    let answer_element = html_p_text(root, "?");
+    let answer_element = html_p_text(quiz_container, "?");
     let style = html_element_style(answer_element);
     html_style_default_border_margin(style);
     html_style_width_full(answer_element);
@@ -111,9 +115,8 @@ export async function app_ceb() {
     let choices = list_copy(correct_choices);
     list_add_multiple(choices, other_choices);
     list_scramble(choices);
-    let quiz_container = html_div(root);
     each(choices, (choice) => {
-      let button = html_button_text_click(root, choice, () => {
+      let button = html_button_text_click(quiz_container, choice, () => {
         let correct = list_get(correct_choices, index);
         if (equal(choice, correct)) {
           index = add_1(index);
