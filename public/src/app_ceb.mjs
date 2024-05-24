@@ -8,7 +8,6 @@ import { html_style_click_width_min } from "./html_style_click_width_min.mjs";
 import { html_button_text_click } from "./html_button_text_click.mjs";
 import { string_chunk } from "./string_chunk.mjs";
 import { app_ceb_word_button } from "./app_ceb_word_button.mjs";
-import { log } from "./log.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { html_buttons_next_previous } from "./html_buttons_next_previous.mjs";
@@ -48,9 +47,6 @@ export async function app_ceb() {
     html_style_default_border_margin(style);
     html_style_width_full(answer);
     let index = 0;
-    log({
-      english,
-    });
     let split_size = 1;
     let correct_choices = string_chunk(english, split_size);
     let choices = list_copy(correct_choices);
@@ -70,7 +66,13 @@ export async function app_ceb() {
             app_learn_code_style_success(answer);
           }
           app_learn_code_style_success(button);
-          app_learn_code_correct_timeout(() => html_style_display_none(button));
+          app_learn_code_correct_timeout(() => {
+            html_style_display_none(button);
+            if (last_is) {
+              app_learn_code_style_success(answer);
+              refresh_quiz(add_1(pair_index));
+            }
+          });
         }
       });
       html_style_click_width_min(button);
