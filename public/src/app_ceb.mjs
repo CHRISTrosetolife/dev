@@ -1,3 +1,4 @@
+import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { html_style_alternate_short_p } from "./html_style_alternate_short_p.mjs";
 import { app_ceb_atom_title_patterns } from "./app_ceb_atom_title_patterns.mjs";
 import { app_ceb_atom_title } from "./app_ceb_atom_title.mjs";
@@ -32,7 +33,6 @@ import { html_style_click_width_min } from "./html_style_click_width_min.mjs";
 import { html_button_text_click } from "./html_button_text_click.mjs";
 import { string_chunk } from "./string_chunk.mjs";
 import { app_ceb_word_button } from "./app_ceb_word_button.mjs";
-import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { html_buttons_next_previous } from "./html_buttons_next_previous.mjs";
 import { list_scramble } from "./list_scramble.mjs";
@@ -43,7 +43,6 @@ import { list_first } from "./list_first.mjs";
 import { list_get } from "./list_get.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { each } from "./each.mjs";
-import { html_style_centered } from "./html_style_centered.mjs";
 import { list_index_last } from "./list_index_last.mjs";
 import { equal } from "./equal.mjs";
 import { add_1 } from "./add_1.mjs";
@@ -82,7 +81,7 @@ export async function app_ceb() {
   };
   refresh_group();
   function refresh_group() {
-    html_clear_scroll_top(root);
+    html_clear_scroll_top_centered(root);
     each_range(level_size, (i) => {
       let { left, right } = position;
       let factor = divide(add_1(subtract(right, left)), level_size);
@@ -100,7 +99,7 @@ export async function app_ceb() {
     });
   }
   function refresh_node() {
-    html_clear_scroll_top(root);
+    html_clear_scroll_top_centered(root);
     let text = app_ceb_atom_title(atom);
     html_style_alternate_short_p(root, app_ceb_atom_title_patterns(), text);
     html_button_width_full_text_click(root, "🎓 learn", () => {
@@ -127,11 +126,10 @@ export async function app_ceb() {
     });
   }
   function refresh_quiz(settings) {
-    html_clear_scroll_top(root);
+    html_clear_scroll_top_centered(root);
     let no_mistakes = true;
     let { pair, chunk_size, forwards } = settings;
     assert(number_is, [chunk_size]);
-    html_style_centered(root);
     let pairs_other = list_without(atom, pair);
     let [cebuano, english] = pair;
     let answer;
@@ -234,8 +232,7 @@ export async function app_ceb() {
     });
   }
   async function refresh_pair(pair_index) {
-    html_clear_scroll_top(root);
-    html_style_centered(root);
+    html_clear_scroll_top_centered(root);
     let pair = list_get(atom, pair_index);
     let [cebuano, english] = pair;
     app_ceb_word_button(root, cebuano);
