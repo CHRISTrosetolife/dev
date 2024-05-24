@@ -61,8 +61,11 @@ export async function app_ceb() {
     html_button_width_full_text_click(root, "🎓learn", () => {
       refresh_pair(0);
     });
-    html_button_width_full_text_click(root, "📝quiz", () => {
-      quizzes_start();
+    html_button_width_full_text_click(root, "📝quiz ( easy to hard )", () => {
+      quizzes_start([3,2,1]);
+    });
+    html_button_width_full_text_click(root, "🧑‍🎓️quiz ( hard only )", () => {
+      quizzes_start([1]);
     });
   }
   function refresh_quiz(settings) {
@@ -171,8 +174,8 @@ export async function app_ceb() {
       list_length(atom),
     );
   }
-  function quizzes_start() {
-    settings_choices = app_ceb_quiz_settings(atom);
+  function quizzes_start(chunk_sizes) {
+    settings_choices = app_ceb_quiz_settings(atom, chunk_sizes);
     refresh_quiz(list_first(settings_choices));
   }
 }
