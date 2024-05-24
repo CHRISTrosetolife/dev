@@ -1,6 +1,4 @@
-import { app_ceb_word_style } from "./app_ceb_word_style.mjs";
-import { noop } from "./noop.mjs";
-import { html_style_alternate_short_span } from "./html_style_alternate_short_span.mjs";
+import { html_button_width_full_text_click_alternate_short } from "./html_button_width_full_text_click_alternate_short.mjs";
 import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_join_colon_spaces } from "./list_join_colon_spaces.mjs";
@@ -73,17 +71,26 @@ export async function app_ceb() {
       let atom = list_get(group, i);
       let mapped = list_map(atom, string_delimit_backtick);
       let f = list_first(mapped);
-      let button = html_button_width_full_text_click(root, "");
-      html_style_alternate_short_span(
-        button,
-        [noop, app_ceb_word_style, noop, html_style_bold],
-        string_combine_multiple([
-          add_1(i),
-          ". ",
-          list_join_colon_spaces(f),
-          " - ",
-          list_join_colon_spaces(list_last(mapped)),
-        ]),
+      let patterns = string_combine_multiple([
+        add_1(i),
+        ". ",
+        list_join_colon_spaces(f),
+        " - ",
+        list_join_colon_spaces(list_last(mapped)),
+      ]);
+      let message = string_combine_multiple([
+        add_1(i),
+        ". ",
+        list_join_colon_spaces(f),
+        " - ",
+        list_join_colon_spaces(list_last(mapped)),
+      ]);
+      function on_click() {}
+      html_button_width_full_text_click_alternate_short(
+        root,
+        on_click,
+        patterns,
+        message,
       );
     });
   }
