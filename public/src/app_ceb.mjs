@@ -17,6 +17,7 @@ import { each } from "./each.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { html_style_centered } from "./html_style_centered.mjs";
 import { list_index_last } from "./list_index_last.mjs";
+import { html_span_text } from "./html_span_text.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -35,6 +36,10 @@ export async function app_ceb() {
     });
     let split_size = 1;
     let correct_choices = string_chunk(english, split_size);
+    each(correct_choices,choice=>{
+        html_span_text(root, choice);
+        app_learn_code_style_rounded_padded(code);
+    })
   }
   async function refresh_pair(pair_index) {
     html_clear_scroll_top(root);
