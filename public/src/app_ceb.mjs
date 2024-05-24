@@ -98,7 +98,7 @@ export async function app_ceb() {
         let left_next = add(left, m);
         let right_next = add(left, s);
         let atom_left = list_get(group, left_next);
-        let atom_right = list_get(group, right_next);
+        let atom_right = list_get_or_last(group, right_next);
         log({
           left_next,
           right_next,
