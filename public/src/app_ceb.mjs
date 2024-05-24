@@ -49,7 +49,6 @@ export async function app_ceb() {
     } = answer;
     html_style_default_border_margin(style);
     html_style_width_full(answer);
-    html_style
     let index = 0;
     log({
       english,
