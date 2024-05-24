@@ -122,13 +122,6 @@ export async function app_ceb() {
       let n = add_1(subtract(right, left));
       let count = integer_log(n, level_size);
       let level = number_power(level_size, add_1(count));
-      log({
-        left,
-        right,
-        n,
-        count,
-        level,
-      });
       if (mod_last_is(right, level) && equal_not(left, 0)) {
         position = {
           left: add_1(subtract(right, level)),
@@ -143,7 +136,9 @@ export async function app_ceb() {
       }
       refresh_node();
     });
-    html_button_width_full_text_click(root, "⬆️ up", () => {});
+    html_button_width_full_text_click(root, "⬆️ up", () => {
+      let { left, right } = position;
+    });
   }
   function app_ceb_learn() {
     html_button_width_full_text_click(root, "🎓 learn", () => {
