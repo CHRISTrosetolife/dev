@@ -156,6 +156,8 @@ export async function app_ceb() {
                 app_learn_code_style_success(answer_element);
                 if (not(forwards)) {
                   await app_ceb_audio(cebuano);
+                } else {
+                  await app_ceb_audio(cebuano);
                 }
                 if (equal(settings, list_last(settings_choices))) {
                   refresh_splash();
