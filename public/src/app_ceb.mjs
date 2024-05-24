@@ -1,3 +1,4 @@
+import { counter } from "./counter.mjs";
 import { equal_0 } from "./equal_0.mjs";
 import { equal_not } from "./equal_not.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
@@ -125,11 +126,14 @@ export async function app_ceb() {
     html_button_width_full_text_click_next(root, () => {
       let { left, right } = position;
       let n = add_1(subtract(right, left));
-      while (greater_than(n, 1)) {
-        let m = mod(n, level_size);
-        assert(equal_0, [m]);
-        n = divide(n, level_size);
-      }
+      let count = counter((c) => {
+        while (greater_than(n, 1)) {
+          let m = mod(n, level_size);
+          assert(equal_0, [m]);
+          n = divide(n, level_size);
+          c();
+        }
+      });
       let atom = app_ceb_atom_get();
       let index = list_index(group, atom);
       if (mod_last_is(index, level_size)) {
