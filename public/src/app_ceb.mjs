@@ -23,13 +23,13 @@ export async function app_ceb() {
   let group_index = 0;
   let group = await http_storage(ceb_group_path(group_index));
   let atom = list_first(group);
-  let copy = list_copy(atom);
-  list_scramble(copy);
+  let atom_copy = list_copy(atom);
+  list_scramble(atom_copy);
   refresh_quiz(0);
   function refresh_quiz(pair_index) {
     html_clear_scroll_top(root);
     html_style_centered(root);
-    let pair = list_get(copy, pair_index);
+    let pair = list_get(atom_copy, pair_index);
     let [cebuano, english] = pair;
     let cebuano_p = app_ceb_word_button(root, cebuano);
     let answer = html_p_text(root, "?");
@@ -38,9 +38,9 @@ export async function app_ceb() {
     });
     let split_size = 1;
     let correct_choices = string_chunk(english, split_size);
-    let copy = list_copy(correct_choices);
-    list_scramble(copy);
-    each(copy, (choice) => {
+    let choices = list_copy(correct_choices);
+    list_scramble(choices);
+    each(choices, (choice) => {
       let button = html_button_text_click(root, choice, noop);
       html_style_click_width_min(button);
     });
@@ -48,7 +48,7 @@ export async function app_ceb() {
   async function refresh_pair(pair_index) {
     html_clear_scroll_top(root);
     html_style_centered(root);
-    let pair = list_get(copy, pair_index);
+    let pair = list_get(atom_copy, pair_index);
     let [cebuano, english] = pair;
     let cebuano_p = app_ceb_word_button(root, cebuano);
     let english_p = html_p_text(root, english);
@@ -57,7 +57,7 @@ export async function app_ceb() {
       root,
       refresh_pair,
       pair_index,
-      list_index_last(copy),
+      list_index_last(atom_copy),
     );
   }
 }
