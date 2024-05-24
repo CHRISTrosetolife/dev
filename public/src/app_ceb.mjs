@@ -81,6 +81,7 @@ export async function app_ceb() {
   refresh_group();
   function refresh_group() {
     html_clear_scroll_top_centered(root);
+    app_ceb_title();
     each_range(level_size, (i) => {
       let { left, right } = position;
       let factor = divide(add_1(subtract(right, left)), level_size);
@@ -104,11 +105,12 @@ export async function app_ceb() {
         },
       );
     });
+    app_ceb_learn();
   }
   function refresh_node() {
     html_clear_scroll_top_centered(root);
     app_ceb_title();
-    app_ceb_learn(root, refresh_pair, quizzes_start);
+    app_ceb_learn();
     html_button_width_full_text_click_next(root, () => {
       let atom = app_ceb_atom_get();
       let index = list_index(group, atom);
@@ -126,6 +128,17 @@ export async function app_ceb() {
         };
         refresh_node();
       }
+    });
+  }
+  function app_ceb_learn() {
+    html_button_width_full_text_click(root, "🎓 learn", () => {
+      refresh_pair(0);
+    });
+    html_button_width_full_text_click(root, "📝 quiz ( easy to hard )", () => {
+      quizzes_start([3, 2, 1]);
+    });
+    html_button_width_full_text_click(root, "🧑‍🎓️ quiz ( hard only )", () => {
+      quizzes_start([1]);
     });
   }
   function app_ceb_title() {
@@ -267,16 +280,5 @@ export async function app_ceb() {
   function quizzes_start(chunk_sizes) {
     settings_choices = app_ceb_quiz_settings(atom, chunk_sizes);
     refresh_quiz(list_first(settings_choices));
-  }
-  function app_ceb_learn(root, quizzes_start) {
-    html_button_width_full_text_click(root, "🎓 learn", () => {
-      refresh_pair(0);
-    });
-    html_button_width_full_text_click(root, "📝 quiz ( easy to hard )", () => {
-      quizzes_start([3, 2, 1]);
-    });
-    html_button_width_full_text_click(root, "🧑‍🎓️ quiz ( hard only )", () => {
-      quizzes_start([1]);
-    });
   }
 }
