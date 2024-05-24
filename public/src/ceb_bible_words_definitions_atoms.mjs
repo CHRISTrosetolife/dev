@@ -26,10 +26,15 @@ export async function ceb_bible_words_definitions_atoms(skip, limit) {
         }
         let next;
         for (let p of pairs) {
-            for (let eq of [list_first,list_second]){
-          if (list_any(atom_result, (a) => equal_by(a, p, eq))) {
+          let c = false;
+          for (let eq of [list_first, list_second]) {
+            if (list_any(atom_result, (a) => equal_by(a, p, eq))) {
+              c = true;
+            }
+          }
+          if (c) {
             continue;
-          }}
+          }
           next = p;
           break;
         }
