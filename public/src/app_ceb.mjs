@@ -61,7 +61,6 @@ import { number_min } from "./number_min.mjs";
 import { html_style } from "./html_style.mjs";
 import { greater_than_equal } from "./greater_than_equal.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
-import { not } from "./not.mjs";
 import { list_length } from "./list_length.mjs";
 import { equal_1 } from "./equal_1.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
@@ -249,11 +248,7 @@ export async function app_ceb() {
               html_style_display_none(button);
               if (last_is) {
                 app_learn_code_style_success(answer_element);
-                if (not(forwards)) {
-                  await app_ceb_audio(cebuano);
-                } else {
-                  await app_ceb_audio(cebuano);
-                }
+                await app_ceb_audio(cebuano);
                 if (equal(settings, list_last(settings_choices))) {
                   refresh_node();
                 } else {
