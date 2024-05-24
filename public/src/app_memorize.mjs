@@ -1,3 +1,6 @@
+import { log } from "./log.mjs";
+import { html_style_wrong } from "./html_style_wrong.mjs";
+import { html_style_margin_default } from "./html_style_margin_default.mjs";
 import { html_style_button_default } from "./html_style_button_default.mjs";
 import { keyboard_keys_rows } from "./keyboard_keys_rows.mjs";
 import { html_hash } from "./html_hash.mjs";
@@ -338,10 +341,7 @@ export async function app_memorize() {
       html_style_visible(previous_token_element);
       html_style_font_color(previous_token_element, "red");
       let keyboard_button = object_property_get(keyboard_buttons, k);
-      html_style(keyboard_button, {
-        "border-color": "red",
-      });
-      html_style_background_color(keyboard_button, "salmon");
+      html_style_wrong(keyboard_button);
       list_add(errored_keys, keyboard_button);
     }
   }
@@ -351,9 +351,4 @@ export async function app_memorize() {
   function number_to_dvw(value) {
     return string_combine(string_to(value), "dvw");
   }
-}
-function html_style_margin_default(b) {
-  html_style(b, {
-    margin: "0.25dvh",
-  });
 }

@@ -162,6 +162,7 @@ export async function app_ceb() {
           });
         } else {
           list_add(settings_choices, object_copy_shallow(settings));
+          button
         }
       });
       html_style_click_width_min(button);
