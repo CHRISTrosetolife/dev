@@ -59,13 +59,13 @@ export async function app_ceb() {
   refresh_splash();
   function refresh_splash() {
     html_clear_scroll_top(root);
-    html_button_width_full_text_click(root, "🎓learn", () => {
+    html_button_width_full_text_click(root, "🎓 learn", () => {
       refresh_pair(0);
     });
-    html_button_width_full_text_click(root, "📝quiz ( easy to hard )", () => {
+    html_button_width_full_text_click(root, "📝 quiz ( easy to hard )", () => {
       quizzes_start([3, 2, 1]);
     });
-    html_button_width_full_text_click(root, "🧑‍🎓️quiz ( hard only )", () => {
+    html_button_width_full_text_click(root, "🧑‍🎓️ quiz ( hard only )", () => {
       quizzes_start([1]);
     });
   }
@@ -91,7 +91,7 @@ export async function app_ceb() {
     let quiz_container;
     let button_ready = html_button_width_full_text_click(
       root,
-      "🏁ready",
+      "🏁 ready",
       () => {
         html_style_display_none(button_ready);
         html_style_display_block(quiz_container);
