@@ -85,7 +85,8 @@ export async function app_ceb() {
     each_range(level_size, (i) => {
       let { left, right } = position;
       let factor = divide(add_1(subtract(right, left)), level_size);
-      let atom_i = list_get(group, add(left, multiply(factor, i)));
+      const left_next = add(left, multiply(factor, i));
+      let atom_i = list_get(group, left_next);
       let text = app_ceb_atom_title(atom_i);
       html_button_width_full_text_click_alternate_short(
         root,
@@ -120,7 +121,11 @@ export async function app_ceb() {
         };
         refresh_group();
       } else {
-        atom = list_get(group, add_1(index));
+        let index_next = add_1(index);
+        position = {
+          left: index_next,
+          right: index_next,
+        };
         refresh_node();
       }
     });
