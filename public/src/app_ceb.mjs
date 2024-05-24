@@ -40,14 +40,21 @@ import { multiply } from "./multiply.mjs";
 import { number_min } from "./number_min.mjs";
 import { html_style } from "./html_style.mjs";
 import { greater_than_equal } from "./greater_than_equal.mjs";
+import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
   let group = await http_storage(ceb_group_path(group_index));
   let atom = list_first(group);
   let atom_copy;
-  quiz_set_new();
-  refresh_quiz(0, 3);
+  function refresh_splash() {
+    html_clear_scroll_top(root);
+    html_button_width_full_text_click(root, "begin", () => {
+      quiz_set_new();
+      refresh_quiz(0, 3);
+    });
+  }
+  refresh_splash();
   function quiz_set_new() {
     atom_copy = list_copy(atom);
     list_scramble(atom_copy);
