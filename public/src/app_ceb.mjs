@@ -80,12 +80,13 @@ export async function app_ceb() {
       answer = cebuano;
       answer_other_get = list_first;
     }
-    let quiz_container = html_div(root);
-    html_style_hidden(quiz_container);
+    let quiz_container;
     let button_read = html_button_text_click(root, "ready", () => {
       html_style_hidden(button_read);
       html_style_visible(quiz_container);
     });
+    quiz_container = html_div(root);
+    html_style_hidden(quiz_container);
     let answer_other = answer_other_get(pair_other);
     let answer_element = html_p_text(quiz_container, "?");
     let style = html_element_style(answer_element);
