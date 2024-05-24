@@ -76,6 +76,7 @@ export async function app_ceb() {
   }
   function refresh_quiz(settings) {
     html_clear_scroll_top(root);
+    let no_mistakes = true;
     let { pair, chunk_size, forwards } = settings;
     assert(number_is, [chunk_size]);
     html_style_centered(root);
@@ -168,8 +169,11 @@ export async function app_ceb() {
               }
             });
           } else {
-            list_add(settings_choices, object_copy_shallow(settings));
-            html_style_wrong(button);
+            if (no_mistakes) {
+              list_add(settings_choices, object_copy_shallow(settings));
+              html_style_wrong(button);
+              no_mistakes = false;
+            }
           }
         });
         la(button);
