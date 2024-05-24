@@ -1,4 +1,3 @@
-import { or } from "./or.mjs";
 import { number_power } from "./number_power.mjs";
 import { equal_0 } from "./equal_0.mjs";
 import { integer_log } from "./integer_log.mjs";
@@ -81,8 +80,8 @@ export async function app_ceb() {
   let level_size = app_ceb_level_size();
   let settings_choices;
   let position = {
-    left: 2,
-    right: 2,
+    left: 0,
+    right: 0,
   };
   refresh_node();
   function refresh_node() {
@@ -123,7 +122,7 @@ export async function app_ceb() {
       let { left, right } = position;
       let n = add_1(subtract(right, left));
       let count = integer_log(n, level_size);
-      let level = number_power(level_size, count);
+      let level = number_power(level_size, add_1(count));
       log({
         left,
         right,
@@ -132,7 +131,7 @@ export async function app_ceb() {
         level,
       });
       if (mod_last_is(right, level)) {
-        if (or(equal_0(left), equal_1(level))) {
+        if (equal_0(left)) {
           log("here1");
           const r1 = add_1(right);
           position = {
@@ -142,9 +141,7 @@ export async function app_ceb() {
         } else {
           log("here2");
           position = {
-            left: add_1(
-              subtract(right, number_power(level_size, add_1(count))),
-            ),
+            left: add_1(subtract(right, level)),
             right: right,
           };
         }
