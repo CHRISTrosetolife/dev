@@ -13,6 +13,7 @@ import { each_range } from "./each_range.mjs";
 import { list_any } from "./list_any.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
+import { list_second } from "./list_second.mjs";
 export async function ceb_bible_words_definitions_atoms(skip, limit) {
   let atom_count = ceb_atom_count();
   let pairs = await ceb_bible_words_definitions_pairs(skip, limit);
@@ -25,9 +26,10 @@ export async function ceb_bible_words_definitions_atoms(skip, limit) {
         }
         let next;
         for (let p of pairs) {
-          if (list_any(atom_result, (a) => equal_by(a, p, list_first))) {
+            for (let eq of [list_first,list_second]){
+          if (list_any(atom_result, (a) => equal_by(a, p, eq))) {
             continue;
-          }
+          }}
           next = p;
           break;
         }

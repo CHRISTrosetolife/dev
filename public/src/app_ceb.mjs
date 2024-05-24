@@ -88,13 +88,13 @@ export async function app_ceb() {
       html_style_visible(quiz_container);
     });
     quiz_container = html_div(root);
-    let component_hidden;
+    let component_display_none;
     if (equal_1(chunk_size)) {
-      component_hidden = quiz_container;
+      component_display_none = quiz_container;
     } else {
-      component_hidden = button_ready;
+      component_display_none = button_ready;
     }
-    html_style_hidden(component_hidden);
+    html_style_display_none(component_display_none);
     let answer_other = answer_other_get(pair_other);
     let answer_element = html_p_text(quiz_container, "?");
     let style = html_element_style(answer_element);
