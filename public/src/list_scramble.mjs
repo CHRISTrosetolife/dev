@@ -6,6 +6,9 @@ export function list_scramble(scrambled) {
   let low = 0;
   let high = list_index_last(scrambled);
   for (let i = low; i <= high; i++) {
+    lambda(i);
+  }
+  function lambda(i) {
     let j = integer_random(i, high);
     let temp = list_get(scrambled, j);
     list_set(scrambled, j, list_get(scrambled, i));
