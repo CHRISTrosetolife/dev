@@ -67,7 +67,7 @@ export async function app_ceb() {
     html_clear_scroll_top(root);
     html_button_width_full_text_click(root, "begin", () => {
       quiz_set_new();
-      refresh_quiz(0, 3, false);
+      refresh_quiz(list_first(settings));
     });
   }
   refresh_splash();
@@ -75,7 +75,8 @@ export async function app_ceb() {
     atom_copy = list_copy(atom);
     list_scramble(atom_copy);
   }
-  function refresh_quiz(pair_index, chunk_size) {
+  function refresh_quiz(settings) {
+    let { pair_index, chunk_size, forwards } = settings;
     assert(number_is, [chunk_size]);
     html_clear_scroll_top(root);
     html_style_centered(root);
