@@ -48,8 +48,8 @@ export async function app_ceb() {
       element: { style },
     } = answer;
     html_style_default_border_margin(style);
-    html_style_border_box(cebuano_p);
     html_style_width_full(answer);
+    html_style
     let index = 0;
     log({
       english,
