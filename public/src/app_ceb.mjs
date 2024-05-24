@@ -82,7 +82,7 @@ export async function app_ceb() {
   let settings_choices;
   let position = {
     left: 0,
-    right: 0,
+    right: list_index_last(group),
   };
   refresh_node();
   function refresh_node() {
