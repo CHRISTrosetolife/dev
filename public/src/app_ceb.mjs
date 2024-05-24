@@ -107,11 +107,7 @@ export async function app_ceb() {
   }
   function refresh_node() {
     html_clear_scroll_top_centered(root);
-    let { left, right } = position;
-    assert(equal, [left, right]);
-    let atom = list_get(group, left);
-    let text = app_ceb_atom_title(atom, atom);
-    html_style_alternate_short_p(root, app_ceb_atom_title_patterns(), text);
+    app_ceb_title();
     html_button_width_full_text_click(root, "🎓 learn", () => {
       refresh_pair(0);
     });
@@ -122,6 +118,7 @@ export async function app_ceb() {
       quizzes_start([1]);
     });
     html_button_width_full_text_click_next(root, () => {
+      let atom = app_ceb_atom_get();
       let index = list_index(group, atom);
       if (mod_last_is(index, level_size)) {
         position = {
@@ -138,6 +135,17 @@ export async function app_ceb() {
         refresh_node();
       }
     });
+  }
+  function app_ceb_title() {
+    let atom = app_ceb_atom_get();
+    let text = app_ceb_atom_title(atom, atom);
+    html_style_alternate_short_p(root, app_ceb_atom_title_patterns(), text);
+  }
+  function app_ceb_atom_get() {
+    let { left, right } = position;
+    assert(equal, [left, right]);
+    let atom = list_get(group, left);
+    return atom;
   }
   function refresh_quiz(settings) {
     html_clear_scroll_top_centered(root);
