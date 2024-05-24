@@ -165,8 +165,13 @@ export async function app_ceb() {
   }
   function app_ceb_title() {
     let { left, right } = position;
-    const gl = list_get(group, left);
-    const gr = list_get(group, right);
+    let gl = list_get(group, left);
+    let gr;
+    if (greater_than(right, list_index_last(group))) {
+      return list_last(group);
+    } else {
+      gr = list_get(group, right);
+    }
     let text = app_ceb_atom_title(group, gl, gr);
     html_style_alternate_short_p(root, app_ceb_atom_title_patterns(), text);
   }
