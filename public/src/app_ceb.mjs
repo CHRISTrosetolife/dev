@@ -45,7 +45,8 @@ export async function app_ceb() {
   let group_index = 0;
   let group = await http_storage(ceb_group_path(group_index));
   let atom = list_first(group);
-  let atom_copy = list_copy(atom);
+  let atom_copy;
+  atom_copy = list_copy(atom);
   list_scramble(atom_copy);
   refresh_quiz(0, 3);
   function refresh_quiz(pair_index, chunk_size) {
@@ -108,8 +109,11 @@ export async function app_ceb() {
               app_learn_code_style_success(answer);
               if (equal(pair_index, list_index_last(atom_copy))) {
                 chunk_size = subtract_1(chunk_size);
+                pair_index = 0;
+              } else {
+                pair_index = add_1(pair_index);
               }
-              refresh_quiz(add_1(pair_index), chunk_size);
+              refresh_quiz(pair_index, chunk_size);
             }
           });
         }
