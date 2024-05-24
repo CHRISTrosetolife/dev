@@ -101,6 +101,8 @@ export async function app_ceb() {
   }
   function refresh_node() {
     html_clear_scroll_top(root);
+    let text = app_ceb_atom_title(atom);
+    html_p_text(root, text);
     html_button_width_full_text_click(root, "🎓 learn", () => {
       refresh_pair(0);
     });
