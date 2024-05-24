@@ -1,3 +1,4 @@
+import { list_after } from "./list_after.mjs";
 import { log } from "./log.mjs";
 import { number_is } from "./number_is.mjs";
 import { list_random_item } from "./list_random_item.mjs";
@@ -43,7 +44,6 @@ import { html_button_width_full_text_click } from "./html_button_width_full_text
 import { list_adder } from "./list_adder.mjs";
 import { range } from "./range.mjs";
 import { list_length } from "./list_length.mjs";
-import { list_index } from "./list_index.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -134,8 +134,7 @@ export async function app_ceb() {
             html_style_display_none(button);
             if (last_is) {
               app_learn_code_style_success(answer);
-              let settings_index = list_index(settings_choices, settings);
-              let after = list_get(settings_choices, add_1(settings_index));
+              let after = list_after(settings_choices, settings);
               refresh_quiz(after);
             }
           });
