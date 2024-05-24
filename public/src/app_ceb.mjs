@@ -1,4 +1,4 @@
-import { html_style_border_box } from "./html_style_border_box.mjs";
+import { html_style_width_full } from "./html_style_width_full.mjs";
 import { html_style_default_border_margin } from "./html_style_default_border_margin.mjs";
 import { app_learn_code_correct_timeout } from "./app_learn_code_correct_timeout.mjs";
 import { app_learn_code_style_success } from "./app_learn_code_style_success.mjs";
@@ -47,7 +47,7 @@ export async function app_ceb() {
       element: { style },
     } = answer;
     html_style_default_border_margin(style);
-    html_style_border_box(answer);
+    html_style_width_full(answer);
     let index = 0;
     log({
       english,
