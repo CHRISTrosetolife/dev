@@ -1,3 +1,4 @@
+import { mod_last_is } from "./mod_last_is.mjs";
 import { list_map_nested } from "./list_map_nested.mjs";
 import { html_button_width_full_text_click_next } from "./html_button_width_full_text_click_next.mjs";
 import { add } from "./add.mjs";
@@ -69,6 +70,7 @@ import { list_index } from "./list_index.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
+  let level_size = 2;
   let group = await http_storage(ceb_group_path(group_index));
   let settings_choices;
   let atom;
@@ -108,6 +110,8 @@ export async function app_ceb() {
     });
     html_button_width_full_text_click_next(root, () => {
       let index = list_index(group, atom);
+      if (mod_last_is(index, level_size)) {
+      }
       refresh_group(0);
     });
   }
