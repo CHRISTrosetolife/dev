@@ -117,7 +117,10 @@ export async function app_ceb() {
       });
     }
     app_ceb_learn();
-    html_button_width_full_text_click_next(root, app_ceb_next);
+    html_button_width_full_text_click_next(root, () => {
+      app_ceb_next();
+      refresh_node();
+    });
     function app_ceb_next() {
       let { left, right } = position;
       let n = add_1(subtract(right, left));
@@ -135,10 +138,10 @@ export async function app_ceb() {
           right: r1,
         };
       }
-      refresh_node();
     }
     html_button_width_full_text_click(root, "⬆️ up", () => {
       let { left, right } = position;
+      app_ceb_next();
     });
   }
   function app_ceb_learn() {
