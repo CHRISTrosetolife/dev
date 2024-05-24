@@ -30,6 +30,7 @@ export async function app_ceb() {
   refresh_quiz(0);
   function refresh_quiz(pair_index) {
     html_clear_scroll_top(root);
+    html_style_centered(root);
     let pair = list_get(copy, pair_index);
     let [cebuano, english] = pair;
     let cebuano_p = app_ceb_word_button(root, cebuano);
@@ -45,13 +46,12 @@ export async function app_ceb() {
   }
   async function refresh_pair(pair_index) {
     html_clear_scroll_top(root);
+    html_style_centered(root);
     let pair = list_get(copy, pair_index);
     let [cebuano, english] = pair;
     let cebuano_p = app_ceb_word_button(root, cebuano);
     let english_p = html_p_text(root, english);
-    each([html_style_bold, html_style_centered], (style) =>
-      each([cebuano_p, english_p], style),
-    );
+    each([cebuano_p, english_p], html_style_bold);
     html_buttons_next_previous(
       root,
       refresh_pair,
