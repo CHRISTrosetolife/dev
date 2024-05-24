@@ -89,11 +89,11 @@ export async function app_ceb() {
     if (forwards) {
       app_ceb_word_button(root, cebuano);
       answer = english;
-      answer_other_get = list_first;
+      answer_other_get = list_second;
     } else {
       app_ceb_word_english(root, english);
       answer = cebuano;
-      answer_other_get = list_second;
+      answer_other_get = list_first;
     }
     let quiz_container = html_div(root);
     html_style_hidden(quiz_container);

@@ -6,6 +6,6 @@ export async function html_audio(src) {
       resolve();
     });
   });
-  a.play();
+  await a.play();
   return await result;
 }
