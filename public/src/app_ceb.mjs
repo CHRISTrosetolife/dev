@@ -1,4 +1,5 @@
-import { string_delimit } from "./string_delimit.mjs";
+import { html_style_alternate_short_span } from "./html_style_alternate_short_span.mjs";
+import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_join_colon_spaces } from "./list_join_colon_spaces.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -70,16 +71,15 @@ export async function app_ceb() {
       let atom = list_get(group, i);
       let mapped = list_map(atom, string_delimit_backtick);
       let f = list_first(mapped);
-      html_button_width_full_text_click(
-        root,
-        string_combine_multiple([
-          add_1(i),
-          ". ",
-          list_join_colon_spaces(f),
-          " - ",
-          list_join_colon_spaces(list_last(mapped)),
-        ]),
-      );
+      let button = html_button_width_full_text_click(root, "");
+      html_style_alternate_short_span;
+      string_combine_multiple([
+        add_1(i),
+        ". ",
+        list_join_colon_spaces(f),
+        " - ",
+        list_join_colon_spaces(list_last(mapped)),
+      ]);
     });
   }
   refresh_group();
