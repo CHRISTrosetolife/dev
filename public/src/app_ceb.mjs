@@ -1,3 +1,5 @@
+import { string_delimit } from "./string_delimit.mjs";
+import { list_map } from "./list_map.mjs";
 import { list_join_colon_spaces } from "./list_join_colon_spaces.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each_range } from "./each_range.mjs";
@@ -66,14 +68,15 @@ export async function app_ceb() {
   function refresh_group() {
     each_range(2, (i) => {
       let atom = list_get(group, i);
+      let mapped = list_map(atom, (m) => string_delimit());
       let f = list_first(atom);
       html_button_width_full_text_click(
         root,
         string_combine_multiple([
           add_1(i),
-          ". words ",
+          ". ",
           list_join_colon_spaces(f),
-          " through ",
+          " - ",
           list_join_colon_spaces(list_last(atom)),
         ]),
       );
