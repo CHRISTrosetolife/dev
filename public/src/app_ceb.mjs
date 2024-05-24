@@ -87,7 +87,7 @@ export async function app_ceb() {
       let { left, right } = position;
       let factor = divide(add_1(subtract(right, left)), level_size);
       let atom_i = list_get(group, add(left, multiply(factor, i)));
-      let text = app_ceb_atom_title(atom);
+      let text = app_ceb_atom_title(atom_i);
       html_button_width_full_text_click_alternate_short(
         root,
         [noop, app_ceb_word_style, noop, html_style_bold],
