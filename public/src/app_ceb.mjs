@@ -70,7 +70,6 @@ import { equal_1 } from "./equal_1.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_adder } from "./list_adder.mjs";
-import { list_index } from "./list_index.mjs";
 import { subtract } from "./subtract.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
 import { divide } from "./divide.mjs";
@@ -78,9 +77,6 @@ export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
   let group = await http_storage(ceb_group_path(group_index));
-  log({
-    group,
-  });
   let level_size = app_ceb_level_size();
   let settings_choices;
   let position = {
@@ -100,11 +96,6 @@ export async function app_ceb() {
         let s = subtract_1(multiply(factor, add_1(i)));
         let left_next = add(left, m);
         let right_next = add(left, s);
-        log({
-          left_next,
-          right_next,
-          factor,
-        });
         let atom_left = list_get(group, left_next);
         let atom_right = list_get(group, right_next);
         let text = app_ceb_atom_title(atom_left, atom_right);
@@ -128,18 +119,22 @@ export async function app_ceb() {
       let n = add_1(subtract(right, left));
       let count = integer_log(n, level_size);
       let level = number_power_2(count);
-      let atom = app_ceb_atom_get();
-      let index = list_index(group, atom);
+      log({
+        left,
+        right,
+        n,
+        count,
+        level,
+      });
       if (mod_last_is(right, level)) {
         if (equal_0(left)) {
         } else {
           position = {
-            left: subtract(index, subtract_1(level_size)),
+            left,
             right: right,
           };
         }
       } else {
-        let index_next = add_1(index);
         position = {
           left: index_next,
           right: index_next,
@@ -163,10 +158,6 @@ export async function app_ceb() {
     let { left, right } = position;
     const gl = list_get(group, left);
     const gr = list_get(group, right);
-    log({
-      gl,
-      gr,
-    });
     let text = app_ceb_atom_title(gl, gr);
     html_style_alternate_short_p(root, app_ceb_atom_title_patterns(), text);
   }
