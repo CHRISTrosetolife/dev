@@ -1,3 +1,4 @@
+import { each_range } from "./each_range.mjs";
 import { html_style_button_default } from "./html_style_button_default.mjs";
 import { html_style_wrong } from "./html_style_wrong.mjs";
 import { object_copy_shallow } from "./object_copy_shallow.mjs";
@@ -61,8 +62,13 @@ export async function app_ceb() {
   let group = await http_storage(ceb_group_path(group_index));
   let atom = list_get(group, 1);
   let settings_choices;
-  refresh_splash();
-  function refresh_splash() {
+  function refresh_group() {
+    each_range(2, (i) => {
+      html_button_width_full_text_click(root, "words ");
+    });
+  }
+  refresh_group();
+  function refresh_node() {
     html_clear_scroll_top(root);
     html_button_width_full_text_click(root, "🎓 learn", () => {
       refresh_pair(0);
@@ -161,7 +167,7 @@ export async function app_ceb() {
                   await app_ceb_audio(cebuano);
                 }
                 if (equal(settings, list_last(settings_choices))) {
-                  refresh_splash();
+                  refresh_node();
                 } else {
                   let after = list_after(settings_choices, settings);
                   refresh_quiz(after);
@@ -192,7 +198,7 @@ export async function app_ceb() {
       root,
       (pair_index) => {
         if (greater_than(pair_index, list_index_last(atom))) {
-          refresh_splash();
+          refresh_node();
         } else {
           refresh_pair(pair_index);
         }
