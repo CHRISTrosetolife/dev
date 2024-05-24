@@ -168,7 +168,7 @@ export async function app_ceb() {
     let gl = list_get(group, left);
     let gr;
     if (greater_than(right, list_index_last(group))) {
-      return list_last(group);
+      gr = list_last(group);
     } else {
       gr = list_get(group, right);
     }
