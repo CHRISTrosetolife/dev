@@ -1,3 +1,4 @@
+import { number_power } from "./number_power.mjs";
 import { equal_0 } from "./equal_0.mjs";
 import { number_power_2 } from "./number_power_2.mjs";
 import { integer_log } from "./integer_log.mjs";
@@ -139,7 +140,9 @@ export async function app_ceb() {
           };
         } else {
           position = {
-            left: add_1(subtract(right, number_power_2(add_1(count)))),
+            left: add_1(
+              subtract(right, number_power(level_size, add_1(count))),
+            ),
             right: right,
           };
         }
