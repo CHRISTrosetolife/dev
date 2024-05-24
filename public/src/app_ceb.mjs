@@ -84,8 +84,8 @@ export async function app_ceb() {
     }
     let quiz_container;
     let button_ready = html_button_text_click(root, "ready", () => {
-      html_style_hidden(button_ready);
-      html_style_visible(quiz_container);
+        html_style_display_none(button_ready);
+        html_style_display_block(quiz_container);
     });
     quiz_container = html_div(root);
     let component_display_none;
