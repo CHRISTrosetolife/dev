@@ -46,9 +46,12 @@ export async function app_ceb() {
   let group = await http_storage(ceb_group_path(group_index));
   let atom = list_first(group);
   let atom_copy;
-  atom_copy = list_copy(atom);
-  list_scramble(atom_copy);
+  quiz_set_new();
   refresh_quiz(0, 3);
+  function quiz_set_new() {
+    atom_copy = list_copy(atom);
+    list_scramble(atom_copy);
+  }
   function refresh_quiz(pair_index, chunk_size) {
     assert(number_is, [chunk_size]);
     html_clear_scroll_top(root);
@@ -110,6 +113,7 @@ export async function app_ceb() {
               if (equal(pair_index, list_index_last(atom_copy))) {
                 chunk_size = subtract_1(chunk_size);
                 pair_index = 0;
+                quiz_set_new();
               } else {
                 pair_index = add_1(pair_index);
               }
