@@ -48,7 +48,13 @@ export async function app_ceb() {
   let group = await http_storage(ceb_group_path(group_index));
   let atom = list_first(group);
   let atom_copy;
-  let settings = list_adder((la) => each([true, false], (forwards) => {}));
+  let settings = list_adder((la) =>
+    each([true, false], (forwards) => {
+      return {
+        forwards,
+      };
+    }),
+  );
   function refresh_splash() {
     html_clear_scroll_top(root);
     html_button_width_full_text_click(root, "begin", () => {
