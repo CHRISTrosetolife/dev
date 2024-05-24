@@ -1,3 +1,4 @@
+import { html_style_display_none } from "./html_style_display_none.mjs";
 import { html_style_click_width_min } from "./html_style_click_width_min.mjs";
 import { html_button_text_click } from "./html_button_text_click.mjs";
 import { string_chunk } from "./string_chunk.mjs";
@@ -54,6 +55,7 @@ export async function app_ceb() {
             answer,
             string_combine(string_take(english, index), "?"),
           );
+          html_style_display_none(button);
         }
       });
       html_style_click_width_min(button);
