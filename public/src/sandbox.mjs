@@ -1,5 +1,4 @@
 import { ceb_group_size } from "./ceb_group_size.mjs";
-import { list_scramble_halves } from "./list_scramble_halves.mjs";
 import { ceb_audio_path } from "./ceb_audio_path.mjs";
 import { ceb_audio_voices } from "./ceb_audio_voices.mjs";
 import { ceb_audio_language_code } from "./ceb_audio_language_code.mjs";
@@ -17,7 +16,6 @@ import { log } from "./log.mjs";
 import { storage_upload_file } from "./storage_upload_file.mjs";
 import { each_index_async } from "./each_index_async.mjs";
 export async function sandbox() {
-  return list_scramble_halves([1, 2, 3, 4, 5]);
   if (0) return await ceb_definition("kamo");
   let limit = 75;
   let skip = 0;
