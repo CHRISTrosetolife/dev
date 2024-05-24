@@ -1,3 +1,4 @@
+import { add } from "./add.mjs";
 import { mod_last_is } from "./mod_last_is.mjs";
 import { list_map_nested } from "./list_map_nested.mjs";
 import { html_button_width_full_text_click_next } from "./html_button_width_full_text_click_next.mjs";
@@ -6,7 +7,6 @@ import { html_button_width_full_text_click_alternate_short } from "./html_button
 import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
 import { list_join_colon_spaces } from "./list_join_colon_spaces.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { each_range } from "./each_range.mjs";
 import { html_style_button_default } from "./html_style_button_default.mjs";
 import { html_style_wrong } from "./html_style_wrong.mjs";
 import { object_copy_shallow } from "./object_copy_shallow.mjs";
@@ -83,11 +83,10 @@ export async function app_ceb() {
   refresh_group();
   function refresh_group() {
     html_clear_scroll_top(root);
-    each_range(level_size, (i) => {
-      let { left, right } = position;
-      let factor = divide(add_1(subtract(right, left)), level_size);
-      multiply(factor, subtract_1(level_size));
-      let atom_i = list_get(group, i);
+    let { left, right } = position;
+    let factor = divide(add_1(subtract(right, left)), level_size);
+    each(level_size, (i) => {
+      let atom_i = list_get(group, add(left, multiply(factor, i)));
       let mapped = list_map_nested(atom_i, string_delimit_backtick);
       let position_text = string_combine_multiple([
         "words ",
