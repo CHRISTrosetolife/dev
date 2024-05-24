@@ -1,3 +1,4 @@
+import { ceb_group_size } from "./ceb_group_size.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each_range } from "./each_range.mjs";
 import { html_style_button_default } from "./html_style_button_default.mjs";
@@ -65,10 +66,10 @@ export async function app_ceb() {
   let settings_choices;
   function refresh_group() {
     each_range(2, (i) => {
-        let m=multiply(i,ceb_group_size())
+      let m = multiply(i, ceb_group_size());
       html_button_width_full_text_click(
         root,
-        string_combine_multiple(["words ",,'-']),
+        string_combine_multiple(["words ", , "-"]),
       );
     });
   }
