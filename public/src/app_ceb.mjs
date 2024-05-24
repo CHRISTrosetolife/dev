@@ -1,3 +1,4 @@
+import { html_style_button_default } from "./html_style_button_default.mjs";
 import { html_style_wrong } from "./html_style_wrong.mjs";
 import { object_copy_shallow } from "./object_copy_shallow.mjs";
 import { list_last } from "./list_last.mjs";
@@ -53,6 +54,7 @@ import { list_length } from "./list_length.mjs";
 import { equal_1 } from "./equal_1.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { list_add } from "./list_add.mjs";
+import { list_adder } from "./list_adder.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -123,50 +125,53 @@ export async function app_ceb() {
     let choices = list_copy(correct_choices);
     list_add_multiple(choices, other_choices);
     list_scramble(choices);
-    each(choices, (choice) => {
-      let button = html_button_text_click(quiz_container, choice, () => {
-        let correct = list_get(correct_choices, index);
-        if (equal(choice, correct)) {
-          index = add_1(index);
-          const last_is = greater_than_equal(
-            multiply(index, chunk_size),
-            string_length(answer),
-          );
-          let last = last_is ? "" : "?";
-          const take_count = number_min(
-            multiply(index, chunk_size),
-            string_length(answer),
-          );
-          html_inner_set(
-            answer_element,
-            string_combine(string_take(answer, take_count), last),
-          );
-          if (last_is) {
-            app_learn_code_style_success(answer_element);
-            html_style_display_none(button);
-          }
-          app_learn_code_style_success(button);
-          app_learn_code_correct_timeout(async () => {
-            html_style_display_none(button);
+    let buttons = list_adder((la) => {
+      each(choices, (choice) => {
+        let button = html_button_text_click(quiz_container, choice, () => {
+          let correct = list_get(correct_choices, index);
+          if (equal(choice, correct)) {
+            each(buttons, html_style_button_default);
+            index = add_1(index);
+            const last_is = greater_than_equal(
+              multiply(index, chunk_size),
+              string_length(answer),
+            );
+            let last = last_is ? "" : "?";
+            const take_count = number_min(
+              multiply(index, chunk_size),
+              string_length(answer),
+            );
+            html_inner_set(
+              answer_element,
+              string_combine(string_take(answer, take_count), last),
+            );
             if (last_is) {
               app_learn_code_style_success(answer_element);
-              if (not(forwards)) {
-                await app_ceb_audio(cebuano);
-              }
-              if (equal(settings, list_last(settings_choices))) {
-                refresh_splash();
-              } else {
-                let after = list_after(settings_choices, settings);
-                refresh_quiz(after);
-              }
+              html_style_display_none(button);
             }
-          });
-        } else {
-          list_add(settings_choices, object_copy_shallow(settings));
-          html_style_wrong(button);
-        }
+            app_learn_code_style_success(button);
+            app_learn_code_correct_timeout(async () => {
+              html_style_display_none(button);
+              if (last_is) {
+                app_learn_code_style_success(answer_element);
+                if (not(forwards)) {
+                  await app_ceb_audio(cebuano);
+                }
+                if (equal(settings, list_last(settings_choices))) {
+                  refresh_splash();
+                } else {
+                  let after = list_after(settings_choices, settings);
+                  refresh_quiz(after);
+                }
+              }
+            });
+          } else {
+            list_add(settings_choices, object_copy_shallow(settings));
+            html_style_wrong(button);
+          }
+        });
+        html_style_click_width_min(button);
       });
-      html_style_click_width_min(button);
     });
   }
   async function refresh_pair(pair_index) {
