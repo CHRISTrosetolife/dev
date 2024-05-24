@@ -19,6 +19,9 @@ import { html_style_centered } from "./html_style_centered.mjs";
 import { list_index_last } from "./list_index_last.mjs";
 import { equal } from "./equal.mjs";
 import { add_1 } from "./add_1.mjs";
+import { html_inner_set } from "./html_inner_set.mjs";
+import { string_take } from "./string_take.mjs";
+import { string_combine } from "./string_combine.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -47,6 +50,10 @@ export async function app_ceb() {
         let correct = list_get(correct_choices, index);
         if (equal(choice, correct)) {
           index = add_1(index);
+          html_inner_set(
+            answer,
+            string_combine(string_take(english, index), "?"),
+          );
         }
       });
       html_style_click_width_min(button);
