@@ -172,12 +172,6 @@ export async function app_ceb() {
     let text = app_ceb_atom_title(gl, gr);
     html_style_alternate_short_p(root, app_ceb_atom_title_patterns(), text);
   }
-  function app_ceb_atom_get() {
-    let { left, right } = position;
-    assert(equal, [left, right]);
-    let atom = list_get(group, left);
-    return atom;
-  }
   function refresh_quiz(settings) {
     html_clear_scroll_top_centered(root);
     let no_mistakes = true;
