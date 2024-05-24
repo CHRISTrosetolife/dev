@@ -87,6 +87,7 @@ export async function app_ceb() {
     if (forwards) {
       app_ceb_word_button(root, cebuano);
     } else {
+      app_ceb_word_english(root, english);
     }
     let answer = html_p_text(root, "?");
     let style = html_element_style(answer);
