@@ -67,15 +67,17 @@ import { list_add } from "./list_add.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { app_ceb_word_style } from "./app_ceb_word_style.mjs";
 import { list_index } from "./list_index.mjs";
+import { subtract } from "./subtract.mjs";
+import { subtract_1 } from "./subtract_1.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
-  let level_size = 2;
   let group = await http_storage(ceb_group_path(group_index));
+  let level_size = 2;
   let settings_choices;
   let atom;
   refresh_group(0);
-  function refresh_group(index_min) {
+  function refresh_group() {
     html_clear_scroll_top(root);
     each_range(2, (i) => {
       let atom_i = list_get(group, add(i, index_min));
@@ -111,8 +113,13 @@ export async function app_ceb() {
     html_button_width_full_text_click_next(root, () => {
       let index = list_index(group, atom);
       if (mod_last_is(index, level_size)) {
+        position = {
+          left: subtract(index, subtract_1(level_size)),
+          right: index,
+        };
+      } else {
+        refresh_group(0);
       }
-      refresh_group(0);
     });
   }
   function refresh_quiz(settings) {
