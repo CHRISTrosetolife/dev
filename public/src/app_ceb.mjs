@@ -1,13 +1,11 @@
+import { app_ceb_atom_title } from "./app_ceb_atom_title.mjs";
 import { app_ceb_level_size } from "./app_ceb_level_size.mjs";
 import { each_range } from "./each_range.mjs";
 import { add } from "./add.mjs";
 import { mod_last_is } from "./mod_last_is.mjs";
-import { list_map_nested } from "./list_map_nested.mjs";
 import { html_button_width_full_text_click_next } from "./html_button_width_full_text_click_next.mjs";
 import { noop } from "./noop.mjs";
 import { html_button_width_full_text_click_alternate_short } from "./html_button_width_full_text_click_alternate_short.mjs";
-import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
-import { list_join_colon_spaces } from "./list_join_colon_spaces.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_style_button_default } from "./html_style_button_default.mjs";
 import { html_style_wrong } from "./html_style_wrong.mjs";
@@ -89,13 +87,7 @@ export async function app_ceb() {
       let { left, right } = position;
       let factor = divide(add_1(subtract(right, left)), level_size);
       let atom_i = list_get(group, add(left, multiply(factor, i)));
-      let mapped = list_map_nested(atom, string_delimit_backtick);
-      let text = string_combine_multiple([
-        "words ",
-        list_join_colon_spaces(list_first(mapped)),
-        " through ",
-        list_join_colon_spaces(list_last(mapped)),
-      ]);
+      let text = app_ceb_atom_title(atom);
       html_button_width_full_text_click_alternate_short(
         root,
         [noop, app_ceb_word_style, noop, html_style_bold],
