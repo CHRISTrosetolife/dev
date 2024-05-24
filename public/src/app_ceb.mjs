@@ -34,6 +34,7 @@ export async function app_ceb() {
     let pair = list_get(copy, pair_index);
     let [cebuano, english] = pair;
     let cebuano_p = app_ceb_word_button(root, cebuano);
+    let answer = html_p_text(root, '?');
     log({
       english,
     });
@@ -58,6 +59,5 @@ export async function app_ceb() {
       pair_index,
       list_index_last(copy),
     );
-    await html_audio(storage_url(file_path));
   }
 }
