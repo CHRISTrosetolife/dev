@@ -86,6 +86,7 @@ export async function app_ceb() {
     each_range(level_size, (i) => {
       let { left, right } = position;
       let factor = divide(add_1(subtract(right, left)), level_size);
+      multiply(factor, subtract_1(level_size));
       let atom_i = list_get(group, i);
       let mapped = list_map_nested(atom_i, string_delimit_backtick);
       let position_text = string_combine_multiple([
