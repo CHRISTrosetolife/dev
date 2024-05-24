@@ -38,6 +38,8 @@ import { subtract_1 } from "./subtract_1.mjs";
 import { assert } from "./assert.mjs";
 import { multiply } from "./multiply.mjs";
 import { number_min } from "./number_min.mjs";
+import { html_style } from "./html_style.mjs";
+import { greater_than_equal } from "./greater_than_equal.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -59,6 +61,9 @@ export async function app_ceb() {
     let style = html_element_style(answer);
     html_style_default_border_margin(style);
     html_style_width_full(answer);
+    html_style(answer, {
+      "border-color": "lightblue",
+    });
     let index = 0;
     let correct_choices = string_chunk(english, chunk_size);
     let pair_other = list_random_item(pairs_other);
@@ -72,7 +77,7 @@ export async function app_ceb() {
         let correct = list_get(correct_choices, index);
         if (equal(choice, correct)) {
           index = add_1(index);
-          const last_is = equal(
+          const last_is = greater_than_equal(
             multiply(index, chunk_size),
             string_length(english),
           );
