@@ -83,7 +83,7 @@ export async function app_ceb() {
   refresh_group();
   function refresh_group() {
     html_clear_scroll_top(root);
-    each_range(2, (i) => {
+    each_range(level_size, (i) => {
       let atom_i = list_get(group, add(i, index_min));
       let mapped = list_map_nested(atom_i, string_delimit_backtick);
       let position_text = string_combine_multiple([
