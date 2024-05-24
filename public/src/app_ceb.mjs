@@ -123,6 +123,9 @@ export async function app_ceb() {
     html_button_width_full_text_click_next(root, () => {
       let { left, right } = position;
       let n = add_1(subtract(right, left));
+      while (greater_than(n, 1)) {
+        n = divide(n, level_size);
+      }
       let atom = app_ceb_atom_get();
       let index = list_index(group, atom);
       if (mod_last_is(index, level_size)) {
