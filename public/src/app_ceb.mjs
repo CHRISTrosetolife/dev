@@ -1,3 +1,4 @@
+import { list_random_item } from "./list_random_item.mjs";
 import { html_element_style } from "./html_element_style.mjs";
 import { html_style_width_full } from "./html_style_width_full.mjs";
 import { html_style_default_border_margin } from "./html_style_default_border_margin.mjs";
@@ -41,8 +42,8 @@ export async function app_ceb() {
     html_clear_scroll_top(root);
     html_style_centered(root);
     let pair = list_get(atom_copy, pair_index);
-    let pairs_other=list_copy(atom);
-    list_remove(pairs_other,pair);
+    let pairs_other = list_copy(atom);
+    list_remove(pairs_other, pair);
     let [cebuano, english] = pair;
     let cebuano_p = app_ceb_word_button(root, cebuano);
     let answer = html_p_text(root, "?");
@@ -52,6 +53,7 @@ export async function app_ceb() {
     let index = 0;
     let split_size = 1;
     let correct_choices = string_chunk(english, split_size);
+    let pair_other = list_random_item(pairs_other);
     let choices = list_copy(correct_choices);
     list_scramble(choices);
     each(choices, (choice) => {
