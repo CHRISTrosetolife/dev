@@ -20,6 +20,7 @@ export async function sandbox() {
   let skip = 0;
   let group_count = 8;
   let atoms = await ceb_bible_words_definitions_atoms(skip, limit);
+  return atoms;
   let group = list_take(atoms, group_count);
   let taken = list_take(group, 2);
   await each_async(taken, async (atom) => {
