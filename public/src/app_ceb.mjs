@@ -41,7 +41,7 @@ export async function app_ceb() {
     log({
       english,
     });
-    let split_size = 1;
+    let split_size = 2;
     let length = string_length(english);
     let adjusted = floor(divide(length, split_size));
     log({
