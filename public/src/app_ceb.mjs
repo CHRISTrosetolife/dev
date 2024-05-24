@@ -92,7 +92,12 @@ export async function app_ceb() {
       let m = multiply(factor, i);
       let s = subtract_1(multiply(factor, add_1(i)));
       let left_next = add(left, m);
-      let right_next = add(left_next, s);
+      let right_next = add(left, s);
+      log({
+        left_next,
+        right_next,
+        factor,
+      });
       let atom_left = list_get(group, left_next);
       let atom_right = list_get(group, right_next);
       let text = app_ceb_atom_title(atom_left, atom_right);
