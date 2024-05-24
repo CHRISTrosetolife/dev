@@ -83,6 +83,9 @@ export async function app_ceb() {
             string_length(english),
           );
           log({
+            index,
+            chunk_size,
+            english,
             last,
             take_count,
           });
