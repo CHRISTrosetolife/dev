@@ -85,7 +85,10 @@ export async function app_ceb() {
     each_range(level_size, (i) => {
       let { left, right } = position;
       let factor = divide(add_1(subtract(right, left)), level_size);
-      const left_next = add(left, multiply(factor, i));
+      let m = multiply(factor, i);
+        let s =subtract_1(m);
+        let left_next = add(left, m);
+        let right_next = add(left_next, s);
       let atom_i = list_get(group, left_next);
       let text = app_ceb_atom_title(atom_i);
       html_button_width_full_text_click_alternate_short(
@@ -101,7 +104,7 @@ export async function app_ceb() {
   }
   function refresh_node() {
     html_clear_scroll_top_centered(root);
-    let text = app_ceb_atom_title(atom);
+    let text = app_ceb_atom_title(atom,atom);
     html_style_alternate_short_p(root, app_ceb_atom_title_patterns(), text);
     html_button_width_full_text_click(root, "🎓 learn", () => {
       refresh_pair(0);
