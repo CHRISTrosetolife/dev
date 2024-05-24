@@ -24,6 +24,7 @@ import { multiply } from "./multiply.mjs";
 import { string_take } from "./string_take.mjs";
 import { string_skip } from "./string_skip.mjs";
 import { string_length } from "./string_length.mjs";
+import { list_adder } from "./list_adder.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -41,14 +42,17 @@ export async function app_ceb() {
       english,
     });
     let split_size = 1;
-    let length = string_length(english);
-    let adjusted = ceiling(divide(length, split_size));
-    for (let i of range(adjusted)) {
-      let scaled = multiply(i, split_size);
-      let skipped = string_skip(english, scaled);
-      let limit = string_length(skipped);
-      let taken = string_take(skipped, number_min(split_size, limit));
-    }
+    list_adder((la) => {
+      let length = string_length(english);
+      let adjusted = ceiling(divide(length, split_size));
+      for (let i of range(adjusted)) {
+        let scaled = multiply(i, split_size);
+        let skipped = string_skip(english, scaled);
+        let limit = string_length(skipped);
+        let taken = string_take(skipped, number_min(split_size, limit));
+        la(taken);
+      }
+    });
   }
   async function refresh_pair(pair_index) {
     html_clear_scroll_top(root);
