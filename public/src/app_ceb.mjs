@@ -80,8 +80,8 @@ export async function app_ceb() {
   let level_size = app_ceb_level_size();
   let settings_choices;
   let position = {
-    left: 0,
-    right: 1,
+    left: 2,
+    right: 2,
   };
   refresh_node();
   function refresh_node() {
@@ -131,13 +131,15 @@ export async function app_ceb() {
         level,
       });
       if (mod_last_is(right, level)) {
-        if (equal_0(left)) {
+        if (or(equal_0(left), equal_1(level))) {
+          log("here1");
           const r1 = add_1(right);
           position = {
             left: r1,
             right: r1,
           };
         } else {
+          log("here2");
           position = {
             left: add_1(
               subtract(right, number_power(level_size, add_1(count))),
@@ -146,6 +148,7 @@ export async function app_ceb() {
           };
         }
       } else {
+        log("here3");
         position = {
           left: index_next,
           right: index_next,

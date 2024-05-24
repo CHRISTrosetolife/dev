@@ -19,7 +19,7 @@ export function app_ceb_atom_title(group, atom_left, atom_right) {
     list_join_colon_spaces(list_first(mapped)),
     " through ",
     list_join_colon_spaces(list_last(mapped)),
-    " ( ",
+    "<br>( words ",
     add_1(multiply(list_index(group, atom_left), atom_count)),
     " - ",
     add(multiply(list_index(group, atom_right), atom_count), atom_count),
