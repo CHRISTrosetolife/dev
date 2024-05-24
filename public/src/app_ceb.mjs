@@ -126,14 +126,7 @@ export async function app_ceb() {
     html_button_width_full_text_click_next(root, () => {
       let { left, right } = position;
       let n = add_1(subtract(right, left));
-      let count = counter((c) => {
-        while (greater_than(n, 1)) {
-          let m = mod(n, level_size);
-          assert(equal_0, [m]);
-          n = divide(n, level_size);
-          c();
-        }
-      });
+      let count = integer_log(n, level_size);
       let atom = app_ceb_atom_get();
       let index = list_index(group, atom);
       if (mod_last_is(index, level_size)) {
@@ -313,3 +306,15 @@ export async function app_ceb() {
     return atoms;
   }
 }
+function integer_log(n, level_size) {
+    return counter((c) => {
+        let d = n;
+        while (greater_than(d, 1)) {
+            let m = mod(d, level_size);
+            assert(equal_0, [m]);
+            d = divide(d, level_size);
+            c();
+        }
+    });
+}
+

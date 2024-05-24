@@ -1,4 +1,4 @@
-import { string_empty_not_is } from "./string_empty_not_is.mjs";
+import { number_power_2 } from "./number_power_2.mjs";
 import { js_unparse_indent_none } from "./js_unparse_indent_none.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_includes_not } from "./list_includes_not.mjs";
@@ -35,7 +35,7 @@ export function app_learn_code_source_variations(source) {
   let remaining = [s];
   while (list_empty_not_is(remaining)) {
     let r = list_pop(remaining);
-    let count = Math.pow(2, filtered_length);
+    let count = number_power_2(filtered_length);
     for (let i of range(count)) {
       let { filtered, ast } = ast_filtered(r);
       let base2 = number_string_to(i, 2);
