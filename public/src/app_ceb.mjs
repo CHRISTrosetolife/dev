@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { html_style_alternate_short_p } from "./html_style_alternate_short_p.mjs";
 import { app_ceb_atom_title_patterns } from "./app_ceb_atom_title_patterns.mjs";
@@ -72,6 +73,9 @@ export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
   let group = await http_storage(ceb_group_path(group_index));
+  log({
+    group,
+  });
   let level_size = app_ceb_level_size();
   let settings_choices;
   let position = {
