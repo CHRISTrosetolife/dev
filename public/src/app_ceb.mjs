@@ -48,6 +48,7 @@ import { greater_than_equal } from "./greater_than_equal.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { not } from "./not.mjs";
 import { list_length } from "./list_length.mjs";
+import { equal_1 } from "./equal_1.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -86,7 +87,13 @@ export async function app_ceb() {
       html_style_visible(quiz_container);
     });
     quiz_container = html_div(root);
-    html_style_hidden(quiz_container);
+    let component_hidden;
+    if (equal_1(chunk_size)) {
+      component_hidden = quiz_container;
+    } else {
+      component_hidden = button_ready;
+    }
+    html_style_hidden(component_hidden);
     let answer_other = answer_other_get(pair_other);
     let answer_element = html_p_text(quiz_container, "?");
     let style = html_element_style(answer_element);
