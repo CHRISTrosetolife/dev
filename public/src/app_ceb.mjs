@@ -52,15 +52,15 @@ export async function app_ceb() {
   let atom_copy;
   let settings_choices = list_adder((la) =>
     each([3, 2, 1], (chunk_size) =>
-      each([true, false], (forwards) =>
+      each([true, false], (forwards) => {
         each(range_list(atom), (pair_index) =>
           la({
             pair_index,
             chunk_size,
             forwards,
           }),
-        ),
-      ),
+        );
+      }),
     ),
   );
   function refresh_splash() {
@@ -152,7 +152,7 @@ export async function app_ceb() {
   async function refresh_pair(pair_index) {
     html_clear_scroll_top(root);
     html_style_centered(root);
-    let pair = list_get(atom_copy, pair_index);
+    let pair = list_get(atom, pair_index);
     let [cebuano, english] = pair;
     app_ceb_word_button(root, cebuano);
     app_ceb_word_english(root, english);
