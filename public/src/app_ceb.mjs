@@ -179,8 +179,14 @@ export async function app_ceb() {
     assert(number_is, [chunk_size]);
     let concat = atoms_slice_concat();
     let pairs_other = list_without(concat, pair);
-    pairs_other = list_filter(pairs_other, (p) => {});
     let [cebuano, english] = pair;
+    pairs_other = list_filter(pairs_other, (p) => {
+      let [c, e] = p;
+      if (or(equal(c, cebuano), equal(e, english))) {
+        return false;
+      }
+      return true;
+    });
     let answer;
     let pair_other = list_random_item(pairs_other);
     let answer_other_get;
