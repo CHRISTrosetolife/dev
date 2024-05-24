@@ -1,3 +1,5 @@
+import { greater_than } from "./greater_than.mjs";
+import { app_ceb_quiz_settings } from "./app_ceb_quiz_settings.mjs";
 import { html_style_visible } from "./html_style_visible.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_style_hidden } from "./html_style_hidden.mjs";
@@ -44,37 +46,20 @@ import { number_min } from "./number_min.mjs";
 import { html_style } from "./html_style.mjs";
 import { greater_than_equal } from "./greater_than_equal.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
-import { list_adder } from "./list_adder.mjs";
 import { not } from "./not.mjs";
+import { list_length } from "./list_length.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
   let group = await http_storage(ceb_group_path(group_index));
   let atom = list_get(group, 1);
-  let chunk_sizes = [3, 2, 1, 1];
-  if (0) chunk_sizes = [1];
-  let settings_choices = list_adder((la) =>
-    each(chunk_sizes, (chunk_size) =>
-      each([true, false], (forwards) => {
-        let atom_copy = list_copy(atom);
-        list_scramble(atom_copy);
-        each(atom_copy, (pair) =>
-          la({
-            pair,
-            chunk_size,
-            forwards,
-          }),
-        );
-      }),
-    ),
-  );
   function refresh_splash() {
     html_clear_scroll_top(root);
     html_button_width_full_text_click(root, "begin", () => {
       refresh_quiz(list_first(settings_choices));
     });
   }
-  refresh_splash();
+  refresh_pair(0);
   function quiz_set_new() {}
   function refresh_quiz(settings) {
     html_clear_scroll_top(root);
@@ -163,9 +148,16 @@ export async function app_ceb() {
     app_ceb_word_english(root, english);
     html_buttons_next_previous(
       root,
-      refresh_pair,
+      (pair_index) => {
+        if (greater_than(pair_index, list_index_last(atom))) {
+          let settings_choices = app_ceb_quiz_settings(atom);
+          refresh_quiz(list_first(settings_choices));
+        } else {
+          refresh_pair(pair_index);
+        }
+      },
       pair_index,
-      list_index_last(atom_copy),
+      list_length(atom),
     );
   }
 }
