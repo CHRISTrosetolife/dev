@@ -3,8 +3,6 @@ import { html_button_text_click } from "./html_button_text_click.mjs";
 import { string_chunk } from "./string_chunk.mjs";
 import { app_ceb_word_button } from "./app_ceb_word_button.mjs";
 import { log } from "./log.mjs";
-import { storage_url } from "./storage_url.mjs";
-import { html_audio } from "./html_audio.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { html_buttons_next_previous } from "./html_buttons_next_previous.mjs";
@@ -34,12 +32,13 @@ export async function app_ceb() {
     let pair = list_get(copy, pair_index);
     let [cebuano, english] = pair;
     let cebuano_p = app_ceb_word_button(root, cebuano);
-    let answer = html_p_text(root, '?');
+    let answer = html_p_text(root, "?");
     log({
       english,
     });
     let split_size = 1;
     let correct_choices = string_chunk(english, split_size);
+    let copy = list_copy(correct_choices);
     each(correct_choices, (choice) => {
       let button = html_button_text_click(root, choice, noop);
       html_style_click_width_min(button);
