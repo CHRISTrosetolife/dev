@@ -126,13 +126,13 @@ export async function app_ceb() {
       let { left, right } = position;
       let n = add_1(subtract(right, left));
       let count = integer_log(n, level_size);
-      number_power_2(count);
+      let level = number_power_2(count);
       let atom = app_ceb_atom_get();
       let index = list_index(group, atom);
-      if (mod_last_is(index, level_size)) {
+      if (mod_last_is(right, level)) {
         position = {
           left: subtract(index, subtract_1(level_size)),
-          right: index,
+          right: right,
         };
       } else {
         let index_next = add_1(index);
