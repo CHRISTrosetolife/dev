@@ -70,6 +70,7 @@ export async function app_ceb() {
   let settings_choices;
   let atom;
   function refresh_group() {
+    html_clear_scroll_top(root);
     each_range(2, (i) => {
       let atom_i = list_get(group, i);
       let mapped = list_map(atom_i, (a) =>
