@@ -53,6 +53,7 @@ export async function app_ceb() {
   let group_index = 0;
   let group = await http_storage(ceb_group_path(group_index));
   let atom = list_get(group, 1);
+  let settings_choices;
   refresh_splash();
   function refresh_splash() {
     html_clear_scroll_top(root);
@@ -80,8 +81,8 @@ export async function app_ceb() {
       answer_other_get = list_first;
     }
     let quiz_container;
-    let button_read = html_button_text_click(root, "ready", () => {
-      html_style_hidden(button_read);
+    let button_ready = html_button_text_click(root, "ready", () => {
+      html_style_hidden(button_ready);
       html_style_visible(quiz_container);
     });
     quiz_container = html_div(root);
@@ -150,7 +151,7 @@ export async function app_ceb() {
       root,
       (pair_index) => {
         if (greater_than(pair_index, list_index_last(atom))) {
-          let settings_choices = app_ceb_quiz_settings(atom);
+          settings_choices = app_ceb_quiz_settings(atom);
           refresh_quiz(list_first(settings_choices));
         } else {
           refresh_pair(pair_index);
