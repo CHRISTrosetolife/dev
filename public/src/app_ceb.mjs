@@ -53,14 +53,13 @@ export async function app_ceb() {
   let group_index = 0;
   let group = await http_storage(ceb_group_path(group_index));
   let atom = list_get(group, 1);
+  refresh_splash();
   function refresh_splash() {
     html_clear_scroll_top(root);
     html_button_width_full_text_click(root, "begin", () => {
-      refresh_quiz(list_first(settings_choices));
+      refresh_pair(0);
     });
   }
-  refresh_pair(0);
-  function quiz_set_new() {}
   function refresh_quiz(settings) {
     html_clear_scroll_top(root);
     let { pair, chunk_size, forwards } = settings;
