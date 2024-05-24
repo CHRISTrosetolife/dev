@@ -18,6 +18,7 @@ import { html_style_bold } from "./html_style_bold.mjs";
 import { html_style_centered } from "./html_style_centered.mjs";
 import { list_index_last } from "./list_index_last.mjs";
 import { equal } from "./equal.mjs";
+import { add_1 } from "./add_1.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -45,6 +46,7 @@ export async function app_ceb() {
       let button = html_button_text_click(root, choice, () => {
         let correct = list_get(correct_choices, index);
         if (equal(choice, correct)) {
+          index = add_1(index);
         }
       });
       html_style_click_width_min(button);
