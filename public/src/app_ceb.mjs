@@ -1,3 +1,4 @@
+import { add } from "./add.mjs";
 import { number_is } from "./number_is.mjs";
 import { list_random_item } from "./list_random_item.mjs";
 import { html_element_style } from "./html_element_style.mjs";
@@ -35,7 +36,7 @@ import { list_second } from "./list_second.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
 import { assert } from "./assert.mjs";
-import { add } from "./add.mjs";
+import { multiply } from "./multiply.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -69,12 +70,18 @@ export async function app_ceb() {
       let button = html_button_text_click(root, choice, () => {
         let correct = list_get(correct_choices, index);
         if (equal(choice, correct)) {
-          index = add(index, chunk_size);
-          const last_is = equal(index, string_length(english));
+          index = add(index);
+          const last_is = equal(
+            multiply(index, chunk_size),
+            string_length(english),
+          );
           let last = last_is ? "" : "?";
           html_inner_set(
             answer,
-            string_combine(string_take(english, index), last),
+            string_combine(
+              string_take(english, multiply(index, chunk_size)),
+              last,
+            ),
           );
           if (last_is) {
             app_learn_code_style_success(answer);
