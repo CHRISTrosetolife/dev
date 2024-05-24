@@ -71,7 +71,7 @@ export async function app_ceb() {
   function refresh_group() {
     each_range(2, (i) => {
       let atom = list_get(group, i);
-      let mapped = list_map(atom, string_delimit_backtick);
+      let mapped = list_map(atom, (a) => list_map(a, string_delimit_backtick));
       html_button_width_full_text_click_alternate_short(
         root,
         [noop, app_ceb_word_style, noop, html_style_bold],
