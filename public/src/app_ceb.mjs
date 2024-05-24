@@ -151,7 +151,7 @@ export async function app_ceb() {
     html_style_centered(root);
     let pair = list_get(atom_copy, pair_index);
     let [cebuano, english] = pair;
-    let cebuano_p = app_ceb_word_button(root, cebuano);
+    app_ceb_word_button(root, cebuano);
     let english_p = html_p_text(root, english);
     html_style_bold(english_p);
     html_buttons_next_previous(
