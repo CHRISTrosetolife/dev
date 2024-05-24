@@ -1,9 +1,9 @@
+import { list_map_nested } from "./list_map_nested.mjs";
 import { html_button_width_full_text_click_next } from "./html_button_width_full_text_click_next.mjs";
 import { add } from "./add.mjs";
 import { noop } from "./noop.mjs";
 import { html_button_width_full_text_click_alternate_short } from "./html_button_width_full_text_click_alternate_short.mjs";
 import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
-import { list_map } from "./list_map.mjs";
 import { list_join_colon_spaces } from "./list_join_colon_spaces.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each_range } from "./each_range.mjs";
@@ -76,9 +76,7 @@ export async function app_ceb() {
     html_clear_scroll_top(root);
     each_range(2, (i) => {
       let atom_i = list_get(group, add(i, index_min));
-      let mapped = list_map(atom_i, (a) =>
-        list_map(a, string_delimit_backtick),
-      );
+      let mapped = list_map_nested(atom_i, string_delimit_backtick);
       html_button_width_full_text_click_alternate_short(
         root,
         [noop, app_ceb_word_style, noop, html_style_bold],
@@ -107,8 +105,9 @@ export async function app_ceb() {
     html_button_width_full_text_click(root, "🧑‍🎓️ quiz ( hard only )", () => {
       quizzes_start([1]);
     });
-    html_button_width_full_text_click_next;
-    refresh_group(0);
+    html_button_width_full_text_click_next(root, () => {
+      refresh_group(0);
+    });
   }
   function refresh_quiz(settings) {
     html_clear_scroll_top(root);
