@@ -74,7 +74,6 @@ export async function app_ceb() {
   let group = await http_storage(ceb_group_path(group_index));
   let level_size = app_ceb_level_size();
   let settings_choices;
-  let atom;
   let position = {
     left: 0,
     right: 1,
@@ -107,6 +106,9 @@ export async function app_ceb() {
     });
   }
   function refresh_node() {
+    let { left, right } = position;
+    assert(equal, [left, right]);
+    let atom = list_get(group, left);
     html_clear_scroll_top_centered(root);
     let text = app_ceb_atom_title(atom, atom);
     html_style_alternate_short_p(root, app_ceb_atom_title_patterns(), text);
