@@ -72,21 +72,17 @@ export async function app_ceb() {
     each_range(2, (i) => {
       let atom = list_get(group, i);
       let mapped = list_map(atom, string_delimit_backtick);
-      let f = list_first(mapped);
-      let patterns = [noop, app_ceb_word_style, noop, html_style_bold];
-      let message = string_combine_multiple([
-        add_1(i),
-        ". ",
-        list_join_colon_spaces(f),
-        " - ",
-        list_join_colon_spaces(list_last(mapped)),
-      ]);
-      function on_click() {}
       html_button_width_full_text_click_alternate_short(
         root,
-        patterns,
-        message,
-        on_click,
+        [noop, app_ceb_word_style, noop, html_style_bold],
+        string_combine_multiple([
+          add_1(i),
+          ". ",
+          list_join_colon_spaces(list_first(mapped)),
+          " - ",
+          list_join_colon_spaces(list_last(mapped)),
+        ]),
+        function on_click() {},
       );
     });
   }
