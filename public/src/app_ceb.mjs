@@ -49,10 +49,12 @@ export async function app_ceb() {
   let atom = list_first(group);
   let atom_copy;
   let settings = list_adder((la) =>
-    each([true, false], (forwards) =>
-      la({
-        forwards,
-      }),
+    each([3, 2, 1], (chunk_size) =>
+      each([true, false], (forwards) =>
+        la({
+          forwards,
+        }),
+      ),
     ),
   );
   function refresh_splash() {
