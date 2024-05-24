@@ -53,7 +53,7 @@ export async function app_ceb() {
   let settings = list_adder((la) =>
     each([3, 2, 1], (chunk_size) =>
       each([true, false], (forwards) =>
-        each(range(list_length(atom)), (forwards) =>
+        each(range(list_length(atom)), (pair_index) =>
           la({
             pair_index,
             chunk_size,
