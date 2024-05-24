@@ -1,5 +1,4 @@
 import { number_power } from "./number_power.mjs";
-import { equal_0 } from "./equal_0.mjs";
 import { integer_log } from "./integer_log.mjs";
 import { equal_not } from "./equal_not.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
@@ -130,26 +129,16 @@ export async function app_ceb() {
         count,
         level,
       });
-      if (mod_last_is(right, level)) {
-        if (equal_0(left)) {
-          log("here1");
-          const r1 = add_1(right);
-          position = {
-            left: r1,
-            right: r1,
-          };
-        } else {
-          log("here2");
-          position = {
-            left: add_1(subtract(right, level)),
-            right: right,
-          };
-        }
-      } else {
-        log("here3");
+      if (mod_last_is(right, level) && equal_not(left, 0)) {
         position = {
-          left: index_next,
-          right: index_next,
+          left: add_1(subtract(right, level)),
+          right: right,
+        };
+      } else {
+        const r1 = add_1(right);
+        position = {
+          left: r1,
+          right: r1,
         };
       }
       refresh_node();
