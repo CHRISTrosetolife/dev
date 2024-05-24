@@ -82,7 +82,7 @@ export async function app_ceb() {
   let settings_choices;
   let position = {
     left: 0,
-    right: list_index_last(group),
+    right: 1,
   };
   refresh_node();
   function refresh_node() {
@@ -176,7 +176,9 @@ export async function app_ceb() {
     let no_mistakes = true;
     let { pair, chunk_size, forwards } = settings;
     assert(number_is, [chunk_size]);
-    let pairs_other = list_without(atom, pair);
+    let concat = atoms_slice_concat();
+    log({concat,settings})
+    let pairs_other = list_without(concat, pair);
     let [cebuano, english] = pair;
     let answer;
     let pair_other = list_random_item(pairs_other);
@@ -275,8 +277,7 @@ export async function app_ceb() {
   }
   async function refresh_pair(pair_index) {
     html_clear_scroll_top_centered(root);
-    let atoms = atoms_slice();
-    let concat = list_concat_multiple(atoms);
+    let concat = atoms_slice_concat();
     let pair = list_get(concat, pair_index);
     let [cebuano, english] = pair;
     app_ceb_word_button(root, cebuano);
@@ -294,6 +295,12 @@ export async function app_ceb() {
       list_length(concat),
     );
   }
+    function atoms_slice_concat() {
+        let atoms = atoms_slice();
+        let concat = list_concat_multiple(atoms);
+        return concat;
+    }
+
   function quizzes_start(chunk_sizes) {
     let atoms = atoms_slice();
     settings_choices = app_ceb_quiz_settings(atoms, chunk_sizes);
