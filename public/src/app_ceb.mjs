@@ -28,6 +28,7 @@ import { html_inner_set } from "./html_inner_set.mjs";
 import { string_take } from "./string_take.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { string_length } from "./string_length.mjs";
+import { list_remove } from "./list_remove.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -40,6 +41,8 @@ export async function app_ceb() {
     html_clear_scroll_top(root);
     html_style_centered(root);
     let pair = list_get(atom_copy, pair_index);
+    let pairs_other=list_copy(atom);
+    list_remove(pairs_other,pair);
     let [cebuano, english] = pair;
     let cebuano_p = app_ceb_word_button(root, cebuano);
     let answer = html_p_text(root, "?");
@@ -64,6 +67,7 @@ export async function app_ceb() {
           );
           if (last_is) {
             app_learn_code_style_success(answer);
+            html_style_display_none(button);
           }
           app_learn_code_style_success(button);
           app_learn_code_correct_timeout(() => {
