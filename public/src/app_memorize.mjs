@@ -1,7 +1,7 @@
 import { log } from "./log.mjs";
 import { html_style_wrong } from "./html_style_wrong.mjs";
 import { html_style_margin_default } from "./html_style_margin_default.mjs";
-import { html_style_button_default } from "./html_style_button_default.mjs";
+import { html_style_button_default_value } from "./html_style_button_default_value.mjs";
 import { keyboard_keys_rows } from "./keyboard_keys_rows.mjs";
 import { html_hash } from "./html_hash.mjs";
 import { html_style_visible } from "./html_style_visible.mjs";
@@ -333,7 +333,7 @@ export async function app_memorize() {
         update_colors();
       }
       for (let errored_key of errored_keys) {
-        html_style(errored_key, html_style_button_default());
+        html_style(errored_key, html_style_button_default_value());
         button_stylize(errored_key, button_height);
       }
     } else {
