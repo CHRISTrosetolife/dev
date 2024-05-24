@@ -48,9 +48,9 @@ import { list_adder } from "./list_adder.mjs";
 import { not } from "./not.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
-  let group_index = 1;
+  let group_index = 0;
   let group = await http_storage(ceb_group_path(group_index));
-  let atom = list_first(group);
+  let atom = list_get(group, 1);
   let chunk_sizes = [3, 2, 1, 1];
   if (0) chunk_sizes = [1];
   let settings_choices = list_adder((la) =>
