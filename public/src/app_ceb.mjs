@@ -37,6 +37,7 @@ import { list_add_multiple } from "./list_add_multiple.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
 import { assert } from "./assert.mjs";
 import { multiply } from "./multiply.mjs";
+import { number_min } from "./number_min.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -79,7 +80,10 @@ export async function app_ceb() {
           html_inner_set(
             answer,
             string_combine(
-              string_take(english, multiply(index, chunk_size)),
+              string_take(
+                english,
+                number_min(multiply(index, chunk_size), string_length(english)),
+              ),
               last,
             ),
           );
