@@ -42,6 +42,8 @@ import { html_style } from "./html_style.mjs";
 import { greater_than_equal } from "./greater_than_equal.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { list_adder } from "./list_adder.mjs";
+import { range } from "./range.mjs";
+import { list_length } from "./list_length.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -51,10 +53,13 @@ export async function app_ceb() {
   let settings = list_adder((la) =>
     each([3, 2, 1], (chunk_size) =>
       each([true, false], (forwards) =>
-        la({
-          chunk_size,
-          forwards,
-        }),
+        each(range(list_length(atom)), (forwards) =>
+          la({
+            pair_index,
+            chunk_size,
+            forwards,
+          }),
+        ),
       ),
     ),
   );
