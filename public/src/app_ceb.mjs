@@ -108,15 +108,7 @@ export async function app_ceb() {
   function refresh_node() {
     html_clear_scroll_top_centered(root);
     app_ceb_title();
-    html_button_width_full_text_click(root, "🎓 learn", () => {
-      refresh_pair(0);
-    });
-    html_button_width_full_text_click(root, "📝 quiz ( easy to hard )", () => {
-      quizzes_start([3, 2, 1]);
-    });
-    html_button_width_full_text_click(root, "🧑‍🎓️ quiz ( hard only )", () => {
-      quizzes_start([1]);
-    });
+    app_ceb_learn(root, refresh_pair, quizzes_start);
     html_button_width_full_text_click_next(root, () => {
       let atom = app_ceb_atom_get();
       let index = list_index(group, atom);
@@ -275,5 +267,16 @@ export async function app_ceb() {
   function quizzes_start(chunk_sizes) {
     settings_choices = app_ceb_quiz_settings(atom, chunk_sizes);
     refresh_quiz(list_first(settings_choices));
+  }
+  function app_ceb_learn(root, quizzes_start) {
+    html_button_width_full_text_click(root, "🎓 learn", () => {
+      refresh_pair(0);
+    });
+    html_button_width_full_text_click(root, "📝 quiz ( easy to hard )", () => {
+      quizzes_start([3, 2, 1]);
+    });
+    html_button_width_full_text_click(root, "🧑‍🎓️ quiz ( hard only )", () => {
+      quizzes_start([1]);
+    });
   }
 }
