@@ -1,3 +1,4 @@
+import { list_slice } from "./list_slice.mjs";
 import { log } from "./log.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { html_style_alternate_short_p } from "./html_style_alternate_short_p.mjs";
@@ -294,7 +295,8 @@ export async function app_ceb() {
   }
   function quizzes_start(chunk_sizes) {
     let { left, right } = position;
-    settings_choices = app_ceb_quiz_settings([atom], chunk_sizes);
+    let atoms = list_slice(group, left, add_1(right));
+    settings_choices = app_ceb_quiz_settings(atoms, chunk_sizes);
     refresh_quiz(list_first(settings_choices));
   }
 }
