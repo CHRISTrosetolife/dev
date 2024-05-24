@@ -1,3 +1,4 @@
+import { noop } from "./noop.mjs";
 import { html_button_width_full_text_click_alternate_short } from "./html_button_width_full_text_click_alternate_short.mjs";
 import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
 import { list_map } from "./list_map.mjs";
@@ -61,6 +62,7 @@ import { equal_1 } from "./equal_1.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_adder } from "./list_adder.mjs";
+import { app_ceb_word_style } from "./app_ceb_word_style.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -71,13 +73,7 @@ export async function app_ceb() {
       let atom = list_get(group, i);
       let mapped = list_map(atom, string_delimit_backtick);
       let f = list_first(mapped);
-      let patterns = string_combine_multiple([
-        add_1(i),
-        ". ",
-        list_join_colon_spaces(f),
-        " - ",
-        list_join_colon_spaces(list_last(mapped)),
-      ]);
+      let patterns = [noop, app_ceb_word_style, noop, html_style_bold];
       let message = string_combine_multiple([
         add_1(i),
         ". ",
@@ -88,9 +84,9 @@ export async function app_ceb() {
       function on_click() {}
       html_button_width_full_text_click_alternate_short(
         root,
-        on_click,
         patterns,
         message,
+        on_click,
       );
     });
   }
