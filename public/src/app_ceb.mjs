@@ -76,25 +76,26 @@ export async function app_ceb() {
   let level_size = 2;
   let settings_choices;
   let atom;
-  refresh_group(0);
+  let position = {
+    left: 0,
+    right: 1,
+  };
+  refresh_group();
   function refresh_group() {
     html_clear_scroll_top(root);
     each_range(2, (i) => {
       let atom_i = list_get(group, add(i, index_min));
       let mapped = list_map_nested(atom_i, string_delimit_backtick);
+      let position_text = string_combine_multiple([
+        "words ",
+        list_join_colon_spaces(list_first(mapped)),
+        " through ",
+        list_join_colon_spaces(list_last(mapped)),
+      ]);
       html_button_width_full_text_click_alternate_short(
         root,
         [noop, app_ceb_word_style, noop, html_style_bold],
-        string_combine_multiple([
-          add_1(i),
-          ". ",
-          string_combine_multiple([
-            "words ",
-            list_join_colon_spaces(list_first(mapped)),
-            " through ",
-            list_join_colon_spaces(list_last(mapped)),
-          ]),
-        ]),
+        string_combine_multiple([add_1(i), ". ", position_text]),
         function on_click() {
           atom = atom_i;
           refresh_node();
