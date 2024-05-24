@@ -65,9 +65,10 @@ export async function app_ceb() {
   let settings_choices;
   function refresh_group() {
     each_range(2, (i) => {
+        let m=multiply(i,ceb_group_size())
       html_button_width_full_text_click(
         root,
-        string_combine_multiple(["words "]),
+        string_combine_multiple(["words ",,'-']),
       );
     });
   }

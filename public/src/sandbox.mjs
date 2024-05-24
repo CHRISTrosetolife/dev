@@ -1,3 +1,4 @@
+import { ceb_group_size } from "./ceb_group_size.mjs";
 import { list_scramble_halves } from "./list_scramble_halves.mjs";
 import { ceb_audio_path } from "./ceb_audio_path.mjs";
 import { ceb_audio_voices } from "./ceb_audio_voices.mjs";
@@ -20,7 +21,7 @@ export async function sandbox() {
   if (0) return await ceb_definition("kamo");
   let limit = 75;
   let skip = 0;
-  let group_count = 8;
+  let group_count = ceb_group_size();
   let atoms = await ceb_bible_words_definitions_atoms(skip, limit);
   let group = list_take(atoms, group_count);
   let taken = list_take(group, 2);
