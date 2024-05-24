@@ -34,7 +34,6 @@ import { string_length } from "./string_length.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { list_second } from "./list_second.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
-import { subtract_1 } from "./subtract_1.mjs";
 import { assert } from "./assert.mjs";
 import { multiply } from "./multiply.mjs";
 import { number_min } from "./number_min.mjs";
@@ -77,9 +76,9 @@ export async function app_ceb() {
     list_scramble(atom_copy);
   }
   function refresh_quiz(settings) {
+    html_clear_scroll_top(root);
     let { pair_index, chunk_size, forwards } = settings;
     assert(number_is, [chunk_size]);
-    html_clear_scroll_top(root);
     html_style_centered(root);
     let pair = list_get(atom_copy, pair_index);
     let pairs_other = list_copy(atom);
@@ -135,16 +134,9 @@ export async function app_ceb() {
             html_style_display_none(button);
             if (last_is) {
               app_learn_code_style_success(answer);
-              if (equal(pair_index, list_index_last(atom_copy))) {
-                let settings_index = list_index(settings);
-                let after = list_get(settings_choices, add_1(settings_index));
-                chunk_size = subtract_1(chunk_size);
-                pair_index = 0;
-                quiz_set_new();
-              } else {
-                pair_index = add_1(pair_index);
-              }
-              refresh_quiz(pair_index, chunk_size);
+              let settings_index = list_index(settings_choices, settings);
+              let after = list_get(settings_choices, add_1(settings_index));
+              refresh_quiz(after);
             }
           });
         }
