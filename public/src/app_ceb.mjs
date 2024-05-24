@@ -1,3 +1,4 @@
+import { list_last } from "./list_last.mjs";
 import { html_style_display_block } from "./html_style_display_block.mjs";
 import { greater_than } from "./greater_than.mjs";
 import { app_ceb_quiz_settings } from "./app_ceb_quiz_settings.mjs";
@@ -62,7 +63,7 @@ export async function app_ceb() {
       refresh_pair(0);
     });
     html_button_width_full_text_click(root, "📝quiz ( easy to hard )", () => {
-      quizzes_start([3,2,1]);
+      quizzes_start([3, 2, 1]);
     });
     html_button_width_full_text_click(root, "🧑‍🎓️quiz ( hard only )", () => {
       quizzes_start([1]);
@@ -88,10 +89,14 @@ export async function app_ceb() {
       answer_other_get = list_first;
     }
     let quiz_container;
-    let button_ready = html_button_width_full_text_click(root, "ready", () => {
-      html_style_display_none(button_ready);
-      html_style_display_block(quiz_container);
-    });
+    let button_ready = html_button_width_full_text_click(
+      root,
+      "🏁ready",
+      () => {
+        html_style_display_none(button_ready);
+        html_style_display_block(quiz_container);
+      },
+    );
     quiz_container = html_div(root);
     let component_display_none;
     if (equal_1(chunk_size)) {
@@ -145,8 +150,12 @@ export async function app_ceb() {
               if (not(forwards)) {
                 await app_ceb_audio(cebuano);
               }
-              let after = list_after(settings_choices, settings);
-              refresh_quiz(after);
+              if (equal(settings, list_last(settings_choices))) {
+                refresh_splash();
+              } else {
+                let after = list_after(settings_choices, settings);
+                refresh_quiz(after);
+              }
             }
           });
         }
