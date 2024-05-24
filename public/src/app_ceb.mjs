@@ -1,3 +1,4 @@
+import { or } from "./or.mjs";
 import { number_power } from "./number_power.mjs";
 import { integer_log } from "./integer_log.mjs";
 import { equal_not } from "./equal_not.mjs";
@@ -72,7 +73,6 @@ import { list_adder } from "./list_adder.mjs";
 import { subtract } from "./subtract.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
 import { divide } from "./divide.mjs";
-import { or } from "firebase/firestore";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
