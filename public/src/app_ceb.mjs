@@ -172,6 +172,7 @@ export async function app_ceb() {
         });
         html_style_click_width_min(button);
       });
+      la(button);
     });
   }
   async function refresh_pair(pair_index) {
