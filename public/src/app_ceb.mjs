@@ -1,5 +1,4 @@
 import { log } from "./log.mjs";
-import { add } from "./add.mjs";
 import { number_is } from "./number_is.mjs";
 import { list_random_item } from "./list_random_item.mjs";
 import { html_element_style } from "./html_element_style.mjs";
@@ -72,7 +71,7 @@ export async function app_ceb() {
       let button = html_button_text_click(root, choice, () => {
         let correct = list_get(correct_choices, index);
         if (equal(choice, correct)) {
-          index = add(index);
+          index = add_1(index);
           const last_is = equal(
             multiply(index, chunk_size),
             string_length(english),
