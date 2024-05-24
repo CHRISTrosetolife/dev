@@ -54,11 +54,15 @@ export async function app_ceb() {
         let correct = list_get(correct_choices, index);
         if (equal(choice, correct)) {
           index = add_1(index);
-          let last = equal(index, string_length(english)) ? "" : "?";
+          const last_is = equal(index, string_length(english));
+          let last = last_is ? "" : "?";
           html_inner_set(
             answer,
             string_combine(string_take(english, index), last),
           );
+          if (last_is) {
+            app_learn_code_style_success(answer);
+          }
           app_learn_code_style_success(button);
           app_learn_code_correct_timeout(() => html_style_display_none(button));
         }
