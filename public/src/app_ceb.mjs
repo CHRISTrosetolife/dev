@@ -101,7 +101,8 @@ export async function app_ceb() {
             html_style_display_none(button);
             if (last_is) {
               app_learn_code_style_success(answer);
-              refresh_quiz(add_1(pair_index), subtract_1(chunk_size));
+              chunk_size = subtract_1(chunk_size);
+              refresh_quiz(add_1(pair_index), chunk_size);
             }
           });
         }
