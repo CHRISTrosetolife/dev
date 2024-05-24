@@ -177,7 +177,6 @@ export async function app_ceb() {
     let { pair, chunk_size, forwards } = settings;
     assert(number_is, [chunk_size]);
     let concat = atoms_slice_concat();
-    log({concat,settings})
     let pairs_other = list_without(concat, pair);
     let [cebuano, english] = pair;
     let answer;
