@@ -1,10 +1,11 @@
+import { html_style_alternate_short_p } from "./html_style_alternate_short_p.mjs";
+import { app_ceb_atom_title_patterns } from "./app_ceb_atom_title_patterns.mjs";
 import { app_ceb_atom_title } from "./app_ceb_atom_title.mjs";
 import { app_ceb_level_size } from "./app_ceb_level_size.mjs";
 import { each_range } from "./each_range.mjs";
 import { add } from "./add.mjs";
 import { mod_last_is } from "./mod_last_is.mjs";
 import { html_button_width_full_text_click_next } from "./html_button_width_full_text_click_next.mjs";
-import { noop } from "./noop.mjs";
 import { html_button_width_full_text_click_alternate_short } from "./html_button_width_full_text_click_alternate_short.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_style_button_default } from "./html_style_button_default.mjs";
@@ -64,7 +65,6 @@ import { equal_1 } from "./equal_1.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_adder } from "./list_adder.mjs";
-import { app_ceb_word_style } from "./app_ceb_word_style.mjs";
 import { list_index } from "./list_index.mjs";
 import { subtract } from "./subtract.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
@@ -90,7 +90,7 @@ export async function app_ceb() {
       let text = app_ceb_atom_title(atom_i);
       html_button_width_full_text_click_alternate_short(
         root,
-        [noop, app_ceb_word_style, noop, html_style_bold],
+        app_ceb_atom_title_patterns(),
         string_combine_multiple([add_1(i), ". ", text]),
         function on_click() {
           atom = atom_i;
@@ -102,7 +102,7 @@ export async function app_ceb() {
   function refresh_node() {
     html_clear_scroll_top(root);
     let text = app_ceb_atom_title(atom);
-    html_p_text(root, text);
+    html_style_alternate_short_p(root, app_ceb_atom_title_patterns(), text);
     html_button_width_full_text_click(root, "🎓 learn", () => {
       refresh_pair(0);
     });
