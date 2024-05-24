@@ -48,8 +48,10 @@ export async function app_ceb() {
   let group_index = 0;
   let group = await http_storage(ceb_group_path(group_index));
   let atom = list_first(group);
+  let chunk_sizes = [3, 2, 1, 1];
+  chunk_sizes = [1];
   let settings_choices = list_adder((la) =>
-    each([3, 2, 1, 1], (chunk_size) =>
+    each(chunk_sizes, (chunk_size) =>
       each([true, false], (forwards) => {
         let atom_copy = list_copy(atom);
         list_scramble(atom_copy);
