@@ -44,13 +44,14 @@ import { html_button_width_full_text_click } from "./html_button_width_full_text
 import { list_adder } from "./list_adder.mjs";
 import { range } from "./range.mjs";
 import { list_length } from "./list_length.mjs";
+import { list_index } from "./list_index.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
   let group = await http_storage(ceb_group_path(group_index));
   let atom = list_first(group);
   let atom_copy;
-  let settings = list_adder((la) =>
+  let settings_choices = list_adder((la) =>
     each([3, 2, 1], (chunk_size) =>
       each([true, false], (forwards) =>
         each(range(list_length(atom)), (pair_index) =>
@@ -67,7 +68,7 @@ export async function app_ceb() {
     html_clear_scroll_top(root);
     html_button_width_full_text_click(root, "begin", () => {
       quiz_set_new();
-      refresh_quiz(list_first(settings));
+      refresh_quiz(list_first(settings_choices));
     });
   }
   refresh_splash();
@@ -135,6 +136,8 @@ export async function app_ceb() {
             if (last_is) {
               app_learn_code_style_success(answer);
               if (equal(pair_index, list_index_last(atom_copy))) {
+                let settings_index = list_index(settings);
+                let after = list_get(settings_choices, add_1(settings_index));
                 chunk_size = subtract_1(chunk_size);
                 pair_index = 0;
                 quiz_set_new();
