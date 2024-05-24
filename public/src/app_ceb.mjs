@@ -143,6 +143,7 @@ export async function app_ceb() {
       }
       refresh_node();
     });
+    html_button_width_full_text_click(root, "⬆️ up", () => {});
   }
   function app_ceb_learn() {
     html_button_width_full_text_click(root, "🎓 learn", () => {
