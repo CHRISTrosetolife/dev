@@ -1,6 +1,5 @@
 import { number_power } from "./number_power.mjs";
 import { equal_0 } from "./equal_0.mjs";
-import { number_power_2 } from "./number_power_2.mjs";
 import { integer_log } from "./integer_log.mjs";
 import { equal_not } from "./equal_not.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
@@ -123,7 +122,7 @@ export async function app_ceb() {
       let { left, right } = position;
       let n = add_1(subtract(right, left));
       let count = integer_log(n, level_size);
-      let level = number_power_2(count);
+      let level = number_power(level_size, count);
       log({
         left,
         right,
