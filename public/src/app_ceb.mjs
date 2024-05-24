@@ -50,9 +50,9 @@ export async function app_ceb() {
   let atom_copy;
   let settings = list_adder((la) =>
     each([true, false], (forwards) => {
-      return {
+      la({
         forwards,
-      };
+      });
     }),
   );
   function refresh_splash() {
