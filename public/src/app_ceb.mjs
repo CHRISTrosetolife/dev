@@ -111,7 +111,7 @@ export async function app_ceb() {
             left: left_next,
             right: right_next,
           };
-          refresh_node();
+          refresh_group();
         },
       );
     });
@@ -129,15 +129,14 @@ export async function app_ceb() {
           left: subtract(index, subtract_1(level_size)),
           right: index,
         };
-        refresh_group();
       } else {
         let index_next = add_1(index);
         position = {
           left: index_next,
           right: index_next,
         };
-        refresh_node();
       }
+      refresh_group();
     });
   }
   function app_ceb_learn() {
@@ -250,7 +249,7 @@ export async function app_ceb() {
                 app_learn_code_style_success(answer_element);
                 await app_ceb_audio(cebuano);
                 if (equal(settings, list_last(settings_choices))) {
-                  refresh_node();
+                  refresh_group();
                 } else {
                   let after = list_after(settings_choices, settings);
                   refresh_quiz(after);
@@ -282,7 +281,7 @@ export async function app_ceb() {
       root,
       (pair_index) => {
         if (greater_than(pair_index, list_index_last(concat))) {
-          refresh_node();
+          refresh_group();
         } else {
           refresh_pair(pair_index);
         }
