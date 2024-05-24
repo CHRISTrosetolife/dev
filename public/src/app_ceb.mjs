@@ -39,7 +39,8 @@ export async function app_ceb() {
     let split_size = 1;
     let correct_choices = string_chunk(english, split_size);
     let copy = list_copy(correct_choices);
-    each(correct_choices, (choice) => {
+    list_scramble(copy);
+    each(copy, (choice) => {
       let button = html_button_text_click(root, choice, noop);
       html_style_click_width_min(button);
     });
