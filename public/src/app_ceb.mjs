@@ -33,8 +33,10 @@ export async function app_ceb() {
   list_scramble(copy);
   refresh_quiz(0);
   function refresh_quiz(pair_index) {
+    html_clear_scroll_top(root);
     let pair = list_get(copy, pair_index);
     let [cebuano, english] = pair;
+    let cebuano_p = app_ceb_word_button(root, cebuano);
     log({
       english,
     });
