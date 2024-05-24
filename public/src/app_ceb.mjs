@@ -70,6 +70,7 @@ import { list_index } from "./list_index.mjs";
 import { subtract } from "./subtract.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
 import { divide } from "./divide.mjs";
+import { list_concat } from "./list_concat.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -276,14 +277,16 @@ export async function app_ceb() {
   }
   async function refresh_pair(pair_index) {
     html_clear_scroll_top_centered(root);
-    let pair = list_get(atom, pair_index);
+    let atoms = atoms_slice();
+    let concat = list_concat(atoms);
+    let pair = list_get(concat, pair_index);
     let [cebuano, english] = pair;
     app_ceb_word_button(root, cebuano);
     app_ceb_word_english(root, english);
     html_buttons_next_previous(
       root,
       (pair_index) => {
-        if (greater_than(pair_index, list_index_last(atom))) {
+        if (greater_than(pair_index, list_index_last(concat))) {
           refresh_node();
         } else {
           refresh_pair(pair_index);
@@ -294,9 +297,13 @@ export async function app_ceb() {
     );
   }
   function quizzes_start(chunk_sizes) {
-    let { left, right } = position;
-    let atoms = list_slice(group, left, add_1(right));
+    let atoms = atoms_slice();
     settings_choices = app_ceb_quiz_settings(atoms, chunk_sizes);
     refresh_quiz(list_first(settings_choices));
+  }
+  function atoms_slice() {
+    let { left, right } = position;
+    let atoms = list_slice(group, left, add_1(right));
+    return atoms;
   }
 }
