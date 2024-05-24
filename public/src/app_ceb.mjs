@@ -1,3 +1,5 @@
+import { app_learn_code_correct_timeout } from "./app_learn_code_correct_timeout.mjs";
+import { app_learn_code_style_success } from "./app_learn_code_style_success.mjs";
 import { html_style_display_none } from "./html_style_display_none.mjs";
 import { html_style_click_width_min } from "./html_style_click_width_min.mjs";
 import { html_button_text_click } from "./html_button_text_click.mjs";
@@ -57,8 +59,8 @@ export async function app_ceb() {
             answer,
             string_combine(string_take(english, index), last),
           );
-          app_learn_code_style_success(button)
-          html_style_display_none(button);
+          app_learn_code_style_success(button);
+          app_learn_code_correct_timeout(() => html_style_display_none(button));
         }
       });
       html_style_click_width_min(button);
