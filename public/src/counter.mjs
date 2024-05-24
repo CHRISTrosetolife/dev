@@ -1,6 +1,6 @@
-import { list_add } from "./list_add.mjs";
+import { add_1 } from "./add_1.mjs";
 export function counter(lambda) {
-  let result = [];
-  lambda((item) => list_add(result, item));
+  let result = 0;
+  lambda((item) => (result = add_1(result)));
   return result;
 }
