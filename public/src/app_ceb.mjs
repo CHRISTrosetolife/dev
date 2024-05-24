@@ -73,7 +73,7 @@ export async function app_ceb() {
           "words ",
           list_join_colon_spaces(f),
           " through ",
-          add_1(index_low),
+          list_join_colon_spaces(list_last(atom)),
         ]),
       );
     });
