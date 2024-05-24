@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each_range } from "./each_range.mjs";
 import { html_style_button_default } from "./html_style_button_default.mjs";
 import { html_style_wrong } from "./html_style_wrong.mjs";
@@ -64,7 +65,10 @@ export async function app_ceb() {
   let settings_choices;
   function refresh_group() {
     each_range(2, (i) => {
-      html_button_width_full_text_click(root, "words ");
+      html_button_width_full_text_click(
+        root,
+        string_combine_multiple(["words "]),
+      );
     });
   }
   refresh_group();
