@@ -1,5 +1,5 @@
+import { list_without } from "./list_without.mjs";
 import { app_ceb_audio } from "./app_ceb_audio.mjs";
-import { range_list } from "./range_list.mjs";
 import { app_ceb_word_english } from "./app_ceb_word_english.mjs";
 import { list_after } from "./list_after.mjs";
 import { number_is } from "./number_is.mjs";
@@ -33,7 +33,6 @@ import { html_inner_set } from "./html_inner_set.mjs";
 import { string_take } from "./string_take.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { string_length } from "./string_length.mjs";
-import { list_remove } from "./list_remove.mjs";
 import { list_second } from "./list_second.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
 import { assert } from "./assert.mjs";
@@ -49,13 +48,14 @@ export async function app_ceb() {
   let group_index = 0;
   let group = await http_storage(ceb_group_path(group_index));
   let atom = list_first(group);
-  let atom_copy;
   let settings_choices = list_adder((la) =>
     each([3, 2, 1], (chunk_size) =>
       each([true, false], (forwards) => {
-        each(range_list(atom), (pair_index) =>
+        let atom_copy = list_copy(atom);
+        list_scramble(atom_copy);
+        each(atom_copy, (pair) =>
           la({
-            pair_index,
+            pair,
             chunk_size,
             forwards,
           }),
@@ -66,23 +66,17 @@ export async function app_ceb() {
   function refresh_splash() {
     html_clear_scroll_top(root);
     html_button_width_full_text_click(root, "begin", () => {
-      quiz_set_new();
       refresh_quiz(list_first(settings_choices));
     });
   }
   refresh_splash();
-  function quiz_set_new() {
-    atom_copy = list_copy(atom);
-    list_scramble(atom_copy);
-  }
+  function quiz_set_new() {}
   function refresh_quiz(settings) {
     html_clear_scroll_top(root);
-    let { pair_index, chunk_size, forwards } = settings;
+    let { pair, chunk_size, forwards } = settings;
     assert(number_is, [chunk_size]);
     html_style_centered(root);
-    let pair = list_get(atom_copy, pair_index);
-    let pairs_other = list_copy(atom);
-    list_remove(pairs_other, pair);
+    let pairs_other = list_without(atom, pair);
     let [cebuano, english] = pair;
     let answer;
     let pair_other = list_random_item(pairs_other);
