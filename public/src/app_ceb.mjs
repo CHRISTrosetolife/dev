@@ -89,7 +89,7 @@ export async function app_ceb() {
     app_ceb_title();
     each_range(level_size, (i) => {
       let { left, right } = position;
-      let factor = divide(add_1(subtract(right, left)), level_size);
+      let factor = ceiling(divide(add_1(subtract(right, left)), level_size));
       let m = multiply(factor, i);
       let s = subtract_1(multiply(factor, add_1(i)));
       let left_next = add(left, m);
