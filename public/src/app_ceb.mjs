@@ -52,6 +52,7 @@ export async function app_ceb() {
     each([3, 2, 1], (chunk_size) =>
       each([true, false], (forwards) =>
         la({
+          chunk_size,
           forwards,
         }),
       ),
