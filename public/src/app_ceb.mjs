@@ -35,6 +35,7 @@ import { list_second } from "./list_second.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
 import { assert } from "./assert.mjs";
+import { add } from "./add.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -42,7 +43,7 @@ export async function app_ceb() {
   let atom = list_first(group);
   let atom_copy = list_copy(atom);
   list_scramble(atom_copy);
-  refresh_quiz(0);
+  refresh_quiz(0, 3);
   function refresh_quiz(pair_index, chunk_size) {
     assert(number_is, [chunk_size]);
     html_clear_scroll_top(root);
@@ -68,7 +69,7 @@ export async function app_ceb() {
       let button = html_button_text_click(root, choice, () => {
         let correct = list_get(correct_choices, index);
         if (equal(choice, correct)) {
-          index = add_1(index);
+          index = add(index, chunk_size);
           const last_is = equal(index, string_length(english));
           let last = last_is ? "" : "?";
           html_inner_set(
