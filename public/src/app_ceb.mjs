@@ -86,17 +86,21 @@ export async function app_ceb() {
       let { left, right } = position;
       let factor = divide(add_1(subtract(right, left)), level_size);
       let m = multiply(factor, i);
-        let s =subtract_1(m);
-        let left_next = add(left, m);
-        let right_next = add(left_next, s);
-      let atom_i = list_get(group, left_next);
-      let text = app_ceb_atom_title(atom_i);
+      let s = subtract_1(m);
+      let left_next = add(left, m);
+      let right_next = add(left_next, s);
+      let atom_left = list_get(group, left_next);
+      let atom_right = list_get(group, right_next);
+      let text = app_ceb_atom_title(atom_left, atom_right);
       html_button_width_full_text_click_alternate_short(
         root,
         app_ceb_atom_title_patterns(),
         string_combine_multiple([add_1(i), ". ", text]),
         function on_click() {
-          atom = atom_i;
+          position = {
+            left: left_next,
+            right: right_next,
+          };
           refresh_node();
         },
       );
@@ -104,7 +108,7 @@ export async function app_ceb() {
   }
   function refresh_node() {
     html_clear_scroll_top_centered(root);
-    let text = app_ceb_atom_title(atom,atom);
+    let text = app_ceb_atom_title(atom, atom);
     html_style_alternate_short_p(root, app_ceb_atom_title_patterns(), text);
     html_button_width_full_text_click(root, "🎓 learn", () => {
       refresh_pair(0);
