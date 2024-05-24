@@ -1,3 +1,4 @@
+import { equal_0 } from "./equal_0.mjs";
 import { equal_not } from "./equal_not.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { list_slice } from "./list_slice.mjs";
@@ -71,6 +72,7 @@ import { list_index } from "./list_index.mjs";
 import { subtract } from "./subtract.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
 import { divide } from "./divide.mjs";
+import { mod } from "./mod.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -124,6 +126,8 @@ export async function app_ceb() {
       let { left, right } = position;
       let n = add_1(subtract(right, left));
       while (greater_than(n, 1)) {
+        let m = mod(n, level_size);
+        assert(equal_0, [m]);
         n = divide(n, level_size);
       }
       let atom = app_ceb_atom_get();
