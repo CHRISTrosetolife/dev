@@ -1,3 +1,4 @@
+import { app_ceb_audio } from "./app_ceb_audio.mjs";
 import { range_list } from "./range_list.mjs";
 import { app_ceb_word_english } from "./app_ceb_word_english.mjs";
 import { list_after } from "./list_after.mjs";
@@ -131,10 +132,11 @@ export async function app_ceb() {
             html_style_display_none(button);
           }
           app_learn_code_style_success(button);
-          app_learn_code_correct_timeout(() => {
+          app_learn_code_correct_timeout(async () => {
             html_style_display_none(button);
             if (last_is) {
               app_learn_code_style_success(answer_element);
+              await app_ceb_audio(cebuano);
               let after = list_after(settings_choices, settings);
               refresh_quiz(after);
             }
