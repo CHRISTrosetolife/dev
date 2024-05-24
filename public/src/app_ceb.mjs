@@ -1,3 +1,4 @@
+import { each_range } from "./each_range.mjs";
 import { add } from "./add.mjs";
 import { mod_last_is } from "./mod_last_is.mjs";
 import { list_map_nested } from "./list_map_nested.mjs";
@@ -85,7 +86,7 @@ export async function app_ceb() {
     html_clear_scroll_top(root);
     let { left, right } = position;
     let factor = divide(add_1(subtract(right, left)), level_size);
-    each(level_size, (i) => {
+    each_range(level_size, (i) => {
       let atom_i = list_get(group, add(left, multiply(factor, i)));
       let mapped = list_map_nested(atom_i, string_delimit_backtick);
       let position_text = string_combine_multiple([
