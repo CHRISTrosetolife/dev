@@ -1,3 +1,4 @@
+import { html_style_click_width_min } from "./html_style_click_width_min.mjs";
 import { html_button_text_click } from "./html_button_text_click.mjs";
 import { string_chunk } from "./string_chunk.mjs";
 import { app_ceb_word_button } from "./app_ceb_word_button.mjs";
@@ -39,6 +40,7 @@ export async function app_ceb() {
     let correct_choices = string_chunk(english, split_size);
     each(correct_choices, (choice) => {
       let button = html_button_text_click(root, choice, noop);
+      html_style_click_width_min(button);
     });
   }
   async function refresh_pair(pair_index) {
