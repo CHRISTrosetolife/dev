@@ -59,7 +59,8 @@ export async function app_ceb() {
   function refresh_splash() {
     html_clear_scroll_top(root);
     html_button_width_full_text_click(root, "begin", () => {
-      refresh_pair(0);
+      if (0) refresh_pair(0);
+      else quizzes_start();
     });
   }
   function refresh_quiz(settings) {
@@ -158,8 +159,7 @@ export async function app_ceb() {
       root,
       (pair_index) => {
         if (greater_than(pair_index, list_index_last(atom))) {
-          settings_choices = app_ceb_quiz_settings(atom);
-          refresh_quiz(list_first(settings_choices));
+          quizzes_start();
         } else {
           refresh_pair(pair_index);
         }
@@ -167,5 +167,9 @@ export async function app_ceb() {
       pair_index,
       list_length(atom),
     );
+  }
+  function quizzes_start() {
+    settings_choices = app_ceb_quiz_settings(atom);
+    refresh_quiz(list_first(settings_choices));
   }
 }
