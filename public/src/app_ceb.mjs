@@ -120,11 +120,6 @@ export async function app_ceb() {
       });
     }
     app_ceb_learn();
-  }
-  function refresh_node() {
-    html_clear_scroll_top_centered(root);
-    app_ceb_title();
-    app_ceb_learn();
     html_button_width_full_text_click_next(root, () => {
       let atom = app_ceb_atom_get();
       let index = list_index(group, atom);
