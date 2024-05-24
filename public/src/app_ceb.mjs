@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { html_style_alternate_short_p } from "./html_style_alternate_short_p.mjs";
 import { app_ceb_atom_title_patterns } from "./app_ceb_atom_title_patterns.mjs";
@@ -86,16 +85,9 @@ export async function app_ceb() {
       let { left, right } = position;
       let factor = divide(add_1(subtract(right, left)), level_size);
       let m = multiply(factor, i);
-      let s = subtract_1(m);
+      let s = subtract_1(multiply(factor, add_1(i)));
       let left_next = add(left, m);
       let right_next = add(left_next, s);
-      log({
-        left_next,
-        right_next,
-        m,
-        s,
-        factor,
-      });
       let atom_left = list_get(group, left_next);
       let atom_right = list_get(group, right_next);
       let text = app_ceb_atom_title(atom_left, atom_right);
