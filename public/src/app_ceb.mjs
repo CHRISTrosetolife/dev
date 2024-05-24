@@ -1,5 +1,5 @@
-import { counter } from "./counter.mjs";
-import { equal_0 } from "./equal_0.mjs";
+import { number_power_2 } from "./number_power_2.mjs";
+import { integer_log } from "./integer_log.mjs";
 import { equal_not } from "./equal_not.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { list_slice } from "./list_slice.mjs";
@@ -73,7 +73,6 @@ import { list_index } from "./list_index.mjs";
 import { subtract } from "./subtract.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
 import { divide } from "./divide.mjs";
-import { mod } from "./mod.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -127,6 +126,7 @@ export async function app_ceb() {
       let { left, right } = position;
       let n = add_1(subtract(right, left));
       let count = integer_log(n, level_size);
+      number_power_2(count);
       let atom = app_ceb_atom_get();
       let index = list_index(group, atom);
       if (mod_last_is(index, level_size)) {
@@ -306,15 +306,3 @@ export async function app_ceb() {
     return atoms;
   }
 }
-function integer_log(n, level_size) {
-    return counter((c) => {
-        let d = n;
-        while (greater_than(d, 1)) {
-            let m = mod(d, level_size);
-            assert(equal_0, [m]);
-            d = divide(d, level_size);
-            c();
-        }
-    });
-}
-
