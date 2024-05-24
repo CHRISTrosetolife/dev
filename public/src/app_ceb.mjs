@@ -52,7 +52,7 @@ export async function app_ceb() {
   let group = await http_storage(ceb_group_path(group_index));
   let atom = list_first(group);
   let chunk_sizes = [3, 2, 1, 1];
-  chunk_sizes = [1];
+  if (0) chunk_sizes = [1];
   let settings_choices = list_adder((la) =>
     each(chunk_sizes, (chunk_size) =>
       each([true, false], (forwards) => {
