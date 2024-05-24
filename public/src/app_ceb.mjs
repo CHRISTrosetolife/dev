@@ -58,9 +58,11 @@ export async function app_ceb() {
   refresh_splash();
   function refresh_splash() {
     html_clear_scroll_top(root);
-    html_button_width_full_text_click(root, "begin", () => {
-      if (0) refresh_pair(0);
-      else quizzes_start();
+    html_button_width_full_text_click(root, "learn", () => {
+      refresh_pair(0);
+    });
+    html_button_width_full_text_click(root, "quiz", () => {
+      quizzes_start();
     });
   }
   function refresh_quiz(settings) {
