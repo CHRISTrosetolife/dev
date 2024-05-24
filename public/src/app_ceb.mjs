@@ -106,10 +106,10 @@ export async function app_ceb() {
     });
   }
   function refresh_node() {
+    html_clear_scroll_top_centered(root);
     let { left, right } = position;
     assert(equal, [left, right]);
     let atom = list_get(group, left);
-    html_clear_scroll_top_centered(root);
     let text = app_ceb_atom_title(atom, atom);
     html_style_alternate_short_p(root, app_ceb_atom_title_patterns(), text);
     html_button_width_full_text_click(root, "🎓 learn", () => {
