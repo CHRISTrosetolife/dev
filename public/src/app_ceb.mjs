@@ -87,10 +87,12 @@ export async function app_ceb() {
         [noop, app_ceb_word_style, noop, html_style_bold],
         string_combine_multiple([
           add_1(i),
-          ". words ",
-          list_join_colon_spaces(list_first(mapped)),
-          " through ",
-          list_join_colon_spaces(list_last(mapped)),
+          string_combine_multiple([
+            ". words ",
+            list_join_colon_spaces(list_first(mapped)),
+            " through ",
+            list_join_colon_spaces(list_last(mapped)),
+          ]),
         ]),
         function on_click() {
           atom = atom_i;
