@@ -1,3 +1,4 @@
+import { html_style_click_width_min } from "./html_style_click_width_min.mjs";
 import { log } from "./log.mjs";
 import { app_learn_code_ms_correct } from "./app_learn_code_ms_correct.mjs";
 import { timeout_set } from "./timeout_set.mjs";
@@ -115,9 +116,7 @@ export function app_learn_code_unscramble(source_get) {
           display: "inline-block",
           cursor: "pointer",
         });
-        html_style(part, {
-          "min-width": html_style_units(15),
-        });
+        html_style_click_width_min(part);
         html_style_centered(part);
         html_on_click(part, () => {
           let mapped = list_map(answers, (a) => {
