@@ -117,8 +117,9 @@ export async function app_ceb() {
           left: subtract(index, subtract_1(level_size)),
           right: index,
         };
+        refresh_group();
       } else {
-        refresh_group(0);
+        atom = list_get(group, add_1(index));
       }
     });
   }
