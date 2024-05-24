@@ -1,3 +1,5 @@
+import { html_div } from "./html_div.mjs";
+import { html_style_hidden } from "./html_style_hidden.mjs";
 import { list_without } from "./list_without.mjs";
 import { app_ceb_audio } from "./app_ceb_audio.mjs";
 import { app_ceb_word_english } from "./app_ceb_word_english.mjs";
@@ -92,6 +94,9 @@ export async function app_ceb() {
       answer = cebuano;
       answer_other_get = list_second;
     }
+    let button_read = html_button_text_click(root, "ready", () =>
+      html_style_hidden(button_read),
+    );
     let answer_other = answer_other_get(pair_other);
     let answer_element = html_p_text(root, "?");
     let style = html_element_style(answer_element);
@@ -106,6 +111,7 @@ export async function app_ceb() {
     let choices = list_copy(correct_choices);
     list_add_multiple(choices, other_choices);
     list_scramble(choices);
+    let quiz_container = html_div(root);
     each(choices, (choice) => {
       let button = html_button_text_click(root, choice, () => {
         let correct = list_get(correct_choices, index);
