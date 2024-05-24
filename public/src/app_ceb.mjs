@@ -49,8 +49,8 @@ export async function app_ceb() {
   let atom = list_first(group);
   let atom_copy;
   let settings = list_adder((la) =>
-    each([3, 2, 1], (chunk_size) =>
-      each([true, false], (forwards) =>
+    each([true, false], (forwards) =>
+      each([3, 2, 1], (chunk_size) =>
         la({
           chunk_size,
           forwards,
