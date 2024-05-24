@@ -1,8 +1,6 @@
+import { string_chunk } from "./string_chunk.mjs";
 import { app_ceb_word_button } from "./app_ceb_word_button.mjs";
-import { ceiling } from "./ceiling.mjs";
-import { number_min } from "./number_min.mjs";
 import { log } from "./log.mjs";
-import { range } from "./range.mjs";
 import { storage_url } from "./storage_url.mjs";
 import { html_audio } from "./html_audio.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
@@ -19,12 +17,6 @@ import { each } from "./each.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { html_style_centered } from "./html_style_centered.mjs";
 import { list_index_last } from "./list_index_last.mjs";
-import { divide } from "./divide.mjs";
-import { multiply } from "./multiply.mjs";
-import { string_take } from "./string_take.mjs";
-import { string_skip } from "./string_skip.mjs";
-import { string_length } from "./string_length.mjs";
-import { list_adder } from "./list_adder.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -42,17 +34,7 @@ export async function app_ceb() {
       english,
     });
     let split_size = 1;
-    list_adder((la) => {
-      let length = string_length(english);
-      let adjusted = ceiling(divide(length, split_size));
-      for (let i of range(adjusted)) {
-        let scaled = multiply(i, split_size);
-        let skipped = string_skip(english, scaled);
-        let limit = string_length(skipped);
-        let taken = string_take(skipped, number_min(split_size, limit));
-        la(taken);
-      }
-    });
+    let correct_choices = string_chunk(english, split_size);
   }
   async function refresh_pair(pair_index) {
     html_clear_scroll_top(root);
