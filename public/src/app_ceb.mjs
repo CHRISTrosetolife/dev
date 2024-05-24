@@ -48,6 +48,7 @@ import { html_button_width_full_text_click } from "./html_button_width_full_text
 import { not } from "./not.mjs";
 import { list_length } from "./list_length.mjs";
 import { equal_1 } from "./equal_1.mjs";
+import { html_style_bold } from "./html_style_bold.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -58,7 +59,7 @@ export async function app_ceb() {
   function refresh_splash() {
     html_clear_scroll_top(root);
     html_button_width_full_text_click(root, "begin", () => {
-      if (10) refresh_pair(0);
+      if (0) refresh_pair(0);
       else quizzes_start();
     });
   }
@@ -96,6 +97,7 @@ export async function app_ceb() {
     html_style_display_none(component_display_none);
     let answer_other = answer_other_get(pair_other);
     let answer_element = html_p_text(quiz_container, "?");
+    html_style_bold(answer_element);
     let style = html_element_style(answer_element);
     html_style_default_border_margin(style);
     html_style_width_full(answer_element);
