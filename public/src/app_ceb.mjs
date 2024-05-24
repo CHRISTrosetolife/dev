@@ -102,7 +102,7 @@ export async function app_ceb() {
           left_next,
           right_next,
         });
-        let text = app_ceb_atom_title(atom_left, atom_right);
+        let text = app_ceb_atom_title(group, atom_left, atom_right);
         html_button_width_full_text_click_alternate_short(
           root,
           app_ceb_atom_title_patterns(),
@@ -169,7 +169,7 @@ export async function app_ceb() {
     let { left, right } = position;
     const gl = list_get(group, left);
     const gr = list_get(group, right);
-    let text = app_ceb_atom_title(gl, gr);
+    let text = app_ceb_atom_title(group, gl, gr);
     html_style_alternate_short_p(root, app_ceb_atom_title_patterns(), text);
   }
   function refresh_quiz(settings) {

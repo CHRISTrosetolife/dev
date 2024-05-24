@@ -8,7 +8,7 @@ import { list_map_nested } from "./list_map_nested.mjs";
 import { list_index } from "./list_index.mjs";
 import { multiply } from "./multiply.mjs";
 import { add_1 } from "./add_1.mjs";
-export function app_ceb_atom_title(atom_left, atom_right) {
+export function app_ceb_atom_title(group,atom_left, atom_right) {
   let l = list_first(atom_left);
   let r = list_last(atom_right);
   let atom_count = ceb_atom_count();
