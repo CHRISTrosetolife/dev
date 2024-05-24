@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { add } from "./add.mjs";
 import { number_is } from "./number_is.mjs";
 import { list_random_item } from "./list_random_item.mjs";
@@ -77,15 +78,17 @@ export async function app_ceb() {
             string_length(english),
           );
           let last = last_is ? "" : "?";
+          const take_count = number_min(
+            multiply(index, chunk_size),
+            string_length(english),
+          );
+          log({
+            last,
+            take_count,
+          });
           html_inner_set(
             answer,
-            string_combine(
-              string_take(
-                english,
-                number_min(multiply(index, chunk_size), string_length(english)),
-              ),
-              last,
-            ),
+            string_combine(string_take(english, take_count), last),
           );
           if (last_is) {
             app_learn_code_style_success(answer);
