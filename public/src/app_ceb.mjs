@@ -68,8 +68,8 @@ export async function app_ceb() {
   function refresh_group() {
     each_range(2, (i) => {
       let atom = list_get(group, i);
-      let mapped = list_map(atom, (m) => string_delimit());
-      let f = list_first(atom);
+      let mapped = list_map(atom, string_delimit_backtick);
+      let f = list_first(mapped);
       html_button_width_full_text_click(
         root,
         string_combine_multiple([
@@ -77,7 +77,7 @@ export async function app_ceb() {
           ". ",
           list_join_colon_spaces(f),
           " - ",
-          list_join_colon_spaces(list_last(atom)),
+          list_join_colon_spaces(list_last(mapped)),
         ]),
       );
     });
