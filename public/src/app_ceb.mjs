@@ -65,6 +65,7 @@ import { html_style_bold } from "./html_style_bold.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { app_ceb_word_style } from "./app_ceb_word_style.mjs";
+import { list_index } from "./list_index.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -106,6 +107,7 @@ export async function app_ceb() {
       quizzes_start([1]);
     });
     html_button_width_full_text_click_next(root, () => {
+      let index = list_index(group, atom);
       refresh_group(0);
     });
   }
