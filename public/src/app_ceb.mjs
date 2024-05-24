@@ -1,3 +1,4 @@
+import { ceiling } from "./ceiling.mjs";
 import { number_min } from "./number_min.mjs";
 import { log } from "./log.mjs";
 import { range } from "./range.mjs";
@@ -21,7 +22,6 @@ import { html_style_bold } from "./html_style_bold.mjs";
 import { html_style_centered } from "./html_style_centered.mjs";
 import { list_index_last } from "./list_index_last.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
-import { floor } from "./floor.mjs";
 import { divide } from "./divide.mjs";
 import { multiply } from "./multiply.mjs";
 import { string_take } from "./string_take.mjs";
@@ -43,7 +43,7 @@ export async function app_ceb() {
     });
     let split_size = 2;
     let length = string_length(english);
-    let adjusted = floor(divide(length, split_size));
+    let adjusted = ceiling(divide(length, split_size));
     log({
       adjusted,
     });
