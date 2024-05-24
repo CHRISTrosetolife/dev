@@ -1,3 +1,5 @@
+import { html_button_width_full_text_click_next } from "./html_button_width_full_text_click_next.mjs";
+import { add } from "./add.mjs";
 import { noop } from "./noop.mjs";
 import { html_button_width_full_text_click_alternate_short } from "./html_button_width_full_text_click_alternate_short.mjs";
 import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
@@ -73,7 +75,7 @@ export async function app_ceb() {
   function refresh_group(index_min) {
     html_clear_scroll_top(root);
     each_range(2, (i) => {
-      let atom_i = list_get(group, add(i,index_min));
+      let atom_i = list_get(group, add(i, index_min));
       let mapped = list_map(atom_i, (a) =>
         list_map(a, string_delimit_backtick),
       );
@@ -105,6 +107,8 @@ export async function app_ceb() {
     html_button_width_full_text_click(root, "🧑‍🎓️ quiz ( hard only )", () => {
       quizzes_start([1]);
     });
+    html_button_width_full_text_click_next;
+    refresh_group(0);
   }
   function refresh_quiz(settings) {
     html_clear_scroll_top(root);
