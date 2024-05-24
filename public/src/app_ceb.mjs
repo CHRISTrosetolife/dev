@@ -1,3 +1,4 @@
+import { list_get_or_last } from "./list_get_or_last.mjs";
 import { or } from "./or.mjs";
 import { number_power } from "./number_power.mjs";
 import { integer_log } from "./integer_log.mjs";
@@ -166,12 +167,7 @@ export async function app_ceb() {
   function app_ceb_title() {
     let { left, right } = position;
     let gl = list_get(group, left);
-    let gr;
-    if (greater_than(right, list_index_last(group))) {
-      gr = list_last(group);
-    } else {
-      gr = list_get(group, right);
-    }
+    let gr = list_get_or_last(right, group);
     let text = app_ceb_atom_title(group, gl, gr);
     html_style_alternate_short_p(root, app_ceb_atom_title_patterns(), text);
   }
