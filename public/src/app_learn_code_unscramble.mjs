@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { app_learn_code_ms_correct } from "./app_learn_code_ms_correct.mjs";
 import { timeout_set } from "./timeout_set.mjs";
 import { app_learn_code_background_color_correct_dark } from "./app_learn_code_background_color_correct_dark.mjs";
@@ -113,6 +114,8 @@ export function app_learn_code_unscramble(source_get) {
           margin: html_style_units(3),
           display: "inline-block",
           cursor: "pointer",
+        });
+        html_style(part, {
           "min-width": html_style_units(15),
         });
         html_style_centered(part);
