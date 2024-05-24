@@ -83,6 +83,8 @@ export async function app_ceb() {
     list_remove(pairs_other, pair);
     let [cebuano, english] = pair;
     let answer;
+    let pair_other = list_random_item(pairs_other);
+    let answer_other = list_second(pair_other);
     if (forwards) {
       app_ceb_word_button(root, cebuano);
       answer = english;
@@ -99,9 +101,7 @@ export async function app_ceb() {
     });
     let index = 0;
     let correct_choices = string_chunk(answer, chunk_size);
-    let pair_other = list_random_item(pairs_other);
-    let english_other = list_second(pair_other);
-    let other_choices = string_chunk(english_other, chunk_size);
+    let other_choices = string_chunk(answer_other, chunk_size);
     let choices = list_copy(correct_choices);
     list_add_multiple(choices, other_choices);
     list_scramble(choices);
