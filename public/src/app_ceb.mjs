@@ -32,6 +32,7 @@ import { string_length } from "./string_length.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { list_second } from "./list_second.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
+import { subtract_1 } from "./subtract_1.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -40,7 +41,7 @@ export async function app_ceb() {
   let atom_copy = list_copy(atom);
   list_scramble(atom_copy);
   refresh_quiz(0);
-  function refresh_quiz(pair_index) {
+  function refresh_quiz(pair_index, chunk_size) {
     html_clear_scroll_top(root);
     html_style_centered(root);
     let pair = list_get(atom_copy, pair_index);
@@ -53,11 +54,10 @@ export async function app_ceb() {
     html_style_default_border_margin(style);
     html_style_width_full(answer);
     let index = 0;
-    let split_size = 1;
-    let correct_choices = string_chunk(english, split_size);
+    let correct_choices = string_chunk(english, chunk_size);
     let pair_other = list_random_item(pairs_other);
     let english_other = list_second(pair_other);
-    let other_choices = string_chunk(english_other, split_size);
+    let other_choices = string_chunk(english_other, chunk_size);
     let choices = list_copy(correct_choices);
     list_add_multiple(choices, other_choices);
     list_scramble(choices);
@@ -81,7 +81,7 @@ export async function app_ceb() {
             html_style_display_none(button);
             if (last_is) {
               app_learn_code_style_success(answer);
-              refresh_quiz(add_1(pair_index));
+              refresh_quiz(add_1(pair_index), subtract_1(chunk_size));
             }
           });
         }
