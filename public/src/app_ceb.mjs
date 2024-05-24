@@ -1,3 +1,4 @@
+import { equal_0 } from "./equal_0.mjs";
 import { number_power_2 } from "./number_power_2.mjs";
 import { integer_log } from "./integer_log.mjs";
 import { equal_not } from "./equal_not.mjs";
@@ -130,10 +131,13 @@ export async function app_ceb() {
       let atom = app_ceb_atom_get();
       let index = list_index(group, atom);
       if (mod_last_is(right, level)) {
-        position = {
-          left: subtract(index, subtract_1(level_size)),
-          right: right,
-        };
+        if (equal_0(left)) {
+        } else {
+          position = {
+            left: subtract(index, subtract_1(level_size)),
+            right: right,
+          };
+        }
       } else {
         let index_next = add_1(index);
         position = {
