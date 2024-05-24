@@ -1,3 +1,4 @@
+import { app_ceb_level_size } from "./app_ceb_level_size.mjs";
 import { each_range } from "./each_range.mjs";
 import { add } from "./add.mjs";
 import { mod_last_is } from "./mod_last_is.mjs";
@@ -74,7 +75,7 @@ export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
   let group = await http_storage(ceb_group_path(group_index));
-  let level_size = 2;
+  let level_size = app_ceb_level_size();
   let settings_choices;
   let atom;
   let position = {
@@ -88,8 +89,8 @@ export async function app_ceb() {
       let { left, right } = position;
       let factor = divide(add_1(subtract(right, left)), level_size);
       let atom_i = list_get(group, add(left, multiply(factor, i)));
-      let mapped = list_map_nested(atom_i, string_delimit_backtick);
-      let position_text = string_combine_multiple([
+      let mapped = list_map_nested(atom, string_delimit_backtick);
+      let text = string_combine_multiple([
         "words ",
         list_join_colon_spaces(list_first(mapped)),
         " through ",
@@ -98,7 +99,7 @@ export async function app_ceb() {
       html_button_width_full_text_click_alternate_short(
         root,
         [noop, app_ceb_word_style, noop, html_style_bold],
-        string_combine_multiple([add_1(i), ". ", position_text]),
+        string_combine_multiple([add_1(i), ". ", text]),
         function on_click() {
           atom = atom_i;
           refresh_node();
