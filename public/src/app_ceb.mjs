@@ -1,3 +1,4 @@
+import { app_ceb_word_english } from "./app_ceb_word_english.mjs";
 import { list_after } from "./list_after.mjs";
 import { log } from "./log.mjs";
 import { number_is } from "./number_is.mjs";
@@ -23,7 +24,6 @@ import { list_first } from "./list_first.mjs";
 import { list_get } from "./list_get.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { each } from "./each.mjs";
-import { html_style_bold } from "./html_style_bold.mjs";
 import { html_style_centered } from "./html_style_centered.mjs";
 import { list_index_last } from "./list_index_last.mjs";
 import { equal } from "./equal.mjs";
@@ -152,8 +152,7 @@ export async function app_ceb() {
     let pair = list_get(atom_copy, pair_index);
     let [cebuano, english] = pair;
     app_ceb_word_button(root, cebuano);
-    let english_p = html_p_text(root, english);
-    html_style_bold(english_p);
+    app_ceb_word_english(root, english);
     html_buttons_next_previous(
       root,
       refresh_pair,
