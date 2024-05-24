@@ -74,6 +74,7 @@ import { list_adder } from "./list_adder.mjs";
 import { subtract } from "./subtract.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
 import { divide } from "./divide.mjs";
+import { list_filter } from "./list_filter.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -178,6 +179,7 @@ export async function app_ceb() {
     assert(number_is, [chunk_size]);
     let concat = atoms_slice_concat();
     let pairs_other = list_without(concat, pair);
+    pairs_other = list_filter(pairs_other, (p) => {});
     let [cebuano, english] = pair;
     let answer;
     let pair_other = list_random_item(pairs_other);
@@ -294,12 +296,11 @@ export async function app_ceb() {
       list_length(concat),
     );
   }
-    function atoms_slice_concat() {
-        let atoms = atoms_slice();
-        let concat = list_concat_multiple(atoms);
-        return concat;
-    }
-
+  function atoms_slice_concat() {
+    let atoms = atoms_slice();
+    let concat = list_concat_multiple(atoms);
+    return concat;
+  }
   function quizzes_start(chunk_sizes) {
     let atoms = atoms_slice();
     settings_choices = app_ceb_quiz_settings(atoms, chunk_sizes);
