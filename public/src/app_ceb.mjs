@@ -83,7 +83,7 @@ export async function app_ceb() {
       answer_other_get = list_first;
     }
     let quiz_container;
-    let button_ready = html_button_text_click(root, "ready", () => {
+    let button_ready = html_button_width_full_text_click(root, "ready", () => {
       html_style_display_none(button_ready);
       html_style_display_block(quiz_container);
     });
