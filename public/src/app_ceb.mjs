@@ -87,6 +87,7 @@ export async function app_ceb() {
         ]),
         function on_click() {
           atom = atom_i;
+          refresh_node();
         },
       );
     });
