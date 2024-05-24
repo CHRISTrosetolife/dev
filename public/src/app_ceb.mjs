@@ -98,6 +98,10 @@ export async function app_ceb() {
         let right_next = add(left, s);
         let atom_left = list_get(group, left_next);
         let atom_right = list_get(group, right_next);
+        log({
+          left_next,
+          right_next,
+        });
         let text = app_ceb_atom_title(atom_left, atom_right);
         html_button_width_full_text_click_alternate_short(
           root,
@@ -125,9 +129,15 @@ export async function app_ceb() {
         n,
         count,
         level,
+        position,
       });
       if (mod_last_is(right, level)) {
         if (equal_0(left)) {
+          const r1 = add_1(right);
+          position = {
+            left: r1,
+            right: r1,
+          };
         } else {
           position = {
             left,
