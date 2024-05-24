@@ -41,31 +41,25 @@ export async function app_ceb() {
     log({
       english,
     });
-    let split_size = 2;
+    let split_size = 1;
     let length = string_length(english);
     let adjusted = ceiling(divide(length, split_size));
-    log({
-      adjusted,
-    });
     for (let i of range(adjusted)) {
       let scaled = multiply(i, split_size);
       let skipped = string_skip(english, scaled);
       let limit = string_length(skipped);
       let taken = string_take(skipped, number_min(split_size, limit));
-      log({
-        taken,
-      });
     }
   }
   async function refresh_pair(pair_index) {
     html_clear_scroll_top(root);
     let pair = list_get(copy, pair_index);
     let [cebuano, english] = pair;
-    let file_path = ceb_audio_path(0, cebuano);
     let cebuano_p = html_button_width_full_text_click(
       root,
       string_combine("👂", cebuano),
       async () => {
+        let file_path = ceb_audio_path(0, cebuano);
         return await html_audio(storage_url(file_path));
       },
     );
