@@ -69,10 +69,11 @@ export async function app_ceb() {
   let group = await http_storage(ceb_group_path(group_index));
   let settings_choices;
   let atom;
-  function refresh_group() {
+  refresh_group(0);
+  function refresh_group(index_min) {
     html_clear_scroll_top(root);
     each_range(2, (i) => {
-      let atom_i = list_get(group, i);
+      let atom_i = list_get(group, add(i,index_min));
       let mapped = list_map(atom_i, (a) =>
         list_map(a, string_delimit_backtick),
       );
@@ -93,7 +94,6 @@ export async function app_ceb() {
       );
     });
   }
-  refresh_group();
   function refresh_node() {
     html_clear_scroll_top(root);
     html_button_width_full_text_click(root, "🎓 learn", () => {
