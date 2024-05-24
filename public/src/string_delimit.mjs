@@ -1,5 +1,4 @@
+import { string_delimit_generic } from "./string_delimit_generic.mjs";
 export function string_delimit(input) {
-  let string_delimeter = "'";
-  let result = `${string_delimeter}${input}${string_delimeter}`;
-  return result;
+  return string_delimit_generic("'", input);
 }
