@@ -1,4 +1,4 @@
-import { ceiling } from "./ceiling.mjs";
+import { equal_not } from "./equal_not.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { list_slice } from "./list_slice.mjs";
 import { log } from "./log.mjs";
@@ -88,34 +88,37 @@ export async function app_ceb() {
   function refresh_group() {
     html_clear_scroll_top_centered(root);
     app_ceb_title();
-    each_range(level_size, (i) => {
-      let { left, right } = position;
-      let factor = ceiling(divide(add_1(subtract(right, left)), level_size));
-      let m = multiply(factor, i);
-      let s = subtract_1(multiply(factor, add_1(i)));
-      let left_next = add(left, m);
-      let right_next = add(left, s);
-      log({
-        left_next,
-        right_next,
-        factor,
+    let { left, right } = position;
+    const srl = subtract(right, left);
+    if (equal_not(srl, 0)) {
+      each_range(level_size, (i) => {
+        let factor = divide(add_1(srl), level_size);
+        let m = multiply(factor, i);
+        let s = subtract_1(multiply(factor, add_1(i)));
+        let left_next = add(left, m);
+        let right_next = add(left, s);
+        log({
+          left_next,
+          right_next,
+          factor,
+        });
+        let atom_left = list_get(group, left_next);
+        let atom_right = list_get(group, right_next);
+        let text = app_ceb_atom_title(atom_left, atom_right);
+        html_button_width_full_text_click_alternate_short(
+          root,
+          app_ceb_atom_title_patterns(),
+          string_combine_multiple([add_1(i), ". ", text]),
+          function on_click() {
+            position = {
+              left: left_next,
+              right: right_next,
+            };
+            refresh_group();
+          },
+        );
       });
-      let atom_left = list_get(group, left_next);
-      let atom_right = list_get(group, right_next);
-      let text = app_ceb_atom_title(atom_left, atom_right);
-      html_button_width_full_text_click_alternate_short(
-        root,
-        app_ceb_atom_title_patterns(),
-        string_combine_multiple([add_1(i), ". ", text]),
-        function on_click() {
-          position = {
-            left: left_next,
-            right: right_next,
-          };
-          refresh_group();
-        },
-      );
-    });
+    }
     app_ceb_learn();
   }
   function refresh_node() {
