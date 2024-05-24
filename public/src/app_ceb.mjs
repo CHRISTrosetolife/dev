@@ -121,6 +121,8 @@ export async function app_ceb() {
     }
     app_ceb_learn();
     html_button_width_full_text_click_next(root, () => {
+      let { left, right } = position;
+      const srl = subtract(right, left);
       let atom = app_ceb_atom_get();
       let index = list_index(group, atom);
       if (mod_last_is(index, level_size)) {
