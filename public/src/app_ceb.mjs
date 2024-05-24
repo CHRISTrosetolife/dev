@@ -129,7 +129,6 @@ export async function app_ceb() {
         n,
         count,
         level,
-        position,
       });
       if (mod_last_is(right, level)) {
         if (equal_0(left)) {
@@ -140,7 +139,7 @@ export async function app_ceb() {
           };
         } else {
           position = {
-            left: add_1(subtract(right, level)),
+            left: add_1(subtract(right, number_power_2(add_1(count)))),
             right: right,
           };
         }
