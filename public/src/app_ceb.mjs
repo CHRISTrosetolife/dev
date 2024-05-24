@@ -120,6 +120,7 @@ export async function app_ceb() {
         refresh_group();
       } else {
         atom = list_get(group, add_1(index));
+        refresh_node();
       }
     });
   }
