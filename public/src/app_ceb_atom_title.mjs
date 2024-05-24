@@ -1,3 +1,4 @@
+import { add } from "./add.mjs";
 import { ceb_atom_count } from "./ceb_atom_count.mjs";
 import { list_last } from "./list_last.mjs";
 import { list_first } from "./list_first.mjs";
@@ -21,7 +22,7 @@ export function app_ceb_atom_title(group, atom_left, atom_right) {
     " ( ",
     add_1(multiply(list_index(group, atom_left), atom_count)),
     " - ",
-    add_1(multiply(list_index(group, atom_left), atom_count)),
+    add(multiply(list_index(group, atom_right), atom_count), atom_count),
     " ) ",
   ]);
   return text;
