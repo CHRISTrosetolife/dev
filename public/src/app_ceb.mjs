@@ -68,21 +68,26 @@ export async function app_ceb() {
   let group_index = 0;
   let group = await http_storage(ceb_group_path(group_index));
   let settings_choices;
+  let atom;
   function refresh_group() {
     each_range(2, (i) => {
-      let atom = list_get(group, i);
-      let mapped = list_map(atom, (a) => list_map(a, string_delimit_backtick));
+      let atom_i = list_get(group, i);
+      let mapped = list_map(atom_i, (a) =>
+        list_map(a, string_delimit_backtick),
+      );
       html_button_width_full_text_click_alternate_short(
         root,
         [noop, app_ceb_word_style, noop, html_style_bold],
         string_combine_multiple([
           add_1(i),
-          ". ",
+          ". words ",
           list_join_colon_spaces(list_first(mapped)),
-          " - ",
+          " through ",
           list_join_colon_spaces(list_last(mapped)),
         ]),
-        function on_click() {},
+        function on_click() {
+          atom = atom_i;
+        },
       );
     });
   }
