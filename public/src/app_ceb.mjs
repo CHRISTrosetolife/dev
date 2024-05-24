@@ -84,14 +84,17 @@ export async function app_ceb() {
     let [cebuano, english] = pair;
     let answer;
     let pair_other = list_random_item(pairs_other);
-    let answer_other = list_second(pair_other);
+    let answer_other_get;
     if (forwards) {
       app_ceb_word_button(root, cebuano);
       answer = english;
+      answer_other_get = list_first;
     } else {
       app_ceb_word_english(root, english);
       answer = cebuano;
+      answer_other_get = list_second;
     }
+    let answer_other = answer_other_get(pair_other);
     let answer_element = html_p_text(root, "?");
     let style = html_element_style(answer_element);
     html_style_default_border_margin(style);
