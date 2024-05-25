@@ -1,5 +1,5 @@
+import { file_delete_if_exists } from "./file_delete_if_exists.mjs";
 import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
-import { function_delete_if_exists } from "./function_delete_if_exists.mjs";
 import { ceb_audio_path } from "./ceb_audio_path.mjs";
 import { ceb_audio_voices } from "./ceb_audio_voices.mjs";
 import { ceb_audio_upload } from "./ceb_audio_upload.mjs";
@@ -32,7 +32,7 @@ export async function sandbox() {
       log({
         output_path,
       });
-      await function_delete_if_exists(output_path);
+      await file_delete_if_exists(output_path);
       return;
       await ceb_audio_upload(text);
     });
