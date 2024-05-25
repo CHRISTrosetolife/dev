@@ -289,7 +289,7 @@ export async function app_ceb() {
       each(choices, (choice) => {
         let button = html_button_text_click(quiz_container, choice, () => {
           let answer_partial = string_take(correct, index);
-          let alternatives_partial_match = list_filter_starts_with(
+          let alternatives_partial_matches = list_filter_starts_with(
             alternatives,
             answer_partial,
           );
