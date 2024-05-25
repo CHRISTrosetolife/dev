@@ -20,9 +20,7 @@ export async function sandbox() {
       atom,
     });
     let mapped = list_map(atom, list_first);
-    await each_async(mapped, async (text) => {
-      await ceb_audio_upload(text);
-    });
+    await each_async(mapped, ceb_audio_upload);
   });
   let group_index = 0;
   if (0) await storage_upload_object(group, ceb_group_path(group_index));
