@@ -299,7 +299,6 @@ export async function app_ceb() {
     let buttons = list_adder((la) => {
       each(choices, (choice) => {
         let button = html_button_text_click(quiz_container, choice, () => {
-          update_partials();
           let correct = string_case_lower(list_get(correct_choices, index));
           if (equal(choice, correct)) {
             each(
@@ -307,6 +306,7 @@ export async function app_ceb() {
               html_style_button_default,
             );
             index = add_1(index);
+            update_partials();
             const last_is = greater_than_equal(
               multiply(index, chunk_size),
               string_length(answer),
@@ -325,6 +325,7 @@ export async function app_ceb() {
               html_style_hidden(button);
             }
             app_learn_code_style_success(button);
+            update_partials();
             app_learn_code_correct_timeout(async () => {
               html_style_hidden(button);
               if (last_is) {
