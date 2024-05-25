@@ -384,6 +384,7 @@ export async function app_ceb() {
         alternatives_partial_matches,
         alternatives_partial_matches_nexts,
       });
+      let correct;
       if (greater_than_equal(index, list_length(correct_choices))) {
         correct = null;
       } else {
