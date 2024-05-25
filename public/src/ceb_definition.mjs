@@ -140,7 +140,7 @@ export async function ceb_definition(word) {
         each_pairs(filtered6, (f, g) => {
           let after = html_parse_href(g);
           if (string_starts_with(after, "/sense/")) {
-            each([f,g],h=>la(property_text_trim(h)))
+            each([f, g], (h) => la(property_text_trim(h)));
           }
         });
       }
