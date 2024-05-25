@@ -1,4 +1,4 @@
-import { list_filter_starts_with } from "./list_filter_starts_with.mjs";
+import { and } from "./and.mjs";
 import { html_style_hidden } from "./html_style_hidden.mjs";
 import { list_intersect } from "./list_intersect.mjs";
 import { list_difference } from "./list_difference.mjs";
@@ -86,6 +86,7 @@ import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { list_copy } from "./list_copy.mjs";
+import { string_starts_with } from "./string_starts_with.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -289,10 +290,13 @@ export async function app_ceb() {
       each(choices, (choice) => {
         let button = html_button_text_click(quiz_container, choice, () => {
           let answer_partial = string_take(correct, index);
-          let alternatives_partial_matches = list_filter_starts_with(
-            alternatives,
-            answer_partial,
+          let alternatives_partial_matches = list_filter(alternatives, (a) =>
+            and(
+              string_starts_with(a, answer_partial),
+              greater_than(string_length(a), add_1(index)),
+            ),
           );
+          let alternatives_partial_matches_nexts;
           let correct = string_case_lower(list_get(correct_choices, index));
           if (equal(choice, correct)) {
             each(buttons, html_style_button_default);
