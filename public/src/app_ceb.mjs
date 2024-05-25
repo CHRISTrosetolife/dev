@@ -211,6 +211,14 @@ export async function app_ceb() {
       ) {
         return false;
       }
+      if (
+        or(
+          list_includes(cebuano_alternatives, c),
+          list_includes(english_alternatives, e),
+        )
+      ) {
+        return false;
+      }
       return true;
     });
     let answer;
