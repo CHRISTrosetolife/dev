@@ -223,18 +223,19 @@ export async function app_ceb() {
       ) {
         return false;
       }
-      if (
-        or(
-          list_empty_not_is(
-            list_intersect(letters_cebuano_forbidden, string_split_empty(c)),
-          ),
-          list_empty_not_is(
-            list_intersect(letters_english_forbidden, string_split_empty(e)),
-          ),
-        )
-      ) {
-        return false;
-      }
+      if (0)
+        if (
+          or(
+            list_empty_not_is(
+              list_intersect(letters_cebuano_forbidden, string_split_empty(c)),
+            ),
+            list_empty_not_is(
+              list_intersect(letters_english_forbidden, string_split_empty(e)),
+            ),
+          )
+        ) {
+          return false;
+        }
       return true;
     });
     let answer;
