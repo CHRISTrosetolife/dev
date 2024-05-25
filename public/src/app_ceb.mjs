@@ -287,6 +287,7 @@ export async function app_ceb() {
     let buttons = list_adder((la) => {
       each(choices, (choice) => {
         let button = html_button_text_click(quiz_container, choice, () => {
+          let answer_partial = string_take(correct, index);
           let correct = string_case_lower(list_get(correct_choices, index));
           if (equal(choice, correct)) {
             each(buttons, html_style_button_default);
