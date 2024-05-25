@@ -1,3 +1,3 @@
 export function ceb_audio_voices() {
-  return ["Standard-A"];
+  return ["Standard-A", "Standard-D"];
 }
