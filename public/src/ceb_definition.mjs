@@ -158,8 +158,9 @@ export async function ceb_definition(word) {
             let filtered7 = list_filter(children_sense, (c) =>
               html_parse_tag(c, "a"),
             );
+            let mapped7 = list_map(filtered7, html_parse_href);
             log({
-              a: list_map(filtered7, html_parse_href),
+              a: mapped7,
             });
             each([f, g], (h) => la(property_text_trim(h)));
           }
