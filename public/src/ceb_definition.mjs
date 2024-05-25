@@ -1,3 +1,4 @@
+import { each_pairs } from "./each_pairs.mjs";
 import { list_multiple_is } from "./list_multiple_is.mjs";
 import { log } from "./log.mjs";
 import { list_map_split_comma } from "./list_map_split_comma.mjs";
@@ -22,7 +23,6 @@ import { add } from "./add.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { string_includes } from "./string_includes.mjs";
 import { list_filter } from "./list_filter.mjs";
-import { html_parse_a_href_starts_with_text } from "./html_parse_a_href_starts_with_text.mjs";
 import { list_second } from "./list_second.mjs";
 import { list_index } from "./list_index.mjs";
 import { list_first } from "./list_first.mjs";
@@ -133,15 +133,14 @@ export async function ceb_definition(word) {
     let right = list_second(childNodes);
     let filtered6 = html_parse_a_href_starts_with(right, prefix);
     if (greater_than_equal(list_length(filtered6), 2)) {
-        each_pairs(filtered6, (f,g)=>{
-            
-    log([html_parse_href(f),html_parse_href(g),])
-        })
+      each_pairs(filtered6, (f, g) => {
+        log([html_parse_href(f), html_parse_href(g)]);
+      });
     }
     let defs = list_map_property_text_trim(filtered6);
     list_add_multiple(definitions, defs);
     log({
-        defs,
+      defs,
     });
   }
   definitions = list_map(definitions, (d) => {
