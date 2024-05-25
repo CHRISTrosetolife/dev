@@ -360,6 +360,9 @@ export async function app_ceb() {
       return string_case_lower(list_get(correct_choices, index));
     }
     function update_partials() {
+      if (greater_than_equal(index, list_length(correct_choices))) {
+        return;
+      }
       let answer_partial = string_take(answer, index * chunk_size);
       let alternatives_partial_matches = list_filter(alternatives, (a) =>
         and(
