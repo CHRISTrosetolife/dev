@@ -14,6 +14,8 @@ import { object_property_set } from "./object_property_set.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { list_single } from "./list_single.mjs";
 import { each_object } from "./each_object.mjs";
+import { object_property_initialize } from "./object_property_initialize.mjs";
+import { list_add } from "./list_add.mjs";
 export async function sandbox() {
   let limit = 75;
   let skip = 0;
@@ -49,8 +51,9 @@ export async function sandbox() {
   let inverted = {};
   each_object(definitions, (word, word_definitions) =>
     each(word_definitions, (wd) => {
-      object_property_set();
+      let words = object_property_initialize(inverted, wd, []);
+      list_add(words, word);
     }),
   );
-  return definitions;
+  return inverted;
 }
