@@ -94,10 +94,6 @@ export async function ceb_definition(word) {
   async function ceb_html_cache_parse_form1(url) {
     let parsed = await html_cache_parse(url);
     let children = ceb_form1(parsed);
-    log({
-      parsed,
-      children,
-    });
     return {
       parsed,
       children,
