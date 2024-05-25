@@ -10,7 +10,6 @@ import { integer_log } from "./integer_log.mjs";
 import { equal_not } from "./equal_not.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { list_slice } from "./list_slice.mjs";
-import { log } from "./log.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { html_style_alternate_short_p } from "./html_style_alternate_short_p.mjs";
 import { app_ceb_atom_title_patterns } from "./app_ceb_atom_title_patterns.mjs";
@@ -110,10 +109,6 @@ export async function app_ceb() {
         let right_next = add(left, s);
         let atom_left = list_get(group, left_next);
         let atom_right = list_get_or_last(group, right_next);
-        log({
-          left_next,
-          right_next,
-        });
         let text = app_ceb_atom_title(group, atom_left, atom_right);
         html_button_width_full_text_click_alternate_short(
           root,
