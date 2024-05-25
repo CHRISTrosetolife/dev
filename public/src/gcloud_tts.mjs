@@ -1,22 +1,27 @@
 import { file_overwrite_generic } from "./file_overwrite_generic.mjs";
 import textToSpeech from "@google-cloud/text-to-speech";
 import { file_exists } from "./file_exists.mjs";
-export async function gcloud_tts(language_code, voice, text, output_path) {
+export async function gcloud_tts(
+  language_code,
+  voice,
+  ssml_gender,
+  text,
+  output_path,
+) {
   if (await file_exists(output_path)) {
     return {
       created: false,
     };
   }
   const client = new textToSpeech.TextToSpeechClient();
-  let { code, male } = voice;
   const request = {
     input: {
       text: text,
     },
     voice: {
       languageCode: language_code,
-      voice: code,
-      ssmlGender: male ? "MALE" : "FEMALE",
+      voice,
+      ssmlGender: ssml_gender,
     },
     audioConfig: {
       audioEncoding: "MP3",
