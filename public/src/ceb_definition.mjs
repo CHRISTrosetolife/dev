@@ -159,8 +159,11 @@ export async function ceb_definition(word) {
               html_parse_tag(c, "a"),
             );
             let mapped7 = list_map(filtered7, html_parse_href);
+            let filtered8 = list_filter(mapped7, (m) =>
+              string_starts_with(m, prefix_2),
+            );
             log({
-              a: mapped7,
+              a: filtered8,
             });
             each([f, g], (h) => la(property_text_trim(h)));
           }
