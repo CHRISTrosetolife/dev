@@ -9,6 +9,7 @@ export async function gcloud_tts(language_code, voice, text, output_path) {
     };
   }
   const client = new textToSpeech.TextToSpeechClient();
+  log(textToSpeech.listVoices());
   const request = {
     input: {
       text: text,
