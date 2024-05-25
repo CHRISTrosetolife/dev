@@ -1,3 +1,4 @@
+import { list_intersect } from "./list_intersect.mjs";
 import { list_difference } from "./list_difference.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { list_to_letters } from "./list_to_letters.mjs";
@@ -81,7 +82,7 @@ import { divide } from "./divide.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
-import { list_any } from "./list_any.mjs";
+import { list_empty_not_is } from "./list_empty_not_is.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -198,19 +199,19 @@ export async function app_ceb() {
       object_property_get(definitions, cebuano),
       english,
     );
-      const english_letters = string_split_empty(english);
+    const english_letters = string_split_empty(english);
     let letters_english_forbidden = list_difference(
       list_to_letters(english_alternatives),
-      english_letters
+      english_letters,
     );
     let cebuano_alternatives = list_without(
       object_property_get(inverted, english),
       cebuano,
     );
-      const cebuano_letters = string_split_empty(cebuano);
+    const cebuano_letters = string_split_empty(cebuano);
     let letters_cebuano_forbidden = list_difference(
       list_to_letters(cebuano_alternatives),
-      cebuano_letters
+      cebuano_letters,
     );
     pairs_other = list_filter(pairs_other, (p) => {
       let [c, e] = p;
@@ -224,9 +225,12 @@ export async function app_ceb() {
       }
       if (
         or(
-            list_filter(ch=>list_includes(letters_cebuano_forbidden, ch)),
-          
-          list_includes(letters_english_forbidden, e),
+          list_empty_not_is(
+            list_intersect(letters_cebuano_forbidden, string_split_empty(c)),
+          ),
+          list_empty_not_is(
+            list_intersect(letters_english_forbidden, string_split_empty(e)),
+          ),
         )
       ) {
         return false;
