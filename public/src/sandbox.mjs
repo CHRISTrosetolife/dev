@@ -35,7 +35,6 @@ export async function sandbox() {
     });
   });
   let group_index = 0;
-  if (0) await storage_upload_object(group, ceb_group_path(group_index));
   let words = list_adder_unique((la) =>
     each(atoms, (a) => each(a, (pair) => la(list_first(pair)))),
   );
@@ -55,5 +54,12 @@ export async function sandbox() {
       list_add(words, word);
     }),
   );
-  return inverted;
+  await storage_upload_object(
+    {
+      group,
+      definitions,
+      inverted,
+    },
+    ceb_group_path(group_index),
+  );
 }
