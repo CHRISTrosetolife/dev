@@ -73,7 +73,6 @@ export async function ceb_definition(word) {
     "kanila,cinnamon",
     "ingon,say",
     "uban,mate",
-    "ni,this",
   ];
   let skipped_pairs_split = list_map_split_comma(skipped_pairs);
   each([skipped_pairs_split, replaced_split], (split) =>
