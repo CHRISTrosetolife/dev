@@ -158,8 +158,11 @@ export async function app_ceb() {
     html_button_width_full_text_click(root, "🎓 learn", () => {
       refresh_pair(0);
     });
-    html_button_width_full_text_click(root, "📝 quiz ( easy to hard )", () => {
-      quizzes_start([3, 2, 1]);
+    html_button_width_full_text_click(root, "📝 quiz ( hard )", () => {
+      quizzes_start([3]);
+    });
+    html_button_width_full_text_click(root, "📝 quiz ( medium )", () => {
+      quizzes_start([2]);
     });
     html_button_width_full_text_click(root, "🧑‍🎓️ quiz ( hard only )", () => {
       quizzes_start([1]);
