@@ -159,7 +159,7 @@ export async function ceb_definition(word) {
               html_parse_tag(c, "a"),
             );
             log({
-              a: list_map_property(filtered7, "rawTagName"),
+              a: list_map(filtered7, html_parse_href),
             });
             each([f, g], (h) => la(property_text_trim(h)));
           }
