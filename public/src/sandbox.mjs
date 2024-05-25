@@ -11,7 +11,8 @@ import { each_async } from "./each_async.mjs";
 import { log } from "./log.mjs";
 import { each } from "./each.mjs";
 import { object_property_set } from "./object_property_set.mjs";
-import { object_property_get } from "./object_property_get.mjs";
+import { list_filter } from "./list_filter.mjs";
+import { list_single } from "./list_single.mjs";
 export async function sandbox() {
   let limit = 75;
   let skip = 0;
@@ -40,7 +41,8 @@ export async function sandbox() {
     object_property_set(
       definitions,
       w,
-      object_property_get(definitions_all, w),
+      list_single(list_filter(definitions_all, (d) => d.word === w))
+        .definitions,
     ),
   );
   return definitions;
