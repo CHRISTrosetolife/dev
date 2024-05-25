@@ -153,10 +153,10 @@ export async function ceb_definition(word) {
               prefix,
               string_prefix_without(after, "/"),
             ]);
-            let { parsed: parsed_sense } =
+            let { children: children_sense } =
               await ceb_html_cache_parse_form1(url_sense);
             log({
-              parsed_sense,
+              a: list_map_property(children_sense, "rawTagName"),
             });
             each([f, g], (h) => la(property_text_trim(h)));
           }
