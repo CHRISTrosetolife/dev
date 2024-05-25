@@ -306,7 +306,8 @@ export async function app_ceb() {
             }
             app_learn_code_style_success(button);
             app_learn_code_correct_timeout(async () => {
-              html_style_display_none(button);
+              let { element } = button;
+              object_property_set(element, "disabled", true);
               if (last_is) {
                 app_learn_code_style_success(answer_element);
                 await app_ceb_audio(cebuano);
