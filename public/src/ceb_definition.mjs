@@ -84,15 +84,14 @@ export async function ceb_definition(word) {
     object_property_set(lookup, list_first(s), list_second(s)),
   );
   let prefix = "http://www.binisaya.com/";
-  let url_parts = [
+  let { parsed, children } = ceb_html_cache_parse_form1([
     prefix,
     "node/21?search=binisaya&word=",
     word,
     "&Search=Search",
-  ];
-  let { parsed, children } = ceb_html_cache_parse_form1(url_parts);
+  ]);
   async function ceb_html_cache_parse_form1(url_parts) {
-    let url = string_combine_multiple();
+    let url = string_combine_multiple(url_parts);
     let parsed = await html_cache_parse(url);
     let children = ceb_form1(parsed);
     return {
@@ -181,9 +180,8 @@ export async function ceb_definition(word) {
   definitions = await list_filter_async(definitions, async (d) => {
     let url = string_combine(prefix_2, d);
     url = string_replace(url, " ", "+");
-    let parsed2 = await html_cache_parse(url);
-    let q_children2 = ceb_form1(parsed2);
-    let as = list_filter(q_children2, (c) => html_parse_tag(c, "a"));
+    let {children:children2} = ceb_form1(url);
+    let as = list_filter(children2, (c) => html_parse_tag(c, "a"));
     let mapped5 = list_map(as, html_parse_href);
     let filtered5 = list_filter_starts_with(mapped5, prefix_1);
     let mapped6 = list_map(filtered5, (f) =>
