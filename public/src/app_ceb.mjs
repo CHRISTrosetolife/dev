@@ -303,6 +303,7 @@ export async function app_ceb() {
           );
           each(buttons, (b) => {
             if (list_includes(alternatives_partial_matches_nexts, b.choice)) {
+                let {element}=b.button;
             }
           });
           let correct = string_case_lower(list_get(correct_choices, index));
