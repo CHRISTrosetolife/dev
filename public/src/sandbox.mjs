@@ -26,9 +26,9 @@ export async function sandbox() {
       atom,
     });
     let mapped = list_map(atom, list_first);
-    let language_code = ceb_audio_language_code();
-    let voices = ceb_audio_voices();
     await each_async(mapped, async (text) => {
+      let language_code = ceb_audio_language_code();
+      let voices = ceb_audio_voices();
       await each_index_async(voices, async (voice, voice_index) => {
         let file_path = ceb_audio_path(voice_index, text);
         let output_path = folder_gitignore_path(file_path);
