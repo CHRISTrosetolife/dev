@@ -16,7 +16,6 @@ export async function gcloud_tts(language_code, voice, text, output_path) {
     voice: {
       languageCode: language_code,
       voice,
-      ssmlGender: "NEUTRAL",
     },
     audioConfig: {
       audioEncoding: "MP3",
