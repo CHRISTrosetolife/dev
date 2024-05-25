@@ -1,3 +1,4 @@
+import { list_difference } from "./list_difference.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { list_to_letters } from "./list_to_letters.mjs";
 import { html_button_width_full_text_click_up } from "./html_button_width_full_text_click_up.mjs";
@@ -195,7 +196,9 @@ export async function app_ceb() {
       object_property_get(definitions, cebuano),
       english,
     );
-    let letters_english_forbidden = list_to_letters(english_alternatives);
+    let letters_english_forbidden = list_difference(
+      list_to_letters(english_alternatives),
+    );
     let cebuano_alternatives = list_without(
       object_property_get(inverted, english),
       cebuano,
@@ -213,8 +216,8 @@ export async function app_ceb() {
       }
       if (
         or(
-          list_includes(cebuano_alternatives, c),
-          list_includes(english_alternatives, e),
+          list_includes(letters_cebuano_forbidden, c),
+          list_includes(letters_english_forbidden, e),
         )
       ) {
         return false;
