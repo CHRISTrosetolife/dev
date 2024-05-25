@@ -1,3 +1,4 @@
+import { html_merge } from "./html_merge.mjs";
 import { and } from "./and.mjs";
 import { html_style_hidden } from "./html_style_hidden.mjs";
 import { list_intersect } from "./list_intersect.mjs";
@@ -302,8 +303,12 @@ export async function app_ceb() {
             (a) => string_slice(index, add_1(index)),
           );
           each(buttons, (b) => {
+            let { element } = b.button;
+            element.removeAttribute("disabled");
             if (list_includes(alternatives_partial_matches_nexts, b.choice)) {
-                let {element}=b.button;
+              html_merge(b.button, {
+                disabled: "disabled",
+              });
             }
           });
           let correct = string_case_lower(list_get(correct_choices, index));
