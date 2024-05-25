@@ -162,6 +162,9 @@ export async function ceb_definition(word) {
             let filtered8 = list_filter(mapped7, (m) =>
               string_starts_with(m, prefix_2),
             );
+            let mapped8 = list_map(filtered8, (f) =>
+              string_prefix_without(f, prefix_2),
+            );
             log({
               a: filtered8,
             });
