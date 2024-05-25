@@ -1,6 +1,5 @@
 import { each_pairs_async } from "./each_pairs_async.mjs";
 import { list_adder_async } from "./list_adder_async.mjs";
-import { property_text_trim } from "./property_text_trim.mjs";
 import { list_multiple_is } from "./list_multiple_is.mjs";
 import { log } from "./log.mjs";
 import { list_map_split_comma } from "./list_map_split_comma.mjs";
@@ -164,10 +163,7 @@ export async function ceb_definition(word) {
             let mapped8 = list_map(filtered8, (f) =>
               string_prefix_without(f, prefix_2),
             );
-            log({
-              mapped8,
-            });
-            each([f, g], (h) => log(property_text_trim(h)));
+            each(mapped8, la);
           }
         });
       }
