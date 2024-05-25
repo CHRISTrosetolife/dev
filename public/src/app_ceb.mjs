@@ -299,7 +299,7 @@ export async function app_ceb() {
     let buttons = list_adder((la) => {
       each(choices, (choice) => {
         let button = html_button_text_click(quiz_container, choice, () => {
-          let correct = string_case_lower(list_get(correct_choices, index));
+          let correct = correct_get();
           if (equal(choice, correct)) {
             each(
               list_map_property(buttons, "button"),
@@ -356,6 +356,9 @@ export async function app_ceb() {
     });
     update_partials();
     html_button_width_full_text_click_up(root, refresh_node);
+    function correct_get() {
+      return string_case_lower(list_get(correct_choices, index));
+    }
     function update_partials() {
       let answer_partial = string_take(answer, index * chunk_size);
       let alternatives_partial_matches = list_filter(alternatives, (a) =>
@@ -374,16 +377,20 @@ export async function app_ceb() {
           ),
       );
       log({
+        alternatives_partial_matches,
         alternatives_partial_matches_nexts,
       });
+      let correct = correct_get();
       each(buttons, (b) => {
-        let { button } = b;
+        let { button, choice } = b;
         let { element } = button;
         element.removeAttribute("disabled");
-        if (list_includes(alternatives_partial_matches_nexts, b.choice)) {
-          html_merge(button, {
-            disabled: "disabled",
-          });
+        if (equal_not(choice, correct)) {
+          if (list_includes(alternatives_partial_matches_nexts, choice)) {
+            html_merge(button, {
+              disabled: "disabled",
+            });
+          }
         }
       });
     }
