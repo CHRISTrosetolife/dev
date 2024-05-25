@@ -133,6 +133,9 @@ export async function ceb_definition(word) {
     let right = list_second(childNodes);
     let defs = html_parse_a_href_starts_with_text(right, prefix_2);
     list_add_multiple(definitions, defs);
+    log({
+        defs,
+    });
   }
   definitions = list_map(definitions, (d) => {
     if (object_property_exists(lookup, d)) {
@@ -144,9 +147,6 @@ export async function ceb_definition(word) {
       return result;
     }
     return d;
-  });
-  log({
-    definitions,
   });
   definitions = await list_filter_async(definitions, async (d) => {
     let url = string_combine(prefix_2, d);
