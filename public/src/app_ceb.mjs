@@ -142,7 +142,8 @@ export async function app_ceb() {
         };
       }
     }
-    html_button_width_full_text_click(root, "⬆️ up", function up_onclick() {
+    html_button_width_full_text_click(root, "⬆️ up", up_onclick);
+    function up_onclick() {
       let { left, right } = position;
       while (true) {
         app_ceb_next();
@@ -152,7 +153,7 @@ export async function app_ceb() {
         }
       }
       refresh_node();
-    });
+    }
   }
   function app_ceb_learn() {
     html_button_width_full_text_click(root, "🎓 learn", () => {
