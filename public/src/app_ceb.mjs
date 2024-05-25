@@ -1,3 +1,4 @@
+import { list_join_empty } from "./list_join_empty.mjs";
 import { html_button_width_full_text_click_up } from "./html_button_width_full_text_click_up.mjs";
 import { list_get_or_last } from "./list_get_or_last.mjs";
 import { or } from "./or.mjs";
@@ -190,6 +191,7 @@ export async function app_ceb() {
     let pairs_other = list_without(concat, pair);
     let [cebuano, english] = pair;
     let cebuano_alternatives = object_property_get(definitions, cebuano);
+    list_join_empty(cebuano_alternatives);
     let english_alternatives = object_property_get(inverted, english);
     pairs_other = list_filter(pairs_other, (p) => {
       let [c, e] = p;
