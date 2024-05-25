@@ -293,10 +293,13 @@ export async function app_ceb() {
           let alternatives_partial_matches = list_filter(alternatives, (a) =>
             and(
               string_starts_with(a, answer_partial),
-              greater_than(string_length(a), add_1(index)),
+              greater_than(string_length(a), index),
             ),
           );
-          let alternatives_partial_matches_nexts;
+          let alternatives_partial_matches_nexts = list_map(
+            alternatives_partial_matches,
+            (a) => string_slice(index, add_1(index)),
+          );
           let correct = string_case_lower(list_get(correct_choices, index));
           if (equal(choice, correct)) {
             each(buttons, html_style_button_default);
