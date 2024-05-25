@@ -24,8 +24,11 @@ export async function sandbox() {
     let mapped = list_map(atom, list_first);
     await each_async(mapped, async (text) => {
       let voices = ceb_audio_voices();
-      let first = list_first(voices);
-      let file_path = ceb_audio_path(voice_index, text);
+      let file_path = ceb_audio_path(0, text);
+      log({
+        file_path,
+      });
+      return;
       await ceb_audio_upload(text);
     });
   });
