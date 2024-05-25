@@ -308,6 +308,7 @@ export async function app_ceb() {
       pair_index,
       list_length(concat),
     );
+    html_button_width_full_text_click_up(root, refresh_node);
   }
   function atoms_slice_concat() {
     let atoms = atoms_slice();
