@@ -142,7 +142,7 @@ export async function app_ceb() {
         };
       }
     }
-    html_button_width_full_text_click(root, "⬆️ up", () => {
+    html_button_width_full_text_click(root, "⬆️ up", function up_onclick() {
       let { left, right } = position;
       while (true) {
         app_ceb_next();
