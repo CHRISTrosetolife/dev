@@ -101,6 +101,10 @@ export async function app_ceb() {
     left: 0,
     right: 0,
   };
+  position = {
+    left: 4,
+    right: 7,
+  };
   refresh_node();
   function refresh_node() {
     html_clear_scroll_top_centered(root);
@@ -242,6 +246,7 @@ export async function app_ceb() {
     });
     let answer;
     let pair_other = list_random_item(pairs_other);
+    pair_other = list_random_item(definitions[cebuano]);
     let answer_other_get;
     let alternatives;
     if (forwards) {
@@ -291,6 +296,7 @@ export async function app_ceb() {
     let buttons = list_adder((la) => {
       each(choices, (choice) => {
         let button = html_button_text_click(quiz_container, choice, () => {
+          let correct = string_case_lower(list_get(correct_choices, index));
           let answer_partial = string_take(correct, index);
           let alternatives_partial_matches = list_filter(alternatives, (a) =>
             and(
@@ -312,7 +318,6 @@ export async function app_ceb() {
               });
             }
           });
-          let correct = string_case_lower(list_get(correct_choices, index));
           if (equal(choice, correct)) {
             each(
               list_map_property(buttons, "button"),
