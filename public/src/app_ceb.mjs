@@ -79,7 +79,9 @@ import { list_filter } from "./list_filter.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
-  let group = await http_storage(ceb_group_path(group_index));
+  let { group, definitions, inverted } = await http_storage(
+    ceb_group_path(group_index),
+  );
   let level_size = app_ceb_level_size();
   let settings_choices;
   let position = {
