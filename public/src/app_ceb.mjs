@@ -297,7 +297,7 @@ export async function app_ceb() {
       each(choices, (choice) => {
         let button = html_button_text_click(quiz_container, choice, () => {
           let correct = string_case_lower(list_get(correct_choices, index));
-          let answer_partial = string_take(correct, index);
+          let answer_partial = string_take(correct, index * chunk_size);
           let alternatives_partial_matches = list_filter(alternatives, (a) =>
             and(
               string_starts_with(a, answer_partial),
