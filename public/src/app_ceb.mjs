@@ -76,6 +76,7 @@ import { subtract } from "./subtract.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
 import { divide } from "./divide.mjs";
 import { list_filter } from "./list_filter.mjs";
+import { object_property_get } from "./object_property_get.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -188,6 +189,14 @@ export async function app_ceb() {
     let concat = atoms_slice_concat();
     let pairs_other = list_without(concat, pair);
     let [cebuano, english] = pair;
+    let cebuano_alternatives = list_without(
+      object_property_get(definitions, cebuano),
+      english,
+    );
+    let english_alternatives = list_without(
+      object_property_get(inverted, english),
+      cebuano,
+    );
     pairs_other = list_filter(pairs_other, (p) => {
       let [c, e] = p;
       if (or(equal(c, cebuano), equal(e, english))) {
