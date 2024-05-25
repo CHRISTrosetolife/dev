@@ -55,5 +55,8 @@ export async function ceb_bible_words_definitions_atoms(skip, limit) {
       }
     }
   });
-  return atoms;
+  return {
+    atoms,
+    definitions,
+  };
 }
