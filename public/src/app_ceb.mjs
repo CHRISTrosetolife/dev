@@ -1,3 +1,4 @@
+import { html_button_width_full_text_click_up } from "./html_button_width_full_text_click_up.mjs";
 import { list_get_or_last } from "./list_get_or_last.mjs";
 import { or } from "./or.mjs";
 import { number_power } from "./number_power.mjs";
@@ -142,7 +143,7 @@ export async function app_ceb() {
         };
       }
     }
-    html_button_width_full_text_click(root, "⬆️ up", up_onclick);
+    html_button_width_full_text_click_up(root, up_onclick);
     function up_onclick() {
       let { left, right } = position;
       while (true) {
@@ -286,6 +287,7 @@ export async function app_ceb() {
         html_style_click_width_min(button);
       });
     });
+    html_button_width_full_text_click_up(root, refresh_node);
   }
   async function refresh_pair(pair_index) {
     html_clear_scroll_top_centered(root);
