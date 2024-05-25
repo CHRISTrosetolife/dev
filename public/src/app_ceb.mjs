@@ -301,6 +301,10 @@ export async function app_ceb() {
             alternatives_partial_matches,
             (a) => string_slice(index, add_1(index)),
           );
+          each(buttons, (b) => {
+            if (list_includes(alternatives_partial_matches_nexts, b.choice)) {
+            }
+          });
           let correct = string_case_lower(list_get(correct_choices, index));
           if (equal(choice, correct)) {
             each(
