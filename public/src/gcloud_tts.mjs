@@ -2,10 +2,13 @@ import { log } from "./log.mjs";
 import { file_overwrite_generic } from "./file_overwrite_generic.mjs";
 import textToSpeech from "@google-cloud/text-to-speech";
 import { file_exists } from "./file_exists.mjs";
+import { list_filter } from "./list_filter.mjs";
+import { string_starts_with } from "./string_starts_with.mjs";
 export async function gcloud_tts(language_code, voice, text, output_path) {
   const client = new textToSpeech.TextToSpeechClient();
   const [result] = await client.listVoices({});
-  const voices = result.voices;
+  let voices = result.voices;
+  voices = list_filter(voices, (v) => string_starts_with(v, "fil-PH-"));
   log({
     voices,
   });
