@@ -84,20 +84,23 @@ export async function ceb_definition(word) {
     object_property_set(lookup, list_first(s), list_second(s)),
   );
   let prefix = "http://www.binisaya.com/";
-  let url_parts=[
+  let url_parts = [
     prefix,
     "node/21?search=binisaya&word=",
     word,
     "&Search=Search",
-  ]
-  ceb_html_cache_parse_form1(url_parts)
-async function ceb_html_cache_parse_form1(url_parts) {
+  ];
+  let { parsed, children } = ceb_html_cache_parse_form1(url_parts);
+  async function ceb_html_cache_parse_form1(url_parts) {
     let url = string_combine_multiple();
-      let parsed = await html_cache_parse(url);
-      let children = ceb_form1(parsed);
-      return {parsed,children}
-}let q_children
-  let filtered4 = list_filter(q_children, (c) =>
+    let parsed = await html_cache_parse(url);
+    let children = ceb_form1(parsed);
+    return {
+      parsed,
+      children,
+    };
+  }
+  let filtered4 = list_filter(children, (c) =>
     string_includes(
       object_property_get(c, "text"),
       "Word - rootword - affixes",
@@ -105,9 +108,9 @@ async function ceb_html_cache_parse_form1(url_parts) {
   );
   if (list_empty_not_is(filtered4)) {
     let f4_first = list_first(filtered4);
-    let f4_first_index = list_index(q_children, f4_first);
+    let f4_first_index = list_index(children, f4_first);
     let f4_first_index_a = add(f4_first_index, 3);
-    let f4_first_a = list_get(q_children, f4_first_index_a);
+    let f4_first_a = list_get(children, f4_first_index_a);
     let f4_first_a_text = object_property_get(f4_first_a, "text");
     let f4_first_a_tag = object_property_get(f4_first_a, "rawTagName");
     assert(equal, [f4_first_a_tag, "b"]);
