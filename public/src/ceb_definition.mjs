@@ -84,14 +84,19 @@ export async function ceb_definition(word) {
     object_property_set(lookup, list_first(s), list_second(s)),
   );
   let prefix = "http://www.binisaya.com/";
-  let url = string_combine_multiple([
+  let url_parts=[
     prefix,
     "node/21?search=binisaya&word=",
     word,
     "&Search=Search",
-  ]);
-  let parsed = await html_cache_parse(url);
-  let q_children = ceb_form1(parsed);
+  ]
+  ceb_html_cache_parse_form1(url_parts)
+async function ceb_html_cache_parse_form1(url_parts) {
+    let url = string_combine_multiple();
+      let parsed = await html_cache_parse(url);
+      let children = ceb_form1(parsed);
+      return {parsed,children}
+}let q_children
   let filtered4 = list_filter(q_children, (c) =>
     string_includes(
       object_property_get(c, "text"),
