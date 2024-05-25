@@ -11,5 +11,8 @@ export async function ceb_bible_words_definitions_pairs(skip, limit) {
       ),
     ),
   );
-  return pairs;
+  return {
+    pairs,
+    definitions,
+  };
 }
