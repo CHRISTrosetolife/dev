@@ -18,9 +18,10 @@ export async function sandbox() {
   let group = list_take(atoms, group_count);
   let taken = list_take(group, 4);
   await each_async(taken, async (atom) => {
-    log({
-      atom,
-    });
+    if (0)
+      log({
+        atom,
+      });
     let mapped = list_map(atom, list_first);
     await each_async(mapped, async (text) => {
       let voices = ceb_audio_voices();
