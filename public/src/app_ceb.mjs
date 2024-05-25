@@ -1,3 +1,4 @@
+import { list_includes } from "./list_includes.mjs";
 import { list_to_letters } from "./list_to_letters.mjs";
 import { html_button_width_full_text_click_up } from "./html_button_width_full_text_click_up.mjs";
 import { list_get_or_last } from "./list_get_or_last.mjs";
@@ -190,19 +191,24 @@ export async function app_ceb() {
     let concat = atoms_slice_concat();
     let pairs_other = list_without(concat, pair);
     let [cebuano, english] = pair;
-    let cebuano_alternatives = list_without(
+    let english_alternatives = list_without(
       object_property_get(definitions, cebuano),
       english,
     );
-    let letters_english_forbidden = list_to_letters(cebuano_alternatives);
-    let english_alternatives = list_without(
+    let letters_english_forbidden = list_to_letters(english_alternatives);
+    let cebuano_alternatives = list_without(
       object_property_get(inverted, english),
       cebuano,
     );
     let letters_cebuano_forbidden = list_to_letters(cebuano_alternatives);
     pairs_other = list_filter(pairs_other, (p) => {
       let [c, e] = p;
-      if (or(equal(c, cebuano), equal(e, english))) {
+      if (
+        or(
+          list_includes(cebuano_alternatives, c),
+          list_includes(english_alternatives, e),
+        )
+      ) {
         return false;
       }
       return true;
