@@ -1,3 +1,4 @@
+import { list_adder_unique } from "./list_adder_unique.mjs";
 import { ceb_audio_upload } from "./ceb_audio_upload.mjs";
 import { ceb_group_size } from "./ceb_group_size.mjs";
 import { ceb_group_path } from "./ceb_group_path.mjs";
@@ -8,6 +9,7 @@ import { list_first } from "./list_first.mjs";
 import { list_map } from "./list_map.mjs";
 import { each_async } from "./each_async.mjs";
 import { log } from "./log.mjs";
+import { each } from "./each.mjs";
 export async function sandbox() {
   let limit = 75;
   let skip = 0;
@@ -30,5 +32,8 @@ export async function sandbox() {
   });
   let group_index = 0;
   if (0) await storage_upload_object(group, ceb_group_path(group_index));
-  return atoms;
+  let words = list_adder_unique((la) =>
+    each(atoms, (a) => each(a, (pair) => la(list_first(pair)))),
+  );
+  return words;
 }
