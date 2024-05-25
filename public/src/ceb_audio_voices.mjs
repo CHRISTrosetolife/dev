@@ -8,5 +8,13 @@ export function ceb_audio_voices() {
       code: "Standard-A",
       male: false,
     },
+    {
+      code: "Standard-C",
+      male: true,
+    },
+    {
+      code: "Standard-B",
+      male: false,
+    },
   ];
 }
