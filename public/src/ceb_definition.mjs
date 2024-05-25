@@ -1,5 +1,6 @@
+import { each_pairs_async } from "./each_pairs_async.mjs";
+import { list_adder_async } from "./list_adder_async.mjs";
 import { property_text_trim } from "./property_text_trim.mjs";
-import { each_pairs } from "./each_pairs.mjs";
 import { list_multiple_is } from "./list_multiple_is.mjs";
 import { log } from "./log.mjs";
 import { list_map_split_comma } from "./list_map_split_comma.mjs";
@@ -50,7 +51,6 @@ import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
-import { list_adder } from "./list_adder.mjs";
 export async function ceb_definition(word) {
   let known = {
     apan: ["but", "yet"],
@@ -136,9 +136,9 @@ export async function ceb_definition(word) {
     assert(equal, [list_length(childNodes), 2]);
     let right = list_second(childNodes);
     let filtered6 = html_parse_a_href_starts_with(right, "");
-    let skips = list_adder((la) => {
+    let skips = await list_adder_async(async (la) => {
       if (greater_than_equal(list_length(filtered6), 2)) {
-        each_pairs(filtered6, (f, g) => {
+        await each_pairs_async(filtered6, (f, g) => {
           let after = html_parse_href(g);
           if (string_starts_with(after, "/sense/")) {
             each([f, g], (h) => la(property_text_trim(h)));
