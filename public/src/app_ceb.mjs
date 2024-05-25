@@ -158,13 +158,14 @@ export async function app_ceb() {
     html_button_width_full_text_click(root, "🎓 learn", () => {
       refresh_pair(0);
     });
-    html_button_width_full_text_click(root, "📝 quiz ( hard )", () => {
+    ("🟠🔵");
+    html_button_width_full_text_click(root, "📝 quiz ( 🟢 easy )", () => {
       quizzes_start([3]);
     });
-    html_button_width_full_text_click(root, "📝 quiz ( medium )", () => {
+    html_button_width_full_text_click(root, "📝 quiz ( 🟡 medium )", () => {
       quizzes_start([2]);
     });
-    html_button_width_full_text_click(root, "🧑‍🎓️ quiz ( hard only )", () => {
+    html_button_width_full_text_click(root, "📝 quiz ( 🔴 hard )", () => {
       quizzes_start([1]);
     });
   }
