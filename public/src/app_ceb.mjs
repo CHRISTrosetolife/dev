@@ -1,3 +1,4 @@
+import { string_index_last } from "./string_index_last.mjs";
 import { string_substring } from "./string_substring.mjs";
 import { html_merge } from "./html_merge.mjs";
 import { and } from "./and.mjs";
@@ -247,7 +248,7 @@ export async function app_ceb() {
     });
     let answer;
     let pair_other = list_random_item(pairs_other);
-    pair_other = list_random_item(definitions[cebuano]);
+    pair_other = [cebuano, list_random_item(definitions[cebuano])];
     let answer_other_get;
     let alternatives;
     if (forwards) {
@@ -306,7 +307,15 @@ export async function app_ceb() {
           );
           let alternatives_partial_matches_nexts = list_map(
             alternatives_partial_matches,
-            (a) => string_substring(a, index, add_1(index)),
+            (a) =>
+              string_substring(
+                a,
+                index,
+                add(
+                  index,
+                  number_min(chunk_size, string_index_last(a) - index),
+                ),
+              ),
           );
           each(buttons, (b) => {
             let { button } = b;
