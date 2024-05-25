@@ -47,6 +47,6 @@ export async function sandbox() {
     });
   });
   let group_index = 0;
-  if (0) await storage_upload_object(group, ceb_group_path(group_index));
+  if (10) await storage_upload_object(group, ceb_group_path(group_index));
   return group;
 }
