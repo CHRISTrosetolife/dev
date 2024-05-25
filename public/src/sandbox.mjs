@@ -1,3 +1,7 @@
+import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
+import { function_delete_if_exists } from "./function_delete_if_exists.mjs";
+import { ceb_audio_path } from "./ceb_audio_path.mjs";
+import { ceb_audio_voices } from "./ceb_audio_voices.mjs";
 import { ceb_audio_upload } from "./ceb_audio_upload.mjs";
 import { ceb_group_size } from "./ceb_group_size.mjs";
 import { ceb_group_path } from "./ceb_group_path.mjs";
@@ -22,6 +26,14 @@ export async function sandbox() {
       });
     let mapped = list_map(atom, list_first);
     await each_async(mapped, async (text) => {
+      let voices = ceb_audio_voices();
+      let file_path = ceb_audio_path(0, text);
+      let output_path = folder_gitignore_path(file_path);
+      log({
+        output_path,
+      });
+      await function_delete_if_exists(output_path);
+      return;
       await ceb_audio_upload(text);
     });
   });
