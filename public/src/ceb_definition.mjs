@@ -156,7 +156,7 @@ export async function ceb_definition(word) {
             let { children: children_sense } =
               await ceb_html_cache_parse_form1(url_sense);
             let filtered7 = list_filter(children_sense, (c) =>
-              html_parse_tag_not(c, "table"),
+              html_parse_tag(c, "a"),
             );
             log({
               a: list_map_property(filtered7, "rawTagName"),
