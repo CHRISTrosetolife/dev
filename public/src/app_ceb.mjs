@@ -193,7 +193,9 @@ export async function app_ceb() {
     let pairs_other = list_without(concat, pair);
     let [cebuano, english] = pair;
     let cebuano_alternatives = object_property_get(definitions, cebuano);
-    list_unique(string_split_empty(list_join_empty(cebuano_alternatives)));
+    let letters = list_unique(
+      string_split_empty(list_join_empty(cebuano_alternatives)),
+    );
     let english_alternatives = object_property_get(inverted, english);
     pairs_other = list_filter(pairs_other, (p) => {
       let [c, e] = p;
