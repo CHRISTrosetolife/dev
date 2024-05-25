@@ -10,14 +10,14 @@ import { list_map } from "./list_map.mjs";
 import { each_async } from "./each_async.mjs";
 import { log } from "./log.mjs";
 import { each } from "./each.mjs";
+import { object_property_set } from "./object_property_set.mjs";
+import { object_property_get } from "./object_property_get.mjs";
 export async function sandbox() {
   let limit = 75;
   let skip = 0;
   let group_count = ceb_group_size();
-  let { atoms, definitions } = await ceb_bible_words_definitions_atoms(
-    skip,
-    limit,
-  );
+  let { atoms, definitions: definitions_all } =
+    await ceb_bible_words_definitions_atoms(skip, limit);
   let group = list_take(atoms, group_count);
   if (0) group = list_take(group, 4);
   await each_async(group, async (atom) => {
@@ -35,5 +35,13 @@ export async function sandbox() {
   let words = list_adder_unique((la) =>
     each(atoms, (a) => each(a, (pair) => la(list_first(pair)))),
   );
-  return words;
+  let definitions = {};
+  each(words, (w) =>
+    object_property_set(
+      definitions,
+      w,
+      object_property_get(definitions_all, w),
+    ),
+  );
+  return definitions;
 }
