@@ -11,13 +11,19 @@ import { list_index_last } from "./list_index_last.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { add_1 } from "./add_1.mjs";
 import { mod } from "./mod.mjs";
+import { integer_random } from "./integer_random.mjs";
 export async function app_ceb_audio(cebuano) {
   let voices = ceb_audio_voices();
   let g = global_get();
   let counts = object_property_initialize(g, app_ceb_audio.name, {});
-  let count = object_property_initialize(counts, cebuano, -1);
+  let voices_last = list_index_last(voices);
+  let count = object_property_initialize(
+    counts,
+    cebuano,
+    integer_random(0, voices_last),
+  );
   count = add_1(count);
-  if (greater_than_equal(count, list_index_last(voices))) {
+  if (greater_than_equal(count, voices_last)) {
     let length = list_length(voices);
     count = mod(count, length);
   }

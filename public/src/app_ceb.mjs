@@ -92,7 +92,7 @@ export async function app_ceb() {
   let settings_choices;
   let position = {
     left: 0,
-    right: 1,
+    right: 0,
   };
   refresh_node();
   function refresh_node() {
