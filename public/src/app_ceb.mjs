@@ -1,5 +1,4 @@
 import { log } from "./log.mjs";
-import { string_index_last } from "./string_index_last.mjs";
 import { string_substring } from "./string_substring.mjs";
 import { html_merge } from "./html_merge.mjs";
 import { and } from "./and.mjs";
@@ -377,7 +376,7 @@ export async function app_ceb() {
           string_substring(
             a,
             index,
-            add(index, number_min(chunk_size, string_index_last(a) - index)),
+            add(index, number_min(chunk_size, string_length(a) - index)),
           ),
       );
       log({
