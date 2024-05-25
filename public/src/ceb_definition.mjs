@@ -132,7 +132,7 @@ export async function ceb_definition(word) {
     assert(equal, [list_length(childNodes), 2]);
     let right = list_second(childNodes);
     let filtered6 = html_parse_a_href_starts_with(right, prefix);
-    if (greater_than_equal(list_length(filtered6, 2))) {
+    if (greater_than_equal(list_length(filtered6), 2)) {
         each_pairs(filtered6, (f,g)=>{
             
     log([html_parse_href(f),html_parse_href(g),])
