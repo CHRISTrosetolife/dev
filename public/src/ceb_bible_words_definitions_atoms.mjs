@@ -16,7 +16,10 @@ import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_second } from "./list_second.mjs";
 export async function ceb_bible_words_definitions_atoms(skip, limit) {
   let atom_count = ceb_atom_count();
-  let pairs = await ceb_bible_words_definitions_pairs(skip, limit);
+  let { pairs, definitions } = await ceb_bible_words_definitions_pairs(
+    skip,
+    limit,
+  );
   let atoms = list_adder((la) => {
     while (list_empty_not_is(pairs)) {
       let atom_result = [];
