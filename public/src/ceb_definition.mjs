@@ -164,9 +164,7 @@ export async function ceb_definition(word) {
             let mapped8 = list_map(filtered8, (f) =>
               string_prefix_without(f, prefix_2),
             );
-            log({
-              a: mapped8,
-            });
+            log([f, g]);
             each([f, g], (h) => la(property_text_trim(h)));
           }
         });
