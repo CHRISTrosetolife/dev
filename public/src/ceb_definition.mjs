@@ -140,10 +140,15 @@ export async function ceb_definition(word) {
       if (greater_than_equal(list_length(filtered6), 2)) {
         await each_pairs_async(filtered6, async (f, g) => {
           let after = html_parse_href(g);
-          if (string_starts_with(after, "/sense/")) {
-            log({
-              after,
+          let sense = "/sense/";
+          if (string_starts_with(after, sense)) {
+            let url_sense = string_combine_multiple([
               prefix,
+              string_prefix_without(after, "/"),
+            ]);
+            let parsed_sense = await html_cache_parse(url_sense);
+            log({
+              parsed_sense,
             });
             each([f, g], (h) => la(property_text_trim(h)));
           }
