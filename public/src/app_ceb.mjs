@@ -1,3 +1,4 @@
+import { string_substring } from "./string_substring.mjs";
 import { html_merge } from "./html_merge.mjs";
 import { and } from "./and.mjs";
 import { html_style_hidden } from "./html_style_hidden.mjs";
@@ -306,7 +307,7 @@ export async function app_ceb() {
           );
           let alternatives_partial_matches_nexts = list_map(
             alternatives_partial_matches,
-            (a) => string_slice(index, add_1(index)),
+            (a) => string_substring(index, add_1(index)),
           );
           each(buttons, (b) => {
             let { button } = b;
