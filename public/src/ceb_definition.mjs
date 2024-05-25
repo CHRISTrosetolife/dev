@@ -182,11 +182,12 @@ export async function ceb_definition(word) {
     let split_d = string_split_space(d);
     if (list_multiple_is(definitions)) {
       if (list_multiple_is(split_d)) {
-        log({
-          word,
-          d,
-          skip_because: "contains spaces",
-        });
+        if (0)
+          log({
+            word,
+            d,
+            skip_because: "contains spaces",
+          });
         return false;
       }
     }
