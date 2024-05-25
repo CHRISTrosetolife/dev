@@ -6,6 +6,9 @@ export async function gcloud_tts(language_code, voice, text, output_path) {
   const client = new textToSpeech.TextToSpeechClient();
   const [result] = await client.listVoices({});
   const voices = result.voices;
+  log({
+    voices,
+  });
   return;
   if (await file_exists(output_path)) {
     return {
