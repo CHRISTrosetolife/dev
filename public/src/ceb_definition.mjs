@@ -145,6 +145,9 @@ export async function ceb_definition(word) {
     }
     return d;
   });
+  log({
+    definitions,
+  });
   definitions = await list_filter_async(definitions, async (d) => {
     let url = string_combine(prefix_2, d);
     url = string_replace(url, " ", "+");
