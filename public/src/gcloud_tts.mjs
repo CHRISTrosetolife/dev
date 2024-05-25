@@ -8,6 +8,7 @@ export async function gcloud_tts(language_code, voice, text, output_path) {
       created: false,
     };
   }
+  let { code, male } = language_code;
   const client = new textToSpeech.TextToSpeechClient();
   log(textToSpeech.listVoices());
   const request = {
@@ -15,9 +16,9 @@ export async function gcloud_tts(language_code, voice, text, output_path) {
       text: text,
     },
     voice: {
-      languageCode: language_code,
+      languageCode: code,
       voice,
-      ssmlGender: "MALE",
+      ssmlGender: male ? "MALE" : "FEMALE",
     },
     audioConfig: {
       audioEncoding: "MP3",
