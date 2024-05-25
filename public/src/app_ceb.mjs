@@ -303,10 +303,11 @@ export async function app_ceb() {
             (a) => string_slice(index, add_1(index)),
           );
           each(buttons, (b) => {
-            let { element } = b.button;
+            let { button } = b;
+            let { element } = button;
             element.removeAttribute("disabled");
             if (list_includes(alternatives_partial_matches_nexts, b.choice)) {
-              html_merge(b.button, {
+              html_merge(button, {
                 disabled: "disabled",
               });
             }
