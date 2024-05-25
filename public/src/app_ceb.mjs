@@ -84,6 +84,7 @@ import { string_split_empty } from "./string_split_empty.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
+import { list_copy } from "./list_copy.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -276,9 +277,10 @@ export async function app_ceb() {
     let index = 0;
     let correct_choices = string_chunk(answer, chunk_size);
     let other_choices = string_chunk(answer_other, chunk_size);
-    let choices = list_map(correct_choices, string_case_lower);
+    let choices = list_copy(correct_choices);
     list_add_multiple(choices, other_choices);
     list_scramble(choices);
+    choices = list_map(choices, string_case_lower);
     let buttons = list_adder((la) => {
       each(choices, (choice) => {
         let button = html_button_text_click(quiz_container, choice, () => {
