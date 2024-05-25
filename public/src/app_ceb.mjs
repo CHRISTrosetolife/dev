@@ -49,7 +49,6 @@ import { app_ceb_word_button } from "./app_ceb_word_button.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { html_buttons_next_previous } from "./html_buttons_next_previous.mjs";
 import { list_scramble } from "./list_scramble.mjs";
-import { list_copy } from "./list_copy.mjs";
 import { http_storage } from "./http_storage.mjs";
 import { ceb_group_path } from "./ceb_group_path.mjs";
 import { list_first } from "./list_first.mjs";
@@ -83,6 +82,8 @@ import { list_filter } from "./list_filter.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
+import { list_map } from "./list_map.mjs";
+import { string_case_lower } from "./string_case_lower.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -275,13 +276,13 @@ export async function app_ceb() {
     let index = 0;
     let correct_choices = string_chunk(answer, chunk_size);
     let other_choices = string_chunk(answer_other, chunk_size);
-    let choices = list_copy(correct_choices);
+    let choices = list_map(correct_choices, string_case_lower);
     list_add_multiple(choices, other_choices);
     list_scramble(choices);
     let buttons = list_adder((la) => {
       each(choices, (choice) => {
         let button = html_button_text_click(quiz_container, choice, () => {
-          let correct = list_get(correct_choices, index);
+          let correct = string_case_lower(list_get(correct_choices, index));
           if (equal(choice, correct)) {
             each(buttons, html_style_button_default);
             index = add_1(index);
