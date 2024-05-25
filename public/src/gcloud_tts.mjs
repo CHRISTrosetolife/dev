@@ -8,7 +8,7 @@ export async function gcloud_tts(language_code, voice, text, output_path) {
   const client = new textToSpeech.TextToSpeechClient();
   const [result] = await client.listVoices({});
   let voices = result.voices;
-  voices = list_filter(voices, (v) => string_starts_with(v, "fil-PH-"));
+  voices = list_filter(voices, (v) => string_starts_with(v.name, "fil-"));
   log({
     voices,
   });
