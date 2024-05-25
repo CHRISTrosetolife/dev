@@ -87,6 +87,7 @@ import { list_map } from "./list_map.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { list_copy } from "./list_copy.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
+import { list_map_property } from "./list_map_property.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -302,7 +303,10 @@ export async function app_ceb() {
           );
           let correct = string_case_lower(list_get(correct_choices, index));
           if (equal(choice, correct)) {
-            each(buttons, html_style_button_default);
+            each(
+              list_map_property(buttons, "button"),
+              html_style_button_default,
+            );
             index = add_1(index);
             const last_is = greater_than_equal(
               multiply(index, chunk_size),
@@ -343,7 +347,10 @@ export async function app_ceb() {
             }
           }
         });
-        la(button);
+        la({
+          button,
+          choice,
+        });
         html_style_click_width_min(button);
       });
     });
