@@ -276,9 +276,9 @@ export async function app_ceb() {
               }
             });
           } else {
+            html_style_wrong(button);
             if (no_mistakes) {
               list_add(settings_choices, object_copy_shallow(settings));
-              html_style_wrong(button);
               no_mistakes = false;
             }
           }
