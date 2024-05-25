@@ -1,3 +1,4 @@
+import { html_style_hidden } from "./html_style_hidden.mjs";
 import { list_intersect } from "./list_intersect.mjs";
 import { list_difference } from "./list_difference.mjs";
 import { list_includes } from "./list_includes.mjs";
@@ -82,7 +83,6 @@ import { list_filter } from "./list_filter.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
-import { object_property_set } from "./object_property_set.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -300,14 +300,11 @@ export async function app_ceb() {
             );
             if (last_is) {
               app_learn_code_style_success(answer_element);
-              let { element } = button;
-              object_property_set(element, "disabled", true);
+              html_style_hidden(button);
             }
             app_learn_code_style_success(button);
             app_learn_code_correct_timeout(async () => {
-              let { element } = button;
-              object_property_set(element, "disabled", true);
-              html_style_button_default(button);
+              html_style_hidden(button);
               if (last_is) {
                 app_learn_code_style_success(answer_element);
                 await app_ceb_audio(cebuano);
