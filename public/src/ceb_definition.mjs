@@ -131,7 +131,8 @@ export async function ceb_definition(word) {
     let { childNodes } = parent;
     assert(equal, [list_length(childNodes), 2]);
     let right = list_second(childNodes);
-    let defs = html_parse_a_href_starts_with_text(right, prefix_2);
+    let filtered6 = html_parse_a_href_starts_with(right, prefix_2);
+    let defs = list_map_property_text_trim(filtered6);
     list_add_multiple(definitions, defs);
     log({
         defs,
