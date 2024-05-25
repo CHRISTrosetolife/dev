@@ -1,3 +1,4 @@
+import { file_delete } from "./file_delete.mjs";
 import { ceb_audio_path } from "./ceb_audio_path.mjs";
 import { ceb_audio_voices } from "./ceb_audio_voices.mjs";
 import { ceb_audio_upload } from "./ceb_audio_upload.mjs";
@@ -29,6 +30,7 @@ export async function sandbox() {
       log({
         file_path,
       });
+      await file_delete(file_path);
       return;
       await ceb_audio_upload(text);
     });
