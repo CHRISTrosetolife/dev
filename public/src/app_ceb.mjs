@@ -302,7 +302,6 @@ export async function app_ceb() {
               app_learn_code_style_success(answer_element);
               let { element } = button;
               object_property_set(element, "disabled", true);
-              html_style_display_none();
             }
             app_learn_code_style_success(button);
             app_learn_code_correct_timeout(async () => {
