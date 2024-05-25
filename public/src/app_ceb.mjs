@@ -189,14 +189,8 @@ export async function app_ceb() {
     let concat = atoms_slice_concat();
     let pairs_other = list_without(concat, pair);
     let [cebuano, english] = pair;
-    let cebuano_alternatives = list_without(
-      object_property_get(definitions, cebuano),
-      english,
-    );
-    let english_alternatives = list_without(
-      object_property_get(inverted, english),
-      cebuano,
-    );
+    let cebuano_alternatives = object_property_get(definitions, cebuano);
+    let english_alternatives = object_property_get(inverted, english);
     pairs_other = list_filter(pairs_other, (p) => {
       let [c, e] = p;
       if (or(equal(c, cebuano), equal(e, english))) {
