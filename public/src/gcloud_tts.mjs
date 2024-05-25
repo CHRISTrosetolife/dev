@@ -21,7 +21,7 @@ export async function gcloud_tts(
     },
     voice: {
       languageCode: language_code,
-      voice: string_combine_multiple([language_code, "-", voice]),
+      name: string_combine_multiple([language_code, "-", voice]),
       ssmlGender: ssml_gender,
     },
     audioConfig: {
