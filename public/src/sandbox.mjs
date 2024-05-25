@@ -47,6 +47,10 @@ export async function sandbox() {
     ),
   );
   let inverted = {};
-  each_object(definitions, (word, word_definitions) => {});
+  each_object(definitions, (word, word_definitions) =>
+    each(word_definitions, (wd) => {
+      object_property_set();
+    }),
+  );
   return definitions;
 }
