@@ -148,9 +148,6 @@ export async function ceb_definition(word) {
     let defs = list_map_property_text_trim(filtered6);
     defs = list_filter(defs, (d) => list_includes_not(skips, d));
     list_add_multiple(definitions, defs);
-    log({
-      defs,
-    });
   }
   definitions = list_map(definitions, (d) => {
     if (object_property_exists(lookup, d)) {
