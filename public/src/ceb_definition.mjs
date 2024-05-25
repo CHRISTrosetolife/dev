@@ -169,10 +169,11 @@ export async function ceb_definition(word) {
       }
     });
     let defs = list_map_property_text_trim(filtered6);
-    log({
-      defs,
-    });
-    if (0) defs = list_filter(defs, (d) => list_includes_not(skips, d));
+    if (0)
+      log({
+        defs,
+      });
+    defs = list_filter(defs, (d) => list_includes_not(skips, d));
     list_add_multiple(definitions, defs);
   }
   definitions = list_map(definitions, (d) => {
