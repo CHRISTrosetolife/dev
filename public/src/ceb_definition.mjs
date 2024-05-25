@@ -60,7 +60,7 @@ export async function ceb_definition(word) {
       definitions: object_property_get(known, word),
     };
   }
-  let replaced = ["distuinguish,distinguish"];
+  let replaced = ["distuinguish", "distinguish"];
   let replaced_split = list_map_split_comma(replaced);
   let skipped = ["nevus"];
   let skipped_pairs = [
