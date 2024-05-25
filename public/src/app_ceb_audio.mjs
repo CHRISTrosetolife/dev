@@ -20,7 +20,7 @@ export async function app_ceb_audio(cebuano) {
     let length = list_length(voices);
     count = mod(count, length);
   }
-  object_property_set();
-  let file_path = ceb_audio_path(index, cebuano);
+  object_property_set(counts, cebuano, count);
+  let file_path = ceb_audio_path(count, cebuano);
   return await html_audio(storage_url(file_path));
 }
