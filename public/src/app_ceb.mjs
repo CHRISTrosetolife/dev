@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { string_index_last } from "./string_index_last.mjs";
 import { string_substring } from "./string_substring.mjs";
 import { html_merge } from "./html_merge.mjs";
@@ -298,35 +299,7 @@ export async function app_ceb() {
     let buttons = list_adder((la) => {
       each(choices, (choice) => {
         let button = html_button_text_click(quiz_container, choice, () => {
-          let answer_partial = string_take(answer, index * chunk_size);
-          let alternatives_partial_matches = list_filter(alternatives, (a) =>
-            and(
-              string_starts_with(a, answer_partial),
-              greater_than(string_length(a), index),
-            ),
-          );
-          let alternatives_partial_matches_nexts = list_map(
-            alternatives_partial_matches,
-            (a) =>
-              string_substring(
-                a,
-                index,
-                add(
-                  index,
-                  number_min(chunk_size, string_index_last(a) - index),
-                ),
-              ),
-          );
-          each(buttons, (b) => {
-            let { button } = b;
-            let { element } = button;
-            element.removeAttribute("disabled");
-            if (list_includes(alternatives_partial_matches_nexts, b.choice)) {
-              html_merge(button, {
-                disabled: "disabled",
-              });
-            }
-          });
+          update_partials();
           let correct = string_case_lower(list_get(correct_choices, index));
           if (equal(choice, correct)) {
             each(
@@ -380,7 +353,39 @@ export async function app_ceb() {
         html_style_click_width_min(button);
       });
     });
+    update_partials();
     html_button_width_full_text_click_up(root, refresh_node);
+    function update_partials() {
+      let answer_partial = string_take(answer, index * chunk_size);
+      let alternatives_partial_matches = list_filter(alternatives, (a) =>
+        and(
+          string_starts_with(a, answer_partial),
+          greater_than(string_length(a), index),
+        ),
+      );
+      let alternatives_partial_matches_nexts = list_map(
+        alternatives_partial_matches,
+        (a) =>
+          string_substring(
+            a,
+            index,
+            add(index, number_min(chunk_size, string_index_last(a) - index)),
+          ),
+      );
+      log({
+        alternatives_partial_matches_nexts,
+      });
+      each(buttons, (b) => {
+        let { button } = b;
+        let { element } = button;
+        element.removeAttribute("disabled");
+        if (list_includes(alternatives_partial_matches_nexts, b.choice)) {
+          html_merge(button, {
+            disabled: "disabled",
+          });
+        }
+      });
+    }
   }
   async function refresh_pair(pair_index) {
     html_clear_scroll_top_centered(root);
