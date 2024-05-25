@@ -104,7 +104,7 @@ export async function app_ceb() {
   };
   position = {
     left: 4,
-    right: 7,
+    right: 5,
   };
   refresh_node();
   function refresh_node() {
@@ -297,8 +297,7 @@ export async function app_ceb() {
     let buttons = list_adder((la) => {
       each(choices, (choice) => {
         let button = html_button_text_click(quiz_container, choice, () => {
-          let correct = string_case_lower(list_get(correct_choices, index));
-          let answer_partial = string_take(correct, index * chunk_size);
+          let answer_partial = string_take(answer, index * chunk_size);
           let alternatives_partial_matches = list_filter(alternatives, (a) =>
             and(
               string_starts_with(a, answer_partial),
@@ -319,6 +318,7 @@ export async function app_ceb() {
               });
             }
           });
+          let correct = string_case_lower(list_get(correct_choices, index));
           if (equal(choice, correct)) {
             each(
               list_map_property(buttons, "button"),
