@@ -138,7 +138,7 @@ export async function ceb_definition(word) {
     let filtered6 = html_parse_a_href_starts_with(right, "");
     let skips = await list_adder_async(async (la) => {
       if (greater_than_equal(list_length(filtered6), 2)) {
-        await each_pairs_async(filtered6, (f, g) => {
+        await each_pairs_async(filtered6, async (f, g) => {
           let after = html_parse_href(g);
           if (string_starts_with(after, "/sense/")) {
             each([f, g], (h) => la(property_text_trim(h)));
