@@ -239,14 +239,17 @@ export async function app_ceb() {
     let answer;
     let pair_other = list_random_item(pairs_other);
     let answer_other_get;
+    let alternatives;
     if (forwards) {
       app_ceb_word_button(root, cebuano);
       answer = english;
       answer_other_get = list_second;
+      alternatives = english_alternatives;
     } else {
       app_ceb_word_english(root, english);
       answer = cebuano;
       answer_other_get = list_first;
+      alternatives = cebuano_alternatives;
     }
     let quiz_container;
     let button_ready = html_button_width_full_text_click(
