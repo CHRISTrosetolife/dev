@@ -370,6 +370,10 @@ export async function app_ceb() {
           greater_than(string_length(a), index),
         ),
       );
+      alternatives_partial_matches = list_map(
+        alternatives_partial_matches,
+        string_case_lower,
+      );
       let alternatives_partial_matches_nexts = list_map(
         alternatives_partial_matches,
         (a) =>
