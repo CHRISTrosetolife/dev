@@ -194,11 +194,12 @@ export async function app_ceb() {
       object_property_get(definitions, cebuano),
       english,
     );
-    let letters = list_to_letters(cebuano_alternatives);
+    let letters_english_forbidden = list_to_letters(cebuano_alternatives);
     let english_alternatives = list_without(
       object_property_get(inverted, english),
       cebuano,
     );
+    let letters_cebuano_forbidden = list_to_letters(cebuano_alternatives);
     pairs_other = list_filter(pairs_other, (p) => {
       let [c, e] = p;
       if (or(equal(c, cebuano), equal(e, english))) {
