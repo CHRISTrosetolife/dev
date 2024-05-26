@@ -7,12 +7,21 @@ import { each } from "./each.mjs";
 import { ceiling } from "./ceiling.mjs";
 import { divide } from "./divide.mjs";
 import { string_length } from "./string_length.mjs";
+import { list_adder } from "./list_adder.mjs";
 export async function app_ceb_answer_partial_tests_generate() {
   let answer = "from";
   let length = string_length(answer);
-  each([1, 2, 3], (chunk_size) => {
-    each(range(ceiling(divide(length, chunk_size))));
-  });
+  let list = list_adder((la) =>
+    each([1, 2, 3], (chunk_size) => {
+      each(range(ceiling(divide(length, chunk_size))), (index) => {
+        la({
+          chunk_size,
+          index,
+        });
+      });
+    }),
+  );
+  return list;
   await each_index_async(inputs, async (input, index) => {
     await tests_generate_single(
       app_ceb_answer_partial.name,
