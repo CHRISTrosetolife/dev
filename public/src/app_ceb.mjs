@@ -1,3 +1,4 @@
+import { html_attribute_has } from "./html_attribute_has.mjs";
 import { html_style_margin_y } from "./html_style_margin_y.mjs";
 import { html_style_margin_x } from "./html_style_margin_x.mjs";
 import { html_style } from "./html_style.mjs";
@@ -370,12 +371,12 @@ export async function app_ceb() {
       );
       each(buttons, (b) => {
         let { button, choice } = b;
-        const value = "disabled";
-        let { element } = button;
-        let disabled_is = element.hasAttribute(value);
-        if (disabled_is) html_enable(button);
-        html_style_button_default(button);
-        html_style_font_color_default_set(button);
+        let disabled_is = html_attribute_has(button, "disabled");
+        if (disabled_is) {
+          html_enable(button);
+          html_style_button_default(button);
+          html_style_font_color_default_set(button);
+        }
         if (list_includes(nexts, choice)) {
           html_disable(button);
           html_style_font_color(button, "gray");
