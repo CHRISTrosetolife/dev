@@ -92,6 +92,7 @@ import { html_span } from "./html_span.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
 import { html_style_font_color } from "./html_style_font_color.mjs";
+import { html_style_font_color_default } from "./html_style_font_color_default.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -353,6 +354,7 @@ export async function app_ceb() {
       each(buttons, (b) => {
         let { button, choice } = b;
         html_enable(button);
+        html_style_font_color(button, html_style_font_color_default())
         if (list_includes(nexts, choice)) {
           html_disable(button);
           html_style_font_color(button, 'gray')
