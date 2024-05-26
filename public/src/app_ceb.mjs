@@ -270,7 +270,7 @@ export async function app_ceb() {
     html_style_background_color(answer_element_right, "#ffff6b");
     html_style_margin_x(
       answer_element_right,
-      html_style_default_font_size_value_get(3),
+      html_style_default_font_size_value_get(0.4),
     );
     app_learn_code_style_rounded_padded(answer_element_right);
     html_style_bold(answer_element_left);
