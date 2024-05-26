@@ -1,3 +1,4 @@
+import { html_style_button_default_border_color } from "./html_style_button_default_border_color.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { html_p } from "./html_p.mjs";
 import { html_spacer_vertical_2 } from "./html_spacer_vertical_2.mjs";
@@ -89,6 +90,7 @@ import { list_copy } from "./list_copy.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { html_span } from "./html_span.mjs";
 import { html_span_text } from "./html_span_text.mjs";
+import { html_style_font_color } from "./html_style_font_color.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -260,6 +262,10 @@ export async function app_ceb() {
     let answer_element = html_p(quiz_container);
     let answer_element_left = html_span(answer_element);
     let answer_element_right = html_span_text(answer_element, "?");
+    html_style_font_color(
+      answer_element_right,
+      html_style_button_default_border_color(),
+    );
     html_style_bold(answer_element_left);
     let style = html_element_style(answer_element);
     html_style_default_border_margin(style);
