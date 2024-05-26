@@ -51,6 +51,7 @@ import { object_property_set } from "./object_property_set.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
 import { list_unique } from "./list_unique.mjs";
+import { list_last } from "./list_last.mjs";
 export async function ceb_definition(word) {
   let known = {
     apan: ["but", "yet"],
@@ -170,6 +171,14 @@ export async function ceb_definition(word) {
       }
     });
     let defs = list_map_property_text_trim(filtered6);
+    defs = list_map(defs, (d) => {
+      for (let r of replaced_split) {
+        if (equal(d, list_first(r))) {
+          d = list_last(r);
+        }
+        return d;
+      }
+    });
     if (0)
       log({
         defs,
