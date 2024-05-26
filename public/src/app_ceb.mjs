@@ -1,3 +1,4 @@
+import { html_style_default_font_size_value_get } from "./html_style_default_font_size_value_get.mjs";
 import { html_style_margin_x } from "./html_style_margin_x.mjs";
 import { html_style_border_color } from "./html_style_border_color.mjs";
 import { html_style_button_default_background_color } from "./html_style_button_default_background_color.mjs";
@@ -267,7 +268,10 @@ export async function app_ceb() {
     let answer_element_left = html_span(answer_element);
     let answer_element_right = html_span_text(answer_element, "?");
     html_style_background_color(answer_element_right, "#ffff6b");
-    html_style_margin_x(answer_element_right);
+    html_style_margin_x(
+      answer_element_right,
+      html_style_default_font_size_value_get(3),
+    );
     app_learn_code_style_rounded_padded(answer_element_right);
     html_style_bold(answer_element_left);
     let style = html_element_style(answer_element);
