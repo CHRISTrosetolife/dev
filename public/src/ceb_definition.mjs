@@ -212,7 +212,10 @@ export async function ceb_definition(word) {
       string_prefix_without(f, prefix_1),
     );
     let tables = list_filter(children2, (c) => html_parse_tag(c, "table"));
-    assert(less_than_equal, [list_length(tables)]);
+    let tables_length = list_length(tables);
+    assert(less_than_equal, [tables_length, 3]);
+    if (equal(tables_length, 3)) {
+    }
     log({
       mapped6,
       d,
