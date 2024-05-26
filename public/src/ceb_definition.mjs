@@ -50,6 +50,7 @@ import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
+import { list_unique } from "./list_unique.mjs";
 export async function ceb_definition(word) {
   let known = {
     apan: ["but", "yet"],
@@ -234,6 +235,7 @@ export async function ceb_definition(word) {
     }
     return true;
   });
+  definitions = list_unique(definitions);
   return {
     word,
     definitions,
