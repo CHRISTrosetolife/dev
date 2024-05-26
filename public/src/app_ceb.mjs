@@ -102,11 +102,7 @@ export async function app_ceb() {
   let settings_choices;
   let position = {
     left: 0,
-    right: 0,
-  };
-  position = {
-    left: 4,
-    right: 5,
+    right: list_index_last(group),
   };
   refresh_node();
   function refresh_node() {
@@ -204,6 +200,7 @@ export async function app_ceb() {
     let concat = atoms_slice_concat();
     let pairs_other = list_without(concat, pair);
     let [cebuano, english] = pair;
+    console.log({cebuano,c:object_property_get(definitions, cebuano),english})
     let english_alternatives = list_without(
       object_property_get(definitions, cebuano),
       english,
@@ -362,7 +359,7 @@ export async function app_ceb() {
     function update_partials() {
       let answer_partial = string_take(
         answer,
-        number_min(index * chunk_size, string_length(a) - index),
+        number_min(index * chunk_size, string_length(answer) - index),
       );
       let alternatives_partial_matches = list_filter(alternatives, (a) =>
         and(
