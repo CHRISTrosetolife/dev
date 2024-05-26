@@ -1,3 +1,4 @@
+import { list_concat } from "./list_concat.mjs";
 import { html_parse_a_href_starts_with_text } from "./html_parse_a_href_starts_with_text.mjs";
 import { less_than_equal } from "./less_than_equal.mjs";
 import { each_pairs_async } from "./each_pairs_async.mjs";
@@ -215,14 +216,14 @@ export async function ceb_definition(word) {
     let tables = list_filter(children2, (c) => html_parse_tag(c, "table"));
     let tables_length = list_length(tables);
     assert(less_than_equal, [tables_length, 3]);
-    let words;
     if (equal(tables_length, 3)) {
       let middle = list_second(tables);
       let words = html_parse_a_href_starts_with_text(middle, "/cebuano/");
-      words = list_unique(words);
+      mapped6 = list_concat(mapped6, words);
     }
+    mapped6 = list_unique(mapped6);
     log({
-      mapped6,words,
+      mapped6,
       d,
     });
     if (list_empty_is(mapped6)) {
