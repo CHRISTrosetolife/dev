@@ -360,7 +360,10 @@ export async function app_ceb() {
       return string_case_lower(list_get(correct_choices, index));
     }
     function update_partials() {
-      let answer_partial = string_take(answer, index * chunk_size);
+      let answer_partial = string_take(
+        answer,
+        number_min(index * chunk_size, string_length(a) - index),
+      );
       let alternatives_partial_matches = list_filter(alternatives, (a) =>
         and(
           string_starts_with(a, answer_partial),
