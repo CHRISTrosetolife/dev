@@ -13,9 +13,10 @@ export async function app_ceb_alternatives_partial_matches_nexts_tests_generate(
   let answer = "from";
   let length = string_length(answer);
   let chunk_size = 1;
-  return list_adder(
-    (la) => range(ceiling(divide(add_1(length), chunk_size))),
-    (index) => la(f(answer, chunk_size, 0, alternatives)),
+  return list_adder((la) =>
+    range(ceiling(divide(add_1(length), chunk_size)), (index) =>
+      la(f(answer, chunk_size, 0, alternatives)),
+    ),
   );
   return;
   await each_index_async(inputs, async (input, index) => {
