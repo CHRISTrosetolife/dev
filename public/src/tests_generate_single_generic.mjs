@@ -1,3 +1,4 @@
+import { js_code_array } from "./js_code_array.mjs";
 import { string_to } from "./string_to.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
 import { equal } from "./equal.mjs";
@@ -20,6 +21,7 @@ import { identity } from "./identity.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_join } from "./list_join.mjs";
 import { number_is } from "./number_is.mjs";
+import { list_is } from "./list_is.mjs";
 export async function tests_generate_single_generic(
   function_name,
   args,
@@ -49,12 +51,15 @@ export async function tests_generate_single_generic(
       assert_boolean(!string_includes(arg, string_delimeter));
     }
   }
-  let args_mapped = list_map(args, (arg) => {
+  let args_mapped = list_map(args, function js_code_recursive(arg) {
     if (string_is(arg)) {
       return string_delimit(arg);
     }
     if (number_is(arg)) {
       return string_to(arg);
+    }
+    if (list_is(arg)) {
+      return js_code_array(list_map(args, js_code_recursive));
     }
     error();
   });
