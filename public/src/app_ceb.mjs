@@ -359,6 +359,7 @@ export async function app_ceb() {
         if (list_includes(nexts, choice)) {
           html_disable(button);
           html_style_font_color(button, "gray");
+          html_style_background_color(button, "#578fc7");
         }
       });
     }
