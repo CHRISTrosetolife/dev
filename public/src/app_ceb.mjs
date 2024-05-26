@@ -1,3 +1,4 @@
+import { html_style_button_default_background_color } from "./html_style_button_default_background_color.mjs";
 import { html_style_font_color_default_set } from "./html_style_font_color_default_set.mjs";
 import { app_learn_code_style_rounded_padded } from "./app_learn_code_style_rounded_padded.mjs";
 import { string_combine } from "./string_combine.mjs";
@@ -271,7 +272,7 @@ export async function app_ceb() {
     html_style_default_border_margin(style);
     html_style_width_full(answer_element);
     html_style(answer_element, {
-      "border-color": "lightblue",
+      "border-color": html_style_button_default_background_color(),
     });
     let index = 0;
     let correct_choices = string_chunk(answer, chunk_size);
