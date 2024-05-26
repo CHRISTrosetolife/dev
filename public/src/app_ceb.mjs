@@ -1,3 +1,5 @@
+import { string_combine } from "./string_combine.mjs";
+import { html_p } from "./html_p.mjs";
 import { html_spacer_vertical_2 } from "./html_spacer_vertical_2.mjs";
 import { app_ceb_correct_get } from "./app_ceb_correct_get.mjs";
 import { app_ceb_alternatives_partial_matches_nexts } from "./app_ceb_alternatives_partial_matches_nexts.mjs";
@@ -56,7 +58,6 @@ import { http_storage } from "./http_storage.mjs";
 import { ceb_group_path } from "./ceb_group_path.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_get } from "./list_get.mjs";
-import { html_p_text } from "./html_p_text.mjs";
 import { each } from "./each.mjs";
 import { list_index_last } from "./list_index_last.mjs";
 import { equal } from "./equal.mjs";
@@ -86,6 +87,8 @@ import { list_map } from "./list_map.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { list_copy } from "./list_copy.mjs";
 import { list_map_property } from "./list_map_property.mjs";
+import { html_span } from "./html_span.mjs";
+import { html_span_text } from "./html_span_text.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   let group_index = 0;
@@ -254,8 +257,10 @@ export async function app_ceb() {
     }
     html_style_display_none(component_display_none);
     let answer_other = answer_other_get(pair_other);
-    let answer_element = html_p_text(quiz_container, "?");
-    html_style_bold(answer_element);
+    let answer_element = html_p(quiz_container);
+    let answer_element_left = html_span(answer_element);
+    let answer_element_right = html_span_text(answer_element, "?");
+    html_style_bold(answer_element_left);
     let style = html_element_style(answer_element);
     html_style_default_border_margin(style);
     html_style_width_full(answer_element);
@@ -284,19 +289,17 @@ export async function app_ceb() {
               multiply(index, chunk_size),
               string_length(answer),
             );
-            let last = last_is ? "" : "?";
             let first = last_is ? "✅ " : "";
             const take_count = number_min(
               multiply(index, chunk_size),
               string_length(answer),
             );
+            if (last_is) {
+              html_style_display_none(answer_element_right);
+            }
             html_inner_set(
-              answer_element,
-              string_combine_multiple([
-                first,
-                string_take(answer, take_count),
-                last,
-              ]),
+              answer_element_left,
+              string_combine(first, string_take(answer, take_count)),
             );
             if (last_is) {
               app_learn_code_style_success(answer_element);
