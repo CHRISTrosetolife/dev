@@ -1,6 +1,5 @@
-import { html_style } from "./html_style.mjs";
+import { html_style_margin } from "./html_style_margin.mjs";
 export function html_style_margin_default(b) {
-  html_style(b, {
-    margin: "0.25dvh",
-  });
+  const value = "0.25dvh";
+  html_style_margin(b, value);
 }
