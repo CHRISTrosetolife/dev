@@ -272,7 +272,7 @@ export async function app_ceb() {
     let buttons = list_adder((la) => {
       each(choices, (choice) => {
         let button = html_button_text_click(quiz_container, choice, () => {
-          let correct = app_ceb_correct_get(index);
+          let correct = app_ceb_correct_get(answer, chunk_size, index);
           if (equal(choice, correct)) {
             each(
               list_map_property(buttons, "button"),

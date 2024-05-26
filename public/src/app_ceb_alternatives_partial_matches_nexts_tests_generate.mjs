@@ -11,6 +11,7 @@ import { list_adder } from "./list_adder.mjs";
 import { list_map } from "./list_map.mjs";
 export async function app_ceb_alternatives_partial_matches_nexts_tests_generate() {
   let f = app_ceb_alternatives_partial_matches_nexts;
+  return f("from", 1, 0, ["for", "front", "at"]);
   let answer = "from";
   let length = string_length(answer);
   let list = list_adder((la) =>

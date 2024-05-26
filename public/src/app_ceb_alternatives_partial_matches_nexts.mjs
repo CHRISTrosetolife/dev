@@ -41,11 +41,11 @@ export function app_ceb_alternatives_partial_matches_nexts(
         add(index, number_min(chunk_size, string_length(a) - index)),
       ),
   );
-  let correct = app_ceb_correct_get(index);
+  let correct;
   if (greater_than_equal(index, list_length(correct_choices))) {
     correct = null;
   } else {
-    correct = correct_get(correct_choices, index);
+    correct = app_ceb_correct_get(answer, chunk_size, index);
   }
   alternatives_partial_matches_nexts = list_filter(
     alternatives_partial_matches_nexts,
