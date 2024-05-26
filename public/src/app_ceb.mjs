@@ -1,3 +1,4 @@
+import { html_style_border_color } from "./html_style_border_color.mjs";
 import { html_style_button_default_background_color } from "./html_style_button_default_background_color.mjs";
 import { html_style_font_color_default_set } from "./html_style_font_color_default_set.mjs";
 import { app_learn_code_style_rounded_padded } from "./app_learn_code_style_rounded_padded.mjs";
@@ -73,7 +74,6 @@ import { list_add_multiple } from "./list_add_multiple.mjs";
 import { assert } from "./assert.mjs";
 import { multiply } from "./multiply.mjs";
 import { number_min } from "./number_min.mjs";
-import { html_style } from "./html_style.mjs";
 import { greater_than_equal } from "./greater_than_equal.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { list_length } from "./list_length.mjs";
@@ -271,9 +271,10 @@ export async function app_ceb() {
     let style = html_element_style(answer_element);
     html_style_default_border_margin(style);
     html_style_width_full(answer_element);
-    html_style(answer_element, {
-      "border-color": html_style_button_default_background_color(),
-    });
+    html_style_border_color(
+      answer_element,
+      html_style_button_default_background_color(),
+    );
     let index = 0;
     let correct_choices = string_chunk(answer, chunk_size);
     let other_choices = string_chunk(answer_other, chunk_size);
