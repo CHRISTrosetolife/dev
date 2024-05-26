@@ -10,7 +10,7 @@ import { list_adder } from "./list_adder.mjs";
 import { string_length } from "./string_length.mjs";
 export async function app_ceb_alternatives_partial_matches_nexts_tests_generate() {
   let f = app_ceb_alternatives_partial_matches_nexts;
-  let alternatives = ["for", "form", "front", "at"];
+  let alternatives = ["for", "form", "front", "at", "fromi"];
   let answer = "from";
   let length = string_length(answer);
   let chunk_size = 1;
