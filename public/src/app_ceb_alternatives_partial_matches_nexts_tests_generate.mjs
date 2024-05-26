@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { app_ceb_alternatives_partial_matches_nexts } from "./app_ceb_alternatives_partial_matches_nexts.mjs";
 import { range } from "./range.mjs";
 import { tests_generate_single } from "./tests_generate_single.mjs";
@@ -14,7 +15,7 @@ export async function app_ceb_alternatives_partial_matches_nexts_tests_generate(
   let length = string_length(answer);
   let chunk_size = 1;
   return list_adder((la) =>
-    range(ceiling(divide(add_1(length), chunk_size)), (index) =>
+    each(range(ceiling(divide(add_1(length), chunk_size))), (index) =>
       la(f(answer, chunk_size, index, alternatives)),
     ),
   );
