@@ -1,9 +1,7 @@
-import { app_ceb_answer_partial } from "./app_ceb_answer_partial.mjs";
+import { app_ceb_alternatives_partial_matches_nexts } from "./app_ceb_alternatives_partial_matches_nexts.mjs";
 import { html_disable } from "./html_disable.mjs";
 import { html_enable } from "./html_enable.mjs";
 import { log } from "./log.mjs";
-import { string_substring } from "./string_substring.mjs";
-import { and } from "./and.mjs";
 import { html_style_hidden } from "./html_style_hidden.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { html_button_width_full_text_click_up } from "./html_button_width_full_text_click_up.mjs";
@@ -86,7 +84,6 @@ import { object_property_get } from "./object_property_get.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { list_copy } from "./list_copy.mjs";
-import { string_starts_with } from "./string_starts_with.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
@@ -335,46 +332,18 @@ export async function app_ceb() {
       return string_case_lower(list_get(correct_choices, index));
     }
     function update_partials() {
-      let answer_partial = app_ceb_answer_partial(answer, chunk_size, index);
-      let alternatives_partial_matches = list_filter(alternatives, (a) =>
-        and(
-          string_starts_with(a, answer_partial),
-          greater_than(string_length(a), index),
-        ),
-      );
-      alternatives_partial_matches = list_map(
-        alternatives_partial_matches,
-        string_case_lower,
-      );
-      let alternatives_partial_matches_nexts = list_map(
-        alternatives_partial_matches,
-        (a) =>
-          string_substring(
-            a,
-            index,
-            add(index, number_min(chunk_size, string_length(a) - index)),
-          ),
-      );
-      log({
-        answer_partial,
+      let nexts = app_ceb_alternatives_partial_matches_nexts(
+        answer,
+        chunk_size,
         index,
-        alternatives_partial_matches,
-        alternatives_partial_matches_nexts,
-      });
-      let correct;
-      if (greater_than_equal(index, list_length(correct_choices))) {
-        correct = null;
-      } else {
-        correct = correct_get(correct_choices, index);
-      }
-      alternatives_partial_matches_nexts = list_filter(
-        alternatives_partial_matches_nexts,
-        (a) => equal_not(a, correct),
+        alternatives,
+        correct_choices,
+        correct_get,
       );
       each(buttons, (b) => {
         let { button, choice } = b;
         html_enable(button);
-        if (list_includes(alternatives_partial_matches_nexts, choice)) {
+        if (list_includes(nexts, choice)) {
           html_disable(button);
         }
       });
