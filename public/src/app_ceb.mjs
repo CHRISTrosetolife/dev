@@ -367,13 +367,15 @@ export async function app_ceb() {
       } else {
         correct = correct_get();
       }
+      alternatives_partial_matches_nexts = list_filter(
+        alternatives_partial_matches_nexts,
+        (a) => equal_not(a, correct),
+      );
       each(buttons, (b) => {
         let { button, choice } = b;
         html_enable(button);
-        if (equal_not(choice, correct)) {
-          if (list_includes(alternatives_partial_matches_nexts, choice)) {
-            html_disable(button);
-          }
+        if (list_includes(alternatives_partial_matches_nexts, choice)) {
+          html_disable(button);
         }
       });
     }
