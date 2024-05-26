@@ -59,7 +59,7 @@ export async function tests_generate_single_generic(
       return string_to(arg);
     }
     if (list_is(arg)) {
-      return js_code_array(list_map(args, js_code_recursive));
+      return js_code_array(list_map(arg, js_code_recursive));
     }
     error();
   });
