@@ -1,13 +1,11 @@
+import { app_ceb_answer_partial } from "./app_ceb_answer_partial.mjs";
 import { html_disable } from "./html_disable.mjs";
 import { html_enable } from "./html_enable.mjs";
 import { log } from "./log.mjs";
 import { string_substring } from "./string_substring.mjs";
 import { and } from "./and.mjs";
 import { html_style_hidden } from "./html_style_hidden.mjs";
-import { list_intersect } from "./list_intersect.mjs";
-import { list_difference } from "./list_difference.mjs";
 import { list_includes } from "./list_includes.mjs";
-import { list_to_letters } from "./list_to_letters.mjs";
 import { html_button_width_full_text_click_up } from "./html_button_width_full_text_click_up.mjs";
 import { list_get_or_last } from "./list_get_or_last.mjs";
 import { or } from "./or.mjs";
@@ -85,8 +83,6 @@ import { subtract_1 } from "./subtract_1.mjs";
 import { divide } from "./divide.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { string_split_empty } from "./string_split_empty.mjs";
-import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { list_copy } from "./list_copy.mjs";
@@ -200,24 +196,19 @@ export async function app_ceb() {
     let concat = atoms_slice_concat();
     let pairs_other = list_without(concat, pair);
     let [cebuano, english] = pair;
-    console.log({cebuano,c:object_property_get(definitions, cebuano),english})
+    [cebuano, english] = ["gikan", "from"];
+    console.log({
+      cebuano,
+      c: object_property_get(definitions, cebuano),
+      english,
+    });
     let english_alternatives = list_without(
       object_property_get(definitions, cebuano),
       english,
     );
-    const english_letters = string_split_empty(english);
-    let letters_english_forbidden = list_difference(
-      list_to_letters(english_alternatives),
-      english_letters,
-    );
     let cebuano_alternatives = list_without(
       object_property_get(inverted, english),
       cebuano,
-    );
-    const cebuano_letters = string_split_empty(cebuano);
-    let letters_cebuano_forbidden = list_difference(
-      list_to_letters(cebuano_alternatives),
-      cebuano_letters,
     );
     pairs_other = list_filter(pairs_other, (p) => {
       let [c, e] = p;
@@ -229,24 +220,11 @@ export async function app_ceb() {
       ) {
         return false;
       }
-      if (0)
-        if (
-          or(
-            list_empty_not_is(
-              list_intersect(letters_cebuano_forbidden, string_split_empty(c)),
-            ),
-            list_empty_not_is(
-              list_intersect(letters_english_forbidden, string_split_empty(e)),
-            ),
-          )
-        ) {
-          return false;
-        }
       return true;
     });
     let answer;
     let pair_other = list_random_item(pairs_other);
-    if (0) pair_other = [cebuano, list_random_item(definitions[cebuano])];
+    pair_other = ["ila", "acknowledge"];
     let answer_other_get;
     let alternatives;
     if (forwards) {
@@ -357,10 +335,7 @@ export async function app_ceb() {
       return string_case_lower(list_get(correct_choices, index));
     }
     function update_partials() {
-      let answer_partial = string_take(
-        answer,
-        number_min(index * chunk_size, string_length(answer) - index),
-      );
+      let answer_partial = app_ceb_answer_partial(answer, chunk_size, index);
       let alternatives_partial_matches = list_filter(alternatives, (a) =>
         and(
           string_starts_with(a, answer_partial),
@@ -381,6 +356,8 @@ export async function app_ceb() {
           ),
       );
       log({
+        answer_partial,
+        index,
         alternatives_partial_matches,
         alternatives_partial_matches_nexts,
       });
