@@ -370,7 +370,10 @@ export async function app_ceb() {
       );
       each(buttons, (b) => {
         let { button, choice } = b;
-        html_enable(button);
+        const value = "disabled";
+        let { element } = button;
+        let disabled_is = element.hasAttribute(value);
+        if (disabled_is) html_enable(button);
         html_style_button_default(button);
         html_style_font_color_default_set(button);
         if (list_includes(nexts, choice)) {
