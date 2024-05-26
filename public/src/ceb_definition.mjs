@@ -216,16 +216,12 @@ export async function ceb_definition(word) {
     let tables = list_filter(children2, (c) => html_parse_tag(c, "table"));
     let tables_length = list_length(tables);
     assert(less_than_equal, [tables_length, 3]);
-    if (equal(tables_length, 3)) {
-      let middle = list_second(tables);
-      let words = html_parse_a_href_starts_with_text(middle, "/cebuano/");
-      mapped6 = list_concat(mapped6, words);
-    }
-    mapped6 = list_unique(mapped6);
-    log({
-      mapped6,
-      d,
-    });
+    if (0)
+      if (equal(tables_length, 3)) {
+        let middle = list_second(tables);
+        let words = html_parse_a_href_starts_with_text(middle, "/cebuano/");
+        mapped6 = list_concat(mapped6, words);
+      }
     if (list_empty_is(mapped6)) {
       return false;
     }
