@@ -215,6 +215,7 @@ export async function ceb_definition(word) {
     let tables_length = list_length(tables);
     assert(less_than_equal, [tables_length, 3]);
     if (equal(tables_length, 3)) {
+      let middle = list_second(tables);
     }
     log({
       mapped6,
