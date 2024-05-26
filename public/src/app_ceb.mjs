@@ -356,7 +356,8 @@ export async function app_ceb() {
       each(buttons, (b) => {
         let { button, choice } = b;
         html_enable(button);
-        html_style_font_color_default_set(button);
+        html_style_button_default(button);
+        if (0) html_style_font_color_default_set(button);
         if (list_includes(nexts, choice)) {
           html_disable(button);
           html_style_font_color(button, "gray");
