@@ -7,9 +7,9 @@ import { ceiling } from "./ceiling.mjs";
 import { divide } from "./divide.mjs";
 export async function app_ceb_alternatives_partial_matches_nexts_tests_generate() {
   let f = app_ceb_alternatives_partial_matches_nexts;
-  const alternatives = ["for", "form", "front", "at"];
-  const answer = "from";
-  const chunk_size = 1;
+  let alternatives = ["for", "form", "front", "at"];
+  let answer = "from";
+  let chunk_size = 1;
   return f(answer, chunk_size, 0, alternatives);
   range(ceiling(divide(add_1(length), chunk_size)));
   await each_index_async(inputs, async (input, index) => {
