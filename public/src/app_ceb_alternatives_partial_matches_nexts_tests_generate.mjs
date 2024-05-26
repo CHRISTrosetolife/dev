@@ -8,23 +8,28 @@ import { ceiling } from "./ceiling.mjs";
 import { divide } from "./divide.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { string_length } from "./string_length.mjs";
+import { list_map } from "./list_map.mjs";
 export async function app_ceb_alternatives_partial_matches_nexts_tests_generate() {
   let f = app_ceb_alternatives_partial_matches_nexts;
   let alternatives = ["fur", "form", "front", "at", "fromi"];
   let answer = "from";
   let length = string_length(answer);
-  return list_adder((la) =>
+  let args = list_adder((la) =>
     each([1, 2], (chunk_size) =>
       each(range(ceiling(divide(add_1(length), chunk_size))), (index) =>
         la({
+          answer,
           chunk_size,
           index,
-          f: f(answer, chunk_size, index, alternatives),
+          alternatives,
         }),
       ),
     ),
   );
-  return;
+  let inputs = list_map(args, (a) => {
+    let { answer, chunk_size, index, alternatives } = a;
+    return [answer, chunk_size, index, alternatives];
+  });
   await each_index_async(inputs, async (input, index) => {
     await tests_generate_single(f.name, input, add_1(index));
   });
