@@ -1,3 +1,4 @@
+import { app_ceb_correct_get } from "./app_ceb_correct_get.mjs";
 import { app_ceb_alternatives_partial_matches_nexts } from "./app_ceb_alternatives_partial_matches_nexts.mjs";
 import { html_disable } from "./html_disable.mjs";
 import { html_enable } from "./html_enable.mjs";
@@ -271,7 +272,7 @@ export async function app_ceb() {
     let buttons = list_adder((la) => {
       each(choices, (choice) => {
         let button = html_button_text_click(quiz_container, choice, () => {
-          let correct = correct_get(correct_choices, index);
+          let correct = app_ceb_correct_get(index);
           if (equal(choice, correct)) {
             each(
               list_map_property(buttons, "button"),
@@ -328,17 +329,12 @@ export async function app_ceb() {
     });
     update_partials();
     html_button_width_full_text_click_up(root, refresh_node);
-    function correct_get(correct_choices, index) {
-      return string_case_lower(list_get(correct_choices, index));
-    }
     function update_partials() {
       let nexts = app_ceb_alternatives_partial_matches_nexts(
         answer,
         chunk_size,
         index,
         alternatives,
-        correct_choices,
-        correct_get,
       );
       each(buttons, (b) => {
         let { button, choice } = b;
