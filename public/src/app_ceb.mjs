@@ -248,6 +248,7 @@ export async function app_ceb() {
     });
     let answer;
     let pair_other = list_random_item(pairs_other);
+    if (0)
     pair_other = [cebuano, list_random_item(definitions[cebuano])];
     let answer_other_get;
     let alternatives;
@@ -391,13 +392,10 @@ export async function app_ceb() {
       }
       each(buttons, (b) => {
         let { button, choice } = b;
-        let { element } = button;
-        element.removeAttribute("disabled");
+        html_enable(button);
         if (equal_not(choice, correct)) {
           if (list_includes(alternatives_partial_matches_nexts, choice)) {
-            html_merge(button, {
-              disabled: "disabled",
-            });
+            html_disable(button);
           }
         }
       });
@@ -440,3 +438,10 @@ export async function app_ceb() {
     return atoms;
   }
 }
+
+
+function html_enable(button) {
+    let { element } = button;
+    element.removeAttribute("disabled");
+}
+
