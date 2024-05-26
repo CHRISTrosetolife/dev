@@ -178,9 +178,6 @@ export async function ceb_definition(word) {
       for (let r of replaced_split) {
         if (equal(d, list_first(r))) {
           d = list_last(r);
-          log({
-            d,
-          });
         }
         return d;
       }
