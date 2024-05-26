@@ -1,5 +1,6 @@
+import { html_style_margin_y } from "./html_style_margin_y.mjs";
+import { html_style_margin_x } from "./html_style_margin_x.mjs";
 import { html_style } from "./html_style.mjs";
-import { html_style_margin } from "./html_style_margin.mjs";
 import { html_style_default_font_size_value_get } from "./html_style_default_font_size_value_get.mjs";
 import { html_style_border_color } from "./html_style_border_color.mjs";
 import { html_style_button_default_background_color } from "./html_style_button_default_background_color.mjs";
@@ -272,9 +273,13 @@ export async function app_ceb() {
     html_style(answer_element_right, {
       display: "inline-block",
     });
-    html_style_margin(
+    html_style_margin_x(
       answer_element_right,
       html_style_default_font_size_value_get(0.4),
+    );
+    html_style_margin_y(
+      answer_element_right,
+      html_style_default_font_size_value_get(0.1),
     );
     app_learn_code_style_rounded_padded(answer_element_right);
     html_style_bold(answer_element_left);
