@@ -13,7 +13,6 @@ import { string_is } from "./string_is.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_includes } from "./string_includes.mjs";
 import { assert_boolean } from "./assert_boolean.mjs";
-import { list_concat } from "./list_concat.mjs";
 import { log } from "./log.mjs";
 import { function_run } from "./function_run.mjs";
 import { identity } from "./identity.mjs";
@@ -32,11 +31,19 @@ export async function tests_generate_single_generic(
   });
   let result = await function_run(function_name, args_mapped3);
   result = result_mapper(result);
-  log(string_combine_multiple([test_number.toString(), ' ', list_join(args, ' '),' ', result]));
+  log(
+    string_combine_multiple([
+      test_number.toString(),
+      " ",
+      list_join(args, " "),
+      " ",
+      result,
+    ]),
+  );
   let result_name = "result";
   let string_delimeter = "'";
   for (let arg of args) {
-    assert_boolean(!string_includes(arg, string_delimeter));
+    if (string_is(arg)) assert_boolean(!string_includes(arg, string_delimeter));
   }
   let args_mapped = list_map(args, (arg) => {
     if (string_is(arg)) {
