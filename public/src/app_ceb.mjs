@@ -329,7 +329,7 @@ export async function app_ceb() {
       });
     });
     update_partials();
-    html_spacer_vertical_2;
+    html_spacer_vertical_2(root);
     html_button_width_full_text_click_up(root, refresh_node);
     function update_partials() {
       let nexts = app_ceb_alternatives_partial_matches_nexts(
