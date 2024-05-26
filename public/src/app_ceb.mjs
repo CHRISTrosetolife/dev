@@ -1,6 +1,7 @@
+import { html_disable } from "./html_disable.mjs";
+import { html_enable } from "./html_enable.mjs";
 import { log } from "./log.mjs";
 import { string_substring } from "./string_substring.mjs";
-import { html_merge } from "./html_merge.mjs";
 import { and } from "./and.mjs";
 import { html_style_hidden } from "./html_style_hidden.mjs";
 import { list_intersect } from "./list_intersect.mjs";
@@ -248,8 +249,7 @@ export async function app_ceb() {
     });
     let answer;
     let pair_other = list_random_item(pairs_other);
-    if (0)
-    pair_other = [cebuano, list_random_item(definitions[cebuano])];
+    if (0) pair_other = [cebuano, list_random_item(definitions[cebuano])];
     let answer_other_get;
     let alternatives;
     if (forwards) {
@@ -438,10 +438,3 @@ export async function app_ceb() {
     return atoms;
   }
 }
-
-
-function html_enable(button) {
-    let { element } = button;
-    element.removeAttribute("disabled");
-}
-
