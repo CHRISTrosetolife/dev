@@ -1,3 +1,4 @@
+import { string_to } from "./string_to.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
 import { equal } from "./equal.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
@@ -18,6 +19,7 @@ import { function_run } from "./function_run.mjs";
 import { identity } from "./identity.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_join } from "./list_join.mjs";
+import { number_is } from "./number_is.mjs";
 export async function tests_generate_single_generic(
   function_name,
   args,
@@ -43,11 +45,16 @@ export async function tests_generate_single_generic(
   let result_name = "result";
   let string_delimeter = "'";
   for (let arg of args) {
-    if (string_is(arg)) assert_boolean(!string_includes(arg, string_delimeter));
+    if (string_is(arg)) {
+      assert_boolean(!string_includes(arg, string_delimeter));
+    }
   }
   let args_mapped = list_map(args, (arg) => {
     if (string_is(arg)) {
       return string_delimit(arg);
+    }
+    if (number_is(arg)) {
+      return string_to(arg);
     }
     error();
   });
