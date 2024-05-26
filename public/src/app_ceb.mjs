@@ -1,3 +1,4 @@
+import { html_spacer_vertical_2 } from "./html_spacer_vertical_2.mjs";
 import { app_ceb_correct_get } from "./app_ceb_correct_get.mjs";
 import { app_ceb_alternatives_partial_matches_nexts } from "./app_ceb_alternatives_partial_matches_nexts.mjs";
 import { html_disable } from "./html_disable.mjs";
@@ -328,6 +329,7 @@ export async function app_ceb() {
       });
     });
     update_partials();
+    html_spacer_vertical_2;
     html_button_width_full_text_click_up(root, refresh_node);
     function update_partials() {
       let nexts = app_ceb_alternatives_partial_matches_nexts(
