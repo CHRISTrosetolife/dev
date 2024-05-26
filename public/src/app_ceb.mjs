@@ -63,7 +63,6 @@ import { equal } from "./equal.mjs";
 import { add_1 } from "./add_1.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 import { string_take } from "./string_take.mjs";
-import { string_combine } from "./string_combine.mjs";
 import { string_length } from "./string_length.mjs";
 import { list_second } from "./list_second.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
@@ -286,13 +285,18 @@ export async function app_ceb() {
               string_length(answer),
             );
             let last = last_is ? "" : "?";
+            let first = last_is ? "✅ " : "";
             const take_count = number_min(
               multiply(index, chunk_size),
               string_length(answer),
             );
             html_inner_set(
               answer_element,
-              string_combine(string_take(answer, take_count), last),
+              string_combine_multiple([
+                first,
+                string_take(answer, take_count),
+                last,
+              ]),
             );
             if (last_is) {
               app_learn_code_style_success(answer_element);
