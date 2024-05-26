@@ -14,7 +14,7 @@ export async function app_ceb_answer_partial_tests_generate() {
   let length = string_length(answer);
   let list = list_adder((la) =>
     each([1, 2, 3], (chunk_size) => {
-      each(range(ceiling(divide(length, chunk_size))), (index) => {
+      each(range(ceiling(divide(add_1(length), chunk_size))), (index) => {
         la({
           answer,
           chunk_size,
@@ -27,6 +27,7 @@ export async function app_ceb_answer_partial_tests_generate() {
     let { answer, chunk_size, index } = a;
     return [answer, chunk_size, index];
   });
+  return inputs;
   await each_index_async(inputs, async (input, index) => {
     await tests_generate_single(
       app_ceb_answer_partial.name,
