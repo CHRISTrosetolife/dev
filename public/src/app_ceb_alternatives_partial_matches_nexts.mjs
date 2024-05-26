@@ -23,24 +23,19 @@ export function app_ceb_alternatives_partial_matches_nexts(
 ) {
   let correct_choices = string_chunk(answer, chunk_size);
   let answer_partial = app_ceb_answer_partial(answer, chunk_size, index);
-  let alternatives_partial_matches = list_filter(alternatives, (a) =>
+  let matches = list_filter(alternatives, (a) =>
     and(
       string_starts_with(a, answer_partial),
       greater_than(string_length(a), index),
     ),
   );
-  alternatives_partial_matches = list_map(
-    alternatives_partial_matches,
-    string_case_lower,
-  );
-  let alternatives_partial_matches_nexts = list_map(
-    alternatives_partial_matches,
-    (a) =>
-      string_substring(
-        a,
-        index,
-        add(index, number_min(chunk_size, string_length(a) - index)),
-      ),
+  matches = list_map(matches, string_case_lower);
+  let nexts = list_map(matches, (a) =>
+    string_substring(
+      a,
+      index,
+      add(index, number_min(chunk_size, string_length(a) - index)),
+    ),
   );
   let correct;
   if (greater_than_equal(index, list_length(correct_choices))) {
@@ -48,12 +43,7 @@ export function app_ceb_alternatives_partial_matches_nexts(
   } else {
     correct = app_ceb_correct_get(answer, chunk_size, index);
   }
-  alternatives_partial_matches_nexts = list_filter(
-    alternatives_partial_matches_nexts,
-    (a) => equal_not(a, correct),
-  );
-  alternatives_partial_matches_nexts = list_unique(
-    alternatives_partial_matches_nexts,
-  );
-  return alternatives_partial_matches_nexts;
+  nexts = list_filter(nexts, (a) => equal_not(a, correct));
+  nexts = list_unique(nexts);
+  return nexts;
 }
