@@ -1,3 +1,4 @@
+import { app_learn_code_style_rounded_padded } from "./app_learn_code_style_rounded_padded.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { html_p } from "./html_p.mjs";
 import { html_spacer_vertical_2 } from "./html_spacer_vertical_2.mjs";
@@ -262,6 +263,7 @@ export async function app_ceb() {
     let answer_element_left = html_span(answer_element);
     let answer_element_right = html_span_text(answer_element, "?");
     html_style_background_color(answer_element_right, "yellow");
+    app_learn_code_style_rounded_padded(answer_element_right);
     html_style_bold(answer_element_left);
     let style = html_element_style(answer_element);
     html_style_default_border_margin(style);
