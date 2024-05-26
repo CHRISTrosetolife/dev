@@ -1,12 +1,8 @@
+import { html_style_display_inline_block } from "./html_style_display_inline_block.mjs";
 import { html_attribute_has } from "./html_attribute_has.mjs";
-import { html_style_margin_y } from "./html_style_margin_y.mjs";
-import { html_style_margin_x } from "./html_style_margin_x.mjs";
-import { html_style } from "./html_style.mjs";
-import { html_style_default_font_size_value_get } from "./html_style_default_font_size_value_get.mjs";
 import { html_style_border_color } from "./html_style_border_color.mjs";
 import { html_style_button_default_background_color } from "./html_style_button_default_background_color.mjs";
 import { html_style_font_color_default_set } from "./html_style_font_color_default_set.mjs";
-import { app_learn_code_style_rounded_padded } from "./app_learn_code_style_rounded_padded.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { html_p } from "./html_p.mjs";
 import { html_spacer_vertical_2 } from "./html_spacer_vertical_2.mjs";
@@ -270,19 +266,7 @@ export async function app_ceb() {
     let answer_element = html_p(quiz_container);
     let answer_element_left = html_span(answer_element);
     let answer_element_right = html_span_text(answer_element, "?");
-    html_style_background_color(answer_element_right, "#ffff6b");
-    html_style(answer_element_right, {
-      display: "inline-block",
-    });
-    html_style_margin_x(
-      answer_element_right,
-      html_style_default_font_size_value_get(0.4),
-    );
-    html_style_margin_y(
-      answer_element_right,
-      html_style_default_font_size_value_get(0.025),
-    );
-    app_learn_code_style_rounded_padded(answer_element_right);
+    html_style_display_inline_block(answer_element_right);
     html_style_bold(answer_element_left);
     let style = html_element_style(answer_element);
     html_style_default_border_margin(style);
