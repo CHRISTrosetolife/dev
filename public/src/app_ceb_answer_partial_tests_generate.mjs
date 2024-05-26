@@ -1,3 +1,4 @@
+import { range } from "./range.mjs";
 import { tests_generate_single } from "./tests_generate_single.mjs";
 import { app_ceb_answer_partial } from "./app_ceb_answer_partial.mjs";
 import { add_1 } from "./add_1.mjs";
@@ -10,7 +11,7 @@ export async function app_ceb_answer_partial_tests_generate() {
   let answer = "from";
   let length = string_length(answer);
   each([1, 2, 3], (chunk_size) => {
-    each(ceiling(divide(length, chunk_size)));
+    each(range(ceiling(divide(length, chunk_size))));
   });
   await each_index_async(inputs, async (input, index) => {
     await tests_generate_single(
