@@ -274,7 +274,7 @@ export async function app_ceb() {
     let buttons = list_adder((la) => {
       each(choices, (choice) => {
         let button = html_button_text_click(quiz_container, choice, () => {
-          let correct = correct_get();
+          let correct = correct_get(correct_choices, index);
           if (equal(choice, correct)) {
             each(
               list_map_property(buttons, "button"),
@@ -331,7 +331,7 @@ export async function app_ceb() {
     });
     update_partials();
     html_button_width_full_text_click_up(root, refresh_node);
-    function correct_get() {
+    function correct_get(correct_choices, index) {
       return string_case_lower(list_get(correct_choices, index));
     }
     function update_partials() {
@@ -365,7 +365,7 @@ export async function app_ceb() {
       if (greater_than_equal(index, list_length(correct_choices))) {
         correct = null;
       } else {
-        correct = correct_get();
+        correct = correct_get(correct_choices, index);
       }
       alternatives_partial_matches_nexts = list_filter(
         alternatives_partial_matches_nexts,
