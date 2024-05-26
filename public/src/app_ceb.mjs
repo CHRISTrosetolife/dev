@@ -265,7 +265,7 @@ export async function app_ceb() {
     let answer_element = html_p(quiz_container);
     let answer_element_left = html_span(answer_element);
     let answer_element_right = html_span_text(answer_element, "?");
-    html_style_background_color(answer_element_right, "yellow");
+    html_style_background_color(answer_element_right, "#ffff6b");
     app_learn_code_style_rounded_padded(answer_element_right);
     html_style_bold(answer_element_left);
     let style = html_element_style(answer_element);
@@ -357,12 +357,12 @@ export async function app_ceb() {
         let { button, choice } = b;
         html_enable(button);
         html_style_button_default(button);
-        if (0) html_style_font_color_default_set(button);
+        html_style_font_color_default_set(button);
         if (list_includes(nexts, choice)) {
           html_disable(button);
           html_style_font_color(button, "gray");
-          html_style_background_color(button, "#bcd0d7");
-          html_style_border_color(button, "#578fc7");
+          html_style_background_color(button, "#cfdde2");
+          html_style_border_color(button, "#a6b8c9");
         }
       });
     }
