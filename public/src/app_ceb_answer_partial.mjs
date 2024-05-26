@@ -4,6 +4,6 @@ import { string_take } from "./string_take.mjs";
 export function app_ceb_answer_partial(answer, chunk_size, index) {
   return string_take(
     answer,
-    index * chunk_size-string_length(answer),
+    string_length(answer) - (string_length(answer)-index) * chunk_size,
   );
 }
