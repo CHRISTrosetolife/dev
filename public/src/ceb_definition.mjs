@@ -208,6 +208,7 @@ export async function ceb_definition(word) {
     let mapped6 = list_map(filtered5, (f) =>
       string_prefix_without(f, prefix_1),
     );
+    log({mapped6})
     if (list_empty_is(mapped6)) {
       return false;
     }
