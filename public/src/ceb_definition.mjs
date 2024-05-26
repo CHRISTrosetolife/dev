@@ -215,13 +215,14 @@ export async function ceb_definition(word) {
     let tables = list_filter(children2, (c) => html_parse_tag(c, "table"));
     let tables_length = list_length(tables);
     assert(less_than_equal, [tables_length, 3]);
+    let words;
     if (equal(tables_length, 3)) {
       let middle = list_second(tables);
       let words = html_parse_a_href_starts_with_text(middle, "/cebuano/");
       words = list_unique(words);
     }
     log({
-      mapped6,
+      mapped6,words,
       d,
     });
     if (list_empty_is(mapped6)) {
