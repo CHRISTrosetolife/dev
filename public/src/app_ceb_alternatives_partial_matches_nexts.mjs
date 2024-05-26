@@ -1,3 +1,4 @@
+import { list_unique } from "./list_unique.mjs";
 import { app_ceb_correct_get } from "./app_ceb_correct_get.mjs";
 import { string_chunk } from "./string_chunk.mjs";
 import { equal_not } from "./equal_not.mjs";
@@ -50,6 +51,9 @@ export function app_ceb_alternatives_partial_matches_nexts(
   alternatives_partial_matches_nexts = list_filter(
     alternatives_partial_matches_nexts,
     (a) => equal_not(a, correct),
+  );
+  alternatives_partial_matches_nexts = list_unique(
+    alternatives_partial_matches_nexts,
   );
   return alternatives_partial_matches_nexts;
 }
