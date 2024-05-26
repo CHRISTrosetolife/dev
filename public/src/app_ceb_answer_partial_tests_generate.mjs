@@ -23,15 +23,15 @@ export async function app_ceb_answer_partial_tests_generate() {
       });
     }),
   );
-  let mapped = list_map(list, (a) => {
+  let inputs = list_map(list, (a) => {
     let { answer, chunk_size, index } = a;
     return [answer, chunk_size, index];
   });
-  return mapped;
+  return inputs;
   await each_index_async(inputs, async (input, index) => {
     await tests_generate_single(
       app_ceb_answer_partial.name,
-      [input],
+      input,
       add_1(index),
     );
   });
