@@ -194,7 +194,7 @@ export async function app_ceb() {
     let concat = atoms_slice_concat();
     let pairs_other = list_without(concat, pair);
     let [cebuano, english] = pair;
-    [cebuano, english] = ["gikan", "from"];
+    if (0) [cebuano, english] = ["gikan", "from"];
     console.log({
       cebuano,
       c: object_property_get(definitions, cebuano),
@@ -222,7 +222,7 @@ export async function app_ceb() {
     });
     let answer;
     let pair_other = list_random_item(pairs_other);
-    pair_other = ["ila", "acknowledge"];
+    if (0) pair_other = ["ila", "acknowledge"];
     let answer_other_get;
     let alternatives;
     if (forwards) {
