@@ -1,3 +1,4 @@
+import { less_than_equal } from "./less_than_equal.mjs";
 import { each_pairs_async } from "./each_pairs_async.mjs";
 import { list_adder_async } from "./list_adder_async.mjs";
 import { list_multiple_is } from "./list_multiple_is.mjs";
@@ -175,7 +176,9 @@ export async function ceb_definition(word) {
       for (let r of replaced_split) {
         if (equal(d, list_first(r))) {
           d = list_last(r);
-          log({d})
+          log({
+            d,
+          });
         }
         return d;
       }
@@ -208,7 +211,12 @@ export async function ceb_definition(word) {
     let mapped6 = list_map(filtered5, (f) =>
       string_prefix_without(f, prefix_1),
     );
-    log({mapped6,d})
+    let tables = list_filter(children2, (c) => html_parse_tag(c, "table"));
+    assert(less_than_equal, [list_length(tables)]);
+    log({
+      mapped6,
+      d,
+    });
     if (list_empty_is(mapped6)) {
       return false;
     }
