@@ -1,3 +1,4 @@
+import { app_dev_screens } from "./app_dev_screens.mjs";
 import { js_code_function_declare } from "./js_code_function_declare.mjs";
 import { js_code_object_properties } from "./js_code_object_properties.mjs";
 import { js_code_statement_return } from "./js_code_statement_return.mjs";
@@ -7,7 +8,6 @@ import { app_dev_screen_name } from "./app_dev_screen_name.mjs";
 import { app_list_add } from "./app_list_add.mjs";
 import { list_add } from "./list_add.mjs";
 import { js_code_statement_call_args } from "./js_code_statement_call_args.mjs";
-import { app_learn_code_modules } from "./app_learn_code_modules.mjs";
 import { js_code_call } from "./js_code_call.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 import { html_span_text } from "./html_span_text.mjs";
@@ -26,7 +26,10 @@ export async function app_dev_screen_add(name) {
             `${name}_name`,
             root,
             js_code_statement_return(
-              js_code_call_args(html_span_text.name, [root,string_delimit(name)]),
+              js_code_call_args(html_span_text.name, [
+                root,
+                string_delimit(name),
+              ]),
             ),
           ),
           js_code_function_declare(`${name}_screen`, root, ""),
@@ -38,7 +41,7 @@ export async function app_dev_screen_add(name) {
     false,
     file_write,
   );
-  await app_list_add(app_learn_code_modules, function inserted_code() {
+  await app_list_add(app_dev_screens, function inserted_code() {
     return js_code_statement_call_args(list_add.name, [
       "result",
       js_code_call(screen_name),
