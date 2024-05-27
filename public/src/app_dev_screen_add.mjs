@@ -1,3 +1,4 @@
+import { js_code_function_declare } from "./js_code_function_declare.mjs";
 import { js_code_object_properties } from "./js_code_object_properties.mjs";
 import { js_code_statement_return } from "./js_code_statement_return.mjs";
 import { file_write } from "./file_write.mjs";
@@ -15,7 +16,13 @@ export async function app_dev_screen_add(name) {
     screen_name,
     "",
     js_code_statement_return(
-      js_code_object_properties(["name", "screen"], [name]),
+      js_code_object_properties(
+        ["name", "screen"],
+        [
+          name,
+          js_code_function_declare(function_name, args_string, body_string),
+        ],
+      ),
     ),
     false,
     [],
