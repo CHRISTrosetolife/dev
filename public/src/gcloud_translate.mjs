@@ -11,7 +11,8 @@ export async function gcloud_translate(
   let contents = await function_run(function_name, args);
   log({
     contents,
-  })("mimeTypes:");
+  });
+  ("mimeTypes:");
   ("text/plain");
   ("text/html");
   const translationClient = new TranslationServiceClient();
