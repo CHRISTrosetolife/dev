@@ -19,7 +19,11 @@ export async function app_dev_screen_add(name) {
       js_code_object_properties(
         ["name", "screen"],
         [
-          js_code_function_declare(`${name}_name`, root, ""),
+          js_code_function_declare(
+            `${name}_name`,
+            root,
+            js_code_statement_return(),
+          ),
           js_code_function_declare(`${name}_screen`, root, ""),
         ],
       ),
