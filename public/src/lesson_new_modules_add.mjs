@@ -12,8 +12,9 @@ import { file_transform } from "./file_transform.mjs";
 import { app_learn_code_modules } from "./app_learn_code_modules.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
 export async function lesson_new_modules_add(name) {
+  let list_function = app_learn_code_modules;
   let lesson_name = lesson_new_name(name);
-  let file_path = function_name_to_path(app_learn_code_modules.name);
+  let file_path = function_name_to_path(list_function.name);
   await file_transform(
     async (before) => {
       let name = marker.name;
