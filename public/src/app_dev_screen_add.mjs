@@ -18,7 +18,7 @@ export async function app_dev_screen_add(name) {
   await function_new_generic(
     screen_name,
     "",
-    js_code_statement_return(
+    js_code_return(
       js_code_object_properties(
         ["name", "screen"],
         [
