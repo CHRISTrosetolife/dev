@@ -1,4 +1,3 @@
-import { file_write } from "./file_write.mjs";
 import { js_imports_fix } from "./js_imports_fix.mjs";
 import { file_open } from "./file_open.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
@@ -19,9 +18,10 @@ export async function function_new_generic(
   writer,
 ) {
   let space = async_is ? ` async ` : " ";
-  let contents_function = `export${space}function ${function_name}(${args_string}) {
-${body_string}
-}`;
+  let declare = `function ${function_name}(${args_string}) {
+    ${body_string}
+    }`;
+  let contents_function = `export${space}${declare}`;
   let mapped = list_map(imports, js_code_import);
   let concat = list_concat(mapped, [contents_function]);
   let contents = list_join(concat, newline());
