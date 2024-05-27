@@ -11,6 +11,7 @@ import { app_learn_code_modules } from "./app_learn_code_modules.mjs";
 import { js_code_call } from "./js_code_call.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 import { html_span_text } from "./html_span_text.mjs";
+import { string_delimit } from "./string_delimit.mjs";
 export async function app_dev_screen_add(name) {
   let screen_name = app_dev_screen_name(name);
   let root = "root";
@@ -25,7 +26,7 @@ export async function app_dev_screen_add(name) {
             `${name}_name`,
             root,
             js_code_statement_return(
-              js_code_call_args(html_span_text.name, []),
+              js_code_call_args(html_span_text.name, [string_delimit(name)]),
             ),
           ),
           js_code_function_declare(`${name}_screen`, root, ""),
