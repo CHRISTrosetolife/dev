@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { function_run } from "./function_run.mjs";
 import { list_map } from "./list_map.mjs";
 import { TranslationServiceClient } from "@google-cloud/translate";
@@ -8,7 +9,9 @@ export async function gcloud_translate(
   args,
 ) {
   let contents = await function_run(function_name, args);
-  ("mimeTypes:");
+  log({
+    contents,
+  })("mimeTypes:");
   ("text/plain");
   ("text/html");
   const translationClient = new TranslationServiceClient();
