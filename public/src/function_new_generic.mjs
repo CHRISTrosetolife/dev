@@ -19,8 +19,8 @@ export async function function_new_generic(
 ) {
   let space = async_is ? ` async ` : " ";
   let declare = `function ${function_name}(${args_string}) {
-    ${body_string}
-    }`;
+  ${body_string}
+}`;
   let contents_function = `export${space}${declare}`;
   let mapped = list_map(imports, js_code_import);
   let concat = list_concat(mapped, [contents_function]);
