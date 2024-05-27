@@ -1,3 +1,4 @@
+import { js_code_object_properties } from "./js_code_object_properties.mjs";
 import { js_code_statement_return } from "./js_code_statement_return.mjs";
 import { file_write } from "./file_write.mjs";
 import { function_new_generic } from "./function_new_generic.mjs";
@@ -13,7 +14,7 @@ export async function app_dev_screen_add(name) {
   await function_new_generic(
     screen_name,
     "",
-    js_code_statement_return(a),
+    js_code_statement_return(js_code_object_properties()),
     false,
     [],
     false,
