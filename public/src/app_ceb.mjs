@@ -1,3 +1,4 @@
+import { identity } from "./identity.mjs";
 import { string_case_upper } from "./string_case_upper.mjs";
 import { html_style_display_inline_block } from "./html_style_display_inline_block.mjs";
 import { html_attribute_has } from "./html_attribute_has.mjs";
@@ -287,7 +288,7 @@ export async function app_ceb() {
       each(choices, (choice) => {
         let button = html_button_text_click(
           quiz_container,
-          string_case_upper(choice),
+          (chunk_size === 1 ? string_case_upper : identity)(choice),
           () => {
             let correct = app_ceb_correct_get(answer, chunk_size, index);
             if (equal(choice, correct)) {
@@ -323,8 +324,10 @@ export async function app_ceb() {
               app_learn_code_correct_timeout(async () => {
                 html_style_hidden(button);
                 if (last_is) {
+                  if (0) html_style_background_color(root, "#d3f8d3");
                   app_learn_code_style_success(answer_element);
                   await app_ceb_audio(cebuano);
+                  if (0) html_style_background_color(root, "white");
                   if (equal(settings, list_last(settings_choices))) {
                     refresh_node();
                   } else {
