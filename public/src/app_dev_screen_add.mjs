@@ -11,17 +11,14 @@ import { app_learn_code_modules } from "./app_learn_code_modules.mjs";
 import { js_code_call } from "./js_code_call.mjs";
 export async function app_dev_screen_add(name) {
   let screen_name = app_dev_screen_name(name);
-  let a;
+  let parent = "parent";
   await function_new_generic(
     screen_name,
     "",
     js_code_statement_return(
       js_code_object_properties(
         ["name", "screen"],
-        [
-          name,
-          js_code_function_declare(`${name}_screen`, args_string, body_string),
-        ],
+        [name, js_code_function_declare(`${name}_screen`, parent, body_string)],
       ),
     ),
     false,
