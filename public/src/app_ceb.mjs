@@ -98,7 +98,7 @@ import { html_style_background_color } from "./html_style_background_color.mjs";
 import { html_style_font_color } from "./html_style_font_color.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
-  html_style_default_font_size(4);
+  html_style_default_font_size(3.5);
   let group_index = 0;
   let { group, definitions, inverted } = await http_storage(
     ceb_group_path(group_index),
