@@ -1,3 +1,4 @@
+import { string_case_upper } from "./string_case_upper.mjs";
 import { html_style_display_inline_block } from "./html_style_display_inline_block.mjs";
 import { html_attribute_has } from "./html_attribute_has.mjs";
 import { html_style_border_color } from "./html_style_border_color.mjs";
@@ -284,59 +285,63 @@ export async function app_ceb() {
     choices = list_map(choices, string_case_lower);
     let buttons = list_adder((la) => {
       each(choices, (choice) => {
-        let button = html_button_text_click(quiz_container, choice, () => {
-          let correct = app_ceb_correct_get(answer, chunk_size, index);
-          if (equal(choice, correct)) {
-            html_disable(button);
-            each(
-              list_map_property(buttons, "button"),
-              html_style_button_default,
-            );
-            index = add_1(index);
-            update_partials();
-            const last_is = greater_than_equal(
-              multiply(index, chunk_size),
-              string_length(answer),
-            );
-            let first = last_is ? "✅ " : "";
-            const take_count = number_min(
-              multiply(index, chunk_size),
-              string_length(answer),
-            );
-            if (last_is) {
-              html_style_display_none(answer_element_right);
-            }
-            html_inner_set(
-              answer_element_left,
-              string_combine(first, string_take(answer, take_count)),
-            );
-            if (last_is) {
-              app_learn_code_style_success(answer_element);
-              html_style_hidden(button);
-            }
-            app_learn_code_style_success(button);
-            update_partials();
-            app_learn_code_correct_timeout(async () => {
-              html_style_hidden(button);
+        let button = html_button_text_click(
+          quiz_container,
+          string_case_upper(choice),
+          () => {
+            let correct = app_ceb_correct_get(answer, chunk_size, index);
+            if (equal(choice, correct)) {
+              html_disable(button);
+              each(
+                list_map_property(buttons, "button"),
+                html_style_button_default,
+              );
+              index = add_1(index);
+              update_partials();
+              const last_is = greater_than_equal(
+                multiply(index, chunk_size),
+                string_length(answer),
+              );
+              let first = last_is ? "✅ " : "";
+              const take_count = number_min(
+                multiply(index, chunk_size),
+                string_length(answer),
+              );
+              if (last_is) {
+                html_style_display_none(answer_element_right);
+              }
+              html_inner_set(
+                answer_element_left,
+                string_combine(first, string_take(answer, take_count)),
+              );
               if (last_is) {
                 app_learn_code_style_success(answer_element);
-                await app_ceb_audio(cebuano);
-                if (equal(settings, list_last(settings_choices))) {
-                  refresh_node();
-                } else {
-                  let after = list_after(settings_choices, settings);
-                  refresh_quiz(after);
-                }
+                html_style_hidden(button);
               }
-            });
-          } else {
-            html_style_wrong(button);
-            if (no_mistakes) {
-              list_add(settings_choices, object_copy_shallow(settings));
-              no_mistakes = false;
+              app_learn_code_style_success(button);
+              update_partials();
+              app_learn_code_correct_timeout(async () => {
+                html_style_hidden(button);
+                if (last_is) {
+                  app_learn_code_style_success(answer_element);
+                  await app_ceb_audio(cebuano);
+                  if (equal(settings, list_last(settings_choices))) {
+                    refresh_node();
+                  } else {
+                    let after = list_after(settings_choices, settings);
+                    refresh_quiz(after);
+                  }
+                }
+              });
+            } else {
+              html_style_wrong(button);
+              if (no_mistakes) {
+                list_add(settings_choices, object_copy_shallow(settings));
+                no_mistakes = false;
+              }
             }
-          }
-        });
+          },
+        );
         la({
           button,
           choice,
