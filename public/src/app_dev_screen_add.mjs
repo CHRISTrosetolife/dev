@@ -26,7 +26,7 @@ export async function app_dev_screen_add(name) {
             `${name}_name`,
             root,
             js_code_statement_return(
-              js_code_call_args(html_span_text.name, [string_delimit(name)]),
+              js_code_call_args(html_span_text.name, [root,string_delimit(name)]),
             ),
           ),
           js_code_function_declare(`${name}_screen`, root, ""),
