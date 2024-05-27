@@ -20,7 +20,7 @@ export async function app_dev_screen_add(name) {
         ["name", "screen"],
         [
           name,
-          js_code_function_declare(function_name, args_string, body_string),
+          js_code_function_declare(`${name}_screen`, args_string, body_string),
         ],
       ),
     ),
