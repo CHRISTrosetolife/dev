@@ -287,6 +287,7 @@ export async function app_ceb() {
         let button = html_button_text_click(quiz_container, choice, () => {
           let correct = app_ceb_correct_get(answer, chunk_size, index);
           if (equal(choice, correct)) {
+            html_disable(button);
             each(
               list_map_property(buttons, "button"),
               html_style_button_default,
