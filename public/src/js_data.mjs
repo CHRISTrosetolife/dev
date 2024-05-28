@@ -11,6 +11,7 @@ export async function js_data(ast) {
   await file_json_transform(
     () => {
       let declaration = js_declaration_single(ast);
+      let { async } = declaration;
       log({
         declaration,
       });
