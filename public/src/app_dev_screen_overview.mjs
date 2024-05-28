@@ -4,6 +4,8 @@ export function app_dev_screen_overview() {
     name: function overview_name(root) {
       return html_span_text(root, "overview");
     },
-    screen: function overview_screen(root) {},
+    screen: function overview_screen(root) {
+      "to keep the programming simple , functions are the basic building block , rather than classes or object-oriented programming";
+    },
   };
 }
