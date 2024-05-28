@@ -24,7 +24,7 @@ export async function ceb_bible_words_definitions_get(t) {
         });
       }
     }
-    if (0)
+    if (10)
       log({
         word,
         definitions,
