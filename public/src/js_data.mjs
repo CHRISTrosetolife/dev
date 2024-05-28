@@ -1,15 +1,10 @@
+import { file_json_transform_exists } from "./file_json_transform_exists.mjs";
 import { js_declaration_single } from "./js_declaration_single.mjs";
-import { file_json_transform } from "./file_json_transform.mjs";
-import { file_write_json } from "./file_write_json.mjs";
-import { file_exists } from "./file_exists.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 export async function js_data(ast) {
   let data_path = "data.json";
-  if (!(await file_exists(data_path))) {
-    await file_write_json(data_path, {});
-  }
-  await file_json_transform(lambda, data_path, []);
+  await file_json_transform_exists(data_path, lambda);
   function lambda(data) {
     let declaration = js_declaration_single(ast);
     let {
