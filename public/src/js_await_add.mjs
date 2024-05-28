@@ -18,9 +18,8 @@ export async function js_await_add(ast) {
         let f = object_property_get(functions, name);
         let { async } = f;
         if (async) {
-          let {
-            parent: { type: parent_type },
-          } = v;
+          let { parent } = v;
+          let { type: parent_type } = parent;
           if (parent_type !== "AwaitExpression") {
             let parsed = js_parse_expression("await 0");
             parsed.argument = node;
