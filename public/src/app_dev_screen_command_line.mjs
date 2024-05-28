@@ -15,7 +15,10 @@ export function app_dev_screen_command_line() {
       return html_span_text(root, "command_line");
     },
     screen: function command_line_screen(root) {
-      html_img(root, string_combine_multiple([app_name(app_dev)]));
+      html_img(
+        root,
+        string_combine_multiple([app_name(app_dev), name, "1.png"]),
+      );
     },
   };
 }
