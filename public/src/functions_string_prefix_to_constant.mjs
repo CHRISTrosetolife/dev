@@ -1,4 +1,3 @@
-import { js_code_call } from "./js_code_call.mjs";
 import { js_parent_replace } from "./js_parent_replace.mjs";
 import { function_transform_args_split_lambda } from "./function_transform_args_split_lambda.mjs";
 import { string_slashes_escape } from "./string_slashes_escape.mjs";
@@ -15,6 +14,7 @@ import { string_starts_with } from "./string_starts_with.mjs";
 import { assert } from "./assert.mjs";
 import { file_exists } from "./file_exists.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
+import { js_code_call_args } from "./js_code_call_args.mjs";
 export async function functions_string_prefix_to_constant(
   prefix,
   constant_name,
@@ -45,7 +45,7 @@ export async function functions_string_prefix_to_constant(
             function_name,
             [
               (ast) => {
-                js_code_call;
+                js_code_call_args;
                 return;
                 js_parent_replace(v, node, parsed);
               },
