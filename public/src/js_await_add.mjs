@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_after } from "./list_after.mjs";
 import { each_reverse } from "./each_reverse.mjs";
 import { assert } from "./assert.mjs";
@@ -43,6 +44,10 @@ export async function js_await_add(ast) {
               let { type } = s;
               if (equal(type, "BlockStatement")) {
                 let after = list_after(stack, s);
+                let { type: after_type } = after;
+                log({
+                  after_type,
+                });
               }
             });
           }
