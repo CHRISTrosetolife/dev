@@ -1,5 +1,4 @@
 import { list_before } from "./list_before.mjs";
-import { log } from "./log.mjs";
 import { each_reverse } from "./each_reverse.mjs";
 import { assert } from "./assert.mjs";
 import { each_object } from "./each_object.mjs";
@@ -13,7 +12,6 @@ import { object_property_set } from "./object_property_set.mjs";
 import { counter } from "./counter.mjs";
 import { equal_1 } from "./equal_1.mjs";
 import { equal } from "./equal.mjs";
-import { error } from "./error.mjs";
 export async function js_await_add(ast) {
   let data = await file_read_json(data_path());
   js_visit_node(ast, "CallExpression", (v) => {
@@ -46,10 +44,9 @@ export async function js_await_add(ast) {
               if (equal(type, "BlockStatement")) {
                 let after = list_before(stack, s);
                 let { type: after_type } = after;
-                log({
-                  after,
-                });
-                error();
+                if (after_type === "FunctionDeclaration") {
+                  object_property_set(after, "async", true);
+                }
               }
             });
           }
