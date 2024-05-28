@@ -12,7 +12,7 @@ export function data_update_single(ast, data) {
   let functions = object_property_initialize(data, "functions", {});
   let f = object_property_initialize(functions, name, {});
   object_property_set(f, "async", async);
-  let literals = js_node_type(filtered_n, "Literal");
+  let literals = js_node_type(ast, "Literal");
   let lookup = string_count_lookup(literals);
   object_property_set(f, "literals", lookup);
 }
