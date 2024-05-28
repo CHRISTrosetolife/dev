@@ -7,6 +7,7 @@ export async function js_await_add(ast) {
   js_visit_node(ast, "CallExpression", (v) => {
     let { node } = v;
     if (node.callee.type === "Identifier") {
+      let { functions } = data;
     }
     log({
       node,
