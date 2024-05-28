@@ -1,11 +1,10 @@
+import { data_functions } from "./data_functions.mjs";
 import { list_before } from "./list_before.mjs";
 import { each_reverse } from "./each_reverse.mjs";
 import { assert } from "./assert.mjs";
 import { each_object } from "./each_object.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { data_path } from "./data_path.mjs";
-import { file_read_json } from "./file_read_json.mjs";
 import { js_visit_node } from "./js_visit_node.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -13,13 +12,12 @@ import { counter } from "./counter.mjs";
 import { equal_1 } from "./equal_1.mjs";
 import { equal } from "./equal.mjs";
 export async function js_await_add(ast) {
-  let data = await file_read_json(data_path());
+  let functions = await data_functions();
   js_visit_node(ast, "CallExpression", (v) => {
     let { node } = v;
     let { callee } = node;
     if (callee.type === "Identifier") {
       let { name } = callee;
-      let { functions } = data;
       if (object_property_exists(functions, name)) {
         let f = object_property_get(functions, name);
         let { async } = f;
