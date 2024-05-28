@@ -1,3 +1,4 @@
+import { string_is_starts_with } from "./string_is_starts_with.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
 import { js_parent_replace } from "./js_parent_replace.mjs";
 import { function_transform_args_split_lambda } from "./function_transform_args_split_lambda.mjs";
@@ -11,7 +12,6 @@ import { data_functions } from "./data_functions.mjs";
 import { each_object } from "./each_object.mjs";
 import { string_is } from "./string_is.mjs";
 import { each } from "./each.mjs";
-import { string_starts_with } from "./string_starts_with.mjs";
 import { assert } from "./assert.mjs";
 import { file_exists } from "./file_exists.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
@@ -42,31 +42,29 @@ export async function functions_string_prefix_to_constant(
   each_object(functions, (function_name, details) => {
     let { literals } = details;
     each(literals, (literal) => {
-      if (string_is(literal)) {
-        if (string_starts_with(literal, prefix)) {
-          function_transform_args_split_lambda(
-            function_name,
-            [
-              (ast) => {
-                js_visit_node(ast, "Literal", (v) => {
-                  let { node } = v;
-                  let { value } = node;
-                  return;
-                  js_code_call_args(
-                    string_combine.name,
-                    list_join_comma_space([node]),
-                  );
-                  js_parent_replace(v, node, parsed);
-                });
-                return;
-              },
-            ],
-            [],
-          );
-          log({
-            function_name,
-          });
-        }
+      if (string_is_starts_with(literal, prefix)) {
+        function_transform_args_split_lambda(
+          function_name,
+          [
+            (ast) => {
+              js_visit_node(ast, "Literal", (v) => {
+                let { node } = v;
+                let { value } = node;
+                if (value) return;
+                js_code_call_args(
+                  string_combine.name,
+                  list_join_comma_space([node]),
+                );
+                js_parent_replace(v, node, parsed);
+              });
+              return;
+            },
+          ],
+          [],
+        );
+        log({
+          function_name,
+        });
       }
     });
   });
