@@ -1,15 +1,12 @@
+import { js_parent_replace } from "./js_parent_replace.mjs";
 import { data_functions } from "./data_functions.mjs";
 import { list_before } from "./list_before.mjs";
 import { each_reverse } from "./each_reverse.mjs";
-import { assert } from "./assert.mjs";
-import { each_object } from "./each_object.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { js_visit_node } from "./js_visit_node.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_set } from "./object_property_set.mjs";
-import { counter } from "./counter.mjs";
-import { equal_1 } from "./equal_1.mjs";
 import { equal } from "./equal.mjs";
 export async function js_await_add(ast) {
   let functions = await data_functions();
@@ -27,15 +24,7 @@ export async function js_await_add(ast) {
           if (parent_type !== "AwaitExpression") {
             let parsed = js_parse_expression("await 0");
             parsed.argument = node;
-            let count = counter((c) => {
-              each_object(parent, (key, value) => {
-                if (value === node) {
-                  object_property_set(parent, key, parsed);
-                  c();
-                }
-              });
-            });
-            assert(equal_1, [count]);
+            js_parent_replace(parent, node, parsed);
             let { stack } = v;
             each_reverse(stack, (s) => {
               let { type } = s;
