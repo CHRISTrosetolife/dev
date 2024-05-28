@@ -45,7 +45,7 @@ export async function functions_string_prefix_to_constant(
             [
               (ast) => {
                 return;
-                js_parent_replace(parent, node, parsed);
+                js_parent_replace(v, node, parsed);
               },
             ],
             [],
