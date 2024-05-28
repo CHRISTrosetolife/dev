@@ -1,3 +1,4 @@
+import { function_open } from "./function_open.mjs";
 import { js_code_return } from "./js_code_return.mjs";
 import { app_dev_screens } from "./app_dev_screens.mjs";
 import { js_code_function_declare } from "./js_code_function_declare.mjs";
@@ -48,4 +49,5 @@ export async function app_dev_screen_add(name) {
       js_code_call(screen_name),
     ]);
   });
+  await function_open(screen_name);
 }
