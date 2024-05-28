@@ -6,6 +6,7 @@ import { js_declaration_single } from "./js_declaration_single.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { list_unique } from "./list_unique.mjs";
 import { identity } from "./identity.mjs";
+import { list_sort_string } from "./list_sort_string.mjs";
 export function data_update_single(ast, data) {
   let declaration = js_declaration_single(ast);
   let {
@@ -18,6 +19,6 @@ export function data_update_single(ast, data) {
   let literals = js_node_type(ast, "Literal");
   let mapped = list_map_property(literals, "value");
   let u = list_unique(mapped);
-  list_sort(u, identity);
+  list_sort_string(u, identity);
   object_property_set(f, "literals", u);
 }
