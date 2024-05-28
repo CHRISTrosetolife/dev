@@ -14,7 +14,7 @@ export function data_update_single(ast, data) {
   let f = object_property_initialize(functions, name, {});
   object_property_set(f, "async", async);
   let literals = js_node_type(ast, "Literal");
-  let mapped =list_map_property(literals,'value')
+  let mapped = list_map_property(literals, "value");
   let lookup = string_count_lookup(mapped);
   object_property_set(f, "literals", lookup);
 }
