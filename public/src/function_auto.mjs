@@ -8,5 +8,5 @@ export async function function_auto(function_name) {
   let names = list_map_property(transforms, "name");
   let joined = list_join_comma(names);
   await function_transform(joined, function_name);
-  if (0) await function_transform(js_data.name, function_name);
+  await function_transform(js_data.name, function_name);
 }
