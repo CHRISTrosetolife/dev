@@ -8,7 +8,7 @@ export async function data_update() {
   let fps = await function_paths();
   await file_json_transform_exists(data_path(), async (data) => {
     await each_async(fps, async (fp) => {
-      let ast = await file_js_parse(file_path);
+      let ast = await file_js_parse(fp);
       data_update_single(ast, data);
     });
   });
