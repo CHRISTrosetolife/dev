@@ -8,7 +8,7 @@ import { log } from "./log.mjs";
 export async function file_js_transform(lambdas, file_path, args) {
   let ast = await file_js_parse(file_path);
   let results = await list_adder_async(async (la) => {
-    each_async(lambdas, async (lambda) => {
+    await each_async(lambdas, async (lambda) => {
       let result = await lambda(ast, ...args);
       la(result);
     });
