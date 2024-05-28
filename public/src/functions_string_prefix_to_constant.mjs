@@ -1,3 +1,4 @@
+import { js_code_call } from "./js_code_call.mjs";
 import { js_parent_replace } from "./js_parent_replace.mjs";
 import { function_transform_args_split_lambda } from "./function_transform_args_split_lambda.mjs";
 import { string_slashes_escape } from "./string_slashes_escape.mjs";
@@ -44,6 +45,7 @@ export async function functions_string_prefix_to_constant(
             function_name,
             [
               (ast) => {
+                js_code_call;
                 return;
                 js_parent_replace(v, node, parsed);
               },
