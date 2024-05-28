@@ -18,6 +18,6 @@ export function data_update_single(ast, data) {
   let literals = js_node_type(ast, "Literal");
   let mapped = list_map_property(literals, "value");
   let u = list_unique(mapped);
-  if (0) list_sort_string(u, string_delimit_if);
+  list_sort_string(u, string_delimit_if);
   object_property_set(f, "literals", u);
 }
