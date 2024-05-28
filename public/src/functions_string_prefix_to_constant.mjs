@@ -6,8 +6,13 @@ import { string_is } from "./string_is.mjs";
 import { each } from "./each.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
 import { assert } from "./assert.mjs";
-export async function functions_string_prefix_to_constant(prefix) {
+export async function functions_string_prefix_to_constant(
+  prefix,
+  constant_name,
+) {
   assert(string_is, [prefix]);
+  if (!(await function_exists(constant_name))) {
+  }
   let functions = await data_functions();
   each_object(functions, (function_name, details) => {
     let { literals } = details;
