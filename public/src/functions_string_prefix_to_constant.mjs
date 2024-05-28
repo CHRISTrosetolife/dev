@@ -1,3 +1,4 @@
+import { function_transform } from "./function_transform.mjs";
 import { log } from "./log.mjs";
 import { data_functions } from "./data_functions.mjs";
 import { each_object } from "./each_object.mjs";
@@ -13,6 +14,7 @@ export async function functions_string_prefix_to_constant(prefix) {
     each(literals, (literal) => {
       if (string_is(literal)) {
         if (string_starts_with(literal, prefix)) {
+          function_transform;
           log({
             function_name,
           });
