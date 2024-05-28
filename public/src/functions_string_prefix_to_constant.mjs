@@ -1,3 +1,5 @@
+import { string_delimit } from "./string_delimit.mjs";
+import { js_code_statement_return } from "./js_code_statement_return.mjs";
 import { file_write } from "./file_write.mjs";
 import { function_new_generic } from "./function_new_generic.mjs";
 import { function_transform } from "./function_transform.mjs";
@@ -17,7 +19,7 @@ export async function functions_string_prefix_to_constant(
     await function_new_generic(
       constant_name,
       "",
-      "",
+      js_code_statement_return(string_delimit(prefix)),
       false,
       [],
       false,
