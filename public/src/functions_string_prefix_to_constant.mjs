@@ -1,9 +1,9 @@
+import { function_transform_args_split } from "./function_transform_args_split.mjs";
 import { string_slashes_escape } from "./string_slashes_escape.mjs";
 import { js_code_return } from "./js_code_return.mjs";
 import { string_delimit } from "./string_delimit.mjs";
 import { file_write } from "./file_write.mjs";
 import { function_new_generic } from "./function_new_generic.mjs";
-import { function_transform } from "./function_transform.mjs";
 import { log } from "./log.mjs";
 import { data_functions } from "./data_functions.mjs";
 import { each_object } from "./each_object.mjs";
@@ -39,7 +39,7 @@ export async function functions_string_prefix_to_constant(
     each(literals, (literal) => {
       if (string_is(literal)) {
         if (string_starts_with(literal, prefix)) {
-          function_transform;
+          function_transform_args_split;
           log({
             function_name,
           });
