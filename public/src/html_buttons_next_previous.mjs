@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { html_spacer_vertical_2 } from "./html_spacer_vertical_2.mjs";
 import { html_disable } from "./html_disable.mjs";
 import { equal } from "./equal.mjs";
@@ -22,9 +23,11 @@ export function html_buttons_next_previous(root, on_click, index, index_last) {
   );
   if (equal(index, 0)) {
     html_disable(button_previous);
+    log("prev dis");
   }
   if (equal(index, index_last)) {
     html_disable(button_next);
+    log("next dis");
   }
   html_spacer_vertical_2(root);
 }
