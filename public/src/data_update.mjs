@@ -1,7 +1,7 @@
 import { object_property_set } from "./object_property_set.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { js_declaration_single } from "./js_declaration_single.mjs";
-export function data_update(data) {
+export function data_update(ast, data) {
   let declaration = js_declaration_single(ast);
   let {
     async,
