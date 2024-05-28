@@ -1,3 +1,4 @@
+import { js_declaration_single } from "./js_declaration_single.mjs";
 import { file_json_transform } from "./file_json_transform.mjs";
 import { file_write_json } from "./file_write_json.mjs";
 import { file_exists } from "./file_exists.mjs";
@@ -6,5 +7,11 @@ export async function js_data(ast) {
   if (!(await file_exists(data_path))) {
     await file_write_json(data_path, {});
   }
-  await file_json_transform(() => {}, data_path, []);
+  await file_json_transform(
+    () => {
+      js_declaration_single;
+    },
+    data_path,
+    [],
+  );
 }
