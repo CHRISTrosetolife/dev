@@ -1,3 +1,4 @@
+import { each_reverse } from "./each_reverse.mjs";
 import { assert } from "./assert.mjs";
 import { each_object } from "./each_object.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
@@ -35,6 +36,8 @@ export async function js_await_add(ast) {
               });
             });
             assert(equal_1, [count]);
+            let { stack } = v;
+            each_reverse(stack, (s) => {});
           }
         }
       }
