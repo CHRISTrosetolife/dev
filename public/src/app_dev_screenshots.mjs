@@ -8,6 +8,11 @@ export async function app_dev_screenshots(screen_name) {
   await folder_files_move(
     folder_path,
     file_extension,
-    string_combine_multiple([".\\public\\img\\", app_name(app_dev)]),
+    string_combine_multiple([
+      ".\\public\\img\\",
+      app_name(app_dev),
+      "\\",
+      screen_name,
+    ]),
   );
 }
