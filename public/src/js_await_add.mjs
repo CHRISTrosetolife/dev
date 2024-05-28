@@ -5,6 +5,7 @@ import { data_path } from "./data_path.mjs";
 import { file_read_json } from "./file_read_json.mjs";
 import { js_visit_node } from "./js_visit_node.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
+import { object_property_set } from "./object_property_set.mjs";
 export async function js_await_add(ast) {
   let data = await file_read_json(data_path());
   js_visit_node(ast, "CallExpression", (v) => {
@@ -25,7 +26,7 @@ export async function js_await_add(ast) {
             parsed.argument = node;
             each_object(parent, (key, value) => {
               if (value === node) {
-                parent.key = parsed;
+                object_property_set(parent, key, parsed);
               }
             });
           }
