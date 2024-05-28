@@ -19,5 +19,5 @@ export async function app_dev_screenshots(screen_name) {
   assert(list_empty_is, [target_files]);
   let starting = 1;
   folder_files_rename_incrementing(folder_path, file_extension, starting);
-  await folder_files_move(folder_path, file_extension, target_path);
+  folder_files_move(folder_path, file_extension, target_path);
 }
