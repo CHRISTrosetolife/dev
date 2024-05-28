@@ -14,6 +14,7 @@ export async function js_await_add(ast) {
       let { functions } = data;
       if (object_property_exists(functions, name)) {
         let f = object_property_get(functions, name);
+        let { async } = f;
       }
     }
     log({
