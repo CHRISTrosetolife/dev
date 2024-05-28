@@ -44,7 +44,11 @@ export async function js_await_add(ast) {
                 s,
               });
             });
-            list_filter_property(stack, "type", "BlockStatement");
+            let parent_blocks = list_filter_property(
+              stack,
+              "type",
+              "BlockStatement",
+            );
           }
         }
       }
