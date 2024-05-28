@@ -1,3 +1,5 @@
+import { file_write } from "./file_write.mjs";
+import { function_new_generic } from "./function_new_generic.mjs";
 import { function_transform } from "./function_transform.mjs";
 import { log } from "./log.mjs";
 import { data_functions } from "./data_functions.mjs";
@@ -12,6 +14,15 @@ export async function functions_string_prefix_to_constant(
 ) {
   assert(string_is, [prefix]);
   if (!(await function_exists(constant_name))) {
+    await function_new_generic(
+      function_name,
+      "",
+      "",
+      false,
+      [],
+      false,
+      file_write,
+    );
   }
   let functions = await data_functions();
   each_object(functions, (function_name, details) => {
