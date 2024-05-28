@@ -7,10 +7,12 @@ export async function js_await_add(ast) {
   let data = await file_read_json(data_path());
   js_visit_node(ast, "CallExpression", (v) => {
     let { node } = v;
-    let {callee}=node;
+    let { callee } = node;
     if (callee.type === "Identifier") {
-        let { name } = callee;
-      let { functions } = data;if (object_property_exists(data,name)){}
+      let { name } = callee;
+      let { functions } = data;
+      if (object_property_exists(data, name)) {
+      }
     }
     log({
       node,
