@@ -6,6 +6,9 @@ import { app_name } from "./app_name.mjs";
 import { app_dev_screen_prefix } from "./app_dev_screen_prefix.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 import { html_span_text } from "./html_span_text.mjs";
+import { html_p } from "./html_p.mjs";
+import { html_style_bold } from "./html_style_bold.mjs";
+import { noop } from "./noop.mjs";
 export function app_dev_screen_command_line() {
   let name = string_prefix_without(
     app_dev_screen_command_line.name,
@@ -16,7 +19,12 @@ export function app_dev_screen_command_line() {
       return html_span_text(root, "command_line");
     },
     screen: function command_line_screen(root) {
-      html_style_alternate_short;
+      html_style_alternate_short(
+        root,
+        html_p,
+        [html_style_bold, noop],
+        "string_combine` is a function that concatenates two strings",
+      );
       html_img_limited_centered(
         root,
         path_join([app_name(app_dev), name, "1.png"]),
