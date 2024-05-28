@@ -1,3 +1,4 @@
+import { js_node_type } from "./js_node_type.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { js_declaration_single } from "./js_declaration_single.mjs";
@@ -13,5 +14,5 @@ export function data_update_single(ast, data) {
   object_property_set(f, "async", async);
   return;
   let literals = js_node_type(filtered_n, "Literal");
-  let u =list_unique(literals)
+  let u = list_unique(literals);
 }
