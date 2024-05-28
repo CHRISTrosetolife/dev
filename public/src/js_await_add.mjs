@@ -24,8 +24,5 @@ export async function js_await_add(ast) {
         }
       }
     }
-    log({
-      node,
-    });
   });
 }
