@@ -8,6 +8,10 @@ import { add_1 } from "./add_1.mjs";
 import { html_button_width_full_text_click_next } from "./html_button_width_full_text_click_next.mjs";
 import { html_hr } from "./html_hr.mjs";
 export function html_buttons_next_previous(root, on_click, index, index_last) {
+  log({
+    index,
+    index_last,
+  });
   html_hr(root);
   let button_next = html_button_width_full_text_click_next(
     root,

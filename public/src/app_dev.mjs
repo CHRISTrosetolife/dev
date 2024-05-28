@@ -18,9 +18,6 @@ export function app_dev() {
     html_clear_scroll_top(root);
     let s = list_get(screens, index);
     s.screen(root);
-    log({
-      index,
-    });
     html_buttons_next_previous(root, screen, index, list_index_last(screens));
   }
 }
