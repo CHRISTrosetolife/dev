@@ -10,5 +10,5 @@ export async function function_copy_generic(
   let fn_path_to = function_name_to_path(fn_name_to);
   await file_lambda(fn_path_from, fn_path_to);
   await file_js_identifier_rename(fn_path_to, fn_name_from, fn_name_to);
-  await function_data(fn_path_to);
+  await function_data(fn_name_to);
 }
