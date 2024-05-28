@@ -1,4 +1,4 @@
-import { string_slashes_unescape } from "./string_slashes_unescape.mjs";
+import { string_slashes_escape } from "./string_slashes_escape.mjs";
 import { js_code_return } from "./js_code_return.mjs";
 import { string_delimit } from "./string_delimit.mjs";
 import { file_write } from "./file_write.mjs";
@@ -17,10 +17,12 @@ export async function functions_string_prefix_to_constant(
   prefix,
   constant_name,
 ) {
-  assert(string_is, [prefix]);
+  for (let i of [prefix, constant_name]) {
+    assert(string_is, [i]);
+  }
   let fp = function_name_to_path(constant_name);
   if (!(await file_exists(fp))) {
-    let code = js_code_return(string_delimit(string_slashes_unescape(prefix)));
+    let code = js_code_return(string_delimit(string_slashes_escape(prefix)));
     log({
       code,
     });
