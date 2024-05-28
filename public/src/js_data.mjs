@@ -9,18 +9,15 @@ export async function js_data(ast) {
   if (!(await file_exists(data_path))) {
     await file_write_json(data_path, {});
   }
-  await file_json_transform(
-    function lambda(data) {
-      let declaration = js_declaration_single(ast);
-      let {
-        async,
-        id: { name },
-      } = declaration;
-      let functions = object_property_initialize(data, "functions", {});
-      let f = object_property_initialize(functions, name, {});
-      object_property_set(f, "async", async);
-    },
-    data_path,
-    [],
-  );
+  await file_json_transform(lambda, data_path, []);
+  function lambda(data) {
+    let declaration = js_declaration_single(ast);
+    let {
+      async,
+      id: { name },
+    } = declaration;
+    let functions = object_property_initialize(data, "functions", {});
+    let f = object_property_initialize(functions, name, {});
+    object_property_set(f, "async", async);
+  }
 }
