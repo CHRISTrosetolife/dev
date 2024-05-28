@@ -10,8 +10,8 @@ import { folder_read } from "./folder_read.mjs";
 export async function folder_files_rename_incrementing(
   input_directory,
   file_extension,
+  starting,
 ) {
-  let starting = 1;
   let file_paths = await folder_read(input_directory, file_extension);
   await each_index_async(file_paths, async (file_path, index) => {
     let dirname = path_dirname(file_path);
