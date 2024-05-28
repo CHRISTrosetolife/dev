@@ -1,5 +1,4 @@
 import { log } from "./log.mjs";
-import { list_length } from "./list_length.mjs";
 import { html_buttons_next_previous } from "./html_buttons_next_previous.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
