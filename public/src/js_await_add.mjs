@@ -13,6 +13,7 @@ import { object_property_set } from "./object_property_set.mjs";
 import { counter } from "./counter.mjs";
 import { equal_1 } from "./equal_1.mjs";
 import { equal } from "./equal.mjs";
+import { error } from "./error.mjs";
 export async function js_await_add(ast) {
   let data = await file_read_json(data_path());
   js_visit_node(ast, "CallExpression", (v) => {
@@ -43,11 +44,12 @@ export async function js_await_add(ast) {
             each_reverse(stack, (s) => {
               let { type } = s;
               if (equal(type, "BlockStatement")) {
-                let after = list_after(stack, s);
+                let after = list_before(stack, s);
                 let { type: after_type } = after;
                 log({
-                  after_type,
+                    after,
                 });
+                error()
               }
             });
           }
