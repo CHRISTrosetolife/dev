@@ -11,6 +11,7 @@ import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { counter } from "./counter.mjs";
 import { equal_1 } from "./equal_1.mjs";
+import { error } from "./error.mjs";
 export async function js_await_add(ast) {
   let data = await file_read_json(data_path());
   js_visit_node(ast, "CallExpression", (v) => {
@@ -48,4 +49,5 @@ export async function js_await_add(ast) {
       }
     }
   });
+  if (0) error();
 }
