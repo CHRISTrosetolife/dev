@@ -61,11 +61,6 @@ export async function functions_string_prefix_to_constant(
                     js_code_call(constant_name),
                     unparsed,
                   ]);
-                  log({
-                    s,
-                    code,
-                  });
-                  return;
                   js_parent_replace(v, node, js_parse_expression(code));
                 }
               });
