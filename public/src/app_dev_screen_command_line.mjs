@@ -1,3 +1,4 @@
+import { html_style_alternate_short } from "./html_style_alternate_short.mjs";
 import { html_img_limited_centered } from "./html_img_limited_centered.mjs";
 import { path_join } from "./path_join.mjs";
 import { app_dev } from "./app_dev.mjs";
@@ -15,7 +16,7 @@ export function app_dev_screen_command_line() {
       return html_span_text(root, "command_line");
     },
     screen: function command_line_screen(root) {
-        
+      html_style_alternate_short;
       html_img_limited_centered(
         root,
         path_join([app_name(app_dev), name, "1.png"]),
