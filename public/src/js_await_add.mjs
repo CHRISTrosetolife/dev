@@ -18,7 +18,8 @@ export async function js_await_add(ast) {
         if (async) {
           let { parent } = v;
           log({
-            v,
+            name,
+            parent,
           });
         }
       }
