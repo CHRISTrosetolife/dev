@@ -15,6 +15,7 @@ import { assert } from "./assert.mjs";
 import { file_exists } from "./file_exists.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
+import { string_combine } from "./string_combine.mjs";
 export async function functions_string_prefix_to_constant(
   prefix,
   constant_name,
@@ -45,7 +46,7 @@ export async function functions_string_prefix_to_constant(
             function_name,
             [
               (ast) => {
-                js_code_call_args;
+                js_code_call_args(string_combine.name, );
                 return;
                 js_parent_replace(v, node, parsed);
               },
