@@ -7,7 +7,5 @@ export async function folder_files_delete(
   output_directory,
 ) {
   let file_paths = await folder_read(input_directory, file_extension);
-  await each_async(file_paths, async (file_path) => {
-    await file_delete(file_path);
-  });
+  await each_async(file_paths, file_delete);
 }
