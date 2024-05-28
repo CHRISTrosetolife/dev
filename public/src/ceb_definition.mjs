@@ -93,6 +93,9 @@ export async function ceb_definition(word) {
     word,
     "&Search=Search",
   ]);
+  log({
+    url,
+  });
   let { parsed, children } = await ceb_html_cache_parse_form1(url);
   let texts = list_map_property(children, "text");
   if (list_includes(texts, "No results found for the Cebuano word ")) {
@@ -137,7 +140,7 @@ export async function ceb_definition(word) {
   });
   let matches = list_filter_property(mapped4, "text", word);
   if (list_empty_is(matches)) {
-    const first = list_first(mapped4);
+    let first = list_first(mapped4);
     word = object_property_get(first, "text");
     matches = list_filter_property(mapped4, "text", word);
   }
@@ -200,9 +203,9 @@ export async function ceb_definition(word) {
     if (object_property_exists(lookup, d)) {
       return object_property_get(lookup, d);
     }
-    const index = string_index(d, "[");
+    let index = string_index(d, "[");
     if (greater_than_equal(index, 0)) {
-      const result = string_trim(string_take(d, index));
+      let result = string_trim(string_take(d, index));
       return result;
     }
     return d;
@@ -232,7 +235,7 @@ export async function ceb_definition(word) {
     if (list_includes_not(mapped6, word)) {
       return false;
     }
-    const replaced = string_replace(d, "s", "z");
+    let replaced = string_replace(d, "s", "z");
     if (equal_not(replaced, d)) {
       if (list_includes(definitions, replaced)) {
         return false;
