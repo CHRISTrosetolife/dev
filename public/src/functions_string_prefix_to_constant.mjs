@@ -1,3 +1,4 @@
+import { list_join_comma_space } from "./list_join_comma_space.mjs";
 import { js_parent_replace } from "./js_parent_replace.mjs";
 import { function_transform_args_split_lambda } from "./function_transform_args_split_lambda.mjs";
 import { string_slashes_escape } from "./string_slashes_escape.mjs";
@@ -16,6 +17,7 @@ import { file_exists } from "./file_exists.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 import { string_combine } from "./string_combine.mjs";
+import { js_visit_node } from "./js_visit_node.mjs";
 export async function functions_string_prefix_to_constant(
   prefix,
   constant_name,
@@ -46,9 +48,17 @@ export async function functions_string_prefix_to_constant(
             function_name,
             [
               (ast) => {
-                js_code_call_args(string_combine.name, );
+                js_visit_node(ast, "Literal", (v) => {
+                  let { node } = v;
+                  let { value } = node;
+                  return;
+                  js_code_call_args(
+                    string_combine.name,
+                    list_join_comma_space([node]),
+                  );
+                  js_parent_replace(v, node, parsed);
+                });
                 return;
-                js_parent_replace(v, node, parsed);
               },
             ],
             [],
