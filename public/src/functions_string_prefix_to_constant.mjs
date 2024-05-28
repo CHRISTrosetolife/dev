@@ -1,3 +1,4 @@
+import { js_parent_replace } from "./js_parent_replace.mjs";
 import { function_transform_args_split_lambda } from "./function_transform_args_split_lambda.mjs";
 import { string_slashes_escape } from "./string_slashes_escape.mjs";
 import { js_code_return } from "./js_code_return.mjs";
@@ -43,9 +44,8 @@ export async function functions_string_prefix_to_constant(
             function_name,
             [
               (ast) => {
-                log({
-                  ast,
-                });
+                return;
+                js_parent_replace(parent, node, parsed);
               },
             ],
             [],
