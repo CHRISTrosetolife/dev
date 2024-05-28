@@ -15,7 +15,7 @@ export async function functions_string_prefix_to_constant(
   assert(string_is, [prefix]);
   if (!(await function_exists(constant_name))) {
     await function_new_generic(
-      function_name,
+      constant_name,
       "",
       "",
       false,
