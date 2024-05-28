@@ -44,14 +44,14 @@ export async function functions_string_prefix_to_constant(
     );
   }
   let functions = await data_functions();
-  each_object(functions, (function_name, details) => {
+  each_object(functions, async (function_name, details) => {
     let { literals } = details;
-    each(literals, (literal) => {
+    each(literals, async (literal) => {
       if (string_is_starts_with(literal, prefix)) {
         function_transform_args_split_lambda(
           function_name,
           [
-            (ast) => {
+            async (ast) => {
               js_visit_node(ast, "Literal", (v) => {
                 let { node } = v;
                 let { value } = node;
@@ -64,7 +64,8 @@ export async function functions_string_prefix_to_constant(
                   ]);
                   js_parent_replace(v, node, js_parse_expression(code));
                 }
-              });js_imports_fix(ast)
+              });
+              await js_imports_fix(ast);
             },
           ],
           [],

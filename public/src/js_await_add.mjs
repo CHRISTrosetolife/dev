@@ -32,9 +32,6 @@ export async function js_await_add(ast) {
               let { type } = s;
               if (equal(type, "BlockStatement")) {
                 let after = list_before(stack, s);
-                log({
-                  after,
-                });
                 let { type: after_type } = after;
                 let function_types = [
                   "ArrowFunctionExpression",
