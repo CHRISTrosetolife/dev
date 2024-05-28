@@ -7,7 +7,7 @@ import { folder_files_move } from "./folder_files_move.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 export async function app_dev_screenshots(screen_name) {
-  let folder_path = "C:\\Users\\JESUS\\Pictures\\Screenshots";
+  let folder_path = string_combine(folder_user(), "Pictures\\Screenshots");
   let file_extension = ".png";
   let target_path = string_combine_multiple([
     ".\\public\\img\\",

@@ -22,6 +22,7 @@ import { string_combine } from "./string_combine.mjs";
 import { js_visit_node } from "./js_visit_node.mjs";
 import { string_skip } from "./string_skip.mjs";
 import { string_length } from "./string_length.mjs";
+import { js_imports_fix } from "./js_imports_fix.mjs";
 export async function functions_string_prefix_to_constant(
   prefix,
   constant_name,
@@ -63,7 +64,7 @@ export async function functions_string_prefix_to_constant(
                   ]);
                   js_parent_replace(v, node, js_parse_expression(code));
                 }
-              });
+              });js_imports_fix(ast)
             },
           ],
           [],
