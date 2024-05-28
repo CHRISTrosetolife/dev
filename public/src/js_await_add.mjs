@@ -1,3 +1,4 @@
+import { each_object } from "./each_object.mjs";
 import { log } from "./log.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -22,6 +23,8 @@ export async function js_await_add(ast) {
           } = v;
           if (parent_type !== "AwaitExpression") {
             let parsed = js_parse_expression("await 0");
+            parsed.argument = node;
+            each_object();
             log({
               parsed,
             });
