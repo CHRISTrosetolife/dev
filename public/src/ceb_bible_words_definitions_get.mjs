@@ -9,7 +9,7 @@ export async function ceb_bible_words_definitions_get(t) {
   let existing = {};
   let result = [];
   await each_index_async(t, async (bible_word, index) => {
-    if (0)
+    if (10)
       log({
         bible_word,
         index,
