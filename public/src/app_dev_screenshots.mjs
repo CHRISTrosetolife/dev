@@ -9,7 +9,7 @@ import { list_empty_is } from "./list_empty_is.mjs";
 export async function app_dev_screenshots(screen_name) {
   let folder_path = "C:\\Users\\JESUS\\Pictures\\Screenshots";
   let file_extension = ".png";
-  const target_path = string_combine_multiple([
+  let target_path = string_combine_multiple([
     ".\\public\\img\\",
     app_name(app_dev),
     "\\",
