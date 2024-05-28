@@ -1,5 +1,5 @@
+import { list_before } from "./list_before.mjs";
 import { log } from "./log.mjs";
-import { list_after } from "./list_after.mjs";
 import { each_reverse } from "./each_reverse.mjs";
 import { assert } from "./assert.mjs";
 import { each_object } from "./each_object.mjs";
@@ -47,9 +47,9 @@ export async function js_await_add(ast) {
                 let after = list_before(stack, s);
                 let { type: after_type } = after;
                 log({
-                    after,
+                  after,
                 });
-                error()
+                error();
               }
             });
           }
