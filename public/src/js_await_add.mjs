@@ -9,6 +9,7 @@ import { js_visit_node } from "./js_visit_node.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { equal } from "./equal.mjs";
+import { list_includes } from "./list_includes.mjs";
 export async function js_await_add(ast) {
   let functions = await data_functions();
   js_visit_node(ast, "CallExpression", (v) => {
@@ -35,7 +36,11 @@ export async function js_await_add(ast) {
                   after,
                 });
                 let { type: after_type } = after;
-                if (after_type === "FunctionDeclaration") {
+                let function_types = [
+                  "ArrowFunctionExpression",
+                  "FunctionDeclaration",
+                ];
+                if (list_includes(function_types, after_type)) {
                   object_property_set(after, "async", true);
                 }
               }
