@@ -10,16 +10,20 @@ import { string_is } from "./string_is.mjs";
 import { each } from "./each.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
 import { assert } from "./assert.mjs";
+import { file_exists } from "./file_exists.mjs";
+import { function_name_to_path } from "./function_name_to_path.mjs";
 export async function functions_string_prefix_to_constant(
   prefix,
   constant_name,
 ) {
   assert(string_is, [prefix]);
-  if (!(await function_exists(constant_name))) {
+  let fp = function_name_to_path(constant_name);
+  if (!(await file_exists(fp))) {
+      const code = js_code_statement_return(string_delimit(prefix));log({code})
     await function_new_generic(
       constant_name,
       "",
-      js_code_statement_return(string_delimit(prefix)),
+      code,
       false,
       [],
       false,
