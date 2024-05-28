@@ -2,7 +2,6 @@ import { js_declaration_single } from "./js_declaration_single.mjs";
 import { file_json_transform } from "./file_json_transform.mjs";
 import { file_write_json } from "./file_write_json.mjs";
 import { file_exists } from "./file_exists.mjs";
-import { log } from "./log.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 export async function js_data(ast) {
@@ -11,7 +10,7 @@ export async function js_data(ast) {
     await file_write_json(data_path, {});
   }
   await file_json_transform(
-    (data) => {
+    function lambda(data) {
       let declaration = js_declaration_single(ast);
       let {
         async,
