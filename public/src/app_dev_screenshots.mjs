@@ -1,3 +1,4 @@
+import { folder_files_rename_incrementing } from "./folder_files_rename_incrementing.mjs";
 import { app_name } from "./app_name.mjs";
 import { app_dev } from "./app_dev.mjs";
 import { folder_files_move } from "./folder_files_move.mjs";
@@ -11,5 +12,6 @@ export async function app_dev_screenshots(screen_name) {
     "\\",
     screen_name,
   ]);
+  folder_files_rename_incrementing;
   await folder_files_move(folder_path, file_extension, target_path);
 }
