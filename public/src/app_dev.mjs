@@ -1,3 +1,4 @@
+import { html_button_width_full_text_click_home } from "./html_button_width_full_text_click_home.mjs";
 import { html_buttons_next_previous } from "./html_buttons_next_previous.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
@@ -12,15 +13,19 @@ import { add_1 } from "./add_1.mjs";
 export function app_dev() {
   let root = html_style_default_initialize();
   let screens = app_dev_screens();
-  each_index(screens, (s, index) => {
-    let b = html_button_width_full_text_click(root, "", () => screen(index));
-    html_span_text(b, string_combine(add_1(index), ". "));
-    s.name(b);
-  });
+  function home() {
+    html_clear_scroll_top(root);
+    each_index(screens, (s, index) => {
+      let b = html_button_width_full_text_click(root, "", () => screen(index));
+      html_span_text(b, string_combine(add_1(index), ". "));
+      s.name(b);
+    });
+  }
   function screen(index) {
     html_clear_scroll_top(root);
     let s = list_get(screens, index);
     s.screen(root);
     html_buttons_next_previous(root, screen, index, list_index_last(screens));
+    html_button_width_full_text_click_home(root, home);
   }
 }
