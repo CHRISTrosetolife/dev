@@ -13,6 +13,7 @@ import { add_1 } from "./add_1.mjs";
 export function app_dev() {
   let root = html_style_default_initialize();
   let screens = app_dev_screens();
+  home();
   function home() {
     html_clear_scroll_top(root);
     each_index(screens, (s, index) => {
