@@ -1,5 +1,5 @@
+import { js_code_return } from "./js_code_return.mjs";
 import { string_delimit } from "./string_delimit.mjs";
-import { js_code_statement_return } from "./js_code_statement_return.mjs";
 import { file_write } from "./file_write.mjs";
 import { function_new_generic } from "./function_new_generic.mjs";
 import { function_transform } from "./function_transform.mjs";
@@ -19,7 +19,10 @@ export async function functions_string_prefix_to_constant(
   assert(string_is, [prefix]);
   let fp = function_name_to_path(constant_name);
   if (!(await file_exists(fp))) {
-      const code = js_code_statement_return(string_delimit(prefix));log({code})
+    let code = js_code_return(string_delimit(prefix));
+    log({
+      code,
+    });
     await function_new_generic(
       constant_name,
       "",
