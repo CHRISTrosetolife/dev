@@ -39,7 +39,17 @@ export async function functions_string_prefix_to_constant(
     each(literals, (literal) => {
       if (string_is(literal)) {
         if (string_starts_with(literal, prefix)) {
-          function_transform_args_split_lambda(function_name, [() => {}], []);
+          function_transform_args_split_lambda(
+            function_name,
+            [
+              (ast) => {
+                log({
+                  ast,
+                });
+              },
+            ],
+            [],
+          );
           log({
             function_name,
           });
