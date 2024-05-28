@@ -1,3 +1,4 @@
+import { list_last } from "./list_last.mjs";
 import { list_filter_property } from "./list_filter_property.mjs";
 import { log } from "./log.mjs";
 import { each_reverse } from "./each_reverse.mjs";
@@ -49,6 +50,7 @@ export async function js_await_add(ast) {
               "type",
               "BlockStatement",
             );
+            let block_last = list_last(parent_blocks);
           }
         }
       }
