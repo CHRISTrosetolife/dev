@@ -7,6 +7,7 @@ import { html_style_default_initialize } from "./html_style_default_initialize.m
 import { app_dev_screens } from "./app_dev_screens.mjs";
 import { each_index } from "./each_index.mjs";
 import { list_get } from "./list_get.mjs";
+import { list_index_last } from "./list_index_last.mjs";
 export function app_dev() {
   let root = html_style_default_initialize();
   let screens = app_dev_screens();
@@ -21,6 +22,6 @@ export function app_dev() {
     log({
       index,
     });
-    html_buttons_next_previous(root, screen, index, list_length(screens));
+    html_buttons_next_previous(root, screen, index, list_index_last(screens));
   }
 }
