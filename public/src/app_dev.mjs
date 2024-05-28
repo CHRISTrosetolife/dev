@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_length } from "./list_length.mjs";
 import { html_buttons_next_previous } from "./html_buttons_next_previous.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
@@ -17,6 +18,9 @@ export function app_dev() {
     html_clear_scroll_top(root);
     let s = list_get(screens, index);
     s.screen(root);
+    log({
+      index,
+    });
     html_buttons_next_previous(root, screen, index, list_length(screens));
   }
 }
