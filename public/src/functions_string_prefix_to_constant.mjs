@@ -23,9 +23,6 @@ export async function functions_string_prefix_to_constant(
   let fp = function_name_to_path(constant_name);
   if (!(await file_exists(fp))) {
     let code = js_code_return(string_delimit(string_slashes_escape(prefix)));
-    log({
-      code,
-    });
     await function_new_generic(
       constant_name,
       "",
