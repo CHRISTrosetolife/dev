@@ -50,12 +50,14 @@ export async function functions_string_prefix_to_constant(
               js_visit_node(ast, "Literal", (v) => {
                 let { node } = v;
                 let { value } = node;
-                if (value) return;
-                js_code_call_args(
-                  string_combine.name,
-                  list_join_comma_space([node]),
-                );
-                js_parent_replace(v, node, parsed);
+                if (string_is_starts_with(value, prefix)) {
+                  return;
+                  js_code_call_args(
+                    string_combine.name,
+                    list_join_comma_space([node]),
+                  );
+                  js_parent_replace(v, node, parsed);
+                }
               });
               return;
             },
