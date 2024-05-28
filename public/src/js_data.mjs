@@ -13,7 +13,7 @@ export async function js_data(ast) {
       let declaration = js_declaration_single(ast);
       let { async, id: { name } } = declaration;
       log({
-        declaration,
+        name,async
       });
     },
     data_path,
