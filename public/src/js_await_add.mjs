@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { js_parent_replace } from "./js_parent_replace.mjs";
 import { data_functions } from "./data_functions.mjs";
 import { list_before } from "./list_before.mjs";
@@ -30,6 +31,9 @@ export async function js_await_add(ast) {
               let { type } = s;
               if (equal(type, "BlockStatement")) {
                 let after = list_before(stack, s);
+                log({
+                  after,
+                });
                 let { type: after_type } = after;
                 if (after_type === "FunctionDeclaration") {
                   object_property_set(after, "async", true);
