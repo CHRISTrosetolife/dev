@@ -1,3 +1,4 @@
+import { js_code_string } from "./js_code_string.mjs";
 import { js_code_array } from "./js_code_array.mjs";
 import { string_to } from "./string_to.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
@@ -10,7 +11,6 @@ import { equal_json } from "./equal_json.mjs";
 import { list_get } from "./list_get.mjs";
 import { list_map_index } from "./list_map_index.mjs";
 import { error } from "./error.mjs";
-import { string_delimit } from "./string_delimit.mjs";
 import { string_is } from "./string_is.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_includes } from "./string_includes.mjs";
@@ -53,7 +53,7 @@ export async function tests_generate_single_generic(
   }
   let args_mapped = list_map(args, function js_code_recursive(arg) {
     if (string_is(arg)) {
-      return string_delimit(arg);
+      return js_code_string(arg);
     }
     if (number_is(arg)) {
       return string_to(arg);
@@ -70,7 +70,7 @@ export async function tests_generate_single_generic(
     }
     return js_code_call_args(mapper.name, [a]);
   });
-  const body_string = `    let ${result_name} = ${function_name}(${args_mapped2.join(", ")});
+  let body_string = `    let ${result_name} = ${function_name}(${args_mapped2.join(", ")});
     ${equal(result_mapper, identity) ? "" : js_code_statement_assign(result_name, js_code_call_args(result_mapper.name, [result_name]))} 
     ${assert_boolean.name}(${equal_json.name}(${result_name}, ${json_to(result)}))`;
   await function_new_generic(

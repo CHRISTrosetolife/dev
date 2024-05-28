@@ -1,5 +1,7 @@
+import { js_code_string } from "./js_code_string.mjs";
+import { js_code_call } from "./js_code_call.mjs";
+import { js_parse_expression } from "./js_parse_expression.mjs";
 import { string_is_starts_with } from "./string_is_starts_with.mjs";
-import { list_join_comma_space } from "./list_join_comma_space.mjs";
 import { js_parent_replace } from "./js_parent_replace.mjs";
 import { function_transform_args_split_lambda } from "./function_transform_args_split_lambda.mjs";
 import { string_slashes_escape } from "./string_slashes_escape.mjs";
@@ -18,6 +20,8 @@ import { function_name_to_path } from "./function_name_to_path.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { js_visit_node } from "./js_visit_node.mjs";
+import { string_skip } from "./string_skip.mjs";
+import { string_length } from "./string_length.mjs";
 export async function functions_string_prefix_to_constant(
   prefix,
   constant_name,
@@ -51,15 +55,20 @@ export async function functions_string_prefix_to_constant(
                 let { node } = v;
                 let { value } = node;
                 if (string_is_starts_with(value, prefix)) {
+                  let s = string_skip(value, string_length(prefix));
+                  let unparsed = js_code_string(s);
+                  let code = js_code_call_args(string_combine.name, [
+                    js_code_call(constant_name),
+                    unparsed,
+                  ]);
+                  log({
+                    s,
+                    code,
+                  });
                   return;
-                  js_code_call_args(
-                    string_combine.name,
-                    list_join_comma_space([node]),
-                  );
-                  js_parent_replace(v, node, parsed);
+                  js_parent_replace(v, node, js_parse_expression(code));
                 }
               });
-              return;
             },
           ],
           [],
