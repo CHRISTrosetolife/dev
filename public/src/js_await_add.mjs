@@ -1,6 +1,4 @@
-import { list_last } from "./list_last.mjs";
-import { list_filter_property } from "./list_filter_property.mjs";
-import { log } from "./log.mjs";
+import { list_after } from "./list_after.mjs";
 import { each_reverse } from "./each_reverse.mjs";
 import { assert } from "./assert.mjs";
 import { each_object } from "./each_object.mjs";
@@ -13,6 +11,7 @@ import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { counter } from "./counter.mjs";
 import { equal_1 } from "./equal_1.mjs";
+import { equal } from "./equal.mjs";
 export async function js_await_add(ast) {
   let data = await file_read_json(data_path());
   js_visit_node(ast, "CallExpression", (v) => {
@@ -41,16 +40,11 @@ export async function js_await_add(ast) {
             assert(equal_1, [count]);
             let { stack } = v;
             each_reverse(stack, (s) => {
-              log({
-                s,
-              });
+              let { type } = s;
+              if (equal(type, "BlockStatement")) {
+                let after = list_after(stack, s);
+              }
             });
-            let parent_blocks = list_filter_property(
-              stack,
-              "type",
-              "BlockStatement",
-            );
-            let block_last = list_last(parent_blocks);
           }
         }
       }
