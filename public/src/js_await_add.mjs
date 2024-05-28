@@ -16,6 +16,7 @@ export async function js_await_add(ast) {
         let f = object_property_get(functions, name);
         let { async } = f;
         if (async) {
+          let { parent } = v;
           log({
             v,
           });
