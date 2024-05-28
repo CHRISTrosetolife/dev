@@ -1,4 +1,3 @@
-import { js_declaration_single } from "./js_declaration_single.mjs";
 import { each_object } from "./each_object.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -22,8 +21,6 @@ export async function js_await_add(ast) {
           let { parent } = v;
           let { type: parent_type } = parent;
           if (parent_type !== "AwaitExpression") {
-            let declaration = js_declaration_single(ast);
-            declaration.async = true;
             let parsed = js_parse_expression("await 0");
             parsed.argument = node;
             each_object(parent, (key, value) => {
