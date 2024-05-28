@@ -9,10 +9,7 @@ export async function function_transform_args_split(
   args,
 ) {
   let file_path = function_name_to_path(function_name);
-  if (0) {
-    let split = string_split_comma(lambda_names);
-    let mapped = list_map_async(split, function_import);
-  }
-  let lambda = await function_import(lambda_names);
-  return await file_js_transform(lambda, file_path, args);
+  let split = string_split_comma(lambda_names);
+  let mapped = await list_map_async(split, function_import);
+  return await file_js_transform(mapped, file_path, args);
 }
