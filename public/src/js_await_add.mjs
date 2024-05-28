@@ -6,6 +6,7 @@ import { file_read_json } from "./file_read_json.mjs";
 import { js_visit_node } from "./js_visit_node.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_set } from "./object_property_set.mjs";
+import { counter } from "./counter.mjs";
 export async function js_await_add(ast) {
   let data = await file_read_json(data_path());
   js_visit_node(ast, "CallExpression", (v) => {
@@ -23,10 +24,13 @@ export async function js_await_add(ast) {
           if (parent_type !== "AwaitExpression") {
             let parsed = js_parse_expression("await 0");
             parsed.argument = node;
-            each_object(parent, (key, value) => {
-              if (value === node) {
-                object_property_set(parent, key, parsed);
-              }
+            let count = counter((c) => {
+              each_object(parent, (key, value) => {
+                if (value === node) {
+                  object_property_set(parent, key, parsed);
+                  c();
+                }
+              });
             });
           }
         }
