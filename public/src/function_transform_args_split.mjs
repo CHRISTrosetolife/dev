@@ -9,5 +9,9 @@ export async function function_transform_args_split(
 ) {
   let split = string_split_comma(lambda_names);
   let mapped = await list_map_async(split, function_import);
-  return function_transform_args_split_lambda(function_name, mapped, args);
+  return await function_transform_args_split_lambda(
+    function_name,
+    mapped,
+    args,
+  );
 }
