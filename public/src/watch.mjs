@@ -9,19 +9,18 @@ export async function watch() {
   let watcher = start();
   function start() {
     let result = chokidar.watch(folder_path_src()).on("all", on_watch);
-    log({
-      result,
-    });
-    log("start");
+    return result;
   }
   async function on_watch(event, path) {
     if (event === "change") {
       await watcher.close();
       path = string_replace(path, "\\", "/");
       path = string_combine("./", path);
+      log({
+        path,
+      });
       let funcion_name = function_path_to_name(path);
       await function_auto(funcion_name);
-      log("stop");
       start();
     }
   }
