@@ -48,7 +48,7 @@ export async function functions_string_prefix_to_constant(
     let { literals } = details;
     each(literals, async (literal) => {
       if (string_is_starts_with(literal, prefix)) {
-        function_transform_args_split_lambda(
+        await function_transform_args_split_lambda(
           function_name,
           [
             async (ast) => {
