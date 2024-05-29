@@ -7,8 +7,8 @@ import chokidar from "chokidar";
 import { string_replace } from "./string_replace.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { file_read } from "./file_read.mjs";
-import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_get } from "./object_property_get.mjs";
+import { object_property_initialize } from "./object_property_initialize.mjs";
 export async function watch() {
   let cache = {};
   let watcher = start();
@@ -18,16 +18,17 @@ export async function watch() {
   }
   async function on_watch(event, path) {
     if (event === "change") {
-      await watcher.close();
       path = string_replace(path, "\\", "/");
       path = string_combine("./", path);
       let before = await file_read(path);
-      log('start')
-      if (object_property_exists(cache, path)) {
-        if (before === object_property_get(cache, path)) {
-          return;
-        }
+      log("start");
+      object_property_initialize(cache, path, {});
+      let c = object_property_get(cache, path);
+      let { contents, processing } = c;
+      if (processing || before === contents) {
+        return;
       }
+      object_property_set();
       log({
         path,
       });
@@ -35,8 +36,7 @@ export async function watch() {
       await function_auto(funcion_name);
       let after = await file_read(path);
       object_property_set(cache, path, after);
-      log('end')
-      start();
+      log("end");
     }
   }
 }
