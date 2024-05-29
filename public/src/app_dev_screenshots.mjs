@@ -18,6 +18,7 @@ export async function app_dev_screenshots(screen_name) {
     screen_name,
   ]);
   let target_files = await folder_read(target_path, file_extension);
+  return target_files;
   assert(list_empty_is, [target_files]);
   let starting = 1;
   await folder_files_rename_incrementing(folder_path, file_extension, starting);
