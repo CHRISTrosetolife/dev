@@ -50,6 +50,7 @@ export function app_dev_screen_command_line() {
       );
       html_style_alternate_monospace_short_multiple(root, [
         "all functions can be ran from the command-line",
+        "this speeds up development",
         "to run a function named `function_name` from the command-line , run `> node run_git.mjs function_name",
         "if the function accepts arguments , then enter command-line arguments `> node run_git.mjs function_name arg_1 arg_2 etc",
       ]);
