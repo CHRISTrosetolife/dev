@@ -1,3 +1,4 @@
+import { git_ac_message } from "./git_ac_message.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { log } from "./log.mjs";
 import { function_auto } from "./function_auto.mjs";
@@ -35,8 +36,11 @@ export async function watch() {
       log({
         path,
       });
-      let funcion_name = function_path_to_name(path);
-      await function_auto(funcion_name);
+      let function_name = function_path_to_name(path);
+      await function_auto(function_name);
+      await git_ac_message(
+        list_join_space([function_auto.name, function_name]),
+      );
       let after = await file_read(path);
       object_property_set(c, "contents", after);
       object_property_set(c, "processing", false);
