@@ -10,6 +10,7 @@ export async function watch() {
     if (event === "change") {
       path = string_replace(path, "\\", "/");
       path = string_combine("./", path);
+      await watcher.unwatch(path);
       log({
         path,
       });
