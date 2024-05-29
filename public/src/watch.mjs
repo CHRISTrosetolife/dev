@@ -36,7 +36,8 @@ export async function watch() {
         return;
       }
       let function_name = function_path_to_name(path);
-      await function_auto_return(function_name);
+      let fn = function_auto_return;
+      await fn(function_name);
       await git_ac_message(
         list_join_space([function_auto.name, function_name]),
       );
