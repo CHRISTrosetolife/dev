@@ -47,6 +47,9 @@ export function app_dev_screen_command_line() {
         root,
         path_join([app_name(app_dev), name, "1.png"]),
       );
+      'all functions can be ran from the command-line'
+      'to run a function named function_name from the command-line , run `> node run_git.mjs function_name'
+      'if the function accepts arguments , then enter command-line arguments `> node run_git.mjs function_name'
     },
   };
 }
