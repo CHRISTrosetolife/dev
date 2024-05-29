@@ -8,12 +8,15 @@ import { string_combine } from "./string_combine.mjs";
 export async function watch() {
   let watcher = start();
   function start() {
-    return chokidar.watch(folder_path_src()).on("all", on_watch);
+    let result = chokidar.watch(folder_path_src()).on("all", on_watch);
+    log({
+      result,
+    });
+    log("start");
   }
   async function on_watch(event, path) {
     if (event === "change") {
       await watcher.close();
-      log("start");
       path = string_replace(path, "\\", "/");
       path = string_combine("./", path);
       let funcion_name = function_path_to_name(path);
