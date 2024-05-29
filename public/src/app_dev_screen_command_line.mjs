@@ -1,3 +1,4 @@
+import { app_dev_screenshots_extension } from "./app_dev_screenshots_extension.mjs";
 import { html_style_alternate_monospace_short_multiple } from "./html_style_alternate_monospace_short_multiple.mjs";
 import { html_attribute_set } from "./html_attribute_set.mjs";
 import { function_name_to_url_github } from "./function_name_to_url_github.mjs";
@@ -16,6 +17,8 @@ import { html_clear } from "./html_clear.mjs";
 import { html_element } from "./html_element.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
+import { string_combine } from "./string_combine.mjs";
+import { string_to } from "./string_to.mjs";
 export function app_dev_screen_command_line() {
   return {
     name: function command_line_name(root) {
@@ -40,13 +43,16 @@ export function app_dev_screen_command_line() {
         ],
         "string_combine` is a function that concatenates two strings",
       );
-      let name = string_prefix_without(
-        app_dev_screen_command_line.name,
-        app_dev_screen_prefix(),
-      );
+      let fn = app_dev_screen_command_line;
+      let i = 1;
+      let name = string_prefix_without(fn.name, app_dev_screen_prefix());
       html_img_limited_centered(
         root,
-        path_join([app_name(app_dev), name, "1.png"]),
+        path_join([
+          app_name(app_dev),
+          name,
+          string_combine(string_to(i), app_dev_screenshots_extension()),
+        ]),
       );
       html_style_alternate_monospace_short_multiple(root, [
         "all `export`ed `function`s in the code can be ran from the command-line",
