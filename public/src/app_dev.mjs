@@ -1,3 +1,4 @@
+import { list_map } from "./list_map.mjs";
 import { function_name_to_url_github } from "./function_name_to_url_github.mjs";
 import { html_button_width_full_text_click_home } from "./html_button_width_full_text_click_home.mjs";
 import { html_buttons_next_previous } from "./html_buttons_next_previous.mjs";
@@ -13,7 +14,8 @@ import { string_combine } from "./string_combine.mjs";
 import { add_1 } from "./add_1.mjs";
 export function app_dev() {
   let root = html_style_default_initialize();
-  let screens = app_dev_screens();
+  let screens_functions = app_dev_screens();
+  let screens = list_map(screens_functions, (s) => s());
   home();
   screen(list_index_last(screens));
   function home() {
