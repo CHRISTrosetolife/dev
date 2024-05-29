@@ -33,9 +33,6 @@ export async function watch() {
       if (before === contents) {
         return;
       }
-      log({
-        path,
-      });
       let function_name = function_path_to_name(path);
       await function_auto(function_name);
       await git_ac_message(
@@ -44,6 +41,9 @@ export async function watch() {
       let after = await file_read(path);
       object_property_set(c, "contents", after);
       object_property_set(c, "processing", false);
+      log({
+        path,
+      });
     }
   }
 }
