@@ -1,3 +1,4 @@
+import { git_push } from "./git_push.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { git_ac_message } from "./git_ac_message.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -44,6 +45,7 @@ export async function watch() {
       log({
         path,
       });
+      await git_push();
     }
   }
 }
