@@ -8,6 +8,7 @@ import { folder_path_src } from "./folder_path_src.mjs";
 import chokidar from "chokidar";
 import { string_replace } from "./string_replace.mjs";
 import { string_combine } from "./string_combine.mjs";
+import { error } from "./error.mjs";
 export async function watch() {
   let watcher = chokidar
     .watch(folder_path_src())
@@ -18,25 +19,24 @@ export async function watch() {
         let w;
         w = watcher.getWatched();
         log({
-          w,});
-          log({
-          c: list_any(w['C:\\Users\\JESUS\\dev\\public\\src'], (e) => string_includes(e, "watch")),
+          c: list_any(w["C:\\Users\\JESUS\\dev\\public\\src"], (e) =>
+            string_includes(e, "watch"),
+          ),
         });
         await watcher.unwatch(path);
         w = watcher.getWatched();
-        
-//
         log({
-            w,});
-            log({
-            c: list_any(w['C:\\Users\\JESUS\\dev\\public\\src'], (e) => string_includes(e, "watch")),
-          });
+          c: list_any(w["C:\\Users\\JESUS\\dev\\public\\src"], (e) =>
+            string_includes(e, "watch"),
+          ),
+        });
         log({
           path,
         });
         let funcion_name = function_path_to_name(path);
         await function_auto(funcion_name);
         watcher.add(path);
+        error()
       }
     });
 }
