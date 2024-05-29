@@ -10,7 +10,7 @@ export async function watch() {
         path,
       });
       let funcion_name = function_path_to_name(path);
-      await function_auto(funcion_name);
+      await function_auto(funcion_name); 
     }
   });
 }
