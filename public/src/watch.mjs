@@ -1,24 +1,25 @@
-import { string_includes } from "./string_includes.mjs";
-import { list_any } from "./list_any.mjs";
-import { add } from "./add.mjs";
-import { log } from "./log.mjs";
+import { object_property_delete } from "./object_property_delete.mjs";
 import { function_auto } from "./function_auto.mjs";
 import { function_path_to_name } from "./function_path_to_name.mjs";
 import { folder_path_src } from "./folder_path_src.mjs";
 import chokidar from "chokidar";
 import { string_replace } from "./string_replace.mjs";
 import { string_combine } from "./string_combine.mjs";
-import { error } from "./error.mjs";
 import { object_property_set } from "./object_property_set.mjs";
+import { object_property_exists } from "./object_property_exists.mjs";
 export async function watch() {
-    let processing = {};
+  let processing = {};
   let watcher = chokidar
     .watch(folder_path_src())
     .on("all", async (event, path) => {
       if (event === "change") {
         path = string_replace(path, "\\", "/");
         path = string_combine("./", path);
-        object_property_set(processing, path, true)
+        if (object_property_exists(processing, path)) {
+          return;
+        }
+        object_property_set(processing, path, true);
+        object_property_delete(processing, path);
         let funcion_name = function_path_to_name(path);
         await function_auto(funcion_name);
       }
