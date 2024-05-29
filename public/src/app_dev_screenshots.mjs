@@ -1,3 +1,4 @@
+import { path_parse_base } from "./path_parse_base.mjs";
 import { folder_user } from "./folder_user.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { assert } from "./assert.mjs";
@@ -9,7 +10,6 @@ import { folder_files_move } from "./folder_files_move.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { list_map } from "./list_map.mjs";
-import { string_prefix_without } from "./string_prefix_without.mjs";
 export async function app_dev_screenshots(screen_name) {
   let folder_path = string_combine(folder_user(), "Pictures\\Screenshots");
   let file_extension = ".png";
@@ -22,7 +22,7 @@ export async function app_dev_screenshots(screen_name) {
   ]);
   let target_path = string_combine_multiple([".\\", prefix]);
   let target_files = await folder_read(target_path, file_extension);
-  let mapped = list_map(target_files, (f) => string_prefix_without(f, prefix));
+  let mapped = list_map(target_files, path_parse_base);
   return mapped;
   assert(list_empty_is, [target_files]);
   let starting = 1;
