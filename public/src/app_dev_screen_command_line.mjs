@@ -1,3 +1,4 @@
+import { app_learn_code_style_code_colored } from "./app_learn_code_style_code_colored.mjs";
 import { html_a } from "./html_a.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 import { html_style_alternate_monospace_short_multiple } from "./html_style_alternate_monospace_short_multiple.mjs";
@@ -22,7 +23,8 @@ export function app_dev_screen_command_line() {
             let text = html_inner_get(e);
             html_clear(e);
             let url = function_name_to_url_github(text);
-            html_a(e, text, url);
+            let a = html_a(e, text, url);
+            app_learn_code_style_code_colored(a);
           },
           noop,
         ],
