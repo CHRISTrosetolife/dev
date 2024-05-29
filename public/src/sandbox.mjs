@@ -28,8 +28,8 @@ export async function sandbox() {
   });
   child.stdin.write("[console]::beep(1000, 10)");
   child.stdin.end();
-  log("");
-here  await sleep(10000);
+  log("here");
+  await sleep(10000);
   return;
   let limit = 150;
   let skip = 0;
