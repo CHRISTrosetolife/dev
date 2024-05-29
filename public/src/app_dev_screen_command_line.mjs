@@ -43,7 +43,7 @@ export function app_dev_screen_command_line() {
       ]);
       app_dev_screen_img(app_dev_screen_command_line, root, i++);
       ("here is a sandbox to try out running a function from the command-line :");
-      let h = html_textarea();
+      let h = html_textarea(root);
     },
   };
 }
