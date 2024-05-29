@@ -22,6 +22,9 @@ export async function sandbox() {
   let child = await spawn();
   child.stdin.write("[console]::beep(1000, 10)");
   child.stdin.end();
+  child.stdout.on("data", (data) => {
+    console.log(`stdout: "${data}"`);
+  });
   await sleep(10000);
   return;
   let limit = 150;
