@@ -9,35 +9,18 @@ import chokidar from "chokidar";
 import { string_replace } from "./string_replace.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { error } from "./error.mjs";
+import { object_property_set } from "./object_property_set.mjs";
 export async function watch() {
+    let processing = {};
   let watcher = chokidar
     .watch(folder_path_src())
     .on("all", async (event, path) => {
       if (event === "change") {
-        log({path})
         path = string_replace(path, "\\", "/");
         path = string_combine("./", path);
-        let w;
-        w = watcher.getWatched();
-        log({
-          c: list_any(w["C:\\Users\\JESUS\\dev\\public\\src"], (e) =>
-            string_includes(e, "watch"),
-          ),
-        });
-        await watcher.unwatch(path);
-        w = watcher.getWatched();
-        log({
-          c: list_any(w["C:\\Users\\JESUS\\dev\\public\\src"], (e) =>
-            string_includes(e, "watch"),
-          ),
-        });
-        log({
-          path,
-        });
+        object_property_set(processing, path, true)
         let funcion_name = function_path_to_name(path);
         await function_auto(funcion_name);
-        watcher.add(path);
-        error();
       }
     });
 }
