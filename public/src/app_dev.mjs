@@ -26,6 +26,7 @@ export function app_dev() {
       html_span_text(b, string_combine(add_1(index), ". "));
       s.name(b);
     });
+    html_button_view_sorce(root, app_dev.name);
   }
   function screen(index) {
     html_clear_scroll_top(root);
