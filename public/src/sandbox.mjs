@@ -17,10 +17,12 @@ import { list_single } from "./list_single.mjs";
 import { each_object } from "./each_object.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { list_add } from "./list_add.mjs";
+import { sleep } from "./sleep.mjs";
 export async function sandbox() {
   let child = await spawn();
   child.stdin.write("[console]::beep(1000, 10)");
   child.stdin.end();
+  sleep(1000);
   return;
   let limit = 150;
   let skip = 0;
