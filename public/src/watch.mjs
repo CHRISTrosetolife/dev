@@ -1,3 +1,4 @@
+import { add } from "./add.mjs";
 import { log } from "./log.mjs";
 import { function_auto } from "./function_auto.mjs";
 import { function_path_to_name } from "./function_path_to_name.mjs";
@@ -18,6 +19,7 @@ export async function watch() {
         });
         let funcion_name = function_path_to_name(path);
         await function_auto(funcion_name);
+        watcher.add(path);
       }
     });
 }
