@@ -18,6 +18,7 @@ export async function app_dev_screenshots(screen_name) {
     app_name(app_dev),
     "\\",
     screen_name,
+    "\\",
   ]);
   let target_path = string_combine_multiple([".\\", prefix]);
   let target_files = await folder_read(target_path, file_extension);
