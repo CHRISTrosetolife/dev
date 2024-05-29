@@ -17,7 +17,7 @@ import { each_object } from "./each_object.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { list_add } from "./list_add.mjs";
 export async function sandbox() {
-  let limit = 75;
+  let limit = 150;
   let skip = 0;
   let group_count = ceb_group_size();
   let { atoms, definitions: definitions_all } =
