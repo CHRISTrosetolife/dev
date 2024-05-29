@@ -1,3 +1,5 @@
+import { html_textarea } from "./html_textarea.mjs";
+import { html_element_select } from "./html_element_select.mjs";
 import { file_write } from "./file_write.mjs";
 import { app_code_global_file_paths } from "./app_code_global_file_paths.mjs";
 import { app_code_back_multiple } from "./app_code_back_multiple.mjs";
@@ -29,7 +31,6 @@ import { html_style_border_box } from "./html_style_border_box.mjs";
 import { html_style_height_full } from "./html_style_height_full.mjs";
 import { html_document_body_clear } from "./html_document_body_clear.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { html_element } from "./html_element.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 import { html_style_width_full } from "./html_style_width_full.mjs";
 import { html_style } from "./html_style.mjs";
@@ -57,9 +58,8 @@ import { html_style_monospace } from "./html_style_monospace.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { identity } from "./identity.mjs";
 import { js_identifiers } from "./js_identifiers.mjs";
-import { string_combine } from "./string_combine.mjs";
 import { html_value_set } from "./html_value_set.mjs";
-export function app_code_edit(file_path) {
+export async function app_code_edit(file_path) {
   let function_name = function_path_to_name(file_path);
   let root = html_document_body_clear();
   let container = html_div(root);
@@ -107,8 +107,8 @@ export function app_code_edit(file_path) {
       );
     }
   }
-  function lambda() {
-    app_code_backable(() => {
+  async function lambda() {
+    app_code_backable(async () => {
       let root = html_document_body_clear();
       html_button_width_full_text_click_x_0(
         root,
@@ -188,42 +188,46 @@ export function app_code_edit(file_path) {
           );
         });
       });
-      html_button_width_full_text_click_x_0(root, "rename identifier", () => {
-        app_code_backable(() =>
-          app_code_search_function_generic(
-            "",
-            (identifier_from) => {
-              return () => {
-                let root = html_document_body_clear();
-                html_button_width_full_text_click_x_0(
-                  root,
-                  app_code_button_back_text(),
-                  app_code_back,
-                );
-                let input = app_code_input(root);
-                html_value_set(input, identifier_from);
-                html_element_select(input);
-                html_focus(input);
-                html_button_width_full_text_click_x_0(
-                  root,
-                  "rename identifier",
-                  async () => {
-                    let identifier_to = html_value_get(input);
-                    await function_transform_args_split(
-                      js_identifier_rename.name,
-                      function_name,
-                      [identifier_from, identifier_to],
-                    );
-                    app_code_back_multiple(2);
-                  },
-                );
-              };
-            },
-            js_identifiers(js_parse(object_property_get(files, file_path))),
-            identity,
-          ),
-        );
-      });
+      html_button_width_full_text_click_x_0(
+        root,
+        "rename identifier",
+        async () => {
+          app_code_backable(() =>
+            app_code_search_function_generic(
+              "",
+              async (identifier_from) => {
+                return async () => {
+                  let root = html_document_body_clear();
+                  html_button_width_full_text_click_x_0(
+                    root,
+                    app_code_button_back_text(),
+                    app_code_back,
+                  );
+                  let input = app_code_input(root);
+                  html_value_set(input, identifier_from);
+                  html_element_select(input);
+                  html_focus(input);
+                  html_button_width_full_text_click_x_0(
+                    root,
+                    "rename identifier",
+                    async () => {
+                      let identifier_to = html_value_get(input);
+                      await function_transform_args_split(
+                        js_identifier_rename.name,
+                        function_name,
+                        [identifier_from, identifier_to],
+                      );
+                      await app_code_back_multiple(2);
+                    },
+                  );
+                };
+              },
+              js_identifiers(js_parse(object_property_get(files, file_path))),
+              identity,
+            ),
+          );
+        },
+      );
       html_button_width_full_text_click_x_0(root, "copy function", () => {
         app_code_backable(() => {
           let root = html_document_body_clear();
@@ -271,7 +275,7 @@ export function app_code_edit(file_path) {
   }
   let { files } = global_get();
   let contents = object_property_get(files, file_path);
-  let ta = html_element(container, "textarea");
+  let ta = html_textarea(container);
   html_on_input_value(ta, (value) => {
     object_property_set(files, file_path, value);
   });
@@ -283,8 +287,4 @@ export function app_code_edit(file_path) {
   html_inner_set(ta, contents);
   html_style_width_full(ta);
   html_style_height_full(ta);
-}
-function html_element_select(input) {
-  let { element } = input;
-  element.select();
 }
