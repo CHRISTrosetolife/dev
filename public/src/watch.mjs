@@ -15,17 +15,23 @@ export async function watch() {
       if (event === "change") {
         path = string_replace(path, "\\", "/");
         path = string_combine("./", path);
+        let w;
+        w = watcher.getWatched();
+        log({
+          w,
+          c: list_any(w, (e) => string_includes(e, "watch")),
+        });
         await watcher.unwatch(path);
+        w = watcher.getWatched();
+        log({
+          w,
+          c: list_any(w, (e) => string_includes(e, "watch")),
+        });
         log({
           path,
         });
         let funcion_name = function_path_to_name(path);
         await function_auto(funcion_name);
-        let w = watcher.getWatched();
-        log({
-          w,
-          c: list_any(w, (e) => string_includes(e, "watch")),
-        });
         watcher.add(path);
       }
     });
