@@ -22,7 +22,6 @@ export async function watch() {
     if (event === "change") {
       path = string_replace(path, "\\", "/");
       path = string_combine("./", path);
-      log("start");
       object_property_initialize(cache, path, {});
       let c = object_property_get(cache, path);
       let { contents, processing } = c;
@@ -45,7 +44,6 @@ export async function watch() {
       let after = await file_read(path);
       object_property_set(c, "contents", after);
       object_property_set(c, "processing", false);
-      log("end");
     }
   }
 }
