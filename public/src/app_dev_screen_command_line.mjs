@@ -13,6 +13,8 @@ import { html_p } from "./html_p.mjs";
 import { noop } from "./noop.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { html_element } from "./html_element.mjs";
+import { html_style_bold } from "./html_style_bold.mjs";
+import { html_inner_set } from "./html_inner_set.mjs";
 export function app_dev_screen_command_line() {
   let name = string_prefix_without(
     app_dev_screen_command_line.name,
@@ -31,8 +33,11 @@ export function app_dev_screen_command_line() {
             let text = html_inner_get(e);
             html_clear(e);
             let a = html_element(e, "a");
+            html_inner_set(a, text);
             let url = function_name_to_url_github(text);
             html_attribute_set(a, "href", url);
+            html_attribute_set(a, "target", "_blank");
+            html_style_bold(a);
           },
           noop,
         ],
