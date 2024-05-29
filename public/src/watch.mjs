@@ -1,3 +1,5 @@
+import { string_includes } from "./string_includes.mjs";
+import { list_any } from "./list_any.mjs";
 import { add } from "./add.mjs";
 import { log } from "./log.mjs";
 import { function_auto } from "./function_auto.mjs";
@@ -19,6 +21,11 @@ export async function watch() {
         });
         let funcion_name = function_path_to_name(path);
         await function_auto(funcion_name);
+        let w = watcher.getWatched();
+        log({
+          w,
+          c: list_any(w, (e) => string_includes(e, "watch")),
+        });
         watcher.add(path);
       }
     });
