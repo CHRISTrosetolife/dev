@@ -31,13 +31,13 @@ export function app_dev() {
     let s = list_get(screens, index);
     s.screen(root);
     let s_function = list_get(screens_functions, index);
+    html_buttons_next_previous(root, screen, index, list_index_last(screens));
     let url = function_name_to_url_github(s_function.name);
     html_button_width_full_text_click(
       root,
       "💻 view the source of this screen",
       () => window.open(url),
     );
-    html_buttons_next_previous(root, screen, index, list_index_last(screens));
     html_button_width_full_text_click_home(root, home);
   }
 }
