@@ -1,3 +1,4 @@
+import { function_name_to_url_github } from "./function_name_to_url_github.mjs";
 import { html_button_width_full_text_click_home } from "./html_button_width_full_text_click_home.mjs";
 import { html_buttons_next_previous } from "./html_buttons_next_previous.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
@@ -14,7 +15,7 @@ export function app_dev() {
   let root = html_style_default_initialize();
   let screens = app_dev_screens();
   home();
-  screen(list_index_last(screens))
+  screen(list_index_last(screens));
   function home() {
     html_clear_scroll_top(root);
     each_index(screens, (s, index) => {
@@ -27,6 +28,12 @@ export function app_dev() {
     html_clear_scroll_top(root);
     let s = list_get(screens, index);
     s.screen(root);
+    let url = function_name_to_url_github(s.name);
+    html_button_width_full_text_click(
+      root,
+      "💻 view the source of this screen",
+      () => window.open(url),
+    );
     html_buttons_next_previous(root, screen, index, list_index_last(screens));
     html_button_width_full_text_click_home(root, home);
   }
