@@ -20,11 +20,11 @@ import { list_add } from "./list_add.mjs";
 import { sleep } from "./sleep.mjs";
 export async function sandbox() {
   let child = await spawn();
-  child.stdin.write("[console]::beep(1000, 10)");
-  child.stdin.end();
   child.stdout.on("data", (data) => {
     console.log(`stdout: "${data}"`);
   });
+  child.stdin.write("[console]::beep(1000, 10)");
+  child.stdin.end();
   await sleep(10000);
   return;
   let limit = 150;
