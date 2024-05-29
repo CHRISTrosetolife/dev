@@ -14,18 +14,18 @@ export async function watch() {
     .watch(folder_path_src())
     .on("all", async (event, path) => {
       if (event === "change") {
+        log("start");
         path = string_replace(path, "\\", "/");
         path = string_combine("./", path);
         if (object_property_exists(processing, path)) {
           return;
         }
+        log("continue");
         object_property_set(processing, path, true);
         let funcion_name = function_path_to_name(path);
         await function_auto(funcion_name);
         object_property_delete(processing, path);
-        log({
-          path,
-        });
+        log("stop");
       }
     });
 }
