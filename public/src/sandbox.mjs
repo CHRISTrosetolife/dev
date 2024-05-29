@@ -1,4 +1,3 @@
-import { spawn } from "./spawn.mjs";
 import { list_adder_unique } from "./list_adder_unique.mjs";
 import { ceb_audio_upload } from "./ceb_audio_upload.mjs";
 import { ceb_group_size } from "./ceb_group_size.mjs";
@@ -17,20 +16,7 @@ import { list_single } from "./list_single.mjs";
 import { each_object } from "./each_object.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { list_add } from "./list_add.mjs";
-import { sleep } from "./sleep.mjs";
 export async function sandbox() {
-  let child = await spawn();
-  child.on("close", (code) => {
-    console.log(`Child process exited with code ${code}.`);
-  });
-  child.stdout.on("data", (data) => {
-    console.log(`stdout: "${data}"`);
-  });
-  child.stdin.write("[console]::beep(1000, 10)");
-  child.stdin.end();
-  log("here");
-  await sleep(10000);
-  return;
   let limit = 150;
   let skip = 0;
   let group_count = ceb_group_size();
