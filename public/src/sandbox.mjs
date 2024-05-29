@@ -1,3 +1,4 @@
+import { spawn } from "./spawn.mjs";
 import { list_adder_unique } from "./list_adder_unique.mjs";
 import { ceb_audio_upload } from "./ceb_audio_upload.mjs";
 import { ceb_group_size } from "./ceb_group_size.mjs";
@@ -17,6 +18,7 @@ import { each_object } from "./each_object.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { list_add } from "./list_add.mjs";
 export async function sandbox() {
+  return await spawn();
   return;
   let limit = 150;
   let skip = 0;
