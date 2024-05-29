@@ -1,3 +1,4 @@
+import { html_spacer_vertical_2 } from "./html_spacer_vertical_2.mjs";
 import { list_map } from "./list_map.mjs";
 import { function_name_to_url_github } from "./function_name_to_url_github.mjs";
 import { html_button_width_full_text_click_home } from "./html_button_width_full_text_click_home.mjs";
@@ -33,11 +34,12 @@ export function app_dev() {
     let s_function = list_get(screens_functions, index);
     html_buttons_next_previous(root, screen, index, list_index_last(screens));
     let url = function_name_to_url_github(s_function.name);
+    html_button_width_full_text_click_home(root, home);
+    html_spacer_vertical_2(root);
     html_button_width_full_text_click(
       root,
       "💻 view the source of this screen",
       () => window.open(url),
     );
-    html_button_width_full_text_click_home(root, home);
   }
 }
