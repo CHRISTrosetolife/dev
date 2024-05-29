@@ -8,6 +8,5 @@ export async function function_auto(function_name) {
   let names = list_map_property(transforms, "name");
   let joined = list_join_comma(names);
   await function_transform(joined, function_name);
-  process.stdout.write("\u0007");
   await function_data(function_name);
 }
