@@ -1,5 +1,6 @@
 import { log } from "./log.mjs";
-import b from "beepbeep";
+import tone from "tonegenerator";
+import Speaker from "speaker";
 export function beep() {
   log({
     b,
