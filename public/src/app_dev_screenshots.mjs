@@ -1,4 +1,4 @@
-import { path_parse_base } from "./path_parse_base.mjs";
+import { path_parse_name } from "./path_parse_name.mjs";
 import { folder_user } from "./folder_user.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { assert } from "./assert.mjs";
@@ -22,7 +22,7 @@ export async function app_dev_screenshots(screen_name) {
   ]);
   let target_path = string_combine_multiple([".\\", prefix]);
   let target_files = await folder_read(target_path, file_extension);
-  let mapped = list_map(target_files, path_parse_base);
+  let mapped = list_map(target_files, path_parse_name);
   return mapped;
   assert(list_empty_is, [target_files]);
   let starting = 1;
