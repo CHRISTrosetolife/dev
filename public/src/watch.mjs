@@ -5,7 +5,9 @@ import { folder_path_src } from "./folder_path_src.mjs";
 import chokidar from "chokidar";
 import { string_replace } from "./string_replace.mjs";
 import { string_combine } from "./string_combine.mjs";
+import { file_read } from "./file_read.mjs";
 export async function watch() {
+  let cache = {};
   let watcher = start();
   function start() {
     let result = chokidar.watch(folder_path_src()).on("all", on_watch);
@@ -19,6 +21,7 @@ export async function watch() {
       log({
         path,
       });
+      let current = await file_read(path);
       let funcion_name = function_path_to_name(path);
       await function_auto(funcion_name);
       start();
