@@ -1,3 +1,4 @@
+import { html_style_button_default_border_color } from "./html_style_button_default_border_color.mjs";
 import { app_learn_code_style_code_colored } from "./app_learn_code_style_code_colored.mjs";
 import { html_a } from "./html_a.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
@@ -9,6 +10,7 @@ import { html_span_text } from "./html_span_text.mjs";
 import { html_p } from "./html_p.mjs";
 import { noop } from "./noop.mjs";
 import { html_clear } from "./html_clear.mjs";
+import { html_style_font_color } from "./html_style_font_color.mjs";
 export function app_dev_screen_command_line() {
   return {
     name: function command_line_name(root) {
@@ -25,6 +27,7 @@ export function app_dev_screen_command_line() {
             let url = function_name_to_url_github(text);
             let a = html_a(e, text, url);
             app_learn_code_style_code_colored(a);
+            html_style_font_color(a, html_style_button_default_border_color());
           },
           noop,
         ],
