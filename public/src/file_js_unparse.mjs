@@ -5,4 +5,5 @@ export async function file_js_unparse(file_name, ast) {
   let code = js_unparse(ast);
   let prettied = await js_code_format(code);
   await file_overwrite(file_name, prettied);
+  return prettied;
 }
