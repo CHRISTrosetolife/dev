@@ -1,5 +1,5 @@
+import { list_join_space } from "./list_join_space.mjs";
 import { lesson_console_log_quiz_words } from "./lesson_console_log_quiz_words.mjs";
-import { list_join } from "./list_join.mjs";
 import { list_slice } from "./list_slice.mjs";
 import { add } from "./add.mjs";
 import { subtract } from "./subtract.mjs";
@@ -14,7 +14,7 @@ export function lesson_console_log_quiz_value() {
   let index = integer_random(0, high);
   let end = add(index, word_count);
   let sliced = list_slice(words, index, end);
-  let message = list_join(sliced, " ");
+  let message = list_join_space(sliced);
   let value = string_delimit(message);
   return value;
 }
