@@ -6,5 +6,5 @@ export async function function_transform(lambda_names, function_name) {
   let args = arguments;
   let length = list_length(args);
   assert(equal, [length, 2]);
-  return function_transform_args(lambda_names, function_name, "a");
+  return await function_transform_args(lambda_names, function_name, "a");
 }
