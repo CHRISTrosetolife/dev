@@ -20,22 +20,26 @@ export async function watch() {
     if (event === "change") {
       path = string_replace(path, "\\", "/");
       path = string_combine("./", path);
-      let before = await file_read(path);
       log("start");
       object_property_initialize(cache, path, {});
       let c = object_property_get(cache, path);
       let { contents, processing } = c;
-      if (processing || before === contents) {
+      if (processing) {
         return;
       }
-      object_property_set();
+      object_property_set(c, "processing", true);
+      let before = await file_read(path);
+      if (before === contents) {
+        return;
+      }
       log({
         path,
       });
       let funcion_name = function_path_to_name(path);
       await function_auto(funcion_name);
       let after = await file_read(path);
-      object_property_set(cache, path, after);
+      object_property_set(c, "contents", after);
+      object_property_set(c, "processing", false);
       log("end");
     }
   }
