@@ -3,7 +3,7 @@ import { import_node } from "./import_node.mjs";
 export async function spawn() {
   let c = await import_node("child_process");
   let { spawn: s } = c;
-  s("powershell.exe", {
+  return s("powershell.exe", {
     detached: true,
   });
   return await new Promise((resolve) => {
