@@ -1,3 +1,4 @@
+import { integer_parse } from "./integer_parse.mjs";
 import { path_parse_name } from "./path_parse_name.mjs";
 import { folder_user } from "./folder_user.mjs";
 import { string_combine } from "./string_combine.mjs";
@@ -23,6 +24,7 @@ export async function app_dev_screenshots(screen_name) {
   let target_path = string_combine_multiple([".\\", prefix]);
   let target_files = await folder_read(target_path, file_extension);
   let mapped = list_map(target_files, path_parse_name);
+  let mapped2 = list_map(mapped, integer_parse);
   return mapped;
   assert(list_empty_is, [target_files]);
   let starting = 1;
