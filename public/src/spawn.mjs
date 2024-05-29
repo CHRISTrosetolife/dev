@@ -6,13 +6,4 @@ export async function spawn() {
   return s("powershell.exe", {
     detached: true,
   });
-  return await new Promise((resolve) => {
-    exec(command, options, (error, stdout, stderr) => {
-      resolve({
-        error,
-        stdout,
-        stderr,
-      });
-    });
-  });
 }
