@@ -22,7 +22,7 @@ export async function sandbox() {
   let child = await spawn();
   child.stdin.write("[console]::beep(1000, 10)");
   child.stdin.end();
-  sleep(1000);
+  await sleep(1000);
   return;
   let limit = 150;
   let skip = 0;
