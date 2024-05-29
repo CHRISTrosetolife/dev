@@ -1,4 +1,3 @@
-import { powershell } from "./powershell.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { git_ac_message } from "./git_ac_message.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -36,7 +35,6 @@ export async function watch() {
       }
       let function_name = function_path_to_name(path);
       await function_auto(function_name);
-      await powershell("[console]::beep(1000, 10)");
       await git_ac_message(
         list_join_space([function_auto.name, function_name]),
       );
