@@ -35,7 +35,7 @@ export function app_dev_screen_command_line() {
         ],
         "string_combine` is a function that concatenates two strings",
       );
-      let i = 0;
+      let i = 1;
       app_dev_screen_img(app_dev_screen_command_line, root, i++);
       html_style_alternate_monospace_short_multiple(root, [
         "all `export`ed `function`s in the code can be ran from the command-line",
