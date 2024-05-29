@@ -8,4 +8,5 @@ export function html_a(e, text, url) {
   html_attribute_set(a, "href", url);
   html_attribute_set(a, "target", "_blank");
   html_style_bold(a);
+  return a;
 }
