@@ -9,4 +9,5 @@ export async function function_auto_return(function_name) {
   let joined = list_join_comma(names);
   let result = await function_transform(joined, function_name);
   await function_data(function_name);
+  return result;
 }
