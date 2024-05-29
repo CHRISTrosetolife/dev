@@ -1,3 +1,4 @@
+import { html_textarea } from "./html_textarea.mjs";
 import { app_learn_code_style_code_colored } from "./app_learn_code_style_code_colored.mjs";
 import { html_a } from "./html_a.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
@@ -41,7 +42,8 @@ export function app_dev_screen_command_line() {
         "if the function accepts arguments , then enter command-line arguments `> node run_git.mjs function_name arg_1 arg_2 etc",
       ]);
       app_dev_screen_img(app_dev_screen_command_line, root, i++);
-      ("here is a sandbox to try out running a function from the command-line :");let h=html_textarea( )
+      ("here is a sandbox to try out running a function from the command-line :");
+      let h = html_textarea();
     },
   };
 }
