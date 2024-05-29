@@ -14,6 +14,7 @@ export async function watch() {
     .watch(folder_path_src())
     .on("all", async (event, path) => {
       if (event === "change") {
+        log({path})
         path = string_replace(path, "\\", "/");
         path = string_combine("./", path);
         let w;
@@ -36,7 +37,7 @@ export async function watch() {
         let funcion_name = function_path_to_name(path);
         await function_auto(funcion_name);
         watcher.add(path);
-        error()
+        error();
       }
     });
 }
