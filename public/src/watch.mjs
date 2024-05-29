@@ -20,16 +20,16 @@ export async function watch() {
         log({
           w,});
           log({
-          c: list_any(w, (e) => string_includes(e['C:\\Users\\JESUS\\dev\\public\\src'], "watch")),
+          c: list_any(w['C:\\Users\\JESUS\\dev\\public\\src'], (e) => string_includes(e, "watch")),
         });
         await watcher.unwatch(path);
         w = watcher.getWatched();
         
-
+//
         log({
             w,});
             log({
-            c: list_any(w, (e) => string_includes(e['C:\\Users\\JESUS\\dev\\public\\src'], "watch")),
+            c: list_any(w['C:\\Users\\JESUS\\dev\\public\\src'], (e) => string_includes(e, "watch")),
           });
         log({
           path,
