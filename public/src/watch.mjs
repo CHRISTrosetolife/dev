@@ -16,13 +16,14 @@ export async function watch() {
         path = string_replace(path, "\\", "/");
         path = string_combine("./", path);
         let w;
-        w = watcher.getWatched();
+        w = await watcher.getWatched();
         log({
           w,
           c: list_any(w, (e) => string_includes(e, "watch")),
         });
         await watcher.unwatch(path);
-        w = watcher.getWatched();
+        w = await watcher.getWatched();
+
         log({
           w,
           c: list_any(w, (e) => string_includes(e, "watch")),
