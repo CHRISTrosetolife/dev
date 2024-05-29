@@ -19,9 +19,9 @@ export async function watch() {
           return;
         }
         object_property_set(processing, path, true);
-        object_property_delete(processing, path);
         let funcion_name = function_path_to_name(path);
         await function_auto(funcion_name);
+        object_property_delete(processing, path);
       }
     });
 }
