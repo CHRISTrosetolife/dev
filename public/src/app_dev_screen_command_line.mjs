@@ -1,3 +1,4 @@
+import { html_inner_get } from "./html_inner_get.mjs";
 import { html_style_alternate_short } from "./html_style_alternate_short.mjs";
 import { html_img_limited_centered } from "./html_img_limited_centered.mjs";
 import { path_join } from "./path_join.mjs";
@@ -7,7 +8,6 @@ import { app_dev_screen_prefix } from "./app_dev_screen_prefix.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_p } from "./html_p.mjs";
-import { html_style_bold } from "./html_style_bold.mjs";
 import { noop } from "./noop.mjs";
 export function app_dev_screen_command_line() {
   let name = string_prefix_without(
@@ -22,9 +22,12 @@ export function app_dev_screen_command_line() {
       html_style_alternate_short(
         root,
         html_p,
-        [e=>{
-            
-        }, noop],
+        [
+          (e) => {
+            let text = html_inner_get(e);
+          },
+          noop,
+        ],
         "string_combine` is a function that concatenates two strings",
       );
       html_img_limited_centered(
