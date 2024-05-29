@@ -17,10 +17,6 @@ import { html_element } from "./html_element.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 export function app_dev_screen_command_line() {
-  let name = string_prefix_without(
-    app_dev_screen_command_line.name,
-    app_dev_screen_prefix(),
-  );
   return {
     name: function command_line_name(root) {
       return html_span_text(root, "command_line");
@@ -43,6 +39,10 @@ export function app_dev_screen_command_line() {
           noop,
         ],
         "string_combine` is a function that concatenates two strings",
+      );
+      let name = string_prefix_without(
+        app_dev_screen_command_line.name,
+        app_dev_screen_prefix(),
       );
       html_img_limited_centered(
         root,

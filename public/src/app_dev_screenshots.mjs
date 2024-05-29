@@ -1,3 +1,4 @@
+import { app_dev_screenshots_extension } from "./app_dev_screenshots_extension.mjs";
 import { number_max_list } from "./number_max_list.mjs";
 import { integer_parse } from "./integer_parse.mjs";
 import { path_parse_name } from "./path_parse_name.mjs";
@@ -13,7 +14,7 @@ import { list_map } from "./list_map.mjs";
 import { add_1 } from "./add_1.mjs";
 export async function app_dev_screenshots(screen_name) {
   let folder_path = string_combine(folder_user(), "Pictures\\Screenshots");
-  let file_extension = ".png";
+  let file_extension = app_dev_screenshots_extension();
   let prefix = string_combine_multiple([
     "public\\img\\",
     app_name(app_dev),
