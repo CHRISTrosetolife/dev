@@ -1,3 +1,3 @@
-export function number_max_list(split_size, limit) {
-  return Math.max(split_size, limit);
+export function number_max_list(list) {
+  return Math.max(list);
 }
