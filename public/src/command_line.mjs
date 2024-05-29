@@ -1,6 +1,5 @@
 import { error } from "./error.mjs";
 import { import_node } from "./import_node.mjs";
-import { exec } from "child_process";
 export async function command_line(command) {
   let options = {};
   let c = await import_node("child_process");
