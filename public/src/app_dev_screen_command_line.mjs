@@ -35,6 +35,7 @@ export function app_dev_screen_command_line() {
       );
       let i = 1;
       app_dev_screen_img(app_dev_screen_command_line, root, i++);
+      let prefix = "> node run_git.mjs ";
       html_style_alternate_monospace_short_multiple(root, [
         "all `export`ed `function`s in the code can be ran from the command-line",
         "this speeds up development",
@@ -44,7 +45,6 @@ export function app_dev_screen_command_line() {
       app_dev_screen_img(app_dev_screen_command_line, root, i++);
       ("here is a sandbox to try out running a function from the command-line :");
       let h = html_textarea(root);
-      let prefix = "> node run_git.mjs ";
     },
   };
 }
