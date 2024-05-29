@@ -25,6 +25,9 @@ export async function sandbox() {
   });
   child.stdin.write("[console]::beep(1000, 10)");
   child.stdin.end();
+  child.on("close", (code) => {
+    console.log(`Child process exited with code ${code}.`);
+  });
   await sleep(10000);
   return;
   let limit = 150;
