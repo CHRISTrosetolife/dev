@@ -22,7 +22,9 @@ export function app_dev_screen_command_line() {
       html_style_alternate_short(
         root,
         html_p,
-        [html_style_bold, noop],
+        [e=>{
+            
+        }, noop],
         "string_combine` is a function that concatenates two strings",
       );
       html_img_limited_centered(
