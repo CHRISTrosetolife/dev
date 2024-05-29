@@ -22,6 +22,7 @@ export async function watch() {
       path = string_replace(path, "\\", "/");
       path = string_combine("./", path);
       let before = await file_read(path);
+      log('start')
       if (object_property_exists(cache, path)) {
         if (before === object_property_get(cache, path)) {
           return;
@@ -34,6 +35,7 @@ export async function watch() {
       await function_auto(funcion_name);
       let after = await file_read(path);
       object_property_set(cache, path, after);
+      log('end')
       start();
     }
   }
