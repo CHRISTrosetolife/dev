@@ -1,6 +1,6 @@
+import { html_a } from "./html_a.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 import { html_style_alternate_monospace_short_multiple } from "./html_style_alternate_monospace_short_multiple.mjs";
-import { html_attribute_set } from "./html_attribute_set.mjs";
 import { function_name_to_url_github } from "./function_name_to_url_github.mjs";
 import { html_inner_get } from "./html_inner_get.mjs";
 import { html_style_alternate_short } from "./html_style_alternate_short.mjs";
@@ -8,9 +8,6 @@ import { html_span_text } from "./html_span_text.mjs";
 import { html_p } from "./html_p.mjs";
 import { noop } from "./noop.mjs";
 import { html_clear } from "./html_clear.mjs";
-import { html_element } from "./html_element.mjs";
-import { html_style_bold } from "./html_style_bold.mjs";
-import { html_inner_set } from "./html_inner_set.mjs";
 export function app_dev_screen_command_line() {
   return {
     name: function command_line_name(root) {
@@ -24,12 +21,8 @@ export function app_dev_screen_command_line() {
           (e) => {
             let text = html_inner_get(e);
             html_clear(e);
-            let a = html_element(e, "a");
-            html_inner_set(a, text);
             let url = function_name_to_url_github(text);
-            html_attribute_set(a, "href", url);
-            html_attribute_set(a, "target", "_blank");
-            html_style_bold(a);
+            html_a(e, text, url);
           },
           noop,
         ],
