@@ -12,6 +12,7 @@ import { string_combine } from "./string_combine.mjs";
 import { file_read } from "./file_read.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
+import { function_auto_return } from "./function_auto_return.mjs";
 export async function watch() {
   let cache = {};
   let watcher = start();
@@ -35,7 +36,7 @@ export async function watch() {
         return;
       }
       let function_name = function_path_to_name(path);
-      await function_auto(function_name);
+      await function_auto_return(function_name);
       await git_ac_message(
         list_join_space([function_auto.name, function_name]),
       );
