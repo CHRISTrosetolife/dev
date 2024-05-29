@@ -1,2 +1,4 @@
 import b from "beepbeep";
-export function beep() {}
+export function beep() {
+  b();
+}
