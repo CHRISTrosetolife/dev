@@ -9,6 +9,8 @@ import { string_prefix_without } from "./string_prefix_without.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_p } from "./html_p.mjs";
 import { noop } from "./noop.mjs";
+import { html_inner_set } from "./html_inner_set.mjs";
+import { html_clear } from "./html_clear.mjs";
 export function app_dev_screen_command_line() {
   let name = string_prefix_without(
     app_dev_screen_command_line.name,
@@ -25,6 +27,7 @@ export function app_dev_screen_command_line() {
         [
           (e) => {
             let text = html_inner_get(e);
+            html_clear(e)
           },
           noop,
         ],
