@@ -1,3 +1,4 @@
+import { html_style_alternate_monospace_short_multiple } from "./html_style_alternate_monospace_short_multiple.mjs";
 import { html_attribute_set } from "./html_attribute_set.mjs";
 import { function_name_to_url_github } from "./function_name_to_url_github.mjs";
 import { html_inner_get } from "./html_inner_get.mjs";
@@ -47,9 +48,11 @@ export function app_dev_screen_command_line() {
         root,
         path_join([app_name(app_dev), name, "1.png"]),
       );
-      ("all functions can be ran from the command-line");
-      ("to run a function named `function_name` from the command-line , run `> node run_git.mjs function_name");
-      ("if the function accepts arguments , then enter command-line arguments `> node run_git.mjs function_name arg_1 arg_2 etc");
+      html_style_alternate_monospace_short_multiple(root, [
+        "all functions can be ran from the command-line",
+        "to run a function named `function_name` from the command-line , run `> node run_git.mjs function_name",
+        "if the function accepts arguments , then enter command-line arguments `> node run_git.mjs function_name arg_1 arg_2 etc",
+      ]);
     },
   };
 }
