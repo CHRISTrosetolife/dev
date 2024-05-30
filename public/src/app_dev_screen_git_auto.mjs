@@ -15,7 +15,8 @@ export function app_dev_screen_git_auto() {
         ".mjs` to `" +
         run_git.name +
         ".mjs` and run `" +
-        function_new.name;
+        function_new.name +
+        "` :";
       ("suppose we add a body to `greetings_to_the_world");
       "if `" +
         run.name +
