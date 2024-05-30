@@ -18,8 +18,13 @@ export function app_dev_screen_function_new() {
       );
       let i = 1;
       app_dev_screen_img(app_dev_screen_function_new, root, i++);
-      html_style_alternate_monospace_short_multiple(root, [
+      html_style_alternate_short_p(
+        root,
+        [html_style_function_name, noop, app_learn_code_style_code_colored],
         "a file is created for the `function`",
+      );
+      html_style_alternate_monospace_short_multiple(root, [
+        ,
         "the name of the file is the name of the function",
         "the `function` is `export`ed",
         "then the newly-created function is opened in visual studio code :",
