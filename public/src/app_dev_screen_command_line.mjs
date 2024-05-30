@@ -65,7 +65,7 @@ export function app_dev_screen_command_line() {
         h,
         string_combine_multiple([prefix, string_combine.name, " left right"]),
       );
-      html_button_width_full_text_click(root, "run");
+      html_button_width_full_text_click(root, "💻 run");
     },
   };
 }
