@@ -10,7 +10,7 @@ export async function function_import(function_name) {
     "",
   );
   let function_path_second = path_join([folder_current, first_with_extension]);
-  let function_path = folder_current_prefix + function_path_second;
+  let function_path = folder_current_prefix() + function_path_second;
   let imported = await import(function_path);
   let imported_function = imported[function_name];
   return imported_function;
