@@ -38,8 +38,8 @@ export function app_dev_screen_command_line() {
       html_style_alternate_short(
         root,
         html_p,
-        [html_style_function_name, noop],
-        "string_combine` is a function that concatenates two strings",
+        [noop, html_style_function_name],
+        "`string_combine` is a function that concatenates two strings",
       );
       let i = 1;
       app_dev_screen_img(app_dev_screen_command_line, root, i++);
