@@ -95,10 +95,10 @@ export function app_dev_screen_command_line() {
         let without = string_prefix_without(text, prefix);
         let parts = string_split_space(without);
         let { first, remaining } = list_first_remaining(parts);
-        let function_path = function_name_to_file_name(first);
+        let file_name = function_name_to_file_name(first);
         let imported;
         try {
-          imported = await import(function_path);
+          imported = await import(file_name);
         } catch (e) {
           run_error(e);
           return;
