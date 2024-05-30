@@ -1,4 +1,4 @@
-import { html_style_function_name } from "./html_style_function_name.mjs";
+import { html_style_alternate_short_function_name } from "./html_style_alternate_short_function_name.mjs";
 import { html_style_alternate_monospace_short_span } from "./html_style_alternate_monospace_short_span.mjs";
 import { app_learn_code_code_background_set } from "./app_learn_code_code_background_set.mjs";
 import { folder_current_prefix_combine } from "./folder_current_prefix_combine.mjs";
@@ -12,9 +12,6 @@ import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_co
 import { html_textarea } from "./html_textarea.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 import { html_style_alternate_monospace_short_multiple } from "./html_style_alternate_monospace_short_multiple.mjs";
-import { html_style_alternate_short } from "./html_style_alternate_short.mjs";
-import { html_p } from "./html_p.mjs";
-import { noop } from "./noop.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 import { html_attribute_set } from "./html_attribute_set.mjs";
 import { html_style_width_full } from "./html_style_width_full.mjs";
@@ -37,12 +34,7 @@ export function app_dev_screen_command_line() {
     screen: async function command_line_screen(root) {
       let message =
         "`string_combine` is a function that concatenates two strings";
-      html_style_alternate_short(
-        root,
-        html_p,
-        [noop, html_style_function_name],
-        message,
-      );
+      html_style_alternate_short_function_name(root, message);
       let i = 1;
       app_dev_screen_img(app_dev_screen_command_line, root, i++);
       let prefix = "> node run.mjs ";
