@@ -6,8 +6,7 @@ import { log } from "./log.mjs";
 import { list_single } from "./list_single.mjs";
 export function js_assign_to_let(ast) {
   let ess = js_node_type(ast, "ExpressionStatement");
-  each(ess, (v) => {
-    let { node } = v;
+  each(ess, (node) => {
     let { expression } = node;
     let { type } = expression;
     if (type === "AssignmentExpression") {
