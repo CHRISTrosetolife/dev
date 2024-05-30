@@ -1,3 +1,5 @@
+import { noop } from "./noop.mjs";
+import { html_style_alternate_short } from "./html_style_alternate_short.mjs";
 import { url_repository } from "./url_repository.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 import { html_style_alternate_monospace_short_multiple } from "./html_style_alternate_monospace_short_multiple.mjs";
@@ -27,7 +29,11 @@ export function app_dev_screen_git_auto() {
       app_dev_screen_img(app_dev_screen_git_auto, root, i++);
       html_p_text(root, "... and a new function is created ...");
       app_dev_screen_img(app_dev_screen_git_auto, root, i++);
-      html_p_text(root, "... and a commit is added to git :");
+      html_style_alternate_short(
+        root,
+        [noop],
+        "... and a commit is added to git :",
+      );
       app_dev_screen_img(app_dev_screen_git_auto, root, i++);
       "syncing with github on the internet takes time , so that is omitted from `" +
         run_git.name +
