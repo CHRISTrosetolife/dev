@@ -1,3 +1,4 @@
+import { js_unparse } from "./js_unparse.mjs";
 import { list_filter_property } from "./list_filter_property.mjs";
 import { list_take } from "./list_take.mjs";
 import { list_after_or } from "./list_after_or.mjs";
@@ -45,6 +46,7 @@ export function js_assign_to_let(ast) {
             });
           }
         });
+        log(js_unparse(parsed));
         if (0) object_replace(node, parsed);
       }
     }
