@@ -77,6 +77,6 @@ export function js_assign_to_let(ast) {
   });
   if (0) {
     let { a, b } = c;
-    a = 2;
+    let ab = 2;
   }
 }
