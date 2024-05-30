@@ -59,8 +59,9 @@ export function js_assign_to_let(ast) {
                   let { name: m_name } = m;
                   la(m_name);
                 } else if (equal(m_type, "ObjectPattern")) {
-                  let { name: m_name } = m;
-                  la(m_name);
+                  log({
+                    m,
+                  });
                 }
               });
             }
@@ -77,4 +78,7 @@ export function js_assign_to_let(ast) {
       }
     }
   });
+  if (0) {
+    let { a, b } = c;
+  }
 }
