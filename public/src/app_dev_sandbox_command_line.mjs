@@ -68,7 +68,12 @@ export async function app_dev_sandbox_command_line(
       );
       return;
     }
-    let fn_result = await fn(...remaining);
+    let fn_result;
+    try {
+      fn_result = await fn(...remaining);
+    } catch (e) {
+      run_error(e);
+    }
     let result = await result_get(fn_result, remaining);
     html_inner_set(result_component, result);
     function run_error(message) {
