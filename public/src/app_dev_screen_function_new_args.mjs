@@ -1,3 +1,7 @@
+import { app_learn_code_style_code_colored } from "./app_learn_code_style_code_colored.mjs";
+import { noop } from "./noop.mjs";
+import { html_style_function_name } from "./html_style_function_name.mjs";
+import { html_style_alternate_short_p } from "./html_style_alternate_short_p.mjs";
 import { html_style_alternate_monospace_short_span } from "./html_style_alternate_monospace_short_span.mjs";
 export function app_dev_screen_function_new_args() {
   return {
@@ -7,6 +11,12 @@ export function app_dev_screen_function_new_args() {
         "add new `function` with parameters",
       );
     },
-    screen: function function_new_args_screen(root) {},
+    screen: function function_new_args_screen(root) {
+      html_style_alternate_short_p(
+        root,
+        [html_style_function_name, noop, app_learn_code_style_code_colored],
+        "function_new` adds a new `function`",
+      );
+    },
   };
 }
