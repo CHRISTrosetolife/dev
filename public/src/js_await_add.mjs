@@ -1,4 +1,4 @@
-import { log } from "./log.mjs";
+import { js_function_types } from "./js_function_types.mjs";
 import { js_parent_replace } from "./js_parent_replace.mjs";
 import { data_functions } from "./data_functions.mjs";
 import { list_before } from "./list_before.mjs";
@@ -33,10 +33,7 @@ export async function js_await_add(ast) {
               if (equal(type, "BlockStatement")) {
                 let after = list_before(stack, s);
                 let { type: after_type } = after;
-                let function_types = [
-                  "ArrowFunctionExpression",
-                  "FunctionDeclaration",
-                ];
+                let function_types = js_function_types();
                 if (list_includes(function_types, after_type)) {
                   object_property_set(after, "async", true);
                 }
