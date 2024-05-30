@@ -84,7 +84,6 @@ export function app_dev_screen_command_line() {
         }
         log("a");
         let without = string_prefix_without(text, prefix);
-        let aa = 4;
       }
     },
   };
