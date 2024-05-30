@@ -1,3 +1,5 @@
+import { app_learn_code_style_code } from "./app_learn_code_style_code.mjs";
+import { app_learn_code_style_code_color } from "./app_learn_code_style_code_color.mjs";
 import { function_import } from "./function_import.mjs";
 import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
 import { app_learn_code_style_code_error } from "./app_learn_code_style_code_error.mjs";
@@ -33,6 +35,9 @@ export async function app_dev_sandbox_command_line(
       " from the command-line :",
   );
   let textarea = html_textarea(root);
+  app_learn_code_style_code_color(textarea);
+  app_learn_code_style_code(textarea);
+  app_learn_code_code_background_set(textarea);
   html_style_width_full(textarea);
   html_attribute_set(textarea, "rows", 2);
   html_attribute_set(textarea, "spellcheck", "false");
