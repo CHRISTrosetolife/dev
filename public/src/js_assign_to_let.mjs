@@ -1,13 +1,14 @@
+import { js_node_type_visitor } from "./js_node_type_visitor.mjs";
 import { each } from "./each.mjs";
-import { js_node_type } from "./js_node_type.mjs";
 import { object_replace } from "./object_replace.mjs";
 import { js_code_declare_assign } from "./js_code_declare_assign.mjs";
 import { log } from "./log.mjs";
 import { list_single } from "./list_single.mjs";
 import { js_unparse } from "./js_unparse.mjs";
 export function js_assign_to_let(ast) {
-  let ess = js_node_type(ast, "ExpressionStatement");
-  each(ess, (node) => {
+  let ess = js_node_type_visitor(ast, "ExpressionStatement");
+  each(ess, (v) => {
+    let { node } = v;
     let { expression } = node;
     let { type } = expression;
     if (type === "AssignmentExpression") {
