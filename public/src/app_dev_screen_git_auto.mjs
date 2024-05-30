@@ -1,7 +1,7 @@
+import { url_repository_commit } from "./url_repository_commit.mjs";
 import { html_style_link } from "./html_style_link.mjs";
 import { noop } from "./noop.mjs";
 import { html_style_alternate_short } from "./html_style_alternate_short.mjs";
-import { url_repository } from "./url_repository.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 import { html_style_alternate_monospace_short_multiple } from "./html_style_alternate_monospace_short_multiple.mjs";
 import { run_git } from "./run_git.mjs";
@@ -33,7 +33,7 @@ export function app_dev_screen_git_auto() {
       let commit_id = "7df7f06b7d48b423cc103c23f4b3573295f694ee";
       html_style_alternate_short(
         root,
-        [noop, html_style_link(url_repository() + "commit/" + commit_id)],
+        [noop, html_style_link(url_repository_commit(commit_id))],
         "... and a `commit` is added to git :",
       );
       app_dev_screen_img(app_dev_screen_git_auto, root, i++);
