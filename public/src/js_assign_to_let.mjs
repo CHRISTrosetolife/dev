@@ -53,6 +53,7 @@ export function js_assign_to_let(ast) {
   });
   let b;
   if (0) {
+    let c;
     a = 1;
   }
 }
