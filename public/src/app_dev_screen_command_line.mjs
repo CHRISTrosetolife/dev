@@ -14,6 +14,7 @@ import { html_style_font_color } from "./html_style_font_color.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 import { html_attribute_set } from "./html_attribute_set.mjs";
 import { html_style_width_full } from "./html_style_width_full.mjs";
+import { html_p_text } from "./html_p_text.mjs";
 export function app_dev_screen_command_line() {
   return {
     name: function command_line_name(root) {
@@ -49,7 +50,10 @@ export function app_dev_screen_command_line() {
           " arg_1 arg_2 etc",
       ]);
       app_dev_screen_img(app_dev_screen_command_line, root, i++);
-      ("here is a sandbox to try out running a function from the command-line :");
+      html_p_text(
+        root,
+        "here is a sandbox to try out running a function from the command-line :",
+      );
       let h = html_textarea(root);
       html_attribute_set(h, "rows", 2);
       html_style_width_full(h);
