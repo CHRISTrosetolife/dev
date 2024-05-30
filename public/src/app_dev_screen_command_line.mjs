@@ -1,4 +1,3 @@
-import { list_get } from "./list_get.mjs";
 import { list_first_remaining } from "./list_first_remaining.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { app_learn_code_style_code_error } from "./app_learn_code_style_code_error.mjs";
@@ -97,7 +96,6 @@ export function app_dev_screen_command_line() {
           run_error(e);
           return;
         }
-        let fn = list_get;
         function run_error(message) {
           app_learn_code_style_code_error(result);
           html_inner_set(result, message);
