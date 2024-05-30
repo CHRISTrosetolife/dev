@@ -12,6 +12,7 @@ import { file_read } from "./file_read.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { function_auto_return } from "./function_auto_return.mjs";
+import { list_concat } from "./list_concat.mjs";
 export async function watch() {
   let cache = {};
   let watcher = start();
@@ -36,8 +37,9 @@ export async function watch() {
       }
       let function_name = function_path_to_name(path);
       let fn = function_auto_return;
-      let after = await fn(function_name);
-      await git_ac_message(list_join_space([fn.name, function_name]));
+      let args = [function_name];
+      let after = await fn(...args);
+      await git_ac_message(list_join_space(list_concat([fn.name], args)));
       object_property_set(c, "contents", after);
       object_property_set(c, "processing", false);
       log({
