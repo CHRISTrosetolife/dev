@@ -5,10 +5,10 @@ export function js_assign_to_let(ast) {
     let { node } = v;
     let { expression } = node;
     if (expression === "AssignmentExpression") {
+      log({
+        node,
+      });
     }
-    log({
-      node,
-    });
   });
   if (0) a = 1;
 }
