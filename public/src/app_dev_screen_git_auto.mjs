@@ -17,7 +17,9 @@ export function app_dev_screen_git_auto() {
         ".mjs` and run `" +
         function_new.name;
       ("suppose we add a body to `greetings_to_the_world");
-      ("if `run.mjs` is changed to `run_git.mjs` , then the `function` will be ran and then a git commit will be created :");
+      "if `" +
+        run.name +
+        ".mjs` is changed to `run_git.mjs` , then the `function` will be ran and then a git commit will be created :";
     },
   };
 }
