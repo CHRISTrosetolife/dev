@@ -13,25 +13,29 @@ import { list_index_last } from "./list_index_last.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { add_1 } from "./add_1.mjs";
-export function app_dev() {
+export async function app_dev() {
   let root = html_style_default_initialize();
   let screens_functions = app_dev_screens();
   let screens = list_map(screens_functions, (s) => s());
   home();
-  screen(list_index_last(screens));
+  await screen(list_index_last(screens));
   function home() {
     html_clear_scroll_top(root);
     each_index(screens, (s, index) => {
-      let b = html_button_width_full_text_click(root, "", () => screen(index));
+      let b = html_button_width_full_text_click(
+        root,
+        "",
+        async () => await screen(index),
+      );
       html_span_text(b, string_combine(add_1(index), ". "));
       s.name(b);
     });
     html_button_view_sorce(root, app_dev.name);
   }
-  function screen(index) {
+  async function screen(index) {
     html_clear_scroll_top(root);
     let s = list_get(screens, index);
-    s.screen(root);
+    await s.screen(root);
     let s_function = list_get(screens_functions, index);
     html_buttons_next_previous(root, screen, index, list_index_last(screens));
     html_button_width_full_text_click_home(root, home);
