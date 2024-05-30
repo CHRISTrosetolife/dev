@@ -27,7 +27,7 @@ export function app_dev_screen_git_auto() {
       app_dev_screen_img(app_dev_screen_git_auto, root, i++);
       html_p_text(root, "... and a new function is created ...");
       app_dev_screen_img(app_dev_screen_git_auto, root, i++);
-      ("... and a commit is added to git :");
+      html_p_text(root, "... and a commit is added to git :");
       app_dev_screen_img(app_dev_screen_git_auto, root, i++);
       "syncing with github on the internet takes time , so that is omitted from `" +
         run_git.name +
