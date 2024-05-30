@@ -30,19 +30,19 @@ export function js_assign_to_let(ast) {
         let { right } = expression;
         d.init = right;
         let { stack } = v;
-        each(stack, (s) => {
-          let { type: s_type } = s;
-          if (s_type === "BlockStatement") {
-            let list = list_after(stack, s);
-            let item = list_after_or(stack, list, node);
-            let index = list_index(list, item);
-            let taken = list_take(list, index);
-            let filtered = list_filter_property(
-              taken,
-              "type",
-              "VariableDeclaration",
-            );
-            let names = list_adder((la) =>
+        let names = list_adder((la) =>
+          each(stack, (s) => {
+            let { type: s_type } = s;
+            if (s_type === "BlockStatement") {
+              let list = list_after(stack, s);
+              let item = list_after_or(stack, list, node);
+              let index = list_index(list, item);
+              let taken = list_take(list, index);
+              let filtered = list_filter_property(
+                taken,
+                "type",
+                "VariableDeclaration",
+              );
               each(filtered, (f) => {
                 let { declarations } = f;
                 let mapped = list_map_property(declarations, "id");
@@ -52,13 +52,13 @@ export function js_assign_to_let(ast) {
                   let { name: m_name } = m;
                   la(m_name);
                 });
-              }),
-            );
-            log({
-              names,
-            });
-          }
-        });
+              });
+              log({
+                names,
+              });
+            }
+          }),
+        );
         log(js_unparse(parsed));
         if (0) object_replace(node, parsed);
       }
