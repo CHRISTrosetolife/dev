@@ -17,6 +17,7 @@ import { html_style_width_full } from "./html_style_width_full.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_combine } from "./string_combine.mjs";
+import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export function app_dev_screen_command_line() {
   return {
     name: function command_line_name(root) {
@@ -64,6 +65,7 @@ export function app_dev_screen_command_line() {
         h,
         string_combine_multiple([prefix, string_combine.name, " left right"]),
       );
+      html_button_width_full_text_click(root, "run");
     },
   };
 }
