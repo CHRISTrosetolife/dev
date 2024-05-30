@@ -45,7 +45,7 @@ export function app_dev_screen_git_auto() {
       );
       app_dev_screen_img(app_dev_screen_git_auto, root, i++);
       ("this does a `git add` and a `git commit -m ...`");
-      "`git push` takes time , so that is omitted from `" +
+      "waiting often for `git push` slows development , so `git push` is omitted from `" +
         run_git.name +
         ".mjs`'";
     },
