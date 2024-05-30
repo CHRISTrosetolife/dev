@@ -3,7 +3,6 @@ import { equal } from "./equal.mjs";
 import { assert } from "./assert.mjs";
 import { list_length } from "./list_length.mjs";
 export async function function_transform_return(
-  args,
   lambda_names,
   function_name,
 ) {
