@@ -42,7 +42,7 @@ export function app_dev_screen_command_line() {
       );
       let i = 1;
       app_dev_screen_img(app_dev_screen_command_line, root, i++);
-      let prefix = "> node " + run.name + ".mjs ";
+      let prefix = app_dev_screen_command_line_prefix();
       html_style_alternate_monospace_short_multiple(root, [
         "all `export`ed `function`s in the code can be ran from the command-line",
         "this speeds up development",
@@ -55,58 +55,67 @@ export function app_dev_screen_command_line() {
       app_dev_screen_img(app_dev_screen_command_line, root, i++);
       let args = [string_combine.name, "left", "right"];
       let try_out_message = "running a function from the command-line";
-      html_hr(root);
-      html_p_text(
+      await app_dev_sandbox_command_line(root, args, try_out_message);
+    },
+  };
+}
+function app_dev_screen_command_line_prefix() {
+    return "> node " + run.name + ".mjs ";
+}
+
+async function app_dev_sandbox_command_line(root, args, try_out_message) {
+    let prefix = app_dev_screen_command_line_prefix();
+    html_hr(root);
+    html_p_text(
         root,
-        "here is a sandbox for you to try out " + try_out_message + " :",
-      );
-      let textarea = html_textarea(root);
-      html_style_width_full(textarea);
-      html_attribute_set(textarea, "rows", 2);
-      html_attribute_set(textarea, "spellcheck", "false");
-      html_inner_set(
+        "here is a sandbox for you to try out " + try_out_message + " :"
+    );
+    let textarea = html_textarea(root);
+    html_style_width_full(textarea);
+    html_attribute_set(textarea, "rows", 2);
+    html_attribute_set(textarea, "spellcheck", "false");
+    html_inner_set(
         textarea,
-        string_combine_multiple([prefix, list_join_space(args)]),
-      );
-      html_button_width_full_text_click(root, "💻 run", run_click);
-      let result_component = app_learn_code_code_part_contrast(root, "");
-      await run_click();
-      async function run_click() {
+        string_combine_multiple([prefix, list_join_space(args)])
+    );
+    html_button_width_full_text_click(root, "💻 run", run_click);
+    let result_component = app_learn_code_code_part_contrast(root, "");
+    await run_click();
+    async function run_click() {
         let text = html_value_get(textarea);
         if (string_starts_with_not(text, prefix)) {
-          let message = "must begin with : " + string_delimit(prefix);
-          run_error(message);
-          return;
+            let message = "must begin with : " + string_delimit(prefix);
+            run_error(message);
+            return;
         }
         app_learn_code_code_background_set(result_component);
         let without = string_prefix_without(text, prefix);
         let parts = string_split_space(without);
         let { first: function_name, remaining } = list_first_remaining(parts);
         let file_name = folder_current_prefix_combine(
-          function_name_to_file_name(function_name),
+            function_name_to_file_name(function_name)
         );
         let imported;
         try {
-          imported = await import(file_name);
+            imported = await import(file_name);
         } catch (e) {
-          run_error(
-            string_combine_multiple([
-              "failed to import ",
-              function_name,
-              " ; error message : ",
-              e,
-            ]),
-          );
-          return;
+            run_error(
+                string_combine_multiple([
+                    "failed to import ",
+                    function_name,
+                    " ; error message : ",
+                    e,
+                ])
+            );
+            return;
         }
         let fn = object_property_get(imported, function_name);
         let result = await fn(...remaining);
         html_inner_set(result_component, result);
         function run_error(message) {
-          app_learn_code_style_code_error(result_component);
-          html_inner_set(result_component, message);
+            app_learn_code_style_code_error(result_component);
+            html_inner_set(result_component, message);
         }
-      }
-    },
-  };
+    }
 }
+
