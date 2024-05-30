@@ -55,7 +55,6 @@ export async function app_dev_sandbox_command_line(
     let without = string_prefix_without(text, prefix);
     let parts = string_split_space(without);
     let { first: function_name, remaining } = list_first_remaining(parts);
-    let on_error = ;
     let file_name = folder_current_prefix_combine(
       function_name_to_file_name(function_name),
     );
@@ -63,7 +62,7 @@ export async function app_dev_sandbox_command_line(
     try {
       imported = await import(file_name);
     } catch (e) {
-        run_error(
+      run_error(
         string_combine_multiple([
           "failed to import ",
           function_name,
