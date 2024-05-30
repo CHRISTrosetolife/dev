@@ -29,9 +29,6 @@ export function js_assign_to_let(ast) {
         let names = list_adder((la) => {
           let { stack } = v;
           each(stack, (s) => {
-            log({
-              s,
-            });
             let { type: s_type } = s;
             if (s_type === "BlockStatement") {
               let list = list_after(stack, s);
@@ -65,6 +62,9 @@ export function js_assign_to_let(ast) {
           });
         });
         if (list_includes_not(names, name)) {
+          log({
+            s,
+          });
           let parsed = js_code_declare_assign(name);
           let { declarations } = parsed;
           let d = list_single(declarations);
