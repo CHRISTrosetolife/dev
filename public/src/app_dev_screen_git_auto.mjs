@@ -6,6 +6,7 @@ export function app_dev_screen_git_auto() {
     },
     screen: function git_auto_screen(root) {
       "suppose we have a function named `greetings_to_the_world` :";
+      "suppose we add a body to `greetings_to_the_world";
       "if `run.mjs` is changed to `run_git.mjs` , then the `function` will be ran and then a git commit will be created :";
     },
   };
