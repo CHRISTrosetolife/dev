@@ -1,3 +1,4 @@
+import { function_import } from "./function_import.mjs";
 import { app_dev_sandbox_command_line } from "./app_dev_sandbox_command_line.mjs";
 import { function_new } from "./function_new.mjs";
 import { html_style_alternate_monospace_short_span } from "./html_style_alternate_monospace_short_span.mjs";
@@ -35,6 +36,8 @@ export function app_dev_screen_function_new() {
         "then the newly-created `function` is automatically opened in visual studio code :",
       ]);
       app_dev_screen_img(app_dev_screen_function_new, root, i++);
+      let function_name = "greetings";
+      let imported = await function_import(function_name);
       let args = [function_new.name, "left", "right"];
       let try_out_message = "creating a new `function`";
       await app_dev_sandbox_command_line(root, args, try_out_message);
