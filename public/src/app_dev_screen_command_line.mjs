@@ -82,8 +82,8 @@ export function app_dev_screen_command_line() {
       async function run_click() {
         let text = html_value_get(h);
         if (string_starts_with_not(text, prefix)) {
-          app_learn_code_style_code_error(result);
           let message = "must begin with : " + string_delimit(prefix);
+          app_learn_code_style_code_error(result);
           html_inner_set(result, message);
           return;
         }
