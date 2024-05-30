@@ -23,7 +23,7 @@ export function js_assign_to_let(ast) {
         let { stack } = v;
         each(stack, (s) => {
           let { type: s_type } = s;
-          if (0) {
+          if (s_type === "BlockStatement") {
           }
         });
         log({
