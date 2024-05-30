@@ -1,3 +1,4 @@
+import { list_includes_not } from "./list_includes_not.mjs";
 import { equal } from "./equal.mjs";
 import { assert } from "./assert.mjs";
 import { list_map_property } from "./list_map_property.mjs";
@@ -24,12 +25,6 @@ export function js_assign_to_let(ast) {
       let { left } = expression;
       if (left.type === "Identifier") {
         let { name } = left;
-        let parsed = js_code_declare_assign(name);
-        let { declarations } = parsed;
-        let d = list_single(declarations);
-        let { right } = expression;
-        d.init = right;
-        let { stack } = v;
         let names = list_adder((la) =>
           each(stack, (s) => {
             let { type: s_type } = s;
@@ -56,12 +51,20 @@ export function js_assign_to_let(ast) {
             }
           }),
         );
-        log({
-          names,
-          name,
-        });
-        log(js_unparse(parsed));
-        if (0) object_replace(node, parsed);
+        if (list_includes_not(names, name)) {
+          let parsed = js_code_declare_assign(name);
+          let { declarations } = parsed;
+          let d = list_single(declarations);
+          let { right } = expression;
+          d.init = right;
+          let { stack } = v;
+          log({
+            names,
+            name,
+          });
+          log(js_unparse(parsed));
+          if (0) object_replace(node, parsed);
+        }
       }
     }
   });
