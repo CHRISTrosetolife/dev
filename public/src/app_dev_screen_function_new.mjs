@@ -4,6 +4,8 @@ export function app_dev_screen_function_new() {
     name: function function_new_name(root) {
       return html_span_text(root, "`function` that adds a new `function`");
     },
-    screen: function function_new_screen(root) {},
+    screen: function function_new_screen(root) {
+      "function_new is a function that can add a new function";
+    },
   };
 }
