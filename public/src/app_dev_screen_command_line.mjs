@@ -80,7 +80,7 @@ export function app_dev_screen_command_line() {
         string_combine_multiple([prefix, string_combine.name, " left right"]),
       );
       html_button_width_full_text_click(root, "💻 run", run_click);
-      let result = app_learn_code_code_part_contrast(root, "test");
+      let result_component = app_learn_code_code_part_contrast(root, "test");
       let this_url = import.meta.url;
       let { origin } = window.location;
       let relative = string_prefix_without(this_url, origin);
@@ -108,10 +108,10 @@ export function app_dev_screen_command_line() {
           return;
         }
         let fn = object_property_get(imported, function_name);
-        result = await fn(...remaining);
+        let result = await fn(...remaining);
         function run_error(message) {
-          app_learn_code_style_code_error(result);
-          html_inner_set(result, message);
+          app_learn_code_style_code_error(result_component);
+          html_inner_set(result_component, message);
         }
       }
     },
