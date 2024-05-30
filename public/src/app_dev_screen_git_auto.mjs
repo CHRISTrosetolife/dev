@@ -1,3 +1,5 @@
+import { app_dev_screen_function_new_args } from "./app_dev_screen_function_new_args.mjs";
+import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 import { html_style_alternate_monospace_short_multiple } from "./html_style_alternate_monospace_short_multiple.mjs";
 import { run_git } from "./run_git.mjs";
 import { run } from "./run.mjs";
@@ -20,6 +22,10 @@ export function app_dev_screen_git_auto() {
           function_new.name +
           "` :",
       ]);
+      let i = 1;
+      app_dev_screen_img(app_dev_screen_function_new_args, root, i++);
+      app_dev_screen_img(app_dev_screen_function_new_args, root, i++);
+      app_dev_screen_img(app_dev_screen_function_new_args, root, i++);
       ("https://github.com/CHRISTrosetolife/dev/commit/7df7f06b7d48b423cc103c23f4b3573295f694ee");
     },
   };
