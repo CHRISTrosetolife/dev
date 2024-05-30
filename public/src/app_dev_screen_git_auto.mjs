@@ -30,15 +30,10 @@ export function app_dev_screen_git_auto() {
       app_dev_screen_img(app_dev_screen_git_auto, root, i++);
       html_p_text(root, "... and a new function is created ...");
       app_dev_screen_img(app_dev_screen_git_auto, root, i++);
+      let commit_id = "7df7f06b7d48b423cc103c23f4b3573295f694ee";
       html_style_alternate_short(
         root,
-        [
-          noop,
-          html_style_link(
-            url_repository() +
-              "commit/7df7f06b7d48b423cc103c23f4b3573295f694ee",
-          ),
-        ],
+        [noop, html_style_link(url_repository() + "commit/" + commit_id)],
         "... and a `commit` is added to git :",
       );
       app_dev_screen_img(app_dev_screen_git_auto, root, i++);
