@@ -28,14 +28,21 @@ export async function js_await_add(ast) {
             parsed.argument = node;
             js_parent_replace(v, node, parsed);
             let { stack } = v;
+            log({
+              stack,
+            });
+            let found = false;
             each_reverse(stack, (s) => {
+              if (found) {
+                return;
+              }
               let { type } = s;
               if (equal(type, "BlockStatement")) {
                 let after = list_before(stack, s);
                 let { type: after_type } = after;
                 if (js_function_types_is(after_type)) {
                   object_property_set(after, "async", true);
-                  log("here");
+                  found = true;
                 }
               }
             });
