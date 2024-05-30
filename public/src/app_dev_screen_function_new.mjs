@@ -10,6 +10,7 @@ import { noop } from "./noop.mjs";
 import { html_style_alternate_short_p } from "./html_style_alternate_short_p.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 import { add_1 } from "./add_1.mjs";
+import { string_combine } from "./string_combine.mjs";
 export function app_dev_screen_function_new() {
   return {
     name: function function_new_name(root) {
@@ -39,14 +40,14 @@ export function app_dev_screen_function_new() {
       app_dev_screen_img(app_dev_screen_function_new, root, i++);
       let function_name_base = "greetings";
       let function_name = function_name_base;
-      let j = 1;
+      let j = 2;
       while (true) {
         try {
           await function_import(function_name);
           break;
         } catch (e) {
+          function_name = string_combine(function_name_base, j);
           j = add_1(j);
-          function_name;
         }
       }
       let args = [function_new.name, "left", "right"];
