@@ -42,7 +42,9 @@ export function app_dev_screen_command_line() {
         "this speeds up development",
         "to run a function named `function_name` from the command-line , run `" +
           prefix,
-        "if the function accepts arguments , then enter command-line arguments `> node run_git.mjs function_name arg_1 arg_2 etc",
+        "if the function accepts arguments , then enter command-line arguments `" +
+          prefix +
+          " arg_1 arg_2 etc",
       ]);
       app_dev_screen_img(app_dev_screen_command_line, root, i++);
       ("here is a sandbox to try out running a function from the command-line :");
