@@ -64,7 +64,8 @@ export function app_dev_screen_function_new() {
         try_out_message,
         async (fn_result, remaining) => {
           let function_name_choice = list_single(remaining);
-          return await function_code(function_name_choice);
+          let result = await function_code(function_name_choice);
+          return result;
         },
       );
     },
