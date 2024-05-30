@@ -1,3 +1,4 @@
+import { html_style_function_name } from "./html_style_function_name.mjs";
 import { html_style_alternate_monospace_short_span } from "./html_style_alternate_monospace_short_span.mjs";
 import { app_learn_code_code_background_set } from "./app_learn_code_code_background_set.mjs";
 import { folder_current_prefix_combine } from "./folder_current_prefix_combine.mjs";
@@ -9,17 +10,11 @@ import { html_value_get } from "./html_value_get.mjs";
 import { string_starts_with_not } from "./string_starts_with_not.mjs";
 import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
 import { html_textarea } from "./html_textarea.mjs";
-import { app_learn_code_style_code_colored } from "./app_learn_code_style_code_colored.mjs";
-import { html_a } from "./html_a.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 import { html_style_alternate_monospace_short_multiple } from "./html_style_alternate_monospace_short_multiple.mjs";
-import { function_name_to_url_github } from "./function_name_to_url_github.mjs";
-import { html_inner_get } from "./html_inner_get.mjs";
 import { html_style_alternate_short } from "./html_style_alternate_short.mjs";
 import { html_p } from "./html_p.mjs";
 import { noop } from "./noop.mjs";
-import { html_clear } from "./html_clear.mjs";
-import { html_style_font_color } from "./html_style_font_color.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 import { html_attribute_set } from "./html_attribute_set.mjs";
 import { html_style_width_full } from "./html_style_width_full.mjs";
@@ -45,12 +40,7 @@ export function app_dev_screen_command_line() {
         html_p,
         [
           (e) => {
-            let text = html_inner_get(e);
-            html_clear(e);
-            let url = function_name_to_url_github(text);
-            let a = html_a(e, text, url);
-            app_learn_code_style_code_colored(a);
-            html_style_font_color(a, "darkblue");
+            html_style_function_name(e);
           },
           noop,
         ],
