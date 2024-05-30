@@ -52,11 +52,11 @@ export function js_assign_to_let(ast) {
                   let { name: m_name } = m;
                   la(m_name);
                 });
-                log({
-                  mapped,
-                });
               }),
             );
+            log({
+              names,
+            });
           }
         });
         log(js_unparse(parsed));
