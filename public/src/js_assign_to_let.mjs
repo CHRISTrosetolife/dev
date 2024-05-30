@@ -1,3 +1,5 @@
+import { equal } from "./equal.mjs";
+import { assert } from "./assert.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { js_unparse } from "./js_unparse.mjs";
@@ -44,7 +46,9 @@ export function js_assign_to_let(ast) {
               each(filtered, (f) => {
                 let { declarations } = f;
                 let mapped = list_map_property(declarations, "id");
-                each(mapped, (m) => {});
+                each(mapped, (m) => {
+                  assert(equal, []);
+                });
                 log({
                   mapped,
                 });
