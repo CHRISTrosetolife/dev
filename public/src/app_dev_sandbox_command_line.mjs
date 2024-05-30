@@ -1,3 +1,4 @@
+import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
 import { app_learn_code_style_code_error } from "./app_learn_code_style_code_error.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { function_name_to_file_name } from "./function_name_to_file_name.mjs";
@@ -17,7 +18,6 @@ import { html_inner_set } from "./html_inner_set.mjs";
 import { html_attribute_set } from "./html_attribute_set.mjs";
 import { html_style_width_full } from "./html_style_width_full.mjs";
 import { html_textarea } from "./html_textarea.mjs";
-import { html_p_text } from "./html_p_text.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { app_dev_screen_command_line_prefix } from "./app_dev_screen_command_line_prefix.mjs";
 export async function app_dev_sandbox_command_line(
@@ -27,7 +27,7 @@ export async function app_dev_sandbox_command_line(
 ) {
   let prefix = app_dev_screen_command_line_prefix();
   html_hr(root);
-  html_p_text(
+  html_style_alternate_monospace_short(
     root,
     "here is a sandbox for you to try out " +
       try_out_message +
