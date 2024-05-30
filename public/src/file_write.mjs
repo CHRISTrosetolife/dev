@@ -6,7 +6,7 @@ export async function file_write(file_name, data) {
   await assert_not_message_async(
     file_exists,
     [file_name],
-    string_combine_multiple(["file already exists"]),
+    string_combine_multiple(["file ", file_name, " already exists"]),
   );
   return await file_overwrite(file_name, data);
 }
