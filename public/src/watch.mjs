@@ -28,6 +28,10 @@ export async function watch() {
       let c = object_property_get(cache, path);
       let { contents, processing } = c;
       if (processing) {
+        log({
+          path,
+          processing,
+        });
         return;
       }
       object_property_set(c, "processing", true);
