@@ -22,6 +22,7 @@ export async function app_dev_sandbox_command_line(
   root,
   args,
   try_out_message,
+  result_get,
 ) {
   let prefix = app_dev_screen_command_line_prefix();
   html_hr(root);
