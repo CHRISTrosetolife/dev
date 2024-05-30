@@ -23,6 +23,7 @@ export function app_dev_screen_git_auto() {
       ]);
       let i = 1;
       app_dev_screen_img(app_dev_screen_git_auto, root, i++);
+      ("... and a new function is created");
       app_dev_screen_img(app_dev_screen_git_auto, root, i++);
       app_dev_screen_img(app_dev_screen_git_auto, root, i++);
       ("https://github.com/CHRISTrosetolife/dev/commit/7df7f06b7d48b423cc103c23f4b3573295f694ee");
