@@ -53,6 +53,7 @@ export function js_assign_to_let(ast) {
                 });
               });
             } else if (s_type === "FunctionDeclaration") {
+              let { params } = s;
             }
           });
         });
