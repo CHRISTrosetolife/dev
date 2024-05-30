@@ -1,4 +1,4 @@
-import { js_function_types } from "./js_function_types.mjs";
+import { js_function_types_is } from "./js_function_types_is.mjs";
 import { js_parent_replace } from "./js_parent_replace.mjs";
 import { data_functions } from "./data_functions.mjs";
 import { list_before } from "./list_before.mjs";
@@ -9,7 +9,6 @@ import { js_visit_node } from "./js_visit_node.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { equal } from "./equal.mjs";
-import { list_includes } from "./list_includes.mjs";
 export async function js_await_add(ast) {
   let functions = await data_functions();
   js_visit_node(ast, "CallExpression", (v) => {
@@ -33,8 +32,7 @@ export async function js_await_add(ast) {
               if (equal(type, "BlockStatement")) {
                 let after = list_before(stack, s);
                 let { type: after_type } = after;
-                let function_types = js_function_types();
-                if (list_includes(function_types, after_type)) {
+                if (js_function_types_is(after_type)) {
                   object_property_set(after, "async", true);
                 }
               }
