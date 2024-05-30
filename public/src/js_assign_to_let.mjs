@@ -20,7 +20,7 @@ export function js_assign_to_let(ast) {
         let { right } = expression;
         d.init = parsed;
         object_replace(node, parsed);
-        log(js_unparse(node));
+        log(js_unparse(parsed));
       }
     }
   });
