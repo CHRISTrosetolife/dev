@@ -52,12 +52,11 @@ export function app_dev_screen_command_line() {
           " arg_1 arg_2 etc",
       ]);
       app_dev_screen_img(app_dev_screen_command_line, root, i++);
+      let try_out_message = "running a function from the command-line";
       html_hr(root);
       html_p_text(
         root,
-        "here is a sandbox for you to try out " +
-          "running a function from the command-line" +
-          " :",
+        "here is a sandbox for you to try out " + try_out_message + " :",
       );
       let textarea = html_textarea(root);
       html_style_width_full(textarea);
