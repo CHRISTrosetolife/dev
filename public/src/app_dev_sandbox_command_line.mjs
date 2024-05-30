@@ -29,7 +29,9 @@ export async function app_dev_sandbox_command_line(
   html_hr(root);
   html_p_text(
     root,
-    "here is a sandbox for you to try out " + try_out_message + " :",
+    "here is a sandbox for you to try out " +
+      try_out_message +
+      " from the command-line :",
   );
   let textarea = html_textarea(root);
   html_style_width_full(textarea);
