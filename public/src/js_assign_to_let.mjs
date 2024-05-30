@@ -7,6 +7,7 @@ import { log } from "./log.mjs";
 import { list_single } from "./list_single.mjs";
 import { js_unparse } from "./js_unparse.mjs";
 import { list_after } from "./list_after.mjs";
+import { list_index } from "./list_index.mjs";
 export function js_assign_to_let(ast) {
   let ess = js_node_type_visitor(ast, "ExpressionStatement");
   each(ess, (v) => {
@@ -28,6 +29,7 @@ export function js_assign_to_let(ast) {
           if (s_type === "BlockStatement") {
             let list = list_after(stack, s);
             let item = list_after_or(stack, list, node);
+            let index = list_index(list);
           }
         });
         log({
