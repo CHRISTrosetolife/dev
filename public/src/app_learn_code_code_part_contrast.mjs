@@ -12,4 +12,5 @@ export function app_learn_code_code_part_contrast(parent, code) {
   app_learn_code_style_code_color(component);
   html_style_margin_y(component, "0.5dvh");
   html_style_pre_wrap(component);
+  return component;
 }
