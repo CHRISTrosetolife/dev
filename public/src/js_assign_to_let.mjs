@@ -43,7 +43,9 @@ export function js_assign_to_let(ast) {
               each(filtered, (f) => {
                 let { declarations } = f;
                 let mapped = list_map_property(declarations, "id");
-                log({mapped})
+                log({
+                  mapped,
+                });
                 identifiers_add(mapped);
               });
             } else if (js_function_types_is(s_type)) {
@@ -53,9 +55,13 @@ export function js_assign_to_let(ast) {
             function identifiers_add(list) {
               each(list, (m) => {
                 let { type: m_type } = m;
-                assert(equal, [m_type, "Identifier"]);
-                let { name: m_name } = m;
-                la(m_name);
+                if (equal(m_type, "Identifier")) {
+                  let { name: m_name } = m;
+                  la(m_name);
+                } else if (equal(m_type, "ObjectPattern")) {
+                  let { name: m_name } = m;
+                  la(m_name);
+                }
               });
             }
           });

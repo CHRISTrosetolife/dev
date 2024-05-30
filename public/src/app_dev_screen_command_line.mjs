@@ -85,7 +85,6 @@ export function app_dev_screen_command_line() {
           app_learn_code_style_code_error(result);
           html_inner_set(result, "must begin with : " + string_delimit(prefix));
         }
-        log("a");
         let without = string_prefix_without(text, prefix);
         let parts = string_split_space(without);
         let { first, remaining } = list_first_remaining(parts);function_path=function_name_to_path(first)
