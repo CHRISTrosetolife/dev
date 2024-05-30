@@ -9,5 +9,5 @@ export async function function_transform_return(
 ) {
   let length = list_length(args);
   assert(equal, [length, 2]);
-  await function_transform_args(lambda_names, function_name, "a");
+  return await function_transform_args(lambda_names, function_name, "a");
 }
