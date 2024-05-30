@@ -1,7 +1,7 @@
+import { html_style_alternate_short_p } from "./html_style_alternate_short_p.mjs";
 import { url_repository_commit } from "./url_repository_commit.mjs";
 import { html_style_link } from "./html_style_link.mjs";
 import { noop } from "./noop.mjs";
-import { html_style_alternate_short } from "./html_style_alternate_short.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 import { html_style_alternate_monospace_short_multiple } from "./html_style_alternate_monospace_short_multiple.mjs";
 import { run_git } from "./run_git.mjs";
@@ -30,7 +30,7 @@ export function app_dev_screen_git_auto() {
       app_dev_screen_img(app_dev_screen_git_auto, root, i++);
       html_p_text(root, "... and a new function is created ...");
       app_dev_screen_img(app_dev_screen_git_auto, root, i++);
-      html_style_alternate_short(
+      html_style_alternate_short_p(
         root,
         [
           noop,
