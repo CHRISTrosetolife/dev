@@ -1,3 +1,4 @@
+import { app_learn_code_code_background_set } from "./app_learn_code_code_background_set.mjs";
 import { app_learn_code_style_code_error } from "./app_learn_code_style_code_error.mjs";
 import { app_learn_code_correct_timeout } from "./app_learn_code_correct_timeout.mjs";
 import { html_style_click_width_min } from "./html_style_click_width_min.mjs";
@@ -42,7 +43,6 @@ import { add_1 } from "./add_1.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { list_equal } from "./list_equal.mjs";
 import { list_filter } from "./list_filter.mjs";
-import { html_style_background_color } from "./html_style_background_color.mjs";
 import { app_learn_code_range_retry } from "./app_learn_code_range_retry.mjs";
 import { equal_not } from "./equal_not.mjs";
 import { list_includes } from "./list_includes.mjs";
@@ -142,11 +142,11 @@ export function app_learn_code_unscramble(source_get) {
             visibility: "visible",
           });
           for (let p of parts) {
-            html_style_background_color(p, app_learn_code_code_background());
+            app_learn_code_code_background_set(p);
           }
           app_learn_code_background_color_correct_dark(part);
           app_learn_code_correct_timeout(() =>
-            html_style_background_color(part, app_learn_code_code_background()),
+            app_learn_code_code_background_set(part),
           );
           if (list_includes_not(remaining, current)) {
             html_style(part, {
