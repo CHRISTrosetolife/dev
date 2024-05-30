@@ -55,8 +55,8 @@ export function app_dev_screen_command_line() {
         "here is a sandbox to try out running a function from the command-line :",
       );
       let h = html_textarea(root);
-      html_attribute_set(h, "rows", 2);
       html_style_width_full(h);
+      html_attribute_set(h, "rows", 2);
       html_inner_set(h, prefix);
     },
   };
