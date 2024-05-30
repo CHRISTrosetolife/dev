@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { string_starts_with_not } from "./string_starts_with_not.mjs";
 import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
 import { html_textarea } from "./html_textarea.mjs";
@@ -71,6 +72,9 @@ export function app_dev_screen_command_line() {
       let result = app_learn_code_code_part_contrast(root, "test");
       function run_click() {
         let text = html_inner_get(h);
+        log({
+          text,
+        });
         if (string_starts_with_not(text, prefix)) {
           html_inner_set(result, "must begin with : " + prefix);
         }
