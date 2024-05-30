@@ -17,7 +17,12 @@ export function app_dev_screen_function_new_args() {
     screen: function function_new_args_screen(root) {
       html_style_alternate_short_p(
         root,
-        [html_style_function_name, noop, app_learn_code_style_code_colored],
+        [
+          html_style_function_name,
+          noop,
+          app_learn_code_style_code_colored,
+          noop,
+        ],
         "function_new` adds a new `function` with parameters",
       );
       html_style_alternate_monospace_short_multiple(root, [
