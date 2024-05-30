@@ -1,3 +1,4 @@
+import { list_adder } from "./list_adder.mjs";
 import { js_unparse } from "./js_unparse.mjs";
 import { list_filter_property } from "./list_filter_property.mjs";
 import { list_take } from "./list_take.mjs";
@@ -38,6 +39,7 @@ export function js_assign_to_let(ast) {
               "type",
               "VariableDeclaration",
             );
+            list_adder((la) => {});
             log({
               filtered,
             });
