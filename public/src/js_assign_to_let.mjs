@@ -66,9 +66,6 @@ export function js_assign_to_let(ast) {
           });
         });
         if (list_includes_not(names, name)) {
-          log({
-            names,
-          });
           let parsed = js_code_declare_assign(name);
           let { declarations } = parsed;
           let d = list_single(declarations);
