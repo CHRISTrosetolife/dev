@@ -5,6 +5,7 @@ import { run_git } from "./run_git.mjs";
 import { run } from "./run.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { function_new } from "./function_new.mjs";
+import { html_p_text } from "./html_p_text.mjs";
 export function app_dev_screen_git_auto() {
   return {
     name: function git_auto_name(root) {
@@ -24,7 +25,7 @@ export function app_dev_screen_git_auto() {
       ]);
       let i = 1;
       app_dev_screen_img(app_dev_screen_git_auto, root, i++);
-      ("... and a new function is created ...");
+      html_p_text(root, "... and a new function is created ...");
       app_dev_screen_img(app_dev_screen_git_auto, root, i++);
       ("... and a commit is added to git :");
       app_dev_screen_img(app_dev_screen_git_auto, root, i++);
