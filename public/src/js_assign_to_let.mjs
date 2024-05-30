@@ -39,7 +39,7 @@ export function js_assign_to_let(ast) {
               "type",
               "VariableDeclaration",
             );
-            list_adder((la) => {});
+            list_adder((la) => each(filtered, (f) => {}));
             log({
               filtered,
             });
