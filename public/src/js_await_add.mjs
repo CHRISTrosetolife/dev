@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { js_function_types_is } from "./js_function_types_is.mjs";
 import { js_parent_replace } from "./js_parent_replace.mjs";
 import { data_functions } from "./data_functions.mjs";
@@ -34,6 +35,7 @@ export async function js_await_add(ast) {
                 let { type: after_type } = after;
                 if (js_function_types_is(after_type)) {
                   object_property_set(after, "async", true);
+                  log("here");
                 }
               }
             });
