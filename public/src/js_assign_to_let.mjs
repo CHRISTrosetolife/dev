@@ -9,12 +9,10 @@ export function js_assign_to_let(ast) {
     if (type === "AssignmentExpression") {
       if (left.type === "Identifier") {
         let { name } = left;
+        let parsed = js_code_declare_assign(name);
         log({
-          left,
+          parsed,
         });
-        if (0) {
-          let parsed = js_code_declare_assign();
-        }
       }
     }
   });
