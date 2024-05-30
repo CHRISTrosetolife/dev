@@ -36,6 +36,7 @@ export function app_dev_screen_command_line() {
     name: function command_line_name(root) {
       return html_style_alternate_short_span(
         root,
+        [noop, app_learn_code_style_code_colored],
         "run `function`s from command-line",
       );
     },
