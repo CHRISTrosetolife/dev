@@ -83,7 +83,7 @@ export function app_dev_screen_command_line() {
       let { origin } = window.location;
       let relative = string_prefix_without(this_url, origin);
       log({
-        this_url,
+        relative,
       });
       async function run_click() {
         let text = html_value_get(h);
