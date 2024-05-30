@@ -20,12 +20,6 @@ export function app_dev_screen_git_auto() {
           function_new.name +
           "` :",
       ]);
-      ("suppose we add a body to `greetings_to_the_world");
-      "if `" +
-        run.name +
-        ".mjs` is changed to `" +
-        run_git.name +
-        ".mjs` , then the `function` will be ran and then a git commit will be created :";
     },
   };
 }
