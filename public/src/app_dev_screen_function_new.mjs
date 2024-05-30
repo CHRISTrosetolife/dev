@@ -38,7 +38,7 @@ export function app_dev_screen_function_new() {
       app_dev_screen_img(app_dev_screen_function_new, root, i++);
       let function_name = "greetings";
       try {
-        let imported = await function_import(function_name);
+        await function_import(function_name);
       } catch (e) {}
       let args = [function_new.name, "left", "right"];
       let try_out_message = "creating a new `function`";
