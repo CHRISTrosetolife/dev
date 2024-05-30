@@ -25,7 +25,7 @@ export function js_assign_to_let(ast) {
       let { left } = expression;
       if (left.type === "Identifier") {
         let { name } = left;
-        let names = list_adder((la) =>
+        let names = list_adder((la) => {
           each(stack, (s) => {
             let { type: s_type } = s;
             if (s_type === "BlockStatement") {
@@ -49,15 +49,14 @@ export function js_assign_to_let(ast) {
                 });
               });
             }
-          }),
-        );
+          });
+        });
         if (list_includes_not(names, name)) {
           let parsed = js_code_declare_assign(name);
           let { declarations } = parsed;
           let d = list_single(declarations);
           let { right } = expression;
           d.init = right;
-          let { stack } = v;
           log({
             names,
             name,
