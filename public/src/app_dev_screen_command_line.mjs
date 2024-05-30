@@ -70,7 +70,8 @@ export function app_dev_screen_command_line() {
       html_button_width_full_text_click(root, "💻 run", run_click);
       let result = app_learn_code_code_part_contrast(root, "test");
       function run_click() {
-        log(html_inner_get(h));
+        text=(html_inner_get(h));
+        if (string_starts_with()){}
       }
     },
   };
