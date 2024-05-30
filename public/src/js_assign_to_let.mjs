@@ -52,6 +52,7 @@ export function js_assign_to_let(ast) {
                   la(m_name);
                 });
               });
+            } else if (type === "FunctionDeclaration") {
             }
           });
         });
