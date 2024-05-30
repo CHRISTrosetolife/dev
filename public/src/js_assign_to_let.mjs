@@ -5,6 +5,7 @@ import { js_code_declare_assign } from "./js_code_declare_assign.mjs";
 import { log } from "./log.mjs";
 import { list_single } from "./list_single.mjs";
 import { js_unparse } from "./js_unparse.mjs";
+import { list_after } from "./list_after.mjs";
 export function js_assign_to_let(ast) {
   let ess = js_node_type_visitor(ast, "ExpressionStatement");
   each(ess, (v) => {
@@ -24,6 +25,7 @@ export function js_assign_to_let(ast) {
         each(stack, (s) => {
           let { type: s_type } = s;
           if (s_type === "BlockStatement") {
+            let a = list_after(stack, s);
           }
         });
         log({
