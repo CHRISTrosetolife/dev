@@ -48,6 +48,7 @@ export async function watch() {
       await git_ac_message(list_join_space(list_concat([fn.name], args)));
       log({
         path,
+        p: c.processing,
       });
       await git_push();
     }
