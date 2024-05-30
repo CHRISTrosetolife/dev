@@ -35,11 +35,13 @@ export function app_dev_screen_command_line() {
       );
     },
     screen: async function command_line_screen(root) {
+      let message =
+        "`string_combine` is a function that concatenates two strings";
       html_style_alternate_short(
         root,
         html_p,
         [noop, html_style_function_name],
-        "`string_combine` is a function that concatenates two strings",
+        message,
       );
       let i = 1;
       app_dev_screen_img(app_dev_screen_command_line, root, i++);
