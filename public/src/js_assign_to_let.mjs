@@ -15,12 +15,12 @@ export function js_assign_to_let(ast) {
       if (left.type === "Identifier") {
         let { name } = left;
         let parsed = js_code_declare_assign(name);
+        log(js_unparse(parsed));
         let { declarations } = parsed;
         let d = list_single(declarations);
         let { right } = expression;
         d.init = parsed;
         object_replace(node, parsed);
-        log(js_unparse(parsed));
       }
     }
   });
