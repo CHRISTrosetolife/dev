@@ -1,3 +1,4 @@
+import { app_learn_code_style_code_error } from "./app_learn_code_style_code_error.mjs";
 import { app_learn_code_correct_timeout } from "./app_learn_code_correct_timeout.mjs";
 import { html_style_click_width_min } from "./html_style_click_width_min.mjs";
 import { log } from "./log.mjs";
@@ -129,7 +130,7 @@ export function app_learn_code_unscramble(source_get) {
           });
           let filtered = list_filter(mapped, (m) => null_not_is(m));
           if (list_empty_is(filtered)) {
-            html_style_background_color(part, "darkred");
+            app_learn_code_style_code_error(part);
             return;
           }
           let first = list_first(filtered);
