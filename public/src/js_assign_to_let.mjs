@@ -25,5 +25,7 @@ export function js_assign_to_let(ast) {
       }
     }
   });
-  if (0) a = 1;
+  if (0) {
+    a = 1;
+  }
 }
