@@ -1,3 +1,4 @@
+import { app_dev_screen_function_new_args } from "./app_dev_screen_function_new_args.mjs";
 import { app_dev_screen_function_new } from "./app_dev_screen_function_new.mjs";
 import { app_dev_screen_git_auto } from "./app_dev_screen_git_auto.mjs";
 import { app_dev_screen_command_line } from "./app_dev_screen_command_line.mjs";
@@ -10,6 +11,7 @@ export function app_dev_screens() {
   list_add(result, app_dev_screen_command_line);
   list_add(result, app_dev_screen_function_new);
   if (0) list_add(result, app_dev_screen_git_auto);
+  list_add(result, app_dev_screen_function_new_args);
   marker();
   return result;
 }
