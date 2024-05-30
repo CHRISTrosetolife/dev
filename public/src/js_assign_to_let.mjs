@@ -45,7 +45,7 @@ export function js_assign_to_let(ast) {
                 let { declarations } = f;
                 let mapped = list_map_property(declarations, "id");
                 log({
-                  declarations,
+                  mapped,
                 });
               }),
             );
