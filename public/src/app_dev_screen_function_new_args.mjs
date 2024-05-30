@@ -18,6 +18,7 @@ export function app_dev_screen_function_new_args() {
         "function_new` adds a new `function` with parameters",
       );
       ("suppose we want to add a `function` named `greet_person` with two parameters : `first_name` and `last_name`");
+      ("here is the command :");
     },
   };
 }
