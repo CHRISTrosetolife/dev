@@ -25,7 +25,7 @@ export function app_dev_screen_function_new() {
       app_dev_screen_img(app_dev_screen_function_new, root, i++);
       html_style_alternate_short_function_name(
         root,
-        "when `function_new` is ran :",
+        "when `" + function_new.name + "` is ran :",
       );
       html_style_alternate_monospace_short_multiple(root, [
         "a file is created for the `function`",
