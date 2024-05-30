@@ -1,3 +1,4 @@
+import { list_after_or } from "./list_after_or.mjs";
 import { js_node_type_visitor } from "./js_node_type_visitor.mjs";
 import { each } from "./each.mjs";
 import { object_replace } from "./object_replace.mjs";
@@ -26,7 +27,7 @@ export function js_assign_to_let(ast) {
           let { type: s_type } = s;
           if (s_type === "BlockStatement") {
             let list = list_after(stack, s);
-            let item = list_after(stack, list);
+            let item = list_after_or(stack, list, node);
           }
         });
         log({
