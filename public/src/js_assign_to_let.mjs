@@ -75,8 +75,4 @@ export function js_assign_to_let(ast) {
       }
     }
   });
-  if (0) {
-    let { a, b } = c;
-    let ab = 2;
-  }
 }
