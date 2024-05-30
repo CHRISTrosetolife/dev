@@ -83,8 +83,7 @@ export function app_dev_screen_command_line() {
         let text = html_value_get(h);
         if (string_starts_with_not(text, prefix)) {
           let message = "must begin with : " + string_delimit(prefix);
-          app_learn_code_style_code_error(result);
-          html_inner_set(result, message);
+          run_error(message);
           return;
         }
         let without = string_prefix_without(text, prefix);
@@ -96,6 +95,10 @@ export function app_dev_screen_command_line() {
           imported = await import(function_path);
         } catch (e) {}
         let fn = list_get;
+        function run_error(message) {
+          app_learn_code_style_code_error(result);
+          html_inner_set(result, message);
+        }
       }
     },
   };
