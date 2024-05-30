@@ -28,7 +28,7 @@ export function app_dev_screen_git_auto() {
       ]);
       let i = 1;
       app_dev_screen_img(app_dev_screen_git_auto, root, i++);
-      html_p_text(root, "... and a new function is created ...");
+      html_p_text(root, "... and a new `function` is created ...");
       app_dev_screen_img(app_dev_screen_git_auto, root, i++);
       html_style_alternate_short_p(
         root,
