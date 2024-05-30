@@ -59,7 +59,13 @@ export function app_dev_screen_function_new() {
       }
       let args = [function_new.name, function_name];
       let try_out_message = "creating a new `function`";
-      await app_dev_sandbox_command_line(root, args, try_out_message, async(fn_result,remaining)=>await file_read(function_name_to_file_name(list_single(remaining))));
+      await app_dev_sandbox_command_line(
+        root,
+        args,
+        try_out_message,
+        async (fn_result, remaining) =>
+          await file_read(function_name_to_file_name(list_single(remaining))),
+      );
     },
   };
 }
