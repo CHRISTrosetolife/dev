@@ -45,7 +45,7 @@ export function app_dev_screen_git_auto() {
       );
       app_dev_screen_img(app_dev_screen_git_auto, root, i++);
       html_style_alternate_monospace_short(root, [
-        "this does a `git add` and a `git commit -m ...`",
+        "this does a `git add` and a `git commit -m ...",
         "waiting for `git push` after each command slows development , so `git push` is omitted from `" +
           run_git.name +
           ".mjs`'",
