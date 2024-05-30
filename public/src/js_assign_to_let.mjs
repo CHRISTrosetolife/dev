@@ -1,3 +1,4 @@
+import { js_code_declare_assign } from "./js_code_declare_assign.mjs";
 import { log } from "./log.mjs";
 import { js_visit_node } from "./js_visit_node.mjs";
 export function js_assign_to_let(ast) {
@@ -9,7 +10,10 @@ export function js_assign_to_let(ast) {
       if (left.type === "Identifier") {
         log({
           left,
-        });if (0){let parsed=js_code_declare_assign()}
+        });
+        if (0) {
+          let parsed = js_code_declare_assign();
+        }
       }
     }
   });
