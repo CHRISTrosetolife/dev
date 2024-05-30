@@ -63,8 +63,11 @@ export function app_dev_screen_function_new() {
         root,
         args,
         try_out_message,
-        async (fn_result, remaining) =>
-          await file_read(function_name_to_file_name(list_single(remaining))),
+        async (fn_result, remaining) => {
+          return await file_read(
+            function_name_to_file_name(list_single(remaining)),
+          );
+        },
       );
     },
   };
