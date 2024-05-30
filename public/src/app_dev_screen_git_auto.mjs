@@ -1,3 +1,4 @@
+import { url_repository } from "./url_repository.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 import { html_style_alternate_monospace_short_multiple } from "./html_style_alternate_monospace_short_multiple.mjs";
 import { run_git } from "./run_git.mjs";
@@ -30,7 +31,7 @@ export function app_dev_screen_git_auto() {
       "syncing with github on the internet takes time , so that is omitted from `" +
         run_git.name +
         ".mjs`'";
-      ("https://github.com/CHRISTrosetolife/dev/commit/7df7f06b7d48b423cc103c23f4b3573295f694ee");
+      url_repository() + "commit/7df7f06b7d48b423cc103c23f4b3573295f694ee";
     },
   };
 }
