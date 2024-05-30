@@ -71,7 +71,7 @@ export function app_dev_screen_command_line() {
       let result = app_learn_code_code_part_contrast(root, "test");
       function run_click() {
         let text = html_inner_get(h);
-        if (string_starts_with()) {
+        if (!string_starts_with(text, prefix)) {
         }
       }
     },
