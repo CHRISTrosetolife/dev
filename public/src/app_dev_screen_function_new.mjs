@@ -65,6 +65,9 @@ export function app_dev_screen_function_new() {
         async (fn_result, remaining) => {
           let function_name_choice = list_single(remaining);
           let result = await function_code(function_name_choice);
+          log({
+            result,
+          });
           return result;
         },
       );
