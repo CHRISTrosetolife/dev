@@ -1,3 +1,4 @@
+import { list_take } from "./list_take.mjs";
 import { list_after_or } from "./list_after_or.mjs";
 import { js_node_type_visitor } from "./js_node_type_visitor.mjs";
 import { each } from "./each.mjs";
@@ -30,6 +31,7 @@ export function js_assign_to_let(ast) {
             let list = list_after(stack, s);
             let item = list_after_or(stack, list, node);
             let index = list_index(list);
+            let taken = list_take(list, index);
           }
         });
         log({
