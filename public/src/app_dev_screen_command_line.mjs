@@ -38,12 +38,7 @@ export function app_dev_screen_command_line() {
       html_style_alternate_short(
         root,
         html_p,
-        [
-          (e) => {
-            html_style_function_name(e);
-          },
-          noop,
-        ],
+        [html_style_function_name, noop],
         "string_combine` is a function that concatenates two strings",
       );
       let i = 1;
