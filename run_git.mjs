@@ -1,3 +1,4 @@
 import { run_git } from "./public/src/run_git.mjs";
+import { log } from "./public/src/log.mjs";
 let result = await run_git();
-console.log(result);
+log(result);
