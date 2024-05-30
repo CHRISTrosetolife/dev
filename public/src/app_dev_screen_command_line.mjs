@@ -104,7 +104,14 @@ export function app_dev_screen_command_line() {
         try {
           imported = await import(file_name);
         } catch (e) {
-          run_error(e);
+          run_error(
+            string_combine_multiple([
+              "failed to import ",
+              function_name,
+              " : ",
+              e,
+            ]),
+          );
           return;
         }
         let fn = object_property_get(imported, function_name);
