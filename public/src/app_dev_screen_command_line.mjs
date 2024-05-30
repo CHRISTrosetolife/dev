@@ -1,7 +1,6 @@
 import { app_learn_code_code_background_set } from "./app_learn_code_code_background_set.mjs";
 import { folder_current_prefix_combine } from "./folder_current_prefix_combine.mjs";
 import { function_name_to_file_name } from "./function_name_to_file_name.mjs";
-import { log } from "./log.mjs";
 import { list_first_remaining } from "./list_first_remaining.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { app_learn_code_style_code_error } from "./app_learn_code_style_code_error.mjs";
@@ -81,13 +80,7 @@ export function app_dev_screen_command_line() {
         string_combine_multiple([prefix, string_combine.name, " left right"]),
       );
       html_button_width_full_text_click(root, "💻 run", run_click);
-      let result_component = app_learn_code_code_part_contrast(root, "test");
-      let this_url = import.meta.url;
-      let { origin } = window.location;
-      let relative = string_prefix_without(this_url, origin);
-      log({
-        relative,
-      });
+      let result_component = app_learn_code_code_part_contrast(root, "");
       async function run_click() {
         let text = html_value_get(textarea);
         if (string_starts_with_not(text, prefix)) {
