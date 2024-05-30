@@ -40,14 +40,14 @@ export function app_dev_screen_function_new() {
       app_dev_screen_img(app_dev_screen_function_new, root, i++);
       let function_name_base = "greetings";
       let function_name = function_name_base;
-      let j = 2;
+      let j = 1;
       while (true) {
         try {
           await function_import(function_name);
           break;
         } catch (e) {
-          function_name = string_combine(function_name_base, j);
           j = add_1(j);
+          function_name = string_combine(function_name_base, j);
         }
       }
       let args = [function_new.name, "left", "right"];
