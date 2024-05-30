@@ -31,6 +31,7 @@ export function app_dev_screen_function_new_args() {
         root,
         "the parameters should be separated by commas with no spaces",
       );
+      ("here is the result :");
     },
   };
 }
