@@ -22,6 +22,7 @@ export function js_assign_to_let(ast) {
         d.init = right;
         let { stack } = v;
         each(stack, (s) => {
+          let { type } = s;
           if (0) {
           }
         });
