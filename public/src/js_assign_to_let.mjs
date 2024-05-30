@@ -7,10 +7,10 @@ export function js_assign_to_let(ast) {
     let { type, left } = expression;
     if (type === "AssignmentExpression") {
       if (left.type === "Identifier") {
+        log({
+          left,
+        });if (0){let parsed=js_code_declare_assign()}
       }
-      log({
-        left,
-      });
     }
   });
   if (0) a = 1;
