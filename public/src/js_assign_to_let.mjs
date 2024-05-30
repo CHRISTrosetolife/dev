@@ -1,3 +1,4 @@
+import { add_1 } from "./add_1.mjs";
 import { js_function_types_is } from "./js_function_types_is.mjs";
 import { list_includes_not } from "./list_includes_not.mjs";
 import { equal } from "./equal.mjs";
@@ -37,7 +38,7 @@ export function js_assign_to_let(ast) {
                 item,
               });
               let index = list_index(list, item);
-              let taken = list_take(list, index);
+              let taken = list_take(list, add_1(index));
               let filtered = list_filter_property(
                 taken,
                 "type",
