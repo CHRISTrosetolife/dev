@@ -1,3 +1,4 @@
+import { list_join_empty } from "./list_join_empty.mjs";
 import { folder_current_prefix_combine } from "./folder_current_prefix_combine.mjs";
 import { path_join } from "./path_join.mjs";
 import { folder_current } from "./folder_current.mjs";
@@ -6,7 +7,7 @@ export async function function_import(function_name) {
   let extension = function_extension();
   let extension_marker = ".";
   let folder_current = ".";
-  if(0)list_join_empty
+  if (0) list_join_empty;
   let first_with_extension = [function_name, extension_marker, extension].join(
     "",
   );
