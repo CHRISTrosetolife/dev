@@ -56,7 +56,8 @@ export function app_dev_screen_command_line() {
       html_p_text(
         root,
         "here is a sandbox for you to try out " +
-          "running a function from the command-line :",
+          "running a function from the command-line" +
+          " :",
       );
       let textarea = html_textarea(root);
       html_style_width_full(textarea);
