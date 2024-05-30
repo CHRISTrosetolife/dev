@@ -1,3 +1,4 @@
+import { js_function_types_is } from "./js_function_types_is.mjs";
 import { list_includes_not } from "./list_includes_not.mjs";
 import { equal } from "./equal.mjs";
 import { assert } from "./assert.mjs";
@@ -52,7 +53,7 @@ export function js_assign_to_let(ast) {
                   la(m_name);
                 });
               });
-            } else if (s_type === "FunctionDeclaration") {
+            } else if (js_function_types_is(s_type)) {
               let { params } = s;
             }
           });
