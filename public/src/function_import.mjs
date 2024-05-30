@@ -6,6 +6,7 @@ export async function function_import(function_name) {
   let extension = function_extension();
   let extension_marker = ".";
   let folder_current = ".";
+  if(0)list_join_empty
   let first_with_extension = [function_name, extension_marker, extension].join(
     "",
   );
