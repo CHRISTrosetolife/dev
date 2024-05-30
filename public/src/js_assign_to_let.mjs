@@ -21,6 +21,7 @@ export function js_assign_to_let(ast) {
         let { right } = expression;
         d.init = right;
         let { stack } = v;
+        each(stack, (s) => {});
         log({
           stack,
         });
