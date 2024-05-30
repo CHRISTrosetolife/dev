@@ -14,7 +14,7 @@ export function js_assign_to_let(ast) {
         let { declarations } = parsed;
         let d = list_single(parsed);
         log({
-          parsed,
+          d,
         });
       }
     }
