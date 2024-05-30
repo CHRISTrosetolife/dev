@@ -48,7 +48,7 @@ export function app_dev_screen_git_auto() {
         "this does a `git add` and a `git commit -m ...",
         "waiting for `git push` after each command slows development , so `git push` is omitted from `" +
           run_git.name +
-          ".mjs`'",
+          ".mjs",
       ]);
     },
   };
