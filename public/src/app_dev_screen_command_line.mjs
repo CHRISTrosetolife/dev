@@ -28,6 +28,7 @@ import { html_button_width_full_text_click } from "./html_button_width_full_text
 import { html_hr } from "./html_hr.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 import { string_delimit } from "./string_delimit.mjs";
+import { function_name_to_path } from "./function_name_to_path.mjs";
 export function app_dev_screen_command_line() {
   return {
     name: function command_line_name(root) {
@@ -78,7 +79,7 @@ export function app_dev_screen_command_line() {
       );
       html_button_width_full_text_click(root, "💻 run", run_click);
       let result = app_learn_code_code_part_contrast(root, "test");
-      function run_click() {
+      async function run_click() {
         let text = html_value_get(h);
         if (string_starts_with_not(text, prefix)) {
           app_learn_code_style_code_error(result);
@@ -87,7 +88,7 @@ export function app_dev_screen_command_line() {
         log("a");
         let without = string_prefix_without(text, prefix);
         let parts = string_split_space(without);
-        let { first, remaining } = list_first_remaining(parts);
+        let { first, remaining } = list_first_remaining(parts);function_path=function_name_to_path(first)
       }
     },
   };
