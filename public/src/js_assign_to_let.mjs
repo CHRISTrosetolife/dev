@@ -5,7 +5,6 @@ import { equal } from "./equal.mjs";
 import { assert } from "./assert.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { list_adder } from "./list_adder.mjs";
-import { js_unparse } from "./js_unparse.mjs";
 import { list_filter_property } from "./list_filter_property.mjs";
 import { list_take } from "./list_take.mjs";
 import { list_after_or } from "./list_after_or.mjs";
@@ -13,7 +12,6 @@ import { js_node_type_visitor } from "./js_node_type_visitor.mjs";
 import { each } from "./each.mjs";
 import { object_replace } from "./object_replace.mjs";
 import { js_code_declare_assign } from "./js_code_declare_assign.mjs";
-import { log } from "./log.mjs";
 import { list_single } from "./list_single.mjs";
 import { list_after } from "./list_after.mjs";
 import { list_index } from "./list_index.mjs";
@@ -34,9 +32,6 @@ export function js_assign_to_let(ast) {
             if (s_type === "BlockStatement") {
               let list = list_after(stack, s);
               let item = list_after_or(stack, list, node);
-              log({
-                item,
-              });
               let index = list_index(list, item);
               let taken = list_take(list, add_1(index));
               let filtered = list_filter_property(
@@ -69,7 +64,6 @@ export function js_assign_to_let(ast) {
           let d = list_single(declarations);
           let { right } = expression;
           d.init = right;
-          log(js_unparse(parsed));
           if (0) object_replace(node, parsed);
         }
       }
