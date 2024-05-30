@@ -34,7 +34,7 @@ export function app_dev_screen_command_line() {
       ]);
       app_dev_screen_img(app_dev_screen_command_line, root, i++);
       let args = [string_combine.name, "left", "right"];
-      let try_out_message = "running a function from the command-line";
+      let try_out_message = "running a function";
       await app_dev_sandbox_command_line(root, args, try_out_message);
     },
   };
