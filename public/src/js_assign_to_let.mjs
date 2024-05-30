@@ -4,6 +4,7 @@ import { object_replace } from "./object_replace.mjs";
 import { js_code_declare_assign } from "./js_code_declare_assign.mjs";
 import { log } from "./log.mjs";
 import { list_single } from "./list_single.mjs";
+import { js_unparse } from "./js_unparse.mjs";
 export function js_assign_to_let(ast) {
   let ess = js_node_type(ast, "ExpressionStatement");
   each(ess, (node) => {
@@ -19,10 +20,7 @@ export function js_assign_to_let(ast) {
         let { right } = expression;
         d.init = parsed;
         object_replace(node, parsed);
-        log({
-          right,
-          d,
-        });
+        log(js_unparse(node));
       }
     }
   });
