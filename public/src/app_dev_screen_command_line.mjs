@@ -34,7 +34,9 @@ export function app_dev_screen_command_line() {
     screen: async function command_line_screen(root) {
       html_style_alternate_short_function_name(
         root,
-        "`string_combine` is a function that concatenates two strings",
+        "`" +
+          string_combine.name +
+          "` is a function that concatenates two strings",
       );
       let i = 1;
       app_dev_screen_img(app_dev_screen_command_line, root, i++);
