@@ -18,7 +18,6 @@ export async function function_import(function_name) {
   ]);
   let function_path = folder_current_prefix_combine(function_path_second);
   let imported = await import(function_path);
-  let imported_function = imported[function_name];
-  if (0) object_property_get(imported, function_name);
+  let imported_function = object_property_get(imported, function_name);
   return imported_function;
 }
