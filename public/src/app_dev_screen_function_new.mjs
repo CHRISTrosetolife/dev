@@ -5,9 +5,9 @@ export function app_dev_screen_function_new() {
       return html_span_text(root, "`function` that adds a new `function`");
     },
     screen: function function_new_screen(root) {
-      "function_new adds a new function";
-      "a file is created for the function";
-      "the function is exported";
+      "`function_new` adds a new `function`";
+      "a file is created for the `function`";
+      "the `function` is `export`ed";
     },
   };
 }
