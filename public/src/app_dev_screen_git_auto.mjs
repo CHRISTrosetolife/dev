@@ -32,7 +32,7 @@ export function app_dev_screen_git_auto() {
       html_style_alternate_short(
         root,
         [noop],
-        "... and a commit is added to git :",
+        "... and a `commit` is added to git :",
       );
       app_dev_screen_img(app_dev_screen_git_auto, root, i++);
       "syncing with github on the internet takes time , so that is omitted from `" +
