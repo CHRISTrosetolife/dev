@@ -1,3 +1,4 @@
+import { html_style_link } from "./html_style_link.mjs";
 import { noop } from "./noop.mjs";
 import { html_style_alternate_short } from "./html_style_alternate_short.mjs";
 import { url_repository } from "./url_repository.mjs";
@@ -31,7 +32,7 @@ export function app_dev_screen_git_auto() {
       app_dev_screen_img(app_dev_screen_git_auto, root, i++);
       html_style_alternate_short(
         root,
-        [noop],
+        [noop, html_style_link()],
         "... and a `commit` is added to git :",
       );
       app_dev_screen_img(app_dev_screen_git_auto, root, i++);
