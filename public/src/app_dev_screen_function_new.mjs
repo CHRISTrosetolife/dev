@@ -9,11 +9,11 @@ export function app_dev_screen_function_new() {
       "`function_new` adds a new `function`";
       let i = 1;
       app_dev_screen_img(app_dev_screen_function_new, root, i++);
-      app_dev_screen_img(app_dev_screen_function_new, root, i++);
       ("a file is created for the `function`");
       ("the name of the file is the name of the function");
       ("the `function` is `export`ed");
       ("then the newly-created function is opened in visual studio code");
+      app_dev_screen_img(app_dev_screen_function_new, root, i++);
     },
   };
 }
