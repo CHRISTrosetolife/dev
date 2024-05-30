@@ -60,6 +60,8 @@ export function js_assign_to_let(ast) {
                   la(m_name);
                 } else if (equal(m_type, "ObjectPattern")) {
                   let { properties } = m;
+                  return;
+                  let keys = list_map_property(properties, "key");
                   log({
                     properties,
                   });
