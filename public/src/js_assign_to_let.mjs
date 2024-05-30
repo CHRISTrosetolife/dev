@@ -30,7 +30,7 @@ export function js_assign_to_let(ast) {
           if (s_type === "BlockStatement") {
             let list = list_after(stack, s);
             let item = list_after_or(stack, list, node);
-            let index = list_index(list);
+            let index = list_index(list, item);
             let taken = list_take(list, index);
           }
         });
