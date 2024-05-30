@@ -23,6 +23,7 @@ export async function watch() {
   }
   async function on_watch(event, path) {
     if (event === "change") {
+      let original = path;
       path = string_replace(path, "\\", "/");
       path = string_combine("./", path);
       object_property_initialize(cache, path, {});
