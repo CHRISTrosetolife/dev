@@ -27,7 +27,7 @@ export async function watch() {
       path = string_replace(path, "\\", "/");
       path = string_combine("./", path);
       object_property_initialize(cache, path, {});
-      watcher.unwatch(path);
+      watcher.unwatch(original);
       let c = object_property_get(cache, path);
       let { contents, processing } = c;
       if (processing) {
@@ -46,7 +46,7 @@ export async function watch() {
       let fn = function_auto_return;
       let args = [function_name];
       let after = await fn(...args);
-      watcher.add(path);
+      watcher.add(original);
       await git_ac_message(list_join_space(list_concat([fn.name], args)));
       object_property_set(c, "contents", after);
       object_property_set(c, "processing", false);
