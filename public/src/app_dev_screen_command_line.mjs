@@ -25,6 +25,7 @@ import { string_combine } from "./string_combine.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
+import { string_delimit } from "./string_delimit.mjs";
 export function app_dev_screen_command_line() {
   return {
     name: function command_line_name(root) {
@@ -82,7 +83,7 @@ export function app_dev_screen_command_line() {
         });
         if (string_starts_with_not(text, prefix)) {
           app_learn_code_style_code_error(result);
-          html_inner_set(result, "must begin with : " + prefix);
+          html_inner_set(result, "must begin with : " + string_delimit(prefix));
         }
         let without = string_prefix_without(text, prefix);
       }
