@@ -1,4 +1,3 @@
-import { add } from "./add.mjs";
 import { git_push } from "./git_push.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { git_ac_message } from "./git_ac_message.mjs";
@@ -27,7 +26,6 @@ export async function watch() {
       path = string_replace(path, "\\", "/");
       path = string_combine("./", path);
       object_property_initialize(cache, path, {});
-      watcher.unwatch(original);
       let c = object_property_get(cache, path);
       let { contents, processing } = c;
       if (processing) {
@@ -46,7 +44,6 @@ export async function watch() {
       let fn = function_auto_return;
       let args = [function_name];
       let after = await fn(...args);
-      watcher.add(original);
       await git_ac_message(list_join_space(list_concat([fn.name], args)));
       object_property_set(c, "contents", after);
       object_property_set(c, "processing", false);
