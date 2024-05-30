@@ -43,7 +43,7 @@ export function js_assign_to_let(ast) {
               each(filtered, (f) => {
                 let { declarations } = f;
                 log({
-                  filtered,
+                  declarations,
                 });
               }),
             );
