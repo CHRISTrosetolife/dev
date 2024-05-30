@@ -11,7 +11,7 @@ export function app_dev_screen_function_new() {
     name: function function_new_name(root) {
       return html_style_alternate_monospace_short_span(
         root,
-        "`function` that adds a new `function`",
+        "add new `function`",
       );
     },
     screen: function function_new_screen(root) {
