@@ -1,3 +1,4 @@
+import { object_replace } from "./object_replace.mjs";
 import { js_code_declare_assign } from "./js_code_declare_assign.mjs";
 import { log } from "./log.mjs";
 import { js_visit_node } from "./js_visit_node.mjs";
@@ -16,6 +17,7 @@ export function js_assign_to_let(ast) {
         let d = list_single(declarations);
         let { right } = expression;
         d.init = right;
+        object_replace;
         log({
           right,
           d,
