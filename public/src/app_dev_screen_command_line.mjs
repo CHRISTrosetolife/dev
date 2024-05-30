@@ -1,3 +1,4 @@
+import { html_value_get } from "./html_value_get.mjs";
 import { log } from "./log.mjs";
 import { string_starts_with_not } from "./string_starts_with_not.mjs";
 import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
@@ -71,7 +72,7 @@ export function app_dev_screen_command_line() {
       html_button_width_full_text_click(root, "💻 run", run_click);
       let result = app_learn_code_code_part_contrast(root, "test");
       function run_click() {
-        let text = html_attribute_get(h, "value");
+        let text = html_value_get(h);
         log({
           text,
         });
