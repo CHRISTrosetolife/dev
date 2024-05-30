@@ -90,7 +90,8 @@ export function app_dev_screen_command_line() {
         let parts = string_split_space(without);
         let { first, remaining } = list_first_remaining(parts);
         let function_path = function_name_to_path(first);
-        let imported = await import(function_path);
+        let imported;
+        imported = await import(function_path);
         let fn = list_get;
       }
     },
