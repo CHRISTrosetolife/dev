@@ -83,7 +83,8 @@ export function app_dev_screen_command_line() {
         let text = html_value_get(h);
         if (string_starts_with_not(text, prefix)) {
           app_learn_code_style_code_error(result);
-          html_inner_set(result, "must begin with : " + string_delimit(prefix));
+          let message = "must begin with : " + string_delimit(prefix);
+          html_inner_set(result, message);
           return;
         }
         let without = string_prefix_without(text, prefix);
@@ -91,7 +92,9 @@ export function app_dev_screen_command_line() {
         let { first, remaining } = list_first_remaining(parts);
         let function_path = function_name_to_path(first);
         let imported;
-        imported = await import(function_path);
+        try {
+          imported = await import(function_path);
+        } catch (e) {}
         let fn = list_get;
       }
     },
