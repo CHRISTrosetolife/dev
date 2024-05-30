@@ -1,3 +1,4 @@
+import { function_name_to_file_name } from "./function_name_to_file_name.mjs";
 import { log } from "./log.mjs";
 import { list_first_remaining } from "./list_first_remaining.mjs";
 import { string_split_space } from "./string_split_space.mjs";
@@ -28,7 +29,6 @@ import { html_button_width_full_text_click } from "./html_button_width_full_text
 import { html_hr } from "./html_hr.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 import { string_delimit } from "./string_delimit.mjs";
-import { function_name_to_path } from "./function_name_to_path.mjs";
 export function app_dev_screen_command_line() {
   return {
     name: function command_line_name(root) {
@@ -95,7 +95,7 @@ export function app_dev_screen_command_line() {
         let without = string_prefix_without(text, prefix);
         let parts = string_split_space(without);
         let { first, remaining } = list_first_remaining(parts);
-        let function_path = function_name_to_path(first);
+        let function_path = function_name_to_file_name(first);
         let imported;
         try {
           imported = await import(function_path);
