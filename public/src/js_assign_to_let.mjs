@@ -19,7 +19,7 @@ export function js_assign_to_let(ast) {
         let d = list_single(declarations);
         let { right } = expression;
         d.init = right;
-        log(js_unparse(parsed));
+        log(js_unparse(parsed));if(0)
         object_replace(node, parsed);
       }
     }
