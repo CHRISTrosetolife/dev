@@ -10,7 +10,7 @@ export function app_dev_screen_overview() {
         "one goal was that a recent college or bootcamp graduate could get started quickly",
         "rather than experts-only , be beginner-friendly",
         "with a larger candidate pool , an employer can find developers easier",
-        "therefore the code should favor simplicty",
+        "therefore the code should favor simplicity",
         "to keep the programming simple , `function`s are the basic building block , rather than classes or object-oriented programming",
       ]);
     },
