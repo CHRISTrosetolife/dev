@@ -43,9 +43,6 @@ export function js_assign_to_let(ast) {
               each(filtered, (f) => {
                 let { declarations } = f;
                 let mapped = list_map_property(declarations, "id");
-                log({
-                  mapped,
-                });
                 identifiers_add(mapped);
               });
             } else if (js_function_types_is(s_type)) {
