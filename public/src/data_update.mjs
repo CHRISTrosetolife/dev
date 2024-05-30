@@ -5,6 +5,7 @@ import { data_path } from "./data_path.mjs";
 import { file_json_transform_exists } from "./file_json_transform_exists.mjs";
 import { each_async } from "./each_async.mjs";
 export async function data_update() {
+    file_delete_if_exists(data_path())
   let fps = await function_paths();
   await file_json_transform_exists(data_path(), async (data) => {
     await each_async(fps, async (fp) => {
