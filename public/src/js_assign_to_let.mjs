@@ -25,8 +25,8 @@ export function js_assign_to_let(ast) {
         each(stack, (s) => {
           let { type: s_type } = s;
           if (s_type === "BlockStatement") {
-            let a = list_after(stack, s);
-            let a_2 = list_after(stack, a);
+            let list = list_after(stack, s);
+            let a_2 = list_after(stack, list);
           }
         });
         log({
