@@ -64,8 +64,9 @@ export function app_dev_screen_function_new() {
         args,
         try_out_message,
         async (fn_result, remaining) => {
+          let function_name_choice = list_single(remaining);
           return await file_read(
-            function_name_to_file_name(list_single(remaining)),
+            function_name_to_file_name(function_name_choice),
           );
         },
       );
