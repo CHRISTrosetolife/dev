@@ -1,3 +1,4 @@
+import { list_get } from "./list_get.mjs";
 import { list_first_remaining } from "./list_first_remaining.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { app_learn_code_style_code_error } from "./app_learn_code_style_code_error.mjs";
@@ -83,12 +84,14 @@ export function app_dev_screen_command_line() {
         if (string_starts_with_not(text, prefix)) {
           app_learn_code_style_code_error(result);
           html_inner_set(result, "must begin with : " + string_delimit(prefix));
+          return;
         }
         let without = string_prefix_without(text, prefix);
         let parts = string_split_space(without);
         let { first, remaining } = list_first_remaining(parts);
         let function_path = function_name_to_path(first);
         let imported = await import(function_path);
+        let fn = list_get;
       }
     },
   };
