@@ -38,7 +38,7 @@ export function js_assign_to_let(ast) {
             let filtered = list_filter_property(
               taken,
               "type",
-              "VariableDeclarator",
+              "VariableDeclaration",
             );
             log({
               filtered,
