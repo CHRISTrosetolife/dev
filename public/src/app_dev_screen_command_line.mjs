@@ -1,4 +1,4 @@
-import { string_starts_with } from "./string_starts_with.mjs";
+import { string_starts_with_not } from "./string_starts_with_not.mjs";
 import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
 import { html_textarea } from "./html_textarea.mjs";
 import { app_learn_code_style_code_colored } from "./app_learn_code_style_code_colored.mjs";
@@ -71,7 +71,7 @@ export function app_dev_screen_command_line() {
       let result = app_learn_code_code_part_contrast(root, "test");
       function run_click() {
         let text = html_inner_get(h);
-        if (!string_starts_with(text, prefix)) {
+        if (string_starts_with_not(text, prefix)) {
         }
       }
     },
