@@ -9,6 +9,7 @@ import { html_style_function_name } from "./html_style_function_name.mjs";
 import { noop } from "./noop.mjs";
 import { html_style_alternate_short_p } from "./html_style_alternate_short_p.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
+import { add_1 } from "./add_1.mjs";
 export function app_dev_screen_function_new() {
   return {
     name: function function_new_name(root) {
@@ -40,7 +41,9 @@ export function app_dev_screen_function_new() {
       let j = 1;
       try {
         await function_import(function_name);
-      } catch (e) {}
+      } catch (e) {
+        j = add_1(j);
+      }
       let args = [function_new.name, "left", "right"];
       let try_out_message = "creating a new `function`";
       await app_dev_sandbox_command_line(root, args, try_out_message);
