@@ -19,7 +19,8 @@ export function app_dev_screen_git_auto() {
           ".mjs` and run `" +
           function_new.name +
           "` :",
-      ])("suppose we add a body to `greetings_to_the_world");
+      ]);
+      ("suppose we add a body to `greetings_to_the_world");
       "if `" +
         run.name +
         ".mjs` is changed to `" +
