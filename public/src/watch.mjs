@@ -36,9 +36,8 @@ export async function watch() {
       }
       let function_name = function_path_to_name(path);
       let fn = function_auto_return;
-      await fn(function_name);
+      let after = await fn(function_name);
       await git_ac_message(list_join_space([fn.name, function_name]));
-      let after = await file_read(path);
       object_property_set(c, "contents", after);
       object_property_set(c, "processing", false);
       log({
