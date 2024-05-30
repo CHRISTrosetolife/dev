@@ -1,8 +1,7 @@
+import { function_import } from "./function_import.mjs";
 import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
 import { app_learn_code_style_code_error } from "./app_learn_code_style_code_error.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { function_name_to_file_name } from "./function_name_to_file_name.mjs";
-import { folder_current_prefix_combine } from "./folder_current_prefix_combine.mjs";
 import { list_first_remaining } from "./list_first_remaining.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
@@ -57,10 +56,7 @@ export async function app_dev_sandbox_command_line(
     let { first: function_name, remaining } = list_first_remaining(parts);
     let imported;
     try {
-      let file_name = folder_current_prefix_combine(
-        function_name_to_file_name(function_name),
-      );
-      imported = await import(file_name);
+      imported = await function_import(function_name);
     } catch (e) {
       run_error(
         string_combine_multiple([
