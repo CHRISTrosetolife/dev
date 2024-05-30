@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
 import { html_textarea } from "./html_textarea.mjs";
 import { app_learn_code_style_code_colored } from "./app_learn_code_style_code_colored.mjs";
@@ -68,7 +69,9 @@ export function app_dev_screen_command_line() {
       );
       html_button_width_full_text_click(root, "💻 run", run_click);
       let result = app_learn_code_code_part_contrast(root, "test");
-      function run_click() {}
+      function run_click() {
+        log(html_inner_get(h));
+      }
     },
   };
 }
