@@ -36,7 +36,7 @@ export function app_dev_screen_command_line() {
     name: function command_line_name(root) {
       return html_style_alternate_monospace_short(
         root,
-        "run functions from command-line",
+        "run `function`s from command-line",
       );
     },
     screen: async function command_line_screen(root) {
