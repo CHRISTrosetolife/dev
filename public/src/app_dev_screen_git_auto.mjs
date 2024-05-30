@@ -20,6 +20,7 @@ export function app_dev_screen_git_auto() {
           function_new.name +
           "` :",
       ]);
+      ("https://github.com/CHRISTrosetolife/dev/commit/7df7f06b7d48b423cc103c23f4b3573295f694ee");
     },
   };
 }
