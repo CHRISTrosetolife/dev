@@ -69,7 +69,7 @@ export async function app_dev_sandbox_command_line(
       return;
     }
     let fn_result = await fn(...remaining);
-    result_get(fn_result);
+    result_get(fn_result, remaining);
     html_inner_set(result_component, fn_result);
     function run_error(message) {
       app_learn_code_style_code_error(result_component);
