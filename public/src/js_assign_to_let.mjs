@@ -1,3 +1,4 @@
+import { list_map_property } from "./list_map_property.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { js_unparse } from "./js_unparse.mjs";
 import { list_filter_property } from "./list_filter_property.mjs";
@@ -42,6 +43,7 @@ export function js_assign_to_let(ast) {
             list_adder((la) =>
               each(filtered, (f) => {
                 let { declarations } = f;
+                let mapped = list_map_property(declarations, "id");
                 log({
                   declarations,
                 });
