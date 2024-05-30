@@ -1,3 +1,4 @@
+import { list_filter_property } from "./list_filter_property.mjs";
 import { list_take } from "./list_take.mjs";
 import { list_after_or } from "./list_after_or.mjs";
 import { js_node_type_visitor } from "./js_node_type_visitor.mjs";
@@ -32,6 +33,7 @@ export function js_assign_to_let(ast) {
             let item = list_after_or(stack, list, node);
             let index = list_index(list, item);
             let taken = list_take(list, index);
+            list_filter_property(taken, "type", "VariableDeclarator");
           }
         });
         log({
