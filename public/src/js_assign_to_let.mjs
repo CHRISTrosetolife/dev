@@ -8,6 +8,7 @@ export function js_assign_to_let(ast) {
     let { type, left } = expression;
     if (type === "AssignmentExpression") {
       if (left.type === "Identifier") {
+        let { name } = left;
         log({
           left,
         });
