@@ -43,9 +43,9 @@ export async function watch() {
       let fn = function_auto_return;
       let args = [function_name];
       let after = await fn(...args);
-      await git_ac_message(list_join_space(list_concat([fn.name], args)));
       object_property_set(c, "contents", after);
       object_property_set(c, "processing", false);
+      await git_ac_message(list_join_space(list_concat([fn.name], args)));
       log({
         path,
       });
