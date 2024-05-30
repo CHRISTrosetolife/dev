@@ -1,3 +1,4 @@
+import { run } from "./run.mjs";
 import { html_style_alternate_short_function_name } from "./html_style_alternate_short_function_name.mjs";
 import { html_style_alternate_monospace_short_span } from "./html_style_alternate_monospace_short_span.mjs";
 import { app_learn_code_code_background_set } from "./app_learn_code_code_background_set.mjs";
@@ -40,7 +41,7 @@ export function app_dev_screen_command_line() {
       );
       let i = 1;
       app_dev_screen_img(app_dev_screen_command_line, root, i++);
-      let prefix = "> node run.mjs ";
+      let prefix = "> node " + run.name + ".mjs ";
       html_style_alternate_monospace_short_multiple(root, [
         "all `export`ed `function`s in the code can be ran from the command-line",
         "this speeds up development",
