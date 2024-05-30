@@ -6,6 +6,8 @@ export function app_dev_screen_function_new() {
     },
     screen: function function_new_screen(root) {
       "function_new adds a new function";
+      "a file is created for the function";
+      "the function is exported";
     },
   };
 }
