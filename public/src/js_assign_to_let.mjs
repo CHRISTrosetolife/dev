@@ -1,9 +1,11 @@
+import { js_node_types } from "./js_node_types.mjs";
 import { object_replace } from "./object_replace.mjs";
 import { js_code_declare_assign } from "./js_code_declare_assign.mjs";
 import { log } from "./log.mjs";
 import { js_visit_node } from "./js_visit_node.mjs";
 import { list_single } from "./list_single.mjs";
 export function js_assign_to_let(ast) {
+  js_node_types;
   js_visit_node(ast, "ExpressionStatement", (v) => {
     let { node } = v;
     let { expression } = node;
