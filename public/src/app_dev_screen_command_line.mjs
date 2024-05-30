@@ -64,7 +64,10 @@ export function app_dev_screen_command_line() {
       html_attribute_set(textarea, "spellcheck", "false");
       html_inner_set(
         textarea,
-        string_combine_multiple([prefix, string_combine.name, " left right"]),
+        string_combine_multiple([
+          prefix,
+          list_join_spaces(string_combine.name, "left", "right"),
+        ]),
       );
       html_button_width_full_text_click(root, "💻 run", run_click);
       let result_component = app_learn_code_code_part_contrast(root, "");
