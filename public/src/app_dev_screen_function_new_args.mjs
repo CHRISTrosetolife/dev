@@ -17,6 +17,7 @@ export function app_dev_screen_function_new_args() {
         [html_style_function_name, noop, app_learn_code_style_code_colored],
         "function_new` adds a new `function` with parameters",
       );
+      ("suppose we want to add a `function` named `greet_person` with two parameters : `first_name` and `last_name`");
     },
   };
 }
