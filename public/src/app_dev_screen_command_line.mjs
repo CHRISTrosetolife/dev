@@ -53,6 +53,7 @@ export function app_dev_screen_command_line() {
           " arg_1 arg_2 etc",
       ]);
       app_dev_screen_img(app_dev_screen_command_line, root, i++);
+      let args = [string_combine.name, "left", "right"];
       let try_out_message = "running a function from the command-line";
       html_hr(root);
       html_p_text(
@@ -63,7 +64,6 @@ export function app_dev_screen_command_line() {
       html_style_width_full(textarea);
       html_attribute_set(textarea, "rows", 2);
       html_attribute_set(textarea, "spellcheck", "false");
-      let args = [string_combine.name, "left", "right"];
       html_inner_set(
         textarea,
         string_combine_multiple([prefix, list_join_space(args)]),
