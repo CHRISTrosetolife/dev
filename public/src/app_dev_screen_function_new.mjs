@@ -37,12 +37,14 @@ export function app_dev_screen_function_new() {
         "then the newly-created `function` is automatically opened in visual studio code :",
       ]);
       app_dev_screen_img(app_dev_screen_function_new, root, i++);
-      let function_name = "greetings";
+      let function_name_base = "greetings";
+      let function_name = function_name_base;
       let j = 1;
       try {
         await function_import(function_name);
       } catch (e) {
         j = add_1(j);
+        function_name;
       }
       let args = [function_new.name, "left", "right"];
       let try_out_message = "creating a new `function`";
