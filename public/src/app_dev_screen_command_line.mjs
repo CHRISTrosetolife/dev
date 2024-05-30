@@ -72,6 +72,7 @@ export function app_dev_screen_command_line() {
       function run_click() {
         let text = html_inner_get(h);
         if (string_starts_with_not(text, prefix)) {
+          html_inner_set(result, "must begin with : " + prefix);
         }
       }
     },
