@@ -73,7 +73,7 @@ export function js_assign_to_let(ast) {
   if (0) {
     let c;
     let d = (e) => {
-      a = 1;
+      let a = 1;
     };
   }
 }
