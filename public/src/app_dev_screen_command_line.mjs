@@ -106,6 +106,9 @@ export function app_dev_screen_command_line() {
           run_error(e);
           return;
         }
+        log({
+          imported,
+        });
         function run_error(message) {
           app_learn_code_style_code_error(result);
           html_inner_set(result, message);
