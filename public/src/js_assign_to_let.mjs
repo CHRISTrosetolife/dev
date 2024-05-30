@@ -7,7 +7,7 @@ export function js_assign_to_let(ast) {
     log({
       node,
     });
-    if (expression === "AssignmentExpression") {////
+    if (expression === "AssignmentExpression") {
     }
   });
   if (0) a = 1;
