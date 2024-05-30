@@ -108,7 +108,7 @@ export function app_dev_screen_command_line() {
             string_combine_multiple([
               "failed to import ",
               function_name,
-              " : ",
+              " ; error message : ",
               e,
             ]),
           );
