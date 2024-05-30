@@ -58,6 +58,7 @@ export function js_assign_to_let(ast) {
         );
         log({
           names,
+          name,
         });
         log(js_unparse(parsed));
         if (0) object_replace(node, parsed);
