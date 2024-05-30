@@ -1,3 +1,4 @@
+import { app_learn_code_code_background_set } from "./app_learn_code_code_background_set.mjs";
 import { folder_current_prefix_combine } from "./folder_current_prefix_combine.mjs";
 import { function_name_to_file_name } from "./function_name_to_file_name.mjs";
 import { log } from "./log.mjs";
@@ -94,6 +95,7 @@ export function app_dev_screen_command_line() {
           run_error(message);
           return;
         }
+        app_learn_code_code_background_set(result_component);
         let without = string_prefix_without(text, prefix);
         let parts = string_split_space(without);
         let { first: function_name, remaining } = list_first_remaining(parts);
