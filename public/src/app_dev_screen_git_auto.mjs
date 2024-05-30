@@ -5,8 +5,8 @@ export function app_dev_screen_git_auto() {
       return html_span_text(root, "automatically commit to git");
     },
     screen: function git_auto_screen(root) {
-      "suppose we want to create a function named `greetings_to_the_world";
-      "suppose we also want to commit this to git";
+      "suppose we want to create a `function` named `greetings_to_the_world";
+      "suppose we also want to commit this new `function` to git";
       "suppose we add a body to `greetings_to_the_world";
       "if `run.mjs` is changed to `run_git.mjs` , then the `function` will be ran and then a git commit will be created :";
     },
