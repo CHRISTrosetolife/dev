@@ -1,3 +1,4 @@
+import { html_value_set } from "./html_value_set.mjs";
 import { folder_current_prefix_combine } from "./folder_current_prefix_combine.mjs";
 import { function_name_to_file_name } from "./function_name_to_file_name.mjs";
 import { log } from "./log.mjs";
@@ -109,6 +110,7 @@ export function app_dev_screen_command_line() {
         }
         let fn = object_property_get(imported, function_name);
         let result = await fn(...remaining);
+        html_value_set(h, result);
         function run_error(message) {
           app_learn_code_style_code_error(result_component);
           html_inner_set(result_component, message);
