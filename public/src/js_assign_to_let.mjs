@@ -26,6 +26,7 @@ export function js_assign_to_let(ast) {
       if (left.type === "Identifier") {
         let { name } = left;
         let names = list_adder((la) => {
+          let { stack } = v;
           each(stack, (s) => {
             let { type: s_type } = s;
             if (s_type === "BlockStatement") {
