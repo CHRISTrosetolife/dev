@@ -6,6 +6,7 @@ import { noop } from "./noop.mjs";
 import { html_style_function_name } from "./html_style_function_name.mjs";
 import { html_style_alternate_short_p } from "./html_style_alternate_short_p.mjs";
 import { html_style_alternate_monospace_short_span } from "./html_style_alternate_monospace_short_span.mjs";
+import { html_p_text } from "./html_p_text.mjs";
 export function app_dev_screen_function_new_args() {
   return {
     name: function function_new_name(root) {
@@ -26,7 +27,10 @@ export function app_dev_screen_function_new_args() {
       ]);
       let i = 1;
       app_dev_screen_img(app_dev_screen_function_new, root, i++);
-      ("the parameters should be separated by commas with no spaces");
+      html_p_text(
+        root,
+        "the parameters should be separated by commas with no spaces",
+      );
     },
   };
 }
