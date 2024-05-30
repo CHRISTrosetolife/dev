@@ -16,7 +16,7 @@ export function js_assign_to_let(ast) {
         let { declarations } = parsed;
         let d = list_single(declarations);
         let { right } = expression;
-        d.init = right;
+        d.init = parsed;
         object_replace(node, d);
         log({
           right,
