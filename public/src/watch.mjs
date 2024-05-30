@@ -45,11 +45,11 @@ export async function watch() {
       let after = await fn(...args);
       object_property_set(c, "contents", after);
       object_property_set(c, "processing", false);
-      await git_ac_message(list_join_space(list_concat([fn.name], args)));
       log({
         path,
         p: c.processing,
       });
+      await git_ac_message(list_join_space(list_concat([fn.name], args)));
       await git_push();
     }
   }
