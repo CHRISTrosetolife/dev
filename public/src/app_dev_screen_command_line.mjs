@@ -34,7 +34,7 @@ import { object_property_get } from "./object_property_get.mjs";
 export function app_dev_screen_command_line() {
   return {
     name: function command_line_name(root) {
-      return html_span_text(root, "command_line");
+      return html_span_text(root, "command-line");
     },
     screen: async function command_line_screen(root) {
       html_style_alternate_short(
