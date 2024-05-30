@@ -50,7 +50,7 @@ export function app_dev_screen_function_new() {
           function_name = string_combine(function_name_base, j);
         }
       }
-      let args = [function_new.name, "left", "right"];
+      let args = [function_new.name, "function_name"];
       let try_out_message = "creating a new `function`";
       await app_dev_sandbox_command_line(root, args, try_out_message);
     },
