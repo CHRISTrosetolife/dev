@@ -1,3 +1,4 @@
+import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
 import { app_learn_code_code_background_set } from "./app_learn_code_code_background_set.mjs";
 import { folder_current_prefix_combine } from "./folder_current_prefix_combine.mjs";
 import { function_name_to_file_name } from "./function_name_to_file_name.mjs";
@@ -15,7 +16,6 @@ import { html_style_alternate_monospace_short_multiple } from "./html_style_alte
 import { function_name_to_url_github } from "./function_name_to_url_github.mjs";
 import { html_inner_get } from "./html_inner_get.mjs";
 import { html_style_alternate_short } from "./html_style_alternate_short.mjs";
-import { html_span_text } from "./html_span_text.mjs";
 import { html_p } from "./html_p.mjs";
 import { noop } from "./noop.mjs";
 import { html_clear } from "./html_clear.mjs";
@@ -34,7 +34,10 @@ import { object_property_get } from "./object_property_get.mjs";
 export function app_dev_screen_command_line() {
   return {
     name: function command_line_name(root) {
-      let result = html_span_text(root, "run functions from command-line");
+      return html_style_alternate_monospace_short(
+        root,
+        "run functions from command-line",
+      );
     },
     screen: async function command_line_screen(root) {
       html_style_alternate_short(
