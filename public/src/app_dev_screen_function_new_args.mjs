@@ -23,7 +23,7 @@ export function app_dev_screen_function_new_args() {
           app_learn_code_style_code_colored,
           noop,
         ],
-        "function_new` adds a new `function` with parameters",
+        "function_new_args` adds a new `function` with parameters",
       );
       html_style_alternate_monospace_short_multiple(root, [
         "suppose we want to add a `function` named `greet_person` with two parameters : `first_name` and `last_name`",
