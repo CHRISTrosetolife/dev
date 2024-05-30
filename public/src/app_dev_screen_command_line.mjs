@@ -23,6 +23,7 @@ import { html_p_text } from "./html_p_text.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
+import { html_hr } from "./html_hr.mjs";
 export function app_dev_screen_command_line() {
   return {
     name: function command_line_name(root) {
@@ -58,6 +59,7 @@ export function app_dev_screen_command_line() {
           " arg_1 arg_2 etc",
       ]);
       app_dev_screen_img(app_dev_screen_command_line, root, i++);
+      html_hr(root);
       html_p_text(
         root,
         "here is a sandbox to try out running a function from the command-line :",
