@@ -1,6 +1,5 @@
 import { list_first_remaining } from "./list_first_remaining.mjs";
 import { string_split_space } from "./string_split_space.mjs";
-import { log } from "./log.mjs";
 import { app_learn_code_style_code_error } from "./app_learn_code_style_code_error.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { string_starts_with_not } from "./string_starts_with_not.mjs";
@@ -87,7 +86,8 @@ export function app_dev_screen_command_line() {
         }
         let without = string_prefix_without(text, prefix);
         let parts = string_split_space(without);
-        let { first, remaining } = list_first_remaining(parts);function_path=function_name_to_path(first)
+        let { first, remaining } = list_first_remaining(parts);
+        let function_path = function_name_to_path(first);
       }
     },
   };
