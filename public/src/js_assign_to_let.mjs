@@ -50,6 +50,7 @@ export function js_assign_to_let(ast) {
                   let { type: m_type } = m;
                   assert(equal, [m_type, "Identifier"]);
                   let { name: m_name } = m;
+                  la(m_name);
                 });
                 log({
                   mapped,
