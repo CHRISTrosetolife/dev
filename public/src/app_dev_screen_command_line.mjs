@@ -1,3 +1,4 @@
+import { list_join_space } from "./list_join_space.mjs";
 import { run } from "./run.mjs";
 import { html_style_alternate_short_function_name } from "./html_style_alternate_short_function_name.mjs";
 import { html_style_alternate_monospace_short_span } from "./html_style_alternate_monospace_short_span.mjs";
@@ -66,7 +67,7 @@ export function app_dev_screen_command_line() {
         textarea,
         string_combine_multiple([
           prefix,
-          list_join_spaces(string_combine.name, "left", "right"),
+          list_join_space(string_combine.name, "left", "right"),
         ]),
       );
       html_button_width_full_text_click(root, "💻 run", run_click);
