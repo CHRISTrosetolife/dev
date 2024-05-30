@@ -15,6 +15,8 @@ import { html_inner_set } from "./html_inner_set.mjs";
 import { html_attribute_set } from "./html_attribute_set.mjs";
 import { html_style_width_full } from "./html_style_width_full.mjs";
 import { html_p_text } from "./html_p_text.mjs";
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { string_combine } from "./string_combine.mjs";
 export function app_dev_screen_command_line() {
   return {
     name: function command_line_name(root) {
@@ -58,7 +60,10 @@ export function app_dev_screen_command_line() {
       html_style_width_full(h);
       html_attribute_set(h, "rows", 2);
       html_attribute_set(h, "spellcheck", "false");
-      html_inner_set(h, prefix);
+      html_inner_set(
+        h,
+        string_combine_multiple([prefix, string_combine.name, " left right"]),
+      );
     },
   };
 }
