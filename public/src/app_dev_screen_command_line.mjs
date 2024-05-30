@@ -63,12 +63,10 @@ export function app_dev_screen_command_line() {
       html_style_width_full(textarea);
       html_attribute_set(textarea, "rows", 2);
       html_attribute_set(textarea, "spellcheck", "false");
+      let args = [string_combine.name, "left", "right"];
       html_inner_set(
         textarea,
-        string_combine_multiple([
-          prefix,
-          list_join_space([string_combine.name, "left", "right"]),
-        ]),
+        string_combine_multiple([prefix, list_join_space(args)]),
       );
       html_button_width_full_text_click(root, "💻 run", run_click);
       let result_component = app_learn_code_code_part_contrast(root, "");
