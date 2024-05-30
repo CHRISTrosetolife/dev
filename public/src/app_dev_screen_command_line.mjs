@@ -67,7 +67,7 @@ export function app_dev_screen_command_line() {
         textarea,
         string_combine_multiple([
           prefix,
-          list_join_space(string_combine.name, "left", "right"),
+          list_join_space([string_combine.name, "left", "right"]),
         ]),
       );
       html_button_width_full_text_click(root, "💻 run", run_click);
