@@ -29,7 +29,7 @@ export function app_dev_screen_function_new() {
       );
       html_style_alternate_monospace_short_multiple(root, [
         "a file is created for the `function`",
-        "the name of the file is the name of the function",
+        "the name of the file is the name of the `function",
         "the `function` is `export`ed",
         "then the newly-created function is opened in visual studio code :",
       ]);
