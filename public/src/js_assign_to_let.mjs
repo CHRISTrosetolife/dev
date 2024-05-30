@@ -42,11 +42,11 @@ export function js_assign_to_let(ast) {
             list_adder((la) =>
               each(filtered, (f) => {
                 let { declarations } = f;
+                log({
+                  filtered,
+                });
               }),
             );
-            log({
-              filtered,
-            });
           }
         });
         log(js_unparse(parsed));
