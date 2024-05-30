@@ -1,3 +1,4 @@
+import { function_new } from "./function_new.mjs";
 import { html_style_alternate_monospace_short_span } from "./html_style_alternate_monospace_short_span.mjs";
 import { html_style_alternate_short_function_name } from "./html_style_alternate_short_function_name.mjs";
 import { html_style_alternate_monospace_short_multiple } from "./html_style_alternate_monospace_short_multiple.mjs";
@@ -18,7 +19,7 @@ export function app_dev_screen_function_new() {
       html_style_alternate_short_p(
         root,
         [html_style_function_name, noop, app_learn_code_style_code_colored],
-        "function_new` adds a new `function",
+        function_new.name + "` adds a new `function",
       );
       let i = 1;
       app_dev_screen_img(app_dev_screen_function_new, root, i++);
