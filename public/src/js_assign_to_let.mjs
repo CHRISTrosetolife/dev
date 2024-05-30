@@ -44,6 +44,7 @@ export function js_assign_to_let(ast) {
               each(filtered, (f) => {
                 let { declarations } = f;
                 let mapped = list_map_property(declarations, "id");
+                each(mapped, (m) => {});
                 log({
                   mapped,
                 });
