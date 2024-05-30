@@ -63,7 +63,7 @@ export async function app_dev_sandbox_command_line(
     try {
       imported = await import(file_name);
     } catch (e) {
-      run_error(
+      on_error(
         string_combine_multiple([
           "failed to import ",
           function_name,
