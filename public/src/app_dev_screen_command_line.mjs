@@ -1,3 +1,4 @@
+import { folder_current_prefix_combine } from "./folder_current_prefix_combine.mjs";
 import { function_name_to_file_name } from "./function_name_to_file_name.mjs";
 import { log } from "./log.mjs";
 import { list_first_remaining } from "./list_first_remaining.mjs";
@@ -95,7 +96,9 @@ export function app_dev_screen_command_line() {
         let without = string_prefix_without(text, prefix);
         let parts = string_split_space(without);
         let { first, remaining } = list_first_remaining(parts);
-        let file_name = function_name_to_file_name(first);
+        let file_name = folder_current_prefix_combine(
+          function_name_to_file_name(first),
+        );
         let imported;
         try {
           imported = await import(file_name);
