@@ -6,10 +6,6 @@ export function function_name_to_path(function_name) {
     function_name,
     function_path_suffix(),
   ]);
-  let result = string_combine_multiple([
-    function_path_prefix(),
-    function_name,
-    function_path_suffix(),
-  ]);
+  let result = string_combine_multiple([function_path_prefix(), file_name]);
   return result;
 }
