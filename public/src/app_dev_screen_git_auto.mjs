@@ -19,7 +19,7 @@ export function app_dev_screen_git_auto() {
           run_git.name +
           ".mjs` and run `" +
           function_new.name +
-          "` :",
+          "` ...",
       ]);
       let i = 1;
       app_dev_screen_img(app_dev_screen_git_auto, root, i++);
