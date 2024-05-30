@@ -7,7 +7,7 @@ export async function file_read(file_name) {
   if (web_is()) {
     let g = global_get();
     let { files } = g;
-    log({
+    log({file_name,
       files,
     });
     return object_property_get(files, file_name);
