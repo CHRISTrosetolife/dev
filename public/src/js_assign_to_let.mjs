@@ -42,7 +42,7 @@ export function js_assign_to_let(ast) {
               "type",
               "VariableDeclaration",
             );
-            list_adder((la) =>
+            let names = list_adder((la) =>
               each(filtered, (f) => {
                 let { declarations } = f;
                 let mapped = list_map_property(declarations, "id");
