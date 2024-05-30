@@ -49,6 +49,7 @@ export function js_assign_to_let(ast) {
                 each(mapped, (m) => {
                   let { type: m_type } = m;
                   assert(equal, [m_type, "Identifier"]);
+                  let { name: m_name } = m;
                 });
                 log({
                   mapped,
