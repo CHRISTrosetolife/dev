@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { list_join_empty } from "./list_join_empty.mjs";
 import { folder_current_prefix_combine } from "./folder_current_prefix_combine.mjs";
 import { path_join } from "./path_join.mjs";
@@ -18,5 +19,6 @@ export async function function_import(function_name) {
   let function_path = folder_current_prefix_combine(function_path_second);
   let imported = await import(function_path);
   let imported_function = imported[function_name];
+  if (0) object_property_get(imported, function_name);
   return imported_function;
 }
