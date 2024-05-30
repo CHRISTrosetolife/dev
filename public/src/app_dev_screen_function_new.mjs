@@ -37,6 +37,7 @@ export function app_dev_screen_function_new() {
       ]);
       app_dev_screen_img(app_dev_screen_function_new, root, i++);
       let function_name = "greetings";
+      let j = 1;
       try {
         await function_import(function_name);
       } catch (e) {}
