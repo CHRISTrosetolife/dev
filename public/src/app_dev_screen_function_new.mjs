@@ -48,10 +48,10 @@ export function app_dev_screen_function_new() {
             function_name,
           });
           await function_import(function_name);
-          break;
-        } catch (e) {
           j = add_1(j);
           function_name = string_combine(function_name_base, j);
+        } catch (e) {
+          break;
         }
       }
       let args = [function_new.name, function_name];
