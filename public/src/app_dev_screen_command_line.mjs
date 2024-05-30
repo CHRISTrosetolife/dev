@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { list_first_remaining } from "./list_first_remaining.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { app_learn_code_style_code_error } from "./app_learn_code_style_code_error.mjs";
@@ -79,7 +78,7 @@ export function app_dev_screen_command_line() {
       );
       html_button_width_full_text_click(root, "💻 run", run_click);
       let result = app_learn_code_code_part_contrast(root, "test");
-      log(import.meta);
+      let this_url = import.meta.url;
       async function run_click() {
         let text = html_value_get(h);
         if (string_starts_with_not(text, prefix)) {
