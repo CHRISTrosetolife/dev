@@ -30,6 +30,7 @@ import { html_button_width_full_text_click } from "./html_button_width_full_text
 import { html_hr } from "./html_hr.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 import { string_delimit } from "./string_delimit.mjs";
+import { object_property_get } from "./object_property_get.mjs";
 export function app_dev_screen_command_line() {
   return {
     name: function command_line_name(root) {
@@ -95,9 +96,9 @@ export function app_dev_screen_command_line() {
         }
         let without = string_prefix_without(text, prefix);
         let parts = string_split_space(without);
-        let { first, remaining } = list_first_remaining(parts);
+        let { first: function_name, remaining } = list_first_remaining(parts);
         let file_name = folder_current_prefix_combine(
-          function_name_to_file_name(first),
+          function_name_to_file_name(function_name),
         );
         let imported;
         try {
@@ -109,6 +110,7 @@ export function app_dev_screen_command_line() {
         log({
           imported,
         });
+        let fn = object_property_get(imported, function_name);
         function run_error(message) {
           app_learn_code_style_code_error(result);
           html_inner_set(result, message);
