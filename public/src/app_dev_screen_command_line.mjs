@@ -93,7 +93,10 @@ export function app_dev_screen_command_line() {
         let imported;
         try {
           imported = await import(function_path);
-        } catch (e) {}
+        } catch (e) {
+          run_error(e);
+          return;
+        }
         let fn = list_get;
         function run_error(message) {
           app_learn_code_style_code_error(result);
