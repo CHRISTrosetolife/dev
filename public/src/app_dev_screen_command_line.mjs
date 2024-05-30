@@ -5,6 +5,7 @@ import { html_style_alternate_monospace_short_span } from "./html_style_alternat
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 import { html_style_alternate_monospace_short_multiple } from "./html_style_alternate_monospace_short_multiple.mjs";
 import { string_combine } from "./string_combine.mjs";
+import { identity } from "./identity.mjs";
 export function app_dev_screen_command_line() {
   return {
     name: function command_line_name(root) {
@@ -35,7 +36,7 @@ export function app_dev_screen_command_line() {
       app_dev_screen_img(app_dev_screen_command_line, root, i++);
       let args = [string_combine.name, "left", "right"];
       let try_out_message = "running a `function`";
-      await app_dev_sandbox_command_line(root, args, try_out_message);
+      await app_dev_sandbox_command_line(root, args, try_out_message, identity);
     },
   };
 }
