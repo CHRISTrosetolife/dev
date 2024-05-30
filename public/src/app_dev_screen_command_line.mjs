@@ -57,6 +57,7 @@ export function app_dev_screen_command_line() {
       let h = html_textarea(root);
       html_style_width_full(h);
       html_attribute_set(h, "rows", 2);
+      html_attribute_set(h, "spellcheck", "false");
       html_inner_set(h, prefix);
     },
   };
