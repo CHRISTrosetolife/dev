@@ -1,4 +1,4 @@
-import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
+import { html_style_alternate_short_span } from "./html_style_alternate_short_span.mjs";
 import { app_learn_code_code_background_set } from "./app_learn_code_code_background_set.mjs";
 import { folder_current_prefix_combine } from "./folder_current_prefix_combine.mjs";
 import { function_name_to_file_name } from "./function_name_to_file_name.mjs";
@@ -34,7 +34,7 @@ import { object_property_get } from "./object_property_get.mjs";
 export function app_dev_screen_command_line() {
   return {
     name: function command_line_name(root) {
-      return html_style_alternate_monospace_short(
+      return html_style_alternate_short_span(
         root,
         "run `function`s from command-line",
       );
