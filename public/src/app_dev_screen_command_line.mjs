@@ -81,6 +81,7 @@ export function app_dev_screen_command_line() {
       );
       html_button_width_full_text_click(root, "💻 run", run_click);
       let result_component = app_learn_code_code_part_contrast(root, "");
+      run_click();
       async function run_click() {
         let text = html_value_get(textarea);
         if (string_starts_with_not(text, prefix)) {
