@@ -8,6 +8,7 @@ export function app_dev_screen_overview() {
     screen: function overview_screen(root) {
       html_style_alternate_monospace_short_multiple(root, [
         "one goal was that a recent college or bootcamp graduate could get started quickly",
+        "with a larger candidate pool , an employer can find developers easier",
         "to keep the programming simple , `function`s are the basic building block , rather than classes or object-oriented programming",
       ]);
     },
