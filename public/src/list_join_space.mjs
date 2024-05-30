@@ -1,4 +1,4 @@
 import { list_join } from "./list_join.mjs";
-export function list_join_space(sliced) {
-  return list_join(sliced, " ");
+export function list_join_space(list) {
+  return list_join(list, " ");
 }
