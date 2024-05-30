@@ -81,6 +81,7 @@ export function app_dev_screen_command_line() {
       let result = app_learn_code_code_part_contrast(root, "test");
       let this_url = import.meta.url;
       let { origin } = window.location;
+      let relative = string_prefix_without(this_url, origin);
       log({
         origin,
         this_url,
