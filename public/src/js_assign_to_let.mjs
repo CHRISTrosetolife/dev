@@ -33,9 +33,6 @@ export function js_assign_to_let(ast) {
             let item = list_after_or(stack, list, node);
             let index = list_index(list, item);
             let taken = list_take(list, index);
-            log({
-              taken,
-            });
             let filtered = list_filter_property(
               taken,
               "type",
