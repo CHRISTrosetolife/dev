@@ -1,3 +1,4 @@
+import { function_code } from "./function_code.mjs";
 import { log } from "./log.mjs";
 import { function_import } from "./function_import.mjs";
 import { app_dev_sandbox_command_line } from "./app_dev_sandbox_command_line.mjs";
@@ -12,8 +13,6 @@ import { html_style_alternate_short_p } from "./html_style_alternate_short_p.mjs
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 import { add_1 } from "./add_1.mjs";
 import { string_combine } from "./string_combine.mjs";
-import { file_read } from "./file_read.mjs";
-import { function_name_to_file_name } from "./function_name_to_file_name.mjs";
 import { list_single } from "./list_single.mjs";
 export function app_dev_screen_function_new() {
   return {
@@ -65,9 +64,7 @@ export function app_dev_screen_function_new() {
         try_out_message,
         async (fn_result, remaining) => {
           let function_name_choice = list_single(remaining);
-          return await file_read(
-            function_name_to_file_name(function_name_choice),
-          );
+          return await function_code(function_name_choice);
         },
       );
     },
