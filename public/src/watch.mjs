@@ -1,3 +1,4 @@
+import { folder_current_prefix_combine } from "./folder_current_prefix_combine.mjs";
 import { git_push } from "./git_push.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { git_ac_message } from "./git_ac_message.mjs";
@@ -7,7 +8,6 @@ import { function_path_to_name } from "./function_path_to_name.mjs";
 import { folder_path_src } from "./folder_path_src.mjs";
 import chokidar from "chokidar";
 import { string_replace } from "./string_replace.mjs";
-import { string_combine } from "./string_combine.mjs";
 import { file_read } from "./file_read.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
@@ -23,7 +23,7 @@ export async function watch() {
   async function on_watch(event, path) {
     if (event === "change") {
       path = string_replace(path, "\\", "/");
-      path = string_combine("./", path);
+      path = folder_current_prefix_combine(path);
       object_property_initialize(cache, path, {});
       let c = object_property_get(cache, path);
       let { contents, processing } = c;
