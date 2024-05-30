@@ -36,6 +36,7 @@ export function app_dev_screen_function_new() {
       app_dev_screen_img(app_dev_screen_function_new, root, i++);
       let args = [string_combine.name, "left", "right"];
       let try_out_message = "running a function from the command-line";
+      
       1;
       app_dev_sandbox_command_line(root, args, try_out_message);
     },
