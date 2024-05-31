@@ -1,3 +1,4 @@
+import { html_style_alternate_short_p } from "./html_style_alternate_short_p.mjs";
 import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
 import { js_imports_add } from "./js_imports_add.mjs";
 import { function_transform } from "./function_transform.mjs";
@@ -18,7 +19,7 @@ export function app_dev_screen_imports_add() {
       );
       let i = 1;
       app_dev_screen_img(app_dev_screen_imports_add, root, i++);
-      html_style_alternate_p(
+      html_style_alternate_short_p(
         root,
         "... and we run `" +
           function_transform.name +
