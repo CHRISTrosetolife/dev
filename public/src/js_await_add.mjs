@@ -1,3 +1,4 @@
+import { undefined_not_is } from "./undefined_not_is.mjs";
 import { log } from "./log.mjs";
 import { js_function_types_is } from "./js_function_types_is.mjs";
 import { js_parent_replace } from "./js_parent_replace.mjs";
@@ -48,7 +49,7 @@ export async function js_await_add(ast) {
               if (type === "ArrowFunctionExpression") {
                 asyncable = s;
               }
-              if (defined_is(asyncable)) {
+              if (undefined_not_is(asyncable)) {
                 object_property_set(asyncable, "async", true);
                 found = true;
               }
