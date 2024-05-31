@@ -9,9 +9,10 @@ export function app_dev_screen_imports_add() {
       );
     },
     screen: function imports_add_screen(root) {
-      "suppose we have a function that calls another function :";
+      "if we have a `function` that calls another `function` ...";
       let i = 1;
       app_dev_screen_img(app_dev_screen_imports_add, root, i++);
+      ("... and we run `function_transform` and pass in `js_imports_add` and the name of the function ...");
       app_dev_screen_img(app_dev_screen_imports_add, root, i++);
       app_dev_screen_img(app_dev_screen_imports_add, root, i++);
     },
