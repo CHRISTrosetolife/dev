@@ -1,3 +1,4 @@
+import { app_dev_sandbox_result_error } from "./app_dev_sandbox_result_error.mjs";
 import { app_dev_sandbox_result_show } from "./app_dev_sandbox_result_show.mjs";
 import { html_button_run } from "./html_button_run.mjs";
 import { html_value_set } from "./html_value_set.mjs";
@@ -26,6 +27,8 @@ export function app_dev_sandbox_function(
     app_dev_sandbox_result_show(result_component);
     try {
       await run_click(html_value_get(textarea));
-    } catch (e) {}
+    } catch (e) {
+      app_dev_sandbox_result_error(result_component, e);
+    }
   });
 }
