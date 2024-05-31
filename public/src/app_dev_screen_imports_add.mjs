@@ -52,10 +52,9 @@ export function app_dev_screen_imports_add() {
         "",
         list_join_space([
           js_code_statement_call_args(log.name, [
-            js_code_call_args(
-              string_combine_multiple.name,
+            js_code_call_args(string_combine_multiple.name, [
               js_code_array(["log", " ", "message"]),
-            ),
+            ]),
           ]),
         ]),
         false,
