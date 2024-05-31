@@ -33,14 +33,19 @@ export async function js_await_add(ast) {
               if (found) {
                 return;
               }
-              let { type } = s;
+              let { type } = s;let asyncable;
               if (equal(type, "BlockStatement")) {
                 let after = list_before(stack, s);
                 let { type: after_type } = after;
-                if (js_function_types_is(after_type) || after_type==='ArrowFunctionExpression') {
-                  object_property_set(after, "async", true);
-                  found = true;
+                if (js_function_types_is(after_type) ) {asyncable=after;
+                
                 }
+              }                if (after_type==='ArrowFunctionExpression') {asyncable=after;
+                asyncable=after;
+              }
+              if (defined_is(asyncable)) {
+                object_property_set(asyncable, "async", true);
+                found = true;
               }
             });
           }
