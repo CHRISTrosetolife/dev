@@ -1,3 +1,4 @@
+import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
 import { js_imports_add } from "./js_imports_add.mjs";
 import { function_transform } from "./function_transform.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
@@ -11,7 +12,10 @@ export function app_dev_screen_imports_add() {
       );
     },
     screen: function imports_add_screen(root) {
-      "if we have a `function` that calls another `function` ...";
+      html_style_alternate_monospace_short(
+        root,
+        "if we have a `function` that calls another `function` ...",
+      );
       let i = 1;
       app_dev_screen_img(app_dev_screen_imports_add, root, i++);
       "... and we run `" +
