@@ -18,7 +18,7 @@ export async function function_import(function_name) {
   let i = 1;
   log("a" + i++);
   if (web_is()) {
-    log("a" + i++);
+    log("a" + function_path);
     let g = global_get();
     let { files } = g;
     if (object_property_exists(files, function_path)) {
