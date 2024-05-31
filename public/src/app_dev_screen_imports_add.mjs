@@ -1,3 +1,4 @@
+import { js_code_array } from "./js_code_array.mjs";
 import { app_dev_sandbox_function } from "./app_dev_sandbox_function.mjs";
 import { log } from "./log.mjs";
 import { js_code_statement_call_args } from "./js_code_statement_call_args.mjs";
@@ -51,11 +52,10 @@ export function app_dev_screen_imports_add() {
         "",
         list_join_space([
           js_code_statement_call_args(log.name, [
-            js_code_call_args(string_combine_multiple.name, [
-              "log",
-              " ",
-              "message",
-            ]),
+            js_code_call_args(
+              string_combine_multiple.name,
+              js_code_array(["log", " ", "message"]),
+            ),
           ]),
         ]),
         false,
