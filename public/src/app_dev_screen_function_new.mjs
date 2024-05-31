@@ -10,7 +10,7 @@ import { html_style_function_name } from "./html_style_function_name.mjs";
 import { noop } from "./noop.mjs";
 import { html_style_alternate_short_p } from "./html_style_alternate_short_p.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
-import { list_single } from "./list_single.mjs";
+import { list_first } from "./list_first.mjs";
 export function app_dev_screen_function_new() {
   return {
     name: function function_new_name(root) {
@@ -46,7 +46,7 @@ export function app_dev_screen_function_new() {
         args,
         try_out_message,
         async (fn_result, remaining) => {
-          let function_name_choice = list_single(remaining);
+          let function_name_choice = list_first(remaining);
           let result = await function_code(function_name_choice);
           return result;
         },
