@@ -1,3 +1,4 @@
+import { app_dev_sandbox_result_show } from "./app_dev_sandbox_result_show.mjs";
 import { error } from "./error.mjs";
 import { app_dev_sandbox_result } from "./app_dev_sandbox_result.mjs";
 import { html_button_run } from "./html_button_run.mjs";
@@ -42,7 +43,7 @@ export async function app_dev_sandbox_command_line(
   html_button_run(root, run_click);
   let result_component = app_dev_sandbox_result(root);
   async function run_click() {
-    result_component.show();
+    result_component.app_dev_sandbox_result_show();
     let text = html_value_get(textarea);
     if (string_starts_with_not(text, prefix)) {
       let message = "must begin with : " + string_delimit(prefix);
