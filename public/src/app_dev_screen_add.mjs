@@ -1,3 +1,4 @@
+import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 import { list_join_empty } from "./list_join_empty.mjs";
 import { function_open } from "./function_open.mjs";
 import { js_code_return } from "./js_code_return.mjs";
@@ -34,7 +35,11 @@ export async function app_dev_screen_add(name) {
               ]),
             ),
           ),
-          js_code_function_declare(`${name}_screen`, root, list_join_empty),
+          js_code_function_declare(
+            `${name}_screen`,
+            root,
+            list_join_empty([js_code_statement_let_assign]),
+          ),
         ],
       ),
     ),
