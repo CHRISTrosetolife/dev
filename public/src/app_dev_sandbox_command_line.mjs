@@ -79,6 +79,9 @@ export async function app_dev_sandbox_command_line(
     }
     let fn_result;
     try {
+      log({
+        remaining,
+      });
       fn_result = await fn(...remaining);
     } catch (e) {
       run_error(e);
