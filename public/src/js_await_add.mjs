@@ -37,7 +37,7 @@ export async function js_await_add(ast) {
               if (equal(type, "BlockStatement")) {
                 let after = list_before(stack, s);
                 let { type: after_type } = after;
-                if (js_function_types_is(after_type)) {
+                if (js_function_types_is(after_type) || after_type==='ArrowFunctionExpression') {
                   object_property_set(after, "async", true);
                   found = true;
                 }
