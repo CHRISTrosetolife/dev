@@ -39,7 +39,7 @@ export function app_dev_screen_imports_add() {
         "... then any missing `import`s will be added",
       );
       app_dev_screen_img(app_dev_screen_imports_add, root, i++);
-      let function_name_unique = await function_name_new("greetings");
+      let function_name_unique = await function_name_new("add_missing_imports");
       let code_initial = js_code_export_function_declare(
         function_name,
         args_string,
