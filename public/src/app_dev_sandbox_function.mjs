@@ -38,6 +38,5 @@ export function app_dev_sandbox_function(
     } catch (e) {
       app_dev_sandbox_result_error(result_component, e);
     }
-    let result = await result_get(fn_result);
   }
 }
