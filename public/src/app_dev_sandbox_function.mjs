@@ -1,3 +1,4 @@
+import { html_value_set } from "./html_value_set.mjs";
 import { html_attribute_set } from "./html_attribute_set.mjs";
 import { html_textarea_code } from "./html_textarea_code.mjs";
 import { app_dev_sandbox_message } from "./app_dev_sandbox_message.mjs";
@@ -16,4 +17,5 @@ export function app_dev_sandbox_function() {
   );
   let textarea = html_textarea_code(root);
   html_attribute_set(textarea, "rows", 2);
+  html_value_set(textarea, code_initial);
 }
