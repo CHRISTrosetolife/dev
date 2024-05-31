@@ -15,6 +15,7 @@ import { list_join_space } from "./list_join_space.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { function_new_generic } from "./function_new_generic.mjs";
+import { file_write } from "./file_write.mjs";
 export function app_dev_screen_imports_add() {
   return {
     name: function imports_add_name(root) {
@@ -46,8 +47,7 @@ export function app_dev_screen_imports_add() {
       );
       app_dev_screen_img(app_dev_screen_imports_add, root, i++);
       let function_name_unique = await function_name_new("add_missing_imports");
-      function_new_generic;
-      let code_initial = js_code_export_function_declare(
+      await function_new_generic(
         function_name_unique,
         "",
         list_join_space([
@@ -60,7 +60,11 @@ export function app_dev_screen_imports_add() {
           ]),
         ]),
         false,
+        [],
+        false,
+        file_write,
       );
+      let code_initial = js_code_export_function_declare(false);
       app_dev_sandbox_function(root, "adding missing `import`s", code_initial);
     },
   };
