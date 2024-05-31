@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { add_1 } from "./add_1.mjs";
 import { function_import } from "./function_import.mjs";
@@ -7,7 +6,7 @@ import { function_name_to_path } from "./function_name_to_path.mjs";
 import { global_get } from "./global_get.mjs";
 export async function funcion_name_new(function_name_base) {
   let j = 1;
-  let function_name;
+  let function_name = function_name_base;
   while (true) {
     try {
       let g = global_get();
@@ -22,8 +21,5 @@ export async function funcion_name_new(function_name_base) {
       break;
     }
   }
-  log({
-    function_name,
-  });
   return function_name;
 }
