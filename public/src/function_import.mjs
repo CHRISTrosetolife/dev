@@ -15,6 +15,7 @@ export async function function_import(function_name) {
     let g = global_get();
     let { files } = g;
     if (object_property_exists(files, function_path)) {
+      let code = object_property_get(files, function_path);
     }
   }
   let imported = await import(function_path);
