@@ -42,7 +42,7 @@ export async function app_dev_screen_add(name) {
             root,
             list_join_empty([
               js_code_statement_let_assign(image_index_name, 1),
-              js_code_call_args(app_dev_screen_img.name, [screen_name]),
+              js_code_call_args(app_dev_screen_img.name, [screen_name, root]),
             ]),
           ),
         ],
