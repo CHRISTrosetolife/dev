@@ -28,10 +28,10 @@ export function app_dev_sandbox_function(
   html_attribute_set(textarea, "rows", 2);
   html_value_set(textarea, code_initial);
   html_button_run(root, async () => {
+    app_dev_sandbox_result_show(result_component);
     let file_path = function_name_to_path(function_name);
     let value = html_value_get(textarea);
     await file_overwrite(file_path, value);
-    app_dev_sandbox_result_show(result_component);
     let fn_result;
     try {
       fn_result = await run_click(value);
