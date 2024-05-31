@@ -20,6 +20,7 @@ import { html_hr } from "./html_hr.mjs";
 import { app_dev_screen_command_line_prefix } from "./app_dev_screen_command_line_prefix.mjs";
 import { html_style_display_none } from "./html_style_display_none.mjs";
 import { html_style_display_block } from "./html_style_display_block.mjs";
+import { html_value_set } from "./html_value_set.mjs";
 export async function app_dev_sandbox_command_line(
   root,
   args,
@@ -38,7 +39,7 @@ export async function app_dev_sandbox_command_line(
   let textarea = html_textarea_code(root);
   html_attribute_set(textarea, "rows", 2);
   let prefix = app_dev_screen_command_line_prefix();
-  html_inner_set(
+  html_value_set(
     textarea,
     string_combine_multiple([prefix, list_join_space(args)]),
   );
