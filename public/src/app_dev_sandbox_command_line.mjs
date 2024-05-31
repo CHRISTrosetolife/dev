@@ -76,6 +76,6 @@ export async function app_dev_sandbox_command_line(
       return;
     }
     let result = await result_get(fn_result, remaining);
-    app_dev_sandbox_result_text_set(result);
+    app_dev_sandbox_result_text_set(result_component, result);
   }
 }
