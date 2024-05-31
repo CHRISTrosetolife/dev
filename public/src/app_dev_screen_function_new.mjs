@@ -52,6 +52,7 @@ export function app_dev_screen_function_new() {
           function_name = string_combine(function_name_base, j);
           log("here");
         } catch (e) {
+          log(e);
           break;
         }
       }
