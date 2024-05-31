@@ -1,3 +1,4 @@
+import { app_dev_sandbox_result } from "./app_dev_sandbox_result.mjs";
 import { app_dev_sandbox_result_text_set } from "./app_dev_sandbox_result_text_set.mjs";
 import { app_dev_sandbox_result_error } from "./app_dev_sandbox_result_error.mjs";
 import { app_dev_sandbox_result_show } from "./app_dev_sandbox_result_show.mjs";
@@ -27,7 +28,9 @@ export function app_dev_sandbox_function(
   let textarea = html_textarea_code(root);
   html_attribute_set(textarea, "rows", 2);
   html_value_set(textarea, code_initial);
-  html_button_run(root, async () => {
+  html_button_run(root, on_click);
+  let result_component = app_dev_sandbox_result(root);
+  async function on_click() {
     app_dev_sandbox_result_show(result_component);
     let file_path = function_name_to_path(function_name);
     let value = html_value_get(textarea);
@@ -40,5 +43,5 @@ export function app_dev_sandbox_function(
     }
     let result = await result_get(fn_result);
     app_dev_sandbox_result_text_set(result_component, result);
-  });
+  }
 }
