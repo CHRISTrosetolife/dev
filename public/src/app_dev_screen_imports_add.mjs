@@ -24,7 +24,10 @@ export function app_dev_screen_imports_add() {
         js_imports_add.name +
         "` and the name of the function ...";
       app_dev_screen_img(app_dev_screen_imports_add, root, i++);
-      ("... then any missing `import`s will be added");
+      html_style_alternate_monospace_short(
+        root,
+        "... then any missing `import`s will be added",
+      );
       app_dev_screen_img(app_dev_screen_imports_add, root, i++);
     },
   };
