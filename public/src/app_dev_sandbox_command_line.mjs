@@ -30,7 +30,11 @@ export async function app_dev_sandbox_command_line(
   html_hr(root);
   html_style_alternate_monospace_short(
     root,
-    app_dev_sandbox_message() + try_out_message + " from the command-line :",
+    string_combine_multiple([
+      app_dev_sandbox_message(),
+      try_out_message,
+      " from the command-line :",
+    ]),
   );
   let textarea = html_textarea_code(root);
   html_attribute_set(textarea, "rows", 2);
