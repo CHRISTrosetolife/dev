@@ -12,7 +12,6 @@ import { app_ceb_correct_get } from "./app_ceb_correct_get.mjs";
 import { app_ceb_alternatives_partial_matches_nexts } from "./app_ceb_alternatives_partial_matches_nexts.mjs";
 import { html_disable } from "./html_disable.mjs";
 import { html_enable } from "./html_enable.mjs";
-import { log } from "./log.mjs";
 import { html_style_hidden } from "./html_style_hidden.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { html_button_width_full_text_click_up } from "./html_button_width_full_text_click_up.mjs";
@@ -114,7 +113,7 @@ export async function app_ceb() {
     html_clear_scroll_top_centered(root);
     app_ceb_title();
     let { left, right } = position;
-    const srl = subtract(right, left);
+    let srl = subtract(right, left);
     if (equal_not(srl, 0)) {
       each_range(level_size, (i) => {
         let factor = divide(add_1(srl), level_size);
@@ -155,7 +154,7 @@ export async function app_ceb() {
           right: right,
         };
       } else {
-        const r1 = add_1(right);
+        let r1 = add_1(right);
         position = {
           left: r1,
           right: r1,
@@ -206,11 +205,6 @@ export async function app_ceb() {
     let pairs_other = list_without(concat, pair);
     let [cebuano, english] = pair;
     if (0) [cebuano, english] = ["gikan", "from"];
-    console.log({
-      cebuano,
-      c: object_property_get(definitions, cebuano),
-      english,
-    });
     let english_alternatives = list_without(
       object_property_get(definitions, cebuano),
       english,
@@ -296,12 +290,12 @@ export async function app_ceb() {
             );
             index = add_1(index);
             update_partials();
-            const last_is = greater_than_equal(
+            let last_is = greater_than_equal(
               multiply(index, chunk_size),
               string_length(answer),
             );
             let first = last_is ? "✅ " : "";
-            const take_count = number_min(
+            let take_count = number_min(
               multiply(index, chunk_size),
               string_length(answer),
             );
