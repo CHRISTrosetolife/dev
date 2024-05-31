@@ -31,7 +31,7 @@ export async function function_new_generic(
   let concat = list_concat(mapped, [contents_function]);
   let contents = list_join(concat, newline());
   log({
-    contents,
+    function_name,
   });
   let parsed = js_parse(contents);
   await js_imports_fix(parsed);
