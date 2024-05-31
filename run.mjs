@@ -1,3 +1,4 @@
 import { run } from "./public/src/run.mjs";
+import { log } from "./public/src/log.mjs";
 let result = await run();
-console.log(result);
+log(result);
