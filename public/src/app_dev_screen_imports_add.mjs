@@ -1,7 +1,6 @@
 import { log } from "./log.mjs";
 import { js_code_statement_call_args } from "./js_code_statement_call_args.mjs";
 import { function_name_new } from "./function_name_new.mjs";
-import { app_dev_sandbox_function } from "./app_dev_sandbox_function.mjs";
 import { html_style_function_name } from "./html_style_function_name.mjs";
 import { noop } from "./noop.mjs";
 import { html_style_alternate_short_p } from "./html_style_alternate_short_p.mjs";
@@ -63,7 +62,7 @@ export function app_dev_screen_imports_add() {
         false,
         file_write,
       );
-      app_dev_sandbox_function(
+      app_dev_sandbox_functio(
         root,
         function_name_unique,
         "adding missing `import`s",
