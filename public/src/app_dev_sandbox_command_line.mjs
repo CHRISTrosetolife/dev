@@ -20,6 +20,7 @@ import { html_style_width_full } from "./html_style_width_full.mjs";
 import { html_textarea } from "./html_textarea.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { app_dev_screen_command_line_prefix } from "./app_dev_screen_command_line_prefix.mjs";
+import { html_style_display_none } from "./html_style_display_none.mjs";
 export async function app_dev_sandbox_command_line(
   root,
   args,
@@ -47,6 +48,7 @@ export async function app_dev_sandbox_command_line(
   );
   html_button_width_full_text_click(root, "💻 run", run_click);
   let result_component = app_learn_code_code_part_contrast(root, "");
+  html_style_display_none(result_component);
   await run_click();
   async function run_click() {
     let text = html_value_get(textarea);
