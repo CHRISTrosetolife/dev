@@ -65,8 +65,8 @@ export function app_dev_screen_imports_add() {
       );
       app_dev_sandbox_function(
         root,
-        "adding missing `import`s",
         function_name_unique,
+        "adding missing `import`s",
       );
     },
   };
