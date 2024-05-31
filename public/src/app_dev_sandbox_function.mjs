@@ -34,7 +34,7 @@ export function app_dev_sandbox_function(
     await file_overwrite(file_path, value);
     let fn_result;
     try {
-      fn_result = await run_click(value);
+      fn_result = await run_click();
     } catch (e) {
       app_dev_sandbox_result_error(result_component, e);
     }
