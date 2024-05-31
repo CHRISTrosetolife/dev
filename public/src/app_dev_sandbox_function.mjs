@@ -1,3 +1,4 @@
+import { html_button_run } from "./html_button_run.mjs";
 import { html_value_set } from "./html_value_set.mjs";
 import { html_attribute_set } from "./html_attribute_set.mjs";
 import { html_textarea_code } from "./html_textarea_code.mjs";
@@ -14,4 +15,5 @@ export function app_dev_sandbox_function(root, try_out_message, code_initial) {
   let textarea = html_textarea_code(root);
   html_attribute_set(textarea, "rows", 2);
   html_value_set(textarea, code_initial);
+  html_button_run(root, run_click);
 }
