@@ -28,7 +28,7 @@ export function app_dev_sandbox_function(
   html_attribute_set(textarea, "rows", 2);
   html_value_set(textarea, code_initial);
   html_button_run(root, async () => {
-    function_name_to_path(function_name);
+    let file_path = function_name_to_path(function_name);
     await file_overwrite();
     app_dev_sandbox_result_show(result_component);
     let fn_result;
