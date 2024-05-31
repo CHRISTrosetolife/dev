@@ -6,7 +6,12 @@ import { app_dev_sandbox_message } from "./app_dev_sandbox_message.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
 import { html_hr } from "./html_hr.mjs";
-export function app_dev_sandbox_function(root, try_out_message, code_initial) {
+export function app_dev_sandbox_function(
+  root,
+  try_out_message,
+  code_initial,
+  run_click,
+) {
   html_hr(root);
   html_style_alternate_monospace_short(
     root,
