@@ -27,7 +27,7 @@ export async function app_dev_sandbox_function(
   let value_initial = await function_read(function_name);
   let textarea = html_textarea_code(root);
   html_attribute_set(textarea, "rows", 2);
-  html_value_set(textarea, code_initial);
+  html_value_set(textarea, value_initial);
   html_button_run(root, on_click, run_message);
   let result_component = app_dev_sandbox_result(root);
   async function on_click() {
