@@ -12,6 +12,8 @@ export function app_dev_screen_imports_add() {
       "suppose we have a function that calls another function :";
       let i = 1;
       app_dev_screen_img(app_dev_screen_imports_add, root, i++);
+      app_dev_screen_img(app_dev_screen_imports_add, root, i++);
+      app_dev_screen_img(app_dev_screen_imports_add, root, i++);
     },
   };
 }
