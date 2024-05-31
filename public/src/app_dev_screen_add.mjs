@@ -18,6 +18,7 @@ import { string_delimit } from "./string_delimit.mjs";
 export async function app_dev_screen_add(name) {
   let screen_name = app_dev_screen_name(name);
   let root = "root";
+  let image_index_name = "i";
   await function_new_generic(
     screen_name,
     "",
@@ -38,7 +39,7 @@ export async function app_dev_screen_add(name) {
           js_code_function_declare(
             `${name}_screen`,
             root,
-            list_join_empty([js_code_statement_let_assign]),
+            list_join_empty([js_code_statement_let_assign(image_index_name)]),
           ),
         ],
       ),
