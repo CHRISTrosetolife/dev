@@ -1,3 +1,6 @@
+import { html_inner_set } from "./html_inner_set.mjs";
+import { app_learn_code_style_code_error } from "./app_learn_code_style_code_error.mjs";
+import { error } from "./error.mjs";
 import { app_learn_code_code_background_set } from "./app_learn_code_code_background_set.mjs";
 import { html_style_display_block } from "./html_style_display_block.mjs";
 import { html_style_display_none } from "./html_style_display_none.mjs";
@@ -10,6 +13,10 @@ export function app_dev_sandbox_result(root) {
     show: () => {
       html_style_display_block(result_component);
       app_learn_code_code_background_set(result_component);
+    },
+    error: (message) => {
+      app_learn_code_style_code_error(result_component);
+      html_inner_set(result_component, message);
     },
   });
   return result_component;
