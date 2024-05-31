@@ -1,7 +1,6 @@
 import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
 import { global_get } from "./global_get.mjs";
-import { log } from "./log.mjs";
 import { function_code } from "./function_code.mjs";
 import { function_import } from "./function_import.mjs";
 import { app_dev_sandbox_command_line } from "./app_dev_sandbox_command_line.mjs";
@@ -58,7 +57,6 @@ export function app_dev_screen_function_new() {
           j = add_1(j);
           function_name = string_combine(function_name_base, j);
         } catch (e) {
-          log(e);
           break;
         }
       }
