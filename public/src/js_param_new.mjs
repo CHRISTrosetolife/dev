@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { js_declaration_single_name } from "./js_declaration_single_name.mjs";
 import { js_declaration_single } from "./js_declaration_single.mjs";
 import { equal } from "./equal.mjs";
@@ -14,11 +13,6 @@ export async function js_param_new(
   param_name,
   default_value_string,
 ) {
-  log({
-    function_name,
-    param_name,
-    default_value_string,
-  });
   assert(string_is, [param_name]);
   assert(string_is, [default_value_string]);
   let needs_imports_add = false;
