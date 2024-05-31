@@ -1,3 +1,4 @@
+import { error } from "./error.mjs";
 import { app_dev_sandbox_result } from "./app_dev_sandbox_result.mjs";
 import { html_button_run } from "./html_button_run.mjs";
 import { app_dev_sandbox_message } from "./app_dev_sandbox_message.mjs";
@@ -46,7 +47,7 @@ export async function app_dev_sandbox_command_line(
     let text = html_value_get(textarea);
     if (string_starts_with_not(text, prefix)) {
       let message = "must begin with : " + string_delimit(prefix);
-      run_error(message);
+      result_component.error(message);
       return;
     }
     let without = string_prefix_without(text, prefix);
@@ -56,7 +57,7 @@ export async function app_dev_sandbox_command_line(
     try {
       fn = await function_import(function_name);
     } catch (e) {
-      run_error(
+      result_component.error(
         string_combine_multiple([
           "failed to import ",
           function_name,
@@ -70,7 +71,7 @@ export async function app_dev_sandbox_command_line(
     try {
       fn_result = await fn(...remaining);
     } catch (e) {
-      run_error(e);
+      result_component.error(e);
       return;
     }
     let result = await result_get(fn_result, remaining);
