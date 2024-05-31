@@ -7,6 +7,7 @@ import { web_is } from "./web_is.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { js_parse } from "./js_parse.mjs";
 import { js_declaration_single } from "./js_declaration_single.mjs";
+import { js_unparse } from "./js_unparse.mjs";
 export async function function_import(function_name) {
   let function_file_name = function_name_to_file_name(function_name);
   let function_path = string_combine(
@@ -20,6 +21,7 @@ export async function function_import(function_name) {
       let code = object_property_get(files, function_path);
       let ast = js_parse(code);
       let d = js_declaration_single(ast);
+      let unparsed = js_unparse(d);
     }
   }
   let imported = await import(function_path);
