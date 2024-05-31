@@ -34,6 +34,7 @@ export function app_dev_sandbox_function(
       let value = html_value_get(textarea);
       await file_overwrite(file_path, value);
       await run_click();
+      html_value_set(textarea, value_new);
     } catch (e) {
       app_dev_sandbox_result_error(result_component, e);
     }
