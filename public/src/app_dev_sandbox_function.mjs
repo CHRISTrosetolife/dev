@@ -11,6 +11,7 @@ import { html_hr } from "./html_hr.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
+import { file_read } from "./file_read.mjs";
 export function app_dev_sandbox_function(
   root,
   function_name,
@@ -34,6 +35,7 @@ export function app_dev_sandbox_function(
       let value = html_value_get(textarea);
       await file_overwrite(file_path, value);
       await run_click();
+      let value_new = await file_read(file_path);
       html_value_set(textarea, value_new);
     } catch (e) {
       app_dev_sandbox_result_error(result_component, e);
