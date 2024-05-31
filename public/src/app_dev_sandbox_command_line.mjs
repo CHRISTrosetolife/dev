@@ -74,5 +74,6 @@ export async function app_dev_sandbox_command_line(
       return;
     }
     let result = await result_get(fn_result, remaining);
+    result_component.text_set(result);
   }
 }
