@@ -66,6 +66,13 @@ export function app_dev_screen_imports_add() {
         root,
         function_name_unique,
         "adding missing `import`s",
+        string_combine_multiple([
+          function_transform.name,
+          " ",
+          js_imports_add.name,
+          " ",
+          function_name_unique,
+        ]),
         async () =>
           await function_transform(js_imports_add.name, function_name_unique),
       );
