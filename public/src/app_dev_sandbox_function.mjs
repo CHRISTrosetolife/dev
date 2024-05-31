@@ -6,6 +6,7 @@ import { app_dev_sandbox_message } from "./app_dev_sandbox_message.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
 import { html_hr } from "./html_hr.mjs";
+import { html_value_get } from "./html_value_get.mjs";
 export function app_dev_sandbox_function(
   root,
   try_out_message,
@@ -20,5 +21,5 @@ export function app_dev_sandbox_function(
   let textarea = html_textarea_code(root);
   html_attribute_set(textarea, "rows", 2);
   html_value_set(textarea, code_initial);
-  html_button_run(root, run_click);
+  html_button_run(root, () => run_click(html_value_get(textarea)));
 }
