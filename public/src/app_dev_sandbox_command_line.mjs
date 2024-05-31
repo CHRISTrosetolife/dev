@@ -26,7 +26,6 @@ export async function app_dev_sandbox_command_line(
   try_out_message,
   result_get,
 ) {
-  let prefix = app_dev_screen_command_line_prefix();
   html_hr(root);
   html_style_alternate_monospace_short(
     root,
@@ -38,6 +37,7 @@ export async function app_dev_sandbox_command_line(
   );
   let textarea = html_textarea_code(root);
   html_attribute_set(textarea, "rows", 2);
+  let prefix = app_dev_screen_command_line_prefix();
   html_inner_set(
     textarea,
     string_combine_multiple([prefix, list_join_space(args)]),
