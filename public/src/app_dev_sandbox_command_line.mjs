@@ -22,6 +22,7 @@ import { html_hr } from "./html_hr.mjs";
 import { app_dev_screen_command_line_prefix } from "./app_dev_screen_command_line_prefix.mjs";
 import { html_style_display_none } from "./html_style_display_none.mjs";
 import { html_style_display_block } from "./html_style_display_block.mjs";
+import { log } from "./log.mjs";
 export async function app_dev_sandbox_command_line(
   root,
   args,
@@ -83,6 +84,9 @@ export async function app_dev_sandbox_command_line(
       run_error(e);
       return;
     }
+    log({
+      fn_result,
+    });
     let result = await result_get(fn_result, remaining);
     html_inner_set(result_component, result);
     function run_error(message) {
