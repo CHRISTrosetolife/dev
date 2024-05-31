@@ -18,13 +18,16 @@ export async function function_import(function_name) {
   let i = 1;
   log("a" + i++);
   if (web_is()) {
+    log("a" + i++);
     let g = global_get();
     let { files } = g;
     if (object_property_exists(files, function_path)) {
+      log("a" + i++);
       let code = object_property_get(files, function_path);
       let ast = js_parse(code);
       let d = js_declaration_single(ast);
       let unparsed = js_unparse(d);
+      log("a" + i++);
       return eval(unparsed);
     }
   }
