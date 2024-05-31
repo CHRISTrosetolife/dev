@@ -12,6 +12,8 @@ import { function_transform } from "./function_transform.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 import { html_style_alternate_monospace_short_span } from "./html_style_alternate_monospace_short_span.mjs";
 import { list_join_space } from "./list_join_space.mjs";
+import { js_code_call_args } from "./js_code_call_args.mjs";
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export function app_dev_screen_imports_add() {
   return {
     name: function imports_add_name(root) {
@@ -47,7 +49,13 @@ export function app_dev_screen_imports_add() {
         function_name_unique,
         "",
         list_join_space([
-          js_code_statement_call_args(log.name, ["test log message"]),
+          js_code_statement_call_args(log.name, [
+            js_code_call_args(string_combine_multiple.name, [
+              "log",
+              " ",
+              "message",
+            ]),
+          ]),
         ]),
         false,
       );
