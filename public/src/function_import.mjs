@@ -1,3 +1,4 @@
+import { function_name_to_path } from "./function_name_to_path.mjs";
 import { log } from "./log.mjs";
 import { global_get } from "./global_get.mjs";
 import { folder_current_prefix } from "./folder_current_prefix.mjs";
@@ -22,7 +23,7 @@ export async function function_import(function_name) {
     let g = global_get();
     let { files } = g;
     log(files);
-    let function_path = function_name_to_file_path(function_name);
+    let function_path = function_name_to_path(function_name);
     if (object_property_exists(files, function_path)) {
       log("a" + i++);
       let code = object_property_get(files, function_path);
