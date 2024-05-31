@@ -6,14 +6,14 @@ import { list_get } from "./list_get.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_length } from "./string_length.mjs";
 export async function yyy8Uu_part(index, index2) {
-  const parts = await yyy8Uu_parts(index);
-  console.log({
+  let parts = await yyy8Uu_parts(index);
+  log({
     p: parts.length,
   });
-  console.log({
+  log({
     a: list_map(parts, (p) => {
-      const a = string_length(p);
-      const b = 3;
+      let a = string_length(p);
+      let b = 3;
       return string_take(p, number_min(a, b));
     }),
   });
