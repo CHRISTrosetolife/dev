@@ -1,3 +1,4 @@
+import { js_code_statement_call_args } from "./js_code_statement_call_args.mjs";
 import { function_name_new } from "./function_name_new.mjs";
 import { js_code_export_function_declare } from "./js_code_export_function_declare.mjs";
 import { app_dev_sandbox_function } from "./app_dev_sandbox_function.mjs";
@@ -44,7 +45,7 @@ export function app_dev_screen_imports_add() {
       let code_initial = js_code_export_function_declare(
         function_name_unique,
         "",
-        list_join_space([]),
+        list_join_space([js_code_statement_call_args]),
         false,
       );
       app_dev_sandbox_function(root, "adding missing `import`s", code_initial);
