@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { ceb_audio_voices } from "./ceb_audio_voices.mjs";
 import { storage_url } from "./storage_url.mjs";
 import { html_audio } from "./html_audio.mjs";
@@ -28,9 +27,6 @@ export async function app_ceb_audio(cebuano) {
     count = mod(count, length);
   }
   object_property_set(counts, cebuano, count);
-  log({
-    count,
-  });
   let file_path = ceb_audio_path(count, cebuano);
   return await html_audio(storage_url(file_path));
 }
