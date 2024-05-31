@@ -1,8 +1,4 @@
-import { object_property_exists_not } from "./object_property_exists_not.mjs";
-import { function_name_to_path } from "./function_name_to_path.mjs";
-import { global_get } from "./global_get.mjs";
 import { function_code } from "./function_code.mjs";
-import { function_import } from "./function_import.mjs";
 import { app_dev_sandbox_command_line } from "./app_dev_sandbox_command_line.mjs";
 import { function_new } from "./function_new.mjs";
 import { html_style_alternate_monospace_short_span } from "./html_style_alternate_monospace_short_span.mjs";
@@ -13,8 +9,6 @@ import { html_style_function_name } from "./html_style_function_name.mjs";
 import { noop } from "./noop.mjs";
 import { html_style_alternate_short_p } from "./html_style_alternate_short_p.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
-import { add_1 } from "./add_1.mjs";
-import { string_combine } from "./string_combine.mjs";
 import { list_single } from "./list_single.mjs";
 export function app_dev_screen_function_new() {
   return {
@@ -45,21 +39,6 @@ export function app_dev_screen_function_new() {
       app_dev_screen_img(app_dev_screen_function_new, root, i++);
       let function_name_base = "greetings";
       let function_name = function_name_base;
-      let j = 1;
-      while (true) {
-        try {
-          let g = global_get();
-          let { files } = g;
-          let function_path = function_name_to_path(function_name);
-          if (object_property_exists_not(files, function_path)) {
-            await function_import(function_name);
-          }
-          j = add_1(j);
-          function_name = string_combine(function_name_base, j);
-        } catch (e) {
-          break;
-        }
-      }
       let args = [function_new.name, function_name];
       let try_out_message = "creating a new `function`";
       await app_dev_sandbox_command_line(
