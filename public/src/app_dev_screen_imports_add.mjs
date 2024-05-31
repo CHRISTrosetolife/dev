@@ -1,7 +1,6 @@
 import { log } from "./log.mjs";
 import { js_code_statement_call_args } from "./js_code_statement_call_args.mjs";
 import { function_name_new } from "./function_name_new.mjs";
-import { js_code_export_function_declare } from "./js_code_export_function_declare.mjs";
 import { app_dev_sandbox_function } from "./app_dev_sandbox_function.mjs";
 import { html_style_function_name } from "./html_style_function_name.mjs";
 import { noop } from "./noop.mjs";
@@ -64,8 +63,11 @@ export function app_dev_screen_imports_add() {
         false,
         file_write,
       );
-      let code_initial = js_code_export_function_declare(false);
-      app_dev_sandbox_function(root, "adding missing `import`s", code_initial);
+      app_dev_sandbox_function(
+        root,
+        "adding missing `import`s",
+        function_name_unique,
+      );
     },
   };
 }
