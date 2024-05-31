@@ -1,3 +1,4 @@
+import { funcion_name_new } from "./funcion_name_new.mjs";
 import { function_code } from "./function_code.mjs";
 import { app_dev_sandbox_command_line } from "./app_dev_sandbox_command_line.mjs";
 import { function_new } from "./function_new.mjs";
@@ -38,7 +39,7 @@ export function app_dev_screen_function_new() {
       ]);
       app_dev_screen_img(app_dev_screen_function_new, root, i++);
       let function_name_base = "greetings";
-      let function_name = function_name_base;
+      let function_name = await funcion_name_new(function_name_base);
       let args = [function_new.name, function_name];
       let try_out_message = "creating a new `function`";
       await app_dev_sandbox_command_line(
