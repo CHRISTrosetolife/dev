@@ -18,6 +18,7 @@ import { function_new_generic } from "./function_new_generic.mjs";
 import { file_write } from "./file_write.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_delimit } from "./string_delimit.mjs";
+import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
 export function app_dev_screen_imports_add() {
   return {
     name: function imports_add_name(root) {
@@ -68,15 +69,17 @@ export function app_dev_screen_imports_add() {
         root,
         function_name_unique,
         "adding missing `import`s",
-        string_combine_multiple([
-          "`",
-          function_transform.name,
-          " ",
-          js_imports_add.name,
-          " ",
-          function_name_unique,
-          "`",
-        ]),
+        string_delimit_backtick(
+          string_combine_multiple([
+            "`",
+            function_transform.name,
+            " ",
+            js_imports_add.name,
+            " ",
+            function_name_unique,
+            "`",
+          ]),
+        ),
         async () =>
           await function_transform(js_imports_add.name, function_name_unique),
       );
