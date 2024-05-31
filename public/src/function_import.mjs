@@ -12,6 +12,7 @@ export async function function_import(function_name) {
   );
   if (web_is()) {
     let g = global_get();
+    let { files } = g;
   }
   let imported = await import(function_path);
   let imported_function = object_property_get(imported, function_name);
