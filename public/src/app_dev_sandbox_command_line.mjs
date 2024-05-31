@@ -54,9 +54,6 @@ export async function app_dev_sandbox_command_line(
   async function run_click() {
     html_style_display_block(result_component);
     let text = html_value_get(textarea);
-    log({
-      text,
-    });
     if (string_starts_with_not(text, prefix)) {
       let message = "must begin with : " + string_delimit(prefix);
       run_error(message);
