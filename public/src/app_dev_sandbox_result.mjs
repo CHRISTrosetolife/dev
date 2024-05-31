@@ -18,6 +18,7 @@ export function app_dev_sandbox_result(root) {
       app_learn_code_style_code_error(result_component);
       html_inner_set(result_component, message);
     },
+    text_set: () => {},
   });
   return result_component;
 }
