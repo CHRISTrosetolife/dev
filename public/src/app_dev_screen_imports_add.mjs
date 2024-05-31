@@ -64,9 +64,11 @@ export function app_dev_screen_imports_add() {
         file_write,
       );
       app_dev_sandbox_function(
-        root,//
+        root,
         function_name_unique,
-        "adding missing `import`s",() => function_transform(js_imports_add.name,function_name_unique)
+        "adding missing `import`s",
+        async () =>
+          await function_transform(js_imports_add.name, function_name_unique),
       );
     },
   };
