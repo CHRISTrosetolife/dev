@@ -1,6 +1,5 @@
 import { app_dev_sandbox_result_error } from "./app_dev_sandbox_result_error.mjs";
 import { app_dev_sandbox_result_show } from "./app_dev_sandbox_result_show.mjs";
-import { error } from "./error.mjs";
 import { app_dev_sandbox_result } from "./app_dev_sandbox_result.mjs";
 import { html_button_run } from "./html_button_run.mjs";
 import { app_dev_sandbox_message } from "./app_dev_sandbox_message.mjs";
@@ -72,7 +71,7 @@ export async function app_dev_sandbox_command_line(
     try {
       fn_result = await fn(...remaining);
     } catch (e) {
-      result_component.error(e);
+      result_component.app_dev_sandbox_result_error(e);
       return;
     }
     let result = await result_get(fn_result, remaining);
