@@ -23,9 +23,9 @@ export async function function_import(function_name) {
     let { files } = g;
     log(files);
     let function_path = function_name_to_file_path(function_name);
-    if (object_property_exists(files, function_file_name_path)) {
+    if (object_property_exists(files, function_path)) {
       log("a" + i++);
-      let code = object_property_get(files, function_file_name_path);
+      let code = object_property_get(files, function_path);
       let ast = js_parse(code);
       let d = js_declaration_single(ast);
       let unparsed = js_unparse(d);
