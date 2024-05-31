@@ -10,6 +10,7 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { html_value_get } from "./html_value_get.mjs";
+import { file_overwrite } from "./file_overwrite.mjs";
 export function app_dev_sandbox_function(
   root,
   try_out_message,
@@ -26,6 +27,7 @@ export function app_dev_sandbox_function(
   html_attribute_set(textarea, "rows", 2);
   html_value_set(textarea, code_initial);
   html_button_run(root, async () => {
+    await file_overwrite();
     app_dev_sandbox_result_show(result_component);
     let fn_result;
     try {
