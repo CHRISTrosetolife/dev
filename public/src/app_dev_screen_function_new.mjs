@@ -1,8 +1,4 @@
-import { js_unparse } from "./js_unparse.mjs";
-import { js_declaration_single } from "./js_declaration_single.mjs";
-import { js_parse } from "./js_parse.mjs";
-import { object_property_get } from "./object_property_get.mjs";
-import { object_property_exists } from "./object_property_exists.mjs";
+import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
 import { global_get } from "./global_get.mjs";
 import { log } from "./log.mjs";
@@ -56,17 +52,11 @@ export function app_dev_screen_function_new() {
           let g = global_get();
           let { files } = g;
           let function_path = function_name_to_path(function_name);
-          if (object_property_exists(files, function_path)) {
-            let code = object_property_get(files, function_path);
-            let ast = js_parse(code);
-            let d = js_declaration_single(ast);
-            let unparsed = js_unparse(d);
+          if (object_property_exists_not(files, function_path)) {
+            await function_import(function_name);
           }
-          log("here2");
-          await function_import(function_name);
           j = add_1(j);
           function_name = string_combine(function_name_base, j);
-          log("here");
         } catch (e) {
           log(e);
           break;
