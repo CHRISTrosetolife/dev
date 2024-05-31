@@ -1,3 +1,4 @@
+import { app_dev_sandbox_result_text_set } from "./app_dev_sandbox_result_text_set.mjs";
 import { app_dev_sandbox_result_error } from "./app_dev_sandbox_result_error.mjs";
 import { app_dev_sandbox_result_show } from "./app_dev_sandbox_result_show.mjs";
 import { app_dev_sandbox_result } from "./app_dev_sandbox_result.mjs";
@@ -75,6 +76,6 @@ export async function app_dev_sandbox_command_line(
       return;
     }
     let result = await result_get(fn_result, remaining);
-    result_component.text_set(result);
+    result_component.app_dev_sandbox_result_text_set(result);
   }
 }
