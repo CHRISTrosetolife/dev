@@ -44,11 +44,11 @@ export async function app_dev_sandbox_command_line(
   html_button_run(root, run_click);
   let result_component = app_dev_sandbox_result(root);
   async function run_click() {
-    result_component.app_dev_sandbox_result_show();
+    app_dev_sandbox_result_show(result_component);
     let text = html_value_get(textarea);
     if (string_starts_with_not(text, prefix)) {
       let message = "must begin with : " + string_delimit(prefix);
-      result_component.app_dev_sandbox_result_error(message);
+      app_dev_sandbox_result_error(message);
       return;
     }
     let without = string_prefix_without(text, prefix);
@@ -58,7 +58,7 @@ export async function app_dev_sandbox_command_line(
     try {
       fn = await function_import(function_name);
     } catch (e) {
-      result_component.app_dev_sandbox_result_error(
+      app_dev_sandbox_result_error(
         string_combine_multiple([
           "failed to import ",
           function_name,
@@ -72,10 +72,10 @@ export async function app_dev_sandbox_command_line(
     try {
       fn_result = await fn(...remaining);
     } catch (e) {
-      result_component.app_dev_sandbox_result_error(e);
+      app_dev_sandbox_result_error(result_component, e);
       return;
     }
     let result = await result_get(fn_result, remaining);
-    result_component.app_dev_sandbox_result_text_set(result);
+    app_dev_sandbox_result_text_set(result);
   }
 }
