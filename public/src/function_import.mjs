@@ -1,3 +1,4 @@
+import { global_get } from "./global_get.mjs";
 import { folder_current_prefix } from "./folder_current_prefix.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { function_name_to_file_name } from "./function_name_to_file_name.mjs";
@@ -10,6 +11,7 @@ export async function function_import(function_name) {
     function_file_name,
   );
   if (web_is()) {
+    let g = global_get();
   }
   let imported = await import(function_path);
   let imported_function = object_property_get(imported, function_name);
