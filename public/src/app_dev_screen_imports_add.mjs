@@ -14,6 +14,7 @@ export function app_dev_screen_imports_add() {
       app_dev_screen_img(app_dev_screen_imports_add, root, i++);
       ("... and we run `function_transform` and pass in `js_imports_add` and the name of the function ...");
       app_dev_screen_img(app_dev_screen_imports_add, root, i++);
+      ("... then any missing imports will be added");
       app_dev_screen_img(app_dev_screen_imports_add, root, i++);
     },
   };
