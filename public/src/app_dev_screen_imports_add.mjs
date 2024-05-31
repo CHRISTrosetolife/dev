@@ -37,7 +37,7 @@ export function app_dev_screen_imports_add() {
         "... then any missing `import`s will be added",
       );
       app_dev_screen_img(app_dev_screen_imports_add, root, i++);
+      app_dev_sandbox_function(root, "adding missing `import`s");
     },
   };
-  app_dev_sandbox_function(root, "adding missing `import`s");
 }
