@@ -1,9 +1,9 @@
-import { string_combine } from "./string_combine.mjs";
 import { add_1 } from "./add_1.mjs";
 import { function_import } from "./function_import.mjs";
 import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
 import { global_get } from "./global_get.mjs";
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export async function function_name_new(function_name_base) {
   let j = 1;
   let function_name = function_name_base;
@@ -16,7 +16,7 @@ export async function function_name_new(function_name_base) {
         await function_import(function_name);
       }
       j = add_1(j);
-      function_name = string_combine(function_name_base, j);
+      function_name = string_combine_multiple([function_name_base, "_", j]);
     } catch (e) {
       break;
     }
