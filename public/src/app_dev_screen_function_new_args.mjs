@@ -42,7 +42,7 @@ export function app_dev_screen_function_new_args() {
       ]);
       app_dev_screen_img(app_dev_screen_function_new_args, root, i++);
       let function_name = await funcion_name_new("greetings");
-      let args = [function_new.name, function_name];
+      let args = [function_new.name, function_name, "first_name", "last_name"];
       let try_out_message = "creating a new `function`";
       await app_dev_sandbox_command_line(
         root,
