@@ -14,6 +14,7 @@ import { html_style_alternate_monospace_short_span } from "./html_style_alternat
 import { list_join_space } from "./list_join_space.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { function_new_generic } from "./function_new_generic.mjs";
 export function app_dev_screen_imports_add() {
   return {
     name: function imports_add_name(root) {
@@ -45,6 +46,7 @@ export function app_dev_screen_imports_add() {
       );
       app_dev_screen_img(app_dev_screen_imports_add, root, i++);
       let function_name_unique = await function_name_new("add_missing_imports");
+      function_new_generic;
       let code_initial = js_code_export_function_declare(
         function_name_unique,
         "",
