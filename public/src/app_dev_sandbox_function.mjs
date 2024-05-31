@@ -41,7 +41,7 @@ export async function app_dev_sandbox_function(
       html_value_set(textarea, value_new);
       log({
         value_new,
-        value_new,
+        run_click,
       });
     } catch (e) {
       app_dev_sandbox_result_error(result_component, e);
