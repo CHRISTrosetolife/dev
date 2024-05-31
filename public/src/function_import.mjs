@@ -16,7 +16,7 @@ export async function function_import(function_name) {
     function_file_name,
   );
   let i = 1;
-  log(i++);
+  log("a" + i++);
   if (web_is()) {
     let g = global_get();
     let { files } = g;
