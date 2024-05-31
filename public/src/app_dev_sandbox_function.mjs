@@ -21,5 +21,7 @@ export function app_dev_sandbox_function(
   let textarea = html_textarea_code(root);
   html_attribute_set(textarea, "rows", 2);
   html_value_set(textarea, code_initial);
-  html_button_run(root, () => run_click(html_value_get(textarea)));
+  html_button_run(root, async () => {
+    await run_click(html_value_get(textarea));
+  });
 }
