@@ -25,8 +25,9 @@ export function app_dev_sandbox_function(
   html_value_set(textarea, code_initial);
   html_button_run(root, async () => {
     app_dev_sandbox_result_show(result_component);
+    let result;
     try {
-      await run_click(html_value_get(textarea));
+      result = await run_click(html_value_get(textarea));
     } catch (e) {
       app_dev_sandbox_result_error(result_component, e);
     }
