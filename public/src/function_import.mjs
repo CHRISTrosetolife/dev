@@ -4,6 +4,7 @@ import { string_combine } from "./string_combine.mjs";
 import { function_name_to_file_name } from "./function_name_to_file_name.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { web_is } from "./web_is.mjs";
+import { object_property_exists } from "./object_property_exists.mjs";
 export async function function_import(function_name) {
   let function_file_name = function_name_to_file_name(function_name);
   let function_path = string_combine(
@@ -13,6 +14,8 @@ export async function function_import(function_name) {
   if (web_is()) {
     let g = global_get();
     let { files } = g;
+    if (object_property_exists(files, function_path)) {
+    }
   }
   let imported = await import(function_path);
   let imported_function = object_property_get(imported, function_name);
