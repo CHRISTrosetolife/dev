@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { each_async } from "./each_async.mjs";
 import { file_js_parse } from "./file_js_parse.mjs";
 import { file_js_unparse } from "./file_js_unparse.mjs";
@@ -8,9 +7,5 @@ export async function file_js_transform(lambdas, file_path, args) {
     await lambda(ast, ...args);
   });
   let result = await file_js_unparse(file_path, ast);
-  log({
-    lambdas,
-    result,
-  });
   return result;
 }
