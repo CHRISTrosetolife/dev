@@ -1,5 +1,4 @@
 import { function_code } from "./function_code.mjs";
-import { log } from "./log.mjs";
 import { function_import } from "./function_import.mjs";
 import { app_dev_sandbox_command_line } from "./app_dev_sandbox_command_line.mjs";
 import { function_new } from "./function_new.mjs";
@@ -46,9 +45,6 @@ export function app_dev_screen_function_new() {
       let j = 1;
       while (true) {
         try {
-          log({
-            function_name,
-          });
           await function_import(function_name);
           j = add_1(j);
           function_name = string_combine(function_name_base, j);
