@@ -1,3 +1,7 @@
+import { app_dev_sandbox_command_line_result_remaining_first_function } from "./app_dev_sandbox_command_line_result_remaining_first_function.mjs";
+import { app_dev_sandbox_command_line } from "./app_dev_sandbox_command_line.mjs";
+import { function_new } from "./function_new.mjs";
+import { funcion_name_new } from "./funcion_name_new.mjs";
 import { function_new_args } from "./function_new_args.mjs";
 import { html_style_alternate_monospace_short_multiple } from "./html_style_alternate_monospace_short_multiple.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
@@ -15,7 +19,7 @@ export function app_dev_screen_function_new_args() {
         "add new `function` with parameters",
       );
     },
-    screen: function function_new_args_screen(root) {
+    screen: async function function_new_args_screen(root) {
       html_style_alternate_short_p(
         root,
         [
@@ -36,7 +40,8 @@ export function app_dev_screen_function_new_args() {
         "the parameters should be separated by commas with no spaces",
         "here is the result :",
       ]);
-      app_dev_screen_img(app_dev_screen_function_new_args, root, i++);      let function_name = await funcion_name_new("greetings");
+      app_dev_screen_img(app_dev_screen_function_new_args, root, i++);
+      let function_name = await funcion_name_new("greetings");
       let args = [function_new.name, function_name];
       let try_out_message = "creating a new `function`";
       await app_dev_sandbox_command_line(
