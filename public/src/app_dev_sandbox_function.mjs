@@ -12,7 +12,7 @@ import { html_hr } from "./html_hr.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
-export function app_dev_sandbox_function(
+export async function app_dev_sandbox_function(
   root,
   function_name,
   try_out_message,
@@ -24,6 +24,7 @@ export function app_dev_sandbox_function(
     root,
     string_combine_multiple([app_dev_sandbox_message(), try_out_message]),
   );
+  let value_initial = await function_read(function_name);
   let textarea = html_textarea_code(root);
   html_attribute_set(textarea, "rows", 2);
   html_value_set(textarea, code_initial);
