@@ -1,5 +1,4 @@
 import { function_name_to_path } from "./function_name_to_path.mjs";
-import { log } from "./log.mjs";
 import { global_get } from "./global_get.mjs";
 import { folder_current_prefix } from "./folder_current_prefix.mjs";
 import { string_combine } from "./string_combine.mjs";
@@ -17,20 +16,15 @@ export async function function_import(function_name) {
     function_file_name,
   );
   let i = 1;
-  log("a" + i++);
   if (web_is()) {
-    log("a" + function_file_name_path);
     let g = global_get();
     let { files } = g;
-    log(files);
     let function_path = function_name_to_path(function_name);
     if (object_property_exists(files, function_path)) {
-      log("a" + i++);
       let code = object_property_get(files, function_path);
       let ast = js_parse(code);
       let d = js_declaration_single(ast);
       let unparsed = js_unparse(d);
-      log("a" + i++);
       return eval(unparsed);
     }
   }
