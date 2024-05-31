@@ -11,10 +11,11 @@ import { html_style_alternate_monospace_short } from "./html_style_alternate_mon
 import { html_hr } from "./html_hr.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
+import { function_name_to_path } from "./function_name_to_path.mjs";
 export function app_dev_sandbox_function(
   root,
+  function_name,
   try_out_message,
-  code_initial,
   run_click,
   result_get,
 ) {
@@ -27,6 +28,7 @@ export function app_dev_sandbox_function(
   html_attribute_set(textarea, "rows", 2);
   html_value_set(textarea, code_initial);
   html_button_run(root, async () => {
+    function_name_to_path();
     await file_overwrite();
     app_dev_sandbox_result_show(result_component);
     let fn_result;
