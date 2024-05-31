@@ -41,8 +41,8 @@ export async function app_dev_sandbox_command_line(
   app_learn_code_style_code(textarea);
   app_learn_code_code_background_set(textarea);
   html_style_width_full(textarea);
-  html_attribute_set(textarea, "rows", 2);
   html_attribute_set(textarea, "spellcheck", "false");
+  html_attribute_set(textarea, "rows", 2);
   html_inner_set(
     textarea,
     string_combine_multiple([prefix, list_join_space(args)]),
