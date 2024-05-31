@@ -1,5 +1,5 @@
 import { app_dev_sandbox_command_line_result_remaining_first_function } from "./app_dev_sandbox_command_line_result_remaining_first_function.mjs";
-import { funcion_name_new } from "./funcion_name_new.mjs";
+import { function_name_new } from "./function_name_new.mjs";
 import { app_dev_sandbox_command_line } from "./app_dev_sandbox_command_line.mjs";
 import { function_new } from "./function_new.mjs";
 import { html_style_alternate_monospace_short_span } from "./html_style_alternate_monospace_short_span.mjs";
@@ -37,7 +37,7 @@ export function app_dev_screen_function_new() {
         "then the newly-created `function` is automatically opened in visual studio code :",
       ]);
       app_dev_screen_img(app_dev_screen_function_new, root, i++);
-      let function_name = await funcion_name_new("greetings");
+      let function_name = await function_name_new("greetings");
       let args = [function_new.name, function_name];
       let try_out_message = "creating a new `function`";
       await app_dev_sandbox_command_line(

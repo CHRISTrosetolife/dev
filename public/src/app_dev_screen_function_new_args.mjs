@@ -1,6 +1,6 @@
 import { app_dev_sandbox_command_line_result_remaining_first_function } from "./app_dev_sandbox_command_line_result_remaining_first_function.mjs";
 import { app_dev_sandbox_command_line } from "./app_dev_sandbox_command_line.mjs";
-import { funcion_name_new } from "./funcion_name_new.mjs";
+import { function_name_new } from "./function_name_new.mjs";
 import { function_new_args } from "./function_new_args.mjs";
 import { html_style_alternate_monospace_short_multiple } from "./html_style_alternate_monospace_short_multiple.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
@@ -40,7 +40,7 @@ export function app_dev_screen_function_new_args() {
         "here is the result :",
       ]);
       app_dev_screen_img(app_dev_screen_function_new_args, root, i++);
-      let function_name = await funcion_name_new("greetings");
+      let function_name = await function_name_new("greetings");
       let args = [
         function_new_args.name,
         function_name,
