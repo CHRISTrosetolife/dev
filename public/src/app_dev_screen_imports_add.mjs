@@ -7,6 +7,6 @@ export function app_dev_screen_imports_add() {
         "add missing `import`s",
       );
     },
-    screen: function imports_add_screen(root) {},
+    screen: function imports_add_screen(root) {'suppose we have a function that calls another function :'},
   };
 }
