@@ -1,3 +1,4 @@
+import { app_dev_sandbox_result } from "./app_dev_sandbox_result.mjs";
 import { html_button_run } from "./html_button_run.mjs";
 import { app_dev_sandbox_message } from "./app_dev_sandbox_message.mjs";
 import { html_textarea_code } from "./html_textarea_code.mjs";
@@ -11,14 +12,12 @@ import { app_learn_code_code_background_set } from "./app_learn_code_code_backgr
 import { string_delimit } from "./string_delimit.mjs";
 import { string_starts_with_not } from "./string_starts_with_not.mjs";
 import { html_value_get } from "./html_value_get.mjs";
-import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 import { html_attribute_set } from "./html_attribute_set.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { app_dev_screen_command_line_prefix } from "./app_dev_screen_command_line_prefix.mjs";
-import { html_style_display_none } from "./html_style_display_none.mjs";
 import { html_style_display_block } from "./html_style_display_block.mjs";
 import { html_value_set } from "./html_value_set.mjs";
 export async function app_dev_sandbox_command_line(
@@ -44,8 +43,7 @@ export async function app_dev_sandbox_command_line(
     string_combine_multiple([prefix, list_join_space(args)]),
   );
   html_button_run(root, run_click);
-  let result_component = app_learn_code_code_part_contrast(root, "");
-  html_style_display_none(result_component);
+  let result_component = app_dev_sandbox_result(root);
   async function run_click() {
     html_style_display_block(result_component);
     let text = html_value_get(textarea);
