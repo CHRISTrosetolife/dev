@@ -42,9 +42,9 @@ export function app_dev_screen_imports_add() {
       let function_name_unique = await function_name_new("add_missing_imports");
       let code_initial = js_code_export_function_declare(
         function_name_unique,
-        args_string,
+        "",
         body_string,
-        space,
+        false,
       );
       app_dev_sandbox_function(root, "adding missing `import`s", code_initial);
     },
