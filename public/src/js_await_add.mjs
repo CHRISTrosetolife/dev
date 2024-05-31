@@ -28,7 +28,7 @@ export async function js_await_add(ast) {
             parsed.argument = node;
             js_parent_replace(v, node, parsed);
             let { stack } = v;
-            let found = false;
+            let found = false;log({stack})
             each_reverse(stack, (s) => {
               if (found) {
                 return;
