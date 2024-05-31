@@ -1,3 +1,4 @@
+import { app_dev_sandbox_function } from "./app_dev_sandbox_function.mjs";
 import { log } from "./log.mjs";
 import { js_code_statement_call_args } from "./js_code_statement_call_args.mjs";
 import { function_name_new } from "./function_name_new.mjs";
@@ -62,7 +63,7 @@ export function app_dev_screen_imports_add() {
         false,
         file_write,
       );
-      app_dev_sandbox_functio(
+      await app_dev_sandbox_function(
         root,
         function_name_unique,
         "adding missing `import`s",
