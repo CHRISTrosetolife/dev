@@ -31,6 +31,7 @@ export async function function_new_generic(
   let contents = list_join(concat, newline());
   log({
     function_name,
+    contents,
   });
   let parsed = js_parse(contents);
   await js_imports_fix(parsed);
