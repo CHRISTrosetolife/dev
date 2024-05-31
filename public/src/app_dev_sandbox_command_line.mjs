@@ -1,5 +1,4 @@
-import { app_learn_code_style_code } from "./app_learn_code_style_code.mjs";
-import { app_learn_code_style_code_color } from "./app_learn_code_style_code_color.mjs";
+import { html_textarea_code } from "./html_textarea_code.mjs";
 import { function_import } from "./function_import.mjs";
 import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
 import { app_learn_code_style_code_error } from "./app_learn_code_style_code_error.mjs";
@@ -16,8 +15,6 @@ import { list_join_space } from "./list_join_space.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 import { html_attribute_set } from "./html_attribute_set.mjs";
-import { html_style_width_full } from "./html_style_width_full.mjs";
-import { html_textarea } from "./html_textarea.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { app_dev_screen_command_line_prefix } from "./app_dev_screen_command_line_prefix.mjs";
 import { html_style_display_none } from "./html_style_display_none.mjs";
@@ -36,12 +33,7 @@ export async function app_dev_sandbox_command_line(
       try_out_message +
       " from the command-line :",
   );
-  let textarea = html_textarea(root);
-  app_learn_code_style_code_color(textarea);
-  app_learn_code_style_code(textarea);
-  app_learn_code_code_background_set(textarea);
-  html_style_width_full(textarea);
-  html_attribute_set(textarea, "spellcheck", "false");
+  let textarea = html_textarea_code(root);
   html_attribute_set(textarea, "rows", 2);
   html_inner_set(
     textarea,
