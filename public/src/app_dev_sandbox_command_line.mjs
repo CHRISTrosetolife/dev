@@ -18,7 +18,6 @@ import { html_inner_set } from "./html_inner_set.mjs";
 import { html_attribute_set } from "./html_attribute_set.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { app_dev_screen_command_line_prefix } from "./app_dev_screen_command_line_prefix.mjs";
-import { html_style_display_block } from "./html_style_display_block.mjs";
 import { html_value_set } from "./html_value_set.mjs";
 export async function app_dev_sandbox_command_line(
   root,
@@ -45,7 +44,7 @@ export async function app_dev_sandbox_command_line(
   html_button_run(root, run_click);
   let result_component = app_dev_sandbox_result(root);
   async function run_click() {
-    html_style_display_block(result_component);
+    result_component.show();
     let text = html_value_get(textarea);
     if (string_starts_with_not(text, prefix)) {
       let message = "must begin with : " + string_delimit(prefix);
