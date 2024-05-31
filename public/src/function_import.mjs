@@ -21,6 +21,7 @@ export async function function_import(function_name) {
     log("a" + function_path);
     let g = global_get();
     let { files } = g;
+    log(files);
     if (object_property_exists(files, function_path)) {
       log("a" + i++);
       let code = object_property_get(files, function_path);
