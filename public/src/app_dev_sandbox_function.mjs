@@ -29,11 +29,11 @@ export function app_dev_sandbox_function(
   html_value_set(textarea, code_initial);
   html_button_run(root, async () => {
     let file_path = function_name_to_path(function_name);
+    let value = html_value_get(textarea);
     await file_overwrite(file_path);
     app_dev_sandbox_result_show(result_component);
     let fn_result;
     try {
-      let value = html_value_get(textarea);
       fn_result = await run_click(value);
     } catch (e) {
       app_dev_sandbox_result_error(result_component, e);
