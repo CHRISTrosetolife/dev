@@ -1,3 +1,4 @@
+import { app_dev_sandbox_function } from "./app_dev_sandbox_function.mjs";
 import { html_style_function_name } from "./html_style_function_name.mjs";
 import { noop } from "./noop.mjs";
 import { html_style_alternate_short_p } from "./html_style_alternate_short_p.mjs";
@@ -38,4 +39,5 @@ export function app_dev_screen_imports_add() {
       app_dev_screen_img(app_dev_screen_imports_add, root, i++);
     },
   };
+  app_dev_sandbox_function;
 }
