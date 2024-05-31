@@ -38,8 +38,7 @@ export function app_dev_screen_function_new() {
         "then the newly-created `function` is automatically opened in visual studio code :",
       ]);
       app_dev_screen_img(app_dev_screen_function_new, root, i++);
-      let function_name_base = "greetings";
-      let function_name = await funcion_name_new(function_name_base);
+      let function_name = await funcion_name_new("greetings");
       let args = [function_new.name, function_name];
       let try_out_message = "creating a new `function`";
       await app_dev_sandbox_command_line(
