@@ -40,7 +40,7 @@ export async function js_await_add(ast) {
                 if (js_function_types_is(after_type) ) {asyncable=after;
                 
                 }
-              }                if (after_type==='ArrowFunctionExpression') {asyncable=after;
+              }                if (type==='ArrowFunctionExpression') {asyncable=after;
                 asyncable=after;
               }
               if (defined_is(asyncable)) {
