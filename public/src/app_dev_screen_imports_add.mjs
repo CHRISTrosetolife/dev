@@ -46,7 +46,9 @@ export function app_dev_screen_imports_add() {
       let code_initial = js_code_export_function_declare(
         function_name_unique,
         "",
-        list_join_space([js_code_statement_call_args(log.name)]),
+        list_join_space([
+          js_code_statement_call_args(log.name, ["test log message"]),
+        ]),
         false,
       );
       app_dev_sandbox_function(root, "adding missing `import`s", code_initial);
