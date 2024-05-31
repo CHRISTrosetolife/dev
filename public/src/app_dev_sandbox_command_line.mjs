@@ -58,7 +58,7 @@ export async function app_dev_sandbox_command_line(
     try {
       fn = await function_import(function_name);
     } catch (e) {
-      result_component.error(
+      result_component.app_dev_sandbox_result_error(
         string_combine_multiple([
           "failed to import ",
           function_name,
