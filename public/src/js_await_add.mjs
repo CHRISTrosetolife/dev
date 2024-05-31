@@ -28,20 +28,25 @@ export async function js_await_add(ast) {
             parsed.argument = node;
             js_parent_replace(v, node, parsed);
             let { stack } = v;
-            let found = false;log({stack})
+            let found = false;
+            log({
+              stack,
+            });
             each_reverse(stack, (s) => {
               if (found) {
                 return;
               }
-              let { type } = s;let asyncable;
+              let { type } = s;
+              let asyncable;
               if (equal(type, "BlockStatement")) {
                 let after = list_before(stack, s);
                 let { type: after_type } = after;
-                if (js_function_types_is(after_type) ) {asyncable=after;
-                
+                if (js_function_types_is(after_type)) {
+                  asyncable = after;
                 }
-              }                if (type==='ArrowFunctionExpression') {
-                asyncable=s;
+              }
+              if (type === "ArrowFunctionExpression") {
+                asyncable = s;
               }
               if (defined_is(asyncable)) {
                 object_property_set(asyncable, "async", true);
