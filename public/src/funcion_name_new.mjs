@@ -6,6 +6,7 @@ import { function_name_to_path } from "./function_name_to_path.mjs";
 import { global_get } from "./global_get.mjs";
 export async function funcion_name_new(function_name_base) {
   let j = 1;
+  let function_name;
   while (true) {
     try {
       let g = global_get();
@@ -15,9 +16,10 @@ export async function funcion_name_new(function_name_base) {
         await function_import(function_name);
       }
       j = add_1(j);
-      let function_name = string_combine(function_name_base, j);
+      function_name = string_combine(function_name_base, j);
     } catch (e) {
       break;
     }
   }
+  return function_name;
 }
