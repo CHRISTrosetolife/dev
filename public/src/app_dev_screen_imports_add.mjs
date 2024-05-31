@@ -1,3 +1,4 @@
+import { html_style_function_name } from "./html_style_function_name.mjs";
 import { noop } from "./noop.mjs";
 import { html_style_alternate_short_p } from "./html_style_alternate_short_p.mjs";
 import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
@@ -22,7 +23,7 @@ export function app_dev_screen_imports_add() {
       app_dev_screen_img(app_dev_screen_imports_add, root, i++);
       html_style_alternate_short_p(
         root,
-        [noop],
+        [noop, html_style_function_name],
         "... and we run `" +
           function_transform.name +
           "` and pass in `" +
