@@ -71,13 +71,11 @@ export function app_dev_screen_imports_add() {
         "adding missing `import`s",
         string_delimit_backtick(
           string_combine_multiple([
-            "`",
             function_transform.name,
             " ",
             js_imports_add.name,
             " ",
             function_name_unique,
-            "`",
           ]),
         ),
         async () =>
