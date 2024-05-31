@@ -44,7 +44,7 @@ export function app_dev_screen_imports_add() {
         body_string,
         space,
       );
-      app_dev_sandbox_function(root, "adding missing `import`s");
+      app_dev_sandbox_function(root, "adding missing `import`s", code_initial);
     },
   };
 }
