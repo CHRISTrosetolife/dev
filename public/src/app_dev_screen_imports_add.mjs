@@ -1,3 +1,4 @@
+import { function_name_new } from "./function_name_new.mjs";
 import { js_code_export_function_declare } from "./js_code_export_function_declare.mjs";
 import { app_dev_sandbox_function } from "./app_dev_sandbox_function.mjs";
 import { html_style_function_name } from "./html_style_function_name.mjs";
@@ -16,7 +17,7 @@ export function app_dev_screen_imports_add() {
         "add missing `import`s",
       );
     },
-    screen: function imports_add_screen(root) {
+    screen: async function imports_add_screen(root) {
       html_style_alternate_monospace_short(
         root,
         "if we have a `function` that calls another `function` ...",
@@ -38,6 +39,7 @@ export function app_dev_screen_imports_add() {
         "... then any missing `import`s will be added",
       );
       app_dev_screen_img(app_dev_screen_imports_add, root, i++);
+      let function_name_unique = await function_name_new("greetings");
       let code_initial = js_code_export_function_declare(
         function_name,
         args_string,
