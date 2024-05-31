@@ -1,3 +1,4 @@
+import { app_dev_sandbox_result_text_set } from "./app_dev_sandbox_result_text_set.mjs";
 import { app_dev_sandbox_result_error } from "./app_dev_sandbox_result_error.mjs";
 import { app_dev_sandbox_result_show } from "./app_dev_sandbox_result_show.mjs";
 import { html_button_run } from "./html_button_run.mjs";
@@ -32,5 +33,6 @@ export function app_dev_sandbox_function(
       app_dev_sandbox_result_error(result_component, e);
     }
     let result = await result_get(fn_result);
+    app_dev_sandbox_result_text_set(result_component, result);
   });
 }
