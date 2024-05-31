@@ -18,11 +18,14 @@ export function app_dev_screen_imports_add() {
       );
       let i = 1;
       app_dev_screen_img(app_dev_screen_imports_add, root, i++);
-      "... and we run `" +
-        function_transform.name +
-        "` and pass in `" +
-        js_imports_add.name +
-        "` and the name of the function ...";
+      html_style_alternate_p(
+        root,
+        "... and we run `" +
+          function_transform.name +
+          "` and pass in `" +
+          js_imports_add.name +
+          "` and the name of the function ...",
+      );
       app_dev_screen_img(app_dev_screen_imports_add, root, i++);
       html_style_alternate_monospace_short(
         root,
