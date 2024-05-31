@@ -50,7 +50,6 @@ export async function app_dev_sandbox_command_line(
       run_error(message);
       return;
     }
-    result_component.normal();
     let without = string_prefix_without(text, prefix);
     let parts = string_split_space(without);
     let { first: function_name, remaining } = list_first_remaining(parts);
