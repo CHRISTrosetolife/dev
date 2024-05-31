@@ -22,6 +22,7 @@ export async function function_import(function_name) {
       let ast = js_parse(code);
       let d = js_declaration_single(ast);
       let unparsed = js_unparse(d);
+      return eval(unparsed);
     }
   }
   let imported = await import(function_path);
