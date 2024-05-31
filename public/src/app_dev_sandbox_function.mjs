@@ -29,12 +29,11 @@ export function app_dev_sandbox_function(
   html_button_run(root, on_click);
   let result_component = app_dev_sandbox_result(root);
   async function on_click() {
-    let file_path = function_name_to_path(function_name);
-    let value = html_value_get(textarea);
-    await file_overwrite(file_path, value);
-    let fn_result;
     try {
-      fn_result = await run_click();
+      let file_path = function_name_to_path(function_name);
+      let value = html_value_get(textarea);
+      await file_overwrite(file_path, value);
+      let fn_result = await run_click();
     } catch (e) {
       app_dev_sandbox_result_error(result_component, e);
     }
