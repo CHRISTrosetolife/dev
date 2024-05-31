@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { global_get } from "./global_get.mjs";
 import { folder_current_prefix } from "./folder_current_prefix.mjs";
 import { string_combine } from "./string_combine.mjs";
@@ -14,6 +15,8 @@ export async function function_import(function_name) {
     folder_current_prefix(),
     function_file_name,
   );
+  let i = 1;
+  log(i++);
   if (web_is()) {
     let g = global_get();
     let { files } = g;
