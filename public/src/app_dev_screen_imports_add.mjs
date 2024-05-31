@@ -16,6 +16,8 @@ import { js_code_call_args } from "./js_code_call_args.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { function_new_generic } from "./function_new_generic.mjs";
 import { file_write } from "./file_write.mjs";
+import { list_map } from "./list_map.mjs";
+import { string_delimit } from "./string_delimit.mjs";
 export function app_dev_screen_imports_add() {
   return {
     name: function imports_add_name(root) {
@@ -53,7 +55,7 @@ export function app_dev_screen_imports_add() {
         list_join_space([
           js_code_statement_call_args(log.name, [
             js_code_call_args(string_combine_multiple.name, [
-              js_code_array(["log", " ", "message"]),
+              js_code_array(list_map(["log", " ", "message"], string_delimit)),
             ]),
           ]),
         ]),
