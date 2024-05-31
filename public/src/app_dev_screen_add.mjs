@@ -1,3 +1,4 @@
+import { js_code_statement_increment } from "./js_code_statement_increment.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 import { list_join_empty } from "./list_join_empty.mjs";
@@ -42,7 +43,11 @@ export async function app_dev_screen_add(name) {
             root,
             list_join_empty([
               js_code_statement_let_assign(image_index_name, 1),
-              js_code_call_args(app_dev_screen_img.name, [screen_name, root]),
+              js_code_call_args(app_dev_screen_img.name, [
+                screen_name,
+                root,
+                js_code_statement_increment(image_index_name),
+              ]),
             ]),
           ),
         ],
