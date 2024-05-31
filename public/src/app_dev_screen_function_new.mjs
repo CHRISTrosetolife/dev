@@ -45,14 +45,7 @@ export function app_dev_screen_function_new() {
         root,
         args,
         try_out_message,
-        async function app_dev_sandbox_command_line_result_remaining_first_function(
-          fn_result,
-          remaining,
-        ) {
-          let function_name_choice = list_first(remaining);
-          let result = await function_code(function_name_choice);
-          return result;
-        },
+        app_dev_sandbox_command_line_result_remaining_first_function,
       );
     },
   };
