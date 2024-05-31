@@ -20,12 +20,11 @@ export async function function_new_generic(
   async_is,
   writer,
 ) {
-  let space = async_is ? ` async ` : " ";
   let contents_function = js_code_export_function_declare(
     function_name,
     args_string,
     body_string,
-    space,
+    async_is,
   );
   let mapped = list_map(imports, js_code_import);
   let concat = list_concat(mapped, [contents_function]);
