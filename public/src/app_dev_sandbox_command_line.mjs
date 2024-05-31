@@ -1,3 +1,4 @@
+import { app_dev_sandbox_result_error } from "./app_dev_sandbox_result_error.mjs";
 import { app_dev_sandbox_result_show } from "./app_dev_sandbox_result_show.mjs";
 import { error } from "./error.mjs";
 import { app_dev_sandbox_result } from "./app_dev_sandbox_result.mjs";
@@ -47,7 +48,7 @@ export async function app_dev_sandbox_command_line(
     let text = html_value_get(textarea);
     if (string_starts_with_not(text, prefix)) {
       let message = "must begin with : " + string_delimit(prefix);
-      result_component.error(message);
+      result_component.app_dev_sandbox_result_error(message);
       return;
     }
     let without = string_prefix_without(text, prefix);
