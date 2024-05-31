@@ -48,7 +48,7 @@ export async function app_dev_sandbox_command_line(
     let text = html_value_get(textarea);
     if (string_starts_with_not(text, prefix)) {
       let message = "must begin with : " + string_delimit(prefix);
-      app_dev_sandbox_result_error(message);
+      app_dev_sandbox_result_error(result_component, message);
       return;
     }
     let without = string_prefix_without(text, prefix);
