@@ -15,7 +15,6 @@ export async function function_import(function_name) {
     folder_current_prefix(),
     function_file_name,
   );
-  let i = 1;
   if (web_is()) {
     let g = global_get();
     let { files } = g;
