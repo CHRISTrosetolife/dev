@@ -33,7 +33,7 @@ export function app_dev_sandbox_function(
       let file_path = function_name_to_path(function_name);
       let value = html_value_get(textarea);
       await file_overwrite(file_path, value);
-      let fn_result = await run_click();
+      await run_click();
     } catch (e) {
       app_dev_sandbox_result_error(result_component, e);
     }
