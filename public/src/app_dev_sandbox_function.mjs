@@ -15,6 +15,7 @@ export function app_dev_sandbox_function(
   try_out_message,
   code_initial,
   run_click,
+  result_get,
 ) {
   html_hr(root);
   html_style_alternate_monospace_short(
