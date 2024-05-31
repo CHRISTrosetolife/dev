@@ -44,8 +44,7 @@ export function app_dev_screen_function_new_args() {
       let args = [
         function_new_args.name,
         function_name,
-        "first_name",
-        "last_name",
+        "first_name,last_name",
       ];
       let try_out_message = "creating a new `function`";
       await app_dev_sandbox_command_line(
