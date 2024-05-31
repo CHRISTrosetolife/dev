@@ -1,3 +1,4 @@
+import { html_button_run } from "./html_button_run.mjs";
 import { app_dev_sandbox_message } from "./app_dev_sandbox_message.mjs";
 import { html_textarea_code } from "./html_textarea_code.mjs";
 import { function_import } from "./function_import.mjs";
@@ -11,7 +12,6 @@ import { string_delimit } from "./string_delimit.mjs";
 import { string_starts_with_not } from "./string_starts_with_not.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
@@ -43,7 +43,7 @@ export async function app_dev_sandbox_command_line(
     textarea,
     string_combine_multiple([prefix, list_join_space(args)]),
   );
-  html_button_width_full_text_click(root, "💻 run", run_click);
+  html_button_run(root, run_click);
   let result_component = app_learn_code_code_part_contrast(root, "");
   html_style_display_none(result_component);
   async function run_click() {
