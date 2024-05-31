@@ -1,3 +1,4 @@
+import { list_join_empty } from "./list_join_empty.mjs";
 import { function_open } from "./function_open.mjs";
 import { js_code_return } from "./js_code_return.mjs";
 import { app_dev_screens } from "./app_dev_screens.mjs";
@@ -10,7 +11,6 @@ import { app_dev_screen_name } from "./app_dev_screen_name.mjs";
 import { app_list_add } from "./app_list_add.mjs";
 import { list_add } from "./list_add.mjs";
 import { js_code_statement_call_args } from "./js_code_statement_call_args.mjs";
-import { js_code_call } from "./js_code_call.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { string_delimit } from "./string_delimit.mjs";
@@ -34,7 +34,7 @@ export async function app_dev_screen_add(name) {
               ]),
             ),
           ),
-          js_code_function_declare(`${name}_screen`, root, ""),
+          js_code_function_declare(`${name}_screen`, root, list_join_empty),
         ],
       ),
     ),
@@ -44,10 +44,7 @@ export async function app_dev_screen_add(name) {
     file_write,
   );
   await app_list_add(app_dev_screens, function inserted_code() {
-    return js_code_statement_call_args(list_add.name, [
-      "result",
-      screen_name,
-    ]);
+    return js_code_statement_call_args(list_add.name, ["result", screen_name]);
   });
   await function_open(screen_name);
 }
