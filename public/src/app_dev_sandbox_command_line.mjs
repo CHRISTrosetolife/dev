@@ -8,7 +8,6 @@ import { app_learn_code_style_code_error } from "./app_learn_code_style_code_err
 import { list_first_remaining } from "./list_first_remaining.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
-import { app_learn_code_code_background_set } from "./app_learn_code_code_background_set.mjs";
 import { string_delimit } from "./string_delimit.mjs";
 import { string_starts_with_not } from "./string_starts_with_not.mjs";
 import { html_value_get } from "./html_value_get.mjs";
@@ -51,7 +50,7 @@ export async function app_dev_sandbox_command_line(
       run_error(message);
       return;
     }
-    app_learn_code_code_background_set(result_component);
+    result_component.normal();
     let without = string_prefix_without(text, prefix);
     let parts = string_split_space(without);
     let { first: function_name, remaining } = list_first_remaining(parts);
