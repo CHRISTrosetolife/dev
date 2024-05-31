@@ -49,10 +49,10 @@ export async function ceb_bible_words_definitions_atoms(skip, limit) {
       if (equal(list_length(atom_result), atom_count)) {
         la(atom_result);
       } else {
-        if(0)
-        log({
-          atom_result,
-        });
+        if (0)
+          log({
+            atom_result,
+          });
       }
     }
   });

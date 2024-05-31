@@ -9,7 +9,7 @@ admin.initializeApp({
 });
 let bucket = admin.storage().bucket();
 export async function storage_upload_file(file_path, destination) {
-  if (string_starts_with(destination, '/')) {
+  if (string_starts_with(destination, "/")) {
     error();
   }
   await bucket.upload(file_path, {

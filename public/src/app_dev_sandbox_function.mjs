@@ -27,7 +27,7 @@ export function app_dev_sandbox_function(
   let textarea = html_textarea_code(root);
   html_attribute_set(textarea, "rows", 2);
   html_value_set(textarea, code_initial);
-  html_button_run(root, on_click);
+  html_button_run(root, on_click, "");
   let result_component = app_dev_sandbox_result(root);
   async function on_click() {
     try {

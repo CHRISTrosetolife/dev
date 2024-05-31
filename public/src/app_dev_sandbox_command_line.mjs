@@ -41,7 +41,7 @@ export async function app_dev_sandbox_command_line(
     textarea,
     string_combine_multiple([prefix, list_join_space(args)]),
   );
-  html_button_run(root, run_click);
+  html_button_run(root, run_click, "");
   let result_component = app_dev_sandbox_result(root);
   async function run_click() {
     app_dev_sandbox_result_show(result_component);

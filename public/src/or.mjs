@@ -1,3 +1,3 @@
-export function or(a,b) {
+export function or(a, b) {
   return a || b;
 }

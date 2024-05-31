@@ -82,7 +82,6 @@ export function app_demo_2024_05_19() {
         "... and run `function_auto` ...",
       ]);
       html_img_limited_centered(parent, "demo\\2024_05_19\\15.png");
-      
       html_style_alternate_monospace_short_multiple(parent, [
         "... then whitespace is automatically fixed",
       ]);
