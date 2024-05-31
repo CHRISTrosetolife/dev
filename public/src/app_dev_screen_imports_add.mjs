@@ -1,3 +1,4 @@
+import { js_code_export_function_declare } from "./js_code_export_function_declare.mjs";
 import { app_dev_sandbox_function } from "./app_dev_sandbox_function.mjs";
 import { html_style_function_name } from "./html_style_function_name.mjs";
 import { noop } from "./noop.mjs";
@@ -37,6 +38,12 @@ export function app_dev_screen_imports_add() {
         "... then any missing `import`s will be added",
       );
       app_dev_screen_img(app_dev_screen_imports_add, root, i++);
+      let code_initial = js_code_export_function_declare(
+        function_name,
+        args_string,
+        body_string,
+        space,
+      );
       app_dev_sandbox_function(root, "adding missing `import`s");
     },
   };
