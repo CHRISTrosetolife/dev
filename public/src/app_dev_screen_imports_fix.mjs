@@ -1,3 +1,9 @@
+import { string_delimit } from "./string_delimit.mjs";
+import { list_map } from "./list_map.mjs";
+import { js_code_array } from "./js_code_array.mjs";
+import { js_code_call_args } from "./js_code_call_args.mjs";
+import { log } from "./log.mjs";
+import { js_code_statement_call_args } from "./js_code_statement_call_args.mjs";
 import { html_style_function_name } from "./html_style_function_name.mjs";
 import { noop } from "./noop.mjs";
 import { html_style_alternate_short_p } from "./html_style_alternate_short_p.mjs";
@@ -47,7 +53,11 @@ export function app_dev_screen_imports_fix() {
       let contents_function = js_code_export_function_declare(
         function_name_unique,
         "",
-        "",
+        js_code_statement_call_args(log.name, [
+          js_code_call_args(string_combine_multiple.name, [
+            js_code_array(list_map(["log", " ", "message"], string_delimit)),
+          ]),
+        ]),
         false,
       );
       let contents = await js_code_format(
