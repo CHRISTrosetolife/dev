@@ -1,4 +1,3 @@
-import { uuid } from "./uuid.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
 import { js_code_format } from "./js_code_format.mjs";
 import { js_code_export_function_declare } from "./js_code_export_function_declare.mjs";
@@ -22,7 +21,6 @@ import { file_write } from "./file_write.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_delimit } from "./string_delimit.mjs";
 import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
-import { object_merge } from "./object_merge.mjs";
 export function app_dev_screen_imports_add() {
   return {
     name: function imports_add_name(root) {
@@ -69,7 +67,7 @@ export function app_dev_screen_imports_add() {
       let contents = await js_code_format(contents_function);
       let file_path = function_name_to_path(function_name_unique);
       await file_write(file_path, contents);
-      let { textarea } = await app_dev_sandbox_function(
+      await app_dev_sandbox_function(
         root,
         function_name_unique,
         "adding missing `import`s",
@@ -85,15 +83,6 @@ export function app_dev_screen_imports_add() {
         async () =>
           await function_transform(js_imports_add.name, function_name_unique),
       );
-      let { element } = textarea;
-      let id = await uuid();
-      object_merge(element, {
-        id,
-      });
-      var editor = ace.edit(id);
-      editor.setTheme("ace/theme/twilight");
-      editor.session.setMode("ace/mode/javascript");
-      editor.session.setOption("useWorker", false);
     },
   };
 }
