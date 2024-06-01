@@ -50,10 +50,10 @@ export function app_dev_screen_git_auto() {
         "waiting for `git push` after each command slows development , so `git push` is omitted from `" +
           run_git.name +
           ".mjs",
-      ]);
-      "using `" +
-        run_git.name +
-        ".mjs` , anytime a `function` is ran from the command-line that updates files , then git can be automatically updated";
-    },
+      ]);html_style_alternate_monospace_short(root,"using `" +
+      run_git.name +
+      ".mjs` , anytime a `function` is ran from the command-line that updates files , then git can be automatically updated";
+  )
+      },
   };
 }
