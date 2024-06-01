@@ -110,10 +110,7 @@ export function app_dev_screen_await_add() {
         js_code_statement_call_args(sleep.name, [100]),
         false,
       );
-      let code = string_combine(
-        js_code_import(string_combine.name),
-        contents_function,
-      );
+      let code = string_combine(js_code_import(sleep.name), contents_function);
       let contents = await js_code_format(code);
       let file_path = function_name_to_path(function_name_unique);
       await file_write(file_path, contents);
