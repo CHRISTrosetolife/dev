@@ -1,3 +1,15 @@
+import { function_transform } from "./function_transform.mjs";
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
+import { app_dev_sandbox_function } from "./app_dev_sandbox_function.mjs";
+import { file_write } from "./file_write.mjs";
+import { function_name_to_path } from "./function_name_to_path.mjs";
+import { js_code_format } from "./js_code_format.mjs";
+import { js_code_import } from "./js_code_import.mjs";
+import { string_delimit } from "./string_delimit.mjs";
+import { js_code_statement_call_args } from "./js_code_statement_call_args.mjs";
+import { js_code_export_function_declare } from "./js_code_export_function_declare.mjs";
+import { function_name_new } from "./function_name_new.mjs";
 import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
 import { app_dev_p_transformer_generic } from "./app_dev_p_transformer_generic.mjs";
 import { js_await_add } from "./js_await_add.mjs";
@@ -96,7 +108,9 @@ export function app_dev_screen_await_add() {
       let contents_function = js_code_export_function_declare(
         function_name_unique,
         "",
-        js_code_statement_call_args(log.name, [string_delimit("log message")]),
+        js_code_statement_call_args(sleep.name, [
+          string_delimit("log message"),
+        ]),
         false,
       );
       let code = string_combine(
