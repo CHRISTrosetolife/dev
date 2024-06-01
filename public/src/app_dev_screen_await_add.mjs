@@ -78,8 +78,16 @@ export function app_dev_screen_await_add() {
         "... then `await` will automatically be added and the `function` will be made `async` :",
       );
       app_dev_screen_img(app_dev_screen_await_add, root, i++);
-      html_style_alternate_monospace_short(
+      html_style_alternate_short_p(
         root,
+        [
+          noop,
+          html_style_function_name,
+          noop,
+          app_learn_code_style_code_colored,
+          noop,
+          app_learn_code_style_code_colored,
+        ],
         "if `" +
           fn.name +
           "` is automatically ran on every file save , then `await` and `async` are automatically added as you code",
