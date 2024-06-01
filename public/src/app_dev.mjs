@@ -23,7 +23,7 @@ export async function app_dev() {
   let fl = functions_list();
   each(fl, async (f) => {
     let fp = function_name_to_path(f);
-    await function_import(f);
+    f = await function_import(f);
   });
   let root = html_style_default_initialize();
   let screens_functions = app_dev_screens();
