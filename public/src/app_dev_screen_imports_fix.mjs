@@ -19,6 +19,7 @@ import { html_style_alternate_monospace_short } from "./html_style_alternate_mon
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { js_imports_fix } from "./js_imports_fix.mjs";
+import { string_delimit } from "./string_delimit.mjs";
 export function app_dev_screen_imports_fix() {
   return {
     name: function imports_fix_name(root) {
@@ -49,7 +50,7 @@ export function app_dev_screen_imports_fix() {
       let contents_function = js_code_export_function_declare(
         function_name_unique,
         "",
-        js_code_statement_call_args(log.name, ["log message"]),
+        js_code_statement_call_args(log.name, [string_delimit("log message")]),
         false,
       );
       let code = string_combine(
