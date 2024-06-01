@@ -8,6 +8,7 @@ export function app_dev_screen_imports_fix() {
     screen: function imports_fix_screen(root) {
       let i = 1;
       app_dev_screen_img(app_dev_screen_imports_fix, root, i++);
+      ("`js_imports_add` adds missing imports and `js_imports_remove` removes unused imports");
     },
   };
 }
