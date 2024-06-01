@@ -13,7 +13,6 @@ import { string_combine } from "./string_combine.mjs";
 import { js_code_format } from "./js_code_format.mjs";
 import { js_code_export_function_declare } from "./js_code_export_function_declare.mjs";
 import { function_name_new } from "./function_name_new.mjs";
-import { app_dev_screen_imports_remove } from "./app_dev_screen_imports_remove.mjs";
 import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 import { html_span_text } from "./html_span_text.mjs";
@@ -34,15 +33,15 @@ export function app_dev_screen_imports_fix() {
         root,
         "to add and remove at the same time , use `js_imports_fix` :",
       );
-      app_dev_screen_img(app_dev_screen_imports_remove, root, i++);
+      app_dev_screen_img(app_dev_screen_imports_fix, root, i++);
       let fn = js_imports_fix;
       app_dev_p_transformer_generic(root, fn, "if");
-      app_dev_screen_img(app_dev_screen_imports_remove, root, i++);
+      app_dev_screen_img(app_dev_screen_imports_fix, root, i++);
       html_style_alternate_monospace_short(
         root,
         "... then any missing `imports` will be added and any unused `import`s will be removed :",
       );
-      app_dev_screen_img(app_dev_screen_imports_remove, root, i++);
+      app_dev_screen_img(app_dev_screen_imports_fix, root, i++);
       let function_name_unique = await function_name_new("fix_imports");
       let contents_function = js_code_export_function_declare(
         function_name_unique,
