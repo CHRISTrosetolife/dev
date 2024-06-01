@@ -19,6 +19,7 @@ import { app_dev_screen_imports_remove } from "./app_dev_screen_imports_remove.m
 import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 import { html_span_text } from "./html_span_text.mjs";
+import { js_imports_fix } from "./js_imports_fix.mjs";
 export function app_dev_screen_imports_fix() {
   return {
     name: function imports_fix_name(root) {
@@ -29,14 +30,14 @@ export function app_dev_screen_imports_fix() {
       ("`js_imports_add` adds missing imports and `js_imports_remove` removes unused imports");
       ("to do both , use `js_imports_fix`");
       app_dev_screen_img(app_dev_screen_imports_remove, root, i++);
-      let fn = js_imports_remove;
+      let fn = js_imports_fix;
       html_style_alternate_short_p(
         root,
         [noop, html_style_function_name],
         "if we run `" +
           function_transform.name +
           "` and pass in `" +
-          transformer +
+          fn +
           "` and the name of the function ...",
       );
       app_dev_screen_img(app_dev_screen_imports_remove, root, i++);
