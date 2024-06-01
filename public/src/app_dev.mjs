@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { each } from "./each.mjs";
 import { functions_list } from "./functions_list.mjs";
 import { global_files_initialize } from "./global_files_initialize.mjs";
@@ -24,6 +25,9 @@ export async function app_dev() {
   each(fl, async (f) => {
     let fp = function_name_to_path(f);
     let i = await function_import(f);
+    log({
+      i,
+    });
   });
   let root = html_style_default_initialize();
   let screens_functions = app_dev_screens();
