@@ -17,7 +17,7 @@ export function app_dev_screen_await_add() {
     name: function await_add_name(root) {
       return html_span_text(root, "await_add");
     },
-    screen: function await_add_screen(root) {
+    screen: async function await_add_screen(root) {
       let i = 1;
       let url = string_combine(
         url_secure(),
@@ -91,6 +91,35 @@ export function app_dev_screen_await_add() {
         "if `" +
           fn.name +
           "` is automatically ran on every file save , then `await` and `async` are automatically added as you code",
+      );
+      let function_name_unique = await function_name_new("fix_imports");
+      let contents_function = js_code_export_function_declare(
+        function_name_unique,
+        "",
+        js_code_statement_call_args(log.name, [string_delimit("log message")]),
+        false,
+      );
+      let code = string_combine(
+        js_code_import(string_combine.name),
+        contents_function,
+      );
+      let contents = await js_code_format(code);
+      let file_path = function_name_to_path(function_name_unique);
+      await file_write(file_path, contents);
+      await app_dev_sandbox_function(
+        root,
+        function_name_unique,
+        "fixing `import`s",
+        string_delimit_backtick(
+          string_combine_multiple([
+            function_transform.name,
+            " ",
+            fn.name,
+            " ",
+            function_name_unique,
+          ]),
+        ),
+        async () => await function_transform(fn.name, function_name_unique),
       );
     },
   };
