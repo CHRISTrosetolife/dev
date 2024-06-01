@@ -32,7 +32,7 @@ export function app_dev_screen_await_add() {
           sleep.name +
           "` is a function that calls `" +
           timeout_set.name +
-          "`",
+          "` :",
       );
     },
   };
