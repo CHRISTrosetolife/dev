@@ -67,9 +67,6 @@ export function app_dev_screen_imports_add() {
       let contents = await js_code_format(contents_function);
       let file_path = function_name_to_path(function_name_unique);
       await file_write(file_path, contents);
-      var editor = ace.edit("editor");
-      editor.setTheme("ace/theme/twilight");
-      editor.session.setMode("ace/mode/javascript");
       await app_dev_sandbox_function(
         root,
         function_name_unique,
