@@ -7,7 +7,7 @@ export async function file_js_transform(lambdas, file_path, args) {
   await list_adder_async(
     async (la) =>
       await each_async(lambdas, async (lambda) => {
-        await lambda(ast, ...args);
+        let result = await lambda(ast, ...args);
       }),
   );
   let after = await file_js_unparse(file_path, ast);
