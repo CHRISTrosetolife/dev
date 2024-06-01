@@ -80,7 +80,7 @@ export function app_dev_screen_await_add() {
       app_dev_screen_img(app_dev_screen_await_add, root, i++);
       html_style_alternate_monospace_short(
         root,
-        "once this function is automatically ran on every file save , then await and async are automatically added as you code",
+        "once this `function` is automatically ran on every file save , then `await` and `async` are automatically added as you code",
       );
     },
   };
