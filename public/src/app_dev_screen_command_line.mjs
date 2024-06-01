@@ -3,7 +3,6 @@ import { noop } from "./noop.mjs";
 import { html_style_alternate_short_p } from "./html_style_alternate_short_p.mjs";
 import { app_dev_sandbox_command_line } from "./app_dev_sandbox_command_line.mjs";
 import { app_dev_screen_command_line_prefix } from "./app_dev_screen_command_line_prefix.mjs";
-import { html_style_alternate_short_function_name } from "./html_style_alternate_short_function_name.mjs";
 import { html_style_alternate_monospace_short_span } from "./html_style_alternate_monospace_short_span.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 import { html_style_alternate_monospace_short_multiple } from "./html_style_alternate_monospace_short_multiple.mjs";
@@ -19,7 +18,6 @@ export function app_dev_screen_command_line() {
       );
     },
     screen: async function command_line_screen(root) {
-      html_style_alternate_short_function_name(root);
       html_style_alternate_short_p(
         root,
         [
