@@ -25,9 +25,7 @@ export async function app_dev() {
   each(fl, async (f) => {
     let fp = function_name_to_path(f);
     let i = await function_import(f);
-    log({
-      i,
-    });
+    log(i.toString());
   });
   let root = html_style_default_initialize();
   let screens_functions = app_dev_screens();
