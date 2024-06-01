@@ -1,3 +1,4 @@
+import { app_learn_code_style_code_colored } from "./app_learn_code_style_code_colored.mjs";
 import { url_secure } from "./url_secure.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { html_style_function_name } from "./html_style_function_name.mjs";
@@ -27,6 +28,7 @@ export function app_dev_screen_await_add() {
           noop,
           (e) => {
             html_style_link(url)(e);
+            app_learn_code_style_code_colored(e);
           },
         ],
         "`" + timeout_set.name + "` is a function that calls `setTimeout",
