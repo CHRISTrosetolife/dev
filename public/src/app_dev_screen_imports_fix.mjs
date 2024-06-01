@@ -52,9 +52,11 @@ export function app_dev_screen_imports_fix() {
         js_code_statement_call_args(log.name, ["log message"]),
         false,
       );
-      let contents = await js_code_format(
-        string_combine(js_code_import(string_combine.name), contents_function),
+      let code = string_combine(
+        js_code_import(string_combine.name),
+        contents_function,
       );
+      let contents = await js_code_format(code);
       let file_path = function_name_to_path(function_name_unique);
       await file_write(file_path, contents);
       await app_dev_sandbox_function(
