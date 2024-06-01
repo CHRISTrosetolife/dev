@@ -29,7 +29,8 @@ export function app_dev_screen_imports_remove() {
         "if we have an `import` that is not being used ...",
       );
       app_dev_screen_img(app_dev_screen_imports_remove, root, i++);
-      app_dev_p_transformer(root, js_imports_remove.name);
+      let fn = js_imports_remove;
+      app_dev_p_transformer(root, fn.name);
       app_dev_screen_img(app_dev_screen_imports_remove, root, i++);
       html_style_alternate_monospace_short(
         root,
@@ -56,16 +57,12 @@ export function app_dev_screen_imports_remove() {
           string_combine_multiple([
             function_transform.name,
             " ",
-            js_imports_remove.name,
+            fn.name,
             " ",
             function_name_unique,
           ]),
         ),
-        async () =>
-          await function_transform(
-            js_imports_remove.name,
-            function_name_unique,
-          ),
+        async () => await function_transform(fn.name, function_name_unique),
       );
     },
   };
