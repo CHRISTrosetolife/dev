@@ -6,7 +6,6 @@ import { file_write } from "./file_write.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
 import { js_code_format } from "./js_code_format.mjs";
 import { js_code_import } from "./js_code_import.mjs";
-import { string_delimit } from "./string_delimit.mjs";
 import { js_code_statement_call_args } from "./js_code_statement_call_args.mjs";
 import { js_code_export_function_declare } from "./js_code_export_function_declare.mjs";
 import { function_name_new } from "./function_name_new.mjs";
@@ -108,9 +107,7 @@ export function app_dev_screen_await_add() {
       let contents_function = js_code_export_function_declare(
         function_name_unique,
         "",
-        js_code_statement_call_args(sleep.name, [
-          string_delimit("log message"),
-        ]),
+        js_code_statement_call_args(sleep.name, [100]),
         false,
       );
       let code = string_combine(
