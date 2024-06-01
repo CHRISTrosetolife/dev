@@ -1,3 +1,5 @@
+import { app_dev_p_transformer_generic } from "./app_dev_p_transformer_generic.mjs";
+import { js_await_add } from "./js_await_add.mjs";
 import { sleep } from "./sleep.mjs";
 import { html_style_link_code } from "./html_style_link_code.mjs";
 import { url_secure } from "./url_secure.mjs";
@@ -67,6 +69,8 @@ export function app_dev_screen_await_add() {
           "` , then normally we would have to type out `await` and `async` :",
       );
       app_dev_screen_img(app_dev_screen_await_add, root, i++);
+      let fn = js_await_add;
+      app_dev_p_transformer_generic(root, fn, "instead , if");
     },
   };
 }
