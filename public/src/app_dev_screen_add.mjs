@@ -21,6 +21,14 @@ export async function app_dev_screen_add(name) {
   let screen_name = app_dev_screen_name(name);
   let root = "root";
   let image_index_name = "i";
+  let screen_body = list_join_empty([
+    js_code_statement_let_assign(image_index_name, 1),
+    js_code_call_args(app_dev_screen_img.name, [
+      screen_name,
+      root,
+      js_code_statement_increment(image_index_name),
+    ]),
+  ]);
   await function_new_generic(
     screen_name,
     "",
@@ -38,18 +46,7 @@ export async function app_dev_screen_add(name) {
               ]),
             ),
           ),
-          js_code_function_declare(
-            `${name}_screen`,
-            root,
-            list_join_empty([
-              js_code_statement_let_assign(image_index_name, 1),
-              js_code_call_args(app_dev_screen_img.name, [
-                screen_name,
-                root,
-                js_code_statement_increment(image_index_name),
-              ]),
-            ]),
-          ),
+          js_code_function_declare(`${name}_screen`, root, screen_body),
         ],
       ),
     ),
