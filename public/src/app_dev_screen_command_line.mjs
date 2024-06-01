@@ -1,3 +1,6 @@
+import { html_style_function_name } from "./html_style_function_name.mjs";
+import { noop } from "./noop.mjs";
+import { html_style_alternate_short_p } from "./html_style_alternate_short_p.mjs";
 import { app_dev_sandbox_command_line } from "./app_dev_sandbox_command_line.mjs";
 import { app_dev_screen_command_line_prefix } from "./app_dev_screen_command_line_prefix.mjs";
 import { html_style_alternate_short_function_name } from "./html_style_alternate_short_function_name.mjs";
@@ -6,6 +9,7 @@ import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 import { html_style_alternate_monospace_short_multiple } from "./html_style_alternate_monospace_short_multiple.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { identity } from "./identity.mjs";
+import { app_learn_code_style_code_colored } from "./app_learn_code_style_code_colored.mjs";
 export function app_dev_screen_command_line() {
   return {
     name: function command_line_name(root) {
@@ -15,11 +19,18 @@ export function app_dev_screen_command_line() {
       );
     },
     screen: async function command_line_screen(root) {
-      html_style_alternate_short_function_name(
+      html_style_alternate_short_function_name(root);
+      html_style_alternate_short_p(
         root,
+        [
+          noop,
+          html_style_function_name,
+          noop,
+          app_learn_code_style_code_colored,
+        ],
         "`" +
           string_combine.name +
-          "` is a function that concatenates two strings",
+          "` is a `function` that concatenates two strings",
       );
       let i = 1;
       app_dev_screen_img(app_dev_screen_command_line, root, i++);
