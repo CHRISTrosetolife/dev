@@ -123,7 +123,7 @@ export function app_dev_screen_await_add() {
       await app_dev_sandbox_function(
         root,
         function_name_unique,
-        "fixing `import`s",
+        "adding `async` and `await`",
         string_delimit_backtick(
           string_combine_multiple([
             function_transform.name,
