@@ -2,7 +2,6 @@ import { file_write } from "./file_write.mjs";
 import { js_imports_remove } from "./js_imports_remove.mjs";
 import { function_imports_add } from "./function_imports_add.mjs";
 import { js_body_nested } from "./js_body_nested.mjs";
-import { js_imports_add } from "./js_imports_add.mjs";
 import { list_join_comma } from "./list_join_comma.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { js_parse } from "./js_parse.mjs";
@@ -14,7 +13,7 @@ import { list_copy } from "./list_copy.mjs";
 import { list_map } from "./list_map.mjs";
 import { js_imports_add_specified } from "./js_imports_add_specified.mjs";
 export async function js_outside_move(ast) {
-  const type = "FunctionDeclaration";
+  let type = "FunctionDeclaration";
   let { body: body_ast } = ast;
   let declarations = list_filter(body_ast, (b) => b.type === type);
   let copy = list_copy(declarations);
