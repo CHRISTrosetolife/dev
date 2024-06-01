@@ -86,10 +86,10 @@ export function app_dev_screen_imports_add() {
           await function_transform(js_imports_add.name, function_name_unique),
       );
       let { element } = textarea;
+      let id = await uuid();
       object_merge(element, {
         id,
       });
-      let id = await uuid();
       var editor = ace.edit("editor");
       editor.setTheme("ace/theme/twilight");
       editor.session.setMode("ace/mode/javascript");
