@@ -32,7 +32,7 @@ export function app_dev_screen_imports_fix() {
       );
       html_style_alternate_short_function_name(
         root,
-        "to do both , use `js_imports_fix`",
+        "to do both , use `js_imports_fix` :",
       );
       app_dev_screen_img(app_dev_screen_imports_remove, root, i++);
       let fn = js_imports_fix;
