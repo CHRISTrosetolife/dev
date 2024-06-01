@@ -51,6 +51,7 @@ export function app_dev_screen_git_auto() {
           run_git.name +
           ".mjs",
       ]);
+      ("anytime a `function` is ran from the command-line that updates files , then git can be automatically updated");
     },
   };
 }
