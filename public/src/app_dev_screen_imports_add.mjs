@@ -1,3 +1,6 @@
+import { function_name_to_path } from "./function_name_to_path.mjs";
+import { js_code_format } from "./js_code_format.mjs";
+import { js_code_export_function_declare } from "./js_code_export_function_declare.mjs";
 import { js_code_array } from "./js_code_array.mjs";
 import { app_dev_sandbox_function } from "./app_dev_sandbox_function.mjs";
 import { log } from "./log.mjs";
@@ -14,7 +17,6 @@ import { html_style_alternate_monospace_short_span } from "./html_style_alternat
 import { list_join_space } from "./list_join_space.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { function_new_generic } from "./function_new_generic.mjs";
 import { file_write } from "./file_write.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_delimit } from "./string_delimit.mjs";
@@ -50,7 +52,7 @@ export function app_dev_screen_imports_add() {
       );
       app_dev_screen_img(app_dev_screen_imports_add, root, i++);
       let function_name_unique = await function_name_new("add_missing_imports");
-      await function_new_generic(
+      let contents_function = js_code_export_function_declare(
         function_name_unique,
         "",
         list_join_space([
@@ -61,10 +63,10 @@ export function app_dev_screen_imports_add() {
           ]),
         ]),
         false,
-        [],
-        false,
-        file_write,
       );
+      let contents = await js_code_format(contents_function);
+      let file_path = function_name_to_path(function_name_unique);
+      await file_write(file_path, unparsed);
       await app_dev_sandbox_function(
         root,
         function_name_unique,
