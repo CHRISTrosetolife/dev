@@ -1,3 +1,5 @@
+import { url_secure } from "./url_secure.mjs";
+import { string_combine } from "./string_combine.mjs";
 import { html_style_function_name } from "./html_style_function_name.mjs";
 import { noop } from "./noop.mjs";
 import { html_style_alternate_short_p } from "./html_style_alternate_short_p.mjs";
@@ -20,7 +22,10 @@ export function app_dev_screen_await_add() {
           html_style_function_name,
           noop,
           html_style_link(
-            "https://developer.mozilla.org/en-US/docs/Web/API/setTimeout",
+            string_combine(
+              url_secure(),
+              "developer.mozilla.org/en-US/docs/Web/API/setTimeout",
+            ),
           ),
         ],
         "`" + timeout_set.name + "` is a function that calls",

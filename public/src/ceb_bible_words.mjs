@@ -1,3 +1,5 @@
+import { url_secure } from "./url_secure.mjs";
+import { string_combine } from "./string_combine.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { string_count } from "./string_count.mjs";
 import { string_split_space } from "./string_split_space.mjs";
@@ -11,9 +13,12 @@ import { string_skip } from "./string_skip.mjs";
 import { string_index } from "./string_index.mjs";
 import { http_cache } from "./http_cache.mjs";
 export async function ceb_bible_words() {
-  let url = "https://www.ccel.org/ccel/b/bible/ceb_p/cache/ceb_p.txt";
+  let url = string_combine(
+    url_secure(),
+    "www.ccel.org/ccel/b/bible/ceb_p/cache/ceb_p.txt",
+  );
   let text = await http_cache(url);
-  const verse_1 = "^1";
+  let verse_1 = "^1";
   let index = string_index(text, verse_1);
   text = string_skip(text, index);
   let end = "This document is from the Christian Classics Ethereal";
@@ -21,14 +26,14 @@ export async function ceb_bible_words() {
   text = string_take(text, index_end);
   let replace = "_,;:!?.'\"()¶/`^|0123456789";
   let replace_list = string_split_empty(replace);
-  const replacement = " ";
+  let replacement = " ";
   text = string_replace_multiple(text, replace_list, replacement);
   text = string_whitespace_normalize(text);
   text = string_case_lower(text);
   text = string_trim(text);
   let text_split = string_split_space(text);
   let list = string_count(text_split);
-  const property_name = "word";
+  let property_name = "word";
   let mapped = list_map_property(list, property_name);
   return mapped;
 }
