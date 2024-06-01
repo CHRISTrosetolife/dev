@@ -20,7 +20,7 @@ import { function_name_to_path } from "./function_name_to_path.mjs";
 import { function_import } from "./function_import.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 export async function app_dev() {
-  let files = global_files_initialize({});
+  let { files } = global_files_initialize({});
   let fl = functions_list();
   let promises = list_map(fl, async (f) => {
     let fp = function_name_to_path(f);
