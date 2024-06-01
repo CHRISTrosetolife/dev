@@ -41,7 +41,7 @@ export function app_dev_screen_await_add() {
           noop,
           app_learn_code_style_code_colored,
           noop,
-          html_style_link_code(url),
+          html_style_function_name,
         ],
         "`" +
           sleep.name +
