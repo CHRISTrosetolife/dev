@@ -1,4 +1,6 @@
 import crypto from "crypto";
-export function uuid() {
+import { import_multi } from "./import_multi.mjs";
+export async function uuid() {
+  let crypto = await import_multi("crypto", "window.crypto");
   return crypto.randomUUID();
 }
