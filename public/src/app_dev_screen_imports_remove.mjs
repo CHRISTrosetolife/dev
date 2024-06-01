@@ -1,3 +1,20 @@
+import { js_imports_add } from "./js_imports_add.mjs";
+import { function_transform } from "./function_transform.mjs";
+import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
+import { app_dev_sandbox_function } from "./app_dev_sandbox_function.mjs";
+import { file_write } from "./file_write.mjs";
+import { function_name_to_path } from "./function_name_to_path.mjs";
+import { js_code_format } from "./js_code_format.mjs";
+import { string_delimit } from "./string_delimit.mjs";
+import { list_map } from "./list_map.mjs";
+import { js_code_array } from "./js_code_array.mjs";
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { js_code_call_args } from "./js_code_call_args.mjs";
+import { log } from "./log.mjs";
+import { js_code_statement_call_args } from "./js_code_statement_call_args.mjs";
+import { list_join_space } from "./list_join_space.mjs";
+import { js_code_export_function_declare } from "./js_code_export_function_declare.mjs";
+import { function_name_new } from "./function_name_new.mjs";
 import { app_dev_p_transformer } from "./app_dev_p_transformer.mjs";
 import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
 import { html_style_alternate_monospace_short_span } from "./html_style_alternate_monospace_short_span.mjs";
@@ -11,7 +28,7 @@ export function app_dev_screen_imports_remove() {
         "remove unused `import`s",
       );
     },
-    screen: function imports_remove_screen(root) {
+    screen: async function imports_remove_screen(root) {
       let i = 1;
       html_style_alternate_monospace_short(
         root,
@@ -25,7 +42,7 @@ export function app_dev_screen_imports_remove() {
         "... then any unused `import`s will be removed",
       );
       app_dev_screen_img(app_dev_screen_imports_remove, root, i++);
-      let function_name_unique =  function_name_new("add_missing_imports");
+      let function_name_unique = await function_name_new("add_missing_imports");
       let contents_function = js_code_export_function_declare(
         function_name_unique,
         "",
@@ -38,10 +55,10 @@ export function app_dev_screen_imports_remove() {
         ]),
         false,
       );
-      let contents =  js_code_format(contents_function);
+      let contents = await js_code_format(contents_function);
       let file_path = function_name_to_path(function_name_unique);
-       file_write(file_path, contents);
-       app_dev_sandbox_function(
+      await file_write(file_path, contents);
+      await app_dev_sandbox_function(
         root,
         function_name_unique,
         "adding missing `import`s",
