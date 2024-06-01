@@ -64,8 +64,9 @@ export function app_dev_screen_await_add() {
         ],
         "if we have a `function` that calls `" +
           sleep.name +
-          "` , then normally we would have to type out `await` and `async`",
+          "` , then normally we would have to type out `await` and `async` :",
       );
+      app_dev_screen_img(app_dev_screen_await_add, root, i++);
     },
   };
 }
