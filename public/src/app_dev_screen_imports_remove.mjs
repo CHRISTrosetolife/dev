@@ -13,6 +13,7 @@ import { html_style_alternate_monospace_short } from "./html_style_alternate_mon
 import { html_style_alternate_monospace_short_span } from "./html_style_alternate_monospace_short_span.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 import { js_imports_remove } from "./js_imports_remove.mjs";
+import { string_combine } from "./string_combine.mjs";
 export function app_dev_screen_imports_remove() {
   return {
     name: function imports_remove_name(root) {
@@ -42,7 +43,7 @@ export function app_dev_screen_imports_remove() {
         "",
         false,
       );
-      let contents = await js_code_format(contents_function);
+      let contents = await js_code_format(string_combine(contents_function));
       let file_path = function_name_to_path(function_name_unique);
       await file_write(file_path, contents);
       await app_dev_sandbox_function(
