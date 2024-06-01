@@ -38,7 +38,7 @@ export function app_dev_screen_imports_add() {
       app_dev_screen_img(app_dev_screen_imports_add, root, i++);
       html_style_alternate_monospace_short(
         root,
-        "... then any missing `import`s will be added",
+        "... then any missing `import`s will be added :",
       );
       app_dev_screen_img(app_dev_screen_imports_add, root, i++);
       let function_name_unique = await function_name_new("missing_imports");
