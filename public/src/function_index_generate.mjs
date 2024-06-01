@@ -7,6 +7,7 @@ import { function_new_generic } from "./function_new_generic.mjs";
 import { js_code_array } from "./js_code_array.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_delimit } from "./string_delimit.mjs";
+import { file_overwrite } from "./file_overwrite.mjs";
 export async function function_index_generate() {
   let name = "function_index";
   let d = await file_read_json(data_path());
@@ -17,5 +18,9 @@ export async function function_index_generate() {
     name,
     "",
     js_code_statement_return(js_code_array(delimited)),
+    false,
+    [],
+    false,
+    file_overwrite,
   );
 }
