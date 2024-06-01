@@ -22,7 +22,7 @@ export function app_dev_screen_await_add() {
       html_style_alternate_short_p(
         root,
         [noop, html_style_function_name, noop, html_style_link_code(url)],
-        "`" + timeout_set.name + "` is a function that calls `setTimeout",
+        "`" + timeout_set.name + "` is a function that calls `setTimeout` :",
       );
     },
   };
