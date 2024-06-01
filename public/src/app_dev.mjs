@@ -27,7 +27,7 @@ export async function app_dev() {
     let i = await function_import(f);
     object_property_set(files, fp, i);
   });
-  promise_all(promises);
+  await promise_all(promises);
   let root = html_style_default_initialize();
   let screens_functions = app_dev_screens();
   let screens = list_map(screens_functions, (s) => s());
