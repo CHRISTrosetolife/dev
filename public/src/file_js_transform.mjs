@@ -12,5 +12,8 @@ export async function file_js_transform(lambdas, file_path, args) {
       }),
   );
   let after = await file_js_unparse(file_path, ast);
-  return after;
+  return {
+    results,
+    after,
+  };
 }
