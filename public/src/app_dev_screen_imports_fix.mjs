@@ -1,3 +1,4 @@
+import { app_dev_p_transformer_generic } from "./app_dev_p_transformer_generic.mjs";
 import { log } from "./log.mjs";
 import { js_code_statement_call_args } from "./js_code_statement_call_args.mjs";
 import { html_style_function_name } from "./html_style_function_name.mjs";
@@ -31,6 +32,7 @@ export function app_dev_screen_imports_fix() {
       ("to do both , use `js_imports_fix`");
       app_dev_screen_img(app_dev_screen_imports_remove, root, i++);
       let fn = js_imports_fix;
+      app_dev_p_transformer_generic(root, fn, "if");
       html_style_alternate_short_p(
         root,
         [noop, html_style_function_name],
