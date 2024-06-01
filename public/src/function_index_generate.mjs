@@ -4,10 +4,18 @@ import { file_read_json } from "./file_read_json.mjs";
 import { data_path } from "./data_path.mjs";
 import { object_properties } from "./object_properties.mjs";
 import { function_new_generic } from "./function_new_generic.mjs";
+import { js_code_array } from "./js_code_array.mjs";
+import { list_map } from "./list_map.mjs";
+import { string_delimit } from "./string_delimit.mjs";
 export async function function_index_generate() {
   let name = "function_index";
   let d = await file_read_json(data_path());
   let { functions } = d;
   let function_names = object_properties(functions);
-  await function_new_generic(name, "", js_code_statement_return);
+  let delimited = list_map(function_names, string_delimit);
+  await function_new_generic(
+    name,
+    "",
+    js_code_statement_return(js_code_array()),
+  );
 }
