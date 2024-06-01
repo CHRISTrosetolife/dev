@@ -9,5 +9,9 @@ export function app_dev_p_transformer(root, transformer) {
     "` and pass in `" +
     transformer +
     "` and the name of the function ...";
-  html_style_alternate_short_p(root, [noop, html_style_function_name], message);
+  html_style_alternate_short_function_name(root, message);
 }
+function html_style_alternate_short_function_name(root, message) {
+    html_style_alternate_short_p(root, [noop, html_style_function_name], message);
+}
+
