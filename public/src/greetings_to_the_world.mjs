@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 export function greetings_to_the_world() {
-  return "greet" + "ings";
+  return log("greet" + "ings");
 }
