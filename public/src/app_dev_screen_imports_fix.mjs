@@ -1,3 +1,4 @@
+import { html_style_alternate_short_function_name } from "./html_style_alternate_short_function_name.mjs";
 import { app_dev_p_transformer_generic } from "./app_dev_p_transformer_generic.mjs";
 import { log } from "./log.mjs";
 import { js_code_statement_call_args } from "./js_code_statement_call_args.mjs";
@@ -25,7 +26,10 @@ export function app_dev_screen_imports_fix() {
     },
     screen: async function imports_fix_screen(root) {
       let i = 1;
-      ("`js_imports_add` adds missing imports and `js_imports_remove` removes unused imports");
+      html_style_alternate_short_function_name(
+        root,
+        "`js_imports_add` adds missing imports and `js_imports_remove` removes unused imports",
+      );
       ("to do both , use `js_imports_fix`");
       app_dev_screen_img(app_dev_screen_imports_remove, root, i++);
       let fn = js_imports_fix;
