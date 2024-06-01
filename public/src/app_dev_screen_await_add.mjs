@@ -1,4 +1,4 @@
-import { app_learn_code_style_code_colored } from "./app_learn_code_style_code_colored.mjs";
+import { html_style_link_code } from "./html_style_link_code.mjs";
 import { url_secure } from "./url_secure.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { html_style_function_name } from "./html_style_function_name.mjs";
@@ -7,7 +7,6 @@ import { html_style_alternate_short_p } from "./html_style_alternate_short_p.mjs
 import { timeout_set } from "./timeout_set.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 import { html_span_text } from "./html_span_text.mjs";
-import { html_style_link } from "./html_style_link.mjs";
 export function app_dev_screen_await_add() {
   return {
     name: function await_add_name(root) {
@@ -22,15 +21,7 @@ export function app_dev_screen_await_add() {
       );
       html_style_alternate_short_p(
         root,
-        [
-          noop,
-          html_style_function_name,
-          noop,
-          (e) => {
-            html_style_link(url)(e);
-            app_learn_code_style_code_colored(e);
-          },
-        ],
+        [noop, html_style_function_name, noop, html_style_link_code(url)],
         "`" + timeout_set.name + "` is a function that calls `setTimeout",
       );
     },
