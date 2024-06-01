@@ -104,7 +104,7 @@ export function app_dev_screen_await_add() {
           fn.name +
           "` is automatically ran on every file save , then `await` and `async` are automatically added as you code",
       );
-      let function_name_unique = await function_name_new("fix_imports");
+      let function_name_unique = await function_name_new("async_await_add");
       let contents_function = js_code_export_function_declare(
         function_name_unique,
         "",
