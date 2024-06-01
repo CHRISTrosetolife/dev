@@ -42,5 +42,7 @@ export async function app_dev_sandbox_function(
       app_dev_sandbox_result_error(result_component, e);
     }
   }
-  return textarea;
+  return {
+    textarea,
+  };
 }
