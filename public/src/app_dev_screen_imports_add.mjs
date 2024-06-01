@@ -90,7 +90,7 @@ export function app_dev_screen_imports_add() {
       object_merge(element, {
         id,
       });
-      var editor = ace.edit("editor");
+      var editor = ace.edit(id);
       editor.setTheme("ace/theme/twilight");
       editor.session.setMode("ace/mode/javascript");
     },
