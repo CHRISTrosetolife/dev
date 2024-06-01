@@ -1,5 +1,3 @@
-import { log } from "./log.mjs";
-import { each } from "./each.mjs";
 import { functions_list } from "./functions_list.mjs";
 import { global_files_initialize } from "./global_files_initialize.mjs";
 import { html_button_view_sorce } from "./html_button_view_sorce.mjs";
@@ -19,13 +17,14 @@ import { string_combine } from "./string_combine.mjs";
 import { add_1 } from "./add_1.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
 import { function_import } from "./function_import.mjs";
+import { object_property_set } from "./object_property_set.mjs";
 export async function app_dev() {
   let files = global_files_initialize({});
   let fl = functions_list();
-  each(fl, async (f) => {
+  let promises = list_map(fl, async (f) => {
     let fp = function_name_to_path(f);
     let i = await function_import(f);
-    log(i.toString());
+    object_property_set(files, fp, i);
   });
   let root = html_style_default_initialize();
   let screens_functions = app_dev_screens();
