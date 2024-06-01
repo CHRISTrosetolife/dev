@@ -9,6 +9,7 @@ export function app_dev_screen_imports_fix() {
       let i = 1;
       app_dev_screen_img(app_dev_screen_imports_fix, root, i++);
       ("`js_imports_add` adds missing imports and `js_imports_remove` removes unused imports");
+      ("to do both , use `js_imports_fix`");
     },
   };
 }
