@@ -9,7 +9,7 @@ import { list_map } from "./list_map.mjs";
 import { string_delimit } from "./string_delimit.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
 export async function functions_list_generate() {
-  let name = "function_index";
+  let name = "functions_list";
   let d = await file_read_json(data_path());
   let { functions } = d;
   let function_names = object_properties(functions);
