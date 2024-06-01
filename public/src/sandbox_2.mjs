@@ -1,1 +1,3 @@
-export function sandbox_2() {}
+export function sandbox_2() {
+  sleep(100);
+}
