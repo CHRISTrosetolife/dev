@@ -17,15 +17,13 @@ import { html_span_text } from "./html_span_text.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { add_1 } from "./add_1.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
-import { function_import } from "./function_import.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 export async function app_dev() {
   let { files } = global_files_initialize({});
   let fl = functions_list();
   let promises = list_map(fl, async (f) => {
     let fp = function_name_to_path(f);
-    let i = await function_import(f);
-    object_property_set(files, fp, i);
+    object_property_set(files, fp, "");
   });
   await promise_all(promises);
   let root = html_style_default_initialize();
