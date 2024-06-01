@@ -56,6 +56,9 @@ export function app_dev_screen_imports_fix() {
         js_code_import(string_combine.name),
         contents_function,
       );
+      log({
+        code,
+      });
       let contents = await js_code_format(code);
       let file_path = function_name_to_path(function_name_unique);
       await file_write(file_path, contents);
