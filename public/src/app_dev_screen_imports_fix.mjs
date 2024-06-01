@@ -46,7 +46,7 @@ export function app_dev_screen_imports_fix() {
         "... then any missing `imports` will be added and any unused `import`s will be removed :",
       );
       app_dev_screen_img(app_dev_screen_imports_remove, root, i++);
-      let function_name_unique = await function_name_new("unused_imports");
+      let function_name_unique = await function_name_new("fix_imports");
       let contents_function = js_code_export_function_declare(
         function_name_unique,
         "",
