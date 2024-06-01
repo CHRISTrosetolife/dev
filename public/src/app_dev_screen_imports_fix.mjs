@@ -1,9 +1,6 @@
 import { app_dev_p_transformer_generic } from "./app_dev_p_transformer_generic.mjs";
 import { log } from "./log.mjs";
 import { js_code_statement_call_args } from "./js_code_statement_call_args.mjs";
-import { html_style_function_name } from "./html_style_function_name.mjs";
-import { noop } from "./noop.mjs";
-import { html_style_alternate_short_p } from "./html_style_alternate_short_p.mjs";
 import { function_transform } from "./function_transform.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
@@ -33,15 +30,6 @@ export function app_dev_screen_imports_fix() {
       app_dev_screen_img(app_dev_screen_imports_remove, root, i++);
       let fn = js_imports_fix;
       app_dev_p_transformer_generic(root, fn, "if");
-      html_style_alternate_short_p(
-        root,
-        [noop, html_style_function_name],
-        "if we run `" +
-          function_transform.name +
-          "` and pass in `" +
-          fn.name +
-          "` and the name of the function ...",
-      );
       app_dev_screen_img(app_dev_screen_imports_remove, root, i++);
       html_style_alternate_monospace_short(
         root,
