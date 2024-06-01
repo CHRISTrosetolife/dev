@@ -81,7 +81,7 @@ export function app_dev_screen_await_add() {
       html_style_alternate_monospace_short(
         root,
         "if `" +
-          fn +
+          fn.name +
           "` is automatically ran on every file save , then `await` and `async` are automatically added as you code",
       );
     },
