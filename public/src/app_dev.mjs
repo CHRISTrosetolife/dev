@@ -1,3 +1,4 @@
+import { functions_list } from "./functions_list.mjs";
 import { log } from "./log.mjs";
 import { each_object } from "./each_object.mjs";
 import { global_files_initialize } from "./global_files_initialize.mjs";
@@ -17,6 +18,7 @@ import { html_span_text } from "./html_span_text.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { add_1 } from "./add_1.mjs";
 export async function app_dev() {
+  functions_list();
   each_object(window, (key) =>
     log({
       key,
