@@ -1,3 +1,6 @@
+import { html_style_function_name } from "./html_style_function_name.mjs";
+import { noop } from "./noop.mjs";
+import { html_style_alternate_short_p } from "./html_style_alternate_short_p.mjs";
 import { function_transform } from "./function_transform.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
@@ -9,7 +12,6 @@ import { string_combine } from "./string_combine.mjs";
 import { js_code_format } from "./js_code_format.mjs";
 import { js_code_export_function_declare } from "./js_code_export_function_declare.mjs";
 import { function_name_new } from "./function_name_new.mjs";
-import { app_dev_p_transformer } from "./app_dev_p_transformer.mjs";
 import { js_imports_remove } from "./js_imports_remove.mjs";
 import { app_dev_screen_imports_remove } from "./app_dev_screen_imports_remove.mjs";
 import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
@@ -24,13 +26,17 @@ export function app_dev_screen_imports_fix() {
       let i = 1;
       ("`js_imports_add` adds missing imports and `js_imports_remove` removes unused imports");
       ("to do both , use `js_imports_fix`");
-      html_style_alternate_monospace_short(
-        root,
-        "if we have an `import` that is not being used ...",
-      );
       app_dev_screen_img(app_dev_screen_imports_remove, root, i++);
       let fn = js_imports_remove;
-      app_dev_p_transformer(root, fn.name);
+      html_style_alternate_short_p(
+        root,
+        [noop, html_style_function_name],
+        "if we run `" +
+          function_transform.name +
+          "` and pass in `" +
+          transformer +
+          "` and the name of the function ...",
+      );
       app_dev_screen_img(app_dev_screen_imports_remove, root, i++);
       html_style_alternate_monospace_short(
         root,
