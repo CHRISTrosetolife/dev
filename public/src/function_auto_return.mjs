@@ -7,7 +7,7 @@ export async function function_auto_return(function_name) {
   let transforms = function_auto_transforms();
   let names = list_map_property(transforms, "name");
   let joined = list_join_comma(names);
-  let result = await function_transform_return(joined, function_name);
+  let { after } = await function_transform_return(joined, function_name);
   await function_data(function_name);
-  return result;
+  return after;
 }
