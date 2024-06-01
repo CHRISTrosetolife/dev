@@ -58,7 +58,9 @@ export function app_dev_screen_await_add() {
           noop,
           html_style_function_name,
         ],
-        "if we have a `function` that calls ...`" + sleep.name + "` ...",
+        "if we have a `function` that calls `" +
+          sleep.name +
+          "` , then normally we would have to type out `await` and `async`",
       );
     },
   };
