@@ -40,7 +40,7 @@ export function app_dev_screen_imports_fix() {
       app_dev_screen_img(app_dev_screen_imports_remove, root, i++);
       html_style_alternate_monospace_short(
         root,
-        "... then any unused `import`s will be removed :",
+        "... then any missing `imports` will be added and any unused `import`s will be removed :",
       );
       app_dev_screen_img(app_dev_screen_imports_remove, root, i++);
       let function_name_unique = await function_name_new("unused_imports");
