@@ -145,7 +145,6 @@ export function functions_list() {
     "assert_not_message_async",
     "assert_not",
     "assert",
-    "beep",
     "bible_ceb_chapter",
     "bible_chapter_parsed",
     "bible_data_jas01",
