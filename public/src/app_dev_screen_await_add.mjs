@@ -50,6 +50,16 @@ export function app_dev_screen_await_add() {
           "` :",
       );
       app_dev_screen_img(app_dev_screen_await_add, root, i++);
+      html_style_alternate_short_p(
+        root,
+        [
+          noop,
+          app_learn_code_style_code_colored,
+          noop,
+          html_style_function_name,
+        ],
+        "if we have a `function` that calls ...`" + sleep.name + "` ...",
+      );
     },
   };
 }
