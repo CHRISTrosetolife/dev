@@ -1,3 +1,4 @@
+import { app_dev_p_transformer } from "./app_dev_p_transformer.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
 import { js_code_format } from "./js_code_format.mjs";
 import { js_code_export_function_declare } from "./js_code_export_function_declare.mjs";
@@ -6,9 +7,6 @@ import { app_dev_sandbox_function } from "./app_dev_sandbox_function.mjs";
 import { log } from "./log.mjs";
 import { js_code_statement_call_args } from "./js_code_statement_call_args.mjs";
 import { function_name_new } from "./function_name_new.mjs";
-import { html_style_function_name } from "./html_style_function_name.mjs";
-import { noop } from "./noop.mjs";
-import { html_style_alternate_short_p } from "./html_style_alternate_short_p.mjs";
 import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
 import { js_imports_add } from "./js_imports_add.mjs";
 import { function_transform } from "./function_transform.mjs";
@@ -37,15 +35,7 @@ export function app_dev_screen_imports_add() {
       let i = 1;
       app_dev_screen_img(app_dev_screen_imports_add, root, i++);
       let transformer = js_imports_add.name;
-      html_style_alternate_short_p(
-        root,
-        [noop, html_style_function_name],
-        "... and we run `" +
-          function_transform.name +
-          "` and pass in `" +
-          transformer +
-          "` and the name of the function ...",
-      );
+      app_dev_p_transformer(root, transformer);
       app_dev_screen_img(app_dev_screen_imports_add, root, i++);
       html_style_alternate_monospace_short(
         root,
