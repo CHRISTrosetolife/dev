@@ -1,3 +1,4 @@
+import { app_dev_screen_imports_fix } from "./app_dev_screen_imports_fix.mjs";
 import { app_dev_screen_imports_remove } from "./app_dev_screen_imports_remove.mjs";
 import { app_dev_screen_imports_add } from "./app_dev_screen_imports_add.mjs";
 import { app_dev_screen_function_new_args } from "./app_dev_screen_function_new_args.mjs";
@@ -16,6 +17,7 @@ export function app_dev_screens() {
   list_add(result, app_dev_screen_git_auto);
   list_add(result, app_dev_screen_imports_add);
   list_add(result, app_dev_screen_imports_remove);
+  list_add(result, app_dev_screen_imports_fix);
   marker();
   return result;
 }
