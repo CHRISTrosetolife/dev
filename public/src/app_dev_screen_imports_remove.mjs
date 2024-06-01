@@ -20,6 +20,10 @@ export function app_dev_screen_imports_remove() {
       app_dev_screen_img(app_dev_screen_imports_remove, root, i++);
       app_dev_p_transformer(root, js_imports_remove.name);
       app_dev_screen_img(app_dev_screen_imports_remove, root, i++);
+      html_style_alternate_monospace_short(
+        root,
+        "... then any unused `import`s will be removed",
+      );
       app_dev_screen_img(app_dev_screen_imports_remove, root, i++);
     },
   };
