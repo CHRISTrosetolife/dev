@@ -92,7 +92,8 @@ export function app_dev_screen_imports_add() {
       });
       var editor = ace.edit(id);
       editor.setTheme("ace/theme/twilight");
-      editor.session.setMode("ace/mode/javascript");editor.session.setOption("useWorker", false);
+      editor.session.setMode("ace/mode/javascript");
+      editor.session.setOption("useWorker", false);
     },
   };
 }
