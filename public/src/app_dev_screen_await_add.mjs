@@ -1,3 +1,4 @@
+import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
 import { app_dev_p_transformer_generic } from "./app_dev_p_transformer_generic.mjs";
 import { js_await_add } from "./js_await_add.mjs";
 import { sleep } from "./sleep.mjs";
@@ -71,7 +72,11 @@ export function app_dev_screen_await_add() {
       app_dev_screen_img(app_dev_screen_await_add, root, i++);
       let fn = js_await_add;
       app_dev_p_transformer_generic(root, fn, "instead , if");
-      app_dev_screen_img(app_dev_screen_await_add, root, i++);html_style_alternate_monospace_short(root,'... then')
+      app_dev_screen_img(app_dev_screen_await_add, root, i++);
+      html_style_alternate_monospace_short(
+        root,
+        "... then `await` will automatically be added and the `function` will be made `async`",
+      );
     },
   };
 }
