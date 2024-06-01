@@ -3,7 +3,8 @@ import { function_transform } from "./function_transform.mjs";
 export function app_dev_p_transformer(root, transformer) {
   let prefix = "... and";
   let message =
-    "... and we run `" +
+    prefix +
+    " we run `" +
     function_transform.name +
     "` and pass in `" +
     transformer +
