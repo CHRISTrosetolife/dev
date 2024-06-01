@@ -36,7 +36,7 @@ export function app_dev_screen_imports_fix() {
         "if we run `" +
           function_transform.name +
           "` and pass in `" +
-          fn +
+          fn.name +
           "` and the name of the function ...",
       );
       app_dev_screen_img(app_dev_screen_imports_remove, root, i++);
