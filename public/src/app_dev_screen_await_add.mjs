@@ -22,8 +22,8 @@ export function app_dev_screen_await_add() {
       );
       html_style_alternate_short_p(
         root,
-        [noop, html_style_function_name, noop, html_style_link_code(url)],
-        "`" + timeout_set.name + "` is a function that calls `setTimeout` :",
+        [noop, html_style_function_name, noop, html_style_link_code(url), noop],
+        "`" + timeout_set.name + "` is a `function` that calls `setTimeout` :",
       );
       app_dev_screen_img(app_dev_screen_await_add, root, i++);
       html_style_alternate_short_function_name(
