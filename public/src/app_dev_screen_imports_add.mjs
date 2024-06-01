@@ -36,13 +36,14 @@ export function app_dev_screen_imports_add() {
       );
       let i = 1;
       app_dev_screen_img(app_dev_screen_imports_add, root, i++);
+        const transformer = js_imports_add.name;
       html_style_alternate_short_p(
         root,
         [noop, html_style_function_name],
         "... and we run `" +
           function_transform.name +
           "` and pass in `" +
-          js_imports_add.name +
+          transformer +
           "` and the name of the function ...",
       );
       app_dev_screen_img(app_dev_screen_imports_add, root, i++);

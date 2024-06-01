@@ -10,8 +10,13 @@ export function app_dev_screen_imports_remove() {
     },
     screen: function imports_remove_screen(root) {
       let i = 1;
+      html_style_alternate_monospace_short(
+        root,
+        "if we have an `import` that is not being used ..."
+      );
       app_dev_screen_img(app_dev_screen_imports_remove, root, i++);
-      ("if we have an `import` that is not being used ...");
+      app_dev_screen_img(app_dev_screen_imports_remove, root, i++);
+      app_dev_screen_img(app_dev_screen_imports_remove, root, i++);
     },
   };
 }
