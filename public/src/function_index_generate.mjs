@@ -16,6 +16,6 @@ export async function function_index_generate() {
   await function_new_generic(
     name,
     "",
-    js_code_statement_return(js_code_array()),
+    js_code_statement_return(js_code_array(delimited)),
   );
 }
