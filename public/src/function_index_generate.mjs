@@ -10,4 +10,5 @@ export async function function_index_generate() {
   let { files } = d;
   let file_names = object_properties(files);
   let function_names = list_map(file_names, function_path_to_name);
+  return function_names;
 }
