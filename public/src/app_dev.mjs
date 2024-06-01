@@ -16,10 +16,13 @@ import { list_index_last } from "./list_index_last.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { add_1 } from "./add_1.mjs";
+import { function_name_to_path } from "./function_name_to_path.mjs";
 export async function app_dev() {
   let files = global_files_initialize({});
   let fl = functions_list();
-  each(fl, (f) => {});
+  each(fl, (f) => {
+    let fp = function_name_to_path(f);
+  });
   let root = html_style_default_initialize();
   let screens_functions = app_dev_screens();
   let screens = list_map(screens_functions, (s) => s());
