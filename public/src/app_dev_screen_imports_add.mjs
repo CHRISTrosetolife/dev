@@ -1,3 +1,4 @@
+import { uuid } from "./uuid.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
 import { js_code_format } from "./js_code_format.mjs";
 import { js_code_export_function_declare } from "./js_code_export_function_declare.mjs";
@@ -83,6 +84,7 @@ export function app_dev_screen_imports_add() {
         async () =>
           await function_transform(js_imports_add.name, function_name_unique),
       );
+      let id = await uuid();
       var editor = ace.edit("editor");
       editor.setTheme("ace/theme/twilight");
       editor.session.setMode("ace/mode/javascript");
