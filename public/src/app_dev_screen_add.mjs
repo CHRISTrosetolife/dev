@@ -17,7 +17,6 @@ import { js_code_statement_call_args } from "./js_code_statement_call_args.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { string_delimit } from "./string_delimit.mjs";
-import { log } from "./log.mjs";
 export async function app_dev_screen_add(name) {
   let screen_name = app_dev_screen_name(name);
   let root = "root";
@@ -30,9 +29,6 @@ export async function app_dev_screen_add(name) {
       js_code_statement_increment(image_index_name),
     ]),
   ]);
-  log({
-    screen_body,
-  });
   await function_new_generic(
     screen_name,
     "",
