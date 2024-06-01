@@ -22,6 +22,7 @@ import { file_write } from "./file_write.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_delimit } from "./string_delimit.mjs";
 import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
+import { object_merge } from "./object_merge.mjs";
 export function app_dev_screen_imports_add() {
   return {
     name: function imports_add_name(root) {
@@ -85,6 +86,9 @@ export function app_dev_screen_imports_add() {
           await function_transform(js_imports_add.name, function_name_unique),
       );
       let { element } = textarea;
+      object_merge(element, {
+        id,
+      });
       let id = await uuid();
       var editor = ace.edit("editor");
       editor.setTheme("ace/theme/twilight");
