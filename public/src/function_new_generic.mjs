@@ -1,5 +1,4 @@
 import { js_code_export_function_declare } from "./js_code_export_function_declare.mjs";
-import { log } from "./log.mjs";
 import { js_code_format } from "./js_code_format.mjs";
 import { js_imports_fix } from "./js_imports_fix.mjs";
 import { file_open } from "./file_open.mjs";
@@ -29,10 +28,6 @@ export async function function_new_generic(
   let mapped = list_map(imports, js_code_import);
   let concat = list_concat(mapped, [contents_function]);
   let contents = list_join(concat, newline());
-  log({
-    function_name,
-    contents,
-  });
   let parsed = js_parse(contents);
   await js_imports_fix(parsed);
   let unparsed = js_unparse(parsed);
