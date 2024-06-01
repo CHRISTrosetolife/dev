@@ -6,7 +6,7 @@ export function app_dev_p_transformer_generic(root, transformer, prefix) {
     " we run `" +
     function_transform.name +
     "` and pass in `" +
-    transformer +
+    transformer.name +
     "` and the name of the function ...";
   html_style_alternate_short_function_name(root, message);
 }
