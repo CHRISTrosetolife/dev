@@ -1,5 +1,4 @@
 import { js_code_import } from "./js_code_import.mjs";
-import { js_imports_add } from "./js_imports_add.mjs";
 import { function_transform } from "./function_transform.mjs";
 import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
 import { app_dev_sandbox_function } from "./app_dev_sandbox_function.mjs";
@@ -57,13 +56,16 @@ export function app_dev_screen_imports_remove() {
           string_combine_multiple([
             function_transform.name,
             " ",
-            js_imports_add.name,
+            js_imports_remove.name,
             " ",
             function_name_unique,
           ]),
         ),
         async () =>
-          await function_transform(js_imports_add.name, function_name_unique),
+          await function_transform(
+            js_imports_remove.name,
+            function_name_unique,
+          ),
       );
     },
   };
