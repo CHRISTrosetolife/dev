@@ -1,3 +1,4 @@
+import { promise_all } from "./promise_all.mjs";
 import { functions_list } from "./functions_list.mjs";
 import { global_files_initialize } from "./global_files_initialize.mjs";
 import { html_button_view_sorce } from "./html_button_view_sorce.mjs";
@@ -26,6 +27,7 @@ export async function app_dev() {
     let i = await function_import(f);
     object_property_set(files, fp, i);
   });
+  promise_all(promises);
   let root = html_style_default_initialize();
   let screens_functions = app_dev_screens();
   let screens = list_map(screens_functions, (s) => s());
