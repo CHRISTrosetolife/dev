@@ -1,3 +1,4 @@
+import { js_code_import } from "./js_code_import.mjs";
 import { js_imports_add } from "./js_imports_add.mjs";
 import { function_transform } from "./function_transform.mjs";
 import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
@@ -43,7 +44,9 @@ export function app_dev_screen_imports_remove() {
         "",
         false,
       );
-      let contents = await js_code_format(string_combine(contents_function));
+      let contents = await js_code_format(
+        string_combine(js_code_import(string_combine.name), contents_function),
+      );
       let file_path = function_name_to_path(function_name_unique);
       await file_write(file_path, contents);
       await app_dev_sandbox_function(
