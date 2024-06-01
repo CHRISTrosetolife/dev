@@ -1,5 +1,4 @@
 import { sleep } from "./sleep.mjs";
-import { html_style_alternate_short_function_name } from "./html_style_alternate_short_function_name.mjs";
 import { html_style_link_code } from "./html_style_link_code.mjs";
 import { url_secure } from "./url_secure.mjs";
 import { string_combine } from "./string_combine.mjs";
@@ -34,8 +33,16 @@ export function app_dev_screen_await_add() {
         "`" + timeout_set.name + "` is a `function` that calls `setTimeout` :",
       );
       app_dev_screen_img(app_dev_screen_await_add, root, i++);
-      html_style_alternate_short_function_name(
+      html_style_alternate_short_p(
         root,
+        [
+          noop,
+          html_style_function_name,
+          noop,
+          app_learn_code_style_code_colored,
+          noop,
+          html_style_link_code(url),
+        ],
         "`" +
           sleep.name +
           "` is a `function` that calls `" +
