@@ -77,6 +77,7 @@ export function app_dev_screen_await_add() {
         root,
         "... then `await` will automatically be added and the `function` will be made `async` :",
       );
+      app_dev_screen_img(app_dev_screen_await_add, root, i++);
     },
   };
 }
