@@ -8,6 +8,7 @@ export async function file_js_transform(lambdas, file_path, args) {
     async (la) =>
       await each_async(lambdas, async (lambda) => {
         let result = await lambda(ast, ...args);
+        la(result);
       }),
   );
   let after = await file_js_unparse(file_path, ast);
