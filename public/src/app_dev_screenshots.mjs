@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { app_dev_screenshots_extension } from "./app_dev_screenshots_extension.mjs";
 import { number_max_list } from "./number_max_list.mjs";
 import { integer_parse } from "./integer_parse.mjs";
@@ -27,6 +28,12 @@ export async function app_dev_screenshots(screen_name) {
   let mapped = list_map(target_files, path_parse_name);
   let mapped2 = list_map(mapped, integer_parse);
   let starting = add_1(number_max_list(mapped2));
+  log({
+    target_files,
+    mapped,
+    mapped2,
+    starting,
+  });
   await folder_files_rename_incrementing(folder_path, file_extension, starting);
   await folder_files_move(folder_path, file_extension, target_path);
 }
