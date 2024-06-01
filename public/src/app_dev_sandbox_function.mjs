@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { function_read } from "./function_read.mjs";
 import { app_dev_sandbox_result } from "./app_dev_sandbox_result.mjs";
 import { app_dev_sandbox_result_error } from "./app_dev_sandbox_result_error.mjs";
@@ -39,10 +38,6 @@ export async function app_dev_sandbox_function(
       await run_click();
       let value_new = await function_read(function_name);
       html_value_set(textarea, value_new);
-      log({
-        value_new,
-        run_click,
-      });
     } catch (e) {
       app_dev_sandbox_result_error(result_component, e);
     }
