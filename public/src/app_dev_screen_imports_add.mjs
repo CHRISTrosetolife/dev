@@ -67,7 +67,7 @@ export function app_dev_screen_imports_add() {
       let contents = await js_code_format(contents_function);
       let file_path = function_name_to_path(function_name_unique);
       await file_write(file_path, contents);
-      let textarea = await app_dev_sandbox_function(
+      let { textarea } = await app_dev_sandbox_function(
         root,
         function_name_unique,
         "adding missing `import`s",
