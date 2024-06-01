@@ -62,7 +62,7 @@ export function app_dev_screen_imports_fix() {
       await app_dev_sandbox_function(
         root,
         function_name_unique,
-        "adding missing `import`s",
+        "fixing `import`s",
         string_delimit_backtick(
           string_combine_multiple([
             function_transform.name,
