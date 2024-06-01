@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { functions_list } from "./functions_list.mjs";
 import { global_files_initialize } from "./global_files_initialize.mjs";
 import { html_button_view_sorce } from "./html_button_view_sorce.mjs";
@@ -18,6 +19,7 @@ import { add_1 } from "./add_1.mjs";
 export async function app_dev() {
   let files = global_files_initialize({});
   let fl = functions_list();
+  each(fl, (f) => {});
   let root = html_style_default_initialize();
   let screens_functions = app_dev_screens();
   let screens = list_map(screens_functions, (s) => s());
