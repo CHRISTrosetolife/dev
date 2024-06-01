@@ -18,7 +18,7 @@ import { html_span_text } from "./html_span_text.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { add_1 } from "./add_1.mjs";
 export async function app_dev() {
-  functions_list();
+  let fl = functions_list();
   each_object(window, (key) =>
     log({
       key,
