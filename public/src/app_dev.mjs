@@ -16,7 +16,7 @@ import { html_span_text } from "./html_span_text.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { add_1 } from "./add_1.mjs";
 export async function app_dev() {
-  global_files_initialize({});
+  let files = global_files_initialize({});
   let fl = functions_list();
   let root = html_style_default_initialize();
   let screens_functions = app_dev_screens();
