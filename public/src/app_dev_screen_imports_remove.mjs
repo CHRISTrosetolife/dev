@@ -30,7 +30,7 @@ export function app_dev_screen_imports_remove() {
       );
       app_dev_screen_img(app_dev_screen_imports_remove, root, i++);
       let fn = js_imports_remove;
-      app_dev_p_transformer(root, fn.name);
+      app_dev_p_transformer(root, fn);
       app_dev_screen_img(app_dev_screen_imports_remove, root, i++);
       html_style_alternate_monospace_short(
         root,

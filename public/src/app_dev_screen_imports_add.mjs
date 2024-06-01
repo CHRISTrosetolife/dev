@@ -33,7 +33,7 @@ export function app_dev_screen_imports_add() {
       );
       let i = 1;
       app_dev_screen_img(app_dev_screen_imports_add, root, i++);
-      app_dev_p_transformer(root, js_imports_add.name);
+      app_dev_p_transformer(root, js_imports_add);
       app_dev_screen_img(app_dev_screen_imports_add, root, i++);
       html_style_alternate_monospace_short(
         root,
