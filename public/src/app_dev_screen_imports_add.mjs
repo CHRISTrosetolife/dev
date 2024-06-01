@@ -36,7 +36,7 @@ export function app_dev_screen_imports_add() {
       );
       let i = 1;
       app_dev_screen_img(app_dev_screen_imports_add, root, i++);
-        const transformer = js_imports_add.name;
+      let transformer = js_imports_add.name;
       html_style_alternate_short_p(
         root,
         [noop, html_style_function_name],
