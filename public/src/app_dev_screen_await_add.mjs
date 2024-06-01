@@ -15,19 +15,13 @@ export function app_dev_screen_await_add() {
     screen: function await_add_screen(root) {
       let i = 1;
       app_dev_screen_img(app_dev_screen_await_add, root, i++);
+      let url = string_combine(
+        url_secure(),
+        "developer.mozilla.org/en-US/docs/Web/API/setTimeout",
+      );
       html_style_alternate_short_p(
         root,
-        [
-          noop,
-          html_style_function_name,
-          noop,
-          html_style_link(
-            string_combine(
-              url_secure(),
-              "developer.mozilla.org/en-US/docs/Web/API/setTimeout",
-            ),
-          ),
-        ],
+        [noop, html_style_function_name, noop, html_style_link(url)],
         "`" + timeout_set.name + "` is a function that calls `setTimeout",
       );
     },
