@@ -35,7 +35,7 @@ export async function app_dev_sandbox_command_line(
     ]),
   );
   let textarea = html_textarea_code(root);
-  html_attribute_set(textarea, "rows", 2);
+  html_attribute_set(textarea, "rows", 4);
   let prefix = app_dev_screen_command_line_prefix();
   html_value_set(
     textarea,
