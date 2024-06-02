@@ -11,6 +11,7 @@ import { list_map } from "./list_map.mjs";
 import { html_parse } from "./html_parse.mjs";
 import { file_read } from "./file_read.mjs";
 import { list_get } from "./list_get.mjs";
+import { list_single } from "./list_single.mjs";
 export async function yyy8Uu_file_path_to_parts(file_path, index) {
   let f = list_get(file_path, index);
   let input_string = await file_read(f);
@@ -18,7 +19,9 @@ export async function yyy8Uu_file_path_to_parts(file_path, index) {
   let tei = html_parse_visit_tag_single(parsed, "tei");
   let text = html_parse_visit_tag_single(tei, "text");
   let { children } = text;
-  let div = html_parse_visit_tag_single(text, "div");
+  list_single(
+    list_filter(children, (c) => c.type === "tag" && t.name === "div"),
+  );
   let { childNodes } = div;
   let parts = list_map(childNodes, (c) => object_property_get(c, "rawText"));
   let normalized = list_map(parts, string_whitespace_normalize);
