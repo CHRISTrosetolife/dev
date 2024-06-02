@@ -24,7 +24,8 @@ export async function sandbox() {
   let group_index = 0;
   let storage_path = ceb_group_path(group_index);
   let result = await http_get(storage_url(storage_path));
-  await file_write_json(folder_gitignore_path(storage_path), result);
+  let existing_path = folder_gitignore_path(storage_path);
+  await file_write_json(existing_path, result);
   return;
   let limit = 150;
   let skip = 0;
