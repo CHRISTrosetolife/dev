@@ -28,6 +28,7 @@ export async function yyy8Uu_file_path_to_parts(file_path, index) {
   let teis_single = list_single(teis);
   let tag_name = "text";
   let r = html_parse_visit_tag_list(teis_single, tag_name);
+  let s = list_single(r);
   log({
     a: html_parse_visit_tag_names(teis_single),
     b: r,
