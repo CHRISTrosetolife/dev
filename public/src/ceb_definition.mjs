@@ -110,9 +110,6 @@ export async function ceb_definition(word) {
       children,
     };
   }
-  log({
-    children,
-  });
   let filtered4 = list_filter(
     children,
     (c) =>
