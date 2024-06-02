@@ -180,7 +180,7 @@ export async function ceb_definition(word) {
         });
       }
     });
-    let defs = html_parse_map_text_trim(parsed, filtered6);
+    let defs = html_parse_map_text_trim(filtered6);
     defs = list_map(defs, (d) => {
       for (let r of replaced_split) {
         if (equal(d, list_first(r))) {
