@@ -7,8 +7,8 @@ export function html_parse_visit(root, lambda) {
     root,
     (n) => {
       let property_name = "children";
+      let default_value = [];
       if (object_property_exists_not(n, property_name)) {
-        let default_value = [];
         return default_value;
       }
       return object_property_get(n, property_name);
