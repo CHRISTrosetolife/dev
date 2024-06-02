@@ -6,20 +6,19 @@ import { list_adder } from "./list_adder.mjs";
 export function ceb_form1(root) {
   let q = list_adder((la) => {
     let tag_name = "form";
-    let target_attribute_name = "name";
+    let attribute_name = "name";
     let target_attribute_value = "form1";
     function lambda2(v) {
       let { node } = v;
       let { attribs } = node;
-      if (object_property_exists(attribs, target_attribute_name)) {
+      if (object_property_exists(attribs, attribute_name)) {
         lambda(attribs, node);
       }
     }
     html_parse_visit_tag(root, tag_name, lambda2);
     function lambda(attribs, node) {
       if (
-        object_property_get(attribs, target_attribute_name) ===
-        target_attribute_value
+        object_property_get(attribs, attribute_name) === target_attribute_value
       ) {
         la(node);
       }
