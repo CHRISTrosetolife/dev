@@ -5,9 +5,7 @@ export function html_parse_visit_tag_names(root, tag_name, lambda2) {
     let lambda = (v) => {
       let { node } = v;
       let { name } = node;
-      if (name === tag_name) {
-        lambda2(v);
-      }
+      la(name);
     };
     html_parse_visit_tags(root, lambda);
   });
