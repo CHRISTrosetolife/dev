@@ -18,6 +18,7 @@ import { each_object } from "./each_object.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { list_add } from "./list_add.mjs";
 export async function sandbox() {
+  let group_index = 0;
   storage_url;
   return;
   let limit = 150;
@@ -37,7 +38,6 @@ export async function sandbox() {
       await ceb_audio_upload(text);
     });
   });
-  let group_index = 0;
   let words = list_adder_unique((la) =>
     each(atoms, (a) => each(a, (pair) => la(list_first(pair)))),
   );
