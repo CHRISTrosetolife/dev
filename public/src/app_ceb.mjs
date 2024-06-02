@@ -96,6 +96,7 @@ import { list_map_property } from "./list_map_property.mjs";
 import { html_span } from "./html_span.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
+import { storage_local_get } from "./storage_local_get.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   html_style_default_font_size(3.5);
@@ -116,7 +117,7 @@ export async function app_ceb() {
   function refresh_node() {
     html_clear_scroll_top_centered(root);
     app_ceb_title();
-    let { left, right } = position;
+    let { left, right } = storage_local_get(app_ceb, "position");
     let srl = subtract(right, left);
     if (equal_not(srl, 0)) {
       each_range(level_size, (i) => {
