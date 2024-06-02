@@ -24,7 +24,8 @@ export async function yyy8Uu_file_path_to_parts(file_path, index) {
     teis,
   });
   assert(equal, [list_length(teis), 1]);
-  let bodies = html_parse_visit_tag_list(list_single(teis), "body");
+  let teis_single = list_single(teis);
+  let bodies = html_parse_visit_tag_list(teis_single, "body");
   assert(equal, [list_length(bodies), 1]);
   let divs = html_parse_visit_tag_list(list_single(bodies), "div");
   assert(equal, [list_length(divs), 1]);
