@@ -218,8 +218,8 @@ export async function app_ceb() {
       object_property_get(inverted, english),
       cebuano,
     );
-    pairs_other = list_filter(pairs_other, (p) => {
-      let [c, e] = p;
+    pairs_other = list_filter(pairs_other, (po) => {
+      let [c, e] = po;
       if (
         or(
           list_includes(cebuano_alternatives, c),
