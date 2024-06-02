@@ -5,7 +5,7 @@ import { list_filter } from "./list_filter.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export function html_parse_a_href_starts_with(parsed, element, prefix) {
   assert_arguments_length(arguments, 3);
-  let q = list_to(parsed("a[href]"));
+  let q = list_to(parsed(element)("a[href]"));
   let filtered = list_filter(q, (i) => {
     let href = html_parse_href(i);
     return string_starts_with(href, prefix);
