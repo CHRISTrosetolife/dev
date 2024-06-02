@@ -21,8 +21,9 @@ import { add_1 } from "./add_1.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { data_path } from "./data_path.mjs";
+import { data_file_name } from "./data_file_name.mjs";
 export async function app_dev() {
-  await http_get();
+  await http_get(data_file_name());
   let { files } = global_files_initialize({});
   await file_write_json(data_path(), {});
   let fl = functions_list();
