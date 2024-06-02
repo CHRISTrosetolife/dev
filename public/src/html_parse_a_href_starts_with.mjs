@@ -6,7 +6,9 @@ import { list_filter } from "./list_filter.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 export function html_parse_a_href_starts_with(element, prefix) {
   let q = list_adder((la) =>
-    html_parse_visit_tag_attribute(element, "a[href]"),
+    html_parse_visit_tag_attribute(element, "a[href]", "href", (v) => {
+      let node = v;
+    }),
   );
   let f2 = list_filter(q, (f) => {
     let { attribs } = f;
