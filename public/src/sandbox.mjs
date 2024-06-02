@@ -20,7 +20,7 @@ import { list_add } from "./list_add.mjs";
 export async function sandbox() {
   let group_index = 0;
   let storage_path = ceb_group_path(group_index);
-  storage_url;
+  storage_url(storage_path);
   return;
   let limit = 150;
   let skip = 0;
