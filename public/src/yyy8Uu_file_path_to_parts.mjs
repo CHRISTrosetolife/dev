@@ -19,8 +19,10 @@ export async function yyy8Uu_file_path_to_parts(file_path, index) {
   let f = list_get(file_path, index);
   let input_string = await file_read(f);
   let parsed = html_parse(input_string);
-  html_parse_visit_tag;
-  let teis = parsed.getElementsByTagName("TEI");
+  html_parse_visit_tag(parsed, "TEI", (v) => {
+    let node = v;
+  });
+  let teis = parsed.getElementsByTagName();
   assert(equal, [list_length(teis), 1]);
   let bodies = list_single(teis).getElementsByTagName("body");
   assert(equal, [list_length(bodies), 1]);
