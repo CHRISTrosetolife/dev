@@ -14,6 +14,7 @@ export async function ceb_bible_words_definitions_get(t) {
     if (10)
       log({
         t_length,
+        index,
         bible_word,
         index,
       });
