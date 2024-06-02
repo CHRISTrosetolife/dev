@@ -108,7 +108,9 @@ export async function app_ceb() {
   let settings_choices;
   let key = "position";
   let fn_namespace = app_ceb;
-  let exists = storage_local_exists(fn_namespace, key);
+  if (storage_local_exists_not(fn_namespace, key)) {
+    storage_local_set()
+  }
   let position = {
     left: 0,
     right: list_index_last(group),
@@ -408,3 +410,7 @@ export async function app_ceb() {
     return atoms;
   }
 }
+function storage_local_exists_not(fn_namespace, key) {
+    return !storage_local_exists(fn_namespace, key);
+}
+
