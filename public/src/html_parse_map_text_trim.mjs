@@ -13,6 +13,7 @@ export function html_parse_map_text_trim(list) {
         let { type } = node;
         if (type === "text") {
           let d = object_property_get(node, "data");
+          la(d);
         }
       }),
     );
