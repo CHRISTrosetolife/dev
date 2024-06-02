@@ -23,8 +23,8 @@ import { object_property_set } from "./object_property_set.mjs";
 import { data_path } from "./data_path.mjs";
 import { data_file_name } from "./data_file_name.mjs";
 export async function app_dev() {
-  let d = await http_get(data_file_name());
   let { files } = global_files_initialize({});
+  let d = await http_get(data_file_name());
   await file_write_json(data_path(), d);
   let fl = functions_list();
   let promises = list_map(fl, async (f) => {
