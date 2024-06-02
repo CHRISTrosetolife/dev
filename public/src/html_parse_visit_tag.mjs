@@ -1,6 +1,6 @@
-import { html_parse_visit } from "./html_parse_visit.mjs";
+import { html_parse_visit_tags } from "./html_parse_visit_tags.mjs";
 export function html_parse_visit_tag(root, tag_name, lambda2) {
-  html_parse_visit_tags(root,lambda3);
+  html_parse_visit_tags(root, lambda3);
   function lambda3(v) {
     let { node } = v;
     let { name } = node;
@@ -9,4 +9,3 @@ export function html_parse_visit_tag(root, tag_name, lambda2) {
     }
   }
 }
-
