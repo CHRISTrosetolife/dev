@@ -107,7 +107,9 @@ export async function app_ceb() {
   );
   let level_size = app_ceb_level_size();
   let settings_choices;
-  if (storage_local_exists_not(app_ceb, "position")) {
+  let key = "position";
+  let fn_namespace = app_ceb;
+  if (storage_local_exists_not(fn_namespace, key)) {
     storage_local_set(fn_namespace, key, {
       left: 0,
       right: list_index_last(group),
