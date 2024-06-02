@@ -411,7 +411,4 @@ function storage_local_get(fn_namespace, key) {
    return localStorage.getItem(storage_local_key(fn_namespace, key));
 }
 
-function storage_local_key(fn_namespace, key) {
-    return list_join_space([fn_namespace.name, key]);
-}
 
