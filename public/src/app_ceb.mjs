@@ -149,7 +149,7 @@ export async function app_ceb() {
       refresh_node();
     });
     function app_ceb_next() {
-      let { left, right } = position;
+      let { left, right } = storage_local_get(app_ceb, "position");
       let n = add_1(subtract(right, left));
       let count = integer_log(n, level_size);
       let level = number_power(level_size, add_1(count));
