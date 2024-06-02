@@ -13,7 +13,7 @@ export function ceb_form1(root) {
       let { attribs } = node;
       if (object_property_exists(attribs, target_attribute_name)) {
         if (
-          object_property_get(attibs, target_attribute_name) ===
+          object_property_get(attribs, target_attribute_name) ===
           target_attribute_value
         ) {
         }
