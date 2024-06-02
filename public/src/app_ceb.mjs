@@ -168,10 +168,10 @@ export async function app_ceb() {
     }
     html_button_width_full_text_click_up(root, up_onclick);
     function up_onclick() {
-      let { left, right } = position;
+      let { left, right } = storage_local_get(app_ceb, "position");
       while (true) {
         app_ceb_next();
-        let { left: l, right: r } = position;
+        let { left: l, right: r } = storage_local_get(app_ceb, "position");
         if (or(equal(left, l), equal(right, r))) {
           break;
         }
