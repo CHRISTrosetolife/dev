@@ -1,8 +1,10 @@
+import { log } from "./log.mjs";
 import { html_parse_visit_tag } from "./html_parse_visit_tag.mjs";
 import { list_single } from "./list_single.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { list_adder } from "./list_adder.mjs";
+import { list_length } from "./list_length.mjs";
 export function ceb_form1(root) {
   let found = list_adder((la) => {
     let target_name = "form";
@@ -20,6 +22,7 @@ export function ceb_form1(root) {
         }
       }
     }
+    log(list_length(found));
     html_parse_visit_tag(root, target_name, lambda2);
   });
   let q = root("form[name=form1]");
