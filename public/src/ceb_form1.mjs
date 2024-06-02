@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { html_parse_visit_tag } from "./html_parse_visit_tag.mjs";
 import { list_single } from "./list_single.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -17,7 +16,7 @@ export function ceb_form1(root) {
           object_property_get(attribs, target_attribute_name) ===
           target_attribute_value
         ) {
-          log(node);
+          la(node);
         }
       }
     }
