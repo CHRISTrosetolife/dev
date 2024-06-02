@@ -1,4 +1,4 @@
-import { storage_local_get } from "./storage_local_get.mjs";
+import { storage_local_exists } from "./storage_local_exists.mjs";
 import { html_button_disable } from "./html_button_disable.mjs";
 import { html_style_default_font_size } from "./html_style_default_font_size.mjs";
 import { html_style_display_inline_block } from "./html_style_display_inline_block.mjs";
@@ -107,7 +107,7 @@ export async function app_ceb() {
   let settings_choices;
   let key = "position";
   let fn_namespace = app_ceb;
-  let exists = storage_local_get(fn_namespace, key) !== null;
+  let exists = storage_local_exists(fn_namespace, key);
   let position = {
     left: 0,
     right: list_index_last(group),
