@@ -109,7 +109,7 @@ export async function app_ceb() {
   let key = "position";
   let fn_namespace = app_ceb;
   if (storage_local_exists_not(fn_namespace, key)) {
-    storage_local_set()
+    storage_local_set()//
   }
   let position = {
     left: 0,
@@ -409,8 +409,5 @@ export async function app_ceb() {
     let atoms = list_slice(group, left, add_1(right));
     return atoms;
   }
-}
-function storage_local_exists_not(fn_namespace, key) {
-    return !storage_local_exists(fn_namespace, key);
 }
 
