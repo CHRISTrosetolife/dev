@@ -6,13 +6,13 @@ import { object_property_get } from "./object_property_get.mjs";
 export function ceb_form1(root) {
   let target_name = "form";
   let lambda = (n) => {
-    let node = n;
-    let { name } = n;
+    let { node } = n;
+    let { name } = node;
     log({
       n,
     });
     if (name === target_name) {
-      let { attribs } = n;
+      let { attribs } = node;
       log({
         attribs,
       });
