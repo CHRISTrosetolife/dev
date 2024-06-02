@@ -195,7 +195,7 @@ export async function app_ceb() {
     });
   }
   function app_ceb_title() {
-    let { left, right } = position;
+    let { left, right } = storage_local_get(app_ceb, "position");
     let gl = list_get(group, left);
     let gr = list_get_or_last(group, right);
     let text = app_ceb_atom_title(group, gl, gr);
