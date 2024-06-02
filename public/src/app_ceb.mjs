@@ -115,7 +115,6 @@ export async function app_ceb() {
       right: list_index_last(group),
     });
   }
-  let position;
   refresh_node();
   function refresh_node() {
     html_clear_scroll_top_centered(root);
