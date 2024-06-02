@@ -163,10 +163,10 @@ export async function app_ceb() {
         });
       } else {
         let r1 = add_1(right);
-        position = {
+        storage_local_set(fn_namespace, key, {
           left: r1,
           right: r1,
-        };
+        });
       }
     }
     html_button_width_full_text_click_up(root, up_onclick);
