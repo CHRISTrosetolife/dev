@@ -1,5 +1,4 @@
-import { tautology } from "./tautology.mjs";
-import { visit } from "./visit.mjs";
+import { html_parse_visit } from "./html_parse_visit.mjs";
 import { list_single } from "./list_single.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
@@ -25,6 +24,5 @@ export function ceb_form1(root) {
   let q = root("form[name=form1]");
   let q_single = list_single(q);
   let { childNodes: q_children } = q_single;
-  return q_children;//
+  return q_children;
 }
-
