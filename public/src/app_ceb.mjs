@@ -107,13 +107,10 @@ export async function app_ceb() {
   );
   let level_size = app_ceb_level_size();
   let settings_choices;
-  let key = "position";
-  let fn_namespace = app_ceb;
-  let value = {
+  storage_local_initialize(app_ceb, "position", {
     left: 0,
     right: list_index_last(group),
-  };
-  storage_local_initialize(fn_namespace, key, value);
+  });
   refresh_node();
   function refresh_node() {
     html_clear_scroll_top_centered(root);
