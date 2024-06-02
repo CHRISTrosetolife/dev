@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { tautology } from "./tautology.mjs";
 import { visit } from "./visit.mjs";
 import { list_single } from "./list_single.mjs";
@@ -8,6 +9,9 @@ export function ceb_form1(root) {
     let { name } = n;
     if (name === target_name) {
       let { attribs } = n;
+      log({
+        attribs,
+      });
     }
   };
   visit(
