@@ -58,12 +58,10 @@ export async function sandbox() {
     }),
   );
   return;
-  await storage_upload_object(
-    {
-      group,
-      definitions,
-      inverted,
-    },
-    storage_path,
-  );
+  let result_new = {
+    group,
+    definitions,
+    inverted,
+  };
+  await storage_upload_object(result_new, storage_path);
 }
