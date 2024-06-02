@@ -122,7 +122,7 @@ export async function ceb_definition(word) {
     let f4_first_index_a = add(f4_first_index, 3);
     let f4_first_a = list_get(children, f4_first_index_a);
     let f4_first_a_text = html_parse_text(f4_first_a);
-    let f4_first_a_tag = object_property_get(f4_first_a, "rawTagName");
+    let f4_first_a_tag = object_property_get(f4_first_a, "name");
     assert(equal, [f4_first_a_tag, "b"]);
     word = f4_first_a_text;
   }
