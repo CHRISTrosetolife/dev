@@ -10,10 +10,11 @@ export function html_parse_visit(root, lambda) {
       let default_value = [];
       let result;
       if (object_property_exists_not(n, property_name)) {
-        return default_value;
+        result = default_value;
       } else {
-        return object_property_get(n, property_name);
+        result = object_property_get(n, property_name);
       }
+      return result;
     },
     tautology,
     lambda,
