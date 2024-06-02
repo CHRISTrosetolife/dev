@@ -128,9 +128,6 @@ export async function ceb_definition(word) {
   let prefix_1 = string_combine(prefix, "cebuano/");
   let prefix_2 = string_combine(prefix, "english/");
   let a_href_lefts = html_parse_a_href_starts_with(parsed, parsed, prefix_1);
-  log({
-    a_href_lefts,
-  });
   let mapped3 = html_parse_map_text_trim(parsed, a_href_lefts);
   let mapped4 = list_map_index(mapped3, (m, index) => {
     return {
