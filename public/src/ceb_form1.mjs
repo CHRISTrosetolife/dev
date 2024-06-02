@@ -1,4 +1,4 @@
-import { html_parse_visit } from "./html_parse_visit.mjs";
+import { html_parse_visit_tag } from "./html_parse_visit_tag.mjs";
 import { list_single } from "./list_single.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
@@ -17,14 +17,7 @@ export function ceb_form1(root) {
       }
     }
   }
-  let lambda = (v) => {
-    let { node } = v;
-    let { name } = node;
-    if (name === target_name) {
-      lambda2(v);
-    }
-  };
-  html_parse_visit(root, lambda);
+  html_parse_visit_tag(root, lambda2, target_name);
   let q = root("form[name=form1]");
   let q_single = list_single(q);
   let { childNodes: q_children } = q_single;
