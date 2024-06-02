@@ -27,8 +27,7 @@ export async function yyy8Uu_file_path_to_parts(file_path, index) {
   });
   assert(equal, [list_length(teis), 1]);
   let teis_single = list_single(teis);
-  let tag_name = "text";
-  let s = html_parse_visit_tag_single(teis_single, tag_name);
+  let s = html_parse_visit_tag_single(teis_single, "text");
   log({
     a: html_parse_visit_tag_names(teis_single),
     b: s,
