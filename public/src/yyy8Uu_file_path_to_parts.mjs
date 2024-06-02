@@ -36,5 +36,6 @@ export async function yyy8Uu_file_path_to_parts(file_path, index) {
         error();
       }
   }
+  error(mapped);
   return mapped;
 }
