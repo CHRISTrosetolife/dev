@@ -7,6 +7,9 @@ export function ceb_form1(root) {
   let target_name = "form";
   let lambda = (n) => {
     let { name } = n;
+    log({
+      name,
+    });
     if (name === target_name) {
       let { attribs } = n;
       log({
