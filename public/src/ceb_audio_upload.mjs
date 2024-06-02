@@ -12,7 +12,7 @@ export async function ceb_audio_upload(text) {
   await each_index_async(voices, async (voice, voice_index) => {
     let file_path = ceb_audio_path(voice_index, text);
     let output_path = folder_gitignore_path(file_path);
-    log(output_path);
+    if (0) log(output_path);
     let { code, male } = voice;
     let { created } = await gcloud_tts(
       language_code,
