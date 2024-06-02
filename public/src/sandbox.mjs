@@ -19,6 +19,7 @@ import { object_property_initialize } from "./object_property_initialize.mjs";
 import { list_add } from "./list_add.mjs";
 export async function sandbox() {
   let group_index = 0;
+  let storage_path = ceb_group_path(group_index);
   storage_url;
   return;
   let limit = 150;
@@ -57,7 +58,6 @@ export async function sandbox() {
       list_add(words, word);
     }),
   );
-  let storage_path = ceb_group_path(group_index);
   await storage_upload_object(
     {
       group,
