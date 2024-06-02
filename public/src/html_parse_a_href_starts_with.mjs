@@ -1,3 +1,4 @@
+import { error } from "./error.mjs";
 import { list_to } from "./list_to.mjs";
 import { html_parse_href } from "./html_parse_href.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
@@ -11,6 +12,7 @@ export function html_parse_a_href_starts_with(parsed, element, prefix) {
   log({
     e: element("a"),
   });
+  error();
   let q = list_to(p("a"));
   let f2 = list_filter(q, (f) => object_property_exists(f.attrs, "href"));
   let filtered = list_filter(f2, (i) => {
