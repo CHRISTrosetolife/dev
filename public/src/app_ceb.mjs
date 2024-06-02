@@ -132,7 +132,7 @@ export async function app_ceb() {
           app_ceb_atom_title_patterns(),
           string_combine_multiple([add_1(i), ". ", text]),
           function on_click() {
-            storage_local_set(fn_namespace, key, {
+            storage_local_set(app_ceb, "position", {
               left: left_next,
               right: right_next,
             });
@@ -152,13 +152,13 @@ export async function app_ceb() {
       let count = integer_log(n, level_size);
       let level = number_power(level_size, add_1(count));
       if (mod_last_is(right, level) && equal_not(left, 0)) {
-        storage_local_set(fn_namespace, key, {
+        storage_local_set(app_ceb, "position", {
           left: add_1(subtract(right, level)),
           right: right,
         });
       } else {
         let r1 = add_1(right);
-        storage_local_set(fn_namespace, key, {
+        storage_local_set(app_ceb, "position", {
           left: r1,
           right: r1,
         });
