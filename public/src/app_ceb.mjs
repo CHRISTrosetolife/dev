@@ -1,3 +1,4 @@
+import { list_join_comma } from "./list_join_comma.mjs";
 import { html_button_disable } from "./html_button_disable.mjs";
 import { html_style_default_font_size } from "./html_style_default_font_size.mjs";
 import { html_style_display_inline_block } from "./html_style_display_inline_block.mjs";
@@ -104,6 +105,7 @@ export async function app_ceb() {
   );
   let level_size = app_ceb_level_size();
   let settings_choices;
+  localStorage.getItem(list_join_comma([app_ceb.name]));
   let position = {
     left: 0,
     right: list_index_last(group),
