@@ -19,7 +19,7 @@ export async function yyy8Uu_file_path_to_parts(file_path, index) {
   let tei = html_parse_visit_tag_single(parsed, "tei");
   let text = html_parse_visit_tag_single(tei, "text");
   let { children } = text;
-  list_single(
+  let div = list_single(
     list_filter(children, (c) => c.type === "tag" && t.name === "div"),
   );
   let { childNodes } = div;
