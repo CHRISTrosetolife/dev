@@ -20,8 +20,8 @@ export async function yyy8Uu_file_path_to_parts(file_path, index) {
   let f = list_get(file_path, index);
   let input_string = await file_read(f);
   let parsed = html_parse(input_string);
+  let tag_name = "TEI";
   list_adder((la) => {
-    let tag_name = "TEI";
     html_parse_visit_tag(parsed, tag_name, (v) => {
       let { node } = v;
       la(node);
