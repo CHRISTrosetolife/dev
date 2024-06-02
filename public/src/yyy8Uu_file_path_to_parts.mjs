@@ -23,7 +23,7 @@ export async function yyy8Uu_file_path_to_parts(file_path, index) {
     list_filter(children_text, (c) => c.type === "tag" && t.name === "div"),
   );
   let { children } = div;
-  let parts = list_map(childNodes, (c) => object_property_get(c, "rawText"));
+  let parts = list_map(children, (c) => object_property_get(c, "rawText"));
   let normalized = list_map(parts, string_whitespace_normalize);
   let trimmed = list_map(normalized, string_trim);
   let non_empty = list_filter(trimmed, string_empty_not_is);
