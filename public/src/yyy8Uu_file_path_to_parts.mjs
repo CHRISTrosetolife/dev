@@ -17,6 +17,7 @@ export async function yyy8Uu_file_path_to_parts(file_path, index) {
   let parsed = html_parse(input_string);
   let tei = html_parse_visit_tag_single(parsed, "tei");
   let text = html_parse_visit_tag_single(tei, "text");
+  let { children } = text;
   let div = html_parse_visit_tag_single(text, "div");
   let { childNodes } = div;
   let parts = list_map(childNodes, (c) => object_property_get(c, "rawText"));
