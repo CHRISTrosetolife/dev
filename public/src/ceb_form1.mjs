@@ -1,8 +1,8 @@
-import { log } from "./log.mjs";
 import { tautology } from "./tautology.mjs";
 import { visit } from "./visit.mjs";
 import { list_single } from "./list_single.mjs";
 import { object_property_get } from "./object_property_get.mjs";
+import { object_property_exists } from "./object_property_exists.mjs";
 export function ceb_form1(root) {
   let target_name = "form";
   let lambda = (n) => {
@@ -10,9 +10,8 @@ export function ceb_form1(root) {
     let { name } = node;
     if (name === target_name) {
       let { attribs } = node;
-      log({
-        attribs,
-      });
+      if (object_property_exists(attribs, "href")) {
+      }
     }
   };
   visit(
