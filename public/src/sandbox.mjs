@@ -57,11 +57,11 @@ export async function sandbox() {
       list_add(words, word);
     }),
   );
-  return;
   let result_new = {
     group,
     definitions,
     inverted,
   };
+  return;
   await storage_upload_object(result_new, storage_path);
 }
