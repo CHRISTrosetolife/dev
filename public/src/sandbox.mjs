@@ -17,6 +17,7 @@ import { list_single } from "./list_single.mjs";
 import { each_object } from "./each_object.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { list_add } from "./list_add.mjs";
+import { file_read_json } from "./file_read_json.mjs";
 export async function sandbox() {
   let group_index = 0;
   let storage_path = ceb_group_path(group_index);
@@ -62,6 +63,7 @@ export async function sandbox() {
     definitions,
     inverted,
   };
+  let existing = await file_read_json(existing_path);
   return;
   await storage_upload_object(result_new, storage_path);
 }
