@@ -107,7 +107,7 @@ export async function app_ceb() {
   let settings_choices;
   let key = "position";
   let fn_namespace = app_ceb;
-  localStorage.getItem(list_join_space([fn_namespace.name, key]));
+  storage_local_get(fn_namespace, key);
   let position = {
     left: 0,
     right: list_index_last(group),
@@ -407,3 +407,11 @@ export async function app_ceb() {
     return atoms;
   }
 }
+function storage_local_get(fn_namespace, key) {
+   return localStorage.getItem(storage_local_key(fn_namespace, key));
+}
+
+function storage_local_key(fn_namespace, key) {
+    return list_join_space([fn_namespace.name, key]);
+}
+
