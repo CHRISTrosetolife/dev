@@ -8,9 +8,6 @@ export function ceb_form1(root) {
   let lambda = (n) => {
     let { node } = n;
     let { name } = node;
-    log({
-      n,
-    });
     if (name === target_name) {
       let { attribs } = node;
       log({
