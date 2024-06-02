@@ -94,8 +94,8 @@ export async function ceb_definition(word) {
     "&Search=Search",
   ]);
   let { parsed, children } = await ceb_html_cache_parse_form1(url);
-  let filtered9 = list_filter;
-  let texts = list_map_property(children, "data");
+  let filtered9 = list_filter_property(children, "type", "text");
+  let texts = list_map_property(filtered9, "data");
   if (list_includes(texts, "No results found for the Cebuano word ")) {
     return {
       word,
