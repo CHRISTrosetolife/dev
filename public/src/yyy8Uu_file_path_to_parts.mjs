@@ -18,11 +18,11 @@ export async function yyy8Uu_file_path_to_parts(file_path, index) {
   let parsed = html_parse(input_string);
   let tei = html_parse_visit_tag_single(parsed, "tei");
   let text = html_parse_visit_tag_single(tei, "text");
-  let { children } = text;
+  let { children: children_text } = text;
   let div = list_single(
-    list_filter(children, (c) => c.type === "tag" && t.name === "div"),
+    list_filter(children_text, (c) => c.type === "tag" && t.name === "div"),
   );
-  let { childNodes } = div;
+  let { children } = div;
   let parts = list_map(childNodes, (c) => object_property_get(c, "rawText"));
   let normalized = list_map(parts, string_whitespace_normalize);
   let trimmed = list_map(normalized, string_trim);
