@@ -6,7 +6,8 @@ export function html_parse_visit(root, lambda) {
   visit(
     root,
     (n) => {
-      if (object_property_exists_not(n, "children")) {
+      let property_name = "children";
+      if (object_property_exists_not(n, property_name)) {
         return [];
       }
       return object_property_get(n, "children");
