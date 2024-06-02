@@ -8,6 +8,7 @@ export function html_parse_map_text_trim(list) {
   let mapped = list_map(list, (m) => {
     html_parse_visit(m, (v) => {
       let { node } = v;
+      let type = node;
       if (ty) {
       }
     });
