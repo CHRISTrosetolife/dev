@@ -7,7 +7,7 @@ import { list_adder } from "./list_adder.mjs";
 export function html_parse_map_text_trim(list) {
   assert_arguments_length(arguments, 1);
   let mapped = list_map(list, (m) => {
-    list_adder((la) =>
+    let parts = list_adder((la) =>
       html_parse_visit(m, (v) => {
         let { node } = v;
         let { type } = node;
