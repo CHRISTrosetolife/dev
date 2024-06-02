@@ -109,11 +109,11 @@ export async function app_ceb() {
   let settings_choices;
   let key = "position";
   let fn_namespace = app_ceb;
+  let value = {
+    left: 0,
+    right: list_index_last(group),
+  };
   if (storage_local_exists_not(fn_namespace, key)) {
-    let value = {
-      left: 0,
-      right: list_index_last(group),
-    };
     storage_local_set(fn_namespace, key, value);
   }
   refresh_node();
