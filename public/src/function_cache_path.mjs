@@ -3,8 +3,7 @@ import { path_join } from "./path_join.mjs";
 import { file_name_json } from "./file_name_json.mjs";
 import { string_encoded_to } from "./string_encoded_to.mjs";
 import { json_to } from "./json_to.mjs";
-export function function_cache_path(fn, args) {
-  let function_name = fn.name;
+export function function_cache_path(function_name, args) {
   let key = {
     function_name,
     args,
