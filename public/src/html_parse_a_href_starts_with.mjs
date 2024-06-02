@@ -9,6 +9,7 @@ export function html_parse_a_href_starts_with(parsed, element, prefix) {
   assert_arguments_length(arguments, 3);
   let p = parsed(element);
   log({
+    parsed,
     p,
   });
   let q = list_to(p("a"));
