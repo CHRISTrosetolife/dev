@@ -112,8 +112,10 @@ export async function ceb_definition(word) {
   log({
     children,
   });
-  let filtered4 = list_filter(children, (c) =>
-    string_includes(c.data, "Word - rootword - affixes"),
+  let filtered4 = list_filter(
+    children,
+    (c) =>
+      c.type === "text" && string_includes(c.data, "Word - rootword - affixes"),
   );
   if (list_empty_not_is(filtered4)) {
     let f4_first = list_first(filtered4);
