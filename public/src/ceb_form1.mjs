@@ -3,6 +3,7 @@ import { visit } from "./visit.mjs";
 import { list_single } from "./list_single.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 export function ceb_form1(root) {
+  let target_name = "form";
   let lambda = (n) => {
     let { name } = n;
   };
