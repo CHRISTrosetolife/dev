@@ -1,4 +1,4 @@
-import { html_parse_visit_tag } from "./html_parse_visit_tag.mjs";
+import { html_parse_visit_tag_list } from "./html_parse_visit_tag_list.mjs";
 import { error } from "./error.mjs";
 import { log } from "./log.mjs";
 import { string_replace } from "./string_replace.mjs";
@@ -15,18 +15,12 @@ import { assert } from "./assert.mjs";
 import { html_parse } from "./html_parse.mjs";
 import { file_read } from "./file_read.mjs";
 import { list_get } from "./list_get.mjs";
-import { list_adder } from "./list_adder.mjs";
 export async function yyy8Uu_file_path_to_parts(file_path, index) {
   let f = list_get(file_path, index);
   let input_string = await file_read(f);
   let parsed = html_parse(input_string);
   let tag_name = "TEI";
-  let teis = list_adder((la) => {
-    html_parse_visit_tag(parsed, tag_name, (v) => {
-      let { node } = v;
-      la(node);
-    });
-  });
+  let teis = html_parse_visit_tag_list(parsed, tag_name);
   assert(equal, [list_length(teis), 1]);
   let bodies = list_single(teis).getElementsByTagName("body");
   assert(equal, [list_length(bodies), 1]);
