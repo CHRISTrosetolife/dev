@@ -30,7 +30,7 @@ export async function yyy8Uu_file_path_to_parts(file_path, index) {
   let s = html_parse_visit_tag_single(teis_single, "text");
   log({
     a: html_parse_visit_tag_names(teis_single),
-    b: s,
+    b: s.children,
   });
   let bodies = html_parse_visit_tag_list(teis_single, "body");
   assert(equal, [list_length(bodies), 1]);
