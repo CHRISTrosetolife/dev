@@ -12,10 +12,11 @@ export function html_parse_map_text_trim(list) {
         let { node } = v;
         let { type } = node;
         if (type === "text") {
+          let d = object_property_get(node, "data");
         }
       }),
     );
-    return string_trim(object_property_get(m, "data"));
+    return string_trim();
   });
   return mapped;
 }
