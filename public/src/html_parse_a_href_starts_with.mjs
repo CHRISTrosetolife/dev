@@ -10,9 +10,9 @@ export function html_parse_a_href_starts_with(element, prefix) {
       la(node);
     }),
   );
-  let filtered2 = list_filter(found, (i) => {
+  let filtered = list_filter(found, (i) => {
     let href = html_parse_href(i);
     return string_starts_with(href, prefix);
   });
-  return filtered2;
+  return filtered;
 }
