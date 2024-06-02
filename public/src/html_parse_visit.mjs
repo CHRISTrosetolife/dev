@@ -4,10 +4,7 @@ import { visit } from "./visit.mjs";
 export function html_parse_visit(root, lambda) {
   visit(
     root,
-    (n) => {
-      let result = object_property_get_or(n, "children", []);
-      return result;
-    },
+    (n) => object_property_get_or(n, "children", []),
     tautology,
     lambda,
     [],
