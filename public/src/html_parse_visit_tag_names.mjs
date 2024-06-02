@@ -1,7 +1,7 @@
 import { html_parse_visit_tags } from "./html_parse_visit_tags.mjs";
-import { list_adder } from "./list_adder.mjs";
+import { list_adder_unique } from "./list_adder_unique.mjs";
 export function html_parse_visit_tag_names(root, tag_name, lambda2) {
-  return list_adder((la) => {
+  return list_adder_unique((la) => {
     let lambda = (v) => {
       let { node } = v;
       let { name } = node;
