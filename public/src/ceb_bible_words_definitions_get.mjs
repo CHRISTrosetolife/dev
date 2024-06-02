@@ -13,6 +13,7 @@ export async function ceb_bible_words_definitions_get(t) {
   await each_index_async(t, async (bible_word, index) => {
     if (10)
       log({
+        t_length,
         bible_word,
         index,
       });
