@@ -5,9 +5,7 @@ export function html_parse_visit(root, lambda) {
   visit(
     root,
     (n) => {
-      let property_name = "children";
-      let default_value = [];
-      let result = object_property_get_or(n, property_name, default_value);
+      let result = object_property_get_or(n, "children", []);
       return result;
     },
     tautology,
