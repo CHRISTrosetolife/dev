@@ -110,7 +110,7 @@ export async function ceb_definition(word) {
     };
   }
   let filtered4 = list_filter(children, (c) =>
-    string_includes(c.text(), "Word - rootword - affixes"),
+    string_includes(c.data, "Word - rootword - affixes"),
   );
   if (list_empty_not_is(filtered4)) {
     let f4_first = list_first(filtered4);
