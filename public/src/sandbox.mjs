@@ -57,12 +57,13 @@ export async function sandbox() {
       list_add(words, word);
     }),
   );
+  let storage_path = ceb_group_path(group_index);
   await storage_upload_object(
     {
       group,
       definitions,
       inverted,
     },
-    ceb_group_path(group_index),
+    storage_path,
   );
 }
