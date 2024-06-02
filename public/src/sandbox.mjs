@@ -21,7 +21,7 @@ import { http_get } from "./http_get.mjs";
 export async function sandbox() {
   let group_index = 0;
   let storage_path = ceb_group_path(group_index);
-  return await http_get(storage_url(storage_path));
+  let result = await http_get(storage_url(storage_path));
   return;
   let limit = 150;
   let skip = 0;
