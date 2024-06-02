@@ -6,11 +6,11 @@ import { list_filter } from "./list_filter.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 export function html_parse_a_href_starts_with(element, prefix) {
   let q = list_to(element("a[href]"));
-  let f2 = list_filter(q, (f) => {
+  let f2 = list_filter(q, (f) => {let {attribs}=f
     log({
-      f,
+      f,attribs
     });
-    return object_property_exists(f.attribs, "href");
+    return object_property_exists(attribs, "href");
   });
   let filtered = list_filter(f2, (i) => {
     let href = html_parse_href(i);
