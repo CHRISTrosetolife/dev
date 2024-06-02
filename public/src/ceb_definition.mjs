@@ -1,3 +1,4 @@
+import { html_parse_map_text_trim } from "./html_parse_map_text_trim.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { html_parse_a_href_starts_with_text } from "./html_parse_a_href_starts_with_text.mjs";
 import { less_than_equal } from "./less_than_equal.mjs";
@@ -180,7 +181,7 @@ export async function ceb_definition(word) {
         });
       }
     });
-    let defs = list_map_property_text_trim(filtered6);
+    let defs = html_parse_map_text_trim(parsed, filtered6);
     defs = list_map(defs, (d) => {
       for (let r of replaced_split) {
         if (equal(d, list_first(r))) {
