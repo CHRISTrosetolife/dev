@@ -31,7 +31,6 @@ import { list_filter } from "./list_filter.mjs";
 import { list_second } from "./list_second.mjs";
 import { list_index } from "./list_index.mjs";
 import { list_first } from "./list_first.mjs";
-import { list_map_property_text_trim } from "./list_map_property_text_trim.mjs";
 import { html_parse_a_href_starts_with } from "./html_parse_a_href_starts_with.mjs";
 import { html_cache_parse } from "./html_cache_parse.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -129,7 +128,7 @@ export async function ceb_definition(word) {
   let prefix_1 = string_combine(prefix, "cebuano/");
   let prefix_2 = string_combine(prefix, "english/");
   let a_href_lefts = html_parse_a_href_starts_with(parsed, prefix_1);
-  let mapped3 = list_map_property_text_trim(a_href_lefts);
+  let mapped3 = html_parse_map_text_trim(parsed, a_href_lefts);
   let mapped4 = list_map_index(mapped3, (m, index) => {
     return {
       text: m,
