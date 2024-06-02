@@ -10,5 +10,5 @@ export function html_parse_a_href_starts_with(parsed, element, prefix) {
     let href = html_parse_href(i);
     return string_starts_with(href, prefix);
   });
-  return filtered;
+  return list_to(filtered);
 }
