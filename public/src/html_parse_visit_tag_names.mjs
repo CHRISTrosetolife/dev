@@ -9,4 +9,5 @@ export function html_parse_visit_tag_names(root) {
     };
     html_parse_visit_tags(root, lambda);
   });
+  return result;
 }
