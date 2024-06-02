@@ -8,17 +8,20 @@ import { list_adder } from "./list_adder.mjs";
 export function html_parse_map_text_trim(list) {
   assert_arguments_length(arguments, 1);
   let mapped = list_map(list, (m) => {
-    let parts = list_adder((la) =>
-      html_parse_visit(m, (v) => {
-        let { node } = v;
-        let { type } = node;
-        if (type === "text") {
-          let d = object_property_get(node, "data");
-          la(d);
-        }
-      }),
-    );
-    return string_trim(list_join_empty(parts));
+    return html_parse_text(m);
   });
   return mapped;
 }
+function html_parse_text(m) {
+    let parts = list_adder((la) => html_parse_visit(m, (v) => {
+        let { node } = v;
+        let { type } = node;
+        if (type === "text") {
+            let d = object_property_get(node, "data");
+            la(d);
+        }
+    })
+    );
+    return string_trim(list_join_empty(parts));
+}
+
