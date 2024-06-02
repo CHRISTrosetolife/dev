@@ -1,3 +1,4 @@
+import { list_join_empty } from "./list_join_empty.mjs";
 import { string_trim } from "./string_trim.mjs";
 import { list_map } from "./list_map.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
@@ -17,7 +18,7 @@ export function html_parse_map_text_trim(list) {
         }
       }),
     );
-    return string_trim();
+    return string_trim(list_join_empty(parts));
   });
   return mapped;
 }
