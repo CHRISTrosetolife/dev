@@ -1,3 +1,4 @@
+import { html_parse_text } from "./html_parse_text.mjs";
 import { html_parse_map_text_trim } from "./html_parse_map_text_trim.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { html_parse_a_href_starts_with_text } from "./html_parse_a_href_starts_with_text.mjs";
@@ -120,7 +121,7 @@ export async function ceb_definition(word) {
     let f4_first_index = list_index(children, f4_first);
     let f4_first_index_a = add(f4_first_index, 3);
     let f4_first_a = list_get(children, f4_first_index_a);
-    let f4_first_a_text = object_property_get(f4_first_a, "text");
+    let f4_first_a_text = html_parse_text(f4_first_a);
     let f4_first_a_tag = object_property_get(f4_first_a, "rawTagName");
     assert(equal, [f4_first_a_tag, "b"]);
     word = f4_first_a_text;
