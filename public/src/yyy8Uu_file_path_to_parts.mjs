@@ -1,3 +1,4 @@
+import { html_parse_text } from "./html_parse_text.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
 import { error } from "./error.mjs";
 import { log } from "./log.mjs";
@@ -6,7 +7,6 @@ import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { string_trim } from "./string_trim.mjs";
 import { string_whitespace_normalize } from "./string_whitespace_normalize.mjs";
-import { object_property_get } from "./object_property_get.mjs";
 import { list_map } from "./list_map.mjs";
 import { html_parse } from "./html_parse.mjs";
 import { file_read } from "./file_read.mjs";
@@ -23,7 +23,7 @@ export async function yyy8Uu_file_path_to_parts(file_path, index) {
     list_filter(children_text, (c) => c.type === "tag" && t.name === "div"),
   );
   let { children } = div;
-  let parts = list_map(children, (c) => object_property_get(c, "rawText"));
+  let parts = list_map(children, (c) => html_parse_text(c));
   let normalized = list_map(parts, string_whitespace_normalize);
   let trimmed = list_map(normalized, string_trim);
   let non_empty = list_filter(trimmed, string_empty_not_is);
