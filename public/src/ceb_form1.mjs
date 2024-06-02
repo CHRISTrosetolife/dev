@@ -8,7 +8,9 @@ export function ceb_form1(root) {
     let attribute_name = "name";
     let attribute_value = "form1";
     html_parse_visit_tag_attribute(root, tag_name, attribute_name, lambda);
-    function lambda(attribs, node) {
+    function lambda(v) {
+      let { node } = v;
+      let { attribs } = node;
       if (object_property_get(attribs, attribute_name) === attribute_value) {
         la(node);
       }
