@@ -110,12 +110,12 @@ export async function app_ceb() {
   let key = "position";
   let fn_namespace = app_ceb;
   if (storage_local_exists_not(fn_namespace, key)) {
-    storage_local_set();
+    storage_local_set(fn_namespace, key, {
+      left: 0,
+      right: list_index_last(group),
+    });
   }
-  let position = {
-    left: 0,
-    right: list_index_last(group),
-  };
+  let position;
   refresh_node();
   function refresh_node() {
     html_clear_scroll_top_centered(root);
