@@ -149,6 +149,9 @@ export async function ceb_definition(word) {
     let { childNodes } = parent;
     assert(equal, [list_length(childNodes), 2]);
     let right = list_second(childNodes);
+    log({
+      right,
+    });
     let filtered6 = html_parse_a_href_starts_with(right, "");
     let skips = await list_adder_async(async (la) => {
       if (greater_than_equal(list_length(filtered6), 2)) {
