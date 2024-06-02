@@ -4,6 +4,6 @@ import { html_parse_a_href_starts_with } from "./html_parse_a_href_starts_with.m
 export function html_parse_a_href_starts_with_text(parsed, prefix) {
   let filtered = html_parse_a_href_starts_with(parsed, prefix);
   let mapped = list_map(filtered, (f) => parsed(f));
-  let mapped3 = list_map_property_text_trim(filtered);
+  let mapped3 = list_map_property_text_trim(mapped);
   return mapped3;
 }
