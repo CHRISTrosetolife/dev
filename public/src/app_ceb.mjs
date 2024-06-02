@@ -1,4 +1,5 @@
-import { storage_local_exists } from "./storage_local_exists.mjs";
+import { storage_local_set } from "./storage_local_set.mjs";
+import { storage_local_exists_not } from "./storage_local_exists_not.mjs";
 import { html_button_disable } from "./html_button_disable.mjs";
 import { html_style_default_font_size } from "./html_style_default_font_size.mjs";
 import { html_style_display_inline_block } from "./html_style_display_inline_block.mjs";
@@ -109,7 +110,7 @@ export async function app_ceb() {
   let key = "position";
   let fn_namespace = app_ceb;
   if (storage_local_exists_not(fn_namespace, key)) {
-    storage_local_set()//
+    storage_local_set();
   }
   let position = {
     left: 0,
@@ -410,4 +411,3 @@ export async function app_ceb() {
     return atoms;
   }
 }
-
