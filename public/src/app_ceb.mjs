@@ -1,5 +1,5 @@
+import { storage_local_initialize } from "./storage_local_initialize.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
-import { storage_local_exists_not } from "./storage_local_exists_not.mjs";
 import { html_button_disable } from "./html_button_disable.mjs";
 import { html_style_default_font_size } from "./html_style_default_font_size.mjs";
 import { html_style_display_inline_block } from "./html_style_display_inline_block.mjs";
@@ -113,9 +113,7 @@ export async function app_ceb() {
     left: 0,
     right: list_index_last(group),
   };
-  if (storage_local_exists_not(fn_namespace, key)) {
-    storage_local_set(fn_namespace, key, value);
-  }
+  storage_local_initialize(fn_namespace, key, value);
   refresh_node();
   function refresh_node() {
     html_clear_scroll_top_centered(root);
