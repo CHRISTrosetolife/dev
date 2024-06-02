@@ -3,5 +3,6 @@ import { http_cache } from "./http_cache.mjs";
 export async function html_cache_parse(url) {
   let html = await http_cache(url);
   let parsed = html_parse(html);
+  let root = parsed("html");
   return parsed;
 }
