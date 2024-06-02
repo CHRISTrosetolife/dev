@@ -21,9 +21,9 @@ export async function yyy8Uu_file_path_to_parts(file_path, index) {
   let parsed = html_parse(input_string);
   let teis = html_parse_visit_tag_list(parsed, "TEI");
   assert(equal, [list_length(teis), 1]);
-  let bodies = list_single(teis).getElementsByTagName("body");
+  let bodies = html_parse_visit_tag_list(list_single(teis), "body");
   assert(equal, [list_length(bodies), 1]);
-  let divs = list_single(bodies).getElementsByTagName("div");
+  let divs = html_parse_visit_tag_list(list_single(bodies), "div");
   assert(equal, [list_length(divs), 1]);
   let div = list_single(divs);
   let { childNodes } = div;
