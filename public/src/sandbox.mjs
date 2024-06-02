@@ -1,5 +1,4 @@
 import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
-import { storage_url } from "./storage_url.mjs";
 import { list_adder_unique } from "./list_adder_unique.mjs";
 import { ceb_audio_upload } from "./ceb_audio_upload.mjs";
 import { ceb_group_size } from "./ceb_group_size.mjs";
@@ -18,15 +17,10 @@ import { list_single } from "./list_single.mjs";
 import { each_object } from "./each_object.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { list_add } from "./list_add.mjs";
-import { http_get } from "./http_get.mjs";
-import { file_write_json } from "./file_write_json.mjs";
 export async function sandbox() {
   let group_index = 0;
   let storage_path = ceb_group_path(group_index);
   let existing_path = folder_gitignore_path(storage_path);
-  let result = await http_get(storage_url(storage_path));
-  await file_write_json(existing_path, result);
-  return;
   let limit = 150;
   let skip = 0;
   let group_count = ceb_group_size();
