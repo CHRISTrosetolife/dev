@@ -21,15 +21,19 @@ export function ceb_form1(root) {
       }
     }
   };
-  visit(
-    root,
-    (n) => object_property_get(n, "children") || [],
-    tautology,
-    lambda,
-    [],
-  );
+  html_parse_visit(root, lambda);
   let q = root("form[name=form1]");
   let q_single = list_single(q);
   let { childNodes: q_children } = q_single;
   return q_children;
 }
+function html_parse_visit(root, lambda) {
+    visit(
+        root,
+        (n) => object_property_get(n, "children") || [],
+        tautology,
+        lambda,
+        []
+    );
+}
+
