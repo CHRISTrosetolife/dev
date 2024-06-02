@@ -157,10 +157,10 @@ export async function app_ceb() {
       let count = integer_log(n, level_size);
       let level = number_power(level_size, add_1(count));
       if (mod_last_is(right, level) && equal_not(left, 0)) {
-        position = {
+        storage_local_set(fn_namespace, key, {
           left: add_1(subtract(right, level)),
           right: right,
-        };
+        });
       } else {
         let r1 = add_1(right);
         position = {
