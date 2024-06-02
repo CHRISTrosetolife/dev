@@ -8,7 +8,7 @@ export function ceb_form1(root) {
     root,
     (n) => object_property_get(n, "children") || [],
     tautology,
-    noolambdap,
+    lambda,
     [],
   );
   let q = root("form[name=form1]");
