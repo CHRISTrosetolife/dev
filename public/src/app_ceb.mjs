@@ -137,10 +137,10 @@ export async function app_ceb() {
           app_ceb_atom_title_patterns(),
           string_combine_multiple([add_1(i), ". ", text]),
           function on_click() {
-            position = {
+            storage_local_set(fn_namespace, key, {
               left: left_next,
               right: right_next,
-            };
+            });
             refresh_node();
           },
         );
