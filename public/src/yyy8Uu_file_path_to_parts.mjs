@@ -1,3 +1,4 @@
+import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
 import { html_parse_visit_tag_names } from "./html_parse_visit_tag_names.mjs";
 import { html_parse_visit_tag_list } from "./html_parse_visit_tag_list.mjs";
 import { error } from "./error.mjs";
@@ -27,8 +28,7 @@ export async function yyy8Uu_file_path_to_parts(file_path, index) {
   assert(equal, [list_length(teis), 1]);
   let teis_single = list_single(teis);
   let tag_name = "text";
-  let r = html_parse_visit_tag_list(teis_single, tag_name);
-  let s = list_single(r);
+  let s = html_parse_visit_tag_single(teis_single, tag_name);
   log({
     a: html_parse_visit_tag_names(teis_single),
     b: s,
