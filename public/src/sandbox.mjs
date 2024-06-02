@@ -57,6 +57,7 @@ export async function sandbox() {
       list_add(words, word);
     }),
   );
+  return;
   await storage_upload_object(
     {
       group,
