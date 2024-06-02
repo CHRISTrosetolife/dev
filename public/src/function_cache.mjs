@@ -18,7 +18,6 @@ export async function function_cache(fn, args) {
   let file_name = file_name_json(key_encoded);
   let file_path = path_join([folder_gitignore(), "cache", file_name]);
   let result;
-  let json;
   let object;
   if (await file_exists(file_path)) {
     object = await file_read_json(file_path);
