@@ -1,7 +1,7 @@
 import { log } from "./log.mjs";
 import { list_single } from "./list_single.mjs";
 export function ceb_form1(parsed) {
-  let q2 = parsed.querySelectorAll("form[method=get]");
+  let q2 = parsed.querySelectorAll("div[class='content clear-block']");
   log({
     q2,
   });
