@@ -8,7 +8,7 @@ import { log } from "./log.mjs";
 export function html_parse_a_href_starts_with(parsed, element, prefix) {
   assert_arguments_length(arguments, 3);
   let q = list_to(parsed(element).find("a"));
-  let f2 = list_filter(q, object_property_exists(f.attrs, "href"));
+  let f2 = list_filter(q, (f) => object_property_exists(f.attrs, "href"));
   log({
     f2,
   });
