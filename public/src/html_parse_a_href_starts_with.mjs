@@ -9,10 +9,7 @@ export function html_parse_a_href_starts_with(parsed, element, prefix) {
   assert_arguments_length(arguments, 3);
   let p = parsed(element);
   log({
-    e: element.text(),
-    parsed,
-    t: p.text(),
-    f: p.find,
+    e: element.find("a"),
   });
   let q = list_to(p("a"));
   let f2 = list_filter(q, (f) => object_property_exists(f.attrs, "href"));
