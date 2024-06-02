@@ -3,8 +3,6 @@ import { list_map } from "./list_map.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export function html_parse_map_text_trim(list) {
   assert_arguments_length(arguments, 1);
-  let mapped = list_map(list, (m) => {
-    return html_parse_text(m);
-  });
+  let mapped = list_map(list, html_parse_text);
   return mapped;
 }
