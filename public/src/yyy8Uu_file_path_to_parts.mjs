@@ -15,12 +15,10 @@ import { assert } from "./assert.mjs";
 import { html_parse } from "./html_parse.mjs";
 import { file_read } from "./file_read.mjs";
 import { list_get } from "./list_get.mjs";
-import { html_parse_tag } from "./html_parse_tag.mjs";
 export async function yyy8Uu_file_path_to_parts(file_path, index) {
   let f = list_get(file_path, index);
   let input_string = await file_read(f);
   let parsed = html_parse(input_string);
-  html_parse_tag();
   html_parse_visit_tag;
   let teis = parsed.getElementsByTagName("TEI");
   assert(equal, [list_length(teis), 1]);
