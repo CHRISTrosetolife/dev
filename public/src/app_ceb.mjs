@@ -106,7 +106,8 @@ export async function app_ceb() {
   let level_size = app_ceb_level_size();
   let settings_choices;
   let key = "position";
-  localStorage.getItem(list_join_space([app_ceb.name, key]));
+  fn_namespace=app_ceb;
+  localStorage.getItem(list_join_space([name, key]));
   let position = {
     left: 0,
     right: list_index_last(group),
