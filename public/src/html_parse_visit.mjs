@@ -10,7 +10,7 @@ export function html_parse_visit(root, lambda) {
       if (object_property_exists_not(n, property_name)) {
         return [];
       }
-      return object_property_get(n, "children");
+      return object_property_get(n, property_name);
     },
     tautology,
     lambda,
