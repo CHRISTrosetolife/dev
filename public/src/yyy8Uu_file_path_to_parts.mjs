@@ -21,13 +21,8 @@ export async function yyy8Uu_file_path_to_parts(file_path, index) {
   let f = list_get(file_path, index);
   let input_string = await file_read(f);
   let parsed = html_parse(input_string);
-  let teis = html_parse_visit_tag_list(parsed, "tei");
-  log({
-    teis,
-  });
-  assert(equal, [list_length(teis), 1]);
-  let teis_single = list_single(teis);
-  let text = html_parse_visit_tag_single(teis_single, "text");
+  let tei = html_parse_visit_tag_single(parsed, "tei");
+  let text = html_parse_visit_tag_single(tei, "text");
   log({
     a: html_parse_visit_tag_names(teis_single),
     b: s.children,
