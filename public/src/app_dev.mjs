@@ -24,7 +24,7 @@ import { object_property_set } from "./object_property_set.mjs";
 import { data_path } from "./data_path.mjs";
 import { data_file_name } from "./data_file_name.mjs";
 export async function app_dev() {
-  log(await http_get(data_file_name()));
+  let d = await http_get(data_file_name());
   log("here");
   let { files } = global_files_initialize({});
   await file_write_json(data_path(), {});
