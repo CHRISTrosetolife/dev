@@ -107,7 +107,7 @@ export async function app_ceb() {
   let settings_choices;
   let key = "position";
   let fn_namespace = app_ceb;
-  storage_local_get(fn_namespace, key);
+  let exists = storage_local_get(fn_namespace, key) !== null;
   let position = {
     left: 0,
     right: list_index_last(group),
