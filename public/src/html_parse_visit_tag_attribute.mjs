@@ -10,7 +10,7 @@ export function html_parse_visit_tag_attribute(
     let { node } = v;
     let { attribs } = node;
     if (object_property_exists(attribs, attribute_name)) {
-      lambda(attribs, node);
+      lambda(v);
     }
   }
   html_parse_visit_tag(root, tag_name, lambda2);
