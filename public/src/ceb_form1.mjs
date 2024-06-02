@@ -6,13 +6,17 @@ import { object_property_exists } from "./object_property_exists.mjs";
 export function ceb_form1(root) {
   let target_name = "form";
   let target_attribute_name = "name";
+  let target_attribute_value = "form1";
   let lambda = (n) => {
     let { node } = n;
     let { name } = node;
     if (name === target_name) {
       let { attribs } = node;
       if (object_property_exists(attribs, target_attribute_name)) {
-        if (object_property_get(attibs, target_attribute_name) === "form1") {
+        if (
+          object_property_get(attibs, target_attribute_name) ===
+          target_attribute_value
+        ) {
         }
       }
     }
