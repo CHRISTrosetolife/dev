@@ -1,3 +1,4 @@
+import { html_parse_visit_tag_names } from "./html_parse_visit_tag_names.mjs";
 import { html_parse_visit_tag_list } from "./html_parse_visit_tag_list.mjs";
 import { error } from "./error.mjs";
 import { log } from "./log.mjs";
@@ -25,6 +26,9 @@ export async function yyy8Uu_file_path_to_parts(file_path, index) {
   });
   assert(equal, [list_length(teis), 1]);
   let teis_single = list_single(teis);
+  log({
+    a: html_parse_visit_tag_names(teis_single),
+  });
   let bodies = html_parse_visit_tag_list(teis_single, "body");
   assert(equal, [list_length(bodies), 1]);
   let divs = html_parse_visit_tag_list(list_single(bodies), "div");
