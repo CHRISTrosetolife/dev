@@ -403,7 +403,7 @@ export async function app_ceb() {
     refresh_quiz(list_first(settings_choices));
   }
   function atoms_slice() {
-    let { left, right } = position;
+    let { left, right } = storage_local_get(app_ceb, "position");
     let atoms = list_slice(group, left, add_1(right));
     return atoms;
   }
