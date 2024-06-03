@@ -67,7 +67,7 @@ export async function sandbox() {
   let storage_path = ceb_group_path(group_index);
   let existing_path = folder_gitignore_path(storage_path);
   if (10) {
-    await storage_upload_object(result_new, storage_path);
+    if (0) await storage_upload_object(result_new, storage_path);
     await file_overwrite_json(existing_path, result_new);
   }
   let existing = await file_read_json(existing_path);
