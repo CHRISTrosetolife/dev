@@ -17,7 +17,7 @@ import { json_to } from "./json_to.mjs";
 import { js_code_return } from "./js_code_return.mjs";
 export async function bible_ceb_chapter(chapter_name) {
   let eng = await bible_engbsb_chapter(chapter_name);
-  let parsed_ceb = await bible_chapter_parsed("cebulb_html", chapter_name);
+  let parsed_ceb = await bible_chapter_parsed("cebulb", chapter_name);
   let verses_ceb = list_adder((la) =>
     html_parse_visit_attribute_value(
       parsed_ceb,
