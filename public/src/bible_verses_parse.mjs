@@ -16,7 +16,7 @@ export function bible_verses_parse(verses) {
   list_map(verses, (v) => {
     let { children } = v;
     each(children, (c) => {
-      let attribs = c;
+      let { attribs } = c;
     });
     assert(equal, [list_length(children), 3]);
     let first = list_first(children);
