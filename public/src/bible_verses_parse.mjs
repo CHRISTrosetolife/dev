@@ -17,6 +17,7 @@ import { list_first } from "./list_first.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 import { list_second } from "./list_second.mjs";
 import { list_get } from "./list_get.mjs";
+import { object_property_get } from "./object_property_get.mjs";
 export function bible_verses_parse(element) {
   let { children } = element;
   assert(equal, [list_length(children), 3]);
@@ -25,6 +26,7 @@ export function bible_verses_parse(element) {
   assert(equal, [data, " "]);
   let left = html_parse_text(list_second(children));
   let right = list_get(children, 2);
+  let right_text = object_property_get(children, "data");
   let split = string_split(text, "&#160;");
   let mapped = list_map(split, (s) => {
     let s2 = string_split_space(s);
