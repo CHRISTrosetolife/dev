@@ -1,3 +1,4 @@
+import { object_property_get_or } from "./object_property_get_or.mjs";
 import { log } from "./log.mjs";
 import { equal } from "./equal.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
@@ -20,7 +21,7 @@ export function bible_verses_parse(verses) {
       let { attribs } = c;
       if (
         object_property_exists(attribs, "class") &&
-        object_property_get(attribs, "class") === "verse"
+        object_property_get_or(attribs, "class") === "verse"
       ) {
       }
     });
