@@ -29,7 +29,7 @@ export function bible_verses_parse(verses) {
     let right_text = object_property_get(right, "data");
     let s2 = string_split_space(right_text);
     let tokens = list_filter(s2, string_empty_not_is);
-    return {
+    let result = {
       verse_number,
       tokens,
     };
