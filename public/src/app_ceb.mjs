@@ -155,7 +155,7 @@ export async function app_ceb() {
       },
     );
     html_button_width_full_text_click(root, "📃 review", () => {
-      refresh_pair(0);
+      refresh_pair_list(0);
     });
     ("🟠🔵");
     html_button_width_full_text_click(
