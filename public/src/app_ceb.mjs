@@ -389,6 +389,7 @@ export async function app_ceb() {
   async function refresh_pair_list() {
     html_clear_scroll_top_centered(root);
     let concat = atoms_slice_concat();
+    let lookup = {};
     let [cebuano, english] = pair;
     app_ceb_word_button(root, cebuano);
     app_ceb_word_english(root, english);
