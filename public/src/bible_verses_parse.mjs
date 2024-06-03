@@ -30,6 +30,9 @@ export function bible_verses_parse(verses) {
       verse_number,
       tokens,
     };
+    log({
+      result,
+    });
     return result;
   });
 }
