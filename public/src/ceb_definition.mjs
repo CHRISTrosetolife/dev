@@ -146,12 +146,12 @@ export async function ceb_definition(word) {
   let indices_at = list_map(indices, (i) => list_get(a_href_lefts, i));
   let definitions = [];
   for (let index_at of indices_at) {
+    log({
+      index_at,
+    });
     let parent = index_at;
     do {
       parent = html_parse_parent(parent);
-      log({
-        parent,
-      });
     } while (html_parse_tag_not(parent, "tr"));
     let { childNodes } = parent;
     assert(equal, [list_length(childNodes), 2]);
