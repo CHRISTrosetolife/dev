@@ -149,6 +149,9 @@ export async function ceb_definition(word) {
     let parent = index_at;
     do {
       parent = html_parse_parent(parent);
+      log({
+        parent,
+      });
     } while (html_parse_tag_not(parent, "tr"));
     let { childNodes } = parent;
     assert(equal, [list_length(childNodes), 2]);
