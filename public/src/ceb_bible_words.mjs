@@ -1,7 +1,6 @@
+import { string_count_words } from "./string_count_words.mjs";
 import { url_secure } from "./url_secure.mjs";
 import { string_combine } from "./string_combine.mjs";
-import { list_map_property } from "./list_map_property.mjs";
-import { string_count } from "./string_count.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { string_trim } from "./string_trim.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
@@ -34,11 +33,4 @@ export async function ceb_bible_words() {
   let text_split = string_split_space(text);
   let mapped = string_count_words(text_split);
   return mapped;
-}
-
-function string_count_words(text_split) {
-    let list = string_count(text_split);
-    let property_name = "word";
-    let mapped = list_map_property(list, property_name);
-    return mapped;
 }
