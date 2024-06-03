@@ -14,7 +14,9 @@ export async function bible_chapter_parsed(bible_folder, chapter_name) {
   let chapter_path = string_combine(chapter_name, ".htm");
   let joined = path_join([url_base, chapter_path]);
   let root = await html_cache_parse(joined);
-  html_parse_visit_tag_attribute(root, "class", "notemark", (v) => {});
+  html_parse_visit_tag_attribute(root, "class", "notemark", (v) => {
+    let node = v;
+  });
   let notemarks = root.querySelectorAll(".notemark");
   for (let n of notemarks) {
     n.remove();
