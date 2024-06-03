@@ -22,6 +22,7 @@ export async function ceb_bible_words_definitions_atoms(skip, limit) {
   );
   let atoms = list_adder((la) => {
     while (list_empty_not_is(pairs)) {
+      let previous;
       let atom_result = [];
       each_range(atom_count, () => {
         if (list_empty_is(pairs)) {
