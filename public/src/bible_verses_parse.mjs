@@ -17,7 +17,12 @@ export function bible_verses_parse(verses) {
   list_map(verses, (v) => {
     let { children } = v;
     each(children, (c) => {
-      let { attribs } = c;if (object_property_exists(attribs, 'class')&&object_property_get(attribs,'class')==='verse'){}
+      let { attribs } = c;
+      if (
+        object_property_exists(attribs, "class") &&
+        object_property_get(attribs, "class") === "verse"
+      ) {
+      }
     });
     assert(equal, [list_length(children), 3]);
     let first = list_first(children);
