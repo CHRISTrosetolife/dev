@@ -140,7 +140,7 @@ export async function app_ceb() {
           },
         );
       });
-    }
+    }j=add_1(level_size)
     html_button_width_full_text_click(root, string_combine(" 🎓 learn"), () => {
       refresh_pair(0);
     });
