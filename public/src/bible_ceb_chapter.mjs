@@ -26,8 +26,8 @@ export async function bible_ceb_chapter(chapter_name) {
       list_adder_visit(la),
     ),
   );
-  let rawText = html_parse_text(verses_ceb);
-  let ceb = bible_verses_parse(rawText);
+  let text = html_parse_text(verses_ceb);
+  let ceb = bible_verses_parse(text);
   assert(equal_by, [eng, ceb, list_length]);
   let symbols = [",", "1", "2", ".", ";", "“", "”", ":"];
   let words_unique = list_adder_unique((la) => {
