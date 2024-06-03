@@ -56,6 +56,7 @@ import { string_split_space } from "./string_split_space.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
 import { list_unique } from "./list_unique.mjs";
 import { list_last } from "./list_last.mjs";
+import { string_whitespace_normalize } from "./string_whitespace_normalize.mjs";
 export async function ceb_definition(word) {
   let known = {
     apan: ["but", "yet"],
@@ -218,6 +219,7 @@ export async function ceb_definition(word) {
   });
   definitions = await list_filter_async(definitions, async (d) => {
     let url = string_combine(prefix_2, d);
+    url = string_whitespace_normalize(url);
     url = string_replace(url, " ", "+");
     log({
       a: "t",
