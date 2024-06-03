@@ -31,10 +31,13 @@ export function bible_verses_parse(verses) {
     let right = list_get(children, 2);
     assert(equal, [right.type, "text"]);
     let right_text = object_property_get(children, "data");
+    let s2 = string_split_space(right_text);
+    let mapped = list_map(split, (s) => {
+      return list_filter(s2, string_empty_not_is);
+    });
   });
   let split = [left, right_text];
   let mapped = list_map(split, (s) => {
-    let s2 = string_split_space(s);
     return list_filter(s2, string_empty_not_is);
   });
   let last = list_last(mapped);
