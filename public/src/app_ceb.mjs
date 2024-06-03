@@ -149,7 +149,7 @@ export async function app_ceb() {
         j++;
       });
     }
-    html_button_width_full_text_click(root, "📃 review", refresh_pair_list);
+    html_button_width_full_text_click(root, "📃 review", refresh_review);
     if (left === right) {
       html_button_width_full_text_click(
         root,
@@ -397,7 +397,7 @@ export async function app_ceb() {
       });
     }
   }
-  async function refresh_pair_list() {
+  async function refresh_review() {
     html_clear_scroll_top_centered(root);
     let concat = atoms_slice_concat();
     let lookup = {};
