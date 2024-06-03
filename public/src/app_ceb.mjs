@@ -99,6 +99,8 @@ import { html_span_text } from "./html_span_text.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
+import { list_sort_string } from "./list_sort_string.mjs";
+import { identity } from "./identity.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   html_style_default_font_size(3.5);
@@ -395,6 +397,7 @@ export async function app_ceb() {
       let [cebuano, english] = pair;
       let e = object_property_initialize(lookup, cebuano, []);
       list_add(e, english);
+      list_sort_string(e, identity);
     });
     app_ceb_word_button(root, cebuano);
     app_ceb_word_english(root, english);
