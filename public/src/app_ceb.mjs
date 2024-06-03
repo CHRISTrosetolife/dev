@@ -1,3 +1,4 @@
+import { app_ceb_word_button_audio_none } from "./app_ceb_word_button_audio_none.mjs";
 import { html_button_next_text } from "./html_button_next_text.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
@@ -226,7 +227,7 @@ export async function app_ceb() {
     let text = app_ceb_atom_title(group, gl, gr);
     html_style_alternate_short_p(root, app_ceb_atom_title_patterns(), text);
   }
-  function refresh_quiz(settings) {
+  async function refresh_quiz(settings) {
     html_clear_scroll_top_centered(root);
     let no_mistakes = true;
     let { pair, chunk_size, forwards } = settings;
@@ -261,7 +262,7 @@ export async function app_ceb() {
     let answer_other_get;
     let alternatives;
     if (forwards) {
-      app_ceb_word_button(root, cebuano);
+      await app_ceb_word_button(root, cebuano);
       answer = english;
       answer_other_get = list_second;
       alternatives = english_alternatives;
@@ -411,7 +412,7 @@ export async function app_ceb() {
     list_sort_string(cebuanos, identity);
     each_object(lookup, (key, value) => list_sort_string(value, identity));
     each(cebuanos, (cebuano) => {
-      app_ceb_word_button(root, cebuano);
+      app_ceb_word_button_audio_none(root, cebuano);
       each(object_property_get(lookup, cebuano), (english) =>
         app_ceb_word_english(root, english),
       );
@@ -423,7 +424,7 @@ export async function app_ceb() {
     let concat = atoms_slice_concat();
     let pair = list_get(concat, pair_index);
     let [cebuano, english] = pair;
-    app_ceb_word_button(root, cebuano);
+    await app_ceb_word_button(root, cebuano);
     app_ceb_word_english(root, english);
     html_buttons_next_previous(
       root,
