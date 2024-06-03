@@ -13,5 +13,5 @@ export function html_parse_visit_attribute(
       lambda(v);
     }
   }
-  html_parse_visit(root, tag_name, lambda_inner);
+  html_parse_visit(root, lambda_inner);
 }
