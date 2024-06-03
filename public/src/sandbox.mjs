@@ -1,3 +1,4 @@
+import { file_overwrite_json } from "./file_overwrite_json.mjs";
 import { equal_json } from "./equal_json.mjs";
 import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
 import { list_adder_unique } from "./list_adder_unique.mjs";
@@ -20,7 +21,6 @@ import { object_property_initialize } from "./object_property_initialize.mjs";
 import { list_add } from "./list_add.mjs";
 import { file_read_json } from "./file_read_json.mjs";
 import { assert } from "./assert.mjs";
-import { file_write_json } from "./file_write_json.mjs";
 export async function sandbox() {
   let group_index = 0;
   let limit = 150;
@@ -68,7 +68,7 @@ export async function sandbox() {
   let existing_path = folder_gitignore_path(storage_path);
   if (10) {
     await storage_upload_object(result_new, storage_path);
-    await file_write_json(existing_path, result_new);
+    await file_overwrite_json(existing_path, result_new);
   }
   let existing = await file_read_json(existing_path);
   assert(equal_json, [result_new, existing]);
