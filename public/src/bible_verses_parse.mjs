@@ -12,11 +12,12 @@ import { list_second } from "./list_second.mjs";
 import { list_get } from "./list_get.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
+import { object_property_exists } from "./object_property_exists.mjs";
 export function bible_verses_parse(verses) {
   list_map(verses, (v) => {
     let { children } = v;
     each(children, (c) => {
-      let { attribs } = c;
+      let { attribs } = c;if (object_property_exists(attribs, 'class')&&object_property_get(attribs,'class')==='verse'){}
     });
     assert(equal, [list_length(children), 3]);
     let first = list_first(children);
