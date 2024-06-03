@@ -15,6 +15,7 @@ import { list_any } from "./list_any.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_second } from "./list_second.mjs";
+import { error } from "./error.mjs";
 export async function ceb_bible_words_definitions_atoms(skip, limit) {
   let atom_count = ceb_atom_count();
   let { pairs, definitions } = await ceb_bible_words_definitions_pairs(
@@ -38,6 +39,7 @@ export async function ceb_bible_words_definitions_atoms(skip, limit) {
             log({
               lists,
             });
+            error();
           }
           each(lists, (list) => {
             for (let eq of [list_first, list_second]) {
