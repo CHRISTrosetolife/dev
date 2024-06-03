@@ -33,6 +33,10 @@ export function bible_verses_parse(verses) {
     let right_text = object_property_get(children, "data");
     let s2 = string_split_space(right_text);
     let f = list_filter(s2, string_empty_not_is);
+    return {
+      verse_number,
+      tokens,
+    };
   });
   let split = [left, right_text];
   let mapped = list_map(split, (s) => {
