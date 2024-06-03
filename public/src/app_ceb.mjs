@@ -182,10 +182,14 @@ export async function app_ceb() {
         quizzes_start([1]);
       },
     );
-    html_button_width_full_text_click(root, html_button_next_text(), () => {
-      app_ceb_next();
-      refresh_node();
-    });
+    html_button_width_full_text_click(
+      root,
+      string_combine(html_button_next_text()),
+      () => {
+        app_ceb_next();
+        refresh_node();
+      },
+    );
     function app_ceb_next() {
       let { left, right } = storage_local_get(app_ceb, "position");
       let n = add_1(subtract(right, left));
