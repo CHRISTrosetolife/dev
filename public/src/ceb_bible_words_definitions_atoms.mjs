@@ -72,10 +72,11 @@ export async function ceb_bible_words_definitions_atoms(skip, limit) {
             atom_result,
           });
       }
-      log({
-        atom_result,
-        previous,
-      });
+      if (0)
+        log({
+          atom_result,
+          previous,
+        });
       list_add_beginning(previous, atom_result);
     }
   });
