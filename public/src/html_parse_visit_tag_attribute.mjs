@@ -6,12 +6,12 @@ export function html_parse_visit_tag_attribute(
   attribute_name,
   lambda,
 ) {
-  function lambda2(v) {
+  function lambda_inner(v) {
     let { node } = v;
     let { attribs } = node;
     if (object_property_exists(attribs, attribute_name)) {
       lambda(v);
     }
   }
-  html_parse_visit_tag(root, tag_name, lambda2);
+  html_parse_visit_tag(root, tag_name, lambda_inner);
 }
