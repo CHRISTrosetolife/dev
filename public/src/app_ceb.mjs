@@ -1,3 +1,4 @@
+import { html_button_next_text } from "./html_button_next_text.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { html_button_disable } from "./html_button_disable.mjs";
@@ -32,7 +33,6 @@ import { app_ceb_level_size } from "./app_ceb_level_size.mjs";
 import { each_range } from "./each_range.mjs";
 import { add } from "./add.mjs";
 import { mod_last_is } from "./mod_last_is.mjs";
-import { html_button_width_full_text_click_next } from "./html_button_width_full_text_click_next.mjs";
 import { html_button_width_full_text_click_alternate_short } from "./html_button_width_full_text_click_alternate_short.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_style_button_default } from "./html_style_button_default.mjs";
@@ -182,7 +182,7 @@ export async function app_ceb() {
         quizzes_start([1]);
       },
     );
-    html_button_width_full_text_click_next(root, () => {
+    html_button_width_full_text_click(root, html_button_next_text(), () => {
       app_ceb_next();
       refresh_node();
     });
