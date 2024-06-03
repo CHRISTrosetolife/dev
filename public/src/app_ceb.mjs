@@ -394,6 +394,7 @@ export async function app_ceb() {
     each(concat, (pair) => {
       let [cebuano, english] = pair;
       let e = object_property_initialize(lookup, cebuano, []);
+      list_add(e, english);
     });
     app_ceb_word_button(root, cebuano);
     app_ceb_word_english(root, english);
