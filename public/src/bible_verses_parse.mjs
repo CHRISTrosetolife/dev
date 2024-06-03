@@ -20,6 +20,7 @@ export function bible_verses_parse(verses) {
       let { attribs } = c;
       let verse_number;
       if (object_property_get_or(attribs, "class", "") === "verse") {
+        verse_number = html_parse_text(c);
       }
     });
     assert(equal, [list_length(children), 3]);
