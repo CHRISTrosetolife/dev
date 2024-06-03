@@ -35,10 +35,10 @@ export async function ceb_bible_words_definitions_atoms(skip, limit) {
           let lists = [atom_result];
           if (undefined_not_is(previous)) {
             list_add(lists, previous);
+            log({
+              lists,
+            });
           }
-          log({
-            lists,
-          });
           each(lists, (list) => {
             for (let eq of [list_first, list_second]) {
               if (list_any(list, (a) => equal_by(a, p, eq))) {
