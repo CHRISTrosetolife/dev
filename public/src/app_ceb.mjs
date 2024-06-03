@@ -155,7 +155,7 @@ export async function app_ceb() {
         root,
         string_combine(j++, ". 🎓 learn"),
         () => {
-          refresh_pair(0);
+          refresh_learn(0);
         },
       );
     }
@@ -419,7 +419,7 @@ export async function app_ceb() {
     });
     html_button_width_full_text_click_up(root, refresh_node);
   }
-  async function refresh_pair(pair_index) {
+  async function refresh_learn(pair_index) {
     html_clear_scroll_top_centered(root);
     let concat = atoms_slice_concat();
     let pair = list_get(concat, pair_index);
@@ -432,7 +432,7 @@ export async function app_ceb() {
         if (greater_than(pair_index, list_index_last(concat))) {
           refresh_node();
         } else {
-          refresh_pair(pair_index);
+          refresh_learn(pair_index);
         }
       },
       pair_index,
