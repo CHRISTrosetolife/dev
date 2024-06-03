@@ -7,6 +7,7 @@ import { string_ends_with } from "./string_ends_with.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { each_async } from "./each_async.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { string_combine } from "./string_combine.mjs";
 export async function ceb_bible_words_2() {
   let url_base = string_combine_multiple([
     url_secure_w3(),
@@ -19,7 +20,7 @@ export async function ceb_bible_words_2() {
       let { node } = v;
       let href = html_parse_href(node);
       if (string_ends_with(href, ".html")) {
-        la(href);
+        la(string_combine(url_base, href));
       }
     }),
   );
