@@ -32,7 +32,8 @@ export async function ceb_bible_words_definitions_atoms(skip, limit) {
         let next;
         for (let p of pairs) {
           let c = false;
-          each([atom_result, previous], (list) => {
+          let lists = [atom_result, previous];
+          each(lists, (list) => {
             for (let eq of [list_first, list_second]) {
               if (list_any(list, (a) => equal_by(a, p, eq))) {
                 c = true;
