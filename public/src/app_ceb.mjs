@@ -141,22 +141,38 @@ export async function app_ceb() {
         );
       });
     }
-    html_button_width_full_text_click(root, " 🎓 learn", () => {
+    html_button_width_full_text_click(root, string_combine(" 🎓 learn"), () => {
       refresh_pair(0);
     });
-    html_button_width_full_text_click(root, " 📃 review", () => {
-      refresh_pair(0);
-    });
+    html_button_width_full_text_click(
+      root,
+      string_combine(" 📃 review"),
+      () => {
+        refresh_pair(0);
+      },
+    );
     ("🟠🔵");
-    html_button_width_full_text_click(root, " 📝 quiz ( 🟢 easy )", () => {
-      quizzes_start([3]);
-    });
-    html_button_width_full_text_click(root, " 📝 quiz ( 🟡 medium )", () => {
-      quizzes_start([2]);
-    });
-    html_button_width_full_text_click(root, " 📝 quiz ( 🔴 hard )", () => {
-      quizzes_start([1]);
-    });
+    html_button_width_full_text_click(
+      root,
+      string_combine(" 📝 quiz ( 🟢 easy )"),
+      () => {
+        quizzes_start([3]);
+      },
+    );
+    html_button_width_full_text_click(
+      root,
+      string_combine(" 📝 quiz ( 🟡 medium )"),
+      () => {
+        quizzes_start([2]);
+      },
+    );
+    html_button_width_full_text_click(
+      root,
+      string_combine(" 📝 quiz ( 🔴 hard )"),
+      () => {
+        quizzes_start([1]);
+      },
+    );
     html_button_width_full_text_click_next(root, () => {
       app_ceb_next();
       refresh_node();
