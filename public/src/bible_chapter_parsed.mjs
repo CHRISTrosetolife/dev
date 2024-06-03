@@ -21,9 +21,5 @@ export async function bible_chapter_parsed(bible_folder, chapter_name) {
     let { children } = parent;
     list_remove(children, node);
   });
-  let notemarks = root.querySelectorAll(".notemark");
-  for (let n of notemarks) {
-    n.remove();
-  }
   return root;
 }
