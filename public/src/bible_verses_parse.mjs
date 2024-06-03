@@ -25,8 +25,8 @@ export function bible_verses_parse(verses) {
             return;
           }
         }
-        if (undefined_not_is(verse_number)) {
-          if (c.type === "text") {
+        if (c.type === "text") {
+          if (undefined_not_is(verse_number)) {
             let n = string_trim(string_whitespace_normalize(c.data));
             let s = string_split_space(n);
             list_add_multiple(tokens, s);
