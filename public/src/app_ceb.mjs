@@ -419,6 +419,7 @@ export async function app_ceb() {
       each(object_property_get(lookup, cebuano), (english) =>
         app_ceb_word_english(root, english),
       );
+      html_hr(root);
     });
     html_button_width_full_text_click_up(root, refresh_node);
   }
