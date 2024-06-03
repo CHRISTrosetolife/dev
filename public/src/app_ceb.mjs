@@ -136,7 +136,7 @@ export async function app_ceb() {
         html_button_width_full_text_click_alternate_short(
           root,
           app_ceb_atom_title_patterns(),
-          string_combine_multiple([add_1(i), ". ", text]),
+          string_combine_multiple([j, ". ", text]),
           function on_click() {
             storage_local_set(app_ceb, "position", {
               left: left_next,
