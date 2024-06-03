@@ -17,6 +17,7 @@ export async function bible_chapter_parsed(bible_folder, chapter_name) {
   html_parse_visit_tag_attribute(root, "class", "notemark", (v) => {
     let { node } = v;
     let { parent } = node;
+    let children = parent;
   });
   let notemarks = root.querySelectorAll(".notemark");
   for (let n of notemarks) {
