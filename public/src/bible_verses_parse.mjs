@@ -18,7 +18,7 @@ export function bible_verses_parse(verses) {
     let { children } = v;
     each(children, (c) => {
       let { attribs } = c;
-      let verse_number = 0;
+      let verse_number;
       if (object_property_get_or(attribs, "class", "") === "verse") {
       }
     });
