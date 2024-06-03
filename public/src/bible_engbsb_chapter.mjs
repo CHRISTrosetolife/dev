@@ -7,7 +7,7 @@ import { bible_chapter_parsed } from "./bible_chapter_parsed.mjs";
 import { list_adder } from "./list_adder.mjs";
 export async function bible_engbsb_chapter(chapter_name) {
   let root = await bible_chapter_parsed("engbsb", chapter_name);
-  let verses_bsb = list_adder((la) =>
+  let verses = list_adder((la) =>
     html_parse_visit_attribute_values(
       root,
       "class",
@@ -15,7 +15,7 @@ export async function bible_engbsb_chapter(chapter_name) {
       list_adder_visit(la),
     ),
   );
-  let mapped6 = list_map(verses_bsb, html_parse_text);
+  let mapped6 = list_map(verses, html_parse_text);
   let eng = bible_verses_parse(mapped6);
   return eng;
 }
