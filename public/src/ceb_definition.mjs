@@ -158,6 +158,9 @@ export async function ceb_definition(word) {
       }
       parent = html_parse_parent(parent);
     } while (html_parse_tag_not(parent, "tr"));
+    if (root_is) {
+      continue;
+    }
     let { childNodes } = parent;
     assert(equal, [list_length(childNodes), 2]);
     let right = list_second(childNodes);
