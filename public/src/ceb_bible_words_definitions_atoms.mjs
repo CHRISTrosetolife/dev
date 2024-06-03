@@ -1,3 +1,5 @@
+import { list_concat } from "./list_concat.mjs";
+import { list_take } from "./list_take.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
 import { each } from "./each.mjs";
 import { ceb_atom_count } from "./ceb_atom_count.mjs";
@@ -17,6 +19,7 @@ import { list_adder } from "./list_adder.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_second } from "./list_second.mjs";
 export async function ceb_bible_words_definitions_atoms(skip, limit) {
+  let take_count = 4;
   let atom_count = ceb_atom_count();
   let { pairs, definitions } = await ceb_bible_words_definitions_pairs(
     skip,
@@ -33,10 +36,10 @@ export async function ceb_bible_words_definitions_atoms(skip, limit) {
         let next;
         for (let p of pairs) {
           let c = false;
-          let lists = [atom_result];
-          if (undefined_not_is(previous)) {
-            list_add(lists, previous);
-          }
+          let lists = list_take(
+            list_concat([atom_result], previous),
+            take_count,
+          );
           each(lists, (list) => {
             for (let eq of [list_first, list_second]) {
               if (list_any(list, (a) => equal_by(a, p, eq))) {
