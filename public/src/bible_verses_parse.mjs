@@ -22,6 +22,7 @@ export function bible_verses_parse(verses) {
         verse_number = html_parse_text(c);
       }
       if (c.type === "text") {
+        let text = object_property_get(c, "data");
       }
     });
     assert(equal, [list_length(children), 3]);
@@ -30,7 +31,6 @@ export function bible_verses_parse(verses) {
     assert(equal, [data, " "]);
     let right = list_get(children, 2);
     assert(equal, [right.type, "text"]);
-    let right_text = object_property_get(right, "data");
     let s2 = string_split_space(right_text);
     let tokens = list_filter(s2, string_empty_not_is);
     let result = {
