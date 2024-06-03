@@ -151,7 +151,7 @@ export async function app_ceb() {
     );
     html_button_width_full_text_click(
       root,
-      string_combine(" 📃 review"),
+      string_combine(j++, " 📃 review"),
       () => {
         refresh_pair(0);
       },
