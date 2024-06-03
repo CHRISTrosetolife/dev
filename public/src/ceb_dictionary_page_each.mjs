@@ -1,3 +1,4 @@
+import { url_secure_w3 } from "./url_secure_w3.mjs";
 import { html_parse_a_href_starts_with_text } from "./html_parse_a_href_starts_with_text.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { not } from "./not.mjs";
@@ -14,10 +15,10 @@ export async function ceb_dictionary_page_each(lambda) {
   for (let letter of letters) {
     let page_number = 1;
     while (true) {
-      let prefix = `https://www.learnentry.com/english-to-cebuano/dictionary/words-start-with-${letter}?page=`;
-      const url = string_combine_multiple([prefix, page_number]);
+      let prefix = `${url_secure_w3()}learnentry.com/english-to-cebuano/dictionary/words-start-with-${letter}?page=`;
+      let url = string_combine_multiple([prefix, page_number]);
       let parsed = await html_cache_parse(url);
-      const v = {
+      let v = {
         url,
         letter,
         page_number,
