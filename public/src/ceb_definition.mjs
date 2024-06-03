@@ -151,6 +151,8 @@ export async function ceb_definition(word) {
     });
     let parent = index_at;
     do {
+      if (parent.type === "root") {
+      }
       parent = html_parse_parent(parent);
     } while (html_parse_tag_not(parent, "tr"));
     let { childNodes } = parent;
