@@ -26,6 +26,7 @@ export function bible_verses_parse(element) {
   assert(equal, [data, " "]);
   let left = html_parse_text(list_second(children));
   let right = list_get(children, 2);
+  assert(equal, [right.type, "text"]);
   let right_text = object_property_get(children, "data");
   let split = string_split(text, "&#160;");
   let mapped = list_map(split, (s) => {
