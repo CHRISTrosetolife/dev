@@ -22,7 +22,7 @@ export function bible_verses_parse(verses) {
         let { attribs } = c;
         if (object_property_get_or(attribs, "class", "") === "verse") {
           verse_number = html_parse_text(c);
-          verse_text = "";
+          verse_text = [];
           return;
         }
         if (undefined_not_is(verse_number)) {
