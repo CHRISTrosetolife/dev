@@ -398,6 +398,7 @@ export async function app_ceb() {
     let cebuanos = list_adder_unique((la) =>
       each(concat, (pair) => {
         let [cebuano, english] = pair;
+        la(cebuano);
         let e = object_property_initialize(lookup, cebuano, []);
         list_add(e, english);
       }),
