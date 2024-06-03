@@ -12,8 +12,10 @@ import { assert } from "./assert.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { list_take } from "./list_take.mjs";
 import { list_filter } from "./list_filter.mjs";
+import { list_length } from "./list_length.mjs";
 export function bible_verses_parse(element) {
   let { children } = element;
+  assert(equal, [list_length(children), 3]);
   let split = string_split(text, "&#160;");
   let mapped = list_map(split, (s) => {
     let s2 = string_split_space(s);
