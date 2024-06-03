@@ -428,7 +428,7 @@ export async function app_ceb() {
     let concat = atoms_slice_concat();
     let pair = list_get(concat, pair_index);
     let [cebuano, english] = pair;
-    await app_ceb_word_button(root, cebuano);
+    (async () => await app_ceb_word_button(root, cebuano))();
     app_ceb_word_english(root, english);
     html_buttons_next_previous(
       root,
