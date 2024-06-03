@@ -19,7 +19,7 @@ export async function bible_ceb_chapter(chapter_name) {
   let parsed_ceb = await bible_chapter_parsed("cebulb_html", chapter_name);
   let verses_ceb = list_adder((la) =>
     html_parse_visit_attribute_value(
-      root,
+      parsed_ceb,
       "class",
       ["p"],
       list_adder_visit(la),
