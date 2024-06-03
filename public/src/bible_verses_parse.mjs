@@ -8,7 +8,7 @@ import { list_add_multiple } from "./list_add_multiple.mjs";
 import { string_whitespace_normalize } from "./string_whitespace_normalize.mjs";
 import { string_trim } from "./string_trim.mjs";
 export function bible_verses_parse(verses) {
-  list_adder((la) =>
+  return list_adder((la) =>
     each(verses, (v) => {
       let { children } = v;
       let verse_number, tokens;
