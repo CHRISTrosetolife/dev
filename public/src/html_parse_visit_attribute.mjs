@@ -1,4 +1,4 @@
-import { html_parse_visit_tag } from "./html_parse_visit_tag.mjs";
+import { html_parse_visit } from "./html_parse_visit.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 export function html_parse_visit_attribute(
   root,
@@ -13,5 +13,5 @@ export function html_parse_visit_attribute(
       lambda(v);
     }
   }
-  html_parse_visit_tag(root, tag_name, lambda_inner);
+  html_parse_visit(root, tag_name, lambda_inner);
 }
