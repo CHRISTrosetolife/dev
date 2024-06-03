@@ -141,7 +141,22 @@ export async function app_ceb() {
         );
       });
     }
-    app_ceb_learn();
+    html_button_width_full_text_click(root, "🎓 learn", () => {
+      refresh_pair(0);
+    });
+    html_button_width_full_text_click(root, "📃 review", () => {
+      refresh_pair(0);
+    });
+    ("🟠🔵");
+    html_button_width_full_text_click(root, "📝 quiz ( 🟢 easy )", () => {
+      quizzes_start([3]);
+    });
+    html_button_width_full_text_click(root, "📝 quiz ( 🟡 medium )", () => {
+      quizzes_start([2]);
+    });
+    html_button_width_full_text_click(root, "📝 quiz ( 🔴 hard )", () => {
+      quizzes_start([1]);
+    });
     html_button_width_full_text_click_next(root, () => {
       app_ceb_next();
       refresh_node();
@@ -177,24 +192,7 @@ export async function app_ceb() {
       refresh_node();
     }
   }
-  function app_ceb_learn() {
-    html_button_width_full_text_click(root, "🎓 learn", () => {
-      refresh_pair(0);
-    });
-    html_button_width_full_text_click(root, "📃 review", () => {
-      refresh_pair(0);
-    });
-    ("🟠🔵");
-    html_button_width_full_text_click(root, "📝 quiz ( 🟢 easy )", () => {
-      quizzes_start([3]);
-    });
-    html_button_width_full_text_click(root, "📝 quiz ( 🟡 medium )", () => {
-      quizzes_start([2]);
-    });
-    html_button_width_full_text_click(root, "📝 quiz ( 🔴 hard )", () => {
-      quizzes_start([1]);
-    });
-  }
+  function app_ceb_learn() {}
   function app_ceb_title() {
     let { left, right } = storage_local_get(app_ceb, "position");
     let gl = list_get(group, left);
