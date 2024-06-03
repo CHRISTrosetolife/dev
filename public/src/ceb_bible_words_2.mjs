@@ -9,7 +9,7 @@ import { list_adder } from "./list_adder.mjs";
 export async function ceb_bible_words_2() {
   let url = string_combine(url_secure_w3(), "talibon.com/bible/bible.html");
   let root = await html_cache_parse(url);
-  list_adder((la) =>
+  let hrefs = list_adder((la) =>
     html_parse_visit_tag(root, "a", (v) => {
       let { node } = v;
       let href = html_parse_href(node);
