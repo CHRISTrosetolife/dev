@@ -1,3 +1,4 @@
+import { list_add_beginning } from "./list_add_beginning.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { list_take } from "./list_take.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
@@ -75,7 +76,7 @@ export async function ceb_bible_words_definitions_atoms(skip, limit) {
         atom_result,
         previous,
       });
-      previous = atom_result;
+      list_add_beginning(previous, atom_result);
     }
   });
   return {
