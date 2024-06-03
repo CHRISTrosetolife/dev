@@ -23,6 +23,10 @@ export function bible_verses_parse(verses) {
         if (object_property_get_or(attribs, "class", "") === "verse") {
           verse_number = html_parse_text(c);
           tokens = [];
+          la({
+            verse_number,
+            tokens,
+          });
           return;
         }
         if (undefined_not_is(verse_number)) {
