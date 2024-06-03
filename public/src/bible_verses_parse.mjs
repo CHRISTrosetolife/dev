@@ -12,8 +12,8 @@ import { assert } from "./assert.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { list_take } from "./list_take.mjs";
 import { list_filter } from "./list_filter.mjs";
-export function bible_verses_parse(rawText) {
-  let split = string_split(rawText, "&#160;");
+export function bible_verses_parse(text) {
+  let split = string_split(text, "&#160;");
   let mapped = list_map(split, (s) => {
     let s2 = string_split_space(s);
     return list_filter(s2, string_empty_not_is);
