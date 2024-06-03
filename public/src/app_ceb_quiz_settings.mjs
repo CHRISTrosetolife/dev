@@ -11,7 +11,7 @@ export function app_ceb_quiz_settings(atoms, chunk_sizes) {
   let settings_choices = list_adder((la) =>
     each(chunk_sizes, (chunk_size) =>
       each([true, false], (forwards) => {
-        let scrambled = list_copy(concat);
+        let scrambled = list_copy(copy);
         list_scramble_halves(scrambled);
         each(scrambled, (pair) =>
           la({
