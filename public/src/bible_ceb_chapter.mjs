@@ -22,7 +22,7 @@ export async function bible_ceb_chapter(chapter_name) {
     html_parse_visit_attribute_value(
       parsed_ceb,
       "class",
-      ["p"],
+      "p",
       list_adder_visit(la),
     ),
   );
