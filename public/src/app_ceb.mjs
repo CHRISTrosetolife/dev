@@ -263,7 +263,7 @@ export async function app_ceb() {
     let answer_other_get;
     let alternatives;
     if (forwards) {
-      await app_ceb_word_button(root, cebuano);
+      app_ceb_word_button(root, cebuano);
       answer = english;
       answer_other_get = list_second;
       alternatives = english_alternatives;
