@@ -10,7 +10,8 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export async function ceb_bible_words_2() {
   let url = string_combine_multiple([
     url_secure_w3(),
-    "talibon.com/bible/bible.html",
+    "talibon.com/bible/",
+    "bible.html",
   ]);
   let root = await html_cache_parse(url);
   let hrefs = list_adder((la) =>
