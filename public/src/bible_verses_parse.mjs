@@ -15,9 +15,6 @@ import { object_property_get } from "./object_property_get.mjs";
 export function bible_verses_parse(verses) {
   list_map(verses, (v) => {
     let { children } = v;
-    log({
-      v,
-    });
     log(object_properties(verses));
     assert(equal, [list_length(children), 3]);
     let first = list_first(children);
@@ -33,5 +30,6 @@ export function bible_verses_parse(verses) {
       verse_number,
       tokens,
     };
+    return result;
   });
 }
