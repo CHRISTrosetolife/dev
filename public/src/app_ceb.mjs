@@ -192,7 +192,6 @@ export async function app_ceb() {
       refresh_node();
     }
   }
-  function app_ceb_learn() {}
   function app_ceb_title() {
     let { left, right } = storage_local_get(app_ceb, "position");
     let gl = list_get(group, left);
