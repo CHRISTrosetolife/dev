@@ -56,6 +56,9 @@ export async function ceb_bible_words_definitions_atoms(skip, limit) {
       });
       if (equal(list_length(atom_result), atom_count)) {
         la(atom_result);
+        log({
+          atom_result,
+        });
         previous = atom_result;
       } else {
         if (0)
