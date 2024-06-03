@@ -4,7 +4,7 @@ import { object_property_get } from "./object_property_get.mjs";
 export function html_parse_visit_attribute_lambda(
   root,
   attribute_name,
-  value,
+  attribute_lambda,
   lambda,
 ) {
   function lambda_inner(v) {
