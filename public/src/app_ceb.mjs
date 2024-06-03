@@ -148,7 +148,7 @@ export async function app_ceb() {
         j++;
       });
     }
-    if (left !== right) {
+    if (left === right) {
       html_button_width_full_text_click(
         root,
         string_combine(j++, ". 🎓 learn"),
