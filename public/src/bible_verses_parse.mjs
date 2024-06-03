@@ -18,7 +18,7 @@ export function bible_verses_parse(element) {
   let { children } = element;
   assert(equal, [list_length(children), 3]);
   let first = list_first(children);
-  let data = first;
+  let { data } = first;
   let split = string_split(text, "&#160;");
   let mapped = list_map(split, (s) => {
     let s2 = string_split_space(s);
