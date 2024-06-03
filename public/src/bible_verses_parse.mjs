@@ -21,7 +21,7 @@ import { list_get } from "./list_get.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 export function bible_verses_parse(verses) {
   list_map(verses, (v) => {
-    let { children } = verses;
+    let { children } = v;
     log(object_properties(verses));
     assert(equal, [list_length(children), 3]);
     let first = list_first(children);
