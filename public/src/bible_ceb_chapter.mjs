@@ -1,4 +1,3 @@
-import { html_parse_text } from "./html_parse_text.mjs";
 import { list_adder_visit } from "./list_adder_visit.mjs";
 import { html_parse_visit_attribute_value } from "./html_parse_visit_attribute_value.mjs";
 import { list_adder } from "./list_adder.mjs";
@@ -26,8 +25,7 @@ export async function bible_ceb_chapter(chapter_name) {
       list_adder_visit(la),
     ),
   );
-  let text = html_parse_text(verses_ceb);
-  let ceb = bible_verses_parse(text);
+  let ceb = bible_verses_parse(verses_ceb);
   assert(equal_by, [eng, ceb, list_length]);
   let symbols = [",", "1", "2", ".", ";", "“", "”", ":"];
   let words_unique = list_adder_unique((la) => {
