@@ -28,6 +28,7 @@ export async function bible_ceb_chapter(chapter_name) {
   );
   let ceb = bible_verses_parse(verses_ceb);
   log({
+    eng,
     ceb,
   });
   assert(equal_by, [eng, ceb, list_length]);
