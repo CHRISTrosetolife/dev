@@ -32,8 +32,13 @@ export async function ceb_bible_words() {
   text = string_case_lower(text);
   text = string_trim(text);
   let text_split = string_split_space(text);
-  let list = string_count(text_split);
-  let property_name = "word";
-  let mapped = list_map_property(list, property_name);
+  let mapped = string_count_words(text_split);
   return mapped;
+}
+
+function string_count_words(text_split) {
+    let list = string_count(text_split);
+    let property_name = "word";
+    let mapped = list_map_property(list, property_name);
+    return mapped;
 }
