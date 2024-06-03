@@ -16,9 +16,9 @@ import { each } from "./each.mjs";
 export function bible_verses_parse(verses) {
   list_map(verses, (v) => {
     let { children } = v;
+    let verse_number;
     each(children, (c) => {
       let { attribs } = c;
-      let verse_number;
       if (object_property_get_or(attribs, "class", "") === "verse") {
         verse_number = html_parse_text(c);
       }
