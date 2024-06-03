@@ -66,6 +66,9 @@ export async function sandbox() {
     inverted,
   };
   let existing = await file_read_json(existing_path);
+  log({
+    group,
+  });
   assert(equal_json, [result_new, existing]);
   return;
   await storage_upload_object(result_new, storage_path);
