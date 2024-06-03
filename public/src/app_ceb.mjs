@@ -405,6 +405,7 @@ export async function app_ceb() {
     );
     list_sort_string(cebuanos, identity);
     each_object(lookup, (key, value) => list_sort_string(value, identity));
+    each(cebuanos, (cebuano) => {});
     app_ceb_word_button(root, cebuano);
     app_ceb_word_english(root, english);
     html_buttons_next_previous(
