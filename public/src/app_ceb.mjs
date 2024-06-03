@@ -416,18 +416,6 @@ export async function app_ceb() {
         app_ceb_word_english(root, english),
       );
     });
-    html_buttons_next_previous(
-      root,
-      (pair_index) => {
-        if (greater_than(pair_index, list_index_last(concat))) {
-          refresh_node();
-        } else {
-          refresh_pair(pair_index);
-        }
-      },
-      pair_index,
-      list_length(concat),
-    );
     html_button_width_full_text_click_up(root, refresh_node);
   }
   async function refresh_pair(pair_index) {
