@@ -25,9 +25,9 @@ export function bible_verses_parse(verses) {
           return;
         }
         if (undefined_not_is(verse_number)) {
-        }
-        if (c.type === "text") {
-          let text = object_property_get(c, "data");
+          if (c.type === "text") {
+            let text = object_property_get(c, "data");
+          }
         }
       });
       assert(equal, [list_length(children), 3]);
