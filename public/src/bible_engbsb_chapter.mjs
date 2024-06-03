@@ -15,7 +15,7 @@ export async function bible_engbsb_chapter(chapter_name) {
       list_adder_visit(la),
     ),
   );
-  let mapped6 = list_map(verses, html_parse_text);
-  let eng = bible_verses_parse(mapped6);
+  let m = list_map(verses, html_parse_text);
+  let eng = bible_verses_parse(m);
   return eng;
 }
