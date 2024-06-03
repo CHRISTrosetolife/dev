@@ -1,4 +1,3 @@
-import { file_write } from "./file_write.mjs";
 import { bible_engbsb_chapter } from "./bible_engbsb_chapter.mjs";
 import { bible_verses_parse } from "./bible_verses_parse.mjs";
 import { bible_chapter_parsed } from "./bible_chapter_parsed.mjs";
@@ -11,7 +10,6 @@ import { equal_by } from "./equal_by.mjs";
 import { assert } from "./assert.mjs";
 import { list_length } from "./list_length.mjs";
 import { json_to } from "./json_to.mjs";
-import { function_new_generic } from "./function_new_generic.mjs";
 import { js_code_return } from "./js_code_return.mjs";
 export async function bible_ceb_chapter(chapter_name) {
   let eng = await bible_engbsb_chapter(chapter_name);
@@ -44,16 +42,5 @@ export async function bible_ceb_chapter(chapter_name) {
     definitions,
   };
   let body_string = js_code_return(json_to(data));
-  const fn_name = `bible_data_${string_case_lower(chapter_name)}`;
-  await function_new_generic(
-    fn_name,
-    ``,
-    body_string,
-    false,
-    [],
-    false,
-    false,
-    file_write,
-  );
-  return fn_name;
+  let fn_name = `bible_data_${string_case_lower(chapter_name)}`;
 }
