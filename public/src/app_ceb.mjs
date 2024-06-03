@@ -149,7 +149,7 @@ export async function app_ceb() {
     let j = add_1(level_size);
     html_button_width_full_text_click(
       root,
-      string_combine(j++, " 🎓 learn"),
+      string_combine(j++, ". 🎓 learn"),
       () => {
         refresh_pair(0);
       },
@@ -160,21 +160,21 @@ export async function app_ceb() {
     ("🟠🔵");
     html_button_width_full_text_click(
       root,
-      string_combine(j++, " 📝 quiz ( 🟢 easy )"),
+      string_combine(j++, ". 📝 quiz ( 🟢 easy )"),
       () => {
         quizzes_start([3]);
       },
     );
     html_button_width_full_text_click(
       root,
-      string_combine(j++, " 📝 quiz ( 🟡 medium )"),
+      string_combine(j++, ". 📝 quiz ( 🟡 medium )"),
       () => {
         quizzes_start([2]);
       },
     );
     html_button_width_full_text_click(
       root,
-      string_combine(j++, " 📝 quiz ( 🔴 hard )"),
+      string_combine(j++, ". 📝 quiz ( 🔴 hard )"),
       () => {
         quizzes_start([1]);
       },
