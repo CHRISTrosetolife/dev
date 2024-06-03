@@ -394,11 +394,13 @@ export async function app_ceb() {
     html_clear_scroll_top_centered(root);
     let concat = atoms_slice_concat();
     let lookup = {};
-    each(concat, (pair) => {
-      let [cebuano, english] = pair;
-      let e = object_property_initialize(lookup, cebuano, []);
-      list_add(e, english);
-    });
+    let cebuanos = list_adder((la) =>
+      each(concat, (pair) => {
+        let [cebuano, english] = pair;
+        let e = object_property_initialize(lookup, cebuano, []);
+        list_add(e, english);
+      }),
+    );
     each_object(lookup, (key, value) => list_sort_string(value, identity));
     app_ceb_word_button(root, cebuano);
     app_ceb_word_english(root, english);
