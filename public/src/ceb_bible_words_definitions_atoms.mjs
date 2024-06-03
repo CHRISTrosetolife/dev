@@ -1,3 +1,4 @@
+import { subtract_1 } from "./subtract_1.mjs";
 import { each } from "./each.mjs";
 import { ceb_atom_count } from "./ceb_atom_count.mjs";
 import { ceb_bible_words_definitions_pairs } from "./ceb_bible_words_definitions_pairs.mjs";
@@ -25,7 +26,7 @@ export async function ceb_bible_words_definitions_atoms(skip, limit) {
     let previous;
     while (list_empty_not_is(pairs)) {
       let atom_result = [];
-      each_range(atom_count, () => {
+      each_range(atom_count, (index) => {
         if (list_empty_is(pairs)) {
           return;
         }
@@ -34,7 +35,7 @@ export async function ceb_bible_words_definitions_atoms(skip, limit) {
           let c = false;
           let lists = [atom_result];
           if (undefined_not_is(previous)) {
-            if (0) list_add(lists, previous);
+            list_add(lists, previous);
           }
           each(lists, (list) => {
             for (let eq of [list_first, list_second]) {
@@ -48,6 +49,11 @@ export async function ceb_bible_words_definitions_atoms(skip, limit) {
           }
           next = p;
           break;
+        }
+        if (index === subtract_1(atom_count)) {
+          if (list_empty_is(atom_result)) {
+            next = list_first(pairs);
+          }
         }
         if (undefined_not_is(next)) {
           list_remove(pairs, next);
