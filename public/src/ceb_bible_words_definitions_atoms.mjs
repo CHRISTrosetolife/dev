@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { ceb_atom_count } from "./ceb_atom_count.mjs";
 import { ceb_bible_words_definitions_pairs } from "./ceb_bible_words_definitions_pairs.mjs";
 import { log } from "./log.mjs";
@@ -31,6 +32,7 @@ export async function ceb_bible_words_definitions_atoms(skip, limit) {
         let next;
         for (let p of pairs) {
           let c = false;
+          each([atom_result, previous], (list) => {});
           for (let eq of [list_first, list_second]) {
             if (list_any(atom_result, (a) => equal_by(a, p, eq))) {
               c = true;
