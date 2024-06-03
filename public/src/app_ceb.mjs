@@ -122,7 +122,7 @@ export async function app_ceb() {
     app_ceb_title();
     let { left, right } = storage_local_get(app_ceb, "position");
     let srl = subtract(right, left);
-    let j = 0;
+    let j = 1;
     if (equal_not(srl, 0)) {
       each_range(level_size, (i) => {
         let factor = divide(add_1(srl), level_size);
@@ -145,6 +145,7 @@ export async function app_ceb() {
             refresh_node();
           },
         );
+        j++;
       });
     }
     if (left !== right) {
