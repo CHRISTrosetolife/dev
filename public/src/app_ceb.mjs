@@ -403,6 +403,7 @@ export async function app_ceb() {
         list_add(e, english);
       }),
     );
+    list_sort_string(cebuanos, identity);
     each_object(lookup, (key, value) => list_sort_string(value, identity));
     app_ceb_word_button(root, cebuano);
     app_ceb_word_english(root, english);
