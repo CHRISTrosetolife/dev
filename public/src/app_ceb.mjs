@@ -407,8 +407,8 @@ export async function app_ceb() {
     each_object(lookup, (key, value) => list_sort_string(value, identity));
     each(cebuanos, (cebuano) => {
       app_ceb_word_button(root, cebuano);
+      app_ceb_word_english(root, english);
     });
-    app_ceb_word_english(root, english);
     html_buttons_next_previous(
       root,
       (pair_index) => {
