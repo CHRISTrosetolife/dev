@@ -184,7 +184,7 @@ export async function app_ceb() {
     );
     html_button_width_full_text_click(
       root,
-      string_combine(html_button_next_text()),
+      string_combine_multiple([j++, ". ", html_button_next_text()]),
       () => {
         app_ceb_next();
         refresh_node();
