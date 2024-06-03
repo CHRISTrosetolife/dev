@@ -122,6 +122,7 @@ export async function app_ceb() {
     app_ceb_title();
     let { left, right } = storage_local_get(app_ceb, "position");
     let srl = subtract(right, left);
+    let j = 0;
     if (equal_not(srl, 0)) {
       each_range(level_size, (i) => {
         let factor = divide(add_1(srl), level_size);
@@ -146,7 +147,6 @@ export async function app_ceb() {
         );
       });
     }
-    let j = add_1(level_size);
     if (left !== right) {
       html_button_width_full_text_click(
         root,
