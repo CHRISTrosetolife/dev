@@ -20,6 +20,7 @@ import { object_property_initialize } from "./object_property_initialize.mjs";
 import { list_add } from "./list_add.mjs";
 import { file_read_json } from "./file_read_json.mjs";
 import { assert } from "./assert.mjs";
+import { json_to } from "./json_to.mjs";
 export async function sandbox() {
   let group_index = 0;
   let storage_path = ceb_group_path(group_index);
@@ -66,9 +67,7 @@ export async function sandbox() {
     inverted,
   };
   let existing = await file_read_json(existing_path);
-  log({
-    group,
-  });
+  log(json_to(group));
   assert(equal_json, [result_new, existing]);
   return;
   await storage_upload_object(result_new, storage_path);
