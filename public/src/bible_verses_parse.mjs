@@ -1,3 +1,5 @@
+import { object_properties } from "./object_properties.mjs";
+import { log } from "./log.mjs";
 import { equal } from "./equal.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { number_is } from "./number_is.mjs";
@@ -19,6 +21,7 @@ import { list_get } from "./list_get.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 export function bible_verses_parse(element) {
   let { children } = element;
+  log(object_properties(element));
   assert(equal, [list_length(children), 3]);
   let first = list_first(children);
   let { data } = first;
