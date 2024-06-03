@@ -12,10 +12,7 @@ import { string_skip } from "./string_skip.mjs";
 import { string_index } from "./string_index.mjs";
 import { http_cache } from "./http_cache.mjs";
 export async function ceb_bible_words_2() {
-  let url = string_combine(
-    url_secure_w3(),
-    "ccel.org/ccel/b/bible/ceb_p/cache/ceb_p.txt",
-  );
+  let url = string_combine(url_secure_w3(), "talibon.com/bible/bible.html");
   let text = await http_cache(url);
   let verse_1 = "^1";
   let index = string_index(text, verse_1);
