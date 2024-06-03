@@ -20,7 +20,6 @@ import { object_property_initialize } from "./object_property_initialize.mjs";
 import { list_add } from "./list_add.mjs";
 import { file_read_json } from "./file_read_json.mjs";
 import { assert } from "./assert.mjs";
-import { json_to } from "./json_to.mjs";
 import { file_write_json } from "./file_write_json.mjs";
 export async function sandbox() {
   let group_index = 0;
@@ -70,6 +69,5 @@ export async function sandbox() {
   await storage_upload_object(result_new, storage_path);
   await file_write_json(existing_path, result_new);
   let existing = await file_read_json(existing_path);
-  log(json_to(group));
   assert(equal_json, [result_new, existing]);
 }
