@@ -18,7 +18,7 @@ export async function ceb_bible_words_2() {
       }
     }),
   );
-  return;
+  return hrefs;
   let mapped = string_count_words(text_split);
   return mapped;
 }
