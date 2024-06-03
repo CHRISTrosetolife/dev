@@ -66,13 +66,13 @@ export async function ceb_bible_words_definitions_atoms(skip, limit) {
           atom_result,
           previous,
         });
-        previous = atom_result;
       } else {
         if (10)
           log({
             atom_result,
           });
       }
+      previous = atom_result;
     }
   });
   return {
