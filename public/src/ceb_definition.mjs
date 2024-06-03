@@ -150,6 +150,7 @@ export async function ceb_definition(word) {
       index_at,
     });
     let parent = index_at;
+    let root_is = false;
     do {
       if (parent.type === "root") {
       }
