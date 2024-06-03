@@ -1,5 +1,5 @@
+import { url_secure_w3 } from "./url_secure_w3.mjs";
 import { string_count_words } from "./string_count_words.mjs";
-import { url_secure } from "./url_secure.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { string_trim } from "./string_trim.mjs";
@@ -13,8 +13,8 @@ import { string_index } from "./string_index.mjs";
 import { http_cache } from "./http_cache.mjs";
 export async function ceb_bible_words() {
   let url = string_combine(
-    url_secure(),
-    "www.ccel.org/ccel/b/bible/ceb_p/cache/ceb_p.txt",
+    url_secure_w3(),
+    "ccel.org/ccel/b/bible/ceb_p/cache/ceb_p.txt",
   );
   let text = await http_cache(url);
   let verse_1 = "^1";
