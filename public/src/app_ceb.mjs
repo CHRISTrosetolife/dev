@@ -399,6 +399,7 @@ export async function app_ceb() {
   }
   async function refresh_review() {
     html_clear_scroll_top_centered(root);
+    html_button_width_full_text_click_up(root, refresh_node);
     let concat = atoms_slice_concat();
     let lookup = {};
     let cebuanos = list_adder_unique((la) =>
