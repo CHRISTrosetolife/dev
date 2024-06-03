@@ -104,6 +104,7 @@ import { list_sort_string } from "./list_sort_string.mjs";
 import { identity } from "./identity.mjs";
 import { each_object } from "./each_object.mjs";
 import { list_adder_unique } from "./list_adder_unique.mjs";
+import { html_hr } from "./html_hr.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   html_style_default_font_size(3.5);
@@ -400,6 +401,7 @@ export async function app_ceb() {
   async function refresh_review() {
     html_clear_scroll_top_centered(root);
     html_button_width_full_text_click_up(root, refresh_node);
+    html_hr(root);
     let concat = atoms_slice_concat();
     let lookup = {};
     let cebuanos = list_adder_unique((la) =>
