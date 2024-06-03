@@ -6,6 +6,7 @@ import { string_count_words } from "./string_count_words.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { string_ends_with } from "./string_ends_with.mjs";
 import { list_adder } from "./list_adder.mjs";
+import { each_async } from "./each_async.mjs";
 export async function ceb_bible_words_2() {
   let url = string_combine(url_secure_w3(), "talibon.com/bible/bible.html");
   let root = await html_cache_parse(url);
@@ -18,6 +19,7 @@ export async function ceb_bible_words_2() {
       }
     }),
   );
+  await each_async(hrefs, (href = {}));
   return hrefs;
   let mapped = string_count_words(text_split);
   return mapped;
