@@ -21,6 +21,7 @@ export function bible_verses_parse(verses) {
         let { attribs } = c;
         if (object_property_get_or(attribs, "class", "") === "verse") {
           verse_number = html_parse_text(c);
+          return;
         }
         if (c.type === "text") {
           let text = object_property_get(c, "data");
