@@ -6,7 +6,6 @@ import { list_last } from "./list_last.mjs";
 import { each_pairs } from "./each_pairs.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { list_map } from "./list_map.mjs";
-import { string_split } from "./string_split.mjs";
 import { list_index_last } from "./list_index_last.mjs";
 import { assert } from "./assert.mjs";
 import { list_adder } from "./list_adder.mjs";
@@ -28,7 +27,7 @@ export function bible_verses_parse(element) {
   let right = list_get(children, 2);
   assert(equal, [right.type, "text"]);
   let right_text = object_property_get(children, "data");
-  let split = string_split(text, "&#160;");
+  let split = [left, right];
   let mapped = list_map(split, (s) => {
     let s2 = string_split_space(s);
     return list_filter(s2, string_empty_not_is);
