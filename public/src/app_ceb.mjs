@@ -166,7 +166,7 @@ export async function app_ceb() {
     );
     html_button_width_full_text_click(
       root,
-      string_combine(" 📝 quiz ( 🟡 medium )"),
+      string_combine(j++, " 📝 quiz ( 🟡 medium )"),
       () => {
         quizzes_start([2]);
       },
