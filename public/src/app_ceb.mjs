@@ -181,6 +181,9 @@ export async function app_ceb() {
     html_button_width_full_text_click(root, "🎓 learn", () => {
       refresh_pair(0);
     });
+    html_button_width_full_text_click(root, "📃 review", () => {
+      refresh_pair(0);
+    });
     ("🟠🔵");
     html_button_width_full_text_click(root, "📝 quiz ( 🟢 easy )", () => {
       quizzes_start([3]);
