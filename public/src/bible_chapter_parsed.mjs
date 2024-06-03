@@ -4,6 +4,7 @@ import { path_join } from "./path_join.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { url_secure } from "./url_secure.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { list_remove } from "./list_remove.mjs";
 export async function bible_chapter_parsed(bible_folder, chapter_name) {
   let url_base = string_combine_multiple([
     url_secure(),
@@ -18,6 +19,7 @@ export async function bible_chapter_parsed(bible_folder, chapter_name) {
     let { node } = v;
     let { parent } = node;
     let { children } = parent;
+    list_remove(children, node);
   });
   let notemarks = root.querySelectorAll(".notemark");
   for (let n of notemarks) {
