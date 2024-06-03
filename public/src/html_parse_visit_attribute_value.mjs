@@ -10,6 +10,6 @@ export function html_parse_visit_attribute_value(
     root,
     attribute_name,
     (actual) => equal(actual, value),
-    lambda_inner,
+    lambda,
   );
 }
