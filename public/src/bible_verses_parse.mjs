@@ -14,6 +14,7 @@ import { object_property_get } from "./object_property_get.mjs";
 export function bible_verses_parse(verses) {
   list_map(verses, (v) => {
     let { children } = v;
+    list_map(children, (c) => {});
     assert(equal, [list_length(children), 3]);
     let first = list_first(children);
     let { data } = first;
