@@ -101,6 +101,7 @@ import { storage_local_get } from "./storage_local_get.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { identity } from "./identity.mjs";
+import { each_object } from "./each_object.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   html_style_default_font_size(3.5);
@@ -397,8 +398,8 @@ export async function app_ceb() {
       let [cebuano, english] = pair;
       let e = object_property_initialize(lookup, cebuano, []);
       list_add(e, english);
-      list_sort_string(e, identity);
     });
+    each_object(lookup, (key, value) => list_sort_string(value, identity));
     app_ceb_word_button(root, cebuano);
     app_ceb_word_english(root, english);
     html_buttons_next_previous(
