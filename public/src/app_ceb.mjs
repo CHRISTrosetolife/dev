@@ -148,9 +148,7 @@ export async function app_ceb() {
         j++;
       });
     }
-    html_button_width_full_text_click(root, "📃 review", () => {
-      refresh_pair_list(0);
-    });
+    html_button_width_full_text_click(root, "📃 review", refresh_pair_list);
     if (left === right) {
       html_button_width_full_text_click(
         root,
