@@ -54,4 +54,5 @@ export async function bible_ceb_chapter(chapter_name) {
   };
   let body_string = js_code_return(json_to(data));
   let fn_name = `bible_data_${string_case_lower(chapter_name)}`;
+  return data;
 }
