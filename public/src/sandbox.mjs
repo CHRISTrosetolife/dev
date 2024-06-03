@@ -23,8 +23,6 @@ import { assert } from "./assert.mjs";
 import { json_to } from "./json_to.mjs";
 export async function sandbox() {
   let group_index = 0;
-  let storage_path = ceb_group_path(group_index);
-  let existing_path = folder_gitignore_path(storage_path);
   let limit = 150;
   let skip = 0;
   let group_count = ceb_group_size();
@@ -66,6 +64,8 @@ export async function sandbox() {
     definitions,
     inverted,
   };
+  let storage_path = ceb_group_path(group_index);
+  let existing_path = folder_gitignore_path(storage_path);
   let existing = await file_read_json(existing_path);
   log(json_to(group));
   assert(equal_json, [result_new, existing]);
