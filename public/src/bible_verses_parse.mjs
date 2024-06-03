@@ -15,12 +15,12 @@ export function bible_verses_parse(verses) {
   list_adder((la) =>
     each(verses, (v) => {
       let { children } = v;
-      let verse_number, verse_text;
+      let verse_number, tokens;
       each(children, (c) => {
         let { attribs } = c;
         if (object_property_get_or(attribs, "class", "") === "verse") {
           verse_number = html_parse_text(c);
-          verse_text = [];
+          tokens = [];
           return;
         }
         if (undefined_not_is(verse_number)) {
