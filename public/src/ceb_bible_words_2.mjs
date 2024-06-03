@@ -14,6 +14,7 @@ import { http_cache } from "./http_cache.mjs";
 export async function ceb_bible_words_2() {
   let url = string_combine(url_secure_w3(), "talibon.com/bible/bible.html");
   let text = await http_cache(url);
+  return text;
   let verse_1 = "^1";
   let index = string_index(text, verse_1);
   text = string_skip(text, index);
