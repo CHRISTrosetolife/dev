@@ -11,7 +11,7 @@ export function html_parse_visit_attribute_value(
     let { node } = v;
     let { attribs } = node;
     let actual = object_property_get(attribs, attribute_name);
-    if (equal(attribs, attribute_name)) {
+    if (equal(actual, value)) {
       lambda(v);
     }
   }
