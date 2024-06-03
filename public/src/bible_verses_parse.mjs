@@ -1,10 +1,8 @@
 import { object_property_get_or } from "./object_property_get_or.mjs";
 import { log } from "./log.mjs";
 import { equal } from "./equal.mjs";
-import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { assert } from "./assert.mjs";
-import { list_filter } from "./list_filter.mjs";
 import { list_length } from "./list_length.mjs";
 import { list_first } from "./list_first.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
@@ -38,7 +36,6 @@ export function bible_verses_parse(verses) {
       let right = list_get(children, 2);
       assert(equal, [right.type, "text"]);
       let s2 = string_split_space(right_text);
-      let tokens = list_filter(s2, string_empty_not_is);
       let result = {
         verse_number,
         tokens,
