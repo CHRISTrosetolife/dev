@@ -102,6 +102,7 @@ import { object_property_initialize } from "./object_property_initialize.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { identity } from "./identity.mjs";
 import { each_object } from "./each_object.mjs";
+import { list_adder_unique } from "./list_adder_unique.mjs";
 export async function app_ceb() {
   let root = html_style_default_initialize();
   html_style_default_font_size(3.5);
@@ -394,7 +395,7 @@ export async function app_ceb() {
     html_clear_scroll_top_centered(root);
     let concat = atoms_slice_concat();
     let lookup = {};
-    let cebuanos = list_adder((la) =>
+    let cebuanos = list_adder_unique((la) =>
       each(concat, (pair) => {
         let [cebuano, english] = pair;
         let e = object_property_initialize(lookup, cebuano, []);
