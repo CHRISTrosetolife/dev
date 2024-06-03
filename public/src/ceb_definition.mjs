@@ -154,6 +154,9 @@ export async function ceb_definition(word) {
         break;
       }
       parent = html_parse_parent(parent);
+      log({
+        parent,
+      });
     } while (html_parse_tag_not(parent, "tr"));
     if (root_is) {
       continue;
