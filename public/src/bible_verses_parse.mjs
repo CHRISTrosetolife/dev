@@ -26,7 +26,7 @@ export function bible_verses_parse(verses) {
     let verse_number = html_parse_text(list_second(children));
     let right = list_get(children, 2);
     assert(equal, [right.type, "text"]);
-    let right_text = object_property_get(children, "data");
+    let right_text = object_property_get(right, "data");
     let s2 = string_split_space(right_text);
     let tokens = list_filter(s2, string_empty_not_is);
     return {
