@@ -11,6 +11,7 @@ import { each } from "./each.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
+import { string_whitespace_normalize } from "./string_whitespace_normalize.mjs";
 export function bible_verses_parse(verses) {
   list_adder((la) =>
     each(verses, (v) => {
@@ -25,6 +26,7 @@ export function bible_verses_parse(verses) {
         }
         if (undefined_not_is(verse_number)) {
           if (c.type === "text") {
+            let n = string_whitespace_normalize(c.data);
             list_add_multiple(tokens);
           }
         }
