@@ -25,7 +25,7 @@ export async function sandbox() {
   let group_index = 0;
   let storage_path = ceb_group_path(group_index);
   let existing_path = folder_gitignore_path(storage_path);
-  let limit = 15;
+  let limit = 150;
   let skip = 0;
   let group_count = ceb_group_size();
   let { atoms, definitions: definitions_all } =
