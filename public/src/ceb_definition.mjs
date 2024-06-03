@@ -153,6 +153,7 @@ export async function ceb_definition(word) {
     let root_is = false;
     do {
       if (parent.type === "root") {
+        root_is = true;
       }
       parent = html_parse_parent(parent);
     } while (html_parse_tag_not(parent, "tr"));
