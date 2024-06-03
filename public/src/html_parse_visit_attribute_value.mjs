@@ -8,5 +8,5 @@ export function html_parse_visit_attribute_value(root, attribute_name, lambda) {
       lambda(v);
     }
   }
-  html_parse_visit_attribute(root, lambda_inner);
+  html_parse_visit_attribute(root, attribute_name, lambda_inner);
 }
