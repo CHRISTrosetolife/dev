@@ -2,16 +2,9 @@ import { object_properties } from "./object_properties.mjs";
 import { log } from "./log.mjs";
 import { equal } from "./equal.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
-import { number_is } from "./number_is.mjs";
-import { integer_parse } from "./integer_parse.mjs";
-import { list_last } from "./list_last.mjs";
-import { each_pairs } from "./each_pairs.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { list_map } from "./list_map.mjs";
-import { list_index_last } from "./list_index_last.mjs";
 import { assert } from "./assert.mjs";
-import { list_adder } from "./list_adder.mjs";
-import { list_take } from "./list_take.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { list_length } from "./list_length.mjs";
 import { list_first } from "./list_first.mjs";
@@ -32,39 +25,10 @@ export function bible_verses_parse(verses) {
     assert(equal, [right.type, "text"]);
     let right_text = object_property_get(children, "data");
     let s2 = string_split_space(right_text);
-    let f = list_filter(s2, string_empty_not_is);
+    let tokens = list_filter(s2, string_empty_not_is);
     return {
       verse_number,
       tokens,
     };
   });
-  let split = [left, right_text];
-  let mapped = list_map(split, (s) => {
-    return list_filter(s2, string_empty_not_is);
-  });
-  let last = list_last(mapped);
-  return list_adder((la) => {
-    each_pairs(mapped, (previous, current) => {
-      let { verse_number } = verse_get(previous);
-      let { tokens } = verse_get(current);
-      if (equal(current, last)) {
-        tokens = current;
-      }
-      la({
-        verse_number,
-        tokens,
-      });
-    });
-  });
-  function verse_get(verse_tokens) {
-    let verse_number = list_last(verse_tokens);
-    let parsed = integer_parse(verse_number);
-    assert(number_is, [parsed]);
-    let less_1 = list_index_last(verse_tokens);
-    let tokens = list_take(verse_tokens, less_1);
-    return {
-      verse_number,
-      tokens,
-    };
-  }
 }
