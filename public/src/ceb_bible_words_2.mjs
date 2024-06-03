@@ -10,7 +10,8 @@ export async function ceb_bible_words_2() {
   let root = await html_cache_parse(url);
   html_parse_visit_tag(root, "a", (v) => {
     let { node } = v;
-    log(html_parse_href(node));
+    let href = html_parse_href(node);
+    log(href);
   });
   return;
   let mapped = string_count_words(text_split);
