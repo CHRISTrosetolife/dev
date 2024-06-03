@@ -217,9 +217,9 @@ export async function ceb_definition(word) {
     }
     return d;
   });
+  definitions = list_map(definitions, string_whitespace_normalize);
   definitions = await list_filter_async(definitions, async (d) => {
     let url = string_combine(prefix_2, d);
-    url = string_whitespace_normalize(url);
     url = string_replace(url, " ", "+");
     let { children: children2 } = await ceb_html_cache_parse_form1(url);
     let as = list_filter(children2, (c) => html_parse_tag(c, "a"));
