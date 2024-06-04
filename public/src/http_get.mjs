@@ -1,3 +1,4 @@
+import { string_includes } from "./string_includes.mjs";
 import { string_to } from "./string_to.mjs";
 import { web_not_is } from "./web_not_is.mjs";
 import { http_data_get } from "./http_data_get.mjs";
@@ -12,6 +13,7 @@ export async function http_get(url) {
     result = await axios.get(url);
   } catch (e) {
     let s = string_to(e);
+    string_includes(s, "ECONNRESET");
   }
   return http_data_get(result);
 }
