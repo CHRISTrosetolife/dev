@@ -14,8 +14,7 @@ export async function http(url) {
       body = await lambda();
       break;
     } catch (e) {
-      let s = string_to(e);
-      if (string_includes(s, "ECONNRESET")) {
+      if (string_includes(string_to(e), "ECONNRESET")) {
         continue;
       }
       throw e;
