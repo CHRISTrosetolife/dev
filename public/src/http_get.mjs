@@ -14,11 +14,11 @@ export async function http_get(url) {
     result = await axios.get(url);
   } catch (e) {
     if (retries >= 1) {
-      throw e;
+      let s = string_to(e);
+      if (string_includes(s, "ECONNRESET")) {
+      }
     }
-    let s = string_to(e);
-    if (string_includes(s, "ECONNRESET")) {
-    }
+    throw e;
   }
   return http_data_get(result);
 }
