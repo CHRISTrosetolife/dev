@@ -9,7 +9,7 @@ export async function bible_engbsb_chapter(chapter_name) {
     html_parse_visit_attribute_values(
       root,
       "class",
-      ["m", "pc", "pmo", "q"],
+      ["m", "pc", "pmo", "q", "li"],
       list_adder_visit(la),
     ),
   );
