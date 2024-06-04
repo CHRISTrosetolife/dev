@@ -8,7 +8,8 @@ export async function bible_chapters(bible_folder, book_name) {
   let url = string_combine_multiple([url_base, book_name, ".htm"]);
   let root = await html_cache_parse(url);
   let hrefs = html_parse_a_hrefs(root, function condition(href) {
-    return string_starts_with(href, book_name);
+    if (string_starts_with(href, book_name)) {
+    }
   });
   return hrefs;
 }
