@@ -13,7 +13,7 @@ export async function http_get(url) {
   try {
     result = await axios.get(url);
   } catch (e) {
-    if (retries <= 0) {
+    if (retries >= 1) {
       throw e;
     }
     let s = string_to(e);
