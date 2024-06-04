@@ -1,3 +1,4 @@
+import { integer_parse } from "./integer_parse.mjs";
 import { html_parse_a_hrefs } from "./html_parse_a_hrefs.mjs";
 import { html_cache_parse } from "./html_cache_parse.mjs";
 import { bible_url_base } from "./bible_url_base.mjs";
@@ -14,6 +15,7 @@ export async function bible_chapters(bible_folder, book_name) {
     if (string_starts_with(href, book_name)) {
       let without = string_prefix_without(href, book_name);
       without = string_suffix_without(without, extension);
+      let i = integer_parse(without);
     }
   });
   return hrefs;
