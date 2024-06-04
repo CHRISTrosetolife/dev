@@ -1,3 +1,4 @@
+import { bible_ceb_chapter } from "./bible_ceb_chapter.mjs";
 import { bible_books } from "./bible_books.mjs";
 import { file_overwrite_json } from "./file_overwrite_json.mjs";
 import { equal_json } from "./equal_json.mjs";
@@ -23,7 +24,9 @@ import { list_add } from "./list_add.mjs";
 import { file_read_json } from "./file_read_json.mjs";
 import { assert } from "./assert.mjs";
 export async function sandbox() {
-  await each_async(await bible_books("engbsb"), log);
+  await each_async(await bible_books("engbsb"), (book) => {
+    bible_ceb_chapter;
+  });
   return;
   let group_index = 0;
   let limit = 150;
