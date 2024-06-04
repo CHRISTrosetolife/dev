@@ -13,7 +13,7 @@ export function js_if_to_block(ast) {
       if (value.type !== "BlockStatement") {
         let value_new = {
           type: "BlockStatement",
-          body: [],
+          body: [value],
         };
       }
     });
