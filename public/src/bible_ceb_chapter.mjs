@@ -15,8 +15,7 @@ import { js_code_return } from "./js_code_return.mjs";
 export async function bible_ceb_chapter(chapter_name) {
   let eng = await bible_engbsb_chapter(chapter_name);
   let parsed_ceb = await bible_chapter_parsed("cebulb", chapter_name);
-  let class_name = "p";
-  let verses_ceb = html_parse_visit_class_list(parsed_ceb, class_name);
+  let verses_ceb = html_parse_visit_class_list(parsed_ceb, "p");
   let ceb = bible_verses_parse(verses_ceb);
   assert(equal_by, [eng, ceb, list_length]);
   let symbols = [",", "1", "2", ".", ";", "“", "”", ":"];
