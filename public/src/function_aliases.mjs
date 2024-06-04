@@ -1,6 +1,7 @@
-import { object_property_initialize } from "./object_property_initialize.mjs";
-
+import { each } from "./each.mjs";
 export function function_aliases() {
   let result = {};
-  function alias_add(fn, aliases) {each(aliases,a=>a)}
+  function alias_add(fn, aliases) {
+    each(aliases, (a) => a);
+  }
 }
