@@ -1,3 +1,4 @@
+import { bible_books } from "./bible_books.mjs";
 import { file_overwrite_json } from "./file_overwrite_json.mjs";
 import { equal_json } from "./equal_json.mjs";
 import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
@@ -22,6 +23,7 @@ import { list_add } from "./list_add.mjs";
 import { file_read_json } from "./file_read_json.mjs";
 import { assert } from "./assert.mjs";
 export async function sandbox() {
+  await each_async(await bible_books());
   return;
   let group_index = 0;
   let limit = 150;
