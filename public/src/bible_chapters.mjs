@@ -16,7 +16,11 @@ export async function bible_chapters(bible_folder, book_name) {
       let without = string_prefix_without(href, book_name);
       without = string_suffix_without(without, extension);
       let i = integer_parse(without);
+      if (i !== 0) {
+        return true;
+      }
     }
+    return false;
   });
   return hrefs;
 }
