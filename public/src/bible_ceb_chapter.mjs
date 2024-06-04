@@ -15,12 +15,10 @@ import { js_code_return } from "./js_code_return.mjs";
 export async function bible_ceb_chapter(chapter_name) {
   let eng = await bible_engbsb_chapter(chapter_name);
   let parsed_ceb = await bible_chapter_parsed("cebulb", chapter_name);
-  let attribute_name = "class";
-  let attribute_value = "p";
   let verses_ceb = html_parse_visit_attribute_value_list(
     parsed_ceb,
-    attribute_name,
-    attribute_value,
+    "class",
+    "p",
   );
   let ceb = bible_verses_parse(verses_ceb);
   assert(equal_by, [eng, ceb, list_length]);
