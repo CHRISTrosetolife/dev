@@ -1,3 +1,4 @@
+import { list_length } from "./list_length.mjs";
 import { list_map } from "./list_map.mjs";
 import { html_parse_visit_classes_list } from "./html_parse_visit_classes_list.mjs";
 import { html_parse_visit_class_list } from "./html_parse_visit_class_list.mjs";
@@ -12,5 +13,5 @@ export async function bible_books(bible_folder) {
   let vnav = list_single(vnavs);
   let book_elements = html_parse_visit_classes_list(root, ["oo", "nn"]);
   let book_chapter_ones = list_map(book_elements, html_parse_href);
-  return book_chapter_ones;
+  return list_length(book_chapter_ones);
 }
