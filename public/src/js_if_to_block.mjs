@@ -15,7 +15,6 @@ export function js_if_to_block(ast) {
       }
       let { type } = value;
       if (type !== "BlockStatement") {
-        assert(equal, [type, "ExpressionStatement"]);
         let value_new = {
           type: "BlockStatement",
           body: [value],
