@@ -12,4 +12,5 @@ export async function bible_books(bible_folder) {
   let vnav = list_single(vnavs);
   let book_elements = html_parse_visit_classes_list(root, ["oo", "nn"]);
   let book_chapter_ones = list_map(book_elements, html_parse_href);
+  return book_chapter_ones;
 }
