@@ -1,3 +1,4 @@
+import { function_auto } from "./function_auto.mjs";
 import { assert } from "./assert.mjs";
 import { each } from "./each.mjs";
 import { object_property_exists_not } from "./object_property_exists_not.mjs";
@@ -11,4 +12,5 @@ export function function_aliases() {
       object_property_set(result, a, name);
     });
   }
+  alias_add(function_auto, ["a"]);
 }
