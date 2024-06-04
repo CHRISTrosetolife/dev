@@ -1,3 +1,4 @@
+import { html_parse_visit_attribute_value_list } from "./html_parse_visit_attribute_value_list.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { html_parse_visit_attribute_value } from "./html_parse_visit_attribute_value.mjs";
 import { html_cache_parse } from "./html_cache_parse.mjs";
@@ -11,4 +12,9 @@ export async function bible_books(bible_folder) {
     let { children } = parent;
     list_remove(children, node);
   });
+  let verses_ceb = html_parse_visit_attribute_value_list(
+    parsed_ceb,
+    "class",
+    "vnav",
+  );
 }
