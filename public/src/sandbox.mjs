@@ -22,6 +22,7 @@ import { list_add } from "./list_add.mjs";
 import { file_read_json } from "./file_read_json.mjs";
 import { assert } from "./assert.mjs";
 export async function sandbox() {
+  return;
   let group_index = 0;
   let limit = 150;
   let skip = 0;
@@ -29,12 +30,15 @@ export async function sandbox() {
   let { atoms, definitions: definitions_all } =
     await ceb_bible_words_definitions_atoms(skip, limit);
   let group = list_take(atoms, group_count);
-  if (0) group = list_take(group, 4);
+  if (0) {
+    group = list_take(group, 4);
+  }
   await each_async(group, async (atom) => {
-    if (0)
+    if (0) {
       log({
         atom,
       });
+    }
     let mapped = list_map(atom, list_first);
     await each_async(mapped, async (text) => {
       await ceb_audio_upload(text);
@@ -67,7 +71,9 @@ export async function sandbox() {
   let storage_path = ceb_group_path(group_index);
   let existing_path = folder_gitignore_path(storage_path);
   if (10) {
-    if (0) await storage_upload_object(result_new, storage_path);
+    if (0) {
+      await storage_upload_object(result_new, storage_path);
+    }
     await file_overwrite_json(existing_path, result_new);
   }
   let existing = await file_read_json(existing_path);
