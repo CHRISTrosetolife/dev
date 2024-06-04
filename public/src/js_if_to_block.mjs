@@ -11,6 +11,10 @@ export function js_if_to_block(ast) {
         return;
       }
       if (value.type !== "BlockStatement") {
+        let value_new = {
+          type: "BlockStatement",
+          body: [],
+        };
       }
     });
   });
