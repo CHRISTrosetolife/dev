@@ -49,7 +49,7 @@ export async function watch() {
         after = await fn(...args);
         processed = true;
       } catch {
-        log("error while processing");
+        log("error while processing " + function_name);
       } finally {
         object_property_set(c, "processing", false);
       }
