@@ -48,10 +48,10 @@ export async function watch() {
       try {
         after = await fn(...args);
         processed = true;
-        object_property_set(c, "contents", after);
       } finally {
         object_property_set(c, "processing", false);
       }
+      object_property_set(c, "contents", after);
       log({
         path,
         p: c.processing,
