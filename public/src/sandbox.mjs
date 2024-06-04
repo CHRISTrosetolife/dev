@@ -27,6 +27,7 @@ import { bible_chapters } from "./bible_chapters.mjs";
 export async function sandbox() {
   await each_async(await bible_books("engbsb"), async (book_name) => {
     let chapters = await bible_chapters("engbsb", book_name);
+    await each_async(chapters);
     await bible_ceb_chapter(chapter_name);
   });
   return;
