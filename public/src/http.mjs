@@ -1,3 +1,4 @@
+import { add_1 } from "./add_1.mjs";
 import { string_includes } from "./string_includes.mjs";
 import { string_to } from "./string_to.mjs";
 import fetch from "node-fetch";
@@ -6,7 +7,7 @@ import { integer_random } from "./integer_random.mjs";
 export async function http(url) {
   await sleep(integer_random(5000, 8000));
   let body;
-  let retries = 3;
+  let retries = add_1(3);
   while (retries >= 1) {
     retries--;
     try {
