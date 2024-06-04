@@ -14,12 +14,12 @@ import { js_code_statement_return } from "./js_code_statement_return.mjs";
 import { function_new_generic } from "./function_new_generic.mjs";
 import { json_to } from "./json_to.mjs";
 export async function function_aliases_generate() {
-  let a = {};
+  let all = {};
   function alias_add(fn, aliases) {
     let { name } = fn;
     each(aliases, (a) => {
-      assert(object_property_exists_not, [a, a]);
-      object_property_set(a, a, name);
+      assert(object_property_exists_not, [all, a]);
+      object_property_set(all, a, name);
     });
   }
   alias_add(function_aliases, ["al"]);
@@ -33,7 +33,7 @@ export async function function_aliases_generate() {
   await function_new_generic(
     name,
     "",
-    js_code_statement_return(json_to(a)),
+    js_code_statement_return(json_to(all)),
     false,
     [],
     false,
