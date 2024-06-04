@@ -7,6 +7,9 @@ export function js_if_to_block(ast) {
     let properties = ["consequent", "alternate"];
     each(properties, (p) => {
       let value = object_property_get(node, p);
+      if (value === null) {
+        return;
+      }
     });
   });
   if (0) 1;
