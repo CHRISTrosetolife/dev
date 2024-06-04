@@ -4,7 +4,6 @@ import { function_search } from "./function_search.mjs";
 import { function_open } from "./function_open.mjs";
 import { function_copy } from "./function_copy.mjs";
 import { function_auto } from "./function_auto.mjs";
-import { function_aliases } from "./function_aliases.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { assert } from "./assert.mjs";
@@ -22,7 +21,7 @@ export async function function_aliases_generate() {
       object_property_set(all, a, name);
     });
   }
-  alias_add(function_aliases, ["al"]);
+  alias_add(function_aliases_generate, ["al"]);
   alias_add(function_auto, ["a"]);
   alias_add(function_copy, ["c"]);
   alias_add(function_open, ["o"]);
