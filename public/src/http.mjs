@@ -7,9 +7,9 @@ import { sleep } from "./sleep.mjs";
 import { integer_random } from "./integer_random.mjs";
 export async function http(url) {
   await sleep(integer_random(5000, 8000));
-  let body;
   let retry_count = 3;
   let retries = add_1(retry_count);
+  let body;
   while (retries >= 1) {
     retries--;
     try {
