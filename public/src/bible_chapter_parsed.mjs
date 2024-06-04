@@ -5,12 +5,7 @@ import { url_secure } from "./url_secure.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_remove } from "./list_remove.mjs";
 export async function bible_chapter_parsed(bible_folder, chapter_name) {
-  let url_base = string_combine_multiple([
-    url_secure(),
-    "ebible.org/",
-    bible_folder,
-    "/",
-  ]);
+  let url_base = bible_url_base(bible_folder);
   let chapter_path = string_combine(chapter_name, ".htm");
   let joined = string_combine_multiple([url_base, chapter_path]);
   let root = await html_cache_parse(joined);
@@ -22,3 +17,12 @@ export async function bible_chapter_parsed(bible_folder, chapter_name) {
   });
   return root;
 }
+function bible_url_base(bible_folder) {
+    return string_combine_multiple([
+        url_secure(),
+        "ebible.org/",
+        bible_folder,
+        "/",
+    ]);
+}
+
