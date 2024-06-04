@@ -19,14 +19,7 @@ export async function bible_ceb_chapter(chapter_name) {
   let parsed_ceb = await bible_chapter_parsed("cebulb", chapter_name);
   let attribute_name = "class";
   let attribute_value = "p";
-  let verses_ceb = list_adder((la) =>
-    html_parse_visit_attribute_value(
-      parsed_ceb,
-      attribute_name,
-      attribute_value,
-      list_adder_visit(la),
-    ),
-  );
+  let verses_ceb = html_parse_visit_attribute_value_list(parsed_ceb, attribute_name, attribute_value);
   let ceb = bible_verses_parse(verses_ceb);
   assert(equal_by, [eng, ceb, list_length]);
   let symbols = [",", "1", "2", ".", ";", "“", "”", ":"];
@@ -58,3 +51,13 @@ export async function bible_ceb_chapter(chapter_name) {
   let fn_name = `bible_data_${string_case_lower(chapter_name)}`;
   return data;
 }
+function html_parse_visit_attribute_value_list(parsed_ceb, attribute_name, attribute_value) {
+    return list_adder((la) => html_parse_visit_attribute_value(
+        parsed_ceb,
+        attribute_name,
+        attribute_value,
+        list_adder_visit(la)
+    )
+    );
+}
+
