@@ -1,5 +1,3 @@
-import { string_includes } from "./string_includes.mjs";
-import { string_to } from "./string_to.mjs";
 import { web_not_is } from "./web_not_is.mjs";
 import { http_data_get } from "./http_data_get.mjs";
 import { import_multi } from "./import_multi.mjs";
@@ -8,18 +6,6 @@ export async function http_get(url) {
   if (web_not_is()) {
     axios = axios.default;
   }
-  let retries = 3;
-  let result;
-  while (retries >= 1) {
-    try {
-      result = await axios.get(url);
-    } catch (e) {
-      let s = string_to(e);
-      if (string_includes(s, "ECONNRESET")) {
-        continue;
-      }
-      throw e;
-    }
-  }
+  let result = await axios.get(url);
   return http_data_get(result);
 }
