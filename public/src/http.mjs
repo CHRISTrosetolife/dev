@@ -5,10 +5,13 @@ import { sleep } from "./sleep.mjs";
 import { integer_random } from "./integer_random.mjs";
 export async function http(url) {
   await sleep(integer_random(5000, 8000));
+  let body;
   let retries = 3;
   while (retries >= 1) {
     retries--;
     try {
+      let response = await fetch(url);
+      body = await response.text();
     } catch (e) {
       let s = string_to(e);
       if (string_includes(s, "ECONNRESET")) {
@@ -17,7 +20,5 @@ export async function http(url) {
       throw e;
     }
   }
-  let response = await fetch(url);
-  let body = await response.text();
   return body;
 }
