@@ -1,3 +1,4 @@
+import { object_property_set } from "./object_property_set.mjs";
 import { equal } from "./equal.mjs";
 import { assert } from "./assert.mjs";
 import { each } from "./each.mjs";
@@ -19,6 +20,7 @@ export function js_if_to_block(ast) {
           type: "BlockStatement",
           body: [value],
         };
+        object_property_set(node, p, value_new);
       }
     });
   });
