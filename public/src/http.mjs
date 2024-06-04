@@ -12,6 +12,7 @@ export async function http(url) {
     try {
       let response = await fetch(url);
       body = await response.text();
+      break;
     } catch (e) {
       let s = string_to(e);
       if (string_includes(s, "ECONNRESET")) {
