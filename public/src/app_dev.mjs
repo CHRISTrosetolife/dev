@@ -1,5 +1,3 @@
-import { log } from "./log.mjs";
-log("here2");
 import { http_get } from "./http_get.mjs";
 import { file_write_json } from "./file_write_json.mjs";
 import { promise_all } from "./promise_all.mjs";
@@ -16,7 +14,6 @@ import { html_style_default_initialize } from "./html_style_default_initialize.m
 import { app_dev_screens } from "./app_dev_screens.mjs";
 import { each_index } from "./each_index.mjs";
 import { list_get } from "./list_get.mjs";
-log("here1");
 import { list_index_last } from "./list_index_last.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { string_combine } from "./string_combine.mjs";
@@ -26,7 +23,6 @@ import { object_property_set } from "./object_property_set.mjs";
 import { data_path } from "./data_path.mjs";
 import { data_file_name } from "./data_file_name.mjs";
 export async function app_dev() {
-  log("here");
   let { files } = global_files_initialize({});
   let d = await http_get(data_file_name());
   await file_write_json(data_path(), d);
