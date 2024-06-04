@@ -11,8 +11,7 @@ export async function http(url) {
   while (retries >= 1) {
     retries--;
     try {
-      let response = await fetch(url);
-      body = await response.text();
+      await lambda();
       break;
     } catch (e) {
       let s = string_to(e);
@@ -23,4 +22,8 @@ export async function http(url) {
     }
   }
   return body;
+  async function lambda() {
+    let response = await fetch(url);
+    body = await response.text();
+  }
 }
