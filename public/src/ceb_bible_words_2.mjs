@@ -16,18 +16,10 @@ export async function ceb_bible_words_2() {
   ]);
   let url = string_combine_multiple([url_base, "bible.html"]);
   let root = await html_cache_parse(url);
-  let hrefs = list_adder((la) =>
-    html_parse_visit_tag(root, "a", (v) => {
-      let { node } = v;
-      let href = html_parse_href(node);
-      if (condition(href)) {
-        la(href);
-      }
-    }),
-  );
-  function condition(href) {
+  let hrefs = html_parse_a_hrefs(root, function condition(href) {
     return string_ends_with(href, ".html");
-  }
+  });
+  
   hrefs = list_map(hrefs, (href) => string_combine(url_base, href));
   await each_async(hrefs, async (href) => {
     await html_cache_parse(href);
@@ -36,3 +28,14 @@ export async function ceb_bible_words_2() {
   let mapped = string_count_words(text_split);
   return mapped;
 }
+function html_parse_a_hrefs(root, condition) {
+    return list_adder((la) => html_parse_visit_tag(root, "a", (v) => {
+        let { node } = v;
+        let href = html_parse_href(node);
+        if (condition(href)) {
+            la(href);
+        }
+    })
+    );
+}
+
