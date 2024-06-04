@@ -43,7 +43,8 @@ export async function watch() {
       let function_name = function_path_to_name(path);
       let fn = function_auto_return;
       let args = [function_name];
-      let after = await fn(...args);
+      let after;
+      after = await fn(...args);
       object_property_set(c, "contents", after);
       object_property_set(c, "processing", false);
       log({
