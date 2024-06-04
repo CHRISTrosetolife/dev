@@ -1,3 +1,4 @@
+import { function_search } from "./function_search.mjs";
 import { function_auto } from "./function_auto.mjs";
 import { assert } from "./assert.mjs";
 import { each } from "./each.mjs";
@@ -13,4 +14,5 @@ export function function_aliases() {
     });
   }
   alias_add(function_auto, ["a"]);
+  alias_add(function_search, ["s"]);
 }
