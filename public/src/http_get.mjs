@@ -7,6 +7,8 @@ export async function http_get(url) {
     axios = axios.default;
   }
   let result;
-  result = await axios.get(url);
+  try {
+    result = await axios.get(url);
+  } catch (e) {}
   return http_data_get(result);
 }
