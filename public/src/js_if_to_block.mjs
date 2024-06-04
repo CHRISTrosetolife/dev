@@ -24,9 +24,4 @@ export function js_if_to_block(ast) {
       }
     });
   });
-  if (0) {
-    1;
-  } else {
-    4;
-  }
 }
