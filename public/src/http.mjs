@@ -7,6 +7,7 @@ export async function http(url) {
   await sleep(integer_random(5000, 8000));
   let retries = 3;
   while (retries >= 1) {
+    retries--;
     try {
     } catch (e) {
       let s = string_to(e);
