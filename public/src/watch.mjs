@@ -44,6 +44,9 @@ export async function watch() {
       let fn = function_auto_return;
       let args = [function_name];
       let after;
+      try {
+      } finally {
+      }
       after = await fn(...args);
       object_property_set(c, "contents", after);
       object_property_set(c, "processing", false);
