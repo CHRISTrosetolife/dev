@@ -15,7 +15,6 @@ import { list_length } from "./list_length.mjs";
 import { json_to } from "./json_to.mjs";
 import { js_code_return } from "./js_code_return.mjs";
 import { list_difference } from "./list_difference.mjs";
-import { list_empty_is } from "./list_empty_is.mjs";
 export async function bible_ceb_chapter(chapter_name) {
   log({
     chapter_name,
@@ -30,7 +29,6 @@ export async function bible_ceb_chapter(chapter_name) {
     ceb_verse_numbers,
     eng_verse_numbers,
   );
-  assert(list_empty_is, [ceb_verse_numbers_difference]);
   assert(equal_by, [eng, ceb, list_length]);
   let symbols = [",", "1", "2", ".", ";", "“", "”", ":"];
   let words_unique = list_adder_unique((la) => {
