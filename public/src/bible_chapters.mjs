@@ -10,4 +10,5 @@ export async function bible_chapters(bible_folder, book_name) {
   let hrefs = html_parse_a_hrefs(root, function condition(href) {
     return string_starts_with(href, book_name);
   });
+  return hrefs;
 }
