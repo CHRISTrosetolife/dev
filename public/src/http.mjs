@@ -8,21 +8,24 @@ import { integer_random } from "./integer_random.mjs";
 export async function http(url) {
   await sleep(integer_random(5000, 8000));
   let retry_count = 3;
-  let retries = add_1(retry_count);
-  let result;
-  while (retries >= 1) {
-    retries--;
-    try {
-      result = await lambda();
-      break;
-    } catch (e) {
-      if (retry_if(e)) {
-        continue;
+  return await retry(retry_count, lambda, retry_if);
+  async function retry(retry_count, lambda, retry_if) {
+    let retries = add_1(retry_count);
+    let result;
+    while (retries >= 1) {
+      retries--;
+      try {
+        result = await lambda();
+        break;
+      } catch (e) {
+        if (retry_if(e)) {
+          continue;
+        }
+        throw e;
       }
-      throw e;
     }
+    return result;
   }
-  return result;
   async function lambda() {
     let response = await fetch(url);
     let body = await response.text();
