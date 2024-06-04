@@ -9,11 +9,11 @@ export async function http(url) {
   await sleep(integer_random(5000, 8000));
   let retry_count = 3;
   let retries = add_1(retry_count);
-  let body;
+  let result;
   while (retries >= 1) {
     retries--;
     try {
-      body = await lambda();
+      result = await lambda();
       break;
     } catch (e) {
       if (retry_if(e)) {
@@ -22,7 +22,7 @@ export async function http(url) {
       throw e;
     }
   }
-  return body;
+  return result;
   async function lambda() {
     let response = await fetch(url);
     let body = await response.text();
