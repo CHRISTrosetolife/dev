@@ -1,1 +1,3 @@
-export function bible_chapters(bible_folder, book_name) {}
+export function bible_chapters(bible_folder, book_name) {
+    let url_base = bible_url_base(bible_folder);
+    let root =  html_cache_parse(url_base);}
