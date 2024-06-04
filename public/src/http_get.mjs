@@ -10,15 +10,17 @@ export async function http_get(url) {
   }
   let retries = 3;
   let result;
-  try {
-    result = await axios.get(url);
-  } catch (e) {
-    if (retries >= 1) {
-      let s = string_to(e);
-      if (string_includes(s, "ECONNRESET")) {
+  while (retries >= 1) {
+    try {
+      result = await axios.get(url);
+    } catch (e) {
+      if (retries >= 1) {
+        let s = string_to(e);
+        if (string_includes(s, "ECONNRESET")) {
+        }
       }
+      throw e;
     }
-    throw e;
   }
   return http_data_get(result);
 }
