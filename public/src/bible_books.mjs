@@ -4,9 +4,5 @@ import { bible_url_base } from "./bible_url_base.mjs";
 export async function bible_books(bible_folder) {
   let url_base = bible_url_base(bible_folder);
   let root = await html_cache_parse(url_base);
-  let verses_ceb = html_parse_visit_attribute_value_list(
-    parsed_ceb,
-    "class",
-    "vnav",
-  );
+  let verses_ceb = html_parse_visit_attribute_value_list(root, "class", "vnav");
 }
