@@ -1,3 +1,4 @@
+import { html_parse_visit_classes_list } from "./html_parse_visit_classes_list.mjs";
 import { html_parse_visit_class_list } from "./html_parse_visit_class_list.mjs";
 import { list_single } from "./list_single.mjs";
 import { html_cache_parse } from "./html_cache_parse.mjs";
@@ -7,5 +8,5 @@ export async function bible_books(bible_folder) {
   let root = await html_cache_parse(url_base);
   let vnavs = html_parse_visit_class_list(root, "vnav");
   let vnav = list_single(vnavs);
-  let books = html_parse_visit_class_list(vnav, "oo");
+  let verses = html_parse_visit_classes_list(root, ["oo", "nn"]);
 }
