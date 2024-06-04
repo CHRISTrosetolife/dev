@@ -6,7 +6,8 @@ import { string_starts_with } from "./string_starts_with.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 export async function bible_chapters(bible_folder, book_name) {
   let url_base = bible_url_base(bible_folder);
-  let url = string_combine_multiple([url_base, book_name, ".htm"]);
+  let extension = ".htm";
+  let url = string_combine_multiple([url_base, book_name, extension]);
   let root = await html_cache_parse(url);
   let hrefs = html_parse_a_hrefs(root, function condition(href) {
     if (string_starts_with(href, book_name)) {
