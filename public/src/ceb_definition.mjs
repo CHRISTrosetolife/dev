@@ -57,6 +57,7 @@ import { string_starts_with } from "./string_starts_with.mjs";
 import { list_unique } from "./list_unique.mjs";
 import { list_last } from "./list_last.mjs";
 import { string_whitespace_normalize } from "./string_whitespace_normalize.mjs";
+import { string_starts_with_not } from "./string_starts_with_not.mjs";
 export async function ceb_definition(word) {
   let known = {
     apan: ["but", "yet"],
@@ -204,6 +205,7 @@ export async function ceb_definition(word) {
         defs,
       });
     defs = list_filter(defs, (d) => list_includes_not(skips, d));
+    defs = list_filter(defs, (d) => string_starts_with_not(d, "*"));
     list_add_multiple(definitions, defs);
   }
   definitions = list_map(definitions, (d) => {
