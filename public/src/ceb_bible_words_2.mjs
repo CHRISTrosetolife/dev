@@ -20,11 +20,14 @@ export async function ceb_bible_words_2() {
     html_parse_visit_tag(root, "a", (v) => {
       let { node } = v;
       let href = html_parse_href(node);
-      if (string_ends_with(href, ".html")) {
+      if (condition(href)) {
         la(href);
       }
     }),
   );
+  function condition(href) {
+    return string_ends_with(href, ".html");
+  }
   hrefs = list_map(hrefs, (href) => string_combine(url_base, href));
   await each_async(hrefs, async (href) => {
     await html_cache_parse(href);
