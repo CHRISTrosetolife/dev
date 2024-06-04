@@ -23,8 +23,10 @@ import { object_property_initialize } from "./object_property_initialize.mjs";
 import { list_add } from "./list_add.mjs";
 import { file_read_json } from "./file_read_json.mjs";
 import { assert } from "./assert.mjs";
+import { bible_chapters } from "./bible_chapters.mjs";
 export async function sandbox() {
-  await each_async(await bible_books("engbsb"), async (book) => {
+  await each_async(await bible_books("engbsb"), async (book_name) => {
+    await bible_chapters("engbsb", book_name);
     await bible_ceb_chapter(chapter_name);
   });
   return;
