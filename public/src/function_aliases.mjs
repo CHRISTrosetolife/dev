@@ -17,6 +17,7 @@ export function function_aliases() {
     });
   }
   alias_add(function_auto, ["a"]);
+  alias_add(function_aliases, ["al"]);
   alias_add(function_copy, ["c"]);
   alias_add(function_open, ["o"]);
   alias_add(function_search, ["s"]);
