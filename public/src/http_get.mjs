@@ -14,11 +14,9 @@ export async function http_get(url) {
     try {
       result = await axios.get(url);
     } catch (e) {
-      if (retries >= 1) {
-        let s = string_to(e);
-        if (string_includes(s, "ECONNRESET")) {
-          continue;
-        }
+      let s = string_to(e);
+      if (string_includes(s, "ECONNRESET")) {
+        continue;
       }
       throw e;
     }
