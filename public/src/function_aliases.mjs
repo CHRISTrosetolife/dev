@@ -15,5 +15,6 @@ export function function_aliases() {
   }
   alias_add(function_auto, ["a"]);
   alias_add(function_search, ["s"]);
+  alias_add(function_watch, ["w"]);
   return result;
 }
