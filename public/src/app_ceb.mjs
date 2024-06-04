@@ -236,7 +236,9 @@ export async function app_ceb() {
     let concat = atoms_slice_concat();
     let pairs_other = list_without(concat, pair);
     let [cebuano, english] = pair;
-    if (0) [cebuano, english] = ["gikan", "from"];
+    if (0) {
+      [cebuano, english] = ["gikan", "from"];
+    }
     let english_alternatives = list_without(
       object_property_get(definitions, cebuano),
       english,
@@ -259,7 +261,9 @@ export async function app_ceb() {
     });
     let answer;
     let pair_other = list_random_item(pairs_other);
-    if (0) pair_other = ["ila", "acknowledge"];
+    if (0) {
+      pair_other = ["ila", "acknowledge"];
+    }
     let answer_other_get;
     let alternatives;
     if (forwards) {
@@ -347,10 +351,14 @@ export async function app_ceb() {
             app_learn_code_correct_timeout(async () => {
               html_style_hidden(button);
               if (last_is) {
-                if (0) html_style_background_color(root, "#d3f8d3");
+                if (0) {
+                  html_style_background_color(root, "#d3f8d3");
+                }
                 app_learn_code_style_success(answer_element);
                 await app_ceb_audio(cebuano);
-                if (0) html_style_background_color(root, "white");
+                if (0) {
+                  html_style_background_color(root, "white");
+                }
                 if (equal(settings, list_last(settings_choices))) {
                   refresh_node();
                 } else {
