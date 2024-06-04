@@ -8,5 +8,5 @@ export async function bible_books(bible_folder) {
   let root = await html_cache_parse(url_base);
   let vnavs = html_parse_visit_class_list(root, "vnav");
   let vnav = list_single(vnavs);
-  let verses = html_parse_visit_classes_list(root, ["oo", "nn"]);
+  let book_elements = html_parse_visit_classes_list(root, ["oo", "nn"]);
 }
