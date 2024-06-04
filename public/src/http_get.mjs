@@ -6,6 +6,7 @@ export async function http_get(url) {
   if (web_not_is()) {
     axios = axios.default;
   }
-  let result = await axios.get(url);
+  let result;
+  result = await axios.get(url);
   return http_data_get(result);
 }
