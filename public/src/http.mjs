@@ -1,6 +1,5 @@
+import { retry_if } from "./retry_if.mjs";
 import { add_1 } from "./add_1.mjs";
-import { string_includes } from "./string_includes.mjs";
-import { string_to } from "./string_to.mjs";
 import fetch from "node-fetch";
 import { sleep } from "./sleep.mjs";
 import { integer_random } from "./integer_random.mjs";
@@ -14,7 +13,7 @@ export async function http(url) {
       body = await lambda();
       break;
     } catch (e) {
-      if (string_includes(string_to(e), "ECONNRESET")) {
+      if (retry_if(e)) {
         continue;
       }
       throw e;
