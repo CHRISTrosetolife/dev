@@ -8,6 +8,7 @@ export async function http_get(url) {
   if (web_not_is()) {
     axios = axios.default;
   }
+  let retries = 3;
   let result;
   try {
     result = await axios.get(url);
