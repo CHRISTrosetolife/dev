@@ -1,3 +1,4 @@
+import { function_copy } from "./function_copy.mjs";
 import { watch } from "./watch.mjs";
 import { function_search } from "./function_search.mjs";
 import { function_auto } from "./function_auto.mjs";
@@ -15,6 +16,7 @@ export function function_aliases() {
     });
   }
   alias_add(function_auto, ["a"]);
+  alias_add(function_copy, ["c"]);
   alias_add(function_search, ["s"]);
   alias_add(watch, ["w"]);
   return result;
