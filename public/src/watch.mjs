@@ -51,7 +51,9 @@ export async function watch() {
       } finally {
         object_property_set(c, "processing", false);
       }
-      object_property_set(c, "contents", after);
+      if (processed) {
+        object_property_set(c, "contents", after);
+      }
       log({
         path,
         p: c.processing,
