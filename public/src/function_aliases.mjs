@@ -9,12 +9,12 @@ import { each } from "./each.mjs";
 import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 export function function_aliases() {
-  let result = {};
+  let a = {};
   function alias_add(fn, aliases) {
     let { name } = fn;
     each(aliases, (a) => {
-      assert(object_property_exists_not, [result, a]);
-      object_property_set(result, a, name);
+      assert(object_property_exists_not, [a, a]);
+      object_property_set(a, a, name);
     });
   }
   alias_add(function_aliases, ["al"]);
@@ -24,5 +24,5 @@ export function function_aliases() {
   alias_add(function_search, ["s"]);
   alias_add(sandbox, ["sb"]);
   alias_add(watch, ["w"]);
-  return result;
+  return a;
 }
