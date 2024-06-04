@@ -1,4 +1,5 @@
 import { log } from "./log.mjs";
+log("here2");
 import { http_get } from "./http_get.mjs";
 import { file_write_json } from "./file_write_json.mjs";
 import { promise_all } from "./promise_all.mjs";
