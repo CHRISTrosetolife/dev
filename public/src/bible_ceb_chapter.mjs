@@ -1,3 +1,4 @@
+import { assert_message } from "./assert_message.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { log } from "./log.mjs";
 import { html_parse_visit_class_list } from "./html_parse_visit_class_list.mjs";
@@ -34,7 +35,7 @@ export async function bible_ceb_chapter(chapter_name) {
     eng_verse_numbers,
     ceb_verse_numbers,
   );
-  assert_message(list_empty_is, [ceb_verse_numbers_difference]);
+  assert_message(list_empty_is, [ceb_verse_numbers_difference], () => {});
   assert(equal_by, [eng, ceb, list_length]);
   let symbols = [",", "1", "2", ".", ";", "“", "”", ":"];
   let words_unique = list_adder_unique((la) => {
