@@ -1,1 +1,3 @@
-export function function_aliases() {}
+export function function_aliases() {
+  return {};
+}
