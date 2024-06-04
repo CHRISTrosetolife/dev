@@ -21,9 +21,7 @@ export async function bible_ceb_chapter(chapter_name) {
   let parsed_ceb = await bible_chapter_parsed("cebulb", chapter_name);
   let verses_ceb = html_parse_visit_class_list(parsed_ceb, "p");
   let ceb = bible_verses_parse(verses_ceb);
-  log({
-    ceb,
-  });
+  list_map_propert(ceb, "verse_number");
   assert(equal_by, [eng, ceb, list_length]);
   let symbols = [",", "1", "2", ".", ";", "“", "”", ":"];
   let words_unique = list_adder_unique((la) => {
