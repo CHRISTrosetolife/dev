@@ -10,11 +10,9 @@ import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { assert } from "./assert.mjs";
 import { each } from "./each.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
-import { js_code_array } from "./js_code_array.mjs";
 import { js_code_statement_return } from "./js_code_statement_return.mjs";
 import { function_new_generic } from "./function_new_generic.mjs";
-import { string_delimit } from "./string_delimit.mjs";
-import { list_map } from "./list_map.mjs";
+import { json_to } from "./json_to.mjs";
 export async function function_aliases_generate() {
   let a = {};
   function alias_add(fn, aliases) {
@@ -32,11 +30,10 @@ export async function function_aliases_generate() {
   alias_add(sandbox, ["sb"]);
   alias_add(watch, ["w"]);
   let name = "function_aliases";
-  let delimited = list_map(f, string_delimit);
   await function_new_generic(
     name,
     "",
-    js_code_statement_return(js_code_array(delimited)),
+    js_code_statement_return(json_to(a)),
     false,
     [],
     false,
