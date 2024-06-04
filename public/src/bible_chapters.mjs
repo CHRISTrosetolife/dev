@@ -7,7 +7,6 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 import { string_suffix_without } from "./string_suffix_without.mjs";
-import { string_combine } from "./string_combine.mjs";
 export async function bible_chapters(bible_folder, book_name) {
   let url_base = bible_url_base(bible_folder);
   let extension = ".htm";
@@ -24,5 +23,5 @@ export async function bible_chapters(bible_folder, book_name) {
     }
     return false;
   });
-  return list_map(hrefs, (h) => string_combine(url_base, h));
+  return list_map(hrefs, (h) => string_suffix_without(h, extension));
 }
