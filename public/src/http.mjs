@@ -1,3 +1,5 @@
+import { string_to } from "./string_to.mjs";
+import { string_includes } from "./string_includes.mjs";
 import { retry_if } from "./retry_if.mjs";
 import { add_1 } from "./add_1.mjs";
 import fetch from "node-fetch";
@@ -24,5 +26,8 @@ export async function http(url) {
     let response = await fetch(url);
     let body = await response.text();
     return body;
+  }
+  function retry_if(e) {
+    return string_includes(string_to(e), "ECONNRESET");
   }
 }
