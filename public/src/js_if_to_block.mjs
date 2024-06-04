@@ -11,8 +11,8 @@ export function js_if_to_block(ast) {
       if (value === null) {
         return;
       }
-      let type = value;
-      if (value.type !== "BlockStatement") {
+      let { type } = value;
+      if (type !== "BlockStatement") {
         assert();
         let value_new = {
           type: "BlockStatement",
