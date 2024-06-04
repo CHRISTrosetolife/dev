@@ -5,7 +5,7 @@ import { bible_url_base } from "./bible_url_base.mjs";
 export async function bible_books(bible_folder) {
   let url_base = bible_url_base(bible_folder);
   let root = await html_cache_parse(url_base);
-  html_parse_visit_attribute_value(root, "class", "notemark", (v) => {
+  html_parse_visit_attribute_value(root, "class", "vnav", (v) => {
     let { node } = v;
     let { parent } = node;
     let { children } = parent;
