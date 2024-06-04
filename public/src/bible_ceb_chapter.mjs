@@ -46,10 +46,11 @@ export async function bible_ceb_chapter(chapter_name) {
     }
   });
   let definitions = {};
-  for (let w of words_unique) {
-    let d = await ceb_definition(w);
-    object_property_set(definitions, w, d);
-  }
+  if (0)
+    for (let w of words_unique) {
+      let d = await ceb_definition(w);
+      object_property_set(definitions, w, d);
+    }
   let data = {
     ceb,
     eng,
