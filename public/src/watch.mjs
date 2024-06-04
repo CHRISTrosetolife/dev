@@ -45,10 +45,10 @@ export async function watch() {
       let args = [function_name];
       let after;
       try {
+        after = await fn(...args);
+        object_property_set(c, "contents", after);
       } finally {
       }
-      after = await fn(...args);
-      object_property_set(c, "contents", after);
       object_property_set(c, "processing", false);
       log({
         path,
