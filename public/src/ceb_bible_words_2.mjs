@@ -18,7 +18,7 @@ export async function ceb_bible_words_2() {
   let root = await html_cache_parse(url);
   let hrefs = html_parse_a_hrefs(root, function condition(href) {
     return string_ends_with(href, ".html");
-  });
+  });//
   
   hrefs = list_map(hrefs, (href) => string_combine(url_base, href));
   await each_async(hrefs, async (href) => {
