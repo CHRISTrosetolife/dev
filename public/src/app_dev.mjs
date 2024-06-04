@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { http_get } from "./http_get.mjs";
 import { file_write_json } from "./file_write_json.mjs";
 import { promise_all } from "./promise_all.mjs";
@@ -23,6 +24,7 @@ import { object_property_set } from "./object_property_set.mjs";
 import { data_path } from "./data_path.mjs";
 import { data_file_name } from "./data_file_name.mjs";
 export async function app_dev() {
+  log("here");
   let { files } = global_files_initialize({});
   let d = await http_get(data_file_name());
   await file_write_json(data_path(), d);
