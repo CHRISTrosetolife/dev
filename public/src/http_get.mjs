@@ -17,6 +17,7 @@ export async function http_get(url) {
       if (retries >= 1) {
         let s = string_to(e);
         if (string_includes(s, "ECONNRESET")) {
+          continue;
         }
       }
       throw e;
