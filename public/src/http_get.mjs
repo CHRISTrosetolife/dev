@@ -13,7 +13,8 @@ export async function http_get(url) {
     result = await axios.get(url);
   } catch (e) {
     let s = string_to(e);
-    string_includes(s, "ECONNRESET");
+    if (string_includes(s, "ECONNRESET")) {
+    }
   }
   return http_data_get(result);
 }
