@@ -30,6 +30,10 @@ export async function bible_ceb_chapter(chapter_name) {
     ceb_verse_numbers,
     eng_verse_numbers,
   );
+  let eng_verse_numbers_difference = list_difference(
+    eng_verse_numbers,
+    ceb_verse_numbers,
+  );
   assert(list_empty_is, [ceb_verse_numbers_difference]);
   assert(equal_by, [eng, ceb, list_length]);
   let symbols = [",", "1", "2", ".", ";", "“", "”", ":"];
