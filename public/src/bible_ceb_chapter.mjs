@@ -14,6 +14,7 @@ import { assert } from "./assert.mjs";
 import { list_length } from "./list_length.mjs";
 import { json_to } from "./json_to.mjs";
 import { js_code_return } from "./js_code_return.mjs";
+import { list_difference } from "./list_difference.mjs";
 export async function bible_ceb_chapter(chapter_name) {
   log({
     chapter_name,
@@ -24,6 +25,10 @@ export async function bible_ceb_chapter(chapter_name) {
   let verses_ceb = html_parse_visit_class_list(parsed_ceb, "p");
   let ceb = bible_verses_parse(verses_ceb);
   let ceb_verse_numbers = list_map_property(ceb, "verse_number");
+  let ceb_verse_numbers_difference = list_difference(
+    ceb_verse_numbers,
+    eng_verse_numbers,
+  );
   assert(equal_by, [eng, ceb, list_length]);
   let symbols = [",", "1", "2", ".", ";", "“", "”", ":"];
   let words_unique = list_adder_unique((la) => {
