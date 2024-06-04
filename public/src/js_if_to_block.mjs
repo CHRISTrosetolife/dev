@@ -10,6 +10,8 @@ export function js_if_to_block(ast) {
       if (value === null) {
         return;
       }
+      if (value.type !== "BlockStatement") {
+      }
     });
   });
   if (0) 1;
