@@ -1,3 +1,4 @@
+import { equal } from "./equal.mjs";
 import { assert } from "./assert.mjs";
 import { each } from "./each.mjs";
 import { js_visit_node } from "./js_visit_node.mjs";
@@ -13,7 +14,7 @@ export function js_if_to_block(ast) {
       }
       let { type } = value;
       if (type !== "BlockStatement") {
-        assert();
+        assert(equal, [type, "ExpressionStatement"]);
         let value_new = {
           type: "BlockStatement",
           body: [value],
