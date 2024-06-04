@@ -24,8 +24,8 @@ import { list_add } from "./list_add.mjs";
 import { file_read_json } from "./file_read_json.mjs";
 import { assert } from "./assert.mjs";
 export async function sandbox() {
-  await each_async(await bible_books("engbsb"), (book) => {
-    bible_ceb_chapter;
+  await each_async(await bible_books("engbsb"), async (book) => {
+    await bible_ceb_chapter(chapter_name);
   });
   return;
   let group_index = 0;
