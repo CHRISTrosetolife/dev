@@ -6,7 +6,7 @@ import { string_delimit } from "./string_delimit.mjs";
 import { list_map } from "./list_map.mjs";
 import { function_names } from "./function_names.mjs";
 export async function function_aliases_generate() {
-  let name = "functions_list";
+  let name = "function_aliases";
   let f = await function_names();
   let delimited = list_map(f, string_delimit);
   await function_new_generic(
