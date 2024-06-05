@@ -19,6 +19,8 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_split_space } from "./string_split_space.mjs";
+import { list_sort_string } from "./list_sort_string.mjs";
+import { identity } from "./identity.mjs";
 export async function ceb_bible_words_2() {
   let url_base = string_combine_multiple([
     url_secure_w3(),
@@ -72,6 +74,7 @@ export async function ceb_bible_words_2() {
         }
       });
     });
+    list_sort_string(symbols_unique, identity);
     error();
   });
   return;
