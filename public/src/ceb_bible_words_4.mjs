@@ -13,7 +13,7 @@ export async function ceb_bible_words_4() {
     "wordproject.org/bibles/ceb/",
   ]);
   let root_bible = await html_cache_parse(url_base);
-  html_parse_visit_class_list("ym-grid linearize-level-2");
+  html_parse_visit_class_list(root_bible, "ym-grid linearize-level-2");
   return;
   let hrefs = html_parse_a_hrefs(root_bible, string_starts_with_curry("B"));
   await each_async(hrefs, async (href) => {
