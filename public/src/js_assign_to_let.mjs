@@ -2,7 +2,6 @@ import { add_1 } from "./add_1.mjs";
 import { js_function_types_is } from "./js_function_types_is.mjs";
 import { list_includes_not } from "./list_includes_not.mjs";
 import { equal } from "./equal.mjs";
-import { assert } from "./assert.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { list_filter_property } from "./list_filter_property.mjs";
@@ -45,9 +44,11 @@ export function js_assign_to_let(ast) {
                 let mapped = list_map_property(declarations, "id");
                 identifiers_add(mapped);
               });
-            } else if (js_function_types_is(s_type)) {
-              let { params } = s;
-              identifiers_add(params);
+            } else {
+              if (js_function_types_is(s_type)) {
+                let { params } = s;
+                identifiers_add(params);
+              }
             }
             function identifiers_add(list) {
               each(list, (m) => {
@@ -55,10 +56,15 @@ export function js_assign_to_let(ast) {
                 if (equal(m_type, "Identifier")) {
                   let { name: m_name } = m;
                   la(m_name);
-                } else if (equal(m_type, "ObjectPattern")) {
-                  let { properties } = m;
-                  let keys = list_map_property(properties, "key");
-                  identifiers_add(keys);
+                } else {
+                  if (equal(m_type, "ObjectPattern")) {
+                    let { properties } = m;
+                    log({
+                      properties,
+                    });
+                    let keys = list_map_property(properties, "key");
+                    identifiers_add(keys);
+                  }
                 }
               });
             }
