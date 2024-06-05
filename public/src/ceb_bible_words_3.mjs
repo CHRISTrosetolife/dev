@@ -36,6 +36,10 @@ export async function ceb_bible_words_3() {
       let verse_number = html_parse_text(list_first(tds));
       let text = html_parse_text(list_second(tds));
       let tokens = list_split_space(text);
+      return {
+        verse_number,
+        tokens,
+      };
     });
   });
 }
