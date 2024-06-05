@@ -63,7 +63,6 @@ export async function ceb_bible_words_2() {
             list_first_remaining(split);
           tokens = list_map(tokens, string_case_lower);
           let symbols = [
-            "-",
             ",",
             ";",
             ":",
