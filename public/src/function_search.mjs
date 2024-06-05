@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { string_split_comma } from "./string_split_comma.mjs";
 import { function_names } from "./function_names.mjs";
 import { list_filter } from "./list_filter.mjs";
@@ -9,5 +10,6 @@ export async function function_search(query) {
     return function_search_terms_match(fn_name, terms);
   });
   let result = {};
+  each(matches, m);
   return matches;
 }
