@@ -1,3 +1,4 @@
+import { string_symbols } from "./string_symbols.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { list_first_remaining } from "./list_first_remaining.mjs";
 import { string_whitespace_normalize } from "./string_whitespace_normalize.mjs";
@@ -57,6 +58,7 @@ export async function ceb_bible_words_2() {
         let { first: verse_number, remaining: tokens } =
           list_first_remaining(split);
         tokens = list_map(string_case_lower);
+        each(tokens, (t) => each(string_symbols(t), (s) => {}));
         log({
           verse_number,
           tokens,
