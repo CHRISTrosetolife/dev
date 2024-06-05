@@ -21,6 +21,7 @@ export async function ceb_bible_words_2() {
   await each_async(book_hrefs, async (href) => {
     await html_cache_parse(href);
   });
+  await each_async(book_hrefs, (b) => {});
   return book_hrefs;
   let mapped = string_count_words(text_split);
   return mapped;
