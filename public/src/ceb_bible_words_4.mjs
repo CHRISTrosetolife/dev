@@ -1,3 +1,4 @@
+import { path_join } from "./path_join.mjs";
 import { path_dirname } from "./path_dirname.mjs";
 import { string_take } from "./string_take.mjs";
 import { string_index } from "./string_index.mjs";
@@ -41,9 +42,7 @@ export async function ceb_bible_words_4() {
       return string_take(h, i);
     });
     await each_async(hrefs_chapters, async (href_chapter) => {
-      log({
-        href_chapter,
-      });
+      let url_chapter = path_join([]);
       let root_chapter = await html_cache_parse(href_chapter);
     });
   });
