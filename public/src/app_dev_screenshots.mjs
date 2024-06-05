@@ -43,7 +43,7 @@ export async function app_dev_screenshots(screen_name) {
   await folder_files_copy(
     folder_path,
     file_extension,
-    path_combine([folder_path, "..", await uuid()]),
+    path_combine([folder_path, "..", "screenshot_backups", await uuid()]),
   );
   await folder_files_move(folder_path, file_extension, target_path);
 }
