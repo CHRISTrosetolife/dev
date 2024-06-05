@@ -39,6 +39,7 @@ export async function ceb_bible_words_2() {
       log({
         href,
       });
+      let chapter_name;
       let root = await html_cache_parse(href);
       let body = html_parse_visit_tag_single(root, "body");
       let { children } = body;
@@ -51,7 +52,7 @@ export async function ceb_bible_words_2() {
               "size",
               "+2",
             );
-            let chapter_name = string_prefix_without(
+            chapter_name = string_prefix_without(
               html_parse_text(chapter_name_element),
               "CAPITLO ",
             );
