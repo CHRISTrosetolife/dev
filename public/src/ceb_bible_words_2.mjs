@@ -45,6 +45,7 @@ export async function ceb_bible_words_2() {
         }
       }
       if (type === "text") {
+        let data = c;
       }
     });
     error();
