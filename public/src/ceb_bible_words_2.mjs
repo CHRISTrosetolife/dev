@@ -56,7 +56,7 @@ export async function ceb_bible_words_2() {
         let split = string_split_space(data);
         let { first: verse_number, remaining: tokens } =
           list_first_remaining(split);
-        let tokens = list_map(string_case_lower);
+        tokens = list_map(string_case_lower);
         log({
           verse_number,
           tokens,
