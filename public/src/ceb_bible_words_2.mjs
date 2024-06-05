@@ -40,6 +40,7 @@ export async function ceb_bible_words_2() {
         href,
       });
       let chapter_name;
+      let book_name;
       let root = await html_cache_parse(href);
       let body = html_parse_visit_tag_single(root, "body");
       let { children } = body;
