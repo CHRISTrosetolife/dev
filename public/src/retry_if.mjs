@@ -4,10 +4,11 @@ import { list_any } from "./list_any.mjs";
 import { log } from "./log.mjs";
 export function retry_if(list) {
   return function retry_if_inner(e) {
+    let s = string_to(e);
     log({
       e,
+      s,
     });
-    let s = string_to(e);
     return list_any(list, (i) => string_includes(s, i));
   };
 }
