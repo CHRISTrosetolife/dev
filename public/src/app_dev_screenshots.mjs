@@ -1,4 +1,4 @@
-import { date_string_iso } from "./date_string_iso.mjs";
+import { date_string_iso_file } from "./date_string_iso_file.mjs";
 import { folder_files_copy } from "./folder_files_copy.mjs";
 import { assert_message_json } from "./assert_message_json.mjs";
 import { number_is } from "./number_is.mjs";
@@ -43,7 +43,12 @@ export async function app_dev_screenshots(screen_name) {
   await folder_files_copy(
     folder_path,
     file_extension,
-    path_combine([folder_path, "..", "screenshot_backups", date_string_iso()]),
+    path_combine([
+      folder_path,
+      "..",
+      "screenshot_backups",
+      date_string_iso_file(),
+    ]),
   );
   await folder_files_move(folder_path, file_extension, target_path);
 }
