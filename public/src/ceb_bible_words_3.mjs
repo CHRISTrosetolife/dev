@@ -1,3 +1,4 @@
+import { string_split_space } from "./string_split_space.mjs";
 import { list_second } from "./list_second.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 import { list_first } from "./list_first.mjs";
@@ -35,7 +36,7 @@ export async function ceb_bible_words_3() {
       assert(list_length_2, [tds]);
       let verse_number = html_parse_text(list_first(tds));
       let text = html_parse_text(list_second(tds));
-      let tokens = list_split_space(text);
+      let tokens = string_split_space(text);
       return {
         verse_number,
         tokens,
