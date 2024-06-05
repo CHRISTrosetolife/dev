@@ -1,7 +1,6 @@
+import { list_first } from "./list_first.mjs";
 import { list_length_2 } from "./list_length_2.mjs";
 import { assert } from "./assert.mjs";
-import { html_parse_text } from "./html_parse_text.mjs";
-import { each } from "./each.mjs";
 import { html_parse_visit_tag_list } from "./html_parse_visit_tag_list.mjs";
 import { log } from "./log.mjs";
 import { each_async } from "./each_async.mjs";
@@ -26,6 +25,6 @@ export async function ceb_bible_words_3() {
     let root = await html_cache_parse(url);
     let tables = html_parse_visit_tag_list(root, "table");
     assert(list_length_2, [tables]);
-    each(tables, (tt) => log(html_parse_text(tt)));
+    let first = list_first(tables);
   });
 }
