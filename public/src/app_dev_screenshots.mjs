@@ -1,5 +1,6 @@
+import { json_to } from "./json_to.mjs";
+import { assert_message } from "./assert_message.mjs";
 import { number_is } from "./number_is.mjs";
-import { assert } from "./assert.mjs";
 import { each } from "./each.mjs";
 import { app_dev_screenshots_extension } from "./app_dev_screenshots_extension.mjs";
 import { number_max_list } from "./number_max_list.mjs";
@@ -29,7 +30,13 @@ export async function app_dev_screenshots(screen_name) {
   let target_files = await folder_read(target_path, file_extension);
   let mapped = list_map(target_files, path_parse_name);
   let mapped2 = list_map(mapped, integer_parse);
-  each(mapped2, (m) => assert(number_is, [m]));
+  each(mapped2, (m) =>
+    assert_message(number_is, [m], () =>
+      json_to({
+        m,
+      }),
+    ),
+  );
   let starting = add_1(number_max_list(mapped2));
   await folder_files_rename_incrementing(folder_path, file_extension, starting);
   return;
