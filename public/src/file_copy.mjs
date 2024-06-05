@@ -1,3 +1,4 @@
+import { folder_parent_exists_ensure } from "./folder_parent_exists_ensure.mjs";
 import { import_node } from "./import_node.mjs";
 import { file_open } from "./file_open.mjs";
 import { assert_not_async } from "./assert_not_async.mjs";
@@ -14,6 +15,7 @@ export async function file_copy(file_name_from, file_name_to) {
     object_property_set(files, file_name_to, existing);
   } else {
     let fs = await import_node("fs");
+    await folder_parent_exists_ensure(file_name_to);
     await fs.promises.copyFile(file_name_from, file_name_to);
     await file_open(file_name_to);
   }
