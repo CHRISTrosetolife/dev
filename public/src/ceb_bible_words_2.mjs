@@ -12,6 +12,7 @@ import { each_async } from "./each_async.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { list_map } from "./list_map.mjs";
+import { list_single } from "./list_single.mjs";
 export async function ceb_bible_words_2() {
   let url_base = string_combine_multiple([
     url_secure_w3(),
@@ -37,7 +38,9 @@ export async function ceb_bible_words_2() {
       if (c.type === "tag") {
         if (c.name === "center") {
           let { children: children_c } = c;
-          html_parse_visit_attribute_value_list(children_c, "size", "+2");
+          list_single(
+            html_parse_visit_attribute_value_list(children_c, "size", "+2"),
+          );
         }
       }
     });
