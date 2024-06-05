@@ -39,11 +39,7 @@ export async function ceb_bible_words_2() {
       if (c.type === "tag") {
         if (c.name === "center") {
           let { children: children_c } = c;
-          let l = html_parse_visit_attribute_value_list(
-            children_c,
-            "size",
-            "+2",
-          );
+          let l = html_parse_visit_attribute_value_list(c, "size", "+2");
           let last = list_last(children_c);
           log({
             a: last.attribs,
