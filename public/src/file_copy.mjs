@@ -18,6 +18,8 @@ export async function file_copy(file_name_from, file_name_to) {
     let fs = await import_node("fs");
     await folder_parent_exists_ensure(file_name_to);
     await fs.promises.copyFile(file_name_from, file_name_to);
-    await file_open(file_name_to);
+    if (open) {
+      await file_open(file_name_to);
+    }
   }
 }
