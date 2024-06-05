@@ -27,7 +27,7 @@ export async function gcloud_translate(
     targetLanguageCode: targetLanguageCode,
   };
   let [response] = await retry(
-    retry_count,
+    3,
     async () => await translationClient.translateText(request),
     function retry_if(e) {
       log({
