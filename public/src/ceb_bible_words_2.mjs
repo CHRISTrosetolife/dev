@@ -14,8 +14,8 @@ export async function ceb_bible_words_2() {
     "talibon.com/bible/",
   ]);
   let url = string_combine_multiple([url_base, "bible.html"]);
-  let root = await html_cache_parse(url);
-  let book_hrefs = html_parse_a_hrefs(root, function condition(href) {
+  let root_bible = await html_cache_parse(url);
+  let book_hrefs = html_parse_a_hrefs(root_bible, function condition(href) {
     return string_ends_with(href, ".html");
   });
   book_hrefs = list_map(book_hrefs, (href) => string_combine(url_base, href));
@@ -23,7 +23,7 @@ export async function ceb_bible_words_2() {
     log({
       href,
     });
-    root = await html_cache_parse(href);
+    root_bible = await html_cache_parse(href);
   });
   return;
   let mapped = string_count_words(text_split);
