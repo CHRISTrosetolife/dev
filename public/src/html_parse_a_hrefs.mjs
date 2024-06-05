@@ -10,6 +10,7 @@ export function html_parse_a_hrefs(root, condition) {
       log({
         t: html_parse_text(node),
       });
+      let attribs = node;
       let href = html_parse_href(node);
       if (condition(href)) {
         la(href);
