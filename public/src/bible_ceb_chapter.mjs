@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { each_object } from "./each_object.mjs";
 import { object_property_get_curry } from "./object_property_get_curry.mjs";
 import { assert_message } from "./assert_message.mjs";
@@ -30,8 +31,9 @@ export async function bible_ceb_chapter(chapter_name) {
     MAT17: ["21"],
   };
   let missing_is = false;
-  each_object(missing, (key, value) => {
-    if (chapter_name === "MAT17") {
+  each_object(missing, (chapter_name_missing, verse_numbers) => {
+    if (chapter_name === chapter_name_missing) {
+      each(verse_numbers, (vn) => {});
       list_add(eng, {
         verse_number: "21",
         tokens: [],
