@@ -1,8 +1,8 @@
 export function list_all(list, predicate) {
   for (let element of list) {
-    if (predicate(element)) {
-      return true;
+    if (!predicate(element)) {
+      return false;
     }
   }
-  return false;
+  return true;
 }
