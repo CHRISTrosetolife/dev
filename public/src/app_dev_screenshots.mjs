@@ -40,7 +40,6 @@ export async function app_dev_screenshots(screen_name) {
     return parsed;
   });
   let starting = add_1(number_max_list_or(mapped, 0));
-  await folder_files_rename_incrementing(folder_path, file_extension, starting);
   await folder_files_copy(
     folder_path,
     file_extension,
@@ -51,5 +50,6 @@ export async function app_dev_screenshots(screen_name) {
       date_string_iso_file(),
     ]),
   );
+  await folder_files_rename_incrementing(folder_path, file_extension, starting);
   await folder_files_move(folder_path, file_extension, target_path);
 }
