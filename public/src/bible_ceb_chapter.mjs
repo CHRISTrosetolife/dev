@@ -29,7 +29,7 @@ export async function bible_ceb_chapter(chapter_name) {
     list_add(eng_verse_numbers, "21");
     list_sort_string(
       eng_verse_numbers,
-      object_property_get_curry(property_name),
+      object_property_get_curry("verse_number"),
     );
   }
   let eng_verse_numbers = list_map_property(eng, "verse_number");
