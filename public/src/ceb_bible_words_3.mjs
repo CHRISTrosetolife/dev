@@ -30,6 +30,7 @@ export async function ceb_bible_words_3() {
     let trs = html_parse_visit_tag_list(first, "tr");
     list_map(trs, (tr) => {
       let tds = html_parse_visit_tag_list(tr, "td");
+      assert(list_length_2, [tds]);
     });
   });
 }
