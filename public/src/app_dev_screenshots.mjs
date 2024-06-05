@@ -1,3 +1,4 @@
+import { uuid } from "./uuid.mjs";
 import { folder_files_copy } from "./folder_files_copy.mjs";
 import { assert_message_json } from "./assert_message_json.mjs";
 import { number_is } from "./number_is.mjs";
@@ -39,6 +40,10 @@ export async function app_dev_screenshots(screen_name) {
   let mapped2 = list_map(mapped);
   let starting = add_1(number_max_list(mapped2));
   await folder_files_rename_incrementing(folder_path, file_extension, starting);
-  await folder_files_copy(folder_path, file_extension, target_path);
+  await folder_files_copy(
+    folder_path,
+    file_extension,
+    path_combine([folder_path, "..", await uuid()]),
+  );
   await folder_files_move(folder_path, file_extension, target_path);
 }
