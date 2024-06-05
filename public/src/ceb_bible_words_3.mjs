@@ -3,6 +3,6 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export function ceb_bible_words_3() {
   let url_base = string_combine_multiple([
     url_secure_w3(),
-    "talibon.com/bible/",
+    "htmlbible.com/sacrednamebiblecom/cebuano/",
   ]);
 }
