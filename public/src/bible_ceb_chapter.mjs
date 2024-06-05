@@ -42,17 +42,15 @@ export async function bible_ceb_chapter(chapter_name) {
     eng_verse_numbers,
     ceb_verse_numbers,
   );
-  if (chapter_name !== "MAT17") {
-    assert_message(list_empty_is, [ceb_verse_numbers_difference], () => {
-      return json_to({
-        eng_verse_numbers_difference,
-        ceb_verse_numbers_difference,
-        ceb_verse_numbers,
-        eng_verse_numbers,
-      });
+  assert_message(list_empty_is, [ceb_verse_numbers_difference], () => {
+    return json_to({
+      eng_verse_numbers_difference,
+      ceb_verse_numbers_difference,
+      ceb_verse_numbers,
+      eng_verse_numbers,
     });
-    assert(equal_by, [eng, ceb, list_length]);
-  }
+  });
+  assert(equal_by, [eng, ceb, list_length]);
   let symbols = [",", "1", "2", ".", ";", "“", "”", ":"];
   let words_unique = list_adder_unique((la) => {
     for (let m of ceb) {
