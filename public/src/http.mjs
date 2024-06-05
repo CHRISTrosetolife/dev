@@ -8,7 +8,7 @@ import { log } from "./log.mjs";
 export async function http(url) {
   await sleep(integer_random(5000, 8000));
   let retry_count = 3;
-  return await retry(retry_count, lambda, retry_if);
+  let body = await retry(retry_count, lambda, retry_if);
   async function lambda() {
     let response = await fetch(url);
     let body = await response.text();
