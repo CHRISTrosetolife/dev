@@ -5,7 +5,6 @@ import { list_first_remaining } from "./list_first_remaining.mjs";
 import { string_whitespace_normalize } from "./string_whitespace_normalize.mjs";
 import { string_trim } from "./string_trim.mjs";
 import { html_parse_visit_attribute_value_single } from "./html_parse_visit_attribute_value_single.mjs";
-import { error } from "./error.mjs";
 import { each } from "./each.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
 import { log } from "./log.mjs";
@@ -32,11 +31,11 @@ export async function ceb_bible_words_2() {
     return string_ends_with(href, ".html");
   });
   book_hrefs = list_map(book_hrefs, (href) => string_combine(url_base, href));
-  await each_async(book_hrefs, async (href) => {
-    log({
-      href,
-    });
-    let symbols_unique = await list_adder_unique_async(async (la) => {
+  let symbols_unique = await list_adder_unique_async(async (la) => {
+    await each_async(book_hrefs, async (href) => {
+      log({
+        href,
+      });
       let root = await html_cache_parse(href);
       let body = html_parse_visit_tag_single(root, "body");
       let { children } = body;
@@ -76,11 +75,10 @@ export async function ceb_bible_words_2() {
         }
       });
     });
-    list_sort_string(symbols_unique, identity);
-    log({
-      symbols_unique,
-    });
-    error();
+  });
+  list_sort_string(symbols_unique, identity);
+  log({
+    symbols_unique,
   });
   return;
   let mapped = string_count_words(text_split);
