@@ -32,9 +32,6 @@ export async function ceb_bible_words_2() {
     let body = html_parse_visit_tag_single(root, "body");
     let { children } = body;
     each(children, (c) => {
-      log({
-        c,
-      });
       if (c.type === "tag") {
         if (c.name === "center") {
           let { children: children_c } = c;
