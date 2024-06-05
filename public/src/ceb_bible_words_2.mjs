@@ -35,6 +35,7 @@ export async function ceb_bible_words_2() {
       });
       if (c.type === "tag") {
         if (c.name === "center") {
+          let { children: children_c } = c;
         }
       }
     });
