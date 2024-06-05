@@ -36,4 +36,5 @@ export async function bible_ceb_3_chapter(index) {
       tokens,
     };
   });
+  return verses;
 }
