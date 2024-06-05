@@ -34,40 +34,45 @@ export async function ceb_bible_words_2() {
     log({
       href,
     });
-    await list_adder_unique_async(la);
-    let root = await html_cache_parse(href);
-    let body = html_parse_visit_tag_single(root, "body");
-    let { children } = body;
-    each(children, (c) => {
-      let { type } = c;
-      if (type === "tag") {
-        if (c.name === "center") {
-          let { children: children_c } = c;
-          let attribute_name = "size";
-          let attribute_value = "+2";
-          let l = html_parse_visit_attribute_value_single(
-            c,
-            attribute_name,
-            attribute_value,
-          );
+    await list_adder_unique_async(async (la) => {
+      let root = await html_cache_parse(href);
+      let body = html_parse_visit_tag_single(root, "body");
+      let { children } = body;
+      each(children, (c) => {
+        let { type } = c;
+        if (type === "tag") {
+          if (c.name === "center") {
+            let { children: children_c } = c;
+            let attribute_name = "size";
+            let attribute_value = "+2";
+            let l = html_parse_visit_attribute_value_single(
+              c,
+              attribute_name,
+              attribute_value,
+            );
+          }
         }
-      }
-      if (type === "text") {
-        let { data } = c;
-        data = string_trim(data);
-        data = string_whitespace_normalize(data);
-        let split = string_split_space(data);
-        let { first: verse_number, remaining: tokens } =
-          list_first_remaining(split);
-        tokens = list_map(string_case_lower);
-        each(tokens, (t) => each(string_symbols(t), (s) => {}));
-        log({
-          verse_number,
-          tokens,
-        });
-      }
+        if (type === "text") {
+          let { data } = c;
+          data = string_trim(data);
+          data = string_whitespace_normalize(data);
+          let split = string_split_space(data);
+          let { first: verse_number, remaining: tokens } =
+            list_first_remaining(split);
+          tokens = list_map(string_case_lower);
+          each(tokens, (t) =>
+            each(string_symbols(t), (s) => {
+              la(s);
+            }),
+          );
+          log({
+            verse_number,
+            tokens,
+          });
+        }
+      });
+      error();
     });
-    error();
   });
   return;
   let mapped = string_count_words(text_split);
