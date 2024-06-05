@@ -12,6 +12,6 @@ export async function folder_files_move(
   async function lambda_each(file_path) {
     let file_name = path_parse_base(file_path);
     let file_path_new = path_join([output_directory, file_name]);
-    await file_rename(file_path, file_path_new);
+    await lambda(file_path, file_path_new);
   }
 }
