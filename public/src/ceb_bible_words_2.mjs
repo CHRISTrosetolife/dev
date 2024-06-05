@@ -43,6 +43,9 @@ export async function ceb_bible_words_2() {
             "size",
             "+2",
           );
+          log({
+            l,
+          });
           list_single(l);
         }
       }
