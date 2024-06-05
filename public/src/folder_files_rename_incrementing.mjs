@@ -1,3 +1,5 @@
+import { number_is } from "./number_is.mjs";
+import { assert } from "./assert.mjs";
 import { add } from "./add.mjs";
 import { file_rename } from "./file_rename.mjs";
 import { string_to } from "./string_to.mjs";
@@ -17,6 +19,7 @@ export async function folder_files_rename_incrementing(
     let dirname = path_dirname(file_path);
     let extension = path_extname(file_path);
     let n = add(starting, index);
+    assert(number_is, [n]);
     let file_path_new = path_join([
       dirname,
       string_combine(string_to(n), extension),
