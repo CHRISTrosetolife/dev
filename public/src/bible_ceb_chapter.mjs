@@ -1,3 +1,4 @@
+import { object_property_get_curry } from "./object_property_get_curry.mjs";
 import { assert_message } from "./assert_message.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { log } from "./log.mjs";
@@ -19,7 +20,6 @@ import { list_difference } from "./list_difference.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
-import { identity } from "./identity.mjs";
 export async function bible_ceb_chapter(chapter_name) {
   log({
     chapter_name,
@@ -27,7 +27,10 @@ export async function bible_ceb_chapter(chapter_name) {
   let eng = await bible_engbsb_chapter(chapter_name);
   if (chapter_name === "MAT17") {
     list_add(eng_verse_numbers, "21");
-    list_sort_string(eng_verse_numbers, identity);
+    list_sort_string(
+      eng_verse_numbers,
+      object_property_get_curry(property_name),
+    );
   }
   let eng_verse_numbers = list_map_property(eng, "verse_number");
   let parsed_ceb = await bible_chapter_parsed("cebulb", chapter_name);
