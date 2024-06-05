@@ -1,3 +1,4 @@
+import { list_adder_unique_async } from "./list_adder_unique_async.mjs";
 import { string_symbols } from "./string_symbols.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { list_first_remaining } from "./list_first_remaining.mjs";
@@ -33,7 +34,7 @@ export async function ceb_bible_words_2() {
     log({
       href,
     });
-    list_adder_unique_async(la);
+    await list_adder_unique_async(la);
     let root = await html_cache_parse(href);
     let body = html_parse_visit_tag_single(root, "body");
     let { children } = body;
