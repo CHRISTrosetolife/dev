@@ -1,3 +1,4 @@
+import { bible_ceb_3_url_base } from "./bible_ceb_3_url_base.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { list_second } from "./list_second.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
@@ -11,7 +12,8 @@ import { string_combine } from "./string_combine.mjs";
 import { log } from "./log.mjs";
 import { list_get } from "./list_get.mjs";
 import { bible_ceb_3_hrefs } from "./bible_ceb_3_hrefs.mjs";
-export async function bible_ceb_3_chapter(index, url_base) {
+export async function bible_ceb_3_chapter(index) {
+  let url_base = bible_ceb_3_url_base();
   let hrefs = await bible_ceb_3_hrefs();
   let href = list_get(hrefs, index);
   log({
