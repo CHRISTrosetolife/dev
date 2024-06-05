@@ -33,6 +33,7 @@ export async function ceb_bible_words_2() {
     log({
       href,
     });
+    list_adder_unique_async(la);
     let root = await html_cache_parse(href);
     let body = html_parse_visit_tag_single(root, "body");
     let { children } = body;
