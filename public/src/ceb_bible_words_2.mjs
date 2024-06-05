@@ -21,6 +21,8 @@ import { list_map } from "./list_map.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { identity } from "./identity.mjs";
+import { list_filter } from "./list_filter.mjs";
+import { list_includes_not } from "./list_includes_not.mjs";
 export async function ceb_bible_words_2() {
   let url_base = string_combine_multiple([
     url_secure_w3(),
@@ -81,6 +83,7 @@ export async function ceb_bible_words_2() {
           ];
           tokens = list_map(tokens, (t) => {
             let s = string_split_empty(t);
+            let filtered = list_filter(s, (u) => list_includes_not(symbols, u));
           });
           each(tokens, (t) =>
             each(string_symbols(t), (s) => {
