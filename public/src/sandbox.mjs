@@ -37,7 +37,7 @@ export async function sandbox() {
       let a = await bible_ceb_3_chapter(index);
       let b = await bible_cebulb_chapter(chapter_name);
       each_range(number_max(list_length(a), list_length(b)), (index_verse) => {
-        assert(json_equal, [
+        assert(equal_json, [
           list_get(a, index_verse),
           list_get(b, index_verse),
         ]);
