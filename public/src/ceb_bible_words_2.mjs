@@ -1,3 +1,4 @@
+import { http_cache } from "./http_cache.mjs";
 import { html_parse_a_hrefs } from "./html_parse_a_hrefs.mjs";
 import { html_cache_parse } from "./html_cache_parse.mjs";
 import { url_secure_w3 } from "./url_secure_w3.mjs";
@@ -21,7 +22,9 @@ export async function ceb_bible_words_2() {
   await each_async(book_hrefs, async (href) => {
     await html_cache_parse(href);
   });
-  await each_async(book_hrefs, (b) => {});
+  await each_async(book_hrefs, async (b) => {
+    await http_cache(b);
+  });
   return book_hrefs;
   let mapped = string_count_words(text_split);
   return mapped;
