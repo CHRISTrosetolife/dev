@@ -1,5 +1,4 @@
 import { log } from "./log.mjs";
-import { http_cache } from "./http_cache.mjs";
 import { html_parse_a_hrefs } from "./html_parse_a_hrefs.mjs";
 import { html_cache_parse } from "./html_cache_parse.mjs";
 import { url_secure_w3 } from "./url_secure_w3.mjs";
@@ -21,13 +20,10 @@ export async function ceb_bible_words_2() {
   });
   book_hrefs = list_map(book_hrefs, (href) => string_combine(url_base, href));
   await each_async(book_hrefs, async (href) => {
-    await html_cache_parse(href);
-  });
-  await each_async(book_hrefs, async (b) => {
     log({
-      b,
+      href,
     });
-    await http_cache(b);
+    await html_cache_parse(href);
   });
   return;
   let mapped = string_count_words(text_split);
