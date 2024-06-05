@@ -51,7 +51,10 @@ export async function ceb_bible_words_2() {
               "size",
               "+2",
             );
-            string_prefix_without(html_parse_text(chapter_name_element));
+            string_prefix_without(
+              html_parse_text(chapter_name_element),
+              "CAPITLO ",
+            );
           }
         }
         if (type === "text") {
