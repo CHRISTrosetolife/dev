@@ -10,6 +10,6 @@ export async function function_search(query) {
     return function_search_terms_match(fn_name, terms);
   });
   let result = {};
-  each(matches, m);
+  each(matches, (m) => {});
   return matches;
 }
