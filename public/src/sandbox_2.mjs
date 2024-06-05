@@ -1,4 +1,6 @@
-import { sleep } from "./sleep.mjs";
+import { log } from "./log.mjs";
 export async function sandbox_2() {
-  await sleep(100);
+  let a = 1;
+  let b = 2;
+  console.log(a + b);
 }
