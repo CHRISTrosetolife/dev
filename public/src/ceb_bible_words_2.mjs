@@ -1,4 +1,3 @@
-import { list_last } from "./list_last.mjs";
 import { html_parse_visit_attribute_value_list } from "./html_parse_visit_attribute_value_list.mjs";
 import { error } from "./error.mjs";
 import { each } from "./each.mjs";
@@ -40,7 +39,6 @@ export async function ceb_bible_words_2() {
         if (c.name === "center") {
           let { children: children_c } = c;
           let l = html_parse_visit_attribute_value_list(c, "size", "+2");
-          let last = list_last(children_c);
           list_single(l);
         }
       }
