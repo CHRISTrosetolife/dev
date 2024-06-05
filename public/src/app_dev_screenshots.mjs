@@ -30,9 +30,11 @@ export async function app_dev_screenshots(screen_name) {
   let mapped = list_map(target_files, (file_path) => {
     let name = path_parse_name(file_path);
     let parsed = integer_parse(name);
-    assert_message(number_is, [m], () =>
+    assert_message(number_is, [parsed], () =>
       json_to({
-        m,
+        parsed,
+        name,
+        file_path,
       }),
     );
   });
