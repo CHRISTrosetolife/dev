@@ -28,7 +28,11 @@ export async function ceb_bible_words_2() {
     let root = await html_cache_parse(href);
     let body = html_parse_visit_tag_single(root, "body");
     let { children } = body;
-    each(children, (c) => {});
+    each(children, (c) => {
+      log({
+        c,
+      });
+    });
   });
   return;
   let mapped = string_count_words(text_split);
