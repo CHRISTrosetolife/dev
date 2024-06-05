@@ -44,7 +44,7 @@ export async function ceb_bible_words_2() {
             "+2",
           );
           log({
-            l,
+            children_c,
           });
           list_single(l);
         }
