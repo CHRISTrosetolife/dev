@@ -20,6 +20,6 @@ export async function ceb_bible_words_3() {
     });
     let url = string_combine(url_base, href);
     let root = await html_cache_parse(url);
-    html_parse_visit_tag_single;
+    let t = html_parse_visit_tag_single(root, "table");
   });
 }
