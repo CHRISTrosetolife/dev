@@ -26,7 +26,7 @@ export async function ceb_bible_words_4() {
       href,
     });
     let url = string_combine(url_base, href);
-    let root = await html_cache_parse(url);
+    let root_book = await html_cache_parse(url);
     html_parse_visit_class_list;
   });
 }
