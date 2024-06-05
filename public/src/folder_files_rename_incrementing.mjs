@@ -16,9 +16,10 @@ export async function folder_files_rename_incrementing(
   await each_index_async(file_paths, async (file_path, index) => {
     let dirname = path_dirname(file_path);
     let extension = path_extname(file_path);
+    let n = add(starting, index);
     let file_path_new = path_join([
       dirname,
-      string_combine(string_to(add(starting, index)), extension),
+      string_combine(string_to(n), extension),
     ]);
     await file_rename(file_path, file_path_new);
   });
