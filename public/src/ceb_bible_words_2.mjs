@@ -1,3 +1,4 @@
+import { integer_parse } from "./integer_parse.mjs";
 import { list_first_remaining } from "./list_first_remaining.mjs";
 import { string_whitespace_normalize } from "./string_whitespace_normalize.mjs";
 import { string_trim } from "./string_trim.mjs";
@@ -52,6 +53,7 @@ export async function ceb_bible_words_2() {
         data = string_trim(data);
         data = string_whitespace_normalize(data);
         let { first, remaining } = list_first_remaining(data);
+        let verse_number = integer_parse(first);
       }
     });
     error();
