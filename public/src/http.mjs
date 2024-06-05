@@ -20,8 +20,7 @@ export async function http(url) {
     log({
       e,
     });
-    return list_any(["ECONNRESET", "ENOTFOUND"], (i) =>
-      string_includes(string_to(e), i),
-    );
+    let list = ["ECONNRESET", "ENOTFOUND"];
+    return list_any(list, (i) => string_includes(string_to(e), i));
   }
 }
