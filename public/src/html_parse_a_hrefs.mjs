@@ -6,6 +6,7 @@ export function html_parse_a_hrefs(root, condition) {
   return list_adder((la) =>
     html_parse_visit_tag(root, "a", (v) => {
       let { node } = v;
+      let attribs = node;
       let href = html_parse_href(node);
       log({
         href,
