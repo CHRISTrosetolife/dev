@@ -30,9 +30,7 @@ export async function ceb_bible_words_4() {
   await each_async(book_hrefs, async (href_book) => {
     log({
       href_book,
-      p: path_dirname(href_book),
     });
-    return;
     let url = string_combine(url_base, href_book);
     let root_book = await html_cache_parse(url);
     let chapter_elements = html_parse_visit_class_list(root_book, "chap");
@@ -47,6 +45,10 @@ export async function ceb_bible_words_4() {
         path_dirname(href_book),
         href_chapter,
       ]);
+      log({
+        url_chapter,
+      });
+      return;
       let root_chapter = await html_cache_parse(href_chapter);
     });
   });
