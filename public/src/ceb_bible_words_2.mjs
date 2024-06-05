@@ -1,3 +1,4 @@
+import { string_split_empty } from "./string_split_empty.mjs";
 import { list_adder_unique_async } from "./list_adder_unique_async.mjs";
 import { string_symbols } from "./string_symbols.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
@@ -78,7 +79,9 @@ export async function ceb_bible_words_2() {
             "`",
             "|",
           ];
-          tokens = list_map(tokens);
+          tokens = list_map(tokens, (t) => {
+            let s = string_split_empty(t);
+          });
           each(tokens, (t) =>
             each(string_symbols(t), (s) => {
               la(s);
