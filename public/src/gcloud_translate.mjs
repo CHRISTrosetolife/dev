@@ -1,3 +1,4 @@
+import { retry } from "./retry.mjs";
 import { log } from "./log.mjs";
 import { function_run } from "./function_run.mjs";
 import { list_map } from "./list_map.mjs";
@@ -15,15 +16,19 @@ export async function gcloud_translate(
   ("mimeTypes:");
   ("text/plain");
   ("text/html");
-  const translationClient = new TranslationServiceClient();
-  const request = {
+  let translationClient = new TranslationServiceClient();
+  let request = {
     parent: `projects/letjesusbeexalted/locations/global`,
     contents,
     mimeType: "text/plain",
     sourceLanguageCode: sourceLanguageCode,
     targetLanguageCode: targetLanguageCode,
   };
-  const [response] = await translationClient.translateText(request);
+  let [response] = await retry(
+    retry_count,
+    async () => await translationClient.translateText(request),
+    retry_if,
+  );
   let { translations } = response;
   let result = list_map(translations, (t) => t.translatedText);
   return result;
