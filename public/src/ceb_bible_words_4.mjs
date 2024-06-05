@@ -31,5 +31,8 @@ export async function ceb_bible_words_4() {
     let root_book = await html_cache_parse(url);
     let chapter_elements = html_parse_visit_class_list(root_book, "chap");
     let hrefs_chapters = list_map(chapter_elements, html_parse_href);
+    log({
+      href,
+    });
   });
 }
