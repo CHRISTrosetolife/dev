@@ -1,5 +1,4 @@
-import { list_join_empty } from "./list_join_empty.mjs";
-import { string_split_empty } from "./string_split_empty.mjs";
+import { string_exclude } from "./string_exclude.mjs";
 import { list_adder_unique_async } from "./list_adder_unique_async.mjs";
 import { string_symbols } from "./string_symbols.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
@@ -22,8 +21,6 @@ import { list_map } from "./list_map.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { identity } from "./identity.mjs";
-import { list_filter } from "./list_filter.mjs";
-import { list_includes_not } from "./list_includes_not.mjs";
 export async function ceb_bible_words_2() {
   let url_base = string_combine_multiple([
     url_secure_w3(),
@@ -83,11 +80,7 @@ export async function ceb_bible_words_2() {
             "|",
           ];
           tokens = list_map(tokens, (t) => {
-            let split = string_split_empty(t);
-            let filtered = list_filter(split, (s) =>
-              list_includes_not(symbols, s),
-            );
-            return list_join_empty(filtered);
+            return string_exclude(t, symbols);
           });
           each(tokens, (t) =>
             each(string_symbols(t), (s) => {
