@@ -33,6 +33,8 @@ export async function ceb_bible_words_2() {
       log({
         c,
       });
+      if (c.type === "tag") {
+      }
     });
     error();
   });
