@@ -1,13 +1,12 @@
+import { bible_cebulb_chapter } from "./bible_cebulb_chapter.mjs";
 import { assert_message_json } from "./assert_message_json.mjs";
 import { each } from "./each.mjs";
 import { each_object } from "./each_object.mjs";
 import { object_property_get_curry } from "./object_property_get_curry.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { log } from "./log.mjs";
-import { html_parse_visit_class_list } from "./html_parse_visit_class_list.mjs";
 import { bible_engbsb_chapter } from "./bible_engbsb_chapter.mjs";
 import { bible_verses_parse } from "./bible_verses_parse.mjs";
-import { bible_chapter_parsed } from "./bible_chapter_parsed.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { list_adder_unique } from "./list_adder_unique.mjs";
 import { string_replace_multiple } from "./string_replace_multiple.mjs";
@@ -51,8 +50,7 @@ export async function bible_ceb_chapter(chapter_name) {
     list_sort_string(eng, object_property_get_curry("verse_number"));
   }
   let eng_verse_numbers = list_map_property(eng, "verse_number");
-  let parsed_ceb = await bible_chapter_parsed("cebulb", chapter_name);
-  let verses_ceb = html_parse_visit_class_list(parsed_ceb, "p");
+  let verses_ceb = await bible_cebulb_chapter(chapter_name);
   let ceb = bible_verses_parse(verses_ceb);
   let ceb_verse_numbers = list_map_property(ceb, "verse_number");
   let ceb_verse_numbers_difference = list_difference(
