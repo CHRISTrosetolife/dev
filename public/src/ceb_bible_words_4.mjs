@@ -16,7 +16,7 @@ export async function ceb_bible_words_4() {
   let root_bible = await html_cache_parse(url_base);
   let newLocal = "ym-grid linearize-level-2";
   let s = list_single(html_parse_visit_class_list(root_bible, newLocal));
-  return;
+  return s;
   let hrefs = html_parse_a_hrefs(root_bible, string_starts_with_curry("B"));
   await each_async(hrefs, async (href) => {
     log({
