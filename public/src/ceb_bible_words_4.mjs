@@ -42,7 +42,11 @@ export async function ceb_bible_words_4() {
       return string_take(h, i);
     });
     await each_async(hrefs_chapters, async (href_chapter) => {
-      let url_chapter = path_join([]);
+      let url_chapter = path_join([
+        url_base,
+        path_dirname(href_book),
+        href_chapter,
+      ]);
       let root_chapter = await html_cache_parse(href_chapter);
     });
   });
