@@ -25,7 +25,7 @@ export async function ceb_bible_words_2() {
       href,
     });
     let root = await html_cache_parse(href);
-    html_parse_visit_tag_single(root, "body");
+    let body = html_parse_visit_tag_single(root, "body");
   });
   return;
   let mapped = string_count_words(text_split);
