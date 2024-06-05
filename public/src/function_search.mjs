@@ -8,6 +8,6 @@ export async function function_search(query) {
   let matches = list_filter(fn_names, (fn_name) => {
     return function_search_terms_match(fn_name, terms);
   });
-  fn_names = {};
+  let result = {};
   return matches;
 }
