@@ -27,9 +27,7 @@ export async function gcloud_translate(
   };
   let [response] = await retry(
     3,
-    async () => {
-      return await translationClient.translateText(request);
-    },
+    async () => await translationClient.translateText(request),
     retry_if(["UNAVAILABLE", "DEADLINE_EXCEEDED"]),
   );
   let { translations } = response;
