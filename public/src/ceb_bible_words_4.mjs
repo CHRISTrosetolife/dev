@@ -1,3 +1,4 @@
+import { path_dirname } from "./path_dirname.mjs";
 import { string_take } from "./string_take.mjs";
 import { string_index } from "./string_index.mjs";
 import { html_parse_href } from "./html_parse_href.mjs";
@@ -28,6 +29,7 @@ export async function ceb_bible_words_4() {
   await each_async(book_hrefs, async (href_book) => {
     log({
       href_book,
+      p: path_dirname(href_book),
     });
     let url = string_combine(url_base, href_book);
     let root_book = await html_cache_parse(url);
