@@ -35,7 +35,7 @@ export async function bible_ceb_chapter(chapter_name) {
     if (chapter_name === chapter_name_missing) {
       each(verse_numbers, (vn) => {
         list_add(eng, {
-          verse_number: "21",
+          verse_number: vn,
           tokens: [],
         });
       });
