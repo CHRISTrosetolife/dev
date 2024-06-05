@@ -42,10 +42,6 @@ export async function ceb_bible_words_4() {
     await each_async(hrefs_chapters, async (href_chapter) => {
       let url_chapter = path_join([path_dirname(href_book), href_chapter]);
       url_chapter = string_combine(url_base, url_chapter);
-      log({
-        url_chapter,
-      });
-      return;
       let root_chapter = await html_cache_parse(href_chapter);
     });
   });
