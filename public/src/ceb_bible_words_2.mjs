@@ -29,7 +29,7 @@ export async function ceb_bible_words_2() {
     });
     await http_cache(b);
   });
-  return book_hrefs;
+  return;
   let mapped = string_count_words(text_split);
   return mapped;
 }
