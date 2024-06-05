@@ -25,6 +25,7 @@ import { file_read_json } from "./file_read_json.mjs";
 import { assert } from "./assert.mjs";
 import { bible_chapters } from "./bible_chapters.mjs";
 export async function sandbox() {
+  let index = 0;
   await each_async(await bible_books("engbsb"), async (book_name) => {
     let chapters = await bible_chapters("engbsb", book_name);
     await each_async(chapters, async (chapter_name) => {
