@@ -1,3 +1,4 @@
+import { path_join } from "./path_join.mjs";
 import { date_string_iso_file } from "./date_string_iso_file.mjs";
 import { folder_files_copy } from "./folder_files_copy.mjs";
 import { assert_message_json } from "./assert_message_json.mjs";
@@ -43,7 +44,7 @@ export async function app_dev_screenshots(screen_name) {
   await folder_files_copy(
     folder_path,
     file_extension,
-    path_combine([
+    path_join([
       folder_path,
       "..",
       "screenshot_backups",
