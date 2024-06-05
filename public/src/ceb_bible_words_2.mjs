@@ -53,6 +53,7 @@ export async function ceb_bible_words_2() {
               "size",
               "+4",
             );
+            book_name = html_parse_text(chapter_name_element);
             let chapter_name_element = html_parse_visit_attribute_value_single(
               c,
               "size",
