@@ -33,7 +33,7 @@ export async function ceb_bible_words_4() {
     let hrefs_chapters = list_map(chapter_elements, html_parse_href);
     await each_async(hrefs_chapters, async (href_chapter) => {
       log({
-        href_book,
+        href_chapter,
       });
       let root_chapter = await html_cache_parse(href_chapter);
     });
