@@ -33,7 +33,10 @@ export async function gcloud_translate(
       log({
         e,
       });
-      return string_includes(string_to(e), "ECONNRESET");
+      return string_includes(
+        string_to(e),
+        "Name resolution failed for target dns:translate.googleapis.com",
+      );
     },
   );
   let { translations } = response;
