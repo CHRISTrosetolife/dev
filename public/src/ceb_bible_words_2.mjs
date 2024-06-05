@@ -1,3 +1,4 @@
+import { list_join_empty } from "./list_join_empty.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 import { list_adder_unique_async } from "./list_adder_unique_async.mjs";
 import { string_symbols } from "./string_symbols.mjs";
@@ -86,6 +87,7 @@ export async function ceb_bible_words_2() {
             let filtered = list_filter(split, (s) =>
               list_includes_not(symbols, s),
             );
+            return list_join_empty(filtered);
           });
           each(tokens, (t) =>
             each(string_symbols(t), (s) => {
