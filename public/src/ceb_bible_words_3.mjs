@@ -9,5 +9,6 @@ export async function ceb_bible_words_3() {
     "htmlbible.com/sacrednamebiblecom/cebuano/",
   ]);
   let root_bible = await html_cache_parse(url_base);
-  html_parse_a_hrefs(root_bible, (h) => string_starts_with(h, "B"));
+  let prefix = "B";
+  html_parse_a_hrefs(root_bible, (h) => string_starts_with(h, prefix));
 }
