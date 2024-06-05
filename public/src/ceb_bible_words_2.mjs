@@ -31,8 +31,8 @@ export async function ceb_bible_words_2() {
     let body = html_parse_visit_tag_single(root, "body");
     let { children } = body;
     each(children, (c) => {
-      let type = c;
-      if (c.type === "tag") {
+      let { type } = c;
+      if (type === "tag") {
         if (c.name === "center") {
           let { children: children_c } = c;
           let attribute_name = "size";
