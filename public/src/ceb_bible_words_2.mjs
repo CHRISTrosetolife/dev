@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
 import { log } from "./log.mjs";
 import { html_parse_a_hrefs } from "./html_parse_a_hrefs.mjs";
@@ -27,6 +28,7 @@ export async function ceb_bible_words_2() {
     let root = await html_cache_parse(href);
     let body = html_parse_visit_tag_single(root, "body");
     let { children } = body;
+    each(children, (c) => {});
   });
   return;
   let mapped = string_count_words(text_split);
