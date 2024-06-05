@@ -52,7 +52,7 @@ export async function ceb_bible_words_2() {
         let { data } = c;
         data = string_trim(data);
         data = string_whitespace_normalize(data);
-        let { first, remaining } = list_first_remaining(data);
+        let { first, remaining: tokens } = list_first_remaining(data);
         let verse_number = integer_parse(first);
       }
     });
