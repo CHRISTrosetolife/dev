@@ -36,9 +36,9 @@ export async function app_dev_screenshots(screen_name) {
       name,
       file_path,
     }));
+    return parsed;
   });
-  let mapped2 = list_map(mapped);
-  let starting = add_1(number_max_list(mapped2));
+  let starting = add_1(number_max_list(mapped));
   await folder_files_rename_incrementing(folder_path, file_extension, starting);
   await folder_files_copy(
     folder_path,
