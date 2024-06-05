@@ -8,6 +8,7 @@ export function app_dev_screen_outside_move() {
     screen: function outside_move_screen(root) {
       let i = 1;
       app_dev_screen_img(app_dev_screen_outside_move, root, i++);
+      ("if we have multiple functions in the module scope ...");
     },
   };
 }
