@@ -26,7 +26,10 @@ export async function bible_ceb_chapter(chapter_name) {
   });
   let eng = await bible_engbsb_chapter(chapter_name);
   if (chapter_name === "MAT17") {
-    list_add(eng_verse_numbers, "21");
+    list_add(eng, {
+      verse_number: "21",
+      tokens: [],
+    });
     list_sort_string(
       eng_verse_numbers,
       object_property_get_curry("verse_number"),
