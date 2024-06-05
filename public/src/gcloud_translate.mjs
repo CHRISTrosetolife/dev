@@ -30,6 +30,7 @@ export async function gcloud_translate(
     async () => await translationClient.translateText(request),
     retry_if([
       "Name resolution failed for target dns:translate.googleapis.com",
+      "DEADLINE_EXCEEDED",
     ]),
   );
   let { translations } = response;
