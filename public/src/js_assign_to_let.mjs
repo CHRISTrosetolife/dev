@@ -1,4 +1,3 @@
-import { json_to } from "./json_to.mjs";
 import { add_1 } from "./add_1.mjs";
 import { js_function_types_is } from "./js_function_types_is.mjs";
 import { list_includes_not } from "./list_includes_not.mjs";
@@ -15,7 +14,6 @@ import { js_code_declare_assign } from "./js_code_declare_assign.mjs";
 import { list_single } from "./list_single.mjs";
 import { list_after } from "./list_after.mjs";
 import { list_index } from "./list_index.mjs";
-import { log } from "./log.mjs";
 export function js_assign_to_let(ast) {
   let ess = js_node_type_visitor(ast, "ExpressionStatement");
   each(ess, (v) => {
@@ -60,12 +58,7 @@ export function js_assign_to_let(ast) {
                 } else {
                   if (equal(m_type, "ObjectPattern")) {
                     let { properties } = m;
-                    log(
-                      json_to({
-                        properties,
-                      }),
-                    );
-                    let keys = list_map_property(properties, "key");
+                    let keys = list_map_property(properties, "value");
                     identifiers_add(keys);
                   }
                 }
