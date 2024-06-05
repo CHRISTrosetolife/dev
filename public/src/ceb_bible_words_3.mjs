@@ -1,3 +1,4 @@
+import { each_index_async } from "./each_index_async.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { list_second } from "./list_second.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
@@ -6,7 +7,6 @@ import { list_length_2 } from "./list_length_2.mjs";
 import { assert } from "./assert.mjs";
 import { html_parse_visit_tag_list } from "./html_parse_visit_tag_list.mjs";
 import { log } from "./log.mjs";
-import { each_async } from "./each_async.mjs";
 import { string_starts_with_curry } from "./string_starts_with_curry.mjs";
 import { html_cache_parse } from "./html_cache_parse.mjs";
 import { html_parse_a_hrefs } from "./html_parse_a_hrefs.mjs";
@@ -21,7 +21,7 @@ export async function ceb_bible_words_3() {
   ]);
   let root_bible = await html_cache_parse(url_base);
   let hrefs = html_parse_a_hrefs(root_bible, string_starts_with_curry("B"));
-  await each_async(hrefs, async (href) => {
+  await each_index_async(hrefs, async (href) => {
     log({
       href,
     });
