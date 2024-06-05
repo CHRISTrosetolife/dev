@@ -15,5 +15,5 @@ export async function function_search(query) {
   each(matches, (m) => {
     object_property_set(result, m, function_name_to_path(m));
   });
-  return matches;
+  return result;
 }
