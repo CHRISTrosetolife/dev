@@ -1,3 +1,4 @@
+import { error } from "./error.mjs";
 import { each } from "./each.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
 import { log } from "./log.mjs";
@@ -33,6 +34,7 @@ export async function ceb_bible_words_2() {
         c,
       });
     });
+    error();
   });
   return;
   let mapped = string_count_words(text_split);
