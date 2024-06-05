@@ -1,3 +1,4 @@
+import { html_parse_href } from "./html_parse_href.mjs";
 import { html_parse_visit_class_list } from "./html_parse_visit_class_list.mjs";
 import { html_parse_visit_class_single } from "./html_parse_visit_class_single.mjs";
 import { log } from "./log.mjs";
@@ -9,6 +10,7 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { tautology } from "./tautology.mjs";
 import { list_remove } from "./list_remove.mjs";
+import { list_map } from "./list_map.mjs";
 export async function ceb_bible_words_4() {
   let url_base = string_combine_multiple([
     url_secure_w3(),
@@ -28,5 +30,6 @@ export async function ceb_bible_words_4() {
     let url = string_combine(url_base, href);
     let root_book = await html_cache_parse(url);
     let chapter_elements = html_parse_visit_class_list(root_book, "chap");
+    list_map(chapter_elements, html_parse_href);
   });
 }
