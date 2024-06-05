@@ -1,4 +1,3 @@
-import { list_any } from "./list_any.mjs";
 import { retry } from "./retry.mjs";
 import { string_to } from "./string_to.mjs";
 import { string_includes } from "./string_includes.mjs";
@@ -20,7 +19,8 @@ export async function http(url) {
     log({
       e,
     });
-    list_any(["ECONNRESET", "ENOTFOUND"]);
-    return string_includes(string_to(e), "ECONNRESET");
+    returnlist_any(["ECONNRESET", "ENOTFOUND"], (i) =>
+      string_includes(string_to(e), i),
+    );
   }
 }
