@@ -1,19 +1,10 @@
-import { list_any } from "./list_any.mjs";
+import { retry_if } from "./retry_if.mjs";
 import { retry } from "./retry.mjs";
-import { string_to } from "./string_to.mjs";
-import { string_includes } from "./string_includes.mjs";
 import fetch from "node-fetch";
 import { sleep } from "./sleep.mjs";
 import { integer_random } from "./integer_random.mjs";
-import { log } from "./log.mjs";
 export async function http(url) {
-  let list = ["ECONNRESET", "ENOTFOUND"];
-  let response = await retry(3, lambda, function retry_if(e) {
-    log({
-      e,
-    });
-    return list_any(list, (i) => string_includes(string_to(e), i));
-  });
+  let response = await retry(3, lambda, retry_if(["ECONNRESET", "ENOTFOUND"]));
   let body = await response.text();
   return body;
   async function lambda() {
