@@ -12,7 +12,6 @@ export function app_dev_screen_outside_move() {
       app_dev_screen_img(app_dev_screen_outside_move, root, i++);
       app_dev_screen_img(app_dev_screen_outside_move, root, i++);
       app_dev_screen_img(app_dev_screen_outside_move, root, i++);
-      app_dev_screen_img(app_dev_screen_outside_move, root, i++);
       ("if we have multiple functions in the module scope ...");
     },
   };
