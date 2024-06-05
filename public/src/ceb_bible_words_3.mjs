@@ -1,5 +1,4 @@
-import { html_parse_text } from "./html_parse_text.mjs";
-import { list_map } from "./list_map.mjs";
+import { list_length } from "./list_length.mjs";
 import { html_parse_visit_tag_list } from "./html_parse_visit_tag_list.mjs";
 import { log } from "./log.mjs";
 import { each_async } from "./each_async.mjs";
@@ -23,6 +22,6 @@ export async function ceb_bible_words_3() {
     let url = string_combine(url_base, href);
     let root = await html_cache_parse(url);
     let t = html_parse_visit_tag_list(root, "table");
-    log(list_map(t, html_parse_text));
+    log(list_length(t));
   });
 }
