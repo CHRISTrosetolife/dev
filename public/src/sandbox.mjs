@@ -32,6 +32,10 @@ export async function sandbox() {
     await each_async(chapters, async (chapter_name) => {
       let a = await bible_ceb_3_chapter(index);
       let b = await bible_cebulb_chapter(chapter_name);
+      log({
+        a,
+        b,
+      });
       index++;
     });
   });
