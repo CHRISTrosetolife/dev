@@ -38,9 +38,12 @@ export async function ceb_bible_words_2() {
       if (c.type === "tag") {
         if (c.name === "center") {
           let { children: children_c } = c;
-          list_single(
-            html_parse_visit_attribute_value_list(children_c, "size", "+2"),
+          let l = html_parse_visit_attribute_value_list(
+            children_c,
+            "size",
+            "+2",
           );
+          list_single(l);
         }
       }
     });
