@@ -1,3 +1,4 @@
+import { bible_ceb_3_chapter } from "./bible_ceb_3_chapter.mjs";
 import { bible_cebulb_chapter } from "./bible_cebulb_chapter.mjs";
 import { bible_books } from "./bible_books.mjs";
 import { file_overwrite_json } from "./file_overwrite_json.mjs";
@@ -29,7 +30,8 @@ export async function sandbox() {
   await each_async(await bible_books("engbsb"), async (book_name) => {
     let chapters = await bible_chapters("engbsb", book_name);
     await each_async(chapters, async (chapter_name) => {
-      await bible_cebulb_chapter(chapter_name);
+      let a = await bible_ceb_3_chapter(index);
+      let b = await bible_cebulb_chapter(chapter_name);
       index++;
     });
   });
