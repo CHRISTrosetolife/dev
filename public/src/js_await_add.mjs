@@ -1,5 +1,4 @@
 import { undefined_not_is } from "./undefined_not_is.mjs";
-import { log } from "./log.mjs";
 import { js_function_types_is } from "./js_function_types_is.mjs";
 import { js_parent_replace } from "./js_parent_replace.mjs";
 import { data_functions } from "./data_functions.mjs";
@@ -30,9 +29,6 @@ export async function js_await_add(ast) {
             js_parent_replace(v, node, parsed);
             let { stack } = v;
             let found = false;
-            log({
-              stack,
-            });
             each_reverse(stack, (s) => {
               if (found) {
                 return;
