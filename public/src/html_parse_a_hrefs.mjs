@@ -1,3 +1,4 @@
+import { html_parse_text } from "./html_parse_text.mjs";
 import { log } from "./log.mjs";
 import { html_parse_href } from "./html_parse_href.mjs";
 import { html_parse_visit_tag } from "./html_parse_visit_tag.mjs";
@@ -9,6 +10,7 @@ export function html_parse_a_hrefs(root, condition) {
       let href = html_parse_href(node);
       log({
         href,
+        t: html_parse_text(node),
       });
       if (condition(href)) {
         la(href);
