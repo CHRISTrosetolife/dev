@@ -75,6 +75,9 @@ export async function ceb_bible_words_2() {
       });
     });
     list_sort_string(symbols_unique, identity);
+    log({
+      symbols_unique,
+    });
     error();
   });
   return;
