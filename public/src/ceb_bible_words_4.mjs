@@ -34,6 +34,7 @@ export async function ceb_bible_words_4() {
     let hrefs_chapters = list_map(chapter_elements, html_parse_href);
     list_map(hrefs_chapters, (h) => {
       let i = string_index(h, "#");
+      return string_takae(h, i);
     });
     await each_async(hrefs_chapters, async (href_chapter) => {
       log({
