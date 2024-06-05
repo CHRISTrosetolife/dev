@@ -46,7 +46,7 @@ export async function ceb_bible_words_2() {
           );
           let last = list_last(children_c);
           log({
-            children_c,
+            a: last.attribs,
           });
           list_single(l);
         }
