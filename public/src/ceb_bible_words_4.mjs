@@ -1,3 +1,4 @@
+import { bible_ceb_4_hrefs_books } from "./bible_ceb_4_hrefs_books.mjs";
 import { bible_ceb_4_url_base } from "./bible_ceb_4_url_base.mjs";
 import { each_index_async } from "./each_index_async.mjs";
 import { path_join } from "./path_join.mjs";
@@ -6,24 +7,14 @@ import { string_take } from "./string_take.mjs";
 import { string_index } from "./string_index.mjs";
 import { html_parse_href } from "./html_parse_href.mjs";
 import { html_parse_visit_class_list } from "./html_parse_visit_class_list.mjs";
-import { html_parse_visit_class_single } from "./html_parse_visit_class_single.mjs";
 import { log } from "./log.mjs";
 import { each_async } from "./each_async.mjs";
 import { html_cache_parse } from "./html_cache_parse.mjs";
-import { html_parse_a_hrefs } from "./html_parse_a_hrefs.mjs";
 import { string_combine } from "./string_combine.mjs";
-import { tautology } from "./tautology.mjs";
-import { list_remove } from "./list_remove.mjs";
 import { list_map } from "./list_map.mjs";
 export async function ceb_bible_words_4() {
   let url_base = bible_ceb_4_url_base();
-  let root_bible = await html_cache_parse(url_base);
-  let s = html_parse_visit_class_single(
-    root_bible,
-    "ym-grid linearize-level-2",
-  );
-  let book_hrefs = html_parse_a_hrefs(s, tautology);
-  list_remove(book_hrefs, "index_en.htm#1");
+  let book_hrefs = await bible_ceb_4_hrefs_books(url_base);
   await each_index_async(book_hrefs, async (href_book, book_index) => {
     log({
       href_book,
