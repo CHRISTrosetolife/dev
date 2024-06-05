@@ -16,11 +16,11 @@ export async function http(url) {
     let response = await fetch(url);
     return response;
   }
+  let list = ["ECONNRESET", "ENOTFOUND"];
   function retry_if(e) {
     log({
       e,
     });
-    let list = ["ECONNRESET", "ENOTFOUND"];
     return list_any(list, (i) => string_includes(string_to(e), i));
   }
 }
