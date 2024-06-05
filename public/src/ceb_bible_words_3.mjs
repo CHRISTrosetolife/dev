@@ -10,6 +10,7 @@ import { html_parse_a_hrefs } from "./html_parse_a_hrefs.mjs";
 import { url_secure_w3 } from "./url_secure_w3.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_combine } from "./string_combine.mjs";
+import { list_map } from "./list_map.mjs";
 export async function ceb_bible_words_3() {
   let url_base = string_combine_multiple([
     url_secure_w3(),
@@ -27,5 +28,6 @@ export async function ceb_bible_words_3() {
     assert(list_length_2, [tables]);
     let first = list_first(tables);
     let trs = html_parse_visit_tag_list(first, "tr");
+    list_map(trs, (tr) => {});
   });
 }
