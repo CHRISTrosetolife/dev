@@ -1,5 +1,6 @@
 export function function_aliases() {
   return {
+    d: "data_update",
     al: "function_aliases_generate",
     a: "function_auto",
     c: "function_copy",
