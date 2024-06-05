@@ -67,10 +67,12 @@ export async function ceb_bible_words_2() {
               la(s);
             }),
           );
-          log({
-            verse_number,
-            tokens,
-          });
+          if (0) {
+            log({
+              verse_number,
+              tokens,
+            });
+          }
         }
       });
     });
