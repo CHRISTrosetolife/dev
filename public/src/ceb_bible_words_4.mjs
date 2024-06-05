@@ -1,3 +1,4 @@
+import { html_parse_visit_class_list } from "./html_parse_visit_class_list.mjs";
 import { log } from "./log.mjs";
 import { each_async } from "./each_async.mjs";
 import { string_starts_with_curry } from "./string_starts_with_curry.mjs";
@@ -12,7 +13,7 @@ export async function ceb_bible_words_4() {
     "wordproject.org/bibles/ceb/",
   ]);
   let root_bible = await html_cache_parse(url_base);
-  ("ym-grid linearize-level-2");
+  html_parse_visit_class_list("ym-grid linearize-level-2");
   return;
   let hrefs = html_parse_a_hrefs(root_bible, string_starts_with_curry("B"));
   await each_async(hrefs, async (href) => {
