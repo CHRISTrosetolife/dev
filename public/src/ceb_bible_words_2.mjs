@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { http_cache } from "./http_cache.mjs";
 import { html_parse_a_hrefs } from "./html_parse_a_hrefs.mjs";
 import { html_cache_parse } from "./html_cache_parse.mjs";
@@ -23,6 +24,9 @@ export async function ceb_bible_words_2() {
     await html_cache_parse(href);
   });
   await each_async(book_hrefs, async (b) => {
+    log({
+      b,
+    });
     await http_cache(b);
   });
   return book_hrefs;
