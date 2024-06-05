@@ -1,3 +1,4 @@
+import { number_max } from "./number_max.mjs";
 import { bible_ceb_3_chapter } from "./bible_ceb_3_chapter.mjs";
 import { bible_cebulb_chapter } from "./bible_cebulb_chapter.mjs";
 import { bible_books } from "./bible_books.mjs";
@@ -25,6 +26,7 @@ import { list_add } from "./list_add.mjs";
 import { file_read_json } from "./file_read_json.mjs";
 import { assert } from "./assert.mjs";
 import { bible_chapters } from "./bible_chapters.mjs";
+import { each_range } from "./each_range.mjs";
 export async function sandbox() {
   let index = 0;
   await each_async(await bible_books("engbsb"), async (book_name) => {
@@ -32,10 +34,7 @@ export async function sandbox() {
     await each_async(chapters, async (chapter_name) => {
       let a = await bible_ceb_3_chapter(index);
       let b = await bible_cebulb_chapter(chapter_name);
-      log({
-        a,
-        b,
-      });
+      each_range(number_max);
       index++;
     });
   });
