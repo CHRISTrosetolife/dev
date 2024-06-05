@@ -12,10 +12,13 @@ import { log } from "./log.mjs";
 import { html_cache_parse } from "./html_cache_parse.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { list_map } from "./list_map.mjs";
+import { list_get } from "./list_get.mjs";
 export async function ceb_bible_words_3() {
   let url_base = bible_ceb_3_url_base();
   let hrefs = await bible_ceb_3_hrefs();
-  await each_index_async(hrefs, async (href, index) => {
+  await each_index_async(hrefs, async (href_, index) => {
+    let hrefs = await bible_ceb_3_hrefs();
+    let href = list_get(hrefs, index);
     log({
       href,
     });
