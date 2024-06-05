@@ -14,6 +14,7 @@ export async function folder_files_rename_incrementing(
   file_extension,
   starting,
 ) {
+  assert(number_is, [starting]);
   let file_paths = await folder_read(input_directory, file_extension);
   await each_index_async(file_paths, async (file_path, index) => {
     let dirname = path_dirname(file_path);
