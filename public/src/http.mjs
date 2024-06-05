@@ -8,6 +8,7 @@ import { integer_random } from "./integer_random.mjs";
 import { log } from "./log.mjs";
 export async function http(url) {
   let retry_count = 3;
+  let list = ["ECONNRESET", "ENOTFOUND"];
   let response = await retry(retry_count, lambda, function retry_if(e) {
     log({
       e,
@@ -21,5 +22,4 @@ export async function http(url) {
     let response = await fetch(url);
     return response;
   }
-  let list = ["ECONNRESET", "ENOTFOUND"];
 }
