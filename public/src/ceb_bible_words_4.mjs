@@ -18,7 +18,6 @@ export async function ceb_bible_words_4() {
   let s = html_parse_visit_class_single(root_bible, newLocal);
   let hrefs = html_parse_a_hrefs(s, tautology);
   list_remove(hrefs, "index_en.htm#1");
-  return hrefs;
   await each_async(hrefs, async (href) => {
     log({
       href,
