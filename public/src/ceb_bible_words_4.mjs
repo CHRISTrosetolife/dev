@@ -1,3 +1,4 @@
+import { list_get } from "./list_get.mjs";
 import { bible_ceb_4_hrefs_books } from "./bible_ceb_4_hrefs_books.mjs";
 import { bible_ceb_4_url_base } from "./bible_ceb_4_url_base.mjs";
 import { each_index_async } from "./each_index_async.mjs";
@@ -16,6 +17,8 @@ export async function ceb_bible_words_4() {
   let url_base = bible_ceb_4_url_base();
   let book_hrefs = await bible_ceb_4_hrefs_books(url_base);
   await each_index_async(book_hrefs, async (href_book, book_index) => {
+    let book_hrefs = await bible_ceb_4_hrefs_books(url_base);
+    list_get(book_hrefs, book_index);
     log({
       href_book,
     });
