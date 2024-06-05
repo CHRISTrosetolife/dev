@@ -27,6 +27,7 @@ import { file_read_json } from "./file_read_json.mjs";
 import { assert } from "./assert.mjs";
 import { bible_chapters } from "./bible_chapters.mjs";
 import { each_range } from "./each_range.mjs";
+import { list_length } from "./list_length.mjs";
 export async function sandbox() {
   let index = 0;
   await each_async(await bible_books("engbsb"), async (book_name) => {
@@ -34,7 +35,7 @@ export async function sandbox() {
     await each_async(chapters, async (chapter_name) => {
       let a = await bible_ceb_3_chapter(index);
       let b = await bible_cebulb_chapter(chapter_name);
-      each_range(number_max);
+      each_range(number_max(list_length(a), list_length(b)));
       index++;
     });
   });
