@@ -28,7 +28,9 @@ export async function app_dev_screenshots(screen_name) {
   ]);
   let target_path = string_combine_multiple([".\\", prefix]);
   let target_files = await folder_read(target_path, file_extension);
-  let mapped = list_map(target_files, path_parse_name);
+  let mapped = list_map(target_files, (file_path) => {
+    let name = path_parse_name(file_path);
+  });
   let mapped2 = list_map(mapped, integer_parse);
   each(mapped2, (m) =>
     assert_message(number_is, [m], () =>
