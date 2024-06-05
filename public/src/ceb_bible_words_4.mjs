@@ -9,7 +9,7 @@ import { string_combine } from "./string_combine.mjs";
 export async function ceb_bible_words_4() {
   let url_base = string_combine_multiple([
     url_secure_w3(),
-    "htmlbible.com/sacrednamebiblecom/cebuano/",
+    "wordproject.org/bibles/ceb/",
   ]);
   let root_bible = await html_cache_parse(url_base);
   let hrefs = html_parse_a_hrefs(root_bible, string_starts_with_curry("B"));
