@@ -1,3 +1,4 @@
+import { list_second } from "./list_second.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_length_2 } from "./list_length_2.mjs";
@@ -33,6 +34,7 @@ export async function ceb_bible_words_3() {
       let tds = html_parse_visit_tag_list(tr, "td");
       assert(list_length_2, [tds]);
       let verse_number = html_parse_text(list_first(tds));
+      let text = html_parse_text(list_second(tds));
     });
   });
 }
