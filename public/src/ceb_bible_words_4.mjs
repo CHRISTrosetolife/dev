@@ -21,18 +21,16 @@ export async function ceb_bible_words_4() {
     root_bible,
     "ym-grid linearize-level-2",
   );
-  let hrefs = html_parse_a_hrefs(s, tautology);
-  list_remove(hrefs, "index_en.htm#1");
-  await each_async(hrefs, async (href) => {
+  let book_hrefs = html_parse_a_hrefs(s, tautology);
+  list_remove(book_hrefs, "index_en.htm#1");
+  await each_async(book_hrefs, async (href_book) => {
     log({
-      href,
+      href_book,
     });
-    let url = string_combine(url_base, href);
+    let url = string_combine(url_base, href_book);
     let root_book = await html_cache_parse(url);
     let chapter_elements = html_parse_visit_class_list(root_book, "chap");
     let hrefs_chapters = list_map(chapter_elements, html_parse_href);
-    log({
-      href,
-    });
+    await each_async(hrefs_chapters, async (hrefs_chapter) => {});
   });
 }
