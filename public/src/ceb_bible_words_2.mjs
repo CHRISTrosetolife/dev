@@ -79,9 +79,7 @@ export async function ceb_bible_words_2() {
             "`",
             "|",
           ];
-          tokens = list_map(tokens, (t) => {
-            return string_exclude(t, symbols);
-          });
+          tokens = list_map(tokens, (t) => string_exclude(t, symbols));
           each(tokens, (t) =>
             each(string_symbols(t), (s) => {
               la(s);
