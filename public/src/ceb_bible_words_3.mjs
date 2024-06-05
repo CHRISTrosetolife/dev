@@ -1,3 +1,4 @@
+import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
 import { log } from "./log.mjs";
 import { each_async } from "./each_async.mjs";
 import { string_starts_with_curry } from "./string_starts_with_curry.mjs";
@@ -19,5 +20,6 @@ export async function ceb_bible_words_3() {
     });
     let url = string_combine(url_base, href);
     let root = await html_cache_parse(url);
+    html_parse_visit_tag_single;
   });
 }
