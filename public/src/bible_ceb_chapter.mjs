@@ -33,10 +33,11 @@ export async function bible_ceb_chapter(chapter_name) {
   let missing_is = false;
   each_object(missing, (chapter_name_missing, verse_numbers) => {
     if (chapter_name === chapter_name_missing) {
-      each(verse_numbers, (vn) => {});
-      list_add(eng, {
-        verse_number: "21",
-        tokens: [],
+      each(verse_numbers, (vn) => {
+        list_add(eng, {
+          verse_number: "21",
+          tokens: [],
+        });
       });
       missing_is = true;
     }
