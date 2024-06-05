@@ -83,8 +83,8 @@ export async function ceb_bible_words_2() {
           ];
           tokens = list_map(tokens, (t) => {
             let split = string_split_empty(t);
-            let filtered = list_filter(split, (u) =>
-              list_includes_not(symbols, u),
+            let filtered = list_filter(split, (s) =>
+              list_includes_not(symbols, s),
             );
           });
           each(tokens, (t) =>
