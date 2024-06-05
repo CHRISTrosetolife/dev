@@ -15,8 +15,10 @@ export async function ceb_bible_words_4() {
     "wordproject.org/bibles/ceb/",
   ]);
   let root_bible = await html_cache_parse(url_base);
-  let newLocal = "ym-grid linearize-level-2";
-  let s = html_parse_visit_class_single(root_bible, newLocal);
+  let s = html_parse_visit_class_single(
+    root_bible,
+    "ym-grid linearize-level-2",
+  );
   let hrefs = html_parse_a_hrefs(s, tautology);
   list_remove(hrefs, "index_en.htm#1");
   await each_async(hrefs, async (href) => {
