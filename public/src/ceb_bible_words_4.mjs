@@ -1,3 +1,4 @@
+import { list_single } from "./list_single.mjs";
 import { html_parse_visit_class_list } from "./html_parse_visit_class_list.mjs";
 import { log } from "./log.mjs";
 import { each_async } from "./each_async.mjs";
@@ -13,7 +14,9 @@ export async function ceb_bible_words_4() {
     "wordproject.org/bibles/ceb/",
   ]);
   let root_bible = await html_cache_parse(url_base);
-  html_parse_visit_class_list(root_bible, "ym-grid linearize-level-2");
+  list_single(
+    html_parse_visit_class_list(root_bible, "ym-grid linearize-level-2"),
+  );
   return;
   let hrefs = html_parse_a_hrefs(root_bible, string_starts_with_curry("B"));
   await each_async(hrefs, async (href) => {
