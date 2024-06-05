@@ -7,7 +7,7 @@ export function retry_if(list) {
     log({
       e,
     });
-      const s = string_to(e);//
+      const s = string_to(e);
     return list_any(list, (i) => string_includes(s, i));
   };
 }
