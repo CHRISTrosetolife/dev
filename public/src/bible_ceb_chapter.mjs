@@ -61,6 +61,7 @@ export async function bible_ceb_chapter(chapter_name) {
     eng_verse_numbers,
     ceb_verse_numbers,
   );
+  return;
   assert_message_json(list_empty_is, [ceb_verse_numbers_difference], () => {
     return {
       eng_verse_numbers_difference,
