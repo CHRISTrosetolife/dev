@@ -1,3 +1,4 @@
+import { function_new } from "./function_new.mjs";
 import { data_update } from "./data_update.mjs";
 import { watch } from "./watch.mjs";
 import { sandbox } from "./sandbox.mjs";
@@ -26,6 +27,7 @@ export async function function_aliases_generate() {
   alias_add(function_aliases_generate, ["al"]);
   alias_add(function_auto, ["a"]);
   alias_add(function_copy, ["c"]);
+  alias_add(function_new, ["n"]);
   alias_add(function_open, ["o"]);
   alias_add(function_search, ["s"]);
   alias_add(sandbox, ["sb"]);
