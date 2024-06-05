@@ -21,7 +21,7 @@ export async function ceb_bible_words_3() {
   ]);
   let root_bible = await html_cache_parse(url_base);
   let hrefs = html_parse_a_hrefs(root_bible, string_starts_with_curry("B"));
-  await each_index_async(hrefs, async (href) => {
+  await each_index_async(hrefs, async (href, index) => {
     log({
       href,
     });
