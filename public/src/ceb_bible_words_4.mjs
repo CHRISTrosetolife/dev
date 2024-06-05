@@ -28,7 +28,7 @@ export async function ceb_bible_words_4() {
   );
   let book_hrefs = html_parse_a_hrefs(s, tautology);
   list_remove(book_hrefs, "index_en.htm#1");
-  await each_index_async(book_hrefs, async (href_book) => {
+  await each_index_async(book_hrefs, async (href_book, book_index) => {
     log({
       href_book,
     });
