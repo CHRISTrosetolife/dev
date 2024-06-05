@@ -29,7 +29,7 @@ export async function bible_ceb_chapter(chapter_name) {
   let eng = await bible_engbsb_chapter(chapter_name);
   let missing = {
     MAT17: ["21"],
-    MAT18: ["11"],
+    MAT18: ["11"],MRK07:["16"]
   };
   let missing_is = false;
   each_object(missing, (chapter_name_missing, verse_numbers) => {
