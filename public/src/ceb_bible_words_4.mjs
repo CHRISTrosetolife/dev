@@ -1,3 +1,4 @@
+import { each_index_async } from "./each_index_async.mjs";
 import { path_join } from "./path_join.mjs";
 import { path_dirname } from "./path_dirname.mjs";
 import { string_take } from "./string_take.mjs";
@@ -27,7 +28,7 @@ export async function ceb_bible_words_4() {
   );
   let book_hrefs = html_parse_a_hrefs(s, tautology);
   list_remove(book_hrefs, "index_en.htm#1");
-  await each_async(book_hrefs, async (href_book) => {
+  await each_index_async(book_hrefs, async (href_book) => {
     log({
       href_book,
     });
