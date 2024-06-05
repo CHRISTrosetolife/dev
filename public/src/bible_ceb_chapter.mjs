@@ -31,6 +31,7 @@ export async function bible_ceb_chapter(chapter_name) {
     MAT17: ["21"],
     MAT18: ["11"],
     MRK07: ["16"],
+    MRK09: ["44", "46"],
   };
   let missing_is = false;
   each_object(missing, (chapter_name_missing, verse_numbers) => {
