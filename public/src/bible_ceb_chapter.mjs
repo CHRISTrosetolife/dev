@@ -25,6 +25,7 @@ export async function bible_ceb_chapter(chapter_name) {
     chapter_name,
   });
   let eng = await bible_engbsb_chapter(chapter_name);
+  let missing = {};
   if (chapter_name === "MAT17") {
     list_add(eng, {
       verse_number: "21",
