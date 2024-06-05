@@ -1,3 +1,5 @@
+import { string_to } from "./string_to.mjs";
+import { string_includes } from "./string_includes.mjs";
 import { retry } from "./retry.mjs";
 import { log } from "./log.mjs";
 import { function_run } from "./function_run.mjs";
@@ -27,7 +29,12 @@ export async function gcloud_translate(
   let [response] = await retry(
     retry_count,
     async () => await translationClient.translateText(request),
-    retry_if,
+    function retry_if(e) {
+      log({
+        e,
+      });
+      return string_includes(string_to(e), "ECONNRESET");
+    },
   );
   let { translations } = response;
   let result = list_map(translations, (t) => t.translatedText);
