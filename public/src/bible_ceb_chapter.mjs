@@ -30,10 +30,7 @@ export async function bible_ceb_chapter(chapter_name) {
       verse_number: "21",
       tokens: [],
     });
-    list_sort_string(
-      eng_verse_numbers,
-      object_property_get_curry("verse_number"),
-    );
+    list_sort_string(eng, object_property_get_curry("verse_number"));
   }
   let eng_verse_numbers = list_map_property(eng, "verse_number");
   let parsed_ceb = await bible_chapter_parsed("cebulb", chapter_name);
