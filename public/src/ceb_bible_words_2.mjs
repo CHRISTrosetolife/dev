@@ -1,3 +1,4 @@
+import { html_parse_text } from "./html_parse_text.mjs";
 import { string_exclude } from "./string_exclude.mjs";
 import { list_adder_unique_async } from "./list_adder_unique_async.mjs";
 import { string_symbols } from "./string_symbols.mjs";
@@ -21,6 +22,7 @@ import { list_map } from "./list_map.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { identity } from "./identity.mjs";
+import { string_prefix_without } from "./string_prefix_without.mjs";
 export async function ceb_bible_words_2() {
   let url_base = string_combine_multiple([
     url_secure_w3(),
@@ -49,6 +51,7 @@ export async function ceb_bible_words_2() {
               "size",
               "+2",
             );
+            string_prefix_without(html_parse_text(chapter_name_element));
           }
         }
         if (type === "text") {
