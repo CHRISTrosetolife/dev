@@ -1,3 +1,4 @@
+import { assert } from "./assert.mjs";
 import { file_open } from "./file_open.mjs";
 import { folder_parent_exists_ensure } from "./folder_parent_exists_ensure.mjs";
 import { import_node } from "./import_node.mjs";
@@ -7,7 +8,9 @@ import { global_get } from "./global_get.mjs";
 import { web_is } from "./web_is.mjs";
 import { file_exists } from "./file_exists.mjs";
 import { assert_not_async } from "./assert_not_async.mjs";
+import { undefined_not_is } from "./undefined_not_is.mjs";
 export async function file_copy_generic(file_name_to, file_name_from, open) {
+  assert(undefined_not_is, [file_name_to]);
   await assert_not_async(file_exists, [file_name_to]);
   if (web_is()) {
     let { files } = global_get();
