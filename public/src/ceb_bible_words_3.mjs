@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { each_async } from "./each_async.mjs";
 import { string_starts_with_curry } from "./string_starts_with_curry.mjs";
 import { html_cache_parse } from "./html_cache_parse.mjs";
@@ -13,6 +14,9 @@ export async function ceb_bible_words_3() {
   let root_bible = await html_cache_parse(url_base);
   let hrefs = html_parse_a_hrefs(root_bible, string_starts_with_curry("B"));
   await each_async(hrefs, async (href) => {
+    log({
+      href,
+    });
     let url = string_combine(url_base, href);
     await html_cache_parse(url);
   });
