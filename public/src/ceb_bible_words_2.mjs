@@ -44,7 +44,11 @@ export async function ceb_bible_words_2() {
         let { type } = c;
         if (type === "tag") {
           if (c.name === "center") {
-            let l = html_parse_visit_attribute_value_single(c, "size", "+2");
+            let chapter_name_element = html_parse_visit_attribute_value_single(
+              c,
+              "size",
+              "+2",
+            );
           }
         }
         if (type === "text") {
