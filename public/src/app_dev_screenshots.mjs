@@ -1,5 +1,4 @@
 import { number_max_list_or } from "./number_max_list_or.mjs";
-import { log } from "./log.mjs";
 import { path_join } from "./path_join.mjs";
 import { date_string_iso_file } from "./date_string_iso_file.mjs";
 import { folder_files_copy } from "./folder_files_copy.mjs";
@@ -39,9 +38,6 @@ export async function app_dev_screenshots(screen_name) {
       file_path,
     }));
     return parsed;
-  });
-  log({
-    mapped,
   });
   let starting = add_1(number_max_list_or(mapped, 0));
   await folder_files_rename_incrementing(folder_path, file_extension, starting);
