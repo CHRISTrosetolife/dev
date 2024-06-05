@@ -1,9 +1,9 @@
-import { add_1 } from "./add_1.mjs";
-export async function retry(retry_count, lambda, retry_if_lambda) {
-  let retries = add_1(retry_count);
+export async function retry(retries, lambda, retry_if_lambda) {
   let result;
   while (retries >= 1) {
     retries--;
+    if (retries <= 0) {
+    }
     try {
       result = await lambda();
       break;
