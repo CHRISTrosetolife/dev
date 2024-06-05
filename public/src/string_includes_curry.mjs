@@ -8,6 +8,7 @@ export function string_includes_curry(function_name) {
     log({
       term,
     });
-    return string_includes(function_name, term);
+    let result = string_includes(function_name, term);
+    return result;
   };
 }
