@@ -17,12 +17,16 @@ import { json_to } from "./json_to.mjs";
 import { js_code_return } from "./js_code_return.mjs";
 import { list_difference } from "./list_difference.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
+import { list_add } from "./list_add.mjs";
 export async function bible_ceb_chapter(chapter_name) {
   log({
     chapter_name,
   });
   let eng = await bible_engbsb_chapter(chapter_name);
   let eng_verse_numbers = list_map_property(eng, "verse_number");
+  if (chapter_name === "MAT17") {
+    list_add(eng_verse_numbers, "21");
+  }
   let parsed_ceb = await bible_chapter_parsed("cebulb", chapter_name);
   let verses_ceb = html_parse_visit_class_list(parsed_ceb, "p");
   let ceb = bible_verses_parse(verses_ceb);
