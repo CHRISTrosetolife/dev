@@ -1,5 +1,4 @@
-import { json_to } from "./json_to.mjs";
-import { assert_message } from "./assert_message.mjs";
+import { assert_message_json } from "./assert_message_json.mjs";
 import { number_is } from "./number_is.mjs";
 import { app_dev_screenshots_extension } from "./app_dev_screenshots_extension.mjs";
 import { number_max_list } from "./number_max_list.mjs";
@@ -30,13 +29,11 @@ export async function app_dev_screenshots(screen_name) {
   let mapped = list_map(target_files, (file_path) => {
     let name = path_parse_name(file_path);
     let parsed = integer_parse(name);
-    assert_message(number_is, [parsed], () =>
-      json_to({
-        parsed,
-        name,
-        file_path,
-      }),
-    );
+    assert_message_json(number_is, [parsed], () => ({
+      parsed,
+      name,
+      file_path,
+    }));
   });
   let mapped2 = list_map(mapped);
   let starting = add_1(number_max_list(mapped2));
