@@ -7,6 +7,7 @@ export async function folder_files_move(
   file_extension,
   output_directory,
 ) {
+  let lambda = file_rename;
   await folder_read_each(input_directory, file_extension, lambda);
   async function lambda(file_path) {
     let file_name = path_parse_base(file_path);
