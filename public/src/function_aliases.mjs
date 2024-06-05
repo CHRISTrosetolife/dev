@@ -5,6 +5,7 @@ export function function_aliases() {
     a: "function_auto",
     c: "function_copy",
     n: "function_new",
+    na: "function_new_args",
     o: "function_open",
     s: "function_search",
     sb: "sandbox",
