@@ -1,4 +1,4 @@
-import { string_starts_with } from "./string_starts_with.mjs";
+import { string_starts_with_curry } from "./string_starts_with_curry.mjs";
 import { html_cache_parse } from "./html_cache_parse.mjs";
 import { html_parse_a_hrefs } from "./html_parse_a_hrefs.mjs";
 import { url_secure_w3 } from "./url_secure_w3.mjs";
@@ -10,5 +10,5 @@ export async function ceb_bible_words_3() {
   ]);
   let root_bible = await html_cache_parse(url_base);
   let prefix = "B";
-  html_parse_a_hrefs(root_bible, (h) => string_starts_with(h, prefix));
+  html_parse_a_hrefs(root_bible, string_starts_with_curry(prefix));
 }
