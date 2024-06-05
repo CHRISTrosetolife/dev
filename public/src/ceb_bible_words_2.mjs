@@ -1,4 +1,4 @@
-import { html_parse_visit_attribute_value_list } from "./html_parse_visit_attribute_value_list.mjs";
+import { html_parse_visit_attribute_value_single } from "./html_parse_visit_attribute_value_single.mjs";
 import { error } from "./error.mjs";
 import { each } from "./each.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
@@ -12,7 +12,6 @@ import { each_async } from "./each_async.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { list_map } from "./list_map.mjs";
-import { list_single } from "./list_single.mjs";
 export async function ceb_bible_words_2() {
   let url_base = string_combine_multiple([
     url_secure_w3(),
@@ -37,12 +36,12 @@ export async function ceb_bible_words_2() {
           let { children: children_c } = c;
           let attribute_name = "size";
           let attribute_value = "+2";
-          let l = html_parse_visit_attribute_value_list(
+          let l = html_parse_visit_attribute_value_single(
             c,
             attribute_name,
             attribute_value,
           );
-          list_single(l);
+          l;
         }
       }
     });
