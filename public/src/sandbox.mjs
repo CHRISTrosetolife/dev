@@ -1,3 +1,4 @@
+import { bible_ceb_chapter } from "./bible_ceb_chapter.mjs";
 import { list_get } from "./list_get.mjs";
 import { number_max } from "./number_max.mjs";
 import { bible_ceb_3_chapter } from "./bible_ceb_3_chapter.mjs";
@@ -34,6 +35,7 @@ export async function sandbox() {
   await each_async(await bible_books("engbsb"), async (book_name) => {
     let chapters = await bible_chapters("engbsb", book_name);
     await each_async(chapters, async (chapter_name) => {
+      await bible_ceb_chapter(chapter_name);
       let a = await bible_ceb_3_chapter(index);
       let b = await bible_cebulb_chapter(chapter_name);
       each_range(number_max(list_length(a), list_length(b)), (index_verse) => {
