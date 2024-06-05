@@ -14,7 +14,6 @@ import { js_code_declare_assign } from "./js_code_declare_assign.mjs";
 import { list_single } from "./list_single.mjs";
 import { list_after } from "./list_after.mjs";
 import { list_index } from "./list_index.mjs";
-import { log } from "./log.mjs";
 export function js_assign_to_let(ast) {
   let ess = js_node_type_visitor(ast, "ExpressionStatement");
   each(ess, (v) => {
@@ -59,7 +58,7 @@ export function js_assign_to_let(ast) {
                 } else {
                   if (equal(m_type, "ObjectPattern")) {
                     let { properties } = m;
-                    log({
+                    log_json({
                       properties,
                     });
                     let keys = list_map_property(properties, "key");
