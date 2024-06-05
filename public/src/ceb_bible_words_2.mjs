@@ -62,22 +62,7 @@ export async function ceb_bible_words_2() {
           let { first: verse_number, remaining: tokens } =
             list_first_remaining(split);
           tokens = list_map(tokens, string_case_lower);
-          let symbols = [
-            ",",
-            ";",
-            ":",
-            "!",
-            "?",
-            ".",
-            "'",
-            '"',
-            "(",
-            ")",
-            "¶",
-            "/",
-            "`",
-            "|",
-          ];
+          let symbols = ["¶"];
           tokens = list_map(tokens, (t) => string_exclude(t, symbols));
           each(tokens, (t) =>
             each(string_symbols(t), (s) => {
