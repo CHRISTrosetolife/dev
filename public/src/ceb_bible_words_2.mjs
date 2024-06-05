@@ -54,6 +54,10 @@ export async function ceb_bible_words_2() {
         data = string_whitespace_normalize(data);
         let { first, remaining: tokens } = list_first_remaining(data);
         let verse_number = integer_parse(first);
+        log({
+          verse_number,
+          tokens,
+        });
       }
     });
     error();
