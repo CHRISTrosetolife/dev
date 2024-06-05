@@ -23,7 +23,7 @@ export async function ceb_bible_words_2() {
     log({
       href,
     });
-    await html_cache_parse(href);
+    root = await html_cache_parse(href);
   });
   return;
   let mapped = string_count_words(text_split);
