@@ -1,4 +1,4 @@
-import { list_length } from "./list_length.mjs";
+import { each_async } from "./each_async.mjs";
 import { string_starts_with_curry } from "./string_starts_with_curry.mjs";
 import { html_cache_parse } from "./html_cache_parse.mjs";
 import { html_parse_a_hrefs } from "./html_parse_a_hrefs.mjs";
@@ -11,5 +11,5 @@ export async function ceb_bible_words_3() {
   ]);
   let root_bible = await html_cache_parse(url_base);
   let hrefs = html_parse_a_hrefs(root_bible, string_starts_with_curry("B"));
-  return list_length(hrefs);
+  await each_async(hrefs, (href) => {});
 }
