@@ -34,7 +34,7 @@ export async function ceb_bible_words_2() {
     log({
       href,
     });
-    await list_adder_unique_async(async (la) => {
+    let symbols_unique = await list_adder_unique_async(async (la) => {
       let root = await html_cache_parse(href);
       let body = html_parse_visit_tag_single(root, "body");
       let { children } = body;
@@ -71,8 +71,8 @@ export async function ceb_bible_words_2() {
           });
         }
       });
-      error();
     });
+    error();
   });
   return;
   let mapped = string_count_words(text_split);
