@@ -1,3 +1,5 @@
+import { string_whitespace_normalize } from "./string_whitespace_normalize.mjs";
+import { string_trim } from "./string_trim.mjs";
 import { html_parse_visit_attribute_value_single } from "./html_parse_visit_attribute_value_single.mjs";
 import { error } from "./error.mjs";
 import { each } from "./each.mjs";
@@ -46,6 +48,8 @@ export async function ceb_bible_words_2() {
       }
       if (type === "text") {
         let { data } = c;
+        data = string_trim(data);
+        data = string_whitespace_normalize(data);
       }
     });
     error();
