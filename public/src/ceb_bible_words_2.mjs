@@ -1,3 +1,4 @@
+import { list_first_remaining } from "./list_first_remaining.mjs";
 import { string_whitespace_normalize } from "./string_whitespace_normalize.mjs";
 import { string_trim } from "./string_trim.mjs";
 import { html_parse_visit_attribute_value_single } from "./html_parse_visit_attribute_value_single.mjs";
@@ -14,7 +15,6 @@ import { each_async } from "./each_async.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { list_map } from "./list_map.mjs";
-import { string_split_space } from "./string_split_space.mjs";
 export async function ceb_bible_words_2() {
   let url_base = string_combine_multiple([
     url_secure_w3(),
@@ -51,7 +51,7 @@ export async function ceb_bible_words_2() {
         let { data } = c;
         data = string_trim(data);
         data = string_whitespace_normalize(data);
-        let split = string_split_space(data);
+        let { first, remaining } = list_first_remaining(data);
       }
     });
     error();
