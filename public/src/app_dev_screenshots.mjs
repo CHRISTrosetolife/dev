@@ -29,7 +29,7 @@ export async function app_dev_screenshots(screen_name) {
   let target_files = await folder_read(target_path, file_extension);
   let mapped = list_map(target_files, path_parse_name);
   let mapped2 = list_map(mapped, integer_parse);
-  each(mapped2, (m) => assert(number_is, [n]));
+  each(mapped2, (m) => assert(number_is, [m]));
   let starting = add_1(number_max_list(mapped2));
   await folder_files_rename_incrementing(folder_path, file_extension, starting);
   return;
