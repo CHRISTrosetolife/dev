@@ -28,6 +28,8 @@ export async function ceb_bible_words_3() {
     assert(list_length_2, [tables]);
     let first = list_first(tables);
     let trs = html_parse_visit_tag_list(first, "tr");
-    list_map(trs, (tr) => {});
+    list_map(trs, (tr) => {
+      let tds = html_parse_visit_tag_list(tr, "td");
+    });
   });
 }
