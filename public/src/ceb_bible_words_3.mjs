@@ -1,3 +1,4 @@
+import { bible_ceb_3_hrefs } from "./bible_ceb_3_hrefs.mjs";
 import { bible_ceb_3_url_base } from "./bible_ceb_3_url_base.mjs";
 import { each_index_async } from "./each_index_async.mjs";
 import { string_split_space } from "./string_split_space.mjs";
@@ -8,15 +9,12 @@ import { list_length_2 } from "./list_length_2.mjs";
 import { assert } from "./assert.mjs";
 import { html_parse_visit_tag_list } from "./html_parse_visit_tag_list.mjs";
 import { log } from "./log.mjs";
-import { string_starts_with_curry } from "./string_starts_with_curry.mjs";
 import { html_cache_parse } from "./html_cache_parse.mjs";
-import { html_parse_a_hrefs } from "./html_parse_a_hrefs.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { list_map } from "./list_map.mjs";
 export async function ceb_bible_words_3() {
   let url_base = bible_ceb_3_url_base();
-  let root_bible = await html_cache_parse(url_base);
-  let hrefs = html_parse_a_hrefs(root_bible, string_starts_with_curry("B"));
+  let hrefs = await bible_ceb_3_hrefs();
   await each_index_async(hrefs, async (href, index) => {
     log({
       href,
