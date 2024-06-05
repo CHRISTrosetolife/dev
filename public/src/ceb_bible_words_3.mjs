@@ -22,7 +22,7 @@ export async function ceb_bible_words_3() {
     });
     let url = string_combine(url_base, href);
     let root = await html_cache_parse(url);
-    let t = html_parse_visit_tag_list(root, "table");
-    each(t, (tt) => log(html_parse_text(tt)));
+    let tables = html_parse_visit_tag_list(root, "table");
+    each(tables, (tt) => log(html_parse_text(tt)));
   });
 }
