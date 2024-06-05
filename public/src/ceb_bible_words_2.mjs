@@ -1,3 +1,4 @@
+import { html_parse_visit_attribute_value_list } from "./html_parse_visit_attribute_value_list.mjs";
 import { error } from "./error.mjs";
 import { each } from "./each.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
@@ -36,6 +37,7 @@ export async function ceb_bible_words_2() {
       if (c.type === "tag") {
         if (c.name === "center") {
           let { children: children_c } = c;
+          html_parse_visit_attribute_value_list(children_c);
         }
       }
     });
