@@ -1,3 +1,4 @@
+import { data_update } from "./data_update.mjs";
 import { watch } from "./watch.mjs";
 import { sandbox } from "./sandbox.mjs";
 import { function_search } from "./function_search.mjs";
@@ -21,6 +22,7 @@ export async function function_aliases_generate() {
       object_property_set(all, a, name);
     });
   }
+  alias_add(data_update, ["d"]);
   alias_add(function_aliases_generate, ["al"]);
   alias_add(function_auto, ["a"]);
   alias_add(function_copy, ["c"]);
