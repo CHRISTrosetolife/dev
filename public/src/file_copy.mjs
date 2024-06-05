@@ -8,6 +8,7 @@ import { global_get } from "./global_get.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 export async function file_copy(file_name_from, file_name_to) {
+  let open = true;
   await assert_not_async(file_exists, [file_name_to]);
   if (web_is()) {
     let { files } = global_get();
