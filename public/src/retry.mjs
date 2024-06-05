@@ -1,6 +1,5 @@
 import { error } from "./error.mjs";
 export async function retry(retries, lambda, retry_if_lambda) {
-  let result;
   while (retries >= 1) {
     retries--;
     try {
@@ -12,8 +11,5 @@ export async function retry(retries, lambda, retry_if_lambda) {
       throw e;
     }
   }
-  if (retries <= 0) {
-    error("no retries left");
-  }
-  return result;
+  error("no retries left");
 }
