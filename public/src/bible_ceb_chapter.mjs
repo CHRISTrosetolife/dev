@@ -25,11 +25,11 @@ export async function bible_ceb_chapter(chapter_name) {
     chapter_name,
   });
   let eng = await bible_engbsb_chapter(chapter_name);
-  let eng_verse_numbers = list_map_property(eng, "verse_number");
   if (chapter_name === "MAT17") {
     list_add(eng_verse_numbers, "21");
     list_sort_string(eng_verse_numbers, identity);
   }
+  let eng_verse_numbers = list_map_property(eng, "verse_number");
   let parsed_ceb = await bible_chapter_parsed("cebulb", chapter_name);
   let verses_ceb = html_parse_visit_class_list(parsed_ceb, "p");
   let ceb = bible_verses_parse(verses_ceb);
