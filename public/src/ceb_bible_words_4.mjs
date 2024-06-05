@@ -1,3 +1,4 @@
+import { html_parse_visit_class_list } from "./html_parse_visit_class_list.mjs";
 import { html_parse_visit_class_single } from "./html_parse_visit_class_single.mjs";
 import { log } from "./log.mjs";
 import { each_async } from "./each_async.mjs";
@@ -24,5 +25,6 @@ export async function ceb_bible_words_4() {
     });
     let url = string_combine(url_base, href);
     await html_cache_parse(url);
+    html_parse_visit_class_list;
   });
 }
