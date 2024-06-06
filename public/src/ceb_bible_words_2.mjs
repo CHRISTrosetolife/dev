@@ -17,7 +17,7 @@ export async function ceb_bible_words_2() {
       }),
   );
   list_sort_string(symbols, identity);
-  return;
+  return symbols;
   let mapped = string_count_words(text_split);
   return mapped;
 }
