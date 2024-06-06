@@ -31,6 +31,7 @@ import { assert } from "./assert.mjs";
 import { bible_chapters } from "./bible_chapters.mjs";
 import { each_range } from "./each_range.mjs";
 import { assert_message_json } from "./assert_message_json.mjs";
+import { string_replace_multiple } from "./string_replace_multiple.mjs";
 export async function sandbox() {
   let index = 0;
   await each_index_async(
@@ -43,6 +44,7 @@ export async function sandbox() {
         each_range(number_max_list_length(a, b), (index_verse) => {
           let { tokens: tas } = list_get(a, index_verse);
           let { tokens: tbs } = list_get(b, index_verse);
+          tas = list_map(tas, (ta) => string_replace_multiple(ta, ",", ""));
           each_range(number_max_list_length(tas, tbs), (index_token) => {
             let ta = list_get(tas, index_token);
             let tb = list_get(tbs, index_token);
