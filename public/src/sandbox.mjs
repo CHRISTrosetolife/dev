@@ -46,6 +46,7 @@ export async function sandbox() {
           let { tokens: tas } = list_get(a, index_verse);
           let { tokens: tbs } = list_get(b, index_verse);
           tas = normalize(tas);
+          tbs = normalize(tbs);
           each_range(number_max_list_length(tas, tbs), (index_token) => {
             let ta = list_get(tas, index_token);
             let tb = list_get(tbs, index_token);
