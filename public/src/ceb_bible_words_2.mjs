@@ -49,6 +49,8 @@ export async function ceb_bible_words_2() {
                 "",
               );
               if (string_empty_not_is(t)) {
+                if (t === "o") {
+                }
                 law(t);
               }
             }),
