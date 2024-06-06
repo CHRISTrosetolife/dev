@@ -20,7 +20,7 @@ export async function ceb_bible_words_5() {
   await each_async(await bible_books("engbsb"), async (book_name) => {
     let chapters = await bible_chapters("engbsb", book_name);
     await each_async(chapters, async (chapter_name) => {
-      let chapter = await bible_ceb_chapter(chapter_name);
+      let verses = await bible_ceb_chapter(chapter_name);
     });
   });
   let book_hrefs = await bible_ceb_2_books_hrefs();
