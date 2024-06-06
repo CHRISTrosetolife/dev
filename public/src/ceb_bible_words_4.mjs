@@ -16,9 +16,8 @@ import { list_map } from "./list_map.mjs";
 export async function ceb_bible_words_4() {
   let url_base = bible_ceb_4_url_base();
   let book_hrefs = await bible_ceb_4_hrefs_books(url_base);
-  await each_index_async(book_hrefs, async (href_book_, book_index) => {
+  await each_index_async(book_hrefs, async (href_book, book_index) => {
     let book_hrefs = await bible_ceb_4_hrefs_books(url_base);
-    let href_book = list_get(book_hrefs, book_index);
     log({
       href_book,
     });
@@ -31,6 +30,7 @@ export async function ceb_bible_words_4() {
       return string_take(h, i);
     });
     await each_async(hrefs_chapters, async (href_chapter) => {
+      let href_book = list_get(book_hrefs, book_index);
       let url_chapter = path_join([path_dirname(href_book), href_chapter]);
       url_chapter = string_combine(url_base, url_chapter);
       let root_chapter = await html_cache_parse(url_chapter);
