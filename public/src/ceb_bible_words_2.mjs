@@ -1,5 +1,3 @@
-import { error } from "./error.mjs";
-import { log } from "./log.mjs";
 import { list_adder_unique_async } from "./list_adder_unique_async.mjs";
 import { each } from "./each.mjs";
 import { string_symbols } from "./string_symbols.mjs";
@@ -11,7 +9,6 @@ import { list_sort_string } from "./list_sort_string.mjs";
 import { identity } from "./identity.mjs";
 import { string_replace_multiple } from "./string_replace_multiple.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
-import { list_get } from "./list_get.mjs";
 export async function ceb_bible_words_2() {
   let book_hrefs = await bible_ceb_2_books_hrefs();
   let symbols;
@@ -52,13 +49,6 @@ export async function ceb_bible_words_2() {
                 "",
               );
               if (string_empty_not_is(t)) {
-                if (t === "b") {
-                  log({
-                    v,
-                    b: list_get(book_hrefs, book_index),
-                  });
-                  error();
-                }
                 law(t);
               }
             }),
