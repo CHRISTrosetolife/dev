@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
 import { error } from "./error.mjs";
 import { html_parse_visit_attribute_value_single } from "./html_parse_visit_attribute_value_single.mjs";
@@ -25,5 +26,6 @@ export async function bible_ceb_4_chapter(book_index, chapter_index) {
   );
   let p = html_parse_visit_tag_single(tb, "p");
   let { children } = p;
+  each(children, (c) => {});
   error();
 }
