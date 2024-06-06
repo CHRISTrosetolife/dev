@@ -44,7 +44,7 @@ export async function sandbox() {
       await each_index_async(chapters, async (chapter_name, chapter_index) => {
         let b = await bible_ceb_4_chapter(book_index, chapter_index);
         each(b, (v) => {
-          let tokens = v;
+          let { tokens } = v;
         });
         let a = await bible_ceb_3_chapter(index);
         each_range(number_max_list_length(a, b), (index_verse) => {
