@@ -40,6 +40,7 @@ export async function bible_ceb_4_chapter(book_index, chapter_index) {
       if (type === "text") {
         assert(null_not_is, [verse_number]);
         let { data } = c;
+        data = string_trim(data);
         let tokens = string_split_space(data);
         la({
           verse_number,
