@@ -31,6 +31,8 @@ export async function bible_ceb_4_chapter(book_index, chapter_index) {
     if (type === "text") {
       let { data } = c;
     }
+    if (type === "tag") {
+    }
   });
   error();
 }
