@@ -46,6 +46,7 @@ export async function sandbox() {
         each(b, (v) => {
           let { tokens } = v;
         });
+        return;
         let a = await bible_ceb_3_chapter(index);
         each_range(number_max_list_length(a, b), (index_verse) => {
           let { tokens: tas, verse_number: va } = list_get(a, index_verse);
