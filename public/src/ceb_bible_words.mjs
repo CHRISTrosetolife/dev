@@ -8,6 +8,7 @@ export async function ceb_bible_words() {
   let fn_names = list_map(range_1(count), (i) =>
     string_combine_multiple([ceb_bible_words.name, "_", i]),
   );
+  let all = [];
   let text_split = await ceb_bible_words_1();
   let mapped = string_count_words(text_split);
   return mapped;
