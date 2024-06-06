@@ -20,6 +20,10 @@ export async function ceb_bible_words_4() {
       async (href_chapter_, chapter_index) => {
         let url_base = bible_ceb_4_url_base();
         let book_hrefs = await bible_ceb_4_hrefs_books(url_base);
+        let hrefs_chapters = await ceb_bible_4_chapters_hrefs(
+          book_hrefs,
+          book_index,
+        );
         let href_chapter = list_get(hrefs_chapters, chapter_index);
         let href_book = list_get(book_hrefs, book_index);
         let url_chapter = path_join([path_dirname(href_book), href_chapter]);
