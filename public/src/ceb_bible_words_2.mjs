@@ -22,7 +22,7 @@ import { string_prefix_without } from "./string_prefix_without.mjs";
 export async function ceb_bible_words_2() {
   let book_hrefs = await bible_ceb_2_books_hrefs();
   let symbols_unique = await list_adder_unique_async(async (la) => {
-    await each_index_only_async(book_hrefs, async (href) => {
+    await each_index_only_async(book_hrefs, async (book_index) => {
       let book_hrefs = await bible_ceb_2_books_hrefs();
       log({
         href,
