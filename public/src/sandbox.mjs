@@ -62,7 +62,7 @@ export async function sandbox() {
           });
           function normalize(l) {
             l = list_map(l, (e) =>
-              string_replace_multiple(e, [",", "-", "."], ""),
+              string_replace_multiple(e, [",", "-", ".", ":"], ""),
             );
             l = list_filter(l, string_empty_not_is);
             return l;
