@@ -75,9 +75,6 @@ export async function ceb_bible_words_2() {
       }
     });
   });
-  log({
-    symbols_unique,
-  });
   return;
   let mapped = string_count_words(text_split);
   return mapped;
