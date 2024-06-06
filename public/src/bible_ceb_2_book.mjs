@@ -14,6 +14,7 @@ import { html_cache_parse } from "./html_cache_parse.mjs";
 import { log } from "./log.mjs";
 import { list_get } from "./list_get.mjs";
 import { bible_ceb_2_books_hrefs } from "./bible_ceb_2_books_hrefs.mjs";
+import { list_adder } from "./list_adder.mjs";
 export async function bible_ceb_2_book(book_index) {
   let book_hrefs = await bible_ceb_2_books_hrefs();
   let href = list_get(book_hrefs, book_index);
@@ -25,43 +26,45 @@ export async function bible_ceb_2_book(book_index) {
   let root = await html_cache_parse(href);
   let body = html_parse_visit_tag_single(root, "body");
   let { children } = body;
-  each(children, (c) => {
-    let { type } = c;
-    if (type === "tag") {
-      if (c.name === "center") {
-        let book_name_element = html_parse_visit_attribute_value_single(
-          c,
-          "size",
-          "+4",
-        );
-        book_name = html_parse_text(book_name_element);
-        let chapter_name_element = html_parse_visit_attribute_value_single(
-          c,
-          "size",
-          "+2",
-        );
-        chapter_name = string_prefix_without(
-          html_parse_text(chapter_name_element),
-          "CAPITLO ",
-        );
+  list_adder((la) => {
+    each(children, (c) => {
+      let { type } = c;
+      if (type === "tag") {
+        if (c.name === "center") {
+          let book_name_element = html_parse_visit_attribute_value_single(
+            c,
+            "size",
+            "+4",
+          );
+          book_name = html_parse_text(book_name_element);
+          let chapter_name_element = html_parse_visit_attribute_value_single(
+            c,
+            "size",
+            "+2",
+          );
+          chapter_name = string_prefix_without(
+            html_parse_text(chapter_name_element),
+            "CAPITLO ",
+          );
+        }
       }
-    }
-    if (type === "text") {
-      let { data } = c;
-      data = string_trim(data);
-      data = string_whitespace_normalize(data);
-      let split = string_split_space(data);
-      let { first: verse_number, remaining: tokens } =
-        list_first_remaining(split);
-      tokens = list_map(tokens, string_case_lower);
-      let symbols = ["¶"];
-      tokens = list_map(tokens, (t) => string_exclude(t, symbols));
-      if (0) {
-        log({
-          verse_number,
-          tokens,
-        });
+      if (type === "text") {
+        let { data } = c;
+        data = string_trim(data);
+        data = string_whitespace_normalize(data);
+        let split = string_split_space(data);
+        let { first: verse_number, remaining: tokens } =
+          list_first_remaining(split);
+        tokens = list_map(tokens, string_case_lower);
+        let symbols = ["¶"];
+        tokens = list_map(tokens, (t) => string_exclude(t, symbols));
+        if (0) {
+          log({
+            verse_number,
+            tokens,
+          });
+        }
       }
-    }
+    });
   });
 }
