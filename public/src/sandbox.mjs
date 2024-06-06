@@ -40,6 +40,7 @@ export async function sandbox() {
           "engDRA",
           "engfbv",
           "engnoy",
+          "eng-glw",
         ];
         await bible_chapter(chapter_name);
       });
