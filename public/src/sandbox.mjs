@@ -55,11 +55,9 @@ export async function sandbox() {
           "engwmb",
           "engylt",
         ];
-        await each_async(
-          bible_folders,
-          async (bible_folder) =>
-            await bible_chapter(bible_folder, chapter_name),
-        );
+        await each_async(bible_folders, async (bible_folder) => {
+          await bible_chapter(bible_folder, chapter_name);
+        });
       });
     },
   );
