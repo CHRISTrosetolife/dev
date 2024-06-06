@@ -53,6 +53,9 @@ export async function sandbox() {
         each(b, (v) => {
           let { tokens } = v;
           if (list_any(tokens, string_includes_curry("Ã±"))) {
+            log({
+              url_chapter,
+            });
           }
         });
         return;
