@@ -70,7 +70,7 @@ export async function ceb_bible_words_3() {
     });
   });
   list_sort_string(characters, identity);
-  if (0) {
+  if (10) {
     return characters;
   }
   return words;
