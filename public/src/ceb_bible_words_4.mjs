@@ -9,7 +9,6 @@ import { string_index } from "./string_index.mjs";
 import { html_parse_href } from "./html_parse_href.mjs";
 import { html_parse_visit_class_list } from "./html_parse_visit_class_list.mjs";
 import { log } from "./log.mjs";
-import { each_async } from "./each_async.mjs";
 import { html_cache_parse } from "./html_cache_parse.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { list_map } from "./list_map.mjs";
@@ -29,11 +28,15 @@ export async function ceb_bible_words_4() {
       let i = string_index(h, "#");
       return string_take(h, i);
     });
-    await each_async(hrefs_chapters, async (href_chapter) => {
-      let href_book = list_get(book_hrefs, book_index);
-      let url_chapter = path_join([path_dirname(href_book), href_chapter]);
-      url_chapter = string_combine(url_base, url_chapter);
-      let root_chapter = await html_cache_parse(url_chapter);
-    });
+    await each_index_async(
+      hrefs_chapters,
+      async (href_chapter_, chapter_index) => {
+        let href_chapter = list_get(hrefs_chapters, chapter_index);
+        let href_book = list_get(book_hrefs, book_index);
+        let url_chapter = path_join([path_dirname(href_book), href_chapter]);
+        url_chapter = string_combine(url_base, url_chapter);
+        let root_chapter = await html_cache_parse(url_chapter);
+      },
+    );
   });
 }
