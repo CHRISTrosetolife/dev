@@ -14,9 +14,11 @@ import { string_split_space } from "./string_split_space.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 export async function bible_ceb_4_chapter(book_index, chapter_index) {
   let url_chapter = await bible_ceb_4_chapter_url(book_index, chapter_index);
-  log({
-    url_chapter,
-  });
+  if (0) {
+    log({
+      url_chapter,
+    });
+  }
   let root_chapter = await html_cache_parse(url_chapter);
   let tb = html_parse_visit_attribute_value_single(
     root_chapter,
