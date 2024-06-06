@@ -1,3 +1,4 @@
+import { each_index_async } from "./each_index_async.mjs";
 import { bible_ceb_chapter } from "./bible_ceb_chapter.mjs";
 import { list_get } from "./list_get.mjs";
 import { number_max } from "./number_max.mjs";
@@ -32,22 +33,28 @@ import { each_range } from "./each_range.mjs";
 import { list_length } from "./list_length.mjs";
 export async function sandbox() {
   let index = 0;
-  await each_async(await bible_books("engbsb"), async (book_name) => {
-    let chapters = await bible_chapters("engbsb", book_name);
-    await each_async(chapters, async (chapter_name) => {
-      let a = await bible_ceb_3_chapter(index);
-      let b = await bible_cebulb_chapter(chapter_name);
-      each_range(number_max(list_length(a), list_length(b)), (index_verse) => {
-        assert(equal_json, [
-          list_get(a, index_verse),
-          list_get(b, index_verse),
-        ]);
+  await each_index_async(
+    await bible_books("engbsb"),
+    async (book_name, book_index) => {
+      let chapters = await bible_chapters("engbsb", book_name);
+      await each_async(chapters, async (chapter_name) => {
+        let a = await bible_ceb_3_chapter(index);
+        let b = await bible_cebulb_chapter(chapter_name);
+        each_range(
+          number_max(list_length(a), list_length(b)),
+          (index_verse) => {
+            assert(equal_json, [
+              list_get(a, index_verse),
+              list_get(b, index_verse),
+            ]);
+          },
+        );
+        index++;
+        return;
+        await bible_ceb_chapter(chapter_name);
       });
-      index++;
-      return;
-      await bible_ceb_chapter(chapter_name);
-    });
-  });
+    },
+  );
   return;
   let group_index = 0;
   let limit = 150;
