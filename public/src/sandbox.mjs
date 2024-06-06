@@ -55,7 +55,7 @@ export async function sandbox() {
         each(b, (v) => {
           let { tokens } = v;
           let filtered = list_filter(tokens, (t) =>
-            list_any(["Ã±"], (s) => string_includes(t, s)),
+            list_any(["Ã", "±"], (s) => string_includes(t, s)),
           );
           if (list_empty_not_is(filtered)) {
             log(
