@@ -12,7 +12,7 @@ export async function ceb_bible_words() {
   );
   let all = [];
   await each_async(fn_names, async (fn_name) => {
-    await function_run(fn_name, []);
+    let words = await function_run(fn_name, []);
   });
   let text_split = await ceb_bible_words_1();
   let mapped = string_count_words(text_split);
