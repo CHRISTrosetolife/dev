@@ -24,12 +24,13 @@ export async function bible_ceb_3_chapter(index) {
   let hrefs = await bible_ceb_3_hrefs();
   let href = list_get(hrefs, index);
   let url = string_combine(url_base, href);
+  let root = await html_cache_parse(url);
+  let root_text = html_parse_text(root);
   log({
     url,
     index,
+    root_text,
   });
-  let root = await html_cache_parse(url);
-  let root_text = html_parse_text(root);
   if (string_includes(root_text, "404 Not Found error")) {
     return [];
   }
