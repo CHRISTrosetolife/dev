@@ -17,9 +17,7 @@ export async function ceb_bible_words_2() {
           let verses = await bible_ceb_2_book(book_index);
           each(verses, (v) =>
             each(v.tokens, (t) => {
-              each(string_symbols(t), (s) => {
-                las(s);
-              });
+              each(string_symbols(t), las);
               law(t);
             }),
           );
