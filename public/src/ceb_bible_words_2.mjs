@@ -14,7 +14,11 @@ export async function ceb_bible_words_2() {
       await each_index_only_async(book_hrefs, async (book_index) => {
         let verses = await bible_ceb_2_book(book_index);
         each(verses, (v) =>
-          each(v.tokens, (t) => each(string_symbols(t), (s) => la(s))),
+          each(v.tokens, (t) =>
+            each(string_symbols(t), (s) => {
+              la(s);
+            }),
+          ),
         );
       }),
   );
