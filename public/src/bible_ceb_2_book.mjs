@@ -50,12 +50,12 @@ export async function bible_ceb_2_book(book_index) {
           );
           let { type: c_type } = chapter_name_element;
           if (type === "tag") {
+            let chapter_name_text = html_parse_text(chapter_name_element);
+            log({
+              chapter_name_text,
+            });
+            chapter_name = string_prefix_without(chapter_name_text, "CAPITLO ");
           }
-          let chapter_name_text = html_parse_text(chapter_name_element);
-          log({
-            chapter_name_text,
-          });
-          chapter_name = string_prefix_without(chapter_name_text, "CAPITLO ");
         }
       }
       if (type === "text") {
