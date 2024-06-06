@@ -14,6 +14,40 @@ import { list_sort_string } from "./list_sort_string.mjs";
 import { identity } from "./identity.mjs";
 import { string_skip } from "./string_skip.mjs";
 export async function ceb_bible_words_5() {
+  let symbols = [
+    "_",
+    "-",
+    "–",
+    "—",
+    ",",
+    ";",
+    ":",
+    "!",
+    "?",
+    ".",
+    "'",
+    "‘",
+    "’",
+    '"',
+    "“",
+    "”",
+    "(",
+    ")",
+    "[",
+    "]",
+    "/",
+    "`",
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+  ];
   let characters;
   let words = await list_adder_unique_async(async (law) => {
     characters = await list_adder_unique_async(async (las) => {
@@ -27,40 +61,6 @@ export async function ceb_bible_words_5() {
           each(ceb, (v) =>
             each(v.tokens, (t) => {
               each(string_symbols(t), las);
-              let symbols = [
-                "_",
-                "-",
-                "–",
-                "—",
-                ",",
-                ";",
-                ":",
-                "!",
-                "?",
-                ".",
-                "'",
-                "‘",
-                "’",
-                '"',
-                "“",
-                "”",
-                "(",
-                ")",
-                "[",
-                "]",
-                "/",
-                "`",
-                "0",
-                "1",
-                "2",
-                "3",
-                "4",
-                "5",
-                "6",
-                "7",
-                "8",
-                "9",
-              ];
               while (string_starts_with_multiple(characters, t)) {
                 t = string_skip(t, 1);
               }
