@@ -13,6 +13,7 @@ export function js_node_type(ast, type) {
   });
   log({
     result,
+    type,
   });
   return result;
 }
