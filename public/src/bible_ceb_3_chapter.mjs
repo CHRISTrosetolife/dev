@@ -31,7 +31,7 @@ export async function bible_ceb_3_chapter(index) {
     index,
     root_text,
   });
-  if (string_includes(root_text, "404 Not Found error")) {
+  if (string_includes(root_text, "404 Not Found")) {
     return [];
   }
   let tables = html_parse_visit_tag_list(root, "table");
