@@ -8,7 +8,6 @@ import { string_take } from "./string_take.mjs";
 import { string_index } from "./string_index.mjs";
 import { html_parse_href } from "./html_parse_href.mjs";
 import { html_parse_visit_class_list } from "./html_parse_visit_class_list.mjs";
-import { log } from "./log.mjs";
 import { html_cache_parse } from "./html_cache_parse.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { list_map } from "./list_map.mjs";
@@ -16,9 +15,6 @@ export async function ceb_bible_words_4() {
   let url_base = bible_ceb_4_url_base();
   let book_hrefs = await bible_ceb_4_hrefs_books(url_base);
   await each_index_async(book_hrefs, async (href_book_, book_index) => {
-    log({
-      href_book,
-    });
     let href_book = list_get(book_hrefs, book_index);
     let url_base = bible_ceb_4_url_base();
     let url = string_combine(url_base, href_book);
