@@ -1,11 +1,4 @@
-import { list_map_property } from "./list_map_property.mjs";
-import { equal } from "./equal.mjs";
-import { number_max_list_length } from "./number_max_list_length.mjs";
-import { bible_ceb_4_chapter } from "./bible_ceb_4_chapter.mjs";
 import { each_index_async } from "./each_index_async.mjs";
-import { bible_ceb_chapter } from "./bible_ceb_chapter.mjs";
-import { list_get } from "./list_get.mjs";
-import { bible_ceb_3_chapter } from "./bible_ceb_3_chapter.mjs";
 import { bible_books } from "./bible_books.mjs";
 import { file_overwrite_json } from "./file_overwrite_json.mjs";
 import { equal_json } from "./equal_json.mjs";
@@ -31,13 +24,6 @@ import { list_add } from "./list_add.mjs";
 import { file_read_json } from "./file_read_json.mjs";
 import { assert } from "./assert.mjs";
 import { bible_chapters } from "./bible_chapters.mjs";
-import { each_range } from "./each_range.mjs";
-import { assert_message_json } from "./assert_message_json.mjs";
-import { string_replace_multiple } from "./string_replace_multiple.mjs";
-import { string_empty_not_is } from "./string_empty_not_is.mjs";
-import { string_split_empty } from "./string_split_empty.mjs";
-import { list_difference } from "./list_difference.mjs";
-import { list_empty_is } from "./list_empty_is.mjs";
 export async function sandbox() {
   let index = 0;
   await each_index_async(
@@ -45,45 +31,7 @@ export async function sandbox() {
     async (book_name, book_index) => {
       let chapters = await bible_chapters("engbsb", book_name);
       await each_index_async(chapters, async (chapter_name, chapter_index) => {
-        let a = await bible_ceb_3_chapter(index);
-        let b = await bible_ceb_4_chapter(book_index, chapter_index);
-        each_range(number_max_list_length(a, b), (index_verse) => {
-          let vas = list_map_property(a, "verse_number");
-          if (list_empty_is(vas)) {
-            return;
-          }
-          let vbs = list_map_property(b, "verse_number");
-          let dba = list_difference(vbs, vas);
-          let dab = list_difference(vas, vbs);
-          assert(list_empty_is, [dab]);
-          return;
-          let { tokens: tas, verse_number: va } = list_get(a, index_verse);
-          let { tokens: tbs, verse_number: vb } = list_get(b, index_verse);
-          assert_message_json(equal, [va, vb], () => ({}));
-          tas = normalize(tas);
-          tbs = normalize(tbs);
-          each_range(number_max_list_length(tas, tbs), (index_token) => {
-            let ta = list_get(tas, index_token);
-            let tb = list_get(tbs, index_token);
-            assert_message_json(equal_json, [ta, tb], () => ({
-              ta,
-              tb,
-              index_token,
-              tas,
-              tbs,
-            }));
-          });
-          function normalize(l) {
-            l = list_map(l, (e) =>
-              string_replace_multiple(e, string_split_empty(",-.:;"), ""),
-            );
-            l = list_filter(l, string_empty_not_is);
-            return l;
-          }
-        });
-        index++;
-        return;
-        await bible_ceb_chapter(chapter_name);
+        await bible_chapter(chapter_name);
       });
     },
   );
