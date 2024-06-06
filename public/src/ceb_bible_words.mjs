@@ -11,10 +11,11 @@ export async function ceb_bible_words() {
   let fn_names = list_map(range_1(count), (i) =>
     string_combine_multiple([ceb_bible_words.name, "_", i]),
   );
-  let all = [];
-  await each_async(fn_names, async (fn_name) => {
-    let words = await function_run(fn_name, []);
-    list_add_multiple(all, words);
+  let all = list_add_multiple_async(async (la) => {
+    await each_async(fn_names, async (fn_name) => {
+      let words = await function_run(fn_name, []);
+      list_add_multiple(all, words);
+    });
   });
   let text_split = await ceb_bible_words_1();
   let mapped = string_count_words(text_split);
