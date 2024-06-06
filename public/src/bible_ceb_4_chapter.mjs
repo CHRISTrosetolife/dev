@@ -22,5 +22,6 @@ export async function bible_ceb_4_chapter(book_index, chapter_index) {
     "id",
     "textBody",
   );
+  let children = tb;
   error();
 }
