@@ -30,6 +30,7 @@ import { file_read_json } from "./file_read_json.mjs";
 import { assert } from "./assert.mjs";
 import { bible_chapters } from "./bible_chapters.mjs";
 import { each_range } from "./each_range.mjs";
+import { assert_message_json } from "./assert_message_json.mjs";
 export async function sandbox() {
   let index = 0;
   await each_index_async(
@@ -43,10 +44,11 @@ export async function sandbox() {
           let { tokens: tas } = a;
           let { tokens: tbs } = b;
           each_range(number_max_list_length(a, b), (index_token) => {
-            assert(equal_json, [
-              list_get(tas, index_token),
-              list_get(tbs, index_token),
-            ]);
+            assert_message_json(
+              equal_json,
+              [list_get(tas, index_token), list_get(tbs, index_token)],
+              () => ({}),
+            );
           });
           assert(equal_json, [
             list_get(a, index_verse),
