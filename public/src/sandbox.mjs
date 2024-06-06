@@ -1,5 +1,4 @@
 import { bible_chapter } from "./bible_chapter.mjs";
-import { each_index_async } from "./each_index_async.mjs";
 import { bible_books } from "./bible_books.mjs";
 import { file_overwrite_json } from "./file_overwrite_json.mjs";
 import { equal_json } from "./equal_json.mjs";
@@ -26,8 +25,7 @@ import { file_read_json } from "./file_read_json.mjs";
 import { assert } from "./assert.mjs";
 import { bible_chapters } from "./bible_chapters.mjs";
 export async function sandbox() {
-  let index = 0;
-  await each_index_async(
+  await each_async(
     await bible_books("engbsb"),
     async (book_name, book_index) => {
       let chapters = await bible_chapters("engbsb", book_name);
