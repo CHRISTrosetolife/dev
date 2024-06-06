@@ -6,7 +6,6 @@ import { string_count_words } from "./string_count_words.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each_async } from "./each_async.mjs";
 import { function_run } from "./function_run.mjs";
-import { list_add_multiple } from "./list_add_multiple.mjs";
 export async function ceb_bible_words() {
   let count = 5;
   let fn_names = list_map(range_1(count), (i) =>
@@ -15,7 +14,7 @@ export async function ceb_bible_words() {
   let all = await list_adder_multiple_async(async (la) => {
     await each_async(fn_names, async (fn_name) => {
       let words = await function_run(fn_name, []);
-      list_add_multiple(all, words);
+      la(words);
     });
   });
   let text_split = await ceb_bible_words_1();
