@@ -19,11 +19,13 @@ import { string_split_space } from "./string_split_space.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { identity } from "./identity.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
+import { list_get } from "./list_get.mjs";
 export async function ceb_bible_words_2() {
   let book_hrefs = await bible_ceb_2_books_hrefs();
   let symbols_unique = await list_adder_unique_async(async (la) => {
     await each_index_only_async(book_hrefs, async (book_index) => {
       let book_hrefs = await bible_ceb_2_books_hrefs();
+      let href = list_get(book_hrefs, book_index);
       log({
         href,
       });
