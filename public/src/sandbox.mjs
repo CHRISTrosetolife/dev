@@ -1,3 +1,4 @@
+import { bible_ceb_4_chapter_url } from "./bible_ceb_4_chapter_url.mjs";
 import { string_includes_curry } from "./string_includes_curry.mjs";
 import { list_any } from "./list_any.mjs";
 import { equal } from "./equal.mjs";
@@ -44,6 +45,10 @@ export async function sandbox() {
     async (book_name, book_index) => {
       let chapters = await bible_chapters("engbsb", book_name);
       await each_index_async(chapters, async (chapter_name, chapter_index) => {
+        let url_chapter = await bible_ceb_4_chapter_url(
+          book_index,
+          chapter_index,
+        );
         let b = await bible_ceb_4_chapter(book_index, chapter_index);
         each(b, (v) => {
           let { tokens } = v;
