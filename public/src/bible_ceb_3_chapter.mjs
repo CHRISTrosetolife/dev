@@ -29,7 +29,6 @@ export async function bible_ceb_3_chapter(index) {
   log({
     url,
     index,
-    root_text,
   });
   if (string_includes(root_text, "404 Not Found")) {
     return [];
