@@ -12,5 +12,5 @@ export async function function_transform_args(
     args_split,
   );
   let { results } = r;
-  return result;
+  return results;
 }
