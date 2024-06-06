@@ -1,4 +1,5 @@
-import { string_take } from "./string_take.mjs";
+import { string_empty_not_is } from "./string_empty_not_is.mjs";
+import { string_take_less_1 } from "./string_take_less_1.mjs";
 import { string_ends_with_multiple } from "./string_ends_with_multiple.mjs";
 import { string_starts_with_multiple } from "./string_starts_with_multiple.mjs";
 import { log } from "./log.mjs";
@@ -14,7 +15,6 @@ import { string_count_words } from "./string_count_words.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { identity } from "./identity.mjs";
 import { string_skip } from "./string_skip.mjs";
-import { string_index_last } from "./string_index_last.mjs";
 export async function ceb_bible_words_5() {
   let book_hrefs = await bible_ceb_2_books_hrefs();
   let symbols;
@@ -70,7 +70,9 @@ export async function ceb_bible_words_5() {
               while (string_ends_with_multiple(symbols, t)) {
                 t = string_take_less_1(t);
               }
-              law(t);
+              if (string_empty_not_is(t)) {
+                law(t);
+              }
             }),
           );
         });
@@ -84,7 +86,3 @@ export async function ceb_bible_words_5() {
   let mapped = string_count_words(words);
   return mapped;
 }
-function string_take_less_1(t) {
-    return string_take(t, string_index_last(t));
-}
-
