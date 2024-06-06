@@ -1,3 +1,4 @@
+import { list_empty_is } from "./list_empty_is.mjs";
 import { equal_json } from "./equal_json.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { each } from "./each.mjs";
@@ -44,6 +45,8 @@ export async function bible_ceb_3_chapter(index) {
   let filtered = [];
   each(verses, (v) => {
     let existing = list_filter(filtered, (f) => equal_json(f, v));
+    if (list_empty_is(existing)) {
+    }
   });
   return verses;
 }
