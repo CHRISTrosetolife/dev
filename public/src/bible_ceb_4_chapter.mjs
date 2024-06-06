@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { html_cache_parse } from "./html_cache_parse.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { path_dirname } from "./path_dirname.mjs";
@@ -11,9 +10,6 @@ export async function bible_ceb_4_chapter(book_index, chapter_index) {
   let url_base = bible_ceb_4_url_base();
   let book_hrefs = await bible_ceb_4_hrefs_books(url_base);
   let hrefs_chapters = await ceb_bible_4_chapters_hrefs(book_hrefs, book_index);
-  log({
-    hrefs_chapters,
-  });
   let href_chapter = list_get(hrefs_chapters, chapter_index);
   let href_book = list_get(book_hrefs, book_index);
   let url_chapter = path_join([path_dirname(href_book), href_chapter]);
