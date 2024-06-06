@@ -52,6 +52,7 @@ export async function sandbox() {
           let vbs = list_map_property(b, "verse_number");
           let dba = list_difference(vbs, vas);
           assert(list_empty_is, [dba]);
+          return;
           let dab = list_difference(vas, vbs);
           let { tokens: tas, verse_number: va } = list_get(a, index_verse);
           let { tokens: tbs, verse_number: vb } = list_get(b, index_verse);
