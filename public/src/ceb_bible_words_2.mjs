@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_adder_unique_async } from "./list_adder_unique_async.mjs";
 import { each } from "./each.mjs";
 import { string_symbols } from "./string_symbols.mjs";
@@ -50,6 +51,9 @@ export async function ceb_bible_words_2() {
               );
               if (string_empty_not_is(t)) {
                 if (t === "o") {
+                  log({
+                    v,
+                  });
                 }
                 law(t);
               }
