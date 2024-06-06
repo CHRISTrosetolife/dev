@@ -21,6 +21,7 @@ export async function ceb_bible_words_5() {
     let chapters = await bible_chapters("engbsb", book_name);
     await each_index_async(chapters, log);
   });
+  return;
   let book_hrefs = await bible_ceb_2_books_hrefs();
   let symbols;
   let words = await list_adder_unique_async(async (law) => {
