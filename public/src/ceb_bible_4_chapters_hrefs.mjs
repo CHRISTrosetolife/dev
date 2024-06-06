@@ -1,4 +1,4 @@
-import { html_parse_visit_classes_list } from "./html_parse_visit_classes_list.mjs";
+import { html_parse_visit_class_list } from "./html_parse_visit_class_list.mjs";
 import { string_take } from "./string_take.mjs";
 import { string_index } from "./string_index.mjs";
 import { html_parse_href } from "./html_parse_href.mjs";
@@ -12,10 +12,7 @@ export async function ceb_bible_4_chapters_hrefs(book_hrefs, book_index) {
   let url_base = bible_ceb_4_url_base();
   let url = string_combine(url_base, href_book);
   let root_book = await html_cache_parse(url);
-  let chapter_elements = html_parse_visit_classes_list(root_book, [
-    "chapread",
-    "chap",
-  ]);
+  let chapter_elements = html_parse_visit_class_list(root_book, "chap");
   let hrefs_chapters = list_map(chapter_elements, html_parse_href);
   hrefs_chapters = list_map(hrefs_chapters, (h) => {
     let i = string_index(h, "#");
