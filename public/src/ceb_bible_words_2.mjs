@@ -6,7 +6,6 @@ import { string_symbols } from "./string_symbols.mjs";
 import { bible_ceb_2_book } from "./bible_ceb_2_book.mjs";
 import { each_index_only_async } from "./each_index_only_async.mjs";
 import { bible_ceb_2_books_hrefs } from "./bible_ceb_2_books_hrefs.mjs";
-import { string_count_words } from "./string_count_words.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { identity } from "./identity.mjs";
 import { string_replace_multiple } from "./string_replace_multiple.mjs";
@@ -72,6 +71,5 @@ export async function ceb_bible_words_2() {
   if (0) {
     return symbols;
   }
-  let mapped = string_count_words(words);
-  return mapped;
+  return words;
 }
