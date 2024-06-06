@@ -46,6 +46,8 @@ export async function bible_ceb_4_chapter(book_index, chapter_index) {
         let { attribs } = c;
         if (object_property_exists(attribs, "class")) {
           let value = object_property_get(attribs, "class");
+          if (value === "verse") {
+          }
         }
       }
     });
