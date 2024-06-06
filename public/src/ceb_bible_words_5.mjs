@@ -10,13 +10,11 @@ import { bible_books } from "./bible_books.mjs";
 import { list_adder_unique_async } from "./list_adder_unique_async.mjs";
 import { each } from "./each.mjs";
 import { string_symbols } from "./string_symbols.mjs";
-import { bible_ceb_2_books_hrefs } from "./bible_ceb_2_books_hrefs.mjs";
 import { string_count_words } from "./string_count_words.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { identity } from "./identity.mjs";
 import { string_skip } from "./string_skip.mjs";
 export async function ceb_bible_words_5() {
-  let book_hrefs = await bible_ceb_2_books_hrefs();
   let symbols;
   let words = await list_adder_unique_async(async (law) => {
     symbols = await list_adder_unique_async(async (las) => {
