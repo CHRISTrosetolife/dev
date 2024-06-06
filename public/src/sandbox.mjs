@@ -52,6 +52,7 @@ export async function sandbox() {
           "eng-t4t",
           "engULB",
           "eng-web",
+          "engwmb",
         ];
         await bible_chapter(chapter_name);
       });
