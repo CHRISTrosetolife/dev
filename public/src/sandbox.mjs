@@ -37,6 +37,8 @@ import { assert_message_json } from "./assert_message_json.mjs";
 import { string_replace_multiple } from "./string_replace_multiple.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
+import { list_empty_not_is } from "./list_empty_not_is.mjs";
+import { list_join_comma_space } from "./list_join_comma_space.mjs";
 export async function sandbox() {
   let index = 0;
   await each_index_async(
@@ -52,8 +54,14 @@ export async function sandbox() {
         each(b, (v) => {
           let { tokens } = v;
           let filtered = list_filter(tokens, string_includes_curry("Ã±"));
-          if (filtered) {
-            log(url_chapter + " " + v.verse_number + " " + "");
+          if (list_empty_not_is(filtered)) {
+            log(
+              url_chapter +
+                " " +
+                v.verse_number +
+                " " +
+                list_join_comma_space(filtered),
+            );
           }
         });
         return;
