@@ -60,6 +60,6 @@ export async function ceb_bible_words_2() {
   if (0) {
     return symbols;
   }
-  let mapped = string_count_words(text_split);
+  let mapped = string_count_words(words);
   return mapped;
 }
