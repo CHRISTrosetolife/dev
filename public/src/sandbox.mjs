@@ -54,8 +54,9 @@ export async function sandbox() {
         let b = await bible_ceb_4_chapter(book_index, chapter_index);
         each(b, (v) => {
           let { tokens } = v;
+          let searches = ["Ã", "±"];
           let filtered = list_filter(tokens, (t) =>
-            list_any(["Ã", "±"], string_includes_curry(t)),
+            list_any(searches, string_includes_curry(t)),
           );
           if (list_empty_not_is(filtered)) {
             log(
