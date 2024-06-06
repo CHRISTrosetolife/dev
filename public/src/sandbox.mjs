@@ -47,6 +47,7 @@ export async function sandbox() {
         let a = await bible_ceb_3_chapter(index);
         each_range(number_max_list_length(a, b), (index_verse) => {
           let vas = list_map_property(a, "verse_number");
+          let vbs = list_map_property(b, "verse_number");
           let { tokens: tas, verse_number: va } = list_get(a, index_verse);
           let { tokens: tbs, verse_number: vb } = list_get(b, index_verse);
           assert_message_json(equal, [va, vb], () => ({}));
