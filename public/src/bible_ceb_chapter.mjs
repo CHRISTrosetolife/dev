@@ -21,9 +21,11 @@ import { list_empty_is } from "./list_empty_is.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 export async function bible_ceb_chapter(chapter_name) {
-  log({
-    chapter_name,
-  });
+  if (0) {
+    log({
+      chapter_name,
+    });
+  }
   let eng = await bible_engbsb_chapter(chapter_name);
   let missing = {
     MAT17: ["21"],
