@@ -34,6 +34,7 @@ import { each_range } from "./each_range.mjs";
 import { assert_message_json } from "./assert_message_json.mjs";
 import { string_replace_multiple } from "./string_replace_multiple.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
+import { string_split_empty } from "./string_split_empty.mjs";
 export async function sandbox() {
   let index = 0;
   await each_index_async(
@@ -62,7 +63,7 @@ export async function sandbox() {
           });
           function normalize(l) {
             l = list_map(l, (e) =>
-              string_replace_multiple(e, [",", "-", ".", ":"], ""),
+              string_replace_multiple(e, string_split_empty(",-.:"), ""),
             );
             l = list_filter(l, string_empty_not_is);
             return l;
