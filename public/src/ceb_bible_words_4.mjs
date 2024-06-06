@@ -31,6 +31,7 @@ export async function ceb_bible_words_4() {
     await each_index_async(
       hrefs_chapters,
       async (href_chapter_, chapter_index) => {
+        let url_base = bible_ceb_4_url_base();
         let book_hrefs = await bible_ceb_4_hrefs_books(url_base);
         let href_chapter = list_get(hrefs_chapters, chapter_index);
         let href_book = list_get(book_hrefs, book_index);
