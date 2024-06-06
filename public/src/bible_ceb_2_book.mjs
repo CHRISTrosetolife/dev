@@ -49,7 +49,7 @@ export async function bible_ceb_2_book(book_index) {
             "+2",
           );
           let chapter_name_text = html_parse_text(chapter_name_element);
-          if (chapter_name_text === "Back to Cebuano Bible Options") {
+          if (chapter_name_text !== "Back to Cebuano Bible Options") {
             chapter_name = string_prefix_without(chapter_name_text, "CAPITLO ");
           }
         }
