@@ -1,6 +1,6 @@
-import { list_add } from "./list_add.mjs";
+import { list_add_multiple } from "./list_add_multiple.mjs";
 export async function list_adder_multiple_async(lambda) {
   let result = [];
-  await lambda((item) => list_add(result, item));
+  await lambda((item) => list_add_multiple(result, item));
   return result;
 }
