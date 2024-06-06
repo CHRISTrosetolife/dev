@@ -35,7 +35,7 @@ export async function bible_ceb_4_chapter(book_index, chapter_index) {
   let p = html_parse_visit_tag_single(tb, "p");
   let verse_number = "1";
   let { children } = p;
-  list_adder((la) => {
+  return list_adder((la) => {
     each(children, (c) => {
       let { type } = c;
       if (type === "text") {
