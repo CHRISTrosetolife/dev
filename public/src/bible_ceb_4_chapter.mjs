@@ -1,3 +1,5 @@
+import { string_replace } from "./string_replace.mjs";
+import { list_map } from "./list_map.mjs";
 import { bible_ceb_4_chapter_url } from "./bible_ceb_4_chapter_url.mjs";
 import { log } from "./log.mjs";
 import { null_not_is } from "./null_not_is.mjs";
@@ -36,6 +38,7 @@ export async function bible_ceb_4_chapter(book_index, chapter_index) {
         let { data } = c;
         data = string_trim(data);
         let tokens = string_split_space(data);
+        tokens = list_map(tokens, (t) => string_replace(t, "Ã±", "ñ"));
         la({
           verse_number,
           tokens,
