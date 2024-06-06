@@ -1,3 +1,4 @@
+import { newFunction } from "./newFunction.mjs";
 import { number_max_list_length } from "./number_max_list_length.mjs";
 import { bible_ceb_4_chapter } from "./bible_ceb_4_chapter.mjs";
 import { each_index_async } from "./each_index_async.mjs";
@@ -45,8 +46,7 @@ export async function sandbox() {
         each_range(number_max_list_length(a, b), (index_verse) => {
           let { tokens: tas } = list_get(a, index_verse);
           let { tokens: tbs } = list_get(b, index_verse);
-          tas = list_map(tas, (ta) => string_replace_multiple(ta, ",", ""));
-          tas = list_filter(tas, string_empty_not_is);
+          newFunction();
           each_range(number_max_list_length(tas, tbs), (index_token) => {
             let ta = list_get(tas, index_token);
             let tb = list_get(tbs, index_token);
@@ -62,6 +62,10 @@ export async function sandbox() {
             list_get(a, index_verse),
             list_get(b, index_verse),
           ]);
+          function newFunction(l) {
+            l = list_map(l, (e) => string_replace_multiple(e, ",", ""));
+            l = list_filter(l, string_empty_not_is);
+          }
         });
         index++;
         return;
