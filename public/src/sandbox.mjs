@@ -1,5 +1,5 @@
+import { string_includes_curry_right } from "./string_includes_curry_right.mjs";
 import { bible_ceb_4_chapter_url } from "./bible_ceb_4_chapter_url.mjs";
-import { string_includes_curry } from "./string_includes_curry.mjs";
 import { equal } from "./equal.mjs";
 import { number_max_list_length } from "./number_max_list_length.mjs";
 import { bible_ceb_4_chapter } from "./bible_ceb_4_chapter.mjs";
@@ -53,7 +53,7 @@ export async function sandbox() {
         let b = await bible_ceb_4_chapter(book_index, chapter_index);
         each(b, (v) => {
           let { tokens } = v;
-          let filtered = list_filter(tokens, string_includes_curry("Ã±"));
+          let filtered = list_filter(tokens, string_includes_curry_right("Ã±"));
           if (list_empty_not_is(filtered)) {
             log(
               url_chapter +
