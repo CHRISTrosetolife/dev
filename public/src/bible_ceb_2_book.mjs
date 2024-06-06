@@ -1,3 +1,4 @@
+import { html_parse_visit_attribute_value_list } from "./html_parse_visit_attribute_value_list.mjs";
 import { string_exclude } from "./string_exclude.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { list_map } from "./list_map.mjs";
@@ -31,7 +32,7 @@ export async function bible_ceb_2_book(book_index) {
       let { type } = c;
       if (type === "tag") {
         if (c.name === "center") {
-          let book_name_element = html_parse_visit_attribute_value_single(
+          let book_name_element = html_parse_visit_attribute_value_list(
             c,
             "size",
             "+4",
