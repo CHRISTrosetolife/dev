@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { null_not_is } from "./null_not_is.mjs";
 import { assert } from "./assert.mjs";
 import { string_trim } from "./string_trim.mjs";
@@ -25,6 +26,9 @@ export async function bible_ceb_4_chapter(book_index, chapter_index) {
   let href_book = list_get(book_hrefs, book_index);
   let url_chapter = path_join([path_dirname(href_book), href_chapter]);
   url_chapter = string_combine(url_base, url_chapter);
+  log({
+    url_chapter,
+  });
   let root_chapter = await html_cache_parse(url_chapter);
   let tb = html_parse_visit_attribute_value_single(
     root_chapter,
