@@ -41,6 +41,7 @@ export async function sandbox() {
           "engfbv",
           "engnoy",
           "eng-glw",
+          "englsv",
         ];
         await bible_chapter(chapter_name);
       });
