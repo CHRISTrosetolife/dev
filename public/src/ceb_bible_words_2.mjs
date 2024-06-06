@@ -2,7 +2,6 @@ import { each_index_only_async } from "./each_index_only_async.mjs";
 import { bible_ceb_2_books_hrefs } from "./bible_ceb_2_books_hrefs.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 import { string_exclude } from "./string_exclude.mjs";
-import { string_symbols } from "./string_symbols.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { list_first_remaining } from "./list_first_remaining.mjs";
 import { string_whitespace_normalize } from "./string_whitespace_normalize.mjs";
@@ -61,11 +60,6 @@ export async function ceb_bible_words_2() {
         tokens = list_map(tokens, string_case_lower);
         let symbols = ["¶"];
         tokens = list_map(tokens, (t) => string_exclude(t, symbols));
-        each(tokens, (t) =>
-          each(string_symbols(t), (s) => {
-            la(s);
-          }),
-        );
         if (0) {
           log({
             verse_number,
