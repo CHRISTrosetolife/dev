@@ -53,7 +53,7 @@ export async function sandbox() {
         let b = await bible_ceb_4_chapter(book_index, chapter_index);
         each(b, (v) => {
           let { tokens } = v;
-          let searches = ["Ã", "±"];
+          let searches = string_split_empty("Ã±");
           let filtered = list_filter(tokens, (t) =>
             string_includes_multiple(t, searches),
           );
