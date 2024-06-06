@@ -50,6 +50,8 @@ export async function sandbox() {
               ta,
               tb,
               index_token,
+              tas,
+              tbs,
             }));
           });
           assert(equal_json, [
