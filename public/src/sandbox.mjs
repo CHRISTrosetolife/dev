@@ -42,6 +42,7 @@ export async function sandbox() {
           "engnoy",
           "eng-glw",
           "englsv",
+          "eng-kjv2006",
         ];
         await bible_chapter(chapter_name);
       });
