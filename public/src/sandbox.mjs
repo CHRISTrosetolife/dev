@@ -43,9 +43,9 @@ export async function sandbox() {
           list_get(b, index_verse),
         ]);
       });
+      index++;
       return;
       await bible_ceb_chapter(chapter_name);
-      index++;
     });
   });
   return;
