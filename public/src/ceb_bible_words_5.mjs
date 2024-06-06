@@ -14,9 +14,9 @@ import { list_sort_string } from "./list_sort_string.mjs";
 import { identity } from "./identity.mjs";
 import { string_skip } from "./string_skip.mjs";
 export async function ceb_bible_words_5() {
-  let symbols;
+  let characters;
   let words = await list_adder_unique_async(async (law) => {
-    symbols = await list_adder_unique_async(async (las) => {
+    characters = await list_adder_unique_async(async (las) => {
       await each_async(await bible_books("engbsb"), async (book_name) => {
         let chapters = await bible_chapters("engbsb", book_name);
         await each_async(chapters, async (chapter_name) => {
@@ -27,7 +27,7 @@ export async function ceb_bible_words_5() {
           each(ceb, (v) =>
             each(v.tokens, (t) => {
               each(string_symbols(t), las);
-              symbols = [
+              characters = [
                 "_",
                 "-",
                 "–",
@@ -61,10 +61,10 @@ export async function ceb_bible_words_5() {
                 "8",
                 "9",
               ];
-              while (string_starts_with_multiple(symbols, t)) {
+              while (string_starts_with_multiple(characters, t)) {
                 t = string_skip(t, 1);
               }
-              while (string_ends_with_multiple(symbols, t)) {
+              while (string_ends_with_multiple(characters, t)) {
                 t = string_take_less_1(t);
               }
               if (string_empty_not_is(t)) {
@@ -76,9 +76,9 @@ export async function ceb_bible_words_5() {
       });
     });
   });
-  list_sort_string(symbols, identity);
+  list_sort_string(characters, identity);
   if (0) {
-    return symbols;
+    return characters;
   }
   return words;
 }
