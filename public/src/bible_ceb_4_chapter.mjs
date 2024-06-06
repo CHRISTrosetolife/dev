@@ -26,6 +26,7 @@ export async function bible_ceb_4_chapter(book_index, chapter_index) {
     "textBody",
   );
   let p = html_parse_visit_tag_single(tb, "p");
+  let verse_number = 1;
   let { children } = p;
   each(children, (c) => {
     let { type } = c;
