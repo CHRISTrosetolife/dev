@@ -15,10 +15,12 @@ import { list_map } from "./list_map.mjs";
 export async function ceb_bible_words_4() {
   let url_base = bible_ceb_4_url_base();
   let book_hrefs = await bible_ceb_4_hrefs_books(url_base);
-  await each_index_async(book_hrefs, async (href_book, book_index) => {
+  await each_index_async(book_hrefs, async (href_book_, book_index) => {
     log({
       href_book,
     });
+    let href_book = list_get(book_hrefs, book_index);
+    let url_base = bible_ceb_4_url_base();
     let url = string_combine(url_base, href_book);
     let root_book = await html_cache_parse(url);
     let chapter_elements = html_parse_visit_class_list(root_book, "chap");
