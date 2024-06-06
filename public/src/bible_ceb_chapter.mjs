@@ -71,6 +71,7 @@ export async function bible_ceb_chapter(chapter_name) {
       ceb_verse_numbers_difference,
       ceb_verse_numbers,
       eng_verse_numbers,
+      chapter_name,
     };
   });
   assert(equal_by, [eng, ceb, list_length]);
