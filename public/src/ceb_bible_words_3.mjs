@@ -52,21 +52,21 @@ export async function ceb_bible_words_3() {
       let hrefs = await bible_ceb_3_hrefs();
       await each_index_async(hrefs, async (href_, index) => {
         let verses = await bible_ceb_3_chapter(index);
+        each(verses, (v) =>
+          each(v.tokens, (t) => {
+            each(string_symbols(t), las);
+            while (string_starts_with_multiple(symbols, t)) {
+              t = string_skip(t, 1);
+            }
+            while (string_ends_with_multiple(symbols, t)) {
+              t = string_take_less_1(t);
+            }
+            if (string_empty_not_is(t)) {
+              law(t);
+            }
+          }),
+        );
       });
-      each(verses, (v) =>
-        each(v.tokens, (t) => {
-          each(string_symbols(t), las);
-          while (string_starts_with_multiple(symbols, t)) {
-            t = string_skip(t, 1);
-          }
-          while (string_ends_with_multiple(symbols, t)) {
-            t = string_take_less_1(t);
-          }
-          if (string_empty_not_is(t)) {
-            law(t);
-          }
-        }),
-      );
     });
   });
   list_sort_string(characters, identity);
