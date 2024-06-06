@@ -1,4 +1,4 @@
-import { each_pairs } from "./each_pairs.mjs";
+import { each } from "./each.mjs";
 import { bible_ceb_3_url_base } from "./bible_ceb_3_url_base.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { list_second } from "./list_second.mjs";
@@ -39,6 +39,6 @@ export async function bible_ceb_3_chapter(index) {
       tokens,
     };
   });
-  each_pairs(verses, (before, after) => {});
+  each(verses, (v) => {});
   return verses;
 }
