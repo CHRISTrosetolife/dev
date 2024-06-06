@@ -29,7 +29,7 @@ export async function bible_ceb_4_chapter(book_index, chapter_index) {
   each(children, (c) => {
     let { type } = c;
     if (type === "text") {
-      let data = c;
+      let { data } = c;
     }
   });
   error();
