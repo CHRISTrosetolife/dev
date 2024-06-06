@@ -32,7 +32,13 @@ export async function sandbox() {
     async (book_name, book_index) => {
       let chapters = await bible_chapters("engbsb", book_name);
       await each_async(chapters, async (chapter_name) => {
-        let bible_folders = ["engbsb", "engBBE", "eng-asv", "engasvbt"];
+        let bible_folders = [
+          "engbsb",
+          "engBBE",
+          "eng-asv",
+          "engasvbt",
+          "engDRA",
+        ];
         await bible_chapter(chapter_name);
       });
     },
