@@ -10,6 +10,7 @@ import { list_get } from "./list_get.mjs";
 import { ceb_bible_4_chapters_hrefs } from "./ceb_bible_4_chapters_hrefs.mjs";
 import { bible_ceb_4_hrefs_books } from "./bible_ceb_4_hrefs_books.mjs";
 import { bible_ceb_4_url_base } from "./bible_ceb_4_url_base.mjs";
+import { object_property_exists } from "./object_property_exists.mjs";
 export async function bible_ceb_4_chapter(book_index, chapter_index) {
   let url_base = bible_ceb_4_url_base();
   let book_hrefs = await bible_ceb_4_hrefs_books(url_base);
@@ -33,6 +34,8 @@ export async function bible_ceb_4_chapter(book_index, chapter_index) {
     }
     if (type === "tag") {
       let { attribs } = c;
+      if (object_property_exists(attribs, "class")) {
+      }
     }
   });
   error();
