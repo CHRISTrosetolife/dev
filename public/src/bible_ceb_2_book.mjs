@@ -48,6 +48,7 @@ export async function bible_ceb_2_book(book_index) {
             "size",
             "+2",
           );
+          type = chapter_name_element;
           let chapter_name_text = html_parse_text(chapter_name_element);
           log({
             chapter_name_text,
