@@ -48,10 +48,8 @@ export async function bible_ceb_2_book(book_index) {
             "size",
             "+2",
           );
-          chapter_name = string_prefix_without(
-            html_parse_text(chapter_name_element),
-            "CAPITLO ",
-          );
+          let chapter_name_text = html_parse_text(chapter_name_element);
+          chapter_name = string_prefix_without(chapter_name_text, "CAPITLO ");
         }
       }
       if (type === "text") {
