@@ -13,6 +13,7 @@ import { assert } from "./assert.mjs";
 import { html_parse_visit_tag_list } from "./html_parse_visit_tag_list.mjs";
 import { html_cache_parse } from "./html_cache_parse.mjs";
 import { string_combine } from "./string_combine.mjs";
+import { log } from "./log.mjs";
 import { list_get } from "./list_get.mjs";
 import { bible_ceb_3_hrefs } from "./bible_ceb_3_hrefs.mjs";
 import { list_skip } from "./list_skip.mjs";
@@ -21,6 +22,9 @@ export async function bible_ceb_3_chapter(index) {
   let url_base = bible_ceb_3_url_base();
   let hrefs = await bible_ceb_3_hrefs();
   let href = list_get(hrefs, index);
+  log({
+    href,
+  });
   let url = string_combine(url_base, href);
   let root = await html_cache_parse(url);
   let tables = html_parse_visit_tag_list(root, "table");
