@@ -57,7 +57,7 @@ export async function sandbox() {
           if (list_empty_not_is(filtered)) {
             log(
               url_chapter +
-                " " +
+                " verse " +
                 v.verse_number +
                 " " +
                 list_join_comma_space(filtered),
