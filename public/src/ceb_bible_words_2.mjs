@@ -5,6 +5,8 @@ import { bible_ceb_2_book } from "./bible_ceb_2_book.mjs";
 import { each_index_only_async } from "./each_index_only_async.mjs";
 import { bible_ceb_2_books_hrefs } from "./bible_ceb_2_books_hrefs.mjs";
 import { string_count_words } from "./string_count_words.mjs";
+import { list_sort_string } from "./list_sort_string.mjs";
+import { identity } from "./identity.mjs";
 export async function ceb_bible_words_2() {
   let book_hrefs = await bible_ceb_2_books_hrefs();
   let symbols = await list_adder_unique_async(
@@ -14,6 +16,7 @@ export async function ceb_bible_words_2() {
         each(verses, (v) => each(v.tokens, (t) => each(string_symbols(t), la)));
       }),
   );
+  list_sort_string(symbols, identity);
   return;
   let mapped = string_count_words(text_split);
   return mapped;
