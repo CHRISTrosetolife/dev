@@ -1,5 +1,6 @@
 import { error } from "./error.mjs";
 export async function retry(retries, lambda, retry_if_lambda) {
+  let delay = 10;
   while (retries >= 1) {
     retries--;
     try {
