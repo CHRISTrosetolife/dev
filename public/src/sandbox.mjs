@@ -1,5 +1,3 @@
-import { string_includes_multiple } from "./string_includes_multiple.mjs";
-import { bible_ceb_4_chapter_url } from "./bible_ceb_4_chapter_url.mjs";
 import { equal } from "./equal.mjs";
 import { number_max_list_length } from "./number_max_list_length.mjs";
 import { bible_ceb_4_chapter } from "./bible_ceb_4_chapter.mjs";
@@ -37,8 +35,6 @@ import { assert_message_json } from "./assert_message_json.mjs";
 import { string_replace_multiple } from "./string_replace_multiple.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
-import { list_empty_not_is } from "./list_empty_not_is.mjs";
-import { list_join_comma_space } from "./list_join_comma_space.mjs";
 export async function sandbox() {
   let index = 0;
   await each_index_async(
@@ -46,28 +42,7 @@ export async function sandbox() {
     async (book_name, book_index) => {
       let chapters = await bible_chapters("engbsb", book_name);
       await each_index_async(chapters, async (chapter_name, chapter_index) => {
-        let url_chapter = await bible_ceb_4_chapter_url(
-          book_index,
-          chapter_index,
-        );
         let b = await bible_ceb_4_chapter(book_index, chapter_index);
-        each(b, (v) => {
-          let { tokens } = v;
-          let searches = string_split_empty("Ã±¯­");
-          let filtered = list_filter(tokens, (t) =>
-            string_includes_multiple(t, searches),
-          );
-          if (list_empty_not_is(filtered)) {
-            log(
-              url_chapter +
-                " verse " +
-                v.verse_number +
-                " " +
-                list_join_comma_space(filtered),
-            );
-          }
-        });
-        return;
         let a = await bible_ceb_3_chapter(index);
         each_range(number_max_list_length(a, b), (index_verse) => {
           let { tokens: tas, verse_number: va } = list_get(a, index_verse);
