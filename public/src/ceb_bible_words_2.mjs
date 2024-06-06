@@ -1,3 +1,4 @@
+import { list_adder } from "./list_adder.mjs";
 import { each } from "./each.mjs";
 import { string_symbols } from "./string_symbols.mjs";
 import { bible_ceb_2_book } from "./bible_ceb_2_book.mjs";
@@ -8,7 +9,9 @@ export async function ceb_bible_words_2() {
   let book_hrefs = await bible_ceb_2_books_hrefs();
   await each_index_only_async(book_hrefs, async (book_index) => {
     let verses = await bible_ceb_2_book(book_index);
-    each(verses, (v) => {});
+    list_adder((la) =>
+      each(verses, (v) => each(v.tokens, (t) => each(string_symbols(t), la))),
+    );
     string_symbols;
   });
   return;
