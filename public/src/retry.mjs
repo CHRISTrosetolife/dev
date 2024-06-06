@@ -9,6 +9,7 @@ export async function retry(retries, lambda, retry_if_lambda) {
     } catch (e) {
       if (retry_if_lambda(e)) {
         await sleep(delay * 1000);
+        delay *= 2;
         continue;
       }
       throw e;
