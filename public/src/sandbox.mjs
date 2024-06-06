@@ -49,7 +49,7 @@ export async function sandbox() {
         each_range(number_max_list_length(a, b), (index_verse) => {
           let vas = list_map_property(a, "verse_number");
           let vbs = list_map_property(b, "verse_number");
-          list_difference(vas, vbs);
+          let d = list_difference(vas, vbs);
           let { tokens: tas, verse_number: va } = list_get(a, index_verse);
           let { tokens: tbs, verse_number: vb } = list_get(b, index_verse);
           assert_message_json(equal, [va, vb], () => ({}));
