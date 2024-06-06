@@ -1,3 +1,5 @@
+import { null_not_is } from "./null_not_is.mjs";
+import { assert } from "./assert.mjs";
 import { string_trim } from "./string_trim.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 import { list_adder } from "./list_adder.mjs";
@@ -37,6 +39,7 @@ export async function bible_ceb_4_chapter(book_index, chapter_index) {
     each(children, (c) => {
       let { type } = c;
       if (type === "text") {
+        assert(null_not_is, [verse_number]);
         let { data } = c;
         let tokens = string_split_space(data);
         la({
