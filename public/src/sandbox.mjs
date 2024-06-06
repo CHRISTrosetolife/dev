@@ -48,6 +48,7 @@ export async function sandbox() {
           "engoebus",
           "eng-rv",
           "engoke",
+          "engtcent",
         ];
         await bible_chapter(chapter_name);
       });
