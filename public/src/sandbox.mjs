@@ -42,7 +42,12 @@ export async function sandbox() {
         each_range(number_max_list_length(a, b), (index_verse) => {
           let { tokens: tas } = a;
           let { tokens: tbs } = b;
-          each_range(number_max_list_length(a, b), (index_token) => {});
+          each_range(number_max_list_length(a, b), (index_token) => {
+            assert(equal_json, [
+              list_get(a, index_verse),
+              list_get(b, index_verse),
+            ]);
+          });
           assert(equal_json, [
             list_get(a, index_verse),
             list_get(b, index_verse),
