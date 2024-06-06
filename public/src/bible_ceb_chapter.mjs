@@ -38,6 +38,7 @@ export async function bible_ceb_chapter(chapter_name) {
     LUK23: ["17"],
     JHN05: ["4"],
     ACT08: ["37"],
+    ACT15: ["34"],
   };
   let missing_is = false;
   each_object(missing, (chapter_name_missing, verse_numbers) => {
