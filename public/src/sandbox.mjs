@@ -43,6 +43,8 @@ export async function sandbox() {
         each_range(
           number_max(list_length(a), list_length(b)),
           (index_verse) => {
+            let tokens = a;
+            each(tokens);
             assert(equal_json, [
               list_get(a, index_verse),
               list_get(b, index_verse),
