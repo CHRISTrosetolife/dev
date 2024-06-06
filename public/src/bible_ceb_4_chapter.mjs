@@ -47,7 +47,6 @@ export async function bible_ceb_4_chapter(book_index, chapter_index) {
           tokens,
         });
         verse_number = null;
-        let a = b !== null;
       }
       if (type === "tag") {
         let { attribs } = c;
