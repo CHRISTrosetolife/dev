@@ -40,7 +40,8 @@ export async function sandbox() {
         let a = await bible_ceb_3_chapter(index);
         let b = await bible_ceb_4_chapter(book_index, chapter_index);
         each_range(number_max_list_length(a, b), (index_verse) => {
-          let tokens = a;
+          let { tokens: tas } = a;
+          let { tokens: tbs } = b;
           each(tokens);
           each_range(number_max_list_length(a, b), (index_verse) => {});
           assert(equal_json, [
