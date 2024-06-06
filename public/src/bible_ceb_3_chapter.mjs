@@ -38,6 +38,8 @@ export async function bible_ceb_3_chapter(index) {
   }
   let tables = html_parse_visit_tag_list(root, "table");
   assert_message_json(list_length_2, [tables], () => ({
+    url,
+    index,
     root_text,
   }));
   let first = list_first(tables);
