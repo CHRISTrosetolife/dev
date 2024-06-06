@@ -7,6 +7,7 @@ import { bible_ceb_2_books_hrefs } from "./bible_ceb_2_books_hrefs.mjs";
 import { string_count_words } from "./string_count_words.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { identity } from "./identity.mjs";
+import { string_replace_multiple } from "./string_replace_multiple.mjs";
 export async function ceb_bible_words_2() {
   let book_hrefs = await bible_ceb_2_books_hrefs();
   let symbols;
@@ -18,6 +19,34 @@ export async function ceb_bible_words_2() {
           each(verses, (v) =>
             each(v.tokens, (t) => {
               each(string_symbols(t), las);
+              t = string_replace_multiple(
+                t,
+                [
+                  ",",
+                  ";",
+                  ":",
+                  "!",
+                  "?",
+                  ".",
+                  "'",
+                  '"',
+                  "(",
+                  ")",
+                  "/",
+                  "`",
+                  "|",
+                  "0",
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "7",
+                  "8",
+                  "9",
+                ],
+                "",
+              );
               law(t);
             }),
           );
