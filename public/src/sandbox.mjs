@@ -46,7 +46,10 @@ export async function sandbox() {
         each_range(number_max_list_length(a, b), (index_verse) => {
           let { tokens: tas, verse_number: va } = list_get(a, index_verse);
           let { tokens: tbs, verse_number: vb } = list_get(b, index_verse);
-          assert(equal, [va, vb]);
+          assert_message_json(equal, [va, vb], () => ({
+            a,
+            b,
+          }));
           tas = normalize(tas);
           tbs = normalize(tbs);
           each_range(number_max_list_length(tas, tbs), (index_token) => {
