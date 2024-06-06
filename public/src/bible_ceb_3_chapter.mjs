@@ -22,10 +22,10 @@ export async function bible_ceb_3_chapter(index) {
   let url_base = bible_ceb_3_url_base();
   let hrefs = await bible_ceb_3_hrefs();
   let href = list_get(hrefs, index);
-  log({
-    href,
-  });
   let url = string_combine(url_base, href);
+  log({
+    url,
+  });
   let root = await html_cache_parse(url);
   let tables = html_parse_visit_tag_list(root, "table");
   assert(list_length_2, [tables]);
