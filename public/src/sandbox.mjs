@@ -37,6 +37,7 @@ import { string_replace_multiple } from "./string_replace_multiple.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 import { list_difference } from "./list_difference.mjs";
+import { list_empty_is } from "./list_empty_is.mjs";
 export async function sandbox() {
   let index = 0;
   await each_index_async(
@@ -49,8 +50,9 @@ export async function sandbox() {
         each_range(number_max_list_length(a, b), (index_verse) => {
           let vas = list_map_property(a, "verse_number");
           let vbs = list_map_property(b, "verse_number");
-          let dab = list_difference(vas, vbs);
           let dba = list_difference(vbs, vas);
+          assert(list_empty_is, [dba]);
+          let dab = list_difference(vas, vbs);
           let { tokens: tas, verse_number: va } = list_get(a, index_verse);
           let { tokens: tbs, verse_number: vb } = list_get(b, index_verse);
           assert_message_json(equal, [va, vb], () => ({}));
