@@ -19,7 +19,7 @@ import { list_get } from "./list_get.mjs";
 export async function ceb_bible_words_5() {
   await each_async(await bible_books("engbsb"), async (book_name) => {
     let chapters = await bible_chapters("engbsb", book_name);
-    await each_index_async(chapters, async (chapter_nam) => {});
+    await each_index_async(chapters, async (chapter_name) => {});
   });
   let book_hrefs = await bible_ceb_2_books_hrefs();
   let symbols;
