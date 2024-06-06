@@ -54,10 +54,10 @@ export async function sandbox() {
         each(b, (v) => {
           let { tokens } = v;
           let filtered = list_filter(tokens, string_includes_curry_right("Ã±"));
-          log({
-            filtered,
-          });
           if (list_empty_not_is(filtered)) {
+            log({
+              filtered,
+            });
             log(
               url_chapter +
                 " verse " +
