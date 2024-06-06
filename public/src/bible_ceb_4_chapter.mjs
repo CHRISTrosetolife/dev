@@ -32,7 +32,7 @@ export async function bible_ceb_4_chapter(book_index, chapter_index) {
       let { data } = c;
     }
     if (type === "tag") {
-      let { name } = c;
+      let { attribs } = c;
     }
   });
   error();
