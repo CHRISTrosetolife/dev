@@ -46,6 +46,7 @@ export async function sandbox() {
         each_range(number_max_list_length(a, b), (index_verse) => {
           let { tokens: tas, verse_number: va } = list_get(a, index_verse);
           let { tokens: tbs, verse_number: vb } = list_get(b, index_verse);
+          assert(equal, [va, vb]);
           tas = normalize(tas);
           tbs = normalize(tbs);
           each_range(number_max_list_length(tas, tbs), (index_token) => {
@@ -59,7 +60,6 @@ export async function sandbox() {
               tbs,
             }));
           });
-          assert(equal, [va, vb]);
           function normalize(l) {
             l = list_map(l, (e) =>
               string_replace_multiple(e, [",", "-", "."], ""),
