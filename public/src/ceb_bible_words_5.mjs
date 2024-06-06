@@ -1,3 +1,4 @@
+import { list_any } from "./list_any.mjs";
 import { log } from "./log.mjs";
 import { bible_ceb_chapter } from "./bible_ceb_chapter.mjs";
 import { each_async } from "./each_async.mjs";
@@ -10,6 +11,7 @@ import { bible_ceb_2_books_hrefs } from "./bible_ceb_2_books_hrefs.mjs";
 import { string_count_words } from "./string_count_words.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { identity } from "./identity.mjs";
+import { string_starts_with } from "./string_starts_with.mjs";
 export async function ceb_bible_words_5() {
   let book_hrefs = await bible_ceb_2_books_hrefs();
   let symbols;
@@ -59,6 +61,7 @@ export async function ceb_bible_words_5() {
                 "8",
                 "9",
               ];
+              list_any(symbols, (s) => string_starts_with(t, s));
               law(t);
             }),
           );
