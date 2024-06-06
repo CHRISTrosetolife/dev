@@ -56,6 +56,10 @@ export async function sandbox() {
           "engylt",
         ];
         await each_async(bible_folders, async (bible_folder) => {
+          log({
+            bible_folder,
+            chapter_name,
+          });
           await bible_chapter(bible_folder, chapter_name);
         });
       });
