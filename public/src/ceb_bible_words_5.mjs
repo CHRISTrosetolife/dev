@@ -68,7 +68,7 @@ export async function ceb_bible_words_5() {
                 t = string_skip(t, 1);
               }
               while (string_ends_with_multiple(symbols, t)) {
-                t = string_take(t, string_index_last(t));
+                t = string_take_less_1(t);
               }
               law(t);
             }),
@@ -84,3 +84,7 @@ export async function ceb_bible_words_5() {
   let mapped = string_count_words(words);
   return mapped;
 }
+function string_take_less_1(t) {
+    return string_take(t, string_index_last(t));
+}
+
