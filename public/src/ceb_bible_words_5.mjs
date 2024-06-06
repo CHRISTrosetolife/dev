@@ -11,6 +11,7 @@ import { bible_ceb_2_books_hrefs } from "./bible_ceb_2_books_hrefs.mjs";
 import { string_count_words } from "./string_count_words.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { identity } from "./identity.mjs";
+import { string_skip } from "./string_skip.mjs";
 export async function ceb_bible_words_5() {
   let book_hrefs = await bible_ceb_2_books_hrefs();
   let symbols;
@@ -60,7 +61,9 @@ export async function ceb_bible_words_5() {
                 "8",
                 "9",
               ];
-              while (string_starts_with_multiple(symbols, t)) {}
+              while (string_starts_with_multiple(symbols, t)) {
+                t = string_skip(t, 1);
+              }
               law(t);
             }),
           );
