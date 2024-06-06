@@ -17,6 +17,7 @@ import { log } from "./log.mjs";
 import { list_get } from "./list_get.mjs";
 import { bible_ceb_3_hrefs } from "./bible_ceb_3_hrefs.mjs";
 import { list_skip } from "./list_skip.mjs";
+import { list_add } from "./list_add.mjs";
 export async function bible_ceb_3_chapter(index) {
   let url_base = bible_ceb_3_url_base();
   let hrefs = await bible_ceb_3_hrefs();
@@ -46,6 +47,7 @@ export async function bible_ceb_3_chapter(index) {
   each(verses, (v) => {
     let existing = list_filter(filtered, (f) => equal_json(f, v));
     if (list_empty_is(existing)) {
+      list_add(filtered, v);
     }
   });
   return verses;
