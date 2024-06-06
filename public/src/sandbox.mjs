@@ -57,7 +57,8 @@ export async function sandbox() {
         ];
         await each_async(
           bible_folders,
-          async (bible_folder) => await bible_chapter(chapter_name),
+          async (bible_folder) =>
+            await bible_chapter(bible_folder, chapter_name),
         );
       });
     },
