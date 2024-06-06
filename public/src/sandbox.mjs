@@ -1,3 +1,5 @@
+import { string_includes_curry } from "./string_includes_curry.mjs";
+import { list_any } from "./list_any.mjs";
 import { equal } from "./equal.mjs";
 import { number_max_list_length } from "./number_max_list_length.mjs";
 import { bible_ceb_4_chapter } from "./bible_ceb_4_chapter.mjs";
@@ -45,6 +47,8 @@ export async function sandbox() {
         let b = await bible_ceb_4_chapter(book_index, chapter_index);
         each(b, (v) => {
           let { tokens } = v;
+          if (list_any(tokens, string_includes_curry("Ã±"))) {
+          }
         });
         return;
         let a = await bible_ceb_3_chapter(index);
