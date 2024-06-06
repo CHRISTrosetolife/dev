@@ -1,3 +1,4 @@
+import { string_includes } from "./string_includes.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { equal_json } from "./equal_json.mjs";
 import { list_filter } from "./list_filter.mjs";
@@ -28,6 +29,9 @@ export async function bible_ceb_3_chapter(index) {
   });
   let root = await html_cache_parse(url);
   let root_text = html_parse_text(root);
+  if (string_includes(root_text, "404 Not Found error")) {
+    return [];
+  }
   let tables = html_parse_visit_tag_list(root, "table");
   assert(list_length_2, [tables]);
   let first = list_first(tables);
