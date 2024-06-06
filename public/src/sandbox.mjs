@@ -45,6 +45,7 @@ export async function sandbox() {
           "eng-kjv2006",
           "eng-kjv",
           "engourb",
+          "engoebus",
         ];
         await bible_chapter(chapter_name);
       });
