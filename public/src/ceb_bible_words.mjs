@@ -5,7 +5,7 @@ import { string_count_words } from "./string_count_words.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export async function ceb_bible_words() {
   let count = 5;
-  list_map(range_1(count), (i) =>
+  let fn_names = list_map(range_1(count), (i) =>
     string_combine_multiple([ceb_bible_words.name, "_", i]),
   );
   let text_split = await ceb_bible_words_1();
