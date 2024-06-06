@@ -16,7 +16,7 @@ import { string_split_space } from "./string_split_space.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 export async function bible_ceb_4_chapter(book_index, chapter_index) {
   let url_chapter = await bible_ceb_4_chapter_url(book_index, chapter_index);
-  if (10) {
+  if (0) {
     log({
       url_chapter,
     });
