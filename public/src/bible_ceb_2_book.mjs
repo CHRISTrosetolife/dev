@@ -26,7 +26,7 @@ export async function bible_ceb_2_book(book_index) {
   let root = await html_cache_parse(href);
   let body = html_parse_visit_tag_single(root, "body");
   let { children } = body;
-  list_adder((la) => {
+  return list_adder((la) => {
     each(children, (c) => {
       let { type } = c;
       if (type === "tag") {
