@@ -10,6 +10,5 @@ export function html_parse_visit_attribute_value_single(
     attribute_name,
     attribute_value,
   );
-  list_single(l);
-  return l;
+  return list_single(l);
 }
