@@ -14,8 +14,6 @@ import { object_property_set } from "./object_property_set.mjs";
 import { equal_by } from "./equal_by.mjs";
 import { assert } from "./assert.mjs";
 import { list_length } from "./list_length.mjs";
-import { json_to } from "./json_to.mjs";
-import { js_code_return } from "./js_code_return.mjs";
 import { list_difference } from "./list_difference.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { list_add } from "./list_add.mjs";
@@ -106,7 +104,5 @@ export async function bible_ceb_chapter(chapter_name) {
     eng,
     definitions,
   };
-  let body_string = js_code_return(json_to(data));
-  let fn_name = `bible_data_${string_case_lower(chapter_name)}`;
   return data;
 }
