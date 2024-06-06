@@ -58,12 +58,10 @@ export async function bible_ceb_2_book(book_index) {
         tokens = list_map(tokens, string_case_lower);
         let symbols = ["¶"];
         tokens = list_map(tokens, (t) => string_exclude(t, symbols));
-        if (0) {
-          log({
-            verse_number,
-            tokens,
-          });
-        }
+        la({
+          verse_number,
+          tokens,
+        });
       }
     });
   });
