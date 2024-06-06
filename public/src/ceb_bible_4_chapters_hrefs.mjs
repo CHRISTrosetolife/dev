@@ -7,6 +7,7 @@ import { html_cache_parse } from "./html_cache_parse.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { bible_ceb_4_url_base } from "./bible_ceb_4_url_base.mjs";
 import { list_get } from "./list_get.mjs";
+import { list_add_beginning } from "./list_add_beginning.mjs";
 export async function ceb_bible_4_chapters_hrefs(book_hrefs, book_index) {
   let href_book = list_get(book_hrefs, book_index);
   let url_base = bible_ceb_4_url_base();
@@ -18,5 +19,6 @@ export async function ceb_bible_4_chapters_hrefs(book_hrefs, book_index) {
     let i = string_index(h, "#");
     return string_take(h, i);
   });
+  list_add_beginning(hrefs_chapters, ["1.htm"]);
   return hrefs_chapters;
 }
