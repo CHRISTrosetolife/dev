@@ -1,3 +1,4 @@
+import { each_index_only_async } from "./each_index_only_async.mjs";
 import { identity } from "./identity.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
@@ -10,7 +11,6 @@ import { each } from "./each.mjs";
 import { list_adder_unique_async } from "./list_adder_unique_async.mjs";
 import { bible_ceb_3_chapter } from "./bible_ceb_3_chapter.mjs";
 import { bible_ceb_3_hrefs } from "./bible_ceb_3_hrefs.mjs";
-import { each_index_async } from "./each_index_async.mjs";
 export async function ceb_bible_words_3() {
   let symbols = [
     "_",
@@ -50,7 +50,7 @@ export async function ceb_bible_words_3() {
   let words = await list_adder_unique_async(async (law) => {
     characters = await list_adder_unique_async(async (las) => {
       let hrefs = await bible_ceb_3_hrefs();
-      await each_index_async(hrefs, async (href_, index) => {
+      await each_index_only_async(hrefs, async (index) => {
         let verses = await bible_ceb_3_chapter(index);
         each(verses, (v) =>
           each(v.tokens, (t) => {
