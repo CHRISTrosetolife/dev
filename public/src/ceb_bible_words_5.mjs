@@ -1,3 +1,4 @@
+import { bible_ceb_chapter } from "./bible_ceb_chapter.mjs";
 import { each_async } from "./each_async.mjs";
 import { bible_chapters } from "./bible_chapters.mjs";
 import { bible_books } from "./bible_books.mjs";
@@ -18,7 +19,9 @@ import { list_get } from "./list_get.mjs";
 export async function ceb_bible_words_5() {
   await each_async(await bible_books("engbsb"), async (book_name) => {
     let chapters = await bible_chapters("engbsb", book_name);
-    await each_async(chapters, async (chapter_name) => {});
+    await each_async(chapters, async (chapter_name) => {
+      await bible_ceb_chapter(chapter_name);
+    });
   });
   let book_hrefs = await bible_ceb_2_books_hrefs();
   let symbols;
