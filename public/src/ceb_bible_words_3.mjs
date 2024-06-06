@@ -61,7 +61,7 @@ export async function ceb_bible_words_3() {
     });
   });
   list_sort_string(characters, identity);
-  if (10) {
+  if (0) {
     return characters;
   }
   return words;
