@@ -1,3 +1,4 @@
+import { list_adder } from "./list_adder.mjs";
 import { each } from "./each.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
 import { error } from "./error.mjs";
@@ -28,16 +29,18 @@ export async function bible_ceb_4_chapter(book_index, chapter_index) {
   let p = html_parse_visit_tag_single(tb, "p");
   let verse_number = "1";
   let { children } = p;
-  each(children, (c) => {
-    let { type } = c;
-    if (type === "text") {
-      let { data } = c;
-    }
-    if (type === "tag") {
-      let { attribs } = c;
-      if (object_property_exists(attribs, "class")) {
+  list_adder((la) => {
+    each(children, (c) => {
+      let { type } = c;
+      if (type === "text") {
+        let { data } = c;
       }
-    }
+      if (type === "tag") {
+        let { attribs } = c;
+        if (object_property_exists(attribs, "class")) {
+        }
+      }
+    });
   });
   error();
 }
