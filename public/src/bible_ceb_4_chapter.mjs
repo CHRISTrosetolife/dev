@@ -12,6 +12,7 @@ import { ceb_bible_4_chapters_hrefs } from "./ceb_bible_4_chapters_hrefs.mjs";
 import { bible_ceb_4_hrefs_books } from "./bible_ceb_4_hrefs_books.mjs";
 import { bible_ceb_4_url_base } from "./bible_ceb_4_url_base.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
+import { string_split_space } from "./string_split_space.mjs";
 export async function bible_ceb_4_chapter(book_index, chapter_index) {
   let url_base = bible_ceb_4_url_base();
   let book_hrefs = await bible_ceb_4_hrefs_books(url_base);
@@ -34,6 +35,7 @@ export async function bible_ceb_4_chapter(book_index, chapter_index) {
       let { type } = c;
       if (type === "text") {
         let { data } = c;
+        let tokens = string_split_space(data);
         la({
           verse_number,
           tokens,
