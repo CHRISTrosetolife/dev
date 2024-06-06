@@ -1,3 +1,4 @@
+import { list_single } from "./list_single.mjs";
 import { html_parse_visit_attribute_value_list } from "./html_parse_visit_attribute_value_list.mjs";
 import { string_exclude } from "./string_exclude.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
@@ -39,6 +40,7 @@ export async function bible_ceb_2_book(book_index) {
             "+4",
           );
           if (list_empty_not_is(book_name_elements)) {
+            let book_name_element = list_single(book_name_elements);
             book_name = html_parse_text(book_name_element);
           }
           let chapter_name_element = html_parse_visit_attribute_value_single(
