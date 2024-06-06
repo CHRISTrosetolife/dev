@@ -1,3 +1,4 @@
+import { string_ends_with_multiple } from "./string_ends_with_multiple.mjs";
 import { string_starts_with_multiple } from "./string_starts_with_multiple.mjs";
 import { log } from "./log.mjs";
 import { bible_ceb_chapter } from "./bible_ceb_chapter.mjs";
@@ -62,6 +63,9 @@ export async function ceb_bible_words_5() {
                 "9",
               ];
               while (string_starts_with_multiple(symbols, t)) {
+                t = string_skip(t, 1);
+              }
+              while (string_ends_with_multiple(symbols, t)) {
                 t = string_skip(t, 1);
               }
               law(t);
