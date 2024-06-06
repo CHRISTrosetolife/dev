@@ -6,7 +6,7 @@ export async function function_transform_args(
   args,
 ) {
   let args_split = string_split_comma(args);
-  return await function_transform_args_split(
+  let r = await function_transform_args_split(
     lambda_names,
     function_name,
     args_split,
