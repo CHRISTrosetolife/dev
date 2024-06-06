@@ -27,7 +27,7 @@ export async function ceb_bible_words_5() {
           each(ceb, (v) =>
             each(v.tokens, (t) => {
               each(string_symbols(t), las);
-              characters = [
+              let symbols = [
                 "_",
                 "-",
                 "–",
