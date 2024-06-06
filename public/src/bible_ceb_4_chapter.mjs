@@ -1,3 +1,4 @@
+import { string_trim } from "./string_trim.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { each } from "./each.mjs";
@@ -50,6 +51,7 @@ export async function bible_ceb_4_chapter(book_index, chapter_index) {
           let value = object_property_get(attribs, "class");
           if (value === "verse") {
             verse_number = html_parse_text(c);
+            verse_number = string_trim(verse_number);
           }
         }
       }
