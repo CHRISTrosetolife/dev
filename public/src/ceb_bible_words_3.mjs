@@ -7,11 +7,6 @@ import { string_skip } from "./string_skip.mjs";
 import { string_starts_with_multiple } from "./string_starts_with_multiple.mjs";
 import { string_symbols } from "./string_symbols.mjs";
 import { each } from "./each.mjs";
-import { bible_ceb_chapter } from "./bible_ceb_chapter.mjs";
-import { log } from "./log.mjs";
-import { bible_chapters } from "./bible_chapters.mjs";
-import { bible_books } from "./bible_books.mjs";
-import { each_async } from "./each_async.mjs";
 import { list_adder_unique_async } from "./list_adder_unique_async.mjs";
 import { bible_ceb_3_chapter } from "./bible_ceb_3_chapter.mjs";
 import { bible_ceb_3_hrefs } from "./bible_ceb_3_hrefs.mjs";
@@ -58,29 +53,20 @@ export async function ceb_bible_words_3() {
       await each_index_async(hrefs, async (href_, index) => {
         let verses = await bible_ceb_3_chapter(index);
       });
-      await each_async(await bible_books("engbsb"), async (book_name) => {
-        let chapters = await bible_chapters("engbsb", book_name);
-        await each_async(chapters, async (chapter_name) => {
-          log({
-            chapter_name,
-          });
-          let { ceb } = await bible_ceb_chapter(chapter_name);
-          each(ceb, (v) =>
-            each(v.tokens, (t) => {
-              each(string_symbols(t), las);
-              while (string_starts_with_multiple(symbols, t)) {
-                t = string_skip(t, 1);
-              }
-              while (string_ends_with_multiple(symbols, t)) {
-                t = string_take_less_1(t);
-              }
-              if (string_empty_not_is(t)) {
-                law(t);
-              }
-            }),
-          );
-        });
-      });
+      each(verses, (v) =>
+        each(v.tokens, (t) => {
+          each(string_symbols(t), las);
+          while (string_starts_with_multiple(symbols, t)) {
+            t = string_skip(t, 1);
+          }
+          while (string_ends_with_multiple(symbols, t)) {
+            t = string_take_less_1(t);
+          }
+          if (string_empty_not_is(t)) {
+            law(t);
+          }
+        }),
+      );
     });
   });
   list_sort_string(characters, identity);
