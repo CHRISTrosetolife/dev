@@ -8,6 +8,7 @@ import { string_count_words } from "./string_count_words.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { identity } from "./identity.mjs";
 import { string_replace_multiple } from "./string_replace_multiple.mjs";
+import { string_empty_not_is } from "./string_empty_not_is.mjs";
 export async function ceb_bible_words_2() {
   let book_hrefs = await bible_ceb_2_books_hrefs();
   let symbols;
@@ -47,7 +48,9 @@ export async function ceb_bible_words_2() {
                 ],
                 "",
               );
-              law(t);
+              if (string_empty_not_is(t)) {
+                law(t);
+              }
             }),
           );
         }),
