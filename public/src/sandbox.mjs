@@ -1,4 +1,4 @@
-import { string_includes_curry } from "./string_includes_curry.mjs";
+import { string_includes_multiple } from "./string_includes_multiple.mjs";
 import { bible_ceb_4_chapter_url } from "./bible_ceb_4_chapter_url.mjs";
 import { equal } from "./equal.mjs";
 import { number_max_list_length } from "./number_max_list_length.mjs";
@@ -39,7 +39,6 @@ import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
-import { list_any } from "./list_any.mjs";
 export async function sandbox() {
   let index = 0;
   await each_index_async(
@@ -56,7 +55,7 @@ export async function sandbox() {
           let { tokens } = v;
           let searches = ["Ã", "±"];
           let filtered = list_filter(tokens, (t) =>
-            list_any(searches, string_includes_curry(t)),
+            string_includes_multiple(t, searches),
           );
           if (list_empty_not_is(filtered)) {
             log(
