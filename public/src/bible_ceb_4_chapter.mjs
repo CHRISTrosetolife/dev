@@ -5,7 +5,6 @@ import { html_parse_text } from "./html_parse_text.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { each } from "./each.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
-import { error } from "./error.mjs";
 import { html_parse_visit_attribute_value_single } from "./html_parse_visit_attribute_value_single.mjs";
 import { html_cache_parse } from "./html_cache_parse.mjs";
 import { string_combine } from "./string_combine.mjs";
@@ -60,5 +59,4 @@ export async function bible_ceb_4_chapter(book_index, chapter_index) {
       }
     });
   });
-  error();
 }
