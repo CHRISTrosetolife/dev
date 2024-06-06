@@ -39,8 +39,8 @@ export async function bible_ceb_2_book(book_index) {
             "+4",
           );
           if (list_empty_not_is(book_name_elements)) {
+            book_name = html_parse_text(book_name_element);
           }
-          book_name = html_parse_text(book_name_element);
           let chapter_name_element = html_parse_visit_attribute_value_single(
             c,
             "size",
