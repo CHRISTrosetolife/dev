@@ -1,3 +1,4 @@
+import { less_than_equal } from "./less_than_equal.mjs";
 import { list_length } from "./list_length.mjs";
 import { string_includes } from "./string_includes.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
@@ -38,7 +39,7 @@ export async function bible_ceb_3_chapter(index) {
     return [];
   }
   let tables = html_parse_visit_tag_list(root, "table");
-  assert_message_json(number_less_than_equal, [list_length(tables), 2], () => ({
+  assert_message_json(less_than_equal, [list_length(tables), 2], () => ({
     url,
     index,
     root_text,
