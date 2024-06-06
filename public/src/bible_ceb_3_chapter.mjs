@@ -50,5 +50,5 @@ export async function bible_ceb_3_chapter(index) {
       list_add(filtered, v);
     }
   });
-  return verses;
+  return filtered;
 }
