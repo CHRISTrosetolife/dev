@@ -32,7 +32,7 @@ export async function bible_ceb_2_book(book_index) {
       let { type } = c;
       if (type === "tag") {
         if (c.name === "center") {
-          let book_name_element = html_parse_visit_attribute_value_list(
+          let book_name_elements = html_parse_visit_attribute_value_list(
             c,
             "size",
             "+4",
