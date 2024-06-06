@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { list_adder_unique } from "./list_adder_unique.mjs";
 import { js_visit } from "./js_visit.mjs";
 export function js_node_type(ast, type) {
@@ -10,10 +9,6 @@ export function js_node_type(ast, type) {
         la(node);
       }
     }
-  });
-  log({
-    result,
-    type,
   });
   return result;
 }
