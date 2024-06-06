@@ -10,7 +10,6 @@ import { bible_books } from "./bible_books.mjs";
 import { list_adder_unique_async } from "./list_adder_unique_async.mjs";
 import { each } from "./each.mjs";
 import { string_symbols } from "./string_symbols.mjs";
-import { string_count_words } from "./string_count_words.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { identity } from "./identity.mjs";
 import { string_skip } from "./string_skip.mjs";
@@ -81,6 +80,5 @@ export async function ceb_bible_words_5() {
   if (0) {
     return symbols;
   }
-  let mapped = string_count_words(words);
-  return mapped;
+  return words;
 }
