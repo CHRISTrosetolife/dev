@@ -1,3 +1,5 @@
+import { equal_json } from "./equal_json.mjs";
+import { list_filter } from "./list_filter.mjs";
 import { each } from "./each.mjs";
 import { bible_ceb_3_url_base } from "./bible_ceb_3_url_base.mjs";
 import { string_split_space } from "./string_split_space.mjs";
@@ -40,6 +42,8 @@ export async function bible_ceb_3_chapter(index) {
     };
   });
   let filtered = [];
-  each(verses, (v) => {});
+  each(verses, (v) => {
+    let existing = list_filter(filtered, (f) => equal_json(f, v));
+  });
   return verses;
 }
