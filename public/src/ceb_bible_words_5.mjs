@@ -60,7 +60,7 @@ export async function ceb_bible_words_5() {
                 "8",
                 "9",
               ];
-              string_starts_with_multiple(symbols, t);
+              while (string_starts_with_multiple(symbols, t));
               law(t);
             }),
           );
