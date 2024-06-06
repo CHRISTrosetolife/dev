@@ -34,6 +34,10 @@ export async function bible_ceb_4_chapter(book_index, chapter_index) {
       let { type } = c;
       if (type === "text") {
         let { data } = c;
+        la({
+          verse_number,
+          tokens,
+        });
       }
       if (type === "tag") {
         let { attribs } = c;
