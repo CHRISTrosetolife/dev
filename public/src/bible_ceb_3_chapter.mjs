@@ -39,6 +39,7 @@ export async function bible_ceb_3_chapter(index) {
       tokens,
     };
   });
+  let filtered = [];
   each(verses, (v) => {});
   return verses;
 }
