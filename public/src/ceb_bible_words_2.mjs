@@ -9,7 +9,8 @@ import { list_sort_string } from "./list_sort_string.mjs";
 import { identity } from "./identity.mjs";
 export async function ceb_bible_words_2() {
   let book_hrefs = await bible_ceb_2_books_hrefs();
-  let symbols = await list_adder_unique_async(async (la) => {
+  let symbols;
+  let words = await list_adder_unique_async(async (la) => {
     let symbols = await list_adder_unique_async(
       async (la) =>
         await each_index_only_async(book_hrefs, async (book_index) => {
