@@ -49,6 +49,9 @@ export async function sandbox() {
         let a = await bible_ceb_3_chapter(index);
         each_range(number_max_list_length(a, b), (index_verse) => {
           let vas = list_map_property(a, "verse_number");
+          if (list_empty_is(vas)) {
+            return;
+          }
           let vbs = list_map_property(b, "verse_number");
           let dba = list_difference(vbs, vas);
           let dab = list_difference(vas, vbs);
