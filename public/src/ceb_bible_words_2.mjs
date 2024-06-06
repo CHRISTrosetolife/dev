@@ -1,3 +1,4 @@
+import { each_index_only_async } from "./each_index_only_async.mjs";
 import { bible_ceb_2_books_hrefs } from "./bible_ceb_2_books_hrefs.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 import { string_exclude } from "./string_exclude.mjs";
@@ -13,7 +14,6 @@ import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
 import { log } from "./log.mjs";
 import { html_cache_parse } from "./html_cache_parse.mjs";
 import { string_count_words } from "./string_count_words.mjs";
-import { each_async } from "./each_async.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
@@ -22,7 +22,8 @@ import { string_prefix_without } from "./string_prefix_without.mjs";
 export async function ceb_bible_words_2() {
   let book_hrefs = await bible_ceb_2_books_hrefs();
   let symbols_unique = await list_adder_unique_async(async (la) => {
-    await each_async(book_hrefs, async (href) => {
+    await each_index_only_async(book_hrefs, async (href) => {
+      let book_hrefs = await bible_ceb_2_books_hrefs();
       log({
         href,
       });
