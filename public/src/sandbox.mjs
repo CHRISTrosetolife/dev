@@ -45,8 +45,8 @@ export async function sandbox() {
     async (book_name, book_index) => {
       let chapters = await bible_chapters("engbsb", book_name);
       await each_index_async(chapters, async (chapter_name, chapter_index) => {
-        let b = await bible_ceb_4_chapter(book_index, chapter_index);
         let a = await bible_ceb_3_chapter(index);
+        let b = await bible_ceb_4_chapter(book_index, chapter_index);
         each_range(number_max_list_length(a, b), (index_verse) => {
           let vas = list_map_property(a, "verse_number");
           if (list_empty_is(vas)) {
