@@ -1,3 +1,4 @@
+import { list_filter } from "./list_filter.mjs";
 import { function_path_suffix } from "./function_path_suffix.mjs";
 import { function_paths } from "./function_paths.mjs";
 import { folder_path_src } from "./folder_path_src.mjs";
@@ -15,6 +16,7 @@ export async function function_names() {
   if (web_is()) {
     let { files } = global_get();
     let function_paths = object_properties(files);
+    list_filter(function_paths);
     let result = list_map(function_paths, function_path_to_name);
     return result;
   }
