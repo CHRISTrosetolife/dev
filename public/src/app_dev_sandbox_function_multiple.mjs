@@ -107,8 +107,10 @@ export async function app_dev_sandbox_function_multiple(
     });
     let selected;
     if (undefined_is(select)) {
+      log("here1");
       selected = function_name;
     } else {
+      log("here2");
       selected = html_value_get(select);
     }
     let file_path = function_name_to_path(selected);
