@@ -35,6 +35,7 @@ export async function app_dev_sandbox_function_multiple(
     root,
     string_combine_multiple([app_dev_sandbox_message(), try_out_message, " :"]),
   );
+  let function_name_choices = [];
   if (multiple_is) {
     let select = html_select(root);
     html_style_button_default(select);
