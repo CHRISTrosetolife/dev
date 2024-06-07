@@ -1,5 +1,5 @@
+import { function_name_new } from "./function_name_new.mjs";
 import { js_code_return } from "./js_code_return.mjs";
-import { function_names_new } from "./function_names_new.mjs";
 import { log } from "./log.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 import { add } from "./add.mjs";
@@ -41,7 +41,9 @@ export function app_dev_screen_outside_move() {
       app_dev_screen_img(app_dev_screen_outside_move, root, i++);
       app_dev_screen_img(app_dev_screen_outside_move, root, i++);
       app_dev_screen_img(app_dev_screen_outside_move, root, i++);
-      let [fn_a, fn_b, fn_c] = await function_names_new("outside_move", 3);
+      let fn_a = await function_name_new("outside_move");
+      let fn_b = await function_name_new("outside_move_add");
+      let fn_c = await function_name_new("outside_move_multiply");
       let contents_c = js_code_function_declare(
         fn_c,
         "a,b",
