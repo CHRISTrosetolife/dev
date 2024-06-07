@@ -1,3 +1,4 @@
+import { html_style_alternate_monospace_short_span } from "./html_style_alternate_monospace_short_span.mjs";
 import { html_style_alternate_short_function_name } from "./html_style_alternate_short_function_name.mjs";
 import { app_dev_p_transformer_generic } from "./app_dev_p_transformer_generic.mjs";
 import { log } from "./log.mjs";
@@ -15,13 +16,15 @@ import { js_code_export_function_declare } from "./js_code_export_function_decla
 import { function_name_new } from "./function_name_new.mjs";
 import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
-import { html_span_text } from "./html_span_text.mjs";
 import { js_imports_fix } from "./js_imports_fix.mjs";
 import { string_delimit } from "./string_delimit.mjs";
 export function app_dev_screen_imports_fix() {
   return {
     name: function imports_fix_name(root) {
-      return html_span_text(root, "imports_fix");
+      return html_style_alternate_monospace_short_span(
+        root,
+        "adding and removing `import`s",
+      );
     },
     screen: async function imports_fix_screen(root) {
       let i = 1;
