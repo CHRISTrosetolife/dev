@@ -44,12 +44,15 @@ export async function app_dev_sandbox_function_multiple(
       html_inner_set(o, fn);
     });
   }
-  let value_initial = await function_read(function_name);
   let textarea = html_textarea_code(root);
   html_attribute_set(textarea, "rows", 7);
-  html_value_set(textarea, value_initial);
+  await textarea_change();
   html_button_run(root, on_click, run_message);
   let result_component = app_dev_sandbox_result(root);
+  async function textarea_change() {
+    let value_initial = await function_read(function_name);
+    html_value_set(textarea, value_initial);
+  }
   async function on_click() {
     try {
       let file_path = function_name_to_path(function_name);
