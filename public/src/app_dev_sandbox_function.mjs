@@ -11,7 +11,7 @@ export async function app_dev_sandbox_function(
     false,
     function_name,
     try_out_message,
-    run_message,
+    (fn_name) => run_message,
     run_click,
   );
 }
