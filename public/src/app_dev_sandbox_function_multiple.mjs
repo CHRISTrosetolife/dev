@@ -102,6 +102,9 @@ export async function app_dev_sandbox_function_multiple(
     textarea,
   };
   async function textarea_save() {
+    log({
+      select,
+    });
     let selected;
     if (undefined_is(select)) {
       selected = function_name;
