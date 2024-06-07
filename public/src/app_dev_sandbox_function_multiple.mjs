@@ -65,7 +65,8 @@ export async function app_dev_sandbox_function_multiple(
   async function on_click() {
     try {
       await textarea_save();
-      let r = await run_click();
+      let selected = html_value_get(select);
+      let r = await run_click(selected);
       log({
         r,
       });
@@ -79,7 +80,6 @@ export async function app_dev_sandbox_function_multiple(
           }
         });
       }
-      let selected = html_value_get(select);
       let value_new = await function_read(selected);
       html_value_set(textarea, value_new);
     } catch (e) {
