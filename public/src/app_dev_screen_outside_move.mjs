@@ -1,3 +1,4 @@
+import { html_style_alternate_monospace_short_span } from "./html_style_alternate_monospace_short_span.mjs";
 import { app_dev_sandbox_function_multiple } from "./app_dev_sandbox_function_multiple.mjs";
 import { function_name_new } from "./function_name_new.mjs";
 import { js_code_return } from "./js_code_return.mjs";
@@ -18,11 +19,13 @@ import { html_style_alternate_monospace_short } from "./html_style_alternate_mon
 import { app_dev_p_transformer } from "./app_dev_p_transformer.mjs";
 import { js_outside_move } from "./js_outside_move.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
-import { html_span_text } from "./html_span_text.mjs";
 export function app_dev_screen_outside_move() {
   return {
     name: function outside_move_name(root) {
-      return html_style_alternate_monospace_short_span(root, "moving `function`s to their own file");
+      return html_style_alternate_monospace_short_span(
+        root,
+        "moving `function`s to their own file",
+      );
     },
     screen: async function outside_move_screen(root) {
       let i = 1;
