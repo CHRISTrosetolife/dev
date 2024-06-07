@@ -47,8 +47,7 @@ export async function app_dev_sandbox_function_multiple(
       await textarea_change(select_value);
     });
     each(function_name_choices, (fn) => {
-      let o = html_option(select);
-      html_inner_set(o, fn);
+      html_option_text(select, fn);
     });
   }
   let textarea = html_textarea_code(root);
@@ -82,3 +81,8 @@ export async function app_dev_sandbox_function_multiple(
     textarea,
   };
 }
+function html_option_text(select, fn) {
+    let o = html_option(select);
+    html_inner_set(o, fn);
+}
+
