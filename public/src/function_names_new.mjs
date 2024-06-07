@@ -6,6 +6,5 @@ export async function function_names_new(function_name_base, count) {
     await each_range_async(count, async (i) =>
       la(await function_name_new(function_name_base)),
     );
-    function lambda() {}
   });
 }
