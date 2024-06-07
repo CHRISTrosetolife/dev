@@ -27,6 +27,7 @@ import { html_style_alternate_monospace_short } from "./html_style_alternate_mon
 import { html_hr } from "./html_hr.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_get } from "./object_property_get.mjs";
+import { undefined_is } from "./undefined_is.mjs";
 export async function app_dev_sandbox_function_multiple(
   root,
   multiple_is,
@@ -101,11 +102,11 @@ export async function app_dev_sandbox_function_multiple(
     textarea,
   };
   async function textarea_save() {
-    let selected = html_value_get(select);
+    let selected;
+    if (undefined_is(select)) {
+      selected = html_value_get(select);
+    }
     let file_path = function_name_to_path(selected);
-    log({
-      textarea,
-    });
     let value = html_value_get(textarea);
     await file_overwrite(file_path, value);
   }
