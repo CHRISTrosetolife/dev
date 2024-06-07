@@ -264,6 +264,9 @@ export async function ceb_definition(word) {
     ) {
       return false;
     }
+    log({
+      d,
+    });
     let split_d = string_split_space(d);
     if (list_multiple_is(split_d)) {
       if (0) {
