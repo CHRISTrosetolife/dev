@@ -73,7 +73,7 @@ export function app_dev_screen_outside_move() {
       await app_dev_sandbox_function(
         root,
         fn_a,
-        "adding `async` and `await`",
+        "moving `function`s to their own file",
         string_delimit_backtick(
           string_combine_multiple([
             function_transform.name,
