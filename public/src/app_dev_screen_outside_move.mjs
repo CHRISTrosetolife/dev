@@ -1,3 +1,4 @@
+import { html_p_text } from "./html_p_text.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 export function app_dev_screen_outside_move() {
@@ -7,7 +8,7 @@ export function app_dev_screen_outside_move() {
     },
     screen: function outside_move_screen(root) {
       let i = 1;
-      ("if we have functions in the module scope ...");
+      html_p_text(root, "if we have functions in the module scope ...");
       app_dev_screen_img(app_dev_screen_outside_move, root, i++);
       app_dev_screen_img(app_dev_screen_outside_move, root, i++);
       app_dev_screen_img(app_dev_screen_outside_move, root, i++);
