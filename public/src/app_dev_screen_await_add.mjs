@@ -1,3 +1,4 @@
+import { html_style_alternate_monospace_short_span } from "./html_style_alternate_monospace_short_span.mjs";
 import { function_transform } from "./function_transform.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
@@ -21,12 +22,14 @@ import { noop } from "./noop.mjs";
 import { html_style_alternate_short_p } from "./html_style_alternate_short_p.mjs";
 import { timeout_set } from "./timeout_set.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
-import { html_span_text } from "./html_span_text.mjs";
 import { app_learn_code_style_code_colored } from "./app_learn_code_style_code_colored.mjs";
 export function app_dev_screen_await_add() {
   return {
     name: function await_add_name(root) {
-      return html_span_text(root, "adding missing `await`s");
+      return html_style_alternate_monospace_short_span(
+        root,
+        "adding missing `await`s",
+      );
     },
     screen: async function await_add_screen(root) {
       let i = 1;
