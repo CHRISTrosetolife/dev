@@ -38,7 +38,7 @@ export function app_dev_screen_outside_move() {
       app_dev_screen_img(app_dev_screen_outside_move, root, i++);
       app_dev_screen_img(app_dev_screen_outside_move, root, i++);
       app_dev_screen_img(app_dev_screen_outside_move, root, i++);
-      let function_names_unique = await function_name_new("outside_move", 3);
+      let [fn_a, fn_b, fn_c] = await function_name_new("outside_move", 3);
       let contents_function = js_code_export_function_declare(
         function_name_unique,
         "",
