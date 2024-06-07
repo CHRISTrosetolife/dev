@@ -222,9 +222,23 @@ export async function ceb_definition(word) {
   });
   definitions = list_map(definitions, string_whitespace_normalize);
   definitions = await list_filter_async(definitions, async (d) => {
-    log({
-      d,
-    });
+    let replaced = string_replace(d, "s", "z");
+    if (equal_not(replaced, d)) {
+      if (list_includes(definitions, replaced)) {
+        return false;
+      }
+    }
+    if (list_includes(skipped, d)) {
+      return false;
+    }
+    if (
+      list_any(skipped_pairs_split, (s) => {
+        let [left, right] = s;
+        return and(equal(word, left), equal(right, d));
+      })
+    ) {
+      return false;
+    }
     let split_d = string_split_space(d);
     if (list_multiple_is(split_d)) {
       if (0) {
@@ -259,23 +273,6 @@ export async function ceb_definition(word) {
       return false;
     }
     if (list_includes_not(mapped6, word)) {
-      return false;
-    }
-    let replaced = string_replace(d, "s", "z");
-    if (equal_not(replaced, d)) {
-      if (list_includes(definitions, replaced)) {
-        return false;
-      }
-    }
-    if (list_includes(skipped, d)) {
-      return false;
-    }
-    if (
-      list_any(skipped_pairs_split, (s) => {
-        let [left, right] = s;
-        return and(equal(word, left), equal(right, d));
-      })
-    ) {
       return false;
     }
     return true;
