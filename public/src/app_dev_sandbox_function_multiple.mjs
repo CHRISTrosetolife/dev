@@ -31,7 +31,7 @@ export async function app_dev_sandbox_function_multiple(
   html_hr(root);
   html_style_alternate_monospace_short(
     root,
-    string_combine_multiple([app_dev_sandbox_message(), try_out_message]),
+    string_combine_multiple([app_dev_sandbox_message(), try_out_message, " :"]),
   );
   if (list_multiple_is(function_name_choices)) {
     let select = html_select(root);
