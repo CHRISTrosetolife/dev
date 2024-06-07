@@ -103,6 +103,9 @@ export async function app_dev_sandbox_function_multiple(
   async function textarea_save() {
     let selected = html_value_get(select);
     let file_path = function_name_to_path(selected);
+    log({
+      textarea,
+    });
     let value = html_value_get(textarea);
     await file_overwrite(file_path, value);
   }
