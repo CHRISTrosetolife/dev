@@ -68,7 +68,7 @@ export async function app_dev_sandbox_function_multiple(
       if (object_property_exists(r, "function_names_new")) {
         let function_names_new = object_property_get(r, "function_names_new");
         each(function_names_new, (fn) => {
-          if (list_includes_not(function_names_choices, fn)) {
+          if (list_includes_not(function_name_choices, fn)) {
             html_option_text(select, fn);
           }
         });
