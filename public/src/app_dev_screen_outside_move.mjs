@@ -1,3 +1,4 @@
+import { app_dev_sandbox_function_multiple } from "./app_dev_sandbox_function_multiple.mjs";
 import { function_name_new } from "./function_name_new.mjs";
 import { js_code_return } from "./js_code_return.mjs";
 import { log } from "./log.mjs";
@@ -8,7 +9,6 @@ import { js_code_function_declare } from "./js_code_function_declare.mjs";
 import { function_transform } from "./function_transform.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
-import { app_dev_sandbox_function } from "./app_dev_sandbox_function.mjs";
 import { file_write } from "./file_write.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
 import { js_code_format } from "./js_code_format.mjs";
@@ -70,9 +70,10 @@ export function app_dev_screen_outside_move() {
       let contents = await js_code_format(code);
       let file_path = function_name_to_path(fn_a);
       await file_write(file_path, contents);
-      await app_dev_sandbox_function(
+      await app_dev_sandbox_function_multiple(
         root,
         fn_a,
+        [fn_a, fn_b, fn_c],
         "moving `function`s to their own file",
         string_delimit_backtick(
           string_combine_multiple([
