@@ -26,7 +26,7 @@ import { app_learn_code_style_code_colored } from "./app_learn_code_style_code_c
 export function app_dev_screen_await_add() {
   return {
     name: function await_add_name(root) {
-      return html_span_text(root, "await_add");
+      return html_span_text(root, "adding missing `await`s");
     },
     screen: async function await_add_screen(root) {
       let i = 1;
