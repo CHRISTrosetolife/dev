@@ -45,4 +45,7 @@ export async function js_outside_move(ast) {
   let names = list_map(copy, js_declaration_to_name);
   js_imports_add_specified(ast, names);
   js_imports_remove(ast);
+  return {
+    function_names_new: list_map(copy, js_declaration_to_name),
+  };
 }
