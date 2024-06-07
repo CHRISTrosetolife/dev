@@ -44,7 +44,7 @@ export function app_dev_screen_outside_move() {
       js_code_function_declare(
         fn_c,
         "a,b",
-        js_code_statement_call_args(multiply.name, [100]),
+        js_code_statement_call_args(multiply.name, ["a", "b"]),
       );
       let contents_a = js_code_export_function_declare(
         fn_a,
