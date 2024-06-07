@@ -11,6 +11,7 @@ import { global_get } from "./global_get.mjs";
 import { object_properties } from "./object_properties.mjs";
 import { function_path_to_name } from "./function_path_to_name.mjs";
 export async function function_names() {
+  let suffix = function_path_suffix();
   if (web_is()) {
     let { files } = global_get();
     let function_paths = object_properties(files);
@@ -18,7 +19,6 @@ export async function function_names() {
     return result;
   }
   let prefix = folder_path_src();
-  let suffix = function_path_suffix();
   let files = await folder_read(prefix, suffix);
   let mapped = list_map(files, (file_path) => {
     let replaced = string_replace(file_path, "\\", "/");
