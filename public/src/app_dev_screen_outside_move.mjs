@@ -58,7 +58,7 @@ export function app_dev_screen_outside_move() {
       let contents_a = js_code_export_function_declare(
         fn_a,
         "",
-        js_code_statement_call_args(contents_b, ["1", "2", "3"]),
+        js_code_statement_call_args(fn_b, ["1", "2", "3"]),
         false,
       );
       let code = string_combine(js_code_import(sleep.name), contents_a);
