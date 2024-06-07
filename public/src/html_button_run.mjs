@@ -7,7 +7,11 @@ export function html_button_run(root, run_click, message) {
   }
   return html_button_width_full_text_click_alternate_code(
     root,
-    string_combine("💻 run", message),
+    html_button_run_message(message),
     run_click,
   );
 }
+function html_button_run_message(message) {
+    return string_combine("💻 run", message);
+}
+
