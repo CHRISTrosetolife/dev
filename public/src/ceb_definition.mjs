@@ -222,6 +222,20 @@ export async function ceb_definition(word) {
   });
   definitions = list_map(definitions, string_whitespace_normalize);
   definitions = await list_filter_async(definitions, async (d) => {
+    log({
+      d,
+    });
+    let split_d = string_split_space(d);
+    if (list_multiple_is(split_d)) {
+      if (0) {
+        log({
+          word,
+          d,
+          skip_because: "contains spaces",
+        });
+      }
+      return false;
+    }
     let url = string_combine(prefix_2, d);
     url = string_replace(url, " ", "+");
     let { children: children2 } = await ceb_html_cache_parse_form1(url);
@@ -262,20 +276,6 @@ export async function ceb_definition(word) {
         return and(equal(word, left), equal(right, d));
       })
     ) {
-      return false;
-    }
-    log({
-      d,
-    });
-    let split_d = string_split_space(d);
-    if (list_multiple_is(split_d)) {
-      if (0) {
-        log({
-          word,
-          d,
-          skip_because: "contains spaces",
-        });
-      }
       return false;
     }
     return true;
