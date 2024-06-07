@@ -75,15 +75,16 @@ export function app_dev_screen_outside_move() {
         [fn_a, fn_b, fn_c],
         fn_a,
         "moving `function`s to their own file",
-        string_delimit_backtick(
-          string_combine_multiple([
-            function_transform.name,
-            " ",
-            fn.name,
-            " ",
-            fn_a,
-          ]),
-        ),
+        (fn_name) =>
+          string_delimit_backtick(
+            string_combine_multiple([
+              function_transform.name,
+              " ",
+              fn.name,
+              " ",
+              fn_name,
+            ]),
+          ),
         async (fn_name) => await function_transform(fn.name, fn_name),
       );
     },
