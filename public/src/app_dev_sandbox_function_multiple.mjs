@@ -81,7 +81,8 @@ export async function app_dev_sandbox_function_multiple(
           }
         });
       }
-      let value_new = await function_read(function_name);
+      let selected = html_value_get(select);
+      let value_new = await function_read(selected);
       html_value_set(textarea, value_new);
     } catch (e) {
       log({
