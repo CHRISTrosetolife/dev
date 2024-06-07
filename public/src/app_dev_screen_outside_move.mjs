@@ -50,7 +50,10 @@ export function app_dev_screen_outside_move() {
       let contents_b = js_code_function_declare(
         fn_b,
         "a,b,c",
-        js_code_statement_call_args(add.name, ["a", "b"]),
+        js_code_statement_call_args(add.name, [
+          "a",
+          js_code_statement_call_args(sleep.name, [100]),
+        ]),
       );
       let contents_a = js_code_export_function_declare(
         fn_a,
