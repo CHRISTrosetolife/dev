@@ -22,7 +22,7 @@ import { html_span_text } from "./html_span_text.mjs";
 export function app_dev_screen_outside_move() {
   return {
     name: function outside_move_name(root) {
-      return html_span_text(root, "outside_move");
+      return html_style_alternate_monospace_short_span(root, "moving `function`s to their own file");
     },
     screen: async function outside_move_screen(root) {
       let i = 1;
