@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { function_names } from "./function_names.mjs";
 import { log } from "./log.mjs";
 import { function_read } from "./function_read.mjs";
@@ -27,6 +28,7 @@ export async function app_dev_sandbox_function(
     root,
     string_combine_multiple([app_dev_sandbox_message(), try_out_message]),
   );
+  each(function_names, (fn) => {});
   let value_initial = await function_read(function_name);
   let textarea = html_textarea_code(root);
   html_attribute_set(textarea, "rows", 7);
