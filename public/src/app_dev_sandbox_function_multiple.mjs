@@ -68,7 +68,7 @@ export async function app_dev_sandbox_function_multiple(
       await file_overwrite(file_path, value);
       let r = await run_click();
       if (object_property_exists(r, "function_names_new")) {
-        object_property_get(r, "function_names_new");
+        let function_names_new = object_property_get(r, "function_names_new");
       }
       let value_new = await function_read(function_name);
       html_value_set(textarea, value_new);
