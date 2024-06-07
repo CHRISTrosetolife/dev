@@ -11,10 +11,11 @@ export function html_button_width_full_text_click_alternate_code(
 ) {
   let b = html_button_width_full_text_click(root, "", on_click);
   let split = html_style_alternate_split(description);
-  return html_style_alternate(
+  html_style_alternate(
     b,
     html_span,
     [noop, app_learn_code_style_code_colored],
     split,
   );
+  return b;
 }
