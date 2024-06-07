@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 import { js_code_statement_return } from "./js_code_statement_return.mjs";
 import { add } from "./add.mjs";
@@ -61,6 +62,9 @@ export function app_dev_screen_outside_move() {
         false,
       );
       let code = string_combine_multiple([contents_a, contents_b, contents_c]);
+      log({
+        code,
+      });
       let contents = await js_code_format(code);
       let file_path = function_name_to_path(fn_a);
       await file_write(file_path, contents);
