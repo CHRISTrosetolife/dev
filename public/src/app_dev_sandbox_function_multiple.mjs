@@ -1,3 +1,4 @@
+import { html_select } from "./html_select.mjs";
 import { html_style_width_full } from "./html_style_width_full.mjs";
 import { app_dev_sandbox_result_error } from "./app_dev_sandbox_result_error.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
@@ -67,7 +68,3 @@ export async function app_dev_sandbox_function_multiple(
     textarea,
   };
 }
-function html_select(root) {
-    return html_element(root, "select");
-}
-
