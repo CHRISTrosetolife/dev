@@ -1,4 +1,4 @@
-import { html_on_click } from "./html_on_click.mjs";
+import { html_on_change } from "./html_on_change.mjs";
 import { html_style_button_default } from "./html_style_button_default.mjs";
 import { html_option } from "./html_option.mjs";
 import { html_select } from "./html_select.mjs";
@@ -38,7 +38,7 @@ export async function app_dev_sandbox_function_multiple(
     let select = html_select(root);
     html_style_button_default(select);
     html_style_width_full(select);
-    html_on_click(select, lambda);
+    html_on_change(select, () => {});
     each(function_name_choices, (fn) => {
       let o = html_option(select);
       html_inner_set(o, fn);
