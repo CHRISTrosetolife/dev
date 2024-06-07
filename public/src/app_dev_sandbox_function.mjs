@@ -31,7 +31,7 @@ export async function app_dev_sandbox_function(
     string_combine_multiple([app_dev_sandbox_message(), try_out_message]),
   );
   if (list_multiple_is(function_names)) {
-    html_element(root, "select");
+    let select = html_element(root, "select");
     each(function_names, (fn) => {});
   }
   let value_initial = await function_read(function_name);
