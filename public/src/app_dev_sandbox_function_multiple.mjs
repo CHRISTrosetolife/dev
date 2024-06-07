@@ -1,3 +1,4 @@
+import { html_style_width_full } from "./html_style_width_full.mjs";
 import { app_dev_sandbox_result_error } from "./app_dev_sandbox_result_error.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
 import { html_value_get } from "./html_value_get.mjs";
@@ -32,6 +33,7 @@ export async function app_dev_sandbox_function_multiple(
   );
   if (list_multiple_is(function_name_choices)) {
     let select = html_element(root, "select");
+    html_style_width_full(select);
     each(function_name_choices, (fn) => {
       let o = html_element(select, "option");
       html_inner_set(o, fn);
