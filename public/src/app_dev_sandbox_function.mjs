@@ -1,3 +1,4 @@
+import { function_names } from "./function_names.mjs";
 import { log } from "./log.mjs";
 import { function_read } from "./function_read.mjs";
 import { app_dev_sandbox_result } from "./app_dev_sandbox_result.mjs";
@@ -20,6 +21,7 @@ export async function app_dev_sandbox_function(
   run_message,
   run_click,
 ) {
+  let function_names = [function_name];
   html_hr(root);
   html_style_alternate_monospace_short(
     root,
