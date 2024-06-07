@@ -62,9 +62,6 @@ export async function app_dev_sandbox_function_multiple(
   async function on_click() {
     try {
       let file_path = function_name_to_path(function_name);
-      log({
-        textarea,
-      });
       let value = html_value_get(textarea);
       await file_overwrite(file_path, value);
       let r = await run_click();
