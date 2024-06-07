@@ -36,10 +36,11 @@ export async function app_dev_sandbox_function_multiple(
     root,
     string_combine_multiple([app_dev_sandbox_message(), try_out_message, " :"]),
   );
+  let select;
   let function_name_choices = [];
   if (multiple_is) {
     list_add(function_name_choices, function_name);
-    let select = html_select(root);
+    select = html_select(root);
     html_style_button_default(select);
     html_style_width_full(select);
     html_on_change(select, async () => {
@@ -53,7 +54,7 @@ export async function app_dev_sandbox_function_multiple(
   let textarea = html_textarea_code(root);
   html_attribute_set(textarea, "rows", 7);
   await textarea_change(function_name);
-  html_on_change(select, async () => {
+  html_on_change(textarea, async () => {
     let select_value = html_value_get(select);
     await textarea_change(select_value);
   });
