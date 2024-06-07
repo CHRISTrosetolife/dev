@@ -1,3 +1,4 @@
+import { function_names_new } from "./function_names_new.mjs";
 import { log } from "./log.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 import { js_code_statement_return } from "./js_code_statement_return.mjs";
@@ -13,7 +14,6 @@ import { function_name_to_path } from "./function_name_to_path.mjs";
 import { js_code_format } from "./js_code_format.mjs";
 import { js_code_statement_call_args } from "./js_code_statement_call_args.mjs";
 import { js_code_export_function_declare } from "./js_code_export_function_declare.mjs";
-import { function_name_new } from "./function_name_new.mjs";
 import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
 import { app_dev_p_transformer } from "./app_dev_p_transformer.mjs";
 import { js_outside_move } from "./js_outside_move.mjs";
@@ -41,7 +41,7 @@ export function app_dev_screen_outside_move() {
       app_dev_screen_img(app_dev_screen_outside_move, root, i++);
       app_dev_screen_img(app_dev_screen_outside_move, root, i++);
       app_dev_screen_img(app_dev_screen_outside_move, root, i++);
-      let [fn_a, fn_b, fn_c] = await function_name_new("outside_move", 3);
+      let [fn_a, fn_b, fn_c] = await function_names_new("outside_move", 3);
       let contents_c = js_code_function_declare(
         fn_c,
         "a,b",
