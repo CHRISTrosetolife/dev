@@ -1,3 +1,4 @@
+import { add } from "./add.mjs";
 import { multiply } from "./multiply.mjs";
 import { js_code_function_declare } from "./js_code_function_declare.mjs";
 import { function_transform } from "./function_transform.mjs";
@@ -45,6 +46,11 @@ export function app_dev_screen_outside_move() {
         fn_c,
         "a,b",
         js_code_statement_call_args(multiply.name, ["a", "b"]),
+      );
+      let contents_b = js_code_function_declare(
+        fn_c,
+        "a,b",
+        js_code_statement_call_args(add.name, ["a", "b"]),
       );
       let contents_a = js_code_export_function_declare(
         fn_a,
