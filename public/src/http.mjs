@@ -4,7 +4,11 @@ import fetch from "node-fetch";
 import { sleep } from "./sleep.mjs";
 import { integer_random } from "./integer_random.mjs";
 export async function http(url) {
-  let response = await retry(3, lambda, retry_if(["ECONNRESET", "ENOTFOUND"]));
+  let response = await retry(
+    3,
+    lambda,
+    retry_if(["ECONNRESET", "ENOTFOUND", "ETIMEDOUT"]),
+  );
   let body = await response.text();
   return body;
   async function lambda() {
