@@ -36,7 +36,7 @@ export async function app_dev_sandbox_function_multiple(
     let select = html_select(root);
     html_style_width_full(select);
     each(function_name_choices, (fn) => {
-      let o = html_element(select, "option");
+      let o = html_option(select);
       html_inner_set(o, fn);
     });
   }
@@ -68,3 +68,7 @@ export async function app_dev_sandbox_function_multiple(
     textarea,
   };
 }
+function html_option(select) {
+    return html_element(select, "option");
+}
+
