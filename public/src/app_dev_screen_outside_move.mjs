@@ -39,13 +39,13 @@ export function app_dev_screen_outside_move() {
       app_dev_screen_img(app_dev_screen_outside_move, root, i++);
       app_dev_screen_img(app_dev_screen_outside_move, root, i++);
       let [fn_a, fn_b, fn_c] = await function_name_new("outside_move", 3);
-      let contents_function = js_code_export_function_declare(
+      let contents_a = js_code_export_function_declare(
         fn_a,
         "",
         js_code_statement_call_args(sleep.name, [100]),
         false,
       );
-      let code = string_combine(js_code_import(sleep.name), contents_function);
+      let code = string_combine(js_code_import(sleep.name), contents_a);
       let contents = await js_code_format(code);
       let file_path = function_name_to_path(fn_a);
       await file_write(file_path, contents);
