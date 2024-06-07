@@ -26,43 +26,49 @@ export async function app_dev_sandbox_function(
   run_click,
 ) {
   let function_names = [function_name];
-  html_hr(root);
-  html_style_alternate_monospace_short(
-    root,
-    string_combine_multiple([app_dev_sandbox_message(), try_out_message]),
-  );
-  if (list_multiple_is(function_names)) {
-    let select = html_element(root, "select");
-    each(function_names, (fn) => {
-      let o = html_element(select, "option");
-      html_inner_set(o, fn);
-    });
-  }
-  let value_initial = await function_read(function_name);
-  let textarea = html_textarea_code(root);
-  html_attribute_set(textarea, "rows", 7);
-  html_value_set(textarea, value_initial);
-  html_button_run(root, on_click, run_message);
-  let result_component = app_dev_sandbox_result(root);
-  async function on_click() {
-    try {
-      let file_path = function_name_to_path(function_name);
-      log({
-        textarea,
-      });
-      let value = html_value_get(textarea);
-      await file_overwrite(file_path, value);
-      await run_click();
-      let value_new = await function_read(function_name);
-      html_value_set(textarea, value_new);
-    } catch (e) {
-      log({
-        e,
-      });
-      app_dev_sandbox_result_error(result_component, e);
-    }
-  }
-  return {
-    textarea,
-  };
+  return await app_dev_sandbox_function_multiple(
+    root, function_names, function_name, try_out_message, run_message, run_click);
 }
+async function app_dev_sandbox_function_multiple(
+    root, function_names, function_name, try_out_message, run_message, run_click) {
+    html_hr(root);
+    html_style_alternate_monospace_short(
+        root,
+        string_combine_multiple([app_dev_sandbox_message(), try_out_message])
+    );
+    if (list_multiple_is(function_names)) {
+        let select = html_element(root, "select");
+        each(function_names, (fn) => {
+            let o = html_element(select, "option");
+            html_inner_set(o, fn);
+        });
+    }
+    let value_initial = await function_read(function_name);
+    let textarea = html_textarea_code(root);
+    html_attribute_set(textarea, "rows", 7);
+    html_value_set(textarea, value_initial);
+    html_button_run(root, on_click, run_message);
+    let result_component = app_dev_sandbox_result(root);
+    async function on_click() {
+        try {
+            let file_path = function_name_to_path(function_name);
+            log({
+                textarea,
+            });
+            let value = html_value_get(textarea);
+            await file_overwrite(file_path, value);
+            await run_click();
+            let value_new = await function_read(function_name);
+            html_value_set(textarea, value_new);
+        } catch (e) {
+            log({
+                e,
+            });
+            app_dev_sandbox_result_error(result_component, e);
+        }
+    }
+    return {
+        textarea,
+    };
+}
+
