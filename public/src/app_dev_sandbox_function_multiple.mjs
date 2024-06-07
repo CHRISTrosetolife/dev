@@ -1,7 +1,7 @@
+import { html_option_text } from "./html_option_text.mjs";
 import { list_add } from "./list_add.mjs";
 import { html_on_change } from "./html_on_change.mjs";
 import { html_style_button_default } from "./html_style_button_default.mjs";
-import { html_option } from "./html_option.mjs";
 import { html_select } from "./html_select.mjs";
 import { html_style_width_full } from "./html_style_width_full.mjs";
 import { app_dev_sandbox_result_error } from "./app_dev_sandbox_result_error.mjs";
@@ -15,7 +15,6 @@ import { html_value_set } from "./html_value_set.mjs";
 import { html_attribute_set } from "./html_attribute_set.mjs";
 import { html_textarea_code } from "./html_textarea_code.mjs";
 import { function_read } from "./function_read.mjs";
-import { html_inner_set } from "./html_inner_set.mjs";
 import { each } from "./each.mjs";
 import { app_dev_sandbox_message } from "./app_dev_sandbox_message.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -81,8 +80,3 @@ export async function app_dev_sandbox_function_multiple(
     textarea,
   };
 }
-function html_option_text(select, fn) {
-    let o = html_option(select);
-    html_inner_set(o, fn);
-}
-
