@@ -8,9 +8,6 @@ import { app_dev_sandbox_function } from "./app_dev_sandbox_function.mjs";
 import { file_write } from "./file_write.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
 import { js_code_format } from "./js_code_format.mjs";
-import { js_code_import } from "./js_code_import.mjs";
-import { string_combine } from "./string_combine.mjs";
-import { sleep } from "./sleep.mjs";
 import { js_code_statement_call_args } from "./js_code_statement_call_args.mjs";
 import { js_code_export_function_declare } from "./js_code_export_function_declare.mjs";
 import { function_name_new } from "./function_name_new.mjs";
@@ -61,7 +58,7 @@ export function app_dev_screen_outside_move() {
         js_code_statement_call_args(fn_b, ["1", "2", "3"]),
         false,
       );
-      let code = string_combine(js_code_import(sleep.name), contents_a);
+      let code = string_combine_multiple([contents_a, contents_b, contents_c]);
       let contents = await js_code_format(code);
       let file_path = function_name_to_path(fn_a);
       await file_write(file_path, contents);
