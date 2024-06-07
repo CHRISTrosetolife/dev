@@ -1,3 +1,5 @@
+import { html_style_alternate_monospace_short_span } from "./html_style_alternate_monospace_short_span.mjs";
+import { html_clear } from "./html_clear.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_includes_not } from "./list_includes_not.mjs";
 import { html_option_text } from "./html_option_text.mjs";
@@ -24,7 +26,6 @@ import { html_style_alternate_monospace_short } from "./html_style_alternate_mon
 import { html_hr } from "./html_hr.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { html_inner_set } from "./html_inner_set.mjs";
 export async function app_dev_sandbox_function_multiple(
   root,
   multiple_is,
@@ -62,7 +63,8 @@ export async function app_dev_sandbox_function_multiple(
   async function textarea_change(fn_name) {
     let value_initial = await function_read(fn_name);
     html_value_set(textarea, value_initial);
-    html_inner_set(b, run_message(fn_name));
+    html_clear(b);
+    html_style_alternate_monospace_short_span(b, run_message(fn_name));
   }
   async function on_click() {
     try {
