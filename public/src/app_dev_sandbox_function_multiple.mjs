@@ -27,7 +27,6 @@ import { html_style_alternate_monospace_short } from "./html_style_alternate_mon
 import { html_hr } from "./html_hr.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { undefined_is } from "./undefined_is.mjs";
 export async function app_dev_sandbox_function_multiple(
   root,
   multiple_is,
@@ -74,7 +73,7 @@ export async function app_dev_sandbox_function_multiple(
   async function on_click() {
     try {
       await textarea_save();
-      let selected = html_value_get(select);
+      let selected = function_name_get();
       let r = await run_click(selected);
       log({
         r,
@@ -102,21 +101,18 @@ export async function app_dev_sandbox_function_multiple(
     textarea,
   };
   async function textarea_save() {
-    log({
-      select,
-    });
-    let selected;
-    if (undefined_is(select)) {
-      log("here1");
-      selected = function_name;
-    } else {
-      selected = html_value_get(select);
-    }
+    let selected = function_name_get(select, function_name_get());
     let file_path = function_name_to_path(selected);
-    log({
-      textarea,
-    });
     let value = html_value_get(textarea);
     await file_overwrite(file_path, value);
+  }
+  function function_name_get() {
+    let selected;
+    if (multiple_is) {
+      selected = html_value_get(select);
+    } else {
+      selected = function_name;
+    }
+    return selected;
   }
 }
