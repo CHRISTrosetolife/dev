@@ -24,6 +24,7 @@ import { html_style_alternate_monospace_short } from "./html_style_alternate_mon
 import { html_hr } from "./html_hr.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_get } from "./object_property_get.mjs";
+import { html_inner_set } from "./html_inner_set.mjs";
 export async function app_dev_sandbox_function_multiple(
   root,
   multiple_is,
@@ -58,9 +59,10 @@ export async function app_dev_sandbox_function_multiple(
   await textarea_change(function_name);
   html_on_change(textarea, textarea_save);
   let result_component = app_dev_sandbox_result(root);
-  async function textarea_change(fn) {
-    let value_initial = await function_read(fn);
+  async function textarea_change(fn_name) {
+    let value_initial = await function_read(fn_name);
     html_value_set(textarea, value_initial);
+    html_inner_set(b, run_message(fn_name));
   }
   async function on_click() {
     try {
