@@ -40,7 +40,7 @@ export function app_dev_screen_outside_move() {
       app_dev_screen_img(app_dev_screen_outside_move, root, i++);
       app_dev_screen_img(app_dev_screen_outside_move, root, i++);
       let [fn_a, fn_b, fn_c] = await function_name_new("outside_move", 3);
-      js_code_function_declare;
+      js_code_function_declare(fn_c, "a", "");
       let contents_a = js_code_export_function_declare(
         fn_a,
         "",
