@@ -72,7 +72,7 @@ export function app_dev_screen_outside_move() {
       await file_write(file_path, contents);
       await app_dev_sandbox_function_multiple(
         root,
-        [fn_a, fn_b, fn_c],
+        true,
         fn_a,
         "moving `function`s to their own file",
         (fn_name) =>
