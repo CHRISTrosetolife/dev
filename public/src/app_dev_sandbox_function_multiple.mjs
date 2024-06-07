@@ -17,10 +17,9 @@ import { app_dev_sandbox_message } from "./app_dev_sandbox_message.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
 import { html_hr } from "./html_hr.mjs";
-import { function_names } from "./function_names.mjs";
 export async function app_dev_sandbox_function_multiple(
   root,
-  function_names,
+  function_name_choices,
   function_name,
   try_out_message,
   run_message,
@@ -31,9 +30,9 @@ export async function app_dev_sandbox_function_multiple(
     root,
     string_combine_multiple([app_dev_sandbox_message(), try_out_message]),
   );
-  if (list_multiple_is(function_names)) {
+  if (list_multiple_is(function_name_choices)) {
     let select = html_element(root, "select");
-    each(function_names, (fn) => {
+    each(function_name_choices, (fn) => {
       let o = html_element(select, "option");
       html_inner_set(o, fn);
     });
