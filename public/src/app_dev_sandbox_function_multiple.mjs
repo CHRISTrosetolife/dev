@@ -39,7 +39,8 @@ export async function app_dev_sandbox_function_multiple(
     html_style_button_default(select);
     html_style_width_full(select);
     html_on_change(select, async () => {
-      await textarea_change(html_value_get(select));
+      let select_value = html_value_get(select);
+      await textarea_change(select_value);
     });
     each(function_name_choices, (fn) => {
       let o = html_option(select);
