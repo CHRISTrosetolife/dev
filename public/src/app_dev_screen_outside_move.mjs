@@ -1,3 +1,4 @@
+import { multiply } from "./multiply.mjs";
 import { js_code_function_declare } from "./js_code_function_declare.mjs";
 import { function_transform } from "./function_transform.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -40,7 +41,11 @@ export function app_dev_screen_outside_move() {
       app_dev_screen_img(app_dev_screen_outside_move, root, i++);
       app_dev_screen_img(app_dev_screen_outside_move, root, i++);
       let [fn_a, fn_b, fn_c] = await function_name_new("outside_move", 3);
-      js_code_function_declare(fn_c, "a", "");
+      js_code_function_declare(
+        fn_c,
+        "a,b",
+        js_code_statement_call_args(multiply.name, [100]),
+      );
       let contents_a = js_code_export_function_declare(
         fn_a,
         "",
