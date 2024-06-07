@@ -77,7 +77,7 @@ export function app_dev_screen_outside_move() {
             fn_a,
           ]),
         ),
-        async () => await function_transform(fn.name, function_name_unique),
+        async () => await function_transform(fn.name, fn_a),
       );
     },
   };
