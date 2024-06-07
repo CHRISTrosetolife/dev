@@ -73,7 +73,7 @@ export async function app_dev_sandbox_function_multiple(
       });
       let f = list_first(r);
       if (object_property_exists(f, "function_names_new")) {
-        let function_names_new = object_property_get(r, "function_names_new");
+        let function_names_new = object_property_get(f, "function_names_new");
         each(function_names_new, (fn) => {
           if (list_includes_not(function_name_choices, fn)) {
             list_add(function_name_choices, fn);
