@@ -49,8 +49,8 @@ export async function app_dev_sandbox_function_multiple(
   await textarea_change();
   html_button_run(root, on_click, run_message);
   let result_component = app_dev_sandbox_result(root);
-  async function textarea_change() {
-    let value_initial = await function_read(function_name);
+  async function textarea_change(fn) {
+    let value_initial = await function_read(fn);
     html_value_set(textarea, value_initial);
   }
   async function on_click() {
