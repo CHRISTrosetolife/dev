@@ -55,9 +55,7 @@ export async function app_dev_sandbox_function_multiple(
   let textarea = html_textarea_code(root);
   html_attribute_set(textarea, "rows", 7);
   await textarea_change(function_name);
-  html_on_change(textarea, async () => {
-    await textarea_save();
-  });
+  html_on_change(textarea, textarea_save);
   html_button_run(root, on_click, run_message);
   let result_component = app_dev_sandbox_result(root);
   async function textarea_change(fn) {
