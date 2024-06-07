@@ -1,3 +1,4 @@
+import { list_includes_not } from "./list_includes_not.mjs";
 import { html_option_text } from "./html_option_text.mjs";
 import { list_add } from "./list_add.mjs";
 import { html_on_change } from "./html_on_change.mjs";
@@ -66,6 +67,11 @@ export async function app_dev_sandbox_function_multiple(
       let r = await run_click();
       if (object_property_exists(r, "function_names_new")) {
         let function_names_new = object_property_get(r, "function_names_new");
+        each(function_names_new, (fn) => {
+          if (list_includes_not(function_names_choices, fn)) {
+            html_option_text(select, fn);
+          }
+        });
       }
       let value_new = await function_read(function_name);
       html_value_set(textarea, value_new);
