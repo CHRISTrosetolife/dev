@@ -27,6 +27,7 @@ import { html_style_alternate_monospace_short } from "./html_style_alternate_mon
 import { html_hr } from "./html_hr.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_get } from "./object_property_get.mjs";
+import { undefined_not_is } from "./undefined_not_is.mjs";
 export async function app_dev_sandbox_function_multiple(
   root,
   multiple_is,
@@ -79,14 +80,16 @@ export async function app_dev_sandbox_function_multiple(
         r,
       });
       let f = list_first(r);
-      if (object_property_exists(f, "function_names_new")) {
-        let function_names_new = object_property_get(f, "function_names_new");
-        each(function_names_new, (fn) => {
-          if (list_includes_not(function_name_choices, fn)) {
-            list_add(function_name_choices, fn);
-            html_option_text(select, fn);
-          }
-        });
+      if (undefined_not_is(f)) {
+        if (object_property_exists(f, "function_names_new")) {
+          let function_names_new = object_property_get(f, "function_names_new");
+          each(function_names_new, (fn) => {
+            if (list_includes_not(function_name_choices, fn)) {
+              list_add(function_name_choices, fn);
+              html_option_text(select, fn);
+            }
+          });
+        }
       }
       let value_new = await function_read(selected);
       html_value_set(textarea, value_new);
