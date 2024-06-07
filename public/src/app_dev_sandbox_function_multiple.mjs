@@ -32,7 +32,7 @@ export async function app_dev_sandbox_function_multiple(
     string_combine_multiple([app_dev_sandbox_message(), try_out_message]),
   );
   if (list_multiple_is(function_name_choices)) {
-    let select = html_element(root, "select");
+    let select = html_select(root);
     html_style_width_full(select);
     each(function_name_choices, (fn) => {
       let o = html_element(select, "option");
@@ -67,3 +67,7 @@ export async function app_dev_sandbox_function_multiple(
     textarea,
   };
 }
+function html_select(root) {
+    return html_element(root, "select");
+}
+
