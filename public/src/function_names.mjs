@@ -1,5 +1,5 @@
+import { function_path_suffix } from "./function_path_suffix.mjs";
 import { function_paths } from "./function_paths.mjs";
-import { list_reverse } from "./list_reverse.mjs";
 import { folder_path_src } from "./folder_path_src.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
@@ -18,7 +18,7 @@ export async function function_names() {
     return result;
   }
   let prefix = folder_path_src();
-  let suffix = ".mjs";
+  let suffix = function_path_suffix();
   let files = await folder_read(prefix, suffix);
   let mapped = list_map(files, (file_path) => {
     let replaced = string_replace(file_path, "\\", "/");
