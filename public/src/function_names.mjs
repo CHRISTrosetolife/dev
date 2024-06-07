@@ -17,7 +17,9 @@ export async function function_names() {
   if (web_is()) {
     let { files } = global_get();
     let function_paths = object_properties(files);
-    list_filter(function_paths, (fp) => string_ends_with(fp, suffix));
+    function_paths = list_filter(function_paths, (fp) =>
+      string_ends_with(fp, suffix),
+    );
     let result = list_map(function_paths, function_path_to_name);
     return result;
   }
