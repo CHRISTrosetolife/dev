@@ -55,8 +55,7 @@ export async function app_dev_sandbox_function_multiple(
   html_attribute_set(textarea, "rows", 7);
   await textarea_change(function_name);
   html_on_change(textarea, async () => {
-    let select_value = html_value_get(select);
-    await textarea_change(select_value);
+    await textarea_save();
   });
   html_button_run(root, on_click, run_message);
   let result_component = app_dev_sandbox_result(root);
@@ -66,9 +65,7 @@ export async function app_dev_sandbox_function_multiple(
   }
   async function on_click() {
     try {
-      let file_path = function_name_to_path(function_name);
-      let value = html_value_get(textarea);
-      await file_overwrite(file_path, value);
+      await textarea_save();
       let r = await run_click();
       if (object_property_exists(r, "function_names_new")) {
         let function_names_new = object_property_get(r, "function_names_new");
@@ -91,4 +88,10 @@ export async function app_dev_sandbox_function_multiple(
   return {
     textarea,
   };
+  async function textarea_save() {
+    let selected = html_value_get(select);
+    let file_path = function_name_to_path(selected);
+    let value = html_value_get(textarea);
+    await file_overwrite(file_path, value);
+  }
 }
