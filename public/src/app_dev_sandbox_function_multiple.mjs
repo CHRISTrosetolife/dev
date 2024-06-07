@@ -1,3 +1,4 @@
+import { html_option } from "./html_option.mjs";
 import { html_select } from "./html_select.mjs";
 import { html_style_width_full } from "./html_style_width_full.mjs";
 import { app_dev_sandbox_result_error } from "./app_dev_sandbox_result_error.mjs";
@@ -13,7 +14,6 @@ import { html_textarea_code } from "./html_textarea_code.mjs";
 import { function_read } from "./function_read.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 import { each } from "./each.mjs";
-import { html_element } from "./html_element.mjs";
 import { list_multiple_is } from "./list_multiple_is.mjs";
 import { app_dev_sandbox_message } from "./app_dev_sandbox_message.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -68,7 +68,3 @@ export async function app_dev_sandbox_function_multiple(
     textarea,
   };
 }
-function html_option(select) {
-    return html_element(select, "option");
-}
-
