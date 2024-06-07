@@ -56,6 +56,7 @@ export function app_dev_screen_outside_move() {
         fn_a,
         "",
         js_code_statement_call_args(fn_b, ["1", "2", "3"]),
+        js_code_statement_call_args(fn_b, ["1", "2", "3"]),
         false,
       );
       let code = string_combine_multiple([contents_a, contents_b, contents_c]);
