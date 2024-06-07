@@ -1,3 +1,4 @@
+import { list_add } from "./list_add.mjs";
 import { html_on_change } from "./html_on_change.mjs";
 import { html_style_button_default } from "./html_style_button_default.mjs";
 import { html_option } from "./html_option.mjs";
@@ -37,6 +38,7 @@ export async function app_dev_sandbox_function_multiple(
   );
   let function_name_choices = [];
   if (multiple_is) {
+    list_add(function_name_choices, function_name);
     let select = html_select(root);
     html_style_button_default(select);
     html_style_width_full(select);
