@@ -1,3 +1,4 @@
+import { list_multiple_is } from "./list_multiple_is.mjs";
 import { each } from "./each.mjs";
 import { function_names } from "./function_names.mjs";
 import { log } from "./log.mjs";
@@ -15,7 +16,7 @@ import { html_hr } from "./html_hr.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
-import { list_length } from "./list_length.mjs";
+import { html_element } from "./html_element.mjs";
 export async function app_dev_sandbox_function(
   root,
   function_name,
@@ -29,9 +30,10 @@ export async function app_dev_sandbox_function(
     root,
     string_combine_multiple([app_dev_sandbox_message(), try_out_message]),
   );
-  if (list_length(function_names) >= 2) {
+  if (list_multiple_is(function_names)) {
+    html_element(root, "select");
+    each(function_names, (fn) => {});
   }
-  each(function_names, (fn) => {});
   let value_initial = await function_read(function_name);
   let textarea = html_textarea_code(root);
   html_attribute_set(textarea, "rows", 7);
