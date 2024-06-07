@@ -33,7 +33,7 @@ export async function app_dev_sandbox_function(
   if (list_multiple_is(function_names)) {
     let select = html_element(root, "select");
     each(function_names, (fn) => {
-      html_element(root, "option");
+      html_element(select, "option");
     });
   }
   let value_initial = await function_read(function_name);
