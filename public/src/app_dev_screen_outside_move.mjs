@@ -1,5 +1,4 @@
 import { js_code_statement_return } from "./js_code_statement_return.mjs";
-import { log } from "./log.mjs";
 import { add } from "./add.mjs";
 import { multiply } from "./multiply.mjs";
 import { js_code_function_declare } from "./js_code_function_declare.mjs";
@@ -57,7 +56,7 @@ export function app_dev_screen_outside_move() {
       let contents_a = js_code_export_function_declare(
         fn_a,
         "",
-        js_code_statement_return(log.name, ["1", "2", "3"]),
+        js_code_statement_return(),
         js_code_statement_call_args(fn_b, ["1", "2", "3"]),
         false,
       );
