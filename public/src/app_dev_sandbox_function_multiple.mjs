@@ -1,3 +1,4 @@
+import { list_first } from "./list_first.mjs";
 import { list_includes_not } from "./list_includes_not.mjs";
 import { html_option_text } from "./html_option_text.mjs";
 import { list_add } from "./list_add.mjs";
@@ -67,6 +68,7 @@ export async function app_dev_sandbox_function_multiple(
     try {
       await textarea_save();
       let r = await run_click();
+      let f = list_first(r);
       if (object_property_exists(r, "function_names_new")) {
         let function_names_new = object_property_get(r, "function_names_new");
         each(function_names_new, (fn) => {
