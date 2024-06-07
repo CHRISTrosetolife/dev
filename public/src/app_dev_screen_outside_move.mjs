@@ -19,7 +19,7 @@ export function app_dev_screen_outside_move() {
       app_dev_p_transformer(root, fn);
       html_style_alternate_monospace_short(
         root,
-        "... then the `function`s will be removed from the file ...",
+        "... then the `function`s will be moved to their own files and the `import`s will be fixed in all files ...",
       );
       app_dev_screen_img(app_dev_screen_outside_move, root, i++);
       app_dev_screen_img(app_dev_screen_outside_move, root, i++);
