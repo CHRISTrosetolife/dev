@@ -200,10 +200,11 @@ export async function ceb_definition(word) {
         return d;
       }
     });
-    if (0)
+    if (0) {
       log({
         defs,
       });
+    }
     defs = list_filter(defs, (d) => list_includes_not(skips, d));
     defs = list_filter(defs, (d) => string_starts_with_not(d, "*"));
     list_add_multiple(definitions, defs);
@@ -233,12 +234,13 @@ export async function ceb_definition(word) {
     let tables = list_filter(children2, (c) => html_parse_tag(c, "table"));
     let tables_length = list_length(tables);
     assert(less_than_equal, [tables_length, 3]);
-    if (0)
+    if (0) {
       if (equal(tables_length, 3)) {
         let middle = list_second(tables);
         let words = html_parse_a_href_starts_with_text(middle, "/cebuano/");
         mapped6 = list_concat(mapped6, words);
       }
+    }
     if (list_empty_is(mapped6)) {
       return false;
     }
@@ -263,16 +265,15 @@ export async function ceb_definition(word) {
       return false;
     }
     let split_d = string_split_space(d);
-    if (list_multiple_is(definitions)) {
-      if (list_multiple_is(split_d)) {
-        if (0)
-          log({
-            word,
-            d,
-            skip_because: "contains spaces",
-          });
-        return false;
+    if (list_multiple_is(split_d)) {
+      if (0) {
+        log({
+          word,
+          d,
+          skip_because: "contains spaces",
+        });
       }
+      return false;
     }
     return true;
   });
