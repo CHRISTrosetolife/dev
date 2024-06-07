@@ -17,6 +17,7 @@ import { html_value_get } from "./html_value_get.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
 import { html_element } from "./html_element.mjs";
+import { html_inner_set } from "./html_inner_set.mjs";
 export async function app_dev_sandbox_function(
   root,
   function_name,
@@ -34,6 +35,7 @@ export async function app_dev_sandbox_function(
     let select = html_element(root, "select");
     each(function_names, (fn) => {
       let o = html_element(select, "option");
+      html_inner_set(o, fn);
     });
   }
   let value_initial = await function_read(function_name);
