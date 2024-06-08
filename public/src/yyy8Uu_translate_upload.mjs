@@ -10,6 +10,9 @@ import { yyy8Uu_parts } from "./yyy8Uu_parts.mjs";
 export async function yyy8Uu_translate_upload() {
   let filtered = await yyy8Uu_file_paths();
   await each_index_only_async(filtered, async (index) => {
+    if (index <= 15) {
+      return;
+    }
     let latin = await yyy8Uu_parts(index);
     let english = await list_adder_async(async (la) => {
       await each_index_only_async(latin, async (index2) => {
