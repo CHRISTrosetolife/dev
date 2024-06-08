@@ -1,3 +1,4 @@
+import { list_take } from "./list_take.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { log } from "./log.mjs";
 import { each_index_only_async } from "./each_index_only_async.mjs";
@@ -46,8 +47,8 @@ export async function yyy8Uu_translate_upload() {
       }
     }
     log({
-      l: list_first(latin),
-      e: list_first(english),
+      l: list_take(latin, 3),
+      e: list_take(english, 3),
     });
     let destination = yyy8Uu_storage_path(index);
     if (0) {
