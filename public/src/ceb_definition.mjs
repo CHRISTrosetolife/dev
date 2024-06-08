@@ -106,9 +106,6 @@ export async function ceb_definition(word) {
     };
   }
   async function ceb_html_cache_parse_form1(url) {
-    log({
-      url,
-    });
     let parsed = await html_cache_parse(url);
     let children = ceb_form1(parsed);
     return {
