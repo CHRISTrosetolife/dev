@@ -1,4 +1,3 @@
-import { list_take } from "./list_take.mjs";
 import { error } from "./error.mjs";
 import { equal_by } from "./equal_by.mjs";
 import { log } from "./log.mjs";
@@ -39,8 +38,8 @@ export async function yyy8Uu_translate_upload() {
     });
     assert(equal_by, [latin, english, list_length]);
     log({
-      latin: list_take(latin, 3),
-      english: list_take(english, 3),
+      latin: list_length(latin),
+      english: list_length(english),
     });
     error();
     let destination = yyy8Uu_storage_path(index);
