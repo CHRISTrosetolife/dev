@@ -1,3 +1,4 @@
+import { string_split } from "./string_split.mjs";
 import { log } from "./log.mjs";
 import { each_index_only_async } from "./each_index_only_async.mjs";
 import { yyy8Uu_file_paths } from "./yyy8Uu_file_paths.mjs";
@@ -33,6 +34,7 @@ export async function yyy8Uu_translate_upload() {
       });
     });
     let f = list_first(english);
+    let f_split = string_split(f);
     let destination = yyy8Uu_storage_path(index);
     if (0) {
       await storage_upload_object(
