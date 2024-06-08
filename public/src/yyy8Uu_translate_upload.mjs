@@ -19,9 +19,6 @@ export async function yyy8Uu_translate_upload() {
     log({
       index,
     });
-    if (index <= 15) {
-      return;
-    }
     let latin = await yyy8Uu_parts(index);
     let english = await list_adder_async(async (la) => {
       await each_index_only_async(latin, async (index2) => {
