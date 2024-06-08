@@ -10,6 +10,7 @@ import { gcloud_translate_cache } from "./gcloud_translate_cache.mjs";
 import { list_adder_async } from "./list_adder_async.mjs";
 import { yyy8Uu_parts } from "./yyy8Uu_parts.mjs";
 import { list_first } from "./list_first.mjs";
+import { list_length_2 } from "./list_length_2.mjs";
 export async function yyy8Uu_translate_upload() {
   let filtered = await yyy8Uu_file_paths();
   await each_index_only_async(filtered, async (index) => {
@@ -35,6 +36,8 @@ export async function yyy8Uu_translate_upload() {
     });
     let f = list_first(english);
     let f_split = string_split(f);
+    if (list_length_2(f_split)) {
+    }
     let destination = yyy8Uu_storage_path(index);
     if (0) {
       await storage_upload_object(
