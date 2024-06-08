@@ -37,6 +37,8 @@ export async function yyy8Uu_translate_upload() {
     let f = list_first(english);
     let f_split = string_split(f);
     if (list_length_2(f_split)) {
+      if (list_first(f_split) === "Chapter") {
+      }
     }
     let destination = yyy8Uu_storage_path(index);
     if (0) {
