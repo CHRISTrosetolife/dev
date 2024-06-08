@@ -1,3 +1,4 @@
+import { each_index_only_async } from "./each_index_only_async.mjs";
 import { yyy8Uu_part } from "./yyy8Uu_part.mjs";
 import { gcloud_translate_cache } from "./gcloud_translate_cache.mjs";
 import { yyy8Uu_parts } from "./yyy8Uu_parts.mjs";
@@ -6,7 +7,7 @@ import { each_index_async } from "./each_index_async.mjs";
 import { yyy8Uu_file_paths } from "./yyy8Uu_file_paths.mjs";
 export async function yyy8Uu_translate() {
   let filtered = await yyy8Uu_file_paths();
-  await each_index_only_async(filtered, async ( index) => {
+  await each_index_only_async(filtered, async (index) => {
     log({
       index,
     });
