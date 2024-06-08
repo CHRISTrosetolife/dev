@@ -1,3 +1,4 @@
+import { list_remove } from "./list_remove.mjs";
 import { string_split } from "./string_split.mjs";
 import { log } from "./log.mjs";
 import { each_index_only_async } from "./each_index_only_async.mjs";
@@ -38,6 +39,7 @@ export async function yyy8Uu_translate_upload() {
     let f_split = string_split(f);
     if (list_length_2(f_split)) {
       if (list_first(f_split) === "Chapter") {
+        list_remove(english, f);
       }
     }
     let destination = yyy8Uu_storage_path(index);
