@@ -1,3 +1,4 @@
+import { equal_by } from "./equal_by.mjs";
 import { log } from "./log.mjs";
 import { each_index_only_async } from "./each_index_only_async.mjs";
 import { yyy8Uu_file_paths } from "./yyy8Uu_file_paths.mjs";
@@ -8,6 +9,8 @@ import { yyy8Uu_part } from "./yyy8Uu_part.mjs";
 import { gcloud_translate_cache } from "./gcloud_translate_cache.mjs";
 import { list_adder_async } from "./list_adder_async.mjs";
 import { yyy8Uu_parts } from "./yyy8Uu_parts.mjs";
+import { assert } from "./assert.mjs";
+import { list_length } from "./list_length.mjs";
 export async function yyy8Uu_translate_upload() {
   let filtered = await yyy8Uu_file_paths();
   await each_index_only_async(filtered, async (index) => {
@@ -34,6 +37,7 @@ export async function yyy8Uu_translate_upload() {
         la(translated);
       });
     });
+    assert(equal_by, [latin, english, list_length]);
     let destination = yyy8Uu_storage_path(index);
     await storage_upload_object(
       {
