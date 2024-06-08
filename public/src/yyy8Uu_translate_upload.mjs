@@ -44,7 +44,7 @@ export async function yyy8Uu_translate_upload() {
     }
     log({
       l: list_first(latin),
-      e: list_first(enlish),
+      e: list_first(english),
     });
     let destination = yyy8Uu_storage_path(index);
     if (0) {
