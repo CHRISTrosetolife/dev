@@ -39,12 +39,14 @@ export async function yyy8Uu_translate_upload() {
     });
     assert(equal_by, [latin, english, list_length]);
     let destination = yyy8Uu_storage_path(index);
-    await storage_upload_object(
-      {
-        english,
-        latin,
-      },
-      destination,
-    );
+    if (0) {
+      await storage_upload_object(
+        {
+          english,
+          latin,
+        },
+        destination,
+      );
+    }
   });
 }
