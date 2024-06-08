@@ -21,6 +21,7 @@ export async function yyy8Uu_translate_upload() {
     let english = await list_adder_async(async (la) => {
       await each_index_only_async(latin, async (index2) => {
         log({
+          index,
           index2,
         });
         let translateds = await gcloud_translate_cache(
