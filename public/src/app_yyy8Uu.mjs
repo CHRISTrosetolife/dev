@@ -38,9 +38,8 @@ export async function app_yyy8Uu() {
   let file_path = yyy8Uu_storage_path("chapter_names");
   let { chapter_names } = await http_storage(file_path);
   let index_last = list_index_last(chapter_names);
-  index_last = 15;
   chapter_names = list_take(chapter_names, add_1(index_last));
-  const separator = "-";
+  let separator = "-";
   let split = list_map(chapter_names, (c) => string_split(c, separator));
   for (let s of split) {
     assert(equal, [list_length(s), 2]);
@@ -107,7 +106,7 @@ export async function app_yyy8Uu() {
     let { english, latin } = chapter;
     let indices = range(list_length(english));
     for (let i of indices) {
-      const l = list_get(latin, i);
+      let l = list_get(latin, i);
       if (show_latin) {
         let latin_p = html_p_text(root, l);
         html_style_font_color(latin_p, "darkblue");
