@@ -6,7 +6,7 @@ import { each_index_async } from "./each_index_async.mjs";
 import { yyy8Uu_file_paths } from "./yyy8Uu_file_paths.mjs";
 export async function yyy8Uu_translate() {
   let filtered = await yyy8Uu_file_paths();
-  await each_index_async(filtered, async (file_path, index) => {
+  await each_index_only_async(filtered, async ( index) => {
     log({
       index,
     });
