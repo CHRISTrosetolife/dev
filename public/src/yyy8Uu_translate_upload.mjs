@@ -42,6 +42,10 @@ export async function yyy8Uu_translate_upload() {
         list_remove(english, f);
       }
     }
+    log({
+      l: list_first(latin),
+      e: list_first(enlish),
+    });
     let destination = yyy8Uu_storage_path(index);
     if (0) {
       await storage_upload_object(
