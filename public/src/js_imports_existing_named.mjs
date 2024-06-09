@@ -7,7 +7,9 @@ export function js_imports_existing_named(ast, name) {
       let { node } = v;
       let { imported } = node;
       if (imported.type === "Identifier") {
-        if (equal(imported.name, name)) la(v);
+        if (equal(imported.name, name)) {
+          la(v);
+        }
       }
     });
   });
