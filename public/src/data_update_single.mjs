@@ -29,6 +29,7 @@ export function data_update_single(ast, data) {
   let identifiers = object_property_initialize(data, "identifiers", {});
   each_object(identifiers, (id, id_functions) => {
     if (list_includes(ids, id)) {
+      list_add_if_exists_not(id_functions, name);
     } else {
     }
   });
