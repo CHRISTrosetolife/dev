@@ -92,6 +92,9 @@ export async function app_yyy8Uu() {
   }
   let show_latin = true;
   async function refresh_chapter(chapter_index) {
+    log({
+      chapter_index,
+    });
     html_clear_scroll_top(root);
     buttons_navigation();
     html_hr(root);
