@@ -16,6 +16,7 @@ import { yyy8Uu_parts_english_count } from "./yyy8Uu_parts_english_count.mjs";
 import { list_length } from "./list_length.mjs";
 import { yyy8Uu_parts } from "./yyy8Uu_parts.mjs";
 import { greater_than_equal } from "./greater_than_equal.mjs";
+import { less_than_equal } from "./less_than_equal.mjs";
 export async function yyy8Uu_translate_upload_chapter(chapter_index) {
   chapter_index = integer_parse(chapter_index);
   log({
@@ -38,6 +39,7 @@ export async function yyy8Uu_translate_upload_chapter(chapter_index) {
   });
   assert(greater_than_equal, [english_length, latin_length]);
   let less = english_length - latin_length;
+  assert(less_than_equal, [less, 2]);
   return;
   let destination = yyy8Uu_storage_path(chapter_index);
   if (10) {
