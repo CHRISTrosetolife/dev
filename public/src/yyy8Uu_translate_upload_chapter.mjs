@@ -19,7 +19,6 @@ import { list_length } from "./list_length.mjs";
 import { yyy8Uu_parts } from "./yyy8Uu_parts.mjs";
 import { greater_than_equal } from "./greater_than_equal.mjs";
 import { less_than_equal } from "./less_than_equal.mjs";
-import { number_less_than } from "./number_less_than.mjs";
 export async function yyy8Uu_translate_upload_chapter(chapter_index) {
   chapter_index = integer_parse(chapter_index);
   log({
@@ -45,7 +44,6 @@ export async function yyy8Uu_translate_upload_chapter(chapter_index) {
   let less = english_length - latin_length;
   assert(less_than_equal, [less, 2]);
   each_range(less, () => list_remove_first(english));
-  while (number_less_than(list_length(english), latin_length)) {}
   return;
   let destination = yyy8Uu_storage_path(chapter_index);
   if (10) {
