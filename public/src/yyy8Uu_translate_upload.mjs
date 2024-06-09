@@ -24,17 +24,17 @@ export async function yyy8Uu_translate_upload() {
     let english = await list_adder_async(async (la) => {
       let index2 = 0;
       while (true) {
-        if (0) {
-          log({
-            index,
-            index2,
-          });
-        }
         let fcp = function_cache_path(yyy8Uu_part.name, [index, index2]);
         if (await file_exists_not(fcp)) {
           break;
         }
         index2++;
+      }
+      if (0) {
+        log({
+          index,
+          index2,
+        });
       }
       let translateds = await gcloud_translate_cache(
         "la",
