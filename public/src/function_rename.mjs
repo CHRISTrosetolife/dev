@@ -1,3 +1,4 @@
+import { js_identifier_rename } from "./js_identifier_rename.mjs";
 import { file_rename } from "./file_rename.mjs";
 import { function_transform_args_split_lambda } from "./function_transform_args_split_lambda.mjs";
 import { js_import_remove_ast } from "./js_import_remove_ast.mjs";
@@ -22,8 +23,8 @@ export async function function_rename(fn_name_from, fn_name_to) {
     );
     await function_transform_args_split_lambda(
       e,
-      [js_import_remove_ast],
-      [fn_name_from],
+      [js_identifier_rename],
+      [fn_name_from, fn_name_to],
     );
   });
   await data_update_multiple(fps);
