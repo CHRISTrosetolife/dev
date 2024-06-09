@@ -15,6 +15,7 @@ import { list_remove } from "./list_remove.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { each_async } from "./each_async.mjs";
 import { list_concat } from "./list_concat.mjs";
+import { list_map } from "./list_map.mjs";
 export async function function_rename(fn_name_from, fn_name_to) {
   let identifiers = await data_identifiers();
   let fn_path_from = function_name_to_path(fn_name_from);
@@ -39,6 +40,7 @@ export async function function_rename(fn_name_from, fn_name_to) {
     await file_js_unparse(file_path, ast);
   });
   let c = list_concat(existing, [fn_path_to]);
+  let fps = list_map(c, function_name_to_path);
   await data_transform(async function lambda(data) {
     data_remove(data, fn_name_from);
     await data_update_multiple_transform(fps, data);
