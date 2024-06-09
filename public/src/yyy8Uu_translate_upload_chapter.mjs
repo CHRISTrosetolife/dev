@@ -1,3 +1,4 @@
+import { assert } from "./assert.mjs";
 import { integer_parse } from "./integer_parse.mjs";
 import { error } from "./error.mjs";
 import { log } from "./log.mjs";
@@ -14,6 +15,7 @@ import { list_adder_async } from "./list_adder_async.mjs";
 import { yyy8Uu_parts_english_count } from "./yyy8Uu_parts_english_count.mjs";
 import { list_length } from "./list_length.mjs";
 import { yyy8Uu_parts } from "./yyy8Uu_parts.mjs";
+import { greater_than_equal } from "./greater_than_equal.mjs";
 export async function yyy8Uu_translate_upload_chapter(chapter_index) {
   chapter_index = integer_parse(chapter_index);
   let latin = await yyy8Uu_parts(chapter_index);
@@ -31,8 +33,10 @@ export async function yyy8Uu_translate_upload_chapter(chapter_index) {
       la(translated);
     });
   });
+  assert(greater_than_equal, [list_length(english), list_length(latin)]);
+  return;
   let destination = yyy8Uu_storage_path(chapter_index);
-  if (0) {
+  if (10) {
     await storage_upload_object(
       {
         english,
