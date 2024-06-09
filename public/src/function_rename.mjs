@@ -10,7 +10,11 @@ export async function function_rename(fn_name_from, fn_name_to) {
   let identifiers = await data_identifiers();
   let existing = object_property_get(identifiers, fn_name_from);
   list_remove(existing, fn_name_to);
-  function_transform_args_split_lambda;
+  await function_transform_args_split_lambda(
+    e,
+    [js_import_remove_ast],
+    [fn_name_from],
+  );
   let fn_path_from = function_name_to_path(fn_name_from);
   let fn_path_to = function_name_to_path(fn_name_to);
   await file_copy(fn_path_from, fn_path_to);
