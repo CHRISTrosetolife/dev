@@ -32,17 +32,17 @@ export async function yyy8Uu_translate_upload() {
         let translated = list_single(translateds);
         la(translated);
       });
-      let destination = yyy8Uu_storage_path(index);
-      if (0) {
-        await storage_upload_object(
-          {
-            english,
-            latin,
-          },
-          destination,
-        );
-      }
     });
+    let destination = yyy8Uu_storage_path(index);
+    if (0) {
+      await storage_upload_object(
+        {
+          english,
+          latin,
+        },
+        destination,
+      );
+    }
     if (10) {
       if (equal_not(latin_length, english_length)) {
         let less = english_length - 2;
