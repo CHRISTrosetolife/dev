@@ -52,6 +52,5 @@ export async function yyy8Uu_translate_upload() {
         }
       }
     }
-    return;
   });
 }
