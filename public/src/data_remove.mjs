@@ -12,6 +12,7 @@ import { list_map_property } from "./list_map_property.mjs";
 import { list_unique } from "./list_unique.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { list_includes } from "./list_includes.mjs";
+import { object_property_exists } from "./object_property_exists.mjs";
 export function data_remove(ast, data) {
   let declaration = js_declaration_single(ast);
   let {
@@ -19,6 +20,8 @@ export function data_remove(ast, data) {
     id: { name },
   } = declaration;
   let functions = object_property_initialize(data, "functions", {});
+  if (object_property_exists()) {
+  }
   let f = object_property_initialize(functions, name, {});
   object_property_set(f, "async", async);
   let literals = js_node_type(ast, "Literal");
