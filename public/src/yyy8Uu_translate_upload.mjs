@@ -46,10 +46,12 @@ export async function yyy8Uu_translate_upload() {
         list_remove(english, f);
       }
     }
-    log({
-      l: list_take(latin, 3),
-      e: list_take(english, 3),
-    });
+    if (0) {
+      log({
+        l: list_take(latin, 3),
+        e: list_take(english, 3),
+      });
+    }
     let destination = yyy8Uu_storage_path(index);
     if (0) {
       await storage_upload_object(
