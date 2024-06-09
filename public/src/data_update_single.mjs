@@ -1,7 +1,6 @@
 import { list_remove_if_exists } from "./list_remove_if_exists.mjs";
 import { each_object } from "./each_object.mjs";
 import { list_add_if_exists_not } from "./list_add_if_exists_not.mjs";
-import { each } from "./each.mjs";
 import { js_identifiers } from "./js_identifiers.mjs";
 import { string_delimit_if } from "./string_delimit_if.mjs";
 import { js_node_type } from "./js_node_type.mjs";
@@ -34,10 +33,5 @@ export function data_update_single(ast, data) {
     } else {
       list_remove_if_exists(id_functions, name);
     }
-  });
-  each(ids, (id) => {
-    let id_functions = object_property_initialize(identifiers, id, []);
-    list_add_if_exists_not(id_functions, name);
-    object_property_set(identifiers, name, ids);
   });
 }
