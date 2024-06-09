@@ -1,5 +1,4 @@
-import { list_add } from "./list_add.mjs";
-import { list_includes_not } from "./list_includes_not.mjs";
+import { list_add_if_exists_not } from "./list_add_if_exists_not.mjs";
 import { each } from "./each.mjs";
 import { js_identifiers } from "./js_identifiers.mjs";
 import { string_delimit_if } from "./string_delimit_if.mjs";
@@ -28,9 +27,7 @@ export function data_update_single(ast, data) {
   let ids = js_identifiers(ast);
   each(ids, (id) => {
     let id_functions = object_property_initialize(identifiers, id, []);
-    if (list_includes_not(id_functions, name)) {
-      list_add(id_functions, name);
-    }
+    list_add_if_exists_not(id_functions, name);
     object_property_set(identifiers, name, ids);
   });
 }
