@@ -21,9 +21,6 @@ export async function yyy8Uu_translate_upload_chapter(chapter_index) {
   let english_length = await yyy8Uu_parts_english_count(chapter_index);
   let english = await list_adder_async(async (la) => {
     await each_range_async(english_length, async (index2) => {
-      log({
-        index2,
-      });
       let translateds = await gcloud_translate_cache(
         yyy8Uu_language_from(),
         yyy8Uu_language_to(),
