@@ -1,3 +1,5 @@
+import { data_update_multiple_transform } from "./data_update_multiple_transform.mjs";
+import { data_transform } from "./data_transform.mjs";
 import { function_transform_args_split_lambda } from "./function_transform_args_split_lambda.mjs";
 import { js_imports_add_specified } from "./js_imports_add_specified.mjs";
 import { file_js_unparse } from "./file_js_unparse.mjs";
@@ -6,7 +8,6 @@ import { js_identifier_rename } from "./js_identifier_rename.mjs";
 import { file_rename } from "./file_rename.mjs";
 import { js_import_remove_ast } from "./js_import_remove_ast.mjs";
 import { data_identifiers } from "./data_identifiers.mjs";
-import { data_update_multiple } from "./data_update_multiple.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -31,5 +32,7 @@ export async function function_rename(fn_name_from, fn_name_to) {
     js_imports_add_specified(ast, [fn_name_to]);
     await file_js_unparse(file_path, ast);
   });
-  await data_update_multiple(fps);
+  await data_transform(async function lambda(data) {
+    await data_update_multiple_transform(fps, data);
+  });
 }
