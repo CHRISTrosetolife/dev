@@ -1,3 +1,4 @@
+import { list_remove_if_exists } from "./list_remove_if_exists.mjs";
 import { each_object } from "./each_object.mjs";
 import { list_add_if_exists_not } from "./list_add_if_exists_not.mjs";
 import { each } from "./each.mjs";
@@ -31,6 +32,7 @@ export function data_update_single(ast, data) {
     if (list_includes(ids, id)) {
       list_add_if_exists_not(id_functions, name);
     } else {
+      list_remove_if_exists(id_functions, name);
     }
   });
   each(ids, (id) => {
