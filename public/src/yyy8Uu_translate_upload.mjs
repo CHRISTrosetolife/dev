@@ -1,3 +1,5 @@
+import { yyy8Uu_language_to } from "./yyy8Uu_language_to.mjs";
+import { yyy8Uu_language_from } from "./yyy8Uu_language_from.mjs";
 import { error } from "./error.mjs";
 import { yyy8Uu_parts_english_count } from "./yyy8Uu_parts_english_count.mjs";
 import { log } from "./log.mjs";
@@ -49,11 +51,3 @@ export async function yyy8Uu_translate_upload() {
     }
   });
 }
-function yyy8Uu_language_to() {
-    return "en";
-}
-
-function yyy8Uu_language_from() {
-    return "la";
-}
-
