@@ -23,7 +23,7 @@ export async function function_rename(fn_name_from, fn_name_to) {
   log({
     existing,
   });
-  list_remove(existing, fn_name_to);
+  list_remove(existing, fn_name_from);
   await function_transform_args_split_lambda(
     fn_name_to,
     [js_identifier_rename],
