@@ -10,6 +10,7 @@ import { js_declaration_single } from "./js_declaration_single.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { list_unique } from "./list_unique.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
+import { list_includes } from "./list_includes.mjs";
 export function data_update_single(ast, data) {
   let declaration = js_declaration_single(ast);
   let {
@@ -26,7 +27,10 @@ export function data_update_single(ast, data) {
   object_property_set(f, "literals", u);
   let ids = js_identifiers(ast);
   let identifiers = object_property_initialize(data, "identifiers", {});
-  each_object(identifiers, (id, id_functions) => {});
+  each_object(identifiers, (id, id_functions) => {
+    if (list_includes(ids, id)) {
+    }
+  });
   each(ids, (id) => {
     let id_functions = object_property_initialize(identifiers, id, []);
     list_add_if_exists_not(id_functions, name);
