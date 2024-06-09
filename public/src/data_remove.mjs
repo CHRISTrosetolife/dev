@@ -14,6 +14,7 @@ export function data_remove(ast, data) {
   if (object_property_exists(functions, name)) {
     object_property_delete(functions, name);
   }
+  let identifiers = object_property_initialize(data, "identifiers", {});
   each_object(identifiers, (id, id_functions) => {
     list_remove_if_exists(id_functions, name);
   });
