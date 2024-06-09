@@ -20,14 +20,15 @@ export async function yyy8Uu_translate_upload() {
     let latin = await yyy8Uu_parts(index);
     let latin_length = list_length(latin);
     let english_length = await yyy8Uu_parts_english_count(index);
-    await each_range_async(english_length, async (index2) => {});
-    let translateds = await gcloud_translate_cache(
-      yyy8Uu_language_from(),
-      yyy8Uu_language_to(),
-      yyy8Uu_part.name,
-      [index, english_length],
-    );
-    let translated = list_single(translateds);
+    await each_range_async(english_length, async (index2) => {
+      let translateds = await gcloud_translate_cache(
+        yyy8Uu_language_from(),
+        yyy8Uu_language_to(),
+        yyy8Uu_part.name,
+        [index, english_length],
+      );
+      let translated = list_single(translateds);
+    });
     let destination = yyy8Uu_storage_path(index);
     if (0) {
       await storage_upload_object(
