@@ -1,3 +1,5 @@
+import { file_js_unparse } from "./file_js_unparse.mjs";
+import { file_js_parse } from "./file_js_parse.mjs";
 import { js_identifier_rename } from "./js_identifier_rename.mjs";
 import { file_rename } from "./file_rename.mjs";
 import { function_transform_args_split_lambda } from "./function_transform_args_split_lambda.mjs";
@@ -16,11 +18,11 @@ export async function function_rename(fn_name_from, fn_name_to) {
   let existing = object_property_get(identifiers, fn_name_from);
   list_remove(existing, fn_name_to);
   await each_async(existing, async (e) => {
-    await function_transform_args_split_lambda(
-      e,
-      [js_import_remove_ast],
-      [fn_name_from],
-    );
+    let ast = await file_js_parse(file_path);
+    js_import_remove_ast;
+    js_identifier_rename;
+    let after = await file_js_unparse(file_path, ast);
+    await function_transform_args_split_lambda(e, [], [fn_name_from]);
     await function_transform_args_split_lambda(
       e,
       [js_identifier_rename],
