@@ -1,4 +1,3 @@
-import { html_spacer_vertical_2 } from "./html_spacer_vertical_2.mjs";
 import { html_button_disable } from "./html_button_disable.mjs";
 import { equal } from "./equal.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
@@ -29,5 +28,4 @@ export function html_buttons_next_previous_hr_none(
   if (equal(index, index_last)) {
     html_button_disable(button_next);
   }
-  html_spacer_vertical_2(root);
 }
