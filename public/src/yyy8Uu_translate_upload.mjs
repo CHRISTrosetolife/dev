@@ -30,12 +30,8 @@ export async function yyy8Uu_translate_upload() {
             index2,
           });
         }
-        try {
-          let fcp = function_cache_path(yyy8Uu_part.name, [index, index2]);
-          if (await file_exists_not(fcp)) {
-            break;
-          }
-        } catch (e) {
+        let fcp = function_cache_path(yyy8Uu_part.name, [index, index2]);
+        if (await file_exists_not(fcp)) {
           break;
         }
         index2++;
