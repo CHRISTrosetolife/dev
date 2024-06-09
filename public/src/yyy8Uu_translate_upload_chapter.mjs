@@ -30,7 +30,7 @@ export async function yyy8Uu_translate_upload_chapter(chapter_index) {
     });
   });
   let destination = yyy8Uu_storage_path(chapter_index);
-  if (10) {
+  if (0) {
     await storage_upload_object(
       {
         english,
