@@ -1,3 +1,4 @@
+import { function_import_add } from "./function_import_add.mjs";
 import { file_js_unparse } from "./file_js_unparse.mjs";
 import { file_js_parse } from "./file_js_parse.mjs";
 import { js_identifier_rename } from "./js_identifier_rename.mjs";
@@ -21,6 +22,7 @@ export async function function_rename(fn_name_from, fn_name_to) {
     let ast = await file_js_parse(file_path);
     js_import_remove_ast(ast, fn_name_from);
     js_identifier_rename(ast, fn_name_from, fn_name_to);
+    function_import_add;
     let after = await file_js_unparse(file_path, ast);
   });
   await data_update_multiple(fps);
