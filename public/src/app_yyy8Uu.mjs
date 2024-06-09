@@ -31,14 +31,12 @@ import { list_index } from "./list_index.mjs";
 import { html_button_width_full_text_click_previous } from "./html_button_width_full_text_click_previous.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
 import { list_index_last } from "./list_index_last.mjs";
-import { list_take } from "./list_take.mjs";
 export async function app_yyy8Uu() {
   html_style_default_initialize();
   let root = html_document_body();
   let file_path = yyy8Uu_storage_path("chapter_names");
   let { chapter_names } = await http_storage(file_path);
   let index_last = list_index_last(chapter_names);
-  chapter_names = list_take(chapter_names, add_1(index_last));
   let separator = "-";
   let split = list_map(chapter_names, (c) => string_split(c, separator));
   for (let s of split) {
