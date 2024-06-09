@@ -19,7 +19,7 @@ export async function yyy8Uu_translate_upload() {
     let latin = await yyy8Uu_parts(index);
     let latin_length = list_length(latin);
     let english_length = await yyy8Uu_parts_english_count(index);
-    if (0) {
+    if (10) {
       log({
         l: list_take(latin, 3),
         e: list_take(english, 3),
