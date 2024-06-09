@@ -1,7 +1,5 @@
 import { html_buttons_next_previous } from "./html_buttons_next_previous.mjs";
-import { html_button_disable } from "./html_button_disable.mjs";
 import { log } from "./log.mjs";
-import { html_spacer_vertical_2 } from "./html_spacer_vertical_2.mjs";
 import { html_button_width_full_text_click_home } from "./html_button_width_full_text_click_home.mjs";
 import { list_second } from "./list_second.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
@@ -11,8 +9,6 @@ import { http_storage } from "./http_storage.mjs";
 import { html_style_font_color } from "./html_style_font_color.mjs";
 import { yyy8Uu_storage_path } from "./yyy8Uu_storage_path.mjs";
 import { html_hr } from "./html_hr.mjs";
-import { add_1 } from "./add_1.mjs";
-import { html_button_width_full_text_click_next } from "./html_button_width_full_text_click_next.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_document_body } from "./html_document_body.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
@@ -30,8 +26,6 @@ import { each_index } from "./each_index.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_index } from "./list_index.mjs";
-import { html_button_width_full_text_click_previous } from "./html_button_width_full_text_click_previous.mjs";
-import { subtract_1 } from "./subtract_1.mjs";
 import { list_index_last } from "./list_index_last.mjs";
 export async function app_yyy8Uu() {
   html_style_default_initialize();
@@ -93,12 +87,13 @@ export async function app_yyy8Uu() {
   }
   let show_latin = true;
   async function refresh_chapter(chapter_index) {
-    log({
-      chapter_index,
-    });
     html_clear_scroll_top(root);
-    html_buttons_next_previous();
-    buttons_navigation();
+    html_buttons_next_previous(
+      root,
+      refresh_chapter,
+      chapter_index,
+      index_last,
+    );
     html_hr(root);
     html_button_width_full_text_click(
       root,
@@ -126,28 +121,11 @@ export async function app_yyy8Uu() {
     if (!show_latin) {
       html_hr(root);
     }
-    buttons_navigation();
-    function buttons_navigation() {
-      button_home();
-      html_spacer_vertical_2(root);
-      let button_previous = html_button_width_full_text_click_previous(
-        root,
-        async function previous_on_click() {
-          await refresh_chapter(subtract_1(chapter_index));
-        },
-      );
-      let button_next = html_button_width_full_text_click_next(
-        root,
-        async function next_on_click() {
-          await refresh_chapter(add_1(chapter_index));
-        },
-      );
-      if (equal(chapter_index, 0)) {
-        html_button_disable(button_previous);
-      }
-      if (equal(chapter_index, index_last)) {
-        html_button_disable(button_next);
-      }
-    }
+    html_buttons_next_previous(
+      root,
+      refresh_chapter,
+      chapter_index,
+      index_last,
+    );
   }
 }
