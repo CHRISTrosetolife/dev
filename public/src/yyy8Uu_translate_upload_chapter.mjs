@@ -36,7 +36,7 @@ export async function yyy8Uu_translate_upload_chapter(chapter_index) {
       la(translated);
     });
   });
-  assert(greater_than_equal, [list_length(english), list_length(latin)]);
+  assert(greater_than_equal, [english_length, list_length(latin)]);
   return;
   let destination = yyy8Uu_storage_path(chapter_index);
   if (10) {
