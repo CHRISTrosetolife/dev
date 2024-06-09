@@ -35,6 +35,7 @@ export async function yyy8Uu_translate_upload() {
       } catch (e) {
         error = true;
       }
+      index++;
       let translateds = await gcloud_translate_cache(
         "la",
         "en",
