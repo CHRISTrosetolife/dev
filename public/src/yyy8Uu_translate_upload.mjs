@@ -33,7 +33,7 @@ export async function yyy8Uu_translate_upload() {
         }
         try {
           let fcp = function_cache_path(yyy8Uu_part.name, [index, index2]);
-          file_exists(fcp);
+          await file_exists(fcp);
         } catch (e) {
           break;
         }
