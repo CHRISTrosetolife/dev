@@ -31,8 +31,8 @@ export async function yyy8Uu_translate_upload() {
     }
     return;
     let translateds = await gcloud_translate_cache(
-      "la",
-      "en",
+      yyy8Uu_language_from(),
+      yyy8Uu_language_to(),
       yyy8Uu_part.name,
       [index, english_length],
     );
@@ -49,3 +49,11 @@ export async function yyy8Uu_translate_upload() {
     }
   });
 }
+function yyy8Uu_language_to() {
+    return "en";
+}
+
+function yyy8Uu_language_from() {
+    return "la";
+}
+
