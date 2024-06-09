@@ -53,7 +53,7 @@ export async function yyy8Uu_translate_upload_chapter(chapter_index) {
       destination,
     );
   }
-  if (10) {
+  if (0) {
     if (equal_not(latin_length, english_length)) {
       let less = english_length - 2;
       if (equal_not(latin_length, less)) {
