@@ -21,23 +21,22 @@ export async function yyy8Uu_translate_upload() {
     });
     let latin = await yyy8Uu_parts(index);
     let english = await list_adder_async(async (la) => {
-      await each_index_only_async(latin, async (index2) => {
-        if (0) {
-          log({
-            index,
-            index2,
-          });
-        }
-        await yyy8Uu_part(index, index2);
-        let translateds = await gcloud_translate_cache(
-          "la",
-          "en",
-          yyy8Uu_part.name,
-          [index, index2],
-        );
-        let translated = list_single(translateds);
-        la(translated);
-      });
+      let index2 = 0;
+      if (0) {
+        log({
+          index,
+          index2,
+        });
+      }
+      await yyy8Uu_part(index, index2);
+      let translateds = await gcloud_translate_cache(
+        "la",
+        "en",
+        yyy8Uu_part.name,
+        [index, index2],
+      );
+      let translated = list_single(translateds);
+      la(translated);
     });
     let f = list_first(english);
     let f_split = string_split_space(f);
