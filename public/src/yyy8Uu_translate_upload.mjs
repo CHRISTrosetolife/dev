@@ -14,6 +14,7 @@ import { yyy8Uu_parts } from "./yyy8Uu_parts.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_length_2 } from "./list_length_2.mjs";
 import { string_split_space } from "./string_split_space.mjs";
+import { each_async } from "./each_async.mjs";
 export async function yyy8Uu_translate_upload() {
   let filtered = await yyy8Uu_file_paths();
   await each_index_only_async(filtered, async (index) => {
@@ -23,6 +24,7 @@ export async function yyy8Uu_translate_upload() {
     let latin = await yyy8Uu_parts(index);
     let english = await list_adder_async(async (la) => {
       let count = await yyy8Uu_parts_english_count(index);
+      await each_async();
       if (0) {
         log({
           index,
