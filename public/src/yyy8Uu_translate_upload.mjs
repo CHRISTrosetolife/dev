@@ -1,3 +1,4 @@
+import { error } from "./error.mjs";
 import { yyy8Uu_parts_english_count } from "./yyy8Uu_parts_english_count.mjs";
 import { log } from "./log.mjs";
 import { each_index_only_async } from "./each_index_only_async.mjs";
@@ -25,6 +26,7 @@ export async function yyy8Uu_translate_upload() {
           l: latin_length,
           e: english_length,
         });
+        error();
       }
     }
     return;
