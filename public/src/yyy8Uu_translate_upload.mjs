@@ -1,4 +1,3 @@
-import { each_range_async } from "./each_range_async.mjs";
 import { yyy8Uu_parts_english_count } from "./yyy8Uu_parts_english_count.mjs";
 import { list_take } from "./list_take.mjs";
 import { list_remove } from "./list_remove.mjs";
@@ -24,7 +23,6 @@ export async function yyy8Uu_translate_upload() {
     let latin = await yyy8Uu_parts(index);
     let english = await list_adder_async(async (la) => {
       let count = await yyy8Uu_parts_english_count(index);
-      await each_range_async();
       if (0) {
         log({
           index,
