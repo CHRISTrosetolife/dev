@@ -34,7 +34,7 @@ export async function function_rename(fn_name_from, fn_name_to) {
     await file_js_unparse(file_path, ast);
   });
   await data_transform(async function lambda(data) {
-    data_remove(data);
+    data_remove(data, fn_name_from);
     await data_update_multiple_transform(fps, data);
   });
 }
