@@ -14,12 +14,14 @@ import { gcloud_translate_cache } from "./gcloud_translate_cache.mjs";
 import { yyy8Uu_parts } from "./yyy8Uu_parts.mjs";
 import { list_length } from "./list_length.mjs";
 import { equal_not } from "./equal_not.mjs";
+import { list_adder_async } from "./list_adder_async.mjs";
 export async function yyy8Uu_translate_upload() {
   let filtered = await yyy8Uu_file_paths();
   await each_index_only_async(filtered, async (index) => {
     let latin = await yyy8Uu_parts(index);
     let latin_length = list_length(latin);
     let english_length = await yyy8Uu_parts_english_count(index);
+    await list_adder_async((la) => {});
     await each_range_async(english_length, async (index2) => {
       let translateds = await gcloud_translate_cache(
         yyy8Uu_language_from(),
