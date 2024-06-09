@@ -14,7 +14,6 @@ import { yyy8Uu_parts } from "./yyy8Uu_parts.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_length_2 } from "./list_length_2.mjs";
 import { string_split_space } from "./string_split_space.mjs";
-import { file_exists } from "./file_exists.mjs";
 export async function yyy8Uu_translate_upload() {
   let filtered = await yyy8Uu_file_paths();
   await each_index_only_async(filtered, async (index) => {
@@ -33,7 +32,9 @@ export async function yyy8Uu_translate_upload() {
         }
         try {
           let fcp = function_cache_path(yyy8Uu_part.name, [index, index2]);
-          await file_exists(fcp);
+          if (await file_exists_not(fcp)) {
+            break;
+          }
         } catch (e) {
           break;
         }
