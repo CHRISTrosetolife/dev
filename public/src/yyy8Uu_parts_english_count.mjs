@@ -7,8 +7,7 @@ export async function yyy8Uu_parts_english_count(index) {
   while (true) {
     let fcp = function_cache_path(gcloud_translate.name, [
       yyy8Uu_part.name,
-      index,
-      index2,
+      [index, index2],
     ]);
     if (await file_exists_not(fcp)) {
       break;
