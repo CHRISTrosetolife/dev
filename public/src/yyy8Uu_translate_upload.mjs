@@ -22,18 +22,18 @@ export async function yyy8Uu_translate_upload() {
     });
     let latin = await yyy8Uu_parts(index);
     let english = await list_adder_async(async (la) => {
-      let index2 = await yyy8Uu_parts_english_count(index);
+      let count = await yyy8Uu_parts_english_count(index);
       if (0) {
         log({
           index,
-          index2,
+          index2: count,
         });
       }
       let translateds = await gcloud_translate_cache(
         "la",
         "en",
         yyy8Uu_part.name,
-        [index, index2],
+        [index, count],
       );
       let translated = list_single(translateds);
       la(translated);
