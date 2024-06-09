@@ -2,7 +2,6 @@ import { file_js_unparse } from "./file_js_unparse.mjs";
 import { file_js_parse } from "./file_js_parse.mjs";
 import { js_identifier_rename } from "./js_identifier_rename.mjs";
 import { file_rename } from "./file_rename.mjs";
-import { function_transform_args_split_lambda } from "./function_transform_args_split_lambda.mjs";
 import { js_import_remove_ast } from "./js_import_remove_ast.mjs";
 import { data_identifiers } from "./data_identifiers.mjs";
 import { data_update_multiple } from "./data_update_multiple.mjs";
@@ -22,12 +21,6 @@ export async function function_rename(fn_name_from, fn_name_to) {
     js_import_remove_ast;
     js_identifier_rename;
     let after = await file_js_unparse(file_path, ast);
-    await function_transform_args_split_lambda(e, [], [fn_name_from]);
-    await function_transform_args_split_lambda(
-      e,
-      [js_identifier_rename],
-      [fn_name_from, fn_name_to],
-    );
   });
   await data_update_multiple(fps);
   js_import_remove_ast;
