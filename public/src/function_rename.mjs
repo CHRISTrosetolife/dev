@@ -18,14 +18,14 @@ export async function function_rename(fn_name_from, fn_name_to) {
   await file_rename(fn_path_from, fn_path_to);
   let existing = object_property_get(identifiers, fn_name_from);
   list_remove(existing, fn_name_to);
-  function_transform_args_split_lambda *
-    (await each_async(existing, async (e) => {
-      let file_path = function_name_to_path(e);
-      let ast = await file_js_parse(file_path);
-      js_import_remove_ast(ast, fn_name_from);
-      js_identifier_rename(ast, fn_name_from, fn_name_to);
-      js_imports_add_specified(ast, [fn_name_to]);
-      await file_js_unparse(file_path, ast);
-    }));
+  await function_transform_args_split_lambda();
+  await each_async(existing, async (e) => {
+    let file_path = function_name_to_path(e);
+    let ast = await file_js_parse(file_path);
+    js_import_remove_ast(ast, fn_name_from);
+    js_identifier_rename(ast, fn_name_from, fn_name_to);
+    js_imports_add_specified(ast, [fn_name_to]);
+    await file_js_unparse(file_path, ast);
+  });
   await data_update_multiple(fps);
 }
