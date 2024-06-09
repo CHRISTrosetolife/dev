@@ -1,4 +1,4 @@
-import { function_cache_path } from "./function_cache_path.mjs";
+import { yyy8Uu_parts_english_count } from "./yyy8Uu_parts_english_count.mjs";
 import { list_take } from "./list_take.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { log } from "./log.mjs";
@@ -22,14 +22,7 @@ export async function yyy8Uu_translate_upload() {
     });
     let latin = await yyy8Uu_parts(index);
     let english = await list_adder_async(async (la) => {
-      let index2 = 0;
-      while (true) {
-        let fcp = function_cache_path(yyy8Uu_part.name, [index, index2]);
-        if (await file_exists_not(fcp)) {
-          break;
-        }
-        index2++;
-      }
+      let index2 = await yyy8Uu_parts_english_count(index);
       if (0) {
         log({
           index,
