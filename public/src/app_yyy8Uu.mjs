@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { html_spacer_vertical_2 } from "./html_spacer_vertical_2.mjs";
 import { html_button_width_full_text_click_home } from "./html_button_width_full_text_click_home.mjs";
 import { html_disable } from "./html_disable.mjs";
@@ -104,9 +103,6 @@ export async function app_yyy8Uu() {
     );
     let file_path = yyy8Uu_storage_path(chapter_index);
     let chapter = await http_storage(file_path);
-    log({
-      chapter,
-    });
     let { english, latin } = chapter;
     let indices = range(list_length(english));
     for (let i of indices) {
