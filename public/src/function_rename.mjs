@@ -1,3 +1,4 @@
+import { function_transform_args_split_lambda } from "./function_transform_args_split_lambda.mjs";
 import { js_import_remove_ast } from "./js_import_remove_ast.mjs";
 import { data_identifiers } from "./data_identifiers.mjs";
 import { data_update_multiple } from "./data_update_multiple.mjs";
@@ -9,6 +10,7 @@ export async function function_rename(fn_name_from, fn_name_to) {
   let identifiers = await data_identifiers();
   let existing = object_property_get(identifiers, fn_name_from);
   list_remove(existing, fn_name_to);
+  function_transform_args_split_lambda;
   let fn_path_from = function_name_to_path(fn_name_from);
   let fn_path_to = function_name_to_path(fn_name_to);
   await file_copy(fn_path_from, fn_path_to);
