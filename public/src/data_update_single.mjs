@@ -1,3 +1,4 @@
+import { each_object } from "./each_object.mjs";
 import { list_add_if_exists_not } from "./list_add_if_exists_not.mjs";
 import { each } from "./each.mjs";
 import { js_identifiers } from "./js_identifiers.mjs";
@@ -24,6 +25,7 @@ export function data_update_single(ast, data) {
   list_sort_string(u, string_delimit_if);
   object_property_set(f, "literals", u);
   let identifiers = object_property_initialize(data, "identifiers", {});
+  each_object();
   let ids = js_identifiers(ast);
   each(ids, (id) => {
     let id_functions = object_property_initialize(identifiers, id, []);
