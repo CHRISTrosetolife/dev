@@ -5,8 +5,7 @@ export async function file_js_identifier_rename(
   identifier_from,
   identifier_to,
 ) {
-  let lambda = js_identifier_rename;
-  await file_js_transform([lambda], file_path, [
+  await file_js_transform([js_identifier_rename], file_path, [
     identifier_from,
     identifier_to,
   ]);
