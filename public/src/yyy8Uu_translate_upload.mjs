@@ -30,6 +30,7 @@ export async function yyy8Uu_translate_upload() {
           [index, index2],
         );
         let translated = list_single(translateds);
+        la(translated);
       });
       let destination = yyy8Uu_storage_path(index);
       if (0) {
