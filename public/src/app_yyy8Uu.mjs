@@ -1,4 +1,4 @@
-import { html_buttons_next_previous } from "./html_buttons_next_previous.mjs";
+import { html_buttons_next_previous_hr_none } from "./html_buttons_next_previous_hr_none.mjs";
 import { log } from "./log.mjs";
 import { html_button_width_full_text_click_home } from "./html_button_width_full_text_click_home.mjs";
 import { list_second } from "./list_second.mjs";
@@ -121,7 +121,7 @@ export async function app_yyy8Uu() {
     if (!show_latin) {
       html_hr(root);
     }
-    html_buttons_next_previous_hr_none(//
+    html_buttons_next_previous_hr_none(
       root,
       refresh_chapter,
       chapter_index,
