@@ -18,6 +18,9 @@ import { yyy8Uu_parts } from "./yyy8Uu_parts.mjs";
 import { greater_than_equal } from "./greater_than_equal.mjs";
 export async function yyy8Uu_translate_upload_chapter(chapter_index) {
   chapter_index = integer_parse(chapter_index);
+  log({
+    cha,
+  });
   let latin = await yyy8Uu_parts(chapter_index);
   let latin_length = list_length(latin);
   let english_length = await yyy8Uu_parts_english_count(chapter_index);
