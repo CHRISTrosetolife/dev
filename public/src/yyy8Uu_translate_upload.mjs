@@ -22,14 +22,14 @@ export async function yyy8Uu_translate_upload() {
     if (10) {
       if (equal_not(latin_length, english_length)) {
         let less = english_length - 2;
-        if (equal_not(latin_length, english_length)) {
+        if (equal_not(latin_length, less)) {
+          log({
+            index,
+            l: latin_length,
+            e: english_length,
+          });
+          error();
         }
-        log({
-          index,
-          l: latin_length,
-          e: english_length,
-        });
-        error();
       }
     }
     return;
