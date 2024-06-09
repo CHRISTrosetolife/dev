@@ -1,4 +1,3 @@
-import { error } from "./error.mjs";
 import { list_take } from "./list_take.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { log } from "./log.mjs";
@@ -23,7 +22,6 @@ export async function yyy8Uu_translate_upload() {
     let latin = await yyy8Uu_parts(index);
     let english = await list_adder_async(async (la) => {
       let index2 = 0;
-      let error = false;
       while (true) {
         if (0) {
           log({
@@ -33,10 +31,10 @@ export async function yyy8Uu_translate_upload() {
         }
         try {
           await yyy8Uu_part(index, index2);
-          index2++;
         } catch (e) {
           break;
         }
+        index2++;
       }
       let translateds = await gcloud_translate_cache(
         "la",
