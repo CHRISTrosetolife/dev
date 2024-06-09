@@ -14,15 +14,13 @@ export async function function_rename(fn_name_from, fn_name_to) {
   await file_rename(fn_path_from, fn_path_to);
   let existing = object_property_get(identifiers, fn_name_from);
   list_remove(existing, fn_name_to);
-  await each_async(
-    existing,
-    async (e) =>
-      await function_transform_args_split_lambda(
-        e,
-        [js_import_remove_ast],
-        [fn_name_from],
-      ),
-  );
+  await each_async(existing, async (e) => {
+    await function_transform_args_split_lambda(
+      e,
+      [js_import_remove_ast],
+      [fn_name_from],
+    );
+  });
   await data_update_multiple(fps);
   js_import_remove_ast;
 }
