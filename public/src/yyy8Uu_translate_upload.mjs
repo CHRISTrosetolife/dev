@@ -21,26 +21,27 @@ export async function yyy8Uu_translate_upload() {
     let latin = await yyy8Uu_parts(index);
     let latin_length = list_length(latin);
     let english_length = await yyy8Uu_parts_english_count(index);
-    await list_adder_async((la) => {});
-    await each_range_async(english_length, async (index2) => {
-      let translateds = await gcloud_translate_cache(
-        yyy8Uu_language_from(),
-        yyy8Uu_language_to(),
-        yyy8Uu_part.name,
-        [index, index2],
-      );
-      let translated = list_single(translateds);
+    await list_adder_async(async (la) => {
+      await each_range_async(english_length, async (index2) => {
+        let translateds = await gcloud_translate_cache(
+          yyy8Uu_language_from(),
+          yyy8Uu_language_to(),
+          yyy8Uu_part.name,
+          [index, index2],
+        );
+        let translated = list_single(translateds);
+      });
+      let destination = yyy8Uu_storage_path(index);
+      if (0) {
+        await storage_upload_object(
+          {
+            english,
+            latin,
+          },
+          destination,
+        );
+      }
     });
-    let destination = yyy8Uu_storage_path(index);
-    if (0) {
-      await storage_upload_object(
-        {
-          english,
-          latin,
-        },
-        destination,
-      );
-    }
     if (10) {
       if (equal_not(latin_length, english_length)) {
         let less = english_length - 2;
