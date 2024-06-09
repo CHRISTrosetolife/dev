@@ -1,3 +1,4 @@
+import { integer_parse } from "./integer_parse.mjs";
 import { error } from "./error.mjs";
 import { log } from "./log.mjs";
 import { equal_not } from "./equal_not.mjs";
@@ -14,6 +15,7 @@ import { yyy8Uu_parts_english_count } from "./yyy8Uu_parts_english_count.mjs";
 import { list_length } from "./list_length.mjs";
 import { yyy8Uu_parts } from "./yyy8Uu_parts.mjs";
 export async function yyy8Uu_translate_upload_chapter(chapter_index) {
+  chapter_index = integer_parse(chapter_index);
   let latin = await yyy8Uu_parts(chapter_index);
   let latin_length = list_length(latin);
   let english_length = await yyy8Uu_parts_english_count(chapter_index);
