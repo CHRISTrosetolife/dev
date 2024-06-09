@@ -25,7 +25,7 @@ export function data_update_single(ast, data) {
   list_sort_string(u, string_delimit_if);
   object_property_set(f, "literals", u);
   let identifiers = object_property_initialize(data, "identifiers", {});
-  each_object();
+  each_object(identifiers, (key, value) => {});
   let ids = js_identifiers(ast);
   each(ids, (id) => {
     let id_functions = object_property_initialize(identifiers, id, []);
