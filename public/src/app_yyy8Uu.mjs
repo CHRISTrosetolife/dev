@@ -1,5 +1,6 @@
-import { html_buttons_next_previous_hr_none } from "./html_buttons_next_previous_hr_none.mjs";
+import { html_buttons_next_previous } from "./html_buttons_next_previous.mjs";
 import { log } from "./log.mjs";
+import { html_spacer_vertical_2 } from "./html_spacer_vertical_2.mjs";
 import { html_button_width_full_text_click_home } from "./html_button_width_full_text_click_home.mjs";
 import { list_second } from "./list_second.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
@@ -88,12 +89,7 @@ export async function app_yyy8Uu() {
   let show_latin = true;
   async function refresh_chapter(chapter_index) {
     html_clear_scroll_top(root);
-    html_buttons_next_previous_hr_none(
-      root,
-      refresh_chapter,
-      chapter_index,
-      index_last,
-    );
+    buttons_navigation();
     html_hr(root);
     html_button_width_full_text_click(
       root,
@@ -121,11 +117,16 @@ export async function app_yyy8Uu() {
     if (!show_latin) {
       html_hr(root);
     }
-    html_buttons_next_previous_hr_none(
-      root,
-      refresh_chapter,
-      chapter_index,
-      index_last,
-    );
+    buttons_navigation();
+    function buttons_navigation() {
+      button_home();
+      html_spacer_vertical_2(root);
+      html_buttons_next_previous(
+        root,
+        refresh_chapter,
+        chapter_index,
+        index_last,
+      );
+    }
   }
 }
