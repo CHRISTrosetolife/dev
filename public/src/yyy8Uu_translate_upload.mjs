@@ -25,7 +25,7 @@ export async function yyy8Uu_translate_upload() {
         yyy8Uu_language_from(),
         yyy8Uu_language_to(),
         yyy8Uu_part.name,
-        [index, english_length],
+        [index, index2],
       );
       let translated = list_single(translateds);
     });
