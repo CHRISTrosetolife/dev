@@ -1,5 +1,4 @@
 import { yyy8Uu_parts_english_count } from "./yyy8Uu_parts_english_count.mjs";
-import { list_take } from "./list_take.mjs";
 import { log } from "./log.mjs";
 import { each_index_only_async } from "./each_index_only_async.mjs";
 import { yyy8Uu_file_paths } from "./yyy8Uu_file_paths.mjs";
@@ -21,8 +20,8 @@ export async function yyy8Uu_translate_upload() {
     let english_length = await yyy8Uu_parts_english_count(index);
     if (10) {
       log({
-        l: list_take(latin, 3),
-        e: list_take(english, 3),
+        l: latin_length,
+        e: english_length,
       });
     }
     let translateds = await gcloud_translate_cache(
