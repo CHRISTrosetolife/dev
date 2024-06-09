@@ -26,5 +26,4 @@ export async function function_rename(fn_name_from, fn_name_to) {
     await file_js_unparse(file_path, ast);
   });
   await data_update_multiple(fps);
-  js_import_remove_ast;
 }
