@@ -1,4 +1,4 @@
-import { list_remove_at } from "./list_remove_at.mjs";
+import { list_remove_first } from "./list_remove_first.mjs";
 import { assert } from "./assert.mjs";
 import { integer_parse } from "./integer_parse.mjs";
 import { error } from "./error.mjs";
@@ -44,7 +44,7 @@ export async function yyy8Uu_translate_upload_chapter(chapter_index) {
   let less = english_length - latin_length;
   assert(less_than_equal, [less, 2]);
   while (number_less_than(list_length(english), latin_length)) {
-    list_remove_at(english, 0);
+    list_remove_first(english);
   }
   return;
   let destination = yyy8Uu_storage_path(chapter_index);
