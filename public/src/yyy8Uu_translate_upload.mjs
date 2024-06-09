@@ -22,6 +22,8 @@ export async function yyy8Uu_translate_upload() {
     if (10) {
       if (equal_not(latin_length, english_length)) {
         let less = english_length - 2;
+        if (equal_not(latin_length, english_length)) {
+        }
         log({
           index,
           l: latin_length,
