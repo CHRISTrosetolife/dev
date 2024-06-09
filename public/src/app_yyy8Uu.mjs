@@ -88,7 +88,7 @@ export async function app_yyy8Uu() {
   let show_latin = true;
   async function refresh_chapter(chapter_index) {
     html_clear_scroll_top(root);
-    html_buttons_next_previous(
+    html_buttons_next_previous_hr_none(
       root,
       refresh_chapter,
       chapter_index,
@@ -121,7 +121,7 @@ export async function app_yyy8Uu() {
     if (!show_latin) {
       html_hr(root);
     }
-    html_buttons_next_previous(
+    html_buttons_next_previous_hr_none(//
       root,
       refresh_chapter,
       chapter_index,
