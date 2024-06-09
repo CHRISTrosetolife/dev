@@ -19,7 +19,7 @@ export async function function_rename(fn_name_from, fn_name_to) {
   await each_async(existing, async (e) => {
     let file_path = function_name_to_path(e);
     let ast = await file_js_parse(file_path);
-    js_import_remove_ast;
+    js_import_remove_ast(ast, e);
     js_identifier_rename;
     let after = await file_js_unparse(file_path, ast);
   });
