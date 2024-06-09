@@ -1,3 +1,4 @@
+import { each_range } from "./each_range.mjs";
 import { list_remove_first } from "./list_remove_first.mjs";
 import { assert } from "./assert.mjs";
 import { integer_parse } from "./integer_parse.mjs";
@@ -43,9 +44,8 @@ export async function yyy8Uu_translate_upload_chapter(chapter_index) {
   assert(greater_than_equal, [english_length, latin_length]);
   let less = english_length - latin_length;
   assert(less_than_equal, [less, 2]);
-  while (number_less_than(list_length(english), latin_length)) {
-    list_remove_first(english);
-  }
+  each_range(less, () => list_remove_first(english));
+  while (number_less_than(list_length(english), latin_length)) {}
   return;
   let destination = yyy8Uu_storage_path(chapter_index);
   if (10) {
