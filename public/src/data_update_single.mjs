@@ -24,9 +24,9 @@ export function data_update_single(ast, data) {
   let u = list_unique(mapped);
   list_sort_string(u, string_delimit_if);
   object_property_set(f, "literals", u);
+  let ids = js_identifiers(ast);
   let identifiers = object_property_initialize(data, "identifiers", {});
   each_object(identifiers, (key, value) => {});
-  let ids = js_identifiers(ast);
   each(ids, (id) => {
     let id_functions = object_property_initialize(identifiers, id, []);
     list_add_if_exists_not(id_functions, name);
