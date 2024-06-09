@@ -27,11 +27,9 @@ export function html_buttons_next_previous(root, on_click, index, index_last) {
   );
   if (equal(index, 0)) {
     html_button_disable(button_previous);
-    log("prev dis");
   }
   if (equal(index, index_last)) {
     html_button_disable(button_next);
-    log("next dis");
   }
   html_spacer_vertical_2(root);
 }
