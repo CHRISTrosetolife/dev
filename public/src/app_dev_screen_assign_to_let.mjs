@@ -3,7 +3,7 @@ import { html_span_text } from "./html_span_text.mjs";
 export function app_dev_screen_assign_to_let() {
   return {
     name: function assign_to_let_name(root) {
-      return html_span_text(root, "assign_to_let");
+      return html_span_text(root, "adding `let` to variable assignments");
     },
     screen: function assign_to_let_screen(root) {
       let i = 1;
