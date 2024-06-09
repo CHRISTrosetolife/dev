@@ -24,7 +24,7 @@ export async function yyy8Uu_translate_upload() {
     let english = await list_adder_async(async (la) => {
       let index2 = 0;
       let error = false;
-      while (!error) {
+      while (true) {
         if (0) {
           log({
             index,
