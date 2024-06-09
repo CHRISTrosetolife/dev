@@ -1,3 +1,4 @@
+import { function_cache_path } from "./function_cache_path.mjs";
 import { list_take } from "./list_take.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { log } from "./log.mjs";
@@ -30,7 +31,7 @@ export async function yyy8Uu_translate_upload() {
           });
         }
         try {
-          await yyy8Uu_part(index, index2);
+          let fcp = function_cache_path(yyy8Uu_part.name, [index, index2]);
         } catch (e) {
           break;
         }
