@@ -22,10 +22,12 @@ export async function yyy8Uu_translate_upload() {
     let latin = await yyy8Uu_parts(index);
     let english = await list_adder_async(async (la) => {
       await each_index_only_async(latin, async (index2) => {
-        log({
-          index,
-          index2,
-        });
+        if (0) {
+          log({
+            index,
+            index2,
+          });
+        }
         let translateds = await gcloud_translate_cache(
           "la",
           "en",
