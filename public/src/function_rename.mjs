@@ -1,5 +1,4 @@
 import { js_import_remove } from "./js_import_remove.mjs";
-import { log } from "./log.mjs";
 import { data_remove } from "./data_remove.mjs";
 import { data_update_multiple_transform } from "./data_update_multiple_transform.mjs";
 import { data_transform } from "./data_transform.mjs";
@@ -22,9 +21,6 @@ export async function function_rename(fn_name_from, fn_name_to) {
   let fn_path_to = function_name_to_path(fn_name_to);
   await file_rename(fn_path_from, fn_path_to);
   let existing = object_property_get(identifiers, fn_name_from);
-  log({
-    existing,
-  });
   list_remove(existing, fn_name_from);
   await function_transform_args_split_lambda(
     fn_name_to,
