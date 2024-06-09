@@ -1,4 +1,3 @@
-import { data_update_multiple_transform } from "./data_update_multiple_transform.mjs";
 import { data_remove } from "./data_remove.mjs";
 import { data_transform } from "./data_transform.mjs";
 import { file_delete } from "./file_delete.mjs";
@@ -7,7 +6,6 @@ export async function function_delete(function_name) {
   let function_path = function_name_to_path(function_name);
   await file_delete(function_path);
   await data_transform(async function lambda(data) {
-    data_remove(data, fn_name_from);
-    await data_update_multiple_transform(fps, data);
+    data_remove(data, function_name);
   });
 }
