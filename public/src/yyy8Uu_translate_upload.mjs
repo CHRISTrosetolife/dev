@@ -24,18 +24,20 @@ export async function yyy8Uu_translate_upload() {
     let english = await list_adder_async(async (la) => {
       let index2 = 0;
       let error = false;
-      if (0) {
-        log({
-          index,
-          index2,
-        });
+      while (!error) {
+        if (0) {
+          log({
+            index,
+            index2,
+          });
+        }
+        try {
+          await yyy8Uu_part(index, index2);
+        } catch (e) {
+          error = true;
+        }
+        index2++;
       }
-      try {
-        await yyy8Uu_part(index, index2);
-      } catch (e) {
-        error = true;
-      }
-      index2++;
       let translateds = await gcloud_translate_cache(
         "la",
         "en",
