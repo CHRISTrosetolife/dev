@@ -1,6 +1,5 @@
 import { yyy8Uu_parts_english_count } from "./yyy8Uu_parts_english_count.mjs";
 import { list_take } from "./list_take.mjs";
-import { list_remove } from "./list_remove.mjs";
 import { log } from "./log.mjs";
 import { each_index_only_async } from "./each_index_only_async.mjs";
 import { yyy8Uu_file_paths } from "./yyy8Uu_file_paths.mjs";
@@ -10,9 +9,6 @@ import { list_single } from "./list_single.mjs";
 import { yyy8Uu_part } from "./yyy8Uu_part.mjs";
 import { gcloud_translate_cache } from "./gcloud_translate_cache.mjs";
 import { yyy8Uu_parts } from "./yyy8Uu_parts.mjs";
-import { list_first } from "./list_first.mjs";
-import { list_length_2 } from "./list_length_2.mjs";
-import { string_split_space } from "./string_split_space.mjs";
 export async function yyy8Uu_translate_upload() {
   let filtered = await yyy8Uu_file_paths();
   await each_index_only_async(filtered, async (index) => {
@@ -34,16 +30,6 @@ export async function yyy8Uu_translate_upload() {
       [index, count],
     );
     let translated = list_single(translateds);
-    let f = list_first(english);
-    let f_split = string_split_space(f);
-    if (list_length_2(f_split)) {
-      if (list_first(f_split) === "Chapter") {
-        log({
-          f,
-        });
-        list_remove(english, f);
-      }
-    }
     if (0) {
       log({
         l: list_take(latin, 3),
