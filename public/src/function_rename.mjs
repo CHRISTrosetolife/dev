@@ -20,6 +20,11 @@ export async function function_rename(fn_name_from, fn_name_to) {
       [js_import_remove_ast],
       [fn_name_from],
     );
+    await function_transform_args_split_lambda(
+      e,
+      [js_import_remove_ast],
+      [fn_name_from],
+    );
   });
   await data_update_multiple(fps);
   js_import_remove_ast;
