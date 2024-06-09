@@ -1,7 +1,7 @@
+import { html_button_disable } from "./html_button_disable.mjs";
 import { log } from "./log.mjs";
 import { html_spacer_vertical_2 } from "./html_spacer_vertical_2.mjs";
 import { html_button_width_full_text_click_home } from "./html_button_width_full_text_click_home.mjs";
-import { html_disable } from "./html_disable.mjs";
 import { list_second } from "./list_second.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { list_unique } from "./list_unique.mjs";
@@ -141,10 +141,10 @@ export async function app_yyy8Uu() {
         },
       );
       if (equal(chapter_index, 0)) {
-        html_disable(button_previous);
+        html_button_disable(button_previous);
       }
       if (equal(chapter_index, index_last)) {
-        html_disable(button_next);
+        html_button_disable(button_next);
       }
     }
   }
