@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { list_remove_if_exists } from "./list_remove_if_exists.mjs";
 import { each_object } from "./each_object.mjs";
 import { list_add_if_exists_not } from "./list_add_if_exists_not.mjs";
@@ -27,6 +28,7 @@ export function data_update_single(ast, data) {
   object_property_set(f, "literals", u);
   let ids = js_identifiers(ast);
   let identifiers = object_property_initialize(data, "identifiers", {});
+  each(ids, (id) => object_property_initialize(data, "identifiers", {}));
   each_object(identifiers, (id, id_functions) => {
     if (list_includes(ids, id)) {
       list_add_if_exists_not(id_functions, name);
