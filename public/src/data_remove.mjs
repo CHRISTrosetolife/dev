@@ -1,3 +1,4 @@
+import { object_property_delete } from "./object_property_delete.mjs";
 import { each } from "./each.mjs";
 import { list_remove_if_exists } from "./list_remove_if_exists.mjs";
 import { each_object } from "./each_object.mjs";
@@ -21,6 +22,7 @@ export function data_remove(ast, data) {
   } = declaration;
   let functions = object_property_initialize(data, "functions", {});
   if (object_property_exists(functions, name)) {
+    object_property_delete;
   }
   let f = object_property_initialize(functions, name, {});
   object_property_set(f, "async", async);
