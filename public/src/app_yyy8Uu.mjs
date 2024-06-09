@@ -1,4 +1,3 @@
-import { html_buttons_next_previous } from "./html_buttons_next_previous.mjs";
 import { log } from "./log.mjs";
 import { html_spacer_vertical_2 } from "./html_spacer_vertical_2.mjs";
 import { html_button_width_full_text_click_home } from "./html_button_width_full_text_click_home.mjs";
@@ -28,6 +27,7 @@ import { list_filter } from "./list_filter.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_index } from "./list_index.mjs";
 import { list_index_last } from "./list_index_last.mjs";
+import { html_buttons_next_previous_hr_none } from "./html_buttons_next_previous_hr_none.mjs";
 export async function app_yyy8Uu() {
   html_style_default_initialize();
   let root = html_document_body();
@@ -121,7 +121,7 @@ export async function app_yyy8Uu() {
     function buttons_navigation() {
       button_home();
       html_spacer_vertical_2(root);
-      html_buttons_next_previous(
+      html_buttons_next_previous_hr_none(
         root,
         refresh_chapter,
         chapter_index,
