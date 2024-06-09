@@ -23,7 +23,7 @@ export async function function_rename(fn_name_from, fn_name_to) {
     js_import_remove_ast(ast, fn_name_from);
     js_identifier_rename(ast, fn_name_from, fn_name_to);
     js_imports_add_specified(ast, [fn_name_to]);
-    let after = await file_js_unparse(file_path, ast);
+    await file_js_unparse(file_path, ast);
   });
   await data_update_multiple(fps);
   js_import_remove_ast;
