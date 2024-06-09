@@ -2,7 +2,6 @@ import { html_style_alternate_monospace_short_span } from "./html_style_alternat
 import { app_dev_sandbox_function_multiple } from "./app_dev_sandbox_function_multiple.mjs";
 import { function_name_new } from "./function_name_new.mjs";
 import { js_code_return } from "./js_code_return.mjs";
-import { log } from "./log.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 import { add } from "./add.mjs";
 import { multiply } from "./multiply.mjs";
@@ -67,9 +66,6 @@ export function app_dev_screen_outside_move() {
         false,
       );
       let code = string_combine_multiple([contents_a, contents_b, contents_c]);
-      log({
-        code,
-      });
       let contents = await js_code_format(code);
       let file_path = function_name_to_path(fn_a);
       await file_write(file_path, contents);
