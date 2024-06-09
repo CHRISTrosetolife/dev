@@ -1,3 +1,4 @@
+import { data_remove } from "./data_remove.mjs";
 import { data_update_multiple_transform } from "./data_update_multiple_transform.mjs";
 import { data_transform } from "./data_transform.mjs";
 import { function_transform_args_split_lambda } from "./function_transform_args_split_lambda.mjs";
@@ -33,6 +34,7 @@ export async function function_rename(fn_name_from, fn_name_to) {
     await file_js_unparse(file_path, ast);
   });
   await data_transform(async function lambda(data) {
+    data_remove(data);
     await data_update_multiple_transform(fps, data);
   });
 }
