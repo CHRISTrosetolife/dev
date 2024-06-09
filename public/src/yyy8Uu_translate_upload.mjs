@@ -19,12 +19,6 @@ export async function yyy8Uu_translate_upload() {
     let latin = await yyy8Uu_parts(index);
     let latin_length = list_length(latin);
     let english_length = await yyy8Uu_parts_english_count(index);
-    if (0) {
-      log({
-        index,
-        index2: english_length,
-      });
-    }
     let translateds = await gcloud_translate_cache(
       "la",
       "en",
