@@ -17,6 +17,9 @@ export async function yyy8Uu_translate_upload_chapter(chapter_index) {
   let latin = await yyy8Uu_parts(chapter_index);
   let latin_length = list_length(latin);
   let english_length = await yyy8Uu_parts_english_count(chapter_index);
+  log({
+    english_length,
+  });
   let english = await list_adder_async(async (la) => {
     await each_range_async(english_length, async (index2) => {
       log({
