@@ -17,6 +17,7 @@ export async function function_rename(fn_name_from, fn_name_to) {
   let existing = object_property_get(identifiers, fn_name_from);
   list_remove(existing, fn_name_to);
   await each_async(existing, async (e) => {
+    let file_path = function_name_to_path(e);
     let ast = await file_js_parse(file_path);
     js_import_remove_ast;
     js_identifier_rename;
