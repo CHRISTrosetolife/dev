@@ -24,8 +24,8 @@ export function data_update_single(ast, data) {
   object_property_set(f, "literals", u);
   let identifiers = object_property_initialize(data, "identifiers", {});
   let ids = js_identifiers(ast);
-  each(ids, (ids) => {
-    let f = object_property_initialize(functions, id, {});
+  each(ids, (id) => {
+    let id_functions = object_property_initialize(identifiers, id, []);
     object_property_set(identifiers, name, ids);
   });
 }
