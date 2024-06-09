@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { js_identifiers } from "./js_identifiers.mjs";
 import { string_delimit_if } from "./string_delimit_if.mjs";
 import { js_node_type } from "./js_node_type.mjs";
@@ -23,5 +24,5 @@ export function data_update_single(ast, data) {
   object_property_set(f, "literals", u);
   let identifiers = object_property_initialize(data, "identifiers", {});
   let ids = js_identifiers(ast);
-  object_property_set(identifiers, name, ids);
+  each(ids, (ids) => {});
 }
