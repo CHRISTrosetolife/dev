@@ -22,7 +22,7 @@ export function data_remove(ast, data) {
   } = declaration;
   let functions = object_property_initialize(data, "functions", {});
   if (object_property_exists(functions, name)) {
-    object_property_delete;
+    object_property_delete(functions, name);
   }
   let f = object_property_initialize(functions, name, {});
   object_property_set(f, "async", async);
