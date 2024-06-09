@@ -1,3 +1,4 @@
+import { js_identifiers } from "./js_identifiers.mjs";
 import { string_delimit_if } from "./string_delimit_if.mjs";
 import { js_node_type } from "./js_node_type.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -20,4 +21,5 @@ export function data_update_single(ast, data) {
   let u = list_unique(mapped);
   list_sort_string(u, string_delimit_if);
   object_property_set(f, "literals", u);
+  js_identifiers(ast);
 }
