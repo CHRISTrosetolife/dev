@@ -28,7 +28,7 @@ export function data_update_single(ast, data) {
   object_property_set(f, "literals", u);
   let ids = js_identifiers(ast);
   let identifiers = object_property_initialize(data, "identifiers", {});
-  each(ids, (id) => object_property_initialize(data, "identifiers", {}));
+  each(ids, (id) => object_property_initialize(identifiers, id, []));
   each_object(identifiers, (id, id_functions) => {
     if (list_includes(ids, id)) {
       list_add_if_exists_not(id_functions, name);
