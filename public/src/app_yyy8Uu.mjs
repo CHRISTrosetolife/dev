@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { html_spacer_vertical_2 } from "./html_spacer_vertical_2.mjs";
 import { html_button_width_full_text_click_home } from "./html_button_width_full_text_click_home.mjs";
 import { html_disable } from "./html_disable.mjs";
@@ -37,6 +38,9 @@ export async function app_yyy8Uu() {
   let file_path = yyy8Uu_storage_path("chapter_names");
   let { chapter_names } = await http_storage(file_path);
   let index_last = list_index_last(chapter_names);
+  log({
+    index_last,
+  });
   let separator = "-";
   let split = list_map(chapter_names, (c) => string_split(c, separator));
   for (let s of split) {
