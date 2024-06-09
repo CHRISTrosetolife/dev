@@ -16,9 +16,7 @@ import { equal_not } from "./equal_not.mjs";
 export async function yyy8Uu_translate_upload() {
   let filtered = await yyy8Uu_file_paths();
   await each_index_only_async(filtered, async (index) => {
-    log({
-      index,
-    });
+    log({});
     let latin = await yyy8Uu_parts(index);
     let latin_length = list_length(latin);
     let english_length = await yyy8Uu_parts_english_count(index);
@@ -26,6 +24,7 @@ export async function yyy8Uu_translate_upload() {
       if (equal_not(latin_length, english_length)) {
         let less = english_length - 2;
         log({
+          index,
           l: latin_length,
           e: english_length,
         });
