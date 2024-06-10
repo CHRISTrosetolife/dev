@@ -15,6 +15,7 @@ import { app_dev_p_transformer } from "./app_dev_p_transformer.mjs";
 import { js_assign_to_let } from "./js_assign_to_let.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 import { html_span_text } from "./html_span_text.mjs";
+import { log } from "./log.mjs";
 export function app_dev_screen_assign_to_let() {
   return {
     name: function assign_to_let_name(root) {
@@ -48,6 +49,9 @@ export function app_dev_screen_assign_to_let() {
         false,
       );
       let contents = await js_code_format(contents_function);
+      log({
+        contents,
+      });
       let file_path = function_name_to_path(function_name_unique);
       await file_write(file_path, contents);
       await app_dev_sandbox_function(
