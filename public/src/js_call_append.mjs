@@ -1,10 +1,10 @@
+import { js_code_declare_assign_0 } from "./js_code_declare_assign_0.mjs";
 import { string_empty_is } from "./string_empty_is.mjs";
 import { js_body_nested } from "./js_body_nested.mjs";
 import { js_variable_declaration_init } from "./js_variable_declaration_init.mjs";
 import { js_export_single } from "./js_export_single.mjs";
 import { file_exists } from "./file_exists.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
-import { js_code_declare_assign } from "./js_code_declare_assign.mjs";
 import { js_call } from "./js_call.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
 import { list_add } from "./list_add.mjs";
@@ -24,7 +24,7 @@ export async function js_call_append(ast, a) {
       expression: call,
     };
   } else {
-    node = js_code_declare_assign(result_name);
+    node = js_code_declare_assign_0(result_name);
     js_variable_declaration_init(node, call);
   }
   list_add(body, node);

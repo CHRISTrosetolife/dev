@@ -1,7 +1,7 @@
+import { js_code_declare_assign_0 } from "./js_code_declare_assign_0.mjs";
 import { js_imports_add_specified } from "./js_imports_add_specified.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { js_variable_declaration_init } from "./js_variable_declaration_init.mjs";
-import { js_code_declare_assign } from "./js_code_declare_assign.mjs";
 import { js_name_unique_v_parsed } from "./js_name_unique_v_parsed.mjs";
 import { js_identifier_to_expression } from "./js_identifier_to_expression.mjs";
 import { js_node_type_visitor } from "./js_node_type_visitor.mjs";
@@ -27,7 +27,7 @@ export function js_object_pattern_functionize(ast) {
     each_reverse(properties, (p) => {
       let { key, value } = p;
       let { name: value_name } = value;
-      let parsed = js_code_declare_assign(value_name);
+      let parsed = js_code_declare_assign_0(value_name);
       let key_string = js_identifier_to_expression(key);
       let variable_name_identifier = js_parse_expression(variable_name);
       let call = js_call(object_property_get.name, [

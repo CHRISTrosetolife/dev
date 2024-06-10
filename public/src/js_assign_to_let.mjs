@@ -1,3 +1,4 @@
+import { js_code_declare_assign_0 } from "./js_code_declare_assign_0.mjs";
 import { add_1 } from "./add_1.mjs";
 import { js_function_types_is } from "./js_function_types_is.mjs";
 import { list_includes_not } from "./list_includes_not.mjs";
@@ -10,7 +11,6 @@ import { list_after_or } from "./list_after_or.mjs";
 import { js_node_type_visitor } from "./js_node_type_visitor.mjs";
 import { each } from "./each.mjs";
 import { object_replace } from "./object_replace.mjs";
-import { js_code_declare_assign } from "./js_code_declare_assign.mjs";
 import { list_single } from "./list_single.mjs";
 import { list_after } from "./list_after.mjs";
 import { list_index } from "./list_index.mjs";
@@ -67,7 +67,7 @@ export function js_assign_to_let(ast) {
           });
         });
         if (list_includes_not(names, name)) {
-          let parsed = js_code_declare_assign(name);
+          let parsed = js_code_declare_assign_0(name);
           let { declarations } = parsed;
           let d = list_single(declarations);
           let { right } = expression;
