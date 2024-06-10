@@ -1,3 +1,4 @@
+import { list_join_semicolon } from "./list_join_semicolon.mjs";
 import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
 import { function_transform } from "./function_transform.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -37,7 +38,10 @@ export function app_dev_screen_assign_to_let() {
       let contents_function = js_code_export_function_declare(
         function_name_unique,
         "a",
-        [js_code_statement_assign("a", 1), js_code_statement_assign("b", 2)],
+        list_join_semicolon([
+          js_code_statement_assign("a", 1),
+          js_code_statement_assign("b", 2),
+        ]),
         false,
       );
       let contents = await js_code_format(contents_function);
