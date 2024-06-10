@@ -25,16 +25,16 @@ export async function function_aliases_generate() {
       object_property_set(all, a, name);
     });
   }
-  alias_add(app_dev_screenshots, ["ss"]);
-  alias_add(data_update, ["d"]);
-  alias_add(function_aliases_generate, ["al"]);
   alias_add(function_auto, ["a"]);
+  alias_add(function_aliases_generate, ["al"]);
   alias_add(function_copy, ["c"]);
+  alias_add(data_update, ["d"]);
   alias_add(function_new, ["n"]);
   alias_add(function_new_args, ["na"]);
   alias_add(function_open, ["o"]);
   alias_add(function_search, ["s"]);
   alias_add(sandbox, ["sb"]);
+  alias_add(app_dev_screenshots, ["ss"]);
   alias_add(watch, ["w"]);
   let name = "function_aliases";
   await function_new_generic(
