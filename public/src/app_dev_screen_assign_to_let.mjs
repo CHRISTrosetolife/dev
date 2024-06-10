@@ -41,9 +41,10 @@ export function app_dev_screen_assign_to_let() {
         function_name_unique,
         "a",
         list_join_empty([
-          js_code_statement(js_code_declare_assign("a", 1)),
           js_code_statement_assign("a", 1),
-          js_code_statement_assign("b", 2),
+          js_code_statement(js_code_declare_assign("b", 2)),
+          js_code_statement_assign("b", 3),
+          js_code_statement_assign("c", 4),
         ]),
         false,
       );
