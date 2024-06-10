@@ -1,14 +1,15 @@
 export function function_aliases() {
   return {
-    d: "data_update",
-    al: "function_aliases_generate",
     a: "function_auto",
+    al: "function_aliases_generate",
     c: "function_copy",
+    d: "data_update",
     n: "function_new",
     na: "function_new_args",
     o: "function_open",
     s: "function_search",
     sb: "sandbox",
+    ss: "app_dev_screenshots",
     w: "watch",
   };
 }
