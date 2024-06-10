@@ -1,3 +1,4 @@
+import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
 import { app_dev_p_transformer } from "./app_dev_p_transformer.mjs";
 import { js_assign_to_let } from "./js_assign_to_let.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
@@ -10,7 +11,10 @@ export function app_dev_screen_assign_to_let() {
     screen: function assign_to_let_screen(root) {
       let i = 1;
       app_dev_screen_img(app_dev_screen_assign_to_let, root, i++);
-      ("if a variable is assigned a value , but `let` and `var` are not used , and if the variable is not already defined ...");
+      html_style_alternate_monospace_short(
+        root,
+        "if a variable is assigned a value , but `let` and `var` are not used , and if the variable is not already defined ...",
+      );
       let fn = js_assign_to_let;
       app_dev_p_transformer(root, fn);
     },
