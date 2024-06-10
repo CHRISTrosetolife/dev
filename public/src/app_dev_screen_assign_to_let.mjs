@@ -1,3 +1,4 @@
+import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
 import { function_transform } from "./function_transform.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
@@ -8,7 +9,6 @@ import { js_code_format } from "./js_code_format.mjs";
 import { js_code_import } from "./js_code_import.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { sleep } from "./sleep.mjs";
-import { js_code_statement_call_args } from "./js_code_statement_call_args.mjs";
 import { js_code_export_function_declare } from "./js_code_export_function_declare.mjs";
 import { function_name_new } from "./function_name_new.mjs";
 import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
@@ -40,7 +40,7 @@ export function app_dev_screen_assign_to_let() {
       let contents_function = js_code_export_function_declare(
         function_name_unique,
         "",
-        js_code_statement_call_args(sleep.name, [100]),
+        js_code_statement_assign(sleep.name, [100]),
         false,
       );
       let code = string_combine(js_code_import(sleep.name), contents_function);
