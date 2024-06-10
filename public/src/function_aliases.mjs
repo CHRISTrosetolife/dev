@@ -7,6 +7,7 @@ export function function_aliases() {
     n: "function_new",
     na: "function_new_args",
     o: "function_open",
+    r: "function_rename",
     s: "function_search",
     sb: "sandbox",
     ss: "app_dev_screenshots",
