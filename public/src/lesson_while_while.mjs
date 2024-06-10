@@ -1,3 +1,4 @@
+import { html_style_code } from "./html_style_code.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { html_style_monospace_bold } from "./html_style_monospace_bold.mjs";
 import { html_style_alternate_short_p } from "./html_style_alternate_short_p.mjs";
@@ -10,7 +11,6 @@ import { list_join_newline } from "./list_join_newline.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { noop } from "./noop.mjs";
-import { app_learn_code_style_code_colored } from "./app_learn_code_style_code_colored.mjs";
 export function lesson_while_while() {
   let description = "`while` loop";
   let example_message = string_combine("with a ", description);
@@ -42,13 +42,7 @@ export function lesson_while_while() {
     ]);
     html_style_alternate_short_p(
       parent,
-      [
-        noop,
-        app_learn_code_style_code_colored,
-        noop,
-        html_style_monospace_bold,
-        html_style_bold,
-      ],
+      [noop, html_style_code, noop, html_style_monospace_bold, html_style_bold],
       "because a `while` runs over and over , sometimes it is called a `while` loop",
     );
   }

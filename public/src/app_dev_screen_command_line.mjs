@@ -1,3 +1,4 @@
+import { html_style_code } from "./html_style_code.mjs";
 import { html_style_function_name } from "./html_style_function_name.mjs";
 import { noop } from "./noop.mjs";
 import { html_style_alternate_short_p } from "./html_style_alternate_short_p.mjs";
@@ -8,7 +9,6 @@ import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 import { html_style_alternate_monospace_short_multiple } from "./html_style_alternate_monospace_short_multiple.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { identity } from "./identity.mjs";
-import { app_learn_code_style_code_colored } from "./app_learn_code_style_code_colored.mjs";
 export function app_dev_screen_command_line() {
   return {
     name: function command_line_name(root) {
@@ -20,12 +20,7 @@ export function app_dev_screen_command_line() {
     screen: async function command_line_screen(root) {
       html_style_alternate_short_p(
         root,
-        [
-          noop,
-          html_style_function_name,
-          noop,
-          app_learn_code_style_code_colored,
-        ],
+        [noop, html_style_function_name, noop, html_style_code],
         "`" +
           string_combine.name +
           "` is a `function` that concatenates two strings",

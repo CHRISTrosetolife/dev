@@ -1,4 +1,4 @@
-import { app_learn_code_style_code_colored } from "./app_learn_code_style_code_colored.mjs";
+import { html_style_code } from "./html_style_code.mjs";
 import { lesson_comparisons_source_get_get } from "./lesson_comparisons_source_get_get.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
 import { html_p } from "./html_p.mjs";
@@ -48,7 +48,7 @@ export function lesson_less_than() {
     html_style_alternate(
       parent,
       html_p,
-      [noop, app_learn_code_style_code_colored],
+      [noop, html_style_code],
       [
         "in javascript , to check if a number is less than another number or not , use the less than ( ",
         "<",
@@ -58,31 +58,25 @@ export function lesson_less_than() {
     html_style_alternate(
       parent,
       html_p,
-      [app_learn_code_style_code_colored, noop],
+      [html_style_code, noop],
       ["1", " , ", "2", " and ", "3", " are numbers"],
     );
     html_style_alternate(
       parent,
       html_p,
-      [app_learn_code_style_code_colored, noop],
+      [html_style_code, noop],
       ["'JESUS'", " , ", "'is'", " and ", "'LORD'", " are strings"],
     );
     html_style_alternate(
       parent,
       html_p,
-      [
-        app_learn_code_style_code_colored,
-        noop,
-        app_learn_code_style_code_colored,
-        noop,
-        html_style_bold,
-      ],
+      [html_style_code, noop, html_style_code, noop, html_style_bold],
       ["true", " and ", "false", " are ", "boolean"],
     );
     html_style_alternate(
       parent,
       html_p,
-      [noop, app_learn_code_style_code_colored],
+      [noop, html_style_code],
       [
         "just as javascript has strings and numbers , javascript also has boolean ",
         "true",

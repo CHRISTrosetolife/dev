@@ -1,3 +1,4 @@
+import { html_style_code } from "./html_style_code.mjs";
 import { integer_random_digit_single_positive } from "./integer_random_digit_single_positive.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
 import { html_p } from "./html_p.mjs";
@@ -8,7 +9,6 @@ import { html_style_monospace } from "./html_style_monospace.mjs";
 import { random_50_50 } from "./random_50_50.mjs";
 import { html_ul } from "./html_ul.mjs";
 import { html_li_text } from "./html_li_text.mjs";
-import { app_learn_code_style_code_colored } from "./app_learn_code_style_code_colored.mjs";
 export function lesson_equal_not_number() {
   const description = "not equal ( `!==` ) ( numbers )";
   const example_message = "outputting whether or not two numbers are not equal";
@@ -61,7 +61,7 @@ export function lesson_equal_not_number() {
     html_style_alternate(
       parent,
       html_p,
-      [noop, app_learn_code_style_code_colored],
+      [noop, html_style_code],
       [
         "in javascript to check if two numbers are not equal , instead of using the not equal sign ( ",
         "≠",

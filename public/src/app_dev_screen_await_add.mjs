@@ -1,3 +1,4 @@
+import { html_style_code } from "./html_style_code.mjs";
 import { html_style_alternate_monospace_short_span } from "./html_style_alternate_monospace_short_span.mjs";
 import { function_transform } from "./function_transform.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -22,7 +23,6 @@ import { noop } from "./noop.mjs";
 import { html_style_alternate_short_p } from "./html_style_alternate_short_p.mjs";
 import { timeout_set } from "./timeout_set.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
-import { app_learn_code_style_code_colored } from "./app_learn_code_style_code_colored.mjs";
 export function app_dev_screen_await_add() {
   return {
     name: function await_add_name(root) {
@@ -43,7 +43,7 @@ export function app_dev_screen_await_add() {
           noop,
           html_style_function_name,
           noop,
-          app_learn_code_style_code_colored,
+          html_style_code,
           noop,
           html_style_link_code(url),
         ],
@@ -56,7 +56,7 @@ export function app_dev_screen_await_add() {
           noop,
           html_style_function_name,
           noop,
-          app_learn_code_style_code_colored,
+          html_style_code,
           noop,
           html_style_function_name,
         ],
@@ -71,7 +71,7 @@ export function app_dev_screen_await_add() {
         root,
         [
           noop,
-          app_learn_code_style_code_colored,
+          html_style_code,
           noop,
           html_style_function_name,
           noop,
@@ -98,9 +98,9 @@ export function app_dev_screen_await_add() {
           noop,
           html_style_function_name,
           noop,
-          app_learn_code_style_code_colored,
+          html_style_code,
           noop,
-          app_learn_code_style_code_colored,
+          html_style_code,
         ],
         "if `" +
           fn.name +

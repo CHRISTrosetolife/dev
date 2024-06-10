@@ -1,3 +1,4 @@
+import { html_style_code } from "./html_style_code.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
 import { html_p } from "./html_p.mjs";
 import { list_add } from "./list_add.mjs";
@@ -8,7 +9,6 @@ import { html_style_monospace } from "./html_style_monospace.mjs";
 import { random_50_50 } from "./random_50_50.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_join } from "./list_join.mjs";
-import { app_learn_code_style_code_colored } from "./app_learn_code_style_code_colored.mjs";
 export function lesson_boolean() {
   const example_message = "boolean ( true , false )";
   const description = "outputting true or false";
@@ -31,13 +31,13 @@ export function lesson_boolean() {
     html_style_alternate(
       parent,
       html_p,
-      [noop, app_learn_code_style_code_colored],
+      [noop, html_style_code],
       ['in javascript the code for "yes" is ', "true"],
     );
     html_style_alternate(
       parent,
       html_p,
-      [noop, app_learn_code_style_code_colored],
+      [noop, html_style_code],
       ['in javascript the code for "no" is ', "false"],
     );
   }

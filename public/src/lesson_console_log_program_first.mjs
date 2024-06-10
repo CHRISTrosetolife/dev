@@ -1,3 +1,4 @@
+import { html_style_code } from "./html_style_code.mjs";
 import { app_learn_code_code } from "./app_learn_code_code.mjs";
 import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
@@ -6,12 +7,11 @@ import { html_style_alternate } from "./html_style_alternate.mjs";
 import { html_p } from "./html_p.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { html_style_monospace } from "./html_style_monospace.mjs";
-import { app_learn_code_style_code_colored } from "./app_learn_code_style_code_colored.mjs";
 export function lesson_console_log_program_first(parent) {
   html_style_alternate(
     parent,
     html_p,
-    [noop, app_learn_code_style_code_colored],
+    [noop, html_style_code],
     ["suppose there is a process named ", "console.log"],
   );
   html_p_text(parent, "then we can write : ");
@@ -23,13 +23,13 @@ export function lesson_console_log_program_first(parent) {
   html_style_alternate(
     parent,
     html_p,
-    [noop, app_learn_code_style_code_colored],
+    [noop, html_style_code],
     ["suppose there is a string ", "'hello'"],
   );
   html_style_alternate(
     parent,
     html_p,
-    [noop, app_learn_code_style_code_colored],
+    [noop, html_style_code],
     [
       "suppose the string ",
       "'hello'",

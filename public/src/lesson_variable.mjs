@@ -1,4 +1,4 @@
-import { app_learn_code_style_code_colored } from "./app_learn_code_style_code_colored.mjs";
+import { html_style_code } from "./html_style_code.mjs";
 import { lesson_variable_code_get } from "./lesson_variable_code_get.mjs";
 import { app_learn_code_random_value } from "./app_learn_code_random_value.mjs";
 import { app_learn_code_random_identifier } from "./app_learn_code_random_identifier.mjs";
@@ -48,7 +48,7 @@ export function lesson_variable() {
     html_style_alternate(
       parent,
       html_p,
-      [noop, app_learn_code_style_code_colored],
+      [noop, html_style_code],
       [
         "to tell javascript about a variable named ",
         "variable_name",
@@ -61,7 +61,7 @@ export function lesson_variable() {
     html_style_alternate(
       parent,
       html_p,
-      [noop, app_learn_code_style_code_colored],
+      [noop, html_style_code],
       ["because this is a statement , it ends in semicolon ( ", ";", " )"],
     );
   }
@@ -71,7 +71,7 @@ export function lesson_variable() {
     html_style_alternate(
       ul,
       html_li,
-      [noop, app_learn_code_style_code_colored],
+      [noop, html_style_code],
       [
         "letters ( ",
         "a",
@@ -95,7 +95,7 @@ export function lesson_variable() {
     html_style_alternate(
       ul,
       html_li,
-      [noop, app_learn_code_style_code_colored],
+      [noop, html_style_code],
       [
         "digits ( ",
         "0",
@@ -113,13 +113,13 @@ export function lesson_variable() {
     html_style_alternate(
       ul,
       html_li,
-      [noop, app_learn_code_style_code_colored],
+      [noop, html_style_code],
       ["underscores ( ", "_", " )"],
     );
     html_style_alternate(
       ul,
       html_li,
-      [noop, app_learn_code_style_code_colored],
+      [noop, html_style_code],
       ["dollar signs ( ", "$", " )"],
     );
     html_p_text(parent, "here are some examples of valid variable names :");
@@ -138,7 +138,7 @@ export function lesson_variable() {
     html_style_alternate(
       parent,
       html_p,
-      [noop, app_learn_code_style_code_colored],
+      [noop, html_style_code],
       [
         "for example ",
         "JESUS",
@@ -154,7 +154,7 @@ export function lesson_variable() {
     html_style_alternate(
       parent,
       html_p,
-      [noop, app_learn_code_style_code_colored],
+      [noop, html_style_code],
       [
         "for example ",
         "if",
@@ -172,7 +172,7 @@ export function lesson_variable() {
     html_style_alternate(
       parent,
       html_p,
-      [noop, app_learn_code_style_code_colored],
+      [noop, html_style_code],
       [
         "remember the code from earlier that told javascript about ",
         "variable_name",
@@ -187,7 +187,7 @@ export function lesson_variable() {
     html_style_alternate(
       parent,
       html_p,
-      [noop, app_learn_code_style_code_colored],
+      [noop, html_style_code],
       [
         "to give a variable named ",
         "variable_name",
@@ -201,13 +201,13 @@ export function lesson_variable() {
     html_style_alternate(
       parent,
       html_p,
-      [noop, app_learn_code_style_code_colored],
+      [noop, html_style_code],
       ["in javascript , ", "=", " does not check if two things are equal"],
     );
     html_style_alternate(
       parent,
       html_p,
-      [noop, app_learn_code_style_code_colored],
+      [noop, html_style_code],
       ["instead , ", "=", " can be used to give a variable a value"],
     );
   }

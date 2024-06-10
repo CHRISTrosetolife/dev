@@ -1,3 +1,4 @@
+import { html_style_code } from "./html_style_code.mjs";
 import { app_dev_sandbox_command_line_result_remaining_first_function } from "./app_dev_sandbox_command_line_result_remaining_first_function.mjs";
 import { function_name_new } from "./function_name_new.mjs";
 import { app_dev_sandbox_command_line } from "./app_dev_sandbox_command_line.mjs";
@@ -5,7 +6,6 @@ import { function_new } from "./function_new.mjs";
 import { html_style_alternate_monospace_short_span } from "./html_style_alternate_monospace_short_span.mjs";
 import { html_style_alternate_short_function_name } from "./html_style_alternate_short_function_name.mjs";
 import { html_style_alternate_monospace_short_multiple } from "./html_style_alternate_monospace_short_multiple.mjs";
-import { app_learn_code_style_code_colored } from "./app_learn_code_style_code_colored.mjs";
 import { html_style_function_name } from "./html_style_function_name.mjs";
 import { noop } from "./noop.mjs";
 import { html_style_alternate_short_p } from "./html_style_alternate_short_p.mjs";
@@ -21,7 +21,7 @@ export function app_dev_screen_function_new() {
     screen: async function function_new_screen(root) {
       html_style_alternate_short_p(
         root,
-        [html_style_function_name, noop, app_learn_code_style_code_colored],
+        [html_style_function_name, noop, html_style_code],
         function_new.name + "` adds a new `function",
       );
       let i = 1;

@@ -1,3 +1,4 @@
+import { html_style_code } from "./html_style_code.mjs";
 import { app_learn_code_log_random_value } from "./app_learn_code_log_random_value.mjs";
 import { html_img_limited_centered } from "./html_img_limited_centered.mjs";
 import { html_style_alternate_monospace } from "./html_style_alternate_monospace.mjs";
@@ -9,7 +10,6 @@ import { lesson_simple } from "./lesson_simple.mjs";
 import { noop } from "./noop.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { html_hr } from "./html_hr.mjs";
-import { app_learn_code_style_code_colored } from "./app_learn_code_style_code_colored.mjs";
 import { list_join } from "./list_join.mjs";
 export function lesson_if_true() {
   let description = "`if` with `true`";
@@ -112,14 +112,7 @@ use_pencil = true;
     html_style_alternate(
       parent,
       html_p,
-      [
-        noop,
-        html_style_bold,
-        noop,
-        app_learn_code_style_code_colored,
-        noop,
-        app_learn_code_style_code_colored,
-      ],
+      [noop, html_style_bold, noop, html_style_code, noop, html_style_code],
       [
         "after the parenthesis should be a pair of ",
         "braces",
