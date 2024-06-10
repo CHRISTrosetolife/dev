@@ -1,3 +1,4 @@
+import { assert } from "./assert.mjs";
 import { number_max_list_or } from "./number_max_list_or.mjs";
 import { path_join } from "./path_join.mjs";
 import { date_string_iso_file } from "./date_string_iso_file.mjs";
@@ -17,7 +18,9 @@ import { folder_files_move } from "./folder_files_move.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_map } from "./list_map.mjs";
 import { add_1 } from "./add_1.mjs";
+import { string_empty_not_is } from "./string_empty_not_is.mjs";
 export async function app_dev_screenshots(screen_name) {
+  assert(string_empty_not_is, [screen_name]);
   let folder_path = string_combine(folder_user(), "Pictures\\Screenshots");
   let file_extension = app_dev_screenshots_extension();
   let prefix = string_combine_multiple([
