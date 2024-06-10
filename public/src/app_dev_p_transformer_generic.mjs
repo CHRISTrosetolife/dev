@@ -10,5 +10,9 @@ export function app_dev_p_transformer_generic(root, transformer, prefix) {
     "` and pass in `" +
     transformer.name +
     "` and the name of the `function` ...";
-  html_style_alternate_short_p(root, [noop, html_style_function_name], message);
+  html_style_alternate_short_p(
+    root,
+    [noop, html_style_function_name, noop, html_style_function_name],
+    message,
+  );
 }
