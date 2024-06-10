@@ -40,7 +40,7 @@ export function app_dev_screen_assign_to_let() {
       let contents_function = js_code_export_function_declare(
         function_name_unique,
         "",
-        js_code_statement_assign(sleep.name, [100]),
+        js_code_statement_assign("a", 1),
         false,
       );
       let code = string_combine(js_code_import(sleep.name), contents_function);
