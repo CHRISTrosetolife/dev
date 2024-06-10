@@ -37,12 +37,14 @@ export function app_dev_screen_assign_to_let() {
       );
       app_dev_screen_img(app_dev_screen_assign_to_let, root, i++);
       let function_name_unique = await function_name_new("assign_to_let");
+      let name = "b";
+      let value = 2;
       let contents_function = js_code_export_function_declare(
         function_name_unique,
         "a",
         list_join_empty([
           js_code_statement_assign("a", 1),
-          js_code_statement(js_code_declare_assign("b", 2)),
+          js_code_statement(js_code_declare_assign(name, value)),
           js_code_statement_assign("b", 3),
           js_code_statement_assign("c", 4),
         ]),
