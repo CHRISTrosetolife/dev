@@ -1,3 +1,5 @@
+import { js_code_declare_assign } from "./js_code_declare_assign.mjs";
+import { js_code_statement } from "./js_code_statement.mjs";
 import { list_join_empty } from "./list_join_empty.mjs";
 import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
 import { function_transform } from "./function_transform.mjs";
@@ -39,7 +41,7 @@ export function app_dev_screen_assign_to_let() {
         function_name_unique,
         "a",
         list_join_empty([
-          js_code_statement_declare_assign("a", 1),
+          js_code_statement(js_code_declare_assign("a", 1)),
           js_code_statement_assign("a", 1),
           js_code_statement_assign("b", 2),
         ]),
