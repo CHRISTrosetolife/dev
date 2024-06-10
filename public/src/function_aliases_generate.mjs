@@ -1,3 +1,4 @@
+import { app_dev_screenshots } from "./app_dev_screenshots.mjs";
 import { function_new_args } from "./function_new_args.mjs";
 import { function_new } from "./function_new.mjs";
 import { data_update } from "./data_update.mjs";
@@ -24,6 +25,7 @@ export async function function_aliases_generate() {
       object_property_set(all, a, name);
     });
   }
+  alias_add(app_dev_screenshots, ["ss"]);
   alias_add(data_update, ["d"]);
   alias_add(function_aliases_generate, ["al"]);
   alias_add(function_auto, ["a"]);
