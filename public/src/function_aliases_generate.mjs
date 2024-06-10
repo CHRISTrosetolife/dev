@@ -1,3 +1,4 @@
+import { function_rename } from "./function_rename.mjs";
 import { app_dev_screenshots } from "./app_dev_screenshots.mjs";
 import { function_new_args } from "./function_new_args.mjs";
 import { function_new } from "./function_new.mjs";
@@ -32,6 +33,7 @@ export async function function_aliases_generate() {
   alias_add(function_new, ["n"]);
   alias_add(function_new_args, ["na"]);
   alias_add(function_open, ["o"]);
+  alias_add(function_rename, ["r"]);
   alias_add(function_search, ["s"]);
   alias_add(sandbox, ["sb"]);
   alias_add(app_dev_screenshots, ["ss"]);
