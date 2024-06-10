@@ -6,9 +6,6 @@ import { app_dev_sandbox_function } from "./app_dev_sandbox_function.mjs";
 import { file_write } from "./file_write.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
 import { js_code_format } from "./js_code_format.mjs";
-import { js_code_import } from "./js_code_import.mjs";
-import { string_combine } from "./string_combine.mjs";
-import { sleep } from "./sleep.mjs";
 import { js_code_export_function_declare } from "./js_code_export_function_declare.mjs";
 import { function_name_new } from "./function_name_new.mjs";
 import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
@@ -43,8 +40,7 @@ export function app_dev_screen_assign_to_let() {
         [js_code_statement_assign("a", 1), js_code_statement_assign("b", 2)],
         false,
       );
-      let code = string_combine(js_code_import(sleep.name), contents_function);
-      let contents = await js_code_format(code);
+      let contents = await js_code_format(contents_function);
       let file_path = function_name_to_path(function_name_unique);
       await file_write(file_path, contents);
       await app_dev_sandbox_function(
