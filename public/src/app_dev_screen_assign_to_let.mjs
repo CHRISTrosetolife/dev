@@ -46,7 +46,7 @@ export function app_dev_screen_assign_to_let() {
       await app_dev_sandbox_function(
         root,
         function_name_unique,
-        "adding `async` and `await`",
+        "adding `let`",
         string_delimit_backtick(
           string_combine_multiple([
             function_transform.name,
