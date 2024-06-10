@@ -10,7 +10,7 @@ export function app_dev_screen_assign_to_let() {
     screen: function assign_to_let_screen(root) {
       let i = 1;
       app_dev_screen_img(app_dev_screen_assign_to_let, root, i++);
-      ("if a variable is assigned a value ...");
+      ("if a variable is assigned a value , but `let` and `var` are not used ...");
       let fn = js_assign_to_let;
       app_dev_p_transformer(root, fn);
     },
