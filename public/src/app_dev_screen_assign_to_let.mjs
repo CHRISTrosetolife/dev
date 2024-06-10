@@ -36,7 +36,7 @@ export function app_dev_screen_assign_to_let() {
         "... then the assignment will change to a `let` declaration assignment :",
       );
       app_dev_screen_img(app_dev_screen_assign_to_let, root, i++);
-      let function_name_unique = await function_name_new("async_await_add");
+      let function_name_unique = await function_name_new("assign_to_let");
       let contents_function = js_code_export_function_declare(
         function_name_unique,
         "",
