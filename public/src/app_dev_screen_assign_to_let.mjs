@@ -19,7 +19,7 @@ export function app_dev_screen_assign_to_let() {
       app_dev_p_transformer(root, fn);
       html_style_alternate_monospace_short(
         root,
-        "... then the assignment will change to a `let` declaration assignment",
+        "... then the assignment will change to a `let` declaration assignment :",
       );
     },
   };
