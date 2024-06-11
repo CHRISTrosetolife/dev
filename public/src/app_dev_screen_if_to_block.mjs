@@ -51,7 +51,7 @@ export function app_dev_screen_if_to_block() {
         "... then the `if` statement will change to a block :",
       );
       app_dev_screen_img(app_dev_screen_if_to_block, root, i++);
-      let function_name_unique = await function_name_new("assign_to_let");
+      let function_name_unique = await function_name_new("if_to_block");
       let contents_function = js_code_export_function_declare(
         function_name_unique,
         "a",
