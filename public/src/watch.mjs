@@ -46,7 +46,6 @@ export async function watch() {
       let processed = false;
       let after;
       try {
-        log("here");
         after = await fn(...args);
         processed = true;
       } catch (e) {
