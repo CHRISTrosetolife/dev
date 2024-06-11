@@ -1,3 +1,4 @@
+import { html_style_alternate_monospace_short_span } from "./html_style_alternate_monospace_short_span.mjs";
 import { js_code_statement_declare_assign } from "./js_code_statement_declare_assign.mjs";
 import { list_join_empty } from "./list_join_empty.mjs";
 import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
@@ -14,12 +15,14 @@ import { html_style_alternate_monospace_short } from "./html_style_alternate_mon
 import { app_dev_p_transformer } from "./app_dev_p_transformer.mjs";
 import { js_assign_to_let } from "./js_assign_to_let.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
-import { html_span_text } from "./html_span_text.mjs";
 import { log } from "./log.mjs";
 export function app_dev_screen_assign_to_let() {
   return {
     name: function assign_to_let_name(root) {
-      return html_span_text(root, "adding `let` to variable assignments");
+      return html_style_alternate_monospace_short_span(
+        root,
+        "adding `let` to variable assignments",
+      );
     },
     screen: async function assign_to_let_screen(root) {
       let i = 1;
