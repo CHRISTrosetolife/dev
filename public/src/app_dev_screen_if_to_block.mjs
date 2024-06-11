@@ -12,6 +12,7 @@ export function app_dev_screen_if_to_block() {
       );
     },
     screen: function if_to_block_screen(root) {
+      "the google javascript style guide , for example , generally requires that `if` statements be blocks";
       html_style_alternate_monospace_short(
         root,
         "if there is an `if` statement that is not a block ...",
