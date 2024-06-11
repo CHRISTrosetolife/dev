@@ -8,8 +8,8 @@ export async function function_auto_after(function_name) {
   let transforms = function_auto_transforms();
   let names = list_map_property(transforms, "name");
   let joined = list_join_comma(names);
-  let { after } = r;
   let r = await function_transform_return(joined, function_name);
+  let { after } = r;
   assert(string_is, [after]);
   return after;
 }
