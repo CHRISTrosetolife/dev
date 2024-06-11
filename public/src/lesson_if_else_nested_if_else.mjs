@@ -1,4 +1,4 @@
-import { html_cycle_monospace } from "./html_cycle_monospace.mjs";
+import { html_cycle_code } from "./html_cycle_code.mjs";
 import { integer_random_digit_single } from "./integer_random_digit_single.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
@@ -32,6 +32,6 @@ export function lesson_if_else_nested_if_else() {
     [],
   );
   function example_before(parent) {
-    html_cycle_monospace(parent, "an `if` `else` can be inside of an `if`");
+    html_cycle_code(parent, "an `if` `else` can be inside of an `if`");
   }
 }

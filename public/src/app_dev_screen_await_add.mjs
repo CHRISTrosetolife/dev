@@ -1,6 +1,6 @@
+import { html_cycle_code } from "./html_cycle_code.mjs";
+import { html_cycle_code_span } from "./html_cycle_code_span.mjs";
 import { html_cycle_p } from "./html_cycle_p.mjs";
-import { html_cycle_monospace } from "./html_cycle_monospace.mjs";
-import { html_cycle_monospace_span } from "./html_cycle_monospace_span.mjs";
 import { html_style_code } from "./html_style_code.mjs";
 import { function_transform } from "./function_transform.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -26,7 +26,7 @@ import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 export function app_dev_screen_await_add() {
   return {
     name: function await_add_name(root) {
-      return html_cycle_monospace_span(root, "adding missing `await`s");
+      return html_cycle_code_span(root, "adding missing `await`s");
     },
     screen: async function await_add_screen(root) {
       let i = 1;
@@ -84,7 +84,7 @@ export function app_dev_screen_await_add() {
       let fn = js_await_add;
       app_dev_p_transformer_generic(root, fn, "instead , if");
       app_dev_screen_img(app_dev_screen_await_add, root, i++);
-      html_cycle_monospace(
+      html_cycle_code(
         root,
         "... then `await` will automatically be added and the `function` will be made `async` :",
       );

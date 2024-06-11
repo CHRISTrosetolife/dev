@@ -1,5 +1,5 @@
-import { html_cycle_monospace } from "./html_cycle_monospace.mjs";
-import { html_cycle_monospace_span } from "./html_cycle_monospace_span.mjs";
+import { html_cycle_code } from "./html_cycle_code.mjs";
+import { html_cycle_code_span } from "./html_cycle_code_span.mjs";
 import { js_code_import } from "./js_code_import.mjs";
 import { function_transform } from "./function_transform.mjs";
 import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
@@ -17,11 +17,11 @@ import { string_combine } from "./string_combine.mjs";
 export function app_dev_screen_imports_remove() {
   return {
     name: function imports_remove_name(root) {
-      return html_cycle_monospace_span(root, "remove unused `import`s");
+      return html_cycle_code_span(root, "remove unused `import`s");
     },
     screen: async function imports_remove_screen(root) {
       let i = 1;
-      html_cycle_monospace(
+      html_cycle_code(
         root,
         "if we have an `import` that is not being used ...",
       );
@@ -29,10 +29,7 @@ export function app_dev_screen_imports_remove() {
       let fn = js_imports_remove;
       app_dev_p_transformer(root, fn);
       app_dev_screen_img(app_dev_screen_imports_remove, root, i++);
-      html_cycle_monospace(
-        root,
-        "... then any unused `import`s will be removed :",
-      );
+      html_cycle_code(root, "... then any unused `import`s will be removed :");
       app_dev_screen_img(app_dev_screen_imports_remove, root, i++);
       let function_name_unique = await function_name_new("unused_imports");
       let contents_function = js_code_export_function_declare(

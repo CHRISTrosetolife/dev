@@ -1,4 +1,4 @@
-import { html_cycle_monospace_multiple } from "./html_cycle_monospace_multiple.mjs";
+import { html_cycle_code_multiple } from "./html_cycle_code_multiple.mjs";
 import { js_code_statement_increment } from "./js_code_statement_increment.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 import { app_learn_code_random_identifier } from "./app_learn_code_random_identifier.mjs";
@@ -36,7 +36,7 @@ export function lesson_while_false() {
     [],
   );
   function example_before(parent) {
-    html_cycle_monospace_multiple(parent, [
+    html_cycle_code_multiple(parent, [
       "suppose there is a `while",
       "if what is in between the parenthesis the first time is `false` then the rest of the `while` will not be ran",
     ]);

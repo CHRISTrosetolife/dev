@@ -1,6 +1,6 @@
+import { html_cycle_code_span } from "./html_cycle_code_span.mjs";
+import { html_cycle_code_multiple } from "./html_cycle_code_multiple.mjs";
 import { html_cycle_p } from "./html_cycle_p.mjs";
-import { html_cycle_monospace_span } from "./html_cycle_monospace_span.mjs";
-import { html_cycle_monospace_multiple } from "./html_cycle_monospace_multiple.mjs";
 import { html_style_code } from "./html_style_code.mjs";
 import { html_style_function_name } from "./html_style_function_name.mjs";
 import { noop } from "./noop.mjs";
@@ -12,10 +12,7 @@ import { identity } from "./identity.mjs";
 export function app_dev_screen_command_line() {
   return {
     name: function command_line_name(root) {
-      return html_cycle_monospace_span(
-        root,
-        "run `function`s from command-line",
-      );
+      return html_cycle_code_span(root, "run `function`s from command-line");
     },
     screen: async function command_line_screen(root) {
       html_cycle_p(
@@ -28,7 +25,7 @@ export function app_dev_screen_command_line() {
       let i = 1;
       app_dev_screen_img(app_dev_screen_command_line, root, i++);
       let prefix = app_dev_screen_command_line_prefix();
-      html_cycle_monospace_multiple(root, [
+      html_cycle_code_multiple(root, [
         "all `export`ed `function`s in the code can be ran from the command-line",
         "this speeds up development",
         "to run a `function` named `function_name` from the command-line , run `" +

@@ -1,6 +1,6 @@
+import { html_cycle_code } from "./html_cycle_code.mjs";
+import { html_cycle_code_span } from "./html_cycle_code_span.mjs";
 import { html_cycle_function_name } from "./html_cycle_function_name.mjs";
-import { html_cycle_monospace } from "./html_cycle_monospace.mjs";
-import { html_cycle_monospace_span } from "./html_cycle_monospace_span.mjs";
 import { app_dev_p_transformer_generic } from "./app_dev_p_transformer_generic.mjs";
 import { log } from "./log.mjs";
 import { js_code_statement_call_args } from "./js_code_statement_call_args.mjs";
@@ -21,7 +21,7 @@ import { string_delimit } from "./string_delimit.mjs";
 export function app_dev_screen_imports_fix() {
   return {
     name: function imports_fix_name(root) {
-      return html_cycle_monospace_span(root, "adding and removing `import`s");
+      return html_cycle_code_span(root, "adding and removing `import`s");
     },
     screen: async function imports_fix_screen(root) {
       let i = 1;
@@ -37,7 +37,7 @@ export function app_dev_screen_imports_fix() {
       let fn = js_imports_fix;
       app_dev_p_transformer_generic(root, fn, "if");
       app_dev_screen_img(app_dev_screen_imports_fix, root, i++);
-      html_cycle_monospace(
+      html_cycle_code(
         root,
         "... then any missing `imports` will be added and any unused `import`s will be removed :",
       );

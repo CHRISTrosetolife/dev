@@ -1,4 +1,4 @@
-import { html_cycle_monospace_list } from "./html_cycle_monospace_list.mjs";
+import { html_cycle_code_list } from "./html_cycle_code_list.mjs";
 import { call_multiple } from "./call_multiple.mjs";
 import { app_learn_code_log_add } from "./app_learn_code_log_add.mjs";
 import { integer_random_digit_single_positive } from "./integer_random_digit_single_positive.mjs";
@@ -42,7 +42,7 @@ ${app_learn_code_log_add(name_a, name_b)}`;
       "in this lesson the declared variables will be ordered alphabetically",
     );
     html_p_text(parent, "for example in the alphabet , A comes before B");
-    html_cycle_monospace_list(parent, [
+    html_cycle_code_list(parent, [
       "therefore varable ",
       "a",
       " will come before variable ",
@@ -54,7 +54,7 @@ ${app_learn_code_log_add(name_a, name_b)}`;
       `${js_code_statement_let(a)}
 ${js_code_statement_let(b)}`,
     );
-    html_cycle_monospace_list(parent, ["", "b", " will not come before ", "a"]);
+    html_cycle_code_list(parent, ["", "b", " will not come before ", "a"]);
     html_p_text(parent, "it will not be like this :");
     app_learn_code_code_part_contrast(
       parent,
@@ -73,7 +73,7 @@ ${js_code_statement_let(a)}`,
       "in this lesson the numbers will be assigned from smallest to largest",
     );
     html_p_text(parent, "for example 1 is smaller than 2");
-    html_cycle_monospace_list(parent, [
+    html_cycle_code_list(parent, [
       "therefore the assignment of ",
       "1",
       " will come before the assignment of ",

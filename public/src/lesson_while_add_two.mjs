@@ -1,4 +1,4 @@
-import { html_cycle_monospace } from "./html_cycle_monospace.mjs";
+import { html_cycle_code } from "./html_cycle_code.mjs";
 import { lesson_while_generic } from "./lesson_while_generic.mjs";
 import { js_code_statement_add_assign } from "./js_code_statement_add_assign.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
@@ -32,7 +32,7 @@ export function lesson_while_add_two() {
     [],
   );
   function example_before(parent) {
-    html_cycle_monospace(
+    html_cycle_code(
       parent,
       "a `while` loop can use `a += b;` instead of `a++;`",
     );

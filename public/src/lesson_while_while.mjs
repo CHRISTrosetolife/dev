@@ -1,6 +1,6 @@
+import { html_cycle_code_multiple } from "./html_cycle_code_multiple.mjs";
 import { html_style_code_bold } from "./html_style_code_bold.mjs";
 import { html_cycle_p } from "./html_cycle_p.mjs";
-import { html_cycle_monospace_multiple } from "./html_cycle_monospace_multiple.mjs";
 import { html_style_code } from "./html_style_code.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { lesson_while_generic_1 } from "./lesson_while_generic_1.mjs";
@@ -34,7 +34,7 @@ export function lesson_while_while() {
   );
   function example_before(parent) {}
   function screen1(parent) {
-    html_cycle_monospace_multiple(parent, [
+    html_cycle_code_multiple(parent, [
       "an `if` is ran only once",
       "a `while` is similar to an `if`",
       "a `while` is an `if` that runs over and over",

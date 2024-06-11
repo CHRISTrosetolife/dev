@@ -1,4 +1,4 @@
-import { html_cycle_monospace_multiple } from "./html_cycle_monospace_multiple.mjs";
+import { html_cycle_code_multiple } from "./html_cycle_code_multiple.mjs";
 import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
 import { js_code_statement_let } from "./js_code_statement_let.mjs";
 import { js_code_statement_increment } from "./js_code_statement_increment.mjs";
@@ -33,7 +33,7 @@ export function lesson_for_iterations() {
     [],
   );
   function example_before(parent) {
-    html_cycle_monospace_multiple(parent, [
+    html_cycle_code_multiple(parent, [
       "in this lesson there will be a variable named `counter`",
       "`counter` will increment by `1` each time the code inside the braces of the `for` loop runs",
       "after the `for` loop runs , the value of `counter` will be the total number of times the code ran inside the braces of the `for` loop",

@@ -1,4 +1,4 @@
-import { html_cycle_monospace } from "./html_cycle_monospace.mjs";
+import { html_cycle_code } from "./html_cycle_code.mjs";
 import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { lesson_screen_variables_alphabetical } from "./lesson_screen_variables_alphabetical.mjs";
@@ -18,7 +18,7 @@ export function lesson_if_else_string_concat_variables_two() {
     [lesson_screen_variables_alphabetical, screen2],
   );
   function example_before(parent) {
-    html_cycle_monospace(
+    html_cycle_code(
       parent,
       "strings can be concatenated  with multiple variables",
     );

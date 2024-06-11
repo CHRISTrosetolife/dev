@@ -1,4 +1,4 @@
-import { html_cycle_monospace_list } from "./html_cycle_monospace_list.mjs";
+import { html_cycle_code_list } from "./html_cycle_code_list.mjs";
 import { app_learn_code_random_boolean_binary } from "./app_learn_code_random_boolean_binary.mjs";
 import { list_join } from "./list_join.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
@@ -28,7 +28,7 @@ ${lesson_console_log_quiz()}
     [],
   );
   function example_before(parent) {
-    html_cycle_monospace_list(parent, [
+    html_cycle_code_list(parent, [
       "inside the parenthesis of an ",
       "if",
       " could also be a variable",

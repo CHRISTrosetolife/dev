@@ -1,5 +1,5 @@
-import { html_cycle_monospace } from "./html_cycle_monospace.mjs";
-import { html_cycle_monospace_span } from "./html_cycle_monospace_span.mjs";
+import { html_cycle_code } from "./html_cycle_code.mjs";
+import { html_cycle_code_span } from "./html_cycle_code_span.mjs";
 import { html_attribute_set } from "./html_attribute_set.mjs";
 import { html_button_run_message } from "./html_button_run_message.mjs";
 import { html_clear } from "./html_clear.mjs";
@@ -37,7 +37,7 @@ export async function app_dev_sandbox_function_multiple(
   run_click,
 ) {
   html_hr(root);
-  html_cycle_monospace(
+  html_cycle_code(
     root,
     string_combine_multiple([app_dev_sandbox_message(), try_out_message, " :"]),
   );
@@ -66,7 +66,7 @@ export async function app_dev_sandbox_function_multiple(
     let value_initial = await function_read(fn_name);
     html_value_set(textarea, value_initial);
     html_clear(b);
-    html_cycle_monospace_span(b, html_button_run_message(run_message(fn_name)));
+    html_cycle_code_span(b, html_button_run_message(run_message(fn_name)));
   }
   async function on_click() {
     try {

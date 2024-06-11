@@ -1,4 +1,4 @@
-import { html_cycle_monospace_list } from "./html_cycle_monospace_list.mjs";
+import { html_cycle_code_list } from "./html_cycle_code_list.mjs";
 import { app_learn_code_code } from "./app_learn_code_code.mjs";
 import { lesson_statements_two_quiz } from "./lesson_statements_two_quiz.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
@@ -23,7 +23,7 @@ ${app_learn_code_log(name)}`;
   );
   function example_before(parent) {}
   function screen1(parent) {
-    html_cycle_monospace_list(parent, [
+    html_cycle_code_list(parent, [
       "remember , here is code that outputs twice because there are two ",
       "console.log",
       " statements :",

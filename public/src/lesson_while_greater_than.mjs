@@ -1,4 +1,4 @@
-import { html_cycle_monospace_multiple } from "./html_cycle_monospace_multiple.mjs";
+import { html_cycle_code_multiple } from "./html_cycle_code_multiple.mjs";
 import { js_code_statement_decrement } from "./js_code_statement_decrement.mjs";
 import { lesson_while_generic_1 } from "./lesson_while_generic_1.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
@@ -30,7 +30,7 @@ export function lesson_while_greater_than() {
   );
   function example_before(parent) {}
   function screen1(parent) {
-    html_cycle_monospace_multiple(parent, [
+    html_cycle_code_multiple(parent, [
       "a `while` loop can use a `>` instead of `>=`",
       "if a `while` loop says `while (a >= 1)` then if `a` is `1` then the `while` loop will run",
       "remember , `1 === 1` is `true`",

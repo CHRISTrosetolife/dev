@@ -1,5 +1,5 @@
-import { html_cycle_monospace } from "./html_cycle_monospace.mjs";
-import { html_cycle_monospace_span } from "./html_cycle_monospace_span.mjs";
+import { html_cycle_code } from "./html_cycle_code.mjs";
+import { html_cycle_code_span } from "./html_cycle_code_span.mjs";
 import { app_dev_p_transformer } from "./app_dev_p_transformer.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
 import { js_code_format } from "./js_code_format.mjs";
@@ -21,10 +21,10 @@ import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
 export function app_dev_screen_imports_add() {
   return {
     name: function imports_add_name(root) {
-      return html_cycle_monospace_span(root, "add missing `import`s");
+      return html_cycle_code_span(root, "add missing `import`s");
     },
     screen: async function imports_add_screen(root) {
-      html_cycle_monospace(
+      html_cycle_code(
         root,
         "if we have a `function` that calls another `function` ...",
       );
@@ -32,10 +32,7 @@ export function app_dev_screen_imports_add() {
       app_dev_screen_img(app_dev_screen_imports_add, root, i++);
       app_dev_p_transformer(root, js_imports_add);
       app_dev_screen_img(app_dev_screen_imports_add, root, i++);
-      html_cycle_monospace(
-        root,
-        "... then any missing `import`s will be added :",
-      );
+      html_cycle_code(root, "... then any missing `import`s will be added :");
       app_dev_screen_img(app_dev_screen_imports_add, root, i++);
       let function_name_unique = await function_name_new("missing_imports");
       let contents_function = js_code_export_function_declare(

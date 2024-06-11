@@ -1,4 +1,4 @@
-import { html_cycle_monospace_list } from "./html_cycle_monospace_list.mjs";
+import { html_cycle_code_list } from "./html_cycle_code_list.mjs";
 import { html_cycle_bold_list } from "./html_cycle_bold_list.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
@@ -45,7 +45,7 @@ export function lesson_if_else_positive() {
     ]);
     ("a number is negative if the number is less than zero");
     ("if a number is neither positive nor negative , the number must be 0");
-    html_cycle_monospace_list(parent, [
+    html_cycle_code_list(parent, [
       "",
       "if",
       " and ",

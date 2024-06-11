@@ -1,4 +1,4 @@
-import { html_cycle_monospace_list } from "./html_cycle_monospace_list.mjs";
+import { html_cycle_code_list } from "./html_cycle_code_list.mjs";
 import { app_learn_code_log_delimit } from "./app_learn_code_log_delimit.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
@@ -62,7 +62,7 @@ export function lesson_if_else_if() {
       parent,
       'a number is either positive , or is it not positive , so "positive" and "not positive" are two choices',
     );
-    html_cycle_monospace_list(parent, [
+    html_cycle_code_list(parent, [
       "if there are two choices , then one ",
       "if",
       " ",
@@ -74,7 +74,7 @@ export function lesson_if_else_if() {
       'this lesson will check a number to be either "positive" , "negative" or "zero"',
     );
     html_p_text(parent, '"positive" , "negative" and "zero" are three choices');
-    html_cycle_monospace_list(parent, [
+    html_cycle_code_list(parent, [
       "if there are three choices , then two ",
       "if",
       " ",

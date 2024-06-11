@@ -1,5 +1,5 @@
-import { html_cycle_monospace } from "./html_cycle_monospace.mjs";
-import { html_cycle_monospace_span } from "./html_cycle_monospace_span.mjs";
+import { html_cycle_code } from "./html_cycle_code.mjs";
+import { html_cycle_code_span } from "./html_cycle_code_span.mjs";
 import { app_dev_sandbox_function_multiple } from "./app_dev_sandbox_function_multiple.mjs";
 import { function_name_new } from "./function_name_new.mjs";
 import { js_code_return } from "./js_code_return.mjs";
@@ -21,22 +21,16 @@ import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 export function app_dev_screen_outside_move() {
   return {
     name: function outside_move_name(root) {
-      return html_cycle_monospace_span(
-        root,
-        "moving `function`s to their own file",
-      );
+      return html_cycle_code_span(root, "moving `function`s to their own file");
     },
     screen: async function outside_move_screen(root) {
       let i = 1;
-      html_cycle_monospace(
-        root,
-        "if we have `function`s in the module scope ...",
-      );
+      html_cycle_code(root, "if we have `function`s in the module scope ...");
       app_dev_screen_img(app_dev_screen_outside_move, root, i++);
       let fn = js_outside_move;
       app_dev_p_transformer(root, fn);
       app_dev_screen_img(app_dev_screen_outside_move, root, i++);
-      html_cycle_monospace(
+      html_cycle_code(
         root,
         "... then the `function`s will be moved to their own files and the `import`s will be fixed in all files ...",
       );
