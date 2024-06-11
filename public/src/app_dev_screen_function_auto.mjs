@@ -44,10 +44,7 @@ export function app_dev_screen_function_auto() {
       let contents_c = js_code_function_declare(
         fn_c,
         "a,b",
-        string_combine_multiple([
-          js_code_statement_call_args(sleep.name, [100]),
-          js_code_statement_call_args(multiply.name, ["a", "b"]),
-        ]),
+        js_code_statement_call_args(multiply.name, ["a", "b"]),
       );
       let contents_b = js_code_function_declare(
         fn_b,
@@ -61,6 +58,7 @@ export function app_dev_screen_function_auto() {
         fn_a,
         "",
         string_combine_multiple([
+          js_code_statement_call_args(sleep.name, [100]),
           js_code_return(js_code_call_args(fn_b, ["1", "2", "3"])),
         ]),
         false,
