@@ -55,7 +55,7 @@ export function app_dev_screen_if_to_block() {
       let contents_function = js_code_export_function_declare(
         function_name_unique,
         "",
-        "if(0)" + js_code_call_args(log.name, [string_delimit("code")]),
+        "if(0)" + js_code_call_args(log.name, [string_delimit("zero")]),
         false,
       );
       let contents = await js_code_format(contents_function);
