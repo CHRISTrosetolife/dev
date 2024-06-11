@@ -1,5 +1,4 @@
 import { html_cycle_monospace } from "./html_cycle_monospace.mjs";
-import { html_style_monospace_bold } from "./html_style_monospace_bold.mjs";
 import { integer_random_digit_single } from "./integer_random_digit_single.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";

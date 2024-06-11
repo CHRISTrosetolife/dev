@@ -1,6 +1,6 @@
+import { html_style_code_bold } from "./html_style_code_bold.mjs";
 import { html_cycle_p } from "./html_cycle_p.mjs";
 import { html_cycle_monospace } from "./html_cycle_monospace.mjs";
-import { html_style_monospace_bold } from "./html_style_monospace_bold.mjs";
 import { integer_random_digit_single } from "./integer_random_digit_single.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
@@ -36,7 +36,7 @@ export function lesson_if_else_nested_if() {
     html_cycle_monospace(parent, "an `if` can be inside another `if`");
     html_cycle_p(
       parent,
-      [noop, html_style_bold, html_style_monospace_bold],
+      [noop, html_style_bold, html_style_code_bold],
       "this is called a `nested `if",
     );
   }

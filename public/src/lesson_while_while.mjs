@@ -1,8 +1,8 @@
+import { html_style_code_bold } from "./html_style_code_bold.mjs";
 import { html_cycle_p } from "./html_cycle_p.mjs";
 import { html_cycle_monospace_multiple } from "./html_cycle_monospace_multiple.mjs";
 import { html_style_code } from "./html_style_code.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
-import { html_style_monospace_bold } from "./html_style_monospace_bold.mjs";
 import { lesson_while_generic_1 } from "./lesson_while_generic_1.mjs";
 import { js_code_statement_increment } from "./js_code_statement_increment.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
@@ -42,7 +42,7 @@ export function lesson_while_while() {
     ]);
     html_cycle_p(
       parent,
-      [noop, html_style_code, noop, html_style_monospace_bold, html_style_bold],
+      [noop, html_style_code, noop, html_style_code_bold, html_style_bold],
       "because a `while` runs over and over , sometimes it is called a `while` loop",
     );
   }
