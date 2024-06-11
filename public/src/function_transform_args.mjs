@@ -5,9 +5,9 @@ export async function function_transform_args(
   args,
 ) {
   let r = await function_transform_args_return(
-    args,
     lambda_names,
     function_name,
+    args,
   );
   let { results } = r;
   return results;
