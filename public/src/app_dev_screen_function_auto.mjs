@@ -1,5 +1,4 @@
 import { function_auto_results } from "./function_auto_results.mjs";
-import { function_auto } from "./function_auto.mjs";
 import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
 import { app_dev_sandbox_function_multiple } from "./app_dev_sandbox_function_multiple.mjs";
 import { file_write } from "./file_write.mjs";
@@ -27,11 +26,15 @@ export function app_dev_screen_function_auto() {
         root,
         "so far many `function`s have been shown that refactor code",
       );
+      let fn = function_auto_results;
       html_cycle_function_name(
         root,
-        "`function_auto` performs all these refactors at once",
+        string_combine_multiple([
+          "`",
+          fn.name,
+          "` performs all these refactors at once",
+        ]),
       );
-      let fn = function_auto;
       let fn_a = await function_name_new("auto");
       let fn_b = await function_name_new("auto_add");
       let fn_c = await function_name_new("auto_multiply");
@@ -67,7 +70,7 @@ export function app_dev_screen_function_auto() {
           string_delimit_backtick(
             string_combine_multiple([fn.name, " ", fn_name]),
           ),
-        async (fn_name) => await function_auto_results(fn_name),
+        async (fn_name) => await fn(fn_name),
       );
     },
   };
