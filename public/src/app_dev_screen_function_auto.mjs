@@ -60,7 +60,7 @@ export function app_dev_screen_function_auto() {
         root,
         true,
         fn_a,
-        "moving `function`s to their own file",
+        "perform all refactors at once",
         (fn_name) =>
           string_delimit_backtick(
             string_combine_multiple([
