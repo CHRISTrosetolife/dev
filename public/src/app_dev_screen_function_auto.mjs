@@ -42,6 +42,14 @@ export function app_dev_screen_function_auto() {
         ]),
       );
       html_hr(root);
+      html_cycle_function_name(
+        root,
+        string_combine_multiple([
+          "`",
+          fn.name,
+          "` performs all these refactors at once",
+        ]),
+      );
       let fn_a = await function_name_new("auto");
       let fn_b = await function_name_new("auto_add");
       let fn_c = await function_name_new("auto_multiply");
