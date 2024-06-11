@@ -1,4 +1,4 @@
-import { html_cycle_monospace_short } from "./html_cycle_monospace_short.mjs";
+import { html_cycle_monospace } from "./html_cycle_monospace.mjs";
 import { js_code_decrement } from "./js_code_decrement.mjs";
 import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
 import { js_code_statement_let } from "./js_code_statement_let.mjs";
@@ -27,7 +27,7 @@ export function lesson_for_greater_than_equal() {
     [],
   );
   function example_before(parent) {
-    html_cycle_monospace_short(
+    html_cycle_monospace(
       parent,
       "a `for` loop can decrement and use `>=` instead of incrementing and using `<=`",
     );

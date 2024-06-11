@@ -1,6 +1,6 @@
-import { html_cycle_short_p } from "./html_cycle_short_p.mjs";
-import { html_cycle_monospace_short_span } from "./html_cycle_monospace_short_span.mjs";
-import { html_cycle_monospace_short_multiple } from "./html_cycle_monospace_short_multiple.mjs";
+import { html_cycle_p } from "./html_cycle_p.mjs";
+import { html_cycle_monospace_span } from "./html_cycle_monospace_span.mjs";
+import { html_cycle_monospace_multiple } from "./html_cycle_monospace_multiple.mjs";
 import { html_style_code } from "./html_style_code.mjs";
 import { app_dev_sandbox_command_line_result_remaining_first_function } from "./app_dev_sandbox_command_line_result_remaining_first_function.mjs";
 import { app_dev_sandbox_command_line } from "./app_dev_sandbox_command_line.mjs";
@@ -13,18 +13,18 @@ import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 export function app_dev_screen_function_new_args() {
   return {
     name: function function_new_name(root) {
-      return html_cycle_monospace_short_span(
+      return html_cycle_monospace_span(
         root,
         "add new `function` with parameters",
       );
     },
     screen: async function function_new_args_screen(root) {
-      html_cycle_short_p(
+      html_cycle_p(
         root,
         [html_style_function_name, noop, html_style_code, noop],
         function_new_args.name + "` adds a new `function` with parameters",
       );
-      html_cycle_monospace_short_multiple(root, [
+      html_cycle_monospace_multiple(root, [
         "suppose we want to add a `function` named `greet_person` with two parameters : `first_name` and `last_name`",
         "here is the command :",
       ]);

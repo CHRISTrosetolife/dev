@@ -1,6 +1,6 @@
-import { html_cycle_short_p } from "./html_cycle_short_p.mjs";
-import { html_cycle_monospace_short } from "./html_cycle_monospace_short.mjs";
-import { html_cycle_monospace_short_multiple } from "./html_cycle_monospace_short_multiple.mjs";
+import { html_cycle_p } from "./html_cycle_p.mjs";
+import { html_cycle_monospace } from "./html_cycle_monospace.mjs";
+import { html_cycle_monospace_multiple } from "./html_cycle_monospace_multiple.mjs";
 import { url_repository_commit } from "./url_repository_commit.mjs";
 import { html_style_link } from "./html_style_link.mjs";
 import { noop } from "./noop.mjs";
@@ -15,7 +15,7 @@ export function app_dev_screen_git_auto() {
       return html_span_text(root, "automatically commit to git");
     },
     screen: function git_auto_screen(root) {
-      html_cycle_monospace_short_multiple(root, [
+      html_cycle_monospace_multiple(root, [
         "suppose we want to create a `function` named `greetings_to_the_world",
         "suppose we also want to commit this new `function` to git",
         "then we can change `" +
@@ -28,12 +28,9 @@ export function app_dev_screen_git_auto() {
       ]);
       let i = 1;
       app_dev_screen_img(app_dev_screen_git_auto, root, i++);
-      html_cycle_monospace_short(
-        root,
-        "... and a new `function` is created ...",
-      );
+      html_cycle_monospace(root, "... and a new `function` is created ...");
       app_dev_screen_img(app_dev_screen_git_auto, root, i++);
-      html_cycle_short_p(
+      html_cycle_p(
         root,
         [
           noop,
@@ -44,14 +41,14 @@ export function app_dev_screen_git_auto() {
         "... and a `commit` is added to git :",
       );
       app_dev_screen_img(app_dev_screen_git_auto, root, i++);
-      html_cycle_monospace_short_multiple(root, [
+      html_cycle_monospace_multiple(root, [
         "this does a `git add` and a `git commit -m ...",
         "the commit message is a timestamp and the name of the command and its arguments",
         "waiting for `git push` after each command slows development , so `git push` is omitted from `" +
           run_git.name +
           ".mjs",
       ]);
-      html_cycle_monospace_short(
+      html_cycle_monospace(
         root,
         "using `" +
           run_git.name +

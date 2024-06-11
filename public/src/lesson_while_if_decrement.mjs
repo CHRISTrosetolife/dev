@@ -1,4 +1,4 @@
-import { html_cycle_monospace_short } from "./html_cycle_monospace_short.mjs";
+import { html_cycle_monospace } from "./html_cycle_monospace.mjs";
 import { lesson_while_generic_1 } from "./lesson_while_generic_1.mjs";
 import { js_code_statement_decrement } from "./js_code_statement_decrement.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
@@ -27,7 +27,7 @@ export function lesson_while_if_decrement() {
     [],
   );
   function example_before(parent) {
-    html_cycle_monospace_short(
+    html_cycle_monospace(
       parent,
       "a variable may be incremented inside of an `if",
     );

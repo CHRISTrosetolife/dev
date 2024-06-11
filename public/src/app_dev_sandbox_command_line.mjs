@@ -1,5 +1,5 @@
+import { html_cycle_monospace } from "./html_cycle_monospace.mjs";
 import { html_attribute_set } from "./html_attribute_set.mjs";
-import { html_cycle_monospace_short } from "./html_cycle_monospace_short.mjs";
 import { app_dev_sandbox_result_text_set } from "./app_dev_sandbox_result_text_set.mjs";
 import { app_dev_sandbox_result_error } from "./app_dev_sandbox_result_error.mjs";
 import { app_dev_sandbox_result_show } from "./app_dev_sandbox_result_show.mjs";
@@ -26,7 +26,7 @@ export async function app_dev_sandbox_command_line(
   result_get,
 ) {
   html_hr(root);
-  html_cycle_monospace_short(
+  html_cycle_monospace(
     root,
     string_combine_multiple([
       app_dev_sandbox_message(),

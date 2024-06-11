@@ -1,6 +1,6 @@
-import { html_cycle_monospace_short } from "./html_cycle_monospace_short.mjs";
-import { html_cycle_monospace_short_multiple } from "./html_cycle_monospace_short_multiple.mjs";
-import { html_cycle_bold_short } from "./html_cycle_bold_short.mjs";
+import { html_cycle_monospace } from "./html_cycle_monospace.mjs";
+import { html_cycle_monospace_multiple } from "./html_cycle_monospace_multiple.mjs";
+import { html_cycle_bold } from "./html_cycle_bold.mjs";
 import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
@@ -38,8 +38,8 @@ export function lesson_object_property() {
   function screen1(parent) {
     let a = app_learn_code_random_identifier();
     html_p_text(parent, "a variable stores one value");
-    html_cycle_bold_short(parent, "an `object` can store more than one value");
-    html_cycle_monospace_short_multiple(parent, [
+    html_cycle_bold(parent, "an `object` can store more than one value");
+    html_cycle_monospace_multiple(parent, [
       "`{}` creates a new object",
       "here is code to create a new object and assign the newly created object to a variable: ",
     ]);
@@ -49,7 +49,7 @@ export function lesson_object_property() {
     );
   }
   function screen2(parent) {
-    html_cycle_bold_short(
+    html_cycle_bold(
       parent,
       "an object can have its own variables called `properties`",
     );
@@ -65,7 +65,7 @@ export function lesson_object_property() {
       js_code_statement_assign(js_code_dot(a, b), c),
     ];
     app_learn_code_code_part_contrast(parent, list_join_newline(lines));
-    html_cycle_monospace_short(
+    html_cycle_monospace(
       parent,
       `in this code , the property name is \`${b}\` and the property value is \`${c}\``,
     );

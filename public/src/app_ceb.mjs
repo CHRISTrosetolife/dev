@@ -1,6 +1,7 @@
+import { html_cycle_p } from "./html_cycle_p.mjs";
+import { html_button_width_full_text_click_alternate } from "./html_button_width_full_text_click_alternate.mjs";
 import { html_button_disable } from "./html_button_disable.mjs";
 import { html_attribute_has } from "./html_attribute_has.mjs";
-import { html_cycle_short_p } from "./html_cycle_short_p.mjs";
 import { app_ceb_word_button_audio_none } from "./app_ceb_word_button_audio_none.mjs";
 import { html_button_next_text } from "./html_button_next_text.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
@@ -34,7 +35,6 @@ import { app_ceb_level_size } from "./app_ceb_level_size.mjs";
 import { each_range } from "./each_range.mjs";
 import { add } from "./add.mjs";
 import { mod_last_is } from "./mod_last_is.mjs";
-import { html_button_width_full_text_click_alternate_short } from "./html_button_width_full_text_click_alternate_short.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_style_button_default } from "./html_style_button_default.mjs";
 import { html_style_wrong } from "./html_style_wrong.mjs";
@@ -135,7 +135,7 @@ export async function app_ceb() {
         let atom_left = list_get(group, left_next);
         let atom_right = list_get_or_last(group, right_next);
         let text = app_ceb_atom_title(group, atom_left, atom_right);
-        html_button_width_full_text_click_alternate_short(
+        html_button_width_full_text_click_alternate(
           root,
           app_ceb_atom_title_patterns(),
           string_combine_multiple([j, ". ", text]),
@@ -226,7 +226,7 @@ export async function app_ceb() {
     let gl = list_get(group, left);
     let gr = list_get_or_last(group, right);
     let text = app_ceb_atom_title(group, gl, gr);
-    html_cycle_short_p(root, app_ceb_atom_title_patterns(), text);
+    html_cycle_p(root, app_ceb_atom_title_patterns(), text);
   }
   async function refresh_quiz(settings) {
     html_clear_scroll_top_centered(root);

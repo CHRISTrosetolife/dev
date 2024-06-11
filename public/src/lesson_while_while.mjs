@@ -1,5 +1,5 @@
-import { html_cycle_short_p } from "./html_cycle_short_p.mjs";
-import { html_cycle_monospace_short_multiple } from "./html_cycle_monospace_short_multiple.mjs";
+import { html_cycle_p } from "./html_cycle_p.mjs";
+import { html_cycle_monospace_multiple } from "./html_cycle_monospace_multiple.mjs";
 import { html_style_code } from "./html_style_code.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { html_style_monospace_bold } from "./html_style_monospace_bold.mjs";
@@ -34,13 +34,13 @@ export function lesson_while_while() {
   );
   function example_before(parent) {}
   function screen1(parent) {
-    html_cycle_monospace_short_multiple(parent, [
+    html_cycle_monospace_multiple(parent, [
       "an `if` is ran only once",
       "a `while` is similar to an `if`",
       "a `while` is an `if` that runs over and over",
       "a `while` will be ran until what is in between the parenthesis is `false`",
     ]);
-    html_cycle_short_p(
+    html_cycle_p(
       parent,
       [noop, html_style_code, noop, html_style_monospace_bold, html_style_bold],
       "because a `while` runs over and over , sometimes it is called a `while` loop",

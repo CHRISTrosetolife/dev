@@ -1,4 +1,4 @@
-import { html_cycle_monospace_short } from "./html_cycle_monospace_short.mjs";
+import { html_cycle_monospace } from "./html_cycle_monospace.mjs";
 import { app_learn_code_log_delimit } from "./app_learn_code_log_delimit.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
@@ -33,20 +33,11 @@ export function lesson_if_else_if_two() {
   );
   function example_before(parent) {}
   function screen1(parent) {
-    html_cycle_monospace_short(parent, "a program can have multiple `if`'s");
-    html_cycle_monospace_short(
-      parent,
-      "in this lesson there will be two `if`'s",
-    );
-    html_cycle_monospace_short(
-      parent,
-      "sometimes only the first `if` will run",
-    );
-    html_cycle_monospace_short(
-      parent,
-      "sometimes only the second `if` will run",
-    );
-    html_cycle_monospace_short(parent, "sometimes both `if`'s will run");
-    html_cycle_monospace_short(parent, "sometimes none of the `if`'s will run");
+    html_cycle_monospace(parent, "a program can have multiple `if`'s");
+    html_cycle_monospace(parent, "in this lesson there will be two `if`'s");
+    html_cycle_monospace(parent, "sometimes only the first `if` will run");
+    html_cycle_monospace(parent, "sometimes only the second `if` will run");
+    html_cycle_monospace(parent, "sometimes both `if`'s will run");
+    html_cycle_monospace(parent, "sometimes none of the `if`'s will run");
   }
 }

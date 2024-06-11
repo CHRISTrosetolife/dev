@@ -1,4 +1,4 @@
-import { html_cycle_monospace_short } from "./html_cycle_monospace_short.mjs";
+import { html_cycle_monospace } from "./html_cycle_monospace.mjs";
 import { js_code_add_assign } from "./js_code_add_assign.mjs";
 import { lesson_while_generic } from "./lesson_while_generic.mjs";
 import { integer_random } from "./integer_random.mjs";
@@ -32,7 +32,7 @@ export function lesson_for_increment_two() {
     [],
   );
   function example_before(parent) {
-    html_cycle_monospace_short(
+    html_cycle_monospace(
       parent,
       "a `for` loop can use `a += b` instead of `a++`",
     );

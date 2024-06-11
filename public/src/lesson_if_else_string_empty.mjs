@@ -1,5 +1,5 @@
-import { html_cycle_monospace_short } from "./html_cycle_monospace_short.mjs";
-import { html_cycle_bold_short } from "./html_cycle_bold_short.mjs";
+import { html_cycle_monospace } from "./html_cycle_monospace.mjs";
+import { html_cycle_bold } from "./html_cycle_bold.mjs";
 import { app_learn_code_log_join_plus } from "./app_learn_code_log_join_plus.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
 import { string_combine } from "./string_combine.mjs";
@@ -29,11 +29,8 @@ export function lesson_if_else_string_empty() {
   function example_before(parent) {}
   function screen1(parent) {
     html_p_text(parent, "a string can have nothing in it");
-    html_cycle_bold_short(parent, "this is called an `empty string");
-    html_cycle_monospace_short(
-      parent,
-      "an empty string can look like this : `''",
-    );
+    html_cycle_bold(parent, "this is called an `empty string");
+    html_cycle_monospace(parent, "an empty string can look like this : `''");
     html_p_text(
       parent,
       "if a string is concatenated with an empty string , then the result is the same as before",
