@@ -62,8 +62,8 @@ export function app_dev_screen_function_auto() {
         string_combine_multiple([
           js_code_statement_assign("c", 4),
           js_code_statement_call_args(sleep.name, [100]),
-          js_code_return(js_code_call_args(fn_b, ["1", "2", "3"])),
           app_dev_screen_if_to_block_if_else(),
+          js_code_return(js_code_call_args(fn_b, ["1", "2", "3"])),
         ]),
         false,
       );
