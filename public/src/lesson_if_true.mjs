@@ -1,3 +1,4 @@
+import { html_style_alternate_list } from "./html_style_alternate_list.mjs";
 import { html_style_code } from "./html_style_code.mjs";
 import { app_learn_code_log_random_value } from "./app_learn_code_log_random_value.mjs";
 import { html_img_limited_centered } from "./html_img_limited_centered.mjs";
@@ -5,7 +6,6 @@ import { html_style_alternate_monospace } from "./html_style_alternate_monospace
 import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { html_p } from "./html_p.mjs";
-import { html_style_alternate } from "./html_style_alternate.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
 import { noop } from "./noop.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
@@ -109,7 +109,7 @@ use_pencil = true;
       "if",
     ]);
     html_p_text(parent, "however , that will not be covered at this time");
-    html_style_alternate(
+    html_style_alternate_list(
       parent,
       html_p,
       [noop, html_style_bold, noop, html_style_code, noop, html_style_code],

@@ -1,8 +1,8 @@
+import { html_style_alternate_list } from "./html_style_alternate_list.mjs";
 import { html_style_code } from "./html_style_code.mjs";
 import { integer_random_digit_single_positive } from "./integer_random_digit_single_positive.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
 import { html_p } from "./html_p.mjs";
-import { html_style_alternate } from "./html_style_alternate.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { noop } from "./noop.mjs";
 import { html_style_monospace } from "./html_style_monospace.mjs";
@@ -61,7 +61,7 @@ export function lesson_equal_number() {
     html_li_text(ul, "6 = -6 is false");
   }
   function example_before(parent) {
-    html_style_alternate(
+    html_style_alternate_list(
       parent,
       html_p,
       [noop, html_style_code],

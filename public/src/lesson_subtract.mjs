@@ -1,8 +1,8 @@
+import { html_style_alternate_list } from "./html_style_alternate_list.mjs";
 import { html_style_code } from "./html_style_code.mjs";
 import { integer_random_digit_single_positive } from "./integer_random_digit_single_positive.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
 import { html_p } from "./html_p.mjs";
-import { html_style_alternate } from "./html_style_alternate.mjs";
 import { noop } from "./noop.mjs";
 export function lesson_subtract() {
   const example_message = "subtraction ( `-` )";
@@ -19,7 +19,7 @@ export function lesson_subtract() {
     [],
   );
   function example_before(parent) {
-    html_style_alternate(
+    html_style_alternate_list(
       parent,
       html_p,
       [noop, html_style_code],

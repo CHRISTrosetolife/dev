@@ -3,7 +3,7 @@ import { mod } from "./mod.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { each_index } from "./each_index.mjs";
 import { list_length } from "./list_length.mjs";
-export function html_style_alternate(parent, create, patterns, strings) {
+export function html_style_alternate_list(parent, create, patterns, strings) {
   let patterns_length = list_length(patterns);
   let p1 = create(parent);
   each_index(strings, (element, index) => {

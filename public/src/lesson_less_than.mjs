@@ -1,8 +1,8 @@
+import { html_style_alternate_list } from "./html_style_alternate_list.mjs";
 import { html_style_code } from "./html_style_code.mjs";
 import { lesson_comparisons_source_get_get } from "./lesson_comparisons_source_get_get.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
 import { html_p } from "./html_p.mjs";
-import { html_style_alternate } from "./html_style_alternate.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { noop } from "./noop.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
@@ -45,7 +45,7 @@ export function lesson_less_than() {
     html_li_text(ul, "-2 < -2 is false");
   }
   function screen_before3(parent) {
-    html_style_alternate(
+    html_style_alternate_list(
       parent,
       html_p,
       [noop, html_style_code],
@@ -55,25 +55,25 @@ export function lesson_less_than() {
         " ) sign",
       ],
     );
-    html_style_alternate(
+    html_style_alternate_list(
       parent,
       html_p,
       [html_style_code, noop],
       ["1", " , ", "2", " and ", "3", " are numbers"],
     );
-    html_style_alternate(
+    html_style_alternate_list(
       parent,
       html_p,
       [html_style_code, noop],
       ["'JESUS'", " , ", "'is'", " and ", "'LORD'", " are strings"],
     );
-    html_style_alternate(
+    html_style_alternate_list(
       parent,
       html_p,
       [html_style_code, noop, html_style_code, noop, html_style_bold],
       ["true", " and ", "false", " are ", "boolean"],
     );
-    html_style_alternate(
+    html_style_alternate_list(
       parent,
       html_p,
       [noop, html_style_code],
