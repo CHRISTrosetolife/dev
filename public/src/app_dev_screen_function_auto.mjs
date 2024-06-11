@@ -1,3 +1,4 @@
+import { html_cycle_code } from "./html_cycle_code.mjs";
 import { html_cycle_function_name } from "./html_cycle_function_name.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 import { html_span_text } from "./html_span_text.mjs";
@@ -7,7 +8,7 @@ export function app_dev_screen_function_auto() {
       return html_span_text(root, "function_auto");
     },
     screen: function function_auto_screen(root) {
-      html_cycle_function_name(
+      html_cycle_code(
         root,
         "so far many `function`s have been shown that refactor code",
       );
