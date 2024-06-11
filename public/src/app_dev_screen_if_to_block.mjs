@@ -58,6 +58,8 @@ export function app_dev_screen_if_to_block() {
         string_combine_multiple([
           "if(0)",
           js_code_call_args(log.name, [string_delimit("zero")]),
+          "else ",
+          js_code_call_args(log.name, [string_delimit("not zero")]),
         ]),
         false,
       );
