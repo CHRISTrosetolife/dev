@@ -6,6 +6,8 @@ export function app_dev_screen_function_auto() {
       return html_span_text(root, "function_auto");
     },
     screen: function function_auto_screen(root) {
+      "so far many `function`s have been shown that refactor code";
+      "function_auto performs all these refactors at once";
       let i = 1;
       app_dev_screen_img(app_dev_screen_function_auto, root, i++);
     },
