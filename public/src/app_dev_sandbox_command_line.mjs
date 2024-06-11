@@ -1,3 +1,4 @@
+import { html_attribute_set } from "./html_attribute_set.mjs";
 import { html_cycle_monospace_short } from "./html_cycle_monospace_short.mjs";
 import { app_dev_sandbox_result_text_set } from "./app_dev_sandbox_result_text_set.mjs";
 import { app_dev_sandbox_result_error } from "./app_dev_sandbox_result_error.mjs";
@@ -15,7 +16,6 @@ import { string_starts_with_not } from "./string_starts_with_not.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { html_attribute_set } from "./html_attribute_set.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { app_dev_screen_command_line_prefix } from "./app_dev_screen_command_line_prefix.mjs";
 import { html_value_set } from "./html_value_set.mjs";

@@ -1,3 +1,4 @@
+import { html_attribute_set } from "./html_attribute_set.mjs";
 import { html_cycle_monospace_short } from "./html_cycle_monospace_short.mjs";
 import { html_cycle_monospace_short_span } from "./html_cycle_monospace_short_span.mjs";
 import { html_button_run_message } from "./html_button_run_message.mjs";
@@ -18,7 +19,6 @@ import { function_name_to_path } from "./function_name_to_path.mjs";
 import { app_dev_sandbox_result } from "./app_dev_sandbox_result.mjs";
 import { html_button_run } from "./html_button_run.mjs";
 import { html_value_set } from "./html_value_set.mjs";
-import { html_attribute_set } from "./html_attribute_set.mjs";
 import { html_textarea_code } from "./html_textarea_code.mjs";
 import { function_read } from "./function_read.mjs";
 import { each } from "./each.mjs";
