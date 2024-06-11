@@ -3,7 +3,6 @@ import { html_cycle_code_span } from "./html_cycle_code_span.mjs";
 import { html_attribute_set } from "./html_attribute_set.mjs";
 import { html_button_run_message } from "./html_button_run_message.mjs";
 import { html_clear } from "./html_clear.mjs";
-import { list_first } from "./list_first.mjs";
 import { list_includes_not } from "./list_includes_not.mjs";
 import { html_option_text } from "./html_option_text.mjs";
 import { list_add } from "./list_add.mjs";
@@ -76,18 +75,22 @@ export async function app_dev_sandbox_function_multiple(
       log({
         r,
       });
-      let f = list_first(r);
-      if (undefined_not_is(f)) {
-        if (object_property_exists(f, "function_names_new")) {
-          let function_names_new = object_property_get(f, "function_names_new");
-          each(function_names_new, (fn) => {
-            if (list_includes_not(function_name_choices, fn)) {
-              list_add(function_name_choices, fn);
-              html_option_text(select, fn);
-            }
-          });
+      each(r, (f) => {
+        if (undefined_not_is(f)) {
+          if (object_property_exists(f, "function_names_new")) {
+            let function_names_new = object_property_get(
+              f,
+              "function_names_new",
+            );
+            each(function_names_new, (fn) => {
+              if (list_includes_not(function_name_choices, fn)) {
+                list_add(function_name_choices, fn);
+                html_option_text(select, fn);
+              }
+            });
+          }
         }
-      }
+      });
       let value_new = await function_read(selected);
       html_value_set(textarea, value_new);
     } catch (e) {
