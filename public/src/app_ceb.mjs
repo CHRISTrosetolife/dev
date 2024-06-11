@@ -1,10 +1,10 @@
+import { html_button_disable } from "./html_button_disable.mjs";
 import { html_attribute_has } from "./html_attribute_has.mjs";
 import { html_cycle_short_p } from "./html_cycle_short_p.mjs";
 import { app_ceb_word_button_audio_none } from "./app_ceb_word_button_audio_none.mjs";
 import { html_button_next_text } from "./html_button_next_text.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
-import { html_button_disable } from "./html_button_disable.mjs";
 import { html_style_default_font_size } from "./html_style_default_font_size.mjs";
 import { html_style_display_inline_block } from "./html_style_display_inline_block.mjs";
 import { html_style_border_color } from "./html_style_border_color.mjs";
