@@ -46,9 +46,11 @@ export function app_dev_screen_function_auto() {
       html_cycle_function_name(
         root,
         string_combine_multiple([
-          "`",
+          "if `",
           watch.name,
-          "` performs all these refactors at once",
+          "` is ran , then , every time a file is saved , `",
+          fn.name,
+          "` is called ",
         ]),
       );
       let fn_a = await function_name_new("auto");
