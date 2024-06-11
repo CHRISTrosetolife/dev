@@ -9,9 +9,9 @@ export function app_dev_screen_if_to_block() {
       );
     },
     screen: function if_to_block_screen(root) {
+      "if there is an `if` statement ...";
       let i = 1;
       app_dev_screen_img(app_dev_screen_if_to_block, root, i++);
-      ("if there is an `if` statement ...");
     },
   };
 }
