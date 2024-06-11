@@ -80,7 +80,7 @@ export function app_dev_screen_function_auto() {
         root,
         true,
         fn_a,
-        "perform all refactors at once",
+        string_combine_multiple(["`", fn.name, "`"]),
         (fn_name) =>
           string_delimit_backtick(
             string_combine_multiple([fn.name, " ", fn_name]),
