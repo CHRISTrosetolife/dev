@@ -23,7 +23,7 @@ export function app_dev_screen_if_to_block() {
           noop,
           html_style_code,
         ],
-        "the `google javascript style guide` , for example , generally requires that `if` statements be blocks",
+        "the `google javascript style guide` , for example , generally requires that `if` statements be blocks :",
       );
       html_cycle_code(
         root,
