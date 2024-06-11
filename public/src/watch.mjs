@@ -38,6 +38,7 @@ export async function watch() {
       let before = await file_read(path);
       if (before === contents) {
         object_property_set(c, "processing", false);
+        log("here");
         return;
       }
       let function_name = function_path_to_name(path);
