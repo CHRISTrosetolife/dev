@@ -7,7 +7,10 @@ export function app_dev_screen_function_auto() {
       return html_span_text(root, "function_auto");
     },
     screen: function function_auto_screen(root) {
-      "so far many `function`s have been shown that refactor code";
+      html_cycle_function_name(
+        root,
+        "so far many `function`s have been shown that refactor code",
+      );
       html_cycle_function_name(
         root,
         "`function_auto` performs all these refactors at once",
