@@ -62,8 +62,8 @@ export function app_dev_screen_function_auto() {
         string_combine_multiple([
           js_code_statement_assign("c", 4),
           js_code_statement_call_args(sleep.name, [100]),
-          app_dev_screen_if_to_block_if_else(),
           js_code_return(js_code_call_args(fn_b, ["1", "2", "3"])),
+          app_dev_screen_if_to_block_if_else(),
         ]),
         false,
       );
@@ -80,7 +80,7 @@ export function app_dev_screen_function_auto() {
         root,
         true,
         fn_a,
-        string_combine_multiple(["`", fn.name, "`"]),
+        "perform all refactors at once",
         (fn_name) =>
           string_delimit_backtick(
             string_combine_multiple([fn.name, " ", fn_name]),
