@@ -1,3 +1,5 @@
+import { log } from "./log.mjs";
+import { js_code_import } from "./js_code_import.mjs";
 import { function_auto_results } from "./function_auto_results.mjs";
 import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
 import { app_dev_sandbox_function_multiple } from "./app_dev_sandbox_function_multiple.mjs";
@@ -57,7 +59,12 @@ export function app_dev_screen_function_auto() {
         js_code_return(js_code_call_args(fn_b, ["1", "2", "3"])),
         false,
       );
-      let code = string_combine_multiple([contents_a, contents_b, contents_c]);
+      let code = string_combine_multiple([
+        js_code_import(log.name),
+        contents_a,
+        contents_b,
+        contents_c,
+      ]);
       let contents = await js_code_format(code);
       let file_path = function_name_to_path(fn_a);
       await file_write(file_path, contents);
