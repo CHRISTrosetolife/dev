@@ -9,11 +9,11 @@ export async function functions_rename_if_starts_with(
   prefix_after,
 ) {
   let fns = await function_names();
-  await each_async(fns, (fn) => {
+  await each_async(fns, async (fn) => {
     if (string_starts_with(fn, prefix_before)) {
       let without = string_prefix_without(fn, prefix_before);
       let fn_new = string_combine(prefix_after, without);
-      function_rename;
+      await function_rename(fn, fn_new);
     }
   });
 }
