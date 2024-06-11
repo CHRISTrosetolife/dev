@@ -1,4 +1,4 @@
-import { html_style_alternate_list } from "./html_style_alternate_list.mjs";
+import { html_cycle_list } from "./html_cycle_list.mjs";
 import { html_style_code } from "./html_style_code.mjs";
 import { lesson_divide_numbers } from "./lesson_divide_numbers.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
@@ -19,7 +19,7 @@ export function lesson_divide() {
     [],
   );
   function example_before(parent) {
-    html_style_alternate_list(
+    html_cycle_list(
       parent,
       html_p,
       [noop, html_style_code],

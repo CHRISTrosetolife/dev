@@ -1,8 +1,8 @@
-import { html_style_alternate_bold_list } from "./html_style_alternate_bold_list.mjs";
+import { html_cycle_monospace } from "./html_cycle_monospace.mjs";
+import { html_cycle_bold_list } from "./html_cycle_bold_list.mjs";
 import { mod } from "./mod.mjs";
 import { floor } from "./floor.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
-import { html_style_alternate_monospace } from "./html_style_alternate_monospace.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { html_li_text } from "./html_li_text.mjs";
 import { html_p_text } from "./html_p_text.mjs";
@@ -38,7 +38,7 @@ export function lesson_mod() {
     [screen1, screen2, screen3],
   );
   function example_before(parent) {
-    html_style_alternate_monospace(parent, [
+    html_cycle_monospace(parent, [
       "in javascript , to get the remainder of ",
       "dividend",
       " use ",
@@ -49,11 +49,11 @@ export function lesson_mod() {
   }
   function screen1(parent) {
     html_p_text(parent, "here is an example of division in math : a / b");
-    html_style_alternate_bold_list(parent, [
+    html_cycle_bold_list(parent, [
       'when a number ( like "a" ) is divided by another number ( like "b" ) , the first number is called the ',
       "dividend",
     ]);
-    html_style_alternate_bold_list(parent, [
+    html_cycle_bold_list(parent, [
       "the second number is called the ",
       "divisor",
     ]);

@@ -1,6 +1,6 @@
+import { html_cycle_monospace } from "./html_cycle_monospace.mjs";
 import { app_learn_code_random_boolean_binary } from "./app_learn_code_random_boolean_binary.mjs";
 import { list_join } from "./list_join.mjs";
-import { html_style_alternate_monospace } from "./html_style_alternate_monospace.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { lesson_console_log_quiz } from "./lesson_console_log_quiz.mjs";
@@ -26,7 +26,7 @@ ${lesson_console_log_quiz()}
   );
   function example_before() {}
   function screen2(parent) {
-    html_style_alternate_monospace(parent, [
+    html_cycle_monospace(parent, [
       "inside the parenthesis of an ",
       "if",
       " can be more than just ",
@@ -34,7 +34,7 @@ ${lesson_console_log_quiz()}
       " and ",
       "false",
     ]);
-    html_style_alternate_monospace(parent, [
+    html_cycle_monospace(parent, [
       "remember ",
       "<",
       " , ",
@@ -52,7 +52,7 @@ ${lesson_console_log_quiz()}
       " or ",
       "false",
     ]);
-    html_style_alternate_monospace(parent, [
+    html_cycle_monospace(parent, [
       "therefore inside the parenthesis of an ",
       "if",
       " could be one of those",

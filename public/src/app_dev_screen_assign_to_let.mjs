@@ -1,4 +1,5 @@
-import { html_style_alternate_monospace_short_span } from "./html_style_alternate_monospace_short_span.mjs";
+import { html_cycle_monospace_short } from "./html_cycle_monospace_short.mjs";
+import { html_cycle_monospace_short_span } from "./html_cycle_monospace_short_span.mjs";
 import { js_code_statement_declare_assign } from "./js_code_statement_declare_assign.mjs";
 import { list_join_empty } from "./list_join_empty.mjs";
 import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
@@ -11,7 +12,6 @@ import { function_name_to_path } from "./function_name_to_path.mjs";
 import { js_code_format } from "./js_code_format.mjs";
 import { js_code_export_function_declare } from "./js_code_export_function_declare.mjs";
 import { function_name_new } from "./function_name_new.mjs";
-import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
 import { app_dev_p_transformer } from "./app_dev_p_transformer.mjs";
 import { js_assign_to_let } from "./js_assign_to_let.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
@@ -19,14 +19,14 @@ import { log } from "./log.mjs";
 export function app_dev_screen_assign_to_let() {
   return {
     name: function assign_to_let_name(root) {
-      return html_style_alternate_monospace_short_span(
+      return html_cycle_monospace_short_span(
         root,
         "adding `let` to variable assignments",
       );
     },
     screen: async function assign_to_let_screen(root) {
       let i = 1;
-      html_style_alternate_monospace_short(
+      html_cycle_monospace_short(
         root,
         "if a variable is assigned a value , but `let` and `var` are not used , and if the variable is not already defined ...",
       );
@@ -34,7 +34,7 @@ export function app_dev_screen_assign_to_let() {
       let fn = js_assign_to_let;
       app_dev_p_transformer(root, fn);
       app_dev_screen_img(app_dev_screen_assign_to_let, root, i++);
-      html_style_alternate_monospace_short(
+      html_cycle_monospace_short(
         root,
         "... then the assignment will change to a `let` declaration assignment :",
       );

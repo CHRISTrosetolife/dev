@@ -1,4 +1,4 @@
-import { html_style_alternate_list } from "./html_style_alternate_list.mjs";
+import { html_cycle_list } from "./html_cycle_list.mjs";
 import { html_style_code } from "./html_style_code.mjs";
 import { html_style_monospace } from "./html_style_monospace.mjs";
 import { noop } from "./noop.mjs";
@@ -6,7 +6,7 @@ import { html_p } from "./html_p.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
 export function lesson_log_number_explain(parent) {
-  html_style_alternate_list(
+  html_cycle_list(
     parent,
     html_p,
     [noop, html_style_code],

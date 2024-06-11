@@ -1,8 +1,8 @@
-import { html_style_alternate_bold_list } from "./html_style_alternate_bold_list.mjs";
+import { html_cycle_monospace } from "./html_cycle_monospace.mjs";
+import { html_cycle_bold_list } from "./html_cycle_bold_list.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { app_learn_code_random_boolean_binary } from "./app_learn_code_random_boolean_binary.mjs";
 import { app_learn_code_unique_multiple } from "./app_learn_code_unique_multiple.mjs";
-import { html_style_alternate_monospace } from "./html_style_alternate_monospace.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { app_learn_code_random_value } from "./app_learn_code_random_value.mjs";
 import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
@@ -33,45 +33,41 @@ export function lesson_if_else() {
   );
   function example_before(parent) {}
   function screen1(parent) {
-    html_style_alternate_monospace(parent, [
+    html_cycle_monospace(parent, [
       "in javascript , code in between a ",
       "/*",
       " and a ",
       "*/",
       " is ignored",
     ]);
-    html_style_alternate_bold_list(parent, ["this is called a ", "comment"]);
+    html_cycle_bold_list(parent, ["this is called a ", "comment"]);
     html_p_text(parent, "comments are for humans and code is for computers");
     html_p_text(parent, "here is an example comment :");
     app_learn_code_code_part_contrast(parent, "/* console.log(0); */");
-    html_style_alternate_monospace(parent, [
+    html_cycle_monospace(parent, [
       "even though it says ",
       "console.log(0);",
       " that will not get ran because it is inside of a comment",
     ]);
   }
   function screen2(parent) {
-    html_style_alternate_monospace(parent, [
+    html_cycle_monospace(parent, [
       "another way to write a comment is to use ",
       "//",
     ]);
-    html_style_alternate_monospace(parent, [
+    html_cycle_monospace(parent, [
       "",
       "//",
       " begins a comment and the comment continues until the end of the current line",
     ]);
-    html_style_alternate_monospace(parent, [
-      "here is an example ",
-      "//",
-      " comment :",
-    ]);
+    html_cycle_monospace(parent, ["here is an example ", "//", " comment :"]);
     app_learn_code_code_part_contrast(
       parent,
       "let a; // a is the first letter of the alphabet",
     );
   }
   function screen3(parent) {
-    html_style_alternate_monospace(parent, [
+    html_cycle_monospace(parent, [
       'in programming , sometimes there is need to code : if "a" is ',
       "true",
       ' , then do "b" , otherwise , if "a" is ',
@@ -82,7 +78,7 @@ export function lesson_if_else() {
       parent,
       'in other words , choose between "b" and "c" , depending on the value of "a"',
     );
-    html_style_alternate_monospace(parent, [
+    html_cycle_monospace(parent, [
       "the code to represent that uses ",
       "else",
       " :",

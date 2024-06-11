@@ -1,4 +1,4 @@
-import { html_style_alternate_list } from "./html_style_alternate_list.mjs";
+import { html_cycle_list } from "./html_cycle_list.mjs";
 import { html_style_code } from "./html_style_code.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
 import { html_p } from "./html_p.mjs";
@@ -27,7 +27,7 @@ export function lesson_equal_string() {
     return `console.log(${a} === ${b});`;
   }
   function example_before(parent) {
-    html_style_alternate_list(
+    html_cycle_list(
       parent,
       html_p,
       [html_style_code, noop],

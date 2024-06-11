@@ -1,4 +1,4 @@
-import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
+import { html_cycle_monospace_short } from "./html_cycle_monospace_short.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
 import { integer_random_digit_single_positive } from "./integer_random_digit_single_positive.mjs";
@@ -27,21 +27,15 @@ export function lesson_mod_even() {
   );
   function example_before(parent) {}
   function screen1(parent) {
-    html_style_alternate_monospace_short(
-      parent,
-      "suppose `n` is a number in javascipt",
-    );
-    html_style_alternate_monospace_short(
+    html_cycle_monospace_short(parent, "suppose `n` is a number in javascipt");
+    html_cycle_monospace_short(
       parent,
       "if `n % 2` is `0` , then `n` is an even number",
     );
-    html_style_alternate_monospace_short(
+    html_cycle_monospace_short(
       parent,
       "if `n % 2 === 0` is `true` , then `n` is an even number",
     );
-    html_style_alternate_monospace_short(
-      parent,
-      "otherwise , `n` is an odd number",
-    );
+    html_cycle_monospace_short(parent, "otherwise , `n` is an odd number");
   }
 }

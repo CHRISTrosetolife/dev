@@ -1,19 +1,19 @@
-import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
+import { html_cycle_monospace_short } from "./html_cycle_monospace_short.mjs";
+import { html_cycle_monospace_short_span } from "./html_cycle_monospace_short_span.mjs";
 import { app_dev_p_transformer } from "./app_dev_p_transformer.mjs";
 import { js_if_to_block } from "./js_if_to_block.mjs";
-import { html_style_alternate_monospace_short_span } from "./html_style_alternate_monospace_short_span.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 export function app_dev_screen_if_to_block() {
   return {
     name: function if_to_block_name(root) {
-      return html_style_alternate_monospace_short_span(
+      return html_cycle_monospace_short_span(
         root,
         "changing `if` statements to blocks",
       );
     },
     screen: function if_to_block_screen(root) {
       "the google javascript style guide , for example , generally requires that `if` statements be blocks";
-      html_style_alternate_monospace_short(
+      html_cycle_monospace_short(
         root,
         "if there is an `if` statement that is not a block ...",
       );
@@ -22,7 +22,7 @@ export function app_dev_screen_if_to_block() {
       let fn = js_if_to_block;
       app_dev_p_transformer(root, fn);
       app_dev_screen_img(app_dev_screen_if_to_block, root, i++);
-      html_style_alternate_monospace_short(
+      html_cycle_monospace_short(
         root,
         "... then the statement will change to a block :",
       );

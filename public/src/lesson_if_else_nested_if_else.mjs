@@ -1,7 +1,6 @@
-import { html_style_alternate_short_p } from "./html_style_alternate_short_p.mjs";
+import { html_cycle_monospace_short } from "./html_cycle_monospace_short.mjs";
 import { html_style_monospace_bold } from "./html_style_monospace_bold.mjs";
 import { integer_random_digit_single } from "./integer_random_digit_single.mjs";
-import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
@@ -34,7 +33,7 @@ export function lesson_if_else_nested_if_else() {
     [],
   );
   function example_before(parent) {
-    html_style_alternate_monospace_short(
+    html_cycle_monospace_short(
       parent,
       "an `if` `else` can be inside of an `if`",
     );

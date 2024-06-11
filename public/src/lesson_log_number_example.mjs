@@ -1,5 +1,5 @@
+import { html_cycle_monospace_short } from "./html_cycle_monospace_short.mjs";
 import { js_code_format_indent_none } from "./js_code_format_indent_none.mjs";
-import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
 import { app_learn_code_code } from "./app_learn_code_code.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { string_combine } from "./string_combine.mjs";
@@ -16,7 +16,7 @@ export function lesson_log_number_example(source_get, message, before) {
     function refresh() {
       html_clear(div);
       before(div);
-      html_style_alternate_monospace_short(
+      html_cycle_monospace_short(
         div,
         string_combine("below is an example computer program ", message),
       );

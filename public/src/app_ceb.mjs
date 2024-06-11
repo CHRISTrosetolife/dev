@@ -1,3 +1,4 @@
+import { html_cycle_short_p } from "./html_cycle_short_p.mjs";
 import { app_ceb_word_button_audio_none } from "./app_ceb_word_button_audio_none.mjs";
 import { html_button_next_text } from "./html_button_next_text.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
@@ -27,7 +28,6 @@ import { equal_not } from "./equal_not.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { list_slice } from "./list_slice.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
-import { html_style_alternate_short_p } from "./html_style_alternate_short_p.mjs";
 import { app_ceb_atom_title_patterns } from "./app_ceb_atom_title_patterns.mjs";
 import { app_ceb_atom_title } from "./app_ceb_atom_title.mjs";
 import { app_ceb_level_size } from "./app_ceb_level_size.mjs";
@@ -226,7 +226,7 @@ export async function app_ceb() {
     let gl = list_get(group, left);
     let gr = list_get_or_last(group, right);
     let text = app_ceb_atom_title(group, gl, gr);
-    html_style_alternate_short_p(root, app_ceb_atom_title_patterns(), text);
+    html_cycle_short_p(root, app_ceb_atom_title_patterns(), text);
   }
   async function refresh_quiz(settings) {
     html_clear_scroll_top_centered(root);

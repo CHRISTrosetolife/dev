@@ -1,5 +1,5 @@
+import { html_cycle_monospace_short } from "./html_cycle_monospace_short.mjs";
 import { lesson_if_else_string_concat_variables_quiz } from "./lesson_if_else_string_concat_variables_quiz.mjs";
-import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
@@ -17,7 +17,7 @@ export function lesson_if_else_string_concat_variable() {
     [screen1],
   );
   function example_before(parent) {
-    html_style_alternate_monospace_short(
+    html_cycle_monospace_short(
       parent,
       "strings can be concatenated  with a variable",
     );

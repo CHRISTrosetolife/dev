@@ -1,9 +1,9 @@
-import { html_style_alternate_bold_list } from "./html_style_alternate_bold_list.mjs";
+import { html_cycle_monospace } from "./html_cycle_monospace.mjs";
+import { html_cycle_bold_list } from "./html_cycle_bold_list.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_learn_code_log_delimit } from "./app_learn_code_log_delimit.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
-import { html_style_alternate_monospace } from "./html_style_alternate_monospace.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
 import { integer_random } from "./integer_random.mjs";
 import { integer_random_digit_single } from "./integer_random_digit_single.mjs";
@@ -39,12 +39,12 @@ export function lesson_if_else_negative() {
     [],
   );
   function example_before(parent) {
-    html_style_alternate_bold_list(parent, [
+    html_cycle_bold_list(parent, [
       "a number is ",
       "negative",
       " if the number is less than zero",
     ]);
-    html_style_alternate_monospace(parent, [
+    html_cycle_monospace(parent, [
       "",
       "if",
       " and ",

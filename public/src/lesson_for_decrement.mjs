@@ -1,4 +1,4 @@
-import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
+import { html_cycle_monospace_short } from "./html_cycle_monospace_short.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
 import { js_code_increment } from "./js_code_increment.mjs";
 import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
@@ -28,7 +28,7 @@ export function lesson_for_decrement() {
     [],
   );
   function example_before(parent) {
-    html_style_alternate_monospace_short(
+    html_cycle_monospace_short(
       parent,
       "a `for` loop can use a `<` instead of `<=`",
     );

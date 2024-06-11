@@ -1,4 +1,4 @@
-import { html_style_alternate_list } from "./html_style_alternate_list.mjs";
+import { html_cycle_list } from "./html_cycle_list.mjs";
 import { html_style_code } from "./html_style_code.mjs";
 import { lesson_variable_code_get } from "./lesson_variable_code_get.mjs";
 import { app_learn_code_random_value } from "./app_learn_code_random_value.mjs";
@@ -28,7 +28,7 @@ export function lesson_variable() {
   );
   function example_before(parent) {}
   function screen1(parent) {
-    html_style_alternate_list(
+    html_cycle_list(
       parent,
       html_p,
       [noop, html_style_bold],
@@ -45,7 +45,7 @@ export function lesson_variable() {
       parent,
       "to use a variable , javascript should know about the variable",
     );
-    html_style_alternate_list(
+    html_cycle_list(
       parent,
       html_p,
       [noop, html_style_code],
@@ -58,7 +58,7 @@ export function lesson_variable() {
       ],
     );
     app_learn_code_code_part_contrast(parent, "let variable_name;");
-    html_style_alternate_list(
+    html_cycle_list(
       parent,
       html_p,
       [noop, html_style_code],
@@ -68,7 +68,7 @@ export function lesson_variable() {
   function screen3(parent) {
     html_p_text(parent, "in javascript , variable names can contain :");
     let ul = html_ul(parent);
-    html_style_alternate_list(
+    html_cycle_list(
       ul,
       html_li,
       [noop, html_style_code],
@@ -92,7 +92,7 @@ export function lesson_variable() {
         " )",
       ],
     );
-    html_style_alternate_list(
+    html_cycle_list(
       ul,
       html_li,
       [noop, html_style_code],
@@ -110,13 +110,13 @@ export function lesson_variable() {
         " )",
       ],
     );
-    html_style_alternate_list(
+    html_cycle_list(
       ul,
       html_li,
       [noop, html_style_code],
       ["underscores ( ", "_", " )"],
     );
-    html_style_alternate_list(
+    html_cycle_list(
       ul,
       html_li,
       [noop, html_style_code],
@@ -135,7 +135,7 @@ export function lesson_variable() {
     html_p_text(parent, "variable names cannot begin with a number");
     html_hr(parent);
     html_p_text(parent, "in a variable name , the case of the letters matter");
-    html_style_alternate_list(
+    html_cycle_list(
       parent,
       html_p,
       [noop, html_style_code],
@@ -151,7 +151,7 @@ export function lesson_variable() {
     );
     html_hr(parent);
     html_p_text(parent, "some words cannot be used as variables");
-    html_style_alternate_list(
+    html_cycle_list(
       parent,
       html_p,
       [noop, html_style_code],
@@ -169,7 +169,7 @@ export function lesson_variable() {
     );
   }
   function screen5(parent) {
-    html_style_alternate_list(
+    html_cycle_list(
       parent,
       html_p,
       [noop, html_style_code],
@@ -184,7 +184,7 @@ export function lesson_variable() {
       parent,
       "after telling javascript about a variable , eventually variables should be given a value",
     );
-    html_style_alternate_list(
+    html_cycle_list(
       parent,
       html_p,
       [noop, html_style_code],
@@ -198,13 +198,13 @@ export function lesson_variable() {
     );
     app_learn_code_code_part_contrast(parent, "variable_name = 123;");
     html_p_text(parent, "in math x = y says x and y are equal");
-    html_style_alternate_list(
+    html_cycle_list(
       parent,
       html_p,
       [noop, html_style_code],
       ["in javascript , ", "=", " does not check if two things are equal"],
     );
-    html_style_alternate_list(
+    html_cycle_list(
       parent,
       html_p,
       [noop, html_style_code],

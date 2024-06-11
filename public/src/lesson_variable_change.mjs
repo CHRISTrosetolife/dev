@@ -1,8 +1,8 @@
+import { html_cycle_monospace } from "./html_cycle_monospace.mjs";
 import { app_learn_code_unique } from "./app_learn_code_unique.mjs";
 import { string_delimit_if } from "./string_delimit_if.mjs";
 import { string_to } from "./string_to.mjs";
 import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
-import { html_style_alternate_monospace } from "./html_style_alternate_monospace.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { lesson_variable_code_get } from "./lesson_variable_code_get.mjs";
 import { app_learn_code_random_value } from "./app_learn_code_random_value.mjs";
@@ -33,7 +33,7 @@ ${app_learn_code_log(name)}`;
     let value = app_learn_code_random_value();
     let value_string = string_delimit_if(value);
     value_string = string_to(value);
-    html_style_alternate_monospace(parent, [
+    html_cycle_monospace(parent, [
       "here is code that will set the value of a variable named ",
       name,
       " to a value of ",
@@ -44,7 +44,7 @@ ${app_learn_code_log(name)}`;
       parent,
       js_code_statement_assign(name, value),
     );
-    html_style_alternate_monospace(parent, [
+    html_cycle_monospace(parent, [
       "if ",
       name,
       " already has a value , and ",
@@ -56,7 +56,7 @@ ${app_learn_code_log(name)}`;
       " will be changed to ",
       value,
     ]);
-    html_style_alternate_monospace(parent, [
+    html_cycle_monospace(parent, [
       "",
       "=",
       " can be used to change the value of a variable",

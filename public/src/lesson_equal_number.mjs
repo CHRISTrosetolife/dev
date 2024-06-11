@@ -1,4 +1,4 @@
-import { html_style_alternate_list } from "./html_style_alternate_list.mjs";
+import { html_cycle_list } from "./html_cycle_list.mjs";
 import { html_style_code } from "./html_style_code.mjs";
 import { integer_random_digit_single_positive } from "./integer_random_digit_single_positive.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
@@ -61,7 +61,7 @@ export function lesson_equal_number() {
     html_li_text(ul, "6 = -6 is false");
   }
   function example_before(parent) {
-    html_style_alternate_list(
+    html_cycle_list(
       parent,
       html_p,
       [noop, html_style_code],

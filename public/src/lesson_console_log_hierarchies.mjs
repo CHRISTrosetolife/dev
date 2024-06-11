@@ -1,4 +1,4 @@
-import { html_style_alternate_list } from "./html_style_alternate_list.mjs";
+import { html_cycle_list } from "./html_cycle_list.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { noop } from "./noop.mjs";
 import { html_p } from "./html_p.mjs";
@@ -10,13 +10,13 @@ export async function lesson_console_log_hierarchies(parent) {
   html_p_text(parent, "sentences have phrases");
   html_p_text(parent, "paragraphs have sentences");
   html_p_text(parent, "and so on");
-  html_style_alternate_list(
+  html_cycle_list(
     parent,
     html_p,
     [noop, html_style_bold],
     ["this is a ", "hierarchy"],
   );
-  html_style_alternate_list(
+  html_cycle_list(
     parent,
     html_p,
     [noop, html_style_bold],

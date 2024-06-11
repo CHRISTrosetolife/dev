@@ -1,5 +1,6 @@
+import { html_cycle_monospace_short } from "./html_cycle_monospace_short.mjs";
+import { html_cycle_monospace_short_span } from "./html_cycle_monospace_short_span.mjs";
 import { html_button_run_message } from "./html_button_run_message.mjs";
-import { html_style_alternate_monospace_short_span } from "./html_style_alternate_monospace_short_span.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_includes_not } from "./list_includes_not.mjs";
@@ -23,7 +24,6 @@ import { function_read } from "./function_read.mjs";
 import { each } from "./each.mjs";
 import { app_dev_sandbox_message } from "./app_dev_sandbox_message.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -37,7 +37,7 @@ export async function app_dev_sandbox_function_multiple(
   run_click,
 ) {
   html_hr(root);
-  html_style_alternate_monospace_short(
+  html_cycle_monospace_short(
     root,
     string_combine_multiple([app_dev_sandbox_message(), try_out_message, " :"]),
   );
@@ -66,7 +66,7 @@ export async function app_dev_sandbox_function_multiple(
     let value_initial = await function_read(fn_name);
     html_value_set(textarea, value_initial);
     html_clear(b);
-    html_style_alternate_monospace_short_span(
+    html_cycle_monospace_short_span(
       b,
       html_button_run_message(run_message(fn_name)),
     );

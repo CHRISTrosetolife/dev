@@ -1,4 +1,4 @@
-import { html_style_alternate_list } from "./html_style_alternate_list.mjs";
+import { html_cycle_list } from "./html_cycle_list.mjs";
 import { html_style_code } from "./html_style_code.mjs";
 import { app_learn_code_code } from "./app_learn_code_code.mjs";
 import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
@@ -8,7 +8,7 @@ import { html_p } from "./html_p.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { html_style_monospace } from "./html_style_monospace.mjs";
 export function lesson_console_log_program_first(parent) {
-  html_style_alternate_list(
+  html_cycle_list(
     parent,
     html_p,
     [noop, html_style_code],
@@ -20,13 +20,13 @@ export function lesson_console_log_program_first(parent) {
     parent,
     "right now there are no inputs for this process , so there is nothing in between the parentheses",
   );
-  html_style_alternate_list(
+  html_cycle_list(
     parent,
     html_p,
     [noop, html_style_code],
     ["suppose there is a string ", "'hello'"],
   );
-  html_style_alternate_list(
+  html_cycle_list(
     parent,
     html_p,
     [noop, html_style_code],
@@ -49,7 +49,7 @@ export function lesson_console_log_program_first(parent) {
     parent,
     "here is the finished computer program and the output of the computer program :",
   );
-  html_style_alternate_list(
+  html_cycle_list(
     parent,
     html_p,
     [noop, html_style_bold],

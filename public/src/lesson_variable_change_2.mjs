@@ -1,7 +1,7 @@
+import { html_cycle_monospace } from "./html_cycle_monospace.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 import { app_learn_code_unique } from "./app_learn_code_unique.mjs";
 import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
-import { html_style_alternate_monospace } from "./html_style_alternate_monospace.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { app_learn_code_random_value } from "./app_learn_code_random_value.mjs";
 import { app_learn_code_random_identifier } from "./app_learn_code_random_identifier.mjs";
@@ -26,16 +26,16 @@ ${app_learn_code_log(name)}`;
   );
   function example_before(parent) {}
   function screen1(parent) {
-    html_style_alternate_monospace(parent, [
+    html_cycle_monospace(parent, [
       "every time a variable is assigned a different value , the value of the variable changes",
     ]);
-    html_style_alternate_monospace(parent, [
+    html_cycle_monospace(parent, [
       "",
       "console.log(variable_name);",
       " will output the most recent and last value of ",
       "variable_name",
     ]);
-    html_style_alternate_monospace(parent, [
+    html_cycle_monospace(parent, [
       "if ",
       "variable_name",
       " has had multiple assignments , ",

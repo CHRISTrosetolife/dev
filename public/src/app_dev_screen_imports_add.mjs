@@ -1,3 +1,5 @@
+import { html_cycle_monospace_short } from "./html_cycle_monospace_short.mjs";
+import { html_cycle_monospace_short_span } from "./html_cycle_monospace_short_span.mjs";
 import { app_dev_p_transformer } from "./app_dev_p_transformer.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
 import { js_code_format } from "./js_code_format.mjs";
@@ -7,11 +9,9 @@ import { app_dev_sandbox_function } from "./app_dev_sandbox_function.mjs";
 import { log } from "./log.mjs";
 import { js_code_statement_call_args } from "./js_code_statement_call_args.mjs";
 import { function_name_new } from "./function_name_new.mjs";
-import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
 import { js_imports_add } from "./js_imports_add.mjs";
 import { function_transform } from "./function_transform.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
-import { html_style_alternate_monospace_short_span } from "./html_style_alternate_monospace_short_span.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { file_write } from "./file_write.mjs";
@@ -21,13 +21,10 @@ import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
 export function app_dev_screen_imports_add() {
   return {
     name: function imports_add_name(root) {
-      return html_style_alternate_monospace_short_span(
-        root,
-        "add missing `import`s",
-      );
+      return html_cycle_monospace_short_span(root, "add missing `import`s");
     },
     screen: async function imports_add_screen(root) {
-      html_style_alternate_monospace_short(
+      html_cycle_monospace_short(
         root,
         "if we have a `function` that calls another `function` ...",
       );
@@ -35,7 +32,7 @@ export function app_dev_screen_imports_add() {
       app_dev_screen_img(app_dev_screen_imports_add, root, i++);
       app_dev_p_transformer(root, js_imports_add);
       app_dev_screen_img(app_dev_screen_imports_add, root, i++);
-      html_style_alternate_monospace_short(
+      html_cycle_monospace_short(
         root,
         "... then any missing `import`s will be added :",
       );

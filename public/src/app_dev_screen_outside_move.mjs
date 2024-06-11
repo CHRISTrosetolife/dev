@@ -1,4 +1,5 @@
-import { html_style_alternate_monospace_short_span } from "./html_style_alternate_monospace_short_span.mjs";
+import { html_cycle_monospace_short } from "./html_cycle_monospace_short.mjs";
+import { html_cycle_monospace_short_span } from "./html_cycle_monospace_short_span.mjs";
 import { app_dev_sandbox_function_multiple } from "./app_dev_sandbox_function_multiple.mjs";
 import { function_name_new } from "./function_name_new.mjs";
 import { js_code_return } from "./js_code_return.mjs";
@@ -14,21 +15,20 @@ import { function_name_to_path } from "./function_name_to_path.mjs";
 import { js_code_format } from "./js_code_format.mjs";
 import { js_code_statement_call_args } from "./js_code_statement_call_args.mjs";
 import { js_code_export_function_declare } from "./js_code_export_function_declare.mjs";
-import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
 import { app_dev_p_transformer } from "./app_dev_p_transformer.mjs";
 import { js_outside_move } from "./js_outside_move.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 export function app_dev_screen_outside_move() {
   return {
     name: function outside_move_name(root) {
-      return html_style_alternate_monospace_short_span(
+      return html_cycle_monospace_short_span(
         root,
         "moving `function`s to their own file",
       );
     },
     screen: async function outside_move_screen(root) {
       let i = 1;
-      html_style_alternate_monospace_short(
+      html_cycle_monospace_short(
         root,
         "if we have `function`s in the module scope ...",
       );
@@ -36,7 +36,7 @@ export function app_dev_screen_outside_move() {
       let fn = js_outside_move;
       app_dev_p_transformer(root, fn);
       app_dev_screen_img(app_dev_screen_outside_move, root, i++);
-      html_style_alternate_monospace_short(
+      html_cycle_monospace_short(
         root,
         "... then the `function`s will be moved to their own files and the `import`s will be fixed in all files ...",
       );

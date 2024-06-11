@@ -1,5 +1,7 @@
+import { html_cycle_short_p } from "./html_cycle_short_p.mjs";
+import { html_cycle_monospace_short } from "./html_cycle_monospace_short.mjs";
+import { html_cycle_monospace_short_span } from "./html_cycle_monospace_short_span.mjs";
 import { html_style_code } from "./html_style_code.mjs";
-import { html_style_alternate_monospace_short_span } from "./html_style_alternate_monospace_short_span.mjs";
 import { function_transform } from "./function_transform.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
@@ -11,7 +13,6 @@ import { js_code_import } from "./js_code_import.mjs";
 import { js_code_statement_call_args } from "./js_code_statement_call_args.mjs";
 import { js_code_export_function_declare } from "./js_code_export_function_declare.mjs";
 import { function_name_new } from "./function_name_new.mjs";
-import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
 import { app_dev_p_transformer_generic } from "./app_dev_p_transformer_generic.mjs";
 import { js_await_add } from "./js_await_add.mjs";
 import { sleep } from "./sleep.mjs";
@@ -20,16 +21,12 @@ import { url_secure } from "./url_secure.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { html_style_function_name } from "./html_style_function_name.mjs";
 import { noop } from "./noop.mjs";
-import { html_style_alternate_short_p } from "./html_style_alternate_short_p.mjs";
 import { timeout_set } from "./timeout_set.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 export function app_dev_screen_await_add() {
   return {
     name: function await_add_name(root) {
-      return html_style_alternate_monospace_short_span(
-        root,
-        "adding missing `await`s",
-      );
+      return html_cycle_monospace_short_span(root, "adding missing `await`s");
     },
     screen: async function await_add_screen(root) {
       let i = 1;
@@ -37,7 +34,7 @@ export function app_dev_screen_await_add() {
         url_secure(),
         "developer.mozilla.org/en-US/docs/Web/API/setTimeout",
       );
-      html_style_alternate_short_p(
+      html_cycle_short_p(
         root,
         [
           noop,
@@ -50,7 +47,7 @@ export function app_dev_screen_await_add() {
         "`" + timeout_set.name + "` is a `function` that calls `setTimeout` :",
       );
       app_dev_screen_img(app_dev_screen_await_add, root, i++);
-      html_style_alternate_short_p(
+      html_cycle_short_p(
         root,
         [
           noop,
@@ -67,7 +64,7 @@ export function app_dev_screen_await_add() {
           "` :",
       );
       app_dev_screen_img(app_dev_screen_await_add, root, i++);
-      html_style_alternate_short_p(
+      html_cycle_short_p(
         root,
         [
           noop,
@@ -87,12 +84,12 @@ export function app_dev_screen_await_add() {
       let fn = js_await_add;
       app_dev_p_transformer_generic(root, fn, "instead , if");
       app_dev_screen_img(app_dev_screen_await_add, root, i++);
-      html_style_alternate_monospace_short(
+      html_cycle_monospace_short(
         root,
         "... then `await` will automatically be added and the `function` will be made `async` :",
       );
       app_dev_screen_img(app_dev_screen_await_add, root, i++);
-      html_style_alternate_short_p(
+      html_cycle_short_p(
         root,
         [
           noop,

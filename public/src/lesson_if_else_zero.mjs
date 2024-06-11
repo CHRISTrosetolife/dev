@@ -1,6 +1,6 @@
+import { html_cycle_monospace } from "./html_cycle_monospace.mjs";
 import { app_learn_code_log_delimit } from "./app_learn_code_log_delimit.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
-import { html_style_alternate_monospace } from "./html_style_alternate_monospace.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
 import { random_50_50 } from "./random_50_50.mjs";
 import { integer_random_digit_single } from "./integer_random_digit_single.mjs";
@@ -30,7 +30,7 @@ export function lesson_if_else_zero() {
     [],
   );
   function example_before(parent) {
-    html_style_alternate_monospace(parent, [
+    html_cycle_monospace(parent, [
       "",
       "if",
       " and ",

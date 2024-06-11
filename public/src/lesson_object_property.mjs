@@ -1,9 +1,9 @@
-import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
+import { html_cycle_monospace_short } from "./html_cycle_monospace_short.mjs";
+import { html_cycle_monospace_short_multiple } from "./html_cycle_monospace_short_multiple.mjs";
+import { html_cycle_bold_short } from "./html_cycle_bold_short.mjs";
 import { app_learn_code_code_part_contrast } from "./app_learn_code_code_part_contrast.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
-import { html_style_alternate_bold_short } from "./html_style_alternate_bold_short.mjs";
-import { html_style_alternate_monospace_short_multiple } from "./html_style_alternate_monospace_short_multiple.mjs";
 import { app_learn_code_random_identifier } from "./app_learn_code_random_identifier.mjs";
 import { integer_random_digit_single_positive } from "./integer_random_digit_single_positive.mjs";
 import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
@@ -38,11 +38,8 @@ export function lesson_object_property() {
   function screen1(parent) {
     let a = app_learn_code_random_identifier();
     html_p_text(parent, "a variable stores one value");
-    html_style_alternate_bold_short(
-      parent,
-      "an `object` can store more than one value",
-    );
-    html_style_alternate_monospace_short_multiple(parent, [
+    html_cycle_bold_short(parent, "an `object` can store more than one value");
+    html_cycle_monospace_short_multiple(parent, [
       "`{}` creates a new object",
       "here is code to create a new object and assign the newly created object to a variable: ",
     ]);
@@ -52,7 +49,7 @@ export function lesson_object_property() {
     );
   }
   function screen2(parent) {
-    html_style_alternate_bold_short(
+    html_cycle_bold_short(
       parent,
       "an object can have its own variables called `properties`",
     );
@@ -68,7 +65,7 @@ export function lesson_object_property() {
       js_code_statement_assign(js_code_dot(a, b), c),
     ];
     app_learn_code_code_part_contrast(parent, list_join_newline(lines));
-    html_style_alternate_monospace_short(
+    html_cycle_monospace_short(
       parent,
       `in this code , the property name is \`${b}\` and the property value is \`${c}\``,
     );

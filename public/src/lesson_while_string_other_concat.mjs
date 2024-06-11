@@ -1,5 +1,5 @@
+import { html_cycle_monospace_short } from "./html_cycle_monospace_short.mjs";
 import { app_learn_code_log_join_plus } from "./app_learn_code_log_join_plus.mjs";
-import { html_style_alternate_monospace_short } from "./html_style_alternate_monospace_short.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { app_learn_code_random_identifier } from "./app_learn_code_random_identifier.mjs";
@@ -28,15 +28,15 @@ export function lesson_while_string_other_concat() {
   );
   function example_before(parent) {}
   function screen1(parent) {
-    html_style_alternate_monospace_short(
+    html_cycle_monospace_short(
       parent,
       "remember , in javascript ,  if `a` and `b` are strings then `a + b` will combine the two strings together",
     );
-    html_style_alternate_monospace_short(
+    html_cycle_monospace_short(
       parent,
       "however , if `a` is a string and `b` is not a string then `a + b` will first convert `b` to a string and then combine the two strings",
     );
-    html_style_alternate_monospace_short(
+    html_cycle_monospace_short(
       parent,
       "similarly , if `b` is a string and `a` is not a string then `a + b` will first convert `a` to a string and then combine the two strings",
     );
