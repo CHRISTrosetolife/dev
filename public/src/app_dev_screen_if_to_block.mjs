@@ -12,6 +12,8 @@ export function app_dev_screen_if_to_block() {
       "if there is an `if` statement ...";
       let i = 1;
       app_dev_screen_img(app_dev_screen_if_to_block, root, i++);
+      let fn = js_if_to_block;
+      app_dev_p_transformer(root, fn);
     },
   };
 }
