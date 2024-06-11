@@ -17,8 +17,8 @@ export function app_dev_screen_if_to_block() {
         html_style_link(
           `https://google.github.io/styleguide/jsguide.html#formatting-braces-all`,
         ),
+        "the `google javascript style guide` , for example , generally requires that `if` statements be blocks",
       ]);
-      ("the `google javascript style guide` , for example , generally requires that `if` statements be blocks");
       html_cycle_code(
         root,
         "if there is an `if` statement that is not a block ...",
