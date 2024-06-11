@@ -1,4 +1,3 @@
-import { sleep } from "./sleep.mjs";
 import { log } from "./log.mjs";
 import { js_code_import } from "./js_code_import.mjs";
 import { function_auto_results } from "./function_auto_results.mjs";
@@ -58,7 +57,6 @@ export function app_dev_screen_function_auto() {
         fn_a,
         "",
         string_combine_multiple([
-          js_code_statement_call_args(sleep.name, [100]),
           js_code_return(js_code_call_args(fn_b, ["1", "2", "3"])),
         ]),
         false,
