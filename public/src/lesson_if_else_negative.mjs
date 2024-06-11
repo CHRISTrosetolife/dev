@@ -1,4 +1,4 @@
-import { html_cycle_monospace } from "./html_cycle_monospace.mjs";
+import { html_cycle_monospace_list } from "./html_cycle_monospace_list.mjs";
 import { html_cycle_bold_list } from "./html_cycle_bold_list.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_learn_code_log_delimit } from "./app_learn_code_log_delimit.mjs";
@@ -44,7 +44,7 @@ export function lesson_if_else_negative() {
       "negative",
       " if the number is less than zero",
     ]);
-    html_cycle_monospace(parent, [
+    html_cycle_monospace_list(parent, [
       "",
       "if",
       " and ",

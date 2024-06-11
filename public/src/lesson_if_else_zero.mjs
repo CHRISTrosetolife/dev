@@ -1,4 +1,4 @@
-import { html_cycle_monospace } from "./html_cycle_monospace.mjs";
+import { html_cycle_monospace_list } from "./html_cycle_monospace_list.mjs";
 import { app_learn_code_log_delimit } from "./app_learn_code_log_delimit.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
@@ -30,7 +30,7 @@ export function lesson_if_else_zero() {
     [],
   );
   function example_before(parent) {
-    html_cycle_monospace(parent, [
+    html_cycle_monospace_list(parent, [
       "",
       "if",
       " and ",

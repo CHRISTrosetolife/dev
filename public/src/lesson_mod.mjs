@@ -1,4 +1,4 @@
-import { html_cycle_monospace } from "./html_cycle_monospace.mjs";
+import { html_cycle_monospace_list } from "./html_cycle_monospace_list.mjs";
 import { html_cycle_bold_list } from "./html_cycle_bold_list.mjs";
 import { mod } from "./mod.mjs";
 import { floor } from "./floor.mjs";
@@ -38,7 +38,7 @@ export function lesson_mod() {
     [screen1, screen2, screen3],
   );
   function example_before(parent) {
-    html_cycle_monospace(parent, [
+    html_cycle_monospace_list(parent, [
       "in javascript , to get the remainder of ",
       "dividend",
       " use ",

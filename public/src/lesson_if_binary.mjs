@@ -1,4 +1,4 @@
-import { html_cycle_monospace } from "./html_cycle_monospace.mjs";
+import { html_cycle_monospace_list } from "./html_cycle_monospace_list.mjs";
 import { app_learn_code_random_boolean_binary } from "./app_learn_code_random_boolean_binary.mjs";
 import { list_join } from "./list_join.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
@@ -26,7 +26,7 @@ ${lesson_console_log_quiz()}
   );
   function example_before() {}
   function screen2(parent) {
-    html_cycle_monospace(parent, [
+    html_cycle_monospace_list(parent, [
       "inside the parenthesis of an ",
       "if",
       " can be more than just ",
@@ -34,7 +34,7 @@ ${lesson_console_log_quiz()}
       " and ",
       "false",
     ]);
-    html_cycle_monospace(parent, [
+    html_cycle_monospace_list(parent, [
       "remember ",
       "<",
       " , ",
@@ -52,7 +52,7 @@ ${lesson_console_log_quiz()}
       " or ",
       "false",
     ]);
-    html_cycle_monospace(parent, [
+    html_cycle_monospace_list(parent, [
       "therefore inside the parenthesis of an ",
       "if",
       " could be one of those",

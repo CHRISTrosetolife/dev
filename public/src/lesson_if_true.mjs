@@ -1,4 +1,4 @@
-import { html_cycle_monospace } from "./html_cycle_monospace.mjs";
+import { html_cycle_monospace_list } from "./html_cycle_monospace_list.mjs";
 import { html_cycle_list } from "./html_cycle_list.mjs";
 import { html_style_code } from "./html_style_code.mjs";
 import { app_learn_code_log_random_value } from "./app_learn_code_log_random_value.mjs";
@@ -31,18 +31,18 @@ ${app_learn_code_log_random_value()}
     [screen1, screen2, screen3],
   );
   function example_before(parent) {
-    html_cycle_monospace(parent, [
+    html_cycle_monospace_list(parent, [
       "in the example below , ",
       "true",
       " is in between the parentheses of the ",
       "if",
     ]);
-    html_cycle_monospace(parent, [
+    html_cycle_monospace_list(parent, [
       "therefore what is inside the braces of the ",
       "if",
       " is ran",
     ]);
-    html_cycle_monospace(parent, [
+    html_cycle_monospace_list(parent, [
       "therefore all three ",
       "console.log();",
       " statements are ran",
@@ -62,12 +62,12 @@ ${app_learn_code_log_random_value()}
     html_p_text(parent, "otherwise they are free to use a pen");
   }
   function screen2(parent) {
-    html_cycle_monospace(parent, [
+    html_cycle_monospace_list(parent, [
       'in programming , sometimes there is need to code : if "a" is ',
       "true",
       ' , then do "b"',
     ]);
-    html_cycle_monospace(parent, [
+    html_cycle_monospace_list(parent, [
       '"b" is something that should happen only if "a" is ',
       "true",
     ]);
@@ -86,7 +86,7 @@ use_pencil = true;
 }`,
     );
     html_hr(parent);
-    html_cycle_monospace(parent, [
+    html_cycle_monospace_list(parent, [
       "after the ",
       "if",
       " there should be a pair of parentheses : ",
@@ -94,13 +94,13 @@ use_pencil = true;
       " ",
       ")",
     ]);
-    html_cycle_monospace(parent, [
+    html_cycle_monospace_list(parent, [
       "for now , in between the parentheses there should be something that results in either ",
       "true",
       " or ",
       "false",
     ]);
-    html_cycle_monospace(parent, [
+    html_cycle_monospace_list(parent, [
       "javascript allows other values besides ",
       "true",
       " and ",
@@ -122,7 +122,7 @@ use_pencil = true;
         "}",
       ],
     );
-    html_cycle_monospace(parent, [
+    html_cycle_monospace_list(parent, [
       "in between the braces should be the code that should be ran if what is in between the parenthesis is ",
       "true",
     ]);

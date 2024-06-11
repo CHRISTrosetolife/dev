@@ -1,4 +1,4 @@
-import { html_cycle_monospace } from "./html_cycle_monospace.mjs";
+import { html_cycle_monospace_list } from "./html_cycle_monospace_list.mjs";
 import { html_cycle_bold_list } from "./html_cycle_bold_list.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 import { string_delimit_if } from "./string_delimit_if.mjs";
@@ -34,7 +34,7 @@ ${app_learn_code_log(name)}`;
     let value = app_learn_code_random_value();
     let value_string = string_delimit_if(value);
     value_string = string_to(value);
-    html_cycle_monospace(parent, [
+    html_cycle_monospace_list(parent, [
       "remember the code to tell javascript about a variable named ",
       name,
       " :",
@@ -46,7 +46,7 @@ ${app_learn_code_log(name)}`;
       " a variable",
     ]);
     html_hr(parent);
-    html_cycle_monospace(parent, [
+    html_cycle_monospace_list(parent, [
       "remember the code to give ",
       name,
       " a value of ",

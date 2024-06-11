@@ -1,4 +1,4 @@
-import { html_cycle_monospace } from "./html_cycle_monospace.mjs";
+import { html_cycle_monospace_list } from "./html_cycle_monospace_list.mjs";
 import { lesson_divide_numbers } from "./lesson_divide_numbers.mjs";
 import { list_join } from "./list_join.mjs";
 import { call_multiple } from "./call_multiple.mjs";
@@ -47,7 +47,7 @@ export function lesson_variable_binary() {
     [],
   );
   function example_before(parent) {
-    html_cycle_monospace(parent, [
+    html_cycle_monospace_list(parent, [
       "a variable can be assigned the output of : ",
       "<",
       " ",
