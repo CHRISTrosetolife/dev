@@ -6,6 +6,7 @@ export async function functions_rename_if_starts_with(
   prefix_after,
 ) {
   let fns = await function_names();
-  await each_async(fns, (fn) => {});
-  function_rename;
+  await each_async(fns, (fn) => {
+    function_rename;
+  });
 }
