@@ -10,7 +10,7 @@ export async function functions_rename_if_starts_with(
   let fns = await function_names();
   await each_async(fns, (fn) => {
     if (string_starts_with(fn, prefix_before)) {
-      string_prefix_without();
+      string_prefix_without(fn, prefix_before);
       function_rename;
     }
   });
