@@ -4,6 +4,7 @@ export function function_aliases() {
     al: "function_aliases_generate",
     c: "function_copy",
     d: "data_update",
+    fd: "function_delete",
     n: "function_new",
     na: "function_new_args",
     o: "function_open",
