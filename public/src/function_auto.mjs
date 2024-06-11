@@ -1,4 +1,4 @@
-import { function_auto_after } from "./function_auto_after.mjs";
+import { function_auto_return } from "./function_auto_return.mjs";
 export async function function_auto(function_name) {
-  await function_auto_after(function_name);
+  await function_auto_return(function_name);
 }
