@@ -54,7 +54,7 @@ export function app_dev_screen_if_to_block() {
       let function_name_unique = await function_name_new("if_to_block");
       let contents_function = js_code_export_function_declare(
         function_name_unique,
-        "a",
+        "",
         list_join_empty([
           js_code_statement_assign("a", 1),
           js_code_statement_declare_assign("b", 2),
