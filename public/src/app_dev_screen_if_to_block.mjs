@@ -22,7 +22,7 @@ export function app_dev_screen_if_to_block() {
       app_dev_p_transformer(root, fn);
       html_style_alternate_monospace_short(
         root,
-        "... then the assignment will change to a `let` declaration assignment :",
+        "... then the statement will change to a block :",
       );
     },
   };
