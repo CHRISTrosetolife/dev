@@ -20,10 +20,12 @@ export function app_dev_screen_if_to_block() {
       app_dev_screen_img(app_dev_screen_if_to_block, root, i++);
       let fn = js_if_to_block;
       app_dev_p_transformer(root, fn);
+      app_dev_screen_img(app_dev_screen_if_to_block, root, i++);
       html_style_alternate_monospace_short(
         root,
         "... then the statement will change to a block :",
       );
+      app_dev_screen_img(app_dev_screen_if_to_block, root, i++);
     },
   };
 }
