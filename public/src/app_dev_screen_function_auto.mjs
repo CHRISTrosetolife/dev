@@ -1,3 +1,4 @@
+import { html_hr } from "./html_hr.mjs";
 import { app_dev_screen_if_to_block_if_else } from "./app_dev_screen_if_to_block_if_else.mjs";
 import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
 import { sleep } from "./sleep.mjs";
@@ -40,6 +41,7 @@ export function app_dev_screen_function_auto() {
           "` performs all these refactors at once",
         ]),
       );
+      html_hr(root);
       let fn_a = await function_name_new("auto");
       let fn_b = await function_name_new("auto_add");
       let fn_c = await function_name_new("auto_multiply");
