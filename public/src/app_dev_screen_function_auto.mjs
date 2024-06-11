@@ -1,3 +1,4 @@
+import { function_auto_results } from "./function_auto_results.mjs";
 import { function_auto } from "./function_auto.mjs";
 import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
 import { app_dev_sandbox_function_multiple } from "./app_dev_sandbox_function_multiple.mjs";
@@ -66,7 +67,7 @@ export function app_dev_screen_function_auto() {
           string_delimit_backtick(
             string_combine_multiple([fn.name, " ", fn_name]),
           ),
-        async (fn_name) => await fn(fn_name),
+        async (fn_name) => await function_auto_results(fn_name),
       );
     },
   };
