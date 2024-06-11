@@ -7,13 +7,14 @@ import { object_property_set } from "./object_property_set.mjs";
 import { log } from "./log.mjs";
 import { function_path_to_name } from "./function_path_to_name.mjs";
 import { folder_path_src } from "./folder_path_src.mjs";
-import chokidar from "chokidar";
 import { string_replace } from "./string_replace.mjs";
 import { file_read } from "./file_read.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { list_concat } from "./list_concat.mjs";
+import { import_node } from "./import_node.mjs";
 export async function watch() {
+  let chokidar = await import_node("chokidar");
   let cache = {};
   let watcher = start();
   function start() {
