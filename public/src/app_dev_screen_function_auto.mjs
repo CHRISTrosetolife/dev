@@ -1,3 +1,4 @@
+import { function_auto } from "./function_auto.mjs";
 import { function_transform } from "./function_transform.mjs";
 import { string_delimit_backtick } from "./string_delimit_backtick.mjs";
 import { app_dev_sandbox_function_multiple } from "./app_dev_sandbox_function_multiple.mjs";
@@ -30,6 +31,7 @@ export function app_dev_screen_function_auto() {
         root,
         "`function_auto` performs all these refactors at once",
       );
+      let fn = function_auto;
       let fn_a = await function_name_new("auto");
       let fn_b = await function_name_new("auto_add");
       let fn_c = await function_name_new("auto_multiply");
