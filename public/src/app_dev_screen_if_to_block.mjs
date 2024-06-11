@@ -18,6 +18,7 @@ import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 import { html_cycle_p } from "./html_cycle_p.mjs";
 import { html_style_link } from "./html_style_link.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
+import { string_delimit } from "./string_delimit.mjs";
 export function app_dev_screen_if_to_block() {
   return {
     name: function if_to_block_name(root) {
@@ -54,7 +55,7 @@ export function app_dev_screen_if_to_block() {
       let contents_function = js_code_export_function_declare(
         function_name_unique,
         "",
-        "if(0)" + js_code_call_args(log.name),
+        "if(0)" + js_code_call_args(log.name, string_delimit("code")),
         false,
       );
       let contents = await js_code_format(contents_function);
