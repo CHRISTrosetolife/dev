@@ -64,7 +64,7 @@ export function app_dev_screen_if_to_block() {
       await app_dev_sandbox_function(
         root,
         function_name_unique,
-        "adding `let`",
+        "adding braces to `if`",
         string_delimit_backtick(
           string_combine_multiple([
             function_transform.name,
