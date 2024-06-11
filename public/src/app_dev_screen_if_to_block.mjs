@@ -14,7 +14,7 @@ export function app_dev_screen_if_to_block() {
     screen: function if_to_block_screen(root) {
       html_style_alternate_monospace_short(
         root,
-        "if there is an `if` statement ...",
+        "if there is an `if` statement that is not a block ...",
       );
       let i = 1;
       app_dev_screen_img(app_dev_screen_if_to_block, root, i++);
