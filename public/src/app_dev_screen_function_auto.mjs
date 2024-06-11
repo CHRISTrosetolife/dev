@@ -23,6 +23,7 @@ import { function_name_new } from "./function_name_new.mjs";
 import { html_cycle_code } from "./html_cycle_code.mjs";
 import { html_cycle_function_name } from "./html_cycle_function_name.mjs";
 import { html_span_text } from "./html_span_text.mjs";
+import { html_p_text } from "./html_p_text.mjs";
 export function app_dev_screen_function_auto() {
   return {
     name: function function_auto_name(root) {
@@ -52,6 +53,10 @@ export function app_dev_screen_function_auto() {
           fn.name,
           "` is called ",
         ]),
+      );
+      html_p_text(
+        root,
+        "just saving a file will perform all these refactors at once",
       );
       let fn_a = await function_name_new("auto");
       let fn_b = await function_name_new("auto_add");
