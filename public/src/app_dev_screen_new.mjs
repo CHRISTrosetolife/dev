@@ -17,7 +17,9 @@ import { js_code_statement_call_args } from "./js_code_statement_call_args.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { string_delimit } from "./string_delimit.mjs";
+import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export async function app_dev_screen_new(name) {
+  assert_arguments_length(arguments, 1);
   let screen_name = app_dev_screen_name(name);
   let root = "root";
   let image_index_name = "i";
