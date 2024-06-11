@@ -1,3 +1,4 @@
+import { watch } from "./watch.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { app_dev_screen_if_to_block_if_else } from "./app_dev_screen_if_to_block_if_else.mjs";
 import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
@@ -46,7 +47,7 @@ export function app_dev_screen_function_auto() {
         root,
         string_combine_multiple([
           "`",
-          fn.name,
+          watch.name,
           "` performs all these refactors at once",
         ]),
       );
