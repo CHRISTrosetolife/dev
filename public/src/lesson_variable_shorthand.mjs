@@ -1,4 +1,4 @@
-import { html_style_alternate_bold } from "./html_style_alternate_bold.mjs";
+import { html_style_alternate_bold_list } from "./html_style_alternate_bold_list.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 import { string_delimit_if } from "./string_delimit_if.mjs";
 import { string_to } from "./string_to.mjs";
@@ -40,7 +40,7 @@ ${app_learn_code_log(name)}`;
       " :",
     ]);
     app_learn_code_code_part_contrast(parent, js_code_statement_let(name));
-    html_style_alternate_bold(parent, [
+    html_style_alternate_bold_list(parent, [
       "this is called ",
       "declaring",
       " a variable",
@@ -57,7 +57,7 @@ ${app_learn_code_log(name)}`;
       parent,
       js_code_statement_assign(name, value),
     );
-    html_style_alternate_bold(parent, [
+    html_style_alternate_bold_list(parent, [
       "this is called ",
       "assigning",
       " a variable a value",

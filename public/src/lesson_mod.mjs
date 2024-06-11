@@ -1,7 +1,7 @@
+import { html_style_alternate_bold_list } from "./html_style_alternate_bold_list.mjs";
 import { mod } from "./mod.mjs";
 import { floor } from "./floor.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
-import { html_style_alternate_bold } from "./html_style_alternate_bold.mjs";
 import { html_style_alternate_monospace } from "./html_style_alternate_monospace.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { html_li_text } from "./html_li_text.mjs";
@@ -49,11 +49,11 @@ export function lesson_mod() {
   }
   function screen1(parent) {
     html_p_text(parent, "here is an example of division in math : a / b");
-    html_style_alternate_bold(parent, [
+    html_style_alternate_bold_list(parent, [
       'when a number ( like "a" ) is divided by another number ( like "b" ) , the first number is called the ',
       "dividend",
     ]);
-    html_style_alternate_bold(parent, [
+    html_style_alternate_bold_list(parent, [
       "the second number is called the ",
       "divisor",
     ]);

@@ -1,7 +1,7 @@
+import { html_style_alternate_bold_list } from "./html_style_alternate_bold_list.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_learn_code_log_delimit } from "./app_learn_code_log_delimit.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
-import { html_style_alternate_bold } from "./html_style_alternate_bold.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 import { html_style_alternate_monospace } from "./html_style_alternate_monospace.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
@@ -39,7 +39,7 @@ export function lesson_if_else_negative() {
     [],
   );
   function example_before(parent) {
-    html_style_alternate_bold(parent, [
+    html_style_alternate_bold_list(parent, [
       "a number is ",
       "negative",
       " if the number is less than zero",

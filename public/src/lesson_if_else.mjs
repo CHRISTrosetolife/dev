@@ -1,7 +1,7 @@
+import { html_style_alternate_bold_list } from "./html_style_alternate_bold_list.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { app_learn_code_random_boolean_binary } from "./app_learn_code_random_boolean_binary.mjs";
 import { app_learn_code_unique_multiple } from "./app_learn_code_unique_multiple.mjs";
-import { html_style_alternate_bold } from "./html_style_alternate_bold.mjs";
 import { html_style_alternate_monospace } from "./html_style_alternate_monospace.mjs";
 import { app_learn_code_log } from "./app_learn_code_log.mjs";
 import { app_learn_code_random_value } from "./app_learn_code_random_value.mjs";
@@ -40,7 +40,7 @@ export function lesson_if_else() {
       "*/",
       " is ignored",
     ]);
-    html_style_alternate_bold(parent, ["this is called a ", "comment"]);
+    html_style_alternate_bold_list(parent, ["this is called a ", "comment"]);
     html_p_text(parent, "comments are for humans and code is for computers");
     html_p_text(parent, "here is an example comment :");
     app_learn_code_code_part_contrast(parent, "/* console.log(0); */");
