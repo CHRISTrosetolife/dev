@@ -6,6 +6,6 @@ export async function function_auto_after(function_name) {
   let transforms = function_auto_transforms();
   let names = list_map_property(transforms, "name");
   let joined = list_join_comma(names);
-  let { after } = await function_transform_return(joined, function_name);//
+  let { after } = await function_transform_return(joined, function_name);
   return after;
 }
