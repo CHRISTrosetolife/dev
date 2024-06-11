@@ -1,3 +1,4 @@
+import { function_auto_after } from "./function_auto_after.mjs";
 import { folder_current_prefix_combine } from "./folder_current_prefix_combine.mjs";
 import { git_push } from "./git_push.mjs";
 import { list_join_space } from "./list_join_space.mjs";
@@ -11,7 +12,6 @@ import { string_replace } from "./string_replace.mjs";
 import { file_read } from "./file_read.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
-import { function_auto_return } from "./function_auto_return.mjs";
 import { list_concat } from "./list_concat.mjs";
 export async function watch() {
   let cache = {};
@@ -41,14 +41,14 @@ export async function watch() {
         return;
       }
       let function_name = function_path_to_name(path);
-      let fn = function_auto_return;
+      let fn = function_auto_after;
       let args = [function_name];
       let processed = false;
       let after;
       try {
         after = await fn(...args);
         processed = true;
-      } catch(e) {
+      } catch (e) {
         log("error while processing " + function_name);
         log(e);
       } finally {
