@@ -4,10 +4,7 @@ import { function_rename } from "./function_rename.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
-export async function functions_rename_if_starts_with_remove(
-  prefix,
-  prefix_after,
-) {
+export async function functions_rename_if_starts_with_remove(prefix, removal) {
   let fns = await function_names();
   await each_async(fns, async (fn) => {
     if (string_starts_with(fn, prefix)) {
