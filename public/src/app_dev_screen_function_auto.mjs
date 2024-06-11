@@ -30,9 +30,9 @@ export function app_dev_screen_function_auto() {
         root,
         "`function_auto` performs all these refactors at once",
       );
-      let fn_a = await function_name_new("outside_move");
-      let fn_b = await function_name_new("outside_move_add");
-      let fn_c = await function_name_new("outside_move_multiply");
+      let fn_a = await function_name_new("auto");
+      let fn_b = await function_name_new("auto_add");
+      let fn_c = await function_name_new("auto_multiply");
       let contents_c = js_code_function_declare(
         fn_c,
         "a,b",
