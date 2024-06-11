@@ -47,9 +47,9 @@ export function app_dev_screen_function_auto() {
       html_cycle_function_name(
         root,
         string_combine_multiple([
-          "if `",
+          "while `",
           watch.name,
-          "` is ran , then , every time a file is saved , `",
+          "` is running , then , every time a file is saved , `",
           fn.name,
           "` is called ",
         ]),
