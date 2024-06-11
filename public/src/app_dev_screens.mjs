@@ -1,3 +1,4 @@
+import { app_dev_screen_if_to_block } from "./app_dev_screen_if_to_block.mjs";
 import { app_dev_screen_assign_to_let } from "./app_dev_screen_assign_to_let.mjs";
 import { app_dev_screen_outside_move } from "./app_dev_screen_outside_move.mjs";
 import { app_dev_screen_await_add } from "./app_dev_screen_await_add.mjs";
@@ -24,6 +25,7 @@ export function app_dev_screens() {
   list_add(result, app_dev_screen_await_add);
   list_add(result, app_dev_screen_outside_move);
   list_add(result, app_dev_screen_assign_to_let);
+  list_add(result, app_dev_screen_if_to_block);
   marker();
   return result;
 }
