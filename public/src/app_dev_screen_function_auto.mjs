@@ -5,7 +5,7 @@ import { html_span_text } from "./html_span_text.mjs";
 export function app_dev_screen_function_auto() {
   return {
     name: function function_auto_name(root) {
-      return html_span_text(root, "function_auto");
+      return html_span_text(root, "perform all refactors at once");
     },
     screen: function function_auto_screen(root) {
       html_cycle_code(
