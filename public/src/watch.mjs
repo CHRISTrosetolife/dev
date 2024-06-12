@@ -16,12 +16,11 @@ import { import_node } from "./import_node.mjs";
 export async function watch() {
   let chokidar = await import_node("chokidar");
   let cache = {};
-  let watcher = start();
+  start();
   function start() {
     let result = chokidar.watch(folder_path_src()).on("all", on_watch);
     return result;
   }
-  let current = [];
   async function on_watch(event, path) {
     if (event === "change") {
       path = string_replace(path, "\\", "/");
