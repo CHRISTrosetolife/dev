@@ -67,8 +67,8 @@ export async function arc_sandbox() {
           }
         });
       });
-      log("here");
-      exit();
     });
+    log("here");
+    exit();
   });
 }
