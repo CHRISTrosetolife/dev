@@ -38,6 +38,9 @@ export async function arc_sandbox() {
       each([input, output], (io) => {
         let flattened = list_concat_multiple(io);
         let choices = string_count_lookup(flattened);
+        log({
+          choices,
+        });
         each_object(choices, (key, value) => {
           let p = integer_parse(key);
           if (value === 1) {
@@ -58,9 +61,6 @@ export async function arc_sandbox() {
               key,
             });
           }
-        });
-        log({
-          choices,
         });
       });
     });
