@@ -27,6 +27,7 @@ export async function arc_sandbox() {
         let length = list_length(io);
         let s = round(sqrt(length));
         let sq = s * s;
+        let e = equal(sq, length);
         assert(equal, [sq, length]);
       });
     });
