@@ -16,7 +16,7 @@ export async function arc_sandbox() {
     let o = await file_read_json(file);
     let { training, test } = o;
     log({
-      training,
+      o,
     });
     error(
       json_to({
