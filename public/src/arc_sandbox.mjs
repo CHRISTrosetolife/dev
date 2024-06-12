@@ -63,6 +63,7 @@ export async function arc_sandbox() {
           choices,
         });
       });
+      log("");
     });
     exit();
   });
