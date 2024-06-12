@@ -1,3 +1,4 @@
+import { each_object } from "./each_object.mjs";
 import { number_is } from "./number_is.mjs";
 import { exit } from "./exit.mjs";
 import { string_count_lookup } from "./string_count_lookup.mjs";
@@ -35,6 +36,7 @@ export async function arc_sandbox() {
       let choices_i = string_count_lookup(flattened_i);
       let flattened_o = list_concat_multiple(output);
       let choices_o = string_count_lookup(flattened_i);
+      each_object(choices_i, (key, value) => {});
       log({
         choices_i,
         choices_o,
