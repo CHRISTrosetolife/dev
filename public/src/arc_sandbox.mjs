@@ -11,6 +11,7 @@ import { folder_read } from "./folder_read.mjs";
 import { file_read_json } from "./file_read_json.mjs";
 import { assert } from "./assert.mjs";
 import { list_is } from "./list_is.mjs";
+import { list_unique } from "./list_unique.mjs";
 export async function arc_sandbox() {
   let training = string_combine(
     folder_downloads_repository("ARC-AGI"),
@@ -26,6 +27,7 @@ export async function arc_sandbox() {
       each([input, output], (io) => {
         assert_message(list_rectangular_is, [io]);
         let flattened = list_concat_multiple(input);
+        list_unique(flattened);
       });
       let flattened_i = list_concat_multiple(input);
       let choices_i = string_count_lookup(flattened_i);
