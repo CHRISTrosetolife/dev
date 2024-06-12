@@ -14,13 +14,13 @@ export async function arc_sandbox() {
   let files = await folder_read(training, ".json");
   each(files, async (file) => {
     let o = await file_read_json(file);
-    let { training, test } = o;
+    let { train, test } = o;
     log({
       o,
     });
     error(
       json_to({
-        training,
+        train,
       }),
     );
   });
