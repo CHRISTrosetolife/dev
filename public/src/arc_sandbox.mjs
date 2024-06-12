@@ -23,8 +23,8 @@ export async function arc_sandbox() {
       let { input, output } = t;
       each([input, output], (io) => {
         assert(list_is, [io]);
-        let length = list_length(io);
         let first = list_first(io);
+        let length = list_length(first);
         each(io, (row) =>
           assert_message_json(equal, [list_length(row), length], () => ({
             file,
