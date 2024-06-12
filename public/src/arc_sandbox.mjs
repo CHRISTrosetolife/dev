@@ -41,7 +41,7 @@ export async function arc_sandbox() {
           if (value === 1) {
             list_adder((la) => {
               each_index(io, (row, y) => {
-                each(io, (c, x) => {
+                each(row, (c, x) => {
                   if (c === key) {
                   }
                 });
