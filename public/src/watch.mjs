@@ -16,6 +16,7 @@ import { import_node } from "./import_node.mjs";
 export async function watch() {
   let chokidar = await import_node("chokidar");
   let cache = {};
+  let base = Promise.resolve();
   start();
   function start() {
     let result = chokidar.watch(folder_path_src()).on("all", on_watch);
