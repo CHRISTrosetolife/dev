@@ -1,3 +1,4 @@
+import { list_map } from "./list_map.mjs";
 import { arc_coordinates } from "./arc_coordinates.mjs";
 import { each_async } from "./each_async.mjs";
 import { integer_parse } from "./integer_parse.mjs";
@@ -45,6 +46,7 @@ export async function arc_sandbox() {
           let p = integer_parse(key);
           if (p !== 0) {
             let coordinates = arc_coordinates(io, p);
+            let xs = list_map(coordinates, "x");
             log({
               coordinates,
               key,
