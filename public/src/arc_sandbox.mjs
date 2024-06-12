@@ -1,3 +1,4 @@
+import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { error } from "./error.mjs";
 import { log } from "./log.mjs";
 import { list_rectangular_is } from "./list_rectangular_is.mjs";
@@ -25,6 +26,7 @@ export async function arc_sandbox() {
       each([input, output], (io) => {
         assert_message(list_rectangular_is, [io]);
       });
+      let flattened = list_concat_multiple(input);
       let choices = list_adder_unique((la) =>
         each(input, (row) => each(row, la)),
       );
