@@ -43,7 +43,7 @@ export async function arc_sandbox() {
           if (value === 1) {
             let coordinates = list_adder((la) => {
               each_index(io, (row, y) => {
-                each(row, (c, x) => {
+                each_index(row, (c, x) => {
                   if (c === p) {
                     la({
                       y,
