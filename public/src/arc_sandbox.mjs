@@ -1,3 +1,4 @@
+import { list_all } from "./list_all.mjs";
 import { assert_message } from "./assert_message.mjs";
 import { equal } from "./equal.mjs";
 import { each } from "./each.mjs";
@@ -25,11 +26,8 @@ export async function arc_sandbox() {
         assert(list_is, [io]);
         let first = list_first(io);
         let length = list_length(first);
-        each(io, (row) =>
-          assert_message(equal, [list_length(row), length], () => ({
-            file,
-          })),
-        );
+        list_all(io, (row) => equal(list_length(row), length));
+        assert_message();
       });
     });
   });
