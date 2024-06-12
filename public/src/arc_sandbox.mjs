@@ -47,11 +47,10 @@ export async function arc_sandbox() {
           let p = integer_parse(key);
           if (p !== 0) {
             let coordinates = arc_coordinates(io, p);
-            let property = "x";
-            let xs = arc_coordinates_generic(coordinates, property);
-            let ys = list_map_property(coordinates, "y");
+            let xs = arc_coordinates_generic(coordinates, "x");
+            let ys = arc_coordinates_generic(coordinates, "y");
             log({
-              xs,
+              xs,ys,
               key,
             });
           }
