@@ -62,6 +62,7 @@ export async function arc_sandbox() {
             });
           }
         });
+        log("");
       });
     });
     exit();
