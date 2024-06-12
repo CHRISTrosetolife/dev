@@ -46,7 +46,7 @@ export async function arc_sandbox() {
           let p = integer_parse(key);
           if (p !== 0) {
             let coordinates = arc_coordinates(io, p);
-            let xs = list_map(coordinates, "x");
+            let xs = list_unique(list_map(coordinates, "x"));
             let ys = list_map(coordinates, "y");
             log({
               coordinates,
