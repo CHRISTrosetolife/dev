@@ -6,6 +6,7 @@ import { file_read_json } from "./file_read_json.mjs";
 import { error } from "./error.mjs";
 import { assert } from "./assert.mjs";
 import { list_is } from "./list_is.mjs";
+import { list_length } from "./list_length.mjs";
 export async function arc_sandbox() {
   let training = string_combine(
     folder_downloads_repository("ARC-AGI"),
@@ -20,6 +21,7 @@ export async function arc_sandbox() {
       let { input, output } = t;
       each([input, output], (io) => {
         assert(list_is, [io]);
+        let length = list_length(io);
       });
     });
     error();
