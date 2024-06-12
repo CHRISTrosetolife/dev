@@ -25,9 +25,6 @@ export async function arc_sandbox() {
   );
   let files = await folder_read(training, ".json");
   await each_async(files, async (file) => {
-    log({
-      file,
-    });
     let o = await file_read_json(file);
     let { train, test } = o;
     assert(list_is, [train]);
