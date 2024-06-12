@@ -1,3 +1,4 @@
+import { exit } from "./exit.mjs";
 import { string_count_lookup } from "./string_count_lookup.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { log } from "./log.mjs";
@@ -34,6 +35,6 @@ export async function arc_sandbox() {
         choices_o,
       });
     });
-    process.exit(0);
+    exit();
   });
 }
