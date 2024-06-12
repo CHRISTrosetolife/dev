@@ -27,7 +27,8 @@ export async function arc_sandbox() {
       each([input, output], (io) => {
         assert_message(list_rectangular_is, [io]);
         let flattened = list_concat_multiple(input);
-        list_unique(flattened);
+        let u = list_unique(flattened);
+        each(f);
       });
       let flattened_i = list_concat_multiple(input);
       let choices_i = string_count_lookup(flattened_i);
