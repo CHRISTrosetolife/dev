@@ -1,7 +1,5 @@
+import { strng_trim } from "./strng_trim.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
-import { string_take_less_1 } from "./string_take_less_1.mjs";
-import { string_ends_with_multiple } from "./string_ends_with_multiple.mjs";
-import { string_starts_with_multiple } from "./string_starts_with_multiple.mjs";
 import { log } from "./log.mjs";
 import { bible_ceb_chapter } from "./bible_ceb_chapter.mjs";
 import { each_async } from "./each_async.mjs";
@@ -12,7 +10,6 @@ import { each } from "./each.mjs";
 import { string_symbols } from "./string_symbols.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { identity } from "./identity.mjs";
-import { string_skip } from "./string_skip.mjs";
 export async function ceb_bible_words_5() {
   let symbols = [
     "_",
@@ -61,12 +58,7 @@ export async function ceb_bible_words_5() {
           each(ceb, (v) =>
             each(v.tokens, (t) => {
               each(string_symbols(t), las);
-              while (string_starts_with_multiple(symbols, t)) {
-                t = string_skip(t, 1);
-              }
-              while (string_ends_with_multiple(symbols, t)) {
-                t = string_take_less_1(t);
-              }
+              t = strng_trim(t, symbols);
               if (string_empty_not_is(t)) {
                 law(t);
               }
