@@ -27,10 +27,12 @@ export async function arc_sandbox() {
         assert_message(list_rectangular_is, [io]);
       });
       let flattened_i = list_concat_multiple(input);
+      let choices_i = string_count_lookup(flattened_i);
       let flattened_o = list_concat_multiple(output);
-      let choices = string_count_lookup(flattened_i);
+      let choices_o = string_count_lookup(flattened_i);
       log({
-        choices,
+        choices_i,
+        choices_o,
       });
     });
     error();
