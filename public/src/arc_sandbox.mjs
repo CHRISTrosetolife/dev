@@ -20,7 +20,6 @@ export async function arc_sandbox() {
     each(train, (t) => {
       let { input, output } = t;
       each([input, output], (io) => {
-        assert(list_is, [io]);
         assert_message(list_rectangular_is, [io]);
       });
     });
