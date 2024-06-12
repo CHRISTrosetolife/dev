@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { each } from "./each.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { folder_downloads_repository } from "./folder_downloads_repository.mjs";
@@ -14,6 +15,9 @@ export async function arc_sandbox() {
   each(files, async (file) => {
     let o = await file_read_json(file);
     let { training, test } = o;
+    log({
+      training,
+    });
     error(
       json_to({
         training,
