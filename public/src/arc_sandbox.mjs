@@ -53,6 +53,7 @@ export async function arc_sandbox() {
             });
             log({
               coordinates,
+              key,
             });
           }
         });
