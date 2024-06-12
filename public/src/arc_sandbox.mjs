@@ -40,6 +40,8 @@ export async function arc_sandbox() {
         choices_o,
       });
     });
-    exit();
+    if (0) {
+      exit();
+    }
   });
 }
