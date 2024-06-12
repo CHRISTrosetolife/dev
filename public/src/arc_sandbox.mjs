@@ -1,3 +1,4 @@
+import { each_async } from "./each_async.mjs";
 import { integer_parse } from "./integer_parse.mjs";
 import { each_index } from "./each_index.mjs";
 import { each_object } from "./each_object.mjs";
@@ -23,7 +24,7 @@ export async function arc_sandbox() {
     "data\\training",
   );
   let files = await folder_read(training, ".json");
-  each(files, async (file) => {
+  await each_async(files, async (file) => {
     log({
       file,
     });
