@@ -6,6 +6,7 @@ import { string_count_words } from "./string_count_words.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each_async } from "./each_async.mjs";
 import { function_run } from "./function_run.mjs";
+import { list_join_empty } from "./list_join_empty.mjs";
 export async function ceb_bible_words() {
   let count = 5;
   let fn_names = list_map(range_1(count), (i) =>
@@ -17,7 +18,7 @@ export async function ceb_bible_words() {
       la(words);
     });
   });
-  string_symbols;
+  return string_symbols(list_join_empty(all));
   let c = string_count_words(all);
   return c;
 }
