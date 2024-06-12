@@ -1,3 +1,4 @@
+import { each_index } from "./each_index.mjs";
 import { each_object } from "./each_object.mjs";
 import { number_is } from "./number_is.mjs";
 import { exit } from "./exit.mjs";
@@ -39,7 +40,12 @@ export async function arc_sandbox() {
         each_object(choices, (key, value) => {
           if (value === 1) {
             list_adder((la) => {
-              each();
+              each_index(io, (row, y) => {
+                each(io, (c, x) => {
+                  if (c === key) {
+                  }
+                });
+              });
             });
           }
         });
