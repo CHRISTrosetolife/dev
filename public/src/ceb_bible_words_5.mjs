@@ -6,7 +6,7 @@ import { bible_books } from "./bible_books.mjs";
 import { list_adder_unique_async } from "./list_adder_unique_async.mjs";
 import { each } from "./each.mjs";
 export async function ceb_bible_words_5() {
-  let words = await list_adder_unique_async(async (law) => {
+  let words = await list_adder_unique_async(async (la) => {
     await each_async(await bible_books("engbsb"), async (book_name) => {
       let chapters = await bible_chapters("engbsb", book_name);
       await each_async(chapters, async (chapter_name) => {
@@ -16,7 +16,7 @@ export async function ceb_bible_words_5() {
         let { ceb } = await bible_ceb_chapter(chapter_name);
         each(ceb, (v) =>
           each(v.tokens, (t) => {
-            law(t);
+            la(t);
           }),
         );
       });
