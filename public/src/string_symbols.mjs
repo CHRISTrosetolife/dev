@@ -1,11 +1,5 @@
-import { each } from "./each.mjs";
-import { identity } from "./identity.mjs";
-import { list_adder_unique } from "./list_adder_unique.mjs";
-import { list_join_empty } from "./list_join_empty.mjs";
-import { list_sort_string } from "./list_sort_string.mjs";
+import { string_symbols_multiple } from "./string_symbols_multiple.mjs";
 export function string_symbols(text) {
   let list = [text];
-  let s = list_adder_unique((la) => each(list, (item) => each(item, la)));
-  list_sort_string(s, identity);
-  return list_join_empty(s);
+  return string_symbols_multiple(list);
 }
