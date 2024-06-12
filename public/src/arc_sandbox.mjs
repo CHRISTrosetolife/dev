@@ -25,6 +25,7 @@ export async function arc_sandbox() {
         let length = list_length(io);
         assert_message_json(square_perfect_is, [length], () => ({
           file,
+          io,
         }));
       });
     });
