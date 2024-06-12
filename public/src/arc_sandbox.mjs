@@ -51,9 +51,8 @@ export async function arc_sandbox() {
             });
           }
         });
+        exit();
       });
-      log("here");
-      exit();
     });
   });
 }
