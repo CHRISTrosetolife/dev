@@ -16,7 +16,9 @@ export async function arc_sandbox() {
     let o = await file_read_json(file);
     let { train, test } = o;
     assert(list_is, [train]);
-    each(train, (t) => {});
+    each(train, (t) => {
+      let { input, output } = t;
+    });
     error();
   });
 }
