@@ -25,7 +25,9 @@ export async function arc_sandbox() {
       each([input, output], (io) => {
         assert_message(list_rectangular_is, [io]);
       });
-      let choices = list_adder_unique((la) => each(io, (row) => each(row, la)));
+      let choices = list_adder_unique((la) =>
+        each(input, (row) => each(row, la)),
+      );
       log({
         choices,
       });
