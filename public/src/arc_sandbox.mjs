@@ -18,6 +18,7 @@ import { file_read_json } from "./file_read_json.mjs";
 import { assert } from "./assert.mjs";
 import { list_is } from "./list_is.mjs";
 import { list_unique } from "./list_unique.mjs";
+import { list_sort } from "./list_sort.mjs";
 export async function arc_sandbox() {
   let training = string_combine(
     folder_downloads_repository("ARC-AGI"),
@@ -47,6 +48,7 @@ export async function arc_sandbox() {
           if (p !== 0) {
             let coordinates = arc_coordinates(io, p);
             let xs = list_unique(list_map(coordinates, "x"));
+            list_sort(xs);
             let ys = list_map(coordinates, "y");
             log({
               coordinates,
