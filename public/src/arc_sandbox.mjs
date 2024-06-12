@@ -1,3 +1,4 @@
+import { error } from "./error.mjs";
 import { log } from "./log.mjs";
 import { list_rectangular_is } from "./list_rectangular_is.mjs";
 import { assert_message } from "./assert_message.mjs";
@@ -28,6 +29,7 @@ export async function arc_sandbox() {
       log({
         choices,
       });
+      error();
     });
   });
 }
