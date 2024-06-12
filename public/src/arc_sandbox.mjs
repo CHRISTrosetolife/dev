@@ -6,5 +6,5 @@ export async function arc_sandbox() {
     folder_downloads_repository("ARC-AGI"),
     "data\\training",
   );
-  return await folder_read(training, ".json");
+  let files = await folder_read(training, ".json");
 }
