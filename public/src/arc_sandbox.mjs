@@ -45,7 +45,7 @@ export async function arc_sandbox() {
         });
         each_object(choices, (key, value) => {
           let p = integer_parse(key);
-          if (p !== 0) {
+          if (p !== 0) {//
             let coordinates = arc_coordinates(io, p);
             let xs = arc_coordinates_generic(coordinates, "x");
             let ys = arc_coordinates_generic(coordinates, "y");
