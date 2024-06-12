@@ -35,15 +35,11 @@ export async function arc_sandbox() {
       let choices_i = string_count_lookup(flattened_i);
       let flattened_o = list_concat_multiple(output);
       let choices_o = string_count_lookup(flattened_i);
-      if (0) {
-        log({
-          choices_i,
-          choices_o,
-        });
-      }
+      log({
+        choices_i,
+        choices_o,
+      });
     });
-    if (0) {
-      exit();
-    }
+    exit();
   });
 }
