@@ -51,7 +51,7 @@ export async function arc_sandbox() {
             list_sort(xs);
             let ys = list_map(coordinates, "y");
             log({
-              coordinates,
+              xs,
               key,
             });
           }
