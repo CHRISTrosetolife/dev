@@ -1,6 +1,4 @@
 import { each_index_only_async } from "./each_index_only_async.mjs";
-import { identity } from "./identity.mjs";
-import { list_sort_string } from "./list_sort_string.mjs";
 import { each } from "./each.mjs";
 import { list_adder_unique_async } from "./list_adder_unique_async.mjs";
 import { bible_ceb_3_chapter } from "./bible_ceb_3_chapter.mjs";
@@ -17,6 +15,5 @@ export async function ceb_bible_words_3() {
       );
     });
   });
-  list_sort_string(characters, identity);
   return words;
 }
