@@ -1,3 +1,4 @@
+import { equal } from "./equal.mjs";
 import { sqrt } from "./sqrt.mjs";
 import { round } from "./round.mjs";
 import { each } from "./each.mjs";
@@ -26,6 +27,7 @@ export async function arc_sandbox() {
         let length = list_length(io);
         let s = round(sqrt(length));
         let sq = s * s;
+        assert(equal, [sq, length]);
       });
     });
     error();
