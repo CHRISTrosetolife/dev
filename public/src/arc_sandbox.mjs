@@ -26,7 +26,7 @@ export async function arc_sandbox() {
         assert(list_is, [io]);
         let first = list_first(io);
         let length = list_length(first);
-        list_all(io, (row) => equal(list_length(row), length));
+        let same = list_all(io, (row) => equal(list_length(row), length));
         assert_message();
       });
     });
