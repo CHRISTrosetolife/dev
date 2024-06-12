@@ -18,6 +18,7 @@ export async function arc_sandbox() {
     assert(list_is, [train]);
     each(train, (t) => {
       let { input, output } = t;
+      each([input, output], (io) => assert(list_is, [io]));
     });
     error();
   });
