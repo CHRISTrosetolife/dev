@@ -1,9 +1,9 @@
+import { assert_message } from "./assert_message.mjs";
 import { assert } from "./assert.mjs";
 import { number_max_list_or } from "./number_max_list_or.mjs";
 import { path_join } from "./path_join.mjs";
 import { date_string_iso_file } from "./date_string_iso_file.mjs";
 import { folder_files_copy } from "./folder_files_copy.mjs";
-import { assert_message_json } from "./assert_message_json.mjs";
 import { number_is } from "./number_is.mjs";
 import { app_dev_screenshots_extension } from "./app_dev_screenshots_extension.mjs";
 import { integer_parse } from "./integer_parse.mjs";
@@ -35,7 +35,7 @@ export async function app_dev_screenshots(screen_name) {
   let mapped = list_map(target_files, (file_path) => {
     let name = path_parse_name(file_path);
     let parsed = integer_parse(name);
-    assert_message_json(number_is, [parsed], () => ({
+    assert_message(number_is, [parsed], () => ({
       parsed,
       name,
       file_path,

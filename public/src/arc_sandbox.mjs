@@ -1,4 +1,4 @@
-import { assert_message_json } from "./assert_message_json.mjs";
+import { assert_message } from "./assert_message.mjs";
 import { equal } from "./equal.mjs";
 import { each } from "./each.mjs";
 import { string_combine } from "./string_combine.mjs";
@@ -26,7 +26,7 @@ export async function arc_sandbox() {
         let first = list_first(io);
         let length = list_length(first);
         each(io, (row) =>
-          assert_message_json(equal, [list_length(row), length], () => ({
+          assert_message(equal, [list_length(row), length], () => ({
             file,
           })),
         );

@@ -1,5 +1,5 @@
+import { assert_message } from "./assert_message.mjs";
 import { bible_cebulb_chapter } from "./bible_cebulb_chapter.mjs";
-import { assert_message_json } from "./assert_message_json.mjs";
 import { each } from "./each.mjs";
 import { each_object } from "./each_object.mjs";
 import { object_property_get_curry } from "./object_property_get_curry.mjs";
@@ -69,7 +69,7 @@ export async function bible_ceb_chapter(chapter_name) {
     eng_verse_numbers,
     ceb_verse_numbers,
   );
-  assert_message_json(list_empty_is, [ceb_verse_numbers_difference], () => {
+  assert_message(list_empty_is, [ceb_verse_numbers_difference], () => {
     return {
       eng_verse_numbers_difference,
       ceb_verse_numbers_difference,
