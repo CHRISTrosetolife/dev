@@ -29,7 +29,7 @@ export async function arc_sandbox() {
         assert_message(list_rectangular_is, [io]);
         let flattened_io = list_concat_multiple(input);
         let unique_io = list_unique(flattened_io);
-        each(u, assert(number_is, u));
+        each(unique_io, (u) => assert(number_is, u));
       });
       let flattened_i = list_concat_multiple(input);
       let choices_i = string_count_lookup(flattened_i);
