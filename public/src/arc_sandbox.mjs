@@ -21,8 +21,7 @@ export async function arc_sandbox() {
       let { input, output } = t;
       each([input, output], (io) => {
         assert(list_is, [io]);
-        list_rectangular_is(io);
-        assert_message();
+        assert_message(list_rectangular_is, [io]);
       });
     });
   });
