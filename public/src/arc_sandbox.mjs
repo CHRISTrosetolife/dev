@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_rectangular_is } from "./list_rectangular_is.mjs";
 import { assert_message } from "./assert_message.mjs";
 import { each } from "./each.mjs";
@@ -24,6 +25,9 @@ export async function arc_sandbox() {
         assert_message(list_rectangular_is, [io]);
       });
       let choices = list_adder_unique((la) => each(io, (row) => each(row, la)));
+      log({
+        choices,
+      });
     });
   });
 }
