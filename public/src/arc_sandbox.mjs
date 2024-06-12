@@ -1,6 +1,4 @@
-import { equal } from "./equal.mjs";
-import { sqrt } from "./sqrt.mjs";
-import { round } from "./round.mjs";
+import { square_perfect_is } from "./square_perfect_is.mjs";
 import { each } from "./each.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { folder_downloads_repository } from "./folder_downloads_repository.mjs";
@@ -25,10 +23,7 @@ export async function arc_sandbox() {
       each([input, output], (io) => {
         assert(list_is, [io]);
         let length = list_length(io);
-        let s = round(sqrt(length));
-        let sq = s * s;
-        let e = equal(sq, length);
-        assert(equal, [sq, length]);
+        assert(square_perfect_is, [length]);
       });
     });
     error();
