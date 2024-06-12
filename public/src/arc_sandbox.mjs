@@ -31,7 +31,7 @@ export async function arc_sandbox() {
       log({
         choices,
       });
-      error();
     });
+    error();
   });
 }
