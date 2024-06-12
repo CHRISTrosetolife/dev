@@ -39,7 +39,7 @@ export async function arc_sandbox() {
         let choices = string_count_lookup(flattened);
         each_object(choices, (key, value) => {
           if (value === 1) {
-            list_adder((la) => {
+            let coordinates = list_adder((la) => {
               each_index(io, (row, y) => {
                 each(row, (c, x) => {
                   if (c === key) {
