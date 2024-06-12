@@ -1,3 +1,4 @@
+import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_remove_if_exists } from "./list_remove_if_exists.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
@@ -12,7 +13,6 @@ import { assert } from "./assert.mjs";
 import { list_length } from "./list_length.mjs";
 import { list_single } from "./list_single.mjs";
 import { ceb_dictionary_page_each } from "./ceb_dictionary_page_each.mjs";
-import { string_trim } from "./string_trim.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { list_first } from "./list_first.mjs";
@@ -29,7 +29,7 @@ export async function ceb_dictionary_words() {
       assert(equal, [list_length(columns), 2]);
       let texts = list_map(columns, (c) => object_property_get(c, "text"));
       let mapped = list_map(texts, string_case_lower);
-      let mapped2 = list_map(mapped, string_trim);
+      let mapped2 = list_map(mapped, string_trim_whitespace);
       let [left, right] = mapped2;
       if (string_empty_not_is(right)) {
         let list = object_property_initialize(lookup, right, []);

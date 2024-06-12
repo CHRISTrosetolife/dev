@@ -1,3 +1,4 @@
+import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 import { list_single } from "./list_single.mjs";
 import { html_parse_visit_attribute_value_list } from "./html_parse_visit_attribute_value_list.mjs";
 import { string_exclude } from "./string_exclude.mjs";
@@ -6,7 +7,6 @@ import { list_map } from "./list_map.mjs";
 import { list_first_remaining } from "./list_first_remaining.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { string_whitespace_normalize } from "./string_whitespace_normalize.mjs";
-import { string_trim } from "./string_trim.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 import { html_parse_visit_attribute_value_single } from "./html_parse_visit_attribute_value_single.mjs";
@@ -56,7 +56,7 @@ export async function bible_ceb_2_book(book_index) {
       }
       if (type === "text") {
         let { data } = c;
-        data = string_trim(data);
+        data = string_trim_whitespace(data);
         data = string_whitespace_normalize(data);
         let split = string_split_space(data);
         let { first: verse_number, remaining: tokens } =

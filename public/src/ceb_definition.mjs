@@ -1,3 +1,4 @@
+import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 import { html_parse_map_text_trim } from "./html_parse_map_text_trim.mjs";
 import { list_concat } from "./list_concat.mjs";
@@ -46,7 +47,6 @@ import { list_map } from "./list_map.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { string_replace } from "./string_replace.mjs";
 import { string_index } from "./string_index.mjs";
-import { string_trim } from "./string_trim.mjs";
 import { string_take } from "./string_take.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { equal_not } from "./equal_not.mjs";
@@ -215,7 +215,7 @@ export async function ceb_definition(word) {
     }
     let index = string_index(d, "[");
     if (greater_than_equal(index, 0)) {
-      let result = string_trim(string_take(d, index));
+      let result = string_trim_whitespace(string_take(d, index));
       return result;
     }
     return d;

@@ -1,10 +1,10 @@
+import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 import { string_replace } from "./string_replace.mjs";
 import { list_map } from "./list_map.mjs";
 import { bible_ceb_4_chapter_url } from "./bible_ceb_4_chapter_url.mjs";
 import { log } from "./log.mjs";
 import { null_not_is } from "./null_not_is.mjs";
 import { assert } from "./assert.mjs";
-import { string_trim } from "./string_trim.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { each } from "./each.mjs";
@@ -36,7 +36,7 @@ export async function bible_ceb_4_chapter(book_index, chapter_index) {
       if (type === "text") {
         assert(null_not_is, [verse_number]);
         let { data } = c;
-        data = string_trim(data);
+        data = string_trim_whitespace(data);
         let tokens = string_split_space(data);
         tokens = list_map(tokens, (t) => string_replace(t, "Ã±", "ñ"));
         la({
@@ -51,7 +51,7 @@ export async function bible_ceb_4_chapter(book_index, chapter_index) {
           let value = object_property_get(attribs, "class");
           if (value === "verse") {
             verse_number = html_parse_text(c);
-            verse_number = string_trim(verse_number);
+            verse_number = string_trim_whitespace(verse_number);
           }
         }
       }
