@@ -1,12 +1,9 @@
-import { string_symbols } from "./string_symbols.mjs";
 import { list_adder_multiple_async } from "./list_adder_multiple_async.mjs";
 import { list_map } from "./list_map.mjs";
 import { range_1 } from "./range_1.mjs";
-import { string_count_words } from "./string_count_words.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each_async } from "./each_async.mjs";
 import { function_run } from "./function_run.mjs";
-import { list_join_empty } from "./list_join_empty.mjs";
 export async function ceb_bible_words() {
   let count = 5;
   let fn_names = list_map(range_1(count), (i) =>
@@ -18,7 +15,5 @@ export async function ceb_bible_words() {
       la(words);
     });
   });
-  return string_symbols(list_join_empty(all));
-  let c = string_count_words(all);
-  return c;
+  return all;
 }
