@@ -1,3 +1,4 @@
+import { number_is } from "./number_is.mjs";
 import { exit } from "./exit.mjs";
 import { string_count_lookup } from "./string_count_lookup.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
@@ -28,7 +29,7 @@ export async function arc_sandbox() {
         assert_message(list_rectangular_is, [io]);
         let flattened = list_concat_multiple(input);
         let u = list_unique(flattened);
-        each(f);
+        each(u, assert(number_is, u));
       });
       let flattened_i = list_concat_multiple(input);
       let choices_i = string_count_lookup(flattened_i);
