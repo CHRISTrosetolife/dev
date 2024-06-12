@@ -1,3 +1,4 @@
+import { string_symbols } from "./string_symbols.mjs";
 import { list_adder_multiple_async } from "./list_adder_multiple_async.mjs";
 import { list_map } from "./list_map.mjs";
 import { range_1 } from "./range_1.mjs";
@@ -16,6 +17,7 @@ export async function ceb_bible_words() {
       la(words);
     });
   });
+  string_symbols;
   let c = string_count_words(all);
   return c;
 }
