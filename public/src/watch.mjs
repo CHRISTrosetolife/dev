@@ -19,7 +19,9 @@ export async function watch() {
   let base = Promise.resolve();
   start();
   function start() {
-    let result = chokidar.watch(folder_path_src()).on("all", on_watch);
+    let result = chokidar
+      .watch(folder_path_src())
+      .on("all", (event, path) => (base = base.then(on_watch(event, path))));
     return result;
   }
   async function on_watch(event, path) {
