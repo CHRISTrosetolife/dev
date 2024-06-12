@@ -1,3 +1,4 @@
+import { string_count_lookup } from "./string_count_lookup.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { error } from "./error.mjs";
 import { log } from "./log.mjs";
@@ -10,7 +11,6 @@ import { folder_read } from "./folder_read.mjs";
 import { file_read_json } from "./file_read_json.mjs";
 import { assert } from "./assert.mjs";
 import { list_is } from "./list_is.mjs";
-import { list_unique } from "./list_unique.mjs";
 export async function arc_sandbox() {
   let training = string_combine(
     folder_downloads_repository("ARC-AGI"),
@@ -27,7 +27,7 @@ export async function arc_sandbox() {
         assert_message(list_rectangular_is, [io]);
       });
       let flattened = list_concat_multiple(input);
-      let choices = list_unique(flattened);
+      let choices = string_count_lookup(flattened);
       log({
         choices,
       });
