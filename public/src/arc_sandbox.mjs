@@ -38,6 +38,9 @@ export async function arc_sandbox() {
       let choices_o = string_count_lookup(flattened_i);
       each_object(choices_i, (key, value) => {
         if (value === 1) {
+          log({
+            key,
+          });
         }
       });
       log({
