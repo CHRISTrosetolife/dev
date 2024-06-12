@@ -1,3 +1,4 @@
+import { integer_parse } from "./integer_parse.mjs";
 import { each_index } from "./each_index.mjs";
 import { each_object } from "./each_object.mjs";
 import { number_is } from "./number_is.mjs";
@@ -38,6 +39,7 @@ export async function arc_sandbox() {
         let flattened = list_concat_multiple(io);
         let choices = string_count_lookup(flattened);
         each_object(choices, (key, value) => {
+          let p = integer_parse(key);
           if (value === 1) {
             let coordinates = list_adder((la) => {
               each_index(io, (row, y) => {
