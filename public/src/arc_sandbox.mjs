@@ -47,6 +47,7 @@ export async function arc_sandbox() {
           if (p !== 0) {
             let coordinates = arc_coordinates(io, p);
             let xs = list_map(coordinates, "x");
+            let ys = list_map(coordinates, "y");
             log({
               coordinates,
               key,
