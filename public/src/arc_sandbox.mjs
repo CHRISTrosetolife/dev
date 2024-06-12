@@ -29,22 +29,23 @@ export async function arc_sandbox() {
       let { input, output } = t;
       each([input, output], (io) => {
         assert_message(list_rectangular_is, [io]);
-        let flattened_io = list_concat_multiple(input);
-        let unique_io = list_unique(flattened_io);
-        each(unique_io, (u) => assert(number_is, [u]));
+        let flattened = list_concat_multiple(input);
+        let unique = list_unique(flattened);
+        each(unique, (u) => assert(number_is, [u]));
       });
-      let flattened_i = list_concat_multiple(input);
-      let choices_i = string_count_lookup(flattened_i);
-      let flattened_o = list_concat_multiple(output);
-      let choices_o = string_count_lookup(flattened_i);
-      each_object(choices_i, (key, value) => {
-        if (value === 1) {
-          list_adder((la) => {});
-        }
-      });
-      log({
-        choices_i,
-        choices_o,
+      each([input, output], (io) => {
+        let flattened = list_concat_multiple(io);
+        let choices = string_count_lookup(flattened);
+        each_object(choices, (key, value) => {
+          if (value === 1) {
+            list_adder((la) => {
+              each();
+            });
+          }
+        });
+        log({
+          choices,
+        });
       });
     });
     exit();
