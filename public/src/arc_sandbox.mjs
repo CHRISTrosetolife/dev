@@ -43,6 +43,10 @@ export async function arc_sandbox() {
               each_index(io, (row, y) => {
                 each(row, (c, x) => {
                   if (c === key) {
+                    la({
+                      y,
+                      x,
+                    });
                   }
                 });
               });
