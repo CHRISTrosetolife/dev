@@ -1,3 +1,4 @@
+import { assert_message_json } from "./assert_message_json.mjs";
 import { square_perfect_is } from "./square_perfect_is.mjs";
 import { each } from "./each.mjs";
 import { string_combine } from "./string_combine.mjs";
@@ -22,7 +23,9 @@ export async function arc_sandbox() {
       each([input, output], (io) => {
         assert(list_is, [io]);
         let length = list_length(io);
-        assert(square_perfect_is, [length]);
+        assert_message_json(square_perfect_is, [length], () => ({
+          file,
+        }));
       });
     });
   });
