@@ -22,6 +22,7 @@ export async function arc_sandbox() {
       each([input, output], (io) => {
         assert(list_is, [io]);
         let length = list_length(io);
+        Math.sqrt(length);
       });
     });
     error();
