@@ -4,7 +4,6 @@ import { folder_downloads_repository } from "./folder_downloads_repository.mjs";
 import { folder_read } from "./folder_read.mjs";
 import { file_read_json } from "./file_read_json.mjs";
 import { error } from "./error.mjs";
-import { json_to } from "./json_to.mjs";
 import { assert } from "./assert.mjs";
 import { list_is } from "./list_is.mjs";
 export async function arc_sandbox() {
@@ -17,10 +16,6 @@ export async function arc_sandbox() {
     let o = await file_read_json(file);
     let { train, test } = o;
     assert(list_is, [train]);
-    error(
-      json_to({
-        train,
-      }),
-    );
+    error();
   });
 }
