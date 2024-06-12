@@ -18,7 +18,6 @@ import { file_read_json } from "./file_read_json.mjs";
 import { assert } from "./assert.mjs";
 import { list_is } from "./list_is.mjs";
 import { list_unique } from "./list_unique.mjs";
-import { list_map_property } from "./list_map_property.mjs";
 export async function arc_sandbox() {
   let training = string_combine(
     folder_downloads_repository("ARC-AGI"),
@@ -45,12 +44,13 @@ export async function arc_sandbox() {
         });
         each_object(choices, (key, value) => {
           let p = integer_parse(key);
-          if (p !== 0) {//
+          if (p !== 0) {
             let coordinates = arc_coordinates(io, p);
             let xs = arc_coordinates_generic(coordinates, "x");
             let ys = arc_coordinates_generic(coordinates, "y");
             log({
-              xs,ys,
+              xs,
+              ys,
               key,
             });
           }
