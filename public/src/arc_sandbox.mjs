@@ -7,6 +7,7 @@ import { folder_read } from "./folder_read.mjs";
 import { file_read_json } from "./file_read_json.mjs";
 import { assert } from "./assert.mjs";
 import { list_is } from "./list_is.mjs";
+import { list_adder_unique } from "./list_adder_unique.mjs";
 export async function arc_sandbox() {
   let training = string_combine(
     folder_downloads_repository("ARC-AGI"),
@@ -22,6 +23,7 @@ export async function arc_sandbox() {
       each([input, output], (io) => {
         assert_message(list_rectangular_is, [io]);
       });
+      list_adder_unique((la) => each(io, (row) => each(row, la)));
     });
   });
 }
