@@ -1,5 +1,4 @@
-import { assert_message_json } from "./assert_message_json.mjs";
-import { square_perfect_is } from "./square_perfect_is.mjs";
+import { equal } from "./equal.mjs";
 import { each } from "./each.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { folder_downloads_repository } from "./folder_downloads_repository.mjs";
@@ -23,10 +22,7 @@ export async function arc_sandbox() {
       each([input, output], (io) => {
         assert(list_is, [io]);
         let length = list_length(io);
-        assert_message_json(square_perfect_is, [length], () => ({
-          file,
-          io,
-        }));
+        each(io, (row) => assert(equal, [list_length(row), length]));
       });
     });
   });
