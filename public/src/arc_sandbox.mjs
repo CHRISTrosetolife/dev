@@ -1,6 +1,6 @@
+import { arc_coordinates } from "./arc_coordinates.mjs";
 import { each_async } from "./each_async.mjs";
 import { integer_parse } from "./integer_parse.mjs";
-import { each_index } from "./each_index.mjs";
 import { each_object } from "./each_object.mjs";
 import { number_is } from "./number_is.mjs";
 import { exit } from "./exit.mjs";
@@ -17,7 +17,6 @@ import { file_read_json } from "./file_read_json.mjs";
 import { assert } from "./assert.mjs";
 import { list_is } from "./list_is.mjs";
 import { list_unique } from "./list_unique.mjs";
-import { list_adder } from "./list_adder.mjs";
 export async function arc_sandbox() {
   let training = string_combine(
     folder_downloads_repository("ARC-AGI"),
@@ -45,18 +44,7 @@ export async function arc_sandbox() {
         each_object(choices, (key, value) => {
           let p = integer_parse(key);
           if (value === 1) {
-            let coordinates = list_adder((la) => {
-              each_index(io, (row, y) => {
-                each_index(row, (c, x) => {
-                  if (c === p) {
-                    la({
-                      y,
-                      x,
-                    });
-                  }
-                });
-              });
-            });
+            let coordinates = arc_coordinates(io, p);
             log({
               coordinates,
               key,
