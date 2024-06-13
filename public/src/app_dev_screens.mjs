@@ -1,3 +1,4 @@
+import { app_dev_screen_rename } from "./app_dev_screen_rename.mjs";
 import { app_dev_screen_function_auto } from "./app_dev_screen_function_auto.mjs";
 import { app_dev_screen_if_to_block } from "./app_dev_screen_if_to_block.mjs";
 import { app_dev_screen_assign_to_let } from "./app_dev_screen_assign_to_let.mjs";
@@ -28,6 +29,7 @@ export function app_dev_screens() {
   list_add(result, app_dev_screen_assign_to_let);
   list_add(result, app_dev_screen_if_to_block);
   list_add(result, app_dev_screen_function_auto);
+  list_add(result, app_dev_screen_rename);
   marker();
   return result;
 }
