@@ -1,3 +1,4 @@
+import { list_size } from "./list_size.mjs";
 import { list_add_beginning } from "./list_add_beginning.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { list_take } from "./list_take.mjs";
@@ -6,7 +7,6 @@ import { each } from "./each.mjs";
 import { ceb_atom_count } from "./ceb_atom_count.mjs";
 import { ceb_bible_words_definitions_pairs } from "./ceb_bible_words_definitions_pairs.mjs";
 import { log } from "./log.mjs";
-import { list_length } from "./list_length.mjs";
 import { equal } from "./equal.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_remove } from "./list_remove.mjs";
@@ -64,7 +64,7 @@ export async function ceb_bible_words_definitions_atoms(skip, limit) {
           list_add(atom_result, next);
         }
       });
-      if (equal(list_length(atom_result), atom_count)) {
+      if (equal(list_size(atom_result), atom_count)) {
         la(atom_result);
       } else {
         if (0)

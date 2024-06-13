@@ -1,3 +1,4 @@
+import { list_size } from "./list_size.mjs";
 import { assert_message } from "./assert_message.mjs";
 import { bible_cebulb_chapter } from "./bible_cebulb_chapter.mjs";
 import { each } from "./each.mjs";
@@ -13,7 +14,6 @@ import { ceb_definition } from "./ceb_definition.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { equal_by } from "./equal_by.mjs";
 import { assert } from "./assert.mjs";
-import { list_length } from "./list_length.mjs";
 import { list_difference } from "./list_difference.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { list_add } from "./list_add.mjs";
@@ -78,7 +78,7 @@ export async function bible_ceb_chapter(chapter_name) {
       chapter_name,
     };
   });
-  assert(equal_by, [eng, ceb, list_length]);
+  assert(equal_by, [eng, ceb, list_size]);
   let symbols = [",", "1", "2", ".", ";", "“", "”", ":"];
   let words_unique = list_adder_unique((la) => {
     for (let m of ceb) {

@@ -1,3 +1,4 @@
+import { list_size } from "./list_size.mjs";
 import { log } from "./log.mjs";
 import { html_style_wrong } from "./html_style_wrong.mjs";
 import { html_style_margin_default } from "./html_style_margin_default.mjs";
@@ -18,7 +19,6 @@ import { string_case_lower } from "./string_case_lower.mjs";
 import { string_letter_first } from "./string_letter_first.mjs";
 import { html_style_button_default_initialize } from "./html_style_button_default_initialize.mjs";
 import { multiply } from "./multiply.mjs";
-import { list_length } from "./list_length.mjs";
 import { string_case_upper } from "./string_case_upper.mjs";
 import { html_style_centered } from "./html_style_centered.mjs";
 import { html_button } from "./html_button.mjs";
@@ -68,7 +68,7 @@ export async function app_memorize() {
   html_style_button_default_initialize();
   let file_path = bible_engbsb_storage_path_file("JHN19");
   let verses = await http_get(storage_url(file_path));
-  let verses_length = list_length(verses);
+  let verses_length = list_size(verses);
   let groups = app_memorize_group(verses_length);
   let patterns;
   let patterns_length;
@@ -98,12 +98,12 @@ export async function app_memorize() {
   refresh_memorize();
   function group_current_set(g) {
     group_current = g;
-    if (equal(list_length(group_current), 1)) {
+    if (equal(list_size(group_current), 1)) {
       patterns = ["1", "110", "10", "01", "01001", "001", "0", "0", "0", "0"];
     } else {
       patterns = ["1", "10", "0", "0", "0", "0"];
     }
-    patterns_length = list_length(patterns);
+    patterns_length = list_size(patterns);
     verse_index = 0;
     token_index = 0;
     pattern_index = 0;
@@ -193,7 +193,7 @@ export async function app_memorize() {
     });
     let verses_element = html_element(root, "div");
     let keys = keyboard_keys_rows();
-    let keys_length = list_length(keys);
+    let keys_length = list_size(keys);
     let keyboard_height = multiply(button_height, keys_length);
     let offset = add(keyboard_height, 7);
     let height_max = subtract(100, offset);
@@ -202,7 +202,7 @@ export async function app_memorize() {
       "min-height": number_to_dvh(height_max),
       "overflow-y": "scroll",
     });
-    let pattern_length = list_length(pattern);
+    let pattern_length = list_size(pattern);
     let token_count = 0;
     verse_elements = list_adder((la) => {
       each_index(group_current, (i, j) => {
@@ -308,12 +308,12 @@ export async function app_memorize() {
     let letter_first = string_case_lower(string_letter_first(current_token));
     if (equal(k, letter_first)) {
       token_index++;
-      let tokens_length = list_length(tokens);
+      let tokens_length = list_size(tokens);
       if (greater_than_equal(token_index, tokens_length)) {
         verse_index++;
         token_index = 0;
       }
-      let group_current_length = list_length(group_current);
+      let group_current_length = list_size(group_current);
       if (greater_than_equal(verse_index, group_current_length)) {
         verse_index = 0;
         let pattern = list_get(patterns, pattern_index);

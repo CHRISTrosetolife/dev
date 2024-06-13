@@ -1,3 +1,4 @@
+import { list_size } from "./list_size.mjs";
 import { log } from "./log.mjs";
 import { html_spacer_vertical_2 } from "./html_spacer_vertical_2.mjs";
 import { html_button_width_full_text_click_home } from "./html_button_width_full_text_click_home.mjs";
@@ -15,7 +16,6 @@ import { html_style_default_initialize } from "./html_style_default_initialize.m
 import { range } from "./range.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { list_get } from "./list_get.mjs";
-import { list_length } from "./list_length.mjs";
 import { string_split } from "./string_split.mjs";
 import { assert } from "./assert.mjs";
 import { equal } from "./equal.mjs";
@@ -40,7 +40,7 @@ export async function app_yyy8Uu() {
   let separator = "-";
   let split = list_map(chapter_names, (c) => string_split(c, separator));
   for (let s of split) {
-    assert(equal, [list_length(s), 2]);
+    assert(equal, [list_size(s), 2]);
   }
   let book_names = list_map(split, (s) => list_first(s));
   let book_names_unique = list_unique(book_names);
@@ -102,7 +102,7 @@ export async function app_yyy8Uu() {
     let file_path = yyy8Uu_storage_path(chapter_index);
     let chapter = await http_storage(file_path);
     let { english, latin } = chapter;
-    let indices = range(list_length(english));
+    let indices = range(list_size(english));
     for (let i of indices) {
       let l = list_get(latin, i);
       if (show_latin) {
