@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { string_suffix_change } from "./string_suffix_change.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { each_async } from "./each_async.mjs";
@@ -21,10 +20,6 @@ export async function files_rename_if_ends_with(
       suffix_old,
       suffix_new,
     );
-    log({
-      file_name_new,
-    });
-    return;
     await file_rename(file_name_old, file_name_new);
   });
 }
