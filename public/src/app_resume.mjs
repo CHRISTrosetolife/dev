@@ -12,5 +12,5 @@ export function app_resume() {
   html_style_centered(full_name);
   let phone_number_text = "+1 (904) 314-4052";
   let phone = html_span_text(root, html_replace_nbsp(phone_number_text));
-  html_style_link("tel:" + phone);
+  html_style_link("tel:" + phone_number_text)(phone);
 }
