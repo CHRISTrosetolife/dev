@@ -6,6 +6,7 @@ import { folder_read } from "./folder_read.mjs";
 import { string_ends_with } from "./string_ends_with.mjs";
 export async function files_rename_if_ends_with(
   input_path,
+  file_extension,
   suffix_old,
   suffix_new,
 ) {
