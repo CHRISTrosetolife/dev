@@ -10,7 +10,7 @@ export async function files_rename_if_ends_with(
   suffix_new,
 ) {
   assert_arguments_length(arguments, 3);
-  let files = await folder_read(input_path, "undefined");
+  let files = await folder_read(input_path, ".png");
   await each_async(files, async (file_name_old) => {
     if (!string_ends_with(file_name_old, suffix_old)) {
       return;
