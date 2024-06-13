@@ -10,7 +10,8 @@ import { html_span_text } from "./html_span_text.mjs";
 import { html_p } from "./html_p.mjs";
 export function app_resume() {
   let root = html_style_default_initialize();
-  let full_name = html_p_text(root, "JARED MATHIS");
+  let header = "JARED MATHIS";
+  let full_name = html_p_text(root, header);
   html_style_bold(full_name);
   html_style_centered(full_name);
   let row = html_p(root);
