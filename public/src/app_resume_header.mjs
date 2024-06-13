@@ -8,7 +8,10 @@ import { html_style_bold } from "./html_style_bold.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 export function app_resume_header(root, header) {
   let h = html_p_text(root, header);
-  object_property_get(html_style_default(), html_style_font_size_property());
+  let d = object_property_get(
+    html_style_default(),
+    html_style_font_size_property(),
+  );
   html_style_font_size(h, font_size_bigger);
   html_style_bold(h);
   html_style_centered(h);
