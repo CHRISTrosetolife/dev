@@ -1,5 +1,5 @@
+import { html_phone } from "./html_phone.mjs";
 import { html_style_tel } from "./html_style_tel.mjs";
-import { html_replace_nbsp } from "./html_replace_nbsp.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_style_centered } from "./html_style_centered.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
@@ -11,8 +11,7 @@ export function app_resume() {
   html_style_bold(full_name);
   html_style_centered(full_name);
   let phone_number_text = "+1 (904) 314-4052";
-  let phone = html_span_text(root, html_replace_nbsp(phone_number_text));
-  html_style_tel(phone_number_text)(phone);
+  let phone = html_phone(root, phone_number_text);
   let email_text = "JESUSrosetolife@protonmail.com";
   let email = html_span_text(root, email_text);
   html_style_tel(email_text)(phone);
