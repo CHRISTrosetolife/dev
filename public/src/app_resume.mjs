@@ -24,6 +24,7 @@ export function app_resume() {
   app_resume_header_2(root, "Projects");
   app_resume_header_3(root, "Development Tools");
   app_resume_header_3(root, "Learn to Code");
+  app_resume_header_3(root, "Learn Cebuano");
   app_resume_header_3(root, "Memorizing Text");
   app_resume_header_2(root, "Professional Experience");
 }
