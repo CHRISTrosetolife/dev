@@ -11,6 +11,7 @@ export function app_resume() {
   html_style_bold(full_name);
   html_style_centered(full_name);
   let address1 = html_span_text(root, "1612 Orlando Circle South");
+  let address2 = html_span_text(root, "Jacksonville, Florida 32207");
   let phone = html_phone(root, "+1 (904) 314-4052");
   html_email(root, "JESUSrosetolife@protonmail.com");
 }
