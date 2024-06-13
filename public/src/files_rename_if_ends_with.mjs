@@ -19,6 +19,7 @@ export async function files_rename_if_ends_with(
     log({
       file_name_old,
     });
+    return;
     if (!string_ends_with(file_name_old, suffix_old)) {
       return;
     }
