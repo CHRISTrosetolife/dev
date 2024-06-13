@@ -14,4 +14,6 @@ export function app_resume() {
   let phone = html_span_text(root, html_replace_nbsp(phone_number_text));
   html_style_tel(phone_number_text)(phone);
   let email_text = "JESUSrosetolife@protonmail.com";
+  let email = html_span_text(root, email_text);
+  html_style_tel(email_text)(phone);
 }
