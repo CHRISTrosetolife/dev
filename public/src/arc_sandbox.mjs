@@ -31,7 +31,7 @@ export async function arc_sandbox() {
         let unique = list_unique(flattened);
         each(unique, (u) => assert(number_is, [u]));
       });
-      list_rectangle_size(input);
+      let size_i = list_rectangle_size(input);
       exit();
     });
   });
