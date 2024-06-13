@@ -1,6 +1,6 @@
+import { each } from "./each.mjs";
 import { http_get } from "./http_get.mjs";
 import { file_write_json } from "./file_write_json.mjs";
-import { promise_all } from "./promise_all.mjs";
 import { functions_list } from "./functions_list.mjs";
 import { global_files_initialize } from "./global_files_initialize.mjs";
 import { html_button_view_sorce } from "./html_button_view_sorce.mjs";
@@ -27,11 +27,10 @@ export async function app_dev() {
   let d = await http_get(data_file_name());
   await file_write_json(data_path(), d);
   let fl = functions_list();
-  let promises = list_map(fl, async (f) => {
+  each(fl, (f) => {
     let fp = function_name_to_path(f);
     object_property_set(files, fp, "");
   });
-  await promise_all(promises);
   let root = html_style_default_initialize();
   let screens_functions = app_dev_screens();
   let screens = list_map(screens_functions, (s) => s());
