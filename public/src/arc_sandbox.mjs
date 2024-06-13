@@ -36,26 +36,7 @@ export async function arc_sandbox() {
         let unique = list_unique(flattened);
         each(unique, (u) => assert(number_is, [u]));
       });
-      each([input, output], (io) => {
-        let flattened = list_concat_multiple(io);
-        let choices = string_count_lookup(flattened);
-        log({
-          choices,
-        });
-        each_object(choices, (key, value) => {
-          let p = integer_parse(key);
-          if (p !== 0) {
-            let coordinates = arc_coordinates(io, p);
-            let xs = arc_coordinates_generic(coordinates, "x");
-            let ys = arc_coordinates_generic(coordinates, "y");
-            log({
-              xs,
-              ys,
-              key,
-            });
-          }
-        });
-      });
+      y=list_size(input)
       exit();
     });
   });
