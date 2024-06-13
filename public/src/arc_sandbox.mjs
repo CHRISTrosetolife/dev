@@ -1,13 +1,8 @@
-import { arc_coordinates_generic } from "./arc_coordinates_generic.mjs";
-import { arc_coordinates } from "./arc_coordinates.mjs";
+import { list_size } from "./list_size.mjs";
 import { each_async } from "./each_async.mjs";
-import { integer_parse } from "./integer_parse.mjs";
-import { each_object } from "./each_object.mjs";
 import { number_is } from "./number_is.mjs";
 import { exit } from "./exit.mjs";
-import { string_count_lookup } from "./string_count_lookup.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
-import { log } from "./log.mjs";
 import { list_rectangular_is } from "./list_rectangular_is.mjs";
 import { assert_message } from "./assert_message.mjs";
 import { each } from "./each.mjs";
@@ -36,7 +31,7 @@ export async function arc_sandbox() {
         let unique = list_unique(flattened);
         each(unique, (u) => assert(number_is, [u]));
       });
-      y=list_size(input)
+      let y = list_size(input);
       exit();
     });
   });
