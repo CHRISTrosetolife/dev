@@ -8,6 +8,7 @@ import { html_style_default_font_size_value } from "./html_style_default_font_si
 import { html_style_centered } from "./html_style_centered.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { html_p_text } from "./html_p_text.mjs";
+import { multiply } from "./multiply.mjs";
 export function app_resume_header(root, header) {
   let h = html_p_text(root, header);
   let d = object_property_get(
@@ -16,6 +17,7 @@ export function app_resume_header(root, header) {
   );
   let p = html_style_numeric_parse(d);
   let { value } = p;
+  value = multiply(value, 1.2);
   log();
   html_style_font_size(h, d);
   html_style_bold(h);
