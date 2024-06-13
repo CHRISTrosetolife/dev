@@ -18,7 +18,8 @@ export function app_resume_header(root, header) {
   let p = html_style_numeric_parse(d);
   let { value, unit } = p;
   value = multiply(value, 1.2);
-  html_style_font_size(h, string_combine(value, unit));
+  let size_new = string_combine(value, unit);
+  html_style_font_size(h, size_new);
   html_style_bold(h);
   html_style_centered(h);
   html_style_default_font_size_value();
