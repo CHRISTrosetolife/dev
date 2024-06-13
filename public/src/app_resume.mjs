@@ -23,5 +23,6 @@ export function app_resume() {
   html_email(row, "JESUSrosetolife@protonmail.com");
   app_resume_header_2(root, "Projects");
   app_resume_header_3(root, "Development Tools");
+  app_resume_header_3(root, "Memorizing");
   app_resume_header_2(root, "Professional Experience");
 }
