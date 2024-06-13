@@ -14,7 +14,7 @@ export function app_resume_header(root, header) {
     html_style_font_size_property(),
   );
   log(CSSNumericValue.parse(d));
-  html_style_font_size(h, font_size_bigger);
+  html_style_font_size(h, d);
   html_style_bold(h);
   html_style_centered(h);
   html_style_default_font_size_value();
