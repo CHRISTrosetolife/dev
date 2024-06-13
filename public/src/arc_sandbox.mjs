@@ -1,5 +1,4 @@
-import { list_first } from "./list_first.mjs";
-import { list_size } from "./list_size.mjs";
+import { list_rectangle_size } from "./list_rectangle_size.mjs";
 import { each_async } from "./each_async.mjs";
 import { number_is } from "./number_is.mjs";
 import { exit } from "./exit.mjs";
@@ -32,13 +31,7 @@ export async function arc_sandbox() {
         let unique = list_unique(flattened);
         each(unique, (u) => assert(number_is, [u]));
       });
-      let y = list_size(input);
-      let first = list_first(input);
-      let x = list_size(first);
-      let result = {
-        y,
-        x,
-      };
+      list_rectangle_size(input);
       exit();
     });
   });
