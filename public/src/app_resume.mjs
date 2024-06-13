@@ -16,7 +16,7 @@ export function app_resume() {
   html_spacer_bullet(row);
   html_span_text(row, html_replace_nb("Jacksonville, Florida 32207"));
   html_spacer_bullet(row);
-  let phone = html_phone(row, "+1 (904) 314-4052");
+  html_phone(row, "+1 (904) 314-4052");
   html_spacer_bullet(row);
   html_email(row, "JESUSrosetolife@protonmail.com");
 }
