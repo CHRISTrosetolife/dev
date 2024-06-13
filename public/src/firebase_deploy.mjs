@@ -1,4 +1,4 @@
 import { command_line } from "./command_line.mjs";
-export function firebase_deploy() {
-  command_line;
+export async function firebase_deploy() {
+  await command_line("firebase deploy");
 }
