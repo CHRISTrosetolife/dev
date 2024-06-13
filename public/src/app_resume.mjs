@@ -15,16 +15,16 @@ export function app_resume() {
   html_style_centered(full_name);
   let row = html_p(root);
   let address1 = html_span_text(
-    root,
+    row,
     html_replace_nb("1612 Orlando Circle South"),
   );
-  html_spacer_bullet(root);
+  html_spacer_bullet(row);
   let address2 = html_span_text(
-    root,
+    row,
     html_replace_nb("Jacksonville, Florida 32207"),
   );
-  html_spacer_bullet(root);
-  let phone = html_phone(root, "+1 (904) 314-4052");
-  html_spacer_bullet(root);
-  html_email(root, "JESUSrosetolife@protonmail.com");
+  html_spacer_bullet(row);
+  let phone = html_phone(row, "+1 (904) 314-4052");
+  html_spacer_bullet(row);
+  html_email(row, "JESUSrosetolife@protonmail.com");
 }
