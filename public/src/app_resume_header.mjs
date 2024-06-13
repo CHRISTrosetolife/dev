@@ -1,4 +1,3 @@
-import { error } from "./error.mjs";
 import { html_style_numeric_parse } from "./html_style_numeric_parse.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_style_default } from "./html_style_default.mjs";
@@ -16,10 +15,9 @@ export function app_resume_header(root, header) {
     html_style_font_size_property(),
   );
   let p = html_style_numeric_parse(d);
-  let { value, unit } = p;
+  let { value } = p;
   let size_new = multiply(value, 1.2);
   html_style_font_size(h, size_new);
-  error("e");
   html_style_bold(h);
   html_style_centered(h);
   html_style_default_font_size_value();
