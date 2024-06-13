@@ -16,7 +16,7 @@ export function app_resume_header(root, header) {
     html_style_font_size_property(),
   );
   let p = html_style_numeric_parse(d);
-  let { value } = p;
+  let { value, unit } = p;
   value = multiply(value, 1.2);
   log();
   html_style_font_size(h, d);
