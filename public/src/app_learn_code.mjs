@@ -1,3 +1,4 @@
+import { html_style_default_font_size_value_get } from "./html_style_default_font_size_value_get.mjs";
 import { list_size } from "./list_size.mjs";
 import { html_buttons_next_previous } from "./html_buttons_next_previous.mjs";
 import { html_button_width_full_text_click_home } from "./html_button_width_full_text_click_home.mjs";
@@ -129,9 +130,8 @@ export function app_learn_code() {
       async () => await refresh_lesson_screen(0),
     );
     html_style(begin, {
-      "font-size": string_combine(
-        multiply(default_font_size, 1.2).toString(),
-        "vh",
+      "font-size": html_style_default_font_size_value_get(
+        multiply(default_font_size, 1.2),
       ),
     });
     html_style_bold(begin);
