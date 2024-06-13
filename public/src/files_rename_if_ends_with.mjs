@@ -18,6 +18,6 @@ export async function files_rename_if_ends_with(
     }
     let without = string_suffix_without(file_name_old, suffix);
     let file_name_new = string_combine(without, suffix_new);
-    await file_rename(file_name_old);
+    await file_rename(file_name_old, file_name_new);
   });
 }
