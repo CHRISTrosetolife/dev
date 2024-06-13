@@ -28,6 +28,14 @@ export function app_dev_screen_rename() {
         root,
         "it is easy to write a `function` that renames multiple `function`s at once :",
       );
+      html_cycle_function_name(
+        root,
+        string_combine_multiple([
+          "for example , `",
+          function_rename_if_starts_with.name,
+          "` can be used to rename all functions starting with a prefix to start with a different prefix instead",
+        ]),
+      );
     },
   };
 }
