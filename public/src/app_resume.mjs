@@ -14,6 +14,7 @@ export function app_resume() {
   html_style_bold(full_name);
   html_style_centered(full_name);
   let row = html_p(root);
+  html_style_centered(row);
   let address1 = html_span_text(
     row,
     html_replace_nb("1612 Orlando Circle South"),
