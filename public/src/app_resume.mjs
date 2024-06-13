@@ -15,6 +15,7 @@ export function app_resume() {
     root,
     html_replace_nbsp("1612 Orlando Circle South"),
   );
+  html_span_text(root, " ⚫ ");
   let address2 = html_span_text(
     root,
     html_replace_nbsp("Jacksonville, Florida 32207"),
