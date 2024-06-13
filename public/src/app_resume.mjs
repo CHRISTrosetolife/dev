@@ -22,7 +22,7 @@ export function app_resume() {
   html_spacer_bullet(row);
   html_email(row, "JESUSrosetolife@protonmail.com");
   app_resume_header_2(root, "Projects");
-  app_resume_header_3(root, "Development Tools");
+  let dev = app_resume_header_3(root, "Development Tools");
   app_resume_header_3(root, "Learn to Code");
   app_resume_header_3(root, "Learn Cebuano Language");
   app_resume_header_3(root, "Memorizing Bible");
