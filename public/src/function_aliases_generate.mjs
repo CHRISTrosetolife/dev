@@ -31,7 +31,7 @@ export async function function_aliases_generate() {
   alias_add(function_aliases_generate, ["al"]);
   alias_add(function_copy, ["c"]);
   alias_add(data_update, ["d"]);
-  alias_add(function_delete, ["fd"]);
+  alias_add(function_delete, ["de"]);
   alias_add(function_new, ["n"]);
   alias_add(function_new_args, ["na"]);
   alias_add(function_open, ["o"]);
