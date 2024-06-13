@@ -19,4 +19,5 @@ export function app_resume() {
   html_phone(row, "+1 (904) 314-4052");
   html_spacer_bullet(row);
   html_email(row, "JESUSrosetolife@protonmail.com");
+  app_resume_header(root, "Projects");
 }
