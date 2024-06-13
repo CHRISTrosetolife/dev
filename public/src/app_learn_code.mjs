@@ -129,10 +129,8 @@ export function app_learn_code() {
       "🚀 begin",
       async () => await refresh_lesson_screen(0),
     );
-    html_style(
-      begin,
-      html_style_font_size_object(multiply(default_font_size, 1.2)),
-    );
+    let font_size_bigger = multiply(default_font_size, 1.2);
+    html_style(begin, html_style_font_size_object(font_size_bigger));
     html_style_bold(begin);
     html_p_text(root, "or choose a module below :");
     each_index(modules, (module, index) => {
