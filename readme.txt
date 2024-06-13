@@ -1,1 +1,1 @@
-start here : https://letjesusbeexalted.web.app/resume.html
+start here ; see "projects" : https://letjesusbeexalted.web.app/resume.html
