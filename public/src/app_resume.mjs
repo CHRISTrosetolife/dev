@@ -9,8 +9,7 @@ import { html_span_text } from "./html_span_text.mjs";
 import { html_p } from "./html_p.mjs";
 export function app_resume() {
   let root = html_style_default_initialize();
-  let header = "JARED MATHIS";
-  app_resume_header(root, header);
+  app_resume_header(root, "JARED MATHIS");
   let row = html_p(root);
   html_style_centered(row);
   let address1 = html_span_text(
