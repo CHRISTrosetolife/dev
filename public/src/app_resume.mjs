@@ -26,8 +26,11 @@ export function app_resume() {
   let dev = app_resume_header_3(root, "Development Tools");
   html_style_link("dev.html")(dev);
   let learn_code = app_resume_header_3(root, "Learn to Code");
+  html_style_link("learn_code.html")(learn_code);
   let ceb = app_resume_header_3(root, "Learn Cebuano Language");
+  html_style_link("ceb.html")(ceb);
   let memorize = app_resume_header_3(root, "Memorize Bible");
+  html_style_link("memorize.html")(memorize);
   app_resume_header_2(root, "Skills");
   app_resume_header_2(root, "Professional Experience");
   app_resume_header_2(root, "Education");
