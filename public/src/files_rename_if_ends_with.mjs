@@ -12,12 +12,12 @@ export async function files_rename_if_ends_with(
 ) {
   assert_arguments_length(arguments, 3);
   let files = await folder_read(input_path);
-  await each_async(files, async (file) => {
+  await each_async(files, async (file_name_old) => {
     if (!string_ends_with(suffix)) {
       return;
     }
-    let without = string_suffix_without(file, suffix);
+    let without = string_suffix_without(file_name_old, suffix);
     let file_name_new = string_combine(without, suffix_new);
-    await file_rename();
+    await file_rename(file_name_old);
   });
 }
