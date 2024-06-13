@@ -8,4 +8,5 @@ export function list_rectangle_size(input) {
     y,
     x,
   };
+  return result;
 }
