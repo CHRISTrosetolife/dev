@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { string_suffix_change } from "./string_suffix_change.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { each_async } from "./each_async.mjs";
@@ -15,6 +16,9 @@ export async function files_rename_if_ends_with(
   let files = await folder_read(input_path, file_extension);
   await each_async(files, async (file_name_old) => {
     file_name_old = string_suffix_without(file_name_old, file_extension);
+    log({
+      file_name_old,
+    });
     if (!string_ends_with(file_name_old, suffix_old)) {
       return;
     }
