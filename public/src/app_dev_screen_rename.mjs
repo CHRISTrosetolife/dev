@@ -9,7 +9,7 @@ export function app_dev_screen_rename() {
     },
     screen: function rename_screen(root) {
       "`function_rename` can be used to rename a single function";
-      "the file is renamed , all identifiers in all files are renamed , and all `import`s are updated to match the new fil name";
+      "the file is renamed , all identifiers in all files are renamed , and all `import`s are updated to match the new file name";
     },
   };
 }
