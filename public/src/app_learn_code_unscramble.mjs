@@ -1,3 +1,4 @@
+import { list_size } from "./list_size.mjs";
 import { app_learn_code_code_background_set } from "./app_learn_code_code_background_set.mjs";
 import { app_learn_code_style_code_error } from "./app_learn_code_style_code_error.mjs";
 import { app_learn_code_correct_timeout } from "./app_learn_code_correct_timeout.mjs";
@@ -26,7 +27,6 @@ import { app_learn_code_eval } from "./app_learn_code_eval.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { list_map } from "./list_map.mjs";
 import { html_style } from "./html_style.mjs";
-import { list_length } from "./list_length.mjs";
 import { list_get } from "./list_get.mjs";
 import { html_on_click } from "./html_on_click.mjs";
 import { array_new } from "./array_new.mjs";
@@ -162,7 +162,7 @@ export function app_learn_code_unscramble(source_get) {
           let take_count = add(source_index, string_length(current.toString()));
           let take = string_take(first_source, take_count);
           html_inner_set(code, take);
-          if (equal(current_index, list_length(answer))) {
+          if (equal(current_index, list_size(answer))) {
             app_learn_code_background_color_correct_dark(code);
             app_learn_code_answer_correct(success);
             html_p_text(

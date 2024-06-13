@@ -1,3 +1,5 @@
+import { list_size } from "./list_size.mjs";
+import { list_size_2 } from "./list_size_2.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 import { html_parse_map_text_trim } from "./html_parse_map_text_trim.mjs";
@@ -11,7 +13,6 @@ import { log } from "./log.mjs";
 import { list_map_split_comma } from "./list_map_split_comma.mjs";
 import { and } from "./and.mjs";
 import { list_any } from "./list_any.mjs";
-import { list_length_2 } from "./list_length_2.mjs";
 import { each } from "./each.mjs";
 import { list_includes_not } from "./list_includes_not.mjs";
 import { list_filter_async } from "./list_filter_async.mjs";
@@ -41,7 +42,6 @@ import { list_get } from "./list_get.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { assert } from "./assert.mjs";
 import { equal } from "./equal.mjs";
-import { list_length } from "./list_length.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_map_property } from "./list_map_property.mjs";
@@ -83,7 +83,7 @@ export async function ceb_definition(word) {
   ];
   let skipped_pairs_split = list_map_split_comma(skipped_pairs);
   each([skipped_pairs_split, replaced_split], (split) =>
-    each(split, (s) => assert(list_length_2, [s])),
+    each(split, (s) => assert(list_size_2, [s])),
   );
   let lookup = {};
   each(skipped_pairs_split, (s) =>
@@ -161,11 +161,11 @@ export async function ceb_definition(word) {
       continue;
     }
     let { childNodes } = parent;
-    assert(equal, [list_length(childNodes), 2]);
+    assert(equal, [list_size(childNodes), 2]);
     let right = list_second(childNodes);
     let filtered6 = html_parse_a_href_starts_with(right, "");
     let skips = await list_adder_async(async (la) => {
-      if (greater_than_equal(list_length(filtered6), 2)) {
+      if (greater_than_equal(list_size(filtered6), 2)) {
         await each_pairs_async(filtered6, async (f, g) => {
           let after = html_parse_href(g);
           let sense = "/sense/";
@@ -260,7 +260,7 @@ export async function ceb_definition(word) {
       string_prefix_without(f, prefix_1),
     );
     let tables = list_filter(children2, (c) => html_parse_tag(c, "table"));
-    let tables_length = list_length(tables);
+    let tables_length = list_size(tables);
     assert(less_than_equal, [tables_length, 3]);
     if (0) {
       if (equal(tables_length, 3)) {

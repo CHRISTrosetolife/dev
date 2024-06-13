@@ -1,8 +1,8 @@
+import { list_size } from "./list_size.mjs";
 import { list_unique } from "./list_unique.mjs";
 import { app_ceb_correct_get } from "./app_ceb_correct_get.mjs";
 import { string_chunk } from "./string_chunk.mjs";
 import { equal_not } from "./equal_not.mjs";
-import { list_length } from "./list_length.mjs";
 import { greater_than_equal } from "./greater_than_equal.mjs";
 import { number_min } from "./number_min.mjs";
 import { add } from "./add.mjs";
@@ -39,7 +39,7 @@ export function app_ceb_alternatives_partial_matches_nexts(
     ),
   );
   let correct;
-  if (greater_than_equal(index, list_length(correct_choices))) {
+  if (greater_than_equal(index, list_size(correct_choices))) {
     correct = null;
   } else {
     correct = app_ceb_correct_get(answer, chunk_size, index);

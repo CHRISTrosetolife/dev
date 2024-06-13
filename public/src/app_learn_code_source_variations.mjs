@@ -1,3 +1,4 @@
+import { list_size } from "./list_size.mjs";
 import { number_power_2 } from "./number_power_2.mjs";
 import { js_unparse_indent_none } from "./js_unparse_indent_none.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
@@ -14,7 +15,6 @@ import { equal } from "./equal.mjs";
 import { js_node_type } from "./js_node_type.mjs";
 import { js_parse } from "./js_parse.mjs";
 import { list_includes } from "./list_includes.mjs";
-import { list_length } from "./list_length.mjs";
 import { range } from "./range.mjs";
 import { list_get } from "./list_get.mjs";
 import { string_combine } from "./string_combine.mjs";
@@ -26,7 +26,7 @@ import { list_pop } from "./list_pop.mjs";
 export function app_learn_code_source_variations(source) {
   let operators = ["+", "*", "===", "!=="];
   let { filtered, ast } = ast_filtered(source);
-  let filtered_length = list_length(filtered);
+  let filtered_length = list_size(filtered);
   let s = js_unparse_indent_none(ast);
   if (equal(filtered_length, 0)) {
     return [s];
@@ -43,7 +43,7 @@ export function app_learn_code_source_variations(source) {
         base2 = string_combine("0", base2);
       }
       let b_split = string_split_empty(base2);
-      let b_split_length = list_length(b_split);
+      let b_split_length = list_size(b_split);
       for (let n of range(filtered_length)) {
         let swap = false;
         let filtered_n = list_get(filtered, n);
