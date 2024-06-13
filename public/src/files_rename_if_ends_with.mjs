@@ -16,9 +16,6 @@ export async function files_rename_if_ends_with(
     if (!string_ends_with(file_name_old, suffix_old)) {
       return;
     }
-    log({
-      file_name_new,
-    });
     let file_name_new = string_suffix_change(
       file_name_old,
       suffix_old,
