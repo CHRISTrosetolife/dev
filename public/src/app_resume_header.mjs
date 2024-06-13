@@ -1,3 +1,4 @@
+import { error } from "./error.mjs";
 import { log } from "./log.mjs";
 import { html_style_numeric_parse } from "./html_style_numeric_parse.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -24,6 +25,7 @@ export function app_resume_header(root, header) {
     size_new,
   });
   html_style_font_size(h, size_new);
+  error("e");
   html_style_bold(h);
   html_style_centered(h);
   html_style_default_font_size_value();
