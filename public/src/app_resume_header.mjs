@@ -1,3 +1,4 @@
+import { html_style_numeric_parse } from "./html_style_numeric_parse.mjs";
 import { log } from "./log.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_style_default } from "./html_style_default.mjs";
@@ -13,7 +14,7 @@ export function app_resume_header(root, header) {
     html_style_default(),
     html_style_font_size_property(),
   );
-  log(CSSNumericValue.parse(d));
+  log(html_style_numeric_parse(d));
   html_style_font_size(h, d);
   html_style_bold(h);
   html_style_centered(h);
