@@ -2,7 +2,6 @@ import { html_style_code } from "./html_style_code.mjs";
 import { html_style_function_name } from "./html_style_function_name.mjs";
 import { noop } from "./noop.mjs";
 import { html_cycle_p } from "./html_cycle_p.mjs";
-import { functions_rename_if_starts_with } from "./functions_rename_if_starts_with.mjs";
 import { function_rename } from "./function_rename.mjs";
 import { html_cycle_code } from "./html_cycle_code.mjs";
 import { html_cycle_code_span } from "./html_cycle_code_span.mjs";
@@ -38,7 +37,7 @@ export function app_dev_screen_rename() {
         [noop, html_style_function_name, noop, html_style_code],
         string_combine_multiple([
           "for example , `",
-          functions_rename_if_starts_with.name,
+          `functions_rename_if_starts_with`,
           "` can be used to rename all `function`s starting with a prefix to start with a different prefix , instead",
         ]),
       );
