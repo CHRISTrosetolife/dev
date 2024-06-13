@@ -6,6 +6,7 @@ export async function files_rename_if_ends_with(input_path, suffix) {
   let files = await folder_read(input_path);
   await each_async(files, async (file) => {
     if (!string_ends_with(suffix)) {
+      return;
     }
     await file_rename();
   });
