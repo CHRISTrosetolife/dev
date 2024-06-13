@@ -1,7 +1,9 @@
+import { html_style_function_name } from "./html_style_function_name.mjs";
+import { noop } from "./noop.mjs";
+import { html_cycle_p } from "./html_cycle_p.mjs";
 import { functions_rename_if_starts_with } from "./functions_rename_if_starts_with.mjs";
 import { function_rename } from "./function_rename.mjs";
 import { html_cycle_code } from "./html_cycle_code.mjs";
-import { html_cycle_function_name } from "./html_cycle_function_name.mjs";
 import { html_cycle_code_span } from "./html_cycle_code_span.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export function app_dev_screen_rename() {
@@ -13,8 +15,9 @@ export function app_dev_screen_rename() {
       );
     },
     screen: function rename_screen(root) {
-      html_cycle_function_name(
+      html_cycle_p(
         root,
+        [noop, html_style_function_name],
         string_combine_multiple([
           "`",
           function_rename.name,
@@ -29,8 +32,9 @@ export function app_dev_screen_rename() {
         root,
         "it is easy to write a `function` that renames multiple `function`s at once :",
       );
-      html_cycle_function_name(
+      html_cycle_p(
         root,
+        [noop, html_style_function_name],
         string_combine_multiple([
           "for example , `",
           functions_rename_if_starts_with.name,
