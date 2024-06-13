@@ -1,6 +1,8 @@
+import { function_rename } from "./function_rename.mjs";
 import { html_cycle_code } from "./html_cycle_code.mjs";
 import { html_cycle_function_name } from "./html_cycle_function_name.mjs";
 import { html_cycle_code_span } from "./html_cycle_code_span.mjs";
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export function app_dev_screen_rename() {
   return {
     name: function rename_name(root) {
@@ -12,7 +14,11 @@ export function app_dev_screen_rename() {
     screen: function rename_screen(root) {
       html_cycle_function_name(
         root,
-        "`function_rename` can be used to rename a single function",
+        string_combine_multiple([
+          "`",
+          function_rename.name,
+          "` can be used to rename a single function",
+        ]),
       );
       html_cycle_code(
         root,
