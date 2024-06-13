@@ -49,8 +49,8 @@ export async function sandbox() {
     "engylt",
   ];
   await each_async(bible_folders, async (bible_folder) => {
-    await each_async(await bible_books("engbsb"), async (book_name) => {
-      let chapters = await bible_chapters("engbsb", book_name);
+    await each_async(await bible_books(bible_folder), async (book_name) => {
+      let chapters = await bible_chapters(bible_folder, book_name);
       await each_async(chapters, async (chapter_name) => {
         log({
           bible_folder,
