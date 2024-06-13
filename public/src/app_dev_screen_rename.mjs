@@ -1,3 +1,4 @@
+import { functions_rename_if_starts_with } from "./functions_rename_if_starts_with.mjs";
 import { function_rename } from "./function_rename.mjs";
 import { html_cycle_code } from "./html_cycle_code.mjs";
 import { html_cycle_function_name } from "./html_cycle_function_name.mjs";
@@ -32,7 +33,7 @@ export function app_dev_screen_rename() {
         root,
         string_combine_multiple([
           "for example , `",
-          function_rename_if_starts_with.name,
+          functions_rename_if_starts_with.name,
           "` can be used to rename all functions starting with a prefix to start with a different prefix instead",
         ]),
       );
