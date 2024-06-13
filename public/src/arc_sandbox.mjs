@@ -34,6 +34,7 @@ export async function arc_sandbox() {
       });
       let y = list_size(input);
       let first = list_first(input);
+      let x = list_size(first);
       exit();
     });
   });
