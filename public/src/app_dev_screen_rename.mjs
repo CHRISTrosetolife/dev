@@ -26,7 +26,7 @@ export function app_dev_screen_rename() {
       );
       html_cycle_code(
         root,
-        "it is easy to write a `function` that renames multiple functions at once :",
+        "it is easy to write a `function` that renames multiple `function`s at once :",
       );
     },
   };
