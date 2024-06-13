@@ -35,7 +35,6 @@ export async function arc_sandbox() {
       let size_i = list_rectangle_size(input);
       let size_o = list_rectangle_size(output);
       assert(equal_json, [size_i, size_o]);
-      
       exit();
     });
   });
