@@ -4,6 +4,7 @@ import { each_async } from "./each_async.mjs";
 import { file_rename } from "./file_rename.mjs";
 import { folder_read } from "./folder_read.mjs";
 import { string_ends_with } from "./string_ends_with.mjs";
+import { string_combine } from "./string_combine.mjs";
 export async function files_rename_if_ends_with(
   input_path,
   suffix_old,
@@ -16,6 +17,7 @@ export async function files_rename_if_ends_with(
       return;
     }
     let without = string_suffix_without(file, suffix);
+    let file_name_new = string_combine(without, suffix_new);
     await file_rename();
   });
 }
