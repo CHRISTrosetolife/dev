@@ -1,3 +1,4 @@
+import { html_style_code } from "./html_style_code.mjs";
 import { html_style_function_name } from "./html_style_function_name.mjs";
 import { noop } from "./noop.mjs";
 import { html_cycle_p } from "./html_cycle_p.mjs";
@@ -17,7 +18,7 @@ export function app_dev_screen_rename() {
     screen: function rename_screen(root) {
       html_cycle_p(
         root,
-        [noop, html_style_function_name],
+        [noop, html_style_function_name, noop, html_style_code],
         string_combine_multiple([
           "`",
           function_rename.name,
