@@ -1,4 +1,4 @@
-import { html_style_font_size_object } from "./html_style_font_size_object.mjs";
+import { html_style_font_size } from "./html_style_font_size.mjs";
 import { list_size } from "./list_size.mjs";
 import { html_buttons_next_previous } from "./html_buttons_next_previous.mjs";
 import { html_button_width_full_text_click_home } from "./html_button_width_full_text_click_home.mjs";
@@ -130,7 +130,7 @@ export function app_learn_code() {
       async () => await refresh_lesson_screen(0),
     );
     let font_size_bigger = multiply(default_font_size, 1.2);
-    html_style(begin, html_style_font_size_object(font_size_bigger));
+    html_style_font_size(begin, font_size_bigger);
     html_style_bold(begin);
     html_p_text(root, "or choose a module below :");
     each_index(modules, (module, index) => {
