@@ -1,3 +1,4 @@
+import { string_suffix_without } from "./string_suffix_without.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { each_async } from "./each_async.mjs";
 import { file_rename } from "./file_rename.mjs";
@@ -14,6 +15,7 @@ export async function files_rename_if_ends_with(
     if (!string_ends_with(suffix)) {
       return;
     }
+    let without = string_suffix_without(file, suffix);
     await file_rename();
   });
 }
