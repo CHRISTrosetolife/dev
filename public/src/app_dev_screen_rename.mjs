@@ -39,7 +39,7 @@ export function app_dev_screen_rename() {
         string_combine_multiple([
           "for example , `",
           functions_rename_if_starts_with.name,
-          "` can be used to rename all `function`s starting with a prefix to start with a different prefix instead",
+          "` can be used to rename all `function`s starting with a prefix to start with a different prefix , instead",
         ]),
       );
     },
