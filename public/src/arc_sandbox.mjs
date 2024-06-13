@@ -32,6 +32,7 @@ export async function arc_sandbox() {
         each(unique, (u) => assert(number_is, [u]));
       });
       let size_i = list_rectangle_size(input);
+      let size_o = list_rectangle_size(output);
       exit();
     });
   });
