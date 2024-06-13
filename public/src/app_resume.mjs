@@ -1,4 +1,4 @@
-import { string_replace } from "./string_replace.mjs";
+import { html_replace_nbsp } from "./html_replace_nbsp.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_style_centered } from "./html_style_centered.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
@@ -10,5 +10,5 @@ export function app_resume() {
   html_style_bold(full_name);
   html_style_centered(full_name);
   let phone_number = "+1 (904) 314-4052";
-  html_span_text(root, string_replace(phone_number, " ", "&nbsp;"));
+  html_span_text(root, html_replace_nbsp(phone_number));
 }
