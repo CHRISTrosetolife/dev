@@ -1,3 +1,4 @@
+import { html_style_link } from "./html_style_link.mjs";
 import { app_resume_header_3 } from "./app_resume_header_3.mjs";
 import { app_resume_header_2 } from "./app_resume_header_2.mjs";
 import { app_resume_header } from "./app_resume_header.mjs";
@@ -23,6 +24,7 @@ export function app_resume() {
   html_email(row, "JESUSrosetolife@protonmail.com");
   app_resume_header_2(root, "Projects");
   let dev = app_resume_header_3(root, "Development Tools");
+  html_style_link("dev.html");
   let learn_code = app_resume_header_3(root, "Learn to Code");
   let ceb = app_resume_header_3(root, "Learn Cebuano Language");
   let memorize = app_resume_header_3(root, "Memorize Bible");
