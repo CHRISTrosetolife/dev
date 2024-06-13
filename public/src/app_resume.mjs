@@ -1,19 +1,16 @@
+import { app_resume_header } from "./app_resume_header.mjs";
 import { html_replace_nb } from "./html_replace_nb.mjs";
 import { html_spacer_bullet } from "./html_spacer_bullet.mjs";
 import { html_email } from "./html_email.mjs";
 import { html_phone } from "./html_phone.mjs";
 import { html_style_centered } from "./html_style_centered.mjs";
-import { html_style_bold } from "./html_style_bold.mjs";
-import { html_p_text } from "./html_p_text.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_p } from "./html_p.mjs";
 export function app_resume() {
   let root = html_style_default_initialize();
   let header = "JARED MATHIS";
-  let full_name = html_p_text(root, header);
-  html_style_bold(full_name);
-  html_style_centered(full_name);
+  app_resume_header(root, header);
   let row = html_p(root);
   html_style_centered(row);
   let address1 = html_span_text(
