@@ -1,7 +1,6 @@
 import { string_ends_with } from "./string_ends_with.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { function_path_suffix } from "./function_path_suffix.mjs";
-import { function_paths } from "./function_paths.mjs";
 import { folder_path_src } from "./folder_path_src.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
@@ -16,11 +15,9 @@ export async function function_names() {
   let suffix = function_path_suffix();
   if (web_is()) {
     let { files } = global_get();
-    let function_paths = object_properties(files);
-    function_paths = list_filter(function_paths, (fp) =>
-      string_ends_with(fp, suffix),
-    );
-    let result = list_map(function_paths, function_path_to_name);
+    let fps = object_properties(files);
+    fps = list_filter(fps, (fp) => string_ends_with(fp, suffix));
+    let result = list_map(fps, function_path_to_name);
     return result;
   }
   let prefix = folder_path_src();
