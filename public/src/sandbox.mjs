@@ -25,32 +25,32 @@ import { file_read_json } from "./file_read_json.mjs";
 import { assert } from "./assert.mjs";
 import { bible_chapters } from "./bible_chapters.mjs";
 export async function sandbox() {
+  let bible_folders = [
+    "engbsb",
+    "engBBE",
+    "eng-asv",
+    "engasvbt",
+    "engDRA",
+    "engfbv",
+    "engnoy",
+    "eng-glw",
+    "englsv",
+    "eng-kjv2006",
+    "eng-kjv",
+    "engourb",
+    "engoebus",
+    "eng-rv",
+    "engoke",
+    "engtcent",
+    "eng-t4t",
+    "engULB",
+    "eng-web",
+    "engwmb",
+    "engylt",
+  ];
   await each_async(await bible_books("engbsb"), async (book_name) => {
     let chapters = await bible_chapters("engbsb", book_name);
     await each_async(chapters, async (chapter_name) => {
-      let bible_folders = [
-        "engbsb",
-        "engBBE",
-        "eng-asv",
-        "engasvbt",
-        "engDRA",
-        "engfbv",
-        "engnoy",
-        "eng-glw",
-        "englsv",
-        "eng-kjv2006",
-        "eng-kjv",
-        "engourb",
-        "engoebus",
-        "eng-rv",
-        "engoke",
-        "engtcent",
-        "eng-t4t",
-        "engULB",
-        "eng-web",
-        "engwmb",
-        "engylt",
-      ];
       await each_async(bible_folders, async (bible_folder) => {
         log({
           bible_folder,
