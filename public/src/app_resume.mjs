@@ -13,4 +13,5 @@ export function app_resume() {
   let phone_number_text = "+1 (904) 314-4052";
   let phone = html_span_text(root, html_replace_nbsp(phone_number_text));
   html_style_tel(phone_number_text)(phone);
+  let email_text = "JESUSrosetolife@protonmail.com";
 }
