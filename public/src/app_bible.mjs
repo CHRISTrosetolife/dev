@@ -1,4 +1,3 @@
-import { list_size } from "./list_size.mjs";
 import { html_spaced_tokens } from "./html_spaced_tokens.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_document_body } from "./html_document_body.mjs";
@@ -6,6 +5,7 @@ import { assert } from "./assert.mjs";
 import { bible_data_jas01 } from "./bible_data_jas01.mjs";
 import { equal_by } from "./equal_by.mjs";
 import { html_element } from "./html_element.mjs";
+import { list_length } from "./list_length.mjs";
 import { range } from "./range.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 import { list_get } from "./list_get.mjs";
@@ -36,8 +36,8 @@ export function app_bible() {
   let { eng } = data;
   let { ceb } = data;
   let { definitions } = data;
-  assert(equal_by, [eng, ceb, list_size]);
-  let length = list_size(eng);
+  assert(equal_by, [eng, ceb, list_length]);
+  let length = list_length(eng);
   for (let i of range(length)) {
     let verse = html_element(top, "div");
     let first = html_element(verse, "div");

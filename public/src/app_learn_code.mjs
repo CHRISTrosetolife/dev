@@ -1,4 +1,3 @@
-import { list_size } from "./list_size.mjs";
 import { html_buttons_next_previous } from "./html_buttons_next_previous.mjs";
 import { html_button_width_full_text_click_home } from "./html_button_width_full_text_click_home.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
@@ -25,6 +24,7 @@ import { html_button_width_full_text_click } from "./html_button_width_full_text
 import { equal } from "./equal.mjs";
 import { list_get } from "./list_get.mjs";
 import { object_property_get } from "./object_property_get.mjs";
+import { list_length } from "./list_length.mjs";
 import { list_index_last } from "./list_index_last.mjs";
 import { html_style } from "./html_style.mjs";
 import { list_add } from "./list_add.mjs";
@@ -175,7 +175,7 @@ export function app_learn_code() {
     let index_first = list_sum((s) => {
       for (let p of previous) {
         let { screens } = p;
-        s(list_size(screens));
+        s(list_length(screens));
       }
     });
     let { screens } = lesson;

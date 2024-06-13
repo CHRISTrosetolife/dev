@@ -1,9 +1,9 @@
-import { list_size } from "./list_size.mjs";
 import { object_replace } from "./object_replace.mjs";
 import { tautology } from "./tautology.mjs";
 import { logic_copy } from "./logic_copy.mjs";
 import { assert } from "./assert.mjs";
 import { equal } from "./equal.mjs";
+import { list_length } from "./list_length.mjs";
 import { string_is } from "./string_is.mjs";
 import { visit } from "./visit.mjs";
 import { list_concat } from "./list_concat.mjs";
@@ -18,7 +18,7 @@ export function logic_step_substitution(statement, substitution) {
   assert(equal, [type, "call"]);
   assert(equal, [callee_type, "identifier"]);
   assert(equal, [name, "all"]);
-  assert(equal, [list_size(args), 2]);
+  assert(equal, [list_length(args), 2]);
   let { type: variable_type, name: variable_name } = variable;
   assert(equal, [variable_type, "identifier"]);
   assert(string_is, [variable_name]);

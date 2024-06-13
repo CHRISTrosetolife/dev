@@ -1,6 +1,6 @@
-import { list_size } from "./list_size.mjs";
+import { list_length } from "./list_length.mjs";
 export function list_index_last(input) {
-  let length = list_size(input);
+  let length = list_length(input);
   let index_last = length - 1;
   return index_last;
 }

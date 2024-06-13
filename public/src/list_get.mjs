@@ -1,7 +1,7 @@
-import { list_size } from "./list_size.mjs";
-import { assert_message } from "./assert_message.mjs";
+import { assert } from "./assert.mjs";
+import { list_length } from "./list_length.mjs";
 import { number_less_than } from "./number_less_than.mjs";
 export function list_get(list, index) {
-  assert_message(number_less_than, [index, list_size(list)], () => list);
+  assert(number_less_than, [index, list_length(list)]);
   return list[index];
 }

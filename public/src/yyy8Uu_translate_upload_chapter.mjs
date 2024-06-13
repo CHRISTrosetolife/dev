@@ -1,4 +1,3 @@
-import { list_size } from "./list_size.mjs";
 import { each_range } from "./each_range.mjs";
 import { list_remove_first } from "./list_remove_first.mjs";
 import { assert } from "./assert.mjs";
@@ -16,6 +15,7 @@ import { gcloud_translate_cache } from "./gcloud_translate_cache.mjs";
 import { each_range_async } from "./each_range_async.mjs";
 import { list_adder_async } from "./list_adder_async.mjs";
 import { yyy8Uu_parts_english_count } from "./yyy8Uu_parts_english_count.mjs";
+import { list_length } from "./list_length.mjs";
 import { yyy8Uu_parts } from "./yyy8Uu_parts.mjs";
 import { greater_than_equal } from "./greater_than_equal.mjs";
 import { less_than_equal } from "./less_than_equal.mjs";
@@ -25,7 +25,7 @@ export async function yyy8Uu_translate_upload_chapter(chapter_index) {
     chapter_index,
   });
   let latin = await yyy8Uu_parts(chapter_index);
-  let latin_length = list_size(latin);
+  let latin_length = list_length(latin);
   let english_length = await yyy8Uu_parts_english_count(chapter_index);
   let english = await list_adder_async(async (la) => {
     await each_range_async(english_length, async (index2) => {

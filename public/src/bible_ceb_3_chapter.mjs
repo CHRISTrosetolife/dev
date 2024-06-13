@@ -1,7 +1,6 @@
-import { list_size } from "./list_size.mjs";
-import { list_size_2 } from "./list_size_2.mjs";
 import { assert_message } from "./assert_message.mjs";
 import { less_than_equal } from "./less_than_equal.mjs";
+import { list_length } from "./list_length.mjs";
 import { string_includes } from "./string_includes.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { equal_json } from "./equal_json.mjs";
@@ -13,6 +12,7 @@ import { list_second } from "./list_second.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_first } from "./list_first.mjs";
+import { list_length_2 } from "./list_length_2.mjs";
 import { assert } from "./assert.mjs";
 import { html_parse_visit_tag_list } from "./html_parse_visit_tag_list.mjs";
 import { html_cache_parse } from "./html_cache_parse.mjs";
@@ -39,7 +39,7 @@ export async function bible_ceb_3_chapter(index) {
     return [];
   }
   let tables = html_parse_visit_tag_list(root, "table");
-  assert_message(less_than_equal, [list_size(tables), 2], () => ({
+  assert_message(less_than_equal, [list_length(tables), 2], () => ({
     url,
     index,
     root_text,
@@ -49,7 +49,7 @@ export async function bible_ceb_3_chapter(index) {
   trs = list_skip(trs, 1);
   let verses = list_map(trs, (tr) => {
     let tds = html_parse_visit_tag_list(tr, "td");
-    assert(list_size_2, [tds]);
+    assert(list_length_2, [tds]);
     let verse_number = html_parse_text(list_first(tds));
     let text = html_parse_text(list_second(tds));
     let tokens = string_split_space(text);

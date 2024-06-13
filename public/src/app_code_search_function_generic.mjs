@@ -1,4 +1,3 @@
-import { list_size } from "./list_size.mjs";
 import { app_code_global_file_paths } from "./app_code_global_file_paths.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
 import { html_span_text } from "./html_span_text.mjs";
@@ -20,6 +19,7 @@ import { html_focus } from "./html_focus.mjs";
 import { app_code_input } from "./app_code_input.mjs";
 import { app_code_back } from "./app_code_back.mjs";
 import { app_code_button_back_text } from "./app_code_button_back_text.mjs";
+import { list_length } from "./list_length.mjs";
 import { greater_than_equal } from "./greater_than_equal.mjs";
 import { html_document_body_clear } from "./html_document_body_clear.mjs";
 import { global_get } from "./global_get.mjs";
@@ -38,7 +38,7 @@ export function app_code_search_function_generic(
   let global = global_get();
   let { back_stack } = global;
   let root = html_document_body_clear();
-  if (greater_than_equal(list_size(back_stack), 2)) {
+  if (greater_than_equal(list_length(back_stack), 2)) {
     lambda_button(root, app_code_button_back_text(), app_code_back);
   }
   let input = app_code_input(root);

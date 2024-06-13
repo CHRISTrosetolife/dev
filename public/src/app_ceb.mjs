@@ -1,4 +1,3 @@
-import { list_size } from "./list_size.mjs";
 import { html_cycle_p } from "./html_cycle_p.mjs";
 import { html_button_width_full_text_click_alternate } from "./html_button_width_full_text_click_alternate.mjs";
 import { html_button_disable } from "./html_button_disable.mjs";
@@ -82,6 +81,7 @@ import { multiply } from "./multiply.mjs";
 import { number_min } from "./number_min.mjs";
 import { greater_than_equal } from "./greater_than_equal.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
+import { list_length } from "./list_length.mjs";
 import { equal_1 } from "./equal_1.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { list_add } from "./list_add.mjs";
@@ -448,7 +448,7 @@ export async function app_ceb() {
         }
       },
       pair_index,
-      list_size(concat),
+      list_length(concat),
     );
     html_button_width_full_text_click_up(root, refresh_node);
   }
