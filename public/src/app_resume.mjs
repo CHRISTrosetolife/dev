@@ -9,8 +9,6 @@ export function app_resume() {
   let full_name = html_p_text(root, "JARED MATHIS");
   html_style_bold(full_name);
   html_style_centered(full_name);
-  let phone_number_text = "+1 (904) 314-4052";
-  let phone = html_phone(root, phone_number_text);
-  let email_text = "JESUSrosetolife@protonmail.com";
-  html_email(root, email_text);
+  let phone = html_phone(root, "+1 (904) 314-4052");
+  html_email(root, "JESUSrosetolife@protonmail.com");
 }
