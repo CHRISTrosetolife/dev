@@ -36,7 +36,9 @@ export async function app_dev() {
   let screens_functions = app_dev_screens();
   let screens = list_map(screens_functions, (s) => s());
   home();
-  await screen(list_index_last(screens));
+  if (0) {
+    await screen(list_index_last(screens));
+  }
   function home() {
     html_clear_scroll_top(root);
     each_index(screens, (s, index) => {
