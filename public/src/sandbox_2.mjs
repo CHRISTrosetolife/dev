@@ -60,8 +60,8 @@ export async function sandbox_2() {
           });
         });
         index++;
-        exit();
       });
+      exit();
     });
   });
 }
