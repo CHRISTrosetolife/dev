@@ -1,3 +1,4 @@
+import { folder_name_public } from "./folder_name_public.mjs";
 import { folder_img_name } from "./folder_img_name.mjs";
 import { files_rename_incrementing } from "./files_rename_incrementing.mjs";
 import { assert_message } from "./assert_message.mjs";
@@ -25,7 +26,8 @@ export async function app_dev_screenshots(screen_name) {
   let folder_path = string_combine(folder_user(), "Pictures\\Screenshots");
   let file_extension = app_dev_screenshots_extension();
   let prefix = string_combine_multiple([
-    "public\\",
+    folder_name_public(),
+    "\\",
     folder_img_name(),
     "\\",
     app_name(app_dev),
