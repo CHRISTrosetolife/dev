@@ -22,7 +22,7 @@ export async function files_rename_if_starts_with(
       return;
     }
     let d = path_dirname(file_name_old);
-    let without = string_prefix_change(b, prefix_old, prefix_new);
+    let b_new = string_prefix_change(b, prefix_old, prefix_new);
     log({
       d,
     });
