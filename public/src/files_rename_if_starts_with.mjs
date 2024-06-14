@@ -25,6 +25,7 @@ export async function files_rename_if_starts_with(
     let b_new = string_prefix_change(b, prefix_old, prefix_new);
     log({
       d,
+      b_new,
     });
     return;
     let file_name_new = string_suffix_change(
