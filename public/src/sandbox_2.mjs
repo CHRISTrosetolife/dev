@@ -13,8 +13,8 @@ export async function sandbox_2() {
       }),
     )
     .on("parsed", function () {
-      log(object_properties(image));
       let image = this;
+      log(object_properties(image));
       for (var y = 0; y < image.height; y++) {
         for (var x = 0; x < image.width; x++) {
           var idx = (image.width * y + x) << 2;
