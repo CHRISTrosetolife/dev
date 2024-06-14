@@ -18,8 +18,9 @@ export function app_gs() {
   let tiles_min = 10;
   let map = html_div(root);
   html_style_width(map, tile_units_css(columns));
+  let height = tile_units_css(rows);
   html_style(map, {
-    height: tile_units_css(rows),
+    height: height,
   });
   function tile_units_css(count) {
     let v = (100 / tiles_min) * count;
