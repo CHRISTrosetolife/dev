@@ -33,7 +33,11 @@ export function app_gs() {
   });
   let grass = [10, 1, 1, 1];
   let sum = 0;
-  list_adder((la) => each(grass, (proportion) => la()));
+  list_adder((la) =>
+    each(grass, (proportion) => {
+      la();
+    }),
+  );
   each_range(rows, (r) => {
     let row = html_div(map);
     html_style_height(row, tile_units_css(1));
