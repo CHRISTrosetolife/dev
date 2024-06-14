@@ -1,6 +1,7 @@
 import { png_overwrite } from "./png_overwrite.mjs";
 import fs from "fs";
-export function png_transform(path_in, path_out, transform) {
+export async function png_transform(path_in, path_out, transform) {
+  let image = await new Promise((resolve) => {});
   fs.createReadStream(path_in)
     .pipe(
       new PNG({
@@ -9,7 +10,8 @@ export function png_transform(path_in, path_out, transform) {
     )
     .on("parsed", async function () {
       let image = this;
-      transform(image);
-      await png_overwrite(path_out, image);
+      resolve(image);
     });
+  transform(image);
+  await png_overwrite(path_out, image);
 }
