@@ -1,3 +1,4 @@
+import { game_grass_weight } from "./game_grass_weight.mjs";
 import { list_random_index_weighted } from "./list_random_index_weighted.mjs";
 import { html_style_height } from "./html_style_height.mjs";
 import { html_style_width } from "./html_style_width.mjs";
@@ -33,8 +34,7 @@ export function app_gs() {
     let row = html_div(map);
     html_style_height(row, tile_units_css(1));
     each_range(columns, (c) => {
-      let a = 10;
-      let grass = [a, a, a, 1];
+      let grass = game_grass_weight();
       let index = list_random_index_weighted(grass);
       let image = html_img(row, game_img_base(index));
       html_style_width(image, tile_units_css(1));
