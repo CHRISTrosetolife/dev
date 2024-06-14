@@ -1,3 +1,4 @@
+import { integer_random } from "./integer_random.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { range_from } from "./range_from.mjs";
 import { list_random_item } from "./list_random_item.mjs";
@@ -53,6 +54,9 @@ export function app_gs() {
         left: tile_units_css(c),
       });
       html_style_width(image, tile_units_css(1));
+      if (integer_random(1, 20) === 1) {
+        return;
+      }
       let overlay = html_img(
         column,
         game_img_base(
