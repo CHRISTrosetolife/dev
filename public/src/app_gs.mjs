@@ -159,7 +159,10 @@ export function app_gs() {
             elTop,
             mid,
           });
-          window.scrollTo(0, mid);
+          window.scrollTo(
+            player_overlay.element.offsetLeft,
+            player_overlay.element.offsetTop,
+          );
         }
       });
       if (integer_random(1, 8) === 1) {
