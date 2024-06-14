@@ -62,7 +62,7 @@ export function app_gs() {
   player.character = list_random_item(game_img_list_male());
   let p = game_img(
     map,
-    game_img_character(player.character, 0),
+    game_img_character(player.character, list_index(character_indices, "down")),
     player.y,
     player.x,
     list_index(z_indexes, "player"),
