@@ -29,8 +29,8 @@ export function app_gs() {
     margin: 0,
   });
   html_style_background_color(root, "black");
-  let rows = 2;
-  let columns = 2;
+  let rows = 10;
+  let columns = rows;
   let row_middle = floor(divide(subtract_1(rows), 2));
   let column_middle = floor(divide(subtract_1(columns), 2));
   let map = html_div(root);
