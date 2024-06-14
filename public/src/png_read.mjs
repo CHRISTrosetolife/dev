@@ -1,3 +1,4 @@
+import fs from "fs";
 export async function png_read(path_in) {
   return await new Promise((resolve) => {
     fs.createReadStream(path_in)
