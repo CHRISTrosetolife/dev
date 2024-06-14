@@ -14,5 +14,6 @@ export function app_gs() {
   each_range(30, (index) => {
     let image = html_img(root, game_img_base(index));
     html_style_width(image, "10dvw");
+    html_br(root);
   });
 }
