@@ -39,7 +39,9 @@ export function app_gs() {
       let column = html_div(row);
       html_style(column, {
         position: "relative",
+        display: "inline",
       });
+      html_style_width(column, tile_units_css(1));
       let image = html_img(column, game_img_base(r * columns + c));
       html_style(image, {
         position: "absolute",
