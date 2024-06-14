@@ -36,6 +36,8 @@ export async function sandbox_2() {
           file,
         }));
       });
+      rows_count = 5;
+      columns_count = 4;
     }
     let height_unit = height / rows_count;
     let width_unit = width / columns_count;
