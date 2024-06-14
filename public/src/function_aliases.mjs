@@ -6,6 +6,8 @@ export function function_aliases() {
     d: "data_update",
     de: "function_delete",
     f: "firebase_deploy",
+    i: "npm_install",
+    ig: "npm_install_global",
     n: "function_new",
     na: "function_new_args",
     o: "function_open",
