@@ -9,7 +9,7 @@ export async function files_rename_replace(
 ) {
   assert_arguments_length(arguments, 4);
   await files_rename_generic(input_path, file_extension, (b_old) => {
-    let b_new = string_replace(b, replace_from, replace_to);
+    let b_new = string_replace(b_old, replace_from, replace_to);
     return b_new;
   });
 }
