@@ -13,9 +13,11 @@ export function game_img_style(image, r, c, z_index) {
     position: "absolute",
     "z-index": z_index,
     transition: string_combine_multiple([
-      "width ",
-      app_gs_sleep_time() / 1000,
-      "s",
+      "top ",
+      app_gs_sleep_time(),
+      "ms, left ",
+      app_gs_sleep_time(),
+      "ms, ",
     ]),
   });
   game_img_position(image, r, c);
