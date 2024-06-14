@@ -76,6 +76,12 @@ export function app_gs() {
       let clicker = html_div(map);
       game_img_style(clicker, r, c, list_index(z_indexes, "clicker"));
       html_on_click(clicker, () => {
+        let direction = null;
+        if (r === player.y) {
+          if ((c > player, x)) {
+            direction = right;
+          }
+        }
         html_img_src(
           p,
           game_img_character(
