@@ -1,5 +1,4 @@
 import { each } from "./each.mjs";
-import { list_random_item } from "./list_random_item.mjs";
 import { html_style_height } from "./html_style_height.mjs";
 import { html_style_width } from "./html_style_width.mjs";
 import { game_img_base } from "./game_img_base.mjs";
@@ -11,6 +10,7 @@ import { html_style_background_color } from "./html_style_background_color.mjs";
 import { html_div } from "./html_div.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_adder } from "./list_adder.mjs";
+import { integer_random } from "./integer_random.mjs";
 export function app_gs() {
   let root = html_style_default_initialize();
   html_style(root, {
@@ -43,7 +43,7 @@ export function app_gs() {
     let row = html_div(map);
     html_style_height(row, tile_units_css(1));
     each_range(columns, (c) => {
-      let index = list_random_item(grass);
+      let index = integer_random(1, sum);
       let image = html_img(row, game_img_base(index));
       html_style_width(image, tile_units_css(1));
     });
