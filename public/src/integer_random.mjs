@@ -1,3 +1,4 @@
+import { floor } from "./floor.mjs";
 export function integer_random(low, high) {
-  return Math.floor(Math.random() * (high - low + 1) + low);
+  return floor(Math.random() * (high - low + 1) + low);
 }
