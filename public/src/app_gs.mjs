@@ -115,9 +115,9 @@ export function app_gs() {
           await each_range_async(steps_count, async () => {
             let animate_count = 2;
             let sleep_time = app_gs_sleep_time();
-            await walk(1);
+            await step(1);
             await sleep(sleep_time);
-            await walk(2);
+            await step(2);
             await sleep(sleep_time);
             let delta = game_direction_to_delta(direction);
             each(["x", "y"], (xy) => {
@@ -126,7 +126,7 @@ export function app_gs() {
                 object_property_get(delta, xy);
               object_property_set(player, xy, value);
             });
-            async function walk(step_count) {
+            async function step(step_count) {
               if (player.walk_offset === 0) {
                 player.walk_offset = -player.walk_previous;
                 player.walk_previous = player.walk_offset;
