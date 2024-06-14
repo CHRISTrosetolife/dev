@@ -154,9 +154,10 @@ export function app_gs() {
           let tile_size = number_min(vh, vw) / tiles_min;
           let mh = tile_size * rows;
           let mw = tile_size * columns;
+          let e = player_overlay.element;
           window.scrollTo(
-            player_overlay.element.offsetLeft - vw / 2,
-            player_overlay.element.offsetTop - vh / 2,
+            e.offsetLeft - vw / 2 + e.width / 2,
+            e.offsetTop - vh / 2 + e.height / 2,
           );
         }
       });
