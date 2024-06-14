@@ -1,3 +1,4 @@
+import { html_style_height } from "./html_style_height.mjs";
 import { html_style_width } from "./html_style_width.mjs";
 import { game_img_base } from "./game_img_base.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
@@ -19,9 +20,7 @@ export function app_gs() {
   let map = html_div(root);
   html_style_width(map, tile_units_css(columns));
   let height = tile_units_css(rows);
-  html_style(map, {
-    height: height,
-  });
+  html_style_height(map, height);
   function tile_units_css(count) {
     let v = (100 / tiles_min) * count;
     return string_combine_multiple(["min(", v, "dvw,", v, "dvh)"]);
