@@ -13,6 +13,7 @@ import { folder_read } from "./folder_read.mjs";
 import { each_async } from "./each_async.mjs";
 import { path_join } from "./path_join.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { list_add } from "./list_add.mjs";
 export async function sandbox_2() {
   let path_in = "public\\img\\shubibubi\\animals\\";
   let folder_out = "sliced";
@@ -44,7 +45,10 @@ export async function sandbox_2() {
             let y_offset = add(y, r * height_unit);
             each_range(width_unit, (x) => {
               let x_offset = add(x, c * width_unit);
-              var idx = (image.width * y_offset + x_offset) << 2;
+              let idx = (image.width * y_offset + x_offset) << 2;
+              each_range(4, (idx_offset) =>
+                list_add(image_out, image.data[add(idx, idx_offset)]),
+              );
               image.data[idx] = 255 - image.data[idx];
               image.data[idx + 1] = 255 - image.data[idx + 1];
               image.data[idx + 2] = 255 - image.data[idx + 2];
