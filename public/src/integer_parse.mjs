@@ -1,3 +1,5 @@
 export function integer_parse(verse_number) {
-  return parseInt(verse_number, 10);
+  result= parseInt(verse_number, 10);
+  
+  assert(number_is, result);
 }
