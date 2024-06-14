@@ -103,12 +103,6 @@ export function app_gs() {
           }
         }
         if (direction !== null) {
-          let delta = game_direction_to_delta(direction);
-          each(["x", "y"], (xy) => {
-            let value =
-              object_property_get(player, xy) + object_property_get(delta, xy);
-            object_property_set(player, xy, value);
-          });
           html_img_src(
             player_overlay,
             game_img_character(
@@ -125,6 +119,12 @@ export function app_gs() {
           walk(2);
           await sleep(200);
           walk(animate_count);
+          let delta = game_direction_to_delta(direction);
+          each(["x", "y"], (xy) => {
+            let value =
+              object_property_get(player, xy) + object_property_get(delta, xy);
+            object_property_set(player, xy, value);
+          });
           function walk(step_count) {
             if (player.walk_offset === 0) {
               player.walk_offset = -player.walk_previous;
