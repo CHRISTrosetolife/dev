@@ -81,6 +81,9 @@ export function app_gs() {
           if (c > player.x) {
             direction = "right";
           }
+          if (c < player.x) {
+            direction = "left";
+          }
         }
         html_img_src(
           p,
