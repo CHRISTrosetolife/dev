@@ -18,7 +18,7 @@ export function app_gs() {
   let columns = 20;
   let tiles_min = 10;
   let map = html_div(root);
-  function unit_size_css(count) {
+  function tile_units_css(count) {
     let v = (100 / tiles_min) * count;
     return string_combine_multiple(["min(", v, "dvw,", v, "dvh)"]);
   }
@@ -31,7 +31,7 @@ export function app_gs() {
     let row = html_div(map);
     each_range(columns, (c) => {
       let image = html_img(row, game_img_base(r));
-      html_style_width(image, unit_size_css(1));
+      html_style_width(image, tile_units_css(1));
     });
   });
 }
