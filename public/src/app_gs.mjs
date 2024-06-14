@@ -57,7 +57,7 @@ export function app_gs() {
         list_index(z_indexes, "tile"),
       );
       let clicker = html_div(map);
-      game_img_style(clicker, r, c, z_index);
+      game_img_style(clicker, r, c, list_index(z_indexes, "clicker"));
       html_on_click(tile, () => log("here"));
       if (integer_random(1, 8) === 1) {
         game_img(
