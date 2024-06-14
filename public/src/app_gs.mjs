@@ -46,13 +46,6 @@ export function app_gs() {
     "up",
     null,
   ];
-  game_img(
-    map,
-    game_img_character(list_random_item(game_img_list_male()), 0),
-    row_middle,
-    column_middle,
-    list_index(z_indexes, "player"),
-  );
   let map = html_div(root);
   html_style_width(map, game_tile_units_css(columns));
   let height = game_tile_units_css(rows);
@@ -63,6 +56,13 @@ export function app_gs() {
     display: "inline",
     "z-index": 0,
   });
+  game_img(
+    map,
+    game_img_character(list_random_item(game_img_list_male()), 0),
+    row_middle,
+    column_middle,
+    list_index(z_indexes, "player"),
+  );
   let z_indexes = ["tile", "overlay", "player", "clicker"];
   each_range(rows, (r) => {
     html_style_height(map, game_tile_units_css(1));
