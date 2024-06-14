@@ -134,12 +134,13 @@ export function app_gs() {
                 ),
               ),
             );
-            let row_delta = game_direction_to_delta_row(direction);
-            let column_delta = game_direction_to_delta_column(direction);
+            let delta = {};
+            delta.y = game_direction_to_delta_row(direction);
+            delta.x = game_direction_to_delta_column(direction);
             game_img_position(
               player_overlay,
-              player.y + (row_delta / animate_count) * step_count,
-              player.x + (column_delta / animate_count) * step_count,
+              player.y + (delta.y / animate_count) * step_count,
+              player.x + (delta.x / animate_count) * step_count,
             );
           }
         }
