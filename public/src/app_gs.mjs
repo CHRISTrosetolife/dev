@@ -44,7 +44,7 @@ export function app_gs() {
     html_style_height(row, tile_units_css(1));
     each_range(columns, (c) => {
       let r = integer_random(1, sum);
-      each_range(grass, (index) => a);
+      each_range(sums, (index) => a);
       let image = html_img(row, game_img_base(r));
       html_style_width(image, tile_units_css(1));
     });
