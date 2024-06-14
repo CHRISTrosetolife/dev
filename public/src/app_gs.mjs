@@ -62,9 +62,10 @@ export function app_gs() {
           ),
         );
         html_style_width(overlay, game_tile_units_css(1));
+        let z_index = 1;
         html_style(overlay, {
           position: "absolute",
-          "z-index": 1,
+          "z-index": z_index,
           left: game_tile_units_css(c),
           top: game_tile_units_css(r),
         });
