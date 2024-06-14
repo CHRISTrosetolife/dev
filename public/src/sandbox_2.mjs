@@ -40,15 +40,15 @@ export async function sandbox_2() {
           each_range(image.height, (y) => {
             each_range(image.width, (x) => {
               var idx = (image.width * y + x) << 2;
+              image.data[idx] = 255 - image.data[idx];
+              image.data[idx + 1] = 255 - image.data[idx + 1];
+              image.data[idx + 2] = 255 - image.data[idx + 2];
+              image.data[idx + 3] = image.data[idx + 3] >> 1;
             });
           });
           for (var y = 0; y < image.height; y++) {
             for (var x = 0; x < image.width; x++) {
               var idx = (image.width * y + x) << 2;
-              image.data[idx] = 255 - image.data[idx];
-              image.data[idx + 1] = 255 - image.data[idx + 1];
-              image.data[idx + 2] = 255 - image.data[idx + 2];
-              image.data[idx + 3] = image.data[idx + 3] >> 1;
             }
           }
         });
