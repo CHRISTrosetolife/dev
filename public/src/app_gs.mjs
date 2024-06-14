@@ -117,7 +117,10 @@ export function app_gs() {
               p,
               game_img_character(
                 player.character,
-                add(list_index(character_indices, direction), walk_offset.walk),
+                add(
+                  list_index(character_indices, direction),
+                  player.walk_offset,
+                ),
               ),
             );
             timeout_set(walk, 50);
