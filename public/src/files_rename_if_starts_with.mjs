@@ -20,8 +20,8 @@ export async function files_rename_if_starts_with(
     if (!string_starts_with(b, prefix_old)) {
       return;
     }
-    let d = path_dirname(file_name_old);
     let b_new = string_prefix_change(b, prefix_old, prefix_new);
+    let d = path_dirname(file_name_old);
     let file_name_new = path_join([d, b_new]);
     await file_rename(file_name_old, file_name_new);
   });
