@@ -36,7 +36,7 @@ export async function sandbox_2() {
           string_combine_multiple([n, "_", index, e]),
         ]);
         await png_transform(file, path_out, function transform(image) {
-          image.height = image.height / 4;
+          let image_out = [];
           each_range(image.height, (y) => {
             each_range(image.width, (x) => {
               var idx = (image.width * y + x) << 2;
