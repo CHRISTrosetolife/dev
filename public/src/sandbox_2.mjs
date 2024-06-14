@@ -12,7 +12,7 @@ export async function sandbox_2() {
   let columns_count = 4;
   await folder_read(path_in, async (file) => {
     let d = path_dirname(file);
-    let i = await png_read(path_in);
+    let i = await png_read(file);
     let { height, width } = i;
     assert(equal, [mod(width, columns_count), 0]);
     assert(equal, [mod(height, rows_count), 0]);
