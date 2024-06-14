@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { abs } from "./abs.mjs";
 import { number_max } from "./number_max.mjs";
 import { game_tiles_min } from "./game_tiles_min.mjs";
@@ -149,7 +150,12 @@ export function app_gs() {
           });
           let viewportHeight = window.innerHeight;
           let elTop = player_overlay.element.offsetTop;
-          window.scrollTo(0, viewportHeight / 2);
+          let mid = viewportHeight / 2;
+          log({
+            elTop,
+            mid,
+          });
+          window.scrollTo(0, mid);
         }
       });
       if (integer_random(1, 8) === 1) {
