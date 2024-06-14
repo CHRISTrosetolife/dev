@@ -49,10 +49,6 @@ export async function sandbox_2() {
               each_range(4, (idx_offset) =>
                 list_add(image_out, image.data[add(idx, idx_offset)]),
               );
-              image.data[idx] = 255 - image.data[idx];
-              image.data[idx + 1] = 255 - image.data[idx + 1];
-              image.data[idx + 2] = 255 - image.data[idx + 2];
-              image.data[idx + 3] = image.data[idx + 3] >> 1;
             });
           });
         });
