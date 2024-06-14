@@ -42,12 +42,12 @@ export function app_gs() {
         display: "inline",
       });
       let image = html_img(column, game_img_base(r * columns + c));
-      html_style_width(image, tile_units_css(1));
-      let overlay = html_img(column, game_img_base(40));
-      html_style(overlay, {
+      html_style(image, {
         position: "absolute",
         "z-index": 0,
       });
+      html_style_width(image, tile_units_css(1));
+      let overlay = html_img(column, game_img_base(40));
       html_style_width(overlay, tile_units_css(1));
       html_style(overlay, {
         position: "absolute",
