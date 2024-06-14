@@ -4,6 +4,7 @@ import { list_sort_string } from "./list_sort_string.mjs";
 import { identity } from "./identity.mjs";
 import { import_node } from "./import_node.mjs";
 import { assert } from "./assert.mjs";
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export async function folder_read(folder, file_extension) {
   let recursive = true;
   let g = await import_node("glob");
@@ -12,7 +13,12 @@ export async function folder_read(folder, file_extension) {
   folder += "/";
   let { glob } = g;
   let files = await glob(
-    `${folder}${recursive ? "**" : ""}/*${file_extension}`,
+    string_combine_multiple([
+      folder,
+      recursive ? "**" : "",
+      "/*",
+      file_extension,
+    ]),
   );
   list_sort_string(files, identity);
   return files;
