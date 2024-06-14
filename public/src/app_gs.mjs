@@ -1,3 +1,4 @@
+import { html_on } from "./html_on.mjs";
 import { app_gs_sleep_time } from "./app_gs_sleep_time.mjs";
 import { each_range_async } from "./each_range_async.mjs";
 import { each } from "./each.mjs";
@@ -112,6 +113,7 @@ export function app_gs() {
               list_index(character_indices, direction),
             ),
           );
+          await new Promise((resolve) => html_on(player_overlay, "load"));
           await sleep(25);
           let steps_count = Math.abs(player.y - r) + Math.abs(player.x - c);
           await each_range_async(steps_count, async () => {
