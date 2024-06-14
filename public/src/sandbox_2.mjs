@@ -1,3 +1,4 @@
+import { assert_message } from "./assert_message.mjs";
 import { each_index } from "./each_index.mjs";
 import { add } from "./add.mjs";
 import { each_range } from "./each_range.mjs";
@@ -6,7 +7,6 @@ import { path_extname } from "./path_extname.mjs";
 import { each_range_async } from "./each_range_async.mjs";
 import { mod } from "./mod.mjs";
 import { equal } from "./equal.mjs";
-import { assert } from "./assert.mjs";
 import { png_read } from "./png_read.mjs";
 import { path_dirname } from "./path_dirname.mjs";
 import { png_transform } from "./png_transform.mjs";
@@ -30,8 +30,12 @@ export async function sandbox_2() {
     let { height, width } = i;
     let height_unit = height / rows_count;
     let width_unit = width / columns_count;
-    assert(equal, [mod(width, columns_count), 0]);
-    assert(equal, [mod(height, rows_count), 0]);
+    assert_message(equal, [mod(width, columns_count), 0], () => {
+      file;
+    });
+    assert_message(equal, [mod(height, rows_count), 0], () => {
+      file;
+    });
     let index = 0;
     await each_range_async(rows_count, async (r) => {
       await each_range_async(columns_count, async (c) => {
