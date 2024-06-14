@@ -5,7 +5,6 @@ import { each } from "./each.mjs";
 import { game_direction_to_delta } from "./game_direction_to_delta.mjs";
 import { game_img_position } from "./game_img_position.mjs";
 import { add } from "./add.mjs";
-import { html_img_src } from "./html_img_src.mjs";
 import { list_index } from "./list_index.mjs";
 import { game_img_style } from "./game_img_style.mjs";
 import { html_on_click } from "./html_on_click.mjs";
@@ -127,14 +126,14 @@ export function app_gs() {
                 object_property_get(delta, xy);
               object_property_set(player, xy, value);
             });
-            function walk(step_count) {
+            async function walk(step_count) {
               if (player.walk_offset === 0) {
                 player.walk_offset = -player.walk_previous;
                 player.walk_previous = player.walk_offset;
               } else {
                 player.walk_offset = 0;
               }
-              html_img_src(
+              await html_img_src_wait(
                 player_overlay,
                 game_img_character(
                   player.character,
