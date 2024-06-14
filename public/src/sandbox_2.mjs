@@ -1,3 +1,4 @@
+import { path_parse_base } from "./path_parse_base.mjs";
 import { each_range_async } from "./each_range_async.mjs";
 import { mod } from "./mod.mjs";
 import { equal } from "./equal.mjs";
@@ -17,6 +18,7 @@ export async function sandbox_2() {
   let files = await folder_read(path_in, ".png");
   await each_async(files, async (file) => {
     let d = path_dirname(file);
+    path_parse_base(file);
     let i = await png_read(file);
     let { height, width } = i;
     assert(equal, [mod(width, columns_count), 0]);
