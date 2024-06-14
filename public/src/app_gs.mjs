@@ -34,6 +34,9 @@ export function app_gs() {
   html_style_height(map, height);
   html_style(map, {
     overflow: "hidden",
+    position: "relative",
+    display: "inline",
+    "z-index": 0,
   });
   each_range(rows, (r) => {
     html_style_height(map, game_tile_units_css(1));
@@ -41,11 +44,7 @@ export function app_gs() {
       let grass = game_grass_weight();
       let index = list_random_index_weighted(grass);
       let cell = html_div(map);
-      html_style(cell, {
-        position: "relative",
-        display: "inline",
-        "z-index": 0,
-      });
+      html_style(cell, {});
       html_style_width(cell, game_tile_units_css(1));
       let index2 = r * columns + c;
       let image = html_img(cell, game_img_base(index));
