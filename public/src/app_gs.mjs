@@ -18,6 +18,9 @@ export function app_gs() {
   let rows = 20;
   let columns = 20;
   let map = html_div(root);
+  html_style(map, {
+    overflow: "auto",
+  });
   let table = html_table(root);
   each_range(rows, (r) => {
     let row = html_tr(table);
