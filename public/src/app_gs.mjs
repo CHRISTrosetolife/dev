@@ -1,3 +1,4 @@
+import { html_data_set } from "./html_data_set.mjs";
 import { html_scroll_center_smooth } from "./html_scroll_center_smooth.mjs";
 import { abs } from "./abs.mjs";
 import { number_max } from "./number_max.mjs";
@@ -36,8 +37,6 @@ import { html_div } from "./html_div.mjs";
 import { sleep } from "./sleep.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { html_attribute_set } from "./html_attribute_set.mjs";
-import { string_combine } from "./string_combine.mjs";
 export function app_gs() {
   let root = html_style_default_initialize();
   html_style(root, {
@@ -90,11 +89,7 @@ export function app_gs() {
           list_concat(range_from(40, 42), range_from(48, 57)),
         );
         let data_name = "overlay";
-        html_attribute_set(
-          clicker,
-          string_combine("data-", data_name),
-          base_id,
-        );
+        html_data_set(clicker, data_name, base_id);
         game_img(
           map,
           game_img_base(base_id),
