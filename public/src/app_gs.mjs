@@ -17,7 +17,7 @@ export function app_gs() {
   let columns = 20;
   let unit_size_css = "min(10dvw,10dvh)";
   let map = html_div(root);
-  html_style_width(string_combine_multiple(columns, "*", unit_size_css));
+  html_style_width(string_combine_multiple([columns, "*", unit_size_css]));
   html_style(map, {
     overflow: "hidden",
   });
