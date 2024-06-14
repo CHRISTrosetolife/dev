@@ -85,9 +85,8 @@ export function app_gs() {
       let index = list_random_index_weighted(grass);
       game_img(map, game_img_base(index), r, c, list_index(z_indexes, "tile"));
       if (integer_random(1, 8) === 1) {
-        let base_id = list_random_item(
-          list_concat(range_from(40, 42), range_from(48, 57)),
-        );
+        let overlays = list_concat(range_from(40, 42), range_from(48, 57));
+        let base_id = list_random_item(overlays);
         html_data_set(clicker, "overlay", base_id);
         game_img(
           map,
