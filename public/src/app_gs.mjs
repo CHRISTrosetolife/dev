@@ -44,7 +44,6 @@ export function app_gs() {
       let grass = game_grass_weight();
       let index = list_random_index_weighted(grass);
       html_style_width(map, game_tile_units_css(1));
-      let index2 = r * columns + c;
       game_img(map, game_img_base(index), r, c, 0);
       if (integer_random(1, 8) === 1) {
         game_img(
