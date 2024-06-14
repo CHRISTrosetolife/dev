@@ -88,13 +88,12 @@ export function app_gs() {
       if (integer_random(1, 8) === 1) {
         let data_name = "overlay";
         html_attribute_set(clicker, string_combine("data-", data_name));
+        let base_id = list_random_item(
+          list_concat(range_from(40, 42), range_from(48, 57)),
+        );
         game_img(
           map,
-          game_img_base(
-            list_random_item(
-              list_concat(range_from(40, 42), range_from(48, 57)),
-            ),
-          ),
+          game_img_base(base_id),
           r,
           c,
           list_index(z_indexes, "overlay"),
