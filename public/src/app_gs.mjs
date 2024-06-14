@@ -59,13 +59,13 @@ export function app_gs() {
           1,
         );
       }
-      game_img(
-        map,
-        game_img_character(list_random_item(game_img_list_male()), 0),
-        r,
-        c,
-        2,
-      );
     });
   });
+  game_img(
+    map,
+    game_img_character(list_random_item(game_img_list_male()), 0),
+    r,
+    c,
+    2,
+  );
 }
