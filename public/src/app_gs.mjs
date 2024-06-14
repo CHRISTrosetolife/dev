@@ -56,6 +56,7 @@ export function app_gs() {
     display: "inline",
     "z-index": 0,
   });
+  let z_indexes = ["tile", "overlay", "player", "clicker"];
   game_img(
     map,
     game_img_character(list_random_item(game_img_list_male()), 0),
@@ -63,7 +64,6 @@ export function app_gs() {
     column_middle,
     list_index(z_indexes, "player"),
   );
-  let z_indexes = ["tile", "overlay", "player", "clicker"];
   each_range(rows, (r) => {
     html_style_height(map, game_tile_units_css(1));
     each_range(columns, (c) => {
