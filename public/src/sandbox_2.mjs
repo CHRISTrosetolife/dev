@@ -1,5 +1,5 @@
 import { png_transform } from "./png_transform.mjs";
-import fs from "fs";
+
 export async function sandbox_2() {
   let path_in = "public\\img\\shubibubi\\animals\\bunny.png";
   let path_out = "public\\img\\shubibubi\\animals\\bunny2.png";
