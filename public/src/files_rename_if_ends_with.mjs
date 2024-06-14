@@ -27,7 +27,7 @@ export async function files_rename_if_ends_with(
       suffix_old,
       suffix_new,
     );
-    file_name_new_less_extension = string_combine(
+    let file_name_new = string_combine(
       file_name_new_less_extension,
       file_extension,
     );
