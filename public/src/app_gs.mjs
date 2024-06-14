@@ -54,7 +54,9 @@ export function app_gs() {
       html_style_width(image, tile_units_css(1));
       let overlay = html_img(
         column,
-        game_img_base(list_random_item(list_concat(range_from(40, 45)))),
+        game_img_base(
+          list_random_item(list_concat(range_from(40, 45), range_from(48, 57))),
+        ),
       );
       html_style_width(overlay, tile_units_css(1));
       html_style(overlay, {
