@@ -67,8 +67,6 @@ export function app_gs() {
     position: "relative",
     display: "inline",
     "z-index": 0,
-    left: "50%",
-    transform: "translateX(-50%)",
   });
   let z_indexes = ["tile", "overlay", "player", "clicker"];
   player.character = list_random_item(game_img_list_male());
