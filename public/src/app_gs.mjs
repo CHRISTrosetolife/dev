@@ -102,7 +102,15 @@ export function app_gs() {
               list_index(character_indices, direction),
             ),
           );
-          timeout_set(() => {}, 50);
+          timeout_set(() => {
+            html_img_src(
+              p,
+              game_img_character(
+                player.character,
+                list_index(character_indices, direction),
+              ),
+            );
+          }, 50);
         }
       });
       if (integer_random(1, 8) === 1) {
