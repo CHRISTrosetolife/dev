@@ -68,6 +68,7 @@ export function app_gs() {
       }
     });
   });
+  let character_indices = [];
   game_img(
     map,
     game_img_character(list_random_item(game_img_list_male()), 0),
