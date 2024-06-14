@@ -148,6 +148,9 @@ export function app_gs() {
             }
           });
           player_overlay.element.scrollIntoView();
+          let viewportHeight = window.innerHeight;
+          let elTop = divFour.offsetTop;
+          window.scrollTo(0, elTop - viewportHeight / 2);
         }
       });
       if (integer_random(1, 8) === 1) {
