@@ -1,3 +1,4 @@
+import { folder_read_shallow } from "./folder_read_shallow.mjs";
 import { assert_message } from "./assert_message.mjs";
 import { each_index } from "./each_index.mjs";
 import { add } from "./add.mjs";
@@ -10,7 +11,6 @@ import { equal } from "./equal.mjs";
 import { png_read } from "./png_read.mjs";
 import { path_dirname } from "./path_dirname.mjs";
 import { png_transform } from "./png_transform.mjs";
-import { folder_read } from "./folder_read.mjs";
 import { each_async } from "./each_async.mjs";
 import { path_join } from "./path_join.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -21,7 +21,7 @@ export async function sandbox_2() {
   let tile_size = 32;
   let rows_count = 5;
   let columns_count = 4;
-  let files = await folder_read(path_in, ".png");
+  let files = await folder_read_shallow(path_in, ".png");
   await each_async(files, async (file) => {
     let d = path_dirname(file);
     let n = path_parse_name(file);
