@@ -1,8 +1,3 @@
-import { mod } from "./mod.mjs";
-import { equal } from "./equal.mjs";
-import { assert } from "./assert.mjs";
-import { path_dirname } from "./path_dirname.mjs";
-import { png_read } from "./png_read.mjs";
 import { png_transform } from "./png_transform.mjs";
 import { folder_read } from "./folder_read.mjs";
 export async function sandbox_2() {
@@ -10,13 +5,7 @@ export async function sandbox_2() {
   let tile_size = 32;
   let rows_count = 5;
   let columns_count = 4;
-  await folder_read(path_in, async (file) => {
-    let d = path_dirname(file);
-    let i = await png_read(file);
-    let { height, width } = i;
-    assert(equal, [mod(width, columns_count), 0]);
-    assert(equal, [mod(height, rows_count), 0]);
-  });
+  let files = await folder_read(path_in, ".png");
   return;
   await png_transform(path_in, path_out, transform);
   function transform(image) {
