@@ -110,6 +110,7 @@ export function app_gs() {
               player.walk_offset = -player.walk_previous;
               player.walk_previous = player.walk_offset;
             } else {
+              player.walk_offset = 0;
             }
             html_img_src(
               p,
