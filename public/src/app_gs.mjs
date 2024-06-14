@@ -1,4 +1,3 @@
-import { abs } from "./abs.mjs";
 import { html_img_src_wait } from "./html_img_src_wait.mjs";
 import { app_gs_sleep_time } from "./app_gs_sleep_time.mjs";
 import { each_range_async } from "./each_range_async.mjs";
@@ -39,7 +38,7 @@ export function app_gs() {
     margin: 0,
   });
   html_style_background_color(root, "black");
-  let rows = 10;
+  let rows = min(20, );
   let columns = rows;
   let player = {};
   player.y = floor(divide(subtract_1(rows), 2));
@@ -80,7 +79,7 @@ export function app_gs() {
       game_img(map, game_img_base(index), r, c, list_index(z_indexes, "tile"));
       let clicker = html_div(map);
       game_img_style(clicker, r, c, list_index(z_indexes, "clicker"));
-      let y_delta = player.y - r;
+      
       html_on_click(clicker, async () => {
         let direction = null;
         if (r === player.y) {
@@ -105,7 +104,7 @@ export function app_gs() {
             object_property_get(character_indices, direction),
           );
           await html_img_src_wait(player_overlay, img_url);
-          let steps_count = abs(y_delta) + Math.abs(player.x - c);
+          let steps_count = abs(player.y - r) + abs(player.x - c);
           await each_range_async(steps_count, async () => {
             let animate_count = 2;
             let sleep_time = app_gs_sleep_time();
@@ -163,3 +162,7 @@ export function app_gs() {
     });
   });
 }
+function abs(y_delta) {
+    return Math.abs(y_delta);
+}
+
