@@ -32,6 +32,7 @@ export async function sandbox_2() {
     let width_unit = width / columns_count;
     assert(equal, [mod(width, columns_count), 0]);
     assert(equal, [mod(height, rows_count), 0]);
+    return;
     let index = 0;
     await each_range_async(rows_count, async (r) => {
       await each_range_async(columns_count, async (c) => {
