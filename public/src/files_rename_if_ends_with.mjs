@@ -13,6 +13,9 @@ export async function files_rename_if_ends_with(
   suffix_old,
   suffix_new,
 ) {
+  log({
+    suffix_old,
+  });
   assert_arguments_length(arguments, 4);
   let files = await folder_read(input_path, file_extension);
   await each_async(files, async (file_name_old) => {
