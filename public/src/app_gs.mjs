@@ -86,6 +86,7 @@ export function app_gs() {
       let index = list_random_index_weighted(grass);
       game_img(map, game_img_base(index), r, c, list_index(z_indexes, "tile"));
       if (integer_random(1, 8) === 1) {
+        let data_name = "overlay";
         html_attribute_set(clicker, string_combine("data-"));
         game_img(
           map,
