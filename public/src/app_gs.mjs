@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { html_on_click } from "./html_on_click.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
 import { game_img } from "./game_img.mjs";
@@ -46,7 +47,7 @@ export function app_gs() {
       let grass = game_grass_weight();
       let index = list_random_index_weighted(grass);
       let tile = game_img(map, game_img_base(index), r, c, 0);
-      html_on_click(tile);
+      html_on_click(tile, () => log("here"));
       if (integer_random(1, 8) === 1) {
         game_img(
           map,
