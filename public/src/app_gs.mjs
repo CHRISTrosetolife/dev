@@ -27,7 +27,7 @@ export function app_gs() {
   let rows = 10;
   let columns = 10;
   let row_middle = floor(divide(rows, 2));
-  let column_middle = floor(divide(column_middle, 2));
+  let column_middle = floor(divide(columns, 2));
   let map = html_div(root);
   html_style_width(map, game_tile_units_css(columns));
   let height = game_tile_units_css(rows);
