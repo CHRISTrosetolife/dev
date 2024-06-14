@@ -13,7 +13,7 @@ export async function sandbox_2() {
   let i = await png_read(path_in);
   let { height, width } = i;
   assert(equal, [mod(width, columns_count), 0]);
-  assert(equal, [mod(width, columns_count), 0]);
+  assert(equal, [mod(height, rows_count), 0]);
   return;
   await png_transform(path_in, path_out, transform);
   function transform(image) {
