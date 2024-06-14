@@ -34,23 +34,22 @@ export async function sandbox_2() {
           folder_out,
           string_combine_multiple([n, "_", index, e]),
         ]);
-        await png_transform(file, path_out, transform);
+        await png_transform(file, path_out, function transform(image) {
+          image.height = image.height / 4;
+          for (var y = 0; y < image.height; y++) {
+            for (var x = 0; x < image.width; x++) {
+              var idx = (image.width * y + x) << 2;
+              image.data[idx] = 255 - image.data[idx];
+              image.data[idx + 1] = 255 - image.data[idx + 1];
+              image.data[idx + 2] = 255 - image.data[idx + 2];
+              image.data[idx + 3] = image.data[idx + 3] >> 1;
+            }
+          }
+        });
         index++;
       });
     });
   });
   return;
   await png_transform(path_in, path_out, transform);
-  function transform(image) {
-    image.height = image.height / 4;
-    for (var y = 0; y < image.height; y++) {
-      for (var x = 0; x < image.width; x++) {
-        var idx = (image.width * y + x) << 2;
-        image.data[idx] = 255 - image.data[idx];
-        image.data[idx + 1] = 255 - image.data[idx + 1];
-        image.data[idx + 2] = 255 - image.data[idx + 2];
-        image.data[idx + 3] = image.data[idx + 3] >> 1;
-      }
-    }
-  }
 }
