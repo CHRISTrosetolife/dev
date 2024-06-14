@@ -1,3 +1,4 @@
+import { number_min } from "./number_min.mjs";
 import { log } from "./log.mjs";
 import { abs } from "./abs.mjs";
 import { number_max } from "./number_max.mjs";
@@ -151,7 +152,7 @@ export function app_gs() {
           let h = window.innerHeight;
           let w = window.innerWidth;
           let elTop = player_overlay.element.offsetTop;
-          let mid = viewportHeight / 2;
+          let mid = number_min() / 2;
           log({
             elTop,
             mid,
