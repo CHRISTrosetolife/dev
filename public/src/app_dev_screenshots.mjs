@@ -26,10 +26,12 @@ export async function app_dev_screenshots(screen_name) {
   let folder_path = string_combine(folder_user(), "Pictures\\Screenshots");
   let file_extension = app_dev_screenshots_extension();
   let prefix = string_combine_multiple([
-    folder_name_public(),
-    "\\",
-    folder_img_name(),
-    "\\",
+    string_combine_multiple([
+      folder_name_public(),
+      "\\",
+      folder_img_name(),
+      "\\",
+    ]),
     app_name(app_dev),
     "\\",
     screen_name,
