@@ -116,7 +116,7 @@ export function app_gs() {
               p,
               game_img_character(
                 player.character,
-                add(list_index(character_indices, direction), player.walk),
+                add(list_index(character_indices, direction), walk_offset.walk),
               ),
             );
           }, 50);
