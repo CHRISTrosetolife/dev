@@ -147,9 +147,8 @@ export function app_gs() {
               );
             }
           });
-          player_overlay.element.scrollIntoView();
           let viewportHeight = window.innerHeight;
-          let elTop = divFour.offsetTop;
+          let elTop = player_overlay.element.offsetTop;
           window.scrollTo(0, elTop - viewportHeight / 2);
         }
       });
