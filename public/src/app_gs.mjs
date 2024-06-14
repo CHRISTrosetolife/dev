@@ -54,7 +54,7 @@ export function app_gs() {
         left: tile_units_css(c),
       });
       html_style_width(image, tile_units_css(1));
-      if (integer_random(1, 10) !== 1) {
+      if (integer_random(1, 8) !== 1) {
         return;
       }
       let overlay = html_img(
