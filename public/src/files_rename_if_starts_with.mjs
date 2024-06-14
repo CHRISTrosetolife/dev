@@ -1,3 +1,4 @@
+import { path_dirname } from "./path_dirname.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
 import { path_parse_base } from "./path_parse_base.mjs";
 import { string_suffix_change } from "./string_suffix_change.mjs";
@@ -18,6 +19,7 @@ export async function files_rename_if_starts_with(
     if (!string_starts_with(b, prefix_old)) {
       return;
     }
+    let d = path_dirname(file_name_old);
     let file_name_new = string_suffix_change(
       file_name_old,
       suffix_old,
