@@ -105,7 +105,11 @@ export function app_gs() {
         if (direction !== null) {
           let delta = game_direction_to_delta(direction);
           each(["x", "y"], (xy) =>
-            object_property_set(player, xy, object_property_get(delta, xy)),
+            object_property_set(
+              player,
+              xy,
+              object_property_get(player, xy) + object_property_get(delta, xy),
+            ),
           );
           html_img_src(
             player_overlay,
