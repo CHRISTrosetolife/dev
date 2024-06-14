@@ -15,11 +15,9 @@ export function app_gs() {
   let rows = 20;
   let columns = 20;
   let map = html_div(root);
-  if (0) {
-    html_style(map, {
-      overflow: "none",
-    });
-  }
+  html_style(map, {
+    overflow: "hidden",
+  });
   each_range(rows, (r) => {
     let row = html_div(map);
     each_range(columns, (c) => {
