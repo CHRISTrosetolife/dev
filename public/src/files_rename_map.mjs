@@ -10,7 +10,7 @@ export async function files_rename_map(
   file_extension,
   mapper_function_name,
 ) {
-  assert_arguments_length(arguments, 4);
+  assert_arguments_length(arguments, 3);
   let mapper = await function_import(mapper_function_name);
   let files = await folder_read(input_path, file_extension);
   await each_async(files, async (file_name_old) => {
