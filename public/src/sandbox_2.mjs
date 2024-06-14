@@ -1,20 +1,9 @@
-import { png_overwrite } from "./png_overwrite.mjs";
+import { png_transform } from "./png_transform.mjs";
 import fs from "fs";
-import { PNG } from "pngjs";
 export async function sandbox_2() {
-  let output_file_path = "public\\img\\shubibubi\\animals\\bunny2.png";
-  let input_file_path = "public\\img\\shubibubi\\animals\\bunny.png";
-  fs.createReadStream(input_file_path)
-    .pipe(
-      new PNG({
-        filterType: 4,
-      }),
-    )
-    .on("parsed", async function () {
-      let image = this;
-      transform(image);
-      await png_overwrite(output_file_path, image);
-    });
+  let path_in = "public\\img\\shubibubi\\animals\\bunny.png";
+  let path_out = "public\\img\\shubibubi\\animals\\bunny2.png";
+  png_transform(path_in, path_out, transform);
   function transform(image) {
     image.height = image.height / 4;
     for (var y = 0; y < image.height; y++) {
