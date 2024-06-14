@@ -33,6 +33,7 @@ export function app_gs() {
     let row = html_div(map);
     html_style_height(row, tile_units_css(1));
     each_range(columns, (c) => {
+      let a = 10;
       let grass = [10, 10, 10, 1];
       let index = list_random_index_weighted(grass);
       let image = html_img(row, game_img_base(index));
