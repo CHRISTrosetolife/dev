@@ -46,7 +46,8 @@ export function app_gs() {
         "z-index": 0,
       });
       html_style_width(column, tile_units_css(1));
-      let image = html_img(column, game_img_base(r * columns + c));
+      let index2 = r * columns + c;
+      let image = html_img(column, game_img_base(index));
       html_style(image, {
         position: "absolute",
         left: tile_units_css(c),
