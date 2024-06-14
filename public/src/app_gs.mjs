@@ -15,10 +15,11 @@ export function app_gs() {
   html_style_background_color(root, "black");
   let rows = 20;
   let columns = 20;
-  let unit_size_css = (w, h) =>
+  let min_tiles = 10;
+  let tile_size_css = (w, h) =>
     string_combine_multiple(["min(", w, "dvw,", h, "dvh)"]);
   let map = html_div(root);
-  html_style_width(map, string_combine_multiple([columns, "*", unit_size_css]));
+  html_style_width(map, tile_size_css());
   html_style(map, {
     overflow: "hidden",
   });
@@ -26,7 +27,7 @@ export function app_gs() {
     let row = html_div(map);
     each_range(columns, (c) => {
       let image = html_img(row, game_img_base(r));
-      html_style_width(image, unit_size_css);
+      html_style_width(image, tile_size_css(min_tiles, min_tiles));
     });
   });
 }
