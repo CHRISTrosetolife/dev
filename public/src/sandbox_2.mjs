@@ -1,7 +1,7 @@
 import fs from "fs";
 import { PNG } from "pngjs";
 export async function sandbox_2() {
-  let out = "public\\img\\shubibubi\\animals\\bunny2.png";
+  let output_file_path = "public\\img\\shubibubi\\animals\\bunny2.png";
   fs.createReadStream("public\\img\\shubibubi\\animals\\bunny.png")
     .pipe(
       new PNG({
@@ -23,7 +23,7 @@ export async function sandbox_2() {
       new Promise((resolve) => {
         image
           .pack()
-          .pipe(fs.createWriteStream(out))
+          .pipe(fs.createWriteStream(output_file_path))
           .on("finish", () => resolve());
       });
     });
