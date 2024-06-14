@@ -1,3 +1,4 @@
+import { each_index } from "./each_index.mjs";
 import { log } from "./log.mjs";
 import { each } from "./each.mjs";
 import { html_style_height } from "./html_style_height.mjs";
@@ -52,7 +53,7 @@ export function app_gs() {
         r,
       });
       let found = null;
-      each(sums, (s, index) => {
+      each_index(sums, (s, index) => {
         if (found === null) {
           if (s >= r) {
             found = index;
