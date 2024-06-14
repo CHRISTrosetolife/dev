@@ -4,8 +4,10 @@ import { assert } from "./assert.mjs";
 import { path_dirname } from "./path_dirname.mjs";
 import { png_read } from "./png_read.mjs";
 import { png_transform } from "./png_transform.mjs";
+import { folder_read } from "./folder_read.mjs";
 export async function sandbox_2() {
-  let path_in = "public\\img\\shubibubi\\animals\\bunny.png";
+  let path_in = "public\\img\\shubibubi\\animals\\";
+  folder_read;
   let tile_size = 32;
   let rows_count = 5;
   let columns_count = 4;
