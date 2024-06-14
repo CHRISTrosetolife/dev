@@ -1,6 +1,5 @@
 import { list_index } from "./list_index.mjs";
 import { game_img_style } from "./game_img_style.mjs";
-import { log } from "./log.mjs";
 import { html_on_click } from "./html_on_click.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
 import { game_img } from "./game_img.mjs";
@@ -52,7 +51,7 @@ export function app_gs() {
       game_img(map, game_img_base(index), r, c, list_index(z_indexes, "tile"));
       let clicker = html_div(map);
       game_img_style(clicker, r, c, list_index(z_indexes, "clicker"));
-      html_on_click(clicker, () => log("here"));
+      html_on_click(clicker, () => {});
       if (integer_random(1, 8) === 1) {
         game_img(
           map,
