@@ -138,8 +138,8 @@ export function app_gs() {
               direction === "left" ? -1 : direction === "right" ? 1 : 0;
             game_img_position(
               player_overlay,
-              r + (row_delta / animate_count) * 0,
-              c + (column_delta / animate_count) * 0,
+              player.y + (row_delta / animate_count) * 0,
+              player.x + (column_delta / animate_count) * 0,
             );
           }
         }
