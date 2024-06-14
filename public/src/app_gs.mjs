@@ -10,6 +10,7 @@ export function app_gs() {
     margin: 0,
   });
   html_style_background_color(root, "black");
+  let tile_size = 32;
   each_range(30, (index) => {
     let image = html_img(root, game_img_base(index));
   });
