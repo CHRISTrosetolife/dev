@@ -11,6 +11,6 @@ export function app_gs() {
   });
   html_style_background_color(root, "black");
   each_range(30, (index) => {
-    html_img(root, game_img_base(index));
+    let image = html_img(root, game_img_base(index));
   });
 }
