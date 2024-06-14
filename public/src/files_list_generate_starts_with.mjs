@@ -14,7 +14,9 @@ export async function files_list_generate_starts_with(
   assert_arguments_length(arguments, 4);
   let files = await folder_read_shallow(input_path, file_extension);
   let m = list_map(files, path_parse_name);
-  log([m]);
+  log({
+    m,
+  });
   let filtered = list_filter_starts_with(m, prefix);
   await generate_list_generic(filtered, name);
 }
