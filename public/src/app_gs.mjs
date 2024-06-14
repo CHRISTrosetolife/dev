@@ -85,6 +85,14 @@ export function app_gs() {
             direction = "left";
           }
         }
+        if (c === player.x) {
+          if (r > player.y) {
+            direction = "down";
+          }
+          if (r < player.y) {
+            direction = "up";
+          }
+        }
         html_img_src(
           p,
           game_img_character(
