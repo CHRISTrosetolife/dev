@@ -36,7 +36,7 @@ export function app_gs() {
     html_style_height(row, tile_units_css(1));
     each_range(columns, (c) => {
       let index = list_random_item(grass);
-      let image = html_img(row, game_img_base(r));
+      let image = html_img(row, game_img_base(index));
       html_style_width(image, tile_units_css(1));
     });
   });
