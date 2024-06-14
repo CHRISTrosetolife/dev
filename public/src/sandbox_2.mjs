@@ -32,7 +32,7 @@ export async function sandbox_2() {
     let { height, width } = i;
     if (tile_size_use) {
       each([width, height], (wh) => {
-        assert_message(equal, [mod(wh, columns_count), 0], () => {
+        assert_message(equal, [mod(wh, tile_size), 0], () => {
           file;
         });
       });
