@@ -35,6 +35,7 @@ export function app_gs() {
   let sum = 0;
   list_adder((la) =>
     each(grass, (proportion) => {
+      sum += proportion;
       la();
     }),
   );
