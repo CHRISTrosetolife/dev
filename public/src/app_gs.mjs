@@ -32,18 +32,18 @@ export function app_gs() {
   html_style(map, {
     overflow: "hidden",
   });
-  let grass = [10, 1, 1, 1];
-  let sum = 0;
-  let sums = list_adder((la) =>
-    each(grass, (proportion) => {
-      sum += proportion;
-      la(sum);
-    }),
-  );
   each_range(rows, (r) => {
     let row = html_div(map);
     html_style_height(row, tile_units_css(1));
     each_range(columns, (c) => {
+      let grass = [10, 1, 1, 1];
+      let sum = 0;
+      let sums = list_adder((la) =>
+        each(grass, (proportion) => {
+          sum += proportion;
+          la(sum);
+        }),
+      );
       let r = integer_random(1, sum);
       let found = null;
       each_index(sums, (s, index) => {
