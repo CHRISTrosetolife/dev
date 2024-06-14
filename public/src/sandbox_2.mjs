@@ -1,4 +1,3 @@
-import { counter } from "./counter.mjs";
 import { path_parse_name } from "./path_parse_name.mjs";
 import { path_extname } from "./path_extname.mjs";
 import { each_range_async } from "./each_range_async.mjs";
@@ -27,12 +26,13 @@ export async function sandbox_2() {
     let { height, width } = i;
     assert(equal, [mod(width, columns_count), 0]);
     assert(equal, [mod(height, rows_count), 0]);
+    let index = 0;
     await each_range_async(rows_count, async (r) => {
       await each_range_async(columns_count, async (c) => {
         let path_out = path_join([
           d,
           folder_out,
-          string_combine_multiple([n, "_", counter, e]),
+          string_combine_multiple([n, "_", index, e]),
         ]);
         await png_transform(file, path_out, transform);
       });
