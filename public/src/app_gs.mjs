@@ -11,6 +11,9 @@ export function app_gs() {
   html_style(root, {
     margin: 0,
   });
+  html_style(root, {
+    overflow: "hidden",
+  });
   html_style_background_color(root, "black");
   let rows = 20;
   let columns = 20;
