@@ -1,7 +1,6 @@
 import { mod } from "./mod.mjs";
 import { equal } from "./equal.mjs";
 import { assert } from "./assert.mjs";
-import { each } from "./each.mjs";
 import { path_dirname } from "./path_dirname.mjs";
 import { png_read } from "./png_read.mjs";
 import { png_transform } from "./png_transform.mjs";
@@ -11,7 +10,7 @@ export async function sandbox_2() {
   let d = path_dirname(path_in);
   let i = await png_read(path_in);
   let { height, width } = i;
-  each([height, width], (hw) => assert(equal, [mod(hw, tile_size), 0]));
+  assert(equal, [mod(hw, tile_size), 0]);
   return;
   await png_transform(path_in, path_out, transform);
   function transform(image) {
