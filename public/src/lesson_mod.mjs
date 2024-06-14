@@ -110,16 +110,16 @@ export function lesson_mod() {
       }
       html_style_background_color(th, color);
     });
-    let tbody = html_element(table, "tbody");
+    let tbody = html_tbody(table);
     each_index(range(11), (n, n_index) => {
       let even = equal(mod(n_index, divisor), 0);
-      let tr_body = html_element(tbody, "tr");
+      let tr_body = html_tr(tbody);
       let quotient = n / divisor;
       let columns_body = [n, divisor, quotient, floor(quotient), n % divisor];
       let index_last = list_index_last(columns_body);
       each_index(columns_body, (c, c_index) => {
         let divisor = 2;
-        let td = html_element(tr_body, "td");
+        let td = html_td(tr_body);
         html_inner_set(td, c);
         html_style_centered(td);
         app_learn_code_style_rounded_padded(td);
@@ -151,3 +151,15 @@ export function lesson_mod() {
     );
   }
 }
+function html_td(tr_body) {
+    return html_element(tr_body, "td");
+}
+
+function html_tr(tbody) {
+    return html_element(tbody, "tr");
+}
+
+function html_tbody(table) {
+    return html_element(table, "tbody");
+}
+
