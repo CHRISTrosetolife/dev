@@ -11,7 +11,7 @@ export async function files_rename_replace(
   replace_from,
   replace_to,
 ) {
-  assert_arguments_length(arguments, 3);
+  assert_arguments_length(arguments, 4);
   let mapper = await function_import(mapper_function_name);
   let files = await folder_read(input_path, file_extension);
   await each_async(files, async (file_name_old) => {
