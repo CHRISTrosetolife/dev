@@ -1,3 +1,4 @@
+import { app_gs_sleep_time } from "./app_gs_sleep_time.mjs";
 import { game_img_position } from "./game_img_position.mjs";
 import { html_style } from "./html_style.mjs";
 import { game_tile_units_css } from "./game_tile_units_css.mjs";
@@ -11,7 +12,7 @@ export function game_img_style(image, r, c, z_index) {
   html_style(image, {
     position: "absolute",
     "z-index": z_index,
-    transition: string_combine_multiple(["width ", "s"]),
+    transition: string_combine_multiple(["width ", app_gs_sleep_time(), "s"]),
   });
   game_img_position(image, r, c);
 }
