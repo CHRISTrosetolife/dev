@@ -7,6 +7,7 @@ import { each_async } from "./each_async.mjs";
 import { file_rename } from "./file_rename.mjs";
 import { folder_read } from "./folder_read.mjs";
 import { log } from "./log.mjs";
+import { string_prefix_without } from "./string_prefix_without.mjs";
 export async function files_rename_if_starts_with(
   input_path,
   file_extension,
@@ -21,6 +22,7 @@ export async function files_rename_if_starts_with(
       return;
     }
     let d = path_dirname(file_name_old);
+    let without = string_prefix_without();
     log({
       d,
     });
