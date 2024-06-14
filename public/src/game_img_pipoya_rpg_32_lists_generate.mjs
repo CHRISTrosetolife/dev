@@ -9,7 +9,7 @@ export async function game_img_pipoya_rpg_32_lists_generate() {
       game_img_path_pipoya_rpg_32(),
       ".png",
       prefix,
-      string_combine("game_list_", prefix),
+      string_combine("game_img_list_", prefix),
     );
   });
 }
