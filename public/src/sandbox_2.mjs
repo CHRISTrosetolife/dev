@@ -38,7 +38,9 @@ export async function sandbox_2() {
         await png_transform(file, path_out, function transform(image) {
           image.height = image.height / 4;
           each_range(image.height, (y) => {
-            each_range(image.width, (x) => {});
+            each_range(image.width, (x) => {
+              var idx = (image.width * y + x) << 2;
+            });
           });
           for (var y = 0; y < image.height; y++) {
             for (var x = 0; x < image.width; x++) {
