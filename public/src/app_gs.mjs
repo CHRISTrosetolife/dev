@@ -1,3 +1,4 @@
+import { add } from "./add.mjs";
 import { html_img_src } from "./html_img_src.mjs";
 import { list_index } from "./list_index.mjs";
 import { game_img_style } from "./game_img_style.mjs";
@@ -108,7 +109,7 @@ export function app_gs() {
               p,
               game_img_character(
                 player.character,
-                list_index(character_indices, direction) + player.walk,
+                add(list_index(character_indices, direction), player.walk),
               ),
             );
           }, 50);
