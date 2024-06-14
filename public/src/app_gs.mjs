@@ -35,6 +35,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { html_style_centered } from "./html_style_centered.mjs";
 export function app_gs() {
   let root = html_style_default_initialize();
+  html_style_centered(root);
   html_style(root, {
     margin: 0,
   });
@@ -61,7 +62,6 @@ export function app_gs() {
     null,
   ];
   let map = html_div(root);
-  html_style_centered(map);
   html_style_width(map, game_tile_units_css(columns));
   let height = game_tile_units_css(rows);
   html_style_height(map, height);
