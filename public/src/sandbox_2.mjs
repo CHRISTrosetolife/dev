@@ -7,15 +7,16 @@ import { png_transform } from "./png_transform.mjs";
 import { folder_read } from "./folder_read.mjs";
 export async function sandbox_2() {
   let path_in = "public\\img\\shubibubi\\animals\\";
-  folder_read;
-  let tile_size = 32;
-  let rows_count = 5;
-  let columns_count = 4;
-  let d = path_dirname(path_in);
-  let i = await png_read(path_in);
-  let { height, width } = i;
-  assert(equal, [mod(width, columns_count), 0]);
-  assert(equal, [mod(height, rows_count), 0]);
+  await folder_read(path_in, async (file) => {
+    let tile_size = 32;
+    let rows_count = 5;
+    let columns_count = 4;
+    let d = path_dirname(path_in);
+    let i = await png_read(path_in);
+    let { height, width } = i;
+    assert(equal, [mod(width, columns_count), 0]);
+    assert(equal, [mod(height, rows_count), 0]);
+  });
   return;
   await png_transform(path_in, path_out, transform);
   function transform(image) {
