@@ -32,6 +32,27 @@ export function app_gs() {
   let columns = rows;
   let row_middle = floor(divide(subtract_1(rows), 2));
   let column_middle = floor(divide(subtract_1(columns), 2));
+  let character_indices = [
+    null,
+    "down",
+    null,
+    null,
+    "left",
+    null,
+    null,
+    "right",
+    null,
+    null,
+    "up",
+    null,
+  ];
+  game_img(
+    map,
+    game_img_character(list_random_item(game_img_list_male()), 0),
+    row_middle,
+    column_middle,
+    list_index(z_indexes, "player"),
+  );
   let map = html_div(root);
   html_style_width(map, game_tile_units_css(columns));
   let height = game_tile_units_css(rows);
@@ -67,25 +88,4 @@ export function app_gs() {
       }
     });
   });
-  let character_indices = [
-    null,
-    "down",
-    null,
-    null,
-    "left",
-    null,
-    null,
-    "right",
-    null,
-    null,
-    "up",
-    null,
-  ];
-  game_img(
-    map,
-    game_img_character(list_random_item(game_img_list_male()), 0),
-    row_middle,
-    column_middle,
-    list_index(z_indexes, "player"),
-  );
 }
