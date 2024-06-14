@@ -8,7 +8,8 @@ import { function_import } from "./function_import.mjs";
 export async function files_rename_replace(
   input_path,
   file_extension,
-  mapper_function_name,
+  replace_from,
+  replace_to,
 ) {
   assert_arguments_length(arguments, 3);
   let mapper = await function_import(mapper_function_name);
