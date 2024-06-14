@@ -1,9 +1,9 @@
 import { add } from "./add.mjs";
-import { list_add } from "./list_add.mjs";
+import { list_adder } from "./list_adder.mjs";
 export function range_generic(count, offset) {
-  let result = [];
-  for (let i = 0; i < count; i++) {
-    list_add(result, add(i, offset));
-  }
-  return result;
+  return list_adder((la) => {
+    for (let i = 0; i < count; i++) {
+      la(add(i, offset));
+    }
+  });
 }
