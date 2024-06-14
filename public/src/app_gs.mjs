@@ -106,13 +106,11 @@ export function app_gs() {
           }
         }
         if (direction !== null) {
-          html_img_src(
-            player_overlay,
-            game_img_character(
-              player.character,
-              list_index(character_indices, direction),
-            ),
+          let img_url = game_img_character(
+            player.character,
+            list_index(character_indices, direction),
           );
+          html_img_src(player_overlay, img_url);
           await new Promise((resolve) =>
             html_on(player_overlay, "load", resolve),
           );
