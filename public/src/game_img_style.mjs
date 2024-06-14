@@ -12,7 +12,11 @@ export function game_img_style(image, r, c, z_index) {
   html_style(image, {
     position: "absolute",
     "z-index": z_index,
-    transition: string_combine_multiple(["width ", app_gs_sleep_time(), "s"]),
+    transition: string_combine_multiple([
+      "width ",
+      app_gs_sleep_time() / 1000,
+      "s",
+    ]),
   });
   game_img_position(image, r, c);
 }
