@@ -19,7 +19,7 @@ export function app_gs() {
   let table = html_table(parent);
   each_range(rows, (r) => {
     each_range(columns, (c) => {
-      let image = html_img(map, game_img_base(index));
+      let image = html_img(map, game_img_base(r));
       html_style_width(image, "min(10dvw,10dvh)");
     });
   });
