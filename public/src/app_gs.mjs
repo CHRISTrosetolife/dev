@@ -49,13 +49,7 @@ export function app_gs() {
     each_range(columns, (c) => {
       let grass = game_grass_weight();
       let index = list_random_index_weighted(grass);
-      let tile = game_img(
-        map,
-        game_img_base(index),
-        r,
-        c,
-        list_index(z_indexes, "tile"),
-      );
+      game_img(map, game_img_base(index), r, c, list_index(z_indexes, "tile"));
       let clicker = html_div(map);
       game_img_style(clicker, r, c, list_index(z_indexes, "clicker"));
       html_on_click(clicker, () => log("here"));
