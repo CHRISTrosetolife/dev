@@ -14,7 +14,7 @@ export function app_gs() {
   html_style_background_color(root, "black");
   let rows = 10;
   let columns = 10;
-  let table = html_table(root);
+  let map = html_table(root);
   each_range(rows, (r) => {
     each_range(columns, (c) => {
       let image = html_img(map, game_img_base(r));
