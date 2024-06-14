@@ -108,6 +108,7 @@ export function app_gs() {
           timeout_set(() => {
             if (player.walk_offset === 0) {
               player.walk_offset = -player.walk_previous;
+              player.walk_previous = player.walk_offset;
             } else {
             }
             html_img_src(
