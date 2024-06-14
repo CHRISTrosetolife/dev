@@ -10,8 +10,7 @@ import { path_join } from "./path_join.mjs";
 export async function files_rename_map(
   input_path,
   file_extension,
-  prefix_old,
-  prefix_new,
+  mapper_function_name,
 ) {
   assert_arguments_length(arguments, 4);
   let files = await folder_read(input_path, file_extension);
