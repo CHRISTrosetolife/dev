@@ -18,13 +18,8 @@ export function app_gs() {
   let tiles_min = 10;
   let map = html_div(root);
   function unit_size_css(count) {
-    return (
-      "min(",
-      (100 / tiles_min) * count,
-      "dvw,",
-      (100 / tiles_min) * count,
-      "dvh)"
-    );
+    let v = (100 / tiles_min) * count;
+    return "min(", v, "dvw,", v, "dvh)";
   }
   html_style_width(image);
   html_style_width_full(map);
