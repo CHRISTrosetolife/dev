@@ -44,7 +44,7 @@ export async function sandbox_2() {
             let y_offset = add(y, r * height_unit);
             each_range(width_unit, (x) => {
               let x_offset = add(x, c * width_unit);
-              var idx = (image.width * y + x) << 2;
+              var idx = (image.width * y_offset + x_offset) << 2;
               image.data[idx] = 255 - image.data[idx];
               image.data[idx + 1] = 255 - image.data[idx + 1];
               image.data[idx + 2] = 255 - image.data[idx + 2];
