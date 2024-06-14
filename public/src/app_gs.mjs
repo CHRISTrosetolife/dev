@@ -1,3 +1,5 @@
+import { range_from } from "./range_from.mjs";
+import { list_random_item } from "./list_random_item.mjs";
 import { game_grass_weight } from "./game_grass_weight.mjs";
 import { list_random_index_weighted } from "./list_random_index_weighted.mjs";
 import { html_style_height } from "./html_style_height.mjs";
@@ -49,7 +51,10 @@ export function app_gs() {
         left: tile_units_css(c),
       });
       html_style_width(image, tile_units_css(1));
-      let overlay = html_img(column, game_img_base(40));
+      let overlay = html_img(
+        column,
+        game_img_base(list_random_item(range_from(40, 45))),
+      );
       html_style_width(overlay, tile_units_css(1));
       html_style(overlay, {
         position: "absolute",
