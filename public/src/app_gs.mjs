@@ -12,6 +12,8 @@ import { html_div } from "./html_div.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { integer_random } from "./integer_random.mjs";
+import { assert } from "./assert.mjs";
+import { null_not_is } from "./null_not_is.mjs";
 export function app_gs() {
   let root = html_style_default_initialize();
   html_style(root, {
@@ -53,6 +55,7 @@ export function app_gs() {
           }
         }
       });
+      assert(null_not_is, [found]);
       let image = html_img(row, game_img_base(found));
       html_style_width(image, tile_units_css(1));
     });
