@@ -1,1 +1,3 @@
-export function app_gs() {}
+export function app_gs() {
+  let map = [];
+}
