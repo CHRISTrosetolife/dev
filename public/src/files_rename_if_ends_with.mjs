@@ -20,15 +20,8 @@ export async function files_rename_if_ends_with(
     if (!string_ends_with(file_name_old, suffix_old)) {
       return;
     }
-    let file_name_new_less_extension = string_suffix_change(
-      b_old,
-      suffix_old,
-      suffix_new,
-    );
-    let file_name_new = string_combine(
-      file_name_new_less_extension,
-      file_extension,
-    );
+    let b_new = string_suffix_change(b_old, suffix_old, suffix_new);
+    let file_name_new = string_combine(b_new, file_extension);
     log({
       file_name_new,
     });
