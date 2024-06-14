@@ -44,6 +44,7 @@ export function app_gs() {
       let image = html_img(column, game_img_base(r * columns + c));
       html_style_width(image, tile_units_css(1));
       let overlay = html_img(column, game_img_base(40));
+      html_style_width(overlay, tile_units_css(1));
     });
   });
 }
