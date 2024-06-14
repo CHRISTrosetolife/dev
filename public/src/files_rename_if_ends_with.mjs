@@ -1,3 +1,4 @@
+import { files_rename_generic } from "./files_rename_generic.mjs";
 import { log } from "./log.mjs";
 import { string_suffix_change } from "./string_suffix_change.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
@@ -13,6 +14,7 @@ export async function files_rename_if_ends_with(
   suffix_old,
   suffix_new,
 ) {
+  await files_rename_generic();
   log({
     suffix_old,
   });
