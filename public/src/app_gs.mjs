@@ -16,7 +16,7 @@ export function app_gs() {
     margin: 0,
   });
   html_style_background_color(root, "black");
-  let rows = 100;
+  let rows = 200;
   let columns = 8;
   let tiles_min = 10;
   let map = html_div(root);
