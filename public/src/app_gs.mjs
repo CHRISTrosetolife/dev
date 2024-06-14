@@ -36,6 +36,8 @@ import { html_div } from "./html_div.mjs";
 import { sleep } from "./sleep.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
+import { html_attribute_set } from "./html_attribute_set.mjs";
+import { string_combine } from "./string_combine.mjs";
 export function app_gs() {
   let root = html_style_default_initialize();
   html_style(root, {
@@ -84,6 +86,7 @@ export function app_gs() {
       let index = list_random_index_weighted(grass);
       game_img(map, game_img_base(index), r, c, list_index(z_indexes, "tile"));
       if (integer_random(1, 8) === 1) {
+        html_attribute_set(clicker, string_combine("data-"));
         game_img(
           map,
           game_img_base(
