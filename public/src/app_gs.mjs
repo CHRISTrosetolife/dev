@@ -16,7 +16,7 @@ export function app_gs() {
   html_style_background_color(root, "black");
   let rows = 20;
   let columns = 20;
-  html_style(map, {
+  html_style(root, {
     overflow: "hidden",
   });
   let table = html_table(map);
