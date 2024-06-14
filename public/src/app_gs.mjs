@@ -1,3 +1,4 @@
+import { html_img } from "./html_img.mjs";
 export function app_gs() {
-  let map = [];
+  html_img(root);
 }
