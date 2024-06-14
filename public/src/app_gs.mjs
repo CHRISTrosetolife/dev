@@ -150,10 +150,7 @@ export function app_gs() {
           });
           let vh = window.innerHeight;
           let vw = window.innerWidth;
-          let elTop = player_overlay.element.offsetTop;
           let tile_size = number_min(vh, vw) / tiles_min;
-          let mh = tile_size * rows;
-          let mw = tile_size * columns;
           let e = player_overlay.element;
           window.scrollTo({
             left: e.offsetLeft - vw / 2 + e.width / 2,
