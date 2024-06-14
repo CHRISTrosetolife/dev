@@ -15,6 +15,7 @@ export function app_gs() {
   html_style_background_color(root, "black");
   let rows = 20;
   let columns = 20;
+  let tiles_min = 10;
   let map = html_div(root);
   function unit_size_css() {
     return "min(10dvw,10dvh)";
