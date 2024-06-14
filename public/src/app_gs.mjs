@@ -1,3 +1,4 @@
+import { html_scroll_center } from "./html_scroll_center.mjs";
 import { abs } from "./abs.mjs";
 import { number_max } from "./number_max.mjs";
 import { game_tiles_min } from "./game_tiles_min.mjs";
@@ -150,6 +151,8 @@ export function app_gs() {
           let vh = window.innerHeight;
           let vw = window.innerWidth;
           let e = player_overlay.element;
+          html_scroll_center(player_overlay);
+          return;
           window.scrollTo({
             left: e.offsetLeft - vw / 2 + e.width / 2,
             top: e.offsetTop - vh / 2 + e.height / 2,
