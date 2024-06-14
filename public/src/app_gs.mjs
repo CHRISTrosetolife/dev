@@ -43,7 +43,6 @@ export function app_gs() {
     each_range(columns, (c) => {
       let grass = game_grass_weight();
       let index = list_random_index_weighted(grass);
-      html_style(cell, {});
       html_style_width(map, game_tile_units_css(1));
       let index2 = r * columns + c;
       let image = html_img(map, game_img_base(index));
