@@ -18,6 +18,7 @@ import { list_add } from "./list_add.mjs";
 export async function sandbox_2() {
   let path_in = "public\\img\\shubibubi\\animals\\";
   let tile_size = 32;
+  let tile_size_use = true;
   let rows_count = 5;
   let columns_count = 4;
   let folder_out = "sliced";
@@ -28,6 +29,8 @@ export async function sandbox_2() {
     let e = path_extname(file);
     let i = await png_read(file);
     let { height, width } = i;
+    if (tile_size_use) {
+    }
     let height_unit = height / rows_count;
     let width_unit = width / columns_count;
     assert_message(equal, [mod(width, columns_count), 0], () => {
