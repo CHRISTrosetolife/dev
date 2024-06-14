@@ -76,7 +76,13 @@ export function app_gs() {
       let clicker = html_div(map);
       game_img_style(clicker, r, c, list_index(z_indexes, "clicker"));
       html_on_click(clicker, () => {
-        html_img_src(p);
+        html_img_src(
+          p,
+          game_img_character(
+            player.character,
+            list_index(character_indices, "right"),
+          ),
+        );
       });
       if (integer_random(1, 8) === 1) {
         game_img(
