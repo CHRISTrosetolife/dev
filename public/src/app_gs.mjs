@@ -114,7 +114,7 @@ export function app_gs() {
           let steps_count = Math.abs(player.y - r) + Math.abs(player.x - c);
           await each_range_async(steps_count, async () => {
             let animate_count = 2;
-            let sleep_time = 75;
+            let sleep_time = 90;
             await sleep(50);
             walk(1);
             await sleep(sleep_time);
