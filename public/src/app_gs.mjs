@@ -110,12 +110,12 @@ export function app_gs() {
               list_index(character_indices, direction),
             ),
           );
-          let animate_count = 1;
+          let animate_count = 2;
           let sleep_time = 200;
           await sleep(sleep_time);
-          walk(0);
-          await sleep(sleep_time);
           walk(1);
+          await sleep(sleep_time);
+          walk(2);
           let delta = game_direction_to_delta(direction);
           each(["x", "y"], (xy) => {
             let value =
