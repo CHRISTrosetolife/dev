@@ -113,7 +113,9 @@ export function app_gs() {
               list_index(character_indices, direction),
             ),
           );
-          await new Promise((resolve) => html_on(player_overlay, "load"));
+          await new Promise((resolve) =>
+            html_on(player_overlay, "load", resolve),
+          );
           await sleep(25);
           let steps_count = Math.abs(player.y - r) + Math.abs(player.x - c);
           await each_range_async(steps_count, async () => {
