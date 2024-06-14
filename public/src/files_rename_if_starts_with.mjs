@@ -27,6 +27,7 @@ export async function files_rename_if_starts_with(
     log({
       d,
       b_new,
+      file_name_new,
     });
     return;
     await file_rename(file_name_old, file_name_new);
