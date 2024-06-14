@@ -54,8 +54,8 @@ export async function sandbox_2() {
           });
           image.width = width_unit;
           image.height = height_unit;
-          each_index(image_out, (value, index) => {
-            image[index] = value;
+          each_index(image_out, (value, a) => {
+            image[a] = value;
           });
         });
         index++;
