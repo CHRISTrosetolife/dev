@@ -10,6 +10,7 @@ export async function files_list_generate_starts_with(
   name,
 ) {
   let files = await folder_read(input_path, file_extension);
+  let m = list_map(files, path_parse_name);
   let mapped = list_map(files, (f) => {
     let n = path_parse_name();
     return string_starts_with(f, prefix);
