@@ -1,3 +1,4 @@
+import { game_img_character } from "./game_img_character.mjs";
 import { game_tile_units_css } from "./game_tile_units_css.mjs";
 import { integer_random } from "./integer_random.mjs";
 import { list_concat } from "./list_concat.mjs";
@@ -65,10 +66,9 @@ export function app_gs() {
           left: game_tile_units_css(c),
         });
       }
-      return;
       let overlay_person = html_img(
         column,
-        game_img_base(
+        game_img_character(
           list_random_item(list_concat(range_from(40, 42), range_from(48, 57))),
         ),
       );
