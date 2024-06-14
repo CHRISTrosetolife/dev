@@ -105,6 +105,7 @@ export function app_gs() {
               list_index(character_indices, direction),
             ),
           );
+          walk();
           function walk() {
             if (player.walk_offset === 0) {
               player.walk_offset = -player.walk_previous;
