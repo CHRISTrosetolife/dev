@@ -149,10 +149,10 @@ export function app_gs() {
               );
             }
           });
-          let h = window.innerHeight;
-          let w = window.innerWidth;
+          let vh = window.innerHeight;
+          let vw = window.innerWidth;
           let elTop = player_overlay.element.offsetTop;
-          let tile_size = number_min(h, w) / tiles_min;
+          let tile_size = number_min(vh, vw) / tiles_min;
           log({
             elTop,
             mid,
