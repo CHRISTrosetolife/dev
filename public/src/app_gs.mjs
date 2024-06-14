@@ -44,6 +44,9 @@ export function app_gs() {
       });
       html_style_width(column, tile_units_css(1));
       let image = html_img(column, game_img_base(r * columns + c));
+      html_style(image, {
+        position: "absolute",
+      });
       html_style_width(image, tile_units_css(1));
       let overlay = html_img(column, game_img_base(40));
       html_style_width(overlay, tile_units_css(1));
