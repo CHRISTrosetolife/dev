@@ -111,14 +111,14 @@ export function app_gs() {
             ),
           );
           let animate_count = 3;
-          let sleep_time = 200;
-          await sleep(200);
+          let sleep_time = 1200;
+          await sleep(sleep_time);
           walk(0);
-          await sleep(200);
+          await sleep(sleep_time);
           walk(1);
-          await sleep(200);
+          await sleep(sleep_time);
           walk(2);
-          await sleep(200);
+          await sleep(sleep_time);
           walk(animate_count);
           let delta = game_direction_to_delta(direction);
           each(["x", "y"], (xy) => {
