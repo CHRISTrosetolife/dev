@@ -16,8 +16,8 @@ export function app_gs() {
     margin: 0,
   });
   html_style_background_color(root, "black");
-  let rows = 20;
-  let columns = 20;
+  let rows = 100;
+  let columns = 8;
   let tiles_min = 10;
   let map = html_div(root);
   html_style_width(map, tile_units_css(columns));
