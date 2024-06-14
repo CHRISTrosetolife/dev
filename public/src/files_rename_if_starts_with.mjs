@@ -1,3 +1,4 @@
+import { string_prefix_change } from "./string_prefix_change.mjs";
 import { path_dirname } from "./path_dirname.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
 import { path_parse_base } from "./path_parse_base.mjs";
@@ -7,7 +8,6 @@ import { each_async } from "./each_async.mjs";
 import { file_rename } from "./file_rename.mjs";
 import { folder_read } from "./folder_read.mjs";
 import { log } from "./log.mjs";
-import { string_prefix_without } from "./string_prefix_without.mjs";
 export async function files_rename_if_starts_with(
   input_path,
   file_extension,
@@ -22,7 +22,7 @@ export async function files_rename_if_starts_with(
       return;
     }
     let d = path_dirname(file_name_old);
-    let without = string_prefix_without();
+    let without = string_prefix_change(b, prefix_old, prefix_new);
     log({
       d,
     });
