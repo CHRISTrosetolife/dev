@@ -31,6 +31,6 @@ export async function files_rename_if_ends_with(
       file_name_new_less_extension,
       file_extension,
     );
-    await file_rename(file_name_old, file_name_new_less_extension);
+    await file_rename(file_name_old, file_name_new);
   });
 }
