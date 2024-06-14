@@ -8,7 +8,6 @@ import { html_img } from "./html_img.mjs";
 import { each_range } from "./each_range.mjs";
 import { html_style } from "./html_style.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
-import { html_div } from "./html_div.mjs";
 export function app_gs() {
   let root = html_style_default_initialize();
   html_style(root, {
@@ -17,9 +16,8 @@ export function app_gs() {
   html_style_background_color(root, "black");
   let rows = 20;
   let columns = 20;
-  let map = html_div(root);
   html_style(map, {
-    overflow: "scroll",
+    overflow: "hidden",
   });
   let table = html_table(map);
   each_range(rows, (r) => {
