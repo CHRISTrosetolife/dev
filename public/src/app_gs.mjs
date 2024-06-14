@@ -36,7 +36,8 @@ export function app_gs() {
   let player = {};
   player.y = floor(divide(subtract_1(rows), 2));
   player.x = floor(divide(subtract_1(columns), 2));
-  player.walk = 0;
+  player.walk_offset = 0;
+  player.walk_previous = 1;
   let character_indices = [
     null,
     "down",
