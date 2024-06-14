@@ -105,7 +105,7 @@ export function app_gs() {
               list_index(character_indices, direction),
             ),
           );
-          timeout_set(function walk() {
+          function walk() {
             if (player.walk_offset === 0) {
               player.walk_offset = -player.walk_previous;
               player.walk_previous = player.walk_offset;
@@ -119,7 +119,8 @@ export function app_gs() {
                 add(list_index(character_indices, direction), walk_offset.walk),
               ),
             );
-          }, 50);
+            timeout_set(walk, 50);
+          }
         }
       });
       if (integer_random(1, 8) === 1) {
