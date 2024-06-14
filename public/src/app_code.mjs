@@ -4,7 +4,6 @@ import { app_code_download } from "./app_code_download.mjs";
 import { html_root } from "./html_root.mjs";
 import { html_style_height_full } from "./html_style_height_full.mjs";
 import { html_style_margin_none } from "./html_style_margin_none.mjs";
-import { html_document_body } from "./html_document_body.mjs";
 import { html_hash_exists } from "./html_hash_exists.mjs";
 import { app_code_edit } from "./app_code_edit.mjs";
 import { html_hash } from "./html_hash.mjs";
@@ -15,8 +14,7 @@ import { app_code_backable } from "./app_code_backable.mjs";
 export async function app_code() {
   let global = global_get();
   object_property_set(global, "back_stack", []);
-  html_style_default_initialize();
-  let root = html_document_body();
+  let root = html_style_default_initialize();
   html_style_margin_none(root);
   let html = html_root();
   for (let e of [html, root]) {
@@ -27,7 +25,7 @@ export async function app_code() {
     html_hash({
       function_name: (function_name) => {
         let p = function_name_to_path(function_name);
-        app_code_backable(() => app_code_edit(p));
+        app_code_backable(async () => await app_code_edit(p));
       },
     });
   } else {
