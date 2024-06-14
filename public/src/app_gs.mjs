@@ -69,7 +69,7 @@ export function app_gs() {
           ),
           r,
           c,
-          1,
+          list_index(z_indexes, "overlay"),
         );
       }
     });
@@ -79,6 +79,6 @@ export function app_gs() {
     game_img_character(list_random_item(game_img_list_male()), 0),
     row_middle,
     column_middle,
-    2,
+    list_index(z_indexes, "player"),
   );
 }
