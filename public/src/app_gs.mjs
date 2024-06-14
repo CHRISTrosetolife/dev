@@ -54,21 +54,22 @@ export function app_gs() {
         left: tile_units_css(c),
       });
       html_style_width(image, tile_units_css(1));
-      if (integer_random(1, 8) !== 1) {
-        return;
+      if (integer_random(1, 8) === 1) {
+        let overlay = html_img(
+          column,
+          game_img_base(
+            list_random_item(
+              list_concat(range_from(40, 42), range_from(48, 57)),
+            ),
+          ),
+        );
+        html_style_width(overlay, tile_units_css(1));
+        html_style(overlay, {
+          position: "absolute",
+          "z-index": 1,
+          left: tile_units_css(c),
+        });
       }
-      let overlay = html_img(
-        column,
-        game_img_base(
-          list_random_item(list_concat(range_from(40, 42), range_from(48, 57))),
-        ),
-      );
-      html_style_width(overlay, tile_units_css(1));
-      html_style(overlay, {
-        position: "absolute",
-        "z-index": 1,
-        left: tile_units_css(c),
-      });
     });
   });
 }
