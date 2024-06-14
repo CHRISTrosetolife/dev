@@ -1,3 +1,4 @@
+import { add } from "./add.mjs";
 import { each_range } from "./each_range.mjs";
 import { path_parse_name } from "./path_parse_name.mjs";
 import { path_extname } from "./path_extname.mjs";
@@ -38,6 +39,7 @@ export async function sandbox_2() {
         await png_transform(file, path_out, function transform(image) {
           let image_out = [];
           each_range(height / rows_count, (y) => {
+            let y_offset = add(y);
             each_range(width / columns_count, (x) => {
               var idx = (image.width * y + x) << 2;
               image.data[idx] = 255 - image.data[idx];
