@@ -79,6 +79,7 @@ export function app_gs() {
       game_img(map, game_img_base(index), r, c, list_index(z_indexes, "tile"));
       let clicker = html_div(map);
       game_img_style(clicker, r, c, list_index(z_indexes, "clicker"));
+      let y_delta = player.y - r;
       html_on_click(clicker, async () => {
         let direction = null;
         if (r === player.y) {
@@ -103,7 +104,7 @@ export function app_gs() {
             object_property_get(character_indices, direction),
           );
           await html_img_src_wait(player_overlay, img_url);
-          let steps_count = Math.abs(player.y - r) + Math.abs(player.x - c);
+          let steps_count = Math.abs(y_delta) + Math.abs(player.x - c);
           await each_range_async(steps_count, async () => {
             let animate_count = 2;
             let sleep_time = app_gs_sleep_time();
