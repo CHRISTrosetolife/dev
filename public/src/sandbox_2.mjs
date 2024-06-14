@@ -10,7 +10,7 @@ export async function sandbox_2() {
     )
     .on("parsed", function () {
       let image = this;
-      image.height = image.height / 3;
+      image.height = image.height / 4;
       for (var y = 0; y < image.height; y++) {
         for (var x = 0; x < image.width; x++) {
           var idx = (image.width * y + x) << 2;
