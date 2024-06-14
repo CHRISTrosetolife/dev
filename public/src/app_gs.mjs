@@ -1,6 +1,5 @@
 import { html_td } from "./html_td.mjs";
 import { html_tr } from "./html_tr.mjs";
-import { html_table } from "./html_table.mjs";
 import { html_style_width } from "./html_style_width.mjs";
 import { game_img_base } from "./game_img_base.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
@@ -18,10 +17,11 @@ export function app_gs() {
   let rows = 20;
   let columns = 20;
   let map = html_div(root);
-  html_style(map, {
-    overflow: "none",
-  });
-  let table = html_table(root);
+  if (0) {
+    html_style(map, {
+      overflow: "none",
+    });
+  }
   each_range(rows, (r) => {
     let row = html_tr(table);
     each_range(columns, (c) => {
