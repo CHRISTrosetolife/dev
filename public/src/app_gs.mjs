@@ -15,7 +15,8 @@ export function app_gs() {
   html_style_background_color(root, "black");
   let rows = 20;
   let columns = 20;
-  let unit_size_css = "min(10dvw,10dvh)";
+  let unit_size_css = (w, h) =>
+    string_combine_multiple(["min(", w, "dvw,", h, "dvh)"]);
   let map = html_div(root);
   html_style_width(map, string_combine_multiple([columns, "*", unit_size_css]));
   html_style(map, {
