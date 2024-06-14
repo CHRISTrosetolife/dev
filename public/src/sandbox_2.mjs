@@ -1,8 +1,10 @@
 import { path_dirname } from "./path_dirname.mjs";
+import { png_read } from "./png_read.mjs";
 import { png_transform } from "./png_transform.mjs";
 export async function sandbox_2() {
   let path_in = "public\\img\\shubibubi\\animals\\bunny.png";
   let d = path_dirname(path_in);
+  let i = await png_read(path_in);
   await png_transform(path_in, path_out, transform);
   function transform(image) {
     image.height = image.height / 4;
