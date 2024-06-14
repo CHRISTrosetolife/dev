@@ -1,3 +1,4 @@
+import { abs } from "./abs.mjs";
 import { html_img_src_wait } from "./html_img_src_wait.mjs";
 import { app_gs_sleep_time } from "./app_gs_sleep_time.mjs";
 import { each_range_async } from "./each_range_async.mjs";
@@ -104,7 +105,7 @@ export function app_gs() {
             object_property_get(character_indices, direction),
           );
           await html_img_src_wait(player_overlay, img_url);
-          let steps_count = Math.abs(y_delta) + Math.abs(player.x - c);
+          let steps_count = abs(y_delta) + Math.abs(player.x - c);
           await each_range_async(steps_count, async () => {
             let animate_count = 2;
             let sleep_time = app_gs_sleep_time();
