@@ -20,8 +20,8 @@ export async function sandbox_2() {
     let { height, width } = i;
     assert(equal, [mod(width, columns_count), 0]);
     assert(equal, [mod(height, rows_count), 0]);
-    await each_range_async(rows_count, async (row) => {
-      await each_range_async(cols_count, async (col) => {});
+    await each_range_async(rows_count, async (r) => {
+      await each_range_async(columns_count, async (c) => {});
     });
   });
   return;
