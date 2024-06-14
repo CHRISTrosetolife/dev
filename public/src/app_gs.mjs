@@ -88,8 +88,7 @@ export function app_gs() {
         let base_id = list_random_item(
           list_concat(range_from(40, 42), range_from(48, 57)),
         );
-        let data_name = "overlay";
-        html_data_set(clicker, data_name, base_id);
+        html_data_set(clicker, "overlay", base_id);
         game_img(
           map,
           game_img_base(base_id),
