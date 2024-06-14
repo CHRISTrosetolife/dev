@@ -45,20 +45,12 @@ export function app_gs() {
   player.x = floor(divide(subtract_1(columns), 2));
   player.walk_offset = 0;
   player.walk_previous = 1;
-  let character_indices = [
-    null,
-    "down",
-    null,
-    null,
-    "left",
-    null,
-    null,
-    "right",
-    null,
-    null,
-    "up",
-    null,
-  ];
+  let character_indices = {
+    down: 1,
+    left: 4,
+    right: 7,
+    up: 10,
+  };
   let map = html_div(root);
   html_style_width(map, game_tile_units_css(columns));
   html_style_height(map, game_tile_units_css(rows));
@@ -71,7 +63,10 @@ export function app_gs() {
   player.character = list_random_item(game_img_list_male());
   let player_overlay = game_img(
     map,
-    game_img_character(player.character, list_index(character_indices, "down")),
+    game_img_character(
+      player.character,
+      object_property_get(character_indices, "down"),
+    ),
     player.y,
     player.x,
     list_index(z_indexes, "player"),
@@ -105,7 +100,7 @@ export function app_gs() {
         if (direction !== null) {
           let img_url = game_img_character(
             player.character,
-            list_index(character_indices, direction),
+            object_property_get(character_indices, direction),
           );
           await html_img_src_wait(player_overlay, img_url);
           let steps_count = Math.abs(player.y - r) + Math.abs(player.x - c);
@@ -135,7 +130,7 @@ export function app_gs() {
                 game_img_character(
                   player.character,
                   add(
-                    list_index(character_indices, direction),
+                    object_property_get(character_indices, direction),
                     player.walk_offset,
                   ),
                 ),
