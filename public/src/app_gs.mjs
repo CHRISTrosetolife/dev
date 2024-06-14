@@ -149,7 +149,7 @@ export function app_gs() {
           });
           let viewportHeight = window.innerHeight;
           let elTop = player_overlay.element.offsetTop;
-          window.scrollTo(0, elTop - viewportHeight / 2);
+          window.scrollTo(0, viewportHeight / 2);
         }
       });
       if (integer_random(1, 8) === 1) {
