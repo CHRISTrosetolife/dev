@@ -148,7 +148,8 @@ export function app_gs() {
               );
             }
           });
-          let viewportHeight = window.innerHeight;
+          let h = window.innerHeight;
+          let w = window.innerWidth;
           let elTop = player_overlay.element.offsetTop;
           let mid = viewportHeight / 2;
           log({
