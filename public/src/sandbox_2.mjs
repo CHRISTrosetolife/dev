@@ -21,7 +21,10 @@ export async function sandbox_2() {
         }
       }
       new Promise((resolve) => {
-        image.pack().pipe(fs.createWriteStream(out)).on("finish", resolve);
+        image
+          .pack()
+          .pipe(fs.createWriteStream(out))
+          .on("finish", () => resolve());
       });
     });
 }
