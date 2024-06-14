@@ -50,6 +50,4 @@ export async function sandbox_2() {
       });
     });
   });
-  return;
-  await png_transform(path_in, path_out, transform);
 }
