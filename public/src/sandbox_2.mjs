@@ -7,6 +7,8 @@ import { png_transform } from "./png_transform.mjs";
 export async function sandbox_2() {
   let path_in = "public\\img\\shubibubi\\animals\\bunny.png";
   let tile_size = 32;
+  let rows_count = 5;
+  let columns_count = 4;
   let d = path_dirname(path_in);
   let i = await png_read(path_in);
   let { height, width } = i;
