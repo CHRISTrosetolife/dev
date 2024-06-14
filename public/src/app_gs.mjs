@@ -15,6 +15,7 @@ export function app_gs() {
   html_style_background_color(root, "black");
   let rows = 20;
   let columns = 20;
+  let unit_size_css = "min(10dvw,10dvh)";
   let map = html_div(root);
   html_style_width_full(map);
   html_style(map, {
@@ -24,7 +25,6 @@ export function app_gs() {
     let row = html_div(map);
     each_range(columns, (c) => {
       let image = html_img(row, game_img_base(r));
-      let unit_size_css = "min(10dvw,10dvh)";
       html_style_width(image, unit_size_css);
     });
   });
