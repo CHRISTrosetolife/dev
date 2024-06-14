@@ -38,8 +38,9 @@ export async function sandbox_2() {
         ]);
         await png_transform(file, path_out, function transform(image) {
           let image_out = [];
-          each_range(height / rows_count, (y) => {
-            let y_offset = add(y);
+          let height_unit = height / rows_count;
+          each_range(height_unit, (y) => {
+            let y_offset = add(y, r * height_unit);
             each_range(width / columns_count, (x) => {
               var idx = (image.width * y + x) << 2;
               image.data[idx] = 255 - image.data[idx];
