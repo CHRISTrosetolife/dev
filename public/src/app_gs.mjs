@@ -26,7 +26,6 @@ export function app_gs() {
     let v = (100 / tiles_min) * count;
     return string_combine_multiple(["min(", v, "dvw,", v, "dvh)"]);
   }
-  html_style_width(image);
   html_style_width_full(map);
   html_style(map, {
     overflow: "hidden",
