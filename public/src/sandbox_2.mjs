@@ -35,6 +35,7 @@ export async function sandbox_2() {
           string_combine_multiple([n, "_", index, e]),
         ]);
         await png_transform(file, path_out, transform);
+        index++;
       });
     });
   });
