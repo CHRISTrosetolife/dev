@@ -1,4 +1,3 @@
-import { add } from "./add.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { list_add } from "./list_add.mjs";
 export function range(count) {
@@ -6,7 +5,7 @@ export function range(count) {
   let offset = 0;
   let result = [];
   for (let i = 0; i < count; i++) {
-    list_add(result, add(i, offset));
+    list_add(result, number_add(i, offset));
   }
   return result;
 }
