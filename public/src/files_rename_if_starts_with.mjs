@@ -6,6 +6,7 @@ import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { each_async } from "./each_async.mjs";
 import { file_rename } from "./file_rename.mjs";
 import { folder_read } from "./folder_read.mjs";
+import { log } from "./log.mjs";
 export async function files_rename_if_starts_with(
   input_path,
   file_extension,
@@ -20,6 +21,10 @@ export async function files_rename_if_starts_with(
       return;
     }
     let d = path_dirname(file_name_old);
+    log({
+      d,
+    });
+    return;
     let file_name_new = string_suffix_change(
       file_name_old,
       suffix_old,
