@@ -19,7 +19,7 @@ export function app_gs() {
   html_style(root, {
     overflow: "hidden",
   });
-  let table = html_table(map);
+  let table = html_table(root);
   each_range(rows, (r) => {
     let row = html_tr(table);
     each_range(columns, (c) => {
