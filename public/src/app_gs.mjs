@@ -1,4 +1,4 @@
-import { list_sum } from "./list_sum.mjs";
+import { each } from "./each.mjs";
 import { list_random_item } from "./list_random_item.mjs";
 import { html_style_height } from "./html_style_height.mjs";
 import { html_style_width } from "./html_style_width.mjs";
@@ -10,6 +10,7 @@ import { html_style } from "./html_style.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
 import { html_div } from "./html_div.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { list_adder } from "./list_adder.mjs";
 export function app_gs() {
   let root = html_style_default_initialize();
   html_style(root, {
@@ -31,7 +32,8 @@ export function app_gs() {
     overflow: "hidden",
   });
   let grass = [10, 1, 1, 1];
-  let sum = list_sum(grass);
+  let sum = 0;
+  list_adder((la) => each(grass, (proportion) => la()));
   each_range(rows, (r) => {
     let row = html_div(map);
     html_style_height(row, tile_units_css(1));
