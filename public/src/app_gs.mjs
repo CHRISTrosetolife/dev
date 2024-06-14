@@ -5,6 +5,8 @@ import { each_range } from "./each_range.mjs";
 import { html_style } from "./html_style.mjs";
 export function app_gs() {
   let root = html_style_default_initialize();
-  html_style(root,{'padding':0})
+  html_style(root, {
+    margin: 0,
+  });
   each_range(30, (i) => html_img(root, game_img_base(i)));
 }
