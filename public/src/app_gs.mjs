@@ -100,6 +100,7 @@ export function app_gs() {
           }
         }
         if (direction !== null) {
+          let delta = game_direction_to_delta(direction);
           html_img_src(
             player_overlay,
             game_img_character(
