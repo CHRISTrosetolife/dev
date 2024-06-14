@@ -16,6 +16,10 @@ export function app_gs() {
   let rows = 20;
   let columns = 20;
   let map = html_div(root);
+  function unit_size_css() {
+    return "min(10dvw,10dvh)";
+  }
+  html_style_width(image);
   html_style_width_full(map);
   html_style(map, {
     overflow: "hidden",
