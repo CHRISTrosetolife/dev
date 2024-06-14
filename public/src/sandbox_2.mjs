@@ -1,3 +1,4 @@
+import { each_range_async } from "./each_range_async.mjs";
 import { mod } from "./mod.mjs";
 import { equal } from "./equal.mjs";
 import { assert } from "./assert.mjs";
@@ -19,7 +20,7 @@ export async function sandbox_2() {
     let { height, width } = i;
     assert(equal, [mod(width, columns_count), 0]);
     assert(equal, [mod(height, rows_count), 0]);
-    await each_async(files, async (file) => {});
+    await each_range_async(files, async (file) => {});
   });
   return;
   await png_transform(path_in, path_out, transform);
