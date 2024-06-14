@@ -105,7 +105,6 @@ export function app_gs() {
               list_index(character_indices, direction),
             ),
           );
-          await sleep(200);
           walk();
           await sleep(200);
           walk();
