@@ -1,7 +1,7 @@
 import fs from "fs";
 import { PNG } from "pngjs";
 export async function sandbox_2() {
-  fs.createReadStream("in.png")
+  fs.createReadStream("public\\img\\shubibubi\\animals.png")
     .pipe(
       new PNG({
         filterType: 4,
@@ -17,6 +17,8 @@ export async function sandbox_2() {
           this.data[idx + 3] = this.data[idx + 3] >> 1;
         }
       }
-      this.pack().pipe(fs.createWriteStream("out.png"));
+      this.pack().pipe(
+        fs.createWriteStream("public\\img\\shubibubi\\animals2.png"),
+      );
     });
 }
