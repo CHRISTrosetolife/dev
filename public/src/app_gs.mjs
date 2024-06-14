@@ -16,12 +16,12 @@ export function app_gs() {
   html_style_background_color(root, "black");
   let rows = 20;
   let columns = 20;
-  let map = html_table(root);
+  let table = html_table(root);
   each_range(rows, (r) => {
-    let row = html_tr(map);
+    let row = html_tr(table);
     each_range(columns, (c) => {
       let column = html_td(row);
-      let image = html_img(map, game_img_base(r));
+      let image = html_img(table, game_img_base(r));
       html_style_width(image, "min(10dvw,10dvh)");
     });
   });
