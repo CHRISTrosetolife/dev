@@ -155,10 +155,11 @@ export function app_gs() {
           let mh = tile_size * rows;
           let mw = tile_size * columns;
           let e = player_overlay.element;
-          window.scrollTo(
-            e.offsetLeft - vw / 2 + e.width / 2,
-            e.offsetTop - vh / 2 + e.height / 2,
-          );
+          window.scrollTo({
+            left: e.offsetLeft - vw / 2 + e.width / 2,
+            top: e.offsetTop - vh / 2 + e.height / 2,
+            behavior: "smooth",
+          });
         }
       });
       if (integer_random(1, 8) === 1) {
