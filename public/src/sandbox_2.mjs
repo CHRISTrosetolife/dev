@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { folder_read_shallow } from "./folder_read_shallow.mjs";
 import { assert_message } from "./assert_message.mjs";
 import { each_index } from "./each_index.mjs";
@@ -30,6 +31,11 @@ export async function sandbox_2() {
     let i = await png_read(file);
     let { height, width } = i;
     if (tile_size_use) {
+      each([width, height], (wh) => {
+        assert_message(equal, [mod(wh, columns_count), 0], () => {
+          file;
+        });
+      });
     }
     let height_unit = height / rows_count;
     let width_unit = width / columns_count;
