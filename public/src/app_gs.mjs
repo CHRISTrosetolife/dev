@@ -130,9 +130,9 @@ export function app_gs() {
                 ),
               ),
             );
-            let row_offset =
+            let row_delta =
               direction === "up" ? -1 : direction === "down" ? 1 : 0;
-            let column_offset =
+            let column_delta =
               direction === "left" ? -1 : direction === "right" ? 1 : 0;
             game_img_position(
               player_overlay,
