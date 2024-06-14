@@ -22,8 +22,8 @@ export function app_gs() {
     margin: 0,
   });
   html_style_background_color(root, "black");
-  let rows = 20;
-  let columns = 20;
+  let rows = 10;
+  let columns = 10;
   let map = html_div(root);
   html_style_width(map, game_tile_units_css(columns));
   let height = game_tile_units_css(rows);
