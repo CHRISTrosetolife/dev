@@ -46,6 +46,7 @@ export function app_gs() {
       let image = html_img(column, game_img_base(r * columns + c));
       html_style(image, {
         position: "absolute",
+        left: tile_units_css(c),
       });
       html_style_width(image, tile_units_css(1));
       let overlay = html_img(column, game_img_base(40));
@@ -53,6 +54,7 @@ export function app_gs() {
       html_style(overlay, {
         position: "absolute",
         "z-index": 1,
+        left: tile_units_css(c),
       });
     });
   });
