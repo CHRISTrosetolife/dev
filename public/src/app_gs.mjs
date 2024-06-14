@@ -1,3 +1,4 @@
+import { app_gs_sleep_time } from "./app_gs_sleep_time.mjs";
 import { each_range_async } from "./each_range_async.mjs";
 import { each } from "./each.mjs";
 import { game_direction_to_delta } from "./game_direction_to_delta.mjs";
@@ -115,7 +116,7 @@ export function app_gs() {
           let steps_count = Math.abs(player.y - r) + Math.abs(player.x - c);
           await each_range_async(steps_count, async () => {
             let animate_count = 2;
-            let sleep_time = 90;
+            let sleep_time = app_gs_sleep_time();
             walk(1);
             await sleep(sleep_time);
             walk(2);
