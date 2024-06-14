@@ -66,17 +66,13 @@ export function app_gs() {
           1,
         );
       }
-      let overlay_person = html_img(
+      game_img(
         map,
         game_img_character(list_random_item(game_img_list_male()), 0),
+        r,
+        c,
+        2,
       );
-      html_style_width(overlay_person, game_tile_units_css(1));
-      html_style(overlay_person, {
-        position: "absolute",
-        "z-index": 2,
-        left: game_tile_units_css(c),
-        top: game_tile_units_css(r),
-      });
     });
   });
 }
