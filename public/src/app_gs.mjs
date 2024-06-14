@@ -130,7 +130,11 @@ export function app_gs() {
                 ),
               ),
             );
-            game_img_position(player_overlay, r, c);
+            game_img_position(
+              player_overlay,
+              r + row_offset,
+              c + column_offset,
+            );
           }
         }
       });
