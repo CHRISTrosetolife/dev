@@ -9,7 +9,7 @@ import { file_overwrite } from "./file_overwrite.mjs";
 export async function functions_list_generate() {
   let name = "functions_list";
   let list_get = function_names;
-  let f = await function_names();
+  let f = await list_get();
   let delimited = list_map(f, string_delimit);
   await function_new_generic(
     name,
