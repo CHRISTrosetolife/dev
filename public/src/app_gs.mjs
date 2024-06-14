@@ -81,6 +81,7 @@ export function app_gs() {
         position: "absolute",
         "z-index": 2,
         left: game_tile_units_css(c),
+        top: game_tile_units_css(r),
       });
     });
   });
