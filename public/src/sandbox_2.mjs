@@ -25,7 +25,7 @@ export async function sandbox_2() {
     assert(equal, [mod(height, rows_count), 0]);
     await each_range_async(rows_count, async (r) => {
       await each_range_async(columns_count, async (c) => {
-        let path_out = path_join([d, folder_out]);
+        let path_out = path_join([d, folder_out, b]);
         await png_transform(file, path_out, transform);
       });
     });
