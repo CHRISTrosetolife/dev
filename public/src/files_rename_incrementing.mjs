@@ -9,7 +9,7 @@ import { path_extname } from "./path_extname.mjs";
 import { path_dirname } from "./path_dirname.mjs";
 import { each_index_async } from "./each_index_async.mjs";
 import { folder_read } from "./folder_read.mjs";
-export async function folder_files_rename_incrementing(
+export async function files_rename_incrementing(
   input_directory,
   file_extension,
   starting,

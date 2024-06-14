@@ -1,3 +1,4 @@
+import { files_rename_incrementing } from "./files_rename_incrementing.mjs";
 import { assert_message } from "./assert_message.mjs";
 import { assert } from "./assert.mjs";
 import { number_max_list_or } from "./number_max_list_or.mjs";
@@ -11,7 +12,6 @@ import { path_parse_name } from "./path_parse_name.mjs";
 import { folder_user } from "./folder_user.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { folder_read } from "./folder_read.mjs";
-import { folder_files_rename_incrementing } from "./folder_files_rename_incrementing.mjs";
 import { app_name } from "./app_name.mjs";
 import { app_dev } from "./app_dev.mjs";
 import { folder_files_move } from "./folder_files_move.mjs";
@@ -53,6 +53,6 @@ export async function app_dev_screenshots(screen_name) {
       date_string_iso_file(),
     ]),
   );
-  await folder_files_rename_incrementing(folder_path, file_extension, starting);
+  await files_rename_incrementing(folder_path, file_extension, starting);
   await folder_files_move(folder_path, file_extension, target_path);
 }
