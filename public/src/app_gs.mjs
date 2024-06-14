@@ -1,5 +1,3 @@
-import { html_td } from "./html_td.mjs";
-import { html_tr } from "./html_tr.mjs";
 import { html_style_width } from "./html_style_width.mjs";
 import { game_img_base } from "./game_img_base.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
@@ -23,10 +21,9 @@ export function app_gs() {
     });
   }
   each_range(rows, (r) => {
-    let row = html_tr(table);
+    let row = html_div(map);
     each_range(columns, (c) => {
-      let column = html_td(row);
-      let image = html_img(table, game_img_base(r));
+      let image = html_img(row, game_img_base(r));
       html_style_width(image, "min(10dvw,10dvh)");
     });
   });
