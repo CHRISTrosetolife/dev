@@ -1,4 +1,4 @@
-import { each } from "./each.mjs";
+import { each_index } from "./each_index.mjs";
 import { add } from "./add.mjs";
 import { each_range } from "./each_range.mjs";
 import { path_parse_name } from "./path_parse_name.mjs";
@@ -54,7 +54,7 @@ export async function sandbox_2() {
           });
           image.width = width_unit;
           image.height = height_unit;
-          each(image_out);
+          each_index(image_out);
         });
         index++;
       });
