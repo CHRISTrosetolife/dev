@@ -82,6 +82,19 @@ export function app_gs() {
       let grass = game_grass_weight();
       let index = list_random_index_weighted(grass);
       game_img(map, game_img_base(index), r, c, list_index(z_indexes, "tile"));
+      if (integer_random(1, 8) === 1) {
+        game_img(
+          map,
+          game_img_base(
+            list_random_item(
+              list_concat(range_from(40, 42), range_from(48, 57)),
+            ),
+          ),
+          r,
+          c,
+          list_index(z_indexes, "overlay"),
+        );
+      }
       let clicker = html_div(map);
       game_img_style(clicker, r, c, list_index(z_indexes, "clicker"));
       html_on_click(clicker, async () => {
@@ -151,19 +164,6 @@ export function app_gs() {
           html_scroll_center_smooth(player_overlay);
         }
       });
-      if (integer_random(1, 8) === 1) {
-        game_img(
-          map,
-          game_img_base(
-            list_random_item(
-              list_concat(range_from(40, 42), range_from(48, 57)),
-            ),
-          ),
-          r,
-          c,
-          list_index(z_indexes, "overlay"),
-        );
-      }
     });
   });
 }
