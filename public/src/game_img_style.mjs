@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { app_gs_sleep_time } from "./app_gs_sleep_time.mjs";
 import { game_img_position } from "./game_img_position.mjs";
 import { html_style } from "./html_style.mjs";
@@ -11,6 +12,9 @@ export function game_img_style(image, r, c, z_index) {
   html_style_height(image, unit);
   let t = app_gs_sleep_time() / 1000;
   let transition = string_combine_multiple(["top ", t, "s, left ", t, "s, "]);
+  log({
+    transition,
+  });
   html_style(image, {
     position: "absolute",
     "z-index": z_index,
