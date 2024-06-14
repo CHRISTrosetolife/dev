@@ -106,15 +106,15 @@ export function app_gs() {
               list_index(character_indices, direction),
             ),
           );
-          let animate_count = 4;
+          let animate_count = 3;
           await sleep(200);
-          walk();
+          walk(0);
           await sleep(200);
-          walk();
+          walk(1);
           await sleep(200);
-          walk();
+          walk(2);
           await sleep(200);
-          walk();
+          walk(animate_count);
           function walk() {
             if (player.walk_offset === 0) {
               player.walk_offset = -player.walk_previous;
