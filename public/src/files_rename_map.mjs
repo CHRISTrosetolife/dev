@@ -15,7 +15,7 @@ export async function files_rename_map(
   let files = await folder_read(input_path, file_extension);
   await each_async(files, async (file_name_old) => {
     let b = path_parse_base(file_name_old);
-    let b_new = mapper(b);
+    let b_new = await mapper(b);
     if (b === b_new) {
       return;
     }
