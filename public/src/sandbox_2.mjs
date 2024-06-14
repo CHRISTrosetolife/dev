@@ -3,6 +3,7 @@ import fs from "fs";
 import { PNG } from "pngjs";
 export async function sandbox_2() {
   await file_delete_if_exists();
+  let out = "public\\img\\shubibubi\\animals\\bunny2.png";
   fs.createReadStream("public\\img\\shubibubi\\animals\\bunny.png")
     .pipe(
       new PNG({
