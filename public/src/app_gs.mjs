@@ -1,3 +1,4 @@
+import { subtract_1 } from "./subtract_1.mjs";
 import { game_img } from "./game_img.mjs";
 import { divide } from "./divide.mjs";
 import { floor } from "./floor.mjs";
@@ -26,8 +27,8 @@ export function app_gs() {
   html_style_background_color(root, "black");
   let rows = 10;
   let columns = 10;
-  let row_middle = floor(divide(rows, 2));
-  let column_middle = floor(divide(columns, 2));
+  let row_middle = floor(divide(subtract_1(rows), 2));
+  let column_middle = floor(divide(subtract_1(columns), 2));
   let map = html_div(root);
   html_style_width(map, game_tile_units_css(columns));
   let height = game_tile_units_css(rows);
