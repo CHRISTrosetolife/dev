@@ -1,5 +1,4 @@
 import { number_min } from "./number_min.mjs";
-import { log } from "./log.mjs";
 import { abs } from "./abs.mjs";
 import { number_max } from "./number_max.mjs";
 import { game_tiles_min } from "./game_tiles_min.mjs";
@@ -155,10 +154,6 @@ export function app_gs() {
           let tile_size = number_min(vh, vw) / tiles_min;
           let mh = tile_size * rows;
           let mw = tile_size * columns;
-          log({
-            elTop,
-            mid,
-          });
           window.scrollTo(
             player_overlay.element.offsetLeft,
             player_overlay.element.offsetTop,
