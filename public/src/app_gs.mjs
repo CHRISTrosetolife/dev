@@ -10,7 +10,7 @@ export function app_gs() {
     margin: 0,
   });
   html_style_background_color(root, "black");
-  each_range(30, (i) => {
-    html_img(root, game_img_base(i));
+  each_range(30, (index) => {
+    html_img(root, game_img_base(index));
   });
 }
