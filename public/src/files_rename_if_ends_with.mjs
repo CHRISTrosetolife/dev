@@ -14,7 +14,13 @@ export async function files_rename_if_ends_with(
   suffix_old,
   suffix_new,
 ) {
-  await files_rename_generic(input_path, file_extension, (b_old) => {});
+  await files_rename_generic(input_path, file_extension, (b_old) => {
+    if (!string_ends_with(b_old, suffix_old)) {
+      return;
+    }
+    let b_new = string_suffix_change(b_old, suffix_old, suffix_new);
+    return b_new;
+  });
   log({
     suffix_old,
   });
