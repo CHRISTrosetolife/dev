@@ -37,13 +37,13 @@ export function app_gs() {
       let grass = game_grass_weight();
       let index = list_random_index_weighted(grass);
       let column = html_div(row);
-      html_style(column, {});
-      html_style_width(column, tile_units_css(1));
-      let image = html_img(column, game_img_base(r * columns + c));
-      html_style(image, {
-        position: "absolute",
+      html_style(column, {
+        position: "relative",
+        display: "inline",
         "z-index": 0,
       });
+      html_style_width(column, tile_units_css(1));
+      let image = html_img(column, game_img_base(r * columns + c));
       html_style_width(image, tile_units_css(1));
       let overlay = html_img(column, game_img_base(40));
       html_style_width(overlay, tile_units_css(1));
