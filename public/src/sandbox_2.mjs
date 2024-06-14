@@ -20,7 +20,9 @@ export async function sandbox_2() {
     let { height, width } = i;
     assert(equal, [mod(width, columns_count), 0]);
     assert(equal, [mod(height, rows_count), 0]);
-    await each_range_async(rows_count, async (row) => {});
+    await each_range_async(rows_count, async (row) => {
+      await each_range_async(rows_count, async (row) => {});
+    });
   });
   return;
   await png_transform(path_in, path_out, transform);
