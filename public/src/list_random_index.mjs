@@ -1,4 +1,5 @@
+import { random } from "./random.mjs";
 import { floor } from "./floor.mjs";
 export function list_random_index(list) {
-  return floor(Math.random() * list.length);
+  return floor(random() * list.length);
 }
