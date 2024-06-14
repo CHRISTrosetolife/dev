@@ -14,6 +14,6 @@ export function app_gs() {
   let tile_size = 32;
   each_range(30, (index) => {
     let image = html_img(root, game_img_base(index));
-    html_style_width(image);
+    html_style_width(image, "100/32dvw");
   });
 }
