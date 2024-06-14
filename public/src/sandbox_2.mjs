@@ -1,3 +1,4 @@
+import { each_range } from "./each_range.mjs";
 import { path_parse_name } from "./path_parse_name.mjs";
 import { path_extname } from "./path_extname.mjs";
 import { each_range_async } from "./each_range_async.mjs";
@@ -36,6 +37,7 @@ export async function sandbox_2() {
         ]);
         await png_transform(file, path_out, function transform(image) {
           image.height = image.height / 4;
+          each_range(image.height, (y) => {});
           for (var y = 0; y < image.height; y++) {
             for (var x = 0; x < image.width; x++) {
               var idx = (image.width * y + x) << 2;
