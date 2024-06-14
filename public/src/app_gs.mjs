@@ -1,3 +1,6 @@
+import { abs } from "./abs.mjs";
+import { number_max } from "./number_max.mjs";
+import { game_tiles_min } from "./game_tiles_min.mjs";
 import { html_img_src_wait } from "./html_img_src_wait.mjs";
 import { app_gs_sleep_time } from "./app_gs_sleep_time.mjs";
 import { each_range_async } from "./each_range_async.mjs";
@@ -39,7 +42,7 @@ export function app_gs() {
   });
   html_style_background_color(root, "black");
   let tiles_min = game_tiles_min();
-  let rows = number_max(20, tiles_min*2);
+  let rows = number_max(20, tiles_min * 2);
   let columns = rows;
   let player = {};
   player.y = floor(divide(subtract_1(rows), 2));
@@ -80,7 +83,6 @@ export function app_gs() {
       game_img(map, game_img_base(index), r, c, list_index(z_indexes, "tile"));
       let clicker = html_div(map);
       game_img_style(clicker, r, c, list_index(z_indexes, "clicker"));
-      
       html_on_click(clicker, async () => {
         let direction = null;
         if (r === player.y) {
@@ -163,7 +165,3 @@ export function app_gs() {
     });
   });
 }
-function abs(y_delta) {
-    return Math.abs(y_delta);
-}
-
