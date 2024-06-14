@@ -1,3 +1,4 @@
+import { each_range_async } from "./each_range_async.mjs";
 import { each } from "./each.mjs";
 import { game_direction_to_delta } from "./game_direction_to_delta.mjs";
 import { game_img_position } from "./game_img_position.mjs";
@@ -110,17 +111,20 @@ export function app_gs() {
               list_index(character_indices, direction),
             ),
           );
-          let animate_count = 2;
-          let sleep_time = 100;
-          await sleep(50);
-          walk(1);
-          await sleep(sleep_time);
-          walk(2);
-          let delta = game_direction_to_delta(direction);
-          each(["x", "y"], (xy) => {
-            let value =
-              object_property_get(player, xy) + object_property_get(delta, xy);
-            object_property_set(player, xy, value);
+          await each_range_async(steps_count, async () => {
+            let animate_count = 2;
+            let sleep_time = 100;
+            await sleep(50);
+            walk(1);
+            await sleep(sleep_time);
+            walk(2);
+            let delta = game_direction_to_delta(direction);
+            each(["x", "y"], (xy) => {
+              let value =
+                object_property_get(player, xy) +
+                object_property_get(delta, xy);
+              object_property_set(player, xy, value);
+            });
           });
           function walk(step_count) {
             if (player.walk_offset === 0) {
