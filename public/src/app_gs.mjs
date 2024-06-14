@@ -36,12 +36,11 @@ export function app_gs() {
     overflow: "hidden",
   });
   each_range(rows, (r) => {
-    let row = html_div(map);
-    html_style_height(row, game_tile_units_css(1));
+    html_style_height(map, game_tile_units_css(1));
     each_range(columns, (c) => {
       let grass = game_grass_weight();
       let index = list_random_index_weighted(grass);
-      let column = html_div(row);
+      let column = html_div(map);
       html_style(column, {
         position: "relative",
         display: "inline",
