@@ -24,7 +24,7 @@ export async function sandbox_2() {
     await each_range_async(rows_count, async (r) => {
       await each_range_async(columns_count, async (c) => {
         let path_out = path_join([folder_in]);
-        await png_transform(folder_in, path_out, transform);
+        await png_transform(file, path_out, transform);
       });
     });
   });
