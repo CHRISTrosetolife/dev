@@ -107,6 +107,9 @@ export function app_gs() {
           );
           walk();
           await sleep(200);
+          walk();
+          await sleep(200);
+          walk();
           function walk() {
             if (player.walk_offset === 0) {
               player.walk_offset = -player.walk_previous;
