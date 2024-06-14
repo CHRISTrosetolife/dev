@@ -79,7 +79,7 @@ export function app_gs() {
         let direction = null;
         if (r === player.y) {
           if (c > player.x) {
-            direction = right;
+            direction = "right";
           }
         }
         html_img_src(
