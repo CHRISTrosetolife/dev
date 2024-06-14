@@ -23,7 +23,7 @@ export async function files_rename_if_ends_with(
       return;
     }
     let file_name_new = string_suffix_change(
-      file_name_old,
+      file_name_old_less_extension,
       suffix_old,
       suffix_new,
     );
