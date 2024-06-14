@@ -1,3 +1,4 @@
+import { html_img_src } from "./html_img_src.mjs";
 import { list_index } from "./list_index.mjs";
 import { game_img_style } from "./game_img_style.mjs";
 import { html_on_click } from "./html_on_click.mjs";
@@ -58,7 +59,7 @@ export function app_gs() {
     "z-index": 0,
   });
   let z_indexes = ["tile", "overlay", "player", "clicker"];
-  game_img(
+  let p = game_img(
     map,
     game_img_character(list_random_item(game_img_list_male()), 0),
     player.y,
@@ -73,7 +74,9 @@ export function app_gs() {
       game_img(map, game_img_base(index), r, c, list_index(z_indexes, "tile"));
       let clicker = html_div(map);
       game_img_style(clicker, r, c, list_index(z_indexes, "clicker"));
-      html_on_click(clicker, () => {});
+      html_on_click(clicker, () => {
+        html_img_src();
+      });
       if (integer_random(1, 8) === 1) {
         game_img(
           map,
