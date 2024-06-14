@@ -1,5 +1,5 @@
+import { path_parse_name } from "./path_parse_name.mjs";
 import { path_extname } from "./path_extname.mjs";
-import { path_parse_base } from "./path_parse_base.mjs";
 import { each_range_async } from "./each_range_async.mjs";
 import { mod } from "./mod.mjs";
 import { equal } from "./equal.mjs";
@@ -19,7 +19,7 @@ export async function sandbox_2() {
   let files = await folder_read(path_in, ".png");
   await each_async(files, async (file) => {
     let d = path_dirname(file);
-    let b = path_parse_base(file);
+    let b = path_parse_name(file);
     let e = path_extname(file);
     let i = await png_read(file);
     let { height, width } = i;
