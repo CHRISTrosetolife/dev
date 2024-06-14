@@ -111,7 +111,7 @@ export function app_gs() {
               list_index(character_indices, direction),
             ),
           );
-          await sleep(50);
+          await sleep(25);
           let steps_count = Math.abs(player.y - r) + Math.abs(player.x - c);
           await each_range_async(steps_count, async () => {
             let animate_count = 2;
