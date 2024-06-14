@@ -134,11 +134,7 @@ export function app_gs() {
               direction === "up" ? -1 : direction === "down" ? 1 : 0;
             let column_delta =
               direction === "left" ? -1 : direction === "right" ? 1 : 0;
-            game_img_position(
-              player_overlay,
-              r + row_offset,
-              c + column_offset,
-            );
+            game_img_position(player_overlay, r + row_delta, c + column_delta);
           }
         }
       });
