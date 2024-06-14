@@ -9,7 +9,7 @@ export async function sandbox_2() {
         filterType: 4,
       }),
     )
-    .on("parsed", function () {
+    .on("parsed", async function () {
       let image = this;
       image.height = image.height / 4;
       for (var y = 0; y < image.height; y++) {
@@ -21,6 +21,6 @@ export async function sandbox_2() {
           image.data[idx + 3] = image.data[idx + 3] >> 1;
         }
       }
-      png_overwrite(output_file_path, image);
+      await png_overwrite(output_file_path, image);
     });
 }
