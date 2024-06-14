@@ -126,31 +126,31 @@ export function app_gs() {
                 object_property_get(delta, xy);
               object_property_set(player, xy, value);
             });
-          });
-          function walk(step_count) {
-            if (player.walk_offset === 0) {
-              player.walk_offset = -player.walk_previous;
-              player.walk_previous = player.walk_offset;
-            } else {
-              player.walk_offset = 0;
-            }
-            html_img_src(
-              player_overlay,
-              game_img_character(
-                player.character,
-                add(
-                  list_index(character_indices, direction),
-                  player.walk_offset,
+            function walk(step_count) {
+              if (player.walk_offset === 0) {
+                player.walk_offset = -player.walk_previous;
+                player.walk_previous = player.walk_offset;
+              } else {
+                player.walk_offset = 0;
+              }
+              html_img_src(
+                player_overlay,
+                game_img_character(
+                  player.character,
+                  add(
+                    list_index(character_indices, direction),
+                    player.walk_offset,
+                  ),
                 ),
-              ),
-            );
-            let delta = game_direction_to_delta(direction);
-            game_img_position(
-              player_overlay,
-              player.y + (delta.y / animate_count) * step_count,
-              player.x + (delta.x / animate_count) * step_count,
-            );
-          }
+              );
+              let delta = game_direction_to_delta(direction);
+              game_img_position(
+                player_overlay,
+                player.y + (delta.y / animate_count) * step_count,
+                player.x + (delta.x / animate_count) * step_count,
+              );
+            }
+          });
         }
       });
       if (integer_random(1, 8) === 1) {
