@@ -30,6 +30,7 @@ export function app_gs() {
   });
   each_range(rows, (r) => {
     let row = html_div(map);
+    html_style_height(row, tile_units_css(1));
     each_range(columns, (c) => {
       let image = html_img(row, game_img_base(r));
       html_style_width(image, tile_units_css(1));
