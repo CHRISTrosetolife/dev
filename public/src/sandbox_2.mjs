@@ -19,7 +19,7 @@ export async function sandbox_2() {
   let files = await folder_read(path_in, ".png");
   await each_async(files, async (file) => {
     let d = path_dirname(file);
-    let b = path_parse_name(file);
+    let n = path_parse_name(file);
     let e = path_extname(file);
     let i = await png_read(file);
     let { height, width } = i;
