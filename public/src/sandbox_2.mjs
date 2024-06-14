@@ -1,4 +1,3 @@
-import { log } from "console";
 import { file_delete_if_exists } from "./file_delete_if_exists.mjs";
 import fs from "fs";
 import { PNG } from "pngjs";
@@ -12,9 +11,7 @@ export async function sandbox_2() {
       }),
     )
     .on("parsed", function () {
-      log({
-        t: this,
-      });
+      let image = this.clone();
       for (var y = 0; y < this.height; y++) {
         for (var x = 0; x < this.width; x++) {
           var idx = (this.width * y + x) << 2;
