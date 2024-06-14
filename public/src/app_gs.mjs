@@ -157,7 +157,7 @@ export function app_gs() {
               behavior: "smooth",
             });
           }
-          element.scrollIntoView({
+          e.scrollIntoView({
             block: "center",
           });
         }
