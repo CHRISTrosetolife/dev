@@ -1,3 +1,4 @@
+import { png_overwrite } from "./png_overwrite.mjs";
 import fs from "fs";
 import { PNG } from "pngjs";
 export async function sandbox_2() {
@@ -20,11 +21,6 @@ export async function sandbox_2() {
           image.data[idx + 3] = image.data[idx + 3] >> 1;
         }
       }
-      new Promise((resolve) => {
-        image
-          .pack()
-          .pipe(fs.createWriteStream(output_file_path))
-          .on("finish", () => resolve());
-      });
+      png_overwrite(output_file_path, image);
     });
 }
