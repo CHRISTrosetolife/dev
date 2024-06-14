@@ -17,10 +17,10 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_add } from "./list_add.mjs";
 export async function sandbox_2() {
   let path_in = "public\\img\\shubibubi\\animals\\";
-  let folder_out = "sliced";
   let tile_size = 32;
   let rows_count = 5;
   let columns_count = 4;
+  let folder_out = "sliced";
   let files = await folder_read_shallow(path_in, ".png");
   await each_async(files, async (file) => {
     let d = path_dirname(file);
