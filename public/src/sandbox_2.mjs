@@ -1,6 +1,8 @@
+import { file_delete_if_exists } from "./file_delete_if_exists.mjs";
 import fs from "fs";
 import { PNG } from "pngjs";
 export async function sandbox_2() {
+  await file_delete_if_exists();
   fs.createReadStream("public\\img\\shubibubi\\animals\\bunny.png")
     .pipe(
       new PNG({
