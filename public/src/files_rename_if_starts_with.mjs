@@ -18,6 +18,8 @@ export async function files_rename_if_starts_with(
   await each_async(files, async (file_name_old) => {
     let b = path_parse_base(file_name_old);
     log({
+      prefix_old,
+      prefix_new,
       b,
     });
     return;
