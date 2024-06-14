@@ -14,7 +14,6 @@ import { html_style_height } from "./html_style_height.mjs";
 import { html_style_width } from "./html_style_width.mjs";
 import { game_img_base } from "./game_img_base.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
-import { html_img } from "./html_img.mjs";
 import { each_range } from "./each_range.mjs";
 import { html_style } from "./html_style.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
@@ -46,13 +45,7 @@ export function app_gs() {
       let index = list_random_index_weighted(grass);
       html_style_width(map, game_tile_units_css(1));
       let index2 = r * columns + c;
-      let image = html_img(map, game_img_base(index));
-      html_style(image, {
-        position: "absolute",
-        left: game_tile_units_css(c),
-        top: game_tile_units_css(r),
-      });
-      html_style_width(image, game_tile_units_css(1));
+      game_img(map, game_img_base(index), r, c, 0);
       if (integer_random(1, 8) === 1) {
         game_img(
           map,
