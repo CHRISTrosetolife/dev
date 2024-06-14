@@ -113,6 +113,7 @@ export function app_gs() {
           walk();
           await sleep(200);
           walk();
+          let count = 3;
           function walk() {
             if (player.walk_offset === 0) {
               player.walk_offset = -player.walk_previous;
@@ -134,7 +135,11 @@ export function app_gs() {
               direction === "up" ? -1 : direction === "down" ? 1 : 0;
             let column_delta =
               direction === "left" ? -1 : direction === "right" ? 1 : 0;
-            game_img_position(player_overlay, r + row_delta, c + column_delta);
+            game_img_position(
+              player_overlay,
+              r + row_delta / counts,
+              c + column_delta / counts,
+            );
           }
         }
       });
