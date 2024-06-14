@@ -52,7 +52,7 @@ export function app_gs() {
           }
         }
       });
-      let image = html_img(row, game_img_base(r));
+      let image = html_img(row, game_img_base(found));
       html_style_width(image, tile_units_css(1));
     });
   });
