@@ -45,10 +45,10 @@ export function app_gs() {
     each_range(columns, (c) => {
       let r = integer_random(1, sum);
       let found = null;
-      each(sums, (s) => {
+      each(sums, (s, index) => {
         if (found === null) {
           if (s >= r) {
-            found = s;
+            found = index;
           }
         }
       });
