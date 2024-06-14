@@ -1,3 +1,4 @@
+import { game_img_position } from "./game_img_position.mjs";
 import { html_style } from "./html_style.mjs";
 import { game_tile_units_css } from "./game_tile_units_css.mjs";
 import { html_style_width } from "./html_style_width.mjs";
@@ -10,8 +11,5 @@ export function game_img_style(image, r, c, z_index) {
     position: "absolute",
     "z-index": z_index,
   });
-  html_style(image, {
-    left: game_tile_units_css(c),
-    top: game_tile_units_css(r),
-  });
+  game_img_position(image, r, c);
 }
