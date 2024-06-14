@@ -1,3 +1,4 @@
+import { game_img_position } from "./game_img_position.mjs";
 import { add } from "./add.mjs";
 import { html_img_src } from "./html_img_src.mjs";
 import { list_index } from "./list_index.mjs";
@@ -64,7 +65,7 @@ export function app_gs() {
   });
   let z_indexes = ["tile", "overlay", "player", "clicker"];
   player.character = list_random_item(game_img_list_male());
-  let p = game_img(
+  let player_overlay = game_img(
     map,
     game_img_character(player.character, list_index(character_indices, "down")),
     player.y,
@@ -99,7 +100,7 @@ export function app_gs() {
         }
         if (direction !== null) {
           html_img_src(
-            p,
+            player_overlay,
             game_img_character(
               player.character,
               list_index(character_indices, direction),
@@ -120,7 +121,7 @@ export function app_gs() {
               player.walk_offset = 0;
             }
             html_img_src(
-              p,
+              player_overlay,
               game_img_character(
                 player.character,
                 add(
@@ -129,6 +130,7 @@ export function app_gs() {
                 ),
               ),
             );
+            game_img_position(player_overlay, r, c);
           }
         }
       });
