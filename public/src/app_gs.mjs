@@ -45,9 +45,9 @@ export function app_gs() {
     let row = html_div(map);
     html_style_height(row, tile_units_css(1));
     each_range(columns, (c) => {
-      let index = integer_random(1, sum);
-      list_first(list_filter());
-      let image = html_img(row, game_img_base(index));
+      let r = integer_random(1, sum);
+      list_first(list_filter(sums, (s) => s >= r));
+      let image = html_img(row, game_img_base(r));
       html_style_width(image, tile_units_css(1));
     });
   });
