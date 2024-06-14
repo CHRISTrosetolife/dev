@@ -113,7 +113,7 @@ export function app_gs() {
           walk();
           await sleep(200);
           walk();
-          let count = 3;
+          let animate_count = 3;
           function walk() {
             if (player.walk_offset === 0) {
               player.walk_offset = -player.walk_previous;
@@ -137,8 +137,8 @@ export function app_gs() {
               direction === "left" ? -1 : direction === "right" ? 1 : 0;
             game_img_position(
               player_overlay,
-              r + row_delta / count,
-              c + column_delta / count,
+              r + row_delta / animate_count,
+              c + column_delta / animate_count,
             );
           }
         }
