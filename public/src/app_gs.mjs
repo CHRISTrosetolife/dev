@@ -93,13 +93,15 @@ export function app_gs() {
             direction = "up";
           }
         }
-        html_img_src(
-          p,
-          game_img_character(
-            player.character,
-            list_index(character_indices, direction),
-          ),
-        );
+        if (direction !== null) {
+          html_img_src(
+            p,
+            game_img_character(
+              player.character,
+              list_index(character_indices, direction),
+            ),
+          );
+        }
       });
       if (integer_random(1, 8) === 1) {
         game_img(
