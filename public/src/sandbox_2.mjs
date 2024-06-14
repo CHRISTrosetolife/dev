@@ -1,8 +1,6 @@
-import { log } from "./log.mjs";
 import { file_delete_if_exists } from "./file_delete_if_exists.mjs";
 import fs from "fs";
 import { PNG } from "pngjs";
-import { object_properties } from "./object_properties.mjs";
 export async function sandbox_2() {
   let out = "public\\img\\shubibubi\\animals\\bunny2.png";
   await file_delete_if_exists(out);
@@ -14,7 +12,7 @@ export async function sandbox_2() {
     )
     .on("parsed", function () {
       let image = this;
-      log(object_properties(image));
+      image.height = image.height / 2;
       for (var y = 0; y < image.height; y++) {
         for (var x = 0; x < image.width; x++) {
           var idx = (image.width * y + x) << 2;
