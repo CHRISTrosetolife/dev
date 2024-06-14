@@ -10,7 +10,7 @@ export async function folder_read(folder, file_extension) {
   folder = string_replace(folder, "\\", "/");
   folder += "/";
   let { glob } = g;
-  let files = await glob(`${folder}/*${file_extension}`);
+  let files = await glob(`${folder}**/*${file_extension}`);
   list_sort_string(files, identity);
   return files;
 }
