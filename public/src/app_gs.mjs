@@ -52,6 +52,7 @@ export function app_gs() {
       html_style(image, {
         position: "absolute",
         left: game_tile_units_css(c),
+        top: game_tile_units_css(r),
       });
       html_style_width(image, game_tile_units_css(1));
       if (integer_random(1, 8) === 1) {
@@ -68,6 +69,7 @@ export function app_gs() {
           position: "absolute",
           "z-index": 1,
           left: game_tile_units_css(c),
+          top: game_tile_units_css(r),
         });
       }
       let overlay_person = html_img(
