@@ -38,7 +38,8 @@ export function app_gs() {
     margin: 0,
   });
   html_style_background_color(root, "black");
-  let rows = min(20, );
+  let tiles_min = game_tiles_min();
+  let rows = max(20, tiles_min*2);
   let columns = rows;
   let player = {};
   player.y = floor(divide(subtract_1(rows), 2));
