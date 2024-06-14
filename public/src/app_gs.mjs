@@ -18,6 +18,10 @@ export function app_gs() {
   let columns = 20;
   let tiles_min = 10;
   let map = html_div(root);
+  html_style_width(map, tile_units_css(columns));
+  html_style(map, {
+    height: tile_units_css(rows),
+  });
   function tile_units_css(count) {
     let v = (100 / tiles_min) * count;
     return string_combine_multiple(["min(", v, "dvw,", v, "dvh)"]);
