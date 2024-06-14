@@ -36,7 +36,7 @@ export function app_gs() {
   list_adder((la) =>
     each(grass, (proportion) => {
       sum += proportion;
-      la(grass);
+      la(sum);
     }),
   );
   each_range(rows, (r) => {
