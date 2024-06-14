@@ -9,6 +9,8 @@ export function game_img_style(image, r, c, z_index) {
   html_style(image, {
     position: "absolute",
     "z-index": z_index,
+  });
+  html_style(image, {
     left: game_tile_units_css(c),
     top: game_tile_units_css(r),
   });
