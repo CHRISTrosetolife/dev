@@ -43,11 +43,10 @@ export function app_gs() {
     each_range(columns, (c) => {
       let grass = game_grass_weight();
       let index = list_random_index_weighted(grass);
-      let cell = html_div(map);
       html_style(cell, {});
-      html_style_width(cell, game_tile_units_css(1));
+      html_style_width(map, game_tile_units_css(1));
       let index2 = r * columns + c;
-      let image = html_img(cell, game_img_base(index));
+      let image = html_img(map, game_img_base(index));
       html_style(image, {
         position: "absolute",
         left: game_tile_units_css(c),
@@ -56,7 +55,7 @@ export function app_gs() {
       html_style_width(image, game_tile_units_css(1));
       if (integer_random(1, 8) === 1) {
         let overlay = html_img(
-          cell,
+          map,
           game_img_base(
             list_random_item(
               list_concat(range_from(40, 42), range_from(48, 57)),
@@ -72,7 +71,7 @@ export function app_gs() {
         });
       }
       let overlay_person = html_img(
-        cell,
+        map,
         game_img_character(list_random_item(game_img_list_male()), 0),
       );
       html_style_width(overlay_person, game_tile_units_css(1));
