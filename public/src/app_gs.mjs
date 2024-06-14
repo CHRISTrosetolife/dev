@@ -147,6 +147,7 @@ export function app_gs() {
               );
             }
           });
+          player_overlay.element.scrollIntoView();
         }
       });
       if (integer_random(1, 8) === 1) {
