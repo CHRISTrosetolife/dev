@@ -13,6 +13,8 @@ export function app_gs() {
   });
   html_style_background_color(root, "black");
   let map = html_div(root);
+  let rows = 10;
+  let columns = 10;
   each_range(30, (index) => {
     let image = html_img(map, game_img_base(index));
     html_style_width(image, "min(10dvw,10dvh)");
