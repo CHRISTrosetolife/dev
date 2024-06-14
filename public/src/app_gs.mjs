@@ -8,4 +8,5 @@ export function app_gs() {
   html_img(root, "pipoya\\rpg_32\\sliced\\base_3.png");
   html_img(root, "pipoya\\rpg_32\\sliced\\base_4.png");
   html_img(root, "pipoya\\rpg_32\\sliced\\base_5.png");
+  html_img(root, "pipoya\\rpg_32\\sliced\\base_6.png");
 }
