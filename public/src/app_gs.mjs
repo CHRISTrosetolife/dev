@@ -18,7 +18,7 @@ export function app_gs() {
   let rows = 20;
   let columns = 20;
   let map = html_div(root);
-  html_style(root, {
+  html_style(map, {
     overflow: "hidden",
   });
   let table = html_table(root);
