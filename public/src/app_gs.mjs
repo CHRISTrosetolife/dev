@@ -1,3 +1,5 @@
+import { game_direction_to_delta_column } from "./game_direction_to_delta_column.mjs";
+import { game_direction_to_delta_row } from "./game_direction_to_delta_row.mjs";
 import { game_img_position } from "./game_img_position.mjs";
 import { add } from "./add.mjs";
 import { html_img_src } from "./html_img_src.mjs";
@@ -132,10 +134,8 @@ export function app_gs() {
                 ),
               ),
             );
-            let row_delta =
-              direction === "up" ? -1 : direction === "down" ? 1 : 0;
-            let column_delta =
-              direction === "left" ? -1 : direction === "right" ? 1 : 0;
+            let row_delta = game_direction_to_delta_row(direction);
+            let column_delta = game_direction_to_delta_column(direction);
             game_img_position(
               player_overlay,
               player.y + (row_delta / animate_count) * step_count,
