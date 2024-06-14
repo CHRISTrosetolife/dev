@@ -20,7 +20,7 @@ export async function files_rename_if_ends_with(
   let files = await folder_read(input_path, file_extension);
   await each_async(files, async (file_name_old) => {
     let b_old = string_suffix_without(file_name_old, file_extension);
-    if (!string_ends_with(file_name_old, suffix_old)) {
+    if (!string_ends_with(b_old, suffix_old)) {
       return;
     }
     let b_new = string_suffix_change(b_old, suffix_old, suffix_new);
