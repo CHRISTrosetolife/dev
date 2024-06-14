@@ -21,7 +21,7 @@ export function app_gs() {
   html_style(map, {
     overflow: "auto",
   });
-  let table = html_table(root);
+  let table = html_table(map);
   each_range(rows, (r) => {
     let row = html_tr(table);
     each_range(columns, (c) => {
