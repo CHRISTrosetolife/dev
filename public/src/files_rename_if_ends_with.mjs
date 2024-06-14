@@ -22,12 +22,15 @@ export async function files_rename_if_ends_with(
     if (!string_ends_with(file_name_old, suffix_old)) {
       return;
     }
-    let file_name_new = string_suffix_change(
+    let file_name_new_less_extension = string_suffix_change(
       file_name_old_less_extension,
       suffix_old,
       suffix_new,
     );
-    file_name_new = string_combine(file_name_new, file_extension);
-    await file_rename(file_name_old, file_name_new);
+    file_name_new_less_extension = string_combine(
+      file_name_new_less_extension,
+      file_extension,
+    );
+    await file_rename(file_name_old, file_name_new_less_extension);
   });
 }
