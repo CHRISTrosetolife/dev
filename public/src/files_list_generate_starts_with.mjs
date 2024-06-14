@@ -15,6 +15,7 @@ export async function files_list_generate_starts_with(
   let files = await folder_read_shallow(input_path, file_extension);
   let m = list_map(files, path_parse_name);
   log({
+    input_path,
     m,
   });
   let filtered = list_filter_starts_with(m, prefix);
