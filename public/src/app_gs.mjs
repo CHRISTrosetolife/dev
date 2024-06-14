@@ -59,9 +59,10 @@ export function app_gs() {
     "z-index": 0,
   });
   let z_indexes = ["tile", "overlay", "player", "clicker"];
+  let character = list_random_item(game_img_list_male());
   let p = game_img(
     map,
-    game_img_character(list_random_item(game_img_list_male()), 0),
+    game_img_character(character, 0),
     player.y,
     player.x,
     list_index(z_indexes, "player"),
@@ -75,7 +76,7 @@ export function app_gs() {
       let clicker = html_div(map);
       game_img_style(clicker, r, c, list_index(z_indexes, "clicker"));
       html_on_click(clicker, () => {
-        html_img_src();
+        html_img_src(p);
       });
       if (integer_random(1, 8) === 1) {
         game_img(
