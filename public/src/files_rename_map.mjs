@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { path_base_change } from "./path_base_change.mjs";
 import { path_parse_base } from "./path_parse_base.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
@@ -17,10 +16,6 @@ export async function files_rename_map(
   await each_async(files, async (file_name_old) => {
     let b = path_parse_base(file_name_old);
     let b_new = await mapper(b);
-    log({
-      b,
-      b_new,
-    });
     if (b === b_new) {
       return;
     }
