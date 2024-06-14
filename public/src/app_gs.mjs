@@ -97,7 +97,7 @@ export function app_gs() {
           p,
           game_img_character(
             player.character,
-            list_index(character_indices, "right"),
+            list_index(character_indices, direction),
           ),
         );
       });
