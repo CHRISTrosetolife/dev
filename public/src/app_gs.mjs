@@ -1,3 +1,4 @@
+import { range } from "./range.mjs";
 import { html_style_height } from "./html_style_height.mjs";
 import { html_style_width } from "./html_style_width.mjs";
 import { game_img_base } from "./game_img_base.mjs";
@@ -28,6 +29,7 @@ export function app_gs() {
   html_style(map, {
     overflow: "hidden",
   });
+  let grass = range(4);
   each_range(rows, (r) => {
     let row = html_div(map);
     html_style_height(row, tile_units_css(1));
