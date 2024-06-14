@@ -5,6 +5,7 @@ import { each_async } from "./each_async.mjs";
 import { file_rename } from "./file_rename.mjs";
 import { folder_read } from "./folder_read.mjs";
 import { function_import } from "./function_import.mjs";
+import { string_replace } from "./string_replace.mjs";
 export async function files_rename_replace(
   input_path,
   file_extension,
@@ -16,7 +17,7 @@ export async function files_rename_replace(
   let files = await folder_read(input_path, file_extension);
   await each_async(files, async (file_name_old) => {
     let b = path_parse_base(file_name_old);
-    let b_new = await mapper(b);
+    let b_new = string_replace(b, replace_from, replace_to);
     if (b === b_new) {
       return;
     }
