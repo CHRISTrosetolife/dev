@@ -11,6 +11,8 @@ import { html_div } from "./html_div.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { integer_random } from "./integer_random.mjs";
+import { list_first } from "./list_first.mjs";
+import { list_filter } from "./list_filter.mjs";
 export function app_gs() {
   let root = html_style_default_initialize();
   html_style(root, {
@@ -33,7 +35,7 @@ export function app_gs() {
   });
   let grass = [10, 1, 1, 1];
   let sum = 0;
-  list_adder((la) =>
+  let sums = list_adder((la) =>
     each(grass, (proportion) => {
       sum += proportion;
       la(sum);
@@ -44,6 +46,7 @@ export function app_gs() {
     html_style_height(row, tile_units_css(1));
     each_range(columns, (c) => {
       let index = integer_random(1, sum);
+      list_first(list_filter());
       let image = html_img(row, game_img_base(index));
       html_style_width(image, tile_units_css(1));
     });
