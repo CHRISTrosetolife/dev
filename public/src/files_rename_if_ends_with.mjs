@@ -14,7 +14,7 @@ export async function files_rename_if_ends_with(
   suffix_old,
   suffix_new,
 ) {
-  await files_rename_generic();
+  await files_rename_generic(input_path, file_extension);
   log({
     suffix_old,
   });
