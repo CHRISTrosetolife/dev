@@ -35,7 +35,6 @@ export function app_gs() {
   html_style(map, {
     overflow: "hidden",
     position: "relative",
-    display: "inline",
     "z-index": 0,
   });
   each_range(rows, (r) => {
