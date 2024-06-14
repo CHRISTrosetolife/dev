@@ -123,7 +123,7 @@ export function app_gs() {
                 ),
               ),
             );
-            timeout_set(walk, 190);
+            timeout_set(walk, 200);
           }
         }
       });
