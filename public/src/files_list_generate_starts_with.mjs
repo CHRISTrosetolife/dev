@@ -9,8 +9,8 @@ export async function files_list_generate_starts_with(
   name,
 ) {
   let files = await folder_read(input_path, file_extension);
-  let mapped = list_map(file, (f) => {
+  let mapped = list_map(files, (f) => {
     return string_starts_with(f, prefix);
   });
-  await generate_list_generic(name);
+  await generate_list_generic(mapped, name);
 }
