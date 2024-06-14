@@ -7,6 +7,7 @@ import { html_style } from "./html_style.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_style_width_full } from "./html_style_width_full.mjs";
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export function app_gs() {
   let root = html_style_default_initialize();
   html_style(root, {
@@ -19,7 +20,7 @@ export function app_gs() {
   let map = html_div(root);
   function unit_size_css(count) {
     let v = (100 / tiles_min) * count;
-    return "min(", v, "dvw,", v, "dvh)";
+    return string_combine_multiple(["min(", v, "dvw,", v, "dvh)"]);
   }
   html_style_width(image);
   html_style_width_full(map);
