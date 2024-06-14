@@ -1,3 +1,4 @@
+import { each_index } from "./each_index.mjs";
 import { each } from "./each.mjs";
 import { html_style_height } from "./html_style_height.mjs";
 import { html_style_width } from "./html_style_width.mjs";
@@ -44,7 +45,12 @@ export function app_gs() {
     html_style_height(row, tile_units_css(1));
     each_range(columns, (c) => {
       let r = integer_random(1, sum);
-      each_range(sums, (index) => a);
+      let found;
+      each_index(sums, (s, index) => {
+        if (s >= r) {
+          found = s;
+        }
+      });
       let image = html_img(row, game_img_base(r));
       html_style_width(image, tile_units_css(1));
     });
