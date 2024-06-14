@@ -70,16 +70,16 @@ export function app_gs() {
   });
   let character_indices = [
     null,
+    "down",
     null,
     null,
+    "left",
     null,
     null,
+    "right",
     null,
     null,
-    null,
-    null,
-    null,
-    null,
+    "up",
     null,
   ];
   game_img(
