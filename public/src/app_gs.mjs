@@ -6,17 +6,15 @@ import { html_img } from "./html_img.mjs";
 import { each_range } from "./each_range.mjs";
 import { html_style } from "./html_style.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
-import { html_div } from "./html_div.mjs";
 export function app_gs() {
   let root = html_style_default_initialize();
   html_style(root, {
     margin: 0,
   });
   html_style_background_color(root, "black");
-  let map = html_div(root);
   let rows = 10;
   let columns = 10;
-  let table = html_table(parent);
+  let table = html_table(root);
   each_range(rows, (r) => {
     each_range(columns, (c) => {
       let image = html_img(map, game_img_base(r));
