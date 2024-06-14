@@ -31,7 +31,7 @@ export function app_gs() {
     let row = html_div(map);
     each_range(columns, (c) => {
       let image = html_img(row, game_img_base(r));
-      html_style_width(image, "min(10dvw,10dvh)");
+      html_style_width(image, unit_size_css(1));
     });
   });
 }
