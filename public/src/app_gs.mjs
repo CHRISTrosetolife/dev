@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { each } from "./each.mjs";
 import { html_style_height } from "./html_style_height.mjs";
 import { html_style_width } from "./html_style_width.mjs";
@@ -39,6 +40,9 @@ export function app_gs() {
       la(sum);
     }),
   );
+  log({
+    sums,
+  });
   each_range(rows, (r) => {
     let row = html_div(map);
     html_style_height(row, tile_units_css(1));
