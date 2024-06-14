@@ -62,8 +62,8 @@ export function app_gs() {
   game_img(
     map,
     game_img_character(list_random_item(game_img_list_male()), 0),
-    r,
-    c,
+    row_middle,
+    column_middle,
     2,
   );
 }
