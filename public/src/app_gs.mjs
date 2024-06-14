@@ -12,6 +12,7 @@ export function app_gs() {
   html_style(root, {
     margin: 0,
   });
+  html_style_width_full(root);
   html_style(root, {
     overflow: "hidden",
   });
