@@ -1,3 +1,6 @@
+import { html_td } from "./html_td.mjs";
+import { html_tr } from "./html_tr.mjs";
+import { html_tbody } from "./html_tbody.mjs";
 import { html_table } from "./html_table.mjs";
 import { html_cycle_code_list } from "./html_cycle_code_list.mjs";
 import { html_cycle_bold_list } from "./html_cycle_bold_list.mjs";
@@ -151,15 +154,3 @@ export function lesson_mod() {
     );
   }
 }
-function html_td(tr_body) {
-    return html_element(tr_body, "td");
-}
-
-function html_tr(tbody) {
-    return html_element(tbody, "tr");
-}
-
-function html_tbody(table) {
-    return html_element(table, "tbody");
-}
-
