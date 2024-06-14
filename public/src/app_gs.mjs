@@ -9,4 +9,6 @@ export function app_gs() {
   html_img(root, "pipoya\\rpg_32\\sliced\\base_4.png");
   html_img(root, "pipoya\\rpg_32\\sliced\\base_5.png");
   html_img(root, "pipoya\\rpg_32\\sliced\\base_6.png");
+  html_img(root, "pipoya\\rpg_32\\sliced\\base_7.png");
+  html_img(root, "pipoya\\rpg_32\\sliced\\base_8.png");
 }
