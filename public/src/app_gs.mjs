@@ -24,7 +24,7 @@ import { each_range } from "./each_range.mjs";
 import { html_style } from "./html_style.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
 import { html_div } from "./html_div.mjs";
-import { timeout_set } from "./timeout_set.mjs";
+import { sleep } from "./sleep.mjs";
 export function app_gs() {
   let root = html_style_default_initialize();
   html_style(root, {
@@ -79,7 +79,7 @@ export function app_gs() {
       game_img(map, game_img_base(index), r, c, list_index(z_indexes, "tile"));
       let clicker = html_div(map);
       game_img_style(clicker, r, c, list_index(z_indexes, "clicker"));
-      html_on_click(clicker, () => {
+      html_on_click(clicker, async () => {
         let direction = null;
         if (r === player.y) {
           if (c > player.x) {
@@ -106,6 +106,7 @@ export function app_gs() {
             ),
           );
           walk();
+          await sleep(200);
           function walk() {
             if (player.walk_offset === 0) {
               player.walk_offset = -player.walk_previous;
@@ -123,7 +124,6 @@ export function app_gs() {
                 ),
               ),
             );
-            timeout_set(walk, 200);
           }
         }
       });
