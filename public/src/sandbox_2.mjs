@@ -1,4 +1,4 @@
-import { object_copy } from "./object_copy.mjs";
+import { object_copy_shallow } from "./object_copy_shallow.mjs";
 import { file_delete_if_exists } from "./file_delete_if_exists.mjs";
 import fs from "fs";
 import { PNG } from "pngjs";
@@ -12,7 +12,7 @@ export async function sandbox_2() {
       }),
     )
     .on("parsed", function () {
-      let image = object_copy(this);
+      let image = object_copy_shallow(this);
       for (var y = 0; y < image.height; y++) {
         for (var x = 0; x < image.width; x++) {
           var idx = (image.width * y + x) << 2;
