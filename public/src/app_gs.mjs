@@ -12,10 +12,6 @@ export function app_gs() {
   html_style(root, {
     margin: 0,
   });
-  html_style_width_full(root);
-  html_style(root, {
-    overflow: "hidden",
-  });
   html_style_background_color(root, "black");
   let rows = 20;
   let columns = 20;
@@ -28,7 +24,8 @@ export function app_gs() {
     let row = html_div(map);
     each_range(columns, (c) => {
       let image = html_img(row, game_img_base(r));
-      html_style_width(image, "min(10dvw,10dvh)");
+      let unit_size_css = "min(10dvw,10dvh)";
+      html_style_width(image, unit_size_css);
     });
   });
 }
