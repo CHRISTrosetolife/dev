@@ -17,8 +17,10 @@ export function app_gs() {
   let rows = 10;
   let columns = 10;
   let table = html_table(parent);
-  each_range(30, (index) => {
-    let image = html_img(map, game_img_base(index));
-    html_style_width(image, "min(10dvw,10dvh)");
+  each_range(rows, (r) => {
+    each_range(columns, (c) => {
+      let image = html_img(map, game_img_base(index));
+      html_style_width(image, "min(10dvw,10dvh)");
+    });
   });
 }
