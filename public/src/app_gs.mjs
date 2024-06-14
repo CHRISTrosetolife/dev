@@ -1,3 +1,4 @@
+import { game_img_list_male } from "./game_img_list_male.mjs";
 import { game_img_character } from "./game_img_character.mjs";
 import { game_tile_units_css } from "./game_tile_units_css.mjs";
 import { integer_random } from "./integer_random.mjs";
@@ -66,7 +67,10 @@ export function app_gs() {
           left: game_tile_units_css(c),
         });
       }
-      let overlay_person = html_img(column, game_img_character("male", 0));
+      let overlay_person = html_img(
+        column,
+        game_img_character(list_random_item(game_img_list_male()), 0),
+      );
       html_style_width(overlay_person, game_tile_units_css(1));
       html_style(overlay_person, {
         position: "absolute",
