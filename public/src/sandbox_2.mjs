@@ -3,7 +3,8 @@ import fs from "fs";
 import { PNG } from "pngjs";
 export async function sandbox_2() {
   let output_file_path = "public\\img\\shubibubi\\animals\\bunny2.png";
-  fs.createReadStream("public\\img\\shubibubi\\animals\\bunny.png")
+  let input_file_path = "public\\img\\shubibubi\\animals\\bunny.png";
+  fs.createReadStream(input_file_path)
     .pipe(
       new PNG({
         filterType: 4,
