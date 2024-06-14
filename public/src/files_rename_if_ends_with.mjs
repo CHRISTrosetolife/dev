@@ -16,15 +16,12 @@ export async function files_rename_if_ends_with(
   assert_arguments_length(arguments, 4);
   let files = await folder_read(input_path, file_extension);
   await each_async(files, async (file_name_old) => {
-    let file_name_old_less_extension = string_suffix_without(
-      file_name_old,
-      file_extension,
-    );
+    let b_old = string_suffix_without(file_name_old, file_extension);
     if (!string_ends_with(file_name_old, suffix_old)) {
       return;
     }
     let file_name_new_less_extension = string_suffix_change(
-      file_name_old_less_extension,
+      b_old,
       suffix_old,
       suffix_new,
     );
