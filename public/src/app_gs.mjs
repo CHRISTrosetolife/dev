@@ -1,3 +1,4 @@
+import { list_sum } from "./list_sum.mjs";
 import { list_random_item } from "./list_random_item.mjs";
 import { html_style_height } from "./html_style_height.mjs";
 import { html_style_width } from "./html_style_width.mjs";
@@ -30,6 +31,7 @@ export function app_gs() {
     overflow: "hidden",
   });
   let grass = [10, 1, 1, 1];
+  let sum = list_sum(grass);
   each_range(rows, (r) => {
     let row = html_div(map);
     html_style_height(row, tile_units_css(1));
