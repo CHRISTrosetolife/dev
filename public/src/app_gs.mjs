@@ -1,3 +1,5 @@
+import { divide } from "./divide.mjs";
+import { floor } from "./floor.mjs";
 import { game_img_list_male } from "./game_img_list_male.mjs";
 import { game_img_character } from "./game_img_character.mjs";
 import { game_tile_units_css } from "./game_tile_units_css.mjs";
@@ -24,6 +26,7 @@ export function app_gs() {
   html_style_background_color(root, "black");
   let rows = 10;
   let columns = 10;
+  let row_middle = floor(divide(rows, 10));
   let map = html_div(root);
   html_style_width(map, game_tile_units_css(columns));
   let height = game_tile_units_css(rows);
