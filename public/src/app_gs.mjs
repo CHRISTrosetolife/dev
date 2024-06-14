@@ -61,6 +61,7 @@ export function app_gs() {
   ];
   let map = html_div(root);
   html_style_width(map, game_tile_units_css(columns));
+  html_style_height(map, game_tile_units_css(rows));
   let height = game_tile_units_css(rows);
   html_style_height(map, height);
   html_style(map, {
