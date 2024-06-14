@@ -36,7 +36,6 @@ export function app_gs() {
   let root = html_style_default_initialize();
   html_style(root, {
     margin: 0,
-    position: "relative",
   });
   html_style_background_color(root, "black");
   let rows = 10;
@@ -67,7 +66,6 @@ export function app_gs() {
     overflow: "hidden",
     position: "relative",
     display: "inline",
-    margin: "auto",
   });
   let z_indexes = ["tile", "overlay", "player", "clicker"];
   player.character = list_random_item(game_img_list_male());
