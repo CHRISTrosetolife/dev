@@ -106,6 +106,9 @@ export function app_gs() {
             ),
           );
           timeout_set(() => {
+            if (player.walk_offset === 0) {
+            } else {
+            }
             html_img_src(
               p,
               game_img_character(
