@@ -79,6 +79,7 @@ export function app_gs() {
   each_range(rows, (r) => {
     html_style_height(map, game_tile_units_css(1));
     each_range(columns, (c) => {
+      let clicker = html_div(map);
       let grass = game_grass_weight();
       let index = list_random_index_weighted(grass);
       game_img(map, game_img_base(index), r, c, list_index(z_indexes, "tile"));
@@ -95,7 +96,6 @@ export function app_gs() {
           list_index(z_indexes, "overlay"),
         );
       }
-      let clicker = html_div(map);
       game_img_style(clicker, r, c, list_index(z_indexes, "clicker"));
       html_on_click(clicker, async () => {
         let direction = null;
