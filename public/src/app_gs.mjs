@@ -6,7 +6,6 @@ import { each_range } from "./each_range.mjs";
 import { html_style } from "./html_style.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
 import { html_div } from "./html_div.mjs";
-import { html_style_width_full } from "./html_style_width_full.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export function app_gs() {
   let root = html_style_default_initialize();
@@ -26,7 +25,6 @@ export function app_gs() {
     let v = (100 / tiles_min) * count;
     return string_combine_multiple(["min(", v, "dvw,", v, "dvh)"]);
   }
-  html_style_width_full(map);
   html_style(map, {
     overflow: "hidden",
   });
