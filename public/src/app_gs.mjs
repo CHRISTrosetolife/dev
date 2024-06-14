@@ -115,9 +115,9 @@ export function app_gs() {
           await each_range_async(steps_count, async () => {
             let animate_count = 2;
             let sleep_time = app_gs_sleep_time();
-            walk(1);
+            await walk(1);
             await sleep(sleep_time);
-            walk(2);
+            await walk(2);
             await sleep(sleep_time);
             let delta = game_direction_to_delta(direction);
             each(["x", "y"], (xy) => {
