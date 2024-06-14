@@ -54,11 +54,17 @@ export function app_gs() {
       });
       html_style_width(image, game_tile_units_css(1));
       if (integer_random(1, 8) === 1) {
-        let z_index = 1;
-        let img_url = game_img_base(
-          list_random_item(list_concat(range_from(40, 42), range_from(48, 57))),
+        game_img(
+          map,
+          game_img_base(
+            list_random_item(
+              list_concat(range_from(40, 42), range_from(48, 57)),
+            ),
+          ),
+          r,
+          c,
+          1,
         );
-        game_img(map, img_url, r, c, z_index);
       }
       let overlay_person = html_img(
         map,
