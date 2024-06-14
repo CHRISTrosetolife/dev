@@ -1,3 +1,32 @@
 export function game_img_list_soldier() {
-  return [];
+  return [
+    "soldier_01_1",
+    "soldier_01_2",
+    "soldier_01_3",
+    "soldier_01_4",
+    "soldier_02_1",
+    "soldier_02_2",
+    "soldier_02_3",
+    "soldier_02_4",
+    "soldier_03_1",
+    "soldier_03_2",
+    "soldier_03_3",
+    "soldier_03_4",
+    "soldier_04_1",
+    "soldier_04_2",
+    "soldier_04_3",
+    "soldier_04_4",
+    "soldier_05_1",
+    "soldier_05_2",
+    "soldier_05_3",
+    "soldier_05_4",
+    "soldier_06_1",
+    "soldier_06_2",
+    "soldier_06_3",
+    "soldier_06_4",
+    "soldier_07_1",
+    "soldier_07_2",
+    "soldier_07_3",
+    "soldier_07_4",
+  ];
 }
