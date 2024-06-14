@@ -155,8 +155,8 @@ export function app_gs() {
           let mh = tile_size * rows;
           let mw = tile_size * columns;
           window.scrollTo(
-            player_overlay.element.offsetLeft + vw / 2,
-            player_overlay.element.offsetTop + vh / 2,
+            player_overlay.element.offsetLeft - vw / 2,
+            player_overlay.element.offsetTop - vh / 2,
           );
         }
       });
