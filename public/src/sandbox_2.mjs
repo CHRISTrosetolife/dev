@@ -53,11 +53,11 @@ export async function sandbox_2() {
               );
             });
           });
-          image.width = 20;
-          image.height = 20;
+          image.width = width_unit;
+          image.height = height_unit;
           if (0) {
             each_index(image_out, (value, a) => {
-              image[a] = value;
+              image.data[a] = value;
             });
           }
         });
