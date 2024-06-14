@@ -49,7 +49,7 @@ export function app_gs() {
     each_range(columns, (c) => {
       let r = integer_random(1, sum);
       log({
-        e,
+        r,
       });
       let found = null;
       each(sums, (s, index) => {
