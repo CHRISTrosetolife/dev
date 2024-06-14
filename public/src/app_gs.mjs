@@ -105,7 +105,7 @@ export function app_gs() {
               list_index(character_indices, direction),
             ),
           );
-          timeout_set(() => {
+          timeout_set(function walk() {
             if (player.walk_offset === 0) {
               player.walk_offset = -player.walk_previous;
               player.walk_previous = player.walk_offset;
