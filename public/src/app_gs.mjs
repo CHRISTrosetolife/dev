@@ -1,3 +1,4 @@
+import { html_tr } from "./html_tr.mjs";
 import { html_table } from "./html_table.mjs";
 import { html_style_width } from "./html_style_width.mjs";
 import { game_img_base } from "./game_img_base.mjs";
@@ -16,6 +17,7 @@ export function app_gs() {
   let columns = 20;
   let map = html_table(root);
   each_range(rows, (r) => {
+    let row = html_tr(map);
     each_range(columns, (c) => {
       let image = html_img(map, game_img_base(r));
       html_style_width(image, "min(10dvw,10dvh)");
