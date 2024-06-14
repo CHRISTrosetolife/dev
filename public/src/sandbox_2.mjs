@@ -1,4 +1,3 @@
-import { exit } from "./exit.mjs";
 import { each_index } from "./each_index.mjs";
 import { add } from "./add.mjs";
 import { each_range } from "./each_range.mjs";
@@ -61,7 +60,6 @@ export async function sandbox_2() {
         });
         index++;
       });
-      exit();
     });
   });
 }
