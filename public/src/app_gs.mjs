@@ -30,8 +30,9 @@ export function app_gs() {
   html_style_background_color(root, "black");
   let rows = 10;
   let columns = rows;
-  let row_middle = floor(divide(subtract_1(rows), 2));
-  let column_middle = floor(divide(subtract_1(columns), 2));
+  let player = {};
+  player.y = floor(divide(subtract_1(rows), 2));
+  player.x = floor(divide(subtract_1(columns), 2));
   let character_indices = [
     null,
     "down",
@@ -60,8 +61,8 @@ export function app_gs() {
   game_img(
     map,
     game_img_character(list_random_item(game_img_list_male()), 0),
-    row_middle,
-    column_middle,
+    player.y,
+    player.x,
     list_index(z_indexes, "player"),
   );
   each_range(rows, (r) => {
