@@ -32,10 +32,8 @@ import { html_div } from "./html_div.mjs";
 import { sleep } from "./sleep.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { html_style_centered } from "./html_style_centered.mjs";
 export function app_gs() {
   let root = html_style_default_initialize();
-  html_style_centered(root);
   html_style(root, {
     margin: 0,
   });
