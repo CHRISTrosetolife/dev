@@ -7,13 +7,14 @@ import { path_dirname } from "./path_dirname.mjs";
 import { png_transform } from "./png_transform.mjs";
 import { folder_read } from "./folder_read.mjs";
 import { each_async } from "./each_async.mjs";
+import { path_join } from "./path_join.mjs";
 export async function sandbox_2() {
-  let path_in = "public\\img\\shubibubi\\animals\\";
+  let folder_in = "public\\img\\shubibubi\\animals\\";
   let folder_out = "sliced";
   let tile_size = 32;
   let rows_count = 5;
   let columns_count = 4;
-  let files = await folder_read(path_in, ".png");
+  let files = await folder_read(folder_in, ".png");
   await each_async(files, async (file) => {
     let d = path_dirname(file);
     let i = await png_read(file);
@@ -22,12 +23,13 @@ export async function sandbox_2() {
     assert(equal, [mod(height, rows_count), 0]);
     await each_range_async(rows_count, async (r) => {
       await each_range_async(columns_count, async (c) => {
-        await png_transform(path_in, path_out, transform);
+        let path_out = path_join([folder_in]);
+        await png_transform(folder_in, path_out, transform);
       });
     });
   });
   return;
-  await png_transform(path_in, path_out, transform);
+  await png_transform(folder_in, path_out, transform);
   function transform(image) {
     image.height = image.height / 4;
     for (var y = 0; y < image.height; y++) {
