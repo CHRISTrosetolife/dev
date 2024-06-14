@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { game_direction_to_delta } from "./game_direction_to_delta.mjs";
 import { game_img_position } from "./game_img_position.mjs";
 import { add } from "./add.mjs";
@@ -27,6 +28,8 @@ import { html_style } from "./html_style.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
 import { html_div } from "./html_div.mjs";
 import { sleep } from "./sleep.mjs";
+import { object_property_set } from "./object_property_set.mjs";
+import { object_property_get } from "./object_property_get.mjs";
 export function app_gs() {
   let root = html_style_default_initialize();
   html_style(root, {
@@ -101,6 +104,9 @@ export function app_gs() {
         }
         if (direction !== null) {
           let delta = game_direction_to_delta(direction);
+          each(["x", "y"], (xy) =>
+            object_property_set(player, xy, object_property_get(delta, xy)),
+          );
           html_img_src(
             player_overlay,
             game_img_character(
