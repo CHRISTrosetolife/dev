@@ -13,15 +13,15 @@ export async function sandbox_2() {
     )
     .on("parsed", function () {
       let image = object_copy(this);
-      for (var y = 0; y < this.height; y++) {
-        for (var x = 0; x < this.width; x++) {
-          var idx = (this.width * y + x) << 2;
-          this.data[idx] = 255 - this.data[idx];
-          this.data[idx + 1] = 255 - this.data[idx + 1];
-          this.data[idx + 2] = 255 - this.data[idx + 2];
-          this.data[idx + 3] = this.data[idx + 3] >> 1;
+      for (var y = 0; y < image.height; y++) {
+        for (var x = 0; x < image.width; x++) {
+          var idx = (image.width * y + x) << 2;
+          image.data[idx] = 255 - image.data[idx];
+          image.data[idx + 1] = 255 - image.data[idx + 1];
+          image.data[idx + 2] = 255 - image.data[idx + 2];
+          image.data[idx + 3] = image.data[idx + 3] >> 1;
         }
       }
-      this.pack().pipe(fs.createWriteStream(out));
+      image.pack().pipe(fs.createWriteStream(out));
     });
 }
