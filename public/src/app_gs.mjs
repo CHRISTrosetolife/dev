@@ -12,8 +12,8 @@ export function app_gs() {
     margin: 0,
   });
   html_style_background_color(root, "black");
-  let rows = 10;
-  let columns = 10;
+  let rows = 20;
+  let columns = 20;
   let map = html_table(root);
   each_range(rows, (r) => {
     each_range(columns, (c) => {
