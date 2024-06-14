@@ -12,6 +12,7 @@ export async function sandbox_2() {
   let i = await png_read(path_in);
   let { height, width } = i;
   each([height, width], (hw) => assert(equal, [mod(hw, tile_size), 0]));
+  return;
   await png_transform(path_in, path_out, transform);
   function transform(image) {
     image.height = image.height / 4;
