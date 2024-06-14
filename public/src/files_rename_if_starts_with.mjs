@@ -8,8 +8,8 @@ import { string_suffix_without } from "./string_suffix_without.mjs";
 export async function files_rename_if_starts_with(
   input_path,
   file_extension,
-  suffix_old,
-  suffix_new,
+  prefix_old,
+  prefix_new,
 ) {
   assert_arguments_length(arguments, 4);
   let files = await folder_read(input_path, file_extension);
