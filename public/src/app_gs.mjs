@@ -1,3 +1,4 @@
+import { game_img } from "./game_img.mjs";
 import { divide } from "./divide.mjs";
 import { floor } from "./floor.mjs";
 import { game_img_list_male } from "./game_img_list_male.mjs";
@@ -57,14 +58,7 @@ export function app_gs() {
         let img_url = game_img_base(
           list_random_item(list_concat(range_from(40, 42), range_from(48, 57))),
         );
-        let overlay = html_img(map, img_url);
-        html_style_width(overlay, game_tile_units_css(1));
-        html_style(overlay, {
-          position: "absolute",
-          "z-index": z_index,
-          left: game_tile_units_css(c),
-          top: game_tile_units_css(r),
-        });
+        game_img(map, img_url, r, c, z_index);
       }
       let overlay_person = html_img(
         map,
