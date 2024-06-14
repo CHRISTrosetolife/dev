@@ -59,10 +59,10 @@ export function app_gs() {
     "z-index": 0,
   });
   let z_indexes = ["tile", "overlay", "player", "clicker"];
-  let character = list_random_item(game_img_list_male());
+  player.character = list_random_item(game_img_list_male());
   let p = game_img(
     map,
-    game_img_character(character, 0),
+    game_img_character(player.character, 0),
     player.y,
     player.x,
     list_index(z_indexes, "player"),
