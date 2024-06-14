@@ -48,6 +48,9 @@ export function app_gs() {
     html_style_height(row, tile_units_css(1));
     each_range(columns, (c) => {
       let r = integer_random(1, sum);
+      log({
+        e,
+      });
       let found = null;
       each(sums, (s, index) => {
         if (found === null) {
