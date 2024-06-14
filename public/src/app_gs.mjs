@@ -90,7 +90,11 @@ export function app_gs() {
           list_concat(range_from(40, 42), range_from(48, 57)),
         );
         let data_name = "overlay";
-        html_attribute_set(clicker, string_combine("data-", data_name).base_id);
+        html_attribute_set(
+          clicker,
+          string_combine("data-", data_name),
+          base_id,
+        );
         game_img(
           map,
           game_img_base(base_id),
