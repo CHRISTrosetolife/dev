@@ -27,6 +27,7 @@ export async function sandbox_2() {
     let i = await png_read(file);
     let { height, width } = i;
     let height_unit = height / rows_count;
+    let width_unit = width / columns_count;
     assert(equal, [mod(width, columns_count), 0]);
     assert(equal, [mod(height, rows_count), 0]);
     let index = 0;
@@ -41,7 +42,6 @@ export async function sandbox_2() {
           let image_out = [];
           each_range(height_unit, (y) => {
             let y_offset = add(y, r * height_unit);
-            let width_unit = width / columns_count;
             each_range(width_unit, (x) => {
               var idx = (image.width * y + x) << 2;
               image.data[idx] = 255 - image.data[idx];
