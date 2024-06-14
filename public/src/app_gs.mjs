@@ -106,7 +106,7 @@ export function app_gs() {
               list_index(character_indices, direction),
             ),
           );
-          let animate_count = 3;
+          let animate_count = 4;
           await sleep(200);
           walk();
           await sleep(200);
