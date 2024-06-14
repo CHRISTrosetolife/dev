@@ -111,7 +111,7 @@ export function app_gs() {
             ),
           );
           let animate_count = 1;
-          let sleep_time = 100;
+          let sleep_time = 200;
           await sleep(sleep_time);
           walk(0);
           await sleep(sleep_time);
