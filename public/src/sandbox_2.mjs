@@ -20,6 +20,6 @@ export async function sandbox_2() {
           image.data[idx + 3] = image.data[idx + 3] >> 1;
         }
       }
-      image.pack().pipe(fs.createWriteStream(out));
+      image.pack().pipe(fs.createWriteStream(out)).on("finish", resolve);
     });
 }
