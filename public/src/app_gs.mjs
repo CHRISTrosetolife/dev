@@ -45,10 +45,12 @@ export function app_gs() {
     html_style_height(row, tile_units_css(1));
     each_range(columns, (c) => {
       let r = integer_random(1, sum);
-      let found;
+      let found = null;
       each_index(sums, (s, index) => {
-        if (s >= r) {
-          found = s;
+        if (found === null) {
+          if (s >= r) {
+            found = s;
+          }
         }
       });
       let image = html_img(row, game_img_base(r));
