@@ -78,7 +78,7 @@ export function app_gs() {
       html_on_click(clicker, () => {
         let direction = null;
         if (r === player.y) {
-          if ((c > player, x)) {
+          if (c > player) {
             direction = right;
           }
         }
