@@ -9,15 +9,16 @@ export function game_img_style(image, r, c, z_index) {
   let unit = game_tile_units_css(1);
   html_style_width(image, unit);
   html_style_height(image, unit);
+  let t = app_gs_sleep_time() / 1000;
   html_style(image, {
     position: "absolute",
     "z-index": z_index,
     transition: string_combine_multiple([
       "top ",
+      t,
+      "s, left ",
       app_gs_sleep_time(),
-      "ms, left ",
-      app_gs_sleep_time(),
-      "ms, ",
+      "s, ",
     ]),
   });
   game_img_position(image, r, c);
