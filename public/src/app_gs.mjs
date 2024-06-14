@@ -1,3 +1,4 @@
+import { list_index } from "./list_index.mjs";
 import { game_img_style } from "./game_img_style.mjs";
 import { log } from "./log.mjs";
 import { html_on_click } from "./html_on_click.mjs";
@@ -48,7 +49,13 @@ export function app_gs() {
     each_range(columns, (c) => {
       let grass = game_grass_weight();
       let index = list_random_index_weighted(grass);
-      let tile = game_img(map, game_img_base(index), r, c, 0);
+      let tile = game_img(
+        map,
+        game_img_base(index),
+        r,
+        c,
+        list_index(z_indexes, "tile"),
+      );
       let clicker = html_div(map);
       game_img_style(clicker, r, c, z_index);
       html_on_click(tile, () => log("here"));
