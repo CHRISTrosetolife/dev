@@ -19,7 +19,7 @@ export function app_gs() {
   let columns = 20;
   let map = html_div(root);
   html_style(map, {
-    overflow: "auto",
+    overflow: "scroll",
   });
   let table = html_table(map);
   each_range(rows, (r) => {
