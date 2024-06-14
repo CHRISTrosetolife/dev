@@ -1,4 +1,10 @@
+import { html_scroll_center_generic } from "./html_scroll_center_generic.mjs";
 export function html_scroll_center_smooth(player_overlay) {
+  let additional = {
+    behavior: "smooth",
+  };
+  html_scroll_center_generic(component, additional);
+  return;
   let vh = window.innerHeight;
   let vw = window.innerWidth;
   let e = player_overlay.element;
