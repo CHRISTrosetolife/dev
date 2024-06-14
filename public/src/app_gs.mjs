@@ -98,6 +98,7 @@ export function app_gs() {
           }
         }
         if (direction !== null) {
+          player.walk_offset = 0;
           html_img_src(
             p,
             game_img_character(
