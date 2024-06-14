@@ -153,6 +153,7 @@ export function app_gs() {
           let vw = window.innerWidth;
           let elTop = player_overlay.element.offsetTop;
           let tile_size = number_min(vh, vw) / tiles_min;
+          let mh = tile_size * rows;
           log({
             elTop,
             mid,
