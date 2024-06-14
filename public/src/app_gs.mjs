@@ -1,5 +1,4 @@
-import { each_index } from "./each_index.mjs";
-import { each } from "./each.mjs";
+import { list_random_index_weighted } from "./list_random_index_weighted.mjs";
 import { html_style_height } from "./html_style_height.mjs";
 import { html_style_width } from "./html_style_width.mjs";
 import { game_img_base } from "./game_img_base.mjs";
@@ -10,10 +9,6 @@ import { html_style } from "./html_style.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
 import { html_div } from "./html_div.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { list_adder } from "./list_adder.mjs";
-import { integer_random } from "./integer_random.mjs";
-import { assert } from "./assert.mjs";
-import { null_not_is } from "./null_not_is.mjs";
 export function app_gs() {
   let root = html_style_default_initialize();
   html_style(root, {
@@ -39,23 +34,7 @@ export function app_gs() {
     html_style_height(row, tile_units_css(1));
     each_range(columns, (c) => {
       let grass = [10, 1, 1, 1];
-      let sum = 0;
-      let sums = list_adder((la) =>
-        each(grass, (proportion) => {
-          sum += proportion;
-          la(sum);
-        }),
-      );
-      let r = integer_random(1, sum);
-      let found = null;
-      each_index(sums, (s, index) => {
-        if (found === null) {
-          if (s >= r) {
-            found = index;
-          }
-        }
-      });
-      assert(null_not_is, [found]);
+      let found = list_random_index_weighted(grass);
       let image = html_img(row, game_img_base(found));
       html_style_width(image, tile_units_css(1));
     });
