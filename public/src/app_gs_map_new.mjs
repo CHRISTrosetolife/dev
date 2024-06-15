@@ -1,3 +1,4 @@
+import { app_gs_overlays_wall } from "./app_gs_overlays_wall.mjs";
 import { game_img_list_male } from "./game_img_list_male.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
 import { divide } from "./divide.mjs";
@@ -26,7 +27,7 @@ export function app_gs_map_new() {
   };
   let total = rows * columns;
   let map_overlays_count = ceiling(total / 8);
-  let overlays_wall = range_from(40, 42);
+  let overlays_wall = app_gs_overlays_wall();
   let overlays = list_concat(overlays_wall, range_from(48, 57));
   let tiles = list_adder((la) =>
     each_range(rows, (y) =>
