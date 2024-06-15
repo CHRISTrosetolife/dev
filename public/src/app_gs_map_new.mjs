@@ -26,7 +26,7 @@ export function app_gs_map_new() {
   let map_overlays = [];
   let map = {
     overlays: map_overlays,
-    rows: y_size,
+    y_size,
     columns: x_size,
   };
   let total = y_size * x_size;
