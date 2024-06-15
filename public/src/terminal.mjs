@@ -51,7 +51,6 @@ export async function terminal() {
       keys: ["return"],
       action: () => {
         log("");
-        log(buffer_get());
         let result = list_join_empty(buffer_get());
         buffer_clear();
         each(on_returns_get(), (n) => n(result));
