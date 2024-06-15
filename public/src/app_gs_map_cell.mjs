@@ -1,3 +1,4 @@
+import { html_scroll_center_smooth } from "./html_scroll_center_smooth.mjs";
 import { each_async } from "./each_async.mjs";
 import { list_all } from "./list_all.mjs";
 import { app_gs_at_single } from "./app_gs_at_single.mjs";
@@ -48,5 +49,6 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
     await each_async(list_skip(p, 1), async (tile) => {
       await app_gs_walk(player_overlay, map.player, tile);
     });
+    html_scroll_center_smooth(player_overlay);
   });
 }
