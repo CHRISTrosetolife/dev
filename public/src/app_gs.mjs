@@ -110,7 +110,7 @@ export function app_gs() {
     list_index(z_indexes, "player"),
   );
   each(map_overlays, (o) => {
-    let { id } = o;
+    let { id, x, y } = o;
     html_data_set(clicker, "overlay", id);
     game_img(map_c, game_img_base(id), r, c, list_index(z_indexes, "overlay"));
   });
