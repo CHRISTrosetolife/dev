@@ -1,3 +1,4 @@
+import { each_pairs } from "./each_pairs.mjs";
 import { app_gs_direction } from "./app_gs_direction.mjs";
 import { list_all } from "./list_all.mjs";
 import { app_gs_at_single } from "./app_gs_at_single.mjs";
@@ -42,6 +43,9 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
       from,
       tile,
     );
+    each_pairs(p, (a, b) => {
+      let direction = app_gs_direction(map.player, tile);
+    });
     log({
       p,
     });
