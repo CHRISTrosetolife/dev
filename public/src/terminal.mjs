@@ -13,6 +13,7 @@ export async function terminal() {
   if (process.stdin.isTTY) {
     process.stdin.setRawMode(true);
   }
+  let nexts = [];
   let buffer = [];
   process.stdin.on("keypress", function (chunk, key) {
     let { sequence, name, ctrl, meta, shift } = key;
