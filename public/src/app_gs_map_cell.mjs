@@ -15,44 +15,57 @@ import { html_data_set } from "./html_data_set.mjs";
 import { html_div } from "./html_div.mjs";
 import { app_gs_z_indexes } from "./app_gs_z_indexes.mjs";
 import { list_includes } from "./list_includes.mjs";
-export function app_gs_map_cell(map, map_c, player_overlay, r, c) {
+export function app_gs_map_cell(map, map_c, player_overlay, tile) {
   let z_indexes = app_gs_z_indexes();
   let clicker = html_div(map_c);
-  app_gs_overlays_at(map, r, c, lambda_overlay);
+  app_gs_overlays_at(map, tile.y, tile.x, lambda_overlay);
   let grass = game_grass_weight();
   let index = list_random_index_weighted(grass);
-  game_img(map_c, game_img_base(index), r, c, list_index(z_indexes, "tile"));
-  game_img_style(clicker, r, c, list_index(z_indexes, "clicker"));
+  game_img(
+    map_c,
+    game_img_base(index),
+    tile.y,
+    tile.x,
+    list_index(z_indexes, "tile"),
+  );
+  game_img_style(clicker, tile.y, tile.x, list_index(z_indexes, "clicker"));
   html_on_click(clicker, async () => {
-    let os = list_adder((la) => app_gs_overlays_at(map, r, c, la));
+    let os = list_adder((la) => app_gs_overlays_at(map, tile.y, tile.x, la));
     if (list_any(os, (o) => list_includes(app_gs_overlays_wall(), o.id))) {
       log("wall");
       return;
     }
+    graph_path_shortest();
     let direction = null;
-    if (r === map.player.y) {
-      if (c > map.player.x) {
+    if (tile.y === map.player.y) {
+      if (tile.x > map.player.x) {
         direction = "right";
       }
-      if (c < map.player.x) {
+      if (tile.x < map.player.x) {
         direction = "left";
       }
     }
-    if (c === map.player.x) {
-      if (r > map.player.y) {
+    if (tile.x === map.player.x) {
+      if (tile.y > map.player.y) {
         direction = "down";
       }
-      if (r < map.player.y) {
+      if (tile.y < map.player.y) {
         direction = "up";
       }
     }
     if (direction !== null) {
-      await app_gs_walk(player_overlay, map.player, direction, r, c);
+      await app_gs_walk(player_overlay, map.player, direction, tile.y, tile.x);
     }
   });
   function lambda_overlay(o) {
     let { id } = o;
     html_data_set(clicker, "overlay", id);
-    game_img(map_c, game_img_base(id), r, c, list_index(z_indexes, "overlay"));
+    game_img(
+      map_c,
+      game_img_base(id),
+      tile.y,
+      tile.x,
+      list_index(z_indexes, "overlay"),
+    );
   }
 }
