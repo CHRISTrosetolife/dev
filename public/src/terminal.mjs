@@ -17,6 +17,7 @@ import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { undefined_is } from "./undefined_is.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
+import { list_includes } from "./list_includes.mjs";
 export async function terminal() {
   let commands = [
     {
@@ -68,7 +69,9 @@ export async function terminal() {
         }
       }
     } else {
-      list_filter(commands, (c) => {});
+      list_filter(commands, (c) => {
+        (ctrl = list_includes(keys, "ctrl")), meta, shift;
+      });
     }
   });
   function keyboard_type(name) {
