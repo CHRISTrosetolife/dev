@@ -15,6 +15,7 @@ import { list_add } from "./list_add.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 export async function terminal() {
+  let prompt = chalk.greenBright("✟") + " ";
   readline.emitKeypressEvents(process.stdin);
   if (process.stdin.isTTY) {
     process.stdin.setRawMode(true);
@@ -53,7 +54,7 @@ export async function terminal() {
   }
   console.clear();
   while (true) {
-    log_write(chalk.greenBright("✟") + " ");
+    log_write();
     let input = await next();
     let tokens = string_split_space(input);
     tokens = list_filter(tokens, string_empty_not_is);
