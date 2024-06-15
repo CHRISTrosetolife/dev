@@ -1,3 +1,4 @@
+import { string_replace } from "./string_replace.mjs";
 import { exit } from "./exit.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 import { equal_json } from "./equal_json.mjs";
@@ -100,6 +101,7 @@ export async function terminal() {
     }
   });
   function keyboard_type(name) {
+    name = string_replace(name, "\n", " ");
     let message = chalk.greenBright(name);
     log_write(message);
     list_add(buffer, name);
