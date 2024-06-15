@@ -4,7 +4,7 @@ import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { run_git_ac } from "./run_git_ac.mjs";
 import { log } from "./log.mjs";
-import tty from "tty";
+import readline from "readline";
 import chalk from "chalk";
 import { list_filter } from "./list_filter.mjs";
 export async function terminal() {
