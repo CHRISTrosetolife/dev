@@ -33,11 +33,6 @@ export function app_gs() {
   });
   html_style_background_color(root, "black");
   let map = app_gs_map_new();
-  let player = {};
-  player.y = floor(divide(subtract_1(map.rows), 2));
-  player.x = floor(divide(subtract_1(map.columns), 2));
-  player.walk_offset = 0;
-  player.walk_previous = 1;
   let character_indices = game_character_indices();
   let map_c = html_div(root);
   html_style_width(map_c, game_tile_units_css(map.columns));
@@ -47,69 +42,78 @@ export function app_gs() {
     position: "relative",
     display: "inline",
   });
-  let z_indexes = ["tile", "overlay", "player", "clicker"];
-  player.character = list_random_item(game_img_list_male());
+  let z_indexes = app_gs_z_indexes();
+  map.player.character = list_random_item(game_img_list_male());
   let player_overlay = game_img(
     map_c,
-    game_img_character(player.character, game_character_index("down")),
-    player.y,
-    player.x,
+    game_img_character(map.player.character, game_character_index("down")),
+    map.player.y,
+    map.player.x,
     list_index(z_indexes, "player"),
   );
   each_range(map.rows, (r) => {
     html_style_height(map_c, game_tile_units_css(1));
     each_range(map.columns, (c) => {
-      let clicker = html_div(map_c);
-      each(map.overlays, (o) => {
-        let { id, x, y } = o;
-        if (x !== c) {
-          return;
-        }
-        if (y !== r) {
-          return;
-        }
-        html_data_set(clicker, "overlay", id);
-        game_img(
-          map_c,
-          game_img_base(id),
-          r,
-          c,
-          list_index(z_indexes, "overlay"),
-        );
-      });
-      let grass = game_grass_weight();
-      let index = list_random_index_weighted(grass);
-      game_img(
-        map_c,
-        game_img_base(index),
-        r,
-        c,
-        list_index(z_indexes, "tile"),
-      );
-      game_img_style(clicker, r, c, list_index(z_indexes, "clicker"));
-      html_on_click(clicker, async () => {
-        let direction = null;
-        if (r === player.y) {
-          if (c > player.x) {
-            direction = "right";
-          }
-          if (c < player.x) {
-            direction = "left";
-          }
-        }
-        if (c === player.x) {
-          if (r > player.y) {
-            direction = "down";
-          }
-          if (r < player.y) {
-            direction = "up";
-          }
-        }
-        if (direction !== null) {
-          await app_gs_walk(player_overlay, player, direction, r, c);
-        }
-      });
+      app_gs_map_onclick(map, map_c, player_overlay, r, c);
     });
   });
   html_scroll_center_smooth(player_overlay);
 }
+function app_gs_z_indexes() {
+    return ["tile", "overlay", "player", "clicker"];
+}
+
+function app_gs_map_onclick(map, map_c, player_overlay, r, c) {
+    let z_indexes = app_gs_z_indexes();
+    let clicker = html_div(map_c);
+    each(map.overlays, (o) => {
+        let { id, x, y } = o;
+        if (x !== c) {
+            return;
+        }
+        if (y !== r) {
+            return;
+        }
+        html_data_set(clicker, "overlay", id);
+        game_img(
+            map_c,
+            game_img_base(id),
+            r,
+            c,
+            list_index(z_indexes, "overlay")
+        );
+    });
+    let grass = game_grass_weight();
+    let index = list_random_index_weighted(grass);
+    game_img(
+        map_c,
+        game_img_base(index),
+        r,
+        c,
+        list_index(z_indexes, "tile")
+    );
+    game_img_style(clicker, r, c, list_index(z_indexes, "clicker"));
+    html_on_click(clicker, async () => {
+        let direction = null;
+        if (r === map.player.y) {
+            if (c > map.player.x) {
+                direction = "right";
+            }
+            if (c < map.player.x) {
+                direction = "left";
+            }
+        }
+        if (c === map.player.x) {
+            if (r > map.player.y) {
+                direction = "down";
+            }
+            if (r < map.player.y) {
+                direction = "up";
+            }
+        }
+        if (direction !== null) {
+            await app_gs_walk(player_overlay, map.player, direction, r, c);
+        }
+    });
+}
+
