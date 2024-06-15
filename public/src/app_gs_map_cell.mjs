@@ -34,7 +34,7 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
     let p = graph_path_shortest(
       map.tiles,
       (a, b) =>
-        app_gs_adjacent(a, b) &&
+        (app_gs_adjacent(a, b) && 1) ||
         list_all([a, b], (ab) => !app_gs_overlays_any_wall(map, ab)),
       from,
       tile,
