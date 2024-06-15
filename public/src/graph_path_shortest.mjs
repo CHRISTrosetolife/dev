@@ -4,6 +4,9 @@ export function graph_path_shortest(vertices, edge_lambda) {
   list_adder((la) =>
     each_index(vertices, (a, ai) =>
       each_index(vertices, (b, bi) => {
+        if (bi <= ia) {
+          return;
+        }
         if (edge_lambda(a, b)) {
           la([ai, bi]);
         }
