@@ -22,6 +22,9 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
   let clicker = html_div(map_c);
   app_gs_overlays_at(map, tile, function lambda_overlay(o) {
     let { id: o_id } = o;
+    log({
+      o_id,
+    });
     html_data_set(clicker, "overlay", o_id);
     game_img(
       map_c,
