@@ -14,7 +14,8 @@ export async function app_gs() {
   let map_c = app_gs_map_html(root, map);
   let player_overlay = app_gs_overlay_player(map_c, map);
   let tiles = list_map(map.tiles, async (tile) => {
-    let distance = abs(tile.x - map.player.x) + abs(tile.y + map.player.y);
+    let b = map.player;
+    let distance = abs(tile.x - b.x) + abs(tile.y + map.player.y);
     await app_gs_map_cell(map, map_c, player_overlay, tile);
   });
   await promise_all(tiles);
