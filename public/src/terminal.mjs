@@ -18,8 +18,6 @@ import chalk from "chalk";
 import { list_filter } from "./list_filter.mjs";
 import { list_all } from "./list_all.mjs";
 import { list_add } from "./list_add.mjs";
-import { object_property_exists } from "./object_property_exists.mjs";
-import { object_property_get } from "./object_property_get.mjs";
 import { undefined_is } from "./undefined_is.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
 import { list_includes } from "./list_includes.mjs";
@@ -81,9 +79,6 @@ export async function terminal() {
   function buffer_clear() {
     buffer = [];
   }
-  let replacements = {
-    space: " ",
-  };
   process.stdin.on("keypress", async function (chunk, key) {
     let { sequence, name, ctrl, meta, shift } = key;
     let b = [ctrl, meta, shift];
@@ -98,9 +93,6 @@ export async function terminal() {
           });
         }
       } else {
-        if (object_property_exists(replacements, name)) {
-          name = object_property_get(replacements, name);
-        }
         keyboard_type(name);
       }
     }
