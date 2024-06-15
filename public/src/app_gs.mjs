@@ -1,3 +1,5 @@
+import { list_pop } from "./list_pop.mjs";
+import { list_shuffle } from "./list_shuffle.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { list_add } from "./list_add.mjs";
 import { ceiling } from "./ceiling.mjs";
@@ -104,6 +106,7 @@ export function app_gs() {
   );
   list_shuffle(tiles);
   each(map_overlays, (o) => {
+    let t = list_pop(tiles);
     let { id } = o;
     html_data_set(clicker, "overlay", id);
     game_img(map_c, game_img_base(id), r, c, list_index(z_indexes, "overlay"));
