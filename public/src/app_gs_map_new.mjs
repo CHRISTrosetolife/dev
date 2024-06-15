@@ -19,12 +19,10 @@ import { list_adder } from "./list_adder.mjs";
 import { range_from } from "./range_from.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { ceiling } from "./ceiling.mjs";
-import { game_tiles_min } from "./game_tiles_min.mjs";
 import { object_merge_properties } from "./object_merge_properties.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 export function app_gs_map_new() {
-  let tiles_min = game_tiles_min();
-  let border_thickness = tiles_min;
+  let border_thickness = 3;
   let y_size_inside = 20;
   let x_size_inside = y_size_inside;
   let y_size = add(y_size_inside, border_thickness * 2);
