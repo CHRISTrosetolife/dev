@@ -6,7 +6,6 @@ import { app_gs_at_single } from "./app_gs_at_single.mjs";
 import { graph_path_shortest } from "./graph_path_shortest.mjs";
 import { app_gs_overlays_any_wall } from "./app_gs_overlays_any_wall.mjs";
 import { app_gs_adjacent } from "./app_gs_adjacent.mjs";
-import { log } from "./log.mjs";
 import { app_gs_overlays_at } from "./app_gs_overlays_at.mjs";
 import { app_gs_walk } from "./app_gs_walk.mjs";
 import { html_on_click } from "./html_on_click.mjs";
@@ -42,7 +41,6 @@ export async function app_gs_map_cell(map, map_c, player_overlay, tile) {
   html_on_click(clicker, async () => {
     let w = app_gs_overlays_any_wall(map, tile);
     if (w) {
-      log("wall");
       return;
     }
     let from = app_gs_at_single(map.tiles, map.player);
