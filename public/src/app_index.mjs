@@ -9,7 +9,7 @@ export function app_index() {
     window_open("learn_code.html");
   });
   html_button_width_full_text_click(root, "learn language cebuano", () => {
-    window_open("learn_code.html");
+    window_open("ceb.html");
   });
   html_button_width_full_text_click(root, "game", () => {
     window_open("gs.html");
