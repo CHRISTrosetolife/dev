@@ -50,7 +50,8 @@ export function app_gs_map_cell(map, map_c, player_overlay, r, c) {
       await app_gs_walk(player_overlay, map.player, direction, r, c);
     }
   });
-  function lambda_overlay(id) {
+  function lambda_overlay() {
+    let { id } = o;
     html_data_set(clicker, "overlay", id);
     game_img(map_c, game_img_base(id), r, c, list_index(z_indexes, "overlay"));
   }
