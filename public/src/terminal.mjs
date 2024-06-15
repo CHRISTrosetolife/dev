@@ -1,7 +1,9 @@
+import { run_git_ac } from "./run_git_ac.mjs";
 import { run_git } from "./run_git.mjs";
 import { log } from "./log.mjs";
 import readline_sync from "readline-sync";
-export function terminal() {
+export async function terminal() {
   let name = readline_sync.question(`> `);
-  log(run_git);
+  log(await run_git());
+  await run_git_ac();
 }
