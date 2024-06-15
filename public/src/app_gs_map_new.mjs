@@ -46,9 +46,7 @@ export function app_gs_map_new() {
           y,
           x,
         };
-        let id = inside_is(tile)
-          ? list_random_index_weighted(grass)
-          : list_random_item(overlays_wall);
+        let id = list_random_index_weighted(grass);
         object_merge(tile, {
           id,
         });
