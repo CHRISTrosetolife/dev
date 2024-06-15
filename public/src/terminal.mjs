@@ -5,6 +5,7 @@ import { string_split_space } from "./string_split_space.mjs";
 import { run_git_ac } from "./run_git_ac.mjs";
 import { log } from "./log.mjs";
 import readline_sync from "readline-sync";
+import chalk from "chalk";
 import { list_filter } from "./list_filter.mjs";
 export async function terminal() {
   while (true) {
