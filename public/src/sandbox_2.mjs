@@ -1,13 +1,8 @@
-import { app_gs_adjacent } from "./app_gs_adjacent.mjs";
 export async function sandbox_2() {
-  return app_gs_adjacent(
+  return Object.hasOwn(
     {
-      x: 1,
-      y: 0,
+      a: 1,
     },
-    {
-      x: 2,
-      y: 0,
-    },
+    "a",
   );
 }
