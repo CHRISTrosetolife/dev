@@ -173,7 +173,7 @@ export async function terminal() {
         log(result);
       }
     } catch (e) {
-      log(chalk.redBright(e));
+      log(chalk.redBright(e.stack));
     }
     each([run_git_ac], (f) => f());
   }
