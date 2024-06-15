@@ -1,3 +1,4 @@
+import { log_write } from "./log_write.mjs";
 import { list_join_empty } from "./list_join_empty.mjs";
 import { list_remove_all } from "./list_remove_all.mjs";
 import { each } from "./each.mjs";
@@ -37,7 +38,7 @@ export async function terminal() {
           name = object_property_get(replacements, name);
         }
         let message = chalk.bgGreenBright(name);
-        process.stdout.write(message);
+        log_write(message);
         list_add(buffer, name);
       }
     }
