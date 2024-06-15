@@ -45,6 +45,7 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
       p,
     });
     let direction = null;
+    let b = map.player;
     if (tile.y === map.player.y) {
       if (tile.x > map.player.x) {
         direction = "right";
