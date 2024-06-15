@@ -154,6 +154,10 @@ export async function terminal() {
         if (s === "'") {
           quoted = not(quoted);
         } else {
+          if (s === " ") {
+            if (quoted) {
+            }
+          }
         }
       });
     }
