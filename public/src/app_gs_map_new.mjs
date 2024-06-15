@@ -41,9 +41,9 @@ export function app_gs_map_new() {
     ),
   );
   let copy = list_copy(tiles);
-  list_shuffle(tiles);
+  list_shuffle(copy);
   each_range(map_overlays_count, (i) => {
-    let t = list_pop(tiles);
+    let t = list_pop(copy);
     let id = list_random_item(overlays);
     let o = {
       id,
