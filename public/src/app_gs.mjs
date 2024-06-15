@@ -44,9 +44,9 @@ export function app_gs() {
   );
   each_range(map.rows, (r) => {
     html_style_height(map_c, game_tile_units_css(1));
-    each_range(map.columns, (c) => {
-      app_gs_map_onclick(map, map_c, player_overlay, r, c);
-    });
+    each_range(map.columns, (c) =>
+      app_gs_map_onclick(map, map_c, player_overlay, r, c),
+    );
   });
   html_scroll_center_smooth(player_overlay);
 }
