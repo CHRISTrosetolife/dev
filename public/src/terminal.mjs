@@ -174,9 +174,6 @@ export async function terminal() {
       list_add(tokens, token);
     }
     tokens = list_filter(tokens, string_empty_not_is);
-    log({
-      tokens,
-    });
     try {
       let result = await run_tokens(tokens);
       if (undefined_not_is(result)) {
