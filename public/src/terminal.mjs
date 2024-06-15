@@ -11,6 +11,7 @@ import chalk from "chalk";
 import { list_filter } from "./list_filter.mjs";
 import { list_all } from "./list_all.mjs";
 import { list_add } from "./list_add.mjs";
+import { object_property_exists } from "./object_property_exists.mjs";
 export async function terminal() {
   readline.emitKeypressEvents(process.stdin);
   if (process.stdin.isTTY) {
@@ -31,6 +32,8 @@ export async function terminal() {
         each(on_returns, (n) => n(result));
         list_remove_all(on_returns);
       } else {
+        if (object_property_exists(replacements, name)) {
+        }
         process.stdout.write(chalk.greenBright(name));
         list_add(buffer, name);
       }
