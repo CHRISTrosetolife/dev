@@ -1,3 +1,4 @@
+import { counter_async } from "./counter_async.mjs";
 import { range } from "./range.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { list_last } from "./list_last.mjs";
@@ -110,17 +111,19 @@ export async function terminal() {
   process.stdin.on("keypress", async function (chunk, key) {
     let { sequence, name, ctrl, meta, shift } = key;
     let b = [ctrl, meta, shift];
-    await each_async(commands, async (c) => {
-      let { keys } = c;
-      let ctrl_c = list_includes(keys, "ctrl");
-      let meta_c = list_includes(keys, "meta");
-      let shift_c = list_includes(keys, "shift");
-      if (list_any([name, sequence], (ns) => list_includes(keys, ns))) {
-        let b_c = [ctrl_c, meta_c, shift_c];
-        if (equal_json(b, b_c)) {
-          await c.action(key);
+    await counter_async(async (la) => {
+      await each_async(commands, async (c) => {
+        let { keys } = c;
+        let ctrl_c = list_includes(keys, "ctrl");
+        let meta_c = list_includes(keys, "meta");
+        let shift_c = list_includes(keys, "shift");
+        if (list_any([name, sequence], (ns) => list_includes(keys, ns))) {
+          let b_c = [ctrl_c, meta_c, shift_c];
+          if (equal_json(b, b_c)) {
+            await c.action(key);
+          }
         }
-      }
+      });
     });
   });
   function keyboard_type(name) {
