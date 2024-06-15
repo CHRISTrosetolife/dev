@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { list_partition } from "./list_partition.mjs";
 import { list_all } from "./list_all.mjs";
@@ -55,15 +56,12 @@ export function app_gs_map_new() {
     ),
   );
   let [inside, outside] = list_partition(map, inside_is);
+  each(outside, (tile) => {});
   list_shuffle(inside);
   each_range(map_overlays_count, (i) => {
     let t = list_pop(inside);
     let id = list_random_item(overlays);
-    let o = {
-      id,
-    };
-    object_merge_properties(o, t, ["x", "y"]);
-    list_add(map_overlays, o);
+    overlay_add(t, id);
   });
   map.player = {};
   map.player.y = floor(divide(subtract_1(map.y_size), 2));
@@ -72,6 +70,13 @@ export function app_gs_map_new() {
   map.player.walk_previous = 1;
   map.player.character = list_random_item(game_img_list_male());
   return map;
+  function overlay_add(t, id) {
+    let o = {
+      id,
+    };
+    object_merge_properties(o, t, ["x", "y"]);
+    list_add(map_overlays, o);
+  }
   function inside_is(t) {
     return list_all(
       [
