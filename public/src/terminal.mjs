@@ -18,9 +18,7 @@ import { log } from "./log.mjs";
 import readline from "readline";
 import chalk from "chalk";
 import { list_filter } from "./list_filter.mjs";
-import { list_all } from "./list_all.mjs";
 import { list_add } from "./list_add.mjs";
-import { undefined_is } from "./undefined_is.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { each_async } from "./each_async.mjs";
@@ -88,12 +86,6 @@ export async function terminal() {
   process.stdin.on("keypress", async function (chunk, key) {
     let { sequence, name, ctrl, meta, shift } = key;
     let b = [ctrl, meta, shift];
-    if (list_all(b, (k) => k === false)) {
-      if (undefined_is(name)) {
-      } else {
-        keyboard_type(name);
-      }
-    }
     await each_async(commands, async (c) => {
       let { keys } = c;
       let ctrl_c = list_includes(keys, "ctrl");
@@ -102,7 +94,7 @@ export async function terminal() {
       if (list_any([name, sequence], (ns) => list_includes(keys, ns))) {
         let b_c = [ctrl_c, meta_c, shift_c];
         if (equal_json(b, b_c)) {
-          await c.action();
+          await c.action(key);
         }
       }
     });
