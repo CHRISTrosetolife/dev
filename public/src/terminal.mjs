@@ -1,3 +1,4 @@
+import { list_join_empty } from "./list_join_empty.mjs";
 import { list_remove_all } from "./list_remove_all.mjs";
 import { each } from "./each.mjs";
 import { run_tokens } from "./run_tokens.mjs";
@@ -21,6 +22,7 @@ export async function terminal() {
     let { sequence, name, ctrl, meta, shift } = key;
     if (list_all([ctrl, meta, shift], (k) => k === false)) {
       if (name === "return") {
+        let result = list_join_empty(buffer);
         each(on_returns, (n) => n());
         list_remove_all(on_returns);
       }
