@@ -61,7 +61,7 @@ export async function terminal() {
     },
     {
       keys: ["up"],
-      action: () => keyboard_type(list_last(history_add)),
+      action: () => keyboard_type(list_last(history_get())),
     },
     {
       keys: ["space"],
