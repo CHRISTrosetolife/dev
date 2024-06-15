@@ -35,7 +35,7 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
       map.tiles,
       (a, b) =>
         app_gs_adjacent(a, b) &&
-        list_all([a, b], (ab) => !app_gs_overlays_any_wall(map)),
+        list_all([a, b], (ab) => !app_gs_overlays_any_wall(map, ab)),
       from,
       tile,
     );
