@@ -1,3 +1,4 @@
+import { list_shuffle } from "./list_shuffle.mjs";
 import { list_reverse } from "./list_reverse.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_includes_not } from "./list_includes_not.mjs";
@@ -58,6 +59,7 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
         object_property_exists_not(visited, list_index(vertices, n)) &&
         list_includes_not(remaining, n),
     );
+    list_shuffle(neighbors_new);
     let mapped = list_map(neighbors_new, (n) => ({
       current: n,
       previous: current,
