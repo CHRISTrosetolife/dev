@@ -74,7 +74,7 @@ export async function terminal() {
       if (name === "return") {
         log("");
         let result = list_join_empty(buffer);
-        buffer = [];
+        buffer_clear();
         each(on_returns, (n) => n(result));
         list_remove_all(on_returns);
       } else {
