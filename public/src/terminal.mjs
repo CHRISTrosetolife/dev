@@ -84,23 +84,20 @@ export async function terminal() {
     let { sequence, name, ctrl, meta, shift } = key;
     let b = [ctrl, meta, shift];
     if (list_all(b, (k) => k === false)) {
-      if (name === "return") {
-      } else {
-        if (undefined_is(name)) {
-          let s = "_";
-          if (sequence === s) {
-            keyboard_type(s);
-          } else {
-            log({
-              key,
-            });
-          }
+      if (undefined_is(name)) {
+        let s = "_";
+        if (sequence === s) {
+          keyboard_type(s);
         } else {
-          if (object_property_exists(replacements, name)) {
-            name = object_property_get(replacements, name);
-          }
-          keyboard_type(name);
+          log({
+            key,
+          });
         }
+      } else {
+        if (object_property_exists(replacements, name)) {
+          name = object_property_get(replacements, name);
+        }
+        keyboard_type(name);
       }
     }
     await each_async(commands, async (c) => {
