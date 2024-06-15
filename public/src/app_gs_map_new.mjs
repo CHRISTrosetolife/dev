@@ -20,6 +20,7 @@ import { list_concat } from "./list_concat.mjs";
 import { ceiling } from "./ceiling.mjs";
 import { game_tiles_min } from "./game_tiles_min.mjs";
 import { object_merge_properties } from "./object_merge_properties.mjs";
+import { object_property_get } from "./object_property_get.mjs";
 export function app_gs_map_new() {
   let tiles_min = game_tiles_min();
   let border_thickness = floor(tiles_min / 2);
@@ -63,7 +64,8 @@ export function app_gs_map_new() {
             },
           ],
           (a) =>
-            border_thickness <= t[a.xy] && t[a.xy] <= a.size - border_thickness,
+            border_thickness <= object_property_get(t, a.xy) &&
+            object_property_get(t, a.xy) <= a.size - border_thickness,
         )
       ) {
       }
