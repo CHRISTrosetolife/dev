@@ -14,6 +14,9 @@ export function app_index() {
   html_button_width_full_text_click(root, "resume", () => {
     window_open("resume.html");
   });
+  html_button_width_full_text_click(root, "bible memorize", () => {
+    window_open("memorize.html");
+  });
   html_button_width_full_text_click(root, "game", () => {
     window_open("gs.html");
   });
