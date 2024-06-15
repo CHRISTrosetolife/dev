@@ -49,31 +49,7 @@ export function app_gs_map_new() {
       }),
     ),
   );
-  let [inside, outside] = list_adder_multiple(2, (la) => {
-    each(map.tiles, (t) => {
-      if (
-        list_all(
-          [
-            {
-              xy: "x",
-              size: x_size,
-            },
-            {
-              xy: "y",
-              size: y_size,
-            },
-          ],
-          (a) =>
-            border_thickness <= object_property_get(t, a.xy) &&
-            object_property_get(t, a.xy) <= a.size - border_thickness,
-        )
-      ) {
-        la(0, t);
-      } else {
-        la(1, t);
-      }
-    });
-  });
+  let [inside, outside] = list_partition(map, predicate);
   list_shuffle(inside);
   each_range(map_overlays_count, (i) => {
     let t = list_pop(inside);
@@ -91,4 +67,33 @@ export function app_gs_map_new() {
   map.player.walk_previous = 1;
   map.player.character = list_random_item(game_img_list_male());
   return map;
+
+    function predicate(t) {
+        return list_all(
+            [
+                {
+                    xy: "x",
+                    size: x_size,
+                },
+                {
+                    xy: "y",
+                    size: y_size,
+                },
+            ],
+            (a) => border_thickness <= object_property_get(t, a.xy) &&
+                object_property_get(t, a.xy) <= a.size - border_thickness
+        );
+    }
 }
+function list_partition(map, predicate) {
+    return list_adder_multiple(2, (la) => {
+        each(map.tiles, (t) => {
+            if (predicate(t)) {
+                la(0, t);
+            } else {
+                la(1, t);
+            }
+        });
+    });
+}
+
