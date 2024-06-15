@@ -13,10 +13,7 @@ export async function terminal() {
     process.stdin.setRawMode(true);
   }
   process.stdin.on("keypress", function (chunk, key) {
-    log({
-      key,
-      chunk,
-    });
+    let { sequence, name, ctrl, meta, shift } = key;
   });
   return;
   while (true) {
