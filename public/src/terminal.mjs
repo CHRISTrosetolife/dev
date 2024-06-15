@@ -40,6 +40,15 @@ export async function terminal() {
       keys: ["ctrl", "c"],
       action: exit,
     },
+    {
+      keys: ["backspace"],
+      action: () => {
+        let buffer = [];
+        process.stdout.clearLine();
+        process.stdout.cursorTo(0);
+        log_write(prompt);
+      },
+    },
   ];
   let prompt = chalk.greenBright("✟") + " ";
   readline.emitKeypressEvents(process.stdin);
@@ -62,27 +71,20 @@ export async function terminal() {
         each(on_returns, (n) => n(result));
         list_remove_all(on_returns);
       } else {
-        if (name === "backspace") {
-          buffer = [];
-          process.stdout.clearLine();
-          process.stdout.cursorTo(0);
-          log_write(prompt);
-        } else {
-          if (undefined_is(name)) {
-            let s = "_";
-            if (sequence === s) {
-              keyboard_type(s);
-            } else {
-              log({
-                key,
-              });
-            }
+        if (undefined_is(name)) {
+          let s = "_";
+          if (sequence === s) {
+            keyboard_type(s);
           } else {
-            if (object_property_exists(replacements, name)) {
-              name = object_property_get(replacements, name);
-            }
-            keyboard_type(name);
+            log({
+              key,
+            });
           }
+        } else {
+          if (object_property_exists(replacements, name)) {
+            name = object_property_get(replacements, name);
+          }
+          keyboard_type(name);
         }
       }
     } else {
