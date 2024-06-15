@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { list_random_index_weighted } from "./list_random_index_weighted.mjs";
 import { game_grass_weight } from "./game_grass_weight.mjs";
 import { list_copy } from "./list_copy.mjs";
@@ -63,9 +62,5 @@ export function app_gs_map_new() {
   map.player.walk_offset = 0;
   map.player.walk_previous = 1;
   map.player.character = list_random_item(game_img_list_male());
-  log({
-    overlays,
-    map,
-  });
   return map;
 }
