@@ -120,6 +120,7 @@ export async function terminal() {
         if (list_any([name, sequence], (ns) => list_includes(keys, ns))) {
           let b_c = [ctrl_c, meta_c, shift_c];
           if (equal_json(b, b_c)) {
+            la();
             await c.action(key);
           }
         }
