@@ -11,7 +11,7 @@ export async function terminal() {
   console.clear();
   readline.emitKeypressEvents(process.stdin);
   while (true) {
-    process.openStdin().on("keypress", function (chunk, key) {
+    process.stdin.on("keypress", function (chunk, key) {
       if (key && key.name === "c" && key.ctrl) {
         log({
           key,
