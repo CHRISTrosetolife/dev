@@ -78,6 +78,7 @@ export async function terminal() {
   function on_returns_get() {
     return on_returns;
   }
+  let history = [];
   let buffer;
   buffer_clear();
   function buffer_clear() {
