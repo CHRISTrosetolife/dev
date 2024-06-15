@@ -5,10 +5,8 @@ import { app_gs_map_new } from "./app_gs_map_new.mjs";
 import { html_scroll_center_smooth } from "./html_scroll_center_smooth.mjs";
 import { list_index } from "./list_index.mjs";
 import { game_img } from "./game_img.mjs";
-import { game_img_list_male } from "./game_img_list_male.mjs";
 import { game_img_character } from "./game_img_character.mjs";
 import { game_tile_units_css } from "./game_tile_units_css.mjs";
-import { list_random_item } from "./list_random_item.mjs";
 import { html_style_height } from "./html_style_height.mjs";
 import { html_style_width } from "./html_style_width.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
@@ -32,7 +30,6 @@ export function app_gs() {
     display: "inline",
   });
   let z_indexes = app_gs_z_indexes();
-  map.player.character = list_random_item(game_img_list_male());
   let player_overlay = game_img(
     map_c,
     game_img_character(map.player.character, game_character_index("down")),
