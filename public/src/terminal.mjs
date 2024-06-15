@@ -34,9 +34,8 @@ export async function terminal() {
   async function next() {
     return await new Promise((resolve) => list_add(on_returns, resolve));
   }
-  return;
   while (true) {
-    await next();
+    line=await next();
     continue;
     process.stdout.write(chalk.greenBright(`✝ `));
     let input = readline_sync.question();
