@@ -94,13 +94,7 @@ export function app_gs() {
   each(map_overlays, (o) => {
     let { id } = o;
     html_data_set(clicker, "overlay", id);
-    game_img(
-      map_c,
-      game_img_base(base_id),
-      r,
-      c,
-      list_index(z_indexes, "overlay"),
-    );
+    game_img(map_c, game_img_base(id), r, c, list_index(z_indexes, "overlay"));
   });
   each_range(rows, (r) => {
     html_style_height(map_c, game_tile_units_css(1));
