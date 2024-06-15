@@ -12,6 +12,7 @@ import { list_filter } from "./list_filter.mjs";
 import { list_all } from "./list_all.mjs";
 import { list_add } from "./list_add.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
+import { object_property_get } from "./object_property_get.mjs";
 export async function terminal() {
   readline.emitKeypressEvents(process.stdin);
   if (process.stdin.isTTY) {
@@ -33,6 +34,7 @@ export async function terminal() {
         list_remove_all(on_returns);
       } else {
         if (object_property_exists(replacements, name)) {
+          name = object_property_get(replacements, name);
         }
         process.stdout.write(chalk.greenBright(name));
         list_add(buffer, name);
