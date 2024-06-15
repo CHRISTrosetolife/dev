@@ -158,6 +158,10 @@ export async function terminal() {
           if (s === " ") {
             if (quoted) {
               list_add(current, s);
+            } else {
+              let token = list_join_empty(current);
+              current = [];
+              list_add(tokens, currnt);
             }
           } else {
             list_add(current, s);
