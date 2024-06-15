@@ -16,7 +16,6 @@ import { list_join_empty } from "./list_join_empty.mjs";
 import { list_remove_all } from "./list_remove_all.mjs";
 import { each } from "./each.mjs";
 import { run_tokens } from "./run_tokens.mjs";
-import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { run_git_ac } from "./run_git_ac.mjs";
 import { log } from "./log.mjs";
 import readline from "readline";
@@ -173,7 +172,6 @@ export async function terminal() {
       current = [];
       list_add(tokens, token);
     }
-    tokens = list_filter(tokens, string_empty_not_is);
     try {
       let result = await run_tokens(tokens);
       if (undefined_not_is(result)) {
