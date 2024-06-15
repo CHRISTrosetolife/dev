@@ -1,3 +1,4 @@
+import { game_character_index } from "./game_character_index.mjs";
 import { game_character_indices } from "./game_character_indices.mjs";
 import { app_gs_map_new } from "./app_gs_map_new.mjs";
 import { html_data_set } from "./html_data_set.mjs";
@@ -60,10 +61,7 @@ export function app_gs() {
   let direction_ = "down";
   let player_overlay = game_img(
     map_c,
-    game_img_character(
-      player.character,
-      object_property_get(game_character_indices(), direction_),
-    ),
+    game_img_character(player.character, game_character_index(direction_)),
     player.y,
     player.x,
     list_index(z_indexes, "player"),
