@@ -76,6 +76,8 @@ export async function terminal() {
         let meta_c = list_includes(keys, "meta");
         let shift_c = list_includes(keys, "shift");
         let b_c = [ctrl_c, meta_c, shift_c];
+        if (list_includes(keys, name)) {
+        }
       });
     }
   });
