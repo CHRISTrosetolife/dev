@@ -1,3 +1,7 @@
+import { game_img_list_male } from "./game_img_list_male.mjs";
+import { subtract_1 } from "./subtract_1.mjs";
+import { divide } from "./divide.mjs";
+import { floor } from "./floor.mjs";
 import { list_add } from "./list_add.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { list_random_item } from "./list_random_item.mjs";
@@ -43,10 +47,11 @@ export function app_gs_map_new() {
     object_merge(o, t);
     list_add(map_overlays, o);
   });
-  map.player={}
+  map.player = {};
   map.player.y = floor(divide(subtract_1(map.rows), 2));
   map.player.x = floor(divide(subtract_1(map.columns), 2));
   map.player.walk_offset = 0;
   map.player.walk_previous = 1;
+  map.player.character = list_random_item(game_img_list_male());
   return map;
 }
