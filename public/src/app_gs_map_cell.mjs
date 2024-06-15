@@ -38,7 +38,7 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
         ],
         (both) => {
           [i, j] = both;
-          abs(a[i] - b[i]) == 1 && abs(a[j] - b[j]) === 0;
+          abs(a[i] - b[i]) === 1 && abs(a[j] - b[j]) === 0;
         },
       ),
     );
