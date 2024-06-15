@@ -19,6 +19,7 @@ export async function terminal() {
     let { sequence, name, ctrl, meta, shift } = key;
     if (list_all([ctrl, meta, shift], (k) => k === false)) {
       if (name === "return") {
+        each(nexts, (n) => n());
       }
     }
   });
