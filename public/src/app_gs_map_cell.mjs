@@ -22,9 +22,7 @@ export function app_gs_map_cell(map, map_c, player_overlay, r, c) {
     if (y !== r) {
       return;
     }
-    let { id } = o;
-    html_data_set(clicker, "overlay", id);
-    game_img(map_c, game_img_base(id), r, c, list_index(z_indexes, "overlay"));
+    lambda_overlay(id);
   });
   let grass = game_grass_weight();
   let index = list_random_index_weighted(grass);
@@ -52,4 +50,8 @@ export function app_gs_map_cell(map, map_c, player_overlay, r, c) {
       await app_gs_walk(player_overlay, map.player, direction, r, c);
     }
   });
+  function lambda_overlay(id) {
+    html_data_set(clicker, "overlay", id);
+    game_img(map_c, game_img_base(id), r, c, list_index(z_indexes, "overlay"));
+  }
 }
