@@ -57,11 +57,24 @@ export function app_gs() {
   let total = rows * columns;
   let map_overlays_count = ceiling(total / 8);
   let overlays = list_concat(range_from(40, 42), range_from(48, 57));
+  let tiles = list_adder((la) =>
+    each_range(rows, (y) =>
+      each_range(columns, (x) =>
+        la({
+          y,
+          x,
+        }),
+      ),
+    ),
+  );
+  list_shuffle(tiles);
   each_range(map_overlays_count, (i) => {
+    let t = list_pop(tiles);
     let id = list_random_item(overlays);
-    list_add(map_overlays, {
+    let o = {
       id,
-    });
+    };
+    list_add(map_overlays, o);
   });
   let player = {};
   player.y = floor(divide(subtract_1(rows), 2));
@@ -94,19 +107,7 @@ export function app_gs() {
     player.x,
     list_index(z_indexes, "player"),
   );
-  let tiles = list_adder((la) =>
-    each_range(rows, (y) =>
-      each_range(columns, (x) =>
-        la({
-          y,
-          x,
-        }),
-      ),
-    ),
-  );
-  list_shuffle(tiles);
   each(map_overlays, (o) => {
-    let t = list_pop(tiles);
     let { id } = o;
     html_data_set(clicker, "overlay", id);
     game_img(map_c, game_img_base(id), r, c, list_index(z_indexes, "overlay"));
