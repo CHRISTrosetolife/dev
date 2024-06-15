@@ -10,7 +10,7 @@ import { html_data_set } from "./html_data_set.mjs";
 import { each } from "./each.mjs";
 import { html_div } from "./html_div.mjs";
 import { app_gs_z_indexes } from "./app_gs_z_indexes.mjs";
-export function app_gs_map_onclick(map, map_c, player_overlay, r, c) {
+export function app_gs_map_cell(map, map_c, player_overlay, r, c) {
   let z_indexes = app_gs_z_indexes();
   let clicker = html_div(map_c);
   each(map.overlays, (o) => {
