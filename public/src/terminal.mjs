@@ -157,6 +157,7 @@ export async function terminal() {
         } else {
           if (s === " ") {
             if (quoted) {
+              list_add(current, s);
             }
           } else {
           }
