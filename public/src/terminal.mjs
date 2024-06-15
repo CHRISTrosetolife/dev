@@ -9,6 +9,7 @@ export async function terminal() {
   let input = readline_sync.question(`> `);
   let tokens = string_split_space(input);
   tokens = list_filter(tokens, string_empty_not_is);
-  log(await run_tokens(tokens));
+  let result = await run_tokens(tokens);
+  log(result);
   await run_git_ac();
 }
