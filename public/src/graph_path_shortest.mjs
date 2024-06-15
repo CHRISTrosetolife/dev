@@ -5,6 +5,7 @@ import { graph_neighbors } from "./graph_neighbors.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { each_index } from "./each_index.mjs";
 import { list_adder } from "./list_adder.mjs";
+import { list_first } from "./list_first.mjs";
 export function graph_path_shortest(vertices, edge_lambda, from, to) {
   assert_arguments_length(arguments, 4);
   let edges = list_adder((la) =>
@@ -21,10 +22,10 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
   );
   let remaining = [from];
   while (list_empty_not_is(remaining)) {
-    let current = from;
+    let current = list_first(remaining);
+    let visited = [];
+    let neighbors = graph_neighbors(edges, current);
+    let neighbors_new = list_difference(neighbors, visited);
+    list_add_multiple(remaining, neighbors_new);
   }
-  let visited = [];
-  let neighbors = graph_neighbors(edges, current);
-  let neighbors_new = list_difference(neighbors, visited);
-  list_add_multiple(remaining, neighbors_new);
 }
