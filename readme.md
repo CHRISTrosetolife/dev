@@ -1,5 +1,10 @@
-to see apps , start here ; see "projects" : 
-https://letjesusbeexalted.web.app/resume.html
+to see apps , start here : 
+https://letjesusbeexalted.web.app/
+
+---
+---
+
+to work with the code on your computer , see the following ( also see https://letjesusbeexalted.web.app/dev.html ) :
 
 ---
 
