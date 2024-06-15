@@ -1,3 +1,4 @@
+import { exit } from "./exit.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 import { equal_json } from "./equal_json.mjs";
 import { clipboard_paste } from "./clipboard_paste.mjs";
@@ -21,7 +22,6 @@ import { undefined_is } from "./undefined_is.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { each_async } from "./each_async.mjs";
-import { exit } from "process";
 export async function terminal() {
   let commands = [
     {
