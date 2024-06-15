@@ -32,6 +32,7 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
     });
     la(current);
     if (current === to) {
+      let result = [];
       break;
     }
     let neighbors = graph_neighbors(edges, current);
