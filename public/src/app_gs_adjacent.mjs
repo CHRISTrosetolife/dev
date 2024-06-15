@@ -15,7 +15,7 @@ export function app_gs_adjacent(a, b) {
         d1,
         d2,
       });
-      d1 === 1 && d2 === 0;
+      return d1 === 1 && d2 === 0;
     },
   );
 }
