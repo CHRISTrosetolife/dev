@@ -46,6 +46,8 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
     let direction_current = null;
     each_pairs(p, (a, b) => {
       let direction = app_gs_direction(map.player, tile);
+      if (direction !== direction_current) {
+      }
     });
     log({
       p,
