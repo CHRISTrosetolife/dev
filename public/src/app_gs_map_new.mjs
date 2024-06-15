@@ -32,12 +32,12 @@ export function app_gs_map_new() {
   let overlays = list_concat(overlays_wall, range_from(48, 57));
   map.tiles = list_adder((la) =>
     each_range(rows, (y) =>
-      each_range(columns, (x) =>
+      each_range(columns, (x) => {
         la({
           y,
           x,
-        }),
-      ),
+        });
+      }),
     ),
   );
   let copy = list_copy(map.tiles);
