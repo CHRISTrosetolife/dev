@@ -71,9 +71,9 @@ export async function terminal() {
     } else {
       list_filter(commands, (c) => {
         let { keys } = c;
-        ctrl = list_includes(keys, "ctrl");
-        meta;
-        shift;
+        let ctrl_c = list_includes(keys, "ctrl");
+        let meta_c = list_includes(keys, "meta");
+        let shift_c = list_includes(keys, "shift");
       });
     }
   });
