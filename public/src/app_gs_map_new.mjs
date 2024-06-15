@@ -1,7 +1,7 @@
+import { list_filter } from "./list_filter.mjs";
 import { add } from "./add.mjs";
 import { list_random_index_weighted } from "./list_random_index_weighted.mjs";
 import { game_grass_weight } from "./game_grass_weight.mjs";
-import { list_copy } from "./list_copy.mjs";
 import { app_gs_overlays_wall } from "./app_gs_overlays_wall.mjs";
 import { game_img_list_male } from "./game_img_list_male.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
@@ -46,7 +46,10 @@ export function app_gs_map_new() {
       }),
     ),
   );
-  let copy = list_copy(map.tiles);
+  let copy = list_filter(
+    map.tiles,
+    (t) => border_thickness <= t.x && t.x <= columns - border_thickness,
+  );
   list_shuffle(copy);
   each_range(map_overlays_count, (i) => {
     let t = list_pop(copy);
