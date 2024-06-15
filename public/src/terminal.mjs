@@ -153,6 +153,7 @@ export async function terminal() {
       each(split, (s) => {
         if (s === "'") {
           quoted = not(quoted);
+        } else {
         }
       });
     }
