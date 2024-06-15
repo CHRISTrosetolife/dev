@@ -1,14 +1,14 @@
 import { each } from "./each.mjs";
-export function app_gs_overlays_at(map, r, c, lambda_overlay) {
-  each(map.overlays, (o) => {
-    let { x } = o;
-    if (x !== c) {
+export function app_gs_overlays_at(map, a, lambda_overlay) {
+  each(map.overlays, (b) => {
+    let { x } = b;
+    if (x !== a.x) {
       return;
     }
-    let { y } = o;
-    if (y !== r) {
+    let { y } = b;
+    if (y !== a.y) {
       return;
     }
-    lambda_overlay(o);
+    lambda_overlay(b);
   });
 }
