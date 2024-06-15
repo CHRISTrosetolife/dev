@@ -77,7 +77,7 @@ export async function terminal() {
       action: (key) => keyboard_type(key.name),
     },
     {
-      keys: ["_"],
+      keys: ["_", ""],
       action: (key) => keyboard_type(key.sequence),
     },
   ];
