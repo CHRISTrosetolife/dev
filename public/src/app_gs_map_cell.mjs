@@ -1,8 +1,8 @@
+import { app_gs_overlays_at_list } from "./app_gs_overlays_at_list.mjs";
 import { app_gs_overlay_wall_is } from "./app_gs_overlay_wall_is.mjs";
 import { app_gs_adjacent } from "./app_gs_adjacent.mjs";
 import { log } from "./log.mjs";
 import { list_any } from "./list_any.mjs";
-import { list_adder } from "./list_adder.mjs";
 import { app_gs_overlays_at } from "./app_gs_overlays_at.mjs";
 import { app_gs_walk } from "./app_gs_walk.mjs";
 import { html_on_click } from "./html_on_click.mjs";
@@ -24,7 +24,7 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
   game_img(map_c, game_img_base(index), tile, list_index(z_indexes, "tile"));
   game_img_style(clicker, tile.y, tile.x, list_index(z_indexes, "clicker"));
   html_on_click(clicker, async () => {
-    let os = list_adder((la) => app_gs_overlays_at(map, tile, la));
+    let os = app_gs_overlays_at_list(map, tile);
     if (list_any(os, (o) => app_gs_overlay_wall_is(o))) {
       log("wall");
       return;
