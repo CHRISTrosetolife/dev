@@ -49,9 +49,6 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
       if (direction !== direction_current) {
       }
     });
-    log({
-      p,
-    });
     await app_gs_walk(player_overlay, map.player, tile);
   });
   function lambda_overlay(o) {
