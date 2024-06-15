@@ -10,8 +10,6 @@ import { app_gs_overlays_at } from "./app_gs_overlays_at.mjs";
 import { app_gs_walk } from "./app_gs_walk.mjs";
 import { html_on_click } from "./html_on_click.mjs";
 import { game_img_style } from "./game_img_style.mjs";
-import { list_random_index_weighted } from "./list_random_index_weighted.mjs";
-import { game_grass_weight } from "./game_grass_weight.mjs";
 import { list_index } from "./list_index.mjs";
 import { game_img_base } from "./game_img_base.mjs";
 import { game_img } from "./game_img.mjs";
@@ -27,9 +25,8 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
     html_data_set(clicker, "overlay", id);
     game_img(map_c, game_img_base(id), tile, list_index(z_indexes, "overlay"));
   });
-  let grass = game_grass_weight();
-  let index = list_random_index_weighted(grass);
-  game_img(map_c, game_img_base(index), tile, list_index(z_indexes, "tile"));
+  let { id } = tile;
+  game_img(map_c, game_img_base(id), tile, list_index(z_indexes, "tile"));
   game_img_style(clicker, tile.y, tile.x, list_index(z_indexes, "clicker"));
   html_on_click(clicker, async () => {
     let w = app_gs_overlays_any_wall(map, tile);
