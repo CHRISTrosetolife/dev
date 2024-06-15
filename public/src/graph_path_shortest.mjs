@@ -1,3 +1,4 @@
+import { list_reverse } from "./list_reverse.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_includes_not } from "./list_includes_not.mjs";
 import { object_property_exists_not } from "./object_property_exists_not.mjs";
@@ -47,6 +48,7 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
           c = v.previous;
         }
       });
+      list_reverse(p);
       return p;
     }
     let neighbors = graph_neighbors(edges, current);
