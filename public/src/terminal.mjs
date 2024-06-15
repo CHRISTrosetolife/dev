@@ -46,7 +46,7 @@ export async function terminal() {
         buffer_clear();
         process.stdout.clearLine();
         process.stdout.cursorTo(0);
-        log_write(prompt);
+        log_write(prompt_get());
       },
     },
   ];
