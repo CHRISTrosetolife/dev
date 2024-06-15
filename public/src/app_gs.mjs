@@ -10,8 +10,8 @@ export function app_gs() {
   let map = app_gs_map_new();
   let map_c = app_gs_map_html(root, map);
   let player_overlay = app_gs_overlay_player(map_c, map);
-  each(map.tiles, (tile) => {
-    app_gs_map_cell(map, map_c, player_overlay, tile);
+  each(map.tiles, async (tile) => {
+    await app_gs_map_cell(map, map_c, player_overlay, tile);
   });
   html_scroll_center_smooth(player_overlay);
 }
