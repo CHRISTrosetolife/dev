@@ -16,7 +16,6 @@ import { list_remove_all } from "./list_remove_all.mjs";
 import { each } from "./each.mjs";
 import { run_tokens } from "./run_tokens.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
-import { string_split_space } from "./string_split_space.mjs";
 import { run_git_ac } from "./run_git_ac.mjs";
 import { log } from "./log.mjs";
 import readline from "readline";
@@ -145,7 +144,7 @@ export async function terminal() {
   while (true) {
     log_write(prompt);
     let input = await next();
-    let tokens = string_split_space(input);
+    let tokens = [];
     tokens = list_filter(tokens, string_empty_not_is);
     try {
       let result = await run_tokens(tokens);
