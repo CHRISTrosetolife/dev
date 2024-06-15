@@ -92,8 +92,8 @@ export function app_gs() {
     list_index(z_indexes, "player"),
   );
   each(map_overlays, (o) => {
-    let id = o;
-    html_data_set(clicker, "overlay", base_id);
+    let { id } = o;
+    html_data_set(clicker, "overlay", id);
     game_img(
       map_c,
       game_img_base(base_id),
