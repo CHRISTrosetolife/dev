@@ -1,6 +1,5 @@
 import { app_gs_at_single } from "./app_gs_at_single.mjs";
 import { graph_path_shortest } from "./graph_path_shortest.mjs";
-import { list_all } from "./list_all.mjs";
 import { app_gs_overlays_any_wall } from "./app_gs_overlays_any_wall.mjs";
 import { app_gs_adjacent } from "./app_gs_adjacent.mjs";
 import { log } from "./log.mjs";
@@ -33,9 +32,7 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
     let from = app_gs_at_single(map.tiles, map.player);
     let p = graph_path_shortest(
       map.tiles,
-      (a, b) =>
-        (app_gs_adjacent(a, b) && 1) ||
-        list_all([a, b], (ab) => !app_gs_overlays_any_wall(map, ab)),
+      (a, b) => app_gs_adjacent(a, b),
       from,
       tile,
     );
