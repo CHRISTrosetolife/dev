@@ -7,6 +7,7 @@ import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { each_index } from "./each_index.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { object_property_set } from "./object_property_set.mjs";
+import { list_index } from "./list_index.mjs";
 export function graph_path_shortest(vertices, edge_lambda, from, to) {
   assert_arguments_length(arguments, 4);
   let edges = list_adder((la) =>
@@ -26,7 +27,7 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
   let visited = {};
   while (list_empty_not_is(remaining)) {
     let current = list_remove_first(remaining);
-    object_property_set(visited, {
+    object_property_set(visited, list_index(vertices, current), {
       current,
       previous,
     });
