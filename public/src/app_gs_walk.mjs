@@ -1,5 +1,4 @@
 import { app_gs_direction } from "./app_gs_direction.mjs";
-import { html_scroll_center_smooth } from "./html_scroll_center_smooth.mjs";
 import { game_img_position } from "./game_img_position.mjs";
 import { add } from "./add.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -58,5 +57,4 @@ export async function app_gs_walk(player_overlay, player, tile) {
       );
     }
   });
-  html_scroll_center_smooth(player_overlay);
 }
