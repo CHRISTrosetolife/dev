@@ -21,9 +21,9 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
     ),
   );
   let remaining = [from];
+  let visited = [];
   while (list_empty_not_is(remaining)) {
     let current = list_first(remaining);
-    let visited = [];
     let neighbors = graph_neighbors(edges, current);
     let neighbors_new = list_difference(neighbors, visited);
     list_add_multiple(remaining, neighbors_new);
