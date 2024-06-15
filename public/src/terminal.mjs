@@ -17,6 +17,8 @@ export async function terminal() {
   process.stdin.on("keypress", function (chunk, key) {
     let { sequence, name, ctrl, meta, shift } = key;
     if (list_all([ctrl, meta, shift], (k) => k === false)) {
+      if (name === "return") {
+      }
     }
   });
   return;
