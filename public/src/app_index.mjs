@@ -8,6 +8,9 @@ export function app_index() {
   html_button_width_full_text_click(root, "learn code", () => {
     window_open("learn_code.html");
   });
+  html_button_width_full_text_click(root, "learn cebuano language", () => {
+    window_open("learn_code.html");
+  });
   html_button_width_full_text_click(root, "game", () => {
     window_open("gs.html");
   });
