@@ -15,5 +15,6 @@ export async function app_gs() {
     await app_gs_map_cell(map, map_c, player_overlay, tile);
   });
   await promise_all(tiles);
+  alert("here");
   html_scroll_center_smooth(player_overlay);
 }
