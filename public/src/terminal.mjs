@@ -15,6 +15,7 @@ import { list_add } from "./list_add.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { undefined_is } from "./undefined_is.mjs";
+import { undefined_not_is } from "./undefined_not_is.mjs";
 export async function terminal() {
   let prompt = chalk.greenBright("✟") + " ";
   readline.emitKeypressEvents(process.stdin);
@@ -77,7 +78,9 @@ export async function terminal() {
     tokens = list_filter(tokens, string_empty_not_is);
     try {
       let result = await run_tokens(tokens);
-      log(result);
+      if (undefined_not_is(result)) {
+        log(result);
+      }
     } catch (e) {
       log(chalk.redBright(e));
     }
