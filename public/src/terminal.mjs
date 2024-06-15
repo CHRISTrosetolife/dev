@@ -160,6 +160,7 @@ export async function terminal() {
               list_add(current, s);
             }
           } else {
+            list_add(current, s);
           }
         }
       });
