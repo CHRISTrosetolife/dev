@@ -31,12 +31,13 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
       return;
     }
     if (0) {
-      list_all([a, b], (ab) => !app_gs_overlays_any_wall(map, ab));
     }
     let from = app_gs_at_single(map.tiles, map.player);
     let p = graph_path_shortest(
       map.tiles,
-      (a, b) => app_gs_adjacent(a, b),
+      (a, b) =>
+        app_gs_adjacent(a, b) &&
+        list_all([a, b], (ab) => !app_gs_overlays_any_wall(map, ab)),
       from,
       tile,
     );
