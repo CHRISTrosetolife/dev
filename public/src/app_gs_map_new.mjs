@@ -21,22 +21,22 @@ import { object_merge_properties } from "./object_merge_properties.mjs";
 export function app_gs_map_new() {
   let tiles_min = game_tiles_min();
   let border_thickness = floor(tiles_min / 2);
-  let rows = add(20, border_thickness * 2);
-  let columns = rows;
+  let y_size = add(20, border_thickness * 2);
+  let x_size = y_size;
   let map_overlays = [];
   let map = {
     overlays: map_overlays,
-    rows,
-    columns,
+    rows: y_size,
+    columns: x_size,
   };
-  let total = rows * columns;
+  let total = y_size * x_size;
   let map_overlays_count = ceiling(total / 8);
   let overlays_wall = app_gs_overlays_wall();
   let overlays = list_concat(overlays_wall, range_from(48, 57));
   let grass = game_grass_weight();
   map.tiles = list_adder((la) =>
-    each_range(rows, (y) =>
-      each_range(columns, (x) => {
+    each_range(y_size, (y) =>
+      each_range(x_size, (x) => {
         let id = list_random_index_weighted(grass);
         la({
           y,
@@ -48,7 +48,7 @@ export function app_gs_map_new() {
   );
   let copy = list_filter(
     map.tiles,
-    (t) => border_thickness <= t.x && t.x <= columns - border_thickness,
+    (t) => border_thickness <= t.x && t.x <= x_size - border_thickness,
   );
   list_shuffle(copy);
   each_range(map_overlays_count, (i) => {
