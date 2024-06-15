@@ -1,3 +1,4 @@
+import { ceiling } from "./ceiling.mjs";
 import { html_data_set } from "./html_data_set.mjs";
 import { html_scroll_center_smooth } from "./html_scroll_center_smooth.mjs";
 import { abs } from "./abs.mjs";
@@ -51,7 +52,7 @@ export function app_gs() {
     overlays: map_overlays,
   };
   let total = rows * columns;
-  ceil(total);
+  ceiling(total);
   let player = {};
   player.y = floor(divide(subtract_1(rows), 2));
   player.x = floor(divide(subtract_1(columns), 2));
