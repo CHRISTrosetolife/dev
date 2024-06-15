@@ -79,6 +79,9 @@ export async function terminal() {
     return on_returns;
   }
   let history = [];
+  function history_add(item) {
+    list_add(history, item);
+  }
   let buffer;
   buffer_clear();
   function buffer_clear() {
