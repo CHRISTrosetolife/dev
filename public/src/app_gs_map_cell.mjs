@@ -1,3 +1,5 @@
+import { app_gs_overlays_wall } from "./app_gs_overlays_wall.mjs";
+import { list_any } from "./list_any.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { app_gs_overlays_at } from "./app_gs_overlays_at.mjs";
 import { app_gs_walk } from "./app_gs_walk.mjs";
@@ -11,6 +13,7 @@ import { game_img } from "./game_img.mjs";
 import { html_data_set } from "./html_data_set.mjs";
 import { html_div } from "./html_div.mjs";
 import { app_gs_z_indexes } from "./app_gs_z_indexes.mjs";
+import { list_includes } from "./list_includes.mjs";
 export function app_gs_map_cell(map, map_c, player_overlay, r, c) {
   let z_indexes = app_gs_z_indexes();
   let clicker = html_div(map_c);
@@ -20,7 +23,10 @@ export function app_gs_map_cell(map, map_c, player_overlay, r, c) {
   game_img(map_c, game_img_base(index), r, c, list_index(z_indexes, "tile"));
   game_img_style(clicker, r, c, list_index(z_indexes, "clicker"));
   html_on_click(clicker, async () => {
-    list_adder((la) => app_gs_overlays_at(map, r, c, la));
+    let os = list_adder((la) => app_gs_overlays_at(map, r, c, la));
+    if (list_any(os, (o) => list_includes(app_gs_overlays_wall(), o))) {
+      return;
+    }
     let direction = null;
     if (r === map.player.y) {
       if (c > map.player.x) {
