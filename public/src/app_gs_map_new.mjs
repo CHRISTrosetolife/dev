@@ -26,14 +26,14 @@ export function app_gs_map_new() {
   let y_size_inside = 20;
   let x_size_inside = y_size_inside;
   let y_size = add(y_size_inside, border_thickness * 2);
-  let x_size = add(y_size_inside, border_thickness * 2);
+  let x_size = add(x_size_inside, border_thickness * 2);
   let map_overlays = [];
   let map = {
     overlays: map_overlays,
     y_size,
     x_size,
   };
-  let total = y_size_inside * y_size_inside;
+  let total = x_size_inside * y_size_inside;
   let map_overlays_count = ceiling(total / 8);
   let overlays_wall = app_gs_overlays_wall();
   let overlays = list_concat(overlays_wall, range_from(48, 57));
