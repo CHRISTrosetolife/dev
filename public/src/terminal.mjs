@@ -15,12 +15,10 @@ export async function terminal() {
   }
   while (true) {
     process.stdin.on("keypress", function (chunk, key) {
-      if (key && key.name === "c" && key.ctrl) {
-        log({
-          key,
-          chunk,
-        });
-      }
+      log({
+        key,
+        chunk,
+      });
     });
     continue;
     process.stdout.write(chalk.greenBright(`✝ `));
