@@ -60,6 +60,7 @@ export async function terminal() {
   }
   let on_returns = [];
   let buffer;
+  buffer_clear();
   function buffer_clear() {
     buffer = [];
   }
