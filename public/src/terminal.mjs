@@ -6,7 +6,9 @@ import { run_git_ac } from "./run_git_ac.mjs";
 import { log } from "./log.mjs";
 import readline_sync from "readline-sync";
 import { list_filter } from "./list_filter.mjs";
+import { command_line } from "./command_line.mjs";
 export async function terminal() {
+  await command_line("cls");
   while (true) {
     let input = readline_sync.question(`> `);
     let tokens = string_split_space(input);
