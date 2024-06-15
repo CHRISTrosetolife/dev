@@ -17,7 +17,11 @@ import { object_property_get } from "./object_property_get.mjs";
 import { undefined_is } from "./undefined_is.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
 export async function terminal() {
-  let commands = [];
+  let commands = [
+    {
+      keys: ["ctrl", "v"],
+    },
+  ];
   let prompt = chalk.greenBright("✟") + " ";
   readline.emitKeypressEvents(process.stdin);
   if (process.stdin.isTTY) {
