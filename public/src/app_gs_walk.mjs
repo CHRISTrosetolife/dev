@@ -1,3 +1,4 @@
+import { add_1 } from "./add_1.mjs";
 import { app_gs_direction } from "./app_gs_direction.mjs";
 import { game_img_position } from "./game_img_position.mjs";
 import { add } from "./add.mjs";
@@ -26,11 +27,9 @@ export async function app_gs_walk(player_overlay, player, tile) {
     let animate_count = 2;
     await each_range_async(animate_count, async (ac) => {
       let sleep_time = app_gs_sleep_time();
-      await step(1);
+      await step(add_1(ac));
       await sleep(sleep_time);
     });
-    await step(2);
-    await sleep(sleep_time);
     let delta = game_direction_to_delta(direction);
     each(["x", "y"], (xy) => {
       let value =
