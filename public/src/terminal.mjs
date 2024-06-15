@@ -21,8 +21,8 @@ export async function terminal() {
       }
     }
   });
-  function next() {
-    return new Promise((resolve) => {});
+  async function next() {
+    return await new Promise((resolve) => {});
   }
   return;
   while (true) {
