@@ -1,7 +1,6 @@
 import { app_gs_map_onclick } from "./app_gs_map_onclick.mjs";
 import { app_gs_z_indexes } from "./app_gs_z_indexes.mjs";
 import { game_character_index } from "./game_character_index.mjs";
-import { game_character_indices } from "./game_character_indices.mjs";
 import { app_gs_map_new } from "./app_gs_map_new.mjs";
 import { html_scroll_center_smooth } from "./html_scroll_center_smooth.mjs";
 import { list_index } from "./list_index.mjs";
@@ -24,7 +23,6 @@ export function app_gs() {
   });
   html_style_background_color(root, "black");
   let map = app_gs_map_new();
-  let character_indices = game_character_indices();
   let map_c = html_div(root);
   html_style_width(map_c, game_tile_units_css(map.columns));
   html_style_height(map_c, game_tile_units_css(map.rows));
