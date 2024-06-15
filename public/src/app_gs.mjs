@@ -1,3 +1,4 @@
+import { game_character_indices } from "./game_character_indices.mjs";
 import { app_gs_map_new } from "./app_gs_map_new.mjs";
 import { html_data_set } from "./html_data_set.mjs";
 import { html_scroll_center_smooth } from "./html_scroll_center_smooth.mjs";
@@ -45,12 +46,7 @@ export function app_gs() {
   player.x = floor(divide(subtract_1(map.columns), 2));
   player.walk_offset = 0;
   player.walk_previous = 1;
-  let character_indices = {
-    down: 1,
-    left: 4,
-    right: 7,
-    up: 10,
-  };
+  let character_indices = game_character_indices();
   let map_c = html_div(root);
   html_style_width(map_c, game_tile_units_css(map.columns));
   html_style_height(map_c, game_tile_units_css(map.rows));
