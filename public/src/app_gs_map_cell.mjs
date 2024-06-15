@@ -1,3 +1,4 @@
+import { list_all } from "./list_all.mjs";
 import { app_gs_overlays_any_wall } from "./app_gs_overlays_any_wall.mjs";
 import { app_gs_adjacent } from "./app_gs_adjacent.mjs";
 import { log } from "./log.mjs";
@@ -29,7 +30,9 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
     }
     graph_path_shortest(
       map.tiles,
-      (a, b) => app_gs_adjacent(a, b) && app_gs_overlays_any_wall(map, a),
+      (a, b) =>
+        app_gs_adjacent(a, b) &&
+        list_all([a, b], (ab) => !app_gs_overlays_any_wall(map)),
     );
     let direction = null;
     if (tile.y === map.player.y) {
