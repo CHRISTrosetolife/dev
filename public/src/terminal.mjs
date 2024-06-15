@@ -167,6 +167,7 @@ export async function terminal() {
           }
         }
       });
+      token_next();
       function token_next() {
         if (list_empty_is(current)) {
           return;
