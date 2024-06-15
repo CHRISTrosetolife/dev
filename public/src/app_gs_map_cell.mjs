@@ -1,3 +1,4 @@
+import { html_img_wait } from "./html_img_wait.mjs";
 import { html_scroll_center_smooth } from "./html_scroll_center_smooth.mjs";
 import { each_async } from "./each_async.mjs";
 import { list_all } from "./list_all.mjs";
@@ -17,7 +18,7 @@ import { html_data_set } from "./html_data_set.mjs";
 import { html_div } from "./html_div.mjs";
 import { app_gs_z_indexes } from "./app_gs_z_indexes.mjs";
 import { list_skip } from "./list_skip.mjs";
-export function app_gs_map_cell(map, map_c, player_overlay, tile) {
+export async function app_gs_map_cell(map, map_c, player_overlay, tile) {
   let z_indexes = app_gs_z_indexes();
   let clicker = html_div(map_c);
   app_gs_overlays_at(map, tile, function lambda_overlay(o) {
@@ -58,4 +59,5 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
     });
     html_scroll_center_smooth(player_overlay);
   });
+  await html_img_wait(img);
 }
