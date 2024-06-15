@@ -21,9 +21,14 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
   let z_indexes = app_gs_z_indexes();
   let clicker = html_div(map_c);
   app_gs_overlays_at(map, tile, function lambda_overlay(o) {
-    let { id } = o;
-    html_data_set(clicker, "overlay", id);
-    game_img(map_c, game_img_base(id), tile, list_index(z_indexes, "overlay"));
+    let { id: o_id } = o;
+    html_data_set(clicker, "overlay", o_id);
+    game_img(
+      map_c,
+      game_img_base(o_id),
+      tile,
+      list_index(z_indexes, "overlay"),
+    );
   });
   let { id } = tile;
   game_img(map_c, game_img_base(id), tile, list_index(z_indexes, "tile"));
