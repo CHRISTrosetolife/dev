@@ -74,9 +74,9 @@ export function app_gs_map_new() {
       }
     });
   });
-  list_shuffle(copy);
+  list_shuffle(inside);
   each_range(map_overlays_count, (i) => {
-    let t = list_pop(copy);
+    let t = list_pop(inside);
     let id = list_random_item(overlays);
     let o = {
       id,
