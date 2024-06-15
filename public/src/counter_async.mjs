@@ -1,4 +1,4 @@
-export async function list_counter_async(lambda) {
+export async function counter_async(lambda) {
   let result = 0;
   await lambda(() => {
     result = result + 1;
