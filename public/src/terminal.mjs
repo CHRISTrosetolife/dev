@@ -17,7 +17,6 @@ import { list_remove_all } from "./list_remove_all.mjs";
 import { each } from "./each.mjs";
 import { run_tokens } from "./run_tokens.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
-import { string_split_space } from "./string_split_space.mjs";
 import { run_git_ac } from "./run_git_ac.mjs";
 import { log } from "./log.mjs";
 import readline from "readline";
@@ -147,42 +146,36 @@ export async function terminal() {
   while (true) {
     log_write(prompt);
     let input = await next();
-    let split = string_split_space(input);
-    if (10) {
-      let tokens = [];
-      let current = [];
-      let quoted = false;
-      each(string_split_empty(input), (s) => {
-        if (s === "'") {
-          quoted = not(quoted);
-        } else {
-          if (s === " ") {
-            if (quoted) {
-              list_add(current, s);
-            } else {
-              token_next();
-            }
-          } else {
+    let tokens = [];
+    let current = [];
+    let quoted = false;
+    each(string_split_empty(input), (s) => {
+      if (s === "'") {
+        quoted = not(quoted);
+      } else {
+        if (s === " ") {
+          if (quoted) {
             list_add(current, s);
+          } else {
+            token_next();
           }
+        } else {
+          list_add(current, s);
         }
-      });
-      token_next();
-      function token_next() {
-        if (list_empty_is(current)) {
-          return;
-        }
-        let token = list_join_empty(current);
-        current = [];
-        list_add(tokens, token);
       }
-      log({
-        tokens,
-      });
+    });
+    token_next();
+    function token_next() {
+      if (list_empty_is(current)) {
+        return;
+      }
+      let token = list_join_empty(current);
+      current = [];
+      list_add(tokens, token);
     }
-    split = list_filter(split, string_empty_not_is);
+    tokens = list_filter(tokens, string_empty_not_is);
     try {
-      let result = await run_tokens(split);
+      let result = await run_tokens(tokens);
       if (undefined_not_is(result)) {
         log(result);
       }
