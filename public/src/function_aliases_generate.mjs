@@ -1,3 +1,4 @@
+import { terminal } from "./terminal.mjs";
 import { exit } from "./exit.mjs";
 import { npm_install_global } from "./npm_install_global.mjs";
 import { npm_install } from "./npm_install.mjs";
@@ -47,6 +48,7 @@ export async function function_aliases_generate() {
   alias_add(function_search, ["s"]);
   alias_add(sandbox, ["sb"]);
   alias_add(app_dev_screenshots, ["ss"]);
+  alias_add(terminal, ["t"]);
   alias_add(watch, ["w"]);
   let name = "function_aliases";
   await function_new_generic(
