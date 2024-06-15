@@ -36,9 +36,9 @@ export async function terminal() {
         list_remove_all(on_returns);
       } else {
         if (name === "backspace") {
-          log_write(prompt);
           process.stdout.clearLine();
           process.stdout.cursorTo(0);
+          log_write(prompt);
         } else {
           if (object_property_exists(replacements, name)) {
             name = object_property_get(replacements, name);
