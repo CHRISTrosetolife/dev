@@ -25,6 +25,8 @@ import { list_add } from "./list_add.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { each_async } from "./each_async.mjs";
+import { list_map } from "./list_map.mjs";
+import { string_to } from "./string_to.mjs";
 export async function terminal() {
   let commands = [
     {
@@ -70,7 +72,7 @@ export async function terminal() {
       action: () => keyboard_type(" "),
     },
     {
-      keys: list_concat(keyboard_keys(), range(10)),
+      keys: list_concat(keyboard_keys(), list_map(range(10), string_to)),
       action: (key) => keyboard_type(key.name),
     },
     {
