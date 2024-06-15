@@ -31,4 +31,11 @@ export function app_index() {
   html_button_width_full_text_click(root, "game", () => {
     window_open("gs.html");
   });
+  html_button_width_full_text_click(
+    root,
+    "book syntagmatis theologiae christianae",
+    () => {
+      window_open("yyy8Uu.html");
+    },
+  );
 }
