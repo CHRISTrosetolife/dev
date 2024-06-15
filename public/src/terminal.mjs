@@ -37,7 +37,8 @@ export async function terminal() {
   };
   process.stdin.on("keypress", function (chunk, key) {
     let { sequence, name, ctrl, meta, shift } = key;
-    if (list_all([ctrl, meta, shift], (k) => k === false)) {
+    let b = [ctrl, meta, shift];
+    if (list_all(b, (k) => k === false)) {
       if (name === "return") {
         log("");
         let result = list_join_empty(buffer);
@@ -74,7 +75,7 @@ export async function terminal() {
         let ctrl_c = list_includes(keys, "ctrl");
         let meta_c = list_includes(keys, "meta");
         let shift_c = list_includes(keys, "shift");
-        let b = [ctrl_c, meta_c, shift_c];
+        let b_c = [ctrl_c, meta_c, shift_c];
       });
     }
   });
