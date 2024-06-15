@@ -70,7 +70,9 @@ export async function terminal() {
       }
     } else {
       list_filter(commands, (c) => {
-        (ctrl = list_includes(keys, "ctrl")), meta, shift;
+        ctrl = list_includes(keys, "ctrl");
+        meta;
+        shift;
       });
     }
   });
