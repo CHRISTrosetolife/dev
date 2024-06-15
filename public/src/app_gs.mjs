@@ -93,9 +93,7 @@ export function app_gs() {
     list_index(z_indexes, "player"),
   );
   let tiles = list_adder((la) =>
-    each_range(rows, (r) => {
-      each_range(columns, (c) => {});
-    }),
+    each_range(rows, (r) => each_range(columns, (c) => {})),
   );
   each(map_overlays, (o) => {
     let { id } = o;
