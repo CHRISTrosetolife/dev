@@ -54,7 +54,7 @@ export function app_gs() {
   let total = rows * columns;
   let map_overlays_count = ceiling(total / 8);
   let overlays = list_concat(range_from(40, 42), range_from(48, 57));
-  each(map_overlays_count, (i) => {
+  each_range(map_overlays_count, (i) => {
     let id = list_random_item(overlays);
     list_add(map_overlays, {
       id,
