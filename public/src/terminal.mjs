@@ -51,7 +51,13 @@ export async function terminal() {
     },
     {
       keys: ["return"],
-      action: () => {},
+      action: () => {
+        log("");
+        let result = list_join_empty(buffer);
+        buffer_clear();
+        each(on_returns, (n) => n(result));
+        list_remove_all(on_returns);
+      },
     },
   ];
   let prompt = chalk.greenBright("✟") + " ";
@@ -76,11 +82,6 @@ export async function terminal() {
     let b = [ctrl, meta, shift];
     if (list_all(b, (k) => k === false)) {
       if (name === "return") {
-        log("");
-        let result = list_join_empty(buffer);
-        buffer_clear();
-        each(on_returns, (n) => n(result));
-        list_remove_all(on_returns);
       } else {
         if (undefined_is(name)) {
           let s = "_";
