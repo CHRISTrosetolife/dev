@@ -29,6 +29,7 @@ import { list_includes } from "./list_includes.mjs";
 import { each_async } from "./each_async.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_to } from "./string_to.mjs";
+import { list_empty_is } from "./list_empty_is.mjs";
 export async function terminal() {
   let commands = [
     {
@@ -159,13 +160,19 @@ export async function terminal() {
             if (quoted) {
               list_add(current, s);
             } else {
-              let token = list_join_empty(current);
-              current = [];
-              list_add(tokens, current);
+              token_next();
             }
           } else {
             list_add(current, s);
           }
+        }
+        function token_next() {
+          if (list_empty_is(current)) {
+            return;
+          }
+          let token = list_join_empty(current);
+          current = [];
+          list_add(tokens, current);
         }
       });
     }
