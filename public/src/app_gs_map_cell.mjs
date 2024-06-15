@@ -1,3 +1,4 @@
+import { abs } from "./abs.mjs";
 import { log } from "./log.mjs";
 import { app_gs_overlays_wall } from "./app_gs_overlays_wall.mjs";
 import { list_any } from "./list_any.mjs";
@@ -29,7 +30,10 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
       log("wall");
       return;
     }
-    graph_path_shortest();
+    graph_path_shortest(
+      map.tiles,
+      (a, b) => abs(a.y - b.y) == 1 && a.y - b.y === 0,
+    );
     let direction = null;
     if (tile.y === map.player.y) {
       if (tile.x > map.player.x) {
