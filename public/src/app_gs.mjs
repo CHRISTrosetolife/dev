@@ -1,3 +1,4 @@
+import { sleep } from "./sleep.mjs";
 import { promise_all } from "./promise_all.mjs";
 import { app_gs_map_cell } from "./app_gs_map_cell.mjs";
 import { app_gs_style_default_initialize } from "./app_gs_style_default_initialize.mjs";
@@ -15,6 +16,6 @@ export async function app_gs() {
     await app_gs_map_cell(map, map_c, player_overlay, tile);
   });
   await promise_all(tiles);
-  alert("here");
+  await sleep(1000);
   html_scroll_center_smooth(player_overlay);
 }
