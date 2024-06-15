@@ -21,7 +21,9 @@ export async function terminal() {
       }
     }
   });
-  function next() {}
+  function next() {
+    return new Promise((resolve) => {});
+  }
   return;
   while (true) {
     await next();
