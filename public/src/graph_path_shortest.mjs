@@ -26,11 +26,15 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
       }),
     ),
   );
-  let previous = null;
-  let remaining = [from];
+  let remaining = [
+    {
+      current: from,
+      previous: null,
+    },
+  ];
   let visited = {};
   while (list_empty_not_is(remaining)) {
-    let current = list_remove_first(remaining);
+    let current = list_remove_first(remaining).current;
     object_property_set(visited, list_index(vertices, current), {
       current,
       previous,
@@ -59,6 +63,5 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
       previous: current,
     }));
     list_add_multiple(remaining, mapped);
-    previous = current;
   }
 }
