@@ -1,3 +1,4 @@
+import { clipboard_paste } from "./clipboard_paste.mjs";
 import { log_write } from "./log_write.mjs";
 import { list_join_empty } from "./list_join_empty.mjs";
 import { list_remove_all } from "./list_remove_all.mjs";
@@ -20,6 +21,7 @@ export async function terminal() {
   let commands = [
     {
       keys: ["ctrl", "v"],
+      action: clipboard_paste,
     },
   ];
   let prompt = chalk.greenBright("✟") + " ";
