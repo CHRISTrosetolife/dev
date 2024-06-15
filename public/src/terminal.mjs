@@ -1,3 +1,4 @@
+import { not } from "./not.mjs";
 import { counter_async } from "./counter_async.mjs";
 import { range } from "./range.mjs";
 import { list_concat } from "./list_concat.mjs";
@@ -149,7 +150,11 @@ export async function terminal() {
     if (0) {
       let tokens = [];
       let quoted = false;
-      each(split, (s) => {});
+      each(split, (s) => {
+        if (s === "'") {
+          quoted = not(quoted);
+        }
+      });
     }
     split = list_filter(split, string_empty_not_is);
     try {
