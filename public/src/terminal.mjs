@@ -161,7 +161,7 @@ export async function terminal() {
             } else {
               let token = list_join_empty(current);
               current = [];
-              list_add(tokens, currnt);
+              list_add(tokens, current);
             }
           } else {
             list_add(current, s);
