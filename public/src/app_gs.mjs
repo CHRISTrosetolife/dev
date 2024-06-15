@@ -56,8 +56,10 @@ export function app_gs() {
   let map_overlays_count = ceiling(total / 8);
   each(map_overlays_count, (i) => {
     let overlays = list_concat(range_from(40, 42), range_from(48, 57));
-    let base_id = list_random_item(overlays);
-    list_add(map_overlays);
+    let id = list_random_item(overlays);
+    list_add(map_overlays, {
+      id,
+    });
   });
   let player = {};
   player.y = floor(divide(subtract_1(rows), 2));
