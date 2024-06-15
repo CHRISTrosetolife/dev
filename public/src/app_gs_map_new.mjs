@@ -1,3 +1,4 @@
+import { list_adder_multiple } from "./list_adder_multiple.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { add } from "./add.mjs";
 import { list_random_index_weighted } from "./list_random_index_weighted.mjs";
@@ -46,6 +47,7 @@ export function app_gs_map_new() {
       }),
     ),
   );
+  list_adder_multiple(2, (la) => {});
   let copy = list_filter(
     map.tiles,
     (t) => border_thickness <= t.x && t.x <= x_size - border_thickness,
