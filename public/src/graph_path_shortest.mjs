@@ -1,3 +1,4 @@
+import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
 import { list_difference } from "./list_difference.mjs";
 import { graph_neighbors } from "./graph_neighbors.mjs";
@@ -18,8 +19,8 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
       }),
     ),
   );
-  let current = from;
-  let remaining = [];
+  let remaining = [from];
+  while (list_empty_not_is(remaining)) {}
   let visited = [];
   let neighbors = graph_neighbors(edges, current);
   let neighbors_new = list_difference(neighbors, visited);
