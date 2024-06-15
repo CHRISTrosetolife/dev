@@ -92,6 +92,7 @@ export function app_gs() {
     player.x,
     list_index(z_indexes, "player"),
   );
+  each(map_overlays, (o) => {});
   each_range(rows, (r) => {
     html_style_height(map_c, game_tile_units_css(1));
     each_range(columns, (c) => {
