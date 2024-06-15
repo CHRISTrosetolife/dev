@@ -36,7 +36,8 @@ export async function terminal() {
         if (object_property_exists(replacements, name)) {
           name = object_property_get(replacements, name);
         }
-        process.stdout.write(chalk.bgGreenBright(name));
+        let message = chalk.bgGreenBright(name);
+        process.stdout.write(message);
         list_add(buffer, name);
       }
     }
