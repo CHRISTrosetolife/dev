@@ -1,3 +1,4 @@
+import { app_gs_direction } from "./app_gs_direction.mjs";
 import { list_all } from "./list_all.mjs";
 import { app_gs_at_single } from "./app_gs_at_single.mjs";
 import { graph_path_shortest } from "./graph_path_shortest.mjs";
@@ -44,24 +45,7 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
     log({
       p,
     });
-    let direction = null;
-    let b = map.player;
-    if (tile.y === b.y) {
-      if (tile.x > b.x) {
-        direction = "right";
-      }
-      if (tile.x < b.x) {
-        direction = "left";
-      }
-    }
-    if (tile.x === b.x) {
-      if (tile.y > map.player.y) {
-        direction = "down";
-      }
-      if (tile.y < b.y) {
-        direction = "up";
-      }
-    }
+    let direction = app_gs_direction(map.player, tile);
     if (direction !== null) {
       await app_gs_walk(player_overlay, map.player, direction, tile.y, tile.x);
     }
