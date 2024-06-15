@@ -21,19 +21,17 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
       }),
     ),
   );
-  return list_adder((la) => {
-    let remaining = [from];
-    let visited = [];
-    while (list_empty_not_is(remaining)) {
-      let current = list_remove_first(remaining);
-      list_add(visited, current);
-      la(current);
-      if (current === to) {
-        break;
-      }
-      let neighbors = graph_neighbors(edges, current);
-      let neighbors_new = list_difference(neighbors, visited);
-      list_add_multiple(remaining, neighbors_new);
+  let remaining = [from];
+  let visited = [];
+  while (list_empty_not_is(remaining)) {
+    let current = list_remove_first(remaining);
+    list_add(visited, current);
+    la(current);
+    if (current === to) {
+      break;
     }
-  });
+    let neighbors = graph_neighbors(edges, current);
+    let neighbors_new = list_difference(neighbors, visited);
+    list_add_multiple(remaining, neighbors_new);
+  }
 }
