@@ -8,8 +8,7 @@ export function app_gs_overlay_player(map_c, map) {
   let player_overlay = game_img(
     map_c,
     game_img_character(map.player.character, game_character_index("down")),
-    map.player.y,
-    map.player.x,
+    map.player,
     list_index(z_indexes, "player"),
   );
   return player_overlay;
