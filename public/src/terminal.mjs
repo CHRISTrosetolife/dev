@@ -1,3 +1,4 @@
+import { equal_json } from "./equal_json.mjs";
 import { clipboard_paste } from "./clipboard_paste.mjs";
 import { log_write } from "./log_write.mjs";
 import { list_join_empty } from "./list_join_empty.mjs";
@@ -77,6 +78,8 @@ export async function terminal() {
         let shift_c = list_includes(keys, "shift");
         if (list_includes(keys, name)) {
           let b_c = [ctrl_c, meta_c, shift_c];
+          if (equal_json(b, b_c)) {
+          }
         }
       });
     }
