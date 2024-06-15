@@ -1,3 +1,4 @@
+import { list_map } from "./list_map.mjs";
 import { list_includes_not } from "./list_includes_not.mjs";
 import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { list_remove_first } from "./list_remove_first.mjs";
@@ -53,6 +54,10 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
         object_property_exists_not(visited, list_index(vertices, n)) &&
         list_includes_not(remaining, n),
     );
+    let mapped = list_map(neighbors_new, (n) => ({
+      current: n,
+      previous: current,
+    }));
     list_add_multiple(remaining, neighbors_new);
     previous = current;
   }
