@@ -10,6 +10,7 @@ import { game_img } from "./game_img.mjs";
 import { html_data_set } from "./html_data_set.mjs";
 import { html_div } from "./html_div.mjs";
 import { app_gs_z_indexes } from "./app_gs_z_indexes.mjs";
+import { log } from "./log.mjs";
 export function app_gs_map_cell(map, map_c, player_overlay, r, c) {
   let z_indexes = app_gs_z_indexes();
   let clicker = html_div(map_c);
@@ -19,6 +20,12 @@ export function app_gs_map_cell(map, map_c, player_overlay, r, c) {
   game_img(map_c, game_img_base(index), r, c, list_index(z_indexes, "tile"));
   game_img_style(clicker, r, c, list_index(z_indexes, "clicker"));
   html_on_click(clicker, async () => {
+    app_gs_overlays_at(map, r, c, () => {
+      let id = o;
+      log({
+        id,
+      });
+    });
     let direction = null;
     if (r === map.player.y) {
       if (c > map.player.x) {
@@ -40,7 +47,7 @@ export function app_gs_map_cell(map, map_c, player_overlay, r, c) {
       await app_gs_walk(player_overlay, map.player, direction, r, c);
     }
   });
-  function lambda_overlay() {
+  function lambda_overlay(o) {
     let { id } = o;
     html_data_set(clicker, "overlay", id);
     game_img(map_c, game_img_base(id), r, c, list_index(z_indexes, "overlay"));
