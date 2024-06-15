@@ -23,7 +23,8 @@ import { object_property_get } from "./object_property_get.mjs";
 export function app_gs_map_new() {
   let tiles_min = game_tiles_min();
   let border_thickness = floor(tiles_min / 2);
-  let y_size = add(20, border_thickness * 2);
+  let inside_count = 20;
+  let y_size = add(inside_count, border_thickness * 2);
   let x_size = y_size;
   let map_overlays = [];
   let map = {
