@@ -1,11 +1,6 @@
 import { log } from "./log.mjs";
-import readline from "readline";
+import readline_sync from "readline-sync";
 export function terminal() {
-  let rl = readline.createInterface({
-    input: process.stdin,
-  });
-  rl.question(`What's your name?`, (name) => {
-    log(`Hi ${name}!`);
-    rl.close();
-  });
+  let name = readline_sync.question(`What's your name?`);
+  log(`Hi ${name}!`);
 }
