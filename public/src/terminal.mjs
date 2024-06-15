@@ -67,6 +67,8 @@ export async function terminal() {
           }
         }
       }
+    } else {
+      list_filter(commands, (c) => {});
     }
   });
   function keyboard_type(name) {
