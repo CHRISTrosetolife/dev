@@ -1,3 +1,4 @@
+import { app_gs_direction } from "./app_gs_direction.mjs";
 import { html_scroll_center_smooth } from "./html_scroll_center_smooth.mjs";
 import { game_img_position } from "./game_img_position.mjs";
 import { add } from "./add.mjs";
@@ -12,7 +13,11 @@ import { abs } from "./abs.mjs";
 import { game_character_index } from "./game_character_index.mjs";
 import { game_img_character } from "./game_img_character.mjs";
 import { html_img_src_wait } from "./html_img_src_wait.mjs";
-export async function app_gs_walk(player_overlay, player, direction, tile) {
+export async function app_gs_walk(player_overlay, player, tile) {
+  let direction = app_gs_direction(map.player, tile);
+  if (direction === null) {
+    return;
+  }
   await html_img_src_wait(
     player_overlay,
     game_img_character(player.character, game_character_index(direction)),
