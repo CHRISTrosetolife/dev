@@ -46,13 +46,14 @@ export async function terminal() {
             log({
               key,
             });
+          } else {
+            if (object_property_exists(replacements, name)) {
+              name = object_property_get(replacements, name);
+            }
+            let message = chalk.greenBright(name);
+            log_write(message);
+            list_add(buffer, name);
           }
-          if (object_property_exists(replacements, name)) {
-            name = object_property_get(replacements, name);
-          }
-          let message = chalk.greenBright(name);
-          log_write(message);
-          list_add(buffer, name);
         }
       }
     }
