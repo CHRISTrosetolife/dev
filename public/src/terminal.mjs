@@ -149,6 +149,7 @@ export async function terminal() {
     let split = string_split_space(input);
     if (0) {
       let tokens = [];
+      let current = [];
       let quoted = false;
       each(split, (s) => {
         if (s === "'") {
@@ -157,6 +158,7 @@ export async function terminal() {
           if (s === " ") {
             if (quoted) {
             }
+          } else {
           }
         }
       });
