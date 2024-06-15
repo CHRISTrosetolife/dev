@@ -1,7 +1,7 @@
+import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { list_remove_first } from "./list_remove_first.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
-import { list_difference } from "./list_difference.mjs";
 import { graph_neighbors } from "./graph_neighbors.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { each_index } from "./each_index.mjs";
@@ -9,6 +9,7 @@ import { list_adder } from "./list_adder.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { list_index } from "./list_index.mjs";
 import { object_property_get } from "./object_property_get.mjs";
+import { list_filter } from "./list_filter.mjs";
 export function graph_path_shortest(vertices, edge_lambda, from, to) {
   assert_arguments_length(arguments, 4);
   let edges = list_adder((la) =>
@@ -45,7 +46,9 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
       return p;
     }
     let neighbors = graph_neighbors(edges, current);
-    let neighbors_new = list_difference(neighbors, visited);
+    let neighbors_new = list_filter(neighbors, (n) =>
+      object_property_exists_not(list_index(vertices, n)),
+    );
     list_add_multiple(remaining, neighbors_new);
     previous = current;
   }
