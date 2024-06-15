@@ -63,7 +63,7 @@ export async function terminal() {
     },
     {
       keys: keyboard_keys(),
-      action: () => keyboard_type(" "),
+      action: (key) => keyboard_type(key.name),
     },
   ];
   let prompt = chalk.greenBright("✟") + " ";
