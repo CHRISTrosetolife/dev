@@ -18,6 +18,7 @@ export function function_aliases() {
     s: "function_search",
     sb: "sandbox",
     ss: "app_dev_screenshots",
+    t: "terminal",
     w: "watch",
   };
 }
