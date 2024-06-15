@@ -22,7 +22,6 @@ import { floor } from "./floor.mjs";
 import { game_img_list_male } from "./game_img_list_male.mjs";
 import { game_img_character } from "./game_img_character.mjs";
 import { game_tile_units_css } from "./game_tile_units_css.mjs";
-import { integer_random } from "./integer_random.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { range_from } from "./range_from.mjs";
 import { list_random_item } from "./list_random_item.mjs";
@@ -92,7 +91,16 @@ export function app_gs() {
     player.x,
     list_index(z_indexes, "player"),
   );
-  each(map_overlays, (o) => {});
+  each(map_overlays, (o) => {
+    html_data_set(clicker, "overlay", base_id);
+    game_img(
+      map_c,
+      game_img_base(base_id),
+      r,
+      c,
+      list_index(z_indexes, "overlay"),
+    );
+  });
   each_range(rows, (r) => {
     html_style_height(map_c, game_tile_units_css(1));
     each_range(columns, (c) => {
@@ -106,16 +114,6 @@ export function app_gs() {
         c,
         list_index(z_indexes, "tile"),
       );
-      if (integer_random(1, 8) === 1) {
-        html_data_set(clicker, "overlay", base_id);
-        game_img(
-          map_c,
-          game_img_base(base_id),
-          r,
-          c,
-          list_index(z_indexes, "overlay"),
-        );
-      }
       game_img_style(clicker, r, c, list_index(z_indexes, "clicker"));
       html_on_click(clicker, async () => {
         let direction = null;
