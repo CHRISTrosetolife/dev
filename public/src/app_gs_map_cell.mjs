@@ -1,5 +1,4 @@
-import { each_pairs } from "./each_pairs.mjs";
-import { app_gs_direction } from "./app_gs_direction.mjs";
+import { each } from "./each.mjs";
 import { list_all } from "./list_all.mjs";
 import { app_gs_at_single } from "./app_gs_at_single.mjs";
 import { graph_path_shortest } from "./graph_path_shortest.mjs";
@@ -18,6 +17,7 @@ import { game_img } from "./game_img.mjs";
 import { html_data_set } from "./html_data_set.mjs";
 import { html_div } from "./html_div.mjs";
 import { app_gs_z_indexes } from "./app_gs_z_indexes.mjs";
+import { list_skip } from "./list_skip.mjs";
 export function app_gs_map_cell(map, map_c, player_overlay, tile) {
   let z_indexes = app_gs_z_indexes();
   let clicker = html_div(map_c);
@@ -43,13 +43,9 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
       from,
       tile,
     );
-    let direction_current = null;
-    each_pairs(p, (a, b) => {
-      let direction = app_gs_direction(map.player, tile);
-      if (direction !== direction_current) {
-      }
+    each(list_skip(p, 1), async (tile) => {
+      await app_gs_walk(player_overlay, map.player, tile);
     });
-    await app_gs_walk(player_overlay, map.player, tile);
   });
   function lambda_overlay(o) {
     let { id } = o;
