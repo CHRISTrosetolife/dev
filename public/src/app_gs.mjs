@@ -62,7 +62,7 @@ export function app_gs() {
     map_c,
     game_img_character(
       player.character,
-      object_property_get(character_indices, direction_),
+      object_property_get(game_character_indices(), direction_),
     ),
     player.y,
     player.x,
