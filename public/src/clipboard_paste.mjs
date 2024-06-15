@@ -1,2 +1,4 @@
 import clipboard from "clipboardy";
-export function clipboard_paste() {}
+export async function clipboard_paste() {
+  await clipboard.write();
+}
