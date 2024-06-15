@@ -21,7 +21,11 @@ import { list_skip } from "./list_skip.mjs";
 export function app_gs_map_cell(map, map_c, player_overlay, tile) {
   let z_indexes = app_gs_z_indexes();
   let clicker = html_div(map_c);
-  app_gs_overlays_at(map, tile, lambda_overlay);
+  app_gs_overlays_at(map, tile, function lambda_overlay(o) {
+    let { id } = o;
+    html_data_set(clicker, "overlay", id);
+    game_img(map_c, game_img_base(id), tile, list_index(z_indexes, "overlay"));
+  });
   let grass = game_grass_weight();
   let index = list_random_index_weighted(grass);
   game_img(map_c, game_img_base(index), tile, list_index(z_indexes, "tile"));
@@ -47,9 +51,4 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
       await app_gs_walk(player_overlay, map.player, tile);
     });
   });
-  function lambda_overlay(o) {
-    let { id } = o;
-    html_data_set(clicker, "overlay", id);
-    game_img(map_c, game_img_base(id), tile, list_index(z_indexes, "overlay"));
-  }
 }
