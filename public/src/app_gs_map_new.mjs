@@ -1,3 +1,4 @@
+import { add_1 } from "./add_1.mjs";
 import { each } from "./each.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { list_partition } from "./list_partition.mjs";
@@ -24,7 +25,7 @@ import { object_merge_properties } from "./object_merge_properties.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 export function app_gs_map_new() {
   let tiles_min = game_tiles_min();
-  let border_thickness = floor(tiles_min / 2);
+  let border_thickness = ceiling(add_1(tiles_min) / 2);
   let y_size_inside = 20;
   let x_size_inside = y_size_inside;
   let y_size = add(y_size_inside, border_thickness * 2);
