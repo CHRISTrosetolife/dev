@@ -94,20 +94,19 @@ export async function terminal() {
           keyboard_type(name);
         }
       }
-    } else {
-      await each_async(commands, async (c) => {
-        let { keys } = c;
-        let ctrl_c = list_includes(keys, "ctrl");
-        let meta_c = list_includes(keys, "meta");
-        let shift_c = list_includes(keys, "shift");
-        if (list_includes(keys, name)) {
-          let b_c = [ctrl_c, meta_c, shift_c];
-          if (equal_json(b, b_c)) {
-            await c.action();
-          }
-        }
-      });
     }
+    await each_async(commands, async (c) => {
+      let { keys } = c;
+      let ctrl_c = list_includes(keys, "ctrl");
+      let meta_c = list_includes(keys, "meta");
+      let shift_c = list_includes(keys, "shift");
+      if (list_includes(keys, name)) {
+        let b_c = [ctrl_c, meta_c, shift_c];
+        if (equal_json(b, b_c)) {
+          await c.action();
+        }
+      }
+    });
   });
   function keyboard_type(name) {
     name = string_replace(name, "\n", " ");
