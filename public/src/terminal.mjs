@@ -8,7 +8,6 @@ import readline from "readline";
 import chalk from "chalk";
 import { list_filter } from "./list_filter.mjs";
 export async function terminal() {
-  console.clear();
   readline.emitKeypressEvents(process.stdin);
   if (process.stdin.isTTY) {
     process.stdin.setRawMode(true);
