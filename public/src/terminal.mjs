@@ -36,6 +36,7 @@ export async function terminal() {
   async function next() {
     return await new Promise((resolve) => list_add(on_returns, resolve));
   }
+  console.clear();
   while (true) {
     process.stdout.write(chalk.greenBright(`♱ ✟ ♱ `));
     let input = await next();
