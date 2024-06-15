@@ -176,6 +176,9 @@ export async function terminal() {
         current = [];
         list_add(tokens, token);
       }
+      log({
+        tokens,
+      });
     }
     split = list_filter(split, string_empty_not_is);
     try {
