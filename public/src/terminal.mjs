@@ -19,7 +19,6 @@ export async function terminal() {
         });
       }
     });
-    tty.setRawMode(true);
     continue;
     process.stdout.write(chalk.greenBright(`✝ `));
     let input = readline_sync.question();
