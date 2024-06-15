@@ -7,4 +7,5 @@ export function list_remove_multiple_at(list, index, count) {
   let element = list_get(list, index);
   list.splice(index, count);
   assert_not(list_includes, [list, element]);
+  return element;
 }
