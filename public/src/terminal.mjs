@@ -1,3 +1,4 @@
+import { string_split_empty } from "./string_split_empty.mjs";
 import { equal_json } from "./equal_json.mjs";
 import { clipboard_paste } from "./clipboard_paste.mjs";
 import { log_write } from "./log_write.mjs";
@@ -26,6 +27,7 @@ export async function terminal() {
       keys: ["ctrl", "v"],
       action: async () => {
         let value = await clipboard_paste();
+        each(string_split_empty(value));
       },
     },
   ];
