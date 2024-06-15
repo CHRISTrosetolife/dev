@@ -43,5 +43,10 @@ export function app_gs_map_new() {
     object_merge(o, t);
     list_add(map_overlays, o);
   });
+  map.player={}
+  map.player.y = floor(divide(subtract_1(map.rows), 2));
+  map.player.x = floor(divide(subtract_1(map.columns), 2));
+  map.player.walk_offset = 0;
+  map.player.walk_previous = 1;
   return map;
 }
