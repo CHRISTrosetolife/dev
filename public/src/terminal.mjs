@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { run_tokens } from "./run_tokens.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { string_split_space } from "./string_split_space.mjs";
@@ -11,5 +12,5 @@ export async function terminal() {
   tokens = list_filter(tokens, string_empty_not_is);
   let result = await run_tokens(tokens);
   log(result);
-  await run_git_ac();
+  each([run_git_ac], (f) => f());
 }
