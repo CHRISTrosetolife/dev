@@ -41,6 +41,7 @@ import { html_div } from "./html_div.mjs";
 import { sleep } from "./sleep.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
+import { object_merge } from "./object_merge.mjs";
 export function app_gs() {
   let root = html_style_default_initialize();
   html_style(root, {
@@ -74,6 +75,7 @@ export function app_gs() {
     let o = {
       id,
     };
+    object_merge(o, t);
     list_add(map_overlays, o);
   });
   let player = {};
