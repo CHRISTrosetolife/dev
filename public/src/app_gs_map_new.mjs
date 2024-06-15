@@ -26,7 +26,8 @@ export function app_gs_map_new() {
   };
   let total = rows * columns;
   let map_overlays_count = ceiling(total / 8);
-  let overlays = list_concat(range_from(40, 42), range_from(48, 57));
+  let overlays_block = range_from(40, 42);
+  let overlays = list_concat(overlays_block, range_from(48, 57));
   let tiles = list_adder((la) =>
     each_range(rows, (y) =>
       each_range(columns, (x) =>
