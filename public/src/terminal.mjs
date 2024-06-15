@@ -29,7 +29,8 @@ export async function terminal() {
       action: async () => {
         let value = await clipboard_paste();
         let split = string_split_empty(value);
-        each(split, (c) => {
+        let filtered = list_filter(split, (s) => s !== "\r");
+        each(filtered, (c) => {
           keyboard_type(c);
         });
       },
