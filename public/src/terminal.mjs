@@ -21,6 +21,7 @@ export async function terminal() {
       }
     }
   });
+  function next() {}
   return;
   while (true) {
     await next();
