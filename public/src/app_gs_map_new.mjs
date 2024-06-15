@@ -1,3 +1,5 @@
+import { list_random_index_weighted } from "./list_random_index_weighted.mjs";
+import { game_grass_weight } from "./game_grass_weight.mjs";
 import { list_copy } from "./list_copy.mjs";
 import { app_gs_overlays_wall } from "./app_gs_overlays_wall.mjs";
 import { game_img_list_male } from "./game_img_list_male.mjs";
@@ -30,12 +32,15 @@ export function app_gs_map_new() {
   let map_overlays_count = ceiling(total / 8);
   let overlays_wall = app_gs_overlays_wall();
   let overlays = list_concat(overlays_wall, range_from(48, 57));
+  let grass = game_grass_weight();
   map.tiles = list_adder((la) =>
     each_range(rows, (y) =>
       each_range(columns, (x) => {
+        let id = list_random_index_weighted(grass);
         la({
           y,
           x,
+          id,
         });
       }),
     ),
