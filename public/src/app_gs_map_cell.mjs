@@ -24,7 +24,7 @@ export function app_gs_map_cell(map, map_c, player_overlay, r, c) {
   game_img_style(clicker, r, c, list_index(z_indexes, "clicker"));
   html_on_click(clicker, async () => {
     let os = list_adder((la) => app_gs_overlays_at(map, r, c, la));
-    if (list_any(os, (o) => list_includes(app_gs_overlays_wall(), o))) {
+    if (list_any(os, (o) => list_includes(app_gs_overlays_wall(), o.id))) {
       return;
     }
     let direction = null;
