@@ -1,3 +1,5 @@
+import { range } from "./range.mjs";
+import { list_concat } from "./list_concat.mjs";
 import { list_last } from "./list_last.mjs";
 import { keyboard_keys } from "./keyboard_keys.mjs";
 import { list_any } from "./list_any.mjs";
@@ -68,7 +70,7 @@ export async function terminal() {
       action: () => keyboard_type(" "),
     },
     {
-      keys: keyboard_keys(),
+      keys: list_concat(keyboard_keys(), range(10)),
       action: (key) => keyboard_type(key.name),
     },
     {
