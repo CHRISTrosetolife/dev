@@ -148,6 +148,7 @@ export async function terminal() {
     let split = string_split_space(input);
     if (0) {
       let tokens = [];
+      each(split, (s) => {});
     }
     split = list_filter(split, string_empty_not_is);
     try {
