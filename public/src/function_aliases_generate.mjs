@@ -1,3 +1,4 @@
+import { git_acp } from "./git_acp.mjs";
 import { terminal } from "./terminal.mjs";
 import { exit } from "./exit.mjs";
 import { npm_install_global } from "./npm_install_global.mjs";
@@ -39,6 +40,7 @@ export async function function_aliases_generate() {
   alias_add(function_delete, ["de"]);
   alias_add(exit, ["e", "q", "x"]);
   alias_add(firebase_deploy, ["f"]);
+  alias_add(git_acp, ["g"]);
   alias_add(npm_install, ["i"]);
   alias_add(npm_install_global, ["ig"]);
   alias_add(function_new, ["n"]);
