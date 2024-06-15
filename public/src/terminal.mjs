@@ -12,8 +12,12 @@ export async function terminal() {
     let input = readline_sync.question(chalk.blue(`> `));
     let tokens = string_split_space(input);
     tokens = list_filter(tokens, string_empty_not_is);
-    let result = await run_tokens(tokens);
-    log(result);
+    try {
+      let result = await run_tokens(tokens);
+      log(result);
+    } catch (e) {
+      log(chalk.redBright(e));
+    }
     each([run_git_ac], (f) => f());
   }
 }
