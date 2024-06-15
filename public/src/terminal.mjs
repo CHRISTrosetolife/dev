@@ -10,6 +10,9 @@ import { list_filter } from "./list_filter.mjs";
 export async function terminal() {
   console.clear();
   readline.emitKeypressEvents(process.stdin);
+  if (process.stdin.isTTY) {
+    process.stdin.setRawMode(true);
+  }
   while (true) {
     process.stdin.on("keypress", function (chunk, key) {
       if (key && key.name === "c" && key.ctrl) {
