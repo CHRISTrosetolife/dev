@@ -115,11 +115,13 @@ export function app_gs() {
           }
         }
         if (direction !== null) {
-          let img_url = game_img_character(
-            player.character,
-            game_character_index(direction),
+          await html_img_src_wait(
+            player_overlay,
+            game_img_character(
+              player.character,
+              game_character_index(direction),
+            ),
           );
-          await html_img_src_wait(player_overlay, img_url);
           let steps_count = abs(player.y - r) + abs(player.x - c);
           await each_range_async(steps_count, async () => {
             let animate_count = 2;
