@@ -46,19 +46,19 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
     });
     let direction = null;
     let b = map.player;
-    if (tile.y === map.player.y) {
-      if (tile.x > map.player.x) {
+    if (tile.y === b.y) {
+      if (tile.x > b.x) {
         direction = "right";
       }
-      if (tile.x < map.player.x) {
+      if (tile.x < b.x) {
         direction = "left";
       }
     }
-    if (tile.x === map.player.x) {
+    if (tile.x === b.x) {
       if (tile.y > map.player.y) {
         direction = "down";
       }
-      if (tile.y < map.player.y) {
+      if (tile.y < b.y) {
         direction = "up";
       }
     }
