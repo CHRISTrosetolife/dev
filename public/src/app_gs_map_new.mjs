@@ -56,7 +56,7 @@ export function app_gs_map_new() {
     ),
   );
   let [inside, outside] = list_partition(map, inside_is);
-  each(outside, (tile) => {});
+  each(outside, (tile) => overlay_add(tile, list_random_item(overlays_wall)));
   list_shuffle(inside);
   each_range(map_overlays_count, (i) => {
     let t = list_pop(inside);
