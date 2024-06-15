@@ -23,8 +23,8 @@ import { object_property_get } from "./object_property_get.mjs";
 export function app_gs_map_new() {
   let tiles_min = game_tiles_min();
   let border_thickness = floor(tiles_min / 2);
-  let inside_count = 20;
-  let y_size = add(inside_count, border_thickness * 2);
+  let y_size_inside = 20;
+  let y_size = add(y_size_inside, border_thickness * 2);
   let x_size = y_size;
   let map_overlays = [];
   let map = {
@@ -32,7 +32,7 @@ export function app_gs_map_new() {
     y_size,
     x_size,
   };
-  let total = inside_count * inside_count;
+  let total = y_size_inside * y_size_inside;
   let map_overlays_count = ceiling(total / 8);
   let overlays_wall = app_gs_overlays_wall();
   let overlays = list_concat(overlays_wall, range_from(48, 57));
