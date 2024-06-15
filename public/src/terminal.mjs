@@ -24,6 +24,7 @@ import { undefined_not_is } from "./undefined_not_is.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { each_async } from "./each_async.mjs";
 export async function terminal() {
+  let prompt = chalk.greenBright("✟") + " ";
   let commands = [
     {
       keys: ["ctrl", "v"],
@@ -50,7 +51,6 @@ export async function terminal() {
       },
     },
   ];
-  let prompt = chalk.greenBright("✟") + " ";
   readline.emitKeypressEvents(process.stdin);
   if (process.stdin.isTTY) {
     process.stdin.setRawMode(true);
