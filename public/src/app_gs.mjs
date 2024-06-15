@@ -109,15 +109,21 @@ export function app_gs() {
     player.x,
     list_index(z_indexes, "player"),
   );
-  each(map_overlays, (o) => {
-    let { id, x, y } = o;
-    html_data_set(clicker, "overlay", id);
-    game_img(map_c, game_img_base(id), r, c, list_index(z_indexes, "overlay"));
-  });
   each_range(rows, (r) => {
     html_style_height(map_c, game_tile_units_css(1));
     each_range(columns, (c) => {
       let clicker = html_div(map_c);
+      each(map_overlays, (o) => {
+        let { id, x, y } = o;
+        html_data_set(clicker, "overlay", id);
+        game_img(
+          map_c,
+          game_img_base(id),
+          r,
+          c,
+          list_index(z_indexes, "overlay"),
+        );
+      });
       let grass = game_grass_weight();
       let index = list_random_index_weighted(grass);
       game_img(
