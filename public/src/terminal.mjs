@@ -48,7 +48,7 @@ export async function terminal() {
   }
   console.clear();
   while (true) {
-    process.stdout.write(chalk.greenBright("✟") + " ");
+    log_write(chalk.greenBright("✟") + " ");
     let input = await next();
     let tokens = string_split_space(input);
     tokens = list_filter(tokens, string_empty_not_is);
