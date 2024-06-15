@@ -57,10 +57,10 @@ export function app_gs() {
     right: 7,
     up: 10,
   };
-  let map = html_div(root);
-  html_style_width(map, game_tile_units_css(columns));
-  html_style_height(map, game_tile_units_css(rows));
-  html_style(map, {
+  let map_c = html_div(root);
+  html_style_width(map_c, game_tile_units_css(columns));
+  html_style_height(map_c, game_tile_units_css(rows));
+  html_style(map_c, {
     overflow: "hidden",
     position: "relative",
     display: "inline",
@@ -68,7 +68,7 @@ export function app_gs() {
   let z_indexes = ["tile", "overlay", "player", "clicker"];
   player.character = list_random_item(game_img_list_male());
   let player_overlay = game_img(
-    map,
+    map_c,
     game_img_character(
       player.character,
       object_property_get(character_indices, "down"),
@@ -78,18 +78,24 @@ export function app_gs() {
     list_index(z_indexes, "player"),
   );
   each_range(rows, (r) => {
-    html_style_height(map, game_tile_units_css(1));
+    html_style_height(map_c, game_tile_units_css(1));
     each_range(columns, (c) => {
-      let clicker = html_div(map);
+      let clicker = html_div(map_c);
       let grass = game_grass_weight();
       let index = list_random_index_weighted(grass);
-      game_img(map, game_img_base(index), r, c, list_index(z_indexes, "tile"));
+      game_img(
+        map_c,
+        game_img_base(index),
+        r,
+        c,
+        list_index(z_indexes, "tile"),
+      );
       if (integer_random(1, 8) === 1) {
         let overlays = list_concat(range_from(40, 42), range_from(48, 57));
         let base_id = list_random_item(overlays);
         html_data_set(clicker, "overlay", base_id);
         game_img(
-          map,
+          map_c,
           game_img_base(base_id),
           r,
           c,
