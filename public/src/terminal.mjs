@@ -36,6 +36,7 @@ export async function terminal() {
         list_remove_all(on_returns);
       } else {
         if (name === "backspace") {
+          buffer = [];
           process.stdout.clearLine();
           process.stdout.cursorTo(0);
           log_write(prompt);
