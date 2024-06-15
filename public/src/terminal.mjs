@@ -24,6 +24,7 @@ import { undefined_not_is } from "./undefined_not_is.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { each_async } from "./each_async.mjs";
 export async function terminal() {
+  let buffer = [];
   let commands = [
     {
       keys: ["ctrl", "v"],
@@ -56,7 +57,6 @@ export async function terminal() {
     process.stdin.setRawMode(true);
   }
   let on_returns = [];
-  let buffer = [];
   let replacements = {
     space: " ",
   };
