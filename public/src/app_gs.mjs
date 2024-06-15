@@ -146,10 +146,7 @@ export function app_gs() {
                 player_overlay,
                 game_img_character(
                   player.character,
-                  add(
-                    object_property_get(character_indices, direction),
-                    player.walk_offset,
-                  ),
+                  add(game_character_index(direction), player.walk_offset),
                 ),
               );
               let delta = game_direction_to_delta(direction);
