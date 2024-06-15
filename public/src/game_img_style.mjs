@@ -12,9 +12,11 @@ export function game_img_style(image, r, c, z_index) {
   let t = app_gs_sleep_time() / 1000;
   let transition = string_combine_multiple(["top ", t, "s, left ", t, "s"]);
   html_style(image, {
+    transition: transition,
+  });
+  html_style(image, {
     position: "absolute",
     "z-index": z_index,
-    transition: transition,
   });
   game_img_position(image, r, c);
 }
