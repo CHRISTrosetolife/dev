@@ -111,7 +111,7 @@ export async function terminal() {
   process.stdin.on("keypress", async function (chunk, key) {
     let { sequence, name, ctrl, meta, shift } = key;
     let b = [ctrl, meta, shift];
-    await counter_async(async (la) => {
+    let count = await counter_async(async (la) => {
       await each_async(commands, async (c) => {
         let { keys } = c;
         let ctrl_c = list_includes(keys, "ctrl");
