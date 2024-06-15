@@ -1,3 +1,4 @@
+import { object_merge } from "./object_merge.mjs";
 import { list_partition } from "./list_partition.mjs";
 import { list_all } from "./list_all.mjs";
 import { add } from "./add.mjs";
@@ -41,12 +42,14 @@ export function app_gs_map_new() {
   map.tiles = list_adder((la) =>
     each_range(y_size, (y) =>
       each_range(x_size, (x) => {
-        let id = list_random_index_weighted(grass);
         let tile = {
           y,
           x,
-          id,
         };
+        let id = list_random_index_weighted(grass);
+        object_merge(tile, {
+          id,
+        });
         la(tile);
       }),
     ),
