@@ -32,7 +32,7 @@ export function app_gs_map_new() {
     y_size,
     x_size,
   };
-  let total = y_size * x_size;
+  let total = inside_count * inside_count;
   let map_overlays_count = ceiling(total / 8);
   let overlays_wall = app_gs_overlays_wall();
   let overlays = list_concat(overlays_wall, range_from(48, 57));
