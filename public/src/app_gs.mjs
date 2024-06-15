@@ -1,4 +1,4 @@
-import { map_new } from "./map_new.mjs";
+import { app_gs_map_new } from "./app_gs_map_new.mjs";
 import { html_data_set } from "./html_data_set.mjs";
 import { html_scroll_center_smooth } from "./html_scroll_center_smooth.mjs";
 import { abs } from "./abs.mjs";
@@ -39,7 +39,7 @@ export function app_gs() {
     margin: 0,
   });
   html_style_background_color(root, "black");
-  let map = map_new();
+  let map = app_gs_map_new();
   let player = {};
   player.y = floor(divide(subtract_1(map.rows), 2));
   player.x = floor(divide(subtract_1(map.columns), 2));
