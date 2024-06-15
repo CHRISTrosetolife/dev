@@ -148,7 +148,7 @@ export async function terminal() {
     log_write(prompt);
     let input = await next();
     let split = string_split_space(input);
-    if (0) {
+    if (10) {
       let tokens = [];
       let current = [];
       let quoted = false;
