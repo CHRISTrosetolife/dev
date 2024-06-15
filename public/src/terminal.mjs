@@ -1,3 +1,4 @@
+import { keyboard_keys } from "./keyboard_keys.mjs";
 import { list_any } from "./list_any.mjs";
 import { log_clear } from "./log_clear.mjs";
 import { string_replace } from "./string_replace.mjs";
@@ -60,6 +61,10 @@ export async function terminal() {
     },
     {
       keys: ["space"],
+      action: () => keyboard_type(" "),
+    },
+    {
+      keys: keyboard_keys(),
       action: () => keyboard_type(" "),
     },
   ];
