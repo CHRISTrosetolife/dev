@@ -15,19 +15,19 @@ export async function terminal() {
   if (process.stdin.isTTY) {
     process.stdin.setRawMode(true);
   }
-  let nexts = [];
+  let on_returns = [];
   let buffer = [];
   process.stdin.on("keypress", function (chunk, key) {
     let { sequence, name, ctrl, meta, shift } = key;
     if (list_all([ctrl, meta, shift], (k) => k === false)) {
       if (name === "return") {
-        each(nexts, (n) => n());
-        list_remove_all(nexts);
+        each(on_returns, (n) => n());
+        list_remove_all(on_returns);
       }
     }
   });
   async function next() {
-    return await new Promise((resolve) => list_add(nexts, resolve));
+    return await new Promise((resolve) => list_add(on_returns, resolve));
   }
   return;
   while (true) {
