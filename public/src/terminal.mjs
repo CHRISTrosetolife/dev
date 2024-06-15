@@ -43,21 +43,29 @@ export async function terminal() {
           log_write(prompt);
         } else {
           if (undefined_is(name)) {
-            log({
-              key,
-            });
+            let s = "_";
+            if (sequence === s) {
+              keyboard_type(s);
+            } else {
+              log({
+                key,
+              });
+            }
           } else {
             if (object_property_exists(replacements, name)) {
               name = object_property_get(replacements, name);
             }
-            let message = chalk.greenBright(name);
-            log_write(message);
-            list_add(buffer, name);
+            keyboard_type(name);
           }
         }
       }
     }
   });
+  function keyboard_type(name) {
+    let message = chalk.greenBright(name);
+    log_write(message);
+    list_add(buffer, name);
+  }
   async function next() {
     return await new Promise((resolve) => list_add(on_returns, resolve));
   }
