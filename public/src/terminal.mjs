@@ -34,12 +34,17 @@ export async function terminal() {
         each(on_returns, (n) => n(result));
         list_remove_all(on_returns);
       } else {
-        if (object_property_exists(replacements, name)) {
-          name = object_property_get(replacements, name);
+        if (name === "backspace") {
+          process.stdout.clearLine();
+          process.stdout.cursorTo(0);
+        } else {
+          if (object_property_exists(replacements, name)) {
+            name = object_property_get(replacements, name);
+          }
+          let message = chalk.greenBright(name);
+          log_write(message);
+          list_add(buffer, name);
         }
-        let message = chalk.greenBright(name);
-        log_write(message);
-        list_add(buffer, name);
       }
     }
   });
