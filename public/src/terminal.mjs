@@ -18,6 +18,7 @@ export async function terminal() {
       chunk,
     });
   });
+  return;
   while (true) {
     continue;
     process.stdout.write(chalk.greenBright(`✝ `));
