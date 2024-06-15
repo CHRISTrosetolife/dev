@@ -32,7 +32,6 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
       current,
       previous,
     });
-    la(current);
     if (current === to) {
       let p = list_adder((la) => {
         let c = current;
