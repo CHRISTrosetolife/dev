@@ -24,7 +24,9 @@ export async function terminal() {
   let commands = [
     {
       keys: ["ctrl", "v"],
-      action: clipboard_paste,
+      action: async () => {
+        await clipboard_paste();
+      },
     },
   ];
   let prompt = chalk.greenBright("✟") + " ";
