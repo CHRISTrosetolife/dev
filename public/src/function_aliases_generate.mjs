@@ -36,7 +36,7 @@ export async function function_aliases_generate() {
   alias_add(function_copy, ["c"]);
   alias_add(data_update, ["d"]);
   alias_add(function_delete, ["de"]);
-  alias_add(exit, ["e"]);
+  alias_add(exit, ["e", "q", "x"]);
   alias_add(firebase_deploy, ["f"]);
   alias_add(npm_install, ["i"]);
   alias_add(npm_install_global, ["ig"]);
