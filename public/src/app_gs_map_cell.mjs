@@ -21,7 +21,7 @@ export function app_gs_map_cell(map, map_c, player_overlay, r, c) {
   game_img_style(clicker, r, c, list_index(z_indexes, "clicker"));
   html_on_click(clicker, async () => {
     app_gs_overlays_at(map, r, c, () => {
-      let id = o;
+      let { id } = o;
       log({
         id,
       });
