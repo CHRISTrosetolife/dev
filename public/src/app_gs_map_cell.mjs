@@ -36,6 +36,8 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
       (a, b) =>
         app_gs_adjacent(a, b) &&
         list_all([a, b], (ab) => !app_gs_overlays_any_wall(map)),
+      from,
+      tile,
     );
     let direction = null;
     if (tile.y === map.player.y) {
