@@ -1,3 +1,4 @@
+import { list_copy } from "./list_copy.mjs";
 import { app_gs_overlays_wall } from "./app_gs_overlays_wall.mjs";
 import { game_img_list_male } from "./game_img_list_male.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
@@ -39,6 +40,7 @@ export function app_gs_map_new() {
       ),
     ),
   );
+  let copy = list_copy(tiles);
   list_shuffle(tiles);
   each_range(map_overlays_count, (i) => {
     let t = list_pop(tiles);
