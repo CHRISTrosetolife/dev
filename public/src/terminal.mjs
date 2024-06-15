@@ -37,12 +37,8 @@ export async function terminal() {
     return await new Promise((resolve) => list_add(on_returns, resolve));
   }
   while (true) {
-    let line = await next();
-    log({
-      line,
-    });
-    continue;
     process.stdout.write(chalk.greenBright(`✝ `));
+    let line = await next();
     let input = readline_sync.question();
     let tokens = string_split_space(input);
     tokens = list_filter(tokens, string_empty_not_is);
