@@ -19,6 +19,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { undefined_is } from "./undefined_is.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
 import { list_includes } from "./list_includes.mjs";
+import { each_async } from "./each_async.mjs";
 export async function terminal() {
   let commands = [
     {
@@ -36,7 +37,7 @@ export async function terminal() {
   let replacements = {
     space: " ",
   };
-  process.stdin.on("keypress", function (chunk, key) {
+  process.stdin.on("keypress", async function (chunk, key) {
     let { sequence, name, ctrl, meta, shift } = key;
     let b = [ctrl, meta, shift];
     if (list_all(b, (k) => k === false)) {
@@ -71,7 +72,7 @@ export async function terminal() {
         }
       }
     } else {
-      list_filter(commands, (c) => {
+      await each_async(commands, async (c) => {
         let { keys } = c;
         let ctrl_c = list_includes(keys, "ctrl");
         let meta_c = list_includes(keys, "meta");
@@ -79,6 +80,7 @@ export async function terminal() {
         if (list_includes(keys, name)) {
           let b_c = [ctrl_c, meta_c, shift_c];
           if (equal_json(b, b_c)) {
+            await c.action();
           }
         }
       });
