@@ -23,7 +23,7 @@ export async function terminal() {
     if (list_all([ctrl, meta, shift], (k) => k === false)) {
       if (name === "return") {
         let result = list_join_empty(buffer);
-        each(on_returns, (n) => n());
+        each(on_returns, (n) => n(result));
         list_remove_all(on_returns);
       }
     }
