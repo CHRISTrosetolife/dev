@@ -1,3 +1,4 @@
+import { list_remove_all } from "./list_remove_all.mjs";
 import { each } from "./each.mjs";
 import { run_tokens } from "./run_tokens.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
@@ -20,7 +21,7 @@ export async function terminal() {
     if (list_all([ctrl, meta, shift], (k) => k === false)) {
       if (name === "return") {
         each(nexts, (n) => n());
-        nexts.length = 0;
+        list_remove_all(nexts);
       }
     }
   });
