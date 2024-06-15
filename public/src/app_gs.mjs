@@ -54,6 +54,8 @@ export function app_gs() {
   let map_overlays = [];
   let map = {
     overlays: map_overlays,
+    rows,
+    columns,
   };
   let total = rows * columns;
   let map_overlays_count = ceiling(total / 8);
