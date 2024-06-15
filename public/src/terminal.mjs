@@ -166,15 +166,15 @@ export async function terminal() {
             list_add(current, s);
           }
         }
-        function token_next() {
-          if (list_empty_is(current)) {
-            return;
-          }
-          let token = list_join_empty(current);
-          current = [];
-          list_add(tokens, current);
-        }
       });
+      function token_next() {
+        if (list_empty_is(current)) {
+          return;
+        }
+        let token = list_join_empty(current);
+        current = [];
+        list_add(tokens, token);
+      }
     }
     split = list_filter(split, string_empty_not_is);
     try {
