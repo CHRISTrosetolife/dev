@@ -46,8 +46,9 @@ export function app_gs() {
   let tiles_min = game_tiles_min();
   let rows = number_max(20, tiles_min * 2);
   let columns = rows;
+  let map_overlays = [];
   let map = {
-    overlays: [],
+    overlays: map_overlays,
   };
   let player = {};
   player.y = floor(divide(subtract_1(rows), 2));
