@@ -85,14 +85,6 @@ export async function terminal() {
     let b = [ctrl, meta, shift];
     if (list_all(b, (k) => k === false)) {
       if (undefined_is(name)) {
-        let s = "_";
-        if (sequence === s) {
-          keyboard_type(s);
-        } else {
-          log({
-            key,
-          });
-        }
       } else {
         keyboard_type(name);
       }
