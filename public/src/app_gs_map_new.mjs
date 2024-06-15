@@ -61,7 +61,7 @@ export function app_gs_map_new() {
     list_add(map_overlays, o);
   });
   map.player = {};
-  map.player.y = floor(divide(subtract_1(map.rows), 2));
+  map.player.y = floor(divide(subtract_1(map.y_size), 2));
   map.player.x = floor(divide(subtract_1(map.columns), 2));
   map.player.walk_offset = 0;
   map.player.walk_previous = 1;
