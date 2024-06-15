@@ -91,7 +91,7 @@ export function app_gs_map_new() {
       ],
       (a) =>
         border_thickness <= object_property_get(t, a.xy) &&
-        object_property_get(t, a.xy) <= a.size - border_thickness,
+        object_property_get(t, a.xy) < a.size - border_thickness,
     );
   }
 }
