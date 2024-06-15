@@ -47,7 +47,7 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
     }
     let neighbors = graph_neighbors(edges, current);
     let neighbors_new = list_filter(neighbors, (n) =>
-      object_property_exists_not(list_index(vertices, n)),
+      object_property_exists_not(visited, list_index(vertices, n)),
     );
     list_add_multiple(remaining, neighbors_new);
     previous = current;
