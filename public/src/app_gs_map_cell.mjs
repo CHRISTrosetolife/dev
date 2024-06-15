@@ -1,4 +1,4 @@
-import { app_gs_at_first } from "./app_gs_at_first.mjs";
+import { app_gs_at_single } from "./app_gs_at_single.mjs";
 import { graph_path_shortest } from "./graph_path_shortest.mjs";
 import { list_all } from "./list_all.mjs";
 import { app_gs_overlays_any_wall } from "./app_gs_overlays_any_wall.mjs";
@@ -30,7 +30,7 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
       log("wall");
       return;
     }
-    let from = app_gs_at_first(map.tiles, map.player);
+    let from = app_gs_at_single(map.tiles, map.player);
     graph_path_shortest(
       map.tiles,
       (a, b) =>
