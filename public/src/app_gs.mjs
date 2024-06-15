@@ -115,6 +115,12 @@ export function app_gs() {
       let clicker = html_div(map_c);
       each(map_overlays, (o) => {
         let { id, x, y } = o;
+        if (x !== c) {
+          return;
+        }
+        if (y !== r) {
+          return;
+        }
         html_data_set(clicker, "overlay", id);
         game_img(
           map_c,
