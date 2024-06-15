@@ -145,13 +145,13 @@ export async function terminal() {
   while (true) {
     log_write(prompt);
     let input = await next();
-    let tokens = string_split_space(input);
+    let split = string_split_space(input);
     if (0) {
-      tokens = [];
+      split = [];
     }
-    tokens = list_filter(tokens, string_empty_not_is);
+    split = list_filter(split, string_empty_not_is);
     try {
-      let result = await run_tokens(tokens);
+      let result = await run_tokens(split);
       if (undefined_not_is(result)) {
         log(result);
       }
