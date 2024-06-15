@@ -27,6 +27,7 @@ export async function terminal() {
         each(on_returns, (n) => n(result));
         list_remove_all(on_returns);
       } else {
+        process.stdout.write(chalk.greenBright(name));
         list_add(buffer, name);
       }
     }
