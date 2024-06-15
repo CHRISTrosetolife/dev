@@ -30,7 +30,7 @@ export function app_gs_map_new() {
   let map_overlays_count = ceiling(total / 8);
   let overlays_wall = app_gs_overlays_wall();
   let overlays = list_concat(overlays_wall, range_from(48, 57));
-  let tiles = list_adder((la) =>
+  map.tiles = list_adder((la) =>
     each_range(rows, (y) =>
       each_range(columns, (x) =>
         la({
@@ -40,7 +40,7 @@ export function app_gs_map_new() {
       ),
     ),
   );
-  let copy = list_copy(tiles);
+  let copy = list_copy(map.tiles);
   list_shuffle(copy);
   each_range(map_overlays_count, (i) => {
     let t = list_pop(copy);
