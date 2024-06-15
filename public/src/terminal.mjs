@@ -36,6 +36,9 @@ export async function terminal() {
   }
   while (true) {
     let line = await next();
+    log({
+      line,
+    });
     continue;
     process.stdout.write(chalk.greenBright(`✝ `));
     let input = readline_sync.question();
