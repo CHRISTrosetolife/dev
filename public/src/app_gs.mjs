@@ -1,11 +1,7 @@
+import { app_gs_overlay_player } from "./app_gs_overlay_player.mjs";
 import { app_gs_map_onclick } from "./app_gs_map_onclick.mjs";
-import { app_gs_z_indexes } from "./app_gs_z_indexes.mjs";
-import { game_character_index } from "./game_character_index.mjs";
 import { app_gs_map_new } from "./app_gs_map_new.mjs";
 import { html_scroll_center_smooth } from "./html_scroll_center_smooth.mjs";
-import { list_index } from "./list_index.mjs";
-import { game_img } from "./game_img.mjs";
-import { game_img_character } from "./game_img_character.mjs";
 import { game_tile_units_css } from "./game_tile_units_css.mjs";
 import { html_style_height } from "./html_style_height.mjs";
 import { html_style_width } from "./html_style_width.mjs";
@@ -29,14 +25,7 @@ export function app_gs() {
     position: "relative",
     display: "inline",
   });
-  let z_indexes = app_gs_z_indexes();
-  let player_overlay = game_img(
-    map_c,
-    game_img_character(map.player.character, game_character_index("down")),
-    map.player.y,
-    map.player.x,
-    list_index(z_indexes, "player"),
-  );
+  let player_overlay = app_gs_overlay_player(map_c, map);
   each_range(map.rows, (r) => {
     html_style_height(map_c, game_tile_units_css(1));
     each_range(map.columns, (c) =>
