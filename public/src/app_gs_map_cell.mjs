@@ -1,3 +1,6 @@
+import { graph_path_shortest } from "./graph_path_shortest.mjs";
+import { app_gs_at_generic } from "./app_gs_at_generic.mjs";
+import { list_adder } from "./list_adder.mjs";
 import { list_all } from "./list_all.mjs";
 import { app_gs_overlays_any_wall } from "./app_gs_overlays_any_wall.mjs";
 import { app_gs_adjacent } from "./app_gs_adjacent.mjs";
@@ -28,6 +31,7 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
       log("wall");
       return;
     }
+    list_adder((la) => app_gs_at_generic(map.tiles, map.player, la));
     graph_path_shortest(
       map.tiles,
       (a, b) =>
