@@ -9,6 +9,6 @@ export function app_gs_overlays_at(map, r, c, lambda_overlay) {
     if (y !== r) {
       return;
     }
-    lambda_overlay(id);
+    lambda_overlay(o);
   });
 }
