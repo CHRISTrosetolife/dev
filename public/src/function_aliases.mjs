@@ -5,6 +5,7 @@ export function function_aliases() {
     c: "function_copy",
     d: "data_update",
     de: "function_delete",
+    e: "exit",
     f: "firebase_deploy",
     i: "npm_install",
     ig: "npm_install_global",
