@@ -4,6 +4,7 @@ export function terminal() {
   let rl = readline.createInterface({
     input: process.stdin,
   });
+  return;
   rl.question(`What's your name?`, (name) => {
     log(`Hi ${name}!`);
     rl.close();
