@@ -45,8 +45,6 @@ export async function terminal() {
       keys: ["backspace"],
       action: () => {
         buffer_clear();
-        process.stdout.clearLine();
-        process.stdout.cursorTo(0);
         log_clear();
         log_write(prompt_get());
       },
