@@ -49,7 +49,7 @@ export function app_gs_map_new() {
       }),
     ),
   );
-  list_adder_multiple(2, (la) => {
+  let [inside, outside] = list_adder_multiple(2, (la) => {
     each(map.tiles, (t) => {
       if (
         list_all(
