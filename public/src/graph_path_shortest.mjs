@@ -21,6 +21,9 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
       }),
     ),
   );
+  log({
+    edges,
+  });
   return list_adder((la) => {
     let remaining = [from];
     let visited = [];
@@ -33,12 +36,6 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
       let neighbors = graph_neighbors(edges, current);
       let neighbors_new = list_difference(neighbors, visited);
       list_add_multiple(remaining, neighbors_new);
-      log({
-        edges,
-        remaining,
-        neighbors,
-        neighbors_new,
-      });
     }
   });
 }
