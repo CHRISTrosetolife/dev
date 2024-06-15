@@ -36,6 +36,7 @@ export async function terminal() {
         list_remove_all(on_returns);
       } else {
         if (name === "backspace") {
+          log_write(prompt);
           process.stdout.clearLine();
           process.stdout.cursorTo(0);
         } else {
@@ -54,7 +55,7 @@ export async function terminal() {
   }
   console.clear();
   while (true) {
-    log_write();
+    log_write(prompt);
     let input = await next();
     let tokens = string_split_space(input);
     tokens = list_filter(tokens, string_empty_not_is);
