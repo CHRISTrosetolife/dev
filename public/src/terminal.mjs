@@ -25,7 +25,7 @@ export async function terminal() {
     {
       keys: ["ctrl", "v"],
       action: async () => {
-        await clipboard_paste();
+        let value = await clipboard_paste();
       },
     },
   ];
