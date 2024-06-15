@@ -31,7 +31,7 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
       log("wall");
       return;
     }
-    list_adder((la) => app_gs_at_generic(map.tiles, map.player, la));
+    let t = list_adder((la) => app_gs_at_generic(map.tiles, map.player, la));
     graph_path_shortest(
       map.tiles,
       (a, b) =>
