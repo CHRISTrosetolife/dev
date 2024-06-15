@@ -20,6 +20,7 @@ export async function terminal() {
     if (list_all([ctrl, meta, shift], (k) => k === false)) {
       if (name === "return") {
         each(nexts, (n) => n());
+        nexts.length = 0;
       }
     }
   });
