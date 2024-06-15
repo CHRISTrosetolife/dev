@@ -36,7 +36,9 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
           ["x", "y"],
           ["y", "x"],
         ],
-        (both) => abs(a[i] - b[i]) == 1 && a[j] - b[j] === 0,
+        (both) => {
+          abs(a[i] - b[i]) == 1 && a[j] - b[j] === 0;
+        },
       ),
     );
     let direction = null;
