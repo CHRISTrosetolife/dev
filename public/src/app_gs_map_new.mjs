@@ -27,7 +27,7 @@ export function app_gs_map_new() {
   let map = {
     overlays: map_overlays,
     y_size,
-    columns: x_size,
+    x_size,
   };
   let total = y_size * x_size;
   let map_overlays_count = ceiling(total / 8);
@@ -62,7 +62,7 @@ export function app_gs_map_new() {
   });
   map.player = {};
   map.player.y = floor(divide(subtract_1(map.y_size), 2));
-  map.player.x = floor(divide(subtract_1(map.columns), 2));
+  map.player.x = floor(divide(subtract_1(map.x_size), 2));
   map.player.walk_offset = 0;
   map.player.walk_previous = 1;
   map.player.character = list_random_item(game_img_list_male());
