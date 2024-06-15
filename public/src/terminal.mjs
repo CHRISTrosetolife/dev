@@ -59,6 +59,10 @@ export async function terminal() {
         list_remove_all(on_returns_get());
       },
     },
+    {
+      keys: ["space"],
+      action: () => keyboard_type(" "),
+    },
   ];
   let prompt = chalk.greenBright("✟") + " ";
   function prompt_get() {
