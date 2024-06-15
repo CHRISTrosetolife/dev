@@ -22,6 +22,7 @@ export async function terminal() {
     let { sequence, name, ctrl, meta, shift } = key;
     if (list_all([ctrl, meta, shift], (k) => k === false)) {
       if (name === "return") {
+        console.log();
         let result = list_join_empty(buffer);
         buffer = [];
         each(on_returns, (n) => n(result));
