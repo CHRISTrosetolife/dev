@@ -13,6 +13,6 @@ export function app_gs() {
   let tiles = list_map(map.tiles, async (tile) => {
     await app_gs_map_cell(map, map_c, player_overlay, tile);
   });
-  promises_all;
+  promises_all(tiles);
   html_scroll_center_smooth(player_overlay);
 }
