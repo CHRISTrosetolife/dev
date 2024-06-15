@@ -12,12 +12,12 @@ import { abs } from "./abs.mjs";
 import { game_character_index } from "./game_character_index.mjs";
 import { game_img_character } from "./game_img_character.mjs";
 import { html_img_src_wait } from "./html_img_src_wait.mjs";
-export async function app_gs_walk(player_overlay, player, direction, r, c) {
+export async function app_gs_walk(player_overlay, player, direction, tile) {
   await html_img_src_wait(
     player_overlay,
     game_img_character(player.character, game_character_index(direction)),
   );
-  let steps_count = abs(player.y - r) + abs(player.x - c);
+  let steps_count = abs(player.y - tile.y) + abs(player.x - tile.x);
   await each_range_async(steps_count, async () => {
     let animate_count = 2;
     let sleep_time = app_gs_sleep_time();
