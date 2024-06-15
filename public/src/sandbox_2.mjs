@@ -6,7 +6,7 @@ export async function sandbox_2() {
       y: 0,
     },
     {
-      x: 3,
+      x: 2,
       y: 0,
     },
   );
