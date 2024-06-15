@@ -1,3 +1,4 @@
+import { list_last } from "./list_last.mjs";
 import { keyboard_keys } from "./keyboard_keys.mjs";
 import { list_any } from "./list_any.mjs";
 import { log_clear } from "./log_clear.mjs";
@@ -59,6 +60,10 @@ export async function terminal() {
       },
     },
     {
+      keys: ["up"],
+      action: () => keyboard_type(list_last(history_add)),
+    },
+    {
       keys: ["space"],
       action: () => keyboard_type(" "),
     },
@@ -82,6 +87,9 @@ export async function terminal() {
   let history = [];
   function history_add(item) {
     list_add(history, item);
+  }
+  function history_get() {
+    return history;
   }
   let buffer;
   buffer_clear();
