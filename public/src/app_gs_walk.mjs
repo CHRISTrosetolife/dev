@@ -24,9 +24,11 @@ export async function app_gs_walk(player_overlay, player, tile) {
   let steps_count = abs(player.y - tile.y) + abs(player.x - tile.x);
   await each_range_async(steps_count, async () => {
     let animate_count = 2;
-    let sleep_time = app_gs_sleep_time();
-    await step(1);
-    await sleep(sleep_time);
+    await each_range_async(animate_count, async (ac) => {
+      let sleep_time = app_gs_sleep_time();
+      await step(1);
+      await sleep(sleep_time);
+    });
     await step(2);
     await sleep(sleep_time);
     let delta = game_direction_to_delta(direction);
