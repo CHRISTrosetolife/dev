@@ -52,7 +52,7 @@ export function app_gs() {
     overlays: map_overlays,
   };
   let total = rows * columns;
-  ceiling(total);
+  ceiling(total / 8);
   let player = {};
   player.y = floor(divide(subtract_1(rows), 2));
   player.x = floor(divide(subtract_1(columns), 2));
