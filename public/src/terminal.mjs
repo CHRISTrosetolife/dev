@@ -36,7 +36,7 @@ export async function terminal() {
         if (object_property_exists(replacements, name)) {
           name = object_property_get(replacements, name);
         }
-        process.stdout.write(chalk.green(name));
+        process.stdout.write(chalk.bgGreenBright(name));
         list_add(buffer, name);
       }
     }
@@ -46,7 +46,7 @@ export async function terminal() {
   }
   console.clear();
   while (true) {
-    process.stdout.write(chalk.greenBright(`✟ `));
+    process.stdout.write(chalk.bgGreenBright(chalk.redBright("✟")));
     let input = await next();
     let tokens = string_split_space(input);
     tokens = list_filter(tokens, string_empty_not_is);
