@@ -8,6 +8,7 @@ import { each_index } from "./each_index.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { list_index } from "./list_index.mjs";
+import { object_property_get } from "./object_property_get.mjs";
 export function graph_path_shortest(vertices, edge_lambda, from, to) {
   assert_arguments_length(arguments, 4);
   let edges = list_adder((la) =>
@@ -36,6 +37,7 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
       let result = [];
       let c = current;
       let i = list_index(vertices, c);
+      let v = object_property_get(visited, i);
       break;
     }
     let neighbors = graph_neighbors(edges, current);
