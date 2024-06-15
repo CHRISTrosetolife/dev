@@ -9,7 +9,7 @@ import chalk from "chalk";
 import { list_filter } from "./list_filter.mjs";
 export async function terminal() {
   while (true) {
-    let input = readline_sync.question(`> `);
+    let input = readline_sync.question(chalk.blue(`> `));
     let tokens = string_split_space(input);
     tokens = list_filter(tokens, string_empty_not_is);
     let result = await run_tokens(tokens);
