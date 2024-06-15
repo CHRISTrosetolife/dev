@@ -15,4 +15,5 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
       }),
     ),
   );
+  let current = from;
 }
