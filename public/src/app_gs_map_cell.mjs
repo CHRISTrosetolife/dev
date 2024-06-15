@@ -59,5 +59,5 @@ export async function app_gs_map_cell(map, map_c, player_overlay, tile) {
     });
     html_scroll_center_smooth(player_overlay);
   });
-  await html_img_wait(img);
+  await html_img_wait(tile_c);
 }
