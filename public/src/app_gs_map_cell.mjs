@@ -39,6 +39,9 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
       from,
       tile,
     );
+    log({
+      p,
+    });
     let direction = null;
     if (tile.y === map.player.y) {
       if (tile.x > map.player.x) {
