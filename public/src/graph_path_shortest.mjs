@@ -43,7 +43,7 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
           c = v.previous;
         }
       });
-      break;
+      return p;
     }
     let neighbors = graph_neighbors(edges, current);
     let neighbors_new = list_difference(neighbors, visited);
