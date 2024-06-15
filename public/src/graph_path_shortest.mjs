@@ -28,16 +28,16 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
       let current = list_remove_first(remaining);
       la(current);
       if (current === to) {
-        log({
-          from,
-          current,
-          to,
-        });
         break;
       }
       let neighbors = graph_neighbors(edges, current);
       let neighbors_new = list_difference(neighbors, visited);
       list_add_multiple(remaining, neighbors_new);
+      log({
+        remaining,
+        neighbors,
+        neighbors_new,
+      });
     }
   });
 }
