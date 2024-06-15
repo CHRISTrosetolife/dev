@@ -9,13 +9,13 @@ export function app_gs_adjacent(a, b) {
     ],
     (both) => {
       let [i, j] = both;
-      let d1 = a[i] - b[i];
-      let d2 = a[j] - b[j];
+      let d1 = abs(a[i] - b[i]);
+      let d2 = abs(a[j] - b[j]);
       log({
         d1,
         d2,
       });
-      abs(d1) === 1 && abs(d2) === 0;
+      d1 === 1 && d2 === 0;
     },
   );
 }
