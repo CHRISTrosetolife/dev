@@ -9,7 +9,8 @@ export function app_gs_adjacent(a, b) {
     (both) => {
       let [i, j] = both;
       let d1 = a[i] - b[i];
-      abs(d1) === 1 && abs(a[j] - b[j]) === 0;
+      let d2 = a[j] - b[j];
+      abs(d1) === 1 && abs(d2) === 0;
     },
   );
 }
