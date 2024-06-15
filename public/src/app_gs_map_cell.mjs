@@ -1,4 +1,4 @@
-import { each } from "./each.mjs";
+import { each_async } from "./each_async.mjs";
 import { list_all } from "./list_all.mjs";
 import { app_gs_at_single } from "./app_gs_at_single.mjs";
 import { graph_path_shortest } from "./graph_path_shortest.mjs";
@@ -43,7 +43,7 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
       from,
       tile,
     );
-    each(list_skip(p, 1), async (tile) => {
+    await each_async(list_skip(p, 1), async (tile) => {
       await app_gs_walk(player_overlay, map.player, tile);
     });
   });
