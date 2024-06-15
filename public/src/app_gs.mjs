@@ -117,7 +117,7 @@ export function app_gs() {
         if (direction !== null) {
           let img_url = game_img_character(
             player.character,
-            object_property_get(character_indices, direction),
+            game_character_index(direction),
           );
           await html_img_src_wait(player_overlay, img_url);
           let steps_count = abs(player.y - r) + abs(player.x - c);
