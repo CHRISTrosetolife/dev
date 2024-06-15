@@ -102,6 +102,7 @@ export function app_gs() {
       ),
     ),
   );
+  list_shuffle(tiles);
   each(map_overlays, (o) => {
     let { id } = o;
     html_data_set(clicker, "overlay", id);
