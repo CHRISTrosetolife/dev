@@ -18,6 +18,9 @@ export async function terminal() {
   }
   let on_returns = [];
   let buffer = [];
+  let replacements = {
+    space: " ",
+  };
   process.stdin.on("keypress", function (chunk, key) {
     let { sequence, name, ctrl, meta, shift } = key;
     if (list_all([ctrl, meta, shift], (k) => k === false)) {
