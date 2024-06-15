@@ -9,6 +9,7 @@ import readline from "readline";
 import chalk from "chalk";
 import { list_filter } from "./list_filter.mjs";
 import { list_all } from "./list_all.mjs";
+import { list_add } from "./list_add.mjs";
 export async function terminal() {
   readline.emitKeypressEvents(process.stdin);
   if (process.stdin.isTTY) {
@@ -26,7 +27,7 @@ export async function terminal() {
     }
   });
   async function next() {
-    return await new Promise((resolve) => {});
+    return await new Promise((resolve) => list_add(nexts, resolve));
   }
   return;
   while (true) {
