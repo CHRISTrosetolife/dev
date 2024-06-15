@@ -49,6 +49,10 @@ export async function terminal() {
         log_write(prompt_get());
       },
     },
+    {
+      keys: ["return"],
+      action: () => {},
+    },
   ];
   let prompt = chalk.greenBright("✟") + " ";
   function prompt_get() {
