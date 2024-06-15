@@ -30,9 +30,14 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
       log("wall");
       return;
     }
-    graph_path_shortest(
-      map.tiles,
-      (a, b) => abs(a.y - b.y) == 1 && a.y - b.y === 0,
+    graph_path_shortest(map.tiles, (a, b) =>
+      list_any(
+        [
+          ["x", "y"],
+          ["y", "x"],
+        ],
+        (both) => abs(a[i] - b[i]) == 1 && a[j] - b[j] === 0,
+      ),
     );
     let direction = null;
     if (tile.y === map.player.y) {
