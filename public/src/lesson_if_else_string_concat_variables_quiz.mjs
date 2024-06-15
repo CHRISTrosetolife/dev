@@ -1,3 +1,4 @@
+import { list_shuffle } from "./list_shuffle.mjs";
 import { list_last } from "./list_last.mjs";
 import { string_delimit } from "./string_delimit.mjs";
 import { list_map } from "./list_map.mjs";
@@ -8,7 +9,6 @@ import { identity } from "./identity.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { app_learn_code_random_identifiers } from "./app_learn_code_random_identifiers.mjs";
 import { list_take } from "./list_take.mjs";
-import { list_scramble } from "./list_scramble.mjs";
 import { add_1 } from "./add_1.mjs";
 import { js_code_statement_let_assign_multiple } from "./js_code_statement_let_assign_multiple.mjs";
 export function lesson_if_else_string_concat_variables_quiz(variable_count) {
@@ -21,7 +21,7 @@ export function lesson_if_else_string_concat_variables_quiz(variable_count) {
   for (let name of names) {
     list_add(parts, name);
   }
-  list_scramble(parts);
+  list_shuffle(parts);
   let lines = [];
   list_add(lines, js_code_statement_let_assign_multiple(names, mapped_taken));
   list_add(lines, app_learn_code_log_join_plus(parts));

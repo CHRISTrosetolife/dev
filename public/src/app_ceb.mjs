@@ -1,3 +1,4 @@
+import { list_shuffle } from "./list_shuffle.mjs";
 import { list_size } from "./list_size.mjs";
 import { html_cycle_p } from "./html_cycle_p.mjs";
 import { html_button_width_full_text_click_alternate } from "./html_button_width_full_text_click_alternate.mjs";
@@ -63,7 +64,6 @@ import { string_chunk } from "./string_chunk.mjs";
 import { app_ceb_word_button } from "./app_ceb_word_button.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { html_buttons_next_previous } from "./html_buttons_next_previous.mjs";
-import { list_scramble } from "./list_scramble.mjs";
 import { http_storage } from "./http_storage.mjs";
 import { ceb_group_path } from "./ceb_group_path.mjs";
 import { list_first } from "./list_first.mjs";
@@ -312,7 +312,7 @@ export async function app_ceb() {
     let other_choices = string_chunk(answer_other, chunk_size);
     let choices = list_copy(correct_choices);
     list_add_multiple(choices, other_choices);
-    list_scramble(choices);
+    list_shuffle(choices);
     choices = list_map(choices, string_case_lower);
     let buttons = list_adder((la) => {
       each(choices, (choice) => {

@@ -1,4 +1,4 @@
-import { app_learn_code_unscramble } from "./app_learn_code_unscramble.mjs";
+import { app_learn_code_unshuffle } from "./app_learn_code_unshuffle.mjs";
 import { app_learn_code_quiz } from "./app_learn_code_quiz.mjs";
 import { lesson_log_number_example } from "./lesson_log_number_example.mjs";
 import { list_add } from "./list_add.mjs";
@@ -23,7 +23,7 @@ export function lesson_simple(
     lesson_log_number_example(source_get, example_message, example_before),
   );
   list_add(v2, app_learn_code_quiz(source_get));
-  list_add(v2, app_learn_code_unscramble(source_get));
+  list_add(v2, app_learn_code_unshuffle(source_get));
   object_property_set(v1, "screens", v2);
   object_property_set(v1, "quiz", source_get);
   return v1;

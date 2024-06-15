@@ -1,9 +1,9 @@
+import { list_shuffle } from "./list_shuffle.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { html_div } from "./html_div.mjs";
 import { app_learn_code_quiz_inner_refresh } from "./app_learn_code_quiz_inner_refresh.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_map } from "./list_map.mjs";
-import { list_scramble } from "./list_scramble.mjs";
 import { list_pop } from "./list_pop.mjs";
 import { noop } from "./noop.mjs";
 import { html_p_text } from "./html_p_text.mjs";
@@ -29,7 +29,7 @@ export function app_learn_code_review(lessons) {
         quiz_next();
         function initialize() {
           wrongs = [];
-          list_scramble(quizzes);
+          list_shuffle(quizzes);
         }
         function quiz_next() {
           let quiz = list_pop(quizzes);

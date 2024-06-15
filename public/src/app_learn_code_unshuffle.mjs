@@ -51,7 +51,7 @@ import { identity } from "./identity.mjs";
 import { list_skip } from "./list_skip.mjs";
 import { list_includes_not } from "./list_includes_not.mjs";
 import { list_sort } from "./list_sort.mjs";
-export function app_learn_code_unscramble(source_get) {
+export function app_learn_code_unshuffle(source_get) {
   return function app_learn_code_unscramble_inner(parent) {
     let previous;
     let div = html_div(parent);

@@ -1,4 +1,4 @@
-import { list_scramble } from "./list_scramble.mjs";
+import { list_shuffle } from "./list_shuffle.mjs";
 import { html_cycle_list } from "./html_cycle_list.mjs";
 import { html_style_code } from "./html_style_code.mjs";
 import { lesson_simple } from "./lesson_simple.mjs";
@@ -44,7 +44,7 @@ export function lesson_boolean() {
   function source_get() {
     let answers = [true, false];
     list_add(answers, random_50_50());
-    list_scramble(answers);
+    list_shuffle(answers);
     let mapped = list_map(answers, (a) => `console.log(${a});`);
     return list_join(mapped, "\n");
   }

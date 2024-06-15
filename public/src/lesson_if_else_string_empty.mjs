@@ -1,3 +1,4 @@
+import { list_shuffle } from "./list_shuffle.mjs";
 import { html_cycle_code } from "./html_cycle_code.mjs";
 import { html_cycle_bold } from "./html_cycle_bold.mjs";
 import { app_learn_code_log_join_plus } from "./app_learn_code_log_join_plus.mjs";
@@ -7,7 +8,6 @@ import { html_p_text } from "./html_p_text.mjs";
 import { string_delimit } from "./string_delimit.mjs";
 import { lesson_console_log_quiz_words } from "./lesson_console_log_quiz_words.mjs";
 import { list_random_item } from "./list_random_item.mjs";
-import { list_scramble } from "./list_scramble.mjs";
 import { list_map } from "./list_map.mjs";
 export function lesson_if_else_string_empty() {
   let description = "empty string ( `''` ) concatenation";
@@ -18,7 +18,7 @@ export function lesson_if_else_string_empty() {
       let word = list_random_item(words);
       let items = [word, ""];
       let mapped = list_map(items, string_delimit);
-      list_scramble(mapped);
+      list_shuffle(mapped);
       return app_learn_code_log_join_plus(mapped);
     },
     example_before,

@@ -1,5 +1,5 @@
+import { app_learn_code_unshuffle } from "./app_learn_code_unshuffle.mjs";
 import { lesson_console_log_hierarchies } from "./lesson_console_log_hierarchies.mjs";
-import { app_learn_code_unscramble } from "./app_learn_code_unscramble.mjs";
 import { app_learn_code_quiz } from "./app_learn_code_quiz.mjs";
 import { lesson_console_log_quiz } from "./lesson_console_log_quiz.mjs";
 import { lesson_console_log_javascript } from "./lesson_console_log_javascript.mjs";
@@ -28,7 +28,7 @@ export function lesson_console_log() {
   list_add(v2, lesson_console_log_process_computer_program);
   list_add(v2, lesson_console_log_program_first);
   list_add(v2, app_learn_code_quiz(lesson_console_log_quiz));
-  list_add(v2, app_learn_code_unscramble(lesson_console_log_quiz));
+  list_add(v2, app_learn_code_unshuffle(lesson_console_log_quiz));
   object_property_set(v1, "screens", v2);
   object_property_set(v1, "quiz", lesson_console_log_quiz);
   return v1;
