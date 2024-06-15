@@ -34,13 +34,14 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
     });
     la(current);
     if (current === to) {
-      let result = [];
-      let c = current;
-      while (c !== null) {
-        let i = list_index(vertices, c);
-        let v = object_property_get(visited, i);
-        c = v.previous;
-      }
+      let p = list_adder((la) => {
+        let c = current;
+        while (c !== null) {
+          let i = list_index(vertices, c);
+          let v = object_property_get(visited, i);
+          c = v.previous;
+        }
+      });
       break;
     }
     let neighbors = graph_neighbors(edges, current);
