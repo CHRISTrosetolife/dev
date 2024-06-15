@@ -49,7 +49,10 @@ export function app_gs_map_new() {
     ),
   );
   list_adder_multiple(2, (la) => {
-    each(map.tiles, (t) => {});
+    each(map.tiles, (t) => {
+      if (border_thickness <= t.x && t.x <= x_size - border_thickness) {
+      }
+    });
   });
   let copy = list_filter(
     map.tiles,
