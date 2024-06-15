@@ -1,8 +1,8 @@
 export async function sandbox_2() {
   return Object.hasOwn(
     {
-      a: 1,
+      2: 1,
     },
-    "a",
+    2,
   );
 }
