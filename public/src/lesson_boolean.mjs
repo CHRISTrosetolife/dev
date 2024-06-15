@@ -44,7 +44,7 @@ export function lesson_boolean() {
   function source_get() {
     let answers = [true, false];
     list_add(answers, random_50_50());
-    list_scramble(answers);
+    list_scramble(answers);//
     let mapped = list_map(answers, (a) => `console.log(${a});`);
     return list_join(mapped, "\n");
   }
