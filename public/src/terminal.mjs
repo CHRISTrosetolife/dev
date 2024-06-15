@@ -152,12 +152,8 @@ export async function terminal() {
       if (s === "'") {
         quoted = not(quoted);
       } else {
-        if (s === " ") {
-          if (quoted) {
-            list_add(current, s);
-          } else {
-            token_next();
-          }
+        if (s === " " && !quoted) {
+          token_next();
         } else {
           list_add(current, s);
         }
