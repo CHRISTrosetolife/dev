@@ -1,3 +1,4 @@
+import { abs } from "./abs.mjs";
 import { sleep } from "./sleep.mjs";
 import { promise_all } from "./promise_all.mjs";
 import { app_gs_map_cell } from "./app_gs_map_cell.mjs";
@@ -13,6 +14,7 @@ export async function app_gs() {
   let map_c = app_gs_map_html(root, map);
   let player_overlay = app_gs_overlay_player(map_c, map);
   let tiles = list_map(map.tiles, async (tile) => {
+    let distance = abs(tile.x - map.player.x) + abs(tile.y + map.player.y);
     await app_gs_map_cell(map, map_c, player_overlay, tile);
   });
   await promise_all(tiles);
