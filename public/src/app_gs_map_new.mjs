@@ -68,6 +68,7 @@ export function app_gs_map_new() {
             object_property_get(t, a.xy) <= a.size - border_thickness,
         )
       ) {
+        la(0, t);
       }
     });
   });
