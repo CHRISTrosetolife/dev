@@ -37,7 +37,7 @@ export async function terminal() {
     return await new Promise((resolve) => list_add(on_returns, resolve));
   }
   while (true) {
-    process.stdout.write(chalk.greenBright(`✝ `));
+    process.stdout.write(chalk.greenBright(`♱ ✟ ♱ `));
     let input = await next();
     let tokens = string_split_space(input);
     tokens = list_filter(tokens, string_empty_not_is);
