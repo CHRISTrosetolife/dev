@@ -24,7 +24,6 @@ import { undefined_not_is } from "./undefined_not_is.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { each_async } from "./each_async.mjs";
 export async function terminal() {
-  let buffer = [];
   let commands = [
     {
       keys: ["ctrl", "v"],
@@ -44,7 +43,7 @@ export async function terminal() {
     {
       keys: ["backspace"],
       action: () => {
-        let buffer = [];
+        buffer_clear();
         process.stdout.clearLine();
         process.stdout.cursorTo(0);
         log_write(prompt);
@@ -57,6 +56,10 @@ export async function terminal() {
     process.stdin.setRawMode(true);
   }
   let on_returns = [];
+  let buffer;
+  function buffer_clear() {
+    buffer = [];
+  }
   let replacements = {
     space: " ",
   };
