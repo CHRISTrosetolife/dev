@@ -25,7 +25,7 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
   game_img_style(clicker, tile.y, tile.x, list_index(z_indexes, "clicker"));
   html_on_click(clicker, async () => {
     let os = app_gs_overlays_at_list(map, tile);
-      const w = list_any(os, app_gs_overlay_wall_is);
+    let w = list_any(os, app_gs_overlay_wall_is);
     if (w) {
       log("wall");
       return;
