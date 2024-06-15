@@ -10,6 +10,15 @@ import { list_filter } from "./list_filter.mjs";
 export async function terminal() {
   console.clear();
   while (true) {
+    process.openStdin().on("keypress", function (chunk, key) {
+      if (key && key.name === "c" && key.ctrl) {
+        log({
+          key,
+          chunk,
+        });
+      }
+    });
+    continue;
     process.stdout.write(chalk.greenBright(`✝ `));
     let input = readline_sync.question();
     let tokens = string_split_space(input);
