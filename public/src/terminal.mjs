@@ -23,6 +23,7 @@ export async function terminal() {
   });
   return;
   while (true) {
+    await next();
     continue;
     process.stdout.write(chalk.greenBright(`✝ `));
     let input = readline_sync.question();
