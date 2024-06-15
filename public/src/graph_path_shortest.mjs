@@ -20,7 +20,9 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
     ),
   );
   let remaining = [from];
-  while (list_empty_not_is(remaining)) {}
+  while (list_empty_not_is(remaining)) {
+    let current = from;
+  }
   let visited = [];
   let neighbors = graph_neighbors(edges, current);
   let neighbors_new = list_difference(neighbors, visited);
