@@ -12,13 +12,13 @@ export async function terminal() {
   if (process.stdin.isTTY) {
     process.stdin.setRawMode(true);
   }
-  while (true) {
-    process.stdin.on("keypress", function (chunk, key) {
-      log({
-        key,
-        chunk,
-      });
+  process.stdin.on("keypress", function (chunk, key) {
+    log({
+      key,
+      chunk,
     });
+  });
+  while (true) {
     continue;
     process.stdout.write(chalk.greenBright(`✝ `));
     let input = readline_sync.question();
