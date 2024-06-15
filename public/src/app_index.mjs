@@ -12,9 +12,13 @@ export function app_index() {
       window_open("dev.html");
     },
   );
-  html_button_width_full_text_click(root, "learn code javascript", () => {
-    window_open("learn_code.html");
-  });
+  html_button_width_full_text_click(
+    root,
+    "learn to code ( javascript )",
+    () => {
+      window_open("learn_code.html");
+    },
+  );
   html_button_width_full_text_click(root, "learn language cebuano", () => {
     window_open("ceb.html");
   });
