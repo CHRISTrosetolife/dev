@@ -70,7 +70,7 @@ export async function terminal() {
       }
     } else {
       list_filter(commands, (c) => {
-        let keys = c;
+        let { keys } = c;
         ctrl = list_includes(keys, "ctrl");
         meta;
         shift;
