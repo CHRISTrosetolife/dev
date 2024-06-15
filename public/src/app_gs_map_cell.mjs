@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { app_gs_overlays_wall } from "./app_gs_overlays_wall.mjs";
 import { list_any } from "./list_any.mjs";
 import { list_adder } from "./list_adder.mjs";
@@ -25,6 +26,7 @@ export function app_gs_map_cell(map, map_c, player_overlay, r, c) {
   html_on_click(clicker, async () => {
     let os = list_adder((la) => app_gs_overlays_at(map, r, c, la));
     if (list_any(os, (o) => list_includes(app_gs_overlays_wall(), o.id))) {
+      log("wall");
       return;
     }
     let direction = null;
