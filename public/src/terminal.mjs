@@ -1,3 +1,4 @@
+import { list_any } from "./list_any.mjs";
 import { log_clear } from "./log_clear.mjs";
 import { string_replace } from "./string_replace.mjs";
 import { exit } from "./exit.mjs";
@@ -101,7 +102,7 @@ export async function terminal() {
       let ctrl_c = list_includes(keys, "ctrl");
       let meta_c = list_includes(keys, "meta");
       let shift_c = list_includes(keys, "shift");
-      if (list_includes(keys, name)) {
+      if (list_any([name, sequence], (ns) => list_includes(keys, ns))) {
         let b_c = [ctrl_c, meta_c, shift_c];
         if (equal_json(b, b_c)) {
           await c.action();
