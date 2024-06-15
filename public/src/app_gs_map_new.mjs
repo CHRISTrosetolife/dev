@@ -42,11 +42,12 @@ export function app_gs_map_new() {
     each_range(y_size, (y) =>
       each_range(x_size, (x) => {
         let id = list_random_index_weighted(grass);
-        la({
+        let tile = {
           y,
           x,
           id,
-        });
+        };
+        la(tile);
       }),
     ),
   );
