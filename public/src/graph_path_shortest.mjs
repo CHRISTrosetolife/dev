@@ -58,7 +58,7 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
       current: n,
       previous: current,
     }));
-    list_add_multiple(remaining, neighbors_new);
+    list_add_multiple(remaining, mapped);
     previous = current;
   }
 }
