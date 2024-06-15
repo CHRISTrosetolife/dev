@@ -37,6 +37,7 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
       let p = list_adder((la) => {
         let c = current;
         while (c !== null) {
+          la(c);
           let i = list_index(vertices, c);
           let v = object_property_get(visited, i);
           c = v.previous;
