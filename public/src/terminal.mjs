@@ -14,6 +14,7 @@ import { list_all } from "./list_all.mjs";
 import { list_add } from "./list_add.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_get } from "./object_property_get.mjs";
+import { undefined_is } from "./undefined_is.mjs";
 export async function terminal() {
   let prompt = chalk.greenBright("✟") + " ";
   readline.emitKeypressEvents(process.stdin);
@@ -41,6 +42,11 @@ export async function terminal() {
           process.stdout.cursorTo(0);
           log_write(prompt);
         } else {
+          if (undefined_is(name)) {
+            log({
+              key,
+            });
+          }
           if (object_property_exists(replacements, name)) {
             name = object_property_get(replacements, name);
           }
