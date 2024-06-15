@@ -69,6 +69,9 @@ export async function terminal() {
     process.stdin.setRawMode(true);
   }
   let on_returns = [];
+  function on_returns_get() {
+    return on_returns;
+  }
   let buffer;
   buffer_clear();
   function buffer_clear() {
