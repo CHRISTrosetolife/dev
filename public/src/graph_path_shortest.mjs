@@ -36,9 +36,11 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
     if (current === to) {
       let result = [];
       let c = current;
-      let i = list_index(vertices, c);
-      let v = object_property_get(visited, i);
-      c = v.previous;
+      while (c !== null) {
+        let i = list_index(vertices, c);
+        let v = object_property_get(visited, i);
+        c = v.previous;
+      }
       break;
     }
     let neighbors = graph_neighbors(edges, current);
