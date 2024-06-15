@@ -19,18 +19,18 @@ import { list_includes } from "./list_includes.mjs";
 export function app_gs_map_cell(map, map_c, player_overlay, tile) {
   let z_indexes = app_gs_z_indexes();
   let clicker = html_div(map_c);
-  app_gs_overlays_at(map, tile.y, tile.x, lambda_overlay);
+  app_gs_overlays_at(map, tile, lambda_overlay);
   let grass = game_grass_weight();
   let index = list_random_index_weighted(grass);
   game_img(map_c, game_img_base(index), tile, list_index(z_indexes, "tile"));
   game_img_style(clicker, tile.y, tile.x, list_index(z_indexes, "clicker"));
   html_on_click(clicker, async () => {
-    let os = list_adder((la) => app_gs_overlays_at(map, tile.y, tile.x, la));
+    let os = list_adder((la) => app_gs_overlays_at(map, tile, la));
     if (list_any(os, (o) => list_includes(app_gs_overlays_wall(), o.id))) {
       log("wall");
       return;
     }
-    graph_path_shortest(map.tiles, (a, b) => app_gs_adjacent(a, b));
+    graph_path_shortest(map.tiles, (a, b) => app_gs_adjacent(a, b) && 1);
     let direction = null;
     if (tile.y === map.player.y) {
       if (tile.x > map.player.x) {
