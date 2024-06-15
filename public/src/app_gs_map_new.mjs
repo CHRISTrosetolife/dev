@@ -8,7 +8,6 @@ import { subtract_1 } from "./subtract_1.mjs";
 import { divide } from "./divide.mjs";
 import { floor } from "./floor.mjs";
 import { list_add } from "./list_add.mjs";
-import { object_merge } from "./object_merge.mjs";
 import { list_random_item } from "./list_random_item.mjs";
 import { list_pop } from "./list_pop.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
@@ -19,6 +18,7 @@ import { list_concat } from "./list_concat.mjs";
 import { ceiling } from "./ceiling.mjs";
 import { number_max } from "./number_max.mjs";
 import { game_tiles_min } from "./game_tiles_min.mjs";
+import { object_merge_properties } from "./object_merge_properties.mjs";
 export function app_gs_map_new() {
   let tiles_min = game_tiles_min();
   let rows = number_max(20, tiles_min * 2);
@@ -50,12 +50,11 @@ export function app_gs_map_new() {
   list_shuffle(copy);
   each_range(map_overlays_count, (i) => {
     let t = list_pop(copy);
-    let { x, y } = t;
     let id = list_random_item(overlays);
     let o = {
       id,
     };
-    object_merge(o, t);
+    object_merge_properties(o, t, ["x", "y"]);
     list_add(map_overlays, o);
   });
   map.player = {};
