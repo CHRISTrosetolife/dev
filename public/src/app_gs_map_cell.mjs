@@ -1,8 +1,6 @@
-import { app_gs_overlays_at_list } from "./app_gs_overlays_at_list.mjs";
-import { app_gs_overlay_wall_is } from "./app_gs_overlay_wall_is.mjs";
+import { app_gs_overlays_any_wall } from "./app_gs_overlays_any_wall.mjs";
 import { app_gs_adjacent } from "./app_gs_adjacent.mjs";
 import { log } from "./log.mjs";
-import { list_any } from "./list_any.mjs";
 import { app_gs_overlays_at } from "./app_gs_overlays_at.mjs";
 import { app_gs_walk } from "./app_gs_walk.mjs";
 import { html_on_click } from "./html_on_click.mjs";
@@ -24,13 +22,15 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
   game_img(map_c, game_img_base(index), tile, list_index(z_indexes, "tile"));
   game_img_style(clicker, tile.y, tile.x, list_index(z_indexes, "clicker"));
   html_on_click(clicker, async () => {
-    let os = app_gs_overlays_at_list(map, tile);
-    let w = list_any(os, app_gs_overlay_wall_is);
+    let w = app_gs_overlays_any_wall(map, tile);
     if (w) {
       log("wall");
       return;
     }
-    graph_path_shortest(map.tiles, (a, b) => app_gs_adjacent(a, b) && 1);
+    graph_path_shortest(
+      map.tiles,
+      (a, b) => app_gs_adjacent(a, b) && app_gs_overlays_any_wall(map, a),
+    );
     let direction = null;
     if (tile.y === map.player.y) {
       if (tile.x > map.player.x) {
