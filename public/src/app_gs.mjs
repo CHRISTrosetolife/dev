@@ -58,10 +58,10 @@ export function app_gs() {
   });
   let z_indexes = ["tile", "overlay", "player", "clicker"];
   player.character = list_random_item(game_img_list_male());
-  let direction_ = "down";
+  let direction_ = ;
   let player_overlay = game_img(
     map_c,
-    game_img_character(player.character, game_character_index(direction_)),
+    game_img_character(player.character, game_character_index("down")),
     player.y,
     player.x,
     list_index(z_indexes, "player"),
