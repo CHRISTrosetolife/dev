@@ -53,6 +53,7 @@ export function app_gs() {
   };
   let total = rows * columns;
   let map_overlays_count = ceiling(total / 8);
+  each(map_overlays_count, (i) => {});
   let player = {};
   player.y = floor(divide(subtract_1(rows), 2));
   player.x = floor(divide(subtract_1(columns), 2));
