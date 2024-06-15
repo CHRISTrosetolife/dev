@@ -1,3 +1,4 @@
+import { list_add } from "./list_add.mjs";
 import { ceiling } from "./ceiling.mjs";
 import { html_data_set } from "./html_data_set.mjs";
 import { html_scroll_center_smooth } from "./html_scroll_center_smooth.mjs";
@@ -53,7 +54,9 @@ export function app_gs() {
   };
   let total = rows * columns;
   let map_overlays_count = ceiling(total / 8);
-  each(map_overlays_count, (i) => {});
+  each(map_overlays_count, (i) => {
+    list_add(map_overlays);
+  });
   let player = {};
   player.y = floor(divide(subtract_1(rows), 2));
   player.x = floor(divide(subtract_1(columns), 2));
