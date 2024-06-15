@@ -50,6 +50,7 @@ export function app_gs() {
   let map = {
     overlays: map_overlays,
   };
+  let total = rows * columns;
   let player = {};
   player.y = floor(divide(subtract_1(rows), 2));
   player.x = floor(divide(subtract_1(columns), 2));
