@@ -69,6 +69,8 @@ export function app_gs_map_new() {
         )
       ) {
         la(0, t);
+      } else {
+        la(1, t);
       }
     });
   });
