@@ -50,6 +50,7 @@ export function app_gs_map_new() {
   list_shuffle(copy);
   each_range(map_overlays_count, (i) => {
     let t = list_pop(copy);
+    let { x, y } = t;
     let id = list_random_item(overlays);
     let o = {
       id,
