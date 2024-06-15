@@ -1,3 +1,4 @@
+import { list_difference } from "./list_difference.mjs";
 import { graph_neighbors } from "./graph_neighbors.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { each_index } from "./each_index.mjs";
@@ -19,4 +20,5 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
   let current = from;
   let visited = [];
   let neighbors = graph_neighbors(edges, current);
+  let neighbors_new = list_difference(neighbors, visited);
 }
