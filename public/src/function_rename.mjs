@@ -21,7 +21,7 @@ export async function function_rename(fn_name_from, fn_name_to) {
   let fn_path_from = function_name_to_path(fn_name_from);
   let fn_path_to = function_name_to_path(fn_name_to);
   let existing = object_property_get(identifiers, fn_name_from);
-  if (0) {
+  if (10) {
     log({
       existing,
       fn_name_from,
