@@ -1,3 +1,4 @@
+import { html_scroll_center } from "./html_scroll_center.mjs";
 import { list_pop } from "./list_pop.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
 import { list_adder } from "./list_adder.mjs";
@@ -209,4 +210,5 @@ export function app_gs() {
       });
     });
   });
+  html_scroll_center(player_overlay);
 }
