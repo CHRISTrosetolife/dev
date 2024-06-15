@@ -20,6 +20,7 @@ import { game_tiles_min } from "./game_tiles_min.mjs";
 import { object_merge_properties } from "./object_merge_properties.mjs";
 export function app_gs_map_new() {
   let tiles_min = game_tiles_min();
+  let border_thickness = floor(tiles_min / 2);
   let rows = number_max(20, tiles_min * 2);
   let columns = rows;
   let map_overlays = [];
