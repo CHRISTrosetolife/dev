@@ -25,6 +25,7 @@ import { file_overwrite } from "./file_overwrite.mjs";
 import { js_code_statement_return } from "./js_code_statement_return.mjs";
 import { function_new_generic } from "./function_new_generic.mjs";
 import { json_to } from "./json_to.mjs";
+import { function_transform } from "./function_transform.mjs";
 export async function function_aliases_generate() {
   let all = {};
   function alias_add(fn, aliases) {
@@ -41,6 +42,7 @@ export async function function_aliases_generate() {
   alias_add(function_delete, ["de"]);
   alias_add(exit, ["e", "q", "x"]);
   alias_add(firebase_deploy, ["f"]);
+  alias_add(function_transform, ["ft"]);
   alias_add(git_acp, ["gs"]);
   alias_add(google_search, ["g"]);
   alias_add(npm_install, ["i"]);
