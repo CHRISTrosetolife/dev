@@ -1,3 +1,4 @@
+import { list_adder } from "./list_adder.mjs";
 import { list_add } from "./list_add.mjs";
 import { ceiling } from "./ceiling.mjs";
 import { html_data_set } from "./html_data_set.mjs";
@@ -91,9 +92,11 @@ export function app_gs() {
     player.x,
     list_index(z_indexes, "player"),
   );
-  each_range(rows, (r) => {
-    each_range(columns, (c) => {});
-  });
+  let tiles = list_adder((la) =>
+    each_range(rows, (r) => {
+      each_range(columns, (c) => {});
+    }),
+  );
   each(map_overlays, (o) => {
     let { id } = o;
     html_data_set(clicker, "overlay", id);
