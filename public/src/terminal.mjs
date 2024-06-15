@@ -39,7 +39,6 @@ export async function terminal() {
   while (true) {
     process.stdout.write(chalk.greenBright(`✝ `));
     let line = await next();
-    let input = readline_sync.question();
     let tokens = string_split_space(input);
     tokens = list_filter(tokens, string_empty_not_is);
     try {
