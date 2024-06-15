@@ -91,6 +91,9 @@ export function app_gs() {
     player.x,
     list_index(z_indexes, "player"),
   );
+  each_range(rows, (r) => {
+    each_range(columns, (c) => {});
+  });
   each(map_overlays, (o) => {
     let { id } = o;
     html_data_set(clicker, "overlay", id);
