@@ -7,6 +7,7 @@ import { log } from "./log.mjs";
 import readline from "readline";
 import chalk from "chalk";
 import { list_filter } from "./list_filter.mjs";
+import { list_all } from "./list_all.mjs";
 export async function terminal() {
   readline.emitKeypressEvents(process.stdin);
   if (process.stdin.isTTY) {
@@ -14,6 +15,8 @@ export async function terminal() {
   }
   process.stdin.on("keypress", function (chunk, key) {
     let { sequence, name, ctrl, meta, shift } = key;
+    if (list_all([ctrl, meta, shift], (k) => k === false)) {
+    }
   });
   return;
   while (true) {
