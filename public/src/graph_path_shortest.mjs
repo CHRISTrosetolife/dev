@@ -23,7 +23,7 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
   );
   let previous = null;
   let remaining = [from];
-  let visited = [];
+  let visited = {};
   while (list_empty_not_is(remaining)) {
     let current = list_remove_first(remaining);
     list_add(visited, {
