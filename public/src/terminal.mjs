@@ -147,7 +147,7 @@ export async function terminal() {
     let input = await next();
     let split = string_split_space(input);
     if (0) {
-      split = [];
+      let tokens = [];
     }
     split = list_filter(split, string_empty_not_is);
     try {
