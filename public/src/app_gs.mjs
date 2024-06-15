@@ -16,6 +16,6 @@ export async function app_gs() {
     await app_gs_map_cell(map, map_c, player_overlay, tile);
   });
   await promise_all(tiles);
-  await sleep(100);
+  await sleep(1);
   html_scroll_center_smooth(player_overlay);
 }
