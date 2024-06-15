@@ -38,7 +38,7 @@ export async function terminal() {
   }
   while (true) {
     process.stdout.write(chalk.greenBright(`✝ `));
-    let line = await next();
+    let input = await next();
     let tokens = string_split_space(input);
     tokens = list_filter(tokens, string_empty_not_is);
     try {
