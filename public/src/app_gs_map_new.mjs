@@ -1,3 +1,4 @@
+import { list_all } from "./list_all.mjs";
 import { each } from "./each.mjs";
 import { list_adder_multiple } from "./list_adder_multiple.mjs";
 import { add } from "./add.mjs";
@@ -49,7 +50,18 @@ export function app_gs_map_new() {
   );
   list_adder_multiple(2, (la) => {
     each(map.tiles, (t) => {
-      if (border_thickness <= t.x && t.x <= x_size - border_thickness) {
+      if (
+        list_all([
+          {
+            xy: "x",
+            size: x_size,
+          },
+          {
+            xy: "y",
+            size: y_size,
+          },
+        ])
+      ) {
       }
     });
   });
