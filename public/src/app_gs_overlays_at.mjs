@@ -1,15 +1,5 @@
-import { each } from "./each.mjs";
+import { app_gs_at_generic } from "./app_gs_at_generic.mjs";
 export function app_gs_overlays_at(map, a, lambda_overlay) {
   let list = map.overlays;
-  each(list, (b) => {
-    let { x } = b;
-    if (x !== a.x) {
-      return;
-    }
-    let { y } = b;
-    if (y !== a.y) {
-      return;
-    }
-    lambda_overlay(b);
-  });
+  app_gs_at_generic(list, a, lambda_overlay);
 }
