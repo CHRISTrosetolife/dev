@@ -83,6 +83,9 @@ export async function terminal() {
   function buffer_clear() {
     buffer = [];
   }
+  function buffer_get() {
+    buffer = [];
+  }
   process.stdin.on("keypress", async function (chunk, key) {
     let { sequence, name, ctrl, meta, shift } = key;
     let b = [ctrl, meta, shift];
