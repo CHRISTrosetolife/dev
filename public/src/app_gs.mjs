@@ -15,7 +15,7 @@ export async function app_gs() {
   let player_overlay = app_gs_overlay_player(map_c, map);
   let tiles = list_map(map.tiles, async (tile) => {
     let b = map.player;
-    let distance = abs(tile.x - b.x) + abs(tile.y + b.y);
+    let distance = abs(tile.x - b.x) + abs(tile.y - b.y);
     if (distance > 5) {
       return;
     }
