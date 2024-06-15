@@ -5,6 +5,9 @@ import { js_visit } from "./js_visit.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export function js_node_types(ast) {
   assert_arguments_length(arguments, 1);
+  log({
+    ast,
+  });
   return list_adder_unique((la) => {
     js_visit(ast, lambda);
     function lambda(v) {
