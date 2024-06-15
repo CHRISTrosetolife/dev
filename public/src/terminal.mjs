@@ -1,3 +1,4 @@
+import { log_clear } from "./log_clear.mjs";
 import { string_replace } from "./string_replace.mjs";
 import { exit } from "./exit.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
@@ -117,7 +118,7 @@ export async function terminal() {
   async function next() {
     return await new Promise((resolve) => list_add(on_returns, resolve));
   }
-  console.clear();
+  log_clear();
   while (true) {
     log_write(prompt);
     let input = await next();
