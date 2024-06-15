@@ -1,5 +1,5 @@
 import { log } from "./log.mjs";
-import readline from "node:readline";
+import readline from "readline";
 export function terminal() {
   let rl = readline.createInterface({
     input: process.stdin,
