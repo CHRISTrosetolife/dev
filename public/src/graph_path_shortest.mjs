@@ -1,4 +1,4 @@
-import { log } from "./log.mjs";
+import { list_includes_not } from "./list_includes_not.mjs";
 import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { list_remove_first } from "./list_remove_first.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
@@ -47,11 +47,11 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
       return p;
     }
     let neighbors = graph_neighbors(edges, current);
-    log({
+    let neighbors_new = list_filter(
       neighbors,
-    });
-    let neighbors_new = list_filter(neighbors, (n) =>
-      object_property_exists_not(visited, list_index(vertices, n)),
+      (n) =>
+        object_property_exists_not(visited, list_index(vertices, n)) &&
+        list_includes_not(remaining, n),
     );
     list_add_multiple(remaining, neighbors_new);
     previous = current;
