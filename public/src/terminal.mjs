@@ -1,3 +1,4 @@
+import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { not } from "./not.mjs";
 import { counter_async } from "./counter_async.mjs";
 import { range } from "./range.mjs";
@@ -27,7 +28,6 @@ import { list_includes } from "./list_includes.mjs";
 import { each_async } from "./each_async.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_to } from "./string_to.mjs";
-import { list_empty_is } from "./list_empty_is.mjs";
 export async function terminal() {
   let commands = [
     {
@@ -163,11 +163,10 @@ export async function terminal() {
         }
       }
     });
-    token_next();
+    if (list_empty_not_is(current)) {
+      token_next();
+    }
     function token_next() {
-      if (list_empty_is(current)) {
-        return;
-      }
       let token = list_join_empty(current);
       current = [];
       list_add(tokens, token);
