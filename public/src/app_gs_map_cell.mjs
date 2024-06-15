@@ -31,7 +31,7 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
       return;
     }
     let from = app_gs_at_single(map.tiles, map.player);
-    graph_path_shortest(
+    let p = graph_path_shortest(
       map.tiles,
       (a, b) =>
         app_gs_adjacent(a, b) &&
