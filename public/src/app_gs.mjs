@@ -55,6 +55,8 @@ export function app_gs() {
   let total = rows * columns;
   let map_overlays_count = ceiling(total / 8);
   each(map_overlays_count, (i) => {
+    let overlays = list_concat(range_from(40, 42), range_from(48, 57));
+    let base_id = list_random_item(overlays);
     list_add(map_overlays);
   });
   let player = {};
@@ -102,8 +104,6 @@ export function app_gs() {
         list_index(z_indexes, "tile"),
       );
       if (integer_random(1, 8) === 1) {
-        let overlays = list_concat(range_from(40, 42), range_from(48, 57));
-        let base_id = list_random_item(overlays);
         html_data_set(clicker, "overlay", base_id);
         game_img(
           map_c,
