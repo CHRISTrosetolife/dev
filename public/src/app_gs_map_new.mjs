@@ -64,6 +64,7 @@ export function app_gs_map_new() {
   map.player.walk_previous = 1;
   map.player.character = list_random_item(game_img_list_male());
   log({
+    overlays,
     map,
   });
   return map;
