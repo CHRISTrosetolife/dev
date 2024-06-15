@@ -51,16 +51,20 @@ export function app_gs_map_new() {
   list_adder_multiple(2, (la) => {
     each(map.tiles, (t) => {
       if (
-        list_all([
-          {
-            xy: "x",
-            size: x_size,
-          },
-          {
-            xy: "y",
-            size: y_size,
-          },
-        ])
+        list_all(
+          [
+            {
+              xy: "x",
+              size: x_size,
+            },
+            {
+              xy: "y",
+              size: y_size,
+            },
+          ],
+          (a) =>
+            border_thickness <= t[a.xy] && t[a.xy] <= a.size - border_thickness,
+        )
       ) {
       }
     });
