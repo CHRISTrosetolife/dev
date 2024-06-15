@@ -1,3 +1,4 @@
+import { list_remove_first } from "./list_remove_first.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
 import { list_difference } from "./list_difference.mjs";
@@ -27,5 +28,6 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
     let neighbors = graph_neighbors(edges, current);
     let neighbors_new = list_difference(neighbors, visited);
     list_add_multiple(remaining, neighbors_new);
+    list_remove_first(remaining);
   }
 }
