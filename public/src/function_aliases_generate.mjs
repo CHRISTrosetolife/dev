@@ -1,3 +1,4 @@
+import { exit } from "./exit.mjs";
 import { npm_install_global } from "./npm_install_global.mjs";
 import { npm_install } from "./npm_install.mjs";
 import { firebase_deploy } from "./firebase_deploy.mjs";
@@ -35,6 +36,7 @@ export async function function_aliases_generate() {
   alias_add(function_copy, ["c"]);
   alias_add(data_update, ["d"]);
   alias_add(function_delete, ["de"]);
+  alias_add(exit, ["e"]);
   alias_add(firebase_deploy, ["f"]);
   alias_add(npm_install, ["i"]);
   alias_add(npm_install_global, ["ig"]);
