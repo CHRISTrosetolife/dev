@@ -126,6 +126,11 @@ export async function terminal() {
         }
       });
     });
+    if (count === 0) {
+      log({
+        key,
+      });
+    }
   });
   function keyboard_type(name) {
     name = string_replace(name, "\n", " ");
