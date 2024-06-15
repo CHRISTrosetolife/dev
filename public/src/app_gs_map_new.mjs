@@ -1,3 +1,4 @@
+import { add } from "./add.mjs";
 import { list_random_index_weighted } from "./list_random_index_weighted.mjs";
 import { game_grass_weight } from "./game_grass_weight.mjs";
 import { list_copy } from "./list_copy.mjs";
@@ -15,13 +16,12 @@ import { list_adder } from "./list_adder.mjs";
 import { range_from } from "./range_from.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { ceiling } from "./ceiling.mjs";
-import { number_max } from "./number_max.mjs";
 import { game_tiles_min } from "./game_tiles_min.mjs";
 import { object_merge_properties } from "./object_merge_properties.mjs";
 export function app_gs_map_new() {
   let tiles_min = game_tiles_min();
   let border_thickness = floor(tiles_min / 2);
-  let rows = number_max(20, tiles_min * 2);
+  let rows = add(20, border_thickness * 2);
   let columns = rows;
   let map_overlays = [];
   let map = {
