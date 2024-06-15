@@ -1,4 +1,3 @@
-import { promise_all } from "./promise_all.mjs";
 import { app_gs_map_cell } from "./app_gs_map_cell.mjs";
 import { app_gs_style_default_initialize } from "./app_gs_style_default_initialize.mjs";
 import { app_gs_map_html } from "./app_gs_map_html.mjs";
@@ -14,6 +13,6 @@ export function app_gs() {
   let tiles = list_map(map.tiles, async (tile) => {
     await app_gs_map_cell(map, map_c, player_overlay, tile);
   });
-  promise_all;
+  promises_all;
   html_scroll_center_smooth(player_overlay);
 }
