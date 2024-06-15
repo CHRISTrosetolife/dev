@@ -28,7 +28,8 @@ export async function terminal() {
       keys: ["ctrl", "v"],
       action: async () => {
         let value = await clipboard_paste();
-        each(string_split_empty(value), (c) => {
+        let newLocal = string_split_empty(value);
+        each(newLocal, (c) => {
           keyboard_type(c);
         });
       },
