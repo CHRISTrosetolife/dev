@@ -22,6 +22,7 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
     ),
   );
   log({
+    vertices,
     edges,
   });
   return list_adder((la) => {
