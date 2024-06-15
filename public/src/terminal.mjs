@@ -55,8 +55,8 @@ export async function terminal() {
         log("");
         let result = list_join_empty(buffer);
         buffer_clear();
-        each(on_returns, (n) => n(result));
-        list_remove_all(on_returns);
+        each(on_returns_get(), (n) => n(result));
+        list_remove_all(on_returns_get);
       },
     },
   ];
