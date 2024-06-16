@@ -46,7 +46,7 @@ export async function app_gs_map_cell(map, map_c, player_overlay, tile) {
   );
   game_img_style(clicker, tile.y, tile.x, list_index(z_indexes, "clicker"));
   html_on_click(clicker, async () => {
-    let w = app_gs_overlays_any_wall(map, tile);
+    let w = app_gs_overlays_any_wall(tile);
     if (w) {
       return;
     }
@@ -55,7 +55,7 @@ export async function app_gs_map_cell(map, map_c, player_overlay, tile) {
       list_concat_multiple(map.tiles),
       (a, b) =>
         app_gs_adjacent(a, b) &&
-        list_all([a, b], (ab) => !app_gs_overlays_any_wall(map, ab)),
+        list_all([a, b], (ab) => !app_gs_overlays_any_wall(ab)),
       from,
       tile,
     );
