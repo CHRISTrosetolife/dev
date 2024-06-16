@@ -27,7 +27,6 @@ import readline from "readline";
 import chalk from "chalk";
 import { list_filter } from "./list_filter.mjs";
 import { list_add } from "./list_add.mjs";
-import { undefined_not_is } from "./undefined_not_is.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { each_async } from "./each_async.mjs";
 import { list_map } from "./list_map.mjs";
@@ -35,6 +34,7 @@ import { string_to } from "./string_to.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { string_empty_not_is } from "./string_empty_not_is.mjs";
 export async function terminal() {
   let commands = [
     {
@@ -208,8 +208,8 @@ export async function terminal() {
         ),
       );
       let { stdout } = result;
-      if (undefined_not_is(result)) {
-        log(result);
+      if (string_empty_not_is(stdout)) {
+        log(stdout);
       }
     } catch (e) {
       log(chalk.redBright(e.stack));
