@@ -202,6 +202,9 @@ export async function terminal() {
     if (list_includes(list_concat([exit.name], exit_aliases()), input)) {
       exit();
     }
+    if (input === "cls") {
+      log_clear();
+    }
     let tokens = tokens_get(input);
     try {
       let result = await command_line(
