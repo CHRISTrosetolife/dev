@@ -21,7 +21,7 @@ export async function app_gs() {
   let existing = [];
   let w = window.innerWidth;
   let h = window.innerHeight;
-  number_min(h / limit);
+  number_min(h / limit, w / limit);
   h / limit;
   let tiles = list_map(map.tiles, async (tile) => {
     let b = map.player;
