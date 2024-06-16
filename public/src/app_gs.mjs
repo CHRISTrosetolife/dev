@@ -22,7 +22,7 @@ export async function app_gs() {
     player_overlay,
   );
   await promise_all(tiles_new);
-  await sleep(0);
-  html_style_visible(root);
+  await sleep(10);
   html_scroll_center(player_overlay);
+  html_style_visible(root);
 }
