@@ -17,11 +17,11 @@ export async function app_gs() {
   let map = app_gs_map_new();
   let map_c = app_gs_map_html(root, map);
   let player_overlay = app_gs_overlay_player(map_c, map);
-  ceiling(game_tiles_max());
+  let limit = ceiling(game_tiles_max());
   let existing = [];
   let tiles = list_map(map.tiles, async (tile) => {
     let b = map.player;
-    let distance = list_all(list_xy(), (xy) => abs(tile[xy] - b[xy]));
+    let distance = list_all(list_xy(), (xy) => abs(tile[xy] - b[xy]) <= limit);
     if (distance > 7) {
       return;
     }
