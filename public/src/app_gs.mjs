@@ -22,7 +22,7 @@ export async function app_gs() {
   let map_c = app_gs_map_html(root, map);
   let player_overlay = app_gs_overlay_player(map_c, map);
   let limit = game_tiles_max();
-  map.existing = [];
+  map.html = [];
   let w = window.innerWidth;
   let h = window.innerHeight;
   let tile_size_px = number_max(h, w) / limit;
@@ -38,9 +38,9 @@ export async function app_gs() {
       await app_gs_map_cell(map, map_c, player_overlay, tile);
     }
   });
-  each(map.existing, html_remove);
-  list_remove_all(map.existing);
-  list_add_multiple(map.existing, tiles_new);
+  each(map.html, html_remove);
+  list_remove_all(map.html);
+  list_add_multiple(map.html, tiles_new);
   await promise_all(tiles_new);
   await sleep(0);
   html_scroll_center_smooth(player_overlay);
