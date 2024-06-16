@@ -39,18 +39,20 @@ export async function app_gs_map_render(
   let w_extend = floor(w_tiles / 2);
   let h_extend = floor(h_tiles / 2);
   let tiles_new = list_adder((la) =>
-    list_map(map.tiles, async (tile) => {
-      let d1 = number_min_list(
-        list_map(range_from(x_min, x_max), (x) => abs(tile.x - x)),
-      );
-      let d2 = number_min_list(
-        list_map(range_from(y_min, y_max), (y) => abs(tile.y - y)),
-      );
-      let visible = d1 <= w_extend && d2 <= h_extend;
-      if (visible) {
-        return await app_gs_map_cell(map, map_c, player_overlay, tile);
-      }
-    }),
+    each(map.tiles, async (row) =>
+      each(row, async (tile) => {
+        let d1 = number_min_list(
+          list_map(range_from(x_min, x_max), (x) => abs(tile.x - x)),
+        );
+        let d2 = number_min_list(
+          list_map(range_from(y_min, y_max), (y) => abs(tile.y - y)),
+        );
+        let visible = d1 <= w_extend && d2 <= h_extend;
+        if (visible) {
+          return await app_gs_map_cell(map, map_c, player_overlay, tile);
+        }
+      }),
+    ),
   );
   tiles_new = await promise_all(tiles_new);
   tiles_new = list_filter(tiles_new, undefined_not_is);
