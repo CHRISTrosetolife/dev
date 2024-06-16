@@ -205,13 +205,12 @@ export async function terminal() {
     if (input === "cls") {
       log_clear();
     }
-    let tokens = tokens_get(input);
     try {
       let result = await command_line(
         list_join_space(
           list_concat(
             ["node", string_combine(run.name, function_path_suffix())],
-            tokens,
+            input,
           ),
         ),
       );
