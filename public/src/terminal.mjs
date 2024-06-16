@@ -153,9 +153,12 @@ export async function terminal() {
   });
   function keyboard_type(name) {
     name = string_replace(name, "\n", " ");
+    keyboard_write(name);
+    list_add(buffer, name);
+  }
+  function keyboard_write(name) {
     let message = chalk.greenBright(name);
     log_write(message);
-    list_add(buffer, name);
   }
   async function next() {
     return await new Promise((resolve) => list_add(on_returns, resolve));
