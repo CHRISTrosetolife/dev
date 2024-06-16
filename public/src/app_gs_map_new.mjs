@@ -30,9 +30,7 @@ export function app_gs_map_new() {
   let x_size_inside = y_size_inside;
   let y_size = add(y_size_inside, border_thickness * 2);
   let x_size = add(x_size_inside, border_thickness * 2);
-  let map_overlays = [];
   let map = {
-    overlays: map_overlays,
     y_size,
     x_size,
   };
