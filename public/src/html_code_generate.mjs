@@ -5,6 +5,5 @@ export function html_code_generate(input) {
     input,
   });
   let p = html_parse(input);
-  log("here");
-  return p;
+  log(p);
 }
