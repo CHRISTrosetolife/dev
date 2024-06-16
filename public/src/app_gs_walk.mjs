@@ -15,7 +15,7 @@ import { abs } from "./abs.mjs";
 import { game_character_index } from "./game_character_index.mjs";
 import { game_img_character } from "./game_img_character.mjs";
 import { html_img_src_wait } from "./html_img_src_wait.mjs";
-export async function app_gs_walk(player_overlay, player, tile) {
+export async function app_gs_walk(map, map_c, player_overlay, player, tile) {
   let direction = app_gs_direction(player, tile);
   if (direction === null) {
     return;
