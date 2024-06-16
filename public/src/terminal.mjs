@@ -306,9 +306,9 @@ export async function terminal() {
       log_clear();
     }
     let tokens = tokens_get(input);
+    let { first: function_name, remaining: args } =
+      list_first_remaining(tokens);
     try {
-      let { first: function_name, remaining: args } =
-        list_first_remaining(tokens);
       let result = await function_runner_json(function_name, args);
       if (undefined_not_is(result)) {
         log(result);
