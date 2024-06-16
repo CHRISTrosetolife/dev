@@ -25,5 +25,6 @@ export async function app_gs() {
   );
   await promise_all(tiles_new);
   await sleep(0);
+  html_show(map_c);
   html_scroll_center_smooth(player_overlay);
 }
