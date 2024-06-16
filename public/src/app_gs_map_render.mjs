@@ -36,7 +36,7 @@ export async function app_gs_map_render(
   each(coordinates, (c) => {
     let { x, y } = c;
     each(range_from(y - h_extend, y + h_extend), (ye) => {
-      object_property_initialize(renders);
+      let rows = object_property_initialize(renders, ye, {});
       each(range_from(x - w_extend, x + w_extend), (xe) => {});
     });
   });
