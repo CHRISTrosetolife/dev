@@ -22,10 +22,9 @@ export async function app_gs() {
   let tiles = list_map(map.tiles, async (tile) => {
     let b = map.player;
     let visible = list_all(list_xy(), (xy) => abs(tile[xy] - b[xy]) <= limit);
-    if (distance > 7) {
-      return;
+    if (vis) {
+      await app_gs_map_cell(map, map_c, player_overlay, tile);
     }
-    await app_gs_map_cell(map, map_c, player_overlay, tile);
   });
   await promise_all(tiles);
   await sleep(0);
