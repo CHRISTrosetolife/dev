@@ -56,12 +56,11 @@ export async function terminal() {
     },
     {
       keys: ["backspace"],
-      action: () => {
+      action: (key) => {
         let b = buffer_get();
         log({
-          b,
+          key,
         });
-        return;
         list_pop(b);
         log_clear();
         log_write(prompt_get());
