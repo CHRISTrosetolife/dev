@@ -1,3 +1,4 @@
+import { list_size } from "./list_size.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { js_declaration_single } from "./js_declaration_single.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
@@ -31,8 +32,5 @@ export function js_assert_arguments_length(ast) {
     return;
   }
   let { params } = d;
-  expression.arguments = [
-    js_parse_expression("arguments"),
-    list_length(params),
-  ];
+  expression.arguments = [js_parse_expression("arguments"), list_size(params)];
 }
