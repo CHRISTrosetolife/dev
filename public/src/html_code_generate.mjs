@@ -11,5 +11,6 @@ export function html_code_generate(input) {
   let { children } = p;
   let c = list_single(children);
   let { attribs } = c;
+  return c.name;
   return object_properties(c);
 }
