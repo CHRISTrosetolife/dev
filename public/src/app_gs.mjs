@@ -1,3 +1,4 @@
+import { list_remove_all } from "./list_remove_all.mjs";
 import { html_remove } from "./html_remove.mjs";
 import { floor } from "./floor.mjs";
 import { ceiling } from "./ceiling.mjs";
@@ -38,6 +39,7 @@ export async function app_gs() {
     }
   });
   each(map.existing, html_remove);
+  list_remove_all(map.existing);
   list_add_multiple(map.existing, tiles_new);
   await promise_all(tiles_new);
   await sleep(0);
