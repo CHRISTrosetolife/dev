@@ -1,3 +1,4 @@
+import { range_from } from "./range_from.mjs";
 import { number_min } from "./number_min.mjs";
 import { number_min_list } from "./number_min_list.mjs";
 import { number_max_list } from "./number_max_list.mjs";
@@ -37,6 +38,7 @@ export async function app_gs_map_render(
   let w_extend = floor(w_tiles / 2);
   let h_extend = floor(h_tiles / 2);
   let tiles_new = list_map(map.tiles, async (tile) => {
+    range_from(x_min, x_max);
     let d1 = number_min(abs(tile.x - x_max), abs(tile.x - x_min));
     let d2 = number_min(abs(tile.y - y_max), abs(tile.y - y_min));
     let visible = d1 <= w_extend && d2 <= h_extend;
