@@ -12,5 +12,8 @@ export function js_assert_arguments_length(ast) {
   }
   let first = list_first(body_block);
   let { type } = first;
+  if (type !== "ExpressionStatement") {
+    return;
+  }
   return first;
 }
