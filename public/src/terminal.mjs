@@ -47,7 +47,7 @@ export async function terminal() {
       action: exit,
     },
     {
-      keys: ["ctrl", "shift", "backspace"],
+      keys: ["meta", "backspace"],
       action: () => {
         buffer_clear();
         log_clear();
