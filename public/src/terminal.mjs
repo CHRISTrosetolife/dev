@@ -207,12 +207,11 @@ export async function terminal() {
     }
     try {
       let result = await command_line(
-        list_join_space(
-          list_concat(
-            ["node", string_combine(run.name, function_path_suffix())],
-            input,
-          ),
-        ),
+        list_join_space([
+          "node",
+          string_combine(run.name, function_path_suffix()),
+          input,
+        ]),
       );
       let { stdout, stderr } = result;
       if (string_empty_not_is(stdout)) {
