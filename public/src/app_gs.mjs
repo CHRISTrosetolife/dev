@@ -36,7 +36,7 @@ export async function app_gs() {
       await app_gs_map_cell(map, map_c, player_overlay, tile);
     }
   });
-  each(existing, (t) => html_remove(t));
+  each(existing, html_remove);
   await promise_all(tiles);
   await sleep(0);
   html_scroll_center_smooth(player_overlay);
