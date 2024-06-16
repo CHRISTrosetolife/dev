@@ -1,3 +1,5 @@
+import { html_style_visible } from "./html_style_visible.mjs";
+import { html_style_hidden } from "./html_style_hidden.mjs";
 import { html_scroll_center_smooth } from "./html_scroll_center_smooth.mjs";
 import { html_style } from "./html_style.mjs";
 import { app_gs_map_render } from "./app_gs_map_render.mjs";
@@ -14,7 +16,7 @@ export async function app_gs() {
   });
   let map = app_gs_map_new();
   let map_c = app_gs_map_html(root, map);
-  html_hide(map_c);
+  html_style_hidden(map_c);
   let player_overlay = app_gs_overlay_player(map_c, map);
   map.html = [];
   let tiles_new = await app_gs_map_render(
@@ -25,6 +27,6 @@ export async function app_gs() {
   );
   await promise_all(tiles_new);
   await sleep(0);
-  html_show(map_c);
+  html_style_visible(map_c);
   html_scroll_center_smooth(player_overlay);
 }
