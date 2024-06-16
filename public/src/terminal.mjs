@@ -1,3 +1,4 @@
+import { unawait } from "./unawait.mjs";
 import { function_path_suffix } from "./function_path_suffix.mjs";
 import { run } from "./run.mjs";
 import { command_line } from "./command_line.mjs";
@@ -212,7 +213,7 @@ export async function terminal() {
     } catch (e) {
       log(chalk.redBright(e.stack));
     }
-    each([run_git_ac], (f) => f());
+    unawait(run_git_ac);
   }
   function tokens_get(input) {
     let tokens = [];
