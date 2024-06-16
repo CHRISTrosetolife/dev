@@ -21,7 +21,7 @@ import { list_skip } from "./list_skip.mjs";
 export async function app_gs_map_cell(map, map_c, player_overlay, tile) {
   let z_indexes = app_gs_z_indexes();
   let clicker = html_div(map_c);
-  app_gs_overlays_at(map, tile, function lambda_overlay(o) {
+  let overlays = app_gs_overlays_at(map, tile, function lambda_overlay(o) {
     let { id: o_id } = o;
     html_data_set(clicker, "overlay", o_id);
     game_img(
@@ -60,5 +60,5 @@ export async function app_gs_map_cell(map, map_c, player_overlay, tile) {
     html_scroll_center_smooth(player_overlay);
   });
   await html_img_wait(tile_c);
-  return tile_c;
+  return [tile_c];
 }
