@@ -1,4 +1,4 @@
-export function app_gs_at_generic(grid, a, lambda_overlay) {
+export function app_gs_at_generic(grid, a, lambda) {
   let tile = grid[a.y][a.x];
-  lambda_overlay(tile);
+  lambda(tile);
 }
