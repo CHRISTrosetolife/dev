@@ -30,15 +30,11 @@ export async function function_runner_json(function_name, args) {
         let r = await command_line(command);
         if (r.error) {
           reject(r);
+        } else {
+          let contents = await file_read_json(file_path_output);
+          let { result } = contents;
+          resolve(result);
         }
-        if (10) {
-          log({
-            e: r.error,
-          });
-        }
-        let contents = await file_read_json(file_path_output);
-        let { result } = contents;
-        resolve(result);
       });
     });
   });
