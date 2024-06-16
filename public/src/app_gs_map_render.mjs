@@ -23,10 +23,10 @@ export async function app_gs_map_render(
 ) {
   let xs = list_map_property(coordinates, "x");
   let ys = list_map_property(coordinates, "y");
-  number_max_list(xs);
-  number_max_list(ys);
-  number_min_list(xs);
-  number_min_list(ys);
+  let x_max = number_max_list(xs);
+  let y_max = number_max_list(ys);
+  let x_min = number_min_list(xs);
+  let y_min = number_min_list(ys);
   let w = window.innerWidth;
   let h = window.innerHeight;
   let limit = game_tiles_max();
