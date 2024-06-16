@@ -7,8 +7,6 @@ import { list_remove_all } from "./list_remove_all.mjs";
 import { html_remove } from "./html_remove.mjs";
 import { each } from "./each.mjs";
 import { app_gs_map_cell } from "./app_gs_map_cell.mjs";
-import { abs } from "./abs.mjs";
-import { list_map } from "./list_map.mjs";
 import { floor } from "./floor.mjs";
 import { ceiling } from "./ceiling.mjs";
 import { number_max } from "./number_max.mjs";
@@ -55,21 +53,23 @@ export async function app_gs_map_render(
   let y_min = number_min_list(ys);
   let tiles_new = list_adder(
     async (la) =>
-      await each_async(
-        map.tiles,
-        async (row) =>
-          await each_async(row, async (tile) => {
-            let d1 = number_min_list(
-              list_map(range_from(x_min, x_max), (x) => abs(tile.x - x)),
-            );
-            let d2 = number_min_list(
-              list_map(range_from(y_min, y_max), (y) => abs(tile.y - y)),
-            );
-            let visible = d1 <= w_extend && d2 <= h_extend;
-            if (visible) {
-            }
-          }),
-      ),
+      await each_async(coordinates, async (c) => {
+        let { x, y } = c;
+        await each_async(range_from(y - h_extend, y + h_extend), async (ye) => {
+          let rows = object_property_initialize(renders, ye, {});
+          await each_async(
+            range_from(x - w_extend, x + w_extend),
+            async (xe) => {
+              if (rows[xe]) {
+                return;
+              }
+              let c = await app_gs_map_cell(map, map_c, player_overlay, tile);
+              la(c);
+              rows[xe] = true;
+            },
+          );
+        });
+      }),
   );
   tiles_new = await promise_all(tiles_new);
   tiles_new = list_concat_multiple(tiles_new);
