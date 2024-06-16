@@ -1,5 +1,4 @@
-import { app_gs_at_generic } from "./app_gs_at_generic.mjs";
+import { each } from "./each.mjs";
 export function app_gs_overlays_at(map, tile, lambda_overlay) {
-  let list = map.overlays;
-  app_gs_at_generic(list, tile, lambda_overlay);
+  each(tile.overlays, lambda_overlay);
 }
