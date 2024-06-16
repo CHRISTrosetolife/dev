@@ -75,7 +75,7 @@ export async function terminal() {
         let mapped = list_map(tokens, string_split_underscore);
         let extra = "";
         if (list_empty_not_is(mapped)) {
-          list_last(tokens);
+          let last = list_last(tokens);
           if (list_empty_not_is(tokens)) {
             extra = " ";
           }
