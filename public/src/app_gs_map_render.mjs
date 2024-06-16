@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { range_from } from "./range_from.mjs";
@@ -43,9 +42,6 @@ export function app_gs_map_render(map, map_c, coordinates, player_overlay) {
   });
   each_object(map.html, (hy, row) => {
     if (object_property_exists_not(tiles_new, hy)) {
-      log({
-        row,
-      });
       each_object(row, (hx, c) => each(c, html_remove));
       return;
     }
