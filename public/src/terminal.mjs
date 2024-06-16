@@ -61,6 +61,21 @@ export async function terminal() {
       },
     },
     {
+      match: {
+        chunk: "\x7F",
+        key: {
+          sequence: "\x7F",
+          name: "backspace",
+          ctrl: false,
+          meta: false,
+          shift: false,
+        },
+      },
+      action: () => {
+        log_buffer_clear();
+      },
+    },
+    {
       keys: ["backspace"],
       action: (key) => {
         let b = buffer_get();
