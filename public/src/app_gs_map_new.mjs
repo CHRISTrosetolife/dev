@@ -23,6 +23,7 @@ import { list_concat } from "./list_concat.mjs";
 import { ceiling } from "./ceiling.mjs";
 import { object_merge_properties } from "./object_merge_properties.mjs";
 import { object_property_get } from "./object_property_get.mjs";
+import { list_concat_multiple } from "./list_concat_multiple.mjs";
 export function app_gs_map_new() {
   let border_thickness = floor(game_tiles_max() / 2);
   let y_size_inside = 20;
@@ -58,7 +59,10 @@ export function app_gs_map_new() {
       lar(row);
     }),
   );
-  let [inside, outside] = list_partition(map, inside_is);
+  let [inside, outside] = list_partition(
+    list_concat_multiple(map.tiles),
+    inside_is,
+  );
   each(outside, (tile) => overlay_add(tile, list_random_item(overlays_wall)));
   list_shuffle(inside);
   each_range(map_overlays_count, (i) => {
