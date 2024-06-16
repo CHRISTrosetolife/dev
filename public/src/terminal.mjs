@@ -127,8 +127,8 @@ export async function terminal() {
     let { sequence, name, ctrl, meta, shift } = key;
     let actual = [ctrl, meta, shift];
     let count = await counter_async(async (la) => {
-      await each_async(commands, async (c) => {
-        let { keys } = c;
+      await each_async(commands, async (command) => {
+        let { keys } = command;
         let ctrl_c = list_includes(keys, "ctrl");
         let meta_c = list_includes(keys, "meta");
         let shift_c = list_includes(keys, "shift");
@@ -136,11 +136,12 @@ export async function terminal() {
         if (list_any([name, sequence], (ns) => list_includes(keys, ns))) {
           if (equal_json(actual, expected)) {
             log({
+              command,
               expected,
               actual,
             });
             la();
-            await c.action(key);
+            await command.action(key);
           }
         }
       });
