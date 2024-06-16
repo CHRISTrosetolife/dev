@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { ceiling } from "./ceiling.mjs";
 import { number_max } from "./number_max.mjs";
 import { list_xy } from "./list_xy.mjs";
@@ -25,6 +26,10 @@ export async function app_gs() {
   let tile_size_px = number_max(h, w) / limit;
   let w_tiles = ceiling(w / tile_size_px / 2) * 2;
   let h_tiles = ceiling(h / tile_size_px / 2) * 2;
+  log({
+    w_tiles,
+    h_tiles,
+  });
   let tiles = list_map(map.tiles, async (tile) => {
     let b = map.player;
     let visible = list_all(list_xy(), (xy) => abs(tile[xy] - b[xy]) <= limit);
