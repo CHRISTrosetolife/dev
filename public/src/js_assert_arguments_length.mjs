@@ -8,5 +8,5 @@ export function js_assert_arguments_length(ast) {
     return;
   }
   let first = list_first(body);
-  return body;
+  return first;
 }
