@@ -75,6 +75,7 @@ export async function terminal() {
         log({
           key,
         });
+        return;
         let input = buffer_to_string();
         let tokens = tokens_get(input);
         let extra = "";
