@@ -1,3 +1,3 @@
 export function game_tiles_max() {
-  return 14;
+  return 10;
 }
