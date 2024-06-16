@@ -36,6 +36,7 @@ export async function app_gs_map_render(
         if (rows[xe]) {
           return;
         }
+        let tile = map.tiles[ye][xe];
         let c = await app_gs_map_cell(map, map_c, player_overlay, tile);
         la(c);
         rows[xe] = true;
