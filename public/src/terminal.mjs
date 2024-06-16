@@ -1,6 +1,6 @@
+import { function_run_terminal } from "./function_run_terminal.mjs";
 import { error } from "./error.mjs";
 import { list_first_remaining } from "./list_first_remaining.mjs";
-import { function_runner_json } from "./function_runner_json.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { list_join_underscore } from "./list_join_underscore.mjs";
 import { list_multiple_is } from "./list_multiple_is.mjs";
@@ -309,7 +309,7 @@ export async function terminal() {
     let { first: function_name, remaining: args } =
       list_first_remaining(tokens);
     try {
-      let result = await function_runner_json(function_name, args);
+      let result = await function_run_terminal(function_name, args);
       if (undefined_not_is(result)) {
         log(result);
       }

@@ -1,4 +1,4 @@
-import { function_runner_json } from "./function_runner_json.mjs";
+import { function_run_terminal } from "./function_run_terminal.mjs";
 import { log } from "./log.mjs";
 import { json_to } from "./json_to.mjs";
 import { server_port } from "./server_port.mjs";
@@ -26,7 +26,7 @@ export function server() {
   app.post("/", async (req, res) => {
     let { body } = req;
     let { function_name, args } = body;
-    let result = await function_runner_json(function_name, args);
+    let result = await function_run_terminal(function_name, args);
     res.end(json_to(result));
   });
   app.listen(port, () => {
