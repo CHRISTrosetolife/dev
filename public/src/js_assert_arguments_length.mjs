@@ -21,5 +21,5 @@ export function js_assert_arguments_length(ast) {
     return;
   }
   let { callee } = expression;
-  return first;
+  return callee;
 }
