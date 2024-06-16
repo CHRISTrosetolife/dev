@@ -7,5 +7,9 @@ export async function function_transform_return(lambda_names, function_name) {
   let args = list_to(arguments);
   let length = list_size(args);
   assert(equal, [length, 2]);
-  return await function_transform_args_return(lambda_names, function_name, "");
+  return await function_transform_args_return(
+    lambda_names,
+    function_name,
+    null,
+  );
 }
