@@ -46,7 +46,7 @@ export function app_gs_map_render(map, map_c, coordinates, player_overlay) {
       log({
         row,
       });
-      each(row, (c) => each(c, html_remove));
+      each_object(row, (hx, c) => each(c, html_remove));
       return;
     }
     each_object(object_property_get(tiles_new, hy), (hx, c) => {
