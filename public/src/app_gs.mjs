@@ -12,7 +12,12 @@ export async function app_gs() {
   let map_c = app_gs_map_html(root, map);
   let player_overlay = app_gs_overlay_player(map_c, map);
   map.html = [];
-  let tiles_new = app_gs_map_render(map, map_c, map.player, player_overlay);
+  let tiles_new = await app_gs_map_render(
+    map,
+    map_c,
+    map.player,
+    player_overlay,
+  );
   await promise_all(tiles_new);
   await sleep(0);
   html_scroll_center_smooth(player_overlay);
