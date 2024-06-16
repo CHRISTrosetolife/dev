@@ -49,6 +49,7 @@ export async function app_gs_map_render(
   each_object(map.html, (hy, rows) => {
     if (object_property_exists_not(tiles_new, hy)) {
       each(rows, html_remove);
+      return;
     }
   });
   map.html = tiles_new;
