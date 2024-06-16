@@ -34,8 +34,8 @@ export async function app_gs_map_render(
   let renders = [];
   each(coordinates, (c) => {
     let { x, y } = c;
-    each(range_from(x - w_extend, x + w_extend), (xe) => {
-      each(range_from(y - h_extend, y + h_extend), (ye) => {});
+    each(range_from(y - h_extend, y + h_extend), (ye) => {
+      each(range_from(x - w_extend, x + w_extend), (xe) => {});
     });
   });
   let xs = list_map_property(coordinates, "x");
