@@ -206,13 +206,12 @@ export async function terminal() {
       log_clear();
     }
     try {
-      let result = await command_line(
-        list_join_space([
-          "node",
-          string_combine(run.name, function_path_suffix()),
-          input,
-        ]),
-      );
+      let command = list_join_space([
+        "node",
+        string_combine(run.name, function_path_suffix()),
+        input,
+      ]);
+      let result = await command_line(command);
       let { stdout, stderr } = result;
       if (string_empty_not_is(stdout)) {
         log_write(stdout);
