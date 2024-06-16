@@ -33,7 +33,7 @@ export async function app_gs_map_render(
   let h_extend = floor(h_tiles / 2);
   let renders = [];
   each(coordinates, (c) => {
-    let xy = c;
+    let { x, y } = c;
     range_from();
   });
   let xs = list_map_property(coordinates, "x");
