@@ -49,7 +49,8 @@ export function app_gs_map_render(map, map_c, coordinates, player_overlay) {
       each_object(row, (hx, c) => each(c, html_remove));
       return;
     }
-    each_object(object_property_get(tiles_new, hy), (hx, c) => {
+    let row_new = object_property_get(tiles_new, hy);
+    each_object(row, (hx, c) => {
       if (object_property_exists_not(tiles_new, hx)) {
         each(c, html_remove);
       }
