@@ -148,6 +148,7 @@ export async function terminal() {
     });
     if (count === 0) {
       log({
+        message: "unhandled",
         key,
       });
     }
