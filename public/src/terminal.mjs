@@ -70,6 +70,7 @@ export async function terminal() {
         let b = buffer_get();
         let t = tokens_get();
         if (list_empty_not_is(t)) {
+          list_pop(tokens);
         }
         list_pop(b);
         log_clear();
