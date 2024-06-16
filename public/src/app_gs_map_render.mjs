@@ -40,9 +40,9 @@ export function app_gs_map_render(map, map_c, coordinates, player_overlay) {
       });
     });
   });
-  each_object(map.html, (hy, rows) => {
+  each_object(map.html, (hy, row) => {
     if (object_property_exists_not(tiles_new, hy)) {
-      each(rows, (row) => each(row, (c) => each(c, html_remove)));
+      each(row, (c) => each(c, html_remove));
       return;
     }
     each_object(object_property_get(tiles_new, hy), (hx, c) => {
