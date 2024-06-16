@@ -16,6 +16,6 @@ export function js_assert_arguments_length(ast) {
     return;
   }
   let { expression } = first;
-  let type = expression;
+  let { type: type_expression } = expression;
   return first;
 }
