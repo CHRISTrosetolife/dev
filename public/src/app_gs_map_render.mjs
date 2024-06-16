@@ -33,6 +33,9 @@ export function app_gs_map_render(map, map_c, b, player_overlay) {
       await app_gs_map_cell(map, map_c, player_overlay, tile);
     }
   });
+  log({
+    h: map.html,
+  });
   each(map.html, html_remove);
   list_remove_all(map.html);
   list_add_multiple(map.html, tiles_new);
