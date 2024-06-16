@@ -32,7 +32,7 @@ export async function app_gs_map_render(
   let h_tiles = ceiling(h / tile_size_px);
   let w_extend = floor(w_tiles / 2);
   let h_extend = floor(h_tiles / 2);
-  let renders = [];
+  let renders = {};
   each(coordinates, (c) => {
     let { x, y } = c;
     each(range_from(y - h_extend, y + h_extend), (ye) => {
