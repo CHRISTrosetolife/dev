@@ -8,7 +8,6 @@ import { floor } from "./floor.mjs";
 import { ceiling } from "./ceiling.mjs";
 import { number_max } from "./number_max.mjs";
 import { game_tiles_max } from "./game_tiles_max.mjs";
-import { each_async } from "./each_async.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { each_object } from "./each_object.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -27,12 +26,12 @@ export async function app_gs_map_render(
   let w_extend = floor(w_tiles / 2);
   let h_extend = floor(h_tiles / 2);
   let tiles_new = {};
-  await each_async(coordinates, async (c) => {
+  each(coordinates, (c) => {
     let { x, y } = c;
-    await each_async(range_from(y - h_extend, y + h_extend), async (ye) => {
+    each(range_from(y - h_extend, y + h_extend), (ye) => {
       let rows_new = object_property_initialize(tiles_new, ye, {});
       let rows_old = object_property_initialize(map.html, ye, {});
-      await each_async(range_from(x - w_extend, x + w_extend), async (xe) => {
+      each(range_from(x - w_extend, x + w_extend), (xe) => {
         if (object_property_exists(rows_new, xe)) {
           return;
         }
