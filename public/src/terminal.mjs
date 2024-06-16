@@ -57,8 +57,7 @@ export async function terminal() {
     {
       keys: ["meta", "backspace"],
       action: () => {
-        buffer_clear();
-        log_clear_write_prompt();
+        log_buffer_clear();
       },
     },
     {
@@ -121,6 +120,10 @@ export async function terminal() {
     },
   ];
   let prompt = chalk().greenBright("✟") + " ";
+  function log_buffer_clear() {
+    buffer_clear();
+    log_clear_write_prompt();
+  }
   function buffer_to_string() {
     return list_join_empty(buffer_get());
   }
