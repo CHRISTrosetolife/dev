@@ -8,7 +8,6 @@ export function app_gs_map_html(root, map) {
   html_style_width(map_c, game_tile_units_css(map.x_size));
   html_style_height(map_c, game_tile_units_css(map.y_size));
   html_style(map_c, {
-    overflow: "hidden",
     position: "relative",
     display: "inline",
   });
