@@ -66,8 +66,8 @@ export async function terminal() {
     {
       keys: ["ctrl", "w"],
       action: (key) => {
-        let b = buffer_get();
-        let tokens = tokens_get();
+        let input = buffer_to_string();
+        let tokens = tokens_get(input);
         if (list_empty_not_is(tokens)) {
           list_pop(tokens);
         }
