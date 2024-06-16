@@ -21,7 +21,7 @@ export async function app_gs() {
   let existing = [];
   let tiles = list_map(map.tiles, async (tile) => {
     let b = map.player;
-    let distance = list_all(list_xy(), (xy) => abs(tile[xy] - b[xy]) <= limit);
+    let visible = list_all(list_xy(), (xy) => abs(tile[xy] - b[xy]) <= limit);
     if (distance > 7) {
       return;
     }
