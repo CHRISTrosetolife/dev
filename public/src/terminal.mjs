@@ -69,7 +69,20 @@ export async function terminal() {
         shift: false,
       },
       action: () => {
-        log_buffer_clear();
+        let input = buffer_to_string();
+        let tokens = tokens_get(input);
+        let extra = "";
+        if (list_empty_not_is(tokens)) {
+          list_pop(tokens);
+          if (list_empty_not_is(tokens)) {
+            extra = " ";
+          }
+        }
+        log_clear_write_prompt();
+        let joined = list_join_space(tokens);
+        joined = string_combine(joined, extra);
+        buffer_clear();
+        each(joined, keyboard_type);
       },
     },
     {
