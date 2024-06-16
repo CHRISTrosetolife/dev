@@ -1,3 +1,4 @@
+import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { range_from } from "./range_from.mjs";
 import { html_remove } from "./html_remove.mjs";
@@ -45,7 +46,10 @@ export async function app_gs_map_render(
     });
   });
   each(map.html, html_remove);
-  each_object(map.html, (hy, rows) => {});
+  each_object(map.html, (hy, rows) => {
+    if (object_property_exists_not(tiles_new, hy)) {
+    }
+  });
   map.html = tiles_new;
   return tiles_new;
 }
