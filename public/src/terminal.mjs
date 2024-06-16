@@ -211,9 +211,12 @@ export async function terminal() {
           ),
         ),
       );
-      let { stdout } = result;
+      let { stdout, stderr } = result;
       if (string_empty_not_is(stdout)) {
         log_write(stdout);
+      }
+      if (string_empty_not_is(stderr)) {
+        log_write_error(stderr);
       }
     } catch (e) {
       let message = e.stack;
