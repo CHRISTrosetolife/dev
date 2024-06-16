@@ -1,15 +1,14 @@
+import { list_first_remaining } from "./list_first_remaining.mjs";
+import { function_runner_json } from "./function_runner_json.mjs";
+import { object_property_exists } from "./object_property_exists.mjs";
 import { list_join_underscore } from "./list_join_underscore.mjs";
 import { list_multiple_is } from "./list_multiple_is.mjs";
 import { string_split_underscore } from "./string_split_underscore.mjs";
 import { on_keypress } from "./on_keypress.mjs";
-import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 import { chalk } from "./chalk.mjs";
 import { log_error } from "./log_error.mjs";
 import { exit_aliases } from "./exit_aliases.mjs";
 import { unawait } from "./unawait.mjs";
-import { function_path_suffix } from "./function_path_suffix.mjs";
-import { run } from "./run.mjs";
-import { command_line } from "./command_line.mjs";
 import { list_pop } from "./list_pop.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { not } from "./not.mjs";
@@ -39,11 +38,19 @@ import { list_map } from "./list_map.mjs";
 import { string_to } from "./string_to.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { string_combine } from "./string_combine.mjs";
-import { string_empty_not_is } from "./string_empty_not_is.mjs";
+import { object_property_get } from "./object_property_get.mjs";
+import { string_empty_is } from "./string_empty_is.mjs";
+import { undefined_not_is } from "./undefined_not_is.mjs";
 export async function terminal() {
   let commands = [
     {
-      keys: ["ctrl", "v"],
+      match: {
+        sequence: "\x16",
+        name: "v",
+        ctrl: true,
+        meta: false,
+        shift: false,
+      },
       action: async () => {
         let value = await clipboard_paste();
         let split = string_split_empty(value);
@@ -54,11 +61,23 @@ export async function terminal() {
       },
     },
     {
-      keys: ["ctrl", "c"],
+      match: {
+        sequence: "\x03",
+        name: "c",
+        ctrl: true,
+        meta: false,
+        shift: false,
+      },
       action: exit,
     },
     {
-      keys: ["meta", "backspace"],
+      match: {
+        sequence: "\x1B\b",
+        name: "backspace",
+        ctrl: false,
+        meta: true,
+        shift: false,
+      },
       action: () => {
         log_buffer_clear();
       },
@@ -77,22 +96,33 @@ export async function terminal() {
         let mapped = list_map(tokens, string_split_underscore);
         let extra = "";
         if (list_empty_not_is(mapped)) {
-          let last = list_last(tokens);
+          let last = list_last(mapped);
           if (list_multiple_is(last)) {
-            list_pop(last);
-            extra = "_";
+            let p;
+            do {
+              p = list_pop(last);
+            } while (string_empty_is(p));
+            if (list_empty_not_is(last)) {
+              extra = "_";
+            }
           }
         }
-        let mapped2 = list_map(mapped, (m) => list_join_underscore(m));
+        let mapped2 = list_map(mapped, list_join_underscore);
         log_clear_write_prompt();
-        let joined = list_join_space(tokens);
+        let joined = list_join_space(mapped2);
         joined = string_combine(joined, extra);
         buffer_clear();
         each(joined, keyboard_type);
       },
     },
     {
-      keys: ["backspace"],
+      match: {
+        sequence: "\b",
+        name: "backspace",
+        ctrl: false,
+        meta: false,
+        shift: false,
+      },
       action: (key) => {
         let b = buffer_get();
         list_pop(b);
@@ -101,7 +131,13 @@ export async function terminal() {
       },
     },
     {
-      keys: ["ctrl", "w"],
+      match: {
+        sequence: "\x17",
+        name: "w",
+        ctrl: true,
+        meta: false,
+        shift: false,
+      },
       action: (key) => {
         let input = buffer_to_string();
         let tokens = tokens_get(input);
@@ -120,7 +156,13 @@ export async function terminal() {
       },
     },
     {
-      keys: ["return"],
+      match: {
+        sequence: "\r",
+        name: "return",
+        ctrl: false,
+        meta: false,
+        shift: false,
+      },
       action: () => {
         log("");
         let result = buffer_to_string();
@@ -131,14 +173,27 @@ export async function terminal() {
       },
     },
     {
-      keys: ["up"],
+      match: {
+        sequence: "\x1B[A",
+        name: "up",
+        ctrl: false,
+        meta: false,
+        shift: false,
+        code: "[A",
+      },
       action: () => {
         log_buffer_clear();
         keyboard_type(list_last(history_get()));
       },
     },
     {
-      keys: ["space"],
+      match: {
+        sequence: " ",
+        name: "space",
+        ctrl: false,
+        meta: false,
+        shift: false,
+      },
       action: () => keyboard_type(" "),
     },
     {
@@ -190,23 +245,34 @@ export async function terminal() {
     let actual = [ctrl, meta, shift];
     let count = await counter_async(async (la) => {
       await each_async(commands, async (command) => {
-        let { keys } = command;
-        let ctrl_c = list_includes(keys, "ctrl");
-        let meta_c = list_includes(keys, "meta");
-        let shift_c = list_includes(keys, "shift");
-        let expected = [ctrl_c, meta_c, shift_c];
-        if (list_any([name, sequence], (ns) => list_includes(keys, ns))) {
-          if (equal_json(actual, expected)) {
-            if (0) {
-              log({
-                command,
-                expected,
-                key,
-              });
+        let match_is = false;
+        if (object_property_exists(command, "keys")) {
+          let { keys } = command;
+          let ctrl_c = list_includes(keys, "ctrl");
+          let meta_c = list_includes(keys, "meta");
+          let shift_c = list_includes(keys, "shift");
+          let expected = [ctrl_c, meta_c, shift_c];
+          if (list_any([name, sequence], (ns) => list_includes(keys, ns))) {
+            if (equal_json(actual, expected)) {
+              match_is = true;
+              if (0) {
+                log({
+                  command,
+                  expected,
+                  key,
+                });
+              }
             }
-            la();
-            await command.action(key);
           }
+        } else {
+          let match = object_property_get(command, "match");
+          if (equal_json(match, key)) {
+            match_is = true;
+          }
+        }
+        if (match_is) {
+          la();
+          await command.action(key);
         }
       });
     });
@@ -239,19 +305,13 @@ export async function terminal() {
     if (input === "cls") {
       log_clear();
     }
+    let tokens = tokens_get(input);
     try {
-      let command = list_join_space([
-        "node",
-        string_combine(run.name, function_path_suffix()),
-        input,
-      ]);
-      let result = await command_line(command);
-      let { stdout, stderr } = result;
-      if (string_empty_not_is(stdout)) {
-        log_write(stdout);
-      }
-      if (string_empty_not_is(stderr)) {
-        log_error(string_trim_whitespace(stderr));
+      let { first: function_name, remaining: args } =
+        list_first_remaining(tokens);
+      let result = await function_runner_json(function_name, args);
+      if (undefined_not_is(result)) {
+        log(result);
       }
     } catch (e) {
       let message = e.stack;
