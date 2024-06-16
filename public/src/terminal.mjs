@@ -66,12 +66,12 @@ export async function terminal() {
       keys: ["ctrl", "backspace"],
       action: (key) => {
         let b = buffer_get();
-        let t = tokens_get();
-        if (list_empty_not_is(t)) {
+        let tokens = tokens_get();
+        if (list_empty_not_is(tokens)) {
           list_pop(tokens);
         }
         log_clear_write_prompt();
-        each(b, keyboard_write);
+        each(tokens, (token) => each(token, keyboard_write));
       },
     },
     {
