@@ -41,7 +41,7 @@ export async function app_gs_map_render(
           return;
         }
         let tile = map.tiles[ye][xe];
-        let component = await app_gs_map_cell(map, map_c, player_overlay, tile);
+        let component = app_gs_map_cell(map, map_c, player_overlay, tile);
         rows_new[xe] = component;
       });
     });
