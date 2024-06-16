@@ -19,6 +19,7 @@ import { html_data_set } from "./html_data_set.mjs";
 import { html_div } from "./html_div.mjs";
 import { app_gs_z_indexes } from "./app_gs_z_indexes.mjs";
 import { list_skip } from "./list_skip.mjs";
+import { list_concat } from "./list_concat.mjs";
 export async function app_gs_map_cell(map, map_c, player_overlay, tile) {
   let z_indexes = app_gs_z_indexes();
   let clicker = html_div(map_c);
@@ -64,5 +65,5 @@ export async function app_gs_map_cell(map, map_c, player_overlay, tile) {
     html_scroll_center_smooth(player_overlay);
   });
   await html_img_wait(tile_c);
-  return [tile_c];
+  return list_concat([tile_c], overlays);
 }
