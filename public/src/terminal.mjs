@@ -60,6 +60,7 @@ export async function terminal() {
         list_pop(buffer_get());
         log_clear();
         log_write(prompt_get());
+        each(buffer_get(), log_write);
       },
     },
     {
