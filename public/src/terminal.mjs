@@ -102,7 +102,7 @@ export async function terminal() {
     {
       keys: ["up"],
       action: () => {
-        log_clear_write_prompt();
+        log_buffer_clear();
         keyboard_type(list_last(history_get()));
       },
     },
