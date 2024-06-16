@@ -1,3 +1,4 @@
+import { list_all } from "./list_all.mjs";
 import { game_tiles_max } from "./game_tiles_max.mjs";
 import { ceiling } from "./ceiling.mjs";
 import { abs } from "./abs.mjs";
@@ -19,7 +20,7 @@ export async function app_gs() {
   let existing = [];
   let tiles = list_map(map.tiles, async (tile) => {
     let b = map.player;
-    let distance = abs(tile.x - b.x) + abs(tile.y - b.y);
+    let distance = list_all(["x", "y"], abs(tile[xy] - b[xy]));
     if (distance > 7) {
       return;
     }
