@@ -14,8 +14,6 @@ import { ceiling } from "./ceiling.mjs";
 import { number_max } from "./number_max.mjs";
 import { game_tiles_max } from "./game_tiles_max.mjs";
 import { promise_all } from "./promise_all.mjs";
-import { list_filter } from "./list_filter.mjs";
-import { undefined_not_is } from "./undefined_not_is.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { each_async } from "./each_async.mjs";
@@ -60,7 +58,6 @@ export async function app_gs_map_render(
       ),
   );
   tiles_new = await promise_all(tiles_new);
-  tiles_new = list_filter(tiles_new, undefined_not_is);
   tiles_new = list_concat_multiple(tiles_new);
   each(map.html, html_remove);
   list_remove_all(map.html);
