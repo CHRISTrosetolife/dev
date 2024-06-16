@@ -1,3 +1,4 @@
+import { number_min_list } from "./number_min_list.mjs";
 import { number_max_list } from "./number_max_list.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
 import { list_remove_all } from "./list_remove_all.mjs";
@@ -22,7 +23,10 @@ export async function app_gs_map_render(
 ) {
   let xs = list_map_property(coordinates, "x");
   let ys = list_map_property(coordinates, "y");
-  number_max_list();
+  number_max_list(xs);
+  number_max_list(ys);
+  number_min_list(xs);
+  number_min_list(ys);
   let w = window.innerWidth;
   let h = window.innerHeight;
   let limit = game_tiles_max();
