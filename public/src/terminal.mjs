@@ -79,6 +79,7 @@ export async function terminal() {
         shift: false,
       },
       action: () => {
+        log("here");
         log_buffer_clear();
       },
     },
