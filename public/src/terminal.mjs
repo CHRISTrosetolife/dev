@@ -64,7 +64,7 @@ export async function terminal() {
       },
     },
     {
-      keys: ["ctrl", "backspace"],
+      keys: ["ctrl", "w"],
       action: (key) => {
         let b = buffer_get();
         let tokens = tokens_get();
