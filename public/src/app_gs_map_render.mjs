@@ -54,6 +54,7 @@ export async function app_gs_map_render(
             let visible = d1 <= w_extend && d2 <= h_extend;
             if (visible) {
               let c = await app_gs_map_cell(map, map_c, player_overlay, tile);
+              la(c);
             }
           }),
       ),
