@@ -40,7 +40,7 @@ export function app_gs_map_new() {
   let overlays_wall = app_gs_overlays_wall();
   let overlays = list_concat(overlays_wall, range_from(48, 57));
   let grass = game_grass_weight();
-  map.tiles = list_adder((la) =>
+  map.tiles = list_adder((lar) =>
     each_range(y_size, (y) => {
       let row = list_adder((lac) => {
         each_range(x_size, (x) => {
@@ -52,9 +52,10 @@ export function app_gs_map_new() {
           object_merge(tile, {
             id,
           });
-          la(tile);
+          lac(tile);
         });
       });
+      lar(row);
     }),
   );
   let [inside, outside] = list_partition(map, inside_is);
