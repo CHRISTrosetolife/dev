@@ -32,9 +32,7 @@ export async function function_runner_json(function_name, args) {
           reject(r);
         }
         if (10) {
-          log({
-            r,
-          });
+          log(r.error);
         }
         let contents = await file_read_json(file_path_output);
         let { result } = contents;
