@@ -71,6 +71,7 @@ export async function terminal() {
         let extra = "";
         if (list_empty_not_is(tokens)) {
           list_pop(tokens);
+          extra = " ";
         }
         log_clear_write_prompt();
         let joined = list_join_space(tokens);
