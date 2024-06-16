@@ -157,11 +157,8 @@ export async function terminal() {
   function buffer_get() {
     return buffer;
   }
-  process.stdin.on("keypress", async function (chunk, key) {
-    log({
-      key,
-    });
-    return;
+  process.stdin.on("keypress", on);
+  async function on(chunk, key) {
     let { sequence, name, ctrl, meta, shift } = key;
     let actual = [ctrl, meta, shift];
     let count = await counter_async(async (la) => {
@@ -192,7 +189,7 @@ export async function terminal() {
         key,
       });
     }
-  });
+  }
   function keyboard_type(name) {
     name = string_replace(name, "\n", " ");
     keyboard_write(name);
