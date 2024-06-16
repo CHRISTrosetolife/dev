@@ -9,7 +9,7 @@ export function js_to_block_generic(node, properties, except) {
     }
     let { type } = value;
     if (type !== "BlockStatement") {
-      if (except(type)) {
+      if (except(type, p)) {
         return;
       }
       let value_new = {
