@@ -1,3 +1,4 @@
+import { run } from "./run.mjs";
 import { command_line } from "./command_line.mjs";
 import { list_pop } from "./list_pop.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
@@ -195,7 +196,9 @@ export async function terminal() {
     let input = await next();
     let tokens = tokens_get(input);
     try {
-      let result = await command_line(list_join_space(["node"]));
+      let result = await command_line(
+        list_join_space(["node", string_combine(run.name)]),
+      );
       if (undefined_not_is(result)) {
         log(result);
       }
