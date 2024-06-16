@@ -314,7 +314,8 @@ export async function terminal() {
         log(result);
       }
     } catch (e) {
-      log_error(e);
+      log_error("error :");
+      log(e);
     }
     unawait(run_git_ac);
   }
