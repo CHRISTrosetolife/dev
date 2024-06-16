@@ -11,9 +11,4 @@ export function js_if_to_block(ast) {
       return false;
     });
   });
-  if (0) {
-    0;
-  } else if (0) {
-    0;
-  }
 }
