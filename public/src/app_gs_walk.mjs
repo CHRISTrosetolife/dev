@@ -59,6 +59,6 @@ export async function app_gs_walk(player_overlay, player, tile) {
         player.x + (delta.x / animate_count) * step_count,
       );
     }
-    app_gs_map_render(map, b, map_c, player_overlay);
+    app_gs_map_render(map, map.player, map_c, player_overlay);
   });
 }
