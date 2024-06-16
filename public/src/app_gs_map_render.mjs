@@ -28,9 +28,9 @@ export async function app_gs_map_render(
   await each_async(coordinates, async (c) => {
     let { x, y } = c;
     await each_async(range_from(y - h_extend, y + h_extend), async (ye) => {
-      let rows = object_property_initialize(tiles_new, ye, {});
+      let rows_new = object_property_initialize(tiles_new, ye, {});
       await each_async(range_from(x - w_extend, x + w_extend), async (xe) => {
-        if (rows[xe]) {
+        if (rows_new[xe]) {
           return;
         }
         let tile = map.tiles[ye][xe];
