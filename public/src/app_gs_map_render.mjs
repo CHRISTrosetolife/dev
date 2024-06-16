@@ -10,7 +10,6 @@ import { ceiling } from "./ceiling.mjs";
 import { number_max } from "./number_max.mjs";
 import { game_tiles_max } from "./game_tiles_max.mjs";
 import { promise_all } from "./promise_all.mjs";
-import { list_adder } from "./list_adder.mjs";
 import { each_async } from "./each_async.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 export async function app_gs_map_render(
@@ -28,35 +27,25 @@ export async function app_gs_map_render(
   let w_extend = floor(w_tiles / 2);
   let h_extend = floor(h_tiles / 2);
   let rendered = {};
-  let tiles_new = list_adder(
-    async (la) =>
-      await each_async(coordinates, async (c) => {
-        let { x, y } = c;
-        await each_async(range_from(y - h_extend, y + h_extend), async (ye) => {
-          let rows = object_property_initialize(rendered, ye, {});
-          await each_async(
-            range_from(x - w_extend, x + w_extend),
-            async (xe) => {
-              if (rows[xe]) {
-                return;
-              }
-              let tile = map.tiles[ye][xe];
-              let component = await app_gs_map_cell(
-                map,
-                map_c,
-                player_overlay,
-                tile,
-              );
-              la({
-                tile,
-                component,
-              });
-              rows[xe] = true;
-            },
-          );
+  let tiles_new = {};
+  await each_async(coordinates, async (c) => {
+    let { x, y } = c;
+    await each_async(range_from(y - h_extend, y + h_extend), async (ye) => {
+      let rows = object_property_initialize(rendered, ye, {});
+      await each_async(range_from(x - w_extend, x + w_extend), async (xe) => {
+        if (rows[xe]) {
+          return;
+        }
+        let tile = map.tiles[ye][xe];
+        let component = await app_gs_map_cell(map, map_c, player_overlay, tile);
+        la({
+          tile,
+          component,
         });
-      }),
-  );
+        rows[xe] = true;
+      });
+    });
+  });
   tiles_new = await promise_all(tiles_new);
   tiles_new = list_concat_multiple(tiles_new);
   each(map.html, html_remove);
