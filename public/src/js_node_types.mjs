@@ -14,9 +14,6 @@ export function js_node_types(ast) {
     function lambda(v) {
       let { node } = v;
       let { type } = node;
-      log({
-        type,
-      });
       if (undefined_not_is(type)) {
         la(type);
       }
