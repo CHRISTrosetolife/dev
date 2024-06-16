@@ -73,7 +73,7 @@ export async function terminal() {
         }
         log_clear_write_prompt();
         let joined = list_join_space(tokens);
-        each(tokens, (token) => each(token, keyboard_write));
+        each(joined, keyboard_write);
       },
     },
     {
