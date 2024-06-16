@@ -2,8 +2,6 @@ import { floor } from "./floor.mjs";
 import { log } from "./log.mjs";
 import { ceiling } from "./ceiling.mjs";
 import { number_max } from "./number_max.mjs";
-import { list_xy } from "./list_xy.mjs";
-import { list_all } from "./list_all.mjs";
 import { game_tiles_max } from "./game_tiles_max.mjs";
 import { abs } from "./abs.mjs";
 import { sleep } from "./sleep.mjs";
@@ -37,7 +35,8 @@ export async function app_gs() {
   });
   let tiles = list_map(map.tiles, async (tile) => {
     let b = map.player;
-    let visible = list_all(list_xy(), (xy) => abs(tile[xy] - b[xy]) <= limit);
+    let visible =
+      abs(tile.x - b.x) <= w_extend && abs(tile.y - b.y) <= h_extend;
     if (visible) {
       await app_gs_map_cell(map, map_c, player_overlay, tile);
     }
