@@ -30,6 +30,7 @@ import { each_async } from "./each_async.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_to } from "./string_to.mjs";
 import { list_join_space } from "./list_join_space.mjs";
+import { string_combine } from "./string_combine.mjs";
 export async function terminal() {
   let commands = [
     {
@@ -75,6 +76,7 @@ export async function terminal() {
         }
         log_clear_write_prompt();
         let joined = list_join_space(tokens);
+        joined = string_combine(joined, extra);
         buffer_clear();
         each(joined, keyboard_type);
       },
