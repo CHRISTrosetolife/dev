@@ -207,6 +207,7 @@ export async function terminal() {
           ),
         ),
       );
+      let stdout = result;
       if (undefined_not_is(result)) {
         log(result);
       }
