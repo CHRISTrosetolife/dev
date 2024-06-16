@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { range_from } from "./range_from.mjs";
 import { number_min_list } from "./number_min_list.mjs";
 import { number_max_list } from "./number_max_list.mjs";
@@ -53,5 +54,8 @@ export async function app_gs_map_render(
   each(map.html, html_remove);
   list_remove_all(map.html);
   list_add_multiple(map.html, tiles_new);
+  log({
+    h: map.html,
+  });
   return tiles_new;
 }
