@@ -58,8 +58,7 @@ export async function terminal() {
       action: (key) => {
         let b = buffer_get();
         list_pop(b);
-        log_clear();
-        log_write(prompt_get());
+        log_clear_write_prompt();
         each(b, keyboard_write);
       },
     },
@@ -71,8 +70,7 @@ export async function terminal() {
         if (list_empty_not_is(t)) {
           list_pop(tokens);
         }
-        log_clear();
-        log_write(prompt_get());
+        log_clear_write_prompt();
         each(b, keyboard_write);
       },
     },
