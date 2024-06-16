@@ -1,3 +1,4 @@
+import { html_remove } from "./html_remove.mjs";
 import { floor } from "./floor.mjs";
 import { ceiling } from "./ceiling.mjs";
 import { number_max } from "./number_max.mjs";
@@ -35,7 +36,7 @@ export async function app_gs() {
       await app_gs_map_cell(map, map_c, player_overlay, tile);
     }
   });
-  each(existing, (t) => {});
+  each(existing, (t) => html_remove(t));
   await promise_all(tiles);
   await sleep(0);
   html_scroll_center_smooth(player_overlay);
