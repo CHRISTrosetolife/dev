@@ -14,6 +14,7 @@ import { app_gs_map_new } from "./app_gs_map_new.mjs";
 import { html_scroll_center_smooth } from "./html_scroll_center_smooth.mjs";
 import { list_map } from "./list_map.mjs";
 import { each } from "./each.mjs";
+import { list_add_multiple } from "./list_add_multiple.mjs";
 export async function app_gs() {
   let root = app_gs_style_default_initialize();
   let map = app_gs_map_new();
@@ -28,7 +29,7 @@ export async function app_gs() {
   let h_tiles = ceiling(h / tile_size_px);
   let w_extend = floor(w_tiles / 2);
   let h_extend = floor(h_tiles / 2);
-  let tiles = list_map(map.tiles, async (tile) => {
+  let tiles_new = list_map(map.tiles, async (tile) => {
     let b = map.player;
     let visible =
       abs(tile.x - b.x) <= w_extend && abs(tile.y - b.y) <= h_extend;
@@ -37,7 +38,8 @@ export async function app_gs() {
     }
   });
   each(existing, html_remove);
-  await promise_all(tiles);
+  list_add_multiple(existing, tiles_new);
+  await promise_all(tiles_new);
   await sleep(0);
   html_scroll_center_smooth(player_overlay);
 }
