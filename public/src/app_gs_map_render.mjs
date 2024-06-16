@@ -25,7 +25,7 @@ export async function app_gs_map_render(map, map_c, b, player_overlay) {
     let d2 = abs(tile.y - b.y);
     let visible = d1 <= w_extend && d2 <= h_extend;
     if (visible) {
-      await app_gs_map_cell(map, map_c, player_overlay, tile);
+      return await app_gs_map_cell(map, map_c, player_overlay, tile);
     }
   });
   tiles_new = await promise_all(tiles_new);
