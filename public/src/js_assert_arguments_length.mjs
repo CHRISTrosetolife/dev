@@ -7,7 +7,7 @@ export function js_assert_arguments_length(ast) {
   if (list_empty_is(body_d)) {
     return;
   }
-  let body = body_d;
-  let first = list_first(body);
+  let { body: body_block } = body_d;
+  let first = list_first(body_block);
   return first;
 }
