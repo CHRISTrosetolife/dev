@@ -1,3 +1,4 @@
+import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 import { chalk } from "./chalk.mjs";
 import { log_error } from "./log_error.mjs";
 import { exit_aliases } from "./exit_aliases.mjs";
@@ -216,7 +217,7 @@ export async function terminal() {
         log_write(stdout);
       }
       if (string_empty_not_is(stderr)) {
-        log_error(stderr);
+        log_error(string_trim_whitespace(stderr));
       }
     } catch (e) {
       let message = e.stack;
