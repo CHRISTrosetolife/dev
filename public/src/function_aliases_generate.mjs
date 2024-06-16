@@ -1,3 +1,4 @@
+import { log_clear } from "./log_clear.mjs";
 import { exit_aliases } from "./exit_aliases.mjs";
 import { google_search } from "./google_search.mjs";
 import { git_acp } from "./git_acp.mjs";
@@ -39,6 +40,7 @@ export async function function_aliases_generate() {
   alias_add(function_auto, ["a"]);
   alias_add(function_aliases_generate, ["al"]);
   alias_add(function_copy, ["c"]);
+  alias_add(log_clear, ["c"]);
   alias_add(data_update, ["d"]);
   alias_add(function_delete, ["de"]);
   alias_add(exit, exit_aliases());
