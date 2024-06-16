@@ -81,7 +81,7 @@ export function app_gs_map_new() {
       id,
     };
     object_merge_properties(o, t, list_xy());
-    list_add(map_overlays, o);
+    list_add(t.overlays, o);
   }
   function inside_is(t) {
     return list_all(
