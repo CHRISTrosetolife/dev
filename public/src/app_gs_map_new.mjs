@@ -1,3 +1,4 @@
+import { list_xy } from "./list_xy.mjs";
 import { each } from "./each.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { list_partition } from "./list_partition.mjs";
@@ -72,7 +73,7 @@ export function app_gs_map_new() {
     let o = {
       id,
     };
-    object_merge_properties(o, t, ["x", "y"]);
+    object_merge_properties(o, t, list_xy());
     list_add(map_overlays, o);
   }
   function inside_is(t) {
