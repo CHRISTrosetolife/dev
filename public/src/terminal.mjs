@@ -195,7 +195,7 @@ export async function terminal() {
     let input = await next();
     let tokens = tokens_get(input);
     try {
-      let result = await command_line();
+      let result = await command_line(list_join_space(["node"]));
       if (undefined_not_is(result)) {
         log(result);
       }
