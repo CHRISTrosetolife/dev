@@ -30,7 +30,9 @@ export function js_assert_arguments_length(ast) {
   if (name !== assert_arguments_length.name) {
     return;
   }
-  let params = d;
-  return d;
-  expression.arguments = [js_parse_expression("arguments"), list_length()];
+  let { params } = d;
+  expression.arguments = [
+    js_parse_expression("arguments"),
+    list_length(params),
+  ];
 }
