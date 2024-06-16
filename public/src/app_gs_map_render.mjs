@@ -33,11 +33,11 @@ export async function app_gs_map_render(
   let w_extend = floor(w_tiles / 2);
   let h_extend = floor(h_tiles / 2);
   let renders = {};
-  each(coordinates, (c) => {
+  each(coordinates, async (c) => {
     let { x, y } = c;
-    each(range_from(y - h_extend, y + h_extend), (ye) => {
+    await each_async(range_from(y - h_extend, y + h_extend), async (ye) => {
       let rows = object_property_initialize(renders, ye, {});
-      each(range_from(x - w_extend, x + w_extend), (xe) => {
+      await each_async(range_from(x - w_extend, x + w_extend), (xe) => {
         rows[xe] = true;
       });
     });
