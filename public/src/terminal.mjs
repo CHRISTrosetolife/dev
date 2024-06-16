@@ -1,3 +1,4 @@
+import { exit_aliases } from "./exit_aliases.mjs";
 import { unawait } from "./unawait.mjs";
 import { function_path_suffix } from "./function_path_suffix.mjs";
 import { run } from "./run.mjs";
@@ -171,6 +172,7 @@ export async function terminal() {
             await command.action(key);
           }
         }
+        exit_aliases();
       });
     });
     if (count === 0) {
