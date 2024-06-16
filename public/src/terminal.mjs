@@ -139,7 +139,7 @@ export async function terminal() {
             log({
               command,
               expected,
-              actual,
+              key,
             });
             la();
             await command.action(key);
