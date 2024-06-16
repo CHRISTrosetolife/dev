@@ -1,3 +1,4 @@
+import { list_multiple_is } from "./list_multiple_is.mjs";
 import { string_split_underscore } from "./string_split_underscore.mjs";
 import { on_keypress } from "./on_keypress.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
@@ -76,7 +77,8 @@ export async function terminal() {
         let extra = "";
         if (list_empty_not_is(mapped)) {
           let last = list_last(tokens);
-          if (list_empty_not_is(tokens)) {
+          if (list_multiple_is(last)) {
+            list_pop(last);
             extra = " ";
           }
         }
