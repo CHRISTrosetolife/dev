@@ -1,3 +1,4 @@
+import { function_extension } from "./function_extension.mjs";
 import { run } from "./run.mjs";
 import { command_line } from "./command_line.mjs";
 import { list_pop } from "./list_pop.mjs";
@@ -32,6 +33,7 @@ import { list_map } from "./list_map.mjs";
 import { string_to } from "./string_to.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { string_combine } from "./string_combine.mjs";
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export async function terminal() {
   let commands = [
     {
@@ -197,7 +199,10 @@ export async function terminal() {
     let tokens = tokens_get(input);
     try {
       let result = await command_line(
-        list_join_space(["node", string_combine(run.name)]),
+        list_join_space([
+          "node",
+          string_combine_multiple(run.name, ".", function_extension()),
+        ]),
       );
       if (undefined_not_is(result)) {
         log(result);
