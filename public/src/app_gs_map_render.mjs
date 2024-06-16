@@ -56,8 +56,8 @@ export async function app_gs_map_render(
       object_property_get(tiles_new, hy),
       (hx,
       (c) => {
-        if (object_property_exists_not(tiles_new, hy)) {
-          each(rows, html_remove);
+        if (object_property_exists_not(tiles_new, hx)) {
+          html_remove(c);
           return;
         }
       }),
