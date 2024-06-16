@@ -12,7 +12,12 @@ import { game_tiles_max } from "./game_tiles_max.mjs";
 import { promise_all } from "./promise_all.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
-export async function app_gs_map_render(map, map_c, b, player_overlay) {
+export async function app_gs_map_render(
+  map,
+  map_c,
+  coordinates,
+  player_overlay,
+) {
   let w = window.innerWidth;
   let h = window.innerHeight;
   let limit = game_tiles_max();
