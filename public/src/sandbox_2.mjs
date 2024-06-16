@@ -1,8 +1,4 @@
+import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export async function sandbox_2() {
-  return Object.hasOwn(
-    {
-      2: 1,
-    },
-    "2",
-  );
+  assert_arguments_length();
 }
