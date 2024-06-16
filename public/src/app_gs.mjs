@@ -25,8 +25,8 @@ export async function app_gs() {
   let w = window.innerWidth;
   let h = window.innerHeight;
   let tile_size_px = number_max(h, w) / limit;
-  let w_tiles = ceiling(w / tile_size_px) / 2;
-  let h_tiles = ceiling(h / tile_size_px) / 2;
+  let w_tiles = ceiling(w / tile_size_px);
+  let h_tiles = ceiling(h / tile_size_px);
   let w_extend = floor(w_tiles / 2);
   let h_extend = floor(h_tiles / 2);
   log({
