@@ -1,3 +1,4 @@
+import { exit_aliases } from "./exit_aliases.mjs";
 import { unawait } from "./unawait.mjs";
 import { function_path_suffix } from "./function_path_suffix.mjs";
 import { run } from "./run.mjs";
@@ -196,6 +197,9 @@ export async function terminal() {
   while (true) {
     log_write(prompt);
     let input = await next();
+    if (list_includes(list_concat([exit.name], exit_aliases()), input)) {
+      exit();
+    }
     let tokens = tokens_get(input);
     try {
       let result = await command_line(
