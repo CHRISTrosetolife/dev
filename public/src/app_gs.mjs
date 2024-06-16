@@ -22,7 +22,7 @@ export async function app_gs() {
   let tiles = list_map(map.tiles, async (tile) => {
     let b = map.player;
     let visible = list_all(list_xy(), (xy) => abs(tile[xy] - b[xy]) <= limit);
-    if (vis) {
+    if (visible) {
       await app_gs_map_cell(map, map_c, player_overlay, tile);
     }
   });
