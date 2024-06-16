@@ -76,12 +76,12 @@ export function app_gs_map_new() {
   map.player.walk_previous = 1;
   map.player.character = list_random_item(game_img_list_male());
   return map;
-  function overlay_add(t, id) {
+  function overlay_add(tile, id) {
     let o = {
       id,
     };
-    object_merge_properties(o, t, list_xy());
-    list_add(t.overlays, o);
+    object_merge_properties(o, tile, list_xy());
+    list_add(tile.overlays, o);
   }
   function inside_is(t) {
     return list_all(
