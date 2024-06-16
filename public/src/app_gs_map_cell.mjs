@@ -1,3 +1,4 @@
+import { list_adder } from "./list_adder.mjs";
 import { app_gs_map_render } from "./app_gs_map_render.mjs";
 import { html_img_wait } from "./html_img_wait.mjs";
 import { html_scroll_center_smooth } from "./html_scroll_center_smooth.mjs";
@@ -21,16 +22,18 @@ import { list_skip } from "./list_skip.mjs";
 export async function app_gs_map_cell(map, map_c, player_overlay, tile) {
   let z_indexes = app_gs_z_indexes();
   let clicker = html_div(map_c);
-  let overlays = app_gs_overlays_at(map, tile, function lambda_overlay(o) {
-    let { id: o_id } = o;
-    html_data_set(clicker, "overlay", o_id);
-    game_img(
-      map_c,
-      game_img_base(o_id),
-      tile,
-      list_index(z_indexes, "overlay"),
-    );
-  });
+  let overlays = list_adder((la) =>
+    app_gs_overlays_at(map, tile, function lambda_overlay(o) {
+      let { id: o_id } = o;
+      html_data_set(clicker, "overlay", o_id);
+      game_img(
+        map_c,
+        game_img_base(o_id),
+        tile,
+        list_index(z_indexes, "overlay"),
+      );
+    }),
+  );
   let { id } = tile;
   let tile_c = game_img(
     map_c,
