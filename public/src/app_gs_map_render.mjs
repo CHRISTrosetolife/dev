@@ -11,12 +11,7 @@ import { game_tiles_max } from "./game_tiles_max.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { each_object } from "./each_object.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-export async function app_gs_map_render(
-  map,
-  map_c,
-  coordinates,
-  player_overlay,
-) {
+export function app_gs_map_render(map, map_c, coordinates, player_overlay) {
   let w = window.innerWidth;
   let h = window.innerHeight;
   let limit = game_tiles_max();
