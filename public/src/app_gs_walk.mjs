@@ -1,3 +1,4 @@
+import { list_xy } from "./list_xy.mjs";
 import { add_1 } from "./add_1.mjs";
 import { app_gs_direction } from "./app_gs_direction.mjs";
 import { game_img_position } from "./game_img_position.mjs";
@@ -31,7 +32,7 @@ export async function app_gs_walk(player_overlay, player, tile) {
       await sleep(sleep_time);
     });
     let delta = game_direction_to_delta(direction);
-    each(["x", "y"], (xy) => {
+    each(list_xy(), (xy) => {
       let value =
         object_property_get(player, xy) + object_property_get(delta, xy);
       object_property_set(player, xy, value);
