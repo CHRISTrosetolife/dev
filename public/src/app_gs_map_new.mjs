@@ -1,3 +1,4 @@
+import { game_tiles_max } from "./game_tiles_max.mjs";
 import { list_xy } from "./list_xy.mjs";
 import { each } from "./each.mjs";
 import { object_merge } from "./object_merge.mjs";
@@ -23,7 +24,7 @@ import { ceiling } from "./ceiling.mjs";
 import { object_merge_properties } from "./object_merge_properties.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 export function app_gs_map_new() {
-  let border_thickness = 3;
+  let border_thickness = floor(game_tiles_max() / 2);
   let y_size_inside = 20;
   let x_size_inside = y_size_inside;
   let y_size = add(y_size_inside, border_thickness * 2);
