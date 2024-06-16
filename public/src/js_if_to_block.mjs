@@ -6,9 +6,7 @@ export function js_if_to_block(ast) {
     let properties = ["consequent", "alternate"];
     js_to_block_generic(node, properties, (type, p) => {
       if (p === "consequent") {
-        if (type === "IfStatement") {
-          return true;
-        }
+        return type === "IfStatement";
       }
       return false;
     });
