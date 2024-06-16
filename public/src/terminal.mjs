@@ -7,7 +7,6 @@ import { list_multiple_is } from "./list_multiple_is.mjs";
 import { string_split_underscore } from "./string_split_underscore.mjs";
 import { on_keypress } from "./on_keypress.mjs";
 import { chalk } from "./chalk.mjs";
-import { log_error } from "./log_error.mjs";
 import { exit_aliases } from "./exit_aliases.mjs";
 import { unawait } from "./unawait.mjs";
 import { list_pop } from "./list_pop.mjs";
@@ -315,7 +314,6 @@ export async function terminal() {
         log(result);
       }
     } catch (e) {
-      log_error("error :");
       log(e.error);
     }
     unawait(run_git_ac);
