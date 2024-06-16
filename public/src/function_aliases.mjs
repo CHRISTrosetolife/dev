@@ -10,7 +10,7 @@ export function function_aliases() {
     x: "exit",
     f: "firebase_deploy",
     ft: "function_transform",
-    gs: "git_acp",
+    gi: "git_acp",
     g: "google_search",
     i: "npm_install",
     ig: "npm_install_global",
