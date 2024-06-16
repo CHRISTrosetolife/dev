@@ -36,8 +36,8 @@ export function app_gs_map_render(map, map_c, coordinates, player_overlay) {
           return;
         }
         let tile = map.tiles[ye][xe];
-        let component = app_gs_map_cell(map, map_c, player_overlay, tile);
-        rows_new[xe] = component;
+        let components = app_gs_map_cell(map, map_c, player_overlay, tile);
+        rows_new[xe] = components;
       });
     });
   });
