@@ -216,7 +216,7 @@ export async function terminal() {
         log_write(stdout);
       }
       if (string_empty_not_is(stderr)) {
-        log_write_error(stderr);
+        log_error(stderr);
       }
     } catch (e) {
       let message = e.stack;
