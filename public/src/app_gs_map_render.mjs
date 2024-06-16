@@ -23,6 +23,7 @@ export async function app_gs_map_render(
   coordinates,
   player_overlay,
 ) {
+  let renders = [];
   each(coordinates, (c) => {});
   let xs = list_map_property(coordinates, "x");
   let ys = list_map_property(coordinates, "y");
