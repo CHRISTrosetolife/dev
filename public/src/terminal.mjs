@@ -69,6 +69,8 @@ export async function terminal() {
       action: (key) => {
         let b = buffer_get();
         let t = tokens_get();
+        if (list_empty_not_is(t)) {
+        }
         list_pop(b);
         log_clear();
         log_write(prompt_get());
