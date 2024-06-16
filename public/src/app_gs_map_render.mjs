@@ -38,7 +38,7 @@ export async function app_gs_map_render(
   let h_extend = floor(h_tiles / 2);
   let tiles_new = list_map(map.tiles, async (tile) => {
     let d1 = number_min(abs(tile.x - x_max), abs(tile.x - x_min));
-    let d2 = abs(tile.y - b.y);
+    let d2 = number_min(abs(tile.y - y_max), abs(tile.y - y_min));
     let visible = d1 <= w_extend && d2 <= h_extend;
     if (visible) {
       return await app_gs_map_cell(map, map_c, player_overlay, tile);
