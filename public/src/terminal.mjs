@@ -1,3 +1,4 @@
+import { log_error } from "./log_error.mjs";
 import { exit_aliases } from "./exit_aliases.mjs";
 import { unawait } from "./unawait.mjs";
 import { function_path_suffix } from "./function_path_suffix.mjs";
@@ -216,7 +217,7 @@ export async function terminal() {
       }
     } catch (e) {
       let message = e.stack;
-      log(chalk.redBright(message));
+      log_error(message);
     }
     unawait(run_git_ac);
   }
