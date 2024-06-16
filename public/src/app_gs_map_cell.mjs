@@ -53,7 +53,7 @@ export async function app_gs_map_cell(map, map_c, player_overlay, tile) {
       tile,
     );
     await each_async(list_skip(p, 1), async (tile) => {
-      await app_gs_walk(player_overlay, map.player, tile);
+      await app_gs_walk(map, map_c, player_overlay, map.player, tile);
     });
     html_scroll_center_smooth(player_overlay);
   });
