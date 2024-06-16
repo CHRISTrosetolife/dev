@@ -20,11 +20,14 @@ export function app_gs_map_render(map, map_c, b, player_overlay) {
   let w_extend = floor(w_tiles / 2);
   let h_extend = floor(h_tiles / 2);
   let tiles_new = list_map(map.tiles, async (tile) => {
-    let visible =
-      abs(tile.x - b.x) <= w_extend && abs(tile.y - b.y) <= h_extend;
+    let d1 = abs(tile.x - b.x);
+    let d2 = abs(tile.y - b.y);
+    let visible = d1 <= w_extend && d2 <= h_extend;
     log({
       w_extend,
       h_extend,
+      d1,
+      d2,
     });
     if (visible) {
       await app_gs_map_cell(map, map_c, player_overlay, tile);
