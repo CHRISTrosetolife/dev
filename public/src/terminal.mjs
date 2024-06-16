@@ -1,3 +1,4 @@
+import { error } from "./error.mjs";
 import { list_first_remaining } from "./list_first_remaining.mjs";
 import { function_runner_json } from "./function_runner_json.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
@@ -315,7 +316,7 @@ export async function terminal() {
       }
     } catch (e) {
       log_error("error :");
-      log(e);
+      log(e.error);
     }
     unawait(run_git_ac);
   }
