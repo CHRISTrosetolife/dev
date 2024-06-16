@@ -20,5 +20,6 @@ export function js_assert_arguments_length(ast) {
   if (type_expression !== "CallExpression") {
     return;
   }
+  let callee = expression;
   return first;
 }
