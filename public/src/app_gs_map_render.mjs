@@ -32,7 +32,7 @@ export async function app_gs_map_render(
       let rows_new = object_property_initialize(tiles_new, ye, {});
       let rows_old = object_property_initialize(map.html, ye, {});
       await each_async(range_from(x - w_extend, x + w_extend), async (xe) => {
-        if (rows_new[xe]) {
+        if (object_property_exists(rows_new, xe)) {
           return;
         }
         if (object_property_exists(rows_old, xe)) {
