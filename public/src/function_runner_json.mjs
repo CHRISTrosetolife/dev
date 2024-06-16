@@ -1,3 +1,4 @@
+import { function_path_suffix } from "./function_path_suffix.mjs";
 import { error } from "./error.mjs";
 import { file_read_json } from "./file_read_json.mjs";
 import { command_line } from "./command_line.mjs";
@@ -21,7 +22,7 @@ export async function function_runner_json(function_name, args) {
     await uuid_file(async (file_path_input) => {
       await uuid_file(async (file_path_output) => {
         await file_overwrite(file_path_input, args_json);
-        let command = `node ${run.name}.mjs ${function_run_json.name} ${function_name} ${file_path_input} ${file_path_output}`;
+        let command = `node ${run.name}${function_path_suffix()} ${function_run_json.name} ${function_name} ${file_path_input} ${file_path_output}`;
         if (0) {
           log({
             command,
