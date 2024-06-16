@@ -1,3 +1,4 @@
+import { on_keypress } from "./on_keypress.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 import { chalk } from "./chalk.mjs";
 import { log_error } from "./log_error.mjs";
@@ -157,7 +158,7 @@ export async function terminal() {
   function buffer_get() {
     return buffer;
   }
-  process.stdin.on("keypress", on);
+  on_keypress(on);
   async function on(chunk, key) {
     let { sequence, name, ctrl, meta, shift } = key;
     let actual = [ctrl, meta, shift];
