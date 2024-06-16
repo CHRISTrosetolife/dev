@@ -1,3 +1,4 @@
+import { error } from "./error.mjs";
 import { file_read_json } from "./file_read_json.mjs";
 import { command_line } from "./command_line.mjs";
 import { log } from "./log.mjs";
@@ -27,6 +28,9 @@ export async function function_runner_json(function_name, args) {
           });
         }
         let r = await command_line(command);
+        if (r.error) {
+          reject(r);
+        }
         if (10) {
           log({
             r,
