@@ -10,6 +10,6 @@ export function html_code_generate(input) {
   let p = html_parse(input);
   let { children } = p;
   let c = list_single(children);
-  let { attribs } = p;
+  let { attribs } = c;
   return json_to(attribs);
 }
