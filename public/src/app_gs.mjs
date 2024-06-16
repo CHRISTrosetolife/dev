@@ -30,8 +30,8 @@ export async function app_gs() {
   let w_extend = floor(w_tiles / 2);
   let h_extend = floor(h_tiles / 2);
   log({
-    w_tiles,
-    h_tiles,
+    w_extend,
+    h_extend,
   });
   let tiles = list_map(map.tiles, async (tile) => {
     let b = map.player;
