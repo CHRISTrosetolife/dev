@@ -21,10 +21,10 @@ export async function app_gs() {
   let map = app_gs_map_new();
   let map_c = app_gs_map_html(root, map);
   let player_overlay = app_gs_overlay_player(map_c, map);
-  let limit = game_tiles_max();
   map.html = [];
   let w = window.innerWidth;
   let h = window.innerHeight;
+  let limit = game_tiles_max();
   let tile_size_px = number_max(h, w) / limit;
   let w_tiles = ceiling(w / tile_size_px);
   let h_tiles = ceiling(h / tile_size_px);
