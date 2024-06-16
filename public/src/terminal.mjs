@@ -219,9 +219,6 @@ export async function terminal() {
         string_combine(run.name, function_path_suffix()),
         input,
       ]);
-      log({
-        command,
-      });
       let result = await command_line(command);
       let { stdout, stderr } = result;
       if (string_empty_not_is(stdout)) {
