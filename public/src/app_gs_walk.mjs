@@ -1,4 +1,3 @@
-import { app_gs_map_render } from "./app_gs_map_render.mjs";
 import { list_xy } from "./list_xy.mjs";
 import { add_1 } from "./add_1.mjs";
 import { app_gs_direction } from "./app_gs_direction.mjs";
@@ -59,6 +58,5 @@ export async function app_gs_walk(map, map_c, player_overlay, player, tile) {
         player.x + (delta.x / animate_count) * step_count,
       );
     }
-    await app_gs_map_render(map, map_c, player, player_overlay);
   });
 }
