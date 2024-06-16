@@ -9,7 +9,6 @@ import { floor } from "./floor.mjs";
 import { ceiling } from "./ceiling.mjs";
 import { number_max } from "./number_max.mjs";
 import { game_tiles_max } from "./game_tiles_max.mjs";
-import { log } from "./log.mjs";
 import { promise_all } from "./promise_all.mjs";
 export async function app_gs_map_render(map, map_c, b, player_overlay) {
   let w = window.innerWidth;
@@ -24,12 +23,6 @@ export async function app_gs_map_render(map, map_c, b, player_overlay) {
     let d1 = abs(tile.x - b.x);
     let d2 = abs(tile.y - b.y);
     let visible = d1 <= w_extend && d2 <= h_extend;
-    log({
-      w_extend,
-      h_extend,
-      d1,
-      d2,
-    });
     if (visible) {
       await app_gs_map_cell(map, map_c, player_overlay, tile);
     }
