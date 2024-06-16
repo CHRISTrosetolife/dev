@@ -215,7 +215,8 @@ export async function terminal() {
         log_write(stdout);
       }
     } catch (e) {
-      log(chalk.redBright(e.stack));
+      let message = e.stack;
+      log(chalk.redBright(message));
     }
     unawait(run_git_ac);
   }
