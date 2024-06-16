@@ -9,6 +9,7 @@ import { floor } from "./floor.mjs";
 import { ceiling } from "./ceiling.mjs";
 import { number_max } from "./number_max.mjs";
 import { game_tiles_max } from "./game_tiles_max.mjs";
+import { log } from "./log.mjs";
 export function app_gs_map_render(map, map_c, b, player_overlay) {
   let w = window.innerWidth;
   let h = window.innerHeight;
@@ -22,6 +23,7 @@ export function app_gs_map_render(map, map_c, b, player_overlay) {
     let visible =
       abs(tile.x - b.x) <= w_extend && abs(tile.y - b.y) <= h_extend;
     if (visible) {
+      log("her");
       await app_gs_map_cell(map, map_c, player_overlay, tile);
     }
   });
