@@ -18,6 +18,7 @@ import { list_filter } from "./list_filter.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { list_adder } from "./list_adder.mjs";
+import { each_async } from "./each_async.mjs";
 export async function app_gs_map_render(
   map,
   map_c,
@@ -38,21 +39,24 @@ export async function app_gs_map_render(
   let h_tiles = ceiling(h / tile_size_px);
   let w_extend = floor(w_tiles / 2);
   let h_extend = floor(h_tiles / 2);
-  let tiles_new = list_adder((la) =>
-    each(map.tiles, async (row) =>
-      each(row, async (tile) => {
-        let d1 = number_min_list(
-          list_map(range_from(x_min, x_max), (x) => abs(tile.x - x)),
-        );
-        let d2 = number_min_list(
-          list_map(range_from(y_min, y_max), (y) => abs(tile.y - y)),
-        );
-        let visible = d1 <= w_extend && d2 <= h_extend;
-        if (visible) {
-          return await app_gs_map_cell(map, map_c, player_overlay, tile);
-        }
-      }),
-    ),
+  let tiles_new = list_adder(
+    async (la) =>
+      await each_async(
+        map.tiles,
+        async (row) =>
+          await each_async(row, async (tile) => {
+            let d1 = number_min_list(
+              list_map(range_from(x_min, x_max), (x) => abs(tile.x - x)),
+            );
+            let d2 = number_min_list(
+              list_map(range_from(y_min, y_max), (y) => abs(tile.y - y)),
+            );
+            let visible = d1 <= w_extend && d2 <= h_extend;
+            if (visible) {
+              return await app_gs_map_cell(map, map_c, player_overlay, tile);
+            }
+          }),
+      ),
   );
   tiles_new = await promise_all(tiles_new);
   tiles_new = list_filter(tiles_new, undefined_not_is);
