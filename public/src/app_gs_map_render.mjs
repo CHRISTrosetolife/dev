@@ -52,6 +52,9 @@ export async function app_gs_map_render(
   });
   tiles_new = await promise_all(tiles_new);
   tiles_new = list_filter(tiles_new, undefined_not_is);
+  log({
+    tiles_new,
+  });
   tiles_new = list_concat(tiles_new);
   each(map.html, html_remove);
   list_remove_all(map.html);
