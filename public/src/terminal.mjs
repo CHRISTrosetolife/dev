@@ -199,10 +199,12 @@ export async function terminal() {
     let tokens = tokens_get(input);
     try {
       let result = await command_line(
-        list_join_space([
-          "node",
-          string_combine_multiple(run.name, function_path_suffix()),
-        ]),
+        list_join_space(
+          list_concat(
+            ["node", string_combine_multiple(run.name, function_path_suffix())],
+            tokens,
+          ),
+        ),
       );
       if (undefined_not_is(result)) {
         log(result);
