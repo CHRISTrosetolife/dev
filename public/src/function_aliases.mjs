@@ -11,6 +11,7 @@ export function function_aliases() {
     f: "firebase_deploy",
     ft: "function_transform",
     gi: "git_acp",
+    gx: "git_index_lock_delete",
     g: "google_search",
     h: "http_server",
     i: "npm_install",
