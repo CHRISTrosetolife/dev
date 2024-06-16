@@ -1,3 +1,4 @@
+import { chalk } from "./chalk.mjs";
 import { log_error } from "./log_error.mjs";
 import { exit_aliases } from "./exit_aliases.mjs";
 import { unawait } from "./unawait.mjs";
@@ -26,7 +27,6 @@ import { each } from "./each.mjs";
 import { run_git_ac } from "./run_git_ac.mjs";
 import { log } from "./log.mjs";
 import readline from "readline";
-import chalk from "chalk";
 import { list_filter } from "./list_filter.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_includes } from "./list_includes.mjs";
@@ -116,7 +116,7 @@ export async function terminal() {
       action: (key) => keyboard_type(key.sequence),
     },
   ];
-  let prompt = chalk.greenBright("✟") + " ";
+  let prompt = chalk().greenBright("✟") + " ";
   function buffer_to_string() {
     return list_join_empty(buffer_get());
   }
@@ -188,7 +188,7 @@ export async function terminal() {
     list_add(buffer, name);
   }
   function keyboard_write(name) {
-    let message = chalk.greenBright(name);
+    let message = chalk().greenBright(name);
     log_write(message);
   }
   async function next() {
