@@ -80,7 +80,7 @@ export async function terminal() {
       keys: ["return"],
       action: () => {
         log("");
-        let result = list_join_empty(buffer_get());
+        let result = buffer_to_string();
         history_add(result);
         buffer_clear();
         each(on_returns_get(), (n) => n(result));
@@ -105,6 +105,9 @@ export async function terminal() {
     },
   ];
   let prompt = chalk.greenBright("✟") + " ";
+  function buffer_to_string() {
+    return list_join_empty(buffer_get());
+  }
   function log_clear_write_prompt() {
     log_clear();
     log_write(prompt_get());
