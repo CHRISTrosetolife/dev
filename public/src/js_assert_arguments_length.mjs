@@ -32,5 +32,8 @@ export function js_assert_arguments_length(ast) {
     return;
   }
   let { params } = d;
-  expression.arguments = [js_parse_expression("arguments"), list_size(params)];
+  expression.arguments = [
+    js_parse_expression("arguments"),
+    js_parse_expression(list_size(params)),
+  ];
 }
