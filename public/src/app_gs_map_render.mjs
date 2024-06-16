@@ -10,7 +10,8 @@ import { ceiling } from "./ceiling.mjs";
 import { number_max } from "./number_max.mjs";
 import { game_tiles_max } from "./game_tiles_max.mjs";
 import { promise_all } from "./promise_all.mjs";
-import { log } from "./log.mjs";
+import { list_filter } from "./list_filter.mjs";
+import { undefined_not_is } from "./undefined_not_is.mjs";
 export async function app_gs_map_render(map, map_c, b, player_overlay) {
   let w = window.innerWidth;
   let h = window.innerHeight;
@@ -29,9 +30,7 @@ export async function app_gs_map_render(map, map_c, b, player_overlay) {
     }
   });
   tiles_new = await promise_all(tiles_new);
-  log({
-    tiles_new,
-  });
+  tiles_new = list_filter(tiles_new, undefined_not_is);
   each(map.html, html_remove);
   list_remove_all(map.html);
   list_add_multiple(map.html, tiles_new);
