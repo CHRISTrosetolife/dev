@@ -136,11 +136,13 @@ export async function terminal() {
         let expected = [ctrl_c, meta_c, shift_c];
         if (list_any([name, sequence], (ns) => list_includes(keys, ns))) {
           if (equal_json(actual, expected)) {
-            log({
-              command,
-              expected,
-              key,
-            });
+            if (0) {
+              log({
+                command,
+                expected,
+                key,
+              });
+            }
             la();
             await command.action(key);
           }
