@@ -158,6 +158,10 @@ export async function terminal() {
     return buffer;
   }
   process.stdin.on("keypress", async function (chunk, key) {
+    log({
+      key,
+    });
+    return;
     let { sequence, name, ctrl, meta, shift } = key;
     let actual = [ctrl, meta, shift];
     let count = await counter_async(async (la) => {
