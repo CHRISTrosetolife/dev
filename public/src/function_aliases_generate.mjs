@@ -1,3 +1,4 @@
+import { exit_aliases } from "./exit_aliases.mjs";
 import { google_search } from "./google_search.mjs";
 import { git_acp } from "./git_acp.mjs";
 import { terminal } from "./terminal.mjs";
@@ -40,7 +41,7 @@ export async function function_aliases_generate() {
   alias_add(function_copy, ["c"]);
   alias_add(data_update, ["d"]);
   alias_add(function_delete, ["de"]);
-  alias_add(exit, ["e", "q", "x"]);
+  alias_add(exit, exit_aliases());
   alias_add(firebase_deploy, ["f"]);
   alias_add(function_transform, ["ft"]);
   alias_add(git_acp, ["gi"]);
