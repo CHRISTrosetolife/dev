@@ -11,6 +11,6 @@ export function js_assert_arguments_length(ast) {
     return;
   }
   let first = list_first(body_block);
-  let type = first;
+  let { type } = first;
   return first;
 }
