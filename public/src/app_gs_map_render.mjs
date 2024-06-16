@@ -52,7 +52,7 @@ export async function app_gs_map_render(
       each(rows, html_remove);
       return;
     }
-    each_object(object_property_get(tiles_new, hy));
+    each_object(object_property_get(tiles_new, hy), (hx, (c) => {}));
   });
   map.html = tiles_new;
   return tiles_new;
