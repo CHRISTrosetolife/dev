@@ -167,6 +167,18 @@ export async function terminal() {
   while (true) {
     log_write(prompt);
     let input = await next();
+    let tokens = tokens_get(input);
+    try {
+      let result = await run_tokens(tokens);
+      if (undefined_not_is(result)) {
+        log(result);
+      }
+    } catch (e) {
+      log(chalk.redBright(e.stack));
+    }
+    each([run_git_ac], (f) => f());
+  }
+  function tokens_get(input) {
     let tokens = [];
     let current = [];
     let quoted = false;
@@ -187,14 +199,6 @@ export async function terminal() {
       current = [];
       list_add(tokens, token);
     }
-    try {
-      let result = await run_tokens(tokens);
-      if (undefined_not_is(result)) {
-        log(result);
-      }
-    } catch (e) {
-      log(chalk.redBright(e.stack));
-    }
-    each([run_git_ac], (f) => f());
+    return tokens;
   }
 }
