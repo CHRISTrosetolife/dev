@@ -61,7 +61,7 @@ export async function terminal() {
         list_pop(b);
         log_clear();
         log_write(prompt_get());
-        each(buffer_get(), log_write);
+        each(b, log_write);
       },
     },
     {
