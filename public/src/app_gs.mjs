@@ -15,7 +15,7 @@ export async function app_gs() {
   let tiles_new = await app_gs_map_render(
     map,
     map_c,
-    map.player,
+    [map.player],
     player_overlay,
   );
   await promise_all(tiles_new);
