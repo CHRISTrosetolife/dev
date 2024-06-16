@@ -79,7 +79,7 @@ export async function terminal() {
           let last = list_last(tokens);
           if (list_multiple_is(last)) {
             list_pop(last);
-            extra = " ";
+            extra = "_";
           }
         }
         log_clear_write_prompt();
