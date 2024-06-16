@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { html_load_wait } from "./html_load_wait.mjs";
 import { app_gs_map_render } from "./app_gs_map_render.mjs";
 import { sleep } from "./sleep.mjs";
@@ -22,5 +23,6 @@ export async function app_gs() {
   await promise_all(tiles_new);
   await sleep(0);
   await html_load_wait();
+  log("here");
   html_scroll_center_smooth(player_overlay);
 }
