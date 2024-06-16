@@ -32,7 +32,9 @@ export async function app_gs_map_render(
   let w_extend = floor(w_tiles / 2);
   let h_extend = floor(h_tiles / 2);
   let renders = [];
-  each(coordinates, (c) => {});
+  each(coordinates, (c) => {
+    range_from();
+  });
   let xs = list_map_property(coordinates, "x");
   let ys = list_map_property(coordinates, "y");
   let x_max = number_max_list(xs);
