@@ -41,7 +41,7 @@ export async function app_gs_map_render(
       list_map(range_from(x_min, x_max), (x) => abs(tile.x - x)),
     );
     let d2 = number_min_list(
-      list_map(range_from(x_min, x_max), (x) => abs(tile.x - x)),
+      list_map(range_from(y_min, y_max), (y) => abs(tile.y - y)),
     );
     let visible = d1 <= w_extend && d2 <= h_extend;
     if (visible) {
