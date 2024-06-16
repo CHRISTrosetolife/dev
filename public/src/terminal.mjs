@@ -1,4 +1,4 @@
-import { function_extension } from "./function_extension.mjs";
+import { function_path_suffix } from "./function_path_suffix.mjs";
 import { run } from "./run.mjs";
 import { command_line } from "./command_line.mjs";
 import { list_pop } from "./list_pop.mjs";
@@ -201,7 +201,7 @@ export async function terminal() {
       let result = await command_line(
         list_join_space([
           "node",
-          string_combine_multiple(run.name, ".", function_extension()),
+          string_combine_multiple(run.name, function_path_suffix()),
         ]),
       );
       if (undefined_not_is(result)) {
