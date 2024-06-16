@@ -314,8 +314,7 @@ export async function terminal() {
         log(result);
       }
     } catch (e) {
-      let message = e.stack;
-      log_error(message);
+      log_error(e);
     }
     unawait(run_git_ac);
   }
