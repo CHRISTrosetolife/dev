@@ -22,7 +22,10 @@ export function app_gs_map_render(map, map_c, b, player_overlay) {
   let tiles_new = list_map(map.tiles, async (tile) => {
     let visible =
       abs(tile.x - b.x) <= w_extend && abs(tile.y - b.y) <= h_extend;
-    log("her");
+    log({
+      w_extend,
+      h_extend,
+    });
     if (visible) {
       await app_gs_map_cell(map, map_c, player_overlay, tile);
     }
