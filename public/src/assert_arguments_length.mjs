@@ -6,5 +6,6 @@ export function assert_arguments_length(args, expected) {
   let actual = args.length;
   assert_message(equal, [actual, expected], () => ({
     message: "expecting different argument count",
+    actual,
   }));
 }
