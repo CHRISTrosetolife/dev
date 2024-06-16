@@ -66,9 +66,9 @@ export function app_gs_map_new() {
   each(outside, (tile) => overlay_add(tile, list_random_item(overlays_wall)));
   list_shuffle(inside);
   each_range(map_overlays_count, (i) => {
-    let tiles = list_pop(inside);
+    let tile = list_pop(inside);
     let id = list_random_item(overlays);
-    overlay_add(tiles, id);
+    overlay_add(tile, id);
   });
   map.player = {};
   map.player.y = floor(divide(subtract_1(map.y_size), 2));
