@@ -41,18 +41,22 @@ export function app_gs_map_new() {
   let overlays = list_concat(overlays_wall, range_from(48, 57));
   let grass = game_grass_weight();
   map.tiles = list_adder((la) =>
-    each_range(y_size, (y) =>
-      each_range(x_size, (x) => {
-        let tile = {
-          y,
-          x,
-        };
-        let id = list_random_index_weighted(grass);
-        object_merge(tile, {
-          id,
-        });
-        la(tile);
-      }),
+    each_range(
+      y_size,
+      (y) =>
+        (row = list_adder((lac) => {
+          each_range(x_size, (x) => {
+            let tile = {
+              y,
+              x,
+            };
+            let id = list_random_index_weighted(grass);
+            object_merge(tile, {
+              id,
+            });
+            la(tile);
+          });
+        })),
     ),
   );
   let [inside, outside] = list_partition(map, inside_is);
