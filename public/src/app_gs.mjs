@@ -21,6 +21,6 @@ export async function app_gs() {
   );
   await promise_all(tiles_new);
   await sleep(0);
-  html_load_wait();//
+  await html_load_wait();
   html_scroll_center_smooth(player_overlay);
 }
