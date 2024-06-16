@@ -51,15 +51,11 @@ export async function app_gs_map_render(
       each(rows, html_remove);
       return;
     }
-    each_object(
-      object_property_get(tiles_new, hy),
-      (hx,
-      (c) => {
-        if (object_property_exists_not(tiles_new, hx)) {
-          html_remove(c);
-        }
-      }),
-    );
+    each_object(object_property_get(tiles_new, hy), (hx, c) => {
+      if (object_property_exists_not(tiles_new, hx)) {
+        html_remove(c);
+      }
+    });
   });
   map.html = tiles_new;
   return tiles_new;
