@@ -172,7 +172,9 @@ export async function terminal() {
             await command.action(key);
           }
         }
-        exit_aliases();
+        let result = buffer_to_string();
+        if (list_concat([exit.name], exit_aliases())) {
+        }
       });
     });
     if (count === 0) {
