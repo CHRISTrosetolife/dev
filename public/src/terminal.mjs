@@ -49,6 +49,7 @@ export async function terminal() {
     {
       keys: ["shift", "backspace"],
       action: () => {
+        return;
         buffer_clear();
         log_clear();
         log_write(prompt_get());
@@ -135,8 +136,8 @@ export async function terminal() {
         let ctrl_c = list_includes(keys, "ctrl");
         let meta_c = list_includes(keys, "meta");
         let shift_c = list_includes(keys, "shift");
+        let b_c = [ctrl_c, meta_c, shift_c];
         if (list_any([name, sequence], (ns) => list_includes(keys, ns))) {
-          let b_c = [ctrl_c, meta_c, shift_c];
           if (equal_json(b, b_c)) {
             la();
             await c.action(key);
