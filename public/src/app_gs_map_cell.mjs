@@ -32,6 +32,7 @@ export async function app_gs_map_cell(map, map_c, player_overlay, tile) {
         tile,
         list_index(z_indexes, "overlay"),
       );
+      la(ki);
     }),
   );
   let { id } = tile;
