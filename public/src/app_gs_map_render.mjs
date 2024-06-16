@@ -37,10 +37,12 @@ export async function app_gs_map_render(
     let { x, y } = c;
     await each_async(range_from(y - h_extend, y + h_extend), async (ye) => {
       let rows = object_property_initialize(renders, ye, {});
-      await each_async(range_from(x - w_extend, x + w_extend), (xe) => {
+      await each_async(range_from(x - w_extend, x + w_extend), async (xe) => {
         if (rows[xe]) {
           return;
         }
+        let c = await app_gs_map_cell(map, map_c, player_overlay, tile);
+        la(c);
         rows[xe] = true;
       });
     });
@@ -65,8 +67,6 @@ export async function app_gs_map_render(
             );
             let visible = d1 <= w_extend && d2 <= h_extend;
             if (visible) {
-              let c = await app_gs_map_cell(map, map_c, player_overlay, tile);
-              la(c);
             }
           }),
       ),
