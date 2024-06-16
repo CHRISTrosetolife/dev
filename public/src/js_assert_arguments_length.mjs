@@ -25,5 +25,9 @@ export function js_assert_arguments_length(ast) {
   if (type_callee !== "Identifier") {
     return;
   }
+  let { name } = callee;
+  if (name !== assert_arguments_length.name) {
+    return;
+  }
   return callee;
 }
