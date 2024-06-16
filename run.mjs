@@ -1,4 +1,4 @@
 import { run } from "./public/src/run.mjs";
-import { log } from "./public/src/log.mjs";
-let result = await run();
-log(result);
+import { run_generic } from "./public/src/run_generic.mjs";
+let fn = run;
+run_generic(fn);
