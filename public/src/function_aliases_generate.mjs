@@ -1,3 +1,4 @@
+import { git_index_lock_delete } from "./git_index_lock_delete.mjs";
 import { exit_aliases } from "./exit_aliases.mjs";
 import { google_search } from "./google_search.mjs";
 import { git_acp } from "./git_acp.mjs";
@@ -46,6 +47,7 @@ export async function function_aliases_generate() {
   alias_add(firebase_deploy, ["f"]);
   alias_add(function_transform, ["ft"]);
   alias_add(git_acp, ["gi"]);
+  alias_add(git_index_lock_delete, ["gx"]);
   alias_add(google_search, ["g"]);
   alias_add(http_server, ["h"]);
   alias_add(npm_install, ["i"]);
