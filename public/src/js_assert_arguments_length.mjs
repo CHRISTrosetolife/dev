@@ -15,5 +15,6 @@ export function js_assert_arguments_length(ast) {
   if (type !== "ExpressionStatement") {
     return;
   }
+  let { expression } = first;
   return first;
 }
