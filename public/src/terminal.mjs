@@ -1,3 +1,4 @@
+import { command_line } from "./command_line.mjs";
 import { list_pop } from "./list_pop.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { not } from "./not.mjs";
@@ -17,7 +18,6 @@ import { log_write } from "./log_write.mjs";
 import { list_join_empty } from "./list_join_empty.mjs";
 import { list_remove_all } from "./list_remove_all.mjs";
 import { each } from "./each.mjs";
-import { run_tokens } from "./run_tokens.mjs";
 import { run_git_ac } from "./run_git_ac.mjs";
 import { log } from "./log.mjs";
 import readline from "readline";
@@ -195,7 +195,7 @@ export async function terminal() {
     let input = await next();
     let tokens = tokens_get(input);
     try {
-      let result = await run_tokens(tokens);
+      let result = await command_line();
       if (undefined_not_is(result)) {
         log(result);
       }
