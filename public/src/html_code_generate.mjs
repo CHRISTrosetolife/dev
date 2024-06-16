@@ -6,5 +6,5 @@ export function html_code_generate(input) {
     input,
   });
   let p = html_parse(input);
-  log(object_properties(p));
+  return object_properties(p);
 }
