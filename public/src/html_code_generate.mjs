@@ -5,6 +5,6 @@ export function html_code_generate(input) {
     input,
   });
   let p = html_parse(input);
-  let { attribs } = node;
+  let { attribs } = p;
   return attribs;
 }
