@@ -61,10 +61,6 @@ export async function terminal() {
         list_pop(b);
         log_clear();
         log_write(prompt_get());
-        log({
-          key,
-          b,
-        });
         each(b, log_write);
       },
     },
