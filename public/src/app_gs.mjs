@@ -22,6 +22,7 @@ export async function app_gs() {
   let map_c = app_gs_map_html(root, map);
   let player_overlay = app_gs_overlay_player(map_c, map);
   map.html = [];
+  let b = map.player;
   let w = window.innerWidth;
   let h = window.innerHeight;
   let limit = game_tiles_max();
@@ -31,7 +32,6 @@ export async function app_gs() {
   let w_extend = floor(w_tiles / 2);
   let h_extend = floor(h_tiles / 2);
   let tiles_new = list_map(map.tiles, async (tile) => {
-    let b = map.player;
     let visible =
       abs(tile.x - b.x) <= w_extend && abs(tile.y - b.y) <= h_extend;
     if (visible) {
