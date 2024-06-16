@@ -1,3 +1,4 @@
+import { list_join } from "./list_join.mjs";
 import { list_multiple_is } from "./list_multiple_is.mjs";
 import { string_split_underscore } from "./string_split_underscore.mjs";
 import { on_keypress } from "./on_keypress.mjs";
@@ -82,7 +83,7 @@ export async function terminal() {
             extra = "_";
           }
         }
-        let mapped2 = list_map(mapped, list_join_underscore);
+        let mapped2 = list_map(mapped, (m) => list_join(m, "_"));
         log_clear_write_prompt();
         let joined = list_join_space(tokens);
         joined = string_combine(joined, extra);
