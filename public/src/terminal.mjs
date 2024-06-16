@@ -57,7 +57,8 @@ export async function terminal() {
     {
       keys: ["backspace"],
       action: () => {
-        list_pop(buffer_get());
+        let b = buffer_get();
+        list_pop(b);
         log_clear();
         log_write(prompt_get());
         each(buffer_get(), log_write);
