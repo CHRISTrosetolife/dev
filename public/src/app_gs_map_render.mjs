@@ -58,5 +58,4 @@ export async function app_gs_map_render(
     });
   });
   map.html = tiles_new;
-  return tiles_new;
 }
