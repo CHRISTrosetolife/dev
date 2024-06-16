@@ -1,6 +1,5 @@
 import { game_tiles_max } from "./game_tiles_max.mjs";
 import { ceiling } from "./ceiling.mjs";
-import { add_1 } from "./add_1.mjs";
 import { abs } from "./abs.mjs";
 import { sleep } from "./sleep.mjs";
 import { promise_all } from "./promise_all.mjs";
@@ -16,7 +15,7 @@ export async function app_gs() {
   let map = app_gs_map_new();
   let map_c = app_gs_map_html(root, map);
   let player_overlay = app_gs_overlay_player(map_c, map);
-  add_1(ceiling(game_tiles_max()));
+  ceiling(ceiling(game_tiles_max()) / 2);
   let existing = [];
   let tiles = list_map(map.tiles, async (tile) => {
     let b = map.player;
