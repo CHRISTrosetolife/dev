@@ -1,3 +1,4 @@
+import { on_keypress_initialize } from "./on_keypress_initialize.mjs";
 import { on_keypress } from "./on_keypress.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 import { chalk } from "./chalk.mjs";
@@ -28,7 +29,6 @@ import { list_remove_all } from "./list_remove_all.mjs";
 import { each } from "./each.mjs";
 import { run_git_ac } from "./run_git_ac.mjs";
 import { log } from "./log.mjs";
-import readline from "readline";
 import { list_filter } from "./list_filter.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_includes } from "./list_includes.mjs";
@@ -135,10 +135,6 @@ export async function terminal() {
   function prompt_get() {
     return prompt;
   }
-  readline.emitKeypressEvents(process.stdin);
-  if (process.stdin.isTTY) {
-    process.stdin.setRawMode(true);
-  }
   let on_returns = [];
   function on_returns_get() {
     return on_returns;
@@ -158,6 +154,7 @@ export async function terminal() {
   function buffer_get() {
     return buffer;
   }
+  on_keypress_initialize();
   on_keypress(on);
   async function on(chunk, key) {
     let { sequence, name, ctrl, meta, shift } = key;
