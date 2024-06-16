@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
@@ -9,6 +10,10 @@ export function js_to_block_generic(node, properties, except) {
     }
     let { type } = value;
     if (type !== "BlockStatement") {
+      log({
+        type,
+        p,
+      });
       if (except(type, p)) {
         return;
       }
