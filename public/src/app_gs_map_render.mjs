@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { range_from } from "./range_from.mjs";
 import { number_min_list } from "./number_min_list.mjs";
@@ -53,9 +52,6 @@ export async function app_gs_map_render(
   tiles_new = await promise_all(tiles_new);
   tiles_new = list_filter(tiles_new, undefined_not_is);
   tiles_new = list_concat_multiple(tiles_new);
-  log({
-    tiles_new,
-  });
   each(map.html, html_remove);
   list_remove_all(map.html);
   list_add_multiple(map.html, tiles_new);
