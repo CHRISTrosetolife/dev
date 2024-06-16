@@ -3,6 +3,7 @@ export function function_aliases() {
     a: "function_auto",
     al: "function_aliases_generate",
     c: "function_copy",
+    cls: "log_clear",
     d: "data_update",
     de: "function_delete",
     e: "exit",
