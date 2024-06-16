@@ -10,6 +10,7 @@ import { html_button_width_full_text_click } from "./html_button_width_full_text
 export async function app_gs() {
   let root = app_gs_style_default_initialize();
   html_button_width_full_text_click(root, "menu", noop);
+  ('<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />');
   html_style(root, {
     overflow: "hidden",
   });
