@@ -1,7 +1,6 @@
 import { html_scroll_center_smooth } from "./html_scroll_center_smooth.mjs";
 import { html_style } from "./html_style.mjs";
 import { app_gs_map_render } from "./app_gs_map_render.mjs";
-import { sleep } from "./sleep.mjs";
 import { app_gs_style_default_initialize } from "./app_gs_style_default_initialize.mjs";
 import { app_gs_map_html } from "./app_gs_map_html.mjs";
 import { app_gs_overlay_player } from "./app_gs_overlay_player.mjs";
@@ -15,7 +14,6 @@ export async function app_gs() {
   let map_c = app_gs_map_html(root, map);
   let player_overlay = app_gs_overlay_player(map_c, map);
   map.html = [];
-  await app_gs_map_render(map, map_c, [map.player], player_overlay);
-  await sleep(0);
+  app_gs_map_render(map, map_c, [map.player], player_overlay);
   html_scroll_center_smooth(player_overlay);
 }
