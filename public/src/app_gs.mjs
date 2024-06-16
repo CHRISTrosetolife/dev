@@ -21,7 +21,7 @@ export async function app_gs() {
   let existing = [];
   let w = window.innerWidth;
   let h = window.innerHeight;
-  number_max(h, w) / limit;
+  let tile_size_px = number_max(h, w) / limit;
   let tiles = list_map(map.tiles, async (tile) => {
     let b = map.player;
     let visible = list_all(list_xy(), (xy) => abs(tile[xy] - b[xy]) <= limit);
