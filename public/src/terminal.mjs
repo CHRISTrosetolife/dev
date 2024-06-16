@@ -208,7 +208,7 @@ export async function terminal() {
       );
       let { stdout } = result;
       if (string_empty_not_is(stdout)) {
-        log(stdout);
+        log_write(stdout);
       }
     } catch (e) {
       log(chalk.redBright(e.stack));
