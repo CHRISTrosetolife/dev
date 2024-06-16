@@ -1,4 +1,4 @@
-import { log } from "./log.mjs";
+import { html_scroll_center } from "./html_scroll_center.mjs";
 import { html_load_wait } from "./html_load_wait.mjs";
 import { app_gs_map_render } from "./app_gs_map_render.mjs";
 import { sleep } from "./sleep.mjs";
@@ -7,7 +7,6 @@ import { app_gs_style_default_initialize } from "./app_gs_style_default_initiali
 import { app_gs_map_html } from "./app_gs_map_html.mjs";
 import { app_gs_overlay_player } from "./app_gs_overlay_player.mjs";
 import { app_gs_map_new } from "./app_gs_map_new.mjs";
-import { html_scroll_center_smooth } from "./html_scroll_center_smooth.mjs";
 export async function app_gs() {
   let root = app_gs_style_default_initialize();
   let map = app_gs_map_new();
@@ -23,6 +22,5 @@ export async function app_gs() {
   await promise_all(tiles_new);
   await sleep(0);
   await html_load_wait();
-  log("here");
-  html_scroll_center_smooth(player_overlay);
+  html_scroll_center(player_overlay);
 }
