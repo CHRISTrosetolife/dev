@@ -40,7 +40,7 @@ export async function function_aliases_generate() {
   alias_add(function_auto, ["a"]);
   alias_add(function_aliases_generate, ["al"]);
   alias_add(function_copy, ["c"]);
-  alias_add(log_clear, ["c"]);
+  alias_add(log_clear, ["cls"]);
   alias_add(data_update, ["d"]);
   alias_add(function_delete, ["de"]);
   alias_add(exit, exit_aliases());
