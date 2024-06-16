@@ -27,7 +27,7 @@ export async function function_runner_json(function_name, args) {
           });
         }
         let r = await command_line(command);
-        if (0) {
+        if (10) {
           log({
             r,
           });
