@@ -17,6 +17,7 @@ import { promise_all } from "./promise_all.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { each_async } from "./each_async.mjs";
+import { object_property_initialize } from "./object_property_initialize.mjs";
 export async function app_gs_map_render(
   map,
   map_c,
@@ -35,6 +36,7 @@ export async function app_gs_map_render(
   each(coordinates, (c) => {
     let { x, y } = c;
     each(range_from(y - h_extend, y + h_extend), (ye) => {
+      object_property_initialize(renders);
       each(range_from(x - w_extend, x + w_extend), (xe) => {});
     });
   });
