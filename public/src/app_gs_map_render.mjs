@@ -35,11 +35,12 @@ export async function app_gs_map_render(
           return;
         }
         if (rows_old[xe]) {
+          rows_new[xe] = rows_old[xe];
           return;
         }
         let tile = map.tiles[ye][xe];
         let component = await app_gs_map_cell(map, map_c, player_overlay, tile);
-        tiles_new[xe] = component;
+        rows_new[xe] = component;
       });
     });
   });
