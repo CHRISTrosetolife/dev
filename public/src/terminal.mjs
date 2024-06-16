@@ -173,7 +173,7 @@ export async function terminal() {
           }
         }
         let result = buffer_to_string();
-        if (list_concat([exit.name], exit_aliases())) {
+        if (list_includes(list_concat([exit.name], exit_aliases()), result)) {
         }
       });
     });
