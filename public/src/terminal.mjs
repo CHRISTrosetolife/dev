@@ -54,6 +54,14 @@ export async function terminal() {
       },
     },
     {
+      keys: ["alt", "backspace"],
+      action: () => {
+        buffer_clear();
+        log_clear();
+        log_write(prompt_get());
+      },
+    },
+    {
       keys: ["return"],
       action: () => {
         log("");
