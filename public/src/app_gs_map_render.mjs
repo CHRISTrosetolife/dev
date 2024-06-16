@@ -9,7 +9,7 @@ import { floor } from "./floor.mjs";
 import { ceiling } from "./ceiling.mjs";
 import { number_max } from "./number_max.mjs";
 import { game_tiles_max } from "./game_tiles_max.mjs";
-export function app_gs_map_render(map, b, map_c, player_overlay) {
+export function app_gs_map_render(map, map_c, b, player_overlay) {
   let w = window.innerWidth;
   let h = window.innerHeight;
   let limit = game_tiles_max();
