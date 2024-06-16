@@ -65,6 +65,16 @@ export async function terminal() {
       },
     },
     {
+      keys: ["ctrl", "backspace"],
+      action: (key) => {
+        let b = buffer_get();
+        list_pop(b);
+        log_clear();
+        log_write(prompt_get());
+        each(b, keyboard_write);
+      },
+    },
+    {
       keys: ["return"],
       action: () => {
         log("");
