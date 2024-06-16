@@ -21,6 +21,6 @@ export function js_assert_arguments_length(ast) {
     return;
   }
   let { callee } = expression;
-  let type = callee;
+  let { type: type_callee } = callee;
   return callee;
 }
