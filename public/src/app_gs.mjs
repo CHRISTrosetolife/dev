@@ -1,5 +1,5 @@
+import { html_scroll_center_smooth } from "./html_scroll_center_smooth.mjs";
 import { html_style } from "./html_style.mjs";
-import { html_scroll_center } from "./html_scroll_center.mjs";
 import { app_gs_map_render } from "./app_gs_map_render.mjs";
 import { sleep } from "./sleep.mjs";
 import { promise_all } from "./promise_all.mjs";
@@ -24,5 +24,5 @@ export async function app_gs() {
   );
   await promise_all(tiles_new);
   await sleep(100);
-  html_scroll_center(player_overlay);
+  html_scroll_center_smooth(player_overlay);
 }
