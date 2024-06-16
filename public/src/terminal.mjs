@@ -82,6 +82,7 @@ export async function terminal() {
             extra = "_";
           }
         }
+        let mapped2 = list_map(mapped, list_join_underscore);
         log_clear_write_prompt();
         let joined = list_join_space(tokens);
         joined = string_combine(joined, extra);
