@@ -26,7 +26,7 @@ export async function app_gs_map_cell(map, map_c, player_overlay, tile) {
     app_gs_overlays_at(map, tile, function lambda_overlay(o) {
       let { id: o_id } = o;
       html_data_set(clicker, "overlay", o_id);
-      game_img(
+      let i = game_img(
         map_c,
         game_img_base(o_id),
         tile,
