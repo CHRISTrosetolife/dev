@@ -11,6 +11,7 @@ import { game_tiles_max } from "./game_tiles_max.mjs";
 import { each_async } from "./each_async.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { each_object } from "./each_object.mjs";
+import { object_property_get } from "./object_property_get.mjs";
 export async function app_gs_map_render(
   map,
   map_c,
@@ -51,6 +52,7 @@ export async function app_gs_map_render(
       each(rows, html_remove);
       return;
     }
+    each_object(object_property_get(tiles_new, hy));
   });
   map.html = tiles_new;
   return tiles_new;
