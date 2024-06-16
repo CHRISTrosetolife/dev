@@ -43,7 +43,7 @@ export function app_gs_map_render(map, map_c, coordinates, player_overlay) {
   });
   each_object(map.html, (hy, rows) => {
     if (object_property_exists_not(tiles_new, hy)) {
-      each(rows, html_remove);
+      each(rows, (row) => each(row, (c) => each(c, html_remove)));
       return;
     }
     each_object(object_property_get(tiles_new, hy), (hx, c) => {
