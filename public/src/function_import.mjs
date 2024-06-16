@@ -11,6 +11,6 @@ export async function function_import(function_name) {
     function_file_name,
   );
   let imported = await import(function_file_name_path);
-  let imported_function = object_property_get(imported, function_file_name);
+  let imported_function = object_property_get(imported, function_name);
   return imported_function;
 }
