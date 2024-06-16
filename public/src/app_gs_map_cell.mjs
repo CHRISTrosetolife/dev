@@ -1,3 +1,4 @@
+import { app_gs_map_render } from "./app_gs_map_render.mjs";
 import { html_img_wait } from "./html_img_wait.mjs";
 import { html_scroll_center_smooth } from "./html_scroll_center_smooth.mjs";
 import { each_async } from "./each_async.mjs";
@@ -52,6 +53,7 @@ export async function app_gs_map_cell(map, map_c, player_overlay, tile) {
       from,
       tile,
     );
+    await app_gs_map_render(map, map_c, p, player_overlay);
     await each_async(list_skip(p, 1), async (tile) => {
       await app_gs_walk(map, map_c, player_overlay, map.player, tile);
     });
