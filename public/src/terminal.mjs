@@ -49,7 +49,6 @@ export async function terminal() {
     {
       keys: ["shift", "backspace"],
       action: () => {
-        return;
         buffer_clear();
         log_clear();
         log_write(prompt_get());
