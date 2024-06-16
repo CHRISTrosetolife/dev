@@ -1,7 +1,5 @@
 import { object_property_exists } from "./object_property_exists.mjs";
 import { range_from } from "./range_from.mjs";
-import { list_add_multiple } from "./list_add_multiple.mjs";
-import { list_remove_all } from "./list_remove_all.mjs";
 import { html_remove } from "./html_remove.mjs";
 import { each } from "./each.mjs";
 import { app_gs_map_cell } from "./app_gs_map_cell.mjs";
@@ -46,7 +44,6 @@ export async function app_gs_map_render(
     });
   });
   each(map.html, html_remove);
-  list_remove_all(map.html);
-  list_add_multiple(map.html, tiles_new);
+  map.html = tiles_new;
   return tiles_new;
 }
