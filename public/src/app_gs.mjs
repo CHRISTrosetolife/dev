@@ -1,4 +1,4 @@
-import { number_min } from "./number_min.mjs";
+import { number_max } from "./number_max.mjs";
 import { list_xy } from "./list_xy.mjs";
 import { list_all } from "./list_all.mjs";
 import { game_tiles_max } from "./game_tiles_max.mjs";
@@ -21,7 +21,7 @@ export async function app_gs() {
   let existing = [];
   let w = window.innerWidth;
   let h = window.innerHeight;
-  number_min(h / limit, w / limit);
+  number_max(h / limit, w / limit);
   h / limit;
   let tiles = list_map(map.tiles, async (tile) => {
     let b = map.player;
