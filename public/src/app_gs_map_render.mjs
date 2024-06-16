@@ -29,6 +29,7 @@ export async function app_gs_map_render(
     let { x, y } = c;
     await each_async(range_from(y - h_extend, y + h_extend), async (ye) => {
       let rows_new = object_property_initialize(tiles_new, ye, {});
+      let rows_old = object_property_initialize(map.html, ye, {});
       await each_async(range_from(x - w_extend, x + w_extend), async (xe) => {
         if (rows_new[xe]) {
           return;
