@@ -17,7 +17,7 @@ export function js_assert_arguments_length(ast) {
   }
   let { expression } = first;
   let { type: type_expression } = expression;
-  if (type_first !== "CallExpression") {
+  if (type_expression !== "CallExpression") {
     return;
   }
   return first;
