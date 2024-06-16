@@ -10,7 +10,7 @@ import { json_to } from "./json_to.mjs";
 import { list_is } from "./list_is.mjs";
 import { assert } from "./assert.mjs";
 export async function function_runner_json(function_name, args) {
-  return await new Promise(async (resolve) => {
+  return await new Promise(async (resolve, reject) => {
     assert(list_is, [args]);
     let args_json = json_to({
       args,
