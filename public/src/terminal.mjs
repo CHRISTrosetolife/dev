@@ -50,8 +50,7 @@ export async function terminal() {
       keys: ["meta", "backspace"],
       action: () => {
         buffer_clear();
-        log_clear();
-        log_write(prompt_get());
+        log_clear_write_prompt();
       },
     },
     {
@@ -72,7 +71,6 @@ export async function terminal() {
         if (list_empty_not_is(t)) {
           list_pop(tokens);
         }
-        list_pop(b);
         log_clear();
         log_write(prompt_get());
         each(b, keyboard_write);
@@ -107,6 +105,10 @@ export async function terminal() {
     },
   ];
   let prompt = chalk.greenBright("✟") + " ";
+  function log_clear_write_prompt() {
+    log_clear();
+    log_write(prompt_get());
+  }
   function prompt_get() {
     return prompt;
   }
