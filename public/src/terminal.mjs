@@ -68,6 +68,7 @@ export async function terminal() {
       action: (key) => {
         let input = buffer_to_string();
         let tokens = tokens_get(input);
+        let extra = "";
         if (list_empty_not_is(tokens)) {
           list_pop(tokens);
         }
