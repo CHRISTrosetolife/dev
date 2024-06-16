@@ -14,6 +14,7 @@ export async function app_gs() {
   });
   let map = app_gs_map_new();
   let map_c = app_gs_map_html(root, map);
+  html_hide(map_c);
   let player_overlay = app_gs_overlay_player(map_c, map);
   map.html = [];
   let tiles_new = await app_gs_map_render(
