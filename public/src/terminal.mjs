@@ -1,3 +1,4 @@
+import { list_pop } from "./list_pop.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { not } from "./not.mjs";
 import { counter_async } from "./counter_async.mjs";
@@ -56,7 +57,7 @@ export async function terminal() {
     {
       keys: ["backspace"],
       action: () => {
-        buffer_clear();
+        list_pop(buffer_get());
         log_clear();
         log_write(prompt_get());
       },
