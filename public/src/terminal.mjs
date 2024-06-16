@@ -151,12 +151,10 @@ export async function terminal() {
     each(string_split_empty(input), (s) => {
       if (s === "'") {
         quoted = not(quoted);
+      } else if (s === " " && !quoted) {
+        token_next();
       } else {
-        if (s === " " && !quoted) {
-          token_next();
-        } else {
-          list_add(current, s);
-        }
+        list_add(current, s);
       }
     });
     if (list_empty_not_is(current)) {
