@@ -22,5 +22,8 @@ export function js_assert_arguments_length(ast) {
   }
   let { callee } = expression;
   let { type: type_callee } = callee;
+  if (type_callee !== "Identifier") {
+    return;
+  }
   return callee;
 }
