@@ -125,16 +125,16 @@ export async function terminal() {
   }
   process.stdin.on("keypress", async function (chunk, key) {
     let { sequence, name, ctrl, meta, shift } = key;
-    let b = [ctrl, meta, shift];
+    let actual = [ctrl, meta, shift];
     let count = await counter_async(async (la) => {
       await each_async(commands, async (c) => {
         let { keys } = c;
         let ctrl_c = list_includes(keys, "ctrl");
         let meta_c = list_includes(keys, "meta");
         let shift_c = list_includes(keys, "shift");
-        let b_c = [ctrl_c, meta_c, shift_c];
+        let expected = [ctrl_c, meta_c, shift_c];
         if (list_any([name, sequence], (ns) => list_includes(keys, ns))) {
-          if (equal_json(b, b_c)) {
+          if (equal_json(actual, expected)) {
             la();
             await c.action(key);
           }
