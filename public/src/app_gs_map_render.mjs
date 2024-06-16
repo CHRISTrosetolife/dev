@@ -23,14 +23,6 @@ export async function app_gs_map_render(
   coordinates,
   player_overlay,
 ) {
-  let renders = [];
-  each(coordinates, (c) => {});
-  let xs = list_map_property(coordinates, "x");
-  let ys = list_map_property(coordinates, "y");
-  let x_max = number_max_list(xs);
-  let y_max = number_max_list(ys);
-  let x_min = number_min_list(xs);
-  let y_min = number_min_list(ys);
   let w = window.innerWidth;
   let h = window.innerHeight;
   let limit = game_tiles_max();
@@ -39,6 +31,14 @@ export async function app_gs_map_render(
   let h_tiles = ceiling(h / tile_size_px);
   let w_extend = floor(w_tiles / 2);
   let h_extend = floor(h_tiles / 2);
+  let renders = [];
+  each(coordinates, (c) => {});
+  let xs = list_map_property(coordinates, "x");
+  let ys = list_map_property(coordinates, "y");
+  let x_max = number_max_list(xs);
+  let y_max = number_max_list(ys);
+  let x_min = number_min_list(xs);
+  let y_min = number_min_list(ys);
   let tiles_new = list_adder(
     async (la) =>
       await each_async(
