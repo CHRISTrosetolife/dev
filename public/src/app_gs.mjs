@@ -1,3 +1,4 @@
+import { html_style_visible } from "./html_style_visible.mjs";
 import { html_style_hidden } from "./html_style_hidden.mjs";
 import { html_scroll_center } from "./html_scroll_center.mjs";
 import { html_load_wait } from "./html_load_wait.mjs";
@@ -24,5 +25,6 @@ export async function app_gs() {
   await promise_all(tiles_new);
   await sleep(0);
   await html_load_wait();
+  html_style_visible(root);
   html_scroll_center(player_overlay);
 }
