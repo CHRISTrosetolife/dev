@@ -15,7 +15,7 @@ export async function app_gs() {
   let map = app_gs_map_new();
   let map_c = app_gs_map_html(root, map);
   let player_overlay = app_gs_overlay_player(map_c, map);
-  ceiling(ceiling(game_tiles_max()) / 2);
+  ceiling(game_tiles_max());
   let existing = [];
   let tiles = list_map(map.tiles, async (tile) => {
     let b = map.player;
