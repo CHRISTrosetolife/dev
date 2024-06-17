@@ -338,7 +338,7 @@ export async function terminal() {
       });
     }
   }
-  function keyboard_type(i) {
+  function keyboard_type(input) {
     each(input, (i) => {
       i = string_replace(i, "\n", " ");
       keyboard_write(i);
