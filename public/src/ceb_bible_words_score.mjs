@@ -19,8 +19,8 @@ export async function ceb_bible_words_score() {
   );
   let map = await ceb_bible_words_definitions_map_cache();
   let definitions = await ceb_bible_words_definitions_all_cache();
-  each(definitions, (w) => {
-    let { word } = w;
+  each(definitions, (d) => {
+    let { word } = d;
     let choices = [word];
     if (object_property_exists(map, word)) {
       choices = list_concat(choices, object_property_get(map, word));
@@ -31,7 +31,7 @@ export async function ceb_bible_words_score() {
       let choice_count = object_property_get(word_count, "count");
       count += choice_count;
     });
-    object_merge(w, {
+    object_merge(d, {
       count,
     });
   });
