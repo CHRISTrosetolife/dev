@@ -1,4 +1,3 @@
-import { list_size } from "./list_size.mjs";
 import { add_1 } from "./add_1.mjs";
 import { terminal_index_history_transform } from "./terminal_index_history_transform.mjs";
 import { log_error } from "./log_error.mjs";
@@ -51,6 +50,7 @@ import { string_empty_is } from "./string_empty_is.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
+import { list_index_last } from "./list_index_last.mjs";
 export async function terminal() {
   let commands = [
     {
@@ -263,13 +263,13 @@ export async function terminal() {
     await terminal_data_transform(function lambda(d) {
       let history = object_property_initialize(d, "history", []);
       list_add(history, item);
-      d.history_index = list_size(history);
+      d.history_index = list_index_last(history);
     });
   }
   async function history_pop() {
     return await terminal_history_transform(function lambda(history) {
       let r = list_pop(history);
-      d.history_index = list_size(history);
+      d.history_index = list_index_last(history);
       return r;
     });
   }
