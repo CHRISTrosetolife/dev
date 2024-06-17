@@ -183,7 +183,7 @@ export async function terminal() {
       },
       action: () => {
         log_buffer_clear();
-        keyboard_type(list_last(history_get()));
+        keyboard_type(list_pop(history_get()));
       },
     },
     {
