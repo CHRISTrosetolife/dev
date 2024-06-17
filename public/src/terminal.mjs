@@ -242,6 +242,7 @@ export async function terminal() {
         return;
       }
       let i = --d.history_index;
+      let history = object_property_initialize(d, "history", []);
     });
   }
   async function history_pop() {
