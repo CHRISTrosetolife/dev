@@ -272,6 +272,7 @@ export async function terminal() {
           index,
         };
       });
+      let filtered = list_filter(mapped, (m) => m.include === true);
       list_add(history, item);
       d.history_index = list_size(history);
     });
