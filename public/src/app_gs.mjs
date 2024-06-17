@@ -14,7 +14,7 @@ export async function app_gs() {
   let root = app_gs_style_default_initialize();
   html_button_width_full_text_click(root, "menu", noop);
   let h = html_document_head();
-  let c = html_element(parent, meta);
+  let c = html_element(h, meta);
   html_attribute_set(c, "name", "viewport");
   html_attribute_set(
     c,
