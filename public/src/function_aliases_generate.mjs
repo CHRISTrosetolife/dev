@@ -1,3 +1,4 @@
+import { function_transform_all_args } from "./function_transform_all_args.mjs";
 import { function_cache_refresh } from "./function_cache_refresh.mjs";
 import { function_cache_new_run } from "./function_cache_new_run.mjs";
 import { function_cache_delete } from "./function_cache_delete.mjs";
@@ -58,6 +59,7 @@ export async function function_aliases_generate() {
   alias_add(function_cache_new, ["fcn"]);
   alias_add(function_cache_refresh, ["fcr"]);
   alias_add(function_transform, ["ft"]);
+  alias_add(function_transform_all_args, ["ftaa"]);
   alias_add(git_acp, ["gi"]);
   alias_add(git_index_lock_delete, ["gx"]);
   alias_add(google_search, ["g"]);
