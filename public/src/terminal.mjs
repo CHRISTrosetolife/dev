@@ -205,15 +205,7 @@ export async function terminal() {
         code: "[B",
       },
       action: async () => {
-        let item = history_index_next();
-        if (!string_is(item)) {
-          log_error(
-            string_combine_multiple(["no more ", terminal.name, " history"]),
-          );
-          return;
-        }
-        log_buffer_clear();
-        keyboard_type(item);
+        await history_index_get(add_1);
       },
     },
     {
