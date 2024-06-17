@@ -6,7 +6,8 @@ import { each } from "./each.mjs";
 import { list_adder } from "./list_adder.mjs";
 export function list_random_index_weighted(grass) {
   let sum = 0;
-  let sums = list_adder((la) =>
+  let sums;
+  sums = list_adder((la) =>
     each(grass, (proportion) => {
       sum += proportion;
       la(sum);
