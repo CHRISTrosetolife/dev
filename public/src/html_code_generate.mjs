@@ -8,7 +8,8 @@ export function html_code_generate(input) {
     input,
   });
   let p = html_parse(input);
-  let c = html_parse_visit_tag_single(p, "meta");
+  let tag_name = "meta";
+  let c = html_parse_visit_tag_single(p, tag_name);
   let { attribs } = c;
   return attribs;
   return object_properties(c);
