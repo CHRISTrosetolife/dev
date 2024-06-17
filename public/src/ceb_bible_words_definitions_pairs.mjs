@@ -11,6 +11,7 @@ import { list_map_property } from "./list_map_property.mjs";
 import { list_get } from "./list_get.mjs";
 import { number_is } from "./number_is.mjs";
 import { object_merge_properties } from "./object_merge_properties.mjs";
+import { list_map } from "./list_map.mjs";
 export async function ceb_bible_words_definitions_pairs() {
   let ceb_scores = await ceb_bible_words_score();
   let pairs = list_adder((la) =>
@@ -37,7 +38,7 @@ export async function ceb_bible_words_definitions_pairs() {
   });
   list_sort_property(pairs, "score");
   return {
-    pairs,
+    pairs: list_map(pairs, object_merge_properties({}, w, ["word", "score"])),
     definitions,
   };
 }
