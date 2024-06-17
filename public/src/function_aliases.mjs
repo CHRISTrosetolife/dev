@@ -14,6 +14,7 @@ export function function_aliases() {
     fcn: "function_cache_new",
     fcr: "function_cache_refresh",
     ft: "function_transform",
+    ftaa: "function_transform_all_args",
     gi: "git_acp",
     gx: "git_index_lock_delete",
     g: "google_search",
