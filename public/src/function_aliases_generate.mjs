@@ -1,3 +1,4 @@
+import { restart } from "./restart.mjs";
 import { terminal_data_history_clear } from "./terminal_data_history_clear.mjs";
 import { terminal_data_history } from "./terminal_data_history.mjs";
 import { on_keypress_log } from "./on_keypress_log.mjs";
@@ -60,6 +61,7 @@ export async function function_aliases_generate() {
   alias_add(function_new_args, ["na"]);
   alias_add(function_open, ["o"]);
   alias_add(function_rename, ["r"]);
+  alias_add(restart, ["re"]);
   alias_add(function_search, ["s"]);
   alias_add(sandbox, ["sb"]);
   alias_add(app_dev_screenshots, ["ss"]);
