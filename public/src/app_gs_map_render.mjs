@@ -1,3 +1,4 @@
+import { game_tile_size_px } from "./game_tile_size_px.mjs";
 import { log } from "./log.mjs";
 import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
@@ -7,8 +8,6 @@ import { each } from "./each.mjs";
 import { app_gs_map_cell } from "./app_gs_map_cell.mjs";
 import { floor } from "./floor.mjs";
 import { ceiling } from "./ceiling.mjs";
-import { number_max } from "./number_max.mjs";
-import { game_tiles_max } from "./game_tiles_max.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { each_object } from "./each_object.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -23,8 +22,7 @@ export function app_gs_map_render(
   });
   let w = window.innerWidth;
   let h = window.innerHeight;
-  let limit = game_tiles_max();
-  let tile_size_px = floor(number_max(h, w) / limit);
+  let tile_size_px = game_tile_size_px();
   let w_tiles = ceiling(w / tile_size_px);
   let h_tiles = ceiling(h / tile_size_px);
   let w_extend = floor(w_tiles / 2);
