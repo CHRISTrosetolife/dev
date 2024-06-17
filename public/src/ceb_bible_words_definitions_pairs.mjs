@@ -8,7 +8,9 @@ export async function ceb_bible_words_definitions_pairs() {
   let pairs = list_adder((la) =>
     each(ceb_scores, (w) =>
       each(object_property_get(w, "definitions"), (d) =>
-        la([object_property_get(w, "word"), d]),
+        la({
+          pair: [object_property_get(w, "word"), d],
+        }),
       ),
     ),
   );
