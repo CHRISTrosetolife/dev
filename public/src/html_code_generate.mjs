@@ -21,7 +21,10 @@ export function html_code_generate(tag_name, input) {
       variable_name,
       js_code_call_args(html_element.name, ["parent", tag_name]),
     ),
-    js_code_statement_call_args(html_attribute_set.name, ["parent", tag_name]),
+    js_code_statement_call_args(html_attribute_set.name, [
+      variable_name,
+      tag_name,
+    ]),
   ];
   return attribs;
   return object_properties(c);
