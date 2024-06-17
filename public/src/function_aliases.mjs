@@ -16,6 +16,7 @@ export function function_aliases() {
     h: "http_server",
     i: "npm_install",
     ig: "npm_install_global",
+    k: "on_keypress_log",
     n: "function_new",
     na: "function_new_args",
     o: "function_open",
@@ -24,6 +25,8 @@ export function function_aliases() {
     sb: "sandbox",
     ss: "app_dev_screenshots",
     t: "terminal",
+    th: "terminal_data_history",
+    thc: "terminal_data_history_clear",
     w: "watch",
   };
 }
