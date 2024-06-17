@@ -25,7 +25,8 @@ export async function ceb_bible_words_score() {
       choices = list_concat(choices, object_property_get(map, word));
     }
     each(choices, (choice) => {
-      object_property_get(object_property_get(lookup, choice), "count");
+      let word_count = object_property_get(lookup, choice);
+      object_property_get(word_count, "count");
     });
   });
   return words_ceb;
