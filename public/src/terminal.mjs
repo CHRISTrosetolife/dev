@@ -267,8 +267,8 @@ export async function terminal() {
   }
   async function history_add(item) {
     await terminal_data_transform(function (d) {
-      let history = object_property_initialize(d, "history", []);
-      let mapped = list_map_index(history, (h, index) => {
+      let list = object_property_initialize(d, "history", []);
+      let mapped = list_map_index(list, (h, index) => {
         return {
           include: predicate(h),
           index,
@@ -276,9 +276,9 @@ export async function terminal() {
       });
       let filtered = list_filter(mapped, (m) => m.include === true);
       let mapped2 = list_map(filtered, (f) => f.index);
-      each_reverse(mapped2, (m) => list_remove_at(history, m));
-      list_add(history, item);
-      d.history_index = list_size(history);
+      each_reverse(mapped2, (m) => list_remove_at(list, m));
+      list_add(list, item);
+      d.history_index = list_size(list);
     });
   }
   async function history_pop() {
