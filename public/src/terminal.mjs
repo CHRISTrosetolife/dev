@@ -1,6 +1,6 @@
+import { terminal_index_history_transform } from "./terminal_index_history_transform.mjs";
 import { log_error } from "./log_error.mjs";
 import { string_is } from "./string_is.mjs";
-import { number_is } from "./number_is.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { terminal_data_transform } from "./terminal_data_transform.mjs";
 import { terminal_history_transform } from "./terminal_history_transform.mjs";
@@ -48,7 +48,6 @@ import { object_property_get } from "./object_property_get.mjs";
 import { string_empty_is } from "./string_empty_is.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
 import { list_index_last } from "./list_index_last.mjs";
-import { list_get } from "./list_get.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
 export async function terminal() {
@@ -249,10 +248,10 @@ export async function terminal() {
     });
   }
   async function history_index_previous() {
-    return await terminal_index_history_transform(lambda);
-    function lambda(index) {
-      return subtract_1(index);
-    }
+    return await terminal_index_history_transform(function lambda(index) {
+        return subtract_1(index);
+      });
+    
   }
   async function history_pop() {
     return await terminal_history_transform(function lambda(history) {
@@ -371,15 +370,3 @@ export async function terminal() {
     return tokens;
   }
 }
-async function terminal_index_history_transform(lambda) {
-    return await terminal_data_transform(function (d) {
-        if (!number_is(d.history_index)) {
-            return;
-        }
-        d.history_index = lambda(d.history_index);
-        let i = d.history_index;
-        let history = object_property_initialize(d, "history", []);
-        return list_get(history, i);
-    });
-}
-
