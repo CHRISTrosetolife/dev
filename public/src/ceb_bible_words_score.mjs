@@ -10,7 +10,7 @@ export async function ceb_bible_words_score() {
   let ceb_total = list_summer((s) =>
     each(list_map_property(words_ceb, "count"), s),
   );
-  await ceb_bible_words_definitions_map_cache();
+  let map = await ceb_bible_words_definitions_map_cache();
   let definitions = await ceb_bible_words_definitions_all_cache();
   return definitions;
   let words_eng = await bible_words_eng_cache();
