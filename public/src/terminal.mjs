@@ -231,10 +231,9 @@ export async function terminal() {
     });
   }
   async function history_pop() {
-    return await terminal_data_transform(lambda);
-    function lambda(history) {
+    return await terminal_data_transform(function lambda(history) {
       return list_pop(history);
-    }
+    });
   }
   let buffer;
   buffer_clear();
