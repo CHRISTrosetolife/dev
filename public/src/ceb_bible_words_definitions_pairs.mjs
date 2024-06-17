@@ -9,8 +9,7 @@ import { list_map } from "./list_map.mjs";
 import { list_take } from "./list_take.mjs";
 export async function ceb_bible_words_definitions_pairs(skip, limit) {
   let ceb_scores = await ceb_bible_words_score();
-  let property_name = "word";
-  let lookup = list_to_lookup_property(ceb_scores, property_name);
+  let lookup = list_to_lookup_property(ceb_scores, "word");
   let pairs = await ceb_bible_words_definitions_pairs_compute_cache();
   let concise = list_map(pairs, (p) =>
     list_map(["ceb", "eng"], (language) =>
