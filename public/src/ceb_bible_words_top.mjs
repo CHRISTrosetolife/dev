@@ -7,5 +7,5 @@ export async function ceb_bible_words_top(count) {
   list_sort_property(words, "score");
   let t = list_take(words, count);
   let m = list_map_property(t, "word");
-  return t;
+  return m;
 }
