@@ -15,6 +15,7 @@ export async function ceb_bible_words_definitions_pairs() {
       object_property_get(p.eng, "closest"),
     ),
   );
+  return concise;
   return {
     pairs: concise,
     definitions: list_map(ceb_scores, (w) =>
