@@ -192,20 +192,7 @@ export async function terminal() {
         code: "[A",
       },
       action: async () => {
-        let transform = subtract_1;
-        let item = await terminal_index_history_transform(
-          function lambda(index) {
-            return transform(index);
-          },
-        );
-        if (!string_is(item)) {
-          log_error(
-            string_combine_multiple(["no more ", terminal.name, " history"]),
-          );
-        } else {
-          log_buffer_clear();
-          keyboard_type(item);
-        }
+        await history_index_get(subtract_1);
       },
     },
     {
@@ -249,6 +236,19 @@ export async function terminal() {
     },
   ];
   let prompt = chalk().greenBright("✟") + " ";
+  async function history_index_get(transform) {
+    let item = await terminal_index_history_transform(function lambda(index) {
+      return transform(index);
+    });
+    if (!string_is(item)) {
+      log_error(
+        string_combine_multiple(["no more ", terminal.name, " history"]),
+      );
+    } else {
+      log_buffer_clear();
+      keyboard_type(item);
+    }
+  }
   function log_buffer_clear() {
     buffer_clear();
     log_clear_write_prompt();
