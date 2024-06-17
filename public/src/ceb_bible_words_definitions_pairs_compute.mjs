@@ -30,13 +30,7 @@ export async function ceb_bible_words_definitions_pairs_compute() {
     ),
   );
   let eng_scores = await bible_words_eng_score();
-  let key_property_name = "word";
-  let value_property_name = "score";
-  let eng_lookup = list_to_lookup_value_property(
-    eng_scores,
-    key_property_name,
-    value_property_name,
-  );
+  let eng_lookup = list_to_lookup_value_property(eng_scores, "word", "score");
   each_index(pairs, (pair, i) => {
     if (i % 100 === 0) {
       log({
