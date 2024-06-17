@@ -12,7 +12,7 @@ export async function ceb_bible_words_definitions_get(words_ceb, words_eng) {
   let eng_total = list_sum(list_map_property(words_eng, "count"));
   let ceb_total = list_sum(list_map_property(words_ceb, "count"));
   await each_async(words_ceb, async (bible_word) => {
-    let { word, definitions } = await ceb_definition(bible_word);
+    let { word, definitions } = await ceb_definition(bible_word.word);
     if (object_property_exists_not(existing, word)) {
       object_property_set(existing, word, true);
       if (list_empty_not_is(definitions)) {
