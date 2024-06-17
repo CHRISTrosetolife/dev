@@ -1,3 +1,4 @@
+import { object_property_initialize } from "./object_property_initialize.mjs";
 import { terminal_data_transform } from "./terminal_data_transform.mjs";
 import { terminal_history_transform } from "./terminal_history_transform.mjs";
 import { function_run_terminal } from "./function_run_terminal.mjs";
@@ -228,6 +229,7 @@ export async function terminal() {
   }
   async function history_add(item) {
     await terminal_data_transform(function lambda(d) {
+      let history = object_property_initialize(d, "history", []);
       list_add(history, item);
     });
   }
