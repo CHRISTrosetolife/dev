@@ -275,7 +275,9 @@ export async function terminal() {
       log({
         indices,
       });
-      each_reverse(indices, (index) => list_remove_at(history, index));
+      each_reverse(indices, (index) => {
+        list_remove_at(history, index);
+      });
       list_add(history, item);
       d.history_index = list_size(history);
     });
