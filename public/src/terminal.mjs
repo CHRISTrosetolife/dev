@@ -227,11 +227,10 @@ export async function terminal() {
   function on_returns_get() {
     return on_returns;
   }
-  let history = [];
   async function history_add(item) {
     await file_json_transform_exists(
       (h) => {
-        history = object_property_initialize(h, "history", []);
+        let history = object_property_initialize(h, "history", []);
         list_add(history, item);
       },
       folder_gitignore_path(string_combine(terminal.name, ".json")),
