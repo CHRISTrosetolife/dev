@@ -226,10 +226,9 @@ export async function terminal() {
     return on_returns;
   }
   async function history_add(item) {
-    await terminal_data_transform(lambda);
-    function lambda(history) {
+    await terminal_data_transform(function lambda(history) {
       list_add(history, item);
-    }
+    });
   }
   async function history_pop() {
     return await terminal_data_transform(lambda);
