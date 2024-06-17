@@ -31,8 +31,14 @@ export async function ceb_bible_words_definitions_pairs_compute() {
   );
   let eng_scores = await bible_words_eng_score();
   let eng_lookup = {};
+  let key_property_name = "word";
+  let value_property_name = "score";
   each(eng_scores, (s) =>
-    object_property_set(eng_lookup, s["word"], s["score"]),
+    object_property_set(
+      eng_lookup,
+      s[key_property_name],
+      s[value_property_name],
+    ),
   );
   each_index(pairs, (pair, i) => {
     if (i % 100 === 0) {
