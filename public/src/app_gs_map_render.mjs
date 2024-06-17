@@ -24,7 +24,7 @@ export function app_gs_map_render(
   let w = window.innerWidth;
   let h = window.innerHeight;
   let limit = game_tiles_max();
-  let tile_size_px = number_max(h, w) / limit;
+  let tile_size_px = floor(number_max(h, w) / limit);
   let w_tiles = ceiling(w / tile_size_px);
   let h_tiles = ceiling(h / tile_size_px);
   let w_extend = floor(w_tiles / 2);
