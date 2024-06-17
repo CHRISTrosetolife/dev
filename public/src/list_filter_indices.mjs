@@ -4,8 +4,9 @@ import { list_filter } from "./list_filter.mjs";
 import { list_map_index } from "./list_map_index.mjs";
 export function list_filter_indices(list, predicate) {
   let mapped = list_map_index(list, (h, index) => {
+    let include = predicate(h);
     return {
-      include: predicate(h),
+      include: include,
       index,
     };
   });
