@@ -192,7 +192,7 @@ export async function terminal() {
       action: async () => {
         let item = history_index_previous();
         if (!string_is(item)) {
-          log_error();
+          log_error("no more ", terminal.name, "history");
           return;
         }
         log_buffer_clear();
