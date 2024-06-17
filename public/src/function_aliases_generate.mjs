@@ -51,8 +51,9 @@ export async function function_aliases_generate() {
   alias_add(function_delete, ["de"]);
   alias_add(exit, exit_aliases());
   alias_add(firebase_deploy, ["f"]);
-  alias_add(function_cache_new, ["fc"]);
+  alias_add(function_cache_new, ["fcn"]);
   alias_add(function_cache_delete, ["fcd"]);
+  alias_add(function_cache_new, ["fcn"]);
   alias_add(function_transform, ["ft"]);
   alias_add(git_acp, ["gi"]);
   alias_add(git_index_lock_delete, ["gx"]);
