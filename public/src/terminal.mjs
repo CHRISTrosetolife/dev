@@ -242,6 +242,7 @@ export async function terminal() {
   async function history_get() {
     let d = await file_read_json(terminal_data_path());
     let history = object_property_initialize(d, "history", []);
+    return history;
   }
   let buffer;
   buffer_clear();
