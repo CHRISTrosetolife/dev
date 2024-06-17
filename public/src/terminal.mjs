@@ -43,6 +43,7 @@ import { string_combine } from "./string_combine.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { string_empty_is } from "./string_empty_is.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
+import { object_property_initialize } from "./object_property_initialize.mjs";
 export async function terminal() {
   let commands = [
     {
@@ -229,7 +230,9 @@ export async function terminal() {
   let history = [];
   async function history_add(item) {
     await file_json_transform_exists(
-      (h) => h,
+      (h) => {
+        history = object_property_initialize(h, "history", []);
+      },
       folder_gitignore_path(string_combine(terminal.name, ".json")),
       [],
     );
