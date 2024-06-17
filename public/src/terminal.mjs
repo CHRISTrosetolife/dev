@@ -232,6 +232,7 @@ export async function terminal() {
     await file_json_transform_exists(
       (h) => {
         history = object_property_initialize(h, "history", []);
+        list_add(history, item);
       },
       folder_gitignore_path(string_combine(terminal.name, ".json")),
       [],
