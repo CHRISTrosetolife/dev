@@ -269,7 +269,7 @@ export async function terminal() {
     await terminal_data_transform(function (d) {
       let history = object_property_initialize(d, "history", []);
       function predicate(h) {
-        h === item;
+        return h === item;
       }
       let indices = list_filter_indices(history, predicate);
       each_reverse(indices, (index) => list_remove_at(history, index));
