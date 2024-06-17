@@ -28,7 +28,7 @@ export function html_code_generate(tag_name, input) {
       variable_name,
       tag_name,
     ]);
-    list_add(statements);
+    list_add(statements, s);
   });
   return attribs;
   return object_properties(c);
