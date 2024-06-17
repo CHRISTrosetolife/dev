@@ -263,9 +263,6 @@ export async function terminal() {
       let history = object_property_initialize(d, "history", []);
       list_add(history, item);
       d.history_index = list_size(history);
-      log({
-        history,
-      });
     });
   }
   async function history_pop() {
