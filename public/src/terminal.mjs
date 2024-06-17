@@ -1,3 +1,4 @@
+import { string_is } from "./string_is.mjs";
 import { number_is } from "./number_is.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { terminal_data_transform } from "./terminal_data_transform.mjs";
@@ -189,6 +190,9 @@ export async function terminal() {
       },
       action: async () => {
         let item = history_index_previous();
+        if (!string_is(item)) {
+          return;
+        }
         log_buffer_clear();
         keyboard_type(await history_pop());
       },
