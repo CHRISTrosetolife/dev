@@ -13,8 +13,9 @@ export async function ceb_bible_words_top(count) {
   list_reverse(words);
   let t = list_take(words, count);
   let m = list_map_property(t, "word");
-  await file_overwrite(
-    folder_gitignore_path(string_combine(ceb_bible_words_top.name, ".txt")),
-    list_join_newline(m),
+  let file_path = folder_gitignore_path(
+    string_combine(ceb_bible_words_top.name, ".txt"),
   );
+  await file_overwrite(file_path, list_join_newline(m));
 }
+file_open;
