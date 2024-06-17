@@ -1,3 +1,4 @@
+import { list_sum } from "./list_sum.mjs";
 import { assert } from "./assert.mjs";
 import { string_match_best_find_index } from "./string_match_best_find_index.mjs";
 import { ceb_bible_words_score } from "./ceb_bible_words_score.mjs";
@@ -30,7 +31,7 @@ export async function ceb_bible_words_definitions_pairs() {
     let index = string_match_best_find_index(eng.word, eng_words);
     eng.score = list_get(eng_scores, index).score;
     assert(number_is(eng.score));
-    pair.score = list_map_property([eng, ceb], "score");
+    pair.score = list_sum(list_map_property([eng, ceb], "score"));
   });
   return {
     pairs,
