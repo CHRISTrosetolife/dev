@@ -55,7 +55,7 @@ export function app_gs_map_render(
     });
   });
   log({
-    tiles_news,
+    tiles_new,
   });
   each_object(map.html, (hy, row) => {
     if (object_property_exists_not(tiles_new, hy)) {
