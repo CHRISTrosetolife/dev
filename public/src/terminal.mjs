@@ -231,6 +231,7 @@ export async function terminal() {
     await file_json_transform(
       (h) => h,
       folder_gitignore_path(string_combine(terminal.name, "_history.json")),
+      [],
     );
     list_add(history, item);
   }
