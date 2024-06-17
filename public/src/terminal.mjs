@@ -232,11 +232,14 @@ export async function terminal() {
     await file_json_transform_exists(
       (d) => {
         let history = object_property_initialize(d, "history", []);
-        list_add(history, item);
+        lambda(history);
       },
       terminal_data_path(),
       [],
     );
+    function lambda(history) {
+      list_add(history, item);
+    }
   }
   async function history_get() {
     let d = await file_read_json(terminal_data_path());
