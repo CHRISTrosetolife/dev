@@ -7,6 +7,7 @@ import { list_map } from "./list_map.mjs";
 import { list_take } from "./list_take.mjs";
 export async function ceb_bible_words_definitions_pairs(skip, limit) {
   let ceb_scores = await ceb_bible_words_score();
+  let lookup = {};
   let pairs = await ceb_bible_words_definitions_pairs_compute_cache();
   let concise = list_map(pairs, (p) =>
     list_map(["ceb", "eng"], (language) =>
@@ -17,8 +18,8 @@ export async function ceb_bible_words_definitions_pairs(skip, limit) {
   let l = list_take(s, limit);
   return {
     pairs: l,
-    definitions: list_map(ceb_scores, (w) =>
-      object_properties_new(w, ["word", "definitions"]),
-    ),
+    definitions: list_map(l, (w) => {
+      object_properties_new(w, ["word", "definitions"]);
+    }),
   };
 }
