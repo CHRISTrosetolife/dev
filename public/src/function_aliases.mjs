@@ -12,6 +12,7 @@ export function function_aliases() {
     fc: "function_cache_new_run",
     fcd: "function_cache_delete",
     fcn: "function_cache_new",
+    fcr: "function_cache_refresh",
     ft: "function_transform",
     gi: "git_acp",
     gx: "git_index_lock_delete",
