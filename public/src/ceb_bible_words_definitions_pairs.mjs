@@ -24,6 +24,7 @@ export async function ceb_bible_words_definitions_pairs() {
     let { ceb, eng } = pair;
     let index = string_match_best_find_index(eng, eng_words);
     let eng_score = list_get(eng_scores, index);
+    let score = eng_score;
   });
   return {
     pairs,
