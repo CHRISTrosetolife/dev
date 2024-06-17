@@ -1,3 +1,4 @@
+import { js_code_brackets } from "./js_code_brackets.mjs";
 import { html_textarea } from "./html_textarea.mjs";
 import { html_element_select } from "./html_element_select.mjs";
 import { file_write } from "./file_write.mjs";
@@ -85,7 +86,7 @@ export async function app_code_edit(file_path) {
     );
     if (list_empty_is(filtered)) {
       await function_auto(function_name);
-      app_code_edit(file_path);
+      await app_code_edit(file_path);
     } else {
       let first = list_first(filtered);
       let remaining = string_skip(first, string_length(search_prefix));
@@ -132,7 +133,7 @@ export async function app_code_edit(file_path) {
             });
             let code = `(async () => {
                     ${list_join(mapped, newline())}
-                    return ${js_code_call_args(function_transform_args_split.name, [`${function_name}.name`, `${function_name}.name`, "[]"])}
+                    return ${js_code_call_args(function_transform_args_split.name, [`${function_name}.name`, `${function_name}.name`, js_code_brackets()])}
                 })();`;
             let result = await eval(code);
             html_button_width_full_text_click_x_0(
@@ -183,7 +184,7 @@ export async function app_code_edit(file_path) {
                 file_write,
               );
               let file_path = function_name_to_path(function_name);
-              app_code_backable(() => app_code_edit(file_path));
+              app_code_backable(async () => await app_code_edit(file_path));
             },
           );
         });
@@ -245,7 +246,9 @@ export async function app_code_edit(file_path) {
               let function_name_copy = html_value_get(input);
               await function_copy(function_name, function_name_copy);
               let file_path_copy = function_name_to_path(function_name_copy);
-              app_code_backable(() => app_code_edit(file_path_copy));
+              app_code_backable(
+                async () => await app_code_edit(file_path_copy),
+              );
             },
           );
         });
