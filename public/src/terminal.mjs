@@ -195,7 +195,7 @@ export async function terminal() {
         let transform = subtract_1;
         let item = await terminal_index_history_transform(
           function lambda(index) {
-            return subtract_1(index);
+            return transform(index);
           },
         );
         if (!string_is(item)) {
