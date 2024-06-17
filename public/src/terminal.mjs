@@ -213,7 +213,7 @@ export async function terminal() {
         code: "[B",
       },
       action: async () => {
-        let item = history_index_previous();
+        let item = history_index_next();
         if (!string_is(item)) {
           log_error(
             string_combine_multiple(["no more ", terminal.name, " history"]),
