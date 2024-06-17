@@ -1,3 +1,4 @@
+import { terminal_data_history } from "./terminal_data_history.mjs";
 import { on_keypress_log } from "./on_keypress_log.mjs";
 import { git_index_lock_delete } from "./git_index_lock_delete.mjs";
 import { exit_aliases } from "./exit_aliases.mjs";
@@ -62,6 +63,7 @@ export async function function_aliases_generate() {
   alias_add(sandbox, ["sb"]);
   alias_add(app_dev_screenshots, ["ss"]);
   alias_add(terminal, ["t"]);
+  alias_add(terminal_data_history, ["th"]);
   alias_add(watch, ["w"]);
   let name = "function_aliases";
   await function_new_generic(
