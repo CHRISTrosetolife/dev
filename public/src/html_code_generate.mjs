@@ -21,7 +21,10 @@ export function html_code_generate(tag_name, input) {
   let statements = [
     js_code_statement_declare_assign(
       variable_name,
-      js_code_call_args(html_element.name, ["parent", tag_name]),
+      js_code_call_args(html_element.name, [
+        "parent",
+        string_delimit(tag_name),
+      ]),
     ),
   ];
   each_object(attribs, (key, value) => {
