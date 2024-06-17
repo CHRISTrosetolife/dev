@@ -3,7 +3,6 @@ import { each_reverse } from "./each_reverse.mjs";
 import { list_size } from "./list_size.mjs";
 import { add_1 } from "./add_1.mjs";
 import { terminal_index_history_transform } from "./terminal_index_history_transform.mjs";
-import { log_error } from "./log_error.mjs";
 import { string_is } from "./string_is.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { terminal_data_transform } from "./terminal_data_transform.mjs";
@@ -50,7 +49,6 @@ import { string_combine } from "./string_combine.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { string_empty_is } from "./string_empty_is.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
 import { list_remove_at } from "./list_remove_at.mjs";
 export async function terminal() {
@@ -238,12 +236,6 @@ export async function terminal() {
     });
     buffer_clear();
     log_clear();
-    if (!string_is(item)) {
-      log_error(
-        string_combine_multiple(["no more ", terminal.name, " history"]),
-      );
-      log("");
-    }
     log_clear_write_prompt();
     if (string_is(item)) {
       each(item, (i) => keyboard_type(i));
