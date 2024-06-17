@@ -16,7 +16,7 @@ export async function ceb_bible_words_definitions_pairs(skip, limit) {
   let s = list_skip(concise, skip);
   let l = list_take(s, limit);
   return {
-    pairs: concise,
+    pairs: l,
     definitions: list_map(ceb_scores, (w) =>
       object_properties_new(w, ["word", "definitions"]),
     ),
