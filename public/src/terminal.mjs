@@ -266,7 +266,7 @@ export async function terminal() {
   async function history_add(item) {
     await terminal_data_transform(function (d) {
       let history = object_property_initialize(d, "history", []);
-      list_map_index(history, (h, index) => {
+      let mapped = list_map_index(history, (h, index) => {
         return {
           include: predicate(h),
           index,
