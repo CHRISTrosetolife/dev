@@ -1,3 +1,4 @@
+import { list_first } from "./list_first.mjs";
 import { each } from "./each.mjs";
 import { list_skip } from "./list_skip.mjs";
 import { ceb_bible_words_definitions_pairs_compute_cache } from "./ceb_bible_words_definitions_pairs_compute_cache.mjs";
@@ -26,8 +27,8 @@ export async function ceb_bible_words_definitions_pairs(skip, limit) {
   let l = list_take(s, limit);
   return {
     pairs: l,
-    definitions: list_map(l, (w) => {
-      object_properties_new(w, ["word", "definitions"]);
+    definitions: list_map(l, (item) => {
+      object_properties_new(lookup[list_first(item)], ["word", "definitions"]);
     }),
   };
 }
