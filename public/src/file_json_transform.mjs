@@ -6,7 +6,7 @@ export async function file_json_transform(lambda, file_path, args) {
   let json_before = await file_read(file_path);
   let object = json_from(json_before);
   let result = await lambda(object, ...args);
-  let json_after = json_to(result);
+  let json_after = json_to(object);
   if (json_after === json_before) {
     return result;
   }
