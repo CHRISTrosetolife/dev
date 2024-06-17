@@ -17,6 +17,7 @@ export async function ceb_bible_words_definitions_pairs() {
   );
   let eng_scores = await bible_words_eng_score();
   let eng_words = list_map_property(eng_scores, "word");
+  each(pairs, (pair) => {});
   return {
     pairs,
     definitions,
