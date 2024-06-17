@@ -32,5 +32,8 @@ export async function ceb_bible_words_score() {
     });
   });
   let max = number_max_list_map_property(definitions, "count");
+  each(definitions, (d) => {
+    object_property_set(d, "score");
+  });
   return definitions;
 }
