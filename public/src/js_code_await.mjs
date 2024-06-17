@@ -1,3 +1,3 @@
-export function js_code_await(m) {
-  return `await ${m}`;
+export function js_code_await(awaited_code) {
+  return `await ${awaited_code}`;
 }
