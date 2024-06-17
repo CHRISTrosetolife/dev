@@ -9,7 +9,7 @@ export async function terminal_index_history_transform(lambda) {
       return;
     }
     let history = object_property_initialize(d, "history", []);
-    if (d.history_index >= list_size(history)) {
+    if (d.history_index > list_size(history)) {
       return;
     }
     d.history_index = lambda(d.history_index);
