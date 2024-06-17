@@ -5,4 +5,5 @@ export function object_merge_properties(to, from, properties) {
     let value = object_property_get(from, p);
     object_property_set(to, p, value);
   }
+  return to;
 }
