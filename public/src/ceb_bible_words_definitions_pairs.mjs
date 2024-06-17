@@ -48,7 +48,11 @@ export async function ceb_bible_words_definitions_pairs() {
   list_sort_property(pairs, "score");
   return {
     pairs: list_map(pairs, (p) =>
-      object_properties_new(p, ["word", "definitions"]),
+      list_map(
+        ["ceb", "eng"],
+        object_property_get((language) => p[language]),
+        word,
+      ),
     ),
     definitions: list_map(ceb_scores, (w) =>
       object_properties_new(w, ["word", "definitions"]),
