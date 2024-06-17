@@ -13,6 +13,8 @@ import { list_map_property } from "./list_map_property.mjs";
 import { list_get } from "./list_get.mjs";
 import { number_is } from "./number_is.mjs";
 import { list_map } from "./list_map.mjs";
+import { log } from "./log.mjs";
+import { list_size } from "./list_size.mjs";
 export async function ceb_bible_words_definitions_pairs() {
   let ceb_scores = await ceb_bible_words_score();
   let pairs = list_adder((la) =>
@@ -30,6 +32,12 @@ export async function ceb_bible_words_definitions_pairs() {
   let eng_scores = await bible_words_eng_score();
   let eng_words = list_map_property(eng_scores, "word");
   each_index(pairs, (pair, i) => {
+    if (i % 100 === 0) {
+      log({
+        i,
+        s: list_size(pairs),
+      });
+    }
     let { ceb, eng } = pair;
     let index = string_match_best_find_index(eng.word, eng_words);
     eng.score = list_get(eng_scores, index).score;
