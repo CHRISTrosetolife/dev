@@ -21,11 +21,13 @@ export async function ceb_bible_words_score() {
     if (object_property_exists(map, word)) {
       choices = list_concat(choices, object_property_get(map, word));
     }
-    log({
-      choices,
-    });
     let count = 0;
     each(choices, (choice) => {
+      if (choice === "hehoba") {
+        log({
+          choices,
+        });
+      }
       let choice_count = object_property_get(lookup, choice);
       count += choice_count;
     });
