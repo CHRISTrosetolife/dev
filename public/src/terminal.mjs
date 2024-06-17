@@ -188,6 +188,7 @@ export async function terminal() {
         code: "[A",
       },
       action: async () => {
+        let item = history_index_previous();
         log_buffer_clear();
         keyboard_type(await history_pop());
       },
