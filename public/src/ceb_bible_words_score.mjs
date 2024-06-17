@@ -20,6 +20,7 @@ export async function ceb_bible_words_score() {
   let definitions = await ceb_bible_words_definitions_all_cache();
   each(definitions, (d) => {
     let { word } = w;
+    let count = 0;
     let choices = [word];
     if (object_property_exists(map, word)) {
       choices = list_concat(choices, object_property_get(map, word));
