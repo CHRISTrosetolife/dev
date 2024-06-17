@@ -15,12 +15,11 @@ import { object_merge_properties } from "./object_merge_properties.mjs";
 import { list_map } from "./list_map.mjs";
 export async function ceb_bible_words_definitions_pairs() {
   let ceb_scores = await ceb_bible_words_score();
-  let properties = ["word", "score"];
   let pairs = list_adder((la) =>
     each(ceb_scores, (w) =>
       each(object_property_get(w, "definitions"), (d) =>
         la({
-          ceb: object_properties_new(w, properties),
+          ceb: object_properties_new(w, ["word", "score"]),
           eng: {
             word: d,
           },
