@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { range_from } from "./range_from.mjs";
@@ -17,6 +18,9 @@ export function app_gs_map_render(
   coordinates,
   player_overlay,
 ) {
+  log({
+    coordinates,
+  });
   let w = window.innerWidth;
   let h = window.innerHeight;
   let limit = game_tiles_max();
