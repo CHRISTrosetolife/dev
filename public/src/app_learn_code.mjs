@@ -1,4 +1,4 @@
-import { list_summer } from "./list_summer.mjs";
+import { summation } from "./summation.mjs";
 import { html_style_font_size } from "./html_style_font_size.mjs";
 import { list_size } from "./list_size.mjs";
 import { html_buttons_next_previous } from "./html_buttons_next_previous.mjs";
@@ -169,7 +169,7 @@ export function app_learn_code() {
     html_p_text(root, "choose a screen below :");
     let lesson_index = list_index(lessons, lesson);
     let previous = list_take(lessons, lesson_index);
-    let index_first = list_summer((s) => {
+    let index_first = summation((s) => {
       for (let p of previous) {
         let { screens } = p;
         s(list_size(screens));
