@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { terminal_data_path } from "./terminal_data_path.mjs";
 import { file_json_transform_exists } from "./file_json_transform_exists.mjs";
 export async function terminal_data_transform(lambda) {
@@ -5,6 +6,10 @@ export async function terminal_data_transform(lambda) {
     terminal_data_path(),
     (d) => {
       lambda(d);
+      log({
+        lambda,
+        d,
+      });
     },
     [],
   );
