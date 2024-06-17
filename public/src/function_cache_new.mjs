@@ -7,8 +7,9 @@ import { function_cache } from "./function_cache.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { file_write } from "./file_write.mjs";
 export async function function_cache_new(function_name) {
+  let cache_name = string_combine(function_name, "_cache");
   await function_new_generic(
-    string_combine(function_name, "_cache"),
+    cache_name,
     "",
     js_code_statement_return(
       js_code_await(
@@ -23,4 +24,5 @@ export async function function_cache_new(function_name) {
     true,
     file_write,
   );
+  return cache_name;
 }
