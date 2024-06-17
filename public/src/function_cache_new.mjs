@@ -15,7 +15,7 @@ export async function function_cache_new(function_name) {
         js_code_brackets(),
       ]),
     ),
-    true,
+    false,
     [],
     true,
     file_write,
