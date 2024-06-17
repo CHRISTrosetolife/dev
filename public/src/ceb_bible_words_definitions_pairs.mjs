@@ -12,7 +12,7 @@ export async function ceb_bible_words_definitions_pairs(skip, limit) {
   let ceb_scores = await ceb_bible_words_score();
   let lookup = {};
   each(ceb_scores, (w) => {
-    object_property_set(lookup, w.word, w);
+    object_property_set(lookup, mapper(w), w);
   });
   function mapper(w) {
     return w["word"];
