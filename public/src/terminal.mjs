@@ -199,7 +199,7 @@ export async function terminal() {
           return;
         }
         log_buffer_clear();
-        keyboard_type(await history_pop());
+        keyboard_type(item);
       },
     },
     {
