@@ -1,3 +1,4 @@
+import { number_max_list } from "./number_max_list.mjs";
 import { ceb_bible_words_definitions_map_cache } from "./ceb_bible_words_definitions_map_cache.mjs";
 import { ceb_bible_words_definitions_all_cache } from "./ceb_bible_words_definitions_all_cache.mjs";
 import { each } from "./each.mjs";
@@ -30,6 +31,6 @@ export async function ceb_bible_words_score() {
       count,
     });
   });
-  list_max;
+  number_max_list();
   return definitions;
 }
