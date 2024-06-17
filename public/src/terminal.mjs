@@ -1,3 +1,4 @@
+import { add_1 } from "./add_1.mjs";
 import { terminal_index_history_transform } from "./terminal_index_history_transform.mjs";
 import { log_error } from "./log_error.mjs";
 import { string_is } from "./string_is.mjs";
@@ -245,6 +246,11 @@ export async function terminal() {
       let history = object_property_initialize(d, "history", []);
       list_add(history, item);
       d.history_index = list_index_last(history);
+    });
+  }
+  async function history_index_next() {
+    return await terminal_index_history_transform(function lambda(index) {
+      return add_1(index);
     });
   }
   async function history_index_previous() {
