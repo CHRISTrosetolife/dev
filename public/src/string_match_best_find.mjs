@@ -4,7 +4,7 @@ export function string_match_best_find(search, choices) {
   assert_arguments_length(arguments, 2);
   let matches = ss.findBestMatch(search, choices);
   return {
-    match: matches.bestMatch,
+    closest: matches.bestMatch,
     index: matches.bestMatchIndex,
   };
 }
