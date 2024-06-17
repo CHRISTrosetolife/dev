@@ -13,7 +13,9 @@ export async function ceb_bible_words_definitions_map() {
     if (object_property_exists_not(existing, word)) {
       object_property_set(existing, word, true);
       if (list_empty_not_is(definitions)) {
-        object_property_set(result, word_ceb.word, word);
+        if (word_ceb.word !== word) {
+          object_property_set(result, word_ceb.word, word);
+        }
       }
     }
     log({
