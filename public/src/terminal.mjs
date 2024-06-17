@@ -1,3 +1,4 @@
+import { list_map_index } from "./list_map_index.mjs";
 import { list_size } from "./list_size.mjs";
 import { add_1 } from "./add_1.mjs";
 import { terminal_index_history_transform } from "./terminal_index_history_transform.mjs";
@@ -263,8 +264,14 @@ export async function terminal() {
     return on_returns;
   }
   async function history_add(item) {
-    await terminal_data_transform(function lambda(d) {
+    await terminal_data_transform(function (d) {
       let history = object_property_initialize(d, "history", []);
+      list_map_index(history, (h, index) => {
+        return {
+          include: predicate(h),
+          index,
+        };
+      });
       list_add(history, item);
       d.history_index = list_size(history);
     });
