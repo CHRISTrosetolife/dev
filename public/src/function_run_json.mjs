@@ -1,4 +1,3 @@
-import { error } from "./error.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
 import { file_read } from "./file_read.mjs";
 import { function_run } from "./function_run.mjs";
