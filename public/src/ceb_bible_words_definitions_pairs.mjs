@@ -38,7 +38,9 @@ export async function ceb_bible_words_definitions_pairs() {
   });
   list_sort_property(pairs, "score");
   return {
-    pairs: list_map(pairs, object_properties_new(w, ["word", "definitions"])),
+    pairs: list_map(pairs, (w) =>
+      object_properties_new(w, ["word", "definitions"]),
+    ),
     definitions,
   };
 }
