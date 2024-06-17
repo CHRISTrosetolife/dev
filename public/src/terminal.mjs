@@ -1,3 +1,4 @@
+import { file_json_transform } from "./file_json_transform.mjs";
 import { function_run_terminal } from "./function_run_terminal.mjs";
 import { error } from "./error.mjs";
 import { list_first_remaining } from "./list_first_remaining.mjs";
@@ -226,6 +227,7 @@ export async function terminal() {
   }
   let history = [];
   function history_add(item) {
+    file_json_transform;
     list_add(history, item);
   }
   function history_get() {
