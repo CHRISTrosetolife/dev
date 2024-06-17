@@ -1,3 +1,4 @@
+import { list_to_lookup_pairs } from "./list_to_lookup_pairs.mjs";
 import { string_to_url } from "./string_to_url.mjs";
 import { list_size } from "./list_size.mjs";
 import { list_size_2 } from "./list_size_2.mjs";
@@ -52,7 +53,6 @@ import { string_take } from "./string_take.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { equal_not } from "./equal_not.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
-import { object_property_set } from "./object_property_set.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
 import { list_unique } from "./list_unique.mjs";
@@ -86,10 +86,7 @@ export async function ceb_definition(word) {
   each([skipped_pairs_split, replaced_split], (split) =>
     each(split, (s) => assert(list_size_2, [s])),
   );
-  let lookup = {};
-  each(skipped_pairs_split, (s) =>
-    object_property_set(lookup, list_first(s), list_second(s)),
-  );
+  let lookup = list_to_lookup_pairs(skipped_pairs_split);
   let prefix = "http://www.binisaya.com/";
   let url = string_combine_multiple([
     prefix,
