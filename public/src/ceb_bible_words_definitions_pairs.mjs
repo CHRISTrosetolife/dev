@@ -21,7 +21,7 @@ export async function ceb_bible_words_definitions_pairs() {
   let eng_words = list_map_property(eng_scores, "word");
   each(pairs, (pair) => {
     let { ceb, eng } = pair;
-    string_match_best_find_index();
+    string_match_best_find_index(eng, eng_words);
   });
   return {
     pairs,
