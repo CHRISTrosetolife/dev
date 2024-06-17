@@ -1,3 +1,4 @@
+import { string_match_best_find_index } from "./string_match_best_find_index.mjs";
 import { ceb_bible_words_score } from "./ceb_bible_words_score.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
@@ -17,7 +18,9 @@ export async function ceb_bible_words_definitions_pairs() {
   );
   let eng_scores = await bible_words_eng_score();
   let eng_words = list_map_property(eng_scores, "word");
-  each(pairs, (pair) => {});
+  each(pairs, (pair) => {
+    string_match_best_find_index();
+  });
   return {
     pairs,
     definitions,
