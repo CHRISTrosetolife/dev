@@ -16,7 +16,7 @@ export function html_code_generate(tag_name, input) {
   let c = html_parse_visit_tag_single(p, tag_name);
   let { attribs } = c;
   let variable_name = "c";
-  [
+  let statements = [
     js_code_statement_declare_assign(
       variable_name,
       js_code_call_args(html_element.name, ["parent", tag_name]),
