@@ -50,7 +50,7 @@ export async function ceb_bible_words_definitions_pairs() {
     pairs: list_map(pairs, (p) =>
       list_map(
         ["ceb", "eng"],
-        object_property_get((language) => p[language]),
+        object_property_get((language) => p[language], "word"),
       ),
     ),
     definitions: list_map(ceb_scores, (w) =>
