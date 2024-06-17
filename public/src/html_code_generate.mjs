@@ -22,11 +22,12 @@ export function html_code_generate(tag_name, input) {
       js_code_call_args(html_element.name, ["parent", tag_name]),
     ),
   ];
-  js_code_statement_call_args(html_attribute_set.name, [
-    variable_name,
-    tag_name,
-  ]);
-  object_each(attribs, (key, value) => {});
+  object_each(attribs, (key, value) => {
+    js_code_statement_call_args(html_attribute_set.name, [
+      variable_name,
+      tag_name,
+    ]);
+  });
   return attribs;
   return object_properties(c);
 }
