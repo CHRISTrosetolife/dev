@@ -24,5 +24,7 @@ export async function function_cache_new(function_name) {
     true,
     file_write,
   );
-  return cache_name;
+  return {
+    cache_name,
+  };
 }
