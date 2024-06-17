@@ -1,3 +1,4 @@
+import { list_skip } from "./list_skip.mjs";
 import { ceb_bible_words_definitions_pairs_compute_cache } from "./ceb_bible_words_definitions_pairs_compute_cache.mjs";
 import { ceb_bible_words_score } from "./ceb_bible_words_score.mjs";
 import { object_properties_new } from "./object_properties_new.mjs";
@@ -11,6 +12,7 @@ export async function ceb_bible_words_definitions_pairs(skip, limit) {
       object_property_get(p[language], "word"),
     ),
   );
+  list_skip(concise, skip);
   return {
     pairs: concise,
     definitions: list_map(ceb_scores, (w) =>
