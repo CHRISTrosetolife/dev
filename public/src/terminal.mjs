@@ -1,3 +1,4 @@
+import { log_error } from "./log_error.mjs";
 import { string_is } from "./string_is.mjs";
 import { number_is } from "./number_is.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
@@ -191,6 +192,7 @@ export async function terminal() {
       action: async () => {
         let item = history_index_previous();
         if (!string_is(item)) {
+          log_error();
           return;
         }
         log_buffer_clear();
