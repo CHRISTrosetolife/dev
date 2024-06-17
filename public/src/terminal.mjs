@@ -49,6 +49,7 @@ import { string_empty_is } from "./string_empty_is.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
 import { list_index_last } from "./list_index_last.mjs";
 import { list_get } from "./list_get.mjs";
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export async function terminal() {
   let commands = [
     {
@@ -192,7 +193,9 @@ export async function terminal() {
       action: async () => {
         let item = history_index_previous();
         if (!string_is(item)) {
-          log_error("no more ", terminal.name, "history");
+          log_error(
+            string_combine_multiple(["no more ", terminal.name, "history"]),
+          );
           return;
         }
         log_buffer_clear();
