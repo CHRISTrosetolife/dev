@@ -267,6 +267,7 @@ export async function terminal() {
     await terminal_data_transform(function lambda(d) {
       let history = object_property_initialize(d, "history", []);
       history = list_take(history, d.history_index);
+      d.history = history;
       list_add(history, item);
       d.history_index = list_size(history);
     });
