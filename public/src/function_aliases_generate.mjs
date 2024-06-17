@@ -1,3 +1,4 @@
+import { js_code_return } from "./js_code_return.mjs";
 import { function_cache_new } from "./function_cache_new.mjs";
 import { restart } from "./restart.mjs";
 import { terminal_data_history_clear } from "./terminal_data_history_clear.mjs";
@@ -29,7 +30,6 @@ import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { assert } from "./assert.mjs";
 import { each } from "./each.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
-import { js_code_statement_return } from "./js_code_statement_return.mjs";
 import { function_new_generic } from "./function_new_generic.mjs";
 import { json_to } from "./json_to.mjs";
 import { function_transform } from "./function_transform.mjs";
@@ -75,7 +75,7 @@ export async function function_aliases_generate() {
   await function_new_generic(
     name,
     "",
-    js_code_statement_return(json_to(all)),
+    js_code_return(json_to(all)),
     false,
     [],
     false,
