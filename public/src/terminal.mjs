@@ -1,3 +1,4 @@
+import { file_read_json } from "./file_read_json.mjs";
 import { file_json_transform_exists } from "./file_json_transform_exists.mjs";
 import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
 import { function_run_terminal } from "./function_run_terminal.mjs";
@@ -238,8 +239,8 @@ export async function terminal() {
     );
     list_add(history, item);
   }
-  function history_get() {
-    return history;
+  async function history_get() {
+    await file_read_json();
   }
   let buffer;
   buffer_clear();
