@@ -27,6 +27,7 @@ export async function ceb_bible_words_score() {
       if (object_property_exists_not(lookup, choice)) {
         log({
           choices,
+          choice,
         });
         exit();
       }
