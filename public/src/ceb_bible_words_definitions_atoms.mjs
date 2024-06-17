@@ -1,3 +1,5 @@
+import { list_map_property } from "./list_map_property.mjs";
+import { list_sum } from "./list_sum.mjs";
 import { list_size } from "./list_size.mjs";
 import { list_add_beginning } from "./list_add_beginning.mjs";
 import { list_concat } from "./list_concat.mjs";
@@ -26,6 +28,8 @@ export async function ceb_bible_words_definitions_atoms(skip, limit) {
     skip,
     limit,
   );
+  let eng_total = list_sum(list_map_property(words_eng, "count"));
+  let ceb_total = list_sum(list_map_property(words_ceb, "count"));
   let atoms = list_adder((la) => {
     let previous = [];
     while (list_empty_not_is(pairs)) {
@@ -67,16 +71,18 @@ export async function ceb_bible_words_definitions_atoms(skip, limit) {
       if (equal(list_size(atom_result), atom_count)) {
         la(atom_result);
       } else {
-        if (0)
+        if (0) {
           log({
             atom_result,
           });
+        }
       }
-      if (0)
+      if (0) {
         log({
           atom_result,
           previous,
         });
+      }
       list_add_beginning(previous, atom_result);
     }
   });
