@@ -306,6 +306,7 @@ export async function terminal() {
     log_write(prompt);
     let input = await next();
     if (list_includes(list_concat([exit.name], exit_aliases()), input)) {
+      await history_pop();
       exit();
     }
     if (input === "cls") {
