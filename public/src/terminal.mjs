@@ -273,7 +273,6 @@ export async function terminal() {
       }
       let indices = list_filter_indices(history, predicate);
       each_reverse(indices, (index) => {
-        log(list_size(history));
         list_remove_at(history, index);
       });
       list_add(history, item);
