@@ -237,7 +237,7 @@ export async function terminal() {
   }
   async function history_index_previous() {
     return await terminal_data_transform(function lambda(d) {
-      d.history_index = list_index_last(history);
+      d.history_index--;
       return list_pop(history);
     });
   }
