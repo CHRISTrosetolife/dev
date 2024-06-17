@@ -3,7 +3,7 @@ import { html_element } from "./html_element.mjs";
 import { html_document_head } from "./html_document_head.mjs";
 export function html_scale_none() {
   let h = html_document_head();
-  let c = html_element(h, meta);
+  let c = html_element(h, "meta");
   html_attribute_set(c, "name", "viewport");
   html_attribute_set(
     c,
