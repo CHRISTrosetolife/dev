@@ -50,6 +50,7 @@ import { undefined_not_is } from "./undefined_not_is.mjs";
 import { list_index_last } from "./list_index_last.mjs";
 import { list_get } from "./list_get.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { subtract_1 } from "./subtract_1.mjs";
 export async function terminal() {
   let commands = [
     {
@@ -248,7 +249,7 @@ export async function terminal() {
     });
   }
   async function history_index_previous() {
-    return await terminal_data_transform(function lambda(d) {
+    return await terminal_data_transform(function (d) {
       if (!number_is(d.history_index)) {
         return;
       }
@@ -256,6 +257,9 @@ export async function terminal() {
       let history = object_property_initialize(d, "history", []);
       return list_get(history, i);
     });
+    function lambda(index) {
+      return subtract_1(index);
+    }
   }
   async function history_pop() {
     return await terminal_history_transform(function lambda(history) {
