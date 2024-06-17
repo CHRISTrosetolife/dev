@@ -187,7 +187,7 @@ export async function terminal() {
       },
       action: async () => {
         log_buffer_clear();
-        keyboard_type(list_pop(await history_get()));
+        keyboard_type(await history_get());
       },
     },
     {
@@ -234,7 +234,11 @@ export async function terminal() {
       list_add(history, item);
     }
   }
-  async function history_get() {
+  async function history_pop() {
+    await terminal_data_transform(lambda);
+    function lambda(history) {
+      return list_pop(history);
+    }
     let d = await file_read_json(terminal_data_path());
     let history = object_property_initialize(d, "history", []);
     return history;
