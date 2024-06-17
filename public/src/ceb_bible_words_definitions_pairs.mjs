@@ -8,9 +8,8 @@ export async function ceb_bible_words_definitions_pairs() {
   let pairs = await ceb_bible_words_definitions_pairs_compute_cache();
   return {
     pairs: list_map(pairs, (p) =>
-      list_map(
-        ["ceb", "eng"],
-        object_property_get((language) => p[language], "word"),
+      list_map(["ceb", "eng"], (language) =>
+        object_property_get(p[language], "word"),
       ),
     ),
     definitions: list_map(ceb_scores, (w) =>
