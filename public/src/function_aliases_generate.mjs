@@ -1,3 +1,4 @@
+import { function_cache_new } from "./function_cache_new.mjs";
 import { restart } from "./restart.mjs";
 import { terminal_data_history_clear } from "./terminal_data_history_clear.mjs";
 import { terminal_data_history } from "./terminal_data_history.mjs";
@@ -49,6 +50,7 @@ export async function function_aliases_generate() {
   alias_add(function_delete, ["de"]);
   alias_add(exit, exit_aliases());
   alias_add(firebase_deploy, ["f"]);
+  alias_add(function_cache_new, ["fc"]);
   alias_add(function_transform, ["ft"]);
   alias_add(git_acp, ["gi"]);
   alias_add(git_index_lock_delete, ["gx"]);
