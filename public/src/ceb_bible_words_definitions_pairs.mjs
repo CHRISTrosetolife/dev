@@ -3,16 +3,12 @@ import { ceb_bible_words_score } from "./ceb_bible_words_score.mjs";
 import { object_properties_new } from "./object_properties_new.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_map } from "./list_map.mjs";
-import { list_concat } from "./list_concat.mjs";
 export async function ceb_bible_words_definitions_pairs() {
   let ceb_scores = await ceb_bible_words_score();
   let pairs = await ceb_bible_words_definitions_pairs_compute_cache();
   let concise = list_map(pairs, (p) =>
-    list_concat(
-      list_map(["ceb", "eng"], (language) =>
-        object_property_get(p[language], "word"),
-      ),
-      object_property_get(p.eng, "closest"),
+    list_map(["ceb", "eng"], (language) =>
+      object_property_get(p[language], "word"),
     ),
   );
   return concise;
