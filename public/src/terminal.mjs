@@ -1,3 +1,4 @@
+import { terminal_data_transform } from "./terminal_data_transform.mjs";
 import { terminal_history_transform } from "./terminal_history_transform.mjs";
 import { function_run_terminal } from "./function_run_terminal.mjs";
 import { error } from "./error.mjs";
@@ -226,7 +227,7 @@ export async function terminal() {
     return on_returns;
   }
   async function history_add(item) {
-    await terminal_history_transform(function lambda(history) {
+    await terminal_data_transform(function lambda(d) {
       list_add(history, item);
     });
   }
