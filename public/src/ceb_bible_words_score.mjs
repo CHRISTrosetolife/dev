@@ -1,3 +1,4 @@
+import { summation } from "./summation.mjs";
 import { bible_words_score_generic } from "./bible_words_score_generic.mjs";
 import { ceb_bible_words_definitions_map_cache } from "./ceb_bible_words_definitions_map_cache.mjs";
 import { ceb_bible_words_definitions_all_cache } from "./ceb_bible_words_definitions_all_cache.mjs";
@@ -20,12 +21,13 @@ export async function ceb_bible_words_score() {
     if (object_property_exists(map, word)) {
       choices = list_concat(choices, object_property_get(map, word));
     }
-    let count = 0;
-    each(choices, (choice) => {
-      if (object_property_exists(lookup, choice)) {
-        let choice_count = object_property_get(lookup, choice);
-        count += choice_count;
-      }
+    let count = summation((s) => {
+      each(choices, (choice) => {
+        if (object_property_exists(lookup, choice)) {
+          let choice_count = object_property_get(lookup, choice);
+          s(choice_count);
+        }
+      });
     });
     object_merge(d, {
       count,
