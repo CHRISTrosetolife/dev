@@ -7,6 +7,7 @@ import { bible_words_eng_cache } from "./bible_words_eng_cache.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
+import { object_property_exists } from "./object_property_exists.mjs";
 export async function ceb_bible_words_score() {
   let words_ceb = await ceb_bible_words_count_cache();
   let ceb_total = list_summer((s) =>
@@ -19,7 +20,9 @@ export async function ceb_bible_words_score() {
   each(words_ceb, (w) => {
     let { word } = w;
     let original = word;
-    object_property_get(map, w.word);
+    if (object_property_exists(map, original)) {
+      object_property_get(map, w.word);
+    }
     object_property_get(lookup, w.word);
   });
   return words_ceb;
