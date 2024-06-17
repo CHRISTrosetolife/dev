@@ -1,3 +1,4 @@
+import { js_unparse } from "./js_unparse.mjs";
 import { js_parse } from "./js_parse.mjs";
 import { list_join_empty } from "./list_join_empty.mjs";
 import { list_map } from "./list_map.mjs";
@@ -32,4 +33,6 @@ export function html_code_generate(tag_name, input) {
   });
   let code = list_join_empty(statements);
   let ast = js_parse(code);
+  code = js_unparse(ast);
+  return code;
 }
