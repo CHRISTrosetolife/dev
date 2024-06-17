@@ -1,10 +1,10 @@
+import { string_match_best_find } from "./string_match_best_find.mjs";
 import { list_reverse } from "./list_reverse.mjs";
 import { list_sort_property } from "./list_sort_property.mjs";
 import { list_sum } from "./list_sum.mjs";
 import { number_is } from "./number_is.mjs";
 import { assert } from "./assert.mjs";
 import { list_get } from "./list_get.mjs";
-import { string_match_best_find_index } from "./string_match_best_find_index.mjs";
 import { list_size } from "./list_size.mjs";
 import { log } from "./log.mjs";
 import { each_index } from "./each_index.mjs";
@@ -39,7 +39,7 @@ export async function ceb_bible_words_definitions_pairs_compute() {
       });
     }
     let { ceb, eng } = pair;
-    let index = string_match_best_find_index(eng.word, eng_words);
+    let index = string_match_best_find(eng.word, eng_words);
     eng.score = list_get(eng_scores, index).score;
     assert(number_is, [eng.score]);
     let scores = list_map_property([eng, ceb], "score");
