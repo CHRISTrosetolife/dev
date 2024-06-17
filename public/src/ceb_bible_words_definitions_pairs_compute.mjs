@@ -45,8 +45,5 @@ export async function ceb_bible_words_definitions_pairs_compute() {
     pair.score = list_sum(scores);
   });
   list_sort_property(pairs, "score");
-  return {
-    pairs,
-    ceb_scores,
-  };
+  return pairs;
 }
