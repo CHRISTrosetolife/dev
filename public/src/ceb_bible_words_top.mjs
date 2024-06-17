@@ -1,3 +1,4 @@
+import { list_join_newline } from "./list_join_newline.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { ceb_bible_words_score } from "./ceb_bible_words_score.mjs";
 import { list_sort_property } from "./list_sort_property.mjs";
@@ -14,5 +15,6 @@ export async function ceb_bible_words_top(count) {
   let m = list_map_property(t, "word");
   await file_overwrite(
     folder_gitignore_path(string_combine(ceb_bible_words_top.name, ".txt")),
+    list_join_newline(m),
   );
 }
