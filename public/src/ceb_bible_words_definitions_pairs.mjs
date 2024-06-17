@@ -1,4 +1,4 @@
-import { object_map } from "./object_map.mjs";
+import { object_properties_new } from "./object_properties_new.mjs";
 import { list_sort_property } from "./list_sort_property.mjs";
 import { list_sum } from "./list_sum.mjs";
 import { assert } from "./assert.mjs";
@@ -20,7 +20,7 @@ export async function ceb_bible_words_definitions_pairs() {
     each(ceb_scores, (w) =>
       each(object_property_get(w, "definitions"), (d) =>
         la({
-          ceb: object_map(w, properties),
+          ceb: object_properties_new(w, properties),
           eng: {
             word: d,
           },
