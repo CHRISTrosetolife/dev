@@ -192,7 +192,12 @@ export async function terminal() {
         code: "[A",
       },
       action: async () => {
-        let item = history_index_previous();
+        let transform = subtract_1;
+        let item = await terminal_index_history_transform(
+          function lambda(index) {
+            return subtract_1(index);
+          },
+        );
         if (!string_is(item)) {
           log_error(
             string_combine_multiple(["no more ", terminal.name, " history"]),
@@ -272,11 +277,6 @@ export async function terminal() {
   async function history_index_next() {
     return await terminal_index_history_transform(function lambda(index) {
       return add_1(index);
-    });
-  }
-  async function history_index_previous() {
-    return await terminal_index_history_transform(function lambda(index) {
-      return subtract_1(index);
     });
   }
   async function history_pop() {
