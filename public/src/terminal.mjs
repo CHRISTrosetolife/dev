@@ -231,14 +231,14 @@ export async function terminal() {
     let item = await terminal_index_history_transform(function lambda(index) {
       return transform(index);
     });
+    log_buffer_clear();
     if (!string_is(item)) {
       log_error(
         string_combine_multiple(["no more ", terminal.name, " history"]),
       );
-    } else {
-      log_buffer_clear();
-      keyboard_type(item);
+      log("");
     }
+    keyboard_type(item);
   }
   function log_buffer_clear() {
     buffer_clear();
