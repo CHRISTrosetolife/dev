@@ -338,10 +338,10 @@ export async function terminal() {
       });
     }
   }
-  function keyboard_type(name) {
-    name = string_replace(name, "\n", " ");
-    keyboard_write(name);
-    list_add(buffer, name);
+  function keyboard_type(i) {
+    i = string_replace(i, "\n", " ");
+    keyboard_write(i);
+    list_add(buffer, i);
   }
   function keyboard_write(name) {
     let message = chalk().greenBright(name);
