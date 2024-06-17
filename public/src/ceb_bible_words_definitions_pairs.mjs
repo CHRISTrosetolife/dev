@@ -10,7 +10,9 @@ import { object_property_set } from "./object_property_set.mjs";
 export async function ceb_bible_words_definitions_pairs(skip, limit) {
   let ceb_scores = await ceb_bible_words_score();
   let lookup = {};
-  each(ceb_scores, (w) => object_property_set(lookup, w.word, w));
+  each(ceb_scores, (w) => {
+    object_property_set(lookup, w.word, w);
+  });
   let pairs = await ceb_bible_words_definitions_pairs_compute_cache();
   let concise = list_map(pairs, (p) =>
     list_map(["ceb", "eng"], (language) =>
