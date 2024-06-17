@@ -1,3 +1,4 @@
+import { function_cache_delete } from "./function_cache_delete.mjs";
 import { js_code_statement_return } from "./js_code_statement_return.mjs";
 import { function_cache_new } from "./function_cache_new.mjs";
 import { restart } from "./restart.mjs";
@@ -51,6 +52,7 @@ export async function function_aliases_generate() {
   alias_add(exit, exit_aliases());
   alias_add(firebase_deploy, ["f"]);
   alias_add(function_cache_new, ["fc"]);
+  alias_add(function_cache_delete, ["fcd"]);
   alias_add(function_transform, ["ft"]);
   alias_add(git_acp, ["gi"]);
   alias_add(git_index_lock_delete, ["gx"]);
