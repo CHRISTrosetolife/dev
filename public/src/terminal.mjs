@@ -6,7 +6,6 @@ import { log_error } from "./log_error.mjs";
 import { string_is } from "./string_is.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { terminal_data_transform } from "./terminal_data_transform.mjs";
-import { terminal_history_transform } from "./terminal_history_transform.mjs";
 import { function_run_terminal } from "./function_run_terminal.mjs";
 import { error } from "./error.mjs";
 import { list_first_remaining } from "./list_first_remaining.mjs";
@@ -268,7 +267,7 @@ export async function terminal() {
     });
   }
   async function history_pop() {
-    let result = await terminal_history_transform(function lambda(history) {
+    let result = await terminal_data_transform(function lambda(d) {
       let r = list_pop(history);
       d.history_index = list_size(history);
       log({
