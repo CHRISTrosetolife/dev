@@ -1,3 +1,4 @@
+import { html_attribute_set } from "./html_attribute_set.mjs";
 import { js_code_statement_call_args } from "./js_code_statement_call_args.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
 import { log } from "./log.mjs";
@@ -12,7 +13,10 @@ export function html_code_generate(tag_name, input) {
   let p = html_parse(input);
   let c = html_parse_visit_tag_single(p, tag_name);
   let { attribs } = c;
-  [js_code_statement_call_args(html_element.name, ["parent", tag_name])];
+  [
+    js_code_statement_call_args(html_element.name, ["parent", tag_name]),
+    html_attribute_set,
+  ];
   return attribs;
   return object_properties(c);
 }
