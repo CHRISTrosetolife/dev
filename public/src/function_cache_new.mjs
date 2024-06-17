@@ -1,3 +1,4 @@
+import { js_code_return } from "./js_code_return.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 import { js_code_await } from "./js_code_await.mjs";
 import { function_new_generic } from "./function_new_generic.mjs";
@@ -9,11 +10,13 @@ export async function function_cache_new(function_name) {
   await function_new_generic(
     string_combine(function_name, "_cache"),
     "",
-    js_code_await(
-      js_code_call_args(function_cache.name, [
-        function_name,
-        js_code_brackets(),
-      ]),
+    js_code_return(
+      js_code_await(
+        js_code_call_args(function_cache.name, [
+          function_name,
+          js_code_brackets(),
+        ]),
+      ),
     ),
     false,
     [],
