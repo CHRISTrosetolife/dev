@@ -1,3 +1,4 @@
+import { exit } from "./exit.mjs";
 import { list_take } from "./list_take.mjs";
 import { log } from "./log.mjs";
 import { ceb_bible_words_definitions_map_cache } from "./ceb_bible_words_definitions_map_cache.mjs";
@@ -27,6 +28,7 @@ export async function ceb_bible_words_score() {
         log({
           choices,
         });
+        exit();
       }
       let choice_count = object_property_get(lookup, choice);
       count += choice_count;
