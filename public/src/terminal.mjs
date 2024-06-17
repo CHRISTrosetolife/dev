@@ -230,6 +230,11 @@ export async function terminal() {
       list_add(history, item);
     });
   }
+  async function history_index_previous() {
+    return await terminal_data_transform(function lambda(history) {
+      return list_pop(history);
+    });
+  }
   async function history_pop() {
     return await terminal_data_transform(function lambda(history) {
       return list_pop(history);
