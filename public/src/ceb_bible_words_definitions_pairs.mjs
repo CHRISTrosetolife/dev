@@ -14,7 +14,9 @@ export async function ceb_bible_words_definitions_pairs() {
     each(ceb_scores, (w) =>
       each(object_property_get(w, "definitions"), (d) =>
         la({
-          ceb: object_property_get(w, "word"),
+          ceb: {
+            word: object_property_get(w, "word"),
+          },
           eng: d,
         }),
       ),
