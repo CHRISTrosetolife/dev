@@ -41,6 +41,8 @@ export async function ceb_bible_words_definitions_pairs() {
     pairs: list_map(pairs, (w) =>
       object_properties_new(w, ["word", "definitions"]),
     ),
-    definitions,
+    definitions: list_map(pairs, (w) =>
+      object_properties_new(w, ["word", "definitions"]),
+    ),
   };
 }
