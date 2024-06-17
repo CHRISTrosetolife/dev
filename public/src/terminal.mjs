@@ -163,10 +163,10 @@ export async function terminal() {
         meta: false,
         shift: false,
       },
-      action: () => {
+      action: async () => {
         log("");
         let result = buffer_to_string();
-        history_add(result);
+        await history_add(result);
         buffer_clear();
         each(on_returns_get(), (n) => n(result));
         list_remove_all(on_returns_get());
