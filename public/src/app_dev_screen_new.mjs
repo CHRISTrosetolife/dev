@@ -7,7 +7,6 @@ import { js_code_return } from "./js_code_return.mjs";
 import { app_dev_screens } from "./app_dev_screens.mjs";
 import { js_code_function_declare } from "./js_code_function_declare.mjs";
 import { js_code_object_properties } from "./js_code_object_properties.mjs";
-import { js_code_statement_return } from "./js_code_statement_return.mjs";
 import { file_write } from "./file_write.mjs";
 import { function_new_generic } from "./function_new_generic.mjs";
 import { app_dev_screen_name } from "./app_dev_screen_name.mjs";
@@ -41,7 +40,7 @@ export async function app_dev_screen_new(name) {
           js_code_function_declare(
             `${name}_name`,
             root,
-            js_code_statement_return(
+            js_code_return(
               js_code_call_args(html_span_text.name, [
                 root,
                 string_delimit(name),
