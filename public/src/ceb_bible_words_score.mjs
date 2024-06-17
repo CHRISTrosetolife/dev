@@ -12,6 +12,7 @@ import { object_merge } from "./object_merge.mjs";
 export async function ceb_bible_words_score() {
   let lookup = {};
   let words_ceb = await ceb_bible_words_count_cache();
+  return words_ceb;
   each(words_ceb, (d) => object_property_set(lookup, d.word, d.count));
   let ceb_total = list_summer((s) =>
     each(list_map_property(words_ceb, "count"), s),
