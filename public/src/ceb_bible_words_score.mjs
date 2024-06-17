@@ -12,6 +12,7 @@ export async function ceb_bible_words_score() {
   );
   let map = await ceb_bible_words_definitions_map_cache();
   let definitions = await ceb_bible_words_definitions_all_cache();
+  each(definitions, (d) => d);
   each(words_ceb, (w) => {});
   return definitions;
   let words_eng = await bible_words_eng_cache();
