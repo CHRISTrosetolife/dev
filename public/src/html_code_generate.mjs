@@ -17,6 +17,7 @@ export function html_code_generate(tag_name, input) {
   let variable_name = "c";
   [
     js_code_statement_declare_assign(
+      variable_name,
       js_code_statement_call_args(html_element.name, ["parent", tag_name]),
     ),
     js_code_statement_call_args(html_attribute_set.name, ["parent", tag_name]),
