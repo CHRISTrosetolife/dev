@@ -1,3 +1,4 @@
+import { list_join_empty } from "./list_join_empty.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_delimit } from "./string_delimit.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
@@ -28,5 +29,5 @@ export function html_code_generate(tag_name, input) {
     );
     list_add(statements, s);
   });
-  return statements;
+  let code = list_join_empty(statements);
 }
