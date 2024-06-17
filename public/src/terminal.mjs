@@ -162,7 +162,7 @@ export async function terminal() {
         let joined = list_join_space(tokens);
         joined = string_combine(joined, extra);
         buffer_clear();
-        each(joined, keyboard_type);
+        keyboard_type(joined);
       },
     },
     {
