@@ -50,7 +50,6 @@ import { string_empty_is } from "./string_empty_is.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
-import { list_take } from "./list_take.mjs";
 export async function terminal() {
   let commands = [
     {
@@ -266,8 +265,6 @@ export async function terminal() {
   async function history_add(item) {
     await terminal_data_transform(function lambda(d) {
       let history = object_property_initialize(d, "history", []);
-      history = list_take(history, d.history_index);
-      d.history = history;
       list_add(history, item);
       d.history_index = list_size(history);
     });
