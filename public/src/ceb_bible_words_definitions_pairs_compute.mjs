@@ -16,6 +16,7 @@ import { each } from "./each.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { ceb_bible_words_score } from "./ceb_bible_words_score.mjs";
 import { object_merge } from "./object_merge.mjs";
+import { object_property_set } from "./object_property_set.mjs";
 export async function ceb_bible_words_definitions_pairs_compute() {
   let ceb_scores = await ceb_bible_words_score();
   let pairs = list_adder((la) =>
@@ -33,6 +34,7 @@ export async function ceb_bible_words_definitions_pairs_compute() {
   let eng_scores = await bible_words_eng_score();
   let eng_words = list_map_property(eng_scores, "word");
   let eng_lookup = {};
+  each(eng_scores, (s) => object_property_set(eng_lookup, s.word, s.score));
   each_index(pairs, (pair, i) => {
     if (i % 100 === 0) {
       log({
