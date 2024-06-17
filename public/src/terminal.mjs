@@ -1,3 +1,4 @@
+import { each_reverse } from "./each_reverse.mjs";
 import { list_map_index } from "./list_map_index.mjs";
 import { list_size } from "./list_size.mjs";
 import { add_1 } from "./add_1.mjs";
@@ -51,6 +52,7 @@ import { string_empty_is } from "./string_empty_is.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
+import { list_remove_at } from "./list_remove_at.mjs";
 export async function terminal() {
   let commands = [
     {
@@ -274,6 +276,7 @@ export async function terminal() {
       });
       let filtered = list_filter(mapped, (m) => m.include === true);
       let mapped2 = list_map(filtered, (f) => f.index);
+      each_reverse(mapped2, (m) => list_remove_at(history, m));
       list_add(history, item);
       d.history_index = list_size(history);
     });
