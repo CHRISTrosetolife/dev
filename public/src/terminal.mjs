@@ -185,9 +185,9 @@ export async function terminal() {
         shift: false,
         code: "[A",
       },
-      action: () => {
+      action: async () => {
         log_buffer_clear();
-        keyboard_type(list_pop(history_get()));
+        keyboard_type(list_pop(await history_get()));
       },
     },
     {
