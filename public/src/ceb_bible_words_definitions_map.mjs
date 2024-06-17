@@ -1,3 +1,4 @@
+import { ceb_bible_words_count_cache } from "./ceb_bible_words_count_cache.mjs";
 import { log } from "./log.mjs";
 import { each_index_async } from "./each_index_async.mjs";
 import { list_size } from "./list_size.mjs";
@@ -5,9 +6,8 @@ import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { ceb_definition } from "./ceb_definition.mjs";
-import { ceb_bible_words_count } from "./ceb_bible_words_count.mjs";
 export async function ceb_bible_words_definitions_map() {
-  let words_ceb = await ceb_bible_words_count();
+  let words_ceb = await ceb_bible_words_count_cache();
   let result = {};
   let size = list_size(words_ceb);
   await each_index_async(words_ceb, async (word_ceb, index) => {
