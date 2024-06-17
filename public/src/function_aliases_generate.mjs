@@ -1,3 +1,4 @@
+import { function_cache_new_run } from "./function_cache_new_run.mjs";
 import { function_cache_delete } from "./function_cache_delete.mjs";
 import { js_code_statement_return } from "./js_code_statement_return.mjs";
 import { function_cache_new } from "./function_cache_new.mjs";
@@ -51,7 +52,7 @@ export async function function_aliases_generate() {
   alias_add(function_delete, ["de"]);
   alias_add(exit, exit_aliases());
   alias_add(firebase_deploy, ["f"]);
-  alias_add(function_cache_new, ["fcn"]);
+  alias_add(function_cache_new_run, ["fc"]);
   alias_add(function_cache_delete, ["fcd"]);
   alias_add(function_cache_new, ["fcn"]);
   alias_add(function_transform, ["ft"]);
