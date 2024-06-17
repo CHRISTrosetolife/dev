@@ -5,5 +5,5 @@ export async function function_cache_new_run(function_name) {
   let r = await function_cache_new(function_name);
   log(r);
   let { cache_name } = r;
-  await function_run(cache_name, []);
+  return await function_run(cache_name, []);
 }
