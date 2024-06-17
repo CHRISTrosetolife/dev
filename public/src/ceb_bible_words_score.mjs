@@ -1,4 +1,4 @@
-import { number_max_list_map_property } from "./number_max_list_map_property.mjs";
+import { bible_words_score_generic } from "./bible_words_score_generic.mjs";
 import { ceb_bible_words_definitions_map_cache } from "./ceb_bible_words_definitions_map_cache.mjs";
 import { ceb_bible_words_definitions_all_cache } from "./ceb_bible_words_definitions_all_cache.mjs";
 import { each } from "./each.mjs";
@@ -31,10 +31,6 @@ export async function ceb_bible_words_score() {
       count,
     });
   });
-  let max = number_max_list_map_property(definitions, "count");
-  each(definitions, (d) => {
-    let { count } = d;
-    object_property_set(d, "score", count / max);
-  });
+  bible_words_score_generic(definitions);
   return definitions;
 }
