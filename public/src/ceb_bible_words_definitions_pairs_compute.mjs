@@ -17,6 +17,7 @@ import { list_adder } from "./list_adder.mjs";
 import { ceb_bible_words_score } from "./ceb_bible_words_score.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { object_property_set } from "./object_property_set.mjs";
+import { object_property_exists } from "./object_property_exists.mjs";
 export async function ceb_bible_words_definitions_pairs_compute() {
   let ceb_scores = await ceb_bible_words_score();
   let pairs = list_adder((la) =>
@@ -43,6 +44,10 @@ export async function ceb_bible_words_definitions_pairs_compute() {
       });
     }
     let { ceb, eng } = pair;
+    let score = 0;
+    if (object_property_exists(eng_lookup, eng.word)) {
+      score = object_property_get(eng_lookup, s.word);
+    }
     let m = string_match_best_find(eng.word, eng_words);
     let { index, closest } = m;
     object_merge(eng, {
