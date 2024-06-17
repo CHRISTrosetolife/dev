@@ -12,7 +12,7 @@ export async function ceb_bible_words_definitions_pairs(skip, limit) {
       object_property_get(p[language], "word"),
     ),
   );
-  list_skip(concise, skip);
+  let s = list_skip(concise, skip);
   return {
     pairs: concise,
     definitions: list_map(ceb_scores, (w) =>
