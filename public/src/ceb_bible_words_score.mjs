@@ -19,7 +19,7 @@ export async function ceb_bible_words_score() {
   );
   let map = await ceb_bible_words_definitions_map_cache();
   let definitions = await ceb_bible_words_definitions_all_cache();
-  each(definitions, (d) => {
+  each(definitions, (w) => {
     let { word } = w;
     let choices = [word];
     if (object_property_exists(map, word)) {
