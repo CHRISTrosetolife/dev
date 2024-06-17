@@ -205,12 +205,12 @@ export async function terminal() {
     },
     {
       match: {
-        sequence: "\x1B[A",
-        name: "up",
+        sequence: "\x1B[B",
+        name: "down",
         ctrl: false,
         meta: false,
         shift: false,
-        code: "[A",
+        code: "[B",
       },
       action: async () => {
         let item = history_index_previous();
