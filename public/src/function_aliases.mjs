@@ -10,6 +10,7 @@ export function function_aliases() {
     x: "exit",
     f: "firebase_deploy",
     fc: "function_cache_new",
+    fcd: "function_cache_delete",
     ft: "function_transform",
     gi: "git_acp",
     gx: "git_index_lock_delete",
