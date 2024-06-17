@@ -202,10 +202,10 @@ export async function terminal() {
           log_error(
             string_combine_multiple(["no more ", terminal.name, " history"]),
           );
-          return;
+        } else {
+          log_buffer_clear();
+          keyboard_type(item);
         }
-        log_buffer_clear();
-        keyboard_type(item);
       },
     },
     {
