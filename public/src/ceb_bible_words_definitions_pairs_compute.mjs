@@ -44,9 +44,9 @@ export async function ceb_bible_words_definitions_pairs_compute() {
       });
     }
     let { ceb, eng } = pair;
-    let score = 0;
+    let eng_score = 0;
     if (object_property_exists(eng_lookup, eng.word)) {
-      score = object_property_get(eng_lookup, s.word);
+      eng_score = object_property_get(eng_lookup, s.word);
     }
     let m = string_match_best_find(eng.word, eng_words);
     let { index, closest } = m;
