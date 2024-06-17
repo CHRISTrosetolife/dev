@@ -11,7 +11,6 @@ export async function ceb_bible_words_definitions_map() {
   await each_async(words_ceb, async (word_ceb) => {
     let { word, definitions } = await ceb_definition(word_ceb.word);
     if (object_property_exists_not(existing, word)) {
-      object_property_set(existing, word, true);
       if (list_empty_not_is(definitions)) {
         if (word_ceb.word !== word) {
           object_property_set(result, word_ceb.word, word);
