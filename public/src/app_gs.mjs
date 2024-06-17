@@ -1,3 +1,5 @@
+import { html_attribute_set } from "./html_attribute_set.mjs";
+import { html_element } from "./html_element.mjs";
 import { html_document_head } from "./html_document_head.mjs";
 import { noop } from "./noop.mjs";
 import { html_scroll_center_smooth } from "./html_scroll_center_smooth.mjs";
@@ -12,6 +14,13 @@ export async function app_gs() {
   let root = app_gs_style_default_initialize();
   html_button_width_full_text_click(root, "menu", noop);
   let h = html_document_head();
+  let c = html_element(parent, meta);
+  html_attribute_set(c, "name", "viewport");
+  html_attribute_set(
+    c,
+    "content",
+    "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no",
+  );
   html_style(root, {
     overflow: "hidden",
   });
