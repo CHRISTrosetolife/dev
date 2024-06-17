@@ -230,7 +230,7 @@ export async function terminal() {
   async function history_add(item) {
     await file_json_transform_exists(
       (h) => h,
-      folder_gitignore_path(string_combine(terminal.name, "_history.json")),
+      folder_gitignore_path(string_combine(terminal.name, ".json")),
       [],
     );
     list_add(history, item);
