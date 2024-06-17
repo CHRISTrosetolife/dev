@@ -1,7 +1,7 @@
-import { ceb_bible_words_count } from "./ceb_bible_words_count.mjs";
+import { ceb_bible_words_count_cache } from "./ceb_bible_words_count_cache.mjs";
 import { ceb_bible_words_definitions_get } from "./ceb_bible_words_definitions_get.mjs";
 export async function ceb_bible_words_definitions_all() {
-  let words_ceb = await ceb_bible_words_count();
+  let words_ceb = await ceb_bible_words_count_cache();
   let result = await ceb_bible_words_definitions_get(words_ceb);
   return result;
 }
