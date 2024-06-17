@@ -275,6 +275,7 @@ export async function terminal() {
       });
       return r;
     });
+    return result;
   }
   let buffer;
   buffer_clear();
