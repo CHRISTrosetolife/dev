@@ -44,6 +44,7 @@ import { string_combine } from "./string_combine.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { string_empty_is } from "./string_empty_is.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
+import { list_index_last } from "./list_index_last.mjs";
 export async function terminal() {
   let commands = [
     {
@@ -231,6 +232,7 @@ export async function terminal() {
     await terminal_data_transform(function lambda(d) {
       let history = object_property_initialize(d, "history", []);
       list_add(history, item);
+      d.history_index = list_index_last(history);
     });
   }
   async function history_index_previous() {
