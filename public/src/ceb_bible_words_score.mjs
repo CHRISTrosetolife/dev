@@ -15,7 +15,7 @@ export async function ceb_bible_words_score() {
   each(words_ceb, (d) => object_property_set(lookup, d.word, d.count));
   let map = await ceb_bible_words_definitions_map_cache();
   let definitions = await ceb_bible_words_definitions_all_cache();
-  each(list_take(definitions, 10), (d) => {
+  each(list_take(definitions, 5), (d) => {
     let { word } = d;
     let choices = [word];
     if (object_property_exists(map, word)) {
