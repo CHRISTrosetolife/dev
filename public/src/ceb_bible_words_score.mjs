@@ -20,8 +20,8 @@ export async function ceb_bible_words_score() {
   each(words_ceb, (w) => {
     let { word } = w;
     let original = word;
-    if (object_property_exists(map, original)) {
-      object_property_get(map, w.word);
+    if (object_property_exists(map, word)) {
+      word = object_property_get(map, word);
     }
     object_property_get(lookup, w.word);
   });
