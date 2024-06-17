@@ -244,7 +244,7 @@ export async function terminal() {
     }
     log_clear_write_prompt();
     if (string_is(item)) {
-      keyboard_type(item);
+      each(item, (i) => keyboard_type(i));
     }
   }
   function log_buffer_clear() {
