@@ -37,7 +37,7 @@ export function ceb_learn() {
   });
   html_style_centered(button2);
   html_style_width_full(button2);
-  const button_text = "previous";
+  let button_text = "previous";
   let button_previous = html_button_width_full_text(root, button_text);
   html_style(button_previous, {
     "font-size": button_font_size,
