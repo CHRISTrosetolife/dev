@@ -1,5 +1,5 @@
+import { list_filter_indices } from "./list_filter_indices.mjs";
 import { each_reverse } from "./each_reverse.mjs";
-import { list_map_index } from "./list_map_index.mjs";
 import { list_size } from "./list_size.mjs";
 import { add_1 } from "./add_1.mjs";
 import { terminal_index_history_transform } from "./terminal_index_history_transform.mjs";
@@ -267,21 +267,14 @@ export async function terminal() {
   }
   async function history_add(item) {
     await terminal_data_transform(function (d) {
-      let list = object_property_initialize(d, "history", []);
+      let history = object_property_initialize(d, "history", []);
       function predicate(h) {
         h === item;
       }
-      let mapped = list_map_index(list, (h, index) => {
-        return {
-          include: predicate(h),
-          index,
-        };
-      });
-      let filtered = list_filter(mapped, (m) => m.include === true);
-      let mapped2 = list_map(filtered, (f) => f.index);
-      each_reverse(mapped2, (m) => list_remove_at(list, m));
-      list_add(list, item);
-      d.history_index = list_size(list);
+      let indices = list_filter_indices(history, predicate);
+      each_reverse(indices, (index) => list_remove_at(history, index));
+      list_add(history, item);
+      d.history_index = list_size(history);
     });
   }
   async function history_pop() {
