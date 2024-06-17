@@ -11,9 +11,7 @@ import { html_button_width_full_text_click } from "./html_button_width_full_text
 export async function app_gs() {
   let root = app_gs_style_default_initialize();
   html_button_width_full_text_click(root, "menu", noop);
-  if (0) {
-    html_scale_none();
-  }
+  html_scale_none();
   html_style(root, {
     overflow: "hidden",
   });
