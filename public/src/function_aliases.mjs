@@ -21,6 +21,7 @@ export function function_aliases() {
     na: "function_new_args",
     o: "function_open",
     r: "function_rename",
+    re: "restart",
     s: "function_search",
     sb: "sandbox",
     ss: "app_dev_screenshots",
