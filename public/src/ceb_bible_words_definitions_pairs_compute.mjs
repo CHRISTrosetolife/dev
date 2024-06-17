@@ -41,9 +41,9 @@ export async function ceb_bible_words_definitions_pairs_compute() {
     }
     let { ceb, eng } = pair;
     let m = string_match_best_find(eng.word, eng_words);
-    let { index, match } = m;
+    let { index, closest } = m;
     object_merge(eng, {
-      match,
+      closest,
     });
     eng.score = list_get(eng_scores, index).score;
     assert(number_is, [eng.score]);
