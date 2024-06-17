@@ -8,7 +8,7 @@ export async function terminal_index_history_transform(lambda) {
     if (!number_is(d.history_index)) {
       return;
     }
-    if (i >= list_size(history)) {
+    if (d.history_index >= list_size(history)) {
       return;
     }
     d.history_index = lambda(d.history_index);
