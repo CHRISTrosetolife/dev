@@ -1,4 +1,4 @@
-import { newFunction } from "./newFunction.mjs";
+import { list_to_lookup } from "./list_to_lookup.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_skip } from "./list_skip.mjs";
 import { ceb_bible_words_definitions_pairs_compute_cache } from "./ceb_bible_words_definitions_pairs_compute_cache.mjs";
@@ -9,7 +9,7 @@ import { list_map } from "./list_map.mjs";
 import { list_take } from "./list_take.mjs";
 export async function ceb_bible_words_definitions_pairs(skip, limit) {
   let ceb_scores = await ceb_bible_words_score();
-  let lookup = newFunction(ceb_scores, mapper);
+  let lookup = list_to_lookup(ceb_scores, mapper);
   function mapper(w) {
     return w["word"];
   }
