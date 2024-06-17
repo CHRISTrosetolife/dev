@@ -30,5 +30,6 @@ export async function ceb_bible_words_score() {
       count,
     });
   });
+  list_max;
   return definitions;
 }
