@@ -43,7 +43,7 @@ export async function ceb_bible_words_definitions_pairs_compute() {
     }
     let { ceb, eng } = pair;
     if (object_property_exists(eng_lookup, eng.word)) {
-      let eng_score = object_property_get(eng_lookup, s.word);
+      eng.score = object_property_get(eng_lookup, s.word);
     } else {
       eng.score = 0;
     }
