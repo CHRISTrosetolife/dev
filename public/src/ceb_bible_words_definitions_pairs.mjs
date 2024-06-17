@@ -35,6 +35,7 @@ export async function ceb_bible_words_definitions_pairs() {
     let scores = list_map_property([eng, ceb], "score");
     pair.score = list_sum(scores);
   });
+  let property = "score";
   list_sort(pairs, (p) => p.score);
   return {
     pairs,
