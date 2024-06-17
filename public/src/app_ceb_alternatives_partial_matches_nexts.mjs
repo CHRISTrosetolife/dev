@@ -30,7 +30,7 @@ export function app_ceb_alternatives_partial_matches_nexts(
     ),
   );
   matches = list_map(matches, string_case_lower);
-  const ci = chunk_size * index;
+  let ci = chunk_size * index;
   let nexts = list_map(matches, (a) =>
     string_substring(
       a,
