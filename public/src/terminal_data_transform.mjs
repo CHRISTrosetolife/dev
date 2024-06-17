@@ -3,11 +3,11 @@ import { object_property_initialize } from "./object_property_initialize.mjs";
 import { file_json_transform_exists } from "./file_json_transform_exists.mjs";
 export async function terminal_data_transform(lambda) {
   return await file_json_transform_exists(
+    terminal_data_path(),
     (d) => {
       let history = object_property_initialize(d, "history", []);
       return lambda(history);
     },
-    terminal_data_path(),
     [],
   );
 }
