@@ -31,7 +31,7 @@ export function html_code_generate(tag_name, input) {
       html_attribute_set.name,
       list_concat(
         [variable_name],
-        [string_delimit(key), string_delimit(value)],
+        list_map([(key), (value)],string_delimit),
       ),
     );
     list_add(statements, s);
