@@ -205,6 +205,27 @@ export async function terminal() {
     },
     {
       match: {
+        sequence: "\x1B[A",
+        name: "up",
+        ctrl: false,
+        meta: false,
+        shift: false,
+        code: "[A",
+      },
+      action: async () => {
+        let item = history_index_previous();
+        if (!string_is(item)) {
+          log_error(
+            string_combine_multiple(["no more ", terminal.name, " history"]),
+          );
+          return;
+        }
+        log_buffer_clear();
+        keyboard_type(item);
+      },
+    },
+    {
+      match: {
         sequence: " ",
         name: "space",
         ctrl: false,
