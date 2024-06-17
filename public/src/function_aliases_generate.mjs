@@ -59,6 +59,7 @@ export async function function_aliases_generate() {
   alias_add(function_cache_new, ["fcn"]);
   alias_add(function_cache_refresh, ["fcr"]);
   alias_add(function_transform, ["ft"]);
+  alias_add(function_transform_all, ["fta"]);
   alias_add(function_transform_all_args, ["ftaa"]);
   alias_add(git_acp, ["gi"]);
   alias_add(git_index_lock_delete, ["gx"]);
