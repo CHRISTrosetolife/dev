@@ -15,8 +15,7 @@ export function html_code_generate(tag_name, input) {
   let { attribs } = c;
   [
     js_code_statement_call_args(html_element.name, ["parent", tag_name]),
-    js_code_statement_call_args(html_element.name, ["parent", tag_name]),
-    html_attribute_set,
+    html_attribute_set(html_element.name, ["parent", tag_name]),
   ];
   return attribs;
   return object_properties(c);
