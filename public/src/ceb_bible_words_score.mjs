@@ -22,7 +22,7 @@ export async function ceb_bible_words_score() {
     let { word } = w;
     let choices = [word];
     if (object_property_exists(map, word)) {
-      choices = list_concat(choics, object_property_get(map, word));
+      choices = list_concat(choices, object_property_get(map, word));
     }
     object_property_get(lookup, w.word);
   });
