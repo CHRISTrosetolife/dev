@@ -1,3 +1,4 @@
+import { list_last } from "./list_last.mjs";
 import { bible_words_score_generic } from "./bible_words_score_generic.mjs";
 import { ceb_bible_words_definitions_map_cache } from "./ceb_bible_words_definitions_map_cache.mjs";
 import { ceb_bible_words_definitions_all_cache } from "./ceb_bible_words_definitions_all_cache.mjs";
@@ -32,5 +33,5 @@ export async function ceb_bible_words_score() {
     });
   });
   bible_words_score_generic(definitions);
-  return definitions;
+  return list_last(definitions);
 }
