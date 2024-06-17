@@ -266,11 +266,6 @@ export async function terminal() {
       d.history_index = list_index_last(history);
     });
   }
-  async function history_index_next() {
-    return await terminal_index_history_transform(function lambda(index) {
-      return add_1(index);
-    });
-  }
   async function history_pop() {
     return await terminal_history_transform(function lambda(history) {
       return list_pop(history);
