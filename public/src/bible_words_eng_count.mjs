@@ -9,7 +9,7 @@ import { list_map } from "./list_map.mjs";
 export async function bible_words_eng_count() {
   let all = await bible_words_eng_cache();
   return string_symbols_multiple(all);
-  let symbols = "_-–—,;:!?.'‘’\"“”()[]}¶/`¯|€0123456789";
+  let symbols = "-–,;:!?.…·'‘’“”()[]{}/&`►◄0123456789";
   all = list_map(all, (a) => string_trim(a, symbols));
   all = list_map(all, string_case_lower);
   all = list_filter(all, string_empty_not_is);
