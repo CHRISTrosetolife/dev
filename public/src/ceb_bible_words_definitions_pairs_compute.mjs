@@ -1,3 +1,4 @@
+import { list_reverse } from "./list_reverse.mjs";
 import { list_sort_property } from "./list_sort_property.mjs";
 import { list_sum } from "./list_sum.mjs";
 import { number_is } from "./number_is.mjs";
@@ -45,5 +46,6 @@ export async function ceb_bible_words_definitions_pairs_compute() {
     pair.score = list_sum(scores);
   });
   list_sort_property(pairs, "score");
+  list_reverse(pairs);
   return pairs;
 }
