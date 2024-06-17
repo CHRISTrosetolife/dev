@@ -223,6 +223,10 @@ export async function terminal() {
       action: (key) => keyboard_type(key.name),
     },
     {
+      keys: list_concat(keyboard_keys(), ["shift"]),
+      action: (key) => keyboard_type(key.sequence),
+    },
+    {
       keys: string_split_empty("_',<>=\""),
       action: (key) => keyboard_type(key.sequence),
     },

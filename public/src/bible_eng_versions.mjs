@@ -1,0 +1,25 @@
+export function bible_eng_versions() {
+  return [
+    "engbsb",
+    "engBBE",
+    "eng-asv",
+    "engasvbt",
+    "engDRA",
+    "engfbv",
+    "engnoy",
+    "eng-glw",
+    "englsv",
+    "eng-kjv2006",
+    "eng-kjv",
+    "engourb",
+    "engoebus",
+    "eng-rv",
+    "engoke",
+    "engtcent",
+    "eng-t4t",
+    "engULB",
+    "eng-web",
+    "engwmb",
+    "engylt",
+  ];
+}

@@ -1,5 +1,3 @@
-import { bible_chapter } from "./bible_chapter.mjs";
-import { bible_books } from "./bible_books.mjs";
 import { file_overwrite_json } from "./file_overwrite_json.mjs";
 import { equal_json } from "./equal_json.mjs";
 import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
@@ -23,44 +21,7 @@ import { object_property_initialize } from "./object_property_initialize.mjs";
 import { list_add } from "./list_add.mjs";
 import { file_read_json } from "./file_read_json.mjs";
 import { assert } from "./assert.mjs";
-import { bible_chapters } from "./bible_chapters.mjs";
 export async function sandbox() {
-  let bible_folders = [
-    "engbsb",
-    "engBBE",
-    "eng-asv",
-    "engasvbt",
-    "engDRA",
-    "engfbv",
-    "engnoy",
-    "eng-glw",
-    "englsv",
-    "eng-kjv2006",
-    "eng-kjv",
-    "engourb",
-    "engoebus",
-    "eng-rv",
-    "engoke",
-    "engtcent",
-    "eng-t4t",
-    "engULB",
-    "eng-web",
-    "engwmb",
-    "engylt",
-  ];
-  await each_async(bible_folders, async (bible_folder) => {
-    await each_async(await bible_books(bible_folder), async (book_name) => {
-      let chapters = await bible_chapters(bible_folder, book_name);
-      await each_async(chapters, async (chapter_name) => {
-        log({
-          bible_folder,
-          chapter_name,
-        });
-        await bible_chapter(bible_folder, chapter_name);
-      });
-    });
-  });
-  return;
   let group_index = 0;
   let limit = 150;
   let skip = 0;
