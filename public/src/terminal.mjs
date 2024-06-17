@@ -1,5 +1,4 @@
 import { number_is } from "./number_is.mjs";
-import { assert } from "./assert.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { terminal_data_transform } from "./terminal_data_transform.mjs";
 import { terminal_history_transform } from "./terminal_history_transform.mjs";
@@ -239,11 +238,10 @@ export async function terminal() {
   }
   async function history_index_previous() {
     return await terminal_data_transform(function lambda(d) {
-      if (!number_not_is(d.history_index)) {
+      if (!number_is(d.history_index)) {
         return;
       }
       d.history_index--;
-      assert(number_is);
       return d.history_index;
       return list_pop(history);
     });
