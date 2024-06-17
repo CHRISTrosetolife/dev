@@ -10,6 +10,7 @@ import { object_properties } from "./object_properties.mjs";
 import { html_element } from "./html_element.mjs";
 import { list_add } from "./list_add.mjs";
 import { each_object } from "./each_object.mjs";
+import { list_concat } from "./list_concat.mjs";
 export function html_code_generate(tag_name, input) {
   '<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />';
   log({
@@ -26,11 +27,13 @@ export function html_code_generate(tag_name, input) {
     ),
   ];
   each_object(attribs, (key, value) => {
-    let s = js_code_statement_call_args(html_attribute_set.name, [
-      variable_name,
-      string_delimit(key),
-      string_delimit(value),
-    ]);
+    let s = js_code_statement_call_args(
+      html_attribute_set.name,
+      list_concat(
+        [variable_name],
+        [string_delimit(key), string_delimit(value)],
+      ),
+    );
     list_add(statements, s);
   });
   return attribs;
