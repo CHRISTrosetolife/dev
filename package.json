@@ -22,6 +22,7 @@
     "node-html-parser": "^6.1.12",
     "pngjs": "^7.0.0",
     "readline-sync": "^1.4.10",
+    "string-similarity": "^4.0.4",
     "synchro-prompt": "^1.1.0",
     "tonegenerator": "^0.3.3"
   },
