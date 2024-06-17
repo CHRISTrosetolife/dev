@@ -1,6 +1,6 @@
+import { terminal_data_transform } from "./terminal_data_transform.mjs";
 import { terminal_data_path } from "./terminal_data_path.mjs";
 import { file_read_json } from "./file_read_json.mjs";
-import { file_json_transform_exists } from "./file_json_transform_exists.mjs";
 import { function_run_terminal } from "./function_run_terminal.mjs";
 import { error } from "./error.mjs";
 import { list_first_remaining } from "./list_first_remaining.mjs";
@@ -229,14 +229,7 @@ export async function terminal() {
     return on_returns;
   }
   async function history_add(item) {
-    await file_json_transform_exists(
-      (d) => {
-        let history = object_property_initialize(d, "history", []);
-        lambda(history);
-      },
-      terminal_data_path(),
-      [],
-    );
+    await terminal_data_transform(lambda);
     function lambda(history) {
       list_add(history, item);
     }
