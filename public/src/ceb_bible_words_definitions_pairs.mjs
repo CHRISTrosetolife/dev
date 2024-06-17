@@ -7,7 +7,7 @@ export async function ceb_bible_words_definitions_pairs() {
   let ceb_scores = await ceb_bible_words_score();
   let eng_scores = await bible_words_eng_score();
   let pairs = list_adder((la) =>
-    each(definitions, (w) =>
+    each(ceb_scores, (w) =>
       each(object_property_get(w, "definitions"), (d) =>
         la([object_property_get(w, "word"), d]),
       ),
