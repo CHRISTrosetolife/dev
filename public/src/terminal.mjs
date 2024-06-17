@@ -194,7 +194,7 @@ export async function terminal() {
         let item = history_index_previous();
         if (!string_is(item)) {
           log_error(
-            string_combine_multiple(["no more ", terminal.name, "history"]),
+            string_combine_multiple(["no more ", terminal.name, " history"]),
           );
           return;
         }
