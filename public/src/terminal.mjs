@@ -249,9 +249,8 @@ export async function terminal() {
   }
   async function history_index_previous() {
     return await terminal_index_history_transform(function lambda(index) {
-        return subtract_1(index);
-      });
-    
+      return subtract_1(index);
+    });
   }
   async function history_pop() {
     return await terminal_history_transform(function lambda(history) {
