@@ -5,7 +5,7 @@ import { bible_chapters } from "./bible_chapters.mjs";
 import { bible_books } from "./bible_books.mjs";
 import { each_async } from "./each_async.mjs";
 export async function bibles_eng_chapters() {
-  await list_adder_async(async (la) => {
+  return await list_adder_async(async (la) => {
     let bible_folders = bible_eng_versions();
     await each_async(bible_folders, async (bible_folder) => {
       await each_async(await bible_books(bible_folder), async (book_name) => {
