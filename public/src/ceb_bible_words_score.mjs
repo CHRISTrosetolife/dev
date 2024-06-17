@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { ceb_bible_words_definitions_map_cache } from "./ceb_bible_words_definitions_map_cache.mjs";
 import { ceb_bible_words_definitions_all_cache } from "./ceb_bible_words_definitions_all_cache.mjs";
 import { each } from "./each.mjs";
@@ -19,6 +20,9 @@ export async function ceb_bible_words_score() {
     if (object_property_exists(map, word)) {
       choices = list_concat(choices, object_property_get(map, word));
     }
+    log({
+      choices,
+    });
     let count = 0;
     each(choices, (choice) => {
       let choice_count = object_property_get(lookup, choice);
