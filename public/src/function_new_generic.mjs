@@ -1,4 +1,3 @@
-import { function_data } from "./function_data.mjs";
 import { js_code_export_function_declare } from "./js_code_export_function_declare.mjs";
 import { js_code_format } from "./js_code_format.mjs";
 import { js_imports_fix } from "./js_imports_fix.mjs";
@@ -35,7 +34,6 @@ export async function function_new_generic(
   unparsed = await js_code_format(unparsed);
   let file_path = function_name_to_path(function_name);
   await writer(file_path, unparsed);
-  await function_data(cache_name);
   if (open) {
     await file_open(file_path);
   }
