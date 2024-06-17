@@ -236,7 +236,8 @@ export async function terminal() {
     });
   }
   async function history_index_previous() {
-    return await terminal_history_transform(function lambda(history) {
+    return await terminal_data_transform(function lambda(d) {
+      d.history_index = list_index_last(history);
       return list_pop(history);
     });
   }
