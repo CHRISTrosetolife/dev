@@ -1,3 +1,4 @@
+import { list_map } from "./list_map.mjs";
 import { string_delimit } from "./string_delimit.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 import { js_code_statement_declare_assign } from "./js_code_statement_declare_assign.mjs";
@@ -29,10 +30,7 @@ export function html_code_generate(tag_name, input) {
   each_object(attribs, (key, value) => {
     let s = js_code_statement_call_args(
       html_attribute_set.name,
-      list_concat(
-        [variable_name],
-        list_map([(key), (value)],string_delimit),
-      ),
+      list_concat([variable_name], list_map([key, value], string_delimit)),
     );
     list_add(statements, s);
   });
