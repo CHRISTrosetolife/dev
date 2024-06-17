@@ -17,7 +17,7 @@ export async function ceb_bible_words_score() {
   let lookup = {};
   each(definitions, (d) => object_property_set(lookup, d.word, d.definitions));
   each(words_ceb, (w) => {
-    let word = w;
+    let { word } = w;
     object_property_get(map, w.word);
     object_property_get(lookup, w.word);
   });
