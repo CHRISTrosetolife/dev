@@ -1,6 +1,4 @@
 import { terminal_data_transform } from "./terminal_data_transform.mjs";
-import { terminal_data_path } from "./terminal_data_path.mjs";
-import { file_read_json } from "./file_read_json.mjs";
 import { function_run_terminal } from "./function_run_terminal.mjs";
 import { error } from "./error.mjs";
 import { list_first_remaining } from "./list_first_remaining.mjs";
@@ -44,7 +42,6 @@ import { string_combine } from "./string_combine.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { string_empty_is } from "./string_empty_is.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
-import { object_property_initialize } from "./object_property_initialize.mjs";
 export async function terminal() {
   let commands = [
     {
@@ -235,13 +232,10 @@ export async function terminal() {
     }
   }
   async function history_pop() {
-    await terminal_data_transform(lambda);
+    return await terminal_data_transform(lambda);
     function lambda(history) {
       return list_pop(history);
     }
-    let d = await file_read_json(terminal_data_path());
-    let history = object_property_initialize(d, "history", []);
-    return history;
   }
   let buffer;
   buffer_clear();
