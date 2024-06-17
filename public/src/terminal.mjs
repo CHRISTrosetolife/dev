@@ -46,6 +46,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { string_empty_is } from "./string_empty_is.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
 import { list_index_last } from "./list_index_last.mjs";
+import { list_get } from "./list_get.mjs";
 export async function terminal() {
   let commands = [
     {
@@ -243,6 +244,7 @@ export async function terminal() {
       }
       let i = --d.history_index;
       let history = object_property_initialize(d, "history", []);
+      return list_get(history, i);
     });
   }
   async function history_pop() {
