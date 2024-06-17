@@ -5,10 +5,8 @@ import { app_learn_code_quiz_inner_refresh } from "./app_learn_code_quiz_inner_r
 import { object_property_get } from "./object_property_get.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_pop } from "./list_pop.mjs";
-import { noop } from "./noop.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { string_combine } from "./string_combine.mjs";
-import { error } from "./error.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
 import { html_clear } from "./html_clear.mjs";

@@ -12,7 +12,7 @@ export async function app_list_add(list_function, inserted_code) {
   await file_transform(
     async (before) => {
       let name = marker.name;
-      const search = js_code_statement_call(name);
+      let search = js_code_statement_call(name);
       let after = string_replace(
         before,
         search,
