@@ -240,7 +240,9 @@ export async function terminal() {
       log("");
     }
     log_clear_write_prompt();
-    keyboard_type(item);
+    if (string_is(item)) {
+      keyboard_type(item);
+    }
   }
   function log_buffer_clear() {
     buffer_clear();
