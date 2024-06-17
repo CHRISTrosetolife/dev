@@ -1,3 +1,4 @@
+import { on_keypress_log } from "./on_keypress_log.mjs";
 import { git_index_lock_delete } from "./git_index_lock_delete.mjs";
 import { exit_aliases } from "./exit_aliases.mjs";
 import { google_search } from "./google_search.mjs";
@@ -52,6 +53,7 @@ export async function function_aliases_generate() {
   alias_add(http_server, ["h"]);
   alias_add(npm_install, ["i"]);
   alias_add(npm_install_global, ["ig"]);
+  alias_add(on_keypress_log, ["k"]);
   alias_add(function_new, ["n"]);
   alias_add(function_new_args, ["na"]);
   alias_add(function_open, ["o"]);
