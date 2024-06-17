@@ -11,7 +11,8 @@ export async function ceb_bible_words_definitions_pairs(skip, limit) {
   let ceb_scores = await ceb_bible_words_score();
   let lookup = list_to_lookup(ceb_scores, mapper);
   function mapper(w) {
-    return w["word"];
+    let newLocal = "word";
+    return w[newLocal];
   }
   let pairs = await ceb_bible_words_definitions_pairs_compute_cache();
   let concise = list_map(pairs, (p) =>
