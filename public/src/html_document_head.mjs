@@ -1,6 +1,6 @@
-import { list_single } from "./list_single.mjs";
 export function html_document_head() {
+  let h = document.getElementsByTagName("head")[0];
   return {
-    element: list_single(document.getElementsByTagName("head")),
+    element: h,
   };
 }
