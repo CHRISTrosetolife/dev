@@ -1,3 +1,4 @@
+import { file_open } from "./file_open.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { ceb_bible_words_score } from "./ceb_bible_words_score.mjs";
@@ -17,5 +18,5 @@ export async function ceb_bible_words_top(count) {
     string_combine(ceb_bible_words_top.name, ".txt"),
   );
   await file_overwrite(file_path, list_join_newline(m));
+  await file_open(file_path);
 }
-await file_open(file_path);
