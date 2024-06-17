@@ -15,6 +15,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { ceb_bible_words_score } from "./ceb_bible_words_score.mjs";
+import { object_merge } from "./object_merge.mjs";
 export async function ceb_bible_words_definitions_pairs_compute() {
   let ceb_scores = await ceb_bible_words_score();
   let pairs = list_adder((la) =>
@@ -41,6 +42,9 @@ export async function ceb_bible_words_definitions_pairs_compute() {
     let { ceb, eng } = pair;
     let m = string_match_best_find(eng.word, eng_words);
     let { index, match } = m;
+    object_merge(eng, {
+      match,
+    });
     eng.score = list_get(eng_scores, index).score;
     assert(number_is, [eng.score]);
     let scores = list_map_property([eng, ceb], "score");
