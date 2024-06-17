@@ -1,4 +1,3 @@
-import { string_match_best_find } from "./string_match_best_find.mjs";
 import { list_reverse } from "./list_reverse.mjs";
 import { list_sort_property } from "./list_sort_property.mjs";
 import { list_sum } from "./list_sum.mjs";
@@ -15,7 +14,6 @@ import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { ceb_bible_words_score } from "./ceb_bible_words_score.mjs";
-import { object_merge } from "./object_merge.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 export async function ceb_bible_words_definitions_pairs_compute() {
@@ -44,15 +42,11 @@ export async function ceb_bible_words_definitions_pairs_compute() {
       });
     }
     let { ceb, eng } = pair;
-    let eng_score = 0;
     if (object_property_exists(eng_lookup, eng.word)) {
-      eng_score = object_property_get(eng_lookup, s.word);
+      let eng_score = object_property_get(eng_lookup, s.word);
+    } else {
+      eng.score = 0;
     }
-    let m = string_match_best_find(eng.word, eng_words);
-    let { index, closest } = m;
-    object_merge(eng, {
-      closest,
-    });
     eng.score = list_get(eng_scores, index).score;
     assert(number_is, [eng.score]);
     let scores = list_map_property([eng, ceb], "score");
