@@ -237,7 +237,6 @@ export async function terminal() {
       terminal_data_path(),
       [],
     );
-    list_add(history, item);
   }
   async function history_get() {
     let d = await file_read_json(terminal_data_path());
