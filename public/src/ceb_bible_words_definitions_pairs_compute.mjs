@@ -39,8 +39,8 @@ export async function ceb_bible_words_definitions_pairs_compute() {
       });
     }
     let { ceb, eng } = pair;
-    let match = string_match_best_find(eng.word, eng_words);
-    let { index } = match;
+    let m = string_match_best_find(eng.word, eng_words);
+    let { index, match } = m;
     eng.score = list_get(eng_scores, index).score;
     assert(number_is, [eng.score]);
     let scores = list_map_property([eng, ceb], "score");
