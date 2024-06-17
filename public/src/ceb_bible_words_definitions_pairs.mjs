@@ -22,7 +22,7 @@ export async function ceb_bible_words_definitions_pairs(skip, limit) {
     pairs: l,
     definitions: list_map(l, (item) => {
       let w = lookup[list_first(item)];
-      object_properties_new(w, ["word", "definitions"]);
+      return object_properties_new(w, ["word", "definitions"]);
     }),
   };
 }
