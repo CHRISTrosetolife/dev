@@ -17,7 +17,7 @@ export async function function_cache_new(function_name) {
     ),
     false,
     [],
-    false,
+    true,
     file_write,
   );
 }
