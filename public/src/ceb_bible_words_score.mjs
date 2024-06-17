@@ -1,5 +1,4 @@
 import { exit } from "./exit.mjs";
-import { list_take } from "./list_take.mjs";
 import { log } from "./log.mjs";
 import { ceb_bible_words_definitions_map_cache } from "./ceb_bible_words_definitions_map_cache.mjs";
 import { ceb_bible_words_definitions_all_cache } from "./ceb_bible_words_definitions_all_cache.mjs";
@@ -16,7 +15,7 @@ export async function ceb_bible_words_score() {
   each(words_ceb, (d) => object_property_set(lookup, d.word, d.count));
   let map = await ceb_bible_words_definitions_map_cache();
   let definitions = await ceb_bible_words_definitions_all_cache();
-  each(list_take(definitions, 5), (d) => {
+  each(definitions, (d) => {
     let { word } = d;
     let choices = [word];
     if (object_property_exists(map, word)) {
