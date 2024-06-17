@@ -5,7 +5,9 @@ import { list_filter } from "./list_filter.mjs";
 import { function_search_terms_match } from "./function_search_terms_match.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
+import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export async function function_search(query) {
+  assert_arguments_length(arguments, 1);
   let terms = string_split_comma(query);
   let fn_names = await function_names();
   let matches = list_filter(fn_names, (fn_name) => {
