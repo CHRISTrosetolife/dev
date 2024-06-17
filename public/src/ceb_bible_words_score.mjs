@@ -8,6 +8,7 @@ import { list_map_property } from "./list_map_property.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
+import { list_concat } from "./list_concat.mjs";
 export async function ceb_bible_words_score() {
   let lookup = {};
   let words_ceb = await ceb_bible_words_count_cache();
@@ -18,11 +19,10 @@ export async function ceb_bible_words_score() {
   let map = await ceb_bible_words_definitions_map_cache();
   let definitions = await ceb_bible_words_definitions_all_cache();
   each(definitions, (d) => {
-    return;
     let { word } = w;
-    let original = word;
+    let choices = [word];
     if (object_property_exists(map, word)) {
-      word = object_property_get(map, word);
+      choices = list_concat(choics, object_property_get(map, word));
     }
     object_property_get(lookup, w.word);
   });
