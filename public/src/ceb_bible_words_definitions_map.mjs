@@ -12,10 +12,12 @@ export async function ceb_bible_words_definitions_map() {
   let result = {};
   let size = list_size(words_ceb);
   await each_index_async(words_ceb, async (word_ceb, index) => {
-    log({
-      size,
-      index,
-    });
+    if (index % 100 === 0) {
+      log({
+        size,
+        index,
+      });
+    }
     let { word, definitions } = await ceb_definition(word_ceb.word);
     if (object_property_exists_not(result, word)) {
       if (list_empty_not_is(definitions)) {
