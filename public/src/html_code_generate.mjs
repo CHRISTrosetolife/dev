@@ -1,3 +1,4 @@
+import { js_code_call_args } from "./js_code_call_args.mjs";
 import { js_code_statement_declare_assign } from "./js_code_statement_declare_assign.mjs";
 import { html_attribute_set } from "./html_attribute_set.mjs";
 import { js_code_statement_call_args } from "./js_code_statement_call_args.mjs";
@@ -18,7 +19,7 @@ export function html_code_generate(tag_name, input) {
   [
     js_code_statement_declare_assign(
       variable_name,
-      js_code_statement_call_args(html_element.name, ["parent", tag_name]),
+      js_code_call_args(html_element.name, ["parent", tag_name]),
     ),
     js_code_statement_call_args(html_attribute_set.name, ["parent", tag_name]),
   ];
