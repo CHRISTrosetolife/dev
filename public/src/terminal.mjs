@@ -1,6 +1,6 @@
+import { terminal_data_path } from "./terminal_data_path.mjs";
 import { file_read_json } from "./file_read_json.mjs";
 import { file_json_transform_exists } from "./file_json_transform_exists.mjs";
-import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
 import { function_run_terminal } from "./function_run_terminal.mjs";
 import { error } from "./error.mjs";
 import { list_first_remaining } from "./list_first_remaining.mjs";
@@ -240,7 +240,7 @@ export async function terminal() {
     list_add(history, item);
   }
   async function history_get() {
-    d=await file_read_json(terminal_data_path());
+    let d = await file_read_json(terminal_data_path());
     let history = object_property_initialize(d, "history", []);
   }
   let buffer;
@@ -354,7 +354,3 @@ export async function terminal() {
     return tokens;
   }
 }
-function terminal_data_path() {
-    return folder_gitignore_path(string_combine(terminal.name, ".json"));
-}
-
