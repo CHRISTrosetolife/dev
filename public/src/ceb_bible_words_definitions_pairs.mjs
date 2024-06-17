@@ -8,16 +8,14 @@ import { bible_words_eng_score } from "./bible_words_eng_score.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { list_get } from "./list_get.mjs";
 import { number_is } from "./number_is.mjs";
+import { object_merge_properties } from "./object_merge_properties.mjs";
 export async function ceb_bible_words_definitions_pairs() {
   let ceb_scores = await ceb_bible_words_score();
   let pairs = list_adder((la) =>
     each(ceb_scores, (w) =>
       each(object_property_get(w, "definitions"), (d) =>
         la({
-          ceb: {
-            word: object_property_get(w, "word"),
-            score: object_property_get(w, "score"),
-          },
+          ceb: object_merge_properties(w, ["word", "score"]),
           eng: d,
         }),
       ),
