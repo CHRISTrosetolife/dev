@@ -26,6 +26,7 @@ export function html_code_generate(tag_name, input) {
     variable_name,
     tag_name,
   ]);
+  object_each(attribs, (key, value) => {});
   return attribs;
   return object_properties(c);
 }
