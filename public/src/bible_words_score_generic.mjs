@@ -5,6 +5,6 @@ export function bible_words_score_generic(definitions) {
   let max = number_max_list_map_property(definitions, "count");
   each(definitions, (d) => {
     let { count } = d;
-    object_property_set(d, "score", count / max);
+    object_property_set(d, "score", (count / max) * 10000);
   });
 }
