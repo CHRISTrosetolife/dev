@@ -1,3 +1,4 @@
+import { ceb_bible_words_definitions_all_cache } from "./ceb_bible_words_definitions_all_cache.mjs";
 import { each } from "./each.mjs";
 import { list_summer } from "./list_summer.mjs";
 import { ceb_bible_words_count_cache } from "./ceb_bible_words_count_cache.mjs";
@@ -8,6 +9,7 @@ export async function ceb_bible_words_score() {
   let ceb_total = list_summer((s) =>
     each(list_map_property(words_ceb, "count"), s),
   );
+  await ceb_bible_words_definitions_all_cache();
   return ceb_total;
   let words_eng = await bible_words_eng_cache();
   let eng_total = list_summer(list_map_property(words_eng, "count"));
