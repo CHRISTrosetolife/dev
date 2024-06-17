@@ -31,7 +31,7 @@ export async function ceb_bible_words_definitions_pairs_compute() {
   );
   let eng_scores = await bible_words_eng_score();
   let eng_lookup = {};
-  each(eng_scores, (s) => object_property_set(eng_lookup, s.word, s.score));
+  each(eng_scores, (s) => object_property_set(eng_lookup, s[word], s[score]));
   each_index(pairs, (pair, i) => {
     if (i % 100 === 0) {
       log({
