@@ -268,6 +268,7 @@ export async function terminal() {
   }
   async function history_pop() {
     let result = await terminal_data_transform(function lambda(d) {
+      let history = object_property_initialize(d, "history", []);
       let r = list_pop(history);
       d.history_index = list_size(history);
       log({
