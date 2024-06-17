@@ -1,4 +1,3 @@
-import { sleep } from "./sleep.mjs";
 import { list_size } from "./list_size.mjs";
 import { add_1 } from "./add_1.mjs";
 import { terminal_index_history_transform } from "./terminal_index_history_transform.mjs";
@@ -271,12 +270,8 @@ export async function terminal() {
       let history = object_property_initialize(d, "history", []);
       let r = list_pop(history);
       d.history_index = list_size(history);
-      log({
-        history,
-      });
       return r;
     });
-    await sleep(2000);
     return result;
   }
   let buffer;
