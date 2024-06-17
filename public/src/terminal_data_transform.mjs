@@ -5,7 +5,7 @@ export async function terminal_data_transform(lambda) {
   return await file_json_transform_exists(
     (d) => {
       let history = object_property_initialize(d, "history", []);
-      lambda(history);
+      return lambda(history);
     },
     terminal_data_path(),
     [],
