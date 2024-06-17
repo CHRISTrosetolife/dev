@@ -270,6 +270,9 @@ export async function terminal() {
     return await terminal_history_transform(function lambda(history) {
       let r = list_pop(history);
       d.history_index = list_size(history);
+      log({
+        history,
+      });
       return r;
     });
   }
