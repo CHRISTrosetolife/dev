@@ -1,4 +1,4 @@
-import { list_to_lookup } from "./list_to_lookup.mjs";
+import { list_to_lookup_property } from "./list_to_lookup_property.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_skip } from "./list_skip.mjs";
 import { ceb_bible_words_definitions_pairs_compute_cache } from "./ceb_bible_words_definitions_pairs_compute_cache.mjs";
@@ -10,10 +10,7 @@ import { list_take } from "./list_take.mjs";
 export async function ceb_bible_words_definitions_pairs(skip, limit) {
   let ceb_scores = await ceb_bible_words_score();
   let property_name = "word";
-  let lookup = list_to_lookup(ceb_scores, mapper);
-  function mapper(w) {
-    return w[property_name];
-  }
+  let lookup = list_to_lookup_property(ceb_scores, property_name);
   let pairs = await ceb_bible_words_definitions_pairs_compute_cache();
   let concise = list_map(pairs, (p) =>
     list_map(["ceb", "eng"], (language) =>
