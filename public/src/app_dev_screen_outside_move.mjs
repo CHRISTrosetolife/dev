@@ -1,8 +1,8 @@
+import { js_code_statement_return } from "./js_code_statement_return.mjs";
 import { html_cycle_code } from "./html_cycle_code.mjs";
 import { html_cycle_code_span } from "./html_cycle_code_span.mjs";
 import { app_dev_sandbox_function_multiple } from "./app_dev_sandbox_function_multiple.mjs";
 import { function_name_new } from "./function_name_new.mjs";
-import { js_code_return } from "./js_code_return.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 import { add } from "./add.mjs";
 import { multiply } from "./multiply.mjs";
@@ -56,7 +56,7 @@ export function app_dev_screen_outside_move() {
       let contents_a = js_code_export_function_declare(
         fn_a,
         "",
-        js_code_return(js_code_call_args(fn_b, ["1", "2", "3"])),
+        js_code_statement_return(js_code_call_args(fn_b, ["1", "2", "3"])),
         false,
       );
       let code = string_combine_multiple([contents_a, contents_b, contents_c]);

@@ -1,3 +1,4 @@
+import { js_code_statement_return } from "./js_code_statement_return.mjs";
 import { watch } from "./watch.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { app_dev_screen_if_to_block_if_else } from "./app_dev_screen_if_to_block_if_else.mjs";
@@ -12,7 +13,6 @@ import { file_write } from "./file_write.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
 import { js_code_format } from "./js_code_format.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { js_code_return } from "./js_code_return.mjs";
 import { js_code_export_function_declare } from "./js_code_export_function_declare.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 import { add } from "./add.mjs";
@@ -81,7 +81,7 @@ export function app_dev_screen_function_auto() {
           js_code_statement_assign("c", 4),
           js_code_statement_call_args(sleep.name, [100]),
           app_dev_screen_if_to_block_if_else(),
-          js_code_return(js_code_call_args(fn_b, ["1", "2", "3"])),
+          js_code_statement_return(js_code_call_args(fn_b, ["1", "2", "3"])),
         ]),
         false,
       );

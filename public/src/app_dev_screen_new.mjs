@@ -1,9 +1,9 @@
+import { js_code_statement_return } from "./js_code_statement_return.mjs";
 import { js_code_increment } from "./js_code_increment.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 import { list_join_empty } from "./list_join_empty.mjs";
 import { function_open } from "./function_open.mjs";
-import { js_code_return } from "./js_code_return.mjs";
 import { app_dev_screens } from "./app_dev_screens.mjs";
 import { js_code_function_declare } from "./js_code_function_declare.mjs";
 import { js_code_object_properties } from "./js_code_object_properties.mjs";
@@ -33,14 +33,14 @@ export async function app_dev_screen_new(name) {
   await function_new_generic(
     screen_name,
     "",
-    js_code_return(
+    js_code_statement_return(
       js_code_object_properties(
         ["name", "screen"],
         [
           js_code_function_declare(
             `${name}_name`,
             root,
-            js_code_return(
+            js_code_statement_return(
               js_code_call_args(html_span_text.name, [
                 root,
                 string_delimit(name),

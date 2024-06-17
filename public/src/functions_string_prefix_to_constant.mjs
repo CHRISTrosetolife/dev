@@ -1,3 +1,4 @@
+import { js_code_statement_return } from "./js_code_statement_return.mjs";
 import { js_code_string } from "./js_code_string.mjs";
 import { js_code_call } from "./js_code_call.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
@@ -5,7 +6,6 @@ import { string_is_starts_with } from "./string_is_starts_with.mjs";
 import { js_parent_replace } from "./js_parent_replace.mjs";
 import { function_transform_args_split_lambda } from "./function_transform_args_split_lambda.mjs";
 import { string_slashes_escape } from "./string_slashes_escape.mjs";
-import { js_code_return } from "./js_code_return.mjs";
 import { string_delimit } from "./string_delimit.mjs";
 import { file_write } from "./file_write.mjs";
 import { function_new_generic } from "./function_new_generic.mjs";
@@ -32,7 +32,9 @@ export async function functions_string_prefix_to_constant(
   }
   let fp = function_name_to_path(constant_name);
   if (!(await file_exists(fp))) {
-    let code = js_code_return(string_delimit(string_slashes_escape(prefix)));
+    let code = js_code_statement_return(
+      string_delimit(string_slashes_escape(prefix)),
+    );
     await function_new_generic(
       constant_name,
       "",

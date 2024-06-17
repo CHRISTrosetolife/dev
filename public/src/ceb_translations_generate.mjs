@@ -1,3 +1,4 @@
+import { js_code_statement_return } from "./js_code_statement_return.mjs";
 import { file_write } from "./file_write.mjs";
 import { folder_read } from "./folder_read.mjs";
 import { file_read } from "./file_read.mjs";
@@ -10,7 +11,6 @@ import { object_property_get } from "./object_property_get.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { string_delimit } from "./string_delimit.mjs";
-import { js_code_return } from "./js_code_return.mjs";
 export async function ceb_translations_generate() {
   let folder = `./translations/ceb/learnentry/letters/`;
   let extension = `.txt`;
@@ -39,7 +39,7 @@ export async function ceb_translations_generate() {
     }
   });
   let entries_string = list_join(pairs, ", ");
-  let body_string = js_code_return(`{ ${entries_string} }`);
+  let body_string = js_code_statement_return(`{ ${entries_string} }`);
   await function_new_generic(
     `ceb_translations`,
     ``,

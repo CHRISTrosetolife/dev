@@ -1,4 +1,4 @@
-import { js_code_return } from "./js_code_return.mjs";
+import { js_code_statement_return } from "./js_code_statement_return.mjs";
 import { function_cache_new } from "./function_cache_new.mjs";
 import { restart } from "./restart.mjs";
 import { terminal_data_history_clear } from "./terminal_data_history_clear.mjs";
@@ -75,7 +75,7 @@ export async function function_aliases_generate() {
   await function_new_generic(
     name,
     "",
-    js_code_return(json_to(all)),
+    js_code_statement_return(json_to(all)),
     false,
     [],
     false,
