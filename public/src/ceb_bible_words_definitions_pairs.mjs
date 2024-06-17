@@ -16,7 +16,7 @@ export async function ceb_bible_words_definitions_pairs() {
         la({
           ceb: {
             word: object_property_get(w, "word"),
-            score: {},
+            score: object_property_get(w, "score"),
           },
           eng: d,
         }),
