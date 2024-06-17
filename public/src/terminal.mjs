@@ -1,5 +1,5 @@
+import { file_json_transform_exists } from "./file_json_transform_exists.mjs";
 import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
-import { file_json_transform } from "./file_json_transform.mjs";
 import { function_run_terminal } from "./function_run_terminal.mjs";
 import { error } from "./error.mjs";
 import { list_first_remaining } from "./list_first_remaining.mjs";
@@ -228,7 +228,7 @@ export async function terminal() {
   }
   let history = [];
   async function history_add(item) {
-    await file_json_transform(
+    await file_json_transform_exists(
       (h) => h,
       folder_gitignore_path(string_combine(terminal.name, "_history.json")),
       [],
