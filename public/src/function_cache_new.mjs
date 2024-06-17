@@ -1,4 +1,3 @@
-import { function_data } from "./function_data.mjs";
 import { js_code_statement_return } from "./js_code_statement_return.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 import { js_code_await } from "./js_code_await.mjs";
@@ -25,7 +24,6 @@ export async function function_cache_new(function_name) {
     true,
     file_write,
   );
-  await function_data(cache_name);
   return {
     cache_name,
   };
