@@ -36,8 +36,8 @@ export async function ceb_bible_words_definitions_pairs_compute() {
   each(eng_scores, (s) =>
     object_property_set(
       eng_lookup,
-      s[key_property_name],
-      s[value_property_name],
+      object_property_get(s, key_property_name),
+      object_property_get(s, value_property_name),
     ),
   );
   each_index(pairs, (pair, i) => {
