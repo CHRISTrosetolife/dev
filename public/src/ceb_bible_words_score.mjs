@@ -9,6 +9,7 @@ import { object_property_set } from "./object_property_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { list_concat } from "./list_concat.mjs";
+import { object_merge } from "./object_merge.mjs";
 export async function ceb_bible_words_score() {
   let lookup = {};
   let words_ceb = await ceb_bible_words_count_cache();
@@ -29,6 +30,9 @@ export async function ceb_bible_words_score() {
       let word_count = object_property_get(lookup, choice);
       let choice_count = object_property_get(word_count, "count");
       count += choice_count;
+    });
+    object_merge(w, {
+      count,
     });
   });
   return words_ceb;
