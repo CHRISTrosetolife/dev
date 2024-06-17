@@ -18,4 +18,4 @@ export async function ceb_bible_words_top(count) {
   );
   await file_overwrite(file_path, list_join_newline(m));
 }
-file_open;
+await file_open(file_path);
