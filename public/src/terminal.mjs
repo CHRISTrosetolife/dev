@@ -1,3 +1,4 @@
+import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
 import { file_json_transform } from "./file_json_transform.mjs";
 import { function_run_terminal } from "./function_run_terminal.mjs";
 import { error } from "./error.mjs";
@@ -226,8 +227,11 @@ export async function terminal() {
     return on_returns;
   }
   let history = [];
-  function history_add(item) {
-    file_json_transform;
+  async function history_add(item) {
+    await file_json_transform(
+      (h) => h,
+      folder_gitignore_path(string_combine(terminal.name, "_history.json")),
+    );
     list_add(history, item);
   }
   function history_get() {
