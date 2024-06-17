@@ -31,7 +31,8 @@ export async function ceb_bible_words_definitions_pairs() {
     let index = string_match_best_find_index(eng.word, eng_words);
     eng.score = list_get(eng_scores, index).score;
     assert(number_is(eng.score));
-    pair.score = list_sum(list_map_property([eng, ceb], "score"));
+    let newLocal = list_map_property([eng, ceb], "score");
+    pair.score = list_sum(newLocal);
   });
   return {
     pairs,
