@@ -241,7 +241,7 @@ export async function terminal() {
       if (!number_is(d.history_index)) {
         return;
       }
-      return --d.history_index;
+      let i = --d.history_index;
     });
   }
   async function history_pop() {
