@@ -1,3 +1,4 @@
+import { string_delimit } from "./string_delimit.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 import { js_code_statement_declare_assign } from "./js_code_statement_declare_assign.mjs";
 import { html_attribute_set } from "./html_attribute_set.mjs";
@@ -27,7 +28,8 @@ export function html_code_generate(tag_name, input) {
   each_object(attribs, (key, value) => {
     let s = js_code_statement_call_args(html_attribute_set.name, [
       variable_name,
-      tag_name,
+      string_delimit(key),
+      string_delimit(value),
     ]);
     list_add(statements, s);
   });
