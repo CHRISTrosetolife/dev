@@ -23,7 +23,8 @@ export async function ceb_bible_words_definitions_pairs(skip, limit) {
   let ds = list_map(l, (item) => {
     if (object_property_exists(found)) {
     }
-    let w = lookup[list_first(item)];
+    let newLocal = list_first(item);
+    let w = lookup[newLocal];
     return object_properties_new(w, ["word", "definitions"]);
   });
   return {
