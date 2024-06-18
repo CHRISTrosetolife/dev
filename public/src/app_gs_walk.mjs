@@ -14,8 +14,8 @@ import { abs } from "./abs.mjs";
 import { game_character_index } from "./game_character_index.mjs";
 import { game_img_character } from "./game_img_character.mjs";
 import { html_img_src_wait } from "./html_img_src_wait.mjs";
-export async function app_gs_walk(player_c, player, tile) {
-  let direction = app_gs_direction(player, tile);
+export async function app_gs_walk(player_c, player, destination) {
+  let direction = app_gs_direction(player, destination);
   if (direction === null) {
     return;
   }
@@ -23,7 +23,8 @@ export async function app_gs_walk(player_c, player, tile) {
     player_c,
     game_img_character(player.character, game_character_index(direction)),
   );
-  let steps_count = abs(player.y - tile.y) + abs(player.x - tile.x);
+  let steps_count =
+    abs(player.y - destination.y) + abs(player.x - destination.x);
   await each_range_async(steps_count, async () => {
     let animate_count = 2;
     await each_range_async(animate_count, async (ac) => {
