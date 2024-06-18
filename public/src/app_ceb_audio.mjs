@@ -1,8 +1,8 @@
+import { audio_path } from "./audio_path.mjs";
 import { audio_voices_ceb } from "./audio_voices_ceb.mjs";
 import { list_size } from "./list_size.mjs";
 import { html_audio } from "./html_audio.mjs";
 import { storage_url } from "./storage_url.mjs";
-import { ceb_audio_path } from "./ceb_audio_path.mjs";
 import { global_get } from "./global_get.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { greater_than_equal } from "./greater_than_equal.mjs";
@@ -27,6 +27,6 @@ export async function app_ceb_audio(cebuano) {
     count = mod(count, length);
   }
   object_property_set(counts, cebuano, count);
-  let file_path = ceb_audio_path(count, cebuano);
+  let file_path = audio_path("ceb", count, cebuano);
   return await html_audio(storage_url(file_path));
 }
