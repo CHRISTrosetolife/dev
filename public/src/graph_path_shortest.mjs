@@ -1,5 +1,3 @@
-import { performance_log } from "./performance_log.mjs";
-import { performance_start } from "./performance_start.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
 import { list_reverse } from "./list_reverse.mjs";
 import { list_map } from "./list_map.mjs";
@@ -54,9 +52,7 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
       list_reverse(p);
       return p;
     }
-    let p = performance_start();
     let neighbors = graph_neighbors(edges, current);
-    performance_log(p);
     let neighbors_new = list_filter(
       neighbors,
       (n) =>
