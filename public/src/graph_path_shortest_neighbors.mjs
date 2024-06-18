@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
@@ -46,6 +47,7 @@ export function graph_path_shortest_neighbors(
     }
     let neighbors = neighbors_get(current);
     list_shuffle(neighbors);
+    each(neighbors, (n) => {});
     let neighbors_new = list_filter(
       neighbors,
       (n) =>
