@@ -8,7 +8,12 @@ export function performance_log() {
   let categories = performance_start_categories();
   each_object(categories, (category, ps) => {
     ps.differences = [];
-    each(ps, (p) => {});
+    each(ps, (p) => {
+      each_pairs(p.times, (a, b) => {
+        let d = b - a;
+        la(d);
+      });
+    });
   });
   let r = list_adder((la) => {
     each_pairs(p.times, (a, b) => {
