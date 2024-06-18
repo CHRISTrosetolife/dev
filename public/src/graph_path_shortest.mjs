@@ -1,3 +1,4 @@
+import { list_index } from "./list_index.mjs";
 import { graph_path_shortest_neighbors } from "./graph_path_shortest_neighbors.mjs";
 import { graph_neighbors } from "./graph_neighbors.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
@@ -18,5 +19,10 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
     ),
   );
   let neighbors_get = (v) => graph_neighbors(edges, v);
-  return graph_path_shortest_neighbors(vertices, neighbors_get, from, to);
+  return graph_path_shortest_neighbors(
+    (v) => list_index(vertices, v),
+    neighbors_get,
+    from,
+    to,
+  );
 }
