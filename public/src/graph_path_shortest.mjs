@@ -14,7 +14,7 @@ import { object_property_set } from "./object_property_set.mjs";
 import { list_index } from "./list_index.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_filter } from "./list_filter.mjs";
-export function graph_path_shortest(vertices, edge_lambda, from, to) {
+export function graph_path_shortest(vertices, neighbors_get, from, to) {
   assert_arguments_length(arguments, 4);
   let edges = list_adder((la) =>
     each_index(vertices, (a, ai) =>
