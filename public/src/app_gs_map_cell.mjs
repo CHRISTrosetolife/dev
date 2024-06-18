@@ -50,9 +50,7 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
     }
     let from = app_gs_at_single(map.tiles, map.player);
     let path = graph_path_shortest_neighbors(
-      (v) => {
-        return app_gs_map_tile_id(v);
-      },
+      app_gs_map_tile_id,
       (v) => {
         return app_gs_map_neighbors_get(map, v);
       },
