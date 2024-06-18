@@ -48,12 +48,10 @@ export async function sandbox() {
   );
   let definitions = {};
   each(words, (w) => {
-    object_property_set(
-      definitions,
-      w,
-      list_single(list_filter(definitions_all, (d) => d.word === w))
-        .definitions,
-    );
+    let ds = list_single(
+      list_filter(definitions_all, (d) => d.word === w),
+    ).definitions;
+    object_property_set(definitions, w, ds);
   });
   let inverted = {};
   each_object(definitions, (word, word_definitions) =>
