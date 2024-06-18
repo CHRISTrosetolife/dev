@@ -15,14 +15,14 @@ export async function app_ceb_audio(cebuano) {
   let { voices } = audio_language("ceb");
   let g = global_get();
   let counts = object_property_initialize(g, app_ceb_audio.name, {});
-  let voices_last = list_index_last(voices);
+  let voices_index_last = list_index_last(voices);
   let count = object_property_initialize(
     counts,
     cebuano,
-    integer_random(0, voices_last),
+    integer_random(0, voices_index_last),
   );
   count = add_1(count);
-  if (greater_than_equal(count, voices_last)) {
+  if (greater_than_equal(count, voices_index_last)) {
     let length = list_size(voices);
     count = mod(count, length);
   }
