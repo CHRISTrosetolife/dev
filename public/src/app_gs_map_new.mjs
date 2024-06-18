@@ -69,7 +69,7 @@ export function app_gs_map_new() {
   let spawn = {};
   spawn.y = floor(divide(subtract_1(map.y_size), 2));
   spawn.x = floor(divide(subtract_1(map.x_size), 2));
-  let spawn_overlay = list_filter(inside, (i) =>
+  let spawn_overlap = list_filter(inside, (i) =>
     equal_json(object_properties_new(i, ["x", "y"]), spawn),
   );
   each(outside, (tile) => overlay_add(tile, list_random_item(overlays_wall)));
