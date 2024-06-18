@@ -4,7 +4,6 @@ import { list_map } from "./list_map.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
 import { list_includes_not } from "./list_includes_not.mjs";
 import { object_property_exists_not } from "./object_property_exists_not.mjs";
-import { list_filter } from "./list_filter.mjs";
 import { list_reverse } from "./list_reverse.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_adder } from "./list_adder.mjs";
@@ -47,13 +46,13 @@ export function graph_path_shortest_neighbors(
     }
     let neighbors = neighbors_get(current);
     list_shuffle(neighbors);
-    each(neighbors, (n) => {});
-    let neighbors_new = list_filter(
-      neighbors,
-      (n) =>
+    each(neighbors, (n) => {
+      if (
         object_property_exists_not(visited, list_index(vertices, n)) &&
-        list_includes_not(remaining, n),
-    );
+        list_includes_not(remaining, n)
+      ) {
+      }
+    });
     let mapped = list_map(neighbors_new, (n) => ({
       current: n,
       previous: current,
