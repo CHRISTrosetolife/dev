@@ -1,3 +1,4 @@
+import { performance_next } from "./performance_next.mjs";
 import { performance_start } from "./performance_start.mjs";
 import { list_add } from "./list_add.mjs";
 import { each } from "./each.mjs";
@@ -39,6 +40,7 @@ export function graph_path_shortest_neighbors(id_get, neighbors_get, from, to) {
       list_reverse(result);
       break;
     }
+    performance_next(p);
     let neighbors = neighbors_get(current);
     list_shuffle(neighbors);
     each(neighbors, (n) => {
