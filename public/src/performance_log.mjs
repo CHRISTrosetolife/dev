@@ -7,7 +7,7 @@ import { object_property_initialize } from "./object_property_initialize.mjs";
 export function performance_log() {
   let categories = performance_start_categories();
   each_object(categories, (category, ps) => {
-    ps.differences = [];
+    let totals = [];
     each(ps, (p) => {
       each_pairs_index(p, (a, b, i) => {
         let d = b - a;
