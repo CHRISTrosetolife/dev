@@ -14,13 +14,13 @@ import { abs } from "./abs.mjs";
 import { game_character_index } from "./game_character_index.mjs";
 import { game_img_character } from "./game_img_character.mjs";
 import { html_img_src_wait } from "./html_img_src_wait.mjs";
-export async function app_gs_walk(player_overlay, player, tile) {
+export async function app_gs_walk(player_c, player, tile) {
   let direction = app_gs_direction(player, tile);
   if (direction === null) {
     return;
   }
   await html_img_src_wait(
-    player_overlay,
+    player_c,
     game_img_character(player.character, game_character_index(direction)),
   );
   let steps_count = abs(player.y - tile.y) + abs(player.x - tile.x);
@@ -45,7 +45,7 @@ export async function app_gs_walk(player_overlay, player, tile) {
         player.walk_offset = 0;
       }
       await html_img_src_wait(
-        player_overlay,
+        player_c,
         game_img_character(
           player.character,
           add(game_character_index(direction), player.walk_offset),
@@ -53,7 +53,7 @@ export async function app_gs_walk(player_overlay, player, tile) {
       );
       let delta = game_direction_to_delta(direction);
       game_img_position(
-        player_overlay,
+        player_c,
         player.y + (delta.y / animate_count) * step_count,
         player.x + (delta.x / animate_count) * step_count,
       );
