@@ -19,13 +19,13 @@ export function graph_path_shortest_neighbors(id_get, neighbors_get, from, to) {
       previous: null,
     },
   ];
+  object_property_set(visited, id_get(current), true);
   let result = null;
   let index = 0;
   while (index < list_size(remaining)) {
     let r = list_get(remaining, index);
     index++;
     let { current } = r;
-    object_property_set(visited, id_get(current), r);
     if (current === to) {
       result = list_adder((la) => {
         let c = current;
