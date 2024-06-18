@@ -11,7 +11,7 @@ import { object_property_set } from "./object_property_set.mjs";
 import { add_1 } from "./add_1.mjs";
 import { mod } from "./mod.mjs";
 import { integer_random } from "./integer_random.mjs";
-export async function app_ceb_audio(cebuano) {
+export async function app_ceb_audio(text) {
   let language = "ceb";
   let { voices } = audio_language(language);
   let g = global_get();
@@ -19,7 +19,7 @@ export async function app_ceb_audio(cebuano) {
   let voices_index_last = list_index_last(voices);
   let count = object_property_initialize(
     counts,
-    cebuano,
+    text,
     integer_random(0, voices_index_last),
   );
   count = add_1(count);
@@ -27,7 +27,7 @@ export async function app_ceb_audio(cebuano) {
     let length = list_size(voices);
     count = mod(count, length);
   }
-  object_property_set(counts, cebuano, count);
-  let file_path = audio_path(language, count, cebuano);
+  object_property_set(counts, text, count);
+  let file_path = audio_path(language, count, text);
   return await html_audio(storage_url(file_path));
 }
