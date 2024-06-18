@@ -10,7 +10,6 @@ import { storage_upload_object } from "./storage_upload_object.mjs";
 import { ceb_bible_words_definitions_atoms } from "./ceb_bible_words_definitions_atoms.mjs";
 import { list_take } from "./list_take.mjs";
 import { list_first } from "./list_first.mjs";
-import { list_map } from "./list_map.mjs";
 import { each_async } from "./each_async.mjs";
 import { each } from "./each.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -30,12 +29,10 @@ export async function sandbox() {
     await ceb_bible_words_definitions_atoms(skip, limit);
   let group = list_take(atoms, group_count);
   await each_async(group, async (atom) => {
-    let mapped = list_map(atom, list_first);
-    await each_async(mapped, async (atom) => {
-      let ceb = list_first(atom);
-      await audio_upload("ceb", ceb);
-      let en = list_second(atom);
-    });
+    let ceb = list_first(atom);
+    await audio_upload("ceb", ceb);
+    let en = list_second(atom);
+    await audio_upload("en", en);
   });
   let words = list_adder_unique((la) =>
     each(atoms, (a) => each(a, (pair) => la(list_first(pair)))),
