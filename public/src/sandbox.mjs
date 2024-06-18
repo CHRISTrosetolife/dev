@@ -77,4 +77,5 @@ export async function sandbox() {
   }
   let existing = await file_read_json(existing_path);
   assert(equal_json, [result_new, existing]);
+  return result_new;
 }
