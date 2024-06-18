@@ -53,7 +53,6 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
       });
       list_reverse(result);
       break;
-      result = null;
     }
     let neighbors = neighbors_get(current);
     let neighbors_new = list_filter(
