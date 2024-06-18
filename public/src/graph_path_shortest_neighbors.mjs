@@ -28,6 +28,7 @@ export function graph_path_shortest_neighbors(
   let index = 0;
   while (index < list_size(remaining)) {
     let r = list_get(index);
+    index++;
     let { current } = r;
     object_property_set(visited, list_index(vertices, current), r);
     if (current === to) {
