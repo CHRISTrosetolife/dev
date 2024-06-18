@@ -22,7 +22,6 @@ export function graph_path_shortest_neighbors(id_get, neighbors_get, from, to) {
   let result = null;
   let index = 0;
   while (index < list_size(remaining)) {
-    let p = performance_start(graph_path_shortest_neighbors.name);
     let r = list_get(remaining, index);
     index++;
     let { current } = r;
@@ -40,14 +39,14 @@ export function graph_path_shortest_neighbors(id_get, neighbors_get, from, to) {
       list_reverse(result);
       break;
     }
-    performance_next(p);
     let neighbors = neighbors_get(current);
-    performance_next(p);
     list_shuffle(neighbors);
-    performance_next(p);
     each(neighbors, (n) => {
+      let p = performance_start(graph_path_shortest_neighbors.name);
       let en = object_property_exists_not(visited, id_get(n));
+      performance_next(p);
       let lin = list_includes_not(remaining, n);
+      performance_next(p);
       if (en && lin) {
         let m = {
           current: n,
@@ -55,8 +54,8 @@ export function graph_path_shortest_neighbors(id_get, neighbors_get, from, to) {
         };
         list_add(remaining, m);
       }
+      performance_next(p);
     });
-    performance_next(p);
   }
   return result;
 }
