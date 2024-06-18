@@ -6,7 +6,6 @@ import { subtract_1 } from "./subtract_1.mjs";
 import { each } from "./each.mjs";
 import { ceb_atom_count } from "./ceb_atom_count.mjs";
 import { ceb_bible_words_definitions_pairs } from "./ceb_bible_words_definitions_pairs.mjs";
-import { log } from "./log.mjs";
 import { equal } from "./equal.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_remove } from "./list_remove.mjs";
@@ -66,18 +65,6 @@ export async function ceb_bible_words_definitions_atoms(skip, limit) {
       });
       if (equal(list_size(atom_result), atom_count)) {
         la(atom_result);
-      } else {
-        if (0) {
-          log({
-            atom_result,
-          });
-        }
-      }
-      if (0) {
-        log({
-          atom_result,
-          previous,
-        });
       }
       list_add_beginning(previous, atom_result);
     }
