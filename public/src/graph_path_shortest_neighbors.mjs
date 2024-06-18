@@ -12,13 +12,14 @@ import { list_size } from "./list_size.mjs";
 import { list_get } from "./list_get.mjs";
 export function graph_path_shortest_neighbors(id_get, neighbors_get, from, to) {
   let visited = {};
+  let id = id_get(from);
   let remaining = [
     {
+      id,
       current: from,
       previous: null,
     },
   ];
-  let id = id_get(from);
   object_property_set(visited, id, true);
   let result = null;
   let index = 0;
