@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { list_second } from "./list_second.mjs";
 import { audio_upload } from "./audio_upload.mjs";
 import { file_overwrite_json } from "./file_overwrite_json.mjs";
@@ -33,11 +32,6 @@ export async function sandbox() {
     await each_async(atom, async (a) => {
       let ceb = list_first(a);
       let en = list_second(a);
-      log({
-        ceb,
-        en,
-      });
-      return;
       await audio_upload("ceb", ceb);
       await audio_upload("en", en);
     });
