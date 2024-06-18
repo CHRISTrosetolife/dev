@@ -46,6 +46,7 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
   game_img_style(clicker, tile.y, tile.x, list_index(z_indexes, "clicker"));
   html_on_click(clicker, async () => {
     let p = {};
+    p.times = [];
     let w = app_gs_overlays_any_wall(tile);
     if (w) {
       return;
