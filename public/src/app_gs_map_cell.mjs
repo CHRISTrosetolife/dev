@@ -1,4 +1,4 @@
-import { list_add } from "./list_add.mjs";
+import { app_get_map_neighbors_get } from "./app_get_map_neighbors_get.mjs";
 import { graph_path_shortest_neighbors } from "./graph_path_shortest_neighbors.mjs";
 import { each } from "./each.mjs";
 import { list_adder } from "./list_adder.mjs";
@@ -19,7 +19,6 @@ import { app_gs_z_indexes } from "./app_gs_z_indexes.mjs";
 import { list_skip } from "./list_skip.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { list_filter } from "./list_filter.mjs";
 export function app_gs_map_cell(map, map_c, player_overlay, tile) {
   let z_indexes = app_gs_z_indexes();
   let clicker = html_div(map_c);
@@ -56,24 +55,7 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
         return string_combine_multiple([y, "_", x]);
       },
       (v) => {
-        let { x, y } = v;
-        let neighbors = [];
-        if (y >= 1) {
-          list_add(neighbors, map.tiles[y - 1][x]);
-        }
-        if (x >= 1) {
-          list_add(neighbors, map.tiles[y][x - 1]);
-        }
-        let y1 = y + 1;
-        if (y1 < map.y_size) {
-          list_add(neighbors, map.tiles[y1][x]);
-        }
-        let x1 = x + 1;
-        if (x1 < map.x_size) {
-          list_add(neighbors, map.tiles[y][x1]);
-        }
-        neighbors = list_filter(neighbors, (n) => !app_gs_overlays_any_wall(n));
-        return neighbors;
+        return app_get_map_neighbors_get(map, v);
       },
       from,
       tile,
