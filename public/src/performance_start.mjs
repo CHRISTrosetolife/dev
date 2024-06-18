@@ -5,7 +5,7 @@ import { performance_next } from "./performance_next.mjs";
 export function performance_start(category) {
   let categories = performance_start_categories();
   let ps = object_property_initialize(categories, category, []);
-  let p = {};
+  let p = [];
   list_add(ps, p);
   p.times = [];
   performance_next(p);
