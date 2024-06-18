@@ -74,6 +74,7 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
     list_adder((la) => {
       each_pairs(p.times, (a, b) => {
         let d = b - a;
+        la(d);
       });
     });
   });
