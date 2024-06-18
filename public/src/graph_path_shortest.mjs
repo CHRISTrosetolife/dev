@@ -1,3 +1,4 @@
+import { performance_log } from "./performance_log.mjs";
 import { performance_start } from "./performance_start.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
 import { list_reverse } from "./list_reverse.mjs";
@@ -72,5 +73,5 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
     }));
     list_add_multiple(remaining, mapped);
   }
-  performance_next(p);
+  performance_log(p);
 }
