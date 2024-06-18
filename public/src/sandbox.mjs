@@ -29,9 +29,6 @@ export async function sandbox() {
   let { atoms, definitions: definitions_all } =
     await ceb_bible_words_definitions_atoms(skip, limit);
   let group = list_take(atoms, group_count);
-  if (0) {
-    group = list_take(group, 4);
-  }
   await each_async(group, async (atom) => {
     if (0) {
       log({
