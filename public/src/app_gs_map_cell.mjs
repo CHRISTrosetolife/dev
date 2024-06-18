@@ -45,13 +45,12 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
   );
   game_img_style(clicker, tile.y, tile.x, list_index(z_indexes, "clicker"));
   html_on_click(clicker, async () => {
-    let p = 0;
     let w = app_gs_overlays_any_wall(tile);
     if (w) {
       return;
     }
     let from = app_gs_at_single(map.tiles, map.player);
-    let p = graph_path_shortest(
+    let path = graph_path_shortest(
       list_concat_multiple(map.tiles),
       (a, b) =>
         app_gs_adjacent(a, b) &&
@@ -59,8 +58,8 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
       from,
       tile,
     );
-    app_gs_map_render(map, map_c, p, player_overlay);
-    await each_async(list_skip(p, 1), async (tile) => {
+    app_gs_map_render(map, map_c, path, player_overlay);
+    await each_async(list_skip(path, 1), async (tile) => {
       await app_gs_walk(map, map_c, player_overlay, map.player, tile);
     });
     html_scroll_center_smooth(player_overlay);
