@@ -7,7 +7,6 @@ export function performance_start(category) {
   let ps = object_property_initialize(categories, category, []);
   let p = [];
   list_add(ps, p);
-  p.times = [];
   performance_next(p);
   return p;
 }
