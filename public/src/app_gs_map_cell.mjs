@@ -54,6 +54,7 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
     }
     performance_next(p);
     let from = app_gs_at_single(map.tiles, map.player);
+    performance_next(p);
     let path = graph_path_shortest_neighbors(
       app_gs_map_tile_id,
       (v) => {
@@ -62,11 +63,15 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
       from,
       tile,
     );
+    performance_next(p);
     app_gs_map_render(map, map_c, path, player_overlay);
+    performance_next(p);
     await each_async(list_skip(path, 1), async (tile) => {
       await app_gs_walk(map, map_c, player_overlay, map.player, tile);
     });
+    performance_next(p);
     html_scroll_center_smooth(player_overlay);
+    performance_next(p);
     performance_log();
   });
   return list_concat([tile_c], overlays);
