@@ -1,5 +1,5 @@
+import { audio_language } from "./audio_language.mjs";
 import { audio_path } from "./audio_path.mjs";
-import { audio_voices_ceb } from "./audio_voices_ceb.mjs";
 import { list_size } from "./list_size.mjs";
 import { html_audio } from "./html_audio.mjs";
 import { storage_url } from "./storage_url.mjs";
@@ -12,7 +12,7 @@ import { add_1 } from "./add_1.mjs";
 import { mod } from "./mod.mjs";
 import { integer_random } from "./integer_random.mjs";
 export async function app_ceb_audio(cebuano) {
-  let voices = audio_voices_ceb();
+  let { voices } = audio_language("ceb");
   let g = global_get();
   let counts = object_property_initialize(g, app_ceb_audio.name, {});
   let voices_last = list_index_last(voices);
