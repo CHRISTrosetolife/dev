@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { object_properties_new } from "./object_properties_new.mjs";
 import { equal_json } from "./equal_json.mjs";
@@ -74,9 +73,6 @@ export function app_gs_map_new() {
   let spawn_overlap = list_filter(inside, (i) =>
     equal_json(object_properties_new(i, list_xy()), spawn),
   );
-  log({
-    spawn_overlap,
-  });
   each(spawn_overlap, (s) => list_remove(inside, s));
   each(outside, (tile) => overlay_add(tile, list_random_item(overlays_wall)));
   list_shuffle(inside);
