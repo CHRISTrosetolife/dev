@@ -11,7 +11,6 @@ import { list_take } from "./list_take.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_map } from "./list_map.mjs";
 import { each_async } from "./each_async.mjs";
-import { log } from "./log.mjs";
 import { each } from "./each.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { list_filter } from "./list_filter.mjs";
@@ -30,11 +29,6 @@ export async function sandbox() {
     await ceb_bible_words_definitions_atoms(skip, limit);
   let group = list_take(atoms, group_count);
   await each_async(group, async (atom) => {
-    if (0) {
-      log({
-        atom,
-      });
-    }
     let mapped = list_map(atom, list_first);
     await each_async(mapped, async (text) => {
       await ceb_audio_upload(text);
