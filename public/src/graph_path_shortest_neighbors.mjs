@@ -25,6 +25,7 @@ export function graph_path_shortest_neighbors(
   ];
   let visited = {};
   let result = null;
+  let index = 0;
   while (list_empty_not_is(remaining)) {
     let r = list_remove_first(remaining);
     let { current } = r;
