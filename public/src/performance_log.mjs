@@ -9,7 +9,7 @@ export function performance_log() {
   each_object(categories, (category, ps) => {
     ps.differences = [];
     each(ps, (p) => {
-      each_pairs(p.times, (a, b) => {
+      each_pairs(p, (a, b) => {
         let d = b - a;
         la(d);
       });
