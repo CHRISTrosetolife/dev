@@ -1,3 +1,5 @@
+import { object_properties_new } from "./object_properties_new.mjs";
+import { equal_json } from "./equal_json.mjs";
 import { spawn } from "./spawn.mjs";
 import { game_tiles_max } from "./game_tiles_max.mjs";
 import { list_xy } from "./list_xy.mjs";
@@ -25,6 +27,7 @@ import { ceiling } from "./ceiling.mjs";
 import { object_merge_properties } from "./object_merge_properties.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
+import { list_filter } from "./list_filter.mjs";
 export function app_gs_map_new() {
   let border_thickness = floor(game_tiles_max() / 2);
   let y_size_inside = 20;
@@ -66,6 +69,9 @@ export function app_gs_map_new() {
   let spawn = {};
   spawn.y = floor(divide(subtract_1(map.y_size), 2));
   spawn.x = floor(divide(subtract_1(map.x_size), 2));
+  list_filter(inside, (i) =>
+    equal_json(object_properties_new(i, ["x", "y"]), spawn),
+  );
   each(outside, (tile) => overlay_add(tile, list_random_item(overlays_wall)));
   list_shuffle(inside);
   each_range(map_overlays_count, (i) => {
