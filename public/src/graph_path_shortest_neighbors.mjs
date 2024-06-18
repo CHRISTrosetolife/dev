@@ -44,6 +44,7 @@ export function graph_path_shortest_neighbors(id_get, neighbors_get, from, to) {
     each(neighbors, (n) => {
       let p = performance_start(graph_path_shortest_neighbors.name);
       let id = id_get(n);
+      performance_next(p);
       let en = object_property_exists_not(visited, id);
       performance_next(p);
       let lin = list_includes_not(remaining, n);
