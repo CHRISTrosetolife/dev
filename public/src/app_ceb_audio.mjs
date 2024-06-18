@@ -28,6 +28,6 @@ export async function app_ceb_audio(text) {
     count = mod(count, length);
   }
   object_property_set(counts, text, count);
-  let file_path = audio_path(language, count, text);
+  let file_path = await audio_path(language, count, text);
   return await html_audio(storage_url(file_path));
 }
