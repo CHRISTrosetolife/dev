@@ -19,6 +19,7 @@ import { app_gs_z_indexes } from "./app_gs_z_indexes.mjs";
 import { list_skip } from "./list_skip.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
+import { list_index_last } from "./list_index_last.mjs";
 export function app_gs_map_cell(map, map_c, player_overlay, tile) {
   let z_indexes = app_gs_z_indexes();
   let clicker = html_div(map_c);
@@ -60,6 +61,13 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
         if (x >= 1) {
           list_add(neighbors, map.tiles[y][x - 1]);
         }
+        if (y < list_index_last(map.y_size)) {
+          list_add(neighbors, map.tiles[y + 1][x]);
+        }
+        if (y < list_index_last(map.x_size)) {
+          list_add(neighbors, map.tiles[y][x + 1]);
+        }
+        return neighbors;
       },
       from,
       tile,
