@@ -1,3 +1,4 @@
+import { performance_next } from "./performance_next.mjs";
 import { each } from "./each.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { app_gs_map_render } from "./app_gs_map_render.mjs";
@@ -64,9 +65,7 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
       from,
       tile,
     );
-    list_add(p.times, {
-      time: new Date(),
-    });
+    performance_next(p);
     app_gs_map_render(map, map_c, path, player_overlay);
     list_add(p.times, {
       time: new Date(),
