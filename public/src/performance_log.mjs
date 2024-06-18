@@ -14,6 +14,9 @@ export function performance_log() {
         object_property_initialize_add(totals, i, d);
       });
     });
-    log();
+    log({
+      category,
+      totals,
+    });
   });
 }
