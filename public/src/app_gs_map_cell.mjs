@@ -1,5 +1,3 @@
-import { performance_next } from "./performance_next.mjs";
-import { performance_log } from "./performance_log.mjs";
 import { app_gs_map_tile_id } from "./app_gs_map_tile_id.mjs";
 import { app_gs_map_neighbors_get } from "./app_gs_map_neighbors_get.mjs";
 import { graph_path_shortest_neighbors } from "./graph_path_shortest_neighbors.mjs";
@@ -21,7 +19,6 @@ import { html_div } from "./html_div.mjs";
 import { app_gs_z_indexes } from "./app_gs_z_indexes.mjs";
 import { list_skip } from "./list_skip.mjs";
 import { list_concat } from "./list_concat.mjs";
-import { performance_start } from "./performance_start.mjs";
 export function app_gs_map_cell(map, map_c, player_overlay, tile) {
   let z_indexes = app_gs_z_indexes();
   let clicker = html_div(map_c);
@@ -47,14 +44,11 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
   );
   game_img_style(clicker, tile.y, tile.x, list_index(z_indexes, "clicker"));
   html_on_click(clicker, async () => {
-    let p = performance_start(app_gs_map_cell.name);
     let w = app_gs_overlays_any_wall(tile);
     if (w) {
       return;
     }
-    performance_next(p);
     let from = app_gs_at_single(map.tiles, map.player);
-    performance_next(p);
     let path = graph_path_shortest_neighbors(
       app_gs_map_tile_id,
       (v) => {
@@ -63,16 +57,11 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
       from,
       tile,
     );
-    performance_next(p);
     app_gs_map_render(map, map_c, path, player_overlay);
-    performance_next(p);
     await each_async(list_skip(path, 1), async (tile) => {
       await app_gs_walk(map, map_c, player_overlay, map.player, tile);
     });
-    performance_next(p);
     html_scroll_center_smooth(player_overlay);
-    performance_next(p);
-    performance_log();
   });
   return list_concat([tile_c], overlays);
 }
