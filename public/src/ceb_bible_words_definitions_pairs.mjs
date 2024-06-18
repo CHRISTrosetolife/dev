@@ -18,6 +18,7 @@ export async function ceb_bible_words_definitions_pairs(skip, limit) {
   );
   let s = list_skip(concise, skip);
   let l = list_take(s, limit);
+  let found = {};
   let ds = list_map(l, (item) => {
     let w = lookup[list_first(item)];
     return object_properties_new(w, ["word", "definitions"]);
