@@ -57,6 +57,9 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
         if (y >= 1) {
           list_add(neighbors, map.tiles[y - 1][x]);
         }
+        if (x >= 1) {
+          list_add(neighbors, map.tiles[y][x - 1]);
+        }
       },
       from,
       tile,
