@@ -58,12 +58,12 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
       from,
       tile,
     );
-    performance_log();
     app_gs_map_render(map, map_c, path, player_overlay);
     await each_async(list_skip(path, 1), async (tile) => {
       await app_gs_walk(map, map_c, player_overlay, map.player, tile);
     });
     html_scroll_center_smooth(player_overlay);
+    performance_log();
   });
   return list_concat([tile_c], overlays);
 }
