@@ -23,7 +23,15 @@ export async function audio_upload(language, text) {
       output_path,
     );
     if (created) {
-      log(string_combine_multiple(["audio uploading ", language, " ", text]));
+      log(
+        string_combine_multiple([
+          "audio uploading ",
+          language,
+          " ",
+          text,
+          " ...",
+        ]),
+      );
       await storage_upload_file(output_path, file_path);
     }
   });
