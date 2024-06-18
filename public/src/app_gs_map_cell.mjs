@@ -1,6 +1,3 @@
-import { performance_log } from "./performance_log.mjs";
-import { performance_start } from "./performance_start.mjs";
-import { performance_next } from "./performance_next.mjs";
 import { each } from "./each.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { app_gs_map_render } from "./app_gs_map_render.mjs";
@@ -48,14 +45,11 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
   );
   game_img_style(clicker, tile.y, tile.x, list_index(z_indexes, "clicker"));
   html_on_click(clicker, async () => {
-    let p = performance_start();
     let w = app_gs_overlays_any_wall(tile);
     if (w) {
       return;
     }
-    performance_next(p);
     let from = app_gs_at_single(map.tiles, map.player);
-    performance_next(p);
     let path = graph_path_shortest(
       list_concat_multiple(map.tiles),
       (a, b) =>
@@ -64,15 +58,11 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
       from,
       tile,
     );
-    performance_next(p);
     app_gs_map_render(map, map_c, path, player_overlay);
-    performance_next(p);
     await each_async(list_skip(path, 1), async (tile) => {
       await app_gs_walk(map, map_c, player_overlay, map.player, tile);
     });
-    performance_next(p);
     html_scroll_center_smooth(player_overlay);
-    performance_log(p);
   });
   return list_concat([tile_c], overlays);
 }
