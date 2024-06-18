@@ -1,3 +1,4 @@
+import { performance_next } from "./performance_next.mjs";
 import { performance_log } from "./performance_log.mjs";
 import { app_gs_map_tile_id } from "./app_gs_map_tile_id.mjs";
 import { app_gs_map_neighbors_get } from "./app_gs_map_neighbors_get.mjs";
@@ -51,6 +52,7 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
     if (w) {
       return;
     }
+    performance_next(p);
     let from = app_gs_at_single(map.tiles, map.player);
     let path = graph_path_shortest_neighbors(
       app_gs_map_tile_id,
