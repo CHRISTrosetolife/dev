@@ -1,3 +1,4 @@
+import { each_pairs_index } from "./each_pairs_index.mjs";
 import { each } from "./each.mjs";
 import { performance_start_categories } from "./performance_start_categories.mjs";
 import { log } from "./log.mjs";
@@ -9,7 +10,7 @@ export function performance_log() {
   each_object(categories, (category, ps) => {
     ps.differences = [];
     each(ps, (p) => {
-      each_pairs(p, (a, b) => {
+      each_pairs_index(p, (a, b) => {
         let d = b - a;
         la(d);
       });
