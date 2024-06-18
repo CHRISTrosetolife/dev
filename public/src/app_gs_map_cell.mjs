@@ -18,7 +18,6 @@ import { html_div } from "./html_div.mjs";
 import { app_gs_z_indexes } from "./app_gs_z_indexes.mjs";
 import { list_skip } from "./list_skip.mjs";
 import { list_concat } from "./list_concat.mjs";
-import { list_concat_multiple } from "./list_concat_multiple.mjs";
 export function app_gs_map_cell(map, map_c, player_overlay, tile) {
   let z_indexes = app_gs_z_indexes();
   let clicker = html_div(map_c);
@@ -50,7 +49,9 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
     }
     let from = app_gs_at_single(map.tiles, map.player);
     let path = graph_path_shortest_neighbors(
-      list_concat_multiple(map.tiles),
+      (v) => {
+        let { x, y } = v;
+      },
       (v) => {
         let { x, y } = v;
         let neighbors = [];
