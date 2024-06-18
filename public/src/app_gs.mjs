@@ -1,5 +1,4 @@
 import { html_hostname } from "./html_hostname.mjs";
-import { log } from "./log.mjs";
 import { html_scale_none } from "./html_scale_none.mjs";
 import { noop } from "./noop.mjs";
 import { html_scroll_center_smooth } from "./html_scroll_center_smooth.mjs";
@@ -20,7 +19,6 @@ export async function app_gs() {
       overflow: "hidden",
     });
   }
-  console.log();
   let map = app_gs_map_new();
   let map_c = app_gs_map_html(root, map);
   let player_overlay = app_gs_overlay_player(map_c, map);
