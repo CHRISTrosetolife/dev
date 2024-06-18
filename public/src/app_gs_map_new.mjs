@@ -1,3 +1,4 @@
+import { spawn } from "./spawn.mjs";
 import { game_tiles_max } from "./game_tiles_max.mjs";
 import { list_xy } from "./list_xy.mjs";
 import { each } from "./each.mjs";
@@ -69,9 +70,10 @@ export function app_gs_map_new() {
     let id = list_random_item(overlays);
     overlay_add(tile, id);
   });
+  let spawn = {};
+  spawn.y = floor(divide(subtract_1(map.y_size), 2));
+  spawn.x = floor(divide(subtract_1(map.x_size), 2));
   map.player = {};
-  map.player.y = floor(divide(subtract_1(map.y_size), 2));
-  map.player.x = floor(divide(subtract_1(map.x_size), 2));
   map.player.walk_offset = 0;
   map.player.walk_previous = 1;
   map.player.character = list_random_item(game_img_list_male());
