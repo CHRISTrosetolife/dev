@@ -17,9 +17,6 @@ export function app_gs_map_render(
   coordinates,
   player_overlay,
 ) {
-  log({
-    coordinates,
-  });
   let w = window.innerWidth;
   let h = window.innerHeight;
   let tile_size_px = game_tile_size_px();
