@@ -20,7 +20,7 @@ export function graph_path_shortest_neighbors(id_get, neighbors_get, from, to) {
       previous: null,
     },
   ];
-  object_property_set(visited, id, true);
+  object_property_set(visited, id, from);
   let result = null;
   let index = 0;
   while (index < list_size(remaining)) {
@@ -54,7 +54,7 @@ export function graph_path_shortest_neighbors(id_get, neighbors_get, from, to) {
           previous: r,
         };
         list_add(remaining, m);
-        object_property_set(visited, id, true);
+        object_property_set(visited, id, n);
       }
       performance_next(p);
     });
