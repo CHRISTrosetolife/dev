@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { html_scale_none } from "./html_scale_none.mjs";
 import { noop } from "./noop.mjs";
 import { html_scroll_center_smooth } from "./html_scroll_center_smooth.mjs";
@@ -9,6 +8,7 @@ import { app_gs_map_html } from "./app_gs_map_html.mjs";
 import { app_gs_overlay_player } from "./app_gs_overlay_player.mjs";
 import { app_gs_map_new } from "./app_gs_map_new.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
+import { sleep } from "./sleep.mjs";
 export async function app_gs() {
   let root = app_gs_style_default_initialize();
   html_button_width_full_text_click(root, "menu", noop);
@@ -25,8 +25,6 @@ export async function app_gs() {
   let player_overlay = app_gs_overlay_player(map_c, map);
   map.html = [];
   app_gs_map_render(map, map_c, [map.player], player_overlay);
-  document.addEventListener("DOMContentLoaded", function () {
-    log("here");
-    html_scroll_center_smooth(player_overlay);
-  });
+  await sleep(0);
+  html_scroll_center_smooth(player_overlay);
 }
