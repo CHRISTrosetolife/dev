@@ -7,6 +7,7 @@ import { gcloud_tts } from "./gcloud_tts.mjs";
 import { log } from "./log.mjs";
 import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
 import { each_index_async } from "./each_index_async.mjs";
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export async function audio_upload(language, text) {
   assert(string_is, [text]);
   let { language_code, voices } = await audio_language(language);
@@ -22,7 +23,7 @@ export async function audio_upload(language, text) {
       output_path,
     );
     if (created) {
-      log("audio uploading...");
+      log(string_combine_multiple(["audio uploading ", language, " ", text]));
       await storage_upload_file(output_path, file_path);
     }
   });
