@@ -21,7 +21,7 @@ export function graph_path_shortest_neighbors(id_get, neighbors_get, from, to) {
   let result = null;
   let index = 0;
   while (index < list_size(remaining)) {
-    performance_start();
+    let p = performance_start();
     let r = list_get(remaining, index);
     index++;
     let { current } = r;
