@@ -46,10 +46,9 @@ export function graph_path_shortest_neighbors(
     let neighbors = neighbors_get(current);
     list_shuffle(neighbors);
     each(neighbors, (n) => {
-      if (
-        object_property_exists_not(visited, list_index(vertices, n)) &&
-        list_includes_not(remaining, n)
-      ) {
+      let en = object_property_exists_not(visited, list_index(vertices, n));
+      let lin = list_includes_not(remaining, n);
+      if (en && lin) {
         let m = {
           current: n,
           previous: current,
