@@ -19,7 +19,7 @@ export function graph_path_shortest_neighbors(id_get, neighbors_get, from, to) {
       previous: null,
     },
   ];
-  object_property_set(visited, id_get(current), true);
+  object_property_set(visited, id_get(from), true);
   let result = null;
   let index = 0;
   while (index < list_size(remaining)) {
