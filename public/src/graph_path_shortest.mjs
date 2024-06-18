@@ -15,6 +15,7 @@ import { object_property_set } from "./object_property_set.mjs";
 import { list_index } from "./list_index.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_filter } from "./list_filter.mjs";
+import { performance_next } from "./performance_next.mjs";
 export function graph_path_shortest(vertices, edge_lambda, from, to) {
   assert_arguments_length(arguments, 4);
   let p = performance_start();
@@ -30,13 +31,16 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
       }),
     ),
   );
+  performance_next(p);
   let remaining = [
     {
       current: from,
       previous: null,
     },
   ];
+  performance_next(p);
   let visited = {};
+  performance_next(p);
   while (list_empty_not_is(remaining)) {
     let r = list_remove_first(remaining);
     let { current } = r;
@@ -68,4 +72,5 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
     }));
     list_add_multiple(remaining, mapped);
   }
+  performance_next(p);
 }
