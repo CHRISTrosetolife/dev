@@ -1,3 +1,4 @@
+import { performance_start } from "./performance_start.mjs";
 import { performance_next } from "./performance_next.mjs";
 import { each } from "./each.mjs";
 import { list_adder } from "./list_adder.mjs";
@@ -46,9 +47,7 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
   );
   game_img_style(clicker, tile.y, tile.x, list_index(z_indexes, "clicker"));
   html_on_click(clicker, async () => {
-    let p = {};
-    p.times = [];
-    performance_next(p);
+    let p = performance_start();
     let w = app_gs_overlays_any_wall(tile);
     if (w) {
       return;
