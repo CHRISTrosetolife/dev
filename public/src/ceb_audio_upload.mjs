@@ -22,7 +22,7 @@ export async function ceb_audio_upload(text) {
     );
     if (created) {
       await storage_upload_file(output_path, file_path);
-      log("uploaded");
+      log("audio uploaded");
     }
   });
 }
