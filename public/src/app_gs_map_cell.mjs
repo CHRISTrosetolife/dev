@@ -1,3 +1,4 @@
+import { list_add } from "./list_add.mjs";
 import { graph_path_shortest_neighbors } from "./graph_path_shortest_neighbors.mjs";
 import { each } from "./each.mjs";
 import { list_adder } from "./list_adder.mjs";
@@ -53,7 +54,9 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
       (v) => {
         let { x, y } = v;
         let neighbors = [];
-        let north = map.tiles[y - 1][x];
+        if (y >= 1) {
+          list_add(neighbors, map.tiles[y - 1][x]);
+        }
       },
       from,
       tile,
