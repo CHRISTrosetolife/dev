@@ -47,7 +47,7 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
     let { current } = r;
     object_property_set(visited, list_index(vertices, current), r);
     if (current === to) {
-      let p = list_adder((la) => {
+      let path = list_adder((la) => {
         let c = current;
         while (c !== null) {
           la(c);
@@ -56,8 +56,9 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
           c = v.previous;
         }
       });
-      list_reverse(p);
-      return p;
+      list_reverse(path);
+      performance_log(p);
+      return path;
     }
     let neighbors = graph_neighbors(edges, current);
     let neighbors_new = list_filter(
@@ -73,5 +74,4 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
     }));
     list_add_multiple(remaining, mapped);
   }
-  performance_log(p);
 }
