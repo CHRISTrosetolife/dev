@@ -1,4 +1,4 @@
-import { app_get_map_neighbors_get } from "./app_get_map_neighbors_get.mjs";
+import { app_gs_map_neighbors_get } from "./app_gs_map_neighbors_get.mjs";
 import { graph_path_shortest_neighbors } from "./graph_path_shortest_neighbors.mjs";
 import { each } from "./each.mjs";
 import { list_adder } from "./list_adder.mjs";
@@ -55,7 +55,7 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
         return string_combine_multiple([y, "_", x]);
       },
       (v) => {
-        return app_get_map_neighbors_get(map, v);
+        return app_gs_map_neighbors_get(map, v);
       },
       from,
       tile,

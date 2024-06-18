@@ -1,7 +1,7 @@
 import { app_gs_overlays_any_wall } from "./app_gs_overlays_any_wall.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { list_add } from "./list_add.mjs";
-export function app_get_map_neighbors_get(map, v) {
+export function app_gs_map_neighbors_get(map, v) {
   let { x, y } = v;
   let neighbors = [];
   if (y >= 1) {
