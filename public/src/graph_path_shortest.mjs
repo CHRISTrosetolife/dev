@@ -36,7 +36,7 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
     },
   ];
   let visited = {};
-  let result;
+  let result = null;
   while (list_empty_not_is(remaining)) {
     let r = list_remove_first(remaining);
     let { current } = r;
