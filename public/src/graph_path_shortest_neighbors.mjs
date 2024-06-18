@@ -32,8 +32,7 @@ export function graph_path_shortest_neighbors(id_get, neighbors_get, from, to) {
         let c = r;
         while (c !== null) {
           la(c);
-          let i = id_get(c);
-          let v = object_property_get(visited, i);
+          let v = object_property_get(visited, c.id);
           c = v.previous;
         }
       });
