@@ -1,3 +1,4 @@
+import { performance_start } from "./performance_start.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
 import { list_reverse } from "./list_reverse.mjs";
 import { list_map } from "./list_map.mjs";
@@ -16,6 +17,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { list_filter } from "./list_filter.mjs";
 export function graph_path_shortest(vertices, edge_lambda, from, to) {
   assert_arguments_length(arguments, 4);
+  let p = performance_start();
   let edges = list_adder((la) =>
     each_index(vertices, (a, ai) =>
       each_index(vertices, (b, bi) => {
