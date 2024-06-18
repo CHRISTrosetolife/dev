@@ -30,7 +30,8 @@ export async function sandbox() {
   let group = list_take(atoms, group_count);
   await each_async(group, async (atom) => {
     let mapped = list_map(atom, list_first);
-    await each_async(mapped, async (text) => {
+    await each_async(mapped, async (atom) => {
+      let f = list_first(atom);
       await audio_upload("ceb", text);
     });
   });
