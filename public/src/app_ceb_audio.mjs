@@ -12,6 +12,7 @@ import { add_1 } from "./add_1.mjs";
 import { mod } from "./mod.mjs";
 import { integer_random } from "./integer_random.mjs";
 export async function app_ceb_audio(cebuano) {
+  let language = "ceb";
   let { voices } = audio_language("ceb");
   let g = global_get();
   let counts = object_property_initialize(g, app_ceb_audio.name, {});
