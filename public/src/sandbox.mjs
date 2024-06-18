@@ -47,14 +47,14 @@ export async function sandbox() {
     each(atoms, (a) => each(a, (pair) => la(list_first(pair)))),
   );
   let definitions = {};
-  each(words, (w) =>
+  each(words, (w) => {
     object_property_set(
       definitions,
       w,
       list_single(list_filter(definitions_all, (d) => d.word === w))
         .definitions,
-    ),
-  );
+    );
+  });
   let inverted = {};
   each_object(definitions, (word, word_definitions) =>
     each(word_definitions, (wd) => {
