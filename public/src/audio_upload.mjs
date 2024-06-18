@@ -28,6 +28,8 @@ export async function audio_upload(language, text) {
           "audio uploading ",
           language,
           " ",
+          voice,
+          " ",
           text,
           " ...",
         ]),
