@@ -1,5 +1,4 @@
-import { log } from "./log.mjs";
-import { each_pairs } from "./each_pairs.mjs";
+import { performance_log } from "./performance_log.mjs";
 import { performance_start } from "./performance_start.mjs";
 import { performance_next } from "./performance_next.mjs";
 import { each } from "./each.mjs";
@@ -71,14 +70,7 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
     });
     performance_next(p);
     html_scroll_center_smooth(player_overlay);
-    performance_next(p);
-    let r = list_adder((la) => {
-      each_pairs(p.times, (a, b) => {
-        let d = b.time - a.time;
-        la(d);
-      });
-    });
-    log(r);
+    performance_log(p);
   });
   return list_concat([tile_c], overlays);
 }
