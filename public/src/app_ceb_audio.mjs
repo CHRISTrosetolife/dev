@@ -13,7 +13,7 @@ import { mod } from "./mod.mjs";
 import { integer_random } from "./integer_random.mjs";
 export async function app_ceb_audio(text) {
   let language = "ceb";
-  let { voices } = audio_language(language);
+  let { voices } = await audio_language(language);
   let g = global_get();
   let counts = object_property_initialize(g, app_ceb_audio.name, {});
   let voices_index_last = list_index_last(voices);
