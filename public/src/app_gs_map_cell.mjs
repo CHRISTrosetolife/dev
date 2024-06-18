@@ -67,19 +67,13 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
     );
     performance_next(p);
     app_gs_map_render(map, map_c, path, player_overlay);
-    list_add(p.times, {
-      time: new Date(),
-    });
+    performance_next(p);
     await each_async(list_skip(path, 1), async (tile) => {
       await app_gs_walk(map, map_c, player_overlay, map.player, tile);
     });
-    list_add(p.times, {
-      time: new Date(),
-    });
+    performance_next(p);
     html_scroll_center_smooth(player_overlay);
-    list_add(p.times, {
-      time: new Date(),
-    });
+    performance_next(p);
   });
   return list_concat([tile_c], overlays);
 }
