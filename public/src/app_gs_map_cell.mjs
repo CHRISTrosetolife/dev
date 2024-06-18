@@ -1,3 +1,4 @@
+import { app_gs_map_tile_id } from "./app_gs_map_tile_id.mjs";
 import { app_gs_map_neighbors_get } from "./app_gs_map_neighbors_get.mjs";
 import { graph_path_shortest_neighbors } from "./graph_path_shortest_neighbors.mjs";
 import { each } from "./each.mjs";
@@ -18,7 +19,6 @@ import { html_div } from "./html_div.mjs";
 import { app_gs_z_indexes } from "./app_gs_z_indexes.mjs";
 import { list_skip } from "./list_skip.mjs";
 import { list_concat } from "./list_concat.mjs";
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export function app_gs_map_cell(map, map_c, player_overlay, tile) {
   let z_indexes = app_gs_z_indexes();
   let clicker = html_div(map_c);
@@ -51,8 +51,7 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
     let from = app_gs_at_single(map.tiles, map.player);
     let path = graph_path_shortest_neighbors(
       (v) => {
-        let { x, y } = v;
-        return string_combine_multiple([y, "_", x]);
+        return app_gs_map_tile_id(v);
       },
       (v) => {
         return app_gs_map_neighbors_get(map, v);
