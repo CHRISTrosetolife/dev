@@ -1,3 +1,5 @@
+import { list_xy } from "./list_xy.mjs";
+import { list_all } from "./list_all.mjs";
 import { app_gs_map_tile_id } from "./app_gs_map_tile_id.mjs";
 import { app_gs_map_neighbors_get } from "./app_gs_map_neighbors_get.mjs";
 import { graph_path_shortest_neighbors } from "./graph_path_shortest_neighbors.mjs";
@@ -19,6 +21,8 @@ import { html_div } from "./html_div.mjs";
 import { app_gs_z_indexes } from "./app_gs_z_indexes.mjs";
 import { list_skip } from "./list_skip.mjs";
 import { list_concat } from "./list_concat.mjs";
+import { object_property_get } from "./object_property_get.mjs";
+import { equal_by } from "./equal_by.mjs";
 export function app_gs_map_cell(map, map_c, player_c, tile) {
   let z_indexes = app_gs_z_indexes();
   let clicker = html_div(map_c);
@@ -57,6 +61,14 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
       from,
       tile,
     );
+    if (
+      list_all(list_xy(), (xy) =>
+        equal_by(map.player, tile, (coordinates) =>
+          object_property_get(coordinates, xy),
+        ),
+      )
+    ) {
+    }
     app_gs_map_render(map, map_c, path, player_c);
     await each_async(list_skip(path, 1), async (tile) => {
       await app_gs_walk(player_c, map.player, tile);
