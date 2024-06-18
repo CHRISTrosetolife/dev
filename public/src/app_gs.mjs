@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { html_scale_none } from "./html_scale_none.mjs";
 import { noop } from "./noop.mjs";
 import { html_scroll_center_smooth } from "./html_scroll_center_smooth.mjs";
@@ -23,6 +24,7 @@ export async function app_gs() {
   map.html = [];
   app_gs_map_render(map, map_c, [map.player], player_overlay);
   document.addEventListener("DOMContentLoaded", function () {
+    log("here");
     html_scroll_center_smooth(player_overlay);
   });
 }
