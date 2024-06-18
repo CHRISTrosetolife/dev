@@ -72,7 +72,7 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
     html_scroll_center_smooth(player_overlay);
     performance_next(p);
     each_pairs(p.times, (a, b) => {
-      let { time } = t;
+      let d = b - a;
     });
   });
   return list_concat([tile_c], overlays);
