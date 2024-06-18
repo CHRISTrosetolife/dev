@@ -45,13 +45,13 @@ export function graph_path_shortest_neighbors(
       break;
     }
     let neighbors = neighbors_get(current);
+    list_shuffle(neighbors);
     let neighbors_new = list_filter(
       neighbors,
       (n) =>
         object_property_exists_not(visited, list_index(vertices, n)) &&
         list_includes_not(remaining, n),
     );
-    list_shuffle(neighbors_new);
     let mapped = list_map(neighbors_new, (n) => ({
       current: n,
       previous: current,
