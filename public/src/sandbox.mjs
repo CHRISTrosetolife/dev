@@ -1,8 +1,8 @@
+import { audio_upload } from "./audio_upload.mjs";
 import { file_overwrite_json } from "./file_overwrite_json.mjs";
 import { equal_json } from "./equal_json.mjs";
 import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
 import { list_adder_unique } from "./list_adder_unique.mjs";
-import { ceb_audio_upload } from "./ceb_audio_upload.mjs";
 import { ceb_group_size } from "./ceb_group_size.mjs";
 import { ceb_group_path } from "./ceb_group_path.mjs";
 import { storage_upload_object } from "./storage_upload_object.mjs";
@@ -31,7 +31,7 @@ export async function sandbox() {
   await each_async(group, async (atom) => {
     let mapped = list_map(atom, list_first);
     await each_async(mapped, async (text) => {
-      await ceb_audio_upload(text);
+      await audio_upload("ceb", text);
     });
   });
   let words = list_adder_unique((la) =>
