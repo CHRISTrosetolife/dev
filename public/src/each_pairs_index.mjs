@@ -8,6 +8,6 @@ export function each_pairs_index(list, lambda) {
     let i_next = add_1(i);
     let current = list_get(list, i);
     let next = list_get(list, i_next);
-    lambda(current, next);
+    lambda(current, next, i);
   }
 }
