@@ -1,5 +1,3 @@
-import { performance_log } from "./performance_log.mjs";
-import { performance_start } from "./performance_start.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
 import { list_reverse } from "./list_reverse.mjs";
 import { list_map } from "./list_map.mjs";
@@ -16,10 +14,8 @@ import { object_property_set } from "./object_property_set.mjs";
 import { list_index } from "./list_index.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_filter } from "./list_filter.mjs";
-import { performance_next } from "./performance_next.mjs";
 export function graph_path_shortest(vertices, edge_lambda, from, to) {
   assert_arguments_length(arguments, 4);
-  let p = performance_start();
   let edges = list_adder((la) =>
     each_index(vertices, (a, ai) =>
       each_index(vertices, (b, bi) => {
@@ -32,22 +28,19 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
       }),
     ),
   );
-  performance_next(p);
   let remaining = [
     {
       current: from,
       previous: null,
     },
   ];
-  performance_next(p);
   let visited = {};
-  performance_next(p);
   while (list_empty_not_is(remaining)) {
     let r = list_remove_first(remaining);
     let { current } = r;
     object_property_set(visited, list_index(vertices, current), r);
     if (current === to) {
-      let path = list_adder((la) => {
+      let p = list_adder((la) => {
         let c = current;
         while (c !== null) {
           la(c);
@@ -56,9 +49,8 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
           c = v.previous;
         }
       });
-      list_reverse(path);
-      performance_log(p);
-      return path;
+      list_reverse(p);
+      return p;
     }
     let neighbors = graph_neighbors(edges, current);
     let neighbors_new = list_filter(
