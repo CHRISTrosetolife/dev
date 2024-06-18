@@ -1,3 +1,4 @@
+import { list_second } from "./list_second.mjs";
 import { audio_upload } from "./audio_upload.mjs";
 import { file_overwrite_json } from "./file_overwrite_json.mjs";
 import { equal_json } from "./equal_json.mjs";
@@ -33,6 +34,7 @@ export async function sandbox() {
     await each_async(mapped, async (atom) => {
       let ceb = list_first(atom);
       await audio_upload("ceb", ceb);
+      let en = list_second(atom);
     });
   });
   let words = list_adder_unique((la) =>
