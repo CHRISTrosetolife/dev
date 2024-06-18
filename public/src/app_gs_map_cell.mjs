@@ -51,7 +51,7 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
     let path = graph_path_shortest_neighbors(
       list_concat_multiple(map.tiles),
       (v) => {
-        let x = v;
+        let { x, y } = v;
       },
       from,
       tile,
