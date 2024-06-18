@@ -9,6 +9,8 @@ import { list_map } from "./list_map.mjs";
 import { list_take } from "./list_take.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_set } from "./object_property_set.mjs";
+import { list_filter } from "./list_filter.mjs";
+import { null_not_is } from "./null_not_is.mjs";
 export async function ceb_bible_words_definitions_pairs(skip, limit) {
   let ceb_scores = await ceb_bible_words_score();
   let lookup = list_to_lookup_property(ceb_scores, "word");
@@ -30,6 +32,7 @@ export async function ceb_bible_words_definitions_pairs(skip, limit) {
     let w = lookup[f];
     return object_properties_new(w, ["word", "definitions"]);
   });
+  ds = list_filter(ds, null_not_is);
   return {
     pairs: l,
     definitions: ds,
