@@ -69,8 +69,8 @@ export function app_gs_map_new() {
     inside_is,
   );
   let spawn = {};
-  spawn.y = floor(divide(subtract_1(map.y_size), 2));
   spawn.x = floor(divide(subtract_1(map.x_size), 2));
+  spawn.y = floor(divide(subtract_1(map.y_size), 2));
   let spawn_overlap = list_filter(inside, (i) =>
     equal_json(object_properties_new(i, ["x", "y"]), spawn),
   );
