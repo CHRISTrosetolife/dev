@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { performance_start_categories } from "./performance_start_categories.mjs";
 import { log } from "./log.mjs";
 import { each_pairs } from "./each_pairs.mjs";
@@ -7,6 +8,7 @@ export function performance_log() {
   let categories = performance_start_categories();
   each_object(categories, (category, ps) => {
     ps.differences = [];
+    each(ps, (p) => {});
   });
   let r = list_adder((la) => {
     each_pairs(p.times, (a, b) => {
