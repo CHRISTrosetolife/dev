@@ -1,4 +1,4 @@
-export function ceb_audio_voices() {
+export function audio_voices_ceb() {
   return [
     {
       code: "Standard-D",
