@@ -52,7 +52,7 @@ export function graph_path_shortest_neighbors(id_get, neighbors_get, from, to) {
           previous: current,
         };
         list_add(remaining, m);
-        object_property_set(visited, id_get(n), true);
+        object_property_set(visited, id, true);
       }
       performance_next(p);
     });
