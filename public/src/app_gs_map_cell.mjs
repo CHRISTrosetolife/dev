@@ -53,7 +53,9 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
     if (w) {
       return;
     }
+    performance_next(p);
     let from = app_gs_at_single(map.tiles, map.player);
+    performance_next(p);
     let path = graph_path_shortest(
       list_concat_multiple(map.tiles),
       (a, b) =>
