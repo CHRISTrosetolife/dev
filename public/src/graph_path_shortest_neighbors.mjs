@@ -29,10 +29,10 @@ export function graph_path_shortest_neighbors(id_get, neighbors_get, from, to) {
     let { current } = r;
     if (current === to) {
       result = list_adder((la) => {
-        let c = current;
+        let c = r;
         while (c !== null) {
           la(c);
-          let i = c.id;
+          let i = id_get(c);
           let v = object_property_get(visited, i);
           c = v.previous;
         }
@@ -52,7 +52,7 @@ export function graph_path_shortest_neighbors(id_get, neighbors_get, from, to) {
         let m = {
           id,
           current: n,
-          previous: current,
+          previous: r,
         };
         list_add(remaining, m);
         object_property_set(visited, id, true);
