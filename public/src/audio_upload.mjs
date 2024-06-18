@@ -29,9 +29,9 @@ export async function audio_upload(language, text) {
           language,
           " ",
           voice,
-          " ",
+          " '",
           text,
-          " ...",
+          "' ...",
         ]),
       );
       await storage_upload_file(output_path, file_path);
