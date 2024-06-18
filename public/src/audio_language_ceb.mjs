@@ -4,7 +4,7 @@ export function audio_language_ceb() {
   let language_code = ceb_audio_language_code();
   let voices = audio_voices_ceb();
   return {
-    language_code,
+    language_code: "fil-PH",
     voices,
   };
 }
