@@ -15,6 +15,6 @@ export function performance_log() {
         la(d);
       });
     });
+    log(r);
   });
-  log(r);
 }
