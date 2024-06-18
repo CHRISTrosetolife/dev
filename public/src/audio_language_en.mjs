@@ -3,19 +3,19 @@ export function audio_language_en() {
     language_code: "fil-PH",
     voices: [
       {
-        code: "Standard-D",
+        code: "Standard-J",
         male: true,
       },
       {
-        code: "Standard-A",
+        code: "Standard-H",
         male: false,
       },
       {
-        code: "Standard-C",
+        code: "Standard-I",
         male: true,
       },
       {
-        code: "Standard-B",
+        code: "Standard-F",
         male: false,
       },
     ],
