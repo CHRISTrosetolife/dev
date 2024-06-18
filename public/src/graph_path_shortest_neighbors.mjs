@@ -1,5 +1,3 @@
-import { performance_next } from "./performance_next.mjs";
-import { performance_start } from "./performance_start.mjs";
 import { list_add } from "./list_add.mjs";
 import { each } from "./each.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
@@ -41,11 +39,8 @@ export function graph_path_shortest_neighbors(id_get, neighbors_get, from, to) {
     let neighbors = neighbors_get(current);
     list_shuffle(neighbors);
     each(neighbors, (n) => {
-      let p = performance_start(graph_path_shortest_neighbors.name);
       let id = id_get(n);
-      performance_next(p);
       let en = object_property_exists_not(visited, id);
-      performance_next(p);
       if (en) {
         let m = {
           id,
@@ -55,7 +50,6 @@ export function graph_path_shortest_neighbors(id_get, neighbors_get, from, to) {
         list_add(remaining, m);
         object_property_set(visited, id, m);
       }
-      performance_next(p);
     });
   }
   return result;
