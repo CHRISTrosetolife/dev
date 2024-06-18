@@ -5,7 +5,7 @@ export function audio_voices_en() {
       male: true,
     },
     {
-      code: "Standard-A",
+      code: "Standard-H",
       male: false,
     },
     {
@@ -13,7 +13,7 @@ export function audio_voices_en() {
       male: true,
     },
     {
-      code: "Standard-B",
+      code: "Standard-F",
       male: false,
     },
   ];
