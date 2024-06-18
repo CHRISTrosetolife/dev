@@ -31,10 +31,13 @@ export async function sandbox() {
   let group = list_take(atoms, group_count);
   await each_async(group, async (atom) => {
     let ceb = list_first(atom);
-    await audio_upload("ceb", ceb);
     let en = list_second(atom);
-    log("en");
+    log({
+      ceb,
+      en,
+    });
     return;
+    await audio_upload("ceb", ceb);
     await audio_upload("en", en);
   });
   let words = list_adder_unique((la) =>
