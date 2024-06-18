@@ -42,7 +42,9 @@ export function graph_path_shortest_neighbors(id_get, neighbors_get, from, to) {
     }
     performance_next(p);
     let neighbors = neighbors_get(current);
+    performance_next(p);
     list_shuffle(neighbors);
+    performance_next(p);
     each(neighbors, (n) => {
       let en = object_property_exists_not(visited, id_get(n));
       let lin = list_includes_not(remaining, n);
@@ -54,6 +56,7 @@ export function graph_path_shortest_neighbors(id_get, neighbors_get, from, to) {
         list_add(remaining, m);
       }
     });
+    performance_next(p);
   }
   return result;
 }
