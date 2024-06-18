@@ -1,3 +1,4 @@
+import { performance_log } from "./performance_log.mjs";
 import { app_gs_map_tile_id } from "./app_gs_map_tile_id.mjs";
 import { app_gs_map_neighbors_get } from "./app_gs_map_neighbors_get.mjs";
 import { graph_path_shortest_neighbors } from "./graph_path_shortest_neighbors.mjs";
@@ -57,6 +58,7 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
       from,
       tile,
     );
+    performance_log();
     app_gs_map_render(map, map_c, path, player_overlay);
     await each_async(list_skip(path, 1), async (tile) => {
       await app_gs_walk(map, map_c, player_overlay, map.player, tile);
