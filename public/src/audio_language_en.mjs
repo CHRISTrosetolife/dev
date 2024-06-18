@@ -1,6 +1,6 @@
 export function audio_language_en() {
   return {
-    language_code: "fil-PH",
+    language_code: "en-US",
     voices: [
       {
         code: "Standard-J",
