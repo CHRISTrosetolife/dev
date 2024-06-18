@@ -15,9 +15,11 @@ export async function app_gs() {
   if (0) {
     html_scale_none();
   }
-  html_style(root, {
-    overflow: "hidden",
-  });
+  if (0) {
+    html_style(root, {
+      overflow: "hidden",
+    });
+  }
   let map = app_gs_map_new();
   let map_c = app_gs_map_html(root, map);
   let player_overlay = app_gs_overlay_player(map_c, map);
