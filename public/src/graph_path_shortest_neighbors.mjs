@@ -46,7 +46,7 @@ export function graph_path_shortest_neighbors(id_get, neighbors_get, from, to) {
       performance_next(p);
       let en = object_property_exists_not(visited, id);
       performance_next(p);
-      if (en && lin) {
+      if (en) {
         let m = {
           current: n,
           previous: current,
