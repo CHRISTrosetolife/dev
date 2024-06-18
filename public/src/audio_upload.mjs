@@ -19,8 +19,8 @@ export async function audio_upload(language, text) {
       output_path,
     );
     if (created) {
+      log("audio uploading...");
       await storage_upload_file(output_path, file_path);
-      log("audio uploaded");
     }
   });
 }
