@@ -12,8 +12,8 @@ export function performance_log() {
     ps.differences = [];
     each(ps, (p) => {
       each_pairs_index(p, (a, b, i) => {
-        object_property_initialize();
         let d = b - a;
+        object_property_initialize();
         la(d);
       });
     });
