@@ -28,6 +28,7 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
       }),
     ),
   );
+  let neighbors_get = (v) => graph_neighbors(edges, v);
   let remaining = [
     {
       current: from,
