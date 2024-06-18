@@ -12,6 +12,7 @@ export function performance_log() {
       each_pairs_index(p, (a, b, i) => {
         let d = b - a;
         let existing = object_property_initialize(totals, i, 0);
+        object_property_initialize(totals, i, 0);
       });
     });
     log();
