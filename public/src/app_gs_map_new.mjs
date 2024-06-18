@@ -63,6 +63,9 @@ export function app_gs_map_new() {
     list_concat_multiple(map.tiles),
     inside_is,
   );
+  let spawn = {};
+  spawn.y = floor(divide(subtract_1(map.y_size), 2));
+  spawn.x = floor(divide(subtract_1(map.x_size), 2));
   each(outside, (tile) => overlay_add(tile, list_random_item(overlays_wall)));
   list_shuffle(inside);
   each_range(map_overlays_count, (i) => {
@@ -70,9 +73,6 @@ export function app_gs_map_new() {
     let id = list_random_item(overlays);
     overlay_add(tile, id);
   });
-  let spawn = {};
-  spawn.y = floor(divide(subtract_1(map.y_size), 2));
-  spawn.x = floor(divide(subtract_1(map.x_size), 2));
   map.player = {};
   object_merge(map.player, spawn);
   map.player.walk_offset = 0;
