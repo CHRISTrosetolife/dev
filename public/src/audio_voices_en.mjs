@@ -9,7 +9,7 @@ export function audio_voices_en() {
       male: false,
     },
     {
-      code: "Standard-I	",
+      code: "Standard-I",
       male: true,
     },
     {
