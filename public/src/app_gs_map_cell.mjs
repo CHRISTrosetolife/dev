@@ -52,6 +52,7 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
       list_concat_multiple(map.tiles),
       (v) => {
         let { x, y } = v;
+        let neighbors = [];
         let north = map.tiles[y - 1][x];
       },
       from,
