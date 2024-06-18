@@ -5,12 +5,14 @@ import { log } from "./log.mjs";
 import { each_pairs } from "./each_pairs.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { each_object } from "./each_object.mjs";
+import { object_property_initialize } from "./object_property_initialize.mjs";
 export function performance_log() {
   let categories = performance_start_categories();
   each_object(categories, (category, ps) => {
     ps.differences = [];
     each(ps, (p) => {
       each_pairs_index(p, (a, b, i) => {
+        object_property_initialize();
         let d = b - a;
         la(d);
       });
