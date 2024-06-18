@@ -30,9 +30,9 @@ export async function sandbox() {
     await ceb_bible_words_definitions_atoms(skip, limit);
   let group = list_take(atoms, group_count);
   await each_async(group, async (atom) => {
-    await each_async(group, async (atom) => {
-      let ceb = list_first(atom);
-      let en = list_second(atom);
+    await each_async(atom, async (a) => {
+      let ceb = list_first(a);
+      let en = list_second(a);
       log({
         ceb,
         en,
