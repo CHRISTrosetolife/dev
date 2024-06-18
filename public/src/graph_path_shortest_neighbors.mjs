@@ -10,7 +10,7 @@ import { list_adder } from "./list_adder.mjs";
 import { list_index } from "./list_index.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { list_remove_first } from "./list_remove_first.mjs";
-import { list_empty_not_is } from "./list_empty_not_is.mjs";
+import { list_size } from "./list_size.mjs";
 export function graph_path_shortest_neighbors(
   vertices,
   neighbors_get,
@@ -26,7 +26,7 @@ export function graph_path_shortest_neighbors(
   let visited = {};
   let result = null;
   let index = 0;
-  while (list_empty_not_is(remaining)) {
+  while (index < list_size(remaining)) {
     let r = list_remove_first(remaining);
     let { current } = r;
     object_property_set(visited, list_index(vertices, current), r);
