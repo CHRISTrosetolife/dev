@@ -30,15 +30,17 @@ export async function sandbox() {
     await ceb_bible_words_definitions_atoms(skip, limit);
   let group = list_take(atoms, group_count);
   await each_async(group, async (atom) => {
-    let ceb = list_first(atom);
-    let en = list_second(atom);
-    log({
-      ceb,
-      en,
+    await each_async(group, async (atom) => {
+      let ceb = list_first(atom);
+      let en = list_second(atom);
+      log({
+        ceb,
+        en,
+      });
+      return;
+      await audio_upload("ceb", ceb);
+      await audio_upload("en", en);
     });
-    return;
-    await audio_upload("ceb", ceb);
-    await audio_upload("en", en);
   });
   let words = list_adder_unique((la) =>
     each(atoms, (a) => each(a, (pair) => la(list_first(pair)))),
