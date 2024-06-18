@@ -10,12 +10,7 @@ import { list_index } from "./list_index.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { list_size } from "./list_size.mjs";
 import { list_get } from "./list_get.mjs";
-export function graph_path_shortest_neighbors(
-  vertices,
-  neighbors_get,
-  from,
-  to,
-) {
+export function graph_path_shortest_neighbors(id_get, neighbors_get, from, to) {
   let remaining = [
     {
       current: from,
