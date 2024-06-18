@@ -49,9 +49,6 @@ export async function sandbox() {
   let definitions = {};
   each(words, (w) => {
     let filtered = list_filter(definitions_all, (d) => d.word === w);
-    log({
-      filtered,
-    });
     let ds = list_single(filtered).definitions;
     object_property_set(definitions, w, ds);
   });
