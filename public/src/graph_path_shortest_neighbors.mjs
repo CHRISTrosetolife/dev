@@ -3,7 +3,6 @@ import { performance_start } from "./performance_start.mjs";
 import { list_add } from "./list_add.mjs";
 import { each } from "./each.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
-import { list_includes_not } from "./list_includes_not.mjs";
 import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { list_reverse } from "./list_reverse.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -47,14 +46,13 @@ export function graph_path_shortest_neighbors(id_get, neighbors_get, from, to) {
       performance_next(p);
       let en = object_property_exists_not(visited, id);
       performance_next(p);
-      let lin = list_includes_not(remaining, n);
-      performance_next(p);
       if (en && lin) {
         let m = {
           current: n,
           previous: current,
         };
         list_add(remaining, m);
+        object_property_set(visited, id_get(n), true);
       }
       performance_next(p);
     });
