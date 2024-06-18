@@ -1,5 +1,5 @@
+import { list_add } from "./list_add.mjs";
 import { each } from "./each.mjs";
-import { list_add_multiple } from "./list_add_multiple.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
 import { list_includes_not } from "./list_includes_not.mjs";
 import { object_property_exists_not } from "./object_property_exists_not.mjs";
@@ -54,9 +54,9 @@ export function graph_path_shortest_neighbors(
           current: n,
           previous: current,
         };
+        list_add(remaining, m);
       }
     });
-    list_add_multiple(remaining, mapped);
   }
   return result;
 }
