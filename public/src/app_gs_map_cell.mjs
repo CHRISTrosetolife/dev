@@ -1,3 +1,4 @@
+import { each_pairs } from "./each_pairs.mjs";
 import { performance_start } from "./performance_start.mjs";
 import { performance_next } from "./performance_next.mjs";
 import { each } from "./each.mjs";
@@ -70,6 +71,9 @@ export function app_gs_map_cell(map, map_c, player_overlay, tile) {
     performance_next(p);
     html_scroll_center_smooth(player_overlay);
     performance_next(p);
+    each_pairs(p.times, (t) => {
+      let time = t;
+    });
   });
   return list_concat([tile_c], overlays);
 }
