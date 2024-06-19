@@ -59,7 +59,7 @@ export async function sandbox() {
     definitions,
     inverted,
   };
-  let storage_path = app_language_group_path("ceb", "en", group_index);
+  let storage_path = app_language_group_path(from, to, group_index);
   let existing_path = folder_gitignore_path(storage_path);
   if (10) {
     if (10) {
