@@ -49,6 +49,7 @@ export async function app_gs_walk(player_c, player, destination) {
         player.y + (delta.y / animate_count) * step_count,
         player.x + (delta.x / animate_count) * step_count,
       );
+      return;
       await sleep(sleep_time);
     });
     let delta = game_direction_to_delta(direction);
