@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { global_function } from "./global_function.mjs";
 import { audio_language } from "./audio_language.mjs";
 import { audio_path } from "./audio_path.mjs";
@@ -14,12 +13,7 @@ import { mod } from "./mod.mjs";
 import { integer_random } from "./integer_random.mjs";
 export async function app_ceb_audio(text) {
   let language = "ceb";
-  log("heree");
   let { voices } = await audio_language(language);
-  log("heree2");
-  log({
-    voices,
-  });
   let counts = global_function(app_ceb_audio);
   let voices_index_last = list_index_last(voices);
   let count = object_property_initialize(
@@ -33,12 +27,6 @@ export async function app_ceb_audio(text) {
     count = mod(count, length);
   }
   object_property_set(counts, text, count);
-  log({
-    text,
-  });
   let file_path = await audio_path(language, count, text);
-  log({
-    file_path,
-  });
   return await html_audio(storage_url(file_path));
 }
