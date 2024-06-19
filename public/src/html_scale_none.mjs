@@ -8,6 +8,6 @@ export function html_scale_none() {
   html_attribute_set(
     c,
     "content",
-    "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no",
+    "width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no",
   );
 }
