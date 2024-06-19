@@ -1,3 +1,4 @@
+import { app_language_level_size } from "./app_language_level_size.mjs";
 import { app_language_group_path } from "./app_language_group_path.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
 import { list_size } from "./list_size.mjs";
@@ -34,7 +35,6 @@ import { list_slice } from "./list_slice.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { app_ceb_atom_title_patterns } from "./app_ceb_atom_title_patterns.mjs";
 import { app_ceb_atom_title } from "./app_ceb_atom_title.mjs";
-import { app_ceb_level_size } from "./app_ceb_level_size.mjs";
 import { each_range } from "./each_range.mjs";
 import { add } from "./add.mjs";
 import { mod_last_is } from "./mod_last_is.mjs";
@@ -114,7 +114,7 @@ export async function app_ceb() {
   let { group, definitions, inverted } = await http_storage(
     app_language_group_path(from, to, group_index),
   );
-  let level_size = app_ceb_level_size();
+  let level_size = app_language_level_size();
   let settings_choices;
   storage_local_initialize(app_ceb, "position", {
     left: 0,
