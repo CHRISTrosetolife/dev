@@ -29,7 +29,6 @@ import { storage_local_get } from "./storage_local_get.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 export async function app_language_refresh_node(
   context,
-  refresh_node,
   refresh_review,
   refresh_learn,
   quizzes_start,
