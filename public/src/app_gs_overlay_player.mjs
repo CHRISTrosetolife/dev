@@ -10,13 +10,14 @@ import { object_properties } from "./object_properties.mjs";
 export function app_gs_overlay_player(map_c, map) {
   let z_indexes = app_gs_z_indexes();
   let directions = object_properties(game_character_indices());
-  each(directions, (direction) => {});
-  let player_c = game_img(
-    map_c,
-    game_img_character(map.player.character, game_character_index("down")),
-    map.player,
-    list_index(z_indexes, "player"),
-  );
+  each(directions, (direction) => {
+    let player_c = game_img(
+      map_c,
+      game_img_character(map.player.character, game_character_index("down")),
+      map.player,
+      list_index(z_indexes, "player"),
+    );
+  });
   game_img_style_transition(player_c);
   return player_c;
 }
