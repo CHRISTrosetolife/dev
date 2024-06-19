@@ -106,5 +106,5 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
     });
     html_scroll_center_smooth(player_c);
   });
-  return list_concat([tile_c], overlays);
+  return list_concat([tile_c, clicker], overlays);
 }
