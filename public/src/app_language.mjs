@@ -110,7 +110,7 @@ export async function app_language(app_fn, from, to, invert) {
   }
   async function refresh_learn(pair_index) {
     html_clear_scroll_top_centered(root);
-    let concat = atoms_slice_concat();
+    let concat = app_language_atoms_slice_concat(app_fn, group);
     let pair = list_get(concat, pair_index);
     let [word_f, word_t] = pair;
     app_language_word_button(root, from, word_f);
