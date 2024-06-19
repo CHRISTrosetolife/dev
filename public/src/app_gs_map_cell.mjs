@@ -75,6 +75,9 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
       html_button_width_full_text_click(menu, "back", () => {
         html_remove(menu);
       });
+      html_button_width_full_text_click(menu, "system logs", () => {
+        html_remove(menu);
+      });
       return;
     }
     app_gs_map_render(map, map_c, path, player_c);
