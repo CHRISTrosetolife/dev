@@ -1,3 +1,4 @@
+import { app_gs_screen_size } from "./app_gs_screen_size.mjs";
 import { subtract } from "./subtract.mjs";
 import { game_img_position } from "./game_img_position.mjs";
 import { html_style } from "./html_style.mjs";
@@ -79,6 +80,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
     ) {
       let menu = html_div(map_c);
       html_style_background_color(menu, "rgba(1,1,1,0.5)");
+      let { x_count, y_count, size_px } = app_gs_screen_size();
       let { y_extend, x_extend } = app_gs_map_extends();
       html_style_width(menu, game_tile_units_css(1 + 2 * x_extend));
       html_style_height(menu, game_tile_units_css(1 + 2 * y_extend));
