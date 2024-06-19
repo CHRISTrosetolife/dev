@@ -1,3 +1,4 @@
+import { html_style_button_default } from "./html_style_button_default.mjs";
 import { html_hostname } from "./html_hostname.mjs";
 import { html_scale_none } from "./html_scale_none.mjs";
 import { html_scroll_center_smooth } from "./html_scroll_center_smooth.mjs";
@@ -10,6 +11,7 @@ import { app_gs_map_new } from "./app_gs_map_new.mjs";
 import { sleep } from "./sleep.mjs";
 export async function app_gs() {
   let root = app_gs_style_default_initialize();
+  html_style_button_default;
   if (html_hostname() !== "localhost") {
     html_scale_none();
   }
