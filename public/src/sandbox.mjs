@@ -44,9 +44,15 @@ export async function sandbox() {
   let profiles = [
     {
       pair_word_get: list_first,
+      definitions_get: (w) =>
+        list_find(definitions_list, (d) => d.word === w).definitions,
+      from,
+      to,
     },
     {
       pair_word_get: list_second,
+      to: from,
+      from: to,
     },
   ];
   await each_async(profiles, async (profile) => {
@@ -55,7 +61,7 @@ export async function sandbox() {
     );
     let definitions = {};
     each(words, (w) => {
-      let ds = list_find(definitions_list, (d) => d.word === w).definitions;
+      let ds = profile.definitions_get(w);
       object_property_set(definitions, w, ds);
     });
     let inverted = object_list_invert(definitions);
