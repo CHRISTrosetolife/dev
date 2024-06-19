@@ -17,6 +17,7 @@ export function app_language_refresh_learn(
   refresh_node,
   refresh_learn,
 ) {
+  let a = context;
   html_clear_scroll_top_centered(root);
   let concat = app_language_atoms_slice_concat(app_fn, group);
   let pair = list_get(concat, pair_index);
