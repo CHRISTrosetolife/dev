@@ -1,3 +1,4 @@
+import { app_language_group_size } from "./app_language_group_size.mjs";
 import { app_language_group_path } from "./app_language_group_path.mjs";
 import { list_second } from "./list_second.mjs";
 import { audio_upload } from "./audio_upload.mjs";
@@ -5,7 +6,6 @@ import { file_overwrite_json } from "./file_overwrite_json.mjs";
 import { equal_json } from "./equal_json.mjs";
 import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
 import { list_adder_unique } from "./list_adder_unique.mjs";
-import { ceb_group_size } from "./ceb_group_size.mjs";
 import { storage_upload_object } from "./storage_upload_object.mjs";
 import { ceb_bible_words_definitions_atoms } from "./ceb_bible_words_definitions_atoms.mjs";
 import { list_take } from "./list_take.mjs";
@@ -26,7 +26,7 @@ export async function sandbox() {
   let group_index = 0;
   let limit = 150;
   let skip = 0;
-  let group_count = ceb_group_size();
+  let group_count = app_language_group_size();
   let { atoms, definitions: definitions_all } =
     await ceb_bible_words_definitions_atoms(skip, limit);
   let group = list_take(atoms, group_count);
