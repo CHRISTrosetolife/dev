@@ -71,12 +71,12 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
         ),
       )
     ) {
-      let menu = app_gs_menu_overlay(map_c, map);
-      html_button_width_full_text_click(menu, "back", () => {
-        html_remove(menu);
+      let menu_overlay = app_gs_menu_overlay(map_c, map);
+      html_button_width_full_text_click(menu_overlay, "back", () => {
+        html_remove(menu_overlay);
       });
-      html_button_width_full_text_click(menu, "system logs", () => {
-        html_remove(menu);
+      html_button_width_full_text_click(menu_overlay, "system logs", () => {
+        html_remove(menu_overlay);
       });
       return;
     }
