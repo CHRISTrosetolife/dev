@@ -8,6 +8,25 @@ export function html_scroll_center_smooth(component) {
     top: e.offsetTop - vh / 2 + e.height / 2,
     behavior: "smooth",
   });
+  return new Promise((resolve, reject) => {
+    let failed = setTimeout(() => {
+      reject();
+    }, 2000);
+    let scrollHandler = () => {
+      if (self.scrollY === targetPosition) {
+        window.removeEventListener("scroll", scrollHandler);
+        clearTimeout(failed);
+        resolve();
+      }
+    };
+    if (self.scrollY === targetPosition) {
+      clearTimeout(failed);
+      resolve();
+    } else {
+      window.addEventListener("scroll", scrollHandler);
+      elem.getBoundingClientRect();
+    }
+  });
   return;
   let additional = {
     behavior: "smooth",
