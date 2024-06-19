@@ -29,7 +29,6 @@ import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered
 export async function app_language_refresh_node(
   root,
   context,
-  level_size,
   group,
   invert,
   refresh_node,
