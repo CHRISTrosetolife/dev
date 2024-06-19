@@ -83,7 +83,7 @@ export async function app_language(
     await app_language_refresh_quiz(
       root,
       settings,
-      app_fn,
+      context,
       group,
       definitions,
       inverted,
