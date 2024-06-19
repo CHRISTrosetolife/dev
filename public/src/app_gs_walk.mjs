@@ -13,7 +13,6 @@ import { sleep } from "./sleep.mjs";
 import { app_gs_sleep_time } from "./app_gs_sleep_time.mjs";
 import { each_range_async } from "./each_range_async.mjs";
 import { abs } from "./abs.mjs";
-import { game_character_index } from "./game_character_index.mjs";
 import { game_img_character } from "./game_img_character.mjs";
 export async function app_gs_walk(player_c, player, destination) {
   let direction = app_gs_direction(player, destination);
@@ -21,10 +20,6 @@ export async function app_gs_walk(player_c, player, destination) {
     return;
   }
   app_gs_overlay_player_direction(player_c, direction, 0);
-  html_img_src(
-    player_c,
-    game_img_character(player.character, game_character_index(direction)),
-  );
   let steps_count =
     abs(player.y - destination.y) + abs(player.x - destination.x);
   await each_range_async(steps_count, async () => {
