@@ -12,7 +12,7 @@ export async function html_scroll_center_smooth(component) {
     top,
     behavior: "smooth",
   });
-  return await sleep(3000);
+  return await sleep(2000);
   return await new Promise((resolve, reject) => {
     let failed = setTimeout(() => {
       log("scroll finish failed");
