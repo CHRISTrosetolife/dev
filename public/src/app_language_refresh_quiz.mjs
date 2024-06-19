@@ -72,7 +72,6 @@ export async function app_language_refresh_quiz(
   context,
   settings,
   refresh_node,
-  refresh_quiz,
 ) {
   let {
     root,
