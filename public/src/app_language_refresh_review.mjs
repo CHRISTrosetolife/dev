@@ -40,5 +40,8 @@ export function app_language_refresh_review(context) {
     );
     html_hr(root);
   });
-  html_button_width_full_text_click_up(root, refresh_node);
+  html_button_width_full_text_click_up(
+    root,
+    async () => await app_language_refresh_node(context),
+  );
 }
