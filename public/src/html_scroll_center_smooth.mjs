@@ -7,8 +7,8 @@ export async function html_scroll_center_smooth(component) {
   let left = e.offsetLeft - vw / 2 + e.width / 2;
   let top = e.offsetTop - vh / 2 + e.height / 2;
   window.scrollTo({
-    left: left,
-    top: top,
+    left,
+    top,
     behavior: "smooth",
   });
   return await new Promise((resolve, reject) => {
