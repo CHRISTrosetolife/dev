@@ -360,7 +360,7 @@ export async function app_language(app_fn, from, to, invert) {
                   html_style_background_color(root, "#d3f8d3");
                 }
                 app_learn_code_style_success(answer_element);
-                await app_language_audio(word_f);
+                await app_language_audio(from, word_f);
                 if (0) {
                   html_style_background_color(root, "white");
                 }
