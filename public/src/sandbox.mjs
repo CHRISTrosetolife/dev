@@ -57,6 +57,7 @@ export async function sandbox() {
     },
     {
       pair_word_get: list_second,
+      definitions: definitions_all_inverted,
       to: from,
       from: to,
     },
