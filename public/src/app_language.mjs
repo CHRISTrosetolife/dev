@@ -97,10 +97,10 @@ export async function app_language(
     let lookup = {};
     let words_f = list_adder_unique((la) =>
       each(concat, (pair) => {
-        let [word_f, word_t] = pair;
-        la(word_f);
-        let e = object_property_initialize(lookup, word_f, []);
-        list_add(e, word_t);
+        let [word_l, word_f] = pair;
+        la(word_l);
+        let e = object_property_initialize(lookup, word_l, []);
+        list_add(e, word_f);
       }),
     );
     list_sort_string(words_f, identity);
