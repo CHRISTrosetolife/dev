@@ -5,6 +5,8 @@ import { game_tile_units_css } from "./game_tile_units_css.mjs";
 import { html_style_width } from "./html_style_width.mjs";
 import { html_style_height } from "./html_style_height.mjs";
 export function game_img_style(image, y, x, z_index) {
+  let x_extend = 0;
+  let y_extend = 0;
   let unit = game_tile_units_css(1);
   html_style_width(image, unit);
   html_style_height(image, unit);
