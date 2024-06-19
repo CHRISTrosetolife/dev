@@ -6,7 +6,7 @@ export function game_img_character(name, index) {
   return string_combine_multiple([
     game_img_path_pipoya(),
     "character\\sliced\\",
-    string_combine_multiple([name, "_", index]),
+    [name, "_", index],
     ".png",
   ]);
 }
