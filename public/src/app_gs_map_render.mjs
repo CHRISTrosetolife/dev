@@ -1,12 +1,10 @@
-import { game_tile_size_px } from "./game_tile_size_px.mjs";
+import { app_gs_map_extends } from "./app_gs_map_extends.mjs";
 import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { range_from } from "./range_from.mjs";
 import { html_remove } from "./html_remove.mjs";
 import { each } from "./each.mjs";
 import { app_gs_map_cell } from "./app_gs_map_cell.mjs";
-import { floor } from "./floor.mjs";
-import { ceiling } from "./ceiling.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { each_object } from "./each_object.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -16,20 +14,14 @@ export function app_gs_map_render(
   coordinates,
   player_overlay,
 ) {
-  let w = window.innerWidth;
-  let h = window.innerHeight;
-  let tile_size_px = game_tile_size_px();
-  let w_tiles = ceiling(w / tile_size_px);
-  let h_tiles = ceiling(h / tile_size_px);
-  let w_extend = floor(w_tiles / 2);
-  let h_extend = floor(h_tiles / 2);
+  let { y_extend, x_extend } = app_gs_map_extends();
   let tiles_new = {};
   each(coordinates, (c) => {
     let { x, y } = c;
-    each(range_from(y - h_extend, y + h_extend), (ye) => {
+    each(range_from(y - y_extend, y + y_extend), (ye) => {
       let rows_new = object_property_initialize(tiles_new, ye, {});
       let rows_old = object_property_initialize(map.html, ye, {});
-      each(range_from(x - w_extend, x + w_extend), (xe) => {
+      each(range_from(x - x_extend, x + x_extend), (xe) => {
         if (object_property_exists(rows_new, xe)) {
           return;
         }
