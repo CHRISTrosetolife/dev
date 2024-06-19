@@ -41,7 +41,11 @@ export async function sandbox() {
       }
     });
   });
-  let a = 1;
+  let profiles = [
+    {
+      pair_word_get: list_first,
+    },
+  ];
   let words = list_adder_unique((la) =>
     each(atoms, (a) => each(a, (pair) => la(list_first(pair)))),
   );
