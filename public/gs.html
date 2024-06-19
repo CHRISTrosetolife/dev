@@ -4,8 +4,13 @@
       <head>
         <meta charset="utf-8">
         <title>gs</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
+        <style>
+            @media screen and (max-width: @screen-sm-max) {
+    html, body {
+        overflow: auto !important;
+    }
+}
+        </style>
       </head>
       <body>
         <script>
