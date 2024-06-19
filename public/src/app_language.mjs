@@ -148,12 +148,12 @@ export async function app_language(app_fn, from, to, invert) {
           root,
           app_language_atom_title_patterns(),
           string_combine_multiple([j, ". ", text]),
-          function on_click() {
+          async function on_click() {
             storage_local_set(app_ceb, "position", {
               left: left_next,
               right: right_next,
             });
-            refresh_node();
+            await refresh_node();
           },
         );
         j++;
