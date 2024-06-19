@@ -88,7 +88,16 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
         html_remove(menu_overlay);
       });
       html_button_width_full_text_click(menu_overlay, "system logs", () => {
+        menu_system_logs(menu_overlay);
+      });
+    }
+    function menu_main(menu_overlay) {
+      html_clear(menu_overlay);
+      html_button_width_full_text_click(menu_overlay, "back", () => {
         html_remove(menu_overlay);
+      });
+      html_button_width_full_text_click(menu_overlay, "system logs", () => {
+        menu_system_logs(menu_overlay);
       });
     }
   });
