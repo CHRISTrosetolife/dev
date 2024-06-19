@@ -1,3 +1,5 @@
+import { html_style_default_border_margin } from "./html_style_default_border_margin.mjs";
+import { html_style_button_default_value } from "./html_style_button_default_value.mjs";
 import { html_hostname } from "./html_hostname.mjs";
 import { html_scale_none } from "./html_scale_none.mjs";
 import { html_scroll_center_smooth } from "./html_scroll_center_smooth.mjs";
@@ -10,6 +12,8 @@ import { app_gs_map_new } from "./app_gs_map_new.mjs";
 import { sleep } from "./sleep.mjs";
 export async function app_gs() {
   let root = app_gs_style_default_initialize();
+  let d = html_style_button_default_value();
+  html_style_default_border_margin(d);
   if (html_hostname() !== "localhost") {
     html_scale_none();
   }
