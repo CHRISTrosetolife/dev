@@ -1,3 +1,4 @@
+import { sleep } from "./sleep.mjs";
 import { log } from "./log.mjs";
 import { html_scroll_center_generic } from "./html_scroll_center_generic.mjs";
 export async function html_scroll_center_smooth(component) {
@@ -11,6 +12,7 @@ export async function html_scroll_center_smooth(component) {
     top,
     behavior: "smooth",
   });
+  return await sleep(100);
   return await new Promise((resolve, reject) => {
     let failed = setTimeout(() => {
       log("scroll finish failed");
