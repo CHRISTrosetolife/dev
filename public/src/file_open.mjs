@@ -4,7 +4,7 @@ export async function file_open(file_name) {
   if (web_is()) {
     return;
   }
-  await command_line(`start notepad++ ${file_name}`);
-  return;
   await command_line(`code ${file_name}`);
+  return;
+  await command_line(`start notepad++ ${file_name}`);
 }
