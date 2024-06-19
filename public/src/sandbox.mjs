@@ -68,7 +68,7 @@ export async function sandbox() {
     );
     let definitions = {};
     each(words, (w) => {
-      let ds = object_property_get(definitions_all, w);
+      let ds = object_property_get(profile.definitions, w);
       object_property_set(definitions, w, ds);
     });
     let inverted = object_list_invert(definitions);
