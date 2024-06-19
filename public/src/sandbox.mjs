@@ -24,6 +24,7 @@ export async function sandbox() {
   let from = "ceb";
   let to = "en";
   let upload_audio = false;
+  let group_upload = true;
   let group_index = 0;
   let limit = 150;
   let skip = 0;
