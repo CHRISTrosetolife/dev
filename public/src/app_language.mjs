@@ -104,7 +104,7 @@ export async function app_language(app_fn, from, to, invert) {
     app_language_group_path(from, to, group_index),
   );
   let level_size = app_language_level_size();
-  let settings_choices;
+  let context;
   storage_local_initialize(app_fn, "position", {
     left: 0,
     right: list_index_last(group),
@@ -358,7 +358,7 @@ export async function app_language(app_fn, from, to, invert) {
     return concat;
   }
   function quizzes_start(chunk_sizes) {
-    settings_choices = app_language_quizzes_start(
+    let settings_choices = app_language_quizzes_start(
       atoms_slice,
       settings_choices,
       chunk_sizes,
