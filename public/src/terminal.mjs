@@ -1,5 +1,4 @@
 import { string_length } from "./string_length.mjs";
-import { string_take_reverse } from "./string_take_reverse.mjs";
 import { list_filter_indices } from "./list_filter_indices.mjs";
 import { each_reverse } from "./each_reverse.mjs";
 import { list_size } from "./list_size.mjs";
@@ -53,6 +52,7 @@ import { string_empty_is } from "./string_empty_is.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
 import { list_remove_at } from "./list_remove_at.mjs";
+import { string_ends_with } from "./string_ends_with.mjs";
 export async function terminal() {
   let commands = [
     {
@@ -394,7 +394,7 @@ export async function terminal() {
     let suffix = " ''";
     if (
       list_empty_not_is(current) ||
-      (string_length(input) >= 3 && string_take_reverse(input, 3) === suffix)
+      (string_length(input) >= 3 && string_ends_with(input))
     ) {
       token_next();
     }
