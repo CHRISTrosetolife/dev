@@ -1,4 +1,4 @@
-import { list_to_lookup_pairs } from "./list_to_lookup_pairs.mjs";
+import { list_pairs_to_lookup } from "./list_pairs_to_lookup.mjs";
 import { string_to_url } from "./string_to_url.mjs";
 import { list_size } from "./list_size.mjs";
 import { list_size_2 } from "./list_size_2.mjs";
@@ -86,7 +86,7 @@ export async function ceb_definition(word) {
   each([skipped_pairs_split, replaced_split], (split) =>
     each(split, (s) => assert(list_size_2, [s])),
   );
-  let lookup = list_to_lookup_pairs(skipped_pairs_split);
+  let lookup = list_pairs_to_lookup(skipped_pairs_split);
   let prefix = "http://www.binisaya.com/";
   let url = string_combine_multiple([
     prefix,
