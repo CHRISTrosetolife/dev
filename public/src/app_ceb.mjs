@@ -109,16 +109,12 @@ export async function app_ceb() {
   let from = "ceb";
   let to = "en";
   let app_fn = app_ceb;
-  let invert_to_from = false;
   let root = html_style_default_initialize();
   html_style_default_font_size(3.5);
   let group_index = 0;
-  let http_storage_result = await http_storage(
+  let { group, definitions, inverted } = await http_storage(
     app_language_group_path(from, to, group_index),
   );
-  if (invert_to_from) {
-  }
-  let { group, definitions, inverted } = http_storage_result;
   let level_size = app_language_level_size();
   let settings_choices;
   storage_local_initialize(app_fn, "position", {
