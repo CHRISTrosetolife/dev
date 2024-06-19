@@ -68,7 +68,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
         ),
       )
     ) {
-      alert("menu");
+      let menu = html_div(map_c);
       return;
     }
     app_gs_map_render(map, map_c, path, player_c);
