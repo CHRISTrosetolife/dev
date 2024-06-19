@@ -1,5 +1,5 @@
-import { app_gs_overlay_player_components } from "./app_gs_overlay_player_components.mjs";
-import { app_gs_overlay_player_direction } from "./app_gs_overlay_player_direction.mjs";
+import { game_character_direction_index } from "./game_character_direction_index.mjs";
+import { html_img_src } from "./html_img_src.mjs";
 import { list_xy } from "./list_xy.mjs";
 import { add_1 } from "./add_1.mjs";
 import { app_gs_direction } from "./app_gs_direction.mjs";
@@ -12,12 +12,18 @@ import { sleep } from "./sleep.mjs";
 import { app_gs_sleep_time } from "./app_gs_sleep_time.mjs";
 import { each_range_async } from "./each_range_async.mjs";
 import { abs } from "./abs.mjs";
+import { game_character_index } from "./game_character_index.mjs";
+import { game_img_character } from "./game_img_character.mjs";
 export async function app_gs_walk(player_c, player, destination) {
   let direction = app_gs_direction(player, destination);
   if (direction === null) {
     return;
   }
-  app_gs_overlay_player_direction(player_c, direction, 0);
+  player.direction = direction;
+  html_img_src(
+    player_c,
+    game_img_character(player.character, game_character_index(direction)),
+  );
   let steps_count =
     abs(player.y - destination.y) + abs(player.x - destination.x);
   await each_range_async(steps_count, async () => {
@@ -31,16 +37,14 @@ export async function app_gs_walk(player_c, player, destination) {
       } else {
         player.walk_offset = 0;
       }
-      app_gs_overlay_player_direction(player_c, direction, player.walk_offset);
+      let di = game_character_direction_index(direction, player.walk_offset);
+      html_img_src(player_c, game_img_character(player.character, di));
       let delta = game_direction_to_delta(direction);
-      let player_directions = app_gs_overlay_player_components(player_c);
-      each(player_directions, (pd) => {
-        game_img_position(
-          pd,
-          player.y + (delta.y / animate_count) * step_count,
-          player.x + (delta.x / animate_count) * step_count,
-        );
-      });
+      game_img_position(
+        player_c,
+        player.y + (delta.y / animate_count) * step_count,
+        player.x + (delta.x / animate_count) * step_count,
+      );
       await sleep(sleep_time);
     });
     let delta = game_direction_to_delta(direction);
