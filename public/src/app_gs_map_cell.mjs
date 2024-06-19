@@ -1,3 +1,4 @@
+import { app_gs_z_indexes } from "./app_gs_z_indexes.mjs";
 import { app_gs_menu } from "./app_gs_menu.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { list_xy } from "./list_xy.mjs";
@@ -47,6 +48,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
     tile,
     list_index(z_indexes, "tile"),
   );
+  let z_indexes = app_gs_z_indexes();
   game_img_style(clicker, tile.y, tile.x, list_index(z_indexes, "clicker"));
   html_on_click(clicker, async () => {
     let w = app_gs_overlays_any_wall(tile);
