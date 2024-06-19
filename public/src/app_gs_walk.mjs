@@ -14,7 +14,6 @@ import { each_range_async } from "./each_range_async.mjs";
 import { abs } from "./abs.mjs";
 import { game_character_index } from "./game_character_index.mjs";
 import { game_img_character } from "./game_img_character.mjs";
-import { html_img_src_wait } from "./html_img_src_wait.mjs";
 export async function app_gs_walk(player_c, player, destination) {
   let direction = app_gs_direction(player, destination);
   if (direction === null) {
@@ -37,7 +36,7 @@ export async function app_gs_walk(player_c, player, destination) {
       } else {
         player.walk_offset = 0;
       }
-      await html_img_src_wait(
+      html_img_src(
         player_c,
         game_img_character(
           player.character,
