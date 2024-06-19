@@ -366,7 +366,4 @@ export async function app_language(app_fn, from, to, invert) {
       refresh_quiz,
     );
   }
-  function atoms_slice() {
-    return app_language_atoms_slice(app_fn, group);
-  }
 }
