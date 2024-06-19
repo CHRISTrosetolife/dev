@@ -1,8 +1,8 @@
+import { app_language_quizzes_start } from "./app_language_quizzes_start.mjs";
 import { app_language_refresh_node } from "./app_language_refresh_node.mjs";
 import { app_language_text } from "./app_language_text.mjs";
 import { app_language_word_native } from "./app_language_word_native.mjs";
 import { list_slice } from "./list_slice.mjs";
-import { app_language_quiz_settings } from "./app_language_quiz_settings.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { list_size } from "./list_size.mjs";
 import { greater_than } from "./greater_than.mjs";
@@ -358,9 +358,12 @@ export async function app_language(app_fn, from, to, invert) {
     return concat;
   }
   function quizzes_start(chunk_sizes) {
-    let atoms = atoms_slice();
-    settings_choices = app_language_quiz_settings(atoms, chunk_sizes);
-    refresh_quiz(list_first(settings_choices));
+    settings_choices = app_language_quizzes_start(
+      atoms_slice,
+      settings_choices,
+      chunk_sizes,
+      refresh_quiz,
+    );
   }
   function atoms_slice() {
     let { left, right } = storage_local_get(app_fn, "position");
