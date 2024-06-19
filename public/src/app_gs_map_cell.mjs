@@ -23,6 +23,7 @@ import { list_skip } from "./list_skip.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { equal_by } from "./equal_by.mjs";
+import { html_style_background_color } from "./html_style_background_color.mjs";
 export function app_gs_map_cell(map, map_c, player_c, tile) {
   let z_indexes = app_gs_z_indexes();
   let clicker = html_div(map_c);
@@ -69,6 +70,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
       )
     ) {
       let menu = html_div(map_c);
+      html_style_background_color(menu, "black");
       game_img_style(
         menu,
         map.player.y,
