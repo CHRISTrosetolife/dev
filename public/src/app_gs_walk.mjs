@@ -1,3 +1,4 @@
+import { html_img_src } from "./html_img_src.mjs";
 import { list_xy } from "./list_xy.mjs";
 import { add_1 } from "./add_1.mjs";
 import { app_gs_direction } from "./app_gs_direction.mjs";
@@ -19,7 +20,7 @@ export async function app_gs_walk(player_c, player, destination) {
   if (direction === null) {
     return;
   }
-  await html_img_src_wait(
+  html_img_src(
     player_c,
     game_img_character(player.character, game_character_index(direction)),
   );
