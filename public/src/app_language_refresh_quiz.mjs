@@ -211,11 +211,7 @@ export async function app_language_refresh_quiz(
                 await app_language_refresh_node(context);
               } else {
                 let after = list_after(context.settings_choices, settings);
-                await app_language_refresh_quiz(
-                  context,
-                  after,
-                  async () => await app_language_refresh_node(context),
-                );
+                await app_language_refresh_quiz(context, after);
               }
             }
           });
