@@ -70,7 +70,7 @@ export async function app_language(
   async function refresh_node() {
     await app_language_refresh_node(
       root,
-      app_language_title,
+      app_language_title_get,
       level_size,
       group,
       invert,
@@ -81,7 +81,7 @@ export async function app_language(
       quizzes_start,
     );
   }
-  function app_language_title() {
+  function app_language_title_get() {
     let { left, right } = storage_local_get(app_fn, "position");
     let gl = list_get(group, left);
     let gr = list_get_or_last(group, right);
