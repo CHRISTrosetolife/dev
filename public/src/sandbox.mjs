@@ -36,6 +36,7 @@ export async function sandbox() {
     "word",
     "definitions",
   );
+  let definitions_all_inverted = object_list_invert(definitions_all);
   let group = list_take(atoms, group_count);
   await each_async(group, async (atom) => {
     await each_async(atom, async (a) => {
