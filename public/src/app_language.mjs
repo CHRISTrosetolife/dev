@@ -1,3 +1,4 @@
+import { app_language_title } from "./app_language_title.mjs";
 import { app_language_atoms_slice_concat } from "./app_language_atoms_slice_concat.mjs";
 import { app_language_refresh_quiz } from "./app_language_refresh_quiz.mjs";
 import { app_language_quizzes_start } from "./app_language_quizzes_start.mjs";
@@ -17,13 +18,8 @@ import { list_add } from "./list_add.mjs";
 import { each } from "./each.mjs";
 import { app_language_word_button } from "./app_language_word_button.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { html_cycle_p } from "./html_cycle_p.mjs";
 import { html_button_width_full_text_click_up } from "./html_button_width_full_text_click_up.mjs";
-import { app_language_atom_title_patterns } from "./app_language_atom_title_patterns.mjs";
-import { app_language_atom_title } from "./app_language_atom_title.mjs";
-import { list_get_or_last } from "./list_get_or_last.mjs";
 import { list_get } from "./list_get.mjs";
-import { storage_local_get } from "./storage_local_get.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { list_index_last } from "./list_index_last.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
@@ -82,11 +78,7 @@ export async function app_language(
     );
   }
   function app_language_title_get() {
-    let { left, right } = storage_local_get(context.app_fn, "position");
-    let gl = list_get(context.group, left);
-    let gr = list_get_or_last(context.group, right);
-    let text = app_language_atom_title(context.group, gl, gr, context.invert);
-    html_cycle_p(context.root, app_language_atom_title_patterns(), text);
+    app_language_title(context);
   }
   async function refresh_quiz(settings) {
     await app_language_refresh_quiz(context, settings, refresh_node);
