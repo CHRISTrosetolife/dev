@@ -5,7 +5,7 @@ export async function command_line_generic(command, options) {
   let c = await import_node("child_process");
   let { spawn } = c;
   return await new Promise((resolve) => {
-    spawn(command);
+    let child = spawn(command);
     child.stdout.setEncoding("utf8");
     child.stdout.on("data", function (data) {
       log(data);
