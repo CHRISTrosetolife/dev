@@ -1,3 +1,4 @@
+import { object_list_invert } from "./object_list_invert.mjs";
 import { app_language_group_size } from "./app_language_group_size.mjs";
 import { app_language_group_path } from "./app_language_group_path.mjs";
 import { list_second } from "./list_second.mjs";
@@ -15,9 +16,6 @@ import { each } from "./each.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { list_single } from "./list_single.mjs";
-import { each_object } from "./each_object.mjs";
-import { object_property_initialize } from "./object_property_initialize.mjs";
-import { list_add } from "./list_add.mjs";
 import { file_read_json } from "./file_read_json.mjs";
 import { assert } from "./assert.mjs";
 export async function sandbox() {
@@ -53,13 +51,7 @@ export async function sandbox() {
     let ds = list_single(filtered).definitions;
     object_property_set(definitions, w, ds);
   });
-  let inverted = {};
-  each_object(definitions, (word, word_definitions) =>
-    each(word_definitions, (wd) => {
-      let words = object_property_initialize(inverted, wd, []);
-      list_add(words, word);
-    }),
-  );
+  let inverted = object_list_invert(definitions);
   let result_new = {
     group,
     definitions,
