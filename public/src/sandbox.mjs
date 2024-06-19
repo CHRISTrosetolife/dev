@@ -1,3 +1,4 @@
+import { list_copy } from "./list_copy.mjs";
 import { log } from "./log.mjs";
 import { list_to_lookup_value_property } from "./list_to_lookup_value_property.mjs";
 import { object_list_invert } from "./object_list_invert.mjs";
@@ -55,7 +56,7 @@ export async function sandbox() {
     log({
       profile,
     });
-    let group = list_take(atoms, group_count);
+    let group = list_copy(list_take(atoms, group_count));
     await each_async(group, async (atom) => {
       await each_async(atom, async (pair) => {
         let b = list_first(pair);
