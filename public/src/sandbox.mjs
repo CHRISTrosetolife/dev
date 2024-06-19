@@ -66,9 +66,9 @@ export async function sandbox() {
   let storage_path = app_language_group_path(from, to, group_index);
   let existing_path = folder_gitignore_path(storage_path);
   if (group_upload) {
-    if (group_upload) {
-      await storage_upload_object(result_new, storage_path);
-    }
+    await storage_upload_object(result_new, storage_path);
+  }
+  if (group_upload) {
     await file_overwrite_json(existing_path, result_new);
   }
   let existing = await file_read_json(existing_path);
