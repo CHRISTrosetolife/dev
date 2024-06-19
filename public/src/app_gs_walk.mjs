@@ -1,3 +1,4 @@
+import { app_gs_overlay_player_components } from "./app_gs_overlay_player_components.mjs";
 import { app_gs_overlay_player_direction } from "./app_gs_overlay_player_direction.mjs";
 import { list_xy } from "./list_xy.mjs";
 import { add_1 } from "./add_1.mjs";
@@ -32,11 +33,14 @@ export async function app_gs_walk(player_c, player, destination) {
       }
       app_gs_overlay_player_direction(player_c, direction, player.walk_offset);
       let delta = game_direction_to_delta(direction);
-      game_img_position(
-        player_c,
-        player.y + (delta.y / animate_count) * step_count,
-        player.x + (delta.x / animate_count) * step_count,
-      );
+      let player_directions = app_gs_overlay_player_components(player_c);
+      each(player_directions, (pd) => {
+        game_img_position(
+          pd,
+          player.y + (delta.y / animate_count) * step_count,
+          player.x + (delta.x / animate_count) * step_count,
+        );
+      });
       await sleep(sleep_time);
     });
     let delta = game_direction_to_delta(direction);
