@@ -63,12 +63,8 @@ export async function app_language(
   refresh_node();
   async function refresh_node() {
     await app_language_refresh_node(
-      root,
       context,
-      group,
-      invert,
       refresh_node,
-      language_fluent,
       refresh_review,
       refresh_learn,
       quizzes_start,
