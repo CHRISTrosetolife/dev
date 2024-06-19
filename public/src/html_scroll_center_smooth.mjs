@@ -3,10 +3,11 @@ export async function html_scroll_center_smooth(component) {
   let vh = window.innerHeight;
   let vw = window.innerWidth;
   let e = component.element;
-  let r = elem.getBoundingClientRect();
+  let left = e.offsetLeft - vw / 2 + e.width / 2;
+  let top = e.offsetTop - vh / 2 + e.height / 2;
   window.scrollTo({
-    left: e.offsetLeft - vw / 2 + e.width / 2,
-    top: e.offsetTop - vh / 2 + e.height / 2,
+    left: left,
+    top: top,
     behavior: "smooth",
   });
   return await new Promise((resolve, reject) => {
