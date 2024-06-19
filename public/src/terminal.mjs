@@ -379,7 +379,8 @@ export async function terminal() {
     let tokens = [];
     let current = [];
     let quoted = false;
-    each(string_split_empty(input), (s) => {
+    let split = string_split_empty(input);
+    each(split, (s) => {
       if (s === "'") {
         quoted = not(quoted);
       } else if (s === " " && !quoted) {
