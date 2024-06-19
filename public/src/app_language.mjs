@@ -441,7 +441,7 @@ export async function app_language(app_fn, from, to, invert) {
     let concat = atoms_slice_concat();
     let pair = list_get(concat, pair_index);
     let [word_f, word_t] = pair;
-    app_language_word_button(root, word_f);
+    app_language_word_button(root, from, word_f);
     app_language_word_english(root, word_t);
     html_buttons_next_previous(
       root,
