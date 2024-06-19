@@ -21,7 +21,7 @@ import { object_property_get } from "./object_property_get.mjs";
 export async function sandbox() {
   let from = "ceb";
   let to = "en";
-  let audio_upload = true;
+  let audio_upload_run = true;
   let group_upload = true;
   let group_local_save = true;
   let group_local_compare_to_new = false;
@@ -42,7 +42,7 @@ export async function sandbox() {
     await each_async(atom, async (a) => {
       let ceb = list_first(a);
       let en = list_second(a);
-      if (audio_upload) {
+      if (audio_upload_run) {
         await audio_upload(from, ceb);
         await audio_upload(to, en);
       }
