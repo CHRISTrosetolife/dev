@@ -67,7 +67,7 @@ export async function sandbox() {
       });
     });
     log({
-      group,
+      g: group[0],
     });
     exit();
     let words = list_adder_unique((la) =>
