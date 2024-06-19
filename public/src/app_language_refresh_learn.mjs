@@ -9,6 +9,7 @@ import { list_get } from "./list_get.mjs";
 import { app_language_atoms_slice_concat } from "./app_language_atoms_slice_concat.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 export function app_language_refresh_learn(
+  context,
   pair_index,
   refresh_node,
   refresh_learn,
