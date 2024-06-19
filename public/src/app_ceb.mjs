@@ -1,3 +1,4 @@
+import { app_language_group_path } from "./app_language_group_path.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
 import { list_size } from "./list_size.mjs";
 import { html_cycle_p } from "./html_cycle_p.mjs";
@@ -65,7 +66,6 @@ import { app_ceb_word_button } from "./app_ceb_word_button.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { html_buttons_next_previous } from "./html_buttons_next_previous.mjs";
 import { http_storage } from "./http_storage.mjs";
-import { ceb_group_path } from "./ceb_group_path.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_get } from "./list_get.mjs";
 import { each } from "./each.mjs";
@@ -110,7 +110,7 @@ export async function app_ceb() {
   html_style_default_font_size(3.5);
   let group_index = 0;
   let { group, definitions, inverted } = await http_storage(
-    ceb_group_path(group_index),
+    app_language_group_path(group_index),
   );
   let level_size = app_ceb_level_size();
   let settings_choices;
