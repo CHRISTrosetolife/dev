@@ -18,6 +18,7 @@ import { object_property_set } from "./object_property_set.mjs";
 import { file_read_json } from "./file_read_json.mjs";
 import { assert } from "./assert.mjs";
 import { object_property_get } from "./object_property_get.mjs";
+import { list_reverse } from "./list_reverse.mjs";
 export async function sandbox() {
   let from = "ceb";
   let to = "en";
@@ -43,18 +44,23 @@ export async function sandbox() {
       definitions: definitions_all,
       from,
       to,
+      invert: false,
     },
     {
       pair_word_get: list_second,
       definitions: definitions_all_inverted,
       to: from,
       from: to,
+      invert: true,
     },
   ];
   await each_async(profiles, async (profile) => {
     let group = list_take(atoms, group_count);
     await each_async(group, async (atom) => {
       await each_async(atom, async (a) => {
+        if (profile.invert) {
+          list_reverse(a);
+        }
         let b = list_first(a);
         if (audio_upload_run) {
           await audio_upload(profile.from, b);
