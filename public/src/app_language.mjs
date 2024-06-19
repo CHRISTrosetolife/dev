@@ -221,9 +221,9 @@ export async function app_language(app_fn, from, to, invert) {
         ". ",
         await app_language_text(to, html_button_next_text()),
       ]),
-      () => {
+      async () => {
         app_ceb_next();
-        refresh_node();
+        await refresh_node();
       },
     );
     function app_ceb_next() {
