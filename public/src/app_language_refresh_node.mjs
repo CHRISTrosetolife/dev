@@ -1,3 +1,4 @@
+import { app_language_refresh_learn } from "./app_language_refresh_learn.mjs";
 import { app_language_refresh_review } from "./app_language_refresh_review.mjs";
 import { app_language_level_size } from "./app_language_level_size.mjs";
 import { app_language_title } from "./app_language_title.mjs";
@@ -79,7 +80,7 @@ export async function app_language_refresh_node(
         await app_language_text(language_fluent, "learn"),
       ]),
       () => {
-        refresh_learn(0);
+        app_language_refresh_learn(0);
       },
     );
   }
