@@ -69,7 +69,7 @@ export async function sandbox() {
   if (group_upload) {
     await storage_upload_object(result_new, storage_path);
   }
-  if (group_upload) {
+  if (group_local_save) {
     await file_overwrite_json(existing_path, result_new);
   }
   let existing = await file_read_json(existing_path);
