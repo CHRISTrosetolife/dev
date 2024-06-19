@@ -361,9 +361,11 @@ export async function terminal() {
       log_clear();
     }
     let tokens = tokens_get(input);
-    log({
-      tokens,
-    });
+    if (0) {
+      log({
+        tokens,
+      });
+    }
     let { first: function_name, remaining: args } =
       list_first_remaining(tokens);
     try {
