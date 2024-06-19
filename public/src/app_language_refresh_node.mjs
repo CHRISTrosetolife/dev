@@ -115,7 +115,7 @@ export async function app_language_refresh_node(context) {
       " )",
     ]),
     () => {
-      app_language_quizzes_start([1]);
+      app_language_quizzes_start(context, [1]);
     },
   );
   html_button_width_full_text_click(
