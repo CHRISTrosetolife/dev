@@ -82,7 +82,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
     });
     await html_scroll_center_smooth(player_c);
     app_gs_map_render(map, map_c, [map.player], player_c);
-    function menu_overlay(menu_overlay) {
+    function menu_main(menu_overlay) {
       html_clear(menu_overlay);
       html_button_width_full_text_click(menu_overlay, "back", () => {
         html_remove(menu_overlay);
