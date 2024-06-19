@@ -18,10 +18,6 @@ export function app_language_atom_title(
 ) {
   let l = list_first(atom_left);
   let r = list_last(atom_left);
-  log({
-    l,
-    r,
-  });
   let atom_count = app_language_atom_count();
   let mapped = list_map_nested([l, r], string_delimit_backtick);
   let text = string_combine_multiple([
@@ -35,5 +31,8 @@ export function app_language_atom_title(
     add(multiply(list_index(group, atom_right), atom_count), atom_count),
     " ) ",
   ]);
+  log({
+    text,
+  });
   return text;
 }
