@@ -35,7 +35,9 @@ export async function sandbox() {
     await each_async(atom, async (a) => {
       let ceb = list_first(a);
       let en = list_second(a);
-      await audio_upload(from, ceb);
+      if (upload_audio) {
+        await audio_upload(from, ceb);
+      }
       await audio_upload(to, en);
     });
   });
