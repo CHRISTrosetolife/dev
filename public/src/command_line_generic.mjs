@@ -3,7 +3,7 @@ import { log_error } from "./log_error.mjs";
 import { log } from "./log.mjs";
 import { import_node } from "./import_node.mjs";
 import { string_split_space } from "./string_split_space.mjs";
-export async function command_line_generic(command, options) {
+export async function command_line_generic(command) {
   let c = await import_node("child_process");
   let { spawn } = c;
   return await new Promise((resolve) => {
