@@ -45,6 +45,9 @@ export async function sandbox() {
     {
       pair_word_get: list_first,
     },
+    {
+      pair_word_get: list_second,
+    },
   ];
   let words = list_adder_unique((la) =>
     each(atoms, (a) => each(a, (pair) => la(list_first(pair)))),
