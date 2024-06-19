@@ -83,7 +83,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
         y_extend,
         x_extend,
       );
-      html_button_width_full_text_click(menu);
+      html_button_width_full_text_click(menu, "close menu");
       return;
     }
     app_gs_map_render(map, map_c, path, player_c);
