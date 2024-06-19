@@ -19,8 +19,8 @@ export async function app_gs() {
   });
   if (html_hostname() !== "localhost") {
     html_scale_none();
+    html_style_overflow_hidden(root);
   }
-  html_style_overflow_hidden(root);
   let map = app_gs_map_new();
   let map_c = app_gs_map_html(root, map);
   let player_c = app_gs_overlay_player(map_c, map);
