@@ -34,8 +34,8 @@ export async function sandbox() {
     await each_async(atom, async (a) => {
       let ceb = list_first(a);
       let en = list_second(a);
-      await audio_upload("ceb", ceb);
-      await audio_upload("en", en);
+      await audio_upload(from, ceb);
+      await audio_upload(to, en);
     });
   });
   let words = list_adder_unique((la) =>
