@@ -118,9 +118,9 @@ export async function app_language(
     html_clear_scroll_top_centered(root);
     let concat = app_language_atoms_slice_concat(app_fn, group);
     let pair = list_get(concat, pair_index);
-    let [word_f, word_t] = pair;
-    app_language_word_button(root, language_learn, word_f);
-    app_language_word_native(root, word_t);
+    let [word_l, word_f] = pair;
+    app_language_word_button(root, language_learn, word_l);
+    app_language_word_native(root, word_f);
     html_buttons_next_previous(
       root,
       (pair_index) => {
