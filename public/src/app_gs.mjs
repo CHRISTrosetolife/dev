@@ -21,6 +21,6 @@ export async function app_gs() {
   let player_overlay = app_gs_overlay_player(map_c, map);
   map.html = [];
   app_gs_map_render(map, map_c, [map.player], player_overlay);
-  await sleep(100);
+  await sleep(200);
   html_scroll_center_smooth(player_overlay);
 }
