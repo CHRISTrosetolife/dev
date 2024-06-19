@@ -29,8 +29,9 @@ export function app_gs_overlay_player(map_c, map) {
       });
     });
   });
-  return {
+  let result = {
     player_directions,
     first: list_first(player_directions),
   };
+  return result;
 }
