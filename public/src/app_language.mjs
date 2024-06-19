@@ -39,6 +39,12 @@ export async function app_language(
   language_fluent,
   invert,
 ) {
+  let context = {
+    app_fn,
+    language_learn,
+    language_fluent,
+    invert,
+  };
   assert_arguments_length(arguments, 4);
   let root = html_style_default_initialize();
   html_style_default_font_size(3.5);
@@ -47,12 +53,6 @@ export async function app_language(
     app_language_group_path(language_learn, language_fluent, group_index),
   );
   let level_size = app_language_level_size();
-  let context = {
-    app_fn,
-    language_learn,
-    language_fluent,
-    invert,
-  };
   storage_local_initialize(app_fn, "position", {
     left: 0,
     right: list_index_last(group),
