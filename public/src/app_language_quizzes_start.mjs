@@ -1,7 +1,8 @@
 import { list_first } from "./list_first.mjs";
 import { app_language_quiz_settings } from "./app_language_quiz_settings.mjs";
 export function app_language_quizzes_start(
-  atoms_slice,
+  app_fn,
+  group,
   context,
   chunk_sizes,
   refresh_quiz,
