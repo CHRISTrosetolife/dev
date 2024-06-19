@@ -7,7 +7,7 @@ export function app_language_word_button_audio_none(root, langauge, text) {
     root,
     string_combine("👂", text),
     async () => {
-      return await app_language_audio(text);
+      return await app_language_audio(langauge, text);
     },
   );
   app_language_word_style(button);
