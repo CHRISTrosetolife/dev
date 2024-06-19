@@ -12,13 +12,7 @@ import { app_language_atoms_slice_concat } from "./app_language_atoms_slice_conc
 import { html_hr } from "./html_hr.mjs";
 import { html_button_width_full_text_click_up } from "./html_button_width_full_text_click_up.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
-export function app_language_refresh_review(
-  root,
-  refresh_node,
-  app_fn,
-  group,
-  language_learn,
-) {
+export function app_language_refresh_review(context) {
   html_clear_scroll_top_centered(root);
   html_button_width_full_text_click_up(root, refresh_node);
   html_hr(root);
