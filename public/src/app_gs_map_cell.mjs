@@ -28,6 +28,7 @@ import { equal_by } from "./equal_by.mjs";
 import { html_remove } from "./html_remove.mjs";
 export function app_gs_map_cell(map, map_c, player_c, tile) {
   let clicker = html_div(map_c);
+  let z_indexes = app_gs_z_indexes();
   let overlays = list_adder((la) =>
     each(tile.overlays, function lambda_overlay(o) {
       let { id: o_id } = o;
@@ -48,7 +49,6 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
     tile,
     list_index(z_indexes, "tile"),
   );
-  let z_indexes = app_gs_z_indexes();
   game_img_style(clicker, tile.y, tile.x, list_index(z_indexes, "clicker"));
   html_on_click(clicker, async () => {
     let w = app_gs_overlays_any_wall(tile);
