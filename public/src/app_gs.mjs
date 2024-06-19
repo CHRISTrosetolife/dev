@@ -11,7 +11,9 @@ import { app_gs_map_new } from "./app_gs_map_new.mjs";
 import { sleep } from "./sleep.mjs";
 export async function app_gs() {
   let root = app_gs_style_default_initialize();
-  html_style_button_default;
+  html_style_button_default({
+    margin: 0,
+  });
   if (html_hostname() !== "localhost") {
     html_scale_none();
   }
