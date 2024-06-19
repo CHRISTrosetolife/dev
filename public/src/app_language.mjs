@@ -167,7 +167,7 @@ export async function app_language(app_fn, from, to, invert) {
     if (left === right) {
       html_button_width_full_text_click(
         root,
-        string_combine(j++, ". 🎓 learn"),
+        string_combine_multiple([j++, ". 🎓 ", app_language_text(to, "learn")]),
         () => {
           refresh_learn(0);
         },
