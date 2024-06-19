@@ -358,12 +358,7 @@ export async function app_language(app_fn, from, to, invert) {
     return concat;
   }
   function quizzes_start(chunk_sizes) {
-    let settings_choices = app_language_quizzes_start(
-      atoms_slice,
-      settings_choices,
-      chunk_sizes,
-      refresh_quiz,
-    );
+    app_language_quizzes_start(atoms_slice, context, chunk_sizes, refresh_quiz);
   }
   function atoms_slice() {
     let { left, right } = storage_local_get(app_fn, "position");
