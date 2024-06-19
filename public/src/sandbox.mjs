@@ -30,6 +30,7 @@ export async function sandbox() {
   let group_count = app_language_group_size();
   let { atoms, definitions: definitions_list } =
     await ceb_bible_words_definitions_atoms(skip, limit);
+  let definitions_all = {};
   let group = list_take(atoms, group_count);
   await each_async(group, async (atom) => {
     await each_async(atom, async (a) => {
