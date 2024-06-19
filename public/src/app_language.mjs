@@ -272,7 +272,7 @@ export async function app_language(app_fn, from, to, invert) {
     let answer_other_get;
     let alternatives;
     if (forwards) {
-      app_language_word_button(root, word_f);
+      app_language_word_button(root, from, word_f);
       answer = word_t;
       answer_other_get = list_second;
       alternatives = alternatives_t;
