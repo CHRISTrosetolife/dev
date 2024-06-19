@@ -1,3 +1,4 @@
+import { app_language_text } from "./app_language_text.mjs";
 import { app_language_word_native } from "./app_language_word_native.mjs";
 import { list_slice } from "./list_slice.mjs";
 import { app_language_quiz_settings } from "./app_language_quiz_settings.mjs";
@@ -160,7 +161,7 @@ export async function app_language(app_fn, from, to, invert) {
     }
     html_button_width_full_text_click(
       root,
-      "📃 " + app_language_text("review"),
+      "📃 " + app_language_text(to, "review"),
       refresh_review,
     );
     if (left === right) {
