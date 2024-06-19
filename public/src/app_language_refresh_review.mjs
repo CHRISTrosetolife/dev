@@ -13,7 +13,7 @@ import { html_hr } from "./html_hr.mjs";
 import { html_button_width_full_text_click_up } from "./html_button_width_full_text_click_up.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 export function app_language_refresh_review(context) {
-  let a = context;
+  let { root, app_fn, group, language_learn } = context;
   html_clear_scroll_top_centered(root);
   html_button_width_full_text_click_up(root, refresh_node);
   html_hr(root);
