@@ -8,6 +8,5 @@ export function app_gs_screen_size() {
   return {
     x_count,
     y_count,
-    size_px,
   };
 }
