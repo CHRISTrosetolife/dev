@@ -69,11 +69,7 @@ import { list_without } from "./list_without.mjs";
 import { number_is } from "./number_is.mjs";
 import { assert } from "./assert.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
-export async function app_language_refresh_quiz(
-  context,
-  settings,
-  refresh_node,
-) {
+export async function app_language_refresh_quiz(context, settings) {
   let {
     root,
     app_fn,
