@@ -1,3 +1,4 @@
+import { string_length } from "./string_length.mjs";
 import { string_take_reverse } from "./string_take_reverse.mjs";
 import { list_filter_indices } from "./list_filter_indices.mjs";
 import { each_reverse } from "./each_reverse.mjs";
@@ -390,7 +391,10 @@ export async function terminal() {
         list_add(current, s);
       }
     });
-    if (list_empty_not_is(current) || string_take_reverse(input, 3) === " ''") {
+    if (
+      list_empty_not_is(current) ||
+      (string_length(input) >= 3 && string_take_reverse(input, 3) === " ''")
+    ) {
       token_next();
     }
     function token_next() {
