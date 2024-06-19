@@ -124,7 +124,7 @@ export async function app_ceb() {
   refresh_node();
   function refresh_node() {
     html_clear_scroll_top_centered(root);
-    app_ceb_title();
+    app_language_title();
     let { left, right } = storage_local_get(app_ceb, "position");
     let srl = subtract(right, left);
     let j = 1;
@@ -224,7 +224,7 @@ export async function app_ceb() {
       refresh_node();
     }
   }
-  function app_ceb_title() {
+  function app_language_title() {
     let { left, right } = storage_local_get(app_ceb, "position");
     let gl = list_get(group, left);
     let gr = list_get_or_last(group, right);
