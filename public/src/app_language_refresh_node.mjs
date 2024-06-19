@@ -30,11 +30,7 @@ import { subtract } from "./subtract.mjs";
 import { app_ceb } from "./app_ceb.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
-export async function app_language_refresh_node(
-  context,
-  refresh_learn,
-  quizzes_start,
-) {
+export async function app_language_refresh_node(context) {
   let { root, group, invert, language_fluent } = context;
   let level_size = app_language_level_size();
   html_clear_scroll_top_centered(root);
