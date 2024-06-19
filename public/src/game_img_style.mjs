@@ -8,9 +8,8 @@ import { html_style_height } from "./html_style_height.mjs";
 export function game_img_style(image, y, x, z_index) {
   let x_extend = 0;
   let y_extend = 0;
-  let unit = game_tile_units_css(1);
-  html_style_width(image, add(unit));
-  html_style_height(image, add(unit));
+  html_style_width(image, add(game_tile_units_css(1 + 2 * x_extend)));
+  html_style_height(image, add(game_tile_units_css(1 + 2 * y_extend)));
   game_img_style_transition(image);
   html_style(image, {
     position: "absolute",
