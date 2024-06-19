@@ -238,24 +238,24 @@ export async function app_ceb() {
     assert(number_is, [chunk_size]);
     let concat = atoms_slice_concat();
     let pairs_other = list_without(concat, pair);
-    let [cebuano, english] = pair;
+    let [word_f, word_t] = pair;
     if (0) {
-      [cebuano, english] = ["gikan", "from"];
+      [word_f, word_t] = ["gikan", "from"];
     }
-    let english_alternatives = list_without(
-      object_property_get(definitions, cebuano),
-      english,
+    let alternatives_t = list_without(
+      object_property_get(definitions, word_f),
+      word_t,
     );
-    let cebuano_alternatives = list_without(
-      object_property_get(inverted, english),
-      cebuano,
+    let alternatives_f = list_without(
+      object_property_get(inverted, word_t),
+      word_f,
     );
     pairs_other = list_filter(pairs_other, (po) => {
-      let [c, e] = po;
+      let [f, t] = po;
       if (
         or(
-          list_includes(cebuano_alternatives, c),
-          list_includes(english_alternatives, e),
+          list_includes(alternatives_f, f),
+          list_includes(alternatives_t, t),
         )
       ) {
         return false;
@@ -270,15 +270,15 @@ export async function app_ceb() {
     let answer_other_get;
     let alternatives;
     if (forwards) {
-      app_language_word_button(root, cebuano);
-      answer = english;
+      app_language_word_button(root, word_f);
+      answer = word_t;
       answer_other_get = list_second;
-      alternatives = english_alternatives;
+      alternatives = alternatives_t;
     } else {
-      app_language_word_english(root, english);
-      answer = cebuano;
+      app_language_word_english(root, word_t);
+      answer = word_f;
       answer_other_get = list_first;
-      alternatives = cebuano_alternatives;
+      alternatives = alternatives_f;
     }
     let quiz_container;
     let button_ready = html_button_width_full_text_click(
@@ -358,7 +358,7 @@ export async function app_ceb() {
                   html_style_background_color(root, "#d3f8d3");
                 }
                 app_learn_code_style_success(answer_element);
-                await app_language_audio(cebuano);
+                await app_language_audio(word_f);
                 if (0) {
                   html_style_background_color(root, "white");
                 }
@@ -415,19 +415,19 @@ export async function app_ceb() {
     html_hr(root);
     let concat = atoms_slice_concat();
     let lookup = {};
-    let cebuanos = list_adder_unique((la) =>
+    let words_f = list_adder_unique((la) =>
       each(concat, (pair) => {
-        let [cebuano, english] = pair;
-        la(cebuano);
-        let e = object_property_initialize(lookup, cebuano, []);
-        list_add(e, english);
+        let [word_f, word_t] = pair;
+        la(word_f);
+        let e = object_property_initialize(lookup, word_f, []);
+        list_add(e, word_t);
       }),
     );
-    list_sort_string(cebuanos, identity);
+    list_sort_string(words_f, identity);
     each_object(lookup, (key, value) => list_sort_string(value, identity));
-    each(cebuanos, (cebuano) => {
-      app_language_word_button_audio_none(root, cebuano);
-      each(object_property_get(lookup, cebuano), (english) =>
+    each(words_f, (word_t) => {
+      app_language_word_button_audio_none(root, word_t);
+      each(object_property_get(lookup, word_t), (english) =>
         app_language_word_english(root, english),
       );
       html_hr(root);
@@ -438,9 +438,9 @@ export async function app_ceb() {
     html_clear_scroll_top_centered(root);
     let concat = atoms_slice_concat();
     let pair = list_get(concat, pair_index);
-    let [cebuano, english] = pair;
-    app_language_word_button(root, cebuano);
-    app_language_word_english(root, english);
+    let [word_f, word_t] = pair;
+    app_language_word_button(root, word_f);
+    app_language_word_english(root, word_t);
     html_buttons_next_previous(
       root,
       (pair_index) => {
@@ -466,7 +466,7 @@ export async function app_ceb() {
     refresh_quiz(list_first(settings_choices));
   }
   function atoms_slice() {
-    let { left, right } = storage_local_get(app_ceb, "position");
+    let { left, right } = storage_local_get(app_fn, "position");
     let atoms = list_slice(group, left, add_1(right));
     return atoms;
   }
