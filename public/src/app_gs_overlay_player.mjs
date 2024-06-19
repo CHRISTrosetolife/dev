@@ -21,9 +21,10 @@ export function app_gs_overlay_player(map_c, map) {
         log({
           di,
         });
+        let url = game_img_character(map.player.character, di);
         let player_c_direction = game_img(
           map_c,
-          game_img_character(map.player.character, di),
+          url,
           map.player,
           list_index(z_indexes, "player"),
         );
