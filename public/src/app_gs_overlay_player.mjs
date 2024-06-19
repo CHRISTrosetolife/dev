@@ -18,7 +18,7 @@ export function app_gs_overlay_player(map_c, map) {
         map_c,
         game_img_character(
           map.player.character,
-          add(game_character_index(direction), player.walk_offset),
+          add(game_character_index(direction), offset),
         ),
         map.player,
         list_index(z_indexes, "player"),
