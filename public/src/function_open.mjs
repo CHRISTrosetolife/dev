@@ -5,5 +5,5 @@ import { function_name_to_path } from "./function_name_to_path.mjs";
 export async function function_open(function_name) {
   let file_path = function_name_to_path(function_name);
   await assert_async(file_exists, [file_path]);
-  await file_open(file_path);
+  unawait(()=> file_open(file_path));
 }
