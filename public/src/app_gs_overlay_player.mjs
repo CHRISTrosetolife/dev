@@ -8,10 +8,12 @@ import { game_img_character } from "./game_img_character.mjs";
 import { game_img } from "./game_img.mjs";
 import { app_gs_z_indexes } from "./app_gs_z_indexes.mjs";
 import { object_properties } from "./object_properties.mjs";
+import { range_from } from "./range_from.mjs";
 export function app_gs_overlay_player(map_c, map) {
   let z_indexes = app_gs_z_indexes();
   let directions = object_properties(game_character_indices());
   each(directions, (direction) => {
+    each(range_from(-1, 1));
     let player_c = game_img(
       map_c,
       game_img_character(
