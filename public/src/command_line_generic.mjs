@@ -1,3 +1,4 @@
+import { log_error } from "./log_error.mjs";
 import { log } from "./log.mjs";
 import { import_node } from "./import_node.mjs";
 export async function command_line_generic(command, options) {
@@ -14,6 +15,7 @@ export async function command_line_generic(command, options) {
     });
     child.stderr.setEncoding("utf8");
     child.stderr.on("data", function (data) {
+      log_error();
       console.log("stderr: " + data);
       data = data.toString();
       scriptOutput += data;
