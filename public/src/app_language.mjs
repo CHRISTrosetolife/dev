@@ -87,7 +87,7 @@ export async function app_language(app_fn, from, to, invert) {
     html_clear_scroll_top_centered(root);
     html_button_width_full_text_click_up(root, refresh_node);
     html_hr(root);
-    let concat = atoms_slice_concat();
+    let concat = app_language_atoms_slice_concat(app_fn, group);
     let lookup = {};
     let words_f = list_adder_unique((la) =>
       each(concat, (pair) => {
