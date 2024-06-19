@@ -1,3 +1,4 @@
+import { app_language_title } from "./app_language_title.mjs";
 import { equal } from "./equal.mjs";
 import { or } from "./or.mjs";
 import { html_button_width_full_text_click_up } from "./html_button_width_full_text_click_up.mjs";
@@ -38,7 +39,7 @@ export async function app_language_refresh_node(
   quizzes_start,
 ) {
   html_clear_scroll_top_centered(root);
-  app_language_title();
+  app_language_title(context);
   let { left, right } = storage_local_get(app_ceb, "position");
   let srl = subtract(right, left);
   let j = 1;
