@@ -95,7 +95,7 @@ export async function app_language_refresh_node(
       " )",
     ]),
     () => {
-      quizzes_start([3]);
+      app_language_quizzes_start([3]);
     },
   );
   html_button_width_full_text_click(
