@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { game_character_direction_index } from "./game_character_direction_index.mjs";
@@ -16,12 +17,13 @@ export function app_gs_overlay_player(map_c, map) {
   let player_directions = list_adder((la) => {
     each(directions, (direction) => {
       each(range_from(-1, 1), (walk_offset) => {
+        let di = game_character_direction_index(direction, walk_offset);
+        log({
+          di,
+        });
         let player_c_direction = game_img(
           map_c,
-          game_img_character(
-            map.player.character,
-            game_character_direction_index(direction, walk_offset),
-          ),
+          game_img_character(map.player.character, di),
           map.player,
           list_index(z_indexes, "player"),
         );
