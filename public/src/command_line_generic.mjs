@@ -7,7 +7,7 @@ export async function command_line_generic(command, options) {
   let { spawn } = c;
   return await new Promise((resolve) => {
     let { first, remaining } = list_first_remaining(command);
-    let child = spawn(command);
+    let child = spawn(first, remaining);
     child.stdout.setEncoding("utf8");
     child.stdout.on("data", function (data) {
       log(data);
