@@ -427,9 +427,9 @@ export async function app_language(app_fn, from, to, invert) {
     );
     list_sort_string(words_f, identity);
     each_object(lookup, (key, value) => list_sort_string(value, identity));
-    each(words_f, (word_t) => {
-      app_language_word_button_audio_none(root, word_t);
-      each(object_property_get(lookup, word_t), (english) =>
+    each(words_f, (word_f) => {
+      app_language_word_button_audio_none(root, from, word_f);
+      each(object_property_get(lookup, word_f), (english) =>
         app_language_word_english(root, english),
       );
       html_hr(root);
