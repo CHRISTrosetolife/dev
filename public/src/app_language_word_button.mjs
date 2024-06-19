@@ -4,6 +4,6 @@ import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export function app_language_word_button(root, language, text) {
   assert_arguments_length(arguments, 3);
   let button = app_language_word_button_audio_none(root, language, text);
-  (async () => await app_language_audio(text))();
+  (async () => await app_language_audio(language, text))();
   return button;
 }
