@@ -80,6 +80,7 @@ export async function app_language(
   }
   function quizzes_start(chunk_sizes) {
     app_language_quizzes_start(
+      context,
       app_fn,
       group,
       context,
