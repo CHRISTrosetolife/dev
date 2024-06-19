@@ -13,8 +13,6 @@ export function app_gs_menu_system_logs(menu_overlay) {
   );
   let logs = log_logs();
   each(logs, (log) => {
-    html_button_width_full_text(menu_overlay, json_to(log), () =>
-      app_gs_menu_main(menu_overlay),
-    );
+    html_button_width_full_text(menu_overlay, json_to(log));
   });
 }
