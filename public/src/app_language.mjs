@@ -89,12 +89,7 @@ export async function app_language(
     html_cycle_p(root, app_language_atom_title_patterns(), text);
   }
   async function refresh_quiz(settings) {
-    await app_language_refresh_quiz(
-      context,
-      settings,
-      refresh_node,
-      refresh_quiz,
-    );
+    await app_language_refresh_quiz(context, settings, refresh_node);
   }
   async function refresh_review() {
     html_clear_scroll_top_centered(root);
