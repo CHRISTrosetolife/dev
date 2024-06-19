@@ -37,8 +37,8 @@ export async function sandbox() {
       let en = list_second(a);
       if (upload_audio) {
         await audio_upload(from, ceb);
+        await audio_upload(to, en);
       }
-      await audio_upload(to, en);
     });
   });
   let words = list_adder_unique((la) =>
