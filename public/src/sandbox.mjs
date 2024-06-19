@@ -21,6 +21,8 @@ import { list_add } from "./list_add.mjs";
 import { file_read_json } from "./file_read_json.mjs";
 import { assert } from "./assert.mjs";
 export async function sandbox() {
+  let from = "ceb";
+  let to = "en";
   let group_index = 0;
   let limit = 150;
   let skip = 0;
