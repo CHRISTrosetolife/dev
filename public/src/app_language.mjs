@@ -46,7 +46,7 @@ export async function app_language(
     await app_language_refresh_node(context, refresh_learn, quizzes_start);
   }
   async function refresh_quiz(settings) {
-    await app_language_refresh_quiz(context, settings, refresh_node);
+    await app_language_refresh_quiz(context, settings);
   }
   async function refresh_learn(pair_index) {
     app_language_refresh_learn(
