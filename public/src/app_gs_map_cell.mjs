@@ -6,7 +6,6 @@ import { html_style_height } from "./html_style_height.mjs";
 import { game_tile_units_css } from "./game_tile_units_css.mjs";
 import { html_style_width } from "./html_style_width.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
-import { app_gs_map_extends } from "./app_gs_map_extends.mjs";
 import { list_xy } from "./list_xy.mjs";
 import { list_all } from "./list_all.mjs";
 import { app_gs_map_tile_id } from "./app_gs_map_tile_id.mjs";
@@ -81,7 +80,6 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
       let menu = html_div(map_c);
       html_style_background_color(menu, "rgba(1,1,1,0.5)");
       let { x_count, y_count, size_px } = app_gs_screen_size();
-      let { y_extend, x_extend } = app_gs_map_extends();
       html_style_width(menu, game_tile_units_css(x_count));
       html_style_height(menu, game_tile_units_css(y_count));
       html_style(menu, {
@@ -90,8 +88,8 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
       });
       game_img_position(
         menu,
-        subtract(map.player.y, y_extend),
-        subtract(map.player.x, x_extend),
+        subtract(map.player.y, y_count / 2 - size_px / 2),
+        subtract(map.player.x, x_count / 2 - size_px / 2),
       );
       html_button_width_full_text_click(menu, "close menu");
       return;
