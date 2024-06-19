@@ -79,7 +79,6 @@ export async function app_language_refresh_quiz(
     app_fn,
     language_learn,
     language_fluent,
-    invert,
     group,
     definitions,
     inverted,
