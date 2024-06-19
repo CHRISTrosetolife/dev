@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
 import { file_read } from "./file_read.mjs";
 import { function_run } from "./function_run.mjs";
@@ -11,6 +12,9 @@ export async function function_run_json(
   let args_json_string = await file_read(input_file_path);
   let { args } = json_from(args_json_string);
   let result = await function_run(function_name, args);
+  log({
+    result,
+  });
   let json = json_to({
     result,
   });
