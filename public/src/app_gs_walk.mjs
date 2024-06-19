@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { game_character_direction_index } from "./game_character_direction_index.mjs";
 import { html_img_src } from "./html_img_src.mjs";
 import { list_xy } from "./list_xy.mjs";
@@ -39,9 +38,6 @@ export async function app_gs_walk(player_c, player, destination) {
         player.walk_offset = 0;
       }
       let di = game_character_direction_index(direction, player.walk_offset);
-      log({
-        di,
-      });
       html_img_src(player_c, game_img_character(player.character, di));
       let delta = game_direction_to_delta(direction);
       game_img_position(
