@@ -28,7 +28,7 @@ export function app_language_refresh_learn(
       if (greater_than(pair_index, list_index_last(concat))) {
         await app_language_refresh_node();
       } else {
-        refresh_learn(pair_index);
+        app_language_refresh_learn(pair_index);
       }
     },
     pair_index,
