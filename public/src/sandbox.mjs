@@ -49,32 +49,33 @@ export async function sandbox() {
       pair_word_get: list_second,
     },
   ];
-  await each_async(profiles, (profile) => {});
-  let words = list_adder_unique((la) =>
-    each(atoms, (a) => each(a, (pair) => la(list_first(pair)))),
-  );
-  let definitions = {};
-  each(words, (w) => {
-    let ds = list_find(definitions_list, (d) => d.word === w).definitions;
-    object_property_set(definitions, w, ds);
+  await each_async(profiles, async (profile) => {
+    let words = list_adder_unique((la) =>
+      each(atoms, (a) => each(a, (pair) => la(list_first(pair)))),
+    );
+    let definitions = {};
+    each(words, (w) => {
+      let ds = list_find(definitions_list, (d) => d.word === w).definitions;
+      object_property_set(definitions, w, ds);
+    });
+    let inverted = object_list_invert(definitions);
+    let result_new = {
+      group,
+      definitions,
+      inverted,
+    };
+    let storage_path = app_language_group_path(from, to, group_index);
+    let existing_path = folder_gitignore_path(storage_path);
+    if (group_upload) {
+      await storage_upload_object(result_new, storage_path);
+    }
+    if (group_local_save) {
+      await file_overwrite_json(existing_path, result_new);
+    }
+    if (group_local_compare_to_new) {
+      let existing = await file_read_json(existing_path);
+      assert(equal_json, [result_new, existing]);
+      return group;
+    }
   });
-  let inverted = object_list_invert(definitions);
-  let result_new = {
-    group,
-    definitions,
-    inverted,
-  };
-  let storage_path = app_language_group_path(from, to, group_index);
-  let existing_path = folder_gitignore_path(storage_path);
-  if (group_upload) {
-    await storage_upload_object(result_new, storage_path);
-  }
-  if (group_local_save) {
-    await file_overwrite_json(existing_path, result_new);
-  }
-  if (group_local_compare_to_new) {
-    let existing = await file_read_json(existing_path);
-    assert(equal_json, [result_new, existing]);
-    return group;
-  }
 }
