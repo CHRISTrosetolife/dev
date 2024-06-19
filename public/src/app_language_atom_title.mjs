@@ -19,8 +19,8 @@ export function app_language_atom_title(
   let l = list_first(atom_left);
   let r = list_last(atom_left);
   log({
-    atom_left,
-    atom_left,
+    l,
+    r,
   });
   let atom_count = app_language_atom_count();
   let mapped = list_map_nested([l, r], string_delimit_backtick);
