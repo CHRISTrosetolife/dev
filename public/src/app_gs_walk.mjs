@@ -1,3 +1,4 @@
+import { app_gs_overlay_player_direction } from "./app_gs_overlay_player_direction.mjs";
 import { game_character_direction_index } from "./game_character_direction_index.mjs";
 import { html_img_src } from "./html_img_src.mjs";
 import { list_xy } from "./list_xy.mjs";
@@ -19,7 +20,7 @@ export async function app_gs_walk(player_c, player, destination) {
   if (direction === null) {
     return;
   }
-  app_gs_overlay_player_direction(player_c, direction);
+  app_gs_overlay_player_direction(player_c, direction, 0);
   html_img_src(
     player_c,
     game_img_character(player.character, game_character_index(direction)),
