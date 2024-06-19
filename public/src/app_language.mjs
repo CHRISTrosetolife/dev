@@ -176,21 +176,36 @@ export async function app_language(app_fn, from, to, invert) {
     ("🟠🔵");
     html_button_width_full_text_click(
       root,
-      string_combine_multiple([j++, ". 📝 quiz ( 🟢 easy )"]),
+      string_combine_multiple([
+        j++,
+        ". 📝 quiz ( 🟢 ",
+        app_language_text(to, "easy"),
+        " )",
+      ]),
       () => {
         quizzes_start([3]);
       },
     );
     html_button_width_full_text_click(
       root,
-      string_combine_multiple([j++, ". 📝 quiz ( 🟡 medium )"]),
+      string_combine_multiple([
+        j++,
+        ". 📝 quiz ( 🟡 ",
+        app_language_text(to, "medium"),
+        " )",
+      ]),
       () => {
         quizzes_start([2]);
       },
     );
     html_button_width_full_text_click(
       root,
-      string_combine_multiple([j++, ". 📝 quiz ( 🔴 hard )"]),
+      string_combine_multiple([
+        j++,
+        ". 📝 quiz ( 🔴 ",
+        app_language_text(to, "hard"),
+        " )",
+      ]),
       () => {
         quizzes_start([1]);
       },
