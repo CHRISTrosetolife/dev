@@ -391,7 +391,7 @@ export async function terminal() {
       }
     });
     let suffix = " ''";
-    if (list_empty_not_is(current) || string_ends_with(suffix)) {
+    if (list_empty_not_is(current) || string_ends_with(input, suffix)) {
       token_next();
     }
     function token_next() {
