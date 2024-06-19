@@ -1,6 +1,5 @@
 import { app_language_refresh_learn } from "./app_language_refresh_learn.mjs";
 import { app_language_refresh_quiz } from "./app_language_refresh_quiz.mjs";
-import { app_language_quizzes_start } from "./app_language_quizzes_start.mjs";
 import { app_language_refresh_node } from "./app_language_refresh_node.mjs";
 import { list_index_last } from "./list_index_last.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
@@ -58,8 +57,5 @@ export async function app_language(
       refresh_node,
       refresh_learn,
     );
-  }
-  function quizzes_start(chunk_sizes) {
-    app_language_quizzes_start(context, chunk_sizes, refresh_quiz);
   }
 }
