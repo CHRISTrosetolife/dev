@@ -16,11 +16,12 @@ export async function html_scroll_center_smooth(component) {
       log("scroll finish failed");
       reject();
     }, 2000);
-    window.addEventListener("scrollend", () => {
+    window.addEventListener("scrollend", scroll_handler);
+    function scroll_handler() {
       clearTimeout(failed);
-      window.removeEventListener("scrollend", scrollHandler);
+      window.removeEventListener("scrollend", scroll_handler);
       resolve();
-    });
+    }
   });
   return;
   let additional = {
