@@ -353,7 +353,7 @@ export async function app_language(app_fn, from, to, invert) {
     html_button_width_full_text_click_up(root, refresh_node);
   }
   function atoms_slice_concat() {
-    let atoms = atoms_slice();
+    let atoms = app_language_atoms_slice(app_fn, group);
     let concat = list_concat_multiple(atoms);
     return concat;
   }
