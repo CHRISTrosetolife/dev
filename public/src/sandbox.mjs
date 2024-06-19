@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_to_lookup_value_property } from "./list_to_lookup_value_property.mjs";
 import { object_list_invert } from "./object_list_invert.mjs";
 import { app_language_group_size } from "./app_language_group_size.mjs";
@@ -51,6 +52,10 @@ export async function sandbox() {
       invert: true,
     },
   ];
+  log({
+    profiles,
+  });
+  return;
   await each_async(profiles, async (profile) => {
     let group = list_take(atoms, group_count);
     await each_async(group, async (atom) => {
