@@ -1,3 +1,4 @@
+import { app_language_atoms_slice_concat } from "./app_language_atoms_slice_concat.mjs";
 import { html_button_disable } from "./html_button_disable.mjs";
 import { html_style_font_color_default_set } from "./html_style_font_color_default_set.mjs";
 import { html_enable } from "./html_enable.mjs";
@@ -83,7 +84,7 @@ export async function app_language_refresh_quiz(
   let no_mistakes = true;
   let { pair, chunk_size, forwards } = settings;
   assert(number_is, [chunk_size]);
-  let concat = atoms_slice_concat();
+  let concat = app_language_atoms_slice_concat(app_fn, group);
   let pairs_other = list_without(concat, pair);
   let [word_f, word_t] = pair;
   if (0) {
