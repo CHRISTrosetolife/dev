@@ -29,5 +29,7 @@ export function app_gs_overlay_player(map_c, map) {
       });
     });
   });
-  return player_c;
+  return {
+    player_directions,
+  };
 }
