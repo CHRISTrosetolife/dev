@@ -32,7 +32,7 @@ export async function app_language_refresh_node(
   group,
   invert,
   refresh_node,
-  to,
+  language_fluent,
   refresh_review,
   refresh_learn,
   quizzes_start,
@@ -69,7 +69,7 @@ export async function app_language_refresh_node(
   }
   html_button_width_full_text_click(
     root,
-    "📃 " + (await app_language_text(to, "review")),
+    "📃 " + (await app_language_text(language_fluent, "review")),
     refresh_review,
   );
   if (left === right) {
@@ -78,7 +78,7 @@ export async function app_language_refresh_node(
       string_combine_multiple([
         j++,
         ". 🎓 ",
-        await app_language_text(to, "learn"),
+        await app_language_text(language_fluent, "learn"),
       ]),
       () => {
         refresh_learn(0);
@@ -91,7 +91,7 @@ export async function app_language_refresh_node(
     string_combine_multiple([
       j++,
       ". 📝 quiz ( 🟢 ",
-      await app_language_text(to, "easy"),
+      await app_language_text(language_fluent, "easy"),
       " )",
     ]),
     () => {
@@ -103,7 +103,7 @@ export async function app_language_refresh_node(
     string_combine_multiple([
       j++,
       ". 📝 quiz ( 🟡 ",
-      await app_language_text(to, "medium"),
+      await app_language_text(language_fluent, "medium"),
       " )",
     ]),
     () => {
@@ -115,7 +115,7 @@ export async function app_language_refresh_node(
     string_combine_multiple([
       j++,
       ". 📝 quiz ( 🔴 ",
-      await app_language_text(to, "hard"),
+      await app_language_text(language_fluent, "hard"),
       " )",
     ]),
     () => {
@@ -127,7 +127,7 @@ export async function app_language_refresh_node(
     string_combine_multiple([
       j++,
       ". ",
-      await app_language_text(to, html_button_next_text()),
+      await app_language_text(language_fluent, html_button_next_text()),
     ]),
     () => {
       app_ceb_next();
