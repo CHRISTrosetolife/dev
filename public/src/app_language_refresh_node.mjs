@@ -90,8 +90,8 @@ export async function app_language_refresh_node(context) {
       await app_language_text(language_fluent, "easy"),
       " )",
     ]),
-    () => {
-      app_language_quizzes_start(context, [3]);
+    async () => {
+      await app_language_quizzes_start(context, [3]);
     },
   );
   html_button_width_full_text_click(
@@ -102,8 +102,8 @@ export async function app_language_refresh_node(context) {
       await app_language_text(language_fluent, "medium"),
       " )",
     ]),
-    () => {
-      app_language_quizzes_start([2]);
+    async () => {
+      await app_language_quizzes_start([2]);
     },
   );
   html_button_width_full_text_click(
@@ -114,8 +114,8 @@ export async function app_language_refresh_node(context) {
       await app_language_text(language_fluent, "hard"),
       " )",
     ]),
-    () => {
-      app_language_quizzes_start(context, [1]);
+    async () => {
+      await app_language_quizzes_start(context, [1]);
     },
   );
   html_button_width_full_text_click(
