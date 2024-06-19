@@ -1,5 +1,3 @@
-import { app_language_refresh_learn } from "./app_language_refresh_learn.mjs";
-import { app_language_refresh_quiz } from "./app_language_refresh_quiz.mjs";
 import { app_language_refresh_node } from "./app_language_refresh_node.mjs";
 import { list_index_last } from "./list_index_last.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
@@ -40,14 +38,5 @@ export async function app_language(
     left: 0,
     right: list_index_last(group),
   });
-  refresh_node();
-  async function refresh_node() {
-    await app_language_refresh_node(context);
-  }
-  async function refresh_quiz(settings) {
-    await app_language_refresh_quiz(context, settings);
-  }
-  async function refresh_learn(pair_index) {
-    app_language_refresh_learn(root, app_fn, group, language_learn, pair_index);
-  }
+  await app_language_refresh_node(context);
 }
