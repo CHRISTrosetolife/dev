@@ -358,7 +358,13 @@ export async function app_language(app_fn, from, to, invert) {
     return concat;
   }
   function quizzes_start(chunk_sizes) {
-    app_language_quizzes_start(atoms_slice, context, chunk_sizes, refresh_quiz);
+    app_language_quizzes_start(
+      app_fn,
+      group,
+      context,
+      chunk_sizes,
+      refresh_quiz,
+    );
   }
   function atoms_slice() {
     return app_language_atoms_slice(app_fn, group);
