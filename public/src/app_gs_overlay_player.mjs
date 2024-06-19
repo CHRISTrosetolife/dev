@@ -1,3 +1,4 @@
+import { app_gs_overlay_player_direction } from "./app_gs_overlay_player_direction.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { game_character_direction_index } from "./game_character_direction_index.mjs";
@@ -33,5 +34,6 @@ export function app_gs_overlay_player(map_c, map) {
     player_directions,
     first: list_first(player_directions),
   };
+  app_gs_overlay_player_direction(result, "down", 0);
   return result;
 }
