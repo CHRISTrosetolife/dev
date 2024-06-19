@@ -32,7 +32,7 @@ export function app_language_atom_title(
     " ) ",
   ]);
   log({
-    text,
+    inverted,
   });
   return text;
 }
