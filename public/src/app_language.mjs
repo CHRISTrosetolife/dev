@@ -33,6 +33,7 @@ import { http_storage } from "./http_storage.mjs";
 import { html_style_default_font_size } from "./html_style_default_font_size.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
+import { object_merge } from "./object_merge.mjs";
 export async function app_language(
   app_fn,
   language_learn,
@@ -52,6 +53,11 @@ export async function app_language(
   let { group, definitions, inverted } = await http_storage(
     app_language_group_path(language_learn, language_fluent, group_index),
   );
+  object_merge(context, {
+    group,
+    definitions,
+    inverted,
+  });
   let level_size = app_language_level_size();
   storage_local_initialize(app_fn, "position", {
     left: 0,
