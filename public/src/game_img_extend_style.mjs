@@ -8,9 +8,9 @@ import { add } from "./add.mjs";
 import { html_style_width } from "./html_style_width.mjs";
 export function game_img_extend_style(
   image,
-  z_index,
   y,
   x,
+  z_index,
   y_extend,
   x_extend,
 ) {
