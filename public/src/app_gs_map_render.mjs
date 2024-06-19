@@ -11,11 +11,11 @@ import { object_property_initialize } from "./object_property_initialize.mjs";
 import { each_object } from "./each_object.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 export function app_gs_map_render(map, map_c, coordinates, player_c) {
-  let { y_extend, x_extend } = app_gs_map_extends();
   html_style(map_c, {
-    width: game_tile_units_css(x_extend * 2 + 1),
-    height: game_tile_units_css(y_extend * 2 + 1),
+    width: game_tile_units_css(map.x_size),
+    height: game_tile_units_css(map.y_size),
   });
+  let { y_extend, x_extend } = app_gs_map_extends();
   let tiles_new = {};
   each(coordinates, (c) => {
     let { x, y } = c;
