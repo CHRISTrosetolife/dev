@@ -22,9 +22,9 @@ export function app_language_atom_title(
   let mapped = list_map_nested([l, r], string_delimit_backtick);
   let text = string_combine_multiple([
     "words ",
-    list_join_colon_spaces(list_first(mapped)),
+    list_join_colon_spaces((inverted ? list_last : list_first)(mapped)),
     " through ",
-    list_join_colon_spaces(list_last(mapped)),
+    list_join_colon_spaces((inverted ? list_first : list_last)(mapped)),
     "<br>( words ",
     add_1(multiply(list_index(group, atom_left), atom_count)),
     " - ",
