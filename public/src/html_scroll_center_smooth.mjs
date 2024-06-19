@@ -1,4 +1,6 @@
+import { log } from "./log.mjs";
 import { html_scroll_center_generic } from "./html_scroll_center_generic.mjs";
+import { object_properties_new } from "./object_properties_new.mjs";
 export async function html_scroll_center_smooth(component) {
   let vh = window.innerHeight;
   let vw = window.innerWidth;
@@ -12,6 +14,7 @@ export async function html_scroll_center_smooth(component) {
   });
   return await new Promise((resolve, reject) => {
     let failed = setTimeout(() => {
+      log(object_properties_new(window, ["scrollX", "scrollY"]));
       reject();
     }, 2000);
     let scrollHandler = () => {
