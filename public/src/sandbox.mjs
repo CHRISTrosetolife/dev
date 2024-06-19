@@ -26,6 +26,7 @@ export async function sandbox() {
   let audio_upload = false;
   let group_upload = true;
   let group_local_save = true;
+  let group_local_compare_to_new = false;
   let group_index = 0;
   let limit = 150;
   let skip = 0;
