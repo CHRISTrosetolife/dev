@@ -391,9 +391,10 @@ export async function terminal() {
         list_add(current, s);
       }
     });
+    let suffix = " ''";
     if (
       list_empty_not_is(current) ||
-      (string_length(input) >= 3 && string_take_reverse(input, 3) === " ''")
+      (string_length(input) >= 3 && string_take_reverse(input, 3) === suffix)
     ) {
       token_next();
     }
