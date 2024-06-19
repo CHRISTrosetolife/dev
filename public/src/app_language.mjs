@@ -123,7 +123,7 @@ export async function app_language(app_fn, from, to, invert) {
     right: list_index_last(group),
   });
   refresh_node();
-  function refresh_node() {
+  async function refresh_node() {
     html_clear_scroll_top_centered(root);
     app_language_title();
     let { left, right } = storage_local_get(app_ceb, "position");
@@ -161,13 +161,17 @@ export async function app_language(app_fn, from, to, invert) {
     }
     html_button_width_full_text_click(
       root,
-      "📃 " + app_language_text(to, "review"),
+      "📃 " + (await app_language_text(to, "review")),
       refresh_review,
     );
     if (left === right) {
       html_button_width_full_text_click(
         root,
-        string_combine_multiple([j++, ". 🎓 ", app_language_text(to, "learn")]),
+        string_combine_multiple([
+          j++,
+          ". 🎓 ",
+          await app_language_text(to, "learn"),
+        ]),
         () => {
           refresh_learn(0);
         },
@@ -179,7 +183,7 @@ export async function app_language(app_fn, from, to, invert) {
       string_combine_multiple([
         j++,
         ". 📝 quiz ( 🟢 ",
-        app_language_text(to, "easy"),
+        await app_language_text(to, "easy"),
         " )",
       ]),
       () => {
@@ -191,7 +195,7 @@ export async function app_language(app_fn, from, to, invert) {
       string_combine_multiple([
         j++,
         ". 📝 quiz ( 🟡 ",
-        app_language_text(to, "medium"),
+        await app_language_text(to, "medium"),
         " )",
       ]),
       () => {
@@ -203,7 +207,7 @@ export async function app_language(app_fn, from, to, invert) {
       string_combine_multiple([
         j++,
         ". 📝 quiz ( 🔴 ",
-        app_language_text(to, "hard"),
+        await app_language_text(to, "hard"),
         " )",
       ]),
       () => {
@@ -215,7 +219,7 @@ export async function app_language(app_fn, from, to, invert) {
       string_combine_multiple([
         j++,
         ". ",
-        app_language_text(to, html_button_next_text()),
+        await app_language_text(to, html_button_next_text()),
       ]),
       () => {
         app_ceb_next();
@@ -309,7 +313,7 @@ export async function app_language(app_fn, from, to, invert) {
     let quiz_container;
     let button_ready = html_button_width_full_text_click(
       root,
-      "🏁 " + app_language_text(to, "ready"),
+      "🏁 " + (await app_language_text(to, "ready")),
       () => {
         html_style_display_none(button_ready);
         html_style_display_block(quiz_container);
