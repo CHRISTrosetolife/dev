@@ -19,6 +19,8 @@ export async function html_scroll_center_smooth(component) {
       log({
         scrollTop: root.scrollTop,
         scrollLeft: root.scrollLeft,
+        top,
+        left,
       });
       reject();
     }, 2000);
