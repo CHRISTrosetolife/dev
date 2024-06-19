@@ -70,7 +70,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
       )
     ) {
       let menu = html_div(map_c);
-      html_style_background_color(menu, "black");
+      html_style_background_color(menu, "rgba(1,1,1,0.5)");
       game_img_style(
         menu,
         map.player.y,
