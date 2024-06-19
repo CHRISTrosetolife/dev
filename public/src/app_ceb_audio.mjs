@@ -14,8 +14,7 @@ import { integer_random } from "./integer_random.mjs";
 export async function app_ceb_audio(text) {
   let language = "ceb";
   let { voices } = await audio_language(language);
-  let fn = app_ceb_audio;
-  let counts = global_function(fn);
+  let counts = global_function(app_ceb_audio);
   let voices_index_last = list_index_last(voices);
   let count = object_property_initialize(
     counts,
