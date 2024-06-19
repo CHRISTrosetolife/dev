@@ -9,12 +9,7 @@ import { app_language_word_button } from "./app_language_word_button.mjs";
 import { list_get } from "./list_get.mjs";
 import { app_language_atoms_slice_concat } from "./app_language_atoms_slice_concat.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
-export function app_language_refresh_learn(
-  context,
-  pair_index,
-  refresh_node,
-  refresh_learn,
-) {
+export function app_language_refresh_learn(context, pair_index) {
   let { root, app_fn, group, language_learn } = context;
   html_clear_scroll_top_centered(root);
   let concat = app_language_atoms_slice_concat(app_fn, group);
@@ -34,5 +29,7 @@ export function app_language_refresh_learn(
     pair_index,
     list_size(concat),
   );
-  html_button_width_full_text_click_up(root, refresh_node);
+  html_button_width_full_text_click_up(root, () => {
+    app_language_refresh_node;
+  });
 }
