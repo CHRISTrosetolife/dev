@@ -95,7 +95,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
         subtract(map.player.y, (y_count - 1) / 2),
         subtract(map.player.x, (x_count - 1) / 2),
       );
-      html_button_width_full_text_click(menu, "close menu", () => {
+      html_button_width_full_text_click(menu, "back", () => {
         html_remove(menu);
       });
       return;
