@@ -1,3 +1,4 @@
+import { app_language_refresh_node } from "./app_language_refresh_node.mjs";
 import { app_language_atoms_slice_concat } from "./app_language_atoms_slice_concat.mjs";
 import { html_button_disable } from "./html_button_disable.mjs";
 import { html_style_font_color_default_set } from "./html_style_font_color_default_set.mjs";
@@ -207,7 +208,7 @@ export async function app_language_refresh_quiz(
                 html_style_background_color(root, "white");
               }
               if (equal(settings, list_last(context.settings_choices))) {
-                refresh_node();
+                await app_language_refresh_node(context);
               } else {
                 let after = list_after(context.settings_choices, settings);
                 await app_language_refresh_quiz(context, after, refresh_node);
