@@ -64,7 +64,6 @@ export async function app_language(
   async function refresh_node() {
     await app_language_refresh_node(
       context,
-      refresh_node,
       refresh_review,
       refresh_learn,
       quizzes_start,
