@@ -35,12 +35,6 @@ import { html_style_default_initialize } from "./html_style_default_initialize.m
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export async function app_language(app_fn, from, to, invert) {
   assert_arguments_length(arguments, 4);
-  let context = {
-    app_fn,
-    from,
-    to,
-    invert,
-  };
   let root = html_style_default_initialize();
   html_style_default_font_size(3.5);
   let group_index = 0;
@@ -48,6 +42,7 @@ export async function app_language(app_fn, from, to, invert) {
     app_language_group_path(from, to, group_index),
   );
   let level_size = app_language_level_size();
+  let context = {};
   storage_local_initialize(app_fn, "position", {
     left: 0,
     right: list_index_last(group),
