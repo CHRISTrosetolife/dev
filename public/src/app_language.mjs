@@ -148,12 +148,12 @@ export async function app_language(app_fn, from, to, invert) {
           root,
           app_language_atom_title_patterns(),
           string_combine_multiple([j, ". ", text]),
-          async function on_click() {
+          function on_click() {
             storage_local_set(app_ceb, "position", {
               left: left_next,
               right: right_next,
             });
-            await refresh_node();
+            refresh_node();
           },
         );
         j++;
@@ -221,9 +221,9 @@ export async function app_language(app_fn, from, to, invert) {
         ". ",
         await app_language_text(to, html_button_next_text()),
       ]),
-      async () => {
+      () => {
         app_ceb_next();
-        await refresh_node();
+        refresh_node();
       },
     );
     function app_ceb_next() {
