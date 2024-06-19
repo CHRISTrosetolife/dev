@@ -11,12 +11,7 @@ import { list_index } from "./list_index.mjs";
 import { multiply } from "./multiply.mjs";
 import { add_1 } from "./add_1.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
-export function app_language_atom_title(
-  group,
-  atom_left,
-  atom_right,
-  inverted,
-) {
+export function app_language_atom_title(group, atom_left, atom_right, invert) {
   assert_arguments_length(arguments, 4);
   let l = list_first(atom_left);
   let r = list_last(atom_left);
@@ -24,9 +19,9 @@ export function app_language_atom_title(
   let mapped = list_map_nested([l, r], string_delimit_backtick);
   let text = string_combine_multiple([
     "words ",
-    list_join_colon_spaces((inverted ? list_last : list_first)(mapped)),
+    list_join_colon_spaces((invert ? list_last : list_first)(mapped)),
     " through ",
-    list_join_colon_spaces((inverted ? list_first : list_last)(mapped)),
+    list_join_colon_spaces((invert ? list_first : list_last)(mapped)),
     "<br>( words ",
     add_1(multiply(list_index(group, atom_left), atom_count)),
     " - ",
@@ -34,7 +29,7 @@ export function app_language_atom_title(
     " ) ",
   ]);
   log({
-    inverted,
+    inverted: invert,
   });
   return text;
 }
