@@ -74,9 +74,6 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
     ) {
       let menu_overlay = app_gs_menu_overlay(map_c, map);
       menu_main(menu_overlay);
-      html_button_width_full_text_click(menu_overlay, "system logs", () => {
-        html_remove(menu_overlay);
-      });
       return;
     }
     app_gs_map_render(map, map_c, path, player_c);
@@ -88,6 +85,9 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
     function menu_overlay(menu_overlay) {
       html_clear(menu_overlay);
       html_button_width_full_text_click(menu_overlay, "back", () => {
+        html_remove(menu_overlay);
+      });
+      html_button_width_full_text_click(menu_overlay, "system logs", () => {
         html_remove(menu_overlay);
       });
     }
