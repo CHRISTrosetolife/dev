@@ -390,7 +390,7 @@ export async function terminal() {
         list_add(current, s);
       }
     });
-    if (list_empty_not_is(current) || string_take_reverse(input) === " ''") {
+    if (list_empty_not_is(current) || string_take_reverse(input, 3) === " ''") {
       token_next();
     }
     function token_next() {
