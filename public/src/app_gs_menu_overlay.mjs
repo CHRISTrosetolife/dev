@@ -9,7 +9,7 @@ import { game_tile_units_css } from "./game_tile_units_css.mjs";
 import { html_style } from "./html_style.mjs";
 import { html_div } from "./html_div.mjs";
 import { app_gs_z_indexes } from "./app_gs_z_indexes.mjs";
-export function app_gs_menu(map_c, map) {
+export function app_gs_menu_overlay(map_c, map) {
   let z_indexes = app_gs_z_indexes();
   let menu = html_div(map_c);
   html_style(menu, {
