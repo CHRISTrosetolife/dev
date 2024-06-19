@@ -11,8 +11,9 @@ import { object_property_set } from "./object_property_set.mjs";
 import { add_1 } from "./add_1.mjs";
 import { mod } from "./mod.mjs";
 import { integer_random } from "./integer_random.mjs";
-export async function app_language_audio(text) {
-  let language = "ceb";
+import { assert_arguments_length } from "./assert_arguments_length.mjs";
+export async function app_language_audio(language, text) {
+  assert_arguments_length(arguments, 2);
   let { voices } = await audio_language(language);
   let counts = global_function(app_language_audio);
   let voices_index_last = list_index_last(voices);
