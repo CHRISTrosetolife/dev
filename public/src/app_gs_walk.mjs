@@ -30,16 +30,7 @@ export async function app_gs_walk(player_c, player, destination) {
     let animate_count = 2;
     await each_range_async(animate_count, async (ac) => {
       let sleep_time = app_gs_sleep_time();
-      await step(add_1(ac));
-      await sleep(sleep_time);
-    });
-    let delta = game_direction_to_delta(direction);
-    each(list_xy(), (xy) => {
-      let value =
-        object_property_get(player, xy) + object_property_get(delta, xy);
-      object_property_set(player, xy, value);
-    });
-    async function step(step_count) {
+      let step_count = add_1(ac);
       if (player.walk_offset === 0) {
         player.walk_offset = -player.walk_previous;
         player.walk_previous = player.walk_offset;
@@ -59,6 +50,13 @@ export async function app_gs_walk(player_c, player, destination) {
         player.y + (delta.y / animate_count) * step_count,
         player.x + (delta.x / animate_count) * step_count,
       );
-    }
+      await sleep(sleep_time);
+    });
+    let delta = game_direction_to_delta(direction);
+    each(list_xy(), (xy) => {
+      let value =
+        object_property_get(player, xy) + object_property_get(delta, xy);
+      object_property_set(player, xy, value);
+    });
   });
 }
