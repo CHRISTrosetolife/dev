@@ -38,6 +38,7 @@ export async function app_language_refresh_node(
   refresh_learn,
   quizzes_start,
 ) {
+  let a = context;
   let level_size = app_language_level_size();
   html_clear_scroll_top_centered(root);
   app_language_title(context);
