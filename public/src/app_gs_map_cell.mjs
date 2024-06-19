@@ -1,5 +1,10 @@
+import { subtract } from "./subtract.mjs";
+import { game_img_position } from "./game_img_position.mjs";
+import { html_style } from "./html_style.mjs";
+import { html_style_height } from "./html_style_height.mjs";
+import { game_tile_units_css } from "./game_tile_units_css.mjs";
+import { html_style_width } from "./html_style_width.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
-import { game_img_extend_style } from "./game_img_extend_style.mjs";
 import { app_gs_map_extends } from "./app_gs_map_extends.mjs";
 import { list_xy } from "./list_xy.mjs";
 import { list_all } from "./list_all.mjs";
@@ -75,13 +80,16 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
       let menu = html_div(map_c);
       html_style_background_color(menu, "rgba(1,1,1,0.5)");
       let { y_extend, x_extend } = app_gs_map_extends();
-      game_img_extend_style(
+      html_style_width(menu, game_tile_units_css(1 + 2 * x_extend));
+      html_style_height(menu, game_tile_units_css(1 + 2 * y_extend));
+      html_style(menu, {
+        position: "absolute",
+        "z-index": list_index(z_indexes, "menu"),
+      });
+      game_img_position(
         menu,
-        map.player.y,
-        map.player.x,
-        list_index(z_indexes, "menu"),
-        y_extend,
-        x_extend,
+        subtract(map.player.y, y_extend),
+        subtract(map.player.x, x_extend),
       );
       html_button_width_full_text_click(menu, "close menu");
       return;
