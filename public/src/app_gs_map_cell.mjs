@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { app_gs_z_indexes } from "./app_gs_z_indexes.mjs";
 import { app_gs_menu } from "./app_gs_menu.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
@@ -83,6 +84,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
     });
     await html_scroll_center_smooth(player_c);
     app_gs_map_render(map, map_c, [map.player], player_c);
+    log("here");
   });
   return list_concat([tile_c, clicker], overlays);
 }
