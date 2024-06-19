@@ -1,5 +1,4 @@
 import { function_path_suffix } from "./function_path_suffix.mjs";
-import { error } from "./error.mjs";
 import { file_read_json } from "./file_read_json.mjs";
 import { command_line } from "./command_line.mjs";
 import { log } from "./log.mjs";
@@ -29,13 +28,9 @@ export async function function_run_terminal(function_name, args) {
           });
         }
         let r = await command_line(command);
-        if (r.error) {
-          reject(r);
-        } else {
-          let contents = await file_read_json(file_path_output);
-          let { result } = contents;
-          resolve(result);
-        }
+        let contents = await file_read_json(file_path_output);
+        let { result } = contents;
+        resolve(result);
       });
     });
   });
