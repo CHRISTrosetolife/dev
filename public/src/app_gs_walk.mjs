@@ -37,13 +37,8 @@ export async function app_gs_walk(player_c, player, destination) {
       } else {
         player.walk_offset = 0;
       }
-      html_img_src(
-        player_c,
-        game_img_character(
-          player.character,
-          game_character_direction_index(direction, player.walk_offset),
-        ),
-      );
+      let di = game_character_direction_index(direction, player.walk_offset);
+      html_img_src(player_c, game_img_character(player.character, di));
       let delta = game_direction_to_delta(direction);
       game_img_position(
         player_c,
