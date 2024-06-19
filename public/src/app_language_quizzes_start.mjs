@@ -8,6 +8,7 @@ export function app_language_quizzes_start(
   chunk_sizes,
   refresh_quiz,
 ) {
+  let a = context;
   let atoms = app_language_atoms_slice(app_fn, group);
   context.settings_choices = app_language_quiz_settings(atoms, chunk_sizes);
   refresh_quiz(list_first(context.settings_choices));
