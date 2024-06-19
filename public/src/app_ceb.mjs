@@ -108,6 +108,7 @@ import { html_hr } from "./html_hr.mjs";
 export async function app_ceb() {
   let from = "ceb";
   let to = "en";
+  let app_fn = app_ceb;
   let root = html_style_default_initialize();
   html_style_default_font_size(3.5);
   let group_index = 0;
