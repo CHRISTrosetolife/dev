@@ -14,6 +14,7 @@ export function app_gs_map_render(map, map_c, coordinates, player_c) {
   let { y_extend, x_extend } = app_gs_map_extends();
   html_style(map_c, {
     width: game_tile_units_css(x_extend * 2 + 1),
+    height: game_tile_units_css(y_extend * 2 + 1),
   });
   let tiles_new = {};
   each(coordinates, (c) => {
