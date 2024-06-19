@@ -1,3 +1,4 @@
+import { list_find } from "./list_find.mjs";
 import { object_list_invert } from "./object_list_invert.mjs";
 import { app_language_group_size } from "./app_language_group_size.mjs";
 import { app_language_group_path } from "./app_language_group_path.mjs";
@@ -14,8 +15,6 @@ import { list_first } from "./list_first.mjs";
 import { each_async } from "./each_async.mjs";
 import { each } from "./each.mjs";
 import { object_property_set } from "./object_property_set.mjs";
-import { list_filter } from "./list_filter.mjs";
-import { list_single } from "./list_single.mjs";
 import { file_read_json } from "./file_read_json.mjs";
 import { assert } from "./assert.mjs";
 export async function sandbox() {
@@ -47,8 +46,7 @@ export async function sandbox() {
   );
   let definitions = {};
   each(words, (w) => {
-    let filtered = list_filter(definitions_list, (d) => d.word === w);
-    let ds = list_single(filtered).definitions;
+    let ds = list_find(definitions_list, (d) => d.word === w).definitions;
     object_property_set(definitions, w, ds);
   });
   let inverted = object_list_invert(definitions);
