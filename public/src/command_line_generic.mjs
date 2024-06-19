@@ -16,8 +16,7 @@ export async function command_line_generic(command, options) {
       log_error(data);
     });
     child.on("close", function (code) {
-      console.log("closing code: " + code);
-      console.log("Full output of script: ", scriptOutput);
+      resolve();
     });
   });
 }
