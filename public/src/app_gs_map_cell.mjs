@@ -82,7 +82,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
       await app_gs_walk(player_c, map.player, tile);
     });
     html_scroll_center_smooth(player_c);
-    app_gs_map_render(map, map_c, [path], player_c);
+    app_gs_map_render(map, map_c, [map.player], player_c);
   });
   return list_concat([tile_c, clicker], overlays);
 }
