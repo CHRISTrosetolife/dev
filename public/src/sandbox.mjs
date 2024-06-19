@@ -23,8 +23,9 @@ import { assert } from "./assert.mjs";
 export async function sandbox() {
   let from = "ceb";
   let to = "en";
-  let upload_audio = false;
+  let audio_upload = false;
   let group_upload = true;
+  let group_local_save = true;
   let group_index = 0;
   let limit = 150;
   let skip = 0;
@@ -36,7 +37,7 @@ export async function sandbox() {
     await each_async(atom, async (a) => {
       let ceb = list_first(a);
       let en = list_second(a);
-      if (upload_audio) {
+      if (audio_upload) {
         await audio_upload(from, ceb);
         await audio_upload(to, en);
       }
