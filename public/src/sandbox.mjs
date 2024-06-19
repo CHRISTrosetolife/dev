@@ -1,5 +1,4 @@
 import { list_to_lookup_value_property } from "./list_to_lookup_value_property.mjs";
-import { list_find } from "./list_find.mjs";
 import { object_list_invert } from "./object_list_invert.mjs";
 import { app_language_group_size } from "./app_language_group_size.mjs";
 import { app_language_group_path } from "./app_language_group_path.mjs";
@@ -52,8 +51,7 @@ export async function sandbox() {
   let profiles = [
     {
       pair_word_get: list_first,
-      definitions_get: (w) =>
-        list_find(definitions_list, (d) => d.word === w).definitions,
+      definitions: definitions_all,
       from,
       to,
     },
