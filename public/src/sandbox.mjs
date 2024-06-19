@@ -1,3 +1,4 @@
+import { list_reverse } from "./list_reverse.mjs";
 import { list_copy } from "./list_copy.mjs";
 import { log } from "./log.mjs";
 import { list_to_lookup_value_property } from "./list_to_lookup_value_property.mjs";
@@ -59,6 +60,9 @@ export async function sandbox() {
     let group = list_copy(list_take(atoms, group_count));
     await each_async(group, async (atom) => {
       await each_async(atom, async (pair) => {
+        if (profile.invert) {
+          list_reverse(pair);
+        }
         let b = list_first(pair);
         if (audio_upload_run) {
           await audio_upload(profile.from, b);
