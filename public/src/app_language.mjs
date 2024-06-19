@@ -48,6 +48,9 @@ export async function app_language(
     invert,
   };
   let root = html_style_default_initialize();
+  object_merge(context, {
+    root,
+  });
   html_style_default_font_size(3.5);
   let group_index = 0;
   let { group, definitions, inverted } = await http_storage(
