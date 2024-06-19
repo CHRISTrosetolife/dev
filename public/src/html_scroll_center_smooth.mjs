@@ -15,12 +15,12 @@ export async function html_scroll_center_smooth(component) {
     behavior: "smooth",
   });
   return await new Promise((resolve, reject) => {
+    let root = html_document_body();
     let failed = setTimeout(() => {
-      log(object_properties_new(window, ["scrollX", "scrollY"]));
+      log(object_properties_new(root, ["scrollTop", "scrollLeft"]));
       reject();
     }, 2000);
     let scrollHandler = () => {
-      let root = html_document_body();
       if (abs(root.scrollTop - top) < 1 && abs(root.scrollLeft - left) < 1) {
         window.removeEventListener("scroll", scrollHandler);
         clearTimeout(failed);
