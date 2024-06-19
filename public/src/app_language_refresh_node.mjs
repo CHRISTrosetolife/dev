@@ -103,7 +103,7 @@ export async function app_language_refresh_node(context) {
       " )",
     ]),
     async () => {
-      await app_language_quizzes_start([2]);
+      await app_language_quizzes_start(context, [2]);
     },
   );
   html_button_width_full_text_click(
