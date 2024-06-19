@@ -6,7 +6,6 @@ export async function command_line_generic(command, options) {
   let { spawn } = c;
   return await new Promise((resolve) => {
     spawn(command);
-    let scriptOutput = "";
     child.stdout.setEncoding("utf8");
     child.stdout.on("data", function (data) {
       log(data);
