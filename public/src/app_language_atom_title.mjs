@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { app_language_atom_count } from "./app_language_atom_count.mjs";
 import { add } from "./add.mjs";
 import { list_last } from "./list_last.mjs";
@@ -16,7 +17,11 @@ export function app_language_atom_title(
   inverted,
 ) {
   let l = list_first(atom_left);
-  let r = list_last(atom_right);
+  let r = list_last(atom_left);
+  log({
+    atom_left,
+    atom_left,
+  });
   let atom_count = app_language_atom_count();
   let mapped = list_map_nested([l, r], string_delimit_backtick);
   let text = string_combine_multiple([
