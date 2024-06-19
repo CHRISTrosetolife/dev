@@ -14,7 +14,7 @@ export async function html_scroll_center_smooth(component) {
     behavior: "smooth",
   });
   return await new Promise((resolve, reject) => {
-    let root = html_document_body();
+    let root = html_document_body().element;
     let failed = setTimeout(() => {
       log({
         scrollTop: root.scrollTop,
