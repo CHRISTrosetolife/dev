@@ -1,3 +1,4 @@
+import { app_language_refresh_node } from "./app_language_refresh_node.mjs";
 import { app_language_word_native } from "./app_language_word_native.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_language_word_button_audio_none } from "./app_language_word_button_audio_none.mjs";
@@ -15,7 +16,10 @@ import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered
 export function app_language_refresh_review(context) {
   let { root, app_fn, group, language_learn } = context;
   html_clear_scroll_top_centered(root);
-  html_button_width_full_text_click_up(root, refresh_node);
+  html_button_width_full_text_click_up(
+    root,
+    async () => await app_language_refresh_node(context),
+  );
   html_hr(root);
   let concat = app_language_atoms_slice_concat(app_fn, group);
   let lookup = {};
