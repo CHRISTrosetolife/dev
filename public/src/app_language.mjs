@@ -1,5 +1,4 @@
 import { app_language_refresh_learn } from "./app_language_refresh_learn.mjs";
-import { app_language_refresh_review } from "./app_language_refresh_review.mjs";
 import { app_language_refresh_quiz } from "./app_language_refresh_quiz.mjs";
 import { app_language_quizzes_start } from "./app_language_quizzes_start.mjs";
 import { app_language_refresh_node } from "./app_language_refresh_node.mjs";
@@ -48,9 +47,6 @@ export async function app_language(
   }
   async function refresh_quiz(settings) {
     await app_language_refresh_quiz(context, settings, refresh_node);
-  }
-  async function refresh_review() {
-    app_language_refresh_review(context);
   }
   async function refresh_learn(pair_index) {
     app_language_refresh_learn(
