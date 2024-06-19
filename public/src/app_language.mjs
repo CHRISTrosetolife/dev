@@ -1,3 +1,4 @@
+import { app_language_word_native } from "./app_language_word_native.mjs";
 import { list_slice } from "./list_slice.mjs";
 import { app_language_quiz_settings } from "./app_language_quiz_settings.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
@@ -61,7 +62,6 @@ import { html_div } from "./html_div.mjs";
 import { html_style_display_block } from "./html_style_display_block.mjs";
 import { html_style_display_none } from "./html_style_display_none.mjs";
 import { list_first } from "./list_first.mjs";
-import { app_language_word_english } from "./app_language_word_english.mjs";
 import { list_second } from "./list_second.mjs";
 import { app_language_word_button } from "./app_language_word_button.mjs";
 import { list_random_item } from "./list_random_item.mjs";
@@ -277,7 +277,7 @@ export async function app_language(app_fn, from, to, invert) {
       answer_other_get = list_second;
       alternatives = alternatives_t;
     } else {
-      app_language_word_english(root, word_t);
+      app_language_word_native(root, word_t);
       answer = word_f;
       answer_other_get = list_first;
       alternatives = alternatives_f;
@@ -430,7 +430,7 @@ export async function app_language(app_fn, from, to, invert) {
     each(words_f, (word_f) => {
       app_language_word_button_audio_none(root, from, word_f);
       each(object_property_get(lookup, word_f), (english) =>
-        app_language_word_english(root, english),
+        app_language_word_native(root, english),
       );
       html_hr(root);
     });
@@ -442,7 +442,7 @@ export async function app_language(app_fn, from, to, invert) {
     let pair = list_get(concat, pair_index);
     let [word_f, word_t] = pair;
     app_language_word_button(root, from, word_f);
-    app_language_word_english(root, word_t);
+    app_language_word_native(root, word_t);
     html_buttons_next_previous(
       root,
       (pair_index) => {
