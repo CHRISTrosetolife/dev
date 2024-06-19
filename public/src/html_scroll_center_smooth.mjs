@@ -1,5 +1,5 @@
 import { html_scroll_center_generic } from "./html_scroll_center_generic.mjs";
-export function html_scroll_center_smooth(component) {
+export async function html_scroll_center_smooth(component) {
   let vh = window.innerHeight;
   let vw = window.innerWidth;
   let e = component.element;
@@ -8,7 +8,7 @@ export function html_scroll_center_smooth(component) {
     top: e.offsetTop - vh / 2 + e.height / 2,
     behavior: "smooth",
   });
-  return new Promise((resolve, reject) => {
+  return await new Promise((resolve, reject) => {
     let failed = setTimeout(() => {
       reject();
     }, 2000);
@@ -24,7 +24,6 @@ export function html_scroll_center_smooth(component) {
       resolve();
     } else {
       window.addEventListener("scroll", scrollHandler);
-      elem.getBoundingClientRect();
     }
   });
   return;
