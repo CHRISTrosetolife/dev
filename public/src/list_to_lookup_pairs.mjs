@@ -4,8 +4,8 @@ import { object_property_set } from "./object_property_set.mjs";
 import { each } from "./each.mjs";
 export function list_to_lookup_pairs(pairs) {
   let lookup = {};
-  each(pairs, (s) =>
-    object_property_set(lookup, list_first(s), list_second(s)),
+  each(pairs, (pair) =>
+    object_property_set(lookup, list_first(pair), list_second(pair)),
   );
   return lookup;
 }
