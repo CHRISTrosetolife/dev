@@ -1,3 +1,4 @@
+import { app_language_level_size } from "./app_language_level_size.mjs";
 import { app_language_title } from "./app_language_title.mjs";
 import { equal } from "./equal.mjs";
 import { or } from "./or.mjs";
@@ -37,6 +38,7 @@ export async function app_language_refresh_node(
   refresh_learn,
   quizzes_start,
 ) {
+  let level_size = app_language_level_size();
   html_clear_scroll_top_centered(root);
   app_language_title(context);
   let { left, right } = storage_local_get(app_ceb, "position");
