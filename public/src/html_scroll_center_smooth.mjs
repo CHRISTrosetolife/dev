@@ -1,6 +1,7 @@
 import { log } from "./log.mjs";
 import { html_scroll_center_generic } from "./html_scroll_center_generic.mjs";
 import { object_properties_new } from "./object_properties_new.mjs";
+import { abs } from "./abs.mjs";
 export async function html_scroll_center_smooth(component) {
   let vh = window.innerHeight;
   let vw = window.innerWidth;
@@ -18,7 +19,7 @@ export async function html_scroll_center_smooth(component) {
       reject();
     }, 2000);
     let scrollHandler = () => {
-      if (window.scrollY === top && window.scrollX === left) {
+      if (abs(window.scrollY - top) < 1 && abs(window.scrollX - left) < 1) {
         window.removeEventListener("scroll", scrollHandler);
         clearTimeout(failed);
         resolve();
