@@ -112,7 +112,7 @@ export async function app_ceb() {
   html_style_default_font_size(3.5);
   let group_index = 0;
   let { group, definitions, inverted } = await http_storage(
-    app_language_group_path(group_index),
+    app_language_group_path(from, to, group_index),
   );
   let level_size = app_ceb_level_size();
   let settings_choices;
