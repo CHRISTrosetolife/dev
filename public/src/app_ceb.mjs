@@ -117,7 +117,7 @@ export async function app_ceb() {
   );
   let level_size = app_language_level_size();
   let settings_choices;
-  storage_local_initialize(app_ceb, "position", {
+  storage_local_initialize(app_fn, "position", {
     left: 0,
     right: list_index_last(group),
   });
