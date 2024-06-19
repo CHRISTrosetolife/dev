@@ -4,7 +4,7 @@ import { list_copy } from "./list_copy.mjs";
 import { each } from "./each.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
-export function app_ceb_quiz_settings(atoms, chunk_sizes) {
+export function app_language_quiz_settings(atoms, chunk_sizes) {
   let concat = list_concat_multiple(atoms);
   let copy = list_copy(concat);
   list_shuffle(copy);

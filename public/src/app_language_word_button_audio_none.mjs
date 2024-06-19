@@ -1,15 +1,15 @@
-import { app_ceb_word_style } from "./app_ceb_word_style.mjs";
-import { app_ceb_audio } from "./app_ceb_audio.mjs";
+import { app_language_word_style } from "./app_language_word_style.mjs";
+import { app_language_audio } from "./app_language_audio.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
-export function app_ceb_word_button_audio_none(root, cebuano) {
+export function app_language_word_button_audio_none(root, cebuano) {
   let button = html_button_width_full_text_click(
     root,
     string_combine("👂", cebuano),
     async () => {
-      return await app_ceb_audio(cebuano);
+      return await app_language_audio(cebuano);
     },
   );
-  app_ceb_word_style(button);
+  app_language_word_style(button);
   return button;
 }

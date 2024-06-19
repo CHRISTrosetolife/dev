@@ -1,3 +1,12 @@
+import { app_language_word_english } from "./app_language_word_english.mjs";
+import { app_language_word_button } from "./app_language_word_button.mjs";
+import { app_language_word_button_audio_none } from "./app_language_word_button_audio_none.mjs";
+import { app_language_quiz_settings } from "./app_language_quiz_settings.mjs";
+import { app_language_correct_get } from "./app_language_correct_get.mjs";
+import { app_language_audio } from "./app_language_audio.mjs";
+import { app_language_atom_title } from "./app_language_atom_title.mjs";
+import { app_language_atom_title_patterns } from "./app_language_atom_title_patterns.mjs";
+import { app_language_alternatives_partial_matches_nexts } from "./app_language_alternatives_partial_matches_nexts.mjs";
 import { app_language_level_size } from "./app_language_level_size.mjs";
 import { app_language_group_path } from "./app_language_group_path.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
@@ -6,7 +15,6 @@ import { html_cycle_p } from "./html_cycle_p.mjs";
 import { html_button_width_full_text_click_alternate } from "./html_button_width_full_text_click_alternate.mjs";
 import { html_button_disable } from "./html_button_disable.mjs";
 import { html_attribute_has } from "./html_attribute_has.mjs";
-import { app_ceb_word_button_audio_none } from "./app_ceb_word_button_audio_none.mjs";
 import { html_button_next_text } from "./html_button_next_text.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
@@ -18,8 +26,6 @@ import { html_style_font_color_default_set } from "./html_style_font_color_defau
 import { string_combine } from "./string_combine.mjs";
 import { html_p } from "./html_p.mjs";
 import { html_spacer_vertical_2 } from "./html_spacer_vertical_2.mjs";
-import { app_ceb_correct_get } from "./app_ceb_correct_get.mjs";
-import { app_ceb_alternatives_partial_matches_nexts } from "./app_ceb_alternatives_partial_matches_nexts.mjs";
 import { html_disable } from "./html_disable.mjs";
 import { html_enable } from "./html_enable.mjs";
 import { html_style_hidden } from "./html_style_hidden.mjs";
@@ -33,8 +39,6 @@ import { equal_not } from "./equal_not.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { list_slice } from "./list_slice.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
-import { app_ceb_atom_title_patterns } from "./app_ceb_atom_title_patterns.mjs";
-import { app_ceb_atom_title } from "./app_ceb_atom_title.mjs";
 import { each_range } from "./each_range.mjs";
 import { add } from "./add.mjs";
 import { mod_last_is } from "./mod_last_is.mjs";
@@ -45,11 +49,8 @@ import { object_copy_shallow } from "./object_copy_shallow.mjs";
 import { list_last } from "./list_last.mjs";
 import { html_style_display_block } from "./html_style_display_block.mjs";
 import { greater_than } from "./greater_than.mjs";
-import { app_ceb_quiz_settings } from "./app_ceb_quiz_settings.mjs";
 import { html_div } from "./html_div.mjs";
 import { list_without } from "./list_without.mjs";
-import { app_ceb_audio } from "./app_ceb_audio.mjs";
-import { app_ceb_word_english } from "./app_ceb_word_english.mjs";
 import { list_after } from "./list_after.mjs";
 import { number_is } from "./number_is.mjs";
 import { list_random_item } from "./list_random_item.mjs";
@@ -62,7 +63,6 @@ import { html_style_display_none } from "./html_style_display_none.mjs";
 import { html_style_click_width_min } from "./html_style_click_width_min.mjs";
 import { html_button_text_click } from "./html_button_text_click.mjs";
 import { string_chunk } from "./string_chunk.mjs";
-import { app_ceb_word_button } from "./app_ceb_word_button.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { html_buttons_next_previous } from "./html_buttons_next_previous.mjs";
 import { http_storage } from "./http_storage.mjs";
@@ -137,10 +137,10 @@ export async function app_ceb() {
         let right_next = add(left, s);
         let atom_left = list_get(group, left_next);
         let atom_right = list_get_or_last(group, right_next);
-        let text = app_ceb_atom_title(group, atom_left, atom_right);
+        let text = app_language_atom_title(group, atom_left, atom_right);
         html_button_width_full_text_click_alternate(
           root,
-          app_ceb_atom_title_patterns(),
+          app_language_atom_title_patterns(),
           string_combine_multiple([j, ". ", text]),
           function on_click() {
             storage_local_set(app_ceb, "position", {
@@ -228,8 +228,8 @@ export async function app_ceb() {
     let { left, right } = storage_local_get(app_fn, "position");
     let gl = list_get(group, left);
     let gr = list_get_or_last(group, right);
-    let text = app_ceb_atom_title(group, gl, gr);
-    html_cycle_p(root, app_ceb_atom_title_patterns(), text);
+    let text = app_language_atom_title(group, gl, gr);
+    html_cycle_p(root, app_language_atom_title_patterns(), text);
   }
   async function refresh_quiz(settings) {
     html_clear_scroll_top_centered(root);
@@ -270,12 +270,12 @@ export async function app_ceb() {
     let answer_other_get;
     let alternatives;
     if (forwards) {
-      app_ceb_word_button(root, cebuano);
+      app_language_word_button(root, cebuano);
       answer = english;
       answer_other_get = list_second;
       alternatives = english_alternatives;
     } else {
-      app_ceb_word_english(root, english);
+      app_language_word_english(root, english);
       answer = cebuano;
       answer_other_get = list_first;
       alternatives = cebuano_alternatives;
@@ -320,7 +320,7 @@ export async function app_ceb() {
     let buttons = list_adder((la) => {
       each(choices, (choice) => {
         let button = html_button_text_click(quiz_container, choice, () => {
-          let correct = app_ceb_correct_get(answer, chunk_size, index);
+          let correct = app_language_correct_get(answer, chunk_size, index);
           if (equal(choice, correct)) {
             html_disable(button);
             each(
@@ -358,7 +358,7 @@ export async function app_ceb() {
                   html_style_background_color(root, "#d3f8d3");
                 }
                 app_learn_code_style_success(answer_element);
-                await app_ceb_audio(cebuano);
+                await app_language_audio(cebuano);
                 if (0) {
                   html_style_background_color(root, "white");
                 }
@@ -389,7 +389,7 @@ export async function app_ceb() {
     html_spacer_vertical_2(root);
     html_button_width_full_text_click_up(root, refresh_node);
     function update_partials() {
-      let nexts = app_ceb_alternatives_partial_matches_nexts(
+      let nexts = app_language_alternatives_partial_matches_nexts(
         answer,
         chunk_size,
         index,
@@ -426,9 +426,9 @@ export async function app_ceb() {
     list_sort_string(cebuanos, identity);
     each_object(lookup, (key, value) => list_sort_string(value, identity));
     each(cebuanos, (cebuano) => {
-      app_ceb_word_button_audio_none(root, cebuano);
+      app_language_word_button_audio_none(root, cebuano);
       each(object_property_get(lookup, cebuano), (english) =>
-        app_ceb_word_english(root, english),
+        app_language_word_english(root, english),
       );
       html_hr(root);
     });
@@ -439,8 +439,8 @@ export async function app_ceb() {
     let concat = atoms_slice_concat();
     let pair = list_get(concat, pair_index);
     let [cebuano, english] = pair;
-    app_ceb_word_button(root, cebuano);
-    app_ceb_word_english(root, english);
+    app_language_word_button(root, cebuano);
+    app_language_word_english(root, english);
     html_buttons_next_previous(
       root,
       (pair_index) => {
@@ -462,7 +462,7 @@ export async function app_ceb() {
   }
   function quizzes_start(chunk_sizes) {
     let atoms = atoms_slice();
-    settings_choices = app_ceb_quiz_settings(atoms, chunk_sizes);
+    settings_choices = app_language_quiz_settings(atoms, chunk_sizes);
     refresh_quiz(list_first(settings_choices));
   }
   function atoms_slice() {
