@@ -1,3 +1,4 @@
+import { app_language_refresh_node } from "./app_language_refresh_node.mjs";
 import { html_button_width_full_text_click_up } from "./html_button_width_full_text_click_up.mjs";
 import { list_size } from "./list_size.mjs";
 import { list_index_last } from "./list_index_last.mjs";
@@ -23,9 +24,9 @@ export function app_language_refresh_learn(
   app_language_word_native(root, word_f);
   html_buttons_next_previous(
     root,
-    (pair_index) => {
+    async (pair_index) => {
       if (greater_than(pair_index, list_index_last(concat))) {
-        refresh_node();
+        await app_language_refresh_node();
       } else {
         refresh_learn(pair_index);
       }
