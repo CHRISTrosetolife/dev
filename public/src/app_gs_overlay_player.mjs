@@ -24,10 +24,10 @@ export function app_gs_overlay_player(map_c, map) {
           map.player,
           list_index(z_indexes, "player"),
         );
+        game_img_style_transition(player_c_direction);
         la(player_c_direction);
       });
     });
   });
-  game_img_style_transition(player_c);
   return player_c;
 }
