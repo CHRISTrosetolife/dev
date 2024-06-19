@@ -15,7 +15,7 @@ export function app_gs_overlay_player(map_c, map) {
   list_adder((la) => {
     each(directions, (direction) => {
       each(range_from(-1, 1), (walk_offset) => {
-        let player_c = game_img(
+        let player_c_direction = game_img(
           map_c,
           game_img_character(
             map.player.character,
@@ -24,6 +24,7 @@ export function app_gs_overlay_player(map_c, map) {
           map.player,
           list_index(z_indexes, "player"),
         );
+        la(player_c_direction);
       });
     });
   });
