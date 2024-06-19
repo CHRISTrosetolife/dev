@@ -12,7 +12,7 @@ import { range_from } from "./range_from.mjs";
 export function app_gs_overlay_player(map_c, map) {
   let z_indexes = app_gs_z_indexes();
   let directions = object_properties(game_character_indices());
-  list_adder((la) => {
+  let player_directions = list_adder((la) => {
     each(directions, (direction) => {
       each(range_from(-1, 1), (walk_offset) => {
         let player_c_direction = game_img(
