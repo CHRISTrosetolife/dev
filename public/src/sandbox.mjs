@@ -70,7 +70,11 @@ export async function sandbox() {
       definitions,
       inverted,
     };
-    let storage_path = app_language_group_path(from, to, group_index);
+    let storage_path = app_language_group_path(
+      profile.from,
+      profile.to,
+      group_index,
+    );
     let existing_path = folder_gitignore_path(storage_path);
     if (group_upload) {
       await storage_upload_object(result_new, storage_path);
