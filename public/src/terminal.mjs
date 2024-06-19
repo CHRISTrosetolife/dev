@@ -1,4 +1,3 @@
-import { string_length } from "./string_length.mjs";
 import { list_filter_indices } from "./list_filter_indices.mjs";
 import { each_reverse } from "./each_reverse.mjs";
 import { list_size } from "./list_size.mjs";
@@ -392,10 +391,7 @@ export async function terminal() {
       }
     });
     let suffix = " ''";
-    if (
-      list_empty_not_is(current) ||
-      (string_length(input) >= 3 && string_ends_with(suffix))
-    ) {
+    if (list_empty_not_is(current) || string_ends_with(suffix)) {
       token_next();
     }
     function token_next() {
