@@ -79,6 +79,9 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
       )
     ) {
       let menu = html_div(map_c);
+      html_style(menu, {
+        padding: game_tile_units_css(0.5),
+      });
       html_style_background_color(menu, "rgba(1,1,1,0.5)");
       let { x_count, y_count, size_px } = app_gs_screen_size();
       html_style_width(menu, game_tile_units_css(x_count));
