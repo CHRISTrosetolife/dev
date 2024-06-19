@@ -259,10 +259,10 @@ export async function app_language(app_fn, from, to, invert) {
                 if (0) {
                   html_style_background_color(root, "white");
                 }
-                if (equal(settings, list_last(settings_choices))) {
+                if (equal(settings, list_last(context.settings_choices))) {
                   refresh_node();
                 } else {
-                  let after = list_after(settings_choices, settings);
+                  let after = list_after(context.settings_choices, settings);
                   refresh_quiz(after);
                 }
               }
@@ -270,7 +270,7 @@ export async function app_language(app_fn, from, to, invert) {
           } else {
             html_style_wrong(button);
             if (no_mistakes) {
-              list_add(settings_choices, object_copy_shallow(settings));
+              list_add(context.settings_choices, object_copy_shallow(settings));
               no_mistakes = false;
             }
           }
