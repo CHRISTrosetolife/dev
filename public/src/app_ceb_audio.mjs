@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { global_function } from "./global_function.mjs";
 import { audio_language } from "./audio_language.mjs";
 import { audio_path } from "./audio_path.mjs";
@@ -28,5 +29,8 @@ export async function app_ceb_audio(text) {
   }
   object_property_set(counts, text, count);
   let file_path = await audio_path(language, count, text);
+  log({
+    file_path,
+  });
   return await html_audio(storage_url(file_path));
 }
