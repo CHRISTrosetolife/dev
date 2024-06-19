@@ -27,7 +27,7 @@ export async function function_run_terminal(function_name, args) {
             command,
           });
         }
-        let r = await command_line(command);
+        await command_line(command);
         let contents = await file_read_json(file_path_output);
         let { result } = contents;
         resolve(result);
