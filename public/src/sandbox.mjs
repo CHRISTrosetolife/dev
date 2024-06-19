@@ -21,7 +21,7 @@ import { object_property_get } from "./object_property_get.mjs";
 export async function sandbox() {
   let from = "ceb";
   let to = "en";
-  let audio_upload = false;
+  let audio_upload = true;
   let group_upload = true;
   let group_local_save = true;
   let group_local_compare_to_new = false;
