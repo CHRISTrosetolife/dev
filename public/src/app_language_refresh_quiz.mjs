@@ -71,19 +71,19 @@ import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered
 export async function app_language_refresh_quiz(
   root,
   settings,
-  app_fn,
-  language_learn,
-  language_fluent,
   context,
   refresh_node,
   refresh_quiz,
 ) {
-    let {
-        app_fn,
-        language_learn,
-        language_fluent,
-        invert,group, definitions, inverted
-      }=context;
+  let {
+    app_fn,
+    language_learn,
+    language_fluent,
+    invert,
+    group,
+    definitions,
+    inverted,
+  } = context;
   html_clear_scroll_top_centered(root);
   let no_mistakes = true;
   let { pair, chunk_size, forwards } = settings;
