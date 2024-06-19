@@ -8,12 +8,7 @@ import { app_gs_map_cell } from "./app_gs_map_cell.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { each_object } from "./each_object.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-export function app_gs_map_render(
-  map,
-  map_component,
-  coordinates,
-  player_overlay,
-) {
+export function app_gs_map_render(map, map_component, coordinates, player_c) {
   let { y_extend, x_extend } = app_gs_map_extends();
   let tiles_new = {};
   each(coordinates, (c) => {
@@ -30,12 +25,7 @@ export function app_gs_map_render(
           return;
         }
         let tile = map.tiles[ye][xe];
-        let components = app_gs_map_cell(
-          map,
-          map_component,
-          player_overlay,
-          tile,
-        );
+        let components = app_gs_map_cell(map, map_component, player_c, tile);
         rows_new[xe] = components;
       });
     });
