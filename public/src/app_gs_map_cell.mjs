@@ -73,7 +73,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
       )
     ) {
       let menu_overlay = app_gs_menu_overlay(map_c, map);
-      menu_main(menu_overlay);
+      app_gs_menu_main(menu_overlay);
       return;
     }
     app_gs_map_render(map, map_c, path, player_c);
@@ -82,23 +82,18 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
     });
     await html_scroll_center_smooth(player_c);
     app_gs_map_render(map, map_c, [map.player], player_c);
-    function menu_main(menu_overlay) {
+    function app_gs_menu_main(menu_overlay) {
       html_clear(menu_overlay);
       html_button_width_full_text_click(menu_overlay, "back", () => {
         html_remove(menu_overlay);
       });
       html_button_width_full_text_click(menu_overlay, "system logs", () => {
-        menu_system_logs(menu_overlay);
+        app_gs_menu_system_logs(menu_overlay);
       });
     }
-    function menu_main(menu_overlay) {
+    function app_gs_menu_system_logs(menu_overlay) {
       html_clear(menu_overlay);
-      html_button_width_full_text_click(menu_overlay, "back", () => {
-        html_remove(menu_overlay);
-      });
-      html_button_width_full_text_click(menu_overlay, "system logs", () => {
-        menu_system_logs(menu_overlay);
-      });
+      html_button_width_full_text_click(menu_overlay, "back", app_gs_menu_main);
     }
   });
   return list_concat([tile_c, clicker], overlays);
