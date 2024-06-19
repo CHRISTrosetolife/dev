@@ -151,7 +151,7 @@ export async function app_language_refresh_node(
     }
   }
   html_button_width_full_text_click_up(root, up_onclick);
-  function up_onclick() {
+  async function up_onclick() {
     let { left, right } = storage_local_get(app_ceb, "position");
     while (true) {
       app_ceb_next();
@@ -160,6 +160,6 @@ export async function app_language_refresh_node(
         break;
       }
     }
-    refresh_node();
+    await app_language_refresh_node(context);
   }
 }
