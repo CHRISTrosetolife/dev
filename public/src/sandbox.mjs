@@ -1,6 +1,5 @@
 import { list_reverse } from "./list_reverse.mjs";
 import { list_copy } from "./list_copy.mjs";
-import { log } from "./log.mjs";
 import { list_to_lookup_value_property } from "./list_to_lookup_value_property.mjs";
 import { object_list_invert } from "./object_list_invert.mjs";
 import { app_language_group_size } from "./app_language_group_size.mjs";
@@ -54,9 +53,6 @@ export async function sandbox() {
     },
   ];
   await each_async(profiles, async (profile) => {
-    log({
-      profile,
-    });
     let group = list_copy(list_take(atoms, group_count));
     await each_async(group, async (atom) => {
       await each_async(atom, async (pair) => {
@@ -72,9 +68,6 @@ export async function sandbox() {
     let words = list_adder_unique((la) =>
       each(group, (a) =>
         each(a, (pair) => {
-          log({
-            pair,
-          });
           la(list_first(pair));
         }),
       ),
