@@ -1,7 +1,5 @@
-import { html_document_body } from "./html_document_body.mjs";
 import { log } from "./log.mjs";
 import { html_scroll_center_generic } from "./html_scroll_center_generic.mjs";
-import { abs } from "./abs.mjs";
 export async function html_scroll_center_smooth(component) {
   let vh = window.innerHeight;
   let vw = window.innerWidth;
@@ -14,25 +12,15 @@ export async function html_scroll_center_smooth(component) {
     behavior: "smooth",
   });
   return await new Promise((resolve, reject) => {
-    let root = html_document_body().element;
     let failed = setTimeout(() => {
-      log({
-        scrollTop: root.scrollTop,
-        scrollLeft: root.scrollLeft,
-        top,
-        left,
-      });
+      log("scroll finish failed");
       reject();
     }, 2000);
-    let scrollHandler = () => {
-      if (abs(root.scrollTop - top) < 1 && abs(root.scrollLeft - left) < 1) {
-        window.removeEventListener("scroll", scrollHandler);
-        clearTimeout(failed);
-        resolve();
-      }
-    };
-    window.addEventListener("scroll", scrollHandler);
-    scrollHandler();
+    window.addEventListener("scrollend", () => {
+      clearTimeout(failed);
+      window.removeEventListener("scrollend", scrollHandler);
+      resolve();
+    });
   });
   return;
   let additional = {
