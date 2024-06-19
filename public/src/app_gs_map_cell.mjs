@@ -1,3 +1,4 @@
+import { game_img_extend_style } from "./game_img_extend_style.mjs";
 import { app_gs_map_extends } from "./app_gs_map_extends.mjs";
 import { list_xy } from "./list_xy.mjs";
 import { list_all } from "./list_all.mjs";
@@ -73,11 +74,13 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
       let menu = html_div(map_c);
       html_style_background_color(menu, "rgba(1,1,1,0.5)");
       let { y_extend, x_extend } = app_gs_map_extends();
-      game_img_style(
+      game_img_extend_style(
         menu,
         map.player.y,
         map.player.x,
         list_index(z_indexes, "menu"),
+        y_extend,
+        x_extend,
       );
       return;
     }
