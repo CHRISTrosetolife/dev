@@ -21,7 +21,7 @@ export function app_language_refresh_learn(context, pair_index) {
     root,
     async (pair_index) => {
       if (greater_than(pair_index, list_index_last(concat))) {
-        await app_language_refresh_node();
+        await app_language_refresh_node(context);
       } else {
         app_language_refresh_learn(pair_index);
       }
@@ -30,6 +30,6 @@ export function app_language_refresh_learn(context, pair_index) {
     list_size(concat),
   );
   html_button_width_full_text_click_up(root, async () => {
-    await app_language_refresh_node();
+    await app_language_refresh_node(context);
   });
 }
