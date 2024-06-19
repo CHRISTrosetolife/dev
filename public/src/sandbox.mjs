@@ -37,17 +37,6 @@ export async function sandbox() {
     "definitions",
   );
   let definitions_all_inverted = object_list_invert(definitions_all);
-  let group = list_take(atoms, group_count);
-  await each_async(group, async (atom) => {
-    await each_async(atom, async (a) => {
-      let ceb = list_first(a);
-      let en = list_second(a);
-      if (audio_upload_run) {
-        await audio_upload(from, ceb);
-        await audio_upload(to, en);
-      }
-    });
-  });
   let profiles = [
     {
       pair_word_get: list_first,
@@ -63,6 +52,15 @@ export async function sandbox() {
     },
   ];
   await each_async(profiles, async (profile) => {
+    let group = list_take(atoms, group_count);
+    await each_async(group, async (atom) => {
+      await each_async(atom, async (a) => {
+        let b = list_first(a);
+        if (audio_upload_run) {
+          await audio_upload(profile.from, b);
+        }
+      });
+    });
     let words = list_adder_unique((la) =>
       each(atoms, (a) => each(a, (pair) => la(profile.pair_word_get(pair)))),
     );
