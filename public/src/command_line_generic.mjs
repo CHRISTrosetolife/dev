@@ -8,7 +8,7 @@ export async function command_line_generic(command, options) {
     let scriptOutput = "";
     child.stdout.setEncoding("utf8");
     child.stdout.on("data", function (data) {
-      console.log("stdout: " + data);
+      log(data);
       data = data.toString();
       scriptOutput += data;
     });
