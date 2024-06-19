@@ -77,7 +77,7 @@ export async function app_language_refresh_node(context) {
         await app_language_text(language_fluent, "learn"),
       ]),
       () => {
-        app_language_refresh_learn(0);
+        app_language_refresh_learn(context, 0);
       },
     );
   }
