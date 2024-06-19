@@ -82,7 +82,6 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
       html_style(menu, {
         padding: game_tile_units_css(0.5),
       });
-      let inner = html_div();
       html_style_background_color(menu, "rgba(1,1,1,0.5)");
       let { x_count, y_count } = app_gs_screen_size();
       html_style_width(menu, game_tile_units_css(x_count));
@@ -96,7 +95,8 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
         subtract(map.player.y, (y_count - 1) / 2),
         subtract(map.player.x, (x_count - 1) / 2),
       );
-      html_button_width_full_text_click(menu, "close menu", () => {
+      let inner = html_div(menu);
+      html_button_width_full_text_click(inner, "close menu", () => {
         html_remove(menu);
       });
       return;
