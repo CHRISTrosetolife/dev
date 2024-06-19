@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { app_gs_map_extends } from "./app_gs_map_extends.mjs";
 import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
@@ -40,9 +39,6 @@ export function app_gs_map_render(
         rows_new[xe] = components;
       });
     });
-  });
-  log({
-    tiles_new,
   });
   each_object(map.html, (hy, row) => {
     if (object_property_exists_not(tiles_new, hy)) {
