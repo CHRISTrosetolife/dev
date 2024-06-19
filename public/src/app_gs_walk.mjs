@@ -19,7 +19,7 @@ export async function app_gs_walk(player_c, player, destination) {
   if (direction === null) {
     return;
   }
-  player.direction = direction;
+  app_gs_overlay_player_direction(player_c, direction);
   html_img_src(
     player_c,
     game_img_character(player.character, game_character_index(direction)),
