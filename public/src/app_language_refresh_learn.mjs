@@ -29,7 +29,7 @@ export function app_language_refresh_learn(context, pair_index) {
     pair_index,
     list_size(concat),
   );
-  html_button_width_full_text_click_up(root, () => {
-    app_language_refresh_node;
+  html_button_width_full_text_click_up(root, async () => {
+    await app_language_refresh_node();
   });
 }
