@@ -69,6 +69,12 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
       )
     ) {
       let menu = html_div(map_c);
+      game_img_style(
+        menu,
+        map.player.y,
+        map.player.x,
+        list_index(z_indexes, "clicker"),
+      );
       return;
     }
     app_gs_map_render(map, map_c, path, player_c);
