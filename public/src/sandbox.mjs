@@ -51,7 +51,7 @@ export async function sandbox() {
   ];
   await each_async(profiles, async (profile) => {
     let words = list_adder_unique((la) =>
-      each(atoms, (a) => each(a, (pair) => la(list_first(pair)))),
+      each(atoms, (a) => each(a, (pair) => la(profile.pair_word_get(pair)))),
     );
     let definitions = {};
     each(words, (w) => {
