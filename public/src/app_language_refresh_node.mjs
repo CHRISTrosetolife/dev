@@ -54,12 +54,17 @@ export async function app_language_refresh_node(
         root,
         app_language_atom_title_patterns(),
         string_combine_multiple([j, ". ", text]),
-        function on_click() {
+        async function on_click() {
           storage_local_set(app_ceb, "position", {
             left: left_next,
             right: right_next,
           });
-          refresh_node();
+          await app_language_refresh_node(
+            context,
+            refresh_review,
+            refresh_learn,
+            quizzes_start,
+          );
         },
       );
       j++;
