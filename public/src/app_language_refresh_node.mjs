@@ -1,3 +1,4 @@
+import { app_language_quizzes_start } from "./app_language_quizzes_start.mjs";
 import { app_language_refresh_learn } from "./app_language_refresh_learn.mjs";
 import { app_language_refresh_review } from "./app_language_refresh_review.mjs";
 import { app_language_level_size } from "./app_language_level_size.mjs";
@@ -106,7 +107,7 @@ export async function app_language_refresh_node(
       " )",
     ]),
     () => {
-      quizzes_start([2]);
+      app_language_quizzes_start([2]);
     },
   );
   html_button_width_full_text_click(
