@@ -233,7 +233,7 @@ export async function app_language(app_fn, from, to, invert) {
     let { left, right } = storage_local_get(app_fn, "position");
     let gl = list_get(group, left);
     let gr = list_get_or_last(group, right);
-    let text = app_language_atom_title(group, gl, gr);
+    let text = app_language_atom_title(group, gl, gr, invert);
     html_cycle_p(root, app_language_atom_title_patterns(), text);
   }
   async function refresh_quiz(settings) {
