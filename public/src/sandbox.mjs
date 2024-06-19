@@ -72,6 +72,9 @@ export async function sandbox() {
     let words = list_adder_unique((la) =>
       each(atoms, (a) =>
         each(a, (pair) => {
+          log({
+            pair,
+          });
           la(list_first(pair));
         }),
       ),
