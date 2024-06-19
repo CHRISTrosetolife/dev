@@ -73,7 +73,9 @@ export async function sandbox() {
   if (group_local_save) {
     await file_overwrite_json(existing_path, result_new);
   }
-  let existing = await file_read_json(existing_path);
-  assert(equal_json, [result_new, existing]);
-  return group;
+  if (group_local_compare_to_new) {
+    let existing = await file_read_json(existing_path);
+    assert(equal_json, [result_new, existing]);
+    return group;
+  }
 }
