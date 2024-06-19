@@ -90,9 +90,8 @@ export async function app_language(
   }
   async function refresh_quiz(settings) {
     await app_language_refresh_quiz(
-      root,
-      settings,
       context,
+      settings,
       refresh_node,
       refresh_quiz,
     );
