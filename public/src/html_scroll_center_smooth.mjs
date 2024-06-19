@@ -15,18 +15,14 @@ export async function html_scroll_center_smooth(component) {
       reject();
     }, 2000);
     let scrollHandler = () => {
-      if (self.scrollY === targetPosition) {
+      if (window.scrollY === top && window.scrollX === left) {
         window.removeEventListener("scroll", scrollHandler);
         clearTimeout(failed);
         resolve();
       }
     };
-    if (self.scrollY === targetPosition) {
-      clearTimeout(failed);
-      resolve();
-    } else {
-      window.addEventListener("scroll", scrollHandler);
-    }
+    window.addEventListener("scroll", scrollHandler);
+    scrollHandler();
   });
   return;
   let additional = {
