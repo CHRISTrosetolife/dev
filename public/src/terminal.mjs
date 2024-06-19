@@ -394,7 +394,7 @@ export async function terminal() {
     let suffix = " ''";
     if (
       list_empty_not_is(current) ||
-      (string_length(input) >= 3 && string_ends_with(input))
+      (string_length(input) >= 3 && string_ends_with(suffix))
     ) {
       token_next();
     }
