@@ -93,7 +93,9 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
     }
     function app_gs_menu_system_logs(menu_overlay) {
       html_clear(menu_overlay);
-      html_button_width_full_text_click(menu_overlay, "back", app_gs_menu_main);
+      html_button_width_full_text_click(menu_overlay, "back", () =>
+        app_gs_menu_main(menu_overlay),
+      );
     }
   });
   return list_concat([tile_c, clicker], overlays);
