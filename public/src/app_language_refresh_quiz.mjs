@@ -71,7 +71,8 @@ import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered
 export async function app_language_refresh_quiz(
   root,
   settings,
-  atoms_slice_concat,
+  app_fn,
+  group,
   definitions,
   inverted,
   from,
