@@ -59,12 +59,7 @@ export async function app_language_refresh_node(
             left: left_next,
             right: right_next,
           });
-          await app_language_refresh_node(
-            context,
-            refresh_review,
-            refresh_learn,
-            quizzes_start,
-          );
+          await app_language_refresh_node(context);
         },
       );
       j++;
