@@ -21,7 +21,7 @@ export async function html_scroll_center_smooth(component) {
     }, 2000);
     let scrollHandler = () => {
       let root = html_document_body();
-      if (abs(window.scrollY - top) < 1 && abs(window.scrollX - left) < 1) {
+      if (abs(root.scrollTop - top) < 1 && abs(root.scrollLeft - left) < 1) {
         window.removeEventListener("scroll", scrollHandler);
         clearTimeout(failed);
         resolve();
