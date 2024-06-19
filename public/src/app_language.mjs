@@ -82,11 +82,11 @@ export async function app_language(
     );
   }
   function app_language_title_get() {
-    let { left, right } = storage_local_get(app_fn, "position");
-    let gl = list_get(group, left);
-    let gr = list_get_or_last(group, right);
-    let text = app_language_atom_title(group, gl, gr, invert);
-    html_cycle_p(root, app_language_atom_title_patterns(), text);
+    let { left, right } = storage_local_get(context.app_fn, "position");
+    let gl = list_get(context.group, left);
+    let gr = list_get_or_last(context.group, right);
+    let text = app_language_atom_title(context.group, gl, gr, context.invert);
+    html_cycle_p(context.root, app_language_atom_title_patterns(), text);
   }
   async function refresh_quiz(settings) {
     await app_language_refresh_quiz(context, settings, refresh_node);
