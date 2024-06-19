@@ -75,13 +75,17 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
       app_gs_menu_main(menu_overlay);
       return;
     }
+    log("app_gs_map_cell 1");
     app_gs_map_render(map, map_c, path, player_c);
+    log("app_gs_map_cell 2");
     await each_async(list_skip(path, 1), async (tile) => {
       await app_gs_walk(player_c, map.player, tile);
     });
+    log("app_gs_map_cell 3");
     await html_scroll_center_smooth(player_c);
+    log("app_gs_map_cell 4");
     app_gs_map_render(map, map_c, [map.player], player_c);
-    log("app_gs_map_cell 1");
+    log("app_gs_map_cell 5");
   });
   return list_concat([tile_c, clicker], overlays);
 }
