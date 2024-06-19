@@ -33,13 +33,18 @@ import { http_storage } from "./http_storage.mjs";
 import { html_style_default_font_size } from "./html_style_default_font_size.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
-export async function app_language(app_fn, from, to, invert) {
+export async function app_language(
+  app_fn,
+  language_learn,
+  language_fluent,
+  invert,
+) {
   assert_arguments_length(arguments, 4);
   let root = html_style_default_initialize();
   html_style_default_font_size(3.5);
   let group_index = 0;
   let { group, definitions, inverted } = await http_storage(
-    app_language_group_path(from, to, group_index),
+    app_language_group_path(language_learn, language_fluent, group_index),
   );
   let level_size = app_language_level_size();
   let context = {};
@@ -56,7 +61,7 @@ export async function app_language(app_fn, from, to, invert) {
       group,
       invert,
       refresh_node,
-      to,
+      language_fluent,
       refresh_review,
       refresh_learn,
       quizzes_start,
@@ -77,8 +82,8 @@ export async function app_language(app_fn, from, to, invert) {
       group,
       definitions,
       inverted,
-      from,
-      to,
+      language_learn,
+      language_fluent,
       context,
       refresh_node,
       refresh_quiz,
@@ -101,7 +106,7 @@ export async function app_language(app_fn, from, to, invert) {
     list_sort_string(words_f, identity);
     each_object(lookup, (key, value) => list_sort_string(value, identity));
     each(words_f, (word_f) => {
-      app_language_word_button_audio_none(root, from, word_f);
+      app_language_word_button_audio_none(root, language_learn, word_f);
       each(object_property_get(lookup, word_f), (english) =>
         app_language_word_native(root, english),
       );
@@ -114,7 +119,7 @@ export async function app_language(app_fn, from, to, invert) {
     let concat = app_language_atoms_slice_concat(app_fn, group);
     let pair = list_get(concat, pair_index);
     let [word_f, word_t] = pair;
-    app_language_word_button(root, from, word_f);
+    app_language_word_button(root, language_learn, word_f);
     app_language_word_native(root, word_t);
     html_buttons_next_previous(
       root,
