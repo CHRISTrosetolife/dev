@@ -1,6 +1,5 @@
 import { json_to } from "./json_to.mjs";
 import { html_button_width_full_text } from "./html_button_width_full_text.mjs";
-import { log } from "./log.mjs";
 import { each } from "./each.mjs";
 import { log_logs } from "./log_logs.mjs";
 import { app_gs_menu_main } from "./app_gs_menu_main.mjs";
@@ -12,7 +11,7 @@ export function app_gs_menu_system_logs(menu_overlay) {
     app_gs_menu_main(menu_overlay),
   );
   let logs = log_logs();
-  each(logs, (log) => {
-    html_button_width_full_text(menu_overlay, json_to(log));
+  each(logs, (message) => {
+    html_button_width_full_text(menu_overlay, json_to(message));
   });
 }
