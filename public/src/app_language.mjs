@@ -48,14 +48,6 @@ export async function app_language(
     await app_language_refresh_quiz(context, settings);
   }
   async function refresh_learn(pair_index) {
-    app_language_refresh_learn(
-      root,
-      app_fn,
-      group,
-      pair_index,
-      language_learn,
-      refresh_node,
-      refresh_learn,
-    );
+    app_language_refresh_learn(root, app_fn, group, language_learn, pair_index);
   }
 }
