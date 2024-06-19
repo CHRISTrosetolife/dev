@@ -116,6 +116,8 @@ export async function app_ceb() {
   let http_storage_result = await http_storage(
     app_language_group_path(from, to, group_index),
   );
+  if (invert_to_from) {
+  }
   let { group, definitions, inverted } = http_storage_result;
   let level_size = app_language_level_size();
   let settings_choices;
