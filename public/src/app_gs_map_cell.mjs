@@ -83,7 +83,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
       await app_gs_walk(player_c, map.player, tile);
     });
     html_scroll_center_smooth(player_c);
-    await sleep(100);
+    await sleep(500);
     app_gs_menu(map_c, map);
   });
   return list_concat([tile_c, clicker], overlays);
