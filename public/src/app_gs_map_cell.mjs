@@ -1,3 +1,4 @@
+import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { game_img_extend_style } from "./game_img_extend_style.mjs";
 import { app_gs_map_extends } from "./app_gs_map_extends.mjs";
 import { list_xy } from "./list_xy.mjs";
@@ -82,7 +83,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
         y_extend,
         x_extend,
       );
-      html_button_width_full_click(menu);
+      html_button_width_full_text_click(menu);
       return;
     }
     app_gs_map_render(map, map_c, path, player_c);
