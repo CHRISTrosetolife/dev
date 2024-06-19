@@ -13,7 +13,7 @@ import { add_1 } from "./add_1.mjs";
 import { mod } from "./mod.mjs";
 import { integer_random } from "./integer_random.mjs";
 export async function app_ceb_audio(text) {
-  log("here");
+  log("hered");
   let language = "ceb";
   let { voices } = await audio_language(language);
   let counts = global_function(app_ceb_audio);
