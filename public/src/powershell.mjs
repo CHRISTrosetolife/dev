@@ -1,6 +1,5 @@
 import { error } from "./error.mjs";
 import { import_node } from "./import_node.mjs";
-import { command_line_generic } from "./command_line_generic.mjs";
 export async function powershell(command) {
   let options = {
     shell: "powershell.exe",
@@ -16,5 +15,4 @@ export async function powershell(command) {
       });
     });
   });
-  return await command_line_generic(command, options);
 }
