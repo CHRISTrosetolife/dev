@@ -73,7 +73,8 @@ export async function app_language(app_fn, from, to, invert) {
     await app_language_refresh_quiz(
       root,
       settings,
-      atoms_slice_concat,
+      app_fn,
+      group,
       definitions,
       inverted,
       from,
