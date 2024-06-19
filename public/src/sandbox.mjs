@@ -70,7 +70,7 @@ export async function sandbox() {
       });
     });
     let words = list_adder_unique((la) =>
-      each(atoms, (a) =>
+      each(group, (a) =>
         each(a, (pair) => {
           log({
             pair,
