@@ -69,13 +69,13 @@ import { number_is } from "./number_is.mjs";
 import { assert } from "./assert.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 export async function app_language_refresh_quiz(
-  root,
-  settings,
   context,
+  settings,
   refresh_node,
   refresh_quiz,
 ) {
   let {
+    root,
     app_fn,
     language_learn,
     language_fluent,
