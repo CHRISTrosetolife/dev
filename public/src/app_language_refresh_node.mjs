@@ -1,3 +1,4 @@
+import { app_language_refresh_review } from "./app_language_refresh_review.mjs";
 import { app_language_level_size } from "./app_language_level_size.mjs";
 import { app_language_title } from "./app_language_title.mjs";
 import { equal } from "./equal.mjs";
@@ -68,7 +69,7 @@ export async function app_language_refresh_node(
   html_button_width_full_text_click(
     root,
     "📃 " + (await app_language_text(language_fluent, "review")),
-    refresh_review,
+    () => app_language_refresh_review(context),
   );
   if (left === right) {
     html_button_width_full_text_click(
