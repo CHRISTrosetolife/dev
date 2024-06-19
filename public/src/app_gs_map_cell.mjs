@@ -26,7 +26,6 @@ import { list_concat } from "./list_concat.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { equal_by } from "./equal_by.mjs";
 import { html_remove } from "./html_remove.mjs";
-import { sleep } from "./sleep.mjs";
 export function app_gs_map_cell(map, map_c, player_c, tile) {
   let clicker = html_div(map_c);
   let z_indexes = app_gs_z_indexes();
@@ -79,13 +78,10 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
       return;
     }
     app_gs_map_render(map, map_c, path, player_c);
-    await sleep(500);
     await each_async(list_skip(path, 1), async (tile) => {
       await app_gs_walk(player_c, map.player, tile);
     });
     html_scroll_center_smooth(player_c);
-    return;
-    app_gs_menu(map_c, map);
   });
   return list_concat([tile_c, clicker], overlays);
 }
