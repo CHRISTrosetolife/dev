@@ -1,3 +1,5 @@
+import { game_tile_units_css } from "./game_tile_units_css.mjs";
+import { html_style } from "./html_style.mjs";
 import { app_gs_map_extends } from "./app_gs_map_extends.mjs";
 import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
@@ -8,8 +10,11 @@ import { app_gs_map_cell } from "./app_gs_map_cell.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { each_object } from "./each_object.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-export function app_gs_map_render(map, map_component, coordinates, player_c) {
+export function app_gs_map_render(map, map_c, coordinates, player_c) {
   let { y_extend, x_extend } = app_gs_map_extends();
+  html_style(map_c, {
+    width: game_tile_units_css(x_extend * 2 + 1),
+  });
   let tiles_new = {};
   each(coordinates, (c) => {
     let { x, y } = c;
@@ -25,7 +30,7 @@ export function app_gs_map_render(map, map_component, coordinates, player_c) {
           return;
         }
         let tile = map.tiles[ye][xe];
-        let components = app_gs_map_cell(map, map_component, player_c, tile);
+        let components = app_gs_map_cell(map, map_c, player_c, tile);
         rows_new[xe] = components;
       });
     });
