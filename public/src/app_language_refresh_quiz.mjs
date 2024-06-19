@@ -211,7 +211,12 @@ export async function app_language_refresh_quiz(
                 refresh_node();
               } else {
                 let after = list_after(context.settings_choices, settings);
-                refresh_quiz(after);
+                await app_language_refresh_quiz(
+                  context,
+                  after,
+                  refresh_node,
+                  refresh_quiz,
+                );
               }
             }
           });
