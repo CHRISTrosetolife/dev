@@ -39,6 +39,7 @@ import { function_new_generic } from "./function_new_generic.mjs";
 import { json_to } from "./json_to.mjs";
 import { function_transform } from "./function_transform.mjs";
 import { http_server } from "./http_server.mjs";
+import { command_line } from "./command_line.mjs";
 export async function function_aliases_generate() {
   let all = {};
   function alias_add(fn, aliases) {
@@ -51,6 +52,7 @@ export async function function_aliases_generate() {
   alias_add(function_auto, ["a"]);
   alias_add(function_aliases_generate, ["al"]);
   alias_add(function_copy, ["c"]);
+  alias_add(command_line, ["cl"]);
   alias_add(data_update, ["d"]);
   alias_add(function_delete, ["de"]);
   alias_add(exit, exit_aliases());
