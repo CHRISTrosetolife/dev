@@ -55,13 +55,7 @@ export async function app_language(
     await app_language_refresh_quiz(context, settings, refresh_node);
   }
   async function refresh_review() {
-    app_language_refresh_review(
-      root,
-      refresh_node,
-      app_fn,
-      group,
-      language_learn,
-    );
+    app_language_refresh_review(context);
   }
   async function refresh_learn(pair_index) {
     app_language_refresh_learn(
