@@ -1,9 +1,9 @@
+import { global_function } from "./global_function.mjs";
 import { audio_language } from "./audio_language.mjs";
 import { audio_path } from "./audio_path.mjs";
 import { list_size } from "./list_size.mjs";
 import { html_audio } from "./html_audio.mjs";
 import { storage_url } from "./storage_url.mjs";
-import { global_get } from "./global_get.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { greater_than_equal } from "./greater_than_equal.mjs";
 import { list_index_last } from "./list_index_last.mjs";
@@ -15,8 +15,7 @@ export async function app_ceb_audio(text) {
   let language = "ceb";
   let { voices } = await audio_language(language);
   let fn = app_ceb_audio;
-  let g = global_get();
-  let counts = object_property_initialize(g, fn.name, {});
+  let counts = global_function(fn);
   let voices_index_last = list_index_last(voices);
   let count = object_property_initialize(
     counts,
