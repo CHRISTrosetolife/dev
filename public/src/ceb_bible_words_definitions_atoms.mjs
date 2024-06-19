@@ -1,10 +1,10 @@
+import { app_language_atom_count } from "./app_language_atom_count.mjs";
 import { list_size } from "./list_size.mjs";
 import { list_add_beginning } from "./list_add_beginning.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { list_take } from "./list_take.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
 import { each } from "./each.mjs";
-import { ceb_atom_count } from "./ceb_atom_count.mjs";
 import { ceb_bible_words_definitions_pairs } from "./ceb_bible_words_definitions_pairs.mjs";
 import { equal } from "./equal.mjs";
 import { list_add } from "./list_add.mjs";
@@ -20,7 +20,7 @@ import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_second } from "./list_second.mjs";
 export async function ceb_bible_words_definitions_atoms(skip, limit) {
   let take_count = 8;
-  let atom_count = ceb_atom_count();
+  let atom_count = app_language_atom_count();
   let { pairs, definitions } = await ceb_bible_words_definitions_pairs(
     skip,
     limit,

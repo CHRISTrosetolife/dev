@@ -1,5 +1,5 @@
+import { app_language_atom_count } from "./app_language_atom_count.mjs";
 import { add } from "./add.mjs";
-import { ceb_atom_count } from "./ceb_atom_count.mjs";
 import { list_last } from "./list_last.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_join_colon_spaces } from "./list_join_colon_spaces.mjs";
@@ -12,7 +12,7 @@ import { add_1 } from "./add_1.mjs";
 export function app_language_atom_title(group, atom_left, atom_right) {
   let l = list_first(atom_left);
   let r = list_last(atom_right);
-  let atom_count = ceb_atom_count();
+  let atom_count = app_language_atom_count();
   let mapped = list_map_nested([l, r], string_delimit_backtick);
   let text = string_combine_multiple([
     "words ",
