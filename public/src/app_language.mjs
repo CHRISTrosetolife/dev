@@ -142,9 +142,6 @@ export async function app_language(
     );
     html_button_width_full_text_click_up(root, refresh_node);
   }
-  function atoms_slice_concat() {
-    return app_language_atoms_slice_concat(app_fn, group);
-  }
   function quizzes_start(chunk_sizes) {
     app_language_quizzes_start(
       app_fn,
