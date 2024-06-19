@@ -2,7 +2,6 @@ import { list_to_lookup_value_property } from "./list_to_lookup_value_property.m
 import { object_list_invert } from "./object_list_invert.mjs";
 import { app_language_group_size } from "./app_language_group_size.mjs";
 import { app_language_group_path } from "./app_language_group_path.mjs";
-import { list_second } from "./list_second.mjs";
 import { audio_upload } from "./audio_upload.mjs";
 import { file_overwrite_json } from "./file_overwrite_json.mjs";
 import { equal_json } from "./equal_json.mjs";
@@ -40,14 +39,12 @@ export async function sandbox() {
   let definitions_all_inverted = object_list_invert(definitions_all);
   let profiles = [
     {
-      pair_word_get: list_first,
       definitions: definitions_all,
       from,
       to,
       invert: false,
     },
     {
-      pair_word_get: list_second,
       definitions: definitions_all_inverted,
       to: from,
       from: to,
@@ -68,7 +65,7 @@ export async function sandbox() {
       });
     });
     let words = list_adder_unique((la) =>
-      each(atoms, (a) => each(a, (pair) => la(profile.pair_word_get(pair)))),
+      each(atoms, (a) => each(a, (pair) => la(list_first(pair)))),
     );
     let definitions = {};
     each(words, (w) => {
