@@ -73,7 +73,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
         menu,
         map.player.y,
         map.player.x,
-        list_index(z_indexes, "clicker"),
+        list_index(z_indexes, "menu"),
       );
       return;
     }
