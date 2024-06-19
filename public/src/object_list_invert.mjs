@@ -5,9 +5,9 @@ import { each_object } from "./each_object.mjs";
 export function object_list_invert(object) {
   let inverted = {};
   each_object(object, (key, list) =>
-    each(list, (wd) => {
-      let words = object_property_initialize(inverted, wd, []);
-      list_add(words, key);
+    each(list, (value) => {
+      let list_inverted = object_property_initialize(inverted, value, []);
+      list_add(list_inverted, key);
     }),
   );
   return inverted;
