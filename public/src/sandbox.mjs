@@ -29,7 +29,7 @@ export async function sandbox() {
   let limit = 150;
   let skip = 0;
   let group_count = app_language_group_size();
-  let { atoms, definitions: definitions_all } =
+  let { atoms, definitions: definitions_list } =
     await ceb_bible_words_definitions_atoms(skip, limit);
   let group = list_take(atoms, group_count);
   await each_async(group, async (atom) => {
@@ -47,7 +47,7 @@ export async function sandbox() {
   );
   let definitions = {};
   each(words, (w) => {
-    let filtered = list_filter(definitions_all, (d) => d.word === w);
+    let filtered = list_filter(definitions_list, (d) => d.word === w);
     let ds = list_single(filtered).definitions;
     object_property_set(definitions, w, ds);
   });
