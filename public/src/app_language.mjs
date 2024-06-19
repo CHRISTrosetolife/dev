@@ -158,7 +158,7 @@ export async function app_language(app_fn, from, to, invert) {
         j++;
       });
     }
-    html_button_width_full_text_click(root, "📃 review", refresh_review);
+    html_button_width_full_text_click(root, "📃 " + "review", refresh_review);
     if (left === right) {
       html_button_width_full_text_click(
         root,
