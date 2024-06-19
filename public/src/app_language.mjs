@@ -106,7 +106,9 @@ import { app_language_group_path } from "./app_language_group_path.mjs";
 import { http_storage } from "./http_storage.mjs";
 import { html_style_default_font_size } from "./html_style_default_font_size.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
-export async function app_language(app_fn, from, to) {
+import { assert_arguments_length } from "./assert_arguments_length.mjs";
+export async function app_language(app_fn, from, to, invert) {
+  assert_arguments_length(arguments, 4);
   let root = html_style_default_initialize();
   html_style_default_font_size(3.5);
   let group_index = 0;
