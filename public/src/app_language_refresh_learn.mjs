@@ -9,15 +9,11 @@ import { list_get } from "./list_get.mjs";
 import { app_language_atoms_slice_concat } from "./app_language_atoms_slice_concat.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 export function app_language_refresh_learn(
-  root,
-  app_fn,
-  group,
   pair_index,
-  language_learn,
   refresh_node,
   refresh_learn,
 ) {
-  let a = context;
+  let { root, app_fn, group, language_learn } = context;
   html_clear_scroll_top_centered(root);
   let concat = app_language_atoms_slice_concat(app_fn, group);
   let pair = list_get(concat, pair_index);
