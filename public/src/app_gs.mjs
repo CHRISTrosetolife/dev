@@ -9,7 +9,7 @@ import { app_gs_style_default_initialize } from "./app_gs_style_default_initiali
 import { app_gs_map_html } from "./app_gs_map_html.mjs";
 import { app_gs_overlay_player } from "./app_gs_overlay_player.mjs";
 import { app_gs_map_new } from "./app_gs_map_new.mjs";
-export function app_gs() {
+export async function app_gs() {
   history.scrollRestoration = "manual";
   let root = app_gs_style_default_initialize();
   let d = html_style_button_default_value();
@@ -18,14 +18,14 @@ export function app_gs() {
   });
   if (html_hostname() !== "localhost") {
     html_scale_none();
-    html_style(root, {
-      overflow: "hidden",
-    });
   }
+  html_style(root, {
+    overflow: "hidden",
+  });
   let map = app_gs_map_new();
   let map_c = app_gs_map_html(root, map);
   let player_overlay = app_gs_overlay_player(map_c, map);
   map.html = [];
   app_gs_map_render(map, map_c, [map.player], player_overlay);
-  html_scroll_center_smooth(player_overlay);
+  await html_scroll_center_smooth(player_overlay);
 }
