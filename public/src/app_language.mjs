@@ -1,17 +1,9 @@
+import { app_language_refresh_learn } from "./app_language_refresh_learn.mjs";
 import { app_language_refresh_review } from "./app_language_refresh_review.mjs";
 import { app_language_title } from "./app_language_title.mjs";
-import { app_language_atoms_slice_concat } from "./app_language_atoms_slice_concat.mjs";
 import { app_language_refresh_quiz } from "./app_language_refresh_quiz.mjs";
 import { app_language_quizzes_start } from "./app_language_quizzes_start.mjs";
 import { app_language_refresh_node } from "./app_language_refresh_node.mjs";
-import { app_language_word_native } from "./app_language_word_native.mjs";
-import { list_size } from "./list_size.mjs";
-import { greater_than } from "./greater_than.mjs";
-import { html_buttons_next_previous } from "./html_buttons_next_previous.mjs";
-import { app_language_word_button } from "./app_language_word_button.mjs";
-import { html_button_width_full_text_click_up } from "./html_button_width_full_text_click_up.mjs";
-import { list_get } from "./list_get.mjs";
-import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { list_index_last } from "./list_index_last.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
 import { app_language_group_path } from "./app_language_group_path.mjs";
@@ -76,25 +68,15 @@ export async function app_language(
     );
   }
   async function refresh_learn(pair_index) {
-    html_clear_scroll_top_centered(root);
-    let concat = app_language_atoms_slice_concat(app_fn, group);
-    let pair = list_get(concat, pair_index);
-    let [word_l, word_f] = pair;
-    app_language_word_button(root, language_learn, word_l);
-    app_language_word_native(root, word_f);
-    html_buttons_next_previous(
+    app_language_refresh_learn(
       root,
-      (pair_index) => {
-        if (greater_than(pair_index, list_index_last(concat))) {
-          refresh_node();
-        } else {
-          refresh_learn(pair_index);
-        }
-      },
+      app_fn,
+      group,
       pair_index,
-      list_size(concat),
+      language_learn,
+      refresh_node,
+      refresh_learn,
     );
-    html_button_width_full_text_click_up(root, refresh_node);
   }
   function quizzes_start(chunk_sizes) {
     app_language_quizzes_start(
