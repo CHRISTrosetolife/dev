@@ -72,11 +72,8 @@ export async function app_language_refresh_quiz(
   root,
   settings,
   app_fn,
-  group,
-  definitions,
-  inverted,
-  from,
-  to,
+  language_learn,
+  language_fluent,
   context,
   refresh_node,
   refresh_quiz,
@@ -85,7 +82,7 @@ export async function app_language_refresh_quiz(
         app_fn,
         language_learn,
         language_fluent,
-        invert,
+        invert,group, definitions, inverted
       }=context;
   html_clear_scroll_top_centered(root);
   let no_mistakes = true;
@@ -122,7 +119,7 @@ export async function app_language_refresh_quiz(
   let answer_other_get;
   let alternatives;
   if (forwards) {
-    app_language_word_button(root, from, word_f);
+    app_language_word_button(root, language_learn, word_f);
     answer = word_t;
     answer_other_get = list_second;
     alternatives = alternatives_t;
@@ -135,7 +132,7 @@ export async function app_language_refresh_quiz(
   let quiz_container;
   let button_ready = html_button_width_full_text_click(
     root,
-    "🏁 " + (await app_language_text(to, "ready")),
+    "🏁 " + (await app_language_text(language_fluent, "ready")),
     () => {
       html_style_display_none(button_ready);
       html_style_display_block(quiz_container);
@@ -207,7 +204,7 @@ export async function app_language_refresh_quiz(
                 html_style_background_color(root, "#d3f8d3");
               }
               app_learn_code_style_success(answer_element);
-              await app_language_audio(from, word_f);
+              await app_language_audio(language_learn, word_f);
               if (0) {
                 html_style_background_color(root, "white");
               }

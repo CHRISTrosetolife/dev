@@ -90,9 +90,6 @@ export async function app_language(
       root,
       settings,
       context,
-      language_learn,
-      language_fluent,
-      context,
       refresh_node,
       refresh_quiz,
     );
