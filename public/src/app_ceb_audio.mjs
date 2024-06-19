@@ -14,6 +14,7 @@ import { mod } from "./mod.mjs";
 import { integer_random } from "./integer_random.mjs";
 export async function app_ceb_audio(text) {
   let language = "ceb";
+  log("heree");
   let { voices } = await audio_language(language);
   log({
     voices,
