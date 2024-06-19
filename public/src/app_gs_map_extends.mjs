@@ -5,10 +5,10 @@ export function app_gs_map_extends() {
   let w = window.innerWidth;
   let h = window.innerHeight;
   let tile_size_px = game_tile_size_px();
-  let x_tiles = ceiling(w / tile_size_px);
-  let y_tiles = ceiling(h / tile_size_px);
-  let x_extend = floor(x_tiles / 2);
-  let y_extend = floor(y_tiles / 2);
+  let x_count = ceiling(w / tile_size_px);
+  let y_count = ceiling(h / tile_size_px);
+  let x_extend = floor(x_count / 2);
+  let y_extend = floor(y_count / 2);
   return {
     y_extend,
     x_extend,
