@@ -1,3 +1,4 @@
+import { html_replace_nb } from "./html_replace_nb.mjs";
 import { log } from "./log.mjs";
 import { app_language_atom_count } from "./app_language_atom_count.mjs";
 import { add } from "./add.mjs";
@@ -19,9 +20,13 @@ export function app_language_atom_title(group, atom_left, atom_right, invert) {
   let mapped = list_map_nested([l, r], string_delimit_backtick);
   let text = string_combine_multiple([
     "words ",
-    list_join_colon_spaces((invert ? list_last : list_first)(mapped)),
+    html_replace_nb(
+      list_join_colon_spaces((invert ? list_last : list_first)(mapped)),
+    ),
     " - ",
-    list_join_colon_spaces((invert ? list_first : list_last)(mapped)),
+    html_replace_nb(
+      list_join_colon_spaces((invert ? list_first : list_last)(mapped)),
+    ),
     "<br>( words ",
     add_1(multiply(list_index(group, atom_left), atom_count)),
     " - ",
