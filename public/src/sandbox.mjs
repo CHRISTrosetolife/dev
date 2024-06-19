@@ -18,6 +18,7 @@ import { each } from "./each.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { file_read_json } from "./file_read_json.mjs";
 import { assert } from "./assert.mjs";
+import { object_property_get } from "./object_property_get.mjs";
 export async function sandbox() {
   let from = "ceb";
   let to = "en";
@@ -68,7 +69,7 @@ export async function sandbox() {
     );
     let definitions = {};
     each(words, (w) => {
-      let ds = profile.definitions_get(w);
+      let ds = object_property_get(definitions_all, w);
       object_property_set(definitions, w, ds);
     });
     let inverted = object_list_invert(definitions);
