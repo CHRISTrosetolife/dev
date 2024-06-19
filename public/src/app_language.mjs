@@ -67,7 +67,6 @@ export async function app_language(
     await app_language_refresh_node(
       root,
       context,
-      level_size,
       group,
       invert,
       refresh_node,
