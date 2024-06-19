@@ -5,7 +5,7 @@ export async function html_scroll_center_smooth(component) {
   let vw = window.innerWidth;
   let e = component.element;
   let rect = elem.getBoundingClientRect();
-  let targetPosition = Math.floor(rect.top + self.pageYOffset + offset);
+  let targetPosition = Math.floor(rect.top + self.scrollY + offset);
   window.scrollTo({
     left: e.offsetLeft - vw / 2 + e.width / 2,
     top: e.offsetTop - vh / 2 + e.height / 2,
