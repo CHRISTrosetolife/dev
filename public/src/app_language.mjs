@@ -1,9 +1,8 @@
+import { app_language_atoms_slice_concat } from "./app_language_atoms_slice_concat.mjs";
 import { app_language_refresh_quiz } from "./app_language_refresh_quiz.mjs";
-import { app_language_atoms_slice } from "./app_language_atoms_slice.mjs";
 import { app_language_quizzes_start } from "./app_language_quizzes_start.mjs";
 import { app_language_refresh_node } from "./app_language_refresh_node.mjs";
 import { app_language_word_native } from "./app_language_word_native.mjs";
-import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { list_size } from "./list_size.mjs";
 import { greater_than } from "./greater_than.mjs";
 import { html_buttons_next_previous } from "./html_buttons_next_previous.mjs";
@@ -131,9 +130,7 @@ export async function app_language(app_fn, from, to, invert) {
     html_button_width_full_text_click_up(root, refresh_node);
   }
   function atoms_slice_concat() {
-    let atoms = app_language_atoms_slice(app_fn, group);
-    let concat = list_concat_multiple(atoms);
-    return concat;
+    return app_language_atoms_slice_concat(app_fn, group);
   }
   function quizzes_start(chunk_sizes) {
     app_language_quizzes_start(
