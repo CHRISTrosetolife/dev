@@ -1,3 +1,4 @@
+import { html_clear } from "./html_clear.mjs";
 import { app_gs_menu_overlay } from "./app_gs_menu_overlay.mjs";
 import { app_gs_z_indexes } from "./app_gs_z_indexes.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
@@ -72,6 +73,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
       )
     ) {
       let menu_overlay = app_gs_menu_overlay(map_c, map);
+      html_clear(menu_overlay);
       html_button_width_full_text_click(menu_overlay, "back", () => {
         html_remove(menu_overlay);
       });
