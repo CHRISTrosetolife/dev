@@ -228,7 +228,9 @@ export async function app_language_refresh_quiz(context, settings) {
   });
   update_partials();
   html_spacer_vertical_2(root);
-  html_button_width_full_text_click_up(root, refresh_node);
+  html_button_width_full_text_click_up(root, async () => {
+    await app_language_refresh_node(context);
+  });
   function update_partials() {
     let nexts = app_language_alternatives_partial_matches_nexts(
       answer,
