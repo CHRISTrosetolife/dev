@@ -14,7 +14,8 @@ export async function app_gs() {
   let root = app_gs_style_default_initialize();
   let d = html_style_button_default_value();
   object_merge(d, {
-    margin: "0",
+    "margin-left": "0",
+    "margin-right": "0",
   });
   if (html_hostname() !== "localhost") {
     html_scale_none();
