@@ -137,7 +137,12 @@ export async function app_language(app_fn, from, to, invert) {
         let right_next = add(left, s);
         let atom_left = list_get(group, left_next);
         let atom_right = list_get_or_last(group, right_next);
-        let text = app_language_atom_title(group, atom_left, atom_right);
+        let text = app_language_atom_title(
+          group,
+          atom_left,
+          atom_right,
+          invert,
+        );
         html_button_width_full_text_click_alternate(
           root,
           app_language_atom_title_patterns(),
