@@ -16,6 +16,7 @@ export async function app_ceb_audio(text) {
   let language = "ceb";
   log("heree");
   let { voices } = await audio_language(language);
+  log("heree2");
   log({
     voices,
   });
