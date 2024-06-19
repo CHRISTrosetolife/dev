@@ -57,14 +57,8 @@ export async function sandbox() {
     let group = list_take(atoms, group_count);
     await each_async(group, async (atom) => {
       await each_async(atom, async (pair) => {
-        log({
-          pair,
-        });
         if (profile.invert) {
           list_reverse(pair);
-          log({
-            pair,
-          });
         }
         let b = list_first(pair);
         if (audio_upload_run) {
