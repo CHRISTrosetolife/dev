@@ -15,6 +15,7 @@ export async function file_js_transform(lambdas, file_path, args) {
           object_merge(e, {
             file_path,
           });
+          throw e;
         }
       }),
   );
