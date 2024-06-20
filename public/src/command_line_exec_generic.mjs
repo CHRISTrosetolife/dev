@@ -1,6 +1,6 @@
 import { error } from "./error.mjs";
 import { import_node } from "./import_node.mjs";
-export async function command_line_generic(command, options) {
+export async function command_line_exec_generic(command, options) {
   let c = await import_node("child_process");
   let { exec } = c;
   return await new Promise((resolve) => {
