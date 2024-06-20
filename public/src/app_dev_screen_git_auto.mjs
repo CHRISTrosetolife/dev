@@ -1,3 +1,4 @@
+import { git_ac_message_commit } from "./git_ac_message_commit.mjs";
 import { git_ac_message_add } from "./git_ac_message_add.mjs";
 import { html_cycle_code } from "./html_cycle_code.mjs";
 import { html_cycle_code_multiple } from "./html_cycle_code_multiple.mjs";
@@ -48,6 +49,7 @@ export function app_dev_screen_git_auto() {
           "this does a `",
           git_ac_message_add(),
           "` and a `",
+          git_ac_message_commit(),
           " ...",
         ]),
         "the commit message is a timestamp and the name of the command and its arguments",
