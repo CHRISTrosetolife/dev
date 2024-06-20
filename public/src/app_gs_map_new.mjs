@@ -74,6 +74,7 @@ export function app_gs_map_new() {
   each(outside, (tile) => {
     let overlay_id = list_random_item(overlays_wall);
     let x_even = tile.x % 2 === 0;
+    let y_even = tile.y % 2 === 0;
     if (x_even) {
       overlay_id = 32;
     } else {
