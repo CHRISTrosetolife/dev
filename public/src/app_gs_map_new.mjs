@@ -166,6 +166,7 @@ export function app_gs_map_new() {
       object_property_change(copy, xy, () => {
         let delata = integer_random(1, 2);
         let choices = [add, subtract];
+        list_random_item(choices);
         return;
       });
     });
