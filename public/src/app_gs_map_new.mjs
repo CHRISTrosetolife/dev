@@ -77,15 +77,19 @@ export function app_gs_map_new() {
     let y_even = tile.y % 2 === 0;
     if (x_even === y_even) {
       overlay_id = 32;
-      if (
-        tile.y === border_thickness - 1 &&
-        tile.x >= border_thickness &&
-        tile.x <= border_thickness + x_size_inside - 1
-      ) {
-        overlay_id = 1;
-      }
     } else {
       overlay_id = 33;
+    }
+    if (
+      tile.y === border_thickness - 1 &&
+      tile.x >= border_thickness &&
+      tile.x <= border_thickness + x_size_inside - 1
+    ) {
+      if (x_even === y_even) {
+        overlay_id = 32;
+      } else {
+        overlay_id = 33;
+      }
     }
     overlay_add(tile, overlay_id);
   });
