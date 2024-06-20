@@ -1,3 +1,4 @@
+import { js_parse_first } from "./js_parse_first.mjs";
 import { object_replace } from "./object_replace.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
@@ -19,7 +20,7 @@ export function js_dollar(ast) {
         object_replace(node, e);
       }
       if (remaining === "lr") {
-        let e = js_parse_statement("return");
+        let e = js_parse_first("return");
         object_replace(node, e);
       }
     }
