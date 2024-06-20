@@ -5,6 +5,7 @@ import { html_br } from "./html_br.mjs";
 import { html_img } from "./html_img.mjs";
 import { each_range } from "./each_range.mjs";
 import { game_img_base } from "./game_img_base.mjs";
+import { html_on_click } from "./html_on_click.mjs";
 export function app_gs_tiles(root) {
   let container = html_div(root);
   html_style_line_height_none(container);
@@ -15,5 +16,6 @@ export function app_gs_tiles(root) {
     }
     let image = html_img(container, game_img_base(i));
     html_style_background_color(image, "black");
+    html_on_click(image, () => {});
   });
 }
