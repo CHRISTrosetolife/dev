@@ -1,3 +1,4 @@
+import { file_exists_not } from "./file_exists_not.mjs";
 import { function_path_suffix } from "./function_path_suffix.mjs";
 import { file_read_json } from "./file_read_json.mjs";
 import { command_line } from "./command_line.mjs";
@@ -28,6 +29,9 @@ export async function function_run_terminal(function_name, args) {
           });
         }
         await command_line(command);
+        if (file_exists_not) {
+          ("");
+        }
         let contents = await file_read_json(file_path_output);
         let { result } = contents;
         resolve(result);
