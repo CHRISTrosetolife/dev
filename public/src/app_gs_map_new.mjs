@@ -171,7 +171,7 @@ export function app_gs_map_new() {
       });
     });
     npc.character = list_random_item(game_img_list_male());
-    tiles[npc.y][npc.x];
+    map.tiles[npc.y][npc.x];
     overlay_add(tile, id);
   });
   map.player = {};
