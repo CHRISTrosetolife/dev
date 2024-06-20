@@ -8,6 +8,6 @@ export function js_parse_first(code) {
   let fd = list_first(body);
   let { body: block_statement } = fd;
   let { body: bs_body } = block_statement;
-  let fd_body_first = list_first(bs_body);
-  return fd_body_first;
+  let bs_body_first = list_first(bs_body);
+  return bs_body_first;
 }
