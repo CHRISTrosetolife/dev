@@ -103,11 +103,11 @@ export function app_gs_map_new() {
         overlay_id = 9;
       }
     }
-    let x_small = tile.x === border_thickness + x_size_inside;
+    let x_right = tile.x === border_thickness + x_size_inside;
     let y_middle =
       tile.y >= border_thickness &&
       tile.y <= border_thickness + y_size_inside - 1;
-    if (x_small && y_middle) {
+    if (x_right && y_middle) {
       if (x_even === y_even) {
         overlay_id = 8;
       } else {
