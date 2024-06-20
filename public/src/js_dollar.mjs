@@ -4,7 +4,7 @@ export function js_dollar(ast) {
   js_visit_identifiers(ast, (v) => {
     let { node } = v;
     let { name } = node;
-    if (string_starts_with("$")) {
+    if (string_starts_with(node, "$")) {
     }
   });
 }
