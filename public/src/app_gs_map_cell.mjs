@@ -10,7 +10,6 @@ import { list_adder } from "./list_adder.mjs";
 import { app_gs_map_render } from "./app_gs_map_render.mjs";
 import { html_scroll_center_smooth } from "./html_scroll_center_smooth.mjs";
 import { each_async } from "./each_async.mjs";
-import { app_gs_at_single } from "./app_gs_at_single.mjs";
 import { app_gs_overlays_any_wall } from "./app_gs_overlays_any_wall.mjs";
 import { app_gs_walk } from "./app_gs_walk.mjs";
 import { html_on_click } from "./html_on_click.mjs";
@@ -41,7 +40,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
     if (w) {
       return;
     }
-    let from = app_gs_at_single(map.tiles, map.player);
+    let from = app_gs_at(map, map.player);
     let path = graph_path_shortest_neighbors(
       app_gs_map_tile_id,
       (v) => {
