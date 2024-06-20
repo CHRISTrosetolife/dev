@@ -1,4 +1,3 @@
-import { app_gs_z_index } from "./app_gs_z_index.mjs";
 import { app_gs_menu_main } from "./app_gs_menu_main.mjs";
 import { app_gs_menu_overlay } from "./app_gs_menu_overlay.mjs";
 import { list_xy } from "./list_xy.mjs";
@@ -35,7 +34,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
     }),
   );
   let { id } = tile;
-  let tile_c = game_img(map_c, game_img_base(id), tile, app_gs_z_index("tile"));
+  let tile_c = game_img(map_c, game_img_base(id), tile, "tile");
   game_img_style(clicker, tile.y, tile.x, "clicker");
   html_on_click(clicker, async () => {
     let w = app_gs_overlays_any_wall(tile);
