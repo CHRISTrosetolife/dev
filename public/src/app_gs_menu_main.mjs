@@ -18,7 +18,8 @@ export function app_gs_menu_main(menu_overlay) {
     html_button_width_full_text_click(menu_overlay, "back", () => {
       app_gs_menu_main(menu_overlay);
     });
-    let container_inner = html_div(menu_overlay);
+    let container_outer = html_div(menu_overlay);
+    let container_inner = html_div(container_outer);
     html_style(container_inner, {
       position: "relative",
     });
