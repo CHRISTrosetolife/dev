@@ -10,7 +10,7 @@ import { each_range } from "./each_range.mjs";
 import { game_img_base } from "./game_img_base.mjs";
 import { html_on_click } from "./html_on_click.mjs";
 import { html_remove } from "./html_remove.mjs";
-export function app_gs_tiles(menu_overlay, parent, map_c, map) {
+export function app_gs_tiles(parent, map_c, map) {
   let container = html_div(parent);
   html_style_line_height_none(container);
   let columns = 8;
