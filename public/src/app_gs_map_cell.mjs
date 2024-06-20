@@ -32,7 +32,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
         html_data_set(clicker, "overlay", o_id);
         let i = game_img(map_c, game_img_base(o_id), tile, "overlay");
         la(i);
-      } else if (o.type === "base") {
+      } else if (o.type === "npc") {
       }
     }),
   );
