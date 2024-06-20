@@ -12,14 +12,16 @@ export async function command_line(command) {
       string_split_space(command),
     );
     let child = spawn(first, remaining);
-    child.stdout.setEncoding("utf8");
-    child.stdout.on("data", function (data) {
-      log(data);
-    });
-    child.stderr.setEncoding("utf8");
-    child.stderr.on("data", function (data) {
-      log_error(data);
-    });
+    if (!silent) {
+      child.stdout.setEncoding("utf8");
+      child.stdout.on("data", function (data) {
+        log(data);
+      });
+      child.stderr.setEncoding("utf8");
+      child.stderr.on("data", function (data) {
+        log_error(data);
+      });
+    }
     child.on("close", function (code) {
       resolve();
     });
