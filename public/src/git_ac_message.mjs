@@ -5,7 +5,7 @@ import { command_line_git } from "./command_line_git.mjs";
 export async function git_ac_message(commit_message) {
   let commands = [
     git_ac_message_add(),
-    `${git_ac_message_commit()} ${date_string_iso()} ${commit_message}"`,
+    `${git_ac_message_commit()} "${date_string_iso()} ${commit_message}"`,
   ];
   for (let command of commands) {
     await command_line_git(command);
