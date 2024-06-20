@@ -5,5 +5,7 @@ export function app_gs_tiles(root) {
   let columns = 8;
   each_range(1063, (i) => {
     let image = html_img(root, game_img_base(i));
+    if (i > 0 && i % columns === 0) {
+    }
   });
 }
