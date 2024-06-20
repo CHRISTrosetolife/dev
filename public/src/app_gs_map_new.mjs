@@ -1,3 +1,4 @@
+import { app_gs_map_extends } from "./app_gs_map_extends.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { object_properties_new } from "./object_properties_new.mjs";
 import { equal_json } from "./equal_json.mjs";
@@ -27,6 +28,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { list_filter } from "./list_filter.mjs";
 export function app_gs_map_new() {
+  let e = app_gs_map_extends();
   let border_thickness_y = floor(game_tiles_max() / 2);
   let border_thickness_x = border_thickness_y + 1;
   let y_size_inside = 8;
