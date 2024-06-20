@@ -77,7 +77,7 @@ export function app_gs_map_new() {
     let y_even = tile.y % 2 === 0;
     if (x_even === y_even) {
       overlay_id = 32;
-      if (tile.y === border_thickness - 1) {
+      if (tile.y === border_thickness - 1 && tile.x >= border_thickness) {
         overlay_id = 1;
       }
     } else {
