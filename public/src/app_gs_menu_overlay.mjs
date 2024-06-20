@@ -22,10 +22,11 @@ export function app_gs_menu_overlay(map_c, map) {
     "z-index": app_gs_z_index("menu"),
   });
   let position_y = (y_count - 1) / 2;
+  let position_x = (x_count - 1) / 2;
   game_img_position(
     menu,
     subtract(map.player.y, position_y),
-    subtract(map.player.x, (x_count - 1) / 2),
+    subtract(map.player.x, position_x),
   );
   return menu;
 }
