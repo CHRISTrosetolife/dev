@@ -1,3 +1,4 @@
+import { list_join_empty } from "./list_join_empty.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 import { list_get } from "./list_get.mjs";
 import { string_to } from "./string_to.mjs";
@@ -17,5 +18,5 @@ export function number_to_letters(input) {
     let index = list_index(alphabet, i);
     return list_get(letters, index);
   });
-  return result;
+  return list_join_empty(result);
 }
