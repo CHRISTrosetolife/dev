@@ -14,6 +14,6 @@ export function app_gs_tiles(root) {
       html_br(container);
     }
     let image = html_img(container, game_img_base(i));
-    html_style_background_color(container_inner, "black");
+    html_style_background_color(image, "black");
   });
 }
