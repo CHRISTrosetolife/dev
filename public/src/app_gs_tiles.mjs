@@ -1,3 +1,4 @@
+import { app_gs_menu_overlay } from "./app_gs_menu_overlay.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
 import { html_style_line_height_none } from "./html_style_line_height_none.mjs";
 import { html_div } from "./html_div.mjs";
@@ -16,6 +17,8 @@ export function app_gs_tiles(menu_overlay, root) {
     }
     let image = html_img(container, game_img_base(i));
     html_style_background_color(image, "black");
-    html_on_click(image, () => {});
+    html_on_click(image, () => {
+      app_gs_menu_overlay(parent, coordinates);
+    });
   });
 }
