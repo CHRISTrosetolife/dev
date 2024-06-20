@@ -14,6 +14,8 @@ export function app_sandbox() {
   let container_inner = html_div(container_outer);
   html_style(container_inner, {
     position: "relative",
+    left: "50%",
+    transform: "translateX(-50%)",
   });
   app_gs_tiles(container_inner);
 }
