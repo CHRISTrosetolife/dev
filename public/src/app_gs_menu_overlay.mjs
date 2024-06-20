@@ -21,9 +21,10 @@ export function app_gs_menu_overlay(map_c, map) {
     position: "absolute",
     "z-index": app_gs_z_index("menu"),
   });
+  let position_y = (y_count - 1) / 2;
   game_img_position(
     menu,
-    subtract(map.player.y, (y_count - 1) / 2),
+    subtract(map.player.y, position_y),
     subtract(map.player.x, (x_count - 1) / 2),
   );
   return menu;
