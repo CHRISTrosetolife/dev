@@ -9,8 +9,8 @@ let id = 1;
 export async function html_scrollable_hide(map_c) {
   let data = global_function(html_scrollable_hide);
   let id_next = object_property_initialize(data, "id_next", 0);
-  html_attribute_set(map_c, "id", number_to_letters());
-  id++;
+  html_attribute_set(map_c, "id", number_to_letters(id_next));
+  id_next++;
   let style = html_element(map_c, "style");
   html_inner_set(
     style,
