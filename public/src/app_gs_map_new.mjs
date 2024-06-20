@@ -181,13 +181,16 @@ export function app_gs_map_new() {
   map.player.character = list_random_item(game_img_list_male());
   return map;
   function overlay_add_base(tile, id) {
-    let o = overlay_add(tile);
+    let o = overlay_add(tile, "base");
     object_merge(o, {
       id,
     });
   }
-  function overlay_add(tile) {
+  function overlay_add(tile, type) {
     let o = object_properties_new(tile, list_xy());
+    object_merge(o, {
+      type,
+    });
     list_add(tile.overlays, o);
     return o;
   }
