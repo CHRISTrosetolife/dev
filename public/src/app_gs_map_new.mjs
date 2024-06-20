@@ -127,7 +127,7 @@ export function app_gs_map_new() {
     }
     if (x_left && y_bottom) {
       if (x_even === y_even) {
-        overlay_id = 33;
+        overlay_id = 32;
       } else {
         overlay_id = 9;
       }
