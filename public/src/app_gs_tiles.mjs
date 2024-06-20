@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { app_gs_menu_overlay } from "./app_gs_menu_overlay.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
@@ -23,7 +22,6 @@ export function app_gs_tiles(parent, map_c, map) {
     let image = html_img(container, game_img_base(i));
     html_style_background_color(image, "black");
     html_on_click(image, () => {
-      log("here");
       let menu2 = app_gs_menu_overlay(map_c, map);
       html_button_width_full_text_click(menu2, "back", () => {
         html_remove(menu2);
