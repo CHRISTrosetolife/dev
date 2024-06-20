@@ -5,8 +5,8 @@ import { html_style_width_full } from "./html_style_width_full.mjs";
 import { html_style_centered } from "./html_style_centered.mjs";
 import { html_div } from "./html_div.mjs";
 export function app_sandbox() {
-  let body = html_document_body();
-  let container_outer = html_div(menu_overlay);
+  let root = html_document_body();
+  let container_outer = html_div(root);
   html_style_centered(container_outer);
   html_style_width_full(container_outer);
   let container_inner = html_div(container_outer);
