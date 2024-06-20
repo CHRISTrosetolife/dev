@@ -1,4 +1,4 @@
-export function html_attribute_get(component, name, value) {
+export function html_attribute_get(component, name) {
   let { element } = component;
-  element.setAttribute(name, value);
+  element.getAttribute(name);
 }
