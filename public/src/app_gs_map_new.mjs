@@ -114,9 +114,9 @@ export function app_gs_map_new() {
       }
     }
     if (
-      tile.y === border_thickness - 1 &&
-      tile.x >= border_thickness &&
-      tile.x <= border_thickness + x_size_inside - 1
+      tile.x === border_thickness - 1 &&
+      tile.y >= border_thickness &&
+      tile.y <= border_thickness + y_size_inside - 1
     ) {
       if (x_even === y_even) {
         overlay_id = 8;
