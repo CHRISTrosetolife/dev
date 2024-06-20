@@ -14,6 +14,10 @@ export function js_dollar(ast) {
         let e = js_parse_expression("()=>{}");
         object_replace(node, e);
       }
+      if (remaining === "lr") {
+        let e = js_parse_expression("()=>{return;}");
+        object_replace(node, e);
+      }
     }
   });
 }
