@@ -16,7 +16,7 @@ export function js_imports_add_specified(ast, specified) {
   let missing_without_self = list_difference(missing, self);
   let { body } = ast;
   for (let m of missing_without_self) {
-    let code = js_code_import(m);
+    let code = js_code_import(m);log({code})
     let first = js_parse_first(code);
     list_add_beginning(body, first);
   }
