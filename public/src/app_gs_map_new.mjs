@@ -1,3 +1,4 @@
+import { app_gs_map_at } from "./app_gs_map_at.mjs";
 import { integer_random } from "./integer_random.mjs";
 import { object_property_change } from "./object_property_change.mjs";
 import { object_copy } from "./object_copy.mjs";
@@ -171,7 +172,7 @@ export function app_gs_map_new() {
       });
     });
     npc.character = list_random_item(game_img_list_male());
-    let tile = app_gs_map_at(map, npc);////
+    let tile = app_gs_map_at(map, npc);
     overlay_add(tile, id);
   });
   map.player = {};
