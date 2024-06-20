@@ -30,9 +30,7 @@ export async function function_run_terminal(function_name, args) {
         }
         await command_line(command);
         if (await file_exists_not(file_path_output)) {
-          if (0) {
-            reject();
-          }
+          reject();
         }
         let contents = await file_read_json(file_path_output);
         let { result } = contents;
