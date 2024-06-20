@@ -164,6 +164,7 @@ export function app_gs_map_new() {
     each(list_xy(), (xy) => {
       let change = add_1;
       let existing = object_property_get(copy, xy);
+      let changed = change(existing);
       object_property_set(copy, changed);
     });
   });
