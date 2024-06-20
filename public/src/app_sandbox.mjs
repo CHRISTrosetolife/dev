@@ -13,5 +13,10 @@ export function app_sandbox() {
   html_style(container_inner, {
     position: "relative",
   });
-  app_gs_tiles(container_inner, container_inner);
+  app_gs_tiles(container_inner, container_inner, {
+    player: {
+      x: 10,
+      y: 10,
+    },
+  });
 }
