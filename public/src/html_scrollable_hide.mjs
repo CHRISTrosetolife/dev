@@ -4,9 +4,10 @@ import { html_inner_set } from "./html_inner_set.mjs";
 import { html_element } from "./html_element.mjs";
 export function html_scrollable_hide(root, map_c) {
   let style = html_element(root, "style");
+  let id = html_id(root);
   html_inner_set(
     style,
-    `#${html_id(root)}::-webkit-scrollbar {
+    `#${id}::-webkit-scrollbar {
   display: none;
 }`,
   );
