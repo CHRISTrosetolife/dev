@@ -21,7 +21,7 @@ export async function app_gs() {
     html_scale_none();
   }
   let map = app_gs_map_new();
-  let map_c = app_gs_map_html(container, map);
+  let map_c = app_gs_map_html(root, map);
   html_scrollable_hide(root, map_c);
   let player_c = app_gs_overlay_player(map_c, map);
   map.html = [];
