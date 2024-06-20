@@ -16,7 +16,7 @@ export function app_sandbox() {
   app_gs_tiles(container_inner, container_inner, {
     player: {
       x: 5,
-      y: 5,
+      y: 7,
     },
   });
 }
