@@ -12,7 +12,7 @@ import { app_gs_map_new } from "./app_gs_map_new.mjs";
 export async function app_gs() {
   history.scrollRestoration = "manual";
   let root = app_gs_style_default_initialize();
-  await html_scrollable_hide(root);
+  html_scrollable_hide(root);
   let d = html_style_button_default_value();
   object_merge(d, {
     "margin-left": "0",
@@ -23,7 +23,7 @@ export async function app_gs() {
   }
   let map = app_gs_map_new();
   let map_c = app_gs_map_html(root, map);
-  await html_scrollable_hide(map_c);
+  html_scrollable_hide(map_c);
   let player_c = app_gs_overlay_player(map_c, map);
   map.html = [];
   app_gs_map_render(map, map_c, [map.player], player_c);
