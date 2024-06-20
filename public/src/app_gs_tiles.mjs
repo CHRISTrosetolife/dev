@@ -18,7 +18,7 @@ export function app_gs_tiles(menu_overlay, parent, map) {
     let image = html_img(container, game_img_base(i));
     html_style_background_color(image, "black");
     html_on_click(image, () => {
-      app_gs_menu_overlay(menu_overlay, coordinates);
+      app_gs_menu_overlay(menu_overlay, map);
     });
   });
 }
