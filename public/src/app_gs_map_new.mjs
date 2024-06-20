@@ -163,7 +163,7 @@ export function app_gs_map_new() {
     let copy = object_copy(spawn);
     each(list_xy(), (xy) => {
       object_property_change(copy, xy, () => {
-        integer_random(1, 2);
+        let delata = integer_random(1, 2);
         return;
       });
     });
