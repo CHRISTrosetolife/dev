@@ -5,7 +5,7 @@ export function html_scrollable_hide(map_c) {
   let style = html_element(map_c, "style");
   html_inner_set(
     style,
-    `#${id}::-webkit-scrollbar {
+    `#${style.id}::-webkit-scrollbar {
   display: none;
 }`,
   );
