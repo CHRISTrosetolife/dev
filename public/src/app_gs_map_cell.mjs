@@ -57,7 +57,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
         ),
       )
     ) {
-      let menu_overlay = app_gs_menu_overlay(map_c, map.player);
+      let menu_overlay = app_gs_menu_overlay(map_c, map);
       app_gs_menu_main(menu_overlay);
       return;
     }
