@@ -11,7 +11,7 @@ export function app_gs_tiles() {
       root,
       game_img_base(0),
       {
-        x: 0,
+        x: i % columns,
         y: floor(i / columns),
       },
       "tile",
