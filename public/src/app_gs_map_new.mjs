@@ -181,10 +181,7 @@ export function app_gs_map_new() {
   map.player.character = list_random_item(game_img_list_male());
   return map;
   function overlay_add_base(tile, id) {
-    let o = {
-      id,
-    };
-    object_properties_new(o, tile, list_xy());
+    let o = object_properties_new(tile, list_xy());
     list_add(tile.overlays, o);
   }
   function inside_is(t) {
