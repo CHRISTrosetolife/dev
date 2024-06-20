@@ -183,6 +183,9 @@ export function app_gs_map_new() {
   function overlay_add_base(tile, id) {
     let o = object_properties_new(tile, list_xy());
     list_add(tile.overlays, o);
+    object_merge(o, {
+      id,
+    });
   }
   function inside_is(t) {
     return list_all(
