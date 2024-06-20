@@ -1,7 +1,6 @@
 import { list_remove } from "./list_remove.mjs";
 import { object_properties_new } from "./object_properties_new.mjs";
 import { equal_json } from "./equal_json.mjs";
-import { spawn } from "./spawn.mjs";
 import { game_tiles_max } from "./game_tiles_max.mjs";
 import { list_xy } from "./list_xy.mjs";
 import { each } from "./each.mjs";
