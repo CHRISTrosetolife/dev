@@ -27,7 +27,7 @@ export function app_gs_tiles(parent, map_c, map) {
       html_button_width_full_text_click(menu2, "back", () => {
         html_remove(menu2);
       });
-      html_button_width_full(menu2);
+      let button_container = html_button_width_full(menu2);
     });
   });
 }
