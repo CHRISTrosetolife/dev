@@ -170,6 +170,7 @@ export function app_gs_map_new() {
         return choice(v, delta);
       });
     });
+    overlay_add(tile, id);
   });
   map.player = {};
   object_merge(map.player, spawn);
