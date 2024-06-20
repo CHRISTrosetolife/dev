@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { object_properties_new } from "./object_properties_new.mjs";
 import { equal_json } from "./equal_json.mjs";
@@ -107,6 +108,7 @@ export function app_gs_map_new() {
       tile.y >= border_thickness &&
       tile.y <= border_thickness + y_size_inside - 1
     ) {
+      log("here");
       if (x_even === y_even) {
         overlay_id = 17;
       } else {
