@@ -72,6 +72,8 @@ export function app_gs_map_new() {
   each(spawn_overlap, (s) => list_remove(inside, s));
   each(outside, (tile) => {
     let overlay_id = list_random_item(overlays_wall);
+    if (tile.y % 2 === 0) {
+    }
     overlay_add(tile, overlay_id);
   });
   list_shuffle(inside);
