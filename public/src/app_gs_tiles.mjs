@@ -1,3 +1,4 @@
+import { html_style_background_color } from "./html_style_background_color.mjs";
 import { html_style_line_height_none } from "./html_style_line_height_none.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_br } from "./html_br.mjs";
@@ -12,6 +13,7 @@ export function app_gs_tiles(root) {
     if (i > 0 && i % columns === 0) {
       html_br(container);
     }
-    html_img(container, game_img_base(i));
+    let image = html_img(container, game_img_base(i));
+    html_style_background_color(container_inner, "black");
   });
 }
