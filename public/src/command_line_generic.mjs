@@ -17,8 +17,10 @@ export async function command_line_generic(command, silent) {
       child.stdout.setEncoding("utf8");
       child.stdout.on("data", function (data) {
         try {
+          log({
+            data,
+          });
           data = json_from(data);
-          log("here");
         } catch (e) {
           log_error(e);
         }
