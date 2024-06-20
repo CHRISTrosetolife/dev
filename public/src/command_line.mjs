@@ -4,6 +4,7 @@ import { string_split_space } from "./string_split_space.mjs";
 import { list_first_remaining } from "./list_first_remaining.mjs";
 import { import_node } from "./import_node.mjs";
 export async function command_line(command) {
+  let silent = false;
   let c = await import_node("child_process");
   let { spawn } = c;
   return await new Promise((resolve) => {
