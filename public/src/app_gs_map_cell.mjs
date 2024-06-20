@@ -27,10 +27,12 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
   let clicker = html_div(map_c);
   let overlays = list_adder((la) =>
     each(tile.overlays, function lambda_overlay(o) {
-      let { id: o_id } = o;
-      html_data_set(clicker, "overlay", o_id);
-      let i = game_img(map_c, game_img_base(o_id), tile, "overlay");
-      la(i);
+      if (o.type === "base") {
+        let { id: o_id } = o;
+        html_data_set(clicker, "overlay", o_id);
+        let i = game_img(map_c, game_img_base(o_id), tile, "overlay");
+        la(i);
+      }
     }),
   );
   let { id } = tile;
