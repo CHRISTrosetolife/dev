@@ -14,8 +14,8 @@ export function app_sandbox() {
   });
   html_style_centered(container_outer);
   html_style_width_full(container_outer);
-  let container_inner = html_div(container_outer);
-  html_style(root, {
+  let container_inner = html_div(root);
+  html_style(container_inner, {
     position: "relative",
   });
   app_gs_tiles(container_inner);
