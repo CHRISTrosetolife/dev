@@ -9,7 +9,7 @@ export function app_gs_tiles() {
   each_range(1000, (i) => {
     game_img(
       root,
-      game_img_base(0),
+      game_img_base(i),
       {
         x: i % columns,
         y: floor(i / columns),
