@@ -88,7 +88,7 @@ export function app_gs_map_new() {
       if (x_even === y_even) {
         overlay_id = 17;
       } else {
-        overlay_id = 33;
+        overlay_id = 16;
       }
     }
     overlay_add(tile, overlay_id);
