@@ -31,10 +31,11 @@ export async function function_run_terminal(function_name, args) {
         await command_line(command);
         if (await file_exists_not(file_path_output)) {
           reject();
+        } else {
+          let contents = await file_read_json(file_path_output);
+          let { result } = contents;
+          resolve(result);
         }
-        let contents = await file_read_json(file_path_output);
-        let { result } = contents;
-        resolve(result);
       });
     });
   });
