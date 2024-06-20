@@ -18,10 +18,10 @@ export function app_gs_menu_main(menu_overlay) {
     html_button_width_full_text_click(menu_overlay, "back", () => {
       app_gs_menu_main(menu_overlay);
     });
-    let container = html_div(menu_overlay);
-    html_style(container, {
+    let container_inner = html_div(menu_overlay);
+    html_style(container_inner, {
       position: "relative",
     });
-    app_gs_tiles(container);
+    app_gs_tiles(container_inner);
   });
 }
