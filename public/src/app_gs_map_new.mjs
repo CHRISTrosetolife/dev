@@ -75,6 +75,8 @@ export function app_gs_map_new() {
     let overlay_id = list_random_item(overlays_wall);
     if (tile.x % 2 === 0) {
       overlay_id = 32;
+    } else {
+      overlay_id = 33;
     }
     overlay_add(tile, overlay_id);
   });
