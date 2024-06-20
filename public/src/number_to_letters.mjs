@@ -9,10 +9,10 @@ import { list_concat } from "./list_concat.mjs";
 import { list_index } from "./list_index.mjs";
 import { integer_parse } from "./integer_parse.mjs";
 export function number_to_letters(input) {
+  let alphabet = keyboard_keys_sorted();
   input = integer_parse(input);
   let b26 = input.toString(26);
   let r10 = list_map(range(10), string_to);
-  let alphabet = keyboard_keys_sorted();
   let input_alphabet = list_concat(r10, alphabet);
   let result = list_map(string_split_empty(b26), (i) => {
     let index = list_index(input_alphabet, i);
