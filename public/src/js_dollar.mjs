@@ -11,7 +11,7 @@ export function js_dollar(ast) {
     if (string_starts_with(name, prefix)) {
       let remaining = string_prefix_without(name, prefix);
       if (remaining === "l") {
-        js_parse_expression("()=>{}");
+        let e = js_parse_expression("()=>{}");
       }
       log({
         remaining,
