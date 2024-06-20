@@ -1,3 +1,4 @@
+import { html_style_background_color } from "./html_style_background_color.mjs";
 import { html_style_width_full } from "./html_style_width_full.mjs";
 import { html_style_centered } from "./html_style_centered.mjs";
 import { html_div } from "./html_div.mjs";
@@ -24,6 +25,7 @@ export function app_gs_menu_main(menu_overlay) {
     html_style_centered(container_outer);
     html_style_width_full(container_outer);
     let container_inner = html_div(container_outer);
+    html_style_background_color();
     html_style(container_inner, {
       position: "relative",
     });
