@@ -25,7 +25,7 @@ export function app_gs_menu_main(menu_overlay) {
     html_style_centered(container_outer);
     html_style_width_full(container_outer);
     let container_inner = html_div(container_outer);
-    html_style_background_color();
+    html_style_background_color(container_inner, "black");
     html_style(container_inner, {
       position: "relative",
     });
