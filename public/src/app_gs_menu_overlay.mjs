@@ -1,8 +1,5 @@
-import { app_gs_z_index } from "./app_gs_z_index.mjs";
+import { game_img_style_generic } from "./game_img_style_generic.mjs";
 import { subtract } from "./subtract.mjs";
-import { game_img_position } from "./game_img_position.mjs";
-import { html_style_height } from "./html_style_height.mjs";
-import { html_style_width } from "./html_style_width.mjs";
 import { app_gs_screen_size } from "./app_gs_screen_size.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
 import { game_tile_units_css } from "./game_tile_units_css.mjs";
@@ -17,12 +14,13 @@ export function app_gs_menu_overlay(map_c, map) {
   let { x_count, y_count } = app_gs_screen_size();
   let position_y = subtract(map.player.y, (y_count - 1) / 2);
   let position_x = subtract(map.player.x, (x_count - 1) / 2);
-  html_style_width(menu, game_tile_units_css(x_count));
-  html_style_height(menu, game_tile_units_css(y_count));
-  html_style(menu, {
-    position: "absolute",
-    "z-index": app_gs_z_index("menu"),
-  });
-  game_img_position(menu, position_y, position_x);
+  game_img_style_generic(
+    menu,
+    height_tiles,
+    width_tiles,
+    z_index_name,
+    position_y,
+    position_x,
+  );
   return menu;
 }
