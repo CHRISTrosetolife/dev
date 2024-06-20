@@ -5,8 +5,8 @@ import { html_style_background_color } from "./html_style_background_color.mjs";
 import { game_tile_units_css } from "./game_tile_units_css.mjs";
 import { html_style } from "./html_style.mjs";
 import { html_div } from "./html_div.mjs";
-export function app_gs_menu_overlay(map_c, coordinates) {
-  let menu = html_div(map_c);
+export function app_gs_menu_overlay(parent, coordinates) {
+  let menu = html_div(parent);
   html_style(menu, {
     padding: game_tile_units_css(0.25),
   });
