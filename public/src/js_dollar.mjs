@@ -1,3 +1,4 @@
+import { js_parse_expression } from "./js_parse_expression.mjs";
 import { log } from "./log.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
@@ -10,6 +11,7 @@ export function js_dollar(ast) {
     if (string_starts_with(name, prefix)) {
       let remaining = string_prefix_without(name, prefix);
       if (remaining === "l") {
+        js_parse_expression("()=>{}");
       }
       log({
         remaining,
