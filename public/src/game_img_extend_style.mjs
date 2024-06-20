@@ -13,7 +13,8 @@ export function game_img_extend_style(
   y_extend,
   x_extend,
 ) {
-  html_style_width(image, game_tile_units_css(1 + 2 * x_extend));
+  let width_tiles = 1 + 2 * x_extend;
+  html_style_width(image, game_tile_units_css(width_tiles));
   html_style_height(image, game_tile_units_css(1 + 2 * y_extend));
   html_style(image, {
     position: "absolute",
