@@ -27,11 +27,12 @@ import { object_property_get } from "./object_property_get.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { list_filter } from "./list_filter.mjs";
 export function app_gs_map_new() {
-  let border_thickness = floor(game_tiles_max() / 2);
+  let border_thickness_y = floor(game_tiles_max() / 2);
+  let border_thickness_x = border_thickness_y;
   let y_size_inside = 11;
   let x_size_inside = y_size_inside;
-  let y_size = add(y_size_inside, border_thickness * 2);
-  let x_size = add(x_size_inside, border_thickness * 2);
+  let y_size = add(y_size_inside, border_thickness_y * 2);
+  let x_size = add(x_size_inside, border_thickness_y * 2);
   let map = {
     y_size,
     x_size,
@@ -79,16 +80,16 @@ export function app_gs_map_new() {
     } else {
       overlay_id = 33;
     }
-    let x_left = tile.x === border_thickness - 1;
+    let x_left = tile.x === border_thickness_y - 1;
     let x_middle =
-      tile.x >= border_thickness &&
-      tile.x <= border_thickness + x_size_inside - 1;
-    let x_right = tile.x === border_thickness + x_size_inside;
-    let y_top = tile.y === border_thickness - 1;
+      tile.x >= border_thickness_y &&
+      tile.x <= border_thickness_y + x_size_inside - 1;
+    let x_right = tile.x === border_thickness_y + x_size_inside;
+    let y_top = tile.y === border_thickness_y - 1;
     let y_middle =
-      tile.y >= border_thickness &&
-      tile.y <= border_thickness + y_size_inside - 1;
-    let y_bottom = tile.y === border_thickness + y_size_inside;
+      tile.y >= border_thickness_y &&
+      tile.y <= border_thickness_y + y_size_inside - 1;
+    let y_bottom = tile.y === border_thickness_y + y_size_inside;
     if (y_top && x_middle) {
       if (x_even === y_even) {
         overlay_id = 17;
@@ -179,8 +180,8 @@ export function app_gs_map_new() {
         },
       ],
       (a) =>
-        border_thickness <= object_property_get(t, a.xy) &&
-        object_property_get(t, a.xy) < a.size - border_thickness,
+        border_thickness_y <= object_property_get(t, a.xy) &&
+        object_property_get(t, a.xy) < a.size - border_thickness_y,
     );
   }
 }
