@@ -1,4 +1,4 @@
-import { html_style_overflow_hidden } from "./html_style_overflow_hidden.mjs";
+import { html_scrollable_hide } from "./html_scrollable_hide.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { html_style_button_default_value } from "./html_style_button_default_value.mjs";
 import { html_hostname } from "./html_hostname.mjs";
@@ -12,6 +12,7 @@ import { app_gs_map_new } from "./app_gs_map_new.mjs";
 export async function app_gs() {
   history.scrollRestoration = "manual";
   let root = app_gs_style_default_initialize();
+  await html_scrollable_hide(root);
   let d = html_style_button_default_value();
   object_merge(d, {
     "margin-left": "0",
@@ -20,9 +21,9 @@ export async function app_gs() {
   if (html_hostname() !== "localhost") {
     html_scale_none();
   }
-  html_style_overflow_hidden(root);
   let map = app_gs_map_new();
   let map_c = app_gs_map_html(root, map);
+  await html_scrollable_hide(map_c);
   let player_c = app_gs_overlay_player(map_c, map);
   map.html = [];
   app_gs_map_render(map, map_c, [map.player], player_c);
