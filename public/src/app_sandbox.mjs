@@ -11,11 +11,12 @@ export function app_sandbox() {
   html_style_centered(container_outer);
   html_style_width_full(container_outer);
   html_p_text(container_outer, "test");
-  let container_inner = html_div(root);
+  let container_inner = html_div(container_outer);
   html_style(container_inner, {
     position: "relative",
-    left: "50%",
-    transform: "translateX(-50%)",
+    "-webkit-box-align": "center",
+    "-webkit-box-pack": "center",
+    display: "-webkit-box",
   });
   app_gs_tiles(container_inner);
 }
