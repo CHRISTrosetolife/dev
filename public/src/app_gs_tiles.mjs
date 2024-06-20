@@ -10,7 +10,7 @@ import { each_range } from "./each_range.mjs";
 import { game_img_base } from "./game_img_base.mjs";
 import { html_on_click } from "./html_on_click.mjs";
 import { html_remove } from "./html_remove.mjs";
-export function app_gs_tiles(menu_overlay, parent, map) {
+export function app_gs_tiles(menu_overlay, parent, map_c, map) {
   let container = html_div(parent);
   html_style_line_height_none(container);
   let columns = 8;
@@ -22,7 +22,7 @@ export function app_gs_tiles(menu_overlay, parent, map) {
     html_style_background_color(image, "black");
     html_on_click(image, () => {
       log("here");
-      let menu2 = app_gs_menu_overlay(menu_overlay, map);
+      let menu2 = app_gs_menu_overlay(map_c, map);
       html_button_width_full_text_click(menu2, "back", () => {
         html_remove(menu2);
       });
