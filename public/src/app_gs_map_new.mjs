@@ -152,13 +152,13 @@ export function app_gs_map_new() {
         overlay_id = 33;
       }
     }
-    overlay_add(tile, overlay_id);
+    overlay_add_base(tile, overlay_id);
   });
   list_shuffle(inside);
   each_range(map_overlays_count, (i) => {
     let tile = list_pop(inside);
     let id = list_random_item(overlays);
-    overlay_add(tile, id);
+    overlay_add_base(tile, id);
   });
   let npc_count = 1;
   each_range(npc_count, () => {
@@ -173,7 +173,7 @@ export function app_gs_map_new() {
     });
     npc.character = list_random_item(game_img_list_male());
     let tile = app_gs_map_at(map, npc);
-    overlay_add(tile, id);
+    overlay_add_base(tile, id);
   });
   map.player = {};
   object_merge(map.player, spawn);
@@ -181,7 +181,7 @@ export function app_gs_map_new() {
   map.player.walk_previous = 1;
   map.player.character = list_random_item(game_img_list_male());
   return map;
-  function overlay_add(tile, id) {
+  function overlay_add_base(tile, id) {
     let o = {
       id,
     };
