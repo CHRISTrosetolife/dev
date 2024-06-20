@@ -1,5 +1,5 @@
-import { command_line_generic } from "./command_line_generic.mjs";
+import { command_line_silent } from "./command_line_silent.mjs";
 export async function command_line_git(args) {
   let command = `git ${args}`;
-  await command_line_generic(command, true);
+  await command_line_silent(command);
 }
