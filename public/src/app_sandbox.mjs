@@ -16,7 +16,7 @@ export function app_sandbox() {
   html_style_centered(container_outer);
   html_style_width_full(container_outer);
   html_p_text(container_outer, "test");
-  let container_inner = html_div(container_outer);
+  let container_inner = html_div(root);
   html_style(container_inner, {
     position: "relative",
   });
