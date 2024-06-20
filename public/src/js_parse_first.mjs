@@ -6,7 +6,7 @@ export function js_parse_first(code) {
   let parsed = js_parse(f);
   let { body } = parsed;
   let fd = list_first(body);
-  let { body: bs } = fd;
-  let fd_body_first = list_first(bs);
+  let { body: block_statement } = fd;
+  let fd_body_first = list_first(block_statement);
   return fd_body_first;
 }
