@@ -113,6 +113,17 @@ export function app_gs_map_new() {
         overlay_id = 16;
       }
     }
+    if (
+      tile.x === border_thickness + x_size_inside &&
+      tile.y >= border_thickness &&
+      tile.y <= border_thickness + y_size_inside - 1
+    ) {
+      if (x_even === y_even) {
+        overlay_id = 8;
+      } else {
+        overlay_id = 16;
+      }
+    }
     overlay_add(tile, overlay_id);
   });
   list_shuffle(inside);
