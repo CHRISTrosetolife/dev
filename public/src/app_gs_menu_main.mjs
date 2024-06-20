@@ -12,6 +12,9 @@ export function app_gs_menu_main(menu_overlay) {
     app_gs_menu_system_logs(menu_overlay);
   });
   html_button_width_full_text_click(menu_overlay, "tiles", () => {
+    html_button_width_full_text_click(menu_overlay, "back", () => {
+      html_remove(menu_overlay);
+    });
     app_gs_tiles(menu_overlay);
   });
 }
