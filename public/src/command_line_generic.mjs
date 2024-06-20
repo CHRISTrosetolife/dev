@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { json_from } from "./json_from.mjs";
 import { log_write } from "./log_write.mjs";
 import { log_error } from "./log_error.mjs";
@@ -17,6 +18,7 @@ export async function command_line_generic(command, silent) {
       child.stdout.on("data", function (data) {
         try {
           data = json_from(data);
+          log("here");
         } catch (e) {}
         log_write(data);
       });
