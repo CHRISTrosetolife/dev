@@ -170,6 +170,7 @@ export function app_gs_map_new() {
         return choice(v, delta);
       });
     });
+    npc.character = list_random_item(game_img_list_male());
     overlay_add(tile, id);
   });
   map.player = {};
