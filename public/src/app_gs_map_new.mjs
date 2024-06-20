@@ -28,7 +28,6 @@ import { object_merge_properties } from "./object_merge_properties.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { list_filter } from "./list_filter.mjs";
-import { add_1 } from "./add_1.mjs";
 export function app_gs_map_new() {
   let { y_extend, x_extend } = app_gs_map_extends();
   let border_thickness_y = y_extend;
@@ -162,8 +161,7 @@ export function app_gs_map_new() {
   each_range(npc_count, () => {
     let copy = object_copy(spawn);
     each(list_xy(), (xy) => {
-      let change = add_1;
-      object_property_change(copy, xy, () => {});
+      object_property_change(copy, xy, (v) => {});
     });
   });
   map.player = {};
