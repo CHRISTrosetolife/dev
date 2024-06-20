@@ -9,6 +9,7 @@ import { run_git } from "./run_git.mjs";
 import { run } from "./run.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { function_new } from "./function_new.mjs";
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export function app_dev_screen_git_auto() {
   return {
     name: function git_auto_name(root) {
@@ -42,7 +43,7 @@ export function app_dev_screen_git_auto() {
       );
       app_dev_screen_img(app_dev_screen_git_auto, root, i++);
       html_cycle_code_multiple(root, [
-        "this does a `git add` and a `git commit -m ...",
+        string_combine_multiple(["this does a `", "` and a `", " ..."]),
         "the commit message is a timestamp and the name of the command and its arguments",
         "waiting for `git push` after each command slows development , so `git push` is omitted from `" +
           run_git.name +
