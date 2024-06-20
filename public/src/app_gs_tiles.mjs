@@ -1,3 +1,4 @@
+import { html_style_width_half } from "./html_style_width_half.mjs";
 import { html_button_width_full_text } from "./html_button_width_full_text.mjs";
 import { html_button_width_full } from "./html_button_width_full.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
@@ -12,7 +13,6 @@ import { game_img_base } from "./game_img_base.mjs";
 import { html_on_click } from "./html_on_click.mjs";
 import { html_remove } from "./html_remove.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
-import { html_style_width_full } from "./html_style_width_full.mjs";
 export function app_gs_tiles(parent, menu_parent, map) {
   assert_arguments_length(arguments, 3);
   let container = html_div(parent);
@@ -31,7 +31,7 @@ export function app_gs_tiles(parent, menu_parent, map) {
       });
       let button_container = html_button_width_full(menu2);
       let image_clicked = html_img(button_container, game_img_base(i));
-      html_style_width_full(image_clicked);
+      html_style_width_half(image_clicked);
       html_button_width_full_text(menu2, i);
       html_button_width_full_text(menu2, game_img_base(i));
     });
