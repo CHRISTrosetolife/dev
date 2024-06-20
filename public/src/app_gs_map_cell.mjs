@@ -1,3 +1,4 @@
+import { app_gs_map_at } from "./app_gs_map_at.mjs";
 import { app_gs_menu_main } from "./app_gs_menu_main.mjs";
 import { app_gs_menu_overlay } from "./app_gs_menu_overlay.mjs";
 import { list_xy } from "./list_xy.mjs";
@@ -40,7 +41,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
     if (w) {
       return;
     }
-    let from = app_gs_at(map, map.player);
+    let from = app_gs_map_at(map, map.player);
     let path = graph_path_shortest_neighbors(
       app_gs_map_tile_id,
       (v) => {
