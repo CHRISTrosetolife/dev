@@ -4,9 +4,10 @@ import { game_img_character } from "./game_img_character.mjs";
 import { game_img } from "./game_img.mjs";
 export function app_gs_player_c(map_c, map) {
   let y_x = map.player;
+  let character = map.player.character;
   let player_c = game_img(
     map_c,
-    game_img_character(map.player.character, game_character_index("down")),
+    game_img_character(character, game_character_index("down")),
     y_x,
     "player",
   );
