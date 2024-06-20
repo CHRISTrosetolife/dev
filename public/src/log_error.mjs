@@ -1,6 +1,6 @@
-import { chalk } from "./chalk.mjs";
+import { log_error_generic } from "./log_error_generic.mjs";
 import { log } from "./log.mjs";
 export function log_error(message) {
   let fn = log;
-  fn(chalk().redBright(message));
+  log_error_generic(fn, message);
 }
