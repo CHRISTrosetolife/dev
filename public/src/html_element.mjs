@@ -1,4 +1,4 @@
-import { html_id_generate } from "./html_id_generate.mjs";
+import { html_id } from "./html_id.mjs";
 import { html_style_font_color_default_set } from "./html_style_font_color_default_set.mjs";
 import { html_style_default } from "./html_style_default.mjs";
 import { html_style } from "./html_style.mjs";
@@ -11,6 +11,6 @@ export function html_element(parent, tag_name) {
   };
   html_style_font_color_default_set(result);
   html_style(result, html_style_default());
-  html_id_generate(result);
+  html_id(result);
   return result;
 }
