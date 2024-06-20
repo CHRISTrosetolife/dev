@@ -6,7 +6,7 @@ import { game_img } from "./game_img.mjs";
 export function app_gs_tiles() {
   let root = html_document_body();
   let columns = 8;
-  each_range(1000, (i) => {
+  each_range(1500, (i) => {
     game_img(
       root,
       game_img_base(i),
