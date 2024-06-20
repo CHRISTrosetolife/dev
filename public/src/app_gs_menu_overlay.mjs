@@ -18,7 +18,7 @@ export function app_gs_menu_overlay(map_c, map) {
     menu,
     y_count,
     x_count,
-    z_index_name,
+    "menu",
     position_y,
     position_x,
   );
