@@ -1,4 +1,4 @@
-import { html_style_width_half } from "./html_style_width_half.mjs";
+import { html_style_width } from "./html_style_width.mjs";
 import { html_button_width_full_text } from "./html_button_width_full_text.mjs";
 import { html_button_width_full } from "./html_button_width_full.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
@@ -31,7 +31,7 @@ export function app_gs_tiles(parent, menu_parent, map) {
       });
       let button_container = html_button_width_full(menu2);
       let image_clicked = html_img(button_container, game_img_base(i));
-      html_style_width_half(image_clicked);
+      html_style_width(image_clicked, "min(25dvh,25dvw)");
       html_button_width_full_text(menu2, i);
       html_button_width_full_text(menu2, game_img_base(i));
     });
