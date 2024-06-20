@@ -2,6 +2,7 @@ import { html_id } from "./html_id.mjs";
 import { html_style_font_color_default_set } from "./html_style_font_color_default_set.mjs";
 import { html_style_default } from "./html_style_default.mjs";
 import { html_style } from "./html_style.mjs";
+import { object_merge } from "./object_merge.mjs";
 export function html_element(parent, tag_name) {
   let { element } = parent;
   let e = document.createElement(tag_name);
@@ -12,5 +13,8 @@ export function html_element(parent, tag_name) {
   html_style_font_color_default_set(result);
   html_style(result, html_style_default());
   let id = html_id(result);
+  object_merge(result, {
+    id,
+  });
   return result;
 }
