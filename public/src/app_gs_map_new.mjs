@@ -8,7 +8,6 @@ import { object_merge } from "./object_merge.mjs";
 import { list_partition } from "./list_partition.mjs";
 import { list_all } from "./list_all.mjs";
 import { add } from "./add.mjs";
-import { game_grass_weight } from "./game_grass_weight.mjs";
 import { app_gs_overlays_wall } from "./app_gs_overlays_wall.mjs";
 import { game_img_list_male } from "./game_img_list_male.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
@@ -41,7 +40,6 @@ export function app_gs_map_new() {
   let map_overlays_count = ceiling(total / 8);
   let overlays_wall = app_gs_overlays_wall();
   let overlays = list_concat(overlays_wall, range_from(48, 57));
-  let grass = game_grass_weight();
   map.tiles = list_adder((lar) =>
     each_range(y_size, (y) => {
       let row = list_adder((lac) => {
