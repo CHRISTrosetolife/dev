@@ -12,7 +12,10 @@ export function app_gs_tiles(root) {
   let columns = 8;
   each_range(1063, (i) => {
     if (i > 0 && i % columns === 0) {
-      html_br(root);
+      let br = html_br(root);
+      html_style(container, {
+        "line-height": 0,
+      });
     }
     let image = html_img(root, game_img_base(i));
   });
