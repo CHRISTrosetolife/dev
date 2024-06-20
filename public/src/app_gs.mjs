@@ -9,11 +9,9 @@ import { app_gs_style_default_initialize } from "./app_gs_style_default_initiali
 import { app_gs_map_html } from "./app_gs_map_html.mjs";
 import { app_gs_overlay_player } from "./app_gs_overlay_player.mjs";
 import { app_gs_map_new } from "./app_gs_map_new.mjs";
-import { html_div } from "./html_div.mjs";
 export async function app_gs() {
   history.scrollRestoration = "manual";
   let root = app_gs_style_default_initialize();
-  let container = html_div(root);
   html_scrollable_hide(root);
   let d = html_style_button_default_value();
   object_merge(d, {
