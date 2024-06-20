@@ -19,7 +19,9 @@ export async function command_line_generic(command, silent) {
         try {
           data = json_from(data);
           log("here");
-        } catch (e) {}
+        } catch (e) {
+          log_error(e);
+        }
         log_write(data);
       });
       child.stderr.setEncoding("utf8");
