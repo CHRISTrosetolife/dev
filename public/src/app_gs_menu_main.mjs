@@ -22,6 +22,6 @@ export function app_gs_menu_main(menu_overlay) {
     html_style(container, {
       position: "relative",
     });
-    app_gs_tiles(menu_overlay);
+    app_gs_tiles(container);
   });
 }
