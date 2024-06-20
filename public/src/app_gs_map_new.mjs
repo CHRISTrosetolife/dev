@@ -1,3 +1,4 @@
+import { integer_random } from "./integer_random.mjs";
 import { object_property_change } from "./object_property_change.mjs";
 import { object_copy } from "./object_copy.mjs";
 import { app_gs_map_extends } from "./app_gs_map_extends.mjs";
@@ -162,6 +163,7 @@ export function app_gs_map_new() {
     let copy = object_copy(spawn);
     each(list_xy(), (xy) => {
       object_property_change(copy, xy, () => {
+        integer_random(1, 2);
         return;
       });
     });
