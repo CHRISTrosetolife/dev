@@ -12,7 +12,6 @@ import { app_gs_map_new } from "./app_gs_map_new.mjs";
 export async function app_gs() {
   history.scrollRestoration = "manual";
   let root = app_gs_style_default_initialize();
-  html_scrollable_hide(root);
   let d = html_style_button_default_value();
   object_merge(d, {
     "margin-left": "0",
