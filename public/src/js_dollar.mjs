@@ -1,6 +1,5 @@
 import { object_replace } from "./object_replace.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
-import { log } from "./log.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
 import { js_visit_identifiers } from "./js_visit_identifiers.mjs";
@@ -15,9 +14,6 @@ export function js_dollar(ast) {
         let e = js_parse_expression("()=>{}");
         object_replace(node, e);
       }
-      log({
-        remaining,
-      });
     }
   });
 }
