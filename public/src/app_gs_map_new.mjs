@@ -92,7 +92,7 @@ export function app_gs_map_new() {
       }
     }
     if (
-      tile.y === border_thickness + y_size_inside - 1 &&
+      tile.y === border_thickness + y_size_inside &&
       tile.x >= border_thickness &&
       tile.x <= border_thickness + x_size_inside - 1
     ) {
