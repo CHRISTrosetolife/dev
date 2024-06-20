@@ -29,7 +29,7 @@ export function app_gs_tiles(parent, menu_parent, map) {
         html_remove(menu2);
       });
       let button_container = html_button_width_full(menu2);
-      html_img(button_container, game_img_base(i));
+      let image_clicked = html_img(button_container, game_img_base(i));
       html_button_width_full_text(menu2, i);
       html_button_width_full_text(menu2, game_img_base(i));
     });
