@@ -19,7 +19,7 @@ export function js_dollar(ast) {
         let e = js_parse_expression("()=>{return;}");
         object_replace(node, e);
       }
-      if (remaining === "lr") {
+      if (remaining === "r") {
         let e = js_parse_first("return");
         let { parent } = v;
         if (parent.type === "ExpressionStatement") {
