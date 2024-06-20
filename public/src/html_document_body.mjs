@@ -1,5 +1,6 @@
 export function html_document_body() {
-  return {
+  let result = {
     element: document.body,
   };
+  return result;
 }
