@@ -7,7 +7,7 @@ export function js_dollar(ast) {
     let { name } = node;
     let prefix = "$";
     if (string_starts_with(node, prefix)) {
-      let remaining = string_prefix_without;
+      let remaining = string_prefix_without(name, prefix);
     }
   });
 }
