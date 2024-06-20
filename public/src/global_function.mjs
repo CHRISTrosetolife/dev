@@ -1,8 +1,5 @@
-import { object_property_initialize } from "./object_property_initialize.mjs";
-import { global_get } from "./global_get.mjs";
+import { global_function_initialize } from "./global_function_initialize.mjs";
 export function global_function(fn) {
-  let g = global_get();
   let value = {};
-  let counts = object_property_initialize(g, fn.name, value);
-  return counts;
+  return global_function_initialize(fn, value);
 }
