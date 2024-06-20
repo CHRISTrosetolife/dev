@@ -3,7 +3,7 @@ import { js_visit_identifiers } from "./js_visit_identifiers.mjs";
 export function js_dollar(ast) {
   js_visit_identifiers(ast, (v) => {
     let { node } = v;
-    let name = node;
+    let { name } = node;
     if (string_starts_with("$")) {
     }
   });
