@@ -1,10 +1,9 @@
-import { app_gs_z_index } from "./app_gs_z_index.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { game_img_style } from "./game_img_style.mjs";
 import { html_img } from "./html_img.mjs";
 export function game_img(map, img_url, y_x, z_index_name) {
   assert_arguments_length(arguments, 4);
   let image = html_img(map, img_url);
-  game_img_style(image, y_x.y, y_x.x, app_gs_z_index(z_index_name));
+  game_img_style(image, y_x.y, y_x.x, z_index_name);
   return image;
 }
