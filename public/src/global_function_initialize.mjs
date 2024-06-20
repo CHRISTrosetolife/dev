@@ -2,6 +2,6 @@ import { object_property_initialize_get } from "./object_property_initialize_get
 import { global_get } from "./global_get.mjs";
 export function global_function_initialize(fn, value) {
   let g = global_get();
-  let counts = object_property_initialize_get(g, fn.name, () => value_get);
+  let counts = object_property_initialize_get(g, fn.name, () => value);
   return counts;
 }
