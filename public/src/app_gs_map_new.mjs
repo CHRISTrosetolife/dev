@@ -161,9 +161,9 @@ export function app_gs_map_new() {
   });
   let npc_count = 1;
   each_range(npc_count, () => {
-    let copy = object_copy(spawn);
+    let npc = object_copy(spawn);
     each(list_xy(), (xy) => {
-      object_property_change(copy, xy, (v) => {
+      object_property_change(npc, xy, (v) => {
         let delta = integer_random(1, 2);
         let choices = [add, subtract];
         let choice = list_random_item(choices);
