@@ -1,4 +1,3 @@
-export function app_gs_map_at(grid, a, lambda) {
-  let tile = grid[a.y][a.x];
-  lambda(tile);
+export function app_gs_map_at(map, coordinates) {
+  let tile = grid[coordinates.y][coordinates.x];
 }
