@@ -16,8 +16,8 @@ export function app_gs_menu_overlay(map_c, map) {
   let position_x = subtract(map.player.x, (x_count - 1) / 2);
   game_img_style_generic(
     menu,
-    height_tiles,
-    width_tiles,
+    y_count,
+    x_count,
     z_index_name,
     position_y,
     position_x,
