@@ -163,7 +163,7 @@ export function app_gs_map_new() {
     let copy = object_copy(spawn);
     each(list_xy(), (xy) => {
       let change = add_1;
-      object_property_change(copy, xy, change);
+      object_property_change(copy, xy, () => {});
     });
   });
   map.player = {};
