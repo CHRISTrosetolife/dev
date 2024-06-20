@@ -7,14 +7,9 @@ import { html_div } from "./html_div.mjs";
 export function app_sandbox() {
   let root = html_document_body();
   let container_outer = html_div(root);
-  html_style(container_outer, {
-    "-webkit-box-align": "center",
-    "-webkit-box-pack": "center",
-    display: "-webkit-box",
-  });
   html_style_centered(container_outer);
   html_style_width_full(container_outer);
-  let container_inner = html_div(root);
+  let container_inner = html_div(container_outer);
   html_style(container_inner, {
     position: "relative",
   });
