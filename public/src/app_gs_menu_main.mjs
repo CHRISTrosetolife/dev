@@ -22,13 +22,13 @@ export function app_gs_menu_main(menu_overlay) {
       app_gs_menu_main(menu_overlay);
     });
     let container_outer = html_div(menu_overlay);
-    html_style_centered(container_outer);
-    html_style_width_full(container_outer);
     let container_inner = html_div(container_outer);
-    html_style_background_color(container_inner, "black");
+    html_style_background_color(menu_overlay, "black");
     html_style(container_inner, {
       position: "relative",
     });
+    html_style_centered(container_inner);
+    html_style_width_full(container_inner);
     app_gs_tiles(container_inner);
   });
 }
