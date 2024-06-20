@@ -1,9 +1,12 @@
 
+2-3 types of areas : country , town and possibly city ; country does not have buildings
+
 pray before everything
 
 pray before study
 
 memorize verses in chapter
+maybe give user a choice if they want to do larger chunks of verses
 
 learn alphabet
 study words in greek and Hebrew Aramaic
@@ -46,22 +49,17 @@ or an undercover soldier
 
 go to prison
 
-write letter to church similar to how evangelizing works except people are asking questions
+    write letter to church similar to how evangelizing works except people are asking questions
 
-Memorize entire chapter in prison
+    Memorize entire chapter in prison
 
-option to memorize more until user wants to stop
+    option to memorize more until user wants to stop
 
-
-
-maybe give user a choice if they want to do larger chunks of verses
-
-witness while in prison to guard or guards
+    witness while in prison to guard or guards
 
 get martyred
 
-preach a long sermon at least one chapter option to keep going
-
+    preach a long sermon at least one chapter option to keep going
 
 game cycles through bible
 
