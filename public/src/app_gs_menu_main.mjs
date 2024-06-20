@@ -1,3 +1,4 @@
+import { html_style_centered } from "./html_style_centered.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_style } from "./html_style.mjs";
 import { app_gs_tiles } from "./app_gs_tiles.mjs";
@@ -19,6 +20,7 @@ export function app_gs_menu_main(menu_overlay) {
       app_gs_menu_main(menu_overlay);
     });
     let container_outer = html_div(menu_overlay);
+    html_style_centered(container_outer);
     let container_inner = html_div(container_outer);
     html_style(container_inner, {
       position: "relative",
