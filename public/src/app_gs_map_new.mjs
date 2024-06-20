@@ -32,7 +32,7 @@ export function app_gs_map_new() {
   let y_size_inside = 11;
   let x_size_inside = y_size_inside;
   let y_size = add(y_size_inside, border_thickness_y * 2);
-  let x_size = add(x_size_inside, border_thickness_y * 2);
+  let x_size = add(x_size_inside, border_thickness_x * 2);
   let map = {
     y_size,
     x_size,
@@ -80,11 +80,11 @@ export function app_gs_map_new() {
     } else {
       overlay_id = 33;
     }
-    let x_left = tile.x === border_thickness_y - 1;
+    let x_left = tile.x === border_thickness_x - 1;
     let x_middle =
-      tile.x >= border_thickness_y &&
-      tile.x <= border_thickness_y + x_size_inside - 1;
-    let x_right = tile.x === border_thickness_y + x_size_inside;
+      tile.x >= border_thickness_x &&
+      tile.x <= border_thickness_x + x_size_inside - 1;
+    let x_right = tile.x === border_thickness_x + x_size_inside;
     let y_top = tile.y === border_thickness_y - 1;
     let y_middle =
       tile.y >= border_thickness_y &&
@@ -173,15 +173,17 @@ export function app_gs_map_new() {
         {
           xy: "x",
           size: x_size,
+          thickness: border_thickness_x,
         },
         {
           xy: "y",
           size: y_size,
+          thickness: border_thickness_y,
         },
       ],
       (a) =>
-        border_thickness_y <= object_property_get(t, a.xy) &&
-        object_property_get(t, a.xy) < a.size - border_thickness_y,
+        a.thickness <= object_property_get(t, a.xy) &&
+        object_property_get(t, a.xy) < a.size - a.thickness,
     );
   }
 }
