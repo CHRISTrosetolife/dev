@@ -21,5 +21,6 @@ export function game_img_extend_style(
     position: "absolute",
     "z-index": app_gs_z_index(z_index_name),
   });
-  game_img_position(image, subtract(y, y_extend), subtract(x, x_extend));
+  let y_position = subtract(y, y_extend);
+  game_img_position(image, y_position, subtract(x, x_extend));
 }
