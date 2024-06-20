@@ -97,9 +97,9 @@ export function app_gs_map_new() {
       tile.x <= border_thickness + x_size_inside - 1
     ) {
       if (x_even === y_even) {
-        overlay_id = 17;
+        overlay_id = 9;
       } else {
-        overlay_id = 16;
+        overlay_id = 8;
       }
     }
     overlay_add(tile, overlay_id);
