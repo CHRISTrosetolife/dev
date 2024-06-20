@@ -70,7 +70,9 @@ export function app_gs_map_new() {
     equal_json(object_properties_new(i, list_xy()), spawn),
   );
   each(spawn_overlap, (s) => list_remove(inside, s));
-  each(outside, (tile) => overlay_add(tile, list_random_item(overlays_wall)));
+  each(outside, (tile) => {
+    overlay_add(tile, list_random_item(overlays_wall));
+  });
   list_shuffle(inside);
   each_range(map_overlays_count, (i) => {
     let tile = list_pop(inside);
