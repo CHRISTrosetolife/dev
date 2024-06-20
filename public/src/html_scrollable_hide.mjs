@@ -9,7 +9,8 @@ import { object_property_initialize } from "./object_property_initialize.mjs";
 export function html_scrollable_hide(map_c) {
   let data = global_function(html_scrollable_hide);
   let id_next = object_property_initialize(data, "id_next", 0);
-  html_attribute_set(map_c, "id", number_to_letters(id_next));
+  let id = number_to_letters(id_next);
+  html_attribute_set(map_c, "id", id);
   id_next++;
   object_property_set(data, "id_next", id_next);
   let style = html_element(map_c, "style");
