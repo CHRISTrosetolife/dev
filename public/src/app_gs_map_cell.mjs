@@ -16,7 +16,6 @@ import { app_gs_overlays_any_wall } from "./app_gs_overlays_any_wall.mjs";
 import { app_gs_walk } from "./app_gs_walk.mjs";
 import { html_on_click } from "./html_on_click.mjs";
 import { game_img_style } from "./game_img_style.mjs";
-import { list_index } from "./list_index.mjs";
 import { game_img_base } from "./game_img_base.mjs";
 import { game_img } from "./game_img.mjs";
 import { html_data_set } from "./html_data_set.mjs";
@@ -41,13 +40,8 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
     }),
   );
   let { id } = tile;
-  let tile_c = game_img(
-    map_c,
-    game_img_base(id),
-    tile,
-    list_index(z_indexes, "tile"),
-  );
-  game_img_style(clicker, tile.y, tile.x, list_index(z_indexes, "clicker"));
+  let tile_c = game_img(map_c, game_img_base(id), tile, app_gs_z_index("tile"));
+  game_img_style(clicker, tile.y, tile.x, app_gs_z_index("clicker"));
   html_on_click(clicker, async () => {
     let w = app_gs_overlays_any_wall(tile);
     if (w) {
