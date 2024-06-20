@@ -1,6 +1,6 @@
+import { app_gs_z_index } from "./app_gs_z_index.mjs";
 import { subtract } from "./subtract.mjs";
 import { game_img_position } from "./game_img_position.mjs";
-import { list_index } from "./list_index.mjs";
 import { html_style_height } from "./html_style_height.mjs";
 import { html_style_width } from "./html_style_width.mjs";
 import { app_gs_screen_size } from "./app_gs_screen_size.mjs";
@@ -21,7 +21,7 @@ export function app_gs_menu_overlay(map_c, map) {
   html_style_height(menu, game_tile_units_css(y_count));
   html_style(menu, {
     position: "absolute",
-    "z-index": list_index(z_indexes, "menu"),
+    "z-index": app_gs_z_index("menu"),
   });
   game_img_position(
     menu,
