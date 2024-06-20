@@ -1,3 +1,4 @@
+import { object_copy } from "./object_copy.mjs";
 import { app_gs_map_extends } from "./app_gs_map_extends.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { object_properties_new } from "./object_properties_new.mjs";
@@ -157,7 +158,7 @@ export function app_gs_map_new() {
   });
   let npc_count = 1;
   each_range(npc_count, () => {
-    object_merge(map.player, spawn);
+    object_copy(spawn);
   });
   map.player = {};
   object_merge(map.player, spawn);
