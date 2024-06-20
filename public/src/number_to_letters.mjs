@@ -12,11 +12,11 @@ export function number_to_letters(input) {
   input = integer_parse(input);
   let b26 = input.toString(26);
   let r10 = list_map(range(10), string_to);
-  let letters = keyboard_keys_sorted();
-  let input_alphabet = list_concat(r10, letters);
+  let alphabet = keyboard_keys_sorted();
+  let input_alphabet = list_concat(r10, alphabet);
   let result = list_map(string_split_empty(b26), (i) => {
     let index = list_index(input_alphabet, i);
-    return list_get(letters, index);
+    return list_get(alphabet, index);
   });
   return list_join_empty(result);
 }
