@@ -1,3 +1,4 @@
+import { app_gs_z_index } from "./app_gs_z_index.mjs";
 import { app_gs_menu_main } from "./app_gs_menu_main.mjs";
 import { app_gs_menu_overlay } from "./app_gs_menu_overlay.mjs";
 import { list_xy } from "./list_xy.mjs";
@@ -34,7 +35,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
         map_c,
         game_img_base(o_id),
         tile,
-        list_index(z_indexes, "overlay"),
+        app_gs_z_index("overlay"),
       );
       la(i);
     }),
