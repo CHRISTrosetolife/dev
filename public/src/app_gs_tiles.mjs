@@ -13,11 +13,6 @@ export function app_gs_tiles(root) {
   each_range(1063, (i) => {
     if (i > 0 && i % columns === 0) {
       let br = html_br(container);
-      if (0) {
-        html_style(br, {
-          "line-height": 0,
-        });
-      }
     }
     let image = html_img(container, game_img_base(i));
   });
