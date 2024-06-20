@@ -163,11 +163,11 @@ export function app_gs_map_new() {
   each_range(npc_count, () => {
     let copy = object_copy(spawn);
     each(list_xy(), (xy) => {
-      object_property_change(copy, xy, () => {
-        let delata = integer_random(1, 2);
+      object_property_change(copy, xy, (v) => {
+        let delta = integer_random(1, 2);
         let choices = [add, subtract];
         let choice = list_random_item(choices);
-        return;
+        return choice(v, delta);
       });
     });
   });
