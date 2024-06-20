@@ -11,7 +11,7 @@ import { game_img_base } from "./game_img_base.mjs";
 import { html_on_click } from "./html_on_click.mjs";
 import { html_remove } from "./html_remove.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
-export function app_gs_tiles(parent, map_c, map) {
+export function app_gs_tiles(parent, menu_parent, map) {
   assert_arguments_length(arguments, 3);
   let container = html_div(parent);
   html_style_line_height_none(container);
@@ -23,7 +23,7 @@ export function app_gs_tiles(parent, map_c, map) {
     let image = html_img(container, game_img_base(i));
     html_style_background_color(image, "black");
     html_on_click(image, () => {
-      let menu2 = app_gs_menu_overlay(map_c, map);
+      let menu2 = app_gs_menu_overlay(menu_parent, map);
       html_button_width_full_text_click(menu2, "back", () => {
         html_remove(menu2);
       });
