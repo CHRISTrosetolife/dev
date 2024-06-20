@@ -1,3 +1,4 @@
+import { git_ac_message_add } from "./git_ac_message_add.mjs";
 import { html_cycle_code } from "./html_cycle_code.mjs";
 import { html_cycle_code_multiple } from "./html_cycle_code_multiple.mjs";
 import { html_cycle_p } from "./html_cycle_p.mjs";
@@ -43,7 +44,12 @@ export function app_dev_screen_git_auto() {
       );
       app_dev_screen_img(app_dev_screen_git_auto, root, i++);
       html_cycle_code_multiple(root, [
-        string_combine_multiple(["this does a `", "` and a `", " ..."]),
+        string_combine_multiple([
+          "this does a `",
+          git_ac_message_add(),
+          "` and a `",
+          " ...",
+        ]),
         "the commit message is a timestamp and the name of the command and its arguments",
         "waiting for `git push` after each command slows development , so `git push` is omitted from `" +
           run_git.name +
