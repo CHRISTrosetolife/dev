@@ -26,6 +26,6 @@ export function app_gs_menu_main(menu_overlay, map) {
     });
     html_style_centered(container);
     html_style_width_full(container);
-    app_gs_tiles(menu_overlay, container);
+    app_gs_tiles(menu_overlay, container, map);
   });
 }
