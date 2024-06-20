@@ -22,7 +22,7 @@ export function js_dollar(ast) {
       if (remaining === "lr") {
         let e = js_parse_first("return");
         let { parent } = v;
-        object_replace(node, e);
+        object_replace(parent, e);
       }
     }
   });
