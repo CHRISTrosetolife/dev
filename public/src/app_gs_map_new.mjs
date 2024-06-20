@@ -158,7 +158,7 @@ export function app_gs_map_new() {
   });
   let npc_count = 1;
   each_range(npc_count, () => {
-    object_copy(spawn);
+    let copy = object_copy(spawn);
   });
   map.player = {};
   object_merge(map.player, spawn);
