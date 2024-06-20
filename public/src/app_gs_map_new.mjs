@@ -1,6 +1,3 @@
-import { app_gs_map_at } from "./app_gs_map_at.mjs";
-import { integer_random } from "./integer_random.mjs";
-import { object_property_change } from "./object_property_change.mjs";
 import { object_copy } from "./object_copy.mjs";
 import { app_gs_map_extends } from "./app_gs_map_extends.mjs";
 import { list_remove } from "./list_remove.mjs";
@@ -29,7 +26,6 @@ import { ceiling } from "./ceiling.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { list_filter } from "./list_filter.mjs";
-import { subtract } from "./subtract.mjs";
 export function app_gs_map_new() {
   let { y_extend, x_extend } = app_gs_map_extends();
   let border_thickness_y = y_extend;
@@ -162,16 +158,8 @@ export function app_gs_map_new() {
   let npc_count = 1;
   each_range(npc_count, () => {
     let npc = object_copy(spawn);
-    each(list_xy(), (xy) => {
-      object_property_change(npc, xy, (v) => {
-        let delta = integer_random(1, 2);
-        let choices = [add, subtract];
-        let choice = list_random_item(choices);
-        return choice(v, delta);
-      });
-    });
+    let tile = list_pop(inside);
     npc.character = list_random_item(game_img_list_male());
-    let tile = app_gs_map_at(map, npc);
     let o = overlay_add(tile, "npc");
     o.character = list_random_item(game_img_list_male());
   });
