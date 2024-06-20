@@ -1,6 +1,5 @@
 import { app_gs_menu_main } from "./app_gs_menu_main.mjs";
 import { app_gs_menu_overlay } from "./app_gs_menu_overlay.mjs";
-import { app_gs_z_indexes } from "./app_gs_z_indexes.mjs";
 import { list_xy } from "./list_xy.mjs";
 import { list_all } from "./list_all.mjs";
 import { app_gs_map_tile_id } from "./app_gs_map_tile_id.mjs";
@@ -27,7 +26,6 @@ import { object_property_get } from "./object_property_get.mjs";
 import { equal_by } from "./equal_by.mjs";
 export function app_gs_map_cell(map, map_c, player_c, tile) {
   let clicker = html_div(map_c);
-  let z_indexes = app_gs_z_indexes();
   let overlays = list_adder((la) =>
     each(tile.overlays, function lambda_overlay(o) {
       let { id: o_id } = o;
