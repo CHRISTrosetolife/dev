@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { js_code_function_declare } from "./js_code_function_declare.mjs";
 import { js_parse } from "./js_parse.mjs";
 import { list_first } from "./list_first.mjs";
@@ -7,6 +8,10 @@ export function js_parse_first(code) {
   let { body } = parsed;
   let first = list_first(body);
   let { body: fd_body } = first;
+  log({
+    first,
+    fd_body,
+  });
   let fd_body_first = list_first(fd_body);
   return fd_body_first;
 }
