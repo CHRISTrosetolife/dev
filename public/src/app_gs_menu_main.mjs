@@ -1,3 +1,4 @@
+import { html_style } from "./html_style.mjs";
 import { app_gs_tiles } from "./app_gs_tiles.mjs";
 import { app_gs_menu_system_logs } from "./app_gs_menu_system_logs.mjs";
 import { html_remove } from "./html_remove.mjs";
@@ -18,6 +19,9 @@ export function app_gs_menu_main(menu_overlay) {
       app_gs_menu_main(menu_overlay);
     });
     let container = html_element(menu_overlay);
+    html_style(container, {
+      position: "relative",
+    });
     app_gs_tiles(menu_overlay);
   });
 }
