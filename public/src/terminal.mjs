@@ -7,7 +7,6 @@ import { string_is } from "./string_is.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { terminal_data_transform } from "./terminal_data_transform.mjs";
 import { function_run_terminal } from "./function_run_terminal.mjs";
-import { error } from "./error.mjs";
 import { list_first_remaining } from "./list_first_remaining.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { list_join_underscore } from "./list_join_underscore.mjs";
@@ -374,7 +373,7 @@ export async function terminal() {
         log(result);
       }
     } catch (e) {
-      log(e.error);
+      log(e);
     }
     unawait(run_git_ac);
   }
