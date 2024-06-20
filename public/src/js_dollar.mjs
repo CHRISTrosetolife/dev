@@ -1,3 +1,4 @@
+import { object_replace } from "./object_replace.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
 import { log } from "./log.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
@@ -12,6 +13,7 @@ export function js_dollar(ast) {
       let remaining = string_prefix_without(name, prefix);
       if (remaining === "l") {
         let e = js_parse_expression("()=>{}");
+        object_replace(node, e);
       }
       log({
         remaining,
