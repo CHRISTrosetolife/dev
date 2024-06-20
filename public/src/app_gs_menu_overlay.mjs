@@ -15,14 +15,14 @@ export function app_gs_menu_overlay(map_c, map) {
   });
   html_style_background_color(menu, "rgba(1,1,1,0.25)");
   let { x_count, y_count } = app_gs_screen_size();
+  let position_y = (y_count - 1) / 2;
+  let position_x = (x_count - 1) / 2;
   html_style_width(menu, game_tile_units_css(x_count));
   html_style_height(menu, game_tile_units_css(y_count));
   html_style(menu, {
     position: "absolute",
     "z-index": app_gs_z_index("menu"),
   });
-  let position_y = (y_count - 1) / 2;
-  let position_x = (x_count - 1) / 2;
   game_img_position(
     menu,
     subtract(map.player.y, position_y),
