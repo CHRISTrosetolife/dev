@@ -92,9 +92,10 @@ export function app_gs_map_new() {
       }
     }
     let y_small = tile.y === border_thickness + y_size_inside;
-    let x_big =
+    let x_middle =
       tile.x >= border_thickness &&
       tile.x <= border_thickness + x_size_inside - 1;
+    let x_big = x_middle;
     if (y_small && x_big) {
       if (x_even === y_even) {
         overlay_id = 8;
