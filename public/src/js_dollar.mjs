@@ -5,7 +5,8 @@ export function js_dollar(ast) {
   js_visit_identifiers(ast, (v) => {
     let { node } = v;
     let { name } = node;
-    if (string_starts_with(node, "$")) {
+    let prefix = "$";
+    if (string_starts_with(node, prefix)) {
       let remaining = string_prefix_without;
     }
   });
