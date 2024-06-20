@@ -156,7 +156,9 @@ export function app_gs_map_new() {
     overlay_add(tile, id);
   });
   let npc_count = 1;
-  each_range(npc_count, () => {});
+  each_range(npc_count, () => {
+    object_merge(map.player, spawn);
+  });
   map.player = {};
   object_merge(map.player, spawn);
   map.player.walk_offset = 0;
