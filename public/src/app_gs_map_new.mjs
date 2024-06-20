@@ -84,6 +84,10 @@ export function app_gs_map_new() {
     let x_middle =
       tile.x >= border_thickness &&
       tile.x <= border_thickness + x_size_inside - 1;
+    let x_right = tile.x === border_thickness + x_size_inside;
+    let y_middle =
+      tile.y >= border_thickness &&
+      tile.y <= border_thickness + y_size_inside - 1;
     if (y_top && x_middle) {
       if (x_even === y_even) {
         overlay_id = 17;
@@ -99,10 +103,6 @@ export function app_gs_map_new() {
         overlay_id = 9;
       }
     }
-    let x_right = tile.x === border_thickness + x_size_inside;
-    let y_middle =
-      tile.y >= border_thickness &&
-      tile.y <= border_thickness + y_size_inside - 1;
     if (x_right && y_middle) {
       if (x_even === y_even) {
         overlay_id = 8;
