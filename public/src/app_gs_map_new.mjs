@@ -8,7 +8,6 @@ import { object_merge } from "./object_merge.mjs";
 import { list_partition } from "./list_partition.mjs";
 import { list_all } from "./list_all.mjs";
 import { add } from "./add.mjs";
-import { list_random_index_weighted } from "./list_random_index_weighted.mjs";
 import { game_grass_weight } from "./game_grass_weight.mjs";
 import { app_gs_overlays_wall } from "./app_gs_overlays_wall.mjs";
 import { game_img_list_male } from "./game_img_list_male.mjs";
@@ -52,7 +51,7 @@ export function app_gs_map_new() {
             x,
             overlays: [],
           };
-          let id = list_random_index_weighted(grass);
+          let id = 0;
           object_merge(tile, {
             id,
           });
