@@ -28,8 +28,8 @@ import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { list_filter } from "./list_filter.mjs";
 export function app_gs_map_new() {
   let border_thickness_y = floor(game_tiles_max() / 2);
-  let border_thickness_x = border_thickness_y;
-  let y_size_inside = 11;
+  let border_thickness_x = border_thickness_y + 1;
+  let y_size_inside = 8;
   let x_size_inside = y_size_inside;
   let y_size = add(y_size_inside, border_thickness_y * 2);
   let x_size = add(x_size_inside, border_thickness_x * 2);
