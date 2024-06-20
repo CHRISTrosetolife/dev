@@ -1,3 +1,4 @@
+import { html_button_width_full_text } from "./html_button_width_full_text.mjs";
 import { html_button_width_full } from "./html_button_width_full.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { app_gs_menu_overlay } from "./app_gs_menu_overlay.mjs";
@@ -28,7 +29,8 @@ export function app_gs_tiles(parent, menu_parent, map) {
         html_remove(menu2);
       });
       let button_container = html_button_width_full(menu2);
-      let image = html_img(button_container, game_img_base(i));
+      html_img(button_container, game_img_base(i));
+      html_button_width_full_text(menu2, game_img_base(i));
     });
   });
 }
