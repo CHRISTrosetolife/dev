@@ -1,5 +1,3 @@
-import { log } from "./log.mjs";
-import { json_from } from "./json_from.mjs";
 import { log_write } from "./log_write.mjs";
 import { log_error } from "./log_error.mjs";
 import { string_split_space } from "./string_split_space.mjs";
@@ -16,14 +14,6 @@ export async function command_line_generic(command, silent) {
     if (!silent) {
       child.stdout.setEncoding("utf8");
       child.stdout.on("data", function (data) {
-        try {
-          log({
-            data,
-          });
-          data = json_from(data);
-        } catch (e) {
-          log_error(e);
-        }
         log_write(data);
       });
       child.stderr.setEncoding("utf8");
