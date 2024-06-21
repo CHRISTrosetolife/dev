@@ -62,7 +62,7 @@ export function js_dollar(ast) {
       }
       let scm_prefix = "s";
       if (string_starts_with(remaining, scm_prefix)) {
-        remaining = string_prefix_without(name, prefix);
+        remaining = string_prefix_without(name, scm_prefix);
         let e = js_parse_expression(
           js_code_call_args(string_combine_multiple.name, [js_code_brackets()]),
         );
