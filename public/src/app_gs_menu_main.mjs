@@ -14,7 +14,7 @@ export function app_gs_menu_main(menu_overlay, map_c, map) {
   html_button_width_full_text_click(menu_overlay, "system logs", () => {
     app_gs_menu_system_logs(menu_overlay);
   });
-  html_button_width_full_text_click(menu_overlay, "tiles", () => {
+  html_button_width_full_text_click(menu_overlay, "🟩 tiles", () => {
     app_gs_menu_tiles(menu_overlay, map_c, map);
   });
 }
