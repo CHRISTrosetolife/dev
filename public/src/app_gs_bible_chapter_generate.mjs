@@ -1,4 +1,3 @@
-import { each } from "./each.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
 import { js_code_array } from "./js_code_array.mjs";
 import { js_code_statement_return } from "./js_code_statement_return.mjs";
@@ -17,8 +16,7 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
     app_gs_bible_chapter_generate.name,
     "generate",
   );
-  let name = string_combine_multiple([prefix, chapter_name]);
-  each((NaN) => {});
+  let name = string_combine_multiple([prefix, chapter_name]);$e
   let jsons = list_map(verses, json_to);
   await function_new_generic(
     name,
