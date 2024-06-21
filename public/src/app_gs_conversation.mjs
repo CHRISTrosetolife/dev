@@ -1,5 +1,4 @@
 import { app_gs_div_rounded_transparent } from "./app_gs_div_rounded_transparent.mjs";
-import { html_hr } from "./html_hr.mjs";
 import { html_style_font_color } from "./html_style_font_color.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { app_gs_phrase_it_is } from "./app_gs_phrase_it_is.mjs";
@@ -14,7 +13,6 @@ import { list_random_item } from "./list_random_item.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_gs_menu_overlay } from "./app_gs_menu_overlay.mjs";
 import { string_combine } from "./string_combine.mjs";
-import { html_style } from "./html_style.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 export function app_gs_conversation(map_c, map, npc) {
   let introduction = string_combine_multiple([
@@ -74,14 +72,6 @@ export function app_gs_conversation(map_c, map, npc) {
   html_inner_set(npc_speech, text);
   html_style_centered(div);
   html_style_rounded_padded(div);
-  if (0) {
-    let hr = html_hr(div);
-    html_style(hr, {
-      "background-color": "black",
-      height: "1px",
-      border: 0,
-    });
-  }
   let prompt = html_p_text(div, "What would you like to do?");
   html_style_font_color(prompt, "lightgreen");
   html_button_width_full_text_click(
