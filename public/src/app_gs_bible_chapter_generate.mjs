@@ -9,5 +9,5 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
     app_gs_bible_chapter_generate.name,
     "_generate",
   );
-  await generate_list_generic(verses, `${chapter_name}`);
+  await generate_list_generic(verses, `${prefix}${chapter_name}`);
 }
