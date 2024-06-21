@@ -15,8 +15,8 @@ export function js_dollar(ast) {
     let { name } = node;
     let prefix = "$";
     if (string_starts_with(name, prefix)) {
-      let remaining = string_prefix_without(name, prefix);
       let { parent } = v;
+      let remaining = string_prefix_without(name, prefix);
       if (remaining === "a") {
         let e = js_parse_expression("()=>{}");
         object_replace(node, e);
