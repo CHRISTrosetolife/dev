@@ -40,6 +40,7 @@ export function app_gs_conversation(map_c, map, npc) {
         app_gs_phrase_it_is(),
         " ",
         list_random_item([
+          "my pleasure",
           string_combine(
             app_gs_phrase_very(),
             list_random_item(["wonderful", "nice"]),
