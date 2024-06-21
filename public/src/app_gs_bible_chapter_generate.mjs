@@ -35,9 +35,10 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
           let { elements } = argument;
           each(elements, (element) => {
             let { properties } = element;
-            each(properties, (p) => {});
-            log({
-              properties,
+            each(properties, (p) => {
+              log({
+                p,
+              });
             });
           });
         },
