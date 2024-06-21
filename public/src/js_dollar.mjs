@@ -41,8 +41,7 @@ export function js_dollar(ast) {
       }
       if (remaining === "lr") {
         let e = js_parse_expression(
-          js_code_call_args(list_random_item.name),
-          js_code_brackets(),
+          js_code_call_args(list_random_item.name, js_code_brackets()),
         );
         log({
           e,
