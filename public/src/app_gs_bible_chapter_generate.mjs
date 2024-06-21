@@ -39,5 +39,5 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
     );
     await function_open(name);
   }
-  function_transform;
+  await function_transform([], name, []);
 }
