@@ -1,3 +1,4 @@
+import { html_p_text } from "./html_p_text.mjs";
 import { html_p } from "./html_p.mjs";
 import { app_gs_phrase_it_is } from "./app_gs_phrase_it_is.mjs";
 import { app_gs_phrase_i_am } from "./app_gs_phrase_i_am.mjs";
@@ -13,7 +14,6 @@ import { list_random_item } from "./list_random_item.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_gs_menu_overlay } from "./app_gs_menu_overlay.mjs";
 import { string_combine } from "./string_combine.mjs";
-import { html_inner_set } from "./html_inner_set.mjs";
 export function app_gs_conversation(map_c, map, npc) {
   let menu_overlay = app_gs_menu_overlay(map_c, map);
   let introduction = string_combine_multiple([
@@ -63,7 +63,7 @@ export function app_gs_conversation(map_c, map, npc) {
     list_join_space(["👋", greeting, introduction, greeting_pleased]),
   ]);
   let p = html_p(menu_overlay);
-  html_inner_set(p, text);
+  html_p_text(p, text);
   html_style_background_color_black_alpha(p, 0.51);
   html_style_centered(p);
   html_style_rounded_padded(p);
