@@ -11,11 +11,11 @@ export function js_dollar(ast) {
     let prefix = "$";
     if (string_starts_with(name, prefix)) {
       let remaining = string_prefix_without(name, prefix);
-      if (remaining === "l") {
+      if (remaining === "a") {
         let e = js_parse_expression("()=>{}");
         object_replace(node, e);
       }
-      if (remaining === "lr") {
+      if (remaining === "ar") {
         let e = js_parse_expression("()=>{return;}");
         object_replace(node, e);
       }
