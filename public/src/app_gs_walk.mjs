@@ -20,7 +20,6 @@ export async function app_gs_walk(player_c, player, destination) {
   await each_range_async(steps_count, async () => {
     let animate_count = 2;
     await each_range_async(animate_count, async (ac) => {
-      let sleep_time = app_gs_sleep_time();
       let step_count = add_1(ac);
       if (player.walk_offset === 0) {
         player.walk_offset = -player.walk_previous;
@@ -36,6 +35,7 @@ export async function app_gs_walk(player_c, player, destination) {
         player.y + (delta.y / animate_count) * step_count,
         player.x + (delta.x / animate_count) * step_count,
       );
+      let sleep_time = app_gs_sleep_time();
       await sleep(sleep_time);
     });
     let delta = game_direction_to_delta(direction);
