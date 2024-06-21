@@ -6,12 +6,13 @@ import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export async function google_search(query) {
   assert_arguments_length(arguments, 1);
   query = string_to_url(query);
-  let lucky = "btnI=1&";
+  let luck = false;
+  let lucky_url = "btnI=1&";
   await browser_open(
     string_combine_multiple([
       url_secure_w3(),
       "google.com/search?",
-      lucky,
+      lucky_url,
       "q=",
       query,
     ]),
