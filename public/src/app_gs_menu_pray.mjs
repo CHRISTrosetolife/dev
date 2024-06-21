@@ -1,4 +1,3 @@
-import { app_gs_menu_system_logs } from "./app_gs_menu_system_logs.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { app_gs_menu_main } from "./app_gs_menu_main.mjs";
 import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
@@ -12,7 +11,7 @@ export function app_gs_menu_pray(menu_overlay, map_c, map) {
     menu_overlay,
     "🙏 God, please bless my next 👥 conversation, in the name of Jesus, amen.",
     () => {
-      app_gs_menu_system_logs(menu_overlay, map_c, map);
+      map.player.pray.conversation = true;
     },
   );
 }
