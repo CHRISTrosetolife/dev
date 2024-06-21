@@ -16,6 +16,7 @@ import { list_index } from "./list_index.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_remove_at } from "./list_remove_at.mjs";
 import { list_first } from "./list_first.mjs";
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export function js_dollar(ast) {
   js_visit_identifiers(ast, (v) => {
     let { node } = v;
@@ -61,7 +62,7 @@ export function js_dollar(ast) {
       }
       if (string_starts_with(remaining, "s")) {
         let e = js_parse_expression(
-          js_code_call_args(list_random_item.name, [js_code_brackets()]),
+          js_code_call_args(string_combine_multiple.name, [js_code_brackets()]),
         );
         if (list_is(parent)) {
           let index = list_index(parent, node);
