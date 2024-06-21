@@ -62,7 +62,7 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
         npc_speech,
         "❗You remember you have not 🙏 prayed, yet, before your next conversation.",
       );
-      html_button_width_full_text_click(menu_overlay, () => {
+      html_button_width_full_text_click(div_pray_reminder, () => {
         html_remove(menu_overlay);
       });
     }
