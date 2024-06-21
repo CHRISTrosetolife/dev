@@ -98,7 +98,8 @@ export function app_gs_conversation(map_c, map, npc) {
   list_add(
     opening,
     string_combine_multiple([
-      "What ",
+      "What",
+      " ",
       list_random_item([
         string_combine_multiple([
           "is on your ",
