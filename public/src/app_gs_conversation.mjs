@@ -65,7 +65,7 @@ export function app_gs_conversation(map_c, map, npc) {
             "You can call me",
             "Please call me",
           ]),
-          "all me",
+          "call me",
         ]),
       ]),
       " ",
