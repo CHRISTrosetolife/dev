@@ -93,7 +93,8 @@ export function js_dollar(ast) {
           object_replace(node, e);
         }
       }
-      if (remaining === "o") {
+      let objection_prefix = "o";
+      if (string_starts_with(remaining, objection_prefix)) {
         let e = js_parse_expression("{text:'',count:1}");
         object_replace(node, e);
       }
