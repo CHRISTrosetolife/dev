@@ -164,6 +164,7 @@ export function app_gs_map_new() {
     let o = overlay_add(tile, "npc");
     o.character = list_random_item(game_img_list_male());
     let choices = bible_names_men();
+    list_remove(choices, npc.name);
     o.name = list_random_item(choices);
   });
   app_gs_player_new(map);
