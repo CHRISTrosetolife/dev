@@ -167,7 +167,6 @@ export function app_gs_map_new() {
     let choices = bible_names_men();
     list_remove(choices, map.player.name);
     o.name = list_random_item(choices);
-    npc.conversation_count = 0;
   });
   object_merge(map.player, spawn);
   return map;
