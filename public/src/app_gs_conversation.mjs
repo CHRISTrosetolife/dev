@@ -1,5 +1,5 @@
+import { html_div } from "./html_div.mjs";
 import { html_p_text } from "./html_p_text.mjs";
-import { html_p } from "./html_p.mjs";
 import { app_gs_phrase_it_is } from "./app_gs_phrase_it_is.mjs";
 import { app_gs_phrase_i_am } from "./app_gs_phrase_i_am.mjs";
 import { list_join_space } from "./list_join_space.mjs";
@@ -62,7 +62,7 @@ export function app_gs_conversation(map_c, map, npc) {
   let text = string_combine_multiple([
     list_join_space(["👋", greeting, introduction, greeting_pleased]),
   ]);
-  let p = html_p(menu_overlay);
+  let p = html_div(menu_overlay);
   html_p_text(p, text);
   html_style_background_color_black_alpha(p, 0.51);
   html_style_centered(p);
