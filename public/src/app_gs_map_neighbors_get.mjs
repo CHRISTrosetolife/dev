@@ -18,6 +18,6 @@ export function app_gs_map_neighbors_get(map, v) {
   if (x1 < map.x_size) {
     list_add(neighbors, map.tiles[y][x1]);
   }
-  neighbors = list_filter(neighbors, (n) => !app_gs_overlays_any_wall(n));
+  neighbors = list_filter(neighbors, (n) => !app_gs_overlays_any_wall(map, n));
   return neighbors;
 }
