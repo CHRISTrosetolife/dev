@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { js_code_brackets } from "./js_code_brackets.mjs";
 import { object_replace } from "./object_replace.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
@@ -34,10 +35,9 @@ export function js_dollar(ast) {
           js_code_call_args(list_random_item.name),
           js_code_brackets(),
         );
-        let { parent } = v;
-        if (parent.type === "ExpressionStatement") {
-          object_replace(parent, e);
-        }
+        log({
+          e,
+        });
       }
     }
   });
