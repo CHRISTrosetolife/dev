@@ -70,7 +70,8 @@ export function app_gs_conversation(map_c, map, npc) {
   let div_npc = app_gs_overlay_speech(menu_overlay);
   let npc_speaking = html_p_text(div_npc, string_combine(npc.name, " says :"));
   html_style_font_color(npc_speaking, "lightblue");
-  let npc_speech = app_gs_div_rounded_transparent(div_npc, "lightblue", 75);
+  let npc_color = "lightblue";
+  let npc_speech = app_gs_div_rounded_transparent(div_npc, npc_color, 75);
   html_style_rounded_padded(npc_speech);
   html_inner_set(npc_speech, text);
   let spacer_vertical = html_div(menu_overlay);
