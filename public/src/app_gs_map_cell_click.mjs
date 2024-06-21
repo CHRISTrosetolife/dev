@@ -1,3 +1,4 @@
+import { list_random_item_weighted } from "./list_random_item_weighted.mjs";
 import { html_style_rounded_padded } from "./html_style_rounded_padded.mjs";
 import { html_style_background_color_black_alpha } from "./html_style_background_color_black_alpha.mjs";
 import { html_p_text } from "./html_p_text.mjs";
@@ -71,7 +72,7 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
           " ",
           npc.name,
           ". ",
-          list_random_item([
+          list_random_item_weighted([
             string_combine_multiple([
               "It is ",
               list_random_item(["so ", "very ", ""]),
