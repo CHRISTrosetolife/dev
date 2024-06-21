@@ -12,7 +12,7 @@ export function app_gs_menu_main(menu_overlay, map_c, map) {
   html_button_width_full_text_click(menu_overlay, "🙏 pray", () => {
     html_clear(menu_overlay);
     html_button_width_full_text_click_back(menu_overlay, () =>
-      app_gs_menu_main(menu_overlay),
+      app_gs_menu_main(menu_overlay, map_c, map),
     );
     html_button_width_full_text_click(
       menu_overlay,
