@@ -1,3 +1,4 @@
+import { html_style_font_color } from "./html_style_font_color.mjs";
 import { html_style_font_color_white } from "./html_style_font_color_white.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_p_text } from "./html_p_text.mjs";
@@ -64,7 +65,7 @@ export function app_gs_conversation(map_c, map, npc) {
   ]);
   let div = html_div(menu_overlay);
   let npc_speaking = html_p_text(div, string_combine(npc.name, " says :"));
-  html_style_font_color_white(npc_speaking);
+  html_style_font_color(npc_speaking);
   let npc_speech = html_p_text(div, text);
   html_style_font_color_white(npc_speech);
   html_style_background_color_black_alpha(div, 0.51);
