@@ -69,7 +69,7 @@ export function app_gs_conversation(map_c, map, npc) {
   let div = html_div(menu_overlay);
   let npc_speaking = html_p_text(div, string_combine(npc.name, " says :"));
   html_style_font_color(npc_speaking, "lightblue");
-  let npc_speech = app_gs_div_rounded_alpha(div, "0,0,0", 0.25);
+  let npc_speech = app_gs_div_rounded_alpha(div, "255,255,255", 0.25);
   html_inner_set(npc_speech, text);
   html_style_background_color_black_alpha(div, 0.51);
   html_style_centered(div);
