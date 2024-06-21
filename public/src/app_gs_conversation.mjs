@@ -93,7 +93,7 @@ export function app_gs_conversation(map_c, map, npc) {
           ]),
         ]),
         " to ",
-        list_random_item(["meet you"]),
+        list_random_item(["meet you", "make your acquaintance"]),
         app_gs_phrase_exclaim_or_period(),
       ]);
       list_add(opening, nice_to_meet);
