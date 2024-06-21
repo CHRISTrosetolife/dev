@@ -1,3 +1,4 @@
+import { list_filter_property } from "./list_filter_property.mjs";
 import { log } from "./log.mjs";
 import { function_transform_args_split_lambda } from "./function_transform_args_split_lambda.mjs";
 import { list_last } from "./list_last.mjs";
@@ -35,6 +36,7 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
           let { elements } = argument;
           each(elements, (element) => {
             let { properties } = element;
+            list_filter_property(properties, "type", "Identifier");
             each(properties, (p) => {
               log({
                 p,
