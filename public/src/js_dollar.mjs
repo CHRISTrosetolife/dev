@@ -43,6 +43,7 @@ export function js_dollar(ast) {
         );
         log({
           e,
+          parent,
         });
       }
     }
