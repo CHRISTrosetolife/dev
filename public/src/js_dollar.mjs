@@ -59,7 +59,7 @@ export function js_dollar(ast) {
           object_replace(parent, e);
         }
       }
-      if (remaining === "s") {
+      if (string_starts_with(remaining, "s")) {
         let e = js_parse_expression(
           js_code_call_args(list_random_item.name, [js_code_brackets()]),
         );
