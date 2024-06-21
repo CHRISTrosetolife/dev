@@ -59,7 +59,8 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
           map.player.name,
           "! My name is ",
           npc.name,
-          ". It is nice to meet you!",
+          ". It is ",
+          "nice to meet you!",
         ]),
       );
       html_style_background_color_black_alpha(p, 0.51);
