@@ -97,9 +97,11 @@ export function app_gs_conversation(map_c, map, npc) {
   }
   list_add(
     opening,
-    "What ",
-    list_random_item(["do you want", "would you like"]),
-    " to talk about?",
+    list_combine_multiple([
+      "What ",
+      list_random_item(["do you want", "would you like"]),
+      " to talk about?",
+    ]),
   );
   let text = string_combine_multiple([list_join_space(opening)]);
   let menu_overlay = app_gs_menu_overlay(map_c, map);
