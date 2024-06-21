@@ -27,10 +27,12 @@ export function app_gs_conversation(map_c, map, npc) {
   ]);
   let text = string_combine_multiple([
     "👋 ",
-    list_random_item(["Hello", "Hey", "Greetings", "Hi"]),
-    ", ",
-    map.player.name,
-    "! ",
+    string_combine_multiple([
+      list_random_item(["Hello", "Hey", "Greetings", "Hi"]),
+      ", ",
+      map.player.name,
+      "! ",
+    ]),
     introduction,
     list_random_item_weighted(
       [3, 1],
