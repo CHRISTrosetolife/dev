@@ -1,3 +1,4 @@
+import { js_code_call } from "./js_code_call.mjs";
 import { object_replace } from "./object_replace.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
@@ -27,7 +28,7 @@ export function js_dollar(ast) {
         }
       }
       if (remaining === "l") {
-        let e = js_parse_expression("return");
+        let e = js_parse_expression(js_code_call());
         let { parent } = v;
         if (parent.type === "ExpressionStatement") {
           object_replace(parent, e);
