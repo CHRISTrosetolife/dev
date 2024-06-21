@@ -42,11 +42,11 @@ export function app_gs_conversation(map_c, map, npc) {
             " ",
             list_random_item(["happy", "glad"]),
           ]),
-          string_combine_multiple([
-            "to ",
-            list_random_item(["talk to", "see"]),
-            " you again",
-          ]),
+        ]),
+        string_combine_multiple([
+          "to ",
+          list_random_item(["talk to", "see"]),
+          " you again",
         ]),
       );
     }
