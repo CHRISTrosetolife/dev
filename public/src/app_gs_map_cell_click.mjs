@@ -1,8 +1,8 @@
+import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
 import { app_gs_div_rounded_transparent } from "./app_gs_div_rounded_transparent.mjs";
 import { app_gs_overlay_speech } from "./app_gs_overlay_speech.mjs";
 import { app_gs_conversation } from "./app_gs_conversation.mjs";
 import { html_remove } from "./html_remove.mjs";
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { app_gs_sleep_time_face } from "./app_gs_sleep_time_face.mjs";
 import { sleep } from "./sleep.mjs";
 import { html_data_get } from "./html_data_get.mjs";
@@ -62,7 +62,7 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
         div_pray_reminder_inner,
         "❗You remember you have not 🙏 prayed, yet, before your next conversation.",
       );
-      html_button_width_full_text_click(div_pray_reminder, () => {
+      html_button_width_full_text_click_back(div_pray_reminder, () => {
         html_remove(menu_overlay);
       });
     }
