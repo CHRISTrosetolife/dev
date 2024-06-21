@@ -1,3 +1,4 @@
+import { js_code_braces } from "./js_code_braces.mjs";
 import { log } from "./log.mjs";
 import { js_code_brackets } from "./js_code_brackets.mjs";
 import { object_replace } from "./object_replace.mjs";
@@ -33,7 +34,7 @@ export function js_dollar(ast) {
       if (remaining === "l") {
         let e = js_parse_expression(
           js_code_call_args(log.name),
-          js_code_brackets(),
+          js_code_braces(),
         );
         log({
           e,
