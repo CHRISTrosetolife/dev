@@ -72,7 +72,7 @@ export function app_gs_conversation(map_c, map, npc) {
   html_style_background_color_black_alpha(div, 0.51);
   html_style_centered(div);
   html_style_rounded_padded(div);
-  html_hr(div);
+  let hr = html_hr(div);
   let prompt = html_p_text(div, "What would you like to do?");
   html_style_font_color(prompt, "lightgreen");
   html_button_width_full_text_click(
