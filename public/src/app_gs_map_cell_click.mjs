@@ -50,7 +50,7 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
       html_p_text(menu_overlay, "hello");
       html_button_width_full_text_click(
         menu_overlay,
-        "❗You remember you have not 🙏 prayed, yet, before your next conversation.",
+        "politely end the conversation after praying with them",
         () => {
           html_remove(menu_overlay);
         },
