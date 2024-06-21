@@ -9,7 +9,7 @@ import { html_clear } from "./html_clear.mjs";
 export function app_gs_menu_tiles(menu_overlay, map_c, map) {
   html_clear(menu_overlay);
   html_button_width_full_text_click_back(menu_overlay, () => {
-    app_gs_menu_main(menu_overlay);
+    app_gs_menu_main(menu_overlay, map_c, map);
   });
   let container = html_div(menu_overlay);
   html_style(container, {
