@@ -1,3 +1,4 @@
+import { function_transform } from "./function_transform.mjs";
 import { function_exists } from "./function_exists.mjs";
 import { object_property_delete } from "./object_property_delete.mjs";
 import { each } from "./each.mjs";
@@ -38,4 +39,5 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
     );
     await function_open(name);
   }
+  function_transform;
 }
