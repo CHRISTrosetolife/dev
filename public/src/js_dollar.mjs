@@ -39,7 +39,7 @@ export function js_dollar(ast) {
       }
       if (remaining === "e") {
         let e = js_parse_expression(
-          js_code_call_args(each.name, [js_name_unique()]),
+          js_code_call_args(each.name, [js_name_unique("item")]),
         );
         object_replace(node, e);
       }
