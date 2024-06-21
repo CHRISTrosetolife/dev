@@ -1,3 +1,4 @@
+import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { list_add } from "./list_add.mjs";
 import { each } from "./each.mjs";
@@ -34,7 +35,7 @@ export function graph_path_shortest_neighbors(
     index++;
     let { current } = r;
     let matches = list_filter(to_any, (to) => to === current);
-    if (matches) {
+    if (list_empty_not_is(matches)) {
       result = list_adder((la) => {
         let c = r;
         while (c !== null) {
