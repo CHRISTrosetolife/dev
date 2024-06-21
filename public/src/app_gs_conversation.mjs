@@ -8,7 +8,6 @@ import { list_join_space } from "./list_join_space.mjs";
 import { html_remove } from "./html_remove.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_style_rounded_padded } from "./html_style_rounded_padded.mjs";
-import { html_style_centered } from "./html_style_centered.mjs";
 import { app_gs_phrase_very } from "./app_gs_phrase_very.mjs";
 import { list_random_item } from "./list_random_item.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -71,8 +70,6 @@ export function app_gs_conversation(map_c, map, npc) {
   let npc_speech = app_gs_div_rounded_transparent(div_npc, "lightblue", 50);
   html_style_rounded_padded(npc_speech);
   html_inner_set(npc_speech, text);
-  html_style_centered(div_npc);
-  html_style_rounded_padded(div_npc);
   let div_player = app_gs_overlay_speech(menu_overlay);
   let prompt = html_p_text(div_player, "What would you like to do?");
   html_style_font_color(prompt, "lightgreen");
