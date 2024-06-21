@@ -7,11 +7,9 @@ export function app_gs_menu_pray(menu_overlay, map_c, map) {
   html_button_width_full_text_click_back(menu_overlay, () =>
     app_gs_menu_main(menu_overlay, map_c, map),
   );
-  html_button_width_full_text_click(
-    menu_overlay,
-    "🙏 God, please bless my next 👥 conversation, in the name of Jesus, amen.",
-    () => {
-      map.player.pray.conversation = true;
-    },
-  );
+  let prayer =
+    "🙏 God, please bless my next 👥 conversation, in the name of Jesus, amen.";
+  html_button_width_full_text_click(menu_overlay, prayer, () => {
+    map.player.pray.conversation = true;
+  });
 }
