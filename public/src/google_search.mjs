@@ -7,6 +7,10 @@ export async function google_search(query) {
   assert_arguments_length(arguments, 1);
   query = string_to_url(query);
   await browser_open(
-    string_combine_multiple([url_secure_w3(), "google.com/search?q=", query]),
+    string_combine_multiple([
+      url_secure_w3(),
+      "google.com/search?btnI=1q=",
+      query,
+    ]),
   );
 }
