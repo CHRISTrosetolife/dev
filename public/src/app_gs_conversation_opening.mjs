@@ -27,7 +27,7 @@ export function app_gs_conversation_opening(map, npc) {
             string_combine_multiple([
               app_gs_phrase_it_is(),
               " ",
-              list_random_item(["good", "great", "wonderful", "nice"]),
+              list_random_item(["good", "great", "nice"]),
             ]),
             string_combine_multiple([
               app_gs_phrase_i_am(),
