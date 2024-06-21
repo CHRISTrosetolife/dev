@@ -54,7 +54,7 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
       let div_pray_reminder = app_gs_overlay_speech(menu_overlay);
       let npc_speech = app_gs_div_rounded_transparent(
         div_pray_reminder,
-        npc_color,
+        "white",
         75,
       );
       html_button_width_full_text_click(
