@@ -16,7 +16,7 @@ import { graph_path_shortest_neighbors } from "./graph_path_shortest_neighbors.m
 import { app_gs_map_at } from "./app_gs_map_at.mjs";
 import { app_gs_overlays_any_wall } from "./app_gs_overlays_any_wall.mjs";
 export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
-  let npc = list_find_property(litile.overlaysst, "type", "npc");
+  let npc = list_find_property(tile.overlays, "type", "npc");
   if (npc) {
   }
   let walls = app_gs_overlays_any_wall(tile);
