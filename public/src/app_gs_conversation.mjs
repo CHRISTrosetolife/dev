@@ -26,7 +26,8 @@ export function app_gs_conversation(map_c, map, npc) {
     "!",
   ]);
   let opening = ["👋", greeting];
-  if (npc.meet !== true) {
+  if (npc.meet === true) {
+  } else {
     npc.meet = true;
     let introduction = string_combine_multiple([
       list_random_item([
