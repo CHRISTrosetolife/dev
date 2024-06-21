@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { bible_names_men } from "./bible_names_men.mjs";
 import { app_gs_player_new } from "./app_gs_player_new.mjs";
 import { app_gs_overlays_bushes } from "./app_gs_overlays_bushes.mjs";
@@ -168,6 +169,9 @@ export function app_gs_map_new() {
     let choices = bible_names_men();
     list_remove(choices, map.player.name);
     o.name = list_random_item(choices);
+    log({
+      npc,
+    });
   });
   object_merge(map.player, spawn);
   return map;
