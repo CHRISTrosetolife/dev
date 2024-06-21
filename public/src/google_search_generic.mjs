@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { url_secure_w3 } from "./url_secure_w3.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { browser_open } from "./browser_open.mjs";
@@ -12,5 +13,6 @@ export async function google_search_generic(query, lucky) {
     "q=",
     query,
   ]);
+  log({});
   await browser_open(url);
 }
