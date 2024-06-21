@@ -73,6 +73,7 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
             "I go by",
             "They call me",
             "You can call me",
+            "Please call me",
           ]),
           " ",
           npc.name,
