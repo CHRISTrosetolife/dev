@@ -60,10 +60,14 @@ export function js_dollar(ast) {
         }
       }
       if (remaining === "s") {
-        return;
-        let e = js_parse_first_function("return");
-        if (parent.type === "ExpressionStatement") {
-          object_replace(parent, e);
+        let e = js_parse_expression(
+          js_code_call_args(list_random_item.name, [js_code_brackets()]),
+        );
+        if (list_is(parent)) {
+          let index = list_index(parent, node);
+          let next = list_remove_at(parent, index + 1);
+          list_add(list_first(e.arguments).elements, next);
+          object_replace(node, e);
         }
       }
     }
