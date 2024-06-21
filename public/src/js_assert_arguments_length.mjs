@@ -1,3 +1,4 @@
+import { js_declaration_single_body } from "./js_declaration_single_body.mjs";
 import { string_to } from "./string_to.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_size } from "./list_size.mjs";
@@ -9,9 +10,7 @@ import { list_first } from "./list_first.mjs";
 export function js_assert_arguments_length(ast) {
   assert_arguments_length(arguments, 1);
   let d = js_declaration_single(ast);
-  let { body: body_d } = d;
-  let { body: b } = body_d;
-  let body_block = b;
+  let body_block = js_declaration_single_body(ast);
   if (list_empty_is(body_block)) {
     return;
   }
