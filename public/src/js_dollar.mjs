@@ -41,7 +41,7 @@ export function js_dollar(ast) {
       if (remaining === "e") {
         let name = js_name_unique("item");
         let e = js_parse_expression(
-          js_code_call_args(each.name, [js_code_arrow_block(name)]),
+          js_code_call_args(each.name, [js_code_arrow_block([name])]),
         );
         object_replace(node, e);
       }
