@@ -5,8 +5,8 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export async function google_search(query) {
   assert_arguments_length(arguments, 1);
-  query = string_to_url(query);
   let luck = false;
+  query = string_to_url(query);
   let lucky_url = "btnI=1&";
   await browser_open(
     string_combine_multiple([
