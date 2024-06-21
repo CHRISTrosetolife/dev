@@ -59,7 +59,12 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
           "👋 Hello, ",
           map.player.name,
           "! ",
-          list_random_item(["I am called", "My name is", "I go by"]),
+          list_random_item([
+            "I am called",
+            "My name is",
+            "I go by",
+            "They call me",
+          ]),
           " ",
           npc.name,
           ". It is ",
