@@ -10,7 +10,8 @@ export function app_gs_menu_overlay(parent, map) {
   html_style(menu, {
     padding: game_tile_units_css(0.25),
   });
-  html_style_background_color_alpha(menu, "1,1,1", 0.25);
+  let rgb = "1,1,1";
+  html_style_background_color_alpha(menu, rgb, 0.25);
   let { x_count, y_count } = app_gs_screen_size();
   let position_y = subtract(map.player.y, (y_count - 1) / 2);
   let position_x = subtract(map.player.x, (x_count - 1) / 2);
