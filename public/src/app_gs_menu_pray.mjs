@@ -22,7 +22,7 @@ export function app_gs_menu_pray(menu_overlay, map_c, map) {
     " ",
     list_random_item(["my", "this"]),
     " next 👥 conversation, in the name of ",
-    list_random_item(["Lord", "Savior"]),
+    list_random_item(["Lord", "Savior", "King"]),
     " Jesus, amen.",
   ]);
   html_button_width_full_text_click(menu_overlay, prayer, () => {
