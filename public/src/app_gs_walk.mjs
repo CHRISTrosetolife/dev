@@ -14,7 +14,7 @@ import { each_range_async } from "./each_range_async.mjs";
 import { abs } from "./abs.mjs";
 import { game_img_character } from "./game_img_character.mjs";
 export async function app_gs_walk(player_c, player, destination) {
-  let direction = app_gs_walk_direction(player, destination, player_c);
+  let direction = app_gs_walk_direction(player_c, player, destination);
   let steps_count =
     abs(player.y - destination.y) + abs(player.x - destination.x);
   await each_range_async(steps_count, async () => {
