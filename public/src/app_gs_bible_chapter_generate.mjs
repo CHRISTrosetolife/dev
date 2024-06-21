@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { generate_list_generic } from "./generate_list_generic.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
@@ -9,5 +10,8 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
     app_gs_bible_chapter_generate.name,
     "_generate",
   );
-  await generate_list_generic(verses, `${prefix}${chapter_name}`);
+  await generate_list_generic(
+    verses,
+    string_combine_multiple([prefix, chapter_name]),
+  );
 }
