@@ -1,4 +1,4 @@
-import { null_not_is } from "./null_not_is.mjs";
+import { null_is } from "./null_is.mjs";
 import { app_gs_walk_path } from "./app_gs_walk_path.mjs";
 import { app_gs_xy_equal } from "./app_gs_xy_equal.mjs";
 import { app_gs_map_path } from "./app_gs_map_path.mjs";
@@ -9,7 +9,7 @@ import { app_gs_map_neighbors_get } from "./app_gs_map_neighbors_get.mjs";
 import { app_gs_overlays_any_wall } from "./app_gs_overlays_any_wall.mjs";
 export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
   let npc = list_find_property(tile.overlays, "type", "npc", null);
-  if (null_not_is(npc)) {
+  if (null_is(npc)) {
     let neighbors = app_gs_map_neighbors_get(map, npc);
     let { path } = app_gs_map_path(map, neighbors);
     await app_gs_walk_path(map, map_c, player_c, path);
