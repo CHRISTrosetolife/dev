@@ -9,7 +9,9 @@ export async function google_search(query) {
   await browser_open(
     string_combine_multiple([
       url_secure_w3(),
-      "google.com/search?btnI=1q=",
+      "google.com/search?",
+      "btnI=1&",
+      "q=",
       query,
     ]),
   );
