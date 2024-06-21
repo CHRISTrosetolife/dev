@@ -5,5 +5,6 @@ export function app_gs_overlay_wall_is(o) {
     return list_includes(app_gs_overlays_wall(), o.id);
   }
   if (o.type === "npc") {
+    return true;
   }
 }
