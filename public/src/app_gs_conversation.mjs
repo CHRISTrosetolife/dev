@@ -17,7 +17,6 @@ import { string_combine } from "./string_combine.mjs";
 import { html_style } from "./html_style.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 export function app_gs_conversation(map_c, map, npc) {
-  let menu_overlay = app_gs_menu_overlay(map_c, map);
   let introduction = string_combine_multiple([
     list_random_item([
       string_combine_multiple([app_gs_phrase_i_am(), " called"]),
@@ -66,7 +65,8 @@ export function app_gs_conversation(map_c, map, npc) {
   let text = string_combine_multiple([
     list_join_space(["👋", greeting, introduction, greeting_pleased]),
   ]);
-  let div = app_gs_div_rounded_transparent(div, "black", 0.51);
+  let menu_overlay = app_gs_menu_overlay(map_c, map);
+  let div = app_gs_div_rounded_transparent(menu_overlay, "black", 0.51);
   let npc_speaking = html_p_text(div, string_combine(npc.name, " says :"));
   html_style_font_color(npc_speaking, "lightblue");
   let npc_speech = app_gs_div_rounded_transparent(div, "lightblue", 0.5);
