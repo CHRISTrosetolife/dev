@@ -20,6 +20,7 @@ import { app_gs_map_neighbors_get } from "./app_gs_map_neighbors_get.mjs";
 import { app_gs_overlays_any_wall } from "./app_gs_overlays_any_wall.mjs";
 import { html_style_centered } from "./html_style_centered.mjs";
 import { html_style_font_color } from "./html_style_font_color.mjs";
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
   let npc = list_find_property_or(tile.overlays, "type", "npc", null);
   if (null_is(npc)) {
@@ -51,7 +52,7 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
       await sleep(sleep_time);
       app_gs_walk_direction(npc_c, npc, player);
       let menu_overlay = app_gs_menu_overlay(map_c, map);
-      let p = html_p_text(menu_overlay, "👋 hello");
+      let p = html_p_text(menu_overlay, string_combine_multiple("👋 hello, "));
       html_style_background_color_black_alpha(p, 0.51);
       html_style_centered(p);
       html_style_rounded_padded(p);
