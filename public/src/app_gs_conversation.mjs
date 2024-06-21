@@ -47,7 +47,7 @@ export function app_gs_conversation(map_c, map, npc) {
         ]),
         app_gs_phrase_i_am(),
         " ",
-        string_combine([app_gs_phrase_very(), "pleased"]),
+        [string_combine([app_gs_phrase_very(), "pleased"])],
       ],
     ),
     " to meet you!",
