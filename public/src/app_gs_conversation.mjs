@@ -1,3 +1,4 @@
+import { equal_1 } from "./equal_1.mjs";
 import { app_gs_phrase_exclaim_or_period } from "./app_gs_phrase_exclaim_or_period.mjs";
 import { random_50_50 } from "./random_50_50.mjs";
 import { html_style_units } from "./html_style_units.mjs";
@@ -29,7 +30,7 @@ export function app_gs_conversation(map_c, map, npc) {
   ]);
   let opening = ["👋", greeting];
   if (npc.conversation_count >= 1) {
-    if (random_50_50() || true) {
+    if (random_50_50() || equal_1(npc.conversation_count)) {
       list_add(
         opening,
         string_combine_multiple([
