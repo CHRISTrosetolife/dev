@@ -101,7 +101,9 @@ export function js_dollar(ast) {
         if (string_empty_not_is(remaining)) {
           count = integer_parse(remaining);
         }
-        let e = js_parse_expression("{text:'',count:", count, "}");
+        let e = js_parse_expression(
+          string_combine_multiple(["{text:'',count:", count, "}"]),
+        );
         object_replace(node, e);
       }
     }
