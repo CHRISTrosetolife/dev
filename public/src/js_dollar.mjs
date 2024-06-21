@@ -97,7 +97,8 @@ export function js_dollar(ast) {
       let objection_prefix = "o";
       if (string_starts_with(remaining, objection_prefix)) {
         remaining = string_prefix_without(remaining, scm_prefix);
-        if (string_empty_not_is()) {
+        if (string_empty_not_is(remaining)) {
+          let count = integer_parse(remaining);
         }
         let e = js_parse_expression("{text:'',count:1}");
         object_replace(node, e);
