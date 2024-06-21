@@ -13,6 +13,8 @@ export async function google_search_generic(query, lucky) {
     "q=",
     query,
   ]);
-  log({});
+  log({
+    url,
+  });
   await browser_open(url);
 }
