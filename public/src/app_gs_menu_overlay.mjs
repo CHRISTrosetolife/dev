@@ -1,3 +1,4 @@
+import { html_style_background_color_alpha } from "./html_style_background_color_alpha.mjs";
 import { html_style_background_color_black_alpha } from "./html_style_background_color_black_alpha.mjs";
 import { game_img_style_generic } from "./game_img_style_generic.mjs";
 import { subtract } from "./subtract.mjs";
@@ -11,6 +12,7 @@ export function app_gs_menu_overlay(parent, map) {
     padding: game_tile_units_css(0.25),
   });
   html_style_background_color_black_alpha(menu, 0.25);
+  html_style_background_color_alpha(menu, "1,1,1", alpha);
   let { x_count, y_count } = app_gs_screen_size();
   let position_y = subtract(map.player.y, (y_count - 1) / 2);
   let position_x = subtract(map.player.x, (x_count - 1) / 2);
