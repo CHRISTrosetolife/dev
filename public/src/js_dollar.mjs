@@ -1,3 +1,4 @@
+import { js_code_array_empty } from "./js_code_array_empty.mjs";
 import { exit } from "./exit.mjs";
 import { js_code_call } from "./js_code_call.mjs";
 import { js_code_braces } from "./js_code_braces.mjs";
@@ -66,7 +67,9 @@ export function js_dollar(ast) {
         remaining = string_prefix_without(name, scm_prefix);
         let count = integer_parse(remaining);
         let e = js_parse_expression(
-          js_code_call_args(string_combine_multiple.name, [js_code_brackets()]),
+          js_code_call_args(string_combine_multiple.name, [
+            js_code_array_empty(),
+          ]),
         );
         if (list_is(parent)) {
           let index = list_index(parent, node);
