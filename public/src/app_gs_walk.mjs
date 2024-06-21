@@ -1,3 +1,5 @@
+import { null_not_is } from "./null_not_is.mjs";
+import { assert } from "./assert.mjs";
 import { game_character_direction_index } from "./game_character_direction_index.mjs";
 import { html_img_src } from "./html_img_src.mjs";
 import { list_xy } from "./list_xy.mjs";
@@ -16,9 +18,7 @@ import { game_character_index } from "./game_character_index.mjs";
 import { game_img_character } from "./game_img_character.mjs";
 export async function app_gs_walk(player_c, player, destination) {
   let direction = app_gs_direction(player, destination);
-  if (direction === null) {
-    return;
-  }
+  assert(null_not_is, [direction]);
   player.direction = direction;
   html_img_src(
     player_c,
