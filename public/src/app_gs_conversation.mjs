@@ -72,6 +72,7 @@ export function app_gs_conversation(map_c, map, npc) {
         "meet you",
         "!",
       ]);
+      list_add(opening, greeting_pleased);
     }
   }
   let text = string_combine_multiple([list_join_space(opening)]);
