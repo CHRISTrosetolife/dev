@@ -63,8 +63,8 @@ export function app_gs_conversation(map_c, map, npc) {
     list_join_space(["👋", greeting, introduction, greeting_pleased]),
   ]);
   let div = html_div(menu_overlay);
-  html_p_text(div, text);
   html_p_text(div, string_combine(npc.name, " says :"));
+  html_p_text(div, text);
   html_style_background_color_black_alpha(div, 0.51);
   html_style_centered(div);
   html_style_rounded_padded(div);
