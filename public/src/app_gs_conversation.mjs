@@ -103,7 +103,7 @@ export function app_gs_conversation(map_c, map, npc) {
         "is on your heart",
         string_combine_multiple([
           list_random_item(["do you want", "would you like"]),
-          " to talk about?",
+          " to talk about",
         ]),
       ]),
       "?",
