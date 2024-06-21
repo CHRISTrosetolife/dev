@@ -31,28 +31,29 @@ export function app_gs_conversation(map_c, map, npc) {
     map.player.name,
     "! ",
   ]);
+  let greeting_pleased = string_combine_multiple([
+    list_random_item_weighted(
+      [3, 1],
+      [
+        string_combine_multiple([
+          "It",
+          list_random_item([" i", "'"]),
+          "s ",
+          app_gs_phrase_very(),
+          list_random_item(["wonderful", "nice"]),
+        ]),
+        "I am ",
+        app_gs_phrase_very(),
+        "pleased",
+      ],
+    ),
+    " to meet you!",
+  ]);
   let text = string_combine_multiple([
     "👋 ",
     greeting,
     introduction,
-    string_combine_multiple([
-      list_random_item_weighted(
-        [3, 1],
-        [
-          string_combine_multiple([
-            "It",
-            list_random_item([" i", "'"]),
-            "s ",
-            app_gs_phrase_very(),
-            list_random_item(["wonderful", "nice"]),
-          ]),
-          "I am ",
-          app_gs_phrase_very(),
-          "pleased",
-        ],
-      ),
-      " to meet you!",
-    ]),
+    greeting_pleased,
   ]);
   let p = html_p_text(menu_overlay, text);
   html_style_background_color_black_alpha(p, 0.51);
