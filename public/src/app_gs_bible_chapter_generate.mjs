@@ -26,16 +26,14 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
   let function_name = string_combine_multiple([prefix, chapter_name]);
   if (await function_exists(function_name)) {
     await function_transform_args_split_lambda(
-      [
-        function_name,
-        (ast) => {
-          let body_block = js_declaration_single_body(ast);
-          let last = list_last(body_block);
-          log({
-            last,
-          });
-        },
-      ],
+      function_name,
+      (ast) => {
+        let body_block = js_declaration_single_body(ast);
+        let last = list_last(body_block);
+        log({
+          last,
+        });
+      },
       [],
     );
   } else {
