@@ -39,33 +39,33 @@ export function app_gs_conversation(map_c, map, npc) {
   ]);
   if (npc.meet !== true) {
     npc.meet = true;
+    let greeting_pleased = string_combine_multiple([
+      list_random_item([
+        string_combine_multiple([
+          app_gs_phrase_it_is(),
+          " ",
+          list_random_item([
+            "my pleasure",
+            string_combine(
+              app_gs_phrase_very(),
+              list_random_item(["wonderful", "nice"]),
+            ),
+          ]),
+        ]),
+        string_combine_multiple([
+          app_gs_phrase_i_am(),
+          " ",
+          list_random_item([
+            "happy",
+            string_combine(app_gs_phrase_very(), "pleased"),
+          ]),
+        ]),
+      ]),
+      " to ",
+      "meet you",
+      "!",
+    ]);
   }
-  let greeting_pleased = string_combine_multiple([
-    list_random_item([
-      string_combine_multiple([
-        app_gs_phrase_it_is(),
-        " ",
-        list_random_item([
-          "my pleasure",
-          string_combine(
-            app_gs_phrase_very(),
-            list_random_item(["wonderful", "nice"]),
-          ),
-        ]),
-      ]),
-      string_combine_multiple([
-        app_gs_phrase_i_am(),
-        " ",
-        list_random_item([
-          "happy",
-          string_combine(app_gs_phrase_very(), "pleased"),
-        ]),
-      ]),
-    ]),
-    " to ",
-    "meet you",
-    "!",
-  ]);
   let text = string_combine_multiple([
     list_join_space(["👋", greeting, introduction, greeting_pleased]),
   ]);
