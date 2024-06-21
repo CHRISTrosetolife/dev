@@ -34,8 +34,8 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
         tile_cs,
         (tile_c) => html_data_get(tile_c, "type") === "npc",
       );
-      app_gs_walk_direction(player_c, player, destination);
-      app_gs_walk_direction(player_c, player, destination);
+      app_gs_walk_direction(player_c, player, npc);
+      app_gs_walk_direction(npc_c, npc, player);
     }
   }
 }
