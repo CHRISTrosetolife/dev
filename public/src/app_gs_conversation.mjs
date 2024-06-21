@@ -1,3 +1,4 @@
+import { app_gs_div_rounded_alpha } from "./app_gs_div_rounded_alpha.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { html_style_font_color } from "./html_style_font_color.mjs";
 import { html_style_font_color_white } from "./html_style_font_color_white.mjs";
@@ -68,6 +69,7 @@ export function app_gs_conversation(map_c, map, npc) {
   let div = html_div(menu_overlay);
   let npc_speaking = html_p_text(div, string_combine(npc.name, " says :"));
   html_style_font_color(npc_speaking, "lightblue");
+  let menu = app_gs_div_rounded_alpha(parent, "0,0,0");
   let npc_speech = html_p_text(div, text);
   html_style_font_color_white(npc_speech);
   html_style_background_color_black_alpha(div, 0.51);
