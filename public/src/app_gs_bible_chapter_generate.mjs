@@ -38,7 +38,8 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
       file_overwrite,
     );
     await function_open(function_name);
+  } else {
+    await function_transform([exists], function_name, []);
   }
-  await function_transform([exists], function_name, []);
-  function exists(ast) {}
+  function each(ast) {}
 }
