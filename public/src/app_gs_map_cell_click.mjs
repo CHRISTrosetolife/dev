@@ -1,3 +1,4 @@
+import { equal } from "./equal.mjs";
 import { app_gs_map_path } from "./app_gs_map_path.mjs";
 import { list_find_property } from "./list_find_property.mjs";
 import { html_scroll_center_smooth } from "./html_scroll_center_smooth.mjs";
@@ -7,10 +8,6 @@ import { each_async } from "./each_async.mjs";
 import { app_gs_map_render } from "./app_gs_map_render.mjs";
 import { app_gs_menu_main } from "./app_gs_menu_main.mjs";
 import { app_gs_menu_overlay } from "./app_gs_menu_overlay.mjs";
-import { object_property_get } from "./object_property_get.mjs";
-import { equal_by } from "./equal_by.mjs";
-import { list_xy } from "./list_xy.mjs";
-import { list_all } from "./list_all.mjs";
 import { app_gs_map_neighbors_get } from "./app_gs_map_neighbors_get.mjs";
 import { app_gs_overlays_any_wall } from "./app_gs_overlays_any_wall.mjs";
 export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
@@ -22,13 +19,7 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
     let walls = app_gs_overlays_any_wall(tile);
     if (!walls) {
       let { path } = app_gs_map_path(map, [tile]);
-      if (
-        list_all(list_xy(), (xy) =>
-          equal_by(map.player, tile, (coordinates) =>
-            object_property_get(coordinates, xy),
-          ),
-        )
-      ) {
+      if (equal(map.player, tile)) {
         let menu_overlay = app_gs_menu_overlay(map_c, map);
         app_gs_menu_main(menu_overlay, map_c, map);
       } else {
