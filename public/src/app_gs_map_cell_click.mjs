@@ -55,47 +55,45 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
       await sleep(sleep_time);
       app_gs_walk_direction(npc_c, npc, player);
       let menu_overlay = app_gs_menu_overlay(map_c, map);
-      let p = html_p_text(
-        menu_overlay,
-        string_combine_multiple([
-          "👋 ",
-          list_random_item(["Hello", "Hey", "Greetings", "Hi"]),
-          ", ",
-          map.player.name,
-          "! ",
-          list_random_item([
-            string_combine_multiple([
-              "I",
-              list_random_item([" a", "'"]),
-              "m called",
-            ]),
-            "My name is",
-            "I go by",
-            "They call me",
-            "You can call me",
-            "Please call me",
+      let text = string_combine_multiple([
+        "👋 ",
+        list_random_item(["Hello", "Hey", "Greetings", "Hi"]),
+        ", ",
+        map.player.name,
+        "! ",
+        list_random_item([
+          string_combine_multiple([
+            "I",
+            list_random_item([" a", "'"]),
+            "m called",
           ]),
-          " ",
-          npc.name,
-          ". ",
-          list_random_item_weighted(
-            [3, 1],
-            [
-              string_combine_multiple([
-                "It",
-                list_random_item([" i", "'"]),
-                "s ",
-                app_gs_phrase_very(),
-                list_random_item(["wonderful", "nice"]),
-              ]),
-              "I am ",
-              app_gs_phrase_very(),
-              "pleased",
-            ],
-          ),
-          " to meet you!",
+          "My name is",
+          "I go by",
+          "They call me",
+          "You can call me",
+          "Please call me",
         ]),
-      );
+        " ",
+        npc.name,
+        ". ",
+        list_random_item_weighted(
+          [3, 1],
+          [
+            string_combine_multiple([
+              "It",
+              list_random_item([" i", "'"]),
+              "s ",
+              app_gs_phrase_very(),
+              list_random_item(["wonderful", "nice"]),
+            ]),
+            "I am ",
+            app_gs_phrase_very(),
+            "pleased",
+          ],
+        ),
+        " to meet you!",
+      ]);
+      let p = html_p_text(menu_overlay, text);
       html_style_background_color_black_alpha(p, 0.51);
       html_style_centered(p);
       html_style_rounded_padded(p);
