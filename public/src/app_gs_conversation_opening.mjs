@@ -1,3 +1,4 @@
+import { list_random_item_weighted } from "./list_random_item_weighted.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { app_gs_phrase_very } from "./app_gs_phrase_very.mjs";
 import { string_combine } from "./string_combine.mjs";
@@ -22,7 +23,7 @@ export function app_gs_conversation_opening(map, npc) {
       list_add(
         opening,
         string_combine_multiple([
-          list_random_item([
+          list_random_item_weighted([
             string_combine_multiple([app_gs_phrase_it_is(), " wonderful"]),
             string_combine_multiple([
               app_gs_phrase_it_is(),
