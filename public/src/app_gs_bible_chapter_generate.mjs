@@ -14,7 +14,7 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
   chapter_name = string_case_lower(chapter_name);
   let prefix = string_suffix_without(
     app_gs_bible_chapter_generate.name,
-    "_generate",
+    "generate",
   );
   let name = string_combine_multiple([prefix, chapter_name]);
   let jsons = list_map(verses, json_to);
