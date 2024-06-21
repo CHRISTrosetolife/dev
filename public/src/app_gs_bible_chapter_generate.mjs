@@ -21,7 +21,9 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
     "generate",
   );
   let function_name = string_combine_multiple([prefix, chapter_name]);
-  if (!(await function_exists(chapter_name))) {
+  if (await function_exists(chapter_name)) {
+    await function_transform([(ast) => {}], function_name, []);
+  } else {
     let verses = await bible_chapter("engbsb", chapter_name);
     each(verses, (item) => {
       item.text = list_join_space(item.tokens);
@@ -39,8 +41,6 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
       file_overwrite,
     );
     await function_open(function_name);
-  } else {
-    await function_transform([(ast) => {}], function_name, []);
   }
   function each_verse(verse) {}
 }
