@@ -40,7 +40,7 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
     );
     await function_open(function_name);
   } else {
-    await function_transform([exists], function_name, []);
+    await function_transform([(ast) => {}], function_name, []);
   }
   function each_verse(verse) {}
 }
