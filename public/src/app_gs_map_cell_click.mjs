@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_single } from "./list_single.mjs";
 import { list_filter_property } from "./list_filter_property.mjs";
 import { html_scroll_center_smooth } from "./html_scroll_center_smooth.mjs";
@@ -17,8 +18,12 @@ import { graph_path_shortest_neighbors } from "./graph_path_shortest_neighbors.m
 import { app_gs_map_at } from "./app_gs_map_at.mjs";
 import { app_gs_overlays_any_wall } from "./app_gs_overlays_any_wall.mjs";
 export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
-  let npcs = list_filter_property(tile.overlays, "type", "npc");
+  let property_name = "type";
+  let value = "npc";
+  let list = tile.overlays;
+  let npcs = list_filter_property(list, property_name, value);
   let npc = list_single(npcs);
+  log(npc);
   let walls = app_gs_overlays_any_wall(tile);
   if (!walls) {
     let from = app_gs_map_at(map, map.player);
