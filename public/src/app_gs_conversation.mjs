@@ -1,3 +1,4 @@
+import { app_gs_overlay_speech } from "./app_gs_overlay_speech.mjs";
 import { app_gs_div_rounded_transparent } from "./app_gs_div_rounded_transparent.mjs";
 import { html_style_font_color } from "./html_style_font_color.mjs";
 import { html_p_text } from "./html_p_text.mjs";
@@ -64,7 +65,7 @@ export function app_gs_conversation(map_c, map, npc) {
     list_join_space(["👋", greeting, introduction, greeting_pleased]),
   ]);
   let menu_overlay = app_gs_menu_overlay(map_c, map);
-  let div = app_gs_div_rounded_transparent(menu_overlay, "black", 51);
+  let div = app_gs_overlay_speech(menu_overlay);
   let npc_speaking = html_p_text(div, string_combine(npc.name, " says :"));
   html_style_font_color(npc_speaking, "lightblue");
   let npc_speech = app_gs_div_rounded_transparent(div, "lightblue", 50);
