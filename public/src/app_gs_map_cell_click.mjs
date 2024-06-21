@@ -17,6 +17,7 @@ import { app_gs_menu_overlay } from "./app_gs_menu_overlay.mjs";
 import { app_gs_map_neighbors_get } from "./app_gs_map_neighbors_get.mjs";
 import { app_gs_overlays_any_wall } from "./app_gs_overlays_any_wall.mjs";
 import { html_style_centered } from "./html_style_centered.mjs";
+import { html_style_font_color } from "./html_style_font_color.mjs";
 export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
   let npc = list_find_property_or(tile.overlays, "type", "npc", null);
   if (null_is(npc)) {
@@ -50,6 +51,7 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
       let menu_overlay = app_gs_menu_overlay(map_c, map);
       let p = html_p_text(menu_overlay, "hello");
       html_style_centered(p);
+      html_style_font_color(p, "white");
       html_button_width_full_text_click(
         menu_overlay,
         "politely end the conversation after praying",
