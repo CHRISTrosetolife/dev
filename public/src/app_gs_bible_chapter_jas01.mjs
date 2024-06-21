@@ -8,12 +8,7 @@ export function app_gs_bible_chapter_jas01() {
     {
       verse_number: "2",
       text: "Consider it pure joy, my brothers, when you encounter trials of many kinds,",
-      objections: [
-        {
-          text: "How can there be a loving God when my life is so full of difficulties? One difficulty after another.",
-          count: 1,
-        },
-      ],
+      objections: [],
     },
     {
       verse_number: "3",
