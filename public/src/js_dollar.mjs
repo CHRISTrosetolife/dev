@@ -26,6 +26,13 @@ export function js_dollar(ast) {
           object_replace(parent, e);
         }
       }
+      if (remaining === "l") {
+        let e = js_parse_first_function("return");
+        let { parent } = v;
+        if (parent.type === "ExpressionStatement") {
+          object_replace(parent, e);
+        }
+      }
     }
   });
 }
