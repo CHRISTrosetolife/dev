@@ -6,11 +6,11 @@ import { game_tile_units_css } from "./game_tile_units_css.mjs";
 import { html_style } from "./html_style.mjs";
 import { html_div } from "./html_div.mjs";
 export function app_gs_menu_overlay(parent, map) {
+  let rgb = "1,1,1";
   let menu = html_div(parent);
   html_style(menu, {
     padding: game_tile_units_css(0.25),
   });
-  let rgb = "1,1,1";
   html_style_background_color_alpha(menu, rgb, 0.25);
   let { x_count, y_count } = app_gs_screen_size();
   let position_y = subtract(map.player.y, (y_count - 1) / 2);
