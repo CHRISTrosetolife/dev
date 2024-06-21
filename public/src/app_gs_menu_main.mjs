@@ -8,7 +8,7 @@ export function app_gs_menu_main(menu_overlay, map_c, map) {
   html_button_width_full_text_click(menu_overlay, "back", () => {
     html_remove(menu_overlay);
   });
-  html_button_width_full_text_click(menu_overlay, "back", () => {
+  html_button_width_full_text_click(menu_overlay, "pray", () => {
     html_remove(menu_overlay);
   });
   html_button_width_full_text_click(menu_overlay, "system logs", () => {
