@@ -28,7 +28,7 @@ export function app_gs_conversation(map_c, map, npc) {
     "!",
   ]);
   let opening = ["👋", greeting];
-  if (npc.meet === true) {
+  if (npc.conversation_count >= 1) {
     if (random_50_50() || true) {
       list_add(
         opening,
