@@ -33,18 +33,18 @@ export function app_gs_conversation(map_c, map, npc) {
   html_style_font_color(prompt, "lightgreen");
   html_button_width_full_text_click(
     div_player,
-    "👋 Politely end the conversation after 🙏 praying",
+    string_combine_multiple([
+      "Tell ",
+      npc.name,
+      " that Jesus died, was buried and rose to life",
+    ]),
     () => {
       html_remove(menu_overlay);
     },
   );
   html_button_width_full_text_click(
     div_player,
-    string_combine_multiple([
-      "Tell ",
-      npc.name,
-      " that Jesus died, was buried and rose to life",
-    ]),
+    "👋 Politely end the conversation after 🙏 praying",
     () => {
       html_remove(menu_overlay);
     },
