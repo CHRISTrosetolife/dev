@@ -51,8 +51,7 @@ export function app_gs_conversation(map_c, map, npc) {
     " to meet you!",
   ]);
   let text = string_combine_multiple([
-    "👋 ",
-    list_join_space([greeting, introduction, greeting_pleased]),
+    list_join_space(["👋", greeting, introduction, greeting_pleased]),
   ]);
   let p = html_p_text(menu_overlay, text);
   html_style_background_color_black_alpha(p, 0.51);
