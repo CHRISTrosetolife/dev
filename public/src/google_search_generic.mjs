@@ -14,5 +14,4 @@ export async function google_search_generic(query, lucky) {
       query,
     ]),
   );
-  return query;
 }
