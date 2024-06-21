@@ -12,7 +12,7 @@ export function app_gs_div_rounded_alpha(parent, rgb, alpha) {
   });
   html_style_background_color(
     menu,
-    string_combine_multiple(["rgba(", rgb, ",", alpha, ")"]),
+    string_combine_multiple(["color-mix(in srgb, red 30%, transparent)"]),
   );
   return menu;
 }
