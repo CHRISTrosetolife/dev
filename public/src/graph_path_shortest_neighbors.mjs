@@ -36,7 +36,6 @@ export function graph_path_shortest_neighbors(
     let { current } = r;
     let matches = list_filter(to_any, (to) => to === current);
     if (list_empty_not_is(matches)) {
-      result;
       let path = list_adder((la) => {
         let c = r;
         while (c !== null) {
@@ -46,6 +45,9 @@ export function graph_path_shortest_neighbors(
         }
       });
       list_reverse(path);
+      result = {
+        path,
+      };
       break;
     }
     let neighbors = neighbors_get(current);
