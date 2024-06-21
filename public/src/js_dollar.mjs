@@ -48,9 +48,6 @@ export function js_dollar(ast) {
         );
         if (list_is(parent)) {
           let index = list_index(parent, node);
-          log({
-            e,
-          });
           list_add(list_first(e.arguments).elements, node);
           object_replace(node, e);
           list_remove_at(parent, index + 1);
