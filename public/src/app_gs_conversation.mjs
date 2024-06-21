@@ -66,9 +66,8 @@ export function app_gs_conversation(map_c, map, npc) {
       "!",
     ]);
   }
-  let text = string_combine_multiple([
-    list_join_space(["👋", greeting, introduction, greeting_pleased]),
-  ]);
+  let opening = ["👋", greeting, introduction, greeting_pleased];
+  let text = string_combine_multiple([list_join_space(opening)]);
   let menu_overlay = app_gs_menu_overlay(map_c, map);
   let div_npc = app_gs_overlay_speech(menu_overlay);
   let npc_speaking = html_p_text(div_npc, string_combine(npc.name, " says :"));
