@@ -65,8 +65,9 @@ export async function function_aliases_generate() {
   alias_add(function_transform_all, ["fta"]);
   alias_add(function_transform_all_args, ["ftaa"]);
   alias_add(git_acp, ["gi"]);
-  alias_add(git_index_lock_delete, ["gx"]);
   alias_add(google_search, ["g"]);
+  alias_add(google_search, ["g"]);
+  alias_add(git_index_lock_delete, ["gx"]);
   alias_add(http_server, ["h"]);
   alias_add(npm_install, ["i"]);
   alias_add(npm_install_global, ["ig"]);
