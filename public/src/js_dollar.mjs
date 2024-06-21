@@ -40,7 +40,7 @@ export function js_dollar(ast) {
         object_replace(node, e);
       }
       if (remaining === "e") {
-        let name = js_name_unique(ast,"item");
+        let name = js_name_unique(ast, "item");
         let e = js_parse_expression(
           js_code_call_args(each.name, [js_code_arrow_block_args([name], "")]),
         );
@@ -92,6 +92,10 @@ export function js_dollar(ast) {
           });
           object_replace(node, e);
         }
+      }
+      if (remaining === "o") {
+        let e = js_parse_expression("{}");
+        object_replace(node, e);
       }
     }
   });
