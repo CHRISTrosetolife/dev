@@ -1,4 +1,3 @@
-import { exit } from "./exit.mjs";
 import { js_code_braces } from "./js_code_braces.mjs";
 import { log } from "./log.mjs";
 import { js_code_brackets } from "./js_code_brackets.mjs";
@@ -15,7 +14,6 @@ import { list_index } from "./list_index.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_remove_at } from "./list_remove_at.mjs";
 import { list_first } from "./list_first.mjs";
-import { js_unparse } from "./js_unparse.mjs";
 export function js_dollar(ast) {
   js_visit_identifiers(ast, (v) => {
     let { node } = v;
@@ -51,9 +49,7 @@ export function js_dollar(ast) {
         if (list_is(parent)) {
           let index = list_index(parent, node);
           let next = list_remove_at(parent, index + 1);
-          list_add(list_first(e.arguments).elements, node);
-          log(js_unparse(e));
-          exit();
+          list_add(list_first(e.arguments).elements, next);
           object_replace(node, e);
         }
       }
