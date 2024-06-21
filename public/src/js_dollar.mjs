@@ -11,6 +11,7 @@ import { list_random_item } from "./list_random_item.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 import { list_is } from "./list_is.mjs";
 import { list_index } from "./list_index.mjs";
+import { list_add } from "./list_add.mjs";
 export function js_dollar(ast) {
   js_visit_identifiers(ast, (v) => {
     let { node } = v;
@@ -46,9 +47,7 @@ export function js_dollar(ast) {
         if (list_is(parent)) {
           let index = list_index(parent, node);
           index + 1;
-          log({
-            e: e.arguments.elements,
-          });
+          list_add(e.arguments.elements, node);
         }
       }
     }
