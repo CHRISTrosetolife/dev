@@ -22,8 +22,7 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
     let walls = app_gs_overlays_any_wall(tile);
     if (!walls) {
       let from = app_gs_map_at(map, map.player);
-      let to_any = [tile];
-      let { path } = app_gs_map_path(map, from, to_any);
+      let { path } = app_gs_map_path(map, from, [tile]);
       if (
         list_all(list_xy(), (xy) =>
           equal_by(map.player, tile, (coordinates) =>
