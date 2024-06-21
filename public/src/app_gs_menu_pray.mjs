@@ -11,7 +11,7 @@ export function app_gs_menu_pray(menu_overlay, map_c, map) {
   );
   let prayer = string_combine_multiple([
     "🙏 God, please ",
-    list_random_item(["bless", "go before me and prepare"]),
+    list_random_item(["bless", "go before me and prepare", "be with"]),
     " my next 👥 conversation, in the name of Jesus, amen.",
   ]);
   html_button_width_full_text_click(menu_overlay, prayer, () => {
