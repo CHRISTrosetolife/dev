@@ -58,7 +58,8 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
         string_combine_multiple([
           "👋 Hello, ",
           map.player.name,
-          "! My name is ",
+          "! ",
+          "My name is ",
           npc.name,
           ". It is ",
           list_random_item(["so ", "very ", ""]),
