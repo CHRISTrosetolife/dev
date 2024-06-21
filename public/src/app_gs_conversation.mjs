@@ -18,6 +18,7 @@ import { app_gs_menu_overlay } from "./app_gs_menu_overlay.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
+import { list_add } from "./list_add.mjs";
 export function app_gs_conversation(map_c, map, npc) {
   let greeting = string_combine_multiple([
     list_random_item(["Hello", "Hey", "Greetings", "Hi"]),
@@ -27,6 +28,7 @@ export function app_gs_conversation(map_c, map, npc) {
   ]);
   let opening = ["👋", greeting];
   if (npc.meet === true) {
+    list_add(opening, "");
   } else {
     npc.meet = true;
     let introduction = string_combine_multiple([
@@ -42,6 +44,7 @@ export function app_gs_conversation(map_c, map, npc) {
       npc.name,
       ".",
     ]);
+    list_add_multiple(opening, [introduction, greeting_pleased]);
     let greeting_pleased = string_combine_multiple([
       list_random_item([
         string_combine_multiple([
@@ -68,7 +71,6 @@ export function app_gs_conversation(map_c, map, npc) {
       "meet you",
       "!",
     ]);
-    list_add_multiple(opening, [introduction, greeting_pleased]);
   }
   let text = string_combine_multiple([list_join_space(opening)]);
   let menu_overlay = app_gs_menu_overlay(map_c, map);
