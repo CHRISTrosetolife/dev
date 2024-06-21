@@ -47,6 +47,9 @@ export function app_gs_conversation(map_c, map, npc) {
         ]),
         app_gs_phrase_i_am(),
         " ",
+        () => {
+          return;
+        },
         string_combine([app_gs_phrase_very(), "pleased"]),
       ],
     ),
