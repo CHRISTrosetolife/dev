@@ -37,7 +37,6 @@ export function app_gs_map_new() {
   let map = {
     y_size,
     x_size,
-    overlays: [],
   };
   let total = x_size_inside * y_size_inside;
   let map_overlays_count = ceiling(total / 8);
@@ -163,7 +162,6 @@ export function app_gs_map_new() {
     npc.character = list_random_item(game_img_list_male());
     let o = overlay_add(tile, "npc");
     o.character = list_random_item(game_img_list_male());
-    list_add(map.overlays, o);
   });
   map.player = {};
   object_merge(map.player, spawn);
@@ -183,6 +181,7 @@ export function app_gs_map_new() {
     object_merge(o, {
       type,
     });
+    list_add(tile.overlays, o);
     return o;
   }
   function inside_is(t) {
