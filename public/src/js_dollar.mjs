@@ -51,11 +51,11 @@ export function js_dollar(ast) {
         if (list_is(parent)) {
           let index = list_index(parent, node);
           let next = index + 1;
+          list_remove_at(parent, next);
           list_add(list_first(e.arguments).elements, node);
           log(js_unparse(e));
           exit();
           object_replace(node, e);
-          list_remove_at(parent, next);
         }
       }
     }
