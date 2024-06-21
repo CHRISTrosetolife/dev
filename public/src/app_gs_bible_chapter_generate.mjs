@@ -1,3 +1,4 @@
+import { error } from "./error.mjs";
 import { list_filter_property } from "./list_filter_property.mjs";
 import { log } from "./log.mjs";
 import { function_transform_args_split_lambda } from "./function_transform_args_split_lambda.mjs";
@@ -49,6 +50,7 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
               });
             }
           });
+          error();
         },
       ],
       [],
