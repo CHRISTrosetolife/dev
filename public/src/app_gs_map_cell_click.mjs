@@ -23,13 +23,13 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
     let walls = app_gs_overlays_any_wall(tile);
     if (!walls) {
       let from = app_gs_map_at(map, map.player);
-      let path = graph_path_shortest_neighbors(
+      let { path } = graph_path_shortest_neighbors(
         app_gs_map_tile_id,
         (v) => {
           return app_gs_map_neighbors_get(map, v);
         },
         from,
-        tile,
+        [tile],
       );
       if (
         list_all(list_xy(), (xy) =>
