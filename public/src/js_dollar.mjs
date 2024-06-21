@@ -1,3 +1,4 @@
+import { js_code_arrow_block } from "./js_code_arrow_block.mjs";
 import { js_code_arrow_block_args } from "./js_code_arrow_block_args.mjs";
 import { js_name_unique } from "./js_name_unique.mjs";
 import { each } from "./each.mjs";
@@ -31,7 +32,7 @@ export function js_dollar(ast) {
       let { parent } = v;
       let remaining = string_prefix_without(name, prefix);
       if (remaining === "a") {
-        let e = js_parse_expression(js_code_arrow_block_args([]));
+        let e = js_parse_expression(js_code_arrow_block());
         object_replace(node, e);
       }
       if (remaining === "ar") {
