@@ -26,6 +26,7 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
     each(verses, (item) => {
       item.verse = list_join_space(item.tokens);
       object_property_delete(item, "tokens");
+      each_verse(item);
     });
     let jsons = list_map(verses, json_to);
     await function_new_generic(
@@ -41,5 +42,5 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
   } else {
     await function_transform([exists], function_name, []);
   }
-  function each(ast) {}
+  function each_verse(verse) {}
 }
