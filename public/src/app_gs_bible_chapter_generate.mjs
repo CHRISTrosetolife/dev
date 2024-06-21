@@ -16,26 +16,26 @@ import { list_join_space } from "./list_join_space.mjs";
 export async function app_gs_bible_chapter_generate(chapter_name) {
   chapter_name = string_case_lower(chapter_name);
   let name = string_combine_multiple([prefix, chapter_name]);
-  if (await function_exists(chapter_name)) {
+  if (!(await function_exists(chapter_name))) {
+    let verses = await bible_chapter("engbsb", chapter_name);
+    let prefix = string_suffix_without(
+      app_gs_bible_chapter_generate.name,
+      "generate",
+    );
+    each(verses, (item) => {
+      item.verse = list_join_space(item.tokens);
+      object_property_delete(item, "tokens");
+    });
+    let jsons = list_map(verses, json_to);
+    await function_new_generic(
+      name,
+      "",
+      js_code_statement_return(js_code_array(jsons)),
+      false,
+      [],
+      false,
+      file_overwrite,
+    );
+    await function_open(name);
   }
-  let verses = await bible_chapter("engbsb", chapter_name);
-  let prefix = string_suffix_without(
-    app_gs_bible_chapter_generate.name,
-    "generate",
-  );
-  each(verses, (item) => {
-    item.verse = list_join_space(item.tokens);
-    object_property_delete(item, "tokens");
-  });
-  let jsons = list_map(verses, json_to);
-  await function_new_generic(
-    name,
-    "",
-    js_code_statement_return(js_code_array(jsons)),
-    false,
-    [],
-    false,
-    file_overwrite,
-  );
-  await function_open(name);
 }
