@@ -37,6 +37,7 @@ export function app_gs_map_new() {
   let map = {
     y_size,
     x_size,
+    overlays: [],
   };
   let total = x_size_inside * y_size_inside;
   let map_overlays_count = ceiling(total / 8);
