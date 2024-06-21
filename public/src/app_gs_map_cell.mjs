@@ -19,7 +19,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
         let i = game_img(map_c, game_img_base(o_id), tile, "overlay");
         la(i);
       } else if (o.type === "npc") {
-        app_gs_player_c_generic(map_c, o.character, o);
+        let npc_c = app_gs_player_c_generic(map_c, o.character, o);
       }
     }),
   );
