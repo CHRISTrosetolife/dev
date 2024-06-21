@@ -12,7 +12,6 @@ import { equal_by } from "./equal_by.mjs";
 import { list_xy } from "./list_xy.mjs";
 import { list_all } from "./list_all.mjs";
 import { app_gs_map_neighbors_get } from "./app_gs_map_neighbors_get.mjs";
-import { app_gs_map_at } from "./app_gs_map_at.mjs";
 import { app_gs_overlays_any_wall } from "./app_gs_overlays_any_wall.mjs";
 export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
   let npc = list_find_property(tile.overlays, "type", "npc");
@@ -21,8 +20,7 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
   } else {
     let walls = app_gs_overlays_any_wall(tile);
     if (!walls) {
-      let from = app_gs_map_at(map, map.player);
-      let { path } = app_gs_map_path(map, from, [tile]);
+      let { path } = app_gs_map_path(map, [tile]);
       if (
         list_all(list_xy(), (xy) =>
           equal_by(map.player, tile, (coordinates) =>
