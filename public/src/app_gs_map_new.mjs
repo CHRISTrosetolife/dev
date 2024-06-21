@@ -158,6 +158,7 @@ export function app_gs_map_new() {
     overlay_add_base(tile, id);
   });
   app_gs_player_new(map);
+  object_merge(map.player, spawn);
   let npc_count = 1;
   each_range(npc_count, () => {
     let npc = object_copy(spawn);
@@ -173,7 +174,6 @@ export function app_gs_map_new() {
       npc,
     });
   });
-  object_merge(map.player, spawn);
   return map;
   function overlay_add_base(tile, id) {
     let o = overlay_add(tile, "base");
