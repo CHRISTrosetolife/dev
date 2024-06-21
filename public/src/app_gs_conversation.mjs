@@ -100,7 +100,7 @@ export function app_gs_conversation(map_c, map, npc) {
     string_combine_multiple([
       "What ",
       list_random_item([
-        string_combine_multiple(["is on your ", "heart"]),
+        string_combine_multiple(["is on your ", list_random_item(["heart"])]),
         string_combine_multiple([
           list_random_item(["do you want", "would you like"]),
           " to talk about",
