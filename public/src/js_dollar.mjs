@@ -76,6 +76,7 @@ export function js_dollar(ast) {
           log({
             e,
           });
+          return;
           let index = list_index(parent, node);
           let next_index = index + 1;
           each_range(count, () => {
