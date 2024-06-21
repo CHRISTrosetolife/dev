@@ -13,6 +13,7 @@ import { list_is } from "./list_is.mjs";
 import { list_index } from "./list_index.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_remove_at } from "./list_remove_at.mjs";
+import { list_first } from "./list_first.mjs";
 export function js_dollar(ast) {
   js_visit_identifiers(ast, (v) => {
     let { node } = v;
@@ -50,7 +51,7 @@ export function js_dollar(ast) {
           log({
             e,
           });
-          list_add(e.arguments.elements, node);
+          list_add(list_first(e.arguments).elements, node);
           object_replace(node, e);
           list_remove_at(parent, index + 1);
         }
