@@ -94,7 +94,7 @@ export function js_dollar(ast) {
         }
       }
       if (remaining === "o") {
-        let e = js_parse_expression("{}");
+        let e = js_parse_expression("{text:''}");
         object_replace(node, e);
       }
     }
