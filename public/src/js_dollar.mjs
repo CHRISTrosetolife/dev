@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { each_range } from "./each_range.mjs";
 import { js_code_array_empty } from "./js_code_array_empty.mjs";
 import { exit } from "./exit.mjs";
@@ -36,7 +37,7 @@ export function js_dollar(ast) {
         object_replace(node, e);
       }
       if (remaining === "e") {
-        let e = js_parse_expression(js_code_call(exit.name));
+        let e = js_parse_expression(js_code_call(each.name));
         object_replace(node, e);
       }
       if (remaining === "x") {
