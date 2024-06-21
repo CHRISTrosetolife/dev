@@ -33,7 +33,7 @@ export function app_gs_conversation(map_c, map, npc) {
       string_combine_multiple([
         app_gs_phrase_it_is(),
         " ",
-        list_random_item(["good", "wonderful", "nice"]),
+        list_random_item(["good", "great", "wonderful", "nice"]),
         "to ",
         list_random_item(["talk to", "see"]),
         " you again",
