@@ -36,7 +36,7 @@ there are shorthand aliases ; `a` is for `function_auto` :
 
 to view all aliases :
 
-`> node run_git.mjs o a`
+`> node run_git.mjs o al`
 
 ---
 
