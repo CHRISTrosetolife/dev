@@ -1,4 +1,3 @@
-import { js_code_call } from "./js_code_call.mjs";
 import { object_replace } from "./object_replace.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
@@ -6,6 +5,7 @@ import { string_starts_with } from "./string_starts_with.mjs";
 import { js_visit_identifiers } from "./js_visit_identifiers.mjs";
 import { js_parse_first_function } from "./js_parse_first_function.mjs";
 import { list_random_item } from "./list_random_item.mjs";
+import { js_code_call_args } from "./js_code_call_args.mjs";
 export function js_dollar(ast) {
   js_visit_identifiers(ast, (v) => {
     let { node } = v;
@@ -29,7 +29,7 @@ export function js_dollar(ast) {
         }
       }
       if (remaining === "l") {
-        let e = js_parse_expression(js_code_call(list_random_item.name));
+        let e = js_parse_expression(js_code_call_args(list_random_item.name));
         let { parent } = v;
         if (parent.type === "ExpressionStatement") {
           object_replace(parent, e);
