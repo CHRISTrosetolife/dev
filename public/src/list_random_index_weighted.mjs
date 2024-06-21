@@ -4,10 +4,10 @@ import { assert } from "./assert.mjs";
 import { each_index } from "./each_index.mjs";
 import { each } from "./each.mjs";
 import { list_adder } from "./list_adder.mjs";
-export function list_random_index_weighted(grass) {
+export function list_random_index_weighted(weights) {
   let sum = 0;
   let sums = list_adder((la) =>
-    each(grass, (proportion) => {
+    each(weights, (proportion) => {
       sum += proportion;
       la(sum);
     }),
