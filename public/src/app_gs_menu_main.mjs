@@ -5,7 +5,7 @@ import { html_button_width_full_text_click } from "./html_button_width_full_text
 import { html_clear } from "./html_clear.mjs";
 export function app_gs_menu_main(menu_overlay, map_c, map) {
   html_clear(menu_overlay);
-  html_button_width_full_text_click(menu_overlay, "back", () => {
+  html_button_width_full_text_click(menu_overlay, "⬅️ back", () => {
     html_remove(menu_overlay);
   });
   html_button_width_full_text_click(menu_overlay, "pray", () => {
