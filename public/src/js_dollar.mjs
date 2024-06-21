@@ -27,7 +27,7 @@ export function js_dollar(ast) {
         }
       }
       if (remaining === "l") {
-        let e = js_parse_first_function("return");
+        let e = js_parse_expression("return");
         let { parent } = v;
         if (parent.type === "ExpressionStatement") {
           object_replace(parent, e);
