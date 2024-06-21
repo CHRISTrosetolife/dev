@@ -1,3 +1,4 @@
+import { list_join_space } from "./list_join_space.mjs";
 import { html_remove } from "./html_remove.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_style_font_color } from "./html_style_font_color.mjs";
@@ -23,13 +24,13 @@ export function app_gs_conversation(map_c, map, npc) {
     ]),
     " ",
     npc.name,
-    ". ",
+    ".",
   ]);
   let greeting = string_combine_multiple([
     list_random_item(["Hello", "Hey", "Greetings", "Hi"]),
     ", ",
     map.player.name,
-    "! ",
+    "!",
   ]);
   let greeting_pleased = string_combine_multiple([
     list_random_item_weighted(
@@ -51,9 +52,7 @@ export function app_gs_conversation(map_c, map, npc) {
   ]);
   let text = string_combine_multiple([
     "👋 ",
-    greeting,
-    introduction,
-    greeting_pleased,
+    list_join_space([greeting, introduction, greeting_pleased]),
   ]);
   let p = html_p_text(menu_overlay, text);
   html_style_background_color_black_alpha(p, 0.51);
