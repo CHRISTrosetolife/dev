@@ -32,7 +32,7 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
           let last = list_last(body_block);
           let { argument } = last;
           let { elements } = argument;
-          each(elements, (item2) => {});
+          each(elements, (element) => {});
         },
       ],
       [],
