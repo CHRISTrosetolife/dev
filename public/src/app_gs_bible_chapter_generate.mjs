@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { function_transform_args_split_lambda } from "./function_transform_args_split_lambda.mjs";
 import { list_last } from "./list_last.mjs";
 import { js_declaration_single_body } from "./js_declaration_single_body.mjs";
@@ -32,7 +33,9 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
           let last = list_last(body_block);
           let { argument } = last;
           let { elements } = argument;
-          each(elements, (element) => {});
+          each(elements, (element) => {
+            log({});
+          });
         },
       ],
       [],
