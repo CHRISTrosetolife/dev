@@ -46,7 +46,7 @@ export function app_gs_conversation(map_c, map, npc) {
     ]);
     list_add(opening, introduction);
     if (random_50_50()) {
-      let greeting_pleased = string_combine_multiple([
+      let nice_to_meet = string_combine_multiple([
         list_random_item([
           string_combine_multiple([
             app_gs_phrase_it_is(),
@@ -72,7 +72,7 @@ export function app_gs_conversation(map_c, map, npc) {
         "meet you",
         "!",
       ]);
-      list_add(opening, greeting_pleased);
+      list_add(opening, nice_to_meet);
     }
   }
   let text = string_combine_multiple([list_join_space(opening)]);
