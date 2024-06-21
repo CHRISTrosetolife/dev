@@ -38,9 +38,10 @@ export function js_dollar(ast) {
         object_replace(node, e);
       }
       if (remaining === "e") {
+        let name = js_name_unique("item");
         let e = js_parse_expression(
           js_code_call_args(each.name, [
-            string_combine_multiple(["(", js_name_unique("item"), ")=>{}"]),
+            string_combine_multiple(["(", name, ")=>{}"]),
           ]),
         );
         object_replace(node, e);
