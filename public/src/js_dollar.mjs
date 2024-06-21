@@ -46,7 +46,7 @@ export function js_dollar(ast) {
           js_code_call_args(list_random_item.name, [js_code_brackets()]),
         );
         if (list_is(parent)) {
-          let index = list_index(parent, node);
+          let index = list_index(parent, node);$l
           list_add(e.arguments.elements, node);
           object_replace(node, e);
           list_remove_at(parent, index + 1);

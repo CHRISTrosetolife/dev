@@ -1,3 +1,4 @@
+import { log_error } from "./log_error.mjs";
 import { function_auto_after } from "./function_auto_after.mjs";
 import { folder_current_prefix_combine } from "./folder_current_prefix_combine.mjs";
 import { git_push } from "./git_push.mjs";
@@ -53,8 +54,8 @@ export async function watch() {
         after = await fn(...args);
         processed = true;
       } catch (e) {
-        log("error while processing " + function_name);
-        log(e);
+        log_error("error while processing " + function_name);
+        log_error(e);
       } finally {
         object_property_set(c, "processing", false);
       }
