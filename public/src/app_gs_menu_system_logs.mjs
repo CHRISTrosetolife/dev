@@ -5,10 +5,10 @@ import { log_logs } from "./log_logs.mjs";
 import { app_gs_menu_main } from "./app_gs_menu_main.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
-export function app_gs_menu_system_logs(menu_overlay) {
+export function app_gs_menu_system_logs(menu_overlay, map_c, map) {
   html_clear(menu_overlay);
   html_button_width_full_text_click_back(menu_overlay, () =>
-    app_gs_menu_main(menu_overlay),
+    app_gs_menu_main(menu_overlay, map_c, map),
   );
   let logs = log_logs();
   each(logs, (message) => {
