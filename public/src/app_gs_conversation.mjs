@@ -1,4 +1,4 @@
-import { app_gs_div_rounded_alpha } from "./app_gs_div_rounded_alpha.mjs";
+import { app_gs_div_rounded_transparent } from "./app_gs_div_rounded_transparent.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { html_style_font_color } from "./html_style_font_color.mjs";
 import { html_div } from "./html_div.mjs";
@@ -71,7 +71,7 @@ export function app_gs_conversation(map_c, map, npc) {
   let div = html_div(menu_overlay);
   let npc_speaking = html_p_text(div, string_combine(npc.name, " says :"));
   html_style_font_color(npc_speaking, "lightblue");
-  let npc_speech = app_gs_div_rounded_alpha(div, "255,255,255", 0.5);
+  let npc_speech = app_gs_div_rounded_transparent(div, "255,255,255", 0.5);
   html_style_rounded_padded(npc_speech);
   html_inner_set(npc_speech, text);
   html_style_background_color_black_alpha(div, 0.51);
