@@ -1,4 +1,3 @@
-import { html_style_background_color } from "./html_style_background_color.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { html_style_font_color } from "./html_style_font_color.mjs";
 import { html_style_font_color_white } from "./html_style_font_color_white.mjs";
@@ -17,6 +16,7 @@ import { list_random_item } from "./list_random_item.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_gs_menu_overlay } from "./app_gs_menu_overlay.mjs";
 import { string_combine } from "./string_combine.mjs";
+import { html_style } from "./html_style.mjs";
 export function app_gs_conversation(map_c, map, npc) {
   let menu_overlay = app_gs_menu_overlay(map_c, map);
   let introduction = string_combine_multiple([
@@ -74,7 +74,11 @@ export function app_gs_conversation(map_c, map, npc) {
   html_style_centered(div);
   html_style_rounded_padded(div);
   let hr = html_hr(div);
-  html_style_background_color(hr, "black");
+  html_style(hr, {
+    "background-color": red,
+    height: "1px",
+    border: 0,
+  });
   let prompt = html_p_text(div, "What would you like to do?");
   html_style_font_color(prompt, "lightgreen");
   html_button_width_full_text_click(
