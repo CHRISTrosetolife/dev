@@ -62,12 +62,12 @@ export function app_gs_conversation(map_c, map, npc) {
   let text = string_combine_multiple([
     list_join_space(["👋", greeting, introduction, greeting_pleased]),
   ]);
-  let p = html_div(menu_overlay);
-  html_p_text(p, text);
-  html_style_background_color_black_alpha(p, 0.51);
-  html_style_centered(p);
-  html_style_rounded_padded(p);
-  html_style_font_color(p, "white");
+  let div = html_div(menu_overlay);
+  html_p_text(div, text);
+  html_style_background_color_black_alpha(div, 0.51);
+  html_style_centered(div);
+  html_style_rounded_padded(div);
+  html_style_font_color(div, "white");
   html_button_width_full_text_click(
     menu_overlay,
     "👋 politely end the conversation after 🙏 praying",
