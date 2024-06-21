@@ -46,7 +46,8 @@ export function app_gs_conversation(map_c, map, npc) {
           ]),
           " to ",
           list_random_item(["talk to", "see"]),
-          " you again!",
+          " you again",
+          "!",
         ]),
       );
     }
