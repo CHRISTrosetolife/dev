@@ -1,3 +1,5 @@
+import { exit } from "./exit.mjs";
+import { js_code_call } from "./js_code_call.mjs";
 import { js_code_braces } from "./js_code_braces.mjs";
 import { log } from "./log.mjs";
 import { js_code_brackets } from "./js_code_brackets.mjs";
@@ -40,6 +42,10 @@ export function js_dollar(ast) {
         let e = js_parse_expression(
           js_code_call_args(log.name, [js_code_braces()]),
         );
+        object_replace(node, e);
+      }
+      if (remaining === "e") {
+        let e = js_parse_expression(js_code_call(exit.name));
         object_replace(node, e);
       }
       if (remaining === "lr") {
