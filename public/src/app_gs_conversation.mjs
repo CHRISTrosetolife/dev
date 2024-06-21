@@ -1,3 +1,4 @@
+import { html_style_font_color_white } from "./html_style_font_color_white.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { app_gs_phrase_it_is } from "./app_gs_phrase_it_is.mjs";
@@ -5,7 +6,6 @@ import { app_gs_phrase_i_am } from "./app_gs_phrase_i_am.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { html_remove } from "./html_remove.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
-import { html_style_font_color } from "./html_style_font_color.mjs";
 import { html_style_rounded_padded } from "./html_style_rounded_padded.mjs";
 import { html_style_centered } from "./html_style_centered.mjs";
 import { html_style_background_color_black_alpha } from "./html_style_background_color_black_alpha.mjs";
@@ -68,7 +68,7 @@ export function app_gs_conversation(map_c, map, npc) {
   html_style_background_color_black_alpha(div, 0.51);
   html_style_centered(div);
   html_style_rounded_padded(div);
-  html_style_font_color(div, "white");
+  html_style_font_color_white(div);
   html_p_text(div, "What would you like to do?");
   html_button_width_full_text_click(
     div,
