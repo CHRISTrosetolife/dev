@@ -57,7 +57,7 @@ export function app_gs_conversation(map_c, map, npc) {
         " ",
         list_random_item([
           "happy",
-          string_combine([app_gs_phrase_very(), "pleased"]),
+          string_combine(app_gs_phrase_very(), "pleased"),
         ]),
       ]),
     ]),
