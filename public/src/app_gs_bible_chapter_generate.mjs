@@ -1,3 +1,4 @@
+import { file_exists_not } from "./file_exists_not.mjs";
 import { object_property_delete } from "./object_property_delete.mjs";
 import { each } from "./each.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
@@ -13,6 +14,8 @@ import { string_suffix_without } from "./string_suffix_without.mjs";
 import { json_to } from "./json_to.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 export async function app_gs_bible_chapter_generate(chapter_name) {
+  if (await file_exists_not()) {
+  }
   let verses = await bible_chapter("engbsb", chapter_name);
   chapter_name = string_case_lower(chapter_name);
   let prefix = string_suffix_without(
