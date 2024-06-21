@@ -52,7 +52,10 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
       await sleep(sleep_time);
       app_gs_walk_direction(npc_c, npc, player);
       let menu_overlay = app_gs_menu_overlay(map_c, map);
-      let p = html_p_text(menu_overlay, string_combine_multiple("👋 hello, "));
+      let p = html_p_text(
+        menu_overlay,
+        string_combine_multiple(["👋 hello, "]),
+      );
       html_style_background_color_black_alpha(p, 0.51);
       html_style_centered(p);
       html_style_rounded_padded(p);
