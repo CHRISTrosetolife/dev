@@ -1,4 +1,4 @@
-import { equal } from "./equal.mjs";
+import { app_gs_xy_equal } from "./app_gs_xy_equal.mjs";
 import { app_gs_map_path } from "./app_gs_map_path.mjs";
 import { list_find_property } from "./list_find_property.mjs";
 import { html_scroll_center_smooth } from "./html_scroll_center_smooth.mjs";
@@ -19,7 +19,7 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
     let walls = app_gs_overlays_any_wall(tile);
     if (!walls) {
       let { path } = app_gs_map_path(map, [tile]);
-      if (equal(map.player, tile)) {
+      if (app_gs_xy_equal(map.player, tile)) {
         let menu_overlay = app_gs_menu_overlay(map_c, map);
         app_gs_menu_main(menu_overlay, map_c, map);
       } else {
