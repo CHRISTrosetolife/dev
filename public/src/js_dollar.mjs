@@ -64,14 +64,14 @@ export function js_dollar(ast) {
       }
       let scm_prefix = "s";
       if (string_starts_with(remaining, scm_prefix)) {
-        remaining = string_prefix_without(name, scm_prefix);
-        let count = integer_parse(remaining);
-        let e = js_parse_expression(
-          js_code_call_args(string_combine_multiple.name, [
-            js_code_array_empty(),
-          ]),
-        );
         if (list_is(parent)) {
+          remaining = string_prefix_without(name, scm_prefix);
+          let count = integer_parse(remaining);
+          let e = js_parse_expression(
+            js_code_call_args(string_combine_multiple.name, [
+              js_code_array_empty(),
+            ]),
+          );
           let index = list_index(parent, node);
           let next = list_remove_at(parent, index + 1);
           list_add(list_first(e.arguments).elements, next);
