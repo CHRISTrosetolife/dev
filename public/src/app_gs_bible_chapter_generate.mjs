@@ -1,7 +1,7 @@
+import { function_transform_args_split_lambda } from "./function_transform_args_split_lambda.mjs";
 import { list_last } from "./list_last.mjs";
 import { js_declaration_single_body } from "./js_declaration_single_body.mjs";
 import { log } from "./log.mjs";
-import { function_transform } from "./function_transform.mjs";
 import { function_exists } from "./function_exists.mjs";
 import { object_property_delete } from "./object_property_delete.mjs";
 import { each } from "./each.mjs";
@@ -25,7 +25,7 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
   );
   let function_name = string_combine_multiple([prefix, chapter_name]);
   if (await function_exists(function_name)) {
-    await function_transform(
+    await function_transform_args_split_lambda(
       [
         (ast) => {
           let body_block = js_declaration_single_body(ast);
