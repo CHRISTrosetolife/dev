@@ -10,8 +10,6 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
     app_gs_bible_chapter_generate.name,
     "_generate",
   );
-  await generate_list_generic(
-    verses,
-    string_combine_multiple([prefix, chapter_name]),
-  );
+  let name = string_combine_multiple([prefix, chapter_name]);
+  await generate_list_generic(verses, name);
 }
