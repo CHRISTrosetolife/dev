@@ -1,3 +1,4 @@
+import { html_style_rounded_padded } from "./html_style_rounded_padded.mjs";
 import { html_td } from "./html_td.mjs";
 import { html_tr } from "./html_tr.mjs";
 import { html_tbody } from "./html_tbody.mjs";
@@ -19,7 +20,6 @@ import { string_combine } from "./string_combine.mjs";
 import { html_element } from "./html_element.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 import { html_style_centered } from "./html_style_centered.mjs";
-import { app_learn_code_style_rounded_padded } from "./app_learn_code_style_rounded_padded.mjs";
 import { list_index_last } from "./list_index_last.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
 import { each_index } from "./each_index.mjs";
@@ -104,7 +104,7 @@ export function lesson_mod() {
       let th = html_element(tr_head, "th");
       html_inner_set(th, c);
       let index_last = list_index_last(columns_head);
-      app_learn_code_style_rounded_padded(th);
+      html_style_rounded_padded(th);
       let color;
       if (equal(c_index, index_last)) {
         color = "#FFEB3B";
@@ -125,7 +125,7 @@ export function lesson_mod() {
         let td = html_td(tr_body);
         html_inner_set(td, c);
         html_style_centered(td);
-        app_learn_code_style_rounded_padded(td);
+        html_style_rounded_padded(td);
         let color;
         if (equal(c_index, index_last)) {
           color = even ? "#F9E79F" : "#F7DC6F";
