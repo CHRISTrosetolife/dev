@@ -35,7 +35,7 @@ export function app_gs_conversation(map_c, map, npc) {
         " ",
         list_random_item(["good", "wonderful", "nice"]),
         "to ",
-        "see",
+        list_random_item(["see"]),
         " you again",
       ]),
     );
