@@ -37,7 +37,7 @@ export function app_gs_conversation(map_c, map, npc) {
     map.player.name,
     "!",
   ]);
-  let opening = ["👋", greeting, introduction, greeting_pleased];
+  let opening = ["👋", greeting][(introduction, greeting_pleased)];
   if (npc.meet !== true) {
     npc.meet = true;
     let greeting_pleased = string_combine_multiple([
