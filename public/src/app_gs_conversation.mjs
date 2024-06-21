@@ -75,7 +75,7 @@ export function app_gs_conversation(map_c, map, npc) {
   html_style_rounded_padded(div);
   let hr = html_hr(div);
   html_style(hr, {
-    "background-color": red,
+    "background-color": "black",
     height: "1px",
     border: 0,
   });
