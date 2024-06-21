@@ -32,7 +32,7 @@ export function app_gs_conversation(map_c, map, npc) {
   html_style_font_color(prompt, "lightgreen");
   html_button_width_full_text_click(
     div_player,
-    "👋 politely end the conversation after 🙏 praying",
+    "👋 Politely end the conversation after 🙏 praying",
     () => {
       html_remove(menu_overlay);
     },
