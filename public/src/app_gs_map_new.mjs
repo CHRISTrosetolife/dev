@@ -163,10 +163,10 @@ export function app_gs_map_new() {
     o.character = list_random_item(game_img_list_male());
   });
   map.player = {};
-  object_merge(map.player, spawn);
   map.player.walk_offset = 0;
   map.player.walk_previous = 1;
   map.player.character = list_random_item(game_img_list_male());
+  object_merge(map.player, spawn);
   return map;
   function overlay_add_base(tile, id) {
     let o = overlay_add(tile, "base");
