@@ -56,7 +56,9 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
       let p = html_p_text(
         menu_overlay,
         string_combine_multiple([
-          "👋 Hello, ",
+          "👋 ",
+          "Hello",
+          ", ",
           map.player.name,
           "! ",
           list_random_item([
