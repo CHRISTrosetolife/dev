@@ -1,3 +1,4 @@
+import { app_gs_phrase_i_am } from "./app_gs_phrase_i_am.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { html_remove } from "./html_remove.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
@@ -15,10 +16,7 @@ export function app_gs_conversation(map_c, map, npc) {
   let menu_overlay = app_gs_menu_overlay(map_c, map);
   let introduction = string_combine_multiple([
     list_random_item([
-      string_combine_multiple([
-        string_combine_multiple(["I", list_random_item([" a", "'"]), "m"]),
-        " called",
-      ]),
+      string_combine_multiple([app_gs_phrase_i_am(), " called"]),
       "My name is",
       "I go by",
       "They call me",
