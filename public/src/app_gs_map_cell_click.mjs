@@ -27,7 +27,7 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
     let { path } = app_gs_map_path(map, neighbors);
     await app_gs_walk_path(map, map_c, player_c, path);
     if (0) {
-      app_gs_map_html_at();
+      app_gs_map_html_at(map, npc);
       app_gs_walk_direction(player_c, player, destination);
       app_gs_walk_direction(player_c, player, destination);
     }
