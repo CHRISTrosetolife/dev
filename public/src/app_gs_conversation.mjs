@@ -18,17 +18,23 @@ export function app_gs_conversation(map_c, map, npc) {
     ", ",
     map.player.name,
     "! ",
-    list_random_item([
-      string_combine_multiple(["I", list_random_item([" a", "'"]), "m called"]),
-      "My name is",
-      "I go by",
-      "They call me",
-      "You can call me",
-      "Please call me",
+    string_combine_multiple([
+      list_random_item([
+        string_combine_multiple([
+          "I",
+          list_random_item([" a", "'"]),
+          "m called",
+        ]),
+        "My name is",
+        "I go by",
+        "They call me",
+        "You can call me",
+        "Please call me",
+      ]),
+      " ",
+      npc.name,
+      ". ",
     ]),
-    " ",
-    npc.name,
-    ". ",
     list_random_item_weighted(
       [3, 1],
       [
