@@ -98,7 +98,7 @@ export function app_gs_conversation(map_c, map, npc) {
   list_add(
     opening,
     "What ",
-    list_random_item(["would you like"]),
+    list_random_item(["do you want", "would you like"]),
     " to talk about?",
   );
   let text = string_combine_multiple([list_join_space(opening)]);
