@@ -75,8 +75,8 @@ export function js_dollar(ast) {
             ]),
           );
           let index = list_index(parent, node);
-          list_map(range_from(index + 1));
           let next_index = index + 1;
+          list_map(range_from(next_index, next_index + count));
           let next = list_remove_at(parent, next_index);
           list_add(list_first(e.arguments).elements, next);
           object_replace(node, e);
