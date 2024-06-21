@@ -1,3 +1,4 @@
+import { html_remove } from "./html_remove.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { app_gs_menu_main } from "./app_gs_menu_main.mjs";
 import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
@@ -27,5 +28,6 @@ export function app_gs_menu_pray(menu_overlay, map_c, map) {
   ]);
   html_button_width_full_text_click(menu_overlay, prayer, () => {
     map.player.pray.conversation = true;
+    html_remove(menu_overlay);
   });
 }
