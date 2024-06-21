@@ -16,6 +16,7 @@ export function js_dollar(ast) {
     let prefix = "$";
     if (string_starts_with(name, prefix)) {
       let remaining = string_prefix_without(name, prefix);
+      let { parent } = v;
       if (remaining === "a") {
         let e = js_parse_expression("()=>{}");
         object_replace(node, e);
@@ -26,7 +27,6 @@ export function js_dollar(ast) {
       }
       if (remaining === "r") {
         let e = js_parse_first_function("return");
-        let { parent } = v;
         if (parent.type === "ExpressionStatement") {
           object_replace(parent, e);
         }
