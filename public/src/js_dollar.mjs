@@ -35,9 +35,7 @@ export function js_dollar(ast) {
         let e = js_parse_expression(
           js_code_call_args(log.name, js_code_braces()),
         );
-        log({
-          e,
-        });
+        object_replace(node, e);
       }
       if (remaining === "lr") {
         let e = js_parse_expression(
