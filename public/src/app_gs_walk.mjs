@@ -1,4 +1,5 @@
-import { app_gs_sleep } from "./app_gs_sleep.mjs";
+import { sleep } from "./sleep.mjs";
+import { app_gs_sleep_time } from "./app_gs_sleep_time.mjs";
 import { app_gs_walk_direction } from "./app_gs_walk_direction.mjs";
 import { game_character_direction_index } from "./game_character_direction_index.mjs";
 import { html_img_src } from "./html_img_src.mjs";
@@ -34,7 +35,8 @@ export async function app_gs_walk(player_c, player, destination) {
         player.y + (delta.y / animate_count) * step_count,
         player.x + (delta.x / animate_count) * step_count,
       );
-      await app_gs_sleep();
+      let sleep_time = app_gs_sleep_time();
+      await sleep(sleep_time);
     });
     let delta = game_direction_to_delta(direction);
     each(list_xy(), (xy) => {
