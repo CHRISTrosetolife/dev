@@ -163,7 +163,8 @@ export function app_gs_map_new() {
     npc.character = list_random_item(game_img_list_male());
     let o = overlay_add(tile, "npc");
     o.character = list_random_item(game_img_list_male());
-    o.name = list_random_item(bible_names_men());
+    let name = bible_names_men();
+    o.name = list_random_item(name);
   });
   app_gs_player_new(map);
   object_merge(map.player, spawn);
