@@ -1,10 +1,8 @@
-import { null_not_is } from "./null_not_is.mjs";
-import { assert } from "./assert.mjs";
+import { app_gs_walk_direction } from "./app_gs_walk_direction.mjs";
 import { game_character_direction_index } from "./game_character_direction_index.mjs";
 import { html_img_src } from "./html_img_src.mjs";
 import { list_xy } from "./list_xy.mjs";
 import { add_1 } from "./add_1.mjs";
-import { app_gs_direction } from "./app_gs_direction.mjs";
 import { game_img_position } from "./game_img_position.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -14,16 +12,9 @@ import { sleep } from "./sleep.mjs";
 import { app_gs_sleep_time } from "./app_gs_sleep_time.mjs";
 import { each_range_async } from "./each_range_async.mjs";
 import { abs } from "./abs.mjs";
-import { game_character_index } from "./game_character_index.mjs";
 import { game_img_character } from "./game_img_character.mjs";
 export async function app_gs_walk(player_c, player, destination) {
-  let direction = app_gs_direction(player, destination);
-  assert(null_not_is, [direction]);
-  player.direction = direction;
-  html_img_src(
-    player_c,
-    game_img_character(player.character, game_character_index(direction)),
-  );
+  let direction = app_gs_walk_direction(player, destination, player_c);
   let steps_count =
     abs(player.y - destination.y) + abs(player.x - destination.x);
   await each_range_async(steps_count, async () => {
