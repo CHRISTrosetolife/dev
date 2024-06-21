@@ -97,7 +97,7 @@ export function app_gs_conversation(map_c, map, npc) {
   }
   list_add(
     opening,
-    list_combine_multiple([
+    string_combine_multiple([
       "What ",
       list_random_item(["do you want", "would you like"]),
       " to talk about?",
