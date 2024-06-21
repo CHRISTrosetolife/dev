@@ -8,7 +8,7 @@ export function js_name_unique(ast, prefix) {
   let i = 1;
   let variable_name;
   while (true) {
-    variable_name = string_combine(prefix, i);
+    variable_name = i===1 ? prefix : string_combine(prefix, i);
     if (!list_includes(identifiers, variable_name)) {
       break;
     }
