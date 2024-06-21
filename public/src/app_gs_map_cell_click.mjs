@@ -38,8 +38,8 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
     );
     let sleep_time = app_gs_sleep_time_face();
     await sleep(sleep_time);
-    app_gs_walk_direction(player_c, map.player, npc);
+    app_gs_walk_direction(player_c, player, npc);
     await sleep(sleep_time);
-    app_gs_walk_direction(npc_c, npc, map.player);
+    app_gs_walk_direction(npc_c, npc, player);
   }
 }
