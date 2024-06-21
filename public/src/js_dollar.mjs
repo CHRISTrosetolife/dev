@@ -1,3 +1,5 @@
+import { range_from } from "./range_from.mjs";
+import { list_map } from "./list_map.mjs";
 import { js_code_array_empty } from "./js_code_array_empty.mjs";
 import { exit } from "./exit.mjs";
 import { js_code_call } from "./js_code_call.mjs";
@@ -73,6 +75,7 @@ export function js_dollar(ast) {
             ]),
           );
           let index = list_index(parent, node);
+          list_map(range_from(index + 1));
           let next = list_remove_at(parent, index + 1);
           list_add(list_first(e.arguments).elements, next);
           object_replace(node, e);
