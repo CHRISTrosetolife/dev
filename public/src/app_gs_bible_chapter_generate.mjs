@@ -36,6 +36,7 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
         },
       ],
       function_name,
+      [],
     );
   } else {
     let verses = await bible_chapter("engbsb", chapter_name);
