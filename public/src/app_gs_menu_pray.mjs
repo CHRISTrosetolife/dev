@@ -19,7 +19,9 @@ export function app_gs_menu_pray(menu_overlay, map_c, map) {
       "give me the words to say for",
       "prepare our hearts",
     ]),
-    " my next 👥 conversation, in the name of Jesus, amen.",
+    " ",
+    list_random_item(["my", "this"]),
+    " next 👥 conversation, in the name of Jesus, amen.",
   ]);
   html_button_width_full_text_click(menu_overlay, prayer, () => {
     map.player.pray.conversation = true;
