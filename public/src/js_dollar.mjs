@@ -46,11 +46,10 @@ export function js_dollar(ast) {
         if (list_is(parent)) {
           let index = list_index(parent, node);
           index + 1;
+          log({
+            e: e.arguments,
+          });
         }
-        log({
-          e,
-          parent,
-        });
       }
     }
   });
