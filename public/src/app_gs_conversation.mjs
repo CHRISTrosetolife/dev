@@ -28,7 +28,20 @@ export function app_gs_conversation(map_c, map, npc) {
   ]);
   let opening = ["👋", greeting];
   if (npc.meet === true) {
-    list_add(opening, "");
+    list_add(
+      opening,
+      string_combine_multiple([
+        app_gs_phrase_it_is(),
+        " ",
+        list_random_item([
+          "my pleasure",
+          string_combine(
+            app_gs_phrase_very(),
+            list_random_item(["wonderful", "nice"]),
+          ),
+        ]),
+      ]),
+    );
   } else {
     npc.meet = true;
     let introduction = string_combine_multiple([
