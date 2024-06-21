@@ -1,3 +1,4 @@
+import { html_style_background_color } from "./html_style_background_color.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { html_style_font_color } from "./html_style_font_color.mjs";
 import { html_style_font_color_white } from "./html_style_font_color_white.mjs";
@@ -73,6 +74,7 @@ export function app_gs_conversation(map_c, map, npc) {
   html_style_centered(div);
   html_style_rounded_padded(div);
   let hr = html_hr(div);
+  html_style_background_color(hr);
   let prompt = html_p_text(div, "What would you like to do?");
   html_style_font_color(prompt, "lightgreen");
   html_button_width_full_text_click(
