@@ -44,8 +44,8 @@ export function app_gs_conversation(map_c, map, npc) {
       ]),
       string_combine_multiple([
         app_gs_phrase_i_am(),
-        " ",$lr,
-        string_combine([app_gs_phrase_very(), "pleased"]),
+        " ",
+        list_random_item([string_combine([app_gs_phrase_very(), "pleased"])]),
       ]),
     ]),
     " to meet you!",
