@@ -12,29 +12,26 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_gs_menu_overlay } from "./app_gs_menu_overlay.mjs";
 export function app_gs_conversation(map_c, map, npc) {
   let menu_overlay = app_gs_menu_overlay(map_c, map);
+  let introduction = string_combine_multiple([
+    list_random_item([
+      string_combine_multiple(["I", list_random_item([" a", "'"]), "m called"]),
+      "My name is",
+      "I go by",
+      "They call me",
+      "You can call me",
+      "Please call me",
+    ]),
+    " ",
+    npc.name,
+    ". ",
+  ]);
   let text = string_combine_multiple([
     "👋 ",
     list_random_item(["Hello", "Hey", "Greetings", "Hi"]),
     ", ",
     map.player.name,
     "! ",
-    string_combine_multiple([
-      list_random_item([
-        string_combine_multiple([
-          "I",
-          list_random_item([" a", "'"]),
-          "m called",
-        ]),
-        "My name is",
-        "I go by",
-        "They call me",
-        "You can call me",
-        "Please call me",
-      ]),
-      " ",
-      npc.name,
-      ". ",
-    ]),
+    introduction,
     list_random_item_weighted(
       [3, 1],
       [
