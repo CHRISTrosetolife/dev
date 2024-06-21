@@ -1,3 +1,4 @@
+import { error } from "./error.mjs";
 import { app_gs_map_cell_click } from "./app_gs_map_cell_click.mjs";
 import { app_gs_player_c_generic } from "./app_gs_player_c_generic.mjs";
 import { each } from "./each.mjs";
@@ -17,12 +18,14 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
       if (o.type === "base") {
         let { id: o_id } = o;
         html_data_set(clicker, "overlay", o_id);
-        let i = game_img(map_c, game_img_base(o_id), tile, "overlay");
-        la(i);
+        overlay_c = game_img(map_c, game_img_base(o_id), tile, "overlay");
       } else if (o.type === "npc") {
-        let npc_c = app_gs_player_c_generic(map_c, o.character, o);
-        html_data_set(npc_c, "type", "npc");
+        overlay_c = app_gs_player_c_generic(map_c, o.character, o);
+        html_data_set(overlay_c, "type", "npc");
+      } else {
+        error();
       }
+      la(overlay_c);
     }),
   );
   let { id } = tile;
