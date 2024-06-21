@@ -16,7 +16,7 @@ export function app_gs_menu_main(menu_overlay, map_c, map) {
     );
     html_button_width_full_text_click(
       menu_overlay,
-      "GOD, please bless my next conversation. amen.",
+      "GOD, please bless my next conversation. Amen.",
       () => {
         app_gs_menu_system_logs(menu_overlay);
       },
