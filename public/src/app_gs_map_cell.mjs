@@ -64,7 +64,6 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
     ) {
       let menu_overlay = app_gs_menu_overlay(map_c, map);
       app_gs_menu_main(menu_overlay, map_c, map);
-      return;
     } else {
       app_gs_map_render(map, map_c, path, player_c);
       await each_async(list_skip(path, 1), async (tile) => {
