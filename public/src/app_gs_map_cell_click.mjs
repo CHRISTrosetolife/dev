@@ -1,3 +1,4 @@
+import { app_gs_walk_direction } from "./app_gs_walk_direction.mjs";
 import { list_find_property_or } from "./list_find_property_or.mjs";
 import { null_is } from "./null_is.mjs";
 import { app_gs_walk_path } from "./app_gs_walk_path.mjs";
@@ -24,5 +25,7 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
     let neighbors = app_gs_map_neighbors_get(map, npc);
     let { path } = app_gs_map_path(map, neighbors);
     await app_gs_walk_path(map, map_c, player_c, path);
+    app_gs_walk_direction(player_c, player, destination);
+    app_gs_walk_direction(player_c, player, destination);
   }
 }
