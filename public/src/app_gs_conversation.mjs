@@ -15,7 +15,10 @@ export function app_gs_conversation(map_c, map, npc) {
   let menu_overlay = app_gs_menu_overlay(map_c, map);
   let introduction = string_combine_multiple([
     list_random_item([
-      string_combine_multiple(["I", list_random_item([" a", "'"]), "m called"]),
+      string_combine_multiple([
+        string_combine_multiple(["I", list_random_item([" a", "'"]), "m"]),
+        " called",
+      ]),
       "My name is",
       "I go by",
       "They call me",
