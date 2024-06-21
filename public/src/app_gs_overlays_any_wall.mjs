@@ -10,5 +10,5 @@ export function app_gs_overlays_any_wall(map, tile) {
     return true;
   }
   let matches = list_filter(map.overlays, (o) => app_gs_xy_equal(o, tile));
-  return w;
+  return list_any(matches, app_gs_overlay_wall_is);
 }
