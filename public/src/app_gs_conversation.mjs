@@ -31,19 +31,19 @@ export function app_gs_conversation(map_c, map, npc) {
     if (random_50_50() || true) {
       list_add(
         opening,
-        list_random_item([
-          string_combine_multiple([
-            app_gs_phrase_it_is(),
-            " ",
-            list_random_item(["good", "great", "wonderful", "nice"]),
-          ]),
-          string_combine_multiple([
-            app_gs_phrase_i_am(),
-            " ",
-            list_random_item(["happy", "glad"]),
-          ]),
-        ]),
         string_combine_multiple([
+          list_random_item([
+            string_combine_multiple([
+              app_gs_phrase_it_is(),
+              " ",
+              list_random_item(["good", "great", "wonderful", "nice"]),
+            ]),
+            string_combine_multiple([
+              app_gs_phrase_i_am(),
+              " ",
+              list_random_item(["happy", "glad"]),
+            ]),
+          ]),
           "to ",
           list_random_item(["talk to", "see"]),
           " you again",
