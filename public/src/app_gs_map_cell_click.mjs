@@ -7,7 +7,7 @@ import { app_gs_menu_overlay } from "./app_gs_menu_overlay.mjs";
 import { app_gs_map_neighbors_get } from "./app_gs_map_neighbors_get.mjs";
 import { app_gs_overlays_any_wall } from "./app_gs_overlays_any_wall.mjs";
 export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
-  let npc = list_find_property(tile.overlays, "type", "npc");
+  let npc = list_find_property(tile.overlays, "type", "npc", null);
   if (npc) {
     let neighbors = app_gs_map_neighbors_get(map, npc);
     let { path } = app_gs_map_path(map, neighbors);
