@@ -9,6 +9,7 @@ import { js_visit_identifiers } from "./js_visit_identifiers.mjs";
 import { js_parse_first_function } from "./js_parse_first_function.mjs";
 import { list_random_item } from "./list_random_item.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
+import { list_is } from "./list_is.mjs";
 export function js_dollar(ast) {
   js_visit_identifiers(ast, (v) => {
     let { node } = v;
@@ -41,6 +42,8 @@ export function js_dollar(ast) {
         let e = js_parse_expression(
           js_code_call_args(list_random_item.name, [js_code_brackets()]),
         );
+        if (list_is(parent)) {
+        }
         log({
           e,
           parent,
