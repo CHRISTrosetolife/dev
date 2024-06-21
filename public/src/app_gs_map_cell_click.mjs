@@ -1,3 +1,4 @@
+import { app_gs_div_rounded_transparent } from "./app_gs_div_rounded_transparent.mjs";
 import { app_gs_overlay_speech } from "./app_gs_overlay_speech.mjs";
 import { app_gs_conversation } from "./app_gs_conversation.mjs";
 import { html_remove } from "./html_remove.mjs";
@@ -51,6 +52,7 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
     } else {
       let menu_overlay = app_gs_menu_overlay(map_c, map);
       let div_npc = app_gs_overlay_speech(menu_overlay);
+      let npc_speech = app_gs_div_rounded_transparent(div_npc, npc_color, 75);
       html_button_width_full_text_click(
         menu_overlay,
         "❗You remember you have not 🙏 prayed, yet, before your next conversation.",
