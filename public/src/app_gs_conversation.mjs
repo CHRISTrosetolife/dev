@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { equal_1 } from "./equal_1.mjs";
 import { app_gs_phrase_exclaim_or_period } from "./app_gs_phrase_exclaim_or_period.mjs";
 import { random_50_50 } from "./random_50_50.mjs";
@@ -124,6 +125,9 @@ export function app_gs_conversation(map_c, map, npc) {
     ]),
   );
   npc.conversation_count++;
+  log({
+    npc,
+  });
   let text = string_combine_multiple([list_join_space(opening)]);
   let menu_overlay = app_gs_menu_overlay(map_c, map);
   let div_npc = app_gs_overlay_speech(menu_overlay);
