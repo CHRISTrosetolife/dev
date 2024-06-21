@@ -1,8 +1,4 @@
-import { app_gs_phrase_very } from "./app_gs_phrase_very.mjs";
-import { list_random_item_weighted } from "./list_random_item_weighted.mjs";
-import { html_style_rounded_padded } from "./html_style_rounded_padded.mjs";
-import { html_style_background_color_black_alpha } from "./html_style_background_color_black_alpha.mjs";
-import { html_p_text } from "./html_p_text.mjs";
+import { app_gs_conversation } from "./app_gs_conversation.mjs";
 import { html_remove } from "./html_remove.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { app_gs_sleep_time_face } from "./app_gs_sleep_time_face.mjs";
@@ -20,10 +16,6 @@ import { app_gs_menu_main } from "./app_gs_menu_main.mjs";
 import { app_gs_menu_overlay } from "./app_gs_menu_overlay.mjs";
 import { app_gs_map_neighbors_get } from "./app_gs_map_neighbors_get.mjs";
 import { app_gs_overlays_any_wall } from "./app_gs_overlays_any_wall.mjs";
-import { html_style_centered } from "./html_style_centered.mjs";
-import { html_style_font_color } from "./html_style_font_color.mjs";
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { list_random_item } from "./list_random_item.mjs";
 export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
   let npc = list_find_property_or(tile.overlays, "type", "npc", null);
   if (null_is(npc)) {
@@ -54,57 +46,7 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
       app_gs_walk_direction(player_c, player, npc);
       await sleep(sleep_time);
       app_gs_walk_direction(npc_c, npc, player);
-      let menu_overlay = app_gs_menu_overlay(map_c, map);
-      let text = string_combine_multiple([
-        "👋 ",
-        list_random_item(["Hello", "Hey", "Greetings", "Hi"]),
-        ", ",
-        map.player.name,
-        "! ",
-        list_random_item([
-          string_combine_multiple([
-            "I",
-            list_random_item([" a", "'"]),
-            "m called",
-          ]),
-          "My name is",
-          "I go by",
-          "They call me",
-          "You can call me",
-          "Please call me",
-        ]),
-        " ",
-        npc.name,
-        ". ",
-        list_random_item_weighted(
-          [3, 1],
-          [
-            string_combine_multiple([
-              "It",
-              list_random_item([" i", "'"]),
-              "s ",
-              app_gs_phrase_very(),
-              list_random_item(["wonderful", "nice"]),
-            ]),
-            "I am ",
-            app_gs_phrase_very(),
-            "pleased",
-          ],
-        ),
-        " to meet you!",
-      ]);
-      let p = html_p_text(menu_overlay, text);
-      html_style_background_color_black_alpha(p, 0.51);
-      html_style_centered(p);
-      html_style_rounded_padded(p);
-      html_style_font_color(p, "white");
-      html_button_width_full_text_click(
-        menu_overlay,
-        "👋 politely end the conversation after 🙏 praying",
-        () => {
-          html_remove(menu_overlay);
-        },
-      );
+      app_gs_conversation(map_c, map, npc);
     } else {
       let menu_overlay = app_gs_menu_overlay(map_c, map);
       html_button_width_full_text_click(
