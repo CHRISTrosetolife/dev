@@ -1,3 +1,4 @@
+import { html_style_units } from "./html_style_units.mjs";
 import { html_style } from "./html_style.mjs";
 import { html_div } from "./html_div.mjs";
 import { app_gs_overlay_speech } from "./app_gs_overlay_speech.mjs";
@@ -74,7 +75,7 @@ export function app_gs_conversation(map_c, map, npc) {
   html_inner_set(npc_speech, text);
   let spacer_vertical = html_div(input_container);
   html_style(spacer_vertical, {
-    height: "1vh",
+    height: html_style_units(2),
   });
   let div_player = app_gs_overlay_speech(menu_overlay);
   let prompt = html_p_text(div_player, "What would you like to do?");
