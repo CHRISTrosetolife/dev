@@ -65,18 +65,18 @@ export function app_gs_conversation(map_c, map, npc) {
     list_join_space(["👋", greeting, introduction, greeting_pleased]),
   ]);
   let menu_overlay = app_gs_menu_overlay(map_c, map);
-  let div = app_gs_overlay_speech(menu_overlay);
-  let npc_speaking = html_p_text(div, string_combine(npc.name, " says :"));
+  let div_npc = app_gs_overlay_speech(menu_overlay);
+  let npc_speaking = html_p_text(div_npc, string_combine(npc.name, " says :"));
   html_style_font_color(npc_speaking, "lightblue");
-  let npc_speech = app_gs_div_rounded_transparent(div, "lightblue", 50);
+  let npc_speech = app_gs_div_rounded_transparent(div_npc, "lightblue", 50);
   html_style_rounded_padded(npc_speech);
   html_inner_set(npc_speech, text);
-  html_style_centered(div);
-  html_style_rounded_padded(div);
-  let prompt = html_p_text(div, "What would you like to do?");
+  html_style_centered(div_npc);
+  html_style_rounded_padded(div_npc);
+  let prompt = html_p_text(div_npc, "What would you like to do?");
   html_style_font_color(prompt, "lightgreen");
   html_button_width_full_text_click(
-    div,
+    div_npc,
     "👋 politely end the conversation after 🙏 praying",
     () => {
       html_remove(menu_overlay);
