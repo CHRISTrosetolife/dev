@@ -73,7 +73,7 @@ export function app_gs_conversation(map_c, map, npc) {
   let npc_speech = app_gs_div_rounded_transparent(div_npc, "lightblue", 50);
   html_style_rounded_padded(npc_speech);
   html_inner_set(npc_speech, text);
-  let spacer_vertical = html_div(input_container);
+  let spacer_vertical = html_div(menu_overlay);
   html_style(spacer_vertical, {
     height: html_style_units(2),
   });
