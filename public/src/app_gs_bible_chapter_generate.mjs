@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { function_transform } from "./function_transform.mjs";
 import { function_exists } from "./function_exists.mjs";
 import { object_property_delete } from "./object_property_delete.mjs";
@@ -22,7 +23,15 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
   );
   let function_name = string_combine_multiple([prefix, chapter_name]);
   if (await function_exists(chapter_name)) {
-    await function_transform([(ast) => {}], function_name, []);
+    await function_transform(
+      [
+        (ast) => {
+          log({});
+        },
+      ],
+      function_name,
+      [],
+    );
   } else {
     let verses = await bible_chapter("engbsb", chapter_name);
     each(verses, (item) => {
