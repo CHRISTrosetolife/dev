@@ -31,7 +31,7 @@ export function js_dollar(ast) {
       let { parent } = v;
       let remaining = string_prefix_without(name, prefix);
       if (remaining === "a") {
-        let e = js_parse_expression(js_code_arrow_block([name]));
+        let e = js_parse_expression(js_code_arrow_block([]));
         object_replace(node, e);
       }
       if (remaining === "ar") {
