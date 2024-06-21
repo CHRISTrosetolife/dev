@@ -35,15 +35,15 @@ export function app_gs_conversation(map_c, map, npc) {
           app_gs_phrase_it_is(),
           " ",
           list_random_item(["good", "great", "wonderful", "nice"]),
-          "to ",
-          list_random_item(["talk to", "see"]),
-          " you again",
         ]),
         string_combine_multiple([
           app_gs_phrase_i_am(),
           " ",
           list_random_item(["happy", "glad"]),
         ]),
+        "to ",
+        list_random_item(["talk to", "see"]),
+        " you again",
       ]),
     );
   } else {
