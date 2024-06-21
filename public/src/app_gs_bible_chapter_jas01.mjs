@@ -10,7 +10,7 @@ export function app_gs_bible_chapter_jas01() {
       text: "Consider it pure joy, my brothers, when you encounter trials of many kinds,",
       objections: [
         {
-          text: "",
+          text: "My life is ",
           count: 1,
         },
       ],
