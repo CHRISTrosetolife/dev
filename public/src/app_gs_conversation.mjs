@@ -12,6 +12,7 @@ import { list_random_item_weighted } from "./list_random_item_weighted.mjs";
 import { list_random_item } from "./list_random_item.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_gs_menu_overlay } from "./app_gs_menu_overlay.mjs";
+import { string_combine } from "./string_combine.mjs";
 export function app_gs_conversation(map_c, map, npc) {
   let menu_overlay = app_gs_menu_overlay(map_c, map);
   let introduction = string_combine_multiple([
@@ -46,8 +47,7 @@ export function app_gs_conversation(map_c, map, npc) {
         ]),
         app_gs_phrase_i_am(),
         " ",
-        app_gs_phrase_very(),
-        "pleased",
+        string_combine([app_gs_phrase_very(), "pleased"]),
       ],
     ),
     " to meet you!",
