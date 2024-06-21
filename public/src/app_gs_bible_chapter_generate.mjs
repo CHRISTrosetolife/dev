@@ -1,3 +1,4 @@
+import { object_property_delete } from "./object_property_delete.mjs";
 import { each } from "./each.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
 import { js_code_array } from "./js_code_array.mjs";
@@ -21,6 +22,7 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
   let name = string_combine_multiple([prefix, chapter_name]);
   each(verses, (item) => {
     item.verse = list_join_space(item.tokens);
+    object_property_delete(item, "tokens");
   });
   let jsons = list_map(verses, json_to);
   await function_new_generic(
