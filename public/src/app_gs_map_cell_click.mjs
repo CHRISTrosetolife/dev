@@ -1,4 +1,4 @@
-import { app_gs_sleep_time_face } from "./app_gs_sleep_time_face.mjs";
+import { app_gs_sleep_time_walk } from "./app_gs_sleep_time_walk.mjs";
 import { sleep } from "./sleep.mjs";
 import { html_data_get } from "./html_data_get.mjs";
 import { list_find } from "./list_find.mjs";
@@ -37,7 +37,7 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
     );
     app_gs_walk_direction(player_c, map.player, npc);
     let sleep_time = app_gs_sleep_time_face();
-    await sleep(sleep_time / 2);
+    await sleep(sleep_time);
     app_gs_walk_direction(npc_c, npc, map.player);
   }
 }
