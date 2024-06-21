@@ -42,7 +42,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
   let tile_c = game_img(map_c, game_img_base(id), tile, "tile");
   game_img_style(clicker, tile.y, tile.x, "clicker");
   html_on_click(clicker, async () => {
-    let w = app_gs_overlays_any_wall(map, tile);
+    let w = app_gs_overlays_any_wall(tile);
     if (w) {
       return;
     }
