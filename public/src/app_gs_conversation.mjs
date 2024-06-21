@@ -13,9 +13,9 @@ import { app_gs_menu_overlay } from "./app_gs_menu_overlay.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 export function app_gs_conversation(map_c, map, npc) {
+  let menu_overlay = app_gs_menu_overlay(map_c, map);
   npc.conversation_count++;
   let text = app_gs_conversation_opening(map, npc);
-  let menu_overlay = app_gs_menu_overlay(map_c, map);
   let div_npc = app_gs_overlay_speech(menu_overlay);
   let npc_speaking = html_p_text(div_npc, string_combine(npc.name, " says :"));
   let npc_color = "lightblue";
