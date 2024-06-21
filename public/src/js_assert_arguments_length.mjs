@@ -10,7 +10,8 @@ export function js_assert_arguments_length(ast) {
   assert_arguments_length(arguments, 1);
   let d = js_declaration_single(ast);
   let { body: body_d } = d;
-  let { body: body_block } = body_d;
+  let { body: b } = body_d;
+  let body_block = b;
   if (list_empty_is(body_block)) {
     return;
   }
