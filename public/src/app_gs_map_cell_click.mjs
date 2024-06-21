@@ -45,6 +45,7 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
       app_gs_walk_direction(player_c, player, npc);
       await sleep(sleep_time);
       app_gs_walk_direction(npc_c, npc, player);
+      let menu_overlay = app_gs_menu_overlay(map_c, map);
     } else {
       let menu_overlay = app_gs_menu_overlay(map_c, map);
       html_button_width_full_text_click(
