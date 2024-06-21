@@ -13,6 +13,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
   let clicker = html_div(map_c);
   let overlays = list_adder((la) =>
     each(tile.overlays, function lambda_overlay(o) {
+      let overlay_c = 0;
       if (o.type === "base") {
         let { id: o_id } = o;
         html_data_set(clicker, "overlay", o_id);
