@@ -47,7 +47,7 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
       await sleep(sleep_time);
       app_gs_walk_direction(npc_c, npc, player);
       let menu_overlay = app_gs_menu_overlay(map_c, map);
-      html_p_text(menu_overlay, "hello");
+      let p = html_p_text(menu_overlay, "hello");
       html_button_width_full_text_click(
         menu_overlay,
         "politely end the conversation after praying",
