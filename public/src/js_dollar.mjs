@@ -59,6 +59,13 @@ export function js_dollar(ast) {
           object_replace(parent, e);
         }
       }
+      if (remaining === "s") {
+        return;
+        let e = js_parse_first_function("return");
+        if (parent.type === "ExpressionStatement") {
+          object_replace(parent, e);
+        }
+      }
     }
   });
 }
