@@ -38,6 +38,7 @@ export function app_gs_conversation(map_c, map, npc) {
     "!",
   ]);
   if (npc.meet !== true) {
+    npc.meet = treu;
   }
   let greeting_pleased = string_combine_multiple([
     list_random_item([
