@@ -34,7 +34,7 @@ export function app_gs_conversation(map_c, map, npc) {
   html_button_width_full_text_click(
     div_player,
     string_combine_multiple([
-      "Tell ",
+      "📖 Tell ",
       npc.name,
       " that Jesus ✝️ died, was 🪨 buried and 🤴🏽 rose to life",
     ]),
