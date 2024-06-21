@@ -1,3 +1,4 @@
+import { html_p_text } from "./html_p_text.mjs";
 import { html_remove } from "./html_remove.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { app_gs_sleep_time_face } from "./app_gs_sleep_time_face.mjs";
@@ -46,6 +47,7 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
       await sleep(sleep_time);
       app_gs_walk_direction(npc_c, npc, player);
       let menu_overlay = app_gs_menu_overlay(map_c, map);
+      html_p_text(menu_overlay, "hello");
     } else {
       let menu_overlay = app_gs_menu_overlay(map_c, map);
       html_button_width_full_text_click(
