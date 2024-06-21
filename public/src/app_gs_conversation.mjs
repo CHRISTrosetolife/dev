@@ -61,7 +61,9 @@ export function app_gs_conversation(map_c, map, npc) {
         ]),
       ]),
     ]),
-    " to meet you!",
+    " to ",
+    "meet you",
+    "!",
   ]);
   let text = string_combine_multiple([
     list_join_space(["👋", greeting, introduction, greeting_pleased]),
