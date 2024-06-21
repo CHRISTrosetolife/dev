@@ -15,13 +15,13 @@ import { json_to } from "./json_to.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 export async function app_gs_bible_chapter_generate(chapter_name) {
   chapter_name = string_case_lower(chapter_name);
+  let prefix = string_suffix_without(
+    app_gs_bible_chapter_generate.name,
+    "generate",
+  );
   let name = string_combine_multiple([prefix, chapter_name]);
   if (!(await function_exists(chapter_name))) {
     let verses = await bible_chapter("engbsb", chapter_name);
-    let prefix = string_suffix_without(
-      app_gs_bible_chapter_generate.name,
-      "generate",
-    );
     each(verses, (item) => {
       item.verse = list_join_space(item.tokens);
       object_property_delete(item, "tokens");
