@@ -45,32 +45,33 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
     let w = app_gs_overlays_any_wall(tile);
     if (w) {
       return;
-    }
-    let from = app_gs_map_at(map, map.player);
-    let path = graph_path_shortest_neighbors(
-      app_gs_map_tile_id,
-      (v) => {
-        return app_gs_map_neighbors_get(map, v);
-      },
-      from,
-      tile,
-    );
-    if (
-      list_all(list_xy(), (xy) =>
-        equal_by(map.player, tile, (coordinates) =>
-          object_property_get(coordinates, xy),
-        ),
-      )
-    ) {
-      let menu_overlay = app_gs_menu_overlay(map_c, map);
-      app_gs_menu_main(menu_overlay, map_c, map);
     } else {
-      app_gs_map_render(map, map_c, path, player_c);
-      await each_async(list_skip(path, 1), async (tile) => {
-        await app_gs_walk(player_c, map.player, tile);
-      });
-      await html_scroll_center_smooth(player_c);
-      app_gs_map_render(map, map_c, [map.player], player_c);
+      let from = app_gs_map_at(map, map.player);
+      let path = graph_path_shortest_neighbors(
+        app_gs_map_tile_id,
+        (v) => {
+          return app_gs_map_neighbors_get(map, v);
+        },
+        from,
+        tile,
+      );
+      if (
+        list_all(list_xy(), (xy) =>
+          equal_by(map.player, tile, (coordinates) =>
+            object_property_get(coordinates, xy),
+          ),
+        )
+      ) {
+        let menu_overlay = app_gs_menu_overlay(map_c, map);
+        app_gs_menu_main(menu_overlay, map_c, map);
+      } else {
+        app_gs_map_render(map, map_c, path, player_c);
+        await each_async(list_skip(path, 1), async (tile) => {
+          await app_gs_walk(player_c, map.player, tile);
+        });
+        await html_scroll_center_smooth(player_c);
+        app_gs_map_render(map, map_c, [map.player], player_c);
+      }
     }
   });
   return list_concat([tile_c, clicker], overlays);
