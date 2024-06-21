@@ -7,6 +7,6 @@ export function app_gs_div_rounded_alpha(parent, rgb, alpha) {
   html_style(menu, {
     padding: game_tile_units_css(0.25),
   });
-  html_style_background_color_alpha(menu, rgb, 0.25);
+  html_style_background_color_alpha(menu, rgb, alpha);
   return menu;
 }
