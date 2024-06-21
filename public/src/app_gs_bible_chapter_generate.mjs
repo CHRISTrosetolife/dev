@@ -41,11 +41,13 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
               "type",
               "Identifier",
             );
-            each(properties, (p) => {
-              log({
-                p,
+            if (0) {
+              each(properties, (p) => {
+                log({
+                  p,
+                });
               });
-            });
+            }
           });
         },
       ],
