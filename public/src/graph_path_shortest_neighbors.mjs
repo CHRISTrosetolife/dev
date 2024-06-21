@@ -10,6 +10,7 @@ import { list_size } from "./list_size.mjs";
 import { list_get } from "./list_get.mjs";
 import { assert } from "./assert.mjs";
 import { list_is } from "./list_is.mjs";
+import { list_includes } from "./list_includes.mjs";
 export function graph_path_shortest_neighbors(
   id_get,
   neighbors_get,
@@ -32,7 +33,7 @@ export function graph_path_shortest_neighbors(
     let r = list_get(remaining, index);
     index++;
     let { current } = r;
-    if (current === to) {
+    if (list_includes(to_any, current)) {
       result = list_adder((la) => {
         let c = r;
         while (c !== null) {
