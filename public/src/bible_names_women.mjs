@@ -1,1 +1,3 @@
-export function bible_names_women() {}
+export function bible_names_women() {
+  return;
+}
