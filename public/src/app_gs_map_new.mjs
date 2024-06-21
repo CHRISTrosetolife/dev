@@ -174,13 +174,13 @@ export function app_gs_map_new() {
     object_merge(o, {
       id,
     });
+    list_add(tile.overlays, o);
   }
   function overlay_add(tile, type) {
     let o = object_properties_new(tile, list_xy());
     object_merge(o, {
       type,
     });
-    list_add(tile.overlays, o);
     return o;
   }
   function inside_is(t) {
