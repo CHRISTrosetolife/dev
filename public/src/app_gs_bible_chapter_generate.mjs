@@ -18,7 +18,7 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
     "generate",
   );
   let name = string_combine_multiple([prefix, chapter_name]);
-  each((item) => {});
+  each(verses,(item) => {});
   let jsons = list_map(verses, json_to);
   await function_new_generic(
     name,
