@@ -1,3 +1,4 @@
+import { bible_names_men } from "./bible_names_men.mjs";
 import { app_gs_player_new } from "./app_gs_player_new.mjs";
 import { app_gs_overlays_bushes } from "./app_gs_overlays_bushes.mjs";
 import { object_copy } from "./object_copy.mjs";
@@ -162,6 +163,7 @@ export function app_gs_map_new() {
     npc.character = list_random_item(game_img_list_male());
     let o = overlay_add(tile, "npc");
     o.character = list_random_item(game_img_list_male());
+    o.name = list_random_item(bible_names_men());
   });
   app_gs_player_new(map);
   object_merge(map.player, spawn);
