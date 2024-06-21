@@ -33,7 +33,8 @@ export function graph_path_shortest_neighbors(
     let r = list_get(remaining, index);
     index++;
     let { current } = r;
-    if (list_filter(to_any, (to) => to === current)) {
+    let matches = list_filter(to_any, (to) => to === current);
+    if (matches) {
       result = list_adder((la) => {
         let c = r;
         while (c !== null) {
