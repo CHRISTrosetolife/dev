@@ -23,7 +23,7 @@ export function app_gs_conversation_opening(map, npc) {
         opening,
         string_combine_multiple([
           list_random_item([
-            string_combine_multiple([app_gs_phrase_it_is(), " ", "wonderful"]),
+            string_combine_multiple([app_gs_phrase_it_is(), " wonderful"]),
             string_combine_multiple([
               app_gs_phrase_it_is(),
               " ",
