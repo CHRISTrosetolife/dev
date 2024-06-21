@@ -49,7 +49,7 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
       let menu_overlay = app_gs_menu_overlay(map_c, map);
       html_button_width_full_text_click(
         menu_overlay,
-        "You remember you have not 🙏 prayed, yet, before your next conversation.",
+        "❗You remember you have not 🙏 prayed, yet, before your next conversation.",
         () => {
           html_remove(menu_overlay);
         },
