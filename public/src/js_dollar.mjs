@@ -4,7 +4,6 @@ import { exit } from "./exit.mjs";
 import { js_code_call } from "./js_code_call.mjs";
 import { js_code_braces } from "./js_code_braces.mjs";
 import { log } from "./log.mjs";
-import { js_code_brackets } from "./js_code_brackets.mjs";
 import { object_replace } from "./object_replace.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
@@ -48,7 +47,7 @@ export function js_dollar(ast) {
       }
       if (remaining === "lr") {
         let e = js_parse_expression(
-          js_code_call_args(list_random_item.name, [js_code_brackets()]),
+          js_code_call_args(list_random_item.name, [js_code_array_empty()]),
         );
         if (list_is(parent)) {
           let index = list_index(parent, node);
