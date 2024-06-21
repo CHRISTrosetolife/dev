@@ -27,6 +27,7 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
     let verses = await bible_chapter("engbsb", chapter_name);
     each(verses, (item) => {
       item.text = list_join_space(item.tokens);
+      item.objections = [];
       object_property_delete(item, "tokens");
       each_verse(item);
     });
