@@ -21,6 +21,7 @@ import { app_gs_overlays_any_wall } from "./app_gs_overlays_any_wall.mjs";
 import { html_style_centered } from "./html_style_centered.mjs";
 import { html_style_font_color } from "./html_style_font_color.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { list_random_item } from "./list_random_item.mjs";
 export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
   let npc = list_find_property_or(tile.overlays, "type", "npc", null);
   if (null_is(npc)) {
@@ -60,6 +61,7 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
           "! My name is ",
           npc.name,
           ". It is ",
+          list_random_item([""]),
           "nice to meet you!",
         ]),
       );
