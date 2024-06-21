@@ -1,3 +1,4 @@
+import { newFunction } from "./newFunction.mjs";
 import { random_50_50 } from "./random_50_50.mjs";
 import { html_style_units } from "./html_style_units.mjs";
 import { html_style } from "./html_style.mjs";
@@ -47,7 +48,7 @@ export function app_gs_conversation(map_c, map, npc) {
           " to ",
           list_random_item(["talk to", "see"]),
           " you again",
-          list_random_item([".", "!"]),
+          newFunction(),
         ]),
       );
     }
