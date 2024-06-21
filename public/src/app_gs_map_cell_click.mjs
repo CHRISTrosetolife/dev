@@ -28,20 +28,20 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
     }
   } else {
     let { player } = map;
-    if (player.pray !== true) {
+    if (player.pray.conversation === true) {
+      let neighbors = app_gs_map_neighbors_get(map, npc);
+      let { path } = app_gs_map_path(map, neighbors);
+      await app_gs_walk_path(map, map_c, player_c, path);
+      let tile_cs = app_gs_map_html_at(map, npc);
+      let npc_c = list_find(
+        tile_cs,
+        (tile_c) => html_data_get(tile_c, "type") === "npc",
+      );
+      let sleep_time = app_gs_sleep_time_face();
+      await sleep(sleep_time);
+      app_gs_walk_direction(player_c, player, npc);
+      await sleep(sleep_time);
+      app_gs_walk_direction(npc_c, npc, player);
     }
-    let neighbors = app_gs_map_neighbors_get(map, npc);
-    let { path } = app_gs_map_path(map, neighbors);
-    await app_gs_walk_path(map, map_c, player_c, path);
-    let tile_cs = app_gs_map_html_at(map, npc);
-    let npc_c = list_find(
-      tile_cs,
-      (tile_c) => html_data_get(tile_c, "type") === "npc",
-    );
-    let sleep_time = app_gs_sleep_time_face();
-    await sleep(sleep_time);
-    app_gs_walk_direction(player_c, player, npc);
-    await sleep(sleep_time);
-    app_gs_walk_direction(npc_c, npc, player);
   }
 }
