@@ -34,7 +34,9 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
           let { argument } = last;
           let { elements } = argument;
           each(elements, (element) => {
-            log({});
+            log({
+              element,
+            });
           });
         },
       ],
