@@ -53,13 +53,13 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
     } else {
       let menu_overlay = app_gs_menu_overlay(map_c, map);
       let div_pray_reminder = app_gs_overlay_speech(menu_overlay);
-      let npc_speech = app_gs_div_rounded_transparent(
+      let div_pray_reminder_inner = app_gs_div_rounded_transparent(
         div_pray_reminder,
         "white",
         75,
       );
       html_p_text(
-        npc_speech,
+        div_pray_reminder_inner,
         "❗You remember you have not 🙏 prayed, yet, before your next conversation.",
       );
       html_button_width_full_text_click(div_pray_reminder, () => {
