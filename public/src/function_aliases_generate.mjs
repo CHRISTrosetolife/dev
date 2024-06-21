@@ -1,3 +1,4 @@
+import { google_search_lucky } from "./google_search_lucky.mjs";
 import { function_transform_all } from "./function_transform_all.mjs";
 import { function_transform_all_args } from "./function_transform_all_args.mjs";
 import { function_cache_refresh } from "./function_cache_refresh.mjs";
@@ -66,7 +67,7 @@ export async function function_aliases_generate() {
   alias_add(function_transform_all_args, ["ftaa"]);
   alias_add(git_acp, ["gi"]);
   alias_add(google_search, ["g"]);
-  alias_add(google_search, ["g"]);
+  alias_add(google_search_lucky, ["gl"]);
   alias_add(git_index_lock_delete, ["gx"]);
   alias_add(http_server, ["h"]);
   alias_add(npm_install, ["i"]);
