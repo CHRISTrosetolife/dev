@@ -36,12 +36,6 @@ export function js_dollar(ast) {
         let e = js_parse_expression(js_code_call(exit.name));
         object_replace(node, e);
       }
-      if (remaining === "r") {
-        let e = js_parse_first_function("return");
-        if (parent.type === "ExpressionStatement") {
-          object_replace(parent, e);
-        }
-      }
       if (remaining === "l") {
         let e = js_parse_expression(
           js_code_call_args(log.name, [js_code_braces()]),
@@ -57,6 +51,12 @@ export function js_dollar(ast) {
           let next = list_remove_at(parent, index + 1);
           list_add(list_first(e.arguments).elements, next);
           object_replace(node, e);
+        }
+      }
+      if (remaining === "r") {
+        let e = js_parse_first_function("return");
+        if (parent.type === "ExpressionStatement") {
+          object_replace(parent, e);
         }
       }
     }
