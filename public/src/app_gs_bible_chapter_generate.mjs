@@ -10,6 +10,7 @@ import { string_case_lower } from "./string_case_lower.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
 import { string_suffix_without } from "./string_suffix_without.mjs";
 import { json_to } from "./json_to.mjs";
+import { list_join_space } from "./list_join_space.mjs";
 export async function app_gs_bible_chapter_generate(chapter_name) {
   let verses = await bible_chapter("engbsb", chapter_name);
   chapter_name = string_case_lower(chapter_name);
@@ -18,7 +19,9 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
     "generate",
   );
   let name = string_combine_multiple([prefix, chapter_name]);
-  each(verses,(item) => {});
+  each(verses, (item) => {
+    item.verse = list_join_space(item.tokens);
+  });
   let jsons = list_map(verses, json_to);
   await function_new_generic(
     name,
