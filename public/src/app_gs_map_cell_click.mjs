@@ -31,6 +31,7 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
   } else {
     let { player } = map;
     if (player.pray.conversation === true) {
+      player.pray.conversation = false;
       let neighbors = app_gs_map_neighbors_get(map, npc);
       let { path } = app_gs_map_path(map, neighbors);
       await app_gs_walk_path(map, map_c, player_c, path);
