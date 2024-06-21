@@ -1,5 +1,4 @@
 import { list_find_property } from "./list_find_property.mjs";
-import { log } from "./log.mjs";
 import { html_scroll_center_smooth } from "./html_scroll_center_smooth.mjs";
 import { app_gs_walk } from "./app_gs_walk.mjs";
 import { list_skip } from "./list_skip.mjs";
@@ -18,7 +17,8 @@ import { app_gs_map_at } from "./app_gs_map_at.mjs";
 import { app_gs_overlays_any_wall } from "./app_gs_overlays_any_wall.mjs";
 export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
   let npc = list_find_property(litile.overlaysst, "type", "npc");
-  log(npc);
+  if (npc) {
+  }
   let walls = app_gs_overlays_any_wall(tile);
   if (!walls) {
     let from = app_gs_map_at(map, map.player);
