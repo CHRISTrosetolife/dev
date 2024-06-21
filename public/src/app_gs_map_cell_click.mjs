@@ -15,8 +15,8 @@ import { graph_path_shortest_neighbors } from "./graph_path_shortest_neighbors.m
 import { app_gs_map_at } from "./app_gs_map_at.mjs";
 import { app_gs_overlays_any_wall } from "./app_gs_overlays_any_wall.mjs";
 export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
-  let w = app_gs_overlays_any_wall(tile);
-  if (!w) {
+  let walls = app_gs_overlays_any_wall(tile);
+  if (!walls) {
     let from = app_gs_map_at(map, map.player);
     let path = graph_path_shortest_neighbors(
       app_gs_map_tile_id,
