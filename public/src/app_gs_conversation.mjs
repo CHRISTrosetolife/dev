@@ -36,9 +36,7 @@ export function app_gs_conversation(map_c, map, npc) {
   let greeting_pleased = string_combine_multiple([
     list_random_item([
       string_combine_multiple([
-        "It",
-        list_random_item([" i", "'"]),
-        "s",
+        string_combine_multiple(["It", list_random_item([" i", "'"]), "s"]),
         " ",
         app_gs_phrase_very(),
         list_random_item(["wonderful", "nice"]),
