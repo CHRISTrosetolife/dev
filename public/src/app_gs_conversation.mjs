@@ -70,7 +70,7 @@ export function app_gs_conversation(map_c, map, npc) {
   html_style_rounded_padded(div);
   html_style_font_color(div, "white");
   html_button_width_full_text_click(
-    menu_overlay,
+    div,
     "👋 politely end the conversation after 🙏 praying",
     () => {
       html_remove(menu_overlay);
