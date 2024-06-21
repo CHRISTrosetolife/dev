@@ -69,6 +69,7 @@ export function app_gs_conversation(map_c, map, npc) {
   html_style_centered(div);
   html_style_rounded_padded(div);
   html_style_font_color(div, "white");
+  html_p_text(div, "What would you like to do?");
   html_button_width_full_text_click(
     div,
     "👋 politely end the conversation after 🙏 praying",
