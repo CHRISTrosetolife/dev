@@ -160,6 +160,7 @@ export function app_gs_map_new() {
   let npc_count = 1;
   each_range(npc_count, () => {
     let npc = object_copy(spawn);
+    npc.conversation_count = 0;
     let tile = list_pop(inside);
     npc.character = list_random_item(game_img_list_male());
     let o = overlay_add(tile, "npc");
