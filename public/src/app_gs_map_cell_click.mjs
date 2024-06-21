@@ -77,7 +77,8 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
             [3, 1],
             [
               string_combine_multiple([
-                "It is ",
+                "It is",
+                " ",
                 app_gs_phrase_very(),
                 list_random_item(["wonderful", "nice"]),
               ]),
