@@ -1,4 +1,5 @@
-import { html_spacer_vertical } from "./html_spacer_vertical.mjs";
+import { html_style } from "./html_style.mjs";
+import { html_div } from "./html_div.mjs";
 import { app_gs_overlay_speech } from "./app_gs_overlay_speech.mjs";
 import { app_gs_div_rounded_transparent } from "./app_gs_div_rounded_transparent.mjs";
 import { html_style_font_color } from "./html_style_font_color.mjs";
@@ -71,7 +72,10 @@ export function app_gs_conversation(map_c, map, npc) {
   let npc_speech = app_gs_div_rounded_transparent(div_npc, "lightblue", 50);
   html_style_rounded_padded(npc_speech);
   html_inner_set(npc_speech, text);
-  html_spacer_vertical(menu_overlay);
+  let spacer_vertical = html_div(input_container);
+  html_style(spacer_vertical, {
+    height: "1vh",
+  });
   let div_player = app_gs_overlay_speech(menu_overlay);
   let prompt = html_p_text(div_player, "What would you like to do?");
   html_style_font_color(prompt, "lightgreen");
