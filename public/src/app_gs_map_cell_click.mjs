@@ -18,6 +18,7 @@ import { app_gs_menu_main } from "./app_gs_menu_main.mjs";
 import { app_gs_menu_overlay } from "./app_gs_menu_overlay.mjs";
 import { app_gs_map_neighbors_get } from "./app_gs_map_neighbors_get.mjs";
 import { app_gs_overlays_any_wall } from "./app_gs_overlays_any_wall.mjs";
+import { html_p_text } from "./html_p_text.mjs";
 export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
   let npc = list_find_property_or(tile.overlays, "type", "npc", null);
   if (null_is(npc)) {
@@ -57,13 +58,13 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
         "white",
         75,
       );
-      html_button_width_full_text_click(
-        menu_overlay,
+      html_p_text(
+        npc_speech,
         "❗You remember you have not 🙏 prayed, yet, before your next conversation.",
-        () => {
-          html_remove(menu_overlay);
-        },
       );
+      html_button_width_full_text_click(menu_overlay, () => {
+        html_remove(menu_overlay);
+      });
     }
   }
 }
