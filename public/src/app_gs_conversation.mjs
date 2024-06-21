@@ -17,7 +17,6 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_gs_menu_overlay } from "./app_gs_menu_overlay.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
-import { list_add_multiple } from "./list_add_multiple.mjs";
 import { list_add } from "./list_add.mjs";
 export function app_gs_conversation(map_c, map, npc) {
   let greeting = string_combine_multiple([
@@ -44,7 +43,7 @@ export function app_gs_conversation(map_c, map, npc) {
       npc.name,
       ".",
     ]);
-    list_add_multiple(opening, [introduction, greeting_pleased]);
+    list_add(opening, introduction);
     let greeting_pleased = string_combine_multiple([
       list_random_item([
         string_combine_multiple([
