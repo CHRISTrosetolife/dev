@@ -54,7 +54,9 @@ export function js_dollar(ast) {
           log(js_unparse(e));
           exit();
           object_replace(node, e);
-          list_remove_at(parent, index + 1);
+          let newLocal = index + 1;
+          list_remove_at(parent, 
+          newLocal);
         }
       }
     }
