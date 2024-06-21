@@ -33,8 +33,7 @@ export function js_dollar(ast) {
       }
       if (remaining === "l") {
         let e = js_parse_expression(
-          js_code_call_args(log.name),
-          js_code_braces(),
+          js_code_call_args(log.name, js_code_braces()),
         );
         log({
           e,
