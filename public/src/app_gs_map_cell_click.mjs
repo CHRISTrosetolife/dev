@@ -43,6 +43,7 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
       await sleep(sleep_time);
       app_gs_walk_direction(npc_c, npc, player);
     } else {
+      let menu_overlay = app_gs_menu_overlay(map_c, map);
     }
   }
 }
