@@ -17,6 +17,7 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_gs_menu_overlay } from "./app_gs_menu_overlay.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { html_style } from "./html_style.mjs";
+import { html_inner_set } from "./html_inner_set.mjs";
 export function app_gs_conversation(map_c, map, npc) {
   let menu_overlay = app_gs_menu_overlay(map_c, map);
   let introduction = string_combine_multiple([
@@ -69,7 +70,7 @@ export function app_gs_conversation(map_c, map, npc) {
   let npc_speaking = html_p_text(div, string_combine(npc.name, " says :"));
   html_style_font_color(npc_speaking, "lightblue");
   let npc_speech = app_gs_div_rounded_alpha(parent, "0,0,0", 0.25);
-  html_p_text(div, text);
+  html_inner_set(div, npc_speech);
   html_style_background_color_black_alpha(div, 0.51);
   html_style_centered(div);
   html_style_rounded_padded(div);
