@@ -30,13 +30,15 @@ export function app_gs_conversation(map_c, map, npc) {
   if (npc.meet === true) {
     list_add(
       opening,
-      string_combine_multiple([
-        app_gs_phrase_it_is(),
-        " ",
-        list_random_item(["good", "great", "wonderful", "nice"]),
-        "to ",
-        list_random_item(["talk to", "see"]),
-        " you again",
+      list_random_item([
+        string_combine_multiple([
+          app_gs_phrase_it_is(),
+          " ",
+          list_random_item(["good", "great", "wonderful", "nice"]),
+          "to ",
+          list_random_item(["talk to", "see"]),
+          " you again",
+        ]),
       ]),
     );
   } else {
