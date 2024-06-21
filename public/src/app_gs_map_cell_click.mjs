@@ -1,4 +1,4 @@
-import { app_gs_conversation } from "./app_gs_conversation.mjs";
+import { app_gs_conversation } from "./app_gs_conversation.1.mjs";
 import { html_remove } from "./html_remove.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { app_gs_sleep_time_face } from "./app_gs_sleep_time_face.mjs";
