@@ -60,11 +60,7 @@ export function app_gs_conversation(map_c, map, npc) {
         "My name is",
         "I go by",
         string_combine_multiple([
-          list_random_item([
-            "They call me",
-            "You can call me",
-            "Please call me",
-          ]),
+          list_random_item(["They", "You can", "Please"]),
           "call me",
         ]),
       ]),
