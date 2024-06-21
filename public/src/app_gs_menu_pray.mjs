@@ -16,6 +16,7 @@ export function app_gs_menu_pray(menu_overlay, map_c, map) {
       "go before me and prepare",
       "be with",
       "have Your will be done in",
+      "give me the words to say for",
     ]),
     " my next 👥 conversation, in the name of Jesus, amen.",
   ]);
