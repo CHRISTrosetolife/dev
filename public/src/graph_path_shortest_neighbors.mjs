@@ -45,7 +45,7 @@ export function graph_path_shortest_neighbors(
           c = v.previous;
         }
       });
-      list_reverse(result);
+      list_reverse(path);
       break;
     }
     let neighbors = neighbors_get(current);
