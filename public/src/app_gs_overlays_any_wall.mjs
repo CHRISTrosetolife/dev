@@ -6,6 +6,6 @@ import { list_filter } from "./list_filter.mjs";
 export function app_gs_overlays_any_wall(map, tile) {
   assert_arguments_length(arguments, 2);
   let w = list_any(tile.overlays, app_gs_overlay_wall_is);
-  list_filter(map.overlays, (o) => app_gs_xy_equal(o, tile));
+  let matches = list_filter(map.overlays, (o) => app_gs_xy_equal(o, tile));
   return w;
 }
