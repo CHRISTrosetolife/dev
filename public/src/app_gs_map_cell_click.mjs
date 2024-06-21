@@ -1,3 +1,4 @@
+import { list_find } from "./list_find.mjs";
 import { app_gs_map_html_at } from "./app_gs_map_html_at.mjs";
 import { app_gs_walk_direction } from "./app_gs_walk_direction.mjs";
 import { list_find_property_or } from "./list_find_property_or.mjs";
@@ -28,6 +29,7 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
     await app_gs_walk_path(map, map_c, player_c, path);
     if (0) {
       let tile_cs = app_gs_map_html_at(map, npc);
+      list_find();
       app_gs_walk_direction(player_c, player, destination);
       app_gs_walk_direction(player_c, player, destination);
     }
