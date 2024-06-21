@@ -1,3 +1,4 @@
+import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
 import { app_gs_menu_tiles } from "./app_gs_menu_tiles.mjs";
 import { app_gs_menu_system_logs } from "./app_gs_menu_system_logs.mjs";
 import { html_remove } from "./html_remove.mjs";
@@ -8,7 +9,7 @@ export function app_gs_menu_main(menu_overlay, map_c, map) {
   let back_on_click = () => {
     html_remove(menu_overlay);
   };
-  html_button_width_full_text_click(menu_overlay, "⬅️ back", back_on_click);
+  html_button_width_full_text_click_back(menu_overlay, back_on_click);
   html_button_width_full_text_click(menu_overlay, "pray", () => {
     html_remove(menu_overlay);
   });
