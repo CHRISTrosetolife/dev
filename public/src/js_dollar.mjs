@@ -12,6 +12,7 @@ import { js_code_call_args } from "./js_code_call_args.mjs";
 import { list_is } from "./list_is.mjs";
 import { list_index } from "./list_index.mjs";
 import { list_add } from "./list_add.mjs";
+import { list_remove_at } from "./list_remove_at.mjs";
 export function js_dollar(ast) {
   js_visit_identifiers(ast, (v) => {
     let { node } = v;
@@ -46,8 +47,8 @@ export function js_dollar(ast) {
         );
         if (list_is(parent)) {
           let index = list_index(parent, node);
-          index + 1;
           list_add(e.arguments.elements, node);
+          list_remove_at(parent, index + 1);
         }
       }
     }
