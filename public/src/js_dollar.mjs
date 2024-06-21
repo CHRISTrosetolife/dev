@@ -72,9 +72,7 @@ export function js_dollar(ast) {
               js_code_array_empty(),
             ]),
           );
-          log({
-            e: list_first(e.arguments).elements,
-          });
+          let es = list_first(e.arguments).elements;
           return;
           let index = list_index(parent, node);
           let next_index = index + 1;
