@@ -22,6 +22,7 @@ import { string_combine } from "./string_combine.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 import { list_add } from "./list_add.mjs";
 export function app_gs_conversation(map_c, map, npc) {
+  npc.conversation_count++;
   let greeting = string_combine_multiple([
     list_random_item(["Hello", "Hey", "Greetings", "Hi"]),
     ", ",
