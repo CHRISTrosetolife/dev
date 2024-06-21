@@ -1,3 +1,4 @@
+import { js_declaration_single_body } from "./js_declaration_single_body.mjs";
 import { log } from "./log.mjs";
 import { function_transform } from "./function_transform.mjs";
 import { function_exists } from "./function_exists.mjs";
@@ -26,6 +27,7 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
     await function_transform(
       [
         (ast) => {
+          let body_block = js_declaration_single_body(ast);
           log({});
         },
       ],
