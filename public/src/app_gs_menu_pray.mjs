@@ -12,7 +12,7 @@ export function app_gs_menu_pray(menu_overlay, map_c, map) {
     menu_overlay,
     "🙏 God, please bless my next 👥 conversation, in the name of Jesus, amen.",
     () => {
-      app_gs_menu_system_logs(menu_overla, map_c, map);
+      app_gs_menu_system_logs(menu_overlay, map_c, map);
     },
   );
 }
