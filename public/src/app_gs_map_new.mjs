@@ -2,7 +2,6 @@ import { log } from "./log.mjs";
 import { bible_names_men } from "./bible_names_men.mjs";
 import { app_gs_player_new } from "./app_gs_player_new.mjs";
 import { app_gs_overlays_bushes } from "./app_gs_overlays_bushes.mjs";
-import { object_copy } from "./object_copy.mjs";
 import { app_gs_map_extends } from "./app_gs_map_extends.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { object_properties_new } from "./object_properties_new.mjs";
@@ -161,15 +160,14 @@ export function app_gs_map_new() {
   object_merge(map.player, spawn);
   let npc_count = 1;
   each_range(npc_count, () => {
-    let npc = object_copy(spawn);
-    npc.conversation_count = 0;
     let tile = list_pop(inside);
     npc.character = list_random_item(game_img_list_male());
-    let o = overlay_add(tile, "npc");
-    o.character = list_random_item(game_img_list_male());
+    let npc = overlay_add(tile, "npc");
+    npc.character = list_random_item(game_img_list_male());
     let choices = bible_names_men();
     list_remove(choices, map.player.name);
-    o.name = list_random_item(choices);
+    npc.name = list_random_item(choices);
+    npc.conversation_count = 0;
     log({
       npc,
     });
