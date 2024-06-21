@@ -1,3 +1,4 @@
+import { html_remove } from "./html_remove.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { app_gs_sleep_time_face } from "./app_gs_sleep_time_face.mjs";
 import { sleep } from "./sleep.mjs";
@@ -49,7 +50,7 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
         menu_overlay,
         "you remember you have not prayed, yet, before your next conversation",
         () => {
-          app_gs_menu_main(menu_overlay, map_c, map);
+          html_remove(menu_overlay);
         },
       );
     }
