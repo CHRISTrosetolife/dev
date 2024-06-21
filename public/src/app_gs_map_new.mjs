@@ -1,3 +1,4 @@
+import { app_gs_player_new } from "./app_gs_player_new.mjs";
 import { app_gs_overlays_bushes } from "./app_gs_overlays_bushes.mjs";
 import { object_copy } from "./object_copy.mjs";
 import { app_gs_map_extends } from "./app_gs_map_extends.mjs";
@@ -162,10 +163,7 @@ export function app_gs_map_new() {
     let o = overlay_add(tile, "npc");
     o.character = list_random_item(game_img_list_male());
   });
-  map.player = {};
-  map.player.walk_offset = 0;
-  map.player.walk_previous = 1;
-  map.player.character = list_random_item(game_img_list_male());
+  app_gs_player_new(map);
   object_merge(map.player, spawn);
   return map;
   function overlay_add_base(tile, id) {
