@@ -58,7 +58,7 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
       html_style_font_color(p, "white");
       html_button_width_full_text_click(
         menu_overlay,
-        "politely end the conversation after praying",
+        "👋 politely end the conversation after 🙏 praying",
         () => {
           html_remove(menu_overlay);
         },
