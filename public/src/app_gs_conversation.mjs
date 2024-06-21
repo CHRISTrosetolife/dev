@@ -99,6 +99,7 @@ export function app_gs_conversation(map_c, map, npc) {
     opening,
     string_combine_multiple([
       "What ",
+      $s2,
       list_random_item(["do you want", "would you like"]),
       " to talk about?",
     ]),
