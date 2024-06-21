@@ -47,7 +47,7 @@ export function js_dollar(ast) {
           let index = list_index(parent, node);
           index + 1;
           log({
-            e: e.arguments,
+            e: e.arguments.elements,
           });
         }
       }
