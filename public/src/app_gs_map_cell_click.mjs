@@ -54,7 +54,13 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
       let menu_overlay = app_gs_menu_overlay(map_c, map);
       let p = html_p_text(
         menu_overlay,
-        string_combine_multiple(["👋 hello, ", map.player.name]),
+        string_combine_multiple([
+          "👋 hello, ",
+          map.player.name,
+          "! My name is ",
+          npc.name,
+          ". It is nice to meet you !",
+        ]),
       );
       html_style_background_color_black_alpha(p, 0.51);
       html_style_centered(p);
