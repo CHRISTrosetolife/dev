@@ -18,19 +18,6 @@ import { app_gs_menu_overlay } from "./app_gs_menu_overlay.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 export function app_gs_conversation(map_c, map, npc) {
-  let introduction = string_combine_multiple([
-    list_random_item([
-      string_combine_multiple([app_gs_phrase_i_am(), " called"]),
-      "My name is",
-      "I go by",
-      "They call me",
-      "You can call me",
-      "Please call me",
-    ]),
-    " ",
-    npc.name,
-    ".",
-  ]);
   let greeting = string_combine_multiple([
     list_random_item(["Hello", "Hey", "Greetings", "Hi"]),
     ", ",
@@ -40,6 +27,19 @@ export function app_gs_conversation(map_c, map, npc) {
   let opening = ["👋", greeting];
   if (npc.meet !== true) {
     npc.meet = true;
+    let introduction = string_combine_multiple([
+      list_random_item([
+        string_combine_multiple([app_gs_phrase_i_am(), " called"]),
+        "My name is",
+        "I go by",
+        "They call me",
+        "You can call me",
+        "Please call me",
+      ]),
+      " ",
+      npc.name,
+      ".",
+    ]);
     let greeting_pleased = string_combine_multiple([
       list_random_item([
         string_combine_multiple([
