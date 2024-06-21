@@ -32,6 +32,7 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
           let body_block = js_declaration_single_body(ast);
           let last = list_last(body_block);
           let { argument } = last;
+          let elements = argument;
           log({
             last,
           });
