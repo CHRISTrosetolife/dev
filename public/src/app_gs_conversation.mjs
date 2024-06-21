@@ -99,15 +99,17 @@ export function app_gs_conversation(map_c, map, npc) {
     opening,
     string_combine_multiple([
       "What",
-      " ",
-      list_random_item([
-        string_combine_multiple([
-          "is on your ",
-          list_random_item(["heart", "mind"]),
-        ]),
-        string_combine_multiple([
-          list_random_item(["do you want", "would you like"]),
-          " to talk about",
+      string_combine_multiple([
+        " ",
+        list_random_item([
+          string_combine_multiple([
+            "is on your ",
+            list_random_item(["heart", "mind"]),
+          ]),
+          string_combine_multiple([
+            list_random_item(["do you want", "would you like"]),
+            " to talk about",
+          ]),
         ]),
       ]),
       "?",
