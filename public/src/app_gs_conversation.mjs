@@ -73,10 +73,11 @@ export function app_gs_conversation(map_c, map, npc) {
   html_inner_set(npc_speech, text);
   html_style_centered(div_npc);
   html_style_rounded_padded(div_npc);
-  let prompt = html_p_text(div_npc, "What would you like to do?");
+  let div_player = app_gs_overlay_speech(menu_overlay);
+  let prompt = html_p_text(div_player, "What would you like to do?");
   html_style_font_color(prompt, "lightgreen");
   html_button_width_full_text_click(
-    div_npc,
+    div_player,
     "👋 politely end the conversation after 🙏 praying",
     () => {
       html_remove(menu_overlay);
