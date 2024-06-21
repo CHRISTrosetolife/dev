@@ -1,3 +1,4 @@
+import { random_50_50 } from "./random_50_50.mjs";
 import { html_style_units } from "./html_style_units.mjs";
 import { html_style } from "./html_style.mjs";
 import { html_div } from "./html_div.mjs";
@@ -44,32 +45,34 @@ export function app_gs_conversation(map_c, map, npc) {
       ".",
     ]);
     list_add(opening, introduction);
-    let greeting_pleased = string_combine_multiple([
-      list_random_item([
-        string_combine_multiple([
-          app_gs_phrase_it_is(),
-          " ",
-          list_random_item([
-            "my pleasure",
-            string_combine(
-              app_gs_phrase_very(),
-              list_random_item(["wonderful", "nice"]),
-            ),
+    if (random_50_50()) {
+      let greeting_pleased = string_combine_multiple([
+        list_random_item([
+          string_combine_multiple([
+            app_gs_phrase_it_is(),
+            " ",
+            list_random_item([
+              "my pleasure",
+              string_combine(
+                app_gs_phrase_very(),
+                list_random_item(["wonderful", "nice"]),
+              ),
+            ]),
+          ]),
+          string_combine_multiple([
+            app_gs_phrase_i_am(),
+            " ",
+            list_random_item([
+              "happy",
+              string_combine(app_gs_phrase_very(), "pleased"),
+            ]),
           ]),
         ]),
-        string_combine_multiple([
-          app_gs_phrase_i_am(),
-          " ",
-          list_random_item([
-            "happy",
-            string_combine(app_gs_phrase_very(), "pleased"),
-          ]),
-        ]),
-      ]),
-      " to ",
-      "meet you",
-      "!",
-    ]);
+        " to ",
+        "meet you",
+        "!",
+      ]);
+    }
   }
   let text = string_combine_multiple([list_join_space(opening)]);
   let menu_overlay = app_gs_menu_overlay(map_c, map);
