@@ -72,7 +72,7 @@ export function app_gs_map_new() {
   );
   each(spawn_overlap, (s) => list_remove(inside, s));
   each(outside, (tile) => {
-    let overlay_id = list_random_item(overlays_wall);
+    let overlay_id;
     let x_even = tile.x % 2 === 0;
     let y_even = tile.y % 2 === 0;
     if (x_even === y_even) {
