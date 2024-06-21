@@ -59,4 +59,5 @@ to more easily run these commands from the terminal , run :
 to make a new function :
 
 `> node run_git.mjs n function_name`
+
 `> node run_git.mjs na function_name arg1,arg2,arg3`
