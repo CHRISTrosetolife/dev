@@ -39,10 +39,12 @@ export function app_gs_conversation(map_c, map, npc) {
       string_combine_multiple([
         app_gs_phrase_it_is(),
         " ",
-        string_combine(
-          app_gs_phrase_very(),
-          list_random_item(["wonderful", "nice"]),
-        ),
+        list_random_item([
+          string_combine(
+            app_gs_phrase_very(),
+            list_random_item(["wonderful", "nice"]),
+          ),
+        ]),
       ]),
       string_combine_multiple([
         app_gs_phrase_i_am(),
