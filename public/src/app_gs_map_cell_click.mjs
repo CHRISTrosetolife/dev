@@ -72,14 +72,17 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
           " ",
           npc.name,
           ". ",
-          list_random_item_weighted([
-            string_combine_multiple([
-              "It is ",
-              list_random_item(["so ", "very ", ""]),
-              list_random_item(["wonderful", "nice"]),
-            ]),
-            "I am pleased",
-          ]),
+          list_random_item_weighted(
+            [3, 1],
+            [
+              string_combine_multiple([
+                "It is ",
+                list_random_item(["so ", "very ", ""]),
+                list_random_item(["wonderful", "nice"]),
+              ]),
+              "I am pleased",
+            ],
+          ),
           " to meet you!",
         ]),
       );
