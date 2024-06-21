@@ -1,3 +1,4 @@
+import { exit } from "./exit.mjs";
 import { js_code_braces } from "./js_code_braces.mjs";
 import { log } from "./log.mjs";
 import { js_code_brackets } from "./js_code_brackets.mjs";
@@ -52,6 +53,7 @@ export function js_dollar(ast) {
           log({
             e,
           });
+          exit();
           object_replace(node, e);
           list_remove_at(parent, index + 1);
         }
