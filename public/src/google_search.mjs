@@ -6,8 +6,7 @@ export async function google_search(query) {
   assert_arguments_length(arguments, 1);
   let url = string_combine_multiple([
     url_secure_w3(),
-    "google.com/search?",
-    "q=",
+    "google.com/search?q=",
     query,
   ]);
   await browser_open(url);
