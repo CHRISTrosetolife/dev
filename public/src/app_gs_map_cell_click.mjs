@@ -10,10 +10,6 @@ import { app_gs_overlays_any_wall } from "./app_gs_overlays_any_wall.mjs";
 export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
   let npc = list_find_property(tile.overlays, "type", "npc", null);
   if (null_is(npc)) {
-    let neighbors = app_gs_map_neighbors_get(map, npc);
-    let { path } = app_gs_map_path(map, neighbors);
-    await app_gs_walk_path(map, map_c, player_c, path);
-  } else {
     let walls = app_gs_overlays_any_wall(tile);
     if (!walls) {
       let { path } = app_gs_map_path(map, [tile]);
@@ -24,5 +20,9 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
         await app_gs_walk_path(map, map_c, player_c, path);
       }
     }
+  } else {
+    let neighbors = app_gs_map_neighbors_get(map, npc);
+    let { path } = app_gs_map_path(map, neighbors);
+    await app_gs_walk_path(map, map_c, player_c, path);
   }
 }
