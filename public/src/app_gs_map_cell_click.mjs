@@ -30,7 +30,10 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
     await app_gs_walk_path(map, map_c, player_c, path);
     if (0) {
       let tile_cs = app_gs_map_html_at(map, npc);
-      list_find(tile_cs, (tile_c) => html_data_get(tile_c, "type") === "npc");
+      let npc_c = list_find(
+        tile_cs,
+        (tile_c) => html_data_get(tile_c, "type") === "npc",
+      );
       app_gs_walk_direction(player_c, player, destination);
       app_gs_walk_direction(player_c, player, destination);
     }
