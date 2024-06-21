@@ -20,6 +20,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
         la(i);
       } else if (o.type === "npc") {
         let npc_c = app_gs_player_c_generic(map_c, o.character, o);
+        html_data_set(npc_c, "type", "npc");
       }
     }),
   );
