@@ -150,7 +150,9 @@ export function js_dollar(ast) {
     return (
       p1 &&
       list_all(prefixes, (p) => {
-        !string_starts_with(remaining, p) || string_starts_with(prefix, p);
+        {
+          !string_starts_with(remaining, p) || string_starts_with(prefix, p);
+        }
       })
     );
   }
