@@ -14,6 +14,7 @@ import { object_merge } from "./object_merge.mjs";
 import { each_index } from "./each_index.mjs";
 import { app_gs_bible_chapter_jas01 } from "./app_gs_bible_chapter_jas01.mjs";
 import { list_adder } from "./list_adder.mjs";
+import { list_shuffle } from "./list_shuffle.mjs";
 export function app_gs_conversation_witness(menu_overlay, npc) {
   let book_name = "James";
   let chapter = "1";
@@ -35,6 +36,7 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
       });
     }),
   );
+  list_shuffle(objectables);
   let objectable = list_random_item(objectables);
   let {
     verse: { index },
