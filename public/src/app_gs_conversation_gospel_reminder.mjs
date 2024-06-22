@@ -1,9 +1,9 @@
+import { app_gs_conversation_npc_opening } from "./app_gs_conversation_npc_opening.mjs";
 import { app_gs_phrase_worship_multiple_or_empty } from "./app_gs_phrase_worship_multiple_or_empty.mjs";
 import { app_gs_phrase_combine_multiple } from "./app_gs_phrase_combine_multiple.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
 import { app_gs_phrase_jesus } from "./app_gs_phrase_jesus.mjs";
 import { app_gs_phrase_gospel_verbs } from "./app_gs_phrase_gospel_verbs.mjs";
-import { app_gs_conversation_npc_root } from "./app_gs_conversation_npc_root.mjs";
 import { app_gs_phrase_doxology } from "./app_gs_phrase_doxology.mjs";
 import { app_gs_phrase_the_gospel } from "./app_gs_phrase_the_gospel.mjs";
 import { string_random_or_empty } from "./string_random_or_empty.mjs";
@@ -40,5 +40,5 @@ export function app_gs_conversation_gospel_reminder(menu_overlay, npc, map) {
     app_gs_phrase_worship_multiple_or_empty(),
     list,
   ]);
-  app_gs_conversation_npc_root(menu_overlay, npc, text, map);
+  app_gs_conversation_npc_opening(menu_overlay, npc, text, map);
 }

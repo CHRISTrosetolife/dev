@@ -1,9 +1,9 @@
+import { app_gs_conversation_npc_opening } from "./app_gs_conversation_npc_opening.mjs";
 import { app_gs_phrase_i_am } from "./app_gs_phrase_i_am.mjs";
 import { app_gs_phrase_convinced } from "./app_gs_phrase_convinced.mjs";
 import { app_gs_phrase_thanks } from "./app_gs_phrase_thanks.mjs";
 import { app_gs_phrase_gospel_verbs } from "./app_gs_phrase_gospel_verbs.mjs";
 import { app_gs_phrase_combine_multiple } from "./app_gs_phrase_combine_multiple.mjs";
-import { app_gs_conversation_npc_root } from "./app_gs_conversation_npc_root.mjs";
 import { app_gs_phrase_doxology_or_empty } from "./app_gs_phrase_doxology_or_empty.mjs";
 import { app_gs_phrase_the_gospel } from "./app_gs_phrase_the_gospel.mjs";
 import { app_gs_phrase_jesus } from "./app_gs_phrase_jesus.mjs";
@@ -14,7 +14,7 @@ import { app_gs_phrase_worship_multiple_or_empty } from "./app_gs_phrase_worship
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export function app_gs_conversation_gospel_convert(menu_overlay, npc, map) {
   npc.christian = true;
-  app_gs_conversation_npc_root(
+  app_gs_conversation_npc_opening(
     menu_overlay,
     npc,
     app_gs_phrase_combine_multiple([
