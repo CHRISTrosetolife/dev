@@ -8,7 +8,7 @@ import { app_gs_phrase_worship_multiple_or_empty } from "./app_gs_phrase_worship
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_gs_phrase_combine_multiple } from "./app_gs_phrase_combine_multiple.mjs";
 export function app_gs_conversation_gospel_reminder(menu_overlay, npc) {
-  let text = app_gs_phrase_combine_multiple(
+  let text = app_gs_phrase_combine_multiple([
     app_gs_phrase_worship_multiple_or_empty(),
     [
       string_combine_multiple([
@@ -24,6 +24,6 @@ export function app_gs_conversation_gospel_reminder(menu_overlay, npc) {
         string_combine_multiple([" ", app_gs_phrase_doxology()]),
       ),
     ],
-  );
+  ]);
   app_gs_conversation_npc_root(menu_overlay, npc, text);
 }
