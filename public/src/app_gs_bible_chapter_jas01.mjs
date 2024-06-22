@@ -160,7 +160,7 @@ export function app_gs_bible_chapter_jas01() {
       questions: [
         {
           text: "Why do we sin?",
-          count: 1,
+          count: 2,
         },
       ],
     },
