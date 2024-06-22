@@ -1,3 +1,4 @@
+import { app_gs_conversation_npc } from "./app_gs_conversation_npc.mjs";
 import { app_gs_phrase_doxology } from "./app_gs_phrase_doxology.mjs";
 import { app_gs_phrase_the_gospel } from "./app_gs_phrase_the_gospel.mjs";
 import { app_gs_conversation_gospel_convert } from "./app_gs_conversation_gospel_convert.mjs";
@@ -7,7 +8,6 @@ import { app_gs_conversation_root } from "./app_gs_conversation_root.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { app_gs_conversation_player_prompt } from "./app_gs_conversation_player_prompt.mjs";
-import { app_gs_conversation_speech_npc } from "./app_gs_conversation_speech_npc.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { list_last } from "./list_last.mjs";
@@ -24,7 +24,7 @@ import { string_random_or_empty } from "./string_random_or_empty.mjs";
 export function app_gs_conversation_gospel(menu_overlay, npc) {
   html_clear(menu_overlay);
   if (npc.christian) {
-    app_gs_conversation_speech_npc(
+    app_gs_conversation_npc(
       menu_overlay,
       npc,
       string_combine_multiple([
@@ -69,7 +69,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
     let last = list_last(answer_verses);
     let answer_texts = list_map_property(answer_verses, "text");
     let answer = list_join_space(answer_texts);
-    app_gs_conversation_speech_npc(menu_overlay, npc, object_text);
+    app_gs_conversation_npc(menu_overlay, npc, object_text);
     let div_player = app_gs_conversation_player_prompt(
       menu_overlay,
       string_combine_multiple(["Tell ", npc.name, ": "]),
