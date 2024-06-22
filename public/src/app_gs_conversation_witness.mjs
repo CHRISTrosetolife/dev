@@ -27,7 +27,11 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
       chapter,
     });
   });
-  list_adder((la) => each(list, (item2) => {}));
+  list_adder((la) =>
+    each(verses, (v) => {
+      each(list, (item2) => {});
+    }),
+  );
   let objectables = list_filter(verses, (v) => list_empty_not_is(v.objections));
   let objectable = list_random_item(objectables);
   let { index } = objectable;
