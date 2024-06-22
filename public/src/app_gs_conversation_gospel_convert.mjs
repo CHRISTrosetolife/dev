@@ -24,7 +24,10 @@ export function app_gs_conversation_gospel_convert(menu_overlay, npc) {
         list_random_item([
           string_combine_multiple([
             list_random_item([
-              string_combine_multiple([app_gs_phrase_i_am()]),
+              string_combine_multiple([
+                app_gs_phrase_i_am(),
+                app_gs_phrase_convinced(),
+              ]),
               string_combine_multiple([
                 "You have ",
                 app_gs_phrase_convinced(),
