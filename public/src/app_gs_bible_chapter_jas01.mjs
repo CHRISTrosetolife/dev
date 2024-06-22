@@ -7,7 +7,7 @@ export function app_gs_bible_chapter_jas01() {
       sermons: [
         {
           sermon:
-            "James serves God`James serves Jesus`Jesus is Christ and Lord`James is writing to the twelve tribes of Israel`The twelve tribes are dispersed`James greets the twelve tribes",
+            "James serves God`James serves Jesus`Jesus is Christ and Lord`James is writing to the twelve tribes of Israel`the twelve tribes are dispersed`James greets the twelve tribes",
           count: 1,
         },
       ],
@@ -24,7 +24,7 @@ export function app_gs_bible_chapter_jas01() {
       sermons: [
         {
           sermon:
-            "There are many kinds of trials`We will encounter trials`Trials test our faith`When our faith is tested, perseverance is developed`Therefore we consider trials pure joy",
+            "there are many kinds of trials`we will encounter trials`trials test our faith`when our faith is tested, perseverance is developed`therefore we consider trials pure joy",
           count: 2,
         },
       ],
