@@ -27,6 +27,7 @@ import { list_first } from "./list_first.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { integer_parse } from "./integer_parse.mjs";
 import { number_is } from "./number_is.mjs";
+import { list_index_last } from "./list_index_last.mjs";
 export function js_dollar(ast) {
   js_visit_identifiers(ast, (v) => {
     let { node } = v;
@@ -107,6 +108,7 @@ export function js_dollar(ast) {
           remaining = string_prefix_without(remaining, scm_prefix);
           let count = integer_parse_try(remaining);
           if (!number_is(count)) {
+            list_index_last(parent) - index;
           }
           each_range(count, () => {
             let removed = list_remove_at(parent, next_index);
