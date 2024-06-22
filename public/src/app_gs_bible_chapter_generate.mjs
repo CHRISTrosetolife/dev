@@ -25,6 +25,7 @@ import { list_join_space } from "./list_join_space.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_get } from "./list_get.mjs";
 import { list_size } from "./list_size.mjs";
+import { object_property_set } from "./object_property_set.mjs";
 export async function app_gs_bible_chapter_generate(chapter_name) {
   chapter_name = string_case_lower(chapter_name);
   let property_text = "text";
@@ -72,7 +73,7 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
     );
   } else {
     each(verses, (item) => {
-      item[property_text] = list_join_space(item.tokens);
+      object_property_set(item, property_text, list_join_space(item.tokens));
       item.objections = [];
       object_property_delete(item, "tokens");
       each_verse(item);
