@@ -76,7 +76,7 @@ export function app_gs_bible_chapter_jas01() {
       text: "The brother in humble circumstances should exult in his high position.",
       objections: [
         {
-          text: "",
+          text: "I am poor. I am not rich. I am not great or famous. I am a nobody.",
           count: 1,
         },
       ],
