@@ -38,7 +38,8 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
             string_combine_multiple([
               "that Jesus ",
               list_random_item([
-                "died and rose to life",
+                "died",
+                " and rose to life",
                 string_combine_multiple([
                   "is ",
                   list_random_item([
