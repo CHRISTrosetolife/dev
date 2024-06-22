@@ -6,7 +6,8 @@ export function app_gs_conversation(map_c, map, npc) {
   map.player.conversation_count++;
   npc.conversation_count++;
   if (map.player.conversation_count < npc.conversation_wait_until) {
+  } else {
+    let text = app_gs_conversation_opening(map, npc);
+    app_gs_conversation_npc_root(menu_overlay, npc, text, map);
   }
-  let text = app_gs_conversation_opening(map, npc);
-  app_gs_conversation_npc_root(menu_overlay, npc, text, map);
 }
