@@ -1,3 +1,4 @@
+import { list_first } from "./list_first.mjs";
 import { app_gs_conversation_player_prompt } from "./app_gs_conversation_player_prompt.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { list_slice } from "./list_slice.mjs";
@@ -52,6 +53,7 @@ export function app_gs_conversation(map_c, map, npc) {
         let objection = list_random_item(objectable.objections);
         let { count, text: object_text } = objection;
         let answer_verses = list_slice(verses, index, index + count);
+        let first = list_first(answer_verses);
         let answer_texts = list_map_property(answer_verses, "text");
         let answer = list_join_space(answer_texts);
         app_gs_conversation_speech_npc(menu_overlay, npc, object_text);
