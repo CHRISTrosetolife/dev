@@ -5,7 +5,7 @@ import { function_names } from "./function_names.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 export async function function_param_new(function_name) {
   let dis = await data_identifiers();
-  object_property_get(dis, function_name);
+  let fns = object_property_get(dis, function_name);
   return dis;
   let fns = await function_names();
   await each_async(fns, async (fn) => {
