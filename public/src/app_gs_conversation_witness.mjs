@@ -55,8 +55,8 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
   each(choices, (choice) => {
     html_button_width_full_text_click(
       div_player,
-      choice_correct.answer_text,
-      choice_correct.on_click,
+      choice.answer_text,
+      choice.on_click,
     );
   });
   function choice_get(on_click) {
