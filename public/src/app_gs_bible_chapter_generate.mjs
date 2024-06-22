@@ -1,3 +1,5 @@
+import { equal_by } from "./equal_by.mjs";
+import { assert } from "./assert.mjs";
 import { each_index } from "./each_index.mjs";
 import { js_code_array_empty } from "./js_code_array_empty.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
@@ -22,6 +24,7 @@ import { json_to } from "./json_to.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_get } from "./list_get.mjs";
+import { list_size } from "./list_size.mjs";
 export async function app_gs_bible_chapter_generate(chapter_name) {
   chapter_name = string_case_lower(chapter_name);
   let verses = await bible_chapter("engbsb", chapter_name);
@@ -39,6 +42,7 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
           let last = list_last(body_block);
           let { argument } = last;
           let { elements } = argument;
+          assert(equal_by, [elements, verses, list_size]);
           each_index(verses, (verse, index) => {
             let verse_text = list_join_space(verse.tokens);
             let element = list_get(elements, index);
