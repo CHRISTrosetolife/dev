@@ -21,17 +21,17 @@ export function app_gs_bible_chapter_jas01() {
           count: 2,
         },
       ],
-      sermons: [
-        {
-          sermon: "",
-          count: 1,
-        },
-      ],
+      sermons: [],
     },
     {
       verse_number: "3",
       text: "because you know that the testing of your faith develops perseverance.",
-      objections: [],
+      objections: [
+        {
+          text: "",
+          count: 1,
+        },
+      ],
       sermons: [],
     },
     {
