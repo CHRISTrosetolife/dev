@@ -42,8 +42,9 @@ export function app_gs_conversation(map_c, map, npc) {
     () => {
       if (npc.objection_count === 0) {
         error();
+      } else {
+        npc.objection_count--;
       }
-      npc.objection_count--;
     },
   );
   html_button_width_full_text_click(
