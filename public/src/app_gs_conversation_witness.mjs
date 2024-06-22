@@ -1,3 +1,4 @@
+import { error } from "./error.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { app_gs_phrase_you_have } from "./app_gs_phrase_you_have.mjs";
 import { app_gs_phrase_thanks } from "./app_gs_phrase_thanks.mjs";
@@ -96,7 +97,7 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
   });
   let choice_correct = choice_get(() => {
     npc.objection_count--;
-    app_gs_conversation_gospel(menu_overlay, npc);
+    app_gs_conversation_gospel(menu_overlay, npc, error());
   });
   app_gs_conversation_npc(menu_overlay, npc, choice_correct.objection_text);
   let div_player = app_gs_conversation_player_prompt(
