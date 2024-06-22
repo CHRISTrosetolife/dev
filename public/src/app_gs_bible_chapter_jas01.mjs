@@ -274,7 +274,7 @@ export function app_gs_bible_chapter_jas01() {
       sermons: [
         {
           sermon:
-            "it is not enough to hear the word of God`in addition to hearing, we must do what the word of God requires`those who hear the word of God, but do not do what it says deceive themselves",
+            "it is not enough to hear the word of God`in addition to hearing, we must do what the word of God requires`those who hear the word of God, but do not do what it says deceive themselves`those who hear but fail to do the word of God are like those who look in a mirror, leave the mirror, and forget what they look like",
           count: 1,
         },
       ],
