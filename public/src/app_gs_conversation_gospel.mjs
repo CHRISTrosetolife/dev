@@ -30,6 +30,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
           "Praise be to God",
         ]),
         "! ",
+        "I believe in Jesus",
       ]),
     );
   } else {
