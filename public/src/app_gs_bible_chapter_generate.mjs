@@ -45,7 +45,7 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
                 (p) => p.key.type !== "Identifier" || p.name !== property_name,
               )
             ) {
-              list_add({
+              list_add(properties, {
                 type: "Property",
                 method: false,
                 shorthand: false,
