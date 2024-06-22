@@ -298,7 +298,7 @@ export function app_gs_bible_chapter_jas01() {
       questions: [
         {
           text: "If someone hears the word of God but does not obey it, what can they be compared to?",
-          count: 1,
+          count: 2,
         },
       ],
     },
