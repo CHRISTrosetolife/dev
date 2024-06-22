@@ -199,6 +199,10 @@ export function app_gs_bible_chapter_jas01() {
           text: "Does God the Father ever change?",
           count: 1,
         },
+        {
+          text: "",
+          count: 1,
+        },
       ],
     },
     {
