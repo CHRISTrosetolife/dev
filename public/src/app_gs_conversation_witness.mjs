@@ -1,3 +1,4 @@
+import { each_index_only } from "./each_index_only.mjs";
 import { list_join_underscore } from "./list_join_underscore.mjs";
 import { app_gs_verses_get } from "./app_gs_verses_get.mjs";
 import { app_gs_conversation_npc_end } from "./app_gs_conversation_npc_end.mjs";
@@ -39,7 +40,7 @@ export function app_gs_conversation_witness(menu_overlay, npc, map) {
   });
   let objectables = list_adder((la) =>
     each_index(verses, (verse, index) => {
-      each_index(verse.objections, (objection) => {
+      each_index_only(verse.objections, (objection) => {
         la(list_join_underscore([book_id, chapter]));
       });
     }),
