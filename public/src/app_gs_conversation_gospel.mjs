@@ -48,7 +48,11 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
                     " and ",
                   ),
                   "rose to life",
-                  string_random_or_empty(" with ", "all my", " heart"),
+                  string_random_or_empty(
+                    " with ",
+                    list_random_item(["all my"]),
+                    " heart",
+                  ),
                 ]),
                 string_combine_multiple([
                   "is ",
