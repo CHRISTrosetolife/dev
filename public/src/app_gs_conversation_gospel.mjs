@@ -56,7 +56,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
                   string_combine_multiple([
                     "the gospel",
                     string_random_or_empty(
-                      string_combine_multiple([" of Jesus"]),
+                      string_combine_multiple([" of ", "Jesus"]),
                     ),
                   ]),
                   "Jesus",
