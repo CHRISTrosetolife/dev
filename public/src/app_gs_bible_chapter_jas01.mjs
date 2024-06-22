@@ -2,7 +2,7 @@ export function app_gs_bible_chapter_jas01() {
   return [
     {
       verse_number: "1",
-      text: "James, a servant of God and of the Lord Jesus Christ,",
+      text: "James, a servant of God and of the Lord Jesus Christ, To the twelve tribes of the Dispersion: Greetings.",
       objections: [],
       sermons: [],
     },
@@ -103,13 +103,13 @@ export function app_gs_bible_chapter_jas01() {
     },
     {
       verse_number: "17",
-      text: "Every good and perfect gift is from above, coming down from the Father of the heavenly lights, with whom there is no change or shifting shadow. ",
+      text: "Every good and perfect gift is from above, coming down from the Father of the heavenly lights, with whom there is no change or shifting shadow.",
       objections: [],
       sermons: [],
     },
     {
       verse_number: "18",
-      text: "He chose to give us birth through the word of truth, that we would be a kind of firstfruits of His creation. ",
+      text: "He chose to give us birth through the word of truth, that we would be a kind of firstfruits of His creation.",
       objections: [],
       sermons: [],
     },
