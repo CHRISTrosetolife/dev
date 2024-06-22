@@ -44,6 +44,7 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
   });
   let choice_correct = choice_get(() => {
     npc.objection_count--;
+    app_gs_conversation_npc(menu_overlay, npc, text);
     app_gs_conversation_gospel(menu_overlay, npc);
   });
   app_gs_conversation_npc(menu_overlay, npc, choice_correct.objection_text);
