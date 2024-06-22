@@ -1,3 +1,3 @@
-export function number_pad(input) {
-  return input.toString().padStart(targetLength[padString]);
+export function number_pad(input, padding_count) {
+  return input.toString().padStart(padding_count);
 }
