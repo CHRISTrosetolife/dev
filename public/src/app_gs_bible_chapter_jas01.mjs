@@ -325,7 +325,12 @@ export function app_gs_bible_chapter_jas01() {
       verse_number: "26",
       text: "If anyone considers himself religious and yet does not bridle his tongue, he deceives his heart and his religion is worthless.",
       objections: [],
-      sermons: [],
+      sermons: [
+        {
+          sermon: "",
+          count: 2,
+        },
+      ],
       questions: [],
     },
     {
