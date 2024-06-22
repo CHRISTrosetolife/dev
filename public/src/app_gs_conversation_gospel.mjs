@@ -26,10 +26,15 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
       menu_overlay,
       npc,
       string_combine_multiple([
-        string_combine_multiple([
-          list_random_item([app_gs_phrase_worship(), app_gs_phrase_doxology()]),
-          " ",
-        ]),
+        string_random_or_empty(
+          string_combine_multiple([
+            string_random_or_empty([
+              app_gs_phrase_worship(),
+              app_gs_phrase_doxology(),
+            ]),
+            " ",
+          ]),
+        ),
         string_combine_multiple([
           list_random_item([app_gs_phrase_worship(), app_gs_phrase_doxology()]),
           " ",
