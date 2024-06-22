@@ -226,7 +226,12 @@ export function app_gs_bible_chapter_jas01() {
       verse_number: "19",
       text: "My beloved brothers, understand this: Everyone should be quick to listen, slow to speak, and slow to anger,",
       objections: [],
-      sermons: [],
+      sermons: [
+        {
+          sermon: "",
+          count: 3,
+        },
+      ],
       questions: [],
     },
     {
