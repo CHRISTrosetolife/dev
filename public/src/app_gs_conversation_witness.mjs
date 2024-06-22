@@ -47,7 +47,7 @@ export function app_gs_conversation_witness(menu_overlay, npc, map) {
   );
   list_shuffle(objectables);
   let choice_wrong = choice_get(() => {
-    npc.conversation_wait =
+    npc.conversation_wait_until =
       map.player.conversation_count + app_gs_npc_conversation_wait_count();
     html_clear(menu_overlay);
     app_gs_conversation_npc(
