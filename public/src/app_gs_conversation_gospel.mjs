@@ -24,6 +24,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
   html_clear(menu_overlay);
   if (npc.christian) {
     app_gs_conversation_speech_npc(menu_overlay, npc, "");
+    app_gs_conversation_root(menu_overlay, npc);
   } else if (npc.objection_count === 0) {
     npc.christian = true;
     app_gs_conversation_speech_npc(
