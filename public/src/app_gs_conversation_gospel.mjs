@@ -20,7 +20,13 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
     app_gs_conversation_speech_npc(
       menu_overlay,
       npc,
-      list_random_item(["Amen"]),
+      list_random_item([
+        "Amen",
+        "Alleluia",
+        "Hallelujah",
+        "Praise the Lord",
+        "Thank You, Jesus",
+      ]),
     );
   } else {
     let book_name = "James";
