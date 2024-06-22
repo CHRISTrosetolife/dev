@@ -38,7 +38,7 @@ export function app_gs_conversation_witness(menu_overlay, npc, map) {
       chapter,
     });
   });
-  let objectables = list_adder((la) =>
+  let objection_ids = list_adder((la) =>
     each_index(verses, (verse, verse_index) => {
       each_index_only(verse.objections, (objection_index) => {
         la(
@@ -52,7 +52,7 @@ export function app_gs_conversation_witness(menu_overlay, npc, map) {
       });
     }),
   );
-  list_shuffle(objectables);
+  list_shuffle(objection_ids);
   let choice_wrong = choice_get(() => {
     npc.conversation_wait_until =
       map.player.conversation_count + app_gs_npc_conversation_wait_count();
@@ -119,7 +119,7 @@ export function app_gs_conversation_witness(menu_overlay, npc, map) {
     );
   });
   function choice_get(on_click) {
-    let objectable = list_pop(objectables);
+    let objectable = list_pop(objection_ids);
     list_slice(verses, index, index + objection.count);
     let { verses: answer_verses, objection } = objectable;
     let { text: objection_text } = objection;
