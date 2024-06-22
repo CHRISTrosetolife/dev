@@ -125,7 +125,12 @@ export function app_gs_bible_chapter_jas01() {
     {
       verse_number: "13",
       text: "When tempted, no one should say, “God is tempting me.” For God cannot be tempted by evil, nor does He tempt anyone.",
-      objections: [],
+      objections: [
+        {
+          text: "",
+          count: 1,
+        },
+      ],
       sermons: [
         {
           sermon:
