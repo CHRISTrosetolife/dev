@@ -49,7 +49,7 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
   let last = list_last(answer_verses);
   let answer_texts = list_map_property(answer_verses, "text");
   let answer = list_join_space(answer_texts);
-  let choice_correct_text = string_combine_multiple([
+  let choice_text = string_combine_multiple([
     "📖 ",
     first.book_name,
     " ",
@@ -61,7 +61,7 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
     answer,
   ]);
   let choice_correct = {
-    text: choice_correct_text,
+    text: choice_text,
     on_click: () => {
       npc.objection_count--;
       app_gs_conversation_gospel(menu_overlay, npc);
