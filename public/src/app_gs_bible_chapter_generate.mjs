@@ -39,6 +39,7 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
           let { argument } = last;
           let { elements } = argument;
           each_index(verses, (verse, index) => {
+            verse.text = list_join_space(item.tokens);
             let { properties } = element;
             let property_name = "sermons";
             if (
