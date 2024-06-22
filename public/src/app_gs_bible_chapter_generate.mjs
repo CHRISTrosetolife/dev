@@ -39,7 +39,7 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
             let { properties } = element;
             let existing = list_filter(properties, p.key.type === "Identifier");
             log({
-              properties,
+              existing,
             });
             if (0) {
               each(properties, (p) => {
