@@ -189,7 +189,8 @@ export function app_gs_bible_chapter_jas01() {
       objections: [],
       sermons: [
         {
-          sermon: "",
+          sermon:
+            "God is the Father of the heavenly lights`there is no change with the Father`there are no shadows that shift from light moving with God the Father`Good and perfect gifts come from God, whose throne is in heaven above`",
           count: 1,
         },
       ],
