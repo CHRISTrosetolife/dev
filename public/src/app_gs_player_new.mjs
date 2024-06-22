@@ -10,4 +10,5 @@ export function app_gs_player_new(map) {
   map.player.pray = {
     conversation: false,
   };
+  map.player.conversation_count = 0;
 }
