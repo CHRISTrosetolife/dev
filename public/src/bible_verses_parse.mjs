@@ -1,4 +1,3 @@
-import { exit } from "./exit.mjs";
 import { string_split_multiple } from "./string_split_multiple.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 import { object_property_get_or } from "./object_property_get_or.mjs";
@@ -32,7 +31,6 @@ export function bible_verses_parse(verses) {
       });
     });
   });
-  exit();
   return result;
   function bible_verses_parse_text(c, verse_number, tokens) {
     if (c.type === "text") {
