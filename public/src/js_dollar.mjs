@@ -26,6 +26,7 @@ import { list_remove_at } from "./list_remove_at.mjs";
 import { list_first } from "./list_first.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { integer_parse } from "./integer_parse.mjs";
+import { number_is } from "./number_is.mjs";
 export function js_dollar(ast) {
   js_visit_identifiers(ast, (v) => {
     let { node } = v;
@@ -97,19 +98,21 @@ export function js_dollar(ast) {
         if (list_is(parent)) {
           remaining = string_prefix_without(remaining, scm_prefix);
           let count = integer_parse_try(remaining);
-          let e = js_parse_expression(
-            js_code_call_args(string_combine_multiple.name, [
-              js_code_array_empty(),
-            ]),
-          );
-          let es = list_first(e.arguments).elements;
-          let index = list_index(parent, node);
-          let next_index = index + 1;
-          each_range(count, () => {
-            let removed = list_remove_at(parent, next_index);
-            list_add(es, removed);
-          });
-          object_replace(node, e);
+          if (number_is(count)) {
+            let e = js_parse_expression(
+              js_code_call_args(string_combine_multiple.name, [
+                js_code_array_empty(),
+              ]),
+            );
+            let es = list_first(e.arguments).elements;
+            let index = list_index(parent, node);
+            let next_index = index + 1;
+            each_range(count, () => {
+              let removed = list_remove_at(parent, next_index);
+              list_add(es, removed);
+            });
+            object_replace(node, e);
+          }
         }
       }
       let objection_prefix = "o";
