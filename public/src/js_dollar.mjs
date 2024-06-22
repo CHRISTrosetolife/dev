@@ -142,11 +142,7 @@ export function js_dollar(ast) {
         }
       }
       if (prefix_use(remaining, sermon_prefix, prefixes)) {
-        remaining = string_prefix_without(remaining, sermon_prefix);
-        let count = 1;
-        if (string_empty_not_is(remaining)) {
-          count = integer_parse(remaining);
-        }
+        let count = remaining_count_get(remaining, sermon_prefix);
         let e = js_parse_expression(
           string_combine_multiple(["{sermon:'',count:", count, "}"]),
         );
