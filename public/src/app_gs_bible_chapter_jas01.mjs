@@ -83,7 +83,7 @@ export function app_gs_bible_chapter_jas01() {
       sermons: [
         {
           sermon:
-            "the poor should glory that God richly makes them a royal priesthood",
+            "the poor should glory that God richly makes them royalty and priests",
           count: 1,
         },
       ],
