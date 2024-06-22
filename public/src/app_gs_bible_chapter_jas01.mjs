@@ -228,7 +228,8 @@ export function app_gs_bible_chapter_jas01() {
       objections: [],
       sermons: [
         {
-          sermon: "",
+          sermon:
+            "James is writing to his brethren`the bretheren of James are beloved`we should be good listeners`we should listen before speaking",
           count: 3,
         },
       ],
