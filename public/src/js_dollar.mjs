@@ -129,6 +129,18 @@ export function js_dollar(ast) {
           object_replace(node, e);
         }
       }
+      let sermon_prefix = "se";
+      if (string_starts_with(remaining, sermon_prefix)) {
+        remaining = string_prefix_without(remaining, sermon_prefix);
+        let count = 1;
+        if (string_empty_not_is(remaining)) {
+          count = integer_parse(remaining);
+        }
+        let e = js_parse_expression(
+          string_combine_multiple(["{sermon:'',count:", count, "}"]),
+        );
+        object_replace(node, e);
+      }
     }
   });
 }
