@@ -8,7 +8,7 @@ export function app_gs_phrase_the_gospel() {
       list_random_item([
         "Word of God",
         string_combine_multiple([
-          list_random_item(["gospel"]),
+          list_random_item(["gospel", "good news"]),
           string_random_or_empty(
             string_combine_multiple([
               " of Jesus",
