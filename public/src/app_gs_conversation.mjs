@@ -17,21 +17,18 @@ export function app_gs_conversation(map_c, map, npc) {
     let sentences = [
       string_combine_multiple([
         "I need",
-        list_random_item([
-          "to think things over",
-          string_combine_multiple([
-            " some time",
-            string_random_or_empty(" to myself"),
-            " to ",
-            list_random_item(["think", "ponder"]),
-            string_random_or_empty(
-              " about what ",
-              app_gs_phrase_you_have(),
-              list_random_item(["said", "spoken"]),
-              string_random_or_empty(" to me"),
-            ),
-            ".",
-          ]),
+        string_combine_multiple([
+          " some time",
+          string_random_or_empty(" to myself"),
+          " to ",
+          list_random_item(["think", "ponder"]),
+          string_random_or_empty(
+            " about what ",
+            app_gs_phrase_you_have(),
+            list_random_item(["said", "spoken"]),
+            string_random_or_empty(" to me"),
+          ),
+          ".",
         ]),
       ]),
       string_random_or_empty(
