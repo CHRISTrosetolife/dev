@@ -37,8 +37,10 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
           list_random_item([
             string_combine_multiple([
               "in ",
-              "Jesus",
-              string_random_or_empty(" Christ"),
+              string_combine_multiple([
+                "Jesus",
+                string_random_or_empty(" Christ"),
+              ]),
             ]),
             string_combine_multiple([
               "that Jesus ",
