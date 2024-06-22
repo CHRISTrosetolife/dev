@@ -47,7 +47,7 @@ export function app_gs_bible_chapter_jas01() {
       objections: [],
       sermons: [
         {
-          sermon: "God gives gifts generously",
+          sermon: "God gives gifts generously to sinners",
           count: 1,
         },
       ],
