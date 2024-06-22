@@ -115,7 +115,7 @@ export function app_gs_conversation_witness(menu_overlay, npc, map) {
   function choice_get(on_click) {
     let objectable = list_pop(objectables);
     let { verses: answer_verses, objection } = objectable;
-    let { count, text: objection_text } = objection;
+    let { text: objection_text } = objection;
     let first = list_first(answer_verses);
     let last = list_last(answer_verses);
     let answer_texts = list_map_property(answer_verses, "text");
