@@ -328,7 +328,7 @@ export function app_gs_bible_chapter_jas01() {
       sermons: [
         {
           sermon:
-            "let us bridle our tongues`those who consider themselves religious, but do not bridle their tongues deceive their own hearts`their religion is worthless`let us care for orphans and widows in distress`let us keep ourselves from the world polluting us",
+            "let us bridle our tongues`those who consider themselves religious, but do not bridle their tongues deceive their own hearts`their religion is worthless`let us care for orphans and widows in distress`let us keep ourselves from the world polluting us`then our religion will be pure and undefiled before God`God is our Father",
           count: 2,
         },
       ],
