@@ -43,7 +43,7 @@ export function app_gs_conversation_gospel_convert(menu_overlay, npc) {
                 "convincing",
               ]),
               " me about ",
-              list_random_item(["the gospel", "the gospel of Jesus", "Jesus"]),
+              app_gs_phrase_the_gospel(),
             ]),
           ]),
         ]),
