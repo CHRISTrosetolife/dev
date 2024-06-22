@@ -34,6 +34,7 @@ export function app_gs_conversation(map_c, map, npc) {
         error();
       } else {
         html_clear(menu_overlay);
+        let book_name = "James";
         let verses = app_gs_bible_chapter_jas01();
         each_index(verses, (item, index) => {
           object_merge(item, {
@@ -54,11 +55,7 @@ export function app_gs_conversation(map_c, map, npc) {
         let div_player = app_gs_conversation_player_prompt(menu_overlay);
         html_button_width_full_text_click(
           div_player,
-          string_combine_multiple([
-            "📖 Tell ",
-            npc.name,
-            " that Jesus ✝️ died, was 🪨 buried and 🤴🏽 rose to life!",
-          ]),
+          string_combine_multiple(["📖 Tell ", npc.name, " "]),
         );
         npc.objection_count--;
       }
