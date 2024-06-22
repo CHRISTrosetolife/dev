@@ -1,3 +1,4 @@
+import { app_gs_conversation_root } from "./app_gs_conversation_root.mjs";
 import { app_gs_phrase_doxology } from "./app_gs_phrase_doxology.mjs";
 import { app_gs_phrase_worship } from "./app_gs_phrase_worship.mjs";
 import { app_gs_phrase_jesus } from "./app_gs_phrase_jesus.mjs";
@@ -79,6 +80,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
         ]),
       ]),
     );
+    app_gs_conversation_root(menu_overlay, npc);
   } else {
     let book_name = "James";
     let chapter = "1";
