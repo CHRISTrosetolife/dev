@@ -6,8 +6,9 @@ import { list_random_item } from "./list_random_item.mjs";
 import { app_gs_phrase_thanks } from "./app_gs_phrase_thanks.mjs";
 import { app_gs_phrase_worship_multiple_or_empty } from "./app_gs_phrase_worship_multiple_or_empty.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { app_gs_phrase_combine } from "./app_gs_phrase_combine.mjs";
 export function app_gs_conversation_gospel_reminder(menu_overlay, npc) {
-  let text = string_combine_multiple([
+  let text = app_gs_phrase_combine([
     app_gs_phrase_worship_multiple_or_empty(),
     string_combine_multiple([
       app_gs_phrase_thanks(),
