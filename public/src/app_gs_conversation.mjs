@@ -52,6 +52,14 @@ export function app_gs_conversation(map_c, map, npc) {
         let answer = list_join_space(answer_texts);
         app_gs_conversation_speech_npc(menu_overlay, npc, object_text);
         let div_player = app_gs_conversation_player_prompt(menu_overlay);
+        html_button_width_full_text_click(
+          div_player,
+          string_combine_multiple([
+            "📖 Tell ",
+            npc.name,
+            " that Jesus ✝️ died, was 🪨 buried and 🤴🏽 rose to life!",
+          ]),
+        );
         npc.objection_count--;
       }
     },
