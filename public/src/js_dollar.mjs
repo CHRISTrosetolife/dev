@@ -96,8 +96,7 @@ export function js_dollar(ast) {
       if (string_starts_with(remaining, scm_prefix)) {
         if (list_is(parent)) {
           remaining = string_prefix_without(remaining, scm_prefix);
-          let count;
-          count = integer_parse_try(remaining);
+          let count = integer_parse_try(remaining);
           let e = js_parse_expression(
             js_code_call_args(string_combine_multiple.name, [
               js_code_array_empty(),
