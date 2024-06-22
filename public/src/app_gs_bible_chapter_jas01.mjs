@@ -229,7 +229,7 @@ export function app_gs_bible_chapter_jas01() {
       sermons: [
         {
           sermon:
-            "James is writing to his brethren`the bretheren of James are beloved`we should be good listeners`we should listen before speaking`we should pause before speaking",
+            "James is writing to his brethren`the bretheren of James are beloved`we should be good listeners`we should listen before speaking`we should pause before speaking`we should be careful what we say",
           count: 3,
         },
       ],
