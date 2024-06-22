@@ -108,7 +108,7 @@ export function js_dollar(ast) {
           remaining = string_prefix_without(remaining, scm_prefix);
           let count = integer_parse_try(remaining);
           if (!number_is(count)) {
-            list_index_last(parent) - index;
+            count = list_index_last(parent) - index;
           }
           each_range(count, () => {
             let removed = list_remove_at(parent, next_index);
