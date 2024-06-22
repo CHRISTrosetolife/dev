@@ -14,4 +14,5 @@ export function app_gs_npc_new(map, tile_choices) {
   npc.conversation_count = 0;
   npc.objection_count = 1;
   npc.christian = false;
+  npc.conversation_wait_until = 0;
 }
