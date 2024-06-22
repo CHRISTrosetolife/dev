@@ -11,7 +11,7 @@ export function app_gs_conversation(map_c, map, npc) {
     app_gs_conversation_npc_end(
       menu_overlay,
       npc,
-      string_combine_multiple(["I need some time ", "to think"]),
+      string_combine_multiple(["I need some time ", "to myself", "to think"]),
     );
   } else {
     let text = app_gs_conversation_npc_opening_text(map, npc);
