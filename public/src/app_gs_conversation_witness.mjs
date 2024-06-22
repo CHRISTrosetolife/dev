@@ -1,3 +1,4 @@
+import { integer_parse } from "./integer_parse.mjs";
 import { list_get } from "./list_get.mjs";
 import { app_gs_objection_ids } from "./app_gs_objection_ids.mjs";
 import { string_split_underscore } from "./string_split_underscore.mjs";
@@ -98,6 +99,7 @@ export async function app_gs_conversation_witness(menu_overlay, npc, map) {
     let objection_id = list_pop(objection_ids);
     let [book_id, chapter, verse_index, objection_index] =
       string_split_underscore(objection_id);
+    let chapter = integer_parse(chapter);
     let chapter_id = number_pad(chapter, 2);
     let verses = await function_run(
       string_combine_multiple([
