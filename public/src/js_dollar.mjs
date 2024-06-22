@@ -111,8 +111,8 @@ export function js_dollar(ast) {
               let removed = list_remove_at(parent, next_index);
               list_add(es, removed);
             });
-            object_replace(node, e);
           }
+          object_replace(node, e);
         }
       }
       let objection_prefix = "o";
