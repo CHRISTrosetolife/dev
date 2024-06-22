@@ -40,7 +40,7 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
     menu_overlay,
     string_combine_multiple(["Tell ", npc.name, ": "]),
   );
-  let choice = {
+  let choice_correct = {
     text: string_combine_multiple([
       "📖 ",
       first.book_name,
@@ -57,5 +57,9 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
       app_gs_conversation_gospel(menu_overlay, npc);
     },
   };
-  html_button_width_full_text_click(div_player, choice.text, choice.on_click);
+  html_button_width_full_text_click(
+    div_player,
+    choice_correct.text,
+    choice_correct.on_click,
+  );
 }
