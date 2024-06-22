@@ -48,7 +48,7 @@ export function app_gs_bible_chapter_jas01() {
       sermons: [
         {
           sermon:
-            "God gives gifts generously to sinners`if we lack wisdom, let us ask God for wisdom`if we ask God for wisdom, then God will give us wisdom",
+            "God gives gifts generously to sinners`if we lack wisdom, let us ask God for wisdom`if we ask God for wisdom, then God will give us wisdom`we must ask God for wisdom in faith`let us not doubt when we ask God for wisdom",
           count: 1,
         },
       ],
