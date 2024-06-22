@@ -43,7 +43,7 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
     verse: { index },
     objection,
   } = objectable_right;
-  let { count, text: object_text } = objection;
+  let { count, text: objection_text } = objection;
   let answer_verses = list_slice(verses, index, index + count);
   let first = list_first(answer_verses);
   let last = list_last(answer_verses);
@@ -67,7 +67,7 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
       app_gs_conversation_gospel(menu_overlay, npc);
     },
   };
-  app_gs_conversation_npc(menu_overlay, npc, object_text);
+  app_gs_conversation_npc(menu_overlay, npc, objection_text);
   let div_player = app_gs_conversation_player_prompt(
     menu_overlay,
     string_combine_multiple(["Tell ", npc.name, ": "]),
