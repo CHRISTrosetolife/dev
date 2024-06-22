@@ -59,7 +59,10 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
                       "King",
                       string_random_or_empty(" of kings"),
                     ]),
-                    string_combine_multiple(["Lord"]),
+                    string_combine_multiple([
+                      "Lord",
+                      string_random_or_empty(" of kings"),
+                    ]),
                     "alive",
                     string_combine_multiple([
                       "my ",
