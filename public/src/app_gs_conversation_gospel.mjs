@@ -29,7 +29,9 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
       string_combine_multiple([
         list_random_item([
           string_combine_multiple([
-            "You have convinced me",
+            "You have ",
+            "convinced",
+            " me",
             app_gs_phrase_exclaim_or_period(),
           ]),
         ]),
