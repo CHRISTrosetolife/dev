@@ -347,7 +347,12 @@ export function app_gs_bible_chapter_jas01() {
     {
       verse_number: "27",
       text: "Pure and undefiled religion before our God and Father is this: to care for orphans and widows in their distress, and to keep oneself from being polluted by the world.",
-      objections: [],
+      objections: [
+        {
+          text: "",
+          count: 1,
+        },
+      ],
       sermons: [],
       questions: [],
     },
