@@ -258,7 +258,7 @@ export function app_gs_bible_chapter_jas01() {
       sermons: [],
       questions: [
         {
-          text: "",
+          text: "Where is the word of God planted relative to us?",
           count: 1,
         },
       ],
