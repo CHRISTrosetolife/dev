@@ -196,7 +196,7 @@ export function app_gs_bible_chapter_jas01() {
       ],
       questions: [
         {
-          text: "",
+          text: "Does God ever change?",
           count: 1,
         },
       ],
