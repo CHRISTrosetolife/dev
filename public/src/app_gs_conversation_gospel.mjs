@@ -41,7 +41,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
               list_random_item([
                 string_combine_multiple([
                   "died",
-                  string_random_or_empty(" and Savior"),
+                  string_random_or_empty(", was buried"),
                   " and rose to life",
                 ]),
                 string_combine_multiple([
