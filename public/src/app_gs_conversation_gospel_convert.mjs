@@ -8,12 +8,13 @@ import { list_random_item } from "./list_random_item.mjs";
 import { app_gs_phrase_worship_multiple_or_empty } from "./app_gs_phrase_worship_multiple_or_empty.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_gs_conversation_speech_npc } from "./app_gs_conversation_speech_npc.mjs";
+import { list_join_space } from "./list_join_space.mjs";
 export function app_gs_conversation_gospel_convert(menu_overlay, npc) {
   npc.christian = true;
   app_gs_conversation_speech_npc(
     menu_overlay,
     npc,
-    string_combine_multiple([
+    list_join_space([
       app_gs_phrase_worship_multiple_or_empty(),
       app_gs_phrase_doxology_or_empty(),
       list_random_item([
