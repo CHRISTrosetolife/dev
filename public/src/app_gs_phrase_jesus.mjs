@@ -12,8 +12,8 @@ export function app_gs_phrase_jesus() {
           "Messiah",
           string_combine_multiple([
             "Son of God",
-            ",",
             string_random_or_empty(" the Father"),
+            ",",
           ]),
         ]),
       ]),
