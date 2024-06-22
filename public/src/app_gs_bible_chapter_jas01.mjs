@@ -354,7 +354,12 @@ export function app_gs_bible_chapter_jas01() {
         },
       ],
       sermons: [],
-      questions: [],
+      questions: [
+        {
+          text: "",
+          count: 1,
+        },
+      ],
     },
   ];
 }
