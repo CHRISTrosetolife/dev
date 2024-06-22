@@ -217,7 +217,7 @@ export function app_gs_bible_chapter_jas01() {
       sermons: [],
       questions: [
         {
-          text: "How are we born spiritually?",
+          text: "How are we born spiritually? What is the result of our spiritual birth?",
           count: 1,
         },
       ],
