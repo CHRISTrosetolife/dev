@@ -229,7 +229,7 @@ export function app_gs_bible_chapter_jas01() {
       sermons: [
         {
           sermon:
-            "James is writing to his brethren`the bretheren of James are beloved`we should be good listeners`we should listen before speaking`we should pause before speaking`we should be careful of what we say`we should not be easily angered`we should be patient before becoming angry`God desires righteousness`human anger does not bring about the righteousness of God`let us get rid of all moral filth`let us get rid of every expression of evil",
+            "James is writing to his brethren`the bretheren of James are beloved`we should be good listeners`we should listen before speaking`we should pause before speaking`we should be careful of what we say`we should not be easily angered`we should be patient before becoming angry`God desires righteousness`human anger does not bring about the righteousness of God`let us get rid of all moral filth`let us get rid of every expression of evil`the word of God is planted in us`the word of God can save our souls`let us, with humility, accept the word of God planted in us",
           count: 3,
         },
       ],
