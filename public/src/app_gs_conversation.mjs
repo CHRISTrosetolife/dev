@@ -17,6 +17,7 @@ import { app_gs_menu_overlay } from "./app_gs_menu_overlay.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_random_item } from "./list_random_item.mjs";
 import { object_merge } from "./object_merge.mjs";
+import { list_join_space } from "./list_join_space.mjs";
 export function app_gs_conversation(map_c, map, npc) {
   let menu_overlay = app_gs_menu_overlay(map_c, map);
   npc.conversation_count++;
@@ -51,6 +52,7 @@ export function app_gs_conversation(map_c, map, npc) {
         let { index, count } = objection;
         let answer_verses = list_slice(verses, index, index + count);
         let answer_texts = list_map_property(answer_verses, "text");
+        let answer = list_join_space(answer_texts);
         app_gs_conversation_speech_npc(menu_overlay, npc, text);
         npc.objection_count--;
       }
