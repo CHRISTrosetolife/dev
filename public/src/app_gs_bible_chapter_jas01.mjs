@@ -186,12 +186,7 @@ export function app_gs_bible_chapter_jas01() {
     {
       verse_number: "17",
       text: "Every good and perfect gift is from above, coming down from the Father of the heavenly lights, with whom there is no change or shifting shadow.",
-      objections: [
-        {
-          text: "",
-          count: 1,
-        },
-      ],
+      objections: [],
       sermons: [],
       questions: [],
     },
