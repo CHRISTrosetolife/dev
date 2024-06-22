@@ -47,6 +47,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
             " me",
             app_gs_phrase_exclaim_or_period(),
           ]),
+          "Thank you for telling me about Jesus",
         ]),
         " ",
         string_combine_multiple([
