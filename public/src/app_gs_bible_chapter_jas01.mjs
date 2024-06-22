@@ -196,7 +196,7 @@ export function app_gs_bible_chapter_jas01() {
       ],
       questions: [
         {
-          text: "Does God ever change?",
+          text: "Does God the Father ever change?",
           count: 1,
         },
       ],
