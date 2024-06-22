@@ -1,3 +1,4 @@
+import { list_find } from "./list_find.mjs";
 import { equal_by } from "./equal_by.mjs";
 import { assert } from "./assert.mjs";
 import { each_index } from "./each_index.mjs";
@@ -49,6 +50,10 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
             let verse_text = list_join_space(verse.tokens);
             let element = list_get(elements, index);
             let { properties } = element;
+            list_find(
+              properties,
+              (p) => p.key.type !== "Identifier" || p.name !== property_name,
+            );
             let property_name = "sermons";
             if (
               list_all(
