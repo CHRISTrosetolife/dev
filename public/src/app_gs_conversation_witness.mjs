@@ -1,3 +1,4 @@
+import { app_gs_npc_conversation_wait_count } from "./app_gs_npc_conversation_wait_count.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { app_gs_phrase_you_have } from "./app_gs_phrase_you_have.mjs";
 import { app_gs_phrase_thanks } from "./app_gs_phrase_thanks.mjs";
@@ -46,7 +47,8 @@ export function app_gs_conversation_witness(menu_overlay, npc, map) {
   );
   list_shuffle(objectables);
   let choice_wrong = choice_get(() => {
-    npc.conversation_wait = map.player.conversation_count + 3;
+    npc.conversation_wait =
+      map.player.conversation_count + app_gs_npc_conversation_wait_count();
     html_clear(menu_overlay);
     app_gs_conversation_npc(
       menu_overlay,
