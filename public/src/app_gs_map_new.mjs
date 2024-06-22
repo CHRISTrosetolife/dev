@@ -160,7 +160,7 @@ export function app_gs_map_new() {
   let npc_count = 1;
   each_range(npc_count, () => {
     let tile = list_pop(inside);
-    let npc = overlay_add(tile, "npc");
+    let npc = app_gs_tile_overlay_add(tile, "npc");
     npc.character = list_random_item(game_img_list_male());
     let choices = bible_names_men();
     list_remove(choices, map.player.name);
@@ -169,13 +169,13 @@ export function app_gs_map_new() {
   });
   return map;
   function overlay_add_base(tile, id) {
-    let o = overlay_add(tile, "base");
+    let o = app_gs_tile_overlay_add(tile, "base");
     object_merge(o, {
       id,
     });
     list_add(tile.overlays, o);
   }
-  function overlay_add(tile, type) {
+  function app_gs_tile_overlay_add(tile, type) {
     let o = object_properties_new(tile, list_xy());
     object_merge(o, {
       type,
