@@ -1,3 +1,4 @@
+import { app_gs_bible_chapter_prefix } from "./app_gs_bible_chapter_prefix.mjs";
 import { function_run } from "./function_run.mjs";
 import { number_pad } from "./number_pad.mjs";
 import { each_index_only } from "./each_index_only.mjs";
@@ -125,7 +126,7 @@ export function app_gs_conversation_witness(menu_overlay, npc, map) {
     let [book_id, chapter, verse_index, objection_index] =
       list_split_underscore(objection_id);
     let chapter_id = number_pad(chapter);
-    await function_run("app_gs_bible_chapter_");
+    await function_run(app_gs_bible_chapter_prefix());
     list_slice(verses, index, index + objection.count);
     let { verses: answer_verses, objection } = objectable;
     let { text: objection_text } = objection;
