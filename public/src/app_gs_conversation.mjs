@@ -20,7 +20,7 @@ export function app_gs_conversation(map_c, map, npc) {
       string_combine_multiple([
         app_gs_phrase_thanks(),
         " for ",
-        "sharing",
+        list_random_item(["sharing"]),
         string_combine_multiple([
           " ",
           list_random_item(["speaking", "talking"]),
