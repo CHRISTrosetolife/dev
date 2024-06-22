@@ -273,7 +273,7 @@ export function app_gs_bible_chapter_jas01() {
       objections: [
         {
           text: "According to your scriptures, faith comes by hearing and hearing by the word of God. I only need to hear the word of God. Then God will give me faith and save me. I can live my life however I want. My actions do not matter because your scriptures say I am saved by faith not works.",
-          count: 1,
+          count: 3,
         },
       ],
       sermons: [
