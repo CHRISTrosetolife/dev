@@ -127,7 +127,11 @@ export function app_gs_conversation_witness(menu_overlay, npc, map) {
       list_split_underscore(objection_id);
     let chapter_id = number_pad(chapter);
     await function_run(
-      string_combine_multiple([app_gs_bible_chapter_prefix()]),
+      string_combine_multiple([
+        app_gs_bible_chapter_prefix(),
+        book_id,
+        chapter_id,
+      ]),
     );
     list_slice(verses, index, index + objection.count);
     let { verses: answer_verses, objection } = objectable;
