@@ -36,8 +36,7 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
     }),
   );
   let objectable = list_random_item(objectables);
-  let { index } = objectable.verse;
-  let objection = list_random_item(objectable.objections);
+  let { index, objection } = objectable.verse;
   let { count, text: object_text } = objection;
   let answer_verses = list_slice(verses, index, index + count);
   let first = list_first(answer_verses);
