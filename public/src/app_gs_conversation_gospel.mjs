@@ -36,7 +36,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
     );
     app_gs_conversation_root(menu_overlay, npc);
   } else if (npc.objection_count === 0) {
-    app_gs_conversation_gospel_convert(npc, menu_overlay);
+    app_gs_conversation_gospel_convert(menu_overlay, npc);
   } else {
     let book_name = "James";
     let chapter = "1";
