@@ -27,7 +27,7 @@ export function app_gs_conversation(map_c, map, npc) {
         ),
         app_gs_phrase_let_us(),
         "talk ",
-        "some time",
+        string_random_or_empty("some time"),
         "later",
       ]),
     );
