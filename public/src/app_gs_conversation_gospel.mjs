@@ -141,7 +141,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
         ":",
         first.verse_number,
         first !== last ? "-" + last.verse_number : "",
-        " ",
+        " - ",
         answer,
       ]),
       () => {
