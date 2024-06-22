@@ -7,6 +7,10 @@ export async function function_param_new(function_name) {
   let dis = await data_identifiers();
   let fns = object_property_get(dis, function_name);
   await each_async(fns, async (fn) => {
-    await function_transform_args_split_lambda(fn, [js_param_new]);
+    await function_transform_args_split_lambda(
+      fn,
+      [js_param_new],
+      [function_name, param_name, default_value_string],
+    );
   });
 }
