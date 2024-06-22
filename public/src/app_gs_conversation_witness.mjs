@@ -41,6 +41,7 @@ export function app_gs_conversation_witness(menu_overlay, npc, map) {
         la({
           verse,
           objection,
+          verses: list_slice(verses, index, index + objection.count),
         });
       });
     }),
