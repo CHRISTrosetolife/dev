@@ -36,9 +36,9 @@ export function app_gs_conversation_gospel_reminder(menu_overlay, npc) {
     ),
   ];
   list_shuffle(list);
-  let text = app_gs_phrase_combine_multiple(
+  let text = app_gs_phrase_combine_multiple([
     app_gs_phrase_worship_multiple_or_empty(),
     list,
-  );
+  ]);
   app_gs_conversation_npc_root(menu_overlay, npc, text);
 }
