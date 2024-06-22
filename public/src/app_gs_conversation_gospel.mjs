@@ -1,10 +1,10 @@
+import { app_gs_conversation_npc_root } from "./app_gs_conversation_npc_root.mjs";
 import { app_gs_conversation_npc } from "./app_gs_conversation_npc.mjs";
 import { app_gs_phrase_doxology } from "./app_gs_phrase_doxology.mjs";
 import { app_gs_phrase_the_gospel } from "./app_gs_phrase_the_gospel.mjs";
 import { app_gs_conversation_gospel_convert } from "./app_gs_conversation_gospel_convert.mjs";
 import { app_gs_phrase_thanks } from "./app_gs_phrase_thanks.mjs";
 import { app_gs_phrase_worship_multiple_or_empty } from "./app_gs_phrase_worship_multiple_or_empty.mjs";
-import { app_gs_conversation_root } from "./app_gs_conversation_root.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { app_gs_conversation_player_prompt } from "./app_gs_conversation_player_prompt.mjs";
@@ -39,8 +39,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
         string_combine_multiple([" ", app_gs_phrase_doxology()]),
       ),
     ]);
-    app_gs_conversation_npc(menu_overlay, npc, text);
-    app_gs_conversation_root(menu_overlay, npc);
+    app_gs_conversation_npc_root(menu_overlay, npc, text);
   } else if (npc.objection_count === 0) {
     app_gs_conversation_gospel_convert(menu_overlay, npc);
   } else {
