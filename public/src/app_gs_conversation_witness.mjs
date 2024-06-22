@@ -59,9 +59,5 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
     text: answer_text_button,
     on_click: answer_on_click,
   };
-  html_button_width_full_text_click(
-    div_player,
-    answer_text_button,
-    answer_on_click,
-  );
+  html_button_width_full_text_click(div_player, choice.text, choice.on_click);
 }
