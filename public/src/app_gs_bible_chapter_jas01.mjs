@@ -116,7 +116,8 @@ export function app_gs_bible_chapter_jas01() {
       ],
       sermons: [
         {
-          sermon: "",
+          sermon:
+            "when we go through trials, let us persevere with patience`God blesses those who persevere under trial",
           count: 1,
         },
       ],
