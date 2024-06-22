@@ -47,6 +47,14 @@ export function js_dollar(ast) {
         );
         object_replace(node, e);
       }
+      if (remaining === "ei") {
+        let name = js_name_unique(ast, "item");
+        let index = js_name_unique(ast, "index");
+        let e = js_parse_expression(
+          js_code_call_args(each.name, [js_code_arrow_block_args([name], "")]),
+        );
+        object_replace(node, e);
+      }
       if (remaining === "x") {
         let e = js_parse_expression(js_code_call(exit.name));
         object_replace(node, e);
