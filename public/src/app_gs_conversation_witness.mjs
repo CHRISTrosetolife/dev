@@ -49,6 +49,7 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
         app_gs_phrase_i_am(),
         " not ",
         string_random_or_empty("quite "),
+        string_random_or_empty("yet "),
         app_gs_phrase_convinced(),
       ]),
     );
