@@ -256,7 +256,12 @@ export function app_gs_bible_chapter_jas01() {
       text: "Therefore, get rid of all moral filth and every expression of evil, and humbly accept the word planted in you, which can save your souls.",
       objections: [],
       sermons: [],
-      questions: [],
+      questions: [
+        {
+          text: "",
+          count: 1,
+        },
+      ],
     },
     {
       verse_number: "22",
