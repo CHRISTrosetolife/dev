@@ -23,7 +23,7 @@ export function app_gs_conversation(map_c, map, npc) {
             " some time",
             string_random_or_empty(" to myself"),
             " to ",
-            list_random_item(["think"]),
+            list_random_item(["think", "ponder"]),
             string_random_or_empty(
               " about what ",
               app_gs_phrase_you_have(),
