@@ -7,7 +7,7 @@ export function app_gs_bible_chapter_jas01() {
       sermons: [
         {
           sermon:
-            "James serves God.`James serves Jesus.`Jesus is Christ and Lord.`James is writing to the twelve tribes of Israel.`The twelve tribes are dispersed.",
+            "James serves God.`James serves Jesus.`Jesus is Christ and Lord.`James is writing to the twelve tribes of Israel.`The twelve tribes are dispersed.`James greets the twelve tribes.",
           count: 1,
         },
       ],
