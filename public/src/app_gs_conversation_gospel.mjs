@@ -31,13 +31,15 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
       menu_overlay,
       npc,
       string_combine_multiple([
-        string_random_or_empty("Amen! "),
-        string_random_or_empty(
-          string_combine_multiple([app_gs_phrase_worship(), " "]),
-        ),
-        string_random_or_empty(
-          string_combine_multiple([app_gs_phrase_doxology(), " "]),
-        ),
+        string_combine_multiple([
+          string_random_or_empty("Amen! "),
+          string_random_or_empty(
+            string_combine_multiple([app_gs_phrase_worship(), " "]),
+          ),
+          string_random_or_empty(
+            string_combine_multiple([app_gs_phrase_doxology(), " "]),
+          ),
+        ]),
         list_random_item([
           string_combine_multiple([
             "You have ",
