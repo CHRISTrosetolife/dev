@@ -285,8 +285,8 @@ export function app_gs_bible_chapter_jas01() {
       ],
       questions: [
         {
-          text: "",
-          count: 1,
+          text: "Do our works really matter, or is hearing the word of God with faith all that matters?",
+          count: 3,
         },
       ],
     },
