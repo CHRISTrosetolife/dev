@@ -43,7 +43,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
           string_combine_multiple([app_gs_phrase_doxology(), " "]),
         ),
         string_combine_multiple([
-          string_random_or_empty("Now, "),
+          string_random_or_empty("Now "),
           "I believe ",
           list_random_item([
             string_combine_multiple(["in ", app_gs_phrase_jesus()]),
