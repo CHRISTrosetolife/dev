@@ -64,8 +64,8 @@ export function js_assign_to_let(ast) {
                     identifiers_add(keys);
                   } else 
                   if (equal(m_type, "ArrayPattern")) {
-                    log({m});exit()
-                    let { properties } = m;
+                    let { elements } = m;
+                    log(elements);exit()
                     let keys = list_map_property(properties, "value");
                     identifiers_add(keys);
                   }
