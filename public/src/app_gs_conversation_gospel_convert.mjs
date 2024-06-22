@@ -1,3 +1,4 @@
+import { app_gs_phrase_doxology_or_empty } from "./app_gs_phrase_doxology_or_empty.mjs";
 import { app_gs_phrase_the_gospel } from "./app_gs_phrase_the_gospel.mjs";
 import { app_gs_conversation_root } from "./app_gs_conversation_root.mjs";
 import { app_gs_phrase_jesus } from "./app_gs_phrase_jesus.mjs";
@@ -14,6 +15,7 @@ export function app_gs_conversation_gospel_convert(menu_overlay, npc) {
     npc,
     string_combine_multiple([
       app_gs_phrase_worship_multiple_or_empty(),
+      app_gs_phrase_doxology_or_empty(),
       list_random_item([
         string_combine_multiple([
           "You have ",
