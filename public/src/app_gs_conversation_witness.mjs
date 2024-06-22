@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { app_gs_conversation_gospel } from "./app_gs_conversation_gospel.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -14,6 +15,7 @@ import { list_filter } from "./list_filter.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { each_index } from "./each_index.mjs";
 import { app_gs_bible_chapter_jas01 } from "./app_gs_bible_chapter_jas01.mjs";
+import { list_adder } from "./list_adder.mjs";
 export function app_gs_conversation_witness(menu_overlay, npc) {
   let book_name = "James";
   let chapter = "1";
@@ -25,6 +27,7 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
       chapter,
     });
   });
+  list_adder((la) => each(list, (item2) => {}));
   let objectables = list_filter(verses, (v) => list_empty_not_is(v.objections));
   let objectable = list_random_item(objectables);
   let { index } = objectable;
