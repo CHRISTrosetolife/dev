@@ -6,6 +6,7 @@ export function app_gs_phrase_what_youve_said() {
   return string_combine_multiple([
     "what ",
     app_gs_phrase_you_have(),
+    " ",
     list_random_item(["said", "spoken"]),
     string_random_or_empty(" to me"),
   ]);
