@@ -1,3 +1,4 @@
+import { app_gs_phrase_thanks } from "./app_gs_phrase_thanks.mjs";
 import { list_random_item } from "./list_random_item.mjs";
 import { app_gs_phrase_convinced } from "./app_gs_phrase_convinced.mjs";
 import { app_gs_phrase_i_am } from "./app_gs_phrase_i_am.mjs";
@@ -48,7 +49,7 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
       npc,
       string_combine_multiple([
         string_random_or_empty(
-          string_combine_multiple(["Thanks", " for your time "]),
+          string_combine_multiple([app_gs_phrase_thanks(), " for your time "]),
         ),
         app_gs_phrase_i_am(),
         " not ",
