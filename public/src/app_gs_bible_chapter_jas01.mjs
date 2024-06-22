@@ -167,7 +167,12 @@ export function app_gs_bible_chapter_jas01() {
     {
       verse_number: "15",
       text: "Then after desire has conceived, it gives birth to sin; and sin, when it is full-grown, gives birth to death.",
-      objections: [],
+      objections: [
+        {
+          text: "",
+          count: 1,
+        },
+      ],
       sermons: [],
       questions: [],
     },
