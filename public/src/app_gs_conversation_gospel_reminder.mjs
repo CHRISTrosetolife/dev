@@ -1,3 +1,4 @@
+import { list_shuffle } from "./list_shuffle.mjs";
 import { app_gs_phrase_jesus } from "./app_gs_phrase_jesus.mjs";
 import { app_gs_phrase_gospel_verbs } from "./app_gs_phrase_gospel_verbs.mjs";
 import { app_gs_conversation_npc_root } from "./app_gs_conversation_npc_root.mjs";
@@ -36,5 +37,6 @@ export function app_gs_conversation_gospel_reminder(menu_overlay, npc) {
       ),
     ],
   ]);
+  list_shuffle(list);
   app_gs_conversation_npc_root(menu_overlay, npc, text);
 }
