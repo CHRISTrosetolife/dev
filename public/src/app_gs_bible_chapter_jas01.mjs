@@ -356,7 +356,7 @@ export function app_gs_bible_chapter_jas01() {
       sermons: [],
       questions: [
         {
-          text: "",
+          text: "What is pure and undefiled religion before God?",
           count: 1,
         },
       ],
