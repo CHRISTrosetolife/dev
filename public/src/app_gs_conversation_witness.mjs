@@ -1,3 +1,4 @@
+import { app_gs_conversation_end } from "./app_gs_conversation_end.mjs";
 import { list_pop } from "./list_pop.mjs";
 import { each } from "./each.mjs";
 import { app_gs_conversation_gospel } from "./app_gs_conversation_gospel.mjs";
@@ -38,7 +39,8 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
   );
   list_shuffle(objectables);
   let choice_wrong = choice_get(() => {
-    app_gs_conversation_gospel(menu_overlay, npc);
+    let div_player = app_gs_conversation_player_prompt(menu_overlay, "");
+    app_gs_conversation_end(div_player, menu_overlay);
   });
   let choice_correct = choice_get(() => {
     npc.objection_count--;
