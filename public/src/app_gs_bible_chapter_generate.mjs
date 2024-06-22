@@ -53,7 +53,8 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
             let property_text = list_find(
               properties,
               (p) =>
-                p.key.type === "Identifier" && p.name === property_text_name,
+                p.key.type === "Identifier" &&
+                p.key.name === property_text_name,
             );
             let verse_text = list_join_space(verse.tokens);
             property_text.value = js_code_string(verse_text);
@@ -61,7 +62,8 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
             if (
               list_all(
                 properties,
-                (p) => p.key.type !== "Identifier" || p.name !== property_name,
+                (p) =>
+                  p.key.type !== "Identifier" || p.key.name !== property_name,
               )
             ) {
               list_add(properties, {
