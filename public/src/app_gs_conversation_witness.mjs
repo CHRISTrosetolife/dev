@@ -1,3 +1,4 @@
+import { list_random_item } from "./list_random_item.mjs";
 import { app_gs_phrase_convinced } from "./app_gs_phrase_convinced.mjs";
 import { app_gs_phrase_i_am } from "./app_gs_phrase_i_am.mjs";
 import { app_gs_conversation_end } from "./app_gs_conversation_end.mjs";
@@ -49,9 +50,11 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
         app_gs_phrase_i_am(),
         " not ",
         string_random_or_empty("quite "),
-        string_combine_multiple([
-          string_random_or_empty("yet "),
-          app_gs_phrase_convinced(),
+        list_random_item([
+          string_combine_multiple([
+            string_random_or_empty("yet "),
+            app_gs_phrase_convinced(),
+          ]),
         ]),
       ]),
     );
