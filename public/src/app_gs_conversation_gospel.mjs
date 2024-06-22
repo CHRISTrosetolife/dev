@@ -25,25 +25,8 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
       npc,
       string_combine_multiple([
         list_random_item([
-          string_combine_multiple([
-            list_random_item(["Amen", "Alleluia", "Hallelujah"]),
-            "!",
-          ]),
-          string_combine_multiple([
-            list_random_item([
-              string_combine_multiple([
-                "Praise the Lord",
-                string_random_or_empty(", our God"),
-              ]),
-              "Thank You, Jesus",
-              string_combine_multiple([
-                "Praise be to ",
-                list_random_item(["our God and Savior", "God"]),
-              ]),
-              "What a God we serve",
-            ]),
-            "!",
-          ]),
+          app_gs_phrase_worship(),
+          app_gs_phrase_doxology(),
         ]),
         " ",
         string_combine_multiple([
@@ -144,3 +127,28 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
     );
   }
 }
+function app_gs_phrase_doxology() {
+    return string_combine_multiple([
+        list_random_item([
+            string_combine_multiple([
+                "Praise the Lord",
+                string_random_or_empty(", our God"),
+            ]),
+            "Thank You, Jesus",
+            string_combine_multiple([
+                "Praise be to ",
+                list_random_item(["our God and Savior", "God"]),
+            ]),
+            "What a God we serve",
+        ]),
+        "!",
+    ]);
+}
+
+function app_gs_phrase_worship() {
+    return string_combine_multiple([
+        list_random_item(["Amen", "Alleluia", "Hallelujah"]),
+        "!",
+    ]);
+}
+
