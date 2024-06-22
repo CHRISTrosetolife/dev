@@ -38,11 +38,10 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
   );
   list_shuffle(objectables);
   let objectable_wrong = list_pop(objectables);
-  let on_click = () => {
+  let choice_correct = choice_get(() => {
     npc.objection_count--;
     app_gs_conversation_gospel(menu_overlay, npc);
-  };
-  let choice_correct = choice_get();
+  });
   app_gs_conversation_npc(menu_overlay, npc, choice_correct.objection_text);
   let div_player = app_gs_conversation_player_prompt(
     menu_overlay,
@@ -53,7 +52,7 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
     choice_correct.answer_text,
     choice_correct.on_click,
   );
-  function choice_get() {
+  function choice_get(on_click) {
     let objectable_right = list_pop(objectables);
     let {
       verse: { index },
