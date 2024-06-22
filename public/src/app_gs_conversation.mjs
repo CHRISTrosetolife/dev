@@ -1,3 +1,4 @@
+import { app_gs_phrase_exclaim_or_period } from "./app_gs_phrase_exclaim_or_period.mjs";
 import { app_gs_phrase_let_us } from "./app_gs_phrase_let_us.mjs";
 import { list_random_item } from "./list_random_item.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -16,7 +17,11 @@ export function app_gs_conversation(map_c, map, npc) {
   npc.conversation_count++;
   if (map.player.conversation_count < npc.conversation_wait_until) {
     let sentences = [
-      string_combine_multiple([app_gs_phrase_thanks(), " for sharing"]),
+      string_combine_multiple([
+        app_gs_phrase_thanks(),
+        " for sharing",
+        app_gs_phrase_exclaim_or_period(),
+      ]),
       string_combine_multiple([
         "I need",
         string_combine_multiple([
