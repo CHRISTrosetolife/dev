@@ -327,7 +327,7 @@ export function app_gs_bible_chapter_jas01() {
       objections: [],
       sermons: [
         {
-          sermon: "",
+          sermon: "let us bridle our tongues",
           count: 2,
         },
       ],
