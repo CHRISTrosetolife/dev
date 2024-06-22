@@ -200,7 +200,7 @@ export function app_gs_bible_chapter_jas01() {
           count: 1,
         },
         {
-          text: "",
+          text: "Where do good things in life come from?",
           count: 1,
         },
       ],
