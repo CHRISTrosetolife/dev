@@ -12,4 +12,5 @@ export function app_gs_npc_add(map, tile_choices) {
   list_remove(choices, map.player.name);
   npc.name = list_random_item(choices);
   npc.conversation_count = 0;
+  npc.objection_count = 1;
 }
