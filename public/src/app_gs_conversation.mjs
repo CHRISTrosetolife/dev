@@ -1,4 +1,4 @@
-import { list_map } from "./list_map.mjs";
+import { list_map_property } from "./list_map_property.mjs";
 import { list_slice } from "./list_slice.mjs";
 import { each_index } from "./each_index.mjs";
 import { list_filter } from "./list_filter.mjs";
@@ -50,7 +50,7 @@ export function app_gs_conversation(map_c, map, npc) {
         let objection = list_random_item(objectable.objections);
         let { index, count } = objection;
         let answer_verses = list_slice(verses, index, index + count);
-        list_map();
+        list_map_property(answer_verses, "text");
         app_gs_conversation_speech_npc(menu_overlay, npc, text);
         npc.objection_count--;
       }
