@@ -48,8 +48,9 @@ export function app_gs_conversation(map_c, map, npc) {
           list_empty_not_is(v.objections),
         );
         let objectable = list_random_item(objectables);
+        let { index } = objection;
         let objection = list_random_item(objectable.objections);
-        let { index, count } = objection;
+        let { count } = objection;
         let answer_verses = list_slice(verses, index, index + count);
         let answer_texts = list_map_property(answer_verses, "text");
         let answer = list_join_space(answer_texts);
