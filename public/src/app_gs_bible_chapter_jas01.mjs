@@ -169,7 +169,7 @@ export function app_gs_bible_chapter_jas01() {
       text: "Then after desire has conceived, it gives birth to sin; and sin, when it is full-grown, gives birth to death.",
       objections: [
         {
-          text: "",
+          text: "If I do something you consider sin, but no one ever finds out about it, then nothing bad will ever happen.",
           count: 1,
         },
       ],
