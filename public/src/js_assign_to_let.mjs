@@ -15,6 +15,7 @@ import { object_replace } from "./object_replace.mjs";
 import { list_single } from "./list_single.mjs";
 import { list_after } from "./list_after.mjs";
 import { list_index } from "./list_index.mjs";
+import { exit } from "./exit.mjs";
 export function js_assign_to_let(ast) {
   let ess = js_node_type_visitor(ast, "ExpressionStatement");
   each(ess, (v) => {
@@ -56,16 +57,19 @@ export function js_assign_to_let(ast) {
                 if (equal(m_type, "Identifier")) {
                   let { name: m_name } = m;
                   la(m_name);
-                } else {
-                  log({
-                    m_type,
-                  });
+                } else 
                   if (equal(m_type, "ObjectPattern")) {
                     let { properties } = m;
                     let keys = list_map_property(properties, "value");
                     identifiers_add(keys);
+                  } else 
+                  if (equal(m_type, "ArrayPattern")) {
+                    log({m});exit()
+                    let { properties } = m;
+                    let keys = list_map_property(properties, "value");
+                    identifiers_add(keys);
                   }
-                }
+                
               });
             }
           });
