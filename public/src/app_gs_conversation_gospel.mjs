@@ -55,7 +55,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
               "persuading",
               "convincing",
             ]),
-            " me about Jesus",
+            string_combine_multiple([" me about Jesus"]),
           ]),
         ]),
         " ",
