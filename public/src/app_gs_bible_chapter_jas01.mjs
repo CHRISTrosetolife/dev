@@ -271,7 +271,12 @@ export function app_gs_bible_chapter_jas01() {
       verse_number: "22",
       text: "Be doers of the word, and not hearers only. Otherwise, you are deceiving yourselves.",
       objections: [],
-      sermons: [],
+      sermons: [
+        {
+          sermon: "",
+          count: 1,
+        },
+      ],
       questions: [],
     },
     {
