@@ -64,9 +64,9 @@ export function app_gs_conversation(map_c, map, npc) {
             "📖 Tell ",
             npc.name,
             " ",
-            book_name,
+            first.book_name,
             " ",
-            chapter,
+            first.chapter,
             ":",
           ]),
         );
