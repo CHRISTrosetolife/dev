@@ -24,10 +24,8 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
       menu_overlay,
       npc,
       string_combine_multiple([
+        list_random_item(["Amen", "Alleluia", "Hallelujah"]),
         list_random_item([
-          "Amen",
-          "Alleluia",
-          "Hallelujah",
           string_combine_multiple([
             "Praise the Lord",
             string_random_or_empty(", our God"),
