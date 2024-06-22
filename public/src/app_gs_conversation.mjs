@@ -21,7 +21,10 @@ export function app_gs_conversation(map_c, map, npc) {
         app_gs_phrase_thanks(),
         " for ",
         "sharing",
-        string_combine_multiple([list_random_item(["speaking", "talking"])]),
+        string_combine_multiple([
+          list_random_item(["speaking", "talking"]),
+          " with me",
+        ]),
         app_gs_phrase_exclaim_or_period(),
       ]),
       string_combine_multiple([
