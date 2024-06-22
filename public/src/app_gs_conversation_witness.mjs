@@ -1,3 +1,4 @@
+import { string_split_underscore } from "./string_split_underscore.mjs";
 import { app_gs_bible_chapter_prefix } from "./app_gs_bible_chapter_prefix.mjs";
 import { function_run } from "./function_run.mjs";
 import { number_pad } from "./number_pad.mjs";
@@ -124,7 +125,7 @@ export function app_gs_conversation_witness(menu_overlay, npc, map) {
   async function choice_get(on_click) {
     let objection_id = list_pop(objection_ids);
     let [book_id, chapter, verse_index, objection_index] =
-      list_split_underscore(objection_id);
+      string_split_underscore(objection_id);
     let chapter_id = number_pad(chapter);
     await function_run(
       string_combine_multiple([
