@@ -145,11 +145,12 @@ export function js_dollar(ast) {
       }
     }
   });
-  function prefix_use(remaining, scm_prefix, prefixes) {
+  function prefix_use(remaining, prefix, prefixes) {
+      const p1 = string_starts_with(remaining, prefix);
     return (
-      string_starts_with(remaining, scm_prefix) &&
+      p1 &&
       list_all(prefixes, (p) => {
-        !string_starts_with(remaining, p) || string_starts_with(scm_prefix, p);
+        !string_starts_with(remaining, p) || string_starts_with(prefix, p);
       })
     );
   }
