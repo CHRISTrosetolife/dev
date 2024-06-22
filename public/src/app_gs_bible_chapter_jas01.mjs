@@ -4,7 +4,7 @@ export function app_gs_bible_chapter_jas01() {
       verse_number: "1",
       text: "James, a servant of God and of the Lord Jesus Christ, To the twelve tribes of the Dispersion: Greetings.",
       objections: [],
-      sermons: [],
+      sermons: [$se],
     },
     {
       verse_number: "2",
