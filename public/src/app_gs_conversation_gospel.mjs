@@ -48,15 +48,17 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
             app_gs_phrase_exclaim_or_period(),
           ]),
           string_combine_multiple([
-            "Thank you for ",$s3,
-            list_random_item([
-              "telling",
-              "taking the time to tell",
-              "persuading",
-              "convincing",
+            "Thank you for ",
+            string_combine_multiple([
+              list_random_item([
+                "telling",
+                "taking the time to tell",
+                "persuading",
+                "convincing",
+              ]),
+              " me about ",
+              list_random_item(["the gospel", "the gospel of Jesus", "Jesus"]),
             ]),
-            " me about ",
-            list_random_item(["the gospel", "the gospel of Jesus", "Jesus"]),
           ]),
         ]),
         " ",
