@@ -2,7 +2,6 @@ import { list_get } from "./list_get.mjs";
 import { app_gs_objection_ids } from "./app_gs_objection_ids.mjs";
 import { string_split_underscore } from "./string_split_underscore.mjs";
 import { app_gs_bible_chapter_prefix } from "./app_gs_bible_chapter_prefix.mjs";
-import { function_run } from "./function_run.mjs";
 import { number_pad } from "./number_pad.mjs";
 import { app_gs_conversation_npc_end } from "./app_gs_conversation_npc_end.mjs";
 import { app_gs_npc_conversation_wait_count } from "./app_gs_npc_conversation_wait_count.mjs";
@@ -99,7 +98,7 @@ export async function app_gs_conversation_witness(menu_overlay, npc, map) {
     let [book_id, chapter, verse_index, objection_index] =
       string_split_underscore(objection_id);
     let chapter_id = number_pad(chapter);
-    let verses = await function_run(
+    let verses = await function_runn(
       string_combine_multiple([
         app_gs_bible_chapter_prefix(),
         book_id,
