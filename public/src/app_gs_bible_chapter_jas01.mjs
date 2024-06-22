@@ -88,7 +88,7 @@ export function app_gs_bible_chapter_jas01() {
       objections: [
         {
           text: "I have much money.",
-          count: 1,
+          count: 2,
         },
       ],
       sermons: [],
