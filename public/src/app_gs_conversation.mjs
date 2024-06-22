@@ -7,7 +7,12 @@ export function app_gs_conversation(map_c, map, npc) {
   map.player.conversation_count++;
   npc.conversation_count++;
   if (map.player.conversation_count < npc.conversation_wait_until) {
-    app_gs_conversation_npc_end(menu_overlay, npc, "I need some time to think");
+    app_gs_conversation_npc_end(
+      menu_overlay,
+      npc,
+      "I need some time ",
+      "to think",
+    );
   } else {
     let text = app_gs_conversation_npc_opening_text(map, npc);
     app_gs_conversation_npc_opening(menu_overlay, npc, text, map);
