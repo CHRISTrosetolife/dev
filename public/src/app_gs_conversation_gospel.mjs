@@ -25,7 +25,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
     app_gs_conversation_speech_npc(
       menu_overlay,
       npc,
-      string_combine_multiple([""]),
+      string_combine_multiple([app_gs_phrase_worship_multiple_or_empty(), ""]),
     );
     app_gs_conversation_root(menu_overlay, npc);
   } else if (npc.objection_count === 0) {
