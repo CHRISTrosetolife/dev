@@ -1,3 +1,5 @@
+import { app_gs_phrase_doxology } from "./app_gs_phrase_doxology.mjs";
+import { app_gs_phrase_worship } from "./app_gs_phrase_worship.mjs";
 import { app_gs_phrase_jesus } from "./app_gs_phrase_jesus.mjs";
 import { string_random_or_empty } from "./string_random_or_empty.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -24,10 +26,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
       menu_overlay,
       npc,
       string_combine_multiple([
-        list_random_item([
-          app_gs_phrase_worship(),
-          app_gs_phrase_doxology(),
-        ]),
+        list_random_item([app_gs_phrase_worship(), app_gs_phrase_doxology()]),
         " ",
         string_combine_multiple([
           "I believe ",
@@ -127,28 +126,3 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
     );
   }
 }
-function app_gs_phrase_doxology() {
-    return string_combine_multiple([
-        list_random_item([
-            string_combine_multiple([
-                "Praise the Lord",
-                string_random_or_empty(", our God"),
-            ]),
-            "Thank You, Jesus",
-            string_combine_multiple([
-                "Praise be to ",
-                list_random_item(["our God and Savior", "God"]),
-            ]),
-            "What a God we serve",
-        ]),
-        "!",
-    ]);
-}
-
-function app_gs_phrase_worship() {
-    return string_combine_multiple([
-        list_random_item(["Amen", "Alleluia", "Hallelujah"]),
-        "!",
-    ]);
-}
-
