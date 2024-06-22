@@ -353,7 +353,7 @@ export function app_gs_bible_chapter_jas01() {
           count: 1,
         },
         {
-          text: "",
+          text: "Christians only care about having faith and believing in Jesus. Christians do not care about helping people in need like orphans or widows.",
           count: 1,
         },
       ],
