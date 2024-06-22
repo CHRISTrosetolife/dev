@@ -10,7 +10,7 @@ export function app_gs_bible_chapter_jas01() {
       text: "Consider it pure joy, my brothers, when you encounter trials of many kinds,",
       objections: [
         {
-          text: "How can God be loving when my life is so full of difficulties? It is one difficulty after another.",
+          text: "How can God be loving when my life is so full of difficulties? Life is one difficulty after another.",
           count: 1,
         },
       ],
