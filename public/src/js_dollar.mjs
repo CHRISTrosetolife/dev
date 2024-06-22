@@ -154,7 +154,11 @@ export function js_dollar(ast) {
           return true;
         }
         let p2 = string_starts_with(prefix, p);
-        log({});
+        log({
+          p2,
+          prefix,
+          p,
+        });
         return p2;
       })
     );
