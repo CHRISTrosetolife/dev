@@ -48,7 +48,7 @@ export function app_gs_bible_chapter_jas01() {
       sermons: [
         {
           sermon:
-            "God gives gifts generously to sinners`if we lack wisdom, let us ask God for wisdom`if we ask God for wisdom, then God will give us wisdom`we must ask God for wisdom in faith`let us not doubt when we ask God for wisdom",
+            "God gives gifts generously to sinners`if we lack wisdom, let us ask God for wisdom`if we ask God for wisdom, then God will give us wisdom`we must ask God for wisdom in faith`let us not doubt when we ask God for wisdom`those who doubt are like when the wind blows and tosses a wave in the ocean`those who doubt should not expect God to answer their prayer",
           count: 1,
         },
       ],
