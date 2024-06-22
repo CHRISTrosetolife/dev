@@ -1,4 +1,4 @@
-import { js_code_string } from "./js_code_string.mjs";
+import { js_string } from "./js_string.mjs";
 import { list_find } from "./list_find.mjs";
 import { equal_by } from "./equal_by.mjs";
 import { assert } from "./assert.mjs";
@@ -57,7 +57,7 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
                 p.key.name === property_text_name,
             );
             let verse_text = list_join_space(verse.tokens);
-            property_text.value = js_code_string(verse_text);
+            property_text.value = js_string(verse_text);
             let property_name = "sermons";
             if (
               list_all(
