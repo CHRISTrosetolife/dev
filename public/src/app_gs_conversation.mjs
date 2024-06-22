@@ -40,11 +40,13 @@ export function app_gs_conversation(map_c, map, npc) {
           " to ",
           list_random_item(["think", "ponder"]),
           string_random_or_empty(
-            " about ",
-            "what ",
-            app_gs_phrase_you_have(),
-            list_random_item(["said", "spoken"]),
-            string_random_or_empty(" to me"),
+            string_combine_multiple([
+              " about ",
+              "what ",
+              app_gs_phrase_you_have(),
+              list_random_item(["said", "spoken"]),
+              string_random_or_empty(" to me"),
+            ]),
           ),
           ".",
         ]),
