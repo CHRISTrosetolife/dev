@@ -105,6 +105,7 @@ export async function app_gs_conversation_witness(menu_overlay, npc, map) {
         book_id,
         chapter_id,
       ]),
+      [],
     );
     let verse = list_get(verses, verse_index);
     let objection = list_get(verse.objection, objection_index);
