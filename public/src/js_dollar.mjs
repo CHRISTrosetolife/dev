@@ -111,11 +111,7 @@ export function js_dollar(ast) {
         object_replace(node, e);
       }
       if (prefix_use(remaining, question_prefix, prefixes)) {
-        remaining = string_prefix_without(remaining, question_prefix);
-        let count = 1;
-        if (string_empty_not_is(remaining)) {
-          count = integer_parse(remaining);
-        }
+        let count = remaining_count_get(remaining, question_prefix);
         let e = js_parse_expression(
           string_combine_multiple(["{text:'',count:", count, "}"]),
         );
@@ -162,6 +158,14 @@ export function js_dollar(ast) {
       }
     }
   });
+  function remaining_count_get(remaining, question_prefix) {
+    remaining = string_prefix_without(remaining, question_prefix);
+    let count = 1;
+    if (string_empty_not_is(remaining)) {
+      count = integer_parse(remaining);
+    }
+    return count;
+  }
   function prefix_use(remaining, prefix, prefixes) {
     let p1 = string_starts_with(remaining, prefix);
     return (
