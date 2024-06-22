@@ -6,7 +6,8 @@ export function app_gs_bible_chapter_jas01() {
       objections: [],
       sermons: [
         {
-          sermon: "",
+          sermon:
+            "James serves God`James serves Jesus`Jesus is Lord`Jesus is Christ`James is writing to the twelve tribes of Israel`The twelve tribes are dispersed.",
           count: 1,
         },
       ],
