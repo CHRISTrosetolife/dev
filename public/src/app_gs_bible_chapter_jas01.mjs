@@ -82,7 +82,7 @@ export function app_gs_bible_chapter_jas01() {
       ],
       sermons: [
         {
-          sermon: "",
+          sermon: "the poor should glory that God richly blesses them",
           count: 1,
         },
       ],
