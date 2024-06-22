@@ -13,5 +13,5 @@ export function app_gs_npc_add(map, tile_choices) {
   npc.name = list_random_item(choices);
   npc.conversation_count = 0;
   npc.objection_count = 1;
-  npc.christian = true;
+  npc.christian = false;
 }
