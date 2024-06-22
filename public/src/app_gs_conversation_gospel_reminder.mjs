@@ -1,4 +1,3 @@
-import { error } from "./error.mjs";
 import { app_gs_phrase_worship_multiple_or_empty } from "./app_gs_phrase_worship_multiple_or_empty.mjs";
 import { app_gs_phrase_combine_multiple } from "./app_gs_phrase_combine_multiple.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
@@ -41,5 +40,5 @@ export function app_gs_conversation_gospel_reminder(menu_overlay, npc, map) {
     app_gs_phrase_worship_multiple_or_empty(),
     list,
   ]);
-  app_gs_conversation_npc_root(menu_overlay, npc, text, error());
+  app_gs_conversation_npc_root(menu_overlay, npc, text, map);
 }
