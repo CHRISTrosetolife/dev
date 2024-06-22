@@ -56,6 +56,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
                   string_combine_multiple([
                     "the ",
                     list_random_item([
+                      "Word of God",
                       string_combine_multiple([
                         "gospel",
                         string_random_or_empty(
