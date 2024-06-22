@@ -1,3 +1,4 @@
+import { app_gs_phrase_the_gospel } from "./app_gs_phrase_the_gospel.mjs";
 import { app_gs_conversation_gospel_convert } from "./app_gs_conversation_gospel_convert.mjs";
 import { app_gs_phrase_thanks } from "./app_gs_phrase_thanks.mjs";
 import { app_gs_phrase_worship_multiple_or_empty } from "./app_gs_phrase_worship_multiple_or_empty.mjs";
@@ -32,7 +33,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
           " for ",
           list_random_item(["the reminder", "reminding me"]),
         ]),
-        string_random_or_empty(" of the gospel"),
+        string_random_or_empty(" of ", app_gs_phrase_the_gospel()),
         "!",
       ]),
     );
