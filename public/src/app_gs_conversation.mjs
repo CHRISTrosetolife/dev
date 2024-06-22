@@ -51,6 +51,7 @@ export function app_gs_conversation(map_c, map, npc) {
         let answer_texts = list_map_property(answer_verses, "text");
         let answer = list_join_space(answer_texts);
         app_gs_conversation_speech_npc(menu_overlay, npc, object_text);
+        let div_player = app_gs_conversation_player_prompt(menu_overlay);
         npc.objection_count--;
       }
     },
