@@ -28,7 +28,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
           "Amen",
           "Alleluia",
           "Hallelujah",
-          string_combine_multiple(["Praise the ", "Lord"]),
+          string_combine_multiple(["Praise the ", list_random_item(["Lord"])]),
           "Thank You, Jesus",
           string_combine_multiple([
             "Praise be to ",
