@@ -9,8 +9,8 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export function app_gs_conversation_gospel_reminder(menu_overlay, npc) {
   let text = string_combine_multiple([
     app_gs_phrase_worship_multiple_or_empty(),
-    app_gs_phrase_thanks(),
     string_combine_multiple([
+      app_gs_phrase_thanks(),
       " for ",
       list_random_item(["the reminder", "reminding me"]),
       string_random_or_empty(
