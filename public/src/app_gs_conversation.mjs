@@ -40,6 +40,8 @@ export function app_gs_conversation(map_c, map, npc) {
         each_index(verses, (item, index) => {
           object_merge(item, {
             index,
+            book_name,
+            chapter,
           });
         });
         let objectables = list_filter(verses, (v) =>
