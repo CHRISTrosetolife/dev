@@ -153,9 +153,7 @@ export function js_dollar(ast) {
         if (!string_starts_with(remaining, p)) {
           return true;
         }
-        return (
-          !string_starts_with(remaining, p) || string_starts_with(prefix, p)
-        );
+        return string_starts_with(prefix, p);
       })
     );
   }
