@@ -1,3 +1,4 @@
+import { exit } from "./exit.mjs";
 import { log } from "./log.mjs";
 import { string_split_multiple } from "./string_split_multiple.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
@@ -38,5 +39,6 @@ export function bible_verses_parse(verses) {
       });
     }),
   );
+  exit();
   return result;
 }
