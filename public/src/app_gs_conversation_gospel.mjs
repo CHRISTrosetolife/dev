@@ -1,7 +1,6 @@
+import { app_gs_phrase_worship_multiple_or_empty } from "./app_gs_phrase_worship_multiple_or_empty.mjs";
 import { app_gs_phrase_exclaim_or_period } from "./app_gs_phrase_exclaim_or_period.mjs";
 import { app_gs_conversation_root } from "./app_gs_conversation_root.mjs";
-import { app_gs_phrase_doxology } from "./app_gs_phrase_doxology.mjs";
-import { app_gs_phrase_worship } from "./app_gs_phrase_worship.mjs";
 import { app_gs_phrase_jesus } from "./app_gs_phrase_jesus.mjs";
 import { string_random_or_empty } from "./string_random_or_empty.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -31,15 +30,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
       menu_overlay,
       npc,
       string_combine_multiple([
-        string_combine_multiple([
-          string_random_or_empty("Amen! "),
-          string_random_or_empty(
-            string_combine_multiple([app_gs_phrase_worship(), " "]),
-          ),
-          string_random_or_empty(
-            string_combine_multiple([app_gs_phrase_doxology(), " "]),
-          ),
-        ]),
+        app_gs_phrase_worship_multiple_or_empty(),
         list_random_item([
           string_combine_multiple([
             "You have ",
