@@ -61,7 +61,10 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
                 " ",
                 list_random_item([
                   "shared",
-                  string_combine_multiple(["said", "to me"]),
+                  string_combine_multiple([
+                    "said",
+                    string_random_or_empty("to me"),
+                  ]),
                 ]),
               ]),
             ]),
