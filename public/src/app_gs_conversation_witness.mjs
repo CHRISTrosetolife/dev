@@ -39,7 +39,7 @@ export function app_gs_conversation_witness(menu_overlay, npc, map) {
   let objectables = list_adder((la) =>
     each_index(verses, (verse, index) => {
       each(verse.objections, (objection) => {
-        la(list_join_underscore());
+        la(list_join_underscore([]));
       });
     }),
   );
