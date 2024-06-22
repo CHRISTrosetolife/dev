@@ -42,10 +42,12 @@ export function app_gs_conversation(map_c, map, npc) {
           string_random_or_empty(
             string_combine_multiple([
               " about ",
-              "what ",
-              app_gs_phrase_you_have(),
-              list_random_item(["said", "spoken"]),
-              string_random_or_empty(" to me"),
+              string_combine_multiple([
+                "what ",
+                app_gs_phrase_you_have(),
+                list_random_item(["said", "spoken"]),
+                string_random_or_empty(" to me"),
+              ]),
             ]),
           ),
           ".",
