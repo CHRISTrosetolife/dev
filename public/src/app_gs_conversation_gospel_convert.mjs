@@ -3,7 +3,6 @@ import { list_concat } from "./list_concat.mjs";
 import { app_gs_phrase_combine } from "./app_gs_phrase_combine.mjs";
 import { app_gs_phrase_doxology_or_empty } from "./app_gs_phrase_doxology_or_empty.mjs";
 import { app_gs_phrase_the_gospel } from "./app_gs_phrase_the_gospel.mjs";
-import { app_gs_conversation_root } from "./app_gs_conversation_root.mjs";
 import { app_gs_phrase_jesus } from "./app_gs_phrase_jesus.mjs";
 import { app_gs_phrase_exclaim_or_period } from "./app_gs_phrase_exclaim_or_period.mjs";
 import { string_random_or_empty } from "./string_random_or_empty.mjs";
@@ -115,5 +114,4 @@ export function app_gs_conversation_gospel_convert(menu_overlay, npc) {
       ]),
     ),
   );
-  app_gs_conversation_root(menu_overlay, npc);
 }
