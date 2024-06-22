@@ -1,5 +1,4 @@
 import { exit } from "./exit.mjs";
-import { log } from "./log.mjs";
 import { string_split_multiple } from "./string_split_multiple.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 import { object_property_get_or } from "./object_property_get_or.mjs";
@@ -16,7 +15,6 @@ export function bible_verses_parse(verses) {
       bible_verses_parse_text(v, verse_number, tokens);
       let { children } = v;
       each(children, (c) => {
-        log(html_parse_text(c));
         if (c.type === "tag") {
           let { attribs } = c;
           if (object_property_get_or(attribs, "class", "") === "verse") {
