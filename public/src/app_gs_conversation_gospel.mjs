@@ -51,7 +51,10 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
                           "Savior",
                           random_50_50() ? "" : " and Lord",
                         ]),
-                        "Lord",
+                        string_combine_multiple([
+                          "Lord",
+                          random_50_50() ? "" : " and Savior",
+                        ]),
                       ]),
                     ]),
                   ]),
