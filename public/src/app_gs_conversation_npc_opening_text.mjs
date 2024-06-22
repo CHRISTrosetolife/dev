@@ -9,7 +9,7 @@ import { equal_2 } from "./equal_2.mjs";
 import { random_50_50 } from "./random_50_50.mjs";
 import { list_random_item } from "./list_random_item.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
-export function app_gs_conversation_opening(map, npc) {
+export function app_gs_conversation_npc_opening_text(map, npc) {
   let greeting = string_combine_multiple([
     list_random_item(["Hello", "Hey", "Greetings", "Hi"]),
     ", ",
