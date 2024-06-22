@@ -29,7 +29,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
           "Thank You, Jesus",
           "Praise be to God",
         ]),
-        "!",
+        "! ",
       ]),
     );
   } else {
