@@ -146,7 +146,7 @@ export function js_dollar(ast) {
     }
   });
   function prefix_use(remaining, prefix, prefixes) {
-      const p1 = string_starts_with(remaining, prefix);
+    let p1 = string_starts_with(remaining, prefix);
     return (
       p1 &&
       list_all(prefixes, (p) => {
