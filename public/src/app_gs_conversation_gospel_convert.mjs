@@ -1,3 +1,4 @@
+import { app_gs_phrase_convinced } from "./app_gs_phrase_convinced.mjs";
 import { app_gs_phrase_thanks } from "./app_gs_phrase_thanks.mjs";
 import { app_gs_phrase_gospel_verbs } from "./app_gs_phrase_gospel_verbs.mjs";
 import { app_gs_phrase_combine_multiple } from "./app_gs_phrase_combine_multiple.mjs";
@@ -22,15 +23,7 @@ export function app_gs_conversation_gospel_convert(menu_overlay, npc) {
         list_random_item([
           string_combine_multiple([
             "You have ",
-            string_combine_multiple([
-              string_random_or_empty(
-                string_combine_multiple([
-                  list_random_item(["fully", "completely"]),
-                  " ",
-                ]),
-              ),
-              list_random_item(["convinced", "persuaded"]),
-            ]),
+            app_gs_phrase_convinced(),
             " me",
             app_gs_phrase_exclaim_or_period(),
           ]),
