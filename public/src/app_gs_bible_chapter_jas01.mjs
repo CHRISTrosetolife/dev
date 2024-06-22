@@ -239,7 +239,7 @@ export function app_gs_bible_chapter_jas01() {
           count: 2,
         },
         {
-          text: "",
+          text: "Is it okay for people to interrupt and talk over one another?",
           count: 1,
         },
       ],
