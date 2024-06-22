@@ -56,7 +56,14 @@ export function app_gs_conversation(map_c, map, npc) {
         let div_player = app_gs_conversation_player_prompt(menu_overlay);
         html_button_width_full_text_click(
           div_player,
-          string_combine_multiple(["📖 Tell ", npc.name, " ", book_name, " "]),
+          string_combine_multiple([
+            "📖 Tell ",
+            npc.name,
+            " ",
+            book_name,
+            " ",
+            chapter,
+          ]),
         );
         npc.objection_count--;
       }
