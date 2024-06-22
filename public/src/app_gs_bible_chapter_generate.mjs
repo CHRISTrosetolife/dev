@@ -1,3 +1,5 @@
+import { js_code_array_empty } from "./js_code_array_empty.mjs";
+import { js_parse_expression } from "./js_parse_expression.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_all } from "./list_all.mjs";
 import { list_filter } from "./list_filter.mjs";
@@ -53,13 +55,11 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
             ) {
               list_add({
                 type: "Property",
-                start: 4852,
-                end: 4866,
                 method: false,
                 shorthand: false,
                 computed: false,
-                key: [Node],
-                value: [Node],
+                key: js_parse_expression(property_name),
+                value: js_parse_expression(js_code_array_empty()),
                 kind: "init",
               });
             }
