@@ -66,7 +66,7 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
                   ]),
                   string_combine_multiple([
                     "shared",
-                    string_random_or_empty(" to me"),
+                    string_random_or_empty(" with me"),
                   ]),
                 ]),
               ]),
