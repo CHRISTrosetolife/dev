@@ -35,6 +35,9 @@ export function js_dollar(ast) {
     let prefix = "$";
     if (string_starts_with(name, prefix)) {
       let { parent } = v;
+      let objection_prefix = "o";
+      let scm_prefix = "s";
+      let sermon_prefix = "se";
       let remaining = string_prefix_without(name, prefix);
       if (remaining === "a") {
         let e = js_parse_expression(js_code_arrow_block());
@@ -88,7 +91,6 @@ export function js_dollar(ast) {
           object_replace(node, e);
         }
       }
-      let objection_prefix = "o";
       if (string_starts_with(remaining, objection_prefix)) {
         remaining = string_prefix_without(remaining, objection_prefix);
         let count = 1;
@@ -106,7 +108,6 @@ export function js_dollar(ast) {
           object_replace(parent, e);
         }
       }
-      let scm_prefix = "s";
       if (string_starts_with(remaining, scm_prefix)) {
         if (list_is(parent)) {
           let e = js_parse_expression(
@@ -129,7 +130,6 @@ export function js_dollar(ast) {
           object_replace(node, e);
         }
       }
-      let sermon_prefix = "se";
       if (string_starts_with(remaining, sermon_prefix)) {
         remaining = string_prefix_without(remaining, sermon_prefix);
         let count = 1;
