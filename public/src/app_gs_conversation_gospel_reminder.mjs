@@ -11,7 +11,7 @@ import { string_random_or_empty } from "./string_random_or_empty.mjs";
 import { list_random_item } from "./list_random_item.mjs";
 import { app_gs_phrase_thanks } from "./app_gs_phrase_thanks.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
-export function app_gs_conversation_gospel_reminder(menu_overlay, npc) {
+export function app_gs_conversation_gospel_reminder(menu_overlay, npc, map) {
   let list = [
     string_combine_multiple([
       app_gs_phrase_thanks(),
