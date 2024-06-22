@@ -117,7 +117,7 @@ export function app_gs_bible_chapter_jas01() {
       sermons: [
         {
           sermon:
-            "when we go through trials, let us persevere with patience`God blesses those who persevere under trial",
+            "when we go through trials, let us persevere with patience`God blesses those who persevere under trial`let us love God`God promises the crown of life to those who love God`when we stand the test of our trials, we will receive the crown of life",
           count: 1,
         },
       ],
