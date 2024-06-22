@@ -1,3 +1,4 @@
+import { number_pad } from "./number_pad.mjs";
 import { each_index_only } from "./each_index_only.mjs";
 import { list_join_underscore } from "./list_join_underscore.mjs";
 import { app_gs_verses_get } from "./app_gs_verses_get.mjs";
@@ -120,6 +121,7 @@ export function app_gs_conversation_witness(menu_overlay, npc, map) {
   });
   function choice_get(on_click) {
     let objection_id = list_pop(objection_ids);
+    let chapter_id = number_pad();
     list_slice(verses, index, index + objection.count);
     let { verses: answer_verses, objection } = objectable;
     let { text: objection_text } = objection;
