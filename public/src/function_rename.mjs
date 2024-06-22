@@ -16,7 +16,9 @@ import { each_async } from "./each_async.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { list_map } from "./list_map.mjs";
 import { log } from "./log.mjs";
+import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export async function function_rename(fn_name_from, fn_name_to) {
+  assert_arguments_length(arguments, 2);
   let identifiers = await data_identifiers();
   let fn_path_from = function_name_to_path(fn_name_from);
   let fn_path_to = function_name_to_path(fn_name_to);
