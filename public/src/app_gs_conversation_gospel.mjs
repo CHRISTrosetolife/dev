@@ -26,18 +26,18 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
       string_combine_multiple([
         list_random_item([
           list_random_item(["Amen", "Alleluia", "Hallelujah"]),
-        ]),
-        list_random_item([
-          string_combine_multiple([
-            "Praise the Lord",
-            string_random_or_empty(", our God"),
+          list_random_item([
+            string_combine_multiple([
+              "Praise the Lord",
+              string_random_or_empty(", our God"),
+            ]),
+            "Thank You, Jesus",
+            string_combine_multiple([
+              "Praise be to ",
+              list_random_item(["our God and Savior", "God"]),
+            ]),
+            "What a God we serve",
           ]),
-          "Thank You, Jesus",
-          string_combine_multiple([
-            "Praise be to ",
-            list_random_item(["our God and Savior", "God"]),
-          ]),
-          "What a God we serve",
         ]),
         "! ",
         string_combine_multiple([
