@@ -42,33 +42,7 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
     npc.objection_count--;
     app_gs_conversation_gospel(menu_overlay, npc);
   };
-  let objectable_right = list_pop(objectables);
-  let {
-    verse: { index },
-    objection,
-  } = objectable_right;
-  let { count, text: objection_text } = objection;
-  let answer_verses = list_slice(verses, index, index + count);
-  let first = list_first(answer_verses);
-  let last = list_last(answer_verses);
-  let answer_texts = list_map_property(answer_verses, "text");
-  let answer = list_join_space(answer_texts);
-  let choice_text = string_combine_multiple([
-    "📖 ",
-    first.book_name,
-    " ",
-    first.chapter,
-    ":",
-    first.verse_number,
-    first !== last ? "-" + last.verse_number : "",
-    " - ",
-    answer,
-  ]);
-  let choice_correct = {
-    objection_text,
-    answer_text: choice_text,
-    on_click: on_click,
-  };
+  let choice_correct = choice_get();
   app_gs_conversation_npc(menu_overlay, npc, choice_correct.objection_text);
   let div_player = app_gs_conversation_player_prompt(
     menu_overlay,
@@ -79,4 +53,34 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
     choice_correct.answer_text,
     choice_correct.on_click,
   );
+  function choice_get() {
+    let objectable_right = list_pop(objectables);
+    let {
+      verse: { index },
+      objection,
+    } = objectable_right;
+    let { count, text: objection_text } = objection;
+    let answer_verses = list_slice(verses, index, index + count);
+    let first = list_first(answer_verses);
+    let last = list_last(answer_verses);
+    let answer_texts = list_map_property(answer_verses, "text");
+    let answer = list_join_space(answer_texts);
+    let choice_text = string_combine_multiple([
+      "📖 ",
+      first.book_name,
+      " ",
+      first.chapter,
+      ":",
+      first.verse_number,
+      first !== last ? "-" + last.verse_number : "",
+      " - ",
+      answer,
+    ]);
+    let choice_correct = {
+      objection_text,
+      answer_text: choice_text,
+      on_click: on_click,
+    };
+    return choice_correct;
+  }
 }
