@@ -83,8 +83,8 @@ export function app_gs_bible_chapter_jas01() {
       sermons: [
         {
           sermon:
-            "the poor should glory that God richly makes them royalty and priests`however the glory of the rich is not their earthly riches but being poor in spirit",
-          count: 1,
+            "the poor should glory that God richly makes them royalty and priests`however the glory of the rich is not their earthly riches but being poor in spirit`the sun rises each day`the sun is fiercely hot`the sun scorches and withers flowers`when the sun withers a plant, the flower falls and the beauty fades away`a rich man will fade away like a flower",
+          count: 2,
         },
       ],
     },
