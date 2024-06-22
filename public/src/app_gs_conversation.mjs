@@ -75,6 +75,7 @@ export function app_gs_conversation(map_c, map, npc) {
             " ",
             answer,
           ]),
+          () => {},
         );
         npc.objection_count--;
       }
