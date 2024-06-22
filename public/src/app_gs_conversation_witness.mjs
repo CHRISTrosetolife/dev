@@ -1,3 +1,4 @@
+import { list_pop } from "./list_pop.mjs";
 import { each } from "./each.mjs";
 import { app_gs_conversation_gospel } from "./app_gs_conversation_gospel.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
@@ -9,7 +10,6 @@ import { list_map_property } from "./list_map_property.mjs";
 import { list_last } from "./list_last.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_slice } from "./list_slice.mjs";
-import { list_random_item } from "./list_random_item.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { each_index } from "./each_index.mjs";
 import { app_gs_bible_chapter_jas01 } from "./app_gs_bible_chapter_jas01.mjs";
@@ -37,7 +37,7 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
     }),
   );
   list_shuffle(objectables);
-  let objectable = list_random_item(objectables);
+  let objectable = list_pop(objectables);
   let {
     verse: { index },
     objection,
