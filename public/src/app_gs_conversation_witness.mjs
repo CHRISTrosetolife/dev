@@ -49,7 +49,6 @@ export function app_gs_conversation_witness(menu_overlay, npc, map) {
   let choice_wrong = choice_get(() => {
     npc.conversation_wait_until =
       map.player.conversation_count + app_gs_npc_conversation_wait_count();
-    html_clear(menu_overlay);
     let npc_text = string_combine_multiple([
       string_random_or_empty(
         string_combine_multiple([
@@ -90,6 +89,7 @@ export function app_gs_conversation_witness(menu_overlay, npc, map) {
         ]),
       ]),
     ]);
+    html_clear(menu_overlay);
     app_gs_conversation_npc(menu_overlay, npc, npc_text);
     let div_player = app_gs_conversation_player_prompt(menu_overlay, "");
     app_gs_conversation_end(div_player, menu_overlay);
