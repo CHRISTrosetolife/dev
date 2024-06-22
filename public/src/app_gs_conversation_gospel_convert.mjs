@@ -50,7 +50,6 @@ export function app_gs_conversation_gospel_convert(menu_overlay, npc) {
           ]),
         ]),
       ]),
-      " ",
       string_combine_multiple([
         string_random_or_empty("Now "),
         "I believe ",
