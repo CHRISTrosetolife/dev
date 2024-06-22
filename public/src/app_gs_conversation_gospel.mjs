@@ -29,6 +29,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
       string_combine_multiple([
         app_gs_phrase_worship_multiple_or_empty(),
         app_gs_phrase_thanks(),
+        "!",
       ]),
     );
     app_gs_conversation_root(menu_overlay, npc);
