@@ -114,6 +114,7 @@ export function app_gs_conversation_witness(menu_overlay, npc, map) {
   });
   function choice_get(on_click) {
     let objectable = list_pop(objectables);
+    list_slice(verses, index, index + objection.count);
     let { verses: answer_verses, objection } = objectable;
     let { text: objection_text } = objection;
     let first = list_first(answer_verses);
