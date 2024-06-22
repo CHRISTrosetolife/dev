@@ -1,3 +1,5 @@
+import { app_gs_phrase_worship_multiple_or_empty } from "./app_gs_phrase_worship_multiple_or_empty.mjs";
+import { app_gs_phrase_combine_multiple } from "./app_gs_phrase_combine_multiple.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
 import { app_gs_phrase_jesus } from "./app_gs_phrase_jesus.mjs";
 import { app_gs_phrase_gospel_verbs } from "./app_gs_phrase_gospel_verbs.mjs";
@@ -8,7 +10,6 @@ import { string_random_or_empty } from "./string_random_or_empty.mjs";
 import { list_random_item } from "./list_random_item.mjs";
 import { app_gs_phrase_thanks } from "./app_gs_phrase_thanks.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { app_gs_phrase_combine } from "./app_gs_phrase_combine.mjs";
 export function app_gs_conversation_gospel_reminder(menu_overlay, npc) {
   let list = [
     string_combine_multiple([
@@ -35,5 +36,12 @@ export function app_gs_conversation_gospel_reminder(menu_overlay, npc) {
     ),
   ];
   list_shuffle(list);
-  app_gs_conversation_npc_root(menu_overlay, npc, app_gs_phrase_combine(list));
+  app_gs_conversation_npc_root(
+    menu_overlay,
+    npc,
+    app_gs_phrase_combine_multiple(
+      app_gs_phrase_worship_multiple_or_empty(),
+      list,
+    ),
+  );
 }
