@@ -1,4 +1,3 @@
-import { each } from "./each.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { app_gs_bible_chapter_jas01 } from "./app_gs_bible_chapter_jas01.mjs";
 import { app_gs_conversation_speech_npc } from "./app_gs_conversation_speech_npc.mjs";
@@ -35,9 +34,6 @@ export function app_gs_conversation(map_c, map, npc) {
       } else {
         html_clear(menu_overlay);
         let verses = app_gs_bible_chapter_jas01();
-        each(verses, (item) => {
-          item;
-        });
         let objectables = list_filter(verses, (v) =>
           list_empty_not_is(v.objections),
         );
