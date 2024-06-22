@@ -46,7 +46,7 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
   );
   list_shuffle(objectables);
   let choice_wrong = choice_get(() => {
-    log({});
+    log("here");
     app_gs_conversation_npc(
       menu_overlay,
       npc,
