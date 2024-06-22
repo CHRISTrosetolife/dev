@@ -119,7 +119,7 @@ export function app_gs_conversation_witness(menu_overlay, npc, map) {
     );
   });
   function choice_get(on_click) {
-    let objectable = list_pop(objection_ids);
+    let objection_id = list_pop(objection_ids);
     list_slice(verses, index, index + objection.count);
     let { verses: answer_verses, objection } = objectable;
     let { text: objection_text } = objection;
