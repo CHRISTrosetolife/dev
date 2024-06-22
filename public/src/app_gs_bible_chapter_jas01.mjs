@@ -128,7 +128,7 @@ export function app_gs_bible_chapter_jas01() {
       objections: [],
       sermons: [
         {
-          sermon: "",
+          sermon: "God does not tempt us to sin`no one can tempt God to sin",
           count: 1,
         },
       ],
