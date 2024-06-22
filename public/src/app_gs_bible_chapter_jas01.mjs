@@ -74,7 +74,12 @@ export function app_gs_bible_chapter_jas01() {
     {
       verse_number: "9",
       text: "The brother in humble circumstances should exult in his high position.",
-      objections: [],
+      objections: [
+        {
+          text: "",
+          count: 1,
+        },
+      ],
       sermons: [],
     },
     {
