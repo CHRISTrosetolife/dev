@@ -1,7 +1,6 @@
 import { js_code_array_empty } from "./js_code_array_empty.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
 import { list_all } from "./list_all.mjs";
-import { list_filter } from "./list_filter.mjs";
 import { function_transform_args_split_lambda } from "./function_transform_args_split_lambda.mjs";
 import { list_last } from "./list_last.mjs";
 import { js_declaration_single_body } from "./js_declaration_single_body.mjs";
@@ -39,10 +38,6 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
           let { elements } = argument;
           each(elements, (element) => {
             let { properties } = element;
-            let existing = list_filter(
-              properties,
-              (p) => p.key.type === "Identifier",
-            );
             let property_name = "sermons";
             if (
               list_all(
