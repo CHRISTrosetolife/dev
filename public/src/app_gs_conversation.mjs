@@ -25,16 +25,14 @@ export function app_gs_conversation(map_c, map, npc) {
         ),
         ".",
       ]),
-      string_combine_multiple([
-        string_random_or_empty(
-          string_combine_multiple([
-            app_gs_phrase_let_us(),
-            "talk ",
-            string_random_or_empty("some time"),
-            "later",
-          ]),
-        ),
-      ]),
+      string_random_or_empty(
+        string_combine_multiple([
+          app_gs_phrase_let_us(),
+          "talk ",
+          string_random_or_empty("some time"),
+          "later",
+        ]),
+      ),
     ];
     app_gs_conversation_npc_end(
       menu_overlay,
