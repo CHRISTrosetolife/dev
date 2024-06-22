@@ -27,6 +27,7 @@ import { list_get } from "./list_get.mjs";
 import { list_size } from "./list_size.mjs";
 export async function app_gs_bible_chapter_generate(chapter_name) {
   chapter_name = string_case_lower(chapter_name);
+  let property_text = "text";
   let verses = await bible_chapter("engbsb", chapter_name);
   let prefix = string_suffix_without(
     app_gs_bible_chapter_generate.name,
