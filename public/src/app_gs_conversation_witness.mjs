@@ -113,7 +113,11 @@ export async function app_gs_conversation_witness(menu_overlay, npc, map) {
     );
     let verse = list_get(verses, verse_index);
     let objection = list_get(verse.objections, objection_index);
-    let answer_verses = list_slice(verses, index, index + objection.count);
+    let answer_verses = list_slice(
+      verses,
+      verse.index,
+      verse.index + objection.count,
+    );
     let { text: objection_text } = objection;
     let first = list_first(answer_verses);
     let last = list_last(answer_verses);
