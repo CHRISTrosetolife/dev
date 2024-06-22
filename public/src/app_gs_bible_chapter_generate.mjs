@@ -1,3 +1,4 @@
+import { list_all } from "./list_all.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { error } from "./error.mjs";
 import { log } from "./log.mjs";
@@ -41,6 +42,7 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
               properties,
               (p) => p.key.type === "Identifier",
             );
+            list_all(properties, (p) => p.key.type !== "Identifier" || p.ke);
             log({
               existing,
             });
