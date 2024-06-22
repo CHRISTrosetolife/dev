@@ -53,7 +53,7 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
             app_gs_phrase_thanks(),
             " for ",
             "your time",
-            " ",
+            ", However, ",
           ]),
         ),
         app_gs_phrase_i_am(),
