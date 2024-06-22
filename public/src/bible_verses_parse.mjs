@@ -13,7 +13,6 @@ export function bible_verses_parse(verses) {
   let result = list_adder((la) =>
     each(verses, (v) => {
       log(html_parse_text(v));
-      let { children } = v;
       let verse_number, tokens;
       each(children, (c) => {
         if (c.type === "tag") {
