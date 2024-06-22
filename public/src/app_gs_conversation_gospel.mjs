@@ -45,7 +45,10 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
                     "alive",
                     string_combine_multiple([
                       "my ",
-                      list_random_item(["Savior", "Lord"]),
+                      list_random_item([
+                        string_combine_multiple(["Savior"]),
+                        "Lord",
+                      ]),
                     ]),
                   ]),
                 ]),
