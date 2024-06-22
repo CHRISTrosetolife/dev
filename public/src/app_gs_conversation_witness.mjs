@@ -27,7 +27,7 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
       chapter,
     });
   });
-  list_adder((la) =>
+  let objections = list_adder((la) =>
     each(verses, (verse) => {
       each(verse.objections, (objection) => {
         la({
