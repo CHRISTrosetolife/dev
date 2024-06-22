@@ -27,6 +27,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
         list_random_item([
           string_combine_multiple([
             list_random_item(["Amen", "Alleluia", "Hallelujah"]),
+            "!",
           ]),
           string_combine_multiple([
             list_random_item([
@@ -41,9 +42,10 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
               ]),
               "What a God we serve",
             ]),
+            "!",
           ]),
         ]),
-        "! ",
+        " ",
         string_combine_multiple([
           "I believe ",
           list_random_item([
