@@ -262,7 +262,7 @@ export function app_gs_bible_chapter_jas01() {
           count: 1,
         },
         {
-          text: "",
+          text: "Is it okay to have a little moral filth or a little expression of evil? Just a little?",
           count: 1,
         },
       ],
