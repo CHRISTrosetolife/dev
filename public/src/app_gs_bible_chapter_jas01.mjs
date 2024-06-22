@@ -11,7 +11,7 @@ export function app_gs_bible_chapter_jas01() {
       objections: [
         {
           text: "How can God be loving when my life is so full of difficulties? Life is one difficulty after another.",
-          count: 1,
+          count: 2,
         },
       ],
     },
