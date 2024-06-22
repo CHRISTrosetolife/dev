@@ -113,11 +113,11 @@ export function app_gs_conversation_witness(menu_overlay, npc, map) {
     );
   });
   function choice_get(on_click) {
-    let objectable_right = list_pop(objectables);
+    let objectable = list_pop(objectables);
     let {
       verse: { index },
       objection,
-    } = objectable_right;
+    } = objectable;
     let { count, text: objection_text } = objection;
     let answer_verses = list_slice(verses, index, index + count);
     let first = list_first(answer_verses);
