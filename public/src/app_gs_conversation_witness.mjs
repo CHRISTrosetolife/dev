@@ -40,22 +40,19 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
     menu_overlay,
     string_combine_multiple(["Tell ", npc.name, ": "]),
   );
-  html_button_width_full_text_click(
-    div_player,
-    string_combine_multiple([
-      "📖 ",
-      first.book_name,
-      " ",
-      first.chapter,
-      ":",
-      first.verse_number,
-      first !== last ? "-" + last.verse_number : "",
-      " - ",
-      answer,
-    ]),
-    () => {
-      npc.objection_count--;
-      app_gs_conversation_gospel(menu_overlay, npc);
-    },
-  );
+  let answer_text_button = string_combine_multiple([
+    "📖 ",
+    first.book_name,
+    " ",
+    first.chapter,
+    ":",
+    first.verse_number,
+    first !== last ? "-" + last.verse_number : "",
+    " - ",
+    answer,
+  ]);
+  html_button_width_full_text_click(div_player, answer_text_button, () => {
+    npc.objection_count--;
+    app_gs_conversation_gospel(menu_overlay, npc);
+  });
 }
