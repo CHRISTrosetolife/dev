@@ -32,7 +32,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
           " for ",
           list_random_item(["the reminder", "reminding me"]),
         ]),
-        string_random_or_empty(),
+        string_random_or_empty(" of the gospel"),
         "!",
       ]),
     );
