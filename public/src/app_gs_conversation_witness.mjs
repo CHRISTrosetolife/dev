@@ -37,8 +37,8 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
     }),
   );
   list_shuffle(objectables);
-  let objectable_right = list_pop(objectables);
   let objectable_wrong = list_pop(objectables);
+  let objectable_right = list_pop(objectables);
   let {
     verse: { index },
     objection,
