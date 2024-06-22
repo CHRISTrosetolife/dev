@@ -50,6 +50,7 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
     menu_overlay,
     string_combine_multiple(["Tell ", npc.name, ": "]),
   );
+  let choices = [choice_wrong, choice_correct];
   html_button_width_full_text_click(
     div_player,
     choice_correct.answer_text,
