@@ -352,6 +352,10 @@ export function app_gs_bible_chapter_jas01() {
           text: 'Morality is just not harming people. As long as I do not murder or steal or something, I am a good person. What you call "sexual sin" is fine to do. Anything I do in my bedroom with a consenting adult hurts no one.',
           count: 1,
         },
+        {
+          text: "",
+          count: 1,
+        },
       ],
       sermons: [],
       questions: [
