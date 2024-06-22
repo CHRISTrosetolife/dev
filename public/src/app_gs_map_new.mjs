@@ -1,5 +1,5 @@
+import { app_gs_npc_add } from "./app_gs_npc_add.mjs";
 import { app_gs_tile_overlay_add } from "./app_gs_tile_overlay_add.mjs";
-import { bible_names_men } from "./bible_names_men.mjs";
 import { app_gs_player_new } from "./app_gs_player_new.mjs";
 import { app_gs_overlays_bushes } from "./app_gs_overlays_bushes.mjs";
 import { app_gs_map_extends } from "./app_gs_map_extends.mjs";
@@ -12,7 +12,6 @@ import { object_merge } from "./object_merge.mjs";
 import { list_partition } from "./list_partition.mjs";
 import { list_all } from "./list_all.mjs";
 import { add } from "./add.mjs";
-import { game_img_list_male } from "./game_img_list_male.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
 import { divide } from "./divide.mjs";
 import { floor } from "./floor.mjs";
@@ -160,13 +159,7 @@ export function app_gs_map_new() {
   object_merge(map.player, spawn);
   let npc_count = 1;
   each_range(npc_count, () => {
-    let tile = list_pop(inside);
-    let npc = app_gs_tile_overlay_add(tile, "npc");
-    npc.character = list_random_item(game_img_list_male());
-    let choices = bible_names_men();
-    list_remove(choices, map.player.name);
-    npc.name = list_random_item(choices);
-    npc.conversation_count = 0;
+    app_gs_npc_add(map, inside);
   });
   return map;
   function overlay_add_base(tile, id) {
