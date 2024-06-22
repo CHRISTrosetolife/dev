@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export function app_gs_bible_chapter_jas01() {
   return [
     {
@@ -187,7 +188,7 @@ export function app_gs_bible_chapter_jas01() {
       verse_number: "17",
       text: "Every good and perfect gift is from above, coming down from the Father of the heavenly lights, with whom there is no change or shifting shadow.",
       objections: [],
-      sermons: [],
+      sermons: [string_combine_multiple([])],
       questions: [],
     },
     {
