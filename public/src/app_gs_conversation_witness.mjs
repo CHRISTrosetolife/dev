@@ -47,7 +47,9 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
       menu_overlay,
       npc,
       string_combine_multiple([
-        string_random_or_empty("Thanks for your time "),
+        string_random_or_empty(
+          string_combine_multiple(["Thanks for your time "]),
+        ),
         app_gs_phrase_i_am(),
         " not ",
         string_random_or_empty("quite "),
