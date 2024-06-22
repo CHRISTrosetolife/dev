@@ -22,6 +22,7 @@ export function app_gs_conversation(map_c, map, npc) {
         " for ",
         "sharing",
         string_combine_multiple([
+          " ",
           list_random_item(["speaking", "talking"]),
           " with me",
         ]),
