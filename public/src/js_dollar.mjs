@@ -46,7 +46,8 @@ export function js_dollar(ast) {
         let name = js_name_unique(ast, "item");
         let e = js_parse_expression(
           js_code_call_args(each.name, [
-            js_code_arrow_block_args([list, name], ""),
+            list,
+            js_code_arrow_block_args([name], ""),
           ]),
         );
         object_replace(node, e);
@@ -57,7 +58,8 @@ export function js_dollar(ast) {
         let index = js_name_unique(ast, "index");
         let e = js_parse_expression(
           js_code_call_args(each_index.name, [
-            js_code_arrow_block_args([list, name, index], ""),
+            list,
+            js_code_arrow_block_args([name, index], ""),
           ]),
         );
         object_replace(node, e);
