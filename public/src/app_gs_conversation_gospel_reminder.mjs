@@ -22,13 +22,15 @@ export function app_gs_conversation_gospel_reminder(menu_overlay, npc) {
         ),
         "!",
       ]),
-      string_combine_multiple([
-        list_random_item(["Yes", "Indeed"]),
-        ", ",
-        app_gs_phrase_jesus(),
-        " ",
-        app_gs_phrase_gospel_verbs(),
-      ]),
+      string_random_or_empty(
+        string_combine_multiple([
+          list_random_item(["Yes", "Indeed"]),
+          ", ",
+          app_gs_phrase_jesus(),
+          " ",
+          app_gs_phrase_gospel_verbs(),
+        ]),
+      ),
       string_random_or_empty(
         string_combine_multiple([" ", app_gs_phrase_doxology()]),
       ),
