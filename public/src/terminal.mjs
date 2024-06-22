@@ -225,7 +225,7 @@ export async function terminal() {
       action: (key) => keyboard_type(key.sequence),
     },
     {
-      keys: string_split_empty("_',<>=\"+"),
+      keys: string_split_empty("_',<>=\"+.()"),
       action: (key) => keyboard_type(key.sequence),
     },
   ];
