@@ -29,16 +29,19 @@ export function bible_verses_parse(verses) {
             return;
           }
         }
-        if (c.type === "text") {
-          if (undefined_not_is(verse_number)) {
-            let n = string_trim_whitespace(string_whitespace_normalize(c.data));
-            let s = string_split_multiple(n, [" ", "—"]);
-            list_add_multiple(tokens, s);
-          }
-        }
+        bible_verses_parse_text(c, verse_number, tokens);
       });
     });
   });
   exit();
   return result;
+  function bible_verses_parse_text(c, verse_number, tokens) {
+    if (c.type === "text") {
+      if (undefined_not_is(verse_number)) {
+        let n = string_trim_whitespace(string_whitespace_normalize(c.data));
+        let s = string_split_multiple(n, [" ", "—"]);
+        list_add_multiple(tokens, s);
+      }
+    }
+  }
 }
