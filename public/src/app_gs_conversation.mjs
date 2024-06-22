@@ -63,6 +63,7 @@ export function app_gs_conversation(map_c, map, npc) {
             book_name,
             " ",
             chapter,
+            ":",
           ]),
         );
         npc.objection_count--;
