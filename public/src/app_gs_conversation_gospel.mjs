@@ -22,7 +22,8 @@ import { app_gs_bible_chapter_jas01 } from "./app_gs_bible_chapter_jas01.mjs";
 import { html_clear } from "./html_clear.mjs";
 export function app_gs_conversation_gospel(menu_overlay, npc) {
   html_clear(menu_overlay);
-  if (npc.objection_count === 0) {
+  if (npc.christian) {
+  } else if (npc.objection_count === 0) {
     app_gs_conversation_speech_npc(
       menu_overlay,
       npc,
