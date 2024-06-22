@@ -19,6 +19,7 @@ export async function watch() {
   let cache = {};
   let base = Promise.resolve();
   start();
+  log("watching");
   function start() {
     let result = chokidar
       .watch(folder_path_src())
