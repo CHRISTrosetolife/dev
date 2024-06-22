@@ -15,7 +15,6 @@ import { object_replace } from "./object_replace.mjs";
 import { list_single } from "./list_single.mjs";
 import { list_after } from "./list_after.mjs";
 import { list_index } from "./list_index.mjs";
-import { exit } from "./exit.mjs";
 export function js_assign_to_let(ast) {
   let ess = js_node_type_visitor(ast, "ExpressionStatement");
   each(ess, (v) => {
@@ -69,6 +68,9 @@ export function js_assign_to_let(ast) {
                     "Identifier",
                   );
                   let names = list_map_property(elements_ids, "name");
+                  log({
+                    names,
+                  });
                   identifiers_add(names);
                 }
               });
