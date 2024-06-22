@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 export function app_gs_bible_chapter_jas01() {
   return [
     {
@@ -21,17 +22,12 @@ export function app_gs_bible_chapter_jas01() {
           count: 2,
         },
       ],
-      sermons: [],
+      sermons: [log({})],
     },
     {
       verse_number: "3",
       text: "because you know that the testing of your faith develops perseverance.",
-      objections: [
-        {
-          text: "",
-          count: 1,
-        },
-      ],
+      objections: [],
       sermons: [],
     },
     {
