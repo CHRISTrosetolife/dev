@@ -40,19 +40,18 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
     menu_overlay,
     string_combine_multiple(["Tell ", npc.name, ": "]),
   );
-  let answer_text_button = string_combine_multiple([
-    "📖 ",
-    first.book_name,
-    " ",
-    first.chapter,
-    ":",
-    first.verse_number,
-    first !== last ? "-" + last.verse_number : "",
-    " - ",
-    answer,
-  ]);
   let choice = {
-    text: answer_text_button,
+    text: string_combine_multiple([
+      "📖 ",
+      first.book_name,
+      " ",
+      first.chapter,
+      ":",
+      first.verse_number,
+      first !== last ? "-" + last.verse_number : "",
+      " - ",
+      answer,
+    ]),
     on_click: () => {
       npc.objection_count--;
       app_gs_conversation_gospel(menu_overlay, npc);
