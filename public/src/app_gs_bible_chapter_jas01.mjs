@@ -83,7 +83,7 @@ export function app_gs_bible_chapter_jas01() {
       sermons: [
         {
           sermon:
-            "the poor should glory that God richly makes them royalty and priests`however the glory of the rich is not their earthly riches but being poor in spirit`the sun rises each day`the sun is fiercely hot`the sun scorches and withers flowers`when the sun withers a plant, the flower falls and the beauty fades away`the rich man will fade away like a flower",
+            "the poor should glory that God richly makes them royalty and priests`however the glory of the rich is not their earthly riches but being poor in spirit`the sun rises each day`the sun is fiercely hot`the sun scorches and withers flowers`when the sun withers a plant, the flower of the plant falls to the ground and the beauty of the plant fades away`because earthly riches are temporary, the earthly glory of the rich fades away like a flower withered by the sun",
           count: 2,
         },
       ],
