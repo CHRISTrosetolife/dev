@@ -316,7 +316,7 @@ export function app_gs_bible_chapter_jas01() {
       sermons: [],
       questions: [
         {
-          text: "",
+          text: "How can what we do be blessed by God?",
           count: 1,
         },
       ],
