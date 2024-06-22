@@ -153,7 +153,7 @@ export function js_dollar(ast) {
         if (!string_starts_with(remaining, p)) {
           return true;
         }
-        return string_starts_with(prefix, p);
+        let p2 = string_starts_with(prefix, p);
       })
     );
   }
