@@ -28,6 +28,7 @@ import { string_random_or_empty } from "./string_random_or_empty.mjs";
 export function app_gs_conversation_witness(menu_overlay, npc, map) {
   let verses = app_gs_verses_get();
   let book_name = "James";
+  let book_id = "jas";
   let chapter = "1";
   each_index(verses, (item, index) => {
     object_merge(item, {
