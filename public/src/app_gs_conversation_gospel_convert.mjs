@@ -22,13 +22,15 @@ export function app_gs_conversation_gospel_convert(menu_overlay, npc) {
         list_random_item([
           string_combine_multiple([
             "You have ",
-            string_random_or_empty(
-              string_combine_multiple([
-                list_random_item(["fully", "completely"]),
-                " ",
-              ]),
-            ),
-            list_random_item(["convinced", "persuaded"]),
+            string_combine_multiple([
+              string_random_or_empty(
+                string_combine_multiple([
+                  list_random_item(["fully", "completely"]),
+                  " ",
+                ]),
+              ),
+              list_random_item(["convinced", "persuaded"]),
+            ]),
             " me",
             app_gs_phrase_exclaim_or_period(),
           ]),
