@@ -1,3 +1,4 @@
+import { app_gs_phrase_thanks } from "./app_gs_phrase_thanks.mjs";
 import { app_gs_phrase_worship_multiple_or_empty } from "./app_gs_phrase_worship_multiple_or_empty.mjs";
 import { app_gs_phrase_exclaim_or_period } from "./app_gs_phrase_exclaim_or_period.mjs";
 import { app_gs_conversation_root } from "./app_gs_conversation_root.mjs";
@@ -27,13 +28,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
       npc,
       string_combine_multiple([
         app_gs_phrase_worship_multiple_or_empty(),
-        string_combine_multiple([
-          string_combine_multiple(["Thanks", string_random_or_empty(" a lot")]),
-          string_combine_multiple([
-            "Thank you",
-            string_random_or_empty(" very much"),
-          ]),
-        ]),
+        app_gs_phrase_thanks(),
       ]),
     );
     app_gs_conversation_root(menu_overlay, npc);
