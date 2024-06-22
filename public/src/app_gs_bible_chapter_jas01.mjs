@@ -1,4 +1,3 @@
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export function app_gs_bible_chapter_jas01() {
   return [
     {
@@ -115,7 +114,12 @@ export function app_gs_bible_chapter_jas01() {
           count: 1,
         },
       ],
-      sermons: [string_combine_multiple([])],
+      sermons: [
+        {
+          sermon: "",
+          count: 1,
+        },
+      ],
     },
     {
       verse_number: "13",
