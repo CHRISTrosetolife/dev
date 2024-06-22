@@ -272,7 +272,7 @@ export function app_gs_bible_chapter_jas01() {
       text: "Be doers of the word, and not hearers only. Otherwise, you are deceiving yourselves.",
       objections: [
         {
-          text: "",
+          text: "Faith comes by hearing and hearing by the word of God. I only need to hear the word. Then I will have faith. Then God will save me. I can live my life however I want. My actions do not matter because I am saved by faith not works.",
           count: 1,
         },
       ],
