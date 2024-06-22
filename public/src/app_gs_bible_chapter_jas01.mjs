@@ -80,7 +80,12 @@ export function app_gs_bible_chapter_jas01() {
           count: 1,
         },
       ],
-      sermons: [],
+      sermons: [
+        {
+          sermon: "",
+          count: 1,
+        },
+      ],
     },
     {
       verse_number: "10",
