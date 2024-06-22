@@ -51,9 +51,13 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
     " - ",
     answer,
   ]);
-  let newLocal = () => {
+  let answer_on_click = () => {
     npc.objection_count--;
     app_gs_conversation_gospel(menu_overlay, npc);
   };
-  html_button_width_full_text_click(div_player, answer_text_button, newLocal);
+  html_button_width_full_text_click(
+    div_player,
+    answer_text_button,
+    answer_on_click,
+  );
 }
