@@ -112,7 +112,9 @@ export function js_dollar(ast) {
       }
       if (
         string_starts_with(remaining, scm_prefix) &&
-        list_all(prefixes, (p) => {})
+        list_all(prefixes, (p) => {
+          string_starts_with(remaining, p);
+        })
       ) {
         if (list_is(parent)) {
           let e = js_parse_expression(
