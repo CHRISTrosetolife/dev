@@ -1,4 +1,4 @@
-import { app_gs_npc_add } from "./app_gs_npc_add.mjs";
+import { app_gs_npc_new } from "./app_gs_npc_new.mjs";
 import { app_gs_tile_overlay_add } from "./app_gs_tile_overlay_add.mjs";
 import { app_gs_player_new } from "./app_gs_player_new.mjs";
 import { app_gs_overlays_bushes } from "./app_gs_overlays_bushes.mjs";
@@ -159,7 +159,7 @@ export function app_gs_map_new() {
   object_merge(map.player, spawn);
   let npc_count = 1;
   each_range(npc_count, () => {
-    app_gs_npc_add(map, inside);
+    app_gs_npc_new(map, inside);
   });
   return map;
   function overlay_add_base(tile, id) {
