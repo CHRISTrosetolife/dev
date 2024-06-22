@@ -17,7 +17,11 @@ import { html_clear } from "./html_clear.mjs";
 export function app_gs_conversation_gospel(menu_overlay, npc) {
   html_clear(menu_overlay);
   if (npc.objection_count === 0) {
-    app_gs_conversation_speech_npc(menu_overlay, npc, object_text);
+    app_gs_conversation_speech_npc(
+      menu_overlay,
+      npc,
+      list_random_item(["Amen"]),
+    );
   } else {
     let book_name = "James";
     let chapter = "1";
