@@ -42,6 +42,7 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
               "type",
               "Identifier",
             );
+            log({});
             if (0) {
               each(properties, (p) => {
                 log({
