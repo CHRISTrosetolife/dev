@@ -1,3 +1,4 @@
+import { list_slice } from "./list_slice.mjs";
 import { each_index } from "./each_index.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { app_gs_bible_chapter_jas01 } from "./app_gs_bible_chapter_jas01.mjs";
@@ -47,6 +48,7 @@ export function app_gs_conversation(map_c, map, npc) {
         let objectable = list_random_item(objectables);
         let objection = list_random_item(objectable.objections);
         let { index, count } = objection;
+        list_slice;
         app_gs_conversation_speech_npc(menu_overlay, npc, text);
         npc.objection_count--;
       }
