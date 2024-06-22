@@ -25,7 +25,7 @@ export function app_gs_bible_chapter_jas01() {
         {
           sermon:
             "there are many kinds of trials`we will encounter trials`trials test our faith`when our faith is tested, perseverance is developed`therefore we consider trials pure joy`we patiently wait to persevere through trials`the work of perseverance bears fruit of maturity and completeness`when we are mature and complete we will lack nothing spiritually",
-          count: 2,
+          count: 3,
         },
       ],
     },
