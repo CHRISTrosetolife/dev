@@ -1,4 +1,4 @@
-import { log } from "./log.mjs";
+import { html_clear } from "./html_clear.mjs";
 import { app_gs_phrase_you_have } from "./app_gs_phrase_you_have.mjs";
 import { app_gs_phrase_thanks } from "./app_gs_phrase_thanks.mjs";
 import { list_random_item } from "./list_random_item.mjs";
@@ -46,7 +46,7 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
   );
   list_shuffle(objectables);
   let choice_wrong = choice_get(() => {
-    log("here");
+    html_clear(menu_overlay);
     app_gs_conversation_npc(
       menu_overlay,
       npc,
