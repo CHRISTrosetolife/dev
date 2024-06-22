@@ -1,3 +1,4 @@
+import { app_gs_phrase_what_youve_said } from "./app_gs_phrase_what_youve_said.mjs";
 import { app_gs_phrase_exclaim_or_period } from "./app_gs_phrase_exclaim_or_period.mjs";
 import { app_gs_phrase_let_us } from "./app_gs_phrase_let_us.mjs";
 import { list_random_item } from "./list_random_item.mjs";
@@ -7,7 +8,6 @@ import { app_gs_conversation_npc_opening_text } from "./app_gs_conversation_npc_
 import { app_gs_conversation_npc_opening } from "./app_gs_conversation_npc_opening.mjs";
 import { app_gs_menu_overlay } from "./app_gs_menu_overlay.mjs";
 import { string_random_or_empty } from "./string_random_or_empty.mjs";
-import { app_gs_phrase_you_have } from "./app_gs_phrase_you_have.mjs";
 import { app_gs_phrase_combine } from "./app_gs_phrase_combine.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
 import { app_gs_phrase_thanks } from "./app_gs_phrase_thanks.mjs";
@@ -42,12 +42,7 @@ export function app_gs_conversation(map_c, map, npc) {
           string_random_or_empty(
             string_combine_multiple([
               " about ",
-              string_combine_multiple([
-                "what ",
-                app_gs_phrase_you_have(),
-                list_random_item(["said", "spoken"]),
-                string_random_or_empty(" to me"),
-              ]),
+              app_gs_phrase_what_youve_said(),
             ]),
           ),
           ".",
