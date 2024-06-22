@@ -1,3 +1,4 @@
+import { app_gs_phrase_jesus } from "./app_gs_phrase_jesus.mjs";
 import { string_random_or_empty } from "./string_random_or_empty.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
@@ -35,19 +36,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
         string_combine_multiple([
           "I believe ",
           list_random_item([
-            string_combine_multiple([
-              "in ",
-              string_combine_multiple([
-                "Jesus",
-                string_random_or_empty(" Christ"),
-                string_random_or_empty(
-                  string_combine_multiple([
-                    ", the Son of God",
-                    string_random_or_empty(", the Father"),
-                  ]),
-                ),
-              ]),
-            ]),
+            string_combine_multiple(["in ", app_gs_phrase_jesus()]),
             string_combine_multiple([
               "that Jesus ",
               list_random_item([
