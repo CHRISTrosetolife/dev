@@ -1,3 +1,4 @@
+import { app_gs_conversation_player_prompt } from "./app_gs_conversation_player_prompt.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { list_slice } from "./list_slice.mjs";
 import { each_index } from "./each_index.mjs";
@@ -8,9 +9,6 @@ import { html_clear } from "./html_clear.mjs";
 import { error } from "./error.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_gs_conversation_opening } from "./app_gs_conversation_opening.mjs";
-import { app_gs_overlay_speech } from "./app_gs_overlay_speech.mjs";
-import { html_style_font_color } from "./html_style_font_color.mjs";
-import { html_p_text } from "./html_p_text.mjs";
 import { html_remove } from "./html_remove.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { app_gs_menu_overlay } from "./app_gs_menu_overlay.mjs";
@@ -23,9 +21,7 @@ export function app_gs_conversation(map_c, map, npc) {
   npc.conversation_count++;
   let text = app_gs_conversation_opening(map, npc);
   app_gs_conversation_speech_npc(menu_overlay, npc, text);
-  let div_player = app_gs_overlay_speech(menu_overlay);
-  let prompt = html_p_text(div_player, "What would you like to do?");
-  html_style_font_color(prompt, "lightgreen");
+  let div_player = app_gs_conversation_player_prompt(menu_overlay);
   html_button_width_full_text_click(
     div_player,
     string_combine_multiple([
