@@ -235,7 +235,7 @@ export function app_gs_bible_chapter_jas01() {
       ],
       questions: [
         {
-          text: "",
+          text: "Is it okay to quickly get angry?",
           count: 1,
         },
       ],
