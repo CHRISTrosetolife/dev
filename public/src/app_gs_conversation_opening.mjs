@@ -111,6 +111,6 @@ export function app_gs_conversation_opening(map, npc) {
       "?",
     ]),
   );
-  let text = string_combine_multiple([list_join_space(opening)]);
+  let text = list_join_space(opening);
   return text;
 }
