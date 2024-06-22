@@ -332,7 +332,12 @@ export function app_gs_bible_chapter_jas01() {
           count: 2,
         },
       ],
-      questions: [],
+      questions: [
+        {
+          text: "",
+          count: 1,
+        },
+      ],
     },
     {
       verse_number: "27",
