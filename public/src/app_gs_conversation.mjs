@@ -50,11 +50,11 @@ export function app_gs_conversation(map_c, map, npc) {
         let objectable = list_random_item(objectables);
         let { index } = objection;
         let objection = list_random_item(objectable.objections);
-        let { count, text } = objection;
+        let { count, text: object_text } = objection;
         let answer_verses = list_slice(verses, index, index + count);
         let answer_texts = list_map_property(answer_verses, "text");
         let answer = list_join_space(answer_texts);
-        app_gs_conversation_speech_npc(menu_overlay, npc, text);
+        app_gs_conversation_speech_npc(menu_overlay, npc, object_text);
         npc.objection_count--;
       }
     },
