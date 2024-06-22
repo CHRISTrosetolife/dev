@@ -134,7 +134,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
       string_combine_multiple([
         "📖 Tell ",
         npc.name,
-        " ",
+        ": ",
         first.book_name,
         " ",
         first.chapter,
