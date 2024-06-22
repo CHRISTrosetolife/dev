@@ -334,7 +334,7 @@ export function app_gs_bible_chapter_jas01() {
       ],
       questions: [
         {
-          text: "",
+          text: "Does what we say with our tongue really matter?",
           count: 1,
         },
       ],
