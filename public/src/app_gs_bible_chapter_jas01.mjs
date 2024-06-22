@@ -129,7 +129,7 @@ export function app_gs_bible_chapter_jas01() {
       sermons: [
         {
           sermon:
-            "God does not tempt us to sin`God cannot be tempted to do evil",
+            "God does not tempt us to sin`God cannot be tempted to do evil`we should not say that we are tempted by God",
           count: 1,
         },
       ],
