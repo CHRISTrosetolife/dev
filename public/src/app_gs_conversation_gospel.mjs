@@ -18,6 +18,7 @@ import { object_merge } from "./object_merge.mjs";
 import { each_index } from "./each_index.mjs";
 import { app_gs_bible_chapter_jas01 } from "./app_gs_bible_chapter_jas01.mjs";
 import { html_clear } from "./html_clear.mjs";
+import { string_random_or_empty } from "./string_random_or_empty.mjs";
 export function app_gs_conversation_gospel(menu_overlay, npc) {
   html_clear(menu_overlay);
   if (npc.christian) {
@@ -31,6 +32,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
           " for ",
           list_random_item(["the reminder", "reminding me"]),
         ]),
+        string_random_or_empty(),
         "!",
       ]),
     );
