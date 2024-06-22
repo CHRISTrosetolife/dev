@@ -37,6 +37,7 @@ export function js_dollar(ast) {
     if (string_starts_with(name, prefix)) {
       let { parent } = v;
       let objection_prefix = "o";
+      let question_prefix = "q";
       let scm_prefix = "s";
       let sermon_prefix = "se";
       let prefixes = [objection_prefix, scm_prefix, sermon_prefix];
@@ -92,6 +93,17 @@ export function js_dollar(ast) {
           list_add(list_first(e.arguments).elements, next);
           object_replace(node, e);
         }
+      }
+      if (prefix_use(remaining, objection_prefix, prefixes)) {
+        remaining = string_prefix_without(remaining, objection_prefix);
+        let count = 1;
+        if (string_empty_not_is(remaining)) {
+          count = integer_parse(remaining);
+        }
+        let e = js_parse_expression(
+          string_combine_multiple(["{text:'',count:", count, "}"]),
+        );
+        object_replace(node, e);
       }
       if (prefix_use(remaining, objection_prefix, prefixes)) {
         remaining = string_prefix_without(remaining, objection_prefix);
