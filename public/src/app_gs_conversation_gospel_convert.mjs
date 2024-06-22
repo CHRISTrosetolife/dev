@@ -1,4 +1,4 @@
-import { app_gs_phrase_gospel } from "./app_gs_phrase_gospel.mjs";
+import { app_gs_phrase_the } from "./app_gs_phrase_the.mjs";
 import { app_gs_conversation_root } from "./app_gs_conversation_root.mjs";
 import { app_gs_phrase_jesus } from "./app_gs_phrase_jesus.mjs";
 import { app_gs_phrase_exclaim_or_period } from "./app_gs_phrase_exclaim_or_period.mjs";
@@ -32,7 +32,7 @@ export function app_gs_conversation_gospel_convert(menu_overlay, npc) {
           list_random_item([
             string_combine_multiple([
               "sharing ",
-              app_gs_phrase_gospel(),
+              app_gs_phrase_the(),
               " with me",
             ]),
             string_combine_multiple([
