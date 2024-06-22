@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { js_code_declare_assign_0 } from "./js_code_declare_assign_0.mjs";
 import { add_1 } from "./add_1.mjs";
 import { js_function_types_is } from "./js_function_types_is.mjs";
@@ -56,6 +57,9 @@ export function js_assign_to_let(ast) {
                   let { name: m_name } = m;
                   la(m_name);
                 } else {
+                  log({
+                    m_type,
+                  });
                   if (equal(m_type, "ObjectPattern")) {
                     let { properties } = m;
                     let keys = list_map_property(properties, "value");
