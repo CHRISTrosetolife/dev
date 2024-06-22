@@ -58,7 +58,8 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
               string_combine_multiple([
                 "what ",
                 app_gs_phrase_you_have(),
-                " shared",
+                " ",
+                "shared",
               ]),
             ]),
             ". However, ",
