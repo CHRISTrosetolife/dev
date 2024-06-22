@@ -29,6 +29,7 @@ export function app_gs_conversation(map_c, map, npc) {
         error();
       } else {
         html_clear(menu_overlay);
+        app_gs_conversation_speech_npc(menu_overlay, npc, text);
         npc.objection_count--;
       }
     },
