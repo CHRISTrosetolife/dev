@@ -349,7 +349,7 @@ export function app_gs_bible_chapter_jas01() {
       text: "Pure and undefiled religion before our God and Father is this: to care for orphans and widows in their distress, and to keep oneself from being polluted by the world.",
       objections: [
         {
-          text: "Morality is not harming people. As long as I do not do things like murder or steal, I am a good person. What you call sexual sin does not matter. What I do in my bedroom with a consenting adult hurts no one.",
+          text: "Morality is not harming people. As long as I do not murder or steal or something, I am a good person. What you call sexual sin does not matter. What I do in my bedroom with a consenting adult hurts no one.",
           count: 1,
         },
       ],
