@@ -10,17 +10,16 @@ import { undefined_not_is } from "./undefined_not_is.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
 import { string_whitespace_normalize } from "./string_whitespace_normalize.mjs";
 export function bible_verses_parse(verses) {
-  let result = list_adder((la) =>
+  let result = list_adder((la) => {
     each(verses, (v) => {
       log(html_parse_text(v));
-      let verse_number, tokens;
       each(children, (c) => {
         if (c.type === "tag") {
           let { attribs } = c;
           if (object_property_get_or(attribs, "class", "") === "verse") {
-            verse_number = html_parse_text(c);
+            let verse_number = html_parse_text(c);
             verse_number = string_trim_whitespace(verse_number);
-            tokens = [];
+            let tokens = [];
             la({
               verse_number,
               tokens,
@@ -36,8 +35,8 @@ export function bible_verses_parse(verses) {
           }
         }
       });
-    }),
-  );
+    });
+  });
   exit();
   return result;
 }
