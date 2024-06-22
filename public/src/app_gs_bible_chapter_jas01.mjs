@@ -188,7 +188,7 @@ export function app_gs_bible_chapter_jas01() {
       text: "Every good and perfect gift is from above, coming down from the Father of the heavenly lights, with whom there is no change or shifting shadow.",
       objections: [
         {
-          text: "",
+          text: "People grow old and then die. Plants and animals grow old and die. Why should God be any different? Everything always changes.",
           count: 1,
         },
       ],
