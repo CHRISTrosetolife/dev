@@ -123,7 +123,7 @@ export function app_gs_conversation_witness(menu_overlay, npc, map) {
     let objection_id = list_pop(objection_ids);
     let [book_id, chapter, verse_index, objection_index] =
       list_split_underscore(objection_id);
-    let chapter_id = number_pad();
+    let chapter_id = number_pad(chapter);
     list_slice(verses, index, index + objection.count);
     let { verses: answer_verses, objection } = objectable;
     let { text: objection_text } = objection;
