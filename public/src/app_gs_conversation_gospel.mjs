@@ -31,7 +31,10 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
           string_combine_multiple([
             "You have ",
             string_random_or_empty(
-              string_combine_multiple([list_random_item(["fully"]), " "]),
+              string_combine_multiple([
+                list_random_item(["fully", "complete"]),
+                " ",
+              ]),
             ),
             list_random_item(["convinced", "persuaded"]),
             " me",
