@@ -106,12 +106,12 @@ export function js_dollar(ast) {
           let next_index = index + 1;
           remaining = string_prefix_without(remaining, scm_prefix);
           let count = integer_parse_try(remaining);
-          if (number_is(count)) {
-            each_range(count, () => {
-              let removed = list_remove_at(parent, next_index);
-              list_add(es, removed);
-            });
+          if (!number_is(count)) {
           }
+          each_range(count, () => {
+            let removed = list_remove_at(parent, next_index);
+            list_add(es, removed);
+          });
           object_replace(node, e);
         }
       }
