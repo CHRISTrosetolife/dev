@@ -273,7 +273,8 @@ export function app_gs_bible_chapter_jas01() {
       objections: [],
       sermons: [
         {
-          sermon: "",
+          sermon:
+            "it is not enough to hear the word of God`in addition to hearing, we must do what the word of God requires",
           count: 1,
         },
       ],
