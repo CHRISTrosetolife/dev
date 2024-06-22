@@ -110,7 +110,7 @@ export function app_gs_bible_chapter_jas01() {
       text: "Blessed is the man who perseveres under trial, because when he has stood the test, he will receive the crown of life that God has promised to those who love Him.",
       objections: [
         {
-          text: "Life is one difficulty after another. What is the point of ",
+          text: "Life is one difficulty after another. What is the point of it all? We go through so much difficulty and then get nothing afterwards?",
           count: 1,
         },
       ],
