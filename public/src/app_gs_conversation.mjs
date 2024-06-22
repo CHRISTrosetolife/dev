@@ -35,6 +35,7 @@ export function app_gs_conversation(map_c, map, npc) {
       } else {
         html_clear(menu_overlay);
         let book_name = "James";
+        let chapter = "1";
         let verses = app_gs_bible_chapter_jas01();
         each_index(verses, (item, index) => {
           object_merge(item, {
