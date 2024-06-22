@@ -30,7 +30,7 @@ import { each_index } from "./each_index.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
 import { string_random_or_empty } from "./string_random_or_empty.mjs";
-export function app_gs_conversation_witness(menu_overlay, npc, map) {
+export async function app_gs_conversation_witness(menu_overlay, npc, map) {
   let verses = app_gs_verses_get();
   let book_name = "James";
   let book_id = "jas";
@@ -57,7 +57,7 @@ export function app_gs_conversation_witness(menu_overlay, npc, map) {
     }),
   );
   list_shuffle(objection_ids);
-  let choice_wrong = choice_get(() => {
+  let choice_wrong = await choice_get(() => {
     npc.conversation_wait_until =
       map.player.conversation_count + app_gs_npc_conversation_wait_count();
     let npc_text = string_combine_multiple([
@@ -104,7 +104,7 @@ export function app_gs_conversation_witness(menu_overlay, npc, map) {
     html_clear(menu_overlay);
     app_gs_conversation_npc_end(menu_overlay, npc, npc_text);
   });
-  let choice_correct = choice_get(() => {
+  let choice_correct = await choice_get(() => {
     npc.objection_count--;
     app_gs_conversation_gospel(menu_overlay, npc, map);
   });
