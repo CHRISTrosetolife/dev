@@ -1,4 +1,4 @@
-import { list_join_space } from "./list_join_space.mjs";
+import { app_gs_phrase_combine } from "./app_gs_phrase_combine.mjs";
 import { app_gs_phrase_very } from "./app_gs_phrase_very.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { app_gs_phrase_exclaim_or_period } from "./app_gs_phrase_exclaim_or_period.mjs";
@@ -111,6 +111,6 @@ export function app_gs_conversation_opening(map, npc) {
       "?",
     ]),
   );
-  let text = list_join_space(opening);
+  let text = app_gs_phrase_combine(opening);
   return text;
 }
