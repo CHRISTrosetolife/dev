@@ -16,8 +16,8 @@ export function app_gs_conversation_gospel_convert(menu_overlay, npc) {
     menu_overlay,
     npc,
     app_gs_phrase_combine(
-      list_concat([
-        app_gs_phrase_worship_multiple_or_empty(),
+      list_concat(app_gs_phrase_worship_multiple_or_empty(), [
+        ,
         app_gs_phrase_doxology_or_empty(),
         list_random_item([
           string_combine_multiple([
