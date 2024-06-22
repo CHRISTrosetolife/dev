@@ -2,7 +2,7 @@ import { data_identifiers } from "./data_identifiers.mjs";
 import { function_rename } from "./function_rename.mjs";
 import { each_async } from "./each_async.mjs";
 import { function_names } from "./function_names.mjs";
-export async function function_param_new() {
+export async function function_param_new(function_name) {
   let dis = await data_identifiers();
   return dis;
   let fns = await function_names();
