@@ -1,3 +1,4 @@
+import { app_gs_phrase_exclaim_or_period } from "./app_gs_phrase_exclaim_or_period.mjs";
 import { app_gs_conversation_root } from "./app_gs_conversation_root.mjs";
 import { app_gs_phrase_doxology } from "./app_gs_phrase_doxology.mjs";
 import { app_gs_phrase_worship } from "./app_gs_phrase_worship.mjs";
@@ -26,7 +27,12 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
       menu_overlay,
       npc,
       string_combine_multiple([
-        list_random_item([string_combine_multiple(["You have convinced me"])]),
+        list_random_item([
+          string_combine_multiple([
+            "You have convinced me",
+            app_gs_phrase_exclaim_or_period(),
+          ]),
+        ]),
         string_random_or_empty("Amen! "),
         string_random_or_empty(
           string_combine_multiple([app_gs_phrase_worship(), " "]),
