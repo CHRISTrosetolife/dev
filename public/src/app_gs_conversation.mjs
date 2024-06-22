@@ -1,3 +1,4 @@
+import { app_gs_phrase_let_us } from "./app_gs_phrase_let_us.mjs";
 import { list_random_item } from "./list_random_item.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_gs_conversation_npc_end } from "./app_gs_conversation_npc_end.mjs";
@@ -24,7 +25,7 @@ export function app_gs_conversation(map_c, map, npc) {
           list_random_item(["said", "spoken"]),
           string_random_or_empty(" to me"),
         ),
-        string_combine_multiple(["Let", list_random_item([" u", "'"]), "s"]),
+        app_gs_phrase_let_us(),
       ]),
     );
   } else {
