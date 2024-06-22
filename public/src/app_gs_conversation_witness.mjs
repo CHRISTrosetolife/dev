@@ -18,6 +18,7 @@ import { each_index } from "./each_index.mjs";
 import { app_gs_bible_chapter_jas01 } from "./app_gs_bible_chapter_jas01.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
+import { string_random_or_empty } from "./string_random_or_empty.mjs";
 export function app_gs_conversation_witness(menu_overlay, npc) {
   let book_name = "James";
   let chapter = "1";
@@ -47,6 +48,7 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
       string_combine_multiple([
         app_gs_phrase_i_am(),
         " not ",
+        string_random_or_empty("quite "),
         app_gs_phrase_convinced(),
       ]),
     );
