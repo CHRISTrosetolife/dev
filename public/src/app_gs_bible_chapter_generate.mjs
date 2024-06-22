@@ -43,12 +43,10 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
               properties,
               (p) => p.key.type === "Identifier",
             );
-            if (0) {
-              list_all(
-                properties,
-                (p) => p.key.type !== "Identifier" || p.name !== "sermons",
-              );
-            }
+            list_all(
+              properties,
+              (p) => p.key.type !== "Identifier" || p.name !== "sermons",
+            );
             log({
               k: list_first(existing).key,
             });
