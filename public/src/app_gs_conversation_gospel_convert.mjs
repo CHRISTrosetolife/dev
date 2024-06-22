@@ -6,7 +6,7 @@ import { list_random_item } from "./list_random_item.mjs";
 import { app_gs_phrase_worship_multiple_or_empty } from "./app_gs_phrase_worship_multiple_or_empty.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_gs_conversation_speech_npc } from "./app_gs_conversation_speech_npc.mjs";
-export function app_gs_conversation_gospel_convert(npc, menu_overlay) {
+export function app_gs_conversation_gospel_convert(menu_overlay, npc) {
   npc.christian = true;
   app_gs_conversation_speech_npc(
     menu_overlay,
