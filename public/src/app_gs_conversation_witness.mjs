@@ -28,8 +28,13 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
     });
   });
   list_adder((la) =>
-    each(verses, (v) => {
-      each(v.objections, (objection) => {});
+    each(verses, (verse) => {
+      each(verse.objections, (objection) => {
+        la({
+          verse,
+          objection,
+        });
+      });
     }),
   );
   let objectables = list_filter(verses, (v) => list_empty_not_is(v.objections));
