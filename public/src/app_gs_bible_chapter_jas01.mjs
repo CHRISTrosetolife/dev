@@ -108,7 +108,12 @@ export function app_gs_bible_chapter_jas01() {
     {
       verse_number: "12",
       text: "Blessed is the man who perseveres under trial, because when he has stood the test, he will receive the crown of life that God has promised to those who love Him.",
-      objections: [],
+      objections: [
+        {
+          text: "",
+          count: 1,
+        },
+      ],
       sermons: [],
     },
     {
