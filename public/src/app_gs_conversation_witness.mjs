@@ -88,6 +88,7 @@ export function app_gs_conversation_witness(menu_overlay, npc, map) {
           string_random_or_empty(", yet"),
         ]),
       ]),
+      ".",
     ]);
     html_clear(menu_overlay);
     app_gs_conversation_npc_end(menu_overlay, npc, npc_text);
