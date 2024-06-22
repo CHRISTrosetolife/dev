@@ -1,3 +1,4 @@
+import { app_gs_phrase_gospel_verbs } from "./app_gs_phrase_gospel_verbs.mjs";
 import { app_gs_phrase_combine_multiple } from "./app_gs_phrase_combine_multiple.mjs";
 import { app_gs_conversation_npc_root } from "./app_gs_conversation_npc_root.mjs";
 import { app_gs_phrase_doxology_or_empty } from "./app_gs_phrase_doxology_or_empty.mjs";
@@ -62,14 +63,7 @@ export function app_gs_conversation_gospel_convert(menu_overlay, npc) {
               " ",
               list_random_item([
                 string_combine_multiple([
-                  string_random_or_empty(
-                    string_combine_multiple([
-                      "died",
-                      string_random_or_empty(", was buried"),
-                      " and ",
-                    ]),
-                  ),
-                  "rose to life",
+                  app_gs_phrase_gospel_verbs(),
                   string_random_or_empty(
                     string_combine_multiple([
                       " with ",
