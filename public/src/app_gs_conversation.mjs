@@ -33,7 +33,9 @@ export function app_gs_conversation(map_c, map, npc) {
       } else {
         html_clear(menu_overlay);
         let verses = app_gs_bible_chapter_jas01();
-        list_filter(verses, (v) => list_empty_not_is(v.objections));
+        let objectables = list_filter(verses, (v) =>
+          list_empty_not_is(v.objections),
+        );
         app_gs_conversation_speech_npc(menu_overlay, npc, text);
         npc.objection_count--;
       }
