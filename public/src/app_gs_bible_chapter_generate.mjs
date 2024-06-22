@@ -21,6 +21,7 @@ import { bible_chapter } from "./bible_chapter.mjs";
 import { string_suffix_without } from "./string_suffix_without.mjs";
 import { json_to } from "./json_to.mjs";
 import { list_join_space } from "./list_join_space.mjs";
+import { list_add } from "./list_add.mjs";
 export async function app_gs_bible_chapter_generate(chapter_name) {
   chapter_name = string_case_lower(chapter_name);
   let prefix = string_suffix_without(
@@ -50,6 +51,17 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
                 (p) => p.key.type !== "Identifier" || p.name !== property_name,
               )
             ) {
+              list_add({
+                type: "Property",
+                start: 4852,
+                end: 4866,
+                method: false,
+                shorthand: false,
+                computed: false,
+                key: [Node],
+                value: [Node],
+                kind: "init",
+              });
             }
             log(json_to(list_first(existing)));
             if (0) {
