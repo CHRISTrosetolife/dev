@@ -34,6 +34,7 @@ export function app_gs_conversation(map_c, map, npc) {
               " with me",
             ]),
           ]),
+          ", before",
           app_gs_phrase_exclaim_or_period(),
         ]),
       ),
