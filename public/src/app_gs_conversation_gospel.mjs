@@ -1,10 +1,6 @@
-import { app_gs_conversation_npc_root } from "./app_gs_conversation_npc_root.mjs";
+import { app_gs_conversation_gospel_reminder } from "./app_gs_conversation_gospel_reminder.mjs";
 import { app_gs_conversation_npc } from "./app_gs_conversation_npc.mjs";
-import { app_gs_phrase_doxology } from "./app_gs_phrase_doxology.mjs";
-import { app_gs_phrase_the_gospel } from "./app_gs_phrase_the_gospel.mjs";
 import { app_gs_conversation_gospel_convert } from "./app_gs_conversation_gospel_convert.mjs";
-import { app_gs_phrase_thanks } from "./app_gs_phrase_thanks.mjs";
-import { app_gs_phrase_worship_multiple_or_empty } from "./app_gs_phrase_worship_multiple_or_empty.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { app_gs_conversation_player_prompt } from "./app_gs_conversation_player_prompt.mjs";
@@ -20,26 +16,10 @@ import { object_merge } from "./object_merge.mjs";
 import { each_index } from "./each_index.mjs";
 import { app_gs_bible_chapter_jas01 } from "./app_gs_bible_chapter_jas01.mjs";
 import { html_clear } from "./html_clear.mjs";
-import { string_random_or_empty } from "./string_random_or_empty.mjs";
 export function app_gs_conversation_gospel(menu_overlay, npc) {
   html_clear(menu_overlay);
   if (npc.christian) {
-    let text = string_combine_multiple([
-      app_gs_phrase_worship_multiple_or_empty(),
-      app_gs_phrase_thanks(),
-      string_combine_multiple([
-        " for ",
-        list_random_item(["the reminder", "reminding me"]),
-      ]),
-      string_random_or_empty(
-        string_combine_multiple([" of ", app_gs_phrase_the_gospel()]),
-      ),
-      "!",
-      string_random_or_empty(
-        string_combine_multiple([" ", app_gs_phrase_doxology()]),
-      ),
-    ]);
-    app_gs_conversation_npc_root(menu_overlay, npc, text);
+    app_gs_conversation_gospel_reminder(menu_overlay, npc);
   } else if (npc.objection_count === 0) {
     app_gs_conversation_gospel_convert(menu_overlay, npc);
   } else {
