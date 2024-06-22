@@ -50,7 +50,7 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
             let verse_text = list_join_space(verse.tokens);
             let element = list_get(elements, index);
             let { properties } = element;
-            list_find(
+            let property_text = list_find(
               properties,
               (p) =>
                 p.key.type === "Identifier" && p.name === property_text_name,
