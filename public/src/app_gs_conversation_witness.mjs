@@ -1,3 +1,4 @@
+import { app_gs_conversation_npc_end } from "./app_gs_conversation_npc_end.mjs";
 import { app_gs_npc_conversation_wait_count } from "./app_gs_npc_conversation_wait_count.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { app_gs_phrase_you_have } from "./app_gs_phrase_you_have.mjs";
@@ -5,7 +6,6 @@ import { app_gs_phrase_thanks } from "./app_gs_phrase_thanks.mjs";
 import { list_random_item } from "./list_random_item.mjs";
 import { app_gs_phrase_convinced } from "./app_gs_phrase_convinced.mjs";
 import { app_gs_phrase_i_am } from "./app_gs_phrase_i_am.mjs";
-import { app_gs_conversation_end } from "./app_gs_conversation_end.mjs";
 import { list_pop } from "./list_pop.mjs";
 import { each } from "./each.mjs";
 import { app_gs_conversation_gospel } from "./app_gs_conversation_gospel.mjs";
@@ -90,9 +90,7 @@ export function app_gs_conversation_witness(menu_overlay, npc, map) {
       ]),
     ]);
     html_clear(menu_overlay);
-    app_gs_conversation_npc(menu_overlay, npc, npc_text);
-    let div_player = app_gs_conversation_player_prompt(menu_overlay, "");
-    app_gs_conversation_end(div_player, menu_overlay);
+    app_gs_conversation_npc_end(menu_overlay, npc, npc_text);
   });
   let choice_correct = choice_get(() => {
     npc.objection_count--;
