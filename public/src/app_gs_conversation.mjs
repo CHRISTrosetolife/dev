@@ -4,6 +4,7 @@ import { app_gs_conversation_npc_opening_text } from "./app_gs_conversation_npc_
 import { app_gs_conversation_npc_opening } from "./app_gs_conversation_npc_opening.mjs";
 import { app_gs_menu_overlay } from "./app_gs_menu_overlay.mjs";
 import { string_random_or_empty } from "./string_random_or_empty.mjs";
+import { app_gs_phrase_you_have } from "./app_gs_phrase_you_have.mjs";
 export function app_gs_conversation(map_c, map, npc) {
   let menu_overlay = app_gs_menu_overlay(map_c, map);
   map.player.conversation_count++;
@@ -13,9 +14,14 @@ export function app_gs_conversation(map_c, map, npc) {
       menu_overlay,
       npc,
       string_combine_multiple([
-        "I need some time ",
-        string_random_or_empty("to myself "),
-        "to think",
+        "I need some time",
+        string_random_or_empty(" to myself"),
+        " to think",
+        string_random_or_empty(
+          " about what ",
+          app_gs_phrase_you_have(),
+          "said",
+        ),
       ]),
     );
   } else {
