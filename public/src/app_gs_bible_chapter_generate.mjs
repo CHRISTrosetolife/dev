@@ -72,7 +72,7 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
     );
   } else {
     each(verses, (item) => {
-      item.text = list_join_space(item.tokens);
+      item[property_text] = list_join_space(item.tokens);
       item.objections = [];
       object_property_delete(item, "tokens");
       each_verse(item);
