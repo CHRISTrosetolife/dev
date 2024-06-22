@@ -93,7 +93,7 @@ export function js_dollar(ast) {
           object_replace(node, e);
         }
       }
-      if (string_starts_with(remaining, objection_prefix)) {
+      if (prefix_use(remaining, objection_prefix, prefixes)) {
         remaining = string_prefix_without(remaining, objection_prefix);
         let count = 1;
         if (string_empty_not_is(remaining)) {
@@ -132,7 +132,7 @@ export function js_dollar(ast) {
           object_replace(node, e);
         }
       }
-      if (string_starts_with(remaining, sermon_prefix)) {
+      if (prefix_use(remaining, sermon_prefix, prefixes)) {
         remaining = string_prefix_without(remaining, sermon_prefix);
         let count = 1;
         if (string_empty_not_is(remaining)) {
