@@ -7,8 +7,10 @@ export function app_gs_phrase_jesus() {
     string_random_or_empty(
       string_combine_multiple([
         ", the ",
-        "Son of God,",
-        string_random_or_empty(" the Father"),
+        string_combine_multiple([
+          "Son of God,",
+          string_random_or_empty(" the Father"),
+        ]),
       ]),
     ),
   ]);
