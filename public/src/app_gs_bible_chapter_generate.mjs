@@ -43,9 +43,10 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
               properties,
               (p) => p.key.type === "Identifier",
             );
+            let newLocal = "sermons";
             list_all(
               properties,
-              (p) => p.key.type !== "Identifier" || p.name !== "sermons",
+              (p) => p.key.type !== "Identifier" || p.name !== newLocal,
             );
             log({
               k: list_first(existing).key,
