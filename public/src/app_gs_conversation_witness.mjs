@@ -10,8 +10,6 @@ import { list_last } from "./list_last.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_slice } from "./list_slice.mjs";
 import { list_random_item } from "./list_random_item.mjs";
-import { list_empty_not_is } from "./list_empty_not_is.mjs";
-import { list_filter } from "./list_filter.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { each_index } from "./each_index.mjs";
 import { app_gs_bible_chapter_jas01 } from "./app_gs_bible_chapter_jas01.mjs";
@@ -27,7 +25,7 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
       chapter,
     });
   });
-  let objections = list_adder((la) =>
+  let objectables = list_adder((la) =>
     each(verses, (verse) => {
       each(verse.objections, (objection) => {
         la({
@@ -37,7 +35,6 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
       });
     }),
   );
-  let objectables = list_filter(verses, (v) => list_empty_not_is(v.objections));
   let objectable = list_random_item(objectables);
   let { index } = objectable;
   let objection = list_random_item(objectable.objections);
