@@ -1,3 +1,4 @@
+import { app_gs_verses_get } from "./app_gs_verses_get.mjs";
 import { app_gs_conversation_npc_end } from "./app_gs_conversation_npc_end.mjs";
 import { app_gs_npc_conversation_wait_count } from "./app_gs_npc_conversation_wait_count.mjs";
 import { html_clear } from "./html_clear.mjs";
@@ -20,12 +21,11 @@ import { list_first } from "./list_first.mjs";
 import { list_slice } from "./list_slice.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { each_index } from "./each_index.mjs";
-import { app_gs_bible_chapter_jas01 } from "./app_gs_bible_chapter_jas01.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
 import { string_random_or_empty } from "./string_random_or_empty.mjs";
 export function app_gs_conversation_witness(menu_overlay, npc, map) {
-  let verses = app_gs_bible_chapter_jas01();
+  let verses = app_gs_verses_get();
   let book_name = "James";
   let chapter = "1";
   each_index(verses, (item, index) => {
