@@ -16,10 +16,10 @@ import { app_gs_bible_chapter_jas01 } from "./app_gs_bible_chapter_jas01.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { error } from "./error.mjs";
 export function app_gs_conversation_gospel(menu_overlay, npc) {
+  html_clear(menu_overlay);
   if (npc.objection_count === 0) {
     error();
   } else {
-    html_clear(menu_overlay);
     let book_name = "James";
     let chapter = "1";
     let verses = app_gs_bible_chapter_jas01();
