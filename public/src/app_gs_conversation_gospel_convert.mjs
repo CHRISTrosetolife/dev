@@ -58,49 +58,51 @@ export function app_gs_conversation_gospel_convert(menu_overlay, npc) {
             string_combine_multiple(["in ", app_gs_phrase_jesus()]),
             string_combine_multiple([
               "that ",
-              app_gs_phrase_jesus(),
-              " ",
-              list_random_item([
-                string_combine_multiple([
-                  string_random_or_empty(
-                    string_combine_multiple([
-                      "died",
-                      string_random_or_empty(", was buried"),
-                      " and ",
-                    ]),
-                  ),
-                  "rose to life",
-                  string_random_or_empty(
-                    string_combine_multiple([
-                      " with ",
-                      list_random_item(["all my", "my whole"]),
-                      " heart",
-                    ]),
-                  ),
-                ]),
-                string_combine_multiple([
-                  "is ",
-                  list_random_item([
-                    string_combine_multiple([
-                      "King",
-                      string_random_or_empty(" of kings"),
-                    ]),
-                    string_combine_multiple([
-                      "Lord",
-                      string_random_or_empty(" of lords"),
-                    ]),
-                    "alive",
-                    "reigning from on high",
-                    string_combine_multiple([
-                      "my ",
-                      list_random_item([
-                        string_combine_multiple([
-                          "Savior",
-                          string_random_or_empty(" and Lord"),
-                        ]),
-                        string_combine_multiple([
-                          "Lord",
-                          string_random_or_empty(" and Savior"),
+              string_combine_multiple([
+                app_gs_phrase_jesus(),
+                " ",
+                list_random_item([
+                  string_combine_multiple([
+                    string_random_or_empty(
+                      string_combine_multiple([
+                        "died",
+                        string_random_or_empty(", was buried"),
+                        " and ",
+                      ]),
+                    ),
+                    "rose to life",
+                    string_random_or_empty(
+                      string_combine_multiple([
+                        " with ",
+                        list_random_item(["all my", "my whole"]),
+                        " heart",
+                      ]),
+                    ),
+                  ]),
+                  string_combine_multiple([
+                    "is ",
+                    list_random_item([
+                      string_combine_multiple([
+                        "King",
+                        string_random_or_empty(" of kings"),
+                      ]),
+                      string_combine_multiple([
+                        "Lord",
+                        string_random_or_empty(" of lords"),
+                      ]),
+                      "alive",
+                      "reigning from on high",
+                      string_combine_multiple([
+                        "my ",
+                        list_random_item([
+                          string_combine_multiple([
+                            "Savior",
+                            string_random_or_empty(" and Lord"),
+                          ]),
+                          string_combine_multiple([
+                            "Lord",
+                            string_random_or_empty(" and Savior"),
+                          ]),
                         ]),
                       ]),
                     ]),
