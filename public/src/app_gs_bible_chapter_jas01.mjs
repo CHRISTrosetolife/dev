@@ -314,7 +314,12 @@ export function app_gs_bible_chapter_jas01() {
       text: "But the one who looks intently into the perfect law of freedom, and continues to do so not being a forgetful hearer, but an effective doer he will be blessed in what he does.",
       objections: [],
       sermons: [],
-      questions: [],
+      questions: [
+        {
+          text: "",
+          count: 1,
+        },
+      ],
     },
     {
       verse_number: "26",
