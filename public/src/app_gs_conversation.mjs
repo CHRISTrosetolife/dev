@@ -39,7 +39,7 @@ export function app_gs_conversation(map_c, map, npc) {
       " that Jesus ✝️ died, was 🪨 buried and 🤴🏽 rose to life!",
     ]),
     () => {
-      npc.objection_count;
+      npc.objection_count--;
     },
   );
   html_button_width_full_text_click(
