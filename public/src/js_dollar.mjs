@@ -1,3 +1,4 @@
+import { integer_parse_try } from "./integer_parse_try.mjs";
 import { each_index } from "./each_index.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { js_code_arrow_block } from "./js_code_arrow_block.mjs";
@@ -96,7 +97,7 @@ export function js_dollar(ast) {
         if (list_is(parent)) {
           remaining = string_prefix_without(remaining, scm_prefix);
           let count;
-          count = integer_parse(remaining);
+          count = integer_parse_try(remaining);
           let e = js_parse_expression(
             js_code_call_args(string_combine_multiple.name, [
               js_code_array_empty(),
