@@ -56,7 +56,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
               "convincing",
             ]),
             " me about ",
-            list_random_item(["Jesus"]),
+            list_random_item(["the gospel", "the gospel of Jesus", "Jesus"]),
           ]),
         ]),
         " ",
