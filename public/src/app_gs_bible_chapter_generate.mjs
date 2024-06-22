@@ -22,6 +22,7 @@ import { list_join_space } from "./list_join_space.mjs";
 import { list_add } from "./list_add.mjs";
 export async function app_gs_bible_chapter_generate(chapter_name) {
   chapter_name = string_case_lower(chapter_name);
+  let verses = await bible_chapter("engbsb", chapter_name);
   let prefix = string_suffix_without(
     app_gs_bible_chapter_generate.name,
     "generate",
@@ -61,7 +62,6 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
       [],
     );
   } else {
-    let verses = await bible_chapter("engbsb", chapter_name);
     each(verses, (item) => {
       item.text = list_join_space(item.tokens);
       item.objections = [];
