@@ -42,7 +42,9 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
               properties,
               (p) => p.key.type === "Identifier",
             );
-            list_all(properties, (p) => p.key.type !== "Identifier" || p.ke);
+            if (0) {
+              list_all(properties, (p) => p.key.type !== "Identifier" || p.ke);
+            }
             log({
               existing,
             });
