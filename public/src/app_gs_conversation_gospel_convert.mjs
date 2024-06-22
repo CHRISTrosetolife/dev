@@ -1,3 +1,4 @@
+import { app_gs_phrase_i_am } from "./app_gs_phrase_i_am.mjs";
 import { app_gs_phrase_convinced } from "./app_gs_phrase_convinced.mjs";
 import { app_gs_phrase_thanks } from "./app_gs_phrase_thanks.mjs";
 import { app_gs_phrase_gospel_verbs } from "./app_gs_phrase_gospel_verbs.mjs";
@@ -23,6 +24,7 @@ export function app_gs_conversation_gospel_convert(menu_overlay, npc) {
         list_random_item([
           string_combine_multiple([
             list_random_item([
+              app_gs_phrase_i_am(),
               string_combine_multiple([
                 "You have ",
                 app_gs_phrase_convinced(),
