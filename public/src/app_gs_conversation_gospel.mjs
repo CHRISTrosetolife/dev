@@ -35,6 +35,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
             app_gs_phrase_exclaim_or_period(),
           ]),
         ]),
+        " ",
         string_random_or_empty("Amen! "),
         string_random_or_empty(
           string_combine_multiple([app_gs_phrase_worship(), " "]),
