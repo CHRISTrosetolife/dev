@@ -217,7 +217,7 @@ export function app_gs_bible_chapter_jas01() {
       sermons: [],
       questions: [
         {
-          text: "",
+          text: "How are we born spiritually?",
           count: 1,
         },
       ],
