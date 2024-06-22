@@ -274,7 +274,7 @@ export function app_gs_bible_chapter_jas01() {
       sermons: [
         {
           sermon:
-            "it is not enough to hear the word of God`in addition to hearing, we must do what the word of God requires",
+            "it is not enough to hear the word of God`in addition to hearing, we must do what the word of God requires`those who hear the word of God, but do not do what it says deceive themselves",
           count: 1,
         },
       ],
