@@ -13,11 +13,11 @@ export function app_gs_conversation_gospel_reminder(menu_overlay, npc) {
     string_combine_multiple([
       " for ",
       list_random_item(["the reminder", "reminding me"]),
+      string_random_or_empty(
+        string_combine_multiple([" of ", app_gs_phrase_the_gospel()]),
+      ),
+      "!",
     ]),
-    string_random_or_empty(
-      string_combine_multiple([" of ", app_gs_phrase_the_gospel()]),
-    ),
-    "!",
     string_random_or_empty(
       string_combine_multiple([" ", app_gs_phrase_doxology()]),
     ),
