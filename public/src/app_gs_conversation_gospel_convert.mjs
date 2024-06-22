@@ -1,3 +1,4 @@
+import { app_gs_phrase_thanks } from "./app_gs_phrase_thanks.mjs";
 import { app_gs_phrase_gospel_verbs } from "./app_gs_phrase_gospel_verbs.mjs";
 import { app_gs_phrase_combine_multiple } from "./app_gs_phrase_combine_multiple.mjs";
 import { app_gs_conversation_npc_root } from "./app_gs_conversation_npc_root.mjs";
@@ -32,7 +33,7 @@ export function app_gs_conversation_gospel_convert(menu_overlay, npc) {
             app_gs_phrase_exclaim_or_period(),
           ]),
           string_combine_multiple([
-            "Thank you",
+            app_gs_phrase_thanks(),
             " for ",
             list_random_item([
               string_combine_multiple([
