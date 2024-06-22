@@ -190,7 +190,7 @@ export function app_gs_bible_chapter_jas01() {
       sermons: [
         {
           sermon:
-            "God is the Father of the heavenly lights`there is no change with the Father`there are no shadows that shift from light moving with God the Father`Good and perfect gifts come from God, whose throne is in heaven above`God speaks the word of truth`through the word truth God gives us spiritual birth",
+            "God is the Father of the heavenly lights`there is no change with the Father`there are no shadows that shift from light moving with God the Father`Good and perfect gifts come from God, whose throne is in heaven above`God speaks the word of truth`through the word truth God gives us spiritual birth`when we are spiritually born, we are a kind of the firstfruits of the creation of God",
           count: 1,
         },
       ],
