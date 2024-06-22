@@ -1,3 +1,4 @@
+import { list_join_underscore } from "./list_join_underscore.mjs";
 import { app_gs_verses_get } from "./app_gs_verses_get.mjs";
 import { app_gs_conversation_npc_end } from "./app_gs_conversation_npc_end.mjs";
 import { app_gs_npc_conversation_wait_count } from "./app_gs_npc_conversation_wait_count.mjs";
@@ -38,11 +39,7 @@ export function app_gs_conversation_witness(menu_overlay, npc, map) {
   let objectables = list_adder((la) =>
     each_index(verses, (verse, index) => {
       each(verse.objections, (objection) => {
-        la({
-          verse,
-          objection,
-          verses: list_slice(verses, index, index + objection.count),
-        });
+        la(list_join_underscore());
       });
     }),
   );
