@@ -30,7 +30,8 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
           "Praise be to God",
         ]),
         "! ",
-        list_random_item(["I believe in Jesus!"]),
+        "I believe ",
+        "in Jesus!",
       ]),
     );
   } else {
