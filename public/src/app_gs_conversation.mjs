@@ -73,6 +73,7 @@ export function app_gs_conversation(map_c, map, npc) {
             first.verse_number,
             first !== last ? "-" + last.verse_number : "",
             " ",
+            answer,
           ]),
         );
         npc.objection_count--;
