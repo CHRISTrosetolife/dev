@@ -44,13 +44,14 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
               (p) => p.key.type === "Identifier",
             );
             let property_name = "sermons";
-            list_all(
-              properties,
-              (p) => p.key.type !== "Identifier" || p.name !== property_name,
-            );
-            log({
-              k: list_first(existing).key,
-            });
+            if (
+              list_all(
+                properties,
+                (p) => p.key.type !== "Identifier" || p.name !== property_name,
+              )
+            ) {
+            }
+            log(json_to(list_first(existing)));
             if (0) {
               each(properties, (p) => {
                 log({
