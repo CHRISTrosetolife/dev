@@ -61,6 +61,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
       ]),
       () => {
         npc.objection_count--;
+        app_gs_conversation_gospel(menu_overlay, npc);
       },
     );
   }
