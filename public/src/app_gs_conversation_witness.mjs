@@ -65,7 +65,8 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
     answer,
   ]);
   let choice_correct = {
-    text: choice_text,
+    objection_text,
+    answer_text: choice_text,
     on_click: on_click,
   };
   app_gs_conversation_npc(menu_overlay, npc, objection_text);
@@ -75,7 +76,7 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
   );
   html_button_width_full_text_click(
     div_player,
-    choice_correct.text,
+    choice_correct.answer_text,
     choice_correct.on_click,
   );
 }
