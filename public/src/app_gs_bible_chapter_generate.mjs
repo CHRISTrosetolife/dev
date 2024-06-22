@@ -29,7 +29,7 @@ import { list_size } from "./list_size.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 export async function app_gs_bible_chapter_generate(chapter_name) {
   chapter_name = string_case_lower(chapter_name);
-  let property_text = "text";
+  let property_text_name = "text";
   let verses = await bible_chapter("engbsb", chapter_name);
   let prefix = string_suffix_without(
     app_gs_bible_chapter_generate.name,
@@ -52,7 +52,8 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
             let { properties } = element;
             list_find(
               properties,
-              (p) => p.key.type === "Identifier" && p.name === property_text,
+              (p) =>
+                p.key.type === "Identifier" && p.name === property_text_name,
             );
             let property_name = "sermons";
             if (
@@ -78,7 +79,11 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
     );
   } else {
     each(verses, (item) => {
-      object_property_set(item, property_text, list_join_space(item.tokens));
+      object_property_set(
+        item,
+        property_text_name,
+        list_join_space(item.tokens),
+      );
       item.objections = [];
       object_property_delete(item, "tokens");
       each_verse(item);
