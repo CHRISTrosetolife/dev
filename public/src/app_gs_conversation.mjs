@@ -21,7 +21,7 @@ export function app_gs_conversation(map_c, map, npc) {
           " about what ",
           app_gs_phrase_you_have(),
           "said",
-          string_random_or_empty(" to myself"),
+          string_random_or_empty(" to me"),
         ),
       ]),
     );
