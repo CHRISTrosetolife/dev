@@ -1,3 +1,4 @@
+import { each_index } from "./each_index.mjs";
 import { js_code_array_empty } from "./js_code_array_empty.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
 import { list_all } from "./list_all.mjs";
@@ -37,7 +38,7 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
           let last = list_last(body_block);
           let { argument } = last;
           let { elements } = argument;
-          each(elements, (element) => {
+          each_index(elements, (element, index) => {
             let { properties } = element;
             let property_name = "sermons";
             if (
