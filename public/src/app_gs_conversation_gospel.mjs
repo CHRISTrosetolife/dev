@@ -32,7 +32,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
           "Thank You, Jesus",
           string_combine_multiple([
             "Praise be to ",
-            "our God and Savior",
+            list_random_item(["our God and Savior"]),
             "God",
           ]),
         ]),
