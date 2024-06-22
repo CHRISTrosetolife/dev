@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 export function app_gs_bible_chapter_jas01() {
   return [
     {
@@ -22,7 +21,7 @@ export function app_gs_bible_chapter_jas01() {
           count: 2,
         },
       ],
-      sermons: [log({})],
+      sermons: [],
     },
     {
       verse_number: "3",
