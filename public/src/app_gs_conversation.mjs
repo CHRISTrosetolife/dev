@@ -16,7 +16,8 @@ export function app_gs_conversation(map_c, map, npc) {
   if (map.player.conversation_count < npc.conversation_wait_until) {
     let sentences = [
       string_combine_multiple([
-        "I need some time",
+        "I need",
+        " some time",
         string_random_or_empty(" to myself"),
         " to think",
         string_random_or_empty(
