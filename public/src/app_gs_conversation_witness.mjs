@@ -107,8 +107,8 @@ export async function app_gs_conversation_witness(menu_overlay, npc, map) {
       ]),
     );
     let verse = list_get(verses, verse_index);
-    list_slice(verses, index, index + objection.count);
-    let { verses: answer_verses, objection } = objectable;
+    let objection = list_get(verse.objection, objection_index);
+    let answer_verses = list_slice(verses, index, index + objection.count);
     let { text: objection_text } = objection;
     let first = list_first(answer_verses);
     let last = list_last(answer_verses);
