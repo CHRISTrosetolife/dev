@@ -100,6 +100,8 @@ export async function app_gs_conversation_witness(menu_overlay, npc, map) {
     let [book_id, chapter, verse_index, objection_index] =
       string_split_underscore(objection_id);
     chapter = integer_parse(chapter);
+    verse_index = integer_parse(verse_index);
+    objection_index = integer_parse(objection_index);
     let chapter_id = number_pad(chapter, 2);
     let verses = await function_run(
       string_combine_multiple([
