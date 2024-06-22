@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_gs_conversation_npc_end } from "./app_gs_conversation_npc_end.mjs";
 import { app_gs_conversation_npc_opening_text } from "./app_gs_conversation_npc_opening_text.mjs";
 import { app_gs_conversation_npc_opening } from "./app_gs_conversation_npc_opening.mjs";
@@ -10,8 +11,7 @@ export function app_gs_conversation(map_c, map, npc) {
     app_gs_conversation_npc_end(
       menu_overlay,
       npc,
-      "I need some time ",
-      "to think",
+      string_combine_multiple(["I need some time ", "to think"]),
     );
   } else {
     let text = app_gs_conversation_npc_opening_text(map, npc);
