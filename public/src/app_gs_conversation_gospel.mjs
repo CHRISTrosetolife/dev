@@ -45,8 +45,9 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
                       "died",
                       string_random_or_empty(", was buried"),
                     ]),
+                    " and ",
                   ),
-                  " and rose to life",
+                  "rose to life",
                 ]),
                 string_combine_multiple([
                   "is ",
