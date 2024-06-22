@@ -48,7 +48,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
             app_gs_phrase_exclaim_or_period(),
           ]),
           string_combine_multiple([
-            "Thank you for ",
+            "Thank you for ",$s3,
             list_random_item([
               "telling",
               "taking the time to tell",
