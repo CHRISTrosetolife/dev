@@ -283,7 +283,12 @@ export function app_gs_bible_chapter_jas01() {
           count: 4,
         },
       ],
-      questions: [],
+      questions: [
+        {
+          text: "",
+          count: 1,
+        },
+      ],
     },
     {
       verse_number: "23",
