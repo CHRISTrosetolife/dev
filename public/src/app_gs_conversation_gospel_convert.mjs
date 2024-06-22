@@ -1,3 +1,4 @@
+import { app_gs_phrase_gospel } from "./app_gs_phrase_gospel.mjs";
 import { app_gs_conversation_root } from "./app_gs_conversation_root.mjs";
 import { app_gs_phrase_jesus } from "./app_gs_phrase_jesus.mjs";
 import { app_gs_phrase_exclaim_or_period } from "./app_gs_phrase_exclaim_or_period.mjs";
@@ -31,24 +32,7 @@ export function app_gs_conversation_gospel_convert(menu_overlay, npc) {
           list_random_item([
             string_combine_multiple([
               "sharing ",
-              list_random_item([
-                string_combine_multiple([
-                  "the ",
-                  list_random_item([
-                    "Word of God",
-                    string_combine_multiple([
-                      "gospel",
-                      string_random_or_empty(
-                        string_combine_multiple([
-                          " of Jesus",
-                          string_random_or_empty(" Christ"),
-                        ]),
-                      ),
-                    ]),
-                  ]),
-                ]),
-                "Jesus",
-              ]),
+              app_gs_phrase_gospel(),
               " with me",
             ]),
             string_combine_multiple([
