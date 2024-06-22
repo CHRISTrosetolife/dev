@@ -54,7 +54,8 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
                 "sharing ",
                 list_random_item([
                   string_combine_multiple([
-                    "the gospel",
+                    "the ",
+                    "gospel",
                     string_random_or_empty(
                       string_combine_multiple([
                         " of Jesus",
