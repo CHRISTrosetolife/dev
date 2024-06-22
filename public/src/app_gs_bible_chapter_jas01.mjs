@@ -1,11 +1,10 @@
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export function app_gs_bible_chapter_jas01() {
   return [
     {
       verse_number: "1",
       text: "James, a servant of God and of the Lord Jesus Christ, To the twelve tribes of the Dispersion: Greetings.",
       objections: [],
-      sermons: [string_combine_multiple([])],
+      sermons: [],
     },
     {
       verse_number: "2",
