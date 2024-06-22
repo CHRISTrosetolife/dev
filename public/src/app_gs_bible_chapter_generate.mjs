@@ -58,25 +58,25 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
             );
             let verse_text = list_join_space(verse.tokens);
             property_text.value = js_string(verse_text);
-            each(list, (item2) => {});
-            let property_name = "sermons";
-            if (
-              list_all(
-                properties,
-                (p) =>
-                  p.key.type !== "Identifier" || p.key.name !== property_name,
-              )
-            ) {
-              list_add(properties, {
-                type: "Property",
-                method: false,
-                shorthand: false,
-                computed: false,
-                key: js_parse_expression(property_name),
-                value: js_parse_expression(js_code_array_empty()),
-                kind: "init",
-              });
-            }
+            each(["sermons"], (property_name) => {
+              if (
+                list_all(
+                  properties,
+                  (p) =>
+                    p.key.type !== "Identifier" || p.key.name !== property_name,
+                )
+              ) {
+                list_add(properties, {
+                  type: "Property",
+                  method: false,
+                  shorthand: false,
+                  computed: false,
+                  key: js_parse_expression(property_name),
+                  value: js_parse_expression(js_code_array_empty()),
+                  kind: "init",
+                });
+              }
+            });
           });
         },
       ],
