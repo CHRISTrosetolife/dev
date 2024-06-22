@@ -110,13 +110,7 @@ export function js_dollar(ast) {
           object_replace(parent, e);
         }
       }
-      if (
-        string_starts_with(remaining, scm_prefix) &&
-        list_all(prefixes, (p) => {
-          !string_starts_with(remaining, p) ||
-            string_starts_with(scm_prefix, p);
-        })
-      ) {
+      if (prefix_use(remaining, scm_prefix, prefixes)) {
         if (list_is(parent)) {
           let e = js_parse_expression(
             js_code_call_args(string_combine_multiple.name, [
@@ -151,4 +145,12 @@ export function js_dollar(ast) {
       }
     }
   });
+  function prefix_use(remaining, scm_prefix, prefixes) {
+    return (
+      string_starts_with(remaining, scm_prefix) &&
+      list_all(prefixes, (p) => {
+        !string_starts_with(remaining, p) || string_starts_with(scm_prefix, p);
+      })
+    );
+  }
 }
