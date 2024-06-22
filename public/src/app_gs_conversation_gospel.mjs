@@ -41,7 +41,10 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
                 "Jesus",
                 string_random_or_empty(" Christ"),
                 string_random_or_empty(
-                  string_combine_multiple([", the Son of God"]),
+                  string_combine_multiple([
+                    ", the Son of God",
+                    string_random_or_empty(", the Father"),
+                  ]),
                 ),
               ]),
             ]),
