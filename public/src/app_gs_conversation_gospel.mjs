@@ -50,9 +50,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
           string_combine_multiple([
             "Thank you for ",
             list_random_item([
-              "sharing ",
-              "the gospel",
-              " with me",
+              string_combine_multiple(["sharing ", "the gospel", " with me"]),
               string_combine_multiple([
                 list_random_item([
                   "telling",
