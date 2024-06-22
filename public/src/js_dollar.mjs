@@ -113,7 +113,8 @@ export function js_dollar(ast) {
       if (
         string_starts_with(remaining, scm_prefix) &&
         list_all(prefixes, (p) => {
-          string_starts_with(remaining, p);
+          !string_starts_with(remaining, p) ||
+            string_starts_with(scm_prefix, p);
         })
       ) {
         if (list_is(parent)) {
