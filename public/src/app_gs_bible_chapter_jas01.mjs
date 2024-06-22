@@ -23,8 +23,9 @@ export function app_gs_bible_chapter_jas01() {
       ],
       sermons: [
         {
-          sermon: "",
-          count: 1,
+          sermon:
+            "There are many kinds of trials`We will encounter trials`Trials test our faith`When our faith is tested, perseverance is developed`Therefore we consider trials pure joy",
+          count: 2,
         },
       ],
     },
