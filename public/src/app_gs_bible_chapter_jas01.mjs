@@ -295,7 +295,12 @@ export function app_gs_bible_chapter_jas01() {
       text: "For anyone who hears the word but does not carry it out is like a man who looks at his face in a mirror,",
       objections: [],
       sermons: [],
-      questions: [],
+      questions: [
+        {
+          text: "",
+          count: 1,
+        },
+      ],
     },
     {
       verse_number: "24",
