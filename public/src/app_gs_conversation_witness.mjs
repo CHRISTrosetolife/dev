@@ -59,7 +59,7 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
                 "what ",
                 app_gs_phrase_you_have(),
                 " ",
-                list_random_item(["shared", "said"]),
+                list_random_item(["shared", string_combine_multiple(["said"])]),
               ]),
             ]),
             ". However, ",
