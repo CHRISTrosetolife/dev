@@ -22,10 +22,12 @@ export function app_gs_conversation_gospel_convert(menu_overlay, npc) {
         app_gs_phrase_doxology_or_empty(),
         list_random_item([
           string_combine_multiple([
-            string_combine_multiple([
-              "You have ",
-              app_gs_phrase_convinced(),
-              " me",
+            list_random_item([
+              string_combine_multiple([
+                "You have ",
+                app_gs_phrase_convinced(),
+                " me",
+              ]),
             ]),
             app_gs_phrase_exclaim_or_period(),
           ]),
