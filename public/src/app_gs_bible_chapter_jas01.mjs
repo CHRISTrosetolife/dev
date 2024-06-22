@@ -45,7 +45,12 @@ export function app_gs_bible_chapter_jas01() {
       verse_number: "5",
       text: "Now if any of you lacks wisdom, he should ask God, who gives generously to all without finding fault, and it will be given to him.",
       objections: [],
-      sermons: [],
+      sermons: [
+        {
+          sermon: "",
+          count: 1,
+        },
+      ],
     },
     {
       verse_number: "6",
