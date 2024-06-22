@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { app_gs_phrase_what_youve_said } from "./app_gs_phrase_what_youve_said.mjs";
 import { app_gs_phrase_exclaim_or_period } from "./app_gs_phrase_exclaim_or_period.mjs";
 import { app_gs_phrase_let_us } from "./app_gs_phrase_let_us.mjs";
@@ -16,6 +17,10 @@ export function app_gs_conversation(map_c, map, npc) {
   map.player.conversation_count++;
   npc.conversation_count++;
   if (map.player.conversation_count < npc.conversation_wait_until) {
+    log({
+      player: map.player,
+      npc,
+    });
     let sentences = [
       string_random_or_empty(
         string_combine_multiple([
