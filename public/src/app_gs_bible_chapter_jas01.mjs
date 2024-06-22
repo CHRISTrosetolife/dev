@@ -157,7 +157,12 @@ export function app_gs_bible_chapter_jas01() {
       text: "But each one is tempted when by his own evil desires he is lured away and enticed.",
       objections: [],
       sermons: [],
-      questions: [],
+      questions: [
+        {
+          text: "",
+          count: 1,
+        },
+      ],
     },
     {
       verse_number: "15",
