@@ -23,7 +23,7 @@ export function app_gs_conversation_gospel_reminder(menu_overlay, npc) {
         "!",
       ]),
       string_combine_multiple([
-        "Yes",
+        list_random_item(["Yes"]),
         ", ",
         app_gs_phrase_jesus(),
         " ",
