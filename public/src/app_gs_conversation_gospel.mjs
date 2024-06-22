@@ -37,6 +37,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
             "Praise be to ",
             list_random_item(["our God and Savior", "God"]),
           ]),
+          "What a God we serve",
         ]),
         "! ",
         string_combine_multiple([
