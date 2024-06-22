@@ -36,7 +36,7 @@ export function app_gs_conversation(map_c, map, npc) {
     string_combine_multiple([
       "📖 Tell ",
       npc.name,
-      " that Jesus ✝️ died, was 🪨 buried and 🤴🏽 rose to life",
+      " that Jesus ✝️ died, was 🪨 buried and 🤴🏽 rose to life!",
     ]),
     () => {
       html_remove(menu_overlay);
