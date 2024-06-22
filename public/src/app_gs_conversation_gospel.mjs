@@ -1,3 +1,4 @@
+import { app_gs_phrase_doxology } from "./app_gs_phrase_doxology.mjs";
 import { app_gs_phrase_the_gospel } from "./app_gs_phrase_the_gospel.mjs";
 import { app_gs_conversation_gospel_convert } from "./app_gs_conversation_gospel_convert.mjs";
 import { app_gs_phrase_thanks } from "./app_gs_phrase_thanks.mjs";
@@ -37,6 +38,9 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
           string_combine_multiple([" of ", app_gs_phrase_the_gospel()]),
         ),
         "!",
+        string_random_or_empty(
+          string_combine_multiple([app_gs_phrase_doxology(), " "]),
+        ),
       ]),
     );
     app_gs_conversation_root(menu_overlay, npc);
