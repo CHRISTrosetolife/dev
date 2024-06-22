@@ -49,7 +49,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
           ]),
           string_combine_multiple([
             "Thank you for ",
-            "telling",
+            list_random_item(["telling"]),
             " me about Jesus",
           ]),
         ]),
