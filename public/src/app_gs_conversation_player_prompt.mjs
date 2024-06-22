@@ -6,7 +6,7 @@ export function app_gs_conversation_player_prompt(menu_overlay, additional) {
   let div_player = app_gs_overlay_speech(menu_overlay);
   let prompt = html_p_text(
     div_player,
-    string_combine_multiple(["What would you like to do?"]),
+    string_combine_multiple(["What would you like to do?", additional]),
   );
   html_style_font_color(prompt, "lightgreen");
   return div_player;
