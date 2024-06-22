@@ -1,3 +1,4 @@
+import { list_random_item } from "./list_random_item.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_gs_conversation_npc_end } from "./app_gs_conversation_npc_end.mjs";
 import { app_gs_conversation_npc_opening_text } from "./app_gs_conversation_npc_opening_text.mjs";
@@ -20,7 +21,7 @@ export function app_gs_conversation(map_c, map, npc) {
         string_random_or_empty(
           " about what ",
           app_gs_phrase_you_have(),
-          "said",
+          list_random_item(["said"]),
           string_random_or_empty(" to me"),
         ),
       ]),
