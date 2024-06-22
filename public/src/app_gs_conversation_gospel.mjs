@@ -1,3 +1,4 @@
+import { string_random_or_empty } from "./string_random_or_empty.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { app_gs_conversation_player_prompt } from "./app_gs_conversation_player_prompt.mjs";
@@ -53,7 +54,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
                         ]),
                         string_combine_multiple([
                           "Lord",
-                          random_50_50() ? "" : " and Savior",
+                          string_random_or_empty(" and Savior"),
                         ]),
                       ]),
                     ]),
