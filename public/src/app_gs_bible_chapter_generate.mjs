@@ -1,3 +1,4 @@
+import { app_gs_bible_chapter_prefix } from "./app_gs_bible_chapter_prefix.mjs";
 import { js_string } from "./js_string.mjs";
 import { list_find } from "./list_find.mjs";
 import { equal_by } from "./equal_by.mjs";
@@ -21,7 +22,6 @@ import { function_open } from "./function_open.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
-import { string_suffix_without } from "./string_suffix_without.mjs";
 import { json_to } from "./json_to.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { list_add } from "./list_add.mjs";
@@ -32,10 +32,7 @@ export async function app_gs_bible_chapter_generate(chapter_name) {
   chapter_name = string_case_lower(chapter_name);
   let property_text_name = "text";
   let verses = await bible_chapter("engbsb", chapter_name);
-  let prefix = string_suffix_without(
-    app_gs_bible_chapter_generate.name,
-    "generate",
-  );
+  let prefix = app_gs_bible_chapter_prefix();
   let function_name = string_combine_multiple([prefix, chapter_name]);
   if (await function_exists(function_name)) {
     await function_transform_args_split_lambda(
