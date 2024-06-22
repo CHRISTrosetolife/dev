@@ -12,6 +12,7 @@ export function app_gs_conversation(map_c, map, npc) {
   map.player.conversation_count++;
   npc.conversation_count++;
   if (map.player.conversation_count < npc.conversation_wait_until) {
+    let sentences = [];
     app_gs_conversation_npc_end(
       menu_overlay,
       npc,
