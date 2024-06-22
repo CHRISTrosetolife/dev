@@ -1,3 +1,4 @@
+import { app_gs_tile_overlay_add } from "./app_gs_tile_overlay_add.mjs";
 import { bible_names_men } from "./bible_names_men.mjs";
 import { app_gs_player_new } from "./app_gs_player_new.mjs";
 import { app_gs_overlays_bushes } from "./app_gs_overlays_bushes.mjs";
@@ -174,14 +175,6 @@ export function app_gs_map_new() {
       id,
     });
     list_add(tile.overlays, o);
-  }
-  function app_gs_tile_overlay_add(tile, type) {
-    let o = object_properties_new(tile, list_xy());
-    object_merge(o, {
-      type,
-    });
-    list_add(tile.overlays, o);
-    return o;
   }
   function inside_is(t) {
     return list_all(
