@@ -23,9 +23,9 @@ export function app_gs_conversation(map_c, map, npc) {
           list_random_item(["said", "spoken"]),
           string_random_or_empty(" to me"),
         ),
+        ".",
       ]),
       string_combine_multiple([
-        ". ",
         string_random_or_empty(
           string_combine_multiple([
             app_gs_phrase_let_us(),
