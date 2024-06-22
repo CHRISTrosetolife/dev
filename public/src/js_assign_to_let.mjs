@@ -68,10 +68,8 @@ export function js_assign_to_let(ast) {
                     "type",
                     "Identifier",
                   );
-                  log(elements);
-                  exit();
-                  let keys = list_map_property(properties, "value");
-                  identifiers_add(keys);
+                  let names = list_map_property(elements_ids, "name");
+                  identifiers_add(names);
                 }
               });
             }
