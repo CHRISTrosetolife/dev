@@ -24,25 +24,22 @@ import { string_random_or_empty } from "./string_random_or_empty.mjs";
 export function app_gs_conversation_gospel(menu_overlay, npc) {
   html_clear(menu_overlay);
   if (npc.christian) {
-    app_gs_conversation_npc(
-      menu_overlay,
-      npc,
+    let text = string_combine_multiple([
+      app_gs_phrase_worship_multiple_or_empty(),
+      app_gs_phrase_thanks(),
       string_combine_multiple([
-        app_gs_phrase_worship_multiple_or_empty(),
-        app_gs_phrase_thanks(),
-        string_combine_multiple([
-          " for ",
-          list_random_item(["the reminder", "reminding me"]),
-        ]),
-        string_random_or_empty(
-          string_combine_multiple([" of ", app_gs_phrase_the_gospel()]),
-        ),
-        "!",
-        string_random_or_empty(
-          string_combine_multiple([" ", app_gs_phrase_doxology()]),
-        ),
+        " for ",
+        list_random_item(["the reminder", "reminding me"]),
       ]),
-    );
+      string_random_or_empty(
+        string_combine_multiple([" of ", app_gs_phrase_the_gospel()]),
+      ),
+      "!",
+      string_random_or_empty(
+        string_combine_multiple([" ", app_gs_phrase_doxology()]),
+      ),
+    ]);
+    app_gs_conversation_npc(menu_overlay, npc, text);
     app_gs_conversation_root(menu_overlay, npc);
   } else if (npc.objection_count === 0) {
     app_gs_conversation_gospel_convert(menu_overlay, npc);
