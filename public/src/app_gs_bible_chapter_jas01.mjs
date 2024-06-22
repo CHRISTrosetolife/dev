@@ -215,7 +215,12 @@ export function app_gs_bible_chapter_jas01() {
       text: "He chose to give us birth through the word of truth, that we would be a kind of firstfruits of His creation.",
       objections: [],
       sermons: [],
-      questions: [],
+      questions: [
+        {
+          text: "",
+          count: 1,
+        },
+      ],
     },
     {
       verse_number: "19",
