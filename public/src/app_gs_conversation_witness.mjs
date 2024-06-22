@@ -60,9 +60,12 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
                 app_gs_phrase_you_have(),
                 " ",
                 list_random_item([
-                  "shared",
                   string_combine_multiple([
                     "said",
+                    string_random_or_empty(" to me"),
+                  ]),
+                  string_combine_multiple([
+                    "shared",
                     string_random_or_empty(" to me"),
                   ]),
                 ]),
