@@ -1,3 +1,4 @@
+import { list_filter } from "./list_filter.mjs";
 import { app_gs_bible_chapter_jas01 } from "./app_gs_bible_chapter_jas01.mjs";
 import { app_gs_conversation_speech_npc } from "./app_gs_conversation_speech_npc.mjs";
 import { html_clear } from "./html_clear.mjs";
@@ -10,6 +11,7 @@ import { html_p_text } from "./html_p_text.mjs";
 import { html_remove } from "./html_remove.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { app_gs_menu_overlay } from "./app_gs_menu_overlay.mjs";
+import { list_empty_not_is } from "./list_empty_not_is.mjs";
 export function app_gs_conversation(map_c, map, npc) {
   let menu_overlay = app_gs_menu_overlay(map_c, map);
   npc.conversation_count++;
@@ -31,6 +33,7 @@ export function app_gs_conversation(map_c, map, npc) {
       } else {
         html_clear(menu_overlay);
         let verses = app_gs_bible_chapter_jas01();
+        list_filter(verses, (v) => list_empty_not_is(v.objections));
         app_gs_conversation_speech_npc(menu_overlay, npc, text);
         npc.objection_count--;
       }
