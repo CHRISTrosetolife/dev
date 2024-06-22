@@ -1,3 +1,4 @@
+import { error } from "./error.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_gs_conversation_opening } from "./app_gs_conversation_opening.mjs";
 import { html_style_units } from "./html_style_units.mjs";
@@ -39,6 +40,9 @@ export function app_gs_conversation(map_c, map, npc) {
       " that Jesus ✝️ died, was 🪨 buried and 🤴🏽 rose to life!",
     ]),
     () => {
+      if (npc.objection_count === 0) {
+        error();
+      }
       npc.objection_count--;
     },
   );
