@@ -26,7 +26,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
         "Hallelujah",
         "Praise the Lord",
         "Thank You, Jesus",
-        "Priase be to God",
+        "Praise be to God",
       ]),
     );
   } else {
