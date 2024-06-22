@@ -50,50 +50,47 @@ export function app_gs_conversation_witness(menu_overlay, npc, map) {
     npc.conversation_wait_until =
       map.player.conversation_count + app_gs_npc_conversation_wait_count();
     html_clear(menu_overlay);
-    app_gs_conversation_npc(
-      menu_overlay,
-      npc,
-      string_combine_multiple([
-        string_random_or_empty(
-          string_combine_multiple([
-            app_gs_phrase_thanks(),
-            " for ",
-            list_random_item([
-              "your time",
-              string_combine_multiple([
-                "what ",
-                app_gs_phrase_you_have(),
-                " ",
-                list_random_item([
-                  string_combine_multiple([
-                    "said",
-                    string_random_or_empty(" to me"),
-                  ]),
-                  string_combine_multiple([
-                    "shared",
-                    string_random_or_empty(" with me"),
-                  ]),
+    let npc_text = string_combine_multiple([
+      string_random_or_empty(
+        string_combine_multiple([
+          app_gs_phrase_thanks(),
+          " for ",
+          list_random_item([
+            "your time",
+            string_combine_multiple([
+              "what ",
+              app_gs_phrase_you_have(),
+              " ",
+              list_random_item([
+                string_combine_multiple([
+                  "said",
+                  string_random_or_empty(" to me"),
+                ]),
+                string_combine_multiple([
+                  "shared",
+                  string_random_or_empty(" with me"),
                 ]),
               ]),
             ]),
-            ". However, ",
           ]),
-        ),
-        app_gs_phrase_i_am(),
-        " not ",
-        string_random_or_empty("quite "),
-        list_random_item([
-          string_combine_multiple([
-            string_random_or_empty("yet "),
-            app_gs_phrase_convinced(),
-          ]),
-          string_combine_multiple([
-            app_gs_phrase_convinced(),
-            string_random_or_empty(", yet"),
-          ]),
+          ". However, ",
+        ]),
+      ),
+      app_gs_phrase_i_am(),
+      " not ",
+      string_random_or_empty("quite "),
+      list_random_item([
+        string_combine_multiple([
+          string_random_or_empty("yet "),
+          app_gs_phrase_convinced(),
+        ]),
+        string_combine_multiple([
+          app_gs_phrase_convinced(),
+          string_random_or_empty(", yet"),
         ]),
       ]),
-    );
+    ]);
+    app_gs_conversation_npc(menu_overlay, npc, npc_text);
     let div_player = app_gs_conversation_player_prompt(menu_overlay, "");
     app_gs_conversation_end(div_player, menu_overlay);
   });
