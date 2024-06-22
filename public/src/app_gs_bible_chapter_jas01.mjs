@@ -327,7 +327,8 @@ export function app_gs_bible_chapter_jas01() {
       objections: [],
       sermons: [
         {
-          sermon: "let us bridle our tongues",
+          sermon:
+            "let us bridle our tongues`those who consider themselves religious, but do not bridle their tongues deceive their own hearts",
           count: 2,
         },
       ],
