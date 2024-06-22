@@ -121,6 +121,8 @@ export function app_gs_conversation_witness(menu_overlay, npc, map) {
   });
   function choice_get(on_click) {
     let objection_id = list_pop(objection_ids);
+    let [book_id, chapter, verse_index, objection_index] =
+      list_split_underscore(objection_id);
     let chapter_id = number_pad();
     list_slice(verses, index, index + objection.count);
     let { verses: answer_verses, objection } = objectable;
