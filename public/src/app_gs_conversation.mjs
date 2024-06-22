@@ -8,6 +8,7 @@ import { app_gs_menu_overlay } from "./app_gs_menu_overlay.mjs";
 import { string_random_or_empty } from "./string_random_or_empty.mjs";
 import { app_gs_phrase_you_have } from "./app_gs_phrase_you_have.mjs";
 import { app_gs_phrase_combine } from "./app_gs_phrase_combine.mjs";
+import { list_shuffle } from "./list_shuffle.mjs";
 export function app_gs_conversation(map_c, map, npc) {
   let menu_overlay = app_gs_menu_overlay(map_c, map);
   map.player.conversation_count++;
@@ -35,6 +36,7 @@ export function app_gs_conversation(map_c, map, npc) {
         ]),
       ),
     ];
+    list_shuffle(sentences);
     app_gs_conversation_npc_end(
       menu_overlay,
       npc,
