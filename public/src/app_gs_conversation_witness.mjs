@@ -69,7 +69,7 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
     answer_text: choice_text,
     on_click: on_click,
   };
-  app_gs_conversation_npc(menu_overlay, npc, objection_text);
+  app_gs_conversation_npc(menu_overlay, npc, choice_correct.objection_text);
   let div_player = app_gs_conversation_player_prompt(
     menu_overlay,
     string_combine_multiple(["Tell ", npc.name, ": "]),
