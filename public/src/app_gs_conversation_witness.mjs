@@ -24,7 +24,7 @@ import { app_gs_bible_chapter_jas01 } from "./app_gs_bible_chapter_jas01.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
 import { string_random_or_empty } from "./string_random_or_empty.mjs";
-export function app_gs_conversation_witness(menu_overlay, npc) {
+export function app_gs_conversation_witness(menu_overlay, npc, map) {
   let book_name = "James";
   let chapter = "1";
   let verses = app_gs_bible_chapter_jas01();
