@@ -56,7 +56,11 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
               "your time",
               string_combine_multiple([
                 "what ",
-                string_combine_multiple(["you", " ha", "ve"]),
+                string_combine_multiple([
+                  "you",
+                  list_random_item([" ha"]),
+                  "ve",
+                ]),
                 " shared",
               ]),
             ]),
