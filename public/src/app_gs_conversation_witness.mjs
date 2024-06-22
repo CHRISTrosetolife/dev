@@ -1,3 +1,4 @@
+import { list_get } from "./list_get.mjs";
 import { app_gs_objection_ids } from "./app_gs_objection_ids.mjs";
 import { string_split_underscore } from "./string_split_underscore.mjs";
 import { app_gs_bible_chapter_prefix } from "./app_gs_bible_chapter_prefix.mjs";
@@ -105,6 +106,7 @@ export async function app_gs_conversation_witness(menu_overlay, npc, map) {
         chapter_id,
       ]),
     );
+    let verse = list_get(verses, verse_index);
     list_slice(verses, index, index + objection.count);
     let { verses: answer_verses, objection } = objectable;
     let { text: objection_text } = objection;
