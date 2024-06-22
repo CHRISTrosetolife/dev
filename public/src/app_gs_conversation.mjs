@@ -17,19 +17,21 @@ export function app_gs_conversation(map_c, map, npc) {
   npc.conversation_count++;
   if (map.player.conversation_count < npc.conversation_wait_until) {
     let sentences = [
-      string_combine_multiple([
-        app_gs_phrase_thanks(),
-        " for ",
-        list_random_item([
-          "sharing",
-          string_combine_multiple([
-            " ",
-            list_random_item(["speaking", "talking"]),
-            " with me",
+      string_random_or_empty(
+        string_combine_multiple([
+          app_gs_phrase_thanks(),
+          " for ",
+          list_random_item([
+            "sharing",
+            string_combine_multiple([
+              " ",
+              list_random_item(["speaking", "talking"]),
+              " with me",
+            ]),
           ]),
+          app_gs_phrase_exclaim_or_period(),
         ]),
-        app_gs_phrase_exclaim_or_period(),
-      ]),
+      ),
       string_combine_multiple([
         "I need",
         string_combine_multiple([
