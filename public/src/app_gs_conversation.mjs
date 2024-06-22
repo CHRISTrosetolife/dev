@@ -18,6 +18,7 @@ export function app_gs_conversation(map_c, map, npc) {
       string_combine_multiple([
         "I need",
         list_random_item([
+          "to think things over",
           string_combine_multiple([
             " some time",
             string_random_or_empty(" to myself"),
