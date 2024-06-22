@@ -25,9 +25,9 @@ import { list_adder } from "./list_adder.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
 import { string_random_or_empty } from "./string_random_or_empty.mjs";
 export function app_gs_conversation_witness(menu_overlay, npc, map) {
+  let verses = app_gs_bible_chapter_jas01();
   let book_name = "James";
   let chapter = "1";
-  let verses = app_gs_bible_chapter_jas01();
   each_index(verses, (item, index) => {
     object_merge(item, {
       index,
