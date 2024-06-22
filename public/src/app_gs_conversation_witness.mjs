@@ -1,3 +1,4 @@
+import { app_gs_phrase_you_have } from "./app_gs_phrase_you_have.mjs";
 import { app_gs_phrase_thanks } from "./app_gs_phrase_thanks.mjs";
 import { list_random_item } from "./list_random_item.mjs";
 import { app_gs_phrase_convinced } from "./app_gs_phrase_convinced.mjs";
@@ -56,11 +57,7 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
               "your time",
               string_combine_multiple([
                 "what ",
-                string_combine_multiple([
-                  "you",
-                  list_random_item([" ha", "'"]),
-                  "ve",
-                ]),
+                app_gs_phrase_you_have(),
                 " shared",
               ]),
             ]),
