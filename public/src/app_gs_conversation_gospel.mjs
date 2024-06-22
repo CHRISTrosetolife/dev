@@ -33,7 +33,9 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
           " for ",
           list_random_item(["the reminder", "reminding me"]),
         ]),
-        string_random_or_empty(" of ", app_gs_phrase_the_gospel()),
+        string_random_or_empty(
+          string_combine_multiple([" of ", app_gs_phrase_the_gospel()]),
+        ),
         "!",
       ]),
     );
