@@ -1,3 +1,4 @@
+import { app_gs_bible_chapter_jas01 } from "./app_gs_bible_chapter_jas01.mjs";
 import { app_gs_conversation_speech_npc } from "./app_gs_conversation_speech_npc.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { error } from "./error.mjs";
@@ -29,6 +30,7 @@ export function app_gs_conversation(map_c, map, npc) {
         error();
       } else {
         html_clear(menu_overlay);
+        let verses = app_gs_bible_chapter_jas01();
         app_gs_conversation_speech_npc(menu_overlay, npc, text);
         npc.objection_count--;
       }
