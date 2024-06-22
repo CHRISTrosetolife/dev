@@ -40,7 +40,7 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
                 "died and rose to life",
                 string_combine_multiple([
                   "is ",
-                  list_random_item(["Lord", "alive"]),
+                  list_random_item(["Lord", "alive", "my Savior"]),
                 ]),
               ]),
             ]),
