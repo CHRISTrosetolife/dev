@@ -83,7 +83,7 @@ export function app_gs_bible_chapter_jas01() {
       sermons: [
         {
           sermon:
-            "the poor should glory that God richly makes them royalty and priests",
+            "the poor should glory that God richly makes them royalty and priests`however the glory of the rich is not their earthly riches but being poor in spirit",
           count: 1,
         },
       ],
