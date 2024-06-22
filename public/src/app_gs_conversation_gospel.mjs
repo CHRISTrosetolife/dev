@@ -136,11 +136,12 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
     app_gs_conversation_speech_npc(menu_overlay, npc, object_text);
     let div_player = app_gs_conversation_player_prompt(
       menu_overlay,
-      string_combine_multiple(["📖 Tell ", npc.name, ": "]),
+      string_combine_multiple(["Tell ", npc.name, ": "]),
     );
     html_button_width_full_text_click(
       div_player,
       string_combine_multiple([
+        "📖 ",
         first.book_name,
         " ",
         first.chapter,
