@@ -12,10 +12,10 @@ import { string_whitespace_normalize } from "./string_whitespace_normalize.mjs";
 export function bible_verses_parse(verses) {
   let result = list_adder((la) =>
     each(verses, (v) => {
+      log(html_parse_text(v));
       let { children } = v;
       let verse_number, tokens;
       each(children, (c) => {
-        log(html_parse_text(c));
         if (c.type === "tag") {
           let { attribs } = c;
           if (object_property_get_or(attribs, "class", "") === "verse") {
