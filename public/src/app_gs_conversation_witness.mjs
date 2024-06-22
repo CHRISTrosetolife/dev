@@ -38,6 +38,10 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
   );
   list_shuffle(objectables);
   let objectable_wrong = list_pop(objectables);
+  let on_click = () => {
+    npc.objection_count--;
+    app_gs_conversation_gospel(menu_overlay, npc);
+  };
   let objectable_right = list_pop(objectables);
   let {
     verse: { index },
@@ -62,10 +66,7 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
   ]);
   let choice_correct = {
     text: choice_text,
-    on_click: () => {
-      npc.objection_count--;
-      app_gs_conversation_gospel(menu_overlay, npc);
-    },
+    on_click: on_click,
   };
   app_gs_conversation_npc(menu_overlay, npc, objection_text);
   let div_player = app_gs_conversation_player_prompt(
