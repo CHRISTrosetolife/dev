@@ -1,3 +1,4 @@
+import { exit } from "./exit.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 import { list_map } from "./list_map.mjs";
 import { log } from "./log.mjs";
@@ -13,6 +14,7 @@ export async function bible_chapter(bible_folder, chapter_name) {
   let attribute_values = ["m", "pc", "pmo", "q", "li", "q2", "li2", "d"];
   let verses = html_parse_visit_classes_list(root, attribute_values);
   log(list_map(verses, html_parse_text));
+  exit();
   let eng = bible_verses_parse(verses);
   return eng;
 }
