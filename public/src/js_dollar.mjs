@@ -28,6 +28,7 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { integer_parse } from "./integer_parse.mjs";
 import { number_is } from "./number_is.mjs";
 import { list_index_last } from "./list_index_last.mjs";
+import { list_all } from "./list_all.mjs";
 export function js_dollar(ast) {
   js_visit_identifiers(ast, (v) => {
     let { node } = v;
@@ -109,7 +110,10 @@ export function js_dollar(ast) {
           object_replace(parent, e);
         }
       }
-      if (string_starts_with(remaining, scm_prefix)) {
+      if (
+        string_starts_with(remaining, scm_prefix) &&
+        list_all(prefixes, (p) => {})
+      ) {
         if (list_is(parent)) {
           let e = js_parse_expression(
             js_code_call_args(string_combine_multiple.name, [
