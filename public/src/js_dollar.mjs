@@ -40,7 +40,12 @@ export function js_dollar(ast) {
       let question_prefix = "q";
       let scm_prefix = "s";
       let sermon_prefix = "se";
-      let prefixes = [objection_prefix, scm_prefix, sermon_prefix];
+      let prefixes = [
+        objection_prefix,
+        question_prefix,
+        scm_prefix,
+        sermon_prefix,
+      ];
       let remaining = string_prefix_without(name, prefix);
       if (remaining === "a") {
         let e = js_parse_expression(js_code_arrow_block());
