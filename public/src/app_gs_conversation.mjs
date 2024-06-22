@@ -37,7 +37,7 @@ export function app_gs_conversation(map_c, map, npc) {
         let objectables = list_filter(verses, (v) =>
           list_empty_not_is(v.objections),
         );
-        list_random_item(objectables);
+        let objectable = list_random_item(objectables);
         app_gs_conversation_speech_npc(menu_overlay, npc, text);
         npc.objection_count--;
       }
