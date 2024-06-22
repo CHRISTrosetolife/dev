@@ -13,6 +13,7 @@ export async function bible_books(bible_folder) {
   let vnav = list_single(vnavs);
   let book_elements = html_parse_visit_classes_list(vnav, ["oo", "nn"]);
   let book_chapter_ones = list_map(book_elements, html_parse_href);
+  return;
   let book_prefixes = list_map(book_chapter_ones, (s) => string_take(s, 3));
   return book_prefixes;
 }
