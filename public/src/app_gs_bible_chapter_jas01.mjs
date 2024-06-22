@@ -326,7 +326,7 @@ export function app_gs_bible_chapter_jas01() {
       text: "If anyone considers himself religious and yet does not bridle his tongue, he deceives his heart and his religion is worthless.",
       objections: [
         {
-          text: "I am already religious without Jesus.",
+          text: "What matters is our actions, not our words or beliefs. With my actions, I am generous to the poor. It does not matter what I say or believe. I am already religious without Jesus.",
           count: 1,
         },
       ],
