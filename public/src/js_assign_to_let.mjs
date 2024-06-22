@@ -62,16 +62,7 @@ export function js_assign_to_let(ast) {
                   identifiers_add(keys);
                 } else if (equal(m_type, "ArrayPattern")) {
                   let { elements } = m;
-                  let elements_ids = list_filter_property(
-                    elements,
-                    "type",
-                    "Identifier",
-                  );
-                  let names = list_map_property(elements_ids, "name");
-                  log({
-                    names,
-                  });
-                  identifiers_add(names);
+                  identifiers_add(elements);
                 }
               });
             }
