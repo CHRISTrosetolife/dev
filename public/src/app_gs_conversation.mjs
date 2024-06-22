@@ -1,3 +1,4 @@
+import { html_clear } from "./html_clear.mjs";
 import { error } from "./error.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_gs_conversation_opening } from "./app_gs_conversation_opening.mjs";
@@ -43,6 +44,7 @@ export function app_gs_conversation(map_c, map, npc) {
       if (npc.objection_count === 0) {
         error();
       } else {
+        html_clear(menu_overlay);
         npc.objection_count--;
       }
     },
