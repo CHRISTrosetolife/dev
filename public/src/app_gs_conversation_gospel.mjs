@@ -55,14 +55,16 @@ export function app_gs_conversation_gospel(menu_overlay, npc) {
                 list_random_item([
                   string_combine_multiple([
                     "the ",
-                    string_combine_multiple([
-                      "gospel",
-                      string_random_or_empty(
-                        string_combine_multiple([
-                          " of Jesus",
-                          string_random_or_empty(" Christ"),
-                        ]),
-                      ),
+                    list_random_item([
+                      string_combine_multiple([
+                        "gospel",
+                        string_random_or_empty(
+                          string_combine_multiple([
+                            " of Jesus",
+                            string_random_or_empty(" Christ"),
+                          ]),
+                        ),
+                      ]),
                     ]),
                   ]),
                   "Jesus",
