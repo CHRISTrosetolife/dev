@@ -38,4 +38,5 @@ export function bible_verses_parse(verses) {
       });
     }),
   );
+  return result;
 }
