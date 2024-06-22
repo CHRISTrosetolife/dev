@@ -52,7 +52,7 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
           string_combine_multiple([
             app_gs_phrase_thanks(),
             " for ",
-            "your time",
+            list_random_item(["your time"]),
             ". However, ",
           ]),
         ),
