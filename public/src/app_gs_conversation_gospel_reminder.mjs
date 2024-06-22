@@ -1,3 +1,4 @@
+import { app_gs_phrase_gospel_verbs } from "./app_gs_phrase_gospel_verbs.mjs";
 import { app_gs_conversation_npc_root } from "./app_gs_conversation_npc_root.mjs";
 import { app_gs_phrase_doxology } from "./app_gs_phrase_doxology.mjs";
 import { app_gs_phrase_the_gospel } from "./app_gs_phrase_the_gospel.mjs";
@@ -20,7 +21,7 @@ export function app_gs_conversation_gospel_reminder(menu_overlay, npc) {
         ),
         "!",
       ]),
-      string_combine_multiple(["Yes, "]),
+      string_combine_multiple(["Yes, ", app_gs_phrase_gospel_verbs()]),
       string_random_or_empty(
         string_combine_multiple([" ", app_gs_phrase_doxology()]),
       ),
