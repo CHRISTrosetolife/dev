@@ -21,7 +21,7 @@ export function app_gs_conversation(map_c, map, npc) {
         string_random_or_empty(
           " about what ",
           app_gs_phrase_you_have(),
-          list_random_item(["said", "have spoken"]),
+          list_random_item(["said", "spoken"]),
           string_random_or_empty(" to me"),
         ),
       ]),
