@@ -55,6 +55,10 @@ export function app_gs_conversation_witness(menu_overlay, npc) {
             string_random_or_empty("yet "),
             app_gs_phrase_convinced(),
           ]),
+          string_combine_multiple([
+            app_gs_phrase_convinced(),
+            string_random_or_empty(", yet"),
+          ]),
         ]),
       ]),
     );
