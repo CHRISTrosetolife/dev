@@ -1,3 +1,4 @@
+import { app_gs_npc_conversation_wait } from "./app_gs_npc_conversation_wait.mjs";
 import { log } from "./log.mjs";
 import { app_gs_phrase_what_youve_said } from "./app_gs_phrase_what_youve_said.mjs";
 import { app_gs_phrase_exclaim_or_period } from "./app_gs_phrase_exclaim_or_period.mjs";
@@ -16,7 +17,7 @@ export function app_gs_conversation(map_c, map, npc) {
   let menu_overlay = app_gs_menu_overlay(map_c, map);
   map.player.conversation_count++;
   npc.conversation_count++;
-  if (map.player.conversation_count < npc.conversation_wait_until) {
+  if (app_gs_npc_conversation_wait(map, npc)) {
     log({
       player: map.player,
       npc,
