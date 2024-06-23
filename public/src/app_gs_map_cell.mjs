@@ -35,9 +35,11 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
         [
           {
             component: c_blur,
+            type: "npc_overlay_blur",
           },
           {
             component: c,
+            type: "npc_overlay",
           },
         ];
         game_img_style_generic(
