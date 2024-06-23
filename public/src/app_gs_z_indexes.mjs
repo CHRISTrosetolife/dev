@@ -3,9 +3,10 @@ export function app_gs_z_indexes() {
   return global_function_initialize(app_gs_z_indexes, () => [
     "tile",
     "overlay",
+    "npc",
+    "npc_overlay_blur",
+    "npc_overlay",
     "player",
-    "player_overlay_blur",
-    "player_overlay",
     "clicker",
     "menu",
   ]);
