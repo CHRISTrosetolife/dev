@@ -1,3 +1,4 @@
+import { html_style } from "./html_style.mjs";
 import { html_img } from "./html_img.mjs";
 import { game_img_style_generic } from "./game_img_style_generic.mjs";
 import { app_gs_character_c } from "./app_gs_character_c.mjs";
@@ -34,6 +35,10 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
           tile.y,
           tile.x + 1 - size,
         );
+        html_style(c, {
+          filter:
+            "invert(11%) sepia(100%) saturate(4414%) hue-rotate(243deg) brightness(100%) contrast(153%)",
+        });
       } else {
         error();
       }
