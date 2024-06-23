@@ -4,7 +4,8 @@ import { game_img_list_male } from "./game_img_list_male.mjs";
 import { list_random_item } from "./list_random_item.mjs";
 import { app_gs_tile_overlay_add } from "./app_gs_tile_overlay_add.mjs";
 import { list_pop } from "./list_pop.mjs";
-export function app_gs_npc_new(map, tile_choices) {
+export function app_gs_npc_new(map, tile_choices, objection_ids) {
+  let objection_id = list_pop(objection_ids);
   let tile = list_pop(tile_choices);
   let npc = app_gs_tile_overlay_add(tile, "npc");
   npc.character = list_random_item(game_img_list_male());
