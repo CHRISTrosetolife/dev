@@ -28,6 +28,7 @@ import { ceiling } from "./ceiling.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { list_filter } from "./list_filter.mjs";
+import { list_empty_not_is } from "./list_empty_not_is.mjs";
 export function app_gs_map_new() {
   let { y_extend, x_extend } = app_gs_map_extends();
   let border_thickness_y = y_extend;
@@ -159,9 +160,9 @@ export function app_gs_map_new() {
   app_gs_player_new(map);
   object_merge(map.player, spawn);
   let objection_ids = app_gs_objection_ids();
-  each_range(npc_count, () => {
+  while (list_empty_not_is(objection_ids)) {
     app_gs_npc_new(map, inside, objection_ids);
-  });
+  }
   return map;
   function overlay_add_base(tile, id) {
     let o = app_gs_tile_overlay_add(tile, "base");
