@@ -1,6 +1,5 @@
-import { html_img_src } from "./html_img_src.mjs";
+import { app_gs_npc_icon_question } from "./app_gs_npc_icon_question.mjs";
 import { html_img_element } from "./html_img_element.mjs";
-import { html_style } from "./html_style.mjs";
 import { game_img_style_generic } from "./game_img_style_generic.mjs";
 import { app_gs_character_c } from "./app_gs_character_c.mjs";
 import { error } from "./error.mjs";
@@ -37,11 +36,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
           tile.y,
           tile.x + 1 - size,
         );
-        html_img_src(c, "icons/question.svg");
-        html_style(c, {
-          filter:
-            "invert(11%) sepia(100%) saturate(5663%) hue-rotate(239deg) brightness(105%) contrast(113%)",
-        });
+        app_gs_npc_icon_question(c);
       } else {
         error();
       }
