@@ -37,53 +37,56 @@ export async function app_gs_conversation_witness(menu_overlay, npc, map) {
     objection_ids,
     objection_id_correct,
   );
-  let choice_wrong = await choice_get(() => {
-    npc.conversation_wait_until =
-      map.player.conversation_count + app_gs_npc_conversation_wait_count();
-    let npc_text = string_combine_multiple([
-      string_random_or_empty(
-        string_combine_multiple([
-          app_gs_phrase_thanks(),
-          " for ",
-          list_random_item([
-            "the conversation",
-            string_combine_multiple([
-              "what ",
-              app_gs_phrase_you_have(),
-              " ",
-              list_random_item([
-                string_combine_multiple([
-                  "said",
-                  string_random_or_empty(" to me"),
-                ]),
-                string_combine_multiple([
-                  "shared",
-                  string_random_or_empty(" with me"),
+  let choice_wrong = await choice_get(
+    list_first(objection_ids_incorrect),
+    () => {
+      npc.conversation_wait_until =
+        map.player.conversation_count + app_gs_npc_conversation_wait_count();
+      let npc_text = string_combine_multiple([
+        string_random_or_empty(
+          string_combine_multiple([
+            app_gs_phrase_thanks(),
+            " for ",
+            list_random_item([
+              "the conversation",
+              string_combine_multiple([
+                "what ",
+                app_gs_phrase_you_have(),
+                " ",
+                list_random_item([
+                  string_combine_multiple([
+                    "said",
+                    string_random_or_empty(" to me"),
+                  ]),
+                  string_combine_multiple([
+                    "shared",
+                    string_random_or_empty(" with me"),
+                  ]),
                 ]),
               ]),
             ]),
+            ". However, ",
           ]),
-          ". However, ",
+        ),
+        app_gs_phrase_i_am(),
+        " not ",
+        string_random_or_empty("quite "),
+        list_random_item([
+          string_combine_multiple([
+            string_random_or_empty("yet "),
+            app_gs_phrase_convinced(),
+          ]),
+          string_combine_multiple([
+            app_gs_phrase_convinced(),
+            string_random_or_empty(", yet"),
+          ]),
         ]),
-      ),
-      app_gs_phrase_i_am(),
-      " not ",
-      string_random_or_empty("quite "),
-      list_random_item([
-        string_combine_multiple([
-          string_random_or_empty("yet "),
-          app_gs_phrase_convinced(),
-        ]),
-        string_combine_multiple([
-          app_gs_phrase_convinced(),
-          string_random_or_empty(", yet"),
-        ]),
-      ]),
-      ".",
-    ]);
-    html_clear(menu_overlay);
-    app_gs_conversation_npc_end(menu_overlay, npc, npc_text);
-  });
+        ".",
+      ]);
+      html_clear(menu_overlay);
+      app_gs_conversation_npc_end(menu_overlay, npc, npc_text);
+    },
+  );
   let choice_correct = await choice_get(async () => {
     list_pop(npc.objections);
     await app_gs_conversation_gospel(menu_overlay, npc, map);
