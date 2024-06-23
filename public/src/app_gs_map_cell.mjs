@@ -40,7 +40,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
         ];
         each(list, (item) => {
           la(item.component);
-          html_data_set(c, "type", item.type);
+          html_data_set(item.component, "type", item.type);
           let size = 1 / 3;
           game_img_style_generic(
             item.component,
