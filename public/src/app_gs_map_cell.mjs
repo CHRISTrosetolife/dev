@@ -1,7 +1,4 @@
 import { app_gs_npc_icon_blur } from "./app_gs_npc_icon_blur.mjs";
-import { game_tile_units_css } from "./game_tile_units_css.mjs";
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { html_style_filter } from "./html_style_filter.mjs";
 import { app_gs_npc_icon_wait } from "./app_gs_npc_icon_wait.mjs";
 import { app_gs_npc_icon_christian } from "./app_gs_npc_icon_christian.mjs";
 import { app_gs_npc_icon_unmet } from "./app_gs_npc_icon_unmet.mjs";
@@ -34,16 +31,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
           la(overlay_c);
           html_data_set(overlay_c, "type", "npc");
           let c_blur = html_img_element(map_c);
-          let light = true;
           app_gs_npc_icon_blur(c_blur, true);
-          html_style_filter(
-            c_blur,
-            string_combine_multiple([
-              "blur(",
-              game_tile_units_css(1 / 46),
-              ")",
-            ]),
-          );
           let c = html_img_element(map_c);
           let list = [
             {
