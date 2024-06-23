@@ -34,6 +34,7 @@ export function data_update_single(ast, data) {
       key: "literal_strings",
     },
   ];
+  each(list, (item) => {});
   let literals = object_property_initialize(data, "literal_strings", {});
   each(u, (s) => object_property_initialize(literals, s, []));
   each_object(literals, (s, s_functions) => {
