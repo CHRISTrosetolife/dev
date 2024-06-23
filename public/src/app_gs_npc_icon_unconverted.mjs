@@ -1,11 +1,5 @@
-import { app_gs_npc_icon_blur } from "./app_gs_npc_icon_blur.mjs";
-import { app_gs_npc_icon_generic } from "./app_gs_npc_icon_generic.mjs";
+import { app_gs_npc_icon_green } from "./app_gs_npc_icon_green.mjs";
 export function app_gs_npc_icon_unconverted(c_blur, c) {
-  app_gs_npc_icon_generic(
-    c_blur,
-    c,
-    "icons/cross.svg",
-    "invert(69%) sepia(83%) saturate(322%) hue-rotate(47deg) brightness(109%) contrast(105%)",
-  );
-  app_gs_npc_icon_blur(c_blur, false);
+  let icon_name = "cross";
+  app_gs_npc_icon_green(c_blur, c, icon_name);
 }
