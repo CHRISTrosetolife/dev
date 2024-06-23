@@ -14,9 +14,6 @@ export async function bible_books_prefix_to_name_generate() {
     bible_books_html_element_to_prefix,
     html_parse_text,
   );
-  return {
-    ["a"]: b,
-  };
   await function_new_generic(
     string_suffix_without(bible_books_prefix_to_name_generate, "_generate"),
     "",
