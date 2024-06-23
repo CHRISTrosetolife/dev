@@ -32,6 +32,7 @@ export function function_aliases() {
     re: "restart",
     s: "function_search",
     sb: "sandbox",
+    so: "function_search_open",
     ss: "app_dev_screenshots",
     t: "terminal",
     th: "terminal_data_history",
