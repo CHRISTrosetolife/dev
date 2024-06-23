@@ -21,8 +21,8 @@ export function data_update_single(ast, data) {
   let functions = object_property_initialize(data, "functions", {});
   let f = object_property_initialize(functions, name, {});
   object_property_set(f, "async", async);
-  let literals = js_node_type(ast, "Literal");
-  let mapped = list_map_property(literals, "value");
+  let ast_literals = js_node_type(ast, "Literal");
+  let mapped = list_map_property(ast_literals, "value");
   let u = list_unique(mapped);
   list_sort_string(u, string_delimit_if);
   object_property_set(f, "literals", u);
