@@ -1,3 +1,4 @@
+import { list_size } from "./list_size.mjs";
 import { app_gs_objection_ids } from "./app_gs_objection_ids.mjs";
 import { app_gs_npc_new } from "./app_gs_npc_new.mjs";
 import { app_gs_tile_overlay_add } from "./app_gs_tile_overlay_add.mjs";
@@ -159,7 +160,7 @@ export function app_gs_map_new() {
   app_gs_player_new(map);
   object_merge(map.player, spawn);
   let objection_ids = app_gs_objection_ids();
-  let npc_count = 1;
+  let npc_count = list_size(objection_ids);
   each_range(npc_count, () => {
     app_gs_npc_new(map, inside, objection_ids);
   });
