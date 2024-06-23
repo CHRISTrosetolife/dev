@@ -5,7 +5,7 @@ export function list_to_lookup(list, mapper_key) {
   let mapped_value = identity;
   let lookup = {};
   each(list, (w) => {
-    object_property_set(lookup, mapper_key(w), w);
+    object_property_set(lookup, mapper_key(w), mapped_value(w));
   });
   return lookup;
 }
