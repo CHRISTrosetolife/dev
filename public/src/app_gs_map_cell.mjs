@@ -19,48 +19,48 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
   let clicker = html_div(map_c);
   let overlays = list_adder((la) =>
     each(tile.overlays, function lambda_overlay(o) {
-      let overlay_c;
-      if (o.type === "base") {
-        let { id: o_id } = o;
-        html_data_set(clicker, "overlay", o_id);
-        overlay_c = game_img(map_c, game_img_base(o_id), tile, "overlay");
-      } else if (o.type === "npc") {
-        overlay_c = app_gs_character_c(map_c, o.character, o);
-        html_data_set(overlay_c, "type", "npc");
-        let size = 1 / 3;
-        let c_blur = html_img_element(map_c);
-        html_data_set(c, "type", "npc_overlay_blur");
-        let c = html_img_element(map_c);
-        let list = [
-          {
-            component: c_blur,
-            type: "npc_overlay_blur",
-          },
-          {
-            component: c,
-            type: "npc_overlay",
-          },
-        ];
-        each(list, (item) => {
-          html_data_set(c, "type", item.type);
-          game_img_style_generic(
-            c,
-            size,
-            size,
-            item.type,
-            tile.y,
-            tile.x + 1 - size,
-          );
-        });
-        if (o.conversation_count === 0) {
-          app_gs_npc_icon_unmet(c);
-          app_gs_npc_icon_christian(c);
-          app_gs_npc_icon_wait(c);
+      list_adder((la) => {
+        if (o.type === "base") {
+          let { id: o_id } = o;
+          html_data_set(clicker, "overlay", o_id);
+          let overlay_c = game_img(map_c, game_img_base(o_id), tile, "overlay");
+        } else if (o.type === "npc") {
+          let overlay_c = app_gs_character_c(map_c, o.character, o);
+          html_data_set(overlay_c, "type", "npc");
+          let size = 1 / 3;
+          let c_blur = html_img_element(map_c);
+          html_data_set(c, "type", "npc_overlay_blur");
+          let c = html_img_element(map_c);
+          let list = [
+            {
+              component: c_blur,
+              type: "npc_overlay_blur",
+            },
+            {
+              component: c,
+              type: "npc_overlay",
+            },
+          ];
+          each(list, (item) => {
+            html_data_set(c, "type", item.type);
+            game_img_style_generic(
+              c,
+              size,
+              size,
+              item.type,
+              tile.y,
+              tile.x + 1 - size,
+            );
+          });
+          if (o.conversation_count === 0) {
+            app_gs_npc_icon_unmet(c);
+            app_gs_npc_icon_christian(c);
+            app_gs_npc_icon_wait(c);
+          }
+        } else {
+          error();
         }
-      } else {
-        error();
-      }
-      la(overlay_c);
+      });
     }),
   );
   let { id } = tile;
