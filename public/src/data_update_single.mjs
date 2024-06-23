@@ -28,7 +28,7 @@ export function data_update_single(ast, data) {
   let filtered = list_filter(mapped, string_is);
   let u = list_unique(filtered);
   list_sort_string(u, identity);
-  [
+  let list = [
     {
       ast_list: u,
       key: "literal_strings",
