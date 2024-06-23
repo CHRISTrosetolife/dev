@@ -36,7 +36,9 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
           tile.y,
           tile.x + 1 - size,
         );
-        app_gs_npc_icon_unmet(c);
+        if (o.conversation_count === 0) {
+          app_gs_npc_icon_unmet(c);
+        }
       } else {
         error();
       }
