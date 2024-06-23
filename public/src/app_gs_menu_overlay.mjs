@@ -1,3 +1,4 @@
+import { html_style } from "./html_style.mjs";
 import { app_gs_div_rounded_transparent } from "./app_gs_div_rounded_transparent.mjs";
 import { game_img_style_generic } from "./game_img_style_generic.mjs";
 import { subtract } from "./subtract.mjs";
@@ -15,5 +16,8 @@ export function app_gs_menu_overlay(parent, map) {
     position_y,
     position_x,
   );
+  html_style(menu, {
+    "overflow-y": "scroll",
+  });
   return menu;
 }
