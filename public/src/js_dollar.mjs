@@ -94,12 +94,10 @@ export function js_dollar(ast) {
         object_replace(node, e);
       }
       if (remaining === "g") {
-        let list = js_name_unique(ast, "list");
-        let name = js_name_unique(ast, "item");
         let e = js_parse_expression(
           js_code_call_args(object_property_get.name, [
-            list,
-            js_code_arrow_block_args([name], ""),
+            js_name_unique(ast, "object"),
+            js_name_unique(ast, "property_name"),
           ]),
         );
         object_replace(node, e);
