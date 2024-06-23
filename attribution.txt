@@ -1,3 +1,6 @@
 icon
     question mark https://www.iconfinder.com/deemakdaksina
+        made blue
 
+    cross Font Awesome by Dave Gandy - http://fontawesome.io
+        made green
