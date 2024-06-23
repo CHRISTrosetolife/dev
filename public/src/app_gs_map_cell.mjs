@@ -41,6 +41,10 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
               ")",
             ]),
           );
+          html_style_filter(
+            c_blur,
+            string_combine_multiple(["blur(", game_tile_units_css(1 / 46), ")"]),
+          );
           let c = html_img_element(map_c);
           let list = [
             {
