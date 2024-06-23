@@ -28,7 +28,6 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
         html_data_set(overlay_c, "type", "npc");
         let c = html_img_element(map_c);
         html_data_set(overlay_c, "type", "npc_overlay");
-        html_img_src(c, "icons/question.svg");
         let size = 1 / 3;
         game_img_style_generic(
           c,
@@ -38,6 +37,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
           tile.y,
           tile.x + 1 - size,
         );
+        html_img_src(c, "icons/question.svg");
         html_style(c, {
           filter:
             "invert(11%) sepia(100%) saturate(5663%) hue-rotate(239deg) brightness(105%) contrast(113%)",
