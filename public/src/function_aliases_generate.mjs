@@ -1,3 +1,4 @@
+import { js_param_new } from "./js_param_new.mjs";
 import { function_search_open } from "./function_search_open.mjs";
 import { google_search_lucky } from "./google_search_lucky.mjs";
 import { function_transform_all } from "./function_transform_all.mjs";
@@ -77,6 +78,7 @@ export async function function_aliases_generate() {
   alias_add(function_new, ["n"]);
   alias_add(function_new_args, ["na"]);
   alias_add(function_open, ["o"]);
+  alias_add(js_param_new, ["p"]);
   alias_add(function_rename, ["r"]);
   alias_add(restart, ["re"]);
   alias_add(function_search, ["s"]);
