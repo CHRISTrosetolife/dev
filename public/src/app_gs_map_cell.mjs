@@ -30,7 +30,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
           tile,
           "player_overlay",
         );
-        game_img_style_generic(c, 1, 1, z_index_name, y, x);
+        game_img_style_generic(c, 1, 1, "player_overlay", y, x);
       } else {
         error();
       }
