@@ -1,3 +1,4 @@
+import { game_tile_units_css } from "./game_tile_units_css.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_style_filter } from "./html_style_filter.mjs";
 import { app_gs_npc_icon_wait } from "./app_gs_npc_icon_wait.mjs";
@@ -36,6 +37,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
             c_blur,
             string_combine_multiple([
               "invert(100%) sepia(100%) saturate(1%) hue-rotate(144deg) brightness(102%) contrast(101%) blur(",
+              game_tile_units_css(0.25),
               ")",
             ]),
           );
