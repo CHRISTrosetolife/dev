@@ -44,9 +44,10 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
             },
           ];
           each(list, (item) => {
+            la(item.component);
             html_data_set(c, "type", item.type);
             game_img_style_generic(
-              c,
+              item.component,
               size,
               size,
               item.type,
