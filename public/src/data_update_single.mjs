@@ -26,7 +26,7 @@ export function data_update_single(ast, data) {
   let ast_literals = js_node_type(ast, "Literal");
   let mapped = list_map_property(ast_literals, "value");
   let filtered = list_filter(mapped, string_is);
-  let u = list_unique(mapped);
+  let u = list_unique(filtered);
   list_sort_string(u, string_delimit_if);
   let literals = object_property_initialize(data, "literal_strings", {});
   each(literals, (id) => object_property_initialize(identifiers, id, []));
