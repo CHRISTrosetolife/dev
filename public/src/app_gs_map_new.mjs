@@ -1,3 +1,4 @@
+import { app_gs_objection_ids } from "./app_gs_objection_ids.mjs";
 import { app_gs_npc_new } from "./app_gs_npc_new.mjs";
 import { app_gs_tile_overlay_add } from "./app_gs_tile_overlay_add.mjs";
 import { app_gs_player_new } from "./app_gs_player_new.mjs";
@@ -157,6 +158,7 @@ export function app_gs_map_new() {
   });
   app_gs_player_new(map);
   object_merge(map.player, spawn);
+  let objection_ids = app_gs_objection_ids();
   let npc_count = 1;
   each_range(npc_count, () => {
     app_gs_npc_new(map, inside);
