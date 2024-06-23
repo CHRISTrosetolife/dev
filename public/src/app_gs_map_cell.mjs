@@ -37,8 +37,8 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
           html_style_filter(
             c_blur,
             string_combine_multiple([
-              "invert(100%)",
-              " blur(",
+              light ? "invert(100%) " : "",
+              "blur(",
               game_tile_units_css(1 / 46),
               ")",
             ]),
