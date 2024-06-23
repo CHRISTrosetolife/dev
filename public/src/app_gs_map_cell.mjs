@@ -1,7 +1,4 @@
-import { app_gs_npc_conversation_wait } from "./app_gs_npc_conversation_wait.mjs";
-import { app_gs_npc_icon_wait } from "./app_gs_npc_icon_wait.mjs";
-import { app_gs_npc_icon_christian } from "./app_gs_npc_icon_christian.mjs";
-import { app_gs_npc_icon_unmet } from "./app_gs_npc_icon_unmet.mjs";
+import { app_gs_npc_icon_update } from "./app_gs_npc_icon_update.mjs";
 import { html_img_element } from "./html_img_element.mjs";
 import { game_img_style_generic } from "./game_img_style_generic.mjs";
 import { app_gs_character_c } from "./app_gs_character_c.mjs";
@@ -54,15 +51,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
             tile.x + 1 - size,
           );
         });
-        if (o.conversation_count === 0) {
-          app_gs_npc_icon_unmet(c_blur, c);
-        } else if (o.christian) {
-          app_gs_npc_icon_christian(c_blur, c);
-        } else if (app_gs_npc_conversation_wait(map, npc)) {
-          app_gs_npc_icon_wait(c_blur, c);
-        } else {
-          error();
-        }
+        app_gs_npc_icon_update(map, o, c_blur, c);
       } else {
         error();
       }
