@@ -12,10 +12,12 @@ import { integer_parse } from "./integer_parse.mjs";
 import { string_case_upper } from "./string_case_upper.mjs";
 import { bible_books_prefix_to_name } from "./bible_books_prefix_to_name.mjs";
 import { string_split_underscore } from "./string_split_underscore.mjs";
+import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export async function app_gs_conversation_witness_choice(
   objection_id,
   on_click,
 ) {
+  assert_arguments_length(arguments, 2);
   let [book_id, chapter, verse_index, objection_index] =
     string_split_underscore(objection_id);
   let book_name = bible_books_prefix_to_name()[string_case_upper(book_id)];
