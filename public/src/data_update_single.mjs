@@ -28,6 +28,7 @@ export function data_update_single(ast, data) {
   let filtered = list_filter(mapped, string_is);
   let u = list_unique(filtered);
   list_sort_string(u, identity);
+  let ids = js_identifiers(ast);
   let list = [
     {
       ast_list: u,
@@ -45,7 +46,6 @@ export function data_update_single(ast, data) {
       }
     });
   });
-  let ids = js_identifiers(ast);
   let identifiers = object_property_initialize(data, "identifiers", {});
   each(ids, (id) => object_property_initialize(identifiers, id, []));
   each_object(identifiers, (id, id_functions) => {
