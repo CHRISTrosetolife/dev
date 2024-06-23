@@ -1,4 +1,4 @@
-import { list_to_lookup_value_property } from "./list_to_lookup_value_property.mjs";
+import { list_to_lookup_key_value_property } from "./list_to_lookup_key_value_property.mjs";
 import { list_reverse } from "./list_reverse.mjs";
 import { list_sort_property } from "./list_sort_property.mjs";
 import { list_sum } from "./list_sum.mjs";
@@ -30,7 +30,11 @@ export async function ceb_bible_words_definitions_pairs_compute() {
     ),
   );
   let eng_scores = await bible_words_eng_score();
-  let eng_lookup = list_to_lookup_value_property(eng_scores, "word", "score");
+  let eng_lookup = list_to_lookup_key_value_property(
+    eng_scores,
+    "word",
+    "score",
+  );
   each_index(pairs, (pair, i) => {
     if (i % 100 === 0) {
       log({

@@ -1,6 +1,6 @@
+import { list_to_lookup_key_value_property } from "./list_to_lookup_key_value_property.mjs";
 import { list_reverse } from "./list_reverse.mjs";
 import { list_copy } from "./list_copy.mjs";
-import { list_to_lookup_value_property } from "./list_to_lookup_value_property.mjs";
 import { object_list_invert } from "./object_list_invert.mjs";
 import { app_language_group_size } from "./app_language_group_size.mjs";
 import { app_language_group_path } from "./app_language_group_path.mjs";
@@ -32,7 +32,7 @@ export async function sandbox() {
   let group_count = app_language_group_size();
   let { atoms, definitions: definitions_list } =
     await ceb_bible_words_definitions_atoms(skip, limit);
-  let definitions_all = list_to_lookup_value_property(
+  let definitions_all = list_to_lookup_key_value_property(
     definitions_list,
     "word",
     "definitions",
