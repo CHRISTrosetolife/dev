@@ -4,6 +4,7 @@ export function app_gs_z_indexes() {
     "tile",
     "overlay",
     "player",
+    "player_overlay_blur",
     "player_overlay",
     "clicker",
     "menu",
