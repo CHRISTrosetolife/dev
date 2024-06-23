@@ -64,6 +64,7 @@ export function app_gs_conversation(map_c, map, npc) {
       menu_overlay,
       npc,
       app_gs_phrase_combine(sentences),
+      map,
     );
   } else {
     let text = app_gs_conversation_npc_opening_text(map, npc);
