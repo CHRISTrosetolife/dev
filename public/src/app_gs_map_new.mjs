@@ -161,6 +161,7 @@ export function app_gs_map_new() {
   let objection_ids = app_gs_objection_ids();
   let npc_count = 1;
   each_range(npc_count, () => {
+    let objection_id = list_pop(objection_ids);
     app_gs_npc_new(map, inside);
   });
   return map;
