@@ -34,15 +34,16 @@ export function data_update_single(ast, data) {
       key: "literal_strings",
     },
   ];
-  each(list, (item) => {});
-  let literals = object_property_initialize(data, "literal_strings", {});
-  each(u, (s) => object_property_initialize(literals, s, []));
-  each_object(literals, (s, s_functions) => {
-    if (list_includes(u, s)) {
-      list_add_if_exists_not(s_functions, name);
-    } else {
-      list_remove_if_exists(s_functions, name);
-    }
+  each(list, (item) => {
+    let literals = object_property_initialize(data, "literal_strings", {});
+    each(u, (s) => object_property_initialize(literals, s, []));
+    each_object(literals, (s, s_functions) => {
+      if (list_includes(u, s)) {
+        list_add_if_exists_not(s_functions, name);
+      } else {
+        list_remove_if_exists(s_functions, name);
+      }
+    });
   });
   let ids = js_identifiers(ast);
   let identifiers = object_property_initialize(data, "identifiers", {});
