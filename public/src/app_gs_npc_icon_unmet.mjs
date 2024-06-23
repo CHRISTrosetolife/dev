@@ -4,8 +4,8 @@ import { html_img_src } from "./html_img_src.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export function app_gs_npc_icon_unmet(c_blur, c) {
   assert_arguments_length(arguments, 2);
+  let img_url = "icons/question.svg";
   each([c_blur, c], (item) => {
-    let img_url = "icons/question.svg";
     html_img_src(item, img_url);
   });
   let filter =
