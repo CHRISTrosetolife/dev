@@ -22,7 +22,6 @@ export async function bible_books_prefix_to_name_generate() {
     type: "ObjectExpression",
     properties: [],
   };
-  log(js_unparse(r));
   each_object(lookup, (key, value) => {
     list_add(r.properties, {
       type: "Property",
@@ -33,6 +32,7 @@ export async function bible_books_prefix_to_name_generate() {
       value: js_string(value),
       kind: "init",
     });
+    log(js_unparse(r));
   });
   await function_new_generic(
     string_suffix_without(
