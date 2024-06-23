@@ -28,7 +28,7 @@ export function function_aliases() {
     n: "function_new",
     na: "function_new_args",
     o: "function_open",
-    p: "js_param_new",
+    p: "function_param_new",
     r: "function_rename",
     re: "restart",
     s: "function_search",
