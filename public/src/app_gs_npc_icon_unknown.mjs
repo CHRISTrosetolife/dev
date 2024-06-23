@@ -1,7 +1,7 @@
 import { app_gs_npc_icon_blur } from "./app_gs_npc_icon_blur.mjs";
 import { app_gs_npc_icon_generic } from "./app_gs_npc_icon_generic.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
-export function app_gs_npc_icon_unmet(c_blur, c) {
+export function app_gs_npc_icon_unknown(c_blur, c) {
   assert_arguments_length(arguments, 2);
   let img_url = "icons/question.svg";
   let filter =
