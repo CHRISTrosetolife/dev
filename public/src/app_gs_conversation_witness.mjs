@@ -125,6 +125,7 @@ export async function app_gs_conversation_witness(menu_overlay, npc, map) {
     let first = list_first(answer_verses);
     let { verse_number: verse_number_first } = first;
     let last = list_last(answer_verses);
+    let { verse_number: verse_number_last } = last;
     let answer_texts = list_map_property(answer_verses, "text");
     let answer = list_join_space(answer_texts);
     let choice_text = string_combine_multiple([
@@ -134,7 +135,7 @@ export async function app_gs_conversation_witness(menu_overlay, npc, map) {
       chapter,
       ":",
       verse_number_first,
-      first !== last ? "-" + last.verse_number : "",
+      first !== last ? "-" + verse_number_last : "",
       " - ",
       answer,
     ]);
