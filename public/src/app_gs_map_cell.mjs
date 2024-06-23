@@ -68,9 +68,9 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
           if (o.conversation_count === 0) {
             if (0) {
               app_gs_npc_icon_unmet(c_blur, c);
-              app_gs_npc_icon_christian(c_blur, c);
             }
             app_gs_npc_icon_wait(c_blur, c);
+            app_gs_npc_icon_christian(c_blur, c);
           }
         } else {
           error();
