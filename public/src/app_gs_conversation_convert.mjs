@@ -12,7 +12,7 @@ import { string_random_or_empty } from "./string_random_or_empty.mjs";
 import { list_random_item } from "./list_random_item.mjs";
 import { app_gs_phrase_worship_multiple_or_empty } from "./app_gs_phrase_worship_multiple_or_empty.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
-export function app_gs_conversation_gospel_convert(menu_overlay, npc, map) {
+export function app_gs_conversation_convert(menu_overlay, npc, map) {
   npc.christian = true;
   app_gs_conversation_npc_opening(
     menu_overlay,
