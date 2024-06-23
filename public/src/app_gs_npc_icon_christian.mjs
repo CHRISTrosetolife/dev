@@ -4,6 +4,6 @@ export function app_gs_npc_icon_christian(c) {
   html_img_src(c, "icons/cross.svg");
   html_style(c, {
     filter:
-      "invert(68%) sepia(95%) saturate(316%) hue-rotate(59deg) brightness(106%) contrast(102%)",
+      "invert(80%) sepia(52%) saturate(474%) hue-rotate(48deg) brightness(103%) contrast(102%)",
   });
 }
