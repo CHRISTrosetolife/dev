@@ -28,6 +28,11 @@ export function data_update_single(ast, data) {
   let filtered = list_filter(mapped, string_is);
   let u = list_unique(filtered);
   list_sort_string(u, identity);
+  [
+    {
+      ast_list: u,
+    },
+  ];
   let literals = object_property_initialize(data, "literal_strings", {});
   each(u, (s) => object_property_initialize(literals, s, []));
   each_object(literals, (s, s_functions) => {
