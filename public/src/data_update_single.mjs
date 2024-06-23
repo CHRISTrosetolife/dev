@@ -31,6 +31,7 @@ export function data_update_single(ast, data) {
   [
     {
       ast_list: u,
+      key: "literal_strings",
     },
   ];
   let literals = object_property_initialize(data, "literal_strings", {});
