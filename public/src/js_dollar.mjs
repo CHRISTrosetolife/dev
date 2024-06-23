@@ -92,10 +92,6 @@ export function js_dollar(ast) {
         );
         object_replace(node, e);
       }
-      if (remaining === "x") {
-        let e = js_parse_expression(js_code_call(exit.name));
-        object_replace(node, e);
-      }
       if (remaining === "l") {
         let e = js_parse_expression(
           js_code_call_args(log.name, [js_code_braces()]),
@@ -168,6 +164,10 @@ export function js_dollar(ast) {
         let e = js_parse_expression(
           string_combine_multiple(["{sermon:'',count:", count, "}"]),
         );
+        object_replace(node, e);
+      }
+      if (remaining === "x") {
+        let e = js_parse_expression(js_code_call(exit.name));
         object_replace(node, e);
       }
     }
