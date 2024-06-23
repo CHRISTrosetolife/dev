@@ -1,3 +1,4 @@
+import { search_open } from "./search_open.mjs";
 import { google_search_lucky } from "./google_search_lucky.mjs";
 import { function_transform_all } from "./function_transform_all.mjs";
 import { function_transform_all_args } from "./function_transform_all_args.mjs";
@@ -80,6 +81,7 @@ export async function function_aliases_generate() {
   alias_add(restart, ["re"]);
   alias_add(function_search, ["s"]);
   alias_add(sandbox, ["sb"]);
+  alias_add(search_open, ["so"]);
   alias_add(app_dev_screenshots, ["ss"]);
   alias_add(terminal, ["t"]);
   alias_add(terminal_data_history, ["th"]);
