@@ -115,6 +115,7 @@ export async function app_gs_conversation_witness(menu_overlay, npc, map) {
       [],
     );
     let verse = list_get(verses, verse_index);
+    let verse_number = verse;
     let objection = list_get(verse.objections, objection_index);
     let answer_verses = list_slice(
       verses,
@@ -128,9 +129,9 @@ export async function app_gs_conversation_witness(menu_overlay, npc, map) {
     let answer = list_join_space(answer_texts);
     let choice_text = string_combine_multiple([
       "📖 ",
-      first.book_name,
+      book_name,
       " ",
-      first.chapter,
+      chapter,
       ":",
       first.verse_number,
       first !== last ? "-" + last.verse_number : "",
