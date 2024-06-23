@@ -1,3 +1,4 @@
+import { string_suffix_without } from "./string_suffix_without.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
 import { js_code_array } from "./js_code_array.mjs";
 import { js_code_statement_return } from "./js_code_statement_return.mjs";
@@ -14,7 +15,7 @@ export async function bible_books_prefix_to_name_generate() {
     html_parse_text,
   );
   await function_new_generic(
-    name,
+    string_suffix_without(bible_books_prefix_to_name_generate, "_generate"),
     "",
     js_code_statement_return(js_code_array(delimited)),
     false,
