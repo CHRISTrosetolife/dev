@@ -115,7 +115,6 @@ export async function app_gs_conversation_witness(menu_overlay, npc, map) {
       [],
     );
     let verse = list_get(verses, verse_index);
-    let { verse_number } = verse;
     let objection = list_get(verse.objections, objection_index);
     let answer_verses = list_slice(
       verses,
@@ -124,6 +123,7 @@ export async function app_gs_conversation_witness(menu_overlay, npc, map) {
     );
     let { text: objection_text } = objection;
     let first = list_first(answer_verses);
+    let { verse_number: verse_number_first } = verse;
     let last = list_last(answer_verses);
     let answer_texts = list_map_property(answer_verses, "text");
     let answer = list_join_space(answer_texts);
@@ -133,7 +133,7 @@ export async function app_gs_conversation_witness(menu_overlay, npc, map) {
       " ",
       chapter,
       ":",
-      verse_number,
+      verse_number_first,
       first !== last ? "-" + last.verse_number : "",
       " - ",
       answer,
