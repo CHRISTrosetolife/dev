@@ -29,6 +29,7 @@ import { list_slice } from "./list_slice.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
 import { string_random_or_empty } from "./string_random_or_empty.mjs";
 export async function app_gs_conversation_witness(menu_overlay, npc, map) {
+  let objection_id = list_pop(objection_ids);
   let choice_wrong = await choice_get(() => {
     npc.conversation_wait_until =
       map.player.conversation_count + app_gs_npc_conversation_wait_count();
