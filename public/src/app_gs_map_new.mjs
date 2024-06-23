@@ -1,3 +1,6 @@
+import { integer_random } from "./integer_random.mjs";
+import { range } from "./range.mjs";
+import { list_map } from "./list_map.mjs";
 import { app_gs_objection_ids } from "./app_gs_objection_ids.mjs";
 import { app_gs_npc_new } from "./app_gs_npc_new.mjs";
 import { app_gs_tile_overlay_add } from "./app_gs_tile_overlay_add.mjs";
@@ -161,6 +164,9 @@ export function app_gs_map_new() {
   object_merge(map.player, spawn);
   let objection_ids = app_gs_objection_ids();
   while (list_empty_not_is(objection_ids)) {
+    let objections = list_map(range(integer_random(1, 3)), (i) =>
+      list_pop(objection_ids),
+    );
     app_gs_npc_new(map, inside, objection_ids);
   }
   return map;
