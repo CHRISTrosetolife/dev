@@ -1,3 +1,4 @@
+import { list_filter } from "./list_filter.mjs";
 import { each } from "./each.mjs";
 import { list_remove_if_exists } from "./list_remove_if_exists.mjs";
 import { each_object } from "./each_object.mjs";
@@ -12,6 +13,7 @@ import { list_map_property } from "./list_map_property.mjs";
 import { list_unique } from "./list_unique.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { list_includes } from "./list_includes.mjs";
+import { string_is } from "./string_is.mjs";
 export function data_update_single(ast, data) {
   let declaration = js_declaration_single(ast);
   let {
@@ -23,6 +25,7 @@ export function data_update_single(ast, data) {
   object_property_set(f, "async", async);
   let ast_literals = js_node_type(ast, "Literal");
   let mapped = list_map_property(ast_literals, "value");
+  let filtered = list_filter(mapped, string_is);
   let u = list_unique(mapped);
   list_sort_string(u, string_delimit_if);
   let literals = object_property_initialize(data, "literal_strings", {});
