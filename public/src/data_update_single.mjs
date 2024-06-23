@@ -36,7 +36,7 @@ export function data_update_single(ast, data) {
   ];
   each(list, (item) => {
     let literals = object_property_initialize(data, item.key, {});
-    each(u, (s) => object_property_initialize(literals, s, []));
+    each(item.ast_list, (s) => object_property_initialize(literals, s, []));
     each_object(literals, (s, s_functions) => {
       if (list_includes(u, s)) {
         list_add_if_exists_not(s_functions, name);
