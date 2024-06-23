@@ -31,7 +31,6 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
         let c_blur = html_img_element(map_c);
         html_data_set(c, "type", "npc_overlay_blur");
         let c = html_img_element(map_c);
-        html_data_set(c, "type", "npc_overlay");
         let list = [
           {
             component: c_blur,
@@ -42,7 +41,9 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
             type: "npc_overlay",
           },
         ];
-        each(list, (item) => {});
+        each(list, (item) => {
+          html_data_set(c, "type", "npc_overlay");
+        });
         game_img_style_generic(
           c,
           size,
