@@ -52,6 +52,7 @@ import { subtract_1 } from "./subtract_1.mjs";
 import { list_remove_at } from "./list_remove_at.mjs";
 import { string_ends_with } from "./string_ends_with.mjs";
 export async function terminal() {
+  let symbols = "_',<>=\"+.()";
   let commands = [
     {
       match: {
@@ -225,7 +226,7 @@ export async function terminal() {
       action: (key) => keyboard_type(key.sequence),
     },
     {
-      keys: string_split_empty("_',<>=\"+.()"),
+      keys: string_split_empty(symbols),
       action: (key) => keyboard_type(key.sequence),
     },
   ];
