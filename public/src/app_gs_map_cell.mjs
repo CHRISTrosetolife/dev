@@ -27,7 +27,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
           map_c,
           "icons/question.svg",
           tile,
-          z_index_name,
+          "player_overlay",
         );
       } else {
         error();
