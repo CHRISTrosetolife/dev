@@ -25,10 +25,13 @@ export async function app_gs_conversation_witness(menu_overlay, npc, map) {
       app_gs_conversation_witness_wrong(npc, map, menu_overlay);
     },
   );
-  let choice_correct = await app_gs_conversation_witness_choice(async () => {
-    list_pop(npc.objections);
-    await app_gs_conversation_gospel(menu_overlay, npc, map);
-  });
+  let choice_correct = await app_gs_conversation_witness_choice(
+    objection_id_correct,
+    async () => {
+      list_pop(npc.objections);
+      await app_gs_conversation_gospel(menu_overlay, npc, map);
+    },
+  );
   app_gs_conversation_npc(menu_overlay, npc, choice_correct.objection_text);
   let div_player = app_gs_conversation_player_prompt(
     menu_overlay,
