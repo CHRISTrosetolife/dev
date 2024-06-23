@@ -41,7 +41,6 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
               ")",
             ]),
           );
-          html_data_set(c, "type", "npc_overlay_blur");
           let c = html_img_element(map_c);
           let list = [
             {
