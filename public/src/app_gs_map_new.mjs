@@ -162,12 +162,12 @@ export function app_gs_map_new() {
   });
   app_gs_player_new(map);
   object_merge(map.player, spawn);
-  let objection_ids = app_gs_objection_ids();
-  while (list_empty_not_is(objection_ids)) {
-    let objections = list_map(range(integer_random(1, 3)), (i) =>
-      list_pop(objection_ids),
+  let objection_ids_all = app_gs_objection_ids();
+  while (list_empty_not_is(objection_ids_all)) {
+    let objection_ids = list_map(range(integer_random(1, 3)), (i) =>
+      list_pop(objection_ids_all),
     );
-    app_gs_npc_new(map, inside, objections);
+    app_gs_npc_new(map, inside, objection_ids);
   }
   return map;
   function overlay_add_base(tile, id) {
