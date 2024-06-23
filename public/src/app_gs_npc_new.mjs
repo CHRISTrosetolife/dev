@@ -13,6 +13,7 @@ export function app_gs_npc_new(map, tile_choices, objections) {
   list_remove(choices, map.player.name);
   npc.name = list_random_item(choices);
   npc.conversation_count = 0;
+  npc.gospel_share = false;
   npc.christian = false;
   object_merge(npc, {
     objections,
