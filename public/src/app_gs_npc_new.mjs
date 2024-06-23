@@ -5,7 +5,7 @@ import { list_random_item } from "./list_random_item.mjs";
 import { app_gs_tile_overlay_add } from "./app_gs_tile_overlay_add.mjs";
 import { list_pop } from "./list_pop.mjs";
 import { object_merge } from "./object_merge.mjs";
-export function app_gs_npc_new(map, tile_choices, objection_ids) {
+export function app_gs_npc_new(map, tile_choices, objections) {
   let tile = list_pop(tile_choices);
   let npc = app_gs_tile_overlay_add(tile, "npc");
   npc.character = list_random_item(game_img_list_male());
