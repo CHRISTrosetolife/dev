@@ -37,11 +37,11 @@ export function data_update_single(ast, data) {
   each(list, (item) => {
     let data_key = object_property_initialize(data, item.key, {});
     each(item.ast_list, (s) => object_property_initialize(data_key, s, []));
-    each_object(data_key, (s, s_functions) => {
-      if (list_includes(item.ast_list, s)) {
-        list_add_if_exists_not(s_functions, name);
+    each_object(data_key, (k, k_functions) => {
+      if (list_includes(item.ast_list, k)) {
+        list_add_if_exists_not(k_functions, name);
       } else {
-        list_remove_if_exists(s_functions, name);
+        list_remove_if_exists(k_functions, name);
       }
     });
   });
