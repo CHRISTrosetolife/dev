@@ -7,7 +7,7 @@ export function app_gs_npc_icon_christian(c_blur, c) {
     c_blur,
     c,
     "icons/cross.svg",
-    "invert(80%) sepia(83%) saturate(439%) hue-rotate(36deg) brightness(97%) contrast(114%)",
+    "invert(69%) sepia(83%) saturate(322%) hue-rotate(47deg) brightness(109%) contrast(105%)",
   );
   html_style_filter(
     c_blur,
