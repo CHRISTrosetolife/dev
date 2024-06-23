@@ -61,8 +61,7 @@ export function app_gs_conversation_convert(menu_overlay, npc, map) {
           ]),
         ]),
         string_combine_multiple([
-          string_random_or_empty("Now "),
-          "I believe ",
+          "Now I believe ",
           list_random_item([
             string_combine_multiple(["in ", app_gs_phrase_jesus()]),
             string_combine_multiple([
