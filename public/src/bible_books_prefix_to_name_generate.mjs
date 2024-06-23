@@ -21,7 +21,9 @@ export async function bible_books_prefix_to_name_generate() {
     properties: [],
   };
   each_object(lookup, (key, value) => {
-    list_add(r.properties, {});
+    list_add(r.properties, {
+      type: "Property",
+    });
   });
   await function_new_generic(
     string_suffix_without(bible_books_prefix_to_name_generate, "_generate"),
