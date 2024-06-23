@@ -11,10 +11,6 @@ export function app_gs_npc_icon_christian(c_blur, c) {
   );
   html_style_filter(
     c_blur,
-    string_combine_multiple([
-      "invert(100%) sepia(100%) saturate(1%) hue-rotate(144deg) brightness(102%) contrast(101%) blur(",
-      game_tile_units_css(1 / 46),
-      ")",
-    ]),
+    string_combine_multiple(["blur(", game_tile_units_css(1 / 46), ")"]),
   );
 }
