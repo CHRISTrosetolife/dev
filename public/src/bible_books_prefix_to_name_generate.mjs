@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { js_string } from "./js_string.mjs";
 import { string_suffix_without } from "./string_suffix_without.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
@@ -21,7 +22,7 @@ export async function bible_books_prefix_to_name_generate() {
     type: "ObjectExpression",
     properties: [],
   };
-  json_to(r);
+  log(json_to(r));
   each_object(lookup, (key, value) => {
     list_add(r.properties, {
       type: "Property",
