@@ -7,13 +7,12 @@ export function app_gs_phrase_jesus() {
     string_random_or_empty(" Christ"),
     string_random_or_empty(
       string_combine_multiple([
-        ", the ",
+        " the ",
         list_random_item([
           "Messiah",
           string_combine_multiple([
             "Son of God",
             string_random_or_empty(" the Father"),
-            ",",
           ]),
         ]),
       ]),
