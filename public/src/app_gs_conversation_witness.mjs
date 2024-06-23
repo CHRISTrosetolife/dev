@@ -94,8 +94,7 @@ export async function app_gs_conversation_witness(menu_overlay, npc, map) {
       choice.on_click,
     );
   });
-  async function choice_get(on_click) {
-    let objection_id = list_pop(objection_ids);
+  async function choice_get(objection_id, on_click) {
     let [book_id, chapter, verse_index, objection_index] =
       string_split_underscore(objection_id);
     let book_name = bible_books_prefix_to_name()[string_case_upper(book_id)];
