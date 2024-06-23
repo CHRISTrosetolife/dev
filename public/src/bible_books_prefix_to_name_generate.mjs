@@ -17,6 +17,7 @@ export async function bible_books_prefix_to_name_generate() {
   );
   let r = {
     type: "ObjectExpression",
+    properties: [],
   };
   each_object(lookup, (key, value) => {});
   await function_new_generic(
