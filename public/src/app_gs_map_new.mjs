@@ -161,8 +161,7 @@ export function app_gs_map_new() {
   let objection_ids = app_gs_objection_ids();
   let npc_count = 1;
   each_range(npc_count, () => {
-    let objection_id = list_pop(objection_ids);
-    app_gs_npc_new(map, inside, objection_id);
+    app_gs_npc_new(map, inside, objection_ids);
   });
   return map;
   function overlay_add_base(tile, id) {
