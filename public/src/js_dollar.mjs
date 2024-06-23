@@ -30,6 +30,7 @@ import { number_is } from "./number_is.mjs";
 import { list_index_last } from "./list_index_last.mjs";
 import { list_all } from "./list_all.mjs";
 import { list_adder } from "./list_adder.mjs";
+import { each_object } from "./each_object.mjs";
 export function js_dollar(ast) {
   js_visit_identifiers(ast, (v) => {
     let { node } = v;
@@ -75,6 +76,18 @@ export function js_dollar(ast) {
           js_code_call_args(each_index.name, [
             list,
             js_code_arrow_block_args([name, index], ""),
+          ]),
+        );
+        object_replace(node, e);
+      }
+      if (remaining === "eo") {
+        let object = js_name_unique(ast, "object");
+        let key = js_name_unique(ast, "key");
+        let value = js_name_unique(ast, "value");
+        let e = js_parse_expression(
+          js_code_call_args(each_object.name, [
+            object,
+            js_code_arrow_block_args([key, value], ""),
           ]),
         );
         object_replace(node, e);
