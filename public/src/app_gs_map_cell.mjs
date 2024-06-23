@@ -1,4 +1,4 @@
-import { app_gs_npc_icon_question } from "./app_gs_npc_icon_question.mjs";
+import { app_gs_npc_icon_unmet } from "./app_gs_npc_icon_unmet.mjs";
 import { html_img_element } from "./html_img_element.mjs";
 import { game_img_style_generic } from "./game_img_style_generic.mjs";
 import { app_gs_character_c } from "./app_gs_character_c.mjs";
@@ -36,7 +36,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
           tile.y,
           tile.x + 1 - size,
         );
-        app_gs_npc_icon_question(c);
+        app_gs_npc_icon_unmet(c);
       } else {
         error();
       }

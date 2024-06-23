@@ -1,6 +1,6 @@
 import { html_style } from "./html_style.mjs";
 import { html_img_src } from "./html_img_src.mjs";
-export function app_gs_npc_icon_question(c) {
+export function app_gs_npc_icon_unmet(c) {
   html_img_src(c, "icons/question.svg");
   html_style(c, {
     filter:
