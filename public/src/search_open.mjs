@@ -3,7 +3,6 @@ import { function_search } from "./function_search.mjs";
 import { object_properties } from "./object_properties.mjs";
 export async function search_open(query) {
   let results = await function_search(query);
-  list_adder((la) => {
-    let properties = object_properties();
-  });
+  let properties = object_properties();
+  list_adder((la) => {});
 }
