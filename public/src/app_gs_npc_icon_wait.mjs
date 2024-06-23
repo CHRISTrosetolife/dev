@@ -4,6 +4,6 @@ export function app_gs_npc_icon_wait(c) {
   html_img_src(c, "icons/cross.svg");
   html_style(c, {
     filter:
-      "invert(80%) sepia(52%) saturate(474%) hue-rotate(48deg) brightness(103%) contrast(102%)",
+      "invert(33%) sepia(69%) saturate(6226%) hue-rotate(349deg) brightness(101%) contrast(113%)",
   });
 }
