@@ -6,7 +6,7 @@ export function app_gs_conversation_end(div_player, menu_overlay, npc) {
     div_player,
     "👋 Politely end the conversation after 🙏 praying",
     () => {
-      app_gs_npc_icon_update(map, o, c_blur, c);
+      app_gs_npc_icon_update(map, npc, c_blur, c);
       html_remove(menu_overlay);
     },
   );
