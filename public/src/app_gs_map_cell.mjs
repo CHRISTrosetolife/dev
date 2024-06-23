@@ -33,6 +33,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
           la(overlay_c);
           html_data_set(overlay_c, "type", "npc");
           let c_blur = html_img_element(map_c);
+          let light = true;
           html_style_filter(
             c_blur,
             string_combine_multiple([
