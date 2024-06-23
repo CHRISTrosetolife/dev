@@ -1,3 +1,4 @@
+import { error } from "./error.mjs";
 import { app_gs_conversation_end } from "./app_gs_conversation_end.mjs";
 import { app_gs_conversation_gospel } from "./app_gs_conversation_gospel.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -18,5 +19,5 @@ export function app_gs_conversation_npc_opening(menu_overlay, npc, text, map) {
       app_gs_conversation_gospel(menu_overlay, npc, map);
     },
   );
-  app_gs_conversation_end(div_player, menu_overlay);
+  app_gs_conversation_end(div_player, menu_overlay, error());
 }
