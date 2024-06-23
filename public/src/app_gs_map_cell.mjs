@@ -1,3 +1,4 @@
+import { app_gs_npc_icon_wait } from "./app_gs_npc_icon_wait.mjs";
 import { app_gs_npc_icon_christian } from "./app_gs_npc_icon_christian.mjs";
 import { app_gs_npc_icon_unmet } from "./app_gs_npc_icon_unmet.mjs";
 import { html_img_element } from "./html_img_element.mjs";
@@ -40,6 +41,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
         if (o.conversation_count === 0) {
           app_gs_npc_icon_unmet(c);
           app_gs_npc_icon_christian(c);
+          app_gs_npc_icon_wait(c);
         }
       } else {
         error();
