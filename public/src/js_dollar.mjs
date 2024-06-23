@@ -31,6 +31,7 @@ import { list_index_last } from "./list_index_last.mjs";
 import { list_all } from "./list_all.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { each_object } from "./each_object.mjs";
+import { object_property_get } from "./object_property_get.mjs";
 export function js_dollar(ast) {
   js_visit_identifiers(ast, (v) => {
     let { node } = v;
@@ -88,6 +89,17 @@ export function js_dollar(ast) {
           js_code_call_args(each_object.name, [
             object,
             js_code_arrow_block_args([key, value], ""),
+          ]),
+        );
+        object_replace(node, e);
+      }
+      if (remaining === "g") {
+        let list = js_name_unique(ast, "list");
+        let name = js_name_unique(ast, "item");
+        let e = js_parse_expression(
+          js_code_call_args(object_property_get.name, [
+            list,
+            js_code_arrow_block_args([name], ""),
           ]),
         );
         object_replace(node, e);
