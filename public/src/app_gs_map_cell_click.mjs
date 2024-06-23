@@ -37,8 +37,7 @@ export async function app_gs_map_cell_click(map, map_c, player_c, tile) {
       let neighbors = app_gs_map_neighbors_get(map, npc);
       let { path } = app_gs_map_path(map, neighbors);
       await app_gs_walk_path(map, map_c, player_c, path);
-      let data_type = "npc";
-      let npc_c = app_gs_map_html_at_find(map, npc, data_type);
+      let npc_c = app_gs_map_html_at_find(map, npc, "npc");
       let sleep_time = app_gs_sleep_time_face();
       await sleep(sleep_time);
       app_gs_walk_direction(player_c, player, npc);
