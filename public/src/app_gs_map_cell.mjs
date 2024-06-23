@@ -1,3 +1,4 @@
+import { app_gs_character_c_generic } from "./app_gs_character_c_generic.mjs";
 import { app_gs_character_c } from "./app_gs_character_c.mjs";
 import { error } from "./error.mjs";
 import { app_gs_map_cell_click } from "./app_gs_map_cell_click.mjs";
@@ -22,6 +23,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
       } else if (o.type === "npc") {
         overlay_c = app_gs_character_c(map_c, o.character, o);
         html_data_set(overlay_c, "type", "npc");
+        let c = app_gs_character_c_generic(map_c, img_url, y_x, z_index_name);
       } else {
         error();
       }
