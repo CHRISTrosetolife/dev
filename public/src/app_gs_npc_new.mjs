@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { range } from "./range.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_remove } from "./list_remove.mjs";
@@ -9,6 +10,7 @@ import { list_pop } from "./list_pop.mjs";
 import { integer_random } from "./integer_random.mjs";
 import { object_merge } from "./object_merge.mjs";
 export function app_gs_npc_new(map, tile_choices, objection_ids) {
+  log({});
   let objections = list_map(range(integer_random(1, 3)), (i) =>
     list_pop(objection_ids),
   );
