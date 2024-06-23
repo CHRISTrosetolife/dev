@@ -30,7 +30,7 @@ export function data_update_single(ast, data) {
   list_sort_string(u, identity);
   let literals = object_property_initialize(data, "literal_strings", {});
   each(literals, (s) => object_property_initialize(literals, s, []));
-  each_object(identifiers, (id, id_functions) => {
+  each_object(literals, (id, id_functions) => {
     if (list_includes(ids, id)) {
       list_add_if_exists_not(id_functions, name);
     } else {
