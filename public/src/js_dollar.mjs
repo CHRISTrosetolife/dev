@@ -29,6 +29,7 @@ import { integer_parse } from "./integer_parse.mjs";
 import { number_is } from "./number_is.mjs";
 import { list_index_last } from "./list_index_last.mjs";
 import { list_all } from "./list_all.mjs";
+import { list_adder } from "./list_adder.mjs";
 export function js_dollar(ast) {
   js_visit_identifiers(ast, (v) => {
     let { node } = v;
@@ -85,6 +86,12 @@ export function js_dollar(ast) {
       if (remaining === "l") {
         let e = js_parse_expression(
           js_code_call_args(log.name, [js_code_braces()]),
+        );
+        object_replace(node, e);
+      }
+      if (remaining === "la") {
+        let e = js_parse_expression(
+          js_code_call_args(list_adder.name, [js_code_braces()]),
         );
         object_replace(node, e);
       }
