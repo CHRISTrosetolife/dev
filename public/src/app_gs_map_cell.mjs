@@ -37,7 +37,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
         );
         html_style(c, {
           filter:
-            "invert(11%) sepia(100%) saturate(4414%) hue-rotate(243deg) brightness(100%) contrast(153%)",
+            "invert(11%) sepia(100%) saturate(5663%) hue-rotate(239deg) brightness(105%) contrast(113%)",
         });
       } else {
         error();
