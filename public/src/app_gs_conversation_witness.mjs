@@ -1,3 +1,4 @@
+import { app_gs_conversation_witness_wrong } from "./app_gs_conversation_witness_wrong.mjs";
 import { list_without } from "./list_without.mjs";
 import { app_gs_objection_ids } from "./app_gs_objection_ids.mjs";
 import { string_case_upper } from "./string_case_upper.mjs";
@@ -8,14 +9,6 @@ import { string_split_underscore } from "./string_split_underscore.mjs";
 import { app_gs_bible_chapter_prefix } from "./app_gs_bible_chapter_prefix.mjs";
 import { function_run } from "./function_run.mjs";
 import { number_pad } from "./number_pad.mjs";
-import { app_gs_conversation_npc_end } from "./app_gs_conversation_npc_end.mjs";
-import { app_gs_npc_conversation_wait_count } from "./app_gs_npc_conversation_wait_count.mjs";
-import { html_clear } from "./html_clear.mjs";
-import { app_gs_phrase_you_have } from "./app_gs_phrase_you_have.mjs";
-import { app_gs_phrase_thanks } from "./app_gs_phrase_thanks.mjs";
-import { list_random_item } from "./list_random_item.mjs";
-import { app_gs_phrase_convinced } from "./app_gs_phrase_convinced.mjs";
-import { app_gs_phrase_i_am } from "./app_gs_phrase_i_am.mjs";
 import { list_pop } from "./list_pop.mjs";
 import { each } from "./each.mjs";
 import { app_gs_conversation_gospel } from "./app_gs_conversation_gospel.mjs";
@@ -29,7 +22,6 @@ import { list_last } from "./list_last.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_slice } from "./list_slice.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
-import { string_random_or_empty } from "./string_random_or_empty.mjs";
 export async function app_gs_conversation_witness(menu_overlay, npc, map) {
   let objection_id_correct = list_last(npc.objections);
   let objection_ids = app_gs_objection_ids();
@@ -40,51 +32,7 @@ export async function app_gs_conversation_witness(menu_overlay, npc, map) {
   let choice_wrong = await choice_get(
     list_first(objection_ids_incorrect),
     () => {
-      npc.conversation_wait_until =
-        map.player.conversation_count + app_gs_npc_conversation_wait_count();
-      let npc_text = string_combine_multiple([
-        string_random_or_empty(
-          string_combine_multiple([
-            app_gs_phrase_thanks(),
-            " for ",
-            list_random_item([
-              "the conversation",
-              string_combine_multiple([
-                "what ",
-                app_gs_phrase_you_have(),
-                " ",
-                list_random_item([
-                  string_combine_multiple([
-                    "said",
-                    string_random_or_empty(" to me"),
-                  ]),
-                  string_combine_multiple([
-                    "shared",
-                    string_random_or_empty(" with me"),
-                  ]),
-                ]),
-              ]),
-            ]),
-            ". However, ",
-          ]),
-        ),
-        app_gs_phrase_i_am(),
-        " not ",
-        string_random_or_empty("quite "),
-        list_random_item([
-          string_combine_multiple([
-            string_random_or_empty("yet "),
-            app_gs_phrase_convinced(),
-          ]),
-          string_combine_multiple([
-            app_gs_phrase_convinced(),
-            string_random_or_empty(", yet"),
-          ]),
-        ]),
-        ".",
-      ]);
-      html_clear(menu_overlay);
-      app_gs_conversation_npc_end(menu_overlay, npc, npc_text);
+      app_gs_conversation_witness_wrong(npc, map, menu_overlay);
     },
   );
   let choice_correct = await choice_get(async () => {
