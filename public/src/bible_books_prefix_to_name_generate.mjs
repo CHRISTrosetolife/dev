@@ -8,6 +8,7 @@ import { bible_books_html_element_to_prefix } from "./bible_books_html_element_t
 import { bible_books_html_elements } from "./bible_books_html_elements.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 import { each_object } from "./each_object.mjs";
+import { list_add } from "./list_add.mjs";
 export async function bible_books_prefix_to_name_generate() {
   let book_elements = await bible_books_html_elements("engbsb");
   let lookup = list_to_lookup_value(
@@ -19,7 +20,9 @@ export async function bible_books_prefix_to_name_generate() {
     type: "ObjectExpression",
     properties: [],
   };
-  each_object(lookup, (key, value) => {});
+  each_object(lookup, (key, value) => {
+    list_add(r.properties, {});
+  });
   await function_new_generic(
     string_suffix_without(bible_books_prefix_to_name_generate, "_generate"),
     "",
