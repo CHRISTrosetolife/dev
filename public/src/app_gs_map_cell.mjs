@@ -26,7 +26,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
         let c = app_gs_character_c_generic(
           map_c,
           "icons/question.svg",
-          y_x,
+          tile,
           z_index_name,
         );
       } else {
