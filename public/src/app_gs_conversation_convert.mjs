@@ -58,6 +58,7 @@ export function app_gs_conversation_convert(menu_overlay, npc, map) {
               ]),
             ]),
           ]),
+          app_gs_phrase_exclaim_or_period(),
         ]),
         string_combine_multiple([
           string_random_or_empty("Now "),
