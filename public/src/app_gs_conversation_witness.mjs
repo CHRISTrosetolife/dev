@@ -115,7 +115,7 @@ export async function app_gs_conversation_witness(menu_overlay, npc, map) {
       [],
     );
     let verse = list_get(verses, verse_index);
-    let verse_number = verse;
+    let { verse_number } = verse;
     let objection = list_get(verse.objections, objection_index);
     let answer_verses = list_slice(
       verses,
