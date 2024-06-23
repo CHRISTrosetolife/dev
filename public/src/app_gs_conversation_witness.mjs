@@ -79,9 +79,9 @@ export async function app_gs_conversation_witness(menu_overlay, npc, map) {
     html_clear(menu_overlay);
     app_gs_conversation_npc_end(menu_overlay, npc, npc_text);
   });
-  let choice_correct = await choice_get(() => {
-    npc.objection_count--;
-    app_gs_conversation_gospel(menu_overlay, npc, map);
+  let choice_correct = await choice_get(async () => {
+    list_pop(npc.objections);
+    await app_gs_conversation_gospel(menu_overlay, npc, map);
   });
   app_gs_conversation_npc(menu_overlay, npc, choice_correct.objection_text);
   let div_player = app_gs_conversation_player_prompt(
