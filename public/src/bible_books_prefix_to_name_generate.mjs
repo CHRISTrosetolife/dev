@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { js_string } from "./js_string.mjs";
 import { string_suffix_without } from "./string_suffix_without.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
@@ -32,7 +31,6 @@ export async function bible_books_prefix_to_name_generate() {
       value: js_string(value),
       kind: "init",
     });
-    log(r);
   });
   await function_new_generic(
     string_suffix_without(
