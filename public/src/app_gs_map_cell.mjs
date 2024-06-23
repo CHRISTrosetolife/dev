@@ -29,7 +29,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
           let overlay_c = game_img(map_c, game_img_base(o_id), tile, "overlay");
           la(overlay_c);
         } else if (o.type === "npc") {
-          let overlay_c = app_gs_character_c(map_c, o.character, o);
+          let overlay_c = app_gs_character_c(map_c, o.character, o, "npc");
           la(overlay_c);
           html_data_set(overlay_c, "type", "npc");
           let c_blur = html_img_element(map_c);
