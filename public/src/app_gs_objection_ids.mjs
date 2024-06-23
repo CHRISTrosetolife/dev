@@ -1,3 +1,4 @@
+import { list_shuffle } from "./list_shuffle.mjs";
 import { list_join_underscore } from "./list_join_underscore.mjs";
 import { each_index_only } from "./each_index_only.mjs";
 import { list_adder } from "./list_adder.mjs";
@@ -30,5 +31,6 @@ export function app_gs_objection_ids() {
       });
     }),
   );
+  list_shuffle(objection_ids);
   return objection_ids;
 }
