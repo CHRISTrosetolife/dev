@@ -4,7 +4,7 @@ import { list_sort } from "./list_sort.mjs";
 import { function_search } from "./function_search.mjs";
 import { object_properties } from "./object_properties.mjs";
 import { string_length } from "./string_length.mjs";
-export async function search_open(query) {
+export async function function_search_open(query) {
   let results = await function_search(query);
   let properties = object_properties(results);
   list_sort(properties, string_length);
