@@ -7,7 +7,8 @@ export function app_gs_npc_icon_update(map, npc, c_blur, c) {
     app_gs_npc_icon_wait(c_blur, c);
   } else if (npc.christian) {
     app_gs_npc_icon_christian(c_blur, c);
-  } else if (npc.conversation_count === 0) {
+  } else if (npc.conversation_count === 0 || !npc.gospel_share) {
     app_gs_npc_icon_unknown(c_blur, c);
+  } else {
   }
 }
