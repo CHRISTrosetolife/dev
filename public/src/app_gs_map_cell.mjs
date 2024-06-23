@@ -29,7 +29,6 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
           let overlay_c = app_gs_character_c(map_c, o.character, o);
           la(overlay_c);
           html_data_set(overlay_c, "type", "npc");
-          let size = 1 / 3;
           let c_blur = html_img_element(map_c);
           html_data_set(c, "type", "npc_overlay_blur");
           let c = html_img_element(map_c);
@@ -46,6 +45,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
           each(list, (item) => {
             la(item.component);
             html_data_set(c, "type", item.type);
+            let size = 1 / 3;
             game_img_style_generic(
               item.component,
               size,
