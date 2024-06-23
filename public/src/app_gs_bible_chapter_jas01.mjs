@@ -102,7 +102,7 @@ export function app_gs_bible_chapter_jas01() {
       text: "But the one who is rich should exult in his low position, because he will pass away like a flower of the field.",
       objections: [
         {
-          text: "I already have everything I need. I have much money.",
+          text: "I already have everything I need. I have a lot of money.",
           count: 2,
         },
       ],
