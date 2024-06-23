@@ -2,8 +2,9 @@ icon
     question mark https://www.iconfinder.com/deemakdaksina
         made blue
 
-    cross Font Awesome by Dave Gandy - http://fontawesome.io
-        made green
+     Font Awesome by Dave Gandy - http://fontawesome.io
+    cross    made green
+    exclamation made green
     
     x icon https://www.iconfinder.com/sudheepb
         made red
