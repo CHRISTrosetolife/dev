@@ -14,13 +14,12 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
   let clicker = html_div(map_c);
   let overlays = list_adder((la) =>
     each(tile.overlays, function lambda_overlay(o) {
-      let overlay_c;
       if (o.type === "base") {
         let { id: o_id } = o;
         html_data_set(clicker, "overlay", o_id);
-        overlay_c = game_img(map_c, game_img_base(o_id), tile, "overlay");
+        let overlay_c = game_img(map_c, game_img_base(o_id), tile, "overlay");
       } else if (o.type === "npc") {
-        overlay_c = app_gs_player_c_generic(map_c, o.character, o);
+        let overlay_c = app_gs_player_c_generic(map_c, o.character, o);
         html_data_set(overlay_c, "type", "npc");
       } else {
         error();
