@@ -164,7 +164,8 @@ export function app_gs_map_new() {
   object_merge(map.player, spawn);
   let objection_ids_all = app_gs_objection_ids();
   while (list_empty_not_is(objection_ids_all)) {
-    let objection_ids = list_map(range(integer_random(1, 3)), (i) =>
+    let max = 3;
+    let objection_ids = list_map(range(integer_random(1, max)), (i) =>
       list_pop(objection_ids_all),
     );
     app_gs_npc_new(map, inside, objection_ids);
