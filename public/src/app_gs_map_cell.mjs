@@ -1,4 +1,3 @@
-import { app_gs_npc_icon_blur } from "./app_gs_npc_icon_blur.mjs";
 import { app_gs_npc_icon_wait } from "./app_gs_npc_icon_wait.mjs";
 import { app_gs_npc_icon_christian } from "./app_gs_npc_icon_christian.mjs";
 import { app_gs_npc_icon_unmet } from "./app_gs_npc_icon_unmet.mjs";
@@ -31,7 +30,6 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
           la(overlay_c);
           html_data_set(overlay_c, "type", "npc");
           let c_blur = html_img_element(map_c);
-          app_gs_npc_icon_blur(c_blur, true);
           let c = html_img_element(map_c);
           let list = [
             {
