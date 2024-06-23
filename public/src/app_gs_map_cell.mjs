@@ -1,3 +1,4 @@
+import { html_style_filter } from "./html_style_filter.mjs";
 import { app_gs_npc_icon_wait } from "./app_gs_npc_icon_wait.mjs";
 import { app_gs_npc_icon_christian } from "./app_gs_npc_icon_christian.mjs";
 import { app_gs_npc_icon_unmet } from "./app_gs_npc_icon_unmet.mjs";
@@ -30,7 +31,10 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
           la(overlay_c);
           html_data_set(overlay_c, "type", "npc");
           let c_blur = html_img_element(map_c);
-          ("invert(100%) sepia(100%) saturate(1%) hue-rotate(144deg) brightness(102%) contrast(101%)");
+          html_style_filter(
+            c_blur,
+            "invert(100%) sepia(100%) saturate(1%) hue-rotate(144deg) brightness(102%) contrast(101%)",
+          );
           html_data_set(c, "type", "npc_overlay_blur");
           let c = html_img_element(map_c);
           let list = [
