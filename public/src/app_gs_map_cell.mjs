@@ -26,7 +26,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
         html_data_set(overlay_c, "type", "npc");
         let c = html_img(map_c, "icons/question.svg");
         let size = 1 / 2;
-        game_img_style_generic(c, 1, 1, "player_overlay", tile.y, tile.x);
+        game_img_style_generic(c, size, size, "player_overlay", tile.y, tile.x);
       } else {
         error();
       }
