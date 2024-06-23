@@ -24,8 +24,10 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
           let { id: o_id } = o;
           html_data_set(clicker, "overlay", o_id);
           let overlay_c = game_img(map_c, game_img_base(o_id), tile, "overlay");
+          la(overlay_c);
         } else if (o.type === "npc") {
           let overlay_c = app_gs_character_c(map_c, o.character, o);
+          la(overlay_c);
           html_data_set(overlay_c, "type", "npc");
           let size = 1 / 3;
           let c_blur = html_img_element(map_c);
