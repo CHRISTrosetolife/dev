@@ -167,7 +167,7 @@ export function app_gs_map_new() {
   let objection_ids_all = app_gs_objection_ids();
   while (list_empty_not_is(objection_ids_all)) {
     let max = number_min(list_size(objection_ids_all), 3);
-    let objection_ids = list_map(range(integer_random(1, max)), (i) =>
+    let objection_ids = list_map(range(integer_random(0, max)), (i) =>
       list_pop(objection_ids_all),
     );
     app_gs_npc_new(map, inside, objection_ids);
