@@ -123,7 +123,7 @@ export async function app_gs_conversation_witness(menu_overlay, npc, map) {
     );
     let { text: objection_text } = objection;
     let first = list_first(answer_verses);
-    let { verse_number: verse_number_first } = verse;
+    let { verse_number: verse_number_first } = first;
     let last = list_last(answer_verses);
     let answer_texts = list_map_property(answer_verses, "text");
     let answer = list_join_space(answer_texts);
