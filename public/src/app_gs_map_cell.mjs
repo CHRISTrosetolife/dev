@@ -1,6 +1,5 @@
 import { html_img } from "./html_img.mjs";
 import { game_img_style_generic } from "./game_img_style_generic.mjs";
-import { app_gs_character_c_generic } from "./app_gs_character_c_generic.mjs";
 import { app_gs_character_c } from "./app_gs_character_c.mjs";
 import { error } from "./error.mjs";
 import { app_gs_map_cell_click } from "./app_gs_map_cell_click.mjs";
@@ -25,9 +24,9 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
       } else if (o.type === "npc") {
         overlay_c = app_gs_character_c(map_c, o.character, o);
         html_data_set(overlay_c, "type", "npc");
-        let image = html_img(map_c, "icons/question.svg");
-        let c = app_gs_character_c_generic(tile, "player_overlay");
-        game_img_style_generic(c, 1, 1, "player_overlay", y, x);
+        let c = html_img(map_c, "icons/question.svg");
+        let size = 1 / 2;
+        game_img_style_generic(c, 1, 1, "player_overlay", tile.y, tile.x);
       } else {
         error();
       }
