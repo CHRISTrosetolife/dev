@@ -1,3 +1,5 @@
+import { string_case_upper } from "./string_case_upper.mjs";
+import { bible_books_prefix_to_name } from "./bible_books_prefix_to_name.mjs";
 import { integer_parse } from "./integer_parse.mjs";
 import { list_get } from "./list_get.mjs";
 import { app_gs_objection_ids } from "./app_gs_objection_ids.mjs";
@@ -99,6 +101,7 @@ export async function app_gs_conversation_witness(menu_overlay, npc, map) {
     let objection_id = list_pop(objection_ids);
     let [book_id, chapter, verse_index, objection_index] =
       string_split_underscore(objection_id);
+    let book_name = bible_books_prefix_to_name()[string_case_upper(book_id)];
     chapter = integer_parse(chapter);
     verse_index = integer_parse(verse_index);
     objection_index = integer_parse(objection_index);
