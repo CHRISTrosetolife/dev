@@ -30,7 +30,13 @@ export function data_update_single(ast, data) {
   list_sort_string(u, identity);
   let literals = object_property_initialize(data, "literal_strings", {});
   each(literals, (id) => object_property_initialize(identifiers, id, []));
-  object_property_set(f, "literals", u);
+  each_object(identifiers, (id, id_functions) => {
+    if (list_includes(ids, id)) {
+      list_add_if_exists_not(id_functions, name);
+    } else {
+      list_remove_if_exists(id_functions, name);
+    }
+  });
   let ids = js_identifiers(ast);
   let identifiers = object_property_initialize(data, "identifiers", {});
   each(ids, (id) => object_property_initialize(identifiers, id, []));
