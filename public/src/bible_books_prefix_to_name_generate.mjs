@@ -32,7 +32,7 @@ export async function bible_books_prefix_to_name_generate() {
       value: js_string(value),
       kind: "init",
     });
-    log(js_unparse(r));
+    log(r);
   });
   await function_new_generic(
     string_suffix_without(
@@ -40,7 +40,7 @@ export async function bible_books_prefix_to_name_generate() {
       "_generate",
     ),
     "",
-    js_code_statement_return(r),
+    js_code_statement_return(js_unparse(r)),
     false,
     [],
     false,
