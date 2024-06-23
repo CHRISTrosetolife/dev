@@ -42,16 +42,16 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
           },
         ];
         each(list, (item) => {
-          html_data_set(c, "type", "npc_overlay");
+          html_data_set(c, "type", item.type);
+          game_img_style_generic(
+            c,
+            size,
+            size,
+            item.type,
+            tile.y,
+            tile.x + 1 - size,
+          );
         });
-        game_img_style_generic(
-          c,
-          size,
-          size,
-          "player_overlay",
-          tile.y,
-          tile.x + 1 - size,
-        );
         if (o.conversation_count === 0) {
           app_gs_npc_icon_unmet(c);
           app_gs_npc_icon_christian(c);
