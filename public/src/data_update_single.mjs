@@ -31,7 +31,7 @@ export function data_update_single(ast, data) {
   let literals = object_property_initialize(data, "literal_strings", {});
   each(literals, (s) => object_property_initialize(literals, s, []));
   each_object(literals, (s, s_functions) => {
-    if (list_includes(ids, s)) {
+    if (list_includes(u, s)) {
       list_add_if_exists_not(s_functions, name);
     } else {
       list_remove_if_exists(s_functions, name);
