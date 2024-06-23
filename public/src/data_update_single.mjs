@@ -26,6 +26,7 @@ export function data_update_single(ast, data) {
   let u = list_unique(mapped);
   list_sort_string(u, string_delimit_if);
   let literals = object_property_initialize(data, "literals", {});
+  each(literals, (id) => object_property_initialize(identifiers, id, []));
   object_property_set(f, "literals", u);
   let ids = js_identifiers(ast);
   let identifiers = object_property_initialize(data, "identifiers", {});
