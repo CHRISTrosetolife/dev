@@ -23,6 +23,12 @@ export async function bible_books_prefix_to_name_generate() {
   each_object(lookup, (key, value) => {
     list_add(r.properties, {
       type: "Property",
+      method: false,
+      shorthand: false,
+      computed: true,
+      key: [Object],
+      value: [Object],
+      kind: "init",
     });
   });
   await function_new_generic(
