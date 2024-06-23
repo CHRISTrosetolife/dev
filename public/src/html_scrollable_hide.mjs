@@ -6,6 +6,7 @@ export function html_scrollable_hide(root, map_c) {
   html_style(root, {
     overflow: "none",
   });
+  return;
   let style = html_element(root, "style");
   let id = html_id(root);
   html_inner_set(
