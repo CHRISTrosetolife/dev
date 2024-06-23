@@ -1,3 +1,4 @@
+import { game_img_style_generic } from "./game_img_style_generic.mjs";
 import { app_gs_character_c_generic } from "./app_gs_character_c_generic.mjs";
 import { app_gs_character_c } from "./app_gs_character_c.mjs";
 import { error } from "./error.mjs";
@@ -29,6 +30,7 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
           tile,
           "player_overlay",
         );
+        game_img_style_generic(c, 1, 1, z_index_name, y, x);
       } else {
         error();
       }
