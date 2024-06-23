@@ -1,3 +1,4 @@
+import { js_string } from "./js_string.mjs";
 import { string_suffix_without } from "./string_suffix_without.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
 import { js_code_array } from "./js_code_array.mjs";
@@ -26,8 +27,8 @@ export async function bible_books_prefix_to_name_generate() {
       method: false,
       shorthand: false,
       computed: true,
-      key: [Object],
-      value: [Object],
+      key: js_string(key),
+      value: js_string(value),
       kind: "init",
     });
   });
