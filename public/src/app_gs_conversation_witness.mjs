@@ -2,7 +2,6 @@ import { string_case_upper } from "./string_case_upper.mjs";
 import { bible_books_prefix_to_name } from "./bible_books_prefix_to_name.mjs";
 import { integer_parse } from "./integer_parse.mjs";
 import { list_get } from "./list_get.mjs";
-import { app_gs_objection_ids } from "./app_gs_objection_ids.mjs";
 import { string_split_underscore } from "./string_split_underscore.mjs";
 import { app_gs_bible_chapter_prefix } from "./app_gs_bible_chapter_prefix.mjs";
 import { function_run } from "./function_run.mjs";
@@ -30,8 +29,6 @@ import { list_slice } from "./list_slice.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
 import { string_random_or_empty } from "./string_random_or_empty.mjs";
 export async function app_gs_conversation_witness(menu_overlay, npc, map) {
-  let objection_ids = app_gs_objection_ids();
-  list_shuffle(objection_ids);
   let choice_wrong = await choice_get(() => {
     npc.conversation_wait_until =
       map.player.conversation_count + app_gs_npc_conversation_wait_count();
