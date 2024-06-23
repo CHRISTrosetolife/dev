@@ -8,7 +8,7 @@ export async function app_gs_conversation_gospel(menu_overlay, npc, map) {
   if (npc.christian) {
     app_gs_conversation_reminder(menu_overlay, npc, map);
   } else {
-    npc;
+    npc.gospel_share = true;
     if (list_empty_is(npc.objections)) {
       app_gs_conversation_convert(menu_overlay, npc, map);
     } else {
