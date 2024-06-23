@@ -18,11 +18,11 @@ export async function bible_books_prefix_to_name_generate() {
     bible_books_html_element_to_prefix,
     html_parse_text,
   );
-  return json_to(js_parse_expression("{['a']:b}"));
   let r = {
     type: "ObjectExpression",
     properties: [],
   };
+  json_to(js_parse_expression("{['a']:b}"));
   each_object(lookup, (key, value) => {
     list_add(r.properties, {
       type: "Property",
