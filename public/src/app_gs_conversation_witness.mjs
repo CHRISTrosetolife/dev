@@ -133,7 +133,7 @@ export async function app_gs_conversation_witness(menu_overlay, npc, map) {
       " ",
       chapter,
       ":",
-      first.verse_number,
+      verse_number,
       first !== last ? "-" + last.verse_number : "",
       " - ",
       answer,
