@@ -4,3 +4,6 @@ icon
 
     cross Font Awesome by Dave Gandy - http://fontawesome.io
         made green
+    
+    x icon https://www.iconfinder.com/sudheepb
+    
