@@ -7,7 +7,7 @@ export function app_gs_conversation_end(div_player, menu_overlay, npc, map) {
     div_player,
     "👋 Politely end the conversation after 🙏 praying",
     () => {
-      let npc_c = app_gs_map_html_at_find_multiple(map, npc, [
+      let [c_blur, c] = app_gs_map_html_at_find_multiple(map, npc, [
         "npc_overlay_blur",
         "npc_overlay",
       ]);
