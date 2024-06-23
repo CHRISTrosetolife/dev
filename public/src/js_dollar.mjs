@@ -91,7 +91,9 @@ export function js_dollar(ast) {
       }
       if (remaining === "la") {
         let e = js_parse_expression(
-          js_code_call_args(list_adder.name, [js_code_braces()]),
+          js_code_call_args(list_adder.name, [
+            js_code_arrow_block_args(["la"], "return;"),
+          ]),
         );
         object_replace(node, e);
       }
