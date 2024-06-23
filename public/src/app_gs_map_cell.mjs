@@ -19,50 +19,48 @@ export function app_gs_map_cell(map, map_c, player_c, tile) {
   let clicker = html_div(map_c);
   let overlays = list_adder((la) =>
     each(tile.overlays, function lambda_overlay(o) {
-      list_adder((la) => {
-        if (o.type === "base") {
-          let { id: o_id } = o;
-          html_data_set(clicker, "overlay", o_id);
-          let overlay_c = game_img(map_c, game_img_base(o_id), tile, "overlay");
-          la(overlay_c);
-        } else if (o.type === "npc") {
-          let overlay_c = app_gs_character_c(map_c, o.character, o, "npc");
-          la(overlay_c);
-          html_data_set(overlay_c, "type", "npc");
-          let c_blur = html_img_element(map_c);
-          let c = html_img_element(map_c);
-          let list = [
-            {
-              component: c_blur,
-              type: "npc_overlay_blur",
-            },
-            {
-              component: c,
-              type: "npc_overlay",
-            },
-          ];
-          each(list, (item) => {
-            la(item.component);
-            html_data_set(c, "type", item.type);
-            let size = 1 / 3;
-            game_img_style_generic(
-              item.component,
-              size,
-              size,
-              item.type,
-              tile.y,
-              tile.x + 1 - size,
-            );
-          });
-          if (o.conversation_count === 0) {
-            app_gs_npc_icon_christian(c_blur, c);
-            app_gs_npc_icon_wait(c_blur, c);
-            app_gs_npc_icon_unmet(c_blur, c);
-          }
-        } else {
-          error();
+      if (o.type === "base") {
+        let { id: o_id } = o;
+        html_data_set(clicker, "overlay", o_id);
+        let overlay_c = game_img(map_c, game_img_base(o_id), tile, "overlay");
+        la(overlay_c);
+      } else if (o.type === "npc") {
+        let overlay_c = app_gs_character_c(map_c, o.character, o, "npc");
+        la(overlay_c);
+        html_data_set(overlay_c, "type", "npc");
+        let c_blur = html_img_element(map_c);
+        let c = html_img_element(map_c);
+        let list = [
+          {
+            component: c_blur,
+            type: "npc_overlay_blur",
+          },
+          {
+            component: c,
+            type: "npc_overlay",
+          },
+        ];
+        each(list, (item) => {
+          la(item.component);
+          html_data_set(c, "type", item.type);
+          let size = 1 / 3;
+          game_img_style_generic(
+            item.component,
+            size,
+            size,
+            item.type,
+            tile.y,
+            tile.x + 1 - size,
+          );
+        });
+        if (o.conversation_count === 0) {
+          app_gs_npc_icon_christian(c_blur, c);
+          app_gs_npc_icon_wait(c_blur, c);
+          app_gs_npc_icon_unmet(c_blur, c);
         }
-      });
+      } else {
+        error();
+      }
     }),
   );
   let { id } = tile;
