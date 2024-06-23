@@ -10,7 +10,7 @@ import { bible_books_html_elements } from "./bible_books_html_elements.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 import { each_object } from "./each_object.mjs";
 import { list_add } from "./list_add.mjs";
-import { json_to } from "./json_to.mjs";
+import { js_unparse } from "./js_unparse.mjs";
 export async function bible_books_prefix_to_name_generate() {
   let book_elements = await bible_books_html_elements("engbsb");
   let lookup = list_to_lookup_value(
@@ -22,7 +22,7 @@ export async function bible_books_prefix_to_name_generate() {
     type: "ObjectExpression",
     properties: [],
   };
-  log(json_to(r));
+  log(js_unparse(r));
   each_object(lookup, (key, value) => {
     list_add(r.properties, {
       type: "Property",
