@@ -19,13 +19,13 @@ export async function app_gs_conversation_witness(menu_overlay, npc, map) {
     objection_ids,
     objection_id_correct,
   );
-  let choice_wrong = await choice_get(
+  let choice_wrong = await app_gs_conversation_witness_choice(
     list_first(objection_ids_incorrect),
     () => {
       app_gs_conversation_witness_wrong(npc, map, menu_overlay);
     },
   );
-  let choice_correct = await choice_get(async () => {
+  let choice_correct = await app_gs_conversation_witness_choice(async () => {
     list_pop(npc.objections);
     await app_gs_conversation_gospel(menu_overlay, npc, map);
   });
@@ -43,7 +43,4 @@ export async function app_gs_conversation_witness(menu_overlay, npc, map) {
       choice.on_click,
     );
   });
-  async function choice_get(objection_id, on_click) {
-    return await app_gs_conversation_witness_choice(objection_id, on_click);
-  }
 }
