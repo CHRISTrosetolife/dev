@@ -4,6 +4,6 @@ export function app_gs_npc_icon_wait(c_blur, c) {
     c_blur,
     c,
     "icons/x.svg",
-    "invert(33%) sepia(69%) saturate(6226%) hue-rotate(349deg) brightness(101%) contrast(113%)",
+    "invert(14%) sepia(92%) saturate(7206%) hue-rotate(3deg) brightness(104%) contrast(105%)",
   );
 }
