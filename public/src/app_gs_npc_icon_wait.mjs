@@ -7,5 +7,5 @@ export function app_gs_npc_icon_wait(c_blur, c) {
     "icons/x.svg",
     "invert(33%) sepia(69%) saturate(6226%) hue-rotate(349deg) brightness(101%) contrast(113%)",
   );
-  app_gs_npc_icon_blur(c_blur, false);
+  app_gs_npc_icon_blur(c_blur, true);
 }
