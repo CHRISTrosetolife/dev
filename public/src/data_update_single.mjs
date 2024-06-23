@@ -34,6 +34,10 @@ export function data_update_single(ast, data) {
       ast_list: u,
       key: "literal_strings",
     },
+    {
+      ast_list: ids,
+      key: "identifiers",
+    },
   ];
   each(list, (item) => {
     let data_key = object_property_initialize(data, item.key, {});
@@ -45,14 +49,5 @@ export function data_update_single(ast, data) {
         list_remove_if_exists(k_functions, name);
       }
     });
-  });
-  let identifiers = object_property_initialize(data, "identifiers", {});
-  each(ids, (id) => object_property_initialize(identifiers, id, []));
-  each_object(identifiers, (id, id_functions) => {
-    if (list_includes(ids, id)) {
-      list_add_if_exists_not(id_functions, name);
-    } else {
-      list_remove_if_exists(id_functions, name);
-    }
   });
 }
