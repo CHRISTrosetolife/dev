@@ -33,7 +33,7 @@ export function app_gs_map_render(game, map_c, coordinates, player_c) {
           return;
         }
         let tile = map.tiles[ye][xe];
-        let components = app_gs_map_cell(map, map_c, player_c, tile);
+        let components = app_gs_map_cell(game, map_c, player_c, tile);
         rows_new[xe] = components;
       });
     });
