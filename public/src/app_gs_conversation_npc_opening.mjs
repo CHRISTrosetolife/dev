@@ -23,5 +23,5 @@ export function app_gs_conversation_npc_opening(
       await app_gs_conversation_gospel(menu_overlay, npc, map);
     },
   );
-  app_gs_conversation_end(div_player, menu_overlay, npc, map);
+  app_gs_conversation_end(context, div_player, menu_overlay, npc);
 }
