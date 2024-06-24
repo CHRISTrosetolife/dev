@@ -26,6 +26,7 @@ import { string_take } from "./string_take.mjs";
 export async function sandbox() {
   let csv_path = path_join([folder_user_downloads(), "bsb_tables.csv"]);
   let csv_string = await file_read(csv_path);
+  let split = string_split_newline(csv_string);
   return string_take(csv_string, 20);
   let from = "ceb";
   let to = "en";
