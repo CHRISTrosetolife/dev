@@ -27,7 +27,7 @@ export function app_gs_menu_pray(context, menu_overlay) {
     " Jesus, amen.",
   ]);
   html_button_width_full_text_click(menu_overlay, prayer, () => {
-    map.player.pray.conversation = true;
+    context.game.player.pray.conversation = true;
     html_remove(menu_overlay);
   });
 }
