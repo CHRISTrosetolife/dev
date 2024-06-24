@@ -5,7 +5,7 @@ import { html_button_width_full_text_click_back } from "./html_button_width_full
 import { html_clear } from "./html_clear.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_random_item } from "./list_random_item.mjs";
-export function app_gs_menu_pray(menu_overlay, map_c, map) {
+export function app_gs_menu_pray(context, menu_overlay) {
   html_clear(menu_overlay);
   html_button_width_full_text_click_back(menu_overlay, () =>
     app_gs_menu_main(menu_overlay, map_c, map),
