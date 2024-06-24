@@ -1,4 +1,3 @@
-import { app_gs_map } from "./app_gs_map.mjs";
 import { game_tile_units_css } from "./game_tile_units_css.mjs";
 import { html_style } from "./html_style.mjs";
 import { app_gs_map_extends } from "./app_gs_map_extends.mjs";
@@ -14,7 +13,6 @@ import { object_property_get } from "./object_property_get.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export function app_gs_map_render(context, coordinates) {
   assert_arguments_length(arguments, 2);
-  let map = app_gs_map(game);
   html_style(map_c, {
     width: game_tile_units_css(map.x_size),
     height: game_tile_units_css(map.y_size),
