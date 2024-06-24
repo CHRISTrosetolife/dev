@@ -23,7 +23,7 @@ export function app_gs_map_render(context, coordinates) {
     let { x, y } = c;
     each(range_from(y - y_extend, y + y_extend), (ye) => {
       let rows_new = object_property_initialize(tiles_new, ye, {});
-      let rows_old = object_property_initialize(map.html, ye, {});
+      let rows_old = object_property_initialize(context.map.html, ye, {});
       each(range_from(x - x_extend, x + x_extend), (xe) => {
         if (object_property_exists(rows_new, xe)) {
           return;
@@ -32,8 +32,8 @@ export function app_gs_map_render(context, coordinates) {
           rows_new[xe] = rows_old[xe];
           return;
         }
-        let tile = map.tiles[ye][xe];
-        let components = app_gs_map_cell(map, map_c, player_c, tile);
+        let tile = context.map.tiles[ye][xe];
+        let components = app_gs_map_cell(context, tile);
         rows_new[xe] = components;
       });
     });
