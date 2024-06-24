@@ -6,7 +6,9 @@ import { html_style } from "./html_style.mjs";
 import { html_div } from "./html_div.mjs";
 import { app_gs_menu_main } from "./app_gs_menu_main.mjs";
 import { html_clear } from "./html_clear.mjs";
-export function app_gs_menu_tiles(menu_overlay, map_c, map) {
+import { assert_arguments_length } from "./assert_arguments_length.mjs";
+export function app_gs_menu_tiles(context, menu_overlay) {
+  assert_arguments_length(arguments, 2);
   html_clear(menu_overlay);
   html_button_width_full_text_click_back(menu_overlay, () => {
     app_gs_menu_main(menu_overlay, map_c, map);
