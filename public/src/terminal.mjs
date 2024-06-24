@@ -36,6 +36,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
 import { list_remove_at } from "./list_remove_at.mjs";
 import { string_ends_with } from "./string_ends_with.mjs";
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export async function terminal() {
   let prompt = chalk().greenBright("✟") + " ";
   let context = {
@@ -215,7 +216,7 @@ export async function terminal() {
         list_add(current, s);
       }
     });
-    let suffix = " ''";
+    let suffix = string_combine_multiple([split_string, quote_string]);
     if (list_empty_not_is(current) || string_ends_with(input, suffix)) {
       token_next();
     }
