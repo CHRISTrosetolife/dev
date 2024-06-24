@@ -60,14 +60,13 @@ export async function function_aliases_generate() {
   alias_add(command_line, ["cl"]);
   alias_add(data_update, ["d"]);
   alias_add(function_delete, ["de"]);
+  alias_add(app_dev_screenshots, ["dss"]);
   alias_add(exit, exit_aliases());
   alias_add(firebase_deploy, ["f"]);
   alias_add(function_cache_new_run, ["fc"]);
   alias_add(function_cache_delete, ["fcd"]);
   alias_add(function_cache_new, ["fcn"]);
   alias_add(function_cache_refresh, ["fcr"]);
-  alias_add(functions_identifier, ["si"]);
-  alias_add(functions_string, ["ss"]);
   alias_add(function_transform, ["ft"]);
   alias_add(function_transform_all, ["fta"]);
   alias_add(function_transform_all_args, ["ftaa"]);
@@ -87,8 +86,9 @@ export async function function_aliases_generate() {
   alias_add(restart, ["re"]);
   alias_add(function_search, ["s"]);
   alias_add(sandbox, ["sb"]);
+  alias_add(functions_identifier, ["si"]);
+  alias_add(functions_string, ["ss"]);
   alias_add(function_search_open, ["so"]);
-  alias_add(app_dev_screenshots, ["ss"]);
   alias_add(terminal, ["t"]);
   alias_add(terminal_data_history, ["th"]);
   alias_add(terminal_data_history_clear, ["thc"]);
