@@ -3,7 +3,9 @@ import { html_style_height } from "./html_style_height.mjs";
 import { game_tile_units_css } from "./game_tile_units_css.mjs";
 import { html_style_width } from "./html_style_width.mjs";
 import { html_div } from "./html_div.mjs";
+import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export function app_gs_map_html(context) {
+  assert_arguments_length(arguments, 1);
   let map_c = html_div(context.root);
   html_style_width(map_c, game_tile_units_css(context.map.x_size));
   html_style_height(map_c, game_tile_units_css(context.map.y_size));
