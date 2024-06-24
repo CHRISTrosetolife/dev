@@ -9,7 +9,6 @@ export function app_gs_conversation_npc_opening(
   menu_overlay,
   npc,
   text,
-  map,
 ) {
   app_gs_conversation_npc(menu_overlay, npc, text);
   let div_player = app_gs_conversation_player_prompt(menu_overlay, "");
