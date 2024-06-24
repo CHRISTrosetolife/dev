@@ -16,7 +16,7 @@ import { app_gs_phrase_thanks } from "./app_gs_phrase_thanks.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export function app_gs_conversation(context, npc) {
   assert_arguments_length(arguments, 2);
-  let menu_overlay = app_gs_menu_overlay(map_c, map);
+  let menu_overlay = app_gs_menu_overlay(context);
   map.player.conversation_count++;
   npc.conversation_count++;
   if (app_gs_npc_conversation_wait(map, npc)) {
