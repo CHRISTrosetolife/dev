@@ -22,7 +22,7 @@ export async function app_gs_conversation_witness(context, menu_overlay, npc) {
   let choice_wrong = await app_gs_conversation_witness_choice(
     list_first(objection_ids_incorrect),
     () => {
-      app_gs_conversation_witness_wrong(npc, map, menu_overlay);
+      app_gs_conversation_witness_wrong(context, npc, menu_overlay);
     },
   );
   let choice_correct = await app_gs_conversation_witness_choice(
