@@ -10,7 +10,8 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_gs_npc_conversation_wait_count } from "./app_gs_npc_conversation_wait_count.mjs";
 export function app_gs_conversation_witness_wrong(npc, map, menu_overlay) {
   npc.conversation_wait_until =
-    map.player.conversation_count + app_gs_npc_conversation_wait_count();
+    context.game.player.conversation_count +
+    app_gs_npc_conversation_wait_count();
   let npc_text = string_combine_multiple([
     string_random_or_empty(
       string_combine_multiple([
