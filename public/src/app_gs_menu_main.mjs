@@ -1,3 +1,5 @@
+import { app_gs_load } from "./app_gs_load.mjs";
+import { app_gs_game_delete } from "./app_gs_game_delete.mjs";
 import { app_gs_menu_pray } from "./app_gs_menu_pray.mjs";
 import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
 import { app_gs_menu_tiles } from "./app_gs_menu_tiles.mjs";
@@ -15,8 +17,11 @@ export function app_gs_menu_main(context, menu_overlay) {
   html_button_width_full_text_click(menu_overlay, "🙏 pray", () => {
     app_gs_menu_pray(context, menu_overlay);
   });
-  html_button_width_full_text_click(menu_overlay, "🌱 new game", () => {
-    app_gs_menu_system_logs(context, menu_overlay);
+  html_button_width_full_text_click(menu_overlay, "🌱 new game", async () => {
+    if (0) {
+      app_gs_game_delete();
+    }
+    await app_gs_load(context);
   });
   html_button_width_full_text_click(menu_overlay, "💻 system logs", () => {
     app_gs_menu_system_logs(context, menu_overlay);
