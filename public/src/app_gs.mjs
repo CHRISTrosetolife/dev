@@ -47,7 +47,7 @@ export async function app_gs() {
   }
   context.map = app_gs_map(game);
   context.map_c = app_gs_map_html(context);
-  html_scrollable_hide(root, map_c);
+  html_scrollable_hide(context);
   let player_c = app_gs_player_c(map_c, game);
   context.html = [];
   app_gs_map_render(game, map_c, [map.player], player_c);
