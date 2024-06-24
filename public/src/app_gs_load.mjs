@@ -11,6 +11,7 @@ import { app_gs_player_new } from "./app_gs_player_new.mjs";
 import { app_gs } from "./app_gs.mjs";
 import { storage_local_initialize_lambda } from "./storage_local_initialize_lambda.mjs";
 import { html_remove } from "./html_remove.mjs";
+import { object_property_exists } from "./object_property_exists.mjs";
 export async function app_gs_load(context) {
   let game = storage_local_initialize_lambda(app_gs, "game", () => {
     let game = {};
@@ -31,7 +32,9 @@ export async function app_gs_load(context) {
   context.map = context.game.maps[context.game.player.map];
   let keys = ["map_c", "player_c"];
   each(keys, (item) => {
-    html_remove(object_property_get(context, item));
+    if (object_property_exists(context, item)) {
+      html_remove(object_property_get(context, item));
+    }
   });
   context.map_c = app_gs_map_html(context);
   html_scrollable_hide(context);
