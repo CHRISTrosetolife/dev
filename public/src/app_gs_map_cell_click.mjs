@@ -42,7 +42,7 @@ export async function app_gs_map_cell_click(context, tile) {
       let npc_c = app_gs_map_html_at_find(map, npc, "npc");
       let sleep_time = app_gs_sleep_time_face();
       await sleep(sleep_time);
-      app_gs_walk_direction(context.player_c, context.player, npc);
+      app_gs_walk_direction(context.player_c, player, npc);
       await sleep(sleep_time);
       app_gs_walk_direction(npc_c, npc, player);
       app_gs_conversation(map_c, map, npc);
