@@ -25,7 +25,6 @@ export async function app_gs() {
     });
     return game;
   });
-  let { maps } = game;
   let d = html_style_button_default_value();
   object_merge(d, {
     "margin-left": "0",
@@ -34,6 +33,7 @@ export async function app_gs() {
   if (html_hostname() !== "localhost") {
     html_scale_none();
   }
+  let map = game.maps[game.player.map_index];
   let map_c = app_gs_map_html(root, map);
   html_scrollable_hide(root, map_c);
   let player_c = app_gs_player_c(map_c, map);
