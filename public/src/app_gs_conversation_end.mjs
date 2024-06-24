@@ -14,7 +14,7 @@ export function app_gs_conversation_end(
     () => {
       let c_blur = app_gs_map_html_at_find(context, npc, "npc_overlay_blur");
       let c = app_gs_map_html_at_find(context, npc, "npc_overlay");
-      app_gs_npc_icon_update(map, npc, c_blur, c);
+      app_gs_npc_icon_update(context, npc, c_blur, c);
       html_remove(menu_overlay);
     },
   );
