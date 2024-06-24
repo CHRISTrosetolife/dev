@@ -201,12 +201,13 @@ export async function terminal() {
   }
   function tokens_get(input) {
     let split_string = " ";
+    let quote_string = "'";
     let tokens = [];
     let current = [];
     let quoted = false;
     let split = string_split_empty(input);
     each(split, (s) => {
-      if (s === "'") {
+      if (s === quote_string) {
         quoted = not(quoted);
       } else if (s === split_string && !quoted) {
         token_next();
