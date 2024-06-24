@@ -1,3 +1,4 @@
+import { string_split_empty } from "./string_split_empty.mjs";
 import { list_remove_multiple_at } from "./list_remove_multiple_at.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_split_newline } from "./string_split_newline.mjs";
@@ -31,6 +32,7 @@ export async function sandbox() {
   let csv_lines = string_split_newline(csv_string);
   list_remove_multiple_at(csv_lines, 0, 2);
   list_map(csv_lines, (line) => {
+    let split = string_split_empty(input);
     return;
   });
   return list_first(csv_lines);
