@@ -19,6 +19,14 @@ export async function app_gs() {
   object_merge(context, {
     root,
   });
+  let d = html_style_button_default_value();
+  object_merge(d, {
+    "margin-left": "0",
+    "margin-right": "0",
+  });
+  if (html_hostname() !== "localhost") {
+    html_scale_none();
+  }
   if (0) {
     storage_local_remove(app_gs, "game");
   }
@@ -38,14 +46,6 @@ export async function app_gs() {
   object_merge(context, {
     game,
   });
-  let d = html_style_button_default_value();
-  object_merge(d, {
-    "margin-left": "0",
-    "margin-right": "0",
-  });
-  if (html_hostname() !== "localhost") {
-    html_scale_none();
-  }
   context.map = context.game.maps[context.game.player.map];
   context.map_c = app_gs_map_html(context);
   html_scrollable_hide(context);
