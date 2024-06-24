@@ -39,6 +39,6 @@ export async function app_gs() {
   html_scrollable_hide(root, map_c);
   let player_c = app_gs_player_c(map_c, map);
   map.html = [];
-  app_gs_map_render(map, map_c, [map.player], player_c);
+  app_gs_map_render(game, map_c, [map.player], player_c);
   await html_scroll_center_smooth(player_c);
 }
