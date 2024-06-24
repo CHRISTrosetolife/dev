@@ -47,7 +47,7 @@ export async function app_gs_map_cell_click(context, tile) {
       app_gs_walk_direction(npc_c, npc, player);
       app_gs_conversation(context, npc);
     } else {
-      let menu_overlay = app_gs_menu_overlay(map_c, map);
+      let menu_overlay = app_gs_menu_overlay(context);
       let div_pray_reminder = app_gs_overlay_speech(menu_overlay);
       let div_pray_reminder_inner = app_gs_div_rounded_transparent(
         div_pray_reminder,
