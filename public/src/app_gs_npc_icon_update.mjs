@@ -1,9 +1,11 @@
+import { app_gs_map } from "./app_gs_map.mjs";
 import { app_gs_npc_icon_unconverted } from "./app_gs_npc_icon_unconverted.mjs";
 import { app_gs_npc_icon_unknown } from "./app_gs_npc_icon_unknown.mjs";
 import { app_gs_npc_icon_wait } from "./app_gs_npc_icon_wait.mjs";
 import { app_gs_npc_conversation_wait } from "./app_gs_npc_conversation_wait.mjs";
 import { app_gs_npc_icon_christian } from "./app_gs_npc_icon_christian.mjs";
-export function app_gs_npc_icon_update(map, npc, c_blur, c) {
+export function app_gs_npc_icon_update(game, npc, c_blur, c) {
+  let map = app_gs_map(game);
   if (app_gs_npc_conversation_wait(map, npc)) {
     app_gs_npc_icon_wait(c_blur, c);
   } else if (npc.christian) {
