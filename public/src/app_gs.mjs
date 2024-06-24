@@ -1,3 +1,4 @@
+import { app_gs_player_new } from "./app_gs_player_new.mjs";
 import { storage_local_initialize_lambda } from "./storage_local_initialize_lambda.mjs";
 import { app_gs_player_c } from "./app_gs_player_c.mjs";
 import { html_scrollable_hide } from "./html_scrollable_hide.mjs";
@@ -15,6 +16,8 @@ export async function app_gs() {
   let root = app_gs_style_default_initialize();
   let game = storage_local_initialize_lambda(app_gs.name, "game", () => {
     let game = {};
+    app_gs_player_new(game);
+    object_merge(map.player, spawn);
     let map = app_gs_map_new();
     object_merge(game, {
       maps: [map],
