@@ -29,7 +29,7 @@ export async function app_gs_map_cell_click(context, tile) {
         let menu_overlay = app_gs_menu_overlay(context);
         app_gs_menu_main(context, menu_overlay);
       } else {
-        await app_gs_walk_path(map, map_c, player_c, path);
+        await app_gs_walk_path(context, path);
       }
     }
   } else {
