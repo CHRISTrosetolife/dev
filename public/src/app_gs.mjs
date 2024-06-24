@@ -1,3 +1,4 @@
+import { storage_local_initialize_lambda } from "./storage_local_initialize_lambda.mjs";
 import { app_gs_player_c } from "./app_gs_player_c.mjs";
 import { html_scrollable_hide } from "./html_scrollable_hide.mjs";
 import { object_merge } from "./object_merge.mjs";
@@ -12,6 +13,7 @@ import { app_gs_map_new } from "./app_gs_map_new.mjs";
 export async function app_gs() {
   history.scrollRestoration = "manual";
   let root = app_gs_style_default_initialize();
+  storage_local_initialize_lambda();
   let map = app_gs_map_new();
   let game = {
     map,
