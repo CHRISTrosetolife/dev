@@ -22,10 +22,11 @@ import { assert } from "./assert.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { path_join } from "./path_join.mjs";
 import { file_read } from "./file_read.mjs";
+import { string_take } from "./string_take.mjs";
 export async function sandbox() {
   let csv_path = path_join([folder_user_downloads(), "bsb_tables.csv"]);
   let csv_string = await file_read(csv_path);
-  return;
+  return string_take(csv_string, 20);
   let from = "ceb";
   let to = "en";
   let audio_upload_run = true;
