@@ -38,7 +38,7 @@ export async function app_gs_walk(context, destination) {
         direction,
         context.player.walk_offset,
       );
-      html_img_src(player_c, game_img_character(player.character, di));
+      html_img_src(player_c, game_img_character(context.player.character, di));
       let delta = game_direction_to_delta(direction);
       game_img_position(
         player_c,
