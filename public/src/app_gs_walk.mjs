@@ -53,7 +53,7 @@ export async function app_gs_walk(context, destination) {
       let value =
         object_property_get(context.player, xy) +
         object_property_get(delta, xy);
-      object_property_set(context.player, xy, value);
+      object_property_set(context.game.player, xy, value);
     });
   });
 }
