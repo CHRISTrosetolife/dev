@@ -13,7 +13,9 @@ import { game_img } from "./game_img.mjs";
 import { html_data_set } from "./html_data_set.mjs";
 import { html_div } from "./html_div.mjs";
 import { list_concat } from "./list_concat.mjs";
+import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export function app_gs_map_cell(context, tile) {
+  assert_arguments_length(arguments, 2);
   let clicker = html_div(map_c);
   let overlays = list_adder((la) =>
     each(tile.overlays, function lambda_overlay(o) {
