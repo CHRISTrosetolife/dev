@@ -21,8 +21,10 @@ import { file_read_json } from "./file_read_json.mjs";
 import { assert } from "./assert.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { path_join } from "./path_join.mjs";
+import { file_read } from "./file_read.mjs";
 export async function sandbox() {
   let csv_path = path_join([folder_user_downloads(), "bsb_tables.csv"]);
+  await file_read(csv_path);
   return;
   let from = "ceb";
   let to = "en";
