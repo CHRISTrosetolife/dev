@@ -39,12 +39,12 @@ export async function app_gs_walk(context, destination) {
         context.game.player.walk_offset,
       );
       html_img_src(
-        context.game.player_c,
+        context.player_c,
         game_img_character(context.game.player.character, di),
       );
       let delta = game_direction_to_delta(direction);
       game_img_position(
-        context.game.player_c,
+        context.player_c,
         context.game.player.y + (delta.y / animate_count) * step_count,
         context.game.player.x + (delta.x / animate_count) * step_count,
       );
