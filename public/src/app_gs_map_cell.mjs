@@ -73,7 +73,7 @@ export function app_gs_map_cell(context, tile) {
   let tile_c = game_img(context.map_c, game_img_base(id), tile, "tile");
   game_img_style(clicker, tile.y, tile.x, "clicker");
   html_on_click(clicker, async () => {
-    await app_gs_map_cell_click(game, map_c, player_c, tile);
+    await app_gs_map_cell_click(context, tile);
   });
   return list_concat([tile_c, clicker], overlays);
 }
