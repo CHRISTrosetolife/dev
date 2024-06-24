@@ -26,6 +26,7 @@ export async function app_gs_load(context) {
     game,
   });
   context.map = context.game.maps[context.game.player.map];
+  let keys = ["map_c", "player_c"];
   context.map_c = app_gs_map_html(context);
   html_scrollable_hide(context);
   context.player_c = app_gs_player_c(context);
