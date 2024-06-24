@@ -20,7 +20,7 @@ export function app_gs_conversation_npc_opening(
       " that Jesus ✝️ died, was 🪨 buried and 🤴🏽 rose to life!",
     ]),
     async () => {
-      await app_gs_conversation_gospel(menu_overlay, npc, map);
+      await app_gs_conversation_gospel(context, menu_overlay, npc);
     },
   );
   app_gs_conversation_end(context, div_player, menu_overlay, npc);
