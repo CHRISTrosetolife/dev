@@ -9,5 +9,5 @@ export function app_gs_conversation_npc_end(
 ) {
   app_gs_conversation_npc(menu_overlay, npc, npc_text);
   let div_player = app_gs_conversation_player_prompt(menu_overlay, "");
-  app_gs_conversation_end(div_player, menu_overlay, npc, map);
+  app_gs_conversation_end(context, div_player, menu_overlay, npc);
 }
