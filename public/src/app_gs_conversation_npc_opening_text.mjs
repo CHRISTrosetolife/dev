@@ -13,7 +13,7 @@ export function app_gs_conversation_npc_opening_text(context, npc) {
   let greeting = string_combine_multiple([
     list_random_item(["Hello", "Hey", "Greetings", "Hi"]),
     ", ",
-    map.player.name,
+    context.player.name,
     "!",
   ]);
   let opening = ["👋", greeting];
