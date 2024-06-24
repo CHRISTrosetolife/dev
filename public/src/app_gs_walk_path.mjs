@@ -11,5 +11,5 @@ export async function app_gs_walk_path(context, path) {
     await app_gs_walk(context, tile);
   });
   await html_scroll_center_smooth(player_c);
-  app_gs_map_render(context, [map.player]);
+  app_gs_map_render(context, [context.game.player]);
 }
