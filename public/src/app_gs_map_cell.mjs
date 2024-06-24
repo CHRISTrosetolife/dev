@@ -39,7 +39,7 @@ export function app_gs_map_cell(context, tile) {
         la(overlay_c);
         html_data_set(overlay_c, "type", "npc");
         let c_blur = html_img_element(context.map_c);
-        let c = html_img_element(map_c);
+        let c = html_img_element(context.map_c);
         let list = [
           {
             component: c_blur,
