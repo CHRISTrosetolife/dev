@@ -22,7 +22,7 @@ export async function app_gs_walk(context, destination) {
     destination,
   );
   let steps_count =
-    abs(player.y - destination.y) + abs(player.x - destination.x);
+    abs(context.player.y - destination.y) + abs(player.x - destination.x);
   await each_range_async(steps_count, async () => {
     let animate_count = 2;
     await each_range_async(animate_count, async (ac) => {
