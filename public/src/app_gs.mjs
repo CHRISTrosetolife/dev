@@ -19,7 +19,7 @@ export async function app_gs() {
   object_merge(context, {
     root,
   });
-  if (10) {
+  if (0) {
     storage_local_remove(app_gs, "game");
   }
   let game = storage_local_initialize_lambda(app_gs, "game", () => {
