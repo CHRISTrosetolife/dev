@@ -5,7 +5,9 @@ import { app_gs_menu_system_logs } from "./app_gs_menu_system_logs.mjs";
 import { html_remove } from "./html_remove.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_clear } from "./html_clear.mjs";
+import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export function app_gs_menu_main(context, menu_overlay) {
+  assert_arguments_length(arguments, 2);
   html_clear(menu_overlay);
   html_button_width_full_text_click_back(menu_overlay, () => {
     html_remove(menu_overlay);
