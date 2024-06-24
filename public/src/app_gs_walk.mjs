@@ -41,9 +41,9 @@ export async function app_gs_walk(context, destination) {
       html_img_src(player_c, game_img_character(context.player.character, di));
       let delta = game_direction_to_delta(direction);
       game_img_position(
-        player_c,
-        player.y + (delta.y / animate_count) * step_count,
-        player.x + (delta.x / animate_count) * step_count,
+        context.player_c,
+        context.player.y + (delta.y / animate_count) * step_count,
+        context.player.x + (delta.x / animate_count) * step_count,
       );
       let sleep_time = app_gs_sleep_time_walk();
       await sleep(sleep_time);
