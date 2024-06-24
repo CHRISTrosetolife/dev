@@ -1,4 +1,4 @@
-import { app_gs } from "./app_gs.mjs";
+import { app_gs_save } from "./app_gs_save.mjs";
 import { app_gs_map_html_at_find } from "./app_gs_map_html_at_find.mjs";
 import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
 import { app_gs_div_rounded_transparent } from "./app_gs_div_rounded_transparent.mjs";
@@ -19,7 +19,6 @@ import { app_gs_map_neighbors_get } from "./app_gs_map_neighbors_get.mjs";
 import { app_gs_overlays_any_wall } from "./app_gs_overlays_any_wall.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
-import { storage_local_set } from "./storage_local_set.mjs";
 export async function app_gs_map_cell_click(context, tile) {
   assert_arguments_length(arguments, 2);
   let npc = list_find_property_or(tile.overlays, "type", "npc", null);
@@ -32,7 +31,7 @@ export async function app_gs_map_cell_click(context, tile) {
         app_gs_menu_main(context, menu_overlay);
       } else {
         await app_gs_walk_path(context, path);
-        storage_local_set(app_gs, "game", context.game);
+        app_gs_save(context);
       }
     }
   } else {
