@@ -1,3 +1,4 @@
+import { tokens_simple } from "./tokens_simple.mjs";
 import { terminal_commands } from "./terminal_commands.mjs";
 import { list_filter_indices } from "./list_filter_indices.mjs";
 import { each_reverse } from "./each_reverse.mjs";
@@ -14,15 +15,12 @@ import { chalk } from "./chalk.mjs";
 import { exit_aliases } from "./exit_aliases.mjs";
 import { unawait } from "./unawait.mjs";
 import { list_pop } from "./list_pop.mjs";
-import { list_empty_not_is } from "./list_empty_not_is.mjs";
-import { not } from "./not.mjs";
 import { counter_async } from "./counter_async.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { list_any } from "./list_any.mjs";
 import { log_clear } from "./log_clear.mjs";
 import { string_replace } from "./string_replace.mjs";
 import { exit } from "./exit.mjs";
-import { string_split_empty } from "./string_split_empty.mjs";
 import { equal_json } from "./equal_json.mjs";
 import { log_write } from "./log_write.mjs";
 import { list_join_empty } from "./list_join_empty.mjs";
@@ -35,8 +33,6 @@ import { each_async } from "./each_async.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
 import { list_remove_at } from "./list_remove_at.mjs";
-import { string_ends_with } from "./string_ends_with.mjs";
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export async function terminal() {
   let prompt = chalk().greenBright("✟") + " ";
   let context = {
@@ -203,32 +199,6 @@ export async function terminal() {
   function terminal_tokens_get(input) {
     let split_string = " ";
     let quote_string = "'";
-    let tokens = [];
-    let current = [];
-    let quoted = false;
-    let split = string_split_empty(input);
-    each(split, (s) => {
-      if (s === quote_string) {
-        quoted = not(quoted);
-      } else if (s === split_string && !quoted) {
-        token_next();
-      } else {
-        list_add(current, s);
-      }
-    });
-    let suffix = string_combine_multiple([
-      split_string,
-      quote_string,
-      quote_string,
-    ]);
-    if (list_empty_not_is(current) || string_ends_with(input, suffix)) {
-      token_next();
-    }
-    function token_next() {
-      let token = list_join_empty(current);
-      current = [];
-      list_add(tokens, token);
-    }
-    return tokens;
+    return tokens_simple(input, quote_string, split_string);
   }
 }
