@@ -6,7 +6,6 @@ import { list_map } from "./list_map.mjs";
 import { app_gs_objection_ids } from "./app_gs_objection_ids.mjs";
 import { app_gs_npc_new } from "./app_gs_npc_new.mjs";
 import { app_gs_tile_overlay_add } from "./app_gs_tile_overlay_add.mjs";
-import { app_gs_player_new } from "./app_gs_player_new.mjs";
 import { app_gs_overlays_bushes } from "./app_gs_overlays_bushes.mjs";
 import { app_gs_map_extends } from "./app_gs_map_extends.mjs";
 import { list_remove } from "./list_remove.mjs";
@@ -162,8 +161,6 @@ export function app_gs_map_new() {
     let id = list_random_item(overlays);
     overlay_add_base(tile, id);
   });
-  app_gs_player_new(map);
-  object_merge(map.player, spawn);
   let objection_ids_all = app_gs_objection_ids();
   while (list_empty_not_is(objection_ids_all)) {
     let max = number_min(list_size(objection_ids_all), 3);
