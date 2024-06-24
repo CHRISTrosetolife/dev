@@ -13,6 +13,9 @@ export async function app_gs() {
   history.scrollRestoration = "manual";
   let root = app_gs_style_default_initialize();
   let map = app_gs_map_new();
+  let game = {
+    map,
+  };
   let d = html_style_button_default_value();
   object_merge(d, {
     "margin-left": "0",
