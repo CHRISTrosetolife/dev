@@ -2,7 +2,7 @@ import { html_id } from "./html_id.mjs";
 import { html_style } from "./html_style.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 import { html_element } from "./html_element.mjs";
-export function html_scrollable_hide(root, map_c) {
+export function html_scrollable_hide(context) {
   html_style(context.root, {
     overflow: "hidden",
   });
