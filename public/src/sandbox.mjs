@@ -23,6 +23,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { path_join } from "./path_join.mjs";
 export async function sandbox() {
   let csv_path = path_join([folder_user_downloads(), "bsb_tables.csv"]);
+  return;
   let from = "ceb";
   let to = "en";
   let audio_upload_run = true;
