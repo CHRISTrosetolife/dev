@@ -32,7 +32,7 @@ export async function app_gs_map_cell_click(context, tile) {
         app_gs_menu_main(context, menu_overlay);
       } else {
         await app_gs_walk_path(context, path);
-        storage_local_set(app_gs, "game");
+        storage_local_set(app_gs, "game", context.game);
       }
     }
   } else {
