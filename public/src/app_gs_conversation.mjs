@@ -1,5 +1,4 @@
 import { app_gs_npc_conversation_wait } from "./app_gs_npc_conversation_wait.mjs";
-import { log } from "./log.mjs";
 import { app_gs_phrase_what_youve_said } from "./app_gs_phrase_what_youve_said.mjs";
 import { app_gs_phrase_exclaim_or_period } from "./app_gs_phrase_exclaim_or_period.mjs";
 import { app_gs_phrase_let_us } from "./app_gs_phrase_let_us.mjs";
@@ -20,10 +19,6 @@ export function app_gs_conversation(context, npc) {
   map.player.conversation_count++;
   npc.conversation_count++;
   if (app_gs_npc_conversation_wait(context, npc)) {
-    log({
-      player: map.player,
-      npc,
-    });
     let sentences = [
       string_random_or_empty(
         string_combine_multiple([
