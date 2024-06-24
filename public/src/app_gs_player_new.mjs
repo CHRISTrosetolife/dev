@@ -1,7 +1,7 @@
 import { bible_names_men } from "./bible_names_men.mjs";
 import { game_img_list_male } from "./game_img_list_male.mjs";
 import { list_random_item } from "./list_random_item.mjs";
-export function app_gs_player_new(game) {
+export function app_gs_player_new() {
   let player = {};
   player.walk_offset = 0;
   player.walk_previous = 1;
