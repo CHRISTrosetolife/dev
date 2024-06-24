@@ -16,13 +16,18 @@ import { list_concat } from "./list_concat.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export function app_gs_map_cell(context, tile) {
   assert_arguments_length(arguments, 2);
-  let clicker = html_div(map_c);
+  let clicker = html_div(context.map_c);
   let overlays = list_adder((la) =>
     each(tile.overlays, function lambda_overlay(o) {
       if (o.type === "base") {
         let { id: o_id } = o;
         html_data_set(clicker, "overlay", o_id);
-        let overlay_c = game_img(map_c, game_img_base(o_id), tile, "overlay");
+        let overlay_c = game_img(
+          context.map_c,
+          game_img_base(o_id),
+          tile,
+          "overlay",
+        );
         la(overlay_c);
       } else if (o.type === "npc") {
         let overlay_c = app_gs_character_c(map_c, o.character, o, "npc");
