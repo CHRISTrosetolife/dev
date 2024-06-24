@@ -13,7 +13,9 @@ import { string_random_or_empty } from "./string_random_or_empty.mjs";
 import { app_gs_phrase_combine } from "./app_gs_phrase_combine.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
 import { app_gs_phrase_thanks } from "./app_gs_phrase_thanks.mjs";
+import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export function app_gs_conversation(context, npc) {
+  assert_arguments_length(arguments, 2);
   let menu_overlay = app_gs_menu_overlay(map_c, map);
   map.player.conversation_count++;
   npc.conversation_count++;
