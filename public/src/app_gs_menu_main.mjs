@@ -11,7 +11,7 @@ export function app_gs_menu_main(context, menu_overlay) {
     html_remove(menu_overlay);
   });
   html_button_width_full_text_click(menu_overlay, "🙏 pray", () => {
-    app_gs_menu_pray(menu_overlay, map_c, map);
+    app_gs_menu_pray(context, menu_overlay);
   });
   html_button_width_full_text_click(menu_overlay, "💻 system logs", () => {
     app_gs_menu_system_logs(menu_overlay, map_c, map);
