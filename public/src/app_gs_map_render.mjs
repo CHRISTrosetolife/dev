@@ -23,7 +23,7 @@ export function app_gs_map_render(context, coordinates) {
     let { x, y } = c;
     each(range_from(y - y_extend, y + y_extend), (ye) => {
       let rows_new = object_property_initialize(tiles_new, ye, {});
-      let rows_old = object_property_initialize(context.map.html, ye, {});
+      let rows_old = object_property_initialize(context.html, ye, {});
       each(range_from(x - x_extend, x + x_extend), (xe) => {
         if (object_property_exists(rows_new, xe)) {
           return;
