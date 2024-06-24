@@ -114,6 +114,6 @@ export function app_gs_conversation_convert(context, menu_overlay, npc) {
         ]),
       ]),
     ]),
-    map,
+    context.map,
   );
 }
