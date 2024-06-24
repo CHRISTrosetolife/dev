@@ -1,4 +1,3 @@
-import { app_gs_map } from "./app_gs_map.mjs";
 import { game_tile_units_css } from "./game_tile_units_css.mjs";
 import { html_style } from "./html_style.mjs";
 import { app_gs_map_extends } from "./app_gs_map_extends.mjs";
@@ -11,8 +10,7 @@ import { app_gs_map_cell } from "./app_gs_map_cell.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { each_object } from "./each_object.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-export function app_gs_map_render(game, map_c, coordinates, player_c) {
-  let map = app_gs_map(game);
+export function app_gs_map_render(map, map_c, coordinates, player_c) {
   html_style(map_c, {
     width: game_tile_units_css(map.x_size),
     height: game_tile_units_css(map.y_size),
@@ -33,7 +31,7 @@ export function app_gs_map_render(game, map_c, coordinates, player_c) {
           return;
         }
         let tile = map.tiles[ye][xe];
-        let components = app_gs_map_cell(game, map_c, player_c, tile);
+        let components = app_gs_map_cell(map, map_c, player_c, tile);
         rows_new[xe] = components;
       });
     });
