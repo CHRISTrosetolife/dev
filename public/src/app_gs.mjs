@@ -44,7 +44,7 @@ export async function app_gs() {
   if (html_hostname() !== "localhost") {
     html_scale_none();
   }
-  context.map = app_gs_map(game);
+  context.map = game.maps[game.player.map];
   context.map_c = app_gs_map_html(context);
   html_scrollable_hide(context);
   context.player_c = app_gs_player_c(context);
