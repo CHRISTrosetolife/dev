@@ -54,5 +54,5 @@ export function app_gs_conversation_witness_wrong(context, npc, menu_overlay) {
     ".",
   ]);
   html_clear(menu_overlay);
-  app_gs_conversation_npc_end(menu_overlay, npc, npc_text, map);
+  app_gs_conversation_npc_end(context, menu_overlay, npc, npc_text);
 }
