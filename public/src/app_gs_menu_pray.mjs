@@ -5,7 +5,9 @@ import { html_button_width_full_text_click_back } from "./html_button_width_full
 import { html_clear } from "./html_clear.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_random_item } from "./list_random_item.mjs";
+import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export function app_gs_menu_pray(context, menu_overlay) {
+  assert_arguments_length(arguments, 2);
   html_clear(menu_overlay);
   html_button_width_full_text_click_back(menu_overlay, () =>
     app_gs_menu_main(context, menu_overlay),
