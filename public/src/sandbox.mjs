@@ -29,7 +29,7 @@ export async function sandbox() {
   let csv_path = path_join([folder_user_downloads(), "bsb_tables.csv"]);
   let csv_string = await file_read(csv_path);
   let split = string_split_newline(csv_string);
-  list_remove_multiple_at(split, 0);
+  list_remove_multiple_at(split, 0, 2);
   list_map(split);
   return list_first(split);
   let from = "ceb";
