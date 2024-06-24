@@ -13,7 +13,9 @@ import { game_direction_to_delta } from "./game_direction_to_delta.mjs";
 import { each_range_async } from "./each_range_async.mjs";
 import { abs } from "./abs.mjs";
 import { game_img_character } from "./game_img_character.mjs";
+import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export async function app_gs_walk(context, destination) {
+  assert_arguments_length(arguments, 2);
   let direction = app_gs_walk_direction(player_c, player, destination);
   let steps_count =
     abs(player.y - destination.y) + abs(player.x - destination.x);
