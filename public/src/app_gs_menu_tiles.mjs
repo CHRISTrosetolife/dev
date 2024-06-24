@@ -11,7 +11,7 @@ export function app_gs_menu_tiles(context, menu_overlay) {
   assert_arguments_length(arguments, 2);
   html_clear(menu_overlay);
   html_button_width_full_text_click_back(menu_overlay, () => {
-    app_gs_menu_main(menu_overlay, map_c, map);
+    app_gs_menu_main(context, menu_overlay);
   });
   let container = html_div(menu_overlay);
   html_style(container, {
