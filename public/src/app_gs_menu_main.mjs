@@ -18,9 +18,7 @@ export function app_gs_menu_main(context, menu_overlay) {
     app_gs_menu_pray(context, menu_overlay);
   });
   html_button_width_full_text_click(menu_overlay, "🌱 new game", async () => {
-    if (0) {
-      app_gs_game_delete();
-    }
+    app_gs_game_delete();
     await app_gs_load(context);
   });
   html_button_width_full_text_click(menu_overlay, "💻 system logs", () => {
