@@ -167,7 +167,7 @@ export function app_gs_map_new(game) {
     let objection_ids = list_map(range(integer_random(0, max)), (i) =>
       list_pop(objection_ids_all),
     );
-    app_gs_npc_new(map, inside, objection_ids);
+    app_gs_npc_new(game, inside, objection_ids);
   }
   return map;
   function overlay_add_base(tile, id) {
