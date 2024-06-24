@@ -58,10 +58,10 @@ export function app_gs_conversation(context, npc) {
     ];
     list_shuffle(sentences);
     app_gs_conversation_npc_end(
+      context,
       menu_overlay,
       npc,
       app_gs_phrase_combine(sentences),
-      map,
     );
   } else {
     let text = app_gs_conversation_npc_opening_text(map, npc);
