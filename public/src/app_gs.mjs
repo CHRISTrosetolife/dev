@@ -30,6 +30,9 @@ export async function app_gs() {
     });
     return game;
   });
+  let context = {
+    game,
+  };
   let d = html_style_button_default_value();
   object_merge(d, {
     "margin-left": "0",
