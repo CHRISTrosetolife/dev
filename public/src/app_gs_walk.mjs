@@ -16,7 +16,11 @@ import { game_img_character } from "./game_img_character.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export async function app_gs_walk(context, destination) {
   assert_arguments_length(arguments, 2);
-  let direction = app_gs_walk_direction(player_c, player, destination);
+  let direction = app_gs_walk_direction(
+    context.player_c,
+    context.player,
+    destination,
+  );
   let steps_count =
     abs(player.y - destination.y) + abs(player.x - destination.x);
   await each_range_async(steps_count, async () => {
