@@ -8,7 +8,7 @@ export async function app_gs_walk_path(context, path) {
   assert_arguments_length(arguments, 2);
   app_gs_map_render(context, path);
   await each_async(list_skip(path, 1), async (tile) => {
-    await app_gs_walk(player_c, map.player, tile);
+    await app_gs_walk(context, tile);
   });
   await html_scroll_center_smooth(player_c);
   app_gs_map_render(map, map_c, [map.player], player_c);
