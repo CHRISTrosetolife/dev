@@ -17,8 +17,8 @@ export async function app_gs() {
   let game = storage_local_initialize_lambda(app_gs.name, "game", () => {
     let game = {};
     app_gs_player_new(game);
-    object_merge(map.player, spawn);
     let map = app_gs_map_new();
+    object_merge(game.player, map.spawn);
     object_merge(game, {
       maps: [map],
     });
