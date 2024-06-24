@@ -24,7 +24,7 @@ import { path_join } from "./path_join.mjs";
 import { file_read } from "./file_read.mjs";
 export async function sandbox() {
   let csv_path = path_join([folder_user_downloads(), "bsb_tables.csv"]);
-  await file_read(csv_path);
+  let csv_string = await file_read(csv_path);
   return;
   let from = "ceb";
   let to = "en";
