@@ -1,3 +1,4 @@
+import { list_map } from "./list_map.mjs";
 import { string_split_newline } from "./string_split_newline.mjs";
 import { folder_user_downloads } from "./folder_user_downloads.mjs";
 import { list_to_lookup_key_value_property } from "./list_to_lookup_key_value_property.mjs";
@@ -23,12 +24,12 @@ import { assert } from "./assert.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { path_join } from "./path_join.mjs";
 import { file_read } from "./file_read.mjs";
-import { list_remove_at } from "./list_remove_at.mjs";
 export async function sandbox() {
   let csv_path = path_join([folder_user_downloads(), "bsb_tables.csv"]);
   let csv_string = await file_read(csv_path);
   let split = string_split_newline(csv_string);
-  list_remove_at(split, 0);
+  list_remove_at_multiple(split, 0);
+  list_map(split);
   return list_first(split);
   let from = "ceb";
   let to = "en";
