@@ -3,6 +3,7 @@ import { game_img_list_male } from "./game_img_list_male.mjs";
 import { list_random_item } from "./list_random_item.mjs";
 export function app_gs_player_new() {
   let player = {};
+  player.direction = "down";
   player.walk_offset = 0;
   player.walk_previous = 1;
   player.character = list_random_item(game_img_list_male());
@@ -12,6 +13,5 @@ export function app_gs_player_new() {
   };
   player.conversation_count = 0;
   player.map = 0;
-  player.direction = "down";
   return player;
 }
