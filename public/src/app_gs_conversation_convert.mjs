@@ -15,6 +15,7 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export function app_gs_conversation_convert(context, menu_overlay, npc) {
   npc.christian = true;
   app_gs_conversation_npc_opening(
+    context,
     menu_overlay,
     npc,
     app_gs_phrase_combine_multiple([
@@ -114,6 +115,5 @@ export function app_gs_conversation_convert(context, menu_overlay, npc) {
         ]),
       ]),
     ]),
-    context.map,
   );
 }
