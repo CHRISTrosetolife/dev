@@ -37,7 +37,7 @@ export function app_gs_map_new(game) {
   let { y_extend, x_extend } = app_gs_map_extends();
   let border_thickness_y = y_extend;
   let border_thickness_x = x_extend;
-  let y_size_inside = 8;
+  let y_size_inside = 20;
   let x_size_inside = y_size_inside;
   let y_size = add(y_size_inside, border_thickness_y * 2);
   let x_size = add(x_size_inside, border_thickness_x * 2);
