@@ -28,11 +28,11 @@ export async function app_gs_walk(context, destination) {
     let animate_count = 2;
     await each_range_async(animate_count, async (ac) => {
       let step_count = add_1(ac);
-      if (player.walk_offset === 0) {
-        player.walk_offset = -player.walk_previous;
-        player.walk_previous = player.walk_offset;
+      if (context.player.walk_offset === 0) {
+        context.player.walk_offset = -context.player.walk_previous;
+        context.player.walk_previous = context.player.walk_offset;
       } else {
-        player.walk_offset = 0;
+        context.player.walk_offset = 0;
       }
       let di = game_character_direction_index(direction, player.walk_offset);
       html_img_src(player_c, game_img_character(player.character, di));
