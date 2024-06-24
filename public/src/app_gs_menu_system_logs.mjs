@@ -10,7 +10,7 @@ export function app_gs_menu_system_logs(menu_overlay, map_c, map) {
   assert_arguments_length(arguments, 3);
   html_clear(menu_overlay);
   html_button_width_full_text_click_back(menu_overlay, () =>
-    app_gs_menu_main(menu_overlay, map_c, map),
+    app_gs_menu_main(context, menu_overlay),
   );
   let logs = log_logs();
   each(logs, (message) => {
