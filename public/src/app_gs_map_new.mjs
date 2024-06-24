@@ -72,11 +72,11 @@ export function app_gs_map_new() {
     list_concat_multiple(map.tiles),
     inside_is,
   );
-  let spawn = {};
-  spawn.x = floor(divide(subtract_1(map.x_size), 2));
-  spawn.y = floor(divide(subtract_1(map.y_size), 2));
+  map.spawn = {};
+  map.spawn.x = floor(divide(subtract_1(map.x_size), 2));
+  map.spawn.y = floor(divide(subtract_1(map.y_size), 2));
   let spawn_overlap = list_filter(inside, (i) =>
-    equal_json(object_properties_new(i, list_xy()), spawn),
+    equal_json(object_properties_new(i, list_xy()), map.spawn),
   );
   each(spawn_overlap, (s) => list_remove(inside, s));
   each(outside, (tile) => {
