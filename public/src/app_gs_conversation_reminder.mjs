@@ -40,5 +40,5 @@ export function app_gs_conversation_reminder(context, menu_overlay, npc) {
     app_gs_phrase_worship_multiple_or_empty(),
     list,
   ]);
-  app_gs_conversation_npc_opening(menu_overlay, npc, text, map);
+  app_gs_conversation_npc_opening(context, menu_overlay, npc, text);
 }
