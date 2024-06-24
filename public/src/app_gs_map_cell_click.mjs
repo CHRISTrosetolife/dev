@@ -1,4 +1,3 @@
-import { app_gs_map } from "./app_gs_map.mjs";
 import { app_gs_map_html_at_find } from "./app_gs_map_html_at_find.mjs";
 import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
 import { app_gs_div_rounded_transparent } from "./app_gs_div_rounded_transparent.mjs";
@@ -21,7 +20,6 @@ import { html_p_text } from "./html_p_text.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export async function app_gs_map_cell_click(context, tile) {
   assert_arguments_length(arguments, 2);
-  let map = app_gs_map(game);
   let npc = list_find_property_or(tile.overlays, "type", "npc", null);
   if (null_is(npc)) {
     let walls = app_gs_overlays_any_wall(tile);
