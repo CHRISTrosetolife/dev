@@ -1,5 +1,4 @@
 import { storage_local_remove } from "./storage_local_remove.mjs";
-import { app_gs_map } from "./app_gs_map.mjs";
 import { app_gs_player_new } from "./app_gs_player_new.mjs";
 import { storage_local_initialize_lambda } from "./storage_local_initialize_lambda.mjs";
 import { app_gs_player_c } from "./app_gs_player_c.mjs";
