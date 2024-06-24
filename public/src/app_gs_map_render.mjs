@@ -13,9 +13,9 @@ import { object_property_get } from "./object_property_get.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export function app_gs_map_render(context, coordinates) {
   assert_arguments_length(arguments, 2);
-  html_style(map_c, {
-    width: game_tile_units_css(map.x_size),
-    height: game_tile_units_css(map.y_size),
+  html_style(context.map_c, {
+    width: game_tile_units_css(context.map.x_size),
+    height: game_tile_units_css(context.map.y_size),
   });
   let { y_extend, x_extend } = app_gs_map_extends();
   let tiles_new = {};
