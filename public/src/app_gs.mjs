@@ -13,7 +13,7 @@ import { app_gs_map_new } from "./app_gs_map_new.mjs";
 export async function app_gs() {
   history.scrollRestoration = "manual";
   let root = app_gs_style_default_initialize();
-  storage_local_initialize_lambda(app_gs.name, "game", () => {
+  let game = storage_local_initialize_lambda(app_gs.name, "game", () => {
     let map = app_gs_map_new();
     let game = {
       map,
