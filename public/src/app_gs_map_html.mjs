@@ -5,10 +5,10 @@ import { html_style_width } from "./html_style_width.mjs";
 import { html_div } from "./html_div.mjs";
 export function app_gs_map_html(context) {
   let map_c = html_div(context.root);
-  html_style_width(context.map_c, game_tile_units_css(context.map.x_size));
-  html_style_height(context.map_c, game_tile_units_css(context.map.y_size));
+  html_style_width(map_c, game_tile_units_css(context.map.x_size));
+  html_style_height(map_c, game_tile_units_css(context.map.y_size));
   if (0) {
-    html_style(context.map_c, {
+    html_style(map_c, {
       position: "relative",
       display: "inline",
     });
