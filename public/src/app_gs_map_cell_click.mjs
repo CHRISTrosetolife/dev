@@ -18,7 +18,7 @@ import { app_gs_menu_overlay } from "./app_gs_menu_overlay.mjs";
 import { app_gs_map_neighbors_get } from "./app_gs_map_neighbors_get.mjs";
 import { app_gs_overlays_any_wall } from "./app_gs_overlays_any_wall.mjs";
 import { html_p_text } from "./html_p_text.mjs";
-export async function app_gs_map_cell_click(game, map_c, player_c, tile) {
+export async function app_gs_map_cell_click(context, tile) {
   let map = app_gs_map(game);
   let npc = list_find_property_or(tile.overlays, "type", "npc", null);
   if (null_is(npc)) {
