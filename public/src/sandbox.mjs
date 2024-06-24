@@ -1,5 +1,4 @@
-import { newline } from "./newline.mjs";
-import { string_split } from "./string_split.mjs";
+import { string_split_newline } from "./string_split_newline.mjs";
 import { folder_user_downloads } from "./folder_user_downloads.mjs";
 import { list_to_lookup_key_value_property } from "./list_to_lookup_key_value_property.mjs";
 import { list_reverse } from "./list_reverse.mjs";
@@ -28,7 +27,7 @@ import { string_take } from "./string_take.mjs";
 export async function sandbox() {
   let csv_path = path_join([folder_user_downloads(), "bsb_tables.csv"]);
   let csv_string = await file_read(csv_path);
-  let split = string_split(csv_string, newline());
+  let split = string_split_newline(csv_string);
   return string_take(csv_string, 20);
   let from = "ceb";
   let to = "en";
