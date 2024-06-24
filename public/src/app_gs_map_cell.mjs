@@ -1,4 +1,3 @@
-import { app_gs_map } from "./app_gs_map.mjs";
 import { app_gs_npc_icon_update } from "./app_gs_npc_icon_update.mjs";
 import { html_img_element } from "./html_img_element.mjs";
 import { game_img_style_generic } from "./game_img_style_generic.mjs";
@@ -14,8 +13,7 @@ import { game_img } from "./game_img.mjs";
 import { html_data_set } from "./html_data_set.mjs";
 import { html_div } from "./html_div.mjs";
 import { list_concat } from "./list_concat.mjs";
-export function app_gs_map_cell(game, map_c, player_c, tile) {
-  let map = app_gs_map(game);
+export function app_gs_map_cell(map, map_c, player_c, tile) {
   let clicker = html_div(map_c);
   let overlays = list_adder((la) =>
     each(tile.overlays, function lambda_overlay(o) {
@@ -53,7 +51,7 @@ export function app_gs_map_cell(game, map_c, player_c, tile) {
             tile.x + 1 - size,
           );
         });
-        app_gs_npc_icon_update(game, o, c_blur, c);
+        app_gs_npc_icon_update(map, o, c_blur, c);
       } else {
         error();
       }
@@ -63,7 +61,7 @@ export function app_gs_map_cell(game, map_c, player_c, tile) {
   let tile_c = game_img(map_c, game_img_base(id), tile, "tile");
   game_img_style(clicker, tile.y, tile.x, "clicker");
   html_on_click(clicker, async () => {
-    await app_gs_map_cell_click(game, map_c, player_c, tile);
+    await app_gs_map_cell_click(map, map_c, player_c, tile);
   });
   return list_concat([tile_c, clicker], overlays);
 }
