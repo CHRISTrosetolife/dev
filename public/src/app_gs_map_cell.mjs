@@ -30,7 +30,7 @@ export function app_gs_map_cell(context, tile) {
         );
         la(overlay_c);
       } else if (o.type === "npc") {
-        let overlay_c = app_gs_character_c(context.map_c, o, "npc");
+        let overlay_c = app_gs_character_c(context, o, "npc");
         la(overlay_c);
         html_data_set(overlay_c, "type", "npc");
         let c_blur = html_img_element(context.map_c);
