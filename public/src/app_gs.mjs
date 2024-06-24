@@ -1,3 +1,4 @@
+import { app_gs_map } from "./app_gs_map.mjs";
 import { app_gs_player_new } from "./app_gs_player_new.mjs";
 import { storage_local_initialize_lambda } from "./storage_local_initialize_lambda.mjs";
 import { app_gs_player_c } from "./app_gs_player_c.mjs";
@@ -33,7 +34,7 @@ export async function app_gs() {
   if (html_hostname() !== "localhost") {
     html_scale_none();
   }
-  let map = game.maps[game.player.map_index];
+  let map = app_gs_map(game);
   let map_c = app_gs_map_html(root, map);
   html_scrollable_hide(root, map_c);
   let player_c = app_gs_player_c(map_c, map);
