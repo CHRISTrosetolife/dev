@@ -25,7 +25,7 @@ export function app_gs_tiles(context, parent) {
     let image = html_img(container, game_img_base(i));
     html_style_background_color(image, "black");
     html_on_click(image, () => {
-      let menu2 = app_gs_menu_overlay(context, context.map_c);
+      let menu2 = app_gs_menu_overlay(context);
       html_button_width_full_text_click(menu2, "back", () => {
         html_remove(menu2);
       });
