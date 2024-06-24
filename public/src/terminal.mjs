@@ -205,9 +205,10 @@ export async function terminal() {
     let quoted = false;
     let split = string_split_empty(input);
     each(split, (s) => {
+      let split_string = " ";
       if (s === "'") {
         quoted = not(quoted);
-      } else if (s === " " && !quoted) {
+      } else if (s === split_string && !quoted) {
         token_next();
       } else {
         list_add(current, s);
