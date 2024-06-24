@@ -37,7 +37,7 @@ export async function app_gs_map_cell_click(context, tile) {
     if (player.pray.conversation === true) {
       player.pray.conversation = false;
       let neighbors = app_gs_map_neighbors_get(context, npc);
-      let { path } = app_gs_map_path(context.map, neighbors);
+      let { path } = app_gs_map_path(context, neighbors);
       await app_gs_walk_path(context, path);
       let npc_c = app_gs_map_html_at_find(map, npc, "npc");
       let sleep_time = app_gs_sleep_time_face();
