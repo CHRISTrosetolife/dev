@@ -15,7 +15,7 @@ export function app_gs_menu_main(context, menu_overlay) {
   html_button_width_full_text_click(menu_overlay, "🙏 pray", () => {
     app_gs_menu_pray(context, menu_overlay);
   });
-  html_button_width_full_text_click(menu_overlay, "💻 new game", () => {
+  html_button_width_full_text_click(menu_overlay, "🌱 new game", () => {
     app_gs_menu_system_logs(context, menu_overlay);
   });
   html_button_width_full_text_click(menu_overlay, "💻 system logs", () => {
