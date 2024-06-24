@@ -29,7 +29,7 @@ export async function app_gs_conversation_witness(context, menu_overlay, npc) {
     objection_id_correct,
     async () => {
       list_pop(npc.objections);
-      await app_gs_conversation_gospel(menu_overlay, npc, map);
+      await app_gs_conversation_gospel(context, menu_overlay, npc);
     },
   );
   app_gs_conversation_npc(menu_overlay, npc, choice_correct.objection_text);
