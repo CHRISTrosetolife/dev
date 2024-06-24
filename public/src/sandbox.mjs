@@ -31,6 +31,7 @@ export async function sandbox() {
   let csv_string = await file_read(csv_path);
   let csv_lines = string_split_newline(csv_string);
   list_remove_multiple_at(csv_lines, 0, 2);
+  return list_first(csv_lines);
   list_map(csv_lines, (line) => {
     let split = string_split_empty(input);
     let quoted = false;
