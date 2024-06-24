@@ -23,7 +23,7 @@ export async function app_gs() {
     object_merge(game, {
       player,
     });
-    let map = app_gs_map_new();
+    let map = app_gs_map_new(game);
     object_merge(player, map.spawn);
     object_merge(game, {
       maps: [map],
