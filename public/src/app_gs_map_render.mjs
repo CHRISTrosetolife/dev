@@ -38,7 +38,7 @@ export function app_gs_map_render(context, coordinates) {
       });
     });
   });
-  each_object(map.html, (hy, row) => {
+  each_object(context.html, (hy, row) => {
     if (object_property_exists_not(tiles_new, hy)) {
       each_object(row, (hx, c) => each(c, html_remove));
       return;
@@ -50,5 +50,5 @@ export function app_gs_map_render(context, coordinates) {
       }
     });
   });
-  map.html = tiles_new;
+  context.html = tiles_new;
 }
