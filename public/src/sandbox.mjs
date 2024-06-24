@@ -30,7 +30,9 @@ export async function sandbox() {
   let csv_string = await file_read(csv_path);
   let split = string_split_newline(csv_string);
   list_remove_multiple_at(split, 0, 2);
-  list_map(split, (line) => {});
+  list_map(split, (line) => {
+    return;
+  });
   return list_first(split);
   let from = "ceb";
   let to = "en";
