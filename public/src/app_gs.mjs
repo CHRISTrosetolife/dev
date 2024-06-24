@@ -17,6 +17,9 @@ export async function app_gs() {
   history.scrollRestoration = "manual";
   let context = {};
   let root = app_gs_style_default_initialize();
+  object_merge(context, {
+    root,
+  });
   storage_local_remove(app_gs.name, "game");
   let game = storage_local_initialize_lambda(app_gs.name, "game", () => {
     let game = {};
