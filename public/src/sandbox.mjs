@@ -28,12 +28,12 @@ import { file_read } from "./file_read.mjs";
 export async function sandbox() {
   let csv_path = path_join([folder_user_downloads(), "bsb_tables.csv"]);
   let csv_string = await file_read(csv_path);
-  let lines_split = string_split_newline(csv_string);
-  list_remove_multiple_at(lines_split, 0, 2);
-  list_map(lines_split, (line) => {
+  let csv_lines = string_split_newline(csv_string);
+  list_remove_multiple_at(csv_lines, 0, 2);
+  list_map(csv_lines, (line) => {
     return;
   });
-  return list_first(lines_split);
+  return list_first(csv_lines);
   let from = "ceb";
   let to = "en";
   let audio_upload_run = true;
