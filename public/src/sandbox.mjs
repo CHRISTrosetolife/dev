@@ -1,3 +1,4 @@
+import { list_remove_multiple_at } from "./list_remove_multiple_at.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_split_newline } from "./string_split_newline.mjs";
 import { folder_user_downloads } from "./folder_user_downloads.mjs";
@@ -28,7 +29,7 @@ export async function sandbox() {
   let csv_path = path_join([folder_user_downloads(), "bsb_tables.csv"]);
   let csv_string = await file_read(csv_path);
   let split = string_split_newline(csv_string);
-  list_remove_at_multiple(split, 0);
+  list_remove_multiple_at(split, 0);
   list_map(split);
   return list_first(split);
   let from = "ceb";
