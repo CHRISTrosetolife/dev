@@ -16,7 +16,7 @@ export async function app_gs() {
   let game = storage_local_initialize_lambda(app_gs.name, "game", () => {
     let map = app_gs_map_new();
     let game = {
-      map,
+      maps: [map],
     };
     return game;
   });
