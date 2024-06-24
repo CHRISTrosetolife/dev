@@ -1,3 +1,4 @@
+import { storage_local_remove } from "./storage_local_remove.mjs";
 import { app_gs_map } from "./app_gs_map.mjs";
 import { app_gs_player_new } from "./app_gs_player_new.mjs";
 import { storage_local_initialize_lambda } from "./storage_local_initialize_lambda.mjs";
@@ -15,6 +16,7 @@ import { app_gs_map_new } from "./app_gs_map_new.mjs";
 export async function app_gs() {
   history.scrollRestoration = "manual";
   let root = app_gs_style_default_initialize();
+  storage_local_remove(app_gs.name, "game");
   let game = storage_local_initialize_lambda(app_gs.name, "game", () => {
     let game = {};
     let player = app_gs_player_new();
