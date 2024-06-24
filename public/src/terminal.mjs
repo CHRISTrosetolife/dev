@@ -43,7 +43,7 @@ export async function terminal() {
     keyboard_type,
     log_buffer_clear,
     buffer_to_string,
-    tokens_get,
+    tokens_get: terminal_tokens_get,
     log_clear_write_prompt,
     buffer_clear,
     buffer_get,
@@ -182,7 +182,7 @@ export async function terminal() {
     if (input === "cls") {
       log_clear();
     }
-    let tokens = tokens_get(input);
+    let tokens = terminal_tokens_get(input);
     if (0) {
       log({
         tokens,
@@ -200,7 +200,7 @@ export async function terminal() {
     }
     unawait(run_git_ac);
   }
-  function tokens_get(input) {
+  function terminal_tokens_get(input) {
     let split_string = " ";
     let quote_string = "'";
     let tokens = [];
