@@ -40,7 +40,7 @@ export async function app_gs_walk(context, destination) {
       );
       html_img_src(
         context.game.player_c,
-        game_img_character(context.player.character, di),
+        game_img_character(context.game.player.character, di),
       );
       let delta = game_direction_to_delta(direction);
       game_img_position(
