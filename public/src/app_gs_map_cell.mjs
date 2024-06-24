@@ -63,7 +63,7 @@ export function app_gs_map_cell(context, tile) {
             tile.x + 1 - size,
           );
         });
-        app_gs_npc_icon_update(map, o, c_blur, c);
+        app_gs_npc_icon_update(context, o, c_blur, c);
       } else {
         error();
       }
