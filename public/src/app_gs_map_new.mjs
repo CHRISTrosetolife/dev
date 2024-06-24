@@ -33,7 +33,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
-export function app_gs_map_new() {
+export function app_gs_map_new(game) {
   let { y_extend, x_extend } = app_gs_map_extends();
   let border_thickness_y = y_extend;
   let border_thickness_x = x_extend;
