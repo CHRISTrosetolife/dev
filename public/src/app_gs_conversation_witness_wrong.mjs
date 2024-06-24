@@ -8,7 +8,7 @@ import { app_gs_phrase_thanks } from "./app_gs_phrase_thanks.mjs";
 import { string_random_or_empty } from "./string_random_or_empty.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_gs_npc_conversation_wait_count } from "./app_gs_npc_conversation_wait_count.mjs";
-export function app_gs_conversation_witness_wrong(npc, map, menu_overlay) {
+export function app_gs_conversation_witness_wrong(context, npc, menu_overlay) {
   npc.conversation_wait_until =
     context.game.player.conversation_count +
     app_gs_npc_conversation_wait_count();
