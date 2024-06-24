@@ -51,8 +51,9 @@ export async function app_gs_walk(context, destination) {
     let delta = game_direction_to_delta(direction);
     each(list_xy(), (xy) => {
       let value =
-        object_property_get(player, xy) + object_property_get(delta, xy);
-      object_property_set(player, xy, value);
+        object_property_get(context.player, xy) +
+        object_property_get(delta, xy);
+      object_property_set(context.player, xy, value);
     });
   });
 }
