@@ -11,5 +11,6 @@ export function app_gs_player_new() {
     conversation: false,
   };
   player.conversation_count = 0;
+  player.map_index = 0;
   return player;
 }
