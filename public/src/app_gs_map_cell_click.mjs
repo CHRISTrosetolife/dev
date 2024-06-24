@@ -27,7 +27,7 @@ export async function app_gs_map_cell_click(context, tile) {
       let { path } = app_gs_map_path(context, [tile]);
       if (app_gs_xy_equal(context.game.player, tile)) {
         let menu_overlay = app_gs_menu_overlay(context);
-        app_gs_menu_main(menu_overlay, map_c, map);
+        app_gs_menu_main(context, menu_overlay);
       } else {
         await app_gs_walk_path(map, map_c, player_c, path);
       }
