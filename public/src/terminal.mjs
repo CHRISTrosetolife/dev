@@ -216,7 +216,11 @@ export async function terminal() {
         list_add(current, s);
       }
     });
-    let suffix = string_combine_multiple([split_string, quote_string]);
+    let suffix = string_combine_multiple([
+      split_string,
+      quote_string,
+      quote_string,
+    ]);
     if (list_empty_not_is(current) || string_ends_with(input, suffix)) {
       token_next();
     }
