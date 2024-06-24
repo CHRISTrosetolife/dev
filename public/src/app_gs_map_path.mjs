@@ -7,7 +7,7 @@ export function app_gs_map_path(context, to_any) {
   return graph_path_shortest_neighbors(
     app_gs_map_tile_id,
     (v) => {
-      return app_gs_map_neighbors_get(context.map, v);
+      return app_gs_map_neighbors_get(context, v);
     },
     from,
     to_any,
