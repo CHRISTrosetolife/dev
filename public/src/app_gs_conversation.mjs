@@ -64,7 +64,7 @@ export function app_gs_conversation(context, npc) {
       app_gs_phrase_combine(sentences),
     );
   } else {
-    let text = app_gs_conversation_npc_opening_text(map, npc);
+    let text = app_gs_conversation_npc_opening_text(context, npc);
     app_gs_conversation_npc_opening(menu_overlay, npc, text, map);
   }
 }
