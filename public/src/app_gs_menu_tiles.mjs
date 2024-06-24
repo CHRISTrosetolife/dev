@@ -19,5 +19,5 @@ export function app_gs_menu_tiles(context, menu_overlay) {
   });
   html_style_centered(container);
   html_style_width_full(container);
-  app_gs_tiles(container, map_c, map);
+  app_gs_tiles(context, container);
 }
