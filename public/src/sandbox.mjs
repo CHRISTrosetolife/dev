@@ -33,6 +33,7 @@ export async function sandbox() {
   list_remove_multiple_at(csv_lines, 0, 2);
   list_map(csv_lines, (line) => {
     let split = string_split_empty(input);
+    let quoted = false;
     each(split, (s) => {});
     return;
   });
