@@ -20,10 +20,12 @@ export async function app_gs() {
   let game = storage_local_initialize_lambda(app_gs.name, "game", () => {
     let game = {};
     let player = app_gs_player_new();
+    object_merge(game, {
+      player,
+    });
     let map = app_gs_map_new();
     object_merge(player, map.spawn);
     object_merge(game, {
-      player,
       maps: [map],
     });
     return game;
