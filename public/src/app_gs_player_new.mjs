@@ -1,3 +1,4 @@
+import { game_character_index } from "./game_character_index.mjs";
 import { bible_names_men } from "./bible_names_men.mjs";
 import { game_img_list_male } from "./game_img_list_male.mjs";
 import { list_random_item } from "./list_random_item.mjs";
@@ -12,5 +13,6 @@ export function app_gs_player_new() {
   };
   player.conversation_count = 0;
   player.map = 0;
+  player.direction = game_character_index("down");
   return player;
 }
