@@ -37,7 +37,7 @@ export async function sandbox() {
     each(split, (s) => {});
     return;
   });
-  return list_first(csv_lines);
+  return;
   let from = "ceb";
   let to = "en";
   let audio_upload_run = true;
