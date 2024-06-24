@@ -60,7 +60,7 @@ export async function function_aliases_generate() {
   alias_add(command_line, ["cl"]);
   alias_add(data_update, ["d"]);
   alias_add(function_delete, ["de"]);
-  alias_add(app_dev_screenshots, ["dss"]);
+  alias_add(app_dev_screenshots, ["ds"]);
   alias_add(exit, exit_aliases());
   alias_add(firebase_deploy, ["f"]);
   alias_add(function_cache_new_run, ["fc"]);
