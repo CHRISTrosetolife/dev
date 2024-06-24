@@ -1,3 +1,4 @@
+import { functions_string } from "./functions_string.mjs";
 import { functions_identifier } from "./functions_identifier.mjs";
 import { function_param_new } from "./function_param_new.mjs";
 import { function_search_open } from "./function_search_open.mjs";
@@ -65,7 +66,8 @@ export async function function_aliases_generate() {
   alias_add(function_cache_delete, ["fcd"]);
   alias_add(function_cache_new, ["fcn"]);
   alias_add(function_cache_refresh, ["fcr"]);
-  alias_add(functions_identifier, ["fi"]);
+  alias_add(functions_identifier, ["si"]);
+  alias_add(functions_string, ["ss"]);
   alias_add(function_transform, ["ft"]);
   alias_add(function_transform_all, ["fta"]);
   alias_add(function_transform_all_args, ["ftaa"]);
