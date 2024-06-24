@@ -11,7 +11,9 @@ import { app_gs_map_cell } from "./app_gs_map_cell.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { each_object } from "./each_object.mjs";
 import { object_property_get } from "./object_property_get.mjs";
+import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export function app_gs_map_render(context, coordinates) {
+  assert_arguments_length(arguments, 2);
   let map = app_gs_map(game);
   html_style(map_c, {
     width: game_tile_units_css(map.x_size),
