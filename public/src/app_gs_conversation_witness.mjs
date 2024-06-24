@@ -12,7 +12,7 @@ import { app_gs_conversation_npc } from "./app_gs_conversation_npc.mjs";
 import { list_last } from "./list_last.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
-export async function app_gs_conversation_witness(menu_overlay, npc, map) {
+export async function app_gs_conversation_witness(context, menu_overlay, npc) {
   let objection_id_correct = list_last(npc.objections);
   let objection_ids = app_gs_objection_ids();
   let objection_ids_incorrect = list_without(
