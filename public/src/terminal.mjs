@@ -200,12 +200,12 @@ export async function terminal() {
     unawait(run_git_ac);
   }
   function tokens_get(input) {
+    let split_string = " ";
     let tokens = [];
     let current = [];
     let quoted = false;
     let split = string_split_empty(input);
     each(split, (s) => {
-      let split_string = " ";
       if (s === "'") {
         quoted = not(quoted);
       } else if (s === split_string && !quoted) {
