@@ -65,6 +65,6 @@ export function app_gs_conversation(context, npc) {
     );
   } else {
     let text = app_gs_conversation_npc_opening_text(context, npc);
-    app_gs_conversation_npc_opening(menu_overlay, npc, text, map);
+    app_gs_conversation_npc_opening(context, menu_overlay, npc, text);
   }
 }
