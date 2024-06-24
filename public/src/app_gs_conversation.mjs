@@ -19,7 +19,7 @@ export function app_gs_conversation(context, npc) {
   let menu_overlay = app_gs_menu_overlay(context);
   map.player.conversation_count++;
   npc.conversation_count++;
-  if (app_gs_npc_conversation_wait(map, npc)) {
+  if (app_gs_npc_conversation_wait(context, npc)) {
     log({
       player: map.player,
       npc,
