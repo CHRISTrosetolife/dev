@@ -1,5 +1,5 @@
+import { app_gs_game_delete } from "./app_gs_game_delete.mjs";
 import { app_gs_load } from "./app_gs_load.mjs";
-import { storage_local_remove } from "./storage_local_remove.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { html_style_button_default_value } from "./html_style_button_default_value.mjs";
 import { html_hostname } from "./html_hostname.mjs";
@@ -21,7 +21,7 @@ export async function app_gs() {
     html_scale_none();
   }
   if (0) {
-    storage_local_remove(app_gs, "game");
+    app_gs_game_delete();
   }
   await app_gs_load(context);
 }
