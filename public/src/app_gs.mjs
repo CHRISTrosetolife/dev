@@ -14,11 +14,11 @@ export async function app_gs() {
   history.scrollRestoration = "manual";
   let root = app_gs_style_default_initialize();
   let game = storage_local_initialize_lambda(app_gs.name, "game", () => {
-    game = {};
+    let game = {};
     let map = app_gs_map_new();
-    let game = {
+    object_merge(game, {
       maps: [map],
-    };
+    });
     return game;
   });
   let { maps } = game;
