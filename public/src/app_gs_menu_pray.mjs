@@ -8,7 +8,7 @@ import { list_random_item } from "./list_random_item.mjs";
 export function app_gs_menu_pray(context, menu_overlay) {
   html_clear(menu_overlay);
   html_button_width_full_text_click_back(menu_overlay, () =>
-    app_gs_menu_main(menu_overlay, map_c, map),
+    app_gs_menu_main(context, menu_overlay),
   );
   let prayer = string_combine_multiple([
     "🙏 God, please ",
