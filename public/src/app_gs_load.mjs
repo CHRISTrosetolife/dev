@@ -31,7 +31,7 @@ export async function app_gs_load(context) {
   context.map = context.game.maps[context.game.player.map];
   let keys = ["map_c", "player_c"];
   each(keys, (item) => {
-    html_remove(object_property_get(object, property_name));
+    html_remove(object_property_get(context, item));
   });
   context.map_c = app_gs_map_html(context);
   html_scrollable_hide(context);
