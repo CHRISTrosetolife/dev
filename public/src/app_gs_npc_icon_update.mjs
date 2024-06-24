@@ -4,7 +4,7 @@ import { app_gs_npc_icon_wait } from "./app_gs_npc_icon_wait.mjs";
 import { app_gs_npc_conversation_wait } from "./app_gs_npc_conversation_wait.mjs";
 import { app_gs_npc_icon_christian } from "./app_gs_npc_icon_christian.mjs";
 export function app_gs_npc_icon_update(context, npc, c_blur, c) {
-  if (app_gs_npc_conversation_wait(context.map, npc)) {
+  if (app_gs_npc_conversation_wait(context, npc)) {
     app_gs_npc_icon_wait(c_blur, c);
   } else if (npc.christian) {
     app_gs_npc_icon_christian(c_blur, c);
