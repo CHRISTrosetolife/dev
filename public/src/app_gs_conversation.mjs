@@ -16,7 +16,7 @@ import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export function app_gs_conversation(context, npc) {
   assert_arguments_length(arguments, 2);
   let menu_overlay = app_gs_menu_overlay(context);
-  map.player.conversation_count++;
+  context.game.player.conversation_count++;
   npc.conversation_count++;
   if (app_gs_npc_conversation_wait(context, npc)) {
     let sentences = [
