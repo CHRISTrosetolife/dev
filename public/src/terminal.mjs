@@ -37,6 +37,7 @@ import { undefined_not_is } from "./undefined_not_is.mjs";
 import { list_remove_at } from "./list_remove_at.mjs";
 import { string_ends_with } from "./string_ends_with.mjs";
 export async function terminal() {
+  let prompt = chalk().greenBright("✟") + " ";
   let context = {
     keyboard_type,
     log_buffer_clear,
@@ -51,7 +52,6 @@ export async function terminal() {
     history_index_get,
   };
   let commands = terminal_commands(context);
-  let prompt = chalk().greenBright("✟") + " ";
   async function history_index_get(transform) {
     let item = await terminal_index_history_transform(function lambda(index) {
       return transform(index);
