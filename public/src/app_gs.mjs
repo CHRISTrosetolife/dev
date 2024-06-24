@@ -15,6 +15,7 @@ import { app_gs_map_html } from "./app_gs_map_html.mjs";
 import { app_gs_map_new } from "./app_gs_map_new.mjs";
 export async function app_gs() {
   history.scrollRestoration = "manual";
+  let context = {};
   let root = app_gs_style_default_initialize();
   storage_local_remove(app_gs.name, "game");
   let game = storage_local_initialize_lambda(app_gs.name, "game", () => {
@@ -30,9 +31,9 @@ export async function app_gs() {
     });
     return game;
   });
-  let context = {
+  object_merge(context, {
     game,
-  };
+  });
   let d = html_style_button_default_value();
   object_merge(d, {
     "margin-left": "0",
