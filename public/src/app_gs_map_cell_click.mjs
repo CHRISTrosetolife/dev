@@ -33,7 +33,7 @@ export async function app_gs_map_cell_click(context, tile) {
       }
     }
   } else {
-    let { player } = map;
+    let { player } = context.game;
     if (player.pray.conversation === true) {
       player.pray.conversation = false;
       let neighbors = app_gs_map_neighbors_get(map, npc);
