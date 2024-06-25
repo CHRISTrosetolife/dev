@@ -65,17 +65,7 @@ export async function app_memorize() {
   let verses = await http_get(storage_url(file_path));
   let verses_length = list_size(verses);
   let groups = app_memorize_group(verses_length);
-  let patterns;
-  let patterns_length;
-  let pattern_index;
-  let group_current;
-  let verse_index;
-  let token_index;
-  let previous_spacer2;
-  let previous_token_element;
-  let verse_elements;
-  let keyboard_buttons;
-  let mistakes;
+  let context = {};
   let button_height = 7;
   group_current_set(list_first(groups));
   html_hash({
@@ -87,22 +77,33 @@ export async function app_memorize() {
       group_current_set(g);
     },
     pattern: (value) => {
-      pattern_index = list_index(patterns, value);
+      context.pattern_index = list_index(context.patterns, value);
     },
   });
   refresh_memorize();
   function group_current_set(g) {
-    group_current = g;
-    if (equal(list_size(group_current), 1)) {
-      patterns = ["1", "110", "10", "01", "01001", "001", "0", "0", "0", "0"];
+    context.group_current = g;
+    if (equal(list_size(context.group_current), 1)) {
+      context.patterns = [
+        "1",
+        "110",
+        "10",
+        "01",
+        "01001",
+        "001",
+        "0",
+        "0",
+        "0",
+        "0",
+      ];
     } else {
-      patterns = ["1", "10", "0", "0", "0", "0"];
+      context.patterns = ["1", "10", "0", "0", "0", "0"];
     }
-    patterns_length = list_size(patterns);
-    verse_index = 0;
-    token_index = 0;
-    pattern_index = 0;
-    mistakes = false;
+    context.patterns_length = list_size(context.patterns);
+    context.verse_index = 0;
+    context.token_index = 0;
+    context.pattern_index = 0;
+    context.mistakes = false;
   }
   function refresh_settings() {
     html_clear(root);
@@ -113,7 +114,7 @@ export async function app_memorize() {
       root,
       string_combine_multiple([
         "verses ",
-        group_to_range_string(group_current),
+        group_to_range_string(context.group_current),
       ]),
       () => {
         html_clear(root);
@@ -133,7 +134,10 @@ export async function app_memorize() {
     );
     html_button_width_full_text_click(
       root,
-      string_combine_multiple(["pattern ", list_get(patterns, pattern_index)]),
+      string_combine_multiple([
+        "pattern ",
+        list_get(context.patterns, context.pattern_index),
+      ]),
       () => {
         html_clear(root);
         html_button_width_full_text_click(root, "back", () => {
@@ -143,11 +147,11 @@ export async function app_memorize() {
           root,
           "which pattern of shown and hidden words do you want ?",
         );
-        each_index(patterns, (p, i) => {
+        each_index(context.patterns, (p, i) => {
           let b = html_button(root);
           html_inner_set(b, p);
           html_on_click(b, () => {
-            pattern_index = i;
+            context.pattern_index = i;
             refresh_settings();
           });
         });
@@ -167,14 +171,14 @@ export async function app_memorize() {
   }
   function refresh_memorize() {
     html_clear(root);
-    verse_index = 0;
-    token_index = 0;
-    previous_spacer2 = undefined;
-    previous_token_element = undefined;
-    verse_elements = undefined;
-    mistakes = false;
-    keyboard_buttons = {};
-    let p = list_get(patterns, pattern_index);
+    context.verse_index = 0;
+    context.token_index = 0;
+    context.previous_spacer2 = undefined;
+    context.previous_token_element = undefined;
+    context.verse_elements = undefined;
+    context.mistakes = false;
+    context.keyboard_buttons = {};
+    let p = list_get(context.patterns, context.pattern_index);
     let pattern = string_split(p, "");
     let settings_element = html_element(root, "div");
     let settings_button = html_button_width_full_text_click(
@@ -196,15 +200,15 @@ export async function app_memorize() {
     });
     let pattern_length = list_size(pattern);
     let token_count = 0;
-    verse_elements = list_adder((la) => {
-      each_index(group_current, (i, j) => {
+    context.verse_elements = list_adder((la) => {
+      each_index(context.group_current, (i, j) => {
         let verse = list_get(verses, i);
         let verse_element = html_element(verses_element, "div");
         let { tokens, verse_number } = verse;
         let number_element = html_strong_text(verse_element, verse_number);
         html_on_click(number_element, () => {
-          token_index = 0;
-          verse_index = j;
+          context.token_index = 0;
+          context.verse_index = j;
           html_scroll_center(verse_element);
         });
         let token_objects = list_adder((la) => {
@@ -245,7 +249,7 @@ export async function app_memorize() {
       html_style_centered(row_element);
       for (let k of row) {
         let b = html_button(row_element);
-        object_property_set(keyboard_buttons, k, b);
+        object_property_set(context.keyboard_buttons, k, b);
         html_inner_set(b, string_case_upper(k));
         button_keyboard_stylize(b);
         html_on_click(b, () => {
@@ -254,7 +258,7 @@ export async function app_memorize() {
       }
     }
     return {
-      verse_elements,
+      verse_elements: context.verse_elements,
     };
   }
   function button_keyboard_stylize(b) {
@@ -269,21 +273,21 @@ export async function app_memorize() {
     });
   }
   function update_colors() {
-    let current_verse = list_get(verse_elements, verse_index);
+    let current_verse = list_get(context.verse_elements, context.verse_index);
     let { verse_element, token_objects } = current_verse;
-    let current_token = list_get(token_objects, token_index);
+    let current_token = list_get(token_objects, context.token_index);
     html_scroll_center(verse_element);
     let { spacer2, token_element } = current_token;
     html_style_visible(spacer2);
-    if (undefined_not_is(previous_spacer2)) {
-      html_style_hidden(previous_spacer2);
+    if (undefined_not_is(context.previous_spacer2)) {
+      html_style_hidden(context.previous_spacer2);
     }
-    if (undefined_not_is(previous_token_element)) {
-      html_style_visible(previous_token_element);
-      console.log("here", previous_token_element);
+    if (undefined_not_is(context.previous_token_element)) {
+      html_style_visible(context.previous_token_element);
+      console.log("here", context.previous_token_element);
     }
-    previous_spacer2 = spacer2;
-    previous_token_element = token_element;
+    context.previous_spacer2 = spacer2;
+    context.previous_token_element = token_element;
   }
   html_on(root, "keydown", (e) => {
     let { keyCode } = e;
@@ -293,28 +297,30 @@ export async function app_memorize() {
   });
   let errored_keys = [];
   function on_keydown(k) {
-    let j = list_get(group_current, verse_index);
+    let j = list_get(context.group_current, context.verse_index);
     let current_verse = list_get(verses, j);
     let { tokens } = current_verse;
-    let current_token = list_get(tokens, token_index);
+    let current_token = list_get(tokens, context.token_index);
     let letter_first = string_case_lower(string_letter_first(current_token));
     if (equal(k, letter_first)) {
-      token_index++;
+      context.token_index++;
       let tokens_length = list_size(tokens);
-      if (greater_than_equal(token_index, tokens_length)) {
-        verse_index++;
-        token_index = 0;
+      if (greater_than_equal(context.token_index, tokens_length)) {
+        context.verse_index++;
+        context.token_index = 0;
       }
-      let group_current_length = list_size(group_current);
-      if (greater_than_equal(verse_index, group_current_length)) {
-        verse_index = 0;
-        let pattern = list_get(patterns, pattern_index);
-        if (and(equal(pattern, "0"), mistakes)) {
-          mistakes = false;
+      let group_current_length = list_size(context.group_current);
+      if (greater_than_equal(context.verse_index, group_current_length)) {
+        context.verse_index = 0;
+        let pattern = list_get(context.patterns, context.pattern_index);
+        if (and(equal(pattern, "0"), context.mistakes)) {
+          context.mistakes = false;
         } else {
-          pattern_index++;
-          if (greater_than_equal(pattern_index, patterns_length)) {
-            let group_current_index = list_index(groups, group_current);
+          context.pattern_index++;
+          if (
+            greater_than_equal(context.pattern_index, context.patterns_length)
+          ) {
+            let group_current_index = list_index(groups, context.group_current);
             let group_next_index = add_1(group_current_index);
             let group_next = list_get(groups, group_next_index);
             group_current_set(group_next);
@@ -329,10 +335,10 @@ export async function app_memorize() {
         button_keyboard_stylize(errored_key, button_height);
       }
     } else {
-      mistakes = true;
-      html_style_visible(previous_token_element);
-      html_style_font_color(previous_token_element, "red");
-      let keyboard_button = object_property_get(keyboard_buttons, k);
+      context.mistakes = true;
+      html_style_visible(context.previous_token_element);
+      html_style_font_color(context.previous_token_element, "red");
+      let keyboard_button = object_property_get(context.keyboard_buttons, k);
       html_style_wrong(keyboard_button);
       list_add(errored_keys, keyboard_button);
     }
