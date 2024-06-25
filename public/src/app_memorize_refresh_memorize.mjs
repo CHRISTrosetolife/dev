@@ -63,7 +63,7 @@ export function app_memorize_refresh_memorize(context) {
   html_style(verses_element, {
     "max-height": number_to_dvh(height_max),
     "min-height": number_to_dvh(height_max),
-    "overflow-y": "scroll",
+    overflow: "hidden",
   });
   let pattern_length = list_size(pattern);
   let token_count = 0;
