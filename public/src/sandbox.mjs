@@ -48,7 +48,6 @@ export async function sandbox() {
       strong,
       reference,
       translation,
-      t,
     });
     exit();
   });
