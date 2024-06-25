@@ -316,7 +316,7 @@ export async function app_memorize() {
   let errored_keys = [];
   function on_keydown(k) {
     let j = list_get(context.group_current, context.verse_index);
-    let current_verse = list_get(verses, j);
+    let current_verse = list_get(context.verses, j);
     let { tokens } = current_verse;
     let current_token = list_get(tokens, context.token_index);
     let letter_first = string_case_lower(string_letter_first(current_token));
