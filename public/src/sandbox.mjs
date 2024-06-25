@@ -57,6 +57,9 @@ export async function sandbox() {
     let chapter = list_first(split2);
     let verse_number = list_second(split2);
     log({
+      book_name,
+      chapter,
+      verse_number,
       reference,
       word,
       transliteration,
