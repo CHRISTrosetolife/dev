@@ -109,7 +109,7 @@ export function app_memorize_refresh_memorize(context) {
     });
   });
   let last = html_element(verses_element, "div");
-  html_style_height(first, "100dvh");
+  html_style_height(last, "100dvh");
   app_memorize_update_colors(context);
   return;
   let keyboard_element = html_element(root, "div");
