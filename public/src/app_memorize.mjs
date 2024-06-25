@@ -172,11 +172,11 @@ export async function app_memorize() {
   }
   function group_to_range_string(g) {
     let first_verse_index = list_first(g);
-    let first_verse = list_get(verses, first_verse_index);
+    let first_verse = list_get(context.verses, first_verse_index);
     let { verse_number: first_verse_number } = first_verse;
     let first_number = first_verse_number;
     let last_verse_index = list_last(g);
-    let last_verse = list_get(verses, last_verse_index);
+    let last_verse = list_get(context.verses, last_verse_index);
     let { verse_number: last_verse_number } = last_verse;
     let last_number = last_verse_number;
     return string_combine_multiple([first_number, " - ", last_number]);
