@@ -47,6 +47,7 @@ export async function sandbox() {
       transliteration,
       strong,
       reference,
+      translation,
       t,
     });
     exit();
