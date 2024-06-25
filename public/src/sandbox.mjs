@@ -61,6 +61,7 @@ export async function sandbox() {
     if (book === null) {
       book = {
         book_name,
+        chapters: [],
       };
       list_add(bible, book);
     }
@@ -68,9 +69,19 @@ export async function sandbox() {
     let split2 = string_split_colon(chapter_verse);
     assert(list_size_2, [split2]);
     let chapter_name = list_first(split2);
-    let chapter = object_property_initialize(book, chapter_name, {
+    let chapter = list_find_property_or(
+      book.chapters,
+      "chapter_name",
       chapter_name,
-    });
+      null,
+    );
+    if (chapter === null) {
+      chapter = {
+        chapter_name,
+        verses: [],
+      };
+      list_add(book.chapters, book);
+    }
     let verse_number = list_second(split2);
     let verse = object_property_initialize(chapter, verse_number, {
       verse_number,
