@@ -17,6 +17,9 @@ export async function app_gs_map_cell_click(context, tile) {
     return;
   }
   let walls = app_gs_overlays_any_wall(tile);
+  if (walls) {
+    return;
+  }
   if (!walls) {
     let { path } = app_gs_map_path(context, [tile]);
     if (app_gs_xy_equal(context.game.player, tile)) {
