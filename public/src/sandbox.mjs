@@ -81,6 +81,7 @@ export async function sandbox() {
   let output_path = folder_gitignore_path(
     string_combine_multiple([file_name_prefix, "json"]),
   );
+  await file_overwrite_json(output_path, bible);
   return;
   list_map(csv_lines, (line) => {
     let split = string_split_empty(input);
