@@ -5,7 +5,9 @@ import { html_style_default_initialize } from "./html_style_default_initialize.m
 import { html_style } from "./html_style.mjs";
 import { object_merge } from "./object_merge.mjs";
 export async function app_memorize() {
-  let context = {};
+  let context = {
+    style: {},
+  };
   context.settings = false;
   let root = html_style_default_initialize();
   html_style(root, {
