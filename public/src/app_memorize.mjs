@@ -169,7 +169,7 @@ export async function app_memorize() {
         });
       });
     });
-    update_colors();
+    app_memorize_update_colors(context);
     let keyboard_element = html_element(root, "div");
     html_style(keyboard_element, {
       "max-height": number_to_dvh(keyboard_height),
