@@ -1,3 +1,4 @@
+import { list_get_end } from "./list_get_end.mjs";
 import { integer_parse_try } from "./integer_parse_try.mjs";
 import { each_index } from "./each_index.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
@@ -145,13 +146,16 @@ export function js_dollar(ast) {
         let { stack } = v;
         let e = js_parse_first_function("return");
         log({
-          parent,stack
+          parent,
+          stack,
         });
         exit();
-        
-        if (list_is(parent)) {
-            object_replace(parent, e);
-          } else if (parent.type === "ExpressionStatement") {
+        if (
+          list_is(parent) &&
+          list_get_end(stack, 1).type === "SequenceExpression"
+        ) {
+          object_replace(parent, e);
+        } else if (parent.type === "ExpressionStatement") {
           object_replace(parent, e);
         }
       }
