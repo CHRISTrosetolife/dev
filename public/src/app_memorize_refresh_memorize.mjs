@@ -105,8 +105,8 @@ export function app_memorize_refresh_memorize(context) {
       });
     });
   });
-  return;
   app_memorize_update_colors(context);
+  return;
   let keyboard_element = html_element(root, "div");
   html_style(keyboard_element, {
     "max-height": number_to_dvh(keyboard_height),
