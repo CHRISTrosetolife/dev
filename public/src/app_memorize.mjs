@@ -1,6 +1,5 @@
 import { app_memorize_refresh_memorize } from "./app_memorize_refresh_memorize.mjs";
 import { app_memorize_on_keydown } from "./app_memorize_on_keydown.mjs";
-import { app_memorize_refresh_settings } from "./app_memorize_refresh_settings.mjs";
 import { app_memorize_group_current_set } from "./app_memorize_group_current_set.mjs";
 import { app_memorize_group_to_range_string } from "./app_memorize_group_to_range_string.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
@@ -56,9 +55,6 @@ export async function app_memorize() {
     },
   });
   refresh_memorize();
-  function refresh_settings() {
-    app_memorize_refresh_settings(context);
-  }
   function refresh_memorize() {
     app_memorize_refresh_memorize(context);
   }
