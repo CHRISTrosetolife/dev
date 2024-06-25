@@ -26,7 +26,6 @@ import { object_property_get } from "./object_property_get.mjs";
 export async function sandbox() {
   let books = await bible_interlinear_cache();
   let new_testament_books = list_take_reverse(books, 27);
-  let strongs = [];
   return;
   list_map(csv_lines, (line) => {
     let split = string_split_empty(input);
