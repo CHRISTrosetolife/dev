@@ -60,12 +60,12 @@ import { object_property_get } from "./object_property_get.mjs";
 import { list_add } from "./list_add.mjs";
 export async function app_memorize() {
   let root = html_document_body();
-  html_style(root, {
-    margin: "0",
-  });
   html_style_sans_serif(root);
   html_style_default_font_size(3);
   html_style_button_default_initialize();
+  html_style(root, {
+    margin: "0",
+  });
   let file_path = bible_engbsb_storage_path_file("JHN19");
   let verses = await http_get(storage_url(file_path));
   let verses_length = list_size(verses);
