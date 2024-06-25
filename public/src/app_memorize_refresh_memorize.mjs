@@ -1,3 +1,4 @@
+import { app_memorize_refresh_settings } from "./app_memorize_refresh_settings.mjs";
 import { app_memorize_on_keydown } from "./app_memorize_on_keydown.mjs";
 import { app_memorize_button_keyboard_stylize } from "./app_memorize_button_keyboard_stylize.mjs";
 import { string_case_upper } from "./string_case_upper.mjs";
@@ -48,7 +49,7 @@ export function app_memorize_refresh_memorize(context, refresh_settings) {
     let settings_button = html_button_width_full_text_click(
       settings_element,
       "⚙️ settings",
-      refresh_settings,
+      () => app_memorize_refresh_settings(context),
     );
     html_style_margin_x(settings_button, 0);
   }
