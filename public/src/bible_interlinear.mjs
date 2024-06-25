@@ -111,9 +111,5 @@ export async function bible_interlinear() {
       translation,
     });
   });
-  return {
-    file_name_prefix,
-    bible,
-    csv_lines,
-  };
+  return bible;
 }
