@@ -194,7 +194,7 @@ export async function app_memorize() {
     let keys = keyboard_keys_rows();
     let keys_size = list_size(keys);
     let keyboard_height = multiply(button_height, keys_size);
-    let offset = add(keyboard_height, 7);
+    let offset = add(keyboard_height, context.settings ? 7 : 0);
     let height_max = subtract(100, offset);
     html_style(verses_element, {
       "max-height": number_to_dvh(height_max),
