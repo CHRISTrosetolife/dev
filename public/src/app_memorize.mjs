@@ -199,9 +199,6 @@ export async function app_memorize() {
       height: number_to_dvh(context.button_height - 0.6),
     });
   }
-  function update_colors() {
-    app_memorize_update_colors(context);
-  }
   html_on(root, "keydown", (e) => {
     let { keyCode } = e;
     let c = String.fromCharCode(keyCode);
