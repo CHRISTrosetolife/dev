@@ -92,6 +92,9 @@ export function app_memorize_refresh_memorize(context) {
             html_style_hidden(s);
           }
           let token_element = html_span_text(verse_element, token);
+          if (context.text_style) {
+            html_style(token_element, context.text_style);
+          }
           if (equal(token_pattern, "0")) {
             html_style_hidden(token_element);
           }
