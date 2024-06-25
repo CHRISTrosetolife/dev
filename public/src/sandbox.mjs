@@ -30,7 +30,7 @@ export async function sandbox() {
   return new_testament_books;
   list_adder((la) => {
     each(new_testament_books, (book) => {
-      each(list, (item) => {});
+      each(book.chapters, (item) => {});
     });
   });
   return;
