@@ -56,12 +56,16 @@ import { html_on } from "./html_on.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_add } from "./list_add.mjs";
+import { object_merge } from "./object_merge.mjs";
 export async function app_memorize() {
   let context = {};
   context.settings = false;
   let root = html_style_default_initialize();
   html_style(root, {
     margin: "0",
+  });
+  object_merge(context, {
+    root,
   });
   let file_path = bible_engbsb_storage_path_file("JHN19");
   let verses = await http_get(storage_url(file_path));
