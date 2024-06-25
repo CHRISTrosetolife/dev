@@ -26,8 +26,10 @@ export function app_gs_menu_main(context, menu_overlay) {
       await app_memorize_frame({
         settings: false,
         root: menu_overlay,
-        style_text: {
-          color: "white",
+        style: {
+          text: {
+            color: "white",
+          },
         },
       });
     },
