@@ -66,7 +66,7 @@ export async function sandbox() {
     let verse = object_property_initialize(chapter, verse_number, {
       verse_number,
     });
-    let tokens = object_property_initialize(chapter, "tokens", []);
+    let tokens = object_property_initialize(verse, "tokens", []);
     log({
       book_name,
       chapter_name,
