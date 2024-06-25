@@ -28,7 +28,9 @@ export async function sandbox() {
   let books = await bible_interlinear_cache();
   let new_testament_books = list_take_reverse(books, 27);
   return new_testament_books;
-  list_adder((la) => {});
+  list_adder((la) => {
+    each(list, (item) => {});
+  });
   return;
   list_map(csv_lines, (line) => {
     let split = string_split_empty(input);
