@@ -32,7 +32,9 @@ export async function sandbox() {
     each(new_testament_books, (book) => {
       each(book.chapters, (chapter) => {
         each(book.verses, (verse) => {
-          each(list, (item) => {});
+          each(verse.tokens, (token) => {
+            la(la.strong);
+          });
         });
       });
     });
