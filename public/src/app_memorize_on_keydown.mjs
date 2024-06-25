@@ -18,13 +18,13 @@ import { equal } from "./equal.mjs";
 import { string_letter_first } from "./string_letter_first.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { list_get } from "./list_get.mjs";
-export function app_memorize_on_keydown(context, k) {
+export function app_memorize_on_keydown(context, key) {
   let j = list_get(context.group_current, context.verse_index);
   let current_verse = list_get(context.verses, j);
   let { tokens } = current_verse;
   let current_token = list_get(tokens, context.token_index);
   let letter_first = string_case_lower(string_letter_first(current_token));
-  if (equal(k, letter_first)) {
+  if (equal(key, letter_first)) {
     context.token_index++;
     let tokens_length = list_size(tokens);
     if (greater_than_equal(context.token_index, tokens_length)) {
@@ -63,7 +63,7 @@ export function app_memorize_on_keydown(context, k) {
     context.mistakes = true;
     html_style_visible(context.previous_token_element);
     html_style_font_color(context.previous_token_element, "red");
-    let keyboard_button = object_property_get(context.keyboard_buttons, k);
+    let keyboard_button = object_property_get(context.keyboard_buttons, key);
     html_style_wrong(keyboard_button);
     list_add(context.errored_keys, keyboard_button);
   }
