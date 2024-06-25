@@ -81,7 +81,9 @@ export async function app_memorize() {
   group_current_set(list_first(context.groups));
   html_hash({
     verses: (value) => {
-      let mapped = list_map(context.groups, group_to_range_string);
+      let mapped = list_map(context.groups, (g) =>
+        app_memorize_group_to_range_string(context, g),
+      );
       let mapped2 = list_map(mapped, (m) => string_replace(m, " ", ""));
       let index = list_index(mapped2, value);
       let g = list_get(context.groups, index);
