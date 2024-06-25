@@ -1,8 +1,7 @@
-import { html_style_font_color_white } from "./html_style_font_color_white.mjs";
+import { app_gs_overlay_speech_text } from "./app_gs_overlay_speech_text.mjs";
 import { app_gs_save } from "./app_gs_save.mjs";
 import { app_gs_map_html_at_find } from "./app_gs_map_html_at_find.mjs";
 import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
-import { app_gs_overlay_speech } from "./app_gs_overlay_speech.mjs";
 import { app_gs_conversation } from "./app_gs_conversation.mjs";
 import { html_remove } from "./html_remove.mjs";
 import { app_gs_sleep_time_face } from "./app_gs_sleep_time_face.mjs";
@@ -17,7 +16,6 @@ import { app_gs_menu_main } from "./app_gs_menu_main.mjs";
 import { app_gs_menu_overlay } from "./app_gs_menu_overlay.mjs";
 import { app_gs_map_neighbors_get } from "./app_gs_map_neighbors_get.mjs";
 import { app_gs_overlays_any_wall } from "./app_gs_overlays_any_wall.mjs";
-import { html_p_text } from "./html_p_text.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export async function app_gs_map_cell_click(context, tile) {
   assert_arguments_length(arguments, 2);
@@ -53,9 +51,7 @@ export async function app_gs_map_cell_click(context, tile) {
       let menu_overlay = app_gs_menu_overlay(context);
       let text =
         "❗You remember you have not 🙏 prayed, yet, before your next conversation.";
-      let div_pray_reminder = app_gs_overlay_speech(menu_overlay);
-      let p = html_p_text(div_pray_reminder, text);
-      html_style_font_color_white(p);
+      let div_pray_reminder = app_gs_overlay_speech_text(menu_overlay, text);
       html_button_width_full_text_click_back(div_pray_reminder, () => {
         html_remove(menu_overlay);
       });
