@@ -43,6 +43,11 @@ export async function app_gs_map_cell_click(context, tile) {
       list_add(messages, text);
     }
     let needs_energy = player.energy.conversation <= 0;
+    if (needs_energy) {
+      let text =
+        "❗You remember you have not 🙏 prayed, yet, before your next conversation.";
+      list_add(messages, text);
+    }
     if (needs_prayer || needs_energy) {
       let menu_overlay = app_gs_menu_overlay(context);
       let text =
