@@ -44,10 +44,10 @@ export async function sandbox() {
     let reference = list_get(t, 11);
     let translation = string_trim_whitespace(list_get(t, 14));
     log({
+      reference,
       word,
       transliteration,
       strong,
-      reference,
       translation,
     });
     exit();
