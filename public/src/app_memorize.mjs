@@ -69,7 +69,7 @@ export async function app_memorize() {
     on_keydown(c_lower);
   });
   context.errored_keys = [];
-  function on_keydown(k) {
-    app_memorize_on_keydown(context, k, refresh_memorize);
+  function on_keydown(key) {
+    app_memorize_on_keydown(context, key, refresh_memorize);
   }
 }
