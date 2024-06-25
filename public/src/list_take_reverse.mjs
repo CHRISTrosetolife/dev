@@ -1,5 +1,5 @@
-import { string_length } from "./string_length.mjs";
-import { string_skip } from "./string_skip.mjs";
+import { list_size } from "./list_size.mjs";
+import { list_skip } from "./list_skip.mjs";
 export function list_take_reverse(input, count) {
-  return string_skip(input, string_length(input) - count);
+  return list_skip(input, list_size(input) - count);
 }
