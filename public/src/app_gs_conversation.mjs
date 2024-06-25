@@ -8,6 +8,7 @@ import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { assert } from "./assert.mjs";
 export function app_gs_conversation(context, npc) {
   assert_arguments_length(arguments, 2);
+  let player = context.game;
   let { energy } = context.game.player;
   assert(greater_than_equal, [energy.conversation, 1]);
   energy.conversation--;
