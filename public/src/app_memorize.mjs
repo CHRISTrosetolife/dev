@@ -79,7 +79,7 @@ export async function app_memorize() {
     groups,
   });
   let button_height = 7;
-  group_current_set(list_first(context.groups));
+  app_memorize_group_current_set(context, list_first(context.groups));
   html_hash({
     verses: (value) => {
       let mapped = list_map(context.groups, (g) =>
