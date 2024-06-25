@@ -34,6 +34,7 @@ import { list_all } from "./list_all.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { each_object } from "./each_object.mjs";
 import { object_property_get } from "./object_property_get.mjs";
+import { list_adder_unique } from "./list_adder_unique.mjs";
 export function js_dollar(ast) {
   js_visit_identifiers(ast, (v) => {
     let { node } = v;
@@ -113,6 +114,14 @@ export function js_dollar(ast) {
       if (remaining === "la") {
         let e = js_parse_expression(
           js_code_call_args(list_adder.name, [
+            js_code_arrow_block_args(["la"], ""),
+          ]),
+        );
+        object_replace(node, e);
+      }
+      if (remaining === "lau") {
+        let e = js_parse_expression(
+          js_code_call_args(list_adder_unique.name, [
             js_code_arrow_block_args(["la"], ""),
           ]),
         );
