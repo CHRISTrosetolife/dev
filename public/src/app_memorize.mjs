@@ -176,6 +176,7 @@ export async function app_memorize() {
     return string_combine_multiple([first_number, " - ", last_number]);
   }
   function refresh_memorize() {
+    let { root } = context;
     html_clear(root);
     context.verse_index = 0;
     context.token_index = 0;
