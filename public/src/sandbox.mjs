@@ -35,6 +35,7 @@ import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { list_size_2 } from "./list_size_2.mjs";
 import { list_second } from "./list_second.mjs";
+import { object_property_initialize } from "./object_property_initialize.mjs";
 export async function sandbox() {
   let csv_path = path_join([folder_user_downloads(), "bsb_tables.csv"]);
   let csv_string = await file_read(csv_path);
@@ -51,6 +52,7 @@ export async function sandbox() {
     let split = string_split_space(reference);
     assert(list_size_2, [split]);
     let book_name = list_first(split);
+    object_property_initialize(book, book_name, {});
     let chapter_verse = list_second(split);
     let split2 = string_split_colon(chapter_verse);
     assert(list_size_2, [split2]);
