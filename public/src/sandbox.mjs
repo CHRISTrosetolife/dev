@@ -35,7 +35,7 @@ export async function sandbox() {
   list_remove_multiple_at(csv_lines, 0, 2);
   each(csv_lines, (line) => {
     let t = tokens_simple(line, '"', ",");
-    list_get(t, 5);
+    let word = list_get(t, 5);
   });
   return;
   list_map(csv_lines, (line) => {
