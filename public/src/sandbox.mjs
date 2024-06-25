@@ -27,7 +27,7 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export async function sandbox() {
   let strongs = await bible_interlinear_strongs_greek();
   let strong = "1";
-  string_combine_multiple([
+  let url = string_combine_multiple([
     url_secure_w3(),
     "openbible.com/strongs/greek/",
     strong,
