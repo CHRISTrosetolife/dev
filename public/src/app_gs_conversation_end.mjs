@@ -17,7 +17,6 @@ export function app_gs_conversation_end(
     "👋 Politely end the conversation after 🙏 praying",
     () => {
       html_clear(menu_overlay);
-      let div_pray_reminder = app_gs_overlay_speech_text(menu_overlay, text);
       let overlay_speech = app_gs_overlay_speech_text(menu_overlay, text);
       html_button_width_full_text_click_back(overlay_speech, () => {
         html_remove(menu_overlay);
