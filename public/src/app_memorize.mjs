@@ -182,12 +182,14 @@ export async function app_memorize() {
     let p = list_get(context.patterns, context.pattern_index);
     let pattern = string_split(p, "");
     let settings_element = html_element(root, "div");
-    let settings_button = html_button_width_full_text_click(
-      settings_element,
-      "⚙️ settings",
-      refresh_settings,
-    );
-    html_style_margin_x(settings_button, 0);
+    if (context.settings) {
+      let settings_button = html_button_width_full_text_click(
+        settings_element,
+        "⚙️ settings",
+        refresh_settings,
+      );
+      html_style_margin_x(settings_button, 0);
+    }
     let verses_element = html_element(root, "div");
     let keys = keyboard_keys_rows();
     let keys_size = list_size(keys);
