@@ -111,7 +111,7 @@ export async function app_memorize() {
     context.mistakes = false;
   }
   function refresh_settings() {
-    html_clear(root);
+    html_clear(context.root);
     html_button_width_full_text_click(root, "back", () => {
       refresh_memorize();
     });
