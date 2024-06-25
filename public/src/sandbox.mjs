@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { string_split_colon } from "./string_split_colon.mjs";
 import { exit } from "./exit.mjs";
 import { list_get } from "./list_get.mjs";
@@ -73,6 +74,7 @@ export async function sandbox() {
       strong,
       translation,
     });
+    log({});
     exit();
   });
   return;
