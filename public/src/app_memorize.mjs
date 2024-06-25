@@ -14,7 +14,7 @@ export async function app_memorize() {
   object_merge(context, {
     root,
   });
-  let c = html_element(parent, "script");
+  let c = html_element(root, "script");
   html_attribute_set(
     c,
     "src",
