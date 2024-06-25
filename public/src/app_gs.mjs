@@ -10,7 +10,6 @@ import { app_gs_style_default_initialize } from "./app_gs_style_default_initiali
 export async function app_gs() {
   history.scrollRestoration = "manual";
   let c = html_script_axios(root);
-  await html_load_wait(c);
   let context = {};
   let root = app_gs_style_default_initialize();
   object_merge(context, {
@@ -27,5 +26,6 @@ export async function app_gs() {
   if (0) {
     app_gs_game_delete();
   }
+  await html_load_wait(c);
   await app_gs_load(context);
 }
