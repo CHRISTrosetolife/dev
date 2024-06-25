@@ -44,7 +44,8 @@ export async function app_gs_map_cell_click(context, tile) {
     }
     let needs_energy = player.energy.conversation <= 0;
     if (needs_energy) {
-      let text = "❗You remember you are too tired to .";
+      let text =
+        "❗You remember you are too tired to have a conversation, right now, and need to study the bible, first.";
       list_add(messages, text);
     }
     if (needs_prayer || needs_energy) {
