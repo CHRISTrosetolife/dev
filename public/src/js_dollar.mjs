@@ -146,11 +146,6 @@ export function js_dollar(ast) {
       if (remaining === "r") {
         let { stack } = v;
         let e = js_parse_first_function("return");
-        log({
-          parent,
-          stack,
-          e,
-        });
         let s1 = list_get_end(stack, 1);
         let s2 = list_get_end(stack, 2);
         if (
@@ -161,6 +156,11 @@ export function js_dollar(ast) {
           object_replace(s2, e);
           list_remove_first(parent);
           e.argument = s1;
+          log({
+            parent,
+            stack,
+            e,
+          });
         } else if (parent.type === "ExpressionStatement") {
           object_replace(parent, e);
         }
