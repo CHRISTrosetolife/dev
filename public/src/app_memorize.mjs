@@ -69,6 +69,9 @@ export async function app_memorize() {
   });
   let file_path = bible_engbsb_storage_path_file("JHN19");
   let verses = await http_get(storage_url(file_path));
+  object_merge(context, {
+    verses,
+  });
   let verses_length = list_size(verses);
   let groups = app_memorize_group(verses_length);
   object_merge(context, {
