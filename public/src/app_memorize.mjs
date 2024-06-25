@@ -179,11 +179,12 @@ export async function app_memorize() {
     let last_verse = list_get(context.verses, last_verse_index);
     let { verse_number: last_verse_number } = last_verse;
     let last_number = last_verse_number;
-    let result = first_number;
+    let result;
     if (first_number === last_number) {
-      return first_number;
+      result = first_number;
+    } else {
+      result = string_combine_multiple([first_number, " - ", last_number]);
     }
-    return string_combine_multiple([first_number, " - ", last_number]);
   }
   function refresh_memorize() {
     let { root } = context;
