@@ -72,6 +72,8 @@ export function app_memorize_refresh_memorize(context) {
       let verse_element = html_element(verses_element, "div");
       let { tokens, verse_number } = verse;
       let number_element = html_strong_text(verse_element, verse_number);
+      if (context.text_style) {
+      }
       html_on_click(number_element, () => {
         context.token_index = 0;
         context.verse_index = j;
