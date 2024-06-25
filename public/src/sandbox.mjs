@@ -59,7 +59,7 @@ export async function sandbox() {
   let reference;
   each(csv_lines, (line) => {
     let t = tokens_simple(line, '"', ",");
-    if (number_less_than(list_size(t), 5)) {
+    if (number_less_than(list_size(t), 6)) {
       return;
     }
     let word = list_get(t, 5);
