@@ -39,6 +39,7 @@ import { list_size_2 } from "./list_size_2.mjs";
 import { list_second } from "./list_second.mjs";
 import { list_add } from "./list_add.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
+import { string_empty_is } from "./string_empty_is.mjs";
 export async function sandbox() {
   let file_name_prefix = "bsb_tables.";
   let csv_path = path_join([
@@ -53,6 +54,9 @@ export async function sandbox() {
   each(csv_lines, (line) => {
     let t = tokens_simple(line, '"', ",");
     let word = list_get(t, 5);
+    if (string_empty_is(word)) {
+      return;
+    }
     let transliteration = list_get(t, 7);
     let strong = list_get(t, 10);
     let reference_new = list_get(t, 11);
