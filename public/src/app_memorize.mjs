@@ -1,3 +1,4 @@
+import { app_memorize_group_to_range_string } from "./app_memorize_group_to_range_string.mjs";
 import { html_style_margin_x } from "./html_style_margin_x.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { list_size } from "./list_size.mjs";
@@ -10,7 +11,6 @@ import { html_hash } from "./html_hash.mjs";
 import { html_style_visible } from "./html_style_visible.mjs";
 import { html_style_hidden } from "./html_style_hidden.mjs";
 import { html_p_text } from "./html_p_text.mjs";
-import { list_last } from "./list_last.mjs";
 import { app_memorize_group } from "./app_memorize_group.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
 import { html_style_font_color } from "./html_style_font_color.mjs";
@@ -171,21 +171,7 @@ export async function app_memorize() {
     );
   }
   function group_to_range_string(g) {
-    let first_verse_index = list_first(g);
-    let first_verse = list_get(context.verses, first_verse_index);
-    let { verse_number: first_verse_number } = first_verse;
-    let first_number = first_verse_number;
-    let last_verse_index = list_last(g);
-    let last_verse = list_get(context.verses, last_verse_index);
-    let { verse_number: last_verse_number } = last_verse;
-    let last_number = last_verse_number;
-    let result;
-    if (first_number === last_number) {
-      result = first_number;
-    } else {
-      result = string_combine_multiple([first_number, " - ", last_number]);
-    }
-    return result;
+    return app_memorize_group_to_range_string(context, g);
   }
   function refresh_memorize() {
     let { root } = context;
