@@ -73,6 +73,7 @@ export function app_memorize_refresh_memorize(context) {
       let { tokens, verse_number } = verse;
       let number_element = html_strong_text(verse_element, verse_number);
       if (context.text_style) {
+        html_style(number_element, context.text_style);
       }
       html_on_click(number_element, () => {
         context.token_index = 0;
