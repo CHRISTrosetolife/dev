@@ -161,6 +161,7 @@ export function js_dollar(ast) {
         ) {
           object_replace(s2, e);
           list_remove_first(parent);
+          e.argument = s1;
         } else if (parent.type === "ExpressionStatement") {
           object_replace(parent, e);
         }
