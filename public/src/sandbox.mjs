@@ -31,7 +31,7 @@ export async function sandbox() {
   list_adder((la) => {
     each(new_testament_books, (book) => {
       each(book.chapters, (chapter) => {
-        each(book.verses, (item) => {});
+        each(book.verses, (verse) => {});
       });
     });
   });
