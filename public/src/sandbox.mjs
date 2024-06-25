@@ -1,3 +1,4 @@
+import { string_split } from "./string_split.mjs";
 import { exit } from "./exit.mjs";
 import { log } from "./log.mjs";
 import { list_get } from "./list_get.mjs";
@@ -50,7 +51,7 @@ export async function sandbox() {
     assert(list_size_2, [split]);
     let book_name = list_first(split);
     let chapter_verse = list_second(split);
-    let split2 = string_split_colon(reference);
+    let split2 = string_split(reference, ":");
     assert(list_size_2, [split2]);
     log({
       reference,
