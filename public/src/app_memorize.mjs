@@ -62,10 +62,7 @@ export async function app_memorize() {
     let { keyCode } = e;
     let c = String.fromCharCode(keyCode);
     let c_lower = string_case_lower(c);
-    on_keydown(c_lower);
+    app_memorize_on_keydown(context, c_lower);
   });
   context.errored_keys = [];
-  function on_keydown(key) {
-    app_memorize_on_keydown(context, key);
-  }
 }
