@@ -40,7 +40,8 @@ import { list_second } from "./list_second.mjs";
 import { list_add } from "./list_add.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { string_empty_is } from "./string_empty_is.mjs";
-import { list_index_last } from "./list_index_last.mjs";
+import { list_size } from "./list_size.mjs";
+import { subtract_1 } from "./subtract_1.mjs";
 export async function sandbox() {
   let file_name_prefix = "bsb_tables.";
   let csv_path = path_join([
@@ -70,7 +71,7 @@ export async function sandbox() {
       reference,
       t,
     }));
-    let book_name = list_take(split, list_index_last(split));
+    let book_name = list_take(split, subtract_1(list_size(split)));
     let book = list_find_property_or(bible, "book_name", book_name, null);
     if (book === null) {
       book = {
