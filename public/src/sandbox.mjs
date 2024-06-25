@@ -41,6 +41,7 @@ export async function sandbox() {
     let t = tokens_simple(line, '"', ",");
     let word = list_get(t, 5);
     let transliteration = list_get(t, 7);
+    object_property_set(transliterations, word, transliteration);
     let strong = list_get(t, 10);
     let reference = list_get(t, 11);
     let translation = string_trim(list_get(t, 14));
