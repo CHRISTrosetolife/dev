@@ -22,7 +22,10 @@ export function app_gs_menu_main(context, menu_overlay) {
     menu_overlay,
     "📖 study bible",
     async () => {
-      await app_memorize_frame(context);
+      await app_memorize_frame({
+        settings: false,
+        root: menu_overlay,
+      });
     },
   );
   html_button_width_full_text_click(menu_overlay, "🌱 new game", async () => {
