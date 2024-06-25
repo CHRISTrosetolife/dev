@@ -151,7 +151,6 @@ export function js_dollar(ast) {
           stack,
           e,
         });
-        exit();
         let s1 = list_get_end(stack, 1);
         let s2 = list_get_end(stack, 2);
         if (
