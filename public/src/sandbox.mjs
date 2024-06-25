@@ -23,6 +23,8 @@ import { object_property_set } from "./object_property_set.mjs";
 import { file_read_json } from "./file_read_json.mjs";
 import { assert } from "./assert.mjs";
 import { object_property_get } from "./object_property_get.mjs";
+import { list_sort_string } from "./list_sort_string.mjs";
+import { identity } from "./identity.mjs";
 export async function sandbox() {
   let books = await bible_interlinear_cache();
   let new_testament_books = list_take_reverse(books, 27);
@@ -37,6 +39,7 @@ export async function sandbox() {
       });
     });
   });
+  list_sort_string(strongs, identity);
   return;
   list_map(csv_lines, (line) => {
     let split = string_split_empty(input);
