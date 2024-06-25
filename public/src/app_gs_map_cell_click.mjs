@@ -59,7 +59,7 @@ export async function app_gs_map_cell_click(context, tile) {
         75,
       );
       let p = html_p_text(
-        div_pray_reminder_inner,
+        menu_overlay,
         "❗You remember you have not 🙏 prayed, yet, before your next conversation.",
       );
       html_style_font_color_white(p);
