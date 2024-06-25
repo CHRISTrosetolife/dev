@@ -42,6 +42,7 @@ import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { string_empty_is } from "./string_empty_is.mjs";
 import { list_size } from "./list_size.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
+import { greater_than_equal } from "./greater_than_equal.mjs";
 export async function sandbox() {
   let file_name_prefix = "bsb_tables.";
   let csv_path = path_join([
@@ -67,7 +68,7 @@ export async function sandbox() {
     }
     let translation = string_trim_whitespace(list_get(t, 14));
     let split = string_split_space(reference);
-    assert_message(list_size_2, [split], () => ({
+    assert_message(greater_than_equal, [list_size(split), 2], () => ({
       reference,
       t,
     }));
