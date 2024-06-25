@@ -185,6 +185,7 @@ export async function app_memorize() {
     } else {
       result = string_combine_multiple([first_number, " - ", last_number]);
     }
+    return result;
   }
   function refresh_memorize() {
     let { root } = context;
