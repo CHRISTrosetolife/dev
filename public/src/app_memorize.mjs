@@ -88,7 +88,7 @@ export async function app_memorize() {
       let mapped2 = list_map(mapped, (m) => string_replace(m, " ", ""));
       let index = list_index(mapped2, value);
       let g = list_get(context.groups, index);
-      group_current_set(g);
+      app_memorize_group_current_set(context, g);
     },
     pattern: (value) => {
       context.pattern_index = list_index(context.patterns, value);
