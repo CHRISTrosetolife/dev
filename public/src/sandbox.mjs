@@ -40,7 +40,7 @@ export async function sandbox() {
     });
   });
   list_sort_string(strongs, identity);
-  return;
+  return strongs;
   list_map(csv_lines, (line) => {
     let split = string_split_empty(input);
     let quoted = false;
