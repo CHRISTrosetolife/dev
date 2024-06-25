@@ -60,7 +60,7 @@ export async function app_memorize() {
     app_memorize_refresh_settings(context, refresh_memorize);
   }
   function refresh_memorize() {
-    app_memorize_refresh_memorize(context, refresh_settings, on_keydown);
+    app_memorize_refresh_memorize(context, refresh_settings);
   }
   html_on(root, "keydown", (e) => {
     let { keyCode } = e;
