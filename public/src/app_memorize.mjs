@@ -54,10 +54,7 @@ export async function app_memorize() {
       context.pattern_index = list_index(context.patterns, value);
     },
   });
-  refresh_memorize();
-  function refresh_memorize() {
-    app_memorize_refresh_memorize(context);
-  }
+  app_memorize_refresh_memorize(context);
   html_on(root, "keydown", (e) => {
     let { keyCode } = e;
     let c = String.fromCharCode(keyCode);
