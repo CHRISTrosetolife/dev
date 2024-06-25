@@ -17,6 +17,7 @@ import { app_gs_menu_overlay } from "./app_gs_menu_overlay.mjs";
 import { app_gs_map_neighbors_get } from "./app_gs_map_neighbors_get.mjs";
 import { app_gs_overlays_any_wall } from "./app_gs_overlays_any_wall.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
+import { list_add } from "./list_add.mjs";
 export async function app_gs_map_cell_click(context, tile) {
   assert_arguments_length(arguments, 2);
   let npc = list_find_property_or(tile.overlays, "type", "npc", null);
@@ -39,6 +40,7 @@ export async function app_gs_map_cell_click(context, tile) {
     if (needs_prayer) {
       let text =
         "❗You remember you have not 🙏 prayed, yet, before your next conversation.";
+      list_add(messages, text);
     }
     let needs_energy = player.energy.conversation <= 0;
     if (needs_prayer || needs_energy) {
