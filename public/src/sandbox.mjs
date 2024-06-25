@@ -1,3 +1,4 @@
+import { url_secure_w3 } from "./url_secure_w3.mjs";
 import { bible_interlinear_strongs_greek } from "./bible_interlinear_strongs_greek.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 import { list_map } from "./list_map.mjs";
@@ -26,7 +27,7 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export async function sandbox() {
   let strongs = await bible_interlinear_strongs_greek();
   string_combine_multiple([
-    "https://www.",
+    url_secure_w3(),
     "openbible.com/strongs/greek/1254.htm",
   ]);
   await each_async(strongs, async (strong) => {});
