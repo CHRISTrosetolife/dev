@@ -31,7 +31,7 @@ export async function sandbox() {
       each(book.chapters, (chapter) => {
         each(chapter.verses, (verse) => {
           each(verse.tokens, (token) => {
-            la(la.strong);
+            la(token.strong);
           });
         });
       });
