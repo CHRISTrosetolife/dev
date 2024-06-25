@@ -12,5 +12,5 @@ export async function app_memorize() {
   object_merge(context, {
     root,
   });
-  await app_memorize_frame(context, root);
+  await app_memorize_frame(context);
 }
