@@ -36,7 +36,7 @@ export function app_memorize_refresh_settings(
         html_inner_set(b, app_memorize_group_to_range_string(context, g));
         html_on_click(b, () => {
           app_memorize_group_current_set(context, g);
-          refresh_settings();
+          app_memorize_refresh_settings(context, refresh_memorize);
         });
       }
     },
