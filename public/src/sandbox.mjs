@@ -53,6 +53,8 @@ export async function sandbox() {
     let chapter_verse = list_second(split);
     let split2 = string_split_colon(reference);
     assert(list_size_2, [split2]);
+    let chapter = list_first(split2);
+    let verse_number = list_second(split2);
     log({
       reference,
       word,
