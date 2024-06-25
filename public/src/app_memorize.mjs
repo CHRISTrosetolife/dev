@@ -1,3 +1,4 @@
+import { app_memorize_update_colors } from "./app_memorize_update_colors.mjs";
 import { number_to_dvw } from "./number_to_dvw.mjs";
 import { number_to_dvh } from "./number_to_dvh.mjs";
 import { app_memorize_refresh_settings } from "./app_memorize_refresh_settings.mjs";
@@ -6,7 +7,6 @@ import { app_memorize_group_to_range_string } from "./app_memorize_group_to_rang
 import { html_style_margin_x } from "./html_style_margin_x.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { list_size } from "./list_size.mjs";
-import { log } from "./log.mjs";
 import { html_style_wrong } from "./html_style_wrong.mjs";
 import { html_style_margin_default } from "./html_style_margin_default.mjs";
 import { html_style_button_default_value } from "./html_style_button_default_value.mjs";
@@ -15,7 +15,6 @@ import { html_hash } from "./html_hash.mjs";
 import { html_style_visible } from "./html_style_visible.mjs";
 import { html_style_hidden } from "./html_style_hidden.mjs";
 import { app_memorize_group } from "./app_memorize_group.mjs";
-import { undefined_not_is } from "./undefined_not_is.mjs";
 import { html_style_font_color } from "./html_style_font_color.mjs";
 import { html_scroll_center } from "./html_scroll_center.mjs";
 import { list_adder } from "./list_adder.mjs";
@@ -201,24 +200,7 @@ export async function app_memorize() {
     });
   }
   function update_colors() {
-    let current_verse = list_get(context.verse_elements, context.verse_index);
-    let { verse_element, token_objects } = current_verse;
-    let current_token = list_get(token_objects, context.token_index);
-    html_scroll_center(verse_element);
-    let { spacer2, token_element } = current_token;
-    html_style_visible(spacer2);
-    if (undefined_not_is(context.previous_spacer2)) {
-      html_style_hidden(context.previous_spacer2);
-    }
-    if (undefined_not_is(context.previous_token_element)) {
-      html_style_visible(context.previous_token_element);
-      log({
-        message: "here",
-        previous_token_element: context.previous_token_element,
-      });
-    }
-    context.previous_spacer2 = spacer2;
-    context.previous_token_element = token_element;
+    app_memorize_update_colors(context);
   }
   html_on(root, "keydown", (e) => {
     let { keyCode } = e;
