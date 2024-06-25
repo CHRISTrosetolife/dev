@@ -34,7 +34,15 @@ export async function app_gs_map_cell_click(context, tile) {
     }
   } else {
     let { player } = context.game;
-    if (player.pray.conversation === true) {
+    if (player.pray.conversation !== true) {
+      let menu_overlay = app_gs_menu_overlay(context);
+      let text =
+        "❗You remember you have not 🙏 prayed, yet, before your next conversation.";
+      let overlay_speech = app_gs_overlay_speech_text(menu_overlay, text);
+      html_button_width_full_text_click_back(overlay_speech, () => {
+        html_remove(menu_overlay);
+      });
+    } else {
       player.pray.conversation = false;
       let neighbors = app_gs_map_neighbors_get(context, npc);
       let { path } = app_gs_map_path(context, neighbors);
@@ -47,14 +55,6 @@ export async function app_gs_map_cell_click(context, tile) {
       app_gs_walk_direction(npc_c, npc, player);
       app_gs_save(context);
       app_gs_conversation(context, npc);
-    } else {
-      let menu_overlay = app_gs_menu_overlay(context);
-      let text =
-        "❗You remember you have not 🙏 prayed, yet, before your next conversation.";
-      let overlay_speech = app_gs_overlay_speech_text(menu_overlay, text);
-      html_button_width_full_text_click_back(overlay_speech, () => {
-        html_remove(menu_overlay);
-      });
     }
   }
 }
