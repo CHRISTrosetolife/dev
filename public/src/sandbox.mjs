@@ -41,6 +41,7 @@ export async function sandbox() {
     let transliteration = list_get(t, 7);
     let strong = list_get(t, 10);
     let reference = list_get(t, 11);
+    let translation = list_get(t, 14);
     log({
       word,
       transliteration,
