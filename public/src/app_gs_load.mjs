@@ -37,7 +37,9 @@ export async function app_gs_load(context) {
     }
   });
   context.map_c = app_gs_map_html(context);
-  html_scrollable_hide(context);
+  if (0) {
+    html_scrollable_hide(context);
+  }
   context.player_c = app_gs_player_c(context);
   context.html = [];
   app_gs_map_render(context, [context.game.player]);
