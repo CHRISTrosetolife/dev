@@ -24,7 +24,7 @@ import { assert } from "./assert.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 export async function sandbox() {
   let strongs = await bible_interlinear_strongs_greek();
-  await each_async(list, async (item) => {});
+  await each_async(strongs, async (strong) => {});
   return;
   list_map(csv_lines, (line) => {
     let split = string_split_empty(input);
