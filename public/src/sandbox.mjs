@@ -1,3 +1,4 @@
+import { assert_message } from "./assert_message.mjs";
 import { log } from "./log.mjs";
 import { list_find_property_or } from "./list_find_property_or.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -55,7 +56,7 @@ export async function sandbox() {
     let reference = list_get(t, 11);
     let translation = string_trim_whitespace(list_get(t, 14));
     let split = string_split_space(reference);
-    assert(list_size_2, [split]);
+    assert_message(list_size_2, [split]);
     let book_name = list_first(split);
     let book = list_find_property_or(bible, "book_name", book_name, null);
     if (book === null) {
