@@ -315,7 +315,7 @@ export async function app_memorize() {
             );
             let group_next_index = add_1(group_current_index);
             let group_next = list_get(context.groups, group_next_index);
-            group_current_set(group_next);
+            app_memorize_group_current_set(context, group_next);
           }
         }
         refresh_memorize();
