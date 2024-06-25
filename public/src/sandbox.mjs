@@ -44,6 +44,7 @@ import { list_size } from "./list_size.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
 import { greater_than_equal } from "./greater_than_equal.mjs";
 import { list_join_space } from "./list_join_space.mjs";
+import { list_last } from "./list_last.mjs";
 export async function sandbox() {
   let file_name_prefix = "bsb_tables.";
   let csv_path = path_join([
@@ -83,7 +84,7 @@ export async function sandbox() {
       };
       list_add(bible, book);
     }
-    let chapter_verse = list_second(split);
+    let chapter_verse = list_last(split);
     let split2 = string_split_colon(chapter_verse);
     assert(list_size_2, [split2]);
     let chapter_name = list_first(split2);
