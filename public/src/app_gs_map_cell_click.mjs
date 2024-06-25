@@ -52,10 +52,9 @@ export async function app_gs_map_cell_click(context, tile) {
     } else {
       let menu_overlay = app_gs_menu_overlay(context);
       let div_pray_reminder = app_gs_overlay_speech(menu_overlay);
-      let p = html_p_text(
-        div_pray_reminder,
-        "❗You remember you have not 🙏 prayed, yet, before your next conversation.",
-      );
+      let text =
+        "❗You remember you have not 🙏 prayed, yet, before your next conversation.";
+      let p = html_p_text(div_pray_reminder, text);
       html_style_font_color_white(p);
       html_button_width_full_text_click_back(div_pray_reminder, () => {
         html_remove(menu_overlay);
