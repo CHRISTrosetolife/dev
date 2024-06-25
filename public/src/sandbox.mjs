@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_split_colon } from "./string_split_colon.mjs";
 import { list_get } from "./list_get.mjs";
 import { tokens_simple } from "./tokens_simple.mjs";
@@ -36,7 +37,10 @@ import { list_second } from "./list_second.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { list_add } from "./list_add.mjs";
 export async function sandbox() {
-  let csv_path = path_join([folder_user_downloads(), "bsb_tables.csv"]);
+  let csv_path = path_join([
+    folder_user_downloads(),
+    string_combine_multiple(["bsb_tables.", "csv"]),
+  ]);
   let csv_string = await file_read(csv_path);
   let csv_lines = string_split_newline(csv_string);
   list_remove_multiple_at(csv_lines, 0, 2);
@@ -73,6 +77,7 @@ export async function sandbox() {
       translation,
     });
   });
+  folder_gitignore_path();
   return;
   list_map(csv_lines, (line) => {
     let split = string_split_empty(input);
