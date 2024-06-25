@@ -80,12 +80,22 @@ export async function sandbox() {
         chapter_name,
         verses: [],
       };
-      list_add(book.chapters, book);
+      list_add(book.chapters, chapter);
     }
     let verse_number = list_second(split2);
-    let verse = object_property_initialize(chapter, verse_number, {
+    let verse = list_find_property_or(
+      chapter.verses,
+      "verse_number",
       verse_number,
-    });
+      null,
+    );
+    if (verse === null) {
+      verse = {
+        verse_number,
+        tokens: [],
+      };
+      list_add(chapter.verses, verse);
+    }
     let tokens = object_property_initialize(verse, "tokens", []);
     list_add(tokens, {
       word,
