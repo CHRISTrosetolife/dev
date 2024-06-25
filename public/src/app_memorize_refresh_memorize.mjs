@@ -72,8 +72,8 @@ export function app_memorize_refresh_memorize(context) {
       let verse_element = html_element(verses_element, "div");
       let { tokens, verse_number } = verse;
       let number_element = html_strong_text(verse_element, verse_number);
-      if (context.style_text) {
-        html_style(number_element, context.style_text);
+      if (context.style.text) {
+        html_style(number_element, context.style.text);
       }
       html_on_click(number_element, () => {
         context.token_index = 0;
@@ -88,14 +88,14 @@ export function app_memorize_refresh_memorize(context) {
           let spacer2 = html_span_text(verse_element, ".");
           html_style_background_color(spacer2, "green");
           html_style_font_color(spacer2, "green");
-          if (context.style_spacer2) {
+          if (context.style.spacer2) {
             html_style(spacer2, context.style_spacer2);
           }
           for (let s of [spacer, spacer2]) {
             html_style_hidden(s);
           }
           let token_element = html_span_text(verse_element, token);
-          if (context.style_text) {
+          if (context.style.text) {
             html_style(token_element, context.style_text);
           }
           if (equal(token_pattern, "0")) {
