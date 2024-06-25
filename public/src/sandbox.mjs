@@ -41,6 +41,7 @@ export async function sandbox() {
     let transliteration = list_get(t, 7);
     log({
       word,
+      transliteration,
       t,
     });
     exit();
