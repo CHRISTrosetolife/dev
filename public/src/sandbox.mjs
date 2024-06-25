@@ -56,7 +56,9 @@ export async function sandbox() {
     let reference = list_get(t, 11);
     let translation = string_trim_whitespace(list_get(t, 14));
     let split = string_split_space(reference);
-    assert_message(list_size_2, [split]);
+    assert_message(list_size_2, [split], () => ({
+      reference,
+    }));
     let book_name = list_first(split);
     let book = list_find_property_or(bible, "book_name", book_name, null);
     if (book === null) {
