@@ -148,11 +148,15 @@ export function js_dollar(ast) {
         log({
           parent,
           stack,
+          e,
         });
         exit();
+        let s1 = list_get_end(stack, 1);
+        let s2 = list_get_end(stack, 2);
         if (
           list_is(parent) &&
-          list_get_end(stack, 1).type === "SequenceExpression"
+          s1.type === "SequenceExpression" &&
+          s2.type === "ExpressionStatement"
         ) {
           object_replace(parent, e);
         } else if (parent.type === "ExpressionStatement") {
