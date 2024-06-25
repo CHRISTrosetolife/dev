@@ -57,19 +57,19 @@ export async function app_gs_map_cell_click(context, tile) {
       html_button_width_full_text_click_back(overlay_speech, () => {
         html_remove(menu_overlay);
       });
-      return;
+    } else {
+      player.pray.conversation = false;
+      let neighbors = app_gs_map_neighbors_get(context, npc);
+      let { path } = app_gs_map_path(context, neighbors);
+      await app_gs_walk_path(context, path);
+      let npc_c = app_gs_map_html_at_find(context, npc, "npc");
+      let sleep_time = app_gs_sleep_time_face();
+      await sleep(sleep_time);
+      app_gs_walk_direction(context.player_c, player, npc);
+      await sleep(sleep_time);
+      app_gs_walk_direction(npc_c, npc, player);
+      app_gs_save(context);
+      app_gs_conversation(context, npc);
     }
-    player.pray.conversation = false;
-    let neighbors = app_gs_map_neighbors_get(context, npc);
-    let { path } = app_gs_map_path(context, neighbors);
-    await app_gs_walk_path(context, path);
-    let npc_c = app_gs_map_html_at_find(context, npc, "npc");
-    let sleep_time = app_gs_sleep_time_face();
-    await sleep(sleep_time);
-    app_gs_walk_direction(context.player_c, player, npc);
-    await sleep(sleep_time);
-    app_gs_walk_direction(npc_c, npc, player);
-    app_gs_save(context);
-    app_gs_conversation(context, npc);
   }
 }
