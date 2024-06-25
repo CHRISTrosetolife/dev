@@ -77,7 +77,7 @@ export async function app_memorize() {
   object_merge(context, {
     groups,
   });
-  let button_height = 7;
+  context.button_height = 7;
   app_memorize_group_current_set(context, list_first(context.groups));
   html_hash({
     verses: (value) => {
@@ -121,7 +121,7 @@ export async function app_memorize() {
     let verses_element = html_element(root, "div");
     let keys = keyboard_keys_rows();
     let keys_size = list_size(keys);
-    let keyboard_height = multiply(button_height, keys_size);
+    let keyboard_height = multiply(context.button_height, keys_size);
     let offset = add(keyboard_height, context.settings ? 7 : 0);
     let height_max = subtract(100, offset);
     html_style(verses_element, {
@@ -197,7 +197,7 @@ export async function app_memorize() {
       "font-size": "3.8dvh",
       "min-width": b_width,
       "max-width": b_width,
-      height: number_to_dvh(button_height - 0.6),
+      height: number_to_dvh(context.button_height - 0.6),
     });
   }
   function update_colors() {
