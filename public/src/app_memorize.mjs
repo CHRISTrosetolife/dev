@@ -247,7 +247,7 @@ export async function app_memorize() {
         let b = html_button(row_element);
         object_property_set(keyboard_buttons, k, b);
         html_inner_set(b, string_case_upper(k));
-        button_stylize(b);
+        button_keyboard_stylize(b);
         html_on_click(b, () => {
           on_keydown(k);
         });
@@ -257,7 +257,7 @@ export async function app_memorize() {
       verse_elements,
     };
   }
-  function button_stylize(b) {
+  function button_keyboard_stylize(b) {
     let b_width = number_to_dvw(10 - 1);
     html_style_centered(b);
     html_style_margin_default(b);
@@ -326,7 +326,7 @@ export async function app_memorize() {
       }
       for (let errored_key of errored_keys) {
         html_style(errored_key, html_style_button_default_value());
-        button_stylize(errored_key, button_height);
+        button_keyboard_stylize(errored_key, button_height);
       }
     } else {
       mistakes = true;
