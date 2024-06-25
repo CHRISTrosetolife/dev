@@ -40,6 +40,7 @@ export async function sandbox() {
     let word = list_get(t, 5);
     log({
       word,
+      t,
     });
     exit();
   });
