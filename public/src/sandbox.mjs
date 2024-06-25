@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_get } from "./list_get.mjs";
 import { tokens_simple } from "./tokens_simple.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
@@ -36,6 +37,7 @@ export async function sandbox() {
   each(csv_lines, (line) => {
     let t = tokens_simple(line, '"', ",");
     let word = list_get(t, 5);
+    log({});
   });
   return;
   list_map(csv_lines, (line) => {
