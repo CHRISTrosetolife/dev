@@ -143,7 +143,10 @@ export function js_dollar(ast) {
       }
       if (remaining === "r") {
         let e = js_parse_first_function("return");
-        log({});
+        log({
+          parent,
+        });
+        exit();
         if (parent.type === "ExpressionStatement") {
           object_replace(parent, e);
         }
