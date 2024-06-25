@@ -32,7 +32,7 @@ import { html_element } from "./html_element.mjs";
 import { string_split } from "./string_split.mjs";
 import { list_get } from "./list_get.mjs";
 import { html_clear } from "./html_clear.mjs";
-export function app_memorize_refresh_memorize(context, refresh_settings) {
+export function app_memorize_refresh_memorize(context) {
   let { root } = context;
   html_clear(root);
   context.verse_index = 0;
