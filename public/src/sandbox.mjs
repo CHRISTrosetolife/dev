@@ -38,6 +38,7 @@ import { string_split_space } from "./string_split_space.mjs";
 import { list_size_2 } from "./list_size_2.mjs";
 import { list_second } from "./list_second.mjs";
 import { list_add } from "./list_add.mjs";
+import { string_empty_not_is } from "./string_empty_not_is.mjs";
 export async function sandbox() {
   let file_name_prefix = "bsb_tables.";
   let csv_path = path_join([
@@ -55,6 +56,8 @@ export async function sandbox() {
     let transliteration = list_get(t, 7);
     let strong = list_get(t, 10);
     let reference_new = list_get(t, 11);
+    if (string_empty_not_is(reference_new)) {
+    }
     let translation = string_trim_whitespace(list_get(t, 14));
     let split = string_split_space(reference);
     assert_message(list_size_2, [split], () => ({
