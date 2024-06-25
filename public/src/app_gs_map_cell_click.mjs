@@ -42,6 +42,7 @@ export async function app_gs_map_cell_click(context, tile) {
       html_button_width_full_text_click_back(overlay_speech, () => {
         html_remove(menu_overlay);
       });
+      return;
     } else {
       player.pray.conversation = false;
       let neighbors = app_gs_map_neighbors_get(context, npc);
