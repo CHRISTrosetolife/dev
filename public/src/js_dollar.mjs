@@ -145,7 +145,7 @@ export function js_dollar(ast) {
       }
       if (remaining === "r") {
         let { stack } = v;
-        let e = js_parse_first_function("return 0");
+        let e = js_parse_first_function("return");
         let s1 = list_get_end(stack, 1);
         let s2 = list_get_end(stack, 2);
         if (
