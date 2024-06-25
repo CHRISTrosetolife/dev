@@ -13,7 +13,9 @@ import { html_element } from "./html_element.mjs";
 import { list_add } from "./list_add.mjs";
 import { each_object } from "./each_object.mjs";
 import { list_concat } from "./list_concat.mjs";
+import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export function html_code_generate(tag_name, input) {
+  assert_arguments_length(arguments, 2);
   let p = html_parse(input);
   let c = html_parse_visit_tag_single(p, tag_name);
   let { attribs } = c;
