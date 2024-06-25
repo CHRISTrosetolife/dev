@@ -1,3 +1,4 @@
+import { http } from "./http.mjs";
 import { url_secure_w3 } from "./url_secure_w3.mjs";
 import { bible_interlinear_strongs_greek } from "./bible_interlinear_strongs_greek.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
@@ -33,6 +34,7 @@ export async function sandbox() {
     strong,
     ".htm",
   ]);
+  return await http(url);
   await each_async(strongs, async (strong) => {});
   return;
   list_map(csv_lines, (line) => {
