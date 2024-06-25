@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { html_style_hidden } from "./html_style_hidden.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
 import { html_style_visible } from "./html_style_visible.mjs";
@@ -16,10 +15,6 @@ export function app_memorize_update_colors(context) {
   }
   if (undefined_not_is(context.previous_token_element)) {
     html_style_visible(context.previous_token_element);
-    log({
-      message: "here",
-      previous_token_element: context.previous_token_element,
-    });
   }
   context.previous_spacer2 = spacer2;
   context.previous_token_element = token_element;
