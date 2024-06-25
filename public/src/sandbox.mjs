@@ -36,6 +36,7 @@ export async function sandbox() {
   let csv_string = await file_read(csv_path);
   let csv_lines = string_split_newline(csv_string);
   list_remove_multiple_at(csv_lines, 0, 2);
+  let transliterations = {};
   each(csv_lines, (line) => {
     let t = tokens_simple(line, '"', ",");
     let word = list_get(t, 5);
