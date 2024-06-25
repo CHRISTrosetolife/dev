@@ -188,9 +188,6 @@ export async function app_memorize() {
         });
       }
     }
-    return {
-      verse_elements: context.verse_elements,
-    };
   }
   function button_keyboard_stylize(b) {
     let b_width = number_to_dvw(10 - 1);
