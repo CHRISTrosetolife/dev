@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_find_property_or } from "./list_find_property_or.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_split_colon } from "./string_split_colon.mjs";
@@ -80,6 +81,7 @@ export async function sandbox() {
         verses: [],
       };
       list_add(book.chapters, chapter);
+      log({});
     }
     let verse_number = list_second(split2);
     let verse = list_find_property_or(
