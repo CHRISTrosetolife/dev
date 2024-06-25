@@ -18,7 +18,7 @@ import { equal } from "./equal.mjs";
 import { string_letter_first } from "./string_letter_first.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { list_get } from "./list_get.mjs";
-export function app_memorize_on_keydown(context, k, refresh_memorize) {
+export function app_memorize_on_keydown(context, k) {
   let j = list_get(context.group_current, context.verse_index);
   let current_verse = list_get(context.verses, j);
   let { tokens } = current_verse;
