@@ -1,3 +1,4 @@
+import { greater_than_equal } from "./greater_than_equal.mjs";
 import { app_gs_conversation_wait } from "./app_gs_conversation_wait.mjs";
 import { app_gs_npc_conversation_wait } from "./app_gs_npc_conversation_wait.mjs";
 import { app_gs_conversation_npc_opening_text } from "./app_gs_conversation_npc_opening_text.mjs";
@@ -7,7 +8,7 @@ import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { assert } from "./assert.mjs";
 export function app_gs_conversation(context, npc) {
   assert_arguments_length(arguments, 2);
-  assert(number_greater_than, [context.game]);
+  assert(greater_than_equal, [context.game]);
   let menu_overlay = app_gs_menu_overlay(context);
   context.game.player.conversation_count++;
   npc.conversation_count++;
