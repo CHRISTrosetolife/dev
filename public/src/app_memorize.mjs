@@ -1,3 +1,4 @@
+import { app_memorize_refresh_settings } from "./app_memorize_refresh_settings.mjs";
 import { app_memorize_group_current_set } from "./app_memorize_group_current_set.mjs";
 import { app_memorize_group_to_range_string } from "./app_memorize_group_to_range_string.mjs";
 import { html_style_margin_x } from "./html_style_margin_x.mjs";
@@ -11,7 +12,6 @@ import { keyboard_keys_rows } from "./keyboard_keys_rows.mjs";
 import { html_hash } from "./html_hash.mjs";
 import { html_style_visible } from "./html_style_visible.mjs";
 import { html_style_hidden } from "./html_style_hidden.mjs";
-import { html_p_text } from "./html_p_text.mjs";
 import { app_memorize_group } from "./app_memorize_group.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
 import { html_style_font_color } from "./html_style_font_color.mjs";
@@ -47,7 +47,6 @@ import { html_on_click } from "./html_on_click.mjs";
 import { list_get } from "./list_get.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { list_first } from "./list_first.mjs";
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { mod } from "./mod.mjs";
 import { add_1 } from "./add_1.mjs";
 import { list_index } from "./list_index.mjs";
@@ -96,58 +95,7 @@ export async function app_memorize() {
   });
   refresh_memorize();
   function refresh_settings() {
-    let { root } = context;
-    html_clear(root);
-    html_button_width_full_text_click(root, "back", () => {
-      refresh_memorize();
-    });
-    html_button_width_full_text_click(
-      root,
-      string_combine_multiple([
-        "verses ",
-        app_memorize_group_to_range_string(context, context.group_current),
-      ]),
-      () => {
-        html_clear(root);
-        html_button_width_full_text_click(root, "back", () => {
-          refresh_settings();
-        });
-        html_p_text(root, "which verse range do you want to focus on ?");
-        for (let g of context.groups) {
-          let b = html_button(root);
-          html_inner_set(b, app_memorize_group_to_range_string(context, g));
-          html_on_click(b, () => {
-            app_memorize_group_current_set(context, g);
-            refresh_settings();
-          });
-        }
-      },
-    );
-    html_button_width_full_text_click(
-      root,
-      string_combine_multiple([
-        "pattern ",
-        list_get(context.patterns, context.pattern_index),
-      ]),
-      () => {
-        html_clear(root);
-        html_button_width_full_text_click(root, "back", () => {
-          refresh_settings();
-        });
-        html_p_text(
-          root,
-          "which pattern of shown and hidden words do you want ?",
-        );
-        each_index(context.patterns, (p, i) => {
-          let b = html_button(root);
-          html_inner_set(b, p);
-          html_on_click(b, () => {
-            context.pattern_index = i;
-            refresh_settings();
-          });
-        });
-      },
-    );
+    app_memorize_refresh_settings(context, refresh_memorize, refresh_settings);
   }
   function refresh_memorize() {
     let { root } = context;
