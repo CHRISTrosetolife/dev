@@ -217,7 +217,7 @@ export async function app_memorize() {
     let token_count = 0;
     context.verse_elements = list_adder((la) => {
       each_index(context.group_current, (i, j) => {
-        let verse = list_get(verses, i);
+        let verse = list_get(context.verses, i);
         let verse_element = html_element(verses_element, "div");
         let { tokens, verse_number } = verse;
         let number_element = html_strong_text(verse_element, verse_number);
