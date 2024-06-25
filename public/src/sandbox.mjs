@@ -57,9 +57,7 @@ export async function sandbox() {
     let split = string_split_space(reference);
     assert(list_size_2, [split]);
     let book_name = list_first(split);
-    let book = list_find_property_or(bible, "book_name", book_name, {
-      book_name,
-    });
+    let book = list_find_property_or(bible, "book_name", book_name, null);
     let chapter_verse = list_second(split);
     let split2 = string_split_colon(chapter_verse);
     assert(list_size_2, [split2]);
