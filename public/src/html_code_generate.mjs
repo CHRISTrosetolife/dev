@@ -18,7 +18,9 @@ import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export function html_code_generate(tag_name, input) {
   assert_arguments_length(arguments, 2);
   let p = html_parse(input);
-  log(p.children[0].children[0]);
+  log({
+    tag_name,
+  });
   let c = html_parse_visit_tag_single(p, tag_name);
   let { attribs } = c;
   let variable_name = "c";
