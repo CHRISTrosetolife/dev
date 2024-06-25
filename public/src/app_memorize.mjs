@@ -57,6 +57,8 @@ import { object_property_set } from "./object_property_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_add } from "./list_add.mjs";
 export async function app_memorize() {
+  let context = {};
+  context.settings = false;
   let root = html_style_default_initialize();
   html_style(root, {
     margin: "0",
@@ -65,8 +67,6 @@ export async function app_memorize() {
   let verses = await http_get(storage_url(file_path));
   let verses_length = list_size(verses);
   let groups = app_memorize_group(verses_length);
-  let context = {};
-  context.settings = false;
   let button_height = 7;
   group_current_set(list_first(groups));
   html_hash({
