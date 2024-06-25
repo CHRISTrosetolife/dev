@@ -75,13 +75,13 @@ export async function app_memorize() {
     groups,
   });
   let button_height = 7;
-  group_current_set(list_first(groups));
+  group_current_set(list_first(context.groups));
   html_hash({
     verses: (value) => {
-      let mapped = list_map(groups, group_to_range_string);
+      let mapped = list_map(context.groups, group_to_range_string);
       let mapped2 = list_map(mapped, (m) => string_replace(m, " ", ""));
       let index = list_index(mapped2, value);
-      let g = list_get(groups, index);
+      let g = list_get(context.groups, index);
       group_current_set(g);
     },
     pattern: (value) => {
@@ -131,7 +131,7 @@ export async function app_memorize() {
           refresh_settings();
         });
         html_p_text(root, "which verse range do you want to focus on ?");
-        for (let g of groups) {
+        for (let g of context.groups) {
           let b = html_button(root);
           html_inner_set(b, group_to_range_string(g));
           html_on_click(b, () => {
@@ -335,9 +335,12 @@ export async function app_memorize() {
           if (
             greater_than_equal(context.pattern_index, context.patterns_length)
           ) {
-            let group_current_index = list_index(groups, context.group_current);
+            let group_current_index = list_index(
+              context.groups,
+              context.group_current,
+            );
             let group_next_index = add_1(group_current_index);
-            let group_next = list_get(groups, group_next_index);
+            let group_next = list_get(context.groups, group_next_index);
             group_current_set(group_next);
           }
         }
