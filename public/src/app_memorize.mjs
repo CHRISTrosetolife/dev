@@ -72,7 +72,7 @@ export async function app_memorize() {
   object_merge(context, {
     verses,
   });
-  let verses_length = list_size(verses);
+  let verses_length = list_size(context.verses);
   let groups = app_memorize_group(verses_length);
   object_merge(context, {
     groups,
