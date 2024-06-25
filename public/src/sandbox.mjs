@@ -33,7 +33,7 @@ export async function sandbox() {
   let csv_lines = string_split_newline(csv_string);
   list_remove_multiple_at(csv_lines, 0, 2);
   each(csv_lines, (line) => {
-    tokens_simple(line, '"', ",");
+    let t = tokens_simple(line, '"', ",");
   });
   return;
   list_map(csv_lines, (line) => {
