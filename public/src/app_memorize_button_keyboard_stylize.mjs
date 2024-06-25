@@ -4,7 +4,7 @@ import { html_style_margin_default } from "./html_style_margin_default.mjs";
 import { html_style_centered } from "./html_style_centered.mjs";
 import { number_to_dvw } from "./number_to_dvw.mjs";
 export function app_memorize_button_keyboard_stylize(context, b) {
-  let b_width = number_to_dvw(10 - 1);
+  let b_width = number_to_dvw(8);
   html_style_centered(b);
   html_style_margin_default(b);
   html_style(b, {
