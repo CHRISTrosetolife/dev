@@ -10,6 +10,7 @@ export function app_gs_conversation(context, npc) {
   assert_arguments_length(arguments, 2);
   let { energy } = context.game.player;
   assert(greater_than_equal, [energy.conversation, 1]);
+  energy.conversation--;
   let menu_overlay = app_gs_menu_overlay(context);
   context.game.player.conversation_count++;
   npc.conversation_count++;
