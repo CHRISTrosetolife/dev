@@ -1,3 +1,4 @@
+import { app_memorize_group_current_set } from "./app_memorize_group_current_set.mjs";
 import { app_memorize_group_to_range_string } from "./app_memorize_group_to_range_string.mjs";
 import { html_style_margin_x } from "./html_style_margin_x.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
@@ -95,28 +96,7 @@ export async function app_memorize() {
   });
   refresh_memorize();
   function group_current_set(g) {
-    context.group_current = g;
-    if (equal(list_size(context.group_current), 1)) {
-      context.patterns = [
-        "1",
-        "110",
-        "10",
-        "01",
-        "01001",
-        "001",
-        "0",
-        "0",
-        "0",
-        "0",
-      ];
-    } else {
-      context.patterns = ["1", "10", "0", "0", "0", "0"];
-    }
-    context.patterns_length = list_size(context.patterns);
-    context.verse_index = 0;
-    context.token_index = 0;
-    context.pattern_index = 0;
-    context.mistakes = false;
+    app_memorize_group_current_set(context, g);
   }
   function refresh_settings() {
     let { root } = context;
