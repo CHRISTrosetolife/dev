@@ -284,7 +284,10 @@ export async function app_memorize() {
     }
     if (undefined_not_is(context.previous_token_element)) {
       html_style_visible(context.previous_token_element);
-      console.log("here", context.previous_token_element);
+      log({
+        message: "here",
+        previous_token_element: context.previous_token_element,
+      });
     }
     context.previous_spacer2 = spacer2;
     context.previous_token_element = token_element;
