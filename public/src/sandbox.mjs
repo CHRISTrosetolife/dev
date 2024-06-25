@@ -22,9 +22,13 @@ import { object_property_set } from "./object_property_set.mjs";
 import { file_read_json } from "./file_read_json.mjs";
 import { assert } from "./assert.mjs";
 import { object_property_get } from "./object_property_get.mjs";
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export async function sandbox() {
   let strongs = await bible_interlinear_strongs_greek();
-  $s1("https://www.", "openbible.com/strongs/greek/1254.htm");
+  string_combine_multiple([
+    "https://www.",
+    "openbible.com/strongs/greek/1254.htm",
+  ]);
   await each_async(strongs, async (strong) => {});
   return;
   list_map(csv_lines, (line) => {
