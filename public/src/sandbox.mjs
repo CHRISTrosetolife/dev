@@ -44,7 +44,7 @@ export async function sandbox() {
     let strong = list_get(t, 10);
     let reference = list_get(t, 11);
     let translation = string_trim_whitespace(list_get(t, 14));
-    string_split_space(reference);
+    let split = string_split_space(reference);
     log({
       reference,
       word,
