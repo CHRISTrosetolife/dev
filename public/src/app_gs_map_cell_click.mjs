@@ -35,6 +35,7 @@ export async function app_gs_map_cell_click(context, tile) {
   } else {
     let { player } = context.game;
     let needs_prayer = player.pray.conversation !== true;
+    let needs_energy = player.energy.conversation <= 0;
     if (needs_prayer) {
       let menu_overlay = app_gs_menu_overlay(context);
       let text =
