@@ -1,3 +1,4 @@
+import { list_adder } from "./list_adder.mjs";
 import { list_take_reverse } from "./list_take_reverse.mjs";
 import { bible_interlinear_cache } from "./bible_interlinear_cache.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
@@ -26,6 +27,7 @@ import { object_property_get } from "./object_property_get.mjs";
 export async function sandbox() {
   let books = await bible_interlinear_cache();
   let new_testament_books = list_take_reverse(books, 27);
+  list_adder((la) => {});
   return;
   list_map(csv_lines, (line) => {
     let split = string_split_empty(input);
