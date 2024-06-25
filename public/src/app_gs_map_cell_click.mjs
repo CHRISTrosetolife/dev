@@ -36,7 +36,7 @@ export async function app_gs_map_cell_click(context, tile) {
     let { player } = context.game;
     let needs_prayer = player.pray.conversation !== true;
     let needs_energy = player.energy.conversation <= 0;
-    if (needs_prayer) {
+    if (needs_prayer || needs_energy) {
       let menu_overlay = app_gs_menu_overlay(context);
       let text =
         "❗You remember you have not 🙏 prayed, yet, before your next conversation.";
