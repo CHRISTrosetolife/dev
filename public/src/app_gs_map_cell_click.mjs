@@ -2,7 +2,6 @@ import { html_style_font_color_white } from "./html_style_font_color_white.mjs";
 import { app_gs_save } from "./app_gs_save.mjs";
 import { app_gs_map_html_at_find } from "./app_gs_map_html_at_find.mjs";
 import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
-import { app_gs_div_rounded_transparent } from "./app_gs_div_rounded_transparent.mjs";
 import { app_gs_overlay_speech } from "./app_gs_overlay_speech.mjs";
 import { app_gs_conversation } from "./app_gs_conversation.mjs";
 import { html_remove } from "./html_remove.mjs";
@@ -53,11 +52,6 @@ export async function app_gs_map_cell_click(context, tile) {
     } else {
       let menu_overlay = app_gs_menu_overlay(context);
       let div_pray_reminder = app_gs_overlay_speech(menu_overlay);
-      let div_pray_reminder_inner = app_gs_div_rounded_transparent(
-        div_pray_reminder,
-        "white",
-        75,
-      );
       let p = html_p_text(
         div_pray_reminder,
         "❗You remember you have not 🙏 prayed, yet, before your next conversation.",
