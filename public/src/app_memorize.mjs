@@ -244,7 +244,7 @@ export async function app_memorize() {
         }
         refresh_memorize();
       } else {
-        update_colors();
+        app_memorize_update_colors(context);
       }
       for (let errored_key of errored_keys) {
         html_style(errored_key, html_style_button_default_value());
