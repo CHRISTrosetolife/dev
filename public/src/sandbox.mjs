@@ -47,6 +47,7 @@ export async function sandbox() {
     let translation = string_trim_whitespace(list_get(t, 14));
     let split = string_split_space(reference);
     assert(list_size_2, [split]);
+    let book_name = list_first(split);
     log({
       reference,
       word,
