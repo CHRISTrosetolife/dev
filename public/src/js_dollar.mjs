@@ -72,6 +72,17 @@ export function js_dollar(ast) {
         );
         object_replace(node, e);
       }
+      if (remaining === "e") {
+        let list = js_name_unique(ast, "list");
+        let name = js_name_unique(ast, "item");
+        let e = js_parse_expression(
+          js_code_call_args(each.name, [
+            list,
+            js_code_arrow_block_args([name], ""),
+          ]),
+        );
+        object_replace(node, e);
+      }
       if (remaining === "ei") {
         let list = js_name_unique(ast, "list");
         let name = js_name_unique(ast, "item");
