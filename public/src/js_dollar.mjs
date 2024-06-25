@@ -158,7 +158,7 @@ export function js_dollar(ast) {
           s1.type === "SequenceExpression" &&
           s2.type === "ExpressionStatement"
         ) {
-          object_replace(s2, e);
+          object_replace(s2, e);list_remove_first(parent)
         } else if (parent.type === "ExpressionStatement") {
           object_replace(parent, e);
         }
