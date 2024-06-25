@@ -81,7 +81,10 @@ export async function sandbox() {
         verses: [],
       };
       list_add(book.chapters, chapter);
-      log({});
+      log({
+        book_name,
+        chapter_name,
+      });
     }
     let verse_number = list_second(split2);
     let verse = list_find_property_or(
