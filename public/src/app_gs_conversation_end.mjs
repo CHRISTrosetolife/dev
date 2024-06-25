@@ -1,4 +1,3 @@
-import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
 import { app_gs_overlay_speech_text } from "./app_gs_overlay_speech_text.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { app_gs_save } from "./app_gs_save.mjs";
@@ -18,7 +17,7 @@ export function app_gs_conversation_end(
     () => {
       html_clear(menu_overlay);
       let overlay_speech = app_gs_overlay_speech_text(menu_overlay, text);
-      html_button_width_full_text_click_back(overlay_speech, () => {
+      html_button_width_full_text_click(overlay_speech, () => {
         html_remove(menu_overlay);
       });
       let c_blur = app_gs_map_html_at_find(context, npc, "npc_overlay_blur");
