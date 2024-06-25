@@ -66,7 +66,7 @@ export function app_memorize_refresh_memorize(context) {
   });
   let pattern_length = list_size(pattern);
   let token_count = 0;
-  let verse_element = html_element(verses_element, "div");
+  let first = html_element(verses_element, "div");
   context.verse_elements = list_adder((la) => {
     each_index(context.group_current, (i, j) => {
       let verse = list_get(context.verses, i);
