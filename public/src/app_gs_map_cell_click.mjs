@@ -20,11 +20,11 @@ export async function app_gs_map_cell_click(context, tile) {
   if (walls) {
     return;
   }
-  let { path } = app_gs_map_path(context, [tile]);
   if (app_gs_xy_equal(context.game.player, tile)) {
     let menu_overlay = app_gs_menu_overlay(context);
     app_gs_menu_main(context, menu_overlay);
   } else {
+    let { path } = app_gs_map_path(context, [tile]);
     await app_gs_walk_path(context, path);
     app_gs_save(context);
   }
