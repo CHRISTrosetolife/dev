@@ -128,7 +128,7 @@ export async function app_memorize() {
       root,
       string_combine_multiple([
         "verses ",
-        group_to_range_string(context.group_current),
+        app_memorize_group_to_range_string(context, context.group_current),
       ]),
       () => {
         html_clear(root);
