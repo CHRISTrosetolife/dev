@@ -8,12 +8,12 @@ import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { assert } from "./assert.mjs";
 export function app_gs_conversation(context, npc) {
   assert_arguments_length(arguments, 2);
-  let player = context.game;
-  let { energy } = context.game.player;
+  let { player } = context.game;
+  let { energy } = player;
   assert(greater_than_equal, [energy.conversation, 1]);
   energy.conversation--;
   let menu_overlay = app_gs_menu_overlay(context);
-  context.game.player.conversation_count++;
+  player.conversation_count++;
   npc.conversation_count++;
   if (app_gs_npc_conversation_wait(context, npc)) {
     app_gs_conversation_wait(context, menu_overlay, npc);
