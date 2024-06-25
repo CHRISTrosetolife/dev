@@ -19,12 +19,12 @@ export function app_gs_conversation_end(
       let overlay_speech = app_gs_overlay_speech_text(menu_overlay, text);
       html_button_width_full_text_click(overlay_speech, "👌 okay", () => {
         html_remove(menu_overlay);
+        let c_blur = app_gs_map_html_at_find(context, npc, "npc_overlay_blur");
+        let c = app_gs_map_html_at_find(context, npc, "npc_overlay");
+        app_gs_npc_icon_update(context, npc, c_blur, c);
+        app_gs_save(context);
+        html_remove(menu_overlay);
       });
-      let c_blur = app_gs_map_html_at_find(context, npc, "npc_overlay_blur");
-      let c = app_gs_map_html_at_find(context, npc, "npc_overlay");
-      app_gs_npc_icon_update(context, npc, c_blur, c);
-      app_gs_save(context);
-      html_remove(menu_overlay);
     },
   );
 }
