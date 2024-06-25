@@ -29,7 +29,7 @@ export async function sandbox() {
   let new_testament_books = list_take_reverse(books, 27);
   return new_testament_books;
   list_adder((la) => {
-    each(new_testament_books, (item) => {});
+    each(new_testament_books, (book) => {});
   });
   return;
   list_map(csv_lines, (line) => {
