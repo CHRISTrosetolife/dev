@@ -187,9 +187,6 @@ export async function app_memorize() {
       }
     }
   }
-  function button_keyboard_stylize(b) {
-    app_memorize_button_keyboard_stylize(context, b);
-  }
   html_on(root, "keydown", (e) => {
     let { keyCode } = e;
     let c = String.fromCharCode(keyCode);
