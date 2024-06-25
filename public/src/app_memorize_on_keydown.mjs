@@ -1,3 +1,4 @@
+import { app_memorize_refresh_memorize } from "./app_memorize_refresh_memorize.mjs";
 import { list_add } from "./list_add.mjs";
 import { html_style_wrong } from "./html_style_wrong.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -50,7 +51,7 @@ export function app_memorize_on_keydown(context, k, refresh_memorize) {
           app_memorize_group_current_set(context, group_next);
         }
       }
-      refresh_memorize();
+      app_memorize_refresh_memorize(context);
     } else {
       app_memorize_update_colors(context);
     }
