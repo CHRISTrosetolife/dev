@@ -180,7 +180,7 @@ export async function app_memorize() {
         let b = html_button(row_element);
         object_property_set(context.keyboard_buttons, k, b);
         html_inner_set(b, string_case_upper(k));
-        button_keyboard_stylize(b);
+        app_memorize_button_keyboard_stylize(context, b);
         html_on_click(b, () => {
           on_keydown(k);
         });
@@ -236,7 +236,7 @@ export async function app_memorize() {
       }
       for (let errored_key of errored_keys) {
         html_style(errored_key, html_style_button_default_value());
-        button_keyboard_stylize(errored_key);
+        app_memorize_button_keyboard_stylize(context, errored_key);
       }
     } else {
       context.mistakes = true;
