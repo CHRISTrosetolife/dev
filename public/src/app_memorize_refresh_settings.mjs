@@ -1,3 +1,4 @@
+import { app_memorize_refresh_memorize } from "./app_memorize_refresh_memorize.mjs";
 import { each_index } from "./each_index.mjs";
 import { list_get } from "./list_get.mjs";
 import { app_memorize_group_current_set } from "./app_memorize_group_current_set.mjs";
@@ -13,7 +14,7 @@ export function app_memorize_refresh_settings(context, refresh_memorize) {
   let { root } = context;
   html_clear(root);
   html_button_width_full_text_click(root, "back", () => {
-    refresh_memorize();
+    app_memorize_refresh_memorize(context);
   });
   html_button_width_full_text_click(
     root,
