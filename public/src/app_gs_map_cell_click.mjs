@@ -19,6 +19,7 @@ import { app_gs_overlays_any_wall } from "./app_gs_overlays_any_wall.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
+import { list_join } from "./list_join.mjs";
 export async function app_gs_map_cell_click(context, tile) {
   assert_arguments_length(arguments, 2);
   let npc = list_find_property_or(tile.overlays, "type", "npc", null);
@@ -51,8 +52,7 @@ export async function app_gs_map_cell_click(context, tile) {
     }
     if (list_empty_not_is(messages)) {
       let menu_overlay = app_gs_menu_overlay(context);
-      let text =
-        "❗You remember you have not 🙏 prayed, yet, before your next conversation.";
+      let text = list_join(messages, "<br><br>");
       let overlay_speech = app_gs_overlay_speech_text(menu_overlay, text);
       html_button_width_full_text_click_back(overlay_speech, () => {
         html_remove(menu_overlay);
