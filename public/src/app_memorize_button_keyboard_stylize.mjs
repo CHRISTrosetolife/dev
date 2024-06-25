@@ -11,6 +11,6 @@ export function app_memorize_button_keyboard_stylize(context, b) {
     "font-size": "3.8dvh",
     "min-width": b_width,
     "max-width": b_width,
-    height: number_to_dvh(context.button_height - 0.6),
+    height: number_to_dvh(context.button_height - 1),
   });
 }
