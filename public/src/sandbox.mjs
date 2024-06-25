@@ -47,7 +47,6 @@ export async function sandbox() {
     let translation = string_trim(list_get(t, 14));
     log({
       word,
-      transliteration,
       strong,
       reference,
       translation,
