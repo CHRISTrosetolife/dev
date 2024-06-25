@@ -17,6 +17,15 @@ export function app_gs_menu_main(context, menu_overlay) {
   html_button_width_full_text_click(menu_overlay, "🙏 pray", () => {
     app_gs_menu_pray(context, menu_overlay);
   });
+  html_button_width_full_text_click(
+    menu_overlay,
+    "📖 study bible",
+    async () => {
+      app_gs_game_delete();
+      await app_gs_load(context);
+      html_remove(menu_overlay);
+    },
+  );
   html_button_width_full_text_click(menu_overlay, "🌱 new game", async () => {
     app_gs_game_delete();
     await app_gs_load(context);
