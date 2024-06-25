@@ -189,8 +189,8 @@ export async function app_memorize() {
     html_style_margin_x(settings_button, 0);
     let verses_element = html_element(root, "div");
     let keys = keyboard_keys_rows();
-    let keys_length = list_size(keys);
-    let keyboard_height = multiply(button_height, keys_length);
+    let keys_size = list_size(keys);
+    let keyboard_height = multiply(button_height, keys_size);
     let offset = add(keyboard_height, 7);
     let height_max = subtract(100, offset);
     html_style(verses_element, {
