@@ -26,10 +26,11 @@ import { object_property_get } from "./object_property_get.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export async function sandbox() {
   let strongs = await bible_interlinear_strongs_greek();
+  let strong = "1";
   string_combine_multiple([
     url_secure_w3(),
     "openbible.com/strongs/greek/",
-    "1254",
+    ,
     ".htm",
   ]);
   await each_async(strongs, async (strong) => {});
