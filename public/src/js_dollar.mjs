@@ -1,3 +1,4 @@
+import { each_async } from "./each_async.mjs";
 import { list_remove_first } from "./list_remove_first.mjs";
 import { list_get_end } from "./list_get_end.mjs";
 import { integer_parse_try } from "./integer_parse_try.mjs";
@@ -76,7 +77,7 @@ export function js_dollar(ast) {
         let list = js_name_unique(ast, "list");
         let name = js_name_unique(ast, "item");
         let e = js_parse_expression(
-          js_code_call_args(each.name, [
+          js_code_call_args(each_async.name, [
             list,
             js_code_arrow_block_args([name], ""),
           ]),
