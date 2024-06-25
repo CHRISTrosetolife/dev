@@ -78,7 +78,7 @@ export async function sandbox() {
       translation,
     });
   });
-  folder_gitignore_path();
+  folder_gitignore_path(string_combine_multiple([file_name_prefix, "json"]));
   return;
   list_map(csv_lines, (line) => {
     let split = string_split_empty(input);
