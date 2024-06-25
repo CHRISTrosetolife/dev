@@ -1,3 +1,4 @@
+import { list_remove_first } from "./list_remove_first.mjs";
 import { list_get_end } from "./list_get_end.mjs";
 import { integer_parse_try } from "./integer_parse_try.mjs";
 import { each_index } from "./each_index.mjs";
@@ -158,7 +159,8 @@ export function js_dollar(ast) {
           s1.type === "SequenceExpression" &&
           s2.type === "ExpressionStatement"
         ) {
-          object_replace(s2, e);list_remove_first(parent)
+          object_replace(s2, e);
+          list_remove_first(parent);
         } else if (parent.type === "ExpressionStatement") {
           object_replace(parent, e);
         }
