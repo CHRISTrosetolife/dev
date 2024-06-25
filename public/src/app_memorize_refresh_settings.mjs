@@ -25,7 +25,7 @@ export function app_memorize_refresh_settings(context, refresh_memorize) {
     () => {
       html_clear(root);
       html_button_width_full_text_click(root, "back", () => {
-        app_memorize_refresh_settings(context, refresh_memorize);
+        app_memorize_refresh_settings(context);
       });
       html_p_text(root, "which verse range do you want to focus on ?");
       for (let g of context.groups) {
