@@ -30,6 +30,10 @@ export function app_gs_menu_main(context, menu_overlay) {
           text: {
             color: "white",
           },
+          spacer2: {
+            color: "lightgreen",
+            "background-color": "lightgreen",
+          },
         },
       });
     },
