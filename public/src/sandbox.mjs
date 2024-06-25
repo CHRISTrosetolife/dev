@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { url_secure_w3 } from "./url_secure_w3.mjs";
 import { bible_interlinear_strongs_greek } from "./bible_interlinear_strongs_greek.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
@@ -25,9 +26,14 @@ import { assert } from "./assert.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { http_cache } from "./http_cache.mjs";
+import { list_last } from "./list_last.mjs";
 export async function sandbox() {
   let strongs = await bible_interlinear_strongs_greek();
   await each_async(strongs, async (strong) => {
+    log({
+      last: list_last(strongs),
+      current: strong,
+    });
     let url = string_combine_multiple([
       url_secure_w3(),
       "openbible.com/strongs/greek/",
