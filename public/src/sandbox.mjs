@@ -1,3 +1,4 @@
+import { list_get } from "./list_get.mjs";
 import { tokens_simple } from "./tokens_simple.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 import { list_remove_multiple_at } from "./list_remove_multiple_at.mjs";
@@ -34,6 +35,7 @@ export async function sandbox() {
   list_remove_multiple_at(csv_lines, 0, 2);
   each(csv_lines, (line) => {
     let t = tokens_simple(line, '"', ",");
+    list_get(t, 5);
   });
   return;
   list_map(csv_lines, (line) => {
