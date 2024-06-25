@@ -52,7 +52,7 @@ export async function sandbox() {
     let split = string_split_space(reference);
     assert(list_size_2, [split]);
     let book_name = list_first(split);
-    object_property_initialize(book, book_name, {});
+    let book = object_property_initialize(book, book_name, {});
     let chapter_verse = list_second(split);
     let split2 = string_split_colon(chapter_verse);
     assert(list_size_2, [split2]);
