@@ -172,9 +172,6 @@ export async function app_memorize() {
       },
     );
   }
-  function group_to_range_string(g) {
-    return app_memorize_group_to_range_string(context, g);
-  }
   function refresh_memorize() {
     let { root } = context;
     html_clear(root);
