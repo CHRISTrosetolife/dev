@@ -1,3 +1,5 @@
+import { number_to_dvw } from "./number_to_dvw.mjs";
+import { number_to_dvh } from "./number_to_dvh.mjs";
 import { app_memorize_refresh_settings } from "./app_memorize_refresh_settings.mjs";
 import { app_memorize_group_current_set } from "./app_memorize_group_current_set.mjs";
 import { app_memorize_group_to_range_string } from "./app_memorize_group_to_range_string.mjs";
@@ -26,7 +28,6 @@ import { html_style_centered } from "./html_style_centered.mjs";
 import { html_button } from "./html_button.mjs";
 import { html_div } from "./html_div.mjs";
 import { subtract } from "./subtract.mjs";
-import { string_to } from "./string_to.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
 import { equal } from "./equal.mjs";
 import { and } from "./and.mjs";
@@ -39,7 +40,6 @@ import { html_span_text } from "./html_span_text.mjs";
 import { html_strong_text } from "./html_strong_text.mjs";
 import { each_index } from "./each_index.mjs";
 import { html_style } from "./html_style.mjs";
-import { string_combine } from "./string_combine.mjs";
 import { string_split } from "./string_split.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { add } from "./add.mjs";
@@ -276,11 +276,5 @@ export async function app_memorize() {
       html_style_wrong(keyboard_button);
       list_add(errored_keys, keyboard_button);
     }
-  }
-  function number_to_dvh(value) {
-    return string_combine(string_to(value), "dvh");
-  }
-  function number_to_dvw(value) {
-    return string_combine(string_to(value), "dvw");
   }
 }
