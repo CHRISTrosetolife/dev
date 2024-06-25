@@ -1,3 +1,5 @@
+import { exit } from "./exit.mjs";
+import { log } from "./log.mjs";
 import { list_find_property_or } from "./list_find_property_or.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_split_colon } from "./string_split_colon.mjs";
@@ -36,6 +38,7 @@ import { string_split_space } from "./string_split_space.mjs";
 import { list_size_2 } from "./list_size_2.mjs";
 import { list_second } from "./list_second.mjs";
 import { list_add } from "./list_add.mjs";
+import { json_to } from "./json_to.mjs";
 export async function sandbox() {
   let file_name_prefix = "bsb_tables.";
   let csv_path = path_join([
@@ -101,6 +104,12 @@ export async function sandbox() {
       strong,
       translation,
     });
+    log(
+      json_to({
+        bible,
+      }),
+    );
+    exit();
   });
   let output_path = folder_gitignore_path(
     string_combine_multiple([file_name_prefix, "json"]),
