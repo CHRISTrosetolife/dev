@@ -38,6 +38,7 @@ export async function sandbox() {
   each(csv_lines, (line) => {
     let t = tokens_simple(line, '"', ",");
     let word = list_get(t, 5);
+    let transliteration = list_get(t, 7);
     log({
       word,
       t,
