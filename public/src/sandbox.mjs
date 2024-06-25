@@ -35,7 +35,6 @@ import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { list_size_2 } from "./list_size_2.mjs";
 import { list_second } from "./list_second.mjs";
-import { object_property_initialize } from "./object_property_initialize.mjs";
 import { list_add } from "./list_add.mjs";
 export async function sandbox() {
   let file_name_prefix = "bsb_tables.";
@@ -96,8 +95,7 @@ export async function sandbox() {
       };
       list_add(chapter.verses, verse);
     }
-    let tokens = object_property_initialize(verse, "tokens", []);
-    list_add(tokens, {
+    list_add(verse.tokens, {
       word,
       transliteration,
       strong,
