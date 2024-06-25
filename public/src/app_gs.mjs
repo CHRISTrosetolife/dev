@@ -1,3 +1,5 @@
+import { html_load_wait } from "./html_load_wait.mjs";
+import { html_script_axios } from "./html_script_axios.mjs";
 import { app_gs_game_delete } from "./app_gs_game_delete.mjs";
 import { app_gs_load } from "./app_gs_load.mjs";
 import { object_merge } from "./object_merge.mjs";
@@ -7,6 +9,8 @@ import { html_scale_none } from "./html_scale_none.mjs";
 import { app_gs_style_default_initialize } from "./app_gs_style_default_initialize.mjs";
 export async function app_gs() {
   history.scrollRestoration = "manual";
+  let c = html_script_axios(root);
+  await html_load_wait(c);
   let context = {};
   let root = app_gs_style_default_initialize();
   object_merge(context, {
