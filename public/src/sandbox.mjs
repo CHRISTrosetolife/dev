@@ -39,9 +39,11 @@ export async function sandbox() {
     let t = tokens_simple(line, '"', ",");
     let word = list_get(t, 5);
     let transliteration = list_get(t, 7);
+    let strong = list_get(t, 10);
     log({
       word,
       transliteration,
+      strong,
       t,
     });
     exit();
