@@ -32,6 +32,7 @@ import { path_join } from "./path_join.mjs";
 import { file_read } from "./file_read.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 import { string_split_space } from "./string_split_space.mjs";
+import { list_size_2 } from "./list_size_2.mjs";
 export async function sandbox() {
   let csv_path = path_join([folder_user_downloads(), "bsb_tables.csv"]);
   let csv_string = await file_read(csv_path);
@@ -45,6 +46,7 @@ export async function sandbox() {
     let reference = list_get(t, 11);
     let translation = string_trim_whitespace(list_get(t, 14));
     let split = string_split_space(reference);
+    assert(list_size_2, [split]);
     log({
       reference,
       word,
