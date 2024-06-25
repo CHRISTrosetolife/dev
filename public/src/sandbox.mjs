@@ -59,6 +59,10 @@ export async function sandbox() {
     let book_name = list_first(split);
     let book = list_find_property_or(bible, "book_name", book_name, null);
     if (book === null) {
+      book = {
+        book_name,
+      };
+      list_add(bible, book);
     }
     let chapter_verse = list_second(split);
     let split2 = string_split_colon(chapter_verse);
