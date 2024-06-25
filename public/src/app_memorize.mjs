@@ -95,9 +95,6 @@ export async function app_memorize() {
     },
   });
   refresh_memorize();
-  function group_current_set(g) {
-    app_memorize_group_current_set(context, g);
-  }
   function refresh_settings() {
     let { root } = context;
     html_clear(root);
