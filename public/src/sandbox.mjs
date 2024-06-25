@@ -1,4 +1,3 @@
-import { list_adder } from "./list_adder.mjs";
 import { list_take_reverse } from "./list_take_reverse.mjs";
 import { bible_interlinear_cache } from "./bible_interlinear_cache.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
@@ -28,7 +27,7 @@ export async function sandbox() {
   let books = await bible_interlinear_cache();
   let new_testament_books = list_take_reverse(books, 27);
   return new_testament_books;
-  list_adder((la) => {
+  list_adder_unique((la) => {
     each(new_testament_books, (book) => {
       each(book.chapters, (chapter) => {
         each(book.verses, (verse) => {
