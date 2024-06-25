@@ -22,7 +22,7 @@ export function app_gs_menu_main(context, menu_overlay) {
     menu_overlay,
     "📖 study bible",
     async () => {
-      return;
+      html_clear(menu_overlay);
       await app_memorize_frame({
         settings: false,
         root: menu_overlay,
