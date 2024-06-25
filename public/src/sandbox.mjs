@@ -57,6 +57,7 @@ export async function sandbox() {
     let strong = list_get(t, 10);
     let reference_new = list_get(t, 11);
     if (string_empty_not_is(reference_new)) {
+      reference = reference_new;
     }
     let translation = string_trim_whitespace(list_get(t, 14));
     let split = string_split_space(reference);
