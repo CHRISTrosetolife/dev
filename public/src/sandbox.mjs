@@ -1,6 +1,4 @@
-import { log } from "./log.mjs";
 import { string_split_colon } from "./string_split_colon.mjs";
-import { exit } from "./exit.mjs";
 import { list_get } from "./list_get.mjs";
 import { tokens_simple } from "./tokens_simple.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
@@ -37,7 +35,6 @@ import { list_size_2 } from "./list_size_2.mjs";
 import { list_second } from "./list_second.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { list_add } from "./list_add.mjs";
-import { json_to } from "./json_to.mjs";
 export async function sandbox() {
   let csv_path = path_join([folder_user_downloads(), "bsb_tables.csv"]);
   let csv_string = await file_read(csv_path);
@@ -75,12 +72,6 @@ export async function sandbox() {
       strong,
       translation,
     });
-    log(
-      json_to({
-        bible,
-      }),
-    );
-    exit();
   });
   return;
   list_map(csv_lines, (line) => {
