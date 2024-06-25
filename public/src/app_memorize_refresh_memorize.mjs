@@ -73,7 +73,7 @@ export function app_memorize_refresh_memorize(context) {
       let { tokens, verse_number } = verse;
       let number_element = html_strong_text(verse_element, verse_number);
       if (context.style_text) {
-        html_style(number_element, context.text_style);
+        html_style(number_element, context.style_text);
       }
       html_on_click(number_element, () => {
         context.token_index = 0;
@@ -93,7 +93,7 @@ export function app_memorize_refresh_memorize(context) {
           }
           let token_element = html_span_text(verse_element, token);
           if (context.style_text) {
-            html_style(token_element, context.text_style);
+            html_style(token_element, context.style_text);
           }
           if (equal(token_pattern, "0")) {
             html_style_hidden(token_element);
