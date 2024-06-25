@@ -74,7 +74,9 @@ export async function sandbox() {
       strong,
       translation,
     });
-    log({});
+    log({
+      bible,
+    });
     exit();
   });
   return;
