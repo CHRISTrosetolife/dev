@@ -9,11 +9,7 @@ import { app_memorize_group_to_range_string } from "./app_memorize_group_to_rang
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_clear } from "./html_clear.mjs";
-export function app_memorize_refresh_settings(
-  context,
-  refresh_memorize,
-  refresh_settings,
-) {
+export function app_memorize_refresh_settings(context, refresh_memorize) {
   let { root } = context;
   html_clear(root);
   html_button_width_full_text_click(root, "back", () => {
