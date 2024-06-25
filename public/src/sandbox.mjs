@@ -1,4 +1,3 @@
-import { string_trim } from "./string_trim.mjs";
 import { exit } from "./exit.mjs";
 import { log } from "./log.mjs";
 import { list_get } from "./list_get.mjs";
@@ -31,6 +30,7 @@ import { assert } from "./assert.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { path_join } from "./path_join.mjs";
 import { file_read } from "./file_read.mjs";
+import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 export async function sandbox() {
   let csv_path = path_join([folder_user_downloads(), "bsb_tables.csv"]);
   let csv_string = await file_read(csv_path);
@@ -42,7 +42,7 @@ export async function sandbox() {
     let transliteration = list_get(t, 7);
     let strong = list_get(t, 10);
     let reference = list_get(t, 11);
-    let translation = string_trim(list_get(t, 14));
+    let translation = string_trim_whitespace(list_get(t, 14));
     log({
       word,
       strong,
