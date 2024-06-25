@@ -14,6 +14,7 @@ export async function app_gs_map_cell_click(context, tile) {
   let npc = list_find_property_or(tile.overlays, "type", "npc", null);
   if (null_not_is(npc)) {
     await app_gs_map_cell_click_npc(context, npc);
+    return;
   } else {
     let walls = app_gs_overlays_any_wall(tile);
     if (!walls) {
