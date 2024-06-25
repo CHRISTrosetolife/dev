@@ -51,8 +51,8 @@ export async function app_gs_map_cell_click(context, tile) {
       let menu_overlay = app_gs_menu_overlay(context);
       let text =
         "❗You remember you have not 🙏 prayed, yet, before your next conversation.";
-      let div_pray_reminder = app_gs_overlay_speech_text(menu_overlay, text);
-      html_button_width_full_text_click_back(div_pray_reminder, () => {
+      let overlay_speech = app_gs_overlay_speech_text(menu_overlay, text);
+      html_button_width_full_text_click_back(overlay_speech, () => {
         html_remove(menu_overlay);
       });
     }
