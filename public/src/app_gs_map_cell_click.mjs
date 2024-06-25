@@ -34,7 +34,8 @@ export async function app_gs_map_cell_click(context, tile) {
     }
   } else {
     let { player } = context.game;
-    if (player.pray.conversation !== true) {
+    let needs_prayer = player.pray.conversation !== true;
+    if (needs_prayer) {
       let menu_overlay = app_gs_menu_overlay(context);
       let text =
         "❗You remember you have not 🙏 prayed, yet, before your next conversation.";
