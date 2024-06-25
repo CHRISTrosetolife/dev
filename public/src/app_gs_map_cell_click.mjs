@@ -1,3 +1,4 @@
+import { html_style_font_color_white } from "./html_style_font_color_white.mjs";
 import { app_gs_save } from "./app_gs_save.mjs";
 import { app_gs_map_html_at_find } from "./app_gs_map_html_at_find.mjs";
 import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
@@ -61,6 +62,7 @@ export async function app_gs_map_cell_click(context, tile) {
         div_pray_reminder_inner,
         "❗You remember you have not 🙏 prayed, yet, before your next conversation.",
       );
+      html_style_font_color_white(p);
       html_button_width_full_text_click_back(div_pray_reminder, () => {
         html_remove(menu_overlay);
       });
