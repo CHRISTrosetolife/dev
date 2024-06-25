@@ -95,7 +95,7 @@ export async function app_memorize() {
   });
   refresh_memorize();
   function refresh_settings() {
-    app_memorize_refresh_settings(context, refresh_memorize, refresh_settings);
+    app_memorize_refresh_settings(context, refresh_memorize);
   }
   function refresh_memorize() {
     let { root } = context;
