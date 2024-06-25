@@ -1,5 +1,5 @@
+import { app_memorize_button_keyboard_stylize } from "./app_memorize_button_keyboard_stylize.mjs";
 import { app_memorize_update_colors } from "./app_memorize_update_colors.mjs";
-import { number_to_dvw } from "./number_to_dvw.mjs";
 import { number_to_dvh } from "./number_to_dvh.mjs";
 import { app_memorize_refresh_settings } from "./app_memorize_refresh_settings.mjs";
 import { app_memorize_group_current_set } from "./app_memorize_group_current_set.mjs";
@@ -8,7 +8,6 @@ import { html_style_margin_x } from "./html_style_margin_x.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { list_size } from "./list_size.mjs";
 import { html_style_wrong } from "./html_style_wrong.mjs";
-import { html_style_margin_default } from "./html_style_margin_default.mjs";
 import { html_style_button_default_value } from "./html_style_button_default_value.mjs";
 import { keyboard_keys_rows } from "./keyboard_keys_rows.mjs";
 import { html_hash } from "./html_hash.mjs";
@@ -189,15 +188,7 @@ export async function app_memorize() {
     }
   }
   function button_keyboard_stylize(b) {
-    let b_width = number_to_dvw(10 - 1);
-    html_style_centered(b);
-    html_style_margin_default(b);
-    html_style(b, {
-      "font-size": "3.8dvh",
-      "min-width": b_width,
-      "max-width": b_width,
-      height: number_to_dvh(context.button_height - 0.6),
-    });
+    app_memorize_button_keyboard_stylize(context, b);
   }
   html_on(root, "keydown", (e) => {
     let { keyCode } = e;
