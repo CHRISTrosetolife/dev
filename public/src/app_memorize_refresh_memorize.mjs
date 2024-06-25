@@ -89,7 +89,7 @@ export function app_memorize_refresh_memorize(context) {
           html_style_background_color(spacer2, "green");
           html_style_font_color(spacer2, "green");
           if (context.style.spacer2) {
-            html_style(spacer2, context.style_spacer2);
+            html_style(spacer2, context.style.spacer2);
           }
           for (let s of [spacer, spacer2]) {
             html_style_hidden(s);
