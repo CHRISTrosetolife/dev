@@ -1,3 +1,4 @@
+import { app_memorize_on_keydown } from "./app_memorize_on_keydown.mjs";
 import { app_memorize_button_keyboard_stylize } from "./app_memorize_button_keyboard_stylize.mjs";
 import { string_case_upper } from "./string_case_upper.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
@@ -121,7 +122,7 @@ export function app_memorize_refresh_memorize(
       html_inner_set(b, string_case_upper(k));
       app_memorize_button_keyboard_stylize(context, b);
       html_on_click(b, () => {
-        on_keydown(k);
+        app_memorize_on_keydown(context, k);
       });
     }
   }
