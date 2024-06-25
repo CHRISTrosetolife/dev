@@ -1,3 +1,4 @@
+import { html_style_margin_x } from "./html_style_margin_x.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { list_size } from "./list_size.mjs";
 import { log } from "./log.mjs";
@@ -181,7 +182,7 @@ export async function app_memorize() {
       "⚙️ settings",
       refresh_settings,
     );
-    html_style(settings_button, {
+    html_style_margin_x(settings_button, {
       "margin-left": 0,
       "margin-right": 0,
     });
