@@ -61,7 +61,7 @@ export function app_memorize_refresh_settings(
         html_inner_set(b, p);
         html_on_click(b, () => {
           context.pattern_index = i;
-          refresh_settings();
+          app_memorize_refresh_settings(context, refresh_memorize);
         });
       });
     },
