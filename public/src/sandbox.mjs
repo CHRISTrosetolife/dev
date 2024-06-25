@@ -45,6 +45,7 @@ import { subtract_1 } from "./subtract_1.mjs";
 import { greater_than_equal } from "./greater_than_equal.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { list_last } from "./list_last.mjs";
+import { number_less_than } from "./number_less_than.mjs";
 export async function sandbox() {
   let file_name_prefix = "bsb_tables.";
   let csv_path = path_join([
@@ -58,6 +59,9 @@ export async function sandbox() {
   let reference;
   each(csv_lines, (line) => {
     let t = tokens_simple(line, '"', ",");
+    if (number_less_than(list_size(t), 5)) {
+      return;
+    }
     let word = list_get(t, 5);
     if (string_empty_is(word)) {
       return;
