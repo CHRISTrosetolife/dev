@@ -1,3 +1,4 @@
+import { js_code_arrow_block_args_async } from "./js_code_arrow_block_args_async.mjs";
 import { each_async } from "./each_async.mjs";
 import { list_remove_first } from "./list_remove_first.mjs";
 import { list_get_end } from "./list_get_end.mjs";
@@ -79,7 +80,7 @@ export function js_dollar(ast) {
         let e = js_parse_expression(
           js_code_call_args(each_async.name, [
             list,
-            js_code_arrow_block_args([name], ""),
+            js_code_arrow_block_args_async([name], ""),
           ]),
         );
         object_replace(node, e);
