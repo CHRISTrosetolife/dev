@@ -1,3 +1,4 @@
+import { string_trim } from "./string_trim.mjs";
 import { exit } from "./exit.mjs";
 import { log } from "./log.mjs";
 import { list_get } from "./list_get.mjs";
@@ -41,7 +42,7 @@ export async function sandbox() {
     let transliteration = list_get(t, 7);
     let strong = list_get(t, 10);
     let reference = list_get(t, 11);
-    let translation = list_get(t, 14);
+    let translation = string_trim(list_get(t, 14));
     log({
       word,
       transliteration,
