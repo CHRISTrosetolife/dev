@@ -57,10 +57,10 @@ export async function app_memorize() {
   });
   refresh_memorize();
   function refresh_settings() {
-    app_memorize_refresh_settings(context, refresh_memorize);
+    app_memorize_refresh_settings(context);
   }
   function refresh_memorize() {
-    app_memorize_refresh_memorize(context, refresh_settings);
+    app_memorize_refresh_memorize(context);
   }
   html_on(root, "keydown", (e) => {
     let { keyCode } = e;
