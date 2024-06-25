@@ -37,9 +37,10 @@ import { list_second } from "./list_second.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { list_add } from "./list_add.mjs";
 export async function sandbox() {
+  let file_name_prefix = "bsb_tables.";
   let csv_path = path_join([
     folder_user_downloads(),
-    string_combine_multiple(["bsb_tables.", "csv"]),
+    string_combine_multiple([file_name_prefix, "csv"]),
   ]);
   let csv_string = await file_read(csv_path);
   let csv_lines = string_split_newline(csv_string);
