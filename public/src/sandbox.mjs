@@ -28,7 +28,9 @@ export async function sandbox() {
   let strongs = await bible_interlinear_strongs_greek();
   string_combine_multiple([
     url_secure_w3(),
-    "openbible.com/strongs/greek/1254.htm",
+    "openbible.com/strongs/greek/",
+    "1254",
+    ".htm",
   ]);
   await each_async(strongs, async (strong) => {});
   return;
