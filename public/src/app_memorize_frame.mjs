@@ -16,6 +16,7 @@ import { object_merge } from "./object_merge.mjs";
 import { storage_url } from "./storage_url.mjs";
 import { http_get } from "./http_get.mjs";
 import { bible_engbsb_storage_path_file } from "./bible_engbsb_storage_path_file.mjs";
+import { html_document_body } from "./html_document_body.mjs";
 export async function app_memorize_frame(context) {
   let file_path = bible_engbsb_storage_path_file("JHN19");
   let verses = await http_get(storage_url(file_path));
@@ -44,7 +45,7 @@ export async function app_memorize_frame(context) {
     },
   });
   app_memorize_refresh_memorize(context);
-  html_on(context.root, "keydown", (e) => {
+  html_on(html_document_body(), "keydown", (e) => {
     let { keyCode } = e;
     let c = String.fromCharCode(keyCode);
     let c_lower = string_case_lower(c);
