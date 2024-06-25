@@ -142,9 +142,10 @@ export function js_dollar(ast) {
         object_replace(node, e);
       }
       if (remaining === "r") {
+        let { stack } = v;
         let e = js_parse_first_function("return");
         log({
-          parent,
+          parent,stack
         });
         exit();
         if (parent.type === "ExpressionStatement") {
