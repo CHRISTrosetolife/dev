@@ -29,7 +29,7 @@ export async function sandbox() {
   return list_adder_unique((la) => {
     each(new_testament_books, (book) => {
       each(book.chapters, (chapter) => {
-        each(book.verses, (verse) => {
+        each(chapter.verses, (verse) => {
           each(verse.tokens, (token) => {
             la(la.strong);
           });
