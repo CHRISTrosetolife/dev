@@ -58,6 +58,8 @@ export async function sandbox() {
     assert(list_size_2, [split]);
     let book_name = list_first(split);
     let book = list_find_property_or(bible, "book_name", book_name, null);
+    if (book === null) {
+    }
     let chapter_verse = list_second(split);
     let split2 = string_split_colon(chapter_verse);
     assert(list_size_2, [split2]);
