@@ -120,7 +120,7 @@ export async function app_memorize() {
           let b = html_button(root);
           html_inner_set(b, app_memorize_group_to_range_string(context, g));
           html_on_click(b, () => {
-            group_current_set(g);
+            app_memorize_group_current_set(context, g);
             refresh_settings();
           });
         }
