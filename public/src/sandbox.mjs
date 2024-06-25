@@ -26,7 +26,7 @@ import { object_property_get } from "./object_property_get.mjs";
 export async function sandbox() {
   let books = await bible_interlinear_cache();
   let new_testament_books = list_take_reverse(books, 27);
-  return list_adder_unique((la) => {
+  let strongs = list_adder_unique((la) => {
     each(new_testament_books, (book) => {
       each(book.chapters, (chapter) => {
         each(chapter.verses, (verse) => {
