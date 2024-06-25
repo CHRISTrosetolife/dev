@@ -12,7 +12,6 @@ export function app_gs_player_new() {
     conversation: false,
   };
   player.conversation_count = 0;
-  player.gospel_share_count = 0;
   player.map = 0;
   return player;
 }
