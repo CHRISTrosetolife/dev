@@ -1,3 +1,4 @@
+import { app_gs_overlay_speech_text } from "./app_gs_overlay_speech_text.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { app_gs_save } from "./app_gs_save.mjs";
 import { app_gs_map_html_at_find } from "./app_gs_map_html_at_find.mjs";
@@ -15,6 +16,7 @@ export function app_gs_conversation_end(
     "👋 Politely end the conversation after 🙏 praying",
     () => {
       html_clear(menu_overlay);
+      let div_pray_reminder = app_gs_overlay_speech_text(menu_overlay, text);
       let c_blur = app_gs_map_html_at_find(context, npc, "npc_overlay_blur");
       let c = app_gs_map_html_at_find(context, npc, "npc_overlay");
       app_gs_npc_icon_update(context, npc, c_blur, c);
