@@ -138,7 +138,7 @@ export async function app_memorize() {
         html_p_text(root, "which verse range do you want to focus on ?");
         for (let g of context.groups) {
           let b = html_button(root);
-          html_inner_set(b, group_to_range_string(g));
+          html_inner_set(b, app_memorize_group_to_range_string(context, g));
           html_on_click(b, () => {
             group_current_set(g);
             refresh_settings();
