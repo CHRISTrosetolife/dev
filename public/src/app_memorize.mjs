@@ -193,7 +193,7 @@ export async function app_memorize() {
     let c_lower = string_case_lower(c);
     on_keydown(c_lower);
   });
-  let errored_keys = [];
+  context.errored_keys = [];
   function on_keydown(k) {
     let j = list_get(context.group_current, context.verse_index);
     let current_verse = list_get(context.verses, j);
@@ -231,7 +231,7 @@ export async function app_memorize() {
       } else {
         app_memorize_update_colors(context);
       }
-      for (let errored_key of errored_keys) {
+      for (let errored_key of context.errored_keys) {
         html_style(errored_key, html_style_button_default_value());
         app_memorize_button_keyboard_stylize(context, errored_key);
       }
@@ -241,7 +241,7 @@ export async function app_memorize() {
       html_style_font_color(context.previous_token_element, "red");
       let keyboard_button = object_property_get(context.keyboard_buttons, k);
       html_style_wrong(keyboard_button);
-      list_add(errored_keys, keyboard_button);
+      list_add(context.errored_keys, keyboard_button);
     }
   }
 }
