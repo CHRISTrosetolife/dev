@@ -182,10 +182,7 @@ export async function app_memorize() {
       "⚙️ settings",
       refresh_settings,
     );
-    html_style_margin_x(settings_button, {
-      "margin-left": 0,
-      "margin-right": 0,
-    });
+    html_style_margin_x(settings_button, 0);
     let verses_element = html_element(root, "div");
     let keys = keyboard_keys_rows();
     let keys_length = list_size(keys);
