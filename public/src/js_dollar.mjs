@@ -148,7 +148,10 @@ export function js_dollar(ast) {
           parent,stack
         });
         exit();
-        if (parent.type === "ExpressionStatement") {
+        
+        if (list_is(parent)) {
+            object_replace(parent, e);
+          } else if (parent.type === "ExpressionStatement") {
           object_replace(parent, e);
         }
       }
