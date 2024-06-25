@@ -71,6 +71,9 @@ export async function app_memorize() {
   let verses = await http_get(storage_url(file_path));
   let verses_length = list_size(verses);
   let groups = app_memorize_group(verses_length);
+  object_merge(context, {
+    groups,
+  });
   let button_height = 7;
   group_current_set(list_first(groups));
   html_hash({
