@@ -37,6 +37,7 @@ import { list_size_2 } from "./list_size_2.mjs";
 import { list_second } from "./list_second.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { list_add } from "./list_add.mjs";
+import { json_to } from "./json_to.mjs";
 export async function sandbox() {
   let csv_path = path_join([folder_user_downloads(), "bsb_tables.csv"]);
   let csv_string = await file_read(csv_path);
@@ -74,9 +75,11 @@ export async function sandbox() {
       strong,
       translation,
     });
-    log({
-      bible,
-    });
+    log(
+      json_to({
+        bible,
+      }),
+    );
     exit();
   });
   return;
