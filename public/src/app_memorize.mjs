@@ -66,7 +66,7 @@ export async function app_memorize() {
   let verses_length = list_size(verses);
   let groups = app_memorize_group(verses_length);
   let context = {};
-  context.settings = true;
+  context.settings = false;
   let button_height = 7;
   group_current_set(list_first(groups));
   html_hash({
