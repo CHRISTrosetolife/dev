@@ -66,7 +66,6 @@ export function app_memorize_refresh_memorize(context) {
   });
   let pattern_length = list_size(pattern);
   let token_count = 0;
-  return;
   context.verse_elements = list_adder((la) => {
     each_index(context.group_current, (i, j) => {
       let verse = list_get(context.verses, i);
@@ -106,6 +105,7 @@ export function app_memorize_refresh_memorize(context) {
       });
     });
   });
+  return;
   app_memorize_update_colors(context);
   let keyboard_element = html_element(root, "div");
   html_style(keyboard_element, {
