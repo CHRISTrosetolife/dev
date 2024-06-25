@@ -1,4 +1,4 @@
-import { app_gs_npc_conversation_wait_is } from "./app_gs_npc_conversation_wait_is.mjs";
+import { app_gs_npc_conversation_wait } from "./app_gs_npc_conversation_wait.mjs";
 import { app_gs_phrase_what_youve_said } from "./app_gs_phrase_what_youve_said.mjs";
 import { app_gs_phrase_exclaim_or_period } from "./app_gs_phrase_exclaim_or_period.mjs";
 import { app_gs_phrase_let_us } from "./app_gs_phrase_let_us.mjs";
@@ -18,7 +18,7 @@ export function app_gs_conversation(context, npc) {
   let menu_overlay = app_gs_menu_overlay(context);
   context.game.player.conversation_count++;
   npc.conversation_count++;
-  if (app_gs_npc_conversation_wait_is(context, npc)) {
+  if (app_gs_npc_conversation_wait(context, npc)) {
     let sentences = [
       string_random_or_empty(
         string_combine_multiple([
