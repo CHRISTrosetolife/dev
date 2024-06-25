@@ -27,7 +27,6 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { http_cache } from "./http_cache.mjs";
 export async function sandbox() {
   let strongs = await bible_interlinear_strongs_greek();
-  let strong = "1";
   await each_async(strongs, async (strong) => {
     let url = string_combine_multiple([
       url_secure_w3(),
@@ -35,7 +34,7 @@ export async function sandbox() {
       strong,
       ".htm",
     ]);
-    return await http_cache(url);
+    await http_cache(url);
   });
   return;
   list_map(csv_lines, (line) => {
