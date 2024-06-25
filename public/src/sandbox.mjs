@@ -43,6 +43,7 @@ import { string_empty_is } from "./string_empty_is.mjs";
 import { list_size } from "./list_size.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
 import { greater_than_equal } from "./greater_than_equal.mjs";
+import { list_join_space } from "./list_join_space.mjs";
 export async function sandbox() {
   let file_name_prefix = "bsb_tables.";
   let csv_path = path_join([
@@ -72,7 +73,8 @@ export async function sandbox() {
       reference,
       t,
     }));
-    let book_name = list_take(split, subtract_1(list_size(split)));
+    let book_name_parts = list_take(split, subtract_1(list_size(split)));
+    let book_name = list_join_space(book_name_parts);
     let book = list_find_property_or(bible, "book_name", book_name, null);
     if (book === null) {
       book = {
