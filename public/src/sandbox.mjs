@@ -48,12 +48,13 @@ export async function sandbox() {
   let csv_lines = string_split_newline(csv_string);
   list_remove_multiple_at(csv_lines, 0, 2);
   let bible = [];
+  let reference;
   each(csv_lines, (line) => {
     let t = tokens_simple(line, '"', ",");
     let word = list_get(t, 5);
     let transliteration = list_get(t, 7);
     let strong = list_get(t, 10);
-    let reference = list_get(t, 11);
+    let reference_new = list_get(t, 11);
     let translation = string_trim_whitespace(list_get(t, 14));
     let split = string_split_space(reference);
     assert_message(list_size_2, [split], () => ({
