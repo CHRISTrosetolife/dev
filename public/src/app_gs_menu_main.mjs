@@ -1,3 +1,4 @@
+import { app_memorize_frame } from "./app_memorize_frame.mjs";
 import { app_gs_load } from "./app_gs_load.mjs";
 import { app_gs_game_delete } from "./app_gs_game_delete.mjs";
 import { app_gs_menu_pray } from "./app_gs_menu_pray.mjs";
@@ -20,7 +21,9 @@ export function app_gs_menu_main(context, menu_overlay) {
   html_button_width_full_text_click(
     menu_overlay,
     "📖 study bible",
-    async () => {},
+    async () => {
+      await app_memorize_frame(context);
+    },
   );
   html_button_width_full_text_click(menu_overlay, "🌱 new game", async () => {
     app_gs_game_delete();
