@@ -32,6 +32,7 @@ import { html_element } from "./html_element.mjs";
 import { string_split } from "./string_split.mjs";
 import { list_get } from "./list_get.mjs";
 import { html_clear } from "./html_clear.mjs";
+import { html_style_height } from "./html_style_height.mjs";
 export function app_memorize_refresh_memorize(context) {
   let { root } = context;
   html_clear(root);
@@ -67,6 +68,7 @@ export function app_memorize_refresh_memorize(context) {
   let pattern_length = list_size(pattern);
   let token_count = 0;
   let first = html_element(verses_element, "div");
+  html_style_height(first, "100dvh");
   context.verse_elements = list_adder((la) => {
     each_index(context.group_current, (i, j) => {
       let verse = list_get(context.verses, i);
