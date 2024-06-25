@@ -179,6 +179,7 @@ export async function app_memorize() {
     let last_verse = list_get(context.verses, last_verse_index);
     let { verse_number: last_verse_number } = last_verse;
     let last_number = last_verse_number;
+    let result = first_number;
     if (first_number === last_number) {
       return first_number;
     }
