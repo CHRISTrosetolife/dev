@@ -39,6 +39,7 @@ export function app_gs_menu_main(context, menu_overlay) {
             color: "salmon",
           },
         },
+        group_next: () => {},
       });
     },
   );
