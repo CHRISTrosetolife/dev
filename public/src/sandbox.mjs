@@ -1,6 +1,4 @@
 import { bible_words_greek_download } from "./bible_words_greek_download.mjs";
-import { string_split_empty } from "./string_split_empty.mjs";
-import { list_map } from "./list_map.mjs";
 import { list_to_lookup_key_value_property } from "./list_to_lookup_key_value_property.mjs";
 import { list_reverse } from "./list_reverse.mjs";
 import { list_copy } from "./list_copy.mjs";
@@ -26,13 +24,6 @@ export async function sandbox() {
   if (0) {
     await bible_words_greek_download();
   }
-  list_map(csv_lines, (line) => {
-    let split = string_split_empty(input);
-    let quoted = false;
-    each(split, (s) => {});
-    return;
-  });
-  return;
   let from = "ceb";
   let to = "en";
   let audio_upload_run = true;
