@@ -6,7 +6,7 @@ export async function ceb_bible_words_definitions_pairs_find(query) {
   let pairs = await ceb_bible_words_definitions_pairs_compute();
   each_index(pairs, (pair, index) => {
     each(["eng", "ceb"], (language) => {
-      if (object_property_get(object, property_name)) {
+      if (object_property_get(pair, language) === query) {
       }
     });
   });
