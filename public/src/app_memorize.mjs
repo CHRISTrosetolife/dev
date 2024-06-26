@@ -8,7 +8,7 @@ export async function app_memorize() {
   let context = {
     style: {},
   };
-  context.settings = false;
+  context.settings = true;
   let root = html_style_default_initialize();
   html_style(root, {
     margin: "0",
