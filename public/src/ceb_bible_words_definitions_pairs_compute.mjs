@@ -1,7 +1,7 @@
+import { number_power } from "./number_power.mjs";
 import { list_to_lookup_key_value_property } from "./list_to_lookup_key_value_property.mjs";
 import { list_reverse } from "./list_reverse.mjs";
 import { list_sort_property } from "./list_sort_property.mjs";
-import { list_sum } from "./list_sum.mjs";
 import { number_is } from "./number_is.mjs";
 import { assert } from "./assert.mjs";
 import { list_size } from "./list_size.mjs";
@@ -52,8 +52,10 @@ export async function ceb_bible_words_definitions_pairs_compute() {
       eng.score = 0;
     }
     assert(number_is, [eng.score]);
-    let scores = list_map_property([eng, ceb], "score");
-    pair.score = list_sum(scores);
+    let [eng_score, ceb_score] = list_map_property([eng, ceb], "score");
+    pair.score = number_power(
+      number_power(eng_score, 2) + number_power(ceb_score, 2),
+    );
   });
   list_sort_property(pairs, "score");
   list_reverse(pairs);
