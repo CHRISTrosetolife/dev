@@ -43,13 +43,17 @@ export function app_memorize_on_keydown(context, key) {
         if (
           greater_than_equal(context.pattern_index, context.patterns_length)
         ) {
-          let group_current_index = list_index(
-            context.groups,
-            context.group_current,
-          );
-          let group_next_index = add_1(group_current_index);
-          let group_next = list_get(context.groups, group_next_index);
-          app_memorize_group_current_set(context, group_next);
+          if (context.group_next) {
+            context.group_next();
+          } else {
+            let group_current_index = list_index(
+              context.groups,
+              context.group_current,
+            );
+            let group_next_index = add_1(group_current_index);
+            let group_next = list_get(context.groups, group_next_index);
+            app_memorize_group_current_set(context, group_next);
+          }
         }
       }
       app_memorize_refresh_memorize(context);
