@@ -1,8 +1,8 @@
+import { list_take_soft } from "./list_take_soft.mjs";
 import { app_language_atom_count } from "./app_language_atom_count.mjs";
 import { list_size } from "./list_size.mjs";
 import { list_add_beginning } from "./list_add_beginning.mjs";
 import { list_concat } from "./list_concat.mjs";
-import { list_take } from "./list_take.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
 import { each } from "./each.mjs";
 import { ceb_bible_words_definitions_pairs } from "./ceb_bible_words_definitions_pairs.mjs";
@@ -37,7 +37,7 @@ export async function ceb_bible_words_definitions_atoms(skip, limit) {
         for (let p of pairs) {
           let c = false;
           let concat = list_concat([atom_result], previous);
-          let lists = list_take(concat, take_count);
+          let lists = list_take_soft(concat, take_count);
           each(lists, (list) => {
             for (let eq of [list_first, list_second]) {
               if (list_any(list, (a) => equal_by(a, p, eq))) {
