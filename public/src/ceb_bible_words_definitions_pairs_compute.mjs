@@ -43,7 +43,8 @@ export async function ceb_bible_words_definitions_pairs_compute() {
       });
     }
     let { ceb, eng } = pair;
-    if (object_property_exists(eng_lookup, eng.word)) {
+    let eng_word = eng.word;
+    if (object_property_exists(eng_lookup, eng_word)) {
       eng.score = object_property_get(eng_lookup, eng.word);
     } else {
       eng.score = 0;
