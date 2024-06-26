@@ -53,6 +53,7 @@ export async function ceb_bible_words_definitions_pairs_compute() {
     }
     assert(number_is, [eng.score]);
     let [eng_score, ceb_score] = list_map_property([eng, ceb], "score");
+    let n = 2;
     pair.score = number_power(
       number_power(eng_score, 2) + number_power(ceb_score, 2),
       1 / 2,
