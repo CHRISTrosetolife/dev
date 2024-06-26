@@ -1,3 +1,4 @@
+import { list_size } from "./list_size.mjs";
 import { bible_words_greek_download } from "./bible_words_greek_download.mjs";
 import { list_to_lookup_key_value_property } from "./list_to_lookup_key_value_property.mjs";
 import { list_reverse } from "./list_reverse.mjs";
@@ -37,6 +38,7 @@ export async function sandbox() {
   let { atoms, definitions: definitions_list } =
     await ceb_bible_words_definitions_atoms(skip, limit);
   let group = list_copy(list_take(atoms, group_count));
+  return list_size(group);
   let definitions_all = list_to_lookup_key_value_property(
     definitions_list,
     "word",
