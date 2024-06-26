@@ -8,7 +8,10 @@ export async function ceb_bible_words_definitions_pairs_find(query) {
   return list_adder((la) => {
     each_index(pairs, (pair, index) => {
       each(["eng", "ceb"], (language) => {
-        if (object_property_get(pair, language) === query) {
+        if (
+          (object_property_get(object, property_name),
+          object_property_get(pair, language) === query)
+        ) {
           la({
             pair,
             index,
