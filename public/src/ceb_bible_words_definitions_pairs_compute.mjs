@@ -15,6 +15,7 @@ import { each } from "./each.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { ceb_bible_words_score } from "./ceb_bible_words_score.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
+import { string_case_lower } from "./string_case_lower.mjs";
 export async function ceb_bible_words_definitions_pairs_compute() {
   let ceb_scores = await ceb_bible_words_score();
   let pairs = list_adder((la) =>
@@ -44,6 +45,7 @@ export async function ceb_bible_words_definitions_pairs_compute() {
     }
     let { ceb, eng } = pair;
     let eng_word = eng.word;
+    eng_word = string_case_lower(eng_word);
     if (object_property_exists(eng_lookup, eng_word)) {
       eng.score = object_property_get(eng_lookup, eng_word);
     } else {
