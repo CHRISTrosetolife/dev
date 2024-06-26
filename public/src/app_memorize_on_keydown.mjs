@@ -65,7 +65,7 @@ export function app_memorize_on_keydown(context, key) {
     html_style_visible(context.previous_token_element);
     html_style_font_color(context.previous_token_element, "red");
     if (context.style.error) {
-      html_style(context.previous_token_element, {});
+      html_style(context.previous_token_element, context.style.error);
     }
     let keyboard_button = object_property_get(context.keyboard_buttons, key);
     html_style_wrong(keyboard_button);
