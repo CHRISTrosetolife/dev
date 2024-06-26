@@ -37,11 +37,13 @@ export async function ceb_bible_words_definitions_pairs_compute() {
     "score",
   );
   each_index(pairs, (pair, i) => {
-    if (i % 100 === 0) {
-      log({
-        i,
-        s: list_size(pairs),
-      });
+    if (0) {
+      if (i % 100 === 0) {
+        log({
+          i,
+          s: list_size(pairs),
+        });
+      }
     }
     let { ceb, eng } = pair;
     let eng_word = eng.word;
