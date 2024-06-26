@@ -1,3 +1,4 @@
+import { error } from "./error.mjs";
 import { app_memorize_refresh_memorize } from "./app_memorize_refresh_memorize.mjs";
 import { list_add } from "./list_add.mjs";
 import { html_style_wrong } from "./html_style_wrong.mjs";
@@ -63,6 +64,9 @@ export function app_memorize_on_keydown(context, key) {
     context.mistakes = true;
     html_style_visible(context.previous_token_element);
     html_style_font_color(context.previous_token_element, "red");
+    if (context.style.error) {
+      html_style(context.previous_token_element, {});
+    }
     let keyboard_button = object_property_get(context.keyboard_buttons, key);
     html_style_wrong(keyboard_button);
     list_add(context.errored_keys, keyboard_button);
