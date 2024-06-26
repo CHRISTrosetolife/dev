@@ -45,6 +45,7 @@ export function app_memorize_on_keydown(context, key) {
         ) {
           if (context.group_next) {
             context.group_next();
+            return;
           } else {
             let group_current_index = list_index(
               context.groups,
