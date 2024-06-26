@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
@@ -12,7 +13,7 @@ export async function ceb_bible_words_definitions_pairs_find(query) {
           object_property_get(object_property_get(pair, language), "word") ===
           query
         ) {
-          la({
+          log({})({
             pair,
             index,
           });
