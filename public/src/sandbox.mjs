@@ -26,7 +26,6 @@ export async function sandbox() {
   if (0) {
     await bible_words_greek_download();
   }
-  return;
   list_map(csv_lines, (line) => {
     let split = string_split_empty(input);
     let quoted = false;
