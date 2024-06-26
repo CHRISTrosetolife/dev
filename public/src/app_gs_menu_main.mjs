@@ -36,7 +36,7 @@ export function app_gs_menu_main(context, menu_overlay) {
             "background-color": "lightgreen",
           },
           error: {
-            color: "lightred",
+            color: "salmon",
           },
         },
       });
