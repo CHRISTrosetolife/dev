@@ -25,6 +25,9 @@ export async function ceb_bible_words_definitions_pairs_compute() {
         if (w.word === d) {
           return;
         }
+        log({
+          d,
+        });
         if (list_includes(["thee"], d)) {
           return;
         }
