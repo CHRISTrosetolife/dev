@@ -23,7 +23,9 @@ import { file_read_json } from "./file_read_json.mjs";
 import { assert } from "./assert.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 export async function sandbox() {
-  await bible_words_greek_download();
+  if (0) {
+    await bible_words_greek_download();
+  }
   return;
   list_map(csv_lines, (line) => {
     let split = string_split_empty(input);
