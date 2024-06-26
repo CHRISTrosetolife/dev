@@ -1,3 +1,4 @@
+import { error } from "./error.mjs";
 import { app_memorize_frame } from "./app_memorize_frame.mjs";
 import { app_gs_load } from "./app_gs_load.mjs";
 import { app_gs_game_delete } from "./app_gs_game_delete.mjs";
@@ -33,6 +34,9 @@ export function app_gs_menu_main(context, menu_overlay) {
           spacer2: {
             color: "lightgreen",
             "background-color": "lightgreen",
+          },
+          error: {
+            color: "lightred",
           },
         },
       });
