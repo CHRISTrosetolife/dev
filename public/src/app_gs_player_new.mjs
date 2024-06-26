@@ -12,7 +12,7 @@ export function app_gs_player_new() {
     conversation: false,
   };
   player.energy = {
-    conversation: 3,
+    conversation: 0,
   };
   player.conversation_count = 0;
   player.map = 0;
