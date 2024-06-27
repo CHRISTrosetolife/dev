@@ -1,3 +1,4 @@
+import { each_index } from "./each_index.mjs";
 import { app_memorize_group_to_range_string } from "./app_memorize_group_to_range_string.mjs";
 import { app_memorize_group_next } from "./app_memorize_group_next.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
@@ -60,6 +61,7 @@ export async function app_gs_menu_study_bible(menu_overlay) {
           ]),
         );
         let { groups } = memorize_context;
+        each_index(list, (item, index) => {});
       }
       html_button_width_full_text_click(menu_overlay, "⬅️ No, go back");
       html_remove(menu_overlay);
