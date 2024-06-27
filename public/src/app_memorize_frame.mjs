@@ -28,7 +28,7 @@ export async function app_memorize_frame(context) {
     groups,
   });
   context.button_height = 7;
-  groups;
+  let group;
   if (object_property_exists(context, "group_current")) {
     app_memorize_group_current_set(
       context,
