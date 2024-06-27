@@ -14,6 +14,7 @@ import { storage_url } from "./storage_url.mjs";
 import { http_get } from "./http_get.mjs";
 import { bible_engbsb_storage_path_file } from "./bible_engbsb_storage_path_file.mjs";
 import { html_document_body } from "./html_document_body.mjs";
+import { object_property_exists } from "./object_property_exists.mjs";
 export async function app_memorize_frame(context) {
   let file_path = bible_engbsb_storage_path_file("JHN19");
   let verses = await http_get(storage_url(file_path));
@@ -26,6 +27,8 @@ export async function app_memorize_frame(context) {
     groups,
   });
   context.button_height = 7;
+  if (object_property_exists(context, "group_current")) {
+  }
   app_memorize_group_current_set(context, list_first(context.groups));
   html_hash({
     verses: (value) => {
