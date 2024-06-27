@@ -73,6 +73,13 @@ export async function app_gs_menu_study_bible(menu_overlay) {
           context,
           string_combine_multiple([verse_number, "-", verse_number]),
         );
+        html_button_width_full_text_click(
+          menu_overlay,
+          string_combine_multiple([
+            "📖 Yes, study the bible more with verse ",
+            app_memorize_group_to_range_string(context, g),
+          ]),
+        );
       }
       html_button_width_full_text_click(menu_overlay, "⬅️ No, go back");
       html_remove(menu_overlay);
