@@ -1,3 +1,4 @@
+import { list_find_property } from "./list_find_property.mjs";
 import { list_index } from "./list_index.mjs";
 import { app_memorize_group_to_range_string } from "./app_memorize_group_to_range_string.mjs";
 import { app_memorize_group_next } from "./app_memorize_group_next.mjs";
@@ -62,7 +63,7 @@ export async function app_gs_menu_study_bible(menu_overlay) {
         );
         let { groups } = memorize_context;
         let { verses } = memorize_context;
-        list_find_property();
+        list_find_property(verses, "verse_number", gn_last);
         list_index(verses);
       }
       html_button_width_full_text_click(menu_overlay, "⬅️ No, go back");
