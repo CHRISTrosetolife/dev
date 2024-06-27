@@ -7,6 +7,7 @@ export function app_memorize_group_next(context) {
   let group_current_index = list_index(groups, context.group_current);
   let group_next_index = add_1(group_current_index);
   if (group_next_index >= list_size(groups)) {
+    return null;
   }
   let group_next = list_get(groups, group_next_index);
   return group_next;
