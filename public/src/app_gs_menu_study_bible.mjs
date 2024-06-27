@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_remove } from "./html_remove.mjs";
 import { app_gs_overlay_speech_text } from "./app_gs_overlay_speech_text.mjs";
 import { error } from "./error.mjs";
@@ -28,7 +29,7 @@ export async function app_gs_menu_study_bible(menu_overlay) {
       let gain = list_size(tokens);
       energy.conversation += gain;
       html_clear(menu_overlay);
-      app_gs_overlay_speech_text("You gained");
+      app_gs_overlay_speech_text(string_combine_multiple(["You gained"]));
       html_remove(menu_overlay);
     },
     short: true,
