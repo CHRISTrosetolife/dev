@@ -22,6 +22,8 @@ export async function app_gs_menu_study_bible(menu_overlay) {
     },
     group_next: (a) => {
       let { tokens } = a;
+      let { player } = context.game;
+      let { energy } = player;
       html_clear(menu_overlay);
       app_gs_overlay_speech_text("You gained");
       html_remove(menu_overlay);
