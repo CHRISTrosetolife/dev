@@ -28,7 +28,9 @@ export function app_memorize_on_keydown(context, key) {
   if (equal(key, letter_first)) {
     if (context.short) {
       if (context.group_next) {
-        context.group_next();
+        context.group_next({
+          tokens,
+        });
         return;
       }
     }
@@ -50,7 +52,9 @@ export function app_memorize_on_keydown(context, key) {
           greater_than_equal(context.pattern_index, context.patterns_length)
         ) {
           if (context.group_next) {
-            context.group_next();
+            context.group_next({
+              tokens,
+            });
             return;
           }
           let group_current_index = list_index(
