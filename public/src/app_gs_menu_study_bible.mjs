@@ -5,6 +5,7 @@ import { error } from "./error.mjs";
 import { app_memorize_frame } from "./app_memorize_frame.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { list_size } from "./list_size.mjs";
+import { list_join_space } from "./list_join_space.mjs";
 export async function app_gs_menu_study_bible(menu_overlay) {
   html_clear(menu_overlay);
   await app_memorize_frame({
@@ -30,7 +31,13 @@ export async function app_gs_menu_study_bible(menu_overlay) {
       energy.conversation += gain;
       html_clear(menu_overlay);
       app_gs_overlay_speech_text(
-        string_combine_multiple(["You gained ", gain, " conversation energy."]),
+        list_join_space([
+          string_combine_multiple([
+            "You gained ",
+            gain,
+            " conversation energy.",
+          ]),
+        ]),
       );
       html_remove(menu_overlay);
     },
