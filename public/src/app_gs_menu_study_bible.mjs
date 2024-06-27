@@ -51,8 +51,8 @@ export async function app_gs_menu_study_bible(menu_overlay) {
       );
       let { context: memorize_context } = a;
       let group_next = app_memorize_group_next(memorize_context);
-      let [g_first, g_last] = group_next;
-      if (g_first !== g_last) {
+      let [gn_first, gn_last] = group_next;
+      if (gn_first !== gn_last) {
         html_button_width_full_text_click(
           menu_overlay,
           string_combine_multiple([
@@ -61,7 +61,7 @@ export async function app_gs_menu_study_bible(menu_overlay) {
           ]),
         );
         let { groups } = memorize_context;
-        each_index(list, (item, index) => {});
+        each_index(groups, (g, index) => {});
       }
       html_button_width_full_text_click(menu_overlay, "⬅️ No, go back");
       html_remove(menu_overlay);
