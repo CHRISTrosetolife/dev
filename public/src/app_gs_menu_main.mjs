@@ -40,6 +40,7 @@ export function app_gs_menu_main(context, menu_overlay) {
           },
         },
         group_next: (tokens) => {
+          html_clear(menu_overlay);
           html_remove(menu_overlay);
         },
         short: true,
