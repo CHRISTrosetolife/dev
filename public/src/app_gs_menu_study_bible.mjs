@@ -1,5 +1,3 @@
-import { list_index } from "./list_index.mjs";
-import { each_index } from "./each_index.mjs";
 import { app_memorize_group_to_range_string } from "./app_memorize_group_to_range_string.mjs";
 import { app_memorize_group_next } from "./app_memorize_group_next.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
@@ -62,13 +60,6 @@ export async function app_gs_menu_study_bible(menu_overlay) {
           ]),
         );
         let { groups } = memorize_context;
-        let group_next_index = list_index(groups, group_next);
-        each_index(groups, (g, index) => {
-          if (index <= group_next_index) {
-            return;
-          }
-          let [g_first, g_last] = g;
-        });
       }
       html_button_width_full_text_click(menu_overlay, "⬅️ No, go back");
       html_remove(menu_overlay);
