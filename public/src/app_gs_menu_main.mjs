@@ -39,7 +39,7 @@ export function app_gs_menu_main(context, menu_overlay) {
             color: "salmon",
           },
         },
-        group_next: () => {
+        group_next: (tokens) => {
           html_remove(menu_overlay);
         },
         short: true,
