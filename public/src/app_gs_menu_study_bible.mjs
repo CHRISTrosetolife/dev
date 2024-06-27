@@ -63,7 +63,6 @@ export async function app_gs_menu_study_bible(menu_overlay) {
             app_memorize_group_to_range_string(context, group_next),
           ]),
         );
-        let { groups } = memorize_context;
         let { verses } = memorize_context;
         let gn_last_verse = list_find_property(verses, "verse_number", gn_last);
         let gn_last_verse_index = list_index(verses, gn_last_verse);
