@@ -37,7 +37,7 @@ export async function app_gs_menu_study_bible(menu_overlay) {
             gain,
             " conversation energy.",
           ]),
-          string_combine_multiple(["What would you like to do?"]),
+          "What would you like to do?",
         ]),
       );
       html_remove(menu_overlay);
