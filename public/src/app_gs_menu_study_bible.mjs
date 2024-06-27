@@ -14,7 +14,6 @@ import { html_clear } from "./html_clear.mjs";
 import { list_size } from "./list_size.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { list_get } from "./list_get.mjs";
-import { list_first } from "./list_first.mjs";
 export async function app_gs_menu_study_bible(menu_overlay) {
   html_clear(menu_overlay);
   await app_memorize_frame({
@@ -72,7 +71,7 @@ export async function app_gs_menu_study_bible(menu_overlay) {
         let gn_last_verse_index_next = gn_last_verse_index + 1;
         let gn_last_verse_next = list_get(verses, gn_last_verse_index_next);
         let { verse_number } = gn_last_verse_next;
-        list_find(groups, (g) => list_all(g, (b) => b === list_first));
+        list_find(groups, (g) => list_all(g, (b) => b === verse_number));
       }
       html_button_width_full_text_click(menu_overlay, "⬅️ No, go back");
       html_remove(menu_overlay);
