@@ -47,7 +47,7 @@ export async function app_gs_menu_study_bible(menu_overlay) {
           "Would you like to study the 📖 bible some more?",
         ]),
       );
-      app_memorize_group_next;
+      app_memorize_group_next();
       html_button_width_full_text_click(
         menu_overlay,
         "📖 Yes, study the bible more",
