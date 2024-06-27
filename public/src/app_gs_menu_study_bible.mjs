@@ -63,7 +63,9 @@ export async function app_gs_menu_study_bible(menu_overlay, additional) {
             app_memorize_group_to_range_string(context, group_next),
           ]),
           async () => {
-            await app_gs_menu_study_bible(menu_overlay, additional);
+            await app_gs_menu_study_bible(menu_overlay, {
+              group_current: group_next,
+            });
           },
         );
         let { verses } = memorize_context;
