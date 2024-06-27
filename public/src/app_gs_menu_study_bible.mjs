@@ -51,7 +51,7 @@ export async function app_gs_menu_study_bible(menu_overlay) {
       let group_next = app_memorize_group_next(memorize_context);
       html_button_width_full_text_click(
         menu_overlay,
-        "📖 Yes, study the bible more",
+        string_combine_multiple(["📖 Yes, study the bible more with verses "]),
       );
       html_button_width_full_text_click(menu_overlay, "⬅️ No, go back");
       html_remove(menu_overlay);
