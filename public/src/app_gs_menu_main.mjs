@@ -42,6 +42,7 @@ export function app_gs_menu_main(context, menu_overlay) {
         group_next: () => {
           html_remove(menu_overlay);
         },
+        short: true,
       });
     },
   );
