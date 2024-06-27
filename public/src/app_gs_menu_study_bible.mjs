@@ -64,6 +64,9 @@ export async function app_gs_menu_study_bible(menu_overlay) {
         let { groups } = memorize_context;
         let group_next_index = list_index(groups, group_next);
         each_index(groups, (g, index) => {
+          if (index <= group_next_index) {
+            return;
+          }
           let [gn_first, gn_last] = group_next;
         });
       }
