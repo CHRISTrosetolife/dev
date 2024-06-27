@@ -1,3 +1,4 @@
+import { app_gs_overlay_speech_text } from "./app_gs_overlay_speech_text.mjs";
 import { error } from "./error.mjs";
 import { app_memorize_frame } from "./app_memorize_frame.mjs";
 import { app_gs_load } from "./app_gs_load.mjs";
@@ -41,6 +42,7 @@ export function app_gs_menu_main(context, menu_overlay) {
         },
         group_next: (tokens) => {
           html_clear(menu_overlay);
+          app_gs_overlay_speech_text();
           html_remove(menu_overlay);
         },
         short: true,
