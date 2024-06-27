@@ -1,3 +1,4 @@
+import { app_memorize_group_to_range_string } from "./app_memorize_group_to_range_string.mjs";
 import { app_memorize_group_next } from "./app_memorize_group_next.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -51,7 +52,10 @@ export async function app_gs_menu_study_bible(menu_overlay) {
       let group_next = app_memorize_group_next(memorize_context);
       html_button_width_full_text_click(
         menu_overlay,
-        string_combine_multiple(["📖 Yes, study the bible more with verses "]),
+        string_combine_multiple([
+          "📖 Yes, study the bible more with verses ",
+          app_memorize_group_to_range_string(context, g),
+        ]),
       );
       html_button_width_full_text_click(menu_overlay, "⬅️ No, go back");
       html_remove(menu_overlay);
