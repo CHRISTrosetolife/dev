@@ -65,6 +65,7 @@ export async function app_gs_menu_study_bible(menu_overlay) {
         let { verses } = memorize_context;
         let gn_last_verse = list_find_property(verses, "verse_number", gn_last);
         let gn_last_verse_index = list_index(verses, gn_last_verse);
+        let gn_last_verse_index_next = gn_last_verse_index + 1;
       }
       html_button_width_full_text_click(menu_overlay, "⬅️ No, go back");
       html_remove(menu_overlay);
