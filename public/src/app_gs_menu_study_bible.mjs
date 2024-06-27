@@ -61,7 +61,9 @@ export async function app_gs_menu_study_bible(menu_overlay) {
           ]),
         );
         let { groups } = memorize_context;
-        each_index(groups, (g, index) => {});
+        each_index(groups, (g, index) => {
+          let [gn_first, gn_last] = group_next;
+        });
       }
       html_button_width_full_text_click(menu_overlay, "⬅️ No, go back");
       html_remove(menu_overlay);
