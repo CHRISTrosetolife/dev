@@ -7,8 +7,8 @@ export function list_find_property_or_generic(
   property_name,
   value,
   or_value,
+  use_or,
 ) {
-  let use_or = true;
   let npcs = list_filter_property(list, property_name, value);
   if (list_size_1(npcs)) {
     let npc = list_single(npcs);
