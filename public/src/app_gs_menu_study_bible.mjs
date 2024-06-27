@@ -1,3 +1,4 @@
+import { list_index } from "./list_index.mjs";
 import { each_index } from "./each_index.mjs";
 import { app_memorize_group_to_range_string } from "./app_memorize_group_to_range_string.mjs";
 import { app_memorize_group_next } from "./app_memorize_group_next.mjs";
@@ -61,6 +62,7 @@ export async function app_gs_menu_study_bible(menu_overlay) {
           ]),
         );
         let { groups } = memorize_context;
+        let group_next_index = list_index(groups, group_next);
         each_index(groups, (g, index) => {
           let [gn_first, gn_last] = group_next;
         });
