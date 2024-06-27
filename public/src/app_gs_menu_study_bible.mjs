@@ -1,3 +1,4 @@
+import { list_all } from "./list_all.mjs";
 import { list_find } from "./list_find.mjs";
 import { list_find_property } from "./list_find_property.mjs";
 import { list_index } from "./list_index.mjs";
@@ -71,7 +72,7 @@ export async function app_gs_menu_study_bible(menu_overlay) {
         let gn_last_verse_index_next = gn_last_verse_index + 1;
         let gn_last_verse_next = list_get(verses, gn_last_verse_index_next);
         let { verse_number } = gn_last_verse_next;
-        list_find(groups, (g) => list_first(g) === 1);
+        list_find(groups, (g) => list_all(g, (b) => b === list_first));
       }
       html_button_width_full_text_click(menu_overlay, "⬅️ No, go back");
       html_remove(menu_overlay);
