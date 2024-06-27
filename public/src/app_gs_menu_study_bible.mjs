@@ -15,7 +15,7 @@ import { list_join_space } from "./list_join_space.mjs";
 import { list_get } from "./list_get.mjs";
 export async function app_gs_menu_study_bible(menu_overlay, additional) {
   html_clear(menu_overlay);
-  await app_memorize_frame({
+  let memorize_context = {
     settings: false,
     root: menu_overlay,
     style: {
@@ -85,5 +85,6 @@ export async function app_gs_menu_study_bible(menu_overlay, additional) {
       html_remove(menu_overlay);
     },
     short: true,
-  });
+  };
+  await app_memorize_frame(memorize_context);
 }
