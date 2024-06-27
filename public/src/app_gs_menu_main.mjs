@@ -40,7 +40,8 @@ export function app_gs_menu_main(context, menu_overlay) {
             color: "salmon",
           },
         },
-        group_next: (tokens) => {
+        group_next: (a) => {
+          let tokens = a;
           html_clear(menu_overlay);
           app_gs_overlay_speech_text(menu_overlay);
           html_remove(menu_overlay);
