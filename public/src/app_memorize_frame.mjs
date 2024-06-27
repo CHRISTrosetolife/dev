@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { app_memorize_groups_get } from "./app_memorize_groups_get.mjs";
 import { app_memorize_on_keydown } from "./app_memorize_on_keydown.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
@@ -28,6 +29,10 @@ export async function app_memorize_frame(context) {
   });
   context.button_height = 7;
   if (object_property_exists(context, "group_current")) {
+    app_memorize_group_current_set(
+      context,
+      object_property_get(object, property_name),
+    );
   } else {
     app_memorize_group_current_set(context, list_first(context.groups));
   }
