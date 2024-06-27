@@ -13,7 +13,7 @@ import { html_clear } from "./html_clear.mjs";
 import { list_size } from "./list_size.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { list_get } from "./list_get.mjs";
-export async function app_gs_menu_study_bible(menu_overlay) {
+export async function app_gs_menu_study_bible(menu_overlay, additional) {
   html_clear(menu_overlay);
   await app_memorize_frame({
     settings: false,
