@@ -1,3 +1,4 @@
+import { app_memorize_group_next } from "./app_memorize_group_next.mjs";
 import { error } from "./error.mjs";
 import { app_memorize_refresh_memorize } from "./app_memorize_refresh_memorize.mjs";
 import { list_add } from "./list_add.mjs";
@@ -10,8 +11,6 @@ import { html_style_button_default_value } from "./html_style_button_default_val
 import { html_style } from "./html_style.mjs";
 import { app_memorize_update_colors } from "./app_memorize_update_colors.mjs";
 import { app_memorize_group_current_set } from "./app_memorize_group_current_set.mjs";
-import { add_1 } from "./add_1.mjs";
-import { list_index } from "./list_index.mjs";
 import { and } from "./and.mjs";
 import { greater_than_equal } from "./greater_than_equal.mjs";
 import { list_size } from "./list_size.mjs";
@@ -57,12 +56,7 @@ export function app_memorize_on_keydown(context, key) {
             });
             return;
           }
-          let group_current_index = list_index(
-            context.groups,
-            context.group_current,
-          );
-          let group_next_index = add_1(group_current_index);
-          let group_next = list_get(context.groups, group_next_index);
+          let group_next = app_memorize_group_next(context);
           app_memorize_group_current_set(context, group_next);
         }
       }
