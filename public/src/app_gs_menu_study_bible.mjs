@@ -1,6 +1,4 @@
 import { app_memorize_groups_get } from "./app_memorize_groups_get.mjs";
-import { list_all } from "./list_all.mjs";
-import { list_find } from "./list_find.mjs";
 import { list_find_property } from "./list_find_property.mjs";
 import { list_index } from "./list_index.mjs";
 import { app_memorize_group_to_range_string } from "./app_memorize_group_to_range_string.mjs";
@@ -72,10 +70,10 @@ export async function app_gs_menu_study_bible(menu_overlay) {
         let gn_last_verse_index_next = gn_last_verse_index + 1;
         let gn_last_verse_next = list_get(verses, gn_last_verse_index_next);
         let { verse_number } = gn_last_verse_next;
-        let g = app_memorize_groups_get(context, [
+        let g = app_memorize_groups_get(
+          context,
           string_combine_multiple([verse_number, "-", verse_number]),
-        ]);
-        list_find(groups, (g) => list_all(g, (b) => b === verse_number));
+        );
       }
       html_button_width_full_text_click(menu_overlay, "⬅️ No, go back");
       html_remove(menu_overlay);
