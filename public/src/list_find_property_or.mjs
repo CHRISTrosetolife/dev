@@ -8,5 +8,7 @@ export function list_find_property_or(list, property_name, value, or_value) {
     let npc = list_single(npcs);
     return npc;
   }
-  return or_value;
+  if (use_or) {
+    return or_value;
+  }
 }
