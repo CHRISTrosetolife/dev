@@ -60,6 +60,7 @@ export async function app_gs_menu_study_bible(menu_overlay) {
           ]),
         );
         let { groups } = memorize_context;
+        let verses = memorize_context;
       }
       html_button_width_full_text_click(menu_overlay, "⬅️ No, go back");
       html_remove(menu_overlay);
