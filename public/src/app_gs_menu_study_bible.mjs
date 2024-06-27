@@ -43,10 +43,14 @@ export async function app_gs_menu_study_bible(menu_overlay) {
             energy.conversation,
             " conversation energy.",
           ]),
-          "What would you like to do?",
+          "Would you like to study the bible some more?",
         ]),
       );
-      html_button_width_full_text_click(menu_overlay, "study the bible more");
+      html_button_width_full_text_click(
+        menu_overlay,
+        "Yes, study the bible more",
+      );
+      html_button_width_full_text_click(menu_overlay, "No, go back");
       html_remove(menu_overlay);
     },
     short: true,
