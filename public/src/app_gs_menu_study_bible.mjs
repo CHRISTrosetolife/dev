@@ -84,6 +84,11 @@ export async function app_gs_menu_study_bible(menu_overlay, additional) {
             "📖 Yes, study the bible more with verse ",
             app_memorize_group_to_range_string(context, g),
           ]),
+          async () => {
+            await app_gs_menu_study_bible(menu_overlay, {
+              group_current: g,
+            });
+          },
         );
       }
       html_button_width_full_text_click(menu_overlay, "⬅️ No, go back");
