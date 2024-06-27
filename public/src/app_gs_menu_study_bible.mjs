@@ -31,12 +31,12 @@ export async function app_gs_menu_study_bible(menu_overlay) {
       },
     },
     group_next: (a) => {
+      html_clear(menu_overlay);
       let { tokens } = a;
       let { player } = context.game;
       let { energy } = player;
       let gain = list_size(tokens);
       energy.conversation += gain;
-      html_clear(menu_overlay);
       app_gs_overlay_speech_text(
         list_join_space([
           string_combine_multiple([
