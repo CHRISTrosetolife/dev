@@ -50,6 +50,7 @@ export async function app_gs_menu_study_bible(menu_overlay) {
       );
       let { context: memorize_context } = a;
       let group_next = app_memorize_group_next(memorize_context);
+      let [g_first, g_last] = group_next;
       html_button_width_full_text_click(
         menu_overlay,
         string_combine_multiple([
