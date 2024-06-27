@@ -59,7 +59,7 @@ export async function app_gs_menu_study_bible(menu_overlay, additional) {
         html_button_width_full_text_click(
           menu_overlay,
           string_combine_multiple([
-            "📖 Yes, study the bible more with verses ",
+            "📖 Yes, study the bible more with verses: ",
             app_memorize_group_to_range_string(context, group_next),
           ]),
           async () => {
@@ -81,7 +81,7 @@ export async function app_gs_menu_study_bible(menu_overlay, additional) {
         html_button_width_full_text_click(
           menu_overlay,
           string_combine_multiple([
-            "📖 Yes, study the bible more with verse ",
+            "📖 Yes, study the bible more with verse: ",
             app_memorize_group_to_range_string(context, g),
           ]),
           async () => {
