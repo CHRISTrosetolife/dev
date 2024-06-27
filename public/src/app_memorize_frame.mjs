@@ -38,8 +38,8 @@ export async function app_memorize_frame(context) {
   }
   html_hash({
     verses: (value) => {
-      let g = app_memorize_groups_get((group = value));
-      app_memorize_group_current_set(context, g);
+      let g = app_memorize_groups_get(context, value);
+      app_memorize_group_current_set((group = g));
     },
     pattern: (value) => {
       context.pattern_index = list_index(context.patterns, value);
