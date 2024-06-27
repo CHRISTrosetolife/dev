@@ -30,16 +30,14 @@ export async function app_memorize_frame(context) {
   context.button_height = 7;
   let group;
   if (object_property_exists(context, "group_current")) {
-    app_memorize_group_current_set(
-      (group = object_property_get(context, "group_current")),
-    );
+    group = object_property_get(context, "group_current");
   } else {
-    app_memorize_group_current_set((group = list_first(context.groups)));
+    group = list_first(context.groups);
   }
   html_hash({
     verses: (value) => {
       let g = app_memorize_groups_get(context, value);
-      app_memorize_group_current_set((group = g));
+      group = g;
     },
     pattern: (value) => {
       context.pattern_index = list_index(context.patterns, value);
