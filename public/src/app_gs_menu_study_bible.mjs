@@ -30,7 +30,7 @@ export async function app_gs_menu_study_bible(menu_overlay) {
       energy.conversation += gain;
       html_clear(menu_overlay);
       app_gs_overlay_speech_text(
-        string_combine_multiple(["You gained ", gain, " conversation energy"]),
+        string_combine_multiple(["You gained ", gain, " conversation energy."]),
       );
       html_remove(menu_overlay);
     },
