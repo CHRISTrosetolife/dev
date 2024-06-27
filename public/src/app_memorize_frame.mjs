@@ -34,8 +34,7 @@ export async function app_memorize_frame(context) {
   );
   html_hash({
     verses: (value) => {
-      let g = app_memorize_groups_get(context, value);
-      group = g;
+      group = app_memorize_groups_get(context, value);
     },
     pattern: (value) => {
       context.pattern_index = list_index(context.patterns, value);
