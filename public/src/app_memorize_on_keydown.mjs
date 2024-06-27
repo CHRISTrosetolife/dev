@@ -28,6 +28,7 @@ export function app_memorize_on_keydown(context, key) {
     if (context.short) {
       if (context.group_next) {
         context.group_next({
+          context,
           tokens,
         });
         return;
@@ -52,6 +53,7 @@ export function app_memorize_on_keydown(context, key) {
         ) {
           if (context.group_next) {
             context.group_next({
+              context,
               tokens,
             });
             return;
