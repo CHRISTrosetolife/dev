@@ -67,7 +67,7 @@ export async function app_gs_menu_study_bible(menu_overlay) {
           if (index <= group_next_index) {
             return;
           }
-          let [gn_first, gn_last] = group_next;
+          let [g_first, g_last] = g;
         });
       }
       html_button_width_full_text_click(menu_overlay, "⬅️ No, go back");
