@@ -1,12 +1,9 @@
+import { app_memorize_groups_get } from "./app_memorize_groups_get.mjs";
 import { app_memorize_on_keydown } from "./app_memorize_on_keydown.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { html_on } from "./html_on.mjs";
 import { app_memorize_refresh_memorize } from "./app_memorize_refresh_memorize.mjs";
-import { list_get } from "./list_get.mjs";
 import { list_index } from "./list_index.mjs";
-import { string_replace } from "./string_replace.mjs";
-import { app_memorize_group_to_range_string } from "./app_memorize_group_to_range_string.mjs";
-import { list_map } from "./list_map.mjs";
 import { html_hash } from "./html_hash.mjs";
 import { list_first } from "./list_first.mjs";
 import { app_memorize_group_current_set } from "./app_memorize_group_current_set.mjs";
@@ -32,12 +29,7 @@ export async function app_memorize_frame(context) {
   app_memorize_group_current_set(context, list_first(context.groups));
   html_hash({
     verses: (value) => {
-      let mapped = list_map(context.groups, (g) =>
-        app_memorize_group_to_range_string(context, g),
-      );
-      let mapped2 = list_map(mapped, (m) => string_replace(m, " ", ""));
-      let index = list_index(mapped2, value);
-      let g = list_get(context.groups, index);
+      let g = app_memorize_groups_get(context, value);
       app_memorize_group_current_set(context, g);
     },
     pattern: (value) => {
