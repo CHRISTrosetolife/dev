@@ -1,4 +1,3 @@
-import { app_memorize_group_next } from "./app_memorize_group_next.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_remove } from "./html_remove.mjs";
@@ -48,7 +47,7 @@ export async function app_gs_menu_study_bible(menu_overlay) {
         ]),
       );
       let { context: memorize_context } = a;
-      app_memorize_group_next(memorize_context);
+      group_nextapp_memorize_group_next(memorize_context);
       html_button_width_full_text_click(
         menu_overlay,
         "📖 Yes, study the bible more",
