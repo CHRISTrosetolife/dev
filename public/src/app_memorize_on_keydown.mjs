@@ -27,6 +27,10 @@ export function app_memorize_on_keydown(context, key) {
   let letter_first = string_case_lower(string_letter_first(current_token));
   if (equal(key, letter_first)) {
     if (context.short) {
+      if (context.group_next) {
+        context.group_next();
+        return;
+      }
     }
     context.token_index++;
     let tokens_length = list_size(tokens);
