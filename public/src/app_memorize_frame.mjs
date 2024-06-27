@@ -31,7 +31,7 @@ export async function app_memorize_frame(context) {
   if (object_property_exists(context, "group_current")) {
     app_memorize_group_current_set(
       context,
-      object_property_get(object, property_name),
+      object_property_get(context, "group_current"),
     );
   } else {
     app_memorize_group_current_set(context, list_first(context.groups));
