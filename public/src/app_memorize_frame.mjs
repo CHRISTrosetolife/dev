@@ -34,7 +34,7 @@ export async function app_memorize_frame(context) {
       (group = object_property_get(context, "group_current")),
     );
   } else {
-    app_memorize_group_current_set(context, list_first(context.groups));
+    app_memorize_group_current_set((group = list_first(context.groups)));
   }
   html_hash({
     verses: (value) => {
