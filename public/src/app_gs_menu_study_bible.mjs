@@ -1,3 +1,4 @@
+import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_remove } from "./html_remove.mjs";
 import { app_gs_overlay_speech_text } from "./app_gs_overlay_speech_text.mjs";
@@ -45,6 +46,7 @@ export async function app_gs_menu_study_bible(menu_overlay) {
           "What would you like to do?",
         ]),
       );
+      html_button_width_full_text_click(menu_overlay, "study the bible more");
       html_remove(menu_overlay);
     },
     short: true,
