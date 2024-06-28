@@ -14,7 +14,9 @@ import { html_remove } from "./html_remove.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 export async function app_gs_load(context) {
   let game = storage_local_initialize_lambda(app_gs, "game", () => {
-    let game = {};
+    let game = {
+      memorize: {},
+    };
     let player = app_gs_player_new();
     object_merge(game, {
       player,
