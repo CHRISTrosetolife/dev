@@ -1,3 +1,4 @@
+import { app_gs_save } from "./app_gs_save.mjs";
 import { app_gs_menu_study_bible } from "./app_gs_menu_study_bible.mjs";
 import { app_memorize_group_to_range_string } from "./app_memorize_group_to_range_string.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -20,6 +21,7 @@ export function app_gs_menu_study_bible_group(
     async () => {
       let { game } = context;
       game.memorize.group_current = g;
+      app_gs_save;
       await app_gs_menu_study_bible(menu_overlay, context);
     },
   );
