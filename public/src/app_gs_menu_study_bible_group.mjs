@@ -19,6 +19,7 @@ export function app_gs_menu_study_bible_group(
     ]),
     async () => {
       let { game } = context;
+      game.memorize.group_current = g;
       await app_gs_menu_study_bible(
         menu_overlay,
         {
