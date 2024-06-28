@@ -18,6 +18,7 @@ export function app_gs_menu_study_bible_group(
       app_memorize_group_to_range_string(memorize_context, g),
     ]),
     async () => {
+      let { game } = context;
       await app_gs_menu_study_bible(
         menu_overlay,
         {
