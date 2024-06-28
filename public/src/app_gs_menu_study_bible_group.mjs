@@ -8,6 +8,7 @@ export function app_gs_menu_study_bible_group(menu_overlay, g) {
     menu_overlay,
     string_combine_multiple([
       "📖 Yes, study the bible more with verse",
+      extra,
       ": ",
       app_memorize_group_to_range_string(context, g),
     ]),
