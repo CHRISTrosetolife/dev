@@ -39,6 +39,7 @@ export async function app_gs_menu_study_bible(
     },
     group_next: (a) => {
       let { context: memorize_context } = a;
+      memorize_context.cleanup();
       html_clear(menu_overlay);
       let { tokens } = a;
       let { player } = context.game;
