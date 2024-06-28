@@ -1,6 +1,5 @@
 import { list_size_1 } from "./list_size_1.mjs";
 import { list_join_br_br } from "./list_join_br_br.mjs";
-import { log } from "./log.mjs";
 import { app_gs_menu_study_bible_group } from "./app_gs_menu_study_bible_group.mjs";
 import { app_gs_menu_study_bible_group_single } from "./app_gs_menu_study_bible_group_single.mjs";
 import { app_memorize_groups_get } from "./app_memorize_groups_get.mjs";
@@ -63,9 +62,6 @@ export async function app_gs_menu_study_bible(
       );
       let { context: memorize_context } = a;
       let group_next = app_memorize_group_next(memorize_context);
-      log({
-        group_next,
-      });
       if (list_size_1(group_next)) {
         app_gs_menu_study_bible_group_single(
           menu_overlay,
