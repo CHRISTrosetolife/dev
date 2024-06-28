@@ -15,7 +15,11 @@ import { list_size } from "./list_size.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { list_get } from "./list_get.mjs";
 import { object_merge } from "./object_merge.mjs";
-export async function app_gs_menu_study_bible(menu_overlay, additional) {
+export async function app_gs_menu_study_bible(
+  menu_overlay,
+  additional,
+  context,
+) {
   html_clear(menu_overlay);
   let memorize_context = {
     short: true,

@@ -12,9 +12,13 @@ export function app_gs_menu_study_bible_group(menu_overlay, g, extra) {
       app_memorize_group_to_range_string(context, g),
     ]),
     async () => {
-      await app_gs_menu_study_bible(menu_overlay, {
-        group_current: g,
-      });
+      await app_gs_menu_study_bible(
+        menu_overlay,
+        {
+          group_current: g,
+        },
+        context,
+      );
     },
   );
 }
