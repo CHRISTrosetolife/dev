@@ -44,7 +44,7 @@ export async function app_gs_menu_study_bible(
       html_clear(menu_overlay);
       let { player } = context.game;
       let { energy } = player;
-      let { tokens } = a;
+      let { group_current } = a;
       let gain = list_size(tokens);
       energy.conversation += gain;
       app_gs_overlay_speech_text(
