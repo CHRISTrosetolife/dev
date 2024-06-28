@@ -4,7 +4,6 @@ import { log } from "./log.mjs";
 import { app_gs_menu_study_bible_group } from "./app_gs_menu_study_bible_group.mjs";
 import { app_gs_menu_study_bible_group_single } from "./app_gs_menu_study_bible_group_single.mjs";
 import { app_memorize_groups_get } from "./app_memorize_groups_get.mjs";
-import { list_find_property } from "./list_find_property.mjs";
 import { list_index } from "./list_index.mjs";
 import { app_memorize_group_next } from "./app_memorize_group_next.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
@@ -84,7 +83,7 @@ export async function app_gs_menu_study_bible(
           memorize_context,
         );
         let { verses } = memorize_context;
-        let v = list_find_property(verses, "verse_number", gn_first);
+        let v = list_get(verses, gn_first);
         let gv_index = list_index(verses, v);
         let v_index_next = gv_index + 1;
         let v_next = list_get(verses, v_index_next);
