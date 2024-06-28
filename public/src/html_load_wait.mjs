@@ -1,9 +1,9 @@
 export async function html_load_wait(component) {
   let { element } = component;
   await new Promise(function (resolve) {
-    let name = "load";
-    element.addEventListener(name, function on_load() {
-      element.removeEventListener(name, on_load);
+    let type = "load";
+    element.addEventListener(type, function on_load() {
+      element.removeEventListener(type, on_load);
       resolve();
     });
   });
