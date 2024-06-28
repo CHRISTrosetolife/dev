@@ -83,11 +83,11 @@ export async function app_gs_menu_study_bible(
           memorize_context,
         );
         let { verses } = memorize_context;
-        let gn_last_verse = list_find_property(verses, "verse_number", gn_last);
-        let gn_last_verse_index = list_index(verses, gn_last_verse);
-        let gn_last_verse_index_next = gn_last_verse_index + 1;
-        let gn_last_verse_next = list_get(verses, gn_last_verse_index_next);
-        let { verse_number } = gn_last_verse_next;
+        let v = list_find_property(verses, "verse_number", gn_first);
+        let gv_index = list_index(verses, v);
+        let v_index_next = gv_index + 1;
+        let v_next = list_get(verses, v_index_next);
+        let { verse_number } = v_next;
         let g = app_memorize_groups_get(
           context,
           string_combine_multiple([verse_number, "-", verse_number]),
