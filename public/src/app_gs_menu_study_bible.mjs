@@ -1,3 +1,4 @@
+import { list_size_1 } from "./list_size_1.mjs";
 import { list_join_br_br } from "./list_join_br_br.mjs";
 import { log } from "./log.mjs";
 import { app_gs_menu_study_bible_group } from "./app_gs_menu_study_bible_group.mjs";
@@ -66,8 +67,7 @@ export async function app_gs_menu_study_bible(
       log({
         group_next,
       });
-      let [gn_first, gn_last] = group_next;
-      if (gn_first === gn_last) {
+      if (list_size_1(group_next)) {
         app_gs_menu_study_bible_group_single(
           menu_overlay,
           group_next,
@@ -75,6 +75,7 @@ export async function app_gs_menu_study_bible(
           memorize_context,
         );
       } else {
+        let [gn_first, gn_last] = group_next;
         app_gs_menu_study_bible_group(
           menu_overlay,
           group_next,
