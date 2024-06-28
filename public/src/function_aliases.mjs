@@ -2,6 +2,7 @@ export function function_aliases() {
   return {
     a: "function_auto",
     al: "function_aliases_generate",
+    an: "app_new",
     c: "function_copy",
     cl: "command_line",
     d: "data_update",
