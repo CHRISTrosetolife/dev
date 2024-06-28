@@ -99,8 +99,9 @@ export async function app_gs_menu_study_bible(
           memorize_context,
         );
       }
-      html_button_width_full_text_click(menu_overlay, "⬅️ No, go back");
-      html_remove(menu_overlay);
+      html_button_width_full_text_click(menu_overlay, "⬅️ No, go back", () =>
+        html_remove(menu_overlay),
+      );
     },
   };
   object_merge(memorize_context, additional);
