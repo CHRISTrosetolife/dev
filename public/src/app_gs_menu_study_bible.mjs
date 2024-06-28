@@ -47,7 +47,7 @@ export async function app_gs_menu_study_bible(
       let { energy } = player;
       let { group_current } = a;
       let [gc_first, gc_last] = group_current;
-      list_slice(memorize_context.verses, gc_first, gc_last);
+      list_slice(memorize_context.verses, gc_first, gc_last + 1);
       let gain = list_size(tokens);
       energy.conversation += gain;
       app_gs_overlay_speech_text(
