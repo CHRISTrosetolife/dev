@@ -44,12 +44,13 @@ export async function app_memorize_frame(context) {
   app_memorize_group_current_set(context, group);
   app_memorize_refresh_memorize(context);
   let type = "keydown";
-  html_on(html_document_body(), type, (e) => {
+  html_on(html_document_body(), type, on_keydown);
+  function on_keydown(e) {
     let { keyCode } = e;
     let c = String.fromCharCode(keyCode);
     let c_lower = string_case_lower(c);
     app_memorize_on_keydown(context, c_lower);
-  });
+  }
   context.cleanup = () => {
     html_on_remove(html_document_body(), type, on_load);
   };
