@@ -84,7 +84,6 @@ export async function app_gs_menu_study_bible(menu_overlay, context) {
           memorize_context,
         );
       } else {
-        let group_next = app_memorize_group_next(memorize_context);
         let gn_last = list_last(group_next);
         app_gs_menu_study_bible_group(
           menu_overlay,
