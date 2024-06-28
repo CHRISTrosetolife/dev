@@ -43,7 +43,8 @@ export async function app_memorize_frame(context) {
   });
   app_memorize_group_current_set(context, group);
   app_memorize_refresh_memorize(context);
-  html_on(html_document_body(), "keydown", (e) => {
+  let type = "keydown";
+  html_on(html_document_body(), type, (e) => {
     let { keyCode } = e;
     let c = String.fromCharCode(keyCode);
     let c_lower = string_case_lower(c);
