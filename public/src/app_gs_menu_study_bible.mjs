@@ -71,7 +71,7 @@ export async function app_gs_menu_study_bible(
           memorize_context,
         );
       } else {
-        let [gn_first] = group_next;
+        let [gn_first, gn_last] = group_next;
         app_gs_menu_study_bible_group(
           menu_overlay,
           group_next,
