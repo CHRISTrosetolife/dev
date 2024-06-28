@@ -1,3 +1,4 @@
+import { app_gs_menu_study_bible_group } from "./app_gs_menu_study_bible_group.mjs";
 import { app_memorize_groups_get } from "./app_memorize_groups_get.mjs";
 import { list_find_property } from "./list_find_property.mjs";
 import { list_index } from "./list_index.mjs";
@@ -55,7 +56,9 @@ export async function app_gs_menu_study_bible(menu_overlay, additional) {
       let { context: memorize_context } = a;
       let group_next = app_memorize_group_next(memorize_context);
       let [gn_first, gn_last] = group_next;
-      if (gn_first !== gn_last) {
+      if (gn_first === gn_last) {
+        app_gs_menu_study_bible_group(menu_overlay, group_next);
+      } else {
         html_button_width_full_text_click(
           menu_overlay,
           string_combine_multiple([
@@ -78,18 +81,7 @@ export async function app_gs_menu_study_bible(menu_overlay, additional) {
           context,
           string_combine_multiple([verse_number, "-", verse_number]),
         );
-        html_button_width_full_text_click(
-          menu_overlay,
-          string_combine_multiple([
-            "📖 Yes, study the bible more with verse: ",
-            app_memorize_group_to_range_string(context, g),
-          ]),
-          async () => {
-            await app_gs_menu_study_bible(menu_overlay, {
-              group_current: g,
-            });
-          },
-        );
+        app_gs_menu_study_bible_group(menu_overlay, g);
       }
       html_button_width_full_text_click(menu_overlay, "⬅️ No, go back");
       html_remove(menu_overlay);
