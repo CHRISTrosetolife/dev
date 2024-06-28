@@ -66,7 +66,7 @@ export async function app_gs_menu_study_bible(
       if (gn_first === gn_last) {
         app_gs_menu_study_bible_group_single(menu_overlay, group_next, context);
       } else {
-        app_gs_menu_study_bible_group(menu_overlay, g, "s", context);
+        app_gs_menu_study_bible_group(menu_overlay, group_next, "s", context);
         let { verses } = memorize_context;
         let gn_last_verse = list_find_property(verses, "verse_number", gn_last);
         let gn_last_verse_index = list_index(verses, gn_last_verse);
