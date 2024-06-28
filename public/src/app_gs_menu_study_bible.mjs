@@ -1,3 +1,5 @@
+import { object_property_get } from "./object_property_get.mjs";
+import { list_map } from "./list_map.mjs";
 import { list_last } from "./list_last.mjs";
 import { list_size_1 } from "./list_size_1.mjs";
 import { list_join_br_br } from "./list_join_br_br.mjs";
@@ -48,6 +50,7 @@ export async function app_gs_menu_study_bible(
       let { group_current } = a;
       let [gc_first, gc_last] = group_current;
       let sliced = list_slice(memorize_context.verses, gc_first, gc_last + 1);
+      list_map(sliced, (s) => object_property_get(object, property_name));
       let gain = list_size(tokens);
       energy.conversation += gain;
       app_gs_overlay_speech_text(
