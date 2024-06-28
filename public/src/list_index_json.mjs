@@ -10,7 +10,6 @@ export function list_index_json(list, element) {
       return true;
     }
   });
-  let index = list.indexOf(element);
-  assert_not(number_less_than, [index, 0]);
-  return index;
+  assert_not(number_less_than, [result, 0]);
+  return result;
 }
