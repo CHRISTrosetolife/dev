@@ -42,9 +42,9 @@ export async function app_gs_menu_study_bible(
       let { context: memorize_context } = a;
       memorize_context.cleanup();
       html_clear(menu_overlay);
-      let { tokens } = a;
       let { player } = context.game;
       let { energy } = player;
+      let { tokens } = a;
       let gain = list_size(tokens);
       energy.conversation += gain;
       app_gs_overlay_speech_text(
