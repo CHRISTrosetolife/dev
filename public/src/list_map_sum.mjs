@@ -1,1 +1,1 @@
-export function list_map_sum() {}
+export function list_map_sum(list, mapper) {}
