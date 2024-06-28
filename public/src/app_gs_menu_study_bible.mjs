@@ -50,8 +50,9 @@ export async function app_gs_menu_study_bible(
       let { group_current } = a;
       let [gc_first, gc_last] = group_current;
       let sliced = list_slice(memorize_context.verses, gc_first, gc_last + 1);
-      list_map_sum(sliced, (s) => list_size(object_property_get(s, "tokens")));
-      let gain = list_size(tokens);
+      let gain = list_map_sum(sliced, (s) =>
+        list_size(object_property_get(s, "tokens")),
+      );
       energy.conversation += gain;
       app_gs_overlay_speech_text(
         menu_overlay,
