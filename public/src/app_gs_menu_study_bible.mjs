@@ -21,11 +21,7 @@ import { list_size } from "./list_size.mjs";
 import { list_get } from "./list_get.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { list_slice } from "./list_slice.mjs";
-export async function app_gs_menu_study_bible(
-  menu_overlay,
-  additional,
-  context,
-) {
+export async function app_gs_menu_study_bible(menu_overlay, context) {
   html_clear(menu_overlay);
   let memorize_context = {
     short: true,
