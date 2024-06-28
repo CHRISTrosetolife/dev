@@ -85,10 +85,7 @@ export async function app_gs_menu_study_bible(
         let v_index_next = gv_index + 1;
         let v_next = list_get(verses, v_index_next);
         let { verse_number } = v_next;
-        let g = app_memorize_groups_get(
-          memorize_context,
-          string_combine_multiple([verse_number, "-", verse_number]),
-        );
+        let g = app_memorize_groups_get(memorize_context, verse_number);
         app_gs_menu_study_bible_group_single(
           menu_overlay,
           g,
