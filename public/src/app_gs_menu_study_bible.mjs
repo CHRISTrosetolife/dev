@@ -1,6 +1,5 @@
 import { app_memorize_group_next_skip } from "./app_memorize_group_next_skip.mjs";
 import { list_first } from "./list_first.mjs";
-import { log } from "./log.mjs";
 import { list_map_sum } from "./list_map_sum.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_last } from "./list_last.mjs";
@@ -48,11 +47,6 @@ export async function app_gs_menu_study_bible(menu_overlay, context) {
       let gc_first = list_first(group_current);
       let gc_last = list_last(group_current);
       let sliced = list_slice(memorize_context.verses, gc_first, gc_last + 1);
-      log({
-        sliced,
-        group_current,
-        memorize_context,
-      });
       let gain = list_map_sum(sliced, (s) =>
         list_size(object_property_get(s, "tokens")),
       );
