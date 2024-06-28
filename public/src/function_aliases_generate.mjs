@@ -1,3 +1,4 @@
+import { app_new } from "./app_new.mjs";
 import { functions_string } from "./functions_string.mjs";
 import { functions_identifier } from "./functions_identifier.mjs";
 import { function_param_new } from "./function_param_new.mjs";
@@ -56,6 +57,7 @@ export async function function_aliases_generate() {
   }
   alias_add(function_auto, ["a"]);
   alias_add(function_aliases_generate, ["al"]);
+  alias_add(app_new, ["an"]);
   alias_add(function_copy, ["c"]);
   alias_add(command_line, ["cl"]);
   alias_add(data_update, ["d"]);
