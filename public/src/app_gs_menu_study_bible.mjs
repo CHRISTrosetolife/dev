@@ -17,6 +17,7 @@ import { list_get } from "./list_get.mjs";
 export async function app_gs_menu_study_bible(menu_overlay, additional) {
   html_clear(menu_overlay);
   let memorize_context = {
+    short: true,
     settings: false,
     root: menu_overlay,
     style: {
@@ -75,7 +76,6 @@ export async function app_gs_menu_study_bible(menu_overlay, additional) {
       html_button_width_full_text_click(menu_overlay, "⬅️ No, go back");
       html_remove(menu_overlay);
     },
-    short: true,
   };
   await app_memorize_frame(memorize_context);
 }
