@@ -52,7 +52,7 @@ export async function app_memorize_frame(context) {
     app_memorize_on_keydown(context, c_lower);
   }
   context.cleanup = () => {
-    html_on_remove(html_document_body(), type, on_load);
+    html_on_remove(html_document_body(), type, on_keydown);
   };
   context.errored_keys = [];
 }
