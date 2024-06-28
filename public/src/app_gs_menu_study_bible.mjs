@@ -111,6 +111,10 @@ export async function app_gs_menu_study_bible(menu_overlay, context) {
       );
     },
   };
-  object_merge(memorize_context, additional);
+  if (game.memorize.group_current) {
+    object_merge(memorize_context, {
+      group_current: game.memorize.group_current,
+    });
+  }
   await app_memorize_frame(memorize_context);
 }
