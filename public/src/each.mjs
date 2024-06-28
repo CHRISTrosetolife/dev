@@ -3,6 +3,7 @@ export function each(list, lambda) {
   assert_arguments_length(arguments, 2);
   for (let item of list) {
     if (lambda(item) === true) {
+      return;
     }
   }
 }
