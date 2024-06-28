@@ -1,3 +1,4 @@
+import { list_last } from "./list_last.mjs";
 import { list_size_1 } from "./list_size_1.mjs";
 import { list_join_br_br } from "./list_join_br_br.mjs";
 import { app_gs_menu_study_bible_group } from "./app_gs_menu_study_bible_group.mjs";
@@ -71,7 +72,7 @@ export async function app_gs_menu_study_bible(
           memorize_context,
         );
       } else {
-        let [gn_first, gn_last] = group_next;
+        let gn_last = list_last(group_next);
         app_gs_menu_study_bible_group(
           menu_overlay,
           group_next,
