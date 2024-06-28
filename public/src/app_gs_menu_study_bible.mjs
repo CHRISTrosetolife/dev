@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { app_gs_menu_study_bible_group } from "./app_gs_menu_study_bible_group.mjs";
 import { app_gs_menu_study_bible_group_single } from "./app_gs_menu_study_bible_group_single.mjs";
 import { app_memorize_groups_get } from "./app_memorize_groups_get.mjs";
@@ -62,6 +63,7 @@ export async function app_gs_menu_study_bible(
       );
       let { context: memorize_context } = a;
       let group_next = app_memorize_group_next(memorize_context);
+      log({});
       let [gn_first, gn_last] = group_next;
       if (gn_first === gn_last) {
         app_gs_menu_study_bible_group_single(menu_overlay, group_next, context);
