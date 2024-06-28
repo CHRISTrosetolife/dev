@@ -7,5 +7,6 @@ export function app_gs_menu_study_bible_group_single(menu_overlay, g, context) {
     extra,
     context,
     memorize_context,
+    memorize_context,
   );
 }

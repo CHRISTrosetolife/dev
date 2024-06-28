@@ -8,6 +8,7 @@ export function app_gs_menu_study_bible_group(
   extra,
   context,
   memorize_context,
+  memorize_context,
 ) {
   html_button_width_full_text_click(
     menu_overlay,
