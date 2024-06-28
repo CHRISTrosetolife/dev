@@ -1,3 +1,4 @@
+import { html_on_remove } from "./html_on_remove.mjs";
 import { object_property_get_or } from "./object_property_get_or.mjs";
 import { app_memorize_groups_get } from "./app_memorize_groups_get.mjs";
 import { app_memorize_on_keydown } from "./app_memorize_on_keydown.mjs";
@@ -48,5 +49,8 @@ export async function app_memorize_frame(context) {
     let c_lower = string_case_lower(c);
     app_memorize_on_keydown(context, c_lower);
   });
+  context.cleanup = () => {
+    html_on_remove(component, type, on_load);
+  };
   context.errored_keys = [];
 }
