@@ -68,7 +68,12 @@ export async function app_gs_menu_study_bible(
       });
       let [gn_first, gn_last] = group_next;
       if (gn_first === gn_last) {
-        app_gs_menu_study_bible_group_single(menu_overlay, group_next, context);
+        app_gs_menu_study_bible_group_single(
+          menu_overlay,
+          group_next,
+          context,
+          memorize_context,
+        );
       } else {
         app_gs_menu_study_bible_group(
           menu_overlay,
@@ -88,7 +93,12 @@ export async function app_gs_menu_study_bible(
           context,
           string_combine_multiple([verse_number, "-", verse_number]),
         );
-        app_gs_menu_study_bible_group_single(menu_overlay, g, context);
+        app_gs_menu_study_bible_group_single(
+          menu_overlay,
+          g,
+          context,
+          memorize_context,
+        );
       }
       html_button_width_full_text_click(menu_overlay, "⬅️ No, go back");
       html_remove(menu_overlay);
