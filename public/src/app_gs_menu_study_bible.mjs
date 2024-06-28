@@ -1,3 +1,4 @@
+import { app_memorize_group_next_skip } from "./app_memorize_group_next_skip.mjs";
 import { list_first } from "./list_first.mjs";
 import { log } from "./log.mjs";
 import { list_map_sum } from "./list_map_sum.mjs";
@@ -7,8 +8,6 @@ import { list_size_1 } from "./list_size_1.mjs";
 import { list_join_br_br } from "./list_join_br_br.mjs";
 import { app_gs_menu_study_bible_group } from "./app_gs_menu_study_bible_group.mjs";
 import { app_gs_menu_study_bible_group_single } from "./app_gs_menu_study_bible_group_single.mjs";
-import { app_memorize_groups_get } from "./app_memorize_groups_get.mjs";
-import { list_index } from "./list_index.mjs";
 import { app_memorize_group_next } from "./app_memorize_group_next.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -18,7 +17,6 @@ import { error } from "./error.mjs";
 import { app_memorize_frame } from "./app_memorize_frame.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { list_size } from "./list_size.mjs";
-import { list_get } from "./list_get.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { list_slice } from "./list_slice.mjs";
 export async function app_gs_menu_study_bible(menu_overlay, context) {
@@ -91,14 +89,7 @@ export async function app_gs_menu_study_bible(menu_overlay, context) {
           context,
           memorize_context,
         );
-        let gn_last = list_last(group_next);
-        let { verses } = memorize_context;
-        let v = list_get(verses, gn_last);
-        let gv_index = list_index(verses, v);
-        let v_index_next = gv_index + 1;
-        let v_next = list_get(verses, v_index_next);
-        let { verse_number } = v_next;
-        let g = app_memorize_groups_get(memorize_context, verse_number);
+        let g = app_memorize_group_next_skip(memorize_context, group_next);
         app_gs_menu_study_bible_group_single(
           menu_overlay,
           g,
