@@ -16,6 +16,7 @@ import { html_clear } from "./html_clear.mjs";
 import { list_size } from "./list_size.mjs";
 import { list_get } from "./list_get.mjs";
 import { object_merge } from "./object_merge.mjs";
+import { list_slice } from "./list_slice.mjs";
 export async function app_gs_menu_study_bible(
   menu_overlay,
   additional,
@@ -46,6 +47,7 @@ export async function app_gs_menu_study_bible(
       let { energy } = player;
       let { group_current } = a;
       let [gc_first, gc_last] = group_current;
+      list_slice(memorize_context.verses, gc_first, gc_last);
       let gain = list_size(tokens);
       energy.conversation += gain;
       app_gs_overlay_speech_text(
