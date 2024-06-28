@@ -1,8 +1,8 @@
+import { app_gs_menu_study_bible_group } from "./app_gs_menu_study_bible_group.mjs";
 import { app_gs_menu_study_bible_group_single } from "./app_gs_menu_study_bible_group_single.mjs";
 import { app_memorize_groups_get } from "./app_memorize_groups_get.mjs";
 import { list_find_property } from "./list_find_property.mjs";
 import { list_index } from "./list_index.mjs";
-import { app_memorize_group_to_range_string } from "./app_memorize_group_to_range_string.mjs";
 import { app_memorize_group_next } from "./app_memorize_group_next.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -59,18 +59,7 @@ export async function app_gs_menu_study_bible(menu_overlay, additional) {
       if (gn_first === gn_last) {
         app_gs_menu_study_bible_group_single(menu_overlay, group_next);
       } else {
-        html_button_width_full_text_click(
-          menu_overlay,
-          string_combine_multiple([
-            "📖 Yes, study the bible more with verses: ",
-            app_memorize_group_to_range_string(context, group_next),
-          ]),
-          async () => {
-            await app_gs_menu_study_bible(menu_overlay, {
-              group_current: group_next,
-            });
-          },
-        );
+        app_gs_menu_study_bible_group(menu_overlay, g, "s");
         let { verses } = memorize_context;
         let gn_last_verse = list_find_property(verses, "verse_number", gn_last);
         let gn_last_verse_index = list_index(verses, gn_last_verse);
