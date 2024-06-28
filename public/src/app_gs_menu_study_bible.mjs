@@ -47,7 +47,7 @@ export async function app_gs_menu_study_bible(
       html_clear(menu_overlay);
       let { player } = context.game;
       let { energy } = player;
-      let { group_current } = a;
+      let { group_current } = memorize_context;
       let [gc_first, gc_last] = group_current;
       let sliced = list_slice(memorize_context.verses, gc_first, gc_last + 1);
       let gain = list_map_sum(sliced, (s) =>
