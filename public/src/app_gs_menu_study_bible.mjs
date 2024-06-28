@@ -63,7 +63,7 @@ export async function app_gs_menu_study_bible(
       let group_next = app_memorize_group_next(memorize_context);
       let [gn_first, gn_last] = group_next;
       if (gn_first === gn_last) {
-        app_gs_menu_study_bible_group_single(menu_overlay, group_next);
+        app_gs_menu_study_bible_group_single(menu_overlay, group_next, context);
       } else {
         app_gs_menu_study_bible_group(menu_overlay, g, "s", context);
         let { verses } = memorize_context;
@@ -76,7 +76,7 @@ export async function app_gs_menu_study_bible(
           context,
           string_combine_multiple([verse_number, "-", verse_number]),
         );
-        app_gs_menu_study_bible_group_single(menu_overlay, g);
+        app_gs_menu_study_bible_group_single(menu_overlay, g, context);
       }
       html_button_width_full_text_click(menu_overlay, "⬅️ No, go back");
       html_remove(menu_overlay);
