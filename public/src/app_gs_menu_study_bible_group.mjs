@@ -15,7 +15,7 @@ export function app_gs_menu_study_bible_group(
       "📖 Yes, study the bible more with verse",
       extra,
       ": ",
-      app_memorize_group_to_range_string(context, g),
+      app_memorize_group_to_range_string(memorize_context, g),
     ]),
     async () => {
       await app_gs_menu_study_bible(
