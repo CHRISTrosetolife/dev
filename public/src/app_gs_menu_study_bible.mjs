@@ -1,3 +1,4 @@
+import { list_first } from "./list_first.mjs";
 import { log } from "./log.mjs";
 import { list_map_sum } from "./list_map_sum.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -49,7 +50,8 @@ export async function app_gs_menu_study_bible(
       let { player } = context.game;
       let { energy } = player;
       let { group_current } = memorize_context;
-      let [gc_first, gc_last] = group_current;
+      let gc_first = list_first(group_current);
+      let gc_last = list_last(group_current);
       let sliced = list_slice(memorize_context.verses, gc_first, gc_last + 1);
       log({
         sliced,
