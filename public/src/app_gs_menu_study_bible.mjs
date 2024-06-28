@@ -84,7 +84,6 @@ export async function app_gs_menu_study_bible(menu_overlay, context) {
           memorize_context,
         );
       } else {
-        let gn_last = list_last(group_next);
         app_gs_menu_study_bible_group(
           menu_overlay,
           group_next,
@@ -92,6 +91,7 @@ export async function app_gs_menu_study_bible(menu_overlay, context) {
           context,
           memorize_context,
         );
+        let gn_last = list_last(group_next);
         let { verses } = memorize_context;
         let v = list_get(verses, gn_last);
         let gv_index = list_index(verses, v);
