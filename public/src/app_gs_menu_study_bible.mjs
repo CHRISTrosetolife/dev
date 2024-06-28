@@ -53,6 +53,8 @@ export async function app_gs_menu_study_bible(
       let sliced = list_slice(memorize_context.verses, gc_first, gc_last + 1);
       log({
         sliced,
+        group_current,
+        memorize_context,
       });
       let gain = list_map_sum(sliced, (s) =>
         list_size(object_property_get(s, "tokens")),
