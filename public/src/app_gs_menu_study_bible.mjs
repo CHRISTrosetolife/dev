@@ -38,6 +38,7 @@ export async function app_gs_menu_study_bible(
       },
     },
     group_next: (a) => {
+      let { context: memorize_context } = a;
       html_clear(menu_overlay);
       let { tokens } = a;
       let { player } = context.game;
@@ -60,7 +61,6 @@ export async function app_gs_menu_study_bible(
           "Would you like to study the 📖 bible some more?",
         ]),
       );
-      let { context: memorize_context } = a;
       let group_next = app_memorize_group_next(memorize_context);
       if (list_size_1(group_next)) {
         app_gs_menu_study_bible_group_single(
