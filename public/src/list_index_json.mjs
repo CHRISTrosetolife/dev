@@ -6,6 +6,8 @@ export function list_index_json(list, element) {
   let result;
   each_index(list, (item, index) => {
     if (equal_json(item, element)) {
+      result = index;
+      return true;
     }
   });
   let index = list.indexOf(element);
