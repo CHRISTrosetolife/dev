@@ -45,6 +45,7 @@ export async function app_gs_menu_study_bible(
       let gain = list_size(tokens);
       energy.conversation += gain;
       app_gs_overlay_speech_text(
+        menu_overlay,
         list_join_space([
           string_combine_multiple([
             "You gained ",
