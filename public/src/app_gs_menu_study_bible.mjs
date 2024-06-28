@@ -81,7 +81,6 @@ export async function app_gs_menu_study_bible(
           "s",
           context,
           memorize_context,
-          memorize_context,
         );
         let { verses } = memorize_context;
         let gn_last_verse = list_find_property(verses, "verse_number", gn_last);
