@@ -47,7 +47,8 @@ export async function app_gs_menu_study_bible(
       let { context: memorize_context } = a;
       memorize_context.cleanup();
       html_clear(menu_overlay);
-      let { player } = context.game;
+      let { game } = context;
+      let { player } = game;
       let { energy } = player;
       let { group_current } = memorize_context;
       let gc_first = list_first(group_current);
