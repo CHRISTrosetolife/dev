@@ -1,3 +1,4 @@
+import { list_join_br_br } from "./list_join_br_br.mjs";
 import { app_gs_conversation } from "./app_gs_conversation.mjs";
 import { app_gs_save } from "./app_gs_save.mjs";
 import { app_gs_walk_direction } from "./app_gs_walk_direction.mjs";
@@ -10,7 +11,6 @@ import { app_gs_map_neighbors_get } from "./app_gs_map_neighbors_get.mjs";
 import { html_remove } from "./html_remove.mjs";
 import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
 import { app_gs_overlay_speech_text } from "./app_gs_overlay_speech_text.mjs";
-import { list_join } from "./list_join.mjs";
 import { app_gs_menu_overlay } from "./app_gs_menu_overlay.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_add } from "./list_add.mjs";
@@ -31,7 +31,7 @@ export async function app_gs_map_cell_click_npc(context, npc) {
   }
   if (list_empty_not_is(messages)) {
     let menu_overlay = app_gs_menu_overlay(context);
-    let text = list_join(messages, "<br><br>");
+    let text = list_join_br_br(messages);
     let overlay_speech = app_gs_overlay_speech_text(menu_overlay, text);
     html_button_width_full_text_click_back(overlay_speech, () => {
       html_remove(menu_overlay);
