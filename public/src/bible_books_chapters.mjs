@@ -6,10 +6,10 @@ export async function bible_books_chapters(bible_folder) {
   return await list_adder_async(async (la) => {
     await each_async(await bible_books(bible_folder), async (book_name) => {
       let chapters = await bible_chapters(bible_folder, book_name);
-      await each_async(chapters, async (chapter_name) => {
+      await each_async(chapters, async (chapter_code) => {
         la({
           book_name,
-          chapter_name,
+          chapter_code,
         });
       });
     });
