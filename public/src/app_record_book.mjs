@@ -7,7 +7,7 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_text_click } from "./html_button_text_click.mjs";
 import { each } from "./each.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
-export function app_record_book(root, book, book_code) {
+export function app_record_book(context, book_code) {
   html_clear_scroll_top(root);
   each(book.chapters, (chapter) => {
     html_button_text_click(root, chapter, async () => {
