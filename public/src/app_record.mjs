@@ -1,4 +1,4 @@
-import { object_property_get } from "./object_property_get.mjs";
+import { object_property_get_or } from "./object_property_get_or.mjs";
 import { html_hash_lookup } from "./html_hash_lookup.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { html_p } from "./html_p.mjs";
@@ -11,13 +11,9 @@ import { html_script_axios } from "./html_script_axios.mjs";
 import { bible_engbsb_storage_http_get } from "./bible_engbsb_storage_http_get.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { html_span_text } from "./html_span_text.mjs";
-import { object_property_exists } from "./object_property_exists.mjs";
 export async function app_record() {
-  let hash_book = null;
   let lookup = html_hash_lookup();
-  if (object_property_exists(lookup, "book")) {
-    hash_book = object_property_get(object, property_name);
-  }
+  let hash_book = object_property_get_or(lookup, "book", null);
   let root = html_style_default_initialize();
   await html_script_axios(root);
   let { books } = await bible_engbsb_storage_http_get("books");
