@@ -11,7 +11,8 @@ import { each_object } from "./each_object.mjs";
 import { list_add } from "./list_add.mjs";
 import { js_unparse } from "./js_unparse.mjs";
 export async function bible_books_prefix_to_name_generate() {
-  let book_elements = await bible_books_html_elements("engbsb");
+  let bible_folder = "engbsb";
+  let book_elements = await bible_books_html_elements(bible_folder);
   let lookup = list_to_lookup_key_value(
     book_elements,
     bible_books_html_element_to_prefix,
