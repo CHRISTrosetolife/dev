@@ -8,7 +8,7 @@ export async function bible_books_chapters(bible_folder) {
       let chapters = await bible_chapters(bible_folder, book_name);
       await each_async(chapters, async (chapter_code) => {
         la({
-          book_name,
+          book_code,
           chapter_code,
         });
       });
