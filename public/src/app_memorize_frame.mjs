@@ -1,3 +1,4 @@
+import { bible_engbsb_storage_http_get } from "./bible_engbsb_storage_http_get.mjs";
 import { html_on_remove } from "./html_on_remove.mjs";
 import { object_property_get_or } from "./object_property_get_or.mjs";
 import { app_memorize_groups_get } from "./app_memorize_groups_get.mjs";
@@ -12,14 +13,10 @@ import { app_memorize_group_current_set } from "./app_memorize_group_current_set
 import { app_memorize_group } from "./app_memorize_group.mjs";
 import { list_size } from "./list_size.mjs";
 import { object_merge } from "./object_merge.mjs";
-import { storage_url } from "./storage_url.mjs";
-import { http_get } from "./http_get.mjs";
-import { bible_engbsb_storage_path_file } from "./bible_engbsb_storage_path_file.mjs";
 import { html_document_body } from "./html_document_body.mjs";
 export async function app_memorize_frame(context) {
   let chapter_code = "JHN19";
-  let file_path = bible_engbsb_storage_path_file(chapter_code);
-  let verses = await http_get(storage_url(file_path));
+  let verses = await bible_engbsb_storage_http_get(chapter_code);
   object_merge(context, {
     verses,
   });
