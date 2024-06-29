@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { bible_books_names_lookup } from "./bible_books_names_lookup.mjs";
 import { string_prefix_without_multiple } from "./string_prefix_without_multiple.mjs";
 import { each_async } from "./each_async.mjs";
@@ -17,6 +18,7 @@ export async function bible_engbsb_books_upload() {
     if (book === null) {
       book = {
         book_code,
+        book_name: object_property_get(object, property_name),
         chapters: [],
       };
       list_add(data, book);
