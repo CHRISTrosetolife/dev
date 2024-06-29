@@ -18,7 +18,7 @@ export async function bible_engbsb_books_upload() {
     if (book === null) {
       book = {
         book_code,
-        book_name: object_property_get(object, property_name),
+        book_name: object_property_get(lookup, book_code),
         chapters: [],
       };
       list_add(data, book);
