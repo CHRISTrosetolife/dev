@@ -9,7 +9,7 @@ export async function bibles_eng_chapters() {
     await each_async(bible_folders, async (bible_folder) => {
       let chapters = await bible_books_chapters(bible_folder);
       await each_async(chapters, async (c) => {
-        let chapter_name = c;
+        let { chapter_name } = c;
         la(await bible_chapter(bible_folder, chapter_name));
       });
     });
