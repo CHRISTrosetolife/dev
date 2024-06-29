@@ -8,7 +8,9 @@ export async function app_record() {
   let root = html_style_default_initialize();
   await html_script_axios(root);
   let { books } = await bible_engbsb_storage_http_get("books");
-  log({});
+  log({
+    books,
+  });
   each(books, (book) => {
     html_button_text_click(root, book.book_code, () => {});
   });
