@@ -10,6 +10,8 @@ export async function bible_engbsb_books_upload(chapter_name) {
   await each_async(chapters, async (c) => {
     let { chapter_name, book_name } = c;
     let book = list_find_property_or(data, "book_name", book_name, null);
+    if (book === null) {
+    }
     la(await bible_chapter(bible_folder, chapter_name));
   });
   let destination = bible_engbsb_storage_path_file("books");
