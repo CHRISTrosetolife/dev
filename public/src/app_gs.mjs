@@ -10,7 +10,7 @@ import { app_gs_style_default_initialize } from "./app_gs_style_default_initiali
 export async function app_gs() {
   history.scrollRestoration = "manual";
   let root = app_gs_style_default_initialize();
-  let c = html_script_axios(root);
+  let c = await html_script_axios(root);
   let context = {};
   object_merge(context, {
     root,
