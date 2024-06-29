@@ -1,4 +1,4 @@
-import { list_find_property } from "./list_find_property.mjs";
+import { app_record_chapter_verse } from "./app_record_chapter_verse.mjs";
 import { app_record_verses } from "./app_record_verses.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
@@ -13,13 +13,13 @@ export async function app_record_chapter(context, book_code, chapter) {
   each(verses, (verse) => {
     let { tokens, verse_number } = verse;
     let p = html_button_width_full_text_click(root, "", async () => {
-      let verses = await app_record_verses(context, book_code, chapter);
-      let verse = list_find_property(verses, "verse_number", verse_number);
-      let { tokens } = verse;
-      let vn = html_span_text(p, verse_number);
-      html_style_bold(vn);
-      html_span_text(p, " ");
-      html_span_text(p, list_join_space(tokens));
+      await app_record_chapter_verse(
+        context,
+        book_code,
+        chapter,
+        verse_number,
+        p,
+      );
     });
     let vn = html_span_text(p, verse_number);
     html_style_bold(vn);
