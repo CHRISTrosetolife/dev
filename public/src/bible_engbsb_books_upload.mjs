@@ -15,14 +15,14 @@ export async function bible_engbsb_books_upload() {
   let chapters = await bible_books_chapters(bible_folder);
   await each_async(chapters, async (c) => {
     let { chapter_code, book_code } = c;
-    let book = list_find_property_or(data, "book_code", book_code, null);
+    let book = list_find_property_or(books, "book_code", book_code, null);
     if (book === null) {
       book = {
         book_code,
         book_name: object_property_get(lookup, book_code),
         chapters: [],
       };
-      list_add(data, book);
+      list_add(books, book);
     }
     let chapter_name_padded = string_prefix_without(chapter_code, book_code);
     let prefix = "0";
