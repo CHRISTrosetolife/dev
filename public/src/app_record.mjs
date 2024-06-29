@@ -9,6 +9,7 @@ export async function app_record() {
   await html_script_axios(root);
   let { books } = await bible_engbsb_storage_http_get("books");
   each(books, (book) => {
+    let book_code = book;
     html_button_text_click(root, book.book_code, () => {
       html_clear_scroll_top(root);
       each(book.chapters, (chapter) => {
