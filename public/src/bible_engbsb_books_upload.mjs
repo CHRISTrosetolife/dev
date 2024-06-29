@@ -10,8 +10,8 @@ import { list_add } from "./list_add.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 export async function bible_engbsb_books_upload() {
   let data = [];
-  let lookup = await bible_books_names_lookup(bible_folder);
   let bible_folder = "engbsb";
+  let lookup = await bible_books_names_lookup(bible_folder);
   let chapters = await bible_books_chapters(bible_folder);
   await each_async(chapters, async (c) => {
     let { chapter_code, book_code } = c;
