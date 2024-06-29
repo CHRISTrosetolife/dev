@@ -18,10 +18,10 @@ export async function bible_engbsb_books_upload(chapter_name) {
         chapters: [],
       };
     }
-    let chapter_name_padded = string_prefix_without(chapter_code, book_code);
+    let chapter_name = string_prefix_without(chapter_code, book_code);
     let prefix = "0";
-    while (string_starts_with(chapter_name_padded, prefix)) {
-      chapter_name_padded = string_prefix_without(chapter_name_padded, "0");
+    while (string_starts_with(chapter_name, prefix)) {
+      chapter_name = string_prefix_without(chapter_name, "0");
     }
     list_add(book.chapters, chapter_name);
   });
