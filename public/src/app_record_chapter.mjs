@@ -1,4 +1,3 @@
-import { noop } from "./noop.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { html_span_text } from "./html_span_text.mjs";
@@ -14,7 +13,7 @@ export async function app_record_chapter(context, book_code, chapter) {
   html_clear_scroll_top(root);
   each(verses, (verse) => {
     let { tokens, verse_number } = verse;
-    let p = html_button_width_full_text_click(root, "", noop);
+    let p = html_button_width_full_text_click(root, "", () => {});
     let vn = html_span_text(p, verse_number);
     html_style_bold(vn);
     html_span_text(p, " ");
