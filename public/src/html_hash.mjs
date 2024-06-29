@@ -25,11 +25,12 @@ export function html_hash(actions) {
       let key = list_get(split2, 0);
       let value = list_get(split2, 1);
       object_property_set(lookup, key, value);
-      if (list_includes(action_properties, key)) {
-        let action = object_property_get(actions, key);
-        action(value);
-      }
     }
   }
-  each_object(object, (key2, value2) => {});
+  each_object(lookup, (key, value) => {
+    if (list_includes(action_properties, key)) {
+      let action = object_property_get(actions, key);
+      action(value);
+    }
+  });
 }
