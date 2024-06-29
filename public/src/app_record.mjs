@@ -19,12 +19,6 @@ export async function app_record() {
   object_merge(context, {
     books,
   });
-  each(books, (book) => {
-    let { book_code } = book;
-    html_button_text_click(root, book_code, function () {
-      app_record_book(context, book_code);
-    });
-  });
   let lookup = html_hash_lookup();
   let hash_book = object_property_get_or(lookup, "book", null);
   if (hash_book !== null) {
@@ -34,5 +28,12 @@ export async function app_record() {
     } else {
       app_record_book(context, hash_book);
     }
+  } else {
+    each(books, (book) => {
+      let { book_code } = book;
+      html_button_text_click(root, book_code, function () {
+        app_record_book(context, book_code);
+      });
+    });
   }
 }
