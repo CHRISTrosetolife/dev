@@ -6,7 +6,7 @@ import { storage_upload_object } from "./storage_upload_object.mjs";
 import { list_find_property_or } from "./list_find_property_or.mjs";
 import { list_add } from "./list_add.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
-export async function bible_engbsb_books_upload() {
+export async function c() {
   let data = [];
   let chapters = await bible_books_chapters("engbsb");
   await each_async(chapters, async (c) => {
