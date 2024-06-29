@@ -14,8 +14,9 @@ export async function app_record() {
     html_button_text_click(root, book_code, () => {
       html_clear_scroll_top(root);
       each(book.chapters, (chapter) => {
-        html_button_text_click(root, chapter, () => {
+        html_button_text_click(root, chapter, async () => {
           let chapter_code = string_combine_multiple([book_code, chapter]);
+          let verses = await bible_engbsb_storage_http_get(chapter_code);
         });
       });
     });
