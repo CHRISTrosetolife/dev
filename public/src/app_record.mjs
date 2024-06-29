@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_button_text_click } from "./html_button_text_click.mjs";
 import { each } from "./each.mjs";
@@ -13,7 +14,9 @@ export async function app_record() {
     html_button_text_click(root, book_code, () => {
       html_clear_scroll_top(root);
       each(book.chapters, (chapter) => {
-        html_button_text_click(root, chapter, () => {});
+        html_button_text_click(root, chapter, () => {
+          string_combine_multiple([book_code, chapter]);
+        });
       });
     });
   });
