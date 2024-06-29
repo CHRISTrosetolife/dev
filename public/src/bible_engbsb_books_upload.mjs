@@ -17,6 +17,7 @@ export async function bible_engbsb_books_upload() {
         book_code,
         chapters: [],
       };
+      list_add(data, book);
     }
     let chapter_name_padded = string_prefix_without(chapter_code, book_code);
     let prefix = "0";
