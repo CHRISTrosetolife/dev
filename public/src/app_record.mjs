@@ -1,3 +1,4 @@
+import { app_record_chapter } from "./app_record_chapter.mjs";
 import { app_record_book } from "./app_record_book.mjs";
 import { object_property_get_or } from "./object_property_get_or.mjs";
 import { html_hash_lookup } from "./html_hash_lookup.mjs";
@@ -29,5 +30,6 @@ export async function app_record() {
   if (hash_book !== null) {
     app_record_book(context, hash_book);
     let hash_chapter = object_property_get_or(lookup, "chapter", null);
+    await app_record_chapter(context, hash_book, hash_chapter);
   }
 }
