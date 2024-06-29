@@ -1,3 +1,4 @@
+import { html_p } from "./html_p.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
@@ -23,6 +24,7 @@ export async function app_record() {
           html_clear_scroll_top(root);
           each(verses, (verse) => {
             let { tokens, verse_number } = verse;
+            html_p(root);
             html_p_text(
               root,
               list_join_space(
