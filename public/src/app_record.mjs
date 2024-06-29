@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { html_hash_lookup } from "./html_hash_lookup.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { html_p } from "./html_p.mjs";
@@ -15,6 +16,7 @@ export async function app_record() {
   let hash_book = null;
   let lookup = html_hash_lookup();
   if (object_property_exists(lookup, "book")) {
+    hash_book = object_property_get(object, property_name);
   }
   let root = html_style_default_initialize();
   await html_script_axios(root);
