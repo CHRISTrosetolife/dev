@@ -26,7 +26,7 @@ export async function app_record() {
           each(verses, (verse) => {
             let { tokens, verse_number } = verse;
             let p = html_p(root);
-            html_span_text(p, verse_number);
+            let vn = html_span_text(p, verse_number);
             html_p_text(
               root,
               list_join_space(
