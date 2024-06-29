@@ -1,3 +1,4 @@
+import { html_hash_lookup } from "./html_hash_lookup.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { html_p } from "./html_p.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -10,6 +11,7 @@ import { bible_engbsb_storage_http_get } from "./bible_engbsb_storage_http_get.m
 import { list_join_space } from "./list_join_space.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 export async function app_record() {
+  let lookup = html_hash_lookup();
   let root = html_style_default_initialize();
   await html_script_axios(root);
   let { books } = await bible_engbsb_storage_http_get("books");
