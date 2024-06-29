@@ -6,7 +6,7 @@ import { storage_upload_object } from "./storage_upload_object.mjs";
 import { list_find_property_or } from "./list_find_property_or.mjs";
 import { list_add } from "./list_add.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
-export async function bible_engbsb_books_upload(chapter_name) {
+export async function bible_engbsb_books_upload() {
   let data = [];
   let chapters = await bible_books_chapters("engbsb");
   await each_async(chapters, async (c) => {
@@ -20,7 +20,10 @@ export async function bible_engbsb_books_upload(chapter_name) {
     }
     let chapter_name_padded = string_prefix_without(chapter_code, book_code);
     let prefix = "0";
-    chapter_name = string_prefix_without_multiple(chapter_name_padded, prefix);
+    let chapter_name = string_prefix_without_multiple(
+      chapter_name_padded,
+      prefix,
+    );
     list_add(book.chapters, chapter_name_padded);
   });
   let destination = bible_engbsb_storage_path_file("books");
