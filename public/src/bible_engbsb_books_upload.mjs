@@ -8,7 +8,7 @@ export async function bible_engbsb_books_upload(chapter_name) {
   let data = [];
   let chapters = await bible_books_chapters("engbsb");
   await each_async(chapters, async (c) => {
-    let { chapter_name, book_name } = c;
+    let { chapter_code, book_name } = c;
     let book = list_find_property_or(data, "book_name", book_name, null);
     if (book === null) {
       book = {
@@ -16,7 +16,7 @@ export async function bible_engbsb_books_upload(chapter_name) {
         chapters: [],
       };
     }
-    la(await bible_chapter(bible_folder, chapter_name));
+    la(await bible_chapter(bible_folder, chapter_code));
   });
   let destination = bible_engbsb_storage_path_file("books");
   await storage_upload_object(data, destination);
