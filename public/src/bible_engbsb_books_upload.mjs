@@ -18,10 +18,10 @@ export async function bible_engbsb_books_upload(chapter_name) {
         chapters: [],
       };
     }
-    let chapter_name = string_prefix_without(chapter_code, book_code);
+    let chapter_name_padded = string_prefix_without(chapter_code, book_code);
     let prefix = "0";
-    chapter_name = string_prefix_without_multiple(chapter_name, prefix);
-    list_add(book.chapters, chapter_name);
+    chapter_name = string_prefix_without_multiple(chapter_name_padded, prefix);
+    list_add(book.chapters, chapter_name_padded);
   });
   let destination = bible_engbsb_storage_path_file("books");
   await storage_upload_object(data, destination);
