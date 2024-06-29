@@ -10,7 +10,7 @@ import { html_button_width_full_text_click } from "./html_button_width_full_text
 export async function app_record_chapter(context, book_code, chapter) {
   let { root } = context;
   let chapter_code = string_combine_multiple([book_code, chapter]);
-  await object_property_get_or_async(
+  let verses = await object_property_get_or_async(
     context,
     chapter_code,
     async () => await bible_engbsb_storage_http_get(chapter_code),
