@@ -11,7 +11,7 @@ export async function bible_engbsb_books_upload() {
   let chapters = await bible_books_chapters("engbsb");
   await each_async(chapters, async (c) => {
     let { chapter_code, book_code } = c;
-    let book = list_find_property_or(data, "book_name", book_name, null);
+    let book = list_find_property_or(data, "book_name", book_code, null);
     if (book === null) {
       book = {
         book_code,
