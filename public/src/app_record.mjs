@@ -1,3 +1,4 @@
+import { app_record_verse } from "./app_record_verse.mjs";
 import { app_record_chapter } from "./app_record_chapter.mjs";
 import { app_record_book } from "./app_record_book.mjs";
 import { object_property_get_or } from "./object_property_get_or.mjs";
