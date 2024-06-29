@@ -21,7 +21,7 @@ export async function app_record() {
           let verses = await bible_engbsb_storage_http_get(chapter_code);
           html_clear_scroll_top(root);
           each(verses, (verse) => {
-            let tokens = verse;
+            let { tokens } = verse;
             html_p_text(root, json_to(verse));
           });
         });
