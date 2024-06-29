@@ -12,6 +12,7 @@ import { list_join_space } from "./list_join_space.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 export async function app_record() {
+  let hash_book = null;
   let lookup = html_hash_lookup();
   if (object_property_exists(lookup, "book")) {
   }
