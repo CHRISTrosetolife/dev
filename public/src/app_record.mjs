@@ -24,7 +24,7 @@ export async function app_record() {
             let { tokens, verse_number } = verse;
             html_p_text(
               root,
-              string_combine_multiple([list_join_space(tokens)]),
+              string_combine_multiple([verse_number, list_join_space(tokens)]),
             );
           });
         });
