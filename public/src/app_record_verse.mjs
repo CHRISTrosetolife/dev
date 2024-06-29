@@ -4,7 +4,7 @@ import { html_span_text } from "./html_span_text.mjs";
 import { list_find_property } from "./list_find_property.mjs";
 import { app_record_verses } from "./app_record_verses.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
-export async function app_record_chapter_verse(
+export async function app_record_verse(
   context,
   book_code,
   chapter,
