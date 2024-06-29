@@ -7,6 +7,7 @@ import { html_style_default_initialize } from "./html_style_default_initialize.m
 import { html_script_axios } from "./html_script_axios.mjs";
 import { bible_engbsb_storage_http_get } from "./bible_engbsb_storage_http_get.mjs";
 import { list_join_space } from "./list_join_space.mjs";
+import { list_concat } from "./list_concat.mjs";
 export async function app_record() {
   let root = html_style_default_initialize();
   await html_script_axios(root);
@@ -24,7 +25,9 @@ export async function app_record() {
             let { tokens, verse_number } = verse;
             html_p_text(
               root,
-              list_join_space([verse_number, list_join_space(tokens)]),
+              list_join_space(
+                list_concat([verse_number], list_join_space(tokens)),
+              ),
             );
           });
         });
