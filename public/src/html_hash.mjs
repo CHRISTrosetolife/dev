@@ -1,3 +1,4 @@
+import { each_object } from "./each_object.mjs";
 import { list_size } from "./list_size.mjs";
 import { html_hash_exists } from "./html_hash_exists.mjs";
 import { html_hash_get } from "./html_hash_get.mjs";
@@ -30,4 +31,5 @@ export function html_hash(actions) {
       }
     }
   }
+  each_object(object, (key2, value2) => {});
 }
