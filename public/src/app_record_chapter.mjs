@@ -13,13 +13,7 @@ export async function app_record_chapter(context, book_code, chapter) {
   each(verses, (verse) => {
     let { tokens, verse_number } = verse;
     let p = html_button_width_full_text_click(root, "", async () => {
-      await app_record_chapter_verse(
-        context,
-        book_code,
-        chapter,
-        verse_number,
-        p,
-      );
+      await app_record_chapter_verse(context, book_code, chapter, verse_number);
     });
     let vn = html_span_text(p, verse_number);
     html_style_bold(vn);
