@@ -9,8 +9,8 @@ import { list_find_property_or } from "./list_find_property_or.mjs";
 import { list_add } from "./list_add.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 export async function bible_engbsb_books_upload() {
-  let data = [];
   let bible_folder = "engbsb";
+  let data = [];
   let lookup = await bible_books_names_lookup(bible_folder);
   let chapters = await bible_books_chapters(bible_folder);
   await each_async(chapters, async (c) => {
