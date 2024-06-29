@@ -9,6 +9,7 @@ import { assert } from "./assert.mjs";
 import { string_split } from "./string_split.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 import { object_properties } from "./object_properties.mjs";
+import { object_property_set } from "./object_property_set.mjs";
 export function html_hash(actions) {
   let lookup = {};
   let action_properties = object_properties(actions);
@@ -22,6 +23,7 @@ export function html_hash(actions) {
       assert(equal, [s2_length, 2]);
       let key = list_get(split2, 0);
       let value = list_get(split2, 1);
+      object_property_set(lookup, key, value);
       if (list_includes(action_properties, key)) {
         let action = object_property_get(actions, key);
         action(value);
