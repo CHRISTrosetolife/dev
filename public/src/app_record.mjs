@@ -28,8 +28,8 @@ export async function app_record() {
   let lookup = html_hash_lookup();
   let hash_book = object_property_get_or(lookup, "book", null);
   if (hash_book !== null) {
+    let hash_chapter = object_property_get_or(lookup, "chapter", null);
     if (hash_chapter !== null) {
-      let hash_chapter = object_property_get_or(lookup, "chapter", null);
       await app_record_chapter(context, hash_book, hash_chapter);
     } else {
       app_record_book(context, hash_book);
