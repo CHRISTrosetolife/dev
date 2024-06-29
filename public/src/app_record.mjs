@@ -1,6 +1,5 @@
 import { html_style_bold } from "./html_style_bold.mjs";
 import { html_p } from "./html_p.mjs";
-import { html_p_text } from "./html_p_text.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_button_text_click } from "./html_button_text_click.mjs";
@@ -9,7 +8,6 @@ import { html_style_default_initialize } from "./html_style_default_initialize.m
 import { html_script_axios } from "./html_script_axios.mjs";
 import { bible_engbsb_storage_http_get } from "./bible_engbsb_storage_http_get.mjs";
 import { list_join_space } from "./list_join_space.mjs";
-import { list_concat } from "./list_concat.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 export async function app_record() {
   let root = html_style_default_initialize();
@@ -30,12 +28,7 @@ export async function app_record() {
             let vn = html_span_text(p, verse_number);
             html_style_bold(vn);
             html_span_text(p, " ");
-            html_p_text(
-              root,
-              list_join_space(
-                list_concat([verse_number], list_join_space(tokens)),
-              ),
-            );
+            html_span_text(p, list_join_space(tokens));
           });
         });
       });
