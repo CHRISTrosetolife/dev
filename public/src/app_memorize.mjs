@@ -15,6 +15,6 @@ export async function app_memorize() {
   object_merge(context, {
     root,
   });
-  let c = await html_script_axios(root);
+  await html_script_axios(root);
   await app_memorize_frame(context);
 }
