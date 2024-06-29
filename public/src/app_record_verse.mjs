@@ -10,8 +10,8 @@ export async function app_record_verse(
   chapter,
   verse_number,
 ) {
-  html_clear_scroll_top(root);
   let { root } = context;
+  html_clear_scroll_top(root);
   let verses = await app_record_verses(context, book_code, chapter);
   let verse = list_find_property(verses, "verse_number", verse_number);
   let { tokens } = verse;
