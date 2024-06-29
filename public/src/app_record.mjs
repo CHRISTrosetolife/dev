@@ -10,8 +10,11 @@ import { html_script_axios } from "./html_script_axios.mjs";
 import { bible_engbsb_storage_http_get } from "./bible_engbsb_storage_http_get.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { html_span_text } from "./html_span_text.mjs";
+import { object_property_exists } from "./object_property_exists.mjs";
 export async function app_record() {
   let lookup = html_hash_lookup();
+  if (object_property_exists(lookup, "book")) {
+  }
   let root = html_style_default_initialize();
   await html_script_axios(root);
   let { books } = await bible_engbsb_storage_http_get("books");
