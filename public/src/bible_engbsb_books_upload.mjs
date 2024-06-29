@@ -13,7 +13,7 @@ export async function bible_engbsb_books_upload(chapter_name) {
     let book = list_find_property_or(data, "book_name", book_name, null);
     if (book === null) {
       book = {
-        book_name,
+        book_code,
         chapters: [],
       };
     }
