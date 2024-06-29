@@ -1,3 +1,4 @@
+import { html_style_bold } from "./html_style_bold.mjs";
 import { html_p } from "./html_p.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -27,6 +28,7 @@ export async function app_record() {
             let { tokens, verse_number } = verse;
             let p = html_p(root);
             let vn = html_span_text(p, verse_number);
+            html_style_bold(vn);
             html_p_text(
               root,
               list_join_space(
