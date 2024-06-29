@@ -1,3 +1,4 @@
+import { html_p_text } from "./html_p_text.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_button_text_click } from "./html_button_text_click.mjs";
@@ -18,7 +19,9 @@ export async function app_record() {
           let chapter_code = string_combine_multiple([book_code, chapter]);
           let verses = await bible_engbsb_storage_http_get(chapter_code);
           html_clear_scroll_top(root);
-          each(verses, (verse) => {});
+          each(verses, (verse) => {
+            html_p_text(root, verse);
+          });
         });
       });
     });
