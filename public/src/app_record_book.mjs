@@ -10,7 +10,7 @@ import { each } from "./each.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 export function app_record_book(context, book_code) {
   let { books } = context;
-  book - list_find_property_or(books, "book_code", book_code);
+  let book = list_find_property_or(books, "book_code", book_code);
   html_clear_scroll_top(root);
   each(book.chapters, (chapter) => {
     html_button_text_click(root, chapter, async () => {
