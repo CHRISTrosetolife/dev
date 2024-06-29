@@ -1,3 +1,4 @@
+import { bible_books_names_lookup } from "./bible_books_names_lookup.mjs";
 import { string_prefix_without_multiple } from "./string_prefix_without_multiple.mjs";
 import { each_async } from "./each_async.mjs";
 import { bible_books_chapters } from "./bible_books_chapters.mjs";
@@ -8,6 +9,7 @@ import { list_add } from "./list_add.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 export async function bible_engbsb_books_upload() {
   let data = [];
+  let lookup = await bible_books_names_lookup(bible_folder);
   let chapters = await bible_books_chapters("engbsb");
   await each_async(chapters, async (c) => {
     let { chapter_code, book_code } = c;
