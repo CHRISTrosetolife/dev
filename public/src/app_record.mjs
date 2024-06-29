@@ -24,7 +24,7 @@ export async function app_record() {
   each(books, (book) => {
     let { book_code } = book;
     html_button_text_click(root, book_code, function () {
-      app_record_book(root, book, book_code);
+      app_record_book(context, book_code);
     });
   });
 }
