@@ -19,7 +19,8 @@ export async function bible_engbsb_books_upload(chapter_name) {
       };
     }
     let chapter_name_padded = string_prefix_without(chapter_code, book_code);
-    while (string_starts_with(chapter_name_padded, "0")) {
+    let prefix = "0";
+    while (string_starts_with(chapter_name_padded, prefix)) {
       chapter_name_padded = string_prefix_without(chapter_name_padded, "0");
     }
     list_add(book.chapters, chapter_name);
