@@ -29,6 +29,7 @@ export async function app_record() {
             let p = html_p(root);
             let vn = html_span_text(p, verse_number);
             html_style_bold(vn);
+            html_span_text(p, " ");
             html_p_text(
               root,
               list_join_space(
