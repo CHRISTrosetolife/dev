@@ -1,4 +1,3 @@
-import { json_to } from "./json_to.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
@@ -7,6 +6,7 @@ import { each } from "./each.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { html_script_axios } from "./html_script_axios.mjs";
 import { bible_engbsb_storage_http_get } from "./bible_engbsb_storage_http_get.mjs";
+import { list_join_space } from "./list_join_space.mjs";
 export async function app_record() {
   let root = html_style_default_initialize();
   await html_script_axios(root);
@@ -22,7 +22,10 @@ export async function app_record() {
           html_clear_scroll_top(root);
           each(verses, (verse) => {
             let { tokens, verse_number } = verse;
-            html_p_text(root, json_to(verse));
+            html_p_text(
+              root,
+              string_combine_multiple([list_join_space(tokens)]),
+            );
           });
         });
       });
