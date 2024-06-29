@@ -34,5 +34,10 @@ export async function bible_engbsb_books_upload() {
   });
   return data;
   let destination = bible_engbsb_storage_path_file("books");
-  await storage_upload_object(data, destination);
+  await storage_upload_object(
+    {
+      books,
+    },
+    destination,
+  );
 }
