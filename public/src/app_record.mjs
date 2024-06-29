@@ -21,7 +21,8 @@ export async function app_record() {
   each(books, (book) => {
     let { book_code } = book;
     on_click_book();
-    html_button_text_click(root, book_code, function on_click_book() {
+    html_button_text_click(root, book_code, on_click_book);
+    function on_click_book() {
       html_clear_scroll_top(root);
       each(book.chapters, (chapter) => {
         html_button_text_click(root, chapter, async () => {
@@ -38,6 +39,6 @@ export async function app_record() {
           });
         });
       });
-    });
+    }
   });
 }
