@@ -17,7 +17,7 @@ export async function app_record() {
   let { books } = await bible_engbsb_storage_http_get("books");
   each(books, (book) => {
     let { book_code } = book;
-    html_button_text_click(root, book_code, () => {
+    html_button_text_click(root, book_code, function on_book() {
       html_clear_scroll_top(root);
       each(book.chapters, (chapter) => {
         html_button_text_click(root, chapter, async () => {
