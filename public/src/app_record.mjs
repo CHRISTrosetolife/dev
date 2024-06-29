@@ -3,6 +3,7 @@ import { each } from "./each.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { html_script_axios } from "./html_script_axios.mjs";
 import { bible_engbsb_storage_http_get } from "./bible_engbsb_storage_http_get.mjs";
+import { html_clear } from "./html_clear.mjs";
 export async function app_record() {
   let root = html_style_default_initialize();
   await html_script_axios(root);
@@ -10,6 +11,7 @@ export async function app_record() {
   each(books, (book) => {
     html_button_text_click(root, book.book_code, () => {
       each(book.chapters, (chapter) => {
+        html_clear(root);
         html_button_text_click(root, chapter, () => {});
       });
     });
