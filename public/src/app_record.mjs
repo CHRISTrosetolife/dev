@@ -9,8 +9,8 @@ export async function app_record() {
   let { books } = await bible_engbsb_storage_http_get("books");
   each(books, (book) => {
     html_button_text_click(root, book.book_code, () => {
-      each(books, (book) => {
-        html_button_text_click(root, book.book_code, () => {});
+      each(book.chapters, (chapter) => {
+        html_button_text_click(root, chapter, () => {});
       });
     });
   });
