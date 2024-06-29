@@ -15,6 +15,7 @@ export async function app_record_chapter(context, book_code, chapter) {
     let p = html_button_width_full_text_click(root, "", async () => {
       let verses = await app_record_verses(context, book_code, chapter);
       let verse = list_find_property(verses, "verse_number", verse_number);
+      let { tokens } = verse;
       let vn = html_span_text(p, verse_number);
       html_style_bold(vn);
       html_span_text(p, " ");
