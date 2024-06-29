@@ -1,4 +1,3 @@
-import { html_load_wait } from "./html_load_wait.mjs";
 import { html_script_axios } from "./html_script_axios.mjs";
 import { app_gs_game_delete } from "./app_gs_game_delete.mjs";
 import { app_gs_load } from "./app_gs_load.mjs";
@@ -26,6 +25,5 @@ export async function app_gs() {
   if (0) {
     app_gs_game_delete();
   }
-  await html_load_wait(c);
   await app_gs_load(context);
 }
