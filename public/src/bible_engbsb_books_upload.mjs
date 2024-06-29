@@ -8,7 +8,7 @@ export async function bible_engbsb_books_upload(chapter_name) {
   let data = await bible_engbsb_chapter(chapter_name);
   let chapters = await bible_books_chapters("engbsb");
   await each_async(chapters, async (c) => {
-    let { chapter_name } = c;
+    let { chapter_name, book_name } = c;
     la(await bible_chapter(bible_folder, chapter_name));
   });
   let destination = bible_engbsb_storage_path_file("books");
