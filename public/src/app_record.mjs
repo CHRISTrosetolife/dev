@@ -29,7 +29,7 @@ export async function app_record() {
   let hash_book = object_property_get_or(lookup, "book", null);
   if (hash_book !== null) {
     app_record_book(context, hash_book);
-    if (hash_book !== null) {
+    if (hash_chapter !== null) {
       let hash_chapter = object_property_get_or(lookup, "chapter", null);
       await app_record_chapter(context, hash_book, hash_chapter);
     }
