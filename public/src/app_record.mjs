@@ -24,7 +24,7 @@ export async function app_record() {
           html_clear_scroll_top(root);
           each(verses, (verse) => {
             let { tokens, verse_number } = verse;
-            html_p(root);
+            let p = html_p(root);
             html_p_text(
               root,
               list_join_space(
