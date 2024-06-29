@@ -6,6 +6,7 @@ import { each } from "./each.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { html_script_axios } from "./html_script_axios.mjs";
 import { bible_engbsb_storage_http_get } from "./bible_engbsb_storage_http_get.mjs";
+import { object_merge } from "./object_merge.mjs";
 export async function app_record() {
   let lookup = html_hash_lookup();
   let hash_book = object_property_get_or(lookup, "book", null);
@@ -14,6 +15,7 @@ export async function app_record() {
   let context = {};
   await html_script_axios(root);
   let { books } = await bible_engbsb_storage_http_get("books");
+  object_merge(context, books);
   each(books, (book) => {
     let { book_code } = book;
     html_button_text_click(root, book_code, function () {
