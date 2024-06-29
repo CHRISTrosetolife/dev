@@ -32,7 +32,6 @@ export async function bible_engbsb_books_upload() {
     );
     list_add(book.chapters, chapter_name);
   });
-  return books;
   let destination = bible_engbsb_storage_path_file("books");
   await storage_upload_object(
     {
