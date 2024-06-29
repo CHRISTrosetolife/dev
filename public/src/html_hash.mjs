@@ -13,7 +13,6 @@ import { object_properties } from "./object_properties.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 export function html_hash(actions) {
   let lookup = {};
-  let action_properties = object_properties(actions);
   let hash = html_hash_get();
   if (html_hash_exists()) {
     let hash_no_tag = string_prefix_without(hash, "#");
@@ -27,6 +26,7 @@ export function html_hash(actions) {
       object_property_set(lookup, key, value);
     }
   }
+  let action_properties = object_properties(actions);
   each_object(lookup, (key, value) => {
     if (list_includes(action_properties, key)) {
       let action = object_property_get(actions, key);
