@@ -10,6 +10,7 @@ import { string_split } from "./string_split.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 import { object_properties } from "./object_properties.mjs";
 export function html_hash(actions) {
+  let lookup = {};
   let action_properties = object_properties(actions);
   let hash = html_hash_get();
   if (html_hash_exists()) {
