@@ -17,7 +17,7 @@ export async function bible_engbsb_books_upload(chapter_name) {
         chapters: [],
       };
     }
-    let chapter_name_padded = string_prefix_without(chapter_code, book_name);
+    let chapter_name_padded = string_prefix_without(chapter_code, book_code);
     list_add(book.chapters, chapter_name);
   });
   let destination = bible_engbsb_storage_path_file("books");
