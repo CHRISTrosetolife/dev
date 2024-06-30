@@ -1,3 +1,4 @@
+import { date_string_iso_file } from "./date_string_iso_file.mjs";
 import { log } from "./log.mjs";
 import { html_style_display_block } from "./html_style_display_block.mjs";
 import { html_style_display_none } from "./html_style_display_none.mjs";
@@ -43,6 +44,7 @@ export async function app_record_verse(
       html_style_display_none(stop);
       html_style_display_block(start);
       let blob = await html_recorder_media_stop(context.mr);
+      date_string_iso_file();
       let storage = getStorage();
       let storageRef = ref(storage, "audio/bible/test.mp3");
       uploadBytes(storageRef, blob).then((snapshot) => {
