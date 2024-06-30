@@ -36,7 +36,7 @@ export async function app_record_verse(
     let audio = html_element(clipContainer, "audio");
     html_attribute_set(audio, "controls", "");
     let audioURL = window.URL.createObjectURL(blob);
-    audio.src = audioURL;
+    html_attribute_set(audio, "src", audioURL);
     let deleteButton = html_button_width_full_text_click(
       clipContainer,
       "Delete",
