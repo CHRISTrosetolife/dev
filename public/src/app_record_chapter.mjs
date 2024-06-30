@@ -8,7 +8,7 @@ import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export async function app_record_chapter(context, book_code, chapter) {
   let { root } = context;
-  let verses = await app_record_verses(context, book_code, chapter);
+  let verses = await app_record_verses(book_code, chapter);
   html_clear_scroll_top(root);
   each(verses, (verse) => {
     let { tokens, verse_number } = verse;
