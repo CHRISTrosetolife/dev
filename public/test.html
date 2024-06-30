@@ -30,7 +30,7 @@
 
 
     stop.onclick = async function() {
-        await html_recorder_media_stop(mr)
+      const blob_mp3=  await html_recorder_media_stop(mr)
     record.style.background = "#5bc0de";
     record.style.color = "white";
     console.log("recorder stopped");
@@ -153,4 +153,8 @@ async function html_wav_to_mp3(wav_blob) {
   };
   return result;
 }
+function list_remove_all(nexts) {
+  nexts.length = 0;
+}
+
 </script>
