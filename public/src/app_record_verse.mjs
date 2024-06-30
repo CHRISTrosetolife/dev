@@ -1,3 +1,4 @@
+import { add } from "./add.mjs";
 import { html_recorder_media_stop } from "./html_recorder_media_stop.mjs";
 import { html_recorder_media_record } from "./html_recorder_media_record.mjs";
 import { list_join_space } from "./list_join_space.mjs";
@@ -26,6 +27,29 @@ export async function app_record_verse(
     html_recorder_media_record(context.mr);
   });
   html_button_width_full_text_click(root, "⏹️ stop recording", async () => {
+    let clipName = prompt("Enter a name for your sound clip");
+    let clipContainer = document.createElement("article");
+    let clipLabel = document.createElement("p");
+    let audio = document.createElement("audio");
+    let deleteButton = document.createElement("button");
+    clipContainer.classList.add("clip");
+    audio.setAttribute("controls", "");
+    deleteButton.innerHTML = "Delete";
+    clipLabel.innerHTML = clipName;
+    clipContainer.appendChild(audio);
+    clipContainer.appendChild(clipLabel);
+    clipContainer.appendChild(deleteButton);
+    soundClips.appendChild(clipContainer);
+    let blob = new Blob(chunks, {
+      type: chunks[0].type,
+    });
+    let chunks = [];
+    let audioURL = window.URL.createObjectURL(blob);
+    audio.src = audioURL;
+    deleteButton.onclick = function (e) {
+      let evtTgt = e.target;
+      evtTgt.parentNode.parentNode.removeChild(evtTgt.parentNode);
+    };
     await html_recorder_media_stop(context.mr);
   });
 }
