@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_filter_property_index } from "./list_filter_property_index.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { date_string_iso_file } from "./date_string_iso_file.mjs";
@@ -61,6 +62,7 @@ export async function app_record_verse(
         target_value,
       );
       let index = list_single(indices);
+      log({});
     },
   );
   html_style_display_none(stop);
