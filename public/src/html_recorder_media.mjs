@@ -3,6 +3,7 @@ import {
   MediaRecorder,
   register,
 } from "https://jspm.dev/extendable-media-recorder";
+import { connect } from "https://jspm.dev/extendable-media-recorder-wav-encoder";
 export async function html_recorder_media() {
   let port = await connect();
   await register(port);
