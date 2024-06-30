@@ -1,5 +1,7 @@
 import { error } from "./error.mjs";
+import { global_get } from "./global_get.mjs";
 export function firebase_login() {
+  let firebase = global_get();
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       let user = userCredential.user;
