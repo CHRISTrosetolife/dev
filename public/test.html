@@ -93,6 +93,13 @@ async function html_recorder_media_stop(mr) {
     media_recorder.stop();
   });
 }
+function html_event_listener(element, type, lambda) {
+  element.addEventListener(type, lambda);
+}
+
+function html_event_listener_remove(element, type, on_load) {
+  element.removeEventListener(type, on_load);
+}
 
   function convertWavToMp3(wavBlob) {
     return new Promise((resolve, reject) => {
