@@ -12,6 +12,7 @@ import { bible_engbsb_storage_http_get } from "./bible_engbsb_storage_http_get.m
 import { object_merge } from "./object_merge.mjs";
 import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { global_get } from "./global_get.mjs";
 export async function app_record() {
   let firebaseConfig = {
     apiKey: "AIzaSyBzIDxtdV44GoO3NH_a6KSw7iJ9Oa-trQU",
@@ -23,6 +24,12 @@ export async function app_record() {
   };
   let app = initializeApp(firebaseConfig);
   let auth = getAuth(app);
+  object_merge(global_get(), {
+    firebase: {
+      app,
+      auth,
+    },
+  });
   let root = html_style_default_initialize();
   let context = {};
   context.mr = await html_recorder_media();
