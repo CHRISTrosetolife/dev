@@ -1,3 +1,4 @@
+import { html_focus } from "./html_focus.mjs";
 import { html_style_button_default_border } from "./html_style_button_default_border.mjs";
 import { html_style } from "./html_style.mjs";
 import { html_style_rounded_padded } from "./html_style_rounded_padded.mjs";
@@ -13,6 +14,7 @@ import { html_style_hidden } from "./html_style_hidden.mjs";
 import { html_style_visible } from "./html_style_visible.mjs";
 export function app_record_login(parent) {
   let email = html_input_width_full(parent);
+  html_focus(email);
   let password = html_input_width_full(parent);
   html_attribute_set(password, "type", "password");
   let error_message;
