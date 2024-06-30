@@ -38,10 +38,6 @@ export async function app_record_verse(
       clipContainer,
       "Delete",
     );
-    let blob = new Blob(chunks, {
-      type: chunks[0].type,
-    });
-    let chunks = [];
     let audioURL = window.URL.createObjectURL(blob);
     audio.src = audioURL;
     deleteButton.onclick = function (e) {
