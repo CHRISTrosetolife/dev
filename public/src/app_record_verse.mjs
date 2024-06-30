@@ -36,8 +36,8 @@ export async function app_record_verse(
   let start, save, cancel, recording;
   start = html_button_width_full_text_click(root, "⏺️ start recording", () => {
     html_style_display_none(start);
-    each(recording, html_style_display_block);
     html_recorder_media_start(context.mr);
+    each(recording, html_style_display_block);
   });
   cancel = html_button_width_full_text_click(root, "⏺️ start recording", () => {
     html_style_display_none(start);
