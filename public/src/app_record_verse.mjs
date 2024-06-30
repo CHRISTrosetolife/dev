@@ -39,15 +39,6 @@ export async function app_record_verse(
     html_recorder_media_start(context.mr);
     each(recording, html_style_display_block);
   });
-  cancel = html_button_width_full_text_click(
-    root,
-    "🚫 cancel recording",
-    async () => {
-      each(recording, html_style_display_none);
-      await html_recorder_media_stop(context.mr);
-      html_style_display_block(start);
-    },
-  );
   save = html_button_width_full_text_click(
     root,
     "💾 save recording and ➡️ next verse",
@@ -67,6 +58,15 @@ export async function app_record_verse(
         verse_number,
       );
       await app_record_verse(context, book_code, chapter, verse_number_next);
+    },
+  );
+  cancel = html_button_width_full_text_click(
+    root,
+    "🚫 cancel recording",
+    async () => {
+      each(recording, html_style_display_none);
+      await html_recorder_media_stop(context.mr);
+      html_style_display_block(start);
     },
   );
   recording = [save, cancel];
