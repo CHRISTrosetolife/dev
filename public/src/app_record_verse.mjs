@@ -49,7 +49,6 @@ export async function app_record_verse(
     "💾 save recording",
     async () => {
       each(recording, html_style_display_none);
-      html_style_display_block(start);
       let blob = await html_recorder_media_stop(context.mr);
       let when = date_string_iso_file();
       let storage = getStorage();
@@ -64,6 +63,7 @@ export async function app_record_verse(
         verse_number,
       );
       await app_record_verse(context, book_code, chapter, verse_number_next);
+      html_style_display_block(start);
     },
   );
   recording = [save, cancel];
