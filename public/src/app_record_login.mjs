@@ -1,3 +1,4 @@
+import { html_value_get } from "./html_value_get.mjs";
 import { firebase_login } from "./firebase_login.mjs";
 import { html_attribute_set } from "./html_attribute_set.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
@@ -7,6 +8,6 @@ export function app_record_login(root) {
   let password = html_input_width_full(root);
   html_attribute_set(password, "type", "password");
   html_button_width_full_text_click(root, "login", async () => {
-    await firebase_login(email, password);
+    await firebase_login(html_value_get(email), html_value_get(password));
   });
 }
