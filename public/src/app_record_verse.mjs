@@ -1,6 +1,5 @@
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { date_string_iso_file } from "./date_string_iso_file.mjs";
-import { log } from "./log.mjs";
 import { html_style_display_block } from "./html_style_display_block.mjs";
 import { html_style_display_none } from "./html_style_display_none.mjs";
 import { html_recorder_media_start } from "./html_recorder_media_start.mjs";
@@ -52,7 +51,6 @@ export async function app_record_verse(
         string_combine_multiple(["audio/bible/test/", when, ".mp3"]),
       );
       let snapshot = await uploadBytes(storageRef, blob);
-      log("Uploaded a blob or file!");
     },
   );
   html_style_display_none(stop);
