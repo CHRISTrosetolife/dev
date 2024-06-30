@@ -32,17 +32,17 @@ export async function app_record_verse(
   html_style_bold(vn);
   html_span_text(root, " ");
   html_span_text(root, list_join_space(tokens));
-  let start, stop;
+  let start, save;
   start = html_button_width_full_text_click(root, "⏺️ start recording", () => {
     html_style_display_none(start);
-    html_style_display_block(stop);
+    html_style_display_block(save);
     html_recorder_media_start(context.mr);
   });
-  stop = html_button_width_full_text_click(
+  save = html_button_width_full_text_click(
     root,
-    "⏹️ stop recording",
+    "⏹️ save recording",
     async () => {
-      html_style_display_none(stop);
+      html_style_display_none(save);
       html_style_display_block(start);
       let blob = await html_recorder_media_stop(context.mr);
       let when = date_string_iso_file();
@@ -60,5 +60,5 @@ export async function app_record_verse(
       await app_record_verse(context, book_code, chapter, verse_number_next);
     },
   );
-  html_style_display_none(stop);
+  html_style_display_none(save);
 }
