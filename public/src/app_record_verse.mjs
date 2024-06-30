@@ -1,3 +1,4 @@
+import { html_recorder_media_record } from "./html_recorder_media_record.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { html_span_text } from "./html_span_text.mjs";
@@ -20,5 +21,7 @@ export async function app_record_verse(
   html_style_bold(vn);
   html_span_text(root, " ");
   html_span_text(root, list_join_space(tokens));
-  html_button_width_full_text_click(root, "⏺️ start recording", () => {});
+  html_button_width_full_text_click(root, "⏺️ start recording", () => {
+    html_recorder_media_record();
+  });
 }
