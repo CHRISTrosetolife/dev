@@ -8,6 +8,9 @@ export function app_record_login(root) {
   let password = html_input_width_full(root);
   html_attribute_set(password, "type", "password");
   html_button_width_full_text_click(root, "login", async () => {
-    await firebase_login(html_value_get(email), html_value_get(password));
+    let user = await firebase_login(
+      html_value_get(email),
+      html_value_get(password),
+    );
   });
 }
