@@ -1,25 +1,22 @@
-import { global_function_initialize } from "./global_function_initialize.mjs";
 import { global_get } from "./global_get.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 export function firebase_initialize() {
-  global_function_initialize(firebase_initialize, () => {
-    let firebaseConfig = {
-      apiKey: "AIzaSyBzIDxtdV44GoO3NH_a6KSw7iJ9Oa-trQU",
-      authDomain: "letjesusbeexalted.firebaseapp.com",
-      projectId: "letjesusbeexalted",
-      storageBucket: "letjesusbeexalted.appspot.com",
-      messagingSenderId: "1088010912651",
-      appId: "1:1088010912651:web:99fe9a26960793a702658e",
-    };
-    let app = initializeApp(firebaseConfig);
-    let auth = getAuth(app);
-    object_merge(global_get(), {
-      firebase: {
-        app,
-        auth,
-      },
-    });
+  let firebaseConfig = {
+    apiKey: "AIzaSyBzIDxtdV44GoO3NH_a6KSw7iJ9Oa-trQU",
+    authDomain: "letjesusbeexalted.firebaseapp.com",
+    projectId: "letjesusbeexalted",
+    storageBucket: "letjesusbeexalted.appspot.com",
+    messagingSenderId: "1088010912651",
+    appId: "1:1088010912651:web:99fe9a26960793a702658e",
+  };
+  let app = initializeApp(firebaseConfig);
+  let auth = getAuth(app);
+  object_merge(global_get(), {
+    firebase: {
+      app,
+      auth,
+    },
   });
 }
