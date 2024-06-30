@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { firebase_auth } from "./firebase_auth.mjs";
 import { app_record_login } from "./app_record_login.mjs";
 import { firebase_initialize } from "./firebase_initialize.mjs";
@@ -21,9 +20,6 @@ export async function app_record() {
   firebase_initialize();
   let auth = firebase_auth();
   onAuthStateChanged(auth, async (user) => {
-    log({
-      user,
-    });
     html_clear_scroll_top(root);
     if (user) {
       let context = {};
