@@ -1,4 +1,4 @@
-import { restart } from "./restart.mjs";
+import { computer_restart } from "./computer_restart.mjs";
 import { firebase_upload } from "./firebase_upload.mjs";
 import { each } from "./each.mjs";
 import { list_find_property_next_property } from "./list_find_property_next_property.mjs";
@@ -30,7 +30,7 @@ export async function app_record_verse(
   html_style_bold(vn);
   html_span_text(root, " ");
   html_span_text(root, list_join_space(tokens));
-  let start, save, cancel, restart, recording;
+  let start, save, cancel, computer_restart, recording;
   start = html_button_width_full_text_click(root, "⏺️ start recording", () => {
     html_style_display_none(start);
     html_recorder_media_start(context.mr);
@@ -63,7 +63,7 @@ export async function app_record_verse(
       await app_record_verse(context, book_code, chapter, verse_number_next);
     },
   );
-  restart = html_button_width_full_text_click(
+  computer_restart = html_button_width_full_text_click(
     root,
     "↩️ restart recording",
     async () => {

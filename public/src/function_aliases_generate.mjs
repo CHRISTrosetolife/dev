@@ -1,3 +1,4 @@
+import { computer_restart } from "./computer_restart.mjs";
 import { app_new } from "./app_new.mjs";
 import { functions_string } from "./functions_string.mjs";
 import { functions_identifier } from "./functions_identifier.mjs";
@@ -11,7 +12,6 @@ import { function_cache_new_run } from "./function_cache_new_run.mjs";
 import { function_cache_delete } from "./function_cache_delete.mjs";
 import { js_code_statement_return } from "./js_code_statement_return.mjs";
 import { function_cache_new } from "./function_cache_new.mjs";
-import { restart } from "./restart.mjs";
 import { terminal_data_history_clear } from "./terminal_data_history_clear.mjs";
 import { terminal_data_history } from "./terminal_data_history.mjs";
 import { on_keypress_log } from "./on_keypress_log.mjs";
@@ -85,7 +85,7 @@ export async function function_aliases_generate() {
   alias_add(function_open, ["o"]);
   alias_add(function_param_new, ["p"]);
   alias_add(function_rename, ["r"]);
-  alias_add(restart, ["re"]);
+  alias_add(computer_restart, ["re"]);
   alias_add(function_search, ["s"]);
   alias_add(sandbox, ["sb"]);
   alias_add(functions_identifier, ["si"]);
