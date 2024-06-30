@@ -40,10 +40,10 @@ export async function app_record_verse(
     let deleteButton = html_button_width_full_text_click(
       clipContainer,
       "Delete",
+      function (e) {
+        let evtTgt = e.target;
+        evtTgt.parentNode.parentNode.removeChild(evtTgt.parentNode);
+      },
     );
-    deleteButton.onclick = function (e) {
-      let evtTgt = e.target;
-      evtTgt.parentNode.parentNode.removeChild(evtTgt.parentNode);
-    };
   });
 }
