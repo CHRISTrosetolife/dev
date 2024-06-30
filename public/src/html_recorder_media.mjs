@@ -1,4 +1,8 @@
 import { error } from "./error.mjs";
+import {
+  MediaRecorder,
+  register,
+} from "https://jspm.dev/extendable-media-recorder";
 export async function html_recorder_media() {
   let port = await connect();
   await register(port);
