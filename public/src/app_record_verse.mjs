@@ -1,3 +1,4 @@
+import { restart } from "./restart.mjs";
 import { firebase_upload } from "./firebase_upload.mjs";
 import { each } from "./each.mjs";
 import { list_find_property_next_property } from "./list_find_property_next_property.mjs";
@@ -71,7 +72,7 @@ export async function app_record_verse(
       html_style_display_block(start);
     },
   );
-  cancel = html_button_width_full_text_click(
+  let restart = html_button_width_full_text_click(
     root,
     "🚫 cancel recording",
     async () => {
