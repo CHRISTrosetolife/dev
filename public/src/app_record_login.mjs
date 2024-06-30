@@ -10,6 +10,7 @@ import { html_input_width_full } from "./html_input_width_full.mjs";
 import { html_p } from "./html_p.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 import { html_style_hidden } from "./html_style_hidden.mjs";
+import { html_style_visible } from "./html_style_visible.mjs";
 export function app_record_login(parent) {
   let email = html_input_width_full(parent);
   let password = html_input_width_full(parent);
@@ -23,6 +24,7 @@ export function app_record_login(parent) {
       );
     } catch (e) {
       html_inner_set(error_message, e.message);
+      html_style_visible(error_message);
     }
   });
   error_message = html_p(parent);
