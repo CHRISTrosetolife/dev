@@ -29,10 +29,8 @@
     }
 
 
-    stop.onclick = function() {
-    mr.media_recorder.stop();
-    console.log(mr.media_recorder.state);
-    console.log("recorder stopped");
+    stop.onclick = async function() {
+        await html_recorder_media_stop(mr)
     record.style.background = "#5bc0de";
     record.style.color = "white";
     console.log("recorder stopped");
@@ -78,6 +76,22 @@
   let audioContext = new AudioContext();
   let { media_recorder } = mr;
   media_recorder.start();
+}
+async function html_recorder_media_stop(mr) {
+  let { media_recorder, chunks } = mr;
+  let type = "stop";
+  return await new Promise((resolve) => {
+    html_event_listener(media_recorder, type, async function on_stop() {
+      html_event_listener_remove(media_recorder, type, on_stop);
+      let blob = new Blob(chunks, {
+        type: chunks[0].type,
+      });
+      let blob_mp3 = await html_wav_to_mp3(blob);
+      list_remove_all(chunks);
+      resolve(blob_mp3);
+    });
+    media_recorder.stop();
+  });
 }
 
   function convertWavToMp3(wavBlob) {
