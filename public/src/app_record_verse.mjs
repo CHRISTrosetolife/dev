@@ -57,9 +57,7 @@ export async function app_record_verse(
         when,
         ".mp3",
       ]);
-      let storage = getStorage();
-      let storageRef = ref(storage, storage_path);
-      let snapshot = await uploadBytes(storageRef, blob);
+      await firebase_upload(storage_path, blob);
       let verse_number_next = list_find_property_next_property(
         verses,
         "verse_number",
@@ -80,3 +78,9 @@ export async function app_record_verse(
   recording = [save, cancel];
   html_style_display_none(save);
 }
+async function firebase_upload(storage_path, blob) {
+    let storage = getStorage();
+    let storageRef = ref(storage, storage_path);
+    let snapshot = await uploadBytes(storageRef, blob);
+}
+
