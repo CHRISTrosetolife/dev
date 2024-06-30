@@ -48,7 +48,7 @@ export async function app_record_verse(
     root,
     "💾 save recording",
     async () => {
-      html_style_display_none(save);
+      each(recording, html_style_display_none);
       html_style_display_block(start);
       let blob = await html_recorder_media_stop(context.mr);
       let when = date_string_iso_file();
