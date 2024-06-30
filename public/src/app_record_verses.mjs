@@ -6,7 +6,7 @@ export async function app_record_verses(context, book_code, chapter) {
   let chapter_code = string_combine_multiple([book_code, chapter]);
   let a = await global_function_initialize(app_record_verses, () => ({}));
   let verses = await object_property_get_or_async(
-    context,
+    a,
     chapter_code,
     async () => await bible_engbsb_storage_http_get(chapter_code),
   );
