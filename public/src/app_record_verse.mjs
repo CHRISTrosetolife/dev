@@ -52,7 +52,7 @@ export async function app_record_verse(
         string_combine_multiple(["audio/bible/test/", when, ".mp3"]),
       );
       let snapshot = await uploadBytes(storageRef, blob);
-      console.log("Uploaded a blob or file!");
+      log("Uploaded a blob or file!");
     },
   );
   html_style_display_none(stop);
