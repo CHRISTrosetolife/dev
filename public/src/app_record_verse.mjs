@@ -24,7 +24,7 @@ export async function app_record_verse(
 ) {
   let { root } = context;
   html_clear_scroll_top(root);
-  let verses = await app_record_verses(context, book_code, chapter);
+  let verses = await app_record_verses(book_code, chapter);
   let verse = list_find_property(verses, "verse_number", verse_number);
   let { tokens } = verse;
   let vn = html_span_text(root, verse_number);
