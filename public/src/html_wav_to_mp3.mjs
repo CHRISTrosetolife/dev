@@ -1,6 +1,6 @@
 import breezystacklamejs from "https://cdn.jsdelivr.net/npm/@breezystack/lamejs@1.2.7/+esm";
-export function html_wav_to_mp3(wav_blob) {
-  return new Promise((resolve, reject) => {
+export async function html_wav_to_mp3(wav_blob) {
+  return await new Promise((resolve, reject) => {
     let reader = new FileReader();
     reader.onload = function () {
       let arrayBuffer = this.result;
