@@ -20,5 +20,5 @@ export async function app_record_verse(
   html_style_bold(vn);
   html_span_text(root, " ");
   html_span_text(root, list_join_space(tokens));
-  html_button_width_full_text_click(root, "⏺️ start recording");
+  html_button_width_full_text_click(root, "⏺️ start recording", () => {});
 }
