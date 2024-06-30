@@ -1,7 +1,7 @@
 import { log } from "./log.mjs";
 export function html_recorder_media_stop() {
-  let { mediaRecorder } = mr;
-  mediaRecorder.stop();
-  console.log(mediaRecorder.state);
+  let { media_recorder } = mr;
+  media_recorder.stop();
+  console.log(media_recorder.state);
   console.log("recorder stopped");
 }
