@@ -1,10 +1,13 @@
+import { html_event_listener_remove } from "./html_event_listener_remove.mjs";
 import { html_event_listener } from "./html_event_listener.mjs";
 import { html_wav_to_mp3 } from "./html_wav_to_mp3.mjs";
 import { list_remove_all } from "./list_remove_all.mjs";
 export async function html_recorder_media_stop(mr) {
   let { media_recorder, chunks } = mr;
   media_recorder.stop();
-  html_event_listener(media_recorder, "stop", function on_stop() {});
+  html_event_listener(media_recorder, "stop", function on_stop() {
+    html_event_listener_remove(element, type, on_load);
+  });
   let blob = new Blob(chunks, {
     type: chunks[0].type,
   });
