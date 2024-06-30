@@ -65,5 +65,6 @@ export async function app_record_verse(
       await app_record_verse(context, book_code, chapter, verse_number_next);
     },
   );
+  recording = [save, cancel];
   html_style_display_none(save);
 }
