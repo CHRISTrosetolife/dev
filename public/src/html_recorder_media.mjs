@@ -12,12 +12,12 @@ export async function html_recorder_media() {
   let stream = await navigator.mediaDevices.getUserMedia({
     audio: true,
   });
-  let mediaRecorder = new MediaRecorder(stream, {
+  let media_recorder = new MediaRecorder(stream, {
     mimeType: "audio/wav",
   });
   let chunks = [];
-  mediaRecorder.ondataavailable = function (e) {
+  media_recorder.ondataavailable = function (e) {
     chunks.push(e.data);
   };
-  return mediaRecorder;
+  return media_recorder;
 }
