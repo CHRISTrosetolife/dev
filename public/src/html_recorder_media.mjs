@@ -16,13 +16,12 @@ export async function html_recorder_media() {
   let media_recorder = new MediaRecorder(stream, {
     mimeType: "audio/wav",
   });
-  let chunks = [];
-  media_recorder.ondataavailable = function (e) {
-    chunks.push(e.data);
-  };
   let result = {
     media_recorder,
     chunks,
+  };
+  media_recorder.ondataavailable = function (e) {
+    result.chunks.push(e.data);
   };
   return result;
 }
