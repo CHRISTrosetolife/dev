@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { list_filter_index } from "./list_filter_index.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { date_string_iso_file } from "./date_string_iso_file.mjs";
@@ -52,7 +53,9 @@ export async function app_record_verse(
         string_combine_multiple(["audio/bible/test/", when, ".mp3"]),
       );
       let snapshot = await uploadBytes(storageRef, blob);
-      list_filter_index(verses, (verse, index) => {});
+      list_filter_index(verses, (verse, index) => {
+        object_property_get(object, property_name);
+      });
     },
   );
   html_style_display_none(stop);
