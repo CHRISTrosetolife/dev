@@ -1,9 +1,6 @@
 import { html_style_display_block } from "./html_style_display_block.mjs";
 import { html_style_display_none } from "./html_style_display_none.mjs";
 import { html_recorder_media_start } from "./html_recorder_media_start.mjs";
-import { html_p_text } from "./html_p_text.mjs";
-import { html_attribute_set } from "./html_attribute_set.mjs";
-import { html_element } from "./html_element.mjs";
 import { html_recorder_media_stop } from "./html_recorder_media_stop.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
@@ -40,21 +37,6 @@ export async function app_record_verse(
       html_style_display_none(stop);
       html_style_display_block(start);
       let blob = await html_recorder_media_stop(context.mr);
-      let clipName = prompt("Enter a name for your sound clip");
-      let clipContainer = html_element(root, "article");
-      let clipLabel = html_p_text(clipContainer, clipName);
-      let audio = html_element(clipContainer, "audio");
-      html_attribute_set(audio, "controls", "");
-      let audioURL = window.URL.createObjectURL(blob);
-      html_attribute_set(audio, "src", audioURL);
-      let deleteButton = html_button_width_full_text_click(
-        clipContainer,
-        "Delete",
-        function (e) {
-          let evtTgt = e.target;
-          evtTgt.parentNode.parentNode.removeChild(evtTgt.parentNode);
-        },
-      );
     },
   );
   html_style_display_none(stop);
