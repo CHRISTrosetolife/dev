@@ -1,4 +1,4 @@
-import { app_record_verse } from "./app_record_verse.mjs";
+import { app_record_verse } from "./app_record_verse.1.mjs";
 import { app_record_verses } from "./app_record_verses.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
