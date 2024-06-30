@@ -18,7 +18,7 @@ export async function app_record() {
   let root = html_style_default_initialize();
   firebase_initialize();
   let auth = firebase_auth();
-  onAuthStateChanged();
+  onAuthStateChanged(auth, (user) => {});
   app_record_login(root);
   return;
   let context = {};
