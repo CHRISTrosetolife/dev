@@ -61,7 +61,7 @@ export async function app_record_verse(
         property_name,
         target_value,
       );
-      object_property_get(verse_next, property_name);
+      let verse_number_next = object_property_get(verse_next, property_name);
       log({
         verse_next,
       });
