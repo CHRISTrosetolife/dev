@@ -25,7 +25,7 @@ export function app_record_login(parent) {
     }
   });
   error_message = html_p(parent);
-  html_style_wrong(error_message);
   html_style_rounded_padded(error_message);
   html_style(error_message, html_style_button_default_border());
+  html_style_wrong(error_message);
 }
