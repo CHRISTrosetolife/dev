@@ -32,8 +32,8 @@ export async function app_record_verse(
     let clipName = prompt("Enter a name for your sound clip");
     let clipContainer = html_element(root, "article");
     let clipLabel = html_p(clipContainer);
-    let audio = document.createElement("audio");
-    let deleteButton = document.createElement("button");
+    let audio = html_element(root, "audio");
+    let deleteButton = html_element(root, "button");
     clipContainer.classList.add("clip");
     audio.setAttribute("controls", "");
     deleteButton.innerHTML = "Delete";
