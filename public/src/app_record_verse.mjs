@@ -25,9 +25,13 @@ export async function app_record_verse(
   html_style_bold(vn);
   html_span_text(root, " ");
   html_span_text(root, list_join_space(tokens));
-  html_button_width_full_text_click(root, "⏺️ start recording", () => {
-    html_recorder_media_start(context.mr);
-  });
+  let start = html_button_width_full_text_click(
+    root,
+    "⏺️ start recording",
+    () => {
+      html_recorder_media_start(context.mr);
+    },
+  );
   html_button_width_full_text_click(root, "⏹️ stop recording", async () => {
     let blob = await html_recorder_media_stop(context.mr);
     let clipName = prompt("Enter a name for your sound clip");
