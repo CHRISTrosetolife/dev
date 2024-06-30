@@ -38,6 +38,7 @@ export async function app_record_verse(
     "⏹️ stop recording",
     async () => {
       html_style_display_none(stop);
+      html_style_display_block(start);
       let blob = await html_recorder_media_stop(context.mr);
       let clipName = prompt("Enter a name for your sound clip");
       let clipContainer = html_element(root, "article");
