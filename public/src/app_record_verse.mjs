@@ -1,5 +1,4 @@
-import { object_property_get } from "./object_property_get.mjs";
-import { list_filter_index } from "./list_filter_index.mjs";
+import { list_filter_property_index } from "./list_filter_property_index.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { date_string_iso_file } from "./date_string_iso_file.mjs";
 import { html_style_display_block } from "./html_style_display_block.mjs";
@@ -56,13 +55,11 @@ export async function app_record_verse(
       let snapshot = await uploadBytes(storageRef, blob);
       let property_name = "verse_number";
       let target_value = verse_number;
-      let indices = list_filter_index(verses, (verse) => {
-        let value = object_property_get(verse, property_name);
-        if (value === target_value) {
-          return true;
-        }
-        return false;
-      });
+      let indices = list_filter_property_index(
+        verses,
+        property_name,
+        target_value,
+      );
       let index = list_single(indices);
     },
   );
