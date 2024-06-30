@@ -8,7 +8,7 @@ export async function html_recorder_media_stop(mr) {
   let type = "stop";
   return await new Promise((resolve) => {
     html_event_listener(media_recorder, type, async function on_stop() {
-      html_event_listener_remove(element, type, on_stop);
+      html_event_listener_remove(media_recorder, type, on_stop);
       let blob = new Blob(chunks, {
         type: chunks[0].type,
       });
