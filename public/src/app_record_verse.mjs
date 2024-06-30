@@ -79,7 +79,7 @@ export async function app_record_verse(
       each(recording, html_style_display_none);
       await html_recorder_media_stop(context.mr);
       html_recorder_media_start(context.mr);
-      html_style_display_block(start);
+      each(recording, html_style_display_block);
     },
   );
   recording = [save, cancel];
