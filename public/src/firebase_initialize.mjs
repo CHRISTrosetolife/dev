@@ -1,3 +1,4 @@
+import { global_function_initialize } from "./global_function_initialize.mjs";
 import { global_get } from "./global_get.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
@@ -19,4 +20,5 @@ export function firebase_initialize() {
       auth,
     },
   });
+  global_function_initialize();
 }
