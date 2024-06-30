@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_find_property_index_next } from "./list_find_property_index_next.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { date_string_iso_file } from "./date_string_iso_file.mjs";
@@ -61,6 +62,7 @@ export async function app_record_verse(
         target_value,
       );
       let verse_next = list_get(next);
+      log({});
     },
   );
   html_style_display_none(stop);
