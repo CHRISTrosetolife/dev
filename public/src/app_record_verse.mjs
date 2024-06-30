@@ -1,5 +1,5 @@
+import { html_p_text } from "./html_p_text.mjs";
 import { html_attribute_set } from "./html_attribute_set.mjs";
-import { html_p } from "./html_p.mjs";
 import { html_element } from "./html_element.mjs";
 import { html_recorder_media_stop } from "./html_recorder_media_stop.mjs";
 import { html_recorder_media_record } from "./html_recorder_media_record.mjs";
@@ -31,12 +31,10 @@ export async function app_record_verse(
   html_button_width_full_text_click(root, "⏹️ stop recording", async () => {
     let clipName = prompt("Enter a name for your sound clip");
     let clipContainer = html_element(root, "article");
-    let clipLabel = html_p(clipContainer);
+    let clipLabel = html_p_text(clipContainer, clipName);
     let audio = html_element(root, "audio");
     html_attribute_set(audio, "controls", "");
-    let deleteButton = html_button_width_full_text_click(root, "button");
-    deleteButton.innerHTML = "Delete";
-    clipLabel.innerHTML = clipName;
+    let deleteButton = html_button_width_full_text_click(root, "Delete");
     clipContainer.appendChild(audio);
     clipContainer.appendChild(clipLabel);
     clipContainer.appendChild(deleteButton);
