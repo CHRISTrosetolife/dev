@@ -49,7 +49,7 @@ export async function app_record_verse(
       let storage = getStorage();
       let storageRef = ref(
         storage,
-        string_combine_multiple(["audio/bible/test", when, ".mp3"]),
+        string_combine_multiple(["audio/bible/test/", when, ".mp3"]),
       );
       uploadBytes(storageRef, blob).then((snapshot) => {
         console.log("Uploaded a blob or file!");
