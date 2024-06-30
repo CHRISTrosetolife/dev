@@ -1,3 +1,4 @@
+import { list_filter_index } from "./list_filter_index.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { date_string_iso_file } from "./date_string_iso_file.mjs";
 import { html_style_display_block } from "./html_style_display_block.mjs";
@@ -51,6 +52,7 @@ export async function app_record_verse(
         string_combine_multiple(["audio/bible/test/", when, ".mp3"]),
       );
       let snapshot = await uploadBytes(storageRef, blob);
+      list_filter_index(verses);
     },
   );
   html_style_display_none(stop);
