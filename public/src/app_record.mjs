@@ -1,3 +1,4 @@
+import { firebase_initialize } from "./firebase_initialize.mjs";
 import { html_recorder_media } from "./html_recorder_media.mjs";
 import { app_record_verse } from "./app_record_verse.mjs";
 import { app_record_chapter } from "./app_record_chapter.mjs";
@@ -10,26 +11,8 @@ import { html_style_default_initialize } from "./html_style_default_initialize.m
 import { html_script_axios } from "./html_script_axios.mjs";
 import { bible_engbsb_storage_http_get } from "./bible_engbsb_storage_http_get.mjs";
 import { object_merge } from "./object_merge.mjs";
-import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { global_get } from "./global_get.mjs";
 export async function app_record() {
-  let firebaseConfig = {
-    apiKey: "AIzaSyBzIDxtdV44GoO3NH_a6KSw7iJ9Oa-trQU",
-    authDomain: "letjesusbeexalted.firebaseapp.com",
-    projectId: "letjesusbeexalted",
-    storageBucket: "letjesusbeexalted.appspot.com",
-    messagingSenderId: "1088010912651",
-    appId: "1:1088010912651:web:99fe9a26960793a702658e",
-  };
-  let app = initializeApp(firebaseConfig);
-  let auth = getAuth(app);
-  object_merge(global_get(), {
-    firebase: {
-      app,
-      auth,
-    },
-  });
+  firebase_initialize();
   let root = html_style_default_initialize();
   let context = {};
   context.mr = await html_recorder_media();
