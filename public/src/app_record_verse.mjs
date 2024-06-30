@@ -47,20 +47,18 @@ export async function app_record_verse(
       let blob = await html_recorder_media_stop(context.mr);
       let when = date_string_iso_file();
       let storage = getStorage();
-      let storageRef = ref(
-        storage,
-        string_combine_multiple([
-          "audio/bible/test/",
-          book_code,
-          "/",
-          chapter,
-          "/",
-          verse_number,
-          "/",
-          when,
-          ".mp3",
-        ]),
-      );
+      let storage_path = string_combine_multiple([
+        "audio/bible/test/",
+        book_code,
+        "/",
+        chapter,
+        "/",
+        verse_number,
+        "/",
+        when,
+        ".mp3",
+      ]);
+      let storageRef = ref(storage, storage_path);
       let snapshot = await uploadBytes(storageRef, blob);
       let verse_number_next = list_find_property_next_property(
         verses,
