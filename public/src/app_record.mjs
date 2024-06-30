@@ -10,7 +10,12 @@ import { html_style_default_initialize } from "./html_style_default_initialize.m
 import { html_script_axios } from "./html_script_axios.mjs";
 import { bible_engbsb_storage_http_get } from "./bible_engbsb_storage_http_get.mjs";
 import { object_merge } from "./object_merge.mjs";
+import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 export async function app_record() {
+  let firebaseConfig = {};
+  let app = initializeApp(firebaseConfig);
+  let auth = getAuth(app);
   let root = html_style_default_initialize();
   let context = {};
   context.mr = await html_recorder_media();
