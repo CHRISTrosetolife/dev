@@ -1,7 +1,7 @@
 import { html_load_wait } from "./html_load_wait.mjs";
 import { html_attribute_set } from "./html_attribute_set.mjs";
 import { html_element } from "./html_element.mjs";
-export async function html_script_extendable_media_recorder() {
+export async function html_script_extendable_media_recorder(parent) {
   let c = html_element(parent, "script");
   html_attribute_set(
     c,
