@@ -62,7 +62,9 @@ export async function app_record_verse(
         target_value,
       );
       let verse_next = list_get(next);
-      log({});
+      log({
+        verse_next,
+      });
     },
   );
   html_style_display_none(stop);
