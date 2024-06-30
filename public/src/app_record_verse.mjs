@@ -1,5 +1,4 @@
 import { list_find_property_next_property } from "./list_find_property_next_property.mjs";
-import { log } from "./log.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { date_string_iso_file } from "./date_string_iso_file.mjs";
 import { html_style_display_block } from "./html_style_display_block.mjs";
@@ -58,9 +57,7 @@ export async function app_record_verse(
         "verse_number",
         verse_number,
       );
-      log({
-        verse_next,
-      });
+      await app_record_verse(context, book_code, chapter, verse_number);
     },
   );
   html_style_display_none(stop);
