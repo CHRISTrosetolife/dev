@@ -1,3 +1,5 @@
+import { html_input_width_full } from "./html_input_width_full.mjs";
+import { firebase_initialize } from "./firebase_initialize.mjs";
 import { html_recorder_media } from "./html_recorder_media.mjs";
 import { app_record_verse } from "./app_record_verse.mjs";
 import { app_record_chapter } from "./app_record_chapter.mjs";
@@ -10,10 +12,10 @@ import { html_style_default_initialize } from "./html_style_default_initialize.m
 import { html_script_axios } from "./html_script_axios.mjs";
 import { bible_engbsb_storage_http_get } from "./bible_engbsb_storage_http_get.mjs";
 import { object_merge } from "./object_merge.mjs";
-import { global_get } from "./global_get.mjs";
 export async function app_record() {
   firebase_initialize();
   let root = html_style_default_initialize();
+  html_input_width_full();
   let context = {};
   context.mr = await html_recorder_media();
   object_merge(context, {
@@ -47,22 +49,3 @@ export async function app_record() {
     });
   }
 }
-function firebase_initialize() {
-    let firebaseConfig = {
-        apiKey: "AIzaSyBzIDxtdV44GoO3NH_a6KSw7iJ9Oa-trQU",
-        authDomain: "letjesusbeexalted.firebaseapp.com",
-        projectId: "letjesusbeexalted",
-        storageBucket: "letjesusbeexalted.appspot.com",
-        messagingSenderId: "1088010912651",
-        appId: "1:1088010912651:web:99fe9a26960793a702658e",
-    };
-    let app = initializeApp(firebaseConfig);
-    let auth = getAuth(app);
-    object_merge(global_get(), {
-        firebase: {
-            app,
-            auth,
-        },
-    });
-}
-
