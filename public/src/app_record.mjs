@@ -1,3 +1,5 @@
+import { html_attribute_set } from "./html_attribute_set.mjs";
+import { html_element } from "./html_element.mjs";
 import { app_record_verse } from "./app_record_verse.mjs";
 import { app_record_chapter } from "./app_record_chapter.mjs";
 import { app_record_book } from "./app_record_book.mjs";
@@ -10,6 +12,12 @@ import { html_script_axios } from "./html_script_axios.mjs";
 import { bible_engbsb_storage_http_get } from "./bible_engbsb_storage_http_get.mjs";
 import { object_merge } from "./object_merge.mjs";
 export async function app_record() {
+  let c = html_element(parent, "script");
+  html_attribute_set(
+    c,
+    "src",
+    " https://cdn.jsdelivr.net/npm/extendable-media-recorder@9.2.4/build/es5/bundle.min.js ",
+  );
   let context = {};
   let root = html_style_default_initialize();
   object_merge(context, {
