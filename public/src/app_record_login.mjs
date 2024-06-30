@@ -9,10 +9,12 @@ export function app_record_login(root) {
   let password = html_input_width_full(root);
   html_attribute_set(password, "type", "password");
   html_button_width_full_text_click(root, "login", async () => {
-    let user = await firebase_login(
-      html_value_get(email),
-      html_value_get(password),
-    );
+    try {
+      let user = await firebase_login(
+        html_value_get(email),
+        html_value_get(password),
+      );
+    } catch (e) {}
     log({
       user,
     });
