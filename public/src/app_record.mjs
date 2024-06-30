@@ -19,44 +19,48 @@ export async function app_record() {
   let root = html_style_default_initialize();
   firebase_initialize();
   let auth = firebase_auth();
-  onAuthStateChanged(auth, (user) => {
+  onAuthStateChanged(auth, async (user) => {
     html_clear_scroll_top(root);
     if (user) {
+      let context = {};
+      context.mr = await html_recorder_media();
+      object_merge(context, {
+        root,
+      });
+      await html_script_axios(root);
+      let { books } = await bible_engbsb_storage_http_get("books");
+      object_merge(context, {
+        books,
+      });
+      let lookup = html_hash_lookup();
+      let hash_book = object_property_get_or(lookup, "book", null);
+      if (hash_book !== null) {
+        let hash_chapter = object_property_get_or(lookup, "chapter", null);
+        if (hash_chapter !== null) {
+          let hash_verse = object_property_get_or(lookup, "verse", null);
+          if (hash_verse !== null) {
+            await app_record_verse(
+              context,
+              hash_book,
+              hash_chapter,
+              hash_verse,
+            );
+          } else {
+            await app_record_chapter(context, hash_book, hash_chapter);
+          }
+        } else {
+          app_record_book(context, hash_book);
+        }
+      } else {
+        each(books, (book) => {
+          let { book_code } = book;
+          html_button_text_click(root, book_code, function () {
+            app_record_book(context, book_code);
+          });
+        });
+      }
     } else {
       app_record_login(root);
     }
   });
-  return;
-  let context = {};
-  context.mr = await html_recorder_media();
-  object_merge(context, {
-    root,
-  });
-  await html_script_axios(root);
-  let { books } = await bible_engbsb_storage_http_get("books");
-  object_merge(context, {
-    books,
-  });
-  let lookup = html_hash_lookup();
-  let hash_book = object_property_get_or(lookup, "book", null);
-  if (hash_book !== null) {
-    let hash_chapter = object_property_get_or(lookup, "chapter", null);
-    if (hash_chapter !== null) {
-      let hash_verse = object_property_get_or(lookup, "verse", null);
-      if (hash_verse !== null) {
-        await app_record_verse(context, hash_book, hash_chapter, hash_verse);
-      } else {
-        await app_record_chapter(context, hash_book, hash_chapter);
-      }
-    } else {
-      app_record_book(context, hash_book);
-    }
-  } else {
-    each(books, (book) => {
-      let { book_code } = book;
-      html_button_text_click(root, book_code, function () {
-        app_record_book(context, book_code);
-      });
-    });
-  }
 }
