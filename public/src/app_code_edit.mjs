@@ -1,3 +1,4 @@
+import { html_input_width_full } from "./html_input_width_full.mjs";
 import { js_code_brackets } from "./js_code_brackets.mjs";
 import { html_textarea } from "./html_textarea.mjs";
 import { html_element_select } from "./html_element_select.mjs";
@@ -25,7 +26,6 @@ import { app_code_download } from "./app_code_download.mjs";
 import { functions_source_set } from "./functions_source_set.mjs";
 import { function_new_generic } from "./function_new_generic.mjs";
 import { html_focus } from "./html_focus.mjs";
-import { app_code_input } from "./app_code_input.mjs";
 import { app_code_search_function } from "./app_code_search_function.mjs";
 import { html_spellcheck_none } from "./html_spellcheck_none.mjs";
 import { html_style_border_box } from "./html_style_border_box.mjs";
@@ -167,7 +167,7 @@ export async function app_code_edit(file_path) {
             app_code_button_back_text(),
             app_code_back,
           );
-          let input = app_code_input(root);
+          let input = html_input_width_full(root);
           html_focus(input);
           html_button_width_full_text_click_x_0(
             root,
@@ -204,7 +204,7 @@ export async function app_code_edit(file_path) {
                     app_code_button_back_text(),
                     app_code_back,
                   );
-                  let input = app_code_input(root);
+                  let input = html_input_width_full(root);
                   html_value_set(input, identifier_from);
                   html_element_select(input);
                   html_focus(input);
@@ -237,7 +237,7 @@ export async function app_code_edit(file_path) {
             app_code_button_back_text(),
             app_code_back,
           );
-          let input = app_code_input(root);
+          let input = html_input_width_full(root);
           html_focus(input);
           html_button_width_full_text_click_x_0(
             root,

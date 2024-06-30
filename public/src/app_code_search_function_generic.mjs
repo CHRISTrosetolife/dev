@@ -1,3 +1,4 @@
+import { html_input_width_full } from "./html_input_width_full.mjs";
 import { list_size } from "./list_size.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
 import { html_span_text } from "./html_span_text.mjs";
@@ -15,7 +16,6 @@ import { html_on_input_value } from "./html_on_input_value.mjs";
 import { identity } from "./identity.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { html_focus } from "./html_focus.mjs";
-import { app_code_input } from "./app_code_input.mjs";
 import { app_code_back } from "./app_code_back.mjs";
 import { app_code_button_back_text } from "./app_code_button_back_text.mjs";
 import { greater_than_equal } from "./greater_than_equal.mjs";
@@ -39,7 +39,7 @@ export function app_code_search_function_generic(
   if (greater_than_equal(list_size(back_stack), 2)) {
     lambda_button(root, app_code_button_back_text(), app_code_back);
   }
-  let input = app_code_input(root);
+  let input = html_input_width_full(root);
   html_focus(input);
   let container_buttons = html_div(root);
   list_sort_string(choices, identity);
