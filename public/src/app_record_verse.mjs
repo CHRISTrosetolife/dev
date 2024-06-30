@@ -25,7 +25,7 @@ export async function app_record_verse(
   html_button_width_full_text_click(root, "⏺️ start recording", () => {
     html_recorder_media_record(context.mr);
   });
-  html_button_width_full_text_click(root, "⏺️ stop recording", async () => {
+  html_button_width_full_text_click(root, "⏹️ stop recording", async () => {
     await html_recorder_media_stop(context.mr);
   });
 }
