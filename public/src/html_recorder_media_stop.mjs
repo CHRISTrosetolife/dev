@@ -8,4 +8,5 @@ export async function html_recorder_media_stop(mr) {
     type: chunks[0].type,
   });
   let blob_mp3 = await html_wav_to_mp3(blob);
+  return blob_mp3;
 }
