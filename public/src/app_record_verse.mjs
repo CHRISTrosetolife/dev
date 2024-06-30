@@ -72,5 +72,5 @@ export async function app_record_verse(
     },
   );
   recording = [save, cancel];
-  html_style_display_none(save);
+  each(recording, html_style_display_none);
 }
