@@ -15,7 +15,7 @@ import { object_merge } from "./object_merge.mjs";
 export async function app_record() {
   let root = html_style_default_initialize();
   firebase_initialize();
-  html_input_width_full(root);
+  let email = html_input_width_full(root);
   let context = {};
   context.mr = await html_recorder_media();
   object_merge(context, {
