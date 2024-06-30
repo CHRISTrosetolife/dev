@@ -57,6 +57,9 @@ export async function app_record_verse(
       let target_value = verse_number;
       list_filter_index(verses, (verse, index) => {
         let value = object_property_get(verse, property_name);
+        if (value === target_value) {
+          return true;
+        }
       });
     },
   );
