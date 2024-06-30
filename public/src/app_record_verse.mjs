@@ -63,18 +63,18 @@ export async function app_record_verse(
       await app_record_verse(context, book_code, chapter, verse_number_next);
     },
   );
-  cancel = html_button_width_full_text_click(
+  restart = html_button_width_full_text_click(
     root,
-    "🚫 cancel recording",
+    "↩️ restart recording",
     async () => {
       each(recording, html_style_display_none);
       await html_recorder_media_stop(context.mr);
       html_style_display_block(start);
     },
   );
-  restart = html_button_width_full_text_click(
+  cancel = html_button_width_full_text_click(
     root,
-    "🚫 restart recording",
+    "🚫 cancel recording",
     async () => {
       each(recording, html_style_display_none);
       await html_recorder_media_stop(context.mr);
