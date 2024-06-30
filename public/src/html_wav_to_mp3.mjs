@@ -1,4 +1,5 @@
 import { error } from "./error.mjs";
+import breezystacklamejs from "https://cdn.jsdelivr.net/npm/@breezystack/lamejs@1.2.7/+esm";
 export function html_wav_to_mp3() {
   return new Promise((resolve, reject) => {
     let reader = new FileReader();
