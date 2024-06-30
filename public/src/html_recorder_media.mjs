@@ -19,5 +19,8 @@ export async function html_recorder_media() {
   media_recorder.ondataavailable = function (e) {
     chunks.push(e.data);
   };
-  return media_recorder;
+  return {
+    media_recorder,
+    chunks,
+  };
 }
