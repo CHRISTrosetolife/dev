@@ -50,7 +50,7 @@ export async function app_record_verse(
   );
   save = html_button_width_full_text_click(
     root,
-    "💾 save recording and next verse",
+    "💾 save recording and ➡️ next verse",
     async () => {
       each(recording, html_style_display_none);
       let blob = await html_recorder_media_stop(context.mr);
