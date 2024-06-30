@@ -20,10 +20,7 @@ export function app_record_login(parent) {
   let error_message;
   html_button_width_full_text_click(parent, "login", async () => {
     try {
-      let user = await firebase_login(
-        html_value_get(email),
-        html_value_get(password),
-      );
+      await firebase_login(html_value_get(email), html_value_get(password));
     } catch (e) {
       html_inner_set(error_message, e.message);
       html_style_visible(error_message);
