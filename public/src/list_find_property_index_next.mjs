@@ -7,8 +7,5 @@ export function list_find_property_index_next(
 ) {
   let index = list_find_property_index(verses, property_name, target_value);
   let next = add_1(index);
-  return {
-    next,
-    index,
-  };
+  return next;
 }
