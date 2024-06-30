@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { error } from "./error.mjs";
 import {
   MediaRecorder,
@@ -18,6 +19,7 @@ export async function html_recorder_media() {
   });
   let chunks = [];
   media_recorder.ondataavailable = function (e) {
+    log("here");
     chunks.push(e.data);
   };
   return {
