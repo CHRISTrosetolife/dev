@@ -21,9 +21,9 @@ export async function app_record() {
   onAuthStateChanged(auth, (user) => {
     if (user) {
     } else {
+      app_record_login(root);
     }
   });
-  app_record_login(root);
   return;
   let context = {};
   context.mr = await html_recorder_media();
