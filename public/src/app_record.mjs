@@ -16,7 +16,7 @@ export async function app_record() {
   html_attribute_set(
     c,
     "src",
-    " https://cdn.jsdelivr.net/npm/extendable-media-recorder@9.2.4/build/es5/bundle.min.js ",
+    "https://cdn.jsdelivr.net/npm/extendable-media-recorder@9.2.4/build/es5/bundle.min.js",
   );
   let context = {};
   let root = html_style_default_initialize();
