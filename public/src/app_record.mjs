@@ -14,11 +14,13 @@ import { html_script_axios } from "./html_script_axios.mjs";
 import { bible_engbsb_storage_http_get } from "./bible_engbsb_storage_http_get.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 export async function app_record() {
   let root = html_style_default_initialize();
   firebase_initialize();
   let auth = firebase_auth();
   onAuthStateChanged(auth, (user) => {
+    html_clear_scroll_top(root);
     if (user) {
     } else {
       app_record_login(root);
