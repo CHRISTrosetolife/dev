@@ -13,6 +13,8 @@ export function app_record_login(root) {
       html_value_get(email),
       html_value_get(password),
     );
-    log({});
+    log({
+      user,
+    });
   });
 }
