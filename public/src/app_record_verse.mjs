@@ -30,7 +30,7 @@ export async function app_record_verse(
   html_style_bold(vn);
   html_span_text(root, " ");
   html_span_text(root, list_join_space(tokens));
-  let start, save, cancel, recording;
+  let start, save, cancel, restart, recording;
   start = html_button_width_full_text_click(root, "⏺️ start recording", () => {
     html_style_display_none(start);
     html_recorder_media_start(context.mr);
@@ -72,7 +72,7 @@ export async function app_record_verse(
       html_style_display_block(start);
     },
   );
-  let restart = html_button_width_full_text_click(
+  restart = html_button_width_full_text_click(
     root,
     "🚫 cancel recording",
     async () => {
