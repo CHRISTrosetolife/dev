@@ -5,6 +5,7 @@ import { html_attribute_set } from "./html_attribute_set.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_input_width_full } from "./html_input_width_full.mjs";
 import { html_p } from "./html_p.mjs";
+import { html_inner_set } from "./html_inner_set.mjs";
 export function app_record_login(parent) {
   let email = html_input_width_full(parent);
   let password = html_input_width_full(parent);
@@ -16,7 +17,9 @@ export function app_record_login(parent) {
         html_value_get(email),
         html_value_get(password),
       );
-    } catch (e) {}
+    } catch (e) {
+      html_inner_set(error_message, e.message);
+    }
   });
   error_message = html_p(parent);
   html_style_wrong(error_message);
