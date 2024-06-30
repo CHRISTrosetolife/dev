@@ -1,4 +1,4 @@
-import { list_find_property_index } from "./list_find_property_index.mjs";
+import { list_find_property_index_next } from "./list_find_property_index_next.mjs";
 import { log } from "./log.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { date_string_iso_file } from "./date_string_iso_file.mjs";
@@ -18,7 +18,6 @@ import {
   ref,
   uploadBytes,
 } from "https://cdnjs.cloudflare.com/ajax/libs/firebase/10.12.2/firebase-storage.min.js";
-import { add_1 } from "./add_1.mjs";
 import { list_get } from "./list_get.mjs";
 export async function app_record_verse(
   context,
@@ -57,8 +56,11 @@ export async function app_record_verse(
       let snapshot = await uploadBytes(storageRef, blob);
       let property_name = "verse_number";
       let target_value = verse_number;
-      let index = list_find_property_index(verses, property_name, target_value);
-      let next = add_1(index);
+      let { next, index } = list_find_property_index_next(
+        verses,
+        property_name,
+        target_value,
+      );
       let verse_next = list_get(next);
       log({
         index,
