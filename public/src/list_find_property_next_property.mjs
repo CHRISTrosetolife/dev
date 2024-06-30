@@ -6,6 +6,6 @@ export function list_find_property_next_property(
   target_value,
 ) {
   let next_item = list_find_property_next(list, property_name, target_value);
-  let verse_number_next = object_property_get(next_item, property_name);
-  return verse_number_next;
+  let value = object_property_get(next_item, property_name);
+  return value;
 }
