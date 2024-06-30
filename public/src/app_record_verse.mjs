@@ -39,7 +39,7 @@ export async function app_record_verse(
     clipContainer.appendChild(audio);
     clipContainer.appendChild(clipLabel);
     clipContainer.appendChild(deleteButton);
-    soundClips.appendChild(clipContainer);
+    root.appendChild(clipContainer);
     let blob = new Blob(chunks, {
       type: chunks[0].type,
     });
