@@ -1,5 +1,4 @@
 import { list_find_property_index_next } from "./list_find_property_index_next.mjs";
-import { log } from "./log.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { date_string_iso_file } from "./date_string_iso_file.mjs";
 import { html_style_display_block } from "./html_style_display_block.mjs";
@@ -56,15 +55,12 @@ export async function app_record_verse(
       let snapshot = await uploadBytes(storageRef, blob);
       let property_name = "verse_number";
       let target_value = verse_number;
-      let { next, index } = list_find_property_index_next(
+      let next = list_find_property_index_next(
         verses,
         property_name,
         target_value,
       );
       let verse_next = list_get(next);
-      log({
-        index,
-      });
     },
   );
   html_style_display_none(stop);
