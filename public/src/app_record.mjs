@@ -1,3 +1,4 @@
+import { html_recorder_media } from "./html_recorder_media.mjs";
 import { app_record_verse } from "./app_record_verse.mjs";
 import { app_record_chapter } from "./app_record_chapter.mjs";
 import { app_record_book } from "./app_record_book.mjs";
@@ -12,6 +13,7 @@ import { object_merge } from "./object_merge.mjs";
 export async function app_record() {
   let root = html_style_default_initialize();
   let context = {};
+  context.mr = await html_recorder_media();
   object_merge(context, {
     root,
   });
