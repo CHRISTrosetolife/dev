@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { list_find_property_next } from "./list_find_property_next.mjs";
 import { log } from "./log.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -60,6 +61,7 @@ export async function app_record_verse(
         property_name,
         target_value,
       );
+      object_property_get(object, property_name2);
       log({
         verse_next,
       });
