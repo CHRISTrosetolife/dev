@@ -1,3 +1,4 @@
+import { html_p } from "./html_p.mjs";
 import { html_element } from "./html_element.mjs";
 import { add } from "./add.mjs";
 import { html_recorder_media_stop } from "./html_recorder_media_stop.mjs";
@@ -30,7 +31,7 @@ export async function app_record_verse(
   html_button_width_full_text_click(root, "⏹️ stop recording", async () => {
     let clipName = prompt("Enter a name for your sound clip");
     let clipContainer = html_element(root, "article");
-    let clipLabel = document.createElement("p");
+    let clipLabel = html_p(clipContainer);
     let audio = document.createElement("audio");
     let deleteButton = document.createElement("button");
     clipContainer.classList.add("clip");
