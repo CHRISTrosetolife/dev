@@ -21,7 +21,9 @@ export async function app_record() {
   firebase_initialize();
   let auth = firebase_auth();
   onAuthStateChanged(auth, async (user) => {
-    log({});
+    log({
+      user,
+    });
     html_clear_scroll_top(root);
     if (user) {
       let context = {};
