@@ -62,7 +62,9 @@ export async function app_record_verse(
         target_value,
       );
       let index = list_single(indices);
-      log({});
+      log({
+        index,
+      });
     },
   );
   html_style_display_none(stop);
