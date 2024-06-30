@@ -1,3 +1,4 @@
+import { firebase_upload } from "./firebase_upload.mjs";
 import { each } from "./each.mjs";
 import { list_find_property_next_property } from "./list_find_property_next_property.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -13,11 +14,6 @@ import { list_find_property } from "./list_find_property.mjs";
 import { app_record_verses } from "./app_record_verses.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
-import {
-  getStorage,
-  ref,
-  uploadBytes,
-} from "https://cdnjs.cloudflare.com/ajax/libs/firebase/10.12.2/firebase-storage.min.js";
 export async function app_record_verse(
   context,
   book_code,
@@ -78,9 +74,3 @@ export async function app_record_verse(
   recording = [save, cancel];
   html_style_display_none(save);
 }
-async function firebase_upload(storage_path, blob) {
-    let storage = getStorage();
-    let storageRef = ref(storage, storage_path);
-    let snapshot = await uploadBytes(storageRef, blob);
-}
-
