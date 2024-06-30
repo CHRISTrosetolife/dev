@@ -20,7 +20,6 @@ export async function app_record() {
   let auth = firebase_auth();
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      let uid = user.uid;
     } else {
     }
   });
