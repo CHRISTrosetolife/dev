@@ -11,6 +11,28 @@
   } from 'https://jspm.dev/extendable-media-recorder-wav-encoder';
   import breezystacklamejs from 'https://cdn.jsdelivr.net/npm/@breezystack/lamejs@1.2.7/+esm'
 
+  async function html_recorder_media() {
+  let port = await connect();
+  await register(port);
+  if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+    error("getUserMedia not supported on your browser!");
+  }
+  let stream = await navigator.mediaDevices.getUserMedia({
+    audio: true,
+  });
+  let media_recorder = new MediaRecorder(stream, {
+    mimeType: "audio/wav",
+  });
+  let chunks = [];
+  media_recorder.ondataavailable = function (e) {
+    chunks.push(e.data);
+  };
+  return {
+    media_recorder,
+    chunks,
+  };
+}
+
   function convertWavToMp3(wavBlob) {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -61,52 +83,35 @@
   const soundClips = document.querySelector('.sound-clips');
 
   (async () => {
-    const port = await connect();
-    await register(port);
 
-    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-        console.log('getUserMedia not supported on your browser!');
-        return;
-    }
 
-     let stream;
-     try {
-        stream=await navigator.mediaDevices.getUserMedia({
-          audio: true
-        })
-     } catch (err) {
-        console.log('The following getUserMedia error occurred: ' + err);}
-
-    const mediaRecorder = new MediaRecorder(stream, {
-    mimeType: 'audio/wav'
-    });
+    let mr= await html_recorder_media()
 
     record.onclick = function() {
     var AudioContext = window.AudioContext || window.webkitAudioContext;
     const audioContext = new AudioContext();
 
-    mediaRecorder.start();
-    console.log(mediaRecorder.state);
+    mr.media_recorder.start();
+    console.log(mr.media_recorder.state);
     console.log("recorder started");
     record.style.background = "red";
     record.style.color = "black";
     }
 
-    let chunks = [];
 
-    mediaRecorder.ondataavailable = function(e) {
-    chunks.push(e.data);
+    mr.media_recorder.ondataavailable = function(e) {
+    mr.chunks.push(e.data);
     }
 
     stop.onclick = function() {
-    mediaRecorder.stop();
-    console.log(mediaRecorder.state);
+    mr.media_recorder.stop();
+    console.log(mr.media_recorder.state);
     console.log("recorder stopped");
     record.style.background = "#5bc0de";
     record.style.color = "white";
     }
 
-    mediaRecorder.onstop = async function(e) {
+    mr.media_recorder.onstop = async function(e) {
     console.log("recorder stopped");
 
     const clipName = prompt('Enter a name for your sound clip');
@@ -126,12 +131,12 @@
     clipContainer.appendChild(deleteButton);
     soundClips.appendChild(clipContainer);
 
-    const blob = new Blob(chunks, {
-        type: chunks[0].type
+    const blob = new Blob(mr.chunks, {
+        type: mr.chunks[0].type
     });
     const blob_mp3 = await convertWavToMp3(blob)
 
-    chunks = [];
+    mr.chunks = [];
     const audioURL = window.URL.createObjectURL(blob_mp3);
     audio.src = audioURL;
 

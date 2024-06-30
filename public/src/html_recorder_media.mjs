@@ -20,8 +20,9 @@ export async function html_recorder_media() {
   media_recorder.ondataavailable = function (e) {
     chunks.push(e.data);
   };
-  return {
+  let result = {
     media_recorder,
     chunks,
   };
+  return result;
 }
