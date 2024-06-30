@@ -18,6 +18,7 @@ import {
   ref,
   uploadBytes,
 } from "https://cdnjs.cloudflare.com/ajax/libs/firebase/10.12.2/firebase-storage.min.js";
+import { list_single } from "./list_single.mjs";
 export async function app_record_verse(
   context,
   book_code,
@@ -62,6 +63,7 @@ export async function app_record_verse(
         }
         return false;
       });
+      let index = list_single(indices);
     },
   );
   html_style_display_none(stop);
