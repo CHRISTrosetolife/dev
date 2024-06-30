@@ -52,6 +52,7 @@ export async function app_record_verse(
         string_combine_multiple([
           "audio/bible/test/",
           book_code,
+          "/",
           chapter,
           verse_number,
           when,
