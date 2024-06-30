@@ -40,7 +40,7 @@ export async function app_record_verse(
   });
   save = html_button_width_full_text_click(
     root,
-    "⏹️ save recording",
+    "💾 save recording",
     async () => {
       html_style_display_none(save);
       html_style_display_block(start);
