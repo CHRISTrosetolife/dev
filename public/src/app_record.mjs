@@ -1,3 +1,4 @@
+import { firebase_auth } from "./firebase_auth.mjs";
 import { app_record_login } from "./app_record_login.mjs";
 import { firebase_initialize } from "./firebase_initialize.mjs";
 import { html_recorder_media } from "./html_recorder_media.mjs";
@@ -16,6 +17,7 @@ import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/f
 export async function app_record() {
   let root = html_style_default_initialize();
   firebase_initialize();
+  let auth = firebase_auth();
   onAuthStateChanged();
   app_record_login(root);
   return;
