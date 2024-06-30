@@ -60,6 +60,7 @@ export async function app_record_verse(
         if (value === target_value) {
           return true;
         }
+        return false;
       });
     },
   );
