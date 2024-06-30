@@ -61,7 +61,7 @@ export async function app_record_verse(
         property_name,
         target_value,
       );
-      object_property_get(object, property_name2);
+      object_property_get(verse_next, property_name);
       log({
         verse_next,
       });
