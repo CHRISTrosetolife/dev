@@ -15,5 +15,9 @@ export async function html_recorder_media() {
   let mediaRecorder = new MediaRecorder(stream, {
     mimeType: "audio/wav",
   });
+  let chunks = [];
+  mediaRecorder.ondataavailable = function (e) {
+    chunks.push(e.data);
+  };
   return mediaRecorder;
 }
