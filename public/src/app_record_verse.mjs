@@ -51,9 +51,8 @@ export async function app_record_verse(
         storage,
         string_combine_multiple(["audio/bible/test/", when, ".mp3"]),
       );
-      uploadBytes(storageRef, blob).then((snapshot) => {
-        console.log("Uploaded a blob or file!");
-      });
+      let snapshot = await uploadBytes(storageRef, blob);
+      console.log("Uploaded a blob or file!");
     },
   );
   html_style_display_none(stop);
