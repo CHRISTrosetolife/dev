@@ -19,6 +19,7 @@ import {
   uploadBytes,
 } from "https://cdnjs.cloudflare.com/ajax/libs/firebase/10.12.2/firebase-storage.min.js";
 import { add_1 } from "./add_1.mjs";
+import { list_get } from "./list_get.mjs";
 export async function app_record_verse(
   context,
   book_code,
@@ -58,6 +59,7 @@ export async function app_record_verse(
       let target_value = verse_number;
       let index = list_find_property_index(verses, property_name, target_value);
       let next = add_1(index);
+      list_get(next);
       log({
         index,
       });
