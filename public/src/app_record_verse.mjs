@@ -45,7 +45,7 @@ export async function app_record_verse(
       let blob = await html_recorder_media_stop(context.mr);
       let storage = getStorage();
       let storageRef = ref(storage, "some-child");
-      uploadBytes(storageRef, file).then((snapshot) => {
+      uploadBytes(storageRef, blob).then((snapshot) => {
         console.log("Uploaded a blob or file!");
       });
     },
