@@ -12,7 +12,7 @@
   import breezystacklamejs from 'https://cdn.jsdelivr.net/npm/@breezystack/lamejs@1.2.7/+esm'
 
   async function html_recorder_media() {
-  let port = await connect();
+    let port = await connect();
   await register(port);
   if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
     error("getUserMedia not supported on your browser!");
@@ -23,14 +23,14 @@
   let media_recorder = new MediaRecorder(stream, {
     mimeType: "audio/wav",
   });
-  let chunks = [];
-  media_recorder.ondataavailable = function (e) {
-    chunks.push(e.data);
-  };
-  return {
+  let result = {
     media_recorder,
-    chunks,
+    chunks: [],
   };
+  media_recorder.ondataavailable = function (e) {
+    result.chunks.push(e.data);
+  };
+  return result;
 }
 
   function convertWavToMp3(wavBlob) {
