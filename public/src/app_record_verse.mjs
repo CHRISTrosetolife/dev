@@ -29,6 +29,7 @@ export async function app_record_verse(
     html_recorder_media_record(context.mr);
   });
   html_button_width_full_text_click(root, "⏹️ stop recording", async () => {
+    await html_recorder_media_stop(context.mr);
     let clipName = prompt("Enter a name for your sound clip");
     let clipContainer = html_element(root, "article");
     let clipLabel = html_p_text(clipContainer, clipName);
@@ -44,6 +45,5 @@ export async function app_record_verse(
       let evtTgt = e.target;
       evtTgt.parentNode.parentNode.removeChild(evtTgt.parentNode);
     };
-    await html_recorder_media_stop(context.mr);
   });
 }
