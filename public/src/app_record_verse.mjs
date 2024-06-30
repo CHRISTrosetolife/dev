@@ -1,6 +1,6 @@
+import { html_attribute_set } from "./html_attribute_set.mjs";
 import { html_p } from "./html_p.mjs";
 import { html_element } from "./html_element.mjs";
-import { add } from "./add.mjs";
 import { html_recorder_media_stop } from "./html_recorder_media_stop.mjs";
 import { html_recorder_media_record } from "./html_recorder_media_record.mjs";
 import { list_join_space } from "./list_join_space.mjs";
@@ -34,8 +34,8 @@ export async function app_record_verse(
     let clipLabel = html_p(clipContainer);
     let audio = html_element(root, "audio");
     let deleteButton = html_element(root, "button");
-    clipContainer.classList.add("clip");
     audio.setAttribute("controls", "");
+    html_attribute_set();
     deleteButton.innerHTML = "Delete";
     clipLabel.innerHTML = clipName;
     clipContainer.appendChild(audio);
