@@ -44,7 +44,7 @@ export async function app_record_verse(
     "🚫 cancel recording",
     async () => {
       each(recording, html_style_display_none);
-      let blob = await html_recorder_media_stop(context.mr);
+      await html_recorder_media_stop(context.mr);
       html_style_display_block(start);
     },
   );
