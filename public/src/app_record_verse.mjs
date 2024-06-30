@@ -33,9 +33,8 @@ export async function app_record_verse(
     let clipContainer = html_element(root, "article");
     let clipLabel = html_p(clipContainer);
     let audio = html_element(root, "audio");
-    let deleteButton = html_element(root, "button");
-    audio.setAttribute("controls", "");
-    html_attribute_set();
+    html_attribute_set(audio, "controls", "");
+    let deleteButton = html_button_width_full_text_click(root, "button");
     deleteButton.innerHTML = "Delete";
     clipLabel.innerHTML = clipName;
     clipContainer.appendChild(audio);
