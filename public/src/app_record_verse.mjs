@@ -1,3 +1,4 @@
+import { html_style_display_block } from "./html_style_display_block.mjs";
 import { html_style_display_none } from "./html_style_display_none.mjs";
 import { html_recorder_media_start } from "./html_recorder_media_start.mjs";
 import { html_p_text } from "./html_p_text.mjs";
@@ -29,6 +30,7 @@ export async function app_record_verse(
   let start, stop;
   start = html_button_width_full_text_click(root, "⏺️ start recording", () => {
     html_style_display_none(start);
+    html_style_display_block(stop);
     html_recorder_media_start(context.mr);
   });
   stop = html_button_width_full_text_click(
