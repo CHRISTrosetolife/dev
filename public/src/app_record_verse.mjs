@@ -32,12 +32,12 @@ export async function app_record_verse(
     let clipName = prompt("Enter a name for your sound clip");
     let clipContainer = html_element(root, "article");
     let clipLabel = html_p_text(clipContainer, clipName);
-    let audio = html_element(root, "audio");
+    let audio = html_element(clipContainer, "audio");
     html_attribute_set(audio, "controls", "");
-    let deleteButton = html_button_width_full_text_click(root, "Delete");
-    clipContainer.appendChild(audio);
-    clipContainer.appendChild(clipLabel);
-    clipContainer.appendChild(deleteButton);
+    let deleteButton = html_button_width_full_text_click(
+      clipContainer,
+      "Delete",
+    );
     let blob = new Blob(chunks, {
       type: chunks[0].type,
     });
