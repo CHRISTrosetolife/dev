@@ -52,12 +52,12 @@ export async function app_record_verse(
         string_combine_multiple(["audio/bible/test/", when, ".mp3"]),
       );
       let snapshot = await uploadBytes(storageRef, blob);
-      let verse_next = list_find_property_next_property(
+      let verse_number_next = list_find_property_next_property(
         verses,
         "verse_number",
         verse_number,
       );
-      await app_record_verse(context, book_code, chapter, verse_number);
+      await app_record_verse(context, book_code, chapter, verse_number_next);
     },
   );
   html_style_display_none(stop);
