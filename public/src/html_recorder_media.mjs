@@ -3,7 +3,7 @@ export async function html_recorder_media() {
   let port = await connect();
   await register(port);
   if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-    console.log("getUserMedia supported.");
+    log("getUserMedia supported.");
     navigator.mediaDevices
       .getUserMedia({
         audio: true,
@@ -14,6 +14,6 @@ export async function html_recorder_media() {
         });
       });
   } else {
-    console.log("getUserMedia not supported on your browser!");
+    log("getUserMedia not supported on your browser!");
   }
 }
