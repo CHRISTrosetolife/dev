@@ -7,5 +7,5 @@ export async function html_recorder_media_stop(mr) {
   let blob = new Blob(chunks, {
     type: chunks[0].type,
   });
-  let blob_mp3 = await convertWavToMp3(blob);
+  let blob_mp3 = await html_wav_to_mp3(blob);
 }
