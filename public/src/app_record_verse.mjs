@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { list_find_property_next_property } from "./list_find_property_next_property.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { date_string_iso_file } from "./date_string_iso_file.mjs";
@@ -35,6 +36,7 @@ export async function app_record_verse(
   let start, save, cancel, recording;
   start = html_button_width_full_text_click(root, "⏺️ start recording", () => {
     html_style_display_none(start);
+    each(list, (item) => {});
     html_style_display_block(save);
     html_recorder_media_start(context.mr);
   });
