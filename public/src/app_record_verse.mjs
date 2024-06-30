@@ -53,12 +53,10 @@ export async function app_record_verse(
         string_combine_multiple(["audio/bible/test/", when, ".mp3"]),
       );
       let snapshot = await uploadBytes(storageRef, blob);
-      let property_name = "verse_number";
-      let target_value = verse_number;
       let verse_next = list_find_property_next_property(
         verses,
-        property_name,
-        target_value,
+        "verse_number",
+        verse_number,
       );
       log({
         verse_next,
