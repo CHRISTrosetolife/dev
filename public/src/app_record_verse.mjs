@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { html_style_display_block } from "./html_style_display_block.mjs";
 import { html_style_display_none } from "./html_style_display_none.mjs";
 import { html_recorder_media_start } from "./html_recorder_media_start.mjs";
@@ -9,7 +10,11 @@ import { list_find_property } from "./list_find_property.mjs";
 import { app_record_verses } from "./app_record_verses.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
-import "https://cdnjs.cloudflare.com/ajax/libs/firebase/10.12.2/firebase-storage.min.js";
+import {
+  getStorage,
+  ref,
+  uploadBytes,
+} from "https://cdnjs.cloudflare.com/ajax/libs/firebase/10.12.2/firebase-storage.min.js";
 export async function app_record_verse(
   context,
   book_code,
@@ -38,6 +43,11 @@ export async function app_record_verse(
       html_style_display_none(stop);
       html_style_display_block(start);
       let blob = await html_recorder_media_stop(context.mr);
+      let storage = getStorage();
+      let storageRef = ref(storage, "some-child");
+      uploadBytes(storageRef, file).then((snapshot) => {
+        console.log("Uploaded a blob or file!");
+      });
     },
   );
   html_style_display_none(stop);
