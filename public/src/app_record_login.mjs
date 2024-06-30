@@ -3,6 +3,7 @@ import { firebase_login } from "./firebase_login.mjs";
 import { html_attribute_set } from "./html_attribute_set.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_input_width_full } from "./html_input_width_full.mjs";
+import { html_p } from "./html_p.mjs";
 export function app_record_login(root) {
   let email = html_input_width_full(root);
   let password = html_input_width_full(root);
@@ -16,4 +17,5 @@ export function app_record_login(root) {
       );
     } catch (e) {}
   });
+  error_message = html_p(root);
 }
