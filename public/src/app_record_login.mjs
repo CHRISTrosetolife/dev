@@ -9,6 +9,7 @@ import { html_button_width_full_text_click } from "./html_button_width_full_text
 import { html_input_width_full } from "./html_input_width_full.mjs";
 import { html_p } from "./html_p.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
+import { html_style_hidden } from "./html_style_hidden.mjs";
 export function app_record_login(parent) {
   let email = html_input_width_full(parent);
   let password = html_input_width_full(parent);
@@ -25,6 +26,7 @@ export function app_record_login(parent) {
     }
   });
   error_message = html_p(parent);
+  html_style_hidden(error_message);
   html_style_rounded_padded(error_message);
   html_style(error_message, html_style_button_default_border());
   html_style_wrong(error_message);
