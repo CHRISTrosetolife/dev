@@ -2,139 +2,149 @@
 <button id="stop">stop</button>
 <div class="sound-clips"></div>
 <script type="module">
-import { MediaRecorder, register } from 'https://jspm.dev/extendable-media-recorder';
-import { connect } from 'https://jspm.dev/extendable-media-recorder-wav-encoder';
-import breezystacklamejs from 'https://cdn.jsdelivr.net/npm/@breezystack/lamejs@1.2.7/+esm'
+  import {
+    MediaRecorder,
+    register
+  } from 'https://jspm.dev/extendable-media-recorder';
+  import {
+    connect
+  } from 'https://jspm.dev/extendable-media-recorder-wav-encoder';
+  import breezystacklamejs from 'https://cdn.jsdelivr.net/npm/@breezystack/lamejs@1.2.7/+esm'
 
-function convertWavToMp3(wavBlob) {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
+  function convertWavToMp3(wavBlob) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
 
-    reader.onload = function () {
-      const arrayBuffer = this.result;
+      reader.onload = function() {
+        const arrayBuffer = this.result;
 
-      // Create a WAV decoder
-      // @ts-expect-error - No idea
-      const wavDecoder = breezystacklamejs.WavHeader.readHeader(new DataView(arrayBuffer));
+        // Create a WAV decoder
+        // @ts-expect-error - No idea
+        const wavDecoder = breezystacklamejs.WavHeader.readHeader(new DataView(arrayBuffer));
 
-      // Get the WAV audio data as an array of samples
-      const wavSamples = new Int16Array(arrayBuffer, wavDecoder.dataOffset, wavDecoder.dataLen / 2);
+        // Get the WAV audio data as an array of samples
+        const wavSamples = new Int16Array(arrayBuffer, wavDecoder.dataOffset, wavDecoder.dataLen / 2);
 
-      // Create an MP3 encoder
-      const mp3Encoder = new breezystacklamejs.Mp3Encoder(wavDecoder.channels, wavDecoder.sampleRate, 128);
+        // Create an MP3 encoder
+        const mp3Encoder = new breezystacklamejs.Mp3Encoder(wavDecoder.channels, wavDecoder.sampleRate, 128);
 
-      // Encode the WAV samples to MP3
-      const mp3Buffer = mp3Encoder.encodeBuffer(wavSamples);
+        // Encode the WAV samples to MP3
+        const mp3Buffer = mp3Encoder.encodeBuffer(wavSamples);
 
-      // Finalize the MP3 encoding
-      const mp3Data = mp3Encoder.flush();
+        // Finalize the MP3 encoding
+        const mp3Data = mp3Encoder.flush();
 
-      // Combine the MP3 header and data into a new ArrayBuffer
-      const mp3BufferWithHeader = new Uint8Array(mp3Buffer.length + mp3Data.length);
-      mp3BufferWithHeader.set(mp3Buffer, 0);
-      mp3BufferWithHeader.set(mp3Data, mp3Buffer.length);
+        // Combine the MP3 header and data into a new ArrayBuffer
+        const mp3BufferWithHeader = new Uint8Array(mp3Buffer.length + mp3Data.length);
+        mp3BufferWithHeader.set(mp3Buffer, 0);
+        mp3BufferWithHeader.set(mp3Data, mp3Buffer.length);
 
-      // Create a Blob from the ArrayBuffer
-      const mp3Blob = new Blob([mp3BufferWithHeader], { type: 'audio/mp3' });
+        // Create a Blob from the ArrayBuffer
+        const mp3Blob = new Blob([mp3BufferWithHeader], {
+          type: 'audio/mp3'
+        });
 
-      resolve(mp3Blob);
-    };
+        resolve(mp3Blob);
+      };
 
-    reader.onerror = function (error) {
-      reject(error);
-    };
+      reader.onerror = function(error) {
+        reject(error);
+      };
 
-    // Read the input blob as an ArrayBuffer
-    reader.readAsArrayBuffer(wavBlob);
-  });
-}
+      // Read the input blob as an ArrayBuffer
+      reader.readAsArrayBuffer(wavBlob);
+    });
+  }
 
-const record = document.getElementById('record');
-const stop = document.getElementById('stop');  
-const soundClips = document.querySelector('.sound-clips');
+  const record = document.getElementById('record');
+  const stop = document.getElementById('stop');
+  const soundClips = document.querySelector('.sound-clips');
 
-(async () => {
+  (async () => {
     const port = await connect();
     await register(port);
 
- if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-    console.log('getUserMedia supported.');
-     
-    navigator.mediaDevices.getUserMedia({ audio: true })
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      console.log('getUserMedia supported.');
 
-    // Success callback
-    .then(function(stream) {
-    const mediaRecorder = new MediaRecorder(stream, {
-        mimeType: 'audio/wav'
-    });
+      navigator.mediaDevices.getUserMedia({
+          audio: true
+        })
 
-    record.onclick = function() {      
-        var AudioContext = window.AudioContext || window.webkitAudioContext;
-        const audioContext = new AudioContext();
-  
-        mediaRecorder.start();
-          console.log(mediaRecorder.state);
-          console.log("recorder started");
-          record.style.background = "red";
-          record.style.color = "black";
-        }
+        // Success callback
+        .then(function(stream) {
+          const mediaRecorder = new MediaRecorder(stream, {
+            mimeType: 'audio/wav'
+          });
 
-      let chunks = [];
+          record.onclick = function() {
+            var AudioContext = window.AudioContext || window.webkitAudioContext;
+            const audioContext = new AudioContext();
 
-    mediaRecorder.ondataavailable = function(e) {
-      chunks.push(e.data);
-    }
-    
-      stop.onclick = function() {
-        mediaRecorder.stop();
-        console.log(mediaRecorder.state);
-        console.log("recorder stopped");
-        record.style.background = "#5bc0de";
-        record.style.color = "white";
-      }
-    
-      mediaRecorder.onstop = async function(e) {
-        console.log("recorder stopped");
-      
-        const clipName = prompt('Enter a name for your sound clip');
-        const clipContainer = document.createElement('article');
-        const clipLabel = document.createElement('p');
-        const audio = document.createElement('audio');
-        const deleteButton = document.createElement('button');
-      
-        clipContainer.classList.add('clip');
-      
-        audio.setAttribute('controls', '');
-        deleteButton.innerHTML = "Delete";
-        clipLabel.innerHTML = clipName;
-      
-        clipContainer.appendChild(audio);
-        clipContainer.appendChild(clipLabel);
-        clipContainer.appendChild(deleteButton);
-        soundClips.appendChild(clipContainer);
-      
-        const blob = new Blob(chunks, { type: chunks[0].type });
-        const blob_mp3 = await convertWavToMp3(blob)
+            mediaRecorder.start();
+            console.log(mediaRecorder.state);
+            console.log("recorder started");
+            record.style.background = "red";
+            record.style.color = "black";
+          }
 
-        chunks = [];
-        const audioURL = window.URL.createObjectURL(blob_mp3);
-        audio.src = audioURL;
-      
-        deleteButton.onclick = function(e) {
-        let evtTgt = e.target;
-        evtTgt.parentNode.parentNode.removeChild(evtTgt.parentNode);
-        }
-      }
-    }) 
+          let chunks = [];
 
-    // Error callback
-    .catch(function(err) {
-    console.log('The following getUserMedia error occurred: ' + err);
-    }
-    );
+          mediaRecorder.ondataavailable = function(e) {
+            chunks.push(e.data);
+          }
+
+          stop.onclick = function() {
+            mediaRecorder.stop();
+            console.log(mediaRecorder.state);
+            console.log("recorder stopped");
+            record.style.background = "#5bc0de";
+            record.style.color = "white";
+          }
+
+          mediaRecorder.onstop = async function(e) {
+            console.log("recorder stopped");
+
+            const clipName = prompt('Enter a name for your sound clip');
+            const clipContainer = document.createElement('article');
+            const clipLabel = document.createElement('p');
+            const audio = document.createElement('audio');
+            const deleteButton = document.createElement('button');
+
+            clipContainer.classList.add('clip');
+
+            audio.setAttribute('controls', '');
+            deleteButton.innerHTML = "Delete";
+            clipLabel.innerHTML = clipName;
+
+            clipContainer.appendChild(audio);
+            clipContainer.appendChild(clipLabel);
+            clipContainer.appendChild(deleteButton);
+            soundClips.appendChild(clipContainer);
+
+            const blob = new Blob(chunks, {
+              type: chunks[0].type
+            });
+            const blob_mp3 = await convertWavToMp3(blob)
+
+            chunks = [];
+            const audioURL = window.URL.createObjectURL(blob_mp3);
+            audio.src = audioURL;
+
+            deleteButton.onclick = function(e) {
+              let evtTgt = e.target;
+              evtTgt.parentNode.parentNode.removeChild(evtTgt.parentNode);
+            }
+          }
+        })
+
+        // Error callback
+        .catch(function(err) {
+          console.log('The following getUserMedia error occurred: ' + err);
+        });
 
     } else {
-    console.log('getUserMedia not supported on your browser!');
-    } 
-})();
+      console.log('getUserMedia not supported on your browser!');
+    }
+  })();
 </script>
