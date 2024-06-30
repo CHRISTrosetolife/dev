@@ -59,7 +59,7 @@ export async function app_record_verse(
       let target_value = verse_number;
       let index = list_find_property_index(verses, property_name, target_value);
       let next = add_1(index);
-      list_get(next);
+      let verse_next = list_get(next);
       log({
         index,
       });
