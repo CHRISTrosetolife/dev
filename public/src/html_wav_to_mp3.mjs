@@ -1,5 +1,5 @@
 import breezystacklamejs from "https://cdn.jsdelivr.net/npm/@breezystack/lamejs@1.2.7/+esm";
-export function html_wav_to_mp3() {
+export function html_wav_to_mp3(wav_blob) {
   return new Promise((resolve, reject) => {
     let reader = new FileReader();
     reader.onload = function () {
@@ -32,6 +32,6 @@ export function html_wav_to_mp3() {
     reader.onerror = function (e) {
       reject(e);
     };
-    reader.readAsArrayBuffer(wavBlob);
+    reader.readAsArrayBuffer(wav_blob);
   });
 }
