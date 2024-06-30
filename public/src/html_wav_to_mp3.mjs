@@ -1,4 +1,3 @@
-import { error } from "./error.mjs";
 import breezystacklamejs from "https://cdn.jsdelivr.net/npm/@breezystack/lamejs@1.2.7/+esm";
 export function html_wav_to_mp3() {
   return new Promise((resolve, reject) => {
@@ -30,8 +29,8 @@ export function html_wav_to_mp3() {
       });
       resolve(mp3Blob);
     };
-    reader.onerror = function (error) {
-      reject(error);
+    reader.onerror = function (e) {
+      reject(e);
     };
     reader.readAsArrayBuffer(wavBlob);
   });
