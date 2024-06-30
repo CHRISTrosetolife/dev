@@ -54,6 +54,7 @@ export async function app_record_verse(
       );
       let snapshot = await uploadBytes(storageRef, blob);
       let property_name = "verse_number";
+      let target_value = verse_number;
       list_filter_index(verses, (verse, index) => {
         let value = object_property_get(verse, property_name);
       });
