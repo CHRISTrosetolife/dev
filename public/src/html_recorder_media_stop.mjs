@@ -14,7 +14,7 @@ export async function html_recorder_media_stop(mr) {
       });
       let blob_mp3 = await html_wav_to_mp3(blob);
       list_remove_all(chunks);
-      return blob_mp3;
+      resolve(blob_mp3);
     });
   });
 }
