@@ -6,6 +6,6 @@ export function list_filter_index(list, filter) {
     item,
     index,
   }));
-  let filtered = list_filter(mapped, filter);
+  let filtered = list_filter(mapped, (m) => filter(m.item));
   return list_map_property(filtered, "index");
 }
