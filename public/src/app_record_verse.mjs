@@ -81,6 +81,6 @@ export async function app_record_verse(
       html_style_display_block(start);
     },
   );
-  recording = [save, cancel];
+  recording = [save, restart, cancel];
   each(recording, html_style_display_none);
 }
