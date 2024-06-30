@@ -1,3 +1,4 @@
+import { html_style_wrong } from "./html_style_wrong.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { firebase_login } from "./firebase_login.mjs";
 import { html_attribute_set } from "./html_attribute_set.mjs";
@@ -18,4 +19,5 @@ export function app_record_login(parent) {
     } catch (e) {}
   });
   error_message = html_p(parent);
+  html_style_wrong(error_message);
 }
