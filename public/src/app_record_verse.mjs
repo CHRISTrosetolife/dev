@@ -1,5 +1,5 @@
+import { list_find_property_index } from "./list_find_property_index.mjs";
 import { log } from "./log.mjs";
-import { list_filter_property_index } from "./list_filter_property_index.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { date_string_iso_file } from "./date_string_iso_file.mjs";
 import { html_style_display_block } from "./html_style_display_block.mjs";
@@ -18,7 +18,6 @@ import {
   ref,
   uploadBytes,
 } from "https://cdnjs.cloudflare.com/ajax/libs/firebase/10.12.2/firebase-storage.min.js";
-import { list_single } from "./list_single.mjs";
 export async function app_record_verse(
   context,
   book_code,
@@ -56,12 +55,7 @@ export async function app_record_verse(
       let snapshot = await uploadBytes(storageRef, blob);
       let property_name = "verse_number";
       let target_value = verse_number;
-      let indices = list_filter_property_index(
-        verses,
-        property_name,
-        target_value,
-      );
-      let index = list_single(indices);
+      let index = list_find_property_index(verses, property_name, target_value);
       log({
         index,
       });
