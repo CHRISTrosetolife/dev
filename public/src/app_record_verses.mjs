@@ -4,7 +4,7 @@ import { object_property_get_or_async } from "./object_property_get_or_async.mjs
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export async function app_record_verses(context, book_code, chapter) {
   let chapter_code = string_combine_multiple([book_code, chapter]);
-  await global_function_initialize(app_record_verses, () => ({}));
+  let a = await global_function_initialize(app_record_verses, () => ({}));
   let verses = await object_property_get_or_async(
     context,
     chapter_code,
