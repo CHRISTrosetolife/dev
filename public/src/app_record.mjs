@@ -17,6 +17,7 @@ export async function app_record() {
   firebase_initialize();
   let email = html_input_width_full(root);
   let password = html_input_width_full(root);
+  return;
   let context = {};
   context.mr = await html_recorder_media();
   object_merge(context, {
