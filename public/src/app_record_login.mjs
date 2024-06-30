@@ -1,3 +1,5 @@
+import { html_style_button_default_border } from "./html_style_button_default_border.mjs";
+import { html_style } from "./html_style.mjs";
 import { html_style_rounded_padded } from "./html_style_rounded_padded.mjs";
 import { html_style_wrong } from "./html_style_wrong.mjs";
 import { html_value_get } from "./html_value_get.mjs";
@@ -25,4 +27,5 @@ export function app_record_login(parent) {
   error_message = html_p(parent);
   html_style_wrong(error_message);
   html_style_rounded_padded(error_message);
+  html_style(error_message, html_style_button_default_border());
 }
