@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { date_string_iso_file } from "./date_string_iso_file.mjs";
 import { log } from "./log.mjs";
 import { html_style_display_block } from "./html_style_display_block.mjs";
@@ -46,7 +47,10 @@ export async function app_record_verse(
       let blob = await html_recorder_media_stop(context.mr);
       let when = date_string_iso_file();
       let storage = getStorage();
-      let storageRef = ref(storage, "audio/bible/test.mp3");
+      let storageRef = ref(
+        storage,
+        string_combine_multiple(["audio/bible/test", when, ".mp3"]),
+      );
       uploadBytes(storageRef, blob).then((snapshot) => {
         console.log("Uploaded a blob or file!");
       });
