@@ -53,8 +53,9 @@ export async function app_record_verse(
         string_combine_multiple(["audio/bible/test/", when, ".mp3"]),
       );
       let snapshot = await uploadBytes(storageRef, blob);
+      let property_name = "verse_number";
       list_filter_index(verses, (verse, index) => {
-        object_property_get(object, property_name);
+        object_property_get(verse, property_name);
       });
     },
   );
