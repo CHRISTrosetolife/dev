@@ -40,9 +40,9 @@ export async function app_record_verse(
     each(recording, html_style_display_block);
   });
   cancel = html_button_width_full_text_click(root, "⏺️ start recording", () => {
-    html_style_display_none(start);
+    each(recording, html_style_display_none);
     html_recorder_media_start(context.mr);
-    each(recording, html_style_display_block);
+    html_style_display_block(start);
   });
   save = html_button_width_full_text_click(
     root,
@@ -63,7 +63,6 @@ export async function app_record_verse(
         verse_number,
       );
       await app_record_verse(context, book_code, chapter, verse_number_next);
-      html_style_display_block(start);
     },
   );
   recording = [save, cancel];
