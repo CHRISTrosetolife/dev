@@ -7,7 +7,8 @@ import { file_exists } from "./file_exists.mjs";
 export async function storage_files_download(prefix) {
   let files = await storage_files(prefix);
   await each_async(files, async (f) => {
-    let destination = folder_gitignore_path(path_join(["firebase", f.name]));
+    let file_name = f.name;
+    let destination = folder_gitignore_path(path_join(["firebase", file_name]));
     if (await file_exists(destination)) {
       return;
     }
