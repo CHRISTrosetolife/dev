@@ -19,6 +19,7 @@ export async function bible_chapter_audio_to_wav(bible_folder, chapter_name) {
   let folder = path_dirname(path_input);
   await new Promise(async (resolve, reject) => {
     await assert_async(file_exists, [path_input]);
+    let path_output = path_join([folder, "last.wav"]);
     ffmpeg(path_input)
       .toFormat("wav")
       .on("error", (err) => {
@@ -32,6 +33,6 @@ export async function bible_chapter_audio_to_wav(bible_folder, chapter_name) {
         log("Processing finished !");
         resolve();
       })
-      .save(path_join([folder, "last.wav"]));
+      .save(path_output);
   });
 }
