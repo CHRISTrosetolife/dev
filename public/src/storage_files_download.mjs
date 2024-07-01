@@ -6,4 +6,5 @@ export async function storage_files_download(prefix) {
   let file_names = await storage_files(prefix);
   let file_name = list_first(file_names);
   let f = bucket.file(file_name);
+  return f;
 }
