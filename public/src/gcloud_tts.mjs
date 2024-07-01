@@ -14,8 +14,8 @@ export async function gcloud_tts(
       created: false,
     };
   }
-  const client = new textToSpeech.TextToSpeechClient();
-  const request = {
+  let client = new textToSpeech.TextToSpeechClient();
+  let request = {
     input: {
       text: text,
     },
@@ -28,8 +28,9 @@ export async function gcloud_tts(
       audioEncoding: "MP3",
     },
   };
-  const [response] = await client.synthesizeSpeech(request);
-  await file_overwrite_generic(output_path, response.audioContent, "binary");
+  let [response] = await client.synthesizeSpeech(request);
+  let data = response.audioContent;
+  await file_overwrite_generic(output_path, data, "binary");
   return {
     created: true,
   };
