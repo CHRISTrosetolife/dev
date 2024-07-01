@@ -10,4 +10,5 @@ export function list_threshold_index_generic(
       return true;
     }
   });
+  return index_first;
 }
