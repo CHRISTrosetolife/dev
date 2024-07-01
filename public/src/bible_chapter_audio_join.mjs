@@ -12,6 +12,7 @@ import { object_merge } from "./object_merge.mjs";
 export async function bible_chapter_audio_join(bible_folder, chapter_name) {
   let downloads = await bible_chapter_audio_trim(bible_folder, chapter_name);
   let fmt_first = null;
+  let samples_out = [];
   await each_async(downloads, async (download) => {
     let { path } = download;
     let { trimmed } = path;
@@ -22,7 +23,6 @@ export async function bible_chapter_audio_join(bible_folder, chapter_name) {
     } else {
       assert(equal_json, [fmt, fmt_first]);
     }
-    let samples_out = [];
     let first = list_threshold_index(samples, 400);
     let last = list_threshold_index_reverse(samples, 5000);
     each_index(samples, (item, index) => {
