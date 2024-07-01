@@ -14,7 +14,7 @@ export async function bible_chapter_audio_join(bible_folder, chapter_name) {
     bible_chapter_audio_download_folder_name(),
     chapter_name,
   );
-  path_join([folder_gitignore_path(prefix), "joined.wav"]);
+  let outpath_path = path_join([folder_gitignore_path(prefix), "joined.wav"]);
   let downloads = await bible_chapter_audio_trim(bible_folder, chapter_name);
   let fmt_first = null;
   let samples_out = [];
