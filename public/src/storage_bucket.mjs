@@ -7,7 +7,5 @@ export async function storage_bucket(file_path, destination) {
     storageBucket: "gs://letjesusbeexalted.appspot.com",
   });
   let bucket = admin.storage().bucket();
-  await bucket.upload(file_path, {
-    destination,
-  });
+  return bucket;
 }
