@@ -9,6 +9,10 @@ import { each_async } from "./each_async.mjs";
 import { file_overwrite_wav } from "./file_overwrite_wav.mjs";
 import { file_read_wav } from "./file_read_wav.mjs";
 export async function bible_chapter_audio_join(bible_folder, chapter_name) {
+  let prefix = bible_chapter_audio_download_prefix(
+    bible_chapter_audio_download_folder_name(),
+    chapter_name,
+  );
   let downloads = await bible_chapter_audio_trim(bible_folder, chapter_name);
   let fmt_first = null;
   let samples_out = [];
@@ -24,10 +28,6 @@ export async function bible_chapter_audio_join(bible_folder, chapter_name) {
     }
     list_add_multiple(samples_out, samples);
   });
-  let prefix = bible_chapter_audio_download_prefix(
-    bible_chapter_audio_download_folder_name(),
-    chapter_name,
-  );
   await file_overwrite_wav(fmt, samples_out, folder_gitignore_path(prefix));
   return downloads;
 }
