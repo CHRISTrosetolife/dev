@@ -1,4 +1,3 @@
-import { list_first } from "./list_first.mjs";
 import { storage_bucket } from "./storage_bucket.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
 import { error } from "./error.mjs";
@@ -15,7 +14,6 @@ export async function storage_files(prefix) {
     prefix,
   });
   let files = list_single(data);
-  return list_first(files);
   let result = list_map_property(files, "name");
   list_sort_string(result, identity);
   return result;
