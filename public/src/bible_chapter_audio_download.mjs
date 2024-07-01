@@ -28,10 +28,10 @@ export async function bible_chapter_audio_download(bible_folder, chapter_name) {
     path_join([prefix, vn, "/"]),
   );
   await each_async(verse_paths, async (verse_path) => {
-    let file_names_verses = list_filter(files, (file) =>
+    let file_verses = list_filter(files, (file) =>
       string_starts_with(file.name, verse_path),
     );
-    let last = list_last(file_names_verses);
+    let last = list_last(file_verses);
     await storage_file_download(firebase_file);
   });
 }
