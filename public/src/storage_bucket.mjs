@@ -7,7 +7,7 @@ export async function storage_bucket() {
   let g = global_function_initialize(storage_bucket, () => ({
     initialized: false,
   }));
-  if (object_property_get(object, property_name)(g, "initialized")) {
+  if (object_property_get(g, "initialized") !== true) {
     admin.initializeApp({
       credential: admin.credential.cert(service_account),
       storageBucket: "gs://letjesusbeexalted.appspot.com",
