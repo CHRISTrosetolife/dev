@@ -29,10 +29,10 @@ export async function bible_chapter_audio_join(bible_folder, chapter_name) {
         list_add(samples_out, item);
       }
     });
-    await file_overwrite_wav(fmt, samples_out, path_trimmed);
     object_merge(path, {
       trimmed: path_trimmed,
     });
   });
+  await file_overwrite_wav(fmt, samples_out, path_trimmed);
   return downloads;
 }
