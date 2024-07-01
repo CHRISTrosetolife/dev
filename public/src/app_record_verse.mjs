@@ -43,7 +43,8 @@ export async function app_record_verse(
       let blob = await html_recorder_media_stop(context.mr);
       let when = date_string_iso_file();
       let storage_path = string_combine_multiple([
-        "audio/bible/test/",
+        "audio/bible/",
+        "test/",
         book_code,
         "/",
         chapter,
