@@ -12,24 +12,25 @@ import { list_add } from "./list_add.mjs";
 export async function bible_chapter_audio_trim(bible_folder, chapter_name) {
   let downloads = await bible_chapter_audio_to_wav(bible_folder, chapter_name);
   let download = list_first(downloads);
-  await each_async(downloads, async (download) => {});
-  let { path } = download;
-  let { wav } = path;
-  let path_trimmed = string_suffix_change(
-    wav,
-    bible_chapter_audio_to_wav_path(),
-    "trimmed.wav",
-  );
-  let w = await file_read_wav(wav);
-  let { samples, fmt } = w;
-  let samples_out = [];
-  let first = list_threshold_index(samples, 400);
-  let last = list_threshold_index_reverse(samples, 5000);
-  each_index(samples, (item, index) => {
-    if (first <= index && index <= last) {
-      list_add(samples_out, item);
-    }
+  await each_async(downloads, async (download) => {
+    let { path } = download;
+    let { wav } = path;
+    let path_trimmed = string_suffix_change(
+      wav,
+      bible_chapter_audio_to_wav_path(),
+      "trimmed.wav",
+    );
+    let w = await file_read_wav(wav);
+    let { samples, fmt } = w;
+    let samples_out = [];
+    let first = list_threshold_index(samples, 400);
+    let last = list_threshold_index_reverse(samples, 5000);
+    each_index(samples, (item, index) => {
+      if (first <= index && index <= last) {
+        list_add(samples_out, item);
+      }
+    });
+    await file_overwrite_wav(fmt, samples_out, path_trimmed);
   });
-  await file_overwrite_wav(fmt, samples_out, path_trimmed);
   return;
 }
