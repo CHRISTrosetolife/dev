@@ -1,3 +1,4 @@
+import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
 import { bible_chapter_audio_download_folder_name } from "./bible_chapter_audio_download_folder_name.mjs";
 import { bible_chapter_audio_download_prefix } from "./bible_chapter_audio_download_prefix.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
@@ -27,6 +28,6 @@ export async function bible_chapter_audio_join(bible_folder, chapter_name) {
     bible_chapter_audio_download_folder_name(),
     chapter_name,
   );
-  await file_overwrite_wav(fmt, samples_out, path_trimmed);
+  await file_overwrite_wav(fmt, samples_out, folder_gitignore_path(prefix));
   return downloads;
 }
