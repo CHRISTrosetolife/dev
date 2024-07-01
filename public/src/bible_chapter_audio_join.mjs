@@ -1,3 +1,5 @@
+import { equal_json } from "./equal_json.mjs";
+import { assert } from "./assert.mjs";
 import { bible_chapter_audio_trim } from "./bible_chapter_audio_trim.mjs";
 import { each_async } from "./each_async.mjs";
 import { file_overwrite_wav } from "./file_overwrite_wav.mjs";
@@ -18,6 +20,7 @@ export async function bible_chapter_audio_join(bible_folder, chapter_name) {
     if (fmt_first === null) {
       fmt_first = fmt;
     } else {
+      assert(equal_json, [fmt, fmt_first]);
     }
     let samples_out = [];
     let first = list_threshold_index(samples, 400);
