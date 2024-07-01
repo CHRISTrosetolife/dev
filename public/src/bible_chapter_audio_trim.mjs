@@ -24,6 +24,7 @@ export async function bible_chapter_audio_trim(bible_folder, chapter_name) {
       max_add(maxes, sample, index);
     }
   });
+  let samples_out = [];
   each_index_only(samples, (index) => {
     if (index < 17898) {
       w.setSample(index, 0);
