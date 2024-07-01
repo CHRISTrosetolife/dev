@@ -19,8 +19,10 @@ export async function bible_chapter_audio_join(bible_folder, chapter_name) {
     storage_file_download_path_string(prefix),
     "joined.wav",
   ]);
-  if (await file_exists(outpath_path)) {
-    return;
+  if (0) {
+    if (await file_exists(outpath_path)) {
+      return;
+    }
   }
   let downloads = await bible_chapter_audio_trim(bible_folder, chapter_name);
   let fmt_first = null;
