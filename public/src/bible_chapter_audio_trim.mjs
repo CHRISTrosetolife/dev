@@ -9,5 +9,6 @@ export async function bible_chapter_audio_trim(bible_folder, chapter_name) {
   let { wav } = path;
   let { WaveFile } = wavefile;
   let w = new WaveFile(await file_read_binary(wav));
+  return w;
   return w.data.samples;
 }
