@@ -1,3 +1,4 @@
+import { list_last } from "./list_last.mjs";
 import { list_filter_starts_with } from "./list_filter_starts_with.mjs";
 import { storage_files_names } from "./storage_files_names.mjs";
 import { each_async } from "./each_async.mjs";
@@ -26,5 +27,6 @@ export async function bible_chapter_audio_download(bible_folder, chapter_name) {
   );
   await each_async(verse_paths, async (verse_path) => {
     let file_names_verses = list_filter_starts_with(file_names, verse_path);
+    let last = list_last(file_names_verses);
   });
 }
