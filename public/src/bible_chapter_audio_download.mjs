@@ -28,7 +28,7 @@ export async function bible_chapter_audio_download(bible_folder, chapter_name) {
   let verse_paths = list_map(verse_numbers, (vn) =>
     path_join([prefix, vn, "/"]),
   );
-  await list_adder_async(async (la) => {
+  return await list_adder_async(async (la) => {
     await each_async(verse_paths, async (verse_path) => {
       let file_verses = list_filter(files, (file) =>
         string_starts_with(file.name, verse_path),
