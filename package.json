@@ -26,7 +26,8 @@
     "readline-sync": "^1.4.10",
     "string-similarity": "^4.0.4",
     "synchro-prompt": "^1.1.0",
-    "tonegenerator": "^0.3.3"
+    "tonegenerator": "^0.3.3",
+    "wavefile": "^11.0.0"
   },
   "devDependencies": {
     "prettier": "3.2.5"
