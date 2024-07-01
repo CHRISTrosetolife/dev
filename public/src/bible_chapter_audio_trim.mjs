@@ -20,7 +20,7 @@ export async function bible_chapter_audio_trim(bible_folder, chapter_name) {
     "trimmed.wav",
   );
   let w = await file_read_wav(wav);
-  let samples = w;
+  let { samples, fmt } = w;
   let samples_out = [];
   let first = list_threshold_index(samples, 400);
   let last = list_threshold_index_reverse(samples, 5000);
