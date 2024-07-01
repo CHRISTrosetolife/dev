@@ -4,6 +4,8 @@ import { bible_chapter_audio_download } from "./bible_chapter_audio_download.mjs
 import { list_first } from "./list_first.mjs";
 import ffmpeg from "fluent-ffmpeg";
 import { path_join } from "./path_join.mjs";
+import { assert } from "./assert.mjs";
+import { file_exists } from "./file_exists.mjs";
 export async function bible_chapter_audio_to_wav(bible_folder, chapter_name) {
   let file_paths = await bible_chapter_audio_download(
     bible_folder,
@@ -18,6 +20,7 @@ export async function bible_chapter_audio_to_wav(bible_folder, chapter_name) {
     folder,
   });
   await new Promise((resolve, reject) => {
+    assert(file_exists, [first]);
     ffmpeg(first)
       .toFormat("wav")
       .on("error", (err) => {
