@@ -1,3 +1,4 @@
+import { bible_chapter_audio_download_prefix } from "./bible_chapter_audio_download_prefix.mjs";
 import { storage_file_download_path } from "./storage_file_download_path.mjs";
 import { list_adder_async } from "./list_adder_async.mjs";
 import { list_filter } from "./list_filter.mjs";
@@ -7,7 +8,6 @@ import { list_last } from "./list_last.mjs";
 import { each_async } from "./each_async.mjs";
 import { bible_chapter_name_parse } from "./bible_chapter_name_parse.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
-import { folder_audio_bible } from "./folder_audio_bible.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { path_join } from "./path_join.mjs";
 import { list_map } from "./list_map.mjs";
@@ -16,13 +16,11 @@ export async function bible_chapter_audio_download(bible_folder, chapter_name) {
   let folder_name = bible_folder;
   folder_name = "test";
   let { book_code, chapter_code } = bible_chapter_name_parse(chapter_name);
-  let prefix = path_join([
-    folder_audio_bible(),
+  let prefix = bible_chapter_audio_download_prefix(
     folder_name,
     book_code,
     chapter_code,
-    "/",
-  ]);
+  );
   let files = await storage_files(prefix);
   let verses = await bible_chapter(bible_folder, chapter_name);
   let verse_numbers = list_map_property(verses, "verse_number");
