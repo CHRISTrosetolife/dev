@@ -1,3 +1,4 @@
+import { list_adder_async } from "./list_adder_async.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { storage_files } from "./storage_files.mjs";
 import { storage_file_download } from "./storage_file_download.mjs";
@@ -27,6 +28,7 @@ export async function bible_chapter_audio_download(bible_folder, chapter_name) {
   let verse_paths = list_map(verse_numbers, (vn) =>
     path_join([prefix, vn, "/"]),
   );
+  await list_adder_async(async (la) => {});
   await each_async(verse_paths, async (verse_path) => {
     let file_verses = list_filter(files, (file) =>
       string_starts_with(file.name, verse_path),
