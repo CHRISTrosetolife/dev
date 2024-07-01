@@ -4,11 +4,11 @@ import { path_dirname } from "./path_dirname.mjs";
 import { bible_chapter_audio_download } from "./bible_chapter_audio_download.mjs";
 import { path_join } from "./path_join.mjs";
 export async function bible_chapter_audio_to_wav(bible_folder, chapter_name) {
-  let file_paths = await bible_chapter_audio_download(
+  let downloads = await bible_chapter_audio_download(
     bible_folder,
     chapter_name,
   );
-  await each_async(file_paths, async (file_path) => {
+  await each_async(downloads, async (file_path) => {
     let {
       path: { system: path_system },
     } = file_path;
