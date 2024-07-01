@@ -19,6 +19,7 @@ export async function bible_chapter_audio_to_wav(bible_folder, chapter_name) {
   log({
     folder,
   });
+  let path_input = path_system;
   await new Promise((resolve, reject) => {
     assert(file_exists, [path_system]);
     ffmpeg(path_system)
