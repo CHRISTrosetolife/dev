@@ -1,3 +1,4 @@
+import { storage_file_download_path } from "./storage_file_download_path.mjs";
 import { list_adder_async } from "./list_adder_async.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { storage_files } from "./storage_files.mjs";
@@ -35,7 +36,12 @@ export async function bible_chapter_audio_download(bible_folder, chapter_name) {
       );
       let last = list_last(file_verses);
       await storage_file_download(last);
-      la(last.name);
+      la({
+        path: {
+          firebase: last.file,
+          system: storage_file_download_path(last.file),
+        },
+      });
     });
   });
 }
