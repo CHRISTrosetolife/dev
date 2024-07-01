@@ -1,4 +1,4 @@
-import { storage_file_download_path } from "./storage_file_download_path.mjs";
+import { storage_file_download_path_string } from "./storage_file_download_path_string.mjs";
 import { path_join } from "./path_join.mjs";
 import { bible_chapter_audio_download_folder_name } from "./bible_chapter_audio_download_folder_name.mjs";
 import { bible_chapter_audio_download_prefix } from "./bible_chapter_audio_download_prefix.mjs";
@@ -16,7 +16,7 @@ export async function bible_chapter_audio_join(bible_folder, chapter_name) {
     chapter_name,
   );
   let outpath_path = path_join([
-    storage_file_download_path(prefix),
+    storage_file_download_path_string(prefix),
     "joined.wav",
   ]);
   return outpath_path;
