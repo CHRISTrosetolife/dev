@@ -13,7 +13,7 @@ export async function bible_chapter_audio_to_wav(bible_folder, chapter_name) {
   let {
     path: { system: path_system },
   } = first;
-  let folder = path_dirname(first);
+  let folder = path_dirname(path_system);
   log({
     folder,
   });
