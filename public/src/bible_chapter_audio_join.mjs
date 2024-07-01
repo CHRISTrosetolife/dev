@@ -1,3 +1,4 @@
+import { path_join } from "./path_join.mjs";
 import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
 import { bible_chapter_audio_download_folder_name } from "./bible_chapter_audio_download_folder_name.mjs";
 import { bible_chapter_audio_download_prefix } from "./bible_chapter_audio_download_prefix.mjs";
@@ -13,6 +14,7 @@ export async function bible_chapter_audio_join(bible_folder, chapter_name) {
     bible_chapter_audio_download_folder_name(),
     chapter_name,
   );
+  path_join([folder_gitignore_path(prefix)]);
   let downloads = await bible_chapter_audio_trim(bible_folder, chapter_name);
   let fmt_first = null;
   let samples_out = [];
