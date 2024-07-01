@@ -1,5 +1,4 @@
 import { each_index } from "./each_index.mjs";
-import { each } from "./each.mjs";
 import { file_read_binary } from "./file_read_binary.mjs";
 import { bible_chapter_audio_to_wav } from "./bible_chapter_audio_to_wav.mjs";
 import { list_first } from "./list_first.mjs";
@@ -12,6 +11,5 @@ export async function bible_chapter_audio_trim(bible_folder, chapter_name) {
   let { WaveFile } = wavefile;
   let w = new WaveFile(await file_read_binary(wav));
   let samples = w.getSamples();
-  each_index(list, (item, index) => {});
-  each(samples, (sample) => {});
+  each_index(samples, (sample, index) => {});
 }
