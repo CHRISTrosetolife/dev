@@ -21,7 +21,7 @@ export async function bible_chapter_audio_to_wav(bible_folder, chapter_name) {
   });
   await new Promise((resolve, reject) => {
     assert(file_exists, [path_system]);
-    ffmpeg(first)
+    ffmpeg(path_system)
       .toFormat("wav")
       .on("error", (err) => {
         log("An error occurred: " + err.message);
