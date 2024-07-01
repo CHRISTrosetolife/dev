@@ -13,6 +13,7 @@ export async function bible_chapter_audio_trim(bible_folder, chapter_name) {
   let { wav } = path;
   let { WaveFile } = wavefile;
   let w = new WaveFile(await file_read_binary(wav));
+  return w;
   let samples = w.getSamples();
   let maxes = [];
   let max_index = 0;
@@ -28,7 +29,6 @@ export async function bible_chapter_audio_trim(bible_folder, chapter_name) {
       w.setSample(index, 0);
     }
   });
-  return w;
   wav.fromScratch(1, 8000, "16", samples);
   return maxes;
   function max_add(maxes, value, index) {
