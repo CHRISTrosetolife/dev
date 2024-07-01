@@ -16,6 +16,6 @@ export async function storage_files(prefix, result) {
   log({
     files,
   });
-  list_sort_string(result, (f) => f.name);
+  list_sort_string(files, (f) => f.name);
   return files;
 }
