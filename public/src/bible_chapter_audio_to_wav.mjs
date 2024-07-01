@@ -1,6 +1,5 @@
 import { assert_async } from "./assert_async.mjs";
 import { path_dirname } from "./path_dirname.mjs";
-import { log } from "./log.mjs";
 import { bible_chapter_audio_download } from "./bible_chapter_audio_download.mjs";
 import { list_first } from "./list_first.mjs";
 import ffmpeg from "fluent-ffmpeg";
@@ -23,14 +22,9 @@ export async function bible_chapter_audio_to_wav(bible_folder, chapter_name) {
     ffmpeg(path_input)
       .toFormat("wav")
       .on("error", (err) => {
-        log("An error occurred: " + err.message);
         reject(err);
       })
-      .on("progress", (progress) => {
-        log("Processing: " + progress.targetSize + " KB converted");
-      })
       .on("end", () => {
-        log("Processing finished !");
         resolve();
       })
       .save(path_output);
