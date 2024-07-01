@@ -8,7 +8,7 @@ export async function bible_chapter_audio_to_wav(bible_folder, chapter_name) {
     chapter_name,
   );
   let first = list_first(file_names);
-  ffmpeg(track)
+  ffmpeg(first)
     .toFormat("wav")
     .on("error", (err) => {
       console.log("An error occurred: " + err.message);
