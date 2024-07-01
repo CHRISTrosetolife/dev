@@ -10,6 +10,7 @@ export async function bible_chapter_audio_download(bible_folder, chapter_name) {
   let chapter_code = string_skip(chapter_name, bible_book_code_size());
   return {
     book_code,
+    chapter_code,
   };
   let verse_numbers = list_map_property(verses, "verse_number");
   folder_audio_bible();
