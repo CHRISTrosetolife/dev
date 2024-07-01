@@ -8,10 +8,10 @@ export async function bible_chapter_audio_to_wav(bible_folder, chapter_name) {
     bible_folder,
     chapter_name,
   );
-  await each_async(downloads, async (file_path) => {
+  await each_async(downloads, async (download) => {
     let {
       path: { system: path_system },
-    } = file_path;
+    } = download;
     let path_input = path_system;
     let folder = path_dirname(path_input);
     let path_output = path_join([folder, "last.wav"]);
