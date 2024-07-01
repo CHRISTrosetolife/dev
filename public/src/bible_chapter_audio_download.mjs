@@ -35,6 +35,7 @@ export async function bible_chapter_audio_download(bible_folder, chapter_name) {
       );
       let last = list_last(file_verses);
       await storage_file_download(last);
+      la(last.name);
     });
   });
 }
