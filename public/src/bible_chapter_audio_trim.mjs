@@ -1,5 +1,4 @@
 import { each_async } from "./each_async.mjs";
-import { each } from "./each.mjs";
 import { file_overwrite_wav } from "./file_overwrite_wav.mjs";
 import { file_read_wav } from "./file_read_wav.mjs";
 import { each_index } from "./each_index.mjs";
@@ -13,8 +12,7 @@ import { list_add } from "./list_add.mjs";
 export async function bible_chapter_audio_trim(bible_folder, chapter_name) {
   let downloads = await bible_chapter_audio_to_wav(bible_folder, chapter_name);
   let download = list_first(downloads);
-  each(downloads, (download) => {});
-  await each_async(list, async (item2) => {});
+  await each_async(downloads, async (download) => {});
   let { path } = download;
   let { wav } = path;
   let path_trimmed = string_suffix_change(
