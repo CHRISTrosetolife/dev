@@ -8,7 +8,7 @@ export function list_maxes(list) {
   let maxes = [];
   let max_index = 0;
   max_add(maxes, list_first(list), max_index);
-  each_index(list, (item, index) => {
+  lambda_each(list, (item, index) => {
     let max = list_last(maxes);
     if (item > max.value) {
       max_add(maxes, item, index);
