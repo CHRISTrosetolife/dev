@@ -30,7 +30,9 @@ export async function bible_chapter_audio_trim(bible_folder, chapter_name) {
     let max = list_last(maxes);
     if (sample > max.value) {
       max_add(maxes, sample, index);
-      log({});
+      log({
+        maxes,
+      });
     }
   });
   return maxes;
