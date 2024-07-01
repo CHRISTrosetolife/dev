@@ -16,6 +16,7 @@ export async function bible_chapter_audio_join(bible_folder, chapter_name) {
     chapter_name,
   );
   let outpath_path = path_join([folder_gitignore_path(prefix), "joined.wav"]);
+  return outpath_path;
   if (await file_exists(outpath_path)) {
     return;
   }
