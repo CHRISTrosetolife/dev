@@ -9,6 +9,7 @@ import { list_add } from "./list_add.mjs";
 import { object_merge } from "./object_merge.mjs";
 export async function bible_chapter_audio_join(bible_folder, chapter_name) {
   let downloads = await bible_chapter_audio_trim(bible_folder, chapter_name);
+  let fmt;
   await each_async(downloads, async (download) => {
     let { path } = download;
     let { trimmed } = path;
