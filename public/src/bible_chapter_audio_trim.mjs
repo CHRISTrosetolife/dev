@@ -1,6 +1,4 @@
 import { list_to } from "./list_to.mjs";
-import { exit } from "./exit.mjs";
-import { log } from "./log.mjs";
 import { bible_chapter_audio_to_wav_path } from "./bible_chapter_audio_to_wav_path.mjs";
 import { string_suffix_change } from "./string_suffix_change.mjs";
 import { file_overwrite_binary } from "./file_overwrite_binary.mjs";
@@ -32,10 +30,6 @@ export async function bible_chapter_audio_trim(bible_folder, chapter_name) {
     let max = list_last(maxes);
     if (sample > max.value) {
       max_add(maxes, sample, index);
-      log({
-        maxes,
-      });
-      exit();
     }
   });
   return maxes;
