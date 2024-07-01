@@ -6,7 +6,6 @@ import { storage_files } from "./storage_files.mjs";
 import { storage_file_download } from "./storage_file_download.mjs";
 import { list_last } from "./list_last.mjs";
 import { each_async } from "./each_async.mjs";
-import { bible_chapter_name_parse } from "./bible_chapter_name_parse.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { path_join } from "./path_join.mjs";
@@ -15,7 +14,6 @@ import { string_starts_with } from "./string_starts_with.mjs";
 export async function bible_chapter_audio_download(bible_folder, chapter_name) {
   let folder_name = bible_folder;
   folder_name = "test";
-  let { book_code, chapter_code } = bible_chapter_name_parse(chapter_name);
   let prefix = bible_chapter_audio_download_prefix(
     folder_name,
     book_code,
