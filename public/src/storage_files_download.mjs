@@ -12,6 +12,6 @@ export async function storage_files_download(prefix) {
   let destination = folder_gitignore_path(path_join(["firebase", f.name]));
   await folder_parent_exists_ensure(destination);
   return f.download({
-    destination: destination,
+    destination,
   });
 }
