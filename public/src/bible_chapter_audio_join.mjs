@@ -26,7 +26,9 @@ export async function bible_chapter_audio_join(bible_folder, chapter_name) {
   await each_async(downloads, async (download) => {
     let { path } = download;
     let { trimmed } = path;
-    log({});
+    log({
+      trimmed,
+    });
     let w = await file_read_wav(trimmed);
     let { samples, fmt } = w;
     if (fmt_first === null) {
