@@ -37,7 +37,7 @@ export async function bible_chapter_audio_trim(bible_folder, chapter_name) {
     fmt.bitsPerSample,
     samples_out,
   );
-  await file_overwrite_binary();
+  await file_overwrite_binary(o.toBuffer());
   return;
   function max_add(maxes, value, index) {
     list_add(maxes, {
