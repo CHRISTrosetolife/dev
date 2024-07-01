@@ -35,5 +35,5 @@ export async function bible_chapter_audio_join(bible_folder, chapter_name) {
     list_add_multiple(samples_out, samples);
   });
   await file_overwrite_wav(fmt_first, samples_out, outpath_path);
-  return downloads;
+  return outpath_path;
 }
