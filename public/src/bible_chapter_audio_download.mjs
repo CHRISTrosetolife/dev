@@ -1,3 +1,4 @@
+import { each_async } from "./each_async.mjs";
 import { bible_chapter_name_parse } from "./bible_chapter_name_parse.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
 import { folder_audio_bible } from "./folder_audio_bible.mjs";
@@ -20,5 +21,5 @@ export async function bible_chapter_audio_download(bible_folder, chapter_name) {
   let verse_paths = list_map(verse_numbers, (vn) =>
     path_join([prefix, vn, "/"]),
   );
-  return verse_paths;
+  await each_async(list, async (item) => {});
 }
