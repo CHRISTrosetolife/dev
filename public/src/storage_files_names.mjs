@@ -5,7 +5,7 @@ import { list_single } from "./list_single.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { identity } from "./identity.mjs";
-export async function storage_files(prefix) {
+export async function storage_files_names(prefix) {
   if (string_starts_with(prefix, "/")) {
     error();
   }
