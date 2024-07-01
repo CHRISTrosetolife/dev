@@ -1,3 +1,4 @@
+import { each_index_only } from "./each_index_only.mjs";
 import { each_index } from "./each_index.mjs";
 import { file_read_binary } from "./file_read_binary.mjs";
 import { bible_chapter_audio_to_wav } from "./bible_chapter_audio_to_wav.mjs";
@@ -22,7 +23,7 @@ export async function bible_chapter_audio_trim(bible_folder, chapter_name) {
       max_add(maxes, sample, index);
     }
   });
-  each_index(samples, (sample, index) => {
+  each_index_only(samples, (sample, index) => {
     if (index < 17898) {
     }
   });
