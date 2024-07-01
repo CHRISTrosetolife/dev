@@ -1,4 +1,3 @@
-import { import_node } from "./import_node.mjs";
 import { file_read_binary } from "./file_read_binary.mjs";
 import { bible_chapter_audio_to_wav } from "./bible_chapter_audio_to_wav.mjs";
 import { list_first } from "./list_first.mjs";
@@ -9,8 +8,6 @@ export async function bible_chapter_audio_trim(bible_folder, chapter_name) {
   let { path } = download;
   let { wav } = path;
   let { WaveFile } = wavefile;
-  let fs = await import_node("fs");
-  let buffer = await fs.promises.readFile(file_name, encoding);
   let w = new WaveFile(await file_read_binary(wav));
   return w;
 }
