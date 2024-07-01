@@ -5,6 +5,8 @@ export function each_index_reverse(list, lambda) {
   let index_last = list_index_last(list);
   for (let i = index_last; i >= list_index_first(); i--) {
     let element = list_get(list, i);
-    lambda(element, i);
+    if (lambda(element, i) === true) {
+      break;
+    }
   }
 }
