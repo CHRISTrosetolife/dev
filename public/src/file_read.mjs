@@ -9,5 +9,6 @@ export async function file_read(file_name) {
     return object_property_get(files, file_name);
   }
   let fs = await import_node("fs");
-  return await fs.promises.readFile(file_name, "utf-8");
+  let encoding = "utf-8";
+  return await fs.promises.readFile(file_name, encoding);
 }
