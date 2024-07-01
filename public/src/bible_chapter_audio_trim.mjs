@@ -1,3 +1,4 @@
+import { each_index } from "./each_index.mjs";
 import { list_threshold_index_reverse } from "./list_threshold_index_reverse.mjs";
 import { list_threshold_index } from "./list_threshold_index.mjs";
 import { list_to } from "./list_to.mjs";
@@ -26,6 +27,7 @@ export async function bible_chapter_audio_trim(bible_folder, chapter_name) {
   let threshold = 400;
   let first = list_threshold_index(samples, threshold);
   let last = list_threshold_index_reverse(samples, threshold);
+  each_index(list, (item, index) => {});
   let o = new WaveFile();
   o.fromScratch(
     fmt.numChannels,
