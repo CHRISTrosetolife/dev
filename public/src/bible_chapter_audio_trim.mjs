@@ -20,6 +20,9 @@ export async function bible_chapter_audio_trim(bible_folder, chapter_name) {
       bible_chapter_audio_to_wav_path(),
       "trimmed.wav",
     );
+    object_merge(path, {
+      trimmed: path_trimmed,
+    });
     if (await file_exists(path_trimmed)) {
       return;
     }
@@ -34,9 +37,6 @@ export async function bible_chapter_audio_trim(bible_folder, chapter_name) {
       }
     });
     await file_overwrite_wav(fmt, samples_out, path_trimmed);
-    object_merge(path, {
-      trimmed: path_trimmed,
-    });
   });
   return downloads;
 }
