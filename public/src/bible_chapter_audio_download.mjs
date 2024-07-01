@@ -14,11 +14,7 @@ import { string_starts_with } from "./string_starts_with.mjs";
 export async function bible_chapter_audio_download(bible_folder, chapter_name) {
   let folder_name = bible_folder;
   folder_name = "test";
-  let prefix = bible_chapter_audio_download_prefix(
-    folder_name,
-    book_code,
-    chapter_code,
-  );
+  let prefix = bible_chapter_audio_download_prefix(folder_name, chapter_name);
   let files = await storage_files(prefix);
   let verses = await bible_chapter(bible_folder, chapter_name);
   let verse_numbers = list_map_property(verses, "verse_number");
