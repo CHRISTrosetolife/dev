@@ -20,4 +20,5 @@ export async function bible_chapter_audio_download(bible_folder, chapter_name) {
   let verse_paths = list_map(verse_numbers, (vn) =>
     path_join([prefix, vn, "/"]),
   );
+  return verse_paths;
 }
