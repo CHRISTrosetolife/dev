@@ -15,16 +15,16 @@ export async function bible_chapter_audio_trim(bible_folder, chapter_name) {
   let samples = w.getSamples();
   let maxes = [];
   let max_index = 0;
-  max_add(maxes, w, max_index);
+  max_add(maxes, w.getSample(max_index), max_index);
   each_index(samples, (sample, index) => {
     let max = list_last(maxes);
     if (sample > max.value) {
     }
   });
-  function max_add(maxes, w, max_index) {
+  function max_add(maxes, value, index) {
     list_add(maxes, {
-      value: w.getSample(max_index),
-      index: max_index,
+      value,
+      index,
     });
   }
 }
