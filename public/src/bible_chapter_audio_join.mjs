@@ -1,3 +1,5 @@
+import { bible_chapter_audio_download_folder_name } from "./bible_chapter_audio_download_folder_name.mjs";
+import { bible_chapter_audio_download_prefix } from "./bible_chapter_audio_download_prefix.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
 import { equal_json } from "./equal_json.mjs";
 import { assert } from "./assert.mjs";
@@ -21,6 +23,10 @@ export async function bible_chapter_audio_join(bible_folder, chapter_name) {
     }
     list_add_multiple(samples_out, samples);
   });
+  let prefix = bible_chapter_audio_download_prefix(
+    bible_chapter_audio_download_folder_name(),
+    chapter_name,
+  );
   await file_overwrite_wav(fmt, samples_out, path_trimmed);
   return downloads;
 }
