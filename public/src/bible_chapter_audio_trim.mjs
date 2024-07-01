@@ -1,11 +1,10 @@
+import { file_read_wav } from "./file_read_wav.mjs";
 import { each_index } from "./each_index.mjs";
 import { list_threshold_index_reverse } from "./list_threshold_index_reverse.mjs";
 import { list_threshold_index } from "./list_threshold_index.mjs";
-import { list_to } from "./list_to.mjs";
 import { bible_chapter_audio_to_wav_path } from "./bible_chapter_audio_to_wav_path.mjs";
 import { string_suffix_change } from "./string_suffix_change.mjs";
 import { file_overwrite_binary } from "./file_overwrite_binary.mjs";
-import { file_read_binary } from "./file_read_binary.mjs";
 import { bible_chapter_audio_to_wav } from "./bible_chapter_audio_to_wav.mjs";
 import { list_first } from "./list_first.mjs";
 import wavefile from "wavefile";
@@ -20,10 +19,7 @@ export async function bible_chapter_audio_trim(bible_folder, chapter_name) {
     bible_chapter_audio_to_wav_path(),
     "trimmed.wav",
   );
-  let { WaveFile } = wavefile;
-  let w = new WaveFile(await file_read_binary(wav));
-  let { fmt } = w;
-  let samples = list_to(w.getSamples());
+  let w = await file_read_wav(wav);
   let samples_out = [];
   let first = list_threshold_index(samples, 400);
   let last = list_threshold_index_reverse(samples, 5000);
