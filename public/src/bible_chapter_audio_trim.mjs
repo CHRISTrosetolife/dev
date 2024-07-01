@@ -1,3 +1,4 @@
+import { bible_chapter_audio_to_wav_path } from "./bible_chapter_audio_to_wav_path.mjs";
 import { string_suffix_change } from "./string_suffix_change.mjs";
 import { file_overwrite_binary } from "./file_overwrite_binary.mjs";
 import { each_index } from "./each_index.mjs";
@@ -12,7 +13,7 @@ export async function bible_chapter_audio_trim(bible_folder, chapter_name) {
   let download = list_first(downloads);
   let { path } = download;
   let { wav } = path;
-  string_suffix_change(wav, "");
+  string_suffix_change(wav, bible_chapter_audio_to_wav_path());
   let { WaveFile } = wavefile;
   let w = new WaveFile(await file_read_binary(wav));
   let { fmt } = w;
