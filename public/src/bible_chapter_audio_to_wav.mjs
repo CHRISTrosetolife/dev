@@ -22,10 +22,6 @@ export async function bible_chapter_audio_to_wav(bible_folder, chapter_name) {
     });
     await audio_to_wav(path_input, path_output);
   });
-  let prefix = bible_chapter_audio_download_prefix(
-    folder_name,
-    book_code,
-    chapter_code,
-  );
+  let prefix = bible_chapter_audio_download_prefix("test", chapter_name);
   return downloads;
 }
