@@ -34,4 +34,5 @@ export async function bible_chapter_audio_trim(bible_folder, chapter_name) {
       trimmed: path_trimmed,
     });
   });
+  return downloads;
 }
