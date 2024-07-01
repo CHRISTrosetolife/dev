@@ -15,9 +15,6 @@ export async function bible_chapter_audio_to_wav(bible_folder, chapter_name) {
   let {
     path: { system: path_system },
   } = first;
-  log({
-    folder,
-  });
   let path_input = path_system;
   let folder = path_dirname(path_input);
   await new Promise((resolve, reject) => {
