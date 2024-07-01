@@ -1,3 +1,4 @@
+import { folder_audio_bible } from "./folder_audio_bible.mjs";
 import { firebase_upload } from "./firebase_upload.mjs";
 import { each } from "./each.mjs";
 import { list_find_property_next_property } from "./list_find_property_next_property.mjs";
@@ -43,7 +44,7 @@ export async function app_record_verse(
       let blob = await html_recorder_media_stop(context.mr);
       let when = date_string_iso_file();
       let storage_path = string_combine_multiple([
-        "audio/bible/",
+        folder_audio_bible(),
         "test/",
         book_code,
         "/",
