@@ -23,8 +23,10 @@ export async function bible_chapter_audio_trim(bible_folder, chapter_name) {
     object_merge(path, {
       trimmed: path_trimmed,
     });
-    if (await file_exists(path_trimmed)) {
-      return;
+    if (0) {
+      if (await file_exists(path_trimmed)) {
+        return;
+      }
     }
     let w = await file_read_wav(wav);
     let { samples, fmt } = w;
