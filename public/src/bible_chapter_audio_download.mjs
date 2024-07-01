@@ -32,6 +32,6 @@ export async function bible_chapter_audio_download(bible_folder, chapter_name) {
       string_starts_with(file.name, verse_path),
     );
     let last = list_last(file_verses);
-    await storage_file_download(firebase_file);
+    await storage_file_download(last);
   });
 }
