@@ -11,16 +11,19 @@ export async function bible_chapter_audio_to_wav(bible_folder, chapter_name) {
   );
   let first = list_first(file_names);
   let folder = path_dirname(first);
-  ffmpeg(first)
-    .toFormat("wav")
-    .on("error", (err) => {
-      console.log("An error occurred: " + err.message);
-    })
-    .on("progress", (progress) => {
-      console.log("Processing: " + progress.targetSize + " KB converted");
-    })
-    .on("end", () => {
-      console.log("Processing finished !");
-    })
-    .save(path_join([folder, "last.wav"]));
+  await new Promise((resulve, reject) => {
+    ffmpeg(first)
+      .toFormat("wav")
+      .on("error", (err) => {
+        console.log("An error occurred: " + err.message);
+        reject(err);
+      })
+      .on("progress", (progress) => {
+        console.log("Processing: " + progress.targetSize + " KB converted");
+      })
+      .on("end", () => {
+        console.log("Processing finished !");
+      })
+      .save(path_join([folder, "last.wav"]));
+  });
 }
