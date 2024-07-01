@@ -1,3 +1,4 @@
+import { bible_chapter_audio_to_wav_path } from "./bible_chapter_audio_to_wav_path.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { each_async } from "./each_async.mjs";
 import { audio_to_wav } from "./audio_to_wav.mjs";
@@ -14,7 +15,7 @@ export async function bible_chapter_audio_to_wav(bible_folder, chapter_name) {
     let { system: path_system } = path;
     let path_input = path_system;
     let folder = path_dirname(path_input);
-    let path_output = path_join([folder, "last.wav"]);
+    let path_output = path_join([folder, bible_chapter_audio_to_wav_path()]);
     object_merge(path, {
       wav: path_output,
     });
