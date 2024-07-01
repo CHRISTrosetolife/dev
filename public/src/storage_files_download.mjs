@@ -10,11 +10,10 @@ export async function storage_files_download(prefix) {
     let file_name = f.name;
     let destination = folder_gitignore_path(path_join(["firebase", file_name]));
     if (await file_exists_not(destination)) {
-      return;
+      await folder_parent_exists_ensure(destination);
+      f.download({
+        destination,
+      });
     }
-    await folder_parent_exists_ensure(destination);
-    f.download({
-      destination,
-    });
   });
 }
