@@ -6,7 +6,7 @@ export async function storage_files(prefix) {
     error();
   }
   let bucket = await storage_bucket();
-  return await bucket.getFiles({
+  let data = await bucket.getFiles({
     prefix,
   });
 }
