@@ -25,6 +25,6 @@ export async function bible_chapter_audio_download(bible_folder, chapter_name) {
     path_join([prefix, vn, "/"]),
   );
   await each_async(verse_paths, async (verse_path) => {
-    list_filter_starts_with(file_names, verse_path);
+    let file_names_verses = list_filter_starts_with(file_names, verse_path);
   });
 }
