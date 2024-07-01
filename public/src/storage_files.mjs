@@ -1,6 +1,7 @@
 import { storage_bucket } from "./storage_bucket.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
 import { error } from "./error.mjs";
+import { list_single } from "./list_single.mjs";
 export async function storage_files(prefix) {
   if (string_starts_with(prefix, "/")) {
     error();
@@ -9,4 +10,5 @@ export async function storage_files(prefix) {
   let data = await bucket.getFiles({
     prefix,
   });
+  return list_single(data);
 }
