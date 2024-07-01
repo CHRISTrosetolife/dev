@@ -7,7 +7,6 @@ import { bible_chapter_audio_to_wav_path } from "./bible_chapter_audio_to_wav_pa
 import { string_suffix_change } from "./string_suffix_change.mjs";
 import { bible_chapter_audio_to_wav } from "./bible_chapter_audio_to_wav.mjs";
 import { list_first } from "./list_first.mjs";
-import wavefile from "wavefile";
 import { list_add } from "./list_add.mjs";
 export async function bible_chapter_audio_trim(bible_folder, chapter_name) {
   let downloads = await bible_chapter_audio_to_wav(bible_folder, chapter_name);
