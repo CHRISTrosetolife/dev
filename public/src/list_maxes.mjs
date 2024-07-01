@@ -4,6 +4,7 @@ import { each_index } from "./each_index.mjs";
 import { list_first } from "./list_first.mjs";
 export function list_maxes(list) {
   let lambda_first = list_first;
+  let lambda_each = each_index;
   let maxes = [];
   let max_index = 0;
   max_add(maxes, list_first(list), max_index);
