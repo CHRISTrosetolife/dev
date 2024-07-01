@@ -15,6 +15,9 @@ export async function bible_chapter_audio_join(bible_folder, chapter_name) {
     let { trimmed } = path;
     let w = await file_read_wav(trimmed);
     let { samples, fmt } = w;
+    if (fmt_first === null) {
+    } else {
+    }
     let samples_out = [];
     let first = list_threshold_index(samples, 400);
     let last = list_threshold_index_reverse(samples, 5000);
