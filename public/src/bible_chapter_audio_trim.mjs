@@ -3,6 +3,7 @@ import { file_read_binary } from "./file_read_binary.mjs";
 import { bible_chapter_audio_to_wav } from "./bible_chapter_audio_to_wav.mjs";
 import { list_first } from "./list_first.mjs";
 import wavefile from "wavefile";
+import { list_add } from "./list_add.mjs";
 export async function bible_chapter_audio_trim(bible_folder, chapter_name) {
   let downloads = await bible_chapter_audio_to_wav(bible_folder, chapter_name);
   let download = list_first(downloads);
@@ -13,11 +14,10 @@ export async function bible_chapter_audio_trim(bible_folder, chapter_name) {
   let samples = w.getSamples();
   let max_index = 0;
   let max = w.getSample(max_index);
-  let maxes = [
-    {
-      value: max,
-      index: max_index,
-    },
-  ];
+  let maxes = [];
+  list_add(maxes, {
+    value: max,
+    index: max_index,
+  });
   each_index(samples, (sample, index) => {});
 }
