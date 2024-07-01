@@ -28,6 +28,7 @@ export async function bible_chapter_audio_trim(bible_folder, chapter_name) {
       w.setSample(index, 0);
     }
   });
+  wav.fromScratch(1, 8000, "16", samples);
   return maxes;
   function max_add(maxes, value, index) {
     list_add(maxes, {
