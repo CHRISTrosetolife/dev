@@ -10,7 +10,9 @@ export async function bible_chapter_audio_to_wav(bible_folder, chapter_name) {
     chapter_name,
   );
   let first = list_first(file_paths);
-  let path = first;
+  let {
+    path: { system: path_system },
+  } = first;
   let folder = path_dirname(first);
   log({
     folder,
