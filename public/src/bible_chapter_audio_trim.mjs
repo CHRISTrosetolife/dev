@@ -27,7 +27,10 @@ export async function bible_chapter_audio_trim(bible_folder, chapter_name) {
   let threshold = 400;
   let first = list_threshold_index(samples, threshold);
   let last = list_threshold_index_reverse(samples, threshold);
-  each_index(list, (item, index) => {});
+  each_index(samples, (item, index) => {
+    if (first <= index && index <= last) {
+    }
+  });
   let o = new WaveFile();
   o.fromScratch(
     fmt.numChannels,
