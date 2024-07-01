@@ -13,4 +13,5 @@ export async function storage_files(prefix) {
   });
   let files = list_single(data);
   let result = list_map_property(files, "name");
+  return result;
 }
