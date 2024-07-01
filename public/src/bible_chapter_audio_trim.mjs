@@ -1,3 +1,4 @@
+import { list_maxes } from "./list_maxes.mjs";
 import { list_to } from "./list_to.mjs";
 import { bible_chapter_audio_to_wav_path } from "./bible_chapter_audio_to_wav_path.mjs";
 import { string_suffix_change } from "./string_suffix_change.mjs";
@@ -8,7 +9,6 @@ import { bible_chapter_audio_to_wav } from "./bible_chapter_audio_to_wav.mjs";
 import { list_first } from "./list_first.mjs";
 import wavefile from "wavefile";
 import { list_add } from "./list_add.mjs";
-import { list_last } from "./list_last.mjs";
 export async function bible_chapter_audio_trim(bible_folder, chapter_name) {
   let downloads = await bible_chapter_audio_to_wav(bible_folder, chapter_name);
   let download = list_first(downloads);
@@ -23,15 +23,7 @@ export async function bible_chapter_audio_trim(bible_folder, chapter_name) {
   let w = new WaveFile(await file_read_binary(wav));
   let { fmt } = w;
   let samples = list_to(w.getSamples());
-  let maxes = [];
-  let max_index = 0;
-  max_add(maxes, list_first(samples), max_index);
-  each_index(samples, (sample, index) => {
-    let max = list_last(maxes);
-    if (sample > max.value) {
-      max_add(maxes, sample, index);
-    }
-  });
+  let maxes = list_maxes(max_add, samples);
   return maxes;
   let samples_out = [];
   each_index(samples, (sample, index) => {
@@ -48,10 +40,4 @@ export async function bible_chapter_audio_trim(bible_folder, chapter_name) {
   );
   await file_overwrite_binary(path_trimmed, o.toBuffer());
   return;
-  function max_add(maxes, value, index) {
-    list_add(maxes, {
-      value,
-      index,
-    });
-  }
 }
