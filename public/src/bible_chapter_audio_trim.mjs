@@ -1,10 +1,10 @@
+import { file_overwrite_wav } from "./file_overwrite_wav.mjs";
 import { file_read_wav } from "./file_read_wav.mjs";
 import { each_index } from "./each_index.mjs";
 import { list_threshold_index_reverse } from "./list_threshold_index_reverse.mjs";
 import { list_threshold_index } from "./list_threshold_index.mjs";
 import { bible_chapter_audio_to_wav_path } from "./bible_chapter_audio_to_wav_path.mjs";
 import { string_suffix_change } from "./string_suffix_change.mjs";
-import { file_overwrite_binary } from "./file_overwrite_binary.mjs";
 import { bible_chapter_audio_to_wav } from "./bible_chapter_audio_to_wav.mjs";
 import { list_first } from "./list_first.mjs";
 import wavefile from "wavefile";
@@ -29,13 +29,6 @@ export async function bible_chapter_audio_trim(bible_folder, chapter_name) {
       list_add(samples_out, item);
     }
   });
-  let o = new WaveFile();
-  o.fromScratch(
-    fmt.numChannels,
-    fmt.sampleRate,
-    fmt.bitsPerSample,
-    samples_out,
-  );
-  await file_overwrite_binary(path_trimmed, o.toBuffer());
+  await file_overwrite_wav(fmt, samples_out, path_trimmed);
   return;
 }
