@@ -1,4 +1,6 @@
+import { bible_chapter } from "./bible_chapter.mjs";
 import { folder_audio_bible } from "./folder_audio_bible.mjs";
-export function bible_chapter_audio_download(bible_folder) {
+export async function bible_chapter_audio_download(bible_folder) {
+  return await bible_chapter();
   folder_audio_bible();
 }
