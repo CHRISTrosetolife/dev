@@ -19,7 +19,6 @@ export async function bible_chapter_audio_join(bible_folder, chapter_name) {
     storage_file_download_path_string(prefix),
     "joined.wav",
   ]);
-  return outpath_path;
   if (await file_exists(outpath_path)) {
     return;
   }
