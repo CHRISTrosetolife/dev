@@ -30,8 +30,13 @@ export async function bible_chapter_audio_trim(bible_folder, chapter_name) {
     }
   });
   let o = new WaveFile();
-  o.fromScratch(fmt.numChannels, fmt.sampleRate, fmt.bitsPerSample, samples);
-  return o;
+  o.fromScratch(
+    fmt.numChannels,
+    fmt.sampleRate,
+    fmt.bitsPerSample,
+    samples_out,
+  );
+  return;
   function max_add(maxes, value, index) {
     list_add(maxes, {
       value,
