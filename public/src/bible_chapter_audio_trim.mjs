@@ -1,4 +1,3 @@
-import { list_maxes } from "./list_maxes.mjs";
 import { list_to } from "./list_to.mjs";
 import { bible_chapter_audio_to_wav_path } from "./bible_chapter_audio_to_wav_path.mjs";
 import { string_suffix_change } from "./string_suffix_change.mjs";
@@ -23,8 +22,6 @@ export async function bible_chapter_audio_trim(bible_folder, chapter_name) {
   let w = new WaveFile(await file_read_binary(wav));
   let { fmt } = w;
   let samples = list_to(w.getSamples());
-  let maxes = list_maxes(max_add, samples);
-  return maxes;
   let samples_out = [];
   each_index(samples, (sample, index) => {
     if (index >= 17898) {
