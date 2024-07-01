@@ -1,3 +1,4 @@
+import { bible_chapter_audio_trim } from "./bible_chapter_audio_trim.mjs";
 import { each_async } from "./each_async.mjs";
 import { file_overwrite_wav } from "./file_overwrite_wav.mjs";
 import { file_read_wav } from "./file_read_wav.mjs";
@@ -6,11 +7,10 @@ import { list_threshold_index_reverse } from "./list_threshold_index_reverse.mjs
 import { list_threshold_index } from "./list_threshold_index.mjs";
 import { bible_chapter_audio_to_wav_path } from "./bible_chapter_audio_to_wav_path.mjs";
 import { string_suffix_change } from "./string_suffix_change.mjs";
-import { bible_chapter_audio_to_wav } from "./bible_chapter_audio_to_wav.mjs";
 import { list_add } from "./list_add.mjs";
 import { object_merge } from "./object_merge.mjs";
 export async function bible_chapter_audio_join(bible_folder, chapter_name) {
-  let downloads = await bible_chapter_audio_to_wav(bible_folder, chapter_name);
+  let downloads = await bible_chapter_audio_trim(bible_folder, chapter_name);
   await each_async(downloads, async (download) => {
     let { path } = download;
     let { wav } = path;
