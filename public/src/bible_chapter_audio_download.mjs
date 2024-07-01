@@ -38,8 +38,8 @@ export async function bible_chapter_audio_download(bible_folder, chapter_name) {
       await storage_file_download(last);
       la({
         path: {
-          firebase: last.file,
-          system: storage_file_download_path(last.file),
+          firebase: last.name,
+          system: storage_file_download_path(last),
         },
       });
     });
