@@ -10,5 +10,5 @@ export async function storage_files(prefix) {
   let data = await bucket.getFiles({
     prefix,
   });
-  return list_single(data);
+  let files = list_single(data);
 }
