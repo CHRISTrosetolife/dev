@@ -1,7 +1,7 @@
+import { storage_files } from "./storage_files.mjs";
 import { storage_file_download } from "./storage_file_download.mjs";
 import { list_last } from "./list_last.mjs";
 import { list_filter_starts_with } from "./list_filter_starts_with.mjs";
-import { storage_files_names } from "./storage_files_names.mjs";
 import { each_async } from "./each_async.mjs";
 import { bible_chapter_name_parse } from "./bible_chapter_name_parse.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
@@ -20,7 +20,7 @@ export async function bible_chapter_audio_download(bible_folder, chapter_name) {
     chapter_code,
     "/",
   ]);
-  let file_names = await storage_files_names(prefix);
+  let files = await storage_files(prefix);
   let verses = await bible_chapter(bible_folder, chapter_name);
   let verse_numbers = list_map_property(verses, "verse_number");
   let verse_paths = list_map(verse_numbers, (vn) =>
