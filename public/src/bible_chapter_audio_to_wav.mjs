@@ -15,7 +15,9 @@ export async function bible_chapter_audio_to_wav(bible_folder, chapter_name) {
     let path_input = path_system;
     let folder = path_dirname(path_input);
     let path_output = path_join([folder, "last.wav"]);
-    object_merge();
+    object_merge(path, {
+      wav: path_output,
+    });
     await audio_to_wav(path_input, path_output);
   });
 }
