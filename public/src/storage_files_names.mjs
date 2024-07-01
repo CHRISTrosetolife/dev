@@ -4,7 +4,6 @@ import { error } from "./error.mjs";
 import { list_single } from "./list_single.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
-import { identity } from "./identity.mjs";
 export async function storage_files_names(prefix) {
   if (string_starts_with(prefix, "/")) {
     error();
@@ -14,7 +13,7 @@ export async function storage_files_names(prefix) {
     prefix,
   });
   let files = list_single(data);
+  list_sort_string(result, (f) => f.name);
   let result = list_map_property(files, "name");
-  list_sort_string(result, identity);
   return result;
 }
