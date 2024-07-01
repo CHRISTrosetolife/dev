@@ -4,7 +4,7 @@ import { list_single } from "./list_single.mjs";
 import { storage_bucket } from "./storage_bucket.mjs";
 import { error } from "./error.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
-export async function storage_files(prefix, result) {
+export async function storage_files(prefix) {
   if (string_starts_with(prefix, "/")) {
     error();
   }
