@@ -1,7 +1,7 @@
+import { list_filter } from "./list_filter.mjs";
 import { storage_files } from "./storage_files.mjs";
 import { storage_file_download } from "./storage_file_download.mjs";
 import { list_last } from "./list_last.mjs";
-import { list_filter_starts_with } from "./list_filter_starts_with.mjs";
 import { each_async } from "./each_async.mjs";
 import { bible_chapter_name_parse } from "./bible_chapter_name_parse.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
@@ -9,6 +9,7 @@ import { folder_audio_bible } from "./folder_audio_bible.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { path_join } from "./path_join.mjs";
 import { list_map } from "./list_map.mjs";
+import { string_starts_with } from "./string_starts_with.mjs";
 export async function bible_chapter_audio_download(bible_folder, chapter_name) {
   let folder_name = bible_folder;
   folder_name = "test";
@@ -27,7 +28,9 @@ export async function bible_chapter_audio_download(bible_folder, chapter_name) {
     path_join([prefix, vn, "/"]),
   );
   await each_async(verse_paths, async (verse_path) => {
-    let file_names_verses = list_filter_starts_with(file_names, verse_path);
+    let file_names_verses = list_filter(files, (file) =>
+      string_starts_with(file.name, verse_path),
+    );
     let last = list_last(file_names_verses);
     await storage_file_download(firebase_file);
   });
