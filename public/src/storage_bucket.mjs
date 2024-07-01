@@ -1,3 +1,4 @@
+import { object_property_set } from "./object_property_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import admin from "firebase-admin";
 import { file_read_json } from "./file_read_json.mjs";
@@ -12,6 +13,7 @@ export async function storage_bucket() {
       credential: admin.credential.cert(service_account),
       storageBucket: "gs://letjesusbeexalted.appspot.com",
     });
+    object_property_set(g, "initialized", true);
   }
   let bucket = admin.storage().bucket();
   return bucket;
