@@ -5,5 +5,5 @@ export async function bible_chapter_audio_trim(bible_folder, chapter_name) {
   let download = list_first(downloads);
   let { path } = download;
   let { wav } = path;
-  return download;
+  return wav;
 }
