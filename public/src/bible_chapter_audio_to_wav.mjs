@@ -9,13 +9,14 @@ export async function bible_chapter_audio_to_wav(bible_folder, chapter_name) {
     bible_folder,
     chapter_name,
   );
-  await each_async(list, async (item) => {});
-  let first = list_first(file_paths);
-  let {
-    path: { system: path_system },
-  } = first;
-  let path_input = path_system;
-  let folder = path_dirname(path_input);
-  let path_output = path_join([folder, "last.wav"]);
-  await audio_to_wav(path_input, path_output);
+  await each_async(file_paths, async (file_path) => {
+    let first = list_first(file_paths);
+    let {
+      path: { system: path_system },
+    } = first;
+    let path_input = path_system;
+    let folder = path_dirname(path_input);
+    let path_output = path_join([folder, "last.wav"]);
+    await audio_to_wav(path_input, path_output);
+  });
 }
