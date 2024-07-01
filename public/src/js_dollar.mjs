@@ -1,3 +1,4 @@
+import { list_adder_async } from "./list_adder_async.mjs";
 import { js_code_arrow_block_args_async } from "./js_code_arrow_block_args_async.mjs";
 import { each_async } from "./each_async.mjs";
 import { list_remove_first } from "./list_remove_first.mjs";
@@ -127,6 +128,14 @@ export function js_dollar(ast) {
       if (remaining === "la") {
         let e = js_parse_expression(
           js_code_call_args(list_adder.name, [
+            js_code_arrow_block_args(["la"], ""),
+          ]),
+        );
+        object_replace(node, e);
+      }
+      if (remaining === "laa") {
+        let e = js_parse_expression(
+          js_code_call_args(list_adder_async.name, [
             js_code_arrow_block_args(["la"], ""),
           ]),
         );
