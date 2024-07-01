@@ -6,5 +6,8 @@ export async function file_read_wav_samples(input_path) {
   let w = new WaveFile(await file_read_binary(input_path));
   let { fmt } = w;
   let samples = list_to(w.getSamples());
-  return samples;
+  return {
+    fmt,
+    samples,
+  };
 }
