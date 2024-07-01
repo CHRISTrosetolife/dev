@@ -136,7 +136,7 @@ export function js_dollar(ast) {
       if (remaining === "laa") {
         let e = js_parse_expression(
           js_code_call_args(list_adder_async.name, [
-            js_code_arrow_block_args(["la"], ""),
+            js_code_arrow_block_args_async(["la"], ""),
           ]),
         );
         object_replace(node, e);
