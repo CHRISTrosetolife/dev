@@ -92,12 +92,18 @@ export async function sandbox_2() {
   let height_total = list_property_sum(lines, "height");
   assert(less_than_equal, [height_total, canvas_height]);
   each_index(lines, (line, index) => {
-    let padding = line.height / 10;
-    let offset = list_map_sum(list_take(lines, index + 1), "height");
+    let padding = line_height_to_padding(line);
+    let offset = list_map_sum(
+      list_take(lines, index + 1),
+      (line) => line.height + 2 * line_height_to_padding(line.height),
+    );
     ctx.fillText(line.text, 0, offset);
   });
   let buffer = canvas.toBuffer("image/png");
   let output_path = folder_gitignore_path("test.png");
   await file_overwrite_binary(output_path, buffer);
   await file_open(output_path);
+  function line_height_to_padding(line) {
+    return line.height / 10;
+  }
 }
