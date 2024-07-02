@@ -1,1 +1,1 @@
-export function bible_chapter_text(bible_folder, chapter_name) {}
+export function bible_chapter_text(bible_folder, chapter_name) {bible_chapter()}//
