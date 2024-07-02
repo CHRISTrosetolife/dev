@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { bible_chapter_audio_download_folder_name } from "./bible_chapter_audio_download_folder_name.mjs";
 import { bible_chapter_audio_download_prefix } from "./bible_chapter_audio_download_prefix.mjs";
 import { storage_file_download_path } from "./storage_file_download_path.mjs";
@@ -31,6 +32,7 @@ export async function bible_chapter_audio_download(
       let file_verses = list_filter(files, (file) =>
         string_starts_with(file.name, verse_path),
       );
+      log({});
       let last = list_last(file_verses);
       await storage_file_download(last);
       la({
