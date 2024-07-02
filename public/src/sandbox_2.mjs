@@ -1,4 +1,5 @@
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
+import { createCanvas } from "canvas";
 export async function sandbox_2() {
   assert_arguments_length(arguments, 0);
   let canvas = createCanvas(200, 200);
