@@ -14,7 +14,7 @@ export async function sandbox_2() {
   let book_id = "MAT";
   let chapter = "1";
   let verse_number = "1";
-  await bible_chapter();
+  await bible_chapter("engbsb");
   let book_name = bible_book_name(book_id);
   bible_reference(book_name, chapter, verse_number);
   let width = 1080;
