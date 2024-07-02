@@ -44,6 +44,7 @@ export async function sandbox_2() {
   ctx.fillStyle = "rgba(0,0,0,0.5)";
   ctx.fillRect(0, 0, canvas_width, canvas_height);
   ctx.fillStyle = "white";
+  let font_size_px_max = 300;
   each_range_reverse(301, (item) => {
     ctx.font = "300px Arial";
     let text = ctx.measureText(reference);
