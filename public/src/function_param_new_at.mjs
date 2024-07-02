@@ -14,7 +14,7 @@ export async function function_param_new_at(
     await function_transform_args_split_lambda(
       fn_name,
       [js_param_new_at],
-      [function_name, param_name, default_value_string],
+      [function_name, param_name, default_value_string, param_index],
     );
   }
 }
