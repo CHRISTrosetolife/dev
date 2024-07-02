@@ -96,7 +96,7 @@ export async function sandbox_2() {
     let padding = line_height_to_padding(line);
     let offset = list_map_sum(
       list_take(lines, index + 1),
-      (line) => line.height + line_height_to_padding_double(line),
+      (line) => line.height + line_height_to_padding_double(line.height),
     );
     ctx.fillText(line.text, padding, offset);
   });
@@ -104,10 +104,10 @@ export async function sandbox_2() {
   let output_path = folder_gitignore_path("test.png");
   await file_overwrite_binary(output_path, buffer);
   await file_open(output_path);
-  function line_height_to_padding_double(line) {
-    return 2 * line_height_to_padding(line.height);
+  function line_height_to_padding_double(height) {
+    return 2 * line_height_to_padding(height);
   }
-  function line_height_to_padding(line) {
-    return line.height / 10;
+  function line_height_to_padding(height) {
+    return height / 10;
   }
 }
