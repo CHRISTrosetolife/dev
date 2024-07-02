@@ -56,6 +56,7 @@ export async function app_record_verse(
         ".mp3",
       ]);
       await firebase_upload(storage_path, blob);
+      list_find_property(verses, "verse_number", verse_number);
       let verse_number_next = list_find_property_next_property(
         verses,
         "verse_number",
