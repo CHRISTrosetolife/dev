@@ -51,6 +51,7 @@ export async function sandbox_2() {
     let text = ctx.measureText(reference);
     let { width } = text;
     if (width <= canvas_width) {
+      return true;
     }
   });
   log({
