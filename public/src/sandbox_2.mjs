@@ -1,3 +1,4 @@
+import { list_adder } from "./list_adder.mjs";
 import { each } from "./each.mjs";
 import { list_add_beginning } from "./list_add_beginning.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -64,6 +65,7 @@ export async function sandbox_2() {
       }
     });
   });
+  list_adder((la) => {});
   let index_current = 0;
   each_range_reverse(list_index_last(tokens) - index_current, (count) => {
     let sliced = list_slice(tokens, index_current, index_current + count);
