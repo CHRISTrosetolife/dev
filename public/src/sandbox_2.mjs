@@ -1,3 +1,4 @@
+import { bible_reference } from "./bible_reference.mjs";
 import { log } from "./log.mjs";
 import { file_open } from "./file_open.mjs";
 import { file_read_binary } from "./file_read_binary.mjs";
@@ -8,6 +9,7 @@ import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
 import { number_max } from "./number_max.mjs";
 export async function sandbox_2() {
   assert_arguments_length(arguments, 0);
+  bible_reference(book_name, chapter, verse_number_first);
   let width = 1080;
   let height = 1920;
   let bigger = number_max(width, height);
