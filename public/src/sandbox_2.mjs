@@ -74,7 +74,9 @@ export async function sandbox_2() {
       let measured = ctx.measureText(sliced_text);
       let { width } = measured;
       if (width <= canvas_width) {
-        list_add(lines, sliced_text);
+        list_add(lines, {
+          text: sliced_text,
+        });
         index_current += count + 1;
         return true;
       }
