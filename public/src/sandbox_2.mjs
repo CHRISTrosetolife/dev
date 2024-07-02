@@ -1,3 +1,4 @@
+import { bible_chapter } from "./bible_chapter.mjs";
 import { bible_book_name } from "./bible_book_name.mjs";
 import { bible_reference } from "./bible_reference.mjs";
 import { log } from "./log.mjs";
@@ -13,6 +14,7 @@ export async function sandbox_2() {
   let book_id = "MAT";
   let chapter = "1";
   let verse_number = "1";
+  await bible_chapter();
   let book_name = bible_book_name(book_id);
   bible_reference(book_name, chapter, verse_number);
   let width = 1080;
