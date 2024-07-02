@@ -84,6 +84,7 @@ export async function sandbox_2() {
       }
     });
   }
+  let property_name = "width";
   return list_map_sum(lines, (line) =>
     object_property_get(line, property_name),
   );
