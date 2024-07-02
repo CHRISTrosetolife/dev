@@ -30,9 +30,7 @@ export async function js_param_new(
       continue;
     }
     let { arguments: args } = node;
-    let default_value = js_parse_expression(default_value_string);
-    list_add(args, default_value);
-    needs_imports_add = true;
+    lambda(args);
   }
   if (needs_imports_add) {
     await js_imports_add(ast);
@@ -45,4 +43,9 @@ export async function js_param_new(
   let { params } = declaration;
   let param_new = js_parse_expression(param_name);
   list_add(params, param_new);
+  function lambda(args) {
+    let default_value = js_parse_expression(default_value_string);
+    list_add(args, default_value);
+    needs_imports_add = true;
+  }
 }
