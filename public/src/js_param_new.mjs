@@ -11,6 +11,7 @@ export async function js_param_new(
   param_name,
   default_value_string,
 ) {
+  let lambda_add = list_add;
   assert_arguments_length(arguments, 4);
   assert(string_is, [param_name]);
   assert(string_is, [default_value_string]);
