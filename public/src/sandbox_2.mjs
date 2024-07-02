@@ -1,3 +1,4 @@
+import { each_index } from "./each_index.mjs";
 import { less_than_equal } from "./less_than_equal.mjs";
 import { assert } from "./assert.mjs";
 import { list_property_sum } from "./list_property_sum.mjs";
@@ -88,7 +89,7 @@ export async function sandbox_2() {
   }
   let height_total = list_property_sum(lines, "height");
   assert(less_than_equal, [height_total, canvas_height]);
-  each(lines, (line) => {
+  each_index(lines, (line) => {
     ctx.fillText(line.text, 0, 215);
   });
   let buffer = canvas.toBuffer("image/png");
