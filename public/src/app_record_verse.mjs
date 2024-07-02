@@ -15,6 +15,8 @@ import { list_find_property } from "./list_find_property.mjs";
 import { app_record_verses } from "./app_record_verses.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
+import { list_index } from "./list_index.mjs";
+import { list_index_last } from "./list_index_last.mjs";
 export async function app_record_verse(
   context,
   book_code,
@@ -56,7 +58,7 @@ export async function app_record_verse(
         ".mp3",
       ]);
       await firebase_upload(storage_path, blob);
-      list_find_property(verses, "verse_number", verse_number);
+      list_index(verse) === list_index_last(verses);
       let verse_number_next = list_find_property_next_property(
         verses,
         "verse_number",
