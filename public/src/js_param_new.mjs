@@ -31,6 +31,7 @@ export async function js_param_new(
     let { params } = declaration;
     return params;
   }
+  let params = js_param_actual(ast);
   let param_new = js_parse_expression(param_name);
   list_add(params, param_new);
   function lambda(args) {
