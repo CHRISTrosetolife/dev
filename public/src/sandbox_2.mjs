@@ -71,6 +71,9 @@ export async function sandbox_2() {
   let index_current = 0;
   while (index_current < list_size(tokens)) {
     each_range_reverse(list_index_last(tokens) - index_current, (count) => {
+      if (count === 0) {
+        $;
+      }
       let sliced = list_slice(tokens, index_current, index_current + count);
       let sliced_text = list_join_space(sliced);
       log({
