@@ -1,5 +1,4 @@
 import { js_param_generic } from "./js_param_generic.mjs";
-import { js_param_actual } from "./js_param_actual.mjs";
 import { list_add } from "./list_add.mjs";
 import { assert } from "./assert.mjs";
 import { string_is } from "./string_is.mjs";
@@ -17,5 +16,4 @@ export async function js_param_move_first(ast, function_name, param_index) {
       list_add(params, param_new);
     },
   );
-  js_param_actual(ast, function_name);
 }
