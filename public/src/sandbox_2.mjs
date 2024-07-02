@@ -21,7 +21,7 @@ export async function sandbox_2() {
     bigger,
     bigger,
   );
-  ctx.fillStyle = "rgba(225,225,225,0.1)";
+  ctx.fillStyle = "rgba(225,225,225,0.5)";
   ctx.fillRect(25, 72, 32, 32);
   ctx.font = "300px Arial";
   ctx.fillText("Awesome!", 0, 0);
