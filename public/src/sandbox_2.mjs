@@ -85,7 +85,7 @@ export async function sandbox_2() {
     });
   }
   return list_map_sum(lines, (line) =>
-    object_property_get(object, property_name),
+    object_property_get(line, property_name),
   );
   ctx.fillText(reference, 0, 215);
   let buffer = canvas.toBuffer("image/png");
