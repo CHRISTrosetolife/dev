@@ -26,26 +26,26 @@ export async function sandbox_2() {
   let text_verse = list_join_space(object_property_get(match, "tokens"));
   let book_name = bible_book_name(book_id, chapter);
   let reference = bible_reference(book_name, chapter, verse_number);
-  let width = 1080;
-  let height = 1920;
-  let bigger = number_max(width, height);
-  let canvas = createCanvas(width, height);
+  let canvas_width = 1080;
+  let canvas_height = 1920;
+  let bigger = number_max(canvas_width, canvas_height);
+  let canvas = createCanvas(canvas_width, canvas_height);
   let ctx = canvas.getContext("2d");
   let data = await file_read_binary("./img/bible_green.jpg");
   let image = await loadImage(data);
   ctx.drawImage(
     image,
-    -(bigger - width) / 2,
-    -(bigger - height) / 2,
+    -(bigger - canvas_width) / 2,
+    -(bigger - canvas_height) / 2,
     bigger,
     bigger,
   );
   ctx.fillStyle = "rgba(0,0,0,0.5)";
-  ctx.fillRect(0, 0, width, height);
+  ctx.fillRect(0, 0, canvas_width, canvas_height);
   ctx.font = "300px Arial";
   ctx.fillStyle = "white";
   let text = ctx.measureText(reference);
-  width = text;
+  canvas_width = text;
   log({
     text,
   });
