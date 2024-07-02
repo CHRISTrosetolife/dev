@@ -98,6 +98,7 @@ export async function sandbox_2() {
     }
     let height_total = list_map_sum(lines, line_to_height_padded);
     if (less_than_equal(height_total, canvas_height)) {
+      return true;
     }
   });
   each_index(lines, (line, index) => {
