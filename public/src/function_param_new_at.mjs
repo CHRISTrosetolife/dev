@@ -8,7 +8,7 @@ export async function function_param_new_at(
   default_value_string,
   param_index,
 ) {
-  assert_arguments_length(arguments, 3);
+  assert_arguments_length(arguments, 4);
   await data_identifiers_each(function_name, lambda);
   async function lambda(fn_name) {
     await function_transform_args_split_lambda(
