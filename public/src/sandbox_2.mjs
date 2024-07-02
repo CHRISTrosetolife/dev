@@ -4,10 +4,12 @@ import { file_overwrite_binary } from "./file_overwrite_binary.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { createCanvas, loadImage } from "canvas";
 import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
+import { number_max } from "./number_max.mjs";
 export async function sandbox_2() {
   assert_arguments_length(arguments, 0);
   let width = 1080;
   let height = 1920;
+  let bigger = number_max(width, height);
   let canvas = createCanvas(width, height);
   let data = await file_read_binary("./img/bible_green.jpg");
   let image = await loadImage(data);
