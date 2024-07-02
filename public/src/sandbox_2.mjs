@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { list_add_beginning } from "./list_add_beginning.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each_range_reverse } from "./each_range_reverse.mjs";
@@ -47,6 +48,7 @@ export async function sandbox_2() {
   ctx.fillStyle = "white";
   let font_size_px_max = 300;
   let font_size_px = font_size_px_max;
+  each(list, (item) => {});
   let text_height;
   each_range_reverse(font_size_px + 1, (i) => {
     font_size_px = i;
