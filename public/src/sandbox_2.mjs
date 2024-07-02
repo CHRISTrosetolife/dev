@@ -1,3 +1,4 @@
+import { list_map_sum } from "./list_map_sum.mjs";
 import { each_index } from "./each_index.mjs";
 import { less_than_equal } from "./less_than_equal.mjs";
 import { assert } from "./assert.mjs";
@@ -92,7 +93,7 @@ export async function sandbox_2() {
   assert(less_than_equal, [height_total, canvas_height]);
   each_index(lines, (line, index) => {
     let padding = line.height / 10;
-    let offset = list_property_sum(list_take(lines, index + 1), "height");
+    let offset = list_map_sum(list_take(lines, index + 1), "height");
     ctx.fillText(line.text, 0, offset);
   });
   let buffer = canvas.toBuffer("image/png");
