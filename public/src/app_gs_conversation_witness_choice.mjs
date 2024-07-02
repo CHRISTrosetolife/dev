@@ -1,3 +1,4 @@
+import { bible_reference } from "./bible_reference.mjs";
 import { app_gs_bible_chapter_name } from "./app_gs_bible_chapter_name.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { list_map_property } from "./list_map_property.mjs";
@@ -47,7 +48,7 @@ export async function app_gs_conversation_witness_choice(
   let answer = list_join_space(answer_texts);
   let choice_text = string_combine_multiple([
     "📖 ",
-    string_combine_multiple([book_name, " ", chapter, ":", verse_number_first]),
+    bible_reference(book_name, chapter, verse_number_first),
     first !== last ? "-" + verse_number_last : "",
     " - ",
     answer,
