@@ -8,7 +8,6 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each_range_reverse } from "./each_range_reverse.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_find_property } from "./list_find_property.mjs";
-import { app_gs_bible_chapter_name } from "./app_gs_bible_chapter_name.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
 import { bible_book_name } from "./bible_book_name.mjs";
 import { bible_reference } from "./bible_reference.mjs";
@@ -28,10 +27,7 @@ export async function bible_chapter_images(bible_folder, chapter_name) {
   let book_id = "MAT";
   let chapter = "1";
   let verse_number = "1";
-  let verses = await bible_chapter(
-    bible_folder,
-    app_gs_bible_chapter_name(book_id, chapter),
-  );
+  let verses = await bible_chapter(bible_folder, chapter_name);
   let match = list_find_property(verses, "verse_number", verse_number);
   let tokens = object_property_get(match, "tokens");
   let book_name = bible_book_name(book_id, chapter);
