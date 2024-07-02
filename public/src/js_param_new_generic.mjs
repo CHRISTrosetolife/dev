@@ -6,9 +6,9 @@ import { assert } from "./assert.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export async function js_param_new_generic(
   ast,
+  function_name,
   param_name,
   default_value_string,
-  function_name,
   lambda_add,
 ) {
   assert_arguments_length(arguments, 5);

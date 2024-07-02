@@ -8,9 +8,9 @@ export async function js_param_new(
 ) {
   await js_param_new_generic(
     ast,
+    function_name,
     param_name,
     default_value_string,
-    function_name,
     list_add,
   );
 }
