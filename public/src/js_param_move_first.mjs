@@ -5,6 +5,7 @@ import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { integer_parse } from "./integer_parse.mjs";
 import { number_is } from "./number_is.mjs";
 import { list_remove_at } from "./list_remove_at.mjs";
+import { list_add_beginning } from "./list_add_beginning.mjs";
 export async function js_param_move_first(ast, function_name, param_index) {
   assert_arguments_length(arguments, 3);
   param_index = integer_parse(param_index);
@@ -14,7 +15,7 @@ export async function js_param_move_first(ast, function_name, param_index) {
     function_name,
     function each_caller(args) {
       let a = list_remove_at(args, param_index);
-      list_add(args, default_value);
+      list_add_beginning(args, a);
     },
     (params) => {
       let p = list_remove_at(args, params);
