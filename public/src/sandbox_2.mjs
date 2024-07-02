@@ -100,7 +100,11 @@ export async function sandbox_2() {
       list_take(lines, index + 1),
       (line) => line.height + line_height_to_padding_double(line.height),
     );
-    log({});
+    log({
+      text: line.text,
+      padding,
+      offset,
+    });
     ctx.fillText(line.text, padding, offset);
   });
   let buffer = canvas.toBuffer("image/png");
