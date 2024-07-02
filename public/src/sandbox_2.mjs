@@ -48,17 +48,18 @@ export async function sandbox_2() {
   ctx.fillStyle = "white";
   let font_size_px_max = 300;
   let font_size_px = font_size_px_max;
-  each(list, (item) => {});
-  let text_height;
-  each_range_reverse(font_size_px + 1, (i) => {
-    font_size_px = i;
-    ctx.font = string_combine_multiple([font_size_px, "px Arial"]);
-    let text = ctx.measureText(reference);
-    let { width } = text;
-    if (width <= canvas_width) {
-      text_height = object_property_get(text, "actualBoundingBoxAscent");
-      return true;
-    }
+  each(tokens, (token) => {
+    let text_height;
+    each_range_reverse(font_size_px + 1, (i) => {
+      font_size_px = i;
+      ctx.font = string_combine_multiple([font_size_px, "px Arial"]);
+      let text = ctx.measureText(reference);
+      let { width } = text;
+      if (width <= canvas_width) {
+        text_height = object_property_get(text, "actualBoundingBoxAscent");
+        return true;
+      }
+    });
   });
   ctx.fillText(reference, 0, 215);
   let buffer = canvas.toBuffer("image/png");
