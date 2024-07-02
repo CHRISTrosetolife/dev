@@ -77,6 +77,7 @@ export async function sandbox_2() {
         sliced_text,
         index_current,
         count,
+        lines,
       });
       let measured = ctx.measureText(sliced_text);
       let { width } = measured;
