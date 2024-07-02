@@ -1,3 +1,4 @@
+import { bible_chapter_name_parse } from "./bible_chapter_name_parse.mjs";
 import { list_map_sum } from "./list_map_sum.mjs";
 import { each_index } from "./each_index.mjs";
 import { less_than_equal } from "./less_than_equal.mjs";
@@ -27,6 +28,7 @@ export async function bible_chapter_images(bible_folder, chapter_name) {
   let book_id = "MAT";
   let chapter = "1";
   let verse_number = "1";
+  bible_chapter_name_parse(chapter_name);
   let verses = await bible_chapter(bible_folder, chapter_name);
   let match = list_find_property(verses, "verse_number", verse_number);
   let tokens = object_property_get(match, "tokens");
