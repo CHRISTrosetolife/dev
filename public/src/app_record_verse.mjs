@@ -58,7 +58,10 @@ export async function app_record_verse(
         ".mp3",
       ]);
       await firebase_upload(storage_path, blob);
-      list_index(verse) === list_index_last(verses);
+      if (list_index(verse) === list_index_last(verses)) {
+        alert("end of chapter");
+        html_clear_scroll_top(root);
+      }
       let verse_number_next = list_find_property_next_property(
         verses,
         "verse_number",
