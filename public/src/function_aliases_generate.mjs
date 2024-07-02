@@ -1,3 +1,4 @@
+import { function_param_move } from "./function_param_move.mjs";
 import { function_param_move_first } from "./function_param_move_first.mjs";
 import { computer_restart } from "./computer_restart.mjs";
 import { app_new } from "./app_new.mjs";
@@ -86,6 +87,7 @@ export async function function_aliases_generate() {
   alias_add(function_open, ["o"]);
   alias_add(function_param_new, ["p"]);
   alias_add(function_param_move_first, ["pf"]);
+  alias_add(function_param_move, ["pm"]);
   alias_add(function_rename, ["r"]);
   alias_add(computer_restart, ["re"]);
   alias_add(function_search, ["s"]);
