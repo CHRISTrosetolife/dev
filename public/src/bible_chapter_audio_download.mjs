@@ -33,6 +33,7 @@ export async function bible_chapter_audio_download(
         string_starts_with(file.name, verse_path),
       );
       log({
+        verse_path,
         file_verses,
       });
       let last = list_last(file_verses);
