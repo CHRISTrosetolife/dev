@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_map_sum } from "./list_map_sum.mjs";
 import { each_index } from "./each_index.mjs";
 import { less_than_equal } from "./less_than_equal.mjs";
@@ -98,6 +99,7 @@ export async function sandbox_2() {
     }
     let height_total = list_map_sum(lines, line_to_height_padded);
     if (less_than_equal(height_total, canvas_height)) {
+      log({});
       return true;
     }
   });
