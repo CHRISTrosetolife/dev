@@ -10,7 +10,11 @@ import { each_async } from "./each_async.mjs";
 import { file_overwrite_wav } from "./file_overwrite_wav.mjs";
 import { file_read_wav } from "./file_read_wav.mjs";
 import { file_exists } from "./file_exists.mjs";
-export async function bible_chapter_audio_join(bible_folder, chapter_name) {
+export async function bible_chapter_audio_join(
+  project_name,
+  bible_folder,
+  chapter_name,
+) {
   let prefix = bible_chapter_audio_download_prefix(
     bible_chapter_audio_download_folder_name(),
     chapter_name,
