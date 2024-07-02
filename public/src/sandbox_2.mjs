@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_map_sum } from "./list_map_sum.mjs";
 import { each_index } from "./each_index.mjs";
 import { less_than_equal } from "./less_than_equal.mjs";
@@ -99,6 +100,7 @@ export async function sandbox_2() {
       list_take(lines, index + 1),
       (line) => line.height + line_height_to_padding_double(line.height),
     );
+    log({});
     ctx.fillText(line.text, padding, offset);
   });
   let buffer = canvas.toBuffer("image/png");
