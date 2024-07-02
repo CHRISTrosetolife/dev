@@ -28,7 +28,6 @@ export async function bible_chapter_audio_download(
       let file_verses = list_filter(files, (file) =>
         string_starts_with(file.name, verse_path),
       );
-      sw;
       let last = list_last(file_verses);
       await storage_file_download(last);
       la({
