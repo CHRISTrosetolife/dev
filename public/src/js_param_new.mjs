@@ -16,16 +16,15 @@ export async function js_param_new(
   assert(string_is, [param_name]);
   assert(string_is, [default_value_string]);
   let needs_imports_add = false;
-  js_param_existing_each(ast, function_name, lambda);
+  js_param_existing_each(ast, function_name, function lambda(args) {
+    let default_value = js_parse_expression(default_value_string);
+    list_add(args, default_value);
+    needs_imports_add = true;
+  });
   if (needs_imports_add) {
     await js_imports_add(ast);
   }
   let params = js_param_actual(ast, function_name);
   let param_new = js_parse_expression(param_name);
   list_add(params, param_new);
-  function lambda(args) {
-    let default_value = js_parse_expression(default_value_string);
-    list_add(args, default_value);
-    needs_imports_add = true;
-  }
 }
