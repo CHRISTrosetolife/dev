@@ -31,7 +31,9 @@ export async function bible_chapter_images(bible_folder, chapter_name) {
   let verses = await bible_chapter(bible_folder, chapter_name);
   await each_async(verses, async (verse) => {
     let { verse_number } = verse;
-    log({});
+    log({
+      verse,
+    });
     let match = list_find_property(verses, "verse_number", verse_number);
     let tokens = object_property_get(match, "tokens");
     let book_name = bible_book_name(book_code);
