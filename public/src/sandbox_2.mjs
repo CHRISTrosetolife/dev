@@ -78,7 +78,8 @@ export async function sandbox_2() {
       let sliced = list_slice(tokens, index_current, index_current + count + 1);
       let sliced_text = list_join_space(sliced);
       let measured = ctx.measureText(sliced_text);
-      let { width } = measured;
+      let { width, actualBoundingBoxAscent: height } = measured;
+      let padding = line_height_to_padding(line);
       if (width <= canvas_width) {
         list_add(lines, {
           height: measured.actualBoundingBoxAscent,
