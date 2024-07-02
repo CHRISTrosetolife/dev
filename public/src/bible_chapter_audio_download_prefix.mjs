@@ -9,7 +9,7 @@ export function bible_chapter_audio_download_prefix(folder_name, chapter_name) {
     folder_audio_bible(),
     folder_name,
     book_code,
-    chapter_code,
+    chapter_number,
     "/",
   ]);
 }
