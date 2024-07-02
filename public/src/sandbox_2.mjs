@@ -24,6 +24,7 @@ export async function sandbox_2() {
   );
   let match = list_find_property(verses, "verse_number", verse_number);
   let text_verse = list_join_space(object_property_get(match, "tokens"));
+  return text_verse;
   let book_name = bible_book_name(book_id, chapter);
   bible_reference(book_name, chapter, verse_number);
   let width = 1080;
