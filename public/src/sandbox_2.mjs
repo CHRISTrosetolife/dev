@@ -98,7 +98,7 @@ export async function sandbox_2() {
     let padding = line_height_to_padding(line.height);
     let offset = list_map_sum(
       list_take(lines, index + 1),
-      (line) => line.height + line_height_to_padding_double(line.height),
+      line_to_height_padded,
     );
     log({
       text: line.text,
@@ -111,6 +111,9 @@ export async function sandbox_2() {
   let output_path = folder_gitignore_path("test.png");
   await file_overwrite_binary(output_path, buffer);
   await file_open(output_path);
+  function line_to_height_padded(line) {
+    return line.height + line_height_to_padding_double(line.height);
+  }
   function line_height_to_padding_double(height) {
     return 2 * line_height_to_padding(height);
   }
