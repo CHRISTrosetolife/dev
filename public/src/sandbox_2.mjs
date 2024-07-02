@@ -7,7 +7,7 @@ export async function sandbox_2() {
   let canvas = createCanvas(1080, 1920);
   let ctx = canvas.getContext("2d");
   ctx.font = "30px Arial";
-  ctx.fillText("Awesome!", 50, 100);
+  ctx.fillText("Awesome!", 0, 0);
   let text = ctx.measureText("Awesome!");
   let buffer = canvas.toBuffer("image/png");
   await file_overwrite_binary(folder_gitignore_path("test.png"), buffer);
