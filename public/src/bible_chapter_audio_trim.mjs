@@ -11,6 +11,7 @@ import { bible_chapter_audio_to_wav } from "./bible_chapter_audio_to_wav.mjs";
 import { list_add } from "./list_add.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { file_exists } from "./file_exists.mjs";
+import { list_index_last } from "./list_index_last.mjs";
 export async function bible_chapter_audio_trim(bible_folder, chapter_name) {
   let downloads = await bible_chapter_audio_to_wav(bible_folder, chapter_name);
   await each_async(downloads, async (download) => {
@@ -35,6 +36,7 @@ export async function bible_chapter_audio_trim(bible_folder, chapter_name) {
     let first = list_threshold_index(samples, 300);
     first = number_max(first - 1000, 0);
     let last = list_threshold_index_reverse(samples, 400);
+    last = number_min(last + 1000, list_index_last(samples));
     each_index(samples, (item, index) => {
       if (first <= index && index <= last) {
         list_add(samples_out, item);
