@@ -115,6 +115,6 @@ export async function sandbox_2() {
     return 2 * line_height_to_padding(height);
   }
   function line_height_to_padding(height) {
-    return height / 10;
+    return height / 5;
   }
 }
