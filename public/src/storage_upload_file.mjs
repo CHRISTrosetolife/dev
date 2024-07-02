@@ -10,5 +10,7 @@ export async function storage_upload_file(file_path, destination) {
   await bucket.upload(file_path, {
     destination,
   });
-  log({});
+  log({
+    destination,
+  });
 }
