@@ -51,13 +51,13 @@ export async function sandbox_2() {
     font_size_px = i;
     ctx.font = string_combine_multiple([font_size_px, "px Arial"]);
     let text = ctx.measureText(reference);
+    log({
+      text,
+    });
     let { width } = text;
     if (width <= canvas_width) {
       return true;
     }
-  });
-  log({
-    text,
   });
   ctx.fillText(reference, 0, 215);
   let buffer = canvas.toBuffer("image/png");
