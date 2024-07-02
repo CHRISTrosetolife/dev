@@ -1,3 +1,4 @@
+import { list_add_beginning } from "./list_add_beginning.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each_range_reverse } from "./each_range_reverse.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -26,6 +27,7 @@ export async function sandbox_2() {
   let tokens = object_property_get(match, "tokens");
   let book_name = bible_book_name(book_id, chapter);
   let reference = bible_reference(book_name, chapter, verse_number);
+  list_add_beginning(tokens, reference);
   let canvas_width = 1080;
   let canvas_height = 1920;
   let bigger = number_max(canvas_width, canvas_height);
