@@ -1,3 +1,4 @@
+import { list_map } from "./list_map.mjs";
 import { each } from "./each.mjs";
 import { list_add_beginning } from "./list_add_beginning.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -61,6 +62,7 @@ export async function sandbox_2() {
       }
     });
   });
+  list_map(tokens);
   ctx.fillText(reference, 0, 215);
   let buffer = canvas.toBuffer("image/png");
   let output_path = folder_gitignore_path("test.png");
