@@ -45,11 +45,12 @@ export async function sandbox_2() {
   ctx.fillRect(0, 0, canvas_width, canvas_height);
   ctx.font = "300px Arial";
   ctx.fillStyle = "white";
-  each_range_reverse(count, (item) => {});
-  let text = ctx.measureText(reference);
-  let { width } = text;
-  if (width <= canvas_width) {
-  }
+  each_range_reverse(count, (item) => {
+    let text = ctx.measureText(reference);
+    let { width } = text;
+    if (width <= canvas_width) {
+    }
+  });
   log({
     text,
   });
