@@ -66,17 +66,17 @@ export function js_dollar(ast) {
       }
       if (remaining === "e") {
         let list = js_name_unique(ast, "list");
-        let name = js_name_unique(ast, "item");
+        let item = js_name_unique(ast, "item");
         let e = js_parse_expression(
           js_code_call_args(each.name, [
             list,
-            js_code_arrow_block_args([name], ""),
+            js_code_arrow_block_args([item], ""),
           ]),
         );
         object_replace(node, e);
       }
       if (remaining === "er") {
-        let list = js_name_unique(ast, "list");
+        let list = js_name_unique(ast, "count");
         let name = js_name_unique(ast, "item");
         let e = js_parse_expression(
           js_code_call_args(each_range.name, [
@@ -88,23 +88,23 @@ export function js_dollar(ast) {
       }
       if (remaining === "ea") {
         let list = js_name_unique(ast, "list");
-        let name = js_name_unique(ast, "item");
+        let item = js_name_unique(ast, "item");
         let e = js_parse_expression(
           js_code_call_args(each_async.name, [
             list,
-            js_code_arrow_block_args_async([name], ""),
+            js_code_arrow_block_args_async([item], ""),
           ]),
         );
         object_replace(node, e);
       }
       if (remaining === "ei") {
         let list = js_name_unique(ast, "list");
-        let name = js_name_unique(ast, "item");
+        let item = js_name_unique(ast, "item");
         let index = js_name_unique(ast, "index");
         let e = js_parse_expression(
           js_code_call_args(each_index.name, [
             list,
-            js_code_arrow_block_args([name, index], ""),
+            js_code_arrow_block_args([item, index], ""),
           ]),
         );
         object_replace(node, e);
