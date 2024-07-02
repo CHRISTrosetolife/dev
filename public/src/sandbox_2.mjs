@@ -64,7 +64,7 @@ export async function sandbox_2() {
   });
   let index_current = 0;
   let count = 1;
-  list_slice(tokens, index_current, index_current + count);
+  let sliced = list_slice(tokens, index_current, index_current + count);
   ctx.fillText(reference, 0, 215);
   let buffer = canvas.toBuffer("image/png");
   let output_path = folder_gitignore_path("test.png");
