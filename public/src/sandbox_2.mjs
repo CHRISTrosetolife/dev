@@ -82,7 +82,7 @@ export async function sandbox_2() {
       let padding = line_height_to_padding(line);
       if (width <= canvas_width) {
         list_add(lines, {
-          height: measured.actualBoundingBoxAscent,
+          height,
           text: sliced_text,
         });
         index_current += count + 1;
