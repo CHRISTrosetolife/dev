@@ -32,6 +32,7 @@ export function function_aliases() {
     o: "function_open",
     p: "function_param_new",
     pf: "function_param_move_first",
+    pm: "function_param_move",
     r: "function_rename",
     re: "computer_restart",
     s: "function_search",
