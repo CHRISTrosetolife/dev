@@ -46,6 +46,8 @@ export async function sandbox_2() {
   ctx.fillStyle = "white";
   let text = ctx.measureText(reference);
   let { width } = text;
+  if (width <= canvas_width) {
+  }
   log({
     text,
   });
