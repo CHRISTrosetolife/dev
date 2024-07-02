@@ -23,6 +23,7 @@ import { number_max } from "./number_max.mjs";
 import { list_slice } from "./list_slice.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { list_size } from "./list_size.mjs";
+import { list_take } from "./list_take.mjs";
 export async function sandbox_2() {
   assert_arguments_length(arguments, 0);
   let book_id = "MAT";
@@ -90,7 +91,7 @@ export async function sandbox_2() {
   let height_total = list_property_sum(lines, "height");
   assert(less_than_equal, [height_total, canvas_height]);
   each_index(lines, (line, index) => {
-    list_property_sum(lines, "height");
+    list_property_sum(list_take(index), "height");
     ctx.fillText(line.text, 0, 215);
   });
   let buffer = canvas.toBuffer("image/png");
