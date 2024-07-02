@@ -6,11 +6,12 @@ import { createCanvas, loadImage } from "canvas";
 import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
 export async function sandbox_2() {
   assert_arguments_length(arguments, 0);
-  let canvas = createCanvas(1080, 1920);
+  let width = 1080;
+  let canvas = createCanvas(width, 1920);
   let data = await file_read_binary("./img/bible_green.jpg");
   let image = await loadImage(data);
   let ctx = canvas.getContext("2d");
-  ctx.drawImage(image, 50, 0, 70, 70);
+  ctx.drawImage(image, 0, 0, 70, 70);
   ctx.font = "300px Arial";
   ctx.fillText("Awesome!", 0, 0);
   let text = ctx.measureText("Awesome!");
