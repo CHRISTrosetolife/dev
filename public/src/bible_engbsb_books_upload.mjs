@@ -8,7 +8,9 @@ import { storage_upload_object } from "./storage_upload_object.mjs";
 import { list_find_property_or } from "./list_find_property_or.mjs";
 import { list_add } from "./list_add.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
+import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export async function bible_engbsb_books_upload() {
+  assert_arguments_length(arguments, 0);
   let bible_folder = "engbsb";
   let books = [];
   let lookup = await bible_books_names_lookup(bible_folder);
