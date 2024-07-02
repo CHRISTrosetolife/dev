@@ -95,7 +95,7 @@ export async function sandbox_2() {
   let height_total = list_property_sum(lines, "height");
   assert(less_than_equal, [height_total, canvas_height]);
   each_index(lines, (line, index) => {
-    let padding = line_height_to_padding(line);
+    let padding = line_height_to_padding(line.height);
     let offset = list_map_sum(
       list_take(lines, index + 1),
       (line) => line.height + line_height_to_padding_double(line.height),
