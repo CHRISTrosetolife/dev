@@ -1,5 +1,5 @@
+import { js_param_new_at } from "./js_param_new_at.mjs";
 import { data_identifiers_each } from "./data_identifiers_each.mjs";
-import { js_param_new } from "./js_param_new.mjs";
 import { function_transform_args_split_lambda } from "./function_transform_args_split_lambda.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export async function function_param_new_at(
@@ -12,7 +12,7 @@ export async function function_param_new_at(
   async function lambda(fn_name) {
     await function_transform_args_split_lambda(
       fn_name,
-      [js_param_new],
+      [js_param_new_at],
       [function_name, param_name, default_value_string],
     );
   }
