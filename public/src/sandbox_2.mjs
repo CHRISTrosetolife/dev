@@ -91,6 +91,7 @@ export async function sandbox_2() {
   let height_total = list_property_sum(lines, "height");
   assert(less_than_equal, [height_total, canvas_height]);
   each_index(lines, (line, index) => {
+    let padding = line.height / 10;
     let offset = list_property_sum(list_take(lines, index + 1), "height");
     ctx.fillText(line.text, 0, offset);
   });
