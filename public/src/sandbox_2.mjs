@@ -72,6 +72,7 @@ export async function sandbox_2() {
       }
     });
   });
+  each_range_reverse(font_size_px + 1, (i) => {});
   let lines = [];
   let index_current = 0;
   while (index_current < list_size(tokens)) {
