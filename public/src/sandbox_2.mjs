@@ -25,7 +25,7 @@ export async function sandbox_2() {
   ctx.fillRect(0, 0, width, height);
   ctx.font = "300px Arial";
   ctx.fillStyle = "white";
-  ctx.fillText("Awesome!", 10, 10);
+  ctx.fillText("Awesome!", 100, 0);
   let text = ctx.measureText("Awesome!");
   let buffer = canvas.toBuffer("image/png");
   let output_path = folder_gitignore_path("test.png");
