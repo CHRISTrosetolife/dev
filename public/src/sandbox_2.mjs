@@ -23,7 +23,7 @@ export async function sandbox_2() {
     app_gs_bible_chapter_name(book_id, chapter),
   );
   let match = list_find_property(verses, "verse_number", verse_number);
-  let text = list_join_space(object_property_get(object, property_name));
+  let text_verse = list_join_space(object_property_get(match, "tokens"));
   let book_name = bible_book_name(book_id, chapter);
   bible_reference(book_name, chapter, verse_number);
   let width = 1080;
