@@ -47,7 +47,8 @@ export async function sandbox_2() {
   ctx.fillStyle = "white";
   let font_size_px_max = 300;
   let font_size_px;
-  each_range_reverse(font_size_px_max + 1, (font_size_px) => {
+  each_range_reverse(font_size_px_max + 1, (i) => {
+    font_size_px = i;
     ctx.font = string_combine_multiple([font_size_px, "px Arial"]);
     let text = ctx.measureText(reference);
     let { width } = text;
