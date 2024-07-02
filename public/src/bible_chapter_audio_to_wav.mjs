@@ -7,9 +7,9 @@ import { bible_chapter_audio_download } from "./bible_chapter_audio_download.mjs
 import { path_join } from "./path_join.mjs";
 export async function bible_chapter_audio_to_wav(bible_folder, chapter_name) {
   let downloads = await bible_chapter_audio_download(
+    project_name,
     bible_folder,
     chapter_name,
-    project_name,
   );
   await each_async(downloads, async (download) => {
     let { path } = download;

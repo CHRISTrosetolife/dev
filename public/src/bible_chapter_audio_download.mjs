@@ -13,9 +13,9 @@ import { path_join } from "./path_join.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
 export async function bible_chapter_audio_download(
+  project_name,
   bible_folder,
   chapter_name,
-  project_name,
 ) {
   let folder_name = bible_folder;
   folder_name = bible_chapter_audio_download_folder_name();
