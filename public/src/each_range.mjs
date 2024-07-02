@@ -1,5 +1,5 @@
 import { range } from "./range.mjs";
 import { each } from "./each.mjs";
-export function each_range(atom_count, lambda) {
-  each(range(atom_count), lambda);
+export function each_range(count, lambda) {
+  each(range(count), lambda);
 }
