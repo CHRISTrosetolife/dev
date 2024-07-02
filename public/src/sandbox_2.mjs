@@ -17,6 +17,7 @@ import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
 import { number_max } from "./number_max.mjs";
 import { list_slice } from "./list_slice.mjs";
 import { list_join_space } from "./list_join_space.mjs";
+import { list_index_last } from "./list_index_last.mjs";
 export async function sandbox_2() {
   assert_arguments_length(arguments, 0);
   let book_id = "MAT";
@@ -64,7 +65,7 @@ export async function sandbox_2() {
     });
   });
   let index_current = 0;
-  each_range_reverse(count2, (item) => {
+  each_range_reverse(list_index_last(tokens) - index_current, (item) => {
     let count = 1;
     let sliced = list_slice(tokens, index_current, index_current + count);
     let sliced_text = list_join_space(sliced);
