@@ -92,7 +92,7 @@ export async function sandbox_2() {
   assert(less_than_equal, [height_total, canvas_height]);
   each_index(lines, (line, index) => {
     let offset = list_property_sum(list_take(lines, index + 1), "height");
-    ctx.fillText(line.text, 0, 215);
+    ctx.fillText(line.text, 0, offset);
   });
   let buffer = canvas.toBuffer("image/png");
   let output_path = folder_gitignore_path("test.png");
