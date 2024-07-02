@@ -46,7 +46,7 @@ export async function sandbox_2() {
   ctx.fillStyle = "white";
   let font_size_px_max = 300;
   each_range_reverse(font_size_px_max + 1, (font_size_px) => {
-    ctx.font = "300px Arial";
+    (ctx.font = $s), "px Arial";
     let text = ctx.measureText(reference);
     let { width } = text;
     if (width <= canvas_width) {
