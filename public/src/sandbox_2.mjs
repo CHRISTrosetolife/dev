@@ -69,6 +69,10 @@ export async function sandbox_2() {
   let sliced_text = list_join_space(sliced);
   let measured = ctx.measureText(sliced_text);
   let { width } = measured;
+  if (width <= canvas_width) {
+    let text_height = object_property_get(measured, "actualBoundingBoxAscent");
+    return true;
+  }
   ctx.fillText(reference, 0, 215);
   let buffer = canvas.toBuffer("image/png");
   let output_path = folder_gitignore_path("test.png");
