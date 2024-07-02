@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { each_async } from "./each_async.mjs";
 import { bible_chapter_name_parse } from "./bible_chapter_name_parse.mjs";
 import { list_map_sum } from "./list_map_sum.mjs";
@@ -30,6 +31,7 @@ export async function bible_chapter_images(bible_folder, chapter_name) {
   let verses = await bible_chapter(bible_folder, chapter_name);
   await each_async(verses, async (verse) => {
     let { verse_number } = verse;
+    log({});
     let match = list_find_property(verses, "verse_number", verse_number);
     let tokens = object_property_get(match, "tokens");
     let book_name = bible_book_name(book_code);
