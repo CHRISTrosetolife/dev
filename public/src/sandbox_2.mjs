@@ -1,4 +1,3 @@
-import { exit } from "./exit.mjs";
 import { log } from "./log.mjs";
 import { list_add } from "./list_add.mjs";
 import { each } from "./each.mjs";
@@ -70,11 +69,8 @@ export async function sandbox_2() {
   let lines = [];
   let index_current = 0;
   while (index_current < list_size(tokens)) {
-    each_range_reverse(list_size(tokens) - index_current + 1, (count) => {
-      if (count === 0) {
-        exit();
-      }
-      let sliced = list_slice(tokens, index_current, index_current + count);
+    each_range_reverse(list_size(tokens) - index_current, (count) => {
+      let sliced = list_slice(tokens, index_current, index_current + count + 1);
       let sliced_text = list_join_space(sliced);
       log({
         sliced_text,
@@ -87,7 +83,7 @@ export async function sandbox_2() {
       let { width } = measured;
       if (width <= canvas_width) {
         list_add(lines, sliced_text);
-        index_current += count;
+        index_current += count + 1;
         return true;
       }
     });
