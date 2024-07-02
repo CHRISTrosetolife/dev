@@ -9,9 +9,9 @@ export async function function_param_new(
 ) {
   assert_arguments_length(arguments, 3);
   await data_identifiers_each(function_name, lambda);
-  async function lambda(fn) {
+  async function lambda(fn_name) {
     await function_transform_args_split_lambda(
-      fn,
+      fn_name,
       [js_param_new],
       [function_name, param_name, default_value_string],
     );
