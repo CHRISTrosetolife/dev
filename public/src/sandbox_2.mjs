@@ -64,6 +64,7 @@ export async function sandbox_2() {
     });
   });
   let index_current = 0;
+  each_range_reverse(count2, (item) => {});
   let count = 1;
   let sliced = list_slice(tokens, index_current, index_current + count);
   let sliced_text = list_join_space(sliced);
