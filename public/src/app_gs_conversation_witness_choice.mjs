@@ -1,3 +1,4 @@
+import { app_gs_bible_chapter_name } from "./app_gs_bible_chapter_name.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { list_last } from "./list_last.mjs";
@@ -7,7 +8,6 @@ import { list_get } from "./list_get.mjs";
 import { app_gs_bible_chapter_prefix } from "./app_gs_bible_chapter_prefix.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { function_run } from "./function_run.mjs";
-import { number_pad } from "./number_pad.mjs";
 import { integer_parse } from "./integer_parse.mjs";
 import { string_case_upper } from "./string_case_upper.mjs";
 import { bible_books_prefix_to_name } from "./bible_books_prefix_to_name.mjs";
@@ -27,7 +27,7 @@ export async function app_gs_conversation_witness_choice(
   let verses = await function_run(
     string_combine_multiple([
       app_gs_bible_chapter_prefix(),
-      string_combine_multiple([book_id, number_pad(chapter, 2)]),
+      app_gs_bible_chapter_name(book_id, chapter),
     ]),
     [],
   );
