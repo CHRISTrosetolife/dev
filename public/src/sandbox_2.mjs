@@ -53,7 +53,7 @@ export async function sandbox_2() {
     each_range_reverse(font_size_px + 1, (i) => {
       font_size_px = i;
       ctx.font = string_combine_multiple([font_size_px, "px Arial"]);
-      let text = ctx.measureText(reference);
+      let text = ctx.measureText(token);
       let { width } = text;
       if (width <= canvas_width) {
         text_height = object_property_get(text, "actualBoundingBoxAscent");
