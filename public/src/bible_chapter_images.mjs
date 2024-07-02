@@ -25,14 +25,14 @@ import { list_size } from "./list_size.mjs";
 import { list_take } from "./list_take.mjs";
 export async function bible_chapter_images(bible_folder, chapter_name) {
   assert_arguments_length(arguments, 2);
-  let book_id = "MAT";
+  let book_code = "MAT";
   let chapter = "1";
   let verse_number = "1";
   let { book_code, chapter_code } = bible_chapter_name_parse(chapter_name);
   let verses = await bible_chapter(bible_folder, chapter_name);
   let match = list_find_property(verses, "verse_number", verse_number);
   let tokens = object_property_get(match, "tokens");
-  let book_name = bible_book_name(book_id, chapter);
+  let book_name = bible_book_name(book_code);
   let reference = bible_reference(book_name, chapter, verse_number);
   list_add_beginning(tokens, reference);
   let canvas_width = 1080;
