@@ -27,7 +27,7 @@ export async function bible_chapter_images(bible_folder, chapter_name) {
   assert_arguments_length(arguments, 2);
   let { book_code, chapter_code } = bible_chapter_name_parse(chapter_name);
   let verses = await bible_chapter(bible_folder, chapter_name);
-  each(list, (item) => {});
+  each(verses, (verse) => {});
   let verse_number = "1";
   let match = list_find_property(verses, "verse_number", verse_number);
   let tokens = object_property_get(match, "tokens");
