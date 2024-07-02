@@ -55,10 +55,10 @@ export async function sandbox_2() {
     each_range_reverse(font_size_px + 1, (i) => {
       font_size_px = i;
       ctx.font = string_combine_multiple([font_size_px, "px Arial"]);
-      let text = ctx.measureText(token);
-      let { width } = text;
+      let measured = ctx.measureText(token);
+      let { width } = measured;
       if (width <= canvas_width) {
-        text_height = object_property_get(text, "actualBoundingBoxAscent");
+        text_height = object_property_get(measured, "actualBoundingBoxAscent");
         return true;
       }
     });
@@ -67,7 +67,7 @@ export async function sandbox_2() {
   let count = 1;
   let sliced = list_slice(tokens, index_current, index_current + count);
   let sliced_text = list_join_space(sliced);
-  let text = ctx.measureText(sliced_text);
+  let measured = ctx.measureText(sliced_text);
   ctx.fillText(reference, 0, 215);
   let buffer = canvas.toBuffer("image/png");
   let output_path = folder_gitignore_path("test.png");
