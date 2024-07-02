@@ -22,7 +22,7 @@ export async function sandbox_2() {
     bigger,
   );
   ctx.fillStyle = "rgba(0,0,0,0.5)";
-  ctx.fillRect(0, 0, width, 1920);
+  ctx.fillRect(0, 0, width, height);
   ctx.font = "300px Arial";
   ctx.fillText("Awesome!", 0, 0);
   let text = ctx.measureText("Awesome!");
