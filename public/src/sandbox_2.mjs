@@ -73,7 +73,9 @@ export async function sandbox_2() {
     each_range_reverse(list_index_last(tokens) - index_current, (count) => {
       let sliced = list_slice(tokens, index_current, index_current + count);
       let sliced_text = list_join_space(sliced);
-      log({});
+      log({
+        sliced_text,
+      });
       let measured = ctx.measureText(sliced_text);
       let { width } = measured;
       if (width <= canvas_width) {
