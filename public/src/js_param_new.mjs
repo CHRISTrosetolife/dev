@@ -22,7 +22,7 @@ export async function js_param_new(
   if (needs_imports_add) {
     await js_imports_add(ast);
   }
-  function js_param_actual(ast) {
+  function js_param_actual(ast, function_name) {
     let name = js_declaration_single_name(ast);
     if (!equal(name, function_name)) {
       return;
@@ -31,7 +31,7 @@ export async function js_param_new(
     let { params } = declaration;
     return params;
   }
-  let params = js_param_actual(ast);
+  let params = js_param_actual(ast, function_name);
   let param_new = js_parse_expression(param_name);
   list_add(params, param_new);
   function lambda(args) {
