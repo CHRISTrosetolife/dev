@@ -12,8 +12,8 @@ export async function js_param_move(
 ) {
   assert_arguments_length(arguments, 4);
   param_index = integer_parse(param_index);
+  param_index_new = integer_parse(param_index_new);
   assert(number_is, [param_index]);
-  param_index = integer_parse(param_index);
   assert(number_is, [param_index]);
   js_param_generic(
     ast,
