@@ -17,7 +17,7 @@ export async function js_param_move_first(ast, function_name, param_index) {
       list_add(args, default_value);
     },
     (params) => {
-      let a = list_remove_at(args, params);
+      let p = list_remove_at(args, params);
       list_add(params, param_new);
     },
   );
