@@ -20,7 +20,6 @@ import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
 import { number_max } from "./number_max.mjs";
 import { list_slice } from "./list_slice.mjs";
 import { list_join_space } from "./list_join_space.mjs";
-import { list_index_last } from "./list_index_last.mjs";
 import { list_size } from "./list_size.mjs";
 export async function sandbox_2() {
   assert_arguments_length(arguments, 0);
@@ -71,7 +70,7 @@ export async function sandbox_2() {
   let lines = [];
   let index_current = 0;
   while (index_current < list_size(tokens)) {
-    each_range_reverse(list_index_last(tokens) - index_current, (count) => {
+    each_range_reverse(list_size(tokens) - index_current, (count) => {
       if (count === 0) {
         exit();
       }
