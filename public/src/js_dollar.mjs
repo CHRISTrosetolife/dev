@@ -76,11 +76,11 @@ export function js_dollar(ast) {
         object_replace(node, e);
       }
       if (remaining === "er") {
-        let list = js_name_unique(ast, "count");
+        let count = js_name_unique(ast, "count");
         let item = js_name_unique(ast, "item");
         let e = js_parse_expression(
           js_code_call_args(each_range.name, [
-            list,
+            count,
             js_code_arrow_block_args([item], ""),
           ]),
         );
