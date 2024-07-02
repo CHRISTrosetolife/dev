@@ -7,7 +7,8 @@ import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
 export async function sandbox_2() {
   assert_arguments_length(arguments, 0);
   let width = 1080;
-  let canvas = createCanvas(width, 1920);
+  let height = 1920;
+  let canvas = createCanvas(width, height);
   let data = await file_read_binary("./img/bible_green.jpg");
   let image = await loadImage(data);
   let ctx = canvas.getContext("2d");
