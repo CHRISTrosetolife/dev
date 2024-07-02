@@ -62,6 +62,7 @@ export async function sandbox_2() {
       }
     });
   });
+  let index_current = 0;
   let count = 1;
   list_slice(tokens, index_current, index_current + count);
   ctx.fillText(reference, 0, 215);
