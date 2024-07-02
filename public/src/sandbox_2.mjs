@@ -6,8 +6,7 @@ export async function sandbox_2() {
   assert_arguments_length(arguments, 0);
   let canvas = createCanvas(1080, 1920);
   let ctx = canvas.getContext("2d");
-  ctx.font = "30px Impact";
-  ctx.rotate(0.1);
+  ctx.font = "30px Arial";
   ctx.fillText("Awesome!", 50, 100);
   let text = ctx.measureText("Awesome!");
   let buffer = canvas.toBuffer("image/png");
