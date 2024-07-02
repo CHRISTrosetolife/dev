@@ -64,8 +64,9 @@ export async function sandbox_2() {
       font_size_px = i;
       ctx.font = string_combine_multiple([font_size_px, "px Arial"]);
       let measured = ctx.measureText(token);
-      let { width } = measured;
-      if (width <= canvas_width) {
+      let { width, actualBoundingBoxAscent: height } = measured;
+      let padding = line_height_to_padding_double(height);
+      if (width <= canvas_width - padding) {
         text_height = object_property_get(measured, "actualBoundingBoxAscent");
         return true;
       }
