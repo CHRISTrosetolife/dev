@@ -12,7 +12,7 @@ export async function function_param_new(
   assert_arguments_length(arguments, 3);
   let dis = await data_identifiers();
   let fns = object_property_get(dis, function_name);
-  await each_async(fns);
+  await each_async(fns, lambda);
   async function lambda(fn) {
     await function_transform_args_split_lambda(
       fn,
