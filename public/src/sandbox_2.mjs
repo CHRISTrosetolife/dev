@@ -74,6 +74,7 @@ export async function sandbox_2() {
     let { width } = measured;
     if (width <= canvas_width) {
       list_add(lines, sliced_text);
+      index_current += count;
     }
   });
   ctx.fillText(reference, 0, 215);
