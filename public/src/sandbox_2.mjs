@@ -90,6 +90,7 @@ export async function sandbox_2() {
   let height_total = list_property_sum(lines, "height");
   assert(less_than_equal, [height_total, canvas_height]);
   each_index(lines, (line, index) => {
+    list_property_sum(lines, "height");
     ctx.fillText(line.text, 0, 215);
   });
   let buffer = canvas.toBuffer("image/png");
