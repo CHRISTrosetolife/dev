@@ -5,9 +5,9 @@ import { string_is } from "./string_is.mjs";
 import { assert } from "./assert.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export async function js_param_new_generic(
+  ast,
   param_name,
   default_value_string,
-  ast,
   function_name,
   lambda_add,
 ) {

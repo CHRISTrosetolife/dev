@@ -7,9 +7,9 @@ export async function js_param_new(
   default_value_string,
 ) {
   await js_param_new_generic(
+    ast,
     param_name,
     default_value_string,
-    ast,
     function_name,
     list_add,
   );
