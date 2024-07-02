@@ -8,5 +8,5 @@ export function js_param_actual(ast, function_name, lambda) {
   }
   let declaration = js_declaration_single(ast);
   let { params } = declaration;
-  return params;
+  lambda(params);
 }
