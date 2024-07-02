@@ -19,6 +19,7 @@ import { number_max } from "./number_max.mjs";
 import { list_slice } from "./list_slice.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { list_index_last } from "./list_index_last.mjs";
+import { list_size } from "./list_size.mjs";
 export async function sandbox_2() {
   assert_arguments_length(arguments, 0);
   let book_id = "MAT";
@@ -67,17 +68,19 @@ export async function sandbox_2() {
   });
   let lines = [];
   let index_current = 0;
-  each_range_reverse(list_index_last(tokens) - index_current, (count) => {
-    let sliced = list_slice(tokens, index_current, index_current + count);
-    let sliced_text = list_join_space(sliced);
-    let measured = ctx.measureText(sliced_text);
-    let { width } = measured;
-    if (width <= canvas_width) {
-      list_add(lines, sliced_text);
-      index_current += count;
-      return true;
-    }
-  });
+  while (index_current < list_size(tokens)) {
+    each_range_reverse(list_index_last(tokens) - index_current, (count) => {
+      let sliced = list_slice(tokens, index_current, index_current + count);
+      let sliced_text = list_join_space(sliced);
+      let measured = ctx.measureText(sliced_text);
+      let { width } = measured;
+      if (width <= canvas_width) {
+        list_add(lines, sliced_text);
+        index_current += count;
+        return true;
+      }
+    });
+  }
   ctx.fillText(reference, 0, 215);
   let buffer = canvas.toBuffer("image/png");
   let output_path = folder_gitignore_path("test.png");
