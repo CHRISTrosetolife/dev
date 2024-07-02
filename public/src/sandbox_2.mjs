@@ -16,5 +16,6 @@ export async function sandbox_2() {
   ctx.fillText("Awesome!", 0, 0);
   let text = ctx.measureText("Awesome!");
   let buffer = canvas.toBuffer("image/png");
-  await file_overwrite_binary(folder_gitignore_path("test.png"), buffer);
+  let output_path = folder_gitignore_path("test.png");
+  await file_overwrite_binary(output_path, buffer);
 }
