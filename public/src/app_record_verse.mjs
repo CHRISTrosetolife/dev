@@ -45,7 +45,7 @@ export async function app_record_verse(
       let when = date_string_iso_file();
       let storage_path = string_combine_multiple([
         folder_audio_bible(),
-        "test/",
+        "nt/",
         book_code,
         "/",
         chapter,
