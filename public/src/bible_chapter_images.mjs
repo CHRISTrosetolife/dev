@@ -1,3 +1,4 @@
+import { each_async } from "./each_async.mjs";
 import { bible_chapter_name_parse } from "./bible_chapter_name_parse.mjs";
 import { list_map_sum } from "./list_map_sum.mjs";
 import { each_index } from "./each_index.mjs";
@@ -27,92 +28,96 @@ export async function bible_chapter_images(bible_folder, chapter_name) {
   assert_arguments_length(arguments, 2);
   let { book_code, chapter_code } = bible_chapter_name_parse(chapter_name);
   let verses = await bible_chapter(bible_folder, chapter_name);
-  each(verses, (verse) => {});
-  let verse_number = "1";
-  let match = list_find_property(verses, "verse_number", verse_number);
-  let tokens = object_property_get(match, "tokens");
-  let book_name = bible_book_name(book_code);
-  let reference = bible_reference(book_name, chapter_code, verse_number);
-  list_add_beginning(tokens, reference);
-  let canvas_width = 1080;
-  let canvas_height = 1920;
-  let bigger = number_max(canvas_width, canvas_height);
-  let canvas = createCanvas(canvas_width, canvas_height);
-  let ctx = canvas.getContext("2d");
-  let data = await file_read_binary("./img/bible_green.jpg");
-  let image = await loadImage(data);
-  ctx.drawImage(
-    image,
-    -(bigger - canvas_width) / 2,
-    -(bigger - canvas_height) / 2,
-    bigger,
-    bigger,
-  );
-  ctx.fillStyle = "rgba(0,0,0,0.65)";
-  ctx.fillRect(0, 0, canvas_width, canvas_height);
-  ctx.fillStyle = "white";
-  let font_size_px_max = 300;
-  let font_size_px = font_size_px_max;
-  each(tokens, (token) => {
-    let text_height;
-    each_range_reverse(font_size_px + 1, (i) => {
-      font_size_px = i;
-      ctx.font = string_combine_multiple([font_size_px, "px Arial"]);
-      let measured = ctx.measureText(token);
-      let { width, actualBoundingBoxAscent: height } = measured;
-      let padding = line_height_to_padding_double(height);
-      if (width <= canvas_width - padding) {
-        text_height = object_property_get(measured, "actualBoundingBoxAscent");
-        return true;
-      }
-    });
-  });
-  let lines = null;
-  let offset_height = 0;
-  each_range_reverse(font_size_px + 1, (i) => {
-    lines = [];
-    font_size_px = i;
-    ctx.font = string_combine_multiple([font_size_px, "px Arial"]);
-    let index_current = 0;
-    while (index_current < list_size(tokens)) {
-      each_range_reverse(list_size(tokens) - index_current, (count) => {
-        let sliced = list_slice(
-          tokens,
-          index_current,
-          index_current + count + 1,
-        );
-        let sliced_text = list_join_space(sliced);
-        let measured = ctx.measureText(sliced_text);
+  await each_async(verses, async (verse) => {
+    let verse_number = "1";
+    let match = list_find_property(verses, "verse_number", verse_number);
+    let tokens = object_property_get(match, "tokens");
+    let book_name = bible_book_name(book_code);
+    let reference = bible_reference(book_name, chapter_code, verse_number);
+    list_add_beginning(tokens, reference);
+    let canvas_width = 1080;
+    let canvas_height = 1920;
+    let bigger = number_max(canvas_width, canvas_height);
+    let canvas = createCanvas(canvas_width, canvas_height);
+    let ctx = canvas.getContext("2d");
+    let data = await file_read_binary("./img/bible_green.jpg");
+    let image = await loadImage(data);
+    ctx.drawImage(
+      image,
+      -(bigger - canvas_width) / 2,
+      -(bigger - canvas_height) / 2,
+      bigger,
+      bigger,
+    );
+    ctx.fillStyle = "rgba(0,0,0,0.65)";
+    ctx.fillRect(0, 0, canvas_width, canvas_height);
+    ctx.fillStyle = "white";
+    let font_size_px_max = 300;
+    let font_size_px = font_size_px_max;
+    each(tokens, (token) => {
+      let text_height;
+      each_range_reverse(font_size_px + 1, (i) => {
+        font_size_px = i;
+        ctx.font = string_combine_multiple([font_size_px, "px Arial"]);
+        let measured = ctx.measureText(token);
         let { width, actualBoundingBoxAscent: height } = measured;
         let padding = line_height_to_padding_double(height);
         if (width <= canvas_width - padding) {
-          list_add(lines, {
-            height,
-            text: sliced_text,
-          });
-          index_current += count + 1;
+          text_height = object_property_get(
+            measured,
+            "actualBoundingBoxAscent",
+          );
           return true;
         }
       });
-    }
-    let height_total = list_map_sum(lines, line_to_height_padded);
-    if (less_than_equal(height_total, canvas_height)) {
-      offset_height = (height_total - canvas_height) / 2;
-      return true;
-    }
+    });
+    let lines = null;
+    let offset_height = 0;
+    each_range_reverse(font_size_px + 1, (i) => {
+      lines = [];
+      font_size_px = i;
+      ctx.font = string_combine_multiple([font_size_px, "px Arial"]);
+      let index_current = 0;
+      while (index_current < list_size(tokens)) {
+        each_range_reverse(list_size(tokens) - index_current, (count) => {
+          let sliced = list_slice(
+            tokens,
+            index_current,
+            index_current + count + 1,
+          );
+          let sliced_text = list_join_space(sliced);
+          let measured = ctx.measureText(sliced_text);
+          let { width, actualBoundingBoxAscent: height } = measured;
+          let padding = line_height_to_padding_double(height);
+          if (width <= canvas_width - padding) {
+            list_add(lines, {
+              height,
+              text: sliced_text,
+            });
+            index_current += count + 1;
+            return true;
+          }
+        });
+      }
+      let height_total = list_map_sum(lines, line_to_height_padded);
+      if (less_than_equal(height_total, canvas_height)) {
+        offset_height = (height_total - canvas_height) / 2;
+        return true;
+      }
+    });
+    each_index(lines, (line, index) => {
+      let padding = line_height_to_padding(line.height);
+      let offset_line = list_map_sum(
+        list_take(lines, index + 1),
+        line_to_height_padded,
+      );
+      ctx.fillText(line.text, padding, offset_line + offset_height);
+    });
+    let buffer = canvas.toBuffer("image/png");
+    let output_path = folder_gitignore_path("test.png");
+    await file_overwrite_binary(output_path, buffer);
+    await file_open(output_path);
   });
-  each_index(lines, (line, index) => {
-    let padding = line_height_to_padding(line.height);
-    let offset_line = list_map_sum(
-      list_take(lines, index + 1),
-      line_to_height_padded,
-    );
-    ctx.fillText(line.text, padding, offset_line + offset_height);
-  });
-  let buffer = canvas.toBuffer("image/png");
-  let output_path = folder_gitignore_path("test.png");
-  await file_overwrite_binary(output_path, buffer);
-  await file_open(output_path);
   function line_to_height_padded(line) {
     return line.height + line_height_to_padding_double(line.height);
   }
