@@ -97,7 +97,7 @@ export async function sandbox_2() {
       list_take(lines, index + 1),
       (line) => line.height + 2 * line_height_to_padding(line.height),
     );
-    ctx.fillText(line.text, 0, offset);
+    ctx.fillText(line.text, padding, offset);
   });
   let buffer = canvas.toBuffer("image/png");
   let output_path = folder_gitignore_path("test.png");
