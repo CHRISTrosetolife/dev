@@ -98,8 +98,8 @@ export async function sandbox_2() {
       });
     }
     let height_total = list_map_sum(lines, line_to_height_padded);
+    assert(less_than_equal, [height_total, canvas_height]);
   });
-  assert(less_than_equal, [height_total, canvas_height]);
   each_index(lines, (line, index) => {
     let padding = line_height_to_padding(line.height);
     let offset = list_map_sum(
