@@ -84,8 +84,7 @@ export async function sandbox_2() {
       }
     });
   }
-  let property_name = "width";
-  return list_property_sum(lines, property_name);
+  return list_property_sum(lines, "width");
   ctx.fillText(reference, 0, 215);
   let buffer = canvas.toBuffer("image/png");
   let output_path = folder_gitignore_path("test.png");
