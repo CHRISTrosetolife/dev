@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { list_add } from "./list_add.mjs";
 import { each } from "./each.mjs";
 import { list_add_beginning } from "./list_add_beginning.mjs";
@@ -72,13 +71,6 @@ export async function sandbox_2() {
     each_range_reverse(list_size(tokens) - index_current, (count) => {
       let sliced = list_slice(tokens, index_current, index_current + count + 1);
       let sliced_text = list_join_space(sliced);
-      log({
-        sliced_text,
-        index_current,
-        count,
-        lines,
-        tokens,
-      });
       let measured = ctx.measureText(sliced_text);
       let { width } = measured;
       if (width <= canvas_width) {
