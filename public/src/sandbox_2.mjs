@@ -1,3 +1,4 @@
+import { app_gs_bible_chapter_name } from "./app_gs_bible_chapter_name.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
 import { bible_book_name } from "./bible_book_name.mjs";
 import { bible_reference } from "./bible_reference.mjs";
@@ -15,7 +16,10 @@ export async function sandbox_2() {
   let chapter = "1";
   let verse_number = "1";
   await bible_chapter("engbsb");
-  let book_name = bible_book_name(book_id);
+  let book_name = bible_book_name(
+    book_id,
+    app_gs_bible_chapter_name(book_id, chapter),
+  );
   bible_reference(book_name, chapter, verse_number);
   let width = 1080;
   let height = 1920;
