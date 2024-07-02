@@ -8,6 +8,7 @@ export async function js_param_new_at(
   function_name,
   param_name,
   default_value_string,
+  param_index,
 ) {
   let param_index = integer_parse(param_index);
   assert(number_is, [param_index]);
