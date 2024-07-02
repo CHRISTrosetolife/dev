@@ -15,6 +15,7 @@ import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { createCanvas, loadImage } from "canvas";
 import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
 import { number_max } from "./number_max.mjs";
+import { list_slice } from "./list_slice.mjs";
 export async function sandbox_2() {
   assert_arguments_length(arguments, 0);
   let book_id = "MAT";
@@ -61,7 +62,8 @@ export async function sandbox_2() {
       }
     });
   });
-  each(list, (item) => {});
+  let count = 1;
+  list_slice(tokens, index_current, index_current + count);
   ctx.fillText(reference, 0, 215);
   let buffer = canvas.toBuffer("image/png");
   let output_path = folder_gitignore_path("test.png");
