@@ -47,11 +47,7 @@ export async function app_gs_conversation_witness_choice(
   let answer = list_join_space(answer_texts);
   let choice_text = string_combine_multiple([
     "📖 ",
-    book_name,
-    " ",
-    chapter,
-    ":",
-    verse_number_first,
+    string_combine_multiple([book_name, " ", chapter, ":", verse_number_first]),
     first !== last ? "-" + verse_number_last : "",
     " - ",
     answer,
