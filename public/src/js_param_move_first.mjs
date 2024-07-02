@@ -7,7 +7,7 @@ import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export async function js_param_move_first(ast, function_name, param_index) {
   assert_arguments_length(arguments, 3);
   assert(string_is, [param_index]);
-  js_param_generic(ast, function_name, function lambda(args) {
+  js_param_generic(ast, function_name, function each_caller(args) {
     list_add(args, default_value);
   });
   js_param_actual(ast, function_name, (params) => {
