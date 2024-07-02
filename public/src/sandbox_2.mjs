@@ -1,7 +1,6 @@
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each_range_reverse } from "./each_range_reverse.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { list_join_space } from "./list_join_space.mjs";
 import { list_find_property } from "./list_find_property.mjs";
 import { app_gs_bible_chapter_name } from "./app_gs_bible_chapter_name.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
@@ -24,7 +23,7 @@ export async function sandbox_2() {
     app_gs_bible_chapter_name(book_id, chapter),
   );
   let match = list_find_property(verses, "verse_number", verse_number);
-  let text_verse = list_join_space(object_property_get(match, "tokens"));
+  let text_verse = object_property_get(match, "tokens");
   let book_name = bible_book_name(book_id, chapter);
   let reference = bible_reference(book_name, chapter, verse_number);
   let canvas_width = 1080;
