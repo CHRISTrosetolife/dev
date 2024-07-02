@@ -14,7 +14,7 @@ export async function sandbox_2() {
   let data = await file_read_binary("./img/bible_green.jpg");
   let image = await loadImage(data);
   let ctx = canvas.getContext("2d");
-  ctx.drawImage(image, 0, 0, 70, 70);
+  ctx.drawImage(image, 0, 0, bigger, bigger);
   ctx.font = "300px Arial";
   ctx.fillText("Awesome!", 0, 0);
   let text = ctx.measureText("Awesome!");
