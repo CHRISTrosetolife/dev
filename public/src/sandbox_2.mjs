@@ -1,3 +1,4 @@
+import { list_property_sum } from "./list_property_sum.mjs";
 import { list_add } from "./list_add.mjs";
 import { each } from "./each.mjs";
 import { list_add_beginning } from "./list_add_beginning.mjs";
@@ -19,7 +20,6 @@ import { number_max } from "./number_max.mjs";
 import { list_slice } from "./list_slice.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { list_size } from "./list_size.mjs";
-import { list_map_sum } from "./list_map_sum.mjs";
 export async function sandbox_2() {
   assert_arguments_length(arguments, 0);
   let book_id = "MAT";
@@ -85,9 +85,7 @@ export async function sandbox_2() {
     });
   }
   let property_name = "width";
-  return list_map_sum(lines, (line) =>
-    object_property_get(line, property_name),
-  );
+  return list_property_sum(lines, property_name);
   ctx.fillText(reference, 0, 215);
   let buffer = canvas.toBuffer("image/png");
   let output_path = folder_gitignore_path("test.png");
