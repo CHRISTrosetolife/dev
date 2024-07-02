@@ -52,7 +52,7 @@ export async function sandbox_2() {
     bigger,
     bigger,
   );
-  ctx.fillStyle = "rgba(0,0,0,0.7)";
+  ctx.fillStyle = "rgba(0,0,0,0.65)";
   ctx.fillRect(0, 0, canvas_width, canvas_height);
   ctx.fillStyle = "white";
   let font_size_px_max = 300;
