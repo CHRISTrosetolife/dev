@@ -22,12 +22,15 @@ export async function js_param_new(
   if (needs_imports_add) {
     await js_imports_add(ast);
   }
-  let name = js_declaration_single_name(ast);
-  if (!equal(name, function_name)) {
-    return;
+  function js_param_actual(ast) {
+    let name = js_declaration_single_name(ast);
+    if (!equal(name, function_name)) {
+      return;
+    }
+    let declaration = js_declaration_single(ast);
+    let { params } = declaration;
+    return params;
   }
-  let declaration = js_declaration_single(ast);
-  let { params } = declaration;
   let param_new = js_parse_expression(param_name);
   list_add(params, param_new);
   function lambda(args) {
