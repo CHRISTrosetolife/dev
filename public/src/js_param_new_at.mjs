@@ -1,5 +1,5 @@
+import { list_insert } from "./list_insert.mjs";
 import { js_param_new_generic } from "./js_param_new_generic.mjs";
-import { list_add } from "./list_add.mjs";
 export async function js_param_new_at(
   ast,
   function_name,
@@ -11,6 +11,6 @@ export async function js_param_new_at(
     function_name,
     param_name,
     default_value_string,
-    list_add,
+    (list, item) => list_insert(list, param_index, item),
   );
 }
