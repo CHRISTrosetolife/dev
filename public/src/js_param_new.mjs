@@ -1,7 +1,5 @@
+import { js_param_actual } from "./js_param_actual.mjs";
 import { js_param_existing_each } from "./js_param_existing_each.mjs";
-import { js_declaration_single_name } from "./js_declaration_single_name.mjs";
-import { js_declaration_single } from "./js_declaration_single.mjs";
-import { equal } from "./equal.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
 import { list_add } from "./list_add.mjs";
 import { js_imports_add } from "./js_imports_add.mjs";
@@ -21,15 +19,6 @@ export async function js_param_new(
   js_param_existing_each(ast, function_name, lambda);
   if (needs_imports_add) {
     await js_imports_add(ast);
-  }
-  function js_param_actual(ast, function_name) {
-    let name = js_declaration_single_name(ast);
-    if (!equal(name, function_name)) {
-      return;
-    }
-    let declaration = js_declaration_single(ast);
-    let { params } = declaration;
-    return params;
   }
   let params = js_param_actual(ast, function_name);
   let param_new = js_parse_expression(param_name);
