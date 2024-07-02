@@ -62,7 +62,7 @@ export async function sandbox_2() {
       }
     });
   });
-  list_map(tokens);
+  list_map(tokens, ctx.measureText);
   ctx.fillText(reference, 0, 215);
   let buffer = canvas.toBuffer("image/png");
   let output_path = folder_gitignore_path("test.png");
