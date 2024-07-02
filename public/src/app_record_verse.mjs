@@ -57,7 +57,7 @@ export async function app_record_verse(
         ".mp3",
       ]);
       await firebase_upload(storage_path, blob);
-      if (list_last_is(verse, verses)) {
+      if (list_last_is(verses, verse)) {
         alert("end of chapter");
         html_clear_scroll_top(root);
         return;
