@@ -10,7 +10,7 @@ export async function sandbox_2() {
   let image = await loadImage(data);
   ctx.drawImage(image, 50, 0, 70, 70);
   let ctx = canvas.getContext("2d");
-  ctx.font = "30px Arial";
+  ctx.font = "300px Arial";
   ctx.fillText("Awesome!", 0, 0);
   let text = ctx.measureText("Awesome!");
   let buffer = canvas.toBuffer("image/png");
