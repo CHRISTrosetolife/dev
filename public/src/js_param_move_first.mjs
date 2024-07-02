@@ -1,11 +1,9 @@
 import { list_move_to_beginning } from "./list_move_to_beginning.mjs";
 import { js_param_generic } from "./js_param_generic.mjs";
-import { list_add } from "./list_add.mjs";
 import { assert } from "./assert.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { integer_parse } from "./integer_parse.mjs";
 import { number_is } from "./number_is.mjs";
-import { list_remove_at } from "./list_remove_at.mjs";
 export async function js_param_move_first(ast, function_name, param_index) {
   assert_arguments_length(arguments, 3);
   param_index = integer_parse(param_index);
@@ -17,8 +15,7 @@ export async function js_param_move_first(ast, function_name, param_index) {
       list_move_to_beginning(args, param_index);
     },
     (params) => {
-      let p = list_remove_at(args, params);
-      list_add(params, param_new);
+      list_move_to_beginning(params, param_index);
     },
   );
 }
