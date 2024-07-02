@@ -28,8 +28,7 @@ export async function app_gs_conversation_witness_choice(
   let verses = await function_run(
     string_combine_multiple([
       app_gs_bible_chapter_prefix(),
-      book_id,
-      chapter_id,
+      string_combine_multiple([book_id, chapter_id]),
     ]),
     [],
   );
