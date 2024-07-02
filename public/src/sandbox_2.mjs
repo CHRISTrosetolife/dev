@@ -1,3 +1,4 @@
+import { list_add } from "./list_add.mjs";
 import { each } from "./each.mjs";
 import { list_add_beginning } from "./list_add_beginning.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -72,11 +73,7 @@ export async function sandbox_2() {
     let measured = ctx.measureText(sliced_text);
     let { width } = measured;
     if (width <= canvas_width) {
-      let text_height = object_property_get(
-        measured,
-        "actualBoundingBoxAscent",
-      );
-      return true;
+      list_add(lines);
     }
   });
   ctx.fillText(reference, 0, 215);
