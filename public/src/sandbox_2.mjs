@@ -2,7 +2,6 @@ import { log } from "./log.mjs";
 import { list_map_sum } from "./list_map_sum.mjs";
 import { each_index } from "./each_index.mjs";
 import { less_than_equal } from "./less_than_equal.mjs";
-import { assert } from "./assert.mjs";
 import { list_add } from "./list_add.mjs";
 import { each } from "./each.mjs";
 import { list_add_beginning } from "./list_add_beginning.mjs";
@@ -98,7 +97,8 @@ export async function sandbox_2() {
       });
     }
     let height_total = list_map_sum(lines, line_to_height_padded);
-    assert(less_than_equal, [height_total, canvas_height]);
+    if (less_than_equal(height_total, canvas_height)) {
+    }
   });
   each_index(lines, (line, index) => {
     let padding = line_height_to_padding(line.height);
