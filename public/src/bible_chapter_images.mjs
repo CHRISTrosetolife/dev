@@ -23,7 +23,7 @@ import { list_slice } from "./list_slice.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { list_size } from "./list_size.mjs";
 import { list_take } from "./list_take.mjs";
-export async function sandbox_2() {
+export async function bible_chapter_images() {
   assert_arguments_length(arguments, 0);
   let book_id = "MAT";
   let chapter = "1";
