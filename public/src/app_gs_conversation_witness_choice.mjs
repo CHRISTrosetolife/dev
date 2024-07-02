@@ -24,11 +24,10 @@ export async function app_gs_conversation_witness_choice(
   chapter = integer_parse(chapter);
   verse_index = integer_parse(verse_index);
   objection_index = integer_parse(objection_index);
-  let chapter_id = number_pad(chapter, 2);
   let verses = await function_run(
     string_combine_multiple([
       app_gs_bible_chapter_prefix(),
-      string_combine_multiple([book_id, chapter_id]),
+      string_combine_multiple([book_id, number_pad(chapter, 2)]),
     ]),
     [],
   );
