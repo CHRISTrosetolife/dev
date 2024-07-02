@@ -84,7 +84,7 @@ export async function sandbox_2() {
       }
     });
   }
-  return list_property_sum(lines, "height");
+  let height_total = list_property_sum(lines, "height");
   ctx.fillText(reference, 0, 215);
   let buffer = canvas.toBuffer("image/png");
   let output_path = folder_gitignore_path("test.png");
