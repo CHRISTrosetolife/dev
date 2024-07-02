@@ -23,13 +23,13 @@ import { list_slice } from "./list_slice.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { list_size } from "./list_size.mjs";
 import { list_take } from "./list_take.mjs";
-export async function bible_chapter_images() {
-  assert_arguments_length(arguments, 0);
+export async function bible_chapter_images(bible_folder) {
+  assert_arguments_length(arguments, 1);
   let book_id = "MAT";
   let chapter = "1";
   let verse_number = "1";
   let verses = await bible_chapter(
-    "engbsb",
+    bible_folder,
     app_gs_bible_chapter_name(book_id, chapter),
   );
   let match = list_find_property(verses, "verse_number", verse_number);
