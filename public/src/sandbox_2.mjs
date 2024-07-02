@@ -18,6 +18,7 @@ export async function sandbox_2() {
   await bible_chapter("engbsb");
   let book_name = bible_book_name(
     book_id,
+    chapter,
     app_gs_bible_chapter_name(book_id, chapter),
   );
   bible_reference(book_name, chapter, verse_number);
