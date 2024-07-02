@@ -45,7 +45,7 @@ export async function sandbox_2() {
   ctx.font = "300px Arial";
   ctx.fillStyle = "white";
   let text = ctx.measureText(reference);
-  canvas_width = text;
+  let width = text;
   log({
     text,
   });
