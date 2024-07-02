@@ -6,5 +6,4 @@ export function bible_book_name(book_id) {
     bible_books_prefix_to_name(),
     string_case_upper(book_id),
   );
-  return [];
 }
