@@ -57,7 +57,7 @@ export async function sandbox_2() {
     });
     let { width } = text;
     if (width <= canvas_width) {
-      text_height = object_property_get(object, property_name);
+      text_height = object_property_get(object, "actualBoundingBoxAscent");
       return true;
     }
   });
