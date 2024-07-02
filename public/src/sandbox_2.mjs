@@ -26,10 +26,6 @@ export async function sandbox_2() {
   let text_verse = list_join_space(object_property_get(match, "tokens"));
   let book_name = bible_book_name(book_id, chapter);
   let reference = bible_reference(book_name, chapter, verse_number);
-  return {
-    text_verse,
-    reference,
-  };
   let width = 1080;
   let height = 1920;
   let bigger = number_max(width, height);
