@@ -74,27 +74,31 @@ export async function sandbox_2() {
   });
   each_range_reverse(font_size_px + 1, (i) => {
     font_size_px = i;
+    let lines = [];
+    let index_current = 0;
+    while (index_current < list_size(tokens)) {
+      each_range_reverse(list_size(tokens) - index_current, (count) => {
+        let sliced = list_slice(
+          tokens,
+          index_current,
+          index_current + count + 1,
+        );
+        let sliced_text = list_join_space(sliced);
+        let measured = ctx.measureText(sliced_text);
+        let { width, actualBoundingBoxAscent: height } = measured;
+        let padding = line_height_to_padding_double(height);
+        if (width <= canvas_width - padding) {
+          list_add(lines, {
+            height,
+            text: sliced_text,
+          });
+          index_current += count + 1;
+          return true;
+        }
+      });
+    }
+    let height_total = list_map_sum(lines, line_to_height_padded);
   });
-  let lines = [];
-  let index_current = 0;
-  while (index_current < list_size(tokens)) {
-    each_range_reverse(list_size(tokens) - index_current, (count) => {
-      let sliced = list_slice(tokens, index_current, index_current + count + 1);
-      let sliced_text = list_join_space(sliced);
-      let measured = ctx.measureText(sliced_text);
-      let { width, actualBoundingBoxAscent: height } = measured;
-      let padding = line_height_to_padding_double(height);
-      if (width <= canvas_width - padding) {
-        list_add(lines, {
-          height,
-          text: sliced_text,
-        });
-        index_current += count + 1;
-        return true;
-      }
-    });
-  }
-  let height_total = list_map_sum(lines, line_to_height_padded);
   assert(less_than_equal, [height_total, canvas_height]);
   each_index(lines, (line, index) => {
     let padding = line_height_to_padding(line.height);
