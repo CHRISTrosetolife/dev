@@ -21,12 +21,12 @@ export async function js_param_new(
     function_name,
     function lambda(args) {
       let default_value = js_parse_expression(default_value_string);
-      list_add(args, default_value);
+      lambda_add(args, default_value);
       needs_imports_add = true;
     },
     (params) => {
       let param_new = js_parse_expression(param_name);
-      list_add(params, param_new);
+      lambda_add(params, param_new);
     },
   );
   if (needs_imports_add) {
