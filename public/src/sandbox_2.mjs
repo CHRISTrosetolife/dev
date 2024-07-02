@@ -99,7 +99,11 @@ export async function sandbox_2() {
     }
     let height_total = list_map_sum(lines, line_to_height_padded);
     if (less_than_equal(height_total, canvas_height)) {
-      log({});
+      log({
+        height_total,
+        canvas_height,
+        font_size_px,
+      });
       return true;
     }
   });
