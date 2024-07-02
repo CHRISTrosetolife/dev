@@ -75,6 +75,8 @@ export async function sandbox_2() {
       let sliced_text = list_join_space(sliced);
       log({
         sliced_text,
+        index_current,
+        count,
       });
       let measured = ctx.measureText(sliced_text);
       let { width } = measured;
