@@ -27,7 +27,7 @@ export async function sandbox_2() {
   ctx.font = "300px Arial";
   ctx.fillStyle = "white";
   let text = ctx.measureText("Awesome!");
-  ctx.fillText("Awesome!", 0, 272);
+  ctx.fillText("Awesome!", 0, 215);
   log({
     text,
   });
