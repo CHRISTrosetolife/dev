@@ -1,6 +1,5 @@
 import { storage_file_download_path_string } from "./storage_file_download_path_string.mjs";
 import { path_join } from "./path_join.mjs";
-import { bible_chapter_audio_download_folder_name } from "./bible_chapter_audio_download_folder_name.mjs";
 import { bible_chapter_audio_download_prefix } from "./bible_chapter_audio_download_prefix.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
 import { equal_json } from "./equal_json.mjs";
@@ -15,10 +14,7 @@ export async function bible_chapter_audio_join(
   bible_folder,
   chapter_name,
 ) {
-  let prefix = bible_chapter_audio_download_prefix(
-    bible_chapter_audio_download_folder_name(),
-    chapter_name,
-  );
+  let prefix = bible_chapter_audio_download_prefix(project_name, chapter_name);
   let outpath_path = path_join([
     storage_file_download_path_string(prefix),
     "joined.wav",
