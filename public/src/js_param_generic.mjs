@@ -1,6 +1,6 @@
 import { equal } from "./equal.mjs";
 import { js_node_type } from "./js_node_type.mjs";
-export function js_param_generic(ast, function_name, lambda) {
+export function js_param_generic(ast, function_name, each_caller) {
   let nodes = js_node_type(ast, "CallExpression");
   for (let node of nodes) {
     let { callee } = node;
@@ -13,6 +13,6 @@ export function js_param_generic(ast, function_name, lambda) {
       continue;
     }
     let { arguments: args } = node;
-    lambda(args);
+    each_caller(args);
   }
 }
