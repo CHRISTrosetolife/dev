@@ -81,6 +81,7 @@ export async function sandbox_2() {
       }
     });
   }
+  return lines;
   ctx.fillText(reference, 0, 215);
   let buffer = canvas.toBuffer("image/png");
   let output_path = folder_gitignore_path("test.png");
