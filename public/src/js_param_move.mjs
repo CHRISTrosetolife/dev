@@ -1,4 +1,4 @@
-import { list_move_to_beginning } from "./list_move_to_beginning.mjs";
+import { list_move_to } from "./list_move_to.mjs";
 import { js_param_generic } from "./js_param_generic.mjs";
 import { assert } from "./assert.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
@@ -12,10 +12,10 @@ export async function js_param_move(ast, function_name, param_index) {
     ast,
     function_name,
     function each_caller(args) {
-      list_move_to_beginning(args, param_index);
+      list_move_to(args, param_index);
     },
     (params) => {
-      list_move_to_beginning(params, param_index);
+      list_move_to(params, param_index);
     },
   );
 }
