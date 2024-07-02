@@ -11,7 +11,6 @@ export async function js_param_move_first(ast, function_name, param_name) {
   js_param_existing_each(ast, function_name, function lambda(args) {
     let default_value = js_parse_expression(default_value_string);
     list_add(args, default_value);
-    let needs_imports_add = true;
   });
   js_param_actual(ast, function_name, (params) => {
     let param_new = js_parse_expression(param_name);
