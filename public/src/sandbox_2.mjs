@@ -1,3 +1,4 @@
+import { assert } from "./assert.mjs";
 import { list_property_sum } from "./list_property_sum.mjs";
 import { list_add } from "./list_add.mjs";
 import { each } from "./each.mjs";
@@ -85,6 +86,7 @@ export async function sandbox_2() {
     });
   }
   let height_total = list_property_sum(lines, "height");
+  assert(number_less_than_equal);
   ctx.fillText(reference, 0, 215);
   let buffer = canvas.toBuffer("image/png");
   let output_path = folder_gitignore_path("test.png");
