@@ -35,9 +35,9 @@ export async function bible_chapter_audio_trim(bible_folder, chapter_name) {
     let { samples, fmt } = w;
     let samples_out = [];
     let first = list_threshold_index(samples, 300);
-    first = number_max(first - 4000, 0);
-    let last = list_threshold_index_reverse(samples, 400);
-    last = number_min(last + 4000, list_index_last(samples));
+    first = number_max(first - 6000, 0);
+    let last = list_threshold_index_reverse(samples, 300);
+    last = number_min(last + 6000, list_index_last(samples));
     each_index(samples, (item, index) => {
       if (first <= index && index <= last) {
         list_add(samples_out, item);
