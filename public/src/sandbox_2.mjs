@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { list_map_sum } from "./list_map_sum.mjs";
 import { each_index } from "./each_index.mjs";
 import { less_than_equal } from "./less_than_equal.mjs";
@@ -72,6 +71,7 @@ export async function sandbox_2() {
     });
   });
   let lines = null;
+  let offset_height = 0;
   each_range_reverse(font_size_px + 1, (i) => {
     lines = [];
     font_size_px = i;
@@ -100,11 +100,6 @@ export async function sandbox_2() {
     }
     let height_total = list_map_sum(lines, line_to_height_padded);
     if (less_than_equal(height_total, canvas_height)) {
-      log({
-        height_total,
-        canvas_height,
-        font_size_px,
-      });
       return true;
     }
   });
