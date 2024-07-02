@@ -49,10 +49,10 @@ export async function sandbox_2() {
   ctx.font = "300px Arial";
   ctx.fillStyle = "white";
   let text = ctx.measureText(reference);
-  ctx.fillText("Awesome!", 0, 215);
   log({
     text,
   });
+  ctx.fillText(reference, 0, 215);
   let buffer = canvas.toBuffer("image/png");
   let output_path = folder_gitignore_path("test.png");
   await file_overwrite_binary(output_path, buffer);
