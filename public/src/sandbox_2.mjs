@@ -69,9 +69,8 @@ export async function sandbox_2() {
     });
   });
   let lines = [];
-  let index_current = 0;
   while (list_empty_not_is(tokens)) {
-    each_range_reverse(list_size(tokens) - index_current, (count) => {
+    each_range_reverse(list_size(tokens), (count) => {
       if (count === 0) {
         exit();
       }
@@ -88,7 +87,7 @@ export async function sandbox_2() {
       let { width } = measured;
       if (width <= canvas_width) {
         list_add(lines, sliced_text);
-        index_current += count;
+        let index_current = count;
         return true;
       }
     });
