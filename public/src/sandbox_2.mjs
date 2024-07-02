@@ -11,6 +11,7 @@ import { number_max } from "./number_max.mjs";
 export async function sandbox_2() {
   assert_arguments_length(arguments, 0);
   let book_id = "MAT";
+  let chapter = 1;
   let book_name = bible_book_name(book_id);
   bible_reference(book_name, chapter, verse_number_first);
   let width = 1080;
