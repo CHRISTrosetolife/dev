@@ -21,6 +21,7 @@ import { number_max } from "./number_max.mjs";
 import { list_slice } from "./list_slice.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { list_size } from "./list_size.mjs";
+import { list_empty_not_is } from "./list_empty_not_is.mjs";
 export async function sandbox_2() {
   assert_arguments_length(arguments, 0);
   let book_id = "MAT";
@@ -69,7 +70,7 @@ export async function sandbox_2() {
   });
   let lines = [];
   let index_current = 0;
-  while (index_current < list_size(tokens)) {
+  while (list_empty_not_is(tokens)) {
     each_range_reverse(list_size(tokens) - index_current, (count) => {
       if (count === 0) {
         exit();
