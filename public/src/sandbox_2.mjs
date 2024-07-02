@@ -1,3 +1,4 @@
+import { list_find_property } from "./list_find_property.mjs";
 import { app_gs_bible_chapter_name } from "./app_gs_bible_chapter_name.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
 import { bible_book_name } from "./bible_book_name.mjs";
@@ -19,6 +20,7 @@ export async function sandbox_2() {
     "engbsb",
     app_gs_bible_chapter_name(book_id, chapter),
   );
+  list_find_property(verses, "verse_number", verse_number);
   let book_name = bible_book_name(book_id, chapter);
   bible_reference(book_name, chapter, verse_number);
   let width = 1080;
