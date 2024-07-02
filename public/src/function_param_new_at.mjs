@@ -6,6 +6,7 @@ export async function function_param_new_at(
   function_name,
   param_name,
   default_value_string,
+  param_index,
 ) {
   assert_arguments_length(arguments, 3);
   await data_identifiers_each(function_name, lambda);
