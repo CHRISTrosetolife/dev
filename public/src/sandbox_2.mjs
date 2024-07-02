@@ -106,11 +106,11 @@ export async function sandbox_2() {
   });
   each_index(lines, (line, index) => {
     let padding = line_height_to_padding(line.height);
-    let offset = list_map_sum(
+    let offset_line = list_map_sum(
       list_take(lines, index + 1),
       line_to_height_padded,
     );
-    ctx.fillText(line.text, padding, offset + offset_height);
+    ctx.fillText(line.text, padding, offset_line + offset_height);
   });
   let buffer = canvas.toBuffer("image/png");
   let output_path = folder_gitignore_path("test.png");
