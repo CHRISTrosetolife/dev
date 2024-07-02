@@ -12,19 +12,17 @@ export async function sandbox_2() {
   let bigger = number_max(width, height);
   let canvas = createCanvas(width, height);
   let ctx = canvas.getContext("2d");
-  if (0) {
-    let data = await file_read_binary("./img/bible_green.jpg");
-    let image = await loadImage(data);
-    ctx.drawImage(
-      image,
-      -(bigger - width) / 2,
-      -(bigger - height) / 2,
-      bigger,
-      bigger,
-    );
-    ctx.fillStyle = "rgba(0,0,0,0.5)";
-    ctx.fillRect(0, 0, width, height);
-  }
+  let data = await file_read_binary("./img/bible_green.jpg");
+  let image = await loadImage(data);
+  ctx.drawImage(
+    image,
+    -(bigger - width) / 2,
+    -(bigger - height) / 2,
+    bigger,
+    bigger,
+  );
+  ctx.fillStyle = "rgba(0,0,0,0.5)";
+  ctx.fillRect(0, 0, width, height);
   ctx.font = "300px Arial";
   ctx.fillStyle = "white";
   ctx.fillText("Awesome!", 10, 10);
