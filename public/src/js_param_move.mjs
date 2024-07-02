@@ -21,10 +21,10 @@ export async function js_param_move(
     ast,
     function_name,
     function each_caller(args) {
-      list_move_to(args, param_index);
+      list_move_to(args, param_index, param_index_new);
     },
     (params) => {
-      list_move_to(params, param_index);
+      list_move_to(params, param_index, param_index_new);
     },
   );
 }
