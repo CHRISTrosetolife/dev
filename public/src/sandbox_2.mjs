@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each_range_reverse } from "./each_range_reverse.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_join_space } from "./list_join_space.mjs";
@@ -46,7 +47,7 @@ export async function sandbox_2() {
   ctx.fillStyle = "white";
   let font_size_px_max = 300;
   each_range_reverse(font_size_px_max + 1, (font_size_px) => {
-    (ctx.font = $s), "px Arial";
+    ctx.font = string_combine_multiple(["px Arial"]);
     let text = ctx.measureText(reference);
     let { width } = text;
     if (width <= canvas_width) {
