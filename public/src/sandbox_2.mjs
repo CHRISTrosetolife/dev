@@ -7,7 +7,6 @@ import { app_gs_bible_chapter_name } from "./app_gs_bible_chapter_name.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
 import { bible_book_name } from "./bible_book_name.mjs";
 import { bible_reference } from "./bible_reference.mjs";
-import { log } from "./log.mjs";
 import { file_open } from "./file_open.mjs";
 import { file_read_binary } from "./file_read_binary.mjs";
 import { file_overwrite_binary } from "./file_overwrite_binary.mjs";
@@ -52,9 +51,6 @@ export async function sandbox_2() {
     font_size_px = i;
     ctx.font = string_combine_multiple([font_size_px, "px Arial"]);
     let text = ctx.measureText(reference);
-    log({
-      text,
-    });
     let { width } = text;
     if (width <= canvas_width) {
       text_height = object_property_get(text, "actualBoundingBoxAscent");
