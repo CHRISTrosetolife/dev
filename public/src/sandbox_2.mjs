@@ -1,3 +1,4 @@
+import { each_range_reverse } from "./each_range_reverse.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { list_find_property } from "./list_find_property.mjs";
@@ -44,6 +45,7 @@ export async function sandbox_2() {
   ctx.fillRect(0, 0, canvas_width, canvas_height);
   ctx.font = "300px Arial";
   ctx.fillStyle = "white";
+  each_range_reverse(count, (item) => {});
   let text = ctx.measureText(reference);
   let { width } = text;
   if (width <= canvas_width) {
