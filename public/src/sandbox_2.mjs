@@ -13,4 +13,5 @@ export async function sandbox_2() {
   ctx.lineTo(50, 102);
   ctx.lineTo(50 + text.width, 102);
   ctx.stroke();
+  let buffer = canvas.toBuffer("image/png");
 }
