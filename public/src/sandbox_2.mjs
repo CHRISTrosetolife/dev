@@ -20,7 +20,7 @@ export async function sandbox_2() {
     "engbsb",
     app_gs_bible_chapter_name(book_id, chapter),
   );
-  list_find_property(verses, "verse_number", verse_number);
+  let match = list_find_property(verses, "verse_number", verse_number);
   let book_name = bible_book_name(book_id, chapter);
   bible_reference(book_name, chapter, verse_number);
   let width = 1080;
