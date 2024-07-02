@@ -11,9 +11,9 @@ export async function sandbox_2() {
   let height = 1920;
   let bigger = number_max(width, height);
   let canvas = createCanvas(width, height);
+  let ctx = canvas.getContext("2d");
   let data = await file_read_binary("./img/bible_green.jpg");
   let image = await loadImage(data);
-  let ctx = canvas.getContext("2d");
   ctx.drawImage(
     image,
     -(bigger - width) / 2,
