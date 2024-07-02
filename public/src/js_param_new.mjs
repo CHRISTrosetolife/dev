@@ -1,5 +1,5 @@
+import { js_param_generic } from "./js_param_generic.mjs";
 import { js_param_actual } from "./js_param_actual.mjs";
-import { js_param_existing_each } from "./js_param_existing_each.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
 import { list_add } from "./list_add.mjs";
 import { js_imports_add } from "./js_imports_add.mjs";
@@ -16,7 +16,7 @@ export async function js_param_new(
   assert(string_is, [param_name]);
   assert(string_is, [default_value_string]);
   let needs_imports_add = false;
-  js_param_existing_each(ast, function_name, function lambda(args) {
+  js_param_generic(ast, function_name, function lambda(args) {
     let default_value = js_parse_expression(default_value_string);
     list_add(args, default_value);
     needs_imports_add = true;
