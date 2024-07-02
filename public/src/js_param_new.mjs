@@ -6,12 +6,11 @@ export async function js_param_new(
   param_name,
   default_value_string,
 ) {
-  let lambda_add = list_add;
   await js_param_new_generic(
     param_name,
     default_value_string,
     ast,
     function_name,
-    lambda_add,
+    list_add,
   );
 }
