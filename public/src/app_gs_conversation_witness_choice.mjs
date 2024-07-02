@@ -1,3 +1,4 @@
+import { bible_book_name } from "./bible_book_name.mjs";
 import { bible_reference } from "./bible_reference.mjs";
 import { app_gs_bible_chapter_name } from "./app_gs_bible_chapter_name.mjs";
 import { list_join_space } from "./list_join_space.mjs";
@@ -10,8 +11,6 @@ import { app_gs_bible_chapter_prefix } from "./app_gs_bible_chapter_prefix.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { function_run } from "./function_run.mjs";
 import { integer_parse } from "./integer_parse.mjs";
-import { string_case_upper } from "./string_case_upper.mjs";
-import { bible_books_prefix_to_name } from "./bible_books_prefix_to_name.mjs";
 import { string_split_underscore } from "./string_split_underscore.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export async function app_gs_conversation_witness_choice(
@@ -21,7 +20,7 @@ export async function app_gs_conversation_witness_choice(
   assert_arguments_length(arguments, 2);
   let [book_id, chapter, verse_index, objection_index] =
     string_split_underscore(objection_id);
-  let book_name = bible_books_prefix_to_name()[string_case_upper(book_id)];
+  let book_name = bible_book_name(book_id);
   chapter = integer_parse(chapter);
   verse_index = integer_parse(verse_index);
   objection_index = integer_parse(objection_index);
