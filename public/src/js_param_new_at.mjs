@@ -10,7 +10,7 @@ export async function js_param_new_at(
   default_value_string,
   param_index,
 ) {
-  let param_index = integer_parse(param_index);
+  param_index = integer_parse(param_index);
   assert(number_is, [param_index]);
   await js_param_new_generic(
     ast,
