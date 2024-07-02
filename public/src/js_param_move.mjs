@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { list_move_to } from "./list_move_to.mjs";
 import { js_param_generic } from "./js_param_generic.mjs";
 import { assert } from "./assert.mjs";
@@ -15,6 +16,7 @@ export async function js_param_move(
   param_index_new = integer_parse(param_index_new);
   assert(number_is, [param_index]);
   assert(number_is, [param_index]);
+  each(list, (item) => {});
   js_param_generic(
     ast,
     function_name,
