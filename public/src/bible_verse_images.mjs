@@ -16,7 +16,6 @@ import { each } from "./each.mjs";
 import { bible_image_path } from "./bible_image_path.mjs";
 import { file_read_binary } from "./file_read_binary.mjs";
 import { number_max } from "./number_max.mjs";
-import { list_add_beginning } from "./list_add_beginning.mjs";
 import { bible_reference } from "./bible_reference.mjs";
 import { bible_book_name } from "./bible_book_name.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -29,6 +28,7 @@ import { bible_chapter_name_parse } from "./bible_chapter_name_parse.mjs";
 import { bible_chapter_folder_parent_gitignore } from "./bible_chapter_folder_parent_gitignore.mjs";
 import { createCanvas, loadImage } from "canvas";
 import { object_merge } from "./object_merge.mjs";
+import { list_concat } from "./list_concat.mjs";
 export async function bible_verse_images(
   bible_folder,
   chapter_name,
@@ -69,7 +69,7 @@ export async function bible_verse_images(
     let tokens = object_property_get(match, "tokens");
     let book_name = bible_book_name(book_code);
     let reference = bible_reference(book_name, chapter_code, verse_number);
-    list_add_beginning(tokens, reference);
+    tokens = list_concat(tokens, reference);
     log({
       tokens,
     });
