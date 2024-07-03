@@ -34,7 +34,7 @@ export async function bible_chapter_video(
   }));
   await video_stitch
     .concat({
-      silent: true,
+      silent: false,
       overwrite: true,
     })
     .clips(m)
