@@ -106,6 +106,7 @@ export async function bible_chapter_images(bible_folder, chapter_name) {
       let height_total = list_map_sum(lines, line_to_height_padded);
       if (less_than_equal(height_total, canvas_height)) {
         offset_height = (canvas_height - height_total) / 2;
+        offset_height = 0;
         log({
           offset_height,
           height_total,
