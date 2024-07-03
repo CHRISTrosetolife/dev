@@ -41,40 +41,41 @@ export async function bible_chapter_videos(
     let result = {
       path: result_path,
     };
-    await each_async(hvs, async (hv) => {});
-    let output_path = path_join([
-      output_path_folder,
-      object_property_get(verse, "verse_number"),
-      string_combine_multiple([hv_name, ".mp4"]),
-    ]);
-    object_merge(result_path, {
-      [hv_name]: output_path,
-    });
-    if (await file_exists(output_path)) {
+    await each_async(hvs, async (hv) => {
+      let output_path = path_join([
+        output_path_folder,
+        object_property_get(verse, "verse_number"),
+        string_combine_multiple([hv_name, ".mp4"]),
+      ]);
+      object_merge(result_path, {
+        [hv_name]: output_path,
+      });
+      if (await file_exists(output_path)) {
+        return result;
+      }
+      log({
+        verse,
+      });
+      await folder_parent_exists_ensure(output_path);
+      let audio_path_trimmed = audio.path.trimmed;
+      let audio_duration = await getAudioDurationInSeconds(audio_path_trimmed);
+      await new Promise((resolve, reject) => {
+        videoshow([object_property_get(image.path, hv_name)], {
+          disableFadeOut: true,
+          loop: audio_duration,
+        })
+          .audio(audio_path_trimmed, {
+            fade: false,
+          })
+          .save(output_path)
+          .on("error", function (e) {
+            reject(e);
+          })
+          .on("end", function () {
+            resolve();
+          });
+      });
       return result;
-    }
-    log({
-      verse,
     });
-    await folder_parent_exists_ensure(output_path);
-    let audio_path_trimmed = audio.path.trimmed;
-    let audio_duration = await getAudioDurationInSeconds(audio_path_trimmed);
-    await new Promise((resolve, reject) => {
-      videoshow([object_property_get(image.path, hv_name)], {
-        disableFadeOut: true,
-        loop: audio_duration,
-      })
-        .audio(audio_path_trimmed, {
-          fade: false,
-        })
-        .save(output_path)
-        .on("error", function (e) {
-          reject(e);
-        })
-        .on("end", function () {
-          resolve();
-        });
-    });
-    return result;
   });
 }
