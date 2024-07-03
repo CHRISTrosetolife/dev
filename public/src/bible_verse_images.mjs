@@ -28,7 +28,7 @@ import { bible_chapter_name_parse } from "./bible_chapter_name_parse.mjs";
 import { bible_chapter_folder_parent_gitignore } from "./bible_chapter_folder_parent_gitignore.mjs";
 import { createCanvas, loadImage } from "canvas";
 import { object_merge } from "./object_merge.mjs";
-export async function bible_verse_image(
+export async function bible_verse_images(
   bible_folder,
   chapter_name,
   verse_number,
