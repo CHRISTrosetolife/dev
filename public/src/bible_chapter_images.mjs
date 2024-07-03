@@ -1,3 +1,4 @@
+import { path_join } from "./path_join.mjs";
 import { bible_chapter_folder } from "./bible_chapter_folder.mjs";
 import { log } from "./log.mjs";
 import { each_async } from "./each_async.mjs";
@@ -28,7 +29,10 @@ import { list_size } from "./list_size.mjs";
 import { list_take } from "./list_take.mjs";
 export async function bible_chapter_images(bible_folder, chapter_name) {
   assert_arguments_length(arguments, 2);
-  let prefix = bible_chapter_folder(bible_folder, chapter_name);
+  let prefix = path_join([
+    "img",
+    bible_chapter_folder(bible_folder, chapter_name),
+  ]);
   return prefix;
   let { book_code, chapter_code } = bible_chapter_name_parse(chapter_name);
   let verses = await bible_chapter(bible_folder, chapter_name);
