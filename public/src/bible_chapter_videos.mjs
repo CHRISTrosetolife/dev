@@ -35,16 +35,16 @@ export async function bible_chapter_videos(
   let zipped = list_zip([verses, images, audios]);
   return await list_map_async(zipped, async (z) => {
     let [verse, image, audio] = z;
-    let output_path = path_join([
-      output_path_folder,
-      object_property_get(verse, "verse_number"),
-      string_combine_multiple([hv_name, ".mp4"]),
-    ]);
     let result = {
       path: {
         [hv_name]: output_path,
       },
     };
+    let output_path = path_join([
+      output_path_folder,
+      object_property_get(verse, "verse_number"),
+      string_combine_multiple([hv_name, ".mp4"]),
+    ]);
     if (await file_exists(output_path)) {
       return result;
     }
