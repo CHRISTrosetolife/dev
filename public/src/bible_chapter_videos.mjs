@@ -40,14 +40,14 @@ export async function bible_chapter_videos(
     let result = {
       path: result_path,
     };
-    object_merge(result_path, {
-      [hv_name]: output_path,
-    });
     let output_path = path_join([
       output_path_folder,
       object_property_get(verse, "verse_number"),
       string_combine_multiple([hv_name, ".mp4"]),
     ]);
+    object_merge(result_path, {
+      [hv_name]: output_path,
+    });
     if (await file_exists(output_path)) {
       return result;
     }
