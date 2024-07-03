@@ -6,6 +6,6 @@ export function bible_chapter_folder_parent_gitignore(
   chapter_name,
 ) {
   return folder_gitignore_path(
-    bible_chapter_folder_parent(folder_parent, chapter_name, bible_folder),
+    bible_chapter_folder_parent(folder_parent, bible_folder, chapter_name),
   );
 }
