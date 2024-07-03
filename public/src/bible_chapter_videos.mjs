@@ -1,3 +1,4 @@
+import { bible_chapter_audio_trim } from "./bible_chapter_audio_trim.mjs";
 import { bible_chapter_folder_parent_gitignore } from "./bible_chapter_folder_parent_gitignore.mjs";
 import { bible_chapter_images } from "./bible_chapter_images.mjs";
 import { bible_image_path } from "./bible_image_path.mjs";
@@ -6,6 +7,11 @@ import { path_join } from "./path_join.mjs";
 export async function bible_chapter_videos(bible_folder, chapter_name) {
   let output_path_folder = bible_chapter_folder_parent_gitignore(
     "video",
+    bible_folder,
+    chapter_name,
+  );
+  let downloads = await bible_chapter_audio_trim(
+    project_name,
     bible_folder,
     chapter_name,
   );
