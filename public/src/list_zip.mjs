@@ -11,5 +11,6 @@ export function list_zip(lists, lambda) {
   assert(true_is, [same_sizes]);
   each_range(list_size(list_first(lists)), (index) => {
     let item = list_map(lists, (list) => list_get(list, index));
+    lambda(item);
   });
 }
