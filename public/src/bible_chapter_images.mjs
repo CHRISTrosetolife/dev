@@ -29,7 +29,7 @@ import { list_size } from "./list_size.mjs";
 import { list_take } from "./list_take.mjs";
 export async function bible_chapter_images(bible_folder, chapter_name) {
   assert_arguments_length(arguments, 2);
-  let prefix = folder_gitignore_path(
+  let output_path = folder_gitignore_path(
     path_join(["img", bible_chapter_folder(bible_folder, chapter_name)]),
   );
   return prefix;
