@@ -1,3 +1,4 @@
+import { list_zip } from "./list_zip.mjs";
 import { bible_chapter_audio_trim } from "./bible_chapter_audio_trim.mjs";
 import { bible_chapter_folder_parent_gitignore } from "./bible_chapter_folder_parent_gitignore.mjs";
 import { bible_chapter_images } from "./bible_chapter_images.mjs";
@@ -14,12 +15,13 @@ export async function bible_chapter_videos(
     bible_folder,
     chapter_name,
   );
-  let downloads = await bible_chapter_audio_trim(
+  let images = await bible_chapter_images(bible_folder, chapter_name);
+  let audios = await bible_chapter_audio_trim(
     project_name,
     bible_folder,
     chapter_name,
   );
-  let verses = await bible_chapter_images(bible_folder, chapter_name);
+  let zipped = list_zip([images, audios]);
   return new Promise((resolve, reject) => {
     videoshow([bible_image_path()])
       .save(path_join([output_path_folder, "video.mp4"]))
