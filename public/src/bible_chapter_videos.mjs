@@ -5,6 +5,7 @@ import { bible_chapter_images } from "./bible_chapter_images.mjs";
 import { bible_image_path } from "./bible_image_path.mjs";
 import videoshow from "videoshow";
 import { path_join } from "./path_join.mjs";
+import { list_first } from "./list_first.mjs";
 export async function bible_chapter_videos(
   project_name,
   bible_folder,
@@ -22,6 +23,7 @@ export async function bible_chapter_videos(
     chapter_name,
   );
   let zipped = list_zip([images, audios]);
+  let z = list_first(zipped);
   return new Promise((resolve, reject) => {
     videoshow([bible_image_path()])
       .save(path_join([output_path_folder, "video.mp4"]))
