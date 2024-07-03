@@ -39,7 +39,7 @@ export async function bible_chapter_video(
         overwrite: true,
       })
       .clips(m)
-      .output("myfilename")
+      .output(output_path)
       .concat();
   });
 }
