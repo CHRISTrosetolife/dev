@@ -8,6 +8,11 @@ export async function bible_chapter_video(
   bible_folder,
   chapter_name,
 ) {
+  let output_path_folder = bible_chapter_folder_parent_gitignore(
+    "video",
+    bible_folder,
+    chapter_name,
+  );
   let videos = await bible_chapter_videos(
     project_name,
     bible_folder,
@@ -16,11 +21,6 @@ export async function bible_chapter_video(
   let m = list_map(videos, (v) => ({
     fileName: object_property_get(object_property_get(v, "path"), "vertical"),
   }));
-  let output_path_folder = bible_chapter_folder_parent_gitignore(
-    "video",
-    bible_folder,
-    chapter_name,
-  );
   return new Promise((resolve) => {
     video_stitch
       .concat({
