@@ -14,8 +14,8 @@ export async function bible_chapter_video(
     bible_folder,
     chapter_name,
   );
-  if (await file_exists(output_path)) {
-    return result;
+  if (await file_exists(output_path_folder)) {
+    return;
   }
   let videos = await bible_chapter_videos(
     project_name,
