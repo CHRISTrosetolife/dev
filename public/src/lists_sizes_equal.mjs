@@ -11,6 +11,6 @@ export function lists_sizes_equal(lists) {
       la(e);
     });
   });
-  let same_sizes = list_all(compares, (c) => true_is(c));
+  let same_sizes = list_all(compares, true_is);
   return same_sizes;
 }
