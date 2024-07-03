@@ -33,7 +33,6 @@ export async function bible_chapter_videos(
     chapter_name,
   );
   let hvs = bible_image_resolutions();
-  let hv_name = "vertical";
   let zipped = list_zip([verses, images, audios]);
   return await list_map_async(zipped, async (z) => {
     let [verse, image, audio] = z;
@@ -42,7 +41,7 @@ export async function bible_chapter_videos(
       path: result_path,
     };
     await each_async(hvs, async (hv) => {
-      hv_name = object_property_get(hv, "name");
+      let hv_name = object_property_get(hv, "name");
       let output_path = path_join([
         output_path_folder,
         object_property_get(verse, "verse_number"),
