@@ -60,10 +60,11 @@ export async function bible_verse_images(
     path: result_path,
   };
   await each_async(hvs, async (hv) => {
+    let hv_name = object_property_get(hv, "name");
     let path_image = path_join([
       output_path_folder,
       verse_number,
-      string_combine_multiple([object_property_get(hv, "name"), ".png"]),
+      string_combine_multiple([hv_name, ".png"]),
     ]);
     object_merge(result_path, {
       [hv]: path_image,
