@@ -42,6 +42,7 @@ export async function bible_verse_image(
   let hvs = [
     {
       name: "horizontal",
+      height: 1080,
     },
     {
       name: "vertical",
