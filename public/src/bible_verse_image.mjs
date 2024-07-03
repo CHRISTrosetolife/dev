@@ -1,3 +1,4 @@
+import { each_async } from "./each_async.mjs";
 import { list_second } from "./list_second.mjs";
 import { file_open } from "./file_open.mjs";
 import { file_overwrite_binary } from "./file_overwrite_binary.mjs";
@@ -60,6 +61,7 @@ export async function bible_verse_image(
     path: result_path,
   };
   let hv = list_second(hvs);
+  await each_async(list, async (item) => {});
   let path_image = path_join([
     output_path_folder,
     verse_number,
