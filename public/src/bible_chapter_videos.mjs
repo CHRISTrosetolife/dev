@@ -8,6 +8,7 @@ import { bible_chapter_images } from "./bible_chapter_images.mjs";
 import videoshow from "videoshow";
 import { path_join } from "./path_join.mjs";
 import { list_first } from "./list_first.mjs";
+import { getAudioDurationInSeconds } from "get-audio-duration";
 export async function bible_chapter_videos(
   project_name,
   bible_folder,
@@ -33,9 +34,11 @@ export async function bible_chapter_videos(
     "vertical.mp4",
   ]);
   await folder_parent_exists_ensure(output_path);
+  let audio_path_trimmed = audio.path.trimmed;
+  getAudioDurationInSeconds();
   return new Promise((resolve, reject) => {
     videoshow([image.path.vertical])
-      .audio(audio.path.trimmed, {
+      .audio(audio_path_trimmed, {
         fade: false,
       })
       .save(output_path)
