@@ -24,6 +24,7 @@ export async function bible_chapter_videos(
   );
   let zipped = list_zip([images, audios]);
   let z = list_first(zipped);
+  return z;
   return new Promise((resolve, reject) => {
     videoshow([bible_image_path()])
       .save(path_join([output_path_folder, "video.mp4"]))
