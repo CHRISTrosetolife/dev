@@ -6,8 +6,9 @@ import { list_map } from "./list_map.mjs";
 import { list_size } from "./list_size.mjs";
 export function list_zip(lists, lambda) {
   let sizes = list_map(lists, list_size);
-  let compares = list_adder((la) => {});
-  each_pairs(sizes, (a, b) => {
-    assert(equal_by, [a, b], list_size);
+  let compares = list_adder((la) => {
+    each_pairs(sizes, (a, b) => {
+      assert(equal_by, [a, b], list_size);
+    });
   });
 }
