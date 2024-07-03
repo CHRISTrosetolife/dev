@@ -75,7 +75,7 @@ export async function bible_chapter_videos(
             resolve();
           });
       });
-      return result;
     });
+    return result;
   });
 }
