@@ -1,4 +1,4 @@
-import { bible_chapter_audio_download_prefix } from "./bible_chapter_audio_download_prefix.mjs";
+import { bible_chapter_folder } from "./bible_chapter_folder.mjs";
 import { log } from "./log.mjs";
 import { each_async } from "./each_async.mjs";
 import { bible_chapter_name_parse } from "./bible_chapter_name_parse.mjs";
@@ -28,7 +28,7 @@ import { list_size } from "./list_size.mjs";
 import { list_take } from "./list_take.mjs";
 export async function bible_chapter_images(bible_folder, chapter_name) {
   assert_arguments_length(arguments, 2);
-  let prefix = bible_chapter_audio_download_prefix(bible_folder, chapter_name);
+  let prefix = bible_chapter_folder(chapter_name, folder_name);
   return prefix;
   let { book_code, chapter_code } = bible_chapter_name_parse(chapter_name);
   let verses = await bible_chapter(bible_folder, chapter_name);
