@@ -35,7 +35,9 @@ export async function bible_chapter_videos(
   await folder_parent_exists_ensure(output_path);
   return new Promise((resolve, reject) => {
     videoshow([image.path.vertical])
-      .audio(audio.path.trimmed)
+      .audio(audio.path.trimmed, {
+        fade: false,
+      })
       .save(output_path)
       .on("error", function (e) {
         reject(e);
