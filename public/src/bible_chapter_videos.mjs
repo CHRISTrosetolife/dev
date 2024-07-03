@@ -1,3 +1,4 @@
+import { bible_image_resolutions } from "./bible_image_resolutions.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { log } from "./log.mjs";
 import { folder_parent_exists_ensure } from "./folder_parent_exists_ensure.mjs";
@@ -29,6 +30,7 @@ export async function bible_chapter_videos(
     bible_folder,
     chapter_name,
   );
+  let hvs = bible_image_resolutions();
   let hv = "vertical";
   let zipped = list_zip([verses, images, audios]);
   return await list_map_async(zipped, async (z) => {
