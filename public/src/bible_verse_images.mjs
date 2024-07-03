@@ -69,7 +69,7 @@ export async function bible_verse_images(
     let tokens = object_property_get(match, "tokens");
     let book_name = bible_book_name(book_code);
     let reference = bible_reference(book_name, chapter_code, verse_number);
-    tokens = list_concat(tokens, reference);
+    tokens = list_concat(tokens, [reference]);
     log({
       tokens,
     });
