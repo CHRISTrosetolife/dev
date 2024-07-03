@@ -1,3 +1,4 @@
+import { bible_image_resolutions } from "./bible_image_resolutions.mjs";
 import { path_resolve } from "./path_resolve.mjs";
 import { log } from "./log.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -13,6 +14,7 @@ export async function bible_chapter_video(
   bible_folder,
   chapter_name,
 ) {
+  let hvs = bible_image_resolutions();
   let hv = "vertical";
   let output_path_folder = bible_chapter_folder_parent_gitignore(
     "video",
