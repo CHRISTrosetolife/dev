@@ -1,3 +1,4 @@
+import { list_add } from "./list_add.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_trim_front } from "./string_trim_front.mjs";
 import { bible_chapter_name_parse } from "./bible_chapter_name_parse.mjs";
@@ -13,6 +14,7 @@ export function bible_chapter_audio_download_prefix(folder_name, chapter_name) {
     chapter_number,
     "/",
   ]);
+  list_add(paths, p);
   let r = path_join(paths);
   return r;
 }
