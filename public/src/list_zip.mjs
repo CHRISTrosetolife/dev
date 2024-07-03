@@ -12,5 +12,5 @@ export function list_zip(lists, lambda) {
       la(e);
     });
   });
-  list_all(compares, (c) => c === true);
+  let same_sizes = list_all(compares, (c) => c === true);
 }
