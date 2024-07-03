@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { log } from "./log.mjs";
 import { folder_parent_exists_ensure } from "./folder_parent_exists_ensure.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -35,7 +36,7 @@ export async function bible_chapter_videos(
     let output_path = path_join([
       output_path_folder,
       object_property_get(verse, "verse_number"),
-      ".mp4",
+      string_combine_multiple([".mp4"]),
     ]);
     if (await file_exists(output_path)) {
       return;
