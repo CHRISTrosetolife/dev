@@ -31,7 +31,7 @@ export async function bible_chapter_videos(
   );
   let hv = "vertical";
   let zipped = list_zip([verses, images, audios]);
-  await list_map_async(zipped, async (z) => {
+  return await list_map_async(zipped, async (z) => {
     let [verse, image, audio] = z;
     let output_path = path_join([
       output_path_folder,
