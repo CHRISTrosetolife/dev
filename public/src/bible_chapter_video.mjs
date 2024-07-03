@@ -15,7 +15,7 @@ export async function bible_chapter_video(
   chapter_name,
 ) {
   let hvs = bible_image_resolutions();
-  let hv_name = "vertical";
+  let hv_name = object_property_get(object, property_name);
   let output_path_folder = bible_chapter_folder_parent_gitignore(
     "video",
     bible_folder,
