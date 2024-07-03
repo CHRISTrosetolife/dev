@@ -42,7 +42,11 @@ export async function bible_verse_image(
   let match = list_find_property(verses, "verse_number", verse_number);
   let hvs = ["horizontal", "vertical"];
   list_map(hvs, (hv) =>
-    path_join([output_path_folder, verse_number, "vertical.png"]),
+    path_join([
+      output_path_folder,
+      verse_number,
+      string_combine_multiple([hv, ".png"]),
+    ]),
   );
   let path_image_vertical = path_join([
     output_path_folder,
