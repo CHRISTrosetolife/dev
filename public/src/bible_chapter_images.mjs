@@ -1,8 +1,8 @@
+import { bible_chapter_folder_parent } from "./bible_chapter_folder_parent.mjs";
 import { list_map_async } from "./list_map_async.mjs";
 import { file_exists } from "./file_exists.mjs";
 import { bible_image_path } from "./bible_image_path.mjs";
 import { path_join } from "./path_join.mjs";
-import { bible_chapter_folder } from "./bible_chapter_folder.mjs";
 import { log } from "./log.mjs";
 import { bible_chapter_name_parse } from "./bible_chapter_name_parse.mjs";
 import { list_map_sum } from "./list_map_sum.mjs";
@@ -32,7 +32,7 @@ import { list_take } from "./list_take.mjs";
 export async function bible_chapter_images(bible_folder, chapter_name) {
   assert_arguments_length(arguments, 2);
   let output_path_folder = folder_gitignore_path(
-    path_join(["img", bible_chapter_folder(bible_folder, chapter_name)]),
+    bible_chapter_folder_parent("img", bible_folder, chapter_name),
   );
   let { book_code, chapter_code } = bible_chapter_name_parse(chapter_name);
   let verses = await bible_chapter(bible_folder, chapter_name);
