@@ -65,10 +65,8 @@ export async function bible_verse_image(
     verse_number,
     string_combine_multiple([object_property_get(hv, "name"), ".png"]),
   ]);
-  object_merge(result, {
-    path: {
-      [hv]: path_image,
-    },
+  object_merge(result_path, {
+    [hv]: path_image,
   });
   if (await file_exists(path_image)) {
     result;
