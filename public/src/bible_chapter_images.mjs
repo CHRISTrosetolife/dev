@@ -31,8 +31,9 @@ import { list_size } from "./list_size.mjs";
 import { list_take } from "./list_take.mjs";
 export async function bible_chapter_images(bible_folder, chapter_name) {
   assert_arguments_length(arguments, 2);
+  let folder_parent = "img";
   let output_path_folder = folder_gitignore_path(
-    bible_chapter_folder_parent("img", bible_folder, chapter_name),
+    bible_chapter_folder_parent(folder_parent, bible_folder, chapter_name),
   );
   let { book_code, chapter_code } = bible_chapter_name_parse(chapter_name);
   let verses = await bible_chapter(bible_folder, chapter_name);
