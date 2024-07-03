@@ -38,6 +38,11 @@ export async function bible_chapter_videos(
       object_property_get(verse, "verse_number"),
       string_combine_multiple([hv, ".mp4"]),
     ]);
+    let result = {
+      path: {
+        [hv]: audio_path_trimmed,
+      },
+    };
     if (await file_exists(output_path)) {
       return;
     }
@@ -63,11 +68,6 @@ export async function bible_chapter_videos(
           resolve();
         });
     });
-    let result = {
-      path: {
-        [hv]: audio_path_trimmed,
-      },
-    };
     return result;
   });
 }
