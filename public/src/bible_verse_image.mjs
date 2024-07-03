@@ -1,5 +1,4 @@
 import { each_async } from "./each_async.mjs";
-import { list_second } from "./list_second.mjs";
 import { file_open } from "./file_open.mjs";
 import { file_overwrite_binary } from "./file_overwrite_binary.mjs";
 import { list_take } from "./list_take.mjs";
@@ -60,7 +59,6 @@ export async function bible_verse_image(
   let result = {
     path: result_path,
   };
-  let hv = list_second(hvs);
   await each_async(hvs, async (hv) => {
     let path_image = path_join([
       output_path_folder,
@@ -159,6 +157,7 @@ export async function bible_verse_image(
       await file_open(path_image);
     }
   });
+  return result;
   function line_to_height_padded(line) {
     return line.height + line_height_to_padding_double(line.height);
   }
