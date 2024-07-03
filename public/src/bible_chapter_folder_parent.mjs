@@ -3,8 +3,8 @@ import { list_add } from "./list_add.mjs";
 import { bible_chapter_folder } from "./bible_chapter_folder.mjs";
 export function bible_chapter_folder_parent(
   folder_parent,
-  chapter_name,
   folder_name,
+  chapter_name,
 ) {
   let paths = [folder_parent];
   let p = bible_chapter_folder(chapter_name, folder_name);
