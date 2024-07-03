@@ -57,8 +57,10 @@ export async function bible_verse_images(
     object_merge(result_path, {
       [hv_name]: path_image,
     });
-    if (await file_exists(path_image)) {
-      return;
+    if (0) {
+      if (await file_exists(path_image)) {
+        return;
+      }
     }
     log({
       hv,
