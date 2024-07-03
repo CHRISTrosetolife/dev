@@ -13,6 +13,7 @@ import { path_join } from "./path_join.mjs";
 import { getAudioDurationInSeconds } from "get-audio-duration";
 import { file_exists } from "./file_exists.mjs";
 import { list_map_async } from "./list_map_async.mjs";
+import { object_merge } from "./object_merge.mjs";
 export async function bible_chapter_videos(
   project_name,
   bible_folder,
@@ -35,12 +36,13 @@ export async function bible_chapter_videos(
   let zipped = list_zip([verses, images, audios]);
   return await list_map_async(zipped, async (z) => {
     let [verse, image, audio] = z;
-    let result_path = {
-      [hv_name]: output_path,
-    };
+    let result_path = {};
     let result = {
       path: result_path,
     };
+    object_merge(result_path, {
+      [hv_name]: output_path,
+    });
     let output_path = path_join([
       output_path_folder,
       object_property_get(verse, "verse_number"),
