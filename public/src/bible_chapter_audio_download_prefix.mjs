@@ -10,4 +10,5 @@ export function bible_chapter_audio_download_prefix(folder_name, chapter_name) {
     folder_audio_bible(),
     string_combine_multiple([folder_name, book_code, chapter_number, "/"]),
   ]);
+  return r;
 }
