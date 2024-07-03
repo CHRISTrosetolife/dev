@@ -110,6 +110,7 @@ export async function bible_chapter_images(bible_folder, chapter_name) {
         return true;
       }
     });
+    log({});
     each_index(lines, (line, index) => {
       let padding = line_height_to_padding(line.height);
       let offset_line = list_map_sum(
