@@ -1,3 +1,4 @@
+import { bible_image_path } from "./bible_image_path.mjs";
 import { each_index_async } from "./each_index_async.mjs";
 import { path_join } from "./path_join.mjs";
 import { bible_chapter_folder } from "./bible_chapter_folder.mjs";
@@ -49,7 +50,7 @@ export async function bible_chapter_images(bible_folder, chapter_name) {
     let bigger = number_max(canvas_width, canvas_height);
     let canvas = createCanvas(canvas_width, canvas_height);
     let ctx = canvas.getContext("2d");
-    let data = await file_read_binary("./img/bible_green.jpg");
+    let data = await file_read_binary(bible_image_path());
     let image = await loadImage(data);
     ctx.drawImage(
       image,
