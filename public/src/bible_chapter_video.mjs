@@ -1,3 +1,4 @@
+import { bible_chapter_folder_parent_gitignore } from "./bible_chapter_folder_parent_gitignore.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { bible_chapter_videos } from "./bible_chapter_videos.mjs";
 import video_stitch from "video-stitch";
@@ -15,6 +16,11 @@ export async function bible_chapter_video(
   let m = list_map(videos, (v) => ({
     fileName: object_property_get(object_property_get(v, "path"), "vertical"),
   }));
+  let output_path_folder = bible_chapter_folder_parent_gitignore(
+    "video",
+    bible_folder,
+    chapter_name,
+  );
   return new Promise((resolve) => {
     video_stitch
       .concat({
