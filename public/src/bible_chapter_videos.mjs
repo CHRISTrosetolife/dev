@@ -25,12 +25,12 @@ export async function bible_chapter_videos(
     chapter_name,
   );
   let zipped = list_zip([verses, images, audios]);
+  let [verse, image, audio] = list_first(zipped);
   let output_path = path_join([
     output_path_folder,
     object_property_get(verse, "verse_number"),
     "vertical.mp4",
   ]);
-  let [verse, image, audio] = list_first(zipped);
   return new Promise((resolve, reject) => {
     videoshow([image.path.vertical])
       .audio(audio.path.trimmed)
