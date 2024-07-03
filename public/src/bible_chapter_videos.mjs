@@ -27,15 +27,14 @@ export async function bible_chapter_videos(
   let zipped = list_zip([verses, images, audios]);
   let [verse, image, audio] = list_first(zipped);
   return new Promise((resolve, reject) => {
+    let output_path = path_join([
+      output_path_folder,
+      object_property_get(verse, "verse_number"),
+      "vertical.mp4",
+    ]);
     videoshow([image.path.vertical])
       .audio(audio.path.trimmed)
-      .save(
-        path_join([
-          output_path_folder,
-          object_property_get(verse, "verse_number"),
-          "vertical.mp4",
-        ]),
-      )
+      .save(output_path)
       .on("error", function (e) {
         reject(e);
       })
