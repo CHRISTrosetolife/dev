@@ -4,8 +4,8 @@ export function sandbox_2() {
   return new Promise((resolve, reject) => {
     videoshow([bible_image_path()])
       .save(folder_gitignore_path("video.mp4"))
-      .on("error", function () {
-        reject();
+      .on("error", function (e) {
+        reject(e);
       })
       .on("end", function () {
         resolve();
