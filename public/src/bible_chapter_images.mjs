@@ -129,9 +129,9 @@ export async function bible_chapter_images(bible_folder, chapter_name) {
       string_combine_multiple([verse_number, ".png"]),
     ]);
     await file_overwrite_binary(output_path, buffer);
-    await file_open(output_path);
     exit();
     if (0) {
+      await file_open(output_path);
     }
   });
   function line_to_height_padded(line) {
