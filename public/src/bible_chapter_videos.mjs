@@ -38,6 +38,7 @@ export async function bible_chapter_videos(
   let audio_duration = getAudioDurationInSeconds(audio_path_trimmed);
   return new Promise((resolve, reject) => {
     videoshow([image.path.vertical], {
+      disableFadeOut: true,
       loop: audio_duration,
     })
       .audio(audio_path_trimmed, {
