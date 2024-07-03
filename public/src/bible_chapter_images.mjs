@@ -1,6 +1,6 @@
+import { each_async } from "./each_async.mjs";
 import { file_exists } from "./file_exists.mjs";
 import { bible_image_path } from "./bible_image_path.mjs";
-import { each_index_async } from "./each_index_async.mjs";
 import { path_join } from "./path_join.mjs";
 import { bible_chapter_folder } from "./bible_chapter_folder.mjs";
 import { log } from "./log.mjs";
@@ -36,7 +36,7 @@ export async function bible_chapter_images(bible_folder, chapter_name) {
   );
   let { book_code, chapter_code } = bible_chapter_name_parse(chapter_name);
   let verses = await bible_chapter(bible_folder, chapter_name);
-  await each_index_async(verses, async (verse, index) => {
+  await each_async(verses, async (verse) => {
     let { verse_number } = verse;
     let output_path = path_join([
       output_path_folder,
