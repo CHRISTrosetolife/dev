@@ -46,9 +46,7 @@ export async function bible_chapter_images(bible_folder, chapter_name) {
     ]);
     let result = {
       path: {
-        image: {
-          vertical: path_image_vertical,
-        },
+        vertical: path_image_vertical,
       },
     };
     if (await file_exists(path_image_vertical)) {
