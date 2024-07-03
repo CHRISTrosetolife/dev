@@ -33,7 +33,7 @@ export async function bible_chapter_videos(
       .save(
         path_join([
           output_path_folder,
-          object_property_get(object, property_name),
+          object_property_get(verse, "verse_number"),
           "vertical.mp4",
         ]),
       )
