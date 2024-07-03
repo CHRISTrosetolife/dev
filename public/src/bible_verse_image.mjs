@@ -1,3 +1,4 @@
+import { list_second } from "./list_second.mjs";
 import { file_open } from "./file_open.mjs";
 import { file_overwrite_binary } from "./file_overwrite_binary.mjs";
 import { list_take } from "./list_take.mjs";
@@ -53,7 +54,7 @@ export async function bible_verse_image(
       width: smaller,
     },
   ];
-  let hv = "vertical";
+  let hv = list_second(hvs);
   let path_image_vertical = path_join([
     output_path_folder,
     verse_number,
