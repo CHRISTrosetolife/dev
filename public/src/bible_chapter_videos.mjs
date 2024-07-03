@@ -54,6 +54,7 @@ export async function bible_chapter_videos(
         return result;
       }
       log({
+        hv,
         verse,
       });
       await folder_parent_exists_ensure(output_path);
