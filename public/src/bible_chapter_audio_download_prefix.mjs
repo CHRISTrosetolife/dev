@@ -6,10 +6,8 @@ import { path_join } from "./path_join.mjs";
 export function bible_chapter_audio_download_prefix(folder_name, chapter_name) {
   let { book_code, chapter_code } = bible_chapter_name_parse(chapter_name);
   let chapter_number = string_trim_front(chapter_code, "0");
-  let paths = [
-    folder_audio_bible(),
-    string_combine_multiple([folder_name, book_code, chapter_number, "/"]),
-  ];
+  let paths = [folder_audio_bible()];
+  string_combine_multiple([folder_name, book_code, chapter_number, "/"]);
   let r = path_join(paths);
   return r;
 }
