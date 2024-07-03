@@ -27,6 +27,7 @@ import { bible_chapter } from "./bible_chapter.mjs";
 import { bible_chapter_name_parse } from "./bible_chapter_name_parse.mjs";
 import { bible_chapter_folder_parent_gitignore } from "./bible_chapter_folder_parent_gitignore.mjs";
 import { createCanvas, loadImage } from "canvas";
+import { object_merge } from "./object_merge.mjs";
 export async function bible_verse_image(
   bible_folder,
   chapter_name,
@@ -54,17 +55,18 @@ export async function bible_verse_image(
       width: smaller,
     },
   ];
+  let result = {};
   let hv = list_second(hvs);
   let path_image = path_join([
     output_path_folder,
     verse_number,
     string_combine_multiple([object_property_get(hv, "name"), ".png"]),
   ]);
-  let result = {
+  object_merge(result, {
     path: {
       [hv]: path_image,
     },
-  };
+  });
   if (await file_exists(path_image)) {
     result;
   }
