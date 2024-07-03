@@ -36,7 +36,7 @@ export async function bible_chapter_images(bible_folder, chapter_name) {
   );
   let { book_code, chapter_code } = bible_chapter_name_parse(chapter_name);
   let verses = await bible_chapter(bible_folder, chapter_name);
-  await list_map_async(verses, async (verse) => {
+  return await list_map_async(verses, async (verse) => {
     let { verse_number } = verse;
     let output_path = path_join([
       output_path_folder,
