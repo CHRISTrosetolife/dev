@@ -21,17 +21,7 @@ export async function bible_chapter_video(
         silent: true,
         overwrite: true,
       })
-      .clips([
-        {
-          fileName: "FILENAME",
-        },
-        {
-          fileName: "FILENAME",
-        },
-        {
-          fileName: "FILENAME",
-        },
-      ])
+      .clips(m)
       .output("myfilename")
       .concat();
   });
