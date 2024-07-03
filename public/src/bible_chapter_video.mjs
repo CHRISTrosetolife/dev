@@ -21,7 +21,7 @@ export async function bible_chapter_video(
     output_path_folder,
     string_combine_multiple([hv, ".mp4"]),
   ]);
-  if (await file_exists(output_path_folder)) {
+  if (await file_exists(output_path)) {
     return;
   }
   let videos = await bible_chapter_videos(
