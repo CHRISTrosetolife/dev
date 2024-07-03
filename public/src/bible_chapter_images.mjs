@@ -1,4 +1,3 @@
-import { exit } from "./exit.mjs";
 import { each_index_async } from "./each_index_async.mjs";
 import { path_join } from "./path_join.mjs";
 import { bible_chapter_folder } from "./bible_chapter_folder.mjs";
@@ -36,9 +35,6 @@ export async function bible_chapter_images(bible_folder, chapter_name) {
   let { book_code, chapter_code } = bible_chapter_name_parse(chapter_name);
   let verses = await bible_chapter(bible_folder, chapter_name);
   await each_index_async(verses, async (verse, index) => {
-    if (index >= 4) {
-      exit();
-    }
     let { verse_number } = verse;
     log({
       verse,
