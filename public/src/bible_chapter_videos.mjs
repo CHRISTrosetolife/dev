@@ -9,6 +9,7 @@ import { bible_chapter_images } from "./bible_chapter_images.mjs";
 import videoshow from "videoshow";
 import { path_join } from "./path_join.mjs";
 import { getAudioDurationInSeconds } from "get-audio-duration";
+import { file_exists } from "./file_exists.mjs";
 export async function bible_chapter_videos(
   project_name,
   bible_folder,
@@ -34,6 +35,9 @@ export async function bible_chapter_videos(
       object_property_get(verse, "verse_number"),
       "vertical.mp4",
     ]);
+    if (await file_exists(output_path)) {
+      return;
+    }
     await folder_parent_exists_ensure(output_path);
     let audio_path_trimmed = audio.path.trimmed;
     let audio_duration = await getAudioDurationInSeconds(audio_path_trimmed);
