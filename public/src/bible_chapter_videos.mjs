@@ -1,3 +1,4 @@
+import { folder_parent_exists_ensure } from "./folder_parent_exists_ensure.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
 import { list_zip } from "./list_zip.mjs";
@@ -31,6 +32,7 @@ export async function bible_chapter_videos(
     object_property_get(verse, "verse_number"),
     "vertical.mp4",
   ]);
+  await folder_parent_exists_ensure(output_path);
   return new Promise((resolve, reject) => {
     videoshow([image.path.vertical])
       .audio(audio.path.trimmed)
