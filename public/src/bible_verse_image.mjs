@@ -55,7 +55,10 @@ export async function bible_verse_image(
       width: smaller,
     },
   ];
-  let result = {};
+  let result_path = {};
+  let result = {
+    path: result_path,
+  };
   let hv = list_second(hvs);
   let path_image = path_join([
     output_path_folder,
