@@ -45,7 +45,6 @@ export async function bible_chapter_images(bible_folder, chapter_name) {
       "vertical.png",
     ]);
     let result = {
-      verse,
       path: {
         image: {
           vertical: path_image_vertical,
