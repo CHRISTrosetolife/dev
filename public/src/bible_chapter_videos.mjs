@@ -8,7 +8,6 @@ import { bible_chapter_folder_parent_gitignore } from "./bible_chapter_folder_pa
 import { bible_chapter_images } from "./bible_chapter_images.mjs";
 import videoshow from "videoshow";
 import { path_join } from "./path_join.mjs";
-import { list_first } from "./list_first.mjs";
 import { getAudioDurationInSeconds } from "get-audio-duration";
 export async function bible_chapter_videos(
   project_name,
@@ -28,30 +27,31 @@ export async function bible_chapter_videos(
     chapter_name,
   );
   let zipped = list_zip([verses, images, audios]);
-  await each_async(list, async (item) => {});
-  let [verse, image, audio] = list_first(zipped);
-  let output_path = path_join([
-    output_path_folder,
-    object_property_get(verse, "verse_number"),
-    "vertical.mp4",
-  ]);
-  await folder_parent_exists_ensure(output_path);
-  let audio_path_trimmed = audio.path.trimmed;
-  let audio_duration = await getAudioDurationInSeconds(audio_path_trimmed);
-  return new Promise((resolve, reject) => {
-    videoshow([image.path.vertical], {
-      disableFadeOut: true,
-      loop: audio_duration,
-    })
-      .audio(audio_path_trimmed, {
-        fade: false,
+  await each_async(zipped, async (z) => {
+    let [verse, image, audio] = z;
+    let output_path = path_join([
+      output_path_folder,
+      object_property_get(verse, "verse_number"),
+      "vertical.mp4",
+    ]);
+    await folder_parent_exists_ensure(output_path);
+    let audio_path_trimmed = audio.path.trimmed;
+    let audio_duration = await getAudioDurationInSeconds(audio_path_trimmed);
+    return new Promise((resolve, reject) => {
+      videoshow([image.path.vertical], {
+        disableFadeOut: true,
+        loop: audio_duration,
       })
-      .save(output_path)
-      .on("error", function (e) {
-        reject(e);
-      })
-      .on("end", function () {
-        resolve();
-      });
+        .audio(audio_path_trimmed, {
+          fade: false,
+        })
+        .save(output_path)
+        .on("error", function (e) {
+          reject(e);
+        })
+        .on("end", function () {
+          resolve();
+        });
+    });
   });
 }
