@@ -1,3 +1,4 @@
+import { each_async } from "./each_async.mjs";
 import { folder_parent_exists_ensure } from "./folder_parent_exists_ensure.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
@@ -27,6 +28,7 @@ export async function bible_chapter_videos(
     chapter_name,
   );
   let zipped = list_zip([verses, images, audios]);
+  await each_async(list, async (item) => {});
   let [verse, image, audio] = list_first(zipped);
   let output_path = path_join([
     output_path_folder,
