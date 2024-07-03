@@ -28,7 +28,7 @@ import { list_size } from "./list_size.mjs";
 import { list_take } from "./list_take.mjs";
 export async function bible_chapter_images(bible_folder, chapter_name) {
   assert_arguments_length(arguments, 2);
-  bible_chapter_audio_download_prefix();
+  let prefix = bible_chapter_audio_download_prefix(bible_folder, chapter_name);
   let { book_code, chapter_code } = bible_chapter_name_parse(chapter_name);
   let verses = await bible_chapter(bible_folder, chapter_name);
   await each_async(verses, async (verse) => {
