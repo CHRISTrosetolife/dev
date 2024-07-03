@@ -42,8 +42,11 @@ export async function bible_chapter_images(bible_folder, chapter_name) {
       output_path_folder,
       string_combine_multiple([verse_number, ".png"]),
     ]);
+    let result = {
+      path_image,
+    };
     if (await file_exists(path_image)) {
-      return path_image;
+      return result;
     }
     log({
       verse,
@@ -131,7 +134,7 @@ export async function bible_chapter_images(bible_folder, chapter_name) {
     if (0) {
       await file_open(path_image);
     }
-    return path_image;
+    return result;
   });
   function line_to_height_padded(line) {
     return line.height + line_height_to_padding_double(line.height);
