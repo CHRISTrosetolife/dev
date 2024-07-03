@@ -1,3 +1,4 @@
+import { file_exists } from "./file_exists.mjs";
 import { bible_chapter_folder_parent_gitignore } from "./bible_chapter_folder_parent_gitignore.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { bible_chapter_videos } from "./bible_chapter_videos.mjs";
@@ -13,6 +14,9 @@ export async function bible_chapter_video(
     bible_folder,
     chapter_name,
   );
+  if (await file_exists(output_path)) {
+    return result;
+  }
   let videos = await bible_chapter_videos(
     project_name,
     bible_folder,
