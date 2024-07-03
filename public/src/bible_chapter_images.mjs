@@ -32,6 +32,7 @@ export async function bible_chapter_images(bible_folder, chapter_name) {
   let output_path_folder = folder_gitignore_path(
     path_join(["img", bible_chapter_folder(bible_folder, chapter_name)]),
   );
+  return output_path_folder;
   let { book_code, chapter_code } = bible_chapter_name_parse(chapter_name);
   let verses = await bible_chapter(bible_folder, chapter_name);
   await each_async(verses, async (verse) => {
