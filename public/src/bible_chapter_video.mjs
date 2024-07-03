@@ -32,14 +32,12 @@ export async function bible_chapter_video(
   let m = list_map(videos, (v) => ({
     fileName: object_property_get(object_property_get(v, "path"), hv),
   }));
-  return new Promise((resolve) => {
-    video_stitch
-      .concat({
-        silent: true,
-        overwrite: true,
-      })
-      .clips(m)
-      .output(output_path)
-      .concat();
-  });
+  await video_stitch
+    .concat({
+      silent: true,
+      overwrite: true,
+    })
+    .clips(m)
+    .output(output_path)
+    .concat();
 }
