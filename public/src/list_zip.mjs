@@ -7,7 +7,7 @@ export function list_zip(lists, lambda) {
   let sizes = list_map(lists, list_size);
   let compares = list_adder((la) => {
     each_pairs(sizes, (a, b) => {
-      equal_by(a, b, list_size);
+      let e = equal_by(a, b, list_size);
     });
   });
 }
