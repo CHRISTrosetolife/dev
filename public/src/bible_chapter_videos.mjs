@@ -1,5 +1,4 @@
 import { log } from "./log.mjs";
-import { each_async } from "./each_async.mjs";
 import { folder_parent_exists_ensure } from "./folder_parent_exists_ensure.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
@@ -11,6 +10,7 @@ import videoshow from "videoshow";
 import { path_join } from "./path_join.mjs";
 import { getAudioDurationInSeconds } from "get-audio-duration";
 import { file_exists } from "./file_exists.mjs";
+import { list_map_async } from "./list_map_async.mjs";
 export async function bible_chapter_videos(
   project_name,
   bible_folder,
@@ -29,7 +29,7 @@ export async function bible_chapter_videos(
     chapter_name,
   );
   let zipped = list_zip([verses, images, audios]);
-  await each_async(zipped, async (z) => {
+  await list_map_async(zipped, async (z) => {
     let [verse, image, audio] = z;
     let output_path = path_join([
       output_path_folder,
@@ -61,5 +61,10 @@ export async function bible_chapter_videos(
           resolve();
         });
     });
+    return {
+      path: {
+        vertical: audio_path_trimmed,
+      },
+    };
   });
 }
