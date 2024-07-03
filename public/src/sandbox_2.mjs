@@ -5,6 +5,8 @@ export function sandbox_2() {
     videoshow([bible_image_path()])
       .save(folder_gitignore_path("video.mp4"))
       .on("error", function () {})
-      .on("end", function () {});
+      .on("end", function () {
+        resolve();
+      });
   });
 }
