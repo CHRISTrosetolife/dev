@@ -8,6 +8,7 @@ export function list_zip(lists, lambda) {
   let compares = list_adder((la) => {
     each_pairs(sizes, (a, b) => {
       let e = equal_by(a, b, list_size);
+      la(e);
     });
   });
 }
