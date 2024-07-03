@@ -19,6 +19,7 @@
     "firebase": "^10.11.1",
     "firebase-admin": "^12.1.0",
     "fluent-ffmpeg": "^2.1.3",
+    "get-audio-duration": "^4.0.1",
     "glob": "^10.3.10",
     "linebyline": "^1.3.0",
     "node-fetch": "^3.3.2",
