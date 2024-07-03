@@ -29,10 +29,9 @@ import { list_size } from "./list_size.mjs";
 import { list_take } from "./list_take.mjs";
 export async function bible_chapter_images(bible_folder, chapter_name) {
   assert_arguments_length(arguments, 2);
-  let output_path = folder_gitignore_path(
+  let output_path_folder = folder_gitignore_path(
     path_join(["img", bible_chapter_folder(bible_folder, chapter_name)]),
   );
-  return prefix;
   let { book_code, chapter_code } = bible_chapter_name_parse(chapter_name);
   let verses = await bible_chapter(bible_folder, chapter_name);
   await each_async(verses, async (verse) => {
@@ -124,7 +123,10 @@ export async function bible_chapter_images(bible_folder, chapter_name) {
       ctx.fillText(line.text, padding, offset_line + offset_height);
     });
     let buffer = canvas.toBuffer("image/png");
-    let output_path = folder_gitignore_path("test.png");
+    let output_path = path_join([
+      output_path_folder,
+      string_combine_multiple([verse_number, ".png"]),
+    ]);
     await file_overwrite_binary(output_path, buffer);
     await file_open(output_path);
   });
