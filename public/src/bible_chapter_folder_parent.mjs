@@ -7,7 +7,7 @@ export function bible_chapter_folder_parent(
   chapter_name,
 ) {
   let paths = [folder_parent];
-  let p = bible_chapter_folder(chapter_name, folder_name);
+  let p = bible_chapter_folder(folder_name, chapter_name);
   list_add(paths, p);
   let r = path_join(paths);
   return r;
