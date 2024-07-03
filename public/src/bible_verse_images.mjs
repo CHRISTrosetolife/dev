@@ -72,6 +72,7 @@ export async function bible_verse_images(
       return;
     }
     log({
+      hv,
       match,
     });
     let tokens = object_property_get(match, "tokens");
