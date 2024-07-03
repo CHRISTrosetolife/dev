@@ -7,7 +7,12 @@ export function bible_chapter_audio_download_prefix(folder_name, chapter_name) {
   let paths = [folder_audio_bible()];
   let { book_code, chapter_code } = bible_chapter_name_parse(chapter_name);
   let chapter_number = string_trim_front(chapter_code, "0");
-  string_combine_multiple([folder_name, book_code, chapter_number, "/"]);
+  let p = string_combine_multiple([
+    folder_name,
+    book_code,
+    chapter_number,
+    "/",
+  ]);
   let r = path_join(paths);
   return r;
 }
