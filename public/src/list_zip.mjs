@@ -3,6 +3,7 @@ import { equal_by } from "./equal_by.mjs";
 import { each_pairs } from "./each_pairs.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_size } from "./list_size.mjs";
+import { list_all } from "./list_all.mjs";
 export function list_zip(lists, lambda) {
   let sizes = list_map(lists, list_size);
   let compares = list_adder((la) => {
@@ -11,4 +12,5 @@ export function list_zip(lists, lambda) {
       la(e);
     });
   });
+  list_all(compares, (c) => c === true);
 }
