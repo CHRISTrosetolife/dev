@@ -58,10 +58,7 @@ export async function bible_verse_image(
   let path_image_vertical = path_join([
     output_path_folder,
     verse_number,
-    string_combine_multiple([
-      object_property_get(object, property_name),
-      ".png",
-    ]),
+    string_combine_multiple([object_property_get(hv, "name"), ".png"]),
   ]);
   let result = {
     path: {
