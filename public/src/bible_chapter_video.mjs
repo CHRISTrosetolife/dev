@@ -12,7 +12,9 @@ export async function bible_chapter_video(
     bible_folder,
     chapter_name,
   );
-  let m = list_map(videos, (v) => object_property_get(object, property_name));
+  let m = list_map(videos, (v) =>
+    object_property_get(object_property_get(object, property_name), "vertical"),
+  );
   return new Promise((resolve) => {
     video_stitch
       .concat({
