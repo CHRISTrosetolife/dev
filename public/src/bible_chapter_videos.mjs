@@ -27,7 +27,7 @@ export async function bible_chapter_videos(
   return new Promise((resolve, reject) => {
     videoshow([image.path.vertical])
       .audio(audio.path.trimmed)
-      .save(path_join([output_path_folder, "video.mp4"]))
+      .save(path_join([output_path_folder, "vertical.mp4"]))
       .on("error", function (e) {
         reject(e);
       })
