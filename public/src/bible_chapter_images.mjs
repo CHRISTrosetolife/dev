@@ -1,3 +1,4 @@
+import { file_exists } from "./file_exists.mjs";
 import { bible_image_path } from "./bible_image_path.mjs";
 import { each_index_async } from "./each_index_async.mjs";
 import { path_join } from "./path_join.mjs";
@@ -41,6 +42,9 @@ export async function bible_chapter_images(bible_folder, chapter_name) {
       output_path_folder,
       string_combine_multiple([verse_number, ".png"]),
     ]);
+    if (await file_exists(output_path)) {
+      return;
+    }
     log({
       verse,
     });
