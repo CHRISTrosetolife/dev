@@ -1,6 +1,5 @@
 import { bible_image_resolutions } from "./bible_image_resolutions.mjs";
 import { path_resolve } from "./path_resolve.mjs";
-import { log } from "./log.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { file_exists } from "./file_exists.mjs";
 import { bible_chapter_folder_parent_gitignore } from "./bible_chapter_folder_parent_gitignore.mjs";
@@ -38,7 +37,6 @@ export async function bible_chapter_video(
       object_property_get(object_property_get(v, "path"), hv_name),
     ),
   }));
-  log("here");
   await video_stitch
     .concat({
       silent: false,
