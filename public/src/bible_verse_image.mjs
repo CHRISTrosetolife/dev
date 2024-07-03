@@ -41,7 +41,7 @@ export async function bible_verse_image(
   let match = list_find_property(verses, "verse_number", verse_number);
   let hvs = [
     {
-      nae: "horizontal",
+      name: "horizontal",
     },
     {
       name: "vertical",
