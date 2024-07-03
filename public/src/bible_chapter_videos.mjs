@@ -35,7 +35,7 @@ export async function bible_chapter_videos(
     let output_path = path_join([
       output_path_folder,
       object_property_get(verse, "verse_number"),
-      "vertical.mp4",
+      ".mp4",
     ]);
     if (await file_exists(output_path)) {
       return;
