@@ -1,4 +1,3 @@
-import { exit } from "./exit.mjs";
 import { path_join } from "./path_join.mjs";
 import { bible_chapter_folder } from "./bible_chapter_folder.mjs";
 import { log } from "./log.mjs";
@@ -129,7 +128,6 @@ export async function bible_chapter_images(bible_folder, chapter_name) {
       string_combine_multiple([verse_number, ".png"]),
     ]);
     await file_overwrite_binary(output_path, buffer);
-    exit();
     if (0) {
       await file_open(output_path);
     }
