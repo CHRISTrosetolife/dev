@@ -55,17 +55,17 @@ export async function bible_verse_image(
     },
   ];
   let hv = list_second(hvs);
-  let path_image_vertical = path_join([
+  let path_image = path_join([
     output_path_folder,
     verse_number,
     string_combine_multiple([object_property_get(hv, "name"), ".png"]),
   ]);
   let result = {
     path: {
-      [hv]: path_image_vertical,
+      [hv]: path_image,
     },
   };
-  if (await file_exists(path_image_vertical)) {
+  if (await file_exists(path_image)) {
     result;
   }
   log({
@@ -149,9 +149,9 @@ export async function bible_verse_image(
     ctx.fillText(line.text, padding, offset_line - padding + offset_height);
   });
   let buffer = canvas.toBuffer("image/png");
-  await file_overwrite_binary(path_image_vertical, buffer);
+  await file_overwrite_binary(path_image, buffer);
   if (0) {
-    await file_open(path_image_vertical);
+    await file_open(path_image);
   }
   function line_to_height_padded(line) {
     return line.height + line_height_to_padding_double(line.height);
