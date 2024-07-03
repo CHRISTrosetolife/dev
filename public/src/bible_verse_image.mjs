@@ -69,7 +69,7 @@ export async function bible_verse_image(
       [hv]: path_image,
     });
     if (await file_exists(path_image)) {
-      result;
+      return;
     }
     log({
       match,
