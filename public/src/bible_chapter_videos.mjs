@@ -31,18 +31,18 @@ export async function bible_chapter_videos(
     chapter_name,
   );
   let hvs = bible_image_resolutions();
-  let hv = "vertical";
+  let hv_name = "vertical";
   let zipped = list_zip([verses, images, audios]);
   return await list_map_async(zipped, async (z) => {
     let [verse, image, audio] = z;
     let output_path = path_join([
       output_path_folder,
       object_property_get(verse, "verse_number"),
-      string_combine_multiple([hv, ".mp4"]),
+      string_combine_multiple([hv_name, ".mp4"]),
     ]);
     let result = {
       path: {
-        [hv]: output_path,
+        [hv_name]: output_path,
       },
     };
     if (await file_exists(output_path)) {
@@ -55,7 +55,7 @@ export async function bible_chapter_videos(
     let audio_path_trimmed = audio.path.trimmed;
     let audio_duration = await getAudioDurationInSeconds(audio_path_trimmed);
     await new Promise((resolve, reject) => {
-      videoshow([object_property_get(image.path, hv)], {
+      videoshow([object_property_get(image.path, hv_name)], {
         disableFadeOut: true,
         loop: audio_duration,
       })
