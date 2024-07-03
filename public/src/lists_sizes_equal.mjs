@@ -1,3 +1,4 @@
+import { true_is } from "./true_is.mjs";
 import { list_all } from "./list_all.mjs";
 import { list_size } from "./list_size.mjs";
 import { equal_by } from "./equal_by.mjs";
@@ -10,6 +11,6 @@ export function lists_sizes_equal(lists) {
       la(e);
     });
   });
-  let same_sizes = list_all(compares, (c) => c === true);
+  let same_sizes = list_all(compares, (c) => true_is(c));
   return same_sizes;
 }
