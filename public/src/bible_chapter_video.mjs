@@ -1,5 +1,11 @@
+import { bible_chapter_videos } from "./bible_chapter_videos.mjs";
 import video_stitch from "video-stitch";
-export function bible_chapter_video(project_name, bible_folder, chapter_name) {
+export async function bible_chapter_video(
+  project_name,
+  bible_folder,
+  chapter_name,
+) {
+  await bible_chapter_videos(project_name, bible_folder, chapter_name);
   return new Promise((resolve) => {
     video_stitch
       .concat({
