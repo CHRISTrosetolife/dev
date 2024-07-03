@@ -63,10 +63,11 @@ export async function bible_chapter_videos(
           resolve();
         });
     });
-    return {
+    let result = {
       path: {
         [hv]: audio_path_trimmed,
       },
     };
+    return result;
   });
 }
