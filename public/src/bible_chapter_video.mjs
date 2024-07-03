@@ -1,3 +1,4 @@
+import { each_async } from "./each_async.mjs";
 import { bible_image_resolutions } from "./bible_image_resolutions.mjs";
 import { path_resolve } from "./path_resolve.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -14,6 +15,7 @@ export async function bible_chapter_video(
   chapter_name,
 ) {
   let hvs = bible_image_resolutions();
+  await each_async(list, async (item) => {});
   let hv_name = object_property_get(hv, "name");
   let output_path_folder = bible_chapter_folder_parent_gitignore(
     "video",
