@@ -39,11 +39,13 @@ export async function bible_verse_image(
   let { book_code, chapter_code } = bible_chapter_name_parse(chapter_name);
   let verses = await bible_chapter(bible_folder, chapter_name);
   let match = list_find_property(verses, "verse_number", verse_number);
+  let smaller = 1080;
+  let larger = 1920;
   let hvs = [
     {
       name: "horizontal",
-      height: 1080,
-      width: 1920,
+      height: smaller,
+      width: larger,
     },
     {
       name: "vertical",
