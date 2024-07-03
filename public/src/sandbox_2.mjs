@@ -2,8 +2,8 @@ import { bible_chapter_images } from "./bible_chapter_images.mjs";
 import { bible_image_path } from "./bible_image_path.mjs";
 import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
 import videoshow from "videoshow";
-export async function sandbox_2() {
-  await bible_chapter_images();
+export async function sandbox_2(bible_folder, chapter_name) {
+  await bible_chapter_images(bible_folder, chapter_name);
   return new Promise((resolve, reject) => {
     videoshow([bible_image_path()])
       .save(folder_gitignore_path("video.mp4"))
