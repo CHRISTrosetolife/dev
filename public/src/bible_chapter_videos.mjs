@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
 import { list_zip } from "./list_zip.mjs";
 import { bible_chapter_audio_trim } from "./bible_chapter_audio_trim.mjs";
@@ -29,7 +30,13 @@ export async function bible_chapter_videos(
   return new Promise((resolve, reject) => {
     videoshow([image.path.vertical])
       .audio(audio.path.trimmed)
-      .save(path_join([output_path_folder, "vertical.mp4"]))
+      .save(
+        path_join([
+          output_path_folder,
+          object_property_get(object, property_name),
+          "vertical.mp4",
+        ]),
+      )
       .on("error", function (e) {
         reject(e);
       })
