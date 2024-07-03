@@ -75,8 +75,8 @@ export async function bible_verse_image(
   let book_name = bible_book_name(book_code);
   let reference = bible_reference(book_name, chapter_code, verse_number);
   list_add_beginning(tokens, reference);
-  let canvas_width = object_property_get(object, property_name);
-  let canvas_height = 1920;
+  let canvas_width = object_property_get(hv, "width");
+  let canvas_height = object_property_get(hv, "height");
   let bigger = number_max(canvas_width, canvas_height);
   let canvas = createCanvas(canvas_width, canvas_height);
   let ctx = canvas.getContext("2d");
