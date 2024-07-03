@@ -44,7 +44,7 @@ export async function bible_chapter_videos(
       },
     };
     if (await file_exists(output_path)) {
-      return;
+      return result;
     }
     log({
       verse,
