@@ -15,7 +15,7 @@ export async function bible_chapter_video(
   chapter_name,
 ) {
   let hvs = bible_image_resolutions();
-  let hv = "vertical";
+  let hv_name = "vertical";
   let output_path_folder = bible_chapter_folder_parent_gitignore(
     "video",
     bible_folder,
@@ -23,7 +23,7 @@ export async function bible_chapter_video(
   );
   let output_path = path_join([
     output_path_folder,
-    string_combine_multiple([hv, ".mp4"]),
+    string_combine_multiple([hv_name, ".mp4"]),
   ]);
   if (await file_exists(output_path)) {
     return;
@@ -35,7 +35,7 @@ export async function bible_chapter_video(
   );
   let m = list_map(videos, (v) => ({
     fileName: path_resolve(
-      object_property_get(object_property_get(v, "path"), hv),
+      object_property_get(object_property_get(v, "path"), hv_name),
     ),
   }));
   log("here");
