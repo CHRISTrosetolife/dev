@@ -1,3 +1,4 @@
+import { each_async } from "./each_async.mjs";
 import { bible_image_resolutions } from "./bible_image_resolutions.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { log } from "./log.mjs";
@@ -40,6 +41,7 @@ export async function bible_chapter_videos(
     let result = {
       path: result_path,
     };
+    await each_async(list, async (item) => {});
     let output_path = path_join([
       output_path_folder,
       object_property_get(verse, "verse_number"),
