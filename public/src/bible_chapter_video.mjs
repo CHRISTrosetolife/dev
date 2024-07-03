@@ -5,7 +5,11 @@ export async function bible_chapter_video(
   bible_folder,
   chapter_name,
 ) {
-  await bible_chapter_videos(project_name, bible_folder, chapter_name);
+  let videos = await bible_chapter_videos(
+    project_name,
+    bible_folder,
+    chapter_name,
+  );
   return new Promise((resolve) => {
     video_stitch
       .concat({
