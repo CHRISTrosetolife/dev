@@ -68,7 +68,9 @@ export async function bible_verse_images(
     let book_name = bible_book_name(book_code);
     let reference = bible_reference(book_name, chapter_code, verse_number);
     list_add_beginning(tokens, reference);
-    log({});
+    log({
+      tokens,
+    });
     let canvas_width = object_property_get(hv, "width");
     let canvas_height = object_property_get(hv, "height");
     let bigger = number_max(canvas_width, canvas_height);
