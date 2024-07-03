@@ -13,4 +13,5 @@ export function list_zip(lists, lambda) {
     });
   });
   let same_sizes = list_all(compares, (c) => c === true);
+  same_sizes;
 }
