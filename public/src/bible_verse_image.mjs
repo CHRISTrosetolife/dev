@@ -26,6 +26,7 @@ import { bible_chapter } from "./bible_chapter.mjs";
 import { bible_chapter_name_parse } from "./bible_chapter_name_parse.mjs";
 import { bible_chapter_folder_parent_gitignore } from "./bible_chapter_folder_parent_gitignore.mjs";
 import { createCanvas, loadImage } from "canvas";
+import { list_map } from "./list_map.mjs";
 export async function bible_verse_image(
   bible_folder,
   chapter_name,
@@ -40,6 +41,9 @@ export async function bible_verse_image(
   let verses = await bible_chapter(bible_folder, chapter_name);
   let match = list_find_property(verses, "verse_number", verse_number);
   let hvs = ["horizontal", "vertical"];
+  list_map(hvs, (hv) =>
+    path_join([output_path_folder, verse_number, "vertical.png"]),
+  );
   let path_image_vertical = path_join([
     output_path_folder,
     verse_number,
