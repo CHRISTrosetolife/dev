@@ -52,7 +52,7 @@ export async function bible_chapter_images(bible_folder, chapter_name) {
       },
     };
     if (await file_exists(path_image_vertical)) {
-      return result;
+      result;
     }
     log({
       verse,
@@ -140,14 +140,14 @@ export async function bible_chapter_images(bible_folder, chapter_name) {
       await file_open(path_image_vertical);
     }
     return result;
+    function line_to_height_padded(line) {
+      return line.height + line_height_to_padding_double(line.height);
+    }
+    function line_height_to_padding_double(height) {
+      return 2 * line_height_to_padding(height);
+    }
+    function line_height_to_padding(height) {
+      return height / 3;
+    }
   });
-  function line_to_height_padded(line) {
-    return line.height + line_height_to_padding_double(line.height);
-  }
-  function line_height_to_padding_double(height) {
-    return 2 * line_height_to_padding(height);
-  }
-  function line_height_to_padding(height) {
-    return height / 3;
-  }
 }
