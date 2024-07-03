@@ -38,12 +38,12 @@ export async function bible_chapter_images(bible_folder, chapter_name) {
   let verses = await bible_chapter(bible_folder, chapter_name);
   return await list_map_async(verses, async (verse) => {
     let { verse_number } = verse;
-    let output_path = path_join([
+    let path_image = path_join([
       output_path_folder,
       string_combine_multiple([verse_number, ".png"]),
     ]);
-    if (await file_exists(output_path)) {
-      return output_path;
+    if (await file_exists(path_image)) {
+      return path_image;
     }
     log({
       verse,
@@ -127,11 +127,11 @@ export async function bible_chapter_images(bible_folder, chapter_name) {
       ctx.fillText(line.text, padding, offset_line - padding + offset_height);
     });
     let buffer = canvas.toBuffer("image/png");
-    await file_overwrite_binary(output_path, buffer);
+    await file_overwrite_binary(path_image, buffer);
     if (0) {
-      await file_open(output_path);
+      await file_open(path_image);
     }
-    return output_path;
+    return path_image;
   });
   function line_to_height_padded(line) {
     return line.height + line_height_to_padding_double(line.height);
