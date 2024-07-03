@@ -43,6 +43,7 @@ export async function bible_verse_image(
     {
       name: "horizontal",
       height: 1080,
+      width: 1920,
     },
     {
       name: "vertical",
