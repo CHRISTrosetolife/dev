@@ -39,6 +39,7 @@ export async function bible_chapter_images(bible_folder, chapter_name) {
   let verses = await bible_chapter(bible_folder, chapter_name);
   return await list_map_async(verses, async (verse) => {
     let { verse_number } = verse;
+    let match = list_find_property(verses, "verse_number", verse_number);
     let path_image_vertical = path_join([
       output_path_folder,
       verse_number,
@@ -55,7 +56,6 @@ export async function bible_chapter_images(bible_folder, chapter_name) {
     log({
       verse,
     });
-    let match = list_find_property(verses, "verse_number", verse_number);
     let tokens = object_property_get(match, "tokens");
     let book_name = bible_book_name(book_code);
     let reference = bible_reference(book_name, chapter_code, verse_number);
