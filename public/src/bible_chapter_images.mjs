@@ -125,7 +125,7 @@ export async function bible_chapter_images(bible_folder, chapter_name) {
         list_take(lines, index + 1),
         line_to_height_padded,
       );
-      ctx.fillText(line.text, padding, offset_line + offset_height);
+      ctx.fillText(line.text, padding, offset_line - padding + offset_height);
     });
     let buffer = canvas.toBuffer("image/png");
     let output_path = path_join([
