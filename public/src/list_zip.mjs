@@ -7,5 +7,5 @@ import { list_first } from "./list_first.mjs";
 export function list_zip(lists, lambda) {
   let same_sizes = lists_sizes_equal(lists);
   assert(true_is, [same_sizes]);
-  each_range(list_size(list_first(lists)), (item) => {});
+  each_range(list_size(list_first(lists)), (index) => {});
 }
