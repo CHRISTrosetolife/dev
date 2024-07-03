@@ -1,4 +1,4 @@
-import { bible_chapter_folder_parent } from "./bible_chapter_folder_parent.mjs";
+import { bible_chapter_folder_parent_gitignore } from "./bible_chapter_folder_parent_gitignore.mjs";
 import { list_map_async } from "./list_map_async.mjs";
 import { file_exists } from "./file_exists.mjs";
 import { bible_image_path } from "./bible_image_path.mjs";
@@ -23,7 +23,6 @@ import { file_read_binary } from "./file_read_binary.mjs";
 import { file_overwrite_binary } from "./file_overwrite_binary.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { createCanvas, loadImage } from "canvas";
-import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
 import { number_max } from "./number_max.mjs";
 import { list_slice } from "./list_slice.mjs";
 import { list_join_space } from "./list_join_space.mjs";
@@ -32,8 +31,10 @@ import { list_take } from "./list_take.mjs";
 export async function bible_chapter_images(bible_folder, chapter_name) {
   assert_arguments_length(arguments, 2);
   let folder_parent = "img";
-  let output_path_folder = folder_gitignore_path(
-    bible_chapter_folder_parent(folder_parent, bible_folder, chapter_name),
+  let output_path_folder = bible_chapter_folder_parent_gitignore(
+    folder_parent,
+    bible_folder,
+    chapter_name,
   );
   let { book_code, chapter_code } = bible_chapter_name_parse(chapter_name);
   let verses = await bible_chapter(bible_folder, chapter_name);
