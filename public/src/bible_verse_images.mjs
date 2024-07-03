@@ -1,3 +1,4 @@
+import { bible_image_resolutions } from "./bible_image_resolutions.mjs";
 import { each_async } from "./each_async.mjs";
 import { file_open } from "./file_open.mjs";
 import { file_overwrite_binary } from "./file_overwrite_binary.mjs";
@@ -41,20 +42,7 @@ export async function bible_verse_images(
   let { book_code, chapter_code } = bible_chapter_name_parse(chapter_name);
   let verses = await bible_chapter(bible_folder, chapter_name);
   let match = list_find_property(verses, "verse_number", verse_number);
-  let smaller = 1080;
-  let larger = 1920;
-  let hvs = [
-    {
-      name: "horizontal",
-      height: smaller,
-      width: larger,
-    },
-    {
-      name: "vertical",
-      height: larger,
-      width: smaller,
-    },
-  ];
+  let hvs = bible_image_resolutions();
   let result_path = {};
   let result = {
     path: result_path,
