@@ -37,6 +37,10 @@ export async function bible_chapter_images(bible_folder, chapter_name) {
   let verses = await bible_chapter(bible_folder, chapter_name);
   await each_index_async(verses, async (verse, index) => {
     let { verse_number } = verse;
+    let output_path = path_join([
+      output_path_folder,
+      string_combine_multiple([verse_number, ".png"]),
+    ]);
     log({
       verse,
     });
@@ -119,10 +123,6 @@ export async function bible_chapter_images(bible_folder, chapter_name) {
       ctx.fillText(line.text, padding, offset_line - padding + offset_height);
     });
     let buffer = canvas.toBuffer("image/png");
-    let output_path = path_join([
-      output_path_folder,
-      string_combine_multiple([verse_number, ".png"]),
-    ]);
     await file_overwrite_binary(output_path, buffer);
     if (0) {
       await file_open(output_path);
