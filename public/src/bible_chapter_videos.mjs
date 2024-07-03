@@ -42,7 +42,7 @@ export async function bible_chapter_videos(
       path: result_path,
     };
     await each_async(hvs, async (hv) => {
-      hv_name = object_property_get(object, property_name);
+      hv_name = object_property_get(hv, "name");
       let output_path = path_join([
         output_path_folder,
         object_property_get(verse, "verse_number"),
