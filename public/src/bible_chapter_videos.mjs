@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { each_async } from "./each_async.mjs";
 import { folder_parent_exists_ensure } from "./folder_parent_exists_ensure.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -38,6 +39,7 @@ export async function bible_chapter_videos(
     if (await file_exists(output_path)) {
       return;
     }
+    log({});
     await folder_parent_exists_ensure(output_path);
     let audio_path_trimmed = audio.path.trimmed;
     let audio_duration = await getAudioDurationInSeconds(audio_path_trimmed);
