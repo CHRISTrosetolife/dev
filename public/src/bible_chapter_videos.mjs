@@ -40,7 +40,7 @@ export async function bible_chapter_videos(
     ]);
     let result = {
       path: {
-        [hv]: audio_path_trimmed,
+        [hv]: output_path,
       },
     };
     if (await file_exists(output_path)) {
