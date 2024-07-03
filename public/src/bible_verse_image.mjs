@@ -39,6 +39,7 @@ export async function bible_verse_image(
   let { book_code, chapter_code } = bible_chapter_name_parse(chapter_name);
   let verses = await bible_chapter(bible_folder, chapter_name);
   let match = list_find_property(verses, "verse_number", verse_number);
+  let hvs = ["horizontal", "vertical"];
   let path_image_vertical = path_join([
     output_path_folder,
     verse_number,
