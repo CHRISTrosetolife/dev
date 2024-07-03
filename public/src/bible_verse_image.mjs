@@ -49,6 +49,8 @@ export async function bible_verse_image(
     },
     {
       name: "vertical",
+      height: larger,
+      width: smaller,
     },
   ];
   let hv = "vertical";
