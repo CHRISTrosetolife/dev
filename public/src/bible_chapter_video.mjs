@@ -1,3 +1,4 @@
+import { path_resolve } from "./path_resolve.mjs";
 import { log } from "./log.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { file_exists } from "./file_exists.mjs";
@@ -31,7 +32,9 @@ export async function bible_chapter_video(
     chapter_name,
   );
   let m = list_map(videos, (v) => ({
-    fileName: object_property_get(object_property_get(v, "path"), hv),
+    fileName: path_resolve(
+      object_property_get(object_property_get(v, "path"), hv),
+    ),
   }));
   log("here");
   await video_stitch
