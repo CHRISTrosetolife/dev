@@ -39,7 +39,9 @@ export async function bible_chapter_videos(
     if (await file_exists(output_path)) {
       return;
     }
-    log({});
+    log({
+      verse,
+    });
     await folder_parent_exists_ensure(output_path);
     let audio_path_trimmed = audio.path.trimmed;
     let audio_duration = await getAudioDurationInSeconds(audio_path_trimmed);
