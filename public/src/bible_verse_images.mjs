@@ -61,6 +61,7 @@ export async function bible_verse_images(
       hv_name,
       string_combine_multiple([verse_number, ".png"]),
     ]);
+    let paths_image = [path_image, path_image_2];
     object_merge(result_path, {
       [hv_name]: path_image,
     });
