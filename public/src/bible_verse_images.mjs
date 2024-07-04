@@ -71,6 +71,7 @@ export async function bible_verse_images(
       }
     }
     log({
+      fn: bible_verse_images.name,
       hv,
       match,
     });
