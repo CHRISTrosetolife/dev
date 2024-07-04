@@ -34,7 +34,7 @@ export async function bible_verse_images(
   chapter_name,
   verse_number,
 ) {
-  let overwrite = false;
+  let overwrite = true;
   let output_path_folder = bible_chapter_folder_parent_gitignore(
     "img",
     bible_folder,
