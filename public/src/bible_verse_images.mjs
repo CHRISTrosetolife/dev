@@ -153,7 +153,7 @@ export async function bible_verse_images(
       ctx.fillText(line.text, padding, offset_line - padding + offset_height);
     });
     let buffer = canvas.toBuffer("image/png");
-    await each_async(list, async (item) => {});
+    await each_async(paths_image, async (pi) => {});
     await file_overwrite_binary(path_image, buffer);
     if (0) {
       await file_open(path_image);
