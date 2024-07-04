@@ -51,8 +51,10 @@ export async function bible_chapter_videos(
       object_merge(result_path, {
         [hv_name]: output_path,
       });
-      if (await file_exists(output_path)) {
-        return result;
+      if (!overwrite) {
+        if (await file_exists(output_path)) {
+          return result;
+        }
       }
       log({
         hv,
