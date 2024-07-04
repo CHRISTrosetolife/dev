@@ -1,6 +1,6 @@
-export function list_all_async(list, predicate) {
+export async function list_all_async(list, predicate) {
   for (let element of list) {
-    if (!predicate(element)) {
+    if (!(await predicate(element))) {
       return false;
     }
   }
