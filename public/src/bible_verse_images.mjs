@@ -155,13 +155,13 @@ export async function bible_verse_images(
     });
     let buffer = canvas.toBuffer("image/png");
     await each_async(paths_image, async (pi) => {
-      if (await file_exists_not()) {
+      if (await file_exists_not(pi)) {
+        await file_overwrite_binary(pi, buffer);
+        if (0) {
+          await file_open(pi);
+        }
       }
     });
-    await file_overwrite_binary(path_image, buffer);
-    if (0) {
-      await file_open(path_image);
-    }
   });
   return result;
   function line_to_height_padded(line) {
