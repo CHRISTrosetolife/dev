@@ -14,6 +14,7 @@ export async function bible_chapter_video(
   bible_folder,
   chapter_name,
 ) {
+  let overwrite = true;
   let hvs = bible_image_resolutions();
   let videos = await bible_chapter_videos(
     project_name,
