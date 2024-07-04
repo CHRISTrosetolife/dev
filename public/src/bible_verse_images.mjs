@@ -55,7 +55,7 @@ export async function bible_verse_images(
       verse_number,
       string_combine_multiple([hv_name, ".png"]),
     ]);
-    let path_image2 = path_join([
+    let path_image_2 = path_join([
       output_path_folder,
       hv_name,
       string_combine_multiple([verse_number, ".png"]),
