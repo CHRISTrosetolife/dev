@@ -34,6 +34,7 @@ export async function bible_verse_images(
   chapter_name,
   verse_number,
 ) {
+  let overwrite = false;
   let output_path_folder = bible_chapter_folder_parent_gitignore(
     "img",
     bible_folder,
@@ -57,7 +58,7 @@ export async function bible_verse_images(
     object_merge(result_path, {
       [hv_name]: path_image,
     });
-    if (0) {
+    if (overwrite) {
       if (await file_exists(path_image)) {
         return;
       }
