@@ -20,6 +20,7 @@ export async function bible_chapter_videos(
   bible_folder,
   chapter_name,
 ) {
+  let overwrite = true;
   let output_path_folder = bible_chapter_folder_parent_gitignore(
     "video",
     bible_folder,
