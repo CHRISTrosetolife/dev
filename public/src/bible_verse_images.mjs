@@ -30,6 +30,7 @@ import { bible_chapter_folder_parent_gitignore } from "./bible_chapter_folder_pa
 import { createCanvas, loadImage } from "canvas";
 import { object_merge } from "./object_merge.mjs";
 import { list_concat } from "./list_concat.mjs";
+import { file_exists_not } from "./file_exists_not.mjs";
 export async function bible_verse_images(
   bible_folder,
   chapter_name,
@@ -153,7 +154,10 @@ export async function bible_verse_images(
       ctx.fillText(line.text, padding, offset_line - padding + offset_height);
     });
     let buffer = canvas.toBuffer("image/png");
-    await each_async(paths_image, async (pi) => {});
+    await each_async(paths_image, async (pi) => {
+      if (await file_exists_not()) {
+      }
+    });
     await file_overwrite_binary(path_image, buffer);
     if (0) {
       await file_open(path_image);
