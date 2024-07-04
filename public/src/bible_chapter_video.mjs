@@ -15,6 +15,11 @@ export async function bible_chapter_video(
   chapter_name,
 ) {
   let hvs = bible_image_resolutions();
+  let videos = await bible_chapter_videos(
+    project_name,
+    bible_folder,
+    chapter_name,
+  );
   await each_async(hvs, async (hv) => {
     let hv_name = object_property_get(hv, "name");
     let output_path_folder = bible_chapter_folder_parent_gitignore(
@@ -29,11 +34,6 @@ export async function bible_chapter_video(
     if (await file_exists(output_path)) {
       return;
     }
-    let videos = await bible_chapter_videos(
-      project_name,
-      bible_folder,
-      chapter_name,
-    );
     let m = list_map(videos, (v) => ({
       fileName: path_resolve(
         object_property_get(object_property_get(v, "path"), hv_name),
