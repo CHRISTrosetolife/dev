@@ -1,3 +1,4 @@
+import { list_all_async } from "./list_all_async.mjs";
 import { bible_image_resolutions } from "./bible_image_resolutions.mjs";
 import { each_async } from "./each_async.mjs";
 import { file_open } from "./file_open.mjs";
@@ -63,6 +64,7 @@ export async function bible_verse_images(
     object_merge(result_path, {
       [hv_name]: path_image,
     });
+    await list_all_async();
     if (!overwrite) {
       if (await file_exists(path_image)) {
         return;
