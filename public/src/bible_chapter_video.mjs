@@ -31,7 +31,9 @@ export async function bible_chapter_video(
     let output_file_name = string_combine_multiple([
       "Matthew ",
       "3",
-      " - Audio Bible - Dramatic - Berean Standard Bible BSB - Human - Vertical",
+      " - Audio Bible - Dramatic - Berean Standard Bible BSB - Human - ",
+      "V",
+      "ertical",
       ".mp4",
     ]);
     let output_path = path_join([output_path_folder, output_file_name]);
