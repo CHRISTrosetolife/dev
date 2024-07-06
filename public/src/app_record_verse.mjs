@@ -59,31 +59,7 @@ export async function app_record_verse(
       ]);
       await firebase_upload(storage_path, blob);
       if (list_last_is(verses, verse)) {
-        let { books } = context;
-        let book = list_find_property_or(books, "book_code", book_code);
-        let { chapters } = book;
-        let chapter_next, book_next;
-        if (list_last_is(chapters, chapter)) {
-          if (list_last_is(books, book)) {
-            book_next = list_first(books);
-          } else {
-            let book_index_next = list_index_next(books, chapter);
-            book_next = list_get(books, book_index_next);
-          }
-          let { chapters } = book_next;
-          chapter_next = list_first(chapters);
-        } else {
-          book_next = book_code;
-          let chapter_index_next = list_index_next(chapters, chapter);
-          chapter_next = list_get(chapters, chapter_index_next);
-        }
-        let verses_next = await app_record_verses(book_code, chapter_next);
-        await app_record_verse(
-          context,
-          book_next,
-          chapter_next,
-          list_first(verses_next),
-        );
+        await chapter_next();
       } else {
         let verse_number_next = list_find_property_next_property(
           verses,
@@ -115,4 +91,31 @@ export async function app_record_verse(
   );
   recording = [save, restart, cancel];
   each(recording, html_style_display_none);
+  async function chapter_next() {
+    let { books } = context;
+    let book = list_find_property_or(books, "book_code", book_code);
+    let { chapters } = book;
+    let chapter_next, book_next;
+    if (list_last_is(chapters, chapter)) {
+      if (list_last_is(books, book)) {
+        book_next = list_first(books);
+      } else {
+        let book_index_next = list_index_next(books, chapter);
+        book_next = list_get(books, book_index_next);
+      }
+      let { chapters } = book_next;
+      chapter_next = list_first(chapters);
+    } else {
+      book_next = book_code;
+      let chapter_index_next = list_index_next(chapters, chapter);
+      chapter_next = list_get(chapters, chapter_index_next);
+    }
+    let verses_next = await app_record_verses(book_code, chapter_next);
+    await app_record_verse(
+      context,
+      book_next,
+      chapter_next,
+      list_first(verses_next),
+    );
+  }
 }
