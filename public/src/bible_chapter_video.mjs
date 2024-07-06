@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { string_case_upper_first } from "./string_case_upper_first.mjs";
 import { bible_book_name } from "./bible_book_name.mjs";
 import { string_trim_front } from "./string_trim_front.mjs";
@@ -40,15 +39,12 @@ export async function bible_chapter_video(
       ".mp4",
     ]);
     let output_path = path_join([output_path_folder, output_file_name]);
-    output_path = string_replace(output_path, " ", "_");
-    log({
-      output_path,
-    });
     if (!overwrite) {
       if (await file_exists(output_path)) {
         return;
       }
     }
+    output_path = string_replace(output_path, " ", "_");
     let m = list_map(videos, (v) => ({
       fileName: path_resolve(
         object_property_get(object_property_get(v, "path"), hv_name),
