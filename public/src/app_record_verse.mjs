@@ -117,8 +117,7 @@ export async function app_record_verse(
       context,
       book_next,
       chapter_next,
-      list_first(verses_next),
-      object_property_get(object, property_name),
+      object_property_get(list_first(verses_next), "verse_number"),
     );
   }
 }
