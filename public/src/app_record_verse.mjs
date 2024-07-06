@@ -1,3 +1,4 @@
+import { bible_book_name } from "./bible_book_name.mjs";
 import { bible_reference } from "./bible_reference.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_index_next } from "./list_index_next.mjs";
@@ -34,7 +35,7 @@ export async function app_record_verse(
   let verses = await app_record_verses(book_code, chapter);
   let verse = list_find_property(verses, "verse_number", verse_number);
   let { tokens } = verse;
-  let vn = html_span_text(root, bible_reference());
+  let vn = html_span_text(root, bible_reference(bible_book_name(book_code)));
   html_style_bold(vn);
   html_span_text(root, " ");
   html_span_text(root, list_join_space(tokens));
