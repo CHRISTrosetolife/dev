@@ -58,6 +58,7 @@ export async function app_record_verse(
       if (list_last_is(verses, verse)) {
         let { books } = context;
         let book = list_find_property_or(books, "book_code", book_code);
+        book.chapters;
         html_clear_scroll_top(root);
         return;
       }
