@@ -66,7 +66,7 @@ export async function app_record_verse(
           let chapter_index = list_index(chapters, chapter);
           let chapter_index_next = chapter_index + 1;
           let chapter_next = list_get(chapters, chapter_index_next);
-          let verses_next = await app_record_verses(book_code, chapter);
+          let verses_next = await app_record_verses(book_code, chapter_next);
         }
         html_clear_scroll_top(root);
         return;
