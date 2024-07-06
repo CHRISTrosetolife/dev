@@ -39,7 +39,9 @@ export async function bible_chapter_video(
       ".mp4",
     ]);
     let output_path = path_join([output_path_folder, output_file_name]);
-    log({});
+    log({
+      output_path,
+    });
     if (!overwrite) {
       if (await file_exists(output_path)) {
         return;
