@@ -60,8 +60,8 @@ export async function app_record_verse(
         let book = list_find_property_or(books, "book_code", book_code);
         if (list_last_is()) {
         } else {
+          let { chapters } = book;
         }
-        let { chapters } = book;
         html_clear_scroll_top(root);
         return;
       }
