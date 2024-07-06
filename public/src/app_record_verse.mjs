@@ -1,3 +1,4 @@
+import { list_index_next } from "./list_index_next.mjs";
 import { list_index } from "./list_index.mjs";
 import { list_find_property_or } from "./list_find_property_or.mjs";
 import { path_join } from "./path_join.mjs";
@@ -64,10 +65,10 @@ export async function app_record_verse(
         let { chapters } = book;
         let chapter_next, book_next;
         if (list_last_is(chapters, chapter)) {
+          let chapter_index = list_index(chapters, chapter);
         } else {
           book_next = book_code;
-          let chapter_index = list_index(chapters, chapter);
-          let chapter_index_next = chapter_index + 1;
+          let chapter_index_next = list_index_next(chapters, chapter);
           chapter_next = list_get(chapters, chapter_index_next);
         }
         let verses_next = await app_record_verses(book_code, chapter_next);
