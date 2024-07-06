@@ -1,3 +1,4 @@
+import { path_join } from "./path_join.mjs";
 import { list_last_is } from "./list_last_is.mjs";
 import { folder_audio_bible } from "./folder_audio_bible.mjs";
 import { firebase_upload } from "./firebase_upload.mjs";
@@ -44,7 +45,7 @@ export async function app_record_verse(
       each(recording, html_style_display_none);
       let blob = await html_recorder_media_stop(context.mr);
       let when = date_string_iso_file();
-      let storage_path = string_combine_multiple([
+      let storage_path = path_join([
         folder_audio_bible(),
         "calm",
         "/",
