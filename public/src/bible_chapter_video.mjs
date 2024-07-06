@@ -1,3 +1,4 @@
+import { file_rename } from "./file_rename.mjs";
 import { string_case_upper_first } from "./string_case_upper_first.mjs";
 import { bible_book_name } from "./bible_book_name.mjs";
 import { string_trim_front } from "./string_trim_front.mjs";
@@ -59,5 +60,5 @@ export async function bible_chapter_video(
       .output(output_path_2)
       .concat();
   });
-  file_move;
+  file_rename;
 }
