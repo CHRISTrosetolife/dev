@@ -19,6 +19,7 @@ import { list_find_property } from "./list_find_property.mjs";
 import { app_record_verses } from "./app_record_verses.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
+import { list_get } from "./list_get.mjs";
 export async function app_record_verse(
   context,
   book_code,
@@ -64,6 +65,7 @@ export async function app_record_verse(
         } else {
           let chapter_index = list_index(chapters, chapter);
           let chapter_index_next = chapter_index + 1;
+          let chapter_next = list_get(chapters, chapter_index_next);
         }
         html_clear_scroll_top(root);
         return;
