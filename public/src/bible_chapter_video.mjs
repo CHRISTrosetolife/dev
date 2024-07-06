@@ -28,10 +28,8 @@ export async function bible_chapter_video(
       bible_folder,
       chapter_name,
     );
-    let output_path = path_join([
-      output_path_folder,
-      string_combine_multiple([hv_name, ".mp4"]),
-    ]);
+    let output_file_name = string_combine_multiple([hv_name, ".mp4"]);
+    let output_path = path_join([output_path_folder, output_file_name]);
     if (!overwrite) {
       if (await file_exists(output_path)) {
         return;
