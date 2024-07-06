@@ -54,8 +54,7 @@ export async function app_record_verse(
         "/",
         verse_number,
         "/",
-        when,
-        ".mp3",
+        string_combine_multiple([when, ".mp3"]),
       ]);
       await firebase_upload(storage_path, blob);
       if (list_last_is(verses, verse)) {
