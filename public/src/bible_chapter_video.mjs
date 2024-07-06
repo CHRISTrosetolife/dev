@@ -13,6 +13,7 @@ import { bible_chapter_videos } from "./bible_chapter_videos.mjs";
 import video_stitch from "video-stitch";
 import { list_map } from "./list_map.mjs";
 import { path_join } from "./path_join.mjs";
+import { string_replace } from "./string_replace.mjs";
 export async function bible_chapter_video(
   project_name,
   bible_folder,
@@ -39,6 +40,7 @@ export async function bible_chapter_video(
       ".mp4",
     ]);
     let output_path = path_join([output_path_folder, output_file_name]);
+    output_path = string_replace(output_path, " ", "_");
     log({
       output_path,
     });
