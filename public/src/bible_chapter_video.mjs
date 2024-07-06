@@ -44,7 +44,7 @@ export async function bible_chapter_video(
         return;
       }
     }
-    output_path = string_replace(output_path, " ", "_");
+    let output_path_2 = string_replace(output_path, " ", "_");
     let m = list_map(videos, (v) => ({
       fileName: path_resolve(
         object_property_get(object_property_get(v, "path"), hv_name),
