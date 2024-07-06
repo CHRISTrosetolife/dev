@@ -66,6 +66,7 @@ export async function app_record_verse(
         if (list_last_is(chapters, chapter)) {
           let book_index_next = list_index_next(books, chapter);
           book_next = list_get(books, book_index_next);
+          let { chapters } = book_next;
         } else {
           book_next = book_code;
           let chapter_index_next = list_index_next(chapters, chapter);
