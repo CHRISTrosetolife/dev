@@ -1,3 +1,4 @@
+import { string_case_upper_first } from "./string_case_upper_first.mjs";
 import { bible_book_name } from "./bible_book_name.mjs";
 import { string_trim_front } from "./string_trim_front.mjs";
 import { bible_chapter_name_parse } from "./bible_chapter_name_parse.mjs";
@@ -12,9 +13,6 @@ import { bible_chapter_videos } from "./bible_chapter_videos.mjs";
 import video_stitch from "video-stitch";
 import { list_map } from "./list_map.mjs";
 import { path_join } from "./path_join.mjs";
-import { string_skip } from "./string_skip.mjs";
-import { string_take } from "./string_take.mjs";
-import { string_case_upper } from "./string_case_upper.mjs";
 export async function bible_chapter_video(
   project_name,
   bible_folder,
@@ -41,10 +39,7 @@ export async function bible_chapter_video(
       " ",
       chapter_number,
       " - Audio Bible - Dramatic - Berean Standard Bible BSB - Human - ",
-      string_combine_multiple([
-        string_case_upper(string_take(hv_name, 1)),
-        string_skip(hv_name, 1),
-      ]),
+      string_case_upper_first(hv_name),
       ".mp4",
     ]);
     let output_path = path_join([output_path_folder, output_file_name]);
