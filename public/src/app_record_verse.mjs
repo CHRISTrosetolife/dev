@@ -107,7 +107,7 @@ export async function app_record_verse(
       if (list_last_is(books, book)) {
         book_next = list_first(books);
       } else {
-        let book_index_next = list_index_next(books, chapter);
+        let book_index_next = list_index_next(books, book);
         book_next = list_get(books, book_index_next);
       }
       let { chapters } = book_next;
