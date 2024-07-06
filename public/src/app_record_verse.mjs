@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { list_index_next } from "./list_index_next.mjs";
 import { list_find_property_or } from "./list_find_property_or.mjs";
 import { path_join } from "./path_join.mjs";
@@ -117,6 +118,7 @@ export async function app_record_verse(
       book_next,
       chapter_next,
       list_first(verses_next),
+      object_property_get(object, property_name),
     );
   }
 }
