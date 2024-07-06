@@ -29,7 +29,8 @@ export async function bible_chapter_video(
       chapter_name,
     );
     let output_file_name = string_combine_multiple([
-      "Matthew ",
+      "Matthew",
+      " ",
       chapter_name,
       " - Audio Bible - Dramatic - Berean Standard Bible BSB - Human - ",
       "V",
