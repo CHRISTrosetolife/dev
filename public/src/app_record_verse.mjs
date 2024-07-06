@@ -1,3 +1,4 @@
+import { list_find_property_or } from "./list_find_property_or.mjs";
 import { path_join } from "./path_join.mjs";
 import { list_last_is } from "./list_last_is.mjs";
 import { folder_audio_bible } from "./folder_audio_bible.mjs";
@@ -55,7 +56,8 @@ export async function app_record_verse(
       ]);
       await firebase_upload(storage_path, blob);
       if (list_last_is(verses, verse)) {
-        alert("end of chapter");
+        let { books } = context;
+        let book = list_find_property_or(books, "book_code", book_code);
         html_clear_scroll_top(root);
         return;
       }
