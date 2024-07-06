@@ -42,7 +42,7 @@ export async function app_record_verse(
     html_recorder_media_start(context.mr);
     each(recording, html_style_display_block);
   });
-  html_button_width_full_text_click(root, "next chapter");
+  html_button_width_full_text_click(root, "next chapter", chapter_next);
   save = html_button_width_full_text_click(
     root,
     "💾 save recording and ➡️ next verse",
