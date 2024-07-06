@@ -69,7 +69,7 @@ export async function app_record_verse(
           chapter_next = list_get(chapters, chapter_index_next);
         }
         let verses_next = await app_record_verses(book_code, chapter_next);
-        html_clear_scroll_top(root);
+        await app_record_verse(context, book_code, chapter, verse_number);
         return;
       }
       let verse_number_next = list_find_property_next_property(
