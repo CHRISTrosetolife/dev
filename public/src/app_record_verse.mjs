@@ -63,6 +63,7 @@ export async function app_record_verse(
         if (list_last_is(chapters, chapter)) {
         } else {
           let chapter_index = list_index(chapters, chapter);
+          let chapter_index_next = chapter_index + 1;
         }
         html_clear_scroll_top(root);
         return;
