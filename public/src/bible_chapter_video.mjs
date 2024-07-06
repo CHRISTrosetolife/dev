@@ -27,7 +27,7 @@ export async function bible_chapter_video(
   );
   await each_async(hvs, async (hv) => {
     let hv_name = object_property_get(hv, "name");
-    let output_path_folder = path_join("video", bible_folder);
+    let output_path_folder = path_join(["video", bible_folder]);
     let { book_code, chapter_code } = bible_chapter_name_parse(chapter_name);
     let chapter_number = string_trim_front(chapter_code, "0");
     let output_file_name = string_combine_multiple([
