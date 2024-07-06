@@ -7,7 +7,6 @@ import { bible_image_resolutions } from "./bible_image_resolutions.mjs";
 import { path_resolve } from "./path_resolve.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { file_exists } from "./file_exists.mjs";
-import { bible_chapter_folder_parent_gitignore } from "./bible_chapter_folder_parent_gitignore.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { bible_chapter_videos } from "./bible_chapter_videos.mjs";
 import video_stitch from "video-stitch";
@@ -27,11 +26,7 @@ export async function bible_chapter_video(
   );
   await each_async(hvs, async (hv) => {
     let hv_name = object_property_get(hv, "name");
-    let output_path_folder = bible_chapter_folder_parent_gitignore(
-      "video",
-      bible_folder,
-      chapter_name,
-    );
+    let output_path_folder = path_join("video", bible_folder);
     let { book_code, chapter_code } = bible_chapter_name_parse(chapter_name);
     let chapter_number = string_trim_front(chapter_code, "0");
     let output_file_name = string_combine_multiple([
