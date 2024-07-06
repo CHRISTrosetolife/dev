@@ -48,13 +48,9 @@ export async function app_record_verse(
       let storage_path = path_join([
         folder_audio_bible(),
         "calm",
-        "/",
         book_code,
-        "/",
         chapter,
-        "/",
         verse_number,
-        "/",
         string_combine_multiple([when, ".mp3"]),
       ]);
       await firebase_upload(storage_path, blob);
