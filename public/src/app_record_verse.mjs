@@ -73,8 +73,8 @@ export async function app_record_verse(
         await app_record_verse(
           context,
           book_code,
-          chapter,
-          list_first(verse_number),
+          chapter_next,
+          list_first(verses_next),
         );
         return;
       }
