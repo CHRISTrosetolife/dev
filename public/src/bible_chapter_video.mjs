@@ -13,6 +13,7 @@ import video_stitch from "video-stitch";
 import { list_map } from "./list_map.mjs";
 import { path_join } from "./path_join.mjs";
 import { string_skip } from "./string_skip.mjs";
+import { string_take } from "./string_take.mjs";
 export async function bible_chapter_video(
   project_name,
   bible_folder,
@@ -39,7 +40,7 @@ export async function bible_chapter_video(
       " ",
       chapter_number,
       " - Audio Bible - Dramatic - Berean Standard Bible BSB - Human - ",
-      "V",
+      string_take(hv_name, 1),
       string_skip(hv_name, 1),
       ".mp4",
     ]);
