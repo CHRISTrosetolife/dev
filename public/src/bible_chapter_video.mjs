@@ -41,8 +41,10 @@ export async function bible_chapter_video(
       " ",
       chapter_number,
       " - Audio Bible - Dramatic - Berean Standard Bible BSB - Human - ",
-      string_case_upper(string_take(hv_name, 1)),
-      string_skip(hv_name, 1),
+      string_combine_multiple([
+        string_case_upper(string_take(hv_name, 1)),
+        string_skip(hv_name, 1),
+      ]),
       ".mp4",
     ]);
     let output_path = path_join([output_path_folder, output_file_name]);
