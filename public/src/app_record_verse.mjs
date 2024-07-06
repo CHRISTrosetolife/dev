@@ -20,6 +20,7 @@ import { app_record_verses } from "./app_record_verses.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { list_get } from "./list_get.mjs";
+import { list_first } from "./list_first.mjs";
 export async function app_record_verse(
   context,
   book_code,
@@ -69,7 +70,12 @@ export async function app_record_verse(
           chapter_next = list_get(chapters, chapter_index_next);
         }
         let verses_next = await app_record_verses(book_code, chapter_next);
-        await app_record_verse(context, book_code, chapter, verse_number);
+        await app_record_verse(
+          context,
+          book_code,
+          chapter,
+          list_first(verse_number),
+        );
         return;
       }
       let verse_number_next = list_find_property_next_property(
