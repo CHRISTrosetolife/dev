@@ -62,9 +62,10 @@ export async function app_record_verse(
         let { books } = context;
         let book = list_find_property_or(books, "book_code", book_code);
         let { chapters } = book;
-        let chapter_next;
+        let chapter_next, book_next;
         if (list_last_is(chapters, chapter)) {
         } else {
+          book_next = book_code;
           let chapter_index = list_index(chapters, chapter);
           let chapter_index_next = chapter_index + 1;
           chapter_next = list_get(chapters, chapter_index_next);
@@ -72,7 +73,7 @@ export async function app_record_verse(
         let verses_next = await app_record_verses(book_code, chapter_next);
         await app_record_verse(
           context,
-          book_code,
+          book_next,
           chapter_next,
           list_first(verses_next),
         );
