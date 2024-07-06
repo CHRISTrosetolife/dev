@@ -7,7 +7,7 @@ export async function functions_string(name) {
   assert_arguments_length(arguments, 1);
   let literal_strings = await data_literal_strings();
   if (object_property_exists_not(literal_strings, name)) {
-    return;
+    return [];
   }
   let matches = object_property_get(literal_strings, name);
   return function_names_to_lookup(matches);
