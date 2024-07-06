@@ -1,3 +1,6 @@
+import { bible_book_name } from "./bible_book_name.mjs";
+import { string_trim_front } from "./string_trim_front.mjs";
+import { bible_chapter_name_parse } from "./bible_chapter_name_parse.mjs";
 import { each_async } from "./each_async.mjs";
 import { bible_image_resolutions } from "./bible_image_resolutions.mjs";
 import { path_resolve } from "./path_resolve.mjs";
@@ -28,10 +31,12 @@ export async function bible_chapter_video(
       bible_folder,
       chapter_name,
     );
+    let { book_code, chapter_code } = bible_chapter_name_parse(chapter_name);
+    let chapter_number = string_trim_front(chapter_code, "0");
     let output_file_name = string_combine_multiple([
-      "Matthew",
+      bible_book_name(book_code),
       " ",
-      chapter_name,
+      chapter_number,
       " - Audio Bible - Dramatic - Berean Standard Bible BSB - Human - ",
       "V",
       "ertical",
