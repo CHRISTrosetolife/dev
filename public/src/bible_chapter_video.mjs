@@ -1,3 +1,4 @@
+import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
 import { file_rename } from "./file_rename.mjs";
 import { string_case_upper_first } from "./string_case_upper_first.mjs";
 import { bible_book_name } from "./bible_book_name.mjs";
@@ -29,7 +30,7 @@ export async function bible_chapter_video(
   );
   await each_async(hvs, async (hv) => {
     let hv_name = object_property_get(hv, "name");
-    let output_path_folder = git_ignore_path(
+    let output_path_folder = folder_gitignore_path(
       path_join(["video", bible_folder]),
     );
     let { book_code, chapter_code } = bible_chapter_name_parse(chapter_name);
