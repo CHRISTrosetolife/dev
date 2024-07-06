@@ -14,6 +14,7 @@ import video_stitch from "video-stitch";
 import { list_map } from "./list_map.mjs";
 import { path_join } from "./path_join.mjs";
 import { string_replace } from "./string_replace.mjs";
+import { folder_parent_exists_ensure } from "./folder_parent_exists_ensure.mjs";
 export async function bible_chapter_video(
   project_name,
   bible_folder,
@@ -53,6 +54,7 @@ export async function bible_chapter_video(
         object_property_get(object_property_get(v, "path"), hv_name),
       ),
     }));
+    await folder_parent_exists_ensure(output_path_2);
     await video_stitch
       .concat({
         silent: false,
