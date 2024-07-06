@@ -84,14 +84,14 @@ export async function app_record_verse(
           chapter_next,
           list_first(verses_next),
         );
-        return;
+      } else {
+        let verse_number_next = list_find_property_next_property(
+          verses,
+          "verse_number",
+          verse_number,
+        );
+        await app_record_verse(context, book_code, chapter, verse_number_next);
       }
-      let verse_number_next = list_find_property_next_property(
-        verses,
-        "verse_number",
-        verse_number,
-      );
-      await app_record_verse(context, book_code, chapter, verse_number_next);
     },
   );
   restart = html_button_width_full_text_click(
