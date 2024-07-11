@@ -25,7 +25,6 @@ import { equal_json } from "./equal_json.mjs";
 import { log_write } from "./log_write.mjs";
 import { list_join_empty } from "./list_join_empty.mjs";
 import { each } from "./each.mjs";
-import { run_git_ac } from "./run_git_ac.mjs";
 import { log } from "./log.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_includes } from "./list_includes.mjs";
@@ -194,7 +193,7 @@ export async function terminal() {
     } catch (e) {
       log(e);
     }
-    unawait(run_git_ac);
+    unawait(() => {});
   }
   function terminal_tokens_get(input) {
     let split_string = " ";
