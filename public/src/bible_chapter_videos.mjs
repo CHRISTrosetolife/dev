@@ -9,7 +9,6 @@ import { list_zip } from "./list_zip.mjs";
 import { bible_chapter_audio_trim } from "./bible_chapter_audio_trim.mjs";
 import { bible_chapter_folder_parent_gitignore } from "./bible_chapter_folder_parent_gitignore.mjs";
 import { bible_chapter_images } from "./bible_chapter_images.mjs";
-import videoshow from "videoshow";
 import { path_join } from "./path_join.mjs";
 import { file_exists } from "./file_exists.mjs";
 import { list_map_async } from "./list_map_async.mjs";
