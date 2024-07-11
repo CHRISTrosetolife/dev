@@ -1,3 +1,4 @@
+import { app_record_home_button } from "./app_record_home_button.mjs";
 import { app_record_verse } from "./app_record_verse.mjs";
 import { app_record_verses } from "./app_record_verses.mjs";
 import { list_join_space } from "./list_join_space.mjs";
@@ -10,6 +11,7 @@ export async function app_record_chapter(context, book_code, chapter) {
   let { root } = context;
   let verses = await app_record_verses(book_code, chapter);
   html_clear_scroll_top(root);
+  app_record_home_button(context);
   each(verses, (verse) => {
     let { tokens, verse_number } = verse;
     let p = html_button_width_full_text_click(root, "", async () => {
