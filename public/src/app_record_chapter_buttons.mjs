@@ -1,3 +1,4 @@
+import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { app_record_book } from "./app_record_book.mjs";
 import { bible_book_name } from "./bible_book_name.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
