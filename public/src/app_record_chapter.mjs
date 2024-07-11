@@ -1,3 +1,4 @@
+import { bible_book_name } from "./bible_book_name.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_record_home } from "./app_record_home.mjs";
 import { app_record_home_button } from "./app_record_home_button.mjs";
@@ -16,7 +17,7 @@ export async function app_record_chapter(context, book_code, chapter) {
   app_record_home_button(context);
   html_button_width_full_text_click(
     root,
-    string_combine_multiple(["📖 "]),
+    string_combine_multiple(["📖 ", bible_book_name(book_code)]),
     () => app_record_home(context),
   );
   each(verses, (verse) => {
