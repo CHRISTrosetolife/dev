@@ -17,6 +17,7 @@ import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/f
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 export async function app_record() {
   let root = html_style_default_initialize();
+  await html_script_axios(root);
   firebase_initialize();
   let auth = firebase_auth();
   onAuthStateChanged(auth, async (user) => {
@@ -27,7 +28,6 @@ export async function app_record() {
       object_merge(context, {
         root,
       });
-      await html_script_axios(root);
       let { books } = await bible_engbsb_storage_http_get("books");
       object_merge(context, {
         books,
