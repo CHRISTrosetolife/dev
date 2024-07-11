@@ -1,8 +1,8 @@
+import { audio_to_video } from "./audio_to_video.mjs";
 import { each_async } from "./each_async.mjs";
 import { bible_image_resolutions } from "./bible_image_resolutions.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { log } from "./log.mjs";
-import { folder_parent_exists_ensure } from "./folder_parent_exists_ensure.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
 import { list_zip } from "./list_zip.mjs";
@@ -11,7 +11,6 @@ import { bible_chapter_folder_parent_gitignore } from "./bible_chapter_folder_pa
 import { bible_chapter_images } from "./bible_chapter_images.mjs";
 import videoshow from "videoshow";
 import { path_join } from "./path_join.mjs";
-import { getAudioDurationInSeconds } from "get-audio-duration";
 import { file_exists } from "./file_exists.mjs";
 import { list_map_async } from "./list_map_async.mjs";
 import { object_merge } from "./object_merge.mjs";
@@ -62,24 +61,8 @@ export async function bible_chapter_videos(
         verse,
       });
       let audio_path_trimmed = audio.path.trimmed;
-      await folder_parent_exists_ensure(output_path);
-      let audio_duration = await getAudioDurationInSeconds(audio_path_trimmed);
-      await new Promise((resolve, reject) => {
-        videoshow([object_property_get(image.path, hv_name)], {
-          disableFadeOut: true,
-          loop: audio_duration,
-        })
-          .audio(audio_path_trimmed, {
-            fade: false,
-          })
-          .save(output_path)
-          .on("error", function (e) {
-            reject(e);
-          })
-          .on("end", function () {
-            resolve();
-          });
-      });
+      let image_path = object_property_get(image.path, hv_name);
+      await audio_to_video(audio_path_trimmed, output_path, image_path);
     });
     return result;
   });
