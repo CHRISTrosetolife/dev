@@ -14,7 +14,7 @@ export async function app_record_chapter(context, book_code, chapter) {
   let verses = await app_record_verses(book_code, chapter);
   html_clear_scroll_top(root);
   app_record_home_button(context);
-  html_button_width_full_text_click_home(root, () => app_record_home(context));
+  html_button_width_full_text_click(root, "🏠 go back home", () => app_record_home(context));
   each(verses, (verse) => {
     let { tokens, verse_number } = verse;
     let p = html_button_width_full_text_click(root, "", async () => {
