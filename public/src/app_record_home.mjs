@@ -7,13 +7,7 @@ import { object_property_get_or } from "./object_property_get_or.mjs";
 import { html_hash_lookup } from "./html_hash_lookup.mjs";
 import { bible_engbsb_storage_http_get } from "./bible_engbsb_storage_http_get.mjs";
 import { object_merge } from "./object_merge.mjs";
-import { html_recorder_media } from "./html_recorder_media.mjs";
 export async function app_record_home(root) {
-  let context = {};
-  context.mr = await html_recorder_media();
-  object_merge(context, {
-    root,
-  });
   let { books } = await bible_engbsb_storage_http_get("books");
   object_merge(context, {
     books,
