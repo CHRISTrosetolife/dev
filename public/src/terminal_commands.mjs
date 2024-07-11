@@ -1,3 +1,4 @@
+import { list_empty_is } from "./list_empty_is.mjs";
 import { string_to } from "./string_to.mjs";
 import { range } from "./range.mjs";
 import { keyboard_keys } from "./keyboard_keys.mjs";
@@ -117,6 +118,9 @@ export function terminal_commands(context) {
       },
       action: (key) => {
         let b = buffer_get();
+        if (list_empty_is(b)) {
+          return;
+        }
         list_pop(b);
         log_clear_write_prompt();
         each(b, keyboard_write);
