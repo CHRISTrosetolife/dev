@@ -1,3 +1,4 @@
+import { git_ac_message } from "./git_ac_message.mjs";
 import { tokens_simple } from "./tokens_simple.mjs";
 import { terminal_commands } from "./terminal_commands.mjs";
 import { list_filter_indices } from "./list_filter_indices.mjs";
@@ -193,7 +194,9 @@ export async function terminal() {
     } catch (e) {
       log(e);
     }
-    unawait(() => {});
+    unawait(async () => {
+      await git_ac_message();
+    });
   }
   function terminal_tokens_get(input) {
     let split_string = " ";
