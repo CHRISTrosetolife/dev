@@ -1,4 +1,4 @@
-import { app_record_book } from "./app_record_book.mjs";
+import { app_record_chapter } from "./app_record_chapter.mjs";
 import { app_record_chapter_buttons } from "./app_record_chapter_buttons.mjs";
 import { bible_book_name } from "./bible_book_name.mjs";
 import { bible_reference } from "./bible_reference.mjs";
@@ -35,8 +35,8 @@ export async function app_record_verse(
   app_record_chapter_buttons(context, book_code);
   html_button_width_full_text_click(
     root,
-    string_combine_multiple(["📖 ", bible_book_name(book_code)]),
-    () => app_record_book(context, book_code),
+    string_combine_multiple(["📖 ", bible_book_name(book_code), " ", chapter]),
+    async () => await app_record_chapter(context, book_code),
   );
   let verses = await app_record_verses(book_code, chapter);
   let verse = list_find_property(verses, "verse_number", verse_number);
