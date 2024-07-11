@@ -11,7 +11,6 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { file_exists } from "./file_exists.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { bible_chapter_videos } from "./bible_chapter_videos.mjs";
-import video_stitch from "video-stitch";
 import { list_map } from "./list_map.mjs";
 import { path_join } from "./path_join.mjs";
 export async function bible_chapter_video(
