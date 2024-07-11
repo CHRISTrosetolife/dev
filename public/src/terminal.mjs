@@ -195,7 +195,7 @@ export async function terminal() {
       log(e);
     }
     unawait(async () => {
-      await git_ac_message();
+      await git_ac_message(input);
     });
   }
   function terminal_tokens_get(input) {
