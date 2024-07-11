@@ -1,5 +1,5 @@
+import { video_concat } from "./video_concat.mjs";
 import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
-import { file_rename } from "./file_rename.mjs";
 import { string_case_upper_first } from "./string_case_upper_first.mjs";
 import { bible_book_name } from "./bible_book_name.mjs";
 import { string_trim_front } from "./string_trim_front.mjs";
@@ -14,8 +14,6 @@ import { bible_chapter_videos } from "./bible_chapter_videos.mjs";
 import video_stitch from "video-stitch";
 import { list_map } from "./list_map.mjs";
 import { path_join } from "./path_join.mjs";
-import { string_replace } from "./string_replace.mjs";
-import { folder_parent_exists_ensure } from "./folder_parent_exists_ensure.mjs";
 export async function bible_chapter_video(
   project_name,
   bible_folder,
@@ -54,16 +52,6 @@ export async function bible_chapter_video(
         object_property_get(object_property_get(v, "path"), hv_name),
       ),
     }));
-    let output_path_2 = string_replace(output_path, " ", "_");
-    await folder_parent_exists_ensure(output_path_2);
-    await video_stitch
-      .concat({
-        silent: false,
-        overwrite: true,
-      })
-      .clips(m)
-      .output(output_path_2)
-      .concat();
-    await file_rename(output_path_2, output_path);
+    await video_concat(output_path, m);
   });
 }
