@@ -21,7 +21,7 @@ export async function app_record() {
       object_merge(context, {
         root,
       });
-      await app_record_home(root);
+      await app_record_home(context);
     } else {
       app_record_login(root);
     }
