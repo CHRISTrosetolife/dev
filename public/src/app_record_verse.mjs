@@ -1,3 +1,4 @@
+import { app_record_home_button } from "./app_record_home_button.mjs";
 import { bible_book_name } from "./bible_book_name.mjs";
 import { bible_reference } from "./bible_reference.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -32,6 +33,7 @@ export async function app_record_verse(
 ) {
   let { root } = context;
   html_clear_scroll_top(root);
+  app_record_home_button(context);
   let verses = await app_record_verses(book_code, chapter);
   let verse = list_find_property(verses, "verse_number", verse_number);
   let { tokens } = verse;
