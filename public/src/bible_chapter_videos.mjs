@@ -62,7 +62,7 @@ export async function bible_chapter_videos(
       });
       let audio_path_trimmed = audio.path.trimmed;
       let image_path = object_property_get(image.path, hv_name);
-      await audio_to_video(audio_path_trimmed, output_path, image_path);
+      await audio_to_video(audio_path_trimmed, image_path, output_path);
     });
     return result;
   });

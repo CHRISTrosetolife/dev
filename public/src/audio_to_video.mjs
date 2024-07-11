@@ -1,5 +1,5 @@
 import { folder_parent_exists_ensure } from "./folder_parent_exists_ensure.mjs";
-export async function audio_to_video(path_audio, path_output, image_path) {
+export async function audio_to_video(path_audio, image_path, path_output) {
   await folder_parent_exists_ensure(path_output);
   let audio_duration = await getAudioDurationInSeconds(path_audio);
   await new Promise((resolve, reject) => {
