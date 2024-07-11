@@ -56,7 +56,7 @@ export async function bible_chapter_videos(
           return result;
         }
       }
-      log({
+      log({fn:bible_chapter_videos.name,
         hv,
         verse,
       });
