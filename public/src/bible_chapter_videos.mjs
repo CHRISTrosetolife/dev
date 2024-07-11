@@ -61,8 +61,8 @@ export async function bible_chapter_videos(
         hv,
         verse,
       });
-      await folder_parent_exists_ensure(output_path);
       let audio_path_trimmed = audio.path.trimmed;
+      await folder_parent_exists_ensure(output_path);
       let audio_duration = await getAudioDurationInSeconds(audio_path_trimmed);
       await new Promise((resolve, reject) => {
         videoshow([object_property_get(image.path, hv_name)], {
