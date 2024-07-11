@@ -1,5 +1,4 @@
-import { html_button_text_click } from "./html_button_text_click.mjs";
-import { each } from "./each.mjs";
+import { app_record_home } from "./app_record_home.mjs";
 import { app_record_book } from "./app_record_book.mjs";
 import { app_record_chapter } from "./app_record_chapter.mjs";
 import { app_record_verse } from "./app_record_verse.mjs";
@@ -14,7 +13,6 @@ import { firebase_initialize } from "./firebase_initialize.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { html_script_axios } from "./html_script_axios.mjs";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 export async function app_record() {
   let root = html_style_default_initialize();
   await html_script_axios(root);
@@ -27,7 +25,6 @@ export async function app_record() {
       object_merge(context, {
         root,
       });
-      let { root } = context;
       let { books } = await bible_engbsb_storage_http_get("books");
       object_merge(context, {
         books,
@@ -52,13 +49,7 @@ export async function app_record() {
           app_record_book(context, hash_book);
         }
       } else {
-        html_clear_scroll_top(root);
-        each(books, (book) => {
-          let { book_code } = book;
-          html_button_text_click(root, book_code, function () {
-            app_record_book(context, book_code);
-          });
-        });
+        app_record_home(context);
       }
     } else {
       app_record_login(root);
