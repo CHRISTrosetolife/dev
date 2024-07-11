@@ -21,7 +21,6 @@ export async function app_record() {
   firebase_initialize();
   let auth = firebase_auth();
   onAuthStateChanged(auth, async (user) => {
-    html_clear_scroll_top(root);
     if (user) {
       let context = {};
       context.mr = await html_recorder_media();
@@ -53,6 +52,7 @@ export async function app_record() {
           app_record_book(context, hash_book);
         }
       } else {
+        html_clear_scroll_top(root);
         each(books, (book) => {
           let { book_code } = book;
           html_button_text_click(root, book_code, function () {
