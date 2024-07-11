@@ -35,7 +35,12 @@ export async function app_record_verse(
   app_record_chapter_buttons(context, book_code);
   html_button_width_full_text_click(
     root,
-    string_combine_multiple(["📖 ", bible_book_name(book_code), " ", chapter]),
+    string_combine_multiple([
+      "📖 chapter ",
+      bible_book_name(book_code),
+      " ",
+      chapter,
+    ]),
     async () => await app_record_chapter(context, book_code, chapter),
   );
   let verses = await app_record_verses(book_code, chapter);
