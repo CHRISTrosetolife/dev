@@ -18,7 +18,7 @@ export async function app_record_chapter(context, book_code, chapter) {
   html_button_width_full_text_click(
     root,
     string_combine_multiple(["📖 ", bible_book_name(book_code)]),
-    () => app_record_book(context),
+    () => app_record_book(context, book_code),
   );
   each(verses, (verse) => {
     let { tokens, verse_number } = verse;
