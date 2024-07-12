@@ -65,8 +65,8 @@ export async function app_record_verse(
     async () => {
       await app_record_verse(
         context,
-        book_next,
-        chapter_next,
+        book_code,
+        chapter,
         object_property_get(list_first(verses_next), "verse_number"),
       );
     },
