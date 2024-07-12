@@ -64,12 +64,12 @@ export async function app_record_verse(
     "⬅️ previous verse",
     async () => {
       let verse_index_previous = list_index_next(verses, verse);
-      let verse_previous = list_get(chapters, chapter_index_next);
+      let verse_previous = list_get(verses, verse_index_previous);
       await app_record_verse(
         context,
         book_code,
         chapter,
-        object_property_get(list_first(verses_next), "verse_number"),
+        object_property_get(verse_previous, "verse_number"),
       );
     },
   );
