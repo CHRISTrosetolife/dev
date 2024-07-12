@@ -5,6 +5,7 @@ import { html_style_default_initialize } from "./html_style_default_initialize.m
 export function app_index() {
   let root = html_style_default_initialize();
   html_clear_scroll_top_centered(root);
+  let choices = [];
   html_button_width_full_text_click(
     root,
     "development tools documentation",
