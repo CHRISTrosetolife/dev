@@ -63,8 +63,8 @@ export async function app_record_verse(
     root,
     "⬅️ previous verse",
     async () => {
-      let chapter_index_next = list_index_next(chapters, chapter);
-      let chapter_next = list_get(chapters, chapter_index_next);
+      let verse_index_previous = list_index_next(verses, verse);
+      let verse_previous = list_get(chapters, chapter_index_next);
       await app_record_verse(
         context,
         book_code,
