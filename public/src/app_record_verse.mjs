@@ -116,7 +116,7 @@ export async function app_record_verse(
     },
   );
   recording = [save, restart, cancel];
-  recording_not = [];
+  recording_not = [start, previous];
   each(recording, html_style_display_none);
   async function chapter_next() {
     let { books } = context;
