@@ -55,15 +55,19 @@ export async function app_record_verse(
   html_span_text(root, list_join_space(tokens));
   let start, previous, save, cancel, restart, recording, recording_not;
   start = html_button_width_full_text_click(root, "⏺️ start recording", () => {
-    html_style_display_none(start);
+    each(recording_not, html_style_display_none);
     html_recorder_media_start(context.mr);
     each(recording, html_style_display_block);
   });
-  start = html_button_width_full_text_click(root, "⏺️ start recording", () => {
-    html_style_display_none(start);
-    html_recorder_media_start(context.mr);
-    each(recording, html_style_display_block);
-  });
+  previous = html_button_width_full_text_click(
+    root,
+    "⬅️ previous verse",
+    () => {
+      each(recording_not, html_style_display_none);
+      html_recorder_media_start(context.mr);
+      each(recording, html_style_display_block);
+    },
+  );
   save = html_button_width_full_text_click(
     root,
     "💾 save recording and ➡️ next verse",
@@ -108,7 +112,7 @@ export async function app_record_verse(
     async () => {
       each(recording, html_style_display_none);
       await html_recorder_media_stop(context.mr);
-      html_style_display_block(start);
+      each(recording_not, html_style_display_block);
     },
   );
   recording = [save, restart, cancel];
