@@ -7,7 +7,10 @@ export function app_index() {
   let root = html_style_default_initialize();
   html_clear_scroll_top_centered(root);
   let choices = [];
-  list_add();
+  list_add(choices, {
+    text: "",
+    href: "",
+  });
   html_button_width_full_text_click(
     root,
     "development tools documentation",
