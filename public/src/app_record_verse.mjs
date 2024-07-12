@@ -62,10 +62,13 @@ export async function app_record_verse(
   previous = html_button_width_full_text_click(
     root,
     "⬅️ previous verse",
-    () => {
-      each(recording_not, html_style_display_none);
-      html_recorder_media_start(context.mr);
-      each(recording, html_style_display_block);
+    async () => {
+      await app_record_verse(
+        context,
+        book_next,
+        chapter_next,
+        object_property_get(list_first(verses_next), "verse_number"),
+      );
     },
   );
   save = html_button_width_full_text_click(
