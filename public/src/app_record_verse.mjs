@@ -1,3 +1,4 @@
+import { list_next } from "./list_next.mjs";
 import { list_previous } from "./list_previous.mjs";
 import { app_record_chapter } from "./app_record_chapter.mjs";
 import { app_record_chapter_buttons } from "./app_record_chapter_buttons.mjs";
@@ -139,8 +140,7 @@ export async function app_record_verse(
       chapter_next = list_first(chapters);
     } else {
       book_next = book_code;
-      let chapter_index_next = list_index_next(chapters, chapter);
-      chapter_next = list_get(chapters, chapter_index_next);
+      chapter_next = list_next(chapters, chapter);
     }
     let verses_next = await app_record_verses(book_code, chapter_next);
     await app_record_verse(
