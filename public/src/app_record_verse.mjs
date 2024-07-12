@@ -5,7 +5,6 @@ import { app_record_chapter_buttons } from "./app_record_chapter_buttons.mjs";
 import { bible_book_name } from "./bible_book_name.mjs";
 import { bible_reference } from "./bible_reference.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { list_index_next } from "./list_index_next.mjs";
 import { list_find_property_or } from "./list_find_property_or.mjs";
 import { path_join } from "./path_join.mjs";
 import { list_last_is } from "./list_last_is.mjs";
@@ -25,7 +24,6 @@ import { html_span_text } from "./html_span_text.mjs";
 import { list_find_property } from "./list_find_property.mjs";
 import { app_record_verses } from "./app_record_verses.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
-import { list_get } from "./list_get.mjs";
 import { list_first } from "./list_first.mjs";
 export async function app_record_verse(
   context,
@@ -133,8 +131,7 @@ export async function app_record_verse(
       if (list_last_is(books, book)) {
         book_next = list_first(books);
       } else {
-        let book_index_next = list_index_next(books, book);
-        book_next = list_get(books, book_index_next);
+        book_next = list_next(books, book);
       }
       let { chapters } = book_next;
       chapter_next = list_first(chapters);
