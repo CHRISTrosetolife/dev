@@ -1,4 +1,4 @@
-import { list_index_previous } from "./list_index_previous.mjs";
+import { list_previous } from "./list_previous.mjs";
 import { app_record_chapter } from "./app_record_chapter.mjs";
 import { app_record_chapter_buttons } from "./app_record_chapter_buttons.mjs";
 import { bible_book_name } from "./bible_book_name.mjs";
@@ -64,8 +64,7 @@ export async function app_record_verse(
     root,
     "⬅️ previous verse",
     async () => {
-      let verse_index_previous = list_index_previous(verses, verse);
-      let verse_previous = list_get(verses, verse_index_previous);
+      let verse_previous = list_previous(verses, verse);
       await app_record_verse(
         context,
         book_code,
