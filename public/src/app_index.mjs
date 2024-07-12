@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { window_open } from "./window_open.mjs";
@@ -36,12 +37,13 @@ export function app_index() {
     text: "book syntagmatis theologiae christianae",
     href: "yyy8Uu",
   });
-  each(list, (item) => {});
-  html_button_width_full_text_click(
-    root,
-    "book syntagmatis theologiae christianae",
-    () => {
-      window_open("yyy8Uu.html");
-    },
-  );
+  each(choices, (choice) => {
+    html_button_width_full_text_click(
+      root,
+      object_property_get(object, property_name),
+      () => {
+        window_open("yyy8Uu.html");
+      },
+    );
+  });
 }
