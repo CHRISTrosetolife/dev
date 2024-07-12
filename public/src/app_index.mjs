@@ -8,8 +8,8 @@ export function app_index() {
   html_clear_scroll_top_centered(root);
   let choices = [];
   list_add(choices, {
-    text: "",
-    href: "",
+    text: "development tools documentation",
+    href: "dev",
   });
   html_button_width_full_text_click(
     root,
@@ -18,6 +18,10 @@ export function app_index() {
       window_open("dev.html");
     },
   );
+  list_add(choices, {
+    text: "learn to code ( javascript )",
+    href: "learn_code",
+  });
   html_button_width_full_text_click(
     root,
     "learn to code ( javascript )",
@@ -25,17 +29,37 @@ export function app_index() {
       window_open("learn_code.html");
     },
   );
+  list_add(choices, {
+    text: "learn language cebuano",
+    href: "ceb",
+  });
   html_button_width_full_text_click(root, "learn language cebuano", () => {
     window_open("ceb.html");
+  });
+  list_add(choices, {
+    text: "resume",
+    href: "resume",
   });
   html_button_width_full_text_click(root, "resume", () => {
     window_open("resume.html");
   });
+  list_add(choices, {
+    text: "bible memorize",
+    href: "memorize",
+  });
   html_button_width_full_text_click(root, "bible memorize", () => {
     window_open("memorize.html");
   });
+  list_add(choices, {
+    text: "game",
+    href: "gs",
+  });
   html_button_width_full_text_click(root, "game", () => {
     window_open("gs.html");
+  });
+  list_add(choices, {
+    text: "book syntagmatis theologiae christianae",
+    href: "yyy8Uu",
   });
   html_button_width_full_text_click(
     root,
