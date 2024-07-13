@@ -1,4 +1,4 @@
-import { git_ac_message } from "./git_ac_message.mjs";
+import { git_acp_message } from "./git_acp_message.mjs";
 import { tokens_simple } from "./tokens_simple.mjs";
 import { terminal_commands } from "./terminal_commands.mjs";
 import { list_filter_indices } from "./list_filter_indices.mjs";
@@ -195,7 +195,7 @@ export async function terminal() {
       log(e);
     }
     unawait(async () => {
-      await git_ac_message(input);
+      await git_acp_message(input);
     });
   }
   function terminal_tokens_get(input) {
