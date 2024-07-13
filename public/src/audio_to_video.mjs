@@ -10,7 +10,9 @@ export async function audio_to_video(path_audio, image_path, path_output) {
   });
   await folder_parent_exists_ensure(path_output);
   let audio_duration = await getAudioDurationInSeconds(path_audio);
-  log({});
+  log({
+    audio_duration,
+  });
   await new Promise((resolve, reject) => {
     videoshow([image_path], {
       disableFadeOut: true,
