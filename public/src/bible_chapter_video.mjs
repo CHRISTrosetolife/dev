@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { video_concat } from "./video_concat.mjs";
 import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
 import { string_case_upper_first } from "./string_case_upper_first.mjs";
@@ -51,6 +52,12 @@ export async function bible_chapter_video(
         object_property_get(object_property_get(v, "path"), hv_name),
       ),
     }));
+    log({
+      fn: bible_chapter_video.name,
+      hv,
+      bible_folder,
+      chapter_name,
+    });
     await video_concat(output_path, m);
   });
 }

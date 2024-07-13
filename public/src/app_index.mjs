@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
@@ -40,9 +41,14 @@ export function app_index() {
   each(choices, (choice) => {
     html_button_width_full_text_click(
       root,
-      object_property_get(object, property_name),
+      object_property_get(choice, "text"),
       () => {
-        window_open("yyy8Uu.html");
+        window_open(
+          string_combine_multiple([
+            object_property_get(choice, "href"),
+            ".html",
+          ]),
+        );
       },
     );
   });
