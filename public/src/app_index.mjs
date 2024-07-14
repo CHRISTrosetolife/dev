@@ -12,7 +12,7 @@ export function app_index() {
   html_clear_scroll_top_centered(root);
   let choices = [];
   list_add(choices, {
-    text: "development tools documentation",
+    text: "💻 development tools documentation",
     href: "dev",
   });
   list_add(choices, {
