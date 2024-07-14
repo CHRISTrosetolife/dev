@@ -1,3 +1,4 @@
+import { url_audio_bible } from "./url_audio_bible.mjs";
 import { html_style_link } from "./html_style_link.mjs";
 import { app_resume_header_3 } from "./app_resume_header_3.mjs";
 import { app_resume_header_2 } from "./app_resume_header_2.mjs";
@@ -29,6 +30,8 @@ export function app_resume() {
   html_style_link("learn_code.html")(learn_code);
   let ceb = app_resume_header_3(root, "Learn Cebuano Language");
   html_style_link("ceb.html")(ceb);
+  let audio_bible = app_resume_header_3(root, "Audio Bible");
+  html_style_link(url_audio_bible())(audio_bible);
   let memorize = app_resume_header_3(root, "Memorize Bible");
   html_style_link("memorize.html")(memorize);
   let game = app_resume_header_3(root, "Game");
