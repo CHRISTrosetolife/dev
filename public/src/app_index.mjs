@@ -50,6 +50,10 @@ export function app_index() {
     page: "record",
   });
   list_add(choices, {
+    text: "🎥 audio bible videos",
+    page: "record",
+  });
+  list_add(choices, {
     text: "📙 book syntagmatis theologiae christianae",
     page: "yyy8Uu",
   });
