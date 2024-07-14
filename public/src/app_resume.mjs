@@ -48,8 +48,9 @@ export function app_resume() {
       noop,
       html_style_link(function_name_to_url_github(app_record_verse.name)),
       noop,
+      html_style_link(function_name_to_url_github(app_record_verse.name)),
     ],
-    "app` to record audio `verse by verse` and uploads to Firebase",
+    "app` to record audio `verse by verse` and `uploads to Firebase",
   );
   let memorize = app_resume_header_3(root, "Memorize Bible");
   html_style_link("memorize.html")(memorize);
