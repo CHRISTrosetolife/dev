@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { url_audio_bible } from "./url_audio_bible.mjs";
 import { html_style_link } from "./html_style_link.mjs";
 import { app_resume_header_3 } from "./app_resume_header_3.mjs";
@@ -37,7 +38,10 @@ export function app_resume() {
   html_style_link("memorize.html")(memorize);
   html_p_text(
     root,
-    "allows user to memorize a chapter of the bible; user types first letter of each word on physical or onscreen keyboard",
+    string_combine_multiple([
+      "allows user to memorize a chapter of the bible; user types first letter of each word on physical or ",
+      "onscreen keyboard",
+    ]),
   );
   let game = app_resume_header_3(root, "Game");
   html_style_link("gs.html")(game);
