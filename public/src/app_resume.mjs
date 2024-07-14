@@ -75,7 +75,11 @@ export function app_resume() {
       noop,
       html_style_link(function_name_to_url_github(bible_verse_images.name)),
       noop,
-      bible_chapter_video,
+      html_style_link(function_name_to_url_github(bible_chapter_video.name)),
+      noop,
+      html_style_link(function_name_to_url_github(bible_verse_images.name)),
+      noop,
+      ,
     ],
     "app` to record audio `verse by verse`, `convert` to .mp3 to save space and `upload` to Firebase; `downloads` .mp3 files from Firebase; `converts` mp3 to .wav for processing; `trims` quiet from beginning and end of each .wav; `generates` an image for each verse, computing line-wrapping; generates videos for each bible `verse` and `chapter`",
   );
