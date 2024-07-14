@@ -38,7 +38,7 @@ export function app_index() {
     href: "resume",
   });
   list_add(choices, {
-    text: "bible memorize",
+    text: "📖 bible memorize",
     href: "memorize",
   });
   list_add(choices, {
