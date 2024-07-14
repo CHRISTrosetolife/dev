@@ -12,8 +12,8 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { file_exists } from "./file_exists.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { bible_chapter_videos } from "./bible_chapter_videos.mjs";
-import { list_map } from "./list_map.mjs";
 import { path_join } from "./path_join.mjs";
+import { list_map_async } from "./list_map_async.mjs";
 export async function bible_chapter_video(
   project_name,
   bible_folder,
@@ -47,7 +47,7 @@ export async function bible_chapter_video(
         return;
       }
     }
-    let m = list_map(videos, async (v) => ({
+    let m = await list_map_async(videos, async (v) => ({
       fileName: await path_resolve(
         object_property_get(object_property_get(v, "path"), hv_name),
       ),
