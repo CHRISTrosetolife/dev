@@ -17,18 +17,18 @@ export function app_index() {
   });
   list_add(choices, {
     text: string_combine_multiple([
-      "learn to code ",
+      "🧑‍💻️ learn to code ",
       html_replace_nb("( javascript )"),
     ]),
     href: "learn_code",
   });
   list_add(choices, {
-    text: "learn language cebuano",
+    text: "🎓 learn language cebuano",
     href: "ceb",
   });
   list_add(choices, {
     text: string_combine_multiple([
-      "learn language english ",
+      "🎓 learn language english ",
       html_replace_nb("( from cebuano )"),
     ]),
     href: "en",
