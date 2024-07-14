@@ -1,3 +1,5 @@
+import { function_name_to_url_github } from "./function_name_to_url_github.mjs";
+import { noop } from "./noop.mjs";
 import { html_cycle_p } from "./html_cycle_p.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { url_audio_bible } from "./url_audio_bible.mjs";
@@ -37,7 +39,7 @@ export function app_resume() {
   html_style_link(url_audio_bible())(audio_bible);
   let memorize = app_resume_header_3(root, "Memorize Bible");
   html_style_link("memorize.html")(memorize);
-  html_cycle_p;
+  html_cycle_p(root, [noop, html_style_link(function_name_to_url_github())]);
   html_p_text(
     root,
     string_combine_multiple([
