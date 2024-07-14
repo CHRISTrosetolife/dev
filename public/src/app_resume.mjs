@@ -63,7 +63,7 @@ export function app_resume() {
       ),
       noop,
     ],
-    "app` to record audio `verse by verse`, `convert to mp3` to save space and `upload to Firebase`; `downloads` audio files from Firebase; `generates` a video of a bible chapter",
+    "app` to record audio `verse by verse`, `convert` to mp3 to save space and `upload` to Firebase; `downloads` audio files from Firebase; `generates` a video of a bible chapter",
   );
   let memorize = app_resume_header_3(root, "Memorize Bible");
   html_style_link("memorize.html")(memorize);
