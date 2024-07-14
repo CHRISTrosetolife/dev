@@ -31,6 +31,8 @@ export function app_resume() {
   html_style_link("ceb.html")(ceb);
   let memorize = app_resume_header_3(root, "Memorize Bible");
   html_style_link("memorize.html")(memorize);
+  let game = app_resume_header_3(root, "Game");
+  html_style_link("gs.html")(game);
   app_resume_header_2(root, "Skills");
   app_resume_header_2(root, "Professional Experience");
   app_resume_header_2(root, "Education");
