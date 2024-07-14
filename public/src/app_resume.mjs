@@ -1,3 +1,4 @@
+import { app_record } from "./app_record.mjs";
 import { app_memorize_keyboard } from "./app_memorize_keyboard.mjs";
 import { function_name_to_url_github } from "./function_name_to_url_github.mjs";
 import { noop } from "./noop.mjs";
@@ -41,10 +42,7 @@ export function app_resume() {
   html_style_link(url_audio_bible())(audio_bible);
   html_cycle_p(
     root,
-    [
-      html_style_link(function_name_to_url_github(app_memorize_keyboard.name)),
-      noop,
-    ],
+    [html_style_link(function_name_to_url_github(app_record.name)), noop],
     "app` to record audio verse by verse and uploads to Firebase",
   );
   let memorize = app_resume_header_3(root, "Memorize Bible");
