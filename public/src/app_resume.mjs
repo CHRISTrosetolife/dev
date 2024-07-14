@@ -36,6 +36,15 @@ export function app_resume() {
   html_style_link("ceb.html")(ceb);
   let audio_bible = app_resume_header_3(root, "Audio Bible");
   html_style_link(url_audio_bible())(audio_bible);
+  html_cycle_p(
+    root,
+    [
+      noop,
+      html_style_link(function_name_to_url_github(app_memorize_keyboard.name)),
+      noop,
+    ],
+    "allows user to memorize a chapter of the bible; user types first letter of each word on physical or `onscreen keyboard`; words are gradually removed until user is reciting from memory",
+  );
   let memorize = app_resume_header_3(root, "Memorize Bible");
   html_style_link("memorize.html")(memorize);
   html_cycle_p(
