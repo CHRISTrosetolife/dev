@@ -23,7 +23,10 @@ export function app_index() {
     href: "ceb",
   });
   list_add(choices, {
-    text: string_combine_multiple(["learn language english ( from cebuano )"]),
+    text: string_combine_multiple([
+      "learn language english ",
+      "( from cebuano )",
+    ]),
     href: "en",
   });
   list_add(choices, {
