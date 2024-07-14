@@ -30,10 +30,13 @@ export function app_resume() {
   app_resume_header_2(root, "Projects");
   let dev = app_resume_header_3(root, "Development Tools");
   html_style_link("dev.html")(dev);
+  html_cycle_p(root, [noop], "");
   let learn_code = app_resume_header_3(root, "Learn to Code");
   html_style_link("learn_code.html")(learn_code);
+  html_cycle_p(root, [noop], "");
   let ceb = app_resume_header_3(root, "Learn Cebuano Language");
   html_style_link("ceb.html")(ceb);
+  html_cycle_p(root, [noop], "");
   let audio_bible = app_resume_header_3(root, "Audio Bible");
   html_style_link(url_audio_bible())(audio_bible);
   html_cycle_p(root, [noop], "");
@@ -50,6 +53,7 @@ export function app_resume() {
   );
   let game = app_resume_header_3(root, "Game");
   html_style_link("gs.html")(game);
+  html_cycle_p(root, [noop], "");
   app_resume_header_2(root, "Skills");
   app_resume_header_2(root, "Professional Experience");
   app_resume_header_2(root, "Education");
