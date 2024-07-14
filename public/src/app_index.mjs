@@ -17,6 +17,10 @@ export function app_index() {
   });
   list_add(choices, {
     text: "learn to code ( javascript )",
+    text: string_combine_multiple([
+      "learn to code ",
+      html_replace_nb("( javascript )"),
+    ]),
     href: "learn_code",
   });
   list_add(choices, {
