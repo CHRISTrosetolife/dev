@@ -50,6 +50,7 @@ export function app_resume() {
       html_style_link(function_name_to_url_github(app_record_verse.name)),
       noop,
       html_style_link(function_name_to_url_github(firebase_upload.name)),
+      noop,
     ],
     "app` to record audio `verse by verse` and `uploads to Firebase",
   );
