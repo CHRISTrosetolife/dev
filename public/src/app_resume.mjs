@@ -1,3 +1,4 @@
+import { app_memorize_keyboard } from "./app_memorize_keyboard.mjs";
 import { function_name_to_url_github } from "./function_name_to_url_github.mjs";
 import { noop } from "./noop.mjs";
 import { html_cycle_p } from "./html_cycle_p.mjs";
@@ -39,7 +40,7 @@ export function app_resume() {
   html_style_link("memorize.html")(memorize);
   html_cycle_p(root, [
     noop,
-    html_style_link(function_name_to_url_github()),
+    html_style_link(function_name_to_url_github(app_memorize_keyboard.name)),
     "allows user to memorize a chapter of the bible; user types first letter of each word on physical or `onscreen keyboard",
   ]);
   let game = app_resume_header_3(root, "Game");
