@@ -1,13 +1,6 @@
+import { app_memorize_keyboard } from "./app_memorize_keyboard.mjs";
 import { app_memorize_keyboard_height } from "./app_memorize_keyboard_height.mjs";
 import { app_memorize_refresh_settings } from "./app_memorize_refresh_settings.mjs";
-import { app_memorize_on_keydown } from "./app_memorize_on_keydown.mjs";
-import { app_memorize_button_keyboard_stylize } from "./app_memorize_button_keyboard_stylize.mjs";
-import { string_case_upper } from "./string_case_upper.mjs";
-import { html_inner_set } from "./html_inner_set.mjs";
-import { object_property_set } from "./object_property_set.mjs";
-import { html_button } from "./html_button.mjs";
-import { html_style_centered } from "./html_style_centered.mjs";
-import { html_div } from "./html_div.mjs";
 import { app_memorize_update_colors } from "./app_memorize_update_colors.mjs";
 import { equal } from "./equal.mjs";
 import { html_style_hidden } from "./html_style_hidden.mjs";
@@ -25,7 +18,6 @@ import { html_style } from "./html_style.mjs";
 import { subtract } from "./subtract.mjs";
 import { add } from "./add.mjs";
 import { list_size } from "./list_size.mjs";
-import { keyboard_keys_rows } from "./keyboard_keys_rows.mjs";
 import { html_style_margin_x } from "./html_style_margin_x.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_element } from "./html_element.mjs";
@@ -113,22 +105,5 @@ export function app_memorize_refresh_memorize(context) {
     });
   });
   app_memorize_update_colors(context);
-  let keyboard_element = html_element(root, "div");
-  html_style(keyboard_element, {
-    "max-height": number_to_dvh(keyboard_height),
-  });
-  let keys = keyboard_keys_rows();
-  for (let row of keys) {
-    let row_element = html_div(keyboard_element);
-    html_style_centered(row_element);
-    for (let k of row) {
-      let b = html_button(row_element);
-      object_property_set(context.keyboard_buttons, k, b);
-      html_inner_set(b, string_case_upper(k));
-      app_memorize_button_keyboard_stylize(context, b);
-      html_on_click(b, () => {
-        app_memorize_on_keydown(context, k);
-      });
-    }
-  }
+  app_memorize_keyboard(context);
 }
