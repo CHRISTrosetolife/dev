@@ -63,7 +63,8 @@ export function app_index() {
       root,
       object_property_get(choice, "text"),
       () => {
-        let url = string_combine_multiple([
+        let url;
+        url = string_combine_multiple([
           object_property_get(choice, "page"),
           ".html",
         ]);
