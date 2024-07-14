@@ -1,9 +1,10 @@
 import { retry_if } from "./retry_if.mjs";
 import { retry } from "./retry.mjs";
-import fetch from "node-fetch";
 import { sleep } from "./sleep.mjs";
 import { integer_random } from "./integer_random.mjs";
+import { import_node } from "./import_node.mjs";
 export async function http(url) {
+  let fetch = await import_node("node-fetch");
   let response = await retry(
     3,
     lambda,
