@@ -11,6 +11,7 @@ import { html_style_centered } from "./html_style_centered.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_p } from "./html_p.mjs";
+import { html_p_text } from "./html_p_text.mjs";
 export function app_resume() {
   let root = html_style_default_initialize();
   app_resume_header(root, "JARED MATHIS");
@@ -34,6 +35,7 @@ export function app_resume() {
   html_style_link(url_audio_bible())(audio_bible);
   let memorize = app_resume_header_3(root, "Memorize Bible");
   html_style_link("memorize.html")(memorize);
+  html_p_text(memorize, "allows user to memorize a chapter of the bible");
   let game = app_resume_header_3(root, "Game");
   html_style_link("gs.html")(game);
   app_resume_header_2(root, "Skills");
