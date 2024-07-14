@@ -42,7 +42,7 @@ export function app_index() {
     href: "memorize",
   });
   list_add(choices, {
-    text: "game",
+    text: "🎮 game",
     href: "gs",
   });
   list_add(choices, {
