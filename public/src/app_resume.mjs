@@ -53,6 +53,7 @@ export function app_resume() {
       html_style_link(function_name_to_url_github(firebase_upload.name)),
       noop,
       html_style_link(function_name_to_url_github(bible_chapter_video.name)),
+      noop,
     ],
     "app` to record audio `verse by verse` and `uploads to Firebase`; `generates a video of a bible chapter`",
   );
