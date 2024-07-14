@@ -46,7 +46,7 @@ export function app_index() {
     href: "gs",
   });
   list_add(choices, {
-    text: "record bible",
+    text: "⏺️ record bible",
     href: "record",
   });
   list_add(choices, {
