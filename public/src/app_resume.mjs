@@ -39,7 +39,11 @@ export function app_resume() {
   html_cycle_p(root, [noop], "");
   let audio_bible = app_resume_header_3(root, "Audio Bible");
   html_style_link(url_audio_bible())(audio_bible);
-  html_cycle_p(root, [noop], "");
+  html_cycle_p(
+    root,
+    [noop],
+    "app to record audio verse-by-verse and upload to Firebase",
+  );
   let memorize = app_resume_header_3(root, "Memorize Bible");
   html_style_link("memorize.html")(memorize);
   html_cycle_p(
