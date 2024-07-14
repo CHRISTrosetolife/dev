@@ -68,7 +68,10 @@ export function app_resume() {
         function_name_to_url_github(bible_chapter_audio_to_wav.name),
       ),
       noop,
-      bible_chapter_audio_trim,
+      html_style_link(
+        function_name_to_url_github(bible_chapter_audio_trim.name),
+      ),
+      noop,
     ],
     "app` to record audio `verse by verse`, `convert` to mp3 to save space and `upload` to Firebase; `downloads` mp3 files from Firebase; `convert` mp3 to wav for processing; `trim` quiet from beginning and end; `generates` a video of a bible chapter",
   );
