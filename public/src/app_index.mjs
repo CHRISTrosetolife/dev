@@ -8,6 +8,7 @@ import { window_open } from "./window_open.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { list_add } from "./list_add.mjs";
+import { object_property_exists } from "./object_property_exists.mjs";
 export function app_index() {
   let root = html_style_default_initialize();
   html_clear_scroll_top_centered(root);
@@ -64,6 +65,7 @@ export function app_index() {
       object_property_get(choice, "text"),
       () => {
         let url;
+        object_property_exists();
         url = string_combine_multiple([
           object_property_get(choice, "page"),
           ".html",
