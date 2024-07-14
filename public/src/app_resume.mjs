@@ -44,7 +44,7 @@ export function app_resume() {
       noop,
       html_style_link(function_name_to_url_github(app_memorize_keyboard.name)),
     ],
-    "allows user to memorize a chapter of the bible; user types first letter of each word on physical or `onscreen keyboard",
+    "allows user to memorize a chapter of the bible; user types first letter of each word on physical or `onscreen keyboard; words are gradually removed until user is reciting from memory",
   );
   let game = app_resume_header_3(root, "Game");
   html_style_link("gs.html")(game);
