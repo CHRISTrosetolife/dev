@@ -1,3 +1,4 @@
+import { bible_chapter_videos } from "./bible_chapter_videos.mjs";
 import { bible_verse_images } from "./bible_verse_images.mjs";
 import { bible_chapter_audio_trim } from "./bible_chapter_audio_trim.mjs";
 import { bible_chapter_audio_to_wav } from "./bible_chapter_audio_to_wav.mjs";
@@ -77,7 +78,7 @@ export function app_resume() {
       noop,
       html_style_link(function_name_to_url_github(bible_chapter_video.name)),
       noop,
-      html_style_link(function_name_to_url_github(bible_verse_images.name)),
+      html_style_link(function_name_to_url_github(bible_chapter_videos.name)),
       noop,
       ,
     ],
