@@ -1,3 +1,4 @@
+import { html_cycle_p } from "./html_cycle_p.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { url_audio_bible } from "./url_audio_bible.mjs";
 import { html_style_link } from "./html_style_link.mjs";
@@ -36,6 +37,7 @@ export function app_resume() {
   html_style_link(url_audio_bible())(audio_bible);
   let memorize = app_resume_header_3(root, "Memorize Bible");
   html_style_link("memorize.html")(memorize);
+  html_cycle_p;
   html_p_text(
     root,
     string_combine_multiple([
