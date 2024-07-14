@@ -27,15 +27,16 @@ import { list_find_property } from "./list_find_property.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
 import { bible_chapter_name_parse } from "./bible_chapter_name_parse.mjs";
 import { bible_chapter_folder_parent_gitignore } from "./bible_chapter_folder_parent_gitignore.mjs";
-import { createCanvas, loadImage } from "canvas";
 import { object_merge } from "./object_merge.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { file_exists_not } from "./file_exists_not.mjs";
+import { import_node } from "./import_node.mjs";
 export async function bible_verse_images(
   bible_folder,
   chapter_name,
   verse_number,
 ) {
+  let { createCanvas, loadImage } = await import_node("canvas");
   let overwrite = false;
   let output_path_folder = bible_chapter_folder_parent_gitignore(
     "img",
