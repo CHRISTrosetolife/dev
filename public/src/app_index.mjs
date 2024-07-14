@@ -63,12 +63,11 @@ export function app_index() {
       root,
       object_property_get(choice, "text"),
       () => {
-        window_open(
-          string_combine_multiple([
-            object_property_get(choice, "page"),
-            ".html",
-          ]),
-        );
+        let url = string_combine_multiple([
+          object_property_get(choice, "page"),
+          ".html",
+        ]);
+        window_open(url);
       },
     );
   });
