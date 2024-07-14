@@ -36,7 +36,7 @@ export function app_resume() {
   let memorize = app_resume_header_3(root, "Memorize Bible");
   html_style_link("memorize.html")(memorize);
   html_p_text(
-    memorize,
+    root,
     "allows user to memorize a chapter of the bible; user types first letter of each word on physical or onscreen keyboard",
   );
   let game = app_resume_header_3(root, "Game");
