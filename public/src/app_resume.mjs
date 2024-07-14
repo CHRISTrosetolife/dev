@@ -35,7 +35,10 @@ export function app_resume() {
   html_style_link(url_audio_bible())(audio_bible);
   let memorize = app_resume_header_3(root, "Memorize Bible");
   html_style_link("memorize.html")(memorize);
-  html_p_text(memorize, "allows user to memorize a chapter of the bible");
+  html_p_text(
+    memorize,
+    "allows user to memorize a chapter of the bible; user types first letter of each word on physical or onscreen keyboard",
+  );
   let game = app_resume_header_3(root, "Game");
   html_style_link("gs.html")(game);
   app_resume_header_2(root, "Skills");
