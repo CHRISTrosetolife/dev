@@ -50,7 +50,7 @@ export function app_index() {
     href: "record",
   });
   list_add(choices, {
-    text: "book syntagmatis theologiae christianae",
+    text: "📙 book syntagmatis theologiae christianae",
     href: "yyy8Uu",
   });
   each(choices, (choice) => {
