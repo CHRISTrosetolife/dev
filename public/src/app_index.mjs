@@ -71,6 +71,7 @@ export function app_index() {
             ".html",
           ]);
         } else {
+          url = object_property_get(choice, "href");
         }
         window_open(url);
       },
