@@ -16,7 +16,6 @@ export function app_index() {
     href: "dev",
   });
   list_add(choices, {
-    text: "learn to code ( javascript )",
     text: string_combine_multiple([
       "learn to code ",
       html_replace_nb("( javascript )"),
