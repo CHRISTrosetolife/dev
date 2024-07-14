@@ -58,7 +58,7 @@ export function app_resume() {
       html_style_link(
         function_name_to_url_github(bible_chapter_audio_download.name),
       ),
-      ,
+      noop,
     ],
     "app` to record audio `verse by verse` and `uploads to Firebase`; `downloads` audio files from Firebase; `generates` a video of a bible chapter",
   );
