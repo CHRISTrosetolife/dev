@@ -1,6 +1,5 @@
 import { file_exists } from "./file_exists.mjs";
 import { assert_async } from "./assert_async.mjs";
-import ffmpeg from "fluent-ffmpeg";
 import { import_node } from "./import_node.mjs";
 export async function audio_to_wav(path_input, path_output) {
   if (await file_exists(path_output)) {
