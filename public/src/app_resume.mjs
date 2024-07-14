@@ -41,7 +41,10 @@ export function app_resume() {
   html_style_link(url_audio_bible())(audio_bible);
   html_cycle_p(
     root,
-    [noop],
+    [
+      html_style_link(function_name_to_url_github(app_memorize_keyboard.name)),
+      noop,
+    ],
     "app` to record audio verse by verse and uploads to Firebase",
   );
   let memorize = app_resume_header_3(root, "Memorize Bible");
