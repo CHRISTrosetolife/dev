@@ -70,6 +70,7 @@ export function app_index() {
             object_property_get(choice, "page"),
             ".html",
           ]);
+        } else {
         }
         window_open(url);
       },
