@@ -34,7 +34,7 @@ export function app_index() {
     href: "en",
   });
   list_add(choices, {
-    text: "resume",
+    text: "📄 resume",
     href: "resume",
   });
   list_add(choices, {
