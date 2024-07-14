@@ -13,45 +13,45 @@ export function app_index() {
   let choices = [];
   list_add(choices, {
     text: "💻 development tools documentation",
-    href: "dev",
+    page: "dev",
   });
   list_add(choices, {
     text: string_combine_multiple([
       "🧑‍💻️ learn to code ",
       html_replace_nb("( javascript )"),
     ]),
-    href: "learn_code",
+    page: "learn_code",
   });
   list_add(choices, {
     text: "🎓 learn language cebuano",
-    href: "ceb",
+    page: "ceb",
   });
   list_add(choices, {
     text: string_combine_multiple([
       "🎓 learn language english ",
       html_replace_nb("( from cebuano )"),
     ]),
-    href: "en",
+    page: "en",
   });
   list_add(choices, {
     text: "📄 resume",
-    href: "resume",
+    page: "resume",
   });
   list_add(choices, {
     text: "📖 bible memorize",
-    href: "memorize",
+    page: "memorize",
   });
   list_add(choices, {
     text: "🎮 game",
-    href: "gs",
+    page: "gs",
   });
   list_add(choices, {
     text: "⏺️ record bible",
-    href: "record",
+    page: "record",
   });
   list_add(choices, {
     text: "📙 book syntagmatis theologiae christianae",
-    href: "yyy8Uu",
+    page: "yyy8Uu",
   });
   each(choices, (choice) => {
     html_button_width_full_text_click(
@@ -60,7 +60,7 @@ export function app_index() {
       () => {
         window_open(
           string_combine_multiple([
-            object_property_get(choice, "href"),
+            object_property_get(choice, "page"),
             ".html",
           ]),
         );
