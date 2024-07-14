@@ -1,3 +1,4 @@
+import { url_secure_w3 } from "./url_secure_w3.mjs";
 import { html_replace_nb } from "./html_replace_nb.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -51,7 +52,7 @@ export function app_index() {
   });
   list_add(choices, {
     text: "🎥 audio bible videos",
-    href: "https://www.youtube.com/@JESUS_rose_to_life",
+    href: url_secure_w3("youtube.com/@JESUS_rose_to_life"),
   });
   list_add(choices, {
     text: "📙 book syntagmatis theologiae christianae",
