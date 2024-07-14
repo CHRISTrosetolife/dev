@@ -1,3 +1,4 @@
+import { firebase_upload } from "./firebase_upload.mjs";
 import { app_record_verse } from "./app_record_verse.mjs";
 import { app_record } from "./app_record.mjs";
 import { app_memorize_keyboard } from "./app_memorize_keyboard.mjs";
@@ -48,7 +49,7 @@ export function app_resume() {
       noop,
       html_style_link(function_name_to_url_github(app_record_verse.name)),
       noop,
-      html_style_link(function_name_to_url_github(app_record_verse.name)),
+      html_style_link(function_name_to_url_github(firebase_upload.name)),
     ],
     "app` to record audio `verse by verse` and `uploads to Firebase",
   );
