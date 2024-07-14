@@ -47,8 +47,8 @@ export async function bible_chapter_video(
         return;
       }
     }
-    let m = list_map(videos, (v) => ({
-      fileName: path_resolve(
+    let m = list_map(videos, async (v) => ({
+      fileName: await path_resolve(
         object_property_get(object_property_get(v, "path"), hv_name),
       ),
     }));
