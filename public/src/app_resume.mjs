@@ -42,7 +42,7 @@ export function app_resume() {
   html_cycle_p(
     root,
     [noop],
-    "app to record audio verse-by-verse and upload to Firebase",
+    "records audio verse by verse and uploads to Firebase",
   );
   let memorize = app_resume_header_3(root, "Memorize Bible");
   html_style_link("memorize.html")(memorize);
