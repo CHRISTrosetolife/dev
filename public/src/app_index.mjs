@@ -53,7 +53,10 @@ export function app_index() {
   });
   list_add(choices, {
     text: "🎥 audio bible videos",
-    href: url_secure_w3("youtube.com/@JESUS_rose_to_life"),
+    href: string_combine_multiple([
+      url_secure_w3(),
+      "youtube.com/@JESUS_rose_to_life",
+    ]),
   });
   list_add(choices, {
     text: "📙 book syntagmatis theologiae christianae",
