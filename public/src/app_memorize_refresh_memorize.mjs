@@ -1,3 +1,4 @@
+import { app_memorize_keyboard_height } from "./app_memorize_keyboard_height.mjs";
 import { app_memorize_refresh_settings } from "./app_memorize_refresh_settings.mjs";
 import { app_memorize_on_keydown } from "./app_memorize_on_keydown.mjs";
 import { app_memorize_button_keyboard_stylize } from "./app_memorize_button_keyboard_stylize.mjs";
@@ -23,7 +24,6 @@ import { number_to_dvh } from "./number_to_dvh.mjs";
 import { html_style } from "./html_style.mjs";
 import { subtract } from "./subtract.mjs";
 import { add } from "./add.mjs";
-import { multiply } from "./multiply.mjs";
 import { list_size } from "./list_size.mjs";
 import { keyboard_keys_rows } from "./keyboard_keys_rows.mjs";
 import { html_style_margin_x } from "./html_style_margin_x.mjs";
@@ -54,9 +54,7 @@ export function app_memorize_refresh_memorize(context) {
     html_style_margin_x(settings_button, 0);
   }
   let verses_element = html_element(root, "div");
-  let keys = keyboard_keys_rows();
-  let keys_size = list_size(keys);
-  let keyboard_height = multiply(context.button_height, keys_size);
+  let keyboard_height = app_memorize_keyboard_height(context);
   let offset = add(keyboard_height, context.settings ? 7 : 0);
   let height_max = subtract(100, offset);
   html_style(verses_element, {
@@ -119,6 +117,7 @@ export function app_memorize_refresh_memorize(context) {
   html_style(keyboard_element, {
     "max-height": number_to_dvh(keyboard_height),
   });
+  let keys = keyboard_keys_rows();
   for (let row of keys) {
     let row_element = html_div(keyboard_element);
     html_style_centered(row_element);
