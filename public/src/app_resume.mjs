@@ -1,3 +1,4 @@
+import { bible_chapter_video } from "./bible_chapter_video.mjs";
 import { firebase_upload } from "./firebase_upload.mjs";
 import { app_record_verse } from "./app_record_verse.mjs";
 import { app_record } from "./app_record.mjs";
@@ -51,8 +52,9 @@ export function app_resume() {
       noop,
       html_style_link(function_name_to_url_github(firebase_upload.name)),
       noop,
+      html_style_link(function_name_to_url_github(bible_chapter_video.name)),
     ],
-    "app` to record audio `verse by verse` and `uploads to Firebase; generates a video of a bible chapter",
+    "app` to record audio `verse by verse` and `uploads to Firebase`; `generates a video of a bible chapter`",
   );
   let memorize = app_resume_header_3(root, "Memorize Bible");
   html_style_link("memorize.html")(memorize);
