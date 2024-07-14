@@ -1,3 +1,4 @@
+import { html_replace_nb } from "./html_replace_nb.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
@@ -25,7 +26,7 @@ export function app_index() {
   list_add(choices, {
     text: string_combine_multiple([
       "learn language english ",
-      "( from cebuano )",
+      html_replace_nb("( from cebuano )"),
     ]),
     href: "en",
   });
