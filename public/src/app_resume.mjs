@@ -1,7 +1,6 @@
 import { function_name_to_url_github } from "./function_name_to_url_github.mjs";
 import { noop } from "./noop.mjs";
 import { html_cycle_p } from "./html_cycle_p.mjs";
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { url_audio_bible } from "./url_audio_bible.mjs";
 import { html_style_link } from "./html_style_link.mjs";
 import { app_resume_header_3 } from "./app_resume_header_3.mjs";
@@ -15,7 +14,6 @@ import { html_style_centered } from "./html_style_centered.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_p } from "./html_p.mjs";
-import { html_p_text } from "./html_p_text.mjs";
 export function app_resume() {
   let root = html_style_default_initialize();
   app_resume_header(root, "JARED MATHIS");
@@ -44,7 +42,6 @@ export function app_resume() {
     html_style_link(function_name_to_url_github()),
     "allows user to memorize a chapter of the bible; user types first letter of each word on physical or `onscreen keyboard",
   ]);
-  html_p_text(root, string_combine_multiple([,]));
   let game = app_resume_header_3(root, "Game");
   html_style_link("gs.html")(game);
   app_resume_header_2(root, "Skills");
