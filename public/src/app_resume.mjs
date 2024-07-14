@@ -1,3 +1,4 @@
+import { bible_verse_images } from "./bible_verse_images.mjs";
 import { bible_chapter_audio_trim } from "./bible_chapter_audio_trim.mjs";
 import { bible_chapter_audio_to_wav } from "./bible_chapter_audio_to_wav.mjs";
 import { html_wav_to_mp3 } from "./html_wav_to_mp3.mjs";
@@ -71,9 +72,10 @@ export function app_resume() {
       html_style_link(
         function_name_to_url_github(bible_chapter_audio_trim.name),
       ),
+      bible_verse_images,
       noop,
     ],
-    "app` to record audio `verse by verse`, `convert` to mp3 to save space and `upload` to Firebase; `downloads` mp3 files from Firebase; `convert` mp3 to wav for processing; `trim` quiet from beginning and end; `generates` a video of a bible chapter",
+    "app` to record audio `verse by verse`, `convert` to .mp3 to save space and `upload` to Firebase; `downloads` .mp3 files from Firebase; `converts` mp3 to .wav for processing; `trims` quiet from beginning and end of each .wav; `generates` an image for each verse, computing line-wrapping; `generates` a video of a bible chapter",
   );
   let memorize = app_resume_header_3(root, "Memorize Bible");
   html_style_link("memorize.html")(memorize);
