@@ -45,6 +45,6 @@ export function app_resume_audio_bible(root) {
       noop,
       ,
     ],
-    "app` to record audio `verse by verse`, `convert` to .mp3 to save space and `upload` to Firebase; `downloads` .mp3 files from Firebase; `converts` mp3 to .wav for processing; `trims` low volume from beginning and end of each .wav; `generates` an image for each verse, computing line-wrapping; generates videos for each bible `verse` and `chapter`",
+    "app` to record audio `verse by verse`, `converts` to .mp3 to save space and `uploads` to Firebase; `downloads` .mp3 files from Firebase; `converts` mp3 to .wav for processing; `trims` low volume from beginning and end of each .wav; `generates` an image for each verse, computing line-wrapping; generates videos for each bible `verse` and `chapter`",
   );
 }
