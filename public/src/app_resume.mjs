@@ -51,10 +51,6 @@ export function app_resume() {
       html_style_link(function_name_to_url_github(fn_name("firebase_upload"))),
       noop,
       html_style_link(
-        function_name_to_url_github(fn_name("bible_chapter_video")),
-      ),
-      noop,
-      html_style_link(
         function_name_to_url_github(fn_name("bible_chapter_audio_download")),
       ),
       noop,
