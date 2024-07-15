@@ -41,31 +41,41 @@ export function app_resume() {
   html_cycle_p(
     root,
     [
-      html_style_link(function_name_to_url_github("app_record")),
+      html_style_link(function_name_to_url_github(fn_name("app_record"))),
       noop,
-      html_style_link(function_name_to_url_github("app_record_verse")),
+      html_style_link(function_name_to_url_github(fn_name("app_record_verse"))),
       noop,
-      html_style_link(function_name_to_url_github("html_wav_to_mp3")),
+      html_style_link(function_name_to_url_github(fn_name("html_wav_to_mp3"))),
       noop,
-      html_style_link(function_name_to_url_github("firebase_upload")),
-      noop,
-      html_style_link(function_name_to_url_github("bible_chapter_video")),
+      html_style_link(function_name_to_url_github(fn_name("firebase_upload"))),
       noop,
       html_style_link(
-        function_name_to_url_github("bible_chapter_audio_download"),
+        function_name_to_url_github(fn_name("bible_chapter_video")),
       ),
       noop,
       html_style_link(
-        function_name_to_url_github("bible_chapter_audio_to_wav"),
+        function_name_to_url_github(fn_name("bible_chapter_audio_download")),
       ),
       noop,
-      html_style_link(function_name_to_url_github("bible_chapter_audio_trim")),
+      html_style_link(
+        function_name_to_url_github(fn_name("bible_chapter_audio_to_wav")),
+      ),
       noop,
-      html_style_link(function_name_to_url_github("bible_verse_images")),
+      html_style_link(
+        function_name_to_url_github(fn_name("bible_chapter_audio_trim")),
+      ),
       noop,
-      html_style_link(function_name_to_url_github("bible_chapter_videos")),
+      html_style_link(
+        function_name_to_url_github(fn_name("bible_verse_images")),
+      ),
       noop,
-      html_style_link(function_name_to_url_github("bible_chapter_video")),
+      html_style_link(
+        function_name_to_url_github(fn_name("bible_chapter_videos")),
+      ),
+      noop,
+      html_style_link(
+        function_name_to_url_github(fn_name("bible_chapter_video")),
+      ),
       noop,
       ,
     ],
