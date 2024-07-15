@@ -35,7 +35,7 @@ export function app_resume() {
   html_cycle_p(
     root,
     [noop],
-    "user is presented with concepts; for each concept: user chooses correct output given source code; user chooses correct source code given an output",
+    "User is presented with JavaScript programming concepts; for each concept: user chooses correct output given source code; user chooses correct source code given an output",
   );
   let ceb = app_resume_header_3(root, "Learn Cebuano Language");
   html_style_link("ceb.html")(ceb);
