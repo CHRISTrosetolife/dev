@@ -32,7 +32,11 @@ export function app_resume() {
   html_cycle_p(root, [noop], "");
   let learn_code = app_resume_header_3(root, "Learn to Code");
   html_style_link("learn_code.html")(learn_code);
-  html_cycle_p(root, [noop], "");
+  html_cycle_p(
+    root,
+    [noop],
+    "user is presented with concepts; for each concept: user chooses correct output given source code; user chooses correct source code given an output",
+  );
   let ceb = app_resume_header_3(root, "Learn Cebuano Language");
   html_style_link("ceb.html")(ceb);
   html_cycle_p(
