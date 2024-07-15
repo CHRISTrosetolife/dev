@@ -38,7 +38,7 @@ export function app_resume() {
   html_cycle_p(
     root,
     [noop],
-    "Computes most frequent words in English and Cebuano Bibles",
+    "Computes most frequent words in English and Cebuano Bibles; user can review new words and their translations; user can be quizzed on three difficulties",
   );
   app_resume_audio_bible(root);
   let memorize = app_resume_header_3(root, "Memorize Bible");
