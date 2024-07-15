@@ -1,3 +1,4 @@
+import { fn_name } from "./fn_name.mjs";
 import { function_name_to_url_github } from "./function_name_to_url_github.mjs";
 import { noop } from "./noop.mjs";
 import { html_cycle_p } from "./html_cycle_p.mjs";
