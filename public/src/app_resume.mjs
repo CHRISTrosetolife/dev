@@ -1,14 +1,3 @@
-import { bible_chapter_videos } from "./bible_chapter_videos.mjs";
-import { bible_verse_images } from "./bible_verse_images.mjs";
-import { bible_chapter_audio_trim } from "./bible_chapter_audio_trim.mjs";
-import { bible_chapter_audio_to_wav } from "./bible_chapter_audio_to_wav.mjs";
-import { html_wav_to_mp3 } from "./html_wav_to_mp3.mjs";
-import { bible_chapter_audio_download } from "./bible_chapter_audio_download.mjs";
-import { bible_chapter_video } from "./bible_chapter_video.mjs";
-import { firebase_upload } from "./firebase_upload.mjs";
-import { app_record_verse } from "./app_record_verse.mjs";
-import { app_record } from "./app_record.mjs";
-import { app_memorize_keyboard } from "./app_memorize_keyboard.mjs";
 import { function_name_to_url_github } from "./function_name_to_url_github.mjs";
 import { noop } from "./noop.mjs";
 import { html_cycle_p } from "./html_cycle_p.mjs";
@@ -52,33 +41,33 @@ export function app_resume() {
   html_cycle_p(
     root,
     [
-      html_style_link(function_name_to_url_github(app_record.name)),
+      html_style_link(function_name_to_url_github("app_record".name)),
       noop,
-      html_style_link(function_name_to_url_github(app_record_verse.name)),
+      html_style_link(function_name_to_url_github("app_record_verse".name)),
       noop,
-      html_style_link(function_name_to_url_github(html_wav_to_mp3.name)),
+      html_style_link(function_name_to_url_github("html_wav_to_mp3".name)),
       noop,
-      html_style_link(function_name_to_url_github(firebase_upload.name)),
+      html_style_link(function_name_to_url_github("firebase_upload".name)),
       noop,
-      html_style_link(function_name_to_url_github(bible_chapter_video.name)),
+      html_style_link(function_name_to_url_github("bible_chapter_video".name)),
       noop,
       html_style_link(
-        function_name_to_url_github(bible_chapter_audio_download.name),
+        function_name_to_url_github("bible_chapter_audio_download".name),
       ),
       noop,
       html_style_link(
-        function_name_to_url_github(bible_chapter_audio_to_wav.name),
+        function_name_to_url_github("bible_chapter_audio_to_wav".name),
       ),
       noop,
       html_style_link(
-        function_name_to_url_github(bible_chapter_audio_trim.name),
+        function_name_to_url_github("bible_chapter_audio_trim".name),
       ),
       noop,
-      html_style_link(function_name_to_url_github(bible_verse_images.name)),
+      html_style_link(function_name_to_url_github("bible_verse_images".name)),
       noop,
-      html_style_link(function_name_to_url_github(bible_chapter_videos.name)),
+      html_style_link(function_name_to_url_github("bible_chapter_videos".name)),
       noop,
-      html_style_link(function_name_to_url_github(bible_chapter_video.name)),
+      html_style_link(function_name_to_url_github("bible_chapter_video".name)),
       noop,
       ,
     ],
@@ -90,7 +79,9 @@ export function app_resume() {
     root,
     [
       noop,
-      html_style_link(function_name_to_url_github(app_memorize_keyboard.name)),
+      html_style_link(
+        function_name_to_url_github("app_memorize_keyboard".name),
+      ),
       noop,
     ],
     "allows user to memorize a chapter of the bible; user types first letter of each word on physical or `onscreen keyboard`; words are gradually removed until user is reciting from memory",
