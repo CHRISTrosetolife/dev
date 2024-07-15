@@ -35,7 +35,11 @@ export function app_resume() {
   html_cycle_p(root, [noop], "");
   let ceb = app_resume_header_3(root, "Learn Cebuano Language");
   html_style_link("ceb.html")(ceb);
-  html_cycle_p(root, [noop], "");
+  html_cycle_p(
+    root,
+    [noop],
+    "Computes most frequent words in English and Cebuano Bibles",
+  );
   app_resume_audio_bible(root);
   let memorize = app_resume_header_3(root, "Memorize Bible");
   html_style_link("memorize.html")(memorize);
