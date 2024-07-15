@@ -1,1 +1,3 @@
-export function fn_name(name) {}
+export function fn_name(name) {
+  return name;
+}
