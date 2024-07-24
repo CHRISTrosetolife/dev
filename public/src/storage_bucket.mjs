@@ -5,7 +5,7 @@ import { file_read_json } from "./file_read_json.mjs";
 import { global_function_initialize } from "./global_function_initialize.mjs";
 import { import_node } from "./import_node.mjs";
 export async function storage_bucket() {
-  let admin = await import_node("firebase-admin");
+  let { default: admin } = await import_node("firebase-admin");
   log({
     admin,
   });
