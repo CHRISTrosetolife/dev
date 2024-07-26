@@ -9,8 +9,8 @@ import { each_pairs } from "./each_pairs.mjs";
 import { keyboard_keys_rows } from "./keyboard_keys_rows.mjs";
 export function keyboard_near_lookup() {
   let lookup = {};
-  let r = keyboard_keys_rows();
-  each_pairs(r, (c, d) => {
+  let rows = keyboard_keys_rows();
+  each_pairs(rows, (c, d) => {
     c = list_to(c);
     d = list_to(d);
     let c_size = list_size(c);
@@ -40,6 +40,6 @@ export function keyboard_near_lookup() {
       });
     });
   });
-  each(list, (item) => {});
+  each(rows, (row) => {});
   return lookup;
 }
