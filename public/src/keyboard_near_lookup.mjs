@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { each } from "./each.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { list_add } from "./list_add.mjs";
@@ -10,6 +11,7 @@ export function keyboard_near_lookup() {
   let lookup = {};
   let r = keyboard_keys_rows();
   each_pairs(r, (c, d) => {
+    log({});
     let c_size = list_size(c);
     let d_size = list_size(d);
     let difference = c_size - d_size;
