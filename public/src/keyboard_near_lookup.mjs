@@ -42,7 +42,7 @@ export function keyboard_near_lookup() {
   });
   each(rows, (row) => {
     each_pairs(row, (r1, r2) => {
-      object_property_initialize(lookup, d_item, []);
+      list_add(object_property_initialize(lookup, r1, []), r2);
     });
   });
   return lookup;
