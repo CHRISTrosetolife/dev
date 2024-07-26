@@ -7,6 +7,7 @@ export function keyboard_near(a, b) {
   each_pairs(r, (c, d) => {
     let c_size = list_size(c);
     let d_size = list_size(d);
+    let difference = c_size - d_size;
   });
   return equal(a, b);
 }
