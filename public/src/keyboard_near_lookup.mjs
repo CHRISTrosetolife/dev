@@ -40,7 +40,7 @@ export function keyboard_near_lookup() {
         c_left,
         d_item,
       });
-      let d_item_nears = object_property_initialize(lookup, c_right, []);
+      let d_item_nears = object_property_initialize(lookup, d_item, []);
       each(c_lrs, (c_lr) => {
         list_add(d_item_nears, c_lr);
         log({
