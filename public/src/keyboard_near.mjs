@@ -9,7 +9,7 @@ export function keyboard_near(a, b) {
     let c_size = list_size(c);
     let d_size = list_size(d);
     let difference = c_size - d_size;
-    each_index(list, (item, index) => {});
+    each_index(d, (d_element, d_index) => {});
   });
   return equal(a, b);
 }
