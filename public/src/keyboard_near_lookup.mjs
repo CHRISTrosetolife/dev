@@ -13,6 +13,7 @@ export function keyboard_near_lookup() {
   let r = keyboard_keys_rows();
   each_pairs(r, (c, d) => {
     c = list_to(c);
+    d = list_to(d);
     log({
       c,
       d,
