@@ -23,7 +23,8 @@ export function keyboard_near(a, b) {
         list_add(c_nears, d_item);
       });
       let d_item_nears = object_property_initialize(lookup, c_right, []);
-      each([c_left, c_right], (c_lr) => {
+      let c_lrs = [c_left, c_right];
+      each(c_lrs, (c_lr) => {
         list_add(d_item_nears, c_lr);
       });
     });
