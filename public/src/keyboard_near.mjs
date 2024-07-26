@@ -20,7 +20,7 @@ export function keyboard_near(a, b) {
       let c_left_nears = object_property_initialize(lookup, c_left, []);
       list_add(c_left_nears, d_item);
       let c_right_nears = object_property_initialize(lookup, c_right, []);
-      each(list, (item) => {});
+      each([c_left_nears, c_right_nears], (c_nears) => {});
     });
   });
   return equal(a, b);
