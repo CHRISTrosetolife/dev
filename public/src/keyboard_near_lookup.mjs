@@ -14,10 +14,6 @@ export function keyboard_near_lookup() {
   each_pairs(r, (c, d) => {
     c = list_to(c);
     d = list_to(d);
-    log({
-      c,
-      d,
-    });
     let c_size = list_size(c);
     let d_size = list_size(d);
     let difference = c_size - d_size;
@@ -43,6 +39,9 @@ export function keyboard_near_lookup() {
       each(c_lrs, (c_lr) => {
         list_add(d_item_nears, c_lr);
       });
+    });
+    log({
+      lookup,
     });
   });
   return lookup;
