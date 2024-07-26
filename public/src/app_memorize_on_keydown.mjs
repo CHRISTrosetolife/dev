@@ -1,3 +1,4 @@
+import { keyboard_near } from "./keyboard_near.mjs";
 import { app_memorize_group_next } from "./app_memorize_group_next.mjs";
 import { error } from "./error.mjs";
 import { app_memorize_refresh_memorize } from "./app_memorize_refresh_memorize.mjs";
@@ -24,7 +25,7 @@ export function app_memorize_on_keydown(context, key) {
   let { tokens } = current_verse;
   let current_token = list_get(tokens, context.token_index);
   let letter_first = string_case_lower(string_letter_first(current_token));
-  if (equal(key, letter_first)) {
+  if (keyboard_near(key, letter_first)) {
     if (context.short) {
       if (context.group_next) {
         context.group_next({
