@@ -3,7 +3,8 @@ import { list_size } from "./list_size.mjs";
 import { equal } from "./equal.mjs";
 export function app_memorize_group_current_set(context, g) {
   context.group_current = g;
-  each_range(count, (item) => {});
+  let repeats = [];
+  each_range(5, (item) => {});
   if (equal(list_size(context.group_current), 1)) {
     context.patterns = [
       "1",
