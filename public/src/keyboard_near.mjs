@@ -12,7 +12,7 @@ export function keyboard_near(a, b) {
     let difference = c_size - d_size;
     each_index(d, (d_item, d_index) => {
       let c_left = list_get(c, d_index);
-      list_get(c, d_index + 1);
+      let c_right = list_get(c, d_index + 1);
     });
   });
   return equal(a, b);
