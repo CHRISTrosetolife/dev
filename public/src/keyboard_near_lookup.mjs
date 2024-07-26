@@ -1,5 +1,4 @@
 import { list_to } from "./list_to.mjs";
-import { log } from "./log.mjs";
 import { each } from "./each.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { list_add } from "./list_add.mjs";
@@ -35,25 +34,12 @@ export function keyboard_near_lookup() {
       each(c_lr_nears, (c_nears) => {
         list_add(c_nears, d_item);
       });
-      log({
-        c_right,
-        c_left,
-        d_item,
-      });
       let d_item_nears = object_property_initialize(lookup, d_item, []);
       each(c_lrs, (c_lr) => {
         list_add(d_item_nears, c_lr);
-        log({
-          d_item,
-          c_lr,
-        });
-      });
-      log({
-        c_left,
-        c_right,
-        lookup,
       });
     });
   });
+  each(list, (item) => {});
   return lookup;
 }
