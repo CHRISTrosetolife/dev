@@ -25,8 +25,9 @@ export function keyboard_near_lookup() {
       let difference_1 = difference === 1;
       let c_right = list_get(c, d_index + 1);
       let c_lrs = [c_right];
+      let c_left;
       if (difference_1) {
-        let c_left = list_get(c, d_index);
+        c_left = list_get(c, d_index);
         list_add(c_lrs, c_left);
       }
       let c_right_nears = object_property_initialize(lookup, c_right, []);
