@@ -39,9 +39,9 @@ export function keyboard_near_lookup() {
       each(c_lrs, (c_lr) => {
         list_add(d_item_nears, c_lr);
       });
-    });
-    log({
-      lookup,
+      log({
+        lookup,
+      });
     });
   });
   return lookup;
