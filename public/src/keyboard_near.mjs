@@ -11,7 +11,7 @@ export function keyboard_near(a, b) {
     let d_size = list_size(d);
     let difference = c_size - d_size;
     each_index(d, (d_item, d_index) => {
-      list_get(c, d_index);
+      let c_left = list_get(c, d_index);
       list_get(c, d_index + 1);
     });
   });
