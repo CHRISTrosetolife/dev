@@ -40,6 +40,8 @@ export function keyboard_near_lookup() {
         list_add(d_item_nears, c_lr);
       });
       log({
+        c_left,
+        c_right,
         lookup,
       });
     });
