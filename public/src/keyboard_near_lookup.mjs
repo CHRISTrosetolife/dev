@@ -44,6 +44,7 @@ export function keyboard_near_lookup() {
   each(rows, (row) => {
     each_pairs(row, (r1, r2) => {
       object_property_initialize_list_add(lookup, r1, r2);
+      object_property_initialize_list_add(lookup, r2, r1);
     });
   });
   return lookup;
