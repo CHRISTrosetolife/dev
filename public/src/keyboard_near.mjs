@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { each_index } from "./each_index.mjs";
 import { each_pairs } from "./each_pairs.mjs";
 import { keyboard_keys_rows } from "./keyboard_keys_rows.mjs";
@@ -19,6 +20,7 @@ export function keyboard_near(a, b) {
       let c_left_nears = object_property_initialize(lookup, c_left, []);
       list_add(c_left_nears, d_item);
       let c_right_nears = object_property_initialize(lookup, c_right, []);
+      each(list, (item) => {});
     });
   });
   return equal(a, b);
