@@ -1,3 +1,4 @@
+import { object_property_initialize_ist } from "./object_property_initialize_ist.mjs";
 import { object_property_initialize_list_add } from "./object_property_initialize_list_add.mjs";
 import { list_to } from "./list_to.mjs";
 import { each } from "./each.mjs";
@@ -26,7 +27,7 @@ export function keyboard_near_lookup() {
         c_left = list_get(c, d_index);
         list_add(c_lrs, c_left);
       }
-      let c_right_nears = object_property_initialize(lookup, c_right, []);
+      let c_right_nears = object_property_initialize_ist(lookup, c_right);
       let c_lr_nears = [c_right_nears];
       if (difference_1) {
         let c_left_nears = object_property_initialize(lookup, c_left, []);
