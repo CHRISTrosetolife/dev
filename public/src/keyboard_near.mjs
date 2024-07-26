@@ -24,8 +24,10 @@ export function keyboard_near(a, b) {
       }
       let c_right_nears = object_property_initialize(lookup, c_right, []);
       let c_lr_nears = [c_right_nears];
-      let c_left_nears = object_property_initialize(lookup, c_left, []);
-      list_add(c_lr_nears, c_left_nears);
+      if (difference_1) {
+        let c_left_nears = object_property_initialize(lookup, c_left, []);
+        list_add(c_lr_nears, c_left_nears);
+      }
       each(c_lr_nears, (c_nears) => {
         list_add(c_nears, d_item);
       });
