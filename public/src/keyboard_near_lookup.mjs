@@ -48,5 +48,12 @@ export function keyboard_near_lookup() {
       object_property_initialize_list_add(lookup, r2, r1);
     });
   });
+  each(rows, (row) => {
+    row = list_to(row);
+    each(row, (r1, r2) => {
+      object_property_initialize_list_add(lookup, r1, r2);
+      object_property_initialize_list_add(lookup, r2, r1);
+    });
+  });
   return lookup;
 }
