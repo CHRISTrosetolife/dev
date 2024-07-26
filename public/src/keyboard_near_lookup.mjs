@@ -40,6 +40,8 @@ export function keyboard_near_lookup() {
       });
     });
   });
-  each(rows, (row) => {});
+  each(rows, (row) => {
+    $ep;
+  });
   return lookup;
 }
