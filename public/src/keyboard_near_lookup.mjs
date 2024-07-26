@@ -1,3 +1,4 @@
+import { object_property_initialize_list_add } from "./object_property_initialize_list_add.mjs";
 import { list_to } from "./list_to.mjs";
 import { each } from "./each.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
@@ -42,7 +43,7 @@ export function keyboard_near_lookup() {
   });
   each(rows, (row) => {
     each_pairs(row, (r1, r2) => {
-      list_add(object_property_initialize(lookup, r1, []), r2);
+      object_property_initialize_list_add(lookup, r1, r2);
     });
   });
   return lookup;
