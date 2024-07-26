@@ -1,6 +1,5 @@
-import { keyboard_near_lookup } from "./keyboard_near_lookup.mjs";
-import { equal } from "./equal.mjs";
+import { object_property_get } from "./object_property_get.mjs";
+import { list_includes } from "./list_includes.mjs";
 export function keyboard_near(a, b) {
-  return keyboard_near_lookup();
-  return equal(a, b);
+  list_includes(object_property_get(object, property_name));
 }
