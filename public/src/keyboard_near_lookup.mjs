@@ -42,6 +42,10 @@ export function keyboard_near_lookup() {
       let d_item_nears = object_property_initialize(lookup, c_right, []);
       each(c_lrs, (c_lr) => {
         list_add(d_item_nears, c_lr);
+        log({
+          d_item,
+          c_lr,
+        });
       });
       log({
         c_left,
