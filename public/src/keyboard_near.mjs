@@ -5,6 +5,7 @@ import { equal } from "./equal.mjs";
 import { list_size } from "./list_size.mjs";
 import { list_get } from "./list_get.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
+import { list_add } from "./list_add.mjs";
 export function keyboard_near(a, b) {
   let lookup = {};
   let r = keyboard_keys_rows();
@@ -16,6 +17,7 @@ export function keyboard_near(a, b) {
       let c_left = list_get(c, d_index);
       let c_right = list_get(c, d_index + 1);
       let c_left_nears = object_property_initialize(lookup, c_left, []);
+      list_add(c_left_nears, d_item);
       let c_right_nears = object_property_initialize(lookup, c_right, []);
     });
   });
