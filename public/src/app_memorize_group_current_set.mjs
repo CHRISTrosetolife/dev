@@ -1,10 +1,13 @@
 import { each_range } from "./each_range.mjs";
 import { list_size } from "./list_size.mjs";
 import { equal } from "./equal.mjs";
+import { list_add } from "./list_add.mjs";
 export function app_memorize_group_current_set(context, g) {
   context.group_current = g;
   let repeats = [];
-  each_range(5, (item) => {});
+  each_range(5, (item) => {
+    list_add(repeats, "0");
+  });
   if (equal(list_size(context.group_current), 1)) {
     context.patterns = [
       "1",
