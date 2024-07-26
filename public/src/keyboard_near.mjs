@@ -15,7 +15,7 @@ export function keyboard_near(a, b) {
     each_index(d, (d_item, d_index) => {
       let c_left = list_get(c, d_index);
       let c_right = list_get(c, d_index + 1);
-      object_property_initialize(lookup, c_left, []);
+      let c_left_nears = object_property_initialize(lookup, c_left, []);
     });
   });
   return equal(a, b);
