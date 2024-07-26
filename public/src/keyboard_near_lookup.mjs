@@ -1,3 +1,4 @@
+import { list_to } from "./list_to.mjs";
 import { log } from "./log.mjs";
 import { each } from "./each.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
@@ -11,6 +12,7 @@ export function keyboard_near_lookup() {
   let lookup = {};
   let r = keyboard_keys_rows();
   each_pairs(r, (c, d) => {
+    c = list_to(c);
     log({
       c,
       d,
