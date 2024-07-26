@@ -37,5 +37,6 @@ export function keyboard_near(a, b) {
       });
     });
   });
+  return lookup;
   return equal(a, b);
 }
