@@ -41,7 +41,7 @@ export function keyboard_near_lookup() {
     });
   });
   each(rows, (row) => {
-    $ep;
+    each_pairs(row, (r1, r2) => {});
   });
   return lookup;
 }
