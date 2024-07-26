@@ -4,6 +4,7 @@ import { keyboard_keys_rows } from "./keyboard_keys_rows.mjs";
 import { equal } from "./equal.mjs";
 import { list_size } from "./list_size.mjs";
 import { list_get } from "./list_get.mjs";
+import { object_property_initialize } from "./object_property_initialize.mjs";
 export function keyboard_near(a, b) {
   let lookup = {};
   let r = keyboard_keys_rows();
@@ -14,6 +15,7 @@ export function keyboard_near(a, b) {
     each_index(d, (d_item, d_index) => {
       let c_left = list_get(c, d_index);
       let c_right = list_get(c, d_index + 1);
+      object_property_initialize(lookup, c_left, []);
     });
   });
   return equal(a, b);
