@@ -23,8 +23,8 @@ export function keyboard_near(a, b) {
         list_add(c_lrs, c_left);
       }
       let c_right_nears = object_property_initialize(lookup, c_right, []);
-      let c_left_nears = object_property_initialize(lookup, c_left, []);
       let c_lr_nears = [c_right_nears];
+      let c_left_nears = object_property_initialize(lookup, c_left, []);
       list_add(c_lr_nears, c_left_nears);
       each(c_lr_nears, (c_nears) => {
         list_add(c_nears, d_item);
