@@ -5,6 +5,7 @@ import { equal } from "./equal.mjs";
 import { list_size } from "./list_size.mjs";
 import { list_get } from "./list_get.mjs";
 export function keyboard_near(a, b) {
+  let lookup = {};
   let r = keyboard_keys_rows();
   each_pairs(r, (c, d) => {
     let c_size = list_size(c);
