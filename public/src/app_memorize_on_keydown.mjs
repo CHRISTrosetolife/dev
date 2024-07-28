@@ -41,10 +41,11 @@ export function app_memorize_on_keydown(context, key) {
       if (context.token_index <= list_index_last(tokens)) {
         let current_token = list_get(tokens, context.token_index);
         let letter_first = string_letter_first(current_token);
-        if (letter_first !== null) {
-          break;
+        if (letter_first === null) {
+          continue;
         }
       }
+      break;
     }
     let tokens_length = list_size(tokens);
     if (greater_than_equal(context.token_index, tokens_length)) {
