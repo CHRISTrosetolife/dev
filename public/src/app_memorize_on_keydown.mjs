@@ -40,15 +40,19 @@ export function app_memorize_on_keydown(context, key) {
     while (true) {
       context.token_index++;
       if (context.token_index > list_index_last(tokens)) {
-        log({});
+        log("too big");
         break;
       }
       let token_next = list_get(tokens, context.token_index);
       let letter_next = string_letter_first(token_next);
       if (letter_next !== null) {
+        log("letter");
         break;
       }
     }
+    log({
+      n: list_get(tokens, context.token_index),
+    });
     let tokens_length = list_size(tokens);
     if (greater_than_equal(context.token_index, tokens_length)) {
       context.verse_index++;
