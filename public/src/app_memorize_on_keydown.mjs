@@ -38,12 +38,13 @@ export function app_memorize_on_keydown(context, key) {
     }
     while (true) {
       context.token_index++;
-      if (context.token_index <= list_index_last(tokens)) {
-        let current_token = list_get(tokens, context.token_index);
-        let letter_first = string_letter_first(current_token);
-        if (letter_first === null) {
-          continue;
-        }
+      if (context.token_index > list_index_last(tokens)) {
+        break;
+      }
+      let current_token = list_get(tokens, context.token_index);
+      let letter_first = string_letter_first(current_token);
+      if (letter_first === null) {
+        continue;
       }
       break;
     }
