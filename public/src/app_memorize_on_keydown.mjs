@@ -50,9 +50,6 @@ export function app_memorize_on_keydown(context, key) {
         break;
       }
     }
-    log({
-      n: list_get(tokens, context.token_index),
-    });
     let tokens_length = list_size(tokens);
     if (greater_than_equal(context.token_index, tokens_length)) {
       context.verse_index++;
