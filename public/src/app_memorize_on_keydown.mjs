@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_index_last } from "./list_index_last.mjs";
 import { keyboard_near } from "./keyboard_near.mjs";
 import { app_memorize_group_next } from "./app_memorize_group_next.mjs";
@@ -39,6 +40,7 @@ export function app_memorize_on_keydown(context, key) {
     while (true) {
       context.token_index++;
       if (context.token_index > list_index_last(tokens)) {
+        log({});
         break;
       }
       let token_next = list_get(tokens, context.token_index);
