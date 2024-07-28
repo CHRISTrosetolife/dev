@@ -37,7 +37,7 @@ export function app_memorize_on_keydown(context, key) {
       }
     }
     context.token_index++;
-    if (list_index_last()) {
+    if (context.token_index <= list_index_last()) {
       let current_token = list_get(tokens, context.token_index);
       let letter_first = string_letter_first(current_token);
     }
