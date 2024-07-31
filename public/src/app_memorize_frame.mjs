@@ -1,3 +1,4 @@
+import { app_memorize_save } from "./app_memorize_save.mjs";
 import { bible_engbsb_storage_http_get } from "./bible_engbsb_storage_http_get.mjs";
 import { html_on_remove } from "./html_on_remove.mjs";
 import { object_property_get_or } from "./object_property_get_or.mjs";
@@ -37,6 +38,7 @@ export async function app_memorize_frame(context) {
     },
     pattern: (value) => {
       context.save.pattern_index = list_index(context.patterns, value);
+      app_memorize_save(context);
     },
   });
   app_memorize_group_current_set(context, group);
