@@ -3,7 +3,9 @@ import { list_size } from "./list_size.mjs";
 import { equal } from "./equal.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_concat } from "./list_concat.mjs";
+import { object_property_initialize } from "./object_property_initialize.mjs";
 export function app_memorize_group_current_set(context, g) {
+  let save = object_property_initialize(context, "save", {});
   context.save.group_current = g;
   let repeats = [];
   each_range(5, (item) => {
