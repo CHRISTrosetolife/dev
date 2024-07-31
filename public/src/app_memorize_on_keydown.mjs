@@ -1,5 +1,4 @@
 import { each } from "./each.mjs";
-import { html_style_button_default } from "./html_style_button_default.mjs";
 import { html_style_success } from "./html_style_success.mjs";
 import { app_memorize_save } from "./app_memorize_save.mjs";
 import { list_index_last } from "./list_index_last.mjs";
@@ -88,7 +87,6 @@ export function app_memorize_on_keydown(context, key) {
       html_style_success(keyboard_button);
     }
     each(context.errored_keys, (errored_key) => {
-      html_style_button_default(errored_key);
       app_memorize_button_keyboard_stylize(context, errored_key);
     });
   } else {
