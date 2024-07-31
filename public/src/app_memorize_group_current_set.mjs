@@ -27,6 +27,6 @@ export function app_memorize_group_current_set(context, g) {
   context.token_index = 0;
   context.pattern_index = 0;
   context.mistakes = false;
-  log({});
+  log(save);
   storage_local_set(app_memorize, "save", save);
 }
