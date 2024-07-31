@@ -1,3 +1,4 @@
+import { html_style_centered } from "./html_style_centered.mjs";
 import { html_div } from "./html_div.mjs";
 import { app_memorize_keyboard } from "./app_memorize_keyboard.mjs";
 import { app_memorize_keyboard_height } from "./app_memorize_keyboard_height.mjs";
@@ -107,6 +108,7 @@ export function app_memorize_refresh_memorize(context) {
   });
   app_memorize_update_colors(context);
   let recent_element = html_div(root);
+  html_style_centered(recent_element);
   context.recent = {
     element: recent_element,
   };
