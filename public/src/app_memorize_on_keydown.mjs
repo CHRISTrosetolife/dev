@@ -6,7 +6,6 @@ import { keyboard_near } from "./keyboard_near.mjs";
 import { app_memorize_group_next } from "./app_memorize_group_next.mjs";
 import { error } from "./error.mjs";
 import { app_memorize_refresh_memorize } from "./app_memorize_refresh_memorize.mjs";
-import { list_add } from "./list_add.mjs";
 import { html_style_wrong } from "./html_style_wrong.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_style_font_color } from "./html_style_font_color.mjs";
@@ -97,6 +96,5 @@ export function app_memorize_on_keydown(context, key) {
       html_style(context.previous_token_element, context.style.error);
     }
     html_style_wrong(keyboard_button);
-    list_add(context.errored_keys, keyboard_button);
   }
 }
