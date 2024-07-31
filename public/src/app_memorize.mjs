@@ -8,6 +8,7 @@ export async function app_memorize() {
   let save = storage_local_initialize(app_memorize, "save", {});
   let context = {
     style: {},
+    save,
   };
   context.settings = true;
   let root = html_style_default_initialize();
