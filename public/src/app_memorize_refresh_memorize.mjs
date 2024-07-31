@@ -1,3 +1,4 @@
+import { html_style_bold } from "./html_style_bold.mjs";
 import { html_style_height } from "./html_style_height.mjs";
 import { html_style_centered } from "./html_style_centered.mjs";
 import { html_div } from "./html_div.mjs";
@@ -113,6 +114,7 @@ export function app_memorize_refresh_memorize(context) {
   let recent_element = html_div(root);
   html_style_height(recent_element, number_to_dvh(recent_element_offset));
   html_style_centered(recent_element);
+  html_style_bold(recent_element);
   context.recent = {
     element: recent_element,
   };
