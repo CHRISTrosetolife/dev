@@ -1,3 +1,4 @@
+import { app_memorize_save_get } from "./app_memorize_save_get.mjs";
 import { app_memorize_save } from "./app_memorize_save.mjs";
 import { bible_engbsb_storage_http_get } from "./bible_engbsb_storage_http_get.mjs";
 import { html_on_remove } from "./html_on_remove.mjs";
@@ -37,7 +38,8 @@ export async function app_memorize_frame(context) {
       group = app_memorize_groups_get(context, value);
     },
     pattern: (value) => {
-      context.save.pattern_index = list_index(context.patterns, value);
+      let save = app_memorize_save_get(context);
+      save.pattern_index = list_index(context.patterns, value);
       app_memorize_save(context);
     },
   });
