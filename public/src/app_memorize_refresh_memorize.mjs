@@ -1,3 +1,4 @@
+import { html_div } from "./html_div.mjs";
 import { app_memorize_keyboard } from "./app_memorize_keyboard.mjs";
 import { app_memorize_keyboard_height } from "./app_memorize_keyboard_height.mjs";
 import { app_memorize_refresh_settings } from "./app_memorize_refresh_settings.mjs";
@@ -37,7 +38,7 @@ export function app_memorize_refresh_memorize(context) {
   let p = list_get(context.patterns, context.save.pattern_index);
   let pattern = string_split(p, "");
   if (context.settings) {
-    let settings_element = html_element(root, "div");
+    let settings_element = html_div(root);
     let settings_button = html_button_width_full_text_click(
       settings_element,
       "⚙️ settings",
@@ -45,7 +46,7 @@ export function app_memorize_refresh_memorize(context) {
     );
     html_style_margin_x(settings_button, 0);
   }
-  let verses_element = html_element(root, "div");
+  let verses_element = html_div(root);
   let keyboard_height = app_memorize_keyboard_height(context);
   let offset = add(keyboard_height, context.settings ? 7 : 0);
   let height_max = subtract(100, offset);
