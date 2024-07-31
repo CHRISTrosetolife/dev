@@ -20,7 +20,7 @@ export function app_memorize_refresh_settings(context) {
     root,
     string_combine_multiple([
       "verses ",
-      app_memorize_group_to_range_string(context, context.group_current),
+      app_memorize_group_to_range_string(context, context.save.group_current),
     ]),
     () => {
       html_clear(root);
