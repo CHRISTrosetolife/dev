@@ -27,7 +27,7 @@ export async function app_memorize_frame(context) {
   });
   context.button_height = 7;
   let group = object_property_get_or(
-    context,
+    context.save,
     "group_current",
     list_first(context.groups),
   );
