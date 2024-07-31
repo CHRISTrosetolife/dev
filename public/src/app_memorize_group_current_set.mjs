@@ -9,7 +9,9 @@ import { list_concat } from "./list_concat.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 export function app_memorize_group_current_set(context, g) {
   let save = object_property_initialize(context, "save", {});
-  save.group_current = g;
+  if (json_equal()) {
+    save.group_current = g;
+  }
   let repeats = [];
   each_range(5, (item) => {
     list_add(repeats, "0");
