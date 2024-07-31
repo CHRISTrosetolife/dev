@@ -99,7 +99,7 @@ export async function app_gs_menu_study_bible(menu_overlay, context) {
   let { game } = context;
   if (game.memorize.save.group_current) {
     object_merge(memorize_context, {
-      group_current: game.memorize.group_current,
+      group_current: game.memorize.save.group_current,
     });
   }
   await app_memorize_frame(memorize_context);
