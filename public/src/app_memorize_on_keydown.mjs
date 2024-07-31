@@ -1,3 +1,4 @@
+import { object_values } from "./object_values.mjs";
 import { each } from "./each.mjs";
 import { html_style_success } from "./html_style_success.mjs";
 import { app_memorize_save } from "./app_memorize_save.mjs";
@@ -84,7 +85,7 @@ export function app_memorize_on_keydown(context, key) {
       app_memorize_refresh_memorize(context);
     } else {
       app_memorize_update_colors(context);
-      each(context.errored_keys, (errored_key) => {
+      each(object_values(context.keyboard_buttons), (errored_key) => {
         app_memorize_button_keyboard_stylize(context, errored_key);
       });
       html_style_success(keyboard_button);
