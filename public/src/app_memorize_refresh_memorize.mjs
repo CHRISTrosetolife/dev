@@ -106,5 +106,6 @@ export function app_memorize_refresh_memorize(context) {
     });
   });
   app_memorize_update_colors(context);
+  let recent_element = html_div(root);
   app_memorize_keyboard(context);
 }
