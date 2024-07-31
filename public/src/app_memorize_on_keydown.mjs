@@ -1,3 +1,4 @@
+import { app_memorize_save } from "./app_memorize_save.mjs";
 import { log } from "./log.mjs";
 import { list_index_last } from "./list_index_last.mjs";
 import { keyboard_near } from "./keyboard_near.mjs";
@@ -63,6 +64,7 @@ export function app_memorize_on_keydown(context, key) {
         context.mistakes = false;
       } else {
         context.save.pattern_index++;
+        app_memorize_save(context);
         if (
           greater_than_equal(
             context.save.pattern_index,
