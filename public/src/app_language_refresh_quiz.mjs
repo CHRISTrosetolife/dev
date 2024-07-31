@@ -1,3 +1,4 @@
+import { html_style_success } from "./html_style_success.mjs";
 import { app_language_refresh_node } from "./app_language_refresh_node.mjs";
 import { app_language_atoms_slice_concat } from "./app_language_atoms_slice_concat.mjs";
 import { html_button_disable } from "./html_button_disable.mjs";
@@ -17,7 +18,6 @@ import { app_language_audio } from "./app_language_audio.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
 import { app_learn_code_correct_timeout } from "./app_learn_code_correct_timeout.mjs";
 import { html_style_hidden } from "./html_style_hidden.mjs";
-import { app_learn_code_style_success } from "./app_learn_code_style_success.mjs";
 import { string_take } from "./string_take.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
@@ -187,10 +187,10 @@ export async function app_language_refresh_quiz(context, settings) {
             string_combine(first, string_take(answer, take_count)),
           );
           if (last_is) {
-            app_learn_code_style_success(answer_element);
+            html_style_success(answer_element);
             html_style_hidden(button);
           }
-          app_learn_code_style_success(button);
+          html_style_success(button);
           update_partials();
           app_learn_code_correct_timeout(async () => {
             html_style_hidden(button);
@@ -198,7 +198,7 @@ export async function app_language_refresh_quiz(context, settings) {
               if (0) {
                 html_style_background_color(root, "#d3f8d3");
               }
-              app_learn_code_style_success(answer_element);
+              html_style_success(answer_element);
               await app_language_audio(language_learn, word_f);
               if (0) {
                 html_style_background_color(root, "white");

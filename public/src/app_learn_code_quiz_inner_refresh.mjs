@@ -1,10 +1,10 @@
+import { html_style_success } from "./html_style_success.mjs";
 import { js_code_format_indent_none } from "./js_code_format_indent_none.mjs";
 import { app_learn_code_ms_correct } from "./app_learn_code_ms_correct.mjs";
 import { timeout_set } from "./timeout_set.mjs";
 import { html_style_monospace } from "./html_style_monospace.mjs";
 import { html_style } from "./html_style.mjs";
 import { html_disable } from "./html_disable.mjs";
-import { app_learn_code_style_success } from "./app_learn_code_style_success.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { each_index } from "./each_index.mjs";
 import { app_learn_code_code_part_title_output } from "./app_learn_code_code_part_title_output.mjs";
@@ -72,7 +72,7 @@ export function app_learn_code_quiz_inner_refresh(
       answer,
       function on_click() {
         if (index === correct_index) {
-          app_learn_code_style_success(button);
+          html_style_success(button);
           timeout_set(on_answer_right, app_learn_code_ms_correct());
         } else {
           on_answer_wrong();
