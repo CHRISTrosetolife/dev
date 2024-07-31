@@ -89,6 +89,10 @@ export function app_memorize_on_keydown(context, key) {
       html_inner_set(context.recent.element, current_token);
     }
     app_memorize_keyboard_reset(context);
+    let keyboard_button_expected = object_property_get(
+      context.keyboard_buttons,
+      key,
+    );
     html_style_success(keyboard_button_actual);
   } else {
     if (!context.mistakes) {
