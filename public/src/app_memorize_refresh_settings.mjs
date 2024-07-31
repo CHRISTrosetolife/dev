@@ -57,7 +57,7 @@ export function app_memorize_refresh_settings(context) {
         let b = html_button(root);
         html_inner_set(b, p);
         html_on_click(b, () => {
-          context.pattern_index = i;
+          context.save.pattern_index = i;
           app_memorize_refresh_settings(context);
         });
       });
