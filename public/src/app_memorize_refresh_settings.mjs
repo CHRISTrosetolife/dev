@@ -1,3 +1,4 @@
+import { app_memorize_save } from "./app_memorize_save.mjs";
 import { app_memorize_refresh_memorize } from "./app_memorize_refresh_memorize.mjs";
 import { each_index } from "./each_index.mjs";
 import { list_get } from "./list_get.mjs";
@@ -58,6 +59,7 @@ export function app_memorize_refresh_settings(context) {
         html_inner_set(b, p);
         html_on_click(b, () => {
           context.save.pattern_index = i;
+          app_memorize_save(context);
           app_memorize_refresh_settings(context);
         });
       });
