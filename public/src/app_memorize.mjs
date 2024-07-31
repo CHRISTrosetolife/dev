@@ -7,7 +7,9 @@ import { html_style } from "./html_style.mjs";
 import { object_merge } from "./object_merge.mjs";
 export async function app_memorize() {
   let save = storage_local_initialize(app_memorize, "save", {});
-  log({});
+  log({
+    save,
+  });
   let context = {
     style: {},
     save,
