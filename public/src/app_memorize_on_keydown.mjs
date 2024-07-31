@@ -93,7 +93,7 @@ export function app_memorize_on_keydown(context, key) {
       context.keyboard_buttons,
       letter_first,
     );
-    html_style_success(keyboard_button_actual);
+    html_style_success(keyboard_button_expected);
   } else {
     if (!context.mistakes) {
       app_memorize_keyboard_reset(context);
