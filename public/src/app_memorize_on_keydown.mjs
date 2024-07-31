@@ -1,3 +1,4 @@
+import { html_style_success } from "./html_style_success.mjs";
 import { app_memorize_save } from "./app_memorize_save.mjs";
 import { list_index_last } from "./list_index_last.mjs";
 import { keyboard_near } from "./keyboard_near.mjs";
@@ -27,6 +28,7 @@ export function app_memorize_on_keydown(context, key) {
   let { tokens } = current_verse;
   let current_token = list_get(tokens, context.token_index);
   let letter_first = string_case_lower(string_letter_first(current_token));
+  let keyboard_button = object_property_get(context.keyboard_buttons, key);
   if (keyboard_near(key, letter_first)) {
     if (context.short) {
       if (context.group_next) {
@@ -82,6 +84,7 @@ export function app_memorize_on_keydown(context, key) {
       app_memorize_refresh_memorize(context);
     } else {
       app_memorize_update_colors(context);
+      html_style_success(keyboard_button);
     }
     for (let errored_key of context.errored_keys) {
       html_style(errored_key, html_style_button_default_value());
@@ -94,7 +97,6 @@ export function app_memorize_on_keydown(context, key) {
     if (context.style.error) {
       html_style(context.previous_token_element, context.style.error);
     }
-    let keyboard_button = object_property_get(context.keyboard_buttons, key);
     html_style_wrong(keyboard_button);
     list_add(context.errored_keys, keyboard_button);
   }
