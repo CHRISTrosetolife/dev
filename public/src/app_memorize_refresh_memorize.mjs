@@ -52,6 +52,7 @@ export function app_memorize_refresh_memorize(context) {
   let keyboard_height = app_memorize_keyboard_height(context);
   let offset = add(keyboard_height, context.settings ? 7 : 0);
   let recent_element_offset = 6;
+  offset += recent_element_offset;
   let height_max = subtract(100, offset);
   html_style(verses_element, {
     "max-height": number_to_dvh(height_max),
