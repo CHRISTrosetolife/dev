@@ -55,7 +55,7 @@ export function app_memorize_on_keydown(context, key) {
       context.verse_index++;
       context.token_index = 0;
     }
-    let group_current_length = list_size(context.group_current);
+    let group_current_length = list_size(context.save.group_current);
     if (greater_than_equal(context.verse_index, group_current_length)) {
       context.verse_index = 0;
       let pattern = list_get(context.patterns, context.pattern_index);
