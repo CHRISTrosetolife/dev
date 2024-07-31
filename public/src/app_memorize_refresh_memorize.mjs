@@ -110,7 +110,7 @@ export function app_memorize_refresh_memorize(context) {
   });
   app_memorize_update_colors(context);
   let recent_element = html_div(root);
-  html_style_height;
+  html_style_height(recent_element, number_to_dvh(recent_element_offset));
   html_style_centered(recent_element);
   context.recent = {
     element: recent_element,
