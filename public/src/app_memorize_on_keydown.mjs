@@ -1,3 +1,4 @@
+import { html_style_button_default } from "./html_style_button_default.mjs";
 import { html_style_success } from "./html_style_success.mjs";
 import { app_memorize_save } from "./app_memorize_save.mjs";
 import { list_index_last } from "./list_index_last.mjs";
@@ -11,7 +12,6 @@ import { object_property_get } from "./object_property_get.mjs";
 import { html_style_font_color } from "./html_style_font_color.mjs";
 import { html_style_visible } from "./html_style_visible.mjs";
 import { app_memorize_button_keyboard_stylize } from "./app_memorize_button_keyboard_stylize.mjs";
-import { html_style_button_default_value } from "./html_style_button_default_value.mjs";
 import { html_style } from "./html_style.mjs";
 import { app_memorize_update_colors } from "./app_memorize_update_colors.mjs";
 import { app_memorize_group_current_set } from "./app_memorize_group_current_set.mjs";
@@ -87,7 +87,7 @@ export function app_memorize_on_keydown(context, key) {
       html_style_success(keyboard_button);
     }
     for (let errored_key of context.errored_keys) {
-      html_style(errored_key, html_style_button_default_value());
+      html_style_button_default(errored_key);
       app_memorize_button_keyboard_stylize(context, errored_key);
     }
   } else {
