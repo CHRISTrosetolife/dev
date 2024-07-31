@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { html_style_button_default } from "./html_style_button_default.mjs";
 import { html_style_success } from "./html_style_success.mjs";
 import { app_memorize_save } from "./app_memorize_save.mjs";
@@ -86,6 +87,7 @@ export function app_memorize_on_keydown(context, key) {
       app_memorize_update_colors(context);
       html_style_success(keyboard_button);
     }
+    each(list, (item) => {});
     for (let errored_key of context.errored_keys) {
       html_style_button_default(errored_key);
       app_memorize_button_keyboard_stylize(context, errored_key);
