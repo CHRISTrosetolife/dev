@@ -62,7 +62,7 @@ export function app_memorize_on_keydown(context, key) {
       if (and(equal(pattern, "0"), context.mistakes)) {
         context.mistakes = false;
       } else {
-        context.pattern_index++;
+        context.save.pattern_index++;
         if (
           greater_than_equal(context.pattern_index, context.patterns_length)
         ) {
