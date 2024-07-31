@@ -36,8 +36,8 @@ export function app_memorize_refresh_memorize(context) {
   context.keyboard_buttons = {};
   let p = list_get(context.patterns, context.save.pattern_index);
   let pattern = string_split(p, "");
-  let settings_element = html_element(root, "div");
   if (context.settings) {
+    let settings_element = html_element(root, "div");
     let settings_button = html_button_width_full_text_click(
       settings_element,
       "⚙️ settings",
