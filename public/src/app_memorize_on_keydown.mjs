@@ -64,7 +64,10 @@ export function app_memorize_on_keydown(context, key) {
       } else {
         context.save.pattern_index++;
         if (
-          greater_than_equal(context.pattern_index, context.patterns_length)
+          greater_than_equal(
+            context.save.pattern_index,
+            context.patterns_length,
+          )
         ) {
           if (context.group_next) {
             context.group_next({
