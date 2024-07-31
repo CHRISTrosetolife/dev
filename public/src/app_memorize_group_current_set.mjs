@@ -4,12 +4,12 @@ import { equal } from "./equal.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_concat } from "./list_concat.mjs";
 export function app_memorize_group_current_set(context, g) {
-  context.group_current = g;
+  context.save.group_current = g;
   let repeats = [];
   each_range(5, (item) => {
     list_add(repeats, "0");
   });
-  if (equal(list_size(context.group_current), 1)) {
+  if (equal(list_size(context.save.group_current), 1)) {
     context.patterns = list_concat(
       ["1", "110", "10", "01", "01001", "001"],
       repeats,
