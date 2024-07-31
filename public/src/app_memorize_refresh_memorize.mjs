@@ -57,7 +57,7 @@ export function app_memorize_refresh_memorize(context) {
   let pattern_length = list_size(pattern);
   let token_count = 0;
   context.verse_elements = list_adder((la) => {
-    each_index(context.group_current, (i, j) => {
+    each_index(context.save.group_current, (i, j) => {
       let verse = list_get(context.verses, i);
       let verse_element = html_element(verses_element, "div");
       let { tokens, verse_number } = verse;
