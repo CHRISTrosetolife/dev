@@ -43,7 +43,9 @@ export async function app_gs_menu_study_bible(menu_overlay, context) {
       let { game } = context;
       let { player } = game;
       let { energy } = player;
-      let { group_current } = memorize_context;
+      let {
+        save: { group_current },
+      } = memorize_context;
       let gc_first = list_first(group_current);
       let gc_last = list_last(group_current);
       let sliced = list_slice(memorize_context.verses, gc_first, gc_last + 1);
