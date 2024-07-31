@@ -14,7 +14,7 @@ export function app_memorize_group_current_set(context, g) {
     json_equal(save.group_current, g) &&
     object_property_exists(save, "pattern_index")
   ) {
-    context.pattern_index = 0;
+    context.pattern_index = save.pattern_index;
   } else {
     context.pattern_index = 0;
   }
