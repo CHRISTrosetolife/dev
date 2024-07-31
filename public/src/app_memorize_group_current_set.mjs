@@ -1,5 +1,4 @@
 import { app_memorize_save } from "./app_memorize_save.mjs";
-import { log } from "./log.mjs";
 import { each_range } from "./each_range.mjs";
 import { list_size } from "./list_size.mjs";
 import { equal } from "./equal.mjs";
@@ -34,6 +33,5 @@ export function app_memorize_group_current_set(context, g) {
   context.verse_index = 0;
   context.token_index = 0;
   context.mistakes = false;
-  log(save);
   app_memorize_save(context);
 }
