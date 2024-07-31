@@ -11,6 +11,7 @@ export function app_memorize_group_current_set(context, g) {
   let save = object_property_initialize(context, "save", {});
   if (json_equal(save.group_current, g)) {
   } else {
+    context.pattern_index = 0;
   }
   save.group_current = g;
   let repeats = [];
@@ -28,7 +29,6 @@ export function app_memorize_group_current_set(context, g) {
   context.patterns_length = list_size(context.patterns);
   context.verse_index = 0;
   context.token_index = 0;
-  context.pattern_index = 0;
   context.mistakes = false;
   log(save);
   storage_local_set(app_memorize, "save", save);
