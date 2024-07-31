@@ -87,6 +87,8 @@ export function app_memorize_on_keydown(context, key) {
     app_memorize_keyboard_reset(context);
     html_style_success(keyboard_button);
   } else {
+    if (!context.mistakes) {
+    }
     context.mistakes = true;
     html_style_visible(context.previous_token_element);
     html_style_font_color(context.previous_token_element, "red");
