@@ -56,5 +56,4 @@ export async function app_memorize_frame(context) {
   context.cleanup = () => {
     html_on_remove(html_document_body(), type, on_keydown);
   };
-  context.errored_keys = [];
 }
