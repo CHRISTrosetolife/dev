@@ -42,7 +42,7 @@ export function app_memorize_refresh_settings(context) {
     root,
     string_combine_multiple([
       "pattern ",
-      list_get(context.patterns, context.pattern_index),
+      list_get(context.patterns, context.save.pattern_index),
     ]),
     () => {
       html_clear(root);
