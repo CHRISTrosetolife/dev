@@ -20,6 +20,7 @@ import { equal } from "./equal.mjs";
 import { string_letter_first } from "./string_letter_first.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { list_get } from "./list_get.mjs";
+import { html_inner_set } from "./html_inner_set.mjs";
 export function app_memorize_on_keydown(context, key) {
   let j = list_get(context.save.group_current, context.verse_index);
   let current_verse = list_get(context.verses, j);
@@ -82,6 +83,7 @@ export function app_memorize_on_keydown(context, key) {
       app_memorize_refresh_memorize(context);
     } else {
       app_memorize_update_colors(context);
+      html_inner_set(context.recent.element, current_token);
     }
     app_memorize_keyboard_reset(context);
     html_style_success(keyboard_button);
