@@ -85,8 +85,8 @@ export function app_memorize_on_keydown(context, key) {
       app_memorize_refresh_memorize(context);
     } else {
       app_memorize_update_colors(context);
-      each(object_values(context.keyboard_buttons), (errored_key) => {
-        app_memorize_button_keyboard_stylize(context, errored_key);
+      each(object_values(context.keyboard_buttons), (keyboard_button) => {
+        app_memorize_button_keyboard_stylize(context, keyboard_button);
       });
       html_style_success(keyboard_button);
     }
