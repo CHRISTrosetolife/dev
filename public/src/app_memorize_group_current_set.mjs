@@ -1,6 +1,5 @@
+import { app_memorize_save } from "./app_memorize_save.mjs";
 import { log } from "./log.mjs";
-import { app_memorize } from "./app_memorize.mjs";
-import { storage_local_set } from "./storage_local_set.mjs";
 import { each_range } from "./each_range.mjs";
 import { list_size } from "./list_size.mjs";
 import { equal } from "./equal.mjs";
@@ -14,9 +13,9 @@ export function app_memorize_group_current_set(context, g) {
     json_equal(save.group_current, g) &&
     object_property_exists(save, "pattern_index")
   ) {
-    context.pattern_index = save.pattern_index;
+    save.pattern_index = save.pattern_index;
   } else {
-    context.pattern_index = 0;
+    save.pattern_index = 0;
   }
   save.group_current = g;
   let repeats = [];
@@ -36,5 +35,5 @@ export function app_memorize_group_current_set(context, g) {
   context.token_index = 0;
   context.mistakes = false;
   log(save);
-  storage_local_set(app_memorize, "save", save);
+  app_memorize_save(context);
 }
