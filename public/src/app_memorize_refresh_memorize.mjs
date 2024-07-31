@@ -34,7 +34,7 @@ export function app_memorize_refresh_memorize(context) {
   context.verse_elements = undefined;
   context.mistakes = false;
   context.keyboard_buttons = {};
-  let p = list_get(context.patterns, context.pattern_index);
+  let p = list_get(context.patterns, context.save.pattern_index);
   let pattern = string_split(p, "");
   let settings_element = html_element(root, "div");
   if (context.settings) {
