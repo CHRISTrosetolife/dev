@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { app_memorize } from "./app_memorize.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { each_range } from "./each_range.mjs";
@@ -26,5 +27,6 @@ export function app_memorize_group_current_set(context, g) {
   context.token_index = 0;
   context.pattern_index = 0;
   context.mistakes = false;
+  log({});
   storage_local_set(app_memorize, "save", save);
 }
