@@ -36,7 +36,7 @@ export async function app_memorize_frame(context) {
       group = app_memorize_groups_get(context, value);
     },
     pattern: (value) => {
-      context.pattern_index = list_index(context.patterns, value);
+      context.save.pattern_index = list_index(context.patterns, value);
     },
   });
   app_memorize_group_current_set(context, group);
