@@ -86,6 +86,18 @@ export async function app_language_refresh_node(context) {
     root,
     string_combine_multiple([
       j++,
+      ". 📝 quiz ( 🔵 ",
+      await app_language_text(language_fluent, "very easy"),
+      " )",
+    ]),
+    async () => {
+      await app_language_quizzes_start(context, [100]);
+    },
+  );
+  html_button_width_full_text_click(
+    root,
+    string_combine_multiple([
+      j++,
       ". 📝 quiz ( 🟢 ",
       await app_language_text(language_fluent, "easy"),
       " )",
