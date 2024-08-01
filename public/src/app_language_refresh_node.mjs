@@ -88,6 +88,7 @@ export async function app_language_refresh_node(context) {
   list_add(quizzes_list, {
     text: "very easy",
     emoji: "🔵",
+    chunk_size: 100,
   });
   each(quizzes_list, (item) => {});
   html_button_width_full_text_click(
