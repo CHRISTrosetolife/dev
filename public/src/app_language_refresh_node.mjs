@@ -90,48 +90,26 @@ export async function app_language_refresh_node(context) {
     emoji: "🔵",
     chunk_size: 100,
   });
-  each(quizzes_list, (item) => {});
+  list_add(quizzes_list, {
+    text: "easy",
+    emoji: "🟢",
+    chunk_size: 3,
+  });
+  list_add(quizzes_list, {
+    text: "medium",
+    emoji: "🟡",
+    chunk_size: 2,
+  });
+  list_add(quizzes_list, {
+    text: "hard",
+    emoji: "🔴",
+    chunk_size: 1,
+  });
   html_button_width_full_text_click(
     root,
     string_combine_multiple([
       j++,
-      ". 📝 quiz ( 🔵 ",
-      await app_language_text(language_fluent, "very easy"),
-      " )",
-    ]),
-    async () => {
-      await app_language_quizzes_start(context, [100]);
-    },
-  );
-  html_button_width_full_text_click(
-    root,
-    string_combine_multiple([
-      j++,
-      ". 📝 quiz ( 🟢 ",
-      await app_language_text(language_fluent, "easy"),
-      " )",
-    ]),
-    async () => {
-      await app_language_quizzes_start(context, [3]);
-    },
-  );
-  html_button_width_full_text_click(
-    root,
-    string_combine_multiple([
-      j++,
-      ". 📝 quiz ( 🟡 ",
-      await app_language_text(language_fluent, "medium"),
-      " )",
-    ]),
-    async () => {
-      await app_language_quizzes_start(context, [2]);
-    },
-  );
-  html_button_width_full_text_click(
-    root,
-    string_combine_multiple([
-      j++,
-      ". 📝 quiz ( 🔴 ",
+      string_combine_multiple([". 📝 quiz ( 🔴 "]),
       await app_language_text(language_fluent, "hard"),
       " )",
     ]),
@@ -139,6 +117,7 @@ export async function app_language_refresh_node(context) {
       await app_language_quizzes_start(context, [1]);
     },
   );
+  each(quizzes_list, (item) => {});
   html_button_width_full_text_click(
     root,
     string_combine_multiple([
