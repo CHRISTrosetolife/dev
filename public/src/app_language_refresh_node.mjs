@@ -111,11 +111,11 @@ export async function app_language_refresh_node(context) {
       string_combine_multiple([
         j++,
         string_combine_multiple([". 📝 quiz ( ", item.emoji, " "]),
-        await app_language_text(language_fluent, "hard"),
+        await app_language_text(language_fluent, item.text),
         " )",
       ]),
       async () => {
-        await app_language_quizzes_start(context, [1]);
+        await app_language_quizzes_start(context, [item.chunk_size]);
       },
     );
   });
