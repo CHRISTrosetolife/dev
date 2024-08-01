@@ -1,4 +1,4 @@
-import { each } from "./each.mjs";
+import { each_async } from "./each_async.mjs";
 import { app_language_quizzes_start } from "./app_language_quizzes_start.mjs";
 import { app_language_refresh_learn } from "./app_language_refresh_learn.mjs";
 import { app_language_refresh_review } from "./app_language_refresh_review.mjs";
@@ -105,19 +105,20 @@ export async function app_language_refresh_node(context) {
     emoji: "🔴",
     chunk_size: 1,
   });
-  html_button_width_full_text_click(
-    root,
-    string_combine_multiple([
-      j++,
-      string_combine_multiple([". 📝 quiz ( ", "🔴", " "]),
-      await app_language_text(language_fluent, "hard"),
-      " )",
-    ]),
-    async () => {
-      await app_language_quizzes_start(context, [1]);
-    },
-  );
-  each(quizzes_list, (item) => {});
+  await each_async(quizzes_list, async (item) => {
+    html_button_width_full_text_click(
+      root,
+      string_combine_multiple([
+        j++,
+        string_combine_multiple([". 📝 quiz ( ", "🔴", " "]),
+        await app_language_text(language_fluent, "hard"),
+        " )",
+      ]),
+      async () => {
+        await app_language_quizzes_start(context, [1]);
+      },
+    );
+  });
   html_button_width_full_text_click(
     root,
     string_combine_multiple([
