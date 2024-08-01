@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { app_language_quizzes_start } from "./app_language_quizzes_start.mjs";
 import { app_language_refresh_learn } from "./app_language_refresh_learn.mjs";
 import { app_language_refresh_review } from "./app_language_refresh_review.mjs";
@@ -82,6 +83,7 @@ export async function app_language_refresh_node(context) {
     );
   }
   ("🟠");
+  each(list, (item) => {});
   html_button_width_full_text_click(
     root,
     string_combine_multiple([
