@@ -31,6 +31,7 @@ import { subtract } from "./subtract.mjs";
 import { app_ceb } from "./app_ceb.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
+import { list_add } from "./list_add.mjs";
 export async function app_language_refresh_node(context) {
   let { root, group, invert, language_fluent } = context;
   let level_size = app_language_level_size();
@@ -83,12 +84,11 @@ export async function app_language_refresh_node(context) {
     );
   }
   ("🟠");
-  let quizzes_list = [
-    {
-      text: "very easy",
-      emoji: "🔵",
-    },
-  ];
+  let quizzes_list = [];
+  list_add(quizzes_list, {
+    text: "very easy",
+    emoji: "🔵",
+  });
   each(quizzes_list, (item) => {});
   html_button_width_full_text_click(
     root,
