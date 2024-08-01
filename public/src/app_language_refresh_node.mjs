@@ -81,7 +81,7 @@ export async function app_language_refresh_node(context) {
       },
     );
   }
-  ("🟠🔵");
+  ("🟠");
   html_button_width_full_text_click(
     root,
     string_combine_multiple([
