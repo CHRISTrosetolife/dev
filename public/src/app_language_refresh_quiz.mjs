@@ -135,7 +135,7 @@ export async function app_language_refresh_quiz(context, settings) {
   );
   quiz_container = html_div(root);
   let component_display_none;
-  if (equal_1(chunk_size)) {
+  if (true || equal_1(chunk_size)) {
     component_display_none = quiz_container;
   } else {
     component_display_none = button_ready;
