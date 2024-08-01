@@ -83,7 +83,13 @@ export async function app_language_refresh_node(context) {
     );
   }
   ("🟠");
-  each(list, (item) => {});
+  let quizzes_list = [
+    {
+      text: "very easy",
+      emoji: "🔵",
+    },
+  ];
+  each(quizzes_list, (item) => {});
   html_button_width_full_text_click(
     root,
     string_combine_multiple([
