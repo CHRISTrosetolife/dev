@@ -49,7 +49,7 @@ export async function ceb_bible_words_definitions_atoms(skip, limit) {
           if (c) {
             continue;
           }
-          if (10) {
+          if (0) {
             if (list_second(p) === "lord") {
               log_json({
                 p,
