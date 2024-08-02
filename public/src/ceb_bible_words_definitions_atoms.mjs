@@ -44,13 +44,13 @@ export async function ceb_bible_words_definitions_atoms(skip, limit) {
               if (list_any(list, (a) => equal_by(a, p, eq))) {
                 c = true;
               }
-              if (list_any(list, (a) => equal_by(a, p, eq))) {
-                c = true;
-                log({
-                  list,
-                  p,
-                });
-              }
+            }
+            if (list_any(list, (a) => equal_by(a, p, list_second))) {
+              c = true;
+              log({
+                list,
+                p,
+              });
             }
           });
           if (c) {
