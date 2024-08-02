@@ -69,6 +69,9 @@ export async function sandbox() {
         }
       });
     });
+    if (audio_only) {
+      return;
+    }
     let words = list_adder_unique((la) =>
       each(group, (a) =>
         each(a, (pair) => {
