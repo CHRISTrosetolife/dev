@@ -50,13 +50,15 @@ export async function ceb_bible_words_definitions_atoms(skip, limit) {
           if (c) {
             continue;
           }
-          if (list_second(p) === "that") {
-            log(
-              json_to({
-                p,
-                lists,
-              }),
-            );
+          if (0) {
+            if (list_second(p) === "that") {
+              log(
+                json_to({
+                  p,
+                  lists,
+                }),
+              );
+            }
           }
           next = p;
           break;
