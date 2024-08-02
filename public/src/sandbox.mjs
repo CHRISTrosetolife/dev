@@ -1,3 +1,4 @@
+import { json_to } from "./json_to.mjs";
 import { log } from "./log.mjs";
 import { bible_words_greek_download } from "./bible_words_greek_download.mjs";
 import { list_to_lookup_key_value_property } from "./list_to_lookup_key_value_property.mjs";
@@ -37,7 +38,7 @@ export async function sandbox() {
   let group_count = app_language_group_size();
   let { atoms, definitions: definitions_list } =
     await ceb_bible_words_definitions_atoms(skip, limit);
-  log({});
+  log(json_to({}));
   let group = list_copy(list_take(atoms, group_count));
   let definitions_all = list_to_lookup_key_value_property(
     definitions_list,
