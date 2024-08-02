@@ -1,5 +1,4 @@
-import { json_to } from "./json_to.mjs";
-import { log } from "./log.mjs";
+import { log_json } from "./log_json.mjs";
 import { list_take_soft } from "./list_take_soft.mjs";
 import { app_language_atom_count } from "./app_language_atom_count.mjs";
 import { list_size } from "./list_size.mjs";
@@ -50,14 +49,12 @@ export async function ceb_bible_words_definitions_atoms(skip, limit) {
           if (c) {
             continue;
           }
-          if (0) {
-            if (list_second(p) === "that") {
-              log(
-                json_to({
-                  p,
-                  lists,
-                }),
-              );
+          if (10) {
+            if (list_second(p) === "lord") {
+              log_json({
+                p,
+                lists,
+              });
             }
           }
           next = p;
