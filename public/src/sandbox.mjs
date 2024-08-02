@@ -43,6 +43,7 @@ export async function sandbox() {
       atoms,
     }),
   );
+  return;
   let group = list_copy(list_take(atoms, group_count));
   let definitions_all = list_to_lookup_key_value_property(
     definitions_list,
