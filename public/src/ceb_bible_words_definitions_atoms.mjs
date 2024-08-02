@@ -44,7 +44,7 @@ export async function ceb_bible_words_definitions_atoms(skip, limit) {
               if (list_any(list, (a) => equal_by(a, p, eq))) {
                 c = true;
                 log({
-                  a,
+                  list,
                   p,
                 });
               }
