@@ -50,7 +50,9 @@ export async function ceb_bible_words_definitions_atoms(skip, limit) {
             continue;
           }
           if (list_second(p) === "that") {
-            log({});
+            log({
+              previous,
+            });
           }
           next = p;
           break;
