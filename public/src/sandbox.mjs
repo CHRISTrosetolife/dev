@@ -36,6 +36,9 @@ export async function sandbox() {
   let { atoms, definitions: definitions_list } =
     await ceb_bible_words_definitions_atoms();
   let group = list_copy(list_take(atoms, group_count));
+  if (group_all) {
+    group = atoms;
+  }
   let definitions_all = list_to_lookup_key_value_property(
     definitions_list,
     "word",
