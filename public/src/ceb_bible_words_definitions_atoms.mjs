@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_take_soft } from "./list_take_soft.mjs";
 import { app_language_atom_count } from "./app_language_atom_count.mjs";
 import { list_size } from "./list_size.mjs";
@@ -48,6 +49,7 @@ export async function ceb_bible_words_definitions_atoms(skip, limit) {
           if (c) {
             continue;
           }
+          log({});
           next = p;
           break;
         }
