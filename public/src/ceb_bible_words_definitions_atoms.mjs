@@ -40,7 +40,9 @@ export async function ceb_bible_words_definitions_atoms(skip, limit) {
           let concat = list_concat([atom_result], previous);
           let lists = list_take_soft(concat, take_count);
           each(lists, (list) => {
-            log({});
+            log({
+              list,
+            });
             for (let eq of [list_first, list_second]) {
               if (list_any(list, (a) => equal_by(a, p, eq))) {
                 c = true;
