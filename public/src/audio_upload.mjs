@@ -34,6 +34,7 @@ export async function audio_upload(language, text) {
           "' ...",
         ]),
       );
+      let output_path = folder_gitignore_path(file_path);
       await storage_upload_file(output_path, file_path);
     }
   });
