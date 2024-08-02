@@ -1,8 +1,8 @@
+import { audio_upload_file } from "./audio_upload_file.mjs";
 import { string_is } from "./string_is.mjs";
 import { assert } from "./assert.mjs";
 import { audio_path } from "./audio_path.mjs";
 import { audio_language } from "./audio_language.mjs";
-import { storage_upload_file } from "./storage_upload_file.mjs";
 import { gcloud_tts } from "./gcloud_tts.mjs";
 import { log } from "./log.mjs";
 import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
@@ -34,8 +34,7 @@ export async function audio_upload(language, text) {
           "' ...",
         ]),
       );
-      let output_path = folder_gitignore_path(file_path);
-      await storage_upload_file(output_path, file_path);
+      await audio_upload_file(file_path);
     }
   });
 }
