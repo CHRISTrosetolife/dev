@@ -33,7 +33,7 @@ export async function sandbox() {
   let group_local_save = true;
   let group_local_compare_to_new = false;
   let group_index = 0;
-  let limit = 200;
+  let limit = 500;
   let skip = 0;
   let group_count = app_language_group_size();
   let { atoms, definitions: definitions_list } =
