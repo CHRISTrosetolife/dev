@@ -49,7 +49,9 @@ export async function ceb_bible_words_definitions_atoms(skip, limit) {
           if (c) {
             continue;
           }
-          log({});
+          if (list_second(p) === "that") {
+            log({});
+          }
           next = p;
           break;
         }
