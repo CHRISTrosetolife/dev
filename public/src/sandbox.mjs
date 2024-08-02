@@ -32,11 +32,9 @@ export async function sandbox() {
   let group_local_save = true;
   let group_local_compare_to_new = false;
   let group_index = 0;
-  let limit = 500;
-  let skip = 0;
   let group_count = app_language_group_size();
   let { atoms, definitions: definitions_list } =
-    await ceb_bible_words_definitions_atoms(skip, limit);
+    await ceb_bible_words_definitions_atoms();
   let group = list_copy(list_take(atoms, group_count));
   let definitions_all = list_to_lookup_key_value_property(
     definitions_list,
