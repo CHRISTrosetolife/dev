@@ -26,6 +26,7 @@ export async function sandbox() {
   }
   let from = "ceb";
   let to = "en";
+  let group_all = true;
   let audio_only = true;
   let audio_upload_run = true;
   let group_upload = true;
