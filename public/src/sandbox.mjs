@@ -1,5 +1,4 @@
-import { json_to } from "./json_to.mjs";
-import { log } from "./log.mjs";
+import { log_json } from "./log_json.mjs";
 import { bible_words_greek_download } from "./bible_words_greek_download.mjs";
 import { list_to_lookup_key_value_property } from "./list_to_lookup_key_value_property.mjs";
 import { list_reverse } from "./list_reverse.mjs";
@@ -41,7 +40,7 @@ export async function sandbox() {
   let message = {
     atoms,
   };
-  log(json_to(message));
+  log_json(message);
   return;
   let group = list_copy(list_take(atoms, group_count));
   let definitions_all = list_to_lookup_key_value_property(
