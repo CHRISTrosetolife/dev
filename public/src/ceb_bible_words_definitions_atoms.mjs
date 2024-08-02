@@ -19,7 +19,7 @@ import { list_adder } from "./list_adder.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_second } from "./list_second.mjs";
 export async function ceb_bible_words_definitions_atoms(skip, limit) {
-  let take_count = 16;
+  let take_count = 8;
   let atom_count = app_language_atom_count();
   let { pairs, definitions } = await ceb_bible_words_definitions_pairs(
     skip,
