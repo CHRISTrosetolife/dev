@@ -23,7 +23,7 @@ import { file_read_json } from "./file_read_json.mjs";
 import { assert } from "./assert.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 export async function sandbox() {
-  return list_chunk(range(10), 3);
+  return list_chunk(range(12), 3);
   if (0) {
     await bible_words_greek_download();
   }
