@@ -70,6 +70,7 @@ export async function sandbox() {
       });
     });
     await each_async(list_chunk(group, 10), async (atom) => {
+      await each_async(list, async (item) => {});
       await each_async(atom, async (pair) => {
         let b = list_first(pair);
         if (audio_upload_run) {
