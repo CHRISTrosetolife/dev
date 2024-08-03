@@ -21,6 +21,7 @@ import { file_read_json } from "./file_read_json.mjs";
 import { assert } from "./assert.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_chunk } from "./list_chunk.mjs";
+import { list_map } from "./list_map.mjs";
 export async function sandbox() {
   if (0) {
     await bible_words_greek_download();
@@ -70,7 +71,7 @@ export async function sandbox() {
       });
     });
     await each_async(list_chunk(group, 20), async (chunk) => {
-      await each_async(chunk, async (atom) => {
+      let mapped = list_map(chunk, async (atom) => {
         await each_async(atom, async (pair) => {
           let b = list_first(pair);
           if (audio_upload_run) {
