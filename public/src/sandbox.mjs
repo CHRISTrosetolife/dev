@@ -80,7 +80,7 @@ export async function sandbox() {
           }
         });
       });
-      await promise_all();
+      await promise_all(mapped);
     });
     if (audio_only) {
       return;
