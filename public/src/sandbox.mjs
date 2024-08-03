@@ -1,3 +1,4 @@
+import { promise_all } from "./promise_all.mjs";
 import { bible_words_greek_download } from "./bible_words_greek_download.mjs";
 import { list_to_lookup_key_value_property } from "./list_to_lookup_key_value_property.mjs";
 import { list_reverse } from "./list_reverse.mjs";
@@ -79,6 +80,7 @@ export async function sandbox() {
           }
         });
       });
+      await promise_all();
     });
     if (audio_only) {
       return;
