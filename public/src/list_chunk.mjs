@@ -1,4 +1,4 @@
 import { each } from "./each.mjs";
 export function list_chunk(list, chunk_size) {
-  each(list2, (item) => {});
+  each(list, (item) => {});
 }
