@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { promise_all } from "./promise_all.mjs";
 import { bible_words_greek_download } from "./bible_words_greek_download.mjs";
 import { list_to_lookup_key_value_property } from "./list_to_lookup_key_value_property.mjs";
@@ -72,6 +73,7 @@ export async function sandbox() {
       });
     });
     await each_async(list_chunk(group, 20), async (chunk) => {
+      log({});
       let mapped = list_map(chunk, async (atom) => {
         await each_async(atom, async (pair) => {
           let b = list_first(pair);
