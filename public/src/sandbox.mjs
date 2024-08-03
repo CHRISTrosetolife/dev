@@ -66,6 +66,10 @@ export async function sandbox() {
         if (profile.invert) {
           list_reverse(pair);
         }
+      });
+    });
+    await each_async(group, async (atom) => {
+      await each_async(atom, async (pair) => {
         let b = list_first(pair);
         if (audio_upload_run) {
           await audio_upload(profile.from, b);
