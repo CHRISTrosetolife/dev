@@ -5,6 +5,7 @@ export function list_chunk(list, chunk_size) {
     let chunk;
     each_index(list, (item, index) => {
       if (index % chunk_size === 0) {
+        chunk = [];
       }
     });
   });
