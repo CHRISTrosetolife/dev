@@ -1,6 +1,6 @@
 import { each_index } from "./each_index.mjs";
 import { list_adder } from "./list_adder.mjs";
-import { list_size } from "./list_size.mjs";
+import { list_empty_not_is } from "./list_empty_not_is.mjs";
 export function list_chunk(list, chunk_size) {
   return list_adder((la) => {
     let chunk = null;
@@ -12,7 +12,7 @@ export function list_chunk(list, chunk_size) {
         chunk = [];
       }
     });
-    if (chunk !== null && list_size(chunk) >= 1) {
+    if (chunk !== null && list_empty_not_is(chunk)) {
       la(chunk);
     }
   });
