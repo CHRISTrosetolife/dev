@@ -73,7 +73,9 @@ export async function sandbox() {
       });
     });
     await each_async(list_chunk(group, 20), async (chunk) => {
-      log({});
+      log({
+        group,
+      });
       let mapped = list_map(chunk, async (atom) => {
         await each_async(atom, async (pair) => {
           let b = list_first(pair);
