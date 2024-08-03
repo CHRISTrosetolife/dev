@@ -1,5 +1,3 @@
-import { range } from "./range.mjs";
-import { list_chunk } from "./list_chunk.mjs";
 import { bible_words_greek_download } from "./bible_words_greek_download.mjs";
 import { list_to_lookup_key_value_property } from "./list_to_lookup_key_value_property.mjs";
 import { list_reverse } from "./list_reverse.mjs";
@@ -23,7 +21,6 @@ import { file_read_json } from "./file_read_json.mjs";
 import { assert } from "./assert.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 export async function sandbox() {
-  return list_chunk(range(12), 3);
   if (0) {
     await bible_words_greek_download();
   }
