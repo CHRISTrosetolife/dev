@@ -85,6 +85,7 @@ export async function sandbox() {
         });
       });
       await promise_all(mapped);
+      log("groups chunk finished");
     });
     if (audio_only) {
       return;
