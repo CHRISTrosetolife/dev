@@ -36,14 +36,12 @@ export async function ceb_bible_words_definitions_atoms() {
           let concat = list_concat([atom_result], previous);
           let lists = list_take_soft(concat, take_count);
           each(lists, (list) => {
-            for (let eq of [list_first, list_second]) {
-              if (
-                list_any(list, (a) =>
-                  list_any(a, (ai) => list_any(p, (pi) => equal(ai, pi))),
-                )
-              ) {
-                c = true;
-              }
+            if (
+              list_any(list, (a) =>
+                list_any(a, (ai) => list_any(p, (pi) => equal(ai, pi))),
+              )
+            ) {
+              c = true;
             }
           });
           if (c) {
