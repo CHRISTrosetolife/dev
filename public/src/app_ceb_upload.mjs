@@ -42,6 +42,7 @@ export async function app_ceb_upload() {
     let { atoms, definitions: definitions_list } =
       await ceb_bible_words_definitions_atoms();
     let groups = list_chunk(atoms, group_count);
+    groups = list_take(groups, 2);
     let group = list_copy(list_take(atoms, group_count));
     if (group_all) {
       group = atoms;
