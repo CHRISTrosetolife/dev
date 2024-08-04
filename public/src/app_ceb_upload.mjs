@@ -67,6 +67,7 @@ export async function app_ceb_upload() {
       },
     ];
     await each_async(profiles, async (profile) => {
+      await each_async(list, async (item) => {});
       await each_async(group, async (atom) => {
         await each_async(atom, async (pair) => {
           if (profile.invert) {
