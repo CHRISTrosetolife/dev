@@ -12,7 +12,6 @@ import { list_add } from "./list_add.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
 import { list_first } from "./list_first.mjs";
-import { equal_by } from "./equal_by.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { each_range } from "./each_range.mjs";
 import { list_any } from "./list_any.mjs";
@@ -38,7 +37,11 @@ export async function ceb_bible_words_definitions_atoms() {
           let lists = list_take_soft(concat, take_count);
           each(lists, (list) => {
             for (let eq of [list_first, list_second]) {
-              if (list_any(list, (a) => equal_by(a, p, eq))) {
+              if (
+                list_any(list, (a) =>
+                  list_any(a, (ai) => list_any(p, (pi) => equal(ai, pi))),
+                )
+              ) {
                 c = true;
               }
             }
