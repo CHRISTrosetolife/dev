@@ -26,6 +26,7 @@ export async function app_language(
   });
   html_style_default_font_size(3.5);
   let group_index = storage_local_initialize(app_fn, "group_index", 0);
+  group_index = 1;
   let { group, definitions, inverted } = await http_storage(
     app_language_group_path(language_learn, language_fluent, group_index),
   );
