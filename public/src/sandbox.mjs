@@ -1,4 +1,4 @@
+import { bible_words_greek_download } from "./bible_words_greek_download.mjs";
 import { app_ceb_upload } from "./app_ceb_upload.mjs";
 export async function sandbox() {
-  await app_ceb_upload();
-}
+  if (0) {

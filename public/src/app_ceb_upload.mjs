@@ -21,18 +21,12 @@ import { each_async } from "./each_async.mjs";
 import { object_list_invert } from "./object_list_invert.mjs";
 import { list_to_lookup_key_value_property } from "./list_to_lookup_key_value_property.mjs";
 import { list_take } from "./list_take.mjs";
-import { list_copy } from "./list_copy.mjs";
 import { ceb_bible_words_definitions_atoms } from "./ceb_bible_words_definitions_atoms.mjs";
 import { app_language_group_size } from "./app_language_group_size.mjs";
-import { bible_words_greek_download } from "./bible_words_greek_download.mjs";
 export async function app_ceb_upload() {
   try {
-    if (0) {
-      await bible_words_greek_download();
-    }
     let from = "ceb";
     let to = "en";
-    let group_all = true;
     let audio_only = true;
     let audio_upload_run = true;
     let group_upload = true;
@@ -43,10 +37,6 @@ export async function app_ceb_upload() {
       await ceb_bible_words_definitions_atoms();
     let groups = list_chunk(atoms, group_count);
     groups = list_take(groups, 2);
-    let group = list_copy(list_take(atoms, group_count));
-    if (group_all) {
-      group = atoms;
-    }
     let definitions_all = list_to_lookup_key_value_property(
       definitions_list,
       "word",
