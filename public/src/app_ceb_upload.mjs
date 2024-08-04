@@ -1,3 +1,4 @@
+import { each_index_async } from "./each_index_async.mjs";
 import { equal_json } from "./equal_json.mjs";
 import { assert } from "./assert.mjs";
 import { file_read_json } from "./file_read_json.mjs";
@@ -67,7 +68,7 @@ export async function app_ceb_upload() {
       },
     ];
     await each_async(profiles, async (profile) => {
-      await each_async(groups, async (group) => {
+      await each_index_async(groups, async (group) => {
         await each_async(group, async (atom) => {
           await each_async(atom, async (pair) => {
             if (profile.invert) {
