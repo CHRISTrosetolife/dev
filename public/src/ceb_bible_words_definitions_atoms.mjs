@@ -21,6 +21,7 @@ import { list_any } from "./list_any.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_second } from "./list_second.mjs";
+import { list_includes } from "./list_includes.mjs";
 export async function ceb_bible_words_definitions_atoms() {
   let take_count = 16;
   let atom_count = app_language_atom_count();
@@ -50,8 +51,9 @@ export async function ceb_bible_words_definitions_atoms() {
               list_any(
                 list,
                 (a) =>
-                  object_property_get(object, property_name) ||
-                  list_any(a, (ai) => list_any(p, (pi) => equal(ai, pi))),
+                  list_includes(
+                    object_property_get(definitions, list_first(a)),
+                  ) || list_any(a, (ai) => list_any(p, (pi) => equal(ai, pi))),
               )
             ) {
               c = true;
