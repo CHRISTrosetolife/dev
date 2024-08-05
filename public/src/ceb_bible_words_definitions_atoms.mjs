@@ -53,6 +53,7 @@ export async function ceb_bible_words_definitions_atoms() {
                 (a) =>
                   list_includes(
                     object_property_get(definitions, list_first(a)),
+                    list_second(p),
                   ) || list_any(a, (ai) => list_any(p, (pi) => equal(ai, pi))),
               )
             ) {
