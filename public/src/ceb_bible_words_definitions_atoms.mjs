@@ -1,3 +1,5 @@
+import { object_list_invert } from "./object_list_invert.mjs";
+import { list_to_lookup_key_value_property } from "./list_to_lookup_key_value_property.mjs";
 import { log_json } from "./log_json.mjs";
 import { list_take_soft } from "./list_take_soft.mjs";
 import { app_language_atom_count } from "./app_language_atom_count.mjs";
@@ -21,7 +23,13 @@ import { list_second } from "./list_second.mjs";
 export async function ceb_bible_words_definitions_atoms() {
   let take_count = 16;
   let atom_count = app_language_atom_count();
-  let { pairs, definitions } = await ceb_bible_words_definitions_pairs();
+  let { pairs, definitions:definitions_list } = await ceb_bible_words_definitions_pairs();
+  let definitions_all = list_to_lookup_key_value_property(
+    definitions_list,
+    "word",
+    "definitions",
+  );
+  let definitions_all_inverted = object_list_invert(definitions_all);
   let atoms = list_adder((la) => {
     let previous = [];
     while (list_empty_not_is(pairs)) {
@@ -76,6 +84,4 @@ export async function ceb_bible_words_definitions_atoms() {
   });
   return {
     atoms,
-    definitions,
-  };
-}
+    def
