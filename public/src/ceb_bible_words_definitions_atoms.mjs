@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { object_list_invert } from "./object_list_invert.mjs";
 import { list_to_lookup_key_value_property } from "./list_to_lookup_key_value_property.mjs";
 import { log_json } from "./log_json.mjs";
@@ -46,8 +47,11 @@ export async function ceb_bible_words_definitions_atoms() {
           let lists = list_take_soft(concat, take_count);
           each(lists, (list) => {
             if (
-              list_any(list, (a) =>
-                list_any(a, (ai) => list_any(p, (pi) => equal(ai, pi))),
+              list_any(
+                list,
+                (a) =>
+                  object_property_get(object, property_name) ||
+                  list_any(a, (ai) => list_any(p, (pi) => equal(ai, pi))),
               )
             ) {
               c = true;
