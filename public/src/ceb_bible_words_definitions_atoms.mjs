@@ -23,13 +23,14 @@ import { list_second } from "./list_second.mjs";
 export async function ceb_bible_words_definitions_atoms() {
   let take_count = 16;
   let atom_count = app_language_atom_count();
-  let { pairs, definitions:definitions_list } = await ceb_bible_words_definitions_pairs();
-  let definitions_all = list_to_lookup_key_value_property(
+  let { pairs, definitions: definitions_list } =
+    await ceb_bible_words_definitions_pairs();
+  let definitions = list_to_lookup_key_value_property(
     definitions_list,
     "word",
     "definitions",
   );
-  let definitions_all_inverted = object_list_invert(definitions_all);
+  let inverted = object_list_invert(definitions);
   let atoms = list_adder((la) => {
     let previous = [];
     while (list_empty_not_is(pairs)) {
@@ -84,4 +85,7 @@ export async function ceb_bible_words_definitions_atoms() {
   });
   return {
     atoms,
-    def
+    definitions,
+    inverted,
+  };
+}
