@@ -19,7 +19,7 @@ export async function ceb_audio_download() {
       let { word, definitions } = w;
       await audio_upload(from, word);
       await each_async(definitions, async (definition) => {
-        await audio_upload(definition, to);
+        await audio_upload(to, definition);
       });
     });
     await promise_all(mapped);
