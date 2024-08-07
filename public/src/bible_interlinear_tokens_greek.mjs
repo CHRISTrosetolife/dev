@@ -9,5 +9,4 @@ export async function bible_interlinear_tokens_greek() {
       token,
     });
   }
-  return strongs;
 }
