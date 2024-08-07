@@ -1,3 +1,5 @@
+import { log } from "./log.mjs";
+import { promise_all } from "./promise_all.mjs";
 import { list_chunk } from "./list_chunk.mjs";
 import { each_async } from "./each_async.mjs";
 import { string_filter } from "./string_filter.mjs";
@@ -18,6 +20,11 @@ export async function bible_interlinear_words_greek_audio_upload() {
   await each_async(chunks, async (chunk) => {
     let m3 = list_map(chunk, async (word) => {
       await audio_upload(language_code, word);
+    });
+    await promise_all(mapped);
+    log({
+      chunks_size,
+      index,
     });
   });
 }
