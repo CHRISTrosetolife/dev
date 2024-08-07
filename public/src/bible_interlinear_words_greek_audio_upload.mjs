@@ -7,11 +7,14 @@ import { bible_interlinear_words_greek } from "./bible_interlinear_words_greek.m
 import { list_take } from "./list_take.mjs";
 import { list_first } from "./list_first.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
+import { list_to } from "./list_to.mjs";
 export async function bible_interlinear_words_greek_audio_upload() {
   let language_code = "el";
   let words = await bible_interlinear_words_greek();
   let mapped = list_map(words, string_case_lower);
-  let m2 = list_map(mapped, (word) => {});
+  let m2 = list_map(mapped, (word) => {
+    let l = list_to(word);
+  });
   await file_overwrite(
     date_string_iso_file() + ".txt",
     string_symbols_multiple(words),
