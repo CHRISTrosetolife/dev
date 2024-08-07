@@ -13,6 +13,7 @@ export async function ceb_audio_download() {
   let words = await ceb_bible_words_definitions_all_cache();
   let chunks = list_chunk(words, 20);
   let chunks_size = list_size(chunks);
+  $eia;
   await each_async(chunks, async (chunk) => {
     let mapped = list_map(chunk, async (w) => {
       log({
@@ -25,7 +26,9 @@ export async function ceb_audio_download() {
       });
     });
     await promise_all(mapped);
-    log("chunk finished");
+    log({
+      chunks_size,
+    });
     exit();
   });
 }
