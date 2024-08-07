@@ -1,3 +1,4 @@
+import { each_index_async } from "./each_index_async.mjs";
 import { list_size } from "./list_size.mjs";
 import { audio_upload } from "./audio_upload.mjs";
 import { exit } from "./exit.mjs";
@@ -13,8 +14,7 @@ export async function ceb_audio_download() {
   let words = await ceb_bible_words_definitions_all_cache();
   let chunks = list_chunk(words, 20);
   let chunks_size = list_size(chunks);
-  $eia;
-  await each_async(chunks, async (chunk) => {
+  await each_index_async(chunks, async (chunk, index) => {
     let mapped = list_map(chunk, async (w) => {
       log({
         w,
@@ -28,6 +28,7 @@ export async function ceb_audio_download() {
     await promise_all(mapped);
     log({
       chunks_size,
+      index,
     });
     exit();
   });
