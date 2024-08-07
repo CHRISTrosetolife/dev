@@ -11,12 +11,12 @@ export async function bible_interlinear_words_greek_audio_upload() {
   let alphabet = keyboard_greek();
   let language_code = "el";
   let words = await bible_interlinear_words_greek();
-  let mapped = list_map(words, string_case_lower);
+  let m1 = list_map(words, string_case_lower);
   let lambda = (character) => string_includes(alphabet, character);
-  let m2 = list_map(mapped, (word) => string_filter(word, lambda));
+  let m2 = list_map(m1, (word) => string_filter(word, lambda));
   let chunks = list_chunk(m2, 20);
   await each_async(chunks, async (chunk) => {
-    await each_async(chunk, async (word) => {
+    m1 = list_map(chunk, async (word) => {
       await audio_upload(language_code, word);
     });
   });
