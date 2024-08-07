@@ -10,7 +10,8 @@ export async function ceb_audio_download() {
   let from = "ceb";
   let to = "en";
   let words = await ceb_bible_words_definitions_all_cache();
-  await each_async(list_chunk(words, 20), async (chunk) => {
+  let chunks = list_chunk(words, 20);
+  await each_async(chunks, async (chunk) => {
     let mapped = list_map(chunk, async (w) => {
       log({
         w,
