@@ -11,6 +11,7 @@ import { file_overwrite } from "./file_overwrite.mjs";
 import { list_to } from "./list_to.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { string_includes } from "./string_includes.mjs";
+import { list_join_empty } from "./list_join_empty.mjs";
 export async function bible_interlinear_words_greek_audio_upload() {
   let alphabet = keyboard_greek();
   let language_code = "el";
@@ -19,6 +20,7 @@ export async function bible_interlinear_words_greek_audio_upload() {
   let m2 = list_map(mapped, (word) => {
     let l = list_to(word);
     let f = list_filter(l, (character) => string_includes(alphabet, character));
+    return list_join_empty(f);
   });
   await file_overwrite(
     date_string_iso_file() + ".txt",
