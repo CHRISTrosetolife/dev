@@ -6,7 +6,6 @@ import { audio_upload } from "./audio_upload.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { list_map } from "./list_map.mjs";
 import { bible_interlinear_words_greek } from "./bible_interlinear_words_greek.mjs";
-import { list_take } from "./list_take.mjs";
 import { string_includes } from "./string_includes.mjs";
 export async function bible_interlinear_words_greek_audio_upload() {
   let alphabet = keyboard_greek();
@@ -16,9 +15,9 @@ export async function bible_interlinear_words_greek_audio_upload() {
   let lambda = (character) => string_includes(alphabet, character);
   let m2 = list_map(mapped, (word) => string_filter(word, lambda));
   let chunks = list_chunk(m2, 20);
-  await each_async(list, async (item) => {});
-  m2 = list_take(m2, 1);
-  await each_async(m2, async (word) => {
-    await audio_upload(language_code, word);
+  await each_async(chunks, async (chunk) => {
+    await each_async(chunk, async (word) => {
+      await audio_upload(language_code, word);
+    });
   });
 }
