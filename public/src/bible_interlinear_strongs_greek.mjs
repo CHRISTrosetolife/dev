@@ -10,11 +10,14 @@ export async function bible_interlinear_strongs_greek() {
       each(book.chapters, (chapter) => {
         each(chapter.verses, (verse) => {
           each(verse.tokens, (token) => {
-            la(token.strong);
+            lambda(token);
           });
         });
       });
     });
+    function lambda(token) {
+      la(token.strong);
+    }
   });
   list_sort_string(strongs, identity);
   return strongs;
