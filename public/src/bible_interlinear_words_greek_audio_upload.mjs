@@ -1,3 +1,4 @@
+import { each_async } from "./each_async.mjs";
 import { string_filter } from "./string_filter.mjs";
 import { keyboard_greek } from "./keyboard_greek.mjs";
 import { date_string_iso_file } from "./date_string_iso_file.mjs";
@@ -17,7 +18,7 @@ export async function bible_interlinear_words_greek_audio_upload() {
   let mapped = list_map(words, string_case_lower);
   let lambda = (character) => string_includes(alphabet, character);
   let m2 = list_map(mapped, (word) => string_filter(word, lambda));
-  () => {};
+  await each_async(list, async (item) => {});
   await file_overwrite(
     date_string_iso_file() + ".txt",
     string_symbols_multiple(m2),
