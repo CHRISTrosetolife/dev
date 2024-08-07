@@ -3,19 +3,11 @@ export function audio_language_el() {
     language_code: "el-GR",
     voices: [
       {
-        code: "Standard-J",
-        male: true,
-      },
-      {
-        code: "Standard-H",
+        code: "Wavenet-A",
         male: false,
       },
       {
-        code: "Standard-I",
-        male: true,
-      },
-      {
-        code: "Standard-F",
+        code: "Standard-A",
         male: false,
       },
     ],
