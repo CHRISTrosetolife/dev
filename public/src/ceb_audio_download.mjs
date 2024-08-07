@@ -16,9 +16,6 @@ export async function ceb_audio_download() {
   let chunks_size = list_size(chunks);
   await each_index_async(chunks, async (chunk, index) => {
     let mapped = list_map(chunk, async (w) => {
-      log({
-        w,
-      });
       let { word, definitions } = w;
       await audio_upload(from, word);
       await each_async(definitions, async (definition) => {
