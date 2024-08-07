@@ -1,3 +1,4 @@
+import { exit } from "./exit.mjs";
 import { promise_all } from "./promise_all.mjs";
 import { log } from "./log.mjs";
 import { list_map } from "./list_map.mjs";
@@ -15,5 +16,6 @@ export async function ceb_audio_download() {
     });
     await promise_all(mapped);
     log("chunk finished");
+    exit();
   });
 }
