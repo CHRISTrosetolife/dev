@@ -13,7 +13,7 @@ export async function ceb_audio_download() {
       log({
         w,
       });
-      let word = w;
+      let { word, definitions } = w;
     });
     await promise_all(mapped);
     log("chunk finished");
