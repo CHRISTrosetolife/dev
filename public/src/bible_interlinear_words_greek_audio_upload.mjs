@@ -19,7 +19,7 @@ export async function bible_interlinear_words_greek_audio_upload() {
   let m2 = list_map(mapped, (word) => string_filter(word, lambda));
   await file_overwrite(
     date_string_iso_file() + ".txt",
-    string_symbols_multiple(words),
+    string_symbols_multiple(m2),
   );
   return;
   return list_take(m2, 10);
