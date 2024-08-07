@@ -1,3 +1,4 @@
+import { audio_upload } from "./audio_upload.mjs";
 import { exit } from "./exit.mjs";
 import { promise_all } from "./promise_all.mjs";
 import { log } from "./log.mjs";
@@ -14,6 +15,7 @@ export async function ceb_audio_download() {
         w,
       });
       let { word, definitions } = w;
+      await audio_upload(from, word);
     });
     await promise_all(mapped);
     log("chunk finished");
