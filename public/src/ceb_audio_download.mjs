@@ -8,6 +8,7 @@ import { each_async } from "./each_async.mjs";
 import { ceb_bible_words_definitions_all_cache } from "./ceb_bible_words_definitions_all_cache.mjs";
 export async function ceb_audio_download() {
   let from = "ceb";
+  let to = "en";
   let words = await ceb_bible_words_definitions_all_cache();
   await each_async(list_chunk(words, 20), async (chunk) => {
     let mapped = list_map(chunk, async (w) => {
@@ -16,8 +17,8 @@ export async function ceb_audio_download() {
       });
       let { word, definitions } = w;
       await audio_upload(from, word);
-      await each_async(list, async (item) => {
-        await audio_upload(profile.from, b);
+      await each_async(definitions, async (definition) => {
+        await audio_upload(definition, to);
       });
     });
     await promise_all(mapped);
