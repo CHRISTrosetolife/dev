@@ -17,9 +17,10 @@ export async function bible_interlinear_words_greek_audio_upload() {
   let language_code = "el";
   let words = await bible_interlinear_words_greek();
   let mapped = list_map(words, string_case_lower);
+  let lambda = (character) => string_includes(alphabet, character);
   let m2 = list_map(mapped, (word) => {
     let l = list_to(word);
-    let f = list_filter(l, (character) => string_includes(alphabet, character));
+    let f = list_filter(l, lambda);
     return list_join_empty(f);
   });
   await file_overwrite(
