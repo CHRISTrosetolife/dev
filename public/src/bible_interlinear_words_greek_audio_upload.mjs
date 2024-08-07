@@ -1,3 +1,4 @@
+import { string_filter } from "./string_filter.mjs";
 import { keyboard_greek } from "./keyboard_greek.mjs";
 import { date_string_iso_file } from "./date_string_iso_file.mjs";
 import { string_symbols_multiple } from "./string_symbols_multiple.mjs";
@@ -8,10 +9,7 @@ import { bible_interlinear_words_greek } from "./bible_interlinear_words_greek.m
 import { list_take } from "./list_take.mjs";
 import { list_first } from "./list_first.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
-import { list_to } from "./list_to.mjs";
-import { list_filter } from "./list_filter.mjs";
 import { string_includes } from "./string_includes.mjs";
-import { list_join_empty } from "./list_join_empty.mjs";
 export async function bible_interlinear_words_greek_audio_upload() {
   let alphabet = keyboard_greek();
   let language_code = "el";
@@ -19,9 +17,7 @@ export async function bible_interlinear_words_greek_audio_upload() {
   let mapped = list_map(words, string_case_lower);
   let lambda = (character) => string_includes(alphabet, character);
   let m2 = list_map(mapped, (word) => {
-    let l = list_to(word);
-    let f = list_filter(l, lambda);
-    return list_join_empty(f);
+    return string_filter(word, lambda);
   });
   await file_overwrite(
     date_string_iso_file() + ".txt",
