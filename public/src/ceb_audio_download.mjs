@@ -1,3 +1,4 @@
+import { list_size } from "./list_size.mjs";
 import { audio_upload } from "./audio_upload.mjs";
 import { exit } from "./exit.mjs";
 import { promise_all } from "./promise_all.mjs";
@@ -11,6 +12,7 @@ export async function ceb_audio_download() {
   let to = "en";
   let words = await ceb_bible_words_definitions_all_cache();
   let chunks = list_chunk(words, 20);
+  let chunks_size = list_size(chunks);
   await each_async(chunks, async (chunk) => {
     let mapped = list_map(chunk, async (w) => {
       log({
