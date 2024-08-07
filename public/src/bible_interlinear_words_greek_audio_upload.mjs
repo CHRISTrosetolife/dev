@@ -17,11 +17,11 @@ export async function bible_interlinear_words_greek_audio_upload() {
   let mapped = list_map(words, string_case_lower);
   let lambda = (character) => string_includes(alphabet, character);
   let m2 = list_map(mapped, (word) => string_filter(word, lambda));
-  return list_take(m2, 10);
   await file_overwrite(
     date_string_iso_file() + ".txt",
     string_symbols_multiple(words),
   );
   return;
+  return list_take(m2, 10);
   await audio_upload(language_code, list_first(mapped));
 }
