@@ -23,7 +23,7 @@ export async function bible_interlinear_words_greek_audio_upload() {
     let m3 = list_map(chunk, async (word) => {
       await audio_upload(language_code, word);
     });
-    await promise_all(mapped);
+    await promise_all(m3);
     log({
       chunks_size,
       index,
