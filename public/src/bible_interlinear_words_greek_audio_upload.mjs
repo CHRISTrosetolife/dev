@@ -16,6 +16,7 @@ export async function bible_interlinear_words_greek_audio_upload() {
   let lambda = (character) => string_includes(alphabet, character);
   let m2 = list_map(mapped, (word) => string_filter(word, lambda));
   let chunks = list_chunk(m2, 20);
+  await each_async(list, async (item) => {});
   m2 = list_take(m2, 1);
   await each_async(m2, async (word) => {
     await audio_upload(language_code, word);
