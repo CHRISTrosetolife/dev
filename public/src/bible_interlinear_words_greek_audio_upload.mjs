@@ -10,6 +10,7 @@ export async function bible_interlinear_words_greek_audio_upload() {
   let words = await bible_interlinear_words_greek();
   let mapped = list_map(words, string_case_lower);
   return string_symbols_multiple(words);
+  return;
   return list_first(mapped);
   await audio_upload(language_code, list_first(mapped));
   return list_take(mapped, 10);
