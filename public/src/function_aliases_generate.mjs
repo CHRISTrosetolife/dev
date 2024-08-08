@@ -89,7 +89,7 @@ export async function function_aliases_generate() {
   alias_add(function_new, ["n"]);
   alias_add(function_new_args, ["na"]);
   alias_add(function_open, ["o"]);
-  function_output_file;
+  alias_add(function_output_file, ["of"]);
   alias_add(function_param_new, ["p"]);
   alias_add(function_param_new_at, ["pa"]);
   alias_add(function_param_move_first, ["pf"]);
