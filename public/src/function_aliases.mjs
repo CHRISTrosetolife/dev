@@ -1,6 +1,7 @@
 export function function_aliases() {
   return {
     a: "function_auto",
+    ae: "function_alias_expand",
     al: "function_aliases_generate",
     an: "app_new",
     c: "function_copy",
