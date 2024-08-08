@@ -1,3 +1,4 @@
+import { function_alias_expand } from "./function_alias_expand.mjs";
 import { function_param_new_at } from "./function_param_new_at.mjs";
 import { function_param_move } from "./function_param_move.mjs";
 import { function_param_move_first } from "./function_param_move_first.mjs";
@@ -59,6 +60,7 @@ export async function function_aliases_generate() {
     });
   }
   alias_add(function_auto, ["a"]);
+  alias_add(function_alias_expand, ["ae"]);
   alias_add(function_aliases_generate, ["al"]);
   alias_add(app_new, ["an"]);
   alias_add(function_copy, ["c"]);
