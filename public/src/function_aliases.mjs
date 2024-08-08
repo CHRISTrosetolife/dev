@@ -16,6 +16,7 @@ export function function_aliases() {
     fc: "function_cache_new_run",
     fcd: "function_cache_delete",
     fcn: "function_cache_new",
+    fco: "function_cache_path_open",
     fcr: "function_cache_refresh",
     ft: "function_transform",
     fta: "function_transform_all",
