@@ -8,7 +8,8 @@ export async function ceb_definitions_change() {
     ceb_bible_words_definitions_all,
     ceb_bible_words_definitions_pairs_compute,
   ];
-  await each_async(list, async (item) => {});
-  await function_cache_refresh(ceb_bible_words_definitions_pairs_compute.name);
+  await each_async(fns, async (fn) => {
+    await function_cache_refresh(fn.name);
+  });
   await app_ceb_upload();
 }
