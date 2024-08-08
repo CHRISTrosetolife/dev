@@ -8,7 +8,7 @@ export async function function_output_file(function_name) {
     path_join([
       function_output_file.name,
       function_name,
-      date_string_iso_file(),
+      date_string_iso_file() + ".txt",
     ]),
   );
 }
