@@ -11,4 +11,5 @@ export async function function_output_file(function_name) {
       date_string_iso_file() + ".txt",
     ]),
   );
+  return output_path;
 }
