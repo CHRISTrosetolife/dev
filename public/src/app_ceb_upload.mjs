@@ -26,7 +26,7 @@ export async function app_ceb_upload() {
   try {
     let from = "ceb";
     let to = "en";
-    let audio_only = true;
+    let audio_only = false;
     let audio_upload_run = true;
     let group_upload = true;
     let group_local_save = true;
@@ -35,7 +35,7 @@ export async function app_ceb_upload() {
     let { atoms, definitions, inverted } =
       await ceb_bible_words_definitions_atoms();
     let groups = list_chunk(atoms, group_count);
-    if (0) {
+    if (10) {
       groups = list_take(groups, 2);
     }
     let profiles = [
