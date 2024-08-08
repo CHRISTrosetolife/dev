@@ -1,3 +1,4 @@
+import { function_cache_path_open } from "./function_cache_path_open.mjs";
 import { function_output_file } from "./function_output_file.mjs";
 import { function_alias_expand } from "./function_alias_expand.mjs";
 import { function_param_new_at } from "./function_param_new_at.mjs";
@@ -74,6 +75,7 @@ export async function function_aliases_generate() {
   alias_add(function_cache_new_run, ["fc"]);
   alias_add(function_cache_delete, ["fcd"]);
   alias_add(function_cache_new, ["fcn"]);
+  alias_add(function_cache_path_open, ["fco"]);
   alias_add(function_cache_refresh, ["fcr"]);
   alias_add(function_transform, ["ft"]);
   alias_add(function_transform_all, ["fta"]);
