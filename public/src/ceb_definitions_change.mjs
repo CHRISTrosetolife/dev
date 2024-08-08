@@ -1,3 +1,4 @@
+import { each_async } from "./each_async.mjs";
 import { ceb_bible_words_definitions_all } from "./ceb_bible_words_definitions_all.mjs";
 import { app_ceb_upload } from "./app_ceb_upload.mjs";
 import { ceb_bible_words_definitions_pairs_compute } from "./ceb_bible_words_definitions_pairs_compute.mjs";
@@ -6,7 +7,8 @@ export async function ceb_definitions_change() {
   let fns = [
     ceb_bible_words_definitions_all,
     ceb_bible_words_definitions_pairs_compute,
-  ];$ea
+  ];
+  await each_async(list, async (item) => {});
   await function_cache_refresh(ceb_bible_words_definitions_pairs_compute.name);
   await app_ceb_upload();
 }
