@@ -64,6 +64,7 @@ export async function ceb_definition(word) {
     apan: ["but", "yet"],
     hari: ["king", "royalty"],
     bisan: ["although", "though", "yet"],
+    didto: ["there"],
   };
   if (object_property_exists(known, word)) {
     return {
