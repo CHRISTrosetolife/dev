@@ -9,7 +9,7 @@ import { ceb_definition } from "./ceb_definition.mjs";
 export async function ceb_bible_words_definitions_get(words_ceb) {
   let existing = {};
   let result = [];
-  let words_ceb_size = list_size(words_ceb);
+  let list = list_size(words_ceb);
   await each_index_async(words_ceb, async (item, index) => {
     log({});
     let { word, definitions } = await ceb_definition(item.word);
