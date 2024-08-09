@@ -16,7 +16,7 @@ export function app_language_word_button_audio_none(root, langauge, text) {
     },
   );
   html_flag(button, "us");
-  html_span_text(button, string_combine_multiple([" 👂", text]));
+  html_span_text(button, string_combine_multiple([" 👂 ", text]));
   html_flag(p, "ph");
   app_language_word_style(button);
   return button;
