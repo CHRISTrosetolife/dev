@@ -1,6 +1,4 @@
-import { log } from "./log.mjs";
-import { list_size } from "./list_size.mjs";
-import { each_index_async } from "./each_index_async.mjs";
+import { list_log_async } from "./list_log_async.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -9,15 +7,7 @@ import { ceb_definition } from "./ceb_definition.mjs";
 export async function ceb_bible_words_definitions_get(list) {
   let existing = {};
   let result = [];
-  let size = list_size(list);
-  await each_index_async(list, async (item, index) => {
-    log({
-      size,
-      index,
-      item,
-    });
-    await lambda(item);
-  });
+  await list_log_async(list, lambda);
   return result;
   async function lambda(item) {
     let { word, definitions } = await ceb_definition(item.word);
