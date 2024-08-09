@@ -1,3 +1,4 @@
+import { app_language_words } from "./app_language_words.mjs";
 import { each_index_async } from "./each_index_async.mjs";
 import { app_language_group_get } from "./app_language_group_get.mjs";
 import { app_language_group_index_set } from "./app_language_group_index_set.mjs";
@@ -11,7 +12,7 @@ export async function app_language_refresh_menu(context) {
   await each_index_async(groups, async (group_info, group_index) => {
     html_button_width_full_text_click(
       root,
-      "group " + add_1(group_index),
+      "group " + add_1(group_index) + " " + app_language_words(l, r, invert),
       async () => {
         await app_language_group_index_set(context, group_index);
       },
