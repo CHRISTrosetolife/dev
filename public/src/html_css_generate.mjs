@@ -7,7 +7,7 @@ import { function_new_generic } from "./function_new_generic.mjs";
 export async function html_css_generate(name, html_css_code) {
   let prefix = string_suffix_without(html_css_generate.name, "_generate");
   await function_new_generic(
-    function_name_generated(html_css_generate),
+    function_name_generated(html_css_generate) + "_" + name,
     "",
     js_code_statement_return(js_unparse(r)),
     false,
