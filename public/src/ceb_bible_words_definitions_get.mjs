@@ -11,7 +11,11 @@ export async function ceb_bible_words_definitions_get(list) {
   let result = [];
   let size = list_size(list);
   await each_index_async(list, async (item, index) => {
-    log({});
+    log({
+      size,
+      index,
+      item,
+    });
     let { word, definitions } = await ceb_definition(item.word);
     if (object_property_exists_not(existing, word)) {
       object_property_set(existing, word, true);
