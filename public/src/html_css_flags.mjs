@@ -1,6 +1,6 @@
 import { html_attribute_set } from "./html_attribute_set.mjs";
 import { html_element } from "./html_element.mjs";
-export function html_css_flags() {
+export function html_css_flags(parent) {
   let c = html_element(parent, "link");
   html_attribute_set(c, "rel", "stylesheet");
   html_attribute_set(
