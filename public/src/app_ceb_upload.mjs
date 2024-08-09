@@ -99,6 +99,7 @@ export async function app_ceb_upload() {
           }
         }
       });
+      await app_language_group_upload(profile, "index", result_new);
     });
   } catch (e) {
     await app_ceb_upload();
