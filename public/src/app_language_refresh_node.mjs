@@ -121,20 +121,20 @@ export async function app_language_refresh_node(context) {
       },
     );
   });
-  if (left === 0 && right === app_language_group_size() - 1) {
+  if (left !== 0 && right !== app_language_group_size() - 1) {
+    html_button_width_full_text_click(
+      root,
+      string_combine_multiple([
+        j++,
+        ". ",
+        await app_language_text(language_fluent, html_button_next_text()),
+      ]),
+      async () => {
+        app_ceb_next();
+        await app_language_refresh_node(context);
+      },
+    );
   }
-  html_button_width_full_text_click(
-    root,
-    string_combine_multiple([
-      j++,
-      ". ",
-      await app_language_text(language_fluent, html_button_next_text()),
-    ]),
-    async () => {
-      app_ceb_next();
-      await app_language_refresh_node(context);
-    },
-  );
   function app_ceb_next() {
     let { left, right } = storage_local_get(app_ceb, "position");
     let n = add_1(subtract(right, left));
