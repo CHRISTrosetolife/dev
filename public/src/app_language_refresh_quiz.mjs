@@ -20,7 +20,6 @@ import { html_style_background_color } from "./html_style_background_color.mjs";
 import { app_learn_code_correct_timeout } from "./app_learn_code_correct_timeout.mjs";
 import { html_style_hidden } from "./html_style_hidden.mjs";
 import { string_take } from "./string_take.mjs";
-import { string_combine } from "./string_combine.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 import { number_min } from "./number_min.mjs";
 import { string_length } from "./string_length.mjs";
@@ -179,6 +178,8 @@ export async function app_language_refresh_quiz(context, settings) {
             string_length(answer),
           );
           let first = last_is ? "✅ " : "";
+          span_success;
+          html_inner_set(span_success, first);
           let take_count = number_min(
             multiply(index, chunk_size),
             string_length(answer),
@@ -186,10 +187,7 @@ export async function app_language_refresh_quiz(context, settings) {
           if (last_is) {
             html_style_display_none(answer_element_right);
           }
-          html_inner_set(
-            answer_element_left,
-            string_combine(first, string_take(answer, take_count)),
-          );
+          html_inner_set(answer_element_left, string_take(answer, take_count));
           if (last_is) {
             html_style_success(answer_element);
             html_style_hidden(button);
