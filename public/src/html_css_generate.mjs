@@ -6,7 +6,7 @@ import { js_code_statement_return } from "./js_code_statement_return.mjs";
 import { function_name_generated } from "./function_name_generated.mjs";
 import { function_new_generic } from "./function_new_generic.mjs";
 export async function html_css_generate(name, html_css_code) {
-  await html_code_generate("link", html_css_code);
+  let body_string = await html_code_generate("link", html_css_code);
   await function_new_generic(
     string_combine_multiple([
       function_name_generated(html_css_generate),
