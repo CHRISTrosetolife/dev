@@ -25,11 +25,9 @@ export async function bible_books_prefix_to_name_generate() {
       kind: "init",
     });
   });
+  let fn = bible_books_prefix_to_name_generate;
   await function_new_generic(
-    string_suffix_without(
-      bible_books_prefix_to_name_generate.name,
-      "_generate",
-    ),
+    string_suffix_without(fn.name, "_generate"),
     "",
     js_code_statement_return(js_unparse(r)),
     false,
