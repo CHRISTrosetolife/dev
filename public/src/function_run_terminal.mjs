@@ -19,8 +19,8 @@ export async function function_run_terminal(function_name, args) {
     });
     let replaced = string_replace(args_json, "'", "''");
     replaced = string_replace(replaced, '"', '\\"');
-    await uuid_file(async (file_path_input) => {
-      await uuid_file(async (file_path_output) => {
+    await uuid_file(function_run_terminal, async (file_path_input) => {
+      await uuid_file(function_run_terminal, async (file_path_output) => {
         await file_overwrite(file_path_input, args_json);
         let command = `node ${run.name}${function_path_suffix()} ${function_run_json.name} ${function_name} ${file_path_input} ${file_path_output}`;
         if (0) {
