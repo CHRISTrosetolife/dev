@@ -157,6 +157,7 @@ export async function app_language_refresh_node(context) {
   html_button_width_full_text_click_up(root, up_onclick);
   async function up_onclick() {
     if (top_is) {
+      return;
     }
     let { left, right } = storage_local_get(app_ceb, "position");
     while (true) {
