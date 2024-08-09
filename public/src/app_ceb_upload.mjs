@@ -102,11 +102,11 @@ export async function app_ceb_upload() {
           log({
             existing_path,
           });
-        }
-        if (group_local_compare_to_new) {
-          let existing = await file_read_json(existing_path);
-          assert(equal_json, [result_new, existing]);
-          return group;
+          if (group_local_compare_to_new) {
+            let existing = await file_read_json(existing_path);
+            assert(equal_json, [result_new, existing]);
+            return group;
+          }
         }
       });
     });
