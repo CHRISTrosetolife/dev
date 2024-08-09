@@ -8,11 +8,9 @@ export async function git_ac_message(commit_message) {
     git_ac_message_add(),
     `${git_ac_message_commit()} "${date_string_iso()} ${commit_message}"`,
   ];
-  for (let command of commands) {
-    await command_line_git(command);
-  }
   let result = await list_map_async(
     commands,
     async (command) => await command_line_git(command),
   );
+  return result;
 }
