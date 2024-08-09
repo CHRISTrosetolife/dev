@@ -9,7 +9,7 @@ export async function app_language_refresh_menu(context) {
   html_clear_scroll_top_centered(root);
   await each_range_async(2, async (item) => {
     html_button_width_full_text_click(root, item, async () => {
-      storage_local_set();
+      storage_local_set(context.app_fn, "group_index", item);
       await app_language_group_index_set(context, item);
       await app_language_refresh_node(context);
     });
