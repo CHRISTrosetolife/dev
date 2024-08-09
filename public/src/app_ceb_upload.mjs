@@ -1,3 +1,4 @@
+import { app_language_group_upload } from "./app_language_group_upload.mjs";
 import { each_index_async } from "./each_index_async.mjs";
 import { equal_json } from "./equal_json.mjs";
 import { assert } from "./assert.mjs";
