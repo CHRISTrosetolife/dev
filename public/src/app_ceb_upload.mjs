@@ -94,8 +94,8 @@ export async function app_ceb_upload() {
         );
         if (group_upload) {
           let existing_path = await storage_upload_object_gitignore(
-            result_new,
             storage_path,
+            result_new,
           );
           log({
             existing_path,
