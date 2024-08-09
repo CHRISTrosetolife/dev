@@ -10,7 +10,6 @@ export function app_language_word_button_audio_none(root, langauge, text) {
   let button = html_button_width_full_text_click(root, "", async () => {
     return await app_language_audio(langauge, text);
   });
-  html_flag(button, "us");
   html_span_text(button, " 👂 ");
   html_flag(button, "ph");
   html_span_text(button, string_combine_multiple([" ", text]));
