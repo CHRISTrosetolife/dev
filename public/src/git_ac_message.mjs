@@ -11,5 +11,8 @@ export async function git_ac_message(commit_message) {
   for (let command of commands) {
     await command_line_git(command);
   }
-  await list_map_async();
+  await list_map_async(
+    commands,
+    async (command) => await command_line_git(command),
+  );
 }
