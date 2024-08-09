@@ -39,6 +39,7 @@ import { each_object } from "./each_object.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_adder_unique } from "./list_adder_unique.mjs";
 import { each_range_reverse } from "./each_range_reverse.mjs";
+import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export function js_dollar(ast) {
   js_visit_identifiers(ast, (v) => {
     let { node } = v;
@@ -63,10 +64,7 @@ export function js_dollar(ast) {
       }
       if (remaining === "aa") {
         let e = js_parse_expression(
-          js_code_call_args(object_property_get.name, [
-            js_name_unique(ast, "object"),
-            js_name_unique(ast, "property_name"),
-          ]),
+          js_code_call_args(assert_arguments_length.name, []),
         );
         object_replace(node, e);
       }
