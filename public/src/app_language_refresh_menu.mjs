@@ -10,7 +10,9 @@ export async function app_language_refresh_menu(context) {
     html_button_width_full_text_click(
       root,
       "📃 " + (await app_language_text(language_fluent, "review")),
-      () => app_language_refresh_review(context),
+      () => {
+        app_language_refresh_review(context);
+      },
     );
   });
 }
