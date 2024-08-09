@@ -103,7 +103,7 @@ export async function app_ceb_upload() {
         if (group_upload) {
           await storage_upload_object(result_new, storage_path);
           log({
-            storage_path,
+            existing_path,
           });
         }
         if (group_local_save) {
