@@ -133,10 +133,10 @@ export async function app_language_refresh_node(context) {
     ]),
     async () => {
       if (top_is) {
-        await app_language_refresh_menu(context);
+        await app_language_group_set(context, group_index_new);
         return;
       }
-      await app_language_group_set(context, group_index_new);
+      app_ceb_next();
       await app_language_refresh_node(context);
     },
   );
