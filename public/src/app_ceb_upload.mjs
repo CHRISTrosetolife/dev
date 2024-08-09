@@ -87,12 +87,12 @@ export async function app_ceb_upload() {
           definitions,
           inverted,
         };
-        let storage_path = app_language_group_path(
-          profile.from,
-          profile.to,
-          group_index,
-        );
         if (group_upload) {
+          let storage_path = app_language_group_path(
+            profile.from,
+            profile.to,
+            group_index,
+          );
           let existing_path = await storage_upload_object_gitignore(
             storage_path,
             result_new,
