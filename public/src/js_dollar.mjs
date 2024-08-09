@@ -61,6 +61,15 @@ export function js_dollar(ast) {
         let e = js_parse_expression(js_code_arrow_block());
         object_replace(node, e);
       }
+      if (remaining === "aa") {
+        let e = js_parse_expression(
+          js_code_call_args(object_property_get.name, [
+            js_name_unique(ast, "object"),
+            js_name_unique(ast, "property_name"),
+          ]),
+        );
+        object_replace(node, e);
+      }
       if (remaining === "ar") {
         let e = js_parse_expression(js_code_arrow_block_args([], "return;"));
         object_replace(node, e);
