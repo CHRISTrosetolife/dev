@@ -20,7 +20,6 @@ import { each_async } from "./each_async.mjs";
 import { object_list_invert } from "./object_list_invert.mjs";
 import { ceb_bible_words_definitions_atoms } from "./ceb_bible_words_definitions_atoms.mjs";
 import { app_language_group_size } from "./app_language_group_size.mjs";
-import { list_size } from "./list_size.mjs";
 export async function app_ceb_upload() {
   try {
     let from = "ceb";
@@ -103,7 +102,6 @@ export async function app_ceb_upload() {
         }
       });
       await app_language_group_upload(profile, "index", {
-        count: list_size(groups),
         groups: list_map(groups, (g) => ({
           first: list_first_nested(g),
           last: list_last_nested(g),
