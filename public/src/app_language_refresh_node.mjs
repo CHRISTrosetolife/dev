@@ -1,3 +1,4 @@
+import { app_language_group_set } from "./app_language_group_set.mjs";
 import { app_language_refresh_menu } from "./app_language_refresh_menu.mjs";
 import { app_language_group_size } from "./app_language_group_size.mjs";
 import { log } from "./log.mjs";
@@ -135,7 +136,7 @@ export async function app_language_refresh_node(context) {
         await app_language_refresh_menu(context);
         return;
       }
-      app_ceb_next();
+      await app_language_group_set(context, group_index_new);
       await app_language_refresh_node(context);
     },
   );
