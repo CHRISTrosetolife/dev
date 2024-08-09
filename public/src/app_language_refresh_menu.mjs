@@ -8,7 +8,7 @@ export async function app_language_refresh_menu(context) {
   let { root } = context;
   html_clear_scroll_top_centered(root);
   let { groups } = await app_language_group_get(context, "index");
-  await each_index_async(count, async (group_index) => {
+  await each_index_async(groups, async (group_info, group_index) => {
     html_button_width_full_text_click(
       root,
       "group " + add_1(group_index),
