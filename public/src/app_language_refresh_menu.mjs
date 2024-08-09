@@ -22,6 +22,6 @@ export async function app_language_refresh_menu(context) {
         await app_language_group_index_set(context, group_index);
       },
     );
-    html_cycle_p(context.root, app_language_atom_title_patterns(), text);
+    html_cycle_p(button, app_language_atom_title_patterns(), text);
   });
 }
