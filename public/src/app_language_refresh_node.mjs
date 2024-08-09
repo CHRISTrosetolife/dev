@@ -1,3 +1,4 @@
+import { app_language_group_size } from "./app_language_group_size.mjs";
 import { log } from "./log.mjs";
 import { each_async } from "./each_async.mjs";
 import { app_language_quizzes_start } from "./app_language_quizzes_start.mjs";
@@ -120,6 +121,7 @@ export async function app_language_refresh_node(context) {
       },
     );
   });
+  app_language_group_size()-1;
   html_button_width_full_text_click(
     root,
     string_combine_multiple([
