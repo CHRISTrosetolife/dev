@@ -103,18 +103,21 @@ export async function app_ceb_upload() {
       await app_language_group_upload(profile, "index", {
         count: list_size(groups),
         groups: list_map(groups, (g) => ({
-          first: list_first_nested(g),
+            first: list_first_nested(g),
+            last: list_last_nested(g),
         })),
       });
     });
   } catch (e) {
     await app_ceb_upload();
   }
-  function list_first_nested(input) {
-    let fn = list_first;
-    return function_nested(input);
-  }
-  function function_nested(fn, input) {
-    return fn(fn(input));
-  }
+}
+function list_first_nested(input) {
+  return function_nested(list_first,input);
+}
+function list_last_nested(input) {
+  return function_nested(list_last,input);
+}
+function function_nested(fn, input) {
+  return fn(fn(input));
 }
