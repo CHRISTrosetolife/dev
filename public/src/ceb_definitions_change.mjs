@@ -3,7 +3,7 @@ import { ceb_bible_words_definitions_all } from "./ceb_bible_words_definitions_a
 import { app_ceb_upload } from "./app_ceb_upload.mjs";
 import { ceb_bible_words_definitions_pairs_compute } from "./ceb_bible_words_definitions_pairs_compute.mjs";
 import { function_cache_refresh } from "./function_cache_refresh.mjs";
-export async function ceb_definitions_change() {
+export async function ceb_definitions_change() {$aa
   let fns = [
     ceb_bible_words_definitions_all,
     ceb_bible_words_definitions_pairs_compute,
