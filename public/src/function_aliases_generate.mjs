@@ -93,7 +93,7 @@ export async function function_aliases_generate() {
   alias_add(function_open, ["o"]);
   alias_add(function_output_file, ["of"]);
   alias_add(function_param_new, ["p"]);
-  alias_add(function_param_new_at, ["pa"]);
+  alias_add(function_param_new_at, ["pn"]);
   alias_add(function_param_move_first, ["pf"]);
   alias_add(function_param_move, ["pm"]);
   alias_add(function_rename, ["r"]);
