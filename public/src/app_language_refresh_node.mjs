@@ -121,7 +121,7 @@ export async function app_language_refresh_node(context) {
       },
     );
   });
-  app_language_group_size()-1;
+  app_language_group_size() - 1;
   html_button_width_full_text_click(
     root,
     string_combine_multiple([
