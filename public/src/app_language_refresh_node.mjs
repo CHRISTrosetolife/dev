@@ -136,7 +136,7 @@ export async function app_language_refresh_node(context) {
       if (top_is) {
         await app_language_group_index_set(
           context,
-          app_language_group_index_get(context) + 1,
+          app_language_group_index_get(context, context) + 1,
         );
         return;
       }
