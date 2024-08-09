@@ -1,9 +1,7 @@
-import { storage_upload_object_gitignore } from "./storage_upload_object_gitignore.mjs";
 import { each_index_async } from "./each_index_async.mjs";
 import { equal_json } from "./equal_json.mjs";
 import { assert } from "./assert.mjs";
 import { file_read_json } from "./file_read_json.mjs";
-import { app_language_group_path } from "./app_language_group_path.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
@@ -88,13 +86,9 @@ export async function app_ceb_upload() {
           inverted,
         };
         if (group_upload) {
-          let storage_path = app_language_group_path(
-            profile.from,
-            profile.to,
+          let existing_path = await app_language_group_upload(
+            profile,
             group_index,
-          );
-          let existing_path = await storage_upload_object_gitignore(
-            storage_path,
             result_new,
           );
           if (group_local_compare_to_new) {
