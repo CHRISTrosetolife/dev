@@ -137,7 +137,11 @@ export async function app_language_refresh_node(context) {
       },
     );
   }
-  function app_ceb_next() {
+  async function app_ceb_next() {
+    if (top_is) {
+      await app_language_refresh_menu(context);
+      return;
+    }
     let { left, right } = storage_local_get(app_ceb, "position");
     let n = add_1(subtract(right, left));
     let count = integer_log(n, level_size);
