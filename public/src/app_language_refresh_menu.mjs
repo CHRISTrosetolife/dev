@@ -11,7 +11,7 @@ export async function app_language_refresh_menu(context) {
   await each_range_async(2, async (item) => {
     html_button_width_full_text_click(root, item, async () => {
       storage_local_set(context.app_fn, "group_index", item);
-      await app_language_group_index_set(context, item);
+      await app_language_group_index_set(context);
       storage_local_set(
         context.app_fn,
         "position",
