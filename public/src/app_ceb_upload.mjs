@@ -1,10 +1,8 @@
+import { storage_upload_object_gitignore } from "./storage_upload_object_gitignore.mjs";
 import { each_index_async } from "./each_index_async.mjs";
 import { equal_json } from "./equal_json.mjs";
 import { assert } from "./assert.mjs";
 import { file_read_json } from "./file_read_json.mjs";
-import { file_overwrite_json } from "./file_overwrite_json.mjs";
-import { storage_upload_object } from "./storage_upload_object.mjs";
-import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
 import { app_language_group_path } from "./app_language_group_path.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -96,9 +94,10 @@ export async function app_ceb_upload() {
           group_index,
         );
         if (group_upload) {
-          await storage_upload_object(result_new, storage_path);
-          let existing_path = folder_gitignore_path(storage_path);
-          await file_overwrite_json(existing_path, result_new);
+          let existing_path = await storage_upload_object_gitignore(
+            result_new,
+            storage_path,
+          );
           log({
             existing_path,
           });
