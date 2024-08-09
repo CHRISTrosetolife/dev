@@ -15,7 +15,7 @@ import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export function app_language_atom_title(group, atom_left, atom_right, invert) {
   assert_arguments_length(arguments, 4);
   let l = list_first(atom_left);
-  let r = list_last(atom_left);
+  let r = list_last(atom_right);
   let atom_count = app_language_atom_count();
   let mapped = list_map_nested([l, r], string_delimit_backtick);
   let text = string_combine_multiple([
