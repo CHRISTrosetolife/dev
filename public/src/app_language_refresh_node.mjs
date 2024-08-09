@@ -1,4 +1,4 @@
-import { app_language_group_get } from "./app_language_group_get.mjs";
+import { app_language_group_index_get } from "./app_language_group_index_get.mjs";
 import { app_language_group_set } from "./app_language_group_set.mjs";
 import { app_language_refresh_menu } from "./app_language_refresh_menu.mjs";
 import { app_language_group_size } from "./app_language_group_size.mjs";
@@ -136,7 +136,7 @@ export async function app_language_refresh_node(context) {
       if (top_is) {
         await app_language_group_set(
           context,
-          (await app_language_group_get(context)) + 1,
+          (await app_language_group_index_get(context)) + 1,
         );
         return;
       }
