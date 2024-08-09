@@ -15,7 +15,7 @@ export async function app_language_refresh_menu(context) {
       "group " +
         add_1(group_index) +
         " " +
-        app_language_words(group_info.left, group_info.right, false),
+        app_language_words(group_info.first, group_info.last, false),
       async () => {
         await app_language_group_index_set(context, group_index);
       },
