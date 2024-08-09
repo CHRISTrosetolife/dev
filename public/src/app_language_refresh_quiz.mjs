@@ -178,10 +178,8 @@ export async function app_language_refresh_quiz(context, settings) {
             string_length(answer),
           );
           if (last_is) {
+            html_inner_set(span_success, "✅ ");
           }
-          let first = last_is ? "✅ " : "";
-          span_success;
-          html_inner_set(span_success, first);
           let take_count = number_min(
             multiply(index, chunk_size),
             string_length(answer),
