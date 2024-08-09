@@ -102,9 +102,9 @@ export async function app_ceb_upload() {
       });
       await app_language_group_upload(profile, "index", {
         count: list_size(groups),
-        groups: list_map(groups, (g) => {
-          first: list_first(list_first(g));
-        }),
+        groups: list_map(groups, (g) => ({
+          first: list_first(list_first(g)),
+        })),
       });
     });
   } catch (e) {
