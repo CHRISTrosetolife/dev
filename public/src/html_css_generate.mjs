@@ -1,3 +1,4 @@
+import { function_names_to_lookup } from "./function_names_to_lookup.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { html_code_generate } from "./html_code_generate.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -20,4 +21,5 @@ export async function html_css_generate(name, html_css_code) {
     false,
     file_overwrite,
   );
+  return function_names_to_lookup([fn_name]);
 }
