@@ -1,3 +1,4 @@
+import { html_css_flags } from "./html_css_flags.mjs";
 import { app_language_refresh_node } from "./app_language_refresh_node.mjs";
 import { app_language_group_index_changed } from "./app_language_group_index_changed.mjs";
 import { app_language_position_initial } from "./app_language_position_initial.mjs";
@@ -20,6 +21,7 @@ export async function app_language(
     invert,
   };
   let root = html_style_default_initialize();
+  html_css_flags(root);
   object_merge(context, {
     root,
   });
