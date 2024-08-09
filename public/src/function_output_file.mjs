@@ -7,8 +7,7 @@ export async function function_output_file(function_name) {
   let output_path = folder_gitignore_path(
     path_join([
       function_output_file.name,
-      function_name,
-      date_string_iso_file() + ".txt",
+      path_join([function_name, date_string_iso_file() + ".txt"]),
     ]),
   );
   let result = await function_run(function_name, []);
