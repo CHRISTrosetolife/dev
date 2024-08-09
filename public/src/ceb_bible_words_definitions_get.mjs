@@ -6,11 +6,11 @@ import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { ceb_definition } from "./ceb_definition.mjs";
-export async function ceb_bible_words_definitions_get(words_ceb) {
+export async function ceb_bible_words_definitions_get(list) {
   let existing = {};
   let result = [];
-  let size = list_size(words_ceb);
-  await each_index_async(words_ceb, async (item, index) => {
+  let size = list_size(list);
+  await each_index_async(list, async (item, index) => {
     log({});
     let { word, definitions } = await ceb_definition(item.word);
     if (object_property_exists_not(existing, word)) {
