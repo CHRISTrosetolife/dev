@@ -19,7 +19,6 @@ import { list_chunk } from "./list_chunk.mjs";
 import { list_reverse } from "./list_reverse.mjs";
 import { each_async } from "./each_async.mjs";
 import { object_list_invert } from "./object_list_invert.mjs";
-import { list_take } from "./list_take.mjs";
 import { ceb_bible_words_definitions_atoms } from "./ceb_bible_words_definitions_atoms.mjs";
 import { app_language_group_size } from "./app_language_group_size.mjs";
 export async function app_ceb_upload() {
@@ -35,9 +34,6 @@ export async function app_ceb_upload() {
     let { atoms, definitions, inverted } =
       await ceb_bible_words_definitions_atoms();
     let groups = list_chunk(atoms, group_count);
-    if (10) {
-      groups = list_take(groups, 2);
-    }
     let profiles = [
       {
         definitions,
@@ -102,12 +98,10 @@ export async function app_ceb_upload() {
         let existing_path = folder_gitignore_path(storage_path);
         if (group_upload) {
           await storage_upload_object(result_new, storage_path);
+          await file_overwrite_json(existing_path, result_new);
           log({
             existing_path,
           });
-        }
-        if (group_local_save) {
-          await file_overwrite_json(existing_path, result_new);
         }
         if (group_local_compare_to_new) {
           let existing = await file_read_json(existing_path);
