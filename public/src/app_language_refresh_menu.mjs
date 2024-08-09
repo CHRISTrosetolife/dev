@@ -1,3 +1,5 @@
+import { app_language_atom_title_patterns } from "./app_language_atom_title_patterns.mjs";
+import { html_cycle_p } from "./html_cycle_p.mjs";
 import { app_language_words } from "./app_language_words.mjs";
 import { each_index_async } from "./each_index_async.mjs";
 import { app_language_group_get } from "./app_language_group_get.mjs";
@@ -10,7 +12,7 @@ export async function app_language_refresh_menu(context) {
   html_clear_scroll_top_centered(root);
   let { groups } = await app_language_group_get(context, "index");
   await each_index_async(groups, async (group_info, group_index) => {
-    html_button_width_full_text_click(
+    let button = html_button_width_full_text_click(
       root,
       "group " +
         add_1(group_index) +
@@ -20,5 +22,6 @@ export async function app_language_refresh_menu(context) {
         await app_language_group_index_set(context, group_index);
       },
     );
+    html_cycle_p(context.root, app_language_atom_title_patterns(), text);
   });
 }
