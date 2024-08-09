@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { each_async } from "./each_async.mjs";
 import { app_language_quizzes_start } from "./app_language_quizzes_start.mjs";
 import { app_language_refresh_learn } from "./app_language_refresh_learn.mjs";
@@ -154,6 +155,7 @@ export async function app_language_refresh_node(context) {
     let { left, right } = storage_local_get(app_ceb, "position");
     while (true) {
       app_ceb_next();
+      log({});
       let { left: l, right: r } = storage_local_get(app_ceb, "position");
       if (or(equal(left, l), equal(right, r))) {
         break;
