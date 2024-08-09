@@ -12,7 +12,10 @@ export async function app_language_refresh_menu(context) {
   await each_index_async(groups, async (group_info, group_index) => {
     html_button_width_full_text_click(
       root,
-      "group " + add_1(group_index) + " " + app_language_words(l, r, invert),
+      "group " +
+        add_1(group_index) +
+        " " +
+        app_language_words(group_info.left, group_info.right, false),
       async () => {
         await app_language_group_index_set(context, group_index);
       },
