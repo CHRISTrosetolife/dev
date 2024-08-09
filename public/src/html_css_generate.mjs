@@ -12,7 +12,7 @@ export async function html_css_generate(name, html_css_code) {
     name,
   ]);
   await function_new_generic(
-    name,
+    fn_new_name,
     "",
     body_string,
     false,
@@ -20,5 +20,5 @@ export async function html_css_generate(name, html_css_code) {
     false,
     file_overwrite,
   );
-  return function_names_to_lookup([name]);
+  return function_names_to_lookup([fn_new_name]);
 }
