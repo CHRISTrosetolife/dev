@@ -16,6 +16,10 @@ export async function ceb_bible_words_definitions_get(list) {
       index,
       item,
     });
+    await lambda(item);
+  });
+  return result;
+  async function lambda(item) {
     let { word, definitions } = await ceb_definition(item.word);
     if (object_property_exists_not(existing, word)) {
       object_property_set(existing, word, true);
@@ -26,6 +30,5 @@ export async function ceb_bible_words_definitions_get(list) {
         });
       }
     }
-  });
-  return result;
+  }
 }
