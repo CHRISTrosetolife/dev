@@ -37,7 +37,7 @@ export async function app_language(
   });
   storage_local_initialize(app_fn, "position", {
     left: 0,
-    right: list_index_last(group),
+    right: list_index_last(context.group),
   });
   await app_language_refresh_node(context);
 }
