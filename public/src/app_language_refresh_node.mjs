@@ -121,7 +121,8 @@ export async function app_language_refresh_node(context) {
       },
     );
   });
-  if (left !== 0 && right !== app_language_group_size() - 1) {
+  let top_is = left !== 0 && right !== app_language_group_size() - 1;
+  if (top_is) {
     html_button_width_full_text_click(
       root,
       string_combine_multiple([
