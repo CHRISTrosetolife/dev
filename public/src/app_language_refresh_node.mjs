@@ -155,7 +155,9 @@ export async function app_language_refresh_node(context) {
     let { left, right } = storage_local_get(app_ceb, "position");
     while (true) {
       app_ceb_next();
-      log({});
+      log({
+        context,
+      });
       let { left: l, right: r } = storage_local_get(app_ceb, "position");
       if (or(equal(left, l), equal(right, r))) {
         break;
