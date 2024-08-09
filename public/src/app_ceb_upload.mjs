@@ -18,6 +18,7 @@ import { each_async } from "./each_async.mjs";
 import { object_list_invert } from "./object_list_invert.mjs";
 import { ceb_bible_words_definitions_atoms } from "./ceb_bible_words_definitions_atoms.mjs";
 import { app_language_group_size } from "./app_language_group_size.mjs";
+import { list_size } from "./list_size.mjs";
 export async function app_ceb_upload() {
   try {
     let from = "ceb";
@@ -99,7 +100,9 @@ export async function app_ceb_upload() {
           }
         }
       });
-      await app_language_group_upload(profile, "index", result_new);
+      await app_language_group_upload(profile, "index", {
+        count: list_size(groups),
+      });
     });
   } catch (e) {
     await app_ceb_upload();
