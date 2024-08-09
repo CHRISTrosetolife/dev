@@ -24,7 +24,7 @@ export async function app_language(
     root,
   });
   html_style_default_font_size(3.5);
-  let group_index = storage_local_initialize(app_fn, "group_index", 0);
+  let group_index = ;
   await app_language_group_index_set(context, group_index);
   storage_local_initialize(
     app_fn,
