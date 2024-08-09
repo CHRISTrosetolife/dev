@@ -1,3 +1,4 @@
+import { html_code_generate_parent } from "./html_code_generate_parent.mjs";
 import { log } from "./log.mjs";
 import { js_unparse } from "./js_unparse.mjs";
 import { js_parse } from "./js_parse.mjs";
@@ -28,7 +29,7 @@ export async function html_code_generate(tag_name, input) {
     js_code_statement_declare_assign(
       variable_name,
       js_code_call_args(html_element.name, [
-        "parent",
+        html_code_generate_parent(),
         string_delimit(tag_name),
       ]),
     ),
