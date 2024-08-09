@@ -18,9 +18,8 @@ export async function app_language_refresh_menu(context) {
     html_cycle_p(
       button,
       app_language_atom_title_patterns(),
-      "group " +
-        add_1(group_index) +
-        " " +
+      add_1(group_index) +
+        ". " +
         app_language_words(group_info.first, group_info.last, false),
     );
   });
