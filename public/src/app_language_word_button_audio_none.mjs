@@ -1,3 +1,4 @@
+import { html_span_text } from "./html_span_text.mjs";
 import { html_flag } from "./html_flag.mjs";
 import { app_language_word_style } from "./app_language_word_style.mjs";
 import { app_language_audio } from "./app_language_audio.mjs";
@@ -13,6 +14,8 @@ export function app_language_word_button_audio_none(root, langauge, text) {
       return await app_language_audio(langauge, text);
     },
   );
+  html_flag(p, "us");
+  html_span_text(p, " " + text);
   html_flag(p, "ph");
   app_language_word_style(button);
   return button;
