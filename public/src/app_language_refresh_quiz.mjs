@@ -143,8 +143,8 @@ export async function app_language_refresh_quiz(context, settings) {
   html_style_display_none(component_display_none);
   let answer_other = answer_other_get(pair_other);
   let answer_element = html_p(quiz_container);
-  html_flag(answer_element, forwards ? "us" : "ph");
   let span_success = html_span(answer_element);
+  html_flag(answer_element, forwards ? "us" : "ph");
   html_span_text(answer_element, " ");
   let answer_element_left = html_span(answer_element);
   let answer_element_right = html_span_text(answer_element, "?");
