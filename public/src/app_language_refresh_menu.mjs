@@ -1,5 +1,5 @@
+import { app_language_group_index_set } from "./app_language_group_index_set.mjs";
 import { app_language_group_index_get } from "./app_language_group_index_get.mjs";
-import { app_language_group_set } from "./app_language_group_set.mjs";
 import { add_1 } from "./add_1.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { each_range_async } from "./each_range_async.mjs";
@@ -13,7 +13,7 @@ export async function app_language_refresh_menu(context) {
       root,
       "group " + add_1(group_index),
       async () => {
-        await app_language_group_set(context, group_index);
+        await app_language_group_index_set(context, group_index);
       },
     );
   });
