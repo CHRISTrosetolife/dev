@@ -136,12 +136,12 @@ export async function app_language_refresh_node(context) {
           await app_language_refresh_menu(context);
           return;
         }
-        await app_ceb_next();
+        app_ceb_next();
         await app_language_refresh_node(context);
       },
     );
   }
-  async function app_ceb_next() {
+  function app_ceb_next() {
     let { left, right } = storage_local_get(app_ceb, "position");
     let n = add_1(subtract(right, left));
     let count = integer_log(n, level_size);
