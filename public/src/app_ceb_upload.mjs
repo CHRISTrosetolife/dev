@@ -25,7 +25,7 @@ export async function app_ceb_upload() {
     let to = "en";
     let audio_only = false;
     let audio_upload_run = true;
-    let group_upload = true;
+    let group_upload = false;
     let group_local_compare_to_new = false;
     let group_count = app_language_group_size();
     let { atoms, definitions, inverted } =
@@ -102,6 +102,9 @@ export async function app_ceb_upload() {
       });
       await app_language_group_upload(profile, "index", {
         count: list_size(groups),
+        groups: list_map(groups, (g) => {
+          first: list_first(list_first(g));
+        }),
       });
     });
   } catch (e) {
