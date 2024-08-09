@@ -1,6 +1,6 @@
+import { function_name_generated } from "./function_name_generated.mjs";
 import { bible_books_names_lookup } from "./bible_books_names_lookup.mjs";
 import { js_string } from "./js_string.mjs";
-import { string_suffix_without } from "./string_suffix_without.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
 import { js_code_statement_return } from "./js_code_statement_return.mjs";
 import { function_new_generic } from "./function_new_generic.mjs";
@@ -27,7 +27,7 @@ export async function bible_books_prefix_to_name_generate() {
   });
   let fn = bible_books_prefix_to_name_generate;
   await function_new_generic(
-    string_suffix_without(fn.name, "_generate"),
+    function_name_generated(fn),
     "",
     js_code_statement_return(js_unparse(r)),
     false,
