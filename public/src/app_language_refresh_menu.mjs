@@ -12,16 +12,16 @@ export async function app_language_refresh_menu(context) {
   html_clear_scroll_top_centered(root);
   let { groups } = await app_language_group_get(context, "index");
   await each_index_async(groups, async (group_info, group_index) => {
-    let button = html_button_width_full_text_click(
-      root,
+    let button = html_button_width_full_text_click(root, "", async () => {
+      await app_language_group_index_set(context, group_index);
+    });
+    html_cycle_p(
+      button,
+      app_language_atom_title_patterns(),
       "group " +
         add_1(group_index) +
         " " +
         app_language_words(group_info.first, group_info.last, false),
-      async () => {
-        await app_language_group_index_set(context, group_index);
-      },
     );
-    html_cycle_p(button, app_language_atom_title_patterns(), text);
   });
 }
