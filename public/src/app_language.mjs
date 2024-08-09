@@ -1,5 +1,5 @@
+import { app_language_refresh_node } from "./app_language_refresh_node.mjs";
 import { app_language_group_index_changed } from "./app_language_group_index_changed.mjs";
-import { app_language_refresh_menu } from "./app_language_refresh_menu.mjs";
 import { app_language_position_initial } from "./app_language_position_initial.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
 import { html_style_default_font_size } from "./html_style_default_font_size.mjs";
@@ -30,5 +30,5 @@ export async function app_language(
     "position",
     app_language_position_initial(context),
   );
-  await app_language_refresh_menu(context);
+  await app_language_refresh_node(context);
 }
