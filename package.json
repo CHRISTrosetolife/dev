@@ -28,6 +28,7 @@
     "readline-sync": "^1.4.10",
     "string-similarity": "^4.0.4",
     "synchro-prompt": "^1.1.0",
+    "textbelt": "^0.0.4",
     "tonegenerator": "^0.3.3",
     "video-stitch": "^1.7.1",
     "videoshow": "^0.1.12",
