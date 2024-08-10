@@ -6,7 +6,9 @@ export function list_adder_unique(lambda) {
   lambda((item) => {
     if (!included.has(item)) {
       list_add(result, item);
-      log({});
+      log({
+        item,
+      });
       included.set(item, true);
     }
   });
