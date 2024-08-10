@@ -19,8 +19,8 @@ export async function bible_interlinear_words_audio_upload_generic(
   await each_log_async(chunks, async (chunk) => {
     let m3 = list_map(chunk, async (word) => {
       await audio_upload(language_code, word);
-      exit();
     });
     await promise_all(m3);
+    exit();
   });
 }
