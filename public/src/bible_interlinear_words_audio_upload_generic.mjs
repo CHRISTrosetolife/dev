@@ -1,3 +1,6 @@
+import { promise_all } from "./promise_all.mjs";
+import { audio_upload } from "./audio_upload.mjs";
+import { each_log_async } from "./each_log_async.mjs";
 import { repeat } from "./repeat.mjs";
 import { bible_interlinear_words } from "./bible_interlinear_words.mjs";
 import { list_chunk } from "./list_chunk.mjs";
@@ -16,7 +19,14 @@ export async function bible_interlinear_words_audio_upload_generic(
   let lambda = (character) => string_includes(alphabet, character);
   let m2 = list_map(m1, (word) => string_filter(word, lambda));
   let chunks = list_chunk(m2, 20);
-  await repeat(() => {});
+  await repeat(async () => {
+    await each_log_async(chunks, async (chunk) => {
+      let m3 = list_map(chunk, async (word) => {
+        await audio_upload(language_code, word);
+      });
+      await promise_all(m3);
+    });
+  });
   try {
   } catch (e) {
     await bible_interlinear_words_audio_upload_generic(
