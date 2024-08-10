@@ -1,4 +1,4 @@
-import { bible_interlinear_words_audio_upload_generic } from "./bible_interlinear_words_audio_upload_generic.mjs";
+import { log_error } from "./log_error.mjs";
 export async function repeat(lambda) {
   let success = false;
   while (!success) {
@@ -6,11 +6,9 @@ export async function repeat(lambda) {
       await lambda();
       success = true;
     } catch (e) {
-      await bible_interlinear_words_audio_upload_generic(
-        words,
-        alphabet,
-        language_code,
-      );
+      log_error({
+        e,
+      });
     }
   }
 }
