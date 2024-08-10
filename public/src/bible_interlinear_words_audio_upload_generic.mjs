@@ -9,9 +9,10 @@ import { string_case_lower } from "./string_case_lower.mjs";
 import { list_map } from "./list_map.mjs";
 export async function bible_interlinear_words_audio_upload_generic(
   books_get,
-  alphabet,
+  alphabet_get,
   language_code,
 ) {
+  let alphabet = alphabet_get();
   let words = await bible_interlinear_words(books_get);
   let m1 = list_map(words, string_case_lower);
   let lambda = (character) => string_includes(alphabet, character);
