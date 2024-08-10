@@ -3,19 +3,21 @@ export function audio_language_he() {
     language_code: "he-IL",
     voices: [
       {
-        code: "Standard-B",
+        code: "Wavenet-B",
         male: true,
       },
+    ],
+    voices2: [
       {
-        code: "Standard-C",
+        code: "Wavenet-C",
         male: false,
       },
       {
-        code: "Standard-D",
+        code: "Wavenet-D",
         male: true,
       },
       {
-        code: "Standard-A",
+        code: "Wavenet-A",
         male: false,
       },
     ],
