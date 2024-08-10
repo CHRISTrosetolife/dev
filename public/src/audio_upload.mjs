@@ -1,3 +1,5 @@
+import { tautology } from "./tautology.mjs";
+import { retry } from "./retry.mjs";
 import { audio_upload_file } from "./audio_upload_file.mjs";
 import { string_is } from "./string_is.mjs";
 import { assert } from "./assert.mjs";
@@ -15,12 +17,17 @@ export async function audio_upload(language, text) {
     let file_path = await audio_path(language, voice_index, text);
     let output_path = folder_gitignore_path(file_path);
     let { code, male } = voice;
-    let { created } = await gcloud_tts(
-      language_code,
-      code,
-      male ? "MALE" : "FEMALE",
-      text,
-      output_path,
+    let { created } = await retry(
+      3,
+      async () =>
+        await gcloud_tts(
+          language_code,
+          code,
+          male ? "MALE" : "FEMALE",
+          text,
+          output_path,
+        ),
+      tautology,
     );
     if (created) {
       log(
