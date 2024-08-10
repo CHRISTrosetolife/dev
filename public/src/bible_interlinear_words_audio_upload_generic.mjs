@@ -1,4 +1,3 @@
-import { bible_interlinear_cache_old } from "./bible_interlinear_cache_old.mjs";
 import { bible_interlinear_words } from "./bible_interlinear_words.mjs";
 import { promise_all } from "./promise_all.mjs";
 import { audio_upload } from "./audio_upload.mjs";
@@ -13,7 +12,7 @@ export async function bible_interlinear_words_audio_upload_generic(
   alphabet,
   language_code,
 ) {
-  let words = await bible_interlinear_words(bible_interlinear_cache_old);
+  let words = await bible_interlinear_words(books_get);
   try {
     let m1 = list_map(words, string_case_lower);
     let lambda = (character) => string_includes(alphabet, character);
