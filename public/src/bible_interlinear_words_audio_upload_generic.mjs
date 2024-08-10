@@ -9,13 +9,12 @@ import { string_case_lower } from "./string_case_lower.mjs";
 import { list_map } from "./list_map.mjs";
 export async function bible_interlinear_words_audio_upload_generic(
   books_get,
-  filter_get,
+  filter,
   language_code,
 ) {
   let words = await bible_interlinear_words(books_get);
   let m1 = list_map(words, string_case_lower);
-  let lambda = filter_get();
-  let m2 = list_map(m1, (word) => string_filter(word, lambda));
+  let m2 = list_map(m1, (word) => string_filter(word, filter));
   let chunks = list_chunk(m2, 20);
   await each_log_async(chunks, async (chunk) => {
     let m3 = list_map(chunk, async (word) => {
