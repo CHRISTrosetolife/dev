@@ -12,7 +12,9 @@ export async function gcloud_tts(
   text,
   output_path,
 ) {
-  log({});
+  log({
+    text,
+  });
   if (await file_exists(output_path)) {
     return {
       created: false,
