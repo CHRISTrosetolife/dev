@@ -1,3 +1,5 @@
+import { tautology } from "./tautology.mjs";
+import { retry } from "./retry.mjs";
 import { file_overwrite_binary } from "./file_overwrite_binary.mjs";
 import textToSpeech from "@google-cloud/text-to-speech";
 import { file_exists } from "./file_exists.mjs";
@@ -28,7 +30,11 @@ export async function gcloud_tts(
       audioEncoding: "MP3",
     },
   };
-  let [response] = await client.synthesizeSpeech(request);
+  let [response] = await retry(
+    3,
+    async () => await client.synthesizeSpeech(request),
+    tautology,
+  );
   let data = response.audioContent;
   await file_overwrite_binary(output_path, data);
   return {
