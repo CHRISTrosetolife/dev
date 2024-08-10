@@ -19,12 +19,12 @@ export async function bible_interlinear_words_audio_upload_generic(
   let lambda = (character) => string_includes(alphabet, character);
   let m2 = list_map(m1, (word) => string_filter(word, lambda));
   let chunks = list_chunk(m2, 20);
-  await retry_while_error(async () => {
-    await each_log_async(chunks, async (chunk) => {
-      let m3 = list_map(chunk, async (word) => {
+  await each_log_async(chunks, async (chunk) => {
+    let m3 = list_map(chunk, async (word) => {
+      await retry_while_error(async () => {
         await audio_upload(language_code, word);
       });
-      await promise_all(m3);
     });
+    await promise_all(m3);
   });
 }
