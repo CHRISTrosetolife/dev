@@ -4,9 +4,7 @@ import { list_take } from "./list_take.mjs";
 import { bible_interlinear_cache } from "./bible_interlinear_cache.mjs";
 export async function bible_interlinear_cache_old() {
   let books = await bible_interlinear_cache();
-  let old_testament_books = list_take(
-    books,
-    list_size(books) - bible_books_new_count(),
-  );
+  let newLocal = bible_books_new_count();
+  let old_testament_books = list_take(books, list_size(books) - newLocal);
   return old_testament_books;
 }
