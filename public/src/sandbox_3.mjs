@@ -8,3 +8,5 @@ export function sandbox_3() {
     if (err) {
       console.log(err);
     }
+  });
+}
