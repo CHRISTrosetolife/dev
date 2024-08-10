@@ -13,11 +13,11 @@ export async function bible_interlinear_words_audio_upload_generic(
   language_code,
 ) {
   let words = await bible_interlinear_words(books_get);
+  let m1 = list_map(words, string_case_lower);
+  let lambda = (character) => string_includes(alphabet, character);
+  let m2 = list_map(m1, (word) => string_filter(word, lambda));
+  let chunks = list_chunk(m2, 20);
   try {
-    let m1 = list_map(words, string_case_lower);
-    let lambda = (character) => string_includes(alphabet, character);
-    let m2 = list_map(m1, (word) => string_filter(word, lambda));
-    let chunks = list_chunk(m2, 20);
     await each_log_async(chunks, async (chunk) => {
       let m3 = list_map(chunk, async (word) => {
         await audio_upload(language_code, word);
