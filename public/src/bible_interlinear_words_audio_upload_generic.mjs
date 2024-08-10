@@ -1,3 +1,4 @@
+import { exit } from "./exit.mjs";
 import { promise_all } from "./promise_all.mjs";
 import { audio_upload } from "./audio_upload.mjs";
 import { each_log_async } from "./each_log_async.mjs";
@@ -19,6 +20,7 @@ export async function bible_interlinear_words_audio_upload_generic(
   await each_log_async(chunks, async (chunk) => {
     let m3 = list_map(chunk, async (word) => {
       await audio_upload(language_code, word);
+      exit();
     });
     await promise_all(m3);
   });
