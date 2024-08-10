@@ -24,6 +24,5 @@ export async function bible_interlinear_words_audio_upload_generic(
       await audio_upload(language_code, word);
     });
     await promise_all(m3);
-    exit();
   });
 }
