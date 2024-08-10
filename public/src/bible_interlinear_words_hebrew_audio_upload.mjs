@@ -5,11 +5,10 @@ import { bible_interlinear_words_audio_upload_generic } from "./bible_interlinea
 import { keyboard_greek } from "./keyboard_greek.mjs";
 import { string_includes } from "./string_includes.mjs";
 export async function bible_interlinear_words_hebrew_audio_upload() {
-  let alphabet = keyboard_greek();
+  let excluded = "־׀׃";
   let filter = (character) => string_includes(alphabet, character);
   let words = await bible_interlinear_words(bible_interlinear_cache_old);
   return list_filter(words, (w) => string_includes(w, "׃"));
-  ("־׀׃");
   let language_code = "he";
   await bible_interlinear_words_audio_upload_generic(
     bible_interlinear_cache_old,
