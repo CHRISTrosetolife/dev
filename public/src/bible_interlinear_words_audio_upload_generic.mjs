@@ -1,4 +1,4 @@
-import { list_first_nested } from "./list_first_nested.mjs";
+import { list_first } from "./list_first.mjs";
 import { exit } from "./exit.mjs";
 import { promise_all } from "./promise_all.mjs";
 import { audio_upload } from "./audio_upload.mjs";
@@ -16,7 +16,8 @@ export async function bible_interlinear_words_audio_upload_generic(
   let words = await bible_interlinear_words(books_get);
   let m1 = list_map(words, string_case_lower);
   let m2 = list_map(m1, (word) => string_filter(word, filter));
-  list_first_nested();
+  await audio_upload(language_code, list_first(m2));
+  exit();
   let chunks = list_chunk(m2, 20);
   await each_log_async(chunks, async (chunk) => {
     let m3 = list_map(chunk, async (word) => {
