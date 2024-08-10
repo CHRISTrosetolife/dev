@@ -1,14 +1,10 @@
 export function audio_language_he() {
   return {
-    language_code: "el-GR",
+    language_code: "he-IL",
     voices: [
       {
-        code: "Wavenet-A",
-        male: false,
-      },
-      {
-        code: "Standard-A",
-        male: false,
+        code: "Standard-b",
+        male: true,
       },
     ],
   };
