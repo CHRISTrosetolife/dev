@@ -27,12 +27,4 @@ export async function bible_interlinear_words_audio_upload_generic(
       await promise_all(m3);
     });
   });
-  try {
-  } catch (e) {
-    await bible_interlinear_words_audio_upload_generic(
-      words,
-      alphabet,
-      language_code,
-    );
-  }
 }
