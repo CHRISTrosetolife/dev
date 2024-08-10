@@ -1,5 +1,5 @@
 import { log_error } from "./log_error.mjs";
-export async function repeat(lambda) {
+export async function retry_while_error(lambda) {
   let success = false;
   while (!success) {
     try {
