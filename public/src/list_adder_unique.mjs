@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_add } from "./list_add.mjs";
 export function list_adder_unique(lambda) {
   let included = new WeakMap();
@@ -5,6 +6,7 @@ export function list_adder_unique(lambda) {
   lambda((item) => {
     if (!included.has(item)) {
       list_add(result, item);
+      log({});
       included.set(item, true);
     }
   });
