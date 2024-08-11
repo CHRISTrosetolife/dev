@@ -33,6 +33,7 @@ import { each_async } from "./each_async.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
 import { list_remove_at } from "./list_remove_at.mjs";
+import { list_empty_is } from "./list_empty_is.mjs";
 export async function terminal() {
   let prompt = chalk().greenBright("✟") + " ";
   let context = {
@@ -183,6 +184,9 @@ export async function terminal() {
       log({
         tokens,
       });
+    }
+    if (list_empty_is) {
+      continue;
     }
     let { first: function_name, remaining: args } =
       list_first_remaining(tokens);
