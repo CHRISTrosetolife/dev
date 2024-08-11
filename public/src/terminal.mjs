@@ -180,7 +180,7 @@ export async function terminal() {
       log_clear();
     }
     let tokens = terminal_tokens_get(input);
-    if (10) {
+    if (0) {
       log({
         tokens,
       });
