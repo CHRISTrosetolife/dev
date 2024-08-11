@@ -185,7 +185,7 @@ export async function terminal() {
         tokens,
       });
     }
-    if (list_empty_is) {
+    if (list_empty_is(tokens)) {
       continue;
     }
     let { first: function_name, remaining: args } =
