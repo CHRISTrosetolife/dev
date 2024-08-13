@@ -15,7 +15,7 @@ export async function ceb_bible_words_2(args) {
     let rows = 10;
     let cells = rows * columns;
     let book_hrefs_size = list_size(book_hrefs);
-    let missing_count = cells - book_hrefs_size;
+    let columns_full_count = columns - 1;
     return list_adder((la) => {
       each_range(columns, (column) => {
         each_range(rows, (row) => {});
