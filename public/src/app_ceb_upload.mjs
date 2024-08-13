@@ -63,6 +63,9 @@ export async function app_ceb_upload() {
               let createds = await list_map_async(atom, async (pair) => {
                 let b = list_first(pair);
                 let r = await audio_upload(profile.from, b);
+                if (r.created) {
+                  log({});
+                }
                 return r;
               });
               return list_any_created(createds);
