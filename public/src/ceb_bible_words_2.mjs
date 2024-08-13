@@ -42,7 +42,7 @@ export async function ceb_bible_words_2(args) {
         });
       });
       each_range(columns, (column) => {
-        each_range(count, (item) => {});
+        each_range(rows, (row) => {});
       });
     });
     book_hrefs = list_take_bible_books_new(book_hrefs);
