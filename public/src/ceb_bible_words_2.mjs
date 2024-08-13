@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_find_properties } from "./list_find_properties.mjs";
 import { list_get } from "./list_get.mjs";
 import { each_range } from "./each_range.mjs";
@@ -48,6 +49,7 @@ export async function ceb_bible_words_2(args) {
             row,
             column,
           });
+          log({});
         });
       });
     });
