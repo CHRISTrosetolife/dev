@@ -17,6 +17,8 @@ export async function ceb_bible_words_1(args) {
   );
   let text = await http_cache(url);
   let verse_1 = "^1";
+  if (args.new) {
+  }
   let index = string_index(text, verse_1);
   text = string_skip(text, index);
   let end = "This document is from the Christian Classics Ethereal";
