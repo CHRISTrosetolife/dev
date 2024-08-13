@@ -1,6 +1,6 @@
-import { ceb_bible_words_count_cache } from "./ceb_bible_words_count_cache.mjs";
+import { ceb_bible_words_2 } from "./ceb_bible_words_2.mjs";
 export async function sandbox_3() {
-  return await ceb_bible_words_count_cache({
+  return await ceb_bible_words_2({
     new: false,
   });
 }
