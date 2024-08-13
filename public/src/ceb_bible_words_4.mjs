@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { bible_books_index_old_is } from "./bible_books_index_old_is.mjs";
 import { each } from "./each.mjs";
 import { list_adder_unique_async } from "./list_adder_unique_async.mjs";
@@ -23,9 +22,6 @@ export async function ceb_bible_words_4(args) {
       await each_index_only_async(hrefs_chapters, async (chapter_index) => {
         let verses = await bible_ceb_4_chapter(book_index, chapter_index);
         each(verses, (v) => {
-          log({
-            v,
-          });
           each(v.tokens, (t) => {
             la(t);
           });
