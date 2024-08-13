@@ -1,4 +1,5 @@
 import { each_range } from "./each_range.mjs";
+import { each_index } from "./each_index.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { list_take_bible_books_new } from "./list_take_bible_books_new.mjs";
 import { list_adder_unique_async } from "./list_adder_unique_async.mjs";
@@ -7,7 +8,6 @@ import { bible_ceb_2_book } from "./bible_ceb_2_book.mjs";
 import { each_index_only_async } from "./each_index_only_async.mjs";
 import { bible_ceb_2_books_hrefs } from "./bible_ceb_2_books_hrefs.mjs";
 import { list_size } from "./list_size.mjs";
-import { list_get } from "./list_get.mjs";
 export async function ceb_bible_words_2(args) {
   let book_hrefs = await bible_ceb_2_books_hrefs();
   if (args.new) {
@@ -15,9 +15,10 @@ export async function ceb_bible_words_2(args) {
     let full_count_rows = list_size(book_hrefs) % columns;
     return list_adder((la) => {
       each_range(columns, (column) => {
-        each_range(full_count_rows, (row) => {
-          let bh = list_get(book_hrefs, row * column + row);
-          la(bh);
+        each_index(book_hrefs, (bh, index) => {
+          if (index % columns === column) {
+            la(bh);
+          }
         });
       });
     });
