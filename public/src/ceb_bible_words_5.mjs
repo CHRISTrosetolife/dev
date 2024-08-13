@@ -21,7 +21,6 @@ export async function ceb_bible_words_5(args) {
         log({
           book_name,
         });
-        return;
         let chapters = await bible_chapters("engbsb", book_name);
         await each_async(chapters, async (chapter_name) => {
           let { ceb } = await bible_ceb_chapter(chapter_name);
