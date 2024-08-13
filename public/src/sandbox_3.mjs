@@ -7,7 +7,7 @@ import { ceb_bible_words_count_cache_new } from "./ceb_bible_words_count_cache_n
 export async function sandbox_3() {
   let words = await ceb_bible_words_count_cache_new();
   let count = 500;
-  list_map(words, ceb_definition);
+  let mapped = list_map(words, ceb_definition);
   await each_range_async(count, async (i) => {
     let w = list_get(words, i);
     let { word } = w;
