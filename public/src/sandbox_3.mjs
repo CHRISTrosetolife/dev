@@ -16,8 +16,5 @@ export async function sandbox_3() {
   let unawaited = await promise_all(mapped);
   let m2 = list_map_property(unawaited, "word");
   let us = list_unique(m2);
-  each(list, (item) => {});
-  await eac(us, async (u, i) => {
-    log(u);
-  });
+  each(us, log);
 }
