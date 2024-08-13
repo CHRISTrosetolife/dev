@@ -1,3 +1,4 @@
+import { storage_local_get } from "./storage_local_get.mjs";
 import { html_style_visible } from "./html_style_visible.mjs";
 import { html_button_width_full_text_click_next } from "./html_button_width_full_text_click_next.mjs";
 import { html_flag } from "./html_flag.mjs";
@@ -81,6 +82,10 @@ export async function app_language_refresh_quiz(context, settings) {
     definitions,
     inverted,
   } = context;
+  let settings_choices = storage_local_get(
+    context.app_fn,
+    "quiz_settings_choices",
+  );
   html_clear_scroll_top_centered(root);
   let no_mistakes = true;
   let { pair, chunk_size, forwards } = settings;
