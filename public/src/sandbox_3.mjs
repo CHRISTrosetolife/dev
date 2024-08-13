@@ -1,17 +1,9 @@
-import { log } from "./log.mjs";
+import { list_any_created } from "./list_any_created.mjs";
 import text from "textbelt";
 export function sandbox_3() {
-  log({
-    text,
-  });
-  text.sendText(
-    "9043144052",
-    "A sample text message!",
-    undefined,
-    function (err) {
-      if (err) {
-        console.log(err);
-      }
+  return list_any_created([
+    {
+      created: false,
     },
-  );
+  ]);
 }
