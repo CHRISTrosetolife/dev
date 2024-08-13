@@ -58,6 +58,7 @@ export async function ceb_bible_words_2(args) {
         });
       });
     });
+    return;
     book_hrefs = list_take_bible_books_new(book_hrefs);
   }
   return book_hrefs;
