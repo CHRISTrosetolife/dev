@@ -18,10 +18,9 @@ export async function ceb_bible_words_2(args) {
     let columns_full = columns - 1;
     let columns_full_count = columns_full * rows;
     let rows_full = book_hrefs_size - columns_full_count;
-    return rows_full;
     return list_adder((la) => {
       each_range(columns, (column) => {
-        each_range(rows, (row) => {});
+        rows_full(rows, (row) => {});
         each_index(book_hrefs, (bh, index) => {
           if (index % columns === column) {
             la(bh);
