@@ -21,7 +21,9 @@ export async function ceb_bible_words_2(args) {
     let rows_missing = rows - rows_full;
     return list_adder((la) => {
       each_range(columns, (column) => {
-        each_range(rows_full, (row) => {});
+        each_range(rows_full, (row) => {
+          la({});
+        });
       });
       each_range(columns_full_count, (column) => {
         each_range(rows_missing, (row) => {});
