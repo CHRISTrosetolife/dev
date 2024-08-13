@@ -1,3 +1,4 @@
+import { list_adder } from "./list_adder.mjs";
 import { ceb_bible_words_score } from "./ceb_bible_words_score.mjs";
 import { each } from "./each.mjs";
 import { list_map_property } from "./list_map_property.mjs";
@@ -11,6 +12,7 @@ export async function sandbox_3() {
   let taken = list_take(wcs, count);
   let words = list_map_property(taken, "word");
   let scored = await ceb_bible_words_score();
+  list_adder((la) => {});
   each(scored, (s) => {
     let { word } = s;
     if (list_includes(words, s.word)) {
