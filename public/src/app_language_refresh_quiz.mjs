@@ -1,3 +1,4 @@
+import { html_button_width_full_text_click_next } from "./html_button_width_full_text_click_next.mjs";
 import { html_flag } from "./html_flag.mjs";
 import { html_style_success } from "./html_style_success.mjs";
 import { app_language_refresh_node } from "./app_language_refresh_node.mjs";
@@ -229,6 +230,7 @@ export async function app_language_refresh_quiz(context, settings) {
       html_style_click_width_min(button);
     });
   });
+  next_button = html_button_width_full_text_click_next();
   update_partials();
   html_spacer_vertical_2(root);
   html_button_width_full_text_click_up(root, async () => {
