@@ -1,3 +1,4 @@
+import { html_style_visible } from "./html_style_visible.mjs";
 import { html_button_width_full_text_click_next } from "./html_button_width_full_text_click_next.mjs";
 import { html_flag } from "./html_flag.mjs";
 import { html_style_success } from "./html_style_success.mjs";
@@ -193,6 +194,7 @@ export async function app_language_refresh_quiz(context, settings) {
           if (last_is) {
             html_style_success(answer_element);
             html_style_hidden(button);
+            html_style_visible(next_button);
           }
           html_style_success(button);
           update_partials();
