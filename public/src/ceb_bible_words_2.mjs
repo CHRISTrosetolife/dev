@@ -33,7 +33,14 @@ export async function ceb_bible_words_2(args) {
         });
       });
       each_range(columns_full_count, (column) => {
-        each_range(rows_missing, (row) => {});
+        each_range(rows_missing, (row) => {
+          la({
+            row,
+            column,
+            href: list_get(book_hrefs, index),
+          });
+          index++;
+        });
       });
       each_index(book_hrefs, (bh, index) => {
         if (index % columns === column) {
