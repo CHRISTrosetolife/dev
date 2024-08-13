@@ -221,7 +221,7 @@ export async function app_language_refresh_quiz(context, settings) {
         } else {
           html_style_wrong(button);
           if (no_mistakes) {
-            list_add(context.settings_choices, object_copy_shallow(settings));
+            list_add(settings_choices, object_copy_shallow(settings));
             no_mistakes = false;
           }
         }
@@ -241,10 +241,10 @@ export async function app_language_refresh_quiz(context, settings) {
     await app_language_refresh_node(context);
   });
   async function next() {
-    if (equal(settings, list_last(context.settings_choices))) {
+    if (equal(settings, list_last(settings_choices))) {
       await app_language_refresh_node(context);
     } else {
-      let after = list_after(context.settings_choices, settings);
+      let after = list_after(settings_choices, settings);
       await app_language_refresh_quiz(context, after);
     }
   }
