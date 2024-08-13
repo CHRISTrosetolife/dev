@@ -11,7 +11,7 @@ export async function ceb_bible_words_2(args) {
   let book_hrefs = await bible_ceb_2_books_hrefs();
   if (args.new) {
     let columns = 7;
-    list_adder((la) => {
+    return list_adder((la) => {
       each_range(columns, (column) => {
         each_index(book_hrefs, (bh, index) => {
           if (index % columns === column) {
