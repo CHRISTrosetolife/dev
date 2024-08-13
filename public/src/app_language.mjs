@@ -35,7 +35,7 @@ export async function app_language(
     "position",
     app_language_position_initial(context),
   );
-  let screen = storage_local_initialize(context.app_fn, "node");
+  let screen = storage_local_initialize(context.app_fn, "screen", "node");
   let fn_name = "app_language_refresh_" + screen;
   await function_run(fn_name, [context]);
 }
