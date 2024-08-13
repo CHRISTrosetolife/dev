@@ -105,12 +105,10 @@ export async function app_language_refresh_quiz(context) {
   let alternatives_t = list_without_by(
     object_property_get(definitions, word_f),
     word_t,
-    json_to,
   );
   let alternatives_f = list_without_by(
     object_property_get(inverted, word_t),
     word_f,
-    json_to,
   );
   pairs_other = list_filter(pairs_other, (po) => {
     let [f, t] = po;
