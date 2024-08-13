@@ -1,6 +1,5 @@
 import { list_get } from "./list_get.mjs";
 import { each_range } from "./each_range.mjs";
-import { each_index } from "./each_index.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { list_take_bible_books_new } from "./list_take_bible_books_new.mjs";
 import { list_adder_unique_async } from "./list_adder_unique_async.mjs";
@@ -41,11 +40,6 @@ export async function ceb_bible_words_2(args) {
           });
           index++;
         });
-      });
-      each_index(book_hrefs, (bh, index) => {
-        if (index % columns === column) {
-          la(bh);
-        }
       });
     });
     book_hrefs = list_take_bible_books_new(book_hrefs);
