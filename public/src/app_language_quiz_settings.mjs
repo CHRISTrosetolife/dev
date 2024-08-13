@@ -8,7 +8,7 @@ export function app_language_quiz_settings(atoms, chunk_sizes) {
   let concat = list_concat_multiple(atoms);
   let copy = list_copy(concat);
   list_shuffle(copy);
-  let settings_choices = list_adder((la) =>
+  let result = list_adder((la) =>
     each(chunk_sizes, (chunk_size) =>
       each([true, false], (forwards) => {
         let scrambled = list_copy(copy);
@@ -23,5 +23,5 @@ export function app_language_quiz_settings(atoms, chunk_sizes) {
       }),
     ),
   );
-  return settings_choices;
+  return result;
 }
