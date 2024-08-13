@@ -225,6 +225,7 @@ export async function app_language_refresh_quiz(context) {
           html_style_wrong(button);
           if (no_mistakes) {
             let copy = object_copy_shallow(settings);
+            copy.mistake = true;
             list_add(settings_choices, copy);
             storage_local_set(
               context.app_fn,
