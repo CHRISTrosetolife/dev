@@ -1,3 +1,4 @@
+import { list_map_async } from "./list_map_async.mjs";
 import { list_last_nested } from "./list_last_nested.mjs";
 import { list_first_nested } from "./list_first_nested.mjs";
 import { app_language_group_upload } from "./app_language_group_upload.mjs";
@@ -58,7 +59,7 @@ export async function app_ceb_upload() {
         if (audio_upload_run) {
           await each_async(list_chunk(group, 20), async (chunk) => {
             let mapped = list_map(chunk, async (atom) => {
-              await each_async(atom, async (pair) => {
+              await list_map_async(atom, async (pair) => {
                 let b = list_first(pair);
                 return await audio_upload(profile.from, b);
               });
