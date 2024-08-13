@@ -39,9 +39,9 @@ export async function ceb_bible_words_2(args) {
         });
       });
       each_range(columns_full, (column) => {
-        each_range(rows_missing, (row) => {
+        each_range(rows_missing, (row_missing) => {
           la({
-            row,
+            row: row_missing + rows_full,
             column,
             href: list_get(book_hrefs, index),
           });
