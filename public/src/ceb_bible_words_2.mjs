@@ -16,7 +16,7 @@ export async function ceb_bible_words_2(args) {
     return list_adder((la) => {
       each_range(columns, (column) => {
         each_range(full_count_rows, (row) => {
-          let bh = list_get(row * column + column);
+          let bh = list_get(book_hrefs, row * column + column);
           la(bh);
         });
       });
