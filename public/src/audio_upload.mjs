@@ -45,4 +45,7 @@ export async function audio_upload(language, text) {
     },
   );
   let created = list_any(results, (r) => object_property_get(r, "created"));
+  return {
+    created,
+  };
 }
