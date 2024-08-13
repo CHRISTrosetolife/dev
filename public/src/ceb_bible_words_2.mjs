@@ -1,3 +1,4 @@
+import { list_get } from "./list_get.mjs";
 import { each_range } from "./each_range.mjs";
 import { each_index } from "./each_index.mjs";
 import { list_adder } from "./list_adder.mjs";
@@ -23,7 +24,11 @@ export async function ceb_bible_words_2(args) {
       let index = 0;
       each_range(columns, (column) => {
         each_range(rows_full, (row) => {
-          la({});
+          la({
+            row,
+            column,
+            href: list_get(book_hrefs, index),
+          });
         });
       });
       each_range(columns_full_count, (column) => {
