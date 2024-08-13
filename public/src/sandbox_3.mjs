@@ -1,5 +1,5 @@
+import { each } from "./each.mjs";
 import { list_unique } from "./list_unique.mjs";
-import { each_index_async } from "./each_index_async.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { list_take } from "./list_take.mjs";
 import { promise_all } from "./promise_all.mjs";
@@ -16,7 +16,8 @@ export async function sandbox_3() {
   let unawaited = await promise_all(mapped);
   let m2 = list_map_property(unawaited, "word");
   let us = list_unique(m2);
-  await each_index_async(us, async (u, i) => {
-    log(i + 1 + ". " + u);
+  each(list, (item) => {});
+  await eac(us, async (u, i) => {
+    log(u);
   });
 }
