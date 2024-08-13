@@ -16,7 +16,7 @@ export async function sandbox_3() {
   let words = list_map_property(taken, "word");
   let scored = await ceb_bible_words_score();
   each(words, (word) => {
-    list_find_property(scored, "word", word);
+    let match = list_find_property(scored, "word", word);
   });
   let mapped = list_map(words, ceb_definition);
   let unawaited = await promise_all(mapped);
