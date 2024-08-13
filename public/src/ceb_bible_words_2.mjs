@@ -54,7 +54,7 @@ export async function ceb_bible_words_2(args) {
             row,
             column,
           });
-          la(object_property_get(object, property_name));
+          la(object_property_get(m, "href"));
         });
       });
     });
