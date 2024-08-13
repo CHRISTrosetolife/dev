@@ -74,7 +74,7 @@ export async function app_ceb_upload() {
             });
             let createds = await promise_all(mapped);
             if (list_any_created(createds)) {
-              log("chunk finished");
+              log("here chunk finished");
             }
           });
         }
