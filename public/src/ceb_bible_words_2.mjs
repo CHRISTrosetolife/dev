@@ -7,15 +7,12 @@ import { each } from "./each.mjs";
 import { bible_ceb_2_book } from "./bible_ceb_2_book.mjs";
 import { each_index_only_async } from "./each_index_only_async.mjs";
 import { bible_ceb_2_books_hrefs } from "./bible_ceb_2_books_hrefs.mjs";
-import { list_add } from "./list_add.mjs";
+import { list_size } from "./list_size.mjs";
 export async function ceb_bible_words_2(args) {
   let book_hrefs = await bible_ceb_2_books_hrefs();
   if (args.new) {
     let columns = 7;
-    let missing_count = 4;
-    each_range(missing_count, (i) => {
-      list_add(book_hrefs, i);
-    });
+    let book_hrefs_size = list_size(book_hrefs);
     return list_adder((la) => {
       each_range(columns, (column) => {
         each_index(book_hrefs, (bh, index) => {
