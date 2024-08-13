@@ -4,7 +4,7 @@ import { each } from "./each.mjs";
 import { bible_ceb_2_book } from "./bible_ceb_2_book.mjs";
 import { each_index_only_async } from "./each_index_only_async.mjs";
 import { bible_ceb_2_books_hrefs } from "./bible_ceb_2_books_hrefs.mjs";
-export async function ceb_bible_words_2() {
+export async function ceb_bible_words_2(args) {
   let book_hrefs = await bible_ceb_2_books_hrefs();
   if (args.new) {
     book_hrefs = list_take_bible_books_new(book_hrefs);
