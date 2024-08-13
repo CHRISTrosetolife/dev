@@ -19,11 +19,11 @@ export async function ceb_bible_words_4() {
       );
       await each_index_only_async(hrefs_chapters, async (chapter_index) => {
         let verses = await bible_ceb_4_chapter(book_index, chapter_index);
-        each(verses, (v) =>
+        each(verses, (v) => {
           each(v.tokens, (t) => {
             la(t);
-          }),
-        );
+          });
+        });
       });
     });
   });
