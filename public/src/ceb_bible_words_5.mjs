@@ -9,6 +9,7 @@ export async function ceb_bible_words_5() {
   let words = await list_adder_unique_async(async (la) => {
     await each_async(await bible_books("engbsb"), async (book_name) => {
       let chapters = await bible_chapters("engbsb", book_name);
+      log({});
       await each_async(chapters, async (chapter_name) => {
         log({
           chapter_name,
