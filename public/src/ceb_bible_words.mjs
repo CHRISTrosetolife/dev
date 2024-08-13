@@ -1,3 +1,4 @@
+import { function_import } from "./function_import.mjs";
 import { function_cache } from "./function_cache.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { list_adder_multiple_async } from "./list_adder_multiple_async.mjs";
@@ -12,6 +13,7 @@ export async function ceb_bible_words(args) {
   );
   let all = await list_adder_multiple_async(async (la) => {
     await each_async(fn_names, async (fn_name) => {
+      let fn = await function_import();
       let words = await function_cache(fn_name, [args]);
       la(words);
     });
