@@ -55,18 +55,18 @@ export async function app_ceb_upload() {
             }
           });
         });
-        await each_async(list_chunk(group, 20), async (chunk) => {
-          let mapped = list_map(chunk, async (atom) => {
-            await each_async(atom, async (pair) => {
-              let b = list_first(pair);
-              if (audio_upload_run) {
+        if (audio_upload_run) {
+          await each_async(list_chunk(group, 20), async (chunk) => {
+            let mapped = list_map(chunk, async (atom) => {
+              await each_async(atom, async (pair) => {
+                let b = list_first(pair);
                 await audio_upload(profile.from, b);
-              }
+              });
             });
+            await promise_all(mapped);
+            log("chunk finished");
           });
-          await promise_all(mapped);
-          log("chunk finished");
-        });
+        }
         if (audio_only) {
           return;
         }
