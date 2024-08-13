@@ -1,3 +1,4 @@
+import { exit } from "./exit.mjs";
 import { log } from "./log.mjs";
 import { bible_books_index_old_is } from "./bible_books_index_old_is.mjs";
 import { integer_parse } from "./integer_parse.mjs";
@@ -21,7 +22,10 @@ export async function ceb_bible_words_3(args) {
       }
       let verses = await bible_ceb_3_chapter(index);
       each(verses, (v) => {
-        log({});
+        log({
+          v,
+        });
+        exit();
         each(v.tokens, (t) => {
           la(t);
         });
