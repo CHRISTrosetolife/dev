@@ -43,15 +43,15 @@ export async function ceb_bible_words_2(args) {
           index++;
         });
       });
-      each_range(columns, (column) => {
-        each_range(rows, (row) => {
-          let m = list_find_properties(indexed, {
-            row,
-            column,
-          });
-          log({
-            m,
-          });
+    });
+    each_range(columns, (column) => {
+      each_range(rows, (row) => {
+        let m = list_find_properties(indexed, {
+          row,
+          column,
+        });
+        log({
+          m,
         });
       });
     });
