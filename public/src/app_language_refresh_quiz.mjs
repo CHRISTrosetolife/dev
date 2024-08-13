@@ -1,3 +1,4 @@
+import { storage_local_set } from "./storage_local_set.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
 import { html_style_visible } from "./html_style_visible.mjs";
 import { html_button_width_full_text_click_next } from "./html_button_width_full_text_click_next.mjs";
@@ -72,7 +73,7 @@ import { list_without } from "./list_without.mjs";
 import { number_is } from "./number_is.mjs";
 import { assert } from "./assert.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
-export async function app_language_refresh_quiz(context, settings) {
+export async function app_language_refresh_quiz(context) {
   let {
     root,
     app_fn,
@@ -86,6 +87,7 @@ export async function app_language_refresh_quiz(context, settings) {
     context.app_fn,
     "quiz_settings_choices",
   );
+  let settings = storage_local_get(context.app_fn, "quiz_settings");
   html_clear_scroll_top_centered(root);
   let no_mistakes = true;
   let { pair, chunk_size, forwards } = settings;
@@ -222,6 +224,11 @@ export async function app_language_refresh_quiz(context, settings) {
           html_style_wrong(button);
           if (no_mistakes) {
             list_add(settings_choices, object_copy_shallow(settings));
+            storage_local_set(
+              context.app_fn,
+              "quiz_settings_choices",
+              settings_choices,
+            );
             no_mistakes = false;
           }
         }
@@ -245,7 +252,8 @@ export async function app_language_refresh_quiz(context, settings) {
       await app_language_refresh_node(context);
     } else {
       let after = list_after(settings_choices, settings);
-      await app_language_refresh_quiz(context, after);
+      storage_local_set(context.app_fn, "quiz_settings", after);
+      await app_language_refresh_quiz(context);
     }
   }
   function update_partials() {
