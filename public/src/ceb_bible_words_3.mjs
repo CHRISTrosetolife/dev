@@ -18,7 +18,6 @@ export async function ceb_bible_words_3(args) {
           return;
         }
       }
-      return;
       let verses = await bible_ceb_3_chapter(index);
       each(verses, (v) =>
         each(v.tokens, (t) => {
