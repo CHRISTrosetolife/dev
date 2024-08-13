@@ -225,7 +225,7 @@ export async function app_language_refresh_quiz(context, settings) {
       html_style_click_width_min(button);
     });
   });
-  next_button = html_button_width_full_text_click_next(root);
+  next_button = html_button_width_full_text_click_next(root, next);
   update_partials();
   html_spacer_vertical_2(root);
   html_button_width_full_text_click_up(root, async () => {
