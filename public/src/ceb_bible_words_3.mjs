@@ -1,3 +1,4 @@
+import { exit } from "./exit.mjs";
 import { log } from "./log.mjs";
 import { bible_books_old_count } from "./bible_books_old_count.mjs";
 import { integer_parse } from "./integer_parse.mjs";
@@ -25,7 +26,10 @@ export async function ceb_bible_words_3(args) {
           la(t);
         }),
       );
-      log({});
+      log({
+        verses,
+      });
+      exit();
     });
   });
   return words;
