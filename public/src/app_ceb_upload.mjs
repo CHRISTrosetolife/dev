@@ -1,3 +1,4 @@
+import { list_any_created } from "./list_any_created.mjs";
 import { list_map_async } from "./list_map_async.mjs";
 import { list_last_nested } from "./list_last_nested.mjs";
 import { list_first_nested } from "./list_first_nested.mjs";
@@ -63,7 +64,7 @@ export async function app_ceb_upload() {
                 let b = list_first(pair);
                 return await audio_upload(profile.from, b);
               });
-              return createds;
+              return list_any_created(createds);
             });
             await promise_all(mapped);
             log("chunk finished");
