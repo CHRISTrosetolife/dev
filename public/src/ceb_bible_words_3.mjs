@@ -10,9 +10,9 @@ export async function ceb_bible_words_3(args) {
     let hrefs = await bible_ceb_3_hrefs();
     await each_index_async(hrefs, async (href, index) => {
       if (args.new) {
-        let newLocal = string_substring(href, 1, 3);
-        let parsed = integer_parse(newLocal);
-        if (newLocal) {
+        let unparsed = string_substring(href, 1, 3);
+        let parsed = integer_parse(unparsed);
+        if (unparsed) {
         }
       }
       let verses = await bible_ceb_3_chapter(index);
