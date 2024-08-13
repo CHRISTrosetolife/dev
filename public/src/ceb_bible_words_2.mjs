@@ -46,12 +46,13 @@ export async function ceb_bible_words_2(args) {
       });
       each_range(columns, (column) => {
         each_range(rows, (row) => {
+          let target;
           let matcher = {
             row,
             column,
           };
           let matcher_properties = object_properties(matcher);
-          list_all(matcher_properties, () => {});
+          list_all(matcher_properties, (p) => {});
           list_find(indexed, (i) => r.row === row && i.column === column);
         });
       });
