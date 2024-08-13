@@ -1,3 +1,4 @@
+import { integer_parse } from "./integer_parse.mjs";
 import { each_index_async } from "./each_index_async.mjs";
 import { each } from "./each.mjs";
 import { list_adder_unique_async } from "./list_adder_unique_async.mjs";
@@ -10,6 +11,7 @@ export async function ceb_bible_words_3(args) {
     await each_index_async(hrefs, async (href, index) => {
       if (args.new) {
         let newLocal = string_substring(href, 1, 3);
+        let parsed = integer_parse(newLocal);
         if (newLocal) {
         }
       }
