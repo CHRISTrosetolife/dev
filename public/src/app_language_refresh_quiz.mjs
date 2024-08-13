@@ -83,6 +83,7 @@ export async function app_language_refresh_quiz(context) {
     definitions,
     inverted,
   } = context;
+  storage_local_set(context.app_fn, "screen", "quiz");
   let settings_choices = storage_local_get(
     context.app_fn,
     "quiz_settings_choices",
