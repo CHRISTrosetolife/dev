@@ -1,3 +1,4 @@
+import { ceb_bible_words_definitions_map_choices } from "./ceb_bible_words_definitions_map_choices.mjs";
 import { ceb_bible_words_definitions_map_cache } from "./ceb_bible_words_definitions_map_cache.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { list_adder } from "./list_adder.mjs";
@@ -16,8 +17,7 @@ export async function sandbox_3() {
   let scored = await ceb_bible_words_score();
   let result = list_adder((la) => {
     each(scored, (s) => {
-      let { word } = s;
-      let choices = [word];
+      let choices = ceb_bible_words_definitions_map_choices(map, d);
       if (list_includes(words, s.word)) {
         la(word);
       }
