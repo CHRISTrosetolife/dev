@@ -224,7 +224,8 @@ export async function app_language_refresh_quiz(context) {
         } else {
           html_style_wrong(button);
           if (no_mistakes) {
-            list_add(settings_choices, object_copy_shallow(settings));
+            let copy = object_copy_shallow(settings);
+            list_add(settings_choices, copy);
             storage_local_set(
               context.app_fn,
               "quiz_settings_choices",
