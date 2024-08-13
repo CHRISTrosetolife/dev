@@ -1,4 +1,3 @@
-import { storage_local_get } from "./storage_local_get.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { app_language_refresh_quiz } from "./app_language_refresh_quiz.mjs";
 import { app_language_atoms_slice } from "./app_language_atoms_slice.mjs";
@@ -12,7 +11,7 @@ export async function app_language_quizzes_start(context, chunk_sizes) {
   storage_local_set(
     context.app_fn,
     "quiz_settings",
-    list_first(storage_local_get(context.app_fn, "settings_choices")),
+    list_first(settings_choices),
   );
   await app_language_refresh_quiz(context);
 }
