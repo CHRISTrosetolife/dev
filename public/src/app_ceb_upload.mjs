@@ -63,6 +63,7 @@ export async function app_ceb_upload() {
                 let b = list_first(pair);
                 return await audio_upload(profile.from, b);
               });
+              return createds;
             });
             await promise_all(mapped);
             log("chunk finished");
