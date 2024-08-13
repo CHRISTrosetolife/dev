@@ -52,7 +52,7 @@ export async function ceb_bible_words_2(args) {
             column,
           };
           let matches = list_filter_properties(indexed, matcher);
-          list_single(matches);
+          let match = list_single(matches);
           list_find(indexed, (i) => r.row === row && i.column === column);
         });
       });
