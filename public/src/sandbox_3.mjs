@@ -14,9 +14,7 @@ export async function sandbox_3() {
   each(scored, (s) => {
     let { word } = s;
     if (list_includes(words, s.word)) {
-      log({
-        word,
-      });
+      log(word);
     }
   });
 }
