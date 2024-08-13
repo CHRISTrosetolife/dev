@@ -13,7 +13,7 @@ import { list_size } from "./list_size.mjs";
 export async function sandbox_3() {
   let count = 500;
   let wcs = await ceb_bible_words_count_cache_new();
-  let taken = list_take(wcs, count);
+  let taken = list_take(wcs, count * 2);
   let words = list_map_property(taken, "word");
   let map = await ceb_bible_words_definitions_map_cache();
   let scored = await ceb_bible_words_score();
