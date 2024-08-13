@@ -1,6 +1,6 @@
-import { ceb_bible_words_1 } from "./ceb_bible_words_1.mjs";
+import { ceb_bible_words_3 } from "./ceb_bible_words_3.mjs";
 export async function sandbox_3() {
-  return await ceb_bible_words_1({
+  return await ceb_bible_words_3({
     new: true,
   });
 }
