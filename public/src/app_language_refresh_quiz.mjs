@@ -1,3 +1,4 @@
+import { equal_json } from "./equal_json.mjs";
 import { date_string_iso } from "./date_string_iso.mjs";
 import { list_after_json } from "./list_after_json.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
@@ -252,7 +253,7 @@ export async function app_language_refresh_quiz(context) {
     await app_language_refresh_node(context);
   });
   async function next() {
-    if (equal(settings, list_last(settings_choices))) {
+    if (equal_json(settings, list_last(settings_choices))) {
       await app_language_refresh_node(context);
     } else {
       let after = list_after_json(settings_choices, settings);
