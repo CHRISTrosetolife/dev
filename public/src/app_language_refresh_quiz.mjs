@@ -164,6 +164,7 @@ export async function app_language_refresh_quiz(context, settings) {
   list_add_multiple(choices, other_choices);
   list_shuffle(choices);
   choices = list_map(choices, string_case_lower);
+  let next_button;
   let buttons = list_adder((la) => {
     each(choices, (choice) => {
       let button = html_button_text_click(quiz_container, choice, () => {
