@@ -1,3 +1,3 @@
 export function bible_books_count() {
-  return 27;
+  return 66;
 }
