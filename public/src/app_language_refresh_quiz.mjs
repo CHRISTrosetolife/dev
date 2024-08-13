@@ -1,3 +1,4 @@
+import { list_after_by } from "./list_after_by.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
 import { html_style_visible } from "./html_style_visible.mjs";
@@ -17,7 +18,6 @@ import { html_style_click_width_min } from "./html_style_click_width_min.mjs";
 import { object_copy_shallow } from "./object_copy_shallow.mjs";
 import { list_add } from "./list_add.mjs";
 import { html_style_wrong } from "./html_style_wrong.mjs";
-import { list_after } from "./list_after.mjs";
 import { list_last } from "./list_last.mjs";
 import { app_language_audio } from "./app_language_audio.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
@@ -252,7 +252,7 @@ export async function app_language_refresh_quiz(context) {
     if (equal(settings, list_last(settings_choices))) {
       await app_language_refresh_node(context);
     } else {
-      let after = list_after(settings_choices, settings);
+      let after = list_after_by(settings_choices, settings);
       storage_local_set(context.app_fn, "quiz_settings", after);
       await app_language_refresh_quiz(context);
     }
