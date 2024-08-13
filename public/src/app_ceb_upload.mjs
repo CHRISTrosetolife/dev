@@ -67,7 +67,9 @@ export async function app_ceb_upload() {
               return list_any_created(createds);
             });
             let createds = await promise_all(mapped);
-            log("chunk finished");
+            if (list_any_created(createds)) {
+              log("chunk finished");
+            }
           });
         }
         if (audio_only) {
