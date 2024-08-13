@@ -1,3 +1,4 @@
+import { list_find_property } from "./list_find_property.mjs";
 import { ceb_bible_words_score } from "./ceb_bible_words_score.mjs";
 import { each } from "./each.mjs";
 import { list_unique } from "./list_unique.mjs";
@@ -14,7 +15,9 @@ export async function sandbox_3() {
   let taken = list_take(wcs, count);
   let words = list_map_property(taken, "word");
   let scored = await ceb_bible_words_score();
-  each(words, (word) => {});
+  each(words, (word) => {
+    list_find_property(scored, "word", word);
+  });
   let mapped = list_map(words, ceb_definition);
   let unawaited = await promise_all(mapped);
   let m2 = list_map_property(unawaited, "word");
