@@ -1,7 +1,6 @@
 import { fn_name } from "./fn_name.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_css_flags } from "./html_css_flags.mjs";
-import { app_language_refresh_node } from "./app_language_refresh_node.mjs";
 import { app_language_group_index_changed } from "./app_language_group_index_changed.mjs";
 import { app_language_position_initial } from "./app_language_position_initial.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
@@ -39,5 +38,4 @@ export async function app_language(
   let screen = storage_local_initialize(context.app_fn, "node");
   let fn_name = "app_language_refresh_" + screen;
   await function_run(fn_name, [context]);
-  await app_language_refresh_node(context);
 }
