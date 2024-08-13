@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { json_to } from "./json_to.mjs";
 import { list_without_by } from "./list_without_by.mjs";
 import { equal_json } from "./equal_json.mjs";
@@ -98,6 +99,7 @@ export async function app_language_refresh_quiz(context) {
   assert(number_is, [chunk_size]);
   let concat = app_language_atoms_slice_concat(app_fn, group);
   let pairs_other = list_without_by(concat, pair, json_to);
+  log({});
   let [word_f, word_t] = pair;
   if (0) {
     [word_f, word_t] = ["gikan", "from"];
