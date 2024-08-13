@@ -4,7 +4,7 @@ import { list_all } from "./list_all.mjs";
 import { object_properties } from "./object_properties.mjs";
 export function object_properties_match(matcher, target) {
   let matcher_properties = object_properties(matcher);
-  list_all(
+  return list_all(
     matcher_properties,
     (p) =>
       object_property_exists(target, p) &&
