@@ -10,7 +10,7 @@ export async function sandbox_3() {
   let words = await ceb_bible_words_count_cache_new();
   let count = 500;
   let taken = list_take(words, count);
-  let mapped = list_map(words, ceb_definition);
+  let mapped = list_map(taken, ceb_definition);
   let unawaited = await promise_all(mapped);
   await each_range_async(count, async (i) => {
     let w = list_get(words, i);
