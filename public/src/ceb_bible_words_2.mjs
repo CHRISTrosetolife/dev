@@ -13,7 +13,8 @@ export async function ceb_bible_words_2(args) {
   if (args.new) {
     let columns = 7;
     let book_hrefs_size = list_size(book_hrefs);
-    let missing_count = columns - (book_hrefs_size % columns);
+    let extra = book_hrefs_size % columns;
+    let missing_count = columns - extra;
     return list_adder((la) => {
       each_range(columns, (column) => {
         each_index(book_hrefs, (bh, index) => {
