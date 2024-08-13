@@ -15,7 +15,7 @@ export async function ceb_bible_words_3(args) {
       if (args.new) {
         let unparsed = string_substring(href, 1, 3);
         let parsed = integer_parse(unparsed);
-        index = parsed - 1;
+        let x = parsed - 1;
         let old_is = bible_books_index_old_is(parsed);
         if (old_is) {
           return;
