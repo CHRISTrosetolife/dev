@@ -1,3 +1,4 @@
+import { json_to } from "./json_to.mjs";
 import { list_without_by } from "./list_without_by.mjs";
 import { equal_json } from "./equal_json.mjs";
 import { date_string_iso } from "./date_string_iso.mjs";
@@ -96,7 +97,7 @@ export async function app_language_refresh_quiz(context) {
   let { pair, chunk_size, forwards } = settings;
   assert(number_is, [chunk_size]);
   let concat = app_language_atoms_slice_concat(app_fn, group);
-  let pairs_other = list_without_by(concat, pair);
+  let pairs_other = list_without_by(concat, pair, json_to);
   let [word_f, word_t] = pair;
   if (0) {
     [word_f, word_t] = ["gikan", "from"];
@@ -104,10 +105,12 @@ export async function app_language_refresh_quiz(context) {
   let alternatives_t = list_without_by(
     object_property_get(definitions, word_f),
     word_t,
+    json_to,
   );
   let alternatives_f = list_without_by(
     object_property_get(inverted, word_t),
     word_f,
+    json_to,
   );
   pairs_other = list_filter(pairs_other, (po) => {
     let [f, t] = po;
