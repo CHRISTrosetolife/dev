@@ -1,3 +1,4 @@
+import { list_find } from "./list_find.mjs";
 import { list_get } from "./list_get.mjs";
 import { each_range } from "./each_range.mjs";
 import { list_adder } from "./list_adder.mjs";
@@ -19,7 +20,7 @@ export async function ceb_bible_words_2(args) {
     let columns_full_count = columns_full * rows;
     let rows_full = book_hrefs_size - columns_full_count;
     let rows_missing = rows - rows_full;
-    return list_adder((la) => {
+    let indexed = list_adder((la) => {
       let index = 0;
       each_range(columns, (column) => {
         each_range(rows_full, (row) => {
@@ -42,7 +43,9 @@ export async function ceb_bible_words_2(args) {
         });
       });
       each_range(columns, (column) => {
-        each_range(rows, (row) => {});
+        each_range(rows, (row) => {
+          list_find();
+        });
       });
     });
     book_hrefs = list_take_bible_books_new(book_hrefs);
