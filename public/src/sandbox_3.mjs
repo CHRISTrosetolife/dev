@@ -12,11 +12,12 @@ export async function sandbox_3() {
   let taken = list_take(wcs, count);
   let words = list_map_property(taken, "word");
   let scored = await ceb_bible_words_score();
-  list_adder((la) => {});
-  each(scored, (s) => {
-    let { word } = s;
-    if (list_includes(words, s.word)) {
-      log(word);
-    }
+  list_adder((la) => {
+    each(scored, (s) => {
+      let { word } = s;
+      if (list_includes(words, s.word)) {
+        log(word);
+      }
+    });
   });
 }
