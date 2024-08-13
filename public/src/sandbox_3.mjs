@@ -1,3 +1,4 @@
+import { promise_all } from "./promise_all.mjs";
 import { list_map } from "./list_map.mjs";
 import { each_range_async } from "./each_range_async.mjs";
 import { ceb_definition } from "./ceb_definition.mjs";
@@ -8,7 +9,7 @@ export async function sandbox_3() {
   let words = await ceb_bible_words_count_cache_new();
   let count = 500;
   let mapped = list_map(words, ceb_definition);
-  promises_all();
+  await promise_all();
   await each_range_async(count, async (i) => {
     let w = list_get(words, i);
     let { word } = w;
