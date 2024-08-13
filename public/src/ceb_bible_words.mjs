@@ -12,7 +12,7 @@ export async function ceb_bible_words(args) {
   );
   let all = await list_adder_multiple_async(async (la) => {
     await each_async(fn_names, async (fn_name) => {
-      let words = await function_run(fn_name, []);
+      let words = await function_run(fn_name, [args]);
       la(words);
     });
   });
