@@ -1,5 +1,5 @@
-import { list_filter } from "./list_filter.mjs";
-import { equal_not } from "./equal_not.mjs";
+import { list_without_by } from "./list_without_by.mjs";
+import { identity } from "./identity.mjs";
 export function list_without(list, item) {
-  return list_filter(list, (a) => equal_not(a, item));
+  return list_without_by(list, item, identity);
 }
