@@ -1,3 +1,4 @@
+import { list_without_by } from "./list_without_by.mjs";
 import { equal_json } from "./equal_json.mjs";
 import { date_string_iso } from "./date_string_iso.mjs";
 import { list_after_json } from "./list_after_json.mjs";
@@ -71,7 +72,6 @@ import { list_includes } from "./list_includes.mjs";
 import { or } from "./or.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { list_without } from "./list_without.mjs";
 import { number_is } from "./number_is.mjs";
 import { assert } from "./assert.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
@@ -96,16 +96,16 @@ export async function app_language_refresh_quiz(context) {
   let { pair, chunk_size, forwards } = settings;
   assert(number_is, [chunk_size]);
   let concat = app_language_atoms_slice_concat(app_fn, group);
-  let pairs_other = list_without(concat, pair);
+  let pairs_other = list_without_by(concat, pair);
   let [word_f, word_t] = pair;
   if (0) {
     [word_f, word_t] = ["gikan", "from"];
   }
-  let alternatives_t = list_without(
+  let alternatives_t = list_without_by(
     object_property_get(definitions, word_f),
     word_t,
   );
-  let alternatives_f = list_without(
+  let alternatives_f = list_without_by(
     object_property_get(inverted, word_t),
     word_f,
   );
