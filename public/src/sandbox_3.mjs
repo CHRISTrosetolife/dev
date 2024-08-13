@@ -1,3 +1,4 @@
+import { ceb_bible_words_score } from "./ceb_bible_words_score.mjs";
 import { each } from "./each.mjs";
 import { list_unique } from "./list_unique.mjs";
 import { list_map_property } from "./list_map_property.mjs";
@@ -12,6 +13,7 @@ export async function sandbox_3() {
   let wcs = await ceb_bible_words_count_cache_new();
   let taken = list_take(wcs, count);
   let words = list_map_property(taken, "word");
+  return await ceb_bible_words_score();
   let mapped = list_map(words, ceb_definition);
   let unawaited = await promise_all(mapped);
   let m2 = list_map_property(unawaited, "word");
