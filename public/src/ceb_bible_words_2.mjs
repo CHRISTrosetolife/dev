@@ -12,9 +12,9 @@ export async function ceb_bible_words_2(args) {
   let book_hrefs = await bible_ceb_2_books_hrefs();
   if (args.new) {
     let columns = 7;
+    let rows = 10;
     let book_hrefs_size = list_size(book_hrefs);
-    let extra = book_hrefs_size % columns;
-    let missing_count = columns - extra;
+    let missing_count = columns - (book_hrefs_size % columns);
     return list_adder((la) => {
       each_range(columns, (column) => {
         each_index(book_hrefs, (bh, index) => {
