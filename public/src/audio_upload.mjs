@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { list_map_index_async } from "./list_map_index_async.mjs";
 import { audio_upload_file } from "./audio_upload_file.mjs";
 import { string_is } from "./string_is.mjs";
@@ -8,6 +9,7 @@ import { gcloud_tts } from "./gcloud_tts.mjs";
 import { log } from "./log.mjs";
 import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { list_any } from "./list_any.mjs";
 export async function audio_upload(language, text) {
   assert(string_is, [text]);
   let { language_code, voices } = await audio_language(language);
@@ -42,4 +44,5 @@ export async function audio_upload(language, text) {
       return result;
     },
   );
+  list_any(results, (r) => object_property_get(object, property_name));
 }
