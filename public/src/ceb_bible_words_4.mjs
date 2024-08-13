@@ -1,3 +1,5 @@
+import { log } from "./log.mjs";
+import { each_index_async } from "./each_index_async.mjs";
 import { bible_books_index_old_is } from "./bible_books_index_old_is.mjs";
 import { each } from "./each.mjs";
 import { list_adder_unique_async } from "./list_adder_unique_async.mjs";
@@ -8,13 +10,14 @@ import { bible_ceb_4_hrefs_books } from "./bible_ceb_4_hrefs_books.mjs";
 export async function ceb_bible_words_4(args) {
   let words = await list_adder_unique_async(async (la) => {
     let book_hrefs = await bible_ceb_4_hrefs_books();
-    await each_index_only_async(book_hrefs, async (book_index) => {
+    await each_index_async(book_hrefs, async (book_href, book_index) => {
       if (args.new) {
         let old_is = bible_books_index_old_is(book_index);
         if (old_is) {
           return;
         }
       }
+      log({});
       let hrefs_chapters = await ceb_bible_4_chapters_hrefs(
         book_hrefs,
         book_index,
