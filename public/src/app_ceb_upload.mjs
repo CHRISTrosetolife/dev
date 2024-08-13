@@ -62,7 +62,8 @@ export async function app_ceb_upload() {
             let mapped = list_map(chunk, async (atom) => {
               let createds = await list_map_async(atom, async (pair) => {
                 let b = list_first(pair);
-                return await audio_upload(profile.from, b);
+                let r = await audio_upload(profile.from, b);
+                return r;
               });
               return list_any_created(createds);
             });
