@@ -16,9 +16,12 @@ export async function ceb_bible_words_3(args) {
         let unparsed = string_substring(href, 1, 3);
         let parsed = integer_parse(unparsed);
         if (parsed >= old_count) {
-          log({});
+          log({
+            href,
+          });
         }
       }
+      return;
       let verses = await bible_ceb_3_chapter(index);
       each(verses, (v) =>
         each(v.tokens, (t) => {
