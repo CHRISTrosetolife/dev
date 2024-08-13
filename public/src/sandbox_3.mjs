@@ -16,7 +16,7 @@ export async function sandbox_3() {
   let unawaited = await promise_all(mapped);
   let m2 = list_map_property(unawaited, "word");
   let us = list_unique(m2);
-  await each_index_async(m2, async (m, i) => {
-    log(i + 1 + ". " + m);
+  await each_index_async(us, async (u, i) => {
+    log(i + 1 + ". " + u);
   });
 }
