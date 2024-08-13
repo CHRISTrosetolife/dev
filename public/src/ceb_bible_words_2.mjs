@@ -1,3 +1,4 @@
+import { each_range } from "./each_range.mjs";
 import { each_index } from "./each_index.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { list_take_bible_books_new } from "./list_take_bible_books_new.mjs";
@@ -10,6 +11,7 @@ export async function ceb_bible_words_2(args) {
   let book_hrefs = await bible_ceb_2_books_hrefs();
   if (args.new) {
     let columns = 7;
+    each_range(count, (item) => {});
     each_index(book_hrefs, (bh, index) => {
       if (index % columns === column) {
       }
