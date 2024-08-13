@@ -27,11 +27,11 @@ export async function ceb_bible_words_4(args) {
           log({
             v,
           });
-          exit();
           each(v.tokens, (t) => {
             la(t);
           });
         });
+        exit();
       });
     });
   });
