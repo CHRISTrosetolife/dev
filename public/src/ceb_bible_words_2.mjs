@@ -1,3 +1,4 @@
+import { list_all } from "./list_all.mjs";
 import { object_properties } from "./object_properties.mjs";
 import { list_find } from "./list_find.mjs";
 import { list_get } from "./list_get.mjs";
@@ -50,6 +51,7 @@ export async function ceb_bible_words_2(args) {
             column,
           };
           let matcher_properties = object_properties(matcher);
+          list_all();
           list_find(indexed, (i) => r.row === row && i.column === column);
         });
       });
