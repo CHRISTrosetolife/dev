@@ -23,8 +23,8 @@ export async function ceb_bible_words_2(args) {
     let rows_missing = rows - rows_full;
     let indexed = list_adder((la) => {
       let index = 0;
-      each_range(columns, (column) => {
-        each_range(rows_full, (row) => {
+      each_range(rows_full, (row) => {
+        each_range(columns, (column) => {
           la({
             row,
             column,
@@ -33,8 +33,8 @@ export async function ceb_bible_words_2(args) {
           index++;
         });
       });
-      each_range(columns_full, (column) => {
-        each_range(rows_missing, (row_missing) => {
+      each_range(rows_missing, (row_missing) => {
+        each_range(columns_full, (column) => {
           la({
             row: row_missing + rows_full,
             column,
