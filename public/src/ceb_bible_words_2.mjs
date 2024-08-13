@@ -21,7 +21,12 @@ export async function ceb_bible_words_2(args) {
     let rows_full = book_hrefs_size - columns_full_count;
     let rows_missing = rows - rows_full;
     return list_adder((la) => {
-      log({});
+      log({
+        columns,
+        rows_full,
+        columns_full_count,
+        rows_missing,
+      });
       let index = 0;
       each_range(columns, (column) => {
         each_range(rows_full, (row) => {
