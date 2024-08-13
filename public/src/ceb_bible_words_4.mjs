@@ -12,10 +12,10 @@ export async function ceb_bible_words_4(args) {
     let book_hrefs = await bible_ceb_4_hrefs_books();
     await each_index_only_async(book_hrefs, async (book_index) => {
       if (args.new) {
-      }
-      let old_is = bible_books_index_old_is(book_index);
-      if (old_is) {
-        return;
+        let old_is = bible_books_index_old_is(book_index);
+        if (old_is) {
+          return;
+        }
       }
       let hrefs_chapters = await ceb_bible_4_chapters_hrefs(
         book_hrefs,
