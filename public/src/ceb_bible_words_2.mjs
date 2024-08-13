@@ -22,6 +22,7 @@ export async function ceb_bible_words_2(args) {
     return list_adder((la) => {
       each_range(columns, (column) => {
         each_range(rows_full, (row) => {});
+        each_range(rows_missing, (row) => {});
         each_index(book_hrefs, (bh, index) => {
           if (index % columns === column) {
             la(bh);
