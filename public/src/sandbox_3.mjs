@@ -18,6 +18,7 @@ export async function sandbox_3() {
   let scored = await ceb_bible_words_score();
   let result = list_adder((la) => {
     each(scored, (s) => {
+      let { word } = d;
       let choices = ceb_bible_words_definitions_map_choices(map, d);
       if (list_any(choices, (c) => list_includes(words, c))) {
         la(word);
