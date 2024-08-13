@@ -9,13 +9,17 @@ import { list_map } from "./list_map.mjs";
 import { ceb_definition } from "./ceb_definition.mjs";
 import { log } from "./log.mjs";
 import { ceb_bible_words_count_cache_new } from "./ceb_bible_words_count_cache_new.mjs";
+import { list_includes } from "./list_includes.mjs";
 export async function sandbox_3() {
   let count = 1000;
   let wcs = await ceb_bible_words_count_cache_new();
   let taken = list_take(wcs, count);
   let words = list_map_property(taken, "word");
   let scored = await ceb_bible_words_score();
-  each(words, (word) => {
+  each(scored, (s) => {
+    if (list_includes(words, s.word)) {
+      log({});
+    }
     let match = list_find_property(scored, "word", word);
   });
   let mapped = list_map(words, ceb_definition);
