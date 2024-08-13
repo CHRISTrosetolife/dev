@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { list_find_properties } from "./list_find_properties.mjs";
 import { list_get } from "./list_get.mjs";
 import { each_range } from "./each_range.mjs";
@@ -43,15 +44,17 @@ export async function ceb_bible_words_2(args) {
         });
       });
     });
-    list_adder((la) => {});
-    each_range(columns, (column) => {
-      each_range(rows, (row) => {
-        if (column === columns - 1 && row >= rows_full) {
-          return;
-        }
-        let m = list_find_properties(indexed, {
-          row,
-          column,
+    list_adder((la) => {
+      each_range(columns, (column) => {
+        each_range(rows, (row) => {
+          if (column === columns - 1 && row >= rows_full) {
+            return;
+          }
+          let m = list_find_properties(indexed, {
+            row,
+            column,
+          });
+          la(object_property_get(object, property_name));
         });
       });
     });
