@@ -7,13 +7,12 @@ import { app_language_quiz_settings } from "./app_language_quiz_settings.mjs";
 export async function app_language_quizzes_start(context, chunk_sizes) {
   let { app_fn, group } = context;
   let atoms = app_language_atoms_slice(app_fn, group);
+  let settings_choices = app_language_quiz_settings(atoms, chunk_sizes);
+  storage_local_set(context.app_fn, "quiz_settings_choices", settings_choices);
   storage_local_set(
     context.app_fn,
-    "quiz_settings_choices",
-    app_language_quiz_settings(atoms, chunk_sizes),
-  );
-  await app_language_refresh_quiz(
-    context,
+    "quiz_settings",
     list_first(storage_local_get(context.app_fn, "settings_choices")),
   );
+  await app_language_refresh_quiz(context);
 }
