@@ -1,3 +1,4 @@
+import { list_join_newline } from "./list_join_newline.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { ceb_bible_words_score } from "./ceb_bible_words_score.mjs";
 import { each } from "./each.mjs";
@@ -19,4 +20,5 @@ export async function sandbox_3() {
       }
     });
   });
+  return list_join_newline(result);
 }
