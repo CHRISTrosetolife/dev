@@ -1,3 +1,4 @@
+import { equal_json } from "./equal_json.mjs";
 import { list_after_by } from "./list_after_by.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
@@ -252,7 +253,7 @@ export async function app_language_refresh_quiz(context) {
     if (equal(settings, list_last(settings_choices))) {
       await app_language_refresh_node(context);
     } else {
-      let after = list_after_by(settings_choices, settings);
+      let after = list_after_by(settings_choices, settings, equal_json);
       storage_local_set(context.app_fn, "quiz_settings", after);
       await app_language_refresh_quiz(context);
     }
