@@ -38,6 +38,6 @@ export async function app_language(
   );
   let screen = storage_local_initialize(context.app_fn, "node");
   let fn_name = "app_language_refresh_" + screen;
-  await function_run(fn_name);
+  await function_run(fn_name, [context]);
   await app_language_refresh_node(context);
 }
