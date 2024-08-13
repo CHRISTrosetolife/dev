@@ -1,3 +1,4 @@
+import { date_string_iso } from "./date_string_iso.mjs";
 import { list_after_json } from "./list_after_json.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
@@ -225,7 +226,7 @@ export async function app_language_refresh_quiz(context) {
           html_style_wrong(button);
           if (no_mistakes) {
             let copy = object_copy_shallow(settings);
-            copy.mistake = true;
+            copy.when = date_string_iso();
             list_add(settings_choices, copy);
             storage_local_set(
               context.app_fn,
