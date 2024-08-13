@@ -15,6 +15,7 @@ export async function ceb_bible_words_2(args) {
       each_range(columns, (column) => {
         each_index(book_hrefs, (bh, index) => {
           if (index % columns === column) {
+            la(bh);
           }
         });
       });
