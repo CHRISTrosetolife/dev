@@ -7,7 +7,7 @@ export async function app_language_quizzes_start(context, chunk_sizes) {
   let { app_fn, group } = context;
   let atoms = app_language_atoms_slice(app_fn, group);
   storage_local_;
-  storage_local_initialize(context.app_fn, "group_index", 0);
+  storage_local_initialize(context.app_fn, "settings_choices", 0);
   context.settings_choices = app_language_quiz_settings(atoms, chunk_sizes);
   await app_language_refresh_quiz(
     context,
