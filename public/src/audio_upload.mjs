@@ -15,13 +15,14 @@ export async function audio_upload(language, text) {
     let file_path = await audio_path(language, voice_index, text);
     let output_path = folder_gitignore_path(file_path);
     let { code, male } = voice;
-    let { created } = await gcloud_tts(
+    let result = await gcloud_tts(
       language_code,
       code,
       male ? "MALE" : "FEMALE",
       text,
       output_path,
     );
+    let { created } = result;
     if (created) {
       log(
         string_combine_multiple([
