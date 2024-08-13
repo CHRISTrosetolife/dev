@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { tautology } from "./tautology.mjs";
 import { retry } from "./retry.mjs";
 import { file_overwrite_binary } from "./file_overwrite_binary.mjs";
@@ -12,9 +11,6 @@ export async function gcloud_tts(
   text,
   output_path,
 ) {
-  log({
-    text,
-  });
   if (await file_exists(output_path)) {
     return {
       created: false,
