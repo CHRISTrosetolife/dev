@@ -8,7 +8,7 @@ import { ceb_definition } from "./ceb_definition.mjs";
 import { log } from "./log.mjs";
 import { ceb_bible_words_count_cache_new } from "./ceb_bible_words_count_cache_new.mjs";
 export async function sandbox_3() {
-  let count = 500;
+  let count = 600;
   let words = await ceb_bible_words_count_cache_new();
   let taken = list_take(words, count);
   let m3 = list_map_property(taken, "word");
