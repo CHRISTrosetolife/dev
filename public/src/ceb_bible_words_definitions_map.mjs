@@ -8,7 +8,9 @@ import { ceb_definition } from "./ceb_definition.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { list_add } from "./list_add.mjs";
 export async function ceb_bible_words_definitions_map() {
-  let words_ceb = await ceb_bible_words_count_cache();
+  let words_ceb = await ceb_bible_words_count_cache({
+    new: false,
+  });
   let result = {};
   let size = list_size(words_ceb);
   await each_index_async(words_ceb, async (word_ceb, index) => {
