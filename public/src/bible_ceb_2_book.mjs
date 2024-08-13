@@ -14,13 +14,9 @@ import { each } from "./each.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
 import { html_cache_parse } from "./html_cache_parse.mjs";
 import { log } from "./log.mjs";
-import { list_get } from "./list_get.mjs";
-import { bible_ceb_2_books_hrefs } from "./bible_ceb_2_books_hrefs.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
-export async function bible_ceb_2_book(book_index) {
-  let book_hrefs = await bible_ceb_2_books_hrefs();
-  let href = list_get(book_hrefs, book_index);
+export async function bible_ceb_2_book(href) {
   log({
     href,
   });
