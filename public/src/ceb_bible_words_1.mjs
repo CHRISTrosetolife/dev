@@ -18,6 +18,7 @@ export async function ceb_bible_words_1(args) {
   let text = await http_cache(url);
   let verse_1 = "^1";
   if (args.new) {
+    verse_1 = "^1 Ang basahon sa kagikanan ni Jesu-Cristo";
   }
   let index = string_index(text, verse_1);
   text = string_skip(text, index);
