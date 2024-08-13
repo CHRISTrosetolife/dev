@@ -26,6 +26,6 @@ export async function sandbox_3() {
       }
     });
   });
-  $, list_size(result);
+  return list_size(result);
   return list_join_newline(result);
 }
