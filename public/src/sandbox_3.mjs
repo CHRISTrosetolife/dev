@@ -9,7 +9,7 @@ export async function sandbox_3() {
   each_range(count, async (i) => {
     let w = list_get(words, i);
     let { word } = w;
-    await ceb_definition(word);
+    let d = await ceb_definition(word);
     log(i + 1 + ". " + w);
   });
 }
