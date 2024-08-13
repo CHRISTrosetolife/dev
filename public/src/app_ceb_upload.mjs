@@ -64,7 +64,9 @@ export async function app_ceb_upload() {
                 let b = list_first(pair);
                 let r = await audio_upload(profile.from, b);
                 if (r.created) {
-                  log({});
+                  log({
+                    b,
+                  });
                 }
                 return r;
               });
