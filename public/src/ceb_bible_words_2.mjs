@@ -29,6 +29,7 @@ export async function ceb_bible_words_2(args) {
             column,
             href: list_get(book_hrefs, index),
           });
+          index++;
         });
       });
       each_range(columns_full_count, (column) => {
