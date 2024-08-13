@@ -38,7 +38,7 @@ export async function ceb_bible_words_2(args) {
           index++;
         });
       });
-      each_range(columns_full_count, (column) => {
+      each_range(columns_full, (column) => {
         each_range(rows_missing, (row) => {
           la({
             row,
