@@ -43,6 +43,7 @@ export async function ceb_bible_words_2(args) {
         });
       });
     });
+    list_adder((la) => {});
     each_range(columns, (column) => {
       each_range(rows, (row) => {
         if (column === columns - 1 && row >= rows_full) {
