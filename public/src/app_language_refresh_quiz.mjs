@@ -195,6 +195,7 @@ export async function app_language_refresh_quiz(context, settings) {
             html_style_success(answer_element);
             html_style_hidden(button);
             html_style_visible(next_button);
+            each(list_map_property(buttons, "button"), html_style_hidden);
           }
           html_style_success(button);
           update_partials();
