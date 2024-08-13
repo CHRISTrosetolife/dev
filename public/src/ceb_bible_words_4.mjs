@@ -7,10 +7,12 @@ import { each_index_only_async } from "./each_index_only_async.mjs";
 import { bible_ceb_4_chapter } from "./bible_ceb_4_chapter.mjs";
 import { ceb_bible_4_chapters_hrefs } from "./ceb_bible_4_chapters_hrefs.mjs";
 import { bible_ceb_4_hrefs_books } from "./bible_ceb_4_hrefs_books.mjs";
-export async function ceb_bible_words_4() {
+export async function ceb_bible_words_4(args) {
   let words = await list_adder_unique_async(async (la) => {
     let book_hrefs = await bible_ceb_4_hrefs_books();
     await each_index_only_async(book_hrefs, async (book_index) => {
+      if (args.new) {
+      }
       let old_is = bible_books_index_old_is(book_index);
       if (old_is) {
         return;
