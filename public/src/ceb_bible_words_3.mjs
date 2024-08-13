@@ -1,4 +1,4 @@
-import { bible_books_old_count } from "./bible_books_old_count.mjs";
+import { bible_books_index_old_is } from "./bible_books_index_old_is.mjs";
 import { integer_parse } from "./integer_parse.mjs";
 import { each_index_async } from "./each_index_async.mjs";
 import { each } from "./each.mjs";
@@ -13,8 +13,7 @@ export async function ceb_bible_words_3(args) {
       if (args.new) {
         let unparsed = string_substring(href, 1, 3);
         let parsed = integer_parse(unparsed);
-        let old_count = bible_books_old_count();
-        let old_is = parsed <= old_count;
+        let old_is = bible_books_index_old_is(parsed);
         if (old_is) {
           return;
         }
