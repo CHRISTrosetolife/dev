@@ -38,7 +38,7 @@ import { storage_local_get } from "./storage_local_get.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { list_add } from "./list_add.mjs";
 export async function app_language_refresh_node(context) {
-  let { root, group, invert, language_fluent, app_fn } = context;
+  let { root, group, invert, language_fluent } = context;
   storage_local_set(context.app_fn, "screen", "node");
   let level_size = app_language_level_size();
   html_clear_scroll_top_centered(root);
