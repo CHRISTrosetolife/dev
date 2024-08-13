@@ -10,7 +10,7 @@ import { string_index } from "./string_index.mjs";
 import { http_cache } from "./http_cache.mjs";
 import { url_secure_w3 } from "./url_secure_w3.mjs";
 import { string_combine } from "./string_combine.mjs";
-export async function ceb_bible_words_1() {
+export async function ceb_bible_words_1(args) {
   let url = string_combine(
     url_secure_w3(),
     "ccel.org/ccel/b/bible/ceb_p/cache/ceb_p.txt",
