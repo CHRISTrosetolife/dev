@@ -9,9 +9,9 @@ export function list_find_property_or_generic(
   or_value,
   use_or,
 ) {
-  let npcs = list_filter_property(list, property_name, value);
-  if (list_size_1(npcs)) {
-    let npc = list_single(npcs);
+  let results = list_filter_property(list, property_name, value);
+  if (list_size_1(results)) {
+    let npc = list_single(results);
     return npc;
   }
   if (use_or) {
