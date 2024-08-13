@@ -1,3 +1,4 @@
+import { fn_name } from "./fn_name.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_css_flags } from "./html_css_flags.mjs";
@@ -36,5 +37,6 @@ export async function app_language(
     app_language_position_initial(context),
   );
   let screen = storage_local_get(context.app_fn, "screen");
+  let fn_name = "app_language_refresh_" + screen;
   await app_language_refresh_node(context);
 }
