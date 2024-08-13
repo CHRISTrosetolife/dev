@@ -7,6 +7,7 @@ export async function sandbox_3() {
   let count = 500;
   each_range(count, (i) => {
     let w = list_get(words, i);
+    let word = w;
     log(i + 1 + ". " + w);
   });
 }
