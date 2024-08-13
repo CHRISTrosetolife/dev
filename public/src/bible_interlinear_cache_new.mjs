@@ -1,8 +1,7 @@
-import { bible_books_new_count } from "./bible_books_new_count.mjs";
-import { list_take_reverse } from "./list_take_reverse.mjs";
+import { list_take_bible_books_new } from "./list_take_bible_books_new.mjs";
 import { bible_interlinear_cache } from "./bible_interlinear_cache.mjs";
 export async function bible_interlinear_cache_new() {
   let books = await bible_interlinear_cache();
-  let new_testament_books = list_take_reverse(books, bible_books_new_count());
+  let new_testament_books = list_take_bible_books_new(books);
   return new_testament_books;
 }
