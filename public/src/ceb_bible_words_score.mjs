@@ -10,7 +10,9 @@ import { object_property_exists } from "./object_property_exists.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { object_merge } from "./object_merge.mjs";
 export async function ceb_bible_words_score() {
-  let words_ceb = await ceb_bible_words_count_cache();
+  let words_ceb = await ceb_bible_words_count_cache({
+    new: false,
+  });
   let lookup = list_to_lookup_key_value_property(words_ceb, "word", "count");
   let map = await ceb_bible_words_definitions_map_cache();
   let definitions = await ceb_bible_words_definitions_all_cache();
