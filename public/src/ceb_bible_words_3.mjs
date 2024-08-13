@@ -15,7 +15,7 @@ export async function ceb_bible_words_3(args) {
       if (args.new) {
         let unparsed = string_substring(href, 1, 3);
         let parsed = integer_parse(unparsed);
-        if (parsed >= old_count) {
+        if (parsed > old_count) {
           log({
             href,
           });
