@@ -1,4 +1,3 @@
-import { exit } from "./exit.mjs";
 import { log } from "./log.mjs";
 import { bible_books_index_old_is } from "./bible_books_index_old_is.mjs";
 import { each } from "./each.mjs";
@@ -31,7 +30,6 @@ export async function ceb_bible_words_4(args) {
             la(t);
           });
         });
-        exit();
       });
     });
   });
