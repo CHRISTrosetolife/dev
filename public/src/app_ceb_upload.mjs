@@ -60,7 +60,7 @@ export async function app_ceb_upload() {
             let mapped = list_map(chunk, async (atom) => {
               await each_async(atom, async (pair) => {
                 let b = list_first(pair);
-                await audio_upload(profile.from, b);
+                return await audio_upload(profile.from, b);
               });
             });
             await promise_all(mapped);
