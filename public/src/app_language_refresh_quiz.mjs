@@ -207,12 +207,7 @@ export async function app_language_refresh_quiz(context, settings) {
               if (0) {
                 html_style_background_color(root, "white");
               }
-              if (equal(settings, list_last(context.settings_choices))) {
-                await app_language_refresh_node(context);
-              } else {
-                let after = list_after(context.settings_choices, settings);
-                await app_language_refresh_quiz(context, after);
-              }
+              await next();
             }
           });
         } else {
@@ -236,6 +231,14 @@ export async function app_language_refresh_quiz(context, settings) {
   html_button_width_full_text_click_up(root, async () => {
     await app_language_refresh_node(context);
   });
+  async function next() {
+    if (equal(settings, list_last(context.settings_choices))) {
+      await app_language_refresh_node(context);
+    } else {
+      let after = list_after(context.settings_choices, settings);
+      await app_language_refresh_quiz(context, after);
+    }
+  }
   function update_partials() {
     let nexts = app_language_alternatives_partial_matches_nexts(
       answer,
