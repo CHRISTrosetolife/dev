@@ -9,7 +9,6 @@ import { list_map_property } from "./list_map_property.mjs";
 import { list_take } from "./list_take.mjs";
 import { ceb_bible_words_count_cache_new } from "./ceb_bible_words_count_cache_new.mjs";
 import { list_includes } from "./list_includes.mjs";
-import { list_size } from "./list_size.mjs";
 export async function sandbox_3() {
   let count = 500;
   let wcs = await ceb_bible_words_count_cache_new();
@@ -26,6 +25,6 @@ export async function sandbox_3() {
       }
     });
   });
-  return list_size(result);
+  result = list_take(result, count);
   return list_join_newline(result);
 }
