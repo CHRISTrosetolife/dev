@@ -1,5 +1,4 @@
 import { list_find_properties } from "./list_find_properties.mjs";
-import { list_find } from "./list_find.mjs";
 import { list_get } from "./list_get.mjs";
 import { each_range } from "./each_range.mjs";
 import { list_adder } from "./list_adder.mjs";
@@ -45,11 +44,10 @@ export async function ceb_bible_words_2(args) {
       });
       each_range(columns, (column) => {
         each_range(rows, (row) => {
-          list_find_properties(indexed, {
+          let m = list_find_properties(indexed, {
             row,
             column,
           });
-          list_find(indexed, (i) => r.row === row && i.column === column);
         });
       });
     });
