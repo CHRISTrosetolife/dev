@@ -17,7 +17,10 @@ export async function ceb_bible_words_4(args) {
           return;
         }
       }
-      log({});
+      log({
+        book_href,
+      });
+      return;
       let hrefs_chapters = await ceb_bible_4_chapters_hrefs(
         book_hrefs,
         book_index,
