@@ -9,6 +9,7 @@ import { html_style_default_font_size } from "./html_style_default_font_size.mjs
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { object_merge } from "./object_merge.mjs";
+import { function_run } from "./function_run.mjs";
 export async function app_language(
   app_fn,
   language_learn,
@@ -37,5 +38,6 @@ export async function app_language(
   );
   let screen = storage_local_initialize(context.app_fn, "node");
   let fn_name = "app_language_refresh_" + screen;
+  await function_run(fn_name);
   await app_language_refresh_node(context);
 }
