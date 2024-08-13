@@ -6,6 +6,7 @@ export async function sandbox_3() {
   let words = await ceb_bible_words_count_cache_new();
   let count = 500;
   each_range(count, (i) => {
-    log(i + 1 + ". " + list_get(words, i).word);
+    let w = list_get(words, i);
+    log(i + 1 + ". " + w);
   });
 }
