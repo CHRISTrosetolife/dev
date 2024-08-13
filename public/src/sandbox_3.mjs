@@ -1,7 +1,8 @@
+import { each_index_async } from "./each_index_async.mjs";
+import { list_map_property } from "./list_map_property.mjs";
 import { list_take } from "./list_take.mjs";
 import { promise_all } from "./promise_all.mjs";
 import { list_map } from "./list_map.mjs";
-import { each_range_async } from "./each_range_async.mjs";
 import { ceb_definition } from "./ceb_definition.mjs";
 import { list_get } from "./list_get.mjs";
 import { log } from "./log.mjs";
@@ -12,7 +13,8 @@ export async function sandbox_3() {
   let taken = list_take(words, count);
   let mapped = list_map(taken, ceb_definition);
   let unawaited = await promise_all(mapped);
-  await each_range_async(count, async (i) => {
+  let m2 = list_map_property(unawaited, "word");
+  await each_index_async(unawaited, async (u) => {
     let w = list_get(words, i);
     let { word } = w;
     let d = await ceb_definition(word);
