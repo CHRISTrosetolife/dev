@@ -51,7 +51,7 @@ export async function ceb_bible_words_2(args) {
             column,
           };
           let matcher_properties = object_properties(matcher);
-          list_all();
+          list_all(matcher_properties, () => {});
           list_find(indexed, (i) => r.row === row && i.column === column);
         });
       });
