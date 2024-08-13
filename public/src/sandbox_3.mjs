@@ -14,7 +14,7 @@ export async function sandbox_3() {
   let taken = list_take(wcs, count);
   let words = list_map_property(taken, "word");
   let scored = await ceb_bible_words_score();
-  each(list, (item) => {});
+  each(words, (word) => {});
   let mapped = list_map(words, ceb_definition);
   let unawaited = await promise_all(mapped);
   let m2 = list_map_property(unawaited, "word");
