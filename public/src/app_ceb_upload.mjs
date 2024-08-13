@@ -63,20 +63,12 @@ export async function app_ceb_upload() {
               let createds = await list_map_async(atom, async (pair) => {
                 let b = list_first(pair);
                 let r = await audio_upload(profile.from, b);
-                if (r.created) {
-                  log({
-                    b,
-                  });
-                }
                 return r;
               });
               return list_any_created(createds);
             });
             let createds = await promise_all(mapped);
-            if (
-              (list_any_created(createds),
-              object_property_get(object, property_name))
-            ) {
+            if (object_property_get(list_any_created(createds), "created")) {
               log("here chunk finished");
             }
           });
