@@ -12,9 +12,8 @@ export async function app_language_quizzes_start(context, chunk_sizes) {
     "settings_choices",
     app_language_quiz_settings(atoms, chunk_sizes),
   );
-  storage_local_get(context.app_fn, "settings_choices");
   await app_language_refresh_quiz(
     context,
-    list_first(context.settings_choices),
+    list_first(storage_local_get(context.app_fn, "settings_choices")),
   );
 }
