@@ -12,54 +12,52 @@ import { bible_ceb_2_books_hrefs } from "./bible_ceb_2_books_hrefs.mjs";
 import { list_size } from "./list_size.mjs";
 export async function ceb_bible_words_2(args) {
   let book_hrefs = await bible_ceb_2_books_hrefs();
-  if (args.new) {
-    let columns = 7;
-    let rows = 10;
-    let cells = rows * columns;
-    let book_hrefs_size = list_size(book_hrefs);
-    let columns_full = columns - 1;
-    let columns_full_count = columns_full * rows;
-    let rows_full = book_hrefs_size - columns_full_count;
-    let rows_missing = rows - rows_full;
-    let indexed = list_adder((la) => {
-      let index = 0;
-      each_range(rows_full, (row) => {
-        each_range(columns, (column) => {
-          la({
-            row,
-            column,
-            href: list_get(book_hrefs, index),
-          });
-          index++;
-        });
-      });
-      each_range(rows_missing, (row_missing) => {
-        each_range(columns_full, (column) => {
-          la({
-            row: row_missing + rows_full,
-            column,
-            href: list_get(book_hrefs, index),
-          });
-          index++;
-        });
-      });
-    });
-    list_adder((la) => {
+  let columns = 7;
+  let rows = 10;
+  let book_hrefs_size = list_size(book_hrefs);
+  let columns_full = columns - 1;
+  let columns_full_count = columns_full * rows;
+  let rows_full = book_hrefs_size - columns_full_count;
+  let rows_missing = rows - rows_full;
+  let indexed = list_adder((la) => {
+    let index = 0;
+    each_range(rows_full, (row) => {
       each_range(columns, (column) => {
-        each_range(rows, (row) => {
-          if (column === columns - 1 && row >= rows_full) {
-            return;
-          }
-          let m = list_find_properties(indexed, {
-            row,
-            column,
-          });
-          la(object_property_get(m, "href"));
+        la({
+          row,
+          column,
+          href: list_get(book_hrefs, index),
         });
+        index++;
       });
     });
-    return;
-    book_hrefs = list_take_bible_books_new(book_hrefs);
+    each_range(rows_missing, (row_missing) => {
+      each_range(columns_full, (column) => {
+        la({
+          row: row_missing + rows_full,
+          column,
+          href: list_get(book_hrefs, index),
+        });
+        index++;
+      });
+    });
+  });
+  book_hrefs = list_adder((la) => {
+    each_range(columns, (column) => {
+      each_range(rows, (row) => {
+        if (column === columns - 1 && row >= rows_full) {
+          return;
+        }
+        let m = list_find_properties(indexed, {
+          row,
+          column,
+        });
+        la(object_property_get(m, "href"));
+      });
+    });
+  });
+  if (args.new) {
+    list_take_bible_books_new(book_hrefs);
   }
   return book_hrefs;
   let words = await list_adder_unique_async(async (law) => {
