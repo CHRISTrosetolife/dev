@@ -1,4 +1,4 @@
-import { object_properties_match } from "./object_properties_match.mjs";
+import { list_filter_properties } from "./list_filter_properties.mjs";
 import { list_find } from "./list_find.mjs";
 import { list_get } from "./list_get.mjs";
 import { each_range } from "./each_range.mjs";
@@ -10,7 +10,6 @@ import { bible_ceb_2_book } from "./bible_ceb_2_book.mjs";
 import { each_index_only_async } from "./each_index_only_async.mjs";
 import { bible_ceb_2_books_hrefs } from "./bible_ceb_2_books_hrefs.mjs";
 import { list_size } from "./list_size.mjs";
-import { list_filter } from "./list_filter.mjs";
 export async function ceb_bible_words_2(args) {
   let book_hrefs = await bible_ceb_2_books_hrefs();
   if (args.new) {
@@ -51,9 +50,7 @@ export async function ceb_bible_words_2(args) {
             row,
             column,
           };
-          let matches = list_filter(indexed, (i) =>
-            object_properties_match(matcher, i),
-          );
+          let matches = list_filter_properties(indexed, matcher);
           list_find(indexed, (i) => r.row === row && i.column === column);
         });
       });
