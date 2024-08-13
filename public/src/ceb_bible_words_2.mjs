@@ -44,7 +44,6 @@ export async function ceb_bible_words_2(args) {
         });
       });
     });
-    return indexed;
     each_range(rows, (row) => {
       each_range(columns, (column) => {
         if (column === column - 1 && row >= rows_full) {
