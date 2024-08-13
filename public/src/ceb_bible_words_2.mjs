@@ -46,7 +46,8 @@ export async function ceb_bible_words_2(args) {
     });
     each_range(rows, (row) => {
       each_range(columns, (column) => {
-        if (column === column - 1) {
+        if (column === column - 1 && row >= rows_full) {
+          return;
         }
         let m = list_find_properties(indexed, {
           row,
