@@ -37,5 +37,6 @@ export async function audio_upload(language, text) {
       );
       await audio_upload_file(file_path);
     }
+    return created;
   });
 }
