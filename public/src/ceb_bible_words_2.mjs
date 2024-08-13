@@ -49,7 +49,9 @@ export async function ceb_bible_words_2(args) {
             row,
             column,
           });
-          log({});
+          log({
+            m,
+          });
         });
       });
     });
