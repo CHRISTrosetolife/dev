@@ -58,8 +58,7 @@ export async function ceb_bible_words_2(args) {
             matcher_properties,
             (p) =>
               object_property_exists(target, p) &&
-              object_property_get(target, p) ==
-                object_property_get(object, property_name),
+              object_property_get(target, p) == object_property_get(matcher, p),
           );
           list_find(indexed, (i) => r.row === row && i.column === column);
         });
