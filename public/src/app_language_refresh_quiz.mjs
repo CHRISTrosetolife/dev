@@ -1,3 +1,4 @@
+import { list_without } from "./list_without.mjs";
 import { log } from "./log.mjs";
 import { json_to } from "./json_to.mjs";
 import { list_without_by } from "./list_without_by.mjs";
@@ -108,11 +109,11 @@ export async function app_language_refresh_quiz(context) {
   if (0) {
     [word_f, word_t] = ["gikan", "from"];
   }
-  let alternatives_t = list_without_by(
+  let alternatives_t = list_without(
     object_property_get(definitions, word_f),
     word_t,
   );
-  let alternatives_f = list_without_by(
+  let alternatives_f = list_without(
     object_property_get(inverted, word_t),
     word_f,
   );
