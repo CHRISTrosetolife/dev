@@ -141,7 +141,6 @@ export async function app_language_refresh_node(context) {
         ]),
         async () => {
           await app_language_group_index_set(context, group_index - 1);
-          return;
         },
       );
     }
@@ -156,7 +155,6 @@ export async function app_language_refresh_node(context) {
         ]),
         async () => {
           await app_language_group_index_set(context, group_index + 1);
-          return;
         },
       );
     }
