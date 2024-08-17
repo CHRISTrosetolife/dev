@@ -140,12 +140,13 @@ export async function app_language_refresh_quiz(context) {
   let quiz_container;
   let button_ready = html_button_width_full_text_click(
     root,
-    "🏁 " + (await app_language_text(language_fluent, "ready")),
+    " 🏁 " + (await app_language_text(language_fluent, "ready")),
     () => {
       html_style_display_none(button_ready);
       html_style_display_block(quiz_container);
     },
   );
+  html_flag(button_ready, app_language_flag_answer());
   quiz_container = html_div(root);
   let component_display_none;
   if (true || equal_1(chunk_size)) {
