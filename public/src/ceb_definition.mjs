@@ -88,6 +88,7 @@ export async function ceb_definition(word) {
     "accede",
     "gusto",
     "extol",
+    "laud",
   ];
   let skipped_pairs = [
     "ka,quantifier",
