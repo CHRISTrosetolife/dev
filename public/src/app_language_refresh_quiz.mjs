@@ -216,8 +216,9 @@ export async function app_language_refresh_quiz(context) {
                 context.app_fn,
                 "quiz_settings",
               );
-              let after2 = list_after_json(settings_choices, settings2);
-              await next();
+              if (equal_json(settings, settings2)) {
+                await next();
+              }
             }
           });
         } else {
