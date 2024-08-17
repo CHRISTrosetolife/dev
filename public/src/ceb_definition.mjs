@@ -89,6 +89,7 @@ export async function ceb_definition(word) {
     "gusto",
     "extol",
     "laud",
+    "infront",
     "transpire",
     "specter",
     "spectre",
