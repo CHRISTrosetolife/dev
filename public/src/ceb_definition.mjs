@@ -92,6 +92,7 @@ export async function ceb_definition(word) {
     "garner",
     "semblance",
     "effulgence",
+    "phonograph",
     "ire",
     "sheen",
     "pauper",
