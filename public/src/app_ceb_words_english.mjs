@@ -8,5 +8,5 @@ export async function app_ceb_words_english() {
   each(english, (e) => {
     object_property_set(inverted, e, null);
   });
-  return english;
+  return inverted;
 }
