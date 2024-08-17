@@ -129,7 +129,7 @@ export function js_dollar(ast) {
       }
       if (remaining === "el") {
         let { stack } = v;
-        list_find_last;
+        list_find_last(stack, list_is);
         log(stack);
       }
       if (remaining === "eo") {
