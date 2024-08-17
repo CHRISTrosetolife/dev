@@ -128,11 +128,13 @@ export async function app_language_refresh_node(context) {
   });
   let top_is = left === 0 && right === app_language_group_size() - 1;
   if (top_is) {
+    let group_suffix = " group";
+    let group_index = app_language_group_index_get(context);
     html_button_width_full_text_click(
       root,
       string_combine_multiple([
         await app_language_text(language_fluent, html_button_previous_text()),
-        " group",
+        group_suffix,
       ]),
       async () => {
         await app_language_group_index_set(
@@ -146,13 +148,10 @@ export async function app_language_refresh_node(context) {
       root,
       string_combine_multiple([
         await app_language_text(language_fluent, html_button_next_text()),
-        " group",
+        group_suffix,
       ]),
       async () => {
-        await app_language_group_index_set(
-          context,
-          app_language_group_index_get(context) + 1,
-        );
+        await app_language_group_index_set(context, group_index + 1);
         return;
       },
     );
