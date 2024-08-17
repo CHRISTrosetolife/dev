@@ -93,6 +93,7 @@ export async function ceb_definition(word) {
     "semblance",
     "effulgence",
     "phonograph",
+    "lesion",
     "wreak",
     "vinify",
     "boondocks",
