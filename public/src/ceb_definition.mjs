@@ -88,6 +88,7 @@ export async function ceb_definition(word) {
     "accede",
     "gusto",
     "extol",
+    "garner",
     "laud",
     "infront",
     "transpire",
