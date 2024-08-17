@@ -1,3 +1,4 @@
+import { js_node_is } from "./js_node_is.mjs";
 import { list_previous } from "./list_previous.mjs";
 import { list_next } from "./list_next.mjs";
 import { list_find_last } from "./list_find_last.mjs";
@@ -135,7 +136,9 @@ export function js_dollar(ast) {
         let list = list_find_last(stack, predicate);
         let item = list_next(stack, list);
         let previous = list_previous(list, item);
-        log(previous);
+        if (js_node_is(previous) && previous.type === "IfStatement") {
+          log(previous);
+        }
       }
       if (remaining === "eo") {
         let object = js_name_unique(ast, "object");
