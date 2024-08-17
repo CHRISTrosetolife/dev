@@ -140,7 +140,9 @@ export function js_dollar(ast) {
         let previous = list_previous(list, item);
         if (js_node_is(previous) && previous.type === "IfStatement") {
           js_to_block_generic(previous, ["consequent"], never);
-          log({});
+          log({
+            previous,
+          });
         }
       }
       if (remaining === "eo") {
