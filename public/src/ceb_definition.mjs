@@ -87,8 +87,6 @@ export async function ceb_definition(word) {
     "siya,chair",
     "ila,birthmark",
     "kanila,cinnamon",
-    "ingon,say",
-    "uban,mate",
   ];
   let skipped_pairs_split = list_map_split_comma(skipped_pairs);
   each([skipped_pairs_split, replaced_split], (split) =>
