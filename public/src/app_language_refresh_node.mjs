@@ -127,7 +127,6 @@ export async function app_language_refresh_node(context) {
   });
   let top_is = left === 0 && right === app_language_group_size() - 1;
   if (top_is) {
-  } else {
   }
   $el;
   html_button_width_full_text_click(
