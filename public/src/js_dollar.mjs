@@ -1,3 +1,4 @@
+import { list_remove } from "./list_remove.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { js_block_statement } from "./js_block_statement.mjs";
 import { js_node_is } from "./js_node_is.mjs";
@@ -141,6 +142,7 @@ export function js_dollar(ast) {
         if (js_node_is(previous) && previous.type === "IfStatement") {
           let value_new = js_block_statement([]);
           object_property_set(previous, "alternate", value_new);
+          list_remove();
         }
       }
       if (remaining === "eo") {
