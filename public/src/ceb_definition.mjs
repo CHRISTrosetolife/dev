@@ -95,6 +95,7 @@ export async function ceb_definition(word) {
     "phonograph",
     "wreak",
     "vinify",
+    "boondocks",
     "ire",
     "sheen",
     "pauper",
