@@ -130,7 +130,7 @@ export function js_dollar(ast) {
       if (remaining === "el") {
         let { stack } = v;
         let predicate = list_is;
-        let last = list_find_last(stack, list_is);
+        let last = list_find_last(stack, predicate);
         list_index(stack, last);
         log(last);
       }
