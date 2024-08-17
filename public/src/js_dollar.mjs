@@ -131,9 +131,9 @@ export function js_dollar(ast) {
       if (remaining === "el") {
         let { stack } = v;
         let predicate = list_is;
-        let last = list_find_last(stack, predicate);
-        let n = list_next(stack, last);
-        log(last);
+        let list = list_find_last(stack, predicate);
+        let n = list_next(stack, list);
+        log(list);
       }
       if (remaining === "eo") {
         let object = js_name_unique(ast, "object");
