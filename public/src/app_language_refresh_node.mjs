@@ -129,7 +129,10 @@ export async function app_language_refresh_node(context) {
   if (top_is) {
     html_button_width_full_text_click(
       root,
-      await app_language_text(language_fluent, html_button_next_text()),
+      string_combine_multiple([
+        await app_language_text(language_fluent, html_button_next_text()),
+        " group",
+      ]),
       async () => {
         await app_language_group_index_set(
           context,
