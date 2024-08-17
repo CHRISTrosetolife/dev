@@ -2,5 +2,5 @@ import { ceb_bible_words_definitions_atoms_cache } from "./ceb_bible_words_defin
 import { object_properties } from "./object_properties.mjs";
 export async function app_ceb_words_english() {
   let { inverted } = await ceb_bible_words_definitions_atoms_cache();
-  return object_properties(inverted);
+  let english = object_properties(inverted);
 }
