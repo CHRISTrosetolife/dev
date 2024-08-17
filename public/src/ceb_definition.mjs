@@ -61,7 +61,6 @@ import { string_whitespace_normalize } from "./string_whitespace_normalize.mjs";
 import { string_starts_with_not } from "./string_starts_with_not.mjs";
 export async function ceb_definition(word) {
   let known = {
-    bisan: ["although", "though", "yet"],
     didto: ["there"],
   };
   if (object_property_exists(known, word)) {
