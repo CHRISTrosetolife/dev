@@ -134,8 +134,8 @@ export function js_dollar(ast) {
         let predicate = list_is;
         let list = list_find_last(stack, predicate);
         let item = list_next(stack, list);
-        list_previous(list, item);
-        log(list);
+        let previous = list_previous(list, item);
+        log(previous);
       }
       if (remaining === "eo") {
         let object = js_name_unique(ast, "object");
