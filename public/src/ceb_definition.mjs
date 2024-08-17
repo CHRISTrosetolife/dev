@@ -91,6 +91,7 @@ export async function ceb_definition(word) {
     "ephemeral",
     "garner",
     "semblance",
+    "pauper",
     "headman",
     "tup",
     "voluime",
