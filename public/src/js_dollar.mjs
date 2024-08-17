@@ -1,4 +1,4 @@
-import { list_previous } from "./list_previous.mjs";
+import { list_next } from "./list_next.mjs";
 import { list_find_last } from "./list_find_last.mjs";
 import { list_adder_async } from "./list_adder_async.mjs";
 import { js_code_arrow_block_args_async } from "./js_code_arrow_block_args_async.mjs";
@@ -132,7 +132,7 @@ export function js_dollar(ast) {
         let { stack } = v;
         let predicate = list_is;
         let last = list_find_last(stack, predicate);
-        list_previous(last);
+        let n = list_next(stack);
         log(last);
       }
       if (remaining === "eo") {
