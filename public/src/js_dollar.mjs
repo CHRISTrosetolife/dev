@@ -132,7 +132,7 @@ export function js_dollar(ast) {
         let { stack } = v;
         let predicate = list_is;
         let last = list_find_last(stack, predicate);
-        let n = list_next(stack);
+        let n = list_next(stack, last);
         log(last);
       }
       if (remaining === "eo") {
