@@ -81,6 +81,7 @@ export async function ceb_definition(word) {
     "vig",
     "demerit",
     "pratfall",
+    "stamen",
   ];
   let skipped_pairs = [
     "ka,quantifier",
