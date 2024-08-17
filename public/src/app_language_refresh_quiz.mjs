@@ -210,7 +210,9 @@ export async function app_language_refresh_quiz(context) {
             html_style_hidden(button);
             if (last_is) {
               html_style_success(answer_element);
+              let after1 = list_after_json(settings_choices, settings);
               await app_language_audio(language_learn, word_f);
+              let after2 = list_after_json(settings_choices, settings);
               await next();
             }
           });
