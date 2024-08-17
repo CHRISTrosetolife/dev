@@ -135,15 +135,11 @@ export async function app_language_refresh_node(context) {
         await app_language_text(language_fluent, html_button_next_text()),
       ]),
       async () => {
-        if (top_is) {
-          await app_language_group_index_set(
-            context,
-            app_language_group_index_get(context) + 1,
-          );
-          return;
-        }
-        app_ceb_next();
-        await app_language_refresh_node(context);
+        await app_language_group_index_set(
+          context,
+          app_language_group_index_get(context) + 1,
+        );
+        return;
       },
     );
   } else {
@@ -155,13 +151,6 @@ export async function app_language_refresh_node(context) {
         await app_language_text(language_fluent, html_button_next_text()),
       ]),
       async () => {
-        if (top_is) {
-          await app_language_group_index_set(
-            context,
-            app_language_group_index_get(context) + 1,
-          );
-          return;
-        }
         app_ceb_next();
         await app_language_refresh_node(context);
       },
