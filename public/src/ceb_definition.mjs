@@ -74,7 +74,15 @@ export async function ceb_definition(word) {
   }
   let replaced = ["distuinguish,distinguish"];
   let replaced_split = list_map_split_comma(replaced);
-  let skipped = ["nevus", "nay", "frontage", "emanate", "ergo", "rake-off"];
+  let skipped = [
+    "nevus",
+    "nay",
+    "frontage",
+    "emanate",
+    "ergo",
+    "rake-off",
+    "vig",
+  ];
   let skipped_pairs = [
     "ka,quantifier",
     "siya,chair",
