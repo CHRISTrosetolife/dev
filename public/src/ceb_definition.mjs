@@ -87,6 +87,7 @@ export async function ceb_definition(word) {
     "moil",
     "accede",
     "gusto",
+    "extol",
   ];
   let skipped_pairs = [
     "ka,quantifier",
