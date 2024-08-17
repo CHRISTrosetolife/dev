@@ -90,6 +90,7 @@ export async function ceb_definition(word) {
     "extol",
     "ephemeral",
     "garner",
+    "tup",
     "voluime",
     "obverse",
     "aha",
