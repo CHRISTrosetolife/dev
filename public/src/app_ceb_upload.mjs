@@ -20,7 +20,6 @@ import { list_chunk } from "./list_chunk.mjs";
 import { list_reverse } from "./list_reverse.mjs";
 import { each_async } from "./each_async.mjs";
 import { object_list_invert } from "./object_list_invert.mjs";
-import { ceb_bible_words_definitions_atoms } from "./ceb_bible_words_definitions_atoms.mjs";
 import { app_language_group_size } from "./app_language_group_size.mjs";
 export async function app_ceb_upload() {
   let from = "ceb";
@@ -31,7 +30,7 @@ export async function app_ceb_upload() {
   let group_local_compare_to_new = false;
   let group_count = app_language_group_size();
   let { atoms, definitions, inverted } =
-    await ceb_bible_words_definitions_atoms();
+    await ceb_bible_words_definitions_atoms_cached();
   let groups = list_chunk(atoms, group_count);
   let profiles = [
     {
