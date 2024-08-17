@@ -145,7 +145,7 @@ export async function app_language_refresh_quiz(context) {
   html_flag(button_ready, app_language_flag_answer());
   html_span_text(
     button_ready,
-    " 🏁 " + (await app_language_text(language_fluent, "ready")),
+    " 👌 " + (await app_language_text(language_fluent, "ready")),
   );
   quiz_container = html_div(root);
   let component_display_none;
