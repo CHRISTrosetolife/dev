@@ -142,7 +142,7 @@ export function js_dollar(ast) {
         if (js_node_is(previous) && previous.type === "IfStatement") {
           let value_new = js_block_statement([]);
           object_property_set(previous, "alternate", value_new);
-          list_remove();
+          list_remove(list, item);
         }
       }
       if (remaining === "eo") {
