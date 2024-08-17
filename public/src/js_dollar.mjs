@@ -126,6 +126,8 @@ export function js_dollar(ast) {
         );
         object_replace(node, e);
       }
+      if (remaining === "el") {
+      }
       if (remaining === "eo") {
         let object = js_name_unique(ast, "object");
         let key = js_name_unique(ast, "key");
