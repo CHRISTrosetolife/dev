@@ -1,3 +1,4 @@
+import { app_language_group_get } from "./app_language_group_get.mjs";
 import { html_button_previous_text } from "./html_button_previous_text.mjs";
 import { app_language_group_index_get } from "./app_language_group_index_get.mjs";
 import { app_language_group_index_set } from "./app_language_group_index_set.mjs";
@@ -143,6 +144,7 @@ export async function app_language_refresh_node(context) {
         },
       );
     }
+    let { groups } = await app_language_group_get(context, "index");
     html_button_width_full_text_click(
       root,
       string_combine_multiple([
