@@ -127,6 +127,25 @@ export async function app_language_refresh_node(context) {
   });
   let top_is = left === 0 && right === app_language_group_size() - 1;
   if (top_is) {
+    html_button_width_full_text_click(
+      root,
+      string_combine_multiple([
+        j++,
+        ". ",
+        await app_language_text(language_fluent, html_button_next_text()),
+      ]),
+      async () => {
+        if (top_is) {
+          await app_language_group_index_set(
+            context,
+            app_language_group_index_get(context) + 1,
+          );
+          return;
+        }
+        app_ceb_next();
+        await app_language_refresh_node(context);
+      },
+    );
   } else {
     html_button_width_full_text_click(
       root,
