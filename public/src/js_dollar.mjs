@@ -1,3 +1,4 @@
+import { list_find_last } from "./list_find_last.mjs";
 import { list_adder_async } from "./list_adder_async.mjs";
 import { js_code_arrow_block_args_async } from "./js_code_arrow_block_args_async.mjs";
 import { each_async } from "./each_async.mjs";
@@ -128,6 +129,7 @@ export function js_dollar(ast) {
       }
       if (remaining === "el") {
         let { stack } = v;
+        list_find_last;
         log(stack);
       }
       if (remaining === "eo") {
