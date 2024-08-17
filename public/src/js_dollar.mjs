@@ -139,7 +139,7 @@ export function js_dollar(ast) {
         let item = list_next(stack, list);
         let previous = list_previous(list, item);
         if (js_node_is(previous) && previous.type === "IfStatement") {
-          let value_new = js_block_statement(body);
+          let value_new = js_block_statement([]);
           object_property_set(node, "alternate", value_new);
         }
       }
