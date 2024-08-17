@@ -90,6 +90,7 @@ export async function ceb_definition(word) {
     "extol",
     "ephemeral",
     "garner",
+    "eminent",
     "laud",
     "infront",
     "transpire",
