@@ -1,3 +1,5 @@
+import { never } from "./never.mjs";
+import { js_to_block_generic } from "./js_to_block_generic.mjs";
 import { js_node_is } from "./js_node_is.mjs";
 import { list_previous } from "./list_previous.mjs";
 import { list_next } from "./list_next.mjs";
@@ -137,7 +139,7 @@ export function js_dollar(ast) {
         let item = list_next(stack, list);
         let previous = list_previous(list, item);
         if (js_node_is(previous) && previous.type === "IfStatement") {
-          log(previous);
+          js_to_block_generic(previous, ["consequent"], never);
         }
       }
       if (remaining === "eo") {
