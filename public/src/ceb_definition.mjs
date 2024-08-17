@@ -73,6 +73,7 @@ export async function ceb_definition(word) {
   let replaced_split = list_map_split_comma(replaced);
   let skipped = [
     "nevus",
+    "ignoble",
     "nay",
     "frontage",
     "emanate",
