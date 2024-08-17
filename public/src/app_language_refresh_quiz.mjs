@@ -192,18 +192,14 @@ export async function app_language_refresh_quiz(context) {
             multiply(index, chunk_size),
             string_length(answer),
           );
-          if (last_is) {
-            html_inner_set(span_success, "✅ ");
-          }
           let take_count = number_min(
             multiply(index, chunk_size),
             string_length(answer),
           );
-          if (last_is) {
-            html_style_display_none(answer_element_right);
-          }
           html_inner_set(answer_element_left, string_take(answer, take_count));
           if (last_is) {
+            html_inner_set(span_success, "✅ ");
+            html_style_display_none(answer_element_right);
             html_style_success(answer_element);
             html_style_hidden(button);
             html_style_visible(next_button);
