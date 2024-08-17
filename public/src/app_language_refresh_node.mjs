@@ -147,17 +147,19 @@ export async function app_language_refresh_node(context) {
     }
     let { groups } = await app_language_group_get(context, "index");
     let groups_size = list_size(groups);
-    html_button_width_full_text_click(
-      root,
-      string_combine_multiple([
-        await app_language_text(language_fluent, html_button_next_text()),
-        group_suffix,
-      ]),
-      async () => {
-        await app_language_group_index_set(context, group_index + 1);
-        return;
-      },
-    );
+    if (group_index < groups_size - 1) {
+      html_button_width_full_text_click(
+        root,
+        string_combine_multiple([
+          await app_language_text(language_fluent, html_button_next_text()),
+          group_suffix,
+        ]),
+        async () => {
+          await app_language_group_index_set(context, group_index + 1);
+          return;
+        },
+      );
+    }
   } else {
     html_button_width_full_text_click(
       root,
