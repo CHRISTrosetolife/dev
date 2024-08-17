@@ -1,4 +1,5 @@
 import { each } from "./each.mjs";
+import { list_join_newline } from "./list_join_newline.mjs";
 import { ceb_bible_words_definitions_atoms_cache } from "./ceb_bible_words_definitions_atoms_cache.mjs";
 import { object_properties } from "./object_properties.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -8,5 +9,5 @@ export async function app_ceb_words_english() {
   each(english, (e) => {
     object_property_set(inverted, e, null);
   });
-  return inverted;
+  return list_join_newline(english);
 }
