@@ -127,7 +127,7 @@ export function js_dollar(ast) {
         object_replace(node, e);
       }
       if (remaining === "el") {
-        log(stack);
+        log(parent);
       }
       if (remaining === "eo") {
         let object = js_name_unique(ast, "object");
