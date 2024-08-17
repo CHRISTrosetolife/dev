@@ -94,6 +94,7 @@ export async function ceb_definition(word) {
     "effulgence",
     "phonograph",
     "wreak",
+    "vinify",
     "ire",
     "sheen",
     "pauper",
