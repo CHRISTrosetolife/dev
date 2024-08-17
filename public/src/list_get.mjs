@@ -3,5 +3,6 @@ import { assert } from "./assert.mjs";
 import { number_less_than } from "./number_less_than.mjs";
 export function list_get(list, index) {
   assert(number_less_than, [index, list_size(list)]);
+  assert(number_greater_than, [index, list_size(list)]);
   return list[index];
 }
