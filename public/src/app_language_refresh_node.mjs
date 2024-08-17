@@ -137,10 +137,7 @@ export async function app_language_refresh_node(context) {
         group_suffix,
       ]),
       async () => {
-        await app_language_group_index_set(
-          context,
-          app_language_group_index_get(context) - 1,
-        );
+        await app_language_group_index_set(context, group_index - 1);
         return;
       },
     );
