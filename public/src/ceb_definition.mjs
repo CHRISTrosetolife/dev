@@ -82,6 +82,7 @@ export async function ceb_definition(word) {
     "demerit",
     "pratfall",
     "stamen",
+    "accede",
     "gusto",
   ];
   let skipped_pairs = [
