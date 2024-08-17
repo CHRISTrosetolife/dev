@@ -1,5 +1,5 @@
-import { never } from "./never.mjs";
-import { js_to_block_generic } from "./js_to_block_generic.mjs";
+import { object_property_set } from "./object_property_set.mjs";
+import { js_block_statement } from "./js_block_statement.mjs";
 import { js_node_is } from "./js_node_is.mjs";
 import { list_previous } from "./list_previous.mjs";
 import { list_next } from "./list_next.mjs";
@@ -139,10 +139,8 @@ export function js_dollar(ast) {
         let item = list_next(stack, list);
         let previous = list_previous(list, item);
         if (js_node_is(previous) && previous.type === "IfStatement") {
-          js_to_block_generic(previous, ["alternate"], never);
-          log({
-            previous,
-          });
+          let value_new = js_block_statement(body);
+          object_property_set(node, "alternate", value_new);
         }
       }
       if (remaining === "eo") {
