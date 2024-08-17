@@ -1,3 +1,4 @@
+import { html_button_previous_text } from "./html_button_previous_text.mjs";
 import { app_language_group_index_get } from "./app_language_group_index_get.mjs";
 import { app_language_group_index_set } from "./app_language_group_index_set.mjs";
 import { app_language_refresh_menu } from "./app_language_refresh_menu.mjs";
@@ -127,6 +128,20 @@ export async function app_language_refresh_node(context) {
   });
   let top_is = left === 0 && right === app_language_group_size() - 1;
   if (top_is) {
+    html_button_width_full_text_click(
+      root,
+      string_combine_multiple([
+        await app_language_text(language_fluent, html_button_previous_text()),
+        " group",
+      ]),
+      async () => {
+        await app_language_group_index_set(
+          context,
+          app_language_group_index_get(context) + -1,
+        );
+        return;
+      },
+    );
     html_button_width_full_text_click(
       root,
       string_combine_multiple([
