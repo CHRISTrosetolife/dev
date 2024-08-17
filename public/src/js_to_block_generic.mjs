@@ -12,9 +12,10 @@ export function js_to_block_generic(node, properties, except) {
       if (except(type, p)) {
         return;
       }
+      let body = [value];
       let value_new = {
         type: "BlockStatement",
-        body: [value],
+        body: body,
       };
       object_property_set(node, p, value_new);
     }
