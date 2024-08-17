@@ -82,6 +82,7 @@ export async function ceb_definition(word) {
     "demerit",
     "pratfall",
     "stamen",
+    "contravene",
     "moil",
     "accede",
     "gusto",
