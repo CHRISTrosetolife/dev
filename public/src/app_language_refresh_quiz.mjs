@@ -25,7 +25,6 @@ import { list_add } from "./list_add.mjs";
 import { html_style_wrong } from "./html_style_wrong.mjs";
 import { list_last } from "./list_last.mjs";
 import { app_language_audio } from "./app_language_audio.mjs";
-import { html_style_background_color } from "./html_style_background_color.mjs";
 import { app_learn_code_correct_timeout } from "./app_learn_code_correct_timeout.mjs";
 import { html_style_hidden } from "./html_style_hidden.mjs";
 import { string_take } from "./string_take.mjs";
@@ -210,14 +209,8 @@ export async function app_language_refresh_quiz(context) {
           app_learn_code_correct_timeout(async () => {
             html_style_hidden(button);
             if (last_is) {
-              if (0) {
-                html_style_background_color(root, "#d3f8d3");
-              }
               html_style_success(answer_element);
               await app_language_audio(language_learn, word_f);
-              if (0) {
-                html_style_background_color(root, "white");
-              }
               await next();
             }
           });
