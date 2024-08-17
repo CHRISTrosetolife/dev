@@ -61,7 +61,6 @@ import { string_whitespace_normalize } from "./string_whitespace_normalize.mjs";
 import { string_starts_with_not } from "./string_starts_with_not.mjs";
 export async function ceb_definition(word) {
   let known = {
-    apan: ["but", "yet"],
     hari: ["king", "royalty"],
     bisan: ["although", "though", "yet"],
     didto: ["there"],
@@ -82,6 +81,7 @@ export async function ceb_definition(word) {
     "ergo",
     "rake-off",
     "vig",
+    "demerit",
   ];
   let skipped_pairs = [
     "ka,quantifier",
