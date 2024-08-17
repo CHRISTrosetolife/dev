@@ -92,6 +92,7 @@ export async function ceb_definition(word) {
     "garner",
     "semblance",
     "effulgence",
+    "sheen",
     "pauper",
     "headman",
     "tup",
