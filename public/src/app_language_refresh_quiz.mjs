@@ -157,7 +157,7 @@ export async function app_language_refresh_quiz(context) {
   let answer_other = answer_other_get(pair_other);
   let answer_element = html_p(quiz_container);
   let span_success = html_span(answer_element);
-  html_flag(answer_element, forwards ? "us" : "ph");
+  html_flag(answer_element, app_language_flag_answer());
   html_span_text(answer_element, " ");
   let answer_element_left = html_span(answer_element);
   let answer_element_right = html_span_text(answer_element, "?");
@@ -210,7 +210,6 @@ export async function app_language_refresh_quiz(context) {
             html_style_hidden(button);
             if (last_is) {
               html_style_success(answer_element);
-              let after1 = list_after_json(settings_choices, settings);
               await app_language_audio(language_learn, word_f);
               let settings2 = storage_local_get(
                 context.app_fn,
@@ -250,6 +249,9 @@ export async function app_language_refresh_quiz(context) {
   html_button_width_full_text_click_up(root, async () => {
     await app_language_refresh_node(context);
   });
+  function app_language_flag_answer() {
+    return forwards ? "us" : "ph";
+  }
   async function next() {
     if (equal_json(settings, list_last(settings_choices))) {
       await app_language_refresh_node(context);
