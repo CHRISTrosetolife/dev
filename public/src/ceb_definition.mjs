@@ -97,6 +97,7 @@ export async function ceb_definition(word) {
     "parlance",
     "abominate",
     "maxim",
+    "croton",
     "implicate",
     "ravage",
     "gaunt",
