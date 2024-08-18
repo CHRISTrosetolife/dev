@@ -96,6 +96,7 @@ export async function ceb_definition(word) {
     "subjunctive",
     "parlance",
     "progeny",
+    "scion",
     "exude",
     "abominate",
     "tassel",
