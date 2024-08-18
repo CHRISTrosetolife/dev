@@ -89,6 +89,7 @@ export async function ceb_definition(word) {
     "gusto",
     "extol",
     "ephemeral",
+    "gaunt",
     "emaciated",
     "garner",
     "semblance",
