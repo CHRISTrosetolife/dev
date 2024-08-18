@@ -93,6 +93,7 @@ export async function ceb_definition(word) {
     "adage",
     "domicile",
     "decrepit",
+    "subjunctive",
     "parlance",
     "maxim",
     "implicate",
