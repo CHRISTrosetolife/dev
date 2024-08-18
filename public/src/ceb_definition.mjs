@@ -87,6 +87,7 @@ export async function ceb_definition(word) {
     "frolicsome",
     "aloof",
     "mirthful",
+    "capitulate",
     "perjure",
     "convivial",
     "shoring",
