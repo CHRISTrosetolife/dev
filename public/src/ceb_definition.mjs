@@ -97,6 +97,7 @@ export async function ceb_definition(word) {
     "parlance",
     "exude",
     "abominate",
+    "inflorescence",
     "maxim",
     "croton",
     "mirth",
