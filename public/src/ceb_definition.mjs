@@ -95,6 +95,7 @@ export async function ceb_definition(word) {
     "decrepit",
     "subjunctive",
     "parlance",
+    "abominate",
     "maxim",
     "implicate",
     "ravage",
