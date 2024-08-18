@@ -97,6 +97,7 @@ export async function ceb_definition(word) {
     "parlance",
     "progeny",
     "scion",
+    "dungaree",
     "remuneration",
     "remittance",
     "cockscomb",
