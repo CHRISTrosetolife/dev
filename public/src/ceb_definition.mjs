@@ -98,6 +98,7 @@ export async function ceb_definition(word) {
     "abominate",
     "maxim",
     "croton",
+    "mirth",
     "implicate",
     "ravage",
     "gaunt",
