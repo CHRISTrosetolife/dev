@@ -84,6 +84,7 @@ export async function ceb_definition(word) {
     "pratfall",
     "stamen",
     "contravene",
+    "sated",
     "jean",
     "moil",
     "accede",
