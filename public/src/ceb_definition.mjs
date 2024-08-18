@@ -85,6 +85,7 @@ export async function ceb_definition(word) {
     "stamen",
     "contravene",
     "frolicsome",
+    "aloof",
     "mirthful",
     "convivial",
     "shoring",
