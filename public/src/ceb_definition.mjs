@@ -72,6 +72,7 @@ export async function ceb_definition(word) {
   let replaced = ["distuinguish,distinguish"];
   let replaced_split = list_map_split_comma(replaced);
   let skipped = [
+    "opulent",
     "nevus",
     "ignoble",
     "nay",
