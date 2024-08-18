@@ -92,6 +92,7 @@ export async function ceb_definition(word) {
     "julienne",
     "adage",
     "domicile",
+    "parlance",
     "maxim",
     "implicate",
     "ravage",
