@@ -97,6 +97,7 @@ export async function ceb_definition(word) {
     "parlance",
     "progeny",
     "scion",
+    "exhibiti",
     "glen",
     "mould",
     "exude",
