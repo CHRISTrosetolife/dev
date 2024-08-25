@@ -1,4 +1,4 @@
-import { each } from "./each.mjs";
+import { log_list } from "./log_list.mjs";
 import { exit } from "./exit.mjs";
 import { log } from "./log.mjs";
 import { each_async } from "./each_async.mjs";
@@ -15,11 +15,7 @@ export async function folder_read_each_generic(
     filter,
   });
   let filtered = list_filter(file_paths, filter);
-  each(filtered, (item) => {
-    log({
-      item,
-    });
-  });
+  log_list(filtered);
   exit();
   await each_async(filtered, lambda);
 }
