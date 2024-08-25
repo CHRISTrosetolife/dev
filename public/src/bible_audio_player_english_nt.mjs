@@ -1,5 +1,5 @@
-import { each_async } from "./each_async.mjs";
+import { folder_read_each } from "./folder_read_each.mjs";
 export async function bible_audio_player_english_nt() {
   let p = "..\\bible\\english\\ENGESVN2DA";
-  await each_async(list, async (item) => {});
+  await folder_read_each(list, async (item) => {});
 }
