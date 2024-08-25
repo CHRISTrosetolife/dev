@@ -9,7 +9,7 @@ export async function folder_read_each(
   await folder_read_each_generic(
     input_directory,
     file_extension,
-    filter,
     lambda,
+    filter,
   );
 }

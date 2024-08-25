@@ -4,8 +4,8 @@ import { folder_read } from "./folder_read.mjs";
 export async function folder_read_each_generic(
   input_directory,
   file_extension,
-  filter,
   lambda,
+  filter,
 ) {
   let file_paths = await folder_read(input_directory, file_extension);
   let filtered = list_filter(file_paths, filter);
