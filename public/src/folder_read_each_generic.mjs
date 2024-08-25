@@ -15,7 +15,7 @@ export async function folder_read_each_generic(
     filter,
   });
   let filtered = list_filter(file_paths, filter);
-  each(list, (item) => {
+  each(filtered, (item) => {
     log({
       item,
     });
