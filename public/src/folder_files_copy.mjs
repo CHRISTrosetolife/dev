@@ -13,6 +13,6 @@ export async function folder_files_copy(
     file_extension,
     output_directory,
     lambda,
-    tautology,
+    filter,
   );
 }
