@@ -6,6 +6,8 @@ export async function bible_audio_player_english_psalms_proverbs() {
   let download_folder = "ENGESVO2DA";
   let filter = (file_name) =>
     list_any(["Psalms", "Proverbs"], string_includes(file_name));
-  log({});
+  log({
+    filter,
+  });
   await bible_audio_player_english_generic(download_folder, filter);
 }
