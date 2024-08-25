@@ -8,7 +8,12 @@ export async function folder_files_move_generic(
   lambda,
   filter,
 ) {
-  await folder_read_each_generic(input_directory, file_extension, lambda_each);
+  await folder_read_each_generic(
+    input_directory,
+    file_extension,
+    lambda_each,
+    filter,
+  );
   async function lambda_each(file_path) {
     let file_name = path_parse_base(file_path);
     let file_path_new = path_join([output_directory, file_name]);
