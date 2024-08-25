@@ -6,6 +6,7 @@ export async function folder_files_move_generic(
   file_extension,
   output_directory,
   lambda,
+  filter,
 ) {
   await folder_read_each(input_directory, file_extension, lambda_each);
   async function lambda_each(file_path) {

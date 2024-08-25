@@ -1,3 +1,4 @@
+import { tautology } from "./tautology.mjs";
 import { file_copy_generic } from "./file_copy_generic.mjs";
 import { folder_files_move_generic } from "./folder_files_move_generic.mjs";
 export async function folder_files_copy(
@@ -11,5 +12,6 @@ export async function folder_files_copy(
     file_extension,
     output_directory,
     lambda,
+    tautology,
   );
 }

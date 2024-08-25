@@ -1,3 +1,4 @@
+import { tautology } from "./tautology.mjs";
 import { folder_files_move_generic } from "./folder_files_move_generic.mjs";
 import { file_rename } from "./file_rename.mjs";
 export async function folder_files_move(
@@ -11,5 +12,6 @@ export async function folder_files_move(
     file_extension,
     output_directory,
     lambda,
+    tautology,
   );
 }
