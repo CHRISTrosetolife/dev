@@ -10,5 +10,5 @@ export async function folder_read_each(
   let filter = tautology;
   let file_paths = await folder_read(input_directory, file_extension);
   let filtered = list_filter(file_paths, filter);
-  await each_async(file_paths, lambda);
+  await each_async(filtered, lambda);
 }
