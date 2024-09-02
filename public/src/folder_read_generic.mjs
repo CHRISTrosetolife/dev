@@ -17,9 +17,11 @@ export async function folder_read_generic(folder, file_extension, recursive) {
     let files = fs.readdir(dir);
     await each_async(files, async (file) => {
       let path_full = path.join(dir, file);
-      let stat = await fs.lstat(path_full);
-      if (stat.isDirectory()) {
-        traverse(path_full);
+      if (recursive) {
+        let stat = await fs.lstat(path_full);
+        if (stat.isDirectory()) {
+          traverse(path_full);
+        }
       }
       lambda_each(path_full);
     });
