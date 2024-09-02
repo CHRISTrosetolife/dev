@@ -8,6 +8,7 @@ import { assert } from "./assert.mjs";
 import { import_node } from "./import_node.mjs";
 export async function folder_read_generic(folder, file_extension, recursive) {
   let g = await import_node("glob");
+  let fs = await import_node("fs");
   assert(string_is, [file_extension]);
   folder = string_replace(folder, "\\", "/");
   folder += "/";
