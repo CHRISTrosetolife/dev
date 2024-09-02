@@ -11,10 +11,12 @@ export async function bible_audio_player_proverbs() {
     "ENGNLTO2DA",
     "ENGNRSO2DA",
   ];
-  let filter = (file_name) =>
-    string_includes(file_name, "_____") &&
-    string_includes(file_name, "Proverbs");
   await each_async(download_folders_fcbh, async (download_folder) => {
-    await bible_audio_player_english(download_folder, filter);
+    await bible_audio_player_english(
+      download_folder,
+      (file_name) =>
+        string_includes(file_name, "_____") &&
+        string_includes(file_name, "Proverbs"),
+    );
   });
 }
