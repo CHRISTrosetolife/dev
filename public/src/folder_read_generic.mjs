@@ -16,12 +16,12 @@ export async function folder_read_generic(folder, file_extension, recursive) {
   async function traverse(dir, lambda_each) {
     let files = fs.readdir(dir);
     await each_async(files, async (file) => {
-      let fullPath = path.join(dir, file);
-      let newLocal = await fs.lstat(fullPath);
-      if (newLocal.isDirectory()) {
-        traverse(fullPath);
+      let path_full = path.join(dir, file);
+      let stat = await fs.lstat(path_full);
+      if (stat.isDirectory()) {
+        traverse(path_full);
       }
-      lambda_each(fullPath);
+      lambda_each(path_full);
     });
   }
   let { glob } = g;
