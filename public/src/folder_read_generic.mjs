@@ -23,7 +23,7 @@ export async function folder_read_generic(folder, file_extension, recursive) {
           await traverse(path_full);
         }
       }
-      if (string_ends_with(file_extension)) {
+      if (string_ends_with(path_full, file_extension)) {
         lambda_each(path_full, lambda_each);
       }
     });
