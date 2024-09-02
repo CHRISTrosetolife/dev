@@ -31,5 +31,5 @@ export async function bible_audio_player_proverbs() {
         string_includes(file_name, "Proverbs"),
     );
   });
-  let download_folders_regular = [];
+  let download_folders_regular = ["NHEB_NT_audio"];
 }
