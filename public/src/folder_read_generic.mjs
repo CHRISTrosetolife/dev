@@ -24,7 +24,7 @@ export async function folder_read_generic(folder, file_extension, recursive) {
         }
       }
       if (string_ends_with(path_full, file_extension)) {
-        lambda_each(path_full, lambda_each);
+        lambda_each(path_full);
       }
     });
   }
