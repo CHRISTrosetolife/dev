@@ -11,7 +11,7 @@ export async function bible_audio_player_proverbs() {
   let acronym = object_property_get(inverted, book);
   let download_folder_acronymns = "BBEM_complete";
   await bible_audio_player_english(
-    download_folder,
+    download_folder_acronymns,
     (file_name) =>
       string_includes(file_name, "_____") &&
       string_includes(file_name, "Proverbs"),
