@@ -31,7 +31,7 @@ export async function bible_audio_player_proverbs() {
     "rsv",
     "NHEB_NT_audio",
   ];
-  await each_async(download_folders_fcbh, async (download_folder) => {
+  await each_async(download_folders_regular, async (download_folder) => {
     await bible_audio_player_english(
       download_folder,
       string_includes_curry_right(book),
