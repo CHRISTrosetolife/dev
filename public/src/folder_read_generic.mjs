@@ -12,12 +12,7 @@ export async function folder_read_generic(folder, file_extension, recursive) {
   folder += "/";
   let { glob } = g;
   let files = await glob(
-    string_combine_multiple([
-      folder,
-      recursive ? "**" : "",
-      "/*",
-      file_extension,
-    ]),
+    string_combine_multiple([folder, recursive ? "**/*" : "", file_extension]),
   );
   list_sort_string(files, identity);
   return files;
