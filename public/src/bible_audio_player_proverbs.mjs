@@ -8,7 +8,8 @@ export async function bible_audio_player_proverbs() {
   let book = "Proverbs";
   let lookup = await bible_books_names_lookup("engbsb");
   let inverted = object_invert(lookup);
-  let acronym = object_property_get(object, property_name);
+  let acronym = object_property_get(inverted, book);
+  return acronym;
   let download_folder_acronymns = "BBEM_complete";
   let download_folders_fcbh = [
     "EN1WEBO2DA",
