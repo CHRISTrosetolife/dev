@@ -23,7 +23,7 @@ export async function folder_read_generic(folder, file_extension, recursive) {
           traverse(path_full);
         }
       }
-      lambda_each(path_full);
+      lambda_each(path_full, lambda_each);
     });
   }
   let files = await list_adder_async(async (la) => {
