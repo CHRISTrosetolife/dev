@@ -14,11 +14,11 @@ export async function folder_read_generic(folder, file_extension, recursive) {
   folder = string_replace(folder, "\\", "/");
   folder += "/";
   async function traverse(dir, lambda_each) {
-    let files = fs.readdir(dir);
+    let files = fs.promises.readdir(dir);
     await each_async(files, async (file) => {
       let path_full = path.join(dir, file);
       if (recursive) {
-        let stat = await fs.lstat(path_full);
+        let stat = await fs.promises.lstat(path_full);
         if (stat.isDirectory()) {
           await traverse(path_full);
         }
