@@ -4,6 +4,7 @@ import { each_async } from "./each_async.mjs";
 import { bible_audio_player_english } from "./bible_audio_player_english.mjs";
 import { string_includes } from "./string_includes.mjs";
 export async function bible_audio_player_proverbs() {
+  let book = "Proverbs";
   let lookup = await bible_books_names_lookup("engbsb");
   let inverted = object_invert(lookup);
   let download_folder_acronymns = "BBEM_complete";
