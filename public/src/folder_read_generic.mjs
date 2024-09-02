@@ -22,7 +22,6 @@ export async function folder_read_generic(folder, file_extension, recursive) {
       }
       console.log(fullPath);
     });
-    files.forEach((file) => {});
   }
   let { glob } = g;
   let files = await glob(
