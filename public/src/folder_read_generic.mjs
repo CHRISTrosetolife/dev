@@ -20,7 +20,7 @@ export async function folder_read_generic(folder, file_extension, recursive) {
       if (recursive) {
         let stat = await fs.lstat(path_full);
         if (stat.isDirectory()) {
-          traverse(path_full);
+          await traverse(path_full);
         }
       }
       if (string_ends_with(file_extension)) {
