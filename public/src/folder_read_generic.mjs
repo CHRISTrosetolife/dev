@@ -29,7 +29,7 @@ export async function folder_read_generic(folder, file_extension, recursive) {
     });
   }
   let files = await list_adder_async(async (la) => {
-    traverse(folder, la);
+    await traverse(folder, la);
   });
   list_sort_string(files, identity);
   return files;
