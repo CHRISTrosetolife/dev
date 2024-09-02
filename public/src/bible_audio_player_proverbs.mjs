@@ -10,11 +10,6 @@ export async function bible_audio_player_proverbs() {
   let lookup = await bible_books_names_lookup("engbsb");
   let inverted = object_invert(lookup);
   let acronym = object_property_get(inverted, book);
-  let download_folder_acronymns = "BBEM_complete";
-  await bible_audio_player_english(
-    download_folder_acronymns,
-    string_includes_curry_right(acronym),
-  );
   let download_folders_fcbh = [
     "EN1WEBO2DA",
     "ENGCEVO2DA",
@@ -31,6 +26,11 @@ export async function bible_audio_player_proverbs() {
         string_includes(file_name, "Proverbs"),
     );
   });
+  let download_folder_acronymns = "BBEM_complete";
+  await bible_audio_player_english(
+    download_folder_acronymns,
+    string_includes_curry_right(acronym),
+  );
   let download_folders_regular = [
     "NHEB_NT_audio",
     "niv_mp3_bible_new_international_version",
