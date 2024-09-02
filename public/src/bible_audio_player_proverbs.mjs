@@ -1,3 +1,4 @@
+import { each_async } from "./each_async.mjs";
 import { bible_audio_player_english } from "./bible_audio_player_english.mjs";
 import { string_includes } from "./string_includes.mjs";
 import { string_includes_curry } from "./string_includes_curry.mjs";
@@ -11,7 +12,7 @@ export async function bible_audio_player_proverbs() {
     "ENGNLTO2DA",
     "ENGNRSO2DA",
   ];
-  () => {};
+  await each_async(list, async (item) => {});
   let filter = (file_name) =>
     string_includes(file_name, "_____") &&
     list_any(["Psalms", "Proverbs"], string_includes_curry(file_name));
