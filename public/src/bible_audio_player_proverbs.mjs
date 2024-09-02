@@ -26,11 +26,6 @@ export async function bible_audio_player_proverbs() {
         string_includes(file_name, "Proverbs"),
     );
   });
-  let download_folder_acronymns = "BBEM_complete";
-  await bible_audio_player_english(
-    download_folder_acronymns,
-    string_includes_curry_right(acronym),
-  );
   let download_folders_regular = [
     "NHEB_NT_audio",
     "niv_mp3_bible_new_international_version",
@@ -42,4 +37,9 @@ export async function bible_audio_player_proverbs() {
       string_includes_curry_right(book),
     );
   });
+  let download_folder_acronymns = "BBEM_complete";
+  await bible_audio_player_english(
+    download_folder_acronymns,
+    string_includes_curry_right(acronym),
+  );
 }
