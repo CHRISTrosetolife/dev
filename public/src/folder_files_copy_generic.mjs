@@ -8,8 +8,9 @@ export async function folder_files_copy_generic(
   filter,
 ) {
   let lambda = async (from, to) => {
-    log(to);
-    return;
+    if (0) {
+      log(to);
+    }
     await file_copy_generic(from, to, false);
   };
   await folder_files_move_generic(
