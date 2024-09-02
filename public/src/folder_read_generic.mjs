@@ -6,6 +6,7 @@ import { string_replace } from "./string_replace.mjs";
 import { string_is } from "./string_is.mjs";
 import { assert } from "./assert.mjs";
 import { import_node } from "./import_node.mjs";
+import { string_ends_with } from "./string_ends_with.mjs";
 export async function folder_read_generic(folder, file_extension, recursive) {
   let fs = await import_node("fs");
   let path = await import_node("path");
@@ -22,7 +23,9 @@ export async function folder_read_generic(folder, file_extension, recursive) {
           traverse(path_full);
         }
       }
-      lambda_each(path_full, lambda_each);
+      if (string_ends_with(file_extension)) {
+        lambda_each(path_full, lambda_each);
+      }
     });
   }
   let files = await list_adder_async(async (la) => {
