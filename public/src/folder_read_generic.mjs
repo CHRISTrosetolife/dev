@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { identity } from "./identity.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -10,6 +11,15 @@ export async function folder_read_generic(folder, file_extension, recursive) {
   assert(string_is, [file_extension]);
   folder = string_replace(folder, "\\", "/");
   folder += "/";
+  function traverseDir(dir) {
+    fs.readdirSync(dir).forEach((file) => {
+      let fullPath = path.join(dir, file);
+      if (fs.lstatSync(fullPath).isDirectory()) {
+        traverseDir(fullPath);
+      }
+      console.log(fullPath);
+    });
+  }
   let { glob } = g;
   let files = await glob(
     string_combine_multiple([folder, recursive ? "**/*" : "", file_extension]),
