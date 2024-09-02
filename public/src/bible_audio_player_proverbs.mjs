@@ -36,4 +36,10 @@ export async function bible_audio_player_proverbs() {
     "niv_mp3_bible_new_international_version",
     "rsv",
   ];
+  await each_async(download_folders_fcbh, async (download_folder) => {
+    await bible_audio_player_english(
+      download_folder,
+      string_includes_curry_right(book),
+    );
+  });
 }
