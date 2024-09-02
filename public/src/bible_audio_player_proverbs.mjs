@@ -13,6 +13,7 @@ export async function bible_audio_player_proverbs() {
   let download_folders_fcbh = [
     "ENGESVO2DA",
     "ENGESVN2DA",
+    "ENGNLTO2DA",
     "ENGNRSO2DA",
     "EN1WEBO2DA",
   ];
@@ -20,13 +21,11 @@ export async function bible_audio_player_proverbs() {
     await bible_audio_player_english(
       download_folder,
       (file_name) =>
-        string_includes(file_name, "_____") &&
+        !string_includes(file_name, "_____") &&
         string_includes(file_name, "Proverbs"),
     );
   });
   let download_folders_regular = [
-    "ENGCEVO2DA",
-    "ENGNLTO2DA",
     "niv_mp3_bible_new_international_version",
     "rsv",
     "NHEB_NT_audio",
