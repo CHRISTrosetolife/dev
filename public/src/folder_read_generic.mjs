@@ -1,5 +1,4 @@
 import { each_async } from "./each_async.mjs";
-import { log } from "./log.mjs";
 import { identity } from "./identity.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -22,7 +21,7 @@ export async function folder_read_generic(folder, file_extension, recursive) {
       if (newLocal.isDirectory()) {
         traverseDir(fullPath);
       }
-      console.log(fullPath);
+      lambda_each(fullPath);
     });
   }
   let { glob } = g;
