@@ -36,7 +36,7 @@ export function terminal_commands(context) {
     on_returns_get,
     history_index_get,
   } = context;
-  let symbols = "_',<>=\"+.(){}[]:/-\\";
+  let symbols = "_',<>=\"+.(){}[]:/-\\*";
   return [
     {
       match: {
