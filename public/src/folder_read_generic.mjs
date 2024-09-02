@@ -14,7 +14,7 @@ export async function folder_read_generic(folder, file_extension, recursive) {
   folder = string_replace(folder, "\\", "/");
   folder += "/";
   async function traverse(dir, lambda_each) {
-    let files = fs.promises.readdir(dir);
+    let files = await fs.promises.readdir(dir);
     await each_async(files, async (file) => {
       let path_full = path.join(dir, file);
       if (recursive) {
