@@ -34,5 +34,6 @@ export async function bible_audio_player_proverbs() {
   let download_folders_regular = [
     "NHEB_NT_audio",
     "niv_mp3_bible_new_international_version",
+    "rsv",
   ];
 }
