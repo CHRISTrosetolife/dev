@@ -2,6 +2,7 @@ import { each_async } from "./each_async.mjs";
 import { bible_audio_player_english } from "./bible_audio_player_english.mjs";
 import { string_includes } from "./string_includes.mjs";
 export async function bible_audio_player_proverbs() {
+  let download_folder_acronymns = "BBEM_complete";
   let download_folders_fcbh = [
     "EN1WEBO2DA",
     "ENGCEVO2DA",
