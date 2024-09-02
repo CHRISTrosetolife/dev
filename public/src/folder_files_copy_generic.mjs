@@ -6,7 +6,9 @@ export async function folder_files_copy_generic(
   output_directory,
   filter,
 ) {
-  let lambda = async (from, to) => await file_copy_generic(from, to, false);
+  let lambda = async (from, to) => {
+    await file_copy_generic(from, to, false);
+  };
   await folder_files_move_generic(
     input_directory,
     file_extension,
