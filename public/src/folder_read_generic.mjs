@@ -15,7 +15,7 @@ export async function folder_read_generic(folder, file_extension, recursive) {
   folder += "/";
   async function traverseDir(dir) {
     let files = fs.readdir(dir);
-    await each_async(files, async (item) => {
+    await each_async(files, async (file) => {
       let fullPath = path.join(dir, file);
       if (fs.lstatSync(fullPath).isDirectory()) {
         traverseDir(fullPath);
