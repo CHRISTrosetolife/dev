@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { folder_files_move_generic } from "./folder_files_move_generic.mjs";
 import { file_copy_generic } from "./file_copy_generic.mjs";
 export async function folder_files_copy_generic(
@@ -7,6 +8,7 @@ export async function folder_files_copy_generic(
   filter,
 ) {
   let lambda = async (from, to) => {
+    log({});
     await file_copy_generic(from, to, false);
   };
   await folder_files_move_generic(
