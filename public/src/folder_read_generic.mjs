@@ -2,7 +2,6 @@ import { list_adder_async } from "./list_adder_async.mjs";
 import { each_async } from "./each_async.mjs";
 import { identity } from "./identity.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_replace } from "./string_replace.mjs";
 import { string_is } from "./string_is.mjs";
 import { assert } from "./assert.mjs";
@@ -28,10 +27,6 @@ export async function folder_read_generic(folder, file_extension, recursive) {
   let files = await list_adder_async(async (la) => {
     traverse(folder, la);
   });
-  let { glob } = g;
-  let files = await glob(
-    string_combine_multiple([folder, recursive ? "**/*" : "", file_extension]),
-  );
   list_sort_string(files, identity);
   return files;
 }
