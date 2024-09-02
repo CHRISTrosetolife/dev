@@ -1,8 +1,10 @@
+import { bible_books_names_lookup } from "./bible_books_names_lookup.mjs";
 import { object_invert } from "./object_invert.mjs";
 import { each_async } from "./each_async.mjs";
 import { bible_audio_player_english } from "./bible_audio_player_english.mjs";
 import { string_includes } from "./string_includes.mjs";
 export async function bible_audio_player_proverbs() {
+  await bible_books_names_lookup("engbsb");
   object_invert();
   let download_folder_acronymns = "BBEM_complete";
   let download_folders_fcbh = [
