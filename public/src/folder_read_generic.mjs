@@ -13,7 +13,8 @@ export async function folder_read_generic(folder, file_extension, recursive) {
   folder = string_replace(folder, "\\", "/");
   folder += "/";
   function traverseDir(dir) {
-    fs.readdir(dir).forEach((file) => {
+    let files = fs.readdir(dir);
+    files.forEach((file) => {
       let fullPath = path.join(dir, file);
       if (fs.lstatSync(fullPath).isDirectory()) {
         traverseDir(fullPath);
