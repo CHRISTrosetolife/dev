@@ -15,14 +15,14 @@ export async function folder_read_generic(folder, file_extension, recursive) {
   folder += "/";
   async function traverseDir(dir) {
     let files = fs.readdir(dir);
-    await each_async(files, async (item) => {});
-    files.forEach((file) => {
+    await each_async(files, async (item) => {
       let fullPath = path.join(dir, file);
       if (fs.lstatSync(fullPath).isDirectory()) {
         traverseDir(fullPath);
       }
       console.log(fullPath);
     });
+    files.forEach((file) => {});
   }
   let { glob } = g;
   let files = await glob(
