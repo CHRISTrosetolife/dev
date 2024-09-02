@@ -25,7 +25,7 @@ export async function folder_read_generic(folder, file_extension, recursive) {
       lambda_each(path_full);
     });
   }
-  await list_adder_async(async (la) => {
+  let files = await list_adder_async(async (la) => {
     traverse(folder, la);
   });
   let { glob } = g;
