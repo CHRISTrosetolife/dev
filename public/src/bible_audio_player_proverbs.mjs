@@ -3,7 +3,14 @@ import { string_includes } from "./string_includes.mjs";
 import { string_includes_curry } from "./string_includes_curry.mjs";
 import { list_any } from "./list_any.mjs";
 export async function bible_audio_player_proverbs() {
-  let download_folders = ["ENGESVO2DA"];
+  let download_folders = [
+    "EN1WEBO2DA",
+    "ENGCEVO2DA",
+    "ENGESVN2DA",
+    "ENGESVO2DA",
+    "ENGNLTO2DA",
+    "ENGNRSO2DA",
+  ];
   let filter = (file_name) =>
     string_includes(file_name, "_____") &&
     list_any(["Psalms", "Proverbs"], string_includes_curry(file_name));
