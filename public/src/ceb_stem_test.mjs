@@ -20,7 +20,7 @@ export async function ceb_stem_test() {
       key_upper,
       ".tei",
     ]);
-    let parsed = await file_html_parse(f);
+    let parsed = await file_html_parse(p);
   });
   ceb_definition_wolff();
   let map = await ceb_bible_words_definitions_map_cache();
