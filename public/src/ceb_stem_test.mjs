@@ -1,3 +1,4 @@
+import { html_parse_text } from "./html_parse_text.mjs";
 import { html_parse_visit_tag } from "./html_parse_visit_tag.mjs";
 import { exit } from "./exit.mjs";
 import { log } from "./log.mjs";
@@ -16,6 +17,7 @@ export async function ceb_stem_test() {
     html_parse_visit_tag(body, "p", (p) => {
       log({
         p,
+        t: html_parse_text(p),
       });
       exit();
       html_parse_visit_tag(p, "tr", (tr) => {
