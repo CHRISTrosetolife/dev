@@ -27,7 +27,7 @@ export async function ceb_stem_test() {
   let context = {
     letters,
   };
-  ceb_definition_wolff();
+  ceb_definition_wolff(context);
   let map = await ceb_bible_words_definitions_map_cache();
   let removes = ["juda", "moises"];
   each_object(map, (stem, inputs) => {
