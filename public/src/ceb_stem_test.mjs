@@ -10,6 +10,7 @@ import { each_object } from "./each_object.mjs";
 import { ceb_bible_words_definitions_map_cache } from "./ceb_bible_words_definitions_map_cache.mjs";
 import { assert_message } from "./assert_message.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
+import { list_second } from "./list_second.mjs";
 export async function ceb_stem_test() {
   let data = await ceb_dictionary_data();
   each_object(data, (letter, parsed) => {
@@ -19,6 +20,7 @@ export async function ceb_stem_test() {
         c: html_parse_text(c),
       });
     });
+    let s = list_second(body.children);
     html_parse_visit_tag(body, "p", (p) => {
       exit();
       html_parse_visit_tag(p, "tr", (tr) => {
