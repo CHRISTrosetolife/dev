@@ -15,10 +15,11 @@ export async function ceb_stem_test() {
   each_object(data, (letter, parsed) => {
     let body = html_parse_visit_tag_single(parsed, "body");
     let s = list_second(body.children);
-    log({
-      s,
+    each(s.children, (c) => {
+      log({
+        c,
+      });
     });
-    each(list, (item) => {});
     html_parse_visit_tag(body, "p", (p) => {
       exit();
       html_parse_visit_tag(p, "tr", (tr) => {
