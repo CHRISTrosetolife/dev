@@ -7,11 +7,16 @@ import { each } from "./each.mjs";
 import { each_object } from "./each_object.mjs";
 import { ceb_bible_words_definitions_map_cache } from "./ceb_bible_words_definitions_map_cache.mjs";
 import { assert_message } from "./assert_message.mjs";
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export async function ceb_stem_test() {
   let context = {};
   let keys = keyboard_keys();
   await each_async(keys, async (key) => {
-    let p = "..\\phildict-master\\Data\\Wolff\\";
+    let p = string_combine_multiple([
+      "..\\phildict-master\\Data\\Wolff\\WCED-",
+      key,
+      ".tei",
+    ]);
   });
   ceb_definition_wolff();
   let map = await ceb_bible_words_definitions_map_cache();
