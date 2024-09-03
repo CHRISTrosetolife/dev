@@ -23,8 +23,8 @@ export async function ceb_stem_test() {
         c: html_parse_text(c),
       });
     });
+    exit();
     html_parse_visit_tag(body, "p", (p) => {
-      exit();
       html_parse_visit_tag(p, "tr", (tr) => {
         log({
           tr,
