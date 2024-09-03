@@ -29,7 +29,7 @@ export function ceb_stem(word) {
   });
   let spelling_uo = ["kung", "gayod", "tibuok"];
   each(result, (r) => {
-    let f = list_filter(spelling_uo);
+    let f = list_filter(spelling_uo, (s) => {});
   });
   let replacements = {
     jehova: "hehoba",
