@@ -18,6 +18,7 @@ export async function ceb_stem_test() {
     log({
       s,
     });
+    each(list, (item) => {});
     html_parse_visit_tag(body, "p", (p) => {
       exit();
       html_parse_visit_tag(p, "tr", (tr) => {
