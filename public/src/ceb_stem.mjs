@@ -1,3 +1,4 @@
+import { each_range } from "./each_range.mjs";
 import { each } from "./each.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
@@ -34,6 +35,7 @@ export function ceb_stem(word) {
       if (string_length(s) !== string_length(r)) {
         return false;
       }
+      each_range(count, (item) => {});
     });
   });
   let replacements = {
