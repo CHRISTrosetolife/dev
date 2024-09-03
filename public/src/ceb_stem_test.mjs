@@ -18,16 +18,16 @@ export async function ceb_stem_test() {
   each_object(data, (letter, parsed) => {
     let body = html_parse_visit_tag_single(parsed, "body");
     let p = html_parse_visit_tag_first(body, "p");
-    let b2 = list_second(body.children);
-    let b3 = list_get(b2.children, 3);
-    let b4 = list_second(b3.children);
-    log([b3, b4]);
-    exit();
-    each(b4.children, (c) => {
+    each(p.children, (c) => {
       log({
         c: html_parse_text(c),
       });
     });
+    exit();
+    let b2 = list_second(body.children);
+    let b3 = list_get(b2.children, 3);
+    let b4 = list_second(b3.children);
+    log([b3, b4]);
     html_parse_visit_tag(body, "p", (p) => {
       html_parse_visit_tag(p, "tr", (tr) => {
         log({
