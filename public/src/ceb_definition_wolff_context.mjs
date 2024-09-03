@@ -13,7 +13,7 @@ export async function ceb_definition_wolff_context() {
     async () => {
       let letters = {};
       let keys = keyboard_keys();
-      keys = list_filter(keys, (k) => !string_includes());
+      keys = list_filter(keys, (k) => !string_includes("eq", k));
       await each_async(keys, async (key) => {
         let key_upper = string_case_upper(key);
         let p = string_combine_multiple([
