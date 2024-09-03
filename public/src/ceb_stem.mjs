@@ -27,6 +27,7 @@ export function ceb_stem(word) {
     }
   });
   let spelling_uo = ["kung", "gayod", "tibuok"];
+  each(list, (item) => {});
   let replacements = {
     jehova: "hehoba",
     dios: "diyos",
