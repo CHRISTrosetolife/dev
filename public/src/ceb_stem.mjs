@@ -17,7 +17,9 @@ import { identity } from "./identity.mjs";
 import { list_join_empty } from "./list_join_empty.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
 export function ceb_stem(word) {
-  log({});
+  log({
+    word,
+  });
   let result = [word];
   let suffix = "ng";
   if (string_ends_with(word, suffix)) {
