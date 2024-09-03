@@ -12,7 +12,6 @@ import { ceb_bible_words_definitions_map_cache } from "./ceb_bible_words_definit
 import { assert_message } from "./assert_message.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export async function ceb_stem_test() {
-  let context = {};
   let letters = {};
   let keys = keyboard_keys();
   await each_async(keys, async (key) => {
@@ -23,8 +22,11 @@ export async function ceb_stem_test() {
       ".tei",
     ]);
     let parsed = await file_html_parse(p);
-    object_property_set();
+    object_property_set(letters, key, parsed);
   });
+  let context = {
+    letters,
+  };
   ceb_definition_wolff();
   let map = await ceb_bible_words_definitions_map_cache();
   let removes = ["juda", "moises"];
