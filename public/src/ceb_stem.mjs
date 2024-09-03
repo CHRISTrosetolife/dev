@@ -13,7 +13,7 @@ export function ceb_stem(word) {
     jehova: "hehoba",
   };
   if (object_property_has(replacements, word)) {
-    let r = object_property_get(object, property_name);
+    let r = object_property_get(replacements, word);
     list_add(result, r);
   }
   return result;
