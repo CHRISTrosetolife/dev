@@ -73,6 +73,7 @@ export function ceb_stem(word) {
     ibabaw: "babaw",
     pinaagi: "paagi",
     babaye: "baye",
+    moises: "isi",
     oh: "o",
     anaa: "naa",
     sacerdote: "saserdote",
