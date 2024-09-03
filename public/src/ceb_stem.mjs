@@ -66,7 +66,6 @@ export function ceb_stem(word) {
     jesus: "hesus",
     dios: "diyos",
     lalake: "laki",
-    juda: "jod",
     walay: "wala",
     mo: "kamo",
     katawohan: "tawo",
@@ -74,13 +73,14 @@ export function ceb_stem(word) {
     ibabaw: "babaw",
     pinaagi: "paagi",
     babaye: "baye",
-    moises: "isi",
     oh: "o",
     anaa: "naa",
     sacerdote: "saserdote",
     kaniya: "niya",
     niini: "ini",
     miingon: "ingon",
+    juda: "jod",
+    moises: "isi",
   };
   if (object_property_exists(replacements, word)) {
     let r = object_property_get(replacements, word);
