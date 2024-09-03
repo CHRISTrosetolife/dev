@@ -62,6 +62,7 @@ export function ceb_stem(word) {
   });
   let replacements = {
     jehova: "hehoba",
+    jesus: "hesus",
     dios: "diyos",
     lalake: "laki",
     walay: "wala",
