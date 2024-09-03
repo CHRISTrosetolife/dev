@@ -1,3 +1,4 @@
+import { list_add_if_exists_not } from "./list_add_if_exists_not.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { log } from "./log.mjs";
 import { each_range } from "./each_range.mjs";
@@ -66,7 +67,9 @@ export function ceb_stem(word) {
       });
       return e;
     });
-    each(list, (item) => {});
+    each(list, (item) => {
+      list_add_if_exists_not();
+    });
     list_add_multiple(result, f);
   });
   let replacements = {
