@@ -17,9 +17,6 @@ import { string_get } from "./string_get.mjs";
 import { identity } from "./identity.mjs";
 import { list_join_empty } from "./list_join_empty.mjs";
 export function ceb_stem(word) {
-  log({
-    word,
-  });
   let result = [word];
   let suffix = "ng";
   if (string_ends_with(word, suffix)) {
@@ -60,9 +57,6 @@ export function ceb_stem(word) {
             return true;
           }
         }
-      });
-      log({
-        e,
       });
       return e;
     });
