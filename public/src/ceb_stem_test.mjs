@@ -9,9 +9,8 @@ import { ceb_bible_words_definitions_map_cache } from "./ceb_bible_words_definit
 import { assert_message } from "./assert_message.mjs";
 export async function ceb_stem_test() {
   let context = {};
-  await each_async(list, async (item) => {
-    keyboard_keys();
-  });
+  let keys = keyboard_keys();
+  await each_async(keys, async (item) => {});
   ceb_definition_wolff();
   let map = await ceb_bible_words_definitions_map_cache();
   let removes = ["juda", "moises"];
