@@ -1,3 +1,4 @@
+import { list_sort_string } from "./list_sort_string.mjs";
 import { log } from "./log.mjs";
 import { each_range } from "./each_range.mjs";
 import { each } from "./each.mjs";
@@ -12,7 +13,6 @@ import { string_skip_1 } from "./string_skip_1.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { string_length } from "./string_length.mjs";
 import { string_get } from "./string_get.mjs";
-import { list_sort } from "./list_sort.mjs";
 import { identity } from "./identity.mjs";
 import { list_join_empty } from "./list_join_empty.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
@@ -50,7 +50,7 @@ export function ceb_stem(word) {
         let r_i = string_get(r, i);
         if (s_i !== r_i) {
           let letters = [s_i, r_i];
-          list_sort(letters, identity);
+          list_sort_string(letters, identity);
           let letters_string = list_join_empty(letters);
           log({
             letters_string,
