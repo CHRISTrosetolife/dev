@@ -17,7 +17,7 @@ export async function ceb_stem_test() {
   each_object(data, (letter, parsed) => {
     let body = html_parse_visit_tag_single(parsed, "body");
     let b2 = list_second(body.children);
-    let b3 = list_get(b2, 3);
+    let b3 = list_get(b2.children, 3);
     each(b3.children, (c) => {
       log({
         c: html_parse_text(c),
