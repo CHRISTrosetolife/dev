@@ -8,6 +8,7 @@ import { list_add } from "./list_add.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { string_skip_1 } from "./string_skip_1.mjs";
 import { list_filter } from "./list_filter.mjs";
+import { string_length } from "./string_length.mjs";
 export function ceb_stem(word) {
   let result = [word];
   let suffix = "ng";
@@ -29,7 +30,11 @@ export function ceb_stem(word) {
   });
   let spelling_uo = ["kung", "gayod", "tibuok"];
   each(result, (r) => {
-    let f = list_filter(spelling_uo, (s) => {});
+    let f = list_filter(spelling_uo, (s) => {
+      if (string_length(s) !== string_length(r)) {
+        return false;
+      }
+    });
   });
   let replacements = {
     jehova: "hehoba",
