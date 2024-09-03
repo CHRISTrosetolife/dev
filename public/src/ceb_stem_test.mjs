@@ -9,7 +9,7 @@ import { assert_message } from "./assert_message.mjs";
 export async function ceb_stem_test() {
   let data = await ceb_dictionary_data();
   each_object(data, (letter, parsed) => {
-    let tei = html_parse_visit_tag_single(parsed, "tei");
+    let body = html_parse_visit_tag_single(parsed, "body");
   });
   return;
   let map = await ceb_bible_words_definitions_map_cache();
