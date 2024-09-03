@@ -9,7 +9,7 @@ export async function ceb_stem_test() {
   let removes = ["juda", "moises"];
   each_object(map, (stem, inputs) => {
     each(inputs, (input) => {
-      if (list_includes(removes)) {
+      if (list_includes(removes, input)) {
         return;
       }
       let choices = ceb_stem(input);
