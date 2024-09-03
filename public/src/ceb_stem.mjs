@@ -28,6 +28,7 @@ export function ceb_stem(word) {
     list_add(result, r);
   }
   let prefixes = ["ka", "ni", "mi"];
+  prefixes = [];
   each(prefixes, (prefix) => {
     if (string_starts_with(word, prefix)) {
       let r = string_prefix_without(word, prefix);
