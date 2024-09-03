@@ -8,7 +8,10 @@ export async function ceb_stem_test() {
   let map = await ceb_bible_words_definitions_map_cache();
   each_object(object, (stem, inputs) => {
     each(inputs, (input) => {
-      assert_message(equal, [ceb_stem(input), stem]);
+      assert_message(equal, [ceb_stem(input), stem], () => ({
+        input,
+        stem,
+      }));
     });
   });
 }
