@@ -1,3 +1,4 @@
+import { html_parse_visit_tag } from "./html_parse_visit_tag.mjs";
 import { exit } from "./exit.mjs";
 import { log } from "./log.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
@@ -12,6 +13,7 @@ export async function ceb_stem_test() {
   let data = await ceb_dictionary_data();
   each_object(data, (letter, parsed) => {
     let body = html_parse_visit_tag_single(parsed, "body");
+    html_parse_visit_tag();
     log({
       body,
     });
