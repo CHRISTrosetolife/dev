@@ -1,3 +1,4 @@
+import { equal_json } from "./equal_json.mjs";
 import { each_range } from "./each_range.mjs";
 import { each } from "./each.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
@@ -45,6 +46,8 @@ export function ceb_stem(word) {
         if (s_i !== r_i) {
           let letters = [s_i, r_i];
           list_sort(letters, identity);
+          if (equal_json()) {
+          }
         }
       });
       return e;
