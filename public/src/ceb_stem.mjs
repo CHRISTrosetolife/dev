@@ -66,6 +66,7 @@ export function ceb_stem(word) {
     jesus: "hesus",
     dios: "diyos",
     lalake: "laki",
+    juda: "jod",
     walay: "wala",
     mo: "kamo",
     katawohan: "tawo",
