@@ -21,7 +21,9 @@ export async function ceb_definition_wolff_context() {
         let parsed = await file_html_parse(p);
         object_property_set(letters, key, parsed);
       });
-      return letters;
+      return {
+        letters,
+      };
     },
   );
 }
