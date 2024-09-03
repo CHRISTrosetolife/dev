@@ -14,6 +14,7 @@ import { string_length } from "./string_length.mjs";
 import { string_get } from "./string_get.mjs";
 import { list_sort } from "./list_sort.mjs";
 import { identity } from "./identity.mjs";
+import { list_join_empty } from "./list_join_empty.mjs";
 export function ceb_stem(word) {
   let result = [word];
   let suffix = "ng";
@@ -46,7 +47,8 @@ export function ceb_stem(word) {
         if (s_i !== r_i) {
           let letters = [s_i, r_i];
           list_sort(letters, identity);
-          if (equal_json()) {
+          let letters_string = list_join_empty(letters);
+          if (equal_json(letters)) {
           }
         }
       });
