@@ -14,8 +14,10 @@ export async function ceb_stem_test() {
   each_object(data, (letter, parsed) => {
     let body = html_parse_visit_tag_single(parsed, "body");
     html_parse_visit_tag(body, "p", (p) => {
-      log({
-        p,
+      html_parse_visit_tag(p, "tr", (tr) => {
+        log({
+          tr,
+        });
       });
     });
     exit();
