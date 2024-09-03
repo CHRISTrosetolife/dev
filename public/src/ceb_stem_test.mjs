@@ -20,9 +20,9 @@ export async function ceb_stem_test() {
     let p = html_parse_visit_tag_first(body, "p");
     let pn = p.next;
     log({
-      c: p,
+      c: pn,
     });
-    each(p.children, (c) => {
+    each(pn.children, (c) => {
       log({
         c: html_parse_text(c),
       });
