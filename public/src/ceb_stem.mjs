@@ -7,7 +7,7 @@ import { string_ends_with } from "./string_ends_with.mjs";
 import { list_add } from "./list_add.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { string_skip_1 } from "./string_skip_1.mjs";
-import { list_includes } from "./list_includes.mjs";
+import { list_filter } from "./list_filter.mjs";
 export function ceb_stem(word) {
   let result = [word];
   let suffix = "ng";
@@ -29,8 +29,7 @@ export function ceb_stem(word) {
   });
   let spelling_uo = ["kung", "gayod", "tibuok"];
   each(result, (r) => {
-    if (list_includes(spelling_uo, r)) {
-    }
+    let f = list_filter(spelling_uo, r);
   });
   let replacements = {
     jehova: "hehoba",
