@@ -22,7 +22,7 @@ export async function ceb_dictionary_data() {
           key_upper,
           ".tei",
         ]);
-        let input_string = await file_read(f);
+        let input_string = await file_read(p);
         let parsed = await xml_parse(input_string);
         object_property_set(letters, key, parsed);
       });
