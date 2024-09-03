@@ -6,7 +6,7 @@ import { ceb_bible_words_definitions_map_cache } from "./ceb_bible_words_definit
 import { assert_message } from "./assert_message.mjs";
 export async function ceb_stem_test() {
   let map = await ceb_bible_words_definitions_map_cache();
-  each_object(object, (stem, inputs) => {
+  each_object(map, (stem, inputs) => {
     each(inputs, (input) => {
       assert_message(equal, [ceb_stem(input), stem], () => ({
         input,
