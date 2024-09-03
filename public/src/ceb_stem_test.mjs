@@ -1,3 +1,4 @@
+import { object_property_set } from "./object_property_set.mjs";
 import { file_html_parse } from "./file_html_parse.mjs";
 import { string_case_upper } from "./string_case_upper.mjs";
 import { keyboard_keys } from "./keyboard_keys.mjs";
@@ -22,6 +23,7 @@ export async function ceb_stem_test() {
       ".tei",
     ]);
     let parsed = await file_html_parse(p);
+    object_property_set();
   });
   ceb_definition_wolff();
   let map = await ceb_bible_words_definitions_map_cache();
