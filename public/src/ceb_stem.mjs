@@ -77,6 +77,7 @@ export function ceb_stem(word) {
     anaa: "naa",
     sacerdote: "saserdote",
     kaniya: "niya",
+    niini: "ini",
   };
   if (object_property_exists(replacements, word)) {
     let r = object_property_get(replacements, word);
