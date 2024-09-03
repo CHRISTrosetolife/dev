@@ -36,6 +36,7 @@ export function ceb_stem(word) {
       if (string_length(s) !== string_length(r)) {
         return false;
       }
+      let e = true;
       each_range(string_length(s), (i) => {
         let s_i = string_get(s, i);
         let r_i = string_get(r, i);
