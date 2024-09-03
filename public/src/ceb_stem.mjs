@@ -30,9 +30,9 @@ export function ceb_stem(word) {
       list_add(result, r);
     }
   });
-  let spelling_uo = ["kung", "gayod", "tibuok"];
+  let spelling_ou = ["kung", "gayod", "tibuok"];
   each(result, (r) => {
-    let f = list_filter(spelling_uo, (s) => {
+    let f = list_filter(spelling_ou, (s) => {
       if (string_length(s) !== string_length(r)) {
         return false;
       }
