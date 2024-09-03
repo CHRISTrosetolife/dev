@@ -14,6 +14,7 @@ import { string_get } from "./string_get.mjs";
 import { list_sort } from "./list_sort.mjs";
 import { identity } from "./identity.mjs";
 import { list_join_empty } from "./list_join_empty.mjs";
+import { list_add_multiple } from "./list_add_multiple.mjs";
 export function ceb_stem(word) {
   let result = [word];
   let suffix = "ng";
@@ -55,6 +56,7 @@ export function ceb_stem(word) {
       });
       return e;
     });
+    list_add_multiple(result, f);
   });
   let replacements = {
     jehova: "hehoba",
