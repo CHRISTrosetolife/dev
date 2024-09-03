@@ -1,4 +1,4 @@
-import { list_without } from "./list_without.mjs";
+import { list_filter } from "./list_filter.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { file_html_parse } from "./file_html_parse.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -12,7 +12,7 @@ export async function ceb_definition_wolff_context() {
     async () => {
       let letters = {};
       let keys = keyboard_keys();
-      keys = list_without(keys, "q");
+      keys = list_filter(keys, (k) => string_includes_not());
       await each_async(keys, async (key) => {
         let key_upper = string_case_upper(key);
         let p = string_combine_multiple([
