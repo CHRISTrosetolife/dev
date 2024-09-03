@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { each_range } from "./each_range.mjs";
 import { each } from "./each.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
@@ -54,6 +55,7 @@ export function ceb_stem(word) {
           }
         }
       });
+      log({});
       return e;
     });
     list_add_multiple(result, f);
