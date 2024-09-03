@@ -14,11 +14,12 @@ export function ceb_stem(word) {
     list_add(result, r);
   }
   let prefixes = ["ka", "ni"];
-  each(list, (item) => {});
-  if (string_starts_with(word, prefix)) {
-    let r = string_prefix_without(word, prefix);
-    list_add(result, r);
-  }
+  each(prefixes, (prefix) => {
+    if (string_starts_with(word, prefix)) {
+      let r = string_prefix_without(word, prefix);
+      list_add(result, r);
+    }
+  });
   let replacements = {
     jehova: "hehoba",
     dios: "diyos",
