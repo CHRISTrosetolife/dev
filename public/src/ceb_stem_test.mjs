@@ -1,3 +1,4 @@
+import { object_property_delete } from "./object_property_delete.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { ceb_stem } from "./ceb_stem.mjs";
 import { each } from "./each.mjs";
@@ -7,7 +8,9 @@ import { assert_message } from "./assert_message.mjs";
 export async function ceb_stem_test() {
   let map = await ceb_bible_words_definitions_map_cache();
   let removes = ["juda", "moises"];
-  each(list, (item) => {});
+  each(removes, (r) => {
+    object_property_delete(map, r);
+  });
   each_object(map, (stem, inputs) => {
     each(inputs, (input) => {
       let choices = ceb_stem(input);
