@@ -66,6 +66,7 @@ export function ceb_stem(word) {
       });
       return e;
     });
+    each(list, (item) => {});
     list_add_multiple(result, f);
   });
   let replacements = {
