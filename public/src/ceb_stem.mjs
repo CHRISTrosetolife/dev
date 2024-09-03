@@ -35,7 +35,7 @@ export function ceb_stem(word) {
       if (string_length(s) !== string_length(r)) {
         return false;
       }
-      each_range(count, (item) => {});
+      each_range(string_length(s), (i) => {});
     });
   });
   let replacements = {
