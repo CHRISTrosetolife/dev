@@ -11,5 +11,7 @@ export function ceb_stem(word) {
   let replacements = {
     jehova: "hehoba",
   };
+  if (object_property_has()) {
+  }
   return result;
 }
