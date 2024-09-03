@@ -14,11 +14,11 @@ export async function ceb_stem_test() {
   let data = await ceb_dictionary_data();
   each_object(data, (letter, parsed) => {
     let body = html_parse_visit_tag_single(parsed, "body");
+    log({
+      body,
+      t: html_parse_text(body),
+    });
     html_parse_visit_tag(body, "p", (p) => {
-      log({
-        p,
-        t: html_parse_text(p),
-      });
       exit();
       html_parse_visit_tag(p, "tr", (tr) => {
         log({
