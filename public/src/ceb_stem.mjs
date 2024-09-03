@@ -52,7 +52,9 @@ export function ceb_stem(word) {
           let letters = [s_i, r_i];
           list_sort(letters, identity);
           let letters_string = list_join_empty(letters);
-          log({});
+          log({
+            letters_string,
+          });
           if (letters_string !== "ou") {
             e = false;
             return true;
