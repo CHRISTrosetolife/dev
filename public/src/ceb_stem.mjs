@@ -1,6 +1,5 @@
 import { list_add_if_exists_not } from "./list_add_if_exists_not.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
-import { log } from "./log.mjs";
 import { each_range } from "./each_range.mjs";
 import { each } from "./each.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
@@ -49,9 +48,6 @@ export function ceb_stem(word) {
           let letters = [s_i, r_i];
           list_sort_string(letters, identity);
           let letters_string = list_join_empty(letters);
-          log({
-            letters_string,
-          });
           if (letters_string !== "ou") {
             e = false;
             return true;
