@@ -1,4 +1,3 @@
-import { list_size } from "./list_size.mjs";
 import { html_parse_visit_tag } from "./html_parse_visit_tag.mjs";
 import { exit } from "./exit.mjs";
 import { log } from "./log.mjs";
@@ -20,15 +19,13 @@ export async function ceb_stem_test() {
     let b2 = list_second(body.children);
     let b3 = list_get(b2.children, 3);
     let b4 = list_second(b3.children);
+    log([b3, b4]);
+    exit();
     each(b4.children, (c) => {
       log({
         c: html_parse_text(c),
       });
     });
-    log({
-      l: list_size(b4.children),
-    });
-    exit();
     html_parse_visit_tag(body, "p", (p) => {
       html_parse_visit_tag(p, "tr", (tr) => {
         log({
