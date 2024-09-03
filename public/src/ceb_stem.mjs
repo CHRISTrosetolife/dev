@@ -32,7 +32,7 @@ export function ceb_stem(word) {
     lalake: "laki",
     walay: "wala",
     mo: "kamo",
-    katawohan: "tawo",
+    katawohan: "tawo","atubangan":"atubang"
     ibabaw: "babaw",
   };
   if (object_property_exists(replacements, word)) {
