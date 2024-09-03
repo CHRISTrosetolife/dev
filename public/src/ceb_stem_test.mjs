@@ -7,6 +7,7 @@ import { ceb_bible_words_definitions_map_cache } from "./ceb_bible_words_definit
 import { assert_message } from "./assert_message.mjs";
 export async function ceb_stem_test() {
   let data = await ceb_dictionary_data();
+  each_object(object, (key, value) => {});
   let map = await ceb_bible_words_definitions_map_cache();
   let removes = ["juda", "moises"];
   each_object(map, (stem, inputs) => {
