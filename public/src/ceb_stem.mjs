@@ -83,6 +83,7 @@ export function ceb_stem(word) {
     niini: "ini",
     miingon: "ingon",
     mahitungod: "tungod",
+    adlawa: "adlaw",
   };
   if (object_property_exists(replacements, word)) {
     let r = object_property_get(replacements, word);
