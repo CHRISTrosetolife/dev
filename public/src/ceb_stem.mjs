@@ -55,7 +55,9 @@ export function ceb_stem(word) {
           }
         }
       });
-      log({});
+      log({
+        f,
+      });
       return e;
     });
     list_add_multiple(result, f);
