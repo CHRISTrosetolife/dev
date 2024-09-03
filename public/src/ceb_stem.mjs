@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -13,6 +14,7 @@ export function ceb_stem(word) {
     list_add(result, r);
   }
   let prefixes = ["ka", "ni"];
+  each(list, (item) => {});
   if (string_starts_with(word, prefix)) {
     let r = string_prefix_without(word, prefix);
     list_add(result, r);
