@@ -11,6 +11,8 @@ import { string_skip_1 } from "./string_skip_1.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { string_length } from "./string_length.mjs";
 import { string_get } from "./string_get.mjs";
+import { list_sort } from "./list_sort.mjs";
+import { identity } from "./identity.mjs";
 export function ceb_stem(word) {
   let result = [word];
   let suffix = "ng";
@@ -41,7 +43,8 @@ export function ceb_stem(word) {
         let s_i = string_get(s, i);
         let r_i = string_get(r, i);
         if (s_i !== r_i) {
-          let letters = [s_i, ri];
+          let letters = [s_i, r_i];
+          list_sort(letter, identity);
         }
       });
       return e;
