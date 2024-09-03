@@ -82,6 +82,7 @@ export function ceb_stem(word) {
     pinaagi: "paagi",
     babaye: "baye",
     oh: "o",
+    anaa: "naa",
   };
   if (object_property_exists(replacements, word)) {
     let r = object_property_get(replacements, word);
