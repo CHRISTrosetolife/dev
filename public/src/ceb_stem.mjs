@@ -17,11 +17,13 @@ import { identity } from "./identity.mjs";
 import { list_join_empty } from "./list_join_empty.mjs";
 export function ceb_stem(word) {
   let result = [word];
-  let suffix = "ng";
-  if (string_ends_with(word, suffix)) {
-    let r = string_suffix_without(word, suffix);
-    list_add(result, r);
-  }
+  let suffixes = ["ng", "an"];
+  each(prefixes, (prefix) => {
+    if (string_ends_with(word, suffix)) {
+      let r = string_suffix_without(word, suffix);
+      list_add(result, r);
+    }
+  });
   let suffix2 = "ng";
   if (string_ends_with(word, suffix2)) {
     let r = string_suffix_without(word, string_skip_1(suffix2));
