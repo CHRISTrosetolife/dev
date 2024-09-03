@@ -1,3 +1,4 @@
+import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
 import { ceb_dictionary_data } from "./ceb_dictionary_data.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { ceb_stem } from "./ceb_stem.mjs";
@@ -7,7 +8,9 @@ import { ceb_bible_words_definitions_map_cache } from "./ceb_bible_words_definit
 import { assert_message } from "./assert_message.mjs";
 export async function ceb_stem_test() {
   let data = await ceb_dictionary_data();
-  each_object(data, (letter, parsed) => {});
+  each_object(data, (letter, parsed) => {
+    let tei = html_parse_visit_tag_single(parsed, "tei");
+  });
   return;
   let map = await ceb_bible_words_definitions_map_cache();
   let removes = ["juda", "moises"];
