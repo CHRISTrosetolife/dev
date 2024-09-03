@@ -31,6 +31,7 @@ export function ceb_stem(word) {
     dios: "diyos",
     lalake: "laki",
     walay: "wala",
+    mo: "kamo",
   };
   if (object_property_exists(replacements, word)) {
     let r = object_property_get(replacements, word);
