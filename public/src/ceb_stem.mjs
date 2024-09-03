@@ -71,6 +71,7 @@ export function ceb_stem(word) {
     katawohan: "tawo",
     atubangan: "atubang",
     ibabaw: "babaw",
+    igsoon: "suon",
     pinaagi: "paagi",
     babaye: "baye",
     oh: "o",
@@ -79,8 +80,6 @@ export function ceb_stem(word) {
     kaniya: "niya",
     niini: "ini",
     miingon: "ingon",
-    juda: "jod",
-    moises: "isi",
   };
   if (object_property_exists(replacements, word)) {
     let r = object_property_get(replacements, word);
