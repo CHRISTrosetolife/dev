@@ -29,6 +29,7 @@ export function ceb_stem(word) {
   let replacements = {
     kong: "kung",
     gayud: "gayod",
+    tibook: "tibuok",
     jehova: "hehoba",
     dios: "diyos",
     lalake: "laki",
@@ -40,7 +41,6 @@ export function ceb_stem(word) {
     pinaagi: "paagi",
     babaye: "baye",
     oh: "o",
-    tibook: "tibuok",
   };
   if (object_property_exists(replacements, word)) {
     let r = object_property_get(replacements, word);
