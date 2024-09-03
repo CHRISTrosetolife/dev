@@ -16,6 +16,10 @@ import { list_get } from "./list_get.mjs";
 export async function ceb_stem_test() {
   let data = await ceb_dictionary_data();
   each_object(data, (letter, parsed) => {
+    log({
+      c: parsed,
+    });
+    exit();
     let body = html_parse_visit_tag_single(parsed, "body");
     let p = html_parse_visit_tag_first(body, "p");
     let pn = p.next;
@@ -27,7 +31,6 @@ export async function ceb_stem_test() {
         c: html_parse_text(c),
       });
     });
-    exit();
     let b2 = list_second(body.children);
     let b3 = list_get(b2.children, 3);
     let b4 = list_second(b3.children);
