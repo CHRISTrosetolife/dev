@@ -18,9 +18,9 @@ export async function ceb_stem_test() {
         log({
           tr,
         });
+        exit();
       });
     });
-    exit();
   });
   return;
   let map = await ceb_bible_words_definitions_map_cache();
