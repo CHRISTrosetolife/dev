@@ -1,3 +1,4 @@
+import { string_case_upper } from "./string_case_upper.mjs";
 import { keyboard_keys } from "./keyboard_keys.mjs";
 import { each_async } from "./each_async.mjs";
 import { ceb_definition_wolff } from "./ceb_definition_wolff.mjs";
@@ -12,6 +13,7 @@ export async function ceb_stem_test() {
   let context = {};
   let keys = keyboard_keys();
   await each_async(keys, async (key) => {
+    key = string_case_upper(key);
     let p = string_combine_multiple([
       "..\\phildict-master\\Data\\Wolff\\WCED-",
       key,
