@@ -1,3 +1,4 @@
+import { file_html_parse } from "./file_html_parse.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
@@ -8,14 +9,11 @@ import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { string_whitespace_normalize } from "./string_whitespace_normalize.mjs";
 import { list_map } from "./list_map.mjs";
-import { html_parse } from "./html_parse.mjs";
-import { file_read } from "./file_read.mjs";
 import { list_get } from "./list_get.mjs";
 import { list_single } from "./list_single.mjs";
 export async function yyy8Uu_file_path_to_parts(file_path, index) {
   let f = list_get(file_path, index);
-  let input_string = await file_read(f);
-  let parsed = await html_parse(input_string);
+  let parsed = await file_html_parse(f);
   let tei = html_parse_visit_tag_single(parsed, "tei");
   let text = html_parse_visit_tag_single(tei, "text");
   let { children: children_text } = text;
