@@ -55,10 +55,10 @@ export function ceb_stem(word) {
           }
         }
       });
+      log({
+        e,
+      });
       return e;
-    });
-    log({
-      f,
     });
     list_add_multiple(result, f);
   });
