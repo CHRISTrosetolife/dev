@@ -41,6 +41,7 @@ export function ceb_stem(word) {
         let s_i = string_get(s, i);
         let r_i = string_get(r, i);
         if (s_i !== r_i) {
+          let letters = [s_i, ri];
         }
       });
       return e;
