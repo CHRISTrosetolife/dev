@@ -18,7 +18,7 @@ import { list_join_empty } from "./list_join_empty.mjs";
 export function ceb_stem(word) {
   let result = [word];
   let suffixes = ["ng", "an"];
-  each(prefixes, (prefix) => {
+  each(suffixes, (suffix) => {
     if (string_ends_with(word, suffix)) {
       let r = string_suffix_without(word, suffix);
       list_add(result, r);
