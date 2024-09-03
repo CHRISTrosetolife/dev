@@ -7,9 +7,9 @@ import { string_case_upper } from "./string_case_upper.mjs";
 import { each_async } from "./each_async.mjs";
 import { keyboard_keys } from "./keyboard_keys.mjs";
 import { global_function_initialize_async } from "./global_function_initialize_async.mjs";
-export async function ceb_definition_wolff_context() {
+export async function ceb_dictionary_data() {
   return await global_function_initialize_async(
-    ceb_definition_wolff_context,
+    ceb_dictionary_data,
     async () => {
       let letters = {};
       let keys = keyboard_keys();
