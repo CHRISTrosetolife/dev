@@ -12,7 +12,7 @@ export function ceb_stem(word) {
     let r = string_suffix_without(word, suffix);
     list_add(result, r);
   }
-  let prefix = "ka";
+  let prefixes = ["ka"];
   if (string_starts_with(word, prefix)) {
     let r = string_prefix_without(word, prefix);
     list_add(result, r);
