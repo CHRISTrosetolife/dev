@@ -1,4 +1,3 @@
-import { html_parse_text } from "./html_parse_text.mjs";
 import { html_parse_visit_tag } from "./html_parse_visit_tag.mjs";
 import { exit } from "./exit.mjs";
 import { log } from "./log.mjs";
@@ -16,7 +15,6 @@ export async function ceb_stem_test() {
     let body = html_parse_visit_tag_single(parsed, "body");
     log({
       body,
-      t: html_parse_text(body),
     });
     html_parse_visit_tag(body, "p", (p) => {
       exit();
