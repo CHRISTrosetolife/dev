@@ -26,10 +26,8 @@ export function ceb_stem(word) {
       list_add(result, r);
     }
   });
+  let spelling_uo = ["kung", "gayod", "tibuok"];
   let replacements = {
-    kong: "kung",
-    gayud: "gayod",
-    tibook: "tibuok",
     jehova: "hehoba",
     dios: "diyos",
     lalake: "laki",
