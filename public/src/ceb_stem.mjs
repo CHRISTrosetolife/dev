@@ -8,5 +8,6 @@ export function ceb_stem(word) {
     let r = string_suffix_without(word, suffix);
     list_add(result, r);
   }
+  let replacements = {};
   return result;
 }
