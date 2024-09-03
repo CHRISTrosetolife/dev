@@ -28,6 +28,7 @@ export function ceb_stem(word) {
   });
   let replacements = {
     kong: "kung",
+    gayud: "gayod",
     jehova: "hehoba",
     dios: "diyos",
     lalake: "laki",
