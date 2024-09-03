@@ -16,7 +16,6 @@ import { string_length } from "./string_length.mjs";
 import { string_get } from "./string_get.mjs";
 import { identity } from "./identity.mjs";
 import { list_join_empty } from "./list_join_empty.mjs";
-import { list_add_multiple } from "./list_add_multiple.mjs";
 export function ceb_stem(word) {
   log({
     word,
@@ -67,10 +66,9 @@ export function ceb_stem(word) {
       });
       return e;
     });
-    each(list, (item) => {
-      list_add_if_exists_not();
+    each(f, (item) => {
+      list_add_if_exists_not(result, item);
     });
-    list_add_multiple(result, f);
   });
   let replacements = {
     jehova: "hehoba",
