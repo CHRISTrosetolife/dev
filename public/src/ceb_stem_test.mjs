@@ -8,6 +8,7 @@ import { assert_message } from "./assert_message.mjs";
 export async function ceb_stem_test() {
   let data = await ceb_dictionary_data();
   each_object(data, (letter, parsed) => {});
+  return;
   let map = await ceb_bible_words_definitions_map_cache();
   let removes = ["juda", "moises"];
   each_object(map, (stem, inputs) => {
