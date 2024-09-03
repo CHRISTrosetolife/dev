@@ -10,6 +10,7 @@ import { object_property_exists } from "./object_property_exists.mjs";
 import { string_skip_1 } from "./string_skip_1.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { string_length } from "./string_length.mjs";
+import { string_get } from "./string_get.mjs";
 export function ceb_stem(word) {
   let result = [word];
   let suffix = "ng";
@@ -35,7 +36,9 @@ export function ceb_stem(word) {
       if (string_length(s) !== string_length(r)) {
         return false;
       }
-      each_range(string_length(s), (i) => {});
+      each_range(string_length(s), (i) => {
+        let s_i = string_get();
+      });
     });
   });
   let replacements = {
