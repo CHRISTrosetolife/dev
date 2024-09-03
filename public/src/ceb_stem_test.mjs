@@ -11,7 +11,7 @@ export async function ceb_stem_test() {
   let context = {};
   let keys = keyboard_keys();
   await each_async(keys, async (key) => {
-    let p = "..\\phildict-master\\Data\\Wolff";
+    let p = "..\\phildict-master\\Data\\Wolff\\";
   });
   ceb_definition_wolff();
   let map = await ceb_bible_words_definitions_map_cache();
