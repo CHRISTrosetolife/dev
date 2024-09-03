@@ -35,6 +35,7 @@ export function ceb_stem(word) {
     katawohan: "tawo",
     atubangan: "atubang",
     ibabaw: "babaw",
+    pinaagi: "paagi",
   };
   if (object_property_exists(replacements, word)) {
     let r = object_property_get(replacements, word);
