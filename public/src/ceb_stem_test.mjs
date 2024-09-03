@@ -4,6 +4,6 @@ import { ceb_bible_words_definitions_map_cache } from "./ceb_bible_words_definit
 export async function ceb_stem_test() {
   let map = await ceb_bible_words_definitions_map_cache();
   each_object(object, (stem, inputs) => {
-    each(list, (item) => {});
+    each(inputs, (input) => {});
   });
 }
