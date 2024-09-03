@@ -36,6 +36,7 @@ export function ceb_stem(word) {
     atubangan: "atubang",
     ibabaw: "babaw",
     pinaagi: "paagi",
+    babaye: "baye",
   };
   if (object_property_exists(replacements, word)) {
     let r = object_property_get(replacements, word);
