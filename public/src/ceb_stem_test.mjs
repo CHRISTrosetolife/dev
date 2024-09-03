@@ -12,6 +12,7 @@ import { assert_message } from "./assert_message.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export async function ceb_stem_test() {
   let context = {};
+  let letters = {};
   let keys = keyboard_keys();
   await each_async(keys, async (key) => {
     let key_upper = string_case_upper(key);
