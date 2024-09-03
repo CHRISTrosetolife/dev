@@ -34,7 +34,7 @@ export function ceb_stem(word) {
       list_add(result, r);
     }
   });
-  let spelling_ou = ["kung", "gayod", "tibuok", "hangtod"];
+  let spelling_ou = ["kung", "gayod", "tibuok", "hangtod", "ginuo"];
   each(result, (r) => {
     let f = list_filter(spelling_ou, (s) => {
       if (string_length(s) !== string_length(r)) {
