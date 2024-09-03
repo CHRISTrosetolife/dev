@@ -1,3 +1,4 @@
+import { keyboard_keys } from "./keyboard_keys.mjs";
 import { each_async } from "./each_async.mjs";
 import { ceb_definition_wolff } from "./ceb_definition_wolff.mjs";
 import { list_includes } from "./list_includes.mjs";
@@ -8,7 +9,9 @@ import { ceb_bible_words_definitions_map_cache } from "./ceb_bible_words_definit
 import { assert_message } from "./assert_message.mjs";
 export async function ceb_stem_test() {
   let context = {};
-  await each_async(list, async (item) => {});
+  await each_async(list, async (item) => {
+    keyboard_keys();
+  });
   ceb_definition_wolff();
   let map = await ceb_bible_words_definitions_map_cache();
   let removes = ["juda", "moises"];
