@@ -34,6 +34,7 @@ export async function bible_audio_player_proverbs() {
       string_includes_curry_right(book),
     );
   });
+  return;
   let download_folder_acronymns = "BBEM_complete";
   await bible_audio_player_english(
     download_folder_acronymns,
