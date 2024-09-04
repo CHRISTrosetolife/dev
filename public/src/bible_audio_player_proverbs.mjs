@@ -25,6 +25,8 @@ export async function bible_audio_player_proverbs() {
     "EN1WEBO2DA",
     "niv_mp3_bible_new_international_version",
     "rsv",
+  ];
+  let download_folders_regular_computer_voice = [
     "NHEB_NT_audio",
     "NHEB_OT_audio",
   ];
