@@ -22,7 +22,7 @@ export async function bible_audio_player_unzip() {
     let output_path = string_suffix_without(z_path, extension);
     log(string_combine_multiple(["unzipping to ", output_path]));
     await command_line(
-      string_combine_multiple(["tar -xf ", z_path, "-C ", output_path]),
+      string_combine_multiple(["tar -xf ", z_path, " -C ", output_path]),
     );
   });
 }
