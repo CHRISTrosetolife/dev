@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { string_suffix_without } from "./string_suffix_without.mjs";
 import { path_parse_name } from "./path_parse_name.mjs";
 import { folder_read_shallow } from "./folder_read_shallow.mjs";
@@ -21,5 +22,6 @@ export async function bible_audio_player_unzip() {
     let output_path = string_suffix_without(z_path, extension);
     let zip = new AdmZip(z_path);
     zip.extractAllTo(output_path, false);
+    log({});
   });
 }
