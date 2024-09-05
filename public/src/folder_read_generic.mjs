@@ -1,3 +1,4 @@
+import { folder_is } from "./folder_is.mjs";
 import { list_adder_async } from "./list_adder_async.mjs";
 import { each_async } from "./each_async.mjs";
 import { identity } from "./identity.mjs";
@@ -18,8 +19,7 @@ export async function folder_read_generic(folder, file_extension, recursive) {
     await each_async(files, async (file) => {
       let path_full = path.join(dir, file);
       if (recursive) {
-        let stat = await fs.promises.lstat(path_full);
-        let path_folder_is = stat.isDirectory();
+        let path_folder_is = await folder_is(fs, path_full);
         if (path_folder_is) {
           await traverse(path_full, lambda_each);
         }
