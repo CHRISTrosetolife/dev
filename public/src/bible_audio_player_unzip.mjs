@@ -17,7 +17,8 @@ export async function bible_audio_player_unzip() {
     if (list_includes(folder_names, zip_name)) {
       return;
     }
-    log({});
+    log({
+      z,
+    });
   });
-  return zip_names;
 }
