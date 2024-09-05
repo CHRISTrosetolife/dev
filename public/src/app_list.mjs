@@ -1,3 +1,4 @@
+import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { storage_local_exists } from "./storage_local_exists.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { string_split_newline } from "./string_split_newline.mjs";
@@ -16,5 +17,6 @@ export function app_list() {
     storage_local_set(app_list, "list", split);
   });
   if (storage_local_exists(app_list, "list")) {
+    html_clear_scroll_top_centered();
   }
 }
