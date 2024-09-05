@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { path_parse_name } from "./path_parse_name.mjs";
 import { folder_read_shallow } from "./folder_read_shallow.mjs";
 import { each_async } from "./each_async.mjs";
@@ -16,6 +17,7 @@ export async function bible_audio_player_unzip() {
     if (list_includes(folder_names, zip_name)) {
       return;
     }
+    log({});
   });
   return zip_names;
 }
