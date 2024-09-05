@@ -1,3 +1,4 @@
+import { storage_local_exists } from "./storage_local_exists.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { string_split_newline } from "./string_split_newline.mjs";
 import { html_value_get } from "./html_value_get.mjs";
@@ -14,4 +15,6 @@ export function app_list() {
     let split = string_split_newline(value);
     storage_local_set(app_list, "list", split);
   });
+  if (storage_local_exists()) {
+  }
 }
