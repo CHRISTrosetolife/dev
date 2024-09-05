@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { html_button_width_full_text_click_next } from "./html_button_width_full_text_click_next.mjs";
 import { html_style_width_full } from "./html_style_width_full.mjs";
@@ -10,5 +11,6 @@ export function app_list() {
   html_button_width_full_text_click_next(body, () => {
     let value = html_value_get(input);
     let split = list_split_newline(value);
+    log({});
   });
 }
