@@ -19,7 +19,7 @@ export async function bible_audio_player_unzip() {
       return;
     }
     let zip = new AdmZip(z_path);
-    zip.extractAllTo("/home/me/zipcontent/", true);
+    zip.extractAllTo("/home/me/zipcontent/", false);
     log({
       z: z_path,
     });
