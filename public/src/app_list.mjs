@@ -12,6 +12,6 @@ export function app_list() {
   html_button_width_full_text_click_next(body, () => {
     let value = html_value_get(t);
     let split = string_split_newline(value);
-    storage_local_set();
+    storage_local_set(app_list);
   });
 }
