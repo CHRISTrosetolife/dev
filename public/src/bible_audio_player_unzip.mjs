@@ -18,9 +18,9 @@ export async function bible_audio_player_unzip() {
     if (list_includes(folder_names, zip_name)) {
       return;
     }
+    log(string_combine_multiple(["unzipping to ", output_path]));
     let output_path = string_suffix_without(z_path, extension);
     let zip = new AdmZip(z_path);
     zip.extractAllTo(output_path, false);
-    log(string_combine_multiple(["unzipped to ", output_path]));
   });
 }
