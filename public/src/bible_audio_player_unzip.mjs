@@ -7,4 +7,5 @@ export async function bible_audio_player_unzip() {
   let zips = await folder_read_shallow(p, ".zip");
   let all = await folder_read_shallow(p, "");
   let folders = await list_filter_async(all, folder_is);
+  return folders;
 }
