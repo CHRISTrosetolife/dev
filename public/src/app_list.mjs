@@ -15,6 +15,6 @@ export function app_list() {
     let split = string_split_newline(value);
     storage_local_set(app_list, "list", split);
   });
-  if (storage_local_exists()) {
+  if (storage_local_exists(app_list, "list")) {
   }
 }
