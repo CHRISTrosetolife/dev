@@ -17,6 +17,6 @@ export function app_list() {
     storage_local_set(app_list, "list", split);
   });
   if (storage_local_exists(app_list, "list")) {
-    html_clear_scroll_top_centered();
+    html_clear_scroll_top_centered(body);
   }
 }
