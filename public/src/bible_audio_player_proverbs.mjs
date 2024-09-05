@@ -29,6 +29,7 @@ export async function bible_audio_player_proverbs() {
     "ENGESHN1DA",
     "BBE_OldTestamentAudio_India",
     "ENGESVO1DA",
+    "ENGESHN1DA",
   ];
   let download_folders_regular_computer_voice = [
     "NHEB_NT_audio",
