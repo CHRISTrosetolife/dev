@@ -19,6 +19,7 @@ export async function bible_audio_player_unzip() {
     if (list_includes(folder_names, zip_name)) {
       return;
     }
+    let extension = ".zip";
     let output_path = string_suffix_without(z_path, extension);
     log(string_combine_multiple(["unzipping to ", output_path]));
     await folder_exists_ensure(output_path);
