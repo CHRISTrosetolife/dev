@@ -31,7 +31,6 @@ export async function bible_audio_player_proverbs() {
     "all_files_english_contemporary",
     "rsv",
     "ENGESHN1DA",
-    "BBE_OldTestamentAudio_India",
     "ENGESVO1DA",
     "WEBW_OT",
     "WEBW_NT",
