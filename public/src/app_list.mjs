@@ -9,5 +9,6 @@ export function app_list() {
   html_style_width_full(t);
   html_button_width_full_text_click_next(body, () => {
     let value = html_value_get(input);
+    let split = list_split_newline(value);
   });
 }
