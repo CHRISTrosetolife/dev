@@ -33,6 +33,7 @@ export async function bible_audio_player_proverbs() {
     "ENGESHN1DA",
     "BBE_OldTestamentAudio_India",
     "ENGESVO1DA",
+    "WEBW_OT",
     "ENGESHN1DA",
     "00_Bible in Basic English Old Testament Audio MP3 Files",
   ];
