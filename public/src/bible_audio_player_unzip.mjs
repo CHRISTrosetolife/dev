@@ -1,8 +1,4 @@
-import { folder_exists_ensure } from "./folder_exists_ensure.mjs";
-import { command_line } from "./command_line.mjs";
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { log } from "./log.mjs";
-import { string_suffix_without } from "./string_suffix_without.mjs";
+import { unzip } from "./unzip.mjs";
 import { path_parse_name } from "./path_parse_name.mjs";
 import { folder_read_shallow } from "./folder_read_shallow.mjs";
 import { each_async } from "./each_async.mjs";
@@ -19,12 +15,6 @@ export async function bible_audio_player_unzip() {
     if (list_includes(folder_names, zip_name)) {
       return;
     }
-    let extension = ".zip";
-    let output_path = string_suffix_without(z_path, extension);
-    log(string_combine_multiple(["unzipping to ", output_path]));
-    await folder_exists_ensure(output_path);
-    await command_line(
-      string_combine_multiple(["tar -xf ", z_path, " -C ", output_path]),
-    );
+    await unzip(z_path);
   });
 }
