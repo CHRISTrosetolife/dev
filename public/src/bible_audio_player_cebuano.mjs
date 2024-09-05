@@ -8,12 +8,13 @@ import { object_invert } from "./object_invert.mjs";
 import { each_async } from "./each_async.mjs";
 import { bible_audio_player_english } from "./bible_audio_player_english.mjs";
 import { string_includes } from "./string_includes.mjs";
+import { tautology } from "./tautology.mjs";
 export async function bible_audio_player_cebuano() {
   let p = bible_audio_player_cebuano_path();
   await folder_unzip(p);
   let folders = ["CEBRPVN1DA", "CEBRPVN2DA"];
   await each_async(folders, async (download_folder) => {
-    await bible_audio_player_generic(p, download_folder, filter);
+    await bible_audio_player_generic(p, download_folder, tautology);
   });
   let book = "Proverbs";
   let lookup = await bible_books_names_lookup("engbsb");
