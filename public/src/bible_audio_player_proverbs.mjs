@@ -23,6 +23,7 @@ export async function bible_audio_player_proverbs() {
     "ENGNLTO2DA",
     "ENGNRSO2DA",
     "WEBD_OT",
+    "WEBD_NT",
     "00_NHEBI_OT_Audio_Complete",
     "BBE_NewTestamentAudio_Australia",
     "EN1WEBO2DA",
