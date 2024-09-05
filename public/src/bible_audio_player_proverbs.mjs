@@ -26,7 +26,6 @@ export async function bible_audio_player_proverbs() {
     "WEBD_NT",
     "00_NHEBI_OT_Audio_Complete",
     "BBE_NewTestamentAudio_Australia",
-    "ENGESVO1DA",
     "niv_mp3_bible_new_international_version",
     "all_files_english_contemporary",
     "rsv",
