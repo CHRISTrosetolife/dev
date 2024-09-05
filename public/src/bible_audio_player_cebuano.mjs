@@ -1,3 +1,5 @@
+import { folder_unzip } from "./folder_unzip.mjs";
+import { bible_audio_player_cebuano_path } from "./bible_audio_player_cebuano_path.mjs";
 import { string_includes_curry_right } from "./string_includes_curry_right.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { bible_books_names_lookup } from "./bible_books_names_lookup.mjs";
@@ -6,6 +8,8 @@ import { each_async } from "./each_async.mjs";
 import { bible_audio_player_english } from "./bible_audio_player_english.mjs";
 import { string_includes } from "./string_includes.mjs";
 export async function bible_audio_player_cebuano() {
+  let p = bible_audio_player_cebuano_path();
+  await folder_unzip(p);
   let book = "Proverbs";
   let lookup = await bible_books_names_lookup("engbsb");
   let inverted = object_invert(lookup);
