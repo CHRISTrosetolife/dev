@@ -11,6 +11,8 @@ export function app_list() {
   html_button_width_full_text_click_next(body, () => {
     let value = html_value_get(input);
     let split = list_split_newline(value);
-    log({});
+    log({
+      split,
+    });
   });
 }
