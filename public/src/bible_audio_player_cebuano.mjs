@@ -10,7 +10,6 @@ import { string_includes } from "./string_includes.mjs";
 export async function bible_audio_player_cebuano() {
   let p = bible_audio_player_cebuano_path();
   await folder_unzip(p);
-  return;
   let book = "Proverbs";
   let lookup = await bible_books_names_lookup("engbsb");
   let inverted = object_invert(lookup);
