@@ -1,3 +1,4 @@
+import { command_line } from "./command_line.mjs";
 import { string_includes_curry_right } from "./string_includes_curry_right.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { bible_books_names_lookup } from "./bible_books_names_lookup.mjs";
@@ -7,6 +8,7 @@ import { bible_audio_player_english } from "./bible_audio_player_english.mjs";
 import { string_includes } from "./string_includes.mjs";
 export async function bible_audio_player_proverbs() {
   let book = "Proverbs";
+  await command_line();
   let lookup = await bible_books_names_lookup("engbsb");
   let inverted = object_invert(lookup);
   let acronym = object_property_get(inverted, book);
