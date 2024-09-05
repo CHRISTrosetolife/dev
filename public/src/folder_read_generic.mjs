@@ -19,8 +19,8 @@ export async function folder_read_generic(folder, file_extension, recursive) {
       let path_full = path.join(dir, file);
       if (recursive) {
         let stat = await fs.promises.lstat(path_full);
-        let folder_is = stat.isDirectory();
-        if (folder_is) {
+        let path_folder_is = stat.isDirectory();
+        if (path_folder_is) {
           await traverse(path_full, lambda_each);
         }
       }
