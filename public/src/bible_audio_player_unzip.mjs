@@ -18,6 +18,7 @@ export async function bible_audio_player_unzip() {
     if (list_includes(folder_names, zip_name)) {
       return;
     }
+    let zip = new AdmZip("./my_file.zip");
     log({
       z,
     });
