@@ -4,6 +4,6 @@ import { bible_audio_player_english_path } from "./bible_audio_player_english_pa
 export async function bible_audio_player_unzip() {
   let p = bible_audio_player_english_path();
   let zips = await folder_read_shallow(p, ".zip");
-  let names = await folder_read_shallow_folders_names(p);
-  return names;
+  let folder_names = await folder_read_shallow_folders_names(p);
+  return folder_names;
 }
