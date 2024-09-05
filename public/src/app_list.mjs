@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { storage_local_exists } from "./storage_local_exists.mjs";
@@ -20,5 +21,6 @@ export function app_list() {
   if (storage_local_exists(app_list, "list")) {
     html_clear_scroll_top_centered(body);
     let split = storage_local_get(app_list, "list");
+    each(list, (item) => {});
   }
 }
