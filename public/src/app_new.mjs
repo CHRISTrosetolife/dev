@@ -11,7 +11,7 @@ export async function app_new(name) {
   await function_new_generic(
     name_prefixed,
     "",
-    "",
+    "let body = html_style_default_initialize();",
     open,
     [],
     false,
