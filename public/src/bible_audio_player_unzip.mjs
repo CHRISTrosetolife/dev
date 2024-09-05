@@ -11,16 +11,16 @@ export async function bible_audio_player_unzip() {
   let p = bible_audio_player_english_path();
   let extension = ".zip";
   let zip_names = await folder_read_shallow_names(p, extension);
-  let zips = await folder_read_shallow(p, extension);
+  let z_paths = await folder_read_shallow(p, extension);
   let folder_names = await folder_read_shallow_folders_bases(p);
-  await each_async(zips, async (z) => {
-    let zip_name = path_parse_name(z);
+  await each_async(z_paths, async (z_path) => {
+    let zip_name = path_parse_name(z_path);
     if (list_includes(folder_names, zip_name)) {
       return;
     }
-    let zip = new AdmZip("./my_file.zip");
+    let zip = new AdmZip(z_path);
     log({
-      z,
+      z: z_path,
     });
   });
 }
