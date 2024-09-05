@@ -28,6 +28,7 @@ export async function bible_audio_player_proverbs() {
     "BBE_NewTestamentAudio_Australia",
     "ENGESVO1DA",
     "niv_mp3_bible_new_international_version",
+    "all_files_english_contemporary",
     "rsv",
     "ENGESHN1DA",
     "BBE_OldTestamentAudio_India",
