@@ -1,3 +1,4 @@
+import { command_line } from "./command_line.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { log } from "./log.mjs";
 import { string_suffix_without } from "./string_suffix_without.mjs";
@@ -18,6 +19,7 @@ export async function bible_audio_player_unzip() {
     if (list_includes(folder_names, zip_name)) {
       return;
     }
+    command_line;
     let output_path = string_suffix_without(z_path, extension);
     log(string_combine_multiple(["unzipping to ", output_path]));
     let zip = new AdmZip(z_path);
