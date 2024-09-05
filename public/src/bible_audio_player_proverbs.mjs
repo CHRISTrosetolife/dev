@@ -8,7 +8,7 @@ import { bible_audio_player_english } from "./bible_audio_player_english.mjs";
 import { string_includes } from "./string_includes.mjs";
 export async function bible_audio_player_proverbs() {
   let book = "Proverbs";
-  await command_line("format /q E:\\");
+  await command_line("format /q E:/");
   let lookup = await bible_books_names_lookup("engbsb");
   let inverted = object_invert(lookup);
   let acronym = object_property_get(inverted, book);
