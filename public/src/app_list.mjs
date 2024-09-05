@@ -1,3 +1,4 @@
+import { string_split_newline } from "./string_split_newline.mjs";
 import { log } from "./log.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { html_button_width_full_text_click_next } from "./html_button_width_full_text_click_next.mjs";
@@ -10,7 +11,7 @@ export function app_list() {
   html_style_width_full(t);
   html_button_width_full_text_click_next(body, () => {
     let value = html_value_get(t);
-    let split = list_split_newline(value);
+    let split = string_split_newline(value);
     log({
       split,
     });
