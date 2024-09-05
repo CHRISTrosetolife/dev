@@ -1,10 +1,6 @@
-import { folder_new } from "./folder_new.mjs";
-import { file_exists } from "./file_exists.mjs";
+import { folder_exists_ensure } from "./folder_exists_ensure.mjs";
 export async function folder_parent_exists_ensure(file_name) {
   let path = await import("path");
   let parent = path.dirname(file_name);
-  if (!(await file_exists(parent))) {
-    await folder_parent_exists_ensure(parent);
-    await folder_new(parent);
-  }
+  await folder_exists_ensure(parent);
 }
