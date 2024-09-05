@@ -22,6 +22,7 @@ export async function bible_audio_player_proverbs() {
   let download_folders_regular = [
     "ENGNLTO2DA",
     "ENGNRSO2DA",
+    "00_NHEBI_OT_Audio_Complete",
     "EN1WEBO2DA",
     "ENGESVO1DA",
     "niv_mp3_bible_new_international_version",
