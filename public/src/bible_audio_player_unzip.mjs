@@ -22,6 +22,6 @@ export async function bible_audio_player_unzip() {
     let output_path = string_suffix_without(z_path, extension);
     let zip = new AdmZip(z_path);
     zip.extractAllTo(output_path, false);
-    log({});
+    log("unzipped to " + output_path);
   });
 }
