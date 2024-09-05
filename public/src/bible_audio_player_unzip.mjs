@@ -1,4 +1,6 @@
+import { folder_read_shallow } from "./folder_read_shallow.mjs";
 import { bible_audio_player_english_path } from "./bible_audio_player_english_path.mjs";
-export function bible_audio_player_unzip() {
+export async function bible_audio_player_unzip() {
   bible_audio_player_english_path();
+  await folder_read_shallow();
 }
