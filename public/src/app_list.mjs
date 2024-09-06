@@ -1,3 +1,4 @@
+import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { app_list_choose } from "./app_list_choose.mjs";
 import { storage_local_exists } from "./storage_local_exists.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
@@ -9,6 +10,7 @@ import { html_textarea } from "./html_textarea.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 export function app_list() {
   let body = html_style_default_initialize();
+  html_clear_scroll_top_centered(body);
   let t = html_textarea(body);
   html_style_width_full(t);
   html_button_width_full_text_click_next(body, () => {
