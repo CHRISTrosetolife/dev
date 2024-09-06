@@ -1,3 +1,4 @@
+import { html_style_button_default } from "./html_style_button_default.mjs";
 import { html_style_success } from "./html_style_success.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { each } from "./each.mjs";
@@ -13,6 +14,8 @@ export function app_list_choose(body) {
       toggle = !toggle;
       if (toggle) {
         html_style_success(b);
+      } else {
+        html_style_button_default();
       }
     });
   });
