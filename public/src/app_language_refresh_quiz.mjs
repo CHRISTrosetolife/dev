@@ -207,6 +207,7 @@ export async function app_language_refresh_quiz(context) {
           }
           html_style_success(button);
           update_partials();
+          equal_1(chunk_size);
           app_learn_code_correct_timeout(async () => {
             html_style_hidden(button);
             if (last_is) {
