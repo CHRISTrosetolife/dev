@@ -10,10 +10,9 @@ export function app_list_choose(body) {
   let split = storage_local_get(app_list, "list");
   let chosen = {};
   each_index(split, (line, index) => {
-    let toggle = false;
     let b = html_button_width_full_text_click(body, line, () => {
-      toggle = !toggle;
-      if (toggle) {
+      chosen[index] = !chosen[index];
+      if (chosen[index]) {
         html_style_success(b);
       } else {
         html_style_button_default(b);
