@@ -9,7 +9,7 @@ export function app_list_choose(body) {
   let split = storage_local_get(app_list, "list");
   each(split, (line) => {
     let b = html_button_width_full_text_click(body, line, () => {
-      html_style_success();
+      html_style_success(b);
     });
   });
 }
