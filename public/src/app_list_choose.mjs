@@ -10,6 +10,7 @@ export function app_list_choose(body) {
   each(split, (line) => {
     let toggle = false;
     let b = html_button_width_full_text_click(body, line, () => {
+      toggle = !toggle;
       html_style_success(b);
     });
   });
