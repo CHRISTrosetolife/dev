@@ -1,3 +1,4 @@
+import { storage_local_remove } from "./storage_local_remove.mjs";
 import { log } from "./log.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { each_index } from "./each_index.mjs";
@@ -9,6 +10,9 @@ import { storage_local_get } from "./storage_local_get.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 export function app_list_choose(body) {
   html_clear_scroll_top_centered(body);
+  let b = html_button_width_full_text_click(body, "clear list", () => {
+    storage_local_remove(app_list, "list");
+  });
   let split = storage_local_get(app_list, "list");
   let chosen = {};
   each_index(split, (line, index) => {
