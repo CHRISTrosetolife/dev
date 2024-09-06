@@ -210,8 +210,8 @@ export async function app_language_refresh_quiz(context) {
           if (equal_1(chunk_size)) {
             timeout_after();
           } else {
+            app_learn_code_correct_timeout(timeout_after);
           }
-          app_learn_code_correct_timeout(timeout_after);
           async function timeout_after() {
             html_style_hidden(button);
             if (last_is) {
