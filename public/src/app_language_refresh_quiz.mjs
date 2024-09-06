@@ -212,7 +212,7 @@ export async function app_language_refresh_quiz(context) {
             await app_language_audio(language_learn, word_f);
             let settings2 = storage_local_get(context.app_fn, "quiz_settings");
             if (equal_json(settings, settings2)) {
-              next();
+              await next();
             }
           }
         } else {
