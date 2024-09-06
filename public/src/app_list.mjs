@@ -4,8 +4,9 @@ import { storage_local_exists } from "./storage_local_exists.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 export function app_list() {
   let body = html_style_default_initialize();
-  app_list_root(body);
   if (storage_local_exists(app_list, "list")) {
     app_list_choose(body);
+  } else {
+    app_list_root(body);
   }
 }
