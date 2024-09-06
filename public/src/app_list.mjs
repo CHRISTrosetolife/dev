@@ -22,8 +22,8 @@ export function app_list() {
   if (storage_local_exists(app_list, "list")) {
     html_clear_scroll_top_centered(body);
     let split = storage_local_get(app_list, "list");
-    each(list, (item) => {
-      html_button_width_full_text_click(body);
+    each(list, (line) => {
+      html_button_width_full_text_click(body, line);
     });
   }
 }
