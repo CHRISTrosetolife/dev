@@ -11,7 +11,9 @@ export function app_list_choose(body) {
     let toggle = false;
     let b = html_button_width_full_text_click(body, line, () => {
       toggle = !toggle;
-      html_style_success(b);
+      if (toggle) {
+        html_style_success(b);
+      }
     });
   });
 }
