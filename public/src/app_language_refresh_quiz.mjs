@@ -1,5 +1,3 @@
-import { each_async } from "./each_async.mjs";
-import { list_adder_async } from "./list_adder_async.mjs";
 import { list_without } from "./list_without.mjs";
 import { json_to } from "./json_to.mjs";
 import { list_without_by } from "./list_without_by.mjs";
@@ -43,6 +41,7 @@ import { equal } from "./equal.mjs";
 import { app_language_correct_get } from "./app_language_correct_get.mjs";
 import { html_button_text_click } from "./html_button_text_click.mjs";
 import { each } from "./each.mjs";
+import { list_adder } from "./list_adder.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
@@ -180,9 +179,9 @@ export async function app_language_refresh_quiz(context) {
   list_shuffle(choices);
   choices = list_map(choices, string_case_lower);
   let next_button;
-  let buttons = await list_adder_async(async (la) => {
-    await each_async(choices, async (choice) => {
-      let button = html_button_text_click(quiz_container, choice, () => {
+  let buttons = list_adder((la) => {
+    each(choices, (choice) => {
+      let button = html_button_text_click(quiz_container, choice, async () => {
         let correct = app_language_correct_get(answer, chunk_size, index);
         if (equal(choice, correct)) {
           html_disable(button);
@@ -211,6 +210,7 @@ export async function app_language_refresh_quiz(context) {
           if (equal_1(chunk_size)) {
             timeout_after();
           }
+          each(list, (item) => {});
           app_learn_code_correct_timeout(timeout_after);
           async function timeout_after() {
             html_style_hidden(button);
