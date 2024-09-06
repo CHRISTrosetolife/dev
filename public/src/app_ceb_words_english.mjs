@@ -1,8 +1,6 @@
+import { app_ceb_words_english_list } from "./app_ceb_words_english_list.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
-import { ceb_bible_words_definitions_atoms_cache } from "./ceb_bible_words_definitions_atoms_cache.mjs";
-import { object_properties } from "./object_properties.mjs";
 export async function app_ceb_words_english() {
-  let { inverted } = await ceb_bible_words_definitions_atoms_cache();
-  let english = object_properties(inverted);
+  let english = await app_ceb_words_english_list();
   return list_join_newline(english);
 }
