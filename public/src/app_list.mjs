@@ -1,7 +1,4 @@
-import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
-import { each } from "./each.mjs";
-import { storage_local_get } from "./storage_local_get.mjs";
-import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
+import { app_list_choose } from "./app_list_choose.mjs";
 import { storage_local_exists } from "./storage_local_exists.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { string_split_newline } from "./string_split_newline.mjs";
@@ -20,10 +17,6 @@ export function app_list() {
     storage_local_set(app_list, "list", split);
   });
   if (storage_local_exists(app_list, "list")) {
-    html_clear_scroll_top_centered(body);
-    let split = storage_local_get(app_list, "list");
-    each(split, (line) => {
-      html_button_width_full_text_click(body, line);
-    });
+    app_list_choose(body);
   }
 }
