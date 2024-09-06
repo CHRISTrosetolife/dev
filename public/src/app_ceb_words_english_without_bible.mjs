@@ -1,3 +1,4 @@
+import { list_join_newline } from "./list_join_newline.mjs";
 import { app_ceb_words_english_list } from "./app_ceb_words_english_list.mjs";
 import { list_to_lookup } from "./list_to_lookup.mjs";
 import { bible_words_eng_symbols } from "./bible_words_eng_symbols.mjs";
@@ -12,5 +13,5 @@ export async function app_ceb_words_english_without_bible() {
   all = bible_words_map(all, bible_words_eng_symbols());
   let lookup = list_to_lookup(all, identity);
   let filtered = list_filter(cebs, (c) => !object_property_exists(lookup, c));
-  return filtered;
+  return list_join_newline(filtered);
 }
