@@ -15,7 +15,7 @@ export function app_list_choose(body) {
       if (toggle) {
         html_style_success(b);
       } else {
-        html_style_button_default();
+        html_style_button_default(b);
       }
     });
   });
