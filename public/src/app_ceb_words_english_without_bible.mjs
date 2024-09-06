@@ -11,4 +11,5 @@ export async function app_ceb_words_english_without_bible() {
   all = bible_words_map(all, bible_words_eng_symbols());
   let lookup = list_to_lookup(all);
   let filtered = list_filter(cebs, (c) => !object_property_exists(lookup, c));
+  return filtered;
 }
