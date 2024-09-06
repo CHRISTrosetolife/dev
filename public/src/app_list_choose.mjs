@@ -15,7 +15,9 @@ export function app_list_choose(body) {
     let b = html_button_width_full_text_click(body, line, () => {
       chosen[index] = !chosen[index];
       storage_local_set(app_list, "chosen", chosen);
-      log({});
+      log({
+        c: storage_local_get(app_list, "chosen"),
+      });
       if (chosen[index]) {
         html_style_success(b);
       } else {
