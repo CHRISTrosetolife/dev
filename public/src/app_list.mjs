@@ -15,6 +15,7 @@ export function app_list() {
     let value = html_value_get(t);
     let split = string_split_newline(value);
     storage_local_set(app_list, "list", split);
+    app_list_choose(body);
   });
   if (storage_local_exists(app_list, "list")) {
     app_list_choose(body);
