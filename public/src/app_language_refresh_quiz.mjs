@@ -25,7 +25,6 @@ import { list_add } from "./list_add.mjs";
 import { html_style_wrong } from "./html_style_wrong.mjs";
 import { list_last } from "./list_last.mjs";
 import { app_language_audio } from "./app_language_audio.mjs";
-import { app_learn_code_correct_timeout } from "./app_learn_code_correct_timeout.mjs";
 import { html_style_hidden } from "./html_style_hidden.mjs";
 import { string_take } from "./string_take.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
@@ -181,7 +180,7 @@ export async function app_language_refresh_quiz(context) {
   let next_button;
   let buttons = list_adder((la) => {
     each(choices, (choice) => {
-      let button = html_button_text_click(quiz_container, choice, () => {
+      let button = html_button_text_click(quiz_container, choice, async () => {
         let correct = app_language_correct_get(answer, chunk_size, index);
         if (equal(choice, correct)) {
           html_disable(button);
@@ -207,20 +206,15 @@ export async function app_language_refresh_quiz(context) {
           }
           html_style_success(button);
           update_partials();
-          app_learn_code_correct_timeout(async () => {
-            html_style_hidden(button);
-            if (last_is) {
-              html_style_success(answer_element);
-              await app_language_audio(language_learn, word_f);
-              let settings2 = storage_local_get(
-                context.app_fn,
-                "quiz_settings",
-              );
-              if (equal_json(settings, settings2)) {
-                await next();
-              }
+          html_style_hidden(button);
+          if (last_is) {
+            html_style_success(answer_element);
+            await app_language_audio(language_learn, word_f);
+            let settings2 = storage_local_get(context.app_fn, "quiz_settings");
+            if (equal_json(settings, settings2)) {
+              next();
             }
-          });
+          }
         } else {
           html_style_wrong(button);
           if (no_mistakes) {
