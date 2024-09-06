@@ -1,3 +1,4 @@
+import { storage_local_set } from "./storage_local_set.mjs";
 import { each_index } from "./each_index.mjs";
 import { html_style_button_default } from "./html_style_button_default.mjs";
 import { html_style_success } from "./html_style_success.mjs";
@@ -12,6 +13,7 @@ export function app_list_choose(body) {
   each_index(split, (line, index) => {
     let b = html_button_width_full_text_click(body, line, () => {
       chosen[index] = !chosen[index];
+      storage_local_set(app_list, "chosen", chosen);
       if (chosen[index]) {
         html_style_success(b);
       } else {
