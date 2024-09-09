@@ -1,3 +1,4 @@
+import { bible_audio_player_unzip } from "./bible_audio_player_unzip.mjs";
 import { string_includes_curry_right } from "./string_includes_curry_right.mjs";
 import { bible_audio_player_english } from "./bible_audio_player_english.mjs";
 import { each_async } from "./each_async.mjs";
@@ -15,6 +16,7 @@ import { less_than_equal } from "./less_than_equal.mjs";
 import { assert } from "./assert.mjs";
 import { bible_book_name_to_number } from "./bible_book_name_to_number.mjs";
 export async function bible_audio_player_range(book_from, book_to) {
+  await bible_audio_player_unzip();
   let bible_folder = "engbsb";
   let number_from = await bible_book_name_to_number(bible_folder, book_from);
   let number_to = await bible_book_name_to_number(bible_folder, book_to);
