@@ -23,7 +23,10 @@ export async function bible_audio_player_proverbs() {
   let filter = (file_path) => {
     let file_name = path_parse_base(file_path);
     let e = string_starts_with(file_name, "B" + n);
-    return !string_includes(file_name, "_____") && e;
+    {
+      let file_name = path_parse_base(file_path);
+      return !string_includes(file_name, "_____") && e;
+    }
   };
   let download_folders_fcbh_underscore = ["ENGESVO2DA", "ENGESVN2DA"];
   await bible_audio_player_english_folders_numbers(
