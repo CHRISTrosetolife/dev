@@ -26,7 +26,10 @@ export async function bible_audio_player_proverbs() {
     numbers,
     (n) => n >= bible_books_old_count() + 1,
   );
-  let numbers_nt = list_filter();
+  let numbers_nt = list_map(
+    numbers_nt_filtered,
+    (n) => n - bible_books_old_count(),
+  );
   let download_folders_fcbh_underscore = ["ENGESVO2DA", "ENGESVN2DA"];
   await bible_audio_player_english_folders_numbers(
     download_folders_fcbh_underscore,
