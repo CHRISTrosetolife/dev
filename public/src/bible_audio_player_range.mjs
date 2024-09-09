@@ -101,7 +101,9 @@ export async function bible_audio_player_range(book_from, book_to) {
     path_parse_base_starts_with,
     promises,
   );
-  log({});
+  log({
+    promises,
+  });
   list_shuffle(promises);
   await promise_all_ordered(promises);
   let download_folders_regular_computer_voice = [
