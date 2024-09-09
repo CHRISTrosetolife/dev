@@ -15,11 +15,9 @@ export async function bible_audio_player_proverbs() {
   let download_folders_fcbh = ["ENGESVO2DA", "ENGESVN2DA"];
   await each_async(download_folders_fcbh, async (download_folder) => {
     await each_async(numbers, async (n) => {
-      await bible_audio_player_english(
-        download_folder,
-        (file_path) =>
-          !string_includes(file_path, "_____") && string_starts_with(),
-      );
+      await bible_audio_player_english(download_folder, (file_path) => {
+        !string_includes(file_path, "_____") && string_starts_with();
+      });
     });
   });
   let download_folders_regular = [
