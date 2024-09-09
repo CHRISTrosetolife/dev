@@ -5,13 +5,12 @@ import { path_parse_base } from "./path_parse_base.mjs";
 export function bible_audio_player_fcbh_starts_with(file_path, n) {
   let file_name = path_parse_base(file_path);
   let without_first = string_skip(file_name, 1);
-  let p = prefix + n;
   if (0) {
     log({
       file_name,
       p,
     });
   }
-  let e = string_starts_with(without_first, p);
+  let e = string_starts_with(without_first, n);
   return e;
 }
