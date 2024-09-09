@@ -1,8 +1,7 @@
+import { bible_book_name_to_number } from "./bible_book_name_to_number.mjs";
 import { log } from "./log.mjs";
-import { bible_books_names_lookup_inverted } from "./bible_books_names_lookup_inverted.mjs";
 import { number_pad } from "./number_pad.mjs";
 import { list_index } from "./list_index.mjs";
-import { bible_books } from "./bible_books.mjs";
 import { string_includes_curry_right } from "./string_includes_curry_right.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { each_async } from "./each_async.mjs";
@@ -12,10 +11,7 @@ export async function bible_audio_player_proverbs() {
   let book_from = "Proverbs";
   let book_to = book_from;
   let bible_folder = "engbsb";
-  let inverted = await bible_books_names_lookup_inverted(bible_folder);
-  let acronym_from = object_property_get(inverted, book_from);
-  let books = await bible_books(bible_folder);
-  let number_from = number_pad(list_index(books, acronym_from) + 1, 2);
+  let number_from = await bible_book_name_to_number(bible_folder, book_from);
   log({
     number_from,
   });
