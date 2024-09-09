@@ -41,7 +41,7 @@ export async function bible_audio_player_range(book_from, book_to) {
   let download_folders_fcbh_underscore = ["ENGESVO2DA", "ENGESVN2DA"];
   await bible_audio_player_english_folders_numbers(
     download_folders_fcbh_underscore,
-    numbers_s,
+    numbers_fcbh,
     (file_path, n) => {
       let file_name = path_parse_base(file_path);
       return (
@@ -72,7 +72,7 @@ export async function bible_audio_player_range(book_from, book_to) {
   ];
   await bible_audio_player_english_folders_numbers(
     download_folders_fcbh,
-    numbers_s,
+    numbers_fcbh,
     bible_audio_player_fcbh_starts_with,
   );
   let download_folders_regular_nt = ["all_files_english_contemporary", "rsv"];
