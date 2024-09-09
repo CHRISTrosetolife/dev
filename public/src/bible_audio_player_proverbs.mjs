@@ -29,8 +29,8 @@ export async function bible_audio_player_proverbs() {
       });
     });
   });
-  let download_folders_regular_nt = ["all_files_english_contemporary", "rsv"];
   download_folders_fcbh = [];
+  let download_folders_regular_nt = ["all_files_english_contemporary", "rsv"];
   let download_folders_regular = [
     "ENGNLTO2DA",
     "ENGNRSO2DA",
