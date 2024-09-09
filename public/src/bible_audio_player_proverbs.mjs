@@ -68,6 +68,11 @@ export async function bible_audio_player_proverbs() {
     "00_Bible in Basic English Old Testament Audio MP3 Files",
     "00_Bible in Basic English New Testament Audio MP3 Files",
   ];
+  await bible_audio_player_english_folders_numbers(
+    download_folders_fcbh,
+    numbers_s,
+    bible_audio_player_fcbh_starts_with,
+  );
   await each_async(download_folders_regular, async (download_folder) => {
     await bible_audio_player_english(
       download_folder,
