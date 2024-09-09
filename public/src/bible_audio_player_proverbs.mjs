@@ -38,6 +38,8 @@ export async function bible_audio_player_proverbs() {
     "ENGESHN1DA",
     "00_Bible in Basic English Old Testament Audio MP3 Files",
     "ENGCEVN2DA",
+    "ENGESVN1DA",
+    "ENGNKJN1DA",
   ];
   let download_folders_regular_computer_voice = [
     "NHEB_NT_audio",
