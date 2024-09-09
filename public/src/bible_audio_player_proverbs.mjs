@@ -1,3 +1,4 @@
+import { range_from } from "./range_from.mjs";
 import { bible_book_name_to_number } from "./bible_book_name_to_number.mjs";
 import { string_includes_curry_right } from "./string_includes_curry_right.mjs";
 import { each_async } from "./each_async.mjs";
@@ -9,6 +10,7 @@ export async function bible_audio_player_proverbs() {
   let bible_folder = "engbsb";
   let number_from = await bible_book_name_to_number(bible_folder, book_from);
   let number_to = await bible_book_name_to_number(bible_folder, book_from);
+  let numbers = range_from();
   let download_folders_fcbh = ["ENGESVO2DA", "ENGESVN2DA"];
   await each_async(download_folders_fcbh, async (download_folder) => {
     await each_async(list, async (item) => {});
