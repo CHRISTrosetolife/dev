@@ -68,6 +68,11 @@ export async function bible_audio_player_proverbs() {
     bible_audio_player_fcbh_starts_with,
   );
   let download_folders_regular_nt = ["all_files_english_contemporary", "rsv"];
+  await bible_audio_player_english_folders_numbers(
+    download_folders_fcbh,
+    numbers_s,
+    bible_audio_player_fcbh_starts_with,
+  );
   let download_folders_regular = [
     "WEBD_OT",
     "WEBD_NT",
