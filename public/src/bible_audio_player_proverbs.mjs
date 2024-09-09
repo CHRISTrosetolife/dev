@@ -1,9 +1,16 @@
 import { bible_books } from "./bible_books.mjs";
 import { string_includes_curry_right } from "./string_includes_curry_right.mjs";
+import { object_property_get } from "./object_property_get.mjs";
+import { bible_books_names_lookup } from "./bible_books_names_lookup.mjs";
+import { object_invert } from "./object_invert.mjs";
 import { each_async } from "./each_async.mjs";
 import { bible_audio_player_english } from "./bible_audio_player_english.mjs";
 import { string_includes } from "./string_includes.mjs";
 export async function bible_audio_player_proverbs() {
+  let book = "Proverbs";
+  let lookup = await bible_books_names_lookup("engbsb");
+  let inverted = object_invert(lookup);
+  let acronym = object_property_get(inverted, book);
   let book_from = "Proverbs";
   let book_to = book_from;
   let books = await bible_books("engbsb");
@@ -13,7 +20,7 @@ export async function bible_audio_player_proverbs() {
       download_folder,
       (file_name) =>
         !string_includes(file_name, "_____") &&
-        string_includes(file_name, book_from),
+        string_includes(file_name, book),
     );
   });
   let download_folders_regular = [
@@ -52,7 +59,7 @@ export async function bible_audio_player_proverbs() {
   await each_async(download_folders_regular, async (download_folder) => {
     await bible_audio_player_english(
       download_folder,
-      string_includes_curry_right(book_from),
+      string_includes_curry_right(book),
     );
   });
   let download_folder_acronymns_computer_voice = "BBEM_complete";
