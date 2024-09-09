@@ -18,7 +18,7 @@ export async function bible_audio_player_proverbs() {
   let numbers_s = list_map(numbers, (n) => number_pad(n, 2));
   let download_folders_fcbh = ["ENGESVO2DA", "ENGESVN2DA"];
   await each_async(download_folders_fcbh, async (download_folder) => {
-    await each_async(numbers, async (n) => {
+    await each_async(numbers_s, async (n) => {
       await bible_audio_player_english(download_folder, (file_path) => {
         let file_name = path_parse_base(file_path);
         !string_includes(file_name, "_____") &&
