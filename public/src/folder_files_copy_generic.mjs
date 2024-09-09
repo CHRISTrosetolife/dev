@@ -9,6 +9,7 @@ export async function folder_files_copy_generic(
   map,
 ) {
   let lambda = async (from, to) => {
+    let to_mapped = map(to);
     if (10) {
       log(to);
     } else {
