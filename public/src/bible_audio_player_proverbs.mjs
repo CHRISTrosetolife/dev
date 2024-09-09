@@ -32,6 +32,7 @@ export async function bible_audio_player_proverbs() {
     "all_files_english_contemporary",
     "rsv",
     "ENGESHN1DA",
+    "ENGNRSN2DA",
     "ENGESVO1DA",
     "EN1WEBO2DA",
     "ENGNLVN2DA",
