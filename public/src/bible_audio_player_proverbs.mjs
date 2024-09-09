@@ -19,17 +19,20 @@ export async function bible_audio_player_proverbs() {
   assert(less_than_equal, [number_from, number_to]);
   let numbers = range_from(number_from, number_to);
   let numbers_s = list_map(numbers, (n) => number_pad(n, 2));
-  let download_folders_fcbh = ["ENGESVO2DA", "ENGESVN2DA"];
-  await each_async(download_folders_fcbh, async (download_folder) => {
-    await each_async(numbers_s, async (n) => {
-      await bible_audio_player_english(download_folder, (file_path) => {
-        let file_name = path_parse_base(file_path);
-        !string_includes(file_name, "_____") &&
-          string_starts_with(file_name, "B" + n);
+  let download_folders_fcbh_underscore = ["ENGESVO2DA", "ENGESVN2DA"];
+  await each_async(
+    download_folders_fcbh_underscore,
+    async (download_folder) => {
+      await each_async(numbers_s, async (n) => {
+        await bible_audio_player_english(download_folder, (file_path) => {
+          let file_name = path_parse_base(file_path);
+          !string_includes(file_name, "_____") &&
+            string_starts_with(file_name, "B" + n);
+        });
       });
-    });
-  });
-  download_folders_fcbh = [];
+    },
+  );
+  download_folders_fcbh_underscore = [];
   let download_folders_regular_nt = ["all_files_english_contemporary", "rsv"];
   let download_folders_regular = [
     "ENGNLTO2DA",
