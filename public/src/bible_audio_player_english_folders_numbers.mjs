@@ -1,7 +1,7 @@
 import { each } from "./each.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { bible_audio_player_english } from "./bible_audio_player_english.mjs";
-export async function bible_audio_player_english_folders_numbers(
+export function bible_audio_player_english_folders_numbers(
   download_folders,
   numbers_s,
   filter,
