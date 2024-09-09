@@ -14,5 +14,6 @@ export async function unzip(z_path) {
     '" -C ',
     output_path,
   ]);
+  log({});
   await command_line(command);
 }
