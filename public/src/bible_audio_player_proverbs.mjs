@@ -29,7 +29,7 @@ export async function bible_audio_player_proverbs() {
       });
     });
   });
-  let download_folders_regular_nt = ["all_files_english_contemporary"];
+  let download_folders_regular_nt = ["all_files_english_contemporary", "rsv"];
   let download_folders_regular = [
     "ENGNLTO2DA",
     "ENGNRSO2DA",
@@ -41,7 +41,6 @@ export async function bible_audio_player_proverbs() {
     "BBE_NewTestamentAudio_Australia",
     "ENGWEBN2DA",
     "niv_mp3_bible_new_international_version",
-    "rsv",
     "ENGESHN1DA",
     "ENGNRSN2DA",
     "ENGESVO1DA",
