@@ -1,3 +1,4 @@
+import { identity } from "./identity.mjs";
 import { folder_img_path } from "./folder_img_path.mjs";
 import { files_rename_incrementing } from "./files_rename_incrementing.mjs";
 import { assert_message } from "./assert_message.mjs";
@@ -53,6 +54,7 @@ export async function app_dev_screenshots(screen_name) {
       "screenshot_backups",
       date_string_iso_file(),
     ]),
+    identity,
   );
   await files_rename_incrementing(folder_path, file_extension, starting);
   await folder_files_move(folder_path, file_extension, target_path);
