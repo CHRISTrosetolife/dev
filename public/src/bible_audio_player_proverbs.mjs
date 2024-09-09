@@ -16,7 +16,7 @@ export async function bible_audio_player_proverbs() {
       download_folder,
       (file_name) =>
         !string_includes(file_name, "_____") &&
-        string_includes(file_name, "Proverbs"),
+        string_includes(file_name, book),
     );
   });
   let download_folders_regular = [
