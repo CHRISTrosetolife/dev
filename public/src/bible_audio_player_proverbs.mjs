@@ -61,6 +61,11 @@ export async function bible_audio_player_proverbs() {
       });
     });
   });
+  await bible_audio_player_english_folders_numbers(
+    download_folders_fcbh_underscore,
+    numbers_s,
+    bible_audio_player_fcbh_starts_with,
+  );
   let download_folders_regular_nt = ["all_files_english_contemporary", "rsv"];
   let download_folders_regular = [
     "WEBD_OT",
