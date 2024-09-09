@@ -73,6 +73,7 @@ export async function bible_audio_player_range(book_from, book_to) {
     download_folders_fcbh,
     numbers_fcbh,
     path_parse_base_starts_with,
+    promises,
   );
   let download_folders_regular_nt = ["all_files_english_contemporary", "rsv"];
   bible_audio_player_english_folders_numbers(
