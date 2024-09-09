@@ -21,7 +21,7 @@ export async function bible_audio_player_proverbs() {
   assert(less_than_equal, [number_from, number_to]);
   let numbers = range_from(number_from, number_to);
   let numbers_s = list_map(numbers, (n) => number_pad(n, 2));
-  let filter = (file_path, n) => {
+  let filter1 = (file_path, n) => {
     let file_name = path_parse_base(file_path);
     return (
       !string_includes(file_name, "_____") &&
@@ -32,7 +32,7 @@ export async function bible_audio_player_proverbs() {
   await bible_audio_player_english_folders_numbers(
     download_folders_fcbh_underscore,
     numbers_s,
-    filter,
+    filter1,
   );
   let download_folders_fcbh = [
     "ENGNLTO2DA",
