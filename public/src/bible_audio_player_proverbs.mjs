@@ -2,7 +2,6 @@ import { bible_audio_player_fcbh_starts_with } from "./bible_audio_player_fcbh_s
 import { bible_audio_player_english_folders_numbers } from "./bible_audio_player_english_folders_numbers.mjs";
 import { assert } from "./assert.mjs";
 import { number_pad } from "./number_pad.mjs";
-import { string_starts_with } from "./string_starts_with.mjs";
 import { range_from } from "./range_from.mjs";
 import { bible_book_name_to_number } from "./bible_book_name_to_number.mjs";
 import { string_includes_curry_right } from "./string_includes_curry_right.mjs";
@@ -53,16 +52,8 @@ export async function bible_audio_player_proverbs() {
     "ENGNLVN1DA",
     "ENGNRSN1DA",
   ];
-  await each_async(v, async (download_folder) => {
-    await each_async(numbers_s, async (n) => {
-      await bible_audio_player_english(download_folder, (file_path) => {
-        let file_name = path_parse_base(file_path);
-        return string_starts_with(file_name, "B" + n);
-      });
-    });
-  });
   await bible_audio_player_english_folders_numbers(
-    download_folders_fcbh_underscore,
+    download_folders_fcbh,
     numbers_s,
     bible_audio_player_fcbh_starts_with,
   );
