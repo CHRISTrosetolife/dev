@@ -47,7 +47,7 @@ export async function bible_audio_player_range(book_from, book_to) {
       let file_name = path_parse_base(file_path);
       return (
         !string_includes(file_name, "_____") &&
-        bible_audio_player_fcbh_starts_with(file_path, n)
+        path_parse_base_starts_with(file_path, n)
       );
     },
   );
