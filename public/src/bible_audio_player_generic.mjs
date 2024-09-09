@@ -7,7 +7,7 @@ export async function bible_audio_player_generic(
 ) {
   let joined = path_join([path_language, download_folder]);
   let output = "E:\\";
-  if (0) {
+  if (10) {
     output = "..\\bible\\english\\test";
   }
   await folder_files_copy_generic(joined, ".mp3", output, filter);
