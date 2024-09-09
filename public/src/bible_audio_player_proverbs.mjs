@@ -1,9 +1,7 @@
+import { exit } from "./exit.mjs";
 import { bible_book_name_to_number } from "./bible_book_name_to_number.mjs";
 import { log } from "./log.mjs";
-import { number_pad } from "./number_pad.mjs";
-import { list_index } from "./list_index.mjs";
 import { string_includes_curry_right } from "./string_includes_curry_right.mjs";
-import { object_property_get } from "./object_property_get.mjs";
 import { each_async } from "./each_async.mjs";
 import { bible_audio_player_english } from "./bible_audio_player_english.mjs";
 import { string_includes } from "./string_includes.mjs";
@@ -12,11 +10,12 @@ export async function bible_audio_player_proverbs() {
   let book_to = book_from;
   let bible_folder = "engbsb";
   let number_from = await bible_book_name_to_number(bible_folder, book_from);
+  let number_to = await bible_book_name_to_number(bible_folder, book_from);
   log({
     number_from,
+    number_to,
   });
-  let acronym_to = object_property_get(inverted, book_to);
-  let number_to = number_pad(list_index(books, acronym_to) + 1, 2);
+  exit();
   let download_folders_fcbh = ["ENGESVO2DA", "ENGESVN2DA"];
   await each_async(download_folders_fcbh, async (download_folder) => {
     await bible_audio_player_english(
