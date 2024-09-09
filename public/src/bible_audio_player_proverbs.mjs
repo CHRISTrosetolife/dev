@@ -1,3 +1,4 @@
+import { bible_audio_player_english_folders_numbers } from "./bible_audio_player_english_folders_numbers.mjs";
 import { assert } from "./assert.mjs";
 import { number_pad } from "./number_pad.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
@@ -27,13 +28,10 @@ export async function bible_audio_player_proverbs() {
     );
   };
   let download_folders_fcbh_underscore = ["ENGESVO2DA", "ENGESVN2DA"];
-  await each_async(
+  await bible_audio_player_english_folders_numbers(
     download_folders_fcbh_underscore,
-    async (download_folder) => {
-      await each_async(numbers_s, async (n) => {
-        await bible_audio_player_english(download_folder, filter);
-      });
-    },
+    numbers_s,
+    filter,
   );
   let download_folders_fcbh = [
     "ENGNLTO2DA",
