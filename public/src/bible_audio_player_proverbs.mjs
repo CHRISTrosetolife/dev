@@ -87,7 +87,7 @@ export async function bible_audio_player_proverbs() {
   await bible_audio_player_english_folders_numbers(
     download_folders_fcbh,
     numbers_s,
-    bible_audio_player_fcbh_starts_with,
+    path_parse_base_starts_with,
   );
   await each_async(download_folders_regular, async (download_folder) => {
     await bible_audio_player_english(
