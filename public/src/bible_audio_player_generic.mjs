@@ -12,13 +12,13 @@ export async function bible_audio_player_generic(
   if (10) {
     output = "..\\bible\\english\\test";
   }
+  let extension = ".mp3";
   await folder_files_copy_generic(
     joined,
-    ".mp3",
+    extension,
     output,
     filter,
     async (to) => {
-      let extension = ".mp3";
       let without = string_suffix_without(to, extension);
       let with_id = without + (await uuid()) + extension;
       return with_id;
