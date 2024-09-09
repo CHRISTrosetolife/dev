@@ -1,9 +1,6 @@
 import { number_pad_2 } from "./number_pad_2.mjs";
 import { list_map_number_pad_2 } from "./list_map_number_pad_2.mjs";
 import { bible_audio_player_unzip } from "./bible_audio_player_unzip.mjs";
-import { string_includes_curry_right } from "./string_includes_curry_right.mjs";
-import { bible_audio_player_english } from "./bible_audio_player_english.mjs";
-import { each_async } from "./each_async.mjs";
 import { path_parse_base_starts_with } from "./path_parse_base_starts_with.mjs";
 import { string_includes } from "./string_includes.mjs";
 import { path_parse_base } from "./path_parse_base.mjs";
@@ -92,16 +89,10 @@ export async function bible_audio_player_range(book_from, book_to) {
     "00_Bible in Basic English New Testament Audio MP3 Files",
   ];
   bible_audio_player_english_folders_numbers(
-    download_folders_fcbh,
+    download_folders_regular,
     numbers_s,
     path_parse_base_starts_with,
   );
-  await each_async(download_folders_regular, async (download_folder) => {
-    await bible_audio_player_english(
-      download_folder,
-      string_includes_curry_right(book_from),
-    );
-  });
   let download_folders_regular_computer_voice = [
     "NHEB_NT_audio",
     "NHEB_OT_audio",
