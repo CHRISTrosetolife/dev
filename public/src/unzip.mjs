@@ -11,8 +11,9 @@ export async function unzip(z_path) {
   let command = string_combine_multiple([
     'tar -xf "',
     z_path,
-    '" -C ',
+    '" -C "',
     output_path,
+    '"',
   ]);
   log({
     command,
