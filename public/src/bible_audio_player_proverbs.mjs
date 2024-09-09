@@ -13,7 +13,7 @@ export async function bible_audio_player_proverbs() {
   let numbers = range_from(number_from, number_to);
   let download_folders_fcbh = ["ENGESVO2DA", "ENGESVN2DA"];
   await each_async(download_folders_fcbh, async (download_folder) => {
-    await each_async(numbers, async (item) => {});
+    await each_async(numbers, async (n) => {});
     await bible_audio_player_english(
       download_folder,
       (file_name) =>
