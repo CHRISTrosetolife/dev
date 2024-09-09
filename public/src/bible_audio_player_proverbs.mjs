@@ -1,21 +1,20 @@
+import { bible_books_names_lookup_inverted } from "./bible_books_names_lookup_inverted.mjs";
 import { number_pad } from "./number_pad.mjs";
 import { list_index } from "./list_index.mjs";
 import { bible_books } from "./bible_books.mjs";
 import { string_includes_curry_right } from "./string_includes_curry_right.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { bible_books_names_lookup } from "./bible_books_names_lookup.mjs";
-import { object_invert } from "./object_invert.mjs";
 import { each_async } from "./each_async.mjs";
 import { bible_audio_player_english } from "./bible_audio_player_english.mjs";
 import { string_includes } from "./string_includes.mjs";
 export async function bible_audio_player_proverbs() {
   let book_from = "Proverbs";
   let book_to = book_from;
-  let lookup = await bible_books_names_lookup("engbsb");
-  let inverted = object_invert(lookup);
+  let bible_folder = "engbsb";
+  let inverted = await bible_books_names_lookup_inverted(bible_folder);
   let acronym_from = object_property_get(inverted, book_from);
   let acronym_to = object_property_get(inverted, book_to);
-  let books = await bible_books("engbsb");
+  let books = await bible_books(bible_folder);
   let number_from = number_pad(list_index(books, acronym_from) + 1, 2);
   let number_to = number_pad(list_index(books, acronym_to) + 1, 2);
   let download_folders_fcbh = ["ENGESVO2DA", "ENGESVN2DA"];
