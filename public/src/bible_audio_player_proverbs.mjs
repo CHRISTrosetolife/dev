@@ -3,14 +3,14 @@ import { each_async } from "./each_async.mjs";
 import { bible_audio_player_english } from "./bible_audio_player_english.mjs";
 import { string_includes } from "./string_includes.mjs";
 export async function bible_audio_player_proverbs() {
-  let book = "Proverbs";
+  let book_from = "Proverbs";
   let download_folders_fcbh = ["ENGESVO2DA", "ENGESVN2DA"];
   await each_async(download_folders_fcbh, async (download_folder) => {
     await bible_audio_player_english(
       download_folder,
       (file_name) =>
         !string_includes(file_name, "_____") &&
-        string_includes(file_name, book),
+        string_includes(file_name, book_from),
     );
   });
   let download_folders_regular = [
@@ -49,7 +49,7 @@ export async function bible_audio_player_proverbs() {
   await each_async(download_folders_regular, async (download_folder) => {
     await bible_audio_player_english(
       download_folder,
-      string_includes_curry_right(book),
+      string_includes_curry_right(book_from),
     );
   });
   let download_folder_acronymns_computer_voice = "BBEM_complete";
