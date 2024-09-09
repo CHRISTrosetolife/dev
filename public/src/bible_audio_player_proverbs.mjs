@@ -22,7 +22,7 @@ export async function bible_audio_player_proverbs() {
       await bible_audio_player_english(download_folder, (file_path) => {
         let file_name = path_parse_base(file_path);
         !string_includes(file_name, "_____") &&
-          string_starts_with(file_name, "B");
+          string_starts_with(file_name, "B" + n);
       });
     });
   });
