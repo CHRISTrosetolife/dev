@@ -42,6 +42,7 @@ export async function bible_audio_player_proverbs() {
     "ENGNKJN1DA",
     "ENGNLHN1DA",
     "ENGNLTN2DA",
+    "ENGNLVN1DA",
   ];
   let download_folders_regular_computer_voice = [
     "NHEB_NT_audio",
