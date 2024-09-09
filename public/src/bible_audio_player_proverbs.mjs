@@ -22,6 +22,7 @@ export async function bible_audio_player_proverbs() {
   let download_folders_regular = [
     "ENGNLTO2DA",
     "ENGNRSO2DA",
+    "ENGCAVN2DA",
     "WEBD_OT",
     "WEBD_NT",
     "00_NHEBI_OT_Audio_Complete",
@@ -32,8 +33,8 @@ export async function bible_audio_player_proverbs() {
     "rsv",
     "ENGESHN1DA",
     "ENGESVO1DA",
-    "WEBW_OT",
-    "WEBW_NT",
+    "EN1WEBO2DA",
+    "EN1WEBN2DA",
     "ENGESHN1DA",
     "00_Bible in Basic English Old Testament Audio MP3 Files",
   ];
