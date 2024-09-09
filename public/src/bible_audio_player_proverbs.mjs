@@ -8,10 +8,10 @@ import { bible_audio_player_english } from "./bible_audio_player_english.mjs";
 import { string_includes } from "./string_includes.mjs";
 export async function bible_audio_player_proverbs() {
   let book_from = "Proverbs";
+  let book_to = book_from;
   let lookup = await bible_books_names_lookup("engbsb");
   let inverted = object_invert(lookup);
   let acronym = object_property_get(inverted, book_from);
-  let book_to = book_from;
   let books = await bible_books("engbsb");
   let download_folders_fcbh = ["ENGESVO2DA", "ENGESVN2DA"];
   await each_async(download_folders_fcbh, async (download_folder) => {
