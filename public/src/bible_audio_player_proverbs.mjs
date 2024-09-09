@@ -22,10 +22,11 @@ export async function bible_audio_player_proverbs() {
   assert(less_than_equal, [number_from, number_to]);
   let numbers = range_from(number_from, number_to);
   let numbers_s = list_map(numbers, (n) => number_pad(n, 2));
-  let numbers_nt = list_filter(
+  let numbers_nt_filtered = list_filter(
     numbers,
     (n) => n >= bible_books_old_count() + 1,
   );
+  let numbers_nt = list_filter();
   let download_folders_fcbh_underscore = ["ENGESVO2DA", "ENGESVN2DA"];
   await bible_audio_player_english_folders_numbers(
     download_folders_fcbh_underscore,
