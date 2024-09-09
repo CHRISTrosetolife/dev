@@ -1,3 +1,4 @@
+import { path_parse_base_starts_with } from "./path_parse_base_starts_with.mjs";
 import { bible_books_old_count } from "./bible_books_old_count.mjs";
 import { bible_audio_player_fcbh_starts_with } from "./bible_audio_player_fcbh_starts_with.mjs";
 import { bible_audio_player_english_folders_numbers } from "./bible_audio_player_english_folders_numbers.mjs";
@@ -69,9 +70,9 @@ export async function bible_audio_player_proverbs() {
   );
   let download_folders_regular_nt = ["all_files_english_contemporary", "rsv"];
   await bible_audio_player_english_folders_numbers(
-    download_folders_fcbh,
-    numbers_s,
-    bible_audio_player_fcbh_starts_with,
+    download_folders_regular_nt,
+    numbers_nt,
+    path_parse_base_starts_with,
   );
   let download_folders_regular = [
     "WEBD_OT",
