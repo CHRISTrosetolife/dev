@@ -5,6 +5,7 @@ export function bible_audio_player_english_folders_numbers(
   download_folders,
   numbers_s,
   filter,
+  list,
 ) {
   return list_adder((la) => {
     each(download_folders, (download_folder) => {
