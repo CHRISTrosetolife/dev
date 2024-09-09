@@ -17,8 +17,8 @@ export async function bible_audio_player_proverbs() {
     await each_async(numbers, async (n) => {
       await bible_audio_player_english(
         download_folder,
-        (file_name) =>
-          !string_includes(file_name, "_____") && string_starts_with(),
+        (file_path) =>
+          !string_includes(file_path, "_____") && string_starts_with(),
       );
     });
   });
