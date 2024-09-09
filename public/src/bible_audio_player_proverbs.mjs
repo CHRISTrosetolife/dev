@@ -11,6 +11,7 @@ import { string_includes } from "./string_includes.mjs";
 import { path_parse_base } from "./path_parse_base.mjs";
 import { list_map } from "./list_map.mjs";
 import { less_than_equal } from "./less_than_equal.mjs";
+import { list_filter } from "./list_filter.mjs";
 export async function bible_audio_player_proverbs() {
   let book_from = "Proverbs";
   let book_to = book_from;
@@ -20,6 +21,7 @@ export async function bible_audio_player_proverbs() {
   assert(less_than_equal, [number_from, number_to]);
   let numbers = range_from(number_from, number_to);
   let numbers_s = list_map(numbers, (n) => number_pad(n, 2));
+  let numbers_nt = list_filter(numbers, (n) => n >= 40);
   let download_folders_fcbh_underscore = ["ENGESVO2DA", "ENGESVN2DA"];
   await bible_audio_player_english_folders_numbers(
     download_folders_fcbh_underscore,
