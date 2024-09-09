@@ -5,6 +5,7 @@ import { string_includes_curry_right } from "./string_includes_curry_right.mjs";
 import { each_async } from "./each_async.mjs";
 import { bible_audio_player_english } from "./bible_audio_player_english.mjs";
 import { string_includes } from "./string_includes.mjs";
+import { path_parse_base } from "./path_parse_base.mjs";
 export async function bible_audio_player_proverbs() {
   let book_from = "Proverbs";
   let book_to = book_from;
@@ -16,6 +17,7 @@ export async function bible_audio_player_proverbs() {
   await each_async(download_folders_fcbh, async (download_folder) => {
     await each_async(numbers, async (n) => {
       await bible_audio_player_english(download_folder, (file_path) => {
+        let file_name = path_parse_base(file_path);
         !string_includes(file_path, "_____") && string_starts_with();
       });
     });
