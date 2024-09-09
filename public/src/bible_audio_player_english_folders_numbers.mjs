@@ -11,12 +11,11 @@ export function bible_audio_player_english_folders_numbers(
   let result = list_adder((la) => {
     each(download_folders, (download_folder) => {
       each(numbers_s, (n) => {
-        la(
-          async () =>
-            await bible_audio_player_english(download_folder, (file_path) =>
-              filter(file_path, n),
-            ),
-        );
+        la(async () => {
+          await bible_audio_player_english(download_folder, (file_path) =>
+            filter(file_path, n),
+          );
+        });
       });
     });
   });
