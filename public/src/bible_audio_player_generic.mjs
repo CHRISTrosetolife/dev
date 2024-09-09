@@ -20,7 +20,7 @@ export async function bible_audio_player_generic(
     filter,
     async (to) => {
       let without = string_suffix_without(to, extension);
-      let with_id = without + (await uuid()) + extension;
+      let with_id = without + "_" + (await uuid()) + extension;
       return with_id;
     },
   );
