@@ -96,6 +96,7 @@ export async function bible_audio_player_range(book_from, book_to) {
     download_folders_regular,
     numbers_s,
     path_parse_base_starts_with,
+    promises,
   );
   let download_folders_regular_computer_voice = [
     "NHEB_NT_audio",
