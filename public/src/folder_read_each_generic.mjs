@@ -11,6 +11,7 @@ export async function folder_read_each_generic(
   let file_paths = await folder_read(input_directory, file_extension);
   let filtered = list_filter(file_paths, filter);
   log({
+    input_directory,
     a: file_paths.length,
     b: filtered.length,
   });
