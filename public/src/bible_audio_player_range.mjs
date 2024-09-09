@@ -1,3 +1,4 @@
+import { list_shuffle } from "./list_shuffle.mjs";
 import { number_pad_2 } from "./number_pad_2.mjs";
 import { list_map_number_pad_2 } from "./list_map_number_pad_2.mjs";
 import { bible_audio_player_unzip } from "./bible_audio_player_unzip.mjs";
@@ -98,6 +99,7 @@ export async function bible_audio_player_range(book_from, book_to) {
     path_parse_base_starts_with,
     promises,
   );
+  list_shuffle(promises);
   let download_folders_regular_computer_voice = [
     "NHEB_NT_audio",
     "NHEB_OT_audio",
