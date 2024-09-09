@@ -21,7 +21,7 @@ export async function bible_audio_player_proverbs() {
   assert(less_than_equal, [number_from, number_to]);
   let numbers = range_from(number_from, number_to);
   let numbers_s = list_map(numbers, (n) => number_pad(n, 2));
-  let filter = (file_path) => {
+  let filter = (file_path, n) => {
     let e = bible_audio_player_fcbh_starts_with(file_path);
     {
       let file_name = path_parse_base(file_path);
