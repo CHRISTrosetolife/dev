@@ -31,6 +31,9 @@ export async function bible_audio_player_range(book_from, book_to) {
     numbers_nt_filtered,
     (n) => n - bible_books_old_count(),
   );
+  let numbers_fcbh = list_map(numbers_nt_filtered, (n) => {
+    n - bible_books_old_count();
+  });
   let numbers_nt_s = list_map_number_pad_2(numbers_nt);
   let download_folders_fcbh_underscore = ["ENGESVO2DA", "ENGESVN2DA"];
   await bible_audio_player_english_folders_numbers(
