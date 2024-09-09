@@ -29,6 +29,7 @@ export async function bible_audio_player_proverbs() {
       });
     });
   });
+  let download_folders_regular_nt = [];
   let download_folders_regular = [
     "ENGNLTO2DA",
     "ENGNRSO2DA",
