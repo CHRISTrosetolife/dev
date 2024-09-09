@@ -47,6 +47,7 @@ export async function bible_audio_player_range(book_from, book_to) {
         path_parse_base_starts_with(file_path, n)
       );
     },
+    promises,
   );
   let download_folders_fcbh = [
     "ENGNLTO2DA",
