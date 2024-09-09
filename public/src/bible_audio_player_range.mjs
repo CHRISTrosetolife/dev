@@ -1,4 +1,4 @@
-import { number_pad_2 } from "./number_pad_2.mjs";
+import { list_map_number_pad_2 } from "./list_map_number_pad_2.mjs";
 import { log } from "./log.mjs";
 import { bible_audio_player_unzip } from "./bible_audio_player_unzip.mjs";
 import { string_includes_curry_right } from "./string_includes_curry_right.mjs";
@@ -23,7 +23,7 @@ export async function bible_audio_player_range(book_from, book_to) {
   let number_to = await bible_book_name_to_number(bible_folder, book_to);
   assert(less_than_equal, [number_from, number_to]);
   let numbers = range_from(number_from, number_to);
-  let numbers_s = list_map(numbers, number_pad_2);
+  let numbers_s = list_map_number_pad_2(numbers);
   let numbers_nt_filtered = list_filter(
     numbers,
     (n) => n >= bible_books_old_count() + 1,
