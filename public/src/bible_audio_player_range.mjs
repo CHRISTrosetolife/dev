@@ -1,3 +1,4 @@
+import { number_pad_2 } from "./number_pad_2.mjs";
 import { list_map_number_pad_2 } from "./list_map_number_pad_2.mjs";
 import { bible_audio_player_unzip } from "./bible_audio_player_unzip.mjs";
 import { string_includes_curry_right } from "./string_includes_curry_right.mjs";
@@ -33,9 +34,9 @@ export async function bible_audio_player_range(book_from, book_to) {
   );
   let numbers_fcbh = list_map(numbers_nt_filtered, (n) => {
     if (n > bible_books_old_count()) {
-      return "B" + list_map_number_pad_2(n - bible_books_old_count());
+      return "B" + number_pad_2(n - bible_books_old_count());
     }
-    return "A" + list_map_number_pad_2(n);
+    return "A" + number_pad_2(n);
   });
   let numbers_nt_s = list_map_number_pad_2(numbers_nt);
   let download_folders_fcbh_underscore = ["ENGESVO2DA", "ENGESVN2DA"];
