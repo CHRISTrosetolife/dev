@@ -1,3 +1,4 @@
+import { list_index } from "./list_index.mjs";
 import { bible_books } from "./bible_books.mjs";
 import { string_includes_curry_right } from "./string_includes_curry_right.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -14,8 +15,8 @@ export async function bible_audio_player_proverbs() {
   let acronym_from = object_property_get(inverted, book_from);
   let acronym_to = object_property_get(inverted, book_to);
   let books = await bible_books("engbsb");
-  let number_from = object_property_get(inverted, book_from);
-  let number_to = object_property_get(inverted, book_to);
+  let number_from = list_index(books, acronym_from) + 1;
+  let number_to = list_index(books, acronym_to) + 1;
   let download_folders_fcbh = ["ENGESVO2DA", "ENGESVN2DA"];
   await each_async(download_folders_fcbh, async (download_folder) => {
     await bible_audio_player_english(
