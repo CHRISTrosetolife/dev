@@ -1,3 +1,4 @@
+import { string_starts_with } from "./string_starts_with.mjs";
 import { range_from } from "./range_from.mjs";
 import { bible_book_name_to_number } from "./bible_book_name_to_number.mjs";
 import { string_includes_curry_right } from "./string_includes_curry_right.mjs";
@@ -17,8 +18,7 @@ export async function bible_audio_player_proverbs() {
       await bible_audio_player_english(
         download_folder,
         (file_name) =>
-          !string_includes(file_name, "_____") &&
-          string_includes(file_name, book_from),
+          !string_includes(file_name, "_____") && string_starts_with(),
       );
     });
   });
