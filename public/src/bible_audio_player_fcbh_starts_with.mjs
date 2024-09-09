@@ -12,6 +12,6 @@ export function bible_audio_player_fcbh_starts_with(file_path, n) {
       p,
     });
   }
-  let e = string_starts_with(file_name, p);
+  let e = string_starts_with(without_first, p);
   return e;
 }
