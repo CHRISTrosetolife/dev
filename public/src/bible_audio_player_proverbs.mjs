@@ -22,7 +22,7 @@ export async function bible_audio_player_proverbs() {
   let numbers = range_from(number_from, number_to);
   let numbers_s = list_map(numbers, (n) => number_pad(n, 2));
   let filter = (file_path, n) => {
-    let e = bible_audio_player_fcbh_starts_with(file_path);
+    let e = bible_audio_player_fcbh_starts_with(file_path, n);
     {
       let file_name = path_parse_base(file_path);
       return !string_includes(file_name, "_____") && e;
