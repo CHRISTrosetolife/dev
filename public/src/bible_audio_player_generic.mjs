@@ -18,8 +18,9 @@ export async function bible_audio_player_generic(
     output,
     filter,
     async (to) => {
-      let without = string_suffix_without(to, ".mp3");
-      let with_id = to + (await uuid()) + ".mp3";
+      let extension = ".mp3";
+      let without = string_suffix_without(to, extension);
+      let with_id = to + (await uuid()) + extension;
     },
   );
 }
