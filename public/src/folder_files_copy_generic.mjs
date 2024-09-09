@@ -11,8 +11,8 @@ export async function folder_files_copy_generic(
     if (10) {
       log(to);
     } else {
+      await file_copy_generic(from, to, false);
     }
-    await file_copy_generic(from, to, false);
   };
   await folder_files_move_generic(
     input_directory,
