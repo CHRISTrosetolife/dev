@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { promise_all_ordered } from "./promise_all_ordered.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
 import { number_pad_2 } from "./number_pad_2.mjs";
@@ -100,6 +101,7 @@ export async function bible_audio_player_range(book_from, book_to) {
     path_parse_base_starts_with,
     promises,
   );
+  log({});
   list_shuffle(promises);
   await promise_all_ordered(promises);
   let download_folders_regular_computer_voice = [
