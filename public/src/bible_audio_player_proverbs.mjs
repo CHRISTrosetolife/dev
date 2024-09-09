@@ -19,7 +19,7 @@ export async function bible_audio_player_proverbs() {
   let book_to = book_from;
   let bible_folder = "engbsb";
   let number_from = await bible_book_name_to_number(bible_folder, book_from);
-  let number_to = await bible_book_name_to_number(bible_folder, book_from);
+  let number_to = await bible_book_name_to_number(bible_folder, book_to);
   assert(less_than_equal, [number_from, number_to]);
   let numbers = range_from(number_from, number_to);
   let numbers_s = list_map(numbers, (n) => number_pad(n, 2));
