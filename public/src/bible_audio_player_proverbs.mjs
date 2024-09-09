@@ -14,6 +14,8 @@ export async function bible_audio_player_proverbs() {
   let acronym_from = object_property_get(inverted, book_from);
   let acronym_to = object_property_get(inverted, book_to);
   let books = await bible_books("engbsb");
+  let number_from = object_property_get(inverted, book_from);
+  let number_to = object_property_get(inverted, book_to);
   let download_folders_fcbh = ["ENGESVO2DA", "ENGESVN2DA"];
   await each_async(download_folders_fcbh, async (download_folder) => {
     await bible_audio_player_english(
