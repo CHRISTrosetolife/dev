@@ -6,6 +6,7 @@ export async function folder_files_copy_generic(
   file_extension,
   output_directory,
   filter,
+  map,
 ) {
   let lambda = async (from, to) => {
     if (10) {

@@ -1,3 +1,4 @@
+import { identity } from "./identity.mjs";
 import { folder_files_copy_generic } from "./folder_files_copy_generic.mjs";
 import { tautology } from "./tautology.mjs";
 export async function folder_files_copy(
@@ -11,5 +12,6 @@ export async function folder_files_copy(
     file_extension,
     output_directory,
     filter,
+    identity,
   );
 }
