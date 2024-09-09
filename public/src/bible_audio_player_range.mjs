@@ -5,7 +5,6 @@ import { string_includes_curry_right } from "./string_includes_curry_right.mjs";
 import { bible_audio_player_english } from "./bible_audio_player_english.mjs";
 import { each_async } from "./each_async.mjs";
 import { path_parse_base_starts_with } from "./path_parse_base_starts_with.mjs";
-import { bible_audio_player_fcbh_starts_with } from "./bible_audio_player_fcbh_starts_with.mjs";
 import { string_includes } from "./string_includes.mjs";
 import { path_parse_base } from "./path_parse_base.mjs";
 import { bible_audio_player_english_folders_numbers } from "./bible_audio_player_english_folders_numbers.mjs";
@@ -74,7 +73,7 @@ export async function bible_audio_player_range(book_from, book_to) {
   await bible_audio_player_english_folders_numbers(
     download_folders_fcbh,
     numbers_fcbh,
-    bible_audio_player_fcbh_starts_with,
+    path_parse_base_starts_with,
   );
   let download_folders_regular_nt = ["all_files_english_contemporary", "rsv"];
   await bible_audio_player_english_folders_numbers(
