@@ -1,3 +1,4 @@
+import { assert } from "./assert.mjs";
 import { number_pad } from "./number_pad.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
 import { range_from } from "./range_from.mjs";
@@ -8,12 +9,14 @@ import { bible_audio_player_english } from "./bible_audio_player_english.mjs";
 import { string_includes } from "./string_includes.mjs";
 import { path_parse_base } from "./path_parse_base.mjs";
 import { list_map } from "./list_map.mjs";
+import { greater_than_equal } from "./greater_than_equal.mjs";
 export async function bible_audio_player_proverbs() {
   let book_from = "Proverbs";
   let book_to = book_from;
   let bible_folder = "engbsb";
   let number_from = await bible_book_name_to_number(bible_folder, book_from);
   let number_to = await bible_book_name_to_number(bible_folder, book_from);
+  assert(greater_than_equal, [number_to, number_from]);
   let numbers = range_from(number_from, number_to);
   let numbers_s = list_map(numbers, (n) => number_pad(n, 2));
   let download_folders_fcbh = ["ENGESVO2DA", "ENGESVN2DA"];
