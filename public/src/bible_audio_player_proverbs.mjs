@@ -58,15 +58,15 @@ export async function bible_audio_player_proverbs() {
     "ENGNLVN1DA",
     "ENGNRSN1DA",
   ];
-  let download_folders_regular_computer_voice = [
-    "NHEB_NT_audio",
-    "NHEB_OT_audio",
-  ];
   await each_async(download_folders_regular, async (download_folder) => {
     await bible_audio_player_english(
       download_folder,
       string_includes_curry_right(book_from),
     );
   });
+  let download_folders_regular_computer_voice = [
+    "NHEB_NT_audio",
+    "NHEB_OT_audio",
+  ];
   let download_folder_acronymns_computer_voice = "BBEM_complete";
 }
