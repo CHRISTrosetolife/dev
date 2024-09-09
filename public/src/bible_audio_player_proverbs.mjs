@@ -32,28 +32,18 @@ export async function bible_audio_player_proverbs() {
       });
     },
   );
-  let download_folders_fcbh = [];
-  let download_folders_regular_nt = ["all_files_english_contemporary", "rsv"];
-  let download_folders_regular = [
+  let download_folders_fcbh = [
     "ENGNLTO2DA",
     "ENGNRSO2DA",
     "ENGCAVN2DA",
-    "WEBD_OT",
-    "WEBD_NT",
-    "00_NHEBI_OT_Audio_Complete",
-    "00_NHEBI_NT_Audio_Complete",
-    "BBE_NewTestamentAudio_Australia",
-    "ENGWEBN2DA",
-    "niv_mp3_bible_new_international_version",
     "ENGESHN1DA",
     "ENGNRSN2DA",
     "ENGESVO1DA",
     "EN1WEBO2DA",
     "ENGNLVN2DA",
     "EN1WEBN2DA",
+    "ENGWEBN2DA",
     "ENGESHN1DA",
-    "00_Bible in Basic English Old Testament Audio MP3 Files",
-    "00_Bible in Basic English New Testament Audio MP3 Files",
     "ENGCEVN2DA",
     "ENGESVN1DA",
     "ENGNKJN1DA",
@@ -61,6 +51,17 @@ export async function bible_audio_player_proverbs() {
     "ENGNLTN2DA",
     "ENGNLVN1DA",
     "ENGNRSN1DA",
+  ];
+  let download_folders_regular_nt = ["all_files_english_contemporary", "rsv"];
+  let download_folders_regular = [
+    "WEBD_OT",
+    "WEBD_NT",
+    "00_NHEBI_OT_Audio_Complete",
+    "00_NHEBI_NT_Audio_Complete",
+    "BBE_NewTestamentAudio_Australia",
+    "niv_mp3_bible_new_international_version",
+    "00_Bible in Basic English Old Testament Audio MP3 Files",
+    "00_Bible in Basic English New Testament Audio MP3 Files",
   ];
   await each_async(download_folders_regular, async (download_folder) => {
     await bible_audio_player_english(
