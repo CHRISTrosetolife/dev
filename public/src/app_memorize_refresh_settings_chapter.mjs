@@ -7,7 +7,7 @@ import { app_memorize_settings_button_back } from "./app_memorize_settings_butto
 import { app_record_book_generic } from "./app_record_book_generic.mjs";
 export function app_memorize_refresh_settings_chapter(context) {
   let { root } = context;
-  let b = app_memorize_book_code_get(context);
+  let book_code = app_memorize_book_code_get(context);
   app_record_book_generic(
     context,
     () => {
@@ -16,12 +16,12 @@ export function app_memorize_refresh_settings_chapter(context) {
         root,
         string_combine_multiple([
           "which chapter in ",
-          b,
+          book_code,
           " do you want to memorize from ?",
         ]),
       );
     },
-    b,
+    book_code,
     async (context, book_code, chapter) => {
       app_memorize_chapter_set(context, chapter);
       await app_memorize_refresh_memorize(context);
