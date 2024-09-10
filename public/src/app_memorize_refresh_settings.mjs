@@ -1,3 +1,4 @@
+import { app_memorize_refresh_memorize_load } from "./app_memorize_refresh_memorize_load.mjs";
 import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
 import { app_memorize_chapter_get } from "./app_memorize_chapter_get.mjs";
 import { app_memorize_book_code_get } from "./app_memorize_book_code_get.mjs";
@@ -39,12 +40,13 @@ export function app_memorize_refresh_settings(context) {
           app_memorize_settings_button_back(context);
           html_p_text(root, "which book do you want to memorize from ?");
         },
-        (context, book_code) => {
+        async (context, book_code) => {
           object_merge(save, {
             book_code,
           });
           app_memorize_chapter_set(context, "1");
           app_memorize_refresh_settings_chapter(context);
+          await app_memorize_refresh_memorize_load(context);
         },
       );
     },
