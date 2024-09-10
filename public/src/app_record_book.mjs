@@ -10,6 +10,7 @@ export function app_record_book(context, book_code) {
   let app_record_book_on_click = app_record_chapter;
   let { root } = context;
   html_clear_scroll_top(root);
+  lambda_top();
   app_record_home_button(context);
   let { books } = context;
   let book = list_find_property_or(books, "book_code", book_code);
