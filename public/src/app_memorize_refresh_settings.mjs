@@ -53,9 +53,11 @@ export function app_memorize_refresh_settings(context) {
           app_memorize_settings_button_back(context);
           html_p_text(
             root,
-            "which chapter in ",
-            book_code,
-            " do you want to memorize from ?",
+            string_combine_multiple([
+              "which chapter in ",
+              book_code,
+              " do you want to memorize from ?",
+            ]),
           );
         },
         book_code,
