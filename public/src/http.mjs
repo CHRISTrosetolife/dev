@@ -6,7 +6,9 @@ import { integer_random } from "./integer_random.mjs";
 import { import_node } from "./import_node.mjs";
 export async function http(url) {
   let fetch = await import_node("node-fetch");
-  log({});
+  log({
+    fetch,
+  });
   let response = await retry(
     3,
     lambda,
