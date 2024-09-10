@@ -34,6 +34,7 @@ export function app_memorize_refresh_settings(context) {
         (context, book_code) => {
           object_merge(context.save, {
             book_code,
+            chapter: "1",
           });
           app_memorize_save(context);
         },
