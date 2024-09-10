@@ -22,6 +22,7 @@ export function app_memorize_refresh_settings(context) {
     root,
     string_combine_multiple(["book"]),
     () => {
+      let { root } = context;
       html_clear_scroll_top(root);
       html_button_width_full_text_click_back(root, () => {
         app_memorize_refresh_settings(context);
