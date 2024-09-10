@@ -1,4 +1,4 @@
-import { bible_engbsb_storage_http_get } from "./bible_engbsb_storage_http_get.mjs";
+import { app_context_books_bible } from "./app_context_books_bible.mjs";
 import { log } from "./log.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
 import { html_script_axios } from "./html_script_axios.mjs";
@@ -15,10 +15,7 @@ export async function app_memorize() {
     style: {},
     save,
   };
-  let { books } = await bible_engbsb_storage_http_get("books");
-  object_merge(context, {
-    books,
-  });
+  await app_context_books_bible(context);
   context.settings = true;
   let root = html_style_default_initialize();
   html_style(root, {
