@@ -36,6 +36,8 @@ export function app_memorize_refresh_settings(context) {
         (context, book_code) => {
           object_merge(context.save, {
             book_code,
+          });
+          object_merge(context.save, {
             chapter: "1",
           });
           object_property_delete();
