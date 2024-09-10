@@ -28,7 +28,7 @@ export function app_memorize_refresh_settings(context) {
       html_p_text(root, "which verse range do you want to focus on ?");
       app_record_home_generic(context, (context, book_code) => {
         object_merge(context, {
-          books,
+          book_code,
         });
       });
     },
