@@ -41,7 +41,7 @@ export function app_memorize_refresh_settings(context) {
           });
           let chapter = "1";
           object_merge(save, {
-            chapter: chapter,
+            chapter,
           });
           object_property_delete();
           app_memorize_save(context);
