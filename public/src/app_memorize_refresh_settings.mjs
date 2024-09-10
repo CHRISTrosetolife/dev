@@ -43,7 +43,7 @@ export function app_memorize_refresh_settings(context) {
           object_merge(save, {
             chapter,
           });
-          object_property_delete();
+          object_property_delete(save, "group_current");
           app_memorize_save(context);
         },
       );
