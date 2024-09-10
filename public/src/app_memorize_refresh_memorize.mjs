@@ -41,6 +41,7 @@ import { html_button_width_full_text_click } from "./html_button_width_full_text
 import { html_element } from "./html_element.mjs";
 import { string_split } from "./string_split.mjs";
 import { list_get } from "./list_get.mjs";
+import { object_property_exists } from "./object_property_exists.mjs";
 export async function app_memorize_refresh_memorize(context) {
   let { root } = context;
   html_clear_scroll_top(root);
@@ -49,6 +50,8 @@ export async function app_memorize_refresh_memorize(context) {
   let chapter = object_property_initialize_get(save, "chapter", "19");
   app_memorize_save(context);
   let chapter_code = string_combine(book_code, chapter);
+  if (object_property_exists(context, chapter_code)) {
+  }
   let verses = await bible_engbsb_storage_http_get(chapter_code);
   object_merge(context, {
     verses,
