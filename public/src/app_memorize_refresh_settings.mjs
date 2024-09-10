@@ -1,3 +1,4 @@
+import { noop } from "./noop.mjs";
 import { app_memorize_settings_button_back_clear } from "./app_memorize_settings_button_back_clear.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { app_record_home_generic } from "./app_record_home_generic.mjs";
@@ -26,12 +27,16 @@ export function app_memorize_refresh_settings(context) {
     () => {
       app_memorize_settings_button_back_clear(context);
       html_p_text(root, "which verse range do you want to focus on ?");
-      app_record_home_generic(context, (context, book_code) => {
-        object_merge(context.save, {
-          book_code,
-        });
-        app_memorize_save(context);
-      });
+      app_record_home_generic(
+        context,
+        (context, book_code) => {
+          object_merge(context.save, {
+            book_code,
+          });
+          app_memorize_save(context);
+        },
+        noop,
+      );
     },
   );
   html_button_width_full_text_click(
