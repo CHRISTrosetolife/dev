@@ -25,7 +25,7 @@ export function app_memorize_refresh_settings(context) {
   let { root } = context;
   html_clear_scroll_top(root);
   let save = app_memorize_save_get(context);
-  html_button_width_full_text_click_back(root, "back", async () => {
+  html_button_width_full_text_click_back(root, async () => {
     await app_memorize_refresh_memorize(context);
   });
   let book_code = app_memorize_book_code_get(context);
