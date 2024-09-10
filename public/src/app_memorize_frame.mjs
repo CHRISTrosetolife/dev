@@ -5,14 +5,14 @@ import { html_on } from "./html_on.mjs";
 import { app_memorize_refresh_memorize } from "./app_memorize_refresh_memorize.mjs";
 import { html_document_body } from "./html_document_body.mjs";
 export async function app_memorize_frame(context) {
-  app_memorize_refresh_memorize(context);
+  await app_memorize_refresh_memorize(context);
   let type = "keydown";
   html_on(html_document_body(), type, on_keydown);
-  function on_keydown(e) {
+  async function on_keydown(e) {
     let { keyCode } = e;
     let c = String.fromCharCode(keyCode);
     let c_lower = string_case_lower(c);
-    app_memorize_on_keydown(context, c_lower);
+    await app_memorize_on_keydown(context, c_lower);
   }
   context.cleanup = () => {
     html_on_remove(html_document_body(), type, on_keydown);
