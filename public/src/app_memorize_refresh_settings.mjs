@@ -20,6 +20,25 @@ export function app_memorize_refresh_settings(context) {
   });
   html_button_width_full_text_click(
     root,
+    string_combine_multiple(["book"]),
+    () => {
+      html_clear_scroll_top(root);
+      html_button_width_full_text_click_back(root, () => {
+        app_memorize_refresh_settings(context);
+      });
+      html_p_text(root, "which verse range do you want to focus on ?");
+      for (let g of context.groups) {
+        let b = html_button(root);
+        html_inner_set(b, app_memorize_group_to_range_string(context, g));
+        html_on_click(b, () => {
+          app_memorize_group_current_set(context, g);
+          app_memorize_refresh_settings(context);
+        });
+      }
+    },
+  );
+  html_button_width_full_text_click(
+    root,
     string_combine_multiple([
       "verses ",
       app_memorize_group_to_range_string(context, context.save.group_current),
