@@ -1,7 +1,7 @@
+import { app_memorize_refresh_settings_chapter } from "./app_memorize_refresh_settings_chapter.mjs";
 import { log } from "./log.mjs";
 import { app_memorize_chapter_set } from "./app_memorize_chapter_set.mjs";
 import { app_memorize_save_get } from "./app_memorize_save_get.mjs";
-import { app_record_book_generic } from "./app_record_book_generic.mjs";
 import { app_memorize_settings_button_back } from "./app_memorize_settings_button_back.mjs";
 import { app_memorize_settings_button_back_clear } from "./app_memorize_settings_button_back_clear.mjs";
 import { object_merge } from "./object_merge.mjs";
@@ -50,27 +50,7 @@ export function app_memorize_refresh_settings(context) {
     root,
     string_combine_multiple(["chapter"]),
     () => {
-      let { book_code } = context.save;
-      app_record_book_generic(
-        context,
-        () => {
-          app_memorize_settings_button_back(context);
-          html_p_text(
-            root,
-            string_combine_multiple([
-              "which chapter in ",
-              book_code,
-              " do you want to memorize from ?",
-            ]),
-          );
-        },
-        book_code,
-        async (context, book_code, chapter) => {
-          log("here");
-          app_memorize_chapter_set(context, chapter);
-          await app_memorize_refresh_memorize(context);
-        },
-      );
+      app_memorize_refresh_settings_chapter(context);
     },
   );
   html_button_width_full_text_click(
