@@ -28,8 +28,8 @@ export function app_memorize_keyboard(context) {
       object_property_set(context.keyboard_buttons, k, b);
       html_inner_set(b, string_case_upper(k));
       app_memorize_button_keyboard_stylize(context, b);
-      html_on_click(b, () => {
-        app_memorize_on_keydown(context, k);
+      html_on_click(b, async () => {
+        await app_memorize_on_keydown(context, k);
       });
     }
   }
