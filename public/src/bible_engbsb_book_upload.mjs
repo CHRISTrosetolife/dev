@@ -6,7 +6,7 @@ export async function bible_engbsb_book_upload(book_name) {
   let chapters = await bible_chapters("engbsb", book_name);
   await each_async(chapters, async (chapter) => {
     log({
-      item,
+      chapter,
     });
     await bible_engbsb_chapter_upload(chapter);
   });
