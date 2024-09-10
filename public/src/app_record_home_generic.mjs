@@ -9,6 +9,7 @@ export function app_record_home_generic(
   let { root } = context;
   let { books } = context;
   html_clear_scroll_top(root);
+  lambda_before(root);
   each(books, (book) => {
     let { book_code } = book;
     html_button_text_click(root, book_code, function () {
