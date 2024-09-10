@@ -36,10 +36,10 @@ export function app_memorize_refresh_settings(context) {
           html_p_text(root, "which book do you want to memorize from ?");
         },
         (context, book_code) => {
-          object_merge(context.save, {
+          object_merge(save, {
             book_code,
           });
-          object_merge(context.save, {
+          object_merge(save, {
             chapter: "1",
           });
           object_property_delete();
@@ -68,7 +68,7 @@ export function app_memorize_refresh_settings(context) {
         },
         book_code,
         (context, book_code, chapter) => {
-          object_merge(context.save, {
+          object_merge(save, {
             chapter,
           });
           app_memorize_save(context);
@@ -82,7 +82,7 @@ export function app_memorize_refresh_settings(context) {
           html_p_text(root, "which book do you want to memorize from ?");
         },
         (context, book_code) => {
-          object_merge(context.save, {
+          object_merge(save, {
             book_code,
           });
           app_memorize_save(context);
@@ -94,7 +94,7 @@ export function app_memorize_refresh_settings(context) {
     root,
     string_combine_multiple([
       "verses ",
-      app_memorize_group_to_range_string(context, context.save.group_current),
+      app_memorize_group_to_range_string(context, save.group_current),
     ]),
     () => {
       app_memorize_settings_button_back_clear(context);
@@ -113,7 +113,7 @@ export function app_memorize_refresh_settings(context) {
     root,
     string_combine_multiple([
       "pattern ",
-      list_get(context.patterns, context.save.pattern_index),
+      list_get(context.patterns, save.pattern_index),
     ]),
     () => {
       app_memorize_settings_button_back_clear(context);
@@ -125,7 +125,7 @@ export function app_memorize_refresh_settings(context) {
         let b = html_button(root);
         html_inner_set(b, p);
         html_on_click(b, () => {
-          context.save.pattern_index = i;
+          save.pattern_index = i;
           app_memorize_save(context);
           app_memorize_refresh_settings(context);
         });
