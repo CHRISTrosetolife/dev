@@ -1,4 +1,3 @@
-import { noop } from "./noop.mjs";
 import { app_memorize_settings_button_back_clear } from "./app_memorize_settings_button_back_clear.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { app_record_home_generic } from "./app_record_home_generic.mjs";
@@ -35,7 +34,7 @@ export function app_memorize_refresh_settings(context) {
           });
           app_memorize_save(context);
         },
-        noop,
+        () => {},
       );
     },
   );
