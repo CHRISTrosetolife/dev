@@ -23,9 +23,7 @@ export function app_memorize_refresh_settings(context) {
     root,
     string_combine_multiple(["book"]),
     () => {
-      {
-        app_memorize_settings_button_back(context);
-      }
+      app_memorize_settings_button_back(context);
       html_p_text(root, "which verse range do you want to focus on ?");
       for (let g of context.groups) {
         let b = html_button(root);
@@ -44,10 +42,7 @@ export function app_memorize_refresh_settings(context) {
       app_memorize_group_to_range_string(context, context.save.group_current),
     ]),
     () => {
-      html_clear_scroll_top(root);
-      html_button_width_full_text_click_back(root, () => {
-        app_memorize_refresh_settings(context);
-      });
+      app_memorize_settings_button_back(context);
       html_p_text(root, "which verse range do you want to focus on ?");
       for (let g of context.groups) {
         let b = html_button(root);
