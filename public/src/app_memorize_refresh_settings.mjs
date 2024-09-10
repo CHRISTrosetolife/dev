@@ -64,10 +64,7 @@ export function app_memorize_refresh_settings(context) {
         },
         book_code,
         (context, book_code, chapter) => {
-          object_merge(save, {
-            chapter,
-          });
-          app_memorize_save(context);
+          app_memorize_chapter_set(context, chapter);
           app_memorize_refresh_memorize(context);
         },
       );
