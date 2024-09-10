@@ -1,3 +1,4 @@
+import { object_merge } from "./object_merge.mjs";
 import { app_record_home_generic } from "./app_record_home_generic.mjs";
 import { app_memorize_settings_button_back } from "./app_memorize_settings_button_back.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
@@ -25,7 +26,11 @@ export function app_memorize_refresh_settings(context) {
     () => {
       app_memorize_settings_button_back(context);
       html_p_text(root, "which verse range do you want to focus on ?");
-      app_record_home_generic(context, (context, book_code) => {});
+      app_record_home_generic(context, (context, book_code) => {
+        object_merge(context, {
+          books,
+        });
+      });
     },
   );
   html_button_width_full_text_click(
