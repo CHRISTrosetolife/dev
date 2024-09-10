@@ -59,33 +59,33 @@ export async function app_memorize_refresh_memorize(context) {
     }
   }
   if (load) {
+    let verses = await bible_engbsb_storage_http_get(chapter_code);
+    object_merge(context, {
+      verses,
+    });
+    let verses_length = list_size(context.verses);
+    let groups = app_memorize_group(verses_length);
+    object_merge(context, {
+      groups,
+    });
+    context.button_height = 7;
+    let group = object_property_get_or(
+      save,
+      "group_current",
+      list_first(context.groups),
+    );
+    html_hash({
+      verses: (value) => {
+        group = app_memorize_groups_get(context, value);
+      },
+      pattern: (value) => {
+        let save = app_memorize_save_get(context);
+        save.pattern_index = list_index(context.patterns, value);
+        app_memorize_save(context);
+      },
+    });
+    app_memorize_group_current_set(context, group);
   }
-  let verses = await bible_engbsb_storage_http_get(chapter_code);
-  object_merge(context, {
-    verses,
-  });
-  let verses_length = list_size(context.verses);
-  let groups = app_memorize_group(verses_length);
-  object_merge(context, {
-    groups,
-  });
-  context.button_height = 7;
-  let group = object_property_get_or(
-    save,
-    "group_current",
-    list_first(context.groups),
-  );
-  html_hash({
-    verses: (value) => {
-      group = app_memorize_groups_get(context, value);
-    },
-    pattern: (value) => {
-      let save = app_memorize_save_get(context);
-      save.pattern_index = list_index(context.patterns, value);
-      app_memorize_save(context);
-    },
-  });
-  app_memorize_group_current_set(context, group);
   context.verse_index = 0;
   context.token_index = 0;
   context.previous_spacer2 = undefined;
