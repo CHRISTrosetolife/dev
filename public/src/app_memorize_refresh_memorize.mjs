@@ -1,3 +1,16 @@
+import { app_memorize_group_current_set } from "./app_memorize_group_current_set.mjs";
+import { list_index } from "./list_index.mjs";
+import { app_memorize_groups_get } from "./app_memorize_groups_get.mjs";
+import { html_hash } from "./html_hash.mjs";
+import { list_first } from "./list_first.mjs";
+import { object_property_get_or } from "./object_property_get_or.mjs";
+import { app_memorize_group } from "./app_memorize_group.mjs";
+import { object_merge } from "./object_merge.mjs";
+import { bible_engbsb_storage_http_get } from "./bible_engbsb_storage_http_get.mjs";
+import { string_combine } from "./string_combine.mjs";
+import { app_memorize_save } from "./app_memorize_save.mjs";
+import { object_property_initialize_get } from "./object_property_initialize_get.mjs";
+import { app_memorize_save_get } from "./app_memorize_save_get.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { html_style_height } from "./html_style_height.mjs";
 import { html_style_centered } from "./html_style_centered.mjs";
@@ -28,9 +41,40 @@ import { html_element } from "./html_element.mjs";
 import { string_split } from "./string_split.mjs";
 import { list_get } from "./list_get.mjs";
 import { html_clear } from "./html_clear.mjs";
-export function app_memorize_refresh_memorize(context) {
+export async function app_memorize_refresh_memorize(context) {
   let { root } = context;
   html_clear(root);
+  let save = app_memorize_save_get(context);
+  let book_code = object_property_initialize_get(save, "book_code", "JHN");
+  let chapter = object_property_initialize_get(save, "chapter", "19");
+  app_memorize_save(context);
+  let chapter_code = string_combine(book_code, chapter);
+  let verses = await bible_engbsb_storage_http_get(chapter_code);
+  object_merge(context, {
+    verses,
+  });
+  let verses_length = list_size(context.verses);
+  let groups = app_memorize_group(verses_length);
+  object_merge(context, {
+    groups,
+  });
+  context.button_height = 7;
+  let group = object_property_get_or(
+    save,
+    "group_current",
+    list_first(context.groups),
+  );
+  html_hash({
+    verses: (value) => {
+      group = app_memorize_groups_get(context, value);
+    },
+    pattern: (value) => {
+      let save = app_memorize_save_get(context);
+      save.pattern_index = list_index(context.patterns, value);
+      app_memorize_save(context);
+    },
+  });
+  app_memorize_group_current_set(context, group);
   context.verse_index = 0;
   context.token_index = 0;
   context.previous_spacer2 = undefined;
