@@ -1,4 +1,4 @@
-import { object_property_delete_multiple } from "./object_property_delete_multiple.mjs";
+import { app_memorize_chapter_set } from "./app_memorize_chapter_set.mjs";
 import { app_memorize_save_get } from "./app_memorize_save_get.mjs";
 import { app_record_book_generic } from "./app_record_book_generic.mjs";
 import { app_memorize_settings_button_back } from "./app_memorize_settings_button_back.mjs";
@@ -40,11 +40,7 @@ export function app_memorize_refresh_settings(context) {
             book_code,
           });
           let chapter = "1";
-          object_merge(save, {
-            chapter,
-          });
-          let properties = ["group_current", "pattern_index"];
-          object_property_delete_multiple(save, properties);
+          app_memorize_chapter_set(save, chapter);
           app_memorize_save(context);
         },
       );
