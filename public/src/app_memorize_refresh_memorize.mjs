@@ -34,7 +34,6 @@ export async function app_memorize_refresh_memorize(context) {
   html_clear_scroll_top(root);
   alert("a");
   await app_memorize_refresh_memorize_load(context);
-  alert("b");
   context.verse_index = 0;
   context.token_index = 0;
   context.previous_spacer2 = undefined;
