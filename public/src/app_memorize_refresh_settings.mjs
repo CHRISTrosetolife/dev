@@ -51,7 +51,7 @@ export function app_memorize_refresh_settings(context) {
   let chapter = app_memorize_chapter_get(context);
   html_button_width_full_text_click(
     root,
-    string_combine_multiple(["chapter"]),
+    string_combine_multiple(["chapter ", chapter]),
     () => {
       app_memorize_refresh_settings_chapter(context);
     },
