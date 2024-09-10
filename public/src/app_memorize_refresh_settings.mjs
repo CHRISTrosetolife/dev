@@ -39,8 +39,9 @@ export function app_memorize_refresh_settings(context) {
           object_merge(save, {
             book_code,
           });
+          let chapter = "1";
           object_merge(save, {
-            chapter: "1",
+            chapter: chapter,
           });
           object_property_delete();
           app_memorize_save(context);
