@@ -1,3 +1,4 @@
+import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { app_memorize_save } from "./app_memorize_save.mjs";
 import { app_memorize_refresh_memorize } from "./app_memorize_refresh_memorize.mjs";
 import { each_index } from "./each_index.mjs";
@@ -13,7 +14,7 @@ import { html_button_width_full_text_click } from "./html_button_width_full_text
 import { html_clear } from "./html_clear.mjs";
 export function app_memorize_refresh_settings(context) {
   let { root } = context;
-  html_clear(root);
+  html_clear_scroll_top(root);
   html_button_width_full_text_click(root, "back", () => {
     app_memorize_refresh_memorize(context);
   });
