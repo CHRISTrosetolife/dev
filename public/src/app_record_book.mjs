@@ -5,6 +5,7 @@ import { html_button_text_click } from "./html_button_text_click.mjs";
 import { each } from "./each.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 export function app_record_book(context, book_code) {
+  let app_record_book_on_click = app_record_chapter;
   let { root } = context;
   html_clear_scroll_top(root);
   app_record_home_button(context);
