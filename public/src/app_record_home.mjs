@@ -10,7 +10,7 @@ export function app_record_home(context) {
   each(books, (book) => {
     let { book_code } = book;
     html_button_text_click(root, book_code, function () {
-      app_record_book(context, book_code);
+      app_record_home_on_click(context, book_code);
     });
   });
 }
