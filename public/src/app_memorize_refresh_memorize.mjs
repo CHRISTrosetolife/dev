@@ -1,3 +1,4 @@
+import { number_pad } from "./number_pad.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
@@ -52,6 +53,7 @@ export async function app_memorize_refresh_memorize(context) {
   app_memorize_save(context);
   let load = true;
   if (book_code === "PSA") {
+    chapter = number_pad();
   }
   let chapter_code = string_combine(book_code, chapter);
   if (object_property_exists(context, chapter_code)) {
