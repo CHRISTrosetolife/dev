@@ -46,6 +46,7 @@ export function app_memorize_refresh_settings(context) {
     root,
     string_combine_multiple(["chapter"]),
     () => {
+      let book_code = context.save;
       app_record_book_generic(
         context,
         () => {
