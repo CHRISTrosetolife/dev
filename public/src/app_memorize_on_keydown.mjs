@@ -21,7 +21,7 @@ import { string_letter_first } from "./string_letter_first.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { list_get } from "./list_get.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
-export function app_memorize_on_keydown(context, key) {
+export async function app_memorize_on_keydown(context, key) {
   let j = list_get(context.save.group_current, context.verse_index);
   let current_verse = list_get(context.verses, j);
   let { tokens } = current_verse;
@@ -83,7 +83,7 @@ export function app_memorize_on_keydown(context, key) {
           app_memorize_group_current_set(context, group_next);
         }
       }
-      app_memorize_refresh_memorize(context);
+      await app_memorize_refresh_memorize(context);
     } else {
       app_memorize_update_colors(context);
       html_inner_set(context.recent.element, current_token);
