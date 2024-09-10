@@ -25,7 +25,7 @@ export function app_memorize_refresh_settings(context) {
       app_memorize_group_to_range_string(context, context.save.group_current),
     ]),
     () => {
-      html_clear(root);
+      html_clear_scroll_top(root);
       html_button_width_full_text_click(root, "back", () => {
         app_memorize_refresh_settings(context);
       });
