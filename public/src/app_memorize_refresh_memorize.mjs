@@ -32,7 +32,6 @@ import { list_get } from "./list_get.mjs";
 export async function app_memorize_refresh_memorize(context) {
   let { root } = context;
   html_clear_scroll_top(root);
-  alert("a");
   await app_memorize_refresh_memorize_load(context);
   context.verse_index = 0;
   context.token_index = 0;
