@@ -50,12 +50,12 @@ export async function app_memorize_refresh_memorize(context) {
   let book_code = object_property_initialize_get(save, "book_code", "JHN");
   let chapter = object_property_initialize_get(save, "chapter", "19");
   app_memorize_save(context);
+  let load = true;
   let chapter_code = string_combine(book_code, chapter);
   if (object_property_exists(context, chapter_code)) {
     let existing = object_property_get(context, chapter_code);
     if (chapter_code === existing) {
     }
-  } else {
   }
   let verses = await bible_engbsb_storage_http_get(chapter_code);
   object_merge(context, {
