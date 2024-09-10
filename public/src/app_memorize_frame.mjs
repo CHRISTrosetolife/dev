@@ -19,7 +19,7 @@ import { object_merge } from "./object_merge.mjs";
 import { html_document_body } from "./html_document_body.mjs";
 export async function app_memorize_frame(context) {
   let save = app_memorize_save_get(context);
-  object_property_initialize_get();
+  object_property_initialize_get(save, "book_code", "JHN");
   let chapter_code = "JHN19";
   let verses = await bible_engbsb_storage_http_get(chapter_code);
   object_merge(context, {
