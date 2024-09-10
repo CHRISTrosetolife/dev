@@ -1,3 +1,4 @@
+import { app_memorize_save_get } from "./app_memorize_save_get.mjs";
 import { object_property_delete } from "./object_property_delete.mjs";
 import { app_record_book_generic } from "./app_record_book_generic.mjs";
 import { app_memorize_settings_button_back } from "./app_memorize_settings_button_back.mjs";
@@ -20,6 +21,7 @@ import { html_button_width_full_text_click } from "./html_button_width_full_text
 export function app_memorize_refresh_settings(context) {
   let { root } = context;
   html_clear_scroll_top(root);
+  let save = app_memorize_save_get(context);
   html_button_width_full_text_click(root, "back", () => {
     app_memorize_refresh_memorize(context);
   });
