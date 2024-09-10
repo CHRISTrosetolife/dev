@@ -25,7 +25,7 @@ export function app_memorize_refresh_settings(context) {
     () => {
       app_memorize_settings_button_back(context);
       html_p_text(root, "which verse range do you want to focus on ?");
-      app_record_home_generic(context, app_record_home_on_click);
+      app_record_home_generic(context, (context, book_code) => {});
     },
   );
   html_button_width_full_text_click(
