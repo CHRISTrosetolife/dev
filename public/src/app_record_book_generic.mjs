@@ -16,6 +16,7 @@ export function app_record_book_generic(
   app_record_home_button(context);
   let { books } = context;
   let book = list_find_property_or(books, "book_code", book_code);
+  log("here32");
   each(book.chapters, (chapter) => {
     html_button_text_click(root, chapter, async () => {
       log("here2");
