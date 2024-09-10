@@ -10,7 +10,7 @@ export async function folder_files_copy_generic(
 ) {
   let lambda = async (from, to) => {
     let to_mapped = await map(to);
-    if (10) {
+    if (0) {
       log(to_mapped);
     } else {
       await file_copy_generic(from, to_mapped, false);
