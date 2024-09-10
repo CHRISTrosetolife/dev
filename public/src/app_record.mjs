@@ -1,10 +1,10 @@
+import { app_context_books_bible } from "./app_context_books_bible.mjs";
 import { app_record_home } from "./app_record_home.mjs";
 import { app_record_book } from "./app_record_book.mjs";
 import { app_record_chapter } from "./app_record_chapter.mjs";
 import { app_record_verse } from "./app_record_verse.mjs";
 import { object_property_get_or } from "./object_property_get_or.mjs";
 import { html_hash_lookup } from "./html_hash_lookup.mjs";
-import { bible_engbsb_storage_http_get } from "./bible_engbsb_storage_http_get.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { html_recorder_media } from "./html_recorder_media.mjs";
 import { firebase_auth } from "./firebase_auth.mjs";
@@ -25,10 +25,7 @@ export async function app_record() {
       object_merge(context, {
         root,
       });
-      let { books } = await bible_engbsb_storage_http_get("books");
-      object_merge(context, {
-        books,
-      });
+      await app_context_books_bible(context);
       let lookup = html_hash_lookup();
       let hash_book = object_property_get_or(lookup, "book", null);
       if (hash_book !== null) {
