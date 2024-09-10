@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { app_memorize_group_current_set } from "./app_memorize_group_current_set.mjs";
 import { list_index } from "./list_index.mjs";
 import { app_memorize_groups_get } from "./app_memorize_groups_get.mjs";
@@ -30,6 +31,7 @@ export async function app_memorize_refresh_memorize_load(context) {
   object_merge(context, {
     chapter_code,
   });
+  log({});
   if (load) {
     let verses = await bible_engbsb_storage_http_get(chapter_code);
     object_merge(context, {
