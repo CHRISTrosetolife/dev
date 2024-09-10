@@ -1,3 +1,4 @@
+import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { app_memorize_group_current_set } from "./app_memorize_group_current_set.mjs";
 import { list_index } from "./list_index.mjs";
 import { app_memorize_groups_get } from "./app_memorize_groups_get.mjs";
@@ -40,10 +41,9 @@ import { html_button_width_full_text_click } from "./html_button_width_full_text
 import { html_element } from "./html_element.mjs";
 import { string_split } from "./string_split.mjs";
 import { list_get } from "./list_get.mjs";
-import { html_clear } from "./html_clear.mjs";
 export async function app_memorize_refresh_memorize(context) {
   let { root } = context;
-  html_clear(root);
+  html_clear_scroll_top(root);
   let save = app_memorize_save_get(context);
   let book_code = object_property_initialize_get(save, "book_code", "JHN");
   let chapter = object_property_initialize_get(save, "chapter", "19");
