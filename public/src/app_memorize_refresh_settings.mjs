@@ -61,7 +61,7 @@ export function app_memorize_refresh_settings(context) {
           );
         },
         book_code,
-        () => {
+        (context, book_code, chapter) => {
           app_memorize_refresh_memorize(context);
         },
       );
