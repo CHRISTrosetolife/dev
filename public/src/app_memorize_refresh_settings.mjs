@@ -1,3 +1,4 @@
+import { app_memorize_chapter_get } from "./app_memorize_chapter_get.mjs";
 import { app_memorize_book_code_get } from "./app_memorize_book_code_get.mjs";
 import { app_memorize_refresh_settings_chapter } from "./app_memorize_refresh_settings_chapter.mjs";
 import { app_memorize_chapter_set } from "./app_memorize_chapter_set.mjs";
@@ -47,6 +48,7 @@ export function app_memorize_refresh_settings(context) {
       );
     },
   );
+  let chapter = app_memorize_chapter_get(context);
   html_button_width_full_text_click(
     root,
     string_combine_multiple(["chapter"]),
