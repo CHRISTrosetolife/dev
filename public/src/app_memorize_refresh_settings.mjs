@@ -65,6 +65,7 @@ export function app_memorize_refresh_settings(context) {
           object_merge(context.save, {
             chapter,
           });
+          app_memorize_save(context);
           app_memorize_refresh_memorize(context);
         },
       );
