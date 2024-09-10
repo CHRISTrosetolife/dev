@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { app_memorize_save_get } from "./app_memorize_save_get.mjs";
 import { object_property_delete } from "./object_property_delete.mjs";
 import { app_record_book_generic } from "./app_record_book_generic.mjs";
@@ -43,6 +44,7 @@ export function app_memorize_refresh_settings(context) {
           object_merge(save, {
             chapter,
           });
+          each(list, (item) => {});
           object_property_delete(save, "group_current");
           app_memorize_save(context);
         },
