@@ -19,6 +19,7 @@ export async function app_memorize() {
   context.settings = true;
   let root = html_style_default_initialize();
   await html_script_axios(root);
+  alert(";he");
   html_style(root, {
     margin: "0",
   });
