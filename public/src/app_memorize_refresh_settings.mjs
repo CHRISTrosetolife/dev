@@ -35,7 +35,7 @@ export function app_memorize_refresh_settings(context) {
         },
         () => {
           app_memorize_settings_button_back(context);
-          html_p_text(root, "which verse range do you want to focus on ?");
+          html_p_text(root, "which book do you want to memorize from ?");
         },
       );
     },
