@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { retry_if } from "./retry_if.mjs";
 import { retry } from "./retry.mjs";
 import { sleep } from "./sleep.mjs";
@@ -7,9 +6,6 @@ import { import_node } from "./import_node.mjs";
 export async function http(url) {
   let f = await import_node("node-fetch");
   let { default: fetch } = f;
-  log({
-    fetch,
-  });
   let response = await retry(
     3,
     lambda,
