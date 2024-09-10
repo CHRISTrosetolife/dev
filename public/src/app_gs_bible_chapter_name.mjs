@@ -7,5 +7,5 @@ export function app_gs_bible_chapter_name(book_id, chapter) {
   } else {
     chapter = number_pad_2(chapter);
   }
-  return string_combine_multiple([book_id, number_pad_2(chapter)]);
+  return string_combine_multiple([book_id, chapter]);
 }
