@@ -22,11 +22,13 @@ export function app_memorize_refresh_settings(context) {
     root,
     string_combine_multiple(["book"]),
     () => {
-      let { root } = context;
-      html_clear_scroll_top(root);
-      html_button_width_full_text_click_back(root, () => {
-        app_memorize_refresh_settings(context);
-      });
+      {
+        let { root } = context;
+        html_clear_scroll_top(root);
+        html_button_width_full_text_click_back(root, () => {
+          app_memorize_refresh_settings(context);
+        });
+      }
       html_p_text(root, "which verse range do you want to focus on ?");
       for (let g of context.groups) {
         let b = html_button(root);
