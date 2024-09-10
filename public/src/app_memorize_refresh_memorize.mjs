@@ -1,3 +1,4 @@
+import { object_property_initialize } from "./object_property_initialize.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { app_memorize_group_current_set } from "./app_memorize_group_current_set.mjs";
@@ -11,7 +12,6 @@ import { object_merge } from "./object_merge.mjs";
 import { bible_engbsb_storage_http_get } from "./bible_engbsb_storage_http_get.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { app_memorize_save } from "./app_memorize_save.mjs";
-import { object_property_initialize_get } from "./object_property_initialize_get.mjs";
 import { app_memorize_save_get } from "./app_memorize_save_get.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { html_style_height } from "./html_style_height.mjs";
@@ -47,8 +47,8 @@ export async function app_memorize_refresh_memorize(context) {
   let { root } = context;
   html_clear_scroll_top(root);
   let save = app_memorize_save_get(context);
-  let book_code = object_property_initialize_get(save, "book_code", "JHN");
-  let chapter = object_property_initialize_get(save, "chapter", "19");
+  let book_code = object_property_initialize(save, "book_code", "JHN");
+  let chapter = object_property_initialize(save, "chapter", "19");
   app_memorize_save(context);
   let load = true;
   let chapter_code = string_combine(book_code, chapter);
