@@ -29,7 +29,7 @@ export function app_memorize_refresh_settings(context) {
   let book_code = app_memorize_book_code_get(context);
   html_button_width_full_text_click(
     root,
-    string_combine_multiple(["book"]),
+    string_combine_multiple(["book ", book_code]),
     () => {
       app_record_home_generic(
         context,
