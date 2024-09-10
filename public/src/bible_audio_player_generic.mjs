@@ -10,7 +10,7 @@ export async function bible_audio_player_generic(
 ) {
   let joined = path_join([path_language, download_folder]);
   let output = "E:\\";
-  if (10) {
+  if (0) {
     output = "..\\bible\\english\\test";
   }
   let extension = ".mp3";
