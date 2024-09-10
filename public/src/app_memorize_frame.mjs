@@ -22,6 +22,7 @@ export async function app_memorize_frame(context) {
   let save = app_memorize_save_get(context);
   let book_code = object_property_initialize_get(save, "book_code", "JHN");
   let chapter = object_property_initialize_get(save, "chapter", "19");
+  app_memorize_save(context);
   let chapter_code = string_combine(book_code, chapter);
   let verses = await bible_engbsb_storage_http_get(chapter_code);
   object_merge(context, {
