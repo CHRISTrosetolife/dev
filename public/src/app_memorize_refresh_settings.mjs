@@ -40,7 +40,6 @@ export function app_memorize_refresh_settings(context) {
             book_code,
           });
           app_memorize_chapter_set(context, "1");
-          app_memorize_save(context);
         },
       );
     },
