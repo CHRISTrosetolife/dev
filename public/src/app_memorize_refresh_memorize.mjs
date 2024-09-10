@@ -1,3 +1,4 @@
+import { app_gs_bible_chapter_name } from "./app_gs_bible_chapter_name.mjs";
 import { number_pad } from "./number_pad.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -11,7 +12,6 @@ import { object_property_get_or } from "./object_property_get_or.mjs";
 import { app_memorize_group } from "./app_memorize_group.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { bible_engbsb_storage_http_get } from "./bible_engbsb_storage_http_get.mjs";
-import { string_combine } from "./string_combine.mjs";
 import { app_memorize_save } from "./app_memorize_save.mjs";
 import { app_memorize_save_get } from "./app_memorize_save_get.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
@@ -55,7 +55,7 @@ export async function app_memorize_refresh_memorize(context) {
   if (book_code === "PSA") {
     chapter = number_pad();
   }
-  let chapter_code = string_combine(book_code, chapter);
+  let chapter_code = app_gs_bible_chapter_name(book_code, chapter);
   if (object_property_exists(context, chapter_code)) {
     let existing = object_property_get(context, chapter_code);
     if (chapter_code === existing) {
