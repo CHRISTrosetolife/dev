@@ -3,8 +3,8 @@ import { each } from "./each.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 export function app_record_home_generic(
   context,
-  app_record_home_on_click,
   lambda_before,
+  app_record_home_on_click,
 ) {
   let { root } = context;
   let { books } = context;
