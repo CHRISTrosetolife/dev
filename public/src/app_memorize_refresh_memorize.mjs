@@ -51,6 +51,8 @@ export async function app_memorize_refresh_memorize(context) {
   let chapter = object_property_initialize(save, "chapter", "19");
   app_memorize_save(context);
   let load = true;
+  if (book_code === "PSA") {
+  }
   let chapter_code = string_combine(book_code, chapter);
   if (object_property_exists(context, chapter_code)) {
     let existing = object_property_get(context, chapter_code);
