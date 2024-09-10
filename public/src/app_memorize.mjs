@@ -15,11 +15,10 @@ export async function app_memorize() {
     style: {},
     save,
   };
-  await app_context_books_bible(context);
   context.settings = true;
   let root = html_style_default_initialize();
   await html_script_axios(root);
-  alert(";he");
+  await app_context_books_bible(context);
   html_style(root, {
     margin: "0",
   });
