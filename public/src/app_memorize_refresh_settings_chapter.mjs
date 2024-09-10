@@ -9,6 +9,7 @@ export function app_memorize_refresh_settings_chapter(context) {
   let { root } = context;
   let save = app_memorize_save_get(context);
   let { book_code } = save;
+  let b = book_code;
   app_record_book_generic(
     context,
     () => {
@@ -17,12 +18,12 @@ export function app_memorize_refresh_settings_chapter(context) {
         root,
         string_combine_multiple([
           "which chapter in ",
-          book_code,
+          b,
           " do you want to memorize from ?",
         ]),
       );
     },
-    book_code,
+    b,
     async (context, book_code, chapter) => {
       app_memorize_chapter_set(context, chapter);
       await app_memorize_refresh_memorize(context);
