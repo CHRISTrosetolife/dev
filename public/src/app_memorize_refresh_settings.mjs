@@ -51,7 +51,12 @@ export function app_memorize_refresh_settings(context) {
         context,
         () => {
           app_memorize_settings_button_back(context);
-          html_p_text(root, "which chapter do you want to memorize from ?");
+          html_p_text(
+            root,
+            "which chapter in ",
+            book_code,
+            " do you want to memorize from ?",
+          );
         },
         book_code,
         app_record_book_on_click,
