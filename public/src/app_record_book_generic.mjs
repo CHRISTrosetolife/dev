@@ -24,4 +24,5 @@ export function app_record_book_generic(
       await app_record_book_on_click(context, book_code, chapter);
     });
   });
+  debugger;
 }
