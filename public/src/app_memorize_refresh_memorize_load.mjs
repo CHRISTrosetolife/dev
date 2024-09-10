@@ -31,7 +31,9 @@ export async function app_memorize_refresh_memorize_load(context) {
   object_merge(context, {
     chapter_code,
   });
-  log({});
+  log({
+    load,
+  });
   if (load) {
     let verses = await bible_engbsb_storage_http_get(chapter_code);
     object_merge(context, {
