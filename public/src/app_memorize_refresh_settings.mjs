@@ -70,19 +70,6 @@ export function app_memorize_refresh_settings(context) {
           await app_memorize_refresh_memorize(context);
         },
       );
-      app_record_home_generic(
-        context,
-        () => {
-          app_memorize_settings_button_back(context);
-          html_p_text(root, "which book do you want to memorize from ?");
-        },
-        (context, book_code) => {
-          object_merge(save, {
-            book_code,
-          });
-          app_memorize_save(context);
-        },
-      );
     },
   );
   html_button_width_full_text_click(
