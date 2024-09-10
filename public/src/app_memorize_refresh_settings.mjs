@@ -44,7 +44,7 @@ export function app_memorize_refresh_settings(context) {
           object_merge(save, {
             chapter,
           });
-          each(list, (item) => {});
+          each(["group_current", ""], (item) => {});
           object_property_delete(save, "group_current");
           app_memorize_save(context);
         },
