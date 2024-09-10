@@ -46,7 +46,7 @@ export function app_memorize_refresh_settings(context) {
           });
           let properties = ["group_current", "pattern_index"];
           each(properties, (property) => {
-            object_property_delete(save, "group_current");
+            object_property_delete(save, property);
           });
           app_memorize_save(context);
         },
