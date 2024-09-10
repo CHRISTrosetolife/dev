@@ -1,6 +1,6 @@
+import { app_memorize_settings_button_back_clear } from "./app_memorize_settings_button_back_clear.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { app_record_home_generic } from "./app_record_home_generic.mjs";
-import { app_memorize_settings_button_back } from "./app_memorize_settings_button_back.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { app_memorize_save } from "./app_memorize_save.mjs";
 import { app_memorize_refresh_memorize } from "./app_memorize_refresh_memorize.mjs";
@@ -24,7 +24,7 @@ export function app_memorize_refresh_settings(context) {
     root,
     string_combine_multiple(["book"]),
     () => {
-      app_memorize_settings_button_back(context);
+      app_memorize_settings_button_back_clear(context);
       html_p_text(root, "which verse range do you want to focus on ?");
       app_record_home_generic(context, (context, book_code) => {
         object_merge(context.save, {
@@ -41,7 +41,7 @@ export function app_memorize_refresh_settings(context) {
       app_memorize_group_to_range_string(context, context.save.group_current),
     ]),
     () => {
-      app_memorize_settings_button_back(context);
+      app_memorize_settings_button_back_clear(context);
       html_p_text(root, "which verse range do you want to focus on ?");
       for (let g of context.groups) {
         let b = html_button(root);
@@ -60,7 +60,7 @@ export function app_memorize_refresh_settings(context) {
       list_get(context.patterns, context.save.pattern_index),
     ]),
     () => {
-      app_memorize_settings_button_back(context);
+      app_memorize_settings_button_back_clear(context);
       html_p_text(
         root,
         "which pattern of shown and hidden words do you want ?",
