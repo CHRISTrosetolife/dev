@@ -44,7 +44,7 @@ export function app_memorize_refresh_settings(context) {
             chapter,
           });
           let properties = ["group_current", "pattern_index"];
-          object_property_delete_multiple(properties, save);
+          object_property_delete_multiple(save, properties);
           app_memorize_save(context);
         },
       );
