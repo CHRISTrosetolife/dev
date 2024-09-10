@@ -1,3 +1,4 @@
+import { app_record_book_generic } from "./app_record_book_generic.mjs";
 import { app_memorize_settings_button_back } from "./app_memorize_settings_button_back.mjs";
 import { app_memorize_settings_button_back_clear } from "./app_memorize_settings_button_back_clear.mjs";
 import { object_merge } from "./object_merge.mjs";
@@ -45,6 +46,12 @@ export function app_memorize_refresh_settings(context) {
     root,
     string_combine_multiple(["chapter"]),
     () => {
+      app_record_book_generic(
+        context,
+        lambda_top,
+        book_code,
+        app_record_book_on_click,
+      );
       app_record_home_generic(
         context,
         () => {
