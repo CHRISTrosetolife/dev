@@ -13,7 +13,7 @@ export function app_record_book(context, book_code) {
   let book = list_find_property_or(books, "book_code", book_code);
   each(book.chapters, (chapter) => {
     html_button_text_click(root, chapter, async () => {
-      await app_record_chapter(context, book_code, chapter);
+      await app_record_book_on_click(context, book_code, chapter);
     });
   });
 }
