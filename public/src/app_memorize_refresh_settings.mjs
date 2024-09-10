@@ -1,6 +1,5 @@
-import { each } from "./each.mjs";
+import { object_property_delete_multiple } from "./object_property_delete_multiple.mjs";
 import { app_memorize_save_get } from "./app_memorize_save_get.mjs";
-import { object_property_delete } from "./object_property_delete.mjs";
 import { app_record_book_generic } from "./app_record_book_generic.mjs";
 import { app_memorize_settings_button_back } from "./app_memorize_settings_button_back.mjs";
 import { app_memorize_settings_button_back_clear } from "./app_memorize_settings_button_back_clear.mjs";
@@ -45,9 +44,7 @@ export function app_memorize_refresh_settings(context) {
             chapter,
           });
           let properties = ["group_current", "pattern_index"];
-          each(properties, (property) => {
-            object_property_delete(save, property);
-          });
+          object_property_delete_multiple(properties, save);
           app_memorize_save(context);
         },
       );
