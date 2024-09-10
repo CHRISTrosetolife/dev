@@ -11,7 +11,6 @@ import { html_p_text } from "./html_p_text.mjs";
 import { app_memorize_group_to_range_string } from "./app_memorize_group_to_range_string.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
-import { html_clear } from "./html_clear.mjs";
 export function app_memorize_refresh_settings(context) {
   let { root } = context;
   html_clear_scroll_top(root);
@@ -47,7 +46,7 @@ export function app_memorize_refresh_settings(context) {
       list_get(context.patterns, context.save.pattern_index),
     ]),
     () => {
-      html_clear(root);
+      html_clear_scroll_top(root);
       html_button_width_full_text_click(root, "back", () => {
         app_memorize_refresh_settings(context);
       });
