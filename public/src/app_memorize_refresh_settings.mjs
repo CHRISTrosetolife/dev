@@ -65,7 +65,7 @@ export function app_memorize_refresh_settings(context) {
         },
         book_code,
         async (context, book_code, chapter) => {
-          log({});
+          log("here");
           app_memorize_chapter_set(context, chapter);
           await app_memorize_refresh_memorize(context);
         },
