@@ -22,8 +22,8 @@ export function app_memorize_refresh_settings(context) {
   let { root } = context;
   html_clear_scroll_top(root);
   let save = app_memorize_save_get(context);
-  html_button_width_full_text_click(root, "back", () => {
-    app_memorize_refresh_memorize(context);
+  html_button_width_full_text_click(root, "back", async () => {
+    await app_memorize_refresh_memorize(context);
   });
   html_button_width_full_text_click(
     root,
@@ -63,9 +63,9 @@ export function app_memorize_refresh_settings(context) {
           );
         },
         book_code,
-        (context, book_code, chapter) => {
+        async (context, book_code, chapter) => {
           app_memorize_chapter_set(context, chapter);
-          app_memorize_refresh_memorize(context);
+          await app_memorize_refresh_memorize(context);
         },
       );
       app_record_home_generic(
