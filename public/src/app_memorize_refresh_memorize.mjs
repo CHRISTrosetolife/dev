@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { app_memorize_group_current_set } from "./app_memorize_group_current_set.mjs";
 import { list_index } from "./list_index.mjs";
@@ -51,6 +52,7 @@ export async function app_memorize_refresh_memorize(context) {
   app_memorize_save(context);
   let chapter_code = string_combine(book_code, chapter);
   if (object_property_exists(context, chapter_code)) {
+    chapter_code = object_property_get(object, property_name);
   } else {
   }
   let verses = await bible_engbsb_storage_http_get(chapter_code);
