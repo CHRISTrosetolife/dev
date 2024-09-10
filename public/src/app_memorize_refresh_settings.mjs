@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { app_memorize_chapter_set } from "./app_memorize_chapter_set.mjs";
 import { app_memorize_save_get } from "./app_memorize_save_get.mjs";
 import { app_record_book_generic } from "./app_record_book_generic.mjs";
@@ -64,6 +65,7 @@ export function app_memorize_refresh_settings(context) {
         },
         book_code,
         async (context, book_code, chapter) => {
+          log({});
           app_memorize_chapter_set(context, chapter);
           await app_memorize_refresh_memorize(context);
         },
