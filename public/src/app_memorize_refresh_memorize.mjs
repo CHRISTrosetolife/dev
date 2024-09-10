@@ -52,7 +52,7 @@ export async function app_memorize_refresh_memorize(context) {
   app_memorize_save(context);
   let chapter_code = string_combine(book_code, chapter);
   if (object_property_exists(context, chapter_code)) {
-    chapter_code = object_property_get(context, chapter_code);
+    let existing = object_property_get(context, chapter_code);
   } else {
   }
   let verses = await bible_engbsb_storage_http_get(chapter_code);
