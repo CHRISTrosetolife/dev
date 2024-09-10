@@ -5,7 +5,8 @@ import { sleep } from "./sleep.mjs";
 import { integer_random } from "./integer_random.mjs";
 import { import_node } from "./import_node.mjs";
 export async function http(url) {
-  let fetch = await import_node("node-fetch");
+  let f = await import_node("node-fetch");
+  let { default: fetch } = f;
   log({
     fetch,
   });
