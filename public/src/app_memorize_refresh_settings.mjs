@@ -48,7 +48,10 @@ export function app_memorize_refresh_settings(context) {
     () => {
       app_record_book_generic(
         context,
-        lambda_top,
+        () => {
+          app_memorize_settings_button_back(context);
+          html_p_text(root, "which book do you want to memorize from ?");
+        },
         book_code,
         app_record_book_on_click,
       );
