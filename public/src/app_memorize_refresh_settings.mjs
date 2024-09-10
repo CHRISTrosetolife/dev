@@ -1,5 +1,4 @@
 import { app_memorize_settings_button_back } from "./app_memorize_settings_button_back.mjs";
-import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { app_memorize_save } from "./app_memorize_save.mjs";
 import { app_memorize_refresh_memorize } from "./app_memorize_refresh_memorize.mjs";
@@ -61,10 +60,7 @@ export function app_memorize_refresh_settings(context) {
       list_get(context.patterns, context.save.pattern_index),
     ]),
     () => {
-      html_clear_scroll_top(root);
-      html_button_width_full_text_click_back(root, () => {
-        app_memorize_refresh_settings(context);
-      });
+      app_memorize_settings_button_back(context);
       html_p_text(
         root,
         "which pattern of shown and hidden words do you want ?",
