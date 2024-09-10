@@ -37,7 +37,7 @@ export function app_memorize_refresh_settings(context) {
           html_p_text(root, "which book do you want to memorize from ?");
         },
         (context, book_code) => {
-          log({});
+          log("here");
           object_merge(save, {
             book_code,
           });
