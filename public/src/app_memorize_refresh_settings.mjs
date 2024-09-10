@@ -61,7 +61,9 @@ export function app_memorize_refresh_settings(context) {
           );
         },
         book_code,
-        () => app_memorize_refresh_memorize(context),
+        () => {
+          app_memorize_refresh_memorize(context);
+        },
       );
       app_record_home_generic(
         context,
