@@ -39,8 +39,7 @@ export function app_memorize_refresh_settings(context) {
           object_merge(save, {
             book_code,
           });
-          let chapter = "1";
-          app_memorize_chapter_set(save, chapter);
+          app_memorize_chapter_set(save, "1");
           app_memorize_save(context);
         },
       );
