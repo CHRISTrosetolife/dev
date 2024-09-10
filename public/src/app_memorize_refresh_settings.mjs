@@ -1,4 +1,4 @@
-import { app_record_home } from "./app_record_home.mjs";
+import { app_record_home_generic } from "./app_record_home_generic.mjs";
 import { app_memorize_settings_button_back } from "./app_memorize_settings_button_back.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { app_memorize_save } from "./app_memorize_save.mjs";
@@ -25,7 +25,7 @@ export function app_memorize_refresh_settings(context) {
     () => {
       app_memorize_settings_button_back(context);
       html_p_text(root, "which verse range do you want to focus on ?");
-      app_record_home(context);
+      app_record_home_generic(context, app_record_home_on_click);
     },
   );
   html_button_width_full_text_click(
