@@ -58,6 +58,8 @@ export async function app_memorize_refresh_memorize(context) {
       load = false;
     }
   }
+  if (load) {
+  }
   let verses = await bible_engbsb_storage_http_get(chapter_code);
   object_merge(context, {
     verses,
