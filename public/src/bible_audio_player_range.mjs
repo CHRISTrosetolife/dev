@@ -35,7 +35,6 @@ export async function bible_audio_player_range(book_from, book_to) {
     }
     return "A" + number_pad_2(n);
   });
-  return numbers_fcbh;
   let numbers_nt_s = list_map_number_pad_2(numbers_nt);
   let download_folders_fcbh_underscore = ["ENGESVO2DA", "ENGESVN2DA"];
   let promises = [];
