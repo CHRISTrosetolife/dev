@@ -24,8 +24,6 @@ export function app_memorize_refresh_settings(context) {
     root,
     string_combine_multiple(["book"]),
     () => {
-      app_memorize_settings_button_back_clear(context);
-      html_p_text(root, "which verse range do you want to focus on ?");
       app_record_home_generic(
         context,
         (context, book_code) => {
@@ -34,7 +32,10 @@ export function app_memorize_refresh_settings(context) {
           });
           app_memorize_save(context);
         },
-        () => {},
+        () => {
+          app_memorize_settings_button_back_clear(context);
+          html_p_text(root, "which verse range do you want to focus on ?");
+        },
       );
     },
   );
