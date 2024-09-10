@@ -44,8 +44,9 @@ export function app_memorize_refresh_settings(context) {
           object_merge(save, {
             chapter,
           });
-          each(["group_current", ""], (item) => {});
-          object_property_delete(save, "group_current");
+          each(["group_current", "pattern_index"], (property) => {
+            object_property_delete(save, "group_current");
+          });
           app_memorize_save(context);
         },
       );
