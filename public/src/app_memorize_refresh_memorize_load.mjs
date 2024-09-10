@@ -22,7 +22,7 @@ export async function app_memorize_refresh_memorize_load(context) {
   app_memorize_save(context);
   let load = true;
   let chapter_code = app_gs_bible_chapter_name(book_code, chapter);
-  if (object_property_exists(context, chapter_code)) {
+  if (object_property_exists(context, "chapter_code")) {
     let existing = object_property_get(context, "chapter_code");
     if (chapter_code === existing) {
       load = false;
