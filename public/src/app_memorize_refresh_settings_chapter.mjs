@@ -5,7 +5,7 @@ import { html_p_text } from "./html_p_text.mjs";
 import { app_memorize_settings_button_back } from "./app_memorize_settings_button_back.mjs";
 import { app_record_book_generic } from "./app_record_book_generic.mjs";
 export function app_memorize_refresh_settings_chapter(context) {
-  let root = context;
+  let { root } = context;
   let { book_code } = context.save;
   app_record_book_generic(
     context,
