@@ -5,7 +5,6 @@ import { html_parse_outer } from "./html_parse_outer.mjs";
 import { html_parse_visit_class_single } from "./html_parse_visit_class_single.mjs";
 import { string_date_is } from "./string_date_is.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
-import { log } from "./log.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
@@ -53,11 +52,5 @@ export async function bible_copyright(bible_folder) {
     list_any(texts, (t) => string_includes(html_parse_text(c), t)),
   );
   list_remove_multiple(first_children, filtered3);
-  log({
-    text: html_parse_text(first),
-    first: html_parse_children(first),
-    filtered3,
-    m: list_map(first_children, html_parse_text),
-  });
   return list_map(filtered2, (f) => html_parse_outer(parsed, f));
 }
