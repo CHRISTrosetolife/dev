@@ -47,6 +47,7 @@ export async function app_memorize_refresh_settings(context) {
     root,
     string_combine_multiple([
       "translation ",
+      object_property_get(object, property_name),
       object_property_get(copyrights, version_code_current),
     ]),
     async () => {
