@@ -49,7 +49,7 @@ export async function bible_copyright(bible_folder) {
   let first_children = html_parse_children(first);
   log(html_parse_outer(parsed, first));
   let as = html_parse_visit_tag_list(first, "a");
-  list_filter(as, (a) => {
+  let languages = list_filter(as, (a) => {
     let { attribs } = a;
     let { href } = attribs;
     return string_includes(href, "ethnologue.org");
