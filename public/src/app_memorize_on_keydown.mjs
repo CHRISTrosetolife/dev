@@ -68,7 +68,7 @@ export async function app_memorize_on_keydown(context, key) {
         save.mistakes = false;
         app_memorize_save(context);
       } else {
-        context.save.pattern_index++;
+        save.pattern_index++;
         app_memorize_save(context);
         if (
           greater_than_equal(
