@@ -111,7 +111,7 @@ export async function app_memorize_refresh_memorize(context) {
               html_style_hidden(token_element);
             }
           } else {
-            html_style_font_color_gray(button);
+            html_style_font_color_gray(token_element);
           }
           la({
             spacer2,
