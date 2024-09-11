@@ -47,6 +47,7 @@ export function app_memorize_refresh_settings(context) {
             version_code,
           });
           app_memorize_save(context);
+          await app_memorize_refresh_memorize_load(context);
         });
       });
       app_record_home_generic(
@@ -58,7 +59,6 @@ export function app_memorize_refresh_settings(context) {
           });
           app_memorize_chapter_set(context, "1");
           app_memorize_refresh_settings_chapter(context);
-          await app_memorize_refresh_memorize_load(context);
         },
       );
     },
