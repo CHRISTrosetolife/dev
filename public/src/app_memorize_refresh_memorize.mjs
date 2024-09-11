@@ -85,7 +85,7 @@ export async function app_memorize_refresh_memorize(context) {
         html_scroll_center(verse_element);
       });
       let token_objects = list_adder((la) => {
-        each_index(tokens, (token, j) => {
+        each_index(tokens, (token, ti) => {
           let m = mod(token_count, pattern_length);
           let token_pattern = list_get(pattern, m);
           let spacer = html_span_text(verse_element, " ");
@@ -103,8 +103,8 @@ export async function app_memorize_refresh_memorize(context) {
             html_style(token_element, context.style.text);
           }
           if (
-            (equal(token_pattern, "0") && save.verse_index > j) ||
-            (save.verse_index === j && save.token_index < j)
+            (equal(token_pattern, "0") && save.verse_index > ti) ||
+            (save.verse_index === ti && save.token_index < ti)
           ) {
             html_style_hidden(token_element);
           }
