@@ -44,21 +44,22 @@ export async function app_memorize_on_keydown(context, key) {
       }
     }
     while (true) {
-      context.token_index++;
-      if (context.token_index > list_index_last(tokens)) {
+      save.token_index++;
+      app_memorize_save(context);
+      if (save.token_index > list_index_last(tokens)) {
         break;
       }
-      let token_next = list_get(tokens, context.token_index);
+      let token_next = list_get(tokens, save.token_index);
       let letter_next = string_letter_first(token_next);
       if (letter_next !== null) {
         break;
       }
     }
     let tokens_length = list_size(tokens);
-    if (greater_than_equal(context.token_index, tokens_length)) {
+    if (greater_than_equal(save.token_index, tokens_length)) {
       save.verse_index++;
+      save.token_index = 0;
       app_memorize_save(context);
-      context.token_index = 0;
     }
     let group_current_length = list_size(save.group_current);
     if (greater_than_equal(save.verse_index, group_current_length)) {
