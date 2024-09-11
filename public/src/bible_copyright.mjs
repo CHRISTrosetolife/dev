@@ -1,6 +1,4 @@
-import { integer_parse_try } from "./integer_parse_try.mjs";
-import { list_all } from "./list_all.mjs";
-import { string_split_comma } from "./string_split_comma.mjs";
+import { string_date_is } from "./string_date_is.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 import { log } from "./log.mjs";
 import { list_map } from "./list_map.mjs";
@@ -37,13 +35,7 @@ export async function bible_copyright(bible_folder) {
   });
   let filtered2 = list_filter(filtered, (f) => {
     let trimmed = string_trim_whitespace(html_parse_text(f));
-    return (
-      string_empty_not_is(trimmed) &&
-      !list_all(
-        string_split_comma(trimmed),
-        (s) => integer_parse_try(s) !== null,
-      )
-    );
+    return string_empty_not_is(trimmed) && !string_date_is(trimmed);
   });
   log({
     filtered2,
