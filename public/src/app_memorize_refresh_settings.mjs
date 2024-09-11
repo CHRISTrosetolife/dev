@@ -44,7 +44,7 @@ export function app_memorize_refresh_settings(context) {
   let book_code = app_memorize_book_code_get(context);
   html_button_width_full_text_click(
     root,
-    string_combine_multiple(["translation "]),
+    string_combine_multiple(["translation ", version_code_current]),
     async () => {
       app_memorize_settings_button_back_clear(context);
       html_p_text(
