@@ -70,7 +70,7 @@ export async function app_memorize_refresh_memorize(context) {
   let pattern_length = list_size(pattern);
   let token_count = 0;
   context.verse_elements = list_adder((la) => {
-    each_index(context.save.group_current, (i, j) => {
+    each_index(context.save.group_current, (i, vi) => {
       let verse = list_get(context.verses, i);
       let verse_element = html_element(verses_element, "div");
       let { tokens, verse_number } = verse;
@@ -80,7 +80,7 @@ export async function app_memorize_refresh_memorize(context) {
       }
       html_on_click(number_element, () => {
         save.token_index = 0;
-        save.verse_index = j;
+        save.verse_index = vi;
         app_memorize_save(context);
         html_scroll_center(verse_element);
       });
