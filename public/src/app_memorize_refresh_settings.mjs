@@ -49,7 +49,7 @@ export function app_memorize_refresh_settings(context) {
       let copyrights = await http_storage_get(destination);
       await bible_eng_versions_each((version_code) => {
         let { copyright, name } = object_property_get(copyrights, version_code);
-        html_button_text_click(root, version_code, async function () {
+        html_button_text_click(root, name, async function () {
           object_merge(save, {
             version_code,
           });
