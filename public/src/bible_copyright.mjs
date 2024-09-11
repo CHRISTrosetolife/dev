@@ -45,7 +45,7 @@ export async function bible_copyright(bible_folder) {
   });
   let first = list_first(filtered2);
   log({
-    filtered2,
+    first,
   });
   return list_map(filtered2, (f) => html_parse_outer(parsed, f));
 }
