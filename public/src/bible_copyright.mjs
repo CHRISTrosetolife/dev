@@ -1,3 +1,4 @@
+import { list_remove_multiple } from "./list_remove_multiple.mjs";
 import { list_any } from "./list_any.mjs";
 import { http_cache_parse_parsed } from "./http_cache_parse_parsed.mjs";
 import { html_parse_outer } from "./html_parse_outer.mjs";
@@ -35,9 +36,7 @@ export async function bible_copyright(bible_folder) {
   let filtered = list_copy(children);
   each(["h1", "h2", "div"], (tag) => {
     let tags = list_filter(children, (c) => html_parse_tag(c, tag));
-    each(tags, (tag) => {
-      list_remove(filtered, tag);
-    });
+    list_remove_multiple(tags, filtered);
   });
   let tnav = html_parse_visit_class_single(main, "tnav");
   list_remove(filtered, tnav);
