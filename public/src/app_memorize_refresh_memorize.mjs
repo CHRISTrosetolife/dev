@@ -102,7 +102,10 @@ export async function app_memorize_refresh_memorize(context) {
           if (context.style.text) {
             html_style(token_element, context.style.text);
           }
-          if (equal(token_pattern, "0")) {
+          if (
+            (equal(token_pattern, "0") && save.verse_index > j) ||
+            (save.verse_index === j && save.token_index < j)
+          ) {
             html_style_hidden(token_element);
           }
           la({
