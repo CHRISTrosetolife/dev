@@ -48,6 +48,7 @@ export function app_memorize_refresh_settings(context) {
         root,
         "which translation of the bible do you want to memorize from ?",
       );
+      let destination = bible_storage_path_copyrights();
       let copyrights = await http_storage_get(destination);
       await bible_eng_versions_each((version_code) => {
         let { copyright, name, description } = object_property_get(
@@ -59,7 +60,6 @@ export function app_memorize_refresh_settings(context) {
             version_code,
           });
           app_memorize_save(context);
-          let destination = bible_storage_path_copyrights();
           if (!string_includes(copyright, "Public Domain")) {
             html_clear_scroll_top_context(context);
             each([name, description, copyright], (text) => {
