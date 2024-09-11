@@ -1,3 +1,4 @@
+import { html_hr } from "./html_hr.mjs";
 import { each } from "./each.mjs";
 import { html_clear_scroll_top_context } from "./html_clear_scroll_top_context.mjs";
 import { string_includes } from "./string_includes.mjs";
@@ -62,7 +63,8 @@ export function app_memorize_refresh_settings(context) {
           if (!string_includes(copyright, "Public Domain")) {
             html_clear_scroll_top_context(context);
             each([name, description, copyright], (text) => {
-              html_p_text(text);
+              html_p_text(root, text);
+              html_hr(root);
             });
             await app_memorize_refresh_memorize_load(context);
           }
