@@ -55,10 +55,10 @@ export async function bible_copyright(bible_folder) {
   });
   list_remove_multiple(first_children, languages);
   let texts = ["Language:", "Dialect:"];
-  let filtered3 = list_filter(first_children, (c) =>
+  let filtered2 = list_filter(first_children, (c) =>
     list_any(texts, (t) => string_includes(html_parse_text(c), t)),
   );
-  list_remove_multiple(first_children, filtered3);
+  list_remove_multiple(first_children, filtered2);
   log({
     c: list_map(first_children, (f) => html_parse_outer(parsed, f)),
   });
