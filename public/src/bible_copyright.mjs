@@ -1,6 +1,5 @@
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
-import { log } from "./log.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { list_copy } from "./list_copy.mjs";
 import { html_parse_tag } from "./html_parse_tag.mjs";
@@ -29,9 +28,6 @@ export async function bible_copyright(bible_folder) {
     each(tags, (tag) => {
       list_remove(filtered, tag);
     });
-  });
-  log({
-    filtered,
   });
   return list_filter(filtered, (f) => string_empty_not_is(html_parse_text(f)));
 }
