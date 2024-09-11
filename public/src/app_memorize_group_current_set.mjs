@@ -32,7 +32,7 @@ export function app_memorize_group_current_set(context, g) {
   }
   context.patterns_length = list_size(context.patterns);
   save.verse_index = 0;
-  save.token_index = 0;
+  context.token_index = 0;
   save.mistakes = false;
   app_memorize_save(context);
 }
