@@ -61,7 +61,9 @@ export function app_memorize_refresh_settings(context) {
           let destination = bible_storage_path_copyrights();
           if (!string_includes(copyright, "Public Domain")) {
             html_clear_scroll_top_context(context);
-            each([name, description, copyright], (item) => {});
+            each([name, description, copyright], (text) => {
+              html_p_text(text);
+            });
             await app_memorize_refresh_memorize_load(context);
           }
         });
