@@ -52,6 +52,7 @@ export async function bible_copyright(bible_folder) {
   let filtered3 = list_filter(first_children, (c) =>
     list_any(texts, (t) => string_includes(html_parse_text(c), t)),
   );
+  each(list, (item) => {});
   log({
     text: html_parse_text(first),
     first: html_parse_children(first),
