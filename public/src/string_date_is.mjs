@@ -5,11 +5,11 @@ import { string_split_comma } from "./string_split_comma.mjs";
 import { list_all } from "./list_all.mjs";
 export function string_date_is(trimmed) {
   let split = string_split_comma(trimmed);
-  if (list_size(split) !== 3) {
-    return false;
-  }
   log({
     split,
   });
+  if (list_size(split) !== 3) {
+    return false;
+  }
   return list_all(split, (s) => integer_parse_try(s) !== null);
 }
