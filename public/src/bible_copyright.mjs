@@ -23,6 +23,7 @@ export async function bible_copyright(bible_folder) {
   let url = bible_url_htm(bible_folder, "copyright");
   let html = await http_cache(url);
   let p = await html_parse_parsed(html);
+  root == p;
   let mains = html_parse_visit_class_list(root, "main");
   assert(list_size_2, [mains]);
   let main = list_second(mains);
