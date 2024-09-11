@@ -1,3 +1,4 @@
+import { bible_storage_version_http_get } from "./bible_storage_version_http_get.mjs";
 import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { app_memorize_group_current_set } from "./app_memorize_group_current_set.mjs";
 import { list_index } from "./list_index.mjs";
@@ -7,7 +8,6 @@ import { list_first } from "./list_first.mjs";
 import { object_property_get_or } from "./object_property_get_or.mjs";
 import { app_memorize_group } from "./app_memorize_group.mjs";
 import { list_size } from "./list_size.mjs";
-import { bible_engbsb_storage_http_get } from "./bible_engbsb_storage_http_get.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
@@ -33,7 +33,7 @@ export async function app_memorize_refresh_memorize_load(context) {
     chapter_code,
   });
   if (load) {
-    let verses = await bible_engbsb_storage_http_get(chapter_code);
+    let verses = await bible_storage_version_http_get(chapter_code);
     object_merge(context, {
       verses,
     });
