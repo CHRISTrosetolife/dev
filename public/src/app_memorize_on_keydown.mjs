@@ -1,3 +1,4 @@
+import { app_memorize_save_get } from "./app_memorize_save_get.mjs";
 import { app_memorize_keyboard_reset } from "./app_memorize_keyboard_reset.mjs";
 import { html_style_success } from "./html_style_success.mjs";
 import { app_memorize_save } from "./app_memorize_save.mjs";
@@ -22,6 +23,7 @@ import { string_case_lower } from "./string_case_lower.mjs";
 import { list_get } from "./list_get.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 export async function app_memorize_on_keydown(context, key) {
+  let save = app_memorize_save_get(context);
   let j = list_get(context.save.group_current, save.verse_index);
   let current_verse = list_get(context.verses, j);
   let { tokens } = current_verse;
