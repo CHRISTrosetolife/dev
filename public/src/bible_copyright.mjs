@@ -6,5 +6,7 @@ export async function bible_copyright(bible_folder) {
   let url = bible_url_htm(bible_folder, "copyright");
   let root = await html_cache_parse(url);
   let mains = html_parse_visit_class_list(root, "main");
-  log({});
+  log({
+    mains,
+  });
 }
