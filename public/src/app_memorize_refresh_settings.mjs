@@ -44,7 +44,7 @@ export function app_memorize_refresh_settings(context) {
       await bible_eng_versions_each((version_code) => {
         html_button_text_click(root, version_code, async function () {
           object_merge(save, {
-            book_code,
+            version_code,
           });
           app_memorize_save(context);
         });
