@@ -54,7 +54,7 @@ export async function bible_copyright(bible_folder) {
     let { href } = attribs;
     return string_includes(href, "ethnologue.org");
   });
-  list_remove(first_children, a);
+  list_remove_multiple(first_children, languages);
   let texts = ["Language:", "Dialect:"];
   let filtered3 = list_filter(first_children, (c) =>
     list_any(texts, (t) => string_includes(html_parse_text(c), t)),
