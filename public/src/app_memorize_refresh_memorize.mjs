@@ -35,12 +35,12 @@ export async function app_memorize_refresh_memorize(context) {
   html_clear_scroll_top(root);
   let save = app_memorize_save_get(context);
   await app_memorize_refresh_memorize_load(context);
-  context.verse_index = 0;
-  context.token_index = 0;
+  save.verse_index = 0;
+  save.token_index = 0;
   context.previous_spacer2 = undefined;
   context.previous_token_element = undefined;
   context.verse_elements = undefined;
-  context.mistakes = false;
+  save.mistakes = false;
   context.keyboard_buttons = {};
   let p = list_get(context.patterns, context.save.pattern_index);
   let pattern = string_split(p, "");
