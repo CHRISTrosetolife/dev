@@ -29,5 +29,7 @@ export async function bible_copyright(bible_folder) {
       list_remove(filtered, tag);
     });
   });
-  return list_filter(filtered, (f) => string_empty_not_is(html_parse_text(f)));
+  let filtered2 = list_filter(filtered, (f) =>
+    string_empty_not_is(html_parse_text(f)),
+  );
 }
