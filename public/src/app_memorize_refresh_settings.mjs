@@ -57,6 +57,7 @@ export function app_memorize_refresh_settings(context) {
           let { copyright } = object_property_get(copyrights, version_code);
           if (!string_includes(copyright, "Public Domain")) {
             html_clear_scroll_top_context(context);
+            let copyright_element = html_p_text(root, copyright);
             await app_memorize_refresh_memorize_load(context);
           }
         });
