@@ -33,7 +33,10 @@ export async function app_memorize_refresh_memorize_load(context) {
     chapter_code,
   });
   if (load) {
-    let verses = await bible_storage_version_http_get(chapter_code);
+    let verses = await bible_storage_version_http_get(
+      chapter_code,
+      object_property_initialize(save, "version_code", "engbsb"),
+    );
     object_merge(context, {
       verses,
     });
