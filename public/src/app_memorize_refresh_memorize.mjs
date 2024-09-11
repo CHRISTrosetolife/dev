@@ -109,7 +109,7 @@ export async function app_memorize_refresh_memorize(context) {
             if (equal(token_pattern, "0")) {
               html_style_hidden(token_element);
             } else {
-              html_style_font_color(token_element, "darkgray");
+              html_style_font_color(token_element, "#CCC");
             }
           }
           la({
