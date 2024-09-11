@@ -63,7 +63,7 @@ export async function app_memorize_on_keydown(context, key) {
     let group_current_length = list_size(context.save.group_current);
     if (greater_than_equal(save.verse_index, group_current_length)) {
       save.verse_index = 0;
-      let pattern = list_get(context.patterns, context.save.pattern_index);
+      let pattern = list_get(context.patterns, save.pattern_index);
       if (and(equal(pattern, "0"), save.mistakes)) {
         save.mistakes = false;
         app_memorize_save(context);
