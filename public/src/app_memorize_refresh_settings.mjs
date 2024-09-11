@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { http_storage_get } from "./http_storage_get.mjs";
 import { bible_storage_path_copyrights } from "./bible_storage_path_copyrights.mjs";
 import { bible_eng_versions_each } from "./bible_eng_versions_each.mjs";
@@ -51,6 +52,7 @@ export function app_memorize_refresh_settings(context) {
           app_memorize_save(context);
           let destination = bible_storage_path_copyrights();
           let copyrights = await http_storage_get(destination);
+          object_property_get(object, property_name);
           await app_memorize_refresh_memorize_load(context);
         });
       });
