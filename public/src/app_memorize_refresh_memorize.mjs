@@ -103,8 +103,8 @@ export async function app_memorize_refresh_memorize(context) {
             html_style(token_element, context.style.text);
           }
           if (
-            (equal(token_pattern, "0") && save.verse_index > ti) ||
-            (save.verse_index === ti && save.token_index < ti)
+            (equal(token_pattern, "0") && save.verse_index > vi) ||
+            (save.verse_index === vi && save.token_index < ti)
           ) {
             html_style_hidden(token_element);
           }
