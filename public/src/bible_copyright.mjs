@@ -1,3 +1,4 @@
+import { html_parse_tag } from "./html_parse_tag.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { each } from "./each.mjs";
 import { html_parse_children } from "./html_parse_children.mjs";
@@ -18,7 +19,7 @@ export async function bible_copyright(bible_folder) {
   let title = html_parse_visit_tag_single(main, "h2");
   let children = html_parse_children(main);
   each(["h1", "h2", "div", "ul"], (tag) => {
-    let tags = list_filter(children);
+    let tags = list_filter(children, (c) => html_parse_tag(c, tag));
   });
   return children;
 }
