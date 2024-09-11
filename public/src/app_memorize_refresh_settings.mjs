@@ -37,10 +37,16 @@ export function app_memorize_refresh_settings(context) {
     string_combine_multiple(["translation "]),
     async () => {
       app_memorize_settings_button_back_clear(context);
-      html_p_text(root, "which book do you want to memorize from ?");
+      html_p_text(
+        root,
+        "which translation of the bible do you want to memorize from ?",
+      );
       await bible_eng_versions_each((version_code) => {
         html_button_text_click(root, version_code, async function () {
-          await app_record_home_on_click(context, book_code);
+          object_merge(save, {
+            book_code,
+          });
+          app_memorize_save(context);
         });
       });
       app_record_home_generic(
