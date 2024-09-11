@@ -27,7 +27,7 @@ export async function app_memorize_on_keydown(context, key) {
   let j = list_get(context.save.group_current, save.verse_index);
   let current_verse = list_get(context.verses, j);
   let { tokens } = current_verse;
-  let current_token = list_get(tokens, context.token_index);
+  let current_token = list_get(tokens, save.token_index);
   let letter_first = string_case_lower(string_letter_first(current_token));
   let keyboard_button_actual = object_property_get(
     context.keyboard_buttons,
