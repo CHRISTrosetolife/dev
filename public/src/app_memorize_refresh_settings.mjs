@@ -72,7 +72,7 @@ export function app_memorize_refresh_settings(context) {
         let b = html_button(root);
         html_inner_set(b, app_memorize_group_to_range_string(context, g));
         html_on_click(b, () => {
-          app_memorize_group_current_set(context, g);
+          app_memorize_group_current_set(context, g, false);
           app_memorize_refresh_settings(context);
         });
       }
