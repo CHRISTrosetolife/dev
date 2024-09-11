@@ -1,3 +1,4 @@
+import { string_split_comma } from "./string_split_comma.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 import { log } from "./log.mjs";
 import { list_map } from "./list_map.mjs";
@@ -32,8 +33,11 @@ export async function bible_copyright(bible_folder) {
       list_remove(filtered, tag);
     });
   });
-  let filtered2 = list_filter(filtered, (f) =>
-    string_empty_not_is(string_trim_whitespace(html_parse_text(f))),
+  let filtered2 = list_filter(
+    filtered,
+    (f) =>
+      string_empty_not_is(string_trim_whitespace(html_parse_text(f))) &&
+      string_split_comma(f, ""),
   );
   log({
     filtered2,
