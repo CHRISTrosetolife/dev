@@ -36,11 +36,11 @@ export async function bible_copyright(bible_folder) {
   });
   let tnav = html_parse_visit_class_single(main, "tnav");
   list_remove(children, tnav);
-  let filtered2 = list_filter(children, (f) => {
+  let filtered = list_filter(children, (f) => {
     let trimmed = string_trim_whitespace(html_parse_text(f));
     return string_empty_not_is(trimmed) && !string_date_is(trimmed);
   });
-  each(filtered2, (f) => {
+  each(filtered, (f) => {
     let as = html_parse_visit_tag_list(f, "a");
     let languages = list_filter(as, (a) => {
       let { attribs } = a;
