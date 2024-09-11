@@ -1,3 +1,4 @@
+import { html_style_font_color_gray } from "./html_style_font_color_gray.mjs";
 import { app_memorize_save } from "./app_memorize_save.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { app_memorize_save_get } from "./app_memorize_save_get.mjs";
@@ -109,6 +110,8 @@ export async function app_memorize_refresh_memorize(context) {
             if (equal(token_pattern, "0")) {
               html_style_hidden(token_element);
             }
+          } else {
+            html_style_font_color_gray(button);
           }
           la({
             spacer2,
