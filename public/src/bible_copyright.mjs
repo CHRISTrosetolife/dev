@@ -41,8 +41,8 @@ export async function bible_copyright(bible_folder) {
     html_remove_multiple(tags);
   });
   let tnav = html_parse_visit_class_single(main, "tnav");
-  list_remove(filtered, tnav);
-  let filtered2 = list_filter(filtered, (f) => {
+  list_remove(children, tnav);
+  let filtered2 = list_filter(children, (f) => {
     let trimmed = string_trim_whitespace(html_parse_text(f));
     return string_empty_not_is(trimmed) && !string_date_is(trimmed);
   });
