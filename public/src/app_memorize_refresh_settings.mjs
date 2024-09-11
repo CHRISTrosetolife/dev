@@ -62,9 +62,6 @@ export function app_memorize_refresh_settings(context) {
           if (!string_includes(copyright, "Public Domain")) {
             html_clear_scroll_top_context(context);
             each([name, description, copyright], (item) => {});
-            html_p_text(root, name);
-            html_p_text(root, description);
-            html_p_text(root, copyright);
             await app_memorize_refresh_memorize_load(context);
           }
         });
