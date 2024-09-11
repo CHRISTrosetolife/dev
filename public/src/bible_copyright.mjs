@@ -28,6 +28,8 @@ export async function bible_copyright(bible_folder) {
       list_remove(filtered, tag);
     });
   });
-  log({});
+  log({
+    filtered,
+  });
   return children;
 }
