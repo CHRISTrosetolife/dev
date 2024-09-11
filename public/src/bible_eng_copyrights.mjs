@@ -13,6 +13,7 @@ export async function bible_eng_copyrights() {
       log({
         c,
       });
+      return c;
     },
   );
 }
