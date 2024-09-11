@@ -41,7 +41,7 @@ export async function bible_copyright(bible_folder) {
       string_empty_not_is(trimmed) &&
       !list_all(
         string_split_comma(trimmed),
-        (s) => integer_parse_try(s) === null,
+        (s) => integer_parse_try(s) !== null,
       )
     );
   });
