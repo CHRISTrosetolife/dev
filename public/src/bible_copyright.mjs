@@ -49,6 +49,9 @@ export async function bible_copyright(bible_folder) {
   let first_children = html_parse_children(first);
   log(html_parse_outer(parsed, first));
   let as = html_parse_visit_tag_list(first, "a");
+  list_filter(as, (a) => {
+    let { attribs } = c;
+  });
   list_remove(first_children, a);
   let texts = ["Language:", "Dialect:"];
   let filtered3 = list_filter(first_children, (c) =>
