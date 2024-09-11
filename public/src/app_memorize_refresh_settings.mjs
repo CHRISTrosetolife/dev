@@ -1,3 +1,4 @@
+import { html_button_width_full_text_click_next } from "./html_button_width_full_text_click_next.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { each } from "./each.mjs";
 import { html_clear_scroll_top_context } from "./html_clear_scroll_top_context.mjs";
@@ -66,6 +67,7 @@ export function app_memorize_refresh_settings(context) {
               html_p_text(root, text);
               html_hr(root);
             });
+            html_button_width_full_text_click_next();
             await app_memorize_refresh_memorize_load(context);
           }
         });
