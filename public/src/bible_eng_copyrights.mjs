@@ -4,7 +4,7 @@ import { bible_copyright } from "./bible_copyright.mjs";
 import { log } from "./log.mjs";
 export async function bible_eng_copyrights() {
   await list_map_async(
-    await bible_eng_versions(),
+    bible_eng_versions(),
     async function lambda(bible_folder) {
       log({
         bible_folder,
