@@ -49,7 +49,7 @@ export async function app_memorize_refresh_settings(context) {
       "translation ",
       object_property_get(
         object_property_get(copyrights, version_code_current),
-        property_name,
+        "name",
       ),
     ]),
     async () => {
