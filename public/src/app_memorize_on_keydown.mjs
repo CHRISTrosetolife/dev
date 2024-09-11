@@ -57,8 +57,8 @@ export async function app_memorize_on_keydown(context, key) {
     let tokens_length = list_size(tokens);
     if (greater_than_equal(context.token_index, tokens_length)) {
       save.verse_index++;
-      app_memorize_save();
-      context.token_index = 0;
+      save.token_index = 0;
+      app_memorize_save(context);
     }
     let group_current_length = list_size(context.save.group_current);
     if (greater_than_equal(save.verse_index, group_current_length)) {
