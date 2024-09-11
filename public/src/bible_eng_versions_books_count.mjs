@@ -7,6 +7,7 @@ export async function bible_eng_versions_books_count() {
     let books = await bible_books(bible_folder);
     let count = list_size(books);
     log({
+      version_code,
       count,
     });
   });
