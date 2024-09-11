@@ -32,6 +32,27 @@ export function app_memorize_refresh_settings(context) {
   let book_code = app_memorize_book_code_get(context);
   html_button_width_full_text_click(
     root,
+    string_combine_multiple(["translation "]),
+    () => {
+      app_record_home_generic(
+        context,
+        () => {
+          app_memorize_settings_button_back(context);
+          html_p_text(root, "which book do you want to memorize from ?");
+        },
+        async (context, book_code) => {
+          object_merge(save, {
+            book_code,
+          });
+          app_memorize_chapter_set(context, "1");
+          app_memorize_refresh_settings_chapter(context);
+          await app_memorize_refresh_memorize_load(context);
+        },
+      );
+    },
+  );
+  html_button_width_full_text_click(
+    root,
     string_combine_multiple(["book ", book_code]),
     () => {
       app_record_home_generic(
