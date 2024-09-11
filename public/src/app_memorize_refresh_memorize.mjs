@@ -36,7 +36,7 @@ export async function app_memorize_refresh_memorize(context) {
   let save = app_memorize_save_get(context);
   await app_memorize_refresh_memorize_load(context);
   save.verse_index = 0;
-  save.token_index = 0;
+  context.token_index = 0;
   context.previous_spacer2 = undefined;
   context.previous_token_element = undefined;
   context.verse_elements = undefined;
