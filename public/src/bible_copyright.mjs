@@ -1,3 +1,4 @@
+import { list_join_space } from "./list_join_space.mjs";
 import { list_map } from "./list_map.mjs";
 import { object_property_delete_all } from "./object_property_delete_all.mjs";
 import { html_parse_visit_tag_list } from "./html_parse_visit_tag_list.mjs";
@@ -35,6 +36,7 @@ export async function bible_copyright(bible_folder) {
   let name = html_parse_text(name_tag);
   let h2s = html_parse_visit_tag_list(main, "h2");
   let mapped = list_map(h2s, html_parse_text);
+  let description = list_join_space();
   let children = html_parse_children(main);
   each(["h1", "h2", "div"], (tag) => {
     let tags = list_filter(children, (c) => html_parse_tag(c, tag));
