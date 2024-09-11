@@ -43,7 +43,6 @@ export async function app_memorize_refresh_settings(context) {
   let version_code_current = app_memorize_version_code_get(context);
   let destination = bible_storage_path_copyrights();
   let copyrights = await http_storage_get(destination);
-  let book_code = app_memorize_book_code_get(context);
   html_button_width_full_text_click(
     root,
     string_combine_multiple(["translation ", version_code_current]),
@@ -80,6 +79,7 @@ export async function app_memorize_refresh_settings(context) {
       });
     },
   );
+  let book_code = app_memorize_book_code_get(context);
   html_button_width_full_text_click(
     root,
     string_combine_multiple(["book ", book_code]),
@@ -121,9 +121,9 @@ export async function app_memorize_refresh_settings(context) {
       for (let g of context.groups) {
         let b = html_button(root);
         html_inner_set(b, app_memorize_group_to_range_string(context, g));
-        html_on_click(b, () => {
+        html_on_click(b, async () => {
           app_memorize_group_current_set(context, g, true);
-          app_memorize_refresh_settings(context);
+          await app_memorize_refresh_settings(context);
         });
       }
     },
@@ -143,10 +143,10 @@ export async function app_memorize_refresh_settings(context) {
       each_index(context.patterns, (p, i) => {
         let b = html_button(root);
         html_inner_set(b, p);
-        html_on_click(b, () => {
+        html_on_click(b, async () => {
           save.pattern_index = i;
           app_memorize_save(context);
-          app_memorize_refresh_settings(context);
+          await app_memorize_refresh_settings(context);
         });
       });
     },
