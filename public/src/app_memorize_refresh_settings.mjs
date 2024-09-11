@@ -62,6 +62,8 @@ export function app_memorize_refresh_settings(context) {
           });
           app_memorize_save(context);
           if (string_includes(copyright, "Public Domain")) {
+            await app_memorize_refresh_memorize_load(context);
+          } else {
             html_clear_scroll_top_context(context);
             each([name, description, copyright], (text) => {
               html_p_text(root, text);
@@ -71,7 +73,6 @@ export function app_memorize_refresh_settings(context) {
               root,
               async () => await app_memorize_refresh_memorize_load(context),
             );
-          } else {
           }
         });
       });
