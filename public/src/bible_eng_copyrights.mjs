@@ -1,5 +1,4 @@
 import { bible_eng_versions_each } from "./bible_eng_versions_each.mjs";
-import { object_merge } from "./object_merge.mjs";
 import { bible_copyright } from "./bible_copyright.mjs";
 import { log } from "./log.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -11,10 +10,7 @@ export async function bible_eng_copyrights() {
         bible_folder,
       });
       let c = await bible_copyright(bible_folder);
-      object_merge(c, {
-        bible_folder,
-      });
-      object_property_set();
+      object_property_set(copyrights, bible_folder, c);
       return c;
     },
   );
