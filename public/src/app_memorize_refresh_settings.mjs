@@ -39,8 +39,7 @@ export function app_memorize_refresh_settings(context) {
       app_memorize_settings_button_back_clear(context);
       html_p_text(root, "which book do you want to memorize from ?");
       await bible_eng_versions_each((version_code) => {
-        let { book_code } = book;
-        html_button_text_click(root, book_code, async function () {
+        html_button_text_click(root, version_code, async function () {
           await app_record_home_on_click(context, book_code);
         });
       });
