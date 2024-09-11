@@ -39,7 +39,7 @@ export async function bible_copyright(bible_folder) {
   each(["h1", "h2", "div"], (tag) => {
     let tags = list_filter(children, (c) => html_parse_tag(c, tag));
     each(tags, (tag) => {
-      html_remove();
+      html_remove(tag);
     });
     list_remove_multiple(filtered, tags);
   });
