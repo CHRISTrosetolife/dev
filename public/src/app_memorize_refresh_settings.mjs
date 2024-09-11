@@ -40,7 +40,7 @@ export function app_memorize_refresh_settings(context) {
   html_button_width_full_text_click_back(root, async () => {
     await app_memorize_refresh_memorize(context);
   });
-  app_memorize_version_code_get();
+  let version_code_current = app_memorize_version_code_get(context);
   let book_code = app_memorize_book_code_get(context);
   html_button_width_full_text_click(
     root,
