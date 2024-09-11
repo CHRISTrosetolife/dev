@@ -1,5 +1,4 @@
 import { html_parse_visit_tag_list } from "./html_parse_visit_tag_list.mjs";
-import { log } from "./log.mjs";
 import { list_remove_multiple } from "./list_remove_multiple.mjs";
 import { list_any } from "./list_any.mjs";
 import { http_cache_parse_parsed } from "./http_cache_parse_parsed.mjs";
@@ -7,7 +6,6 @@ import { html_parse_outer } from "./html_parse_outer.mjs";
 import { html_parse_visit_class_single } from "./html_parse_visit_class_single.mjs";
 import { string_date_is } from "./string_date_is.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
-import { list_map } from "./list_map.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 import { list_remove } from "./list_remove.mjs";
@@ -59,10 +57,5 @@ export async function bible_copyright(bible_folder) {
     );
     list_remove_multiple(first_children, filtered3);
   });
-  if (0) {
-    log({
-      c: list_map(first_children, (f) => html_parse_outer(parsed, f)),
-    });
-  }
-  return list_map(filtered2, (f) => html_parse_outer(parsed, f));
+  return html_parse_outer(main, f);
 }
