@@ -35,12 +35,10 @@ export async function bible_copyright(bible_folder) {
       list_remove(filtered, tag);
     });
   });
-  let filtered2 = list_filter(
-    filtered,
-    (f) =>
-      string_empty_not_is(string_trim_whitespace(html_parse_text(f))) &&
-      !list_all(string_split_comma(f), (s) => integer_parse_try(s) === null),
-  );
+  let filtered2 = list_filter(filtered, (f) => {
+    string_empty_not_is(string_trim_whitespace(html_parse_text(f))) &&
+      !list_all(string_split_comma(f), (s) => integer_parse_try(s) === null);
+  });
   log({
     filtered2,
   });
