@@ -11,5 +11,5 @@ export async function bible_copyright(bible_folder) {
   let mains = html_parse_visit_class_list(root, "main");
   assert(list_size_2, [mains]);
   let main = list_second(mains);
-  let name = html_parse_visit_tag_single;
+  let name = html_parse_visit_tag_single(main, "h1");
 }
