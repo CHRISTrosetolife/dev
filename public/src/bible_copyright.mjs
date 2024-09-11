@@ -20,6 +20,7 @@ import { assert } from "./assert.mjs";
 import { html_parse_visit_class_list } from "./html_parse_visit_class_list.mjs";
 import { bible_url_htm } from "./bible_url_htm.mjs";
 import { list_first } from "./list_first.mjs";
+import { string_includes } from "./string_includes.mjs";
 export async function bible_copyright(bible_folder) {
   let url = bible_url_htm(bible_folder, "copyright");
   let p = await http_cache_parse_parsed(url);
@@ -47,8 +48,7 @@ export async function bible_copyright(bible_folder) {
   let first_children = html_parse_children(first);
   let a = html_parse_visit_tag_single(main, "a");
   let texts = ["Language:", "Dialect:"];
-  list_filter(first_children);
-  html_parse_text();
+  list_filter(first_children, (c = string_includes(html_parse_text())));
   log({
     text: html_parse_text(first),
     first: html_parse_children(first),
