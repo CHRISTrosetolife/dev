@@ -1,3 +1,4 @@
+import { html_style_font_color_default_set } from "./html_style_font_color_default_set.mjs";
 import { app_memorize_save_get } from "./app_memorize_save_get.mjs";
 import { html_style_hidden } from "./html_style_hidden.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
@@ -15,8 +16,10 @@ export function app_memorize_update_colors(context) {
   if (undefined_not_is(context.previous_spacer2)) {
     html_style_hidden(context.previous_spacer2);
   }
-  if (undefined_not_is(context.previous_token_element)) {
+  let previous_token_element = context;
+  if (undefined_not_is(context)) {
     html_style_visible(context.previous_token_element);
+    html_style_font_color_default_set(current_token);
   }
   context.previous_spacer2 = spacer2;
   context.previous_token_element = token_element;
