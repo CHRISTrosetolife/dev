@@ -1,3 +1,4 @@
+import { bible_storage_path_copyrights } from "./bible_storage_path_copyrights.mjs";
 import { bible_eng_versions_each } from "./bible_eng_versions_each.mjs";
 import { html_button_text_click } from "./html_button_text_click.mjs";
 import { app_memorize_refresh_memorize_load } from "./app_memorize_refresh_memorize_load.mjs";
@@ -47,6 +48,7 @@ export function app_memorize_refresh_settings(context) {
             version_code,
           });
           app_memorize_save(context);
+          let destination = bible_storage_path_copyrights();
           await app_memorize_refresh_memorize_load(context);
         });
       });
