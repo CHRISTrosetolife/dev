@@ -1,6 +1,5 @@
+import { http_cache_parse_parsed } from "./http_cache_parse_parsed.mjs";
 import { html_parse_outer } from "./html_parse_outer.mjs";
-import { html_parse_parsed } from "./html_parse_parsed.mjs";
-import { http_cache } from "./http_cache.mjs";
 import { html_parse_visit_class_single } from "./html_parse_visit_class_single.mjs";
 import { string_date_is } from "./string_date_is.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
@@ -22,8 +21,7 @@ import { html_parse_visit_class_list } from "./html_parse_visit_class_list.mjs";
 import { bible_url_htm } from "./bible_url_htm.mjs";
 export async function bible_copyright(bible_folder) {
   let url = bible_url_htm(bible_folder, "copyright");
-  let html = await http_cache(url);
-  let p = await html_parse_parsed(html);
+  let p = await http_cache_parse_parsed(url);
   let { root, parsed } = p;
   let mains = html_parse_visit_class_list(root, "main");
   assert(list_size_2, [mains]);
