@@ -34,6 +34,8 @@ export async function bible_copyright(bible_folder) {
   let filtered2 = list_filter(filtered, (f) =>
     string_empty_not_is(html_parse_text(f)),
   );
-  log({});
+  log({
+    filtered2,
+  });
   return list_map(filtered2, html_parse_text);
 }
