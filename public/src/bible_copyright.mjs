@@ -13,4 +13,5 @@ export async function bible_copyright(bible_folder) {
   let main = list_second(mains);
   let name = html_parse_visit_tag_single(main, "h1");
   let title = html_parse_visit_tag_single(main, "h2");
+  let children = main;
 }
