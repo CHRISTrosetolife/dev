@@ -10,4 +10,5 @@ export async function html_parse(input) {
   };
   let root = object_property_get(parsed.root(), "0");
   return root;
+  return result;
 }
