@@ -54,12 +54,12 @@ export async function app_memorize_on_keydown(context, key) {
     }
     let tokens_length = list_size(tokens);
     if (greater_than_equal(context.token_index, tokens_length)) {
-      context.verse_index++;
+      save.verse_index++;
       context.token_index = 0;
     }
     let group_current_length = list_size(context.save.group_current);
-    if (greater_than_equal(context.verse_index, group_current_length)) {
-      context.verse_index = 0;
+    if (greater_than_equal(save.verse_index, group_current_length)) {
+      save.verse_index = 0;
       let pattern = list_get(context.patterns, context.save.pattern_index);
       if (and(equal(pattern, "0"), context.mistakes)) {
         context.mistakes = false;
