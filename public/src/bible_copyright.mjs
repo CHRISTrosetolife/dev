@@ -19,6 +19,7 @@ import { list_size_2 } from "./list_size_2.mjs";
 import { assert } from "./assert.mjs";
 import { html_parse_visit_class_list } from "./html_parse_visit_class_list.mjs";
 import { bible_url_htm } from "./bible_url_htm.mjs";
+import { list_first } from "./list_first.mjs";
 export async function bible_copyright(bible_folder) {
   let url = bible_url_htm(bible_folder, "copyright");
   let p = await http_cache_parse_parsed(url);
@@ -42,6 +43,7 @@ export async function bible_copyright(bible_folder) {
     let trimmed = string_trim_whitespace(html_parse_text(f));
     return string_empty_not_is(trimmed) && !string_date_is(trimmed);
   });
+  let first = list_first(filtered2);
   log({
     filtered2,
   });
