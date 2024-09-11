@@ -1,3 +1,4 @@
+import { app_memorize_save_get } from "./app_memorize_save_get.mjs";
 import { app_memorize_refresh_memorize_load } from "./app_memorize_refresh_memorize_load.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
@@ -32,6 +33,7 @@ import { list_get } from "./list_get.mjs";
 export async function app_memorize_refresh_memorize(context) {
   let { root } = context;
   html_clear_scroll_top(root);
+  let save = app_memorize_save_get(context);
   await app_memorize_refresh_memorize_load(context);
   context.verse_index = 0;
   context.token_index = 0;
