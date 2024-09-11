@@ -10,6 +10,6 @@ export async function bible_eng_copyrights_upload() {
     object_property_set(copyrights, bible_folder, c);
     return c;
   });
-  let destination = bible_engbsb_storage_path_file(key);
+  let destination = bible_engbsb_storage_path_file("copyrights");
   await storage_upload_object_bible_engbsb(data, destination);
 }
