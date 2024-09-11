@@ -1,3 +1,4 @@
+import { html_parse_children } from "./html_parse_children.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
 import { list_second } from "./list_second.mjs";
 import { list_size_2 } from "./list_size_2.mjs";
@@ -13,7 +14,6 @@ export async function bible_copyright(bible_folder) {
   let main = list_second(mains);
   let name = html_parse_visit_tag_single(main, "h1");
   let title = html_parse_visit_tag_single(main, "h2");
-  let { children: c } = main;
-  let children = c;
+  let children = html_parse_children(main);
   return children;
 }
