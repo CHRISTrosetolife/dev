@@ -79,8 +79,9 @@ export async function app_memorize_refresh_memorize(context) {
         html_style(number_element, context.style.text);
       }
       html_on_click(number_element, () => {
-        context.token_index = 0;
+        save.token_index = 0;
         save.verse_index = j;
+        app_memorize_save(context);
         html_scroll_center(verse_element);
       });
       let token_objects = list_adder((la) => {
