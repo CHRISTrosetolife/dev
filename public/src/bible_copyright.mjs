@@ -29,14 +29,14 @@ export async function bible_copyright(bible_folder) {
   let main = list_second(mains);
   let name = html_parse_visit_tag_single(main, "h1");
   let h2s = html_parse_visit_tag_list(main, "h2");
-  let filtered = html_parse_children(main);
+  let children = html_parse_children(main);
   each(["h1", "h2", "div"], (tag) => {
     let tags = list_filter(children, (c) => html_parse_tag(c, tag));
-    list_remove_multiple(filtered, tags);
+    list_remove_multiple(children, tags);
   });
   let tnav = html_parse_visit_class_single(main, "tnav");
-  list_remove(filtered, tnav);
-  let filtered2 = list_filter(filtered, (f) => {
+  list_remove(children, tnav);
+  let filtered2 = list_filter(children, (f) => {
     let trimmed = string_trim_whitespace(html_parse_text(f));
     return string_empty_not_is(trimmed) && !string_date_is(trimmed);
   });
