@@ -29,7 +29,9 @@ export async function bible_copyright(bible_folder) {
   assert(list_size_2, [mains]);
   let main = list_second(mains);
   let { attribs } = main;
-  log({});
+  log({
+    main,
+  });
   let name = html_parse_visit_tag_single(main, "h1");
   let h2s = html_parse_visit_tag_list(main, "h2");
   let children = html_parse_children(main);
