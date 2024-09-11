@@ -69,6 +69,7 @@ export async function app_memorize_refresh_settings(context) {
           app_memorize_save(context);
           if (string_includes(copyright, "Public Domain")) {
             await app_memorize_refresh_memorize_load(context);
+            await app_memorize_refresh_settings(context);
           } else {
             html_clear_scroll_top_context(context);
             each([name, description, copyright], (text) => {
