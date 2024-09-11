@@ -16,4 +16,5 @@ export async function bible_eng_copyrights() {
       return c;
     },
   );
+  return mapped;
 }
