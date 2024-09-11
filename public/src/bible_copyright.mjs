@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { list_copy } from "./list_copy.mjs";
 import { html_parse_tag } from "./html_parse_tag.mjs";
@@ -27,5 +28,6 @@ export async function bible_copyright(bible_folder) {
       list_remove(filtered, tag);
     });
   });
+  log({});
   return children;
 }
