@@ -31,7 +31,7 @@ export async function bible_copyright(bible_folder) {
   let { attribs } = main;
   object_property_delete_all(attribs);
   let name_tag = html_parse_visit_tag_single(main, "h1");
-  let name = list_tag();
+  let name = html_parse_text(name_tag);
   let h2s = html_parse_visit_tag_list(main, "h2");
   let children = html_parse_children(main);
   each(["h1", "h2", "div"], (tag) => {
