@@ -36,8 +36,7 @@ export function app_memorize_refresh_settings(context) {
     root,
     string_combine_multiple(["translation "]),
     () => {
-      html_clear_scroll_top(root);
-      app_memorize_settings_button_back(context);
+      app_memorize_settings_button_back_clear(context);
       html_p_text(root, "which book do you want to memorize from ?");
       each(books, (book) => {
         let { book_code } = book;
