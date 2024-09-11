@@ -1,3 +1,4 @@
+import { html_parse_outer } from "./html_parse_outer.mjs";
 import { html_parse_parsed } from "./html_parse_parsed.mjs";
 import { http_cache } from "./http_cache.mjs";
 import { html_parse_visit_class_single } from "./html_parse_visit_class_single.mjs";
@@ -46,5 +47,5 @@ export async function bible_copyright(bible_folder) {
   log({
     filtered2,
   });
-  return list_map(filtered2, (f) => parsed(f).prop("outerHTML"));
+  return list_map(filtered2, (f) => html_parse_outer(parsed, f));
 }
