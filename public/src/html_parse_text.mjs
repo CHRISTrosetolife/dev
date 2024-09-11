@@ -6,7 +6,10 @@ export function html_parse_text(element) {
   let parts = list_adder((la) =>
     html_parse_visit(element, (v) => {
       let { node } = v;
-      let d = html_parse_data(node, la);
+      let d = html_parse_data(node);
+      if (d !== null) {
+        la(d);
+      }
     }),
   );
   return list_join_empty(parts);
