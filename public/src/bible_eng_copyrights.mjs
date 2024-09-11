@@ -6,6 +6,6 @@ export async function bible_eng_copyrights() {
     log({
       bible_folder,
     });
-    return await bible_copyright(bible_folder);
+    await bible_copyright(bible_folder);
   });
 }
