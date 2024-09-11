@@ -10,9 +10,6 @@ export async function bible_eng_copyrights() {
         bible_folder,
       });
       let c = await bible_copyright(bible_folder);
-      log({
-        c,
-      });
       return c;
     },
   );
