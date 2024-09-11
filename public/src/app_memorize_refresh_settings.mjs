@@ -1,3 +1,4 @@
+import { http_storage_get } from "./http_storage_get.mjs";
 import { bible_storage_path_copyrights } from "./bible_storage_path_copyrights.mjs";
 import { bible_eng_versions_each } from "./bible_eng_versions_each.mjs";
 import { html_button_text_click } from "./html_button_text_click.mjs";
@@ -49,6 +50,7 @@ export function app_memorize_refresh_settings(context) {
           });
           app_memorize_save(context);
           let destination = bible_storage_path_copyrights();
+          let verses = await http_storage_get(file_path);
           await app_memorize_refresh_memorize_load(context);
         });
       });
