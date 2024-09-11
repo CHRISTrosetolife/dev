@@ -31,5 +31,4 @@ export async function bible_copyright(bible_folder) {
   log({
     filtered,
   });
-  return children;
 }
