@@ -60,7 +60,7 @@ export async function app_memorize_on_keydown(context, key) {
       app_memorize_save(context);
       context.token_index = 0;
     }
-    let group_current_length = list_size(context.save.group_current);
+    let group_current_length = list_size(save.group_current);
     if (greater_than_equal(save.verse_index, group_current_length)) {
       save.verse_index = 0;
       let pattern = list_get(context.patterns, save.pattern_index);
