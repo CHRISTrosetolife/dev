@@ -1,3 +1,4 @@
+import { html_style_font_color_default_set } from "./html_style_font_color_default_set.mjs";
 import { app_memorize_save_get } from "./app_memorize_save_get.mjs";
 import { app_memorize_keyboard_reset } from "./app_memorize_keyboard_reset.mjs";
 import { html_style_success } from "./html_style_success.mjs";
@@ -43,6 +44,7 @@ export async function app_memorize_on_keydown(context, key) {
         return;
       }
     }
+    html_style_font_color_default_set(current_token);
     while (true) {
       save.token_index++;
       app_memorize_save(context);
