@@ -46,15 +46,15 @@ export function app_memorize_refresh_settings(context) {
         root,
         "which translation of the bible do you want to memorize from ?",
       );
+      let copyrights = await http_storage_get(destination);
       await bible_eng_versions_each((version_code) => {
+        let { copyright, name } = object_property_get(copyrights, version_code);
         html_button_text_click(root, version_code, async function () {
           object_merge(save, {
             version_code,
           });
           app_memorize_save(context);
           let destination = bible_storage_path_copyrights();
-          let copyrights = await http_storage_get(destination);
-          let { copyright } = object_property_get(copyrights, version_code);
           if (!string_includes(copyright, "Public Domain")) {
             html_clear_scroll_top_context(context);
             let copyright_element = html_p_text(root, copyright);
