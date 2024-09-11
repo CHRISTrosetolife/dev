@@ -1,3 +1,4 @@
+import { string_includes } from "./string_includes.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { http_storage_get } from "./http_storage_get.mjs";
 import { bible_storage_path_copyrights } from "./bible_storage_path_copyrights.mjs";
@@ -53,7 +54,7 @@ export function app_memorize_refresh_settings(context) {
           let destination = bible_storage_path_copyrights();
           let copyrights = await http_storage_get(destination);
           let { copyright } = object_property_get(copyrights, version_code);
-          if (string_includes_not()) {
+          if (!string_includes()) {
             await app_memorize_refresh_memorize_load(context);
           }
         });
