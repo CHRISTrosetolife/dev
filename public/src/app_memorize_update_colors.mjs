@@ -5,7 +5,7 @@ import { html_style_visible } from "./html_style_visible.mjs";
 import { html_scroll_center } from "./html_scroll_center.mjs";
 import { list_get } from "./list_get.mjs";
 export function app_memorize_update_colors(context) {
-  app_memorize_save_get();
+  let save = app_memorize_save_get(context);
   let current_verse = list_get(context.verse_elements, save.verse_index);
   let { verse_element, token_objects } = current_verse;
   let current_token = list_get(token_objects, context.token_index);
