@@ -34,7 +34,7 @@ export function app_memorize_group_current_set(context, g, changed) {
   context.token_index = 0;
   if (changed) {
     save.verse_index = 0;
+    save.mistakes = false;
   }
-  save.mistakes = false;
   app_memorize_save(context);
 }
