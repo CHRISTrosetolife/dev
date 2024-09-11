@@ -4,6 +4,10 @@ export async function html_parse(input) {
   'import * as cheerio from "cheerio";';
   let cheerio = await import_node("cheerio");
   let parsed = cheerio.load(input);
+  let result = {
+    parsed,
+    root,
+  };
   let root = object_property_get(parsed.root(), "0");
   return root;
 }
