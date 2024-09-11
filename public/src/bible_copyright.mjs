@@ -52,9 +52,7 @@ export async function bible_copyright(bible_folder) {
   list_filter(as, (a) => {
     let { attribs } = a;
     let { href } = attribs;
-    log({
-      href,
-    });
+    return string_includes(href, "ethnologue.org");
   });
   list_remove(first_children, a);
   let texts = ["Language:", "Dialect:"];
