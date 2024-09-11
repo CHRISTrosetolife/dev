@@ -27,7 +27,7 @@ export async function bible_copyright(bible_folder) {
   let title = html_parse_visit_tag_single(main, "h2");
   let children = html_parse_children(main);
   let filtered = list_copy(children);
-  each(["h1", "h2", "div", "ul"], (tag) => {
+  each(["h1", "h2", "div"], (tag) => {
     let tags = list_filter(children, (c) => html_parse_tag(c, tag));
     each(tags, (tag) => {
       list_remove(filtered, tag);
