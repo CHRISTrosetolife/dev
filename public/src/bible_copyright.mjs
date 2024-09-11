@@ -1,5 +1,4 @@
 import { html_parse_text } from "./html_parse_text.mjs";
-import { list_map } from "./list_map.mjs";
 import { log } from "./log.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { list_copy } from "./list_copy.mjs";
@@ -33,5 +32,5 @@ export async function bible_copyright(bible_folder) {
   log({
     filtered,
   });
-  return list_map(filtered, html_parse_text);
+  return list_filter(filtered, (f) => string_empty_not(html_parse_text(f)));
 }
