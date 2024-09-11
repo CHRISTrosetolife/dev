@@ -70,12 +70,7 @@ export async function app_memorize_on_keydown(context, key) {
       } else {
         save.pattern_index++;
         app_memorize_save(context);
-        if (
-          greater_than_equal(
-            context.save.pattern_index,
-            context.patterns_length,
-          )
-        ) {
+        if (greater_than_equal(save.pattern_index, context.patterns_length)) {
           if (context.group_next) {
             context.group_next({
               context,
