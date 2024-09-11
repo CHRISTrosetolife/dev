@@ -39,7 +39,7 @@ export async function bible_copyright(bible_folder) {
     filtered,
     (f) =>
       string_empty_not_is(string_trim_whitespace(html_parse_text(f))) &&
-      list_all(string_split_comma(f), (s) => integer_parse_try(s) !== null),
+      !list_all(string_split_comma(f), (s) => integer_parse_try(s) === null),
   );
   log({
     filtered2,
