@@ -44,15 +44,15 @@ export async function bible_copyright(bible_folder) {
     let trimmed = string_trim_whitespace(html_parse_text(f));
     return string_empty_not_is(trimmed) && !string_date_is(trimmed);
   });
-  each(filtered2, (first) => {
-    log(html_parse_outer(parsed, first));
-    let as = html_parse_visit_tag_list(first, "a");
+  each(filtered2, (f) => {
+    log(html_parse_outer(parsed, f));
+    let as = html_parse_visit_tag_list(f, "a");
     let languages = list_filter(as, (a) => {
       let { attribs } = a;
       let { href } = attribs;
       return string_includes(href, "ethnologue.org");
     });
-    let first_children = html_parse_children(first);
+    let first_children = html_parse_children(f);
     list_remove_multiple(first_children, languages);
     let texts = ["Language:", "Dialect:"];
     let filtered3 = list_filter(first_children, (c) =>
