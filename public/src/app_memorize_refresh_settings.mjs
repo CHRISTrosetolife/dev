@@ -52,7 +52,7 @@ export function app_memorize_refresh_settings(context) {
           app_memorize_save(context);
           let destination = bible_storage_path_copyrights();
           let copyrights = await http_storage_get(destination);
-          let copyright = object_property_get(copyrights, version_code);
+          let { copyright } = object_property_get(copyrights, version_code);
           await app_memorize_refresh_memorize_load(context);
         });
       });
