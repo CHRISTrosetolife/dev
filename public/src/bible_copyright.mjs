@@ -1,4 +1,3 @@
-import { html_remove_multiple } from "./html_remove_multiple.mjs";
 import { html_parse_visit_tag_list } from "./html_parse_visit_tag_list.mjs";
 import { log } from "./log.mjs";
 import { list_remove_multiple } from "./list_remove_multiple.mjs";
@@ -12,6 +11,7 @@ import { list_map } from "./list_map.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 import { list_remove } from "./list_remove.mjs";
+import { list_copy } from "./list_copy.mjs";
 import { html_parse_tag } from "./html_parse_tag.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { each } from "./each.mjs";
@@ -34,17 +34,18 @@ export async function bible_copyright(bible_folder) {
   let name = html_parse_visit_tag_single(main, "h1");
   let title = html_parse_visit_tag_single(main, "h2");
   let children = html_parse_children(main);
+  let filtered = list_copy(children);
   each(["h1", "h2", "div"], (tag) => {
     let tags = list_filter(children, (c) => html_parse_tag(c, tag));
-    html_remove_multiple(tags);
+    list_remove_multiple(filtered, tags);
   });
   let tnav = html_parse_visit_class_single(main, "tnav");
-  list_remove(children, tnav);
-  let filtered = list_filter(children, (f) => {
+  list_remove(filtered, tnav);
+  let filtered2 = list_filter(filtered, (f) => {
     let trimmed = string_trim_whitespace(html_parse_text(f));
     return string_empty_not_is(trimmed) && !string_date_is(trimmed);
   });
-  let first = list_first(filtered);
+  let first = list_first(filtered2);
   let first_children = html_parse_children(first);
   log(html_parse_outer(parsed, first));
   let as = html_parse_visit_tag_list(first, "a");
@@ -55,12 +56,12 @@ export async function bible_copyright(bible_folder) {
   });
   list_remove_multiple(first_children, languages);
   let texts = ["Language:", "Dialect:"];
-  let filtered2 = list_filter(first_children, (c) =>
+  let filtered3 = list_filter(first_children, (c) =>
     list_any(texts, (t) => string_includes(html_parse_text(c), t)),
   );
-  html_remove_multiple(filtered2);
+  list_remove_multiple(first_children, filtered3);
   log({
     c: list_map(first_children, (f) => html_parse_outer(parsed, f)),
   });
-  return list_map(filtered, (f) => html_parse_outer(parsed, f));
+  return list_map(filtered2, (f) => html_parse_outer(parsed, f));
 }
