@@ -63,7 +63,6 @@ export async function app_memorize_refresh_settings(context) {
           version_code,
         );
         html_button_width_full_text_click(root, name, async function () {
-          alert(1);
           object_merge(save, {
             version_code,
           });
