@@ -1,3 +1,4 @@
+import { list_any } from "./list_any.mjs";
 import { http_cache_parse_parsed } from "./http_cache_parse_parsed.mjs";
 import { html_parse_outer } from "./html_parse_outer.mjs";
 import { html_parse_visit_class_single } from "./html_parse_visit_class_single.mjs";
@@ -48,7 +49,7 @@ export async function bible_copyright(bible_folder) {
   let first_children = html_parse_children(first);
   let a = html_parse_visit_tag_single(main, "a");
   let texts = ["Language:", "Dialect:"];
-  list_filter(first_children, string_includes(html_parse_text()));
+  list_filter(first_children, list_any(string_includes(html_parse_text())));
   log({
     text: html_parse_text(first),
     first: html_parse_children(first),
