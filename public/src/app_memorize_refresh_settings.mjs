@@ -1,3 +1,4 @@
+import { app_memorize_version_code_get } from "./app_memorize_version_code_get.mjs";
 import { html_button_width_full_text_click_next } from "./html_button_width_full_text_click_next.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { each } from "./each.mjs";
@@ -39,6 +40,7 @@ export function app_memorize_refresh_settings(context) {
   html_button_width_full_text_click_back(root, async () => {
     await app_memorize_refresh_memorize(context);
   });
+  app_memorize_version_code_get();
   let book_code = app_memorize_book_code_get(context);
   html_button_width_full_text_click(
     root,
