@@ -1,3 +1,4 @@
+import { string_trim } from "./string_trim.mjs";
 import { log } from "./log.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
@@ -32,7 +33,7 @@ export async function bible_copyright(bible_folder) {
     });
   });
   let filtered2 = list_filter(filtered, (f) =>
-    string_empty_not_is(html_parse_text(f)),
+    string_empty_not_is(string_trim(html_parse_text(f))),
   );
   log({
     filtered2,
