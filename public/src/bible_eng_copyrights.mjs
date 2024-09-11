@@ -2,7 +2,6 @@ import { bible_eng_versions } from "./bible_eng_versions.mjs";
 import { list_map_async } from "./list_map_async.mjs";
 import { bible_copyright } from "./bible_copyright.mjs";
 import { log } from "./log.mjs";
-import { bible_eng_versions_each } from "./bible_eng_versions_each.mjs";
 export async function bible_eng_copyrights() {
   await list_map_async(
     await bible_eng_versions(),
@@ -16,5 +15,4 @@ export async function bible_eng_copyrights() {
       });
     },
   );
-  await bible_eng_versions_each();
 }
