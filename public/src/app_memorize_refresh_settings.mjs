@@ -78,7 +78,8 @@ export async function app_memorize_refresh_settings(context) {
             });
             html_button_width_full_text_click_next(
               root,
-              async () => await app_memorize_refresh_memorize_load(context),
+              async () =>
+                await app_memorize_refresh_memorize_load_settings(context),
             );
           }
         });
