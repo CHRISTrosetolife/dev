@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { app_memorize_save_get } from "./app_memorize_save_get.mjs";
 import { app_memorize_keyboard_reset } from "./app_memorize_keyboard_reset.mjs";
 import { html_style_success } from "./html_style_success.mjs";
@@ -59,9 +58,6 @@ export async function app_memorize_on_keydown(context, key) {
     if (greater_than_equal(context.token_index, tokens_length)) {
       save.verse_index++;
       app_memorize_save(context);
-      log({
-        save,
-      });
       context.token_index = 0;
     }
     let group_current_length = list_size(save.group_current);
