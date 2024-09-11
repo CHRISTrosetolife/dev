@@ -48,7 +48,10 @@ export function app_memorize_refresh_settings(context) {
       );
       let copyrights = await http_storage_get(destination);
       await bible_eng_versions_each((version_code) => {
-        let { copyright, name } = object_property_get(copyrights, version_code);
+        let { copyright, name, description } = object_property_get(
+          copyrights,
+          version_code,
+        );
         html_button_text_click(root, name, async function () {
           object_merge(save, {
             version_code,
@@ -57,6 +60,8 @@ export function app_memorize_refresh_settings(context) {
           let destination = bible_storage_path_copyrights();
           if (!string_includes(copyright, "Public Domain")) {
             html_clear_scroll_top_context(context);
+            html_p_text(root, copyright);
+            html_p_text(root, copyright);
             let copyright_element = html_p_text(root, copyright);
             await app_memorize_refresh_memorize_load(context);
           }
