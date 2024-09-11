@@ -53,7 +53,7 @@ export async function bible_copyright(bible_folder) {
     let { attribs } = a;
     let { href } = attribs;
     log({
-      attribs,
+      href,
     });
   });
   list_remove(first_children, a);
