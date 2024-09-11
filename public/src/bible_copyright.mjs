@@ -22,7 +22,6 @@ import { list_size_2 } from "./list_size_2.mjs";
 import { assert } from "./assert.mjs";
 import { html_parse_visit_class_list } from "./html_parse_visit_class_list.mjs";
 import { bible_url_htm } from "./bible_url_htm.mjs";
-import { list_first } from "./list_first.mjs";
 import { string_includes } from "./string_includes.mjs";
 export async function bible_copyright(bible_folder) {
   let url = bible_url_htm(bible_folder, "copyright");
@@ -61,7 +60,6 @@ export async function bible_copyright(bible_folder) {
     );
     list_remove_multiple(first_children, filtered3);
   });
-  let first = list_first(filtered2);
   log({
     c: list_map(first_children, (f) => html_parse_outer(parsed, f)),
   });
