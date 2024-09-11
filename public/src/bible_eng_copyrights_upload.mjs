@@ -1,5 +1,5 @@
+import { storage_upload_object } from "./storage_upload_object.mjs";
 import { bible_storage_path } from "./bible_storage_path.mjs";
-import { storage_upload_object_bible_engbsb } from "./storage_upload_object_bible_engbsb.mjs";
 import { bible_eng_versions_each } from "./bible_eng_versions_each.mjs";
 import { bible_copyright } from "./bible_copyright.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -11,5 +11,5 @@ export async function bible_eng_copyrights_upload() {
     return c;
   });
   let destination = bible_storage_path("copyrights");
-  await storage_upload_object_bible_engbsb(copyrights, destination);
+  await storage_upload_object(copyrights, destination);
 }
