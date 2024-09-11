@@ -58,5 +58,5 @@ export async function bible_copyright(bible_folder) {
     );
     list_remove_multiple(first_children, filtered3);
   });
-  return html_parse_outer(parsed, main);
+  let copyright = html_parse_outer(parsed, main);
 }
