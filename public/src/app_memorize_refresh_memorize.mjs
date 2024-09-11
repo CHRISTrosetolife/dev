@@ -104,7 +104,7 @@ export async function app_memorize_refresh_memorize(context) {
           }
           if (
             (equal(token_pattern, "0") && vi > save.verse_index) ||
-            (save.verse_index === vi && ti < save.token_index)
+            (save.verse_index === vi && ti > save.token_index)
           ) {
             html_style_hidden(token_element);
           }
