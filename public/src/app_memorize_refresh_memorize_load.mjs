@@ -16,7 +16,7 @@ import { object_property_initialize } from "./object_property_initialize.mjs";
 import { app_memorize_save_get } from "./app_memorize_save_get.mjs";
 export async function app_memorize_refresh_memorize_load(context) {
   let save = app_memorize_save_get(context);
-  object_property_exists(save, "chapter");
+  let continuing = object_property_exists(save, "chapter");
   let book_code = object_property_initialize(save, "book_code", "JHN");
   let chapter = object_property_initialize(save, "chapter", "19");
   app_memorize_save(context);
