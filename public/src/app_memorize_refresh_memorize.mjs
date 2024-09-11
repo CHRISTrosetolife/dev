@@ -38,7 +38,7 @@ export async function app_memorize_refresh_memorize(context) {
   await app_memorize_refresh_memorize_load(context);
   save.verse_index = 0;
   save.mistakes = false;
-  object_property_initialize();
+  object_property_initialize(save, "verse_index", 0);
   context.token_index = 0;
   context.previous_spacer2 = undefined;
   context.previous_token_element = undefined;
