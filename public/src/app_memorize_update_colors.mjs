@@ -16,10 +16,10 @@ export function app_memorize_update_colors(context) {
   if (undefined_not_is(context.previous_spacer2)) {
     html_style_hidden(context.previous_spacer2);
   }
-  let previous_token_element = context;
-  if (undefined_not_is(context)) {
-    html_style_visible(context.previous_token_element);
-    html_style_font_color_default_set(current_token);
+  let { previous_token_element } = context;
+  if (undefined_not_is(previous_token_element)) {
+    html_style_visible(previous_token_element);
+    html_style_font_color_default_set(previous_token_element);
   }
   context.previous_spacer2 = spacer2;
   context.previous_token_element = token_element;
