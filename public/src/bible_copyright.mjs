@@ -45,6 +45,7 @@ export async function bible_copyright(bible_folder) {
   });
   let first = list_first(filtered2);
   let first_children = html_parse_children(first);
+  let link = html_parse_visit_class_single(main, "tnav");
   log({
     text: html_parse_text(first),
     first: html_parse_children(first),
