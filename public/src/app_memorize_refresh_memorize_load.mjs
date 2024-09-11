@@ -1,3 +1,4 @@
+import { app_memorize_version_code_get } from "./app_memorize_version_code_get.mjs";
 import { bible_storage_version_http_get } from "./bible_storage_version_http_get.mjs";
 import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { app_memorize_group_current_set } from "./app_memorize_group_current_set.mjs";
@@ -35,7 +36,7 @@ export async function app_memorize_refresh_memorize_load(context) {
   if (load) {
     let verses = await bible_storage_version_http_get(
       chapter_code,
-      object_property_initialize(save, "version_code", "engbsb"),
+      app_memorize_version_code_get(context),
     );
     object_merge(context, {
       verses,
