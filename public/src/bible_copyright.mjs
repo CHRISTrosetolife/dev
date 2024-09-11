@@ -1,3 +1,4 @@
+import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
 import { list_second } from "./list_second.mjs";
 import { list_size_2 } from "./list_size_2.mjs";
 import { assert } from "./assert.mjs";
@@ -10,4 +11,5 @@ export async function bible_copyright(bible_folder) {
   let mains = html_parse_visit_class_list(root, "main");
   assert(list_size_2, [mains]);
   let main = list_second(mains);
+  let name = html_parse_visit_tag_single;
 }
