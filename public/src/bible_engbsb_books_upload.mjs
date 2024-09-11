@@ -1,3 +1,4 @@
+import { storage_upload_object_bible_engbsb } from "./storage_upload_object_bible_engbsb.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { bible_books_names_lookup } from "./bible_books_names_lookup.mjs";
 import { string_prefix_without_multiple } from "./string_prefix_without_multiple.mjs";
@@ -34,6 +35,7 @@ export async function bible_engbsb_books_upload() {
     );
     list_add(book.chapters, chapter_name);
   });
+  await storage_upload_object_bible_engbsb();
   let destination = bible_engbsb_storage_path_file("books");
   await storage_upload_object(
     {
