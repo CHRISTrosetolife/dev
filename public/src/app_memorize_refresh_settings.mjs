@@ -8,7 +8,6 @@ import { object_property_get } from "./object_property_get.mjs";
 import { http_storage_get } from "./http_storage_get.mjs";
 import { bible_storage_path_copyrights } from "./bible_storage_path_copyrights.mjs";
 import { bible_eng_versions_each } from "./bible_eng_versions_each.mjs";
-import { html_button_text_click } from "./html_button_text_click.mjs";
 import { app_memorize_refresh_memorize_load } from "./app_memorize_refresh_memorize_load.mjs";
 import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
 import { app_memorize_chapter_get } from "./app_memorize_chapter_get.mjs";
@@ -63,7 +62,7 @@ export async function app_memorize_refresh_settings(context) {
           copyrights,
           version_code,
         );
-        html_button_text_click(root, name, async function () {
+        html_button_width_full_text_click(root, name, async function () {
           object_merge(save, {
             version_code,
           });
