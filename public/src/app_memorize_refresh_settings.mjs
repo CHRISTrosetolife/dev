@@ -67,8 +67,10 @@ export function app_memorize_refresh_settings(context) {
               html_p_text(root, text);
               html_hr(root);
             });
-            html_button_width_full_text_click_next(root, () => {});
-            await app_memorize_refresh_memorize_load(context);
+            html_button_width_full_text_click_next(
+              root,
+              async () => await app_memorize_refresh_memorize_load(context),
+            );
           }
         });
       });
