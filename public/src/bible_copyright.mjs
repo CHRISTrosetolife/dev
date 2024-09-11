@@ -1,3 +1,4 @@
+import { html_parse_visit_tag_list } from "./html_parse_visit_tag_list.mjs";
 import { log } from "./log.mjs";
 import { list_remove_multiple } from "./list_remove_multiple.mjs";
 import { list_any } from "./list_any.mjs";
@@ -47,7 +48,7 @@ export async function bible_copyright(bible_folder) {
   let first = list_first(filtered2);
   let first_children = html_parse_children(first);
   log(html_parse_outer(parsed, first));
-  let a = html_parse_visit_tag_single(first, "a");
+  let as = html_parse_visit_tag_list(first, "a");
   list_remove(first_children, a);
   let texts = ["Language:", "Dialect:"];
   let filtered3 = list_filter(first_children, (c) =>
