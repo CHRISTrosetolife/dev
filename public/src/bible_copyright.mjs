@@ -58,7 +58,7 @@ export async function bible_copyright(bible_folder) {
   let filtered2 = list_filter(first_children, (c) =>
     list_any(texts, (t) => string_includes(html_parse_text(c), t)),
   );
-  list_remove_multiple(first_children, filtered2);
+  html_remove_multiple(filtered2);
   log({
     c: list_map(first_children, (f) => html_parse_outer(parsed, f)),
   });
