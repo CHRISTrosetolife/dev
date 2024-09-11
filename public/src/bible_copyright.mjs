@@ -55,6 +55,7 @@ export async function bible_copyright(bible_folder) {
   log({
     text: html_parse_text(first),
     first: html_parse_children(first),
+    filtered3,
   });
   return list_map(filtered2, (f) => html_parse_outer(parsed, f));
 }
