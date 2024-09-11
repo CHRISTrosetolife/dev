@@ -45,7 +45,6 @@ export async function bible_copyright(bible_folder) {
     return string_empty_not_is(trimmed) && !string_date_is(trimmed);
   });
   each(filtered2, (f) => {
-    log(html_parse_outer(parsed, f));
     let as = html_parse_visit_tag_list(f, "a");
     let languages = list_filter(as, (a) => {
       let { attribs } = a;
