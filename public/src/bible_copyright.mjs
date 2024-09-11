@@ -45,6 +45,7 @@ export async function bible_copyright(bible_folder) {
     let trimmed = string_trim_whitespace(html_parse_text(f));
     return string_empty_not_is(trimmed) && !string_date_is(trimmed);
   });
+  each(list, (item) => {});
   let first = list_first(filtered2);
   log(html_parse_outer(parsed, first));
   let as = html_parse_visit_tag_list(first, "a");
