@@ -7,7 +7,7 @@ import { equal } from "./equal.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
-export function app_memorize_group_current_set(context, g) {
+export function app_memorize_group_current_set(context, g, changed) {
   let save = app_memorize_save_get(context);
   if (
     equal_json(save.group_current, g) &&

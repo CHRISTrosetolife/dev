@@ -79,7 +79,7 @@ export async function app_memorize_on_keydown(context, key) {
             return;
           }
           let group_next = app_memorize_group_next(context);
-          app_memorize_group_current_set(context, group_next);
+          app_memorize_group_current_set(context, group_next, false);
         }
       }
       await app_memorize_refresh_memorize(context);
