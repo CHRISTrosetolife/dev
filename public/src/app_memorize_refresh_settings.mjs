@@ -1,3 +1,5 @@
+import { html_button_text_click } from "./html_button_text_click.mjs";
+import { each } from "./each.mjs";
 import { app_memorize_refresh_memorize_load } from "./app_memorize_refresh_memorize_load.mjs";
 import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
 import { app_memorize_chapter_get } from "./app_memorize_chapter_get.mjs";
@@ -34,6 +36,14 @@ export function app_memorize_refresh_settings(context) {
     root,
     string_combine_multiple(["translation "]),
     () => {
+      html_clear_scroll_top(root);
+      lambda_before(root);
+      each(books, (book) => {
+        let { book_code } = book;
+        html_button_text_click(root, book_code, async function () {
+          await app_record_home_on_click(context, book_code);
+        });
+      });
       app_record_home_generic(
         context,
         () => {
