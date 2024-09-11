@@ -46,7 +46,6 @@ export async function bible_copyright(bible_folder) {
     return string_empty_not_is(trimmed) && !string_date_is(trimmed);
   });
   let first = list_first(filtered2);
-  let first_children = html_parse_children(first);
   log(html_parse_outer(parsed, first));
   let as = html_parse_visit_tag_list(first, "a");
   let languages = list_filter(as, (a) => {
@@ -54,6 +53,7 @@ export async function bible_copyright(bible_folder) {
     let { href } = attribs;
     return string_includes(href, "ethnologue.org");
   });
+  let first_children = html_parse_children(first);
   list_remove_multiple(first_children, languages);
   let texts = ["Language:", "Dialect:"];
   let filtered3 = list_filter(first_children, (c) =>
