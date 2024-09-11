@@ -36,7 +36,7 @@ export async function bible_copyright(bible_folder) {
   let filtered = list_copy(children);
   each(["h1", "h2", "div"], (tag) => {
     let tags = list_filter(children, (c) => html_parse_tag(c, tag));
-    list_remove_multiple(tags, filtered);
+    list_remove_multiple(filtered, tags);
   });
   let tnav = html_parse_visit_class_single(main, "tnav");
   list_remove(filtered, tnav);
@@ -51,7 +51,7 @@ export async function bible_copyright(bible_folder) {
   let filtered3 = list_filter(first_children, (c) =>
     list_any(texts, (t) => string_includes(html_parse_text(c), t)),
   );
-  each(filtered3, (f) => list_remove_multiple(first_children, f));
+  each(filtered3, (f) => list_remove_multiple(f, first_children));
   log({
     text: html_parse_text(first),
     first: html_parse_children(first),
