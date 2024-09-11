@@ -1,3 +1,4 @@
+import { html_clear_scroll_top_context } from "./html_clear_scroll_top_context.mjs";
 import { string_includes } from "./string_includes.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { http_storage_get } from "./http_storage_get.mjs";
@@ -55,6 +56,7 @@ export function app_memorize_refresh_settings(context) {
           let copyrights = await http_storage_get(destination);
           let { copyright } = object_property_get(copyrights, version_code);
           if (!string_includes(copyright, "Public Domain")) {
+            html_clear_scroll_top_context(context);
             await app_memorize_refresh_memorize_load(context);
           }
         });
