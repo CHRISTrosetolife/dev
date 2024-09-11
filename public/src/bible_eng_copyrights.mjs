@@ -3,7 +3,7 @@ import { list_map_async } from "./list_map_async.mjs";
 import { bible_copyright } from "./bible_copyright.mjs";
 import { log } from "./log.mjs";
 export async function bible_eng_copyrights() {
-  await list_map_async(
+  let mapped = await list_map_async(
     bible_eng_versions(),
     async function lambda(bible_folder) {
       log({
