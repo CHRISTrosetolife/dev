@@ -1,5 +1,5 @@
+import { bible_eng_versions_each } from "./bible_eng_versions_each.mjs";
 import { html_button_text_click } from "./html_button_text_click.mjs";
-import { each } from "./each.mjs";
 import { app_memorize_refresh_memorize_load } from "./app_memorize_refresh_memorize_load.mjs";
 import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
 import { app_memorize_chapter_get } from "./app_memorize_chapter_get.mjs";
@@ -35,10 +35,10 @@ export function app_memorize_refresh_settings(context) {
   html_button_width_full_text_click(
     root,
     string_combine_multiple(["translation "]),
-    () => {
+    async () => {
       app_memorize_settings_button_back_clear(context);
       html_p_text(root, "which book do you want to memorize from ?");
-      each(books, (book) => {
+      await bible_eng_versions_each((version_code) => {
         let { book_code } = book;
         html_button_text_click(root, book_code, async function () {
           await app_record_home_on_click(context, book_code);
