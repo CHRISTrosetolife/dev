@@ -1,3 +1,4 @@
+import { list_map } from "./list_map.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 import { list_remove } from "./list_remove.mjs";
@@ -32,4 +33,5 @@ export async function bible_copyright(bible_folder) {
   let filtered2 = list_filter(filtered, (f) =>
     string_empty_not_is(html_parse_text(f)),
   );
+  return list_map(filtered2, html_parse_text);
 }
