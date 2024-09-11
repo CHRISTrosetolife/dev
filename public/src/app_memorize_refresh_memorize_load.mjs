@@ -1,3 +1,4 @@
+import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { app_memorize_group_current_set } from "./app_memorize_group_current_set.mjs";
 import { list_index } from "./list_index.mjs";
 import { app_memorize_groups_get } from "./app_memorize_groups_get.mjs";
@@ -16,7 +17,7 @@ import { object_property_initialize } from "./object_property_initialize.mjs";
 import { app_memorize_save_get } from "./app_memorize_save_get.mjs";
 export async function app_memorize_refresh_memorize_load(context) {
   let save = app_memorize_save_get(context);
-  let continuing = object_property_exists(save, "chapter");
+  let continuing = object_property_exists_not(save, "chapter");
   let book_code = object_property_initialize(save, "book_code", "JHN");
   let chapter = object_property_initialize(save, "chapter", "19");
   app_memorize_save(context);
