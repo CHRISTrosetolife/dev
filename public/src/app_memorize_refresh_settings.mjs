@@ -50,7 +50,7 @@ export function app_memorize_refresh_settings(context) {
           });
           app_memorize_save(context);
           let destination = bible_storage_path_copyrights();
-          let verses = await http_storage_get(file_path);
+          let copyrights = await http_storage_get(destination);
           await app_memorize_refresh_memorize_load(context);
         });
       });
