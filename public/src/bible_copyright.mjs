@@ -1,3 +1,4 @@
+import { object_property_delete_all } from "./object_property_delete_all.mjs";
 import { html_parse_visit_tag_list } from "./html_parse_visit_tag_list.mjs";
 import { list_remove_multiple } from "./list_remove_multiple.mjs";
 import { list_any } from "./list_any.mjs";
@@ -28,7 +29,7 @@ export async function bible_copyright(bible_folder) {
   assert(list_size_2, [mains]);
   let main = list_second(mains);
   let { attribs } = main;
-  object_property_all_delete(attribs);
+  object_property_delete_all(attribs);
   let name = html_parse_visit_tag_single(main, "h1");
   let h2s = html_parse_visit_tag_list(main, "h2");
   let children = html_parse_children(main);
