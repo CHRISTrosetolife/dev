@@ -1,3 +1,4 @@
+import { app_memorize_refresh_memorize_load_settings } from "./app_memorize_refresh_memorize_load_settings.mjs";
 import { app_memorize_version_code_get } from "./app_memorize_version_code_get.mjs";
 import { html_button_width_full_text_click_next } from "./html_button_width_full_text_click_next.mjs";
 import { html_hr } from "./html_hr.mjs";
@@ -68,8 +69,7 @@ export async function app_memorize_refresh_settings(context) {
           });
           app_memorize_save(context);
           if (string_includes(copyright, "Public Domain")) {
-            await app_memorize_refresh_memorize_load(context);
-            await app_memorize_refresh_settings(context);
+            await app_memorize_refresh_memorize_load_settings(context);
           } else {
             html_clear_scroll_top_context(context);
             each([name, description, copyright], (text) => {
