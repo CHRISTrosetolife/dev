@@ -1,4 +1,4 @@
-import { path_join } from "./path_join.mjs";
+import { string_combine } from "./string_combine.mjs";
 export function bible_engbsb_storage_path() {
-  return path_join(["bible", "engbsb/"]);
+  return string_combine("bible/", "engbsb/");
 }
