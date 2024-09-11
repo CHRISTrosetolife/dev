@@ -1,3 +1,4 @@
+import { html_parse_visit_class_single } from "./html_parse_visit_class_single.mjs";
 import { string_date_is } from "./string_date_is.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 import { log } from "./log.mjs";
@@ -33,6 +34,8 @@ export async function bible_copyright(bible_folder) {
       list_remove(filtered, tag);
     });
   });
+  let tnav = html_parse_visit_class_single(root, "tnav");
+  list_remove(filtered, tnav);
   let filtered2 = list_filter(filtered, (f) => {
     let trimmed = string_trim_whitespace(html_parse_text(f));
     return string_empty_not_is(trimmed) && !string_date_is(trimmed);
