@@ -9,10 +9,10 @@ import { string_suffix_without } from "./string_suffix_without.mjs";
 export async function bible_chapters(bible_folder, book_name) {
   let url = bible_url_htm(bible_folder, book_name);
   let root = await html_cache_parse(url);
+  let extension = ".htm";
   let hrefs = html_parse_a_hrefs(root, function condition(href) {
     if (string_starts_with(href, book_name)) {
       let without = string_prefix_without(href, book_name);
-      let extension = ".htm";
       without = string_suffix_without(without, extension);
       let i = integer_parse(without);
       if (i !== 0) {
