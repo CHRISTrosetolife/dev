@@ -10,6 +10,6 @@ export async function bible_eng_copyrights() {
     });
     let url = bible_url_htm(bible_folder, "copyright");
     let root = await html_cache_parse(url);
-    html_parse_visit_class_list(root);
+    return html_parse_visit_class_list(root, "main");
   });
 }
