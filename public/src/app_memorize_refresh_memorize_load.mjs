@@ -32,6 +32,7 @@ export async function app_memorize_refresh_memorize_load(context) {
     let f = list_first(books);
     book_code = object_property_get(f, "book_code");
     let chapters = object_property_get(f, "chapters");
+    chapters = list_first(chapters);
   }
   app_memorize_save(context);
   let load = true;
