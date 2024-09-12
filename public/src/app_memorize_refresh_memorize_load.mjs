@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { app_memorize_version_code_get } from "./app_memorize_version_code_get.mjs";
 import { bible_storage_version_http_get } from "./bible_storage_version_http_get.mjs";
 import { object_property_exists_not } from "./object_property_exists_not.mjs";
@@ -30,6 +31,7 @@ export async function app_memorize_refresh_memorize_load(context) {
       load = false;
     }
   }
+  log({});
   object_merge(context, {
     chapter_code,
   });
