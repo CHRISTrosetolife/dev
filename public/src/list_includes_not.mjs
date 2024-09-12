@@ -1,4 +1,4 @@
 import { list_includes } from "./list_includes.mjs";
-export function list_includes_not(existing, value2) {
-  return !list_includes(existing, value2);
+export function list_includes_not(list, search) {
+  return !list_includes(list, search);
 }
