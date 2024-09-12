@@ -73,7 +73,7 @@ export async function app_memorize_refresh_memorize_load(context) {
       "group_current",
       list_first(context.groups),
     );
-    list_any(group, (i) => list_includes_not(verses));
+    list_any(group, (i) => list_includes_not(object_keys(verses)));
     html_hash({
       verses: (value) => {
         group = app_memorize_groups_get(context, value);
