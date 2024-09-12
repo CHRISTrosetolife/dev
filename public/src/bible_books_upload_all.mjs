@@ -7,6 +7,6 @@ export async function bible_books_upload_all() {
     if (list_includes(["engbsb", "engBBE"])) {
       return;
     }
-    await bible_books_upload(bible_folder, book_name);
+    await bible_books_upload(bible_folder);
   }
 }
