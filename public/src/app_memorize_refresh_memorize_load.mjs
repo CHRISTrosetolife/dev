@@ -1,3 +1,4 @@
+import { object_properties } from "./object_properties.mjs";
 import { list_any } from "./list_any.mjs";
 import { list_includes_not } from "./list_includes_not.mjs";
 import { list_find_property_or } from "./list_find_property_or.mjs";
@@ -73,7 +74,7 @@ export async function app_memorize_refresh_memorize_load(context) {
       "group_current",
       list_first(context.groups),
     );
-    list_any(group, (i) => list_includes_not(object_keys(verses)));
+    list_any(group, (i) => list_includes_not(object_properties(verses)));
     html_hash({
       verses: (value) => {
         group = app_memorize_groups_get(context, value);
