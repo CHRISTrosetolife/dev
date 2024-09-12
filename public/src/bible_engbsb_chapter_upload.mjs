@@ -4,7 +4,6 @@ import { storage_upload_object_bible_engbsb } from "./storage_upload_object_bibl
 export async function bible_engbsb_chapter_upload(chapter_name) {
   let bible_folder = "engbsb";
   let data = await bible_chapter(bible_folder, chapter_name);
-  let version_code = "engbsb";
-  let destination = bible_storage_path_file_version(key, version_code);
+  let destination = bible_storage_path_file_version(key, bible_folder);
   await storage_upload_object_bible_engbsb(chapter_name, data);
 }
