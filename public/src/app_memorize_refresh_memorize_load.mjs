@@ -27,14 +27,10 @@ export async function app_memorize_refresh_memorize_load(context) {
   log({
     books,
   });
-  let book = list_find_property_or(books, "book_code", null);
-  if (book === null) {
-    book = list_first(books);
-    book_code = object_property_get(f, "book_code");
-    let chapters = object_property_get(f, "chapters");
-    chapter = list_first(chapters);
-  } else {
-  }
+  let book = list_find_property_or(books, "book_code", list_first(books));
+  book_code = object_property_get(f, "book_code");
+  let chapters = object_property_get(f, "chapters");
+  chapter = list_first(chapters);
   app_memorize_save(context);
   let load = true;
   let chapter_code = app_gs_bible_chapter_name(book_code, chapter);
