@@ -28,6 +28,8 @@ export async function app_memorize_refresh_memorize_load(context) {
     books,
   });
   let book = list_find_property_or(books, "book_code", null);
+  if (book === null) {
+  }
   app_memorize_save(context);
   let load = true;
   let chapter_code = app_gs_bible_chapter_name(book_code, chapter);
