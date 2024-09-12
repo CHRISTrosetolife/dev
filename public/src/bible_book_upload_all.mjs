@@ -8,6 +8,9 @@ export async function bible_book_upload_all(bible_folder) {
       bible_folder,
       book_name,
     });
-    await bible_book_upload(bible_folder, book_name);
+    await lambda(book_name);
   });
+  async function lambda(book_name) {
+    await bible_book_upload(bible_folder, book_name);
+  }
 }
