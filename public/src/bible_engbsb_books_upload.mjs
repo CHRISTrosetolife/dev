@@ -1,3 +1,5 @@
+import { storage_upload_object } from "./storage_upload_object.mjs";
+import { bible_engbsb_storage_path_file } from "./bible_engbsb_storage_path_file.mjs";
 import { storage_upload_object_bible_engbsb } from "./storage_upload_object_bible_engbsb.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { bible_books_names_lookup } from "./bible_books_names_lookup.mjs";
@@ -36,4 +38,6 @@ export async function bible_engbsb_books_upload() {
   await storage_upload_object_bible_engbsb("books", {
     books,
   });
+  let destination = bible_engbsb_storage_path_file(key);
+  await storage_upload_object(data, destination);
 }
