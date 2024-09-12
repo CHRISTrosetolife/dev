@@ -72,6 +72,7 @@ export async function app_memorize_refresh_memorize_load(context) {
       "group_current",
       list_first(context.groups),
     );
+    log({});
     html_hash({
       verses: (value) => {
         group = app_memorize_groups_get(context, value);
