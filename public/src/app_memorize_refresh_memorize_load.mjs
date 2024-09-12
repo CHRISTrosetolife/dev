@@ -36,14 +36,14 @@ export async function app_memorize_refresh_memorize_load(context) {
     save,
     context,
   });
-  debugger;
   object_merge(context, {
     chapter_code,
   });
   if (load) {
+    let version_code = app_memorize_version_code_get(context);
     let verses = await bible_storage_version_http_get(
       chapter_code,
-      app_memorize_version_code_get(context),
+      version_code,
     );
     object_merge(context, {
       verses,
