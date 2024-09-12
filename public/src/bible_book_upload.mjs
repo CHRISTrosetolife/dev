@@ -8,6 +8,6 @@ export async function bible_book_upload(bible_folder, book_name) {
       bible_folder,
       chapter,
     });
-    await bible_chapter_upload(chapter);
+    await bible_version_chapter_upload(chapter);
   });
 }
