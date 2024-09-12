@@ -22,6 +22,7 @@ export async function app_memorize_refresh_memorize_load(context) {
   let changed = object_property_exists_not(save, "chapter");
   let book_code = object_property_initialize(save, "book_code", "JHN");
   let chapter = object_property_initialize(save, "chapter", "19");
+  object_property_get(object, property_name);
   app_memorize_save(context);
   let load = true;
   let chapter_code = app_gs_bible_chapter_name(book_code, chapter);
