@@ -69,7 +69,7 @@ export async function app_memorize_refresh_settings(context) {
             version_code,
           });
           app_memorize_save(context);
-          await app_context_books_bible();
+          await app_context_books_bible(context);
           if (string_includes(copyright, "Public Domain")) {
             await app_memorize_refresh_memorize_load_settings(context);
           } else {
