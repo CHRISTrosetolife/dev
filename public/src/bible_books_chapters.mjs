@@ -8,12 +8,15 @@ export async function bible_books_chapters(bible_folder) {
       await each_async(
         await bible_chapters(bible_folder, book_code),
         async (chapter_code) => {
-          la({
-            book_code,
-            chapter_code,
-          });
+          lambda(la, book_code, chapter_code);
         },
       );
     });
   });
+  function lambda(la, book_code, chapter_code) {
+    la({
+      book_code,
+      chapter_code,
+    });
+  }
 }
