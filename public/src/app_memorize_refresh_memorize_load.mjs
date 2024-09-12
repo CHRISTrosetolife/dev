@@ -1,5 +1,4 @@
 import { list_indices } from "./list_indices.mjs";
-import { list_any } from "./list_any.mjs";
 import { list_includes_not } from "./list_includes_not.mjs";
 import { list_find_property_or } from "./list_find_property_or.mjs";
 import { log } from "./log.mjs";
@@ -74,7 +73,7 @@ export async function app_memorize_refresh_memorize_load(context) {
       "group_current",
       list_first(context.groups),
     );
-    list_any(group, (i) => list_includes_not(list_indices(verses), i));
+    if(list_any(group, (i) => list_includes_not(list_indices(verses), i)));
     html_hash({
       verses: (value) => {
         group = app_memorize_groups_get(context, value);
@@ -87,4 +86,3 @@ export async function app_memorize_refresh_memorize_load(context) {
     });
     app_memorize_group_current_set(context, group, changed);
   }
-}
