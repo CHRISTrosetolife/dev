@@ -5,13 +5,15 @@ import { each_async } from "./each_async.mjs";
 export async function bible_books_chapters(bible_folder) {
   return await list_adder_async(async (la) => {
     await bible_books_each(async (book_code) => {
-      let chapters = await bible_chapters(bible_folder, book_code);
-      await each_async(chapters, async (chapter_code) => {
-        la({
-          book_code,
-          chapter_code,
-        });
-      });
+      await each_async(
+        await bible_chapters(bible_folder, book_code),
+        async (chapter_code) => {
+          la({
+            book_code,
+            chapter_code,
+          });
+        },
+      );
     });
   });
 }
