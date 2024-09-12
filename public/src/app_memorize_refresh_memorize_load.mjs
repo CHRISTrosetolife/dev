@@ -29,7 +29,7 @@ export async function app_memorize_refresh_memorize_load(context) {
   });
   let book = list_find_property_or(books, "book_code", null);
   if (book === null) {
-    book_code = object_property_get(object, property_name);
+    book_code = object_property_get(list_first(books), "book_code");
   }
   app_memorize_save(context);
   let load = true;
