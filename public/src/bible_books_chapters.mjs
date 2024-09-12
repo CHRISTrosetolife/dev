@@ -11,12 +11,7 @@ export async function bible_books_chapters(bible_folder) {
           chapter_code,
         });
       }
-      await each_async(
-        await bible_chapters(bible_folder, book_code),
-        async (chapter_code) => {
-          lambda(chapter_code);
-        },
-      );
+      await each_async(await bible_chapters(bible_folder, book_code), lambda);
     });
   });
 }
