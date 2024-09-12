@@ -1,3 +1,4 @@
+import { list_find_property_or } from "./list_find_property_or.mjs";
 import { log } from "./log.mjs";
 import { app_memorize_version_code_get } from "./app_memorize_version_code_get.mjs";
 import { bible_storage_version_http_get } from "./bible_storage_version_http_get.mjs";
@@ -26,6 +27,7 @@ export async function app_memorize_refresh_memorize_load(context) {
   log({
     books,
   });
+  list_find_property_or(books, "book_code", null);
   app_memorize_save(context);
   let load = true;
   let chapter_code = app_gs_bible_chapter_name(book_code, chapter);
