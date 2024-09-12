@@ -1,3 +1,4 @@
+import { app_context_books_bible } from "./app_context_books_bible.mjs";
 import { app_memorize_refresh_memorize_load_settings } from "./app_memorize_refresh_memorize_load_settings.mjs";
 import { app_memorize_version_code_get } from "./app_memorize_version_code_get.mjs";
 import { html_button_width_full_text_click_next } from "./html_button_width_full_text_click_next.mjs";
@@ -68,6 +69,7 @@ export async function app_memorize_refresh_settings(context) {
             version_code,
           });
           app_memorize_save(context);
+          await app_context_books_bible();
           if (string_includes(copyright, "Public Domain")) {
             await app_memorize_refresh_memorize_load_settings(context);
           } else {
