@@ -74,7 +74,7 @@ export async function app_memorize_refresh_memorize_load(context) {
       "group_current",
       list_first(context.groups),
     );
-    list_any(group, (i) => list_includes_not(range(list_size(verses))));
+    list_any(group, (i) => list_includes_not(list_indices(verses)));
     html_hash({
       verses: (value) => {
         group = app_memorize_groups_get(context, value);
@@ -88,3 +88,7 @@ export async function app_memorize_refresh_memorize_load(context) {
     app_memorize_group_current_set(context, group, changed);
   }
 }
+function list_indices(list) {
+    return range(list_size(list));
+}
+
