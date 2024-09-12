@@ -31,7 +31,10 @@ export async function app_memorize_refresh_memorize_load(context) {
       load = false;
     }
   }
-  log({});
+  log({
+    load,
+    save,
+  });
   object_merge(context, {
     chapter_code,
   });
