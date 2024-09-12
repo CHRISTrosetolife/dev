@@ -31,16 +31,15 @@ export async function app_memorize_refresh_memorize_load(context) {
       load = false;
     }
   }
-  log({
-    load,
-    save,
-    context,
-  });
   object_merge(context, {
     chapter_code,
   });
   if (load) {
     let version_code = app_memorize_version_code_get(context);
+    log({
+      chapter_code,
+      version_code,
+    });
     let verses = await bible_storage_version_http_get(
       chapter_code,
       version_code,
