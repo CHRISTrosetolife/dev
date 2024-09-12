@@ -25,7 +25,12 @@ export async function app_memorize_refresh_memorize_load(context) {
   let book_code = object_property_initialize(save, "book_code", "JHN");
   let chapter = object_property_initialize(save, "chapter", "19");
   let books = object_property_get(context, "books");
-  let book = list_find_property_or(books, "book_code", list_first(books));
+  let book = list_find_property_or(
+    books,
+    "book_code",
+    book_code,
+    list_first(books),
+  );
   book_code = object_property_get(book, "book_code");
   let chapters = object_property_get(book, "chapters");
   if (list_includes_not(chapters, chapter)) {
