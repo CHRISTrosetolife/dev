@@ -84,6 +84,7 @@ export async function app_memorize_refresh_memorize_load(context) {
     });
     let group = object_property_get_or(save, "group_current", group_first);
     log({
+      group,
       groups,
     });
     if (list_any(group, (i) => list_includes_not(list_indices(verses), i))) {
