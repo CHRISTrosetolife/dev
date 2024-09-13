@@ -37,7 +37,6 @@ export function bible_verses_parse(verses) {
   });
   return result;
   function bible_verses_parse_text(c, verse_number, tokens) {
-    let { attribs } = c;
     if (
       c.type === "text" ||
       object_property_get_or_null(
