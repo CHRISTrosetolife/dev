@@ -1,7 +1,7 @@
+import { object_property_get_or_null } from "./object_property_get_or_null.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { string_split_multiple } from "./string_split_multiple.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
-import { object_property_get_or } from "./object_property_get_or.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 import { each } from "./each.mjs";
 import { list_adder } from "./list_adder.mjs";
@@ -23,7 +23,7 @@ export function bible_verses_parse(verses) {
           if (
             list_includes(
               ["verse", "wj"],
-              object_property_get_or(attribs, property_name, null),
+              object_property_get_or_null(attribs, property_name),
             )
           ) {
             verse_number = html_parse_text(c);
