@@ -38,7 +38,7 @@ export function bible_verses_parse(verses) {
   function bible_verses_parse_text(c, verse_number, tokens) {
     if (
       c.type === "text" ||
-      object_property_get_or_null(attribs, property_name) === "verse"
+      object_property_get_or_null(attribs, property_name) === "wj"
     ) {
       if (undefined_not_is(verse_number)) {
         let n = string_trim_whitespace(string_whitespace_normalize(c.data));
