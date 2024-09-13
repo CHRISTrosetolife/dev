@@ -1,4 +1,3 @@
-import { each } from "./each.mjs";
 import { html_style_font_color_default_set } from "./html_style_font_color_default_set.mjs";
 import { app_memorize_save_get } from "./app_memorize_save_get.mjs";
 import { html_style_hidden } from "./html_style_hidden.mjs";
@@ -19,9 +18,8 @@ export function app_memorize_update_colors(context) {
   }
   let { previous_token_element } = context;
   if (undefined_not_is(previous_token_element)) {
-    each([html_style_visible, html_style_font_color_default_set], (fn) =>
-      fn(previous_token_element),
-    );
+    html_style_visible(previous_token_element);
+    html_style_font_color_default_set(previous_token_element);
   }
   context.previous_spacer2 = spacer2;
   context.previous_token_element = token_element;
