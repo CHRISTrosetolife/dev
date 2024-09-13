@@ -1,5 +1,4 @@
 import { object_property_get_or_null } from "./object_property_get_or_null.mjs";
-import { list_includes } from "./list_includes.mjs";
 import { string_split_multiple } from "./string_split_multiple.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
@@ -20,12 +19,7 @@ export function bible_verses_parse(verses) {
         if (c.type === "tag") {
           let { attribs } = c;
           let property_name = "class";
-          if (
-            list_includes(
-              ["verse", "wj"],
-              object_property_get_or_null(attribs, property_name),
-            )
-          ) {
+          if (object_property_get_or_null(attribs, property_name) === "verse") {
             verse_number = html_parse_text(c);
             verse_number = string_trim_whitespace(verse_number);
             tokens = [];
