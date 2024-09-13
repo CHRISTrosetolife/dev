@@ -19,11 +19,11 @@ export function bible_verses_parse(verses) {
       each(children, (c) => {
         if (c.type === "tag") {
           let { attribs } = c;
-          let value = "class";
+          let property_name = "class";
           if (
             list_includes(
               ["verse", "wj"],
-              object_property_get_or(attribs, value, null),
+              object_property_get_or(attribs, property_name, null),
             )
           ) {
             verse_number = html_parse_text(c);
