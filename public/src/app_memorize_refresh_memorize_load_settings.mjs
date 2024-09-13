@@ -1,3 +1,4 @@
+import { app_memorize_save_get } from "./app_memorize_save_get.mjs";
 import { app_context_books_bible } from "./app_context_books_bible.mjs";
 import { app_memorize_save } from "./app_memorize_save.mjs";
 import { object_property_delete } from "./object_property_delete.mjs";
@@ -8,6 +9,7 @@ export async function app_memorize_refresh_memorize_load_settings(
   context,
   version_code,
 ) {
+  let save = app_memorize_save_get(context);
   object_merge(save, {
     version_code,
   });
