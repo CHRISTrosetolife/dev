@@ -76,10 +76,18 @@ export async function app_memorize_refresh_settings(context) {
             await app_memorize_refresh_memorize_load_settings(context);
           } else {
             html_clear_scroll_top_context(context);
-            each([name, description, copyright], (text) => {
-              html_p_text(root, text);
-              html_hr(root);
-            });
+            each(
+              [
+                'press "next" at the bottom to continue"',
+                name,
+                description,
+                copyright,
+              ],
+              (text) => {
+                html_p_text(root, text);
+                html_hr(root);
+              },
+            );
             html_button_width_full_text_click_next(
               root,
               async () =>
