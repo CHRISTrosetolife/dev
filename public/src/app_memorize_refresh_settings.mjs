@@ -1,3 +1,4 @@
+import { html_button_next_text } from "./html_button_next_text.mjs";
 import { app_context_books_bible } from "./app_context_books_bible.mjs";
 import { app_memorize_refresh_memorize_load_settings } from "./app_memorize_refresh_memorize_load_settings.mjs";
 import { app_memorize_version_code_get } from "./app_memorize_version_code_get.mjs";
@@ -78,7 +79,11 @@ export async function app_memorize_refresh_settings(context) {
             html_clear_scroll_top_context(context);
             each(
               [
-                'press "next" at the bottom to continue"',
+                string_combine_multiple([
+                  'press "',
+                  html_button_next_text(),
+                  '" at the bottom to continue"',
+                ]),
                 name,
                 description,
                 copyright,
