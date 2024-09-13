@@ -37,7 +37,7 @@ export async function app_memorize_refresh_memorize_load(context) {
   );
   book_code = object_property_get(book, "book_code");
   object_merge(context, {
-    books,
+    book_code,
   });
   let chapters = object_property_get(book, "chapters");
   if (list_includes_not(chapters, chapter)) {
