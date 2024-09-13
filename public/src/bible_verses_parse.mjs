@@ -1,3 +1,4 @@
+import { html_parse_class } from "./html_parse_class.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { object_property_get_or_null } from "./object_property_get_or_null.mjs";
 import { string_split_multiple } from "./string_split_multiple.mjs";
@@ -18,8 +19,7 @@ export function bible_verses_parse(verses) {
       let { children } = v;
       each(children, (c) => {
         if (c.type === "tag") {
-          let { attribs } = c;
-          let class_value = object_property_get_or_null(attribs, "class");
+          let class_value = html_parse_class(c);
           if (class_value === "verse") {
             verse_number = html_parse_text(c);
             verse_number = string_trim_whitespace(verse_number);
