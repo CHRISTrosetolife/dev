@@ -102,7 +102,7 @@ export async function app_memorize_on_keydown(context, key) {
     context.mistakes = true;
     html_style_visible(context.previous_token_element);
     html_style_font_color(context.previous_token_element, "red");
-    html_data_set();
+    html_data_set(context.previous_token_element, "error");
     if (context.style.error) {
       html_style(context.previous_token_element, context.style.error);
     }
