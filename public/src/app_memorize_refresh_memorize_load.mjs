@@ -1,3 +1,4 @@
+import { log_error } from "./log_error.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { list_any } from "./list_any.mjs";
 import { list_indices } from "./list_indices.mjs";
@@ -62,7 +63,9 @@ export async function app_memorize_refresh_memorize_load(context) {
       version_code,
     );
     if (list_empty_is(verses)) {
-      $le;
+      log_error({
+        message: "verses is empty",
+      });
     }
     object_merge(context, {
       verses,
