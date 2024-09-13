@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { object_property_get_or_null } from "./object_property_get_or_null.mjs";
 import { string_split_multiple } from "./string_split_multiple.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
@@ -39,7 +40,10 @@ export function bible_verses_parse(verses) {
     let { attribs } = c;
     if (
       c.type === "text" ||
-      object_property_get_or_null(attribs, property_name) === "wj"
+      object_property_get_or_null(
+        object_property_get(object, property_name2),
+        property_name,
+      ) === "wj"
     ) {
       if (undefined_not_is(verse_number)) {
         let n = string_trim_whitespace(string_whitespace_normalize(c.data));
