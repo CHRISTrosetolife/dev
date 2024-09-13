@@ -19,7 +19,8 @@ export function bible_verses_parse(verses) {
       let { children } = v;
       each(children, (c) => {
         if (c.type === "tag") {
-          if (html_parse_class(c) === "verse") {
+          let target_class_value = "verse";
+          if (html_parse_class(c) === target_class_value) {
             verse_number = html_parse_text(c);
             verse_number = string_trim_whitespace(verse_number);
             tokens = [];
