@@ -87,7 +87,10 @@ export async function app_memorize_refresh_memorize_load(context) {
       group,
       groups,
     });
-    if (list_any(group, (i) => list_includes_not(list_indices(verses), i))) {
+    if (
+      list_any(group, (i) => list_includes_not(list_indices(verses), i)) ||
+      list_empty_is(group)
+    ) {
       group = group_first;
     }
     html_hash({
