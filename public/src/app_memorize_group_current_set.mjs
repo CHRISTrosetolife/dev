@@ -40,5 +40,6 @@ export function app_memorize_group_current_set(context, g, changed) {
   app_memorize_save(context);
   log({
     context,
+    g,
   });
 }
