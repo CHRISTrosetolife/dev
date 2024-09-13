@@ -1,5 +1,4 @@
 import { html_button_next_text } from "./html_button_next_text.mjs";
-import { app_context_books_bible } from "./app_context_books_bible.mjs";
 import { app_memorize_refresh_memorize_load_settings } from "./app_memorize_refresh_memorize_load_settings.mjs";
 import { app_memorize_version_code_get } from "./app_memorize_version_code_get.mjs";
 import { html_button_width_full_text_click_next } from "./html_button_width_full_text_click_next.mjs";
@@ -35,7 +34,6 @@ import { html_p_text } from "./html_p_text.mjs";
 import { app_memorize_group_to_range_string } from "./app_memorize_group_to_range_string.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
-import { object_property_delete } from "./object_property_delete.mjs";
 export async function app_memorize_refresh_settings(context) {
   let { root } = context;
   html_clear_scroll_top(root);
@@ -67,12 +65,6 @@ export async function app_memorize_refresh_settings(context) {
           version_code,
         );
         html_button_width_full_text_click(root, name, async function () {
-          object_merge(save, {
-            version_code,
-          });
-          object_property_delete(context, "chapter_code");
-          app_memorize_save(context);
-          await app_context_books_bible(context);
           if (string_includes(copyright, "Public Domain")) {
             await app_memorize_refresh_memorize_load_settings(context);
           } else {
