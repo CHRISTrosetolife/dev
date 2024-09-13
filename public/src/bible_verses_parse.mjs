@@ -1,6 +1,4 @@
 import { html_parse_class_is } from "./html_parse_class_is.mjs";
-import { object_property_get } from "./object_property_get.mjs";
-import { object_property_get_or_null } from "./object_property_get_or_null.mjs";
 import { string_split_multiple } from "./string_split_multiple.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
@@ -19,8 +17,7 @@ export function bible_verses_parse(verses) {
       let { children } = v;
       each(children, (c) => {
         if (c.type === "tag") {
-          let target_class_value = "verse";
-          if (html_parse_class_is(c, target_class_value)) {
+          if (html_parse_class_is(c, "verse")) {
             verse_number = html_parse_text(c);
             verse_number = string_trim_whitespace(verse_number);
             tokens = [];
@@ -37,13 +34,7 @@ export function bible_verses_parse(verses) {
   });
   return result;
   function bible_verses_parse_text(c, verse_number, tokens) {
-    if (
-      c.type === "text" ||
-      object_property_get_or_null(
-        object_property_get(c, "attribs"),
-        property_name,
-      ) === "wj"
-    ) {
+    if (c.type === "text" || html_parse_class_is(c, "wj")) {
       if (undefined_not_is(verse_number)) {
         let n = string_trim_whitespace(string_whitespace_normalize(c.data));
         let s = string_split_multiple(n, [" ", "—"]);
