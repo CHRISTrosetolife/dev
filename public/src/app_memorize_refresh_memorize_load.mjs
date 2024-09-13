@@ -1,3 +1,4 @@
+import { list_empty_is } from "./list_empty_is.mjs";
 import { list_any } from "./list_any.mjs";
 import { list_indices } from "./list_indices.mjs";
 import { list_includes_not } from "./list_includes_not.mjs";
@@ -60,6 +61,8 @@ export async function app_memorize_refresh_memorize_load(context) {
       chapter_code,
       version_code,
     );
+    if (list_empty_is(verses)) {
+    }
     object_merge(context, {
       verses,
     });
