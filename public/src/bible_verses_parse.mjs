@@ -36,7 +36,9 @@ export function bible_verses_parse(verses) {
             });
             return;
           } else {
-            log({});
+            log({
+              attribs,
+            });
           }
         }
         bible_verses_parse_text(c, verse_number, tokens);
