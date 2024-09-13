@@ -62,6 +62,7 @@ export async function app_memorize_refresh_memorize_load(context) {
       version_code,
     );
     if (list_empty_is(verses)) {
+      $le;
     }
     object_merge(context, {
       verses,
