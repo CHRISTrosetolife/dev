@@ -64,6 +64,8 @@ export async function app_memorize_refresh_memorize_load(context) {
     );
     if (list_empty_is(verses)) {
       log_error({
+        chapter_code,
+        version_code,
         message: "verses is empty",
       });
     }
