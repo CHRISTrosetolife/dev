@@ -38,5 +38,7 @@ export function app_memorize_group_current_set(context, g, changed) {
     save.mistakes = false;
   }
   app_memorize_save(context);
-  log({});
+  log({
+    context,
+  });
 }
