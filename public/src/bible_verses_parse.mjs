@@ -41,7 +41,7 @@ export function bible_verses_parse(verses) {
     if (
       c.type === "text" ||
       object_property_get_or_null(
-        object_property_get(object, property_name2),
+        object_property_get(c, "attribs"),
         property_name,
       ) === "wj"
     ) {
