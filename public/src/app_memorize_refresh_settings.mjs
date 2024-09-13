@@ -66,7 +66,10 @@ export async function app_memorize_refresh_settings(context) {
         );
         html_button_width_full_text_click(root, name, async function () {
           if (string_includes(copyright, "Public Domain")) {
-            await app_memorize_refresh_memorize_load_settings(context);
+            await app_memorize_refresh_memorize_load_settings(
+              context,
+              version_code,
+            );
           } else {
             html_clear_scroll_top_context(context);
             each(
@@ -88,7 +91,10 @@ export async function app_memorize_refresh_settings(context) {
             html_button_width_full_text_click_next(
               root,
               async () =>
-                await app_memorize_refresh_memorize_load_settings(context),
+                await app_memorize_refresh_memorize_load_settings(
+                  context,
+                  version_code,
+                ),
             );
           }
         });
