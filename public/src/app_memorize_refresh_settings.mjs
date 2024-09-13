@@ -1,5 +1,5 @@
+import { app_memorize_refresh_settings_version } from "./app_memorize_refresh_settings_version.mjs";
 import { html_button_next_text } from "./html_button_next_text.mjs";
-import { app_memorize_refresh_memorize_load_settings } from "./app_memorize_refresh_memorize_load_settings.mjs";
 import { app_memorize_version_code_get } from "./app_memorize_version_code_get.mjs";
 import { html_button_width_full_text_click_next } from "./html_button_width_full_text_click_next.mjs";
 import { html_hr } from "./html_hr.mjs";
@@ -66,10 +66,7 @@ export async function app_memorize_refresh_settings(context) {
         );
         html_button_width_full_text_click(root, name, async function () {
           if (string_includes(copyright, "Public Domain")) {
-            await app_memorize_refresh_memorize_load_settings(
-              context,
-              version_code,
-            );
+            await app_memorize_refresh_settings_version(context, version_code);
           } else {
             html_clear_scroll_top_context(context);
             each(
@@ -91,7 +88,7 @@ export async function app_memorize_refresh_settings(context) {
             html_button_width_full_text_click_next(
               root,
               async () =>
-                await app_memorize_refresh_memorize_load_settings(
+                await app_memorize_refresh_settings_version(
                   context,
                   version_code,
                 ),
