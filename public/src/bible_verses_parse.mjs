@@ -21,7 +21,7 @@ export function bible_verses_parse(verses) {
           let { attribs } = c;
           if (
             list_includes(
-              ["verse"],
+              ["verse", "wj"],
               object_property_get_or(attribs, "class", ""),
             )
           ) {
