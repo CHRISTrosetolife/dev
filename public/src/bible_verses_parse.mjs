@@ -1,3 +1,4 @@
+import { list_includes } from "./list_includes.mjs";
 import { string_split_multiple } from "./string_split_multiple.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 import { object_property_get_or } from "./object_property_get_or.mjs";
@@ -18,7 +19,12 @@ export function bible_verses_parse(verses) {
       each(children, (c) => {
         if (c.type === "tag") {
           let { attribs } = c;
-          if (object_property_get_or(attribs, "class", "") === "verse") {
+          if (
+            list_includes(
+              ["verse"],
+              object_property_get_or(attribs, "class", ""),
+            )
+          ) {
             verse_number = html_parse_text(c);
             verse_number = string_trim_whitespace(verse_number);
             tokens = [];
