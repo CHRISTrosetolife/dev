@@ -36,7 +36,8 @@ export function bible_verses_parse(verses) {
   function bible_verses_parse_text(c, verse_number, tokens) {
     if (c.type === "text" || html_parse_class_is(c, "wj")) {
       if (undefined_not_is(verse_number)) {
-        let n = string_trim_whitespace(string_whitespace_normalize(c.data));
+        let text = c.data;
+        let n = string_trim_whitespace(string_whitespace_normalize(text));
         let s = string_split_multiple(n, [" ", "—"]);
         s = list_filter(s, string_empty_not_is);
         list_add_multiple(tokens, s);
