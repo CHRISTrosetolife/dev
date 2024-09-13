@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { object_property_get_or_null } from "./object_property_get_or_null.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { string_split_multiple } from "./string_split_multiple.mjs";
@@ -35,6 +36,7 @@ export function bible_verses_parse(verses) {
             });
             return;
           } else {
+            log({});
           }
         }
         bible_verses_parse_text(c, verse_number, tokens);
