@@ -98,5 +98,7 @@ export async function app_memorize_refresh_memorize_load(context) {
     });
     app_memorize_group_current_set(context, group, changed);
   }
-  log({});
+  log({
+    load,
+  });
 }
