@@ -36,13 +36,14 @@ export async function app_memorize_refresh_memorize_load(context) {
     list_first(books),
   );
   book_code = object_property_get(book, "book_code");
-  object_merge(context, {
-    book_code,
-  });
   let chapters = object_property_get(book, "chapters");
   if (list_includes_not(chapters, chapter)) {
     chapter = list_first(chapters);
   }
+  object_merge(context, {
+    book_code,
+    chapter,
+  });
   app_memorize_save(context);
   let load = true;
   let chapter_code = app_gs_bible_chapter_name(book_code, chapter);
