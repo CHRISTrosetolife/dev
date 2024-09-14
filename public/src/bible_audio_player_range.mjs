@@ -18,7 +18,7 @@ import { assert } from "./assert.mjs";
 export async function bible_audio_player_range(book_from, book_to) {
   await bible_audio_player_unzip();
   let drive_letter = "E";
-  await command_line("format/FS:FAT32 E:/q /Y");
+  await command_line("format/FS:FAT32 ", drive_letter, ":/q /Y");
   let bible_folder = "engbsb";
   let number_from = await bible_book_prefix_to_number(bible_folder, book_from);
   let number_to = await bible_book_prefix_to_number(bible_folder, book_to);
