@@ -55,6 +55,7 @@ export async function app_memorize_refresh_settings(context) {
       ),
     ]),
     async () => {
+      let expected = object_property_get(save, "version_code");
       app_memorize_settings_button_back_clear(context);
       html_p_text(
         root,
@@ -103,8 +104,7 @@ export async function app_memorize_refresh_settings(context) {
             }
           },
         );
-        let actual = object_property_get(save, "version_code");
-        html_style_success_if(version_code, actual, b);
+        html_style_success_if(version_code, expected, b);
       });
     },
   );
