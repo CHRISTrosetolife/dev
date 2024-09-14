@@ -22,4 +22,22 @@ export function bible_eng_versions() {
     "engwmb",
     "engylt",
   ];
+  let b = [
+    "eng-Brenton",
+    "eng-uk-lxx2012",
+    "engDBY",
+    "enggnv",
+    "englee",
+    "engoebcw",
+    "engtnt",
+    "eng-webbe",
+    "engwmbb",
+    "engWycliffe",
+    "eng-lxx2012",
+    "engwebster",
+    "engwebp",
+    "engf35",
+    "engjps",
+    "englxxup",
+  ];
 }
