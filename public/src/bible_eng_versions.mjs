@@ -40,4 +40,5 @@ export function bible_eng_versions() {
     "engjps",
     "englxxup",
   ];
+  list_combine();
 }
