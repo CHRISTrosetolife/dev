@@ -1,3 +1,4 @@
+import { html_style_success_if } from "./html_style_success_if.mjs";
 import { app_memorize_refresh_settings_version } from "./app_memorize_refresh_settings_version.mjs";
 import { html_button_next_text } from "./html_button_next_text.mjs";
 import { app_memorize_version_code_get } from "./app_memorize_version_code_get.mjs";
@@ -34,7 +35,6 @@ import { html_p_text } from "./html_p_text.mjs";
 import { app_memorize_group_to_range_string } from "./app_memorize_group_to_range_string.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
-import { html_style_success } from "./html_style_success.mjs";
 export async function app_memorize_refresh_settings(context) {
   let { root } = context;
   html_clear_scroll_top(root);
@@ -104,9 +104,7 @@ export async function app_memorize_refresh_settings(context) {
           },
         );
         let actual = object_property_get(save, "version_code");
-        if (version_code === actual) {
-          html_style_success(b);
-        }
+        html_style_success_if(version_code, actual, b);
       });
     },
   );
