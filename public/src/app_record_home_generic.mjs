@@ -13,7 +13,7 @@ export function app_record_home_generic(
   lambda_before(root);
   each(books, (book) => {
     let { book_code } = book;
-    html_button_text_click(root, book_code, async function () {
+    b=html_button_text_click(root, book_code, async function () {
       await app_record_home_on_click(context, book_code);
     });
   });
