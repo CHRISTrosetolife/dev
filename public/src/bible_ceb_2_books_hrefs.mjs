@@ -1,3 +1,4 @@
+import { html_cache_parse_hrefs } from "./html_cache_parse_hrefs.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_find_properties } from "./list_find_properties.mjs";
 import { list_get } from "./list_get.mjs";
@@ -7,8 +8,6 @@ import { list_size } from "./list_size.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_ends_with } from "./string_ends_with.mjs";
-import { html_parse_a_hrefs } from "./html_parse_a_hrefs.mjs";
-import { html_cache_parse } from "./html_cache_parse.mjs";
 import { url_secure_w3 } from "./url_secure_w3.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export async function bible_ceb_2_books_hrefs() {
@@ -17,8 +16,7 @@ export async function bible_ceb_2_books_hrefs() {
     "talibon.com/bible/",
   ]);
   let url = string_combine_multiple([url_base, "bible.html"]);
-  let root_bible = await html_cache_parse(url);
-  let book_hrefs = html_parse_a_hrefs(root_bible, condition);
+  let book_hrefs = await html_cache_parse_hrefs(url, condition);
   function condition(href) {
     return string_ends_with(href, ".html");
   }
