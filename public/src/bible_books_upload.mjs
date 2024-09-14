@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { bible_storage_version_upload } from "./bible_storage_version_upload.mjs";
 import { string_prefix_without_multiple } from "./string_prefix_without_multiple.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
@@ -8,6 +9,7 @@ import { each_async } from "./each_async.mjs";
 import { bible_books_chapters } from "./bible_books_chapters.mjs";
 import { bible_books_names_lookup } from "./bible_books_names_lookup.mjs";
 export async function bible_books_upload(bible_folder) {
+  log({});
   let books = [];
   let lookup = await bible_books_names_lookup(bible_folder);
   let chapters = await bible_books_chapters(bible_folder);
