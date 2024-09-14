@@ -103,11 +103,11 @@ export async function app_memorize_refresh_settings(context) {
             }
           },
         );
+        let actual = object_property_get(save, "version_code");
+        if (version_code === actual) {
+          html_style_success(b);
+        }
       });
-      let actual = object_property_get(save, "version_code");
-      if (version_code === actual) {
-        html_style_success(b);
-      }
     },
   );
   let book_code = app_memorize_book_code_get(context);
