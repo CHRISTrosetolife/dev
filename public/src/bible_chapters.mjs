@@ -10,7 +10,8 @@ export async function bible_chapters(bible_folder, book_name) {
   let url = bible_url_htm(bible_folder, book_name);
   let root = await html_cache_parse(url);
   let extension = ".htm";
-  let hrefs = html_parse_a_hrefs(root, function condition(href) {
+  let hrefs = html_parse_a_hrefs(root, condition);
+  function condition(href) {
     if (string_starts_with(href, book_name)) {
       let without = string_prefix_without(href, book_name);
       without = string_suffix_without(without, extension);
@@ -20,6 +21,6 @@ export async function bible_chapters(bible_folder, book_name) {
       }
     }
     return false;
-  });
+  }
   return list_map(hrefs, (h) => string_suffix_without(h, extension));
 }
