@@ -1,3 +1,4 @@
+import { list_concat } from "./list_concat.mjs";
 export function bible_eng_versions() {
   let a = [
     "engbsb",
@@ -40,5 +41,5 @@ export function bible_eng_versions() {
     "engjps",
     "englxxup",
   ];
-  list_combine();
+  list_concat();
 }
