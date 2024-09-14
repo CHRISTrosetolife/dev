@@ -100,7 +100,6 @@ export async function app_memorize_on_keydown(context, key) {
       app_memorize_keyboard_reset(context);
     }
     save.mistakes = true;
-    app_memorize_save(context);
     html_style_visible(context.previous_token_element);
     html_style_font_color(context.previous_token_element, "red");
     html_data_set(context.previous_token_element, "error", "true");
@@ -108,5 +107,6 @@ export async function app_memorize_on_keydown(context, key) {
       html_style(context.previous_token_element, context.style.error);
     }
     html_style_wrong(keyboard_button_actual);
+    app_memorize_save(context);
   }
 }
