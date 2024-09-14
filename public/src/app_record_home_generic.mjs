@@ -1,3 +1,4 @@
+import { html_style_success_if } from "./html_style_success_if.mjs";
 import { html_button_text_click } from "./html_button_text_click.mjs";
 import { each } from "./each.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
@@ -16,5 +17,6 @@ export function app_record_home_generic(
     let b = html_button_text_click(root, book_code, async function () {
       await app_record_home_on_click(context, book_code);
     });
+    html_style_success_if(b, highlight, book_code);
   });
 }
