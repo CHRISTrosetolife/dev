@@ -7,4 +7,5 @@ export async function bible_versions_list_english() {
     url,
     string_starts_with_curry(bible_ebible_url_combine("details.php?id=eng")),
   );
+  return book_hrefs;
 }
