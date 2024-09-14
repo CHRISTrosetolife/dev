@@ -1,3 +1,4 @@
+import { app_memorize_chapter_get } from "./app_memorize_chapter_get.mjs";
 import { html_style_success_if } from "./html_style_success_if.mjs";
 import { list_find_property } from "./list_find_property.mjs";
 import { html_button_text_click } from "./html_button_text_click.mjs";
@@ -9,6 +10,7 @@ export function app_record_book_generic(
   book_code,
   app_record_book_on_click,
 ) {
+  let chapter_selected = app_memorize_chapter_get(context);
   let { root } = context;
   html_clear_scroll_top(root);
   lambda_top();
