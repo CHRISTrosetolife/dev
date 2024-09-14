@@ -23,7 +23,11 @@ export async function bible_audio_player_range(book_from, book_to) {
     string_combine_multiple(["format/FS:FAT32 ", drive_letter, ":/q /Y"]),
   );
   await command_line(
-    string_combine_multiple(["D:\\RemoveDrive_x64\\RemoveDrive.exe E: -L"]),
+    string_combine_multiple([
+      "D:\\RemoveDrive_x64\\RemoveDrive.exe ",
+      drive_letter,
+      ": -L",
+    ]),
   );
   let bible_folder = "engbsb";
   let number_from = await bible_book_prefix_to_number(bible_folder, book_from);
