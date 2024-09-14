@@ -1,5 +1,5 @@
 export function bible_eng_versions() {
-  return [
+  let a = [
     "engbsb",
     "engBBE",
     "eng-asv",
