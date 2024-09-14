@@ -1,3 +1,4 @@
+import { string_is } from "./string_is.mjs";
 import { function_run } from "./function_run.mjs";
 import { folder_gitignore_path_function } from "./folder_gitignore_path_function.mjs";
 import { date_string_iso_file } from "./date_string_iso_file.mjs";
@@ -10,7 +11,7 @@ export async function function_output_file(function_name) {
     f_path,
   );
   let result = await function_run(function_name, []);
-  if (string_not_is(result)) {
+  if (!string_is(result)) {
   }
   await file_overwrite(output_path, result);
   return output_path;
