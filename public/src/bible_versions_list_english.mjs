@@ -14,5 +14,5 @@ export async function bible_versions_list_english() {
   );
   let u = list_unique(hrefs);
   let m = list_map(u, (s) => string_prefix_without(s, prefix));
-  return u;
+  return m;
 }
