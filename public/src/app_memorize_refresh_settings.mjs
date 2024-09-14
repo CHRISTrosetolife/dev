@@ -155,7 +155,7 @@ export async function app_memorize_refresh_settings(context) {
           app_memorize_group_current_set(context, g, true);
           await app_memorize_refresh_settings(context);
         });
-        html_style_success_if(b, chapter_selected, chapter);
+        html_style_success_if(b, save.group_current, g);
       }
     },
   );
