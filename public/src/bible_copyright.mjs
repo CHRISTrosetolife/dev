@@ -1,3 +1,4 @@
+import { html_parse_visit_tag_first } from "./html_parse_visit_tag_first.mjs";
 import { log } from "./log.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { list_map } from "./list_map.mjs";
@@ -17,7 +18,6 @@ import { html_parse_tag } from "./html_parse_tag.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { each } from "./each.mjs";
 import { html_parse_children } from "./html_parse_children.mjs";
-import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
 import { list_second } from "./list_second.mjs";
 import { list_size_2 } from "./list_size_2.mjs";
 import { assert } from "./assert.mjs";
@@ -36,7 +36,7 @@ export async function bible_copyright(bible_folder) {
   let main = list_second(mains);
   let { attribs } = main;
   object_property_delete_all(attribs);
-  let name_tag = html_parse_visit_tag_single(main, "h1");
+  let name_tag = html_parse_visit_tag_first(main, "h1");
   let name = html_parse_text(name_tag);
   let h2s = html_parse_visit_tag_list(main, "h2");
   let mapped = list_map(h2s, html_parse_text);
