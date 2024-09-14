@@ -1,3 +1,4 @@
+import { json_to } from "./json_to.mjs";
 import { string_is } from "./string_is.mjs";
 import { function_run } from "./function_run.mjs";
 import { folder_gitignore_path_function } from "./folder_gitignore_path_function.mjs";
@@ -12,6 +13,7 @@ export async function function_output_file(function_name) {
   );
   let result = await function_run(function_name, []);
   if (!string_is(result)) {
+    result = json_to(result);
   }
   await file_overwrite(output_path, result);
   return output_path;
