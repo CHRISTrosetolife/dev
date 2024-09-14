@@ -9,7 +9,7 @@ export async function http(url) {
   let response = await retry(
     3,
     lambda,
-    retry_if(["ECONNRESET", "ENOTFOUND", "ETIMEDOUT"]),
+    retry_if(["ECONNRESET", "ENOTFOUND", "ETIMEDOUT", "EHOSTUNREACH"]),
   );
   let body = await response.text();
   return body;
