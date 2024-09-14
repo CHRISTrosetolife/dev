@@ -127,7 +127,7 @@ export async function app_memorize_refresh_settings(context) {
           app_memorize_refresh_settings_chapter(context);
           await app_memorize_refresh_memorize_load(context);
         },
-        null,
+        book_code,
       );
     },
   );
