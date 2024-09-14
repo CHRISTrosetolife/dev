@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { command_line } from "./command_line.mjs";
 import { bible_book_prefix_to_number } from "./bible_book_prefix_to_number.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
@@ -18,7 +19,9 @@ import { assert } from "./assert.mjs";
 export async function bible_audio_player_range(book_from, book_to) {
   await bible_audio_player_unzip();
   let drive_letter = "E";
-  await command_line("format/FS:FAT32 ", drive_letter, ":/q /Y");
+  await command_line(
+    string_combine_multiple(["format/FS:FAT32 ", drive_letter, ":/q /Y"]),
+  );
   let bible_folder = "engbsb";
   let number_from = await bible_book_prefix_to_number(bible_folder, book_from);
   let number_to = await bible_book_prefix_to_number(bible_folder, book_to);
