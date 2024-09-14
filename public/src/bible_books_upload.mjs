@@ -9,7 +9,9 @@ import { each_async } from "./each_async.mjs";
 import { bible_books_chapters } from "./bible_books_chapters.mjs";
 import { bible_books_names_lookup } from "./bible_books_names_lookup.mjs";
 export async function bible_books_upload(bible_folder) {
-  log({});
+  log({
+    bible_folder,
+  });
   let books = [];
   let lookup = await bible_books_names_lookup(bible_folder);
   let chapters = await bible_books_chapters(bible_folder);
