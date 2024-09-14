@@ -64,37 +64,44 @@ export async function app_memorize_refresh_settings(context) {
           copyrights,
           version_code,
         );
-        html_button_width_full_text_click(root, name, async function () {
-          if (string_includes(copyright, "Public Domain")) {
-            await app_memorize_refresh_settings_version(context, version_code);
-          } else {
-            html_clear_scroll_top_context(context);
-            each(
-              [
-                string_combine_multiple([
-                  'press "',
-                  html_button_next_text(),
-                  '" at the bottom to continue"',
-                ]),
-                name,
-                description,
-                copyright,
-              ],
-              (text) => {
-                html_p_text(root, text);
-                html_hr(root);
-              },
-            );
-            html_button_width_full_text_click_next(
-              root,
-              async () =>
-                await app_memorize_refresh_settings_version(
-                  context,
-                  version_code,
-                ),
-            );
-          }
-        });
+        let b = html_button_width_full_text_click(
+          root,
+          name,
+          async function () {
+            if (string_includes(copyright, "Public Domain")) {
+              await app_memorize_refresh_settings_version(
+                context,
+                version_code,
+              );
+            } else {
+              html_clear_scroll_top_context(context);
+              each(
+                [
+                  string_combine_multiple([
+                    'press "',
+                    html_button_next_text(),
+                    '" at the bottom to continue"',
+                  ]),
+                  name,
+                  description,
+                  copyright,
+                ],
+                (text) => {
+                  html_p_text(root, text);
+                  html_hr(root);
+                },
+              );
+              html_button_width_full_text_click_next(
+                root,
+                async () =>
+                  await app_memorize_refresh_settings_version(
+                    context,
+                    version_code,
+                  ),
+              );
+            }
+          },
+        );
       });
     },
   );
