@@ -104,7 +104,8 @@ export async function app_memorize_refresh_settings(context) {
           },
         );
       });
-      if (version_code === object_property_get(save, "version_code")) {
+      let actual = object_property_get(save, "version_code");
+      if (version_code === actual) {
         html_style_success(b);
       }
     },
