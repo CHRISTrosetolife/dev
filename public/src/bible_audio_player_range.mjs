@@ -23,7 +23,6 @@ export async function bible_audio_player_range(book_from, book_to) {
   await command_line(
     string_combine_multiple(["format/FS:FAT32 ", drive_letter, ":/q /Y"]),
   );
-  await drive_remove(drive_letter);
   let bible_folder = "engbsb";
   let number_from = await bible_book_prefix_to_number(bible_folder, book_from);
   let number_to = await bible_book_prefix_to_number(bible_folder, book_to);
@@ -115,4 +114,5 @@ export async function bible_audio_player_range(book_from, book_to) {
     "NHEB_OT_audio",
   ];
   let download_folder_acronymns_computer_voice = "BBEM_complete";
+  await drive_remove(drive_letter);
 }
