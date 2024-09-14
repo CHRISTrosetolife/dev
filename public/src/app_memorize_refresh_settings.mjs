@@ -104,7 +104,7 @@ export async function app_memorize_refresh_settings(context) {
             }
           },
         );
-        html_style_success_if(version_code, expected, b);
+        html_style_success_if(expected, b, version_code);
       });
     },
   );
