@@ -5,6 +5,7 @@ export function app_record_home_generic(
   context,
   lambda_before,
   app_record_home_on_click,
+  highlight,
 ) {
   let { root } = context;
   let { books } = context;
