@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { list_map } from "./list_map.mjs";
 import { object_property_delete_all } from "./object_property_delete_all.mjs";
@@ -24,6 +25,7 @@ import { html_parse_visit_class_list } from "./html_parse_visit_class_list.mjs";
 import { bible_url_htm } from "./bible_url_htm.mjs";
 import { string_includes } from "./string_includes.mjs";
 export async function bible_copyright(bible_folder) {
+  log({});
   let url = bible_url_htm(bible_folder, "copyright");
   let p = await http_cache_parse_parsed(url);
   let { root, parsed } = p;
