@@ -9,7 +9,7 @@ export async function bible_book_prefix_to_number(bible_folder, book_prefix) {
   let inverted = await bible_books_names_lookup_inverted(bible_folder);
   let keys = object_properties(inverted);
   let book = list_find(keys, string_starts_with_curry(book_prefix));
-  let acronym = object_property_get(inverted, book_prefix);
+  let acronym = object_property_get(inverted, book);
   let books = await bible_books(bible_folder);
   let n = list_index(books, acronym) + 1;
   return n;
