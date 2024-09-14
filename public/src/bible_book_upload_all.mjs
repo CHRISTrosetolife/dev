@@ -8,7 +8,7 @@ export async function bible_book_upload_all(bible_folder) {
   async function lambda(book_name) {
     if (list_index_before(book_name, "MAL")) {
       return;
-      await bible_book_upload(bible_folder, book_name);
     }
+    await bible_book_upload(bible_folder, book_name);
   }
 }
