@@ -1,3 +1,4 @@
+import { command_line } from "./command_line.mjs";
 import { bible_book_prefix_to_number } from "./bible_book_prefix_to_number.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
 import { promise_all_ordered } from "./promise_all_ordered.mjs";
@@ -16,6 +17,7 @@ import { less_than_equal } from "./less_than_equal.mjs";
 import { assert } from "./assert.mjs";
 export async function bible_audio_player_range(book_from, book_to) {
   await bible_audio_player_unzip();
+  await command_line("format/FS:FAT32 E:/q /Y");
   let bible_folder = "engbsb";
   let number_from = await bible_book_prefix_to_number(bible_folder, book_from);
   let number_to = await bible_book_prefix_to_number(bible_folder, book_to);
