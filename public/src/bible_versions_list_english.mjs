@@ -5,6 +5,6 @@ export async function bible_versions_list_english() {
   let url = bible_ebible_url_combine("download.php");
   let book_hrefs = await html_cache_parse_hrefs(
     url,
-    string_starts_with_curry("B"),
+    string_starts_with_curry(bible_ebible_url_combine("details.php?id=eng")),
   );
 }
