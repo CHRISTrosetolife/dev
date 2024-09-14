@@ -1,5 +1,4 @@
-import { html_data_attribute } from "./html_data_attribute.mjs";
-import { html_attribute_has } from "./html_attribute_has.mjs";
+import { html_data_has } from "./html_data_has.mjs";
 import { html_style_font_color_default_set } from "./html_style_font_color_default_set.mjs";
 import { app_memorize_save_get } from "./app_memorize_save_get.mjs";
 import { html_style_hidden } from "./html_style_hidden.mjs";
@@ -22,12 +21,7 @@ export function app_memorize_update_colors(context) {
   if (undefined_not_is(previous_token_element)) {
     html_style_visible(previous_token_element);
     let attribute_name = "error";
-    if (
-      !html_attribute_has(
-        previous_token_element,
-        html_data_attribute(attribute_name),
-      )
-    ) {
+    if (!html_data_has(previous_token_element, attribute_name)) {
       html_style_font_color_default_set(previous_token_element);
     }
   }
