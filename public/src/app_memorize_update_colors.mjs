@@ -21,8 +21,12 @@ export function app_memorize_update_colors(context) {
   let { previous_token_element } = context;
   if (undefined_not_is(previous_token_element)) {
     html_style_visible(previous_token_element);
+    let attribute_name = "error";
     if (
-      !html_attribute_has(previous_token_element, html_data_attribute("error"))
+      !html_attribute_has(
+        previous_token_element,
+        html_data_attribute(attribute_name),
+      )
     ) {
       html_style_font_color_default_set(previous_token_element);
     }
