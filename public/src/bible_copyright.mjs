@@ -25,7 +25,9 @@ import { html_parse_visit_class_list } from "./html_parse_visit_class_list.mjs";
 import { bible_url_htm } from "./bible_url_htm.mjs";
 import { string_includes } from "./string_includes.mjs";
 export async function bible_copyright(bible_folder) {
-  log({});
+  log({
+    bible_folder,
+  });
   let url = bible_url_htm(bible_folder, "copyright");
   let p = await http_cache_parse_parsed(url);
   let { root, parsed } = p;
