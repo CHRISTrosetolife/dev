@@ -45,4 +45,5 @@ export function bible_eng_versions() {
   ];
   let c = list_concat(a, b);
   list_sort(c, identity);
+  return c;
 }
