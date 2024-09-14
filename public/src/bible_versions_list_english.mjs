@@ -9,5 +9,5 @@ export async function bible_versions_list_english() {
     string_starts_with_curry("details.php?id=eng"),
   );
   let u = list_unique(hrefs);
-  return hrefs;
+  return u;
 }
