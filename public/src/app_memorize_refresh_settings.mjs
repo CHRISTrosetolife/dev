@@ -34,6 +34,7 @@ import { html_p_text } from "./html_p_text.mjs";
 import { app_memorize_group_to_range_string } from "./app_memorize_group_to_range_string.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
+import { html_style_success } from "./html_style_success.mjs";
 export async function app_memorize_refresh_settings(context) {
   let { root } = context;
   html_clear_scroll_top(root);
@@ -103,7 +104,8 @@ export async function app_memorize_refresh_settings(context) {
           },
         );
       });
-      if (version_code === object_property_get(object, property_name)) {
+      if (version_code === object_property_get(save, "version_code")) {
+        html_style_success(b);
       }
     },
   );
