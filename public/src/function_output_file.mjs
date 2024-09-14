@@ -10,6 +10,8 @@ export async function function_output_file(function_name) {
     f_path,
   );
   let result = await function_run(function_name, []);
+  if (string_not_is(result)) {
+  }
   await file_overwrite(output_path, result);
   return output_path;
 }
