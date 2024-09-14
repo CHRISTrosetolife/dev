@@ -17,6 +17,7 @@ import { less_than_equal } from "./less_than_equal.mjs";
 import { assert } from "./assert.mjs";
 export async function bible_audio_player_range(book_from, book_to) {
   await bible_audio_player_unzip();
+  let drive_letter = "E";
   await command_line("format/FS:FAT32 E:/q /Y");
   let bible_folder = "engbsb";
   let number_from = await bible_book_prefix_to_number(bible_folder, book_from);
