@@ -1,6 +1,6 @@
+import { command_line_exec } from "./command_line_exec.mjs";
 import { drive_remove } from "./drive_remove.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { command_line } from "./command_line.mjs";
 import { bible_book_prefix_to_number } from "./bible_book_prefix_to_number.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
 import { promise_all_ordered } from "./promise_all_ordered.mjs";
@@ -20,7 +20,7 @@ import { assert } from "./assert.mjs";
 export async function bible_audio_player_range(book_from, book_to) {
   await bible_audio_player_unzip();
   let drive_letter = "E";
-  await command_line(
+  await command_line_exec(
     string_combine_multiple(["format/FS:FAT32 ", drive_letter, ":/q /Y"]),
   );
   let bible_folder = "engbsb";
