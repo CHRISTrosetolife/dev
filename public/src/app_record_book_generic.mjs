@@ -20,6 +20,6 @@ export function app_record_book_generic(
     let b = html_button_text_click(root, chapter, async () => {
       await app_record_book_on_click(context, book_code, chapter);
     });
-    html_style_success_if(b, expected, version_code);
+    html_style_success_if(b, chapter_selected, chapter);
   });
 }
