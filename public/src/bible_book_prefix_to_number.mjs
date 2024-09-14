@@ -1,3 +1,4 @@
+import { bible_book_name_to_number } from "./bible_book_name_to_number.mjs";
 import { string_starts_with_curry } from "./string_starts_with_curry.mjs";
 import { list_find } from "./list_find.mjs";
 import { list_index } from "./list_index.mjs";
@@ -12,5 +13,5 @@ export async function bible_book_prefix_to_number(bible_folder, book_prefix) {
   let acronym = object_property_get(inverted, book);
   let books = await bible_books(bible_folder);
   let n = list_index(books, acronym) + 1;
-  return n;
+  return await bible_book_name_to_number();
 }
