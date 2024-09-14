@@ -1,3 +1,4 @@
+import { bible_book_prefix_to_number } from "./bible_book_prefix_to_number.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
 import { promise_all_ordered } from "./promise_all_ordered.mjs";
 import { number_pad_2 } from "./number_pad_2.mjs";
@@ -13,12 +14,11 @@ import { list_map } from "./list_map.mjs";
 import { range_from } from "./range_from.mjs";
 import { less_than_equal } from "./less_than_equal.mjs";
 import { assert } from "./assert.mjs";
-import { bible_book_name_to_number } from "./bible_book_name_to_number.mjs";
 export async function bible_audio_player_range(book_from, book_to) {
   await bible_audio_player_unzip();
   let bible_folder = "engbsb";
-  let number_from = await bible_book_name_to_number(bible_folder, book_from);
-  let number_to = await bible_book_name_to_number(bible_folder, book_to);
+  let number_from = await bible_book_prefix_to_number(bible_folder, book_from);
+  let number_to = await bible_book_prefix_to_number(bible_folder, book_to);
   assert(less_than_equal, [number_from, number_to]);
   let numbers = range_from(number_from, number_to);
   let numbers_s = list_map_number_pad_2(numbers);
