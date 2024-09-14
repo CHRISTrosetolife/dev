@@ -41,5 +41,5 @@ export function bible_eng_versions() {
     "engjps",
     "englxxup",
   ];
-  list_concat(a, b);
+  let c = list_concat(a, b);
 }
