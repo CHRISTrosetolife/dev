@@ -7,7 +7,7 @@ export async function http(url) {
   let f = await import_node("node-fetch");
   let { default: fetch } = f;
   let response = await retry(
-    3,
+    4,
     lambda,
     retry_if(["ECONNRESET", "ENOTFOUND", "ETIMEDOUT", "EHOSTUNREACH"]),
   );
