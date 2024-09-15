@@ -1,3 +1,4 @@
+import { list_map_lower } from "./list_map_lower.mjs";
 import { app_language_correct_get } from "./app_language_correct_get.mjs";
 import { app_language_answer_partial } from "./app_language_answer_partial.mjs";
 import { list_size } from "./list_size.mjs";
@@ -8,7 +9,6 @@ import { greater_than_equal } from "./greater_than_equal.mjs";
 import { number_min } from "./number_min.mjs";
 import { add } from "./add.mjs";
 import { string_substring } from "./string_substring.mjs";
-import { string_case_lower } from "./string_case_lower.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_length } from "./string_length.mjs";
 import { greater_than } from "./greater_than.mjs";
@@ -29,7 +29,7 @@ export function app_language_alternatives_partial_matches_nexts(
       greater_than(string_length(a), index),
     ),
   );
-  matches = list_map(matches, string_case_lower);
+  matches = list_map_lower(matches);
   let ci = chunk_size * index;
   let nexts = list_map(matches, (a) =>
     string_substring(
