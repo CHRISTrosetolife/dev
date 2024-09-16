@@ -1,5 +1,4 @@
-import { bible_file } from "./bible_file.mjs";
-import { html_parse } from "./html_parse.mjs";
+import { bible_file_html_parse } from "./bible_file_html_parse.mjs";
 import { bible_url_htm } from "./bible_url_htm.mjs";
 import { html_parse_visit_attribute_value } from "./html_parse_visit_attribute_value.mjs";
 import { html_cache_parse } from "./html_cache_parse.mjs";
@@ -10,8 +9,7 @@ export async function bible_chapter_parsed(bible_folder, chapter_name) {
     let joined = bible_url_htm(bible_folder, chapter_name);
     let root = await html_cache_parse(joined);
   }
-  let html = await bible_file(bible_folder, chapter_name);
-  let root = await html_parse(html);
+  let root = await bible_file_html_parse(bible_folder, chapter_name);
   html_parse_visit_attribute_value(root, "class", "notemark", (v) => {
     let { node } = v;
     let { parent } = node;
