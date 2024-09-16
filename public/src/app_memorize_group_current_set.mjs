@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { equal_json } from "./equal_json.mjs";
 import { app_memorize_save_get } from "./app_memorize_save_get.mjs";
 import { app_memorize_save } from "./app_memorize_save.mjs";
@@ -38,8 +37,4 @@ export function app_memorize_group_current_set(context, g, changed) {
     save.mistakes = false;
   }
   app_memorize_save(context);
-  log({
-    context,
-    g,
-  });
 }
