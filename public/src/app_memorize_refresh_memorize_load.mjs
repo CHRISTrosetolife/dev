@@ -78,8 +78,8 @@ export async function app_memorize_refresh_memorize_load(context) {
     let { verse_index, token_index } = save;
     verse_index = list_index_ensure(verses, verse_index);
     let verse = list_get(verses, verse_index);
-    let tokens = verse;
-    token_index = list_index_ensure(verse, token_index);
+    let { tokens } = verse;
+    token_index = list_index_ensure(tokens, token_index);
     object_merge(context, {
       verses,
       verse_index,
