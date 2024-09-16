@@ -40,7 +40,7 @@ export async function app_memorize_refresh_memorize_load(context) {
   if (list_includes_not(chapters, chapter)) {
     chapter = list_first(chapters);
   }
-  object_merge(context, {
+  object_merge(save, {
     book_code,
     chapter,
   });
