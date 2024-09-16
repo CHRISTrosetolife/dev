@@ -1,3 +1,4 @@
+import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { html_parse_a_hrefs } from "./html_parse_a_hrefs.mjs";
 import { bible_file_html_parse } from "./bible_file_html_parse.mjs";
 import { list_map } from "./list_map.mjs";
@@ -6,6 +7,7 @@ import { string_starts_with } from "./string_starts_with.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 import { string_suffix_without } from "./string_suffix_without.mjs";
 export async function bible_chapters(bible_folder, book_name) {
+  assert_arguments_length(arguments, 2);
   let extension = ".htm";
   let root = await bible_file_html_parse(bible_folder, book_name);
   let hrefs = html_parse_a_hrefs(root, condition);
