@@ -1,33 +1,46 @@
 import { list_sort_string } from "./list_sort_string.mjs";
 import { string_replace } from "./string_replace.mjs";
-import { bible_eng_versions_new } from "./bible_eng_versions_new.mjs";
-import { list_concat } from "./list_concat.mjs";
 export function bible_eng_versions() {
-  let a = [
-    "engbsb",
-    "engBBE",
+  return [
     "eng-asv",
     "engasvbt",
+    "engBBE",
+    "eng-Brenton",
+    "engbsb",
+    "engDBY",
     "engDRA",
+    "engf35",
     "engfbv",
-    "engnoy",
     "eng-glw",
-    "englsv",
-    "eng-kjv2006",
+    "enggnv",
+    "engjps",
     "eng-kjv",
-    "engourb",
+    "eng-kjv2006",
+    "englee",
+    "englsv",
+    "englsv",
+    "eng-lxx2012",
+    "englxxup",
+    "engnoy",
+    "engoebcw",
     "engoebus",
-    "eng-rv",
     "engoke",
-    "engtcent",
+    "engourb",
+    "eng-rv",
     "eng-t4t",
+    "engtcent",
+    "engtnt",
+    "eng-uk-lxx2012",
     "engULB",
     "eng-web",
+    "eng-webbe",
+    "engwebp",
+    "engwebster",
     "engwmb",
+    "engwmbb",
+    "engWycliffe",
     "engylt",
   ];
-  let b = bible_eng_versions_new();
-  let c = list_concat(a, b);
   list_sort_string(c, (s) => string_replace(s, "-", ""));
   return c;
 }
