@@ -76,6 +76,7 @@ export async function app_memorize_refresh_memorize_load(context) {
     }
     let { verse_index, token_index } = save;
     if (!list_index_is(verses, verse_index)) {
+      verse_index = list_first(verses);
     }
     object_merge(context, {
       verses,
