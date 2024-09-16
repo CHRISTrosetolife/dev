@@ -73,6 +73,7 @@ export async function app_memorize_refresh_memorize_load(context) {
         message: "verses is empty",
       });
     }
+    let verse_index = save;
     object_merge(context, {
       verses,
     });
