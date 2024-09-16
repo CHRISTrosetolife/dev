@@ -1,3 +1,4 @@
+import { folder_parent_exists_ensure } from "./folder_parent_exists_ensure.mjs";
 import { path_json_encoded } from "./path_json_encoded.mjs";
 import { http_response } from "./http_response.mjs";
 import { createWriteStream } from "node:fs";
@@ -9,6 +10,7 @@ export async function http_file(url) {
   });
   let response = await http_response(url);
   let streamPipeline = promisify(pipeline);
+  await folder_parent_exists_ensure(file_path_output);
   await streamPipeline(response.body, createWriteStream(file_path_output));
   return file_path_output;
 }
