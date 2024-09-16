@@ -14,7 +14,7 @@ export async function http_response(url) {
     retry_if(["ECONNRESET", "ENOTFOUND", "ETIMEDOUT", "EHOSTUNREACH"]),
   );
   if (!response.ok) {
-    let statusText = response;
+    let { statusText } = response;
     throw error(
       json_to({
         url,
