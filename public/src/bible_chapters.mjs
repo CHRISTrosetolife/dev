@@ -1,4 +1,5 @@
-import { html_cache_parse_hrefs } from "./html_cache_parse_hrefs.mjs";
+import { html_parse_a_hrefs } from "./html_parse_a_hrefs.mjs";
+import { bible_file_html_parse } from "./bible_file_html_parse.mjs";
 import { bible_url_htm } from "./bible_url_htm.mjs";
 import { list_map } from "./list_map.mjs";
 import { integer_parse } from "./integer_parse.mjs";
@@ -8,7 +9,8 @@ import { string_suffix_without } from "./string_suffix_without.mjs";
 export async function bible_chapters(bible_folder, book_name) {
   let url = bible_url_htm(bible_folder, book_name);
   let extension = ".htm";
-  let hrefs = await html_cache_parse_hrefs(url, condition);
+  let root = await bible_file_html_parse(bible_folder, book_name);
+  let hrefs = html_parse_a_hrefs(root, condition);
   function condition(href) {
     if (string_starts_with(href, book_name)) {
       let without = string_prefix_without(href, book_name);
