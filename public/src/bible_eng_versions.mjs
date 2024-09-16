@@ -1,6 +1,6 @@
+import { list_sort_string } from "./list_sort_string.mjs";
 import { string_replace } from "./string_replace.mjs";
 import { bible_eng_versions_new } from "./bible_eng_versions_new.mjs";
-import { list_sort } from "./list_sort.mjs";
 import { list_concat } from "./list_concat.mjs";
 export function bible_eng_versions() {
   let a = [
@@ -28,6 +28,6 @@ export function bible_eng_versions() {
   ];
   let b = bible_eng_versions_new();
   let c = list_concat(a, b);
-  list_sort(c, (s) => string_replace(s, "-", ""));
+  list_sort_string(c, (s) => string_replace(s, "-", ""));
   return c;
 }
