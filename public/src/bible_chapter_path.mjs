@@ -8,7 +8,7 @@ export async function bible_chapter_path(bible_folder, chapter_name) {
   let url = bible_zip_url(bible_folder);
   await http_file(url);
   let file_path_output = http_file_path(url);
-  let output_path = await unzip(file_path_output);
-  path_join([output_path, string_combine(chapter_name, ".htm")]);
-  return output_path;
+  let output_folder = await unzip(file_path_output);
+  path_join([output_folder, string_combine(chapter_name, ".htm")]);
+  return output_folder;
 }
