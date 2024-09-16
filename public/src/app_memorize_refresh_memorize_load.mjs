@@ -1,5 +1,5 @@
+import { list_index_ensure } from "./list_index_ensure.mjs";
 import { list_get } from "./list_get.mjs";
-import { list_index_is } from "./list_index_is.mjs";
 import { error } from "./error.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { list_any } from "./list_any.mjs";
@@ -76,9 +76,7 @@ export async function app_memorize_refresh_memorize_load(context) {
       });
     }
     let { verse_index, token_index } = save;
-    if (!list_index_is(verses, verse_index)) {
-      verse_index = list_first(verses);
-    }
+    verse_index = list_index_ensure(verses, verse_index);
     let verse = list_get(verses, verse_index);
     object_merge(context, {
       verses,
