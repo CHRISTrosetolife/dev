@@ -108,7 +108,6 @@ export async function app_memorize_refresh_memorize_load(context) {
       verse_index,
       token_index,
     });
-    app_memorize_save(context);
     html_hash({
       verses: (value) => {
         group = app_memorize_groups_get(context, value);
