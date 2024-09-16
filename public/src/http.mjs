@@ -14,11 +14,11 @@ export async function http(url) {
   if (!response.ok) {
     throw new Error(`unexpected response ${response.statusText}`);
   }
-  let body = await response.text();
-  return body;
   async function lambda() {
     await sleep(integer_random(5000, 8000));
     let response = await fetch(url);
     return response;
   }
+  let body = await response.text();
+  return body;
 }
