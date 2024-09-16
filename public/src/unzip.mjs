@@ -9,11 +9,11 @@ export async function unzip(path_input) {
   log(string_combine_multiple(["unzipping to ", output_path]));
   await folder_exists_ensure(output_path);
   let command = string_combine_multiple([
-    'tar -xf "',
+    "tar -xf ",
     path_input,
-    '" -C "',
+    " -C ",
     output_path,
-    '"',
+    "",
   ]);
   await command_line(command);
 }
