@@ -13,5 +13,5 @@ export async function bible_chapter_path(bible_folder, chapter_name) {
     output_folder,
     string_combine(chapter_name, ".htm"),
   ]);
-  return output_folder;
+  return output_path;
 }
