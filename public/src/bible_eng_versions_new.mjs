@@ -16,5 +16,6 @@ export function bible_eng_versions_new() {
     "engf35",
     "engjps",
     "englxxup",
+    "englsv",
   ];
 }
