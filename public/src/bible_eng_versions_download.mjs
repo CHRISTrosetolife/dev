@@ -1,3 +1,4 @@
+import { path_encoded_parent } from "./path_encoded_parent.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { bible_ebible_url_combine } from "./bible_ebible_url_combine.mjs";
 import { http_file } from "./http_file.mjs";
@@ -11,4 +12,5 @@ export async function bible_eng_versions_download() {
     );
     await http_file(url);
   });
+  let output_parent = path_encoded_parent(http_file.name);
 }
