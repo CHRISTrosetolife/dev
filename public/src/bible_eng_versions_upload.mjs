@@ -9,6 +9,7 @@ export async function bible_eng_versions_upload() {
       return;
     }
     await bible_book_upload_all(bible_folder);
+    return;
     await bible_books_upload(bible_folder);
   });
 }
