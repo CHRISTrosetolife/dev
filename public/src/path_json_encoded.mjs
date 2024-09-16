@@ -6,7 +6,7 @@ import { json_to } from "./json_to.mjs";
 export function path_json_encoded(folder_name, key) {
   let key_json = json_to(key);
   let key_encoded = string_encoded_to(key_json);
-  let joined = path_join([folder_gitignore(), folder_name, file_name]);
+  let joined = path_join([folder_gitignore(), folder_name, key_encoded]);
   let file_path = file_name_json(joined);
   return file_path;
 }
