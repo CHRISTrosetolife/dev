@@ -14,5 +14,5 @@ export async function bible_eng_versions_download() {
     await http_file(url);
   });
   let output_parent = path_encoded_parent(http_file.name);
-  await folder_unzip();
+  await folder_unzip(output_parent);
 }
