@@ -1,3 +1,5 @@
+import { bible_eng_versions_new } from "./bible_eng_versions_new.mjs";
+import { list_includes } from "./list_includes.mjs";
 import { html_style_success_if } from "./html_style_success_if.mjs";
 import { app_memorize_refresh_settings_version } from "./app_memorize_refresh_settings_version.mjs";
 import { html_button_next_text } from "./html_button_next_text.mjs";
@@ -68,7 +70,7 @@ export async function app_memorize_refresh_settings(context) {
         );
         let b = html_button_width_full_text_click(
           root,
-          name,
+          (list_includes(bible_eng_versions_new(), name) ? "[*] " : "") + name,
           async function () {
             if (string_includes(copyright, "Public Domain")) {
               await app_memorize_refresh_settings_version(
