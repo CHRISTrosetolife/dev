@@ -7,6 +7,8 @@ export async function bible_chapter_parsed(bible_folder, chapter_name) {
     let joined = bible_url_htm(bible_folder, chapter_name);
     let root = await html_cache_parse(joined);
   }
+  if (true) {
+  }
   html_parse_visit_attribute_value(root, "class", "notemark", (v) => {
     let { node } = v;
     let { parent } = node;
