@@ -18,7 +18,7 @@ export async function http_response(url) {
     throw error(
       json_to({
         url,
-        response,
+        statusText,
       }),
     );
   }
