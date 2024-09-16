@@ -9,6 +9,6 @@ export async function bible_eng_versions_download() {
     let url = bible_ebible_url_combine(
       string_combine_multiple(["Scriptures/", bible_folder, ".zip"]),
     );
-    await http_file();
+    await http_file(url);
   });
 }
