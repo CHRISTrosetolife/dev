@@ -6,11 +6,11 @@ import { pipeline } from "node:stream";
 import { promisify } from "node:util";
 import { file_exists } from "./file_exists.mjs";
 export async function http_file(url) {
-  let streamPipeline = promisify(pipeline);
   let file_path_output = http_file_path(url);
   if (await file_exists(file_path_output)) {
     return;
   }
+  let streamPipeline = promisify(pipeline);
   await folder_parent_exists_ensure(file_path_output);
   let response = await http_response(url);
   await streamPipeline(response.body, createWriteStream(file_path_output));
