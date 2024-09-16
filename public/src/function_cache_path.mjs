@@ -4,7 +4,6 @@ export function function_cache_path(function_name, args) {
     function_name,
     args,
   };
-  let folder_name = "cache";
-  let file_path = path_json_encoded(folder_name, key);
+  let file_path = path_json_encoded("cache", key);
   return file_path;
 }
