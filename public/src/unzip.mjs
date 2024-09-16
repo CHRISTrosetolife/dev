@@ -15,4 +15,5 @@ export async function unzip(path_input) {
     "",
   ]);
   await command_line(command);
+  return output_path;
 }
