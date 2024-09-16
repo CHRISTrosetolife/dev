@@ -70,7 +70,9 @@ export async function app_memorize_refresh_settings(context) {
         );
         let b = html_button_width_full_text_click(
           root,
-          (list_includes(bible_eng_versions_new(), name) ? "[*] " : "") + name,
+          (list_includes(bible_eng_versions_new(), version_code)
+            ? "[*] "
+            : "") + name,
           async function () {
             if (string_includes(copyright, "Public Domain")) {
               await app_memorize_refresh_settings_version(
