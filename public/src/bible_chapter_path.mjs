@@ -1,6 +1,6 @@
-import { unzip_folder } from "./unzip_folder.mjs";
+import { unzip } from "./unzip.mjs";
 import { http_file_path } from "./http_file_path.mjs";
-export function bible_chapter_path(bible_folder, chapter_name) {
+export async function bible_chapter_path(bible_folder, chapter_name) {
   let file_path_output = http_file_path(url);
-  let output_path = unzip_folder(file_path_output);
+  let output_path = await unzip(file_path_output);
 }
