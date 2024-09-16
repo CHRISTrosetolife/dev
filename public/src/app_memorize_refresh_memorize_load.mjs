@@ -75,15 +75,8 @@ export async function app_memorize_refresh_memorize_load(context) {
         message: "verses is empty",
       });
     }
-    let { verse_index, token_index } = save;
-    verse_index = list_index_ensure(verses, verse_index);
-    let verse = list_get(verses, verse_index);
-    let { tokens } = verse;
-    token_index = list_index_ensure(tokens, token_index);
     object_merge(context, {
       verses,
-      verse_index,
-      token_index,
     });
     let verses_length = list_size(context.verses);
     let groups = app_memorize_group(verses_length);
@@ -106,6 +99,16 @@ export async function app_memorize_refresh_memorize_load(context) {
     ) {
       group = group_first;
     }
+    let { verse_index, token_index } = save;
+    verse_index = list_index_ensure(verses, verse_index);
+    let verse = list_get(verses, verse_index);
+    let { tokens } = verse;
+    token_index = list_index_ensure(tokens, token_index);
+    object_merge(context, {
+      verse_index,
+      token_index,
+    });
+    app_memorize_save(context);
     html_hash({
       verses: (value) => {
         group = app_memorize_groups_get(context, value);
