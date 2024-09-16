@@ -12,7 +12,7 @@ export async function http_response(url) {
     retry_if(["ECONNRESET", "ENOTFOUND", "ETIMEDOUT", "EHOSTUNREACH"]),
   );
   if (!response.ok) {
-    throw new Error(`unexpected response ${response.statusText}`);
+    throw error_json();
   }
   async function lambda() {
     await sleep(integer_random(5000, 8000));
