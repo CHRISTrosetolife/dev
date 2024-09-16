@@ -7,7 +7,7 @@ import { file_exists } from "./file_exists.mjs";
 export async function unzip(path_input) {
   let output_path = unzip_folder(path_input);
   if (await file_exists(output_path)) {
-    return;
+    return output_path;
   }
   log(string_combine_multiple(["unzipping to ", output_path]));
   await folder_exists_ensure(output_path);
