@@ -33,7 +33,6 @@ export function bible_eng_versions() {
     "engWycliffe",
     "eng-lxx2012",
     "engwebster",
-    "engwebp",
     "engf35",
     "engjps",
     "englxxup",
