@@ -80,6 +80,7 @@ export async function app_memorize_refresh_memorize_load(context) {
     }
     object_merge(context, {
       verses,
+      verse_index,
     });
     let verses_length = list_size(context.verses);
     let groups = app_memorize_group(verses_length);
