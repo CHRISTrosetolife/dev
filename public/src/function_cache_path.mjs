@@ -8,9 +8,10 @@ export function function_cache_path(function_name, args) {
     function_name,
     args,
   };
+  let folder_name = "cache";
   let key_json = json_to(key);
   let key_encoded = string_encoded_to(key_json);
   let file_name = file_name_json(key_encoded);
-  let file_path = path_join([folder_gitignore(), "cache", file_name]);
+  let file_path = path_join([folder_gitignore(), folder_name, file_name]);
   return file_path;
 }
