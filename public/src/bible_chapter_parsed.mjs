@@ -7,7 +7,7 @@ import { list_remove } from "./list_remove.mjs";
 import { file_read } from "./file_read.mjs";
 export async function bible_chapter_parsed(bible_folder, chapter_name) {
   let download_without_using_zip = false;
-  if (false) {
+  if (download_without_using_zip) {
     let joined = bible_url_htm(bible_folder, chapter_name);
     let root = await html_cache_parse(joined);
   }
