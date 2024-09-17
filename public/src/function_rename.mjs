@@ -1,3 +1,4 @@
+import { functions_identifier } from "./functions_identifier.mjs";
 import { functions_string } from "./functions_string.mjs";
 import { function_paths } from "./function_paths.mjs";
 import { js_import_remove } from "./js_import_remove.mjs";
@@ -40,6 +41,7 @@ export async function function_rename(fn_name_from, fn_name_to) {
     await file_js_unparse(file_path, ast);
   });
   let functions_matching_strings = await functions_string(fn_name_from);
+  await functions_identifier();
   let concatenated = list_concat(existing, [fn_name_to]);
   let function_paths = list_map(concatenated, function_name_to_path);
   await data_transform(async function lambda(data) {
