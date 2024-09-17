@@ -17,5 +17,14 @@ export async function function_imports_find(function_name_from, name_to) {
       });
     });
   });
-  list_adder_unique((la) => {});
+  list_adder_unique((la) => {
+    each_object(map, (function_name, mapped) => {
+      let { sources, imports } = mapped;
+      each([sources, imports], (item) => {
+        if (item === name_to) {
+          la(function_name);
+        }
+      });
+    });
+  });
 }
