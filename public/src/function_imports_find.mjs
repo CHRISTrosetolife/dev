@@ -6,6 +6,7 @@ import { graph_path_shortest } from "./graph_path_shortest.mjs";
 import { each } from "./each.mjs";
 import { each_object } from "./each_object.mjs";
 import { function_imports } from "./function_imports.mjs";
+import { list_includes } from "./list_includes.mjs";
 export async function function_imports_find(function_name_from, name_to) {
   let map = await function_imports(function_name_from);
   let vertices = list_adder_unique((la) => {
@@ -25,7 +26,7 @@ export async function function_imports_find(function_name_from, name_to) {
       }
       let mapped = object_property_get(map, u);
       let { sources, imports } = mapped;
-      return list_any([sources, imports], (i) => list_contains(i, v));
+      return list_any([sources, imports], (i) => list_includes(i, v));
     },
     function_name_from,
     name_to,
