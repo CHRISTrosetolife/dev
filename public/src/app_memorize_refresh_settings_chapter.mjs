@@ -1,4 +1,3 @@
-import { object_merge } from "./object_merge.mjs";
 import { app_memorize_book_code_get } from "./app_memorize_book_code_get.mjs";
 import { app_memorize_refresh_memorize } from "./app_memorize_refresh_memorize.mjs";
 import { app_memorize_chapter_set } from "./app_memorize_chapter_set.mjs";
@@ -25,10 +24,6 @@ export function app_memorize_refresh_settings_chapter(context) {
     book_code,
     async (context, book_code, chapter) => {
       app_memorize_chapter_set(context, chapter);
-      object_merge(save, {
-        token_index: 0,
-        verse_index: 0,
-      });
       await app_memorize_refresh_memorize(context);
     },
   );
