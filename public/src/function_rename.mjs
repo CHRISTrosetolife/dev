@@ -1,3 +1,4 @@
+import { list_intersect } from "./list_intersect.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { functions_identifier } from "./functions_identifier.mjs";
 import { functions_string } from "./functions_string.mjs";
@@ -43,6 +44,7 @@ export async function function_rename(fn_name_from, fn_name_to) {
   });
   let functions_matching_strings = await functions_string(fn_name_from);
   let functions_fn_name = await functions_identifier(fn_name.name);
+  list_intersect();
   let concatenated = list_concat(existing, [fn_name_to]);
   let function_paths = list_map(concatenated, function_name_to_path);
   await data_transform(async function lambda(data) {
