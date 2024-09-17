@@ -1,25 +1,9 @@
-import { html_code_generate_parent } from "./html_code_generate_parent.mjs";
-import { function_names_to_lookup } from "./function_names_to_lookup.mjs";
-import { html_code_generate } from "./html_code_generate.mjs";
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { file_overwrite } from "./file_overwrite.mjs";
-import { function_name_generated } from "./function_name_generated.mjs";
-import { function_new_generic } from "./function_new_generic.mjs";
+import { html_code_generate_generic } from "./html_code_generate_generic.mjs";
 export async function html_css_generate(name, html_css_code) {
-  let body_string = await html_code_generate("link", html_css_code);
-  let fn_new_name = string_combine_multiple([
-    function_name_generated(html_css_generate),
-    "_",
+  return await html_code_generate_generic(
+    "link",
+    input,
+    html_css_generate,
     name,
-  ]);
-  await function_new_generic(
-    fn_new_name,
-    html_code_generate_parent(),
-    body_string,
-    false,
-    [],
-    false,
-    file_overwrite,
   );
-  return function_names_to_lookup([fn_new_name]);
 }
