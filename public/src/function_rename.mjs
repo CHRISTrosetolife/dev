@@ -1,3 +1,4 @@
+import { assert } from "./assert.mjs";
 import { object_properties_intersect } from "./object_properties_intersect.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { functions_identifier } from "./functions_identifier.mjs";
@@ -21,6 +22,7 @@ import { each_async } from "./each_async.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { list_map } from "./list_map.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
+import { list_empty_is } from "./list_empty_is.mjs";
 export async function function_rename(fn_name_from, fn_name_to) {
   assert_arguments_length(arguments, 2);
   let identifiers = await data_identifiers();
@@ -48,6 +50,7 @@ export async function function_rename(fn_name_from, fn_name_to) {
     functions_matching_strings,
     functions_fn_name,
   );
+  assert(list_empty_is, [intersected]);
   let concatenated = list_concat(existing, [fn_name_to]);
   let function_paths = list_map(concatenated, function_name_to_path);
   await data_transform(async function lambda(data) {
