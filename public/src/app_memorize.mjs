@@ -1,3 +1,4 @@
+import { html_script_adsense } from "./html_script_adsense.mjs";
 import { app_context_books_bible } from "./app_context_books_bible.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
 import { html_script_axios } from "./html_script_axios.mjs";
@@ -22,4 +23,5 @@ export async function app_memorize() {
     root,
   });
   await app_memorize_frame(context);
+  html_script_adsense();
 }
