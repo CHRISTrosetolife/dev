@@ -11,5 +11,5 @@ export async function function_imports(function_name) {
   let file_name = function_name_to_path(function_name);
   let ast = await file_js_parse(file_name);
   let imports = js_imports_existing(ast);
-  object_property_set(found, function_name, true);
+  object_property_set(found, function_name, imports);
 }
