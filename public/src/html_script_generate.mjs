@@ -7,6 +7,7 @@ import { function_new_generic } from "./function_new_generic.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_code_generate } from "./html_code_generate.mjs";
 export async function html_script_generate(name, input) {
+  let body_string = await html_code_generate("script", input);
   let fn_new_name = string_combine_multiple([
     function_name_generated(html_script_generate),
     "_",
@@ -24,7 +25,6 @@ export async function html_script_generate(name, input) {
     file_write,
   );
   return function_name;
-  let body_string = await html_code_generate("link", html_css_code);
   await function_new_generic(
     fn_new_name,
     html_code_generate_parent(),
