@@ -1,12 +1,10 @@
 import { js_node_is } from "./js_node_is.mjs";
 import { assert } from "./assert.mjs";
-import { log } from "./log.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
 import { list_adder_unique } from "./list_adder_unique.mjs";
 import { js_visit } from "./js_visit.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export function js_node_types(ast) {
-  log(arguments);
   assert_arguments_length(arguments, 1);
   assert(js_node_is, [ast]);
   return list_adder_unique((la) => {
