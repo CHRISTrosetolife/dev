@@ -42,7 +42,7 @@ export async function function_rename(fn_name_from, fn_name_to) {
     await file_js_unparse(file_path, ast);
   });
   let functions_matching_strings = await functions_string(fn_name_from);
-  await functions_identifier(fn_name.name);
+  let functions_fn_name = await functions_identifier(fn_name.name);
   let concatenated = list_concat(existing, [fn_name_to]);
   let function_paths = list_map(concatenated, function_name_to_path);
   await data_transform(async function lambda(data) {
