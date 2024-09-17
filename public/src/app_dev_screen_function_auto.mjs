@@ -1,5 +1,5 @@
+import { fn_name } from "./fn_name.mjs";
 import { js_code_statement_return } from "./js_code_statement_return.mjs";
-import { watch } from "./watch.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { app_dev_screen_if_to_block_if_else } from "./app_dev_screen_if_to_block_if_else.mjs";
 import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
@@ -48,7 +48,7 @@ export function app_dev_screen_function_auto() {
         root,
         string_combine_multiple([
           "while `",
-          watch.name,
+          fn_name("watch"),
           "` is running , then , every time a file is saved , `",
           fn.name,
           "` is called ",
