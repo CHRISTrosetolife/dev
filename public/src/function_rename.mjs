@@ -21,6 +21,7 @@ import { each_async } from "./each_async.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { list_map } from "./list_map.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
+import { object_properties } from "./object_properties.mjs";
 export async function function_rename(fn_name_from, fn_name_to) {
   assert_arguments_length(arguments, 2);
   let identifiers = await data_identifiers();
@@ -43,6 +44,9 @@ export async function function_rename(fn_name_from, fn_name_to) {
     await file_js_unparse(file_path, ast);
   });
   let functions_matching_strings = await functions_string(fn_name_from);
+  let functions_matching_strings_keys = object_properties(
+    functions_matching_strings,
+  );
   let functions_fn_name = await functions_identifier(fn_name.name);
   list_intersect();
   let concatenated = list_concat(existing, [fn_name_to]);
