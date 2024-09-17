@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { list_adder_unique } from "./list_adder_unique.mjs";
 import { graph_path_shortest } from "./graph_path_shortest.mjs";
@@ -20,6 +21,8 @@ export async function function_imports_find(function_name_from, name_to) {
     if (!object_property_exists(map, u)) {
       return false;
     }
+    let mapped = object_property_get(object, "property_name");
+    let { sources, imports } = mapped;
     list_contains();
   });
   list_adder((la) => {
