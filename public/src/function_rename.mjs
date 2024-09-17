@@ -44,8 +44,8 @@ export async function function_rename(fn_name_from, fn_name_to) {
     js_imports_add_specified(ast, [fn_name_to]);
     await file_js_unparse(file_path, ast);
   });
-  let c = list_concat(existing, [fn_name_to]);
-  let fps = list_map(c, function_name_to_path);
+  let concatenated = list_concat(existing, [fn_name_to]);
+  let fps = list_map(concatenated, function_name_to_path);
   await data_transform(async function lambda(data) {
     data_remove(data, fn_name_from);
     await data_update_multiple_transform(fps, data);
