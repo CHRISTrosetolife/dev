@@ -24,7 +24,7 @@ export async function function_imports_find(function_name_from, name_to) {
     }
     let mapped = object_property_get(map, u);
     let { sources, imports } = mapped;
-    list_any;
+    list_any([sources, imports]);
     list_contains();
   });
   list_adder((la) => {
