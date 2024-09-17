@@ -44,10 +44,10 @@ export async function function_rename(fn_name_from, fn_name_to) {
     await file_js_unparse(file_path, ast);
   });
   let functions_matching_strings = await functions_string(fn_name_from);
+  let functions_fn_name = await functions_identifier(fn_name.name);
   let functions_matching_strings_keys = object_properties(
     functions_matching_strings,
   );
-  let functions_fn_name = await functions_identifier(fn_name.name);
   let functions_fn_name_keys = object_properties(functions_matching_strings);
   list_intersect();
   let concatenated = list_concat(existing, [fn_name_to]);
