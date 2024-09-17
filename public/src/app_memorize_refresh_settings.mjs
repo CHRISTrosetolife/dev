@@ -152,6 +152,10 @@ export async function app_memorize_refresh_settings(context) {
         let b = html_button(root);
         html_inner_set(b, app_memorize_group_to_range_string(context, g));
         html_on_click(b, async () => {
+          object_merge(save, {
+            token_index: 0,
+            verse_index: 0,
+          });
           app_memorize_group_current_set(context, g, true);
           await app_memorize_refresh_settings(context);
         });
