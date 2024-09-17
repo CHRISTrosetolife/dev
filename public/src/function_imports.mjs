@@ -20,7 +20,9 @@ export async function function_imports(function_name) {
         imports,
         sources,
       });
-      await each_async(list, async (item) => {});
+      await each_async(imports, async (i) => {
+        function_imports_recursive(found, function_name);
+      });
     }
   }
 }
