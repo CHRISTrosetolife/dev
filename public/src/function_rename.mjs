@@ -37,11 +37,6 @@ export async function function_rename(fn_name_from, fn_name_to) {
     [fn_name_from, fn_name_to],
   );
   await each_async(existing, async (e) => {
-    if (0) {
-      log({
-        e,
-      });
-    }
     let file_path = function_name_to_path(e);
     let ast = await file_js_parse(file_path);
     js_import_remove(ast, fn_name_from);
