@@ -1,3 +1,4 @@
+import { html_code_generate_parent } from "./html_code_generate_parent.mjs";
 import { function_names_to_lookup } from "./function_names_to_lookup.mjs";
 import { function_name_generated } from "./function_name_generated.mjs";
 import { file_write } from "./file_write.mjs";
@@ -14,7 +15,7 @@ export async function html_script_generate(name, input) {
   let open = false;
   await function_new_generic(
     fn_new_name,
-    "",
+    html_code_generate_parent(),
     body_string,
     open,
     [],
