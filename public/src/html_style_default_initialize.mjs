@@ -1,4 +1,3 @@
-import { html_script_adsense } from "./html_script_adsense.mjs";
 import { html_style_border_box_get } from "./html_style_border_box_get.mjs";
 import { html_style_default } from "./html_style_default.mjs";
 import { object_merge } from "./object_merge.mjs";
@@ -13,6 +12,5 @@ export function html_style_default_initialize() {
   object_merge(html_style_default(), html_style_border_box_get());
   html_style_default_font_size(html_style_default_font_size_value());
   html_style_button_default_initialize();
-  html_script_adsense();
   return root;
 }
