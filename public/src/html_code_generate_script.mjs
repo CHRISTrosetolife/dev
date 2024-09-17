@@ -7,7 +7,7 @@ export async function html_code_generate_script(function_name_suffix, input) {
     "html_script_",
     function_name_suffix,
   ]);
-  let code = await html_code_generate("script", input, function_name);
+  let code = await html_code_generate("script", input);
   let open = false;
   await function_new_generic(
     function_name,
