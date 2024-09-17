@@ -48,6 +48,7 @@ export async function function_rename(fn_name_from, fn_name_to) {
     functions_matching_strings,
   );
   let functions_fn_name = await functions_identifier(fn_name.name);
+  let functions_fn_name_keys = object_properties(functions_matching_strings);
   list_intersect();
   let concatenated = list_concat(existing, [fn_name_to]);
   let function_paths = list_map(concatenated, function_name_to_path);
