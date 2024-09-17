@@ -1,4 +1,4 @@
-import { assert } from "./assert.mjs";
+import { assert_message } from "./assert_message.mjs";
 import { object_properties_intersect } from "./object_properties_intersect.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { functions_identifier } from "./functions_identifier.mjs";
@@ -50,7 +50,7 @@ export async function function_rename(fn_name_from, fn_name_to) {
     functions_matching_strings,
     functions_fn_name,
   );
-  assert(list_empty_is, [intersected]);
+  assert_message(list_empty_is, [intersected], () => "if ");
   let concatenated = list_concat(existing, [fn_name_to]);
   let function_paths = list_map(concatenated, function_name_to_path);
   await data_transform(async function lambda(data) {
