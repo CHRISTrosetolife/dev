@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { assert_message } from "./assert_message.mjs";
 import { object_properties_intersect } from "./object_properties_intersect.mjs";
 import { fn_name } from "./fn_name.mjs";
@@ -50,12 +51,11 @@ export async function function_rename(fn_name_from, fn_name_to) {
     functions_matching_strings,
     functions_fn_name,
   );
-  assert_message(
-    list_empty_is,
-    [intersected],
-    () => $s,
-    "if this assert fails, then this rename needs to handle ",
-    "",
+  assert_message(list_empty_is, [intersected], () =>
+    string_combine_multiple([
+      "if this assert fails, then this rename needs to handle ",
+      "",
+    ]),
   );
   let concatenated = list_concat(existing, [fn_name_to]);
   let function_paths = list_map(concatenated, function_name_to_path);
