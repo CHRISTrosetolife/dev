@@ -9,7 +9,7 @@ export async function html_script_generate(name, input) {
   let fn_caller = html_script_generate;
   let body_string = await html_code_generate("script", input);
   let fn_new_name = string_combine_multiple([
-    function_name_generated(html_script_generate),
+    function_name_generated(fn_caller),
     "_",
     name,
   ]);
