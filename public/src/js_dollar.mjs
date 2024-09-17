@@ -243,6 +243,7 @@ export function js_dollar(ast) {
           js_code_call_args(object_property_set.name, [
             js_name_unique(ast, "object"),
             js_name_unique(ast, "property_name"),
+            js_name_unique(ast, "value"),
           ]),
         );
         object_replace(node, e);
