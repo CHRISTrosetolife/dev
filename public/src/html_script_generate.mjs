@@ -1,6 +1,4 @@
 import { function_names_to_lookup } from "./function_names_to_lookup.mjs";
-import { file_overwrite } from "./file_overwrite.mjs";
-import { html_code_generate_parent } from "./html_code_generate_parent.mjs";
 import { function_name_generated } from "./function_name_generated.mjs";
 import { file_write } from "./file_write.mjs";
 import { function_new_generic } from "./function_new_generic.mjs";
@@ -13,26 +11,15 @@ export async function html_script_generate(name, input) {
     "_",
     name,
   ]);
-  let code = await html_code_generate("script", input);
   let open = false;
   await function_new_generic(
-    function_name,
+    fn_new_name,
     "",
-    code,
+    body_string,
     open,
     [],
     false,
     file_write,
-  );
-  return function_name;
-  await function_new_generic(
-    fn_new_name,
-    html_code_generate_parent(),
-    body_string,
-    false,
-    [],
-    false,
-    file_overwrite,
   );
   return function_names_to_lookup([fn_new_name]);
 }
