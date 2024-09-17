@@ -20,8 +20,8 @@ export async function function_imports(function_name) {
         imports,
         sources,
       });
-      await each_async(imports, async (i) => {
-        await function_imports_recursive(found, function_name);
+      await each_async(imports, async (import_) => {
+        await function_imports_recursive(found, import_);
       });
     }
   }
