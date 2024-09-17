@@ -9,6 +9,7 @@ export function app_index_choices_files() {
     each(choices, (choice) => {
       if (object_property_exists(choice, "page")) {
         let page = object_property_get(choice, "page");
+        la("app_" + page);
       }
     });
   });
