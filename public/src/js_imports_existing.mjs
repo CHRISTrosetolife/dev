@@ -6,7 +6,9 @@ export function js_imports_existing(ast) {
     js_visit_node(ast, "ImportSpecifier", (v) => {
       let { node } = v;
       let { imported } = node;
-      log({});
+      log({
+        imported,
+      });
       if (imported.type === "Identifier") {
         la(imported.name);
       }
