@@ -5,7 +5,7 @@ export function js_imports_default(ast) {
   let existing = list_adder((la) => {
     js_visit_node(ast, "ImportDefaultSpecifier", (v) => {
       let { node } = v;
-      log({});
+      log(node);
       la(node);
     });
   });
