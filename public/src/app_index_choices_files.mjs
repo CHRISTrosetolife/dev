@@ -1,3 +1,5 @@
+import { app_prefix } from "./app_prefix.mjs";
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
@@ -9,7 +11,7 @@ export function app_index_choices_files() {
     each(choices, (choice) => {
       if (object_property_exists(choice, "page")) {
         let page = object_property_get(choice, "page");
-        la("app_" + page);
+        la(string_combine_multiple([app_prefix(), page]));
       }
     });
   });
