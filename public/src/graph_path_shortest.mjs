@@ -23,6 +23,6 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
     (v) => list_index(vertices, v),
     neighbors_get,
     from,
-    to,
+    [to],
   );
 }
