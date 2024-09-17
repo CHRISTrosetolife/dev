@@ -19,6 +19,7 @@ export async function function_imports_find(function_name_from, name_to) {
   });
   list_adder_unique((la) => {
     each_object(map, (function_name, mapped) => {
+      la(function_name);
       let { sources, imports } = mapped;
       each([sources, imports], (item) => {
         if (item === name_to) {
