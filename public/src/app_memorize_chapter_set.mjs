@@ -6,6 +6,8 @@ export function app_memorize_chapter_set(context, chapter) {
   let save = app_memorize_save_get(context);
   object_merge(save, {
     chapter,
+    token_index: 0,
+    verse_index: 0,
   });
   let properties = ["group_current", "pattern_index"];
   object_property_delete_multiple(save, properties);
