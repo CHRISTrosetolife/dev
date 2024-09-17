@@ -161,7 +161,7 @@ export function js_dollar(ast) {
         let e = js_parse_expression(
           js_code_call_args(object_property_get.name, [
             js_name_unique(ast, "object"),
-            js_name_unique(ast, "property_name"),
+            '"property_name"',
           ]),
         );
         object_replace(node, e);
