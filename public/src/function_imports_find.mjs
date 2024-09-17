@@ -18,7 +18,7 @@ export async function function_imports_find(function_name_from, name_to) {
       });
     });
   });
-  graph_path_shortest(vertices, (u, v) => {
+  return graph_path_shortest(vertices, (u, v) => {
     if (!object_property_exists(map, u)) {
       return false;
     }
