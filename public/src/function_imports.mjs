@@ -7,16 +7,15 @@ import { list_filter } from "./list_filter.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
 export async function function_imports(function_name) {
   let found = {};
-  if (object_property_exists(found, function_name)) {
-    return;
+  if (!object_property_exists(found, function_name)) {
+    let ast = await function_parse(function_name);
+    let imports = js_imports_existing(ast);
+    let sources = js_imports_sources(ast);
+    sources = list_filter(sources, (s) => !string_starts_with(s, "."));
+    object_property_set(found, function_name, {
+      imports,
+      sources,
+    });
   }
-  let ast = await function_parse(function_name);
-  let imports = js_imports_existing(ast);
-  let sources = js_imports_sources(ast);
-  sources = list_filter(sources, (s) => !string_starts_with(s, "."));
-  object_property_set(found, function_name, {
-    imports,
-    sources,
-  });
   return found;
 }
