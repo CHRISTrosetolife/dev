@@ -1,2 +1,1 @@
-import { fn_name } from "./fn_name.mjs";
-export function function_imports(fn_name) {}
+export function function_imports(function_name) {}
