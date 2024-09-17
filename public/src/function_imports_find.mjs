@@ -5,6 +5,6 @@ export async function function_imports_find(function_name_from, name_to) {
   let map = await function_imports(function_name_from);
   each_object(map, (function_name, mapped) => {
     let { sources, imports } = mapped;
-    each(list, (item) => {});
+    each([sources, imports], (item) => {});
   });
 }
