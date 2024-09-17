@@ -4,5 +4,5 @@ import { js_imports_existing } from "./js_imports_existing.mjs";
 export async function function_imports(function_name) {
   let file_name = function_name_to_path(function_name);
   let ast = await file_js_parse(file_name);
-  return js_imports_existing(ast);
+  let imports = js_imports_existing(ast);
 }
