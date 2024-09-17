@@ -60,7 +60,7 @@ export async function function_rename(fn_name_from, fn_name_to) {
       fn_name.name,
       " with ",
       fn_name_from,
-      " passed into it: ",
+      " passed into it because of these functions: ",
       list_join_comma_space(intersected),
     ]),
   );
