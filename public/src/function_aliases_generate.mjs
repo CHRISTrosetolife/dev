@@ -52,6 +52,7 @@ import { json_to } from "./json_to.mjs";
 import { function_transform } from "./function_transform.mjs";
 import { http_server } from "./http_server.mjs";
 import { command_line } from "./command_line.mjs";
+import { fn_name } from "./fn_name.mjs";
 export async function function_aliases_generate() {
   let all = {};
   function alias_add(fn, aliases) {
@@ -107,7 +108,7 @@ export async function function_aliases_generate() {
   alias_add(terminal_data_history, ["th"]);
   alias_add(terminal_data_history_clear, ["thc"]);
   alias_add(watch, ["w"]);
-  let name = "function_aliases";
+  let name = fn_name("function_aliases");
   await function_new_generic(
     name,
     "",
