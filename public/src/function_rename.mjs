@@ -24,6 +24,7 @@ import { list_concat } from "./list_concat.mjs";
 import { list_map } from "./list_map.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
+import { list_join_comma_space } from "./list_join_comma_space.mjs";
 export async function function_rename(fn_name_from, fn_name_to) {
   assert_arguments_length(arguments, 2);
   let identifiers = await data_identifiers();
@@ -55,7 +56,10 @@ export async function function_rename(fn_name_from, fn_name_to) {
     string_combine_multiple([
       "if this assert fails, then this rename needs to handle ",
       fn_name.name,
-      "",
+      " with ",
+      fn_name_from,
+      " passed into it: ",
+      list_join_comma_space(intersected),
     ]),
   );
   let concatenated = list_concat(existing, [fn_name_to]);
