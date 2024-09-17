@@ -238,6 +238,15 @@ export function js_dollar(ast) {
           object_replace(parent, e);
         }
       }
+      if (remaining === "st") {
+        let e = js_parse_expression(
+          js_code_call_args(object_property_set.name, [
+            js_name_unique(ast, "object"),
+            js_name_unique(ast, "property_name"),
+          ]),
+        );
+        object_replace(node, e);
+      }
       if (prefix_use(remaining, scm_prefix, prefixes)) {
         if (list_is(parent)) {
           let e = js_parse_expression(
