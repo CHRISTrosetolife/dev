@@ -1,4 +1,4 @@
-import { list_intersect } from "./list_intersect.mjs";
+import { object_properties_intersect } from "./object_properties_intersect.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { functions_identifier } from "./functions_identifier.mjs";
 import { functions_string } from "./functions_string.mjs";
@@ -21,7 +21,6 @@ import { each_async } from "./each_async.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { list_map } from "./list_map.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
-import { object_properties } from "./object_properties.mjs";
 export async function function_rename(fn_name_from, fn_name_to) {
   assert_arguments_length(arguments, 2);
   let identifiers = await data_identifiers();
@@ -45,11 +44,7 @@ export async function function_rename(fn_name_from, fn_name_to) {
   });
   let functions_matching_strings = await functions_string(fn_name_from);
   let functions_fn_name = await functions_identifier(fn_name.name);
-  let functions_matching_strings_keys = object_properties(
-    functions_matching_strings,
-  );
-  let functions_fn_name_keys = object_properties(functions_matching_strings);
-  list_intersect(functions_matching_strings_keys, functions_fn_name_keys);
+  object_properties_intersect(functions_matching_strings, functions_fn_name);
   let concatenated = list_concat(existing, [fn_name_to]);
   let function_paths = list_map(concatenated, function_name_to_path);
   await data_transform(async function lambda(data) {
