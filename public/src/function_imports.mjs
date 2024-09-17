@@ -18,4 +18,5 @@ export async function function_imports(function_name) {
     imports,
     sources,
   });
+  return found;
 }
