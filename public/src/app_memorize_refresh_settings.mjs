@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { html_style_success_if } from "./html_style_success_if.mjs";
 import { app_memorize_refresh_settings_version } from "./app_memorize_refresh_settings_version.mjs";
 import { html_button_next_text } from "./html_button_next_text.mjs";
@@ -153,11 +152,6 @@ export async function app_memorize_refresh_settings(context) {
         let b = html_button(root);
         html_inner_set(b, app_memorize_group_to_range_string(context, g));
         html_on_click(b, async () => {
-          object_merge(save, {
-            token_index: 0,
-            verse_index: 0,
-          });
-          log({});
           app_memorize_group_current_set(context, g, true);
           await app_memorize_refresh_settings(context);
         });
