@@ -12,7 +12,7 @@ export async function html_code_generate_script(function_name_suffix, input) {
   await function_new_generic(
     function_name,
     "",
-    "",
+    code,
     open,
     [],
     false,
