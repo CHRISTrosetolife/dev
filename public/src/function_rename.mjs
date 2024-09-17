@@ -49,7 +49,7 @@ export async function function_rename(fn_name_from, fn_name_to) {
     functions_matching_strings,
   );
   let functions_fn_name_keys = object_properties(functions_matching_strings);
-  list_intersect();
+  list_intersect(functions_matching_strings_keys, functions_fn_name_keys);
   let concatenated = list_concat(existing, [fn_name_to]);
   let function_paths = list_map(concatenated, function_name_to_path);
   await data_transform(async function lambda(data) {
