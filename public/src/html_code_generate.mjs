@@ -1,5 +1,4 @@
 import { html_code_generate_parent } from "./html_code_generate_parent.mjs";
-import { log } from "./log.mjs";
 import { js_unparse } from "./js_unparse.mjs";
 import { js_parse } from "./js_parse.mjs";
 import { list_join_empty } from "./list_join_empty.mjs";
@@ -19,9 +18,6 @@ import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export async function html_code_generate(tag_name, input) {
   assert_arguments_length(arguments, 2);
   let p = await html_parse(input);
-  log({
-    tag_name,
-  });
   let c = html_parse_visit_tag_single(p, tag_name);
   let { attribs } = c;
   let variable_name = "c";
