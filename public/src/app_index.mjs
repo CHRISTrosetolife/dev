@@ -12,19 +12,19 @@ export function app_index() {
   html_clear_scroll_top_centered(root);
   let choices = app_index_choices();
   each(choices, (choice) => {
+    let url;
+    if (object_property_exists(choice, "page")) {
+      url = string_combine_multiple([
+        object_property_get(choice, "page"),
+        ".html",
+      ]);
+    } else {
+      url = object_property_get(choice, "href");
+    }
     html_button_width_full_text_click(
       root,
       object_property_get(choice, "text"),
       () => {
-        let url;
-        if (object_property_exists(choice, "page")) {
-          url = string_combine_multiple([
-            object_property_get(choice, "page"),
-            ".html",
-          ]);
-        } else {
-          url = object_property_get(choice, "href");
-        }
         window_open(url);
       },
     );
