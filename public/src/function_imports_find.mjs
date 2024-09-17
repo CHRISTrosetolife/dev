@@ -17,7 +17,8 @@ export async function function_imports_find(function_name_from, name_to) {
     });
   });
   graph_path_shortest(vertices, (u, v) => {
-    object_property_exists(map, u) && list_contains();
+    object_property_exists(map, u);
+    list_contains();
   });
   list_adder((la) => {
     each_object(map, (function_name, mapped) => {
