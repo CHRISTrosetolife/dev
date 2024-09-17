@@ -21,7 +21,7 @@ export async function function_imports_find(function_name_from, name_to) {
     if (!object_property_exists(map, u)) {
       return false;
     }
-    let mapped = object_property_get(object, "property_name");
+    let mapped = object_property_get(map, u);
     let { sources, imports } = mapped;
     list_contains();
   });
