@@ -18,4 +18,5 @@ export async function html_code_generate_script(function_name_suffix, input) {
     false,
     file_write,
   );
+  return function_name;
 }
