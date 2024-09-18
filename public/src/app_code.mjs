@@ -8,6 +8,7 @@ export async function app_code() {
   let root = html_style_default_initialize();
   await html_scripts_load(root, ["axios", "acorn", "astring"]);
   let ns = await function_run_remote(function_names.name, []);
+  html_input_width_full(root);
   html_list(root, ns);
   html_input_width_full(root);
 }
