@@ -1,3 +1,4 @@
+import { each_index } from "./each_index.mjs";
 import { log } from "./log.mjs";
 import { each } from "./each.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
@@ -11,6 +12,7 @@ export function js_template_to_function(ast) {
     let { quasis } = node;
     log(node);
     each(quasis, log);
+    each_index(list, (item, index) => {});
     let e = js_parse_expression(
       js_code_call_args(string_combine_multiple.name, []),
     );
