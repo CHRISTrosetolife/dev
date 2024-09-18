@@ -13,4 +13,5 @@ export async function function_dependencies(function_name) {
       each([function_name, imports], la);
     });
   });
+  return dependency_names;
 }
