@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_any } from "./list_any.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
@@ -9,6 +10,9 @@ import { function_imports } from "./function_imports.mjs";
 import { list_includes } from "./list_includes.mjs";
 export async function function_imports_path(function_name_from, name_to) {
   let map = await function_imports(function_name_from);
+  log({
+    t: map["js_code_export_function_declare"],
+  });
   let vertices = list_adder_unique((la) => {
     each_object(map, (function_name, mapped) => {
       la(function_name);
