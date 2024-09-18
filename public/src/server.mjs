@@ -24,7 +24,6 @@ export function server() {
   function server_configure(app) {
     let url;
     url = server_configure_express(app);
-    app.get("/", async (req, res) => {});
     app.post("/", async (req, res) => {
       let { body } = req;
       let { function_name, args } = body;
