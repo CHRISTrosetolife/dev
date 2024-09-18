@@ -1,3 +1,4 @@
+import { url_localhost } from "./url_localhost.mjs";
 import { function_run_terminal } from "./function_run_terminal.mjs";
 import { log } from "./log.mjs";
 import { json_to } from "./json_to.mjs";
@@ -9,7 +10,7 @@ export function server() {
   let app = express();
   let port = server_port();
   let options = {
-    origin: ["http://localhost:8080"],
+    origin: [url_localhost(8080)],
   };
   app.use(cors(options));
   app.use(
