@@ -25,10 +25,12 @@ export function server() {
     let url;
     url = server_configure_express(app);
     app.post("/", async (req, res) => {
-      let { body } = req;
-      let { function_name, args } = body;
-      let result = await function_run_terminal(function_name, args);
-      res.end(json_to(result));
+      try {
+        let { body } = req;
+        let { function_name, args } = body;
+        let result = await function_run_terminal(function_name, args);
+        res.end(json_to(result));
+      } catch (e) {}
     });
     return url;
   }
