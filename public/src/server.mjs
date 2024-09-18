@@ -22,8 +22,11 @@ export function server() {
   });
   function server_configure(app) {
     let url = server_configure_express(app);
+    app.get("/", async (req, res) => {
+      log("hereg");
+    });
     app.post("/", async (req, res) => {
-      log("here");
+      log("herep");
       let { body } = req;
       let { function_name, args } = body;
       let result = await function_run_terminal(function_name, args);
