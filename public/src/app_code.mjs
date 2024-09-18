@@ -1,5 +1,4 @@
 import { html_on_input_value } from "./html_on_input_value.mjs";
-import { log } from "./log.mjs";
 import { list_take_soft } from "./list_take_soft.mjs";
 import { string_regex_match } from "./string_regex_match.mjs";
 import { list_join } from "./list_join.mjs";
@@ -24,9 +23,6 @@ export async function app_code() {
     html_clear(results);
     let letters = string_split_empty(v);
     let joined = list_join(letters, ".*");
-    log({
-      joined,
-    });
     let filtered = list_filter(ns, (n) => {
       return string_regex_match(n, joined);
     });
