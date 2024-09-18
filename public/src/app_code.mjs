@@ -1,5 +1,4 @@
-import { html_inner_set } from "./html_inner_set.mjs";
-import { html_div } from "./html_div.mjs";
+import { html_div_text } from "./html_div_text.mjs";
 import { each } from "./each.mjs";
 import { log } from "./log.mjs";
 import { function_names } from "./function_names.mjs";
@@ -11,8 +10,7 @@ export async function app_code() {
   await html_scripts_load(root, ["axios", "acorn", "astring"]);
   let ns = await function_run_remote(function_names.name, []);
   each(ns, (item) => {
-    let d = html_div(root);
-    html_inner_set(d, item);
+    html_div_text(root, item);
   });
   log({
     ns,
