@@ -18,7 +18,9 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
       }),
     ),
   );
-  let neighbors_get = (v) => graph_neighbors(edges, v);
+  let neighbors_get = (v) => {
+    return graph_neighbors(edges, v);
+  };
   return graph_path_shortest_neighbors(
     (v) => list_index(vertices, v),
     neighbors_get,
