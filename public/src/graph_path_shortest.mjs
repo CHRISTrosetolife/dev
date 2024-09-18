@@ -23,7 +23,7 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
     if (v === "js_code_export_function_declare") {
       log("here");
     }
-    return graph_neighbors(edges, v);
+    let neighbors = graph_neighbors(edges, v);
   };
   return graph_path_shortest_neighbors(
     (v) => list_index(vertices, v),
