@@ -23,7 +23,6 @@ export async function function_dependencies(function_name) {
   );
   let dependency_names = object_properties(map);
   let ds = await list_map_async(dependency_names, function_declaration);
-  await function_declaration(function_name);
   return {
     dependency_names,
     externals,
