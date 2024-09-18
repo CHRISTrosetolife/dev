@@ -24,13 +24,15 @@ export function server() {
   function server_configure(app) {
     let url;
     url = server_configure_express(app);
-    app.post("/", async (req, res) => {
+    app.post("/", async (req, res, next) => {
       try {
         let { body } = req;
         let { function_name, args } = body;
         let result = await function_run_terminal(function_name, args);
         res.end(json_to(result));
-      } catch (e) {}
+      } catch (e) {
+        next(e);
+      }
     });
     return url;
   }
