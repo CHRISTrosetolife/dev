@@ -28,7 +28,8 @@ export async function function_imports_path(function_name_from, name_to) {
       }
       let mapped = object_property_get(map, u);
       let { sources, imports } = mapped;
-      return list_any([sources, imports], (i) => list_includes(i, v));
+      let result = list_any([sources, imports], (i) => list_includes(i, v));
+      return result;
     },
     function_name_from,
     name_to,
