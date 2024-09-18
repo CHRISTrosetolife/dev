@@ -36,7 +36,13 @@ export function server() {
   });
   app.listen(port, () => {
     console.log(
-      string_combine_multiple([server.name, " listening on port ", port]),
+      string_combine_multiple([
+        server.name,
+        " ",
+        url,
+        " listening on port ",
+        port,
+      ]),
     );
   });
 }
