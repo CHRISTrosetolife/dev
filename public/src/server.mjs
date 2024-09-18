@@ -10,8 +10,9 @@ import bodyParser from "body-parser";
 export function server() {
   let app = express();
   let port = server_port();
+  let url = url_localhost(8080);
   let options = {
-    origin: [url_localhost(8080)],
+    origin: [url],
   };
   app.use(cors(options));
   let limit = "50mb";
