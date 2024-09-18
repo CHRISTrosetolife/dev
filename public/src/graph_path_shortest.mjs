@@ -1,6 +1,6 @@
+import { graph_neighbors_undirected } from "./graph_neighbors_undirected.mjs";
 import { list_index } from "./list_index.mjs";
 import { graph_path_shortest_neighbors } from "./graph_path_shortest_neighbors.mjs";
-import { graph_neighbors } from "./graph_neighbors.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { each_index } from "./each_index.mjs";
 import { list_adder } from "./list_adder.mjs";
@@ -19,7 +19,7 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
     ),
   );
   let neighbors_get = (v) => {
-    let neighbors = graph_neighbors(edges, v);
+    let neighbors = graph_neighbors_undirected(edges, v);
     return neighbors;
   };
   return graph_path_shortest_neighbors(
