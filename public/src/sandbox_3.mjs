@@ -1,3 +1,5 @@
+import { string_combine } from "./string_combine.mjs";
+import { list_is } from "./list_is.mjs";
 import { string_substring } from "./string_substring.mjs";
 import { less_than_equal } from "./less_than_equal.mjs";
 import { string_take } from "./string_take.mjs";
@@ -46,64 +48,14 @@ export async function sandbox_3() {
     let command = string_combine_multiple(["git ", args]);
     return await command_line_exec(command);
   }
-  async function command_line_exec(command) {
-    return await command_line_exec_generic(command, {});
-  }
-  async function command_line_exec_generic(command, options) {
-    let c = await import_node("child_process");
-    let { exec } = c;
-    return await new Promise((resolve) => {
-      exec(command, options, (error, stdout, stderr) => {
-        resolve({
-          error,
-          stdout,
-          stderr,
-        });
-      });
-    });
-  }
-  function error(message) {
-    throw new Error(message);
-  }
-  async function import_node(libary_to_import) {
-    let a;
-    if (web_not_is()) {
-      a = await import(libary_to_import);
+  function string_combine_multiple(list) {
+    assert_arguments_length(arguments, 1);
+    assert(list_is, [list]);
+    let result = "";
+    for (let l of list) {
+      result = string_combine(result, l);
     }
-    return a;
-  }
-  function web_not_is() {
-    return typeof window === "undefined";
-  }
-  async function list_map_async(list, mapper) {
-    return await list_adder_async(async (la) => {
-      await each_async(list, async (l) => {
-        let mapped = mapper(l);
-        let waited = await mapped;
-        la(waited);
-      });
-    });
-  }
-  async function list_adder_async(lambda) {
-    let result = [];
-    await lambda((item) => list_add(result, item));
     return result;
-  }
-  function list_add(list, item) {
-    assert_arguments_length(arguments, 2);
-    list.push(item);
-  }
-  function assert_arguments_length(args, expected) {
-    assert(equal, [arguments.length, 2]);
-    let actual = args.length;
-    assert_message(equal, [actual, expected], () => ({
-      message: "expecting different argument count",
-      expected,
-      actual,
-    }));
-  }
-  function equal(a, b) {
-    return a === b;
   }
   function assert(fn, args) {
     returns(fn, true, args);
@@ -124,8 +76,23 @@ export async function sandbox_3() {
       error(message_get());
     }
   }
+  function error(message) {
+    throw new Error(message);
+  }
+  function equal(a, b) {
+    return a === b;
+  }
   function json_to(object) {
     return JSON.stringify(object);
+  }
+  function assert_arguments_length(args, expected) {
+    assert(equal, [arguments.length, 2]);
+    let actual = args.length;
+    assert_message(equal, [actual, expected], () => ({
+      message: "expecting different argument count",
+      expected,
+      actual,
+    }));
   }
   function assert_message(fn, args, message_get) {
     return assert_message_string(fn, args, () => {
@@ -158,6 +125,57 @@ export async function sandbox_3() {
   function string_substring(input, start, end) {
     assert_arguments_length(arguments, 3);
     return input.substring(start, end);
+  }
+  function list_is(candidate) {
+    return Array.isArray(candidate);
+  }
+  function string_combine(a, b) {
+    assert_arguments_length(arguments, 2);
+    return a + b;
+  }
+  async function command_line_exec(command) {
+    return await command_line_exec_generic(command, {});
+  }
+  async function command_line_exec_generic(command, options) {
+    let c = await import_node("child_process");
+    let { exec } = c;
+    return await new Promise((resolve) => {
+      exec(command, options, (error, stdout, stderr) => {
+        resolve({
+          error,
+          stdout,
+          stderr,
+        });
+      });
+    });
+  }
+  async function import_node(libary_to_import) {
+    let a;
+    if (web_not_is()) {
+      a = await import(libary_to_import);
+    }
+    return a;
+  }
+  function web_not_is() {
+    return typeof window === "undefined";
+  }
+  async function list_map_async(list, mapper) {
+    return await list_adder_async(async (la) => {
+      await each_async(list, async (l) => {
+        let mapped = mapper(l);
+        let waited = await mapped;
+        la(waited);
+      });
+    });
+  }
+  async function list_adder_async(lambda) {
+    let result = [];
+    await lambda((item) => list_add(result, item));
+    return result;
+  }
+  function list_add(list, item) {
+    assert_arguments_length(arguments, 2);
+    list.push(item);
   }
   async function each_async(list, lambda) {
     for (let element of list) {
