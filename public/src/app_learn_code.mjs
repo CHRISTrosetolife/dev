@@ -50,9 +50,8 @@ import { list_single } from "./list_single.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 export async function app_learn_code() {
   let scripts = ["acorn", "astring"];
-  await each_async([scripts], async (script) => {
-    let prefix = function_name_generated(html_script_generate);
-  });
+  let prefix = function_name_generated(html_script_generate);
+  await each_async([scripts], async (script) => {});
   html_script_acorn(root);
   html_script_astring(root);
   let modules = app_learn_code_modules();
