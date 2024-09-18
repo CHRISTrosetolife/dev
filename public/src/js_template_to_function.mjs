@@ -10,6 +10,7 @@ import { object_replace } from "./object_replace.mjs";
 import { js_visit_node } from "./js_visit_node.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_add } from "./list_add.mjs";
+import { json_to } from "./json_to.mjs";
 export function js_template_to_function(ast) {
   return js_visit_node(ast, "TemplateLiteral", (v) => {
     let { node } = v;
@@ -24,7 +25,13 @@ export function js_template_to_function(ast) {
       let { value } = q;
       let { raw, cooked } = value;
       assert_message(equal, [raw, cooked], () => {
-        return "if these are different then the code needs to pick the correct value";
+        return string_combine_multiple([
+          "if these are different then the code needs to pick the correct value: ",
+          json_to({
+            raw,
+            cooked,
+          }),
+        ]);
       });
       list_add(a, js_string(s));
     });
