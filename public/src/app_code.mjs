@@ -20,6 +20,6 @@ export async function app_code() {
   let filtered = list_filter(ns, tautology);
   let taken = list_take(filtered, 50);
   each(taken, (item) => {
-    html_div_text(root, item);
+    html_div_text(results, item);
   });
 }
