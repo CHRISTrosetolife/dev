@@ -1,3 +1,3 @@
-export function string_regex_match(name, regex) {
-  return name.match(regex);
+export function string_regex_match(input, regex) {
+  return input.match(regex);
 }
