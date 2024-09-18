@@ -48,10 +48,13 @@ import { range } from "./range.mjs";
 import { string_length } from "./string_length.mjs";
 import { list_single } from "./list_single.mjs";
 import { object_property_set } from "./object_property_set.mjs";
+import { function_run } from "./function_run.mjs";
 export async function app_learn_code() {
   let scripts = ["acorn", "astring"];
   let prefix = function_name_generated(html_script_generate);
-  await each_async([scripts], async (script) => {});
+  await each_async([scripts], async (script) => {
+    function_run;
+  });
   html_script_acorn(root);
   html_script_astring(root);
   let modules = app_learn_code_modules();
