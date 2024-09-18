@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { file_write } from "./file_write.mjs";
 import { js_imports_remove } from "./js_imports_remove.mjs";
 import { function_imports_add } from "./function_imports_add.mjs";
@@ -24,7 +25,7 @@ export async function js_outside_move(ast) {
     let args = list_map(params, (p) => p.name);
     let args_string = list_join_comma(args);
     let body = js_body_nested(declaration);
-    let parsed = js_parse(``);
+    let parsed = js_parse(string_combine_multiple([]));
     parsed.body = body;
     let unparsed = js_unparse(parsed);
     await function_new_generic(
@@ -40,6 +41,7 @@ export async function js_outside_move(ast) {
   for (let declaration of copy) {
     let function_name = js_declaration_to_name(declaration);
     await function_imports_add(function_name);
+    let { body: body_ast } = ast;
     list_remove(body_ast, declaration);
   }
   let names = list_map(copy, js_declaration_to_name);
