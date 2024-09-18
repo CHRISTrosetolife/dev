@@ -9,7 +9,6 @@ import cors from "cors";
 import bodyParser from "body-parser";
 export function server() {
   let app = express();
-  let port = server_port();
   let url = url_localhost(8080);
   let options = {
     origin: [url],
@@ -34,6 +33,7 @@ export function server() {
     let result = await function_run_terminal(function_name, args);
     res.end(json_to(result));
   });
+  let port = server_port();
   app.listen(port, () => {
     console.log(
       string_combine_multiple([
