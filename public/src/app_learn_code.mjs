@@ -1,7 +1,4 @@
-import { log } from "./log.mjs";
-import { function_name_generated_combine } from "./function_name_generated_combine.mjs";
-import { html_script_generate } from "./html_script_generate.mjs";
-import { each_async } from "./each_async.mjs";
+import { html_scripts_load } from "./html_scripts_load.mjs";
 import { summation } from "./summation.mjs";
 import { html_style_font_size } from "./html_style_font_size.mjs";
 import { list_size } from "./list_size.mjs";
@@ -47,7 +44,6 @@ import { range } from "./range.mjs";
 import { string_length } from "./string_length.mjs";
 import { list_single } from "./list_single.mjs";
 import { object_property_set } from "./object_property_set.mjs";
-import { function_run } from "./function_run.mjs";
 export async function app_learn_code() {
   let root = html_style_default_initialize();
   let scripts = ["acorn", "astring"];
@@ -215,13 +211,3 @@ export async function app_learn_code() {
     html_button_width_full_text_click_home(root, refresh_main);
   }
 }
-async function html_scripts_load(scripts, root) {
-    await each_async([scripts], async (script) => {
-        let name = function_name_generated_combine(html_script_generate, script);
-        log({
-            name,
-        });
-        await function_run(name, [root]);
-    });
-}
-
