@@ -1,3 +1,4 @@
+import { html_clear } from "./html_clear.mjs";
 import { list_take } from "./list_take.mjs";
 import { html_div_text } from "./html_div_text.mjs";
 import { each } from "./each.mjs";
@@ -17,6 +18,7 @@ export async function app_code() {
   let input = html_input_width_full_focus(root);
   html_on_keydown(input, () => {});
   let results = html_div(root);
+  html_clear(results);
   let filtered = list_filter(ns, tautology);
   let taken = list_take(filtered, 50);
   each(taken, (item) => {
