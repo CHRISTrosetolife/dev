@@ -1,3 +1,4 @@
+import { server_port } from "./server_port.mjs";
 import { express_app } from "./express_app.mjs";
 export function server_sandbox() {
   let app = express_app();
@@ -7,6 +8,6 @@ export function server_sandbox() {
   app.post("/", async (req, res) => {
     res.end("post");
   });
-  let port = 8000;
+  let port = server_port();
   app.listen(port, () => {});
 }
