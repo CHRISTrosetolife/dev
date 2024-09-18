@@ -36,6 +36,7 @@ export function function_aliases() {
     of: "function_output_file",
     p: "function_param_new",
     pn: "function_param_new_at",
+    pb: "function_param_move_beginning",
     pf: "function_param_move_first",
     pm: "function_param_move",
     r: "function_rename",
