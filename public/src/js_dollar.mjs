@@ -278,9 +278,8 @@ export function js_dollar(ast) {
       if (remaining === "t") {
         let d = js_declaration_single(ast);
         let this_name = js_declaration_to_name(d);
-        let e = js_parse_expression(
-          js_code_dot(this_name, js_code_string("name")),
-        );
+        let code = js_code_dot(this_name, js_code_string("name"));
+        let e = js_parse_expression(code);
         object_replace(node, e);
       }
       if (prefix_use(remaining, scm_prefix, prefixes)) {
