@@ -1,3 +1,5 @@
+import { js_declaration_single } from "./js_declaration_single.mjs";
+import { function_parse } from "./function_parse.mjs";
 import { object_values } from "./object_values.mjs";
 import { each } from "./each.mjs";
 import { list_adder_unique } from "./list_adder_unique.mjs";
@@ -20,6 +22,8 @@ export async function function_dependencies(function_name) {
       "if this is non-empty, then refactor output to include external libraries",
   );
   let dependency_names = object_properties(map);
+  let ast = await function_parse(function_name);
+  js_declaration_single(ast);
   return {
     dependency_names,
     externals,
