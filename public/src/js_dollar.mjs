@@ -1,4 +1,3 @@
-import { js_code_string } from "./js_code_string.mjs";
 import { js_code_dot } from "./js_code_dot.mjs";
 import { js_declaration_to_name } from "./js_declaration_to_name.mjs";
 import { js_declaration_single } from "./js_declaration_single.mjs";
@@ -278,7 +277,7 @@ export function js_dollar(ast) {
       if (remaining === "t") {
         let d = js_declaration_single(ast);
         let this_name = js_declaration_to_name(d);
-        let code = js_code_dot(this_name, js_code_string("name"));
+        let code = js_code_dot(this_name, "name");
         log({
           code,
         });
