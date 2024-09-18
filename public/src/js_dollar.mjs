@@ -1,3 +1,4 @@
+import { js_declaration_to_name } from "./js_declaration_to_name.mjs";
 import { js_declaration_single } from "./js_declaration_single.mjs";
 import { log_error } from "./log_error.mjs";
 import { list_remove } from "./list_remove.mjs";
@@ -274,6 +275,7 @@ export function js_dollar(ast) {
       }
       if (remaining === "t") {
         let d = js_declaration_single(ast);
+        name = js_declaration_to_name(d);
         let e = js_parse_expression(js_code_arrow_block());
         object_replace(node, e);
       }
