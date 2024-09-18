@@ -12,13 +12,13 @@ export async function command_line_generic(command, silent) {
     );
     let child = spawn(first, remaining);
     if (!silent) {
-      let stdout = child;
-      child.stdout.setEncoding("utf8");
-      child.stdout.on("data", function (data) {
+      let { stdout } = child;
+      stdout.setEncoding("utf8");
+      stdout.on("data", function (data) {
         log_write(data);
       });
-      child.stderr.setEncoding("utf8");
-      child.stderr.on("data", function (data) {
+      stderr.setEncoding("utf8");
+      stderr.on("data", function (data) {
         log_error_write(data);
       });
     }
