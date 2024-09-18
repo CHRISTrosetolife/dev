@@ -13,14 +13,15 @@ export function server() {
     origin: [url_localhost(8080)],
   };
   app.use(cors(options));
+  let limit = "50mb";
   app.use(
     express.json({
-      limit: "50mb",
+      limit: limit,
     }),
   );
   app.use(
     bodyParser.urlencoded({
-      limit: "50mb",
+      limit: limit,
       extended: true,
     }),
   );
