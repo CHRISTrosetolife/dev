@@ -5,7 +5,8 @@ export async function file_open(file_name) {
   if (web_is()) {
     return;
   }
-  await function_run(fn_name("command_line_exec"), [`code ${file_name}`]);
+  let command = `code ${file_name}`;
+  await function_run(fn_name("command_line_exec"), [command]);
   return;
   await function_run(fn_name("command_line_exec"), [
     `start notepad++ ${file_name}`,
