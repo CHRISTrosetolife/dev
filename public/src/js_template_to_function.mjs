@@ -38,7 +38,9 @@ export function js_template_to_function(ast) {
         ]);
       });
       if (string_empty_not_is(cooked)) {
-        log({});
+        log({
+          cooked,
+        });
         list_add(elements, js_string(cooked));
       }
       if (list_index_is(expressions, qi)) {
