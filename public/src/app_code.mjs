@@ -22,10 +22,10 @@ export async function app_code() {
   let results = html_div(root);
   html_on_keydown(input, () => {
     html_clear(results);
-    let letters = string_split_empty(n);
+    let v = html_value_get(input);
+    let letters = string_split_empty(v);
     let joined = list_join(letters, ".*");
     let filtered = list_filter(ns, (n) => {
-      let v = html_value_get(input);
       string_regex_match(n, joined);
     });
     let taken = list_take(filtered, 50);
