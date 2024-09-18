@@ -22,7 +22,7 @@ export async function function_dependencies(function_name) {
       "if this is non-empty, then refactor output to include external libraries",
   );
   let dependency_names = object_properties(map);
-  await list_map_async(dependency_names, function_declaration);
+  let ds = await list_map_async(dependency_names, function_declaration);
   await function_declaration(function_name);
   return {
     dependency_names,
