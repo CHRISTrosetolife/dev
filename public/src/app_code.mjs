@@ -1,3 +1,4 @@
+import { each_index } from "./each_index.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 import { html_on_input_value } from "./html_on_input_value.mjs";
 import { list_take_soft } from "./list_take_soft.mjs";
@@ -30,6 +31,7 @@ export async function app_code() {
     each(taken, (item) => {
       let d = html_div(results);
       let letters_index = 0;
+      each_index(list, (item2, index) => {});
       html_inner_set(d, item);
     });
   });
