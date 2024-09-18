@@ -1,8 +1,8 @@
+import { list_take_soft } from "./list_take_soft.mjs";
 import { string_regex_match } from "./string_regex_match.mjs";
 import { list_join } from "./list_join.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { html_clear } from "./html_clear.mjs";
-import { list_take } from "./list_take.mjs";
 import { html_div_text } from "./html_div_text.mjs";
 import { each } from "./each.mjs";
 import { html_on_keydown } from "./html_on_keydown.mjs";
@@ -28,7 +28,7 @@ export async function app_code() {
     let filtered = list_filter(ns, (n) => {
       return string_regex_match(n, joined);
     });
-    let taken = list_take(filtered, 50);
+    let taken = list_take_soft(filtered, 50);
     each(taken, (item) => {
       html_div_text(results, item);
     });
