@@ -6,6 +6,7 @@ import { js_parse_expression } from "./js_parse_expression.mjs";
 import { object_replace } from "./object_replace.mjs";
 import { js_visit_node } from "./js_visit_node.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { list_add } from "./list_add.mjs";
 export function js_template_to_function(ast) {
   return js_visit_node(ast, "TemplateLiteral", (v) => {
     let { node } = v;
@@ -16,7 +17,9 @@ export function js_template_to_function(ast) {
     let { quasis } = node;
     log(node);
     each(quasis, log);
-    each_index(quasis, (q, qi) => {});
+    each_index(quasis, (q, qi) => {
+      list_add(a);
+    });
     log({
       e,
     });
