@@ -12,7 +12,7 @@ export async function command_line_generic(command, silent) {
     );
     let child = spawn(first, remaining);
     if (!silent) {
-      let { stdout } = child;
+      let { stdout, stderr } = child;
       stdout.setEncoding("utf8");
       stdout.on("data", function (data) {
         log_write(data);
