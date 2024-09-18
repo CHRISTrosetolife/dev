@@ -12,6 +12,7 @@ import { js_visit_node } from "./js_visit_node.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_add } from "./list_add.mjs";
 import { json_to } from "./json_to.mjs";
+import { list_index_is } from "./list_index_is.mjs";
 export function js_template_to_function(ast) {
   return js_visit_node(ast, "TemplateLiteral", (v) => {
     let { node } = v;
@@ -37,7 +38,9 @@ export function js_template_to_function(ast) {
       if (string_empty_not_is(cooked)) {
         list_add(a, js_string(cooked));
       }
-      list_add(a, js_string(cooked));
+      if (list_index_is(expressions, qi)) {
+        list_add(a, js_string(cooked));
+      }
     });
     log({
       e,
