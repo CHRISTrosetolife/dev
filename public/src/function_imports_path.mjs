@@ -13,9 +13,7 @@ export async function function_imports_path(function_name_from, name_to) {
   let vertices = list_adder_unique((la) => {
     each_object(map, (function_name, mapped) => {
       let { sources, imports } = mapped;
-      each(list_concat_multiple([sources, imports, [function_name]]), (list) =>
-        each(list, la),
-      );
+      each(list_concat_multiple([sources, imports, [function_name]]), la);
     });
   });
   return graph_path_shortest_directed(
