@@ -19,7 +19,7 @@ export function js_template_to_function(ast) {
       js_code_call_args(string_combine_multiple.name, []),
     );
     let { arguments: a } = e;
-    let { quasis } = node;
+    let { quasis, expressions } = node;
     log(node);
     each(quasis, log);
     each_index(quasis, (q, qi) => {
