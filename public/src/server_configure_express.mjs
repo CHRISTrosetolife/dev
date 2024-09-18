@@ -11,7 +11,12 @@ export function server_configure_express(app) {
   log({
     url,
   });
-  app.use(cors(options));
+  app.use(
+    cors({
+      origin: true,
+      credentials: true,
+    }),
+  );
   let limit = "50mb";
   app.use(
     express.json({
