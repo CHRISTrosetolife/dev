@@ -29,6 +29,7 @@ export async function app_code() {
     let taken = list_take_soft(filtered, 50);
     each(taken, (item) => {
       let d = html_div(results);
+      let letters_index = 0;
       html_inner_set(d, item);
     });
   });
