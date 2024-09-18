@@ -1,7 +1,6 @@
+import { app_html_path } from "./app_html_path.mjs";
 import { folder_name_src } from "./folder_name_src.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
-import { folder_name_public } from "./folder_name_public.mjs";
-import { path_join } from "./path_join.mjs";
 import { js_code_call } from "./js_code_call.mjs";
 import { js_code_import_path } from "./js_code_import_path.mjs";
 import { folder_current } from "./folder_current.mjs";
@@ -30,6 +29,6 @@ export async function app_html_generate(name) {
       </body>
     </html>        
 `;
-  let output_path = path_join([folder_name_public(), `${name}.html`]);
+  let output_path = app_html_path(name);
   await file_overwrite(output_path, html);
 }
