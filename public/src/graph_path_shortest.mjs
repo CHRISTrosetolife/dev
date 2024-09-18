@@ -24,6 +24,7 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
     if (v === "js_code_export_function_declare") {
       log({
         neighbors,
+        t: edge_lambda(v, "function_new_generic"),
       });
     }
     return neighbors;
