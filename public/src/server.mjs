@@ -1,3 +1,4 @@
+import { url_localhost } from "./url_localhost.mjs";
 import { express_app } from "./express_app.mjs";
 import { server_configure_express } from "./server_configure_express.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -7,9 +8,10 @@ import { json_to } from "./json_to.mjs";
 import { server_port } from "./server_port.mjs";
 export function server() {
   let app = express_app();
-  let url = server_configure(app);
+  server_configure(app);
   let port = server_port();
   app.listen(port, () => {
+    let url = url_localhost(8080);
     console.log(
       string_combine_multiple([
         server.name,
