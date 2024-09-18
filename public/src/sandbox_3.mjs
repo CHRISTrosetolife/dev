@@ -25,6 +25,7 @@ import { list_map_async } from "./list_map_async.mjs";
 import { command_line_git_multiple } from "./command_line_git_multiple.mjs";
 import { git_fix } from "./git_fix.mjs";
 export async function sandbox_3() {
+  await git_fix();
   async function git_fix() {
     let commands = [
       "checkout master",
