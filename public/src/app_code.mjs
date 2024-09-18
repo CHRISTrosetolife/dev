@@ -31,7 +31,7 @@ export async function app_code() {
     each(taken, (item) => {
       let d = html_div(results);
       let letters_index = 0;
-      each_index(list, (item2, index) => {});
+      each_index(item, (c, i) => {});
       html_inner_set(d, item);
     });
   });
