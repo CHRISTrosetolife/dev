@@ -1,8 +1,6 @@
 import { function_name_generated_combine } from "./function_name_generated_combine.mjs";
 import { html_script_generate } from "./html_script_generate.mjs";
 import { each_async } from "./each_async.mjs";
-import { html_script_astring } from "./html_script_astring.mjs";
-import { html_script_acorn } from "./html_script_acorn.mjs";
 import { summation } from "./summation.mjs";
 import { html_style_font_size } from "./html_style_font_size.mjs";
 import { list_size } from "./list_size.mjs";
@@ -56,8 +54,6 @@ export async function app_learn_code() {
     let name = function_name_generated_combine(html_script_generate, script);
     await function_run(name, [root]);
   });
-  html_script_acorn(root);
-  html_script_astring(root);
   let modules = app_learn_code_modules();
   html_hash({
     background_color: (value) => {
