@@ -8,6 +8,7 @@ export function js_template_to_function(ast) {
     let { node } = v;
     let { quasis } = node;
     each(list, (item) => {});
+    return;
     let e = js_parse_expression(js_code_call_args(each.name, []));
     object_replace(node, e);
     object_replace(node);
