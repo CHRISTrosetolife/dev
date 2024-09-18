@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { log_error } from "./log_error.mjs";
 import { function_exists } from "./function_exists.mjs";
 import { function_open } from "./function_open.mjs";
@@ -8,7 +9,7 @@ export async function function_new(function_name) {
   assert_arguments_length(arguments, 1);
   if (await function_exists(function_name)) {
     await function_open(function_name);
-    log_error({});
+    log_error(string_combine_multiple(["already exists: ", function_name]));
     return;
   }
   let open = true;
