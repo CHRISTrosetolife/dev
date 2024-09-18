@@ -9,10 +9,14 @@ export async function app_code() {
   let root = html_style_default_initialize();
   await html_scripts_load(root, ["axios", "acorn", "astring"]);
   let ns = await function_run_remote(function_names.name, []);
-  each(ns, (item) => {
-    html_div_text(root, item);
-  });
+  html_list(ns, root);
   log({
     ns,
   });
 }
+function html_list(ns, root) {
+    each(ns, (item) => {
+        html_div_text(root, item);
+    });
+}
+
