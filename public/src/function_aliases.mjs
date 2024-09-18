@@ -51,5 +51,6 @@ export function function_aliases() {
     th: "terminal_data_history",
     thc: "terminal_data_history_clear",
     w: "watch",
+    v: "server",
   };
 }
