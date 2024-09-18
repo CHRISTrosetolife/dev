@@ -1,3 +1,5 @@
+import { html_script_astring } from "./html_script_astring.mjs";
+import { html_script_acorn } from "./html_script_acorn.mjs";
 import { summation } from "./summation.mjs";
 import { html_style_font_size } from "./html_style_font_size.mjs";
 import { list_size } from "./list_size.mjs";
@@ -44,6 +46,8 @@ import { string_length } from "./string_length.mjs";
 import { list_single } from "./list_single.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 export function app_learn_code() {
+  html_script_acorn(root);
+  html_script_astring(root);
   let modules = app_learn_code_modules();
   html_hash({
     background_color: (value) => {
