@@ -305,13 +305,11 @@ export function js_dollar(ast) {
     let p1 = string_starts_with(remaining, prefix);
     return (
       p1 &&
-      list_all(prefixes, (p) => {
-        if (!string_starts_with(remaining, p)) {
-          return true;
-        }
-        let p2 = string_starts_with(prefix, p);
-        return p2;
-      })
+      list_all(
+        prefixes,
+        (p) =>
+          !string_starts_with(remaining, p) || string_starts_with(prefix, p),
+      )
     );
   }
 }
