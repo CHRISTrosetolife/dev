@@ -23,6 +23,7 @@ export function js_template_to_function(ast) {
     let { arguments: a } = e;
     let { quasis, expressions } = node;
     log(a);
+    let elements = a;
     return;
     each_index(quasis, (q, qi) => {
       let { value } = q;
