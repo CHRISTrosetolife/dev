@@ -46,8 +46,7 @@ import { list_single } from "./list_single.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 export async function app_learn_code() {
   let root = html_style_default_initialize();
-  let scripts = ["acorn", "astring"];
-  await html_scripts_load(root, scripts);
+  await html_scripts_load(root, ["acorn", "astring"]);
   let modules = app_learn_code_modules();
   html_hash({
     background_color: (value) => {
