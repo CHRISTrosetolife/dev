@@ -1,3 +1,4 @@
+import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { equal } from "./equal.mjs";
 import { assert_message } from "./assert_message.mjs";
 import { js_string } from "./js_string.mjs";
@@ -33,7 +34,9 @@ export function js_template_to_function(ast) {
           }),
         ]);
       });
-      list_add(a, js_string(cooked));
+      if (string_empty_not_is(cooked)) {
+        list_add(a, js_string(cooked));
+      }
       list_add(a, js_string(cooked));
     });
     log({
