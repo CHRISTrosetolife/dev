@@ -1,3 +1,4 @@
+import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { assert } from "./assert.mjs";
 import { each } from "./each.mjs";
 import { list_adder_unique } from "./list_adder_unique.mjs";
@@ -10,7 +11,7 @@ export async function function_dependencies(function_name) {
     each_object(map, (function_name, mapped) => {
       let { sources, imports } = mapped;
       assert(list_empty_is, [sources]);
-      each(list_combine_multiple([function_name], imports), la);
+      each(list_concat_multiple([imports, [function_name]]), la);
     });
   });
   return dependency_names;
