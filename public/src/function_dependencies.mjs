@@ -25,7 +25,7 @@ export async function function_dependencies(function_name) {
   );
   let dependency_names = object_properties(map);
   let ds = await list_map_async(dependency_names, function_declaration);
-  list_map(ds, js_unparse);
+  let us = list_map(ds, js_unparse);
   return {
     dependency_names,
     externals,
