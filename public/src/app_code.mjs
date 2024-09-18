@@ -16,8 +16,8 @@ export async function app_code() {
   await html_scripts_load(root, ["axios", "acorn", "astring"]);
   let ns = await function_run_remote(function_names.name, []);
   let input = html_input_width_full_focus(root);
+  let results = html_div(root);
   html_on_keydown(input, () => {
-    let results = html_div(root);
     html_clear(results);
     let filtered = list_filter(ns, tautology);
     let taken = list_take(filtered, 50);
