@@ -27,8 +27,8 @@ export async function function_imports_path(function_name_from, name_to) {
       let { sources, imports } = mapped;
       let result = list_any([sources, imports], (i) => list_includes(i, v));
       if (
-        u === "js_code_export_function_declare" &&
-        v === "function_new_generic"
+        v === "js_code_export_function_declare" &&
+        u === "function_new_generic"
       ) {
         log({
           result,
