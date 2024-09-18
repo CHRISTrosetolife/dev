@@ -50,6 +50,7 @@ import { list_single } from "./list_single.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { function_run } from "./function_run.mjs";
 export async function app_learn_code() {
+  let root = html_style_default_initialize();
   let scripts = ["acorn", "astring"];
   await each_async([scripts], async (script) => {
     let name = function_name_generated_combine(html_script_generate, script);
@@ -65,7 +66,6 @@ export async function app_learn_code() {
       });
     },
   });
-  let root = html_style_default_initialize();
   let default_font_size = html_style_default_font_size_value();
   default_font_size = 3;
   html_style_default_font_size(default_font_size);
