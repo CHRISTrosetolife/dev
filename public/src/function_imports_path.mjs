@@ -1,4 +1,4 @@
-import { graph_path_shortest_undirected } from "./graph_path_shortest_undirected.mjs";
+import { graph_path_shortest_directed } from "./graph_path_shortest_directed.mjs";
 import { log } from "./log.mjs";
 import { list_any } from "./list_any.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -20,7 +20,7 @@ export async function function_imports_path(function_name_from, name_to) {
   log({
     t: map["function_new_generic"],
   });
-  return graph_path_shortest_undirected(
+  return graph_path_shortest_directed(
     vertices,
     (u, v) => {
       if (!object_property_exists(map, u)) {
