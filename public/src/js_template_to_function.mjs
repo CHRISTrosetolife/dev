@@ -43,9 +43,6 @@ export function js_template_to_function(ast) {
         list_add(a, list_get(expressions, qi));
       }
     });
-    log(e);
-    return;
     object_replace(node, e);
-    object_replace(node);
   });
 }
