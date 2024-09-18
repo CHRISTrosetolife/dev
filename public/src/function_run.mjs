@@ -1,15 +1,11 @@
-import { server_port } from "./server_port.mjs";
-import { http_post } from "./http_post.mjs";
+import { function_run_remote } from "./function_run_remote.mjs";
 import { function_import } from "./function_import.mjs";
 import { web_is } from "./web_is.mjs";
 export async function function_run(function_name, args) {
   let result;
   if (0) {
     if (web_is()) {
-      result = await http_post(`http://localhost:${server_port()}/`, {
-        function_name,
-        args,
-      });
+      result = await function_run_remote(function_name, args);
       return;
     }
   }
