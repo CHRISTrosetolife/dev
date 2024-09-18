@@ -1,3 +1,4 @@
+import { function_open_app } from "./function_open_app.mjs";
 import { function_cache_path_open } from "./function_cache_path_open.mjs";
 import { function_output_file } from "./function_output_file.mjs";
 import { function_alias_expand } from "./function_alias_expand.mjs";
@@ -92,6 +93,7 @@ export async function function_aliases_generate() {
   alias_add(function_new, ["n"]);
   alias_add(function_new_args, ["na"]);
   alias_add(function_open, ["o"]);
+  alias_add(function_open_app, ["oa"]);
   alias_add(function_output_file, ["of"]);
   alias_add(function_param_new, ["p"]);
   alias_add(function_param_new_at, ["pn"]);
