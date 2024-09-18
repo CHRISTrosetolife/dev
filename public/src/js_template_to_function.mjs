@@ -1,3 +1,4 @@
+import { list_get } from "./list_get.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { equal } from "./equal.mjs";
 import { assert_message } from "./assert_message.mjs";
@@ -39,7 +40,7 @@ export function js_template_to_function(ast) {
         list_add(a, js_string(cooked));
       }
       if (list_index_is(expressions, qi)) {
-        list_add(a, js_string(cooked));
+        list_add(a, list_get(expressions, qi));
       }
     });
     log({
