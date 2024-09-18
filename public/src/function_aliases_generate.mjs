@@ -1,3 +1,4 @@
+import { function_param_move_beginning } from "./function_param_move_beginning.mjs";
 import { function_open_app } from "./function_open_app.mjs";
 import { function_cache_path_open } from "./function_cache_path_open.mjs";
 import { function_output_file } from "./function_output_file.mjs";
@@ -97,6 +98,7 @@ export async function function_aliases_generate() {
   alias_add(function_output_file, ["of"]);
   alias_add(function_param_new, ["p"]);
   alias_add(function_param_new_at, ["pn"]);
+  alias_add(function_param_move_beginning, ["pb"]);
   alias_add(function_param_move_first, ["pf"]);
   alias_add(function_param_move, ["pm"]);
   alias_add(function_rename, ["r"]);
