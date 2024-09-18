@@ -11,7 +11,6 @@ import { html_style_font_color } from "./html_style_font_color.mjs";
 import { yyy8Uu_storage_path } from "./yyy8Uu_storage_path.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
-import { html_document_body } from "./html_document_body.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { range } from "./range.mjs";
 import { html_p_text } from "./html_p_text.mjs";
@@ -29,8 +28,7 @@ import { list_index } from "./list_index.mjs";
 import { list_index_last } from "./list_index_last.mjs";
 import { html_buttons_next_previous_hr_none } from "./html_buttons_next_previous_hr_none.mjs";
 export async function app_yyy8Uu() {
-  html_style_default_initialize();
-  let root = html_document_body();
+  let root = html_style_default_initialize();
   let file_path = yyy8Uu_storage_path("chapter_names");
   let { chapter_names } = await http_storage(file_path);
   let index_last = list_index_last(chapter_names);
