@@ -46,6 +46,7 @@ import { string_length } from "./string_length.mjs";
 import { list_single } from "./list_single.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 export function app_learn_code() {
+  let scripts = ["acorn", "astring"];
   html_script_acorn(root);
   html_script_astring(root);
   let modules = app_learn_code_modules();
