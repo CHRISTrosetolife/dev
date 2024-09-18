@@ -1,5 +1,4 @@
 import { graph_path_shortest_directed } from "./graph_path_shortest_directed.mjs";
-import { log } from "./log.mjs";
 import { list_any } from "./list_any.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
@@ -26,14 +25,6 @@ export async function function_imports_path(function_name_from, name_to) {
       let mapped = object_property_get(map, u);
       let { sources, imports } = mapped;
       let result = list_any([sources, imports], (i) => list_includes(i, v));
-      if (
-        v === "js_code_export_function_declare" &&
-        u === "function_new_generic"
-      ) {
-        log({
-          result,
-        });
-      }
       return result;
     },
     function_name_from,
