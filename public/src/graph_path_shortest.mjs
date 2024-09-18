@@ -22,7 +22,9 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
   let neighbors_get = (v) => {
     let neighbors = graph_neighbors(edges, v);
     if (v === "js_code_export_function_declare") {
-      log("here");
+      log({
+        neighbors,
+      });
     }
     return neighbors;
   };
