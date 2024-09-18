@@ -9,25 +9,23 @@ import cors from "cors";
 import bodyParser from "body-parser";
 export function server() {
   let app = express();
-  if (false) {
-    let url = url_localhost(8080);
-    let options = {
-      origin: [url],
-    };
-    app.use(cors(options));
-    let limit = "50mb";
-    app.use(
-      express.json({
-        limit: limit,
-      }),
-    );
-    app.use(
-      bodyParser.urlencoded({
-        limit: limit,
-        extended: true,
-      }),
-    );
-  }
+  let url = url_localhost(8080);
+  let options = {
+    origin: [url],
+  };
+  app.use(cors(options));
+  let limit = "50mb";
+  app.use(
+    express.json({
+      limit: limit,
+    }),
+  );
+  app.use(
+    bodyParser.urlencoded({
+      limit: limit,
+      extended: true,
+    }),
+  );
   app.post("/", async (req, res) => {
     log("here");
     let { body } = req;
