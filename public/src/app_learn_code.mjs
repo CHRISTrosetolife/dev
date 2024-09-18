@@ -53,7 +53,7 @@ export async function app_learn_code() {
   let scripts = ["acorn", "astring"];
   await each_async([scripts], async (script) => {
     let name = function_name_generated_combine(html_script_generate, script);
-    function_run;
+    await function_run(name, [root]);
   });
   html_script_acorn(root);
   html_script_astring(root);
