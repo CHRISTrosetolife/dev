@@ -1,3 +1,4 @@
+import { equal } from "./equal.mjs";
 import { assert_message } from "./assert_message.mjs";
 import { js_string } from "./js_string.mjs";
 import { each_index } from "./each_index.mjs";
@@ -22,7 +23,7 @@ export function js_template_to_function(ast) {
     each_index(quasis, (q, qi) => {
       let { value } = q;
       let { raw, cooked } = value;
-      assert_message();
+      assert_message(equal, [raw, cooked], () => {});
       list_add(a, js_string(s));
     });
     log({
