@@ -1,9 +1,9 @@
+import { graph_path_shortest_undirected } from "./graph_path_shortest_undirected.mjs";
 import { log } from "./log.mjs";
 import { list_any } from "./list_any.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { list_adder_unique } from "./list_adder_unique.mjs";
-import { graph_path_shortest } from "./graph_path_shortest.mjs";
 import { each } from "./each.mjs";
 import { each_object } from "./each_object.mjs";
 import { function_imports } from "./function_imports.mjs";
@@ -20,7 +20,7 @@ export async function function_imports_path(function_name_from, name_to) {
   log({
     t: map["function_new_generic"],
   });
-  return graph_path_shortest(
+  return graph_path_shortest_undirected(
     vertices,
     (u, v) => {
       if (!object_property_exists(map, u)) {
