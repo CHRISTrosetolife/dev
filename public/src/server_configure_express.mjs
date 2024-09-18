@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { url_localhost } from "./url_localhost.mjs";
 import express from "express";
 import cors from "cors";
@@ -20,5 +21,6 @@ export function server_configure_express(app) {
       extended: true,
     }),
   );
+  log({});
   return url;
 }
