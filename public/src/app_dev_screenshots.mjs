@@ -1,4 +1,4 @@
-import { app_name_from } from "./app_name_from.mjs";
+import { app_name } from "./app_name.mjs";
 import { folder_img_path } from "./folder_img_path.mjs";
 import { files_rename_incrementing } from "./files_rename_incrementing.mjs";
 import { assert_message } from "./assert_message.mjs";
@@ -26,7 +26,7 @@ export async function app_dev_screenshots(screen_name) {
   let file_extension = app_dev_screenshots_extension();
   let prefix = string_combine_multiple([
     folder_img_path(),
-    app_name_from(app_dev),
+    app_name(app_dev),
     "\\",
     screen_name,
     "\\",

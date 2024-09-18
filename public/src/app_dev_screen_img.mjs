@@ -1,4 +1,4 @@
-import { app_name_from } from "./app_name_from.mjs";
+import { app_name } from "./app_name.mjs";
 import { app_dev_screenshots_extension } from "./app_dev_screenshots_extension.mjs";
 import { string_to } from "./string_to.mjs";
 import { string_combine } from "./string_combine.mjs";
@@ -12,7 +12,7 @@ export function app_dev_screen_img(fn, root, i) {
   html_img_limited_centered(
     root,
     path_join([
-      app_name_from(app_dev),
+      app_name(app_dev),
       name,
       string_combine(string_to(i), app_dev_screenshots_extension()),
     ]),
