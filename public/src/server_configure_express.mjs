@@ -8,7 +8,9 @@ export function server_configure_express(app) {
   let options = {
     origin: [url],
   };
-  log({});
+  log({
+    url,
+  });
   app.use(cors(options));
   let limit = "50mb";
   app.use(
