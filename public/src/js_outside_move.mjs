@@ -41,7 +41,6 @@ export async function js_outside_move(ast) {
   for (let declaration of copy) {
     let function_name = js_declaration_to_name(declaration);
     await function_imports_add(function_name);
-    let { body: body_ast } = ast;
     list_remove(body_ast, declaration);
   }
   let names = list_map(copy, js_declaration_to_name);
