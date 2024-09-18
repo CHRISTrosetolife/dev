@@ -14,7 +14,9 @@ export function js_template_to_function(ast) {
     let e = js_parse_expression(
       js_code_call_args(string_combine_multiple.name, []),
     );
-    log({});
+    log({
+      e,
+    });
     return;
     object_replace(node, e);
     object_replace(node);
