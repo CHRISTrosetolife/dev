@@ -20,7 +20,7 @@ export function js_template_to_function(ast) {
     each(quasis, log);
     each_index(quasis, (q, qi) => {
       let { value } = q;
-      let raw = value;
+      let { raw, cooked } = value;
       list_add(a, js_string(s));
     });
     log({
