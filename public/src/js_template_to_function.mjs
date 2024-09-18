@@ -1,3 +1,4 @@
+import { js_string } from "./js_string.mjs";
 import { each_index } from "./each_index.mjs";
 import { log } from "./log.mjs";
 import { each } from "./each.mjs";
@@ -18,7 +19,7 @@ export function js_template_to_function(ast) {
     log(node);
     each(quasis, log);
     each_index(quasis, (q, qi) => {
-      list_add(a);
+      list_add(a, js_string(s));
     });
     log({
       e,
