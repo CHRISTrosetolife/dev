@@ -20,7 +20,7 @@ export function graph_path_shortest(vertices, edge_lambda, from, to) {
     ),
   );
   let neighbors_get = (v) => {
-    let neighbors = graph_neighbors_undirected(edges, v);
+    let neighbors = neighbors_lambda(edges, v);
     return neighbors;
   };
   return graph_path_shortest_neighbors(
