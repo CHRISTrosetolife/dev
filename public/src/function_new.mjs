@@ -7,6 +7,7 @@ export async function function_new(function_name) {
   assert_arguments_length(arguments, 1);
   if (await function_exists(function_name)) {
     await function_open(function_name);
+    $le;
     return;
   }
   let open = true;
