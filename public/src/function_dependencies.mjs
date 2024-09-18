@@ -6,7 +6,7 @@ import { function_imports } from "./function_imports.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 export async function function_dependencies(function_name) {
   let map = await function_imports(function_name);
-  let vertices = list_adder_unique((la) => {
+  let dependency_names = list_adder_unique((la) => {
     each_object(map, (function_name, mapped) => {
       let { sources, imports } = mapped;
       assert(list_empty_is, [sources]);
