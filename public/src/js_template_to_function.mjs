@@ -11,10 +11,11 @@ export function js_template_to_function(ast) {
     let { quasis } = node;
     log(node);
     each(quasis, log);
-    return;
     let e = js_parse_expression(
       js_code_call_args(string_combine_multiple.name, []),
     );
+    log({});
+    return;
     object_replace(node, e);
     object_replace(node);
   });
