@@ -32,6 +32,6 @@ export function server() {
     res.end(json_to(result));
   });
   app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`);
+    console.log(`${""}Example app listening on port ${port}`);
   });
 }
