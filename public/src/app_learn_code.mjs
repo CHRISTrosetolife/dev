@@ -51,7 +51,7 @@ import { object_property_set } from "./object_property_set.mjs";
 export async function app_learn_code() {
   let scripts = ["acorn", "astring"];
   await each_async([scripts], async (script) => {
-    function_name_generated(html_script_generate);
+    let prefix = function_name_generated(html_script_generate);
   });
   html_script_acorn(root);
   html_script_astring(root);
