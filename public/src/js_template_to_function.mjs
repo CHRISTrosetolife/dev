@@ -13,13 +13,15 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_add } from "./list_add.mjs";
 import { json_to } from "./json_to.mjs";
 import { list_index_is } from "./list_index_is.mjs";
+import { list_single } from "./list_single.mjs";
 export function js_template_to_function(ast) {
   return js_visit_node(ast, "TemplateLiteral", (v) => {
     let { node } = v;
     let e = js_parse_expression(
       js_code_call_args(string_combine_multiple.name, [js_code_array_empty()]),
     );
-    let { arguments: a } = e;
+    let { arguments: as } = e;
+    let a = list_single(as);
     let { quasis, expressions } = node;
     let { elements } = a;
     each_index(quasis, (q, qi) => {
