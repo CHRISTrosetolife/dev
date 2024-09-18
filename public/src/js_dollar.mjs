@@ -1,3 +1,4 @@
+import { js_declaration_single } from "./js_declaration_single.mjs";
 import { log_error } from "./log_error.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -269,6 +270,11 @@ export function js_dollar(ast) {
             '"property_name"',
           ]),
         );
+        object_replace(node, e);
+      }
+      if (remaining === "t") {
+        js_declaration_single();
+        let e = js_parse_expression(js_code_arrow_block());
         object_replace(node, e);
       }
       if (prefix_use(remaining, scm_prefix, prefixes)) {
