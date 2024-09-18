@@ -8,6 +8,6 @@ export async function app_code() {
   let root = html_style_default_initialize();
   await html_scripts_load(root, ["axios", "acorn", "astring"]);
   let ns = await function_run_remote(function_names.name, []);
-  html_input_width_full_focus(root);
-  html_on_keydown();
+  let input = html_input_width_full_focus(root);
+  html_on_keydown(input);
 }
