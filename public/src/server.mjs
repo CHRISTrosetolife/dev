@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { url_localhost } from "./url_localhost.mjs";
 import { function_run_terminal } from "./function_run_terminal.mjs";
 import { log } from "./log.mjs";
@@ -33,7 +34,7 @@ export function server() {
   });
   app.listen(port, () => {
     console.log(
-      string_combine_multiple(["Example app listening on port ", port]),
+      string_combine_multiple([server.name, " listening on port ", port]),
     );
   });
 }
