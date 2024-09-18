@@ -33,6 +33,8 @@ export function server() {
     res.end(json_to(result));
   });
   app.listen(port, () => {
-    console.log(string_combine_multiple([$t, " listening on port ", port]));
+    console.log(
+      string_combine_multiple([server.name, " listening on port ", port]),
+    );
   });
 }
