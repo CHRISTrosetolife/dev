@@ -32,6 +32,7 @@ export function function_aliases() {
     n: "function_new",
     na: "function_new_args",
     o: "function_open",
+    oa: "function_open_app",
     of: "function_output_file",
     p: "function_param_new",
     pn: "function_param_new_at",
