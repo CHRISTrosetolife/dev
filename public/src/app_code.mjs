@@ -17,7 +17,7 @@ export async function app_code() {
   html_on_keydown(input);
   let filtered = list_filter(ns, tautology);
   let taken = list_take(filtered, 50);
-  each(ns, (item) => {
+  each(taken, (item) => {
     html_div_text(root, item);
   });
 }
