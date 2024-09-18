@@ -273,7 +273,7 @@ export function js_dollar(ast) {
         object_replace(node, e);
       }
       if (remaining === "t") {
-        js_declaration_single();
+        let d = js_declaration_single(ast);
         let e = js_parse_expression(js_code_arrow_block());
         object_replace(node, e);
       }
