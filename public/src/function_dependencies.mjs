@@ -10,7 +10,7 @@ export async function function_dependencies(function_name) {
     each_object(map, (function_name, mapped) => {
       let { sources, imports } = mapped;
       assert(list_empty_is, [sources]);
-      each([function_name, imports], la);
+      each(list_combine_multiple([function_name], imports), la);
     });
   });
   return dependency_names;
