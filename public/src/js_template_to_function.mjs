@@ -33,7 +33,7 @@ export function js_template_to_function(ast) {
           }),
         ]);
       });
-      list_add(a, js_string(s));
+      list_add(a, js_string(cooked));
     });
     log({
       e,
