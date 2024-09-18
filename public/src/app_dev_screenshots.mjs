@@ -1,3 +1,4 @@
+import { app_name_from } from "./app_name_from.mjs";
 import { folder_img_path } from "./folder_img_path.mjs";
 import { files_rename_incrementing } from "./files_rename_incrementing.mjs";
 import { assert_message } from "./assert_message.mjs";
@@ -13,7 +14,6 @@ import { path_parse_name } from "./path_parse_name.mjs";
 import { folder_user } from "./folder_user.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { folder_read } from "./folder_read.mjs";
-import { app_name } from "./app_name.mjs";
 import { app_dev } from "./app_dev.mjs";
 import { folder_files_move } from "./folder_files_move.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -26,7 +26,7 @@ export async function app_dev_screenshots(screen_name) {
   let file_extension = app_dev_screenshots_extension();
   let prefix = string_combine_multiple([
     folder_img_path(),
-    app_name(app_dev),
+    app_name_from(app_dev),
     "\\",
     screen_name,
     "\\",
