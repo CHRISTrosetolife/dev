@@ -275,7 +275,7 @@ export function js_dollar(ast) {
       }
       if (remaining === "t") {
         let d = js_declaration_single(ast);
-        name = js_declaration_to_name(d);
+        let this_name = js_declaration_to_name(d);
         let e = js_parse_expression(js_code_arrow_block());
         object_replace(node, e);
       }
