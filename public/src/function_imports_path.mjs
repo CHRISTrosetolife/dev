@@ -1,3 +1,4 @@
+import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { graph_path_shortest_directed } from "./graph_path_shortest_directed.mjs";
 import { list_any } from "./list_any.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -13,7 +14,7 @@ export async function function_imports_path(function_name_from, name_to) {
     each_object(map, (function_name, mapped) => {
       la(function_name);
       let { sources, imports } = mapped;
-      each(list_combine_multiple([sources, imports]), (list) => each(list, la));
+      each(list_concat_multiple([sources, imports]), (list) => each(list, la));
     });
   });
   return graph_path_shortest_directed(
