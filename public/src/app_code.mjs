@@ -1,5 +1,4 @@
-import { html_div_text } from "./html_div_text.mjs";
-import { each } from "./each.mjs";
+import { html_list } from "./html_list.mjs";
 import { log } from "./log.mjs";
 import { function_names } from "./function_names.mjs";
 import { function_run_remote } from "./function_run_remote.mjs";
@@ -14,9 +13,3 @@ export async function app_code() {
     ns,
   });
 }
-function html_list(ns, root) {
-    each(ns, (item) => {
-        html_div_text(root, item);
-    });
-}
-
