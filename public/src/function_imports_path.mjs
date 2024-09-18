@@ -10,9 +10,6 @@ import { function_imports } from "./function_imports.mjs";
 import { list_includes } from "./list_includes.mjs";
 export async function function_imports_path(function_name_from, name_to) {
   let map = await function_imports(function_name_from);
-  log({
-    t: map["js_code_export_function_declare"],
-  });
   let vertices = list_adder_unique((la) => {
     each_object(map, (function_name, mapped) => {
       la(function_name);
@@ -29,6 +26,14 @@ export async function function_imports_path(function_name_from, name_to) {
       let mapped = object_property_get(map, u);
       let { sources, imports } = mapped;
       let result = list_any([sources, imports], (i) => list_includes(i, v));
+      if (
+        u === "js_code_export_function_declare" &&
+        v === "function_new_generic"
+      ) {
+        log({
+          result,
+        });
+      }
       return result;
     },
     function_name_from,
