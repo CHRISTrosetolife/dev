@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { js_code_array_empty } from "./js_code_array_empty.mjs";
 import { list_get } from "./list_get.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
@@ -37,6 +38,7 @@ export function js_template_to_function(ast) {
         ]);
       });
       if (string_empty_not_is(cooked)) {
+        log({});
         list_add(elements, js_string(cooked));
       }
       if (list_index_is(expressions, qi)) {
