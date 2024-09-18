@@ -19,6 +19,7 @@ export function js_template_to_function(ast) {
     log(node);
     each(quasis, log);
     each_index(quasis, (q, qi) => {
+      let value = q;
       list_add(a, js_string(s));
     });
     log({
