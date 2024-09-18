@@ -9,7 +9,6 @@ import { function_run_remote } from "./function_run_remote.mjs";
 import { html_scripts_load } from "./html_scripts_load.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { list_filter } from "./list_filter.mjs";
-import { tautology } from "./tautology.mjs";
 import { html_div } from "./html_div.mjs";
 export async function app_code() {
   let root = html_style_default_initialize();
@@ -19,7 +18,7 @@ export async function app_code() {
   let results = html_div(root);
   html_on_keydown(input, () => {
     html_clear(results);
-    let filtered = list_filter(ns, tautology);
+    let filtered = list_filter(ns, (n) => {});
     let taken = list_take(filtered, 50);
     each(taken, (item) => {
       html_div_text(results, item);
