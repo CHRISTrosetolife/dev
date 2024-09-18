@@ -1,3 +1,5 @@
+import { html_div_text } from "./html_div_text.mjs";
+import { each } from "./each.mjs";
 import { html_on_keydown } from "./html_on_keydown.mjs";
 import { html_input_width_full_focus } from "./html_input_width_full_focus.mjs";
 import { function_names } from "./function_names.mjs";
@@ -10,4 +12,7 @@ export async function app_code() {
   let ns = await function_run_remote(function_names.name, []);
   let input = html_input_width_full_focus(root);
   html_on_keydown(input);
+  each(ns, (item) => {
+    html_div_text(root, item);
+  });
 }
