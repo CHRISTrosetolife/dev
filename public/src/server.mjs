@@ -21,7 +21,10 @@ export function server() {
     );
   });
   function server_configure(app) {
-    let url = server_configure_express(app);
+    let url;
+    if (0) {
+      url = server_configure_express(app);
+    }
     app.get("/", async (req, res) => {
       log("hereg");
     });
