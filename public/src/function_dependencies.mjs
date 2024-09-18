@@ -13,7 +13,12 @@ export async function function_dependencies(function_name) {
       each(sources, la);
     });
   });
-  assert_message(list_empty_is, [externals], () => {});
+  assert_message(
+    list_empty_is,
+    [externals],
+    () =>
+      "if this is non-empty, then refactor output to include external libraries",
+  );
   let dependency_names = object_properties(map);
   return {
     dependency_names,
