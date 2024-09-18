@@ -26,7 +26,9 @@ export async function app_code() {
     let v = html_value_get(input);
     let letters = string_split_empty(v);
     let joined = list_join(letters, ".*");
-    log({});
+    log({
+      joined,
+    });
     let filtered = list_filter(ns, (n) => {
       return string_regex_match(n, joined);
     });
