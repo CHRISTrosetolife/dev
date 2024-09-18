@@ -8,6 +8,7 @@ export function js_template_to_function(ast) {
   return js_visit_node(ast, "TemplateLiteral", (v) => {
     let { node } = v;
     let { quasis } = node;
+    log(node);
     each(quasis, log);
     return;
     let e = js_parse_expression(js_code_call_args(each.name, []));
