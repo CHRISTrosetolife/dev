@@ -1,16 +1,7 @@
-import { log } from "./log.mjs";
-import { url_localhost } from "./url_localhost.mjs";
 import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 export function server_configure_express(app) {
-  let url = url_localhost(8080);
-  let options = {
-    origin: [url],
-  };
-  log({
-    url,
-  });
   app.use(
     cors({
       origin: true,
@@ -29,5 +20,4 @@ export function server_configure_express(app) {
       extended: true,
     }),
   );
-  return url;
 }
