@@ -1,3 +1,4 @@
+import { js_code_array_empty } from "./js_code_array_empty.mjs";
 import { list_get } from "./list_get.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { equal } from "./equal.mjs";
@@ -18,7 +19,7 @@ export function js_template_to_function(ast) {
   return js_visit_node(ast, "TemplateLiteral", (v) => {
     let { node } = v;
     let e = js_parse_expression(
-      js_code_call_args(string_combine_multiple.name, []),
+      js_code_call_args(string_combine_multiple.name, [js_code_array_empty()]),
     );
     let { arguments: a } = e;
     let { quasis, expressions } = node;
