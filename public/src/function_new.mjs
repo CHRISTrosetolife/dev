@@ -1,3 +1,4 @@
+import { log_error } from "./log_error.mjs";
 import { function_exists } from "./function_exists.mjs";
 import { function_open } from "./function_open.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
@@ -7,7 +8,7 @@ export async function function_new(function_name) {
   assert_arguments_length(arguments, 1);
   if (await function_exists(function_name)) {
     await function_open(function_name);
-    $le;
+    log_error({});
     return;
   }
   let open = true;
