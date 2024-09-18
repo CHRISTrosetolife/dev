@@ -1,3 +1,4 @@
+import { html_inner_set } from "./html_inner_set.mjs";
 import { html_div } from "./html_div.mjs";
 import { each } from "./each.mjs";
 import { log } from "./log.mjs";
@@ -11,7 +12,7 @@ export async function app_code() {
   let ns = await function_run_remote(function_names.name, []);
   each(ns, (item) => {
     let d = html_div(root);
-    item;
+    html_inner_set(d, item);
   });
   log({
     ns,
