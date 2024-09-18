@@ -1,3 +1,4 @@
+import { server } from "./server.mjs";
 import { function_open_app_html } from "./function_open_app_html.mjs";
 import { function_param_move_beginning } from "./function_param_move_beginning.mjs";
 import { function_open_app } from "./function_open_app.mjs";
@@ -114,6 +115,7 @@ export async function function_aliases_generate() {
   alias_add(terminal_data_history, ["th"]);
   alias_add(terminal_data_history_clear, ["thc"]);
   alias_add(watch, ["w"]);
+  alias_add(server, ["v"]);
   let name = fn_name("function_aliases");
   await function_new_generic(
     name,
