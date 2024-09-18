@@ -11,12 +11,11 @@ export function server() {
   server_configure(app);
   let port = server_port();
   app.listen(port, () => {
-    let url = url_localhost(8080);
     console.log(
       string_combine_multiple([
         server.name,
         " ",
-        url,
+        url_localhost(8080),
         " listening on port ",
         port,
       ]),
