@@ -1,9 +1,9 @@
+import { html_inner_set } from "./html_inner_set.mjs";
 import { html_on_input_value } from "./html_on_input_value.mjs";
 import { list_take_soft } from "./list_take_soft.mjs";
 import { string_regex_match } from "./string_regex_match.mjs";
 import { list_join } from "./list_join.mjs";
 import { html_clear } from "./html_clear.mjs";
-import { html_div_text } from "./html_div_text.mjs";
 import { each } from "./each.mjs";
 import { html_input_width_full_focus } from "./html_input_width_full_focus.mjs";
 import { function_names } from "./function_names.mjs";
@@ -28,7 +28,8 @@ export async function app_code() {
     });
     let taken = list_take_soft(filtered, 50);
     each(taken, (item) => {
-      html_div_text(results, item);
+      let d = html_div(results);
+      html_inner_set(d, item);
     });
   });
 }
