@@ -51,13 +51,7 @@ import { function_run } from "./function_run.mjs";
 export async function app_learn_code() {
   let root = html_style_default_initialize();
   let scripts = ["acorn", "astring"];
-  await each_async([scripts], async (script) => {
-    let name = function_name_generated_combine(html_script_generate, script);
-    log({
-      name,
-    });
-    await function_run(name, [root]);
-  });
+  await html_scripts_load(scripts, root);
   let modules = app_learn_code_modules();
   html_hash({
     background_color: (value) => {
@@ -221,3 +215,13 @@ export async function app_learn_code() {
     html_button_width_full_text_click_home(root, refresh_main);
   }
 }
+async function html_scripts_load(scripts, root) {
+    await each_async([scripts], async (script) => {
+        let name = function_name_generated_combine(html_script_generate, script);
+        log({
+            name,
+        });
+        await function_run(name, [root]);
+    });
+}
+
