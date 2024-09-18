@@ -28,7 +28,6 @@ export function server() {
     });
     app.post("/", async (req, res) => {
       log("herep");
-      return;
       let { body } = req;
       let { function_name, args } = body;
       let result = await function_run_terminal(function_name, args);
