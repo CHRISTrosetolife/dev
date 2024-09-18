@@ -1,3 +1,4 @@
+import { js_template_to_function } from "./js_template_to_function.mjs";
 import { js_dollar } from "./js_dollar.mjs";
 import { js_assert_arguments_length } from "./js_assert_arguments_length.mjs";
 import { js_while_to_block } from "./js_while_to_block.mjs";
@@ -10,6 +11,7 @@ import { js_outside_move } from "./js_outside_move.mjs";
 export function function_auto_transforms() {
   return [
     js_dollar,
+    js_template_to_function,
     js_assert_arguments_length,
     js_if_to_block,
     js_while_to_block,
