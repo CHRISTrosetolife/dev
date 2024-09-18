@@ -1,3 +1,4 @@
+import { string_regex_match } from "./string_regex_match.mjs";
 import { list_join } from "./list_join.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { html_clear } from "./html_clear.mjs";
@@ -25,6 +26,7 @@ export async function app_code() {
       let letters = string_split_empty(n);
       let joined = list_join(letters, ".*");
       let v = html_value_get(input);
+      string_regex_match;
     });
     let taken = list_take(filtered, 50);
     each(taken, (item) => {
