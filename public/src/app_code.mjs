@@ -1,3 +1,4 @@
+import { list_join } from "./list_join.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { list_take } from "./list_take.mjs";
@@ -22,6 +23,7 @@ export async function app_code() {
     html_clear(results);
     let filtered = list_filter(ns, (n) => {
       let letters = string_split_empty(n);
+      let joined = list_join(letters, ".*");
       let v = html_value_get(input);
     });
     let taken = list_take(filtered, 50);
