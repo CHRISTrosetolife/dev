@@ -6,6 +6,7 @@ import { function_imports } from "./function_imports.mjs";
 import { object_properties } from "./object_properties.mjs";
 import { assert_message } from "./assert_message.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
+import { list_map_async } from "./list_map_async.mjs";
 export async function function_dependencies(function_name) {
   let map = await function_imports(function_name);
   let externals = list_adder_unique((la) => {
@@ -21,6 +22,7 @@ export async function function_dependencies(function_name) {
       "if this is non-empty, then refactor output to include external libraries",
   );
   let dependency_names = object_properties(map);
+  await list_map_async(dependency_names, function_declaration);
   await function_declaration(function_name);
   return {
     dependency_names,
