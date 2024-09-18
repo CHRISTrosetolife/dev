@@ -279,7 +279,9 @@ export function js_dollar(ast) {
         let d = js_declaration_single(ast);
         let this_name = js_declaration_to_name(d);
         let code = js_code_dot(this_name, js_code_string("name"));
-        log({code});
+        log({
+          code,
+        });
         let e = js_parse_expression(code);
         object_replace(node, e);
       }
