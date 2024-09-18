@@ -1,3 +1,4 @@
+import { function_name_generated } from "./function_name_generated.mjs";
 import { each_async } from "./each_async.mjs";
 import { html_script_astring } from "./html_script_astring.mjs";
 import { html_script_acorn } from "./html_script_acorn.mjs";
@@ -48,7 +49,9 @@ import { list_single } from "./list_single.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 export async function app_learn_code() {
   let scripts = ["acorn", "astring"];
-  await each_async(list, async (item) => {});
+  await each_async([scripts], async (script) => {
+    function_name_generated();
+  });
   html_script_acorn(root);
   html_script_astring(root);
   let modules = app_learn_code_modules();
