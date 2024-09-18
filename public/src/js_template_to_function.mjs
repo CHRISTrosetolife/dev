@@ -5,7 +5,6 @@ import { equal } from "./equal.mjs";
 import { assert_message } from "./assert_message.mjs";
 import { js_string } from "./js_string.mjs";
 import { each_index } from "./each_index.mjs";
-import { log } from "./log.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
 import { object_replace } from "./object_replace.mjs";
@@ -22,9 +21,7 @@ export function js_template_to_function(ast) {
     );
     let { arguments: a } = e;
     let { quasis, expressions } = node;
-    log(a);
-    let elements = a;
-    return;
+    let { elements } = a;
     each_index(quasis, (q, qi) => {
       let { value } = q;
       let { raw, cooked } = value;
@@ -38,10 +35,10 @@ export function js_template_to_function(ast) {
         ]);
       });
       if (string_empty_not_is(cooked)) {
-        list_add(a, js_string(cooked));
+        list_add(elements, js_string(cooked));
       }
       if (list_index_is(expressions, qi)) {
-        list_add(a, list_get(expressions, qi));
+        list_add(elements, list_get(expressions, qi));
       }
     });
     object_replace(node, e);
