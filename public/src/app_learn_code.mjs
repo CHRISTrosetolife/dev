@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { function_name_generated_combine } from "./function_name_generated_combine.mjs";
 import { html_script_generate } from "./html_script_generate.mjs";
 import { each_async } from "./each_async.mjs";
@@ -52,6 +53,7 @@ export async function app_learn_code() {
   let scripts = ["acorn", "astring"];
   await each_async([scripts], async (script) => {
     let name = function_name_generated_combine(html_script_generate, script);
+    log({});
     await function_run(name, [root]);
   });
   let modules = app_learn_code_modules();
