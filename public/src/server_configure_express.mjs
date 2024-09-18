@@ -21,6 +21,6 @@ export function server_configure_express(app) {
       extended: true,
     }),
   );
-  log({});
+  log("cors");
   return url;
 }
