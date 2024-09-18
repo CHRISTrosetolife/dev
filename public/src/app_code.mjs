@@ -1,3 +1,4 @@
+import { string_get } from "./string_get.mjs";
 import { each_index } from "./each_index.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 import { html_on_input_value } from "./html_on_input_value.mjs";
@@ -31,7 +32,10 @@ export async function app_code() {
     each(taken, (item) => {
       let d = html_div(results);
       let letters_index = 0;
-      each_index(item, (c, i) => {});
+      each_index(item, (c, i) => {
+        if (c === string_get(letters, letters_index)) {
+        }
+      });
       html_inner_set(d, item);
     });
   });
