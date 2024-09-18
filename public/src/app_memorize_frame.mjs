@@ -6,8 +6,8 @@ import { app_memorize_refresh_memorize } from "./app_memorize_refresh_memorize.m
 import { html_document_body } from "./html_document_body.mjs";
 export async function app_memorize_frame(context) {
   await app_memorize_refresh_memorize(context);
-  let type = "keydown";
-  html_on(html_document_body(), type, on_keydown);
+  let component = html_document_body();
+  html_on(component, "keydown", on_keydown);
   async function on_keydown(e) {
     let { keyCode } = e;
     let c = String.fromCharCode(keyCode);
