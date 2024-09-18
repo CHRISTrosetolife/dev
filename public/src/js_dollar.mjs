@@ -1,3 +1,4 @@
+import { log_error } from "./log_error.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { js_block_statement } from "./js_block_statement.mjs";
@@ -170,6 +171,18 @@ export function js_dollar(ast) {
       if (remaining === "l") {
         let e = js_parse_expression(
           js_code_call_args(log.name, [js_code_braces()]),
+        );
+        object_replace(node, e);
+      }
+      if (remaining === "l") {
+        let e = js_parse_expression(
+          js_code_call_args(log.name, [js_code_braces()]),
+        );
+        object_replace(node, e);
+      }
+      if (remaining === "le") {
+        let e = js_parse_expression(
+          js_code_call_args(log_error.name, [js_code_braces()]),
         );
         object_replace(node, e);
       }
