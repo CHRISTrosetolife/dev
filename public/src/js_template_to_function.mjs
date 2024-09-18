@@ -23,7 +23,9 @@ export function js_template_to_function(ast) {
     each_index(quasis, (q, qi) => {
       let { value } = q;
       let { raw, cooked } = value;
-      assert_message(equal, [raw, cooked], () => {});
+      assert_message(equal, [raw, cooked], () => {
+        return "if these are different then the code needs to pick the correct value";
+      });
       list_add(a, js_string(s));
     });
     log({
