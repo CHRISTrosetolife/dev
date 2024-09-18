@@ -13,9 +13,7 @@ export async function function_imports_path(function_name_from, name_to) {
     each_object(map, (function_name, mapped) => {
       la(function_name);
       let { sources, imports } = mapped;
-      each([sources, imports], (item) => {
-        la(item);
-      });
+      each([sources, imports], la);
     });
   });
   return graph_path_shortest(
