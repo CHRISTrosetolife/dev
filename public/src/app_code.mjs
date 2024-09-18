@@ -1,3 +1,4 @@
+import { html_value_get } from "./html_value_get.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { list_take } from "./list_take.mjs";
 import { html_div_text } from "./html_div_text.mjs";
@@ -18,7 +19,9 @@ export async function app_code() {
   let results = html_div(root);
   html_on_keydown(input, () => {
     html_clear(results);
-    let filtered = list_filter(ns, (n) => {});
+    let filtered = list_filter(ns, (n) => {
+      let v = html_value_get(input);
+    });
     let taken = list_take(filtered, 50);
     each(taken, (item) => {
       html_div_text(results, item);
