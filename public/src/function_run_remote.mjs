@@ -6,7 +6,9 @@ export async function function_run_remote(function_name, args) {
   let result = await http_post(
     string_combine_multiple([
       url_secure(),
-      `localhost:${server_port()}/`,
+      "localhost:",
+      server_port(),
+      "/",
       {
         function_name,
         args,
