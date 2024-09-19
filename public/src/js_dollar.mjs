@@ -255,15 +255,15 @@ export function js_dollar(ast) {
       if (remaining === "i") {
         let { stack } = v;
         let s1 = list_get_end_1(stack);
-        if (list_is(s1)) {
-          let next = list_next(s1, parent);
-          let statement = js_parse_first(js_code_if());
-          let { consequent } = statement;
-          let { body } = consequent;
-          list_add(body, next);
-          let index = list_index(s1, next);
-          list_set(s1, index);
-          if (0) {
+        if (0) {
+          if (list_is(s1)) {
+            let next = list_next(s1, parent);
+            let statement = js_parse_first(js_code_if());
+            let { consequent } = statement;
+            let { body } = consequent;
+            list_add(body, next);
+            let index = list_index(s1, next);
+            list_set(s1, index);
             list_remove(parent, next);
           }
         }
