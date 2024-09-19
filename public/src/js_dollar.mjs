@@ -276,7 +276,9 @@ export function js_dollar(ast) {
       }
       let log_prefix_start_is = remaining === log_prefix_start;
       if (log_prefix_start_is || prefix_use(remaining, log_prefix, prefixes)) {
+        let inside;
         if (log_prefix_start_is) {
+          inside = "";
         }
         let e = js_parse_expression(
           js_code_call_args(log.name, [js_code_braces_inside()]),
