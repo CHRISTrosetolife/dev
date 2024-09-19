@@ -17,7 +17,7 @@ export async function sermon_format(name) {
   let lines = string_split_newline(text);
   let numbered = list_filter(lines, (line) => {
     if (string_empty_is(line)) {
-      return true;
+      return false;
     }
     let first = string_first(line);
     if (string_digits_is(first)) {
