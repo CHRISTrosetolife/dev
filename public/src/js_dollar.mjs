@@ -257,9 +257,11 @@ export function js_dollar(ast) {
           log({
             statement,
           });
-          let next = list_next(parent, node);
-          list_remove(parent, next);
-          let index = list_index(parent, node);
+          if (0) {
+            let next = list_next(parent, node);
+            list_remove(parent, next);
+            let index = list_index(parent, node);
+          }
         }
       }
       if (remaining === "st") {
