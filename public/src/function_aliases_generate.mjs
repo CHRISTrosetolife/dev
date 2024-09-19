@@ -1,3 +1,4 @@
+import { sermon_new } from "./sermon_new.mjs";
 import { server } from "./server.mjs";
 import { function_open_app_html } from "./function_open_app_html.mjs";
 import { function_param_move_beginning } from "./function_param_move_beginning.mjs";
@@ -110,6 +111,7 @@ export async function function_aliases_generate() {
   alias_add(sandbox, ["sb"]);
   alias_add(functions_identifier, ["si"]);
   alias_add(functions_string, ["ss"]);
+  alias_add(sermon_new, ["sn"]);
   alias_add(function_search_open, ["so"]);
   alias_add(terminal, ["t"]);
   alias_add(terminal_data_history, ["th"]);
