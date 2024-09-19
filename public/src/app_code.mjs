@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { string_empty_is } from "./string_empty_is.mjs";
 import { html_button_width_full } from "./html_button_width_full.mjs";
 import { string_get } from "./string_get.mjs";
@@ -35,9 +34,6 @@ export async function app_code() {
     let letters = string_split_empty(v);
     let joined = list_join(letters, ".*");
     let filtered;
-    log({
-      v,
-    });
     if (string_empty_is(v)) {
       filtered = ns;
     } else {
