@@ -8,6 +8,6 @@ export async function sermon_format(name) {
   let text = await file_read(sermon_path_file);
   text = string_replace(text, "\r", "");
   let lines = string_split_newline(text);
-  list_filter(lines, () => {});
+  list_filter(lines, (line) => {});
   return lines;
 }
