@@ -262,8 +262,8 @@ export function js_dollar(ast) {
           let { body } = consequent;
           list_add(body, next);
           let index = list_index(s1, next);
-          list_set(s1, index);
           if (0) {
+            list_set(s1, index);
             list_remove(parent, next);
           }
         }
