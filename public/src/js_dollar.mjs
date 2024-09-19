@@ -1,3 +1,4 @@
+import { list_set } from "./list_set.mjs";
 import { js_code_if } from "./js_code_if.mjs";
 import { js_parse_first } from "./js_parse_first.mjs";
 import { list_get_end_1 } from "./list_get_end_1.mjs";
@@ -260,7 +261,7 @@ export function js_dollar(ast) {
           let { consequent } = statement;
           let { body } = consequent;
           list_add(body, next);
-          object_replace(parent, e);
+          list_set(s1, next);
           if (0) {
             list_remove(parent, next);
             let index = list_index(parent, node);
