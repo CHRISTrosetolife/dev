@@ -18,6 +18,7 @@ import { html_style_default_initialize } from "./html_style_default_initialize.m
 import { list_filter } from "./list_filter.mjs";
 import { html_div } from "./html_div.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
+import { undefined_is } from "./undefined_is.mjs";
 export async function app_code() {
   let root = html_style_default_initialize();
   await html_scripts_load(root, ["axios", "acorn", "astring"]);
@@ -28,6 +29,9 @@ export async function app_code() {
   app_code_search_refresh();
   function app_code_search_refresh(v) {
     html_clear(results);
+    if (undefined_is(v)) {
+      v = "";
+    }
     let letters = string_split_empty(v);
     let joined = list_join(letters, ".*");
     let filtered;
