@@ -13,11 +13,11 @@ export async function bible_book_prefix_to_number(bible_folder, book_prefix) {
   let keys_lower = list_map_lower(keys);
   book_prefix = string_case_lower(book_prefix);
   let predicate = string_starts_with_curry(book_prefix);
-  let book = list_find(keys_lower, predicate);
-  let index = list_index(keys_lower, book);
-  book = list_find(keys, index);
+  let book_lower = list_find(keys_lower, predicate);
+  let index = list_index(keys_lower, book_lower);
+  book_lower = list_find(keys, index);
   log({
-    book,
+    book: book_lower,
   });
-  return await bible_book_name_to_number(bible_folder, book);
+  return await bible_book_name_to_number(bible_folder, book_lower);
 }
