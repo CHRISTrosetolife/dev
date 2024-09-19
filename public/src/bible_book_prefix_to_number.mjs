@@ -17,7 +17,7 @@ export async function bible_book_prefix_to_number(bible_folder, book_prefix) {
   let index = list_index(keys_lower, book_lower);
   let book = list_find(keys, index);
   log({
-    book: book_lower,
+    book,
   });
-  return await bible_book_name_to_number(bible_folder, book_lower);
+  return await bible_book_name_to_number(bible_folder, book);
 }
