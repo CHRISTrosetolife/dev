@@ -64,7 +64,8 @@ export function js_dollar(ast) {
       let question_prefix = "q";
       let scm_prefix = "s";
       let sermon_prefix = "se";
-      let log_prefix = "l_";
+      let log_prefix_start = "l";
+      let log_prefix = string_combine_multiple([log_prefix_start, "_"]);
       let prefixes = [
         objection_prefix,
         question_prefix,
