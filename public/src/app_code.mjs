@@ -1,3 +1,4 @@
+import { html_button_width_full } from "./html_button_width_full.mjs";
 import { string_get } from "./string_get.mjs";
 import { each_index } from "./each_index.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
@@ -30,7 +31,7 @@ export async function app_code() {
     });
     let taken = list_take_soft(filtered, 50);
     each(taken, (item) => {
-      let d = html_div(results);
+      let d = html_button_width_full(results);
       let letters_index = 0;
       each_index(item, (c, i) => {
         if (c === string_get(letters, letters_index)) {
