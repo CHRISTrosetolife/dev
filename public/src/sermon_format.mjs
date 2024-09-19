@@ -1,3 +1,4 @@
+import { file_write } from "./file_write.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { keyboard_keys } from "./keyboard_keys.mjs";
 import { each } from "./each.mjs";
@@ -33,4 +34,5 @@ export async function sermon_format(name) {
     return n;
   });
   text = list_join_space(mapped);
+  await file_write(sermon_path_file, text);
 }
