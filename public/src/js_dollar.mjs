@@ -248,6 +248,10 @@ export function js_dollar(ast) {
           object_replace(parent, e);
         }
       }
+      if (remaining === "i") {
+        let { stack } = v;
+        
+      }
       if (remaining === "st") {
         let e = js_parse_expression(
           js_code_call_args(object_property_set.name, [
