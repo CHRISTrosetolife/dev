@@ -10,6 +10,7 @@ import { sermon_path } from "./sermon_path.mjs";
 import { string_split_newline } from "./string_split_newline.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { string_empty_is } from "./string_empty_is.mjs";
+import { list_join_space } from "./list_join_space.mjs";
 export async function sermon_format(name) {
   let sermon_path_file = sermon_path(name);
   let text = await file_read(sermon_path_file);
@@ -31,5 +32,5 @@ export async function sermon_format(name) {
     });
     return n;
   });
-  return mapped;
+  return list_join_space(mapped);
 }
