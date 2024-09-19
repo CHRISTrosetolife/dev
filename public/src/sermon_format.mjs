@@ -22,6 +22,8 @@ export async function sermon_format(name) {
     }
     return false;
   });
-  let mapped = list_map(numbered, () => {});
+  let mapped = list_map(numbered, (n) => {
+    return n;
+  });
   return lines;
 }
