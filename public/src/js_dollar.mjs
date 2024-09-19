@@ -257,6 +257,7 @@ export function js_dollar(ast) {
         if (list_is(s1)) {
           let statement = js_parse_first(js_code_if());
           let { consequent } = statement;
+          let { body } = consequent;
           let next = list_next(parent, node);
           log({
             statement,
