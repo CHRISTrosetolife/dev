@@ -7,9 +7,7 @@ export function js_code_function_declare(
   return string_combine_multiple([
     "function ",
     function_name,
-    "(",
-    args_string,
-    ")",
+    string_combine_multiple(["(", args_string, ")"]),
     " {\n  ",
     body_string,
     "\n}",
