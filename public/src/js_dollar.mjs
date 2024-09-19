@@ -284,7 +284,7 @@ export function js_dollar(ast) {
           inside = remaining;
         }
         let e = js_parse_expression(
-          js_code_call_args(log.name, [js_code_braces_inside()]),
+          js_code_call_args(log.name, [js_code_braces_inside(inside)]),
         );
         object_replace(node, e);
       }
