@@ -280,6 +280,7 @@ export function js_dollar(ast) {
         if (log_prefix_start_is) {
           inside = "";
         } else {
+          remaining = string_prefix_without(remaining, log_prefix);
           inside = null;
         }
         let e = js_parse_expression(
