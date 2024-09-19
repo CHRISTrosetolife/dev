@@ -1,3 +1,4 @@
+import { js_code_parenthesis } from "./js_code_parenthesis.mjs";
 import { js_parse_first } from "./js_parse_first.mjs";
 import { list_get_end_1 } from "./list_get_end_1.mjs";
 import { js_code_braces_inside } from "./js_code_braces_inside.mjs";
@@ -254,7 +255,11 @@ export function js_dollar(ast) {
         if (list_is(parent)) {
           let next = list_next(parent, node);
           js_parse_first(
-            string_combine_multiple(["if(", false, ")", js_code_braces()]),
+            string_combine_multiple([
+              "if",
+              js_code_parenthesis(false),
+              js_code_braces(),
+            ]),
           );
         }
       }
