@@ -19,6 +19,7 @@ export async function sermon_format(name) {
     if (string_digits_is(first)) {
       return true;
     }
+    return false;
   });
   return lines;
 }
