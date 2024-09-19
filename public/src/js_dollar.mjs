@@ -280,6 +280,7 @@ export function js_dollar(ast) {
         if (log_prefix_start_is) {
           inside = "";
         } else {
+          inside = null;
         }
         let e = js_parse_expression(
           js_code_call_args(log.name, [js_code_braces_inside()]),
