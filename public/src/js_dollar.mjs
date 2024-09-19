@@ -255,6 +255,7 @@ export function js_dollar(ast) {
         let statement = js_parse_first(js_code_if());
         log({
           statement,
+          parent,
         });
         if (list_is(parent)) {
           if (0) {
