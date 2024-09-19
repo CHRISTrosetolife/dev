@@ -31,5 +31,5 @@ export async function sermon_format(name) {
     });
     return n;
   });
-  return lines;
+  return mapped;
 }
