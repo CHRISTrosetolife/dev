@@ -174,18 +174,6 @@ export function js_dollar(ast) {
         );
         object_replace(node, e);
       }
-      if (remaining === "l") {
-        let e = js_parse_expression(
-          js_code_call_args(log.name, [js_code_braces()]),
-        );
-        object_replace(node, e);
-      }
-      if (remaining === "l") {
-        let e = js_parse_expression(
-          js_code_call_args(log.name, [js_code_braces()]),
-        );
-        object_replace(node, e);
-      }
       if (remaining === "le") {
         let e = js_parse_expression(
           js_code_call_args(log_error.name, [js_code_braces()]),
@@ -282,6 +270,12 @@ export function js_dollar(ast) {
         let this_name = js_declaration_to_name(d);
         let code = js_code_dot(this_name, js_function_property_name());
         let e = js_parse_expression(code);
+        object_replace(node, e);
+      }
+      if (prefix_use(remaining, log_prefix, prefixes)) {
+        let e = js_parse_expression(
+          js_code_call_args(log.name, [js_code_braces()]),
+        );
         object_replace(node, e);
       }
       if (prefix_use(remaining, scm_prefix, prefixes)) {
