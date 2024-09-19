@@ -252,11 +252,11 @@ export function js_dollar(ast) {
         }
       }
       if (remaining === "i") {
+        let statement = js_parse_first(js_code_if());
+        log({
+          statement,
+        });
         if (list_is(parent)) {
-          let statement = js_parse_first(js_code_if());
-          log({
-            statement,
-          });
           if (0) {
             let next = list_next(parent, node);
             list_remove(parent, next);
