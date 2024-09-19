@@ -1,3 +1,4 @@
+import { js_parse_first } from "./js_parse_first.mjs";
 import { list_get_end_1 } from "./list_get_end_1.mjs";
 import { js_code_braces_inside } from "./js_code_braces_inside.mjs";
 import { js_function_property_name } from "./js_function_property_name.mjs";
@@ -253,6 +254,7 @@ export function js_dollar(ast) {
         let { stack } = v;
         if (list_is(parent)) {
           let next = list_next(parent, node);
+          js_parse_first();
         }
       }
       if (remaining === "st") {
