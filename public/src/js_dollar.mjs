@@ -1,3 +1,4 @@
+import { js_code_braces_inside } from "./js_code_braces_inside.mjs";
 import { js_function_property_name } from "./js_function_property_name.mjs";
 import { js_code_dot } from "./js_code_dot.mjs";
 import { js_declaration_to_name } from "./js_declaration_to_name.mjs";
@@ -278,7 +279,7 @@ export function js_dollar(ast) {
         prefix_use(remaining, log_prefix, prefixes)
       ) {
         let e = js_parse_expression(
-          js_code_call_args(log.name, [js_code_braces()]),
+          js_code_call_args(log.name, [js_code_braces_inside()]),
         );
         object_replace(node, e);
       }
