@@ -1,3 +1,5 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { keyboard_keys } from "./keyboard_keys.mjs";
 import { each } from "./each.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_digits_is } from "./string_digits_is.mjs";
@@ -24,7 +26,9 @@ export async function sermon_format(name) {
     return false;
   });
   let mapped = list_map(numbered, (n) => {
-    each(list, (item) => {});
+    each(keyboard_keys(), (k) => {
+      n = string_replace(n, string_combine_multiple(["[", "]"]));
+    });
     return n;
   });
   return lines;
