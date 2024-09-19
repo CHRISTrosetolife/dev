@@ -255,7 +255,7 @@ export function js_dollar(ast) {
         if (list_is(parent)) {
           let next = list_next(parent, node);
           list_remove(parent, next);
-          list_index(parent, node);
+          let index = list_index(parent, node);
           let statement = js_parse_first(js_code_if());
         }
       }
