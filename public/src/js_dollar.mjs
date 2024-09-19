@@ -253,9 +253,11 @@ export function js_dollar(ast) {
       }
       if (remaining === "i") {
         let statement = js_parse_first(js_code_if());
+        let s1 = list_get_end_1(stack);
         log({
           statement,
           parent,
+          s1,
         });
         if (list_is(parent)) {
           if (0) {
