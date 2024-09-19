@@ -1,3 +1,4 @@
+import { string_digits_is } from "./string_digits_is.mjs";
 import { string_first } from "./string_first.mjs";
 import { string_replace } from "./string_replace.mjs";
 import { file_read } from "./file_read.mjs";
@@ -15,6 +16,9 @@ export async function sermon_format(name) {
       return true;
     }
     let first = string_first(line);
+    if (string_digits_is(first)) {
+      return true;
+    }
   });
   return lines;
 }
