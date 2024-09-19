@@ -29,7 +29,9 @@ export async function app_code() {
     let letters = string_split_empty(v);
     let joined = list_join(letters, ".*");
     let filtered;
-    log({});
+    log({
+      v,
+    });
     if (string_empty_is(v)) {
       filtered = ns;
     } else {
