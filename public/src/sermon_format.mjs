@@ -27,7 +27,7 @@ export async function sermon_format(name) {
   });
   let mapped = list_map(numbered, (n) => {
     each(keyboard_keys(), (k) => {
-      n = string_replace(n, string_combine_multiple(["[", "]"]));
+      n = string_replace(n, string_combine_multiple(["[", k, "]"]), "");
     });
     return n;
   });
