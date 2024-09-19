@@ -251,7 +251,7 @@ export function js_dollar(ast) {
       }
       if (remaining === "i") {
         let { stack } = v;
-        let s1 = list_get_end(stack, 1);
+        let s1 = list_get_end_1(stack);
       }
       if (remaining === "st") {
         let e = js_parse_expression(
