@@ -1,3 +1,4 @@
+import { string_get } from "./string_get.mjs";
 import { string_replace } from "./string_replace.mjs";
 import { file_read } from "./file_read.mjs";
 import { sermon_path } from "./sermon_path.mjs";
@@ -13,6 +14,7 @@ export async function sermon_format(name) {
     if (string_empty_is(line)) {
       return true;
     }
+    let first = string_get(line, 0);
   });
   return lines;
 }
