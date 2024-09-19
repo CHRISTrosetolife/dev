@@ -1,3 +1,4 @@
+import { list_get_end_1 } from "./list_get_end_1.mjs";
 import { js_code_braces_inside } from "./js_code_braces_inside.mjs";
 import { js_function_property_name } from "./js_function_property_name.mjs";
 import { js_code_dot } from "./js_code_dot.mjs";
@@ -234,7 +235,7 @@ export function js_dollar(ast) {
       if (remaining === "r") {
         let { stack } = v;
         let e = js_parse_first_function("return");
-        let s1 = list_get_end(stack, 1);
+        let s1 = list_get_end_1(stack);
         let s2 = list_get_end(stack, 2);
         if (
           list_is(parent) &&
@@ -250,7 +251,7 @@ export function js_dollar(ast) {
       }
       if (remaining === "i") {
         let { stack } = v;
-        
+        let s1 = list_get_end(stack, 1);
       }
       if (remaining === "st") {
         let e = js_parse_expression(
