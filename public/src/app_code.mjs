@@ -25,6 +25,7 @@ export async function app_code() {
   let input = html_input_width_full_focus(root);
   let results = html_div(root);
   html_on_input_value(input, app_code_search_refresh);
+  app_code_search_refresh();
   function app_code_search_refresh(v) {
     html_clear(results);
     let letters = string_split_empty(v);
