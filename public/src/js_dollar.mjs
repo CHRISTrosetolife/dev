@@ -255,15 +255,12 @@ export function js_dollar(ast) {
         let { stack } = v;
         let s1 = list_get_end_1(stack);
         if (list_is(s1)) {
-          let next = list_next(parent, node);
+          let next = list_next(s1, node);
           let statement = js_parse_first(js_code_if());
           let { consequent } = statement;
           let { body } = consequent;
           list_add(body, next);
-          log({
-            statement,
-            parent,
-          });
+          object_replace(parent, e);
           if (0) {
             list_remove(parent, next);
             let index = list_index(parent, node);
