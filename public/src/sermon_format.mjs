@@ -32,5 +32,5 @@ export async function sermon_format(name) {
     });
     return n;
   });
-  return list_join_space(mapped);
+  text = list_join_space(mapped);
 }
