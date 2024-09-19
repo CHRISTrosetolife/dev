@@ -9,7 +9,8 @@ export function js_code_function_declare(
     function_name,
     "(",
     args_string,
-    ") {\n  ",
+    ")",
+    " {\n  ",
     body_string,
     "\n}",
   ]);
