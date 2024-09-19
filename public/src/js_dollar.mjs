@@ -254,13 +254,12 @@ export function js_dollar(ast) {
       if (remaining === "i") {
         let { stack } = v;
         let s1 = list_get_end_1(stack);
-        let statement = js_parse_first(js_code_if());
-        log({
-          statement,
-          parent,
-          s1,
-        });
-        if (list_is(parent)) {
+        if (list_is(s1)) {
+          let statement = js_parse_first(js_code_if());
+          log({
+            statement,
+            parent,
+          });
           if (0) {
             let next = list_next(parent, node);
             list_remove(parent, next);
