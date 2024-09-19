@@ -1,4 +1,6 @@
+import { file_read } from "./file_read.mjs";
 import { sermon_path } from "./sermon_path.mjs";
-export function sermon_format(name) {
+export async function sermon_format(name) {
   let sermon_path_file = sermon_path(name);
+  return await file_read(sermon_path_file);
 }
