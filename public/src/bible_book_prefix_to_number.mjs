@@ -15,7 +15,7 @@ export async function bible_book_prefix_to_number(bible_folder, book_prefix) {
   let predicate = string_starts_with_curry(book_prefix);
   let book_lower = list_find(keys_lower, predicate);
   let index = list_index(keys_lower, book_lower);
-  book_lower = list_find(keys, index);
+  let book = list_find(keys, index);
   log({
     book: book_lower,
   });
