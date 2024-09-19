@@ -70,6 +70,7 @@ export function js_dollar(ast) {
         question_prefix,
         scm_prefix,
         sermon_prefix,
+        log_prefix,
       ];
       let remaining = string_prefix_without(name, prefix);
       if (remaining === "a") {
