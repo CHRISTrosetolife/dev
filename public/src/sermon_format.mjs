@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_digits_is } from "./string_digits_is.mjs";
 import { string_first } from "./string_first.mjs";
@@ -23,6 +24,7 @@ export async function sermon_format(name) {
     return false;
   });
   let mapped = list_map(numbered, (n) => {
+    each(list, (item) => {});
     return n;
   });
   return lines;
