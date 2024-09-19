@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { html_hash_lookup } from "./html_hash_lookup.mjs";
 import { string_empty_is } from "./string_empty_is.mjs";
 import { html_button_width_full } from "./html_button_width_full.mjs";
@@ -23,7 +24,9 @@ export async function app_code() {
   let root = html_style_default_initialize();
   await html_scripts_load(root, ["axios", "acorn", "astring"]);
   let lookup = html_hash_lookup();
-  $llookup;
+  log({
+    undefined,
+  });
   let ns = await function_run_remote(function_names.name, []);
   let input = html_input_width_full_focus(root);
   let results = html_div(root);
