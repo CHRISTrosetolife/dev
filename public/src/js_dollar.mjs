@@ -273,7 +273,10 @@ export function js_dollar(ast) {
         let e = js_parse_expression(code);
         object_replace(node, e);
       }
-      if (prefix_use(remaining, log_prefix, prefixes)) {
+      if (
+        remaining === log_prefix_start ||
+        prefix_use(remaining, log_prefix, prefixes)
+      ) {
         let e = js_parse_expression(
           js_code_call_args(log.name, [js_code_braces()]),
         );
