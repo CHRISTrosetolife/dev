@@ -254,7 +254,7 @@ export function js_dollar(ast) {
         if (list_is(parent)) {
           let next = list_next(parent, node);
           js_parse_first(
-            string_combine_multiple(["if(false)", js_code_braces()]),
+            string_combine_multiple(["if(", false, ")", js_code_braces()]),
           );
         }
       }
