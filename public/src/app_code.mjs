@@ -1,4 +1,4 @@
-import { list_empty_is } from "./list_empty_is.mjs";
+import { string_empty_is } from "./string_empty_is.mjs";
 import { html_button_width_full } from "./html_button_width_full.mjs";
 import { string_get } from "./string_get.mjs";
 import { each_index } from "./each_index.mjs";
@@ -28,7 +28,7 @@ export async function app_code() {
     let letters = string_split_empty(v);
     let joined = list_join(letters, ".*");
     let filtered;
-    if (list_empty_is(letters)) {
+    if (string_empty_is(v)) {
       filtered = ns;
     } else {
       filtered = list_filter(ns, (n) => {
