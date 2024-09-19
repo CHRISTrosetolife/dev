@@ -30,10 +30,10 @@ export async function app_code() {
     let filtered;
     if (list_empty_is(letters)) {
     } else {
+      filtered = list_filter(ns, (n) => {
+        return string_regex_match(n, joined);
+      });
     }
-    filtered = list_filter(ns, (n) => {
-      return string_regex_match(n, joined);
-    });
     let taken = list_take_soft(filtered, 50);
     each(taken, (item) => {
       let d = html_button_width_full(results);
