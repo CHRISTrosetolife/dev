@@ -29,6 +29,7 @@ export async function app_code() {
     let joined = list_join(letters, ".*");
     let filtered;
     if (list_empty_is(letters)) {
+      filtered = ns;
     } else {
       filtered = list_filter(ns, (n) => {
         return string_regex_match(n, joined);
