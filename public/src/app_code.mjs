@@ -24,6 +24,7 @@ export async function app_code() {
   let root = html_style_default_initialize();
   await html_scripts_load(root, ["axios", "acorn", "astring"]);
   let lookup = html_hash_lookup();
+  $i;
   log({
     lookup,
   });
