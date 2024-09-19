@@ -11,8 +11,8 @@ export async function bible_book_prefix_to_number(bible_folder, book_prefix) {
   let inverted = await bible_books_names_lookup_inverted(bible_folder);
   let keys = object_properties(inverted);
   let keys_lower = list_map_lower(keys);
-  book_prefix = string_case_lower(book_prefix);
   let predicate = string_starts_with_curry(book_prefix);
+  book_prefix = string_case_lower(book_prefix);
   let index = list_find_index(keys_lower, predicate);
   let book = list_find(keys, index);
   log({
