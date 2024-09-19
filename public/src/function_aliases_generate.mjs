@@ -1,3 +1,4 @@
+import { bible_audio_player_book } from "./bible_audio_player_book.mjs";
 import { sermon_new } from "./sermon_new.mjs";
 import { server } from "./server.mjs";
 import { function_open_app_html } from "./function_open_app_html.mjs";
@@ -71,6 +72,7 @@ export async function function_aliases_generate() {
   alias_add(function_alias_expand, ["ae"]);
   alias_add(function_aliases_generate, ["al"]);
   alias_add(app_new, ["an"]);
+  alias_add(bible_audio_player_book, ["b"]);
   alias_add(function_copy, ["c"]);
   alias_add(command_line, ["cl"]);
   alias_add(data_update, ["d"]);
