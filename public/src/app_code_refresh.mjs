@@ -1,5 +1,5 @@
+import { list_map } from "./list_map.mjs";
 import { js_declaration_single_body } from "./js_declaration_single_body.mjs";
-import { json_to } from "./json_to.mjs";
 import { app_code_save_delete_refresh_button_back } from "./app_code_save_delete_refresh_button_back.mjs";
 import { function_parse } from "./function_parse.mjs";
 import { app_code_save_refresh } from "./app_code_save_refresh.mjs";
@@ -30,6 +30,7 @@ import { object_property_set } from "./object_property_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
+import { js_unparse } from "./js_unparse.mjs";
 export async function app_code_refresh(root) {
   html_clear_scroll_top_centered(root);
   let save = app_code_save_get();
@@ -47,9 +48,9 @@ export async function app_code_refresh(root) {
           object_property_set(save, "imports", true),
         );
       });
-      let d = js_declaration_single_body(ast);
+      let body = js_declaration_single_body(ast);
       html_div_text(root, name);
-      html_div_text(root, json_to(d));
+      html_list(root, list_map(body, js_unparse));
     }
   } else {
     let ns = await function_names();
