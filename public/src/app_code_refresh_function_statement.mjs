@@ -21,8 +21,10 @@ export function app_code_refresh_function_statement(parent, statement) {
     if (equal(type_c, "Identifier")) {
       let { name } = callee;
       html_span_text(parent, name);
+      html_span_text(parent, " (");
       let as = object_property_get(statement, "arguments");
       html_list(parent, list_map(as, js_unparse));
+      html_span_text(parent, ")");
       return;
     }
   }
