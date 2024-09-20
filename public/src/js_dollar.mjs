@@ -1,3 +1,4 @@
+import { js_dollar_else } from "./js_dollar_else.mjs";
 import { js_dollar_if_block } from "./js_dollar_if_block.mjs";
 import { js_code_if_false } from "./js_code_if_false.mjs";
 import { object_property_delete } from "./object_property_delete.mjs";
@@ -13,10 +14,7 @@ import { log_error } from "./log_error.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { js_block_statement } from "./js_block_statement.mjs";
-import { js_node_is } from "./js_node_is.mjs";
-import { list_previous } from "./list_previous.mjs";
 import { list_next } from "./list_next.mjs";
-import { list_find_last } from "./list_find_last.mjs";
 import { list_adder_async } from "./list_adder_async.mjs";
 import { js_code_arrow_block_args_async } from "./js_code_arrow_block_args_async.mjs";
 import { each_async } from "./each_async.mjs";
@@ -379,15 +377,3 @@ export function js_dollar(ast) {
     );
   }
 }
-function js_dollar_else(v, value_new) {
-    let { stack } = v;
-    let predicate = list_is;
-    let list = list_find_last(stack, predicate);
-    let item = list_next(stack, list);
-    let previous = list_previous(list, item);
-    if (js_node_is(previous) && previous.type === "IfStatement") {
-        object_property_set(previous, "alternate", value_new);
-        list_remove(list, item);
-    }
-}
-
