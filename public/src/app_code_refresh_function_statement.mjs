@@ -36,6 +36,6 @@ export function app_code_refresh_function_statement(parent, root, statement) {
   let unparsed = js_unparse(statement);
   let s = html_span_text(parent, unparsed);
   html_style_code(s);
-  html_style_background_color(app_learn_code_style_code_color_background());
+  html_style_background_color(s, app_learn_code_style_code_color_background());
   app_learn_code_style_code_color(s);
 }
