@@ -1,3 +1,5 @@
+import { js_unparse } from "./js_unparse.mjs";
+import { html_div_text } from "./html_div_text.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
@@ -18,7 +20,6 @@ import { html_div } from "./html_div.mjs";
 import { html_input_width_full_focus } from "./html_input_width_full_focus.mjs";
 import { function_names } from "./function_names.mjs";
 import { function_run_remote } from "./function_run_remote.mjs";
-import { log } from "./log.mjs";
 import { js_declaration_single } from "./js_declaration_single.mjs";
 import { html_list } from "./html_list.mjs";
 import { js_imports_existing } from "./js_imports_existing.mjs";
@@ -54,9 +55,7 @@ export async function app_code_refresh(root) {
         await app_code_refresh(root);
       });
       let d = js_declaration_single(ast);
-      log({
-        d,
-      });
+      html_div_text(root, js_unparse(d));
     }
   } else {
     let ns = await function_run_remote(function_names.name, []);
