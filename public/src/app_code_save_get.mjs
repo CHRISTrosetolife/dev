@@ -4,9 +4,9 @@ import { app_code } from "./app_code.mjs";
 import { storage_local_exists_not } from "./storage_local_exists_not.mjs";
 export function app_code_save_get() {
   let app_fn = app_code;
-  if (storage_local_exists_not(app_code, "save")) {
-    storage_local_set(app_code, "save", {});
+  if (storage_local_exists_not(app_fn, "save")) {
+    storage_local_set(app_fn, "save", {});
   }
-  let save = storage_local_get(app_code, "save");
+  let save = storage_local_get(app_fn, "save");
   return save;
 }
