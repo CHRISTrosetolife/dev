@@ -37,8 +37,9 @@ export async function app_code_refresh(root) {
   if (object_property_exists(save, "function")) {
     if (object_property_exists(save, "imports")) {
       let imports = js_imports_existing(ast);
-      html_button_width_full_text_click_back(root, () => {
+      html_button_width_full_text_click_back(root, async () => {
         object_property_delete(save, "imports");
+        await app_code_refresh(root);
       });
       html_list(root, imports);
     } else {
