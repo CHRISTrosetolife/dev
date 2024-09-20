@@ -1,6 +1,7 @@
+import { html_load_wait } from "./html_load_wait.mjs";
 import { html_attribute_set } from "./html_attribute_set.mjs";
 import { html_element } from "./html_element.mjs";
-export function html_script_acorn(parent) {
+export async function html_script_acorn(parent) {
   let c = html_element(parent, "script");
   html_attribute_set(
     c,
@@ -14,4 +15,5 @@ export function html_script_acorn(parent) {
   );
   html_attribute_set(c, "crossorigin", "anonymous");
   html_attribute_set(c, "referrerpolicy", "no-referrer");
+  await html_load_wait(c);
 }
