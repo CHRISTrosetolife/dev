@@ -1,3 +1,5 @@
+import { log } from "./log.mjs";
+import { file_js_parse } from "./file_js_parse.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
 import { html_div_text } from "./html_div_text.mjs";
 import { functions_source_get } from "./functions_source_get.mjs";
@@ -33,6 +35,8 @@ export async function app_code() {
     let name = object_property_get(lookup, "function");
     let p = function_name_to_path(name);
     let source = object_property_get(files, p);
+    let ast = await file_js_parse(file_name);
+    log({});
     html_div_text(root, source);
   } else {
     let ns = await function_run_remote(function_names.name, []);
