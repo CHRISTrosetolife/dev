@@ -36,7 +36,9 @@ import { app_code } from "./app_code.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
 export async function app_code_refresh(root) {
   html_clear_scroll_top_centered(root);
-  storage_local_exists();
+  if (false) {
+    storage_local_exists(app_code, "save");
+  }
   let save = storage_local_get(app_code, "save");
   if (object_property_exists(save, "function")) {
     if (object_property_exists(save, "imports")) {
