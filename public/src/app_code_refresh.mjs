@@ -54,6 +54,8 @@ export async function app_code_refresh(root) {
         root,
         list_map(body, (b) => {
           let { type } = b;
+          if (false) {
+          }
           return js_unparse(b);
         }),
       );
