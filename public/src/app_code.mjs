@@ -41,8 +41,8 @@ export async function app_code() {
     files,
   });
   let save = storage_local_get(app_code, "save");
-  if (object_property_exists(lookup, "function")) {
-    let name = object_property_get(lookup, "function");
+  if (object_property_exists(save, "function")) {
+    let name = object_property_get(save, "function");
     let p = function_name_to_path(name);
     let ast = await file_js_parse(p);
     html_button_width_full_text(root, "imports", () => {
