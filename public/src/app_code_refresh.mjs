@@ -50,7 +50,12 @@ export async function app_code_refresh(root) {
       });
       let body = js_declaration_single_body(ast);
       html_div_text(root, name);
-      html_list(root, list_map(body, app_code_refresh_function_statement));
+      html_list(
+        root,
+        list_map(body, (statement) =>
+          app_code_refresh_function_statement(root, statement),
+        ),
+      );
     }
   } else {
     let ns = await function_names();
