@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { js_declaration_single } from "./js_declaration_single.mjs";
 import { html_list } from "./html_list.mjs";
 import { js_imports_existing } from "./js_imports_existing.mjs";
@@ -45,6 +46,7 @@ export async function app_code() {
     let imports = js_imports_existing(ast);
     html_list(imports);
     let d = js_declaration_single(ast);
+    log({});
   } else {
     let ns = await function_run_remote(function_names.name, []);
     let input = html_input_width_full_focus(root);
