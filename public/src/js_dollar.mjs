@@ -279,13 +279,13 @@ export function js_dollar(ast) {
         }
       }
       if (remaining === "ibe") {
+        let condition = js_code_call_args(equal.name, [
+          js_name_unique(ast, "left"),
+          js_name_unique(ast, "right"),
+        ]);
         let { stack } = v;
         let s1 = list_get_end_1(stack);
         if (list_is(s1)) {
-          let condition = js_code_call_args(equal.name, [
-            js_name_unique(ast, "left"),
-            js_name_unique(ast, "right"),
-          ]);
           let statement = js_parse_first(js_code_if(condition));
           let index = list_index(s1, parent);
           list_set(s1, index, statement);
