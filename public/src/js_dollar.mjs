@@ -154,7 +154,7 @@ export function js_dollar(ast) {
       }
       if (remaining === "eli") {
         log("here");
-        let value_new = js_parse_expression(js_code_if_false());
+        let value_new = js_parse_first(js_code_if_false());
         js_dollar_else(v, value_new);
       }
       if (remaining === "eo") {
