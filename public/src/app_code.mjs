@@ -10,7 +10,6 @@ import { function_name_to_path } from "./function_name_to_path.mjs";
 import { functions_source_get } from "./functions_source_get.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
-import { html_hash_lookup } from "./html_hash_lookup.mjs";
 import { string_empty_is } from "./string_empty_is.mjs";
 import { html_button_width_full } from "./html_button_width_full.mjs";
 import { string_get } from "./string_get.mjs";
@@ -35,7 +34,6 @@ import { object_merge } from "./object_merge.mjs";
 export async function app_code() {
   let root = html_style_default_initialize();
   await html_scripts_load(root, ["axios", "acorn", "astring"]);
-  let lookup = html_hash_lookup();
   let files = await function_run_remote(functions_source_get.name, []);
   let g = global_get();
   object_merge(g, {
