@@ -1,3 +1,4 @@
+import { global_get } from "./global_get.mjs";
 import { log } from "./log.mjs";
 import { file_js_parse } from "./file_js_parse.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
@@ -25,11 +26,16 @@ import { list_filter } from "./list_filter.mjs";
 import { html_div } from "./html_div.mjs";
 import { string_split_empty } from "./string_split_empty.mjs";
 import { undefined_is } from "./undefined_is.mjs";
+import { object_merge } from "./object_merge.mjs";
 export async function app_code() {
   let root = html_style_default_initialize();
   await html_scripts_load(root, ["axios", "acorn", "astring"]);
   let lookup = html_hash_lookup();
   let files = await function_run_remote(functions_source_get.name, []);
+  let g = global_get();
+  object_merge(g, {
+    files,
+  });
   if (object_property_exists(lookup, "function")) {
     let name = object_property_get(lookup, "function");
     let p = function_name_to_path(name);
