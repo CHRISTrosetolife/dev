@@ -58,7 +58,7 @@ export async function app_code_refresh(root) {
           if (type === "ExpressionStatement") {
             let { expression } = b;
             let { type: type_e } = expression;
-            if (equal(left, right)) {
+            if (equal(type_e, "AwaitExpression")) {
             }
           }
           return js_unparse(b);
