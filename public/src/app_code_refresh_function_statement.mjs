@@ -36,12 +36,12 @@ export function app_code_refresh_function_statement(
     let { callee } = statement;
     let { type: type_c } = callee;
     if (equal(type_c, "Identifier")) {
-      let { name } = callee;
-      app_code_save_refresh_function_button(parent, root, name);
       let as = object_property_get(statement, "arguments");
       each(as, (item) => {
         app_code_refresh_function_statement(parent, root, item, true);
       });
+      let { name } = callee;
+      app_code_save_refresh_function_button(parent, root, name);
       return;
     }
   }
