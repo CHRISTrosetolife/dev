@@ -21,7 +21,7 @@ export function app_code_refresh_function_statement(parent, root, statement) {
     let { type: type_c } = callee;
     if (equal(type_c, "Identifier")) {
       let { name } = callee;
-      app_code_save_refresh_function_button(parent, root, function_name);
+      app_code_save_refresh_function_button(parent, root, name);
       html_span_text(parent, " (");
       let as = object_property_get(statement, "arguments");
       html_list(parent, list_map(as, js_unparse));
