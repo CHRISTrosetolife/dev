@@ -83,12 +83,12 @@ export async function app_code_refresh(root) {
             object_property_set(save, "function", function_name),
           );
         });
+        html_inner_set(d, function_name);
         let letters_index = 0;
         each_index(function_name, (c, i) => {
           if (c === string_get(letters, letters_index)) {
           }
         });
-        html_inner_set(d, function_name);
       });
     }
   }
