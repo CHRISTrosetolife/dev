@@ -1,4 +1,4 @@
-import { storage_local_exists } from "./storage_local_exists.mjs";
+import { storage_local_exists_not } from "./storage_local_exists_not.mjs";
 import { js_unparse } from "./js_unparse.mjs";
 import { html_div_text } from "./html_div_text.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
@@ -36,7 +36,7 @@ import { app_code } from "./app_code.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
 export async function app_code_refresh(root) {
   html_clear_scroll_top_centered(root);
-  if (storage_local_exists(app_code, "save")) {
+  if (storage_local_exists_not(app_code, "save")) {
   }
   let save = storage_local_get(app_code, "save");
   if (object_property_exists(save, "function")) {
