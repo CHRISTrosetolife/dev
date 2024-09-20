@@ -1,1 +1,1 @@
-export function hub(){}
+export function hub(){retry_while_error()}
