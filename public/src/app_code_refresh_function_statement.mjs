@@ -8,7 +8,12 @@ import { app_code_save_refresh_function_button } from "./app_code_save_refresh_f
 import { object_property_get } from "./object_property_get.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { equal } from "./equal.mjs";
-export function app_code_refresh_function_statement(parent, root, statement) {
+export function app_code_refresh_function_statement(
+  parent,
+  root,
+  statement,
+  border,
+) {
   let d = html_div(parent);
   html_style(d, html_style_default_border_value("lightblue"));
   html_style(d, html_style_default_border_margin({}));
@@ -19,7 +24,7 @@ export function app_code_refresh_function_statement(parent, root, statement) {
     if (equal(type_e, "AwaitExpression")) {
       let { argument } = expression;
       html_span_text(d, "⌛ ");
-      app_code_refresh_function_statement(d, root, argument);
+      app_code_refresh_function_statement(d, root, argument, true);
       return;
     }
   } else if (equal(type, "CallExpression")) {
@@ -30,7 +35,7 @@ export function app_code_refresh_function_statement(parent, root, statement) {
       app_code_save_refresh_function_button(d, root, name);
       let as = object_property_get(statement, "arguments");
       each(as, (item) => {
-        app_code_refresh_function_statement(d, root, item);
+        app_code_refresh_function_statement(d, root, item, true);
       });
       return;
     }
