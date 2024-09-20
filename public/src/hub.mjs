@@ -8,8 +8,7 @@ export async function hub() {
   await watch();
   await server();
   unawait(async () => {
-    await retry_while_error();
-    await http_server();
+    await retry_while_error(http_server);
   });
   await terminal();
 }
