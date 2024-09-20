@@ -54,7 +54,9 @@ export async function app_code_refresh(root) {
       html_list(
         root,
         list_map(body, (b) => {
-          log({});
+          log({
+            b,
+          });
           return js_unparse(b);
         }),
       );
