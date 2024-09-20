@@ -21,9 +21,9 @@ export async function server() {
           port,
         ]),
       );
-    });
-    resolve({
-      port,
+      resolve({
+        port,
+      });
     });
   });
   function server_configure(app) {

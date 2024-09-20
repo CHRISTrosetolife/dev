@@ -5,7 +5,7 @@ import { http_server } from "./http_server.mjs";
 import { watch } from "./watch.mjs";
 export async function hub() {
   await watch();
-  server();
+  await server();
   unawait(http_server);
   await terminal();
 }
