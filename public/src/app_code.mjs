@@ -40,7 +40,7 @@ export async function app_code() {
   object_merge(g, {
     files,
   });
-  storage_local_get();
+  let save = storage_local_get(app_code, "save");
   if (object_property_exists(lookup, "function")) {
     let name = object_property_get(lookup, "function");
     let p = function_name_to_path(name);
