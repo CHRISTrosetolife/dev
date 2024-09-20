@@ -8,7 +8,6 @@ import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered
 import { html_inner_set } from "./html_inner_set.mjs";
 import { string_get } from "./string_get.mjs";
 import { each_index } from "./each_index.mjs";
-import { html_button_width_full } from "./html_button_width_full.mjs";
 import { each } from "./each.mjs";
 import { list_take_soft } from "./list_take_soft.mjs";
 import { string_regex_match } from "./string_regex_match.mjs";
@@ -35,6 +34,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { app_code } from "./app_code.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
+import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export async function app_code_refresh(root) {
   html_clear_scroll_top_centered(root);
   if (storage_local_exists_not(app_code, "save")) {
@@ -86,7 +86,7 @@ export async function app_code_refresh(root) {
       let taken = list_take_soft(filtered, 50);
       list_sort(taken, string_size);
       each(taken, (item) => {
-        let d = html_button_width_full(results);
+        let d = html_button_width_full_text_click(results, "", () => {});
         let letters_index = 0;
         each_index(item, (c, i) => {
           if (c === string_get(letters, letters_index)) {
