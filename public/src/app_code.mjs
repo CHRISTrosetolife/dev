@@ -26,36 +26,36 @@ export async function app_code() {
   let lookup = html_hash_lookup();
   if (object_property_exists(lookup, "function")) {
   } else {
-  }
-  let ns = await function_run_remote(function_names.name, []);
-  let input = html_input_width_full_focus(root);
-  let results = html_div(root);
-  html_on_input_value(input, app_code_search_refresh);
-  app_code_search_refresh();
-  function app_code_search_refresh(v) {
-    html_clear(results);
-    if (undefined_is(v)) {
-      v = "";
-    }
-    let letters = string_split_empty(v);
-    let joined = list_join(letters, ".*");
-    let filtered;
-    if (string_empty_is(v)) {
-      filtered = ns;
-    } else {
-      filtered = list_filter(ns, (n) => {
-        return string_regex_match(n, joined);
+    let ns = await function_run_remote(function_names.name, []);
+    let input = html_input_width_full_focus(root);
+    let results = html_div(root);
+    html_on_input_value(input, app_code_search_refresh);
+    app_code_search_refresh();
+    function app_code_search_refresh(v) {
+      html_clear(results);
+      if (undefined_is(v)) {
+        v = "";
+      }
+      let letters = string_split_empty(v);
+      let joined = list_join(letters, ".*");
+      let filtered;
+      if (string_empty_is(v)) {
+        filtered = ns;
+      } else {
+        filtered = list_filter(ns, (n) => {
+          return string_regex_match(n, joined);
+        });
+      }
+      let taken = list_take_soft(filtered, 50);
+      each(taken, (item) => {
+        let d = html_button_width_full(results);
+        let letters_index = 0;
+        each_index(item, (c, i) => {
+          if (c === string_get(letters, letters_index)) {
+          }
+        });
+        html_inner_set(d, item);
       });
     }
-    let taken = list_take_soft(filtered, 50);
-    each(taken, (item) => {
-      let d = html_button_width_full(results);
-      let letters_index = 0;
-      each_index(item, (c, i) => {
-        if (c === string_get(letters, letters_index)) {
-        }
-      });
-      html_inner_set(d, item);
-    });
   }
 }
