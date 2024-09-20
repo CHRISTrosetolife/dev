@@ -39,7 +39,6 @@ export async function app_code() {
   if (object_property_exists(lookup, "function")) {
     let name = object_property_get(lookup, "function");
     let p = function_name_to_path(name);
-    let source = object_property_get(files, p);
     let ast = await file_js_parse(p);
     log({
       ast,
