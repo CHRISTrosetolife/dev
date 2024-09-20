@@ -50,6 +50,7 @@ export async function app_code_refresh(root) {
       let ast = await file_js_parse(p);
       html_button_width_full_text(root, "imports", async () => {
         object_property_set(save, "imports", true);
+        storage_local_set(app_code, "save", save);
         await app_code_refresh(root);
       });
       let d = js_declaration_single(ast);
