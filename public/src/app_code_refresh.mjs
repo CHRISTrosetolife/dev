@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { equal } from "./equal.mjs";
 import { list_map } from "./list_map.mjs";
 import { js_declaration_single_body } from "./js_declaration_single_body.mjs";
@@ -60,7 +61,7 @@ export async function app_code_refresh(root) {
             let { type: type_e } = expression;
             if (equal(type_e, "AwaitExpression")) {
               let { argument } = expression;
-              return js_unparse(argument);
+              return string_combine_multiple([js_unparse(argument)]);
             }
           }
           return js_unparse(b);
