@@ -42,18 +42,18 @@ export async function app_code_refresh(root) {
       });
       html_list(root, imports);
     } else {
+      let name = object_property_get(save, "function");
+      let p = function_name_to_path(name);
+      let ast = await file_js_parse(p);
+      html_button_width_full_text(root, "imports", async () => {
+        object_property_set(save, "imports", true);
+        await app_code_refresh(root);
+      });
+      let d = js_declaration_single(ast);
+      log({
+        d,
+      });
     }
-    let name = object_property_get(save, "function");
-    let p = function_name_to_path(name);
-    let ast = await file_js_parse(p);
-    html_button_width_full_text(root, "imports", async () => {
-      object_property_set(save, "imports", true);
-      await app_code_refresh(root);
-    });
-    let d = js_declaration_single(ast);
-    log({
-      d,
-    });
   } else {
     let ns = await function_run_remote(function_names.name, []);
     let input = html_input_width_full_focus(root);
