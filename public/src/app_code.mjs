@@ -1,5 +1,4 @@
 import { app_save_change } from "./app_save_change.mjs";
-import { log } from "./log.mjs";
 import { functions_source_get } from "./functions_source_get.mjs";
 import { function_run_remote } from "./function_run_remote.mjs";
 import { object_property_initialize_get_async } from "./object_property_initialize_get_async.mjs";
@@ -11,12 +10,11 @@ import { object_merge } from "./object_merge.mjs";
 export async function app_code() {
   let root = html_style_default_initialize();
   await html_scripts_load(root, ["axios", "acorn", "astring"]);
-  app_save_change(app_code, async (save) => {
+  await app_save_change(app_code, async (save) => {
     let files = await object_property_initialize_get_async(
       save,
       "files",
       async () => {
-        log({});
         return await function_run_remote(functions_source_get.name, []);
       },
     );
