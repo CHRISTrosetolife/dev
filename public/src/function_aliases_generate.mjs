@@ -1,3 +1,4 @@
+import { hub } from "./hub.mjs";
 import { bible_audio_player_book } from "./bible_audio_player_book.mjs";
 import { sermon_new } from "./sermon_new.mjs";
 import { server } from "./server.mjs";
@@ -92,7 +93,8 @@ export async function function_aliases_generate() {
   alias_add(google_search, ["g"]);
   alias_add(google_search_lucky, ["gl"]);
   alias_add(git_index_lock_delete, ["gx"]);
-  alias_add(http_server, ["h"]);
+  alias_add(hub, ["h"]);
+  alias_add(http_server, ["hs"]);
   alias_add(npm_install, ["i"]);
   alias_add(npm_install_global, ["ig"]);
   alias_add(on_keypress_log, ["k"]);
