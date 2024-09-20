@@ -1,3 +1,4 @@
+import { string_size } from "./string_size.mjs";
 import { html_scripts_load } from "./html_scripts_load.mjs";
 import { summation } from "./summation.mjs";
 import { html_style_font_size } from "./html_style_font_size.mjs";
@@ -41,7 +42,6 @@ import { add } from "./add.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { range } from "./range.mjs";
-import { string_length } from "./string_length.mjs";
 import { list_single } from "./list_single.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 export async function app_learn_code() {
@@ -92,7 +92,7 @@ export async function app_learn_code() {
       let product = multiply(percent, max_rgb);
       let rounded = round(product);
       let rgb_part = number_string_to(rounded, base);
-      if (equal(string_length(rgb_part), 1)) {
+      if (equal(string_size(rgb_part), 1)) {
         rgb_part = string_combine("0", rgb_part);
       }
       let parts = 3;

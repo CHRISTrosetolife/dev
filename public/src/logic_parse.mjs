@@ -1,3 +1,4 @@
+import { string_size } from "./string_size.mjs";
 import { logic_parse_identifier } from "./logic_parse_identifier.mjs";
 import { greater_than_equal } from "./greater_than_equal.mjs";
 import { not } from "./not.mjs";
@@ -10,19 +11,18 @@ import { list_add } from "./list_add.mjs";
 import { number_less_than } from "./number_less_than.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { string_get } from "./string_get.mjs";
-import { string_length } from "./string_length.mjs";
 import { string_letters_is } from "./string_letters_is.mjs";
 export function logic_parse(input) {
   let index = 0;
   let r = logic_parse_recursive(input, index);
   let { result, next } = r;
-  assert(equal, [next, string_length(input)]);
+  assert(equal, [next, string_size(input)]);
   return result;
   function logic_parse_recursive(input, index) {
     let open = false;
     let result;
     let identifier = "";
-    while (number_less_than(index, string_length(input))) {
+    while (number_less_than(index, string_size(input))) {
       let c = string_get(input, index);
       if (string_letters_is(c)) {
         identifier = string_combine(identifier, c);
@@ -58,7 +58,7 @@ export function logic_parse(input) {
             next: add_1(index),
           };
         }
-        if (equal_0(string_length(identifier))) {
+        if (equal_0(string_size(identifier))) {
           return {
             result: {
               type: "empty",
@@ -73,7 +73,7 @@ export function logic_parse(input) {
       }
     }
     assert(not, [open]);
-    assert(greater_than_equal, [string_length(identifier), 1]);
+    assert(greater_than_equal, [string_size(identifier), 1]);
     return {
       result: logic_parse_identifier(identifier),
       next: index,

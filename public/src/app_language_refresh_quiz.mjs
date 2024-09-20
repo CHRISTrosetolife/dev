@@ -1,3 +1,4 @@
+import { string_size } from "./string_size.mjs";
 import { list_without } from "./list_without.mjs";
 import { json_to } from "./json_to.mjs";
 import { list_without_by } from "./list_without_by.mjs";
@@ -30,7 +31,6 @@ import { html_style_hidden } from "./html_style_hidden.mjs";
 import { string_take } from "./string_take.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 import { number_min } from "./number_min.mjs";
-import { string_length } from "./string_length.mjs";
 import { multiply } from "./multiply.mjs";
 import { greater_than_equal } from "./greater_than_equal.mjs";
 import { add_1 } from "./add_1.mjs";
@@ -190,12 +190,12 @@ export async function app_language_refresh_quiz(context) {
           update_partials();
           let take_count = number_min(
             multiply(index, chunk_size),
-            string_length(answer),
+            string_size(answer),
           );
           html_inner_set(answer_element_left, string_take(answer, take_count));
           let last_is = greater_than_equal(
             multiply(index, chunk_size),
-            string_length(answer),
+            string_size(answer),
           );
           if (last_is) {
             html_inner_set(span_success, "✅ ");

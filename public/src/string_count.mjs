@@ -1,6 +1,6 @@
+import { string_size } from "./string_size.mjs";
 import { string_count_lookup } from "./string_count_lookup.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { string_length } from "./string_length.mjs";
 import { list_sort } from "./list_sort.mjs";
 import { each_object } from "./each_object.mjs";
 import { list_adder } from "./list_adder.mjs";
@@ -14,7 +14,7 @@ export function string_count(input_list) {
       }),
     ),
   );
-  list_sort(list, (l) => string_length(object_property_get(l, "word")));
+  list_sort(list, (l) => string_size(object_property_get(l, "word")));
   list_sort(list, (l) => -object_property_get(l, "count"));
   return list;
 }

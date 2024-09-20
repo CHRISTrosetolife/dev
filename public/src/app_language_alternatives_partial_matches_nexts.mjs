@@ -1,3 +1,4 @@
+import { string_size } from "./string_size.mjs";
 import { list_map_lower } from "./list_map_lower.mjs";
 import { app_language_correct_get } from "./app_language_correct_get.mjs";
 import { app_language_answer_partial } from "./app_language_answer_partial.mjs";
@@ -10,7 +11,6 @@ import { number_min } from "./number_min.mjs";
 import { add } from "./add.mjs";
 import { string_substring } from "./string_substring.mjs";
 import { list_map } from "./list_map.mjs";
-import { string_length } from "./string_length.mjs";
 import { greater_than } from "./greater_than.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
 import { and } from "./and.mjs";
@@ -26,7 +26,7 @@ export function app_language_alternatives_partial_matches_nexts(
   let matches = list_filter(alternatives, (a) =>
     and(
       string_starts_with(a, answer_partial),
-      greater_than(string_length(a), index),
+      greater_than(string_size(a), index),
     ),
   );
   matches = list_map_lower(matches);
@@ -35,7 +35,7 @@ export function app_language_alternatives_partial_matches_nexts(
     string_substring(
       a,
       ci,
-      add(ci, number_min(chunk_size, string_length(a) - ci)),
+      add(ci, number_min(chunk_size, string_size(a) - ci)),
     ),
   );
   let correct;

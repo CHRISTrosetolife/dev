@@ -1,3 +1,4 @@
+import { string_size } from "./string_size.mjs";
 import { list_size } from "./list_size.mjs";
 import { number_power_2 } from "./number_power_2.mjs";
 import { js_unparse_indent_none } from "./js_unparse_indent_none.mjs";
@@ -18,7 +19,6 @@ import { list_includes } from "./list_includes.mjs";
 import { range } from "./range.mjs";
 import { list_get } from "./list_get.mjs";
 import { string_combine } from "./string_combine.mjs";
-import { string_length } from "./string_length.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -39,7 +39,7 @@ export function app_learn_code_source_variations(source) {
     for (let i of range(count)) {
       let { filtered, ast } = ast_filtered(r);
       let base2 = number_string_to(i, 2);
-      while (less_than(string_length(base2), filtered_length)) {
+      while (less_than(string_size(base2), filtered_length)) {
         base2 = string_combine("0", base2);
       }
       let b_split = string_split_empty(base2);

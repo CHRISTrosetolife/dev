@@ -1,3 +1,4 @@
+import { string_size } from "./string_size.mjs";
 import { list_size } from "./list_size.mjs";
 import { app_learn_code_code_background_set } from "./app_learn_code_code_background_set.mjs";
 import { app_learn_code_style_code_error } from "./app_learn_code_style_code_error.mjs";
@@ -34,7 +35,6 @@ import { list_add } from "./list_add.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { add } from "./add.mjs";
-import { string_length } from "./string_length.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_style_centered } from "./html_style_centered.mjs";
@@ -98,7 +98,7 @@ export function app_learn_code_unshuffle(source_get) {
         list_add(sorted, a);
       }
       list_sort_string(sorted, identity);
-      list_sort(sorted, string_length);
+      list_sort(sorted, string_size);
       let parts = array_new();
       let current_index = 0;
       let choices = array_new();
@@ -159,7 +159,7 @@ export function app_learn_code_unshuffle(source_get) {
             first_source,
             choices,
           );
-          let take_count = add(source_index, string_length(current.toString()));
+          let take_count = add(source_index, string_size(current.toString()));
           let take = string_take(first_source, take_count);
           html_inner_set(code, take);
           if (equal(current_index, list_size(answer))) {
