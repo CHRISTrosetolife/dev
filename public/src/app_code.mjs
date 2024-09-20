@@ -1,3 +1,4 @@
+import { js_imports_existing } from "./js_imports_existing.mjs";
 import { global_get } from "./global_get.mjs";
 import { log } from "./log.mjs";
 import { file_js_parse } from "./file_js_parse.mjs";
@@ -40,6 +41,7 @@ export async function app_code() {
     let name = object_property_get(lookup, "function");
     let p = function_name_to_path(name);
     let ast = await file_js_parse(p);
+    js_imports_existing(ast);
     log({
       ast,
     });
