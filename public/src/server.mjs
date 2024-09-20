@@ -22,6 +22,9 @@ export function server() {
         ]),
       );
     });
+    resolve({
+      port,
+    });
   });
   function server_configure(app) {
     let url;
