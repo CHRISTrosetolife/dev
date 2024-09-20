@@ -7,5 +7,5 @@ export async function hub() {
   await watch();
   server();
   await repeat(http_server);
-  terminal;
+  await terminal();
 }
