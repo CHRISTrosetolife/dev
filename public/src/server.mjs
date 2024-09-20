@@ -6,11 +6,11 @@ import { function_run_terminal } from "./function_run_terminal.mjs";
 import { log } from "./log.mjs";
 import { json_to } from "./json_to.mjs";
 import { server_port } from "./server_port.mjs";
-export function server() {
+export async function server() {
   let app = express_app();
   server_configure(app);
   let port = server_port();
-  return new Promise((resolve) => {
+  return await new Promise((resolve) => {
     app.listen(port, () => {
       console.log(
         string_combine_multiple([
