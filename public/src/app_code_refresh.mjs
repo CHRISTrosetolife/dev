@@ -35,6 +35,9 @@ export async function app_code_refresh(root) {
   if (object_property_exists(save, "function")) {
     if (object_property_exists(save, "imports")) {
       let imports = js_imports_existing(ast);
+      html_button_width_full_text_click_back(root, () => {
+        object_property_delete(save, "imports");
+      });
       html_list(root, imports);
     }
     let name = object_property_get(save, "function");
@@ -43,9 +46,6 @@ export async function app_code_refresh(root) {
     html_button_width_full_text(root, "imports", async () => {
       object_property_set(save, "imports", true);
       await app_code_refresh(root);
-      html_button_width_full_text_click_back(root, () => {
-        object_property_delete(save, "imports");
-      });
     });
     let d = js_declaration_single(ast);
     log({
