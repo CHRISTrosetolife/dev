@@ -2,7 +2,6 @@ import { log } from "./log.mjs";
 import { functions_source_get } from "./functions_source_get.mjs";
 import { function_run_remote } from "./function_run_remote.mjs";
 import { object_property_initialize_get_async } from "./object_property_initialize_get_async.mjs";
-import { app_code_save_get } from "./app_code_save_get.mjs";
 import { app_code_refresh } from "./app_code_refresh.mjs";
 import { global_get } from "./global_get.mjs";
 import { html_scripts_load } from "./html_scripts_load.mjs";
@@ -11,7 +10,8 @@ import { object_merge } from "./object_merge.mjs";
 export async function app_code() {
   let root = html_style_default_initialize();
   await html_scripts_load(root, ["axios", "acorn", "astring"]);
-  let save = app_code_save_get();
+  let app_fn = app_code;
+  let save = app_save_hange();
   let files = await object_property_initialize_get_async(
     save,
     "files",
