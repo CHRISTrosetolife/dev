@@ -1,8 +1,4 @@
-import { html_style_border_width } from "./html_style_border_width.mjs";
-import { html_style_monospace } from "./html_style_monospace.mjs";
-import { html_style_background_color } from "./html_style_background_color.mjs";
-import { app_learn_code_style_code_color_background } from "./app_learn_code_style_code_color_background.mjs";
-import { app_learn_code_style_code_color } from "./app_learn_code_style_code_color.mjs";
+import { app_code_source } from "./app_code_source.mjs";
 import { app_code_save_refresh_function_button } from "./app_code_save_refresh_function_button.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_list } from "./html_list.mjs";
@@ -32,13 +28,5 @@ export function app_code_refresh_function_statement(parent, root, statement) {
       return;
     }
   }
-  let unparsed = js_unparse(statement);
-  let s = html_span_text(parent, unparsed);
-  html_style_monospace(s);
-  html_style_background_color(
-    parent,
-    app_learn_code_style_code_color_background(),
-  );
-  html_style_border_width(parent, 0);
-  app_learn_code_style_code_color(s);
+  app_code_source(statement, parent);
 }
