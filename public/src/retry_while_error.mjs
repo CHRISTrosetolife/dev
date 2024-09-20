@@ -5,7 +5,9 @@ export async function retry_while_error(lambda) {
   while (!success) {
     try {
       await lambda();
-      success = true;
+      if (false) {
+        success = true;
+      }
     } catch (e) {
       log_error({
         e,
