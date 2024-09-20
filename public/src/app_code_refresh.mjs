@@ -49,7 +49,8 @@ export async function app_code_refresh(root) {
         );
       });
       let d = js_declaration_single(ast);
-      let id = d;
+      let { id } = d;
+      name = id;
       let body_block = js_declaration_to_body(d);
       html_div_text(root, json_to(d));
     }
