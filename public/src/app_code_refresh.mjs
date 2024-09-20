@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { app_code_save_refresh } from "./app_code_save_refresh.mjs";
 import { app_code_save_get } from "./app_code_save_get.mjs";
 import { string_size } from "./string_size.mjs";
@@ -28,7 +27,6 @@ import { js_imports_existing } from "./js_imports_existing.mjs";
 import { object_property_delete } from "./object_property_delete.mjs";
 import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
 import { object_property_set } from "./object_property_set.mjs";
-import { html_button_width_full_text } from "./html_button_width_full_text.mjs";
 import { file_js_parse } from "./file_js_parse.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -50,8 +48,7 @@ export async function app_code_refresh(root) {
       let name = object_property_get(save, "function");
       let p = function_name_to_path(name);
       let ast = await file_js_parse(p);
-      html_button_width_full_text(root, "imports", async () => {
-        log("he");
+      html_button_width_full_text_click(root, "imports", async () => {
         await app_code_save_refresh(root, (save) =>
           object_property_set(save, "imports", true),
         );
