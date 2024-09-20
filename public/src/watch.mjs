@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { log_error } from "./log_error.mjs";
 import { function_auto_after } from "./function_auto_after.mjs";
 import { folder_current_prefix_combine } from "./folder_current_prefix_combine.mjs";
@@ -19,7 +20,7 @@ export async function watch() {
   let cache = {};
   let base = Promise.resolve();
   start();
-  log(watch.name);
+  log(string_combine_multiple([watch.name]));
   function start() {
     let result = chokidar
       .watch(folder_path_src())
