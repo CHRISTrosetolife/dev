@@ -80,18 +80,18 @@ export async function app_code_refresh(root) {
       }
       let taken = list_take_soft(filtered, 50);
       list_sort(taken, string_size);
-      each(taken, (item) => {
+      each(taken, (function_name) => {
         let d = html_button_width_full_text_click(results, "", async () => {
           await app_code_save_refresh(root, (save) =>
-            object_property_set(save, "imports", true),
+            object_property_set(save, "function", function_name),
           );
         });
         let letters_index = 0;
-        each_index(item, (c, i) => {
+        each_index(function_name, (c, i) => {
           if (c === string_get(letters, letters_index)) {
           }
         });
-        html_inner_set(d, item);
+        html_inner_set(d, function_name);
       });
     }
   }
