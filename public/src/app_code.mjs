@@ -1,3 +1,4 @@
+import { function_read } from "./function_read.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { html_hash_lookup } from "./html_hash_lookup.mjs";
 import { string_empty_is } from "./string_empty_is.mjs";
@@ -25,6 +26,7 @@ export async function app_code() {
   await html_scripts_load(root, ["axios", "acorn", "astring"]);
   let lookup = html_hash_lookup();
   if (object_property_exists(lookup, "function")) {
+    await function_read();
   } else {
     let ns = await function_run_remote(function_names.name, []);
     let input = html_input_width_full_focus(root);
