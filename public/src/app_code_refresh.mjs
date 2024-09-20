@@ -1,3 +1,4 @@
+import { list_sort } from "./list_sort.mjs";
 import { storage_local_exists_not } from "./storage_local_exists_not.mjs";
 import { js_unparse } from "./js_unparse.mjs";
 import { html_div_text } from "./html_div_text.mjs";
@@ -82,6 +83,7 @@ export async function app_code_refresh(root) {
         });
       }
       let taken = list_take_soft(filtered, 50);
+      list_sort(taken, string_size);
       each(taken, (item) => {
         let d = html_button_width_full(results);
         let letters_index = 0;
