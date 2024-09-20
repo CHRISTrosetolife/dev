@@ -1,3 +1,4 @@
+import { storage_local_set } from "./storage_local_set.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 import { string_get } from "./string_get.mjs";
@@ -39,6 +40,7 @@ export async function app_code_refresh(root) {
       let imports = js_imports_existing(ast);
       html_button_width_full_text_click_back(root, async () => {
         object_property_delete(save, "imports");
+        storage_local_set(app_code, "save", save);
         await app_code_refresh(root);
       });
       html_list(root, imports);
