@@ -11,7 +11,7 @@ import { js_unparse } from "./js_unparse.mjs";
 import { equal } from "./equal.mjs";
 import { list_map } from "./list_map.mjs";
 export function app_code_refresh_function_statement(parent, root, statement) {
-  let d = html_div(root);
+  let d = html_div(parent);
   html_style(d, html_style_default_border_value("lightblue"));
   html_style(d, html_style_default_border_margin({}));
   let { type } = statement;
@@ -20,8 +20,8 @@ export function app_code_refresh_function_statement(parent, root, statement) {
     let { type: type_e } = expression;
     if (equal(type_e, "AwaitExpression")) {
       let { argument } = expression;
-      html_span_text(parent, "⌛ ");
-      app_code_refresh_function_statement(parent, root, argument);
+      html_span_text(d, "⌛ ");
+      app_code_refresh_function_statement(d, root, argument);
       return;
     }
   } else if (equal(type, "CallExpression")) {
@@ -29,11 +29,11 @@ export function app_code_refresh_function_statement(parent, root, statement) {
     let { type: type_c } = callee;
     if (equal(type_c, "Identifier")) {
       let { name } = callee;
-      app_code_save_refresh_function_button(parent, root, name);
+      app_code_save_refresh_function_button(d, root, name);
       let as = object_property_get(statement, "arguments");
-      html_list(parent, list_map(as, js_unparse));
+      html_list(d, list_map(as, js_unparse));
       return;
     }
   }
-  app_code_source(parent, statement);
+  app_code_source(d, statement);
 }
