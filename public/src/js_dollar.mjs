@@ -162,14 +162,14 @@ export function js_dollar(ast) {
           list_remove(list, item);
         }
       }
-      if (remaining === "el") {
+      if (remaining === "eli") {
         let { stack } = v;
         let predicate = list_is;
         let list = list_find_last(stack, predicate);
         let item = list_next(stack, list);
         let previous = list_previous(list, item);
         if (js_node_is(previous) && previous.type === "IfStatement") {
-          let value_new = js_block_statement([]);
+          let value_new = js_code_if_false();
           object_property_set(previous, "alternate", value_new);
           list_remove(list, item);
         }
