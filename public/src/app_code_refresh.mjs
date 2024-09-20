@@ -41,6 +41,7 @@ export async function app_code_refresh(root) {
         object_property_delete(save, "imports");
       });
       html_list(root, imports);
+    } else {
     }
     let name = object_property_get(save, "function");
     let p = function_name_to_path(name);
