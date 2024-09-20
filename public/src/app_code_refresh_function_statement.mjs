@@ -16,8 +16,8 @@ export function app_code_refresh_function_statement(parent, statement) {
     let { callee } = statement;
     let { type: type_c } = callee;
     if (equal(type_c, "Identifier")) {
-      let name = callee;
-      html_span_text(parent, js_unparse(statement));
+      let { name } = callee;
+      html_span_text(parent, name);
       return;
     }
   }
