@@ -32,7 +32,8 @@ export async function app_code() {
   if (object_property_exists(lookup, "function")) {
     let name = object_property_get(lookup, "function");
     let p = function_name_to_path(name);
-    html_div_text(root, object_property_get(files, p));
+    let source = object_property_get(files, p);
+    html_div_text(root, source);
   } else {
     let ns = await function_run_remote(function_names.name, []);
     let input = html_input_width_full_focus(root);
