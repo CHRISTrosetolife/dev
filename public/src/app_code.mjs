@@ -27,10 +27,10 @@ export async function app_code() {
   let root = html_style_default_initialize();
   await html_scripts_load(root, ["axios", "acorn", "astring"]);
   let lookup = html_hash_lookup();
-  let ns = await function_run_remote(functions_source_get.name, []);
+  let files = await function_run_remote(functions_source_get.name, []);
   if (object_property_exists(lookup, "function")) {
     let name = object_property_get(lookup, "function");
-    html_div_text(root, object_property_get(ns, name));
+    html_div_text(root, object_property_get(files, name));
   } else {
     let ns = await function_run_remote(function_names.name, []);
     let input = html_input_width_full_focus(root);
