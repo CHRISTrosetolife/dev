@@ -30,6 +30,7 @@ import { object_property_set } from "./object_property_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
+import { js_unparse } from "./js_unparse.mjs";
 export async function app_code_refresh(root) {
   html_clear_scroll_top_centered(root);
   let save = app_code_save_get();
@@ -51,7 +52,9 @@ export async function app_code_refresh(root) {
       html_div_text(root, name);
       html_list(
         root,
-        list_map(body, () => {}),
+        list_map(body, (b) => {
+          return js_unparse(b);
+        }),
       );
     }
   } else {
