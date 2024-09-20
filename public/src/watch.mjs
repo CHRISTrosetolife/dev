@@ -34,10 +34,6 @@ export async function watch() {
       let c = object_property_get(cache, path);
       let { contents, processing } = c;
       if (processing) {
-        log({
-          path,
-          processing,
-        });
         return;
       }
       object_property_set(c, "processing", true);
@@ -62,12 +58,6 @@ export async function watch() {
       }
       if (processed) {
         object_property_set(c, "contents", after);
-        if (0) {
-          log({
-            path,
-            p: c.processing,
-          });
-        }
         await git_ac_message(list_join_space(list_concat([fn.name], args)));
         await git_push();
       }
