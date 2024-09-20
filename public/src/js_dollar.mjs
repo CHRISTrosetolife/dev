@@ -1,3 +1,4 @@
+import { js_code_if } from "./js_code_if.mjs";
 import { js_code_if_false } from "./js_code_if_false.mjs";
 import { object_property_delete } from "./object_property_delete.mjs";
 import { list_set } from "./list_set.mjs";
@@ -59,6 +60,7 @@ import { list_adder_unique } from "./list_adder_unique.mjs";
 import { each_range_reverse } from "./each_range_reverse.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
+import { equal } from "./equal.mjs";
 export function js_dollar(ast) {
   js_visit_identifiers(ast, (v) => {
     let { node } = v;
@@ -280,7 +282,9 @@ export function js_dollar(ast) {
         let { stack } = v;
         let s1 = list_get_end_1(stack);
         if (list_is(s1)) {
-          let statement = js_parse_first(js_code_if_false());
+          let statement = js_parse_first(
+            js_code_if(js_code_call_args(equal.name, [])),
+          );
           let index = list_index(s1, parent);
           list_set(s1, index, statement);
         }
