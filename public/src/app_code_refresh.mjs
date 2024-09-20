@@ -36,8 +36,9 @@ export async function app_code_refresh(root) {
     let name = object_property_get(save, "function");
     let p = function_name_to_path(name);
     let ast = await file_js_parse(p);
-    html_button_width_full_text(root, "imports", () => {
+    html_button_width_full_text(root, "imports", async () => {
       object_property_set(save, "imports", true);
+      await app_code_refresh(root);
       html_button_width_full_text_click_back(root, () => {
         object_property_delete(save, "imports");
       });
