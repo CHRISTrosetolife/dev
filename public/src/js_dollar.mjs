@@ -1,6 +1,6 @@
+import { js_code_if_false } from "./js_code_if_false.mjs";
 import { object_property_delete } from "./object_property_delete.mjs";
 import { list_set } from "./list_set.mjs";
-import { js_code_if } from "./js_code_if.mjs";
 import { js_parse_first } from "./js_parse_first.mjs";
 import { list_get_end_1 } from "./list_get_end_1.mjs";
 import { js_code_braces_inside } from "./js_code_braces_inside.mjs";
@@ -258,7 +258,7 @@ export function js_dollar(ast) {
         let s1 = list_get_end_1(stack);
         if (list_is(s1)) {
           let next = list_next(s1, parent);
-          let statement = js_parse_first(js_code_if());
+          let statement = js_parse_first(js_code_if_false());
           let { consequent } = statement;
           let { body } = consequent;
           list_add(body, next);
@@ -271,7 +271,7 @@ export function js_dollar(ast) {
         let { stack } = v;
         let s1 = list_get_end_1(stack);
         if (list_is(s1)) {
-          let statement = js_parse_first(js_code_if());
+          let statement = js_parse_first(js_code_if_false());
           let index = list_index(s1, parent);
           list_set(s1, index, statement);
         }
@@ -280,7 +280,7 @@ export function js_dollar(ast) {
         let { stack } = v;
         let s1 = list_get_end_1(stack);
         if (list_is(s1)) {
-          let statement = js_parse_first(js_code_if());
+          let statement = js_parse_first(js_code_if_false());
           let index = list_index(s1, parent);
           list_set(s1, index, statement);
         }
