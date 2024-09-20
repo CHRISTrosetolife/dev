@@ -1,3 +1,4 @@
+import { object_property_initialize_get_async } from "./object_property_initialize_get_async.mjs";
 import { app_code_save_get } from "./app_code_save_get.mjs";
 import { app_code_refresh } from "./app_code_refresh.mjs";
 import { global_get } from "./global_get.mjs";
@@ -10,6 +11,7 @@ export async function app_code() {
   let root = html_style_default_initialize();
   await html_scripts_load(root, ["axios", "acorn", "astring"]);
   let save = app_code_save_get();
+  await object_property_initialize_get_async();
   let files = await function_run_remote(functions_source_get.name, []);
   let g = global_get();
   object_merge(g, {
