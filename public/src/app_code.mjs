@@ -20,6 +20,7 @@ export async function app_code() {
         return await function_run_remote(functions_source_get.name, []);
       },
     );
+    log({});
     let g = global_get();
     object_merge(g, {
       files,
