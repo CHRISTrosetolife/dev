@@ -1,4 +1,4 @@
-import { html_style_border_size } from "./html_style_border_size.mjs";
+import { html_style_border_width } from "./html_style_border_width.mjs";
 import { html_style_monospace } from "./html_style_monospace.mjs";
 import { html_style_background_color } from "./html_style_background_color.mjs";
 import { app_learn_code_style_code_color_background } from "./app_learn_code_style_code_color_background.mjs";
@@ -41,6 +41,6 @@ export function app_code_refresh_function_statement(parent, root, statement) {
     parent,
     app_learn_code_style_code_color_background(),
   );
-  html_style_border_size(parent, 0);
+  html_style_border_width(parent, 0);
   app_learn_code_style_code_color(s);
 }
