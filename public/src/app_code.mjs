@@ -11,7 +11,7 @@ import { object_merge } from "./object_merge.mjs";
 export async function app_code() {
   let root = html_style_default_initialize();
   await html_scripts_load(root, ["axios", "acorn", "astring"]);
-  let save = app_save_change(
+  app_save_change(
     app_code,
     async (save) =>
       await object_property_initialize_get_async(save, "files", async () => {
