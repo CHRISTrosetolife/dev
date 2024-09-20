@@ -10,6 +10,7 @@ export function app_code_refresh_function_statement(parent, statement) {
       let { argument } = expression;
       html_span_text(parent, "⌛ ");
       app_code_refresh_function_statement(parent, argument);
+      return;
     }
   }
   html_span_text(parent, js_unparse(statement));
