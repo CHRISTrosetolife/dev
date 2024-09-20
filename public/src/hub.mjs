@@ -6,6 +6,6 @@ import { watch } from "./watch.mjs";
 export async function hub() {
   await watch();
   await server();
-  unawait(http_server);
+  unawait($a);
   await terminal();
 }
