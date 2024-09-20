@@ -14,7 +14,14 @@ export function app_code_refresh_function_statement(parent, statement) {
     }
   } else if (equal(type, "CallExpression")) {
     let { callee } = statement;
-    return;
+    let { type: type_c } = callee;
+    if (equal(type_c, "Identifier")) {
+      let { argument } = expression;
+      html_span_text(parent, "⌛ ");
+      app_code_refresh_function_statement(parent, argument);
+      html_span_text(parent, js_unparse(statement));
+      return;
+    }
   }
   html_span_text(parent, js_unparse(statement));
 }
