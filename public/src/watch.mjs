@@ -1,3 +1,4 @@
+import { path_resolve } from "./path_resolve.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { log_error } from "./log_error.mjs";
 import { function_auto_after } from "./function_auto_after.mjs";
@@ -21,7 +22,7 @@ export async function watch() {
   let base = Promise.resolve();
   let fps = folder_path_src();
   start();
-  log(string_combine_multiple([watch.name, " ", fps]));
+  log(string_combine_multiple([watch.name, " ", await path_resolve(fps)]));
   function start() {
     let result = chokidar
       .watch(fps)
