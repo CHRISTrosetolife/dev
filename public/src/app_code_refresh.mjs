@@ -1,3 +1,4 @@
+import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 import { string_get } from "./string_get.mjs";
 import { each_index } from "./each_index.mjs";
@@ -31,6 +32,7 @@ import { object_property_exists } from "./object_property_exists.mjs";
 import { app_code } from "./app_code.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
 export async function app_code_refresh(root) {
+  html_clear_scroll_top_centered(root);
   let save = storage_local_get(app_code, "save");
   if (object_property_exists(save, "function")) {
     if (object_property_exists(save, "imports")) {
