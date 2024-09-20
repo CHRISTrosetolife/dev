@@ -43,7 +43,7 @@ export async function app_code() {
     let name = object_property_get(lookup, "function");
     let p = function_name_to_path(name);
     let ast = await file_js_parse(p);
-    let imports = js_imports_existing(ast);
+    let { imports } = js_imports_existing(ast);
     html_list(imports);
     let d = js_declaration_single(ast);
     log({
