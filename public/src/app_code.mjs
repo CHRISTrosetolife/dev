@@ -25,6 +25,7 @@ export async function app_code() {
   await html_scripts_load(root, ["axios", "acorn", "astring"]);
   let lookup = html_hash_lookup();
   if (object_property_exists(lookup, "function")) {
+  } else {
   }
   let ns = await function_run_remote(function_names.name, []);
   let input = html_input_width_full_focus(root);
