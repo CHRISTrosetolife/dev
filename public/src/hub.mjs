@@ -1,3 +1,4 @@
+import { terminal } from "./terminal.mjs";
 import { server } from "./server.mjs";
 import { http_server } from "./http_server.mjs";
 import { repeat } from "./repeat.mjs";
@@ -6,4 +7,5 @@ export async function hub() {
   await watch();
   server();
   await repeat(http_server);
+  terminal;
 }
