@@ -13,7 +13,8 @@ export function app_code_refresh_function_statement(parent, statement) {
       return;
     }
   } else if (equal(type, "CallExpression")) {
-    let callee = statement;
+    let { callee } = statement;
+    return;
   }
   html_span_text(parent, js_unparse(statement));
 }
