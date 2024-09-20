@@ -6,4 +6,5 @@ export function html_style_default_border_margin(d) {
   object_merge(d, html_style_rounded_padded_style());
   object_merge(d, html_style_margin_default_value());
   object_merge(d, html_style_button_default_border());
+  return d;
 }
