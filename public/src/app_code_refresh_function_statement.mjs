@@ -13,10 +13,10 @@ export function app_code_refresh_function_statement(parent, statement) {
       app_code_refresh_function_statement(parent, argument);
       return;
     }
-  } else if (false) {
+  } else if (equal(type, "CallExpression")) {
+    log({
+      statement,
+    });
   }
-  log({
-    type,
-  });
   html_span_text(parent, js_unparse(statement));
 }
