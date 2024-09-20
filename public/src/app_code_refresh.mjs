@@ -40,9 +40,7 @@ export async function app_code_refresh(root) {
     if (object_property_exists(save, "imports")) {
       let imports = js_imports_existing(ast);
       let property_name_delete = "imports";
-      html_button_width_full_text_click_back(root, async () => {
-        await app_code_save_delete_refresh(root, property_name_delete);
-      });
+      app_code_save_delete_refresh_button_back(root, property_name_delete);
       html_list(root, imports);
     } else {
       html_button_width_full_text_click_back(root, async () => {
@@ -95,3 +93,9 @@ export async function app_code_refresh(root) {
     }
   }
 }
+function app_code_save_delete_refresh_button_back(root, property_name_delete) {
+    html_button_width_full_text_click_back(root, async () => {
+        await app_code_save_delete_refresh(root, property_name_delete);
+    });
+}
+
