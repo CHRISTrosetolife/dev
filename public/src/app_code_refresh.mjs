@@ -61,7 +61,7 @@ export async function app_code_refresh(root) {
             let { type: type_e } = expression;
             if (equal(type_e, "AwaitExpression")) {
               let { argument } = expression;
-              return string_combine_multiple([js_unparse(argument)]);
+              return string_combine_multiple(["⌛ ", js_unparse(argument)]);
             }
           }
           return js_unparse(b);
