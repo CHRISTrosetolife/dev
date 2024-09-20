@@ -1,6 +1,6 @@
+import { app_code_save_get } from "./app_code_save_get.mjs";
 import { string_size } from "./string_size.mjs";
 import { list_sort } from "./list_sort.mjs";
-import { storage_local_exists_not } from "./storage_local_exists_not.mjs";
 import { js_unparse } from "./js_unparse.mjs";
 import { html_div_text } from "./html_div_text.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
@@ -33,14 +33,10 @@ import { function_name_to_path } from "./function_name_to_path.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { app_code } from "./app_code.mjs";
-import { storage_local_get } from "./storage_local_get.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export async function app_code_refresh(root) {
   html_clear_scroll_top_centered(root);
-  if (storage_local_exists_not(app_code, "save")) {
-    storage_local_set(app_code, "save", {});
-  }
-  let save = storage_local_get(app_code, "save");
+  let save = app_code_save_get();
   if (object_property_exists(save, "function")) {
     if (object_property_exists(save, "imports")) {
       let imports = js_imports_existing(ast);
