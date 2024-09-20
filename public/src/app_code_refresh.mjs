@@ -56,10 +56,9 @@ export async function app_code_refresh(root) {
         list_map(body, (b) => {
           let { type } = b;
           if (type === "ExpressionStatement") {
-            let { argument } = b;
+            let { expression } = b;
             log({
-              argument,
-              b,
+              expression,
             });
           }
           return js_unparse(b);
