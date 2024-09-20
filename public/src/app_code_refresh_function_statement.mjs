@@ -29,7 +29,7 @@ export function app_code_refresh_function_statement(parent, root, statement) {
       let { name } = callee;
       app_code_save_refresh_function_button(d, root, name);
       let as = object_property_get(statement, "arguments");
-      each(list, (item) => {
+      each(as, (item) => {
         app_code_refresh_function_statement(d, root, item);
       });
       return;
