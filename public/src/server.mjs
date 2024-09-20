@@ -10,16 +10,18 @@ export function server() {
   let app = express_app();
   server_configure(app);
   let port = server_port();
-  app.listen(port, () => {
-    console.log(
-      string_combine_multiple([
-        server.name,
-        " ",
-        url_localhost(8080),
-        " listening on port ",
-        port,
-      ]),
-    );
+  return new Promise((resolve) => {
+    app.listen(port, () => {
+      console.log(
+        string_combine_multiple([
+          server.name,
+          " ",
+          url_localhost(8080),
+          " listening on port ",
+          port,
+        ]),
+      );
+    });
   });
   function server_configure(app) {
     let url;
