@@ -7,6 +7,8 @@ import { watch } from "./watch.mjs";
 export async function hub() {
   await watch();
   await server();
-  unawait(await retry_while_error(http_server));
+  unawait(async () => {
+    await retry_while_error(http_server);
+  });
   await terminal();
 }
