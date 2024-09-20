@@ -14,7 +14,9 @@ export function app_code_refresh_function_statement(
   statement,
   border,
 ) {
-  let d = html_div(parent);
+  if (false) {
+    let d = html_div(parent);
+  }
   html_style(d, html_style_default_border_value("lightblue"));
   html_style(d, html_style_default_border_margin({}));
   let { type } = statement;
@@ -24,7 +26,7 @@ export function app_code_refresh_function_statement(
     if (equal(type_e, "AwaitExpression")) {
       let { argument } = expression;
       html_span_text(d, "⌛ ");
-      app_code_refresh_function_statement(d, root, argument, true);
+      app_code_refresh_function_statement(d, root, argument, false);
       return;
     }
   } else if (equal(type, "CallExpression")) {
