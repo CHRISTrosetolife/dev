@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { html_style_default_border_margin } from "./html_style_default_border_margin.mjs";
 import { html_style_default_border_value } from "./html_style_default_border_value.mjs";
 import { html_style } from "./html_style.mjs";
@@ -32,6 +33,7 @@ export function app_code_refresh_function_statement(parent, root, statement) {
       app_code_save_refresh_function_button(d, root, name);
       let as = object_property_get(statement, "arguments");
       html_list(d, list_map(as, js_unparse));
+      each(list, (item) => {});
       return;
     }
   }
