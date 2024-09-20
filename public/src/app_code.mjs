@@ -1,3 +1,4 @@
+import { storage_local_get } from "./storage_local_get.mjs";
 import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
 import { html_button_width_full_text } from "./html_button_width_full_text.mjs";
 import { log } from "./log.mjs";
@@ -39,6 +40,7 @@ export async function app_code() {
   object_merge(g, {
     files,
   });
+  storage_local_get();
   if (object_property_exists(lookup, "function")) {
     let name = object_property_get(lookup, "function");
     let p = function_name_to_path(name);
