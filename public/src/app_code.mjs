@@ -1,3 +1,4 @@
+import { function_name_to_path } from "./function_name_to_path.mjs";
 import { html_div_text } from "./html_div_text.mjs";
 import { functions_source_get } from "./functions_source_get.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -30,7 +31,8 @@ export async function app_code() {
   let files = await function_run_remote(functions_source_get.name, []);
   if (object_property_exists(lookup, "function")) {
     let name = object_property_get(lookup, "function");
-    html_div_text(root, object_property_get(files, name));
+    let p = function_name_to_path(name);
+    html_div_text(root, object_property_get(files, p));
   } else {
     let ns = await function_run_remote(function_names.name, []);
     let input = html_input_width_full_focus(root);
