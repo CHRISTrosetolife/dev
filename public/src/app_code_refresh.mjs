@@ -1,3 +1,4 @@
+import { html_style_rounded_padded } from "./html_style_rounded_padded.mjs";
 import { html_style_default_border_value } from "./html_style_default_border_value.mjs";
 import { html_style } from "./html_style.mjs";
 import { app_code_save_refresh_function_button } from "./app_code_save_refresh_function_button.mjs";
@@ -54,6 +55,7 @@ export async function app_code_refresh(root) {
       each(body, (statement) => {
         let d = html_div(root);
         html_style(d, html_style_default_border_value("lightblue"));
+        html_style_rounded_padded(d);
         app_code_refresh_function_statement(d, root, statement);
       });
     }
