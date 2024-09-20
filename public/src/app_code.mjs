@@ -1,3 +1,4 @@
+import { object_property_exists } from "./object_property_exists.mjs";
 import { html_hash_lookup } from "./html_hash_lookup.mjs";
 import { string_empty_is } from "./string_empty_is.mjs";
 import { html_button_width_full } from "./html_button_width_full.mjs";
@@ -22,7 +23,7 @@ import { undefined_is } from "./undefined_is.mjs";
 export async function app_code() {
   let root = html_style_default_initialize();
   await html_scripts_load(root, ["axios", "acorn", "astring"]);
-  if (false) {
+  if (object_property_exists(object, "property_name")) {
   }
   let lookup = html_hash_lookup();
   let ns = await function_run_remote(function_names.name, []);
