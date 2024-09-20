@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { js_unparse } from "./js_unparse.mjs";
 import { equal } from "./equal.mjs";
@@ -13,5 +14,6 @@ export function app_code_refresh_function_statement(parent, statement) {
       return;
     }
   }
+  log({});
   html_span_text(parent, js_unparse(statement));
 }
