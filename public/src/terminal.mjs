@@ -168,7 +168,6 @@ export async function terminal() {
   async function next() {
     return await new Promise((resolve) => list_add(on_returns, resolve));
   }
-  log_clear();
   while (true) {
     log_write(prompt);
     let input = await next();
