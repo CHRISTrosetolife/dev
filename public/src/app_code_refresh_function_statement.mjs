@@ -5,7 +5,7 @@ import { html_span_text } from "./html_span_text.mjs";
 import { js_unparse } from "./js_unparse.mjs";
 import { equal } from "./equal.mjs";
 import { list_map } from "./list_map.mjs";
-export function app_code_refresh_function_statement(parent, statement) {
+export function app_code_refresh_function_statement(root, parent, statement) {
   let { type } = statement;
   if (type === "ExpressionStatement") {
     let { expression } = statement;
@@ -13,7 +13,7 @@ export function app_code_refresh_function_statement(parent, statement) {
     if (equal(type_e, "AwaitExpression")) {
       let { argument } = expression;
       html_span_text(parent, "⌛ ");
-      app_code_refresh_function_statement(parent, argument);
+      app_code_refresh_function_statement(root, parent, argument);
       return;
     }
   } else if (equal(type, "CallExpression")) {

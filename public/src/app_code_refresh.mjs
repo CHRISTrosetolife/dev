@@ -51,7 +51,7 @@ export async function app_code_refresh(root) {
       html_div_text(root, name);
       each(body, (statement) => {
         let d = html_div(root);
-        app_code_refresh_function_statement(d, statement);
+        app_code_refresh_function_statement(root, d, statement);
       });
     }
   } else {
