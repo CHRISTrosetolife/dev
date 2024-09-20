@@ -19,12 +19,12 @@ export async function watch() {
   let chokidar = await import_node("chokidar");
   let cache = {};
   let base = Promise.resolve();
-  start();
   let fps = folder_path_src();
+  start();
   log(string_combine_multiple([watch.name, " ", fps]));
   function start() {
     let result = chokidar
-      .watch(folder_path_src())
+      .watch(fps)
       .on("all", (event, path) => (base = base.then(on_watch(event, path))));
     return result;
   }
