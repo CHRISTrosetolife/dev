@@ -57,7 +57,9 @@ export async function app_code_refresh(root) {
           let { type } = b;
           if (type === "ExpressionStatement") {
             let { argument } = type;
-            log({});
+            log({
+              argument,
+            });
           }
           return js_unparse(b);
         }),
