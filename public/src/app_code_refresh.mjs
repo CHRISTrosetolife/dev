@@ -1,5 +1,4 @@
 import { app_code_save_delete_refresh_button_back } from "./app_code_save_delete_refresh_button_back.mjs";
-import { app_code_save_delete_refresh } from "./app_code_save_delete_refresh.mjs";
 import { function_parse } from "./function_parse.mjs";
 import { app_code_save_refresh } from "./app_code_save_refresh.mjs";
 import { app_code_save_get } from "./app_code_save_get.mjs";
@@ -27,7 +26,6 @@ import { function_names } from "./function_names.mjs";
 import { js_declaration_single } from "./js_declaration_single.mjs";
 import { html_list } from "./html_list.mjs";
 import { js_imports_existing } from "./js_imports_existing.mjs";
-import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
@@ -40,13 +38,10 @@ export async function app_code_refresh(root) {
     let ast = await function_parse(name);
     if (object_property_exists(save, "imports")) {
       let imports = js_imports_existing(ast);
-      let property_name_delete = "imports";
-      app_code_save_delete_refresh_button_back(root, property_name_delete);
+      app_code_save_delete_refresh_button_back(root, "imports");
       html_list(root, imports);
     } else {
-      html_button_width_full_text_click_back(root, async () => {
-        await app_code_save_delete_refresh(root, "function");
-      });
+      app_code_save_delete_refresh_button_back(root, "function");
       html_button_width_full_text_click(root, "imports", async () => {
         await app_code_save_refresh(root, (save) =>
           object_property_set(save, "imports", true),
