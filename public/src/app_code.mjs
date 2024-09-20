@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { functions_source_get } from "./functions_source_get.mjs";
 import { function_run_remote } from "./function_run_remote.mjs";
 import { object_property_initialize_get_async } from "./object_property_initialize_get_async.mjs";
@@ -15,6 +16,7 @@ export async function app_code() {
     save,
     "files",
     async () => {
+      log({});
       return await function_run_remote(functions_source_get.name, []);
     },
   );
