@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { equal } from "./equal.mjs";
 import { list_map } from "./list_map.mjs";
 import { js_declaration_single_body } from "./js_declaration_single_body.mjs";
@@ -55,17 +54,13 @@ export async function app_code_refresh(root) {
       html_list(
         root,
         list_map(body, (b) => {
-          let other = true;
           let { type } = b;
           if (type === "ExpressionStatement") {
             let { expression } = b;
             let { type: type_e } = expression;
             if (equal(type_e, "AwaitExpression")) {
               let { argument } = expression;
-              other = false;
-              log({
-                argument,
-              });
+              return js_unparse(b);
             }
           }
           return js_unparse(b);
