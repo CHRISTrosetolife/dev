@@ -1,3 +1,4 @@
+import { object_property_set } from "./object_property_set.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
 import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
 import { html_button_width_full_text } from "./html_button_width_full_text.mjs";
@@ -46,6 +47,7 @@ export async function app_code() {
     let p = function_name_to_path(name);
     let ast = await file_js_parse(p);
     html_button_width_full_text(root, "imports", () => {
+      object_property_set(object, "property_name", value);
       html_button_width_full_text_click_back(root, () => {});
       let imports = js_imports_existing(ast);
       html_list(root, imports);
