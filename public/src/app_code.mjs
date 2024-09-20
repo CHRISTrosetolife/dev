@@ -23,9 +23,7 @@ export async function app_code() {
   let root = html_style_default_initialize();
   await html_scripts_load(root, ["axios", "acorn", "astring"]);
   let lookup = html_hash_lookup();
-  if (false) {
-    let ns = await function_run_remote(function_names.name, []);
-  }
+  let ns = await function_run_remote(function_names.name, []);
   let input = html_input_width_full_focus(root);
   let results = html_div(root);
   html_on_input_value(input, app_code_search_refresh);
