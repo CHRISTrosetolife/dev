@@ -41,6 +41,6 @@ export function app_code_refresh_function_statement(parent, root, statement) {
     parent,
     app_learn_code_style_code_color_background(),
   );
-  html_style_border_size(parent);
+  html_style_border_size(parent, 0);
   app_learn_code_style_code_color(s);
 }
