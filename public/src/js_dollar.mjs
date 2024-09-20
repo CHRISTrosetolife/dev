@@ -1,3 +1,4 @@
+import { object_property_delete } from "./object_property_delete.mjs";
 import { list_set } from "./list_set.mjs";
 import { js_code_if } from "./js_code_if.mjs";
 import { js_parse_first } from "./js_parse_first.mjs";
@@ -288,6 +289,15 @@ export function js_dollar(ast) {
       if (remaining === "p") {
         let e = js_parse_expression(
           js_code_call_args(object_property_exists.name, [
+            js_name_unique(ast, "object"),
+            '"property_name"',
+          ]),
+        );
+        object_replace(node, e);
+      }
+      if (remaining === "d") {
+        let e = js_parse_expression(
+          js_code_call_args(object_property_delete.name, [
             js_name_unique(ast, "object"),
             '"property_name"',
           ]),
