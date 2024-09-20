@@ -53,7 +53,7 @@ export async function app_code_refresh(root) {
       html_list(
         root,
         list_map(body, (b) => {
-          let type = b;
+          let { type } = b;
           return js_unparse(b);
         }),
       );
