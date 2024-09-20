@@ -60,7 +60,7 @@ export async function app_code_refresh(root) {
             let { type: type_e } = expression;
             if (equal(type_e, "AwaitExpression")) {
               let { argument } = expression;
-              return js_unparse(b);
+              return js_unparse(argument);
             }
           }
           return js_unparse(b);
