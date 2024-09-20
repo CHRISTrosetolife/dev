@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { app_code_save_refresh } from "./app_code_save_refresh.mjs";
 import { app_code_save_get } from "./app_code_save_get.mjs";
 import { string_size } from "./string_size.mjs";
@@ -50,6 +51,7 @@ export async function app_code_refresh(root) {
       let p = function_name_to_path(name);
       let ast = await file_js_parse(p);
       html_button_width_full_text(root, "imports", async () => {
+        log({});
         await app_code_save_refresh(root, (save) =>
           object_property_set(save, "imports", true),
         );
