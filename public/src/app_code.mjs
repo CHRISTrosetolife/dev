@@ -23,9 +23,9 @@ import { undefined_is } from "./undefined_is.mjs";
 export async function app_code() {
   let root = html_style_default_initialize();
   await html_scripts_load(root, ["axios", "acorn", "astring"]);
-  if (object_property_exists(object, "property_name")) {
-  }
   let lookup = html_hash_lookup();
+  if (object_property_exists(lookup, "function")) {
+  }
   let ns = await function_run_remote(function_names.name, []);
   let input = html_input_width_full_focus(root);
   let results = html_div(root);
