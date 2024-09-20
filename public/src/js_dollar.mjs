@@ -151,28 +151,12 @@ export function js_dollar(ast) {
         object_replace(node, e);
       }
       if (remaining === "el") {
-        let { stack } = v;
-        let predicate = list_is;
-        let list = list_find_last(stack, predicate);
-        let item = list_next(stack, list);
-        let previous = list_previous(list, item);
-        if (js_node_is(previous) && previous.type === "IfStatement") {
-          let value_new = js_block_statement([]);
-          object_property_set(previous, "alternate", value_new);
-          list_remove(list, item);
-        }
+        let value_new = js_block_statement([]);
+        js_dollar_else(v, value_new);
       }
       if (remaining === "eli") {
         let value_new = js_code_if_false();
-        let { stack } = v;
-        let predicate = list_is;
-        let list = list_find_last(stack, predicate);
-        let item = list_next(stack, list);
-        let previous = list_previous(list, item);
-        if (js_node_is(previous) && previous.type === "IfStatement") {
-          object_property_set(previous, "alternate", value_new);
-          list_remove(list, item);
-        }
+        js_dollar_else(v, value_new);
       }
       if (remaining === "eo") {
         let object = js_name_unique(ast, "object");
@@ -395,3 +379,15 @@ export function js_dollar(ast) {
     );
   }
 }
+function js_dollar_else(v, value_new) {
+    let { stack } = v;
+    let predicate = list_is;
+    let list = list_find_last(stack, predicate);
+    let item = list_next(stack, list);
+    let previous = list_previous(list, item);
+    if (js_node_is(previous) && previous.type === "IfStatement") {
+        object_property_set(previous, "alternate", value_new);
+        list_remove(list, item);
+    }
+}
+
