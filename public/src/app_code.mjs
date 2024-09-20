@@ -22,6 +22,8 @@ import { undefined_is } from "./undefined_is.mjs";
 export async function app_code() {
   let root = html_style_default_initialize();
   await html_scripts_load(root, ["axios", "acorn", "astring"]);
+  if (false) {
+  }
   let lookup = html_hash_lookup();
   let ns = await function_run_remote(function_names.name, []);
   let input = html_input_width_full_focus(root);
