@@ -20,7 +20,8 @@ export async function watch() {
   let cache = {};
   let base = Promise.resolve();
   start();
-  log(string_combine_multiple([watch.name]));
+  let fps = folder_path_src();
+  log(string_combine_multiple([watch.name, " ", fps]));
   function start() {
     let result = chokidar
       .watch(folder_path_src())
