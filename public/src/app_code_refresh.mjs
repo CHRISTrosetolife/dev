@@ -1,3 +1,4 @@
+import { app_code_save_refresh_function_button } from "./app_code_save_refresh_function_button.mjs";
 import { app_code_refresh_function_statement } from "./app_code_refresh_function_statement.mjs";
 import { js_declaration_single_body } from "./js_declaration_single_body.mjs";
 import { app_code_save_delete_refresh_button_back } from "./app_code_save_delete_refresh_button_back.mjs";
@@ -8,7 +9,6 @@ import { string_size } from "./string_size.mjs";
 import { list_sort } from "./list_sort.mjs";
 import { html_div_text } from "./html_div_text.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
-import { html_inner_set } from "./html_inner_set.mjs";
 import { string_get } from "./string_get.mjs";
 import { each_index } from "./each_index.mjs";
 import { each } from "./each.mjs";
@@ -78,12 +78,7 @@ export async function app_code_refresh(root) {
       let taken = list_take_soft(filtered, 50);
       list_sort(taken, string_size);
       each(taken, (function_name) => {
-        let d = html_button_width_full_text_click(results, "", async () => {
-          await app_code_save_refresh(root, (save) =>
-            object_property_set(save, "function", function_name),
-          );
-        });
-        html_inner_set(d, function_name);
+        app_code_save_refresh_function_button(results, root, function_name);
         let letters_index = 0;
         each_index(function_name, (c, i) => {
           if (c === string_get(letters, letters_index)) {
