@@ -1,3 +1,4 @@
+import { functions_source_get } from "./functions_source_get.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { function_read } from "./function_read.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
@@ -26,9 +27,10 @@ export async function app_code() {
   let root = html_style_default_initialize();
   await html_scripts_load(root, ["axios", "acorn", "astring"]);
   let lookup = html_hash_lookup();
+  let ns = await function_run_remote(functions_source_get.name, []);
   if (object_property_exists(lookup, "function")) {
     let name = object_property_get(lookup, "function");
-    await function_read();
+    await function_read(name);
   } else {
     let ns = await function_run_remote(function_names.name, []);
     let input = html_input_width_full_focus(root);
