@@ -1,3 +1,5 @@
+import { app_learn_code_style_code_color_background } from "./app_learn_code_style_code_color_background.mjs";
+import { app_learn_code_style_code_color } from "./app_learn_code_style_code_color.mjs";
 import { html_style_code } from "./html_style_code.mjs";
 import { app_code_save_refresh_function_button } from "./app_code_save_refresh_function_button.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -33,4 +35,5 @@ export function app_code_refresh_function_statement(parent, root, statement) {
   let unparsed = js_unparse(statement);
   let s = html_span_text(parent, unparsed);
   html_style_code(s);
+  app_learn_code_style_code_color(app_learn_code_style_code_color_background());
 }
