@@ -1,6 +1,5 @@
+import { js_declaration_single_body } from "./js_declaration_single_body.mjs";
 import { json_to } from "./json_to.mjs";
-import { js_declaration_to_body } from "./js_declaration_to_body.mjs";
-import { js_declaration_single } from "./js_declaration_single.mjs";
 import { app_code_save_delete_refresh_button_back } from "./app_code_save_delete_refresh_button_back.mjs";
 import { function_parse } from "./function_parse.mjs";
 import { app_code_save_refresh } from "./app_code_save_refresh.mjs";
@@ -48,10 +47,8 @@ export async function app_code_refresh(root) {
           object_property_set(save, "imports", true),
         );
       });
-      let d = js_declaration_single(ast);
-      let { id } = d;
-      name = id;
-      let body_block = js_declaration_to_body(d);
+      let d = js_declaration_single_body(ast);
+      html_div_text(root, name);
       html_div_text(root, json_to(d));
     }
   } else {
