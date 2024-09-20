@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { app_save_change } from "./app_save_change.mjs";
 import { functions_source_get } from "./functions_source_get.mjs";
 import { function_run_remote } from "./function_run_remote.mjs";
@@ -16,11 +15,9 @@ export async function app_code() {
       save,
       "files",
       async () => {
-        log({});
         return await function_run_remote(functions_source_get.name, []);
       },
     );
-    log({});
     let g = global_get();
     object_merge(g, {
       files,
