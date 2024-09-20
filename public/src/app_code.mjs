@@ -11,9 +11,13 @@ export async function app_code() {
   let root = html_style_default_initialize();
   await html_scripts_load(root, ["axios", "acorn", "astring"]);
   let save = app_code_save_get();
-  await object_property_initialize_get_async(save, "files", async () => {
-    return await function_run_remote(functions_source_get.name, []);
-  });
+  let files = await object_property_initialize_get_async(
+    save,
+    "files",
+    async () => {
+      return await function_run_remote(functions_source_get.name, []);
+    },
+  );
   let g = global_get();
   object_merge(g, {
     files,
