@@ -1,5 +1,4 @@
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { equal } from "./equal.mjs";
+import { app_code_refresh_function_statement } from "./app_code_refresh_function_statement.mjs";
 import { list_map } from "./list_map.mjs";
 import { js_declaration_single_body } from "./js_declaration_single_body.mjs";
 import { app_code_save_delete_refresh_button_back } from "./app_code_save_delete_refresh_button_back.mjs";
@@ -32,7 +31,6 @@ import { object_property_set } from "./object_property_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
-import { js_unparse } from "./js_unparse.mjs";
 export async function app_code_refresh(root) {
   html_clear_scroll_top_centered(root);
   let save = app_code_save_get();
@@ -52,21 +50,7 @@ export async function app_code_refresh(root) {
       });
       let body = js_declaration_single_body(ast);
       html_div_text(root, name);
-      html_list(
-        root,
-        list_map(body, (b) => {
-          let { type } = b;
-          if (type === "ExpressionStatement") {
-            let { expression } = b;
-            let { type: type_e } = expression;
-            if (equal(type_e, "AwaitExpression")) {
-              let { argument } = expression;
-              return string_combine_multiple(["⌛ ", js_unparse(argument)]);
-            }
-          }
-          return js_unparse(b);
-        }),
-      );
+      html_list(root, list_map(body, app_code_refresh_function_statement));
     }
   } else {
     let ns = await function_names();
