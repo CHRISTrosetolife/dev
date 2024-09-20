@@ -1,7 +1,6 @@
 import { log } from "./log.mjs";
 import { file_js_parse } from "./file_js_parse.mjs";
 import { function_name_to_path } from "./function_name_to_path.mjs";
-import { html_div_text } from "./html_div_text.mjs";
 import { functions_source_get } from "./functions_source_get.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
@@ -36,8 +35,9 @@ export async function app_code() {
     let p = function_name_to_path(name);
     let source = object_property_get(files, p);
     let ast = await file_js_parse(file_name);
-    log({});
-    html_div_text(root, source);
+    log({
+      ast,
+    });
   } else {
     let ns = await function_run_remote(function_names.name, []);
     let input = html_input_width_full_focus(root);
