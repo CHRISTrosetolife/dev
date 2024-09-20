@@ -55,6 +55,7 @@ export async function app_code_refresh(root) {
       html_list(
         root,
         list_map(body, (b) => {
+          let other = true;
           let { type } = b;
           if (type === "ExpressionStatement") {
             let { expression } = b;
