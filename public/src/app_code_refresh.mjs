@@ -1,6 +1,3 @@
-import { html_style_default_border_margin } from "./html_style_default_border_margin.mjs";
-import { html_style_default_border_value } from "./html_style_default_border_value.mjs";
-import { html_style } from "./html_style.mjs";
 import { app_code_save_refresh_function_button } from "./app_code_save_refresh_function_button.mjs";
 import { app_code_refresh_function_statement } from "./app_code_refresh_function_statement.mjs";
 import { js_declaration_single_body } from "./js_declaration_single_body.mjs";
@@ -53,10 +50,7 @@ export async function app_code_refresh(root) {
       let body = js_declaration_single_body(ast);
       html_div_text(root, name);
       each(body, (statement) => {
-        let d = html_div(root);
-        html_style(d, html_style_default_border_value("lightblue"));
-        html_style(d, html_style_default_border_margin({}));
-        app_code_refresh_function_statement(d, root, statement);
+        app_code_refresh_function_statement(root, statement);
       });
     }
   } else {
