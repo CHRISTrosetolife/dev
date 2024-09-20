@@ -12,14 +12,18 @@ export async function app_code() {
   let root = html_style_default_initialize();
   await html_scripts_load(root, ["axios", "acorn", "astring"]);
   app_save_change(app_code, async (save) => {
-    await object_property_initialize_get_async(save, "files", async () => {
-      log({});
-      return await function_run_remote(functions_source_get.name, []);
+    let files = await object_property_initialize_get_async(
+      save,
+      "files",
+      async () => {
+        log({});
+        return await function_run_remote(functions_source_get.name, []);
+      },
+    );
+    let g = global_get();
+    object_merge(g, {
+      files,
     });
-  });
-  let g = global_get();
-  object_merge(g, {
-    files,
   });
   await app_code_refresh(root);
 }
