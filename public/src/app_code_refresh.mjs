@@ -33,6 +33,10 @@ import { storage_local_get } from "./storage_local_get.mjs";
 export async function app_code_refresh(root) {
   let save = storage_local_get(app_code, "save");
   if (object_property_exists(save, "function")) {
+    if (object_property_exists(save, "imports")) {
+      let imports = js_imports_existing(ast);
+      html_list(root, imports);
+    }
     let name = object_property_get(save, "function");
     let p = function_name_to_path(name);
     let ast = await file_js_parse(p);
@@ -42,8 +46,6 @@ export async function app_code_refresh(root) {
       html_button_width_full_text_click_back(root, () => {
         object_property_delete(save, "imports");
       });
-      let imports = js_imports_existing(ast);
-      html_list(root, imports);
     });
     let d = js_declaration_single(ast);
     log({
