@@ -1,3 +1,4 @@
+import { app_code_save_delete_refresh_button_back } from "./app_code_save_delete_refresh_button_back.mjs";
 import { app_code_save_delete_refresh } from "./app_code_save_delete_refresh.mjs";
 import { function_parse } from "./function_parse.mjs";
 import { app_code_save_refresh } from "./app_code_save_refresh.mjs";
@@ -93,9 +94,3 @@ export async function app_code_refresh(root) {
     }
   }
 }
-function app_code_save_delete_refresh_button_back(root, property_name_delete) {
-    html_button_width_full_text_click_back(root, async () => {
-        await app_code_save_delete_refresh(root, property_name_delete);
-    });
-}
-
