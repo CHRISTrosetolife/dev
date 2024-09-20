@@ -14,7 +14,9 @@ export function app_code_refresh_function_statement(parent, statement) {
       return;
     }
   }
-  $eli;
+  if (false) {
+    $eli;
+  }
   log({
     type,
   });
