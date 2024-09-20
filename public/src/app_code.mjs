@@ -1,3 +1,4 @@
+import { html_button_width_full_text } from "./html_button_width_full_text.mjs";
 import { log } from "./log.mjs";
 import { js_declaration_single } from "./js_declaration_single.mjs";
 import { html_list } from "./html_list.mjs";
@@ -43,6 +44,7 @@ export async function app_code() {
     let name = object_property_get(lookup, "function");
     let p = function_name_to_path(name);
     let ast = await file_js_parse(p);
+    html_button_width_full_text(root, "imports", () => {});
     let imports = js_imports_existing(ast);
     html_list(root, imports);
     let d = js_declaration_single(ast);
