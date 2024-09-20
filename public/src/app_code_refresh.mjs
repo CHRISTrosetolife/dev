@@ -46,6 +46,11 @@ export async function app_code_refresh(root) {
       });
       html_list(root, imports);
     } else {
+      html_button_width_full_text_click_back(root, async () => {
+        await app_code_save_refresh(root, (save) =>
+          object_property_delete(save, "imports"),
+        );
+      });
       html_button_width_full_text_click(root, "imports", async () => {
         await app_code_save_refresh(root, (save) =>
           object_property_set(save, "imports", true),
