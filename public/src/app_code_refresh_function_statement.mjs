@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_list } from "./html_list.mjs";
 import { html_span_text } from "./html_span_text.mjs";
@@ -20,7 +21,11 @@ export function app_code_refresh_function_statement(parent, statement) {
     if (equal(type_c, "Identifier")) {
       let { name } = callee;
       html_span_text(parent, name);
-      html_list(object_property_get(statement, "arguments"), js_unparse);
+      let as = object_property_get(statement, "arguments");
+      log({
+        as,
+      });
+      html_list(as, js_unparse);
       return;
     }
   }
