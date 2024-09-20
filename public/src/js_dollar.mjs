@@ -1,4 +1,4 @@
-import { js_code_if } from "./js_code_if.mjs";
+import { js_dollar_if_block } from "./js_dollar_if_block.mjs";
 import { js_code_if_false } from "./js_code_if_false.mjs";
 import { object_property_delete } from "./object_property_delete.mjs";
 import { list_set } from "./list_set.mjs";
@@ -270,26 +270,14 @@ export function js_dollar(ast) {
         }
       }
       if (remaining === "ib") {
-        let { stack } = v;
-        let s1 = list_get_end_1(stack);
-        if (list_is(s1)) {
-          let statement = js_parse_first(js_code_if_false());
-          let index = list_index(s1, parent);
-          list_set(s1, index, statement);
-        }
+        js_dollar_if_block(v, false);
       }
       if (remaining === "ibe") {
         let condition = js_code_call_args(equal.name, [
           js_name_unique(ast, "left"),
           js_name_unique(ast, "right"),
         ]);
-        let { stack } = v;
-        let s1 = list_get_end_1(stack);
-        if (list_is(s1)) {
-          let statement = js_parse_first(js_code_if(condition));
-          let index = list_index(s1, parent);
-          list_set(s1, index, statement);
-        }
+        js_dollar_if_block(v, condition);
       }
       if (remaining === "st") {
         let e = js_parse_expression(
