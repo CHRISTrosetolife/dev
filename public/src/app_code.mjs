@@ -1,3 +1,4 @@
+import { html_list } from "./html_list.mjs";
 import { js_imports_existing } from "./js_imports_existing.mjs";
 import { global_get } from "./global_get.mjs";
 import { file_js_parse } from "./file_js_parse.mjs";
@@ -41,7 +42,7 @@ export async function app_code() {
     let p = function_name_to_path(name);
     let ast = await file_js_parse(p);
     let imports = js_imports_existing(ast);
-    each(list, (item2) => {});
+    html_list(imports);
   } else {
     let ns = await function_run_remote(function_names.name, []);
     let input = html_input_width_full_focus(root);
