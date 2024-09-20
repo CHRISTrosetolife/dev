@@ -1,5 +1,4 @@
 import { app_code_refresh_function_statement } from "./app_code_refresh_function_statement.mjs";
-import { list_map } from "./list_map.mjs";
 import { js_declaration_single_body } from "./js_declaration_single_body.mjs";
 import { app_code_save_delete_refresh_button_back } from "./app_code_save_delete_refresh_button_back.mjs";
 import { function_parse } from "./function_parse.mjs";
@@ -50,11 +49,8 @@ export async function app_code_refresh(root) {
       });
       let body = js_declaration_single_body(ast);
       html_div_text(root, name);
-      html_list(
-        root,
-        list_map(body, (statement) =>
-          app_code_refresh_function_statement(root, statement),
-        ),
+      each(body, (statement) =>
+        app_code_refresh_function_statement(root, statement),
       );
     }
   } else {
