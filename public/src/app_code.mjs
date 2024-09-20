@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { function_read } from "./function_read.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { html_hash_lookup } from "./html_hash_lookup.mjs";
@@ -26,6 +27,7 @@ export async function app_code() {
   await html_scripts_load(root, ["axios", "acorn", "astring"]);
   let lookup = html_hash_lookup();
   if (object_property_exists(lookup, "function")) {
+    let name = object_property_get(object, "property_name");
     await function_read();
   } else {
     let ns = await function_run_remote(function_names.name, []);
