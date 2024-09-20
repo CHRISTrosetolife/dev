@@ -59,6 +59,7 @@ export async function app_code_refresh(root) {
             let { argument } = b;
             log({
               argument,
+              b,
             });
           }
           return js_unparse(b);
