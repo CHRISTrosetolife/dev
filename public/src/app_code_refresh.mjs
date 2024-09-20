@@ -35,6 +35,8 @@ export async function app_code_refresh(root) {
   html_clear_scroll_top_centered(root);
   let save = app_code_save_get();
   if (object_property_exists(save, "function")) {
+    let name = object_property_get(save, "function");
+    let ast = await function_parse(name);
     if (object_property_exists(save, "imports")) {
       let imports = js_imports_existing(ast);
       html_button_width_full_text_click_back(root, async () => {
@@ -44,8 +46,6 @@ export async function app_code_refresh(root) {
       });
       html_list(root, imports);
     } else {
-      let name = object_property_get(save, "function");
-      let ast = await function_parse(name);
       html_button_width_full_text_click(root, "imports", async () => {
         await app_code_save_refresh(root, (save) =>
           object_property_set(save, "imports", true),
