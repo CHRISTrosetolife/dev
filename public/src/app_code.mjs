@@ -46,7 +46,7 @@ export async function app_code() {
     let p = function_name_to_path(name);
     let ast = await file_js_parse(p);
     html_button_width_full_text(root, "imports", () => {
-      html_button_width_full_text_click_back();
+      html_button_width_full_text_click_back(root, () => {});
       let imports = js_imports_existing(ast);
       html_list(root, imports);
     });
