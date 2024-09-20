@@ -1,3 +1,4 @@
+import { equal } from "./equal.mjs";
 import { list_map } from "./list_map.mjs";
 import { js_declaration_single_body } from "./js_declaration_single_body.mjs";
 import { app_code_save_delete_refresh_button_back } from "./app_code_save_delete_refresh_button_back.mjs";
@@ -57,6 +58,8 @@ export async function app_code_refresh(root) {
           if (type === "ExpressionStatement") {
             let { expression } = b;
             let { type: type_e } = expression;
+            if (equal(left, right)) {
+            }
           }
           return js_unparse(b);
         }),
