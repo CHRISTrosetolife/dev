@@ -8,7 +8,10 @@ export function app_code_refresh_function_statement(statement) {
     let { type: type_e } = expression;
     if (equal(type_e, "AwaitExpression")) {
       let { argument } = expression;
-      return string_combine_multiple(["⌛ ", js_unparse(argument)]);
+      return string_combine_multiple([
+        "⌛ ",
+        app_code_refresh_function_statement(argument),
+      ]);
     }
   }
   return js_unparse(statement);
