@@ -40,5 +40,5 @@ export function app_code_refresh_function_statement(parent, root, statement) {
     parent,
     app_learn_code_style_code_color_background(),
   );
-  app_learn_code_style_code_color(parent);
+  app_learn_code_style_code_color(s);
 }
