@@ -28,5 +28,5 @@ export function app_code_refresh_function_statement(parent, root, statement) {
       return;
     }
   }
-  app_code_source(statement, parent);
+  app_code_source(parent, statement);
 }
