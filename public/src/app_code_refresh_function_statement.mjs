@@ -13,8 +13,8 @@ export function app_code_refresh_function_statement(parent, statement) {
       app_code_refresh_function_statement(parent, argument);
       return;
     }
-  } else {
   }
+  $eli;
   log({
     type,
   });
