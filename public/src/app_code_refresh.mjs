@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_map } from "./list_map.mjs";
 import { js_declaration_single_body } from "./js_declaration_single_body.mjs";
 import { app_code_save_delete_refresh_button_back } from "./app_code_save_delete_refresh_button_back.mjs";
@@ -53,6 +54,7 @@ export async function app_code_refresh(root) {
       html_list(
         root,
         list_map(body, (b) => {
+          log({});
           return js_unparse(b);
         }),
       );
