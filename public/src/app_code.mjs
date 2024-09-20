@@ -41,9 +41,9 @@ export async function app_code() {
     let name = object_property_get(lookup, "function");
     let p = function_name_to_path(name);
     let ast = await file_js_parse(p);
-    js_imports_existing(ast);
+    let imports = js_imports_existing(ast);
     log({
-      ast,
+      imports,
     });
   } else {
     let ns = await function_run_remote(function_names.name, []);
