@@ -50,7 +50,7 @@ export async function app_code() {
     html_button_width_full_text(root, "imports", () => {
       object_property_set(save, "imports", true);
       html_button_width_full_text_click_back(root, () => {
-        object_property_delete(save, "imports", true);
+        object_property_delete(save, "imports");
       });
       let imports = js_imports_existing(ast);
       html_list(root, imports);
