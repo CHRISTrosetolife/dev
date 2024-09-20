@@ -1,3 +1,4 @@
+import { js_declaration_single_body } from "./js_declaration_single_body.mjs";
 import { app_code_save_delete_refresh_button_back } from "./app_code_save_delete_refresh_button_back.mjs";
 import { function_parse } from "./function_parse.mjs";
 import { app_code_save_refresh } from "./app_code_save_refresh.mjs";
@@ -23,7 +24,6 @@ import { html_on_input_value } from "./html_on_input_value.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_input_width_full_focus } from "./html_input_width_full_focus.mjs";
 import { function_names } from "./function_names.mjs";
-import { js_declaration_single } from "./js_declaration_single.mjs";
 import { html_list } from "./html_list.mjs";
 import { js_imports_existing } from "./js_imports_existing.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -47,7 +47,7 @@ export async function app_code_refresh(root) {
           object_property_set(save, "imports", true),
         );
       });
-      let d = js_declaration_single(ast);
+      let d = js_declaration_single_body(ast);
       html_div_text(root, js_unparse(d));
     }
   } else {
