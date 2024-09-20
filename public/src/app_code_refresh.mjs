@@ -20,7 +20,6 @@ import { html_on_input_value } from "./html_on_input_value.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_input_width_full_focus } from "./html_input_width_full_focus.mjs";
 import { function_names } from "./function_names.mjs";
-import { function_run_remote } from "./function_run_remote.mjs";
 import { js_declaration_single } from "./js_declaration_single.mjs";
 import { html_list } from "./html_list.mjs";
 import { js_imports_existing } from "./js_imports_existing.mjs";
@@ -62,7 +61,7 @@ export async function app_code_refresh(root) {
       html_div_text(root, js_unparse(d));
     }
   } else {
-    let ns = await function_run_remote(function_names.name, []);
+    let ns = await function_names();
     let input = html_input_width_full_focus(root);
     let results = html_div(root);
     html_on_input_value(input, app_code_search_refresh);
