@@ -45,12 +45,7 @@ export function app_code_refresh_function_statement(
     }
   } else if (equal(type, "VariableDeclaration")) {
     let { declarations } = statement;
-    app_code_refresh_function_statement_list(
-      declarations,
-      parent,
-      root,
-      border,
-    );
+    app_code_refresh_function_statement_list(declarations, parent, root);
     display_source = false;
   } else if (equal(type, "VariableDeclarator")) {
     let { id, init } = statement;
