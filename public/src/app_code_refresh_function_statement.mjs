@@ -17,7 +17,7 @@ export function app_code_refresh_function_statement(
   border,
 ) {
   parent = html_div(parent);
-  if (border >= 1) {
+  if (border) {
     html_style(parent, html_style_default_border_margin({}));
     html_style(parent, html_style_default_border_value("lightblue"));
   }
@@ -28,10 +28,10 @@ export function app_code_refresh_function_statement(
     if (equal(type_e, "AwaitExpression")) {
       let { argument } = expression;
       html_span_text(parent, "⌛ ");
-      app_code_refresh_function_statement(parent, root, argument, border);
+      app_code_refresh_function_statement(parent, root, argument, false);
       return;
     }
-    app_code_refresh_function_statement(parent, root, expression, border);
+    app_code_refresh_function_statement(parent, root, expression, false);
     return;
   } else if (equal(type, "CallExpression")) {
     let { callee } = statement;
@@ -39,7 +39,7 @@ export function app_code_refresh_function_statement(
     if (equal(type_c, "Identifier")) {
       let as = object_property_get(statement, "arguments");
       each(as, (item) => {
-        app_code_refresh_function_statement(parent, root, item, border + 1);
+        app_code_refresh_function_statement(parent, root, item, true);
       });
       let { name } = callee;
       app_code_save_refresh_function_button(parent, root, name);
@@ -56,20 +56,20 @@ export function app_code_refresh_function_statement(
     return;
   } else if (equal(type, "VariableDeclarator")) {
     let { id, init } = statement;
-    app_code_refresh_function_statement(parent, root, init, border);
+    app_code_refresh_function_statement(parent, root, init, false);
     html_span_text_list(parent, ["➡️ ", object_property_get(id, "name")]);
     return;
   } else if (equal(type, "IfStatement")) {
     let { test, consequent, alternate } = statement;
-    app_code_refresh_function_statement(parent, root, test, border);
+    app_code_refresh_function_statement(parent, root, test, false);
     html_span_text(parent, "✅");
-    app_code_refresh_function_statement(parent, root, consequent, border);
+    app_code_refresh_function_statement(parent, root, consequent, false);
     html_span_text(parent, "❎");
-    app_code_refresh_function_statement(parent, root, alternate, border);
+    app_code_refresh_function_statement(parent, root, alternate, false);
     return;
   } else if (equal(type, "BlockStatement")) {
     let { body } = statement;
-    app_code_refresh_function_statement_list(body, parent, root, border);
+    app_code_refresh_function_statement_list(body, parent, root, false);
     return;
   }
   app_code_source(parent, statement);
