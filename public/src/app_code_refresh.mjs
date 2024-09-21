@@ -1,3 +1,4 @@
+import { function_read } from "./function_read.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { app_code_save_refresh_function_button } from "./app_code_save_refresh_function_button.mjs";
 import { app_code_refresh_function_statement } from "./app_code_refresh_function_statement.mjs";
@@ -32,6 +33,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_element } from "./html_element.mjs";
+import { html_inner_set } from "./html_inner_set.mjs";
 export async function app_code_refresh(root) {
   html_clear_scroll_top_centered(root);
   let save = app_code_save_get();
@@ -45,6 +47,7 @@ export async function app_code_refresh(root) {
     } else if (object_property_exists(save, "source")) {
       app_code_save_delete_refresh_button_back(root, "source");
       let p = html_element(root, "pre");
+      html_inner_set(p, await function_read(name));
     } else {
       app_code_save_delete_refresh_button_back(root, "function");
       html_button_width_full_text_click(root, "source", async () => {
