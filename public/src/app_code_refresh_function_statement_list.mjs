@@ -4,7 +4,7 @@ import { app_code_refresh_function_statement } from "./app_code_refresh_function
 export function app_code_refresh_function_statement_list(list, parent, root) {
   each_index(list, (item, index) => {
     if (index >= 1) {
-      html_hr(root);
+      html_hr(parent);
     }
     app_code_refresh_function_statement(parent, root, item, false);
   });
