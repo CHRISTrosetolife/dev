@@ -56,9 +56,9 @@ export function app_code_refresh_function_statement(
     let { test, consequent, alternate } = statement;
     app_code_refresh_function_statement(parent, root, test, false);
     html_span_text(parent, "✅");
-    app_code_refresh_function_statement(parent, root, consequent, false);
+    app_code_refresh_function_statement(parent, root, consequent, true);
     html_span_text(parent, "❎");
-    app_code_refresh_function_statement(parent, root, alternate, false);
+    app_code_refresh_function_statement(parent, root, alternate, true);
     display_source = false;
   } else if (equal(type, "BlockStatement")) {
     let { body } = statement;
