@@ -17,6 +17,8 @@ export function js_dollar_else(v, value_new) {
     previous = current;
     current = object_property_get(current, "alternate");
   }
-  object_property_set(current, "alternate", value_new);
-  list_remove(list, item);
+  if (current !== null) {
+    object_property_set(current, "alternate", value_new);
+    list_remove(list, item);
+  }
 }
