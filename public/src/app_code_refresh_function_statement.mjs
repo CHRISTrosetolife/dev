@@ -47,14 +47,7 @@ export function app_code_refresh_function_statement(
     }
   } else if (equal(type, "VariableDeclaration")) {
     let { declarations } = statement;
-    each(declarations, (item) => {
-      app_code_refresh_function_statement(
-        parent,
-        root,
-        item,
-        list_multiple_is(declarations) ? border + 1 : border,
-      );
-    });
+    app_code_refresh_function_statement_list(declarations, parent, root, border);
     return;
   } else if (equal(type, "VariableDeclarator")) {
     let { id, init } = statement;
@@ -74,3 +67,14 @@ export function app_code_refresh_function_statement(
   }
   app_code_source(parent, statement);
 }
+function app_code_refresh_function_statement_list(list, parent, root, border) {
+    each(list, (item) => {
+        app_code_refresh_function_statement(
+            parent,
+            root,
+            item,
+            list_multiple_is(list) ? border + 1 : border
+        );
+    });
+}
+
