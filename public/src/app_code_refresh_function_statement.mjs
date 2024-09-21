@@ -20,6 +20,7 @@ export function app_code_refresh_function_statement(
     parent = html_div(parent);
     html_style(parent, html_style_default_border_margin({}));
     html_style(parent, html_style_default_border_value("lightblue"));
+  } else if (false) {
   }
   let { type } = statement;
   if (type === "ExpressionStatement") {
