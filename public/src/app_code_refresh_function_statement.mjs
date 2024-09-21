@@ -29,7 +29,7 @@ export function app_code_refresh_function_statement(
     }
     app_code_refresh_function_statement(parent, root, expression, false);
     return;
-  } else if (false) {
+  } else if (type === "VariableDeclaration") {
   }
   log({
     type,
