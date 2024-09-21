@@ -58,7 +58,7 @@ export function app_code_refresh_function_statement(
     let { id, init } = statement;
     app_code_refresh_function_statement(parent, root, init, border);
     let list = ["➡️ ", object_property_get(id, "name")];
-    html_span_text(parent, string_combine_multiple(list));
+    html_span_text_list(parent, list);
     return;
   } else if (equal(type, "IfStatement")) {
     let { test, consequent, alternate } = statement;
@@ -73,3 +73,7 @@ export function app_code_refresh_function_statement(
   }
   app_code_source(parent, statement);
 }
+function html_span_text_list(parent, list) {
+    html_span_text(parent, string_combine_multiple(list));
+}
+
