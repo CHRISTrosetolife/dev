@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { each } from "./each.mjs";
 import { html_style_default_border_margin } from "./html_style_default_border_margin.mjs";
 import { html_style_default_border_value } from "./html_style_default_border_value.mjs";
@@ -49,9 +48,7 @@ export function app_code_refresh_function_statement(
     each(declarations, (item) => {
       app_code_refresh_function_statement(parent, root, item, true);
     });
-    log({
-      statement,
-    });
+  } else if (false) {
   }
   app_code_source(parent, statement);
 }
