@@ -29,10 +29,10 @@ export function app_code_refresh_function_statement(
     if (equal(type_e, "AwaitExpression")) {
       let { argument } = expression;
       html_span_text(parent, "⌛ ");
-      app_code_refresh_function_statement(parent, root, argument, false);
+      app_code_refresh_function_statement(parent, root, argument, border);
       return;
     }
-    app_code_refresh_function_statement(parent, root, expression, false);
+    app_code_refresh_function_statement(parent, root, expression, border);
     return;
   } else if (equal(type, "CallExpression")) {
     let { callee } = statement;
@@ -40,7 +40,7 @@ export function app_code_refresh_function_statement(
     if (equal(type_c, "Identifier")) {
       let as = object_property_get(statement, "arguments");
       each(as, (item) => {
-        app_code_refresh_function_statement(parent, root, item, true);
+        app_code_refresh_function_statement(parent, root, item, border + 1);
       });
       let { name } = callee;
       app_code_save_refresh_function_button(parent, root, name);
@@ -59,7 +59,7 @@ export function app_code_refresh_function_statement(
     return;
   } else if (equal(type, "VariableDeclarator")) {
     let { id, init } = statement;
-    app_code_refresh_function_statement(parent, root, init, false);
+    app_code_refresh_function_statement(parent, root, init, border);
     html_span_text(
       parent,
       string_combine_multiple(["➡️ ", object_property_get(id, "name")]),
