@@ -16,11 +16,11 @@ export function app_code_refresh_function_statement(
   statement,
   border,
 ) {
-  if (border) {
+  if (border >= 1) {
     parent = html_div(parent);
     html_style(parent, html_style_default_border_margin({}));
     html_style(parent, html_style_default_border_value("lightblue"));
-  } else if (false) {
+  } else if (border === 0) {
   }
   let { type } = statement;
   if (type === "ExpressionStatement") {
