@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { list_multiple_is } from "./list_multiple_is.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each } from "./each.mjs";
@@ -70,10 +69,7 @@ export function app_code_refresh_function_statement(
     app_code_refresh_function_statement(parent, root, test, border);
     app_code_refresh_function_statement(parent, root, consequent, border);
     app_code_refresh_function_statement(parent, root, alternate, border);
-  } else {
-    log({
-      statement,
-    });
+  } else if (false) {
   }
   app_code_source(parent, statement);
 }
