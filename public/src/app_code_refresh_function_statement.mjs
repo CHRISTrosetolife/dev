@@ -74,7 +74,7 @@ export function app_code_refresh_function_statement(
     app_code_refresh_function_statement_list(body, parent, root, false);
     display_source = false;
   }
-  if (false) {
+  if (display_source) {
     app_code_source(parent, statement);
   }
 }
