@@ -46,6 +46,9 @@ export function app_code_refresh_function_statement(
     }
   } else if (equal(type, "VariableDeclaration")) {
     let { declarations } = statement;
+    each(as, (item) => {
+      app_code_refresh_function_statement(parent, root, item, true);
+    });
     log({
       statement,
     });
