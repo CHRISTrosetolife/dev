@@ -41,6 +41,8 @@ export async function app_code_refresh(root) {
       let imports = js_imports_existing(ast);
       app_code_save_delete_refresh_button_back(root, "imports");
       html_list(root, imports);
+    } else if (object_property_exists(save, "source")) {
+      app_code_save_delete_refresh_button_back(root, "source");
     } else {
       app_code_save_delete_refresh_button_back(root, "function");
       html_button_width_full_text_click(root, "source", async () => {
