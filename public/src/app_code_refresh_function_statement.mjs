@@ -29,10 +29,10 @@ export function app_code_refresh_function_statement(
     }
     app_code_refresh_function_statement(parent, root, expression, false);
     return;
-  } else if (type === "VariableDeclaration") {
-    log({
-      statement,
-    });
+  } else if (false) {
   }
+  log({
+    type,
+  });
   app_code_source(parent, statement);
 }
