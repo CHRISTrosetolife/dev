@@ -3,7 +3,6 @@ import { html_style_left } from "./html_style_left.mjs";
 import { function_read } from "./function_read.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { app_code_save_refresh_function_button } from "./app_code_save_refresh_function_button.mjs";
-import { app_code_refresh_function_statement } from "./app_code_refresh_function_statement.mjs";
 import { js_declaration_single_body } from "./js_declaration_single_body.mjs";
 import { app_code_save_delete_refresh_button_back } from "./app_code_save_delete_refresh_button_back.mjs";
 import { function_parse } from "./function_parse.mjs";
@@ -65,11 +64,8 @@ export async function app_code_refresh(root) {
       });
       let body = js_declaration_single_body(ast);
       html_div_text(root, name);
-      app_code_refresh_function_statement_list();
-      each(body, (statement) => {
-        html_hr(root);
-        app_code_refresh_function_statement(root, root, statement, false);
-      });
+      html_hr(root);
+      app_code_refresh_function_statement_list(body, root, root);
     }
   } else {
     let ns = await function_names();
