@@ -48,7 +48,7 @@ export function app_code_refresh_function_statement(
     each(declarations, (item) => {
       app_code_refresh_function_statement(parent, root, item, true);
     });
-  } else if (false) {
+  } else if (equal(type, "VariableDeclarator")) {
   }
   app_code_source(parent, statement);
 }
