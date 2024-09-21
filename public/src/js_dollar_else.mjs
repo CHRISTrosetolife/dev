@@ -13,7 +13,9 @@ export function js_dollar_else(v, value_new) {
   let item = list_next(stack, list);
   let previous = list_previous(list, item);
   if (js_node_is(previous) && previous.type === "IfStatement") {
-    log({});
+    log({
+      previous,
+    });
     object_property_set(previous, "alternate", value_new);
     list_remove(list, item);
   }
