@@ -13,7 +13,7 @@ export function js_dollar_else(v, value_new) {
   let item = list_next(stack, list);
   let previous = list_previous(list, item);
   if (js_node_is(previous) && previous.type === "IfStatement") {
-    object_property_get(object, "property_name");
+    let a = object_property_get(previous, "alternate");
     object_property_set(previous, "alternate", value_new);
     list_remove(list, item);
   }
