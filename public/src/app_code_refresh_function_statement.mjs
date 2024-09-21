@@ -69,6 +69,7 @@ export function app_code_refresh_function_statement(
     app_code_refresh_function_statement(parent, root, test, border);
     app_code_refresh_function_statement(parent, root, consequent, border);
     app_code_refresh_function_statement(parent, root, alternate, border);
+  } else {
   }
   app_code_source(parent, statement);
 }
