@@ -12,7 +12,7 @@ export function app_code_refresh_function_statement_list(
       parent,
       root,
       item,
-      list_multiple_is(list) ? border + 1 : border,
+      list_multiple_is(list),
     );
   });
 }
