@@ -57,8 +57,7 @@ export function app_code_refresh_function_statement(
   } else if (equal(type, "VariableDeclarator")) {
     let { id, init } = statement;
     app_code_refresh_function_statement(parent, root, init, border);
-    let list = ["➡️ ", object_property_get(id, "name")];
-    html_span_text_list(parent, list);
+    html_span_text_list(parent, ["➡️ ", object_property_get(id, "name")]);
     return;
   } else if (equal(type, "IfStatement")) {
     let { test, consequent, alternate } = statement;
