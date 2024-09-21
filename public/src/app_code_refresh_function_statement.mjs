@@ -55,7 +55,7 @@ export function app_code_refresh_function_statement(
     app_code_refresh_function_statement(parent, root, init, false);
     html_span_text(
       parent,
-      string_combine_multiple([object_property_get(id, "name")]),
+      string_combine_multiple(["➡️ ", object_property_get(id, "name")]),
     );
     return;
   }
