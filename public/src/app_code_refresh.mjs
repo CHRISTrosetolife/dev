@@ -66,7 +66,7 @@ export async function app_code_refresh(root) {
       html_div_text(root, name);
       each(body, (statement) => {
         html_hr(root);
-        app_code_refresh_function_statement(root, root, statement, 0);
+        app_code_refresh_function_statement(root, root, statement, false);
       });
     }
   } else {
