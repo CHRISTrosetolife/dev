@@ -44,10 +44,10 @@ export function app_code_refresh_function_statement(
       app_code_save_refresh_function_button(parent, root, name);
       return;
     }
-  } else if (false) {
+  } else if (equal(type, "VariableDeclaration")) {
+    log({
+      statement,
+    });
   }
-  log({
-    type,
-  });
   app_code_source(parent, statement);
 }
