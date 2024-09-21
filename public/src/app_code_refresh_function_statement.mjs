@@ -52,7 +52,7 @@ export function app_code_refresh_function_statement(
         parent,
         root,
         item,
-        list_multiple_is(declarations),
+        list_multiple_is(declarations) ? border + 1 : border,
       );
     });
     return;
