@@ -70,6 +70,7 @@ export function app_code_refresh_function_statement(
   } else if (equal(type, "BlockStatement")) {
     let { body } = statement;
     app_code_refresh_function_statement_list(body, parent, root, border);
+    return;
   }
   app_code_source(parent, statement);
 }
