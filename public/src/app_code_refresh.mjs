@@ -1,3 +1,4 @@
+import { html_hr } from "./html_hr.mjs";
 import { app_code_save_refresh_function_button } from "./app_code_save_refresh_function_button.mjs";
 import { app_code_refresh_function_statement } from "./app_code_refresh_function_statement.mjs";
 import { js_declaration_single_body } from "./js_declaration_single_body.mjs";
@@ -50,6 +51,7 @@ export async function app_code_refresh(root) {
       let body = js_declaration_single_body(ast);
       html_div_text(root, name);
       each(body, (statement) => {
+        html_hr(root);
         app_code_refresh_function_statement(root, root, statement, 0);
       });
     }
