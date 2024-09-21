@@ -1,6 +1,5 @@
-import { html_style } from "./html_style.mjs";
-export function html_style_centered(button1) {
-  html_style(button1, {
-    "text-align": "center",
-  });
+import { html_style_text_align } from "./html_style_text_align.mjs";
+export function html_style_centered(component) {
+  let value = "center";
+  html_style_text_align(component, value);
 }
