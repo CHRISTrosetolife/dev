@@ -62,6 +62,7 @@ export function app_code_refresh_function_statement(
   } else if (equal(type, "IfStatement")) {
     let { test, consequent, alternate } = statement;
     app_code_refresh_function_statement(parent, root, test, border);
+    html_span_text(parent, "✅");
     app_code_refresh_function_statement(parent, root, consequent, border);
     app_code_refresh_function_statement(parent, root, alternate, border);
     return;
