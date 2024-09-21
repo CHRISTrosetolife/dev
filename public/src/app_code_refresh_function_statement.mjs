@@ -45,7 +45,7 @@ export function app_code_refresh_function_statement(
       return;
     }
   } else if (equal(type, "VariableDeclaration")) {
-    let declarations = statement;
+    let { declarations } = statement;
     log({
       statement,
     });
