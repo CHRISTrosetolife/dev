@@ -11,10 +11,12 @@ export function js_dollar_else(v, value_new) {
   let predicate = list_is;
   let list = list_find_last(stack, predicate);
   let item = list_next(stack, list);
-  let previous = list_previous(list, item);
-  if (js_node_is(previous) && previous.type === "IfStatement") {
-    let a = object_property_get(previous, "alternate");
-    object_property_set(previous, "alternate", value_new);
-    list_remove(list, item);
+  let current = list_previous(list, item);
+  let previous = null;
+  while (js_node_is(current) && current.type === "IfStatement") {
+    previous = current;
+    current = object_property_get(current, "alternate");
   }
+  object_property_set(current, "alternate", value_new);
+  list_remove(list, item);
 }
