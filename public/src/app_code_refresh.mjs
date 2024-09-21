@@ -43,6 +43,11 @@ export async function app_code_refresh(root) {
       html_list(root, imports);
     } else {
       app_code_save_delete_refresh_button_back(root, "function");
+      html_button_width_full_text_click(root, "source", async () => {
+        await app_code_save_refresh(root, (save) =>
+          object_property_set(save, "source", true),
+        );
+      });
       html_button_width_full_text_click(root, "imports", async () => {
         await app_code_save_refresh(root, (save) =>
           object_property_set(save, "imports", true),
