@@ -64,6 +64,7 @@ export function app_code_refresh_function_statement(
       string_combine_multiple(["➡️ ", object_property_get(id, "name")]),
     );
     return;
+  } else {
   }
   app_code_source(parent, statement);
 }
