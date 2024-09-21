@@ -64,6 +64,7 @@ export function app_code_refresh_function_statement(
     app_code_refresh_function_statement(parent, root, test, border);
     html_span_text(parent, "✅");
     app_code_refresh_function_statement(parent, root, consequent, border);
+    html_span_text(parent, "❎");
     app_code_refresh_function_statement(parent, root, alternate, border);
     return;
   } else if (equal(type, "BlockStatement")) {
