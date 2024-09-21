@@ -49,6 +49,7 @@ export function app_code_refresh_function_statement(
       app_code_refresh_function_statement(parent, root, item, true);
     });
   } else if (equal(type, "VariableDeclarator")) {
+    let { id, init } = statement;
   }
   app_code_source(parent, statement);
 }
