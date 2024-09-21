@@ -52,7 +52,7 @@ export function app_code_refresh_function_statement(
   } else if (equal(type, "VariableDeclarator")) {
     let { id, init } = statement;
     app_code_refresh_function_statement(parent, root, init, false);
-    html_span_text(parent, object_property_get(object, "property_name"));
+    html_span_text(parent, object_property_get(id, "name"));
     return;
   }
   app_code_source(parent, statement);
