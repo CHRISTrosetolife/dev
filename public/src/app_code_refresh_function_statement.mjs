@@ -21,6 +21,7 @@ export function app_code_refresh_function_statement(
     html_style(parent, html_style_default_border_margin({}));
     html_style(parent, html_style_default_border_value("lightblue"));
   }
+  let display_source = true;
   let { type } = statement;
   if (type === "ExpressionStatement") {
     let { expression } = statement;
@@ -29,7 +30,8 @@ export function app_code_refresh_function_statement(
       let { argument } = expression;
       html_span_text(parent, "⌛ ");
       app_code_refresh_function_statement(parent, root, argument, false);
-      return;
+      display_source = false;
+    } else {
     }
     app_code_refresh_function_statement(parent, root, expression, false);
     return;
