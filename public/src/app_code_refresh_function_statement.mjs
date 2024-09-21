@@ -33,6 +33,7 @@ export function app_code_refresh_function_statement(
       display_source = false;
     } else {
       app_code_refresh_function_statement(parent, root, expression, false);
+      display_source = false;
     }
   } else if (equal(type, "CallExpression")) {
     let { callee } = statement;
@@ -44,7 +45,7 @@ export function app_code_refresh_function_statement(
       });
       let { name } = callee;
       app_code_save_refresh_function_button(parent, root, name);
-      return;
+      display_source = false;
     }
   } else if (equal(type, "VariableDeclaration")) {
     let { declarations } = statement;
@@ -54,12 +55,12 @@ export function app_code_refresh_function_statement(
       root,
       border,
     );
-    return;
+    display_source = false;
   } else if (equal(type, "VariableDeclarator")) {
     let { id, init } = statement;
     app_code_refresh_function_statement(parent, root, init, false);
     html_span_text_list(parent, ["➡️ ", object_property_get(id, "name")]);
-    return;
+    display_source = false;
   } else if (equal(type, "IfStatement")) {
     let { test, consequent, alternate } = statement;
     app_code_refresh_function_statement(parent, root, test, false);
@@ -67,11 +68,13 @@ export function app_code_refresh_function_statement(
     app_code_refresh_function_statement(parent, root, consequent, false);
     html_span_text(parent, "❎");
     app_code_refresh_function_statement(parent, root, alternate, false);
-    return;
+    display_source = false;
   } else if (equal(type, "BlockStatement")) {
     let { body } = statement;
     app_code_refresh_function_statement_list(body, parent, root, false);
-    return;
+    display_source = false;
   }
-  app_code_source(parent, statement);
+  if (false) {
+    app_code_source(parent, statement);
+  }
 }
