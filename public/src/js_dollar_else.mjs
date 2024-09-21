@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { js_node_is } from "./js_node_is.mjs";
@@ -12,6 +13,7 @@ export function js_dollar_else(v, value_new) {
   let item = list_next(stack, list);
   let previous = list_previous(list, item);
   if (js_node_is(previous) && previous.type === "IfStatement") {
+    log({});
     object_property_set(previous, "alternate", value_new);
     list_remove(list, item);
   }
