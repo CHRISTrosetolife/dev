@@ -32,9 +32,8 @@ export function app_code_refresh_function_statement(
       app_code_refresh_function_statement(parent, root, argument, false);
       display_source = false;
     } else {
+      app_code_refresh_function_statement(parent, root, expression, false);
     }
-    app_code_refresh_function_statement(parent, root, expression, false);
-    return;
   } else if (equal(type, "CallExpression")) {
     let { callee } = statement;
     let { type: type_c } = callee;
