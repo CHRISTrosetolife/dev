@@ -1,3 +1,4 @@
+import { html_hr } from "./html_hr.mjs";
 import { list_multiple_is } from "./list_multiple_is.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each } from "./each.mjs";
@@ -21,6 +22,7 @@ export function app_code_refresh_function_statement(
     html_style(parent, html_style_default_border_margin({}));
     html_style(parent, html_style_default_border_value("lightblue"));
   } else if (border === 0) {
+    html_hr(parent);
   }
   let { type } = statement;
   if (type === "ExpressionStatement") {
