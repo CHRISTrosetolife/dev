@@ -1,4 +1,4 @@
-import { list_multiple_is } from "./list_multiple_is.mjs";
+import { app_code_refresh_function_statement_list } from "./app_code_refresh_function_statement_list.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each } from "./each.mjs";
 import { html_style_default_border_margin } from "./html_style_default_border_margin.mjs";
@@ -47,7 +47,12 @@ export function app_code_refresh_function_statement(
     }
   } else if (equal(type, "VariableDeclaration")) {
     let { declarations } = statement;
-    app_code_refresh_function_statement_list(declarations, parent, root, border);
+    app_code_refresh_function_statement_list(
+      declarations,
+      parent,
+      root,
+      border,
+    );
     return;
   } else if (equal(type, "VariableDeclarator")) {
     let { id, init } = statement;
@@ -67,14 +72,3 @@ export function app_code_refresh_function_statement(
   }
   app_code_source(parent, statement);
 }
-function app_code_refresh_function_statement_list(list, parent, root, border) {
-    each(list, (item) => {
-        app_code_refresh_function_statement(
-            parent,
-            root,
-            item,
-            list_multiple_is(list) ? border + 1 : border
-        );
-    });
-}
-
