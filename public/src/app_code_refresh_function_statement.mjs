@@ -66,6 +66,9 @@ export function app_code_refresh_function_statement(
     return;
   } else if (equal(type, "IfStatement")) {
     let { test, consequent, alternate } = statement;
+    app_code_refresh_function_statement(parent, root, test, border);
+    app_code_refresh_function_statement(parent, root, test, consequent);
+    app_code_refresh_function_statement(parent, root, test, alternate);
   }
   app_code_source(parent, statement);
 }
