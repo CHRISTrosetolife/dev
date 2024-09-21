@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each } from "./each.mjs";
 import { html_style_default_border_margin } from "./html_style_default_border_margin.mjs";
 import { html_style_default_border_value } from "./html_style_default_border_value.mjs";
@@ -52,7 +53,10 @@ export function app_code_refresh_function_statement(
   } else if (equal(type, "VariableDeclarator")) {
     let { id, init } = statement;
     app_code_refresh_function_statement(parent, root, init, false);
-    html_span_text(parent, object_property_get(id, "name"));
+    html_span_text(
+      parent,
+      string_combine_multiple([object_property_get(id, "name")]),
+    );
     return;
   }
   app_code_source(parent, statement);
