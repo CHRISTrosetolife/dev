@@ -1,3 +1,4 @@
+import { app_code_refresh_function_statement_list } from "./app_code_refresh_function_statement_list.mjs";
 import { html_style_left } from "./html_style_left.mjs";
 import { function_read } from "./function_read.mjs";
 import { html_hr } from "./html_hr.mjs";
@@ -64,6 +65,7 @@ export async function app_code_refresh(root) {
       });
       let body = js_declaration_single_body(ast);
       html_div_text(root, name);
+      app_code_refresh_function_statement_list();
       each(body, (statement) => {
         html_hr(root);
         app_code_refresh_function_statement(root, root, statement, false);
