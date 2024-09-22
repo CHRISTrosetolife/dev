@@ -1,3 +1,7 @@
+import { js_node_is } from "./js_node_is.mjs";
+import { list_previous } from "./list_previous.mjs";
+import { list_next } from "./list_next.mjs";
+import { list_find_last } from "./list_find_last.mjs";
 import { list_remove_multiple } from "./list_remove_multiple.mjs";
 import { list_take_but_1 } from "./list_take_but_1.mjs";
 import { js_identifier_rename } from "./js_identifier_rename.mjs";
@@ -188,8 +192,20 @@ export function js_dollar(ast) {
       }
       if (remaining === "elp") {
         let value_new = js_parse_first(js_code_if_false());
-        $ex;
-        js_dollar_else(v, value_new);
+        let { stack } = v;
+        let predicate = list_is;
+        let list = list_find_last(stack, predicate);
+        let item = list_next(stack, list);
+        let current = list_previous(list, item);
+        let previous = null;
+        while (js_node_is(current) && current.type === "IfStatement") {
+          previous = current;
+          current = object_property_get(current, "alternate");
+        }
+        if (previous !== null) {
+          object_property_set(previous, "alternate", value_new);
+          list_remove(list, item);
+        }
       }
       if (equal(remaining, "ex")) {
         await js_dollar_grandparent_next(v, lambda);
