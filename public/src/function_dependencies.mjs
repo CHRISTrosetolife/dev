@@ -1,3 +1,4 @@
+import { file_overwrite_gitignore } from "./file_overwrite_gitignore.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { chalk } from "./chalk.mjs";
 import { js_code_import_generic } from "./js_code_import_generic.mjs";
@@ -28,5 +29,6 @@ export async function function_dependencies(function_name) {
   let ds = await list_map_async(dependency_names, function_declaration);
   let us = list_map(ds, js_unparse);
   let c = list_concat(e_code, us);
-  return list_join_newline(c);
+  let text = list_join_newline(c);
+  await file_overwrite_gitignore();
 }
