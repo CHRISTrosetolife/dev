@@ -216,6 +216,7 @@ export function js_dollar(ast) {
                   each_reverse(body, (b) => {
                     list_insert(s1, index, b);
                   });
+                  list_remove(s1, parent);
                   log({
                     params_names,
                     args_names,
