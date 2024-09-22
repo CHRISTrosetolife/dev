@@ -66,6 +66,8 @@ import { object_property_exists } from "./object_property_exists.mjs";
 import { equal } from "./equal.mjs";
 import { list_size_1 } from "./list_size_1.mjs";
 import { list_single } from "./list_single.mjs";
+import { assert_message } from "./assert_message.mjs";
+import { list_empty_is } from "./list_empty_is.mjs";
 export function js_dollar(ast) {
   js_visit_identifiers(ast, async (v) => {
     let { node } = v;
@@ -182,15 +184,16 @@ export function js_dollar(ast) {
                   let params_names = js_identifiers_names(params);
                   let { arguments: args } = init;
                   let args_names = js_identifiers_names(args);
-                  let missing = js_identifiers_intersect_difference(
+                  let needs_renaming = js_identifiers_intersect_difference(
                     ast_c,
                     args_names,
                     params_names,
                   );
+                  assert_message(list_empty_is, [needs_renaming], () => {});
                   log({
                     params,
                     args_names,
-                    missing,
+                    missing: needs_renaming,
                   });
                 }
               }
