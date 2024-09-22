@@ -213,8 +213,9 @@ export function js_dollar(ast) {
                   );
                   js_identifier_rename_multiple(d, params_names, args_names);
                   let body = js_declaration_to_body(d);
-                  each_reverse(body, () => {});
-                  list_insert(s1, index, b);
+                  each_reverse(body, (b) => {
+                    list_insert(s1, index, b);
+                  });
                   log({
                     params_names,
                     args_names,
