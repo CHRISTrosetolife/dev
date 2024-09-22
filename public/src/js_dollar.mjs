@@ -162,6 +162,7 @@ export function js_dollar(ast) {
           log({
             a,
           });
+          let next = a;
         }
       }
       if (remaining === "eo") {
