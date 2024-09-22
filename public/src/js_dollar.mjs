@@ -1,5 +1,5 @@
+import { js_identifiers_intersect_difference } from "./js_identifiers_intersect_difference.mjs";
 import { js_identifiers_names } from "./js_identifiers_names.mjs";
-import { js_identifiers_intersect } from "./js_identifiers_intersect.mjs";
 import { js_declaration_to_params } from "./js_declaration_to_params.mjs";
 import { function_parse } from "./function_parse.mjs";
 import { js_node_type_is } from "./js_node_type_is.mjs";
@@ -182,14 +182,15 @@ export function js_dollar(ast) {
                   let params_names = js_identifiers_names(params);
                   let { arguments: args } = init;
                   let args_names = js_identifiers_names(args);
-                  let intersection = js_identifiers_intersect(
+                  let missing = js_identifiers_intersect_difference(
                     ast_c,
                     args_names,
+                    params_names,
                   );
                   log({
                     params,
                     args_names,
-                    intersection,
+                    missing,
                   });
                 }
               }
