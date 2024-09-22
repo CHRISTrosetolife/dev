@@ -3,13 +3,17 @@ import { js_identifier_rename } from "./js_identifier_rename.mjs";
 import { each_index_only } from "./each_index_only.mjs";
 import { list_size_equal } from "./list_size_equal.mjs";
 import { assert } from "./assert.mjs";
-export function js_identifier_rename_multiple(d, params_names, args_names) {
-  assert(list_size_equal, [params_names, args_names]);
-  each_index_only(params_names, (index) => {
+export function js_identifier_rename_multiple(
+  d,
+  identifiers_from,
+  identifiers_to,
+) {
+  assert(list_size_equal, [identifiers_from, identifiers_to]);
+  each_index_only(identifiers_from, (index) => {
     js_identifier_rename(
       d,
-      list_get(params_names, index),
-      list_get(args_names, index),
+      list_get(identifiers_from, index),
+      list_get(identifiers_to, index),
     );
   });
 }
