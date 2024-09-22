@@ -158,7 +158,7 @@ export function js_dollar(ast) {
       }
       if (equal(remaining, "ex")) {
         log({
-          e,
+          node,
         });
       }
       if (remaining === "eo") {
