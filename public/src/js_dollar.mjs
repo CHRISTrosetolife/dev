@@ -60,6 +60,7 @@ import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { equal } from "./equal.mjs";
 import { list_size_1 } from "./list_size_1.mjs";
+import { list_single } from "./list_single.mjs";
 export function js_dollar(ast) {
   js_visit_identifiers(ast, (v) => {
     let { node } = v;
@@ -168,6 +169,7 @@ export function js_dollar(ast) {
           if (equal(type, "VariableDeclaration")) {
             let { declarations } = next;
             if (list_size_1(declarations)) {
+              let d = list_single(declarations);
             }
           }
         }
