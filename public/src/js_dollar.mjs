@@ -1,3 +1,4 @@
+import { js_return_argument_type } from "./js_return_argument_type.mjs";
 import { list_last } from "./list_last.mjs";
 import { js_return_variablize } from "./js_return_variablize.mjs";
 import { each_reverse } from "./each_reverse.mjs";
@@ -221,6 +222,7 @@ export function js_dollar(ast) {
                   each_reverse(body, (b) => {
                     list_insert(s1, index, b);
                   });
+                  assert(js_return_argument_type, []);
                   list_remove(s1, parent);
                   log({
                     params_names,
