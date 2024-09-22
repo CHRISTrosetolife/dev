@@ -220,7 +220,7 @@ export function js_dollar(ast) {
                   let body = js_declaration_to_body(d);
                   let l = list_last(body);
                   assert(js_node_type_is, [l, "ReturnStatement"]);
-                  assert(js_return_argument_type, [l, "Identifier"]);
+                  assert(equal, [js_return_argument_type(l), "Identifier"]);
                   let node_l = object_property_get(l, "node");
                   let arg_l = object_property_get(node_l, "argument");
                   js_identifier_rename(
