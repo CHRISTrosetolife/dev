@@ -189,7 +189,11 @@ export function js_dollar(ast) {
                     args_names,
                     params_names,
                   );
-                  assert_message(list_empty_is, [needs_renaming], () => {});
+                  assert_message(list_empty_is, [needs_renaming], () =>
+                    string_combine_multiple([
+                      "code needs enhancing to rename variables: ",
+                    ]),
+                  );
                   log({
                     params,
                     args_names,
