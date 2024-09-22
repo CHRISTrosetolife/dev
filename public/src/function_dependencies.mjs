@@ -1,3 +1,5 @@
+import { chalk } from "./chalk.mjs";
+import { js_code_import_generic } from "./js_code_import_generic.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { js_unparse } from "./js_unparse.mjs";
@@ -26,6 +28,9 @@ export async function function_dependencies(function_name) {
       list_join_comma_space(externals),
     ]),
   );
+  let e = {
+    chalk: js_code_import_generic(chalk, chalk),
+  };
   let dependency_names = object_properties(map);
   let ds = await list_map_async(dependency_names, function_declaration);
   let us = list_map(ds, js_unparse);
