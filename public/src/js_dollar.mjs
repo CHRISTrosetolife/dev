@@ -1,3 +1,4 @@
+import { js_identifier_rename } from "./js_identifier_rename.mjs";
 import { js_identifiers_intersect_difference } from "./js_identifiers_intersect_difference.mjs";
 import { js_identifiers_names } from "./js_identifiers_names.mjs";
 import { js_declaration_to_params } from "./js_declaration_to_params.mjs";
@@ -195,6 +196,7 @@ export function js_dollar(ast) {
                       needs_renaming,
                     ]),
                   );
+                  js_identifier_rename();
                   log({
                     params,
                     args_names,
