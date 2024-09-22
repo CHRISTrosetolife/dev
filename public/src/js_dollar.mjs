@@ -199,12 +199,11 @@ export function js_dollar(ast) {
                   let { arguments: args } = init;
                   let args_names = js_identifiers_names(args);
                   let identifiers = js_identifiers(ast);
-                  let identifiers_c = js_identifiers(ast_c);
                   let intersected = list_intersect(identifiers, identifiers_c);
                   let needs_renaming = js_identifiers_intersect_difference(
                     ast_c,
-                    args_names,
-                    params_names,
+                    identifiers,
+                    [name_c],
                   );
                   assert_message(list_empty_is, [needs_renaming], () =>
                     string_combine_multiple([
