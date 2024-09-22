@@ -178,7 +178,7 @@ export function js_dollar(ast) {
                   let ast_c = await function_parse(name_c);
                   let d = js_declaration_single(ast_c);
                   let params = js_declaration_to_params(d);
-                  js_identifiers(d);
+                  let identifiers = js_identifiers(d);
                   log({
                     name_c,
                   });
