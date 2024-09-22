@@ -212,7 +212,7 @@ export function js_dollar(ast) {
                   js_identifier_rename_multiple(d, params_names, args_names);
                   let body = js_declaration_to_body(d);
                   log({
-                    params,
+                    params_names,
                     args_names,
                     needs_enhance,
                   });
