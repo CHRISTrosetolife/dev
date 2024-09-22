@@ -192,7 +192,7 @@ export function js_dollar(ast) {
             let { declarations } = next;
             if (list_size_1(declarations)) {
               let d = list_single(declarations);
-              let { init } = d;
+              let { init, id } = d;
               log({
                 d,
               });
