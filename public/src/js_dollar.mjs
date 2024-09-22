@@ -157,19 +157,11 @@ export function js_dollar(ast) {
         js_dollar_else(v, value_new);
       }
       if (equal(remaining, "ex")) {
-        log({
-          node,
-        });
         js_dollar_grandparent_next(v, lambda);
         function lambda(a) {
-          let { s1, next } = a;
-          let statement = js_parse_first(js_code_if_false());
-          let { consequent } = statement;
-          let { body } = consequent;
-          list_add(body, next);
-          let index = list_index(s1, next);
-          list_set(s1, index, statement);
-          list_remove(s1, parent);
+          log({
+            a,
+          });
         }
       }
       if (remaining === "eo") {
