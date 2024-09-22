@@ -10,8 +10,8 @@ export function js_imports_add_specified(ast, specified) {
   let name = js_declaration_single_name(ast);
   let self = [name];
   let existing = js_imports_existing(ast);
-  let identifier_fns = js_identifiers_intersect(ast, specified);
   let combined = list_concat(existing, self);
+  let identifier_fns = js_identifiers_intersect(ast, specified);
   let missing = list_difference(identifier_fns, combined);
   let { body } = ast;
   for (let m of missing) {
