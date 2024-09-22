@@ -1,3 +1,4 @@
+import { js_declaration_to_body } from "./js_declaration_to_body.mjs";
 import { js_unparse } from "./js_unparse.mjs";
 import { js_identifier_rename_multiple } from "./js_identifier_rename_multiple.mjs";
 import { js_code_brackets } from "./js_code_brackets.mjs";
@@ -208,6 +209,7 @@ export function js_dollar(ast) {
                     ]),
                   );
                   js_identifier_rename_multiple(d, params_names, args_names);
+                  let body = js_declaration_to_body(d);
                   log({
                     params,
                     args_names,
