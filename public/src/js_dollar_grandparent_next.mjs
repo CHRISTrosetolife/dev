@@ -7,9 +7,10 @@ export async function js_dollar_grandparent_next(v, lambda) {
   let { stack } = v;
   let s1 = list_get_end_1(stack);
   if (list_is(s1)) {
-    let item_index_next = list_index_next(list, parent);
-    let next = list_get(list, item_index_next);
+    let index = list_index_next(list, parent);
+    let next = list_get(list, index);
     await lambda({
+      index,
       next,
       s1,
     });
