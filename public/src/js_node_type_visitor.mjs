@@ -10,10 +10,10 @@ export function js_node_type_visitor(ast, type) {
       if (!js_node_is(node)) {
         return;
       }
-      let type_equal_is = js_node_type_is(node, type);
-      if (type_equal_is) {
-        la(v);
+      if (!js_node_type_is(node, type)) {
+        return;
       }
+      la(v);
     }
   });
 }
