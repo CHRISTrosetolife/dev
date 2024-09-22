@@ -259,9 +259,9 @@ export function js_dollar(ast) {
         let s1 = list_get_end_1(stack);
         if (list_is(s1)) {
           let next = list_next(s1, parent);
-          lambda();
+          lambda(next);
         }
-        function lambda() {
+        function lambda(next) {
           let statement = js_parse_first(js_code_if_false());
           let { consequent } = statement;
           let { body } = consequent;
