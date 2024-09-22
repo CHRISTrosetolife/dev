@@ -160,6 +160,17 @@ export function js_dollar(ast) {
         log({
           node,
         });
+        js_dollar_grandparent_next(v, lambda);
+        function lambda(a) {
+          let { s1, next } = a;
+          let statement = js_parse_first(js_code_if_false());
+          let { consequent } = statement;
+          let { body } = consequent;
+          list_add(body, next);
+          let index = list_index(s1, next);
+          list_set(s1, index, statement);
+          list_remove(s1, parent);
+        }
       }
       if (remaining === "eo") {
         let object = js_name_unique(ast, "object");
