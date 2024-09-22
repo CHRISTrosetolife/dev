@@ -165,6 +165,9 @@ export function js_dollar(ast) {
           let { next } = a;
           let { type } = next;
           if (equal(type, "VariableDeclaration")) {
+            let { declarations } = next;
+            if (equal(left, right)) {
+            }
           }
         }
       }
