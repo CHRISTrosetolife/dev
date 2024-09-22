@@ -1,3 +1,4 @@
+import { js_code_brackets } from "./js_code_brackets.mjs";
 import { never } from "./never.mjs";
 import { assert } from "./assert.mjs";
 import { js_identifier_rename } from "./js_identifier_rename.mjs";
@@ -106,7 +107,7 @@ export function js_dollar(ast) {
       }
       if (remaining === "as") {
         let e = js_parse_expression(
-          js_code_call_args(assert.name, [never.name]),
+          js_code_call_args(assert.name, [never.name, js_code_brackets()]),
         );
         object_replace(node, e);
       }
