@@ -169,10 +169,10 @@ export function js_dollar(ast) {
               let d = list_single(declarations);
               let { init } = d;
               if (js_node_type_is(init, "CallExpression")) {
+                log({
+                  init,
+                });
               }
-              log({
-                d,
-              });
             }
           }
         }
