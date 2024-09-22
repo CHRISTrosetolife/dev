@@ -219,10 +219,10 @@ export function js_dollar(ast) {
                   let body = js_declaration_to_body(d);
                   let l = list_last(body);
                   assert(js_node_type_is, [l, "ReturnStatement"]);
+                  assert(js_return_argument_type, [l, "Identifier"]);
                   each_reverse(body, (b) => {
                     list_insert(s1, index, b);
                   });
-                  assert(js_return_argument_type, [l, "Identifier"]);
                   list_remove(s1, parent);
                   log({
                     params_names,
