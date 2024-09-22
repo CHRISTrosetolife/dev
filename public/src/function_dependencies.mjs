@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { js_unparse } from "./js_unparse.mjs";
 import { list_map } from "./list_map.mjs";
@@ -18,11 +19,10 @@ export async function function_dependencies(function_name) {
       each(sources, la);
     });
   });
-  assert_message(
-    list_empty_is,
-    [externals],
-    () =>
-      "if this is non-empty, then refactor output to include external libraries",
+  assert_message(list_empty_is, [externals], () =>
+    string_combine_multiple([
+      "if this is non-empty, then refactor output to include external libraries: ",
+    ]),
   );
   let dependency_names = object_properties(map);
   let ds = await list_map_async(dependency_names, function_declaration);
