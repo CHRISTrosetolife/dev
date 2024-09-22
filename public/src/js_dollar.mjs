@@ -203,7 +203,7 @@ export function js_dollar(ast) {
           current = object_property_get(current, "alternate");
         }
         if (previous !== null) {
-          object_property_get(object2, "property_name");
+          object_property_get(previous, "alternate");
           object_property_set(previous, "alternate", value_new);
           list_remove(list, item);
         }
