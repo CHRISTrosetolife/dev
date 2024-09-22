@@ -5,7 +5,7 @@ export function js_return_variablize(ast) {
   let return_statements = js_node_type_visitor(ast, "ReturnStatement");
   for (let r of return_statements) {
     let { node } = r;
-    if (js_return_argument_type(r) === "Identifier") {
+    if (js_return_argument_type(node) === "Identifier") {
       continue;
     }
     let { parent } = r;
