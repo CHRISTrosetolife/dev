@@ -74,6 +74,7 @@ import { list_size_1 } from "./list_size_1.mjs";
 import { list_single } from "./list_single.mjs";
 import { assert_message } from "./assert_message.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
+import { list_get } from "./list_get.mjs";
 export function js_dollar(ast) {
   js_visit_identifiers(ast, async (v) => {
     let { node } = v;
@@ -239,6 +240,15 @@ export function js_dollar(ast) {
           js_code_call_args(object_property_get.name, [
             js_name_unique(ast, "object"),
             '"property_name"',
+          ]),
+        );
+        object_replace(node, e);
+      }
+      if (remaining === "gl") {
+        let e = js_parse_expression(
+          js_code_call_args(list_get.name, [
+            js_name_unique(ast, "list"),
+            "index",
           ]),
         );
         object_replace(node, e);
