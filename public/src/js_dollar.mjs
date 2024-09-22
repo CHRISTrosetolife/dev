@@ -260,15 +260,15 @@ export function js_dollar(ast) {
         if (list_is(s1)) {
           let next = list_next(s1, parent);
           lambda();
-          function lambda() {
-            let statement = js_parse_first(js_code_if_false());
-            let { consequent } = statement;
-            let { body } = consequent;
-            list_add(body, next);
-            let index = list_index(s1, next);
-            list_set(s1, index, statement);
-            list_remove(s1, parent);
-          }
+        }
+        function lambda() {
+          let statement = js_parse_first(js_code_if_false());
+          let { consequent } = statement;
+          let { body } = consequent;
+          list_add(body, next);
+          let index = list_index(s1, next);
+          list_set(s1, index, statement);
+          list_remove(s1, parent);
         }
       }
       if (remaining === "ib") {
