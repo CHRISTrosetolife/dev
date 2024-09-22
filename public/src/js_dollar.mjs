@@ -219,6 +219,9 @@ export function js_dollar(ast) {
                   js_identifier_rename_multiple(d, params_names, args_names);
                   let body = js_declaration_to_body(d);
                   let l = list_last(body);
+                  log({
+                    l,
+                  });
                   assert(js_node_type_is, [l, "ReturnStatement"]);
                   assert(equal, [js_return_argument_type(l), "Identifier"]);
                   let node_l = object_property_get(l, "node");
