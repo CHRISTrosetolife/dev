@@ -75,7 +75,6 @@ import { list_single } from "./list_single.mjs";
 import { assert_message } from "./assert_message.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { list_get } from "./list_get.mjs";
-import { list_intersect } from "./list_intersect.mjs";
 export function js_dollar(ast) {
   js_visit_identifiers(ast, async (v) => {
     let { node } = v;
@@ -199,7 +198,6 @@ export function js_dollar(ast) {
                   let { arguments: args } = init;
                   let args_names = js_identifiers_names(args);
                   let identifiers = js_identifiers(ast);
-                  let intersected = list_intersect(identifiers, identifiers_c);
                   let needs_enhance = js_identifiers_intersect_difference(
                     ast_c,
                     identifiers,
