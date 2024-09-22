@@ -214,8 +214,7 @@ export function js_dollar(ast) {
                   log({
                     params,
                     args_names,
-                    needs_renaming: needs_enhance,
-                    intersected,
+                    needs_enhance,
                   });
                 }
               }
