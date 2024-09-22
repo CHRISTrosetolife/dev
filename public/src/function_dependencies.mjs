@@ -1,6 +1,5 @@
 import { file_overwrite_gitignore } from "./file_overwrite_gitignore.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { chalk } from "./chalk.mjs";
 import { js_code_import_generic } from "./js_code_import_generic.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { js_unparse } from "./js_unparse.mjs";
@@ -21,11 +20,11 @@ export async function function_dependencies(function_name) {
       each(sources, la);
     });
   });
+  let e = {};
   let standard = ["chalk"];
-  each(list, (item) => {});
-  let e = {
-    chalk: js_code_import_generic("chalk", "chalk"),
-  };
+  each(standard, (s) => {
+    js_code_import_generic(s, s);
+  });
   let e_code = list_map(externals, (n) => object_property_get(e, n));
   let dependency_names = object_properties(map);
   let ds = await list_map_async(dependency_names, function_declaration);
