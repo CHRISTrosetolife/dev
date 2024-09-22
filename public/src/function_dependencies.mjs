@@ -11,6 +11,7 @@ import { object_properties } from "./object_properties.mjs";
 import { assert_message } from "./assert_message.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { list_map_async } from "./list_map_async.mjs";
+import { list_join_comma_space } from "./list_join_comma_space.mjs";
 export async function function_dependencies(function_name) {
   let map = await function_imports(function_name);
   let externals = list_adder_unique((la) => {
@@ -22,6 +23,7 @@ export async function function_dependencies(function_name) {
   assert_message(list_empty_is, [externals], () =>
     string_combine_multiple([
       "if this is non-empty, then refactor output to include external libraries: ",
+      list_join_comma_space(externals),
     ]),
   );
   let dependency_names = object_properties(map);
