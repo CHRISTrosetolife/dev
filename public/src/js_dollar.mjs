@@ -1,3 +1,4 @@
+import { list_size_equal } from "./list_size_equal.mjs";
 import { lists_sizes_equal } from "./lists_sizes_equal.mjs";
 import { js_code_brackets } from "./js_code_brackets.mjs";
 import { never } from "./never.mjs";
@@ -195,7 +196,7 @@ export function js_dollar(ast) {
                   let params_names = js_identifiers_names(params);
                   let { arguments: args } = init;
                   let args_names = js_identifiers_names(args);
-                  lists_sizes_equal([params_names, args_names]);
+                  list_size_equal(params_names, args_names);
                   assert(lists_sizes_equal, []);
                   let needs_renaming = js_identifiers_intersect_difference(
                     ast_c,
