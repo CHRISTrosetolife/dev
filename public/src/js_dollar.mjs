@@ -225,7 +225,7 @@ export function js_dollar(ast) {
                   let arg_l = object_property_get(node_l, "argument");
                   js_identifier_rename(
                     ast_c,
-                    object_property_get(object2, "property_name"),
+                    object_property_get(arg_l, "name"),
                   );
                   each_reverse(body, (b) => {
                     list_insert(s1, index, b);
