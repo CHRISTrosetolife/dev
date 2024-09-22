@@ -248,7 +248,7 @@ export function js_dollar(ast) {
         let e = js_parse_expression(
           js_code_call_args(list_get.name, [
             js_name_unique(ast, "list"),
-            "index",
+            js_name_unique(ast, "index"),
           ]),
         );
         object_replace(node, e);
