@@ -1,3 +1,4 @@
+import { js_node_type_is } from "./js_node_type_is.mjs";
 import { js_dollar_grandparent_next } from "./js_dollar_grandparent_next.mjs";
 import { js_dollar_else } from "./js_dollar_else.mjs";
 import { js_dollar_if_block } from "./js_dollar_if_block.mjs";
@@ -162,12 +163,13 @@ export function js_dollar(ast) {
         js_dollar_grandparent_next(v, lambda);
         function lambda(a) {
           let { next } = a;
-          let { type } = next;
-          if (equal(type, "VariableDeclaration")) {
+          if (js_node_type_is(next, "VariableDeclaration")) {
             let { declarations } = next;
             if (list_size_1(declarations)) {
               let d = list_single(declarations);
               let { init } = d;
+              if (false) {
+              }
               log({
                 d,
               });
