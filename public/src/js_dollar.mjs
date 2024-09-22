@@ -200,15 +200,15 @@ export function js_dollar(ast) {
                   let args_names = js_identifiers_names(args);
                   let identifiers = js_identifiers(ast);
                   let intersected = list_intersect(identifiers, identifiers_c);
-                  let needs_renaming = js_identifiers_intersect_difference(
+                  let needs_enhance = js_identifiers_intersect_difference(
                     ast_c,
                     identifiers,
                     [name_c],
                   );
-                  assert_message(list_empty_is, [needs_renaming], () =>
+                  assert_message(list_empty_is, [needs_enhance], () =>
                     string_combine_multiple([
                       "code needs enhancing to handle variables: ",
-                      needs_renaming,
+                      needs_enhance,
                     ]),
                   );
                   js_identifier_rename_multiple(d, params_names, args_names);
@@ -216,7 +216,7 @@ export function js_dollar(ast) {
                   log({
                     params,
                     args_names,
-                    needs_renaming,
+                    needs_renaming: needs_enhance,
                     intersected,
                   });
                 }
