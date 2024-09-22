@@ -8,9 +8,11 @@ export function js_code_import_path(import_path, import_name) {
     string_combine_multiple([
       "import ",
       a,
-      ' from "',
+      " from ",
+      '"',
       import_path_combined,
-      '.mjs"',
+      ".mjs",
+      '"',
     ]),
   );
   return import_code;
