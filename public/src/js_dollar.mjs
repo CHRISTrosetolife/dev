@@ -181,8 +181,8 @@ export function js_dollar(ast) {
                   let params = js_declaration_to_params(d);
                   let identifiers = js_identifiers(ast_c);
                   let { arguments: args } = init;
-                  list_map(args, (a) =>
-                    object_property_get(object2, "property_name"),
+                  let args_names = list_map(args, (a) =>
+                    object_property_get(a, "name"),
                   );
                   log({
                     params,
