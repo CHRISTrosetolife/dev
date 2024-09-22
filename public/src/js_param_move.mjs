@@ -20,8 +20,8 @@ export async function js_param_move(
   });
   js_param_generic(ast, function_name, move, move);
   function move(list) {
-    each(list, (item) => {
-      assert(list_index_is, [list, item]);
+    each([param_index, param_index_new], (i) => {
+      assert(list_index_is, [list, i]);
     });
     list_move_to(list, param_index, param_index_new);
   }
