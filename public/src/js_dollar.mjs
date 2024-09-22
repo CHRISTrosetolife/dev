@@ -255,7 +255,7 @@ export function js_dollar(ast) {
         }
       }
       if (remaining === "i") {
-        let s1 = js_dollar_grandparent_next(v, lambda);
+        js_dollar_grandparent_next(v, lambda);
         function lambda(a) {
           let { s1, next } = a;
           let statement = js_parse_first(js_code_if_false());
