@@ -179,6 +179,7 @@ export function js_dollar(ast) {
                   let ast_c = await function_parse(name_c);
                   let d = js_declaration_single(ast_c);
                   let params = js_declaration_to_params(d);
+                  let params_names = js_identifiers_names(params);
                   let { arguments: args } = init;
                   let args_names = js_identifiers_names(args);
                   let intersection = js_identifiers_intersect(
