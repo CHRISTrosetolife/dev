@@ -1,3 +1,4 @@
+import { function_parse } from "./function_parse.mjs";
 import { js_node_type_is } from "./js_node_type_is.mjs";
 import { js_dollar_grandparent_next } from "./js_dollar_grandparent_next.mjs";
 import { js_dollar_else } from "./js_dollar_else.mjs";
@@ -161,7 +162,7 @@ export function js_dollar(ast) {
       }
       if (equal(remaining, "ex")) {
         js_dollar_grandparent_next(v, lambda);
-        function lambda(a) {
+        async function lambda(a) {
           let { next } = a;
           if (js_node_type_is(next, "VariableDeclaration")) {
             let { declarations } = next;
@@ -172,6 +173,7 @@ export function js_dollar(ast) {
                 let { callee } = init;
                 if (js_node_type_is(callee, "Identifier")) {
                   let name_c = callee;
+                  await function_parse(name_c);
                   log({
                     name_c,
                   });
