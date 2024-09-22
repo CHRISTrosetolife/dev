@@ -194,6 +194,7 @@ export function js_dollar(ast) {
                   let params_names = js_identifiers_names(params);
                   let { arguments: args } = init;
                   let args_names = js_identifiers_names(args);
+                  assert(never, []);
                   let needs_renaming = js_identifiers_intersect_difference(
                     ast_c,
                     args_names,
