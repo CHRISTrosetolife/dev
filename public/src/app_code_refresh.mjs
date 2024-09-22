@@ -52,16 +52,12 @@ export async function app_code_refresh(root) {
       html_inner_set(p, await function_read(name));
     } else {
       app_code_save_delete_refresh_button_back(root, "function");
-      each(list, (item) => {});
-      html_button_width_full_text_click(root, "source", async () => {
-        await app_code_save_refresh(root, (save) =>
-          object_property_set(save, "source", true),
-        );
-      });
-      html_button_width_full_text_click(root, "imports", async () => {
-        await app_code_save_refresh(root, (save) =>
-          object_property_set(save, "imports", true),
-        );
+      each(["source", "imports"], (item) => {
+        html_button_width_full_text_click(root, item, async () => {
+          await app_code_save_refresh(root, (save) =>
+            object_property_set(save, item, true),
+          );
+        });
       });
       let body = js_declaration_single_body(ast);
       html_div_text(root, name);
