@@ -64,7 +64,7 @@ import { equal } from "./equal.mjs";
 import { list_size_1 } from "./list_size_1.mjs";
 import { list_single } from "./list_single.mjs";
 export function js_dollar(ast) {
-  js_visit_identifiers(ast, (v) => {
+  js_visit_identifiers(ast, async (v) => {
     let { node } = v;
     let { name } = node;
     let prefix = "$";
@@ -161,7 +161,7 @@ export function js_dollar(ast) {
         js_dollar_else(v, value_new);
       }
       if (equal(remaining, "ex")) {
-        js_dollar_grandparent_next(v, lambda);
+        await js_dollar_grandparent_next(v, lambda);
         async function lambda(a) {
           let { next } = a;
           if (js_node_type_is(next, "VariableDeclaration")) {
@@ -173,7 +173,7 @@ export function js_dollar(ast) {
                 let { callee } = init;
                 if (js_node_type_is(callee, "Identifier")) {
                   let name_c = callee;
-                  await function_parse(name_c);
+                  ast = await function_parse(name_c);
                   log({
                     name_c,
                   });
@@ -277,7 +277,7 @@ export function js_dollar(ast) {
         }
       }
       if (remaining === "i") {
-        js_dollar_grandparent_next(v, lambda);
+        await js_dollar_grandparent_next(v, lambda);
         function lambda(a) {
           let { s1, next } = a;
           let statement = js_parse_first(js_code_if_false());
