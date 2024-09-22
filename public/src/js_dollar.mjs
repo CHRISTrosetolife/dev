@@ -1,3 +1,4 @@
+import { each_index_only } from "./each_index_only.mjs";
 import { list_size_equal } from "./list_size_equal.mjs";
 import { js_code_brackets } from "./js_code_brackets.mjs";
 import { never } from "./never.mjs";
@@ -207,7 +208,7 @@ export function js_dollar(ast) {
                       needs_renaming,
                     ]),
                   );
-                  each_range(count2, (item2) => {});
+                  each_index_only(params_names, (item) => {});
                   js_identifier_rename(d);
                   log({
                     params,
