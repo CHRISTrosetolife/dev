@@ -10,8 +10,7 @@ export function js_code_import_path(import_path, import_name) {
       a,
       " from ",
       '"',
-      import_path_combined,
-      ".mjs",
+      string_combine_multiple([import_path_combined, ".mjs"]),
       '"',
     ]),
   );
