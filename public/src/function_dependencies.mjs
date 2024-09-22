@@ -22,6 +22,7 @@ export async function function_dependencies(function_name) {
     });
   });
   let standard = ["chalk"];
+  each(list, (item) => {});
   let e = {
     chalk: js_code_import_generic("chalk", "chalk"),
   };
