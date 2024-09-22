@@ -212,7 +212,7 @@ export function js_dollar(ast) {
                   );
                   js_identifier_rename_multiple(d, params_names, args_names);
                   let body = js_declaration_to_body(d);
-                  list_insert(s1);
+                  list_insert(s1, index, b);
                   log({
                     params_names,
                     args_names,
