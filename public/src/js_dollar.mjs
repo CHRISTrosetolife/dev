@@ -222,7 +222,7 @@ export function js_dollar(ast) {
                   each_reverse(body, (b) => {
                     list_insert(s1, index, b);
                   });
-                  assert(js_return_argument_type, []);
+                  assert(js_return_argument_type, [l, "Identifier"]);
                   list_remove(s1, parent);
                   log({
                     params_names,
