@@ -1,3 +1,4 @@
+import { js_identifiers } from "./js_identifiers.mjs";
 import { js_declaration_to_params } from "./js_declaration_to_params.mjs";
 import { function_parse } from "./function_parse.mjs";
 import { js_node_type_is } from "./js_node_type_is.mjs";
@@ -177,6 +178,7 @@ export function js_dollar(ast) {
                   let ast_c = await function_parse(name_c);
                   let d = js_declaration_single(ast_c);
                   let params = js_declaration_to_params(d);
+                  js_identifiers(d);
                   log({
                     name_c,
                   });
