@@ -182,7 +182,7 @@ export function js_dollar(ast) {
       if (equal(remaining, "ex")) {
         await js_dollar_grandparent_next(v, lambda);
         async function lambda(a) {
-          let { next } = a;
+          let { next, s1 } = a;
           if (js_node_type_is(next, "VariableDeclaration")) {
             let { declarations } = next;
             if (list_size_1(declarations)) {
@@ -212,7 +212,7 @@ export function js_dollar(ast) {
                   );
                   js_identifier_rename_multiple(d, params_names, args_names);
                   let body = js_declaration_to_body(d);
-                  list_insert();
+                  list_insert(s1);
                   log({
                     params_names,
                     args_names,
