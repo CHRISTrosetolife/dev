@@ -194,7 +194,7 @@ export function js_dollar(ast) {
               let d = list_single(declarations);
               let { init } = d;
               log({
-                init,
+                d,
               });
               exit();
               if (js_node_type_is(init, "CallExpression")) {
