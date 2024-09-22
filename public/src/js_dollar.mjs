@@ -1,3 +1,4 @@
+import { js_identifiers } from "./js_identifiers.mjs";
 import { js_declaration_to_body } from "./js_declaration_to_body.mjs";
 import { js_unparse } from "./js_unparse.mjs";
 import { js_identifier_rename_multiple } from "./js_identifier_rename_multiple.mjs";
@@ -197,6 +198,7 @@ export function js_dollar(ast) {
                   let params_names = js_identifiers_names(params);
                   let { arguments: args } = init;
                   let args_names = js_identifiers_names(args);
+                  let ast_i = js_identifiers(ast);
                   let needs_renaming = js_identifiers_intersect_difference(
                     ast_c,
                     args_names,
