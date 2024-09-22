@@ -21,8 +21,9 @@ export async function function_dependencies(function_name) {
       each(sources, la);
     });
   });
+  let standard = ["chalk"];
   let e = {
-    chalk: js_code_import_generic(chalk, chalk),
+    chalk: js_code_import_generic("chalk", "chalk"),
   };
   let e_code = list_map(externals, (n) => object_property_get(e, n));
   let dependency_names = object_properties(map);
