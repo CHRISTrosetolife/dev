@@ -189,7 +189,6 @@ export function js_dollar(ast) {
                   );
                   log({
                     params,
-                    identifiers,
                     args_names,
                     intersection,
                   });
