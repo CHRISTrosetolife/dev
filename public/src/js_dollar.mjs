@@ -1,6 +1,5 @@
 import { js_identifiers } from "./js_identifiers.mjs";
 import { js_declaration_to_body } from "./js_declaration_to_body.mjs";
-import { js_unparse } from "./js_unparse.mjs";
 import { js_identifier_rename_multiple } from "./js_identifier_rename_multiple.mjs";
 import { js_code_brackets } from "./js_code_brackets.mjs";
 import { never } from "./never.mjs";
@@ -219,7 +218,7 @@ export function js_dollar(ast) {
                     params,
                     args_names,
                     needs_renaming,
-                    f: js_unparse(d),
+                    intersected,
                   });
                 }
               }
