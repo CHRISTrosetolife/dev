@@ -1,3 +1,4 @@
+import { list_remove_multiple } from "./list_remove_multiple.mjs";
 import { list_take_but_1 } from "./list_take_but_1.mjs";
 import { js_identifier_rename } from "./js_identifier_rename.mjs";
 import { js_return_argument_type } from "./js_return_argument_type.mjs";
@@ -234,7 +235,7 @@ export function js_dollar(ast) {
                   each_reverse(list_take_but_1(body), (b) => {
                     list_insert(s1, index, b);
                   });
-                  list_remove(s1, parent);
+                  list_remove_multiple(s1, [next, parent]);
                   log({
                     params_names,
                     args_names,
