@@ -173,7 +173,7 @@ export function js_dollar(ast) {
                 if (js_node_type_is(callee, "Identifier")) {
                   let name_c = callee;
                   log({
-                    init,
+                    name_c,
                   });
                 }
               }
