@@ -1,3 +1,4 @@
+import { noop } from "./noop.mjs";
 import { assert } from "./assert.mjs";
 import { js_identifier_rename } from "./js_identifier_rename.mjs";
 import { js_identifiers_intersect_difference } from "./js_identifiers_intersect_difference.mjs";
@@ -104,7 +105,9 @@ export function js_dollar(ast) {
         object_replace(node, e);
       }
       if (remaining === "as") {
-        let e = js_parse_expression(js_code_call_args(assert.name));
+        let e = js_parse_expression(
+          js_code_call_args(assert.name, [noop.name]),
+        );
         object_replace(node, e);
       }
       if (remaining === "e") {
