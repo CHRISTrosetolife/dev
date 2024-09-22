@@ -180,7 +180,8 @@ export function js_dollar(ast) {
                   let params = js_declaration_to_params(d);
                   let identifiers = js_identifiers(d);
                   log({
-                    name_c,
+                    params,
+                    identifiers,
                   });
                 }
               }
