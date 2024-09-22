@@ -104,7 +104,7 @@ export function js_dollar(ast) {
         object_replace(node, e);
       }
       if (remaining === "as") {
-        let e = js_parse_expression(js_code_call(assert.name));
+        let e = js_parse_expression(js_code_call_args(assert.name));
         object_replace(node, e);
       }
       if (remaining === "e") {
