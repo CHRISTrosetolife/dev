@@ -1,3 +1,4 @@
+import { list_insert } from "./list_insert.mjs";
 import { js_identifiers } from "./js_identifiers.mjs";
 import { js_declaration_to_body } from "./js_declaration_to_body.mjs";
 import { js_identifier_rename_multiple } from "./js_identifier_rename_multiple.mjs";
@@ -211,6 +212,7 @@ export function js_dollar(ast) {
                   );
                   js_identifier_rename_multiple(d, params_names, args_names);
                   let body = js_declaration_to_body(d);
+                  list_insert();
                   log({
                     params_names,
                     args_names,
