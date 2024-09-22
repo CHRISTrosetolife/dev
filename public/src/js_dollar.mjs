@@ -197,7 +197,6 @@ export function js_dollar(ast) {
                   let params_names = js_identifiers_names(params);
                   let { arguments: args } = init;
                   let args_names = js_identifiers_names(args);
-                  assert(list_size_equal, [params_names, args_names]);
                   let needs_renaming = js_identifiers_intersect_difference(
                     ast_c,
                     args_names,
@@ -209,6 +208,7 @@ export function js_dollar(ast) {
                       needs_renaming,
                     ]),
                   );
+                  assert(list_size_equal, [params_names, args_names]);
                   each_index_only(params_names, (index) => {
                     js_identifier_rename(
                       d,
