@@ -193,7 +193,6 @@ export function js_dollar(ast) {
             if (list_size_1(declarations)) {
               let d = list_single(declarations);
               let { init, id } = d;
-              exit();
               if (js_node_type_is(init, "CallExpression")) {
                 let { callee } = init;
                 if (js_node_type_is(callee, "Identifier")) {
