@@ -207,6 +207,7 @@ export function js_dollar(ast) {
                       needs_renaming,
                     ]),
                   );
+                  each_range(count2, (item2) => {});
                   js_identifier_rename(d);
                   log({
                     params,
