@@ -1,3 +1,4 @@
+import { list_last } from "./list_last.mjs";
 import { js_return_variablize } from "./js_return_variablize.mjs";
 import { each_reverse } from "./each_reverse.mjs";
 import { list_insert } from "./list_insert.mjs";
@@ -215,6 +216,7 @@ export function js_dollar(ast) {
                   );
                   js_identifier_rename_multiple(d, params_names, args_names);
                   let body = js_declaration_to_body(d);
+                  list_last(body, () => {});
                   each_reverse(body, (b) => {
                     list_insert(s1, index, b);
                   });
