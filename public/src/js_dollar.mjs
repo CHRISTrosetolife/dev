@@ -1,3 +1,4 @@
+import { js_identifier_rename } from "./js_identifier_rename.mjs";
 import { js_return_argument_type } from "./js_return_argument_type.mjs";
 import { list_last } from "./list_last.mjs";
 import { js_return_variablize } from "./js_return_variablize.mjs";
@@ -222,6 +223,10 @@ export function js_dollar(ast) {
                   assert(js_return_argument_type, [l, "Identifier"]);
                   let node_l = object_property_get(l, "node");
                   let arg_l = object_property_get(node_l, "argument");
+                  js_identifier_rename(
+                    ast_c,
+                    object_property_get(object2, "property_name"),
+                  );
                   each_reverse(body, (b) => {
                     list_insert(s1, index, b);
                   });
