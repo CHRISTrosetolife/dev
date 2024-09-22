@@ -1,3 +1,4 @@
+import { object_property_set } from "./object_property_set.mjs";
 import { file_overwrite_gitignore } from "./file_overwrite_gitignore.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { js_code_import_generic } from "./js_code_import_generic.mjs";
@@ -23,6 +24,7 @@ export async function function_dependencies(function_name) {
   let e = {};
   let standard = ["chalk"];
   each(standard, (s) => {
+    object_property_set(object, "property_name", value);
     js_code_import_generic(s, s);
   });
   let e_code = list_map(externals, (n) => object_property_get(e, n));
