@@ -220,7 +220,7 @@ export function js_dollar(ast) {
                   let l = list_last(body);
                   assert(js_node_type_is, [l, "ReturnStatement"]);
                   assert(js_return_argument_type, [l, "Identifier"]);
-                  object_property_get(object2, "property_name");
+                  let node_l = object_property_get(l, "node");
                   each_reverse(body, (b) => {
                     list_insert(s1, index, b);
                   });
