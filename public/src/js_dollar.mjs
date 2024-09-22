@@ -1,3 +1,4 @@
+import { assert } from "./assert.mjs";
 import { js_identifier_rename } from "./js_identifier_rename.mjs";
 import { js_identifiers_intersect_difference } from "./js_identifiers_intersect_difference.mjs";
 import { js_identifiers_names } from "./js_identifiers_names.mjs";
@@ -100,6 +101,10 @@ export function js_dollar(ast) {
       }
       if (remaining === "ar") {
         let e = js_parse_expression(js_code_arrow_block_args([], "return;"));
+        object_replace(node, e);
+      }
+      if (remaining === "as") {
+        let e = js_parse_expression(js_code_call(assert.name));
         object_replace(node, e);
       }
       if (remaining === "e") {
