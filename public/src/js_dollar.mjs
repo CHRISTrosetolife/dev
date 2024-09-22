@@ -182,7 +182,7 @@ export function js_dollar(ast) {
                   log({
                     params,
                     identifiers,
-                    callee,
+                    init,
                   });
                 }
               }
