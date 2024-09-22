@@ -188,6 +188,7 @@ export function js_dollar(ast) {
       }
       if (remaining === "elp") {
         let value_new = js_parse_first(js_code_if_false());
+        $ex;
         js_dollar_else(v, value_new);
       }
       if (equal(remaining, "ex")) {
