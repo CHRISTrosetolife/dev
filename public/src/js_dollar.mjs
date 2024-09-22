@@ -156,7 +156,7 @@ export function js_dollar(ast) {
         let value_new = js_parse_first(js_code_if_false());
         js_dollar_else(v, value_new);
       }
-      if (equal(left, right)) {
+      if (equal(remaining, "ex")) {
       }
       if (remaining === "eo") {
         let object = js_name_unique(ast, "object");
