@@ -179,7 +179,7 @@ export function js_dollar(ast) {
                   let d = js_declaration_single(ast_c);
                   let params = js_declaration_to_params(d);
                   let identifiers = js_identifiers(ast_c);
-                  let args = init;
+                  let { arguments: args } = init;
                   log({
                     params,
                     identifiers,
