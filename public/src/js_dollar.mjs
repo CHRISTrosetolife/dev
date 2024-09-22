@@ -210,7 +210,11 @@ export function js_dollar(ast) {
                     ]),
                   );
                   each_index_only(params_names, (index) => {
-                    js_identifier_rename(d, list_get(list2, index));
+                    js_identifier_rename(
+                      d,
+                      list_get(params_names, index),
+                      list_get(args_names, index),
+                    );
                   });
                   log({
                     params,
