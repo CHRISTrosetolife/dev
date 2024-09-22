@@ -1,3 +1,3 @@
-export function js_return_argument_type(r) {
-  return r.node.argument.type;
+export function js_return_argument_type(node) {
+  return node.argument.type;
 }
