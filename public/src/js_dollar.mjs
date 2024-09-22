@@ -1,3 +1,4 @@
+import { js_return_variablize } from "./js_return_variablize.mjs";
 import { each_reverse } from "./each_reverse.mjs";
 import { list_insert } from "./list_insert.mjs";
 import { js_identifiers } from "./js_identifiers.mjs";
@@ -194,6 +195,7 @@ export function js_dollar(ast) {
                 if (js_node_type_is(callee, "Identifier")) {
                   let { name: name_c } = callee;
                   let ast_c = await function_parse(name_c);
+                  js_return_variablize(ast_c);
                   let d = js_declaration_single(ast_c);
                   let params = js_declaration_to_params(d);
                   let params_names = js_identifiers_names(params);
