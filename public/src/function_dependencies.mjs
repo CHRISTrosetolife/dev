@@ -26,10 +26,7 @@ export async function function_dependencies(function_name) {
   let e = {
     chalk: js_code_import_generic(chalk, chalk),
   };
-  let e_code = list_map(
-    externals,
-    object_property_get(object, "property_name"),
-  );
+  let e_code = list_map(externals, (n) => object_property_get(e, n));
   assert_message(list_empty_is, [externals], () =>
     string_combine_multiple([
       "if this is non-empty, then refactor output to include external libraries: ",
