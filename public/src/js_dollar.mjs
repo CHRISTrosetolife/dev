@@ -206,7 +206,7 @@ export function js_dollar(ast) {
                       needs_renaming,
                     ]),
                   );
-                  js_identifier_rename_multiple(params_names, args_names, d);
+                  js_identifier_rename_multiple(args_names, d, params_names);
                   log({
                     params,
                     args_names,
