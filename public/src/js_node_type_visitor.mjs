@@ -6,7 +6,9 @@ export function js_node_type_visitor(ast, type) {
     js_visit(ast, lambda);
     function lambda(v) {
       let { node } = v;
-      let type_equal_is = js_node_type_is(node, type);
+      if (false) {
+        let type_equal_is = js_node_type_is(node, type);
+      }
       if (type_equal_is) {
         la(v);
       }
