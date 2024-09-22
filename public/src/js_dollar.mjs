@@ -224,8 +224,7 @@ export function js_dollar(ast) {
                   });
                   assert(js_node_type_is, [l, "ReturnStatement"]);
                   assert(equal, [js_return_argument_type(l), "Identifier"]);
-                  let node_l = object_property_get(l, "node");
-                  let arg_l = object_property_get(node_l, "argument");
+                  let arg_l = object_property_get(l, "argument");
                   js_identifier_rename(
                     ast_c,
                     object_property_get(arg_l, "name"),
