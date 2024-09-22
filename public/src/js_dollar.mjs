@@ -216,9 +216,7 @@ export function js_dollar(ast) {
                   );
                   js_identifier_rename_multiple(d, params_names, args_names);
                   let body = js_declaration_to_body(d);
-                  list_last(body, (b) =>
-                    js_node_type_is(node, "ReturnStatement"),
-                  );
+                  list_last(body, (b) => js_node_type_is(b, "ReturnStatement"));
                   each_reverse(body, (b) => {
                     list_insert(s1, index, b);
                   });
