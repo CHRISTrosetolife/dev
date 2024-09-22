@@ -173,7 +173,8 @@ export function js_dollar(ast) {
                 let { callee } = init;
                 if (js_node_type_is(callee, "Identifier")) {
                   let name_c = callee;
-                  ast = await function_parse(name_c);
+                  let ast_c = await function_parse(name_c);
+                  let d = js_declaration_single(ast_c);
                   log({
                     name_c,
                   });
