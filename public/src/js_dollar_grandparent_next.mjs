@@ -7,7 +7,10 @@ export function js_dollar_grandparent_next(v, lambda) {
   let s1 = list_get_end_1(stack);
   if (list_is(s1)) {
     let next = list_next(s1, parent);
-    lambda(next);
+    lambda({
+      next,
+      s1,
+    });
   }
   return s1;
 }
