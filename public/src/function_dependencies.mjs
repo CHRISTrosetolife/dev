@@ -30,5 +30,9 @@ export async function function_dependencies(function_name) {
   let us = list_map(ds, js_unparse);
   let c = list_concat(e_code, us);
   let text = list_join_newline(c);
-  await file_overwrite_gitignore();
+  await file_overwrite_gitignore(
+    function_name,
+    function_dependencies.name,
+    text,
+  );
 }
