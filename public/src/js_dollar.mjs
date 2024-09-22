@@ -1,5 +1,5 @@
+import { js_identifiers_intersect } from "./js_identifiers_intersect.mjs";
 import { list_map } from "./list_map.mjs";
-import { js_identifiers } from "./js_identifiers.mjs";
 import { js_declaration_to_params } from "./js_declaration_to_params.mjs";
 import { function_parse } from "./function_parse.mjs";
 import { js_node_type_is } from "./js_node_type_is.mjs";
@@ -179,10 +179,13 @@ export function js_dollar(ast) {
                   let ast_c = await function_parse(name_c);
                   let d = js_declaration_single(ast_c);
                   let params = js_declaration_to_params(d);
-                  let identifiers = js_identifiers(ast_c);
                   let { arguments: args } = init;
                   let args_names = list_map(args, (a) =>
                     object_property_get(a, "name"),
+                  );
+                  let identifier_fns = js_identifiers_intersect(
+                    ast_c,
+                    args_names,
                   );
                   log({
                     params,
