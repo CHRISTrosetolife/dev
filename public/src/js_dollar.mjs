@@ -59,6 +59,7 @@ import { each_range_reverse } from "./each_range_reverse.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { equal } from "./equal.mjs";
+import { list_size_1 } from "./list_size_1.mjs";
 export function js_dollar(ast) {
   js_visit_identifiers(ast, (v) => {
     let { node } = v;
@@ -166,7 +167,7 @@ export function js_dollar(ast) {
           let { type } = next;
           if (equal(type, "VariableDeclaration")) {
             let { declarations } = next;
-            if (equal(left, right)) {
+            if (list_size_1(declarations)) {
             }
           }
         }
