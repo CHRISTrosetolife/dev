@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { chalk } from "./chalk.mjs";
 import { js_code_import_generic } from "./js_code_import_generic.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -22,15 +23,19 @@ export async function function_dependencies(function_name) {
       each(sources, la);
     });
   });
+  let e = {
+    chalk: js_code_import_generic(chalk, chalk),
+  };
+  let e_code = list_map(
+    externals,
+    object_property_get(object, "property_name"),
+  );
   assert_message(list_empty_is, [externals], () =>
     string_combine_multiple([
       "if this is non-empty, then refactor output to include external libraries: ",
       list_join_comma_space(externals),
     ]),
   );
-  let e = {
-    chalk: js_code_import_generic(chalk, chalk),
-  };
   let dependency_names = object_properties(map);
   let ds = await list_map_async(dependency_names, function_declaration);
   let us = list_map(ds, js_unparse);
