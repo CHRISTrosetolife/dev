@@ -1,3 +1,4 @@
+import { list_concat } from "./list_concat.mjs";
 import { js_identifiers_intersect } from "./js_identifiers_intersect.mjs";
 import { list_add_beginning } from "./list_add_beginning.mjs";
 import { js_parse_first } from "./js_parse_first.mjs";
@@ -10,7 +11,7 @@ export function js_imports_add_specified(ast, specified) {
   let self = [name];
   let existing = js_imports_existing(ast);
   let identifier_fns = js_identifiers_intersect(ast, specified);
-  let missing = list_difference(identifier_fns, existing);
+  let missing = list_difference(identifier_fns, list_concat(existing, self));
   let missing_without_self = list_difference(missing, self);
   let { body } = ast;
   for (let m of missing_without_self) {
