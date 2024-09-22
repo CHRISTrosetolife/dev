@@ -5,9 +5,11 @@ export function js_code_import_path(import_path, import_name) {
   let import_path_combined = string_combine(import_path, import_name);
   let import_code = js_code_statement(
     string_combine_multiple([
-      "import { ",
+      "import ",
+      "{ ",
       import_name,
-      ' } from "',
+      " }",
+      ' from "',
       import_path_combined,
       '.mjs"',
     ]),
