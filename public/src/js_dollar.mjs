@@ -174,7 +174,7 @@ export function js_dollar(ast) {
               if (js_node_type_is(init, "CallExpression")) {
                 let { callee } = init;
                 if (js_node_type_is(callee, "Identifier")) {
-                  let name_c = callee;
+                  let { name: name_c } = callee;
                   let ast_c = await function_parse(name_c);
                   let d = js_declaration_single(ast_c);
                   let params = js_declaration_to_params(d);
