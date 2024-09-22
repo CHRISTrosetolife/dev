@@ -191,6 +191,7 @@ export function js_dollar(ast) {
                     params,
                     identifiers,
                     args_names,
+                    intersection,
                   });
                 }
               }
