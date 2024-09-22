@@ -276,7 +276,7 @@ export function js_dollar(ast) {
       if (remaining === "ib") {
         js_dollar_if_block(v, false);
       }
-      if (remaining === "ibe") {
+      if (remaining === "ie") {
         let condition = js_code_call_args(equal.name, [
           js_name_unique(ast, "left"),
           js_name_unique(ast, "right"),
