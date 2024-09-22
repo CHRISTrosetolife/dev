@@ -207,7 +207,7 @@ export function js_dollar(ast) {
                   );
                   assert_message(list_empty_is, [needs_renaming], () =>
                     string_combine_multiple([
-                      "code needs enhancing to rename variables: ",
+                      "code needs enhancing to handle variables: ",
                       needs_renaming,
                     ]),
                   );
