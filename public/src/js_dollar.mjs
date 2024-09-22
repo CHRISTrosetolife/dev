@@ -212,7 +212,7 @@ export function js_dollar(ast) {
                     params,
                     args_names,
                     needs_renaming,
-                    f: js_unparse(ast),
+                    f: js_unparse(d),
                   });
                 }
               }
