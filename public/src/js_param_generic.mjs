@@ -1,3 +1,4 @@
+import { js_declaration_to_params } from "./js_declaration_to_params.mjs";
 import { js_declaration_single } from "./js_declaration_single.mjs";
 import { js_declaration_single_name } from "./js_declaration_single_name.mjs";
 import { equal } from "./equal.mjs";
@@ -27,7 +28,6 @@ export function js_param_generic(
     return;
   }
   let declaration = js_declaration_single(ast);
-  let { params: p } = declaration;
-  let params = p;
+  let params = js_declaration_to_params(declaration);
   lambda_if_match(params);
 }
