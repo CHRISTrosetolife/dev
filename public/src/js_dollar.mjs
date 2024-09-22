@@ -1,3 +1,4 @@
+import { js_unparse } from "./js_unparse.mjs";
 import { js_identifier_rename_multiple } from "./js_identifier_rename_multiple.mjs";
 import { js_code_brackets } from "./js_code_brackets.mjs";
 import { never } from "./never.mjs";
@@ -210,7 +211,8 @@ export function js_dollar(ast) {
                   log({
                     params,
                     args_names,
-                    missing: needs_renaming,
+                    needs_renaming,
+                    f: js_unparse(ast),
                   });
                 }
               }
