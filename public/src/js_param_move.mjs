@@ -1,4 +1,4 @@
-import { list_index } from "./list_index.mjs";
+import { list_index_is } from "./list_index_is.mjs";
 import { each } from "./each.mjs";
 import { list_move_to } from "./list_move_to.mjs";
 import { js_param_generic } from "./js_param_generic.mjs";
@@ -21,7 +21,7 @@ export async function js_param_move(
   js_param_generic(ast, function_name, move, move);
   function move(list) {
     each(list, (item) => {
-      assert(list_index, [list, item]);
+      assert(list_index_is, [list, item]);
     });
     list_move_to(list, param_index, param_index_new);
   }
