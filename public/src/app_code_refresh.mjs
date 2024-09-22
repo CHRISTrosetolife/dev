@@ -40,17 +40,19 @@ export async function app_code_refresh(root) {
   let save = app_code_save_get();
   if (object_property_exists(save, "function")) {
     let name = object_property_get(save, "function");
-    let ast = await function_parse(name);
     if (object_property_exists(save, "imports")) {
+      let ast = await function_parse(name);
       let imports = js_imports_existing(ast);
       app_code_save_delete_refresh_button_back(root, "imports");
       html_list(root, imports);
     } else if (object_property_exists(save, "source")) {
+      let ast = await function_parse(name);
       app_code_save_delete_refresh_button_back(root, "source");
       let p = html_element(root, "pre");
       html_style_left(p);
       html_inner_set(p, await function_read(name));
     } else {
+      let ast = await function_parse(name);
       app_code_save_delete_refresh_button_back(root, "function");
       each(["source", "imports"], (item) => {
         html_button_width_full_text_click(root, item, async () => {
