@@ -1,3 +1,4 @@
+import { list_map } from "./list_map.mjs";
 import { js_identifiers } from "./js_identifiers.mjs";
 import { js_declaration_to_params } from "./js_declaration_to_params.mjs";
 import { function_parse } from "./function_parse.mjs";
@@ -180,6 +181,9 @@ export function js_dollar(ast) {
                   let params = js_declaration_to_params(d);
                   let identifiers = js_identifiers(ast_c);
                   let { arguments: args } = init;
+                  list_map(args, (a) =>
+                    object_property_get(object2, "property_name"),
+                  );
                   log({
                     params,
                     identifiers,
