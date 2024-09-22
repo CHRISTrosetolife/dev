@@ -11,6 +11,7 @@ import { list_adder_unique } from "./list_adder_unique.mjs";
 import { function_imports } from "./function_imports.mjs";
 import { object_properties } from "./object_properties.mjs";
 import { list_map_async } from "./list_map_async.mjs";
+import { list_concat } from "./list_concat.mjs";
 export async function function_dependencies(function_name) {
   let map = await function_imports(function_name);
   let externals = list_adder_unique((la) => {
@@ -26,5 +27,6 @@ export async function function_dependencies(function_name) {
   let dependency_names = object_properties(map);
   let ds = await list_map_async(dependency_names, function_declaration);
   let us = list_map(ds, js_unparse);
-  return list_join_newline(us);
+  let c = list_concat(e_code, us);
+  return list_join_newline(c);
 }
