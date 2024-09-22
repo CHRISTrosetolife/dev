@@ -236,11 +236,6 @@ export function js_dollar(ast) {
                     list_insert(s1, index, b);
                   });
                   list_remove_multiple(s1, [next, parent]);
-                  log({
-                    params_names,
-                    args_names,
-                    needs_enhance,
-                  });
                 }
               }
             }
