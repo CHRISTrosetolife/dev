@@ -1,4 +1,4 @@
-import { list_take_but } from "./list_take_but.mjs";
+import { list_take_but_1 } from "./list_take_but_1.mjs";
 import { js_identifier_rename } from "./js_identifier_rename.mjs";
 import { js_return_argument_type } from "./js_return_argument_type.mjs";
 import { list_last } from "./list_last.mjs";
@@ -231,7 +231,7 @@ export function js_dollar(ast) {
                     object_property_get(arg_l, "name"),
                     object_property_get(id, "name"),
                   );
-                  each_reverse(list_take_but(body, 1), (b) => {
+                  each_reverse(list_take_but_1(body), (b) => {
                     list_insert(s1, index, b);
                   });
                   list_remove(s1, parent);
