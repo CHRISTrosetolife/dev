@@ -208,8 +208,9 @@ export function js_dollar(ast) {
                       needs_renaming,
                     ]),
                   );
-                  each_index_only(params_names, (index) => {});
-                  js_identifier_rename(d);
+                  each_index_only(params_names, (index) => {
+                    js_identifier_rename(d);
+                  });
                   log({
                     params,
                     args_names,
