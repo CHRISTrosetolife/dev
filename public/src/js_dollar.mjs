@@ -183,7 +183,7 @@ export function js_dollar(ast) {
                   let args_names = list_map(args, (a) =>
                     object_property_get(a, "name"),
                   );
-                  let identifier_fns = js_identifiers_intersect(
+                  let intersection = js_identifiers_intersect(
                     ast_c,
                     args_names,
                   );
