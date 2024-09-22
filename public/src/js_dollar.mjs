@@ -182,7 +182,7 @@ export function js_dollar(ast) {
       if (equal(remaining, "ex")) {
         await js_dollar_grandparent_next(v, lambda);
         async function lambda(a) {
-          let { next, s1 } = a;
+          let { next, s1, index } = a;
           if (js_node_type_is(next, "VariableDeclaration")) {
             let { declarations } = next;
             if (list_size_1(declarations)) {
