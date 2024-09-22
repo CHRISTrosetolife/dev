@@ -1,3 +1,4 @@
+import { js_dollar_grandparent_next } from "./js_dollar_grandparent_next.mjs";
 import { js_dollar_else } from "./js_dollar_else.mjs";
 import { js_dollar_if_block } from "./js_dollar_if_block.mjs";
 import { js_code_if_false } from "./js_code_if_false.mjs";
@@ -14,7 +15,6 @@ import { log_error } from "./log_error.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { js_block_statement } from "./js_block_statement.mjs";
-import { list_next } from "./list_next.mjs";
 import { list_adder_async } from "./list_adder_async.mjs";
 import { js_code_arrow_block_args_async } from "./js_code_arrow_block_args_async.mjs";
 import { each_async } from "./each_async.mjs";
@@ -255,12 +255,7 @@ export function js_dollar(ast) {
         }
       }
       if (remaining === "i") {
-        let { stack } = v;
-        let s1 = list_get_end_1(stack);
-        if (list_is(s1)) {
-          let next = list_next(s1, parent);
-          lambda(next);
-        }
+        let s1 = js_dollar_grandparent_next(v, lambda);
         function lambda(next) {
           let statement = js_parse_first(js_code_if_false());
           let { consequent } = statement;
