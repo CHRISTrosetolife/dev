@@ -1,9 +1,7 @@
-import { each_index_only } from "./each_index_only.mjs";
-import { list_size_equal } from "./list_size_equal.mjs";
+import { js_identifier_rename_multiple } from "./js_identifier_rename_multiple.mjs";
 import { js_code_brackets } from "./js_code_brackets.mjs";
 import { never } from "./never.mjs";
 import { assert } from "./assert.mjs";
-import { js_identifier_rename } from "./js_identifier_rename.mjs";
 import { js_identifiers_intersect_difference } from "./js_identifiers_intersect_difference.mjs";
 import { js_identifiers_names } from "./js_identifiers_names.mjs";
 import { js_declaration_to_params } from "./js_declaration_to_params.mjs";
@@ -208,14 +206,7 @@ export function js_dollar(ast) {
                       needs_renaming,
                     ]),
                   );
-                  assert(list_size_equal, [params_names, args_names]);
-                  each_index_only(params_names, (index) => {
-                    js_identifier_rename(
-                      d,
-                      list_get(params_names, index),
-                      list_get(args_names, index),
-                    );
-                  });
+                  js_identifier_rename_multiple(params_names, args_names, d);
                   log({
                     params,
                     args_names,
