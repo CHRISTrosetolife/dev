@@ -170,6 +170,8 @@ export function js_dollar(ast) {
               let { init } = d;
               if (js_node_type_is(init, "CallExpression")) {
                 let { callee } = init;
+                if (js_node_type_is(callee, "Identifier")) {
+                }
                 log({
                   init,
                 });
