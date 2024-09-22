@@ -161,9 +161,6 @@ export function js_dollar(ast) {
       if (equal(remaining, "ex")) {
         js_dollar_grandparent_next(v, lambda);
         function lambda(a) {
-          log({
-            a,
-          });
           let { next } = a;
           let { type } = next;
           if (equal(type, "VariableDeclaration")) {
