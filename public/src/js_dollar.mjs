@@ -163,6 +163,8 @@ export function js_dollar(ast) {
             a,
           });
           let { next } = a;
+          if (equal(left, right)) {
+          }
         }
       }
       if (remaining === "eo") {
