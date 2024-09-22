@@ -221,6 +221,7 @@ export function js_dollar(ast) {
                   assert(js_node_type_is, [l, "ReturnStatement"]);
                   assert(js_return_argument_type, [l, "Identifier"]);
                   let node_l = object_property_get(l, "node");
+                  let arg_l = object_property_get(object2, "property_name");
                   each_reverse(body, (b) => {
                     list_insert(s1, index, b);
                   });
