@@ -19,6 +19,7 @@ export function app_list_choose(body) {
     if (last === null) {
       return;
     }
+    log({});
     html_scroll_center(last);
   });
   html_hr(body);
