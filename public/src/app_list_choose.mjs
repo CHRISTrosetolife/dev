@@ -12,7 +12,7 @@ import { storage_local_get } from "./storage_local_get.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 export function app_list_choose(body) {
   html_clear_scroll_top_centered(body);
-  html_button_width_full_text_click();
+  html_button_width_full_text_click(body, "scroll", () => {});
   html_button_width_full_text_click(body, "clear list", () => {
     storage_local_remove(app_list, "list");
     app_list_root(body);
