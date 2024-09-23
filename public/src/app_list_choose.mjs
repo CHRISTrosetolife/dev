@@ -50,7 +50,7 @@ export function app_list_choose(body) {
         html_style_button_default(b);
       }
     });
-    if (false) {
+    if (c) {
       last = b;
     }
   });
