@@ -17,6 +17,7 @@ export function app_list_choose(body) {
   html_button_width_full_text_click(body, "scroll", () => {
     html_scroll_center(last);
   });
+  html_hr(body);
   html_button_width_full_text_click(body, "clear list", () => {
     storage_local_remove(app_list, "list");
     app_list_root(body);
