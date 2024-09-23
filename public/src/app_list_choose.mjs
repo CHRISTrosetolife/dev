@@ -42,7 +42,7 @@ export function app_list_choose(body) {
       });
       let c = chosen[index];
       if (c) {
-        last = c;
+        last = b;
         html_style_success(b);
       } else {
         html_style_button_default(b);
