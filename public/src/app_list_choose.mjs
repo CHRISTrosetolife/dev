@@ -38,7 +38,6 @@ export function app_list_choose(body) {
   });
   each_index(split, (line, index) => {
     let c = chosen[index];
-    last = b;
     let b = html_button_width_full_text_click(body, line, () => {
       chosen[index] = !chosen[index];
       storage_local_set(app_list, "chosen", chosen);
@@ -51,5 +50,8 @@ export function app_list_choose(body) {
         html_style_button_default(b);
       }
     });
+    if (false) {
+      last = b;
+    }
   });
 }
