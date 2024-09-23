@@ -37,15 +37,15 @@ export function app_list_choose(body) {
     chosen,
   });
   each_index(split, (line, index) => {
+    let c = chosen[index];
+    last = b;
     let b = html_button_width_full_text_click(body, line, () => {
       chosen[index] = !chosen[index];
       storage_local_set(app_list, "chosen", chosen);
       log({
         c: storage_local_get(app_list, "chosen"),
       });
-      let c = chosen[index];
-      if (c) {
-        last = b;
+      if (chosen[index]) {
         html_style_success(b);
       } else {
         html_style_button_default(b);
