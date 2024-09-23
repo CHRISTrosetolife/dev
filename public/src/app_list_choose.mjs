@@ -30,6 +30,7 @@ export function app_list_choose(body) {
   let split = storage_local_get(app_list, "list");
   storage_local_initialize(app_list, "chosen", {});
   let chosen = storage_local_get(app_list, "chosen");
+  log({});
   each_index(split, (line, index) => {
     let b = html_button_width_full_text_click(body, line, () => {
       chosen[index] = !chosen[index];
