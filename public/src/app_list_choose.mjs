@@ -52,6 +52,7 @@ export function app_list_choose(body) {
     });
     if (c) {
       last = b;
+      html_style_success(b);
     }
   });
 }
