@@ -36,8 +36,8 @@ export function app_list_choose(body) {
         c: storage_local_get(app_list, "chosen"),
       });
       let c = chosen[index];
-      last = c;
       if (c) {
+        last = c;
         html_style_success(b);
       } else {
         html_style_button_default(b);
