@@ -1,3 +1,4 @@
+import { storage_local_initialize } from "./storage_local_initialize.mjs";
 import { html_scroll_center } from "./html_scroll_center.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { app_list_root } from "./app_list_root.mjs";
@@ -27,6 +28,7 @@ export function app_list_choose(body) {
   });
   html_hr(body);
   let split = storage_local_get(app_list, "list");
+  storage_local_initialize();
   let chosen = storage_local_get(app_list, "chosen");
   each_index(split, (line, index) => {
     let b = html_button_width_full_text_click(body, line, () => {
