@@ -15,6 +15,9 @@ export function app_list_choose(body) {
   html_clear_scroll_top_centered(body);
   let last = null;
   html_button_width_full_text_click(body, "scroll", () => {
+    if (last === null) {
+      return;
+    }
     html_scroll_center(last);
   });
   html_hr(body);
