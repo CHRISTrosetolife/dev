@@ -28,6 +28,7 @@ export function app_list_choose(body) {
         c: storage_local_get(app_list, "chosen"),
       });
       let c = chosen[index];
+      last = c;
       if (c) {
         html_style_success(b);
       } else {
