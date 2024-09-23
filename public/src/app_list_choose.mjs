@@ -27,7 +27,8 @@ export function app_list_choose(body) {
       log({
         c: storage_local_get(app_list, "chosen"),
       });
-      if (chosen[index]) {
+      let c = chosen[index];
+      if (c) {
         html_style_success(b);
       } else {
         html_style_button_default(b);
