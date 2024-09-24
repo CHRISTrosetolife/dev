@@ -40,11 +40,8 @@ export function app_resume() {
         function_name_to_url_github_style_link(
           fn_name("function_transform_args"),
         ),
-        noop,
         function_name_to_url_github_style_link(fn_name("js_parse")),
-        noop,
         function_name_to_url_github_style_link(fn_name("terminal")),
-        noop,
         function_name_to_url_github_style_link(
           fn_name("function_aliases_generate"),
         ),
