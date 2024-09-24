@@ -1,3 +1,4 @@
+import { function_rename } from "./function_rename.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_resume_audio_bible } from "./app_resume_audio_bible.mjs";
 import { function_name_to_url_github } from "./function_name_to_url_github.mjs";
@@ -38,6 +39,7 @@ export function app_resume() {
     ],
     string_combine_multiple([
       'Transforms source code files through its abstract syntax tree. Includes a `terminal` for running functions, `aliases` for running commonly used functions and `$-prefixed "macros"` that transform code `when a file is saved`. For example r is an alias for `',
+      function_rename.name,
       "` that renames a function across all files, including fixing all references.",
     ]),
   );
