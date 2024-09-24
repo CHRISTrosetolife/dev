@@ -1,3 +1,4 @@
+import { fn_name } from "./fn_name.mjs";
 import { function_rename_alias } from "./function_rename_alias.mjs";
 import { function_rename } from "./function_rename.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -17,7 +18,6 @@ import { html_style_centered } from "./html_style_centered.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_p } from "./html_p.mjs";
-let f = fn_name("app_memorize_keyboard");
 export function app_resume() {
   let root = html_style_default_initialize();
   app_resume_header(root, "JARED MATHIS");
@@ -66,6 +66,7 @@ export function app_resume() {
   app_resume_audio_bible(root);
   let memorize = app_resume_header_3(root, "Memorize Bible");
   html_style_link("memorize.html")(memorize);
+  let f = fn_name("app_memorize_keyboard");
   html_cycle_p(
     root,
     [noop, html_style_link(function_name_to_url_github(f)), noop],
