@@ -35,8 +35,9 @@ export function app_resume() {
   html_cycle_p(
     root,
     [
-      noop,
-      function_name_to_url_github_style_link(fn_name("app_memorize_keyboard")),
+      function_name_to_url_github_style_link(
+        fn_name("function_transform_args"),
+      ),
       noop,
     ],
     string_combine_multiple([
