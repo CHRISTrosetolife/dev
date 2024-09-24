@@ -109,7 +109,7 @@ export async function function_aliases_generate() {
   alias_add(function_param_move_beginning, ["pb"]);
   alias_add(function_param_move_first, ["pf"]);
   alias_add(function_param_move, ["pm"]);
-  alias_add(function_rename, ["r"]);
+  alias_add(function_rename, [function_rename_alias()]);
   alias_add(computer_restart, ["re"]);
   alias_add(function_search, ["s"]);
   alias_add(sandbox, ["sb"]);
@@ -133,3 +133,7 @@ export async function function_aliases_generate() {
     file_overwrite,
   );
 }
+function function_rename_alias() {
+    return "r";
+}
+
