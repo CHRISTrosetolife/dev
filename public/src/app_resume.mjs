@@ -51,7 +51,7 @@ export function app_resume() {
       noop,
     ),
     string_combine_multiple([
-      'Transforms` source code files through its `abstract syntax tree`. Includes a `terminal` for running functions, `aliases` for running commonly used functions and `$-prefixed "macros"` that transform code `when a file is saved`. For example ',
+      '`Transforms` source code files through its `abstract syntax tree`. Includes a `terminal` for running functions, `aliases` for running commonly used functions and `$-prefixed "macros"` that transform code `when a file is saved`. For example ',
       function_rename_alias(),
       " is an alias for `",
       fn_name("function_rename"),
