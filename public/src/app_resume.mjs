@@ -67,10 +67,13 @@ export function app_resume() {
   app_resume_audio_bible(root);
   let memorize = app_resume_header_3(root, "Memorize Bible");
   html_style_link("memorize.html")(memorize);
-  let f = fn_name("app_memorize_keyboard");
   html_cycle_p(
     root,
-    [noop, function_name_to_url_github_style_link(f), noop],
+    [
+      noop,
+      function_name_to_url_github_style_link(fn_name("app_memorize_keyboard")),
+      noop,
+    ],
     "Allows user to memorize a chapter of the bible; user types first letter of each word on physical or `onscreen keyboard`; words are gradually removed until user is reciting from memory; user can choose to memorize chapters from multiple versions of the Bible",
   );
   let game = app_resume_header_3(root, "Game");
