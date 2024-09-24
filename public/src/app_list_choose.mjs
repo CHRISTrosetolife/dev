@@ -7,8 +7,6 @@ import { storage_local_remove } from "./storage_local_remove.mjs";
 import { log } from "./log.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { each_index } from "./each_index.mjs";
-import { html_style_button_default } from "./html_style_button_default.mjs";
-import { html_style_success } from "./html_style_success.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { app_list } from "./app_list.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
@@ -43,11 +41,7 @@ export function app_list_choose(body) {
       log({
         c: storage_local_get(app_list, "chosen"),
       });
-      if (chosen[index]) {
-        html_style_success(b);
-      } else {
-        html_style_button_default(b);
-      }
+      last = app_list_choice_update(index, b, last);
     });
     last = app_list_choice_update(index, b, last);
   });
