@@ -1,3 +1,4 @@
+import { function_rename_alias } from "./function_rename_alias.mjs";
 import { hub } from "./hub.mjs";
 import { bible_audio_player_book } from "./bible_audio_player_book.mjs";
 import { sermon_new } from "./sermon_new.mjs";
@@ -133,7 +134,3 @@ export async function function_aliases_generate() {
     file_overwrite,
   );
 }
-function function_rename_alias() {
-    return "r";
-}
-
