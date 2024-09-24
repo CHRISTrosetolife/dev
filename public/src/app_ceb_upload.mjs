@@ -78,35 +78,35 @@ export async function app_ceb_upload() {
         if (audio_only) {
           return;
         }
-      }
-      let words = list_adder_unique((la) =>
-        each(group, (a) =>
-          each(a, (pair) => {
-            la(list_first(pair));
-          }),
-        ),
-      );
-      let definitions = {};
-      each(words, (w) => {
-        let ds = object_property_get(profile.definitions, w);
-        object_property_set(definitions, w, ds);
-      });
-      let inverted = object_list_invert(definitions);
-      let result_new = {
-        group,
-        definitions,
-        inverted,
-      };
-      if (group_upload) {
-        let existing_path = await app_language_group_upload(
-          profile,
-          group_index,
-          result_new,
+        let words = list_adder_unique((la) =>
+          each(group, (a) =>
+            each(a, (pair) => {
+              la(list_first(pair));
+            }),
+          ),
         );
-        if (group_local_compare_to_new) {
-          let existing = await file_read_json(existing_path);
-          assert(equal_json, [result_new, existing]);
-          return group;
+        let definitions = {};
+        each(words, (w) => {
+          let ds = object_property_get(profile.definitions, w);
+          object_property_set(definitions, w, ds);
+        });
+        let inverted = object_list_invert(definitions);
+        let result_new = {
+          group,
+          definitions,
+          inverted,
+        };
+        if (group_upload) {
+          let existing_path = await app_language_group_upload(
+            profile,
+            group_index,
+            result_new,
+          );
+          if (group_local_compare_to_new) {
+            let existing = await file_read_json(existing_path);
+            assert(equal_json, [result_new, existing]);
+            return group;
+          }
         }
       }
     });
