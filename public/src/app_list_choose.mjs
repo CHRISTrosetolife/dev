@@ -32,7 +32,6 @@ export function app_list_choose(body) {
   html_hr(body);
   let split = storage_local_get(app_list, "list");
   storage_local_initialize(app_list, "chosen", {});
-  let chosen = storage_local_get(app_list, "chosen");
   log({
     chosen,
   });
@@ -49,12 +48,17 @@ export function app_list_choose(body) {
         html_style_button_default(b);
       }
     });
-    let c = chosen[index];
-    if (c) {
-      last = b;
-      html_style_success(b);
-    } else {
-      html_style_button_default(b);
-    }
+    last = app_list_choice_update(index,  b, last);
   });
 }
+function app_list_choice_update(index, button, last) {
+    let chosen = storage_local_get(app_list, "chosen");
+    if (chosen[index]) {
+        last = button;
+        html_style_success(button);
+    } else {
+        html_style_button_default(button);
+    }
+    return last;
+}
+
