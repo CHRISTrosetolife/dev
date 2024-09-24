@@ -86,7 +86,6 @@ export function app_resume() {
     ],
     "Allows user to memorize a chapter of the bible; user types first letter of each word on physical or `onscreen keyboard`; words are gradually removed until user is reciting from memory; user can choose to memorize chapters from multiple versions of the Bible",
   );
-  html_cycle_p(root, [noop], "");
   app_resume_header_2(root, "Skills");
   app_resume_header_2(root, "Professional Experience");
   app_resume_header_2(root, "Education");
