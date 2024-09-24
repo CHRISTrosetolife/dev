@@ -1,3 +1,4 @@
+import { list_map } from "./list_map.mjs";
 import { list_between } from "./list_between.mjs";
 import { function_name_to_url_github_style_link } from "./function_name_to_url_github_style_link.mjs";
 import { fn_name } from "./fn_name.mjs";
@@ -36,16 +37,15 @@ export function app_resume() {
   html_cycle_p(
     root,
     list_between(
-      [
-        function_name_to_url_github_style_link(
+      list_map(
+        [
           fn_name("function_transform_args"),
-        ),
-        function_name_to_url_github_style_link(fn_name("js_parse")),
-        function_name_to_url_github_style_link(fn_name("terminal")),
-        function_name_to_url_github_style_link(
+          fn_name("js_parse"),
+          fn_name("terminal"),
           fn_name("function_aliases_generate"),
-        ),
-      ],
+        ],
+        function_name_to_url_github_style_link,
+      ),
       noop,
     ),
     string_combine_multiple([
