@@ -1,3 +1,4 @@
+import { function_name_to_url_github_style_link } from "./function_name_to_url_github_style_link.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { function_rename_alias } from "./function_rename_alias.mjs";
 import { function_rename } from "./function_rename.mjs";
@@ -69,7 +70,7 @@ export function app_resume() {
   let f = fn_name("app_memorize_keyboard");
   html_cycle_p(
     root,
-    [noop, html_style_link(function_name_to_url_github(f)), noop],
+    [noop, function_name_to_url_github_style_link(f), noop],
     "Allows user to memorize a chapter of the bible; user types first letter of each word on physical or `onscreen keyboard`; words are gradually removed until user is reciting from memory; user can choose to memorize chapters from multiple versions of the Bible",
   );
   let game = app_resume_header_3(root, "Game");
