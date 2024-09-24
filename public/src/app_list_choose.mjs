@@ -1,3 +1,4 @@
+import { app_list_choice_update } from "./app_list_choice_update.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
 import { html_scroll_center } from "./html_scroll_center.mjs";
 import { html_hr } from "./html_hr.mjs";
@@ -48,17 +49,6 @@ export function app_list_choose(body) {
         html_style_button_default(b);
       }
     });
-    last = app_list_choice_update(index,  b, last);
+    last = app_list_choice_update(index, b, last);
   });
 }
-function app_list_choice_update(index, button, last) {
-    let chosen = storage_local_get(app_list, "chosen");
-    if (chosen[index]) {
-        last = button;
-        html_style_success(button);
-    } else {
-        html_style_button_default(button);
-    }
-    return last;
-}
-
