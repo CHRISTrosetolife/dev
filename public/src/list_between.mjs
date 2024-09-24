@@ -4,4 +4,5 @@ export function list_between(list, b) {
   each_index_only_reverse(list, (index) => {
     list_insert(list, index, b);
   });
+  return list;
 }
