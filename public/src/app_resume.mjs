@@ -4,7 +4,6 @@ import { function_rename_alias } from "./function_rename_alias.mjs";
 import { function_rename } from "./function_rename.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_resume_audio_bible } from "./app_resume_audio_bible.mjs";
-import { function_name_to_url_github } from "./function_name_to_url_github.mjs";
 import { noop } from "./noop.mjs";
 import { html_cycle_p } from "./html_cycle_p.mjs";
 import { html_style_link } from "./html_style_link.mjs";
@@ -37,7 +36,7 @@ export function app_resume() {
     root,
     [
       noop,
-      html_style_link(function_name_to_url_github("app_memorize_keyboard")),
+      function_name_to_url_github_style_link(fn_name("app_memorize_keyboard")),
       noop,
     ],
     string_combine_multiple([
