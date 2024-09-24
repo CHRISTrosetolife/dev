@@ -42,7 +42,7 @@ export function app_resume() {
   html_cycle_p(
     root,
     [noop],
-    "Computes most frequent words in English and Cebuano Bibles; user is presented Cebuano words and their English translations; then user chooses English translations for each Cebuano word; then user chooses Cebuano word for each English translation; then user review new and old words until 96 words are learned; then user chooses the next group of 96 words to study, beginning with the first 6 words",
+    "Computes most frequent words in English and Cebuano Bibles; user is presented Cebuano words and their English translations; then user chooses English translations for each Cebuano word; then user chooses Cebuano word for each English translation; then user review new and old words until 96 words are learned; then user chooses the next group of 96 words to study, beginning with the first 6 words; when quizzing user chooses between choosing an entire word at once or 1, 2 or 3 letters at a time",
   );
   app_resume_audio_bible(root);
   let memorize = app_resume_header_3(root, "Memorize Bible");
