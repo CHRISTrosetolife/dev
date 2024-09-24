@@ -3,7 +3,6 @@ import { list_between } from "./list_between.mjs";
 import { function_name_to_url_github_style_link } from "./function_name_to_url_github_style_link.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { function_rename_alias } from "./function_rename_alias.mjs";
-import { function_rename } from "./function_rename.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_resume_audio_bible } from "./app_resume_audio_bible.mjs";
 import { noop } from "./noop.mjs";
@@ -45,6 +44,7 @@ export function app_resume() {
           fn_name("function_aliases_generate"),
           fn_name("js_dollar"),
           fn_name("watch"),
+          fn_name("function_rename"),
         ],
         function_name_to_url_github_style_link,
       ),
@@ -54,7 +54,7 @@ export function app_resume() {
       'Transforms` source code files through its `abstract syntax tree`. Includes a `terminal` for running functions, `aliases` for running commonly used functions and `$-prefixed "macros"` that transform code `when a file is saved`. For example ',
       function_rename_alias(),
       " is an alias for `",
-      function_rename.name,
+      fn_name("function_rename"),
       "` that renames a function across all files, including fixing all JavaScript imports.",
     ]),
   );
