@@ -43,6 +43,8 @@ export function app_resume() {
           fn_name("js_parse"),
           fn_name("terminal"),
           fn_name("function_aliases_generate"),
+          fn_name("js_dollar"),
+          fn_name("watch"),
         ],
         function_name_to_url_github_style_link,
       ),
