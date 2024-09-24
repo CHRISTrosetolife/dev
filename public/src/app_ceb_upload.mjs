@@ -1,3 +1,4 @@
+import { list_take } from "./list_take.mjs";
 import { ceb_bible_words_definitions_atoms_cache } from "./ceb_bible_words_definitions_atoms_cache.mjs";
 import { list_any_created } from "./list_any_created.mjs";
 import { list_map_async } from "./list_map_async.mjs";
@@ -106,6 +107,7 @@ export async function app_ceb_upload() {
         }
       }
     });
+    groups = list_take(groups, 4);
     await app_language_group_upload(profile, "index", {
       groups: list_map(groups, (g) => ({
         first: list_first_nested(g),
