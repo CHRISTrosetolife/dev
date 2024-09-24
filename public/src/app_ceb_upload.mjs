@@ -75,9 +75,9 @@ export async function app_ceb_upload() {
             }
           });
         }
-      }
-      if (audio_only) {
-        return;
+        if (audio_only) {
+          return;
+        }
       }
       let words = list_adder_unique((la) =>
         each(group, (a) =>
