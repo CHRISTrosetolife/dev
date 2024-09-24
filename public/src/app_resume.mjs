@@ -84,7 +84,7 @@ export function app_resume() {
       function_name_to_url_github_style_link(fn_name("app_memorize_keyboard")),
       noop,
     ],
-    "Allows user to memorize a chapter of the bible; user types first letter of each word on physical or `onscreen keyboard`; words are gradually removed until user is reciting from memory; user can choose to memorize chapters from multiple versions of the Bible",
+    "Allows user to memorize a chapter of the Bible; user types first letter of each word on physical or `onscreen keyboard`; words are gradually removed until user is reciting from memory; user can choose to memorize chapters from multiple versions of the Bible",
   );
   app_resume_header_2(root, "Skills");
   app_resume_header_2(root, "Professional Experience");
