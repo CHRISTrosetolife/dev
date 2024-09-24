@@ -37,7 +37,6 @@ export function app_list_choose(body) {
     chosen,
   });
   each_index(split, (line, index) => {
-    let c = chosen[index];
     let b = html_button_width_full_text_click(body, line, () => {
       chosen[index] = !chosen[index];
       storage_local_set(app_list, "chosen", chosen);
@@ -50,6 +49,7 @@ export function app_list_choose(body) {
         html_style_button_default(b);
       }
     });
+    let c = chosen[index];
     if (c) {
       last = b;
       html_style_success(b);
