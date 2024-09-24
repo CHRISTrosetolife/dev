@@ -39,6 +39,7 @@ export function app_resume() {
         fn_name("function_transform_args"),
       ),
       noop,
+      function_name_to_url_github_style_link(fn_name("js_parse")),
     ],
     string_combine_multiple([
       'Transforms` source code files through its `abstract syntax tree`. Includes a `terminal` for running functions, `aliases` for running commonly used functions and `$-prefixed "macros"` that transform code `when a file is saved`. For example ',
