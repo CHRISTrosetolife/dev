@@ -28,7 +28,6 @@ export function app_resume() {
   html_email(row, "JESUSrosetolife@protonmail.com");
   app_resume_header_2(root, "Projects");
   let dev = app_resume_header_3(root, "Development Tools");
-  ("Transforms source code files through its abstract syntax tree. Includes a terminal for running functions, aliases for running commonly used commands and $-prefixed macros that transform code when a file is saved. For example r is an alias for function_rename that renames a function across all files, including fixing all references.");
   html_cycle_p(
     root,
     [
@@ -36,7 +35,7 @@ export function app_resume() {
       html_style_link(function_name_to_url_github("app_memorize_keyboard")),
       noop,
     ],
-    "Allows user to memorize a chapter of the bible; user types first letter of each word on physical or `onscreen keyboard`; words are gradually removed until user is reciting from memory; user can choose to memorize chapters from multiple versions of the Bible",
+    "Transforms source code files through its abstract syntax tree. Includes a terminal for running functions, aliases for running commonly used commands and $-prefixed macros that transform code when a file is saved. For example r is an alias for function_rename that renames a function across all files, including fixing all references.",
   );
   html_style_link("dev.html")(dev);
   html_cycle_p(root, [noop], "");
