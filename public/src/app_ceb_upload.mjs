@@ -58,55 +58,56 @@ export async function app_ceb_upload() {
           }
         });
       });
-      if (false) {
-        if (audio_upload_run) {
-          await each_async(list_chunk(group, 20), async (chunk) => {
-            let mapped = list_map(chunk, async (atom) => {
-              let createds = await list_map_async(atom, async (pair) => {
-                let b = list_first(pair);
-                let r = await audio_upload(profile.from, b);
-                return r;
-              });
-              return list_any_created(createds);
+      if (index_only) {
+        return;
+      }
+      if (audio_upload_run) {
+        await each_async(list_chunk(group, 20), async (chunk) => {
+          let mapped = list_map(chunk, async (atom) => {
+            let createds = await list_map_async(atom, async (pair) => {
+              let b = list_first(pair);
+              let r = await audio_upload(profile.from, b);
+              return r;
             });
-            let createds = await promise_all(mapped);
-            if (object_property_get(list_any_created(createds), "created")) {
-              log("chunk finished");
-            }
+            return list_any_created(createds);
           });
-        }
-        if (audio_only) {
-          return;
-        }
-        let words = list_adder_unique((la) =>
-          each(group, (a) =>
-            each(a, (pair) => {
-              la(list_first(pair));
-            }),
-          ),
-        );
-        let definitions = {};
-        each(words, (w) => {
-          let ds = object_property_get(profile.definitions, w);
-          object_property_set(definitions, w, ds);
-        });
-        let inverted = object_list_invert(definitions);
-        let result_new = {
-          group,
-          definitions,
-          inverted,
-        };
-        if (group_upload) {
-          let existing_path = await app_language_group_upload(
-            profile,
-            group_index,
-            result_new,
-          );
-          if (group_local_compare_to_new) {
-            let existing = await file_read_json(existing_path);
-            assert(equal_json, [result_new, existing]);
-            return group;
+          let createds = await promise_all(mapped);
+          if (object_property_get(list_any_created(createds), "created")) {
+            log("chunk finished");
           }
+        });
+      }
+      if (audio_only) {
+        return;
+      }
+      let words = list_adder_unique((la) =>
+        each(group, (a) =>
+          each(a, (pair) => {
+            la(list_first(pair));
+          }),
+        ),
+      );
+      let definitions = {};
+      each(words, (w) => {
+        let ds = object_property_get(profile.definitions, w);
+        object_property_set(definitions, w, ds);
+      });
+      let inverted = object_list_invert(definitions);
+      let result_new = {
+        group,
+        definitions,
+        inverted,
+      };
+      if (group_upload) {
+        let existing_path = await app_language_group_upload(
+          profile,
+          group_index,
+          result_new,
+        );
+        if (group_local_compare_to_new) {
+          let existing = await file_read_json(existing_path);
+          assert(equal_json, [result_new, existing]);
+          return group;
         }
       }
     });
