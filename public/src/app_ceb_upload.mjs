@@ -28,7 +28,7 @@ export async function app_ceb_upload() {
   let to = "en";
   let audio_only = false;
   let audio_upload_run = true;
-  let index_only = false;
+  let index_only = true;
   let group_upload = false;
   let group_local_compare_to_new = false;
   let group_count = app_language_group_size();
