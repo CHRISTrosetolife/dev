@@ -43,7 +43,7 @@ export function app_resume() {
       function_rename_alias(),
       " is an alias for `",
       function_rename.name,
-      "` that renames a function across all files, including fixing all imports.",
+      "` that renames a function across all files, including fixing all JavaScript imports.",
     ]),
   );
   html_style_link("dev.html")(dev);
