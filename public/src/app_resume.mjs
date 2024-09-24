@@ -1,6 +1,5 @@
-import { list_concat } from "./list_concat.mjs";
+import { list_between_after } from "./list_between_after.mjs";
 import { list_map } from "./list_map.mjs";
-import { list_between } from "./list_between.mjs";
 import { function_name_to_url_github_style_link } from "./function_name_to_url_github_style_link.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { function_rename_alias } from "./function_rename_alias.mjs";
@@ -36,21 +35,18 @@ export function app_resume() {
   let dev = app_resume_header_3(root, "Development Tools");
   html_cycle_p(
     root,
-    list_concat(
-      list_between(
-        list_map(
-          [
-            fn_name("function_transform_args"),
-            fn_name("js_parse"),
-            fn_name("terminal"),
-            fn_name("function_aliases_generate"),
-            fn_name("js_dollar"),
-            fn_name("watch"),
-            fn_name("function_rename"),
-          ],
-          function_name_to_url_github_style_link,
-        ),
-        noop,
+    list_between_after(
+      list_map(
+        [
+          fn_name("function_transform_args"),
+          fn_name("js_parse"),
+          fn_name("terminal"),
+          fn_name("function_aliases_generate"),
+          fn_name("js_dollar"),
+          fn_name("watch"),
+          fn_name("function_rename"),
+        ],
+        function_name_to_url_github_style_link,
       ),
       noop,
     ),
