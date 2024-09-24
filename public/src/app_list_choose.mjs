@@ -30,7 +30,7 @@ export function app_list_choose(body) {
   });
   html_hr(body);
   let split = storage_local_get(app_list, "list");
-  storage_local_initialize(app_list, "chosen", {});
+  let chosen = storage_local_initialize(app_list, "chosen", {});
   log({
     chosen,
   });
