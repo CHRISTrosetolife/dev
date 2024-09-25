@@ -93,6 +93,6 @@ export function app_resume() {
     "JavaScript; Automation; Parsing and transforming code (writing code that writes code); Front-end programming; Back-end programming; Adapting; Communication; Working with difficult people",
   );
   app_resume_header_2(root, "Professional Experience");
-  html_p_text(root, "C#, AngularJS, EntityFramework, T-SQL");
+  html_p_text(root, "C#/.NET, AngularJS, EntityFramework, T-SQL");
   app_resume_header_2(root, "Education");
 }
