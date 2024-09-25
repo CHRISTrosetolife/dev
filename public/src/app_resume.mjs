@@ -1,3 +1,4 @@
+import { html_p_text } from "./html_p_text.mjs";
 import { list_between_after } from "./list_between_after.mjs";
 import { list_map } from "./list_map.mjs";
 import { function_name_to_url_github_style_link } from "./function_name_to_url_github_style_link.mjs";
@@ -87,6 +88,7 @@ export function app_resume() {
     "Allows user to memorize a chapter of the Bible; User types first letter of each word on physical or `onscreen keyboard`; words are gradually removed until user is reciting from memory; user can choose to memorize chapters from multiple versions of the Bible",
   );
   app_resume_header_2(root, "Skills");
+  html_p_text(root, "JavaScript");
   app_resume_header_2(root, "Professional Experience");
   app_resume_header_2(root, "Education");
 }
