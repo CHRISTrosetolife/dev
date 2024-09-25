@@ -98,17 +98,17 @@ export function app_resume() {
   app_resume_header_3(root, "Contractor");
   html_p_text(
     root,
-    "~2022: Programmer; Created debt collections software. Used JavaScript, C#, AngularJS and T-SQL",
+    "~2022: Programmer; Created debt collections software; Used JavaScript, C#, AngularJS and T-SQL",
   );
   app_resume_header_3(root, "Greenshades");
   html_p_text(
     root,
-    "~2020: Software Developer; Created tax software. Used C#/.NET, T-SQL",
+    "~2020: Software Developer; Created tax software; Used C#/.NET, T-SQL",
   );
   app_resume_header_3(root, "RF-SMART/ICS");
   html_p_text(
     root,
-    "~2017 - ~2019: Senior Software Engineer; Created warehouse software. Used C#/.NET, React, Knockout, EntityFramework, MySQL",
+    "~2017 - ~2019: Senior Software Engineer; Created warehouse software; Used C#/.NET, React, Knockout, EntityFramework, MySQL",
   );
   app_resume_header_3(
     root,
@@ -116,7 +116,7 @@ export function app_resume() {
   );
   html_p_text(
     root,
-    "~2009 - ~2017: From Intern to Team Lead, Senior Software Engineer; Created debt collections software. Used C#/.NET, AngularJS, EntityFramework, T-SQL and IIS",
+    "~2009 - ~2017: From Intern to Team Lead, Senior Software Engineer; Created debt collections software; Used C#/.NET, AngularJS, EntityFramework, T-SQL and IIS",
   );
   app_resume_header_2(root, "Education");
   app_resume_header_3(root, "University of North Florida");
