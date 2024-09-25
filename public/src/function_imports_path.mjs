@@ -1,3 +1,4 @@
+import { list_take } from "./list_take.mjs";
 import { log } from "./log.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { graph_path_shortest_directed } from "./graph_path_shortest_directed.mjs";
@@ -17,9 +18,7 @@ export async function function_imports_path(name_from, name_to) {
       each(list_concat_multiple([sources, imports, [function_name]]), la);
     });
   });
-  log({
-    vertices,
-  });
+  log(list_take(vertices, 10));
   return graph_path_shortest_directed(
     vertices,
     (u, v) => {
