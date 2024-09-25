@@ -61,7 +61,7 @@ export function app_resume() {
       noop,
     ),
     string_combine_multiple([
-      'Transforms` source code files through its `abstract syntax tree`. Includes a `terminal` for running functions, `aliases` for running commonly used functions and `$-prefixed "macros"` that transform code `when a file is saved`. For example ',
+      'Transforms` source code files through its `abstract syntax tree`; Includes a `terminal` for running functions, `aliases` for running commonly used functions and `$-prefixed "macros"` that transform code `when a file is saved`; For example: ',
       function_rename_alias(),
       " is an alias for `",
       fn_name("function_rename"),
@@ -75,7 +75,7 @@ export function app_resume() {
   html_cycle_p(
     root,
     [noop],
-    "User is presented with JavaScript programming concepts; for each concept: user is presented with randomly generated source code and output examples; then user chooses correct output given randomly generated source code; user chooses correct source code given a randomly generated output",
+    "User is presented with JavaScript programming concepts; For each concept: user is presented with randomly generated source code and output examples; then user chooses correct output given randomly generated source code; user chooses correct source code given a randomly generated output",
   );
   let ceb = app_resume_header_3(root, "Learn Cebuano Language");
   html_style_link("ceb.html")(ceb);
