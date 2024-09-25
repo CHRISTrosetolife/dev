@@ -65,7 +65,7 @@ export function app_resume() {
       function_rename_alias(),
       " is an alias for `",
       fn_name("function_rename"),
-      "` that renames a function across all files, including fixing all JavaScript imports.",
+      "` that renames a function across all files, including fixing all JavaScript imports",
     ]),
   );
   html_style_link("dev.html")(dev);
