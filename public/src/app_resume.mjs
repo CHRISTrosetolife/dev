@@ -118,5 +118,8 @@ export function app_resume() {
   );
   app_resume_header_2(root, "Education");
   app_resume_header_3(root, "University of North Florida");
-  html_p_text(root, "Bachelor of Science in Computer Science ~2013");
+  html_p_text(
+    root,
+    "Bachelor of Science in Computer Science ~2013; Computer Science Student of the Year Award",
+  );
 }
