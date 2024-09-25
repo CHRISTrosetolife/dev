@@ -17,6 +17,9 @@ export async function function_imports_path(name_from, name_to) {
       each(list_concat_multiple([sources, imports, [function_name]]), la);
     });
   });
+  log({
+    vertices,
+  });
   return graph_path_shortest_directed(
     vertices,
     (u, v) => {
