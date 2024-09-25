@@ -94,7 +94,7 @@ export function app_resume() {
       function_name_to_url_github_style_link(fn_name("app_memorize_keyboard")),
       noop,
     ],
-    "Allows user to memorize a chapter of the Bible; User types first letter of each word on physical or `onscreen keyboard`; Words are gradually removed until user is reciting completely from memory; user can choose to memorize chapters from multiple versions of the Bible",
+    "Allows user to memorize a chapter of the Bible; User types first letter of each word on physical or `onscreen keyboard`; Words are gradually removed until user is reciting completely from memory; User can choose to memorize chapters from multiple versions of the Bible",
   );
   app_resume_header_2(root, "Skills");
   html_p_text(
@@ -105,12 +105,12 @@ export function app_resume() {
   app_resume_header_3(root, "Contractor");
   html_p_text(
     root,
-    "~2022: Programmer; Created debt collections software; Used JavaScript, C#, AngularJS and T-SQL",
+    "~2022: Programmer; Created debt collections software; Used JavaScript, C#/.NET, AngularJS and T-SQL",
   );
   app_resume_header_3(root, "Greenshades");
   html_p_text(
     root,
-    "~2020: Software Developer; Created tax software; Used C#/.NET, T-SQL",
+    "~2020: Software Developer; Created tax software; Used C#/.NET and T-SQL",
   );
   app_resume_header_3(root, "RF-SMART/ICS");
   html_p_text(
