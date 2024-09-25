@@ -11,15 +11,19 @@ import { multiply } from "./multiply.mjs";
 export function app_resume_header(root, header) {
   let h = html_p_text(root, header);
   let multiplier = 1.5;
-  let d = object_property_get(
-    html_style_default(),
-    html_style_font_size_property(),
-  );
-  let p = html_style_numeric_parse(d);
-  let { value } = p;
-  let size_new = multiply(value, multiplier);
-  html_style_font_size(h, size_new);
+  html_style_font_size_default_multiplied(multiplier, h);
   html_style_bold(h);
   html_style_centered(h);
   html_style_default_font_size_value();
 }
+function html_style_font_size_default_multiplied(multiplier, h) {
+    let d = object_property_get(
+        html_style_default(),
+        html_style_font_size_property()
+    );
+    let p = html_style_numeric_parse(d);
+    let { value } = p;
+    let size_new = multiply(value, multiplier);
+    html_style_font_size(h, size_new);
+}
+
