@@ -1,5 +1,4 @@
 import { each } from "./each.mjs";
-import { log } from "./log.mjs";
 import { list_index } from "./list_index.mjs";
 import { graph_path_shortest_neighbors } from "./graph_path_shortest_neighbors.mjs";
 import { list_adder } from "./list_adder.mjs";
@@ -21,11 +20,6 @@ export function graph_path_shortest_generic(
   );
   let neighbors_get = (v) => {
     let neighbors = neighbors_lambda(edges, v);
-    log({
-      v,
-      neighbors,
-      neighbors_lambda,
-    });
     return neighbors;
   };
   return graph_path_shortest_neighbors(
