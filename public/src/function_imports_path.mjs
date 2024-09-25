@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { graph_path_shortest_directed } from "./graph_path_shortest_directed.mjs";
 import { list_any } from "./list_any.mjs";
@@ -10,6 +11,7 @@ import { function_imports } from "./function_imports.mjs";
 import { list_includes } from "./list_includes.mjs";
 export async function function_imports_path(name_from, name_to) {
   let map = await function_imports(name_from);
+  log({});
   let vertices = list_adder_unique((la) => {
     each_object(map, (function_name, mapped) => {
       let { sources, imports } = mapped;
