@@ -1,3 +1,4 @@
+import { fn_name } from "./fn_name.mjs";
 import { js_node_is } from "./js_node_is.mjs";
 import { list_previous } from "./list_previous.mjs";
 import { list_next } from "./list_next.mjs";
@@ -34,7 +35,6 @@ import { js_function_property_name } from "./js_function_property_name.mjs";
 import { js_code_dot } from "./js_code_dot.mjs";
 import { js_declaration_to_name } from "./js_declaration_to_name.mjs";
 import { js_declaration_single } from "./js_declaration_single.mjs";
-import { log_error } from "./log_error.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { js_block_statement } from "./js_block_statement.mjs";
@@ -296,7 +296,7 @@ export function js_dollar(ast) {
       }
       if (remaining === "le") {
         let e = js_parse_expression(
-          js_code_call_args(log_error.name, [js_code_braces()]),
+          js_code_call_args(fn_name("log_error"), [js_code_braces()]),
         );
         object_replace(node, e);
       }
