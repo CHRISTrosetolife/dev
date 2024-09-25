@@ -13,9 +13,6 @@ export function graph_path_shortest_generic(
   let edges = list_adder((la) =>
     each_index(vertices, (a, ai) =>
       each_index(vertices, (b, bi) => {
-        if (bi <= ai) {
-          return;
-        }
         if (edge_lambda(a, b)) {
           la([a, b]);
         }
