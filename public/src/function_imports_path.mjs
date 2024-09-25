@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { graph_path_shortest_directed } from "./graph_path_shortest_directed.mjs";
 import { list_any } from "./list_any.mjs";
@@ -24,11 +23,6 @@ export async function function_imports_path(name_from, name_to) {
         return false;
       }
       let mapped = object_property_get(map, u);
-      log({
-        u,
-        v,
-        mapped,
-      });
       let { sources, imports } = mapped;
       let result = list_any([sources, imports], (i) => list_includes(i, v));
       return result;
