@@ -23,7 +23,7 @@ import { html_span_text } from "./html_span_text.mjs";
 import { html_p } from "./html_p.mjs";
 export function app_resume() {
   let root = html_style_default_initialize();
-  html_style_default_font_size(1);
+  html_style_default_font_size(1.2);
   app_resume_header(root, "JARED MATHIS");
   let row = html_p(root);
   html_style_centered(row);
