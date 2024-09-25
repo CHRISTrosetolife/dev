@@ -26,7 +26,7 @@ import { html_span_text } from "./html_span_text.mjs";
 import { html_p } from "./html_p.mjs";
 export function app_resume() {
   let root = html_style_default_initialize();
-  let print = true;
+  let print = false;
   if (print) {
     html_style_default_font_size(1.2);
     html_style_default_a_merge({
