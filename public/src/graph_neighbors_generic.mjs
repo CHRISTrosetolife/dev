@@ -7,6 +7,7 @@ export function graph_neighbors_generic(lambda_filter, edges, v) {
   let filtered = list_filter(edges, lambda_filter);
   log({
     edges,
+    v,
   });
   let mapped = list_map(filtered, (f) => list_without(f, v));
   let mapped2 = list_map(mapped, list_single);
