@@ -20,9 +20,6 @@ export async function function_imports_path(name_from, name_to) {
   return graph_path_shortest_directed(
     vertices,
     (u, v) => {
-      log({
-        u,
-      });
       if (!object_property_exists(map, u)) {
         return false;
       }
