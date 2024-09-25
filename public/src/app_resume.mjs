@@ -1,3 +1,4 @@
+import { html_style_default_a_merge } from "./html_style_default_a_merge.mjs";
 import { html_style_text_decoration_property } from "./html_style_text_decoration_property.mjs";
 import { html_style_default_font_size } from "./html_style_default_font_size.mjs";
 import { html_p_text } from "./html_p_text.mjs";
@@ -25,7 +26,9 @@ import { html_p } from "./html_p.mjs";
 export function app_resume() {
   let root = html_style_default_initialize();
   html_style_default_font_size(1.22);
-  html_style_text_decoration_property();
+  html_style_default_a_merge({
+    [html_style_text_decoration_property()]: "none",
+  });
   app_resume_header(root, "JARED MATHIS");
   let row = html_p(root);
   html_style_centered(row);
