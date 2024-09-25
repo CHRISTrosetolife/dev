@@ -27,6 +27,7 @@ export function graph_path_shortest_generic(
     log({
       v,
       neighbors,
+      neighbors_lambda,
     });
     return neighbors;
   };
