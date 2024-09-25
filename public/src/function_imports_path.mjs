@@ -11,7 +11,9 @@ import { function_imports } from "./function_imports.mjs";
 import { list_includes } from "./list_includes.mjs";
 export async function function_imports_path(name_from, name_to) {
   let map = await function_imports(name_from);
-  log({});
+  log({
+    map,
+  });
   let vertices = list_adder_unique((la) => {
     each_object(map, (function_name, mapped) => {
       let { sources, imports } = mapped;
