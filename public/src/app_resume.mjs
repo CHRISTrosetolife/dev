@@ -94,6 +94,10 @@ export function app_resume() {
   );
   app_resume_header_2(root, "Professional Experience");
   app_resume_header_3(root, "Contractor");
+  html_p_text(
+    root,
+    "Was Programmer; Created debt collections software for two customers. Used JavaScript, C#, AngularJS and T-SQL",
+  );
   app_resume_header_3(root, "Greenshades");
   html_p_text(
     root,
