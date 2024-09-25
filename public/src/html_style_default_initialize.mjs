@@ -1,4 +1,4 @@
-import { html_style_font_color } from "./html_style_font_color.mjs";
+import { html_style_font_color_property } from "./html_style_font_color_property.mjs";
 import { html_style_default_a } from "./html_style_default_a.mjs";
 import { html_style_border_box_get } from "./html_style_border_box_get.mjs";
 import { html_style_default } from "./html_style_default.mjs";
@@ -15,7 +15,8 @@ export function html_style_default_initialize() {
   html_style_default_font_size(html_style_default_font_size_value());
   html_style_button_default_initialize();
   html_style_default_a();
-  object_merge(html_style_default_a(), {});
-  html_style_font_color(a, "darkblue");
+  object_merge(html_style_default_a(), {
+    [html_style_font_color_property()]: "darkblue",
+  });
   return root;
 }
