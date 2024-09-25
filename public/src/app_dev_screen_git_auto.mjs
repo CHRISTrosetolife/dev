@@ -1,3 +1,4 @@
+import { fn_name } from "./fn_name.mjs";
 import { git_ac_message_commit } from "./git_ac_message_commit.mjs";
 import { git_ac_message_add } from "./git_ac_message_add.mjs";
 import { html_cycle_code } from "./html_cycle_code.mjs";
@@ -10,7 +11,6 @@ import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 import { run_git } from "./run_git.mjs";
 import { run } from "./run.mjs";
 import { html_span_text } from "./html_span_text.mjs";
-import { function_new } from "./function_new.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export function app_dev_screen_git_auto() {
   return {
@@ -26,7 +26,7 @@ export function app_dev_screen_git_auto() {
           ".mjs` to `" +
           run_git.name +
           ".mjs` and run `" +
-          function_new.name +
+          fn_name("function_new") +
           "` ...",
       ]);
       let i = 1;
