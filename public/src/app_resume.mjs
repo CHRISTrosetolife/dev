@@ -93,6 +93,8 @@ export function app_resume() {
     "JavaScript; Automation; Parsing and transforming code (writing code that writes code); Front-end programming; Back-end programming; Adapting; Communication; Working with difficult people",
   );
   app_resume_header_2(root, "Professional Experience");
+  app_resume_header_3(root, "Learn Cebuano Language");
+  html_p_text(root, "Genesys/Interactive Intelligence/Latitude Software");
   html_p_text(root, "Genesys/Interactive Intelligence/Latitude Software");
   html_p_text(root, "C#/.NET, AngularJS, EntityFramework, T-SQL");
   app_resume_header_2(root, "Education");
