@@ -100,8 +100,9 @@ export function app_resume() {
     root,
     "Genesys/Interactive Intelligence/Latitude Software",
   );
-  html_p_text(root, "");
-  html_p_text(root, "Genesys/Interactive Intelligence/Latitude Software");
-  html_p_text(root, "C#/.NET, AngularJS, EntityFramework, T-SQL");
+  html_p_text(
+    root,
+    "Began as intern; left as Team Lead, Senior Software Engineer; Created debt collections software. Used C#/.NET, AngularJS, EntityFramework, T-SQL and IIS",
+  );
   app_resume_header_2(root, "Education");
 }
