@@ -117,4 +117,6 @@ export function app_resume() {
     "From Intern to Team Lead, Senior Software Engineer; Created debt collections software. Used C#/.NET, AngularJS, EntityFramework, T-SQL and IIS",
   );
   app_resume_header_2(root, "Education");
+  app_resume_header_3(root, "University of North Florida");
+  html_p_text(root, "");
 }
