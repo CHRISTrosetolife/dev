@@ -90,5 +90,6 @@ export function app_resume() {
   app_resume_header_2(root, "Skills");
   html_p_text(root, "JavaScript, Front-end programming, Back-end programming");
   app_resume_header_2(root, "Professional Experience");
+  html_p_text(root, "C#, AngularJS, EntityFramework, T-SQL");
   app_resume_header_2(root, "Education");
 }
