@@ -1,5 +1,5 @@
+import { html_style_default_a_merge } from "./html_style_default_a_merge.mjs";
 import { html_style_font_color_property } from "./html_style_font_color_property.mjs";
-import { html_style_default_a } from "./html_style_default_a.mjs";
 import { html_style_border_box_get } from "./html_style_border_box_get.mjs";
 import { html_style_default } from "./html_style_default.mjs";
 import { object_merge } from "./object_merge.mjs";
@@ -17,6 +17,6 @@ export function html_style_default_initialize() {
   let e = {
     [html_style_font_color_property()]: "darkblue",
   };
-  object_merge(html_style_default_a(), e);
+  html_style_default_a_merge(e);
   return root;
 }
