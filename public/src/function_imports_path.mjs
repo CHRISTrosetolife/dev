@@ -1,4 +1,4 @@
-import { log_json } from "./log_json.mjs";
+import { log_json_format } from "./log_json_format.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { graph_path_shortest_directed } from "./graph_path_shortest_directed.mjs";
 import { list_any } from "./list_any.mjs";
@@ -11,7 +11,7 @@ import { function_imports } from "./function_imports.mjs";
 import { list_includes } from "./list_includes.mjs";
 export async function function_imports_path(name_from, name_to) {
   let map = await function_imports(name_from);
-  log_json({
+  log_json_format({
     map,
   });
   let vertices = list_adder_unique((la) => {
