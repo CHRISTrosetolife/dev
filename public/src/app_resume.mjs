@@ -90,7 +90,7 @@ export function app_resume() {
   app_resume_header_2(root, "Skills");
   html_p_text(
     root,
-    "JavaScript, Parsing and transforming code (writing code that writes code); Front-end programming; Back-end programming; Adapting; Communication; Working with difficult employees",
+    "JavaScript, Parsing and transforming code (writing code that writes code); Front-end programming; Back-end programming; Adapting; Communication; Working with difficult people",
   );
   app_resume_header_2(root, "Professional Experience");
   html_p_text(root, "C#, AngularJS, EntityFramework, T-SQL");
