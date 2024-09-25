@@ -28,12 +28,12 @@ export function app_resume() {
   let root = html_style_default_initialize();
   let print = true;
   if (false) {
+    html_style_default_font_size(1.2);
+    html_style_default_a_merge({
+      [html_style_text_decoration_property()]: "none",
+      [html_style_font_color_property()]: "black",
+    });
   }
-  html_style_default_font_size(1.2);
-  html_style_default_a_merge({
-    [html_style_text_decoration_property()]: "none",
-    [html_style_font_color_property()]: "black",
-  });
   app_resume_header(root, "JARED MATHIS");
   let row = html_p(root);
   html_style_centered(row);
