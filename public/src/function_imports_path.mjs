@@ -8,8 +8,8 @@ import { each } from "./each.mjs";
 import { each_object } from "./each_object.mjs";
 import { function_imports } from "./function_imports.mjs";
 import { list_includes } from "./list_includes.mjs";
-export async function function_imports_path(function_name_from, name_to) {
-  let map = await function_imports(function_name_from);
+export async function function_imports_path(name_from, name_to) {
+  let map = await function_imports(name_from);
   let vertices = list_adder_unique((la) => {
     each_object(map, (function_name, mapped) => {
       let { sources, imports } = mapped;
@@ -27,7 +27,7 @@ export async function function_imports_path(function_name_from, name_to) {
       let result = list_any([sources, imports], (i) => list_includes(i, v));
       return result;
     },
-    function_name_from,
+    name_from,
     name_to,
   );
 }
