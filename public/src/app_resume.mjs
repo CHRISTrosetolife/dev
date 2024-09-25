@@ -75,7 +75,7 @@ export function app_resume() {
   html_cycle_p(
     root,
     [noop],
-    "User is presented with JavaScript programming concepts; For each concept: user is presented with randomly generated source code and output examples; then user chooses correct output given randomly generated source code; user chooses correct source code given a randomly generated output",
+    "User is presented with JavaScript programming concepts; For each concept: User is presented with randomly generated source code and output examples; Then user chooses correct output given randomly generated source code; Then user chooses correct source code given a randomly generated output",
   );
   let ceb = app_resume_header_3(root, "Learn Cebuano Language");
   html_style_link("ceb.html")(ceb);
