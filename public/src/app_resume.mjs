@@ -95,6 +95,10 @@ export function app_resume() {
   app_resume_header_2(root, "Professional Experience");
   app_resume_header_3(root, "Contractor");
   app_resume_header_3(root, "Greenshades");
+  html_p_text(
+    root,
+    "Was Software Developer; Created tax software. Used C#/.NET, T-SQL",
+  );
   app_resume_header_3(root, "RF-SMART/ICS");
   html_p_text(
     root,
