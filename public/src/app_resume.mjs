@@ -1,3 +1,5 @@
+import { html_style_default_font_size_value } from "./html_style_default_font_size_value.mjs";
+import { html_style_default_font_size } from "./html_style_default_font_size.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { list_between_after } from "./list_between_after.mjs";
 import { list_map } from "./list_map.mjs";
@@ -22,6 +24,7 @@ import { html_span_text } from "./html_span_text.mjs";
 import { html_p } from "./html_p.mjs";
 export function app_resume() {
   let root = html_style_default_initialize();
+  html_style_default_font_size(html_style_default_font_size_value());
   app_resume_header(root, "JARED MATHIS");
   let row = html_p(root);
   html_style_centered(row);
