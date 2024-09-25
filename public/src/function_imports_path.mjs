@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { graph_path_shortest_directed } from "./graph_path_shortest_directed.mjs";
 import { list_any } from "./list_any.mjs";
@@ -19,6 +20,9 @@ export async function function_imports_path(name_from, name_to) {
   return graph_path_shortest_directed(
     vertices,
     (u, v) => {
+      log({
+        u,
+      });
       if (!object_property_exists(map, u)) {
         return false;
       }
