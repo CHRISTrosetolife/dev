@@ -96,6 +96,10 @@ export function app_resume() {
   app_resume_header_3(root, "Contractor");
   app_resume_header_3(root, "Greenshades");
   app_resume_header_3(root, "RF-SMART/ICS");
+  html_p_text(
+    root,
+    "Was Senior Software Engineer; Created warehouse software. Used C#/.NET, React, Knockout, EntityFramework, MySQL",
+  );
   app_resume_header_3(
     root,
     "Genesys/Interactive Intelligence/Latitude Software",
