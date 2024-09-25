@@ -25,6 +25,7 @@ export function graph_path_shortest_generic(
   let neighbors_get = (v) => {
     let neighbors = neighbors_lambda(edges, v);
     log({
+      v,
       neighbors,
     });
     return neighbors;
