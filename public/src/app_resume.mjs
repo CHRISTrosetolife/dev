@@ -1,3 +1,4 @@
+import { html_style_font_color_property } from "./html_style_font_color_property.mjs";
 import { html_style_default_a_merge } from "./html_style_default_a_merge.mjs";
 import { html_style_text_decoration_property } from "./html_style_text_decoration_property.mjs";
 import { html_style_default_font_size } from "./html_style_default_font_size.mjs";
@@ -28,6 +29,7 @@ export function app_resume() {
   html_style_default_font_size(1.22);
   html_style_default_a_merge({
     [html_style_text_decoration_property()]: "none",
+    [html_style_font_color_property()]: "black",
   });
   app_resume_header(root, "JARED MATHIS");
   let row = html_p(root);
