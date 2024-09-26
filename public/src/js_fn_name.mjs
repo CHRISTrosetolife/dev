@@ -11,7 +11,7 @@ import { object_replace } from "./object_replace.mjs";
 import { function_names } from "./function_names.mjs";
 import { list_includes_not } from "./list_includes_not.mjs";
 export async function js_fn_name(ast) {
-  let f = await function_names();
+  let fns = await function_names();
   js_visit_node(ast, "MemberExpression", async (v) => {
     let { node } = v;
     let { object, property } = node;
@@ -25,7 +25,7 @@ export async function js_fn_name(ast) {
       r = true;
     }
     let o_name = object_property_get(object, "name");
-    if (list_includes_not(f, o_name)) {
+    if (list_includes_not(fns, o_name)) {
       r = true;
     }
     if (r) {
