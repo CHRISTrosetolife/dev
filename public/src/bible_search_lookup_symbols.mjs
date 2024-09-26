@@ -9,8 +9,7 @@ export async function bible_search_lookup_symbols() {
   let lookup = await bible_search_lookup_cache();
   let ts = list_adder_unique((la) => {
     each_object(lookup, (bible_folder, books) => {
-      each_object(books, (chapter_code, chapter) => {
-        let chapter_verses;
+      each_object(books, (chapter_code, chapter_verses) => {
         each(chapter_verses, (c) => {
           let { tokens } = c;
           assert_message(list_is, [tokens], () => ({
