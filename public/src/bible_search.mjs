@@ -9,7 +9,7 @@ export async function bible_search() {
   await each_async(bible_folders, async (bible_folder) => {
     let v = object_property_initialize(r, bible_folder, {});
     await bible_books_chapter_each(bible_folder, function lambda(chapter_code) {
-      object_property_set(object, "property_name", value);
+      object_property_set(v, chapter_code, v);
     });
   });
 }
