@@ -1,3 +1,4 @@
+import { equal } from "./equal.mjs";
 import { js_visit_calls } from "./js_visit_calls.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { each } from "./each.mjs";
@@ -32,7 +33,7 @@ export function data_update_single(ast, data) {
   list_sort_string(u, identity);
   let ids = js_identifiers(ast);
   js_visit_calls(ast, fn_name("fn_name"), (args) => {
-    if (false) {
+    if (equal(left, right)) {
     }
   });
   let list = [
