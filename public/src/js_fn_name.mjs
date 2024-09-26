@@ -5,8 +5,6 @@ export function js_fn_name(ast) {
   fn_name.name;
   js_visit_node(ast, "MemberExpression", (v) => {
     let { node } = v;
-    log({
-      v,
-    });
+    log(node);
   });
 }
