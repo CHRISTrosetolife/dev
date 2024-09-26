@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { js_node_type_is } from "./js_node_type_is.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { log } from "./log.mjs";
@@ -7,6 +8,7 @@ export function js_fn_name(ast) {
   js_visit_node(ast, "MemberExpression", (v) => {
     let { node } = v;
     let r = false;
+    each(list, (item) => {});
     if (!js_node_type_is(node, "Identifier")) {
       r = true;
     }
