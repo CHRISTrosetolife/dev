@@ -14,6 +14,8 @@ export function js_fn_name(ast) {
         r = true;
       }
     });
+    if (false) {
+    }
     if (r) {
       return;
     }
