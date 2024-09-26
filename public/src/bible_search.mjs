@@ -34,4 +34,5 @@ export async function bible_search(words) {
       });
     });
   });
+  return i;
 }
