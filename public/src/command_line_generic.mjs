@@ -7,6 +7,10 @@ export async function command_line_generic(command, silent) {
   let c = await import_node("child_process");
   let { spawn } = c;
   return await new Promise((resolve) => {
+    let result = {
+      stdout,
+      stderr,
+    };
     let { first, remaining } = list_first_remaining(
       string_split_space(command),
     );
