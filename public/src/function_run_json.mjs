@@ -16,13 +16,9 @@ export async function function_run_json(
     args,
   });
   let result = await function_run(function_name, args);
-  if (0) {
-    log({
-      result,
-    });
-  }
   let json = json_to({
     result,
   });
   await file_overwrite(output_file_path, json);
+  $l
 }
