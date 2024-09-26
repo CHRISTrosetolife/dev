@@ -18,6 +18,7 @@ import { identity } from "./identity.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { js_node_type_is } from "./js_node_type_is.mjs";
 import { list_size_1 } from "./list_size_1.mjs";
+import { list_single } from "./list_single.mjs";
 export function data_update_single(ast, data) {
   let declaration = js_declaration_single(ast);
   let {
@@ -35,6 +36,7 @@ export function data_update_single(ast, data) {
   let ids = js_identifiers(ast);
   js_visit_calls(ast, fn_name("fn_name"), (args) => {
     if (list_size_1(args)) {
+      let a = list_single(a);
       if (js_node_type_is()) {
       }
     }
