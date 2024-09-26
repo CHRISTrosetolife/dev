@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { function_cache_path } from "./function_cache_path.mjs";
 import { file_write_json } from "./file_write_json.mjs";
 import { file_read_json } from "./file_read_json.mjs";
@@ -17,6 +18,7 @@ export async function function_cache(fn, args) {
   object = {
     result,
   };
+  log({});
   await file_write_json(file_path, object);
   return result;
 }
