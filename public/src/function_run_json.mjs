@@ -20,5 +20,4 @@ export async function function_run_json(
     result,
   });
   await file_overwrite(output_file_path, json);
-  log({});
 }
