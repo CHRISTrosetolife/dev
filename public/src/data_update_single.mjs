@@ -1,4 +1,3 @@
-import { equal } from "./equal.mjs";
 import { js_visit_calls } from "./js_visit_calls.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { each } from "./each.mjs";
@@ -17,6 +16,8 @@ import { list_includes } from "./list_includes.mjs";
 import { string_is } from "./string_is.mjs";
 import { identity } from "./identity.mjs";
 import { fn_name } from "./fn_name.mjs";
+import { js_node_type_is } from "./js_node_type_is.mjs";
+import { list_size_1 } from "./list_size_1.mjs";
 export function data_update_single(ast, data) {
   let declaration = js_declaration_single(ast);
   let {
@@ -33,7 +34,9 @@ export function data_update_single(ast, data) {
   list_sort_string(u, identity);
   let ids = js_identifiers(ast);
   js_visit_calls(ast, fn_name("fn_name"), (args) => {
-    if (equal(left, right)) {
+    if (list_size_1(args)) {
+      if (js_node_type_is()) {
+      }
     }
   });
   let list = [
