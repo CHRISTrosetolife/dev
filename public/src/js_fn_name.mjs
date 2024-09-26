@@ -11,7 +11,7 @@ import { js_parse_expression } from "./js_parse_expression.mjs";
 import { object_replace } from "./object_replace.mjs";
 import { function_names } from "./function_names.mjs";
 export async function js_fn_name(ast) {
-  await function_names();
+  let f = await function_names();
   js_visit_node(ast, "MemberExpression", async (v) => {
     let { node } = v;
     let { object, property } = node;
