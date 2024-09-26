@@ -9,8 +9,7 @@ export async function bible_search_lookup_symbols() {
     each_object_values(l, (books) => {
       each_object_values(books, (chapter) => {
         let { tokens } = chapter;
-        each(list, (item) => {});
-        la(tokens);
+        each(tokens, la);
       });
     });
   });
