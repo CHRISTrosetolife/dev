@@ -1,3 +1,4 @@
+import { json_to } from "./json_to.mjs";
 import { log_error } from "./log_error.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { git_acp_message } from "./git_acp_message.mjs";
@@ -197,7 +198,7 @@ export async function terminal() {
         log(result);
       }
     } catch (e) {
-      log_error(e);
+      log_error(json_to(e));
     }
     unawait(async () => {
       await git_acp_message(input);
