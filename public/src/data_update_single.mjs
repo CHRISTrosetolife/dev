@@ -37,7 +37,7 @@ export function data_update_single(ast, data) {
   js_visit_calls(ast, fn_name("fn_name"), (args) => {
     if (list_size_1(args)) {
       let a = list_single(a);
-      if (js_node_type_is()) {
+      if (js_node_type_is(a, "Literal")) {
       }
     }
   });
