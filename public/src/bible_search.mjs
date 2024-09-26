@@ -13,7 +13,7 @@ export async function bible_search(words) {
       each_object(books, (chapter_code, chapter_verses) => {
         each(chapter_verses, (c) => {
           let { tokens } = c;
-          each(tokens, la);
+          each(tokens, () => {});
         });
       });
     });
