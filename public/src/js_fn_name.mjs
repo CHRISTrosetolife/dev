@@ -1,7 +1,6 @@
 import { log } from "./log.mjs";
 import { js_code_string } from "./js_code_string.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
-import { function_exists } from "./function_exists.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
 import { js_node_type_is } from "./js_node_type_is.mjs";
@@ -10,6 +9,7 @@ import { js_visit_node } from "./js_visit_node.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
 import { object_replace } from "./object_replace.mjs";
 import { function_names } from "./function_names.mjs";
+import { list_includes_not } from "./list_includes_not.mjs";
 export async function js_fn_name(ast) {
   let f = await function_names();
   js_visit_node(ast, "MemberExpression", async (v) => {
@@ -25,7 +25,7 @@ export async function js_fn_name(ast) {
       r = true;
     }
     let o_name = object_property_get(object, "name");
-    if (!(await function_exists(o_name))) {
+    if (list_includes_not(f, o_name)) {
       r = true;
     }
     if (r) {
