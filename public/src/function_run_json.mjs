@@ -1,4 +1,3 @@
-import { file_exists } from "./file_exists.mjs";
 import { log } from "./log.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
 import { file_read } from "./file_read.mjs";
@@ -21,5 +20,5 @@ export async function function_run_json(
     result,
   });
   await file_overwrite(output_file_path, json);
-  log(await file_exists());
+  log(await file_read(output_file_path));
 }
