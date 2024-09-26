@@ -14,9 +14,9 @@ export async function bible_search_index() {
       each(chapter_verses, (c) => {
         let { tokens, verse_number } = c;
         let mapped = bible_words_map(tokens, symbols);
-        let u = list_unique(mapped);
-        each(u, (m) => {
-          let chapter_codes = object_property_initialize(i, m, {});
+        let us = list_unique(mapped);
+        each(us, (u) => {
+          let chapter_codes = object_property_initialize(i, u, {});
           let verse_numbers = object_property_initialize(
             chapter_codes,
             chapter_code,
