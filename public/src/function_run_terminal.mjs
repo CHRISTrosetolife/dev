@@ -40,7 +40,7 @@ export async function function_run_terminal(function_name, args) {
             command,
           });
         }
-        await command_line(command);
+        let cl = await command_line(command);
         if (await file_exists_not(file_path_output)) {
           reject();
         } else {
