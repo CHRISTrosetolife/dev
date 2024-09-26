@@ -11,7 +11,6 @@ export async function bible_search_lookup_symbols() {
     each_object(lookup, (bible_folder, books) => {
       each_object(books, (chapter_code, chapter) => {
         let { verses } = chapter;
-        each(list, (item) => {});
         assert_message(list_is, [tokens], () => ({
           bible_folder,
           chapter_code,
