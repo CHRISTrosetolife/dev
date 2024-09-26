@@ -17,4 +17,5 @@ export async function bible_search() {
       },
     );
   });
+  return r;
 }
