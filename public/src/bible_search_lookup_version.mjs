@@ -1,3 +1,4 @@
+import { list_includes } from "./list_includes.mjs";
 import { equal } from "./equal.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
@@ -7,7 +8,7 @@ export async function bible_search_lookup_version(bible_folder) {
   await bible_books_chapter_each(
     bible_folder,
     async function lambda(chapter_code) {
-      if (bible_folder === "eng-Brenton") {
+      if (list_includes(bible_folder, ["eng-Brenton", "englxxup"])) {
         if (equal(chapter_code, "PRO30")) {
           return;
         }
