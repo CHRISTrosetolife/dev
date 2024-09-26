@@ -13,11 +13,21 @@ export async function bible_search(words) {
   each_object(lookup, (bible_folder, books) => {
     each_object(books, (chapter_code, chapter_verses) => {
       each(chapter_verses, (c) => {
-        let { tokens } = c;
+        let { tokens, verse_number } = c;
         let mapped = bible_words_map(tokens, symbols);
         let u = list_unique(mapped);
         each(mapped, (m) => {
-          let verses = object_property_initialize(i, m, []);
+          let chapter_codes = object_property_initialize(i, m, {});
+          let verse_numbers = object_property_initialize(
+            chapter_codes,
+            chapter_code,
+            {},
+          );
+          let folders = object_property_initialize(
+            verse_numbers,
+            verse_number,
+            {},
+          );
         });
       });
     });
