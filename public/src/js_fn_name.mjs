@@ -8,7 +8,7 @@ export function js_fn_name(ast) {
     let { node } = v;
     let r = false;
     if (!js_node_type_is(node, "Identifier")) {
-      return;
+      r = true;
     }
     log(node);
   });
