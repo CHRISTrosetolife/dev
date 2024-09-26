@@ -1,10 +1,10 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { fn_name } from "./fn_name.mjs";
 import { file_exists_not } from "./file_exists_not.mjs";
 import { function_path_suffix } from "./function_path_suffix.mjs";
 import { file_read_json } from "./file_read_json.mjs";
 import { command_line } from "./command_line.mjs";
 import { log } from "./log.mjs";
-import { function_run_json } from "./function_run_json.mjs";
-import { run } from "./run.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
 import { uuid_file } from "./uuid_file.mjs";
 import { string_replace } from "./string_replace.mjs";
@@ -22,7 +22,19 @@ export async function function_run_terminal(function_name, args) {
     await uuid_file(function_run_terminal, async (file_path_input) => {
       await uuid_file(function_run_terminal, async (file_path_output) => {
         await file_overwrite(file_path_input, args_json);
-        let command = `node ${run.name}${function_path_suffix()} ${function_run_json.name} ${function_name} ${file_path_input} ${file_path_output}`;
+        let command = string_combine_multiple([
+          "node ",
+          fn_name("run"),
+          function_path_suffix(),
+          " ",
+          fn_name("function_run_json"),
+          " ",
+          function_name,
+          " ",
+          file_path_input,
+          " ",
+          file_path_output,
+        ]);
         if (0) {
           log({
             command,
@@ -34,6 +46,9 @@ export async function function_run_terminal(function_name, args) {
         } else {
           let contents = await file_read_json(file_path_output);
           let { result } = contents;
+          log({
+            result,
+          });
           resolve(result);
         }
       });
