@@ -6,6 +6,8 @@ export async function bible_search_lookup_version(bible_folder) {
   await bible_books_chapter_each(
     bible_folder,
     async function lambda(chapter_code) {
+      if (false) {
+      }
       let c = await bible_chapter(bible_folder, chapter_code);
       object_property_set(v, chapter_code, c);
     },
