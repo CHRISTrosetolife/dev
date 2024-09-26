@@ -40,9 +40,12 @@ export async function function_run_terminal(function_name, args) {
             command,
           });
         }
-        let cl = await command_line(command);
+        let command_result = await command_line(command);
         if (await file_exists_not(file_path_output)) {
-          reject(cl);
+          reject({
+            command,
+            command_result,
+          });
         } else {
           let contents = await file_read_json(file_path_output);
           let { result } = contents;
