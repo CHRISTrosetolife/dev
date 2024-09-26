@@ -1,1 +1,3 @@
-export function js_fn_name(ast) {}
+export function js_fn_name(ast) {
+  a.b;
+}
