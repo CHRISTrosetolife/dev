@@ -1,3 +1,4 @@
+import { js_visit_calls } from "./js_visit_calls.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { each } from "./each.mjs";
 import { list_remove_if_exists } from "./list_remove_if_exists.mjs";
@@ -29,6 +30,7 @@ export function data_update_single(ast, data) {
   let u = list_unique(filtered);
   list_sort_string(u, identity);
   let ids = js_identifiers(ast);
+  js_visit_calls();
   let list = [
     {
       ast_list: u,
