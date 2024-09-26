@@ -40,10 +40,12 @@ export async function function_run_terminal(function_name, args) {
             command,
           });
         }
-        let command_result = await command_line(command);$i
-        log({
-          file_path_output,
-        });
+        let command_result = await command_line(command);
+        if (false) {
+          log({
+            file_path_output,
+          });
+        }
         if (await file_exists_not(file_path_output)) {
           reject({
             command,
