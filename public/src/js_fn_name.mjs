@@ -26,6 +26,6 @@ export function js_fn_name(ast) {
     if (r) {
       return;
     }
-    js_code_call_args(fn_name.name, [js_code_string()]);
+    let e = js_code_call_args(fn_name.name, [js_code_string(o_name)]);
   });
 }
