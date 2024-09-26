@@ -6,6 +6,7 @@ import { each } from "./each.mjs";
 import { js_node_type_is } from "./js_node_type_is.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { js_visit_node } from "./js_visit_node.mjs";
+import { js_parse_expression } from "./js_parse_expression.mjs";
 export function js_fn_name(ast) {
   js_visit_node(ast, "MemberExpression", async (v) => {
     let { node } = v;
@@ -27,5 +28,6 @@ export function js_fn_name(ast) {
       return;
     }
     let e = js_code_call_args(fn_name.name, [js_code_string(o_name)]);
+    js_parse_expression(e);
   });
 }
