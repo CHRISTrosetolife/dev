@@ -34,6 +34,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
 import { list_remove_at } from "./list_remove_at.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
+import { log_error_write } from "./log_error_write.mjs";
 export async function terminal() {
   let prompt = chalk().greenBright("✟") + " ";
   let context = {
@@ -195,7 +196,7 @@ export async function terminal() {
         log(result);
       }
     } catch (e) {
-      log(e);
+      log_error(e);
     }
     unawait(async () => {
       await git_acp_message(input);
