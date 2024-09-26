@@ -35,7 +35,7 @@ export async function function_run_terminal(function_name, args) {
           " ",
           file_path_output,
         ]);
-        if (0) {
+        if (10) {
           log({
             command,
           });
