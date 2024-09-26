@@ -12,7 +12,7 @@ export async function bible_search_lookup_symbols() {
       each_object(books, (chapter_code, chapter) => {
         let chapter_verses;
         each(chapter_verses, (c) => {
-          let tokens = c;
+          let { tokens } = c;
           assert_message(list_is, [tokens], () => ({
             bible_folder,
             chapter_code,
