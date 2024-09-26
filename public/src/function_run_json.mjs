@@ -11,6 +11,10 @@ export async function function_run_json(
 ) {
   let args_json_string = await file_read(input_file_path);
   let { args } = json_from(args_json_string);
+  log({
+    function_name,
+    args,
+  });
   let result = await function_run(function_name, args);
   if (0) {
     log({
