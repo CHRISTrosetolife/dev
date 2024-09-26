@@ -1,9 +1,9 @@
+import { js_code_call_args } from "./js_code_call_args.mjs";
 import { function_exists } from "./function_exists.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
 import { js_node_type_is } from "./js_node_type_is.mjs";
 import { fn_name } from "./fn_name.mjs";
-import { log } from "./log.mjs";
 import { js_visit_node } from "./js_visit_node.mjs";
 export function js_fn_name(ast) {
   fn_name.name;
@@ -26,6 +26,6 @@ export function js_fn_name(ast) {
     if (r) {
       return;
     }
-    log(node);
+    js_code_call_args();
   });
 }
