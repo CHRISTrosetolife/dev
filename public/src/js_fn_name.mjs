@@ -22,15 +22,15 @@ export async function js_fn_name(ast) {
         r = true;
       }
     });
+    if (r) {
+      return;
+    }
     if (object_property_get(property, "name") !== "name") {
-      r = true;
+        return;
     }
     let o_name = object_property_get(object, "name");
     if (list_includes_not(fns, o_name)) {
-      r = true;
-    }
-    if (r) {
-      return;
+        return;
     }
     let e = js_code_call_args(fn_name("fn_name"), [js_code_string(o_name)]);
     let parsed = js_parse_expression(e);

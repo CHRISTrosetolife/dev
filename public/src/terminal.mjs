@@ -1,3 +1,5 @@
+import { log_error } from "./log_error.mjs";
+import { fn_name } from "./fn_name.mjs";
 import { git_acp_message } from "./git_acp_message.mjs";
 import { tokens_simple } from "./tokens_simple.mjs";
 import { terminal_commands } from "./terminal_commands.mjs";
@@ -34,7 +36,6 @@ import { object_property_get } from "./object_property_get.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
 import { list_remove_at } from "./list_remove_at.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
-import { log_error_write } from "./log_error_write.mjs";
 export async function terminal() {
   let prompt = chalk().greenBright("✟") + " ";
   let context = {
@@ -172,7 +173,7 @@ export async function terminal() {
   while (true) {
     log_write(prompt);
     let input = await next();
-    if (list_includes(list_concat([exit.name], exit_aliases()), input)) {
+    if (list_includes(list_concat([fn_name("exit")], exit_aliases()), input)) {
       await history_pop();
       exit();
     }
