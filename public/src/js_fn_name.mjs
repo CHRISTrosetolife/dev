@@ -31,7 +31,7 @@ export async function js_fn_name(ast) {
     if (r) {
       return;
     }
-    let e = js_code_call_args(fn_name.name, [js_code_string(o_name)]);
+    let e = js_code_call_args(fn_name("fn_name"), [js_code_string(o_name)]);
     log({
       r,
       e,
