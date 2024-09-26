@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { js_code_string } from "./js_code_string.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 import { function_exists } from "./function_exists.mjs";
@@ -28,6 +29,7 @@ export function js_fn_name(ast) {
     if (r) {
       return;
     }
+    log({});
     let e = js_code_call_args(fn_name.name, [js_code_string(o_name)]);
     let parsed = js_parse_expression(e);
     object_replace(node, parsed);
