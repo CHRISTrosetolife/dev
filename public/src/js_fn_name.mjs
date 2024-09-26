@@ -26,10 +26,12 @@ export function js_fn_name(ast) {
     if (!(await function_exists(o_name))) {
       r = true;
     }
+    log({
+      r,
+    });
     if (r) {
       return;
     }
-    log({});
     let e = js_code_call_args(fn_name.name, [js_code_string(o_name)]);
     let parsed = js_parse_expression(e);
     object_replace(node, parsed);
