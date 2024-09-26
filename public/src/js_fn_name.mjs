@@ -7,8 +7,9 @@ export function js_fn_name(ast) {
   fn_name.name;
   js_visit_node(ast, "MemberExpression", (v) => {
     let { node } = v;
+    let { object, property } = node;
     let r = false;
-    each(list, (item) => {});
+    each([object, property], (item) => {});
     if (!js_node_type_is(node, "Identifier")) {
       r = true;
     }
