@@ -10,7 +10,7 @@ export function js_fn_name(ast) {
     let { object, property } = node;
     let r = false;
     each([object, property], (item) => {
-      if (!js_node_type_is(node, "Identifier")) {
+      if (!js_node_type_is(item, "Identifier")) {
         r = true;
       }
     });
