@@ -18,7 +18,10 @@ export async function function_cache(fn, args) {
   object = {
     result,
   };
-  log({});
+  log({
+    file_path,
+    object,
+  });
   await file_write_json(file_path, object);
   return result;
 }
