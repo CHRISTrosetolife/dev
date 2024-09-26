@@ -1,3 +1,4 @@
+import { js_imports_remove } from "./js_imports_remove.mjs";
 import { js_imports_add_specified } from "./js_imports_add_specified.mjs";
 import { js_code_string } from "./js_code_string.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
@@ -35,5 +36,6 @@ export async function js_fn_name(ast) {
     let parsed = js_parse_expression(e);
     object_replace(node, parsed);
     js_imports_add_specified(ast, [fn_name("fn_name")]);
+    js_imports_remove(ast);
   });
 }
