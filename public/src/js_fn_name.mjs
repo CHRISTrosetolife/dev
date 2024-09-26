@@ -28,6 +28,6 @@ export function js_fn_name(ast) {
       return;
     }
     let e = js_code_call_args(fn_name.name, [js_code_string(o_name)]);
-    js_parse_expression(e);
+    let parsed = js_parse_expression(e);
   });
 }
