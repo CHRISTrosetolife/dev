@@ -15,6 +15,7 @@ import { list_sort_string } from "./list_sort_string.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { string_is } from "./string_is.mjs";
 import { identity } from "./identity.mjs";
+import { fn_name } from "./fn_name.mjs";
 export function data_update_single(ast, data) {
   let declaration = js_declaration_single(ast);
   let {
@@ -30,7 +31,7 @@ export function data_update_single(ast, data) {
   let u = list_unique(filtered);
   list_sort_string(u, identity);
   let ids = js_identifiers(ast);
-  js_visit_calls();
+  js_visit_calls(ast, fn_name("fn_name"), (args) => {});
   let list = [
     {
       ast_list: u,
