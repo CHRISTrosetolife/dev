@@ -1,3 +1,4 @@
+import { string_symbols_multiple } from "./string_symbols_multiple.mjs";
 import { each_object_values } from "./each_object_values.mjs";
 import { list_adder_multiple } from "./list_adder_multiple.mjs";
 import { bible_search_lookup_cache } from "./bible_search_lookup_cache.mjs";
@@ -14,4 +15,5 @@ export async function bible_search(words) {
       });
     });
   });
+  string_symbols_multiple(ts);
 }
