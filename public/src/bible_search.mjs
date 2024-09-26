@@ -1,3 +1,4 @@
+import { list_map } from "./list_map.mjs";
 import { bible_words_map } from "./bible_words_map.mjs";
 import { each } from "./each.mjs";
 import { each_object } from "./each_object.mjs";
@@ -14,7 +15,7 @@ export async function bible_search(words) {
       each_object(books, (chapter_code, chapter_verses) => {
         each(chapter_verses, (c) => {
           let { tokens } = c;
-          each(tokens, (token) => bible_words_map(tokens, symbols));
+          list_map(tokens, (token) => bible_words_map(tokens, symbols));
         });
       });
     });
