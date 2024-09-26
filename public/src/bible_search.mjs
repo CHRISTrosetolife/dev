@@ -15,5 +15,5 @@ export async function bible_search(words) {
       });
     });
   });
-  string_symbols_multiple(ts);
+  return string_symbols_multiple(ts);
 }
