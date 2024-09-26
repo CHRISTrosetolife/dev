@@ -45,6 +45,7 @@ export function data_update_single(ast, data) {
       }
     }
   });
+  let ids_u = list_unique(ids);
   let list = [
     {
       ast_list: u,
