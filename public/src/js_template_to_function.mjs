@@ -1,4 +1,4 @@
-import { log } from "./log.mjs";
+import { fn_name } from "./fn_name.mjs";
 import { js_code_array_empty } from "./js_code_array_empty.mjs";
 import { list_get } from "./list_get.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
@@ -19,7 +19,9 @@ export function js_template_to_function(ast) {
   return js_visit_node(ast, "TemplateLiteral", (v) => {
     let { node } = v;
     let e = js_parse_expression(
-      js_code_call_args(string_combine_multiple.name, [js_code_array_empty()]),
+      js_code_call_args(fn_name("string_combine_multiple"), [
+        js_code_array_empty(),
+      ]),
     );
     let { arguments: as } = e;
     let a = list_single(as);
@@ -38,9 +40,6 @@ export function js_template_to_function(ast) {
         ]);
       });
       if (string_empty_not_is(cooked)) {
-        log({
-          cooked,
-        });
         list_add(elements, js_string(cooked));
       }
       if (list_index_is(expressions, qi)) {
