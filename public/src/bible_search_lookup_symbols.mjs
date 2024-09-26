@@ -13,6 +13,7 @@ export async function bible_search_lookup_symbols() {
         let { tokens } = chapter;
         assert_message(list_is, [tokens], () => ({
           bible_folder,
+          chapter_code,
         }));
         each(tokens, la);
       });
