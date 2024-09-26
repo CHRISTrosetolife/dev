@@ -7,6 +7,7 @@ import { js_node_type_is } from "./js_node_type_is.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { js_visit_node } from "./js_visit_node.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
+import { object_replace } from "./object_replace.mjs";
 export function js_fn_name(ast) {
   js_visit_node(ast, "MemberExpression", async (v) => {
     let { node } = v;
@@ -29,5 +30,6 @@ export function js_fn_name(ast) {
     }
     let e = js_code_call_args(fn_name.name, [js_code_string(o_name)]);
     let parsed = js_parse_expression(e);
+    object_replace(node, e);
   });
 }
