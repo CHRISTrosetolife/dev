@@ -18,7 +18,6 @@ export function bible_eng_versions() {
     "eng-kjv2006",
     "englee",
     "englsv",
-    "englsv",
     "eng-lxx2012",
     "englxxup",
     "engnoy",
