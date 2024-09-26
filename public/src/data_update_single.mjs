@@ -39,7 +39,7 @@ export function data_update_single(ast, data) {
     if (list_size_1(args)) {
       let a = list_single(a);
       if (js_node_type_is(a, "Literal")) {
-        object_property_get(object, "property_name");
+        let v = object_property_get(a, "value");
       }
     }
   });
