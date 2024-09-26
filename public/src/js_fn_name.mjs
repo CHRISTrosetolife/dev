@@ -34,6 +34,6 @@ export async function js_fn_name(ast) {
     let e = js_code_call_args(fn_name("fn_name"), [js_code_string(o_name)]);
     let parsed = js_parse_expression(e);
     object_replace(node, parsed);
-    js_imports_add_specified(ast, [fn_name.name]);
+    js_imports_add_specified(ast, [fn_name("fn_name")]);
   });
 }
