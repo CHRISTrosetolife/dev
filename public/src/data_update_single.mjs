@@ -46,13 +46,14 @@ export function data_update_single(ast, data) {
     }
   });
   let ids_u = list_unique(ids);
+  list_sort_string(ids_u, identity);
   let list = [
     {
       ast_list: u,
       key: "literal_strings",
     },
     {
-      ast_list: ids,
+      ast_list: ids_u,
       key: "identifiers",
     },
   ];
