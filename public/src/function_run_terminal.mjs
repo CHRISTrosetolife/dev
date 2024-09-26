@@ -41,7 +41,9 @@ export async function function_run_terminal(function_name, args) {
           });
         }
         let command_result = await command_line(command);
-        log({file_path_output});
+        log({
+          file_path_output,
+        });
         if (await file_exists_not(file_path_output)) {
           reject({
             command,
