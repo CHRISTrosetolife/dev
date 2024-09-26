@@ -18,6 +18,7 @@ export function js_fn_name(ast) {
     if (object_property_get(property, "name") !== "name") {
       r = true;
     }
+    let o_name = object_property_get(object, "name");
     if (r) {
       return;
     }
