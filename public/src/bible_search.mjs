@@ -14,7 +14,7 @@ export async function bible_search(words) {
       each_object(books, (chapter_code, chapter_verses) => {
         each(chapter_verses, (c) => {
           let { tokens } = c;
-          bible_words_map(tokens, symbols);
+          let mapped = bible_words_map(tokens, symbols);
         });
       });
     });
