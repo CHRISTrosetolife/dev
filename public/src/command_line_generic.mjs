@@ -26,10 +26,11 @@ export async function command_line_generic(command, silent) {
       stderr.setEncoding("utf8");
       stderr.on("data", function (data) {
         log_error_write(data);
+        list_add(result.stderr, data);
       });
     }
     child.on("close", function (code) {
-      resolve();
+      resolve(result);
     });
   });
 }
