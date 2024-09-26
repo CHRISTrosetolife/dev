@@ -16,6 +16,7 @@ export async function bible_search() {
         object_property_set(v, chapter_code, c);
       },
     );
+    object_property_set(object, "property_name", value);
   });
   return r;
 }
