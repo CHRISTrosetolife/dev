@@ -41,11 +41,8 @@ export async function function_run_terminal(function_name, args) {
           });
         }
         let cl = await command_line(command);
-        log({
-          cl,
-        });
         if (await file_exists_not(file_path_output)) {
-          reject();
+          reject(cl);
         } else {
           let contents = await file_read_json(file_path_output);
           let { result } = contents;
