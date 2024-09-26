@@ -1,5 +1,3 @@
-import { list_is } from "./list_is.mjs";
-import { assert_message } from "./assert_message.mjs";
 import { each } from "./each.mjs";
 import { each_object } from "./each_object.mjs";
 import { list_adder_unique } from "./list_adder_unique.mjs";
@@ -15,11 +13,6 @@ export async function bible_search(words) {
       each_object(books, (chapter_code, chapter_verses) => {
         each(chapter_verses, (c) => {
           let { tokens } = c;
-          assert_message(list_is, [tokens], () => ({
-            bible_folder,
-            chapter_code,
-            chapter,
-          }));
           each(tokens, la);
         });
       });
