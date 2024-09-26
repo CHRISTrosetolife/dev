@@ -14,7 +14,7 @@ export async function function_cache(fn, args) {
     result = object_property_get(object, "result");
     log({
       file_path,
-      object,
+      result,
     });
     return result;
   }
