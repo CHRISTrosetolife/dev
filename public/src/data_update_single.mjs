@@ -20,6 +20,7 @@ import { fn_name } from "./fn_name.mjs";
 import { js_node_type_is } from "./js_node_type_is.mjs";
 import { list_size_1 } from "./list_size_1.mjs";
 import { list_single } from "./list_single.mjs";
+import { list_add } from "./list_add.mjs";
 export function data_update_single(ast, data) {
   let declaration = js_declaration_single(ast);
   let {
@@ -40,6 +41,7 @@ export function data_update_single(ast, data) {
       let a = list_single(a);
       if (js_node_type_is(a, "Literal")) {
         let v = object_property_get(a, "value");
+        list_add(ids, v);
       }
     }
   });
