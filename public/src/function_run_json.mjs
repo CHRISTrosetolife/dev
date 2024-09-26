@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
 import { file_read } from "./file_read.mjs";
 import { function_run } from "./function_run.mjs";
@@ -16,7 +15,4 @@ export async function function_run_json(
     result,
   });
   await file_overwrite(output_file_path, json);
-  log({
-    output_file_path,
-  });
 }
