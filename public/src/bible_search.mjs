@@ -5,6 +5,7 @@ export async function bible_search(words) {
   let s = string_split_comma(words);
   let i = {};
   let l = await bible_search_lookup_cache();
+  $lam;
   each_object(l, (bible_folder, books) => {
     each_object(books, (chapter_code, chapter) => {
       let { verse_number, tokens } = chapter;

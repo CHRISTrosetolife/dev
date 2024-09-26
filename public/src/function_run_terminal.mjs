@@ -40,7 +40,7 @@ export async function function_run_terminal(function_name, args) {
             command,
           });
         }
-        let command_result = await command_line(command);
+        let command_result = await command_line(command);$i
         log({
           file_path_output,
         });
