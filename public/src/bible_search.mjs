@@ -9,7 +9,7 @@ export async function bible_search(words) {
   let ts = list_adder_multiple((la) => {
     each_object_values(l, (books) => {
       each_object_values(books, (chapter) => {
-        let { verse_number, tokens } = chapter;
+        let { tokens } = chapter;
         la(tokens);
       });
     });
