@@ -12,7 +12,6 @@ export async function function_cache(fn, args) {
   if (await file_exists(file_path)) {
     object = await file_read_json(file_path);
     result = object_property_get(object, "result");
-
     return result;
   }
   result = await fn(...args);
