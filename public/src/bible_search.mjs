@@ -1,5 +1,4 @@
 import { bible_search_lookup_cache } from "./bible_search_lookup_cache.mjs";
-import { exit } from "./exit.mjs";
 import { log } from "./log.mjs";
 import { each_object_values } from "./each_object_values.mjs";
 import { each_object } from "./each_object.mjs";
@@ -12,7 +11,6 @@ export async function bible_search(words) {
       log({
         chapter,
       });
-      exit();
     });
   });
 }
