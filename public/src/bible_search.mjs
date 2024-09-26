@@ -4,6 +4,7 @@ import { each_object } from "./each_object.mjs";
 import { bible_search_lookup_cache } from "./bible_search_lookup_cache.mjs";
 import { string_split_comma } from "./string_split_comma.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
+import { list_unique } from "./list_unique.mjs";
 export async function bible_search(words) {
   let s = string_split_comma(words);
   let symbols = "-–,;:!?.…·'‘’“”()[]{}¶*/&#%•`°|⌃►◄0123456789";
@@ -14,6 +15,7 @@ export async function bible_search(words) {
       each(chapter_verses, (c) => {
         let { tokens } = c;
         let mapped = bible_words_map(tokens, symbols);
+        let u = list_unique(mapped);
         each(mapped, (m) => {
           let verses = object_property_initialize(i, m, []);
         });
