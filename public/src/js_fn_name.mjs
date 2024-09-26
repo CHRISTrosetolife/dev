@@ -6,6 +6,7 @@ export function js_fn_name(ast) {
   fn_name.name;
   js_visit_node(ast, "MemberExpression", (v) => {
     let { node } = v;
+    let r = false;
     if (!js_node_type_is(node, "Identifier")) {
       return;
     }
