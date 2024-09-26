@@ -8,7 +8,7 @@ export async function bible_search_lookup_version(bible_folder) {
   await bible_books_chapter_each(
     bible_folder,
     async function lambda(chapter_code) {
-      if (list_includes(bible_folder, ["eng-Brenton", "englxxup"])) {
+      if (list_includes(["eng-Brenton", "englxxup"], bible_folder)) {
         if (equal(chapter_code, "PRO30")) {
           return;
         }
