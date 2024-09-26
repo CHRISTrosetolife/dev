@@ -15,7 +15,8 @@ export function js_fn_name(ast) {
         r = true;
       }
     });
-    if (object_property_get(object2, "property_name")) {
+    if (object_property_get(property, "name") !== "name") {
+      r = true;
     }
     if (r) {
       return;
