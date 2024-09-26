@@ -12,7 +12,7 @@ import { function_names } from "./function_names.mjs";
 import { list_includes_not } from "./list_includes_not.mjs";
 export async function js_fn_name(ast) {
   let fns = await function_names();
-  js_visit_node(ast, "MemberExpression", async (v) => {
+  js_visit_node(ast, "MemberExpression", (v) => {
     let { node } = v;
     let { object, property } = node;
     let r = false;
