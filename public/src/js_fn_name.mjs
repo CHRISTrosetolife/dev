@@ -1,3 +1,4 @@
+import { js_code_string } from "./js_code_string.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 import { function_exists } from "./function_exists.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -6,7 +7,6 @@ import { js_node_type_is } from "./js_node_type_is.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { js_visit_node } from "./js_visit_node.mjs";
 export function js_fn_name(ast) {
-  fn_name.name;
   js_visit_node(ast, "MemberExpression", async (v) => {
     let { node } = v;
     let { object, property } = node;
@@ -26,6 +26,6 @@ export function js_fn_name(ast) {
     if (r) {
       return;
     }
-    js_code_call_args();
+    js_code_call_args(fn_name.name, [js_code_string()]);
   });
 }
