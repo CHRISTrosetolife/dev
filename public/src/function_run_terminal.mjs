@@ -49,9 +49,6 @@ export async function function_run_terminal(function_name, args) {
         } else {
           let contents = await file_read_json(file_path_output);
           let { result } = contents;
-          log({
-            result,
-          });
           resolve(result);
         }
       });
