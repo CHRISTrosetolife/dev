@@ -13,7 +13,7 @@ export async function bible_search() {
       bible_folder,
       async function lambda(chapter_code) {
         let c = await bible_chapter(bible_folder, chapter_code);
-        object_property_set(v, chapter_code, v);
+        object_property_set(v, chapter_code, c);
       },
     );
   });
