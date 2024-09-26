@@ -1,3 +1,4 @@
+import { list_add } from "./list_add.mjs";
 import { log_error_write } from "./log_error_write.mjs";
 import { log_write } from "./log_write.mjs";
 import { string_split_space } from "./string_split_space.mjs";
@@ -8,8 +9,8 @@ export async function command_line_generic(command, silent) {
   let { spawn } = c;
   return await new Promise((resolve) => {
     let result = {
-      stdout,
-      stderr,
+      stdout: [],
+      stderr: [],
     };
     let { first, remaining } = list_first_remaining(
       string_split_space(command),
@@ -20,6 +21,7 @@ export async function command_line_generic(command, silent) {
       stdout.setEncoding("utf8");
       stdout.on("data", function (data) {
         log_write(data);
+        list_add(result.stdout, data);
       });
       stderr.setEncoding("utf8");
       stderr.on("data", function (data) {
