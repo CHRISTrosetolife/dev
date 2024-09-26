@@ -38,7 +38,7 @@ export function data_update_single(ast, data) {
   let ids = js_identifiers(ast);
   js_visit_calls(ast, fn_name("fn_name"), (args) => {
     if (list_size_1(args)) {
-      let a = list_single(a);
+      let a = list_single(args);
       if (js_node_type_is(a, "Literal")) {
         let v = object_property_get(a, "value");
         list_add(ids, v);
