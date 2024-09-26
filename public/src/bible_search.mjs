@@ -1,3 +1,4 @@
+import { list_add } from "./list_add.mjs";
 import { bible_words_map } from "./bible_words_map.mjs";
 import { each } from "./each.mjs";
 import { each_object } from "./each_object.mjs";
@@ -26,8 +27,9 @@ export async function bible_search(words) {
           let folders = object_property_initialize(
             verse_numbers,
             verse_number,
-            {},
+            [],
           );
+          list_add(folders, bible_folder);
         });
       });
     });
