@@ -14,6 +14,7 @@ export async function bible_search_lookup_symbols() {
         assert_message(list_is, [tokens], () => ({
           bible_folder,
           chapter_code,
+          chapter,
         }));
         each(tokens, la);
       });
