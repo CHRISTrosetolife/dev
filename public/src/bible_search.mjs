@@ -1,4 +1,4 @@
 import { bible_search_lookup } from "./bible_search_lookup.mjs";
-export async function bible_search() {
+export async function bible_search(words) {
   await bible_search_lookup();
 }
