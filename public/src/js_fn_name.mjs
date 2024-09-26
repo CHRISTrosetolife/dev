@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
 import { js_node_type_is } from "./js_node_type_is.mjs";
 import { fn_name } from "./fn_name.mjs";
@@ -14,7 +15,7 @@ export function js_fn_name(ast) {
         r = true;
       }
     });
-    if (false) {
+    if (object_property_get(object2, "property_name")) {
     }
     if (r) {
       return;
