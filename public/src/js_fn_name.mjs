@@ -23,7 +23,8 @@ export function js_fn_name(ast) {
     if (!(await function_exists(o_name))) {
       r = true;
     }
-    if (false) {
+    if (r) {
+      return;
     }
     log(node);
   });
