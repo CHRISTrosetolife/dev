@@ -8,7 +8,7 @@ export async function bible_search_lookup_version(bible_folder) {
     bible_folder,
     async function lambda(chapter_code) {
       if (bible_folder === "eng-Brenton") {
-        if (equal(chapter, "PRO30")) {
+        if (equal(chapter_code, "PRO30")) {
           return;
         }
       }
