@@ -10,6 +10,7 @@ export async function bible_search(words) {
     each_object(l, (bible_folder, books) => {
       each_object(books, (chapter_code, chapter) => {
         let { verse_number, tokens } = chapter;
+        la(tokens);
       });
     });
   });
