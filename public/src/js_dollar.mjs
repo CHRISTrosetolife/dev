@@ -15,7 +15,6 @@ import { js_identifiers } from "./js_identifiers.mjs";
 import { js_declaration_to_body } from "./js_declaration_to_body.mjs";
 import { js_identifier_rename_multiple } from "./js_identifier_rename_multiple.mjs";
 import { js_code_brackets } from "./js_code_brackets.mjs";
-import { never } from "./never.mjs";
 import { assert } from "./assert.mjs";
 import { js_identifiers_intersect_difference } from "./js_identifiers_intersect_difference.mjs";
 import { js_identifiers_names } from "./js_identifiers_names.mjs";
@@ -26,7 +25,6 @@ import { js_dollar_grandparent_next } from "./js_dollar_grandparent_next.mjs";
 import { js_dollar_else } from "./js_dollar_else.mjs";
 import { js_dollar_if_block } from "./js_dollar_if_block.mjs";
 import { js_code_if_false } from "./js_code_if_false.mjs";
-import { object_property_delete } from "./object_property_delete.mjs";
 import { list_set } from "./list_set.mjs";
 import { js_parse_first } from "./js_parse_first.mjs";
 import { list_get_end_1 } from "./list_get_end_1.mjs";
@@ -38,21 +36,16 @@ import { js_declaration_single } from "./js_declaration_single.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { js_block_statement } from "./js_block_statement.mjs";
-import { list_adder_async } from "./list_adder_async.mjs";
 import { js_code_arrow_block_args_async } from "./js_code_arrow_block_args_async.mjs";
-import { each_async } from "./each_async.mjs";
 import { list_remove_first } from "./list_remove_first.mjs";
 import { list_get_end } from "./list_get_end.mjs";
 import { integer_parse_try } from "./integer_parse_try.mjs";
-import { each_index } from "./each_index.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { js_code_arrow_block } from "./js_code_arrow_block.mjs";
 import { js_code_arrow_block_args } from "./js_code_arrow_block_args.mjs";
 import { js_name_unique } from "./js_name_unique.mjs";
-import { each } from "./each.mjs";
 import { each_range } from "./each_range.mjs";
 import { js_code_array_empty } from "./js_code_array_empty.mjs";
-import { exit } from "./exit.mjs";
 import { js_code_call } from "./js_code_call.mjs";
 import { js_code_braces } from "./js_code_braces.mjs";
 import { log } from "./log.mjs";
@@ -62,7 +55,6 @@ import { string_prefix_without } from "./string_prefix_without.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
 import { js_visit_identifiers } from "./js_visit_identifiers.mjs";
 import { js_parse_first_function } from "./js_parse_first_function.mjs";
-import { list_random_item } from "./list_random_item.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 import { list_is } from "./list_is.mjs";
 import { list_index } from "./list_index.mjs";
@@ -74,19 +66,12 @@ import { integer_parse } from "./integer_parse.mjs";
 import { number_is } from "./number_is.mjs";
 import { list_index_last } from "./list_index_last.mjs";
 import { list_all } from "./list_all.mjs";
-import { list_adder } from "./list_adder.mjs";
-import { each_object } from "./each_object.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { list_adder_unique } from "./list_adder_unique.mjs";
-import { each_range_reverse } from "./each_range_reverse.mjs";
-import { assert_arguments_length } from "./assert_arguments_length.mjs";
-import { object_property_exists } from "./object_property_exists.mjs";
 import { equal } from "./equal.mjs";
 import { list_size_1 } from "./list_size_1.mjs";
 import { list_single } from "./list_single.mjs";
 import { assert_message } from "./assert_message.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
-import { list_get } from "./list_get.mjs";
 export function js_dollar(ast) {
   js_visit_identifiers(ast, async (v) => {
     let { node } = v;
@@ -113,7 +98,9 @@ export function js_dollar(ast) {
         object_replace(node, e);
       }
       if (remaining === "aa") {
-        let e = js_parse_expression(js_code_call(assert_arguments_length.name));
+        let e = js_parse_expression(
+          js_code_call(fn_name("assert_arguments_length")),
+        );
         object_replace(node, e);
       }
       if (remaining === "ar") {
@@ -122,7 +109,10 @@ export function js_dollar(ast) {
       }
       if (remaining === "as") {
         let e = js_parse_expression(
-          js_code_call_args(assert.name, [never.name, js_code_brackets()]),
+          js_code_call_args(fn_name("assert"), [
+            fn_name("never"),
+            js_code_brackets(),
+          ]),
         );
         object_replace(node, e);
       }
@@ -130,7 +120,7 @@ export function js_dollar(ast) {
         let list = js_name_unique(ast, "list");
         let item = js_name_unique(ast, "item");
         let e = js_parse_expression(
-          js_code_call_args(each.name, [
+          js_code_call_args(fn_name("each"), [
             list,
             js_code_arrow_block_args([item], ""),
           ]),
@@ -141,7 +131,7 @@ export function js_dollar(ast) {
         let count = js_name_unique(ast, "count");
         let item = js_name_unique(ast, "item");
         let e = js_parse_expression(
-          js_code_call_args(each_range.name, [
+          js_code_call_args(fn_name("each_range"), [
             count,
             js_code_arrow_block_args([item], ""),
           ]),
@@ -152,7 +142,7 @@ export function js_dollar(ast) {
         let count = js_name_unique(ast, "count");
         let item = js_name_unique(ast, "item");
         let e = js_parse_expression(
-          js_code_call_args(each_range_reverse.name, [
+          js_code_call_args(fn_name("each_range_reverse"), [
             count,
             js_code_arrow_block_args([item], ""),
           ]),
@@ -163,7 +153,7 @@ export function js_dollar(ast) {
         let list = js_name_unique(ast, "list");
         let item = js_name_unique(ast, "item");
         let e = js_parse_expression(
-          js_code_call_args(each_async.name, [
+          js_code_call_args(fn_name("each_async"), [
             list,
             js_code_arrow_block_args_async([item], ""),
           ]),
@@ -175,7 +165,7 @@ export function js_dollar(ast) {
         let item = js_name_unique(ast, "item");
         let index = js_name_unique(ast, "index");
         let e = js_parse_expression(
-          js_code_call_args(each_index.name, [
+          js_code_call_args(fn_name("each_index"), [
             list,
             js_code_arrow_block_args([item, index], ""),
           ]),
@@ -269,7 +259,7 @@ export function js_dollar(ast) {
         let key = js_name_unique(ast, "key");
         let value = js_name_unique(ast, "value");
         let e = js_parse_expression(
-          js_code_call_args(each_object.name, [
+          js_code_call_args(fn_name("each_object"), [
             object,
             js_code_arrow_block_args([key, value], ""),
           ]),
@@ -278,7 +268,7 @@ export function js_dollar(ast) {
       }
       if (remaining === "g") {
         let e = js_parse_expression(
-          js_code_call_args(object_property_get.name, [
+          js_code_call_args(fn_name("object_property_get"), [
             js_name_unique(ast, "object"),
             '"property_name"',
           ]),
@@ -287,7 +277,7 @@ export function js_dollar(ast) {
       }
       if (remaining === "gl") {
         let e = js_parse_expression(
-          js_code_call_args(list_get.name, [
+          js_code_call_args(fn_name("list_get"), [
             js_name_unique(ast, "list"),
             js_name_unique(ast, "index"),
           ]),
@@ -302,7 +292,7 @@ export function js_dollar(ast) {
       }
       if (remaining === "la") {
         let e = js_parse_expression(
-          js_code_call_args(list_adder.name, [
+          js_code_call_args(fn_name("list_adder"), [
             js_code_arrow_block_args(["la"], ""),
           ]),
         );
@@ -310,15 +300,23 @@ export function js_dollar(ast) {
       }
       if (remaining === "laa") {
         let e = js_parse_expression(
-          js_code_call_args(list_adder_async.name, [
+          js_code_call_args(fn_name("list_adder_async"), [
             js_code_arrow_block_args_async(["la"], ""),
+          ]),
+        );
+        object_replace(node, e);
+      }
+      if (remaining === "lam") {
+        let e = js_parse_expression(
+          js_code_call_args(fn_name("list_adder_multiple"), [
+            js_code_arrow_block_args(["la"], ""),
           ]),
         );
         object_replace(node, e);
       }
       if (remaining === "lau") {
         let e = js_parse_expression(
-          js_code_call_args(list_adder_unique.name, [
+          js_code_call_args(fn_name("list_adder_unique"), [
             js_code_arrow_block_args(["la"], ""),
           ]),
         );
@@ -326,7 +324,9 @@ export function js_dollar(ast) {
       }
       if (remaining === "lr") {
         let e = js_parse_expression(
-          js_code_call_args(list_random_item.name, [js_code_array_empty()]),
+          js_code_call_args(fn_name("list_random_item"), [
+            js_code_array_empty(),
+          ]),
         );
         if (list_is(parent)) {
           let index = list_index(parent, node);
@@ -383,7 +383,7 @@ export function js_dollar(ast) {
         js_dollar_if_block(v, false);
       }
       if (remaining === "ie") {
-        let condition = js_code_call_args(equal.name, [
+        let condition = js_code_call_args(fn_name("equal"), [
           js_name_unique(ast, "left"),
           js_name_unique(ast, "right"),
         ]);
@@ -391,7 +391,7 @@ export function js_dollar(ast) {
       }
       if (remaining === "st") {
         let e = js_parse_expression(
-          js_code_call_args(object_property_set.name, [
+          js_code_call_args(fn_name("object_property_set"), [
             js_name_unique(ast, "object"),
             '"property_name"',
             js_name_unique(ast, "value"),
@@ -401,7 +401,7 @@ export function js_dollar(ast) {
       }
       if (remaining === "p") {
         let e = js_parse_expression(
-          js_code_call_args(object_property_exists.name, [
+          js_code_call_args(fn_name("object_property_exists"), [
             js_name_unique(ast, "object"),
             '"property_name"',
           ]),
@@ -410,7 +410,7 @@ export function js_dollar(ast) {
       }
       if (remaining === "d") {
         let e = js_parse_expression(
-          js_code_call_args(object_property_delete.name, [
+          js_code_call_args(fn_name("object_property_delete"), [
             js_name_unique(ast, "object"),
             '"property_name"',
           ]),
@@ -434,14 +434,14 @@ export function js_dollar(ast) {
           inside = remaining;
         }
         let e = js_parse_expression(
-          js_code_call_args(log.name, [js_code_braces_inside(inside)]),
+          js_code_call_args(fn_name("log"), [js_code_braces_inside(inside)]),
         );
         object_replace(node, e);
       }
       if (prefix_use(remaining, scm_prefix, prefixes)) {
         if (list_is(parent)) {
           let e = js_parse_expression(
-            js_code_call_args(string_combine_multiple.name, [
+            js_code_call_args(fn_name("string_combine_multiple"), [
               js_code_array_empty(),
             ]),
           );
@@ -468,7 +468,7 @@ export function js_dollar(ast) {
         object_replace(node, e);
       }
       if (remaining === "x") {
-        let e = js_parse_expression(js_code_call(exit.name));
+        let e = js_parse_expression(js_code_call(fn_name("exit")));
         object_replace(node, e);
       }
     }
