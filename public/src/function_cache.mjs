@@ -13,6 +13,7 @@ export async function function_cache(fn, args) {
   let result;
   let object;
   if (await file_exists(file_path)) {
+    log({});
     object = await file_read_json(file_path);
     result = object_property_get(object, "result");
     return result;
