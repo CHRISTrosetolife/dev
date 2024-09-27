@@ -54,6 +54,7 @@ export async function bible_search(words) {
     let chapter = await bible_chapter("engbsb", chapter_code);
     log({
       verse_number,
+      chapter_code,
     });
     let v = list_find_property(chapter, "verse_number", verse_number);
     let { tokens } = v;
