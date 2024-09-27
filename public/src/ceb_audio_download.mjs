@@ -1,7 +1,7 @@
+import { list_wait } from "./list_wait.mjs";
 import { each_index_async } from "./each_index_async.mjs";
 import { list_size } from "./list_size.mjs";
 import { audio_upload } from "./audio_upload.mjs";
-import { promise_all } from "./promise_all.mjs";
 import { log } from "./log.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_chunk } from "./list_chunk.mjs";
@@ -21,7 +21,7 @@ export async function ceb_audio_download() {
         await audio_upload(to, definition);
       });
     });
-    await promise_all(mapped);
+    await list_wait(mapped);
     log({
       chunks_size,
       index,

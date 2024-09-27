@@ -1,3 +1,4 @@
+import { list_wait } from "./list_wait.mjs";
 import { list_take } from "./list_take.mjs";
 import { ceb_bible_words_definitions_atoms_cache } from "./ceb_bible_words_definitions_atoms_cache.mjs";
 import { list_any_created } from "./list_any_created.mjs";
@@ -13,7 +14,6 @@ import { object_property_set } from "./object_property_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
 import { list_adder_unique } from "./list_adder_unique.mjs";
-import { promise_all } from "./promise_all.mjs";
 import { audio_upload } from "./audio_upload.mjs";
 import { list_first } from "./list_first.mjs";
 import { list_map } from "./list_map.mjs";
@@ -71,7 +71,7 @@ export async function app_ceb_upload() {
             });
             return list_any_created(createds);
           });
-          let createds = await promise_all(mapped);
+          let createds = await list_wait(mapped);
           if (object_property_get(list_any_created(createds), "created")) {
             log("chunk finished");
           }

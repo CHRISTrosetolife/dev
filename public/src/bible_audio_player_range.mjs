@@ -1,8 +1,8 @@
+import { list_wait_ordered } from "./list_wait_ordered.mjs";
 import { drive_format } from "./drive_format.mjs";
 import { drive_remove } from "./drive_remove.mjs";
 import { bible_book_prefix_to_number } from "./bible_book_prefix_to_number.mjs";
 import { list_shuffle } from "./list_shuffle.mjs";
-import { promise_all_ordered } from "./promise_all_ordered.mjs";
 import { number_pad_2 } from "./number_pad_2.mjs";
 import { list_map_number_pad_2 } from "./list_map_number_pad_2.mjs";
 import { bible_audio_player_unzip } from "./bible_audio_player_unzip.mjs";
@@ -105,7 +105,7 @@ export async function bible_audio_player_range(book_from, book_to) {
     promises,
   );
   list_shuffle(promises);
-  await promise_all_ordered(promises);
+  await list_wait_ordered(promises);
   let download_folders_regular_computer_voice = [
     "NHEB_NT_audio",
     "NHEB_OT_audio",
