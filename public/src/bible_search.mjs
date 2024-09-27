@@ -43,5 +43,18 @@ export async function bible_search(words) {
         return t;
       }),
   );
-  return mapped4;
+  let mapped5 = await list_map(
+    mapped4,
+    async (word) =>
+      await list_map_async(word, async (results) => {
+        let { chapter_code, verse_number, versions } = results;
+        let t = await list_map_async(versions, async (version) => {
+          let chapter = await bible_chapter(version, chapter_code);
+          let r = list_find_property(chapter, "verse_number", verse_number);
+          return r;
+        });
+        return t;
+      }),
+  );
+  return mapped5;
 }
