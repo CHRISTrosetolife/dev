@@ -7,6 +7,7 @@ import { bible_search_symbols_map } from "./bible_search_symbols_map.mjs";
 import { bible_search_index_cache } from "./bible_search_index_cache.mjs";
 import { string_split_comma } from "./string_split_comma.mjs";
 import { list_map } from "./list_map.mjs";
+import { bible_chapter } from "./bible_chapter.mjs";
 export async function bible_search(words) {
   let s = string_split_comma(words);
   let mapped = bible_search_symbols_map(s);
@@ -33,6 +34,9 @@ export async function bible_search(words) {
     async (word) =>
       await list_map_async(word, async () => {
         let { chapter_code, verse_number, versions } = word;
+        await list_map_async(versions, async (version) => {
+          let chapter = await bible_chapter(version, chapter_code);
+        });
       }),
   );
   return mapped3;
