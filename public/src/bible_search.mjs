@@ -1,3 +1,4 @@
+import { list_denest } from "./list_denest.mjs";
 import { list_find_property } from "./list_find_property.mjs";
 import { list_map_async } from "./list_map_async.mjs";
 import { list_take } from "./list_take.mjs";
@@ -50,10 +51,6 @@ export async function bible_search(words) {
         return t;
       }),
   );
-  let mapped5 = await list_map(mapped4, (word) =>
-    list_adder((la) => {
-      word;
-    }),
-  );
+  let mapped5 = await list_map(mapped4, list_denest);
   return mapped5;
 }
