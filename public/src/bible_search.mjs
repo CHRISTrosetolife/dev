@@ -10,4 +10,5 @@ export async function bible_search(words) {
   let results = list_map(mapped, (m) => {
     return object_property_get(i, m);
   });
+  return object_property_get(results);
 }
