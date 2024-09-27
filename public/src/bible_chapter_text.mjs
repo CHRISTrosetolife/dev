@@ -9,8 +9,7 @@ export async function bible_chapter_text(bible_folder, chapter_name) {
   let m = list_map(verses, (verse) => {
     let { verse_number, tokens } = verse;
     return string_combine_multiple([
-      bible_reference_code(chapter_name),
-      verse_number,
+      bible_reference_code(chapter_name, verse_number),
       " ",
       list_join_space(tokens),
     ]);
