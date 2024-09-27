@@ -17,7 +17,13 @@ export async function bible_search(words) {
   list_map(results, (word) =>
     list_adder((la) => {
       each_object(word, (chapter_code, chapter) => {
-        each_object(object, (key, value) => {});
+        each_object(chapter, (verse_number, versions) => {
+          la({
+            chapter_code,
+            verse_number,
+            versions,
+          });
+        });
       });
     }),
   );
