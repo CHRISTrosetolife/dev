@@ -1,8 +1,8 @@
+import { json_from } from "./json_from.mjs";
 import { list_intersect_multiple } from "./list_intersect_multiple.mjs";
 import { json_to } from "./json_to.mjs";
 import { list_find_property } from "./list_find_property.mjs";
 import { list_map_async } from "./list_map_async.mjs";
-import { list_take } from "./list_take.mjs";
 import { each_object } from "./each_object.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -12,6 +12,7 @@ import { string_split_comma } from "./string_split_comma.mjs";
 import { list_map } from "./list_map.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
 import { list_join_space } from "./list_join_space.mjs";
+import { list_take_soft } from "./list_take_soft.mjs";
 export async function bible_search(words) {
   let s = string_split_comma(words);
   let mapped = bible_search_symbols_map(s);
@@ -43,8 +44,9 @@ export async function bible_search(words) {
     }),
   );
   let intersect = list_intersect_multiple(mapped4);
-  let mapped3 = list_map(intersect, (m) => list_take(m, cap));
-  let t = await list_map_async(mapped3, async (verse) => {
+  let mapped3 = list_take_soft(intersect, cap);
+  let t = await list_map_async(mapped3, async (verse_json) => {
+    let verse = json_from(verse_json);
     let { chapter_code, verse_number } = verse;
     let chapter = await bible_chapter("engbsb", chapter_code);
     let r = list_find_property(chapter, "verse_number", verse_number);
