@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { list_find_property } from "./list_find_property.mjs";
 import { list_map_async } from "./list_map_async.mjs";
 import { list_take } from "./list_take.mjs";
