@@ -48,6 +48,7 @@ export async function bible_search(words) {
     }),
   );
   let intersect = list_intersect_multiple(mapped4);
+  let mapped5 = list_map(intersect, json_from);
   let filtered = list_filter(intersect, (i) => {
     return string_digits_is(object_property_get(i, "property_name"));
   });
