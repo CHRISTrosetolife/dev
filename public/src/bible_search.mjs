@@ -13,5 +13,5 @@ export async function bible_search(words) {
     return object_property_get(i, m);
   });
   let r0 = list_first(results);
-  return object_properties(results);
+  return object_properties(r0);
 }
