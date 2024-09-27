@@ -1,3 +1,4 @@
+import { promise_all } from "./promise_all.mjs";
 import { log } from "./log.mjs";
 import { list_find_property } from "./list_find_property.mjs";
 import { list_map_async } from "./list_map_async.mjs";
@@ -31,7 +32,7 @@ export async function bible_search(words) {
     }),
   );
   let mapped3 = list_map(mapped2, (m) => list_take(m, 10));
-  let mapped4 = list_map(
+  let p = list_map(
     mapped3,
     async (word) =>
       await list_map_async(word, async (results) => {
@@ -47,5 +48,6 @@ export async function bible_search(words) {
         return t;
       }),
   );
+  await promise_all(p);
   return mapped4;
 }
