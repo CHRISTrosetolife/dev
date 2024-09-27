@@ -8,6 +8,6 @@ export async function bible_search(words) {
   let mapped = bible_search_symbols_map(s);
   let i = await bible_search_index_cache();
   list_map(mapped, (m) => {
-    return object_property_get(object, "property_name");
+    return object_property_get(i, m);
   });
 }
