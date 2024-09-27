@@ -27,6 +27,6 @@ export async function bible_search(words) {
     }),
   );
   let mapped3 = list_map(mapped2, (m) => list_take(m, 10));
-  list_map(list, async (item) => {});
+  list_map(mapped3, async (item) => {});
   return mapped3;
 }
