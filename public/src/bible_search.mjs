@@ -1,6 +1,5 @@
 import { list_intersect_multiple } from "./list_intersect_multiple.mjs";
 import { json_to } from "./json_to.mjs";
-import { list_denest } from "./list_denest.mjs";
 import { list_find_property } from "./list_find_property.mjs";
 import { list_map_async } from "./list_map_async.mjs";
 import { list_take } from "./list_take.mjs";
@@ -34,8 +33,7 @@ export async function bible_search(words) {
     }),
   );
   let cap = 10;
-  let mapped3 = list_map(mapped2, (m) => list_take(m, cap));
-  let mapped4 = list_map(mapped3, (word) =>
+  let mapped4 = list_map(mapped2, (word) =>
     list_map(word, (results) => {
       let { chapter_code, verse_number } = results;
       return json_to({
@@ -44,19 +42,16 @@ export async function bible_search(words) {
       });
     }),
   );
-  return list_intersect_multiple(mapped4);
-  return mapped4;
-  let mapped5 = await list_map(mapped4, list_denest);
-  let taken2 = list_map(mapped5, (m) => list_take(m, cap));
-  return taken2;
-  let t = await list_map_async(versions, async (version) => {
-    let chapter = await bible_chapter(version, chapter_code);
+  let intersect = list_intersect_multiple(mapped4);
+  let mapped3 = list_map(intersect, (m) => list_take(m, cap));
+  let t = await list_map_async(mapped3, async (verse) => {
+    let { chapter_code, verse_number } = verse;
+    let chapter = await bible_chapter("engbsb", chapter_code);
     let r = list_find_property(chapter, "verse_number", verse_number);
     let { tokens } = r;
     return {
       chapter_code,
       verse_number,
-      version,
       text: list_join_space(tokens),
     };
   });
