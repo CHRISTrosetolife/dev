@@ -1,3 +1,4 @@
+import { list_intersect_multiple } from "./list_intersect_multiple.mjs";
 import { json_to } from "./json_to.mjs";
 import { list_denest } from "./list_denest.mjs";
 import { list_find_property } from "./list_find_property.mjs";
@@ -12,7 +13,6 @@ import { string_split_comma } from "./string_split_comma.mjs";
 import { list_map } from "./list_map.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
 import { list_join_space } from "./list_join_space.mjs";
-import { list_intersect } from "./list_intersect.mjs";
 export async function bible_search(words) {
   let s = string_split_comma(words);
   let mapped = bible_search_symbols_map(s);
@@ -44,7 +44,7 @@ export async function bible_search(words) {
       });
     }),
   );
-  list_intersect();
+  return list_intersect_multiple(mapped4);
   return mapped4;
   let mapped5 = await list_map(mapped4, list_denest);
   let taken2 = list_map(mapped5, (m) => list_take(m, cap));
