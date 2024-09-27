@@ -1,4 +1,4 @@
-import { each_async } from "./each_async.mjs";
+import { list_map_async } from "./list_map_async.mjs";
 import { list_take } from "./list_take.mjs";
 import { each_object } from "./each_object.mjs";
 import { list_adder } from "./list_adder.mjs";
@@ -28,6 +28,6 @@ export async function bible_search(words) {
     }),
   );
   let mapped3 = list_map(mapped2, (m) => list_take(m, 10));
-  await each_async(list, async (item) => {});
+  await list_map_async(list, async (item) => {});
   return mapped3;
 }
