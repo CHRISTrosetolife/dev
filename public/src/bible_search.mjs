@@ -35,6 +35,9 @@ export async function bible_search(words) {
     mapped3,
     async (word) =>
       await list_map_async(word, async (results) => {
+        log({
+          results,
+        });
         return await list_map_async(results, async (result) => {
           log({
             result,
