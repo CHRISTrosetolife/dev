@@ -1,3 +1,4 @@
+import { each_object } from "./each_object.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { object_properties } from "./object_properties.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -13,7 +14,11 @@ export async function bible_search(words) {
   let results = list_map(mapped, (m) => {
     return object_property_get(i, m);
   });
-  list_map(results, (word) => list_adder((la) => {}));
+  list_map(results, (word) =>
+    list_adder((la) => {
+      each_object(object, (key, value) => {});
+    }),
+  );
   let r0 = list_first(results);
   return object_properties(r0);
 }
