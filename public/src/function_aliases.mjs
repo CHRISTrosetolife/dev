@@ -5,6 +5,7 @@ export function function_aliases() {
     al: "function_aliases_generate",
     an: "app_new",
     b: "bible_audio_player_book",
+    bs: "bible_search",
     c: "function_copy",
     cl: "command_line",
     d: "data_update",
