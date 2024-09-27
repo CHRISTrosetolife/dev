@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_map_unordered } from "./list_map_unordered.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { bible_reference_code } from "./bible_reference_code.mjs";
@@ -51,6 +52,9 @@ export async function bible_search(words) {
     let verse = json_from(verse_json);
     let { chapter_code, verse_number } = verse;
     let chapter = await bible_chapter("engbsb", chapter_code);
+    log({
+      verse_number,
+    });
     let v = list_find_property(chapter, "verse_number", verse_number);
     let { tokens } = v;
     let r = bible_reference_code(chapter_code, verse_number);
