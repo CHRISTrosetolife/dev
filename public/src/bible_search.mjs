@@ -1,3 +1,4 @@
+import { bible_book_name } from "./bible_book_name.mjs";
 import { bible_chapter_name_parse } from "./bible_chapter_name_parse.mjs";
 import { json_from } from "./json_from.mjs";
 import { list_intersect_multiple } from "./list_intersect_multiple.mjs";
@@ -55,7 +56,7 @@ export async function bible_search(words) {
     let { book_code, chapter_code: chapter_number } =
       bible_chapter_name_parse(chapter_code);
     return {
-      book_code,
+      book: bible_book_name(book_code),
       chapter_number,
       text: list_join_space(tokens),
     };
