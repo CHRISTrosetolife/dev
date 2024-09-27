@@ -1,7 +1,6 @@
 import { list_take } from "./list_take.mjs";
 import { each_object } from "./each_object.mjs";
 import { list_adder } from "./list_adder.mjs";
-import { object_properties } from "./object_properties.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { bible_search_symbols_map } from "./bible_search_symbols_map.mjs";
 import { bible_search_index_cache } from "./bible_search_index_cache.mjs";
@@ -27,6 +26,6 @@ export async function bible_search(words) {
       });
     }),
   );
-  let taken = list_take(mapped2, 10);
-  return object_properties(taken);
+  let mapped3 = list_map(mapped2, (m) => list_take(m, 10));
+  return mapped3;
 }
