@@ -16,7 +16,9 @@ export async function bible_search(words) {
   });
   list_map(results, (word) =>
     list_adder((la) => {
-      each_object(object, (key, value) => {});
+      each_object(word, (chapter_code, chapter) => {
+        each_object(object, (key, value) => {});
+      });
     }),
   );
   let r0 = list_first(results);
