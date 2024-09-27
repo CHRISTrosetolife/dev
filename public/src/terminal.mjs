@@ -201,9 +201,6 @@ export async function terminal() {
       log_error(json_to(e));
     }
     unawait(async () => {
-      log({
-        input,
-      });
       await git_acp_message(input);
     });
   }
