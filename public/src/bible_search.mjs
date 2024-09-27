@@ -30,7 +30,7 @@ export async function bible_search(words) {
     }),
   );
   let mapped3 = list_map(mapped2, (m) => list_take(m, 10));
-  list_map(
+  let mapped4 = list_map(
     mapped3,
     async (word) =>
       await list_map_async(word, async () => {
@@ -41,5 +41,5 @@ export async function bible_search(words) {
         });
       }),
   );
-  return mapped3;
+  return mapped4;
 }
