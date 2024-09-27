@@ -1,3 +1,4 @@
+import { bible_search_symbols } from "./bible_search_symbols.mjs";
 import { list_add } from "./list_add.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { list_unique } from "./list_unique.mjs";
@@ -6,7 +7,7 @@ import { each } from "./each.mjs";
 import { each_object } from "./each_object.mjs";
 import { bible_search_lookup_cache } from "./bible_search_lookup_cache.mjs";
 export async function bible_search_index() {
-  let symbols = "-–,;:!?.…·'‘’“”()[]{}¶*/&#%•`°|⌃►◄0123456789";
+  let symbols = bible_search_symbols();
   let i = {};
   let lookup = await bible_search_lookup_cache();
   each_object(lookup, (bible_folder, books) => {
