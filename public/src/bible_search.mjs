@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_find_property } from "./list_find_property.mjs";
 import { list_map_async } from "./list_map_async.mjs";
 import { list_take } from "./list_take.mjs";
@@ -35,6 +36,9 @@ export async function bible_search(words) {
     async (word) =>
       await list_map_async(word, async () => {
         let { chapter_code, verse_number, versions } = word;
+        log({
+          word,
+        });
         await list_map_async(versions, async (version) => {
           let chapter = await bible_chapter(version, chapter_code);
           return list_find_property(chapter, "verse_number", verse_number);
