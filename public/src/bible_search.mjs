@@ -28,6 +28,12 @@ export async function bible_search(words) {
     }),
   );
   let mapped3 = list_map(mapped2, (m) => list_take(m, 10));
-  list_map(mapped3, async (word) => await list_map_async(word, () => {}));
+  list_map(
+    mapped3,
+    async (word) =>
+      await list_map_async(word, async () => {
+        let { chapter_code, verse_number, versions } = word;
+      }),
+  );
   return mapped3;
 }
