@@ -1,4 +1,4 @@
-import { log } from "./log.mjs";
+import { string_digits_is } from "./string_digits_is.mjs";
 import { list_map_unordered } from "./list_map_unordered.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { bible_reference_code } from "./bible_reference_code.mjs";
@@ -16,6 +16,7 @@ import { list_map } from "./list_map.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { list_take_soft } from "./list_take_soft.mjs";
+import { list_filter } from "./list_filter.mjs";
 export async function bible_search(words) {
   let s = string_split_comma(words);
   let mapped = bible_search_symbols_map(s);
@@ -47,15 +48,14 @@ export async function bible_search(words) {
     }),
   );
   let intersect = list_intersect_multiple(mapped4);
+  let filtered = list_filter(intersect, (i) =>
+    string_digits_is(object_property_get(object, "property_name")),
+  );
   let mapped3 = list_take_soft(intersect, cap);
   let t = await list_map_unordered(mapped3, async (verse_json) => {
     let verse = json_from(verse_json);
     let { chapter_code, verse_number } = verse;
     let chapter = await bible_chapter("engbsb", chapter_code);
-    log({
-      verse_number,
-      chapter_code,
-    });
     let v = list_find_property(chapter, "verse_number", verse_number);
     let { tokens } = v;
     let r = bible_reference_code(chapter_code, verse_number);
