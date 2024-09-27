@@ -48,6 +48,6 @@ export async function bible_search(words) {
         return t;
       }),
   );
-  await promise_all(p);
-  return mapped4;
+  let a = await promise_all(p);
+  return a;
 }
