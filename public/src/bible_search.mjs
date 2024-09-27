@@ -38,15 +38,10 @@ export async function bible_search(words) {
         log({
           results,
         });
-        return await list_map_async(results, async (result) => {
-          log({
-            result,
-          });
-          let { chapter_code, verse_number, versions } = result;
-          await list_map_async(versions, async (version) => {
-            let chapter = await bible_chapter(version, chapter_code);
-            return list_find_property(chapter, "verse_number", verse_number);
-          });
+        let { chapter_code, verse_number, versions } = results;
+        await list_map_async(versions, async (version) => {
+          let chapter = await bible_chapter(version, chapter_code);
+          return list_find_property(chapter, "verse_number", verse_number);
         });
       }),
   );
