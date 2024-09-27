@@ -1,3 +1,4 @@
+import { bible_search } from "./bible_search.mjs";
 import { function_rename_alias } from "./function_rename_alias.mjs";
 import { hub } from "./hub.mjs";
 import { bible_audio_player_book } from "./bible_audio_player_book.mjs";
@@ -75,6 +76,7 @@ export async function function_aliases_generate() {
   alias_add(function_aliases_generate, ["al"]);
   alias_add(app_new, ["an"]);
   alias_add(bible_audio_player_book, ["b"]);
+  alias_add(bible_search, ["bs"]);
   alias_add(function_copy, ["c"]);
   alias_add(command_line, ["cl"]);
   alias_add(data_update, ["d"]);
