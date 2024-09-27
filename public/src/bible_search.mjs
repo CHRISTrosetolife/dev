@@ -50,9 +50,9 @@ export async function bible_search(words) {
   let intersect = list_intersect_multiple(mapped4);
   let mapped5 = list_map(intersect, json_from);
   let filtered = list_filter(mapped5, (i) => {
-    return string_digits_is(object_property_get(i, "property_name"));
+    return string_digits_is(object_property_get(i, "verse_number"));
   });
-  let mapped3 = list_take_soft(intersect, cap);
+  let mapped3 = list_take_soft(filtered, cap);
   let t = await list_map_unordered(mapped3, async (verse) => {
     let { chapter_code, verse_number } = verse;
     let chapter = await bible_chapter("engbsb", chapter_code);
