@@ -5,7 +5,7 @@ import { bible_chapter } from "./bible_chapter.mjs";
 export async function bible_chapter_text(bible_folder, chapter_name) {
   let verses = await bible_chapter(bible_folder, chapter_name);
   let m = list_map(verses, (verse) => {
-    let verse_number = verse;
+    let { verse_number, tokens } = verse;
   });
   return list_join_newline(list_concat_multiple(t));
 }
