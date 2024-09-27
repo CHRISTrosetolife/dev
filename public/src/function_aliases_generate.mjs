@@ -75,8 +75,8 @@ export async function function_aliases_generate() {
   alias_add(function_alias_expand, ["ae"]);
   alias_add(function_aliases_generate, ["al"]);
   alias_add(app_new, ["an"]);
-  alias_add(bible_audio_player_book, ["b"]);
-  alias_add(bible_search, ["bs"]);
+  alias_add(bible_audio_player_book, ["bp"]);
+  alias_add(bible_search, ["b"]);
   alias_add(function_copy, ["c"]);
   alias_add(command_line, ["cl"]);
   alias_add(data_update, ["d"]);
