@@ -37,7 +37,7 @@ export async function bible_search(words) {
         let { chapter_code, verse_number, versions } = word;
         await list_map_async(versions, async (version) => {
           let chapter = await bible_chapter(version, chapter_code);
-          list_find_property(chapter, "verse_number", verse_number);
+          return list_find_property(chapter, "verse_number", verse_number);
         });
       }),
   );
