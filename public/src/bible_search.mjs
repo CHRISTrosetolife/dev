@@ -48,9 +48,9 @@ export async function bible_search(words) {
     }),
   );
   let intersect = list_intersect_multiple(mapped4);
-  let filtered = list_filter(intersect, (i) =>
-    string_digits_is(object_property_get(object, "property_name")),
-  );
+  let filtered = list_filter(intersect, (i) => {
+    return string_digits_is(object_property_get(i, "property_name"));
+  });
   let mapped3 = list_take_soft(intersect, cap);
   let t = await list_map_unordered(mapped3, async (verse_json) => {
     let verse = json_from(verse_json);
