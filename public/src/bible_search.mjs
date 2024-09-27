@@ -1,3 +1,4 @@
+import { object_properties } from "./object_properties.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { bible_search_symbols_map } from "./bible_search_symbols_map.mjs";
 import { bible_search_index_cache } from "./bible_search_index_cache.mjs";
@@ -10,5 +11,5 @@ export async function bible_search(words) {
   let results = list_map(mapped, (m) => {
     return object_property_get(i, m);
   });
-  return object_property_get(results);
+  return object_properties(results);
 }
