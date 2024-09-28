@@ -19,6 +19,7 @@ export function bible_audio_player_english_folders_numbers(
           n,
         });
         la(async () => {
+          log({});
           return await bible_audio_player_english(
             download_folder,
             (file_path) => filter(file_path, n),
