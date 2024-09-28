@@ -1,4 +1,4 @@
-import { invoke } from "./invoke.mjs";
+import { invoke_async } from "./invoke_async.mjs";
 import { each_async } from "./each_async.mjs";
 import { log } from "./log.mjs";
 import { drive_format } from "./drive_format.mjs";
@@ -113,7 +113,7 @@ export async function bible_audio_player_range(book_from, book_to) {
   log({
     promises: fns,
   });
-  await each_async(fns, invoke);
+  await each_async(fns, invoke_async);
   let download_folders_regular_computer_voice = [
     "NHEB_NT_audio",
     "NHEB_OT_audio",
