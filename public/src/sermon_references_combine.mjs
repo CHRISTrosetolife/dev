@@ -1,3 +1,4 @@
+import { bible_reference } from "./bible_reference.mjs";
 import { list_join_comma } from "./list_join_comma.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { list_last } from "./list_last.mjs";
@@ -86,6 +87,7 @@ export async function sermon_references_combine(sermon_name) {
             let { book, chapter_name } = first;
             let m = list_map_property([first, last], "verse_number");
             let j = list_join_comma(m);
+            bible_reference();
             list_remove_all(group);
           }
           la(line);
