@@ -48,15 +48,14 @@ export async function sermon_references_combine(sermon_name) {
       };
     });
     list_adder((la) => {
-      let previous_reference_is = false;
-      let previous_book, previous_chapter_name, previous_verse_number;
+      let previous = null;
       each(prepared, (p) => {
         let { line, reference_is } = p;
         if (reference_is) {
           let { book, chapter_name, verse_number } = p;
           if (previous_reference_is) {
           }
-          previous_reference_is = true;
+          let previous_reference_is = true;
         }
       });
     });
