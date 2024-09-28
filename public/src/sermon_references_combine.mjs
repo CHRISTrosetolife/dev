@@ -1,3 +1,4 @@
+import { string_split_space } from "./string_split_space.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 import { bible_book_to_reference_prefix } from "./bible_book_to_reference_prefix.mjs";
 import { list_single } from "./list_single.mjs";
@@ -28,6 +29,7 @@ export async function sermon_references_combine(sermon_name) {
         line,
         bible_book_to_reference_prefix(book),
       );
+      let s = string_split_space(remaining);
       return {
         line,
         reference_is: true,
