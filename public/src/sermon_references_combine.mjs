@@ -13,7 +13,9 @@ export async function sermon_references_combine(sermon_name) {
     let mapped = list_map(lines, (line) => {
       let f = list_filter(books, (book) => string_starts_with(line, book));
       if (list_empty_is(f)) {
-        return {};
+        return {
+          reference_is: false,
+        };
       }
     });
     log({
