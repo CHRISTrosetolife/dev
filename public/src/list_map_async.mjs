@@ -8,6 +8,7 @@ export async function list_map_async(list, mapper) {
       let waited = await mapped;
       log({
         mapped,
+        waited,
       });
       la(waited);
     });
