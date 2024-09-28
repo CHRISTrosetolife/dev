@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_wait_ordered } from "./list_wait_ordered.mjs";
 import { drive_format } from "./drive_format.mjs";
 import { drive_remove } from "./drive_remove.mjs";
@@ -105,6 +106,9 @@ export async function bible_audio_player_range(book_from, book_to) {
     promises,
   );
   list_shuffle(promises);
+  log({
+    promises,
+  });
   await list_wait_ordered(promises);
   let download_folders_regular_computer_voice = [
     "NHEB_NT_audio",
