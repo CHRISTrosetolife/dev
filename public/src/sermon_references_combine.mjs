@@ -64,6 +64,7 @@ export async function sermon_references_combine(sermon_name) {
       each(prepared, (p) => {
         let { line, reference_is } = p;
         if (reference_is) {
+          let clear = true;
           if (previous !== null) {
             if (
               equal_by_property_multiple(["book", "chapter_name"], previous, p)
@@ -79,9 +80,9 @@ export async function sermon_references_combine(sermon_name) {
                 if (list_empty_is(group)) {
                   list_add(group, previous);
                 }
-                list_add(group, p);
               }
             }
+            list_add(group, p);
           }
           previous = p;
         } else {
