@@ -11,7 +11,9 @@ export async function app_firebase(on_logged_in) {
   let auth = firebase_auth();
   onAuthStateChanged(auth, async (user) => {
     if (user) {
-      await on_logged_in(root);
+      await on_logged_in({
+        root,
+      });
     } else {
       app_record_login(root);
     }
