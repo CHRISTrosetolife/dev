@@ -80,6 +80,8 @@ export async function sermon_references_combine(sermon_name) {
                 clear = false;
               }
             }
+            if (false) {
+            }
             list_add(group, p);
           }
           previous = p;
