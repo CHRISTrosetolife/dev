@@ -51,7 +51,8 @@ export async function sermon_references_combine(sermon_name) {
       let previous_reference_is = false;
       each(prepared, (p) => {
         let { line, reference_is } = p;
-        if (false) {
+        if (reference_is) {
+          previous_reference_is = true;
         }
       });
     });
