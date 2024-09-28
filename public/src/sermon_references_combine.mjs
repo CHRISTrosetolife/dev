@@ -58,7 +58,7 @@ export async function sermon_references_combine(sermon_name) {
         remaining: list_join_space(remaining2),
       };
     });
-    list_adder((la) => {
+    let l = list_adder((la) => {
       let previous = null;
       let group = [];
       each(prepared, (p) => {
