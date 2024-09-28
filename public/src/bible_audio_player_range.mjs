@@ -112,7 +112,7 @@ export async function bible_audio_player_range(book_from, book_to) {
   log({
     promises: fns,
   });
-  await await list_map_async(fns, (f) => f());
+  await list_map_async(fns, (f) => f());
   let download_folders_regular_computer_voice = [
     "NHEB_NT_audio",
     "NHEB_OT_audio",
