@@ -99,6 +99,7 @@ export async function sermon_references_combine(sermon_name) {
   function group_clear(group, la) {
     if (list_empty_not_is(group)) {
       let { first, remaining } = list_first_remaining(group);
+      let list = [first];
       if (list_empty_not_is(last)) {
         let last = list_last(remaining);
       }
