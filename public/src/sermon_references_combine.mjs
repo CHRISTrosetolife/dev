@@ -18,10 +18,12 @@ export async function sermon_references_combine(sermon_name) {
       if (list_empty_is(f)) {
         return {
           reference_is: false,
+          line,
         };
       }
       return {
         reference_is: true,
+        line,
       };
     });
     log({
