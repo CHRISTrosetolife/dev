@@ -100,7 +100,7 @@ export async function sermon_references_combine(sermon_name) {
     if (list_empty_not_is(group)) {
       let { first, remaining } = list_first_remaining(group);
       let ns = [first];
-      if (list_empty_not_is(last)) {
+      if (list_empty_not_is(remaining)) {
         let last = list_last(remaining);
         list_add(ns, last);
       }
