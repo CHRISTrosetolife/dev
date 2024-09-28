@@ -80,11 +80,11 @@ export async function sermon_references_combine(sermon_name) {
                 clear = false;
               }
             }
-            if (clear) {
-              group_clear(group, la);
-            }
-            list_add(group, p);
           }
+          if (clear) {
+            group_clear(group, la);
+          }
+          list_add(group, p);
           previous = p;
         } else {
           group_clear(group, la);
@@ -94,7 +94,7 @@ export async function sermon_references_combine(sermon_name) {
       });
       group_clear(group, la);
     });
-    return l;
+    return lines;
   });
   function group_clear(group, la) {
     if (list_empty_not_is(group)) {
