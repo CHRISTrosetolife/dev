@@ -1,5 +1,4 @@
 import { list_join_dash } from "./list_join_dash.mjs";
-import { log } from "./log.mjs";
 import { list_add_beginning } from "./list_add_beginning.mjs";
 import { bible_reference } from "./bible_reference.mjs";
 import { list_map_property } from "./list_map_property.mjs";
@@ -104,9 +103,6 @@ export async function sermon_references_combine(sermon_name) {
         }
       });
     });
-    log({
-      l,
-    });
-    return lines;
+    return l;
   });
 }
