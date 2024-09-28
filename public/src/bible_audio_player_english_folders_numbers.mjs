@@ -30,5 +30,6 @@ export function bible_audio_player_english_folders_numbers(
   list_add_multiple(output, result);
   log({
     result,
+    output,
   });
 }
