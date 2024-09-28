@@ -29,7 +29,11 @@ export async function sermon_format(name) {
     });
     return n;
   });
-  let text = list_join_space(mapped);
-  let sermon_path_file = sermon_path(name);
-  await file_overwrite(sermon_path_file, text);
+  await sermon_overwrite(name, mapped);
 }
+async function sermon_overwrite(name, lines) {
+    let sermon_path_file = sermon_path(name);
+    let text = list_join_space(lines);
+    await file_overwrite(sermon_path_file, text);
+}
+
