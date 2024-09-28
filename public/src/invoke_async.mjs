@@ -1,3 +1,3 @@
-export function invoke_async(fn) {
-  return fn();
+export async function invoke_async(fn) {
+  return await fn();
 }
