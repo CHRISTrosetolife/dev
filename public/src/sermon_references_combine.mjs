@@ -1,7 +1,7 @@
+import { list_join } from "./list_join.mjs";
 import { log } from "./log.mjs";
 import { list_add_beginning } from "./list_add_beginning.mjs";
 import { bible_reference } from "./bible_reference.mjs";
-import { list_join_comma } from "./list_join_comma.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { list_last } from "./list_last.mjs";
 import { list_remove_all } from "./list_remove_all.mjs";
@@ -91,7 +91,7 @@ export async function sermon_references_combine(sermon_name) {
             let last = list_last(remaining);
             let { book, chapter_name } = first;
             let m = list_map_property([first, last], "verse_number");
-            let j = list_join_comma(m);
+            let j = list_join(m, "-");
             let r = bible_reference(book, chapter_name, j);
             let rs = list_map_property(group, "remaining");
             list_add_beginning(rs, r);
