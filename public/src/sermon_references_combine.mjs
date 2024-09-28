@@ -1,4 +1,4 @@
-import { equal_by_property } from "./equal_by_property.mjs";
+import { equal_by_property_multiple } from "./equal_by_property_multiple.mjs";
 import { each } from "./each.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { list_first_remaining } from "./list_first_remaining.mjs";
@@ -55,7 +55,9 @@ export async function sermon_references_combine(sermon_name) {
         if (reference_is) {
           let { book, chapter_name, verse_number } = p;
           if (previous !== null) {
-            if (equal_by_property(previous, p, "book")) {
+            if (
+              equal_by_property_multiple(previous, p, ["book", "chapter_name"])
+            ) {
             }
           }
           previous = p;
