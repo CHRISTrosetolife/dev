@@ -1,3 +1,4 @@
+import { fn_name } from "./fn_name.mjs";
 import { path_resolve } from "./path_resolve.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { log_error } from "./log_error.mjs";
@@ -22,7 +23,9 @@ export async function watch() {
   let base = Promise.resolve();
   let fps = folder_path_src();
   start();
-  log(string_combine_multiple([watch.name, " ", await path_resolve(fps)]));
+  log(
+    string_combine_multiple([fn_name("watch"), " ", await path_resolve(fps)]),
+  );
   function start() {
     let result = chokidar
       .watch(fps)
@@ -54,7 +57,9 @@ export async function watch() {
         after = await fn(...args);
         processed = true;
       } catch (e) {
-        log_error($s,"error while processing ", function_name);
+        log_error(
+          string_combine_multiple(["error while processing ", function_name]),
+        );
         log_error(e);
       } finally {
         object_property_set(c, "processing", false);
