@@ -4,7 +4,7 @@ import { log } from "./log.mjs";
 import { firebase_list } from "./firebase_list.mjs";
 export async function app_todo() {
   await app_firebase(async (context) => {
-    let root = context;
+    let { root } = context;
     html_clear_scroll_top(root);
     let r = await firebase_list("todo/list.json");
     log({
