@@ -1,3 +1,4 @@
+import { list_add } from "./list_add.mjs";
 import { integer_parse } from "./integer_parse.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { equal_by_property_multiple } from "./equal_by_property_multiple.mjs";
@@ -68,6 +69,7 @@ export async function sermon_references_combine(sermon_name) {
               verse_number = integer_parse(verse_number);
               previous_verse_number = integer_parse(previous_verse_number);
               if (previous_verse_number + 1 === verse_number) {
+                list_add(group, p);
                 let { book, chapter_name } = p;
               }
             }
