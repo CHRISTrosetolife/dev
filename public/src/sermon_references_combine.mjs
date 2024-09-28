@@ -1,5 +1,5 @@
+import { bible_book_to_reference_prefix } from "./bible_book_to_reference_prefix.mjs";
 import { list_single } from "./list_single.mjs";
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { list_map } from "./list_map.mjs";
@@ -14,7 +14,7 @@ export async function sermon_references_combine(sermon_name) {
     let books = object_values(lookup);
     let mapped = list_map(lines, (line) => {
       let f = list_filter(books, (book) =>
-        string_starts_with(line, string_combine_multiple([book, ":"])),
+        string_starts_with(line, bible_book_to_reference_prefix(book)),
       );
       if (list_empty_is(f)) {
         return {
