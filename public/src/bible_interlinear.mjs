@@ -73,6 +73,7 @@ export async function bible_interlinear() {
     let split2 = string_split_colon(chapter_verse);
     assert(list_size_2, [split2]);
     let chapter_name = list_first(split2);
+    let verse_number = list_second(split2);
     let chapter = list_find_property_or(
       book.chapters,
       "chapter_name",
@@ -90,7 +91,6 @@ export async function bible_interlinear() {
         chapter_name,
       });
     }
-    let verse_number = list_second(split2);
     let verse = list_find_property_or(
       chapter.verses,
       "verse_number",
