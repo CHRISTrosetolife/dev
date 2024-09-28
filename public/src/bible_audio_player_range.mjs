@@ -1,5 +1,4 @@
 import { invoke_multiple_async } from "./invoke_multiple_async.mjs";
-import { log } from "./log.mjs";
 import { drive_format } from "./drive_format.mjs";
 import { drive_remove } from "./drive_remove.mjs";
 import { bible_book_prefix_to_number } from "./bible_book_prefix_to_number.mjs";
@@ -109,9 +108,6 @@ export async function bible_audio_player_range(book_from, book_to) {
     fns,
   );
   list_shuffle(fns);
-  log({
-    promises: fns,
-  });
   await invoke_multiple_async(fns);
   let download_folders_regular_computer_voice = [
     "NHEB_NT_audio",
