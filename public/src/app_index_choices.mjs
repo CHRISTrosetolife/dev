@@ -51,7 +51,7 @@ export function app_index_choices() {
     page: "yyy8Uu",
   });
   list_add(choices, {
-    text: "TODO list",
+    text: "📃 TODO list",
     page: "todo",
   });
   return choices;
