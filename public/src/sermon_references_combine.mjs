@@ -57,7 +57,7 @@ export async function sermon_references_combine(sermon_name) {
           if (previous !== null) {
             if (
               object_property_get(previous, "book") ==
-              object_property_get(object, "property_name")
+              object_property_get(p, "book")
             ) {
             }
           }
