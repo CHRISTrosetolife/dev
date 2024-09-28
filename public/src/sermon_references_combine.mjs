@@ -1,3 +1,4 @@
+import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_add } from "./list_add.mjs";
 import { integer_parse } from "./integer_parse.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -76,6 +77,9 @@ export async function sermon_references_combine(sermon_name) {
           }
           previous = p;
         } else {
+          if (list_empty_not_is(group)) {
+            list_clear(group);
+          }
           la(line);
           previous = null;
         }
