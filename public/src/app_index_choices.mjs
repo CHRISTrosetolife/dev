@@ -50,5 +50,9 @@ export function app_index_choices() {
     text: "📙 book syntagmatis theologiae christianae",
     page: "yyy8Uu",
   });
+  list_add(choices, {
+    text: "TODO list",
+    page: "todo",
+  });
   return choices;
 }
