@@ -60,8 +60,8 @@ export async function sermon_references_combine(sermon_name) {
               equal_by_property_multiple(previous, p, ["book", "chapter_name"])
             ) {
               let previous_verse_number = object_property_get(
-                object,
-                "property_name",
+                previous,
+                "verse_number",
               );
             }
           }
