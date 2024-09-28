@@ -1,4 +1,3 @@
-import { list_first } from "./list_first.mjs";
 import { list_remove_all } from "./list_remove_all.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_add } from "./list_add.mjs";
@@ -79,7 +78,7 @@ export async function sermon_references_combine(sermon_name) {
           previous = p;
         } else {
           if (list_empty_not_is(group)) {
-            let first = list_first(group);
+            let { first, remaining } = list_first_remaining(group);
             let { book, chapter_name } = first;
             list_remove_all(group);
           }
