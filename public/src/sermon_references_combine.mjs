@@ -1,3 +1,4 @@
+import { bible_chapter_verse_parse } from "./bible_chapter_verse_parse.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 import { bible_book_to_reference_prefix } from "./bible_book_to_reference_prefix.mjs";
@@ -10,6 +11,7 @@ import { bible_books_prefix_to_name } from "./bible_books_prefix_to_name.mjs";
 import { log } from "./log.mjs";
 import { sermon_transform } from "./sermon_transform.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
+import { list_first } from "./list_first.mjs";
 export async function sermon_references_combine(sermon_name) {
   await sermon_transform(sermon_name, (lines) => {
     let lookup = bible_books_prefix_to_name();
@@ -30,6 +32,9 @@ export async function sermon_references_combine(sermon_name) {
         bible_book_to_reference_prefix(book),
       );
       let s = string_split_space(remaining);
+      let chapter_verse = list_first(s);
+      let { chapter_name, verse_number } =
+        bible_chapter_verse_parse(chapter_verse);
       return {
         line,
         reference_is: true,
