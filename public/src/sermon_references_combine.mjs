@@ -54,15 +54,16 @@ export async function sermon_references_combine(sermon_name) {
       each(prepared, (p) => {
         let { line, reference_is } = p;
         if (reference_is) {
-          let { book, chapter_name, verse_number } = p;
           if (previous !== null) {
             if (
               equal_by_property_multiple(previous, p, ["book", "chapter_name"])
             ) {
+              let { verse_number } = p;
               let previous_verse_number = object_property_get(
                 previous,
                 "verse_number",
               );
+              let { book, chapter_name } = p;
             }
           }
           previous = p;
