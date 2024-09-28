@@ -110,8 +110,8 @@ export async function bible_audio_player_range(book_from, book_to) {
     "NHEB_NT_audio",
     "NHEB_OT_audio",
   ];
-  let download_folder_acronymns_computer_voice = "BBEM_complete";$r
-
-  
+  let download_folder_acronymns_computer_voice = "BBEM_complete";
+  return;
+  return;
   await drive_remove(drive_letter);
 }
