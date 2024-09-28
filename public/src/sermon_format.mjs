@@ -8,7 +8,7 @@ import { string_first } from "./string_first.mjs";
 import { string_replace } from "./string_replace.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { string_empty_is } from "./string_empty_is.mjs";
-export async function sermon_format(name) {
+export async function sermon_format(sermon_name) {
   await sermon_transform(sermon_name, (lines) => {
     let numbered = list_filter(lines, (line) => {
       if (string_empty_is(line)) {
