@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { list_add_multiple } from "./list_add_multiple.mjs";
 import { each } from "./each.mjs";
 import { list_adder } from "./list_adder.mjs";
@@ -11,15 +10,8 @@ export function bible_audio_player_english_folders_numbers(
 ) {
   let result = list_adder((la) => {
     each(download_folders, (download_folder) => {
-      log({
-        download_folder,
-      });
       each(numbers_s, (n) => {
-        log({
-          n,
-        });
         la(async () => {
-          log("here");
           return await bible_audio_player_english(
             download_folder,
             (file_path) => filter(file_path, n),
