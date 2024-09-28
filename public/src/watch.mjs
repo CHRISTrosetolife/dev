@@ -54,7 +54,7 @@ export async function watch() {
         after = await fn(...args);
         processed = true;
       } catch (e) {
-        log_error("error while processing " + function_name);
+        log_error($s,"error while processing ", function_name);
         log_error(e);
       } finally {
         object_property_set(c, "processing", false);
