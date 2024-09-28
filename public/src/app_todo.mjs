@@ -8,7 +8,7 @@ export async function app_todo() {
     html_clear_scroll_top(root);
     let { items } = await firebase_list("en/to/ceb/group/0.json");
     log({
-      r,
+      items,
     });
   });
 }
