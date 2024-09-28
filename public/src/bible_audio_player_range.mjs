@@ -112,6 +112,5 @@ export async function bible_audio_player_range(book_from, book_to) {
   ];
   let download_folder_acronymns_computer_voice = "BBEM_complete";
   return;
-  return;
   await drive_remove(drive_letter);
 }
