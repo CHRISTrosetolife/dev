@@ -118,7 +118,7 @@ export async function bible_audio_player_range(book_from, book_to) {
     "NHEB_OT_audio",
   ];
   let download_folder_acronymns_computer_voice = "BBEM_complete";
-  if (false) {
+  if (disk_format_eject) {
     await drive_remove(drive_letter);
   }
 }
