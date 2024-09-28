@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { string_split_newline } from "./string_split_newline.mjs";
 import { string_replace } from "./string_replace.mjs";
 import { file_read } from "./file_read.mjs";
@@ -6,7 +5,6 @@ import { sermon_path } from "./sermon_path.mjs";
 export async function sermon_lines(name) {
   let sermon_path_file = sermon_path(name);
   let text = await file_read(sermon_path_file);
-  log(text);
   text = string_replace(text, "\r", "");
   let lines = string_split_newline(text);
   return lines;
