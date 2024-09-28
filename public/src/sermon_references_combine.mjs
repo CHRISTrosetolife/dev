@@ -99,9 +99,10 @@ export async function sermon_references_combine(sermon_name) {
   function group_clear(group, la) {
     if (list_empty_not_is(group)) {
       let { first, remaining } = list_first_remaining(group);
-      let list = [first];
+      let ns = [first];
       if (list_empty_not_is(last)) {
         let last = list_last(remaining);
+        list_add(ns, last);
       }
       let { book, chapter_name } = first;
       let m = list_map_property([first, last], "verse_number");
