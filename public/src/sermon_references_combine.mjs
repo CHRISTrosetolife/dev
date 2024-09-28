@@ -46,11 +46,9 @@ export async function sermon_references_combine(sermon_name) {
         remaining: list_join_space(remaining2),
       };
     });
-    if (false) {
-      log({
-        lines,
-      });
-    }
+    log({
+      mapped,
+    });
     return lines;
   });
 }
