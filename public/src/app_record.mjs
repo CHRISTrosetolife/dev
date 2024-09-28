@@ -6,16 +6,11 @@ import { app_record_chapter } from "./app_record_chapter.mjs";
 import { app_record_verse } from "./app_record_verse.mjs";
 import { object_property_get_or } from "./object_property_get_or.mjs";
 import { html_hash_lookup } from "./html_hash_lookup.mjs";
-import { object_merge } from "./object_merge.mjs";
 import { html_recorder_media } from "./html_recorder_media.mjs";
 export async function app_record() {
   await app_firebase(on_logged_in);
-  async function on_logged_in() {
-    let context = {};
+  async function on_logged_in(context) {
     context.mr = await html_recorder_media();
-    object_merge(context, {
-      root,
-    });
     await app_context_books_bible(context);
     let lookup = html_hash_lookup();
     let hash_book = object_property_get_or(lookup, "book", null);
