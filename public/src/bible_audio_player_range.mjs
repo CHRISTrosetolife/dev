@@ -18,9 +18,10 @@ import { range_from } from "./range_from.mjs";
 import { less_than_equal } from "./less_than_equal.mjs";
 import { assert } from "./assert.mjs";
 export async function bible_audio_player_range(book_from, book_to) {
+  let disk_format_eject = false;
   await bible_audio_player_unzip();
   let drive_letter = "E";
-  if (false) {
+  if (disk_format_eject) {
     await drive_format(drive_letter);
   }
   let bible_folder = "engbsb";
