@@ -58,7 +58,11 @@ export async function watch() {
         processed = true;
       } catch (e) {
         log_error(
-          string_combine_multiple(["error while processing ", function_name]),
+          string_combine_multiple([
+            fn_name("watch"),
+            "error while processing ",
+            function_name,
+          ]),
         );
         log_error(e);
       } finally {
