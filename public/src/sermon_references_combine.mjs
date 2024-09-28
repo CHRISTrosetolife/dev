@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_add_beginning } from "./list_add_beginning.mjs";
 import { bible_reference } from "./bible_reference.mjs";
 import { list_join_comma } from "./list_join_comma.mjs";
@@ -102,6 +103,9 @@ export async function sermon_references_combine(sermon_name) {
           previous = null;
         }
       });
+    });
+    log({
+      l,
     });
     return lines;
   });
