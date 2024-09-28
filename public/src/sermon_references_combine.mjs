@@ -88,6 +88,7 @@ export async function sermon_references_combine(sermon_name) {
             let m = list_map_property([first, last], "verse_number");
             let j = list_join_comma(m);
             let r = bible_reference(book, chapter_name, j);
+            let rs = list_map_property(group, "remaining");
             list_remove_all(group);
           }
           la(line);
