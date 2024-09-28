@@ -1,3 +1,4 @@
+import { list_empty_is } from "./list_empty_is.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { list_map } from "./list_map.mjs";
 import { object_values } from "./object_values.mjs";
@@ -11,7 +12,9 @@ export async function sermon_references_combine(sermon_name) {
     let books = object_values(lookup);
     let mapped = list_map(lines, (line) => {
       let f = list_filter(books, (book) => string_starts_with(line, book));
-      return {};
+      if (list_empty_is(f)) {
+        return {};
+      }
     });
     log({
       mapped,
