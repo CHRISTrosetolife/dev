@@ -12,6 +12,7 @@ import { bible_books_prefix_to_name } from "./bible_books_prefix_to_name.mjs";
 import { log } from "./log.mjs";
 import { sermon_transform } from "./sermon_transform.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
+import { list_join_space } from "./list_join_space.mjs";
 export async function sermon_references_combine(sermon_name) {
   await sermon_transform(sermon_name, (lines) => {
     let lookup = bible_books_prefix_to_name();
@@ -42,6 +43,7 @@ export async function sermon_references_combine(sermon_name) {
         book,
         chapter_name,
         verse_number,
+        remaining: list_join_space(remaining2),
       };
     });
     log({
