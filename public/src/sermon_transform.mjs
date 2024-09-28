@@ -5,5 +5,5 @@ export async function sermon_transform(sermon_name, transform) {
   let lines = await sermon_lines(sermon_name);
   let mapped = transform(lines);
   let text = list_join_newline(mapped);
-  await sermon_overwrite(sermon_name, mapped);
+  await sermon_overwrite(sermon_name, text);
 }
