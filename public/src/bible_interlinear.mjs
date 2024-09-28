@@ -1,9 +1,5 @@
-import { list_second } from "./list_second.mjs";
+import { bible_chapter_verse_parse } from "./bible_chapter_verse_parse.mjs";
 import { log } from "./log.mjs";
-import { list_first } from "./list_first.mjs";
-import { list_size_2 } from "./list_size_2.mjs";
-import { assert } from "./assert.mjs";
-import { string_split_colon } from "./string_split_colon.mjs";
 import { list_last } from "./list_last.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_find_property_or } from "./list_find_property_or.mjs";
@@ -70,10 +66,8 @@ export async function bible_interlinear() {
       list_add(bible, book);
     }
     let chapter_verse = list_last(split);
-    let split2 = string_split_colon(chapter_verse);
-    assert(list_size_2, [split2]);
-    let chapter_name = list_first(split2);
-    let verse_number = list_second(split2);
+    let { chapter_name, verse_number } =
+      bible_chapter_verse_parse(chapter_verse);
     let chapter = list_find_property_or(
       book.chapters,
       "chapter_name",
