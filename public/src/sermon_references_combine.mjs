@@ -85,7 +85,7 @@ export async function sermon_references_combine(sermon_name) {
             let last = list_last(remaining);
             let { book, chapter_name } = first;
             let m = list_map_property([first, last], "verse_number");
-            list_join_comma(m);
+            let j = list_join_comma(m);
             list_remove_all(group);
           }
           la(line);
