@@ -65,6 +65,7 @@ export async function sermon_references_combine(sermon_name) {
                 "verse_number",
               );
               verse_number = integer_parse(verse_number);
+              previous_verse_number = integer_parse(previous_verse_number);
               let { book, chapter_name } = p;
             }
           }
