@@ -105,7 +105,7 @@ export async function sermon_references_combine(sermon_name) {
         list_add(ns, last);
       }
       let { book, chapter_name } = first;
-      let m = list_map_property([first, last], "verse_number");
+      let m = list_map_property(ns, "verse_number");
       let j = list_join_dash(m);
       let r = bible_reference(book, chapter_name, j);
       let rs = list_map_property(group, "remaining");
