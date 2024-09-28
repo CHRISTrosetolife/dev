@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { equal_by_property_multiple } from "./equal_by_property_multiple.mjs";
 import { each } from "./each.mjs";
 import { list_adder } from "./list_adder.mjs";
@@ -58,6 +59,10 @@ export async function sermon_references_combine(sermon_name) {
             if (
               equal_by_property_multiple(previous, p, ["book", "chapter_name"])
             ) {
+              let previous_verse_number = object_property_get(
+                object,
+                "property_name",
+              );
             }
           }
           previous = p;
