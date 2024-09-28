@@ -92,6 +92,7 @@ export async function sermon_references_combine(sermon_name) {
             let rs = list_map_property(group, "remaining");
             list_add_beginning(rs, r);
             let j2 = list_join_space(rs);
+            la(j2);
             list_remove_all(group);
           }
           la(line);
