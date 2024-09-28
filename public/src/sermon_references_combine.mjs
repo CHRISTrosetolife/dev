@@ -1,3 +1,4 @@
+import { list_map_property } from "./list_map_property.mjs";
 import { list_last } from "./list_last.mjs";
 import { list_remove_all } from "./list_remove_all.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
@@ -82,9 +83,7 @@ export async function sermon_references_combine(sermon_name) {
             let { first, remaining } = list_first_remaining(group);
             let last = list_last(remaining);
             let { book, chapter_name } = first;
-            list_map([first, last], (v) =>
-              object_property_get(object, "property_name"),
-            );
+            let m = list_map_property([first, last], "verse_number");
             list_remove_all(group);
           }
           la(line);
