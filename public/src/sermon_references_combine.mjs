@@ -81,7 +81,7 @@ export async function sermon_references_combine(sermon_name) {
               }
             }
             if (clear) {
-              list_remove_all(group);
+              group_clear(group, la);
             }
             list_add(group, p);
           }
@@ -92,6 +92,7 @@ export async function sermon_references_combine(sermon_name) {
           previous = null;
         }
       });
+      group_clear(group, la);
     });
     return l;
   });
