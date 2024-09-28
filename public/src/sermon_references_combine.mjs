@@ -1,3 +1,4 @@
+import { list_first } from "./list_first.mjs";
 import { list_remove_all } from "./list_remove_all.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_add } from "./list_add.mjs";
@@ -72,13 +73,14 @@ export async function sermon_references_combine(sermon_name) {
               previous_verse_number = integer_parse(previous_verse_number);
               if (previous_verse_number + 1 === verse_number) {
                 list_add(group, p);
-                let { book, chapter_name } = p;
               }
             }
           }
           previous = p;
         } else {
           if (list_empty_not_is(group)) {
+            let first = list_first(group);
+            let { book, chapter_name } = p;
             list_remove_all(group);
           }
           la(line);
