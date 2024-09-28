@@ -1,3 +1,4 @@
+import { string_prefix_without } from "./string_prefix_without.mjs";
 import { bible_book_to_reference_prefix } from "./bible_book_to_reference_prefix.mjs";
 import { list_single } from "./list_single.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
@@ -23,6 +24,10 @@ export async function sermon_references_combine(sermon_name) {
         };
       }
       let book = list_single(f);
+      let remaining = string_prefix_without(
+        line,
+        bible_book_to_reference_prefix(book),
+      );
       return {
         line,
         reference_is: true,
