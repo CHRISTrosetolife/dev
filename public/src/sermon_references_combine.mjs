@@ -52,6 +52,8 @@ export async function sermon_references_combine(sermon_name) {
       each(prepared, (p) => {
         let { line, reference_is } = p;
         if (reference_is) {
+          if (false) {
+          }
           previous_reference_is = true;
         }
       });
