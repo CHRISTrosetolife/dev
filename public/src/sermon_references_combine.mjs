@@ -20,6 +20,9 @@ export async function sermon_references_combine(sermon_name) {
           reference_is: false,
         };
       }
+      return {
+        reference_is: true,
+      };
     });
     log({
       mapped,
