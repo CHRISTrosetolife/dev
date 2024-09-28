@@ -66,7 +66,7 @@ export async function sermon_references_combine(sermon_name) {
         if (reference_is) {
           if (previous !== null) {
             if (
-              equal_by_property_multiple(previous, p, ["book", "chapter_name"])
+              equal_by_property_multiple(["book", "chapter_name"], previous, p)
             ) {
               let { verse_number } = p;
               let previous_verse_number = object_property_get(
