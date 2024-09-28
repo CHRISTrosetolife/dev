@@ -7,7 +7,7 @@ export async function sermon_references_combine(sermon_name) {
   await sermon_transform(sermon_name, (lines) => {
     let lookup = bible_books_prefix_to_name();
     let books = object_values(lookup);
-    let mapped = list_map(lines);
+    let mapped = list_map(lines, () => {});
     log({
       mapped,
     });
