@@ -10,7 +10,7 @@ export async function sermon_references_combine(sermon_name) {
     let lookup = bible_books_prefix_to_name();
     let books = object_values(lookup);
     let mapped = list_map(lines, (line) => {
-      list_filter(books, (book) => string_starts_with(line, book));
+      let f = list_filter(books, (book) => string_starts_with(line, book));
       return {};
     });
     log({
