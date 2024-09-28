@@ -19,7 +19,7 @@ export function bible_audio_player_english_folders_numbers(
           n,
         });
         la(async () => {
-          log({});
+          log("here");
           return await bible_audio_player_english(
             download_folder,
             (file_path) => filter(file_path, n),
@@ -29,8 +29,4 @@ export function bible_audio_player_english_folders_numbers(
     });
   });
   list_add_multiple(output, result);
-  log({
-    result,
-    output,
-  });
 }
