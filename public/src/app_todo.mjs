@@ -6,7 +6,7 @@ export async function app_todo() {
   await app_firebase(async (context) => {
     let { root } = context;
     html_clear_scroll_top(root);
-    let { items } = await firebase_list("en/to/ceb/group/0.json");
+    let { items } = await firebase_list("en/to/ceb/group/");
     log({
       items,
     });
