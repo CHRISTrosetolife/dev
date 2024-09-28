@@ -1,3 +1,4 @@
+import { list_join_comma } from "./list_join_comma.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { list_last } from "./list_last.mjs";
 import { list_remove_all } from "./list_remove_all.mjs";
@@ -84,6 +85,7 @@ export async function sermon_references_combine(sermon_name) {
             let last = list_last(remaining);
             let { book, chapter_name } = first;
             let m = list_map_property([first, last], "verse_number");
+            list_join_comma(m);
             list_remove_all(group);
           }
           la(line);
