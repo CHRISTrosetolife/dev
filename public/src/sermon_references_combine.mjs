@@ -87,19 +87,7 @@ export async function sermon_references_combine(sermon_name) {
           }
           previous = p;
         } else {
-          if (list_empty_not_is(group)) {
-            let { first, remaining } = list_first_remaining(group);
-            let last = list_last(remaining);
-            let { book, chapter_name } = first;
-            let m = list_map_property([first, last], "verse_number");
-            let j = list_join_dash(m);
-            let r = bible_reference(book, chapter_name, j);
-            let rs = list_map_property(group, "remaining");
-            list_add_beginning(rs, r);
-            let j2 = list_join_space(rs);
-            la(j2);
-            list_remove_all(group);
-          }
+          group_clear(group, la);
           la(line);
           previous = null;
         }
@@ -107,4 +95,19 @@ export async function sermon_references_combine(sermon_name) {
     });
     return l;
   });
+  function group_clear(group, la) {
+    if (list_empty_not_is(group)) {
+      let { first, remaining } = list_first_remaining(group);
+      let last = list_last(remaining);
+      let { book, chapter_name } = first;
+      let m = list_map_property([first, last], "verse_number");
+      let j = list_join_dash(m);
+      let r = bible_reference(book, chapter_name, j);
+      let rs = list_map_property(group, "remaining");
+      list_add_beginning(rs, r);
+      let j2 = list_join_space(rs);
+      la(j2);
+      list_remove_all(group);
+    }
+  }
 }
