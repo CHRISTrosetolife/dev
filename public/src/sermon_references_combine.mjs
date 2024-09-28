@@ -53,9 +53,11 @@ export async function sermon_references_combine(sermon_name) {
         let { line, reference_is } = p;
         if (reference_is) {
           let { book, chapter_name, verse_number } = p;
-          if (previous_reference_is) {
+          if (previous !== null) {
           }
-          let previous_reference_is = true;
+          previous = p;
+        } else {
+          previous = null;
         }
       });
     });
