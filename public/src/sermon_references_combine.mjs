@@ -99,7 +99,9 @@ export async function sermon_references_combine(sermon_name) {
   function group_clear(group, la) {
     if (list_empty_not_is(group)) {
       let { first, remaining } = list_first_remaining(group);
-      let last = list_last(remaining);
+      if (false) {
+        let last = list_last(remaining);
+      }
       let { book, chapter_name } = first;
       let m = list_map_property([first, last], "verse_number");
       let j = list_join_dash(m);
