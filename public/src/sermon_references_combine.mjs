@@ -47,7 +47,7 @@ export async function sermon_references_combine(sermon_name) {
       };
     });
     log({
-      mapped,
+      lines,
     });
     return lines;
   });
