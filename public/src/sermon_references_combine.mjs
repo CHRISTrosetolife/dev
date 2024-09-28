@@ -1,3 +1,4 @@
+import { list_single } from "./list_single.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { list_filter } from "./list_filter.mjs";
@@ -21,9 +22,11 @@ export async function sermon_references_combine(sermon_name) {
           reference_is: false,
         };
       }
+      let book = list_single(f);
       return {
         line,
         reference_is: true,
+        book,
       };
     });
     log({
