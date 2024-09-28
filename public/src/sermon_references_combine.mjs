@@ -80,7 +80,7 @@ export async function sermon_references_combine(sermon_name) {
         } else {
           if (list_empty_not_is(group)) {
             let first = list_first(group);
-            let { book, chapter_name } = p;
+            let { book, chapter_name } = first;
             list_remove_all(group);
           }
           la(line);
