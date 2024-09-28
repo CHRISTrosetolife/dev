@@ -49,7 +49,9 @@ export async function sermon_references_combine(sermon_name) {
     });
     list_adder((la) => {
       let previous_reference_is = false;
-      each(prepared, (p) => {});
+      each(prepared, (p) => {
+        let { line, reference_is } = p;
+      });
     });
     return lines;
   });
