@@ -39,6 +39,8 @@ export async function sermon_references_combine(sermon_name) {
         line,
         reference_is: true,
         book,
+        chapter_name,
+        verse_number,
       };
     });
     log({
