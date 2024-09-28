@@ -55,7 +55,10 @@ export async function sermon_references_combine(sermon_name) {
         if (reference_is) {
           let { book, chapter_name, verse_number } = p;
           if (previous !== null) {
-            if (object_property_get(object, "property_name")) {
+            if (
+              object_property_get(previous, "book") ==
+              object_property_get(object, "property_name")
+            ) {
             }
           }
           previous = p;
