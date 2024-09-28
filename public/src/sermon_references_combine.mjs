@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { list_first_remaining } from "./list_first_remaining.mjs";
@@ -54,7 +55,7 @@ export async function sermon_references_combine(sermon_name) {
         if (reference_is) {
           let { book, chapter_name, verse_number } = p;
           if (previous !== null) {
-            if (false) {
+            if (object_property_get(object, "property_name")) {
             }
           }
           previous = p;
