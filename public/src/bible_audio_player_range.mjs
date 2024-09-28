@@ -20,7 +20,9 @@ import { assert } from "./assert.mjs";
 export async function bible_audio_player_range(book_from, book_to) {
   await bible_audio_player_unzip();
   let drive_letter = "E";
-  await drive_format(drive_letter);
+  if (false) {
+    await drive_format(drive_letter);
+  }
   let bible_folder = "engbsb";
   let number_from = await bible_book_prefix_to_number(bible_folder, book_from);
   let number_to = await bible_book_prefix_to_number(bible_folder, book_to);
