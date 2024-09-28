@@ -1,4 +1,4 @@
-import { list_map_async } from "./list_map_async.mjs";
+import { each_async } from "./each_async.mjs";
 import { log } from "./log.mjs";
 import { drive_format } from "./drive_format.mjs";
 import { drive_remove } from "./drive_remove.mjs";
@@ -112,7 +112,7 @@ export async function bible_audio_player_range(book_from, book_to) {
   log({
     promises: fns,
   });
-  await list_map_async(fns, (f) => f());
+  await each_async(fns, (f) => f());
   let download_folders_regular_computer_voice = [
     "NHEB_NT_audio",
     "NHEB_OT_audio",
