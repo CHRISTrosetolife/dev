@@ -7,7 +7,7 @@ export async function sermon_references_combine(sermon_name) {
     let lookup = bible_books_prefix_to_name();
     let books = object_values(lookup);
     log({
-      lines,
+      books,
     });
     return lines;
   });
