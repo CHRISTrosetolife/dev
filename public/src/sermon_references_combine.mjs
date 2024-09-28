@@ -17,13 +17,13 @@ export async function sermon_references_combine(sermon_name) {
       );
       if (list_empty_is(f)) {
         return {
-          reference_is: false,
           line,
+          reference_is: false,
         };
       }
       return {
-        reference_is: true,
         line,
+        reference_is: true,
       };
     });
     log({
