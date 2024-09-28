@@ -19,8 +19,9 @@ export function bible_audio_player_english_folders_numbers(
           n,
         });
         la(async () => {
-          await bible_audio_player_english(download_folder, (file_path) =>
-            filter(file_path, n),
+          return await bible_audio_player_english(
+            download_folder,
+            (file_path) => filter(file_path, n),
           );
         });
       });
