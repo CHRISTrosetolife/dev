@@ -226,7 +226,7 @@ export function js_dollar(ast) {
           });
           if (js_node_type_is(next, "ExpressionStatement")) {
             let e = object_property_get(next, "expression");
-            if (js_node_type_is(next, "AwaitExpression")) {
+            if (js_node_type_is(e, "AwaitExpression")) {
             }
           }
           await js_node_if_declaration(next, async (d) => {
