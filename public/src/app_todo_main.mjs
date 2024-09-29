@@ -23,6 +23,8 @@ export async function app_todo_main(context) {
   let completed = "completed";
   let nc = "❌ not completed";
   let completed_choices = [nc, "✅ completed"];
+  let type = "type";
+  let type_choices = ["one-time", "daily"];
   let mapped = list_map_index(items, (item, ix) => {
     if (string_is(item)) {
       item = app_todo_item(item);
@@ -55,8 +57,6 @@ export async function app_todo_main(context) {
         html_hr(root);
         app_todo_item_choices(context, item, completed, completed_choices);
         html_hr(root);
-        let type = "type";
-        let type_choices = ["one-time", "daily"];
         app_todo_item_choices(context, item, type, type_choices);
       },
     );
