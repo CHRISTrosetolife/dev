@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { list_remove_multiple } from "./list_remove_multiple.mjs";
 import { list_insert } from "./list_insert.mjs";
 import { list_take_but_1 } from "./list_take_but_1.mjs";
@@ -41,6 +42,7 @@ export async function js_dollar_expand(ast, call, result_id, a, parent) {
         identifiers,
         [name_c],
       );
+      each(list, (item) => {});
       assert_message(list_empty_is, [needs_enhance], () =>
         string_combine_multiple([
           "code needs enhancing to handle variables: ",
