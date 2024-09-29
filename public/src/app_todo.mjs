@@ -1,3 +1,4 @@
+import { html_input_width_full_focus } from "./html_input_width_full_focus.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { app_todo_firebase_path_combine } from "./app_todo_firebase_path_combine.mjs";
@@ -25,6 +26,8 @@ export async function app_todo() {
     let d = await firebase_download(index);
     html_button_width_full_text_click(root, "➕ add", () => {
       let items = object_property_initialize(d, "items", []);
+      html_clear_scroll_top(root);
+      html_input_width_full_focus();
     });
     log({
       d,
