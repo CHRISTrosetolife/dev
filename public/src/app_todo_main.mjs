@@ -63,7 +63,7 @@ export async function app_todo_main(context) {
               choice,
               async () => {
                 let property_name = "type";
-                object_property_set(item, "type", choice);
+                object_property_set(item, property_name, choice);
                 await app_todo_index_save(context);
                 app_todo_item_type_choose_refresh();
               },
