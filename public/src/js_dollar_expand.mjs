@@ -25,6 +25,7 @@ import { function_parse } from "./function_parse.mjs";
 import { js_node_type_is } from "./js_node_type_is.mjs";
 import { null_not_is } from "./null_not_is.mjs";
 import { function_names } from "./function_names.mjs";
+import { list_concat } from "./list_concat.mjs";
 export async function js_dollar_expand(ast, call, result_id, a, parent) {
   let { next, s1, index } = a;
   if (js_node_type_is(call, "CallExpression")) {
@@ -40,7 +41,7 @@ export async function js_dollar_expand(ast, call, result_id, a, parent) {
       let needs_enhance = js_identifiers_intersect_difference(
         ast_c,
         identifiers,
-        [name_c],
+        list_concat([name_c], fns),
       );
       each(needs_enhance, (item) => {
         let replacement = js_name_unique_multiple([ast, ast_c], item);
