@@ -21,10 +21,9 @@ export async function app_todo_main(context) {
   let { root } = context;
   html_clear_scroll_top(root);
   let items = app_todo_items(context);
-  let nc = app_todo_not_completed();
   let completed = {
     name: "completed",
-    choices: [nc, "✅ completed"],
+    choices: [app_todo_not_completed(), "✅ completed"],
   };
   let properties = [
     completed,
@@ -57,5 +56,12 @@ export async function app_todo_main(context) {
       await app_todo_main(context);
     });
   });
-  app_todo_list(root, mapped, completed, nc, context, properties);
+  app_todo_list(
+    root,
+    mapped,
+    completed,
+    app_todo_not_completed(),
+    context,
+    properties,
+  );
 }
