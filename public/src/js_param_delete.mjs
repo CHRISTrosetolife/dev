@@ -8,7 +8,8 @@ export async function js_param_delete(ast, function_name, param_name) {
   let param_index = integer_parse(param_index);
   assert(number_is, [param_index]);
   $ex;
-  let a = null_is(null);
+  let b = null;
+  let a = null_is(b);
   await js_param_new_generic(
     ast,
     function_name,
