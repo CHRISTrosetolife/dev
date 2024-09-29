@@ -11,6 +11,6 @@ export async function app_todo() {
     log({
       items,
     });
-    html_button_width_full_text_click();
+    html_button_width_full_text_click(root, "initialize", () => {});
   });
 }
