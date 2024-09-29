@@ -39,7 +39,9 @@ export async function app_todo_main(context) {
   });
   let nc = "❌ not completed";
   let completed = "completed";
-  list_filter(mapped, (m) => {});
+  list_filter(mapped, (m) => {
+    return $g === nc;
+  });
   each(mapped, (item) => {
     html_button_width_full_text_click(
       root,
