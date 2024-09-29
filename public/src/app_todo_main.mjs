@@ -13,6 +13,7 @@ import { html_input_width_full_focus } from "./html_input_width_full_focus.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { list_set } from "./list_set.mjs";
+import { list_map } from "./list_map.mjs";
 export async function app_todo_main(context) {
   let { root } = context;
   html_clear_scroll_top(root);
@@ -28,6 +29,7 @@ export async function app_todo_main(context) {
     });
   });
   html_hr(root);
+  let mapped = list_map(items, () => {});
   each_index(items, (item, ix) => {
     if (string_is(item)) {
       item = app_todo_item(item);
