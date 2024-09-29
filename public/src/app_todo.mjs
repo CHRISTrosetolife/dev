@@ -8,6 +8,7 @@ import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { app_firebase } from "./app_firebase.mjs";
 import { log } from "./log.mjs";
 import { firebase_list } from "./firebase_list.mjs";
+import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export async function app_todo() {
   await app_firebase(async (context) => {
     let { root } = context;
@@ -19,6 +20,7 @@ export async function app_todo() {
       await firebase_upload_object(index, {});
     }
     let d = await firebase_download(index);
+    html_button_width_full_text_click(root, "add");
     log({
       d,
     });
