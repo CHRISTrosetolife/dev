@@ -16,6 +16,7 @@ import { html_input_width_full_focus } from "./html_input_width_full_focus.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { firebase_upload_object } from "./firebase_upload_object.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
+import { html_clear } from "./html_clear.mjs";
 export async function app_todo_main(context) {
   let { root, index } = context;
   html_clear_scroll_top(root);
@@ -50,6 +51,7 @@ export async function app_todo_main(context) {
           object_property_set(item, "type", ot);
         }
         let choices_div = html_div(root);
+        html_clear(choices_div);
         each(choices_div, (choice) => {
           let b = html_button_width_full_text_click(root, choice, () => {
             object_property_set(item, "type", choice);
