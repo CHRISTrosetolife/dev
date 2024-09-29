@@ -224,6 +224,8 @@ export function js_dollar(ast) {
           log({
             next,
           });
+          if (false) {
+          }
           await js_node_if_declaration(next, async (d) => {
             let { init, id } = d;
             if (js_node_type_is(init, "CallExpression")) {
