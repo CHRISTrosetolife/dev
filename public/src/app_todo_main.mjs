@@ -1,3 +1,4 @@
+import { app_todo_item } from "./app_todo_item.mjs";
 import { string_is } from "./string_is.mjs";
 import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
 import { app_todo_items } from "./app_todo_items.mjs";
@@ -22,9 +23,7 @@ export async function app_todo_main(context) {
     let input = html_input_width_full_focus(root);
     html_button_width_full_text_click(root, "➕ add", async () => {
       let value = html_value_get(input);
-      list_add(items, {
-        name: value,
-      });
+      list_add(items, app_todo_item(value));
       let index_path = app_todo_firebase_path_index();
       await firebase_upload_object(index_path, index);
       await app_todo_main(context);
