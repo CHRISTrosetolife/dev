@@ -49,11 +49,11 @@ export async function app_todo_main(context) {
           object_property_set(item, "completed", true);
         });
         html_hr(root);
-        let ot = "one-time";
-        let choices = [ot, "daily"];
+        let choice_default = "one-time";
+        let choices = [choice_default, "daily"];
         let property_name = "type";
         if (!object_property_exists(item, property_name)) {
-          object_property_set(item, property_name, ot);
+          object_property_set(item, property_name, choice_default);
         }
         let choices_div = html_div(root);
         app_todo_item_type_choose_refresh();
