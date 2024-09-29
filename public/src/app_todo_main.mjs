@@ -32,9 +32,7 @@ export async function app_todo_main(context) {
   html_hr(root);
   each(items, (item) => {
     if (string_is(item)) {
-      item = {
-        name: value,
-      };
+      item = app_todo_item(item);
     }
     html_button_width_full_text_click(root, item, () => {});
   });
