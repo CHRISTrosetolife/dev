@@ -212,57 +212,53 @@ export function js_dollar(ast) {
         await js_dollar_grandparent_next(v, lambda);
         async function lambda(a) {
           let { next, s1, index } = a;
-          if (js_node_type_is(next, "VariableDeclaration")) {
-            let { declarations } = next;
-            if (list_size_1(declarations)) {
-              let d = list_single(declarations);
-              let { init, id } = d;
-              if (js_node_type_is(init, "CallExpression")) {
-                let { callee } = init;
-                if (js_node_type_is(callee, "Identifier")) {
-                  let { name: name_c } = callee;
-                  let ast_c = await function_parse(name_c);
-                  js_return_variablize(ast_c);
-                  let d = js_declaration_single(ast_c);
-                  let params = js_declaration_to_params(d);
-                  let params_names = js_identifiers_names(params);
-                  let { arguments: args } = init;
-                  let args_names = js_identifiers_names(args);
-                  let identifiers = js_identifiers(ast);
-                  let needs_enhance = js_identifiers_intersect_difference(
-                    ast_c,
-                    identifiers,
-                    [name_c],
-                  );
-                  assert_message(list_empty_is, [needs_enhance], () =>
-                    string_combine_multiple([
-                      "code needs enhancing to handle variables: ",
-                      needs_enhance,
-                    ]),
-                  );
-                  js_identifier_rename_multiple(d, params_names, args_names);
-                  let body = js_declaration_to_body(d);
-                  let l = list_last(body);
-                  log({
-                    l,
-                  });
-                  assert(js_node_type_is, [l, "ReturnStatement"]);
-                  assert(equal, [js_return_argument_type(l), "Identifier"]);
-                  let arg_l = object_property_get(l, "argument");
-                  js_identifier_rename(
-                    ast_c,
-                    object_property_get(arg_l, "name"),
-                    object_property_get(id, "name"),
-                  );
-                  each_reverse(list_take_but_1(body), (b) => {
-                    list_insert(s1, index, b);
-                  });
-                  list_remove_multiple(s1, [next, parent]);
-                }
+          js_node_declaration_is(next, d=>{
+
+            let { init, id } = d;
+            if (js_node_type_is(init, "CallExpression")) {
+              let { callee } = init;
+              if (js_node_type_is(callee, "Identifier")) {
+                let { name: name_c } = callee;
+                let ast_c = await function_parse(name_c);
+                js_return_variablize(ast_c);
+                let d = js_declaration_single(ast_c);
+                let params = js_declaration_to_params(d);
+                let params_names = js_identifiers_names(params);
+                let { arguments: args } = init;
+                let args_names = js_identifiers_names(args);
+                let identifiers = js_identifiers(ast);
+                let needs_enhance = js_identifiers_intersect_difference(
+                  ast_c,
+                  identifiers,
+                  [name_c],
+                );
+                assert_message(list_empty_is, [needs_enhance], () =>
+                  string_combine_multiple([
+                    "code needs enhancing to handle variables: ",
+                    needs_enhance,
+                  ]),
+                );
+                js_identifier_rename_multiple(d, params_names, args_names);
+                let body = js_declaration_to_body(d);
+                let l = list_last(body);
+                log({
+                  l,
+                });
+                assert(js_node_type_is, [l, "ReturnStatement"]);
+                assert(equal, [js_return_argument_type(l), "Identifier"]);
+                let arg_l = object_property_get(l, "argument");
+                js_identifier_rename(
+                  ast_c,
+                  object_property_get(arg_l, "name"),
+                  object_property_get(id, "name"),
+                );
+                each_reverse(list_take_but_1(body), (b) => {
+                  list_insert(s1, index, b);
+                });
+                list_remove_multiple(s1, [next, parent]);
               }
             }
-          }
-        }
+          });
       }
       if (remaining === "eo") {
         let object = js_name_unique(ast, "object");
