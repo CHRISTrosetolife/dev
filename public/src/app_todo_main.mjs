@@ -20,6 +20,14 @@ export async function app_todo_main(context) {
   let { root } = context;
   html_clear_scroll_top(root);
   let items = app_todo_items(context);
+  let mapped = list_map_index(items, (item, ix) => {
+    if (string_is(item)) {
+      item = app_todo_item(item);
+      list_set(items, ix, item);
+    }
+    app_todo_choices_initialize(item, completed, completed_choices);
+    return item;
+  });
   let add_dailies = "🌅 add dailies";
   html_button_width_full_text_click(root, add_dailies, () => {});
   let add_item = "➕ add item";
@@ -37,14 +45,6 @@ export async function app_todo_main(context) {
   let completed = "completed";
   let nc = "❌ not completed";
   let completed_choices = [nc, "✅ completed"];
-  let mapped = list_map_index(items, (item, ix) => {
-    if (string_is(item)) {
-      item = app_todo_item(item);
-      list_set(items, ix, item);
-    }
-    app_todo_choices_initialize(item, completed, completed_choices);
-    return item;
-  });
   let filtered = list_filter_property(mapped, completed, nc);
   each(filtered, (item) => {
     html_button_width_full_text_click(
