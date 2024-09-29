@@ -35,6 +35,7 @@ export async function app_todo_main(context) {
       item = app_todo_item(item);
     }
     html_button_width_full_text_click(root, item, () => {
+      html_clear_scroll_top(root);
       let choices = ["daily", "one-time"];
       each(choices, (choice) => {
         html_button_width_full_text_click(root);
