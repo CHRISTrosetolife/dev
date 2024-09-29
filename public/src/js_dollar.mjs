@@ -206,6 +206,10 @@ export function js_dollar(ast) {
           let { next, s1, index } = a;
           await js_node_if_declaration(next, async function lambda_inner(d) {
             let { init, id } = d;
+            if (js_node_type_is(id, "Identifier")) {
+              let name_id = object_property_get(id, "name");
+              lambda(v);
+            }
             js_visit_identifiers_named(ast, id, lambda);
             log(js_unparse(id));
             log(js_unparse(init));
