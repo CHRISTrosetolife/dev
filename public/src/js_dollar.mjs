@@ -1,6 +1,5 @@
 import { object_copy_replace } from "./object_copy_replace.mjs";
 import { js_visit_identifiers_named } from "./js_visit_identifiers_named.mjs";
-import { js_unparse } from "./js_unparse.mjs";
 import { js_node_if_declaration } from "./js_node_if_declaration.mjs";
 import { string_split } from "./string_split.mjs";
 import { string_underscore_trail } from "./string_underscore_trail.mjs";
@@ -214,8 +213,6 @@ export function js_dollar(ast) {
                 object_copy_replace(node, init);
               });
             }
-            log(js_unparse(id));
-            log(js_unparse(init));
           });
         }
       }
