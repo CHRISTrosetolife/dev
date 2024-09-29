@@ -443,6 +443,8 @@ export function js_dollar(ast) {
         object_replace(node, e);
       }
       if (prefix_use(remaining, lambda_prefix_start, prefixes)) {
+        let e = js_parse_expression(js_code_arrow_block());
+        object_replace(node, e);
       }
       if (prefix_use(remaining, scm_prefix, prefixes)) {
         if (list_is(parent)) {
