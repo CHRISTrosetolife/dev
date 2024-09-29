@@ -1,3 +1,4 @@
+import { app_todo_completed } from "./app_todo_completed.mjs";
 import { app_todo_not_completed } from "./app_todo_not_completed.mjs";
 import { app_todo_type } from "./app_todo_type.mjs";
 import { app_todo_daily } from "./app_todo_daily.mjs";
@@ -22,7 +23,7 @@ export async function app_todo_main(context) {
   html_clear_scroll_top(root);
   let items = app_todo_items(context);
   let completed = {
-    name: "completed",
+    name: app_todo_completed(),
     choices: [app_todo_not_completed(), "✅ completed"],
   };
   let properties = [
@@ -59,7 +60,7 @@ export async function app_todo_main(context) {
   app_todo_list(
     root,
     mapped,
-    completed,
+    app_todo_completed(),
     app_todo_not_completed(),
     context,
     properties,
