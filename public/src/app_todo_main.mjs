@@ -1,3 +1,4 @@
+import { app_todo_properties } from "./app_todo_properties.mjs";
 import { app_todo_completed } from "./app_todo_completed.mjs";
 import { app_todo_not_completed } from "./app_todo_not_completed.mjs";
 import { app_todo_type } from "./app_todo_type.mjs";
@@ -22,16 +23,7 @@ export async function app_todo_main(context) {
   let { root } = context;
   html_clear_scroll_top(root);
   let items = app_todo_items(context);
-  let properties = [
-    {
-      name: app_todo_completed(),
-      choices: [app_todo_not_completed(), "✅ completed"],
-    },
-    {
-      name: app_todo_type(),
-      choices: ["one-time", app_todo_daily()],
-    },
-  ];
+  let properties = app_todo_properties();
   let mapped = list_map_index(items, (item, ix) => {
     if (string_is(item)) {
       item = app_todo_item(item);
