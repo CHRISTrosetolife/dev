@@ -8,11 +8,11 @@ import { html_div } from "./html_div.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 export function app_todo_item_choices(
+  context,
   item,
   property_name,
   choice_default,
   choices,
-  context,
 ) {
   let { root } = context;
   if (!object_property_exists(item, property_name)) {
