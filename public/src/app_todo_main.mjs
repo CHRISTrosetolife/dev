@@ -37,10 +37,6 @@ export async function app_todo_main(context) {
     return item;
   });
   each_index(items, (item, ix) => {
-    if (string_is(item)) {
-      item = app_todo_item(item);
-      list_set(items, ix, item);
-    }
     html_button_width_full_text_click(
       root,
       object_property_get(item, "name"),
