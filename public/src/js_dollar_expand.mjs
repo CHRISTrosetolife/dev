@@ -22,7 +22,7 @@ import { js_declaration_single } from "./js_declaration_single.mjs";
 import { js_return_variablize } from "./js_return_variablize.mjs";
 import { function_parse } from "./function_parse.mjs";
 import { js_node_type_is } from "./js_node_type_is.mjs";
-export async function js_dollar_expand(ast, init, id, a, parent) {
+export async function js_dollar_expand(ast, init, result_id, a, parent) {
   let { next, s1, index } = a;
   if (js_node_type_is(init, "CallExpression")) {
     let { callee } = init;
@@ -59,7 +59,7 @@ export async function js_dollar_expand(ast, init, id, a, parent) {
       js_identifier_rename(
         ast_c,
         object_property_get(arg_l, "name"),
-        object_property_get(id, "name"),
+        object_property_get(result_id, "name"),
       );
       each_reverse(list_take_but_1(body), (b) => {
         list_insert(s1, index, b);
