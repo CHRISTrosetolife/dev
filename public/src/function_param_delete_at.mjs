@@ -10,7 +10,7 @@ export async function function_param_delete_at(function_name, param_name) {
     await function_transform_args_split_lambda(
       fn_name,
       [js_param_new_at],
-      [function_name, param_name, default_value_string, param_index],
+      [function_name, param_name],
     );
   }
 }
