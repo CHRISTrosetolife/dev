@@ -40,7 +40,7 @@ export async function app_todo_main(context) {
     }
     html_button_width_full_text_click(
       root,
-      object_property_get(object, "property_name"),
+      object_property_get(item, "name"),
       () => {
         html_clear_scroll_top(root);
         let ot = "one-time";
