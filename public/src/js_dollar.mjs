@@ -1,3 +1,4 @@
+import { js_visit_identifiers_named } from "./js_visit_identifiers_named.mjs";
 import { js_unparse } from "./js_unparse.mjs";
 import { js_node_if_declaration } from "./js_node_if_declaration.mjs";
 import { string_split } from "./string_split.mjs";
@@ -205,6 +206,7 @@ export function js_dollar(ast) {
           let { next, s1, index } = a;
           await js_node_if_declaration(next, async function lambda_inner(d) {
             let { init, id } = d;
+            js_visit_identifiers_named(ast, id, lambda);
             log(js_unparse(id));
             log(js_unparse(init));
           });
