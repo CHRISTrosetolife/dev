@@ -12,11 +12,12 @@ export async function app_todo() {
   await app_firebase(async (context) => {
     let { root } = context;
     html_clear_scroll_top(root);
-    let index = "index.json";
+    let index = app_todo_firebase_path_combine("index.json");
     let { items } = await firebase_list(app_todo_firebase_path());
     let full_paths = list_map_property(items, "fullPath");
+    if (false) {
+    }
     let test = "test.json";
-    let test_path = app_todo_firebase_path_combine(test);
     html_button_width_full_text_click(root, "initialize", async () => {
       await firebase_upload_object(test_path, {
         test: "abc",
