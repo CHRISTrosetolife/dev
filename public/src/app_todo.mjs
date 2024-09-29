@@ -1,3 +1,4 @@
+import { html_value_get } from "./html_value_get.mjs";
 import { html_input_width_full_focus } from "./html_input_width_full_focus.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { list_map_property } from "./list_map_property.mjs";
@@ -29,6 +30,7 @@ export async function app_todo() {
       let input = html_input_width_full_focus(root);
       html_button_width_full_text_click(root, "➕ add", () => {
         let items = object_property_initialize(d, "items", []);
+        let value = html_value_get(input);
       });
     });
     log({
