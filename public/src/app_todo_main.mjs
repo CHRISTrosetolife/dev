@@ -1,3 +1,4 @@
+import { app_todo_choices_initialize } from "./app_todo_choices_initialize.mjs";
 import { list_filter_property } from "./list_filter_property.mjs";
 import { each } from "./each.mjs";
 import { list_map_index } from "./list_map_index.mjs";
@@ -30,15 +31,16 @@ export async function app_todo_main(context) {
     });
   });
   html_hr(root);
+  let completed = "completed";
   let mapped = list_map_index(items, (item, ix) => {
     if (string_is(item)) {
       item = app_todo_item(item);
       list_set(items, ix, item);
     }
+    app_todo_choices_initialize(item, property_name, choices);
     return item;
   });
   let nc = "❌ not completed";
-  let completed = "completed";
   let filtered = list_filter_property(mapped, completed, nc);
   each(filtered, (item) => {
     html_button_width_full_text_click(
