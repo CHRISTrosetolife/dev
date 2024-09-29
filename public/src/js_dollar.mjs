@@ -442,6 +442,8 @@ export function js_dollar(ast) {
         let e = js_parse_expression(js_code_arrow_block());
         object_replace(node, e);
       }
+      if (prefix_use(remaining, lambda_prefix_start, prefixes)) {
+      }
       if (prefix_use(remaining, scm_prefix, prefixes)) {
         if (list_is(parent)) {
           let e = js_parse_expression(
