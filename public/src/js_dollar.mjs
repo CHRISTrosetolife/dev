@@ -444,7 +444,7 @@ export function js_dollar(ast) {
       }
       if (prefix_use(remaining, lambda_prefix, prefixes)) {
         remaining = string_prefix_without(remaining, lambda_prefix);
-        let e = js_parse_expression(js_code_arrow_block());
+        let e = js_parse_expression(js_code_arrow_block_args(remaining, ""));
         object_replace(node, e);
       }
       if (prefix_use(remaining, scm_prefix, prefixes)) {
