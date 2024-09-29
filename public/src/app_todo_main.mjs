@@ -1,3 +1,4 @@
+import { app_todo_not_completed } from "./app_todo_not_completed.mjs";
 import { app_todo_type } from "./app_todo_type.mjs";
 import { app_todo_daily } from "./app_todo_daily.mjs";
 import { app_todo_list } from "./app_todo_list.mjs";
@@ -20,7 +21,7 @@ export async function app_todo_main(context) {
   let { root } = context;
   html_clear_scroll_top(root);
   let items = app_todo_items(context);
-  let nc = "❌ not completed";
+  let nc = app_todo_not_completed();
   let completed = {
     name: "completed",
     choices: [nc, "✅ completed"],
