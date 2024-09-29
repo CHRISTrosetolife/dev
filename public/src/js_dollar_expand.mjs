@@ -7,7 +7,6 @@ import { object_property_get } from "./object_property_get.mjs";
 import { js_return_argument_type } from "./js_return_argument_type.mjs";
 import { equal } from "./equal.mjs";
 import { assert } from "./assert.mjs";
-import { log } from "./log.mjs";
 import { list_last } from "./list_last.mjs";
 import { js_declaration_to_body } from "./js_declaration_to_body.mjs";
 import { js_identifier_rename_multiple } from "./js_identifier_rename_multiple.mjs";
@@ -22,6 +21,7 @@ import { js_declaration_single } from "./js_declaration_single.mjs";
 import { js_return_variablize } from "./js_return_variablize.mjs";
 import { function_parse } from "./function_parse.mjs";
 import { js_node_type_is } from "./js_node_type_is.mjs";
+import { null_not_is } from "./null_not_is.mjs";
 export async function js_dollar_expand(ast, call, result_id, a, parent) {
   let { next, s1, index } = a;
   if (js_node_type_is(call, "CallExpression")) {
@@ -48,19 +48,18 @@ export async function js_dollar_expand(ast, call, result_id, a, parent) {
         ]),
       );
       js_identifier_rename_multiple(d, params_names, args_names);
-      let body = js_declaration_to_body(d);
-      let l = list_last(body);
-      log({
-        l,
-      });
-      assert(js_node_type_is, [l, "ReturnStatement"]);
-      assert(equal, [js_return_argument_type(l), "Identifier"]);
-      let arg_l = object_property_get(l, "argument");
-      js_identifier_rename(
-        ast_c,
-        object_property_get(arg_l, "name"),
-        object_property_get(result_id, "name"),
-      );
+      if (null_not_is(result_id)) {
+        let body = js_declaration_to_body(d);
+        let l = list_last(body);
+        assert(js_node_type_is, [l, "ReturnStatement"]);
+        assert(equal, [js_return_argument_type(l), "Identifier"]);
+        let arg_l = object_property_get(l, "argument");
+        js_identifier_rename(
+          ast_c,
+          object_property_get(arg_l, "name"),
+          object_property_get(result_id, "name"),
+        );
+      }
       each_reverse(list_take_but_1(body), (b) => {
         list_insert(s1, index, b);
       });
