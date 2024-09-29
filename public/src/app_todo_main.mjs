@@ -25,14 +25,13 @@ export async function app_todo_main(context) {
     name: "completed",
     choices: [nc, "✅ completed"],
   };
-  $ag;
-
-  
-  let type = {
-    name: "type",
-    choices: ["one-time", "daily"],
-  };
-  let properties = [completed, type];
+  let properties = [
+    completed,
+    {
+      name: "type",
+      choices: ["one-time", "daily"],
+    },
+  ];
   let mapped = list_map_index(items, (item, ix) => {
     if (string_is(item)) {
       item = app_todo_item(item);

@@ -207,12 +207,12 @@ export function js_dollar(ast) {
           await js_node_if_declaration(next, async function lambda_inner(d) {
             let { id } = d;
             if (js_node_type_is(id, "Identifier")) {
-              list_remove(s1, parent);
               let name_id = object_property_get(id, "name");
               let { init } = d;
               js_visit_identifiers_named(ast, name_id, (node) => {
                 object_copy_replace(node, init);
               });
+              list_remove_multiple(s1, [parent, next]);
             }
           });
         }
