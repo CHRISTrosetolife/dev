@@ -20,7 +20,7 @@ export async function app_todo() {
       await firebase_upload_object(index, {});
     }
     let d = await firebase_download(index);
-    html_button_width_full_text_click(root, "add");
+    html_button_width_full_text_click(root, "➕ add");
     log({
       d,
     });
