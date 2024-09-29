@@ -1,7 +1,7 @@
+import { each } from "./each.mjs";
 import { list_map_index } from "./list_map_index.mjs";
 import { app_todo_item_choices } from "./app_todo_item_choices.mjs";
 import { app_todo_button_back_main } from "./app_todo_button_back_main.mjs";
-import { each_index } from "./each_index.mjs";
 import { app_todo_index_save } from "./app_todo_index_save.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_todo_item } from "./app_todo_item.mjs";
@@ -29,14 +29,14 @@ export async function app_todo_main(context) {
     });
   });
   html_hr(root);
-  let mapped = list_map_index(items, (item) => {
+  let mapped = list_map_index(items, (item, ix) => {
     if (string_is(item)) {
       item = app_todo_item(item);
       list_set(items, ix, item);
     }
     return item;
   });
-  each_index(mapped, (item, ix) => {
+  each(mapped, (item) => {
     html_button_width_full_text_click(
       root,
       object_property_get(item, "name"),
