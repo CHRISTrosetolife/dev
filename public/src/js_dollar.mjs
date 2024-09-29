@@ -1,3 +1,4 @@
+import { js_unparse } from "./js_unparse.mjs";
 import { js_node_if_declaration } from "./js_node_if_declaration.mjs";
 import { string_split } from "./string_split.mjs";
 import { string_underscore_trail } from "./string_underscore_trail.mjs";
@@ -204,7 +205,7 @@ export function js_dollar(ast) {
           let { next, s1, index } = a;
           await js_node_if_declaration(next, async function lambda_inner(d) {
             let { init, id } = d;
-            log({});
+            log(js_unparse(init));
           });
         }
       }
