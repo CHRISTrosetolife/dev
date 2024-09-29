@@ -20,7 +20,10 @@ export async function app_todo_main(context) {
       let value = html_value_get(input);
       list_add(items, value);
       let index_path = app_todo_firebase_path_index();
-      await firebase_upload_object(index_path, index);
+      {
+        let { index } = context;
+        await firebase_upload_object(index_path, index);
+      }
       await app_todo_main(context);
     });
   });
