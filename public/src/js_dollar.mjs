@@ -204,6 +204,7 @@ export function js_dollar(ast) {
           let { next, s1, index } = a;
           await js_node_if_declaration(next, async function lambda_inner(d) {
             let { init, id } = d;
+            log({});
           });
         }
       }
