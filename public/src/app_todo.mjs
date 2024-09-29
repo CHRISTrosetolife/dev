@@ -5,6 +5,7 @@ import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { app_firebase } from "./app_firebase.mjs";
 import { log } from "./log.mjs";
 import { firebase_list } from "./firebase_list.mjs";
+import { string_combine } from "./string_combine.mjs";
 export async function app_todo() {
   await app_firebase(async (context) => {
     let { root } = context;
@@ -14,7 +15,9 @@ export async function app_todo() {
       items,
     });
     html_button_width_full_text_click(root, "initialize", async () => {
-      await firebase_upload();
+      await firebase_upload(
+        string_combine(app_todo_firebase_path(), "index.json"),
+      );
     });
   });
 }
