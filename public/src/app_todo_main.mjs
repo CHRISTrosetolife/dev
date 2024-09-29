@@ -1,3 +1,4 @@
+import { each_index } from "./each_index.mjs";
 import { app_todo_index_save } from "./app_todo_index_save.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_style_success_if } from "./html_style_success_if.mjs";
@@ -34,7 +35,7 @@ export async function app_todo_main(context) {
     });
   });
   html_hr(root);
-  each(items, (item) => {
+  each_index(items, (item, ix) => {
     if (string_is(item)) {
       item = app_todo_item(item);
     }
