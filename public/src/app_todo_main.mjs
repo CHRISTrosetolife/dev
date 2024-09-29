@@ -50,7 +50,7 @@ export async function app_todo_main(context) {
           object_property_set(item, "type", ot);
         }
         let choices_div = html_div(root);
-        each(choices, (choice) => {
+        each(choices_div, (choice) => {
           let b = html_button_width_full_text_click(root, choice, () => {
             object_property_set(item, "type", choice);
           });
