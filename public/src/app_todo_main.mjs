@@ -1,4 +1,4 @@
-import { list_filter } from "./list_filter.mjs";
+import { list_filter_property } from "./list_filter_property.mjs";
 import { each } from "./each.mjs";
 import { list_map_index } from "./list_map_index.mjs";
 import { app_todo_item_choices } from "./app_todo_item_choices.mjs";
@@ -39,7 +39,7 @@ export async function app_todo_main(context) {
   });
   let nc = "❌ not completed";
   let completed = "completed";
-  list_filter(mapped, (m) => {
+  list_filter_property(mapped, (m) => {
     return object_property_get(m, "completed") === nc;
   });
   each(mapped, (item) => {
