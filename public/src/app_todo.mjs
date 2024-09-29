@@ -17,12 +17,12 @@ export async function app_todo() {
       items,
     });
     let test = "test.json";
+    let test_path = app_todo_firebase_path_combine(test);
     html_button_width_full_text_click(root, "initialize", async () => {
-      let test_path = app_todo_firebase_path_combine(test);
       await firebase_upload_object(test_path, {
         test: "abc",
       });
     });
-    await firebase_download();
+    await firebase_download(test_path);
   });
 }
