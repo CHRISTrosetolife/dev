@@ -1,3 +1,4 @@
+import { string_split } from "./string_split.mjs";
 import { string_underscore_trail } from "./string_underscore_trail.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { js_node_is } from "./js_node_is.mjs";
@@ -444,7 +445,9 @@ export function js_dollar(ast) {
       }
       if (prefix_use(remaining, lambda_prefix, prefixes)) {
         remaining = string_prefix_without(remaining, lambda_prefix);
-        let e = js_parse_expression(js_code_arrow_block_args(remaining, ""));
+        let e = js_parse_expression(
+          js_code_arrow_block_args(string_split(remaining, "$"), ""),
+        );
         object_replace(node, e);
       }
       if (prefix_use(remaining, scm_prefix, prefixes)) {
