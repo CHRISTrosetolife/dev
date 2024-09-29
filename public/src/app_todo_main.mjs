@@ -1,3 +1,4 @@
+import { add } from "./add.mjs";
 import { app_todo_choices_initialize } from "./app_todo_choices_initialize.mjs";
 import { list_filter_property } from "./list_filter_property.mjs";
 import { each } from "./each.mjs";
@@ -20,7 +21,8 @@ export async function app_todo_main(context) {
   let { root } = context;
   html_clear_scroll_top(root);
   let items = app_todo_items(context);
-  html_button_width_full_text_click(root, "➕ add", () => {
+  let add = "➕ add";
+  html_button_width_full_text_click(root, add, () => {
     app_todo_button_back_main(context);
     let input = html_input_width_full_focus(root);
     html_button_width_full_text_click(root, "➕ add", async () => {
