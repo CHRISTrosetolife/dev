@@ -1,3 +1,4 @@
+import { list_map_index } from "./list_map_index.mjs";
 import { app_todo_item_choices } from "./app_todo_item_choices.mjs";
 import { app_todo_button_back_main } from "./app_todo_button_back_main.mjs";
 import { each_index } from "./each_index.mjs";
@@ -13,7 +14,6 @@ import { html_input_width_full_focus } from "./html_input_width_full_focus.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { list_set } from "./list_set.mjs";
-import { list_map } from "./list_map.mjs";
 export async function app_todo_main(context) {
   let { root } = context;
   html_clear_scroll_top(root);
@@ -29,14 +29,14 @@ export async function app_todo_main(context) {
     });
   });
   html_hr(root);
-  let mapped = list_map(items, (item) => {
+  let mapped = list_map_index(items, (item) => {
     if (string_is(item)) {
       item = app_todo_item(item);
       list_set(items, ix, item);
     }
     return item;
   });
-  each_index(items, (item, ix) => {
+  each_index(mapped, (item, ix) => {
     html_button_width_full_text_click(
       root,
       object_property_get(item, "name"),
