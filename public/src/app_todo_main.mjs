@@ -1,4 +1,3 @@
-import { noop } from "./noop.mjs";
 import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
 import { app_todo_items } from "./app_todo_items.mjs";
 import { each } from "./each.mjs";
@@ -30,6 +29,6 @@ export async function app_todo_main(context) {
   });
   html_hr(root);
   each(items, (item) => {
-    html_button_width_full_text_click(root, item, noop);
+    html_button_width_full_text_click(root, item, () => {});
   });
 }
