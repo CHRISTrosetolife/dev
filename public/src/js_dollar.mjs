@@ -202,8 +202,7 @@ export function js_dollar(ast) {
         await js_dollar_grandparent_next(v, lambda);
         async function lambda(a) {
           let { next, s1, index } = a;
-          await js_node_declaration_is(next, lambda_inner);
-          function lambda_inner(d) {}
+          await js_node_declaration_is(next, async function lambda_inner(d) {});
         }
       }
       if (equal(remaining, "ex")) {
