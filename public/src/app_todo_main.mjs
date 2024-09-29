@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { app_todo_firebase_path_index } from "./app_todo_firebase_path_index.mjs";
 import { list_add } from "./list_add.mjs";
@@ -23,4 +24,5 @@ export async function app_todo_main(context) {
     });
   });
   html_hr(root);
+  each(list, (item) => {});
 }
