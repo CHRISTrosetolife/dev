@@ -39,7 +39,6 @@ import { each_range } from "./each_range.mjs";
 import { js_code_array_empty } from "./js_code_array_empty.mjs";
 import { js_code_call } from "./js_code_call.mjs";
 import { js_code_braces } from "./js_code_braces.mjs";
-import { log } from "./log.mjs";
 import { object_replace } from "./object_replace.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
@@ -205,9 +204,6 @@ export function js_dollar(ast) {
         await js_dollar_grandparent_next(v, lambda);
         async function lambda(a) {
           let { next, s1, index } = a;
-          log({
-            next,
-          });
           if (js_node_type_is(next, "ExpressionStatement")) {
             let e = object_property_get(next, "expression");
             if (js_node_type_is(e, "AwaitExpression")) {
