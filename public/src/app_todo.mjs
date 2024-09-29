@@ -25,19 +25,19 @@ export async function app_todo() {
     if (!list_includes(full_paths, index_path)) {
       await firebase_upload_object(index_path, {});
     }
-    let d = await firebase_download(index_path);
+    let index = await firebase_download(index_path);
     html_button_width_full_text_click(root, "➕ add", () => {
       html_clear_scroll_top(root);
       let input = html_input_width_full_focus(root);
       html_button_width_full_text_click(root, "➕ add", async () => {
-        let items = object_property_initialize(d, "items", []);
+        let items = object_property_initialize(index, "items", []);
         let value = html_value_get(input);
         list_add(items, value);
         await firebase_upload_object(index_path, {});
       });
     });
     log({
-      d,
+      d: index,
     });
   });
 }
