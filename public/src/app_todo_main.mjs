@@ -1,3 +1,4 @@
+import { app_todo_firebase_path_index } from "./app_todo_firebase_path_index.mjs";
 import { list_add } from "./list_add.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
@@ -15,6 +16,7 @@ export async function app_todo_main(context) {
       let items = object_property_initialize(index, "items", []);
       let value = html_value_get(input);
       list_add(items, value);
+      let index_path = app_todo_firebase_path_index();
       await firebase_upload_object(index_path, index);
       await app_todo_main(context);
     });
