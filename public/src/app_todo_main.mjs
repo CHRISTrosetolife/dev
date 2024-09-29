@@ -1,3 +1,4 @@
+import { html_div } from "./html_div.mjs";
 import { html_style_success_if } from "./html_style_success_if.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -48,6 +49,7 @@ export async function app_todo_main(context) {
         if (!object_property_exists(item, "type")) {
           object_property_set(item, "type", ot);
         }
+        let choices_div = html_div(root);
         each(choices, (choice) => {
           let b = html_button_width_full_text_click(root, choice, () => {
             object_property_set(item, "type", choice);
