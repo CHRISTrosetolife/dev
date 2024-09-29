@@ -36,6 +36,7 @@ export async function app_todo_main(context) {
     }
     html_button_width_full_text_click(root, item, () => {
       let choices = ["daily", "one-time"];
+      each(list, (item2) => {});
     });
   });
 }
