@@ -27,14 +27,15 @@ export async function app_todo_main(context) {
   };
   let type = {
     name: "type",
-    choices:  ["one-time", "daily"],
+    choices: ["one-time", "daily"],
   };
-  let type_choices =;
+  let properties = [completed, types];
   let mapped = list_map_index(items, (item, ix) => {
     if (string_is(item)) {
       item = app_todo_item(item);
       list_set(items, ix, item);
     }
+    each(list, (item2) => {});
     app_todo_choices_initialize(item, completed);
     app_todo_choices_initialize(item, completed);
     return item;
