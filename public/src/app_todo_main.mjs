@@ -15,7 +15,9 @@ export async function app_todo_main(context) {
   let items = app_todo_items(context);
   html_button_width_full_text_click(root, "➕ add", () => {
     html_clear_scroll_top(root);
-    html_button_width_full_text_click_back(root, () => {});
+    html_button_width_full_text_click_back(root, async () => {
+      await app_todo_main(context);
+    });
     let input = html_input_width_full_focus(root);
     html_button_width_full_text_click(root, "➕ add", async () => {
       let value = html_value_get(input);
