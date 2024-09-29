@@ -44,7 +44,7 @@ export async function app_todo_main(context) {
   });
   let add_dailies = "🌅 add dailies";
   html_button_width_full_text_click(root, add_dailies, () => {
-    let ds = list_filter_property(mapped, completed, daily);
+    let ds = list_filter_property(mapped, type, daily);
     each(mapped, (m) => {});
   });
   let add_item = "➕ add item";
