@@ -20,9 +20,11 @@ export async function app_todo_main(context) {
   let { root } = context;
   html_clear_scroll_top(root);
   let items = app_todo_items(context);
-  let completed = "completed";
+  let completed = {
+    name: "completed",
+    choices: [nc, "✅ completed"],
+  };
   let nc = "❌ not completed";
-  let completed_choices = [nc, "✅ completed"];
   let type = "type";
   let type_choices = ["one-time", "daily"];
   let mapped = list_map_index(items, (item, ix) => {
@@ -30,6 +32,7 @@ export async function app_todo_main(context) {
       item = app_todo_item(item);
       list_set(items, ix, item);
     }
+    app_todo_choices_initialize(item, completed, completed_choices);
     app_todo_choices_initialize(item, completed, completed_choices);
     return item;
   });
