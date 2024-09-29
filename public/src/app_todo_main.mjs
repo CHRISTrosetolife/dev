@@ -32,7 +32,6 @@ export async function app_todo_main(context) {
       await app_todo_main(context);
     });
   });
-  html_button_width_full_text_click(root, "✅ completed", () => {});
   html_hr(root);
   each_index(items, (item, ix) => {
     if (string_is(item)) {
@@ -44,6 +43,8 @@ export async function app_todo_main(context) {
       object_property_get(item, "name"),
       () => {
         app_todo_button_back_main(context);
+        html_hr(root);
+        html_button_width_full_text_click(root, "✅ completed", () => {});
         html_hr(root);
         let ot = "one-time";
         let choices = [ot, "daily"];
