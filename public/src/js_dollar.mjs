@@ -79,6 +79,7 @@ export function js_dollar(ast) {
     let prefix = "$";
     if (string_starts_with(name, prefix)) {
       let { parent } = v;
+      let lambda_prefix = "a";
       let objection_prefix = "o";
       let question_prefix = "q";
       let scm_prefix = "s";
