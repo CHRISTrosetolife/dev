@@ -37,7 +37,7 @@ export async function app_todo_main(context) {
       item = app_todo_item(item);
       list_set(items, ix, item);
     }
-    app_todo_choices_initialize(item, property_name, choices);
+    app_todo_choices_initialize(item, completed, choices);
     return item;
   });
   let nc = "❌ not completed";
@@ -49,7 +49,8 @@ export async function app_todo_main(context) {
       () => {
         app_todo_button_back_main(context);
         html_hr(root);
-        app_todo_item_choices(context, item, completed, [nc, "✅ completed"]);
+        let completed_choices = [nc, "✅ completed"];
+        app_todo_item_choices(context, item, completed, completed_choices);
         html_hr(root);
         app_todo_item_choices(context, item, "type", ["one-time", "daily"]);
       },
