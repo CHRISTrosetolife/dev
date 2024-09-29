@@ -30,6 +30,7 @@ export async function app_todo_main(context) {
     html_button_width_full_text_click(root, "➕ add", async () => {
       let value = html_value_get(input);
       list_add(items, app_todo_item(value));
+      let { index } = context;
       let index_path = app_todo_firebase_path_index();
       await firebase_upload_object(index_path, index);
       await app_todo_main(context);
