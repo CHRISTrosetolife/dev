@@ -54,6 +54,5 @@ export async function app_todo_main(context) {
     app_todo_completed(),
     app_todo_not_completed(),
     context,
-    properties,
   );
 }
