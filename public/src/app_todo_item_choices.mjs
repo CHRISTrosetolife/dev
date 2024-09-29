@@ -6,9 +6,11 @@ import { html_button_width_full_text_click } from "./html_button_width_full_text
 import { each } from "./each.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { html_div } from "./html_div.mjs";
-export function app_todo_item_choices(context, item, property_name, choices) {
+export function app_todo_item_choices(context, item, property) {
   let { root } = context;
-  app_todo_choices_initialize(item, property_name, choices);
+  let property_name = object_property_get(property, "name");
+  let choices = object_property_get(property, "choices");
+  app_todo_choices_initialize(item, property);
   let choices_div = html_div(root);
   app_todo_item_type_choose_refresh();
   function app_todo_item_type_choose_refresh() {
