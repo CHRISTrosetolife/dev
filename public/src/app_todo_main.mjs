@@ -15,6 +15,7 @@ export async function app_todo_main(context) {
     html_clear_scroll_top(root);
     let input = html_input_width_full_focus(root);
     html_button_width_full_text_click(root, "➕ add", async () => {
+      let { index } = context;
       let items = object_property_initialize(index, "items", []);
       let value = html_value_get(input);
       list_add(items, value);
