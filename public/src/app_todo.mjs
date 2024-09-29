@@ -18,7 +18,8 @@ export async function app_todo() {
     });
     let test = "test.json";
     html_button_width_full_text_click(root, "initialize", async () => {
-      await firebase_upload_object(app_todo_firebase_path_combine(test), {
+      let test_path = app_todo_firebase_path_combine(test);
+      await firebase_upload_object(test_path, {
         test: "abc",
       });
     });
