@@ -1,3 +1,4 @@
+import { app_todo_firebase_path_combine } from "./app_todo_firebase_path_combine.mjs";
 import { firebase_download } from "./firebase_download.mjs";
 import { firebase_upload_object } from "./firebase_upload_object.mjs";
 import { app_todo_firebase_path } from "./app_todo_firebase_path.mjs";
@@ -6,7 +7,6 @@ import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { app_firebase } from "./app_firebase.mjs";
 import { log } from "./log.mjs";
 import { firebase_list } from "./firebase_list.mjs";
-import { string_combine } from "./string_combine.mjs";
 export async function app_todo() {
   await app_firebase(async (context) => {
     let { root } = context;
@@ -18,12 +18,9 @@ export async function app_todo() {
     });
     let test = "test.json";
     html_button_width_full_text_click(root, "initialize", async () => {
-      await firebase_upload_object(
-        string_combine(app_todo_firebase_path(), test),
-        {
-          test: "abc",
-        },
-      );
+      await firebase_upload_object(app_todo_firebase_path_combine(test), {
+        test: "abc",
+      });
     });
     await firebase_download();
   });
