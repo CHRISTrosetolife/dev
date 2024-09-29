@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { app_todo_item } from "./app_todo_item.mjs";
@@ -45,7 +46,7 @@ export async function app_todo_main(context) {
       }
       each(choices, (choice) => {
         let b = html_button_width_full_text_click(root, choice, () => {});
-        if (false) {
+        if (object_property_get(object, "property_name") === choice) {
         }
       });
     });
