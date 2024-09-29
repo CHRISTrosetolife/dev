@@ -5,7 +5,6 @@ export function js_visit_node(ast, type, lambda) {
   function lambda_outer(v) {
     let { node } = v;
     if (js_node_type_is(node, type)) {
-      return;
       lambda(v);
     }
   }
