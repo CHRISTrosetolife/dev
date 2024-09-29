@@ -44,15 +44,12 @@ export async function app_todo_main(context) {
           object_property_set(item, "completed", true);
         });
         html_hr(root);
-        let choice_default = "one-time";
-        let choices = [choice_default, "daily"];
-        let property_name = "type";
         app_todo_item_choices(
           context,
           item,
-          property_name,
-          choices,
-          choice_default,
+          "type",
+          [choice_default, "daily"],
+          "one-time",
         );
         html_hr(root);
       },
