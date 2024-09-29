@@ -13,6 +13,7 @@ export function app_todo_list(
   context,
   properties,
 ) {
+    let properties = app_todo_properties();
   html_hr(root);
   let filtered = list_filter_property(items, property_name, value);
   each(filtered, (item) => {
