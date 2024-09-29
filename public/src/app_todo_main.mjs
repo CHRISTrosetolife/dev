@@ -29,6 +29,7 @@ export async function app_todo_main(context) {
       let value = html_value_get(input);
       list_add(items, value);
       await firebase_upload_object(index_path, index);
+      app_todo_main(context)
     });
   });
 }
