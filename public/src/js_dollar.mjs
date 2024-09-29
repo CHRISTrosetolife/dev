@@ -213,11 +213,12 @@ export function js_dollar(ast) {
             if (js_node_type_is(e, "AwaitExpression")) {
               log(ix++);
               let arg = object_property_get(e, "argument");
-              await js_dollar_expand(ast, arg, a, parent);
+              await js_dollar_expand(ast, arg, null, a, parent);
             }
           }
           await js_node_if_declaration(next, async (d) => {
-            await js_dollar_expand(ast, d, a, parent);
+            let { init, id } = d;
+            await js_dollar_expand(ast, init, id, a, parent);
           });
         }
       }
