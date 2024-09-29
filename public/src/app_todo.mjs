@@ -1,4 +1,4 @@
-import { firebase_upload_bytes } from "./firebase_upload_bytes.mjs";
+import { firebase_upload_object } from "./firebase_upload_object.mjs";
 import { app_todo_firebase_path } from "./app_todo_firebase_path.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
@@ -15,8 +15,11 @@ export async function app_todo() {
       items,
     });
     html_button_width_full_text_click(root, "initialize", async () => {
-      await firebase_upload_bytes(
+      await firebase_upload_object(
         string_combine(app_todo_firebase_path(), "index.json"),
+        {
+          test: "abc",
+        },
       );
     });
   });
