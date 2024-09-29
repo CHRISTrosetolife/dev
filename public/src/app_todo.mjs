@@ -1,3 +1,4 @@
+import { firebase_download } from "./firebase_download.mjs";
 import { firebase_upload_object } from "./firebase_upload_object.mjs";
 import { app_todo_firebase_path } from "./app_todo_firebase_path.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
@@ -24,5 +25,6 @@ export async function app_todo() {
         },
       );
     });
+    await firebase_download();
   });
 }
