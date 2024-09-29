@@ -37,7 +37,8 @@ export async function app_todo_main(context) {
     }
     html_button_width_full_text_click(root, item, () => {
       html_clear_scroll_top(root);
-      let choices = ["one-time", "daily"];
+      let newLocal = "one-time";
+      let choices = [newLocal, "daily"];
       if (!object_property_exists(item, "property_name")) {
       }
       each(choices, (choice) => {
