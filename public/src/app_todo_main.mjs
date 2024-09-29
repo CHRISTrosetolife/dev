@@ -46,7 +46,7 @@ export async function app_todo_main(context) {
       }
       each(choices, (choice) => {
         let b = html_button_width_full_text_click(root, choice, () => {});
-        if (object_property_get(object, "property_name") === choice) {
+        if (object_property_get(item, "type") === choice) {
         }
       });
     });
