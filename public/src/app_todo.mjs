@@ -16,8 +16,9 @@ export async function app_todo() {
       items,
     });
     html_button_width_full_text_click(root, "initialize", async () => {
+      let test = "test.json";
       await firebase_upload_object(
-        string_combine(app_todo_firebase_path(), "test.json"),
+        string_combine(app_todo_firebase_path(), test),
         {
           test: "abc",
         },
