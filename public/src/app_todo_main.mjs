@@ -47,9 +47,7 @@ export async function app_todo_main(context) {
       }
       each(choices, (choice) => {
         let b = html_button_width_full_text_click(root, choice, () => {});
-        html_style_success_if();
-        if (object_property_get(item, "type") === choice) {
-        }
+        html_style_success_if(b, choice, object_property_get(item, "type"));
       });
     });
   });
