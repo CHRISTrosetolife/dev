@@ -51,13 +51,16 @@ export async function app_todo_main(context) {
           object_property_set(item, "type", ot);
         }
         let choices_div = html_div(root);
-        html_clear(choices_div);
-        each(choices_div, (choice) => {
-          let b = html_button_width_full_text_click(root, choice, () => {
-            object_property_set(item, "type", choice);
+        app_todo_item_type_choose_refresh();
+        function app_todo_item_type_choose_refresh() {
+          html_clear(choices_div);
+          each(choices_div, (choice) => {
+            let b = html_button_width_full_text_click(root, choice, () => {
+              object_property_set(item, "type", choice);
+            });
+            html_style_success_if(b, choice, object_property_get(item, "type"));
           });
-          html_style_success_if(b, choice, object_property_get(item, "type"));
-        });
+        }
       },
     );
   });
