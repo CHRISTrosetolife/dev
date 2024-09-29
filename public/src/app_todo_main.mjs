@@ -35,9 +35,7 @@ export async function app_todo_main(context) {
       item = app_todo_item(item);
       list_set(items, ix, item);
     }
-    each(list, (item2) => {});
-    app_todo_choices_initialize(item, completed);
-    app_todo_choices_initialize(item, completed);
+    each(properties, (p) => app_todo_choices_initialize(item, p));
     return item;
   });
   let add_dailies = "🌅 add dailies";
