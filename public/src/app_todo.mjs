@@ -1,3 +1,4 @@
+import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { app_firebase } from "./app_firebase.mjs";
 import { log } from "./log.mjs";
@@ -10,6 +11,6 @@ export async function app_todo() {
     log({
       items,
     });
-    html_button_width_full_click();
+    html_button_width_full_text_click();
   });
 }
