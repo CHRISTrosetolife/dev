@@ -1,3 +1,4 @@
+import { object_property_set } from "./object_property_set.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { app_todo_item } from "./app_todo_item.mjs";
 import { string_is } from "./string_is.mjs";
@@ -40,6 +41,7 @@ export async function app_todo_main(context) {
       let ot = "one-time";
       let choices = [ot, "daily"];
       if (!object_property_exists(item, "type")) {
+        object_property_set(object, "property_name", value2);
       }
       each(choices, (choice) => {
         html_button_width_full_text_click(root, choice, () => {});
