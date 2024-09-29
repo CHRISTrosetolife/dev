@@ -199,6 +199,8 @@ export function js_dollar(ast) {
           list_remove(list, item);
         }
       }
+      if (equal(remaining, "ag")) {
+      }
       if (equal(remaining, "ex")) {
         await js_dollar_grandparent_next(v, lambda);
         async function lambda(a) {
