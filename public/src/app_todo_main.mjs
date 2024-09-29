@@ -44,7 +44,9 @@ export async function app_todo_main(context) {
       () => {
         app_todo_button_back_main(context);
         html_hr(root);
-        html_button_width_full_text_click(root, "✅ completed", () => {});
+        html_button_width_full_text_click(root, "✅ completed", () => {
+          object_property_set(item, "completed", true);
+        });
         html_hr(root);
         let ot = "one-time";
         let choices = [ot, "daily"];
