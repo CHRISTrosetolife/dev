@@ -7,6 +7,7 @@ import { firebase_list } from "./firebase_list.mjs";
 import { app_todo_firebase_path_combine } from "./app_todo_firebase_path_combine.mjs";
 import { app_todo_main } from "./app_todo_main.mjs";
 import { app_firebase } from "./app_firebase.mjs";
+import { object_merge } from "./object_merge.mjs";
 export async function app_todo() {
   await app_firebase(async (context) => {
     let index_path = app_todo_firebase_path_combine("index.json");
@@ -18,6 +19,9 @@ export async function app_todo() {
       await firebase_upload_object(index_path, {});
     }
     let index = await firebase_download(index_path);
+    object_merge(context, {
+      index,
+    });
     await app_todo_main(context);
   });
 }
