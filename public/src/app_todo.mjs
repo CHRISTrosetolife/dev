@@ -1,3 +1,4 @@
+import { list_includes } from "./list_includes.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { app_todo_firebase_path_combine } from "./app_todo_firebase_path_combine.mjs";
 import { firebase_download } from "./firebase_download.mjs";
@@ -15,15 +16,12 @@ export async function app_todo() {
     let index = app_todo_firebase_path_combine("index.json");
     let { items } = await firebase_list(app_todo_firebase_path());
     let full_paths = list_map_property(items, "fullPath");
-    if (false) {
+    if (!list_includes(full_paths, index)) {
+      await firebase_upload_object(test_path, {});
     }
     let test = "test.json";
     let test_path = app_todo_firebase_path_combine(test);
-    html_button_width_full_text_click(root, "initialize", async () => {
-      await firebase_upload_object(test_path, {
-        test: "abc",
-      });
-    });
+    html_button_width_full_text_click(root, "initialize", async () => {});
     let d = await firebase_download(test_path);
     log({
       items,
