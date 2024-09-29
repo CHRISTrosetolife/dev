@@ -23,7 +23,6 @@ export async function app_todo_main(context) {
   html_clear_scroll_top(root);
   let items = app_todo_items(context);
   html_button_width_full_text_click(root, "➕ add", () => {
-    html_clear_scroll_top(root);
     app_todo_button_back_main(context);
     let input = html_input_width_full_focus(root);
     html_button_width_full_text_click(root, "➕ add", async () => {
@@ -43,7 +42,7 @@ export async function app_todo_main(context) {
       root,
       object_property_get(item, "name"),
       () => {
-        html_clear_scroll_top(root);
+        app_todo_button_back_main(context);
         let ot = "one-time";
         let choices = [ot, "daily"];
         if (!object_property_exists(item, "type")) {
