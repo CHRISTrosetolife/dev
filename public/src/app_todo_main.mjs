@@ -38,17 +38,21 @@ export async function app_todo_main(context) {
     if (string_is(item)) {
       item = app_todo_item(item);
     }
-    html_button_width_full_text_click(root, item, () => {
-      html_clear_scroll_top(root);
-      let ot = "one-time";
-      let choices = [ot, "daily"];
-      if (!object_property_exists(item, "type")) {
-        object_property_set(item, "type", ot);
-      }
-      each(choices, (choice) => {
-        let b = html_button_width_full_text_click(root, choice, () => {});
-        html_style_success_if(b, choice, object_property_get(item, "type"));
-      });
-    });
+    html_button_width_full_text_click(
+      root,
+      object_property_get(object, "property_name"),
+      () => {
+        html_clear_scroll_top(root);
+        let ot = "one-time";
+        let choices = [ot, "daily"];
+        if (!object_property_exists(item, "type")) {
+          object_property_set(item, "type", ot);
+        }
+        each(choices, (choice) => {
+          let b = html_button_width_full_text_click(root, choice, () => {});
+          html_style_success_if(b, choice, object_property_get(item, "type"));
+        });
+      },
+    );
   });
 }
