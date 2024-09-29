@@ -95,7 +95,7 @@ export function js_dollar(ast) {
         log_prefix,
       ];
       let remaining = string_prefix_without(name, prefix);
-      if (remaining === "a") {
+      if (remaining === lambda_prefix) {
         let e = js_parse_expression(js_code_arrow_block());
         object_replace(node, e);
       }
