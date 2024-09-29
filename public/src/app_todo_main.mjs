@@ -20,7 +20,7 @@ export async function app_todo_main(context) {
   let { root } = context;
   html_clear_scroll_top(root);
   let items = app_todo_items(context);
-  let add_dailies = "➕ add dailies";
+  let add_dailies = "🌅 add dailies";
   html_button_width_full_text_click(root, add_dailies, () => {});
   let add_item = "➕ add item";
   html_button_width_full_text_click(root, add_item, () => {
