@@ -1,4 +1,4 @@
-import { list_first } from "./list_first.mjs";
+import { app_todo_choices_initialize } from "./app_todo_choices_initialize.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_style_success_if } from "./html_style_success_if.mjs";
 import { app_todo_item_set_save } from "./app_todo_item_set_save.mjs";
@@ -6,14 +6,9 @@ import { html_button_width_full_text_click } from "./html_button_width_full_text
 import { each } from "./each.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { html_div } from "./html_div.mjs";
-import { object_property_set } from "./object_property_set.mjs";
-import { object_property_exists } from "./object_property_exists.mjs";
 export function app_todo_item_choices(context, item, property_name, choices) {
   let { root } = context;
-  let choice_default = list_first(choices);
-  if (!object_property_exists(item, property_name)) {
-    object_property_set(item, property_name, choice_default);
-  }
+  app_todo_choices_initialize(choices, item, property_name);
   let choices_div = html_div(root);
   app_todo_item_type_choose_refresh();
   function app_todo_item_type_choose_refresh() {
