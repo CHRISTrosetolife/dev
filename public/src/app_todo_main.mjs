@@ -31,6 +31,8 @@ export async function app_todo_main(context) {
   });
   html_hr(root);
   each(items, (item) => {
+    if (false) {
+    }
     html_button_width_full_text_click(root, item, () => {});
   });
 }
