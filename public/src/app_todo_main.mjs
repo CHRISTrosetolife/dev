@@ -43,6 +43,7 @@ export async function app_todo_main(context) {
       object_property_get(item, "name"),
       () => {
         app_todo_button_back_main(context);
+        html_hr(root);
         let ot = "one-time";
         let choices = [ot, "daily"];
         if (!object_property_exists(item, "type")) {
