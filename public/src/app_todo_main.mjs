@@ -63,13 +63,7 @@ export async function app_todo_main(context) {
               choices_div,
               choice,
               async () => {
-                let property_name = "type";
-                await app_todo_item_set_save(
-                  item,
-                  property_name,
-                  choice,
-                  context,
-                );
+                await app_todo_item_set_save(item, "type", choice, context);
                 app_todo_item_type_choose_refresh();
               },
             );
