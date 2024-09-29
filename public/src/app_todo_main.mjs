@@ -1,5 +1,5 @@
+import { app_todo_completed_property } from "./app_todo_completed_property.mjs";
 import { app_todo_properties } from "./app_todo_properties.mjs";
-import { app_todo_completed } from "./app_todo_completed.mjs";
 import { app_todo_not_completed } from "./app_todo_not_completed.mjs";
 import { app_todo_type } from "./app_todo_type.mjs";
 import { app_todo_daily } from "./app_todo_daily.mjs";
@@ -48,7 +48,7 @@ export async function app_todo_main(context) {
   app_todo_list(
     root,
     mapped,
-    app_todo_completed(),
+    app_todo_completed_property(),
     app_todo_not_completed(),
     context,
   );
