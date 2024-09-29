@@ -51,8 +51,9 @@ export async function app_todo_main(context) {
         html_hr(root);
         let ot = "one-time";
         let choices = [ot, "daily"];
-        if (!object_property_exists(item, "type")) {
-          object_property_set(item, "type", ot);
+        let property_name = "type";
+        if (!object_property_exists(item, property_name)) {
+          object_property_set(item, property_name, ot);
         }
         let choices_div = html_div(root);
         app_todo_item_type_choose_refresh();
@@ -63,11 +64,20 @@ export async function app_todo_main(context) {
               choices_div,
               choice,
               async () => {
-                await app_todo_item_set_save(item, "type", choice, context);
+                await app_todo_item_set_save(
+                  item,
+                  property_name,
+                  choice,
+                  context,
+                );
                 app_todo_item_type_choose_refresh();
               },
             );
-            html_style_success_if(b, choice, object_property_get(item, "type"));
+            html_style_success_if(
+              b,
+              choice,
+              object_property_get(item, property_name),
+            );
           });
         }
         html_hr(root);
