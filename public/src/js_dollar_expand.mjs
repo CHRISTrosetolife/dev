@@ -44,7 +44,7 @@ export async function js_dollar_expand(ast, call, result_id, a, parent) {
         [name_c],
       );
       each(needs_enhance, (item) => {
-        js_name_unique_multiple([ast, ast_c], item);
+        let replacement = js_name_unique_multiple([ast, ast_c], item);
       });
       assert_message(list_empty_is, [needs_enhance], () =>
         string_combine_multiple([
