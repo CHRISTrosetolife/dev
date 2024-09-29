@@ -216,9 +216,7 @@ export function js_dollar(ast) {
               await js_dollar_expand(ast, arg, a, parent);
             }
           }
-          log(i++);
           await js_node_if_declaration(next, async (d) => {
-            log(i++);
             await js_dollar_expand(ast, d, a, parent);
           });
         }
