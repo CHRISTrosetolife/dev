@@ -44,7 +44,7 @@ export async function app_todo_main(context) {
         object_property_set(item, "type", ot);
       }
       each(choices, (choice) => {
-        html_button_width_full_text_click(root, choice, () => {});
+        let b = html_button_width_full_text_click(root, choice, () => {});
       });
     });
   });
