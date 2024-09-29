@@ -1,3 +1,4 @@
+import { app_todo_completed_value } from "./app_todo_completed_value.mjs";
 import { app_todo_completed_property } from "./app_todo_completed_property.mjs";
 import { app_todo_daily } from "./app_todo_daily.mjs";
 import { app_todo_type } from "./app_todo_type.mjs";
@@ -6,7 +7,7 @@ export function app_todo_properties() {
   return [
     {
       name: app_todo_completed_property(),
-      choices: [app_todo_not_completed(), "✅ completed"],
+      choices: [app_todo_not_completed(), app_todo_completed_value()],
     },
     {
       name: app_todo_type(),
