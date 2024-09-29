@@ -33,7 +33,7 @@ export async function app_todo() {
         let items = object_property_initialize(index, "items", []);
         let value = html_value_get(input);
         list_add(items, value);
-        await firebase_upload_object(index_path, {});
+        await firebase_upload_object(index_path, index);
       });
     });
     log({
