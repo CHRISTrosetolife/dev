@@ -11,11 +11,11 @@ import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 export async function app_todo_main(context) {
   let { root, index } = context;
   html_clear_scroll_top(root);
+  let items = app_todo_items(context);
   html_button_width_full_text_click(root, "➕ add", () => {
     html_clear_scroll_top(root);
     let input = html_input_width_full_focus(root);
     html_button_width_full_text_click(root, "➕ add", async () => {
-      let items = app_todo_items(context);
       let value = html_value_get(input);
       list_add(items, value);
       let index_path = app_todo_firebase_path_index();
