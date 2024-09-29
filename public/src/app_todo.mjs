@@ -27,7 +27,7 @@ export async function app_todo() {
     html_button_width_full_text_click(root, "➕ add", () => {
       let items = object_property_initialize(d, "items", []);
       html_clear_scroll_top(root);
-      html_input_width_full_focus();
+      html_input_width_full_focus(root);
     });
     log({
       d,
