@@ -40,7 +40,7 @@ export async function app_todo_main(context) {
         app_todo_button_back_main(context);
         html_hr(root);
         app_todo_item_choices(context, item, "completed", [
-          "❎ not completed",
+          "❌ not completed",
           "✅ completed",
         ]);
         html_hr(root);
