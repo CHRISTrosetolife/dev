@@ -39,7 +39,7 @@ export async function app_todo_main(context) {
       html_clear_scroll_top(root);
       let ot = "one-time";
       let choices = [ot, "daily"];
-      if (!object_property_exists(item, "property_name")) {
+      if (!object_property_exists(item, "type")) {
       }
       each(choices, (choice) => {
         html_button_width_full_text_click(root, choice, () => {});
