@@ -51,8 +51,7 @@ export async function app_todo_main(context) {
           "one-time",
         );
         html_hr(root);
-        let ot = "one-time";
-        app_todo_item_choices(context, item, "type", [ot, "daily"]);
+        app_todo_item_choices(context, item, "type", ["one-time", "daily"]);
         html_hr(root);
       },
     );
