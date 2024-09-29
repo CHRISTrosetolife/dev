@@ -29,7 +29,13 @@ export async function app_todo_main(context) {
     });
   });
   html_hr(root);
-  let mapped = list_map(items, () => {});
+  let mapped = list_map(items, (item) => {
+    if (string_is(item)) {
+      item = app_todo_item(item);
+      list_set(items, ix, item);
+    }
+    return item;
+  });
   each_index(items, (item, ix) => {
     if (string_is(item)) {
       item = app_todo_item(item);
