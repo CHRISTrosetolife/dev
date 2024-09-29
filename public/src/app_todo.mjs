@@ -15,14 +15,16 @@ export async function app_todo() {
     let { root } = context;
     html_clear_scroll_top(root);
     let index = app_todo_firebase_path_combine("index.json");
-    let { items } = await firebase_list(app_todo_firebase_path());
-    let full_paths = list_map_property(items, "fullPath");
+    let { items: firebase_items } = await firebase_list(
+      app_todo_firebase_path(),
+    );
+    let full_paths = list_map_property(firebase_items, "fullPath");
     if (!list_includes(full_paths, index)) {
       await firebase_upload_object(index, {});
     }
     let d = await firebase_download(index);
     html_button_width_full_text_click(root, "➕ add", () => {
-      items = object_property_initialize(d, "items", []);
+      let items = object_property_initialize(d, "items", []);
     });
     log({
       d,
