@@ -59,6 +59,7 @@ export async function app_todo_main(context) {
       object_property_get(item, "name"),
       () => {
         app_todo_button_back_main(context);
+        each(list, (item2) => {});
         html_hr(root);
         app_todo_item_choices(context, item, completed, completed_choices);
         html_hr(root);
