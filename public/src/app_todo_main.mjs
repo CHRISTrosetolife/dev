@@ -57,6 +57,7 @@ export async function app_todo_main(context) {
           each(choices_div, (choice) => {
             let b = html_button_width_full_text_click(root, choice, () => {
               object_property_set(item, "type", choice);
+              app_todo_item_type_choose_refresh();
             });
             html_style_success_if(b, choice, object_property_get(item, "type"));
           });
