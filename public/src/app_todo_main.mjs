@@ -41,7 +41,7 @@ export async function app_todo_main(context) {
       let ot = "one-time";
       let choices = [ot, "daily"];
       if (!object_property_exists(item, "type")) {
-        object_property_set(object, "property_name", value2);
+        object_property_set(item, "type", ot);
       }
       each(choices, (choice) => {
         html_button_width_full_text_click(root, choice, () => {});
