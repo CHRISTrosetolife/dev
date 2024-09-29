@@ -32,6 +32,7 @@ export async function app_todo_main(context) {
   });
   html_hr(root);
   let completed = "completed";
+  let nc = "❌ not completed";
   let completed_choices = [nc, "✅ completed"];
   let mapped = list_map_index(items, (item, ix) => {
     if (string_is(item)) {
@@ -41,7 +42,6 @@ export async function app_todo_main(context) {
     app_todo_choices_initialize(item, completed, completed_choices);
     return item;
   });
-  let nc = "❌ not completed";
   let filtered = list_filter_property(mapped, completed, nc);
   each(filtered, (item) => {
     html_button_width_full_text_click(
