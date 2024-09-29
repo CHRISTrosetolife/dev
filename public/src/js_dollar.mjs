@@ -87,6 +87,7 @@ export function js_dollar(ast) {
       let log_prefix_start = "l";
       let log_prefix = string_combine_multiple([log_prefix_start, "_"]);
       let prefixes = [
+        lambda_prefix,
         objection_prefix,
         question_prefix,
         scm_prefix,
