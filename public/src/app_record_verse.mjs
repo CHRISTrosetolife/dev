@@ -1,3 +1,4 @@
+import { firebase_upload_bytes } from "./firebase_upload_bytes.mjs";
 import { list_next } from "./list_next.mjs";
 import { list_previous } from "./list_previous.mjs";
 import { app_record_chapter } from "./app_record_chapter.mjs";
@@ -9,7 +10,6 @@ import { list_find_property_or } from "./list_find_property_or.mjs";
 import { path_join } from "./path_join.mjs";
 import { list_last_is } from "./list_last_is.mjs";
 import { folder_audio_bible } from "./folder_audio_bible.mjs";
-import { firebase_upload } from "./firebase_upload.mjs";
 import { each } from "./each.mjs";
 import { list_find_property_next_property } from "./list_find_property_next_property.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -87,7 +87,7 @@ export async function app_record_verse(
         verse_number,
         string_combine_multiple([when, ".mp3"]),
       ]);
-      await firebase_upload(storage_path, blob);
+      await firebase_upload_bytes(storage_path, blob);
       if (list_last_is(verses, verse)) {
         await chapter_next();
       } else {
