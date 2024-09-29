@@ -38,6 +38,7 @@ export async function app_todo_main(context) {
     return item;
   });
   let nc = "❌ not completed";
+  let completed = "completed";
   list_filter(mapped, (m) => {});
   each(mapped, (item) => {
     html_button_width_full_text_click(
@@ -46,7 +47,7 @@ export async function app_todo_main(context) {
       () => {
         app_todo_button_back_main(context);
         html_hr(root);
-        app_todo_item_choices(context, item, "completed", [nc, "✅ completed"]);
+        app_todo_item_choices(context, item, completed, [nc, "✅ completed"]);
         html_hr(root);
         app_todo_item_choices(context, item, "type", ["one-time", "daily"]);
       },
