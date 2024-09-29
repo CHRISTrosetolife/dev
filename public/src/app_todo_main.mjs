@@ -51,8 +51,8 @@ export async function app_todo_main(context) {
           context,
           item,
           property_name,
-          choice_default,
           choices,
+          choice_default,
         );
         html_hr(root);
       },

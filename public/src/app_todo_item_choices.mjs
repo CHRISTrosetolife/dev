@@ -11,8 +11,8 @@ export function app_todo_item_choices(
   context,
   item,
   property_name,
-  choice_default,
   choices,
+  choice_default,
 ) {
   let { root } = context;
   if (!object_property_exists(item, property_name)) {
