@@ -22,7 +22,7 @@ import { js_declaration_single } from "./js_declaration_single.mjs";
 import { js_return_variablize } from "./js_return_variablize.mjs";
 import { function_parse } from "./function_parse.mjs";
 import { js_node_type_is } from "./js_node_type_is.mjs";
-export async function js_dollar_expand(d, ast, s1, index, next, parent) {
+export async function js_dollar_expand(ast, d, s1, index, next, parent) {
   let { init, id } = d;
   if (js_node_type_is(init, "CallExpression")) {
     let { callee } = init;

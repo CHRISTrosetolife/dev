@@ -211,11 +211,11 @@ export function js_dollar(ast) {
           if (js_node_type_is(next, "ExpressionStatement")) {
             let e = object_property_get(next, "expression");
             if (js_node_type_is(e, "AwaitExpression")) {
-              await js_dollar_expand(a, ast, s1, index, next, parent);
+              await js_dollar_expand(ast, a, s1, index, next, parent);
             }
           }
           await js_node_if_declaration(next, async (d) => {
-            await js_dollar_expand(d, ast, s1, index, next, parent);
+            await js_dollar_expand(ast, d, s1, index, next, parent);
           });
         }
       }
