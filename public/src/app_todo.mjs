@@ -13,9 +13,6 @@ export async function app_todo() {
     html_clear_scroll_top(root);
     let index = "index.json";
     let { items } = await firebase_list(app_todo_firebase_path());
-    log({
-      items,
-    });
     let test = "test.json";
     let test_path = app_todo_firebase_path_combine(test);
     html_button_width_full_text_click(root, "initialize", async () => {
@@ -23,6 +20,10 @@ export async function app_todo() {
         test: "abc",
       });
     });
-    await firebase_download(test_path);
+    let d = await firebase_download(test_path);
+    log({
+      items,
+      d,
+    });
   });
 }
