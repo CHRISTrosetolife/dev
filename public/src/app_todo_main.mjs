@@ -3,7 +3,6 @@ import { app_todo_button_back_main } from "./app_todo_button_back_main.mjs";
 import { each_index } from "./each_index.mjs";
 import { app_todo_index_save } from "./app_todo_index_save.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { object_property_set } from "./object_property_set.mjs";
 import { app_todo_item } from "./app_todo_item.mjs";
 import { string_is } from "./string_is.mjs";
 import { app_todo_items } from "./app_todo_items.mjs";
@@ -40,16 +39,10 @@ export async function app_todo_main(context) {
       () => {
         app_todo_button_back_main(context);
         html_hr(root);
-        html_button_width_full_text_click(root, "✅ completed", () => {
-          object_property_set(item, "completed", true);
-        });
-        app_todo_item_choices(
-          context,
-          item,
-          "type",
-          [choice_default, "daily"],
-          "one-time",
-        );
+        app_todo_item_choices(context, item, "completed", [
+          "✅ completed",
+          "✅ completed",
+        ]);
         html_hr(root);
         app_todo_item_choices(context, item, "type", ["one-time", "daily"]);
         html_hr(root);
