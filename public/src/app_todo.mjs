@@ -1,3 +1,4 @@
+import { app_todo_firebase_path } from "./app_todo_firebase_path.mjs";
 import { firebase_upload } from "./firebase_upload.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
@@ -8,7 +9,7 @@ export async function app_todo() {
   await app_firebase(async (context) => {
     let { root } = context;
     html_clear_scroll_top(root);
-    let { items } = await firebase_list("todo/");
+    let { items } = await firebase_list(app_todo_firebase_path());
     log({
       items,
     });
