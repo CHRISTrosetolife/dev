@@ -203,16 +203,16 @@ export function js_dollar(ast) {
       if (equal(remaining, "ex")) {
         await js_dollar_grandparent_next(v, lambda);
         async function lambda(a) {
-          let { next, s1, index } = a;
+          let { next } = a;
           if (js_node_type_is(next, "ExpressionStatement")) {
             let e = object_property_get(next, "expression");
             if (js_node_type_is(e, "AwaitExpression")) {
               let arg = object_property_get(next, "argument");
-              await js_dollar_expand(ast, arg, s1, index, next, parent);
+              await js_dollar_expand(ast, arg, a, parent);
             }
           }
           await js_node_if_declaration(next, async (d) => {
-            await js_dollar_expand(ast, d, s1, index, next, parent);
+            await js_dollar_expand(ast, d, a, parent);
           });
         }
       }
