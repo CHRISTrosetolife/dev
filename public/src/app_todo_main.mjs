@@ -65,6 +65,7 @@ export async function app_todo_main(context) {
             html_style_success_if(b, choice, object_property_get(item, "type"));
           });
         }
+        html_hr(root);
       },
     );
   });
