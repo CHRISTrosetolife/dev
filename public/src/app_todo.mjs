@@ -17,22 +17,23 @@ export async function app_todo() {
   await app_firebase(async (context) => {
     let { root } = context;
     html_clear_scroll_top(root);
-    let index = app_todo_firebase_path_combine("index.json");
+    let index_path = app_todo_firebase_path_combine("index.json");
     let { items: firebase_items } = await firebase_list(
       app_todo_firebase_path(),
     );
     let full_paths = list_map_property(firebase_items, "fullPath");
-    if (!list_includes(full_paths, index)) {
-      await firebase_upload_object(index, {});
+    if (!list_includes(full_paths, index_path)) {
+      await firebase_upload_object(index_path, {});
     }
-    let d = await firebase_download(index);
+    let d = await firebase_download(index_path);
     html_button_width_full_text_click(root, "➕ add", () => {
       html_clear_scroll_top(root);
       let input = html_input_width_full_focus(root);
-      html_button_width_full_text_click(root, "➕ add", () => {
+      html_button_width_full_text_click(root, "➕ add", async () => {
         let items = object_property_initialize(d, "items", []);
         let value = html_value_get(input);
         list_add(items, value);
+        await firebase_upload_object(index_path, {});
       });
     });
     log({
