@@ -1,3 +1,4 @@
+import { string_underscore_trail } from "./string_underscore_trail.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { js_node_is } from "./js_node_is.mjs";
 import { list_previous } from "./list_previous.mjs";
@@ -79,13 +80,14 @@ export function js_dollar(ast) {
     let prefix = "$";
     if (string_starts_with(name, prefix)) {
       let { parent } = v;
-      let lambda_prefix = "a";
+      let lambda_prefix_start = "a";
       let objection_prefix = "o";
       let question_prefix = "q";
       let scm_prefix = "s";
       let sermon_prefix = "se";
       let log_prefix_start = "l";
-      let log_prefix = string_combine_multiple([log_prefix_start, "_"]);
+      let lambda_prefix = string_underscore_trail(lambda_prefix_start);
+      let log_prefix = string_underscore_trail(log_prefix_start);
       let prefixes = [
         lambda_prefix,
         objection_prefix,
@@ -95,10 +97,6 @@ export function js_dollar(ast) {
         log_prefix,
       ];
       let remaining = string_prefix_without(name, prefix);
-      if (remaining === lambda_prefix) {
-        let e = js_parse_expression(js_code_arrow_block());
-        object_replace(node, e);
-      }
       if (remaining === "aa") {
         let e = js_parse_expression(
           js_code_call(fn_name("assert_arguments_length")),
@@ -438,6 +436,10 @@ export function js_dollar(ast) {
         let e = js_parse_expression(
           js_code_call_args(fn_name("log"), [js_code_braces_inside(inside)]),
         );
+        object_replace(node, e);
+      }
+      if (remaining === lambda_prefix_start) {
+        let e = js_parse_expression(js_code_arrow_block());
         object_replace(node, e);
       }
       if (prefix_use(remaining, scm_prefix, prefixes)) {
