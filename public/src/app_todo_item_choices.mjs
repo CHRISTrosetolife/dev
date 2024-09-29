@@ -8,7 +8,7 @@ import { html_clear } from "./html_clear.mjs";
 import { html_div } from "./html_div.mjs";
 export function app_todo_item_choices(context, item, property_name, choices) {
   let { root } = context;
-  app_todo_choices_initialize(choices, item, property_name);
+  app_todo_choices_initialize(item, choices, property_name);
   let choices_div = html_div(root);
   app_todo_item_type_choose_refresh();
   function app_todo_item_type_choose_refresh() {
