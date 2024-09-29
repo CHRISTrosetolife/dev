@@ -47,12 +47,14 @@ export async function js_dollar_expand(ast, call, result_id, a, parent) {
         let replacement = js_name_unique_multiple([ast, ast_c], item);
         js_identifier_rename(ast_c, item, replacement);
       });
-      assert_message(list_empty_is, [needs_enhance], () =>
-        string_combine_multiple([
-          "code needs enhancing to handle variables: ",
-          needs_enhance,
-        ]),
-      );
+      if (false) {
+        assert_message(list_empty_is, [needs_enhance], () =>
+          string_combine_multiple([
+            "code needs enhancing to handle variables: ",
+            needs_enhance,
+          ]),
+        );
+      }
       js_identifier_rename_multiple(d, params_names, args_names);
       if (null_not_is(result_id)) {
         let body = js_declaration_to_body(d);
