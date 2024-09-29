@@ -32,9 +32,6 @@ export async function js_dollar_expand(ast, call, result_id, a, parent) {
       let { name: name_c } = callee;
       let ast_c = await function_parse(name_c);
       js_return_variablize(ast_c);
-      let d = js_declaration_single(ast_c);
-      let params = js_declaration_to_params(d);
-      let params_names = js_identifiers_names(params);
       let { arguments: args } = call;
       let args_names = js_identifiers_names(args);
       let identifiers = js_identifiers(ast);
@@ -47,6 +44,9 @@ export async function js_dollar_expand(ast, call, result_id, a, parent) {
         let replacement = js_name_unique_multiple([ast, ast_c], item);
         js_identifier_rename(ast_c, item, replacement);
       });
+      let d = js_declaration_single(ast_c);
+      let params = js_declaration_to_params(d);
+      let params_names = js_identifiers_names(params);
       if (false) {
         assert_message(list_empty_is, [needs_enhance], () =>
           string_combine_multiple([
