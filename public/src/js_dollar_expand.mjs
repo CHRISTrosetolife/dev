@@ -24,6 +24,7 @@ import { js_return_variablize } from "./js_return_variablize.mjs";
 import { function_parse } from "./function_parse.mjs";
 import { js_node_type_is } from "./js_node_type_is.mjs";
 import { null_not_is } from "./null_not_is.mjs";
+import { function_names } from "./function_names.mjs";
 export async function js_dollar_expand(ast, call, result_id, a, parent) {
   let { next, s1, index } = a;
   if (js_node_type_is(call, "CallExpression")) {
@@ -35,6 +36,7 @@ export async function js_dollar_expand(ast, call, result_id, a, parent) {
       let { arguments: args } = call;
       let args_names = js_identifiers_names(args);
       let identifiers = js_identifiers(ast);
+      let fns = await function_names();
       let needs_enhance = js_identifiers_intersect_difference(
         ast_c,
         identifiers,
