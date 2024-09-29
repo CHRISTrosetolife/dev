@@ -18,6 +18,7 @@ export async function app_todo() {
     if (false) {
     }
     let test = "test.json";
+    let test_path = app_todo_firebase_path_combine(test);
     html_button_width_full_text_click(root, "initialize", async () => {
       await firebase_upload_object(test_path, {
         test: "abc",
