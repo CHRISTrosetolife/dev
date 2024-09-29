@@ -200,6 +200,10 @@ export function js_dollar(ast) {
         }
       }
       if (equal(remaining, "ag")) {
+        await js_dollar_grandparent_next(v, lambda);
+        async function lambda(a) {
+          let { next, s1, index } = a;
+        }
       }
       if (equal(remaining, "ex")) {
         await js_dollar_grandparent_next(v, lambda);
