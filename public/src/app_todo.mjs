@@ -10,5 +10,6 @@ export async function app_todo() {
     log({
       items,
     });
+    button_width_full_click();
   });
 }
