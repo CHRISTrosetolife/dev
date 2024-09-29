@@ -1,3 +1,4 @@
+import { list_filter } from "./list_filter.mjs";
 import { each } from "./each.mjs";
 import { list_map_index } from "./list_map_index.mjs";
 import { app_todo_item_choices } from "./app_todo_item_choices.mjs";
@@ -36,6 +37,7 @@ export async function app_todo_main(context) {
     }
     return item;
   });
+  list_filter();
   each(mapped, (item) => {
     html_button_width_full_text_click(
       root,
