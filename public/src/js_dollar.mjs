@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { js_dollar_expand } from "./js_dollar_expand.mjs";
 import { object_copy_replace } from "./object_copy_replace.mjs";
 import { js_visit_identifiers_named } from "./js_visit_identifiers_named.mjs";
@@ -205,13 +204,9 @@ export function js_dollar(ast) {
         await js_dollar_grandparent_next(v, lambda);
         async function lambda(a) {
           let { next } = a;
-          let ix = 0;
-          log(ix++);
           if (js_node_type_is(next, "ExpressionStatement")) {
-            log(ix++);
             let e = object_property_get(next, "expression");
             if (js_node_type_is(e, "AwaitExpression")) {
-              log(ix++);
               let arg = object_property_get(e, "argument");
               await js_dollar_expand(ast, arg, null, a, parent);
             }
