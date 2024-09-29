@@ -1,3 +1,4 @@
+import { app_todo_item_set_save } from "./app_todo_item_set_save.mjs";
 import { app_todo_button_back_main } from "./app_todo_button_back_main.mjs";
 import { each_index } from "./each_index.mjs";
 import { app_todo_index_save } from "./app_todo_index_save.mjs";
@@ -63,8 +64,12 @@ export async function app_todo_main(context) {
               choice,
               async () => {
                 let property_name = "type";
-                object_property_set(item, property_name, choice);
-                await app_todo_index_save(context);
+                await app_todo_item_set_save(
+                  item,
+                  property_name,
+                  choice,
+                  context,
+                );
                 app_todo_item_type_choose_refresh();
               },
             );
