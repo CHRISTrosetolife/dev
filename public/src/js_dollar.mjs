@@ -1,3 +1,4 @@
+import { js_node_declaration_is } from "./js_node_declaration_is.mjs";
 import { string_split } from "./string_split.mjs";
 import { string_underscore_trail } from "./string_underscore_trail.mjs";
 import { fn_name } from "./fn_name.mjs";
@@ -203,14 +204,8 @@ export function js_dollar(ast) {
         await js_dollar_grandparent_next(v, lambda);
         async function lambda(a) {
           let { next, s1, index } = a;
-          if (js_node_type_is(next, "VariableDeclaration")) {
-            let { declarations } = next;
-            if (list_size_1(declarations)) {
-              let d = list_single(declarations);
-              lambda_inner(d);
-            }
-          }
-          function lambda_inner() {}
+          js_node_declaration_is(next, lambda_inner);
+          function lambda_inner(d) {}
         }
       }
       if (equal(remaining, "ex")) {
