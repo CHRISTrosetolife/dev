@@ -1,3 +1,4 @@
+import { app_todo_type } from "./app_todo_type.mjs";
 import { app_todo_daily } from "./app_todo_daily.mjs";
 import { app_todo_list } from "./app_todo_list.mjs";
 import { app_todo_choices_initialize } from "./app_todo_choices_initialize.mjs";
@@ -25,7 +26,7 @@ export async function app_todo_main(context) {
     choices: [nc, "✅ completed"],
   };
   let daily = app_todo_daily();
-  let type = "type";
+  let type = app_todo_type();
   let properties = [
     completed,
     {
