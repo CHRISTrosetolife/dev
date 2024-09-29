@@ -1,3 +1,4 @@
+import { app_todo_button_back_main } from "./app_todo_button_back_main.mjs";
 import { each_index } from "./each_index.mjs";
 import { app_todo_index_save } from "./app_todo_index_save.mjs";
 import { html_div } from "./html_div.mjs";
@@ -7,7 +8,6 @@ import { object_property_set } from "./object_property_set.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { app_todo_item } from "./app_todo_item.mjs";
 import { string_is } from "./string_is.mjs";
-import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
 import { app_todo_items } from "./app_todo_items.mjs";
 import { each } from "./each.mjs";
 import { html_hr } from "./html_hr.mjs";
@@ -19,14 +19,12 @@ import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { list_set } from "./list_set.mjs";
 export async function app_todo_main(context) {
-  let { root, index } = context;
+  let { root } = context;
   html_clear_scroll_top(root);
   let items = app_todo_items(context);
   html_button_width_full_text_click(root, "➕ add", () => {
     html_clear_scroll_top(root);
-    html_button_width_full_text_click_back(root, async () => {
-      await app_todo_main(context);
-    });
+    app_todo_button_back_main(context);
     let input = html_input_width_full_focus(root);
     html_button_width_full_text_click(root, "➕ add", async () => {
       let value = html_value_get(input);
