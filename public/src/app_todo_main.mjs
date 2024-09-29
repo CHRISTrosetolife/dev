@@ -22,12 +22,11 @@ export async function app_todo_main(context) {
   let { root } = context;
   html_clear_scroll_top(root);
   let items = app_todo_items(context);
-  let completed = {
-    name: app_todo_completed(),
-    choices: [app_todo_not_completed(), "✅ completed"],
-  };
   let properties = [
-    completed,
+    {
+      name: app_todo_completed(),
+      choices: [app_todo_not_completed(), "✅ completed"],
+    },
     {
       name: app_todo_type(),
       choices: ["one-time", app_todo_daily()],
