@@ -1,3 +1,4 @@
+import { html_style_success_if } from "./html_style_success_if.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
@@ -46,6 +47,7 @@ export async function app_todo_main(context) {
       }
       each(choices, (choice) => {
         let b = html_button_width_full_text_click(root, choice, () => {});
+        html_style_success_if();
         if (object_property_get(item, "type") === choice) {
         }
       });
