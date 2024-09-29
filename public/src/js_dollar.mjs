@@ -71,8 +71,6 @@ import { list_index_last } from "./list_index_last.mjs";
 import { list_all } from "./list_all.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { equal } from "./equal.mjs";
-import { list_size_1 } from "./list_size_1.mjs";
-import { list_single } from "./list_single.mjs";
 import { assert_message } from "./assert_message.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 export function js_dollar(ast) {
@@ -204,7 +202,7 @@ export function js_dollar(ast) {
         await js_dollar_grandparent_next(v, lambda);
         async function lambda(a) {
           let { next, s1, index } = a;
-          js_node_declaration_is(next, lambda_inner);
+          await js_node_declaration_is(next, lambda_inner);
           function lambda_inner(d) {}
         }
       }
@@ -212,8 +210,7 @@ export function js_dollar(ast) {
         await js_dollar_grandparent_next(v, lambda);
         async function lambda(a) {
           let { next, s1, index } = a;
-          js_node_declaration_is(next, d=>{
-
+          await js_node_declaration_is(next, async (d) => {
             let { init, id } = d;
             if (js_node_type_is(init, "CallExpression")) {
               let { callee } = init;
@@ -259,6 +256,7 @@ export function js_dollar(ast) {
               }
             }
           });
+        }
       }
       if (remaining === "eo") {
         let object = js_name_unique(ast, "object");
