@@ -206,15 +206,19 @@ export function js_dollar(ast) {
         async function lambda(a) {
           let { next } = a;
           let ix = 0;
-          log({});
+          log(i++);
           if (js_node_type_is(next, "ExpressionStatement")) {
+            log(i++);
             let e = object_property_get(next, "expression");
             if (js_node_type_is(e, "AwaitExpression")) {
+              log(i++);
               let arg = object_property_get(e, "argument");
               await js_dollar_expand(ast, arg, a, parent);
             }
           }
+          log(i++);
           await js_node_if_declaration(next, async (d) => {
+            log(i++);
             await js_dollar_expand(ast, d, a, parent);
           });
         }
