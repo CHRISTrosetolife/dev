@@ -32,7 +32,7 @@ export async function app_todo_main(context) {
       await app_todo_main(context);
     });
   });
-  html_button_width_full_text_click(root, " completed");
+  html_button_width_full_text_click(root, "✅ completed", () => {});
   html_hr(root);
   each_index(items, (item, ix) => {
     if (string_is(item)) {
