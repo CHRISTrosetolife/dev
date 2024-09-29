@@ -37,7 +37,7 @@ export async function app_todo_main(context) {
     }
     return item;
   });
-  list_filter();
+  list_filter(mapped);
   each(mapped, (item) => {
     html_button_width_full_text_click(
       root,
