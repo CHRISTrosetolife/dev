@@ -1,3 +1,4 @@
+import { object_property_exists } from "./object_property_exists.mjs";
 import { app_todo_item } from "./app_todo_item.mjs";
 import { string_is } from "./string_is.mjs";
 import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
@@ -36,7 +37,7 @@ export async function app_todo_main(context) {
     }
     html_button_width_full_text_click(root, item, () => {
       html_clear_scroll_top(root);
-      if (false) {
+      if (object_property_exists(object, "property_name")) {
       }
       let choices = ["daily", "one-time"];
       each(choices, (choice) => {
