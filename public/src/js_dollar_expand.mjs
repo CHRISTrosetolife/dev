@@ -22,10 +22,10 @@ import { js_declaration_single } from "./js_declaration_single.mjs";
 import { js_return_variablize } from "./js_return_variablize.mjs";
 import { function_parse } from "./function_parse.mjs";
 import { js_node_type_is } from "./js_node_type_is.mjs";
-export async function js_dollar_expand(ast, init, result_id, a, parent) {
+export async function js_dollar_expand(ast, call, result_id, a, parent) {
   let { next, s1, index } = a;
-  if (js_node_type_is(init, "CallExpression")) {
-    let { callee } = init;
+  if (js_node_type_is(call, "CallExpression")) {
+    let { callee } = call;
     if (js_node_type_is(callee, "Identifier")) {
       let { name: name_c } = callee;
       let ast_c = await function_parse(name_c);
@@ -33,7 +33,7 @@ export async function js_dollar_expand(ast, init, result_id, a, parent) {
       let d = js_declaration_single(ast_c);
       let params = js_declaration_to_params(d);
       let params_names = js_identifiers_names(params);
-      let { arguments: args } = init;
+      let { arguments: args } = call;
       let args_names = js_identifiers_names(args);
       let identifiers = js_identifiers(ast);
       let needs_enhance = js_identifiers_intersect_difference(
