@@ -208,8 +208,9 @@ export function js_dollar(ast) {
             let { id } = d;
             if (js_node_type_is(id, "Identifier")) {
               let name_id = object_property_get(id, "name");
-              let { init } = d;
-              js_visit_identifiers_named(ast, name_id, (node) => {});
+              js_visit_identifiers_named(ast, name_id, (node) => {
+                let { init } = d;
+              });
             }
             log(js_unparse(id));
             log(js_unparse(init));
