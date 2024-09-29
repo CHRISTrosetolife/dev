@@ -14,7 +14,7 @@ export async function app_todo() {
     html_clear_scroll_top(root);
     let index = "index.json";
     let { items } = await firebase_list(app_todo_firebase_path());
-    list_map_property(items, "fullPath");
+    let full_paths = list_map_property(items, "fullPath");
     let test = "test.json";
     let test_path = app_todo_firebase_path_combine(test);
     html_button_width_full_text_click(root, "initialize", async () => {
