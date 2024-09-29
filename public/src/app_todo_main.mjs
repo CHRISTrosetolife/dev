@@ -39,8 +39,8 @@ export async function app_todo_main(context) {
   });
   let nc = "❌ not completed";
   let completed = "completed";
-  list_filter_property(mapped, completed, nc);
-  each(mapped, (item) => {
+  let filtered = list_filter_property(mapped, completed, nc);
+  each(filtered, (item) => {
     html_button_width_full_text_click(
       root,
       object_property_get(item, "name"),
