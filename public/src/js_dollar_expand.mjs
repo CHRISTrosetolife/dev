@@ -25,6 +25,9 @@ import { js_node_type_is } from "./js_node_type_is.mjs";
 export async function js_dollar_expand(ast, d, a, parent) {
   let { next, s1, index } = a;
   let { init, id } = d;
+  log({
+    d,
+  });
   if (js_node_type_is(init, "CallExpression")) {
     let { callee } = init;
     if (js_node_type_is(callee, "Identifier")) {
