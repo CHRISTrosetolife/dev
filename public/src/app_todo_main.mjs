@@ -1,3 +1,4 @@
+import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
 import { app_todo_items } from "./app_todo_items.mjs";
 import { each } from "./each.mjs";
 import { html_hr } from "./html_hr.mjs";
@@ -16,6 +17,7 @@ export async function app_todo_main(context) {
     html_clear_scroll_top(root);
     let input = html_input_width_full_focus(root);
     html_button_width_full_text_click(root, "➕ add", async () => {
+      html_button_width_full_text_click_back();
       let value = html_value_get(input);
       list_add(items, value);
       let index_path = app_todo_firebase_path_index();
