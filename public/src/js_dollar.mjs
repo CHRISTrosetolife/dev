@@ -205,6 +205,7 @@ export function js_dollar(ast) {
         await js_dollar_grandparent_next(v, lambda);
         async function lambda(a) {
           let { next } = a;
+          let ix = 0;
           log({});
           if (js_node_type_is(next, "ExpressionStatement")) {
             let e = object_property_get(next, "expression");
