@@ -56,7 +56,8 @@ export async function app_todo_main(context) {
         app_todo_item_choices(context, item, completed, completed_choices);
         html_hr(root);
         let type = "type";
-        app_todo_item_choices(context, item, type, ["one-time", "daily"]);
+        let type_choices = ["one-time", "daily"];
+        app_todo_item_choices(context, item, type, type_choices);
       },
     );
   });
