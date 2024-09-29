@@ -32,12 +32,13 @@ export async function app_todo_main(context) {
   });
   html_hr(root);
   let completed = "completed";
+  let completed_choices = [nc, "✅ completed"];
   let mapped = list_map_index(items, (item, ix) => {
     if (string_is(item)) {
       item = app_todo_item(item);
       list_set(items, ix, item);
     }
-    app_todo_choices_initialize(item, completed, choices);
+    app_todo_choices_initialize(item, completed, completed_choices);
     return item;
   });
   let nc = "❌ not completed";
@@ -49,7 +50,6 @@ export async function app_todo_main(context) {
       () => {
         app_todo_button_back_main(context);
         html_hr(root);
-        let completed_choices = [nc, "✅ completed"];
         app_todo_item_choices(context, item, completed, completed_choices);
         html_hr(root);
         app_todo_item_choices(context, item, "type", ["one-time", "daily"]);
