@@ -37,9 +37,9 @@ export async function app_todo_main(context) {
     }
     html_button_width_full_text_click(root, item, () => {
       html_clear_scroll_top(root);
+      let choices = ["one-time", "daily"];
       if (!object_property_exists(item, "property_name")) {
       }
-      let choices = ["one-time", "daily"];
       each(choices, (choice) => {
         html_button_width_full_text_click(root, choice, () => {});
       });
