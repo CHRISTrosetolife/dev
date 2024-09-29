@@ -20,6 +20,7 @@ export async function app_todo_main(context) {
   let { root } = context;
   html_clear_scroll_top(root);
   let items = app_todo_items(context);
+  html_button_width_full_text_click(root, add_item, () => {});
   let add_item = "➕ add item";
   html_button_width_full_text_click(root, add_item, () => {
     app_todo_button_back_main(context);
