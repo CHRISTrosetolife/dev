@@ -31,8 +31,7 @@ export async function app_todo_main(context) {
     each(properties, (p) => app_todo_choices_initialize(item, p));
     return item;
   });
-  let add_dailies = "🌅 add dailies";
-  html_button_width_full_text_click(root, add_dailies, () => {
+  html_button_width_full_text_click(root, "🌅 add dailies", () => {
     app_todo_list(root, mapped, app_todo_type(), app_todo_daily(), context);
   });
   let add_item = "➕ add item";
