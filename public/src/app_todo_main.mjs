@@ -26,10 +26,11 @@ export async function app_todo_main(context) {
     choices: [nc, "✅ completed"],
   };
   let daily = "daily";
+  let type = "type";
   let properties = [
     completed,
     {
-      name: "type",
+      name: type,
       choices: ["one-time", daily],
     },
   ];
@@ -43,7 +44,7 @@ export async function app_todo_main(context) {
   });
   let add_dailies = "🌅 add dailies";
   html_button_width_full_text_click(root, add_dailies, () => {
-    let ds = list_filter_property(mapped, completed, nc);
+    let ds = list_filter_property(mapped, completed, daily);
     each(mapped, (m) => {});
   });
   let add_item = "➕ add item";
