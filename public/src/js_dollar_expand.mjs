@@ -1,4 +1,4 @@
-import { js_name_unique } from "./js_name_unique.mjs";
+import { js_name_unique_multiple } from "./js_name_unique_multiple.mjs";
 import { each } from "./each.mjs";
 import { list_remove_multiple } from "./list_remove_multiple.mjs";
 import { list_insert } from "./list_insert.mjs";
@@ -43,8 +43,8 @@ export async function js_dollar_expand(ast, call, result_id, a, parent) {
         identifiers,
         [name_c],
       );
-      each(list, (item) => {
-        js_name_unique();
+      each(needs_enhance, (item) => {
+        js_name_unique_multiple([ast, ast_c], item);
       });
       assert_message(list_empty_is, [needs_enhance], () =>
         string_combine_multiple([
