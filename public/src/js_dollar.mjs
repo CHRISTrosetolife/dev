@@ -1,4 +1,4 @@
-import { js_node_declaration_is } from "./js_node_declaration_is.mjs";
+import { js_node_if_declaration } from "./js_node_if_declaration.mjs";
 import { string_split } from "./string_split.mjs";
 import { string_underscore_trail } from "./string_underscore_trail.mjs";
 import { fn_name } from "./fn_name.mjs";
@@ -202,14 +202,14 @@ export function js_dollar(ast) {
         await js_dollar_grandparent_next(v, lambda);
         async function lambda(a) {
           let { next, s1, index } = a;
-          await js_node_declaration_is(next, async function lambda_inner(d) {});
+          await js_node_if_declaration(next, async function lambda_inner(d) {});
         }
       }
       if (equal(remaining, "ex")) {
         await js_dollar_grandparent_next(v, lambda);
         async function lambda(a) {
           let { next, s1, index } = a;
-          await js_node_declaration_is(next, async (d) => {
+          await js_node_if_declaration(next, async (d) => {
             let { init, id } = d;
             if (js_node_type_is(init, "CallExpression")) {
               let { callee } = init;
