@@ -1,3 +1,4 @@
+import { object_copy } from "./object_copy.mjs";
 import { js_visit_identifiers_named } from "./js_visit_identifiers_named.mjs";
 import { js_unparse } from "./js_unparse.mjs";
 import { js_node_if_declaration } from "./js_node_if_declaration.mjs";
@@ -210,7 +211,7 @@ export function js_dollar(ast) {
               let name_id = object_property_get(id, "name");
               let { init } = d;
               js_visit_identifiers_named(ast, name_id, (node) => {
-                object_replace(node, init);
+                object_replace(node, object_copy(init));
               });
             }
             log(js_unparse(id));
