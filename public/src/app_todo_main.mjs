@@ -1,3 +1,4 @@
+import { html_hr } from "./html_hr.mjs";
 import { app_todo_firebase_path_index } from "./app_todo_firebase_path_index.mjs";
 import { list_add } from "./list_add.mjs";
 import { html_value_get } from "./html_value_get.mjs";
@@ -21,4 +22,5 @@ export async function app_todo_main(context) {
       await app_todo_main(context);
     });
   });
+  html_hr(root);
 }
