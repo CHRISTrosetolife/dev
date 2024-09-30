@@ -27,6 +27,7 @@ import { list_find_property } from "./list_find_property.mjs";
 import { app_record_verses } from "./app_record_verses.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { list_first } from "./list_first.mjs";
+import { google_search_url } from "./google_search_url.mjs";
 export async function app_record_verse(
   context,
   book_code,
@@ -55,8 +56,12 @@ export async function app_record_verse(
   html_style_bold(vn);
   each(tokens, (token) => {
     html_spacer(root);
-    html_a(root);
-    html_span_text(root, list_join_space(token));
+    html_a(
+      root,
+      token,
+      google_search_url(string_combine_multiple(["define: "])),
+    );
+    html_span_text(root, list_join_space());
   });
   let start, previous, save, cancel, restart, recording, recording_not;
   start = html_button_width_full_text_click(root, "⏺️ start recording", () => {
