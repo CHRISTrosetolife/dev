@@ -17,7 +17,9 @@ import { bible_chapter } from "./bible_chapter.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { list_take_soft } from "./list_take_soft.mjs";
 import { list_filter } from "./list_filter.mjs";
+import { tautology } from "./tautology.mjs";
 export async function bible_search(words) {
+  let filter = tautology;
   let s = string_split_comma(words);
   let mapped = bible_search_symbols_map(s);
   let i = await bible_search_index_cache();
@@ -38,7 +40,7 @@ export async function bible_search(words) {
     }),
   );
   let mapped6 = list_map(mapped2, (word) =>
-    list_map(word, (results) => {
+    list_filter(word, (results) => {
       let { chapter_code, verse_number } = results;
       return json_to({
         chapter_code,
