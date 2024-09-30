@@ -12,7 +12,6 @@ import { app_record_chapter_buttons } from "./app_record_chapter_buttons.mjs";
 import { bible_book_name } from "./bible_book_name.mjs";
 import { bible_reference } from "./bible_reference.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { list_find_property_or } from "./list_find_property_or.mjs";
 import { path_join } from "./path_join.mjs";
 import { list_last_is } from "./list_last_is.mjs";
 import { folder_audio_bible } from "./folder_audio_bible.mjs";
@@ -143,7 +142,7 @@ export async function app_record_verse(
   each(recording, html_style_display_none);
   async function chapter_next_go() {
     let { books } = context;
-    let book = list_find_property_or(books, "book_code", book_code);
+    let book = list_find_property(books, "book_code", book_code);
     let { chapters } = book;
     let chapter_next, book_next;
     if (list_last_is(chapters, chapter)) {
