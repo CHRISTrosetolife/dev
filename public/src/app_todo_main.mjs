@@ -34,10 +34,13 @@ export async function app_todo_main(context) {
   });
   html_button_width_full_text_click(root, app_todo_completed_value(), () => {
     html_clear_scroll_top(root);
-    html_button_width_full_text_click(root, app_todo_completed_value(), () => {
-      html_clear_scroll_top(root);
-      app_todo_list(context, mapped, app_todo_type(), app_todo_daily());
-    });
+    html_button_width_full_text_click(
+      root,
+      app_todo_not_completed(),
+      async () => {
+        await app_todo_main(context);
+      },
+    );
     app_todo_list(context, mapped, app_todo_type(), app_todo_daily());
   });
   let add_item = "➕ add item";
