@@ -19,7 +19,7 @@ import { html_input_width_full_focus } from "./html_input_width_full_focus.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { list_set } from "./list_set.mjs";
-export async function app_todo_main(context) {
+export function app_todo_main(context) {
   let { root } = context;
   html_clear_scroll_top(root);
   let items = app_todo_items(context);
