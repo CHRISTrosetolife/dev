@@ -48,10 +48,10 @@ export async function app_record_verse(
     ]),
     async () => await app_record_chapter(context, book_code, chapter),
   );
+  html_br(root);
   let verses = await app_record_verses(book_code, chapter);
   let verse = list_find_property(verses, "verse_number", verse_number);
   let { tokens } = verse;
-  html_br(root);
   let vn = html_span_text(
     root,
     bible_reference(bible_book_name(book_code), chapter, verse_number),
@@ -70,6 +70,7 @@ export async function app_record_verse(
       ),
     );
   });
+  html_br(root);
   let start, previous, save, cancel, restart, recording, recording_not;
   start = html_button_width_full_text_click(root, "⏺️ start recording", () => {
     each(recording_not, html_style_display_none);
