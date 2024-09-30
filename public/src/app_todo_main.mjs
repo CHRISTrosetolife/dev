@@ -50,7 +50,7 @@ export function app_todo_main(context) {
       app_todo_completed_value(),
     );
   });
-  html_button_width_full_text_click(root, "🌅 add dailies", () => {
+  html_button_width_full_text_click(root, "🌅 add dailies", async () => {
     let filtered = list_filter_property(
       items,
       app_todo_type(),
@@ -63,7 +63,7 @@ export function app_todo_main(context) {
         app_todo_not_completed(),
       );
     });
-    app_todo_index_save_main(context);
+    await app_todo_index_save_main(context);
   });
   let add_item = "➕ add item";
   html_button_width_full_text_click(root, add_item, () => {
