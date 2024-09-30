@@ -93,8 +93,8 @@ export async function function_aliases_generate() {
   alias_add(function_transform, ["ft"]);
   alias_add(function_transform_all, ["fta"]);
   alias_add(function_transform_all_args, ["ftaa"]);
-  alias_add(git_acp, ["gi"]);
-  alias_add(google_search, ["g"]);
+  alias_add(git_acp, ["g"]);
+  alias_add(google_search, ["go"]);
   alias_add(google_search_lucky, ["gl"]);
   alias_add(git_index_lock_delete, ["gx"]);
   alias_add(hub, ["h"]);
