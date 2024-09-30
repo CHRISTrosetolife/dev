@@ -46,7 +46,9 @@ export function app_todo_main(context) {
       app_todo_completed_value(),
     );
   });
-  html_button_width_full_text_click(root, "🌅 add dailies", () => {});
+  html_button_width_full_text_click(root, "🌅 add dailies", () => {
+    each(list, (item2) => {});
+  });
   let add_item = "➕ add item";
   html_button_width_full_text_click(root, add_item, () => {
     app_todo_button_back_main(context);
