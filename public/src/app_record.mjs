@@ -1,3 +1,4 @@
+import { noop } from "./noop.mjs";
 import { html_style_a_plain } from "./html_style_a_plain.mjs";
 import { app_firebase } from "./app_firebase.mjs";
 import { app_context_books_bible } from "./app_context_books_bible.mjs";
@@ -10,7 +11,7 @@ import { html_hash_lookup } from "./html_hash_lookup.mjs";
 import { html_recorder_media } from "./html_recorder_media.mjs";
 export async function app_record() {
   html_style_a_plain();
-  await app_firebase(on_logged_in);
+  await app_firebase(on_logged_in, noop);
   async function on_logged_in(context) {
     context.mr = await html_recorder_media();
     await app_context_books_bible(context);

@@ -1,3 +1,4 @@
+import { noop } from "./noop.mjs";
 import { app_todo_firebase_path_index } from "./app_todo_firebase_path_index.mjs";
 import { firebase_download } from "./firebase_download.mjs";
 import { firebase_upload_object } from "./firebase_upload_object.mjs";
@@ -23,5 +24,5 @@ export async function app_todo() {
       index,
     });
     app_todo_main(context);
-  });
+  }, noop);
 }
