@@ -1,3 +1,4 @@
+import { html_br } from "./html_br.mjs";
 import { list_single } from "./list_single.mjs";
 import { bible_search_symbols_map } from "./bible_search_symbols_map.mjs";
 import { html_a } from "./html_a.mjs";
@@ -54,6 +55,7 @@ export async function app_record_verse(
     root,
     bible_reference(bible_book_name(book_code), chapter, verse_number),
   );
+  html_br(root);
   html_style_bold(vn);
   each(tokens, (token) => {
     html_spacer(root);
