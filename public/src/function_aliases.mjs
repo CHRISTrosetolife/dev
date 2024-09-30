@@ -41,6 +41,7 @@ export function function_aliases() {
     p: "function_param_new",
     pn: "function_param_new_at",
     pb: "function_param_move_beginning",
+    pd: "function_param_delete",
     pf: "function_param_move_first",
     pm: "function_param_move",
     r: "function_rename",
