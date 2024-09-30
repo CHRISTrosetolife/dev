@@ -37,6 +37,15 @@ export async function bible_search(words) {
       });
     }),
   );
+  let mapped6 = list_map(mapped2, (word) =>
+    list_map(word, (results) => {
+      let { chapter_code, verse_number } = results;
+      return json_to({
+        chapter_code,
+        verse_number,
+      });
+    }),
+  );
   let mapped4 = list_map(mapped2, (word) =>
     list_map(word, (results) => {
       let { chapter_code, verse_number } = results;
