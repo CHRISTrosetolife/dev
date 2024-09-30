@@ -51,11 +51,11 @@ export async function app_record_verse(
   let verses = await app_record_verses(book_code, chapter);
   let verse = list_find_property(verses, "verse_number", verse_number);
   let { tokens } = verse;
+  html_br(root);
   let vn = html_span_text(
     root,
     bible_reference(bible_book_name(book_code), chapter, verse_number),
   );
-  html_br(root);
   html_style_bold(vn);
   each(tokens, (token) => {
     html_spacer(root);
