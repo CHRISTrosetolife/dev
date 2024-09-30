@@ -37,7 +37,6 @@ export async function bible_search(words) {
       });
     }),
   );
-  let cap = 10;
   let mapped4 = list_map(mapped2, (word) =>
     list_map(word, (results) => {
       let { chapter_code, verse_number } = results;
@@ -52,6 +51,7 @@ export async function bible_search(words) {
   let filtered = list_filter(mapped5, (i) => {
     return string_digits_is(object_property_get(i, "verse_number"));
   });
+  let cap = 10;
   let mapped3 = list_take_soft(filtered, cap);
   let t = await list_map_unordered(mapped3, async (verse) => {
     let { chapter_code, verse_number } = verse;
