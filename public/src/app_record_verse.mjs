@@ -59,14 +59,14 @@ export async function app_record_verse(
   html_style_bold(vn);
   each(tokens, (token) => {
     html_spacer(root);
+    let mapped = bible_search_symbols_map([token]);
+    if (false) {
+    }
     html_a(
       root,
       token,
       google_search_url(
-        string_combine_multiple([
-          "define: ",
-          list_single(bible_search_symbols_map([token])),
-        ]),
+        string_combine_multiple(["define: ", list_single(mapped)]),
       ),
     );
   });
