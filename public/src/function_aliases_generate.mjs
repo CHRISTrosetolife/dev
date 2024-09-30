@@ -1,3 +1,4 @@
+import { function_param_delete } from "./function_param_delete.mjs";
 import { bible_search } from "./bible_search.mjs";
 import { function_rename_alias } from "./function_rename_alias.mjs";
 import { hub } from "./hub.mjs";
@@ -110,6 +111,7 @@ export async function function_aliases_generate() {
   alias_add(function_param_new, ["p"]);
   alias_add(function_param_new_at, ["pn"]);
   alias_add(function_param_move_beginning, ["pb"]);
+  alias_add(function_param_delete, ["pd"]);
   alias_add(function_param_move_first, ["pf"]);
   alias_add(function_param_move, ["pm"]);
   alias_add(function_rename, [function_rename_alias()]);
