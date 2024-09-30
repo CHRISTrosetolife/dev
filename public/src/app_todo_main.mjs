@@ -38,7 +38,7 @@ export function app_todo_main(context) {
       root,
       app_todo_not_completed(),
       async () => {
-        await app_todo_main(context);
+        app_todo_main(context);
       },
     );
     app_todo_list(context, mapped, app_todo_type(), app_todo_daily());
@@ -51,7 +51,7 @@ export function app_todo_main(context) {
       let value = html_value_get(input);
       list_add(items, app_todo_item(value));
       await app_todo_index_save(context);
-      await app_todo_main(context);
+      app_todo_main(context);
     });
   });
   app_todo_list(
