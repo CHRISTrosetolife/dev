@@ -1,3 +1,4 @@
+import { app_todo_index_save_main } from "./app_todo_index_save_main.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { app_todo_daily } from "./app_todo_daily.mjs";
 import { app_todo_type } from "./app_todo_type.mjs";
@@ -11,7 +12,6 @@ import { app_todo_choices_initialize } from "./app_todo_choices_initialize.mjs";
 import { each } from "./each.mjs";
 import { list_map_index } from "./list_map_index.mjs";
 import { app_todo_button_back_main } from "./app_todo_button_back_main.mjs";
-import { app_todo_index_save } from "./app_todo_index_save.mjs";
 import { app_todo_item } from "./app_todo_item.mjs";
 import { string_is } from "./string_is.mjs";
 import { app_todo_items } from "./app_todo_items.mjs";
@@ -63,6 +63,7 @@ export function app_todo_main(context) {
         app_todo_not_completed(),
       );
     });
+    app_todo_index_save_main(context);
   });
   let add_item = "➕ add item";
   html_button_width_full_text_click(root, add_item, () => {
@@ -71,8 +72,7 @@ export function app_todo_main(context) {
     html_button_width_full_text_click(root, add_item, async () => {
       let value = html_value_get(input);
       list_add(items, app_todo_item(value));
-      await app_todo_index_save(context);
-      app_todo_main(context);
+      await app_todo_index_save_main(context);
     });
   });
   app_todo_list(
