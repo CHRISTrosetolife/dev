@@ -1,3 +1,4 @@
+import { html_a } from "./html_a.mjs";
 import { html_spacer } from "./html_spacer.mjs";
 import { firebase_upload_bytes } from "./firebase_upload_bytes.mjs";
 import { list_next } from "./list_next.mjs";
@@ -54,6 +55,7 @@ export async function app_record_verse(
   html_style_bold(vn);
   each(tokens, (token) => {
     html_spacer(root);
+    html_a(root);
     html_span_text(root, list_join_space(token));
   });
   let start, previous, save, cancel, restart, recording, recording_not;
