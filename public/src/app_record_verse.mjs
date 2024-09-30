@@ -108,7 +108,7 @@ export async function app_record_verse(
       ]);
       await firebase_upload_bytes(storage_path, blob);
       if (list_last_is(verses, verse)) {
-        await chapter_next();
+        await chapter_next_go();
       } else {
         let verse_number_next = list_find_property_next_property(
           verses,
@@ -141,7 +141,7 @@ export async function app_record_verse(
   recording = [save, restart, cancel];
   recording_not = [start, previous];
   each(recording, html_style_display_none);
-  async function chapter_next() {
+  async function chapter_next_go() {
     let { books } = context;
     let book = list_find_property_or(books, "book_code", book_code);
     let { chapters } = book;
