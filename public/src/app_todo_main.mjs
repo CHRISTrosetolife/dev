@@ -32,7 +32,7 @@ export async function app_todo_main(context) {
     return item;
   });
   html_button_width_full_text_click(root, "🌅 completed", () => {
-    app_todo_list(context, root, mapped, app_todo_type(), app_todo_daily());
+    app_todo_list(context, mapped, app_todo_type(), app_todo_daily());
   });
   let add_item = "➕ add item";
   html_button_width_full_text_click(root, add_item, () => {
@@ -47,7 +47,6 @@ export async function app_todo_main(context) {
   });
   app_todo_list(
     context,
-    root,
     mapped,
     app_todo_completed_property(),
     app_todo_not_completed(),
