@@ -1,5 +1,5 @@
+import { html_hr } from "./html_hr.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
-import { html_br } from "./html_br.mjs";
 import { list_single } from "./list_single.mjs";
 import { bible_search_symbols_map } from "./bible_search_symbols_map.mjs";
 import { html_a } from "./html_a.mjs";
@@ -48,7 +48,7 @@ export async function app_record_verse(
     ]),
     async () => await app_record_chapter(context, book_code, chapter),
   );
-  html_br(root);
+  html_hr(root);
   let verses = await app_record_verses(book_code, chapter);
   let verse = list_find_property(verses, "verse_number", verse_number);
   let { tokens } = verse;
@@ -70,7 +70,7 @@ export async function app_record_verse(
       );
     }
   });
-  html_br(root);
+  html_hr(root);
   let start, previous, save, cancel, restart, recording, recording_not;
   start = html_button_width_full_text_click(root, "⏺️ start recording", () => {
     each(recording_not, html_style_display_none);
