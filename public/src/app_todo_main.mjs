@@ -2,8 +2,6 @@ import { app_todo_completed_value } from "./app_todo_completed_value.mjs";
 import { app_todo_completed_property } from "./app_todo_completed_property.mjs";
 import { app_todo_properties } from "./app_todo_properties.mjs";
 import { app_todo_not_completed } from "./app_todo_not_completed.mjs";
-import { app_todo_type } from "./app_todo_type.mjs";
-import { app_todo_daily } from "./app_todo_daily.mjs";
 import { app_todo_list } from "./app_todo_list.mjs";
 import { app_todo_choices_initialize } from "./app_todo_choices_initialize.mjs";
 import { each } from "./each.mjs";
@@ -41,7 +39,12 @@ export function app_todo_main(context) {
         app_todo_main(context);
       },
     );
-    app_todo_list(context, mapped, app_todo_type(), app_todo_daily());
+    app_todo_list(
+      context,
+      mapped,
+      app_todo_completed_property(),
+      app_todo_completed_value(),
+    );
   });
   let add_item = "➕ add item";
   html_button_width_full_text_click(root, add_item, () => {
