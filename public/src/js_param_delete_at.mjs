@@ -3,7 +3,7 @@ import { number_is } from "./number_is.mjs";
 import { assert } from "./assert.mjs";
 import { integer_parse } from "./integer_parse.mjs";
 import { list_remove_at } from "./list_remove_at.mjs";
-export async function js_param_delete(ast, function_name, param_index) {
+export async function js_param_delete_at(ast, function_name, param_index) {
   param_index = integer_parse(param_index);
   assert(number_is, [param_index]);
   js_param_generic(
