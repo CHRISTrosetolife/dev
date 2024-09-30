@@ -52,9 +52,10 @@ export async function app_record_verse(
     bible_reference(bible_book_name(book_code), chapter, verse_number),
   );
   html_style_bold(vn);
-  html_spacer(root);
-  html_span_text(root, list_join_space(tokens));
-  each(tokens, (token) => {});
+  each(tokens, (token) => {
+    html_spacer(root);
+    html_span_text(root, list_join_space(token));
+  });
   let start, previous, save, cancel, restart, recording, recording_not;
   start = html_button_width_full_text_click(root, "⏺️ start recording", () => {
     each(recording_not, html_style_display_none);
