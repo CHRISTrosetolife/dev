@@ -1,3 +1,4 @@
+import { object_property_set } from "./object_property_set.mjs";
 import { app_todo_daily } from "./app_todo_daily.mjs";
 import { app_todo_type } from "./app_todo_type.mjs";
 import { list_filter_property } from "./list_filter_property.mjs";
@@ -55,7 +56,9 @@ export function app_todo_main(context) {
       app_todo_type(),
       app_todo_daily(),
     );
-    each(filtered, (item) => {});
+    each(filtered, (item) => {
+      object_property_set(object, "property_name", value2);
+    });
   });
   let add_item = "➕ add item";
   html_button_width_full_text_click(root, add_item, () => {
