@@ -1,3 +1,4 @@
+import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { html_br } from "./html_br.mjs";
 import { list_single } from "./list_single.mjs";
 import { bible_search_symbols_map } from "./bible_search_symbols_map.mjs";
@@ -60,15 +61,15 @@ export async function app_record_verse(
   each(tokens, (token) => {
     html_spacer(root);
     let mapped = bible_search_symbols_map([token]);
-    if (false) {
+    if (list_empty_not_is(mapped)) {
+      html_a(
+        root,
+        token,
+        google_search_url(
+          string_combine_multiple(["define: ", list_single(mapped)]),
+        ),
+      );
     }
-    html_a(
-      root,
-      token,
-      google_search_url(
-        string_combine_multiple(["define: ", list_single(mapped)]),
-      ),
-    );
   });
   html_br(root);
   let start, previous, save, cancel, restart, recording, recording_not;
