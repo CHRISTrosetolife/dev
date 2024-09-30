@@ -1,3 +1,4 @@
+import { list_single } from "./list_single.mjs";
 import { bible_search_symbols_map } from "./bible_search_symbols_map.mjs";
 import { html_a } from "./html_a.mjs";
 import { html_spacer } from "./html_spacer.mjs";
@@ -62,7 +63,7 @@ export async function app_record_verse(
       google_search_url(
         string_combine_multiple([
           "define: ",
-          bible_search_symbols_map([token]),
+          list_single(bible_search_symbols_map([token])),
         ]),
       ),
     );
