@@ -22,6 +22,6 @@ export async function app_todo() {
     object_merge(context, {
       index,
     });
-    await app_todo_main(context);
+    app_todo_main(context);
   });
 }
