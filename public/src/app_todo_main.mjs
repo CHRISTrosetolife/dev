@@ -1,3 +1,4 @@
+import { app_todo_completed_value } from "./app_todo_completed_value.mjs";
 import { app_todo_completed_property } from "./app_todo_completed_property.mjs";
 import { app_todo_properties } from "./app_todo_properties.mjs";
 import { app_todo_not_completed } from "./app_todo_not_completed.mjs";
@@ -31,7 +32,7 @@ export async function app_todo_main(context) {
     each(properties, (p) => app_todo_choices_initialize(item, p));
     return item;
   });
-  html_button_width_full_text_click(root, "🌅 completed", () => {
+  html_button_width_full_text_click(root, app_todo_completed_value(), () => {
     app_todo_list(context, mapped, app_todo_type(), app_todo_daily());
   });
   let add_item = "➕ add item";
