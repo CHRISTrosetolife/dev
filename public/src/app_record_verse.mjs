@@ -1,3 +1,4 @@
+import { html_spacer } from "./html_spacer.mjs";
 import { firebase_upload_bytes } from "./firebase_upload_bytes.mjs";
 import { list_next } from "./list_next.mjs";
 import { list_previous } from "./list_previous.mjs";
@@ -51,9 +52,9 @@ export async function app_record_verse(
     bible_reference(bible_book_name(book_code), chapter, verse_number),
   );
   html_style_bold(vn);
-  html_span_text(root, " ");
+  html_spacer(root);
   html_span_text(root, list_join_space(tokens));
-  each(list, (item) => {});
+  each(tokens, (token) => {});
   let start, previous, save, cancel, restart, recording, recording_not;
   start = html_button_width_full_text_click(root, "⏺️ start recording", () => {
     each(recording_not, html_style_display_none);
