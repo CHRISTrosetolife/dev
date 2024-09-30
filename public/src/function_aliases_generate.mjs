@@ -1,3 +1,4 @@
+import { bible_chapter_text } from "./bible_chapter_text.mjs";
 import { function_param_delete } from "./function_param_delete.mjs";
 import { bible_search } from "./bible_search.mjs";
 import { function_rename_alias } from "./function_rename_alias.mjs";
@@ -78,7 +79,7 @@ export async function function_aliases_generate() {
   alias_add(app_new, ["an"]);
   alias_add(bible_search, ["b"]);
   alias_add(bible_audio_player_book, ["bp"]);
-  alias_add(bible_audio_player_book, ["bt"]);
+  alias_add(bible_chapter_text, ["bt"]);
   alias_add(function_copy, ["c"]);
   alias_add(command_line, ["cl"]);
   alias_add(data_update, ["d"]);
