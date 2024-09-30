@@ -1,3 +1,6 @@
+import { app_todo_daily } from "./app_todo_daily.mjs";
+import { app_todo_type } from "./app_todo_type.mjs";
+import { list_filter_property } from "./list_filter_property.mjs";
 import { app_todo_completed_value } from "./app_todo_completed_value.mjs";
 import { app_todo_completed_property } from "./app_todo_completed_property.mjs";
 import { app_todo_properties } from "./app_todo_properties.mjs";
@@ -47,7 +50,12 @@ export function app_todo_main(context) {
     );
   });
   html_button_width_full_text_click(root, "🌅 add dailies", () => {
-    each(items, (item) => {});
+    let filtered = list_filter_property(
+      items,
+      app_todo_type(),
+      app_todo_daily(),
+    );
+    each(filtered, (item) => {});
   });
   let add_item = "➕ add item";
   html_button_width_full_text_click(root, add_item, () => {
