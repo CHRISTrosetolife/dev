@@ -1,3 +1,4 @@
+import { bible_search_symbols_map } from "./bible_search_symbols_map.mjs";
 import { html_a } from "./html_a.mjs";
 import { html_spacer } from "./html_spacer.mjs";
 import { firebase_upload_bytes } from "./firebase_upload_bytes.mjs";
@@ -58,7 +59,12 @@ export async function app_record_verse(
     html_a(
       root,
       token,
-      google_search_url(string_combine_multiple(["define: ", token])),
+      google_search_url(
+        string_combine_multiple([
+          "define: ",
+          bible_search_symbols_map([token]),
+        ]),
+      ),
     );
   });
   let start, previous, save, cancel, restart, recording, recording_not;
