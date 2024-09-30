@@ -20,7 +20,6 @@ import { html_style_display_block } from "./html_style_display_block.mjs";
 import { html_style_display_none } from "./html_style_display_none.mjs";
 import { html_recorder_media_start } from "./html_recorder_media_start.mjs";
 import { html_recorder_media_stop } from "./html_recorder_media_stop.mjs";
-import { list_join_space } from "./list_join_space.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { list_find_property } from "./list_find_property.mjs";
@@ -59,9 +58,8 @@ export async function app_record_verse(
     html_a(
       root,
       token,
-      google_search_url(string_combine_multiple(["define: "])),
+      google_search_url(string_combine_multiple(["define: ", token])),
     );
-    html_span_text(root, list_join_space());
   });
   let start, previous, save, cancel, restart, recording, recording_not;
   start = html_button_width_full_text_click(root, "⏺️ start recording", () => {
