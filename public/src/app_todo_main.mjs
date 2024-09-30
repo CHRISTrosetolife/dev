@@ -57,7 +57,11 @@ export function app_todo_main(context) {
       app_todo_daily(),
     );
     each(filtered, (item) => {
-      object_property_set(object, "property_name", value2);
+      object_property_set(
+        item,
+        app_todo_completed_property(),
+        app_todo_not_completed(),
+      );
     });
   });
   let add_item = "➕ add item";
