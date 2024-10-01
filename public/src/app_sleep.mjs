@@ -15,7 +15,7 @@ export async function app_sleep() {
       let month_path = path_join(["sleep", year, month]);
       let data = await firebase_storage_initialize(month_path);
       let day = date_day_get(data);
-      object_property_initialize(data, day, {});
+      let today = object_property_initialize(data, day, {});
     },
   });
 }
