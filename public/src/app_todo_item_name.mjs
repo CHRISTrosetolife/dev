@@ -7,6 +7,7 @@ export function app_todo_item_name(
   context,
   button_text_first,
   button_text_second,
+  value_initial,
   on_complete,
 ) {
   let { root } = context;
