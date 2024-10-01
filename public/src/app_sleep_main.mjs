@@ -5,5 +5,5 @@ export function app_sleep_main(context) {
   let root = html_clear_scroll_top_context(context);
   app_sleep_record(context, "woke up", "wakeups");
   html_hr(root);
-  app_sleep_record(context, "sleep", "sleeps");
+  app_sleep_record(context, "🛌 sleep", "sleeps");
 }
