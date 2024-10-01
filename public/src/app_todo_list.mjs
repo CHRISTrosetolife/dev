@@ -1,3 +1,4 @@
+import { app_todo_main } from "./app_todo_main.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { emoji_edit_combine } from "./emoji_edit_combine.mjs";
 import { app_todo_item_name } from "./app_todo_item_name.mjs";
@@ -26,6 +27,9 @@ export function app_todo_list(context, items, property_name, value) {
         name,
         function on_complete(value) {
           object_property_set(item, "name", value);
+        },
+        function on_save() {
+          app_todo_main(context);
         },
       );
       each(properties, (p) => {
