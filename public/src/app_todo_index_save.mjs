@@ -5,8 +5,7 @@ import { object_property_initialize } from "./object_property_initialize.mjs";
 export async function app_todo_index_save(context) {
   let { index } = context;
   let index_path = app_todo_firebase_path_index();
-  let property_name = "version";
-  object_property_initialize_increment(index, property_name, 1);
+  object_property_initialize_increment(index, "version", 1);
   object_property_initialize(index, "version_previous", 0);
   await firebase_upload_object(index_path, index);
 }
