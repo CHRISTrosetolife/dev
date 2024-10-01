@@ -8,6 +8,7 @@ import { path_join } from "./path_join.mjs";
 import { date_month_get } from "./date_month_get.mjs";
 import { date_year_get } from "./date_year_get.mjs";
 import { date_now } from "./date_now.mjs";
+import { list_add } from "./list_add.mjs";
 export function app_sleep_main(context) {
   let root = html_clear_scroll_top_context(context);
   html_button_width_full_text_click(root, "woke up", async () => {
@@ -19,6 +20,7 @@ export function app_sleep_main(context) {
     let day = date_day_get(data);
     let today = object_property_initialize(data, day, {});
     let wakeups = object_property_initialize(today, "wakeups", []);
+    list_add(wakeups, n);
     await firebase_save(index_path, index);
     await app_sleep_main(context);
   });
