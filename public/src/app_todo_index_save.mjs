@@ -17,5 +17,7 @@ export async function app_todo_index_save(context) {
   let version_previous = object_property_get(existing, version_property);
   if ((equal, [version, version_previous + 1])) {
     await firebase_upload_object(index_path, index);
+  } else {
+    alert("data out of date");
   }
 }
