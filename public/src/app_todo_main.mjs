@@ -70,12 +70,12 @@ export function app_todo_main(context) {
   html_button_width_full_text_click(root, add_item, () => {
     app_todo_button_back_main(context);
     let input = html_input_width_full(root);
-    html_focus(input);
     html_button_width_full_text_click(root, add_item, async () => {
       let value = html_value_get(input);
       list_add(items, app_todo_item(value));
       await app_todo_index_save_main(context);
     });
+    html_focus(input);
   });
   app_todo_list(
     context,
