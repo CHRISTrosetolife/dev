@@ -9,7 +9,10 @@ import { object_property_get_or } from "./object_property_get_or.mjs";
 import { html_hash_lookup } from "./html_hash_lookup.mjs";
 import { html_recorder_media } from "./html_recorder_media.mjs";
 export async function app_record() {
-  await app_firebase(on_logged_in, html_style_a_plain);
+  await app_firebase({
+    on_logged_in,
+    on_initialized: html_style_a_plain,
+  });
   async function on_logged_in(context) {
     context.mr = await html_recorder_media();
     await app_context_books_bible(context);
