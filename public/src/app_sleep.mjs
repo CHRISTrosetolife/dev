@@ -12,6 +12,7 @@ export async function app_sleep() {
       let month = date_month_get(n);
       log({
         year,
+        month,
       });
       return;
       let index = await firebase_storage_initialize("sleep/");
