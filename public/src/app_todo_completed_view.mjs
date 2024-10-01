@@ -7,7 +7,7 @@ import { app_todo_main } from "./app_todo_main.mjs";
 import { app_todo_not_completed } from "./app_todo_not_completed.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
-export function app_todo_completed_view(root, context) {
+export function app_todo_completed_view(context) {
   html_clear_scroll_top(root);
   let items = app_todo_items(context);
   html_button_width_full_text_click(
