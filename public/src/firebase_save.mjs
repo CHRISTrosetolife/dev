@@ -16,6 +16,7 @@ export async function firebase_save(storage_path, object_data) {
   if (object_property_exists(existing, version_property)) {
     version_previous = object_property_get(existing, version_property);
   } else {
+    version_previous = 0;
   }
   if ((equal, [version, version_previous + 1])) {
     await firebase_upload_object(storage_path, object_data);
