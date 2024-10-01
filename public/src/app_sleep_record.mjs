@@ -1,3 +1,4 @@
+import { json_format_to } from "./json_format_to.mjs";
 import { firebase_save } from "./firebase_save.mjs";
 import { list_add } from "./list_add.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
@@ -24,7 +25,7 @@ export function app_sleep_record(context, button_text, list_name) {
     let wakeups = object_property_initialize(today, list_name, []);
     list_add(wakeups, n);
     await firebase_save(month_path, data);
-    html_inner_set();
+    html_inner_set(result, json_format_to(data));
   });
   result = html_element(root, "pre");
 }
