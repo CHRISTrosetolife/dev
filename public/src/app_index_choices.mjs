@@ -20,13 +20,6 @@ export function app_index_choices() {
     page: "ceb",
   });
   list_add(choices, {
-    text: string_combine_multiple([
-      "🎓 learn language english ",
-      html_replace_nb("( from cebuano )"),
-    ]),
-    page: "en",
-  });
-  list_add(choices, {
     text: "📄 resume",
     page: "resume",
   });
@@ -35,8 +28,19 @@ export function app_index_choices() {
     page: "memorize",
   });
   list_add(choices, {
-    text: "🎮 game",
-    page: "gs",
+    text: "📃 TODO list",
+    page: "todo",
+  });
+  list_add(choices, {
+    text: "😴 Sleep tracker",
+    page: "sleep",
+  });
+  list_add(choices, {
+    text: string_combine_multiple([
+      "🎓 learn language english ",
+      html_replace_nb("( from cebuano )"),
+    ]),
+    page: "en",
   });
   list_add(choices, {
     text: "⏺️ record bible",
@@ -51,8 +55,8 @@ export function app_index_choices() {
     page: "yyy8Uu",
   });
   list_add(choices, {
-    text: "📃 TODO list",
-    page: "todo",
+    text: "🎮 game",
+    page: "gs",
   });
   return choices;
 }
