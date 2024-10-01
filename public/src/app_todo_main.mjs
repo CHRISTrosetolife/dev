@@ -64,15 +64,10 @@ export function app_todo_main(context) {
     await app_todo_index_save_main(context);
   });
   let add_item = "➕ add item";
-  app_todo_item_name(
-    context,
-    add_item,
-    add_item,
-    function on_complete(context, value) {
-      let items = app_todo_items(context);
-      list_add(items, app_todo_item(value));
-    },
-  );
+  app_todo_item_name(context, add_item, add_item, function on_complete(value) {
+    let items = app_todo_items(context);
+    list_add(items, app_todo_item(value));
+  });
   app_todo_list(
     context,
     mapped,
