@@ -1,3 +1,4 @@
+import { firebase_save } from "./firebase_save.mjs";
 import { date_day_get } from "./date_day_get.mjs";
 import { path_join } from "./path_join.mjs";
 import { date_month_get } from "./date_month_get.mjs";
@@ -18,7 +19,9 @@ export async function app_sleep() {
       let day = date_day_get(data);
       let today = object_property_initialize(data, day, {});
       let { root } = context;
-      html_button_width_full_text_click(root, "woke up", () => {});
+      html_button_width_full_text_click(root, "woke up", async () => {
+        await firebase_save(index_path, index);
+      });
     },
   });
 }
