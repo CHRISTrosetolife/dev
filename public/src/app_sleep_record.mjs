@@ -20,6 +20,6 @@ export function app_sleep_record(context, button_text, list_name) {
     let today = object_property_initialize(data, day, {});
     let wakeups = object_property_initialize(today, list_name, []);
     list_add(wakeups, n);
-    await firebase_save(month_path, index);
+    await firebase_save(month_path, data);
   });
 }
