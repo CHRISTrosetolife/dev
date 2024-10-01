@@ -1,1 +1,3 @@
-export function date_year_get(date) {$r,date.getFullYear()}
+export function date_year_get(date) {
+  return date.getFullYear();
+}
