@@ -17,4 +17,5 @@ export function app_sleep_record(context, button_text, list_name) {
     html_inner_set(result, json_format_to(list));
   });
   result = html_element(root, "pre");
+  html_hr(root);
 }
