@@ -6,7 +6,7 @@ import { list_map_property } from "./list_map_property.mjs";
 import { app_todo_firebase_path } from "./app_todo_firebase_path.mjs";
 import { firebase_list } from "./firebase_list.mjs";
 export async function firebase_storage_initialize(storage_path) {
-  string_index_last(storage_path, "/");
+  let index = string_index_last(storage_path, "/");
   let { items } = await firebase_list(app_todo_firebase_path());
   let full_paths = list_map_property(items, "fullPath");
   if (!list_includes(full_paths, storage_path)) {
