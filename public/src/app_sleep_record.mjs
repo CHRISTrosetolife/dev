@@ -21,6 +21,7 @@ export function app_sleep_record(context, button_text, list_name) {
     let month = date_month_get(n);
     let month_path = string_combine_multiple([
       path_join(["sleep", year, month]),
+      ".json",
     ]);
     let data = await firebase_storage_initialize(month_path);
     let day = date_day_get(n);
