@@ -6,6 +6,7 @@ import { date_now } from "./date_now.mjs";
 import { firebase_storage_initialize } from "./firebase_storage_initialize.mjs";
 import { app_firebase } from "./app_firebase.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
+import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export async function app_sleep() {
   await app_firebase({
     on_logged_in: async (context) => {
@@ -16,6 +17,8 @@ export async function app_sleep() {
       let data = await firebase_storage_initialize(month_path);
       let day = date_day_get(data);
       let today = object_property_initialize(data, day, {});
+      let root = context;
+      html_button_width_full_text_click(root);
     },
   });
 }
