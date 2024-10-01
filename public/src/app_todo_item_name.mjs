@@ -6,13 +6,13 @@ import { html_value_get } from "./html_value_get.mjs";
 import { html_input_width_full_focus } from "./html_input_width_full_focus.mjs";
 import { app_todo_button_back_main } from "./app_todo_button_back_main.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
-export function app_todo_item_name(context, add_item) {
+export function app_todo_item_name(context, button_text) {
   let { root } = context;
   let items = app_todo_items(context);
-  html_button_width_full_text_click(root, add_item, () => {
+  html_button_width_full_text_click(root, button_text, () => {
     app_todo_button_back_main(context);
     let input = html_input_width_full_focus(root);
-    html_button_width_full_text_click(root, add_item, async () => {
+    html_button_width_full_text_click(root, button_text, async () => {
       let value = html_value_get(input);
       list_add(items, app_todo_item(value));
       await app_todo_index_save_main(context);
