@@ -1,3 +1,3 @@
-export function string_index(text, verse_1) {
-  return text.indexOf(verse_1);
+export function input(s, search) {
+  return s.indexOf(search);
 }
