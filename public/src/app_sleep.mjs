@@ -13,8 +13,7 @@ export async function app_sleep() {
       let month = date_month_get(n);
       let month_path = path_join(["sleep", year, month]);
       log({
-        year,
-        month,
+        month_path,
       });
       return;
       let index = await firebase_storage_initialize("sleep/");
