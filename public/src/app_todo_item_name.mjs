@@ -15,7 +15,7 @@ export function app_todo_item_name(
     let input = html_input_width_full_focus(root);
     html_button_width_full_text_click(root, button_text_second, async () => {
       let value = html_value_get(input);
-      on_complete(context, value);
+      on_complete(value);
       await app_todo_index_save_main(context);
     });
   });
