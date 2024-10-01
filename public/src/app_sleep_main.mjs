@@ -18,5 +18,6 @@ export async function app_sleep_main(context) {
   let { root } = context;
   html_button_width_full_text_click(root, "woke up", async () => {
     await firebase_save(index_path, index);
+    await app_sleep_main(context);
   });
 }
