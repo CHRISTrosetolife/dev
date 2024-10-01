@@ -1,3 +1,3 @@
-export function input(s, search) {
-  return s.indexOf(search);
+export function string_index(input, search) {
+  return input.indexOf(search);
 }
