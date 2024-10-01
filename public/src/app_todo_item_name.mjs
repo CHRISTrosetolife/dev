@@ -5,7 +5,7 @@ import { html_value_get } from "./html_value_get.mjs";
 import { html_input_width_full_focus } from "./html_input_width_full_focus.mjs";
 import { app_todo_button_back_main } from "./app_todo_button_back_main.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
-export function app_todo_item_name(context, root, add_item, items) {
+export function app_todo_item_name(context, add_item, items) {
   html_button_width_full_text_click(root, add_item, () => {
     app_todo_button_back_main(context);
     let input = html_input_width_full_focus(root);
