@@ -1,4 +1,3 @@
-import { app_sleep_main } from "./app_sleep_main.mjs";
 import { firebase_save } from "./firebase_save.mjs";
 import { list_add } from "./list_add.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
@@ -22,6 +21,5 @@ export function app_sleep_record(context, button_text, list_name) {
     let wakeups = object_property_initialize(today, list_name, []);
     list_add(wakeups, n);
     await firebase_save(month_path, index);
-    app_sleep_main(context);
   });
 }
