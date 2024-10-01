@@ -12,12 +12,12 @@ export function app_todo_item_name(
   button_text_second,
 ) {
   let { root } = context;
-  let items = app_todo_items(context);
   html_button_width_full_text_click(root, button_text_first, () => {
     app_todo_button_back_main(context);
     let input = html_input_width_full_focus(root);
     html_button_width_full_text_click(root, button_text_second, async () => {
       let value = html_value_get(input);
+      let items = app_todo_items(context);
       list_add(items, app_todo_item(value));
       await app_todo_index_save_main(context);
     });
