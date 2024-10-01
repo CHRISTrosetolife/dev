@@ -12,4 +12,5 @@ export function object_property_initialize_increment(
   );
   value++;
   object_property_set(index, property_name, value);
+  return value;
 }
