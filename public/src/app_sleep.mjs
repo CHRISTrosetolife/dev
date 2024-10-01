@@ -17,8 +17,8 @@ export async function app_sleep() {
       let data = await firebase_storage_initialize(month_path);
       let day = date_day_get(data);
       let today = object_property_initialize(data, day, {});
-      let root = context;
-      html_button_width_full_text_click(root);
+      let { root } = context;
+      html_button_width_full_text_click(root, "woke up", () => {});
     },
   });
 }
