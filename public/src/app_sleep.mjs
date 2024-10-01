@@ -11,7 +11,7 @@ export async function app_sleep() {
       let n = date_now();
       let year = date_year_get(n);
       let month = date_month_get(n);
-      let path = path_join(["sleep", year, month]);
+      let month_path = path_join(["sleep", year, month]);
       log({
         year,
         month,
