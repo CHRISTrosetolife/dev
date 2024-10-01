@@ -9,8 +9,7 @@ import { date_month_get } from "./date_month_get.mjs";
 import { date_year_get } from "./date_year_get.mjs";
 import { date_now } from "./date_now.mjs";
 export async function app_sleep_main(context) {
-  html_clear_scroll_top_context(context);
-  let { root } = context;
+  let root = html_clear_scroll_top_context(context);
   html_button_width_full_text_click(root, "woke up", async () => {
     let n = date_now();
     let year = date_year_get(n);
