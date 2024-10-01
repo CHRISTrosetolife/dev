@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { string_index_last } from "./string_index_last.mjs";
 import { firebase_download } from "./firebase_download.mjs";
 import { firebase_upload_object } from "./firebase_upload_object.mjs";
@@ -8,6 +9,9 @@ import { string_take } from "./string_take.mjs";
 export async function firebase_storage_initialize(storage_path) {
   let index = string_index_last(storage_path, "/");
   let parent_folder = string_take(storage_path, index + 1);
+  log({
+    parent_folder,
+  });
   let { items } = await firebase_list(parent_folder);
   let full_paths = list_map_property(items, "fullPath");
   if (!list_includes(full_paths, storage_path)) {
