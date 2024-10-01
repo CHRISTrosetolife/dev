@@ -16,15 +16,15 @@ export function app_sleep_record(context, button_text, list_name) {
   let { root } = context;
   let result;
   html_button_width_full_text_click(root, button_text, async () => {
-    let n = date_now();
-    let year = date_year_get(n);
-    let month = date_month_get(n);
+    let now = date_now();
+    let year = date_year_get(now);
+    let month = date_month_get(now);
     let month_path = file_name_json(path_join(["sleep", year, month]));
     let data = await firebase_storage_initialize(month_path);
-    let day = date_day_get(n);
+    let day = date_day_get(now);
     let today = object_property_initialize(data, day, {});
     let list = object_property_initialize(today, list_name, []);
-    list_add(list, n);
+    list_add(list, now);
     await firebase_save(month_path, data);
     html_inner_set(result, json_format_to(list));
   });
