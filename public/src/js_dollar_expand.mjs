@@ -60,6 +60,7 @@ export async function js_dollar_expand(ast, call, result_id, a, parent) {
       }
       js_identifier_rename_multiple(d, params_names, args_names);
       let body = js_declaration_to_body(d);
+      let take_but_count = 0;
       if (null_not_is(result_id)) {
         let l = list_last(body);
         assert(js_node_type_is, [l, "ReturnStatement"]);
