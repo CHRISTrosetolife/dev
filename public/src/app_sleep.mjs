@@ -1,3 +1,4 @@
+import { date_day_get } from "./date_day_get.mjs";
 import { path_join } from "./path_join.mjs";
 import { date_month_get } from "./date_month_get.mjs";
 import { date_year_get } from "./date_year_get.mjs";
@@ -12,6 +13,7 @@ export async function app_sleep() {
       let month = date_month_get(n);
       let month_path = path_join(["sleep", year, month]);
       let data = await firebase_storage_initialize(month_path);
+      date_day_get(data);
     },
   });
 }
