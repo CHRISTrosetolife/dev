@@ -1,3 +1,4 @@
+import { html_input_width_full } from "./html_input_width_full.mjs";
 import { app_todo_properties } from "./app_todo_properties.mjs";
 import { app_todo_item_choices } from "./app_todo_item_choices.mjs";
 import { app_todo_button_back_main } from "./app_todo_button_back_main.mjs";
@@ -18,6 +19,8 @@ export function app_todo_list(context, items, property_name, value) {
       () => {
         app_todo_button_back_main(context);
         each(properties, (p) => {
+          html_hr(root);
+          let input = html_input_width_full(root);
           html_hr(root);
           app_todo_item_choices(context, item, p);
         });
