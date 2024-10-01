@@ -1,0 +1,18 @@
+import { app_todo_index_save_main } from "./app_todo_index_save_main.mjs";
+import { app_todo_item } from "./app_todo_item.mjs";
+import { list_add } from "./list_add.mjs";
+import { html_value_get } from "./html_value_get.mjs";
+import { html_input_width_full_focus } from "./html_input_width_full_focus.mjs";
+import { app_todo_button_back_main } from "./app_todo_button_back_main.mjs";
+import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
+export function app_todo_item_name(root, add_item, context, items) {
+  html_button_width_full_text_click(root, add_item, () => {
+    app_todo_button_back_main(context);
+    let input = html_input_width_full_focus(root);
+    html_button_width_full_text_click(root, add_item, async () => {
+      let value = html_value_get(input);
+      list_add(items, app_todo_item(value));
+      await app_todo_index_save_main(context);
+    });
+  });
+}
