@@ -72,6 +72,7 @@ export async function js_dollar_expand(ast, call, result_id, a, parent) {
         );
       }
       each_reverse(list_take_but_1(body), (b) => {
+        $ex;
         list_insert(s1, index, b);
       });
       list_remove_multiple(s1, [next, parent]);
