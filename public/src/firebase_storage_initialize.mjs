@@ -1,5 +1,5 @@
+import { string_last_index } from "./string_last_index.mjs";
 import { log } from "./log.mjs";
-import { string_index_last } from "./string_index_last.mjs";
 import { firebase_download } from "./firebase_download.mjs";
 import { firebase_upload_object } from "./firebase_upload_object.mjs";
 import { list_includes } from "./list_includes.mjs";
