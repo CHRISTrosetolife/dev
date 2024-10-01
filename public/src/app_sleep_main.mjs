@@ -1,3 +1,4 @@
+import { html_hr } from "./html_hr.mjs";
 import { html_clear_scroll_top_context } from "./html_clear_scroll_top_context.mjs";
 import { firebase_save } from "./firebase_save.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
@@ -19,9 +20,11 @@ export function app_sleep_main(context) {
     let data = await firebase_storage_initialize(month_path);
     let day = date_day_get(data);
     let today = object_property_initialize(data, day, {});
-    let wakeups = object_property_initialize(today, "wakeups", []);
+    let list_name = "wakeups";
+    let wakeups = object_property_initialize(today, list_name, []);
     list_add(wakeups, n);
     await firebase_save(index_path, index);
     await app_sleep_main(context);
   });
+  html_hr(root);
 }
