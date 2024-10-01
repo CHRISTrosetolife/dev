@@ -5,6 +5,7 @@ export async function app_todo_index_save(context) {
   let { index } = context;
   let index_path = app_todo_firebase_path_index();
   let value = object_property_initialize(index, "version", 1);
+  value++;
   object_property_initialize(index, "version_previous", 0);
   await firebase_upload_object(index_path, index);
 }
