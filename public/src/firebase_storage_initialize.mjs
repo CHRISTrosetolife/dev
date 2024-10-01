@@ -10,6 +10,6 @@ export async function firebase_storage_initialize(storage_path) {
   if (!list_includes(full_paths, storage_path)) {
     await firebase_upload_object(storage_path, {});
   }
-  let index = await firebase_download(storage_path);
-  return index;
+  let object = await firebase_download(storage_path);
+  return object;
 }
