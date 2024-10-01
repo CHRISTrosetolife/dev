@@ -1,3 +1,3 @@
 export function date_month_get(date) {
-  return date.getFullYear();
+  let n = date.getMonth() + 1;
 }
