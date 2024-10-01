@@ -8,7 +8,7 @@ import { firebase_list } from "./firebase_list.mjs";
 import { string_take } from "./string_take.mjs";
 export async function firebase_storage_initialize(storage_path) {
   let index = string_index_last(storage_path, "/");
-  string_take(storage_path, index + 1);
+  let parent_folder = string_take(storage_path, index + 1);
   let { items } = await firebase_list(app_todo_firebase_path());
   let full_paths = list_map_property(items, "fullPath");
   if (!list_includes(full_paths, storage_path)) {
