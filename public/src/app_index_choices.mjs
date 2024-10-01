@@ -32,7 +32,7 @@ export function app_index_choices() {
     page: "todo",
   });
   list_add(choices, {
-    text: "😴 Sleep tracker",
+    text: "😴 sleep tracker",
     page: "sleep",
   });
   list_add(choices, {
