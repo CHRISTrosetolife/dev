@@ -1,3 +1,6 @@
+import { app_todo_item } from "./app_todo_item.mjs";
+import { list_add } from "./list_add.mjs";
+import { app_todo_items } from "./app_todo_items.mjs";
 import { emoji_edit_combine } from "./emoji_edit_combine.mjs";
 import { app_todo_item_name } from "./app_todo_item_name.mjs";
 import { app_todo_properties } from "./app_todo_properties.mjs";
@@ -22,6 +25,10 @@ export function app_todo_list(context, items, property_name, value) {
         context,
         emoji_edit_combine(name),
         emoji_edit_combine("save"),
+        function on_complete(context, value) {
+          let items = app_todo_items(context);
+          list_add(items, app_todo_item(value));
+        },
       );
       each(properties, (p) => {
         html_hr(root);
