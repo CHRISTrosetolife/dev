@@ -63,7 +63,7 @@ export function app_todo_main(context) {
     await app_todo_index_save_main(context);
   });
   let add_item = "➕ add item";
-  app_todo_item_name(context, add_item);
+  app_todo_item_name(context, add_item, add_item);
   app_todo_list(
     context,
     mapped,
