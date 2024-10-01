@@ -1,3 +1,4 @@
+import { list_add } from "./list_add.mjs";
 import { app_todo_item_name } from "./app_todo_item_name.mjs";
 import { app_todo_index_save_main } from "./app_todo_index_save_main.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -63,7 +64,15 @@ export function app_todo_main(context) {
     await app_todo_index_save_main(context);
   });
   let add_item = "➕ add item";
-  app_todo_item_name(context, add_item, add_item);
+  app_todo_item_name(
+    context,
+    add_item,
+    add_item,
+    function on_complete(context, value) {
+      let items = app_todo_items(context);
+      list_add(items, app_todo_item(value));
+    },
+  );
   app_todo_list(
     context,
     mapped,
