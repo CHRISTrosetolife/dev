@@ -1,5 +1,5 @@
+import { app_todo_index_save } from "./app_todo_index_save.mjs";
 import { html_value_set } from "./html_value_set.mjs";
-import { app_todo_index_save_main } from "./app_todo_index_save_main.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { html_input_width_full_focus } from "./html_input_width_full_focus.mjs";
 import { app_todo_button_back_main } from "./app_todo_button_back_main.mjs";
@@ -19,7 +19,7 @@ export function app_todo_item_name(
     html_button_width_full_text_click(root, button_text_second, async () => {
       let value = html_value_get(input);
       on_complete(value);
-      await app_todo_index_save_main(context);
+      await app_todo_index_save(context);
     });
   });
 }
