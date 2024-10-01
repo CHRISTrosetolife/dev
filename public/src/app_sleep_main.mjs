@@ -25,7 +25,7 @@ export function app_sleep_main(context) {
     let wakeups = object_property_initialize(today, list_name, []);
     list_add(wakeups, n);
     await firebase_save(index_path, index);
-    await app_sleep_main(context);
+    app_sleep_main(context);
   });
   html_hr(root);
 }
