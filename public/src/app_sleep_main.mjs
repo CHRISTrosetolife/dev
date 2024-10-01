@@ -1,3 +1,4 @@
+import { html_clear_scroll_top_context } from "./html_clear_scroll_top_context.mjs";
 import { firebase_save } from "./firebase_save.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
@@ -8,6 +9,7 @@ import { date_month_get } from "./date_month_get.mjs";
 import { date_year_get } from "./date_year_get.mjs";
 import { date_now } from "./date_now.mjs";
 export async function app_sleep_main(context) {
+  html_clear_scroll_top_context(context);
   let n = date_now();
   let year = date_year_get(n);
   let month = date_month_get(n);
