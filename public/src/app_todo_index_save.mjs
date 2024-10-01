@@ -6,7 +6,8 @@ export async function app_todo_index_save(context) {
   let { index } = context;
   let index_path = app_todo_firebase_path_index();
   let property_name = "version";
-  let value = object_property_initialize(index, property_name, 1);
+  let initialize = 1;
+  let value = object_property_initialize(index, property_name, initialize);
   value++;
   object_property_set(index, property_name, value);
   object_property_initialize(index, "version_previous", 0);
