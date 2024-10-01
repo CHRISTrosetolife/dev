@@ -11,6 +11,7 @@ export async function firebase_storage_initialize(storage_path) {
   let parent_folder = string_take(storage_path, index + 1);
   log({
     parent_folder,
+    storage_path,
   });
   let { items } = await firebase_list(parent_folder);
   let full_paths = list_map_property(items, "fullPath");
