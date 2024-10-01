@@ -7,7 +7,7 @@ import { list_map_property } from "./list_map_property.mjs";
 import { firebase_list } from "./firebase_list.mjs";
 import { string_take } from "./string_take.mjs";
 export async function firebase_storage_initialize(storage_path) {
-  let index = string_index_last(storage_path, "/");
+  let index = string_last_index(storage_path, "/");
   let parent_folder = string_take(storage_path, index + 1);
   log({
     parent_folder,
