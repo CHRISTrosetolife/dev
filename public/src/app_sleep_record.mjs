@@ -1,3 +1,4 @@
+import { html_div } from "./html_div.mjs";
 import { firebase_save } from "./firebase_save.mjs";
 import { list_add } from "./list_add.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
@@ -10,6 +11,7 @@ import { date_now } from "./date_now.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export function app_sleep_record(context, button_text, list_name) {
   let { root } = context;
+  let result;
   html_button_width_full_text_click(root, button_text, async () => {
     let n = date_now();
     let year = date_year_get(n);
@@ -22,4 +24,5 @@ export function app_sleep_record(context, button_text, list_name) {
     list_add(wakeups, n);
     await firebase_save(month_path, data);
   });
+  result = html_div();
 }
