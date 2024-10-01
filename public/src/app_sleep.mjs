@@ -13,7 +13,7 @@ export async function app_sleep() {
       let month = date_month_get(n);
       let month_path = path_join(["sleep", year, month]);
       let data = await firebase_storage_initialize(month_path);
-      date_day_get(data);
+      let day = date_day_get(data);
     },
   });
 }
