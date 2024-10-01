@@ -21,7 +21,7 @@ import { html_button_width_full_text_click } from "./html_button_width_full_text
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { list_set } from "./list_set.mjs";
 export function app_todo_main(context) {
-  let refresh = () => {};
+  let refresh = () => app_todo_main(context);
   let { root } = context;
   html_clear_scroll_top(root);
   let items = app_todo_items(context);
@@ -85,6 +85,6 @@ export function app_todo_main(context) {
     mapped,
     app_todo_completed_property(),
     app_todo_not_completed(),
-    noop,
+    refresh,
   );
 }
