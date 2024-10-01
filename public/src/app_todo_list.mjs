@@ -23,7 +23,7 @@ export function app_todo_list(context, items, property_name, value) {
         context,
         emoji_edit_combine(name),
         emoji_edit_combine("save"),
-        "",
+        name,
         function on_complete(value) {
           object_property_set(item, "name", value);
         },
