@@ -4,7 +4,8 @@ import { firebase_initialize } from "./firebase_initialize.mjs";
 import { html_script_axios } from "./html_script_axios.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-export async function app_firebase(on_logged_in, on_initialized) {
+export async function app_firebase(a) {
+  let { on_logged_in, on_initialized } = a;
   let root = html_style_default_initialize();
   on_initialized();
   await html_script_axios(root);
