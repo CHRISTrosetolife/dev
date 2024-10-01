@@ -5,6 +5,6 @@ export function app_sleep_main(context) {
   let root = html_clear_scroll_top_context(context);
   let list_name = "wakeups";
   let button_text = "woke up";
-  app_sleep_record(button_text, list_name, context);
+  app_sleep_record(context, button_text, list_name);
   html_hr(root);
 }
