@@ -3,7 +3,7 @@ import { equal } from "./equal.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { firebase_download } from "./firebase_download.mjs";
 import { object_property_initialize_increment } from "./object_property_initialize_increment.mjs";
-export async function firebase_save(index, index_path) {
+export async function firebase_save(index_path, index) {
   let version_property = "version";
   let version = object_property_initialize_increment(
     index,

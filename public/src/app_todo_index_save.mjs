@@ -3,5 +3,5 @@ import { app_todo_firebase_path_index } from "./app_todo_firebase_path_index.mjs
 export async function app_todo_index_save(context) {
   let { index } = context;
   let index_path = app_todo_firebase_path_index();
-  await firebase_save(index, index_path);
+  await firebase_save(index_path, index);
 }
