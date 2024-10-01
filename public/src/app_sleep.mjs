@@ -1,3 +1,4 @@
+import { path_join } from "./path_join.mjs";
 import { log } from "./log.mjs";
 import { date_month_get } from "./date_month_get.mjs";
 import { date_year_get } from "./date_year_get.mjs";
@@ -10,6 +11,7 @@ export async function app_sleep() {
       let n = date_now();
       let year = date_year_get(n);
       let month = date_month_get(n);
+      let path = path_join(["sleep", year, month]);
       log({
         year,
         month,
