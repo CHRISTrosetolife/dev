@@ -17,7 +17,7 @@ export function app_sleep_record(context, button_text, list_name) {
     let month = date_month_get(n);
     let month_path = path_join(["sleep", year, month]);
     let data = await firebase_storage_initialize(month_path);
-    let day = date_day_get(data);
+    let day = date_day_get(n);
     let today = object_property_initialize(data, day, {});
     let wakeups = object_property_initialize(today, list_name, []);
     list_add(wakeups, n);
