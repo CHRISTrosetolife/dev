@@ -18,7 +18,11 @@ export function app_todo_list(context, items, property_name, value) {
     html_button_width_full_text_click(root, name, () => {
       app_todo_button_back_main(context);
       html_hr(root);
-      app_todo_item_name(context, emoji_edit_combine(name), button_text_second);
+      app_todo_item_name(
+        context,
+        emoji_edit_combine(name),
+        emoji_edit_combine("save"),
+      );
       each(properties, (p) => {
         html_hr(root);
         app_todo_item_choices(context, item, p);
