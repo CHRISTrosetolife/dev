@@ -22,10 +22,10 @@ export function app_sleep_record(context, button_text, list_name) {
     let data = await firebase_storage_initialize(month_path);
     let day = date_day_get(n);
     let today = object_property_initialize(data, day, {});
-    let wakeups = object_property_initialize(today, list_name, []);
-    list_add(wakeups, n);
+    let list = object_property_initialize(today, list_name, []);
+    list_add(list, n);
     await firebase_save(month_path, data);
-    html_inner_set(result, json_format_to(data));
+    html_inner_set(list, json_format_to(data));
   });
   result = html_element(root, "pre");
 }
