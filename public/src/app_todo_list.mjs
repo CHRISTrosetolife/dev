@@ -20,7 +20,7 @@ export function app_todo_list(context, items, property_name, value) {
       html_hr(root);
       app_todo_item_name(
         context,
-        string_combine_multiple([name]),
+        string_combine_multiple(["📝 ", name]),
         button_text_second,
       );
       each(properties, (p) => {
