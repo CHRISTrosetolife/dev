@@ -1,3 +1,4 @@
+import { noop } from "./noop.mjs";
 import { list_add } from "./list_add.mjs";
 import { app_todo_item_name } from "./app_todo_item_name.mjs";
 import { app_todo_index_save_main } from "./app_todo_index_save_main.mjs";
@@ -46,6 +47,7 @@ export function app_todo_main(context) {
       mapped,
       app_todo_completed_property(),
       app_todo_completed_value(),
+      noop,
     );
   });
   html_button_width_full_text_click(root, "🌅 add dailies", async () => {
@@ -82,5 +84,6 @@ export function app_todo_main(context) {
     mapped,
     app_todo_completed_property(),
     app_todo_not_completed(),
+    noop,
   );
 }
