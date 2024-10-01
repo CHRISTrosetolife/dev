@@ -19,7 +19,7 @@ export function app_todo_completed_view(root, context) {
   );
   app_todo_list(
     context,
-    mapped,
+    items,
     app_todo_completed_property(),
     app_todo_completed_value(),
     noop,
