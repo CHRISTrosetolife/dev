@@ -10,7 +10,7 @@ import { date_year_get } from "./date_year_get.mjs";
 import { date_now } from "./date_now.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export function app_sleep_record(context, button_text, list_name) {
-  let root = context;
+  let { root } = context;
   html_button_width_full_text_click(root, button_text, async () => {
     let n = date_now();
     let year = date_year_get(n);
