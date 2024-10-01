@@ -1,4 +1,4 @@
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { file_name_json } from "./file_name_json.mjs";
 import { json_format_to } from "./json_format_to.mjs";
 import { firebase_save } from "./firebase_save.mjs";
 import { list_add } from "./list_add.mjs";
@@ -19,10 +19,7 @@ export function app_sleep_record(context, button_text, list_name) {
     let n = date_now();
     let year = date_year_get(n);
     let month = date_month_get(n);
-    let month_path = string_combine_multiple([
-      path_join(["sleep", year, month]),
-      ".json",
-    ]);
+    let month_path = file_name_json(path_join(["sleep", year, month]));
     let data = await firebase_storage_initialize(month_path);
     let day = date_day_get(n);
     let today = object_property_initialize(data, day, {});
