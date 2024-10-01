@@ -1,3 +1,4 @@
+import { app_todo_items } from "./app_todo_items.mjs";
 import { app_todo_index_save_main } from "./app_todo_index_save_main.mjs";
 import { app_todo_item } from "./app_todo_item.mjs";
 import { list_add } from "./list_add.mjs";
@@ -5,7 +6,7 @@ import { html_value_get } from "./html_value_get.mjs";
 import { html_input_width_full_focus } from "./html_input_width_full_focus.mjs";
 import { app_todo_button_back_main } from "./app_todo_button_back_main.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
-export function app_todo_item_name(context, add_item, items) {
+export function app_todo_item_name(context, add_item, items2) {
   let { root } = context;
   let items = app_todo_items(context);
   html_button_width_full_text_click(root, add_item, () => {
