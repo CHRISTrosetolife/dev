@@ -5,6 +5,7 @@ import { date_year_get } from "./date_year_get.mjs";
 import { date_now } from "./date_now.mjs";
 import { firebase_storage_initialize } from "./firebase_storage_initialize.mjs";
 import { app_firebase } from "./app_firebase.mjs";
+import { object_property_initialize } from "./object_property_initialize.mjs";
 export async function app_sleep() {
   await app_firebase({
     on_logged_in: async (context) => {
@@ -14,6 +15,7 @@ export async function app_sleep() {
       let month_path = path_join(["sleep", year, month]);
       let data = await firebase_storage_initialize(month_path);
       let day = date_day_get(data);
+      object_property_initialize(data, day, {});
     },
   });
 }
