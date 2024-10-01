@@ -12,7 +12,7 @@ export function app_sleep_main(context) {
   html_hr(root);
   app_sleep_record(context, "🌙 sleep", "sleeps");
   let result;
-  html_button_width_full_text_click(root, "view this month data", async () => {
+  html_button_width_full_text_click(root, "📃 data this month", async () => {
     let { data } = await app_sleep_today_download();
     html_inner_set(result, json_format_to(data));
   });
