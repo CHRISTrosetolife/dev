@@ -13,7 +13,8 @@ import { list_add } from "./list_add.mjs";
 export function app_sleep_main(context) {
   let root = html_clear_scroll_top_context(context);
   let list_name = "wakeups";
-  html_button_width_full_text_click(root, "woke up", async () => {
+  let button_text = "woke up";
+  html_button_width_full_text_click(root, button_text, async () => {
     let n = date_now();
     let year = date_year_get(n);
     let month = date_month_get(n);
