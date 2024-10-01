@@ -21,7 +21,7 @@ export function app_todo_main(context) {
   html_clear_scroll_top(root);
   let items = app_todo_items(context);
   html_button_width_full_text_click(root, app_todo_completed_value(), () => {
-    app_todo_completed_view(root, context, items);
+    app_todo_completed_view(root, context);
   });
   html_button_width_full_text_click(root, "🌅 add dailies", async () => {
     let filtered = list_filter_property(
