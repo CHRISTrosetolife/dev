@@ -18,6 +18,7 @@ export function app_sleep_main(context) {
     let data = await firebase_storage_initialize(month_path);
     let day = date_day_get(data);
     let today = object_property_initialize(data, day, {});
+    let wakeups = object_property_initialize(today, "wakeups", []);
     await firebase_save(index_path, index);
     await app_sleep_main(context);
   });
