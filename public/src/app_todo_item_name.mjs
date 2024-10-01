@@ -1,4 +1,3 @@
-import { app_todo_main } from "./app_todo_main.mjs";
 import { app_todo_index_save } from "./app_todo_index_save.mjs";
 import { html_value_set } from "./html_value_set.mjs";
 import { html_value_get } from "./html_value_get.mjs";
@@ -11,6 +10,7 @@ export function app_todo_item_name(
   button_text_second,
   value_initial,
   on_complete,
+  on_save,
 ) {
   let { root } = context;
   html_button_width_full_text_click(root, button_text_first, () => {
@@ -21,7 +21,7 @@ export function app_todo_item_name(
       let value = html_value_get(input);
       on_complete(value);
       await app_todo_index_save(context);
-      app_todo_main(context);
+      on_save();
     });
   });
 }
