@@ -58,5 +58,9 @@ export function app_index_choices() {
     text: "🎮 game",
     page: "gs",
   });
+  list_add(choices, {
+    text: "📃 list",
+    page: "list",
+  });
   return choices;
 }
