@@ -8,7 +8,7 @@ import { string_take } from "./string_take.mjs";
 export async function bible_search_book(books, words) {
   let book = books;
   book = string_case_upper(book);
-  book=string_take(book, 3)
+  book = string_take(book, 3);
   let all = await bible_books("engbsb");
   assert(list_includes, [all, book]);
   return await bible_search_generic(words, (chapter_code, verse_number) => {
