@@ -1,3 +1,4 @@
+import { object_property_set } from "./object_property_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_sleep_manual } from "./app_sleep_manual.mjs";
 import { html_button_previous_text } from "./html_button_previous_text.mjs";
@@ -45,8 +46,7 @@ export function app_sleep_manual_refresh(context, parts) {
     root,
     string_combine_multiple([html_button_previous_text(), " day"]),
     () => {
-      day = day - 1;
-      object_property_get(parts, "day");
+      object_property_set(parts, "day", day - 1);
       refresh();
     },
   );
