@@ -32,6 +32,9 @@ export function app_sleep_manual(context) {
       day = day - 1;
     },
   );
+  html_list_chooser(root, names, month_index, refresh, (value) => {
+    month_index = value;
+  });
   html_list_chooser(root, ampms, ampm_index, refresh, (value) => {
     ampm_index = value;
   });
