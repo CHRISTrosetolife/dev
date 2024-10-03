@@ -93,11 +93,7 @@ export function app_sleep_manual_refresh(context, parts) {
     refresh,
     (value) => {
       sleep_type_index = value;
-      object_property_set(
-        parts,
-        "sleep_type_index",
-        list_get(minutes_choices, minutes_index),
-      );
+      object_property_set(parts, "sleep_type_index", sleep_type_index);
     },
   );
   function hours_compute() {
