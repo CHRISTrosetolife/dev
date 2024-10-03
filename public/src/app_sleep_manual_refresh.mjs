@@ -95,7 +95,7 @@ export function app_sleep_manual_refresh(context, parts) {
       minutes_index = value;
       object_property_set(
         parts,
-        "minutes",
+        "sleep_type",
         list_get(minutes_choices, minutes_index),
       );
     },
