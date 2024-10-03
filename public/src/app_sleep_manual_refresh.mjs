@@ -13,7 +13,7 @@ import { date_month_names } from "./date_month_names.mjs";
 import { app_sleep_main } from "./app_sleep_main.mjs";
 import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
 import { html_clear_scroll_top_context } from "./html_clear_scroll_top_context.mjs";
-export function app_sleep_manual_refresh(parts, context) {
+export function app_sleep_manual_refresh(context, parts) {
   let { year, month_index, day, hours, minutes, now } = parts;
   let { root } = context;
   html_clear_scroll_top_context(context);
