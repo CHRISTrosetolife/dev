@@ -16,7 +16,8 @@ export function app_sleep_main(context) {
     string_combine_multiple([emoji_add(), " add manual"]),
     () => {
       html_clear_scroll_top_context(context);
-      let { year, month, day, now } = date_now_parts();
+      let { year, month_index, month, month_padded, day, now } =
+        date_now_parts();
       html_button_width_full_text_click(root);
     },
   );
