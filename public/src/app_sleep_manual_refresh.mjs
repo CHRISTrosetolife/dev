@@ -66,6 +66,8 @@ export function app_sleep_manual_refresh(context, parts) {
   html_list_chooser(root, ampms, ampm_index, refresh, (value) => {
     ampm_index = value;
     ampm = list_get(ampms, ampm_index);
+    if (false) {
+    }
   });
   html_list_chooser(root, minutes_choices, minutes_index, refresh, (value) => {
     minutes_index = value;
