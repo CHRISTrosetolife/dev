@@ -26,6 +26,7 @@ export function app_sleep_manual(context) {
         let previous = list_get(buttons, month_index);
         html_style_button_default(previous);
         month_index = index;
+        html_style_success(b);
       });
       if (equal(index, month_index)) {
         html_style_success(b);
