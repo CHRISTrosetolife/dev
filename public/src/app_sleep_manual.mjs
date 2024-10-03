@@ -16,6 +16,6 @@ export function app_sleep_manual(context) {
     names,
     month_index,
     () => app_sleep_manual(context),
-    $a,
+    () => {},
   );
 }
