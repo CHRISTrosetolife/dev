@@ -1,3 +1,4 @@
+import { equal } from "./equal.mjs";
 import { each_index } from "./each_index.mjs";
 import { list_get } from "./list_get.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
@@ -22,6 +23,8 @@ export function app_sleep_manual(context) {
       let b = html_button_width_full_text_click(root, name, () => {
         month_index = index;
       });
+      if (equal(left, right)) {
+      }
     });
   });
 }
