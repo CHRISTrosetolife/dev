@@ -5,7 +5,7 @@ import { date_now } from "./date_now.mjs";
 export function date_now_parts() {
   let now = date_now();
   let year = date_year_get(now);
-  let month = date_month_get(now);
+  let { month_index, month, month_padded } = date_month_get(now);
   let day = date_day_get(now);
   return {
     year,
