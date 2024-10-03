@@ -16,7 +16,7 @@ import { app_sleep_main } from "./app_sleep_main.mjs";
 import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
 import { html_clear_scroll_top_context } from "./html_clear_scroll_top_context.mjs";
 export function app_sleep_manual_refresh(context, parts) {
-  let { year, month_index, hours, now } = parts;
+  let { year, month_index, month_name, hours, now } = parts;
   let { root } = context;
   html_clear_scroll_top_context(context);
   html_button_width_full_text_click_back(root, () => app_sleep_main(context));
@@ -37,6 +37,7 @@ export function app_sleep_manual_refresh(context, parts) {
   );
   let minutes_index = 0;
   html_p_text(root, year);
+  html_p_text(root, month_);
   if (false) {
     html_list_chooser(root, names, month_index, refresh, (value) => {
       month_index = value;
