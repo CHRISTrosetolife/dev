@@ -38,7 +38,7 @@ export function app_sleep_manual_refresh(context, parts) {
     number_pad_2(m * minutes_division),
   );
   minutes = round(minutes / minutes_division) * minutes_division;
-  let minutes_index;
+  let minutes_index = list_index(minutes_choices, minutes);
   html_p_text(root, year);
   html_p_text(root, month_name);
   if (false) {
