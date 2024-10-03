@@ -61,10 +61,17 @@ export function app_sleep_manual_refresh(context, parts) {
     refresh,
     (value) => {
       hours_12_index = value;
+      hours_compute();
     },
   );
   html_list_chooser(root, ampms, ampm_index, refresh, (value) => {
     ampm_index = value;
+    hours_compute();
+  });
+  html_list_chooser(root, minutes_choices, minutes_index, refresh, (value) => {
+    minutes_index = value;
+  });
+  function hours_compute() {
     ampm = list_get(ampms, ampm_index);
     hours_12 = list_get(hours_12_choices, hours_12_index);
     if (equal(ampm, pm)) {
@@ -81,10 +88,7 @@ export function app_sleep_manual_refresh(context, parts) {
       }
     }
     object_property_set(parts, "hours", hours);
-  });
-  html_list_chooser(root, minutes_choices, minutes_index, refresh, (value) => {
-    minutes_index = value;
-  });
+  }
   function refresh() {
     app_sleep_manual_refresh(context, parts);
   }
