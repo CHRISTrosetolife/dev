@@ -17,7 +17,7 @@ export function app_sleep_main(context) {
     root,
     string_combine_multiple([emoji_add(), " add manual"]),
     () => {
-      app_sleep_manual(context, root);
+      app_sleep_manual(context);
     },
   );
   html_hr(root);
