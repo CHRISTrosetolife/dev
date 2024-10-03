@@ -15,6 +15,7 @@ export function app_sleep_manual(context) {
   let { year, month_index, month, month_padded, month_name, day, now } =
     date_now_parts();
   let names = date_month_names();
+  html_p_text(root, year);
   html_list_chooser(
     root,
     names,
