@@ -13,7 +13,6 @@ export function html_list_chooser(root, list, value, context) {
     root,
     list_get(list, value),
     () => {
-      let { root } = context;
       html_clear_scroll_top(root);
       html_button_width_full_text_click_back(root, () =>
         app_sleep_manual(context),
