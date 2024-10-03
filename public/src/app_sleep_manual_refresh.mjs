@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { app_sleep_manual } from "./app_sleep_manual.mjs";
 import { html_button_previous_text } from "./html_button_previous_text.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -38,7 +39,7 @@ export function app_sleep_manual_refresh(context, parts) {
   html_list_chooser(root, names, month_index, refresh, (value) => {
     month_index = value;
   });
-  html_p_text(root, day);
+  html_p_text(root, object_property_get(object, "property_name"));
   html_button_width_full_text_click(
     root,
     string_combine_multiple([html_button_previous_text(), " day"]),
