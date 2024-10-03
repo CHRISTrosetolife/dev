@@ -1,4 +1,4 @@
-import { range } from "./range.mjs";
+import { range_1 } from "./range_1.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { html_button_previous_text } from "./html_button_previous_text.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -21,7 +21,7 @@ export function app_sleep_manual(context) {
   let hours_count = 12;
   let ampm = hours >= hours_count ? pm : am;
   let hours_12 = hours > hours_count ? hours - hours_count : hours;
-  let hours_12_choices = range(hours_count);
+  let hours_12_choices = range_1(hours_count);
   let ampm_index = list_index(ampms, ampm);
   let names = date_month_names();
   html_p_text(root, year);
