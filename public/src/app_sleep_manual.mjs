@@ -12,6 +12,7 @@ import { html_button_width_full_text_click_back } from "./html_button_width_full
 import { html_clear_scroll_top_context } from "./html_clear_scroll_top_context.mjs";
 import { html_button_width_full_text } from "./html_button_width_full_text.mjs";
 import { list_index } from "./list_index.mjs";
+import { number_pad_2 } from "./number_pad_2.mjs";
 export function app_sleep_manual(context) {
   let { root } = context;
   html_clear_scroll_top_context(context);
@@ -29,9 +30,8 @@ export function app_sleep_manual(context) {
   let hours_12_index = list_index(hours_12_choices, hours_12);
   let minutes_count = 60;
   let minutes_division = 5;
-  let minutes_choices = list_map(
-    range(minutes_count / minutes_division),
-    (m) => m * minutes_division,
+  let minutes_choices = list_map(range(minutes_count / minutes_division), (m) =>
+    number_pad_2(m * minutes_division),
   );
   let minutes_index = 0;
   html_p_text(root, year);
