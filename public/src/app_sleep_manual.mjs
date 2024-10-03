@@ -33,7 +33,7 @@ export function app_sleep_manual(context) {
     },
   );
   html_list_chooser(root, ampms, ampm_index, refresh, (value) => {
-    month_index = value;
+    ampm_index = value;
   });
   function refresh() {
     app_sleep_manual(context);
