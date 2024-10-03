@@ -1,3 +1,4 @@
+import { object_property_set } from "./object_property_set.mjs";
 import { equal } from "./equal.mjs";
 import { html_style_success } from "./html_style_success.mjs";
 import { html_style_button_default } from "./html_style_button_default.mjs";
@@ -30,4 +31,5 @@ export function html_list_chooser(root, list, value, context) {
       });
     },
   );
+  object_property_set(object, "property_name", value2);
 }
