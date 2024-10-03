@@ -19,9 +19,9 @@ export function app_sleep_manual(context) {
   let am = "am";
   let ampms = [am, pm];
   let hours_count = 12;
-  let ampm = hours >= 12 ? pm : am;
-  let hours_12 = hours >= 13 ? hours - 12 : hours;
-  let hours_12_choices = range(12);
+  let ampm = hours >= hours_count ? pm : am;
+  let hours_12 = hours > hours_count ? hours - hours_count : hours;
+  let hours_12_choices = range(hours_count);
   let ampm_index = list_index(ampms, ampm);
   let names = date_month_names();
   html_p_text(root, year);
