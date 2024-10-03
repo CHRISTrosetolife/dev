@@ -85,10 +85,11 @@ export function app_sleep_manual_refresh(context, parts) {
   html_button_width_full_text_click(root, app_sleep_manual_text(), () => {
     app_sleep_manual(context);
   });
+  let sleep_type_index;
   html_list_chooser(
     root,
     [app_sleep_woke_up(), app_sleep_wakeups()],
-    minutes_index,
+    sleep_type_index,
     refresh,
     (value) => {
       minutes_index = value;
