@@ -72,10 +72,13 @@ export function app_sleep_manual_refresh(context, parts) {
       if (equal(hours_12, 12)) {
         hours = hours_12;
       } else {
+        hours = hours_12 + hours_count;
       }
     } else {
       if (equal(hours_12, 12)) {
+        hours = 0;
       } else {
+        hours = hours_12;
       }
     }
   });
