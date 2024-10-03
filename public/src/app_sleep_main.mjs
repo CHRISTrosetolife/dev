@@ -22,7 +22,9 @@ export function app_sleep_main(context) {
     string_combine_multiple([emoji_add(), " add manual"]),
     () => {
       html_clear_scroll_top_context(context);
-      html_button_width_full_text_click_back(root, () => {});
+      html_button_width_full_text_click_back(root, () =>
+        app_sleep_main(context),
+      );
       let { year, month_index, month, month_padded, month_name, day, now } =
         date_now_parts();
       let names = date_month_names();
