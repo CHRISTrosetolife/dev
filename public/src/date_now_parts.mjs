@@ -16,6 +16,8 @@ export function date_now_parts() {
     month_padded,
     month_name,
     day,
+    hours,
+    minutes,
     now,
   };
 }
