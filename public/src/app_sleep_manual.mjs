@@ -25,7 +25,7 @@ export function app_sleep_manual(context) {
         month_index = index;
       });
       if (equal(index, month_index)) {
-        html_style_success();
+        html_style_success(b);
       }
     });
   });
