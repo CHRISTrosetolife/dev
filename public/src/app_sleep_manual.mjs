@@ -1,3 +1,4 @@
+import { html_p_text } from "./html_p_text.mjs";
 import { html_button_previous_text } from "./html_button_previous_text.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_list_chooser } from "./html_list_chooser.mjs";
@@ -23,6 +24,7 @@ export function app_sleep_manual(context) {
       month_index = value;
     },
   );
+  html_p_text(root, day);
   html_button_width_full_text(
     root,
     string_combine_multiple([html_button_previous_text(), " day"]),
