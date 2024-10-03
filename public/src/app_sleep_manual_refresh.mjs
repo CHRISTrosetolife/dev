@@ -73,6 +73,9 @@ export function app_sleep_manual_refresh(context, parts) {
       } else {
       }
     } else {
+      if (equal(hours_12, 12)) {
+      } else {
+      }
     }
   });
   html_list_chooser(root, minutes_choices, minutes_index, refresh, (value) => {
