@@ -6,7 +6,7 @@ import { list_map_index } from "./list_map_index.mjs";
 import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
 import { list_get } from "./list_get.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
-export function html_list_chooser(root, list, value, on_back) {
+export function html_list_chooser(root, list, value, on_back, on_changed) {
   html_button_width_full_text_click(root, list_get(list, value), () => {
     html_clear_scroll_top(root);
     html_button_width_full_text_click_back(root, on_back);
