@@ -7,6 +7,8 @@ export function date_now_parts() {
   let year = date_year_get(now);
   let { month_index, month, month_padded, month_name } = date_month_get(now);
   let day = date_day_get(now);
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
   return {
     year,
     month_index,
