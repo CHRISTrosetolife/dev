@@ -37,7 +37,7 @@ export function app_sleep_manual_refresh(context, parts) {
   );
   let minutes_index = 0;
   html_p_text(root, year);
-  html_p_text(root, month_);
+  html_p_text(root, month_name);
   if (false) {
     html_list_chooser(root, names, month_index, refresh, (value) => {
       month_index = value;
