@@ -33,4 +33,13 @@ export function app_sleep_manual(context) {
       day = day - 1;
     },
   );
+  html_list_chooser(
+    root,
+    names,
+    month_index,
+    () => app_sleep_manual(context),
+    (value) => {
+      month_index = value;
+    },
+  );
 }
