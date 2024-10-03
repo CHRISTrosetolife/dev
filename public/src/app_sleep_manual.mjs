@@ -18,7 +18,7 @@ export function app_sleep_manual(context) {
   let am = "am";
   let ampms = [am, pm];
   let ampm = hours >= 12 ? pm : am;
-  let hours_12 = hours > 12 ? hours - 12 : hours;
+  let hours_12 = hours >= 13 ? hours - 12 : hours;
   let ampm_index = list_index(ampms, ampm);
   let names = date_month_names();
   html_p_text(root, year);
