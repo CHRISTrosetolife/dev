@@ -72,7 +72,7 @@ export function app_sleep_manual_refresh(context, parts) {
   });
   html_list_chooser(root, minutes_choices, minutes_index, refresh, (value) => {
     minutes_index = value;
-    object_property_set(object, "property_name", value2);
+    object_property_set(parts, "minutes", minutes_index);
   });
   function hours_compute() {
     ampm = list_get(ampms, ampm_index);
