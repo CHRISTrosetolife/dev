@@ -17,9 +17,12 @@ export function app_sleep_manual(context) {
   html_clear_scroll_top_context(context);
   html_button_width_full_text_click_back(root, () => app_sleep_main(context));
   let { year, month_index, day, hours, minutes, now } = date_now_parts();
+  let names = date_month_names();
   let pm = "pm";
   let am = "am";
   let ampms = [am, pm];
+  let ampm = hours >= hours_count ? pm : am;
+  let ampm_index = list_index(ampms, ampm);
   let hours_count = 12;
   let minutes_count = 60;
   let minutes_division = 5;
@@ -27,12 +30,9 @@ export function app_sleep_manual(context) {
     range(minutes_count / minutes_division),
     (m) => m * minutes_division,
   );
-  let ampm = hours >= hours_count ? pm : am;
-  let ampm_index = list_index(ampms, ampm);
   let hours_12 = hours > hours_count ? hours - hours_count : hours;
   let hours_12_choices = range_1(hours_count);
   let hours_12_index = list_index(hours_12_choices, hours_12);
-  let names = date_month_names();
   html_p_text(root, year);
   html_list_chooser(root, names, month_index, refresh, (value) => {
     month_index = value;
