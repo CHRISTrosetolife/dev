@@ -18,6 +18,7 @@ export function app_sleep_manual(context) {
   let pm = "pm";
   let am = "am";
   let ampms = [am, pm];
+  let hours_count = 12;
   let ampm = hours >= 12 ? pm : am;
   let hours_12 = hours >= 13 ? hours - 12 : hours;
   let hours_12_choices = range(12);
