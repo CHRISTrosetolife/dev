@@ -1,7 +1,7 @@
+import { list_map_index } from "./list_map_index.mjs";
 import { html_style_button_default } from "./html_style_button_default.mjs";
 import { html_style_success } from "./html_style_success.mjs";
 import { equal } from "./equal.mjs";
-import { each_index } from "./each_index.mjs";
 import { list_get } from "./list_get.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { date_month_names } from "./date_month_names.mjs";
@@ -21,7 +21,7 @@ export function app_sleep_manual(context) {
     html_button_width_full_text_click_back(root, () =>
       app_sleep_manual(context),
     );
-    let buttons = each_index(names, (name, index) => {
+    let buttons = list_map_index(names, (name, index) => {
       let b = html_button_width_full_text_click(root, name, () => {
         let previous = list_get(buttons, month_index);
         html_style_button_default(previous);
