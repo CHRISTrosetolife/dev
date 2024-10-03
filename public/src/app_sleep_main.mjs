@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { date_now_parts } from "./date_now_parts.mjs";
 import { emoji_add } from "./emoji_add.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -18,6 +19,7 @@ export function app_sleep_main(context) {
       html_clear_scroll_top_context(context);
       let { year, month_index, month, month_padded, month_name, day, now } =
         date_now_parts();
+      each(list, (item) => {});
       html_button_width_full_text_click(root);
     },
   );
