@@ -1,3 +1,4 @@
+import { noop } from "./noop.mjs";
 import { app_sleep_manual } from "./app_sleep_manual.mjs";
 import { app_sleep_manual_text } from "./app_sleep_manual_text.mjs";
 import { round } from "./round.mjs";
@@ -83,7 +84,7 @@ export function app_sleep_manual_refresh(context, parts) {
   html_button_width_full_text_click(root, app_sleep_manual_text(), () => {
     app_sleep_manual(context);
   });
-  html_list_chooser(root, minutes_choices, minutes_index, refresh, (value) => {
+  html_list_chooser(root, minutes_choices, minutes_index, noop, (value) => {
     minutes_index = value;
     object_property_set(
       parts,
