@@ -27,9 +27,9 @@ export function app_sleep_main(context) {
         list_get(names, month_index),
         () => {
           html_clear_scroll_top_context(context);
+          each_index(names, (item, index) => {});
         },
       );
-      each_index(names, (item, index) => {});
       html_button_width_full_text_click(root);
     },
   );
