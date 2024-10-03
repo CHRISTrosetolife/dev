@@ -1,3 +1,4 @@
+import { sermon_references_combine } from "./sermon_references_combine.mjs";
 import { bible_search_book } from "./bible_search_book.mjs";
 import { bible_chapter_text } from "./bible_chapter_text.mjs";
 import { function_param_delete } from "./function_param_delete.mjs";
@@ -123,6 +124,7 @@ export async function function_aliases_generate() {
   alias_add(function_search, ["s"]);
   alias_add(sandbox, ["sb"]);
   alias_add(functions_identifier, ["si"]);
+  alias_add(sermon_references_combine, ["sr"]);
   alias_add(functions_string, ["ss"]);
   alias_add(sermon_new, ["sn"]);
   alias_add(function_search_open, ["so"]);
