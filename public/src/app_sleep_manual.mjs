@@ -17,7 +17,7 @@ export function app_sleep_manual(context) {
     month_index,
     () => app_sleep_manual(context),
     (value) => {
-      month_index = alue;
+      month_index = value;
     },
   );
 }
