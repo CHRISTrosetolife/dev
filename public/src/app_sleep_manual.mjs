@@ -1,3 +1,5 @@
+import { range } from "./range.mjs";
+import { list_map } from "./list_map.mjs";
 import { range_1 } from "./range_1.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { html_button_previous_text } from "./html_button_previous_text.mjs";
@@ -19,6 +21,7 @@ export function app_sleep_manual(context) {
   let am = "am";
   let ampms = [am, pm];
   let hours_count = 12;
+  let minutes_choices = list_map(range(60 / 5), (m) => m * 5);
   let ampm = hours >= hours_count ? pm : am;
   let ampm_index = list_index(ampms, ampm);
   let hours_12 = hours > hours_count ? hours - hours_count : hours;
