@@ -10,5 +10,6 @@ export function date_month_get(date) {
     month_index,
     month,
     month_padded,
+    month_name,
   };
 }
