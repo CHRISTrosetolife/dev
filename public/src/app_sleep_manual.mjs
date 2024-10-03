@@ -25,6 +25,6 @@ export function app_sleep_manual(context) {
   );
   html_button_width_full_text(
     root,
-    string_combine_multiple([html_button_previous_text, " day"]),
+    string_combine_multiple([html_button_previous_text(), " day"]),
   );
 }
