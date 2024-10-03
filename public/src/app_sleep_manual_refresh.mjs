@@ -1,3 +1,4 @@
+import { app_sleep_month_path } from "./app_sleep_month_path.mjs";
 import { app_sleep_save } from "./app_sleep_save.mjs";
 import { app_sleep_today_download } from "./app_sleep_today_download.mjs";
 import { app_sleep_wakeups } from "./app_sleep_wakeups.mjs";
@@ -84,7 +85,8 @@ export function app_sleep_manual_refresh(context, parts) {
     );
   });
   html_button_width_full_text_click(root, app_sleep_manual_text(), async () => {
-    let { today, now, month_path, data } = await app_sleep_today_download();
+    let { today, now, data } = await app_sleep_today_download();
+    let month_path = app_sleep_month_path(year, month_padded);
     await app_sleep_save(today, list_name, now, month_path, data, result);
   });
   let sleep_type_index = object_property_get(parts, "sleep_type_index");
