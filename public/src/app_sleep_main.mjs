@@ -1,3 +1,4 @@
+import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { list_get } from "./list_get.mjs";
 import { date_month_names } from "./date_month_names.mjs";
@@ -21,6 +22,7 @@ export function app_sleep_main(context) {
     string_combine_multiple([emoji_add(), " add manual"]),
     () => {
       html_clear_scroll_top_context(context);
+      html_button_width_full_text_click_back();
       let { year, month_index, month, month_padded, month_name, day, now } =
         date_now_parts();
       let names = date_month_names();
