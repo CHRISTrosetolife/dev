@@ -40,8 +40,8 @@ export function app_sleep_manual(context) {
   );
   html_list_chooser(
     root,
-    names,
-    month_index,
+    ampms,
+    ampm_index,
     () => app_sleep_manual(context),
     (value) => {
       month_index = value;
