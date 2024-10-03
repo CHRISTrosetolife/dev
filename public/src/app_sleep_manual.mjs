@@ -22,6 +22,7 @@ export function app_sleep_manual(context) {
     );
     let buttons = each_index(names, (name, index) => {
       let b = html_button_width_full_text_click(root, name, () => {
+        let previous = list_get(buttons, month_index);
         month_index = index;
       });
       if (equal(index, month_index)) {
