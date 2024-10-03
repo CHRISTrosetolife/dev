@@ -1,3 +1,5 @@
+import { app_sleep_manual } from "./app_sleep_manual.mjs";
+import { app_sleep_manual_text } from "./app_sleep_manual_text.mjs";
 import { round } from "./round.mjs";
 import { equal } from "./equal.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -77,6 +79,9 @@ export function app_sleep_manual_refresh(context, parts) {
       "minutes",
       list_get(minutes_choices, minutes_index),
     );
+  });
+  html_button_width_full_text_click(root, app_sleep_manual_text(), () => {
+    app_sleep_manual(context);
   });
   function hours_compute() {
     ampm = list_get(ampms, ampm_index);
