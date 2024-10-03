@@ -85,7 +85,7 @@ export function app_sleep_manual_refresh(context, parts) {
   html_button_width_full_text_click(root, app_sleep_manual_text(), () => {
     app_sleep_manual(context);
   });
-  let sleep_type_index;
+  let sleep_type_index = object_property_get(object, "property_name");
   html_list_chooser(
     root,
     [app_sleep_woke_up(), app_sleep_wakeups()],
