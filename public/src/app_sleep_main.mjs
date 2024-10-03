@@ -1,7 +1,6 @@
+import { app_sleep_manual_text } from "./app_sleep_manual_text.mjs";
 import { app_sleep_manual } from "./app_sleep_manual.mjs";
 import { html_hr } from "./html_hr.mjs";
-import { emoji_add } from "./emoji_add.mjs";
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_element } from "./html_element.mjs";
 import { json_format_to } from "./json_format_to.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
@@ -13,13 +12,9 @@ export function app_sleep_main(context) {
   let root = html_clear_scroll_top_context(context);
   app_sleep_record(context, "🌅 woke up", "wakeups");
   app_sleep_record(context, "🌙 sleep", "sleeps");
-  html_button_width_full_text_click(
-    root,
-    string_combine_multiple([emoji_add(), " add manual"]),
-    () => {
-      app_sleep_manual(context);
-    },
-  );
+  html_button_width_full_text_click(root, app_sleep_manual_text(), () => {
+    app_sleep_manual(context);
+  });
   html_hr(root);
   let result;
   html_button_width_full_text_click(root, "📃 data this month", async () => {
