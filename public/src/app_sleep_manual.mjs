@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_list_chooser } from "./html_list_chooser.mjs";
 import { date_month_names } from "./date_month_names.mjs";
 import { date_now_parts } from "./date_now_parts.mjs";
@@ -21,5 +22,5 @@ export function app_sleep_manual(context) {
       month_index = value;
     },
   );
-  html_button_width_full_text(root, "previous day");
+  html_button_width_full_text(root, string_combine_multiple(["previous day"]));
 }
