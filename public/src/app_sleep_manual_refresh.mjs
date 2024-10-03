@@ -1,7 +1,6 @@
 import { equal } from "./equal.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { app_sleep_manual } from "./app_sleep_manual.mjs";
 import { html_button_previous_text } from "./html_button_previous_text.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
@@ -86,6 +85,6 @@ export function app_sleep_manual_refresh(context, parts) {
     minutes_index = value;
   });
   function refresh() {
-    app_sleep_manual(context);
+    app_sleep_manual_refresh(context, parts);
   }
 }
