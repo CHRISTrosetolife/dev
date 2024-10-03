@@ -33,6 +33,7 @@ export function app_sleep_manual(context) {
     range(minutes_count / minutes_division),
     (m) => m * minutes_division,
   );
+  let minutes_index = 0;
   html_p_text(root, year);
   html_list_chooser(root, names, month_index, refresh, (value) => {
     month_index = value;
