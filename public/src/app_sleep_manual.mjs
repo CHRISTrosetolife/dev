@@ -14,6 +14,7 @@ export function app_sleep_manual(context) {
   html_button_width_full_text_click_back(root, () => app_sleep_main(context));
   let { year, month_index, month, month_padded, month_name, day, now } =
     date_now_parts();
+  let ampm = hours >= 12 ? "pm" : "am";
   let names = date_month_names();
   html_p_text(root, year);
   html_list_chooser(
