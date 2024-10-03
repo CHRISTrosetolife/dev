@@ -22,7 +22,8 @@ export function app_sleep_manual(context) {
   let ampms = [am, pm];
   let hours_count = 12;
   let minutes_count = 60;
-  let minutes_choices = list_map(range(60 / 5), (m) => m * 5);
+  let minutes_division = 5;
+  let minutes_choices = list_map(range(minutes_count / 5), (m) => m * 5);
   let ampm = hours >= hours_count ? pm : am;
   let ampm_index = list_index(ampms, ampm);
   let hours_12 = hours > hours_count ? hours - hours_count : hours;
