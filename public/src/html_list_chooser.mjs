@@ -31,5 +31,5 @@ export function html_list_chooser(root, list, value, context) {
       });
     },
   );
-  object_property_set(object, "property_name", value2);
+  object_property_set(result, "value_get", () => {});
 }
