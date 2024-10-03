@@ -1,3 +1,4 @@
+import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { range } from "./range.mjs";
 import { list_map } from "./list_map.mjs";
 import { range_1 } from "./range_1.mjs";
@@ -10,7 +11,6 @@ import { date_now_parts } from "./date_now_parts.mjs";
 import { app_sleep_main } from "./app_sleep_main.mjs";
 import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
 import { html_clear_scroll_top_context } from "./html_clear_scroll_top_context.mjs";
-import { html_button_width_full_text } from "./html_button_width_full_text.mjs";
 import { list_index } from "./list_index.mjs";
 import { number_pad_2 } from "./number_pad_2.mjs";
 export function app_sleep_manual(context) {
@@ -39,7 +39,7 @@ export function app_sleep_manual(context) {
     month_index = value;
   });
   html_p_text(root, day);
-  html_button_width_full_text(
+  html_button_width_full_text_click(
     root,
     string_combine_multiple([html_button_previous_text(), " day"]),
     () => {
