@@ -9,7 +9,9 @@ export function date_now_parts() {
   let day = date_day_get(now);
   return {
     year,
+    month_index,
     month,
+    month_padded,
     day,
     now,
   };
