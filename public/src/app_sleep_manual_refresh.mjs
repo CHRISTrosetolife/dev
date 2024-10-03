@@ -83,6 +83,14 @@ export function app_sleep_manual_refresh(context, parts) {
   html_button_width_full_text_click(root, app_sleep_manual_text(), () => {
     app_sleep_manual(context);
   });
+  html_list_chooser(root, minutes_choices, minutes_index, refresh, (value) => {
+    minutes_index = value;
+    object_property_set(
+      parts,
+      "minutes",
+      list_get(minutes_choices, minutes_index),
+    );
+  });
   function hours_compute() {
     ampm = list_get(ampms, ampm_index);
     hours_12 = list_get(hours_12_choices, hours_12_index);
