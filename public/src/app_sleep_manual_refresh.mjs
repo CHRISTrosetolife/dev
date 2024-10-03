@@ -7,7 +7,6 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_list_chooser } from "./html_list_chooser.mjs";
 import { html_p_text } from "./html_p_text.mjs";
-import { number_pad_2 } from "./number_pad_2.mjs";
 import { range } from "./range.mjs";
 import { list_map } from "./list_map.mjs";
 import { range_1 } from "./range_1.mjs";
@@ -34,8 +33,9 @@ export function app_sleep_manual_refresh(context, parts) {
   let hours_12_index = list_index(hours_12_choices, hours_12);
   let minutes_count = 60;
   let minutes_division = 5;
-  let minutes_choices = list_map(range(minutes_count / minutes_division), (m) =>
-    number_pad_2(m * minutes_division),
+  let minutes_choices = list_map(
+    range(minutes_count / minutes_division),
+    (m) => m * minutes_division,
   );
   minutes = round(minutes / minutes_division) * minutes_division;
   let minutes_index = list_index(minutes_choices, minutes);
