@@ -31,6 +31,7 @@ export function app_sleep_manual(context) {
       if (equal(index, month_index)) {
         html_style_success(b);
       }
+      return b;
     });
   });
 }
