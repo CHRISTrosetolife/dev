@@ -32,7 +32,6 @@ export function app_sleep_main(context) {
           });
         },
       );
-      html_button_width_full_text_click(root);
     },
   );
   let result;
