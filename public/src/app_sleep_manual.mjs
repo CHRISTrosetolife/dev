@@ -58,15 +58,9 @@ export function app_sleep_manual(context) {
   html_list_chooser(root, ampms, ampm_index, refresh, (value) => {
     ampm_index = value;
   });
-  html_list_chooser(
-    root,
-    hours_12_choices,
-    hours_12_index,
-    refresh,
-    (value) => {
-      hours_12_index = value;
-    },
-  );
+  html_list_chooser(root, minutes_choices, minutes_index, refresh, (value) => {
+    minutes_index = value;
+  });
   function refresh() {
     app_sleep_manual(context);
   }
