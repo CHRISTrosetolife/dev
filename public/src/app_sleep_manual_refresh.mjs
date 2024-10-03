@@ -69,7 +69,8 @@ export function app_sleep_manual_refresh(context, parts) {
     ampm = list_get(ampms, ampm_index);
     hours_12 = list_get(hours_12_choices, hours_12_index);
     if (equal(ampm, pm)) {
-      if (equal(left, right)) {
+      if (equal(hours_12, 12)) {
+      } else {
       }
     }
   });
