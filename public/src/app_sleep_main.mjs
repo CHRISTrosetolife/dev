@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_element } from "./html_element.mjs";
 import { json_format_to } from "./json_format_to.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
@@ -9,6 +10,11 @@ export function app_sleep_main(context) {
   let root = html_clear_scroll_top_context(context);
   app_sleep_record(context, "🌅 woke up", "wakeups");
   app_sleep_record(context, "🌙 sleep", "sleeps");
+  html_button_width_full_text_click(
+    root,
+    string_combine_multiple(["➕", " add"]),
+    async () => {},
+  );
   let result;
   html_button_width_full_text_click(root, "📃 data this month", async () => {
     let { data } = await app_sleep_today_download();
