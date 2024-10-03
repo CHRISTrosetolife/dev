@@ -15,7 +15,11 @@ export function app_sleep_manual(context) {
   let names = date_month_names();
   html_button_width_full_text_click(root, list_get(names, month_index), () => {
     html_clear_scroll_top_context(context);
+    html_button_width_full_text_click_back(root, () =>
+      app_sleep_manual(context),
+    );
     each_index(names, (item, index) => {
+      html_button_width_full_text_click();
       month_index = index;
     });
   });
