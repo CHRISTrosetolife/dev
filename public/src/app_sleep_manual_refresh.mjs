@@ -15,6 +15,7 @@ import { date_month_names } from "./date_month_names.mjs";
 import { app_sleep_main } from "./app_sleep_main.mjs";
 import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
 import { html_clear_scroll_top_context } from "./html_clear_scroll_top_context.mjs";
+import { list_get } from "./list_get.mjs";
 export function app_sleep_manual_refresh(context, parts) {
   let { year, month_index, month_name, hours, now } = parts;
   let { root } = context;
@@ -64,6 +65,7 @@ export function app_sleep_manual_refresh(context, parts) {
   );
   html_list_chooser(root, ampms, ampm_index, refresh, (value) => {
     ampm_index = value;
+    ampm = list_get(ampms, ampm_index);
   });
   html_list_chooser(root, minutes_choices, minutes_index, refresh, (value) => {
     minutes_index = value;
