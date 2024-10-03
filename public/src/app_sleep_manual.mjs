@@ -22,7 +22,6 @@ export function app_sleep_manual(context) {
       let b = html_button_width_full_text_click(root, name, () => {
         month_index = index;
       });
-      e;
     });
   });
 }
