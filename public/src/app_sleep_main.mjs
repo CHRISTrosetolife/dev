@@ -1,3 +1,4 @@
+import { html_hr } from "./html_hr.mjs";
 import { list_get } from "./list_get.mjs";
 import { date_month_names } from "./date_month_names.mjs";
 import { each_index } from "./each_index.mjs";
@@ -34,6 +35,7 @@ export function app_sleep_main(context) {
       );
     },
   );
+  html_hr(root);
   let result;
   html_button_width_full_text_click(root, "📃 data this month", async () => {
     let { data } = await app_sleep_today_download();
