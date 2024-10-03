@@ -80,7 +80,7 @@ export function app_sleep_manual_refresh(context, parts) {
         hours = hours_12;
       }
     }
-    object_property_set(object, "property_name", value2);
+    object_property_set(parts, "hours", hours);
   });
   html_list_chooser(root, minutes_choices, minutes_index, refresh, (value) => {
     minutes_index = value;
