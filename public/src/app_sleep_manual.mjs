@@ -21,15 +21,9 @@ export function app_sleep_manual(context) {
   let ampm_index = list_index(ampms, ampm);
   let names = date_month_names();
   html_p_text(root, year);
-  html_list_chooser(
-    root,
-    names,
-    month_index,
-    () => app_sleep_manual(context),
-    (value) => {
-      month_index = value;
-    },
-  );
+  html_list_chooser(root, names, month_index, refresh, (value) => {
+    month_index = value;
+  });
   html_p_text(root, day);
   html_button_width_full_text(
     root,
@@ -38,13 +32,10 @@ export function app_sleep_manual(context) {
       day = day - 1;
     },
   );
-  html_list_chooser(
-    root,
-    ampms,
-    ampm_index,
-    () => app_sleep_manual(context),
-    (value) => {
-      month_index = value;
-    },
-  );
+  html_list_chooser(root, ampms, ampm_index, refresh, (value) => {
+    month_index = value;
+  });
+  function refresh() {
+    app_sleep_manual(context);
+  }
 }
