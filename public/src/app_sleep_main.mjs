@@ -1,9 +1,5 @@
-import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
+import { app_sleep_manual } from "./app_sleep_manual.mjs";
 import { html_hr } from "./html_hr.mjs";
-import { list_get } from "./list_get.mjs";
-import { date_month_names } from "./date_month_names.mjs";
-import { each_index } from "./each_index.mjs";
-import { date_now_parts } from "./date_now_parts.mjs";
 import { emoji_add } from "./emoji_add.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_element } from "./html_element.mjs";
@@ -21,23 +17,7 @@ export function app_sleep_main(context) {
     root,
     string_combine_multiple([emoji_add(), " add manual"]),
     () => {
-      html_clear_scroll_top_context(context);
-      html_button_width_full_text_click_back(root, () =>
-        app_sleep_main(context),
-      );
-      let { year, month_index, month, month_padded, month_name, day, now } =
-        date_now_parts();
-      let names = date_month_names();
-      html_button_width_full_text_click(
-        root,
-        list_get(names, month_index),
-        () => {
-          html_clear_scroll_top_context(context);
-          each_index(names, (item, index) => {
-            month_index = index;
-          });
-        },
-      );
+      app_sleep_manual(context, root);
     },
   );
   html_hr(root);
