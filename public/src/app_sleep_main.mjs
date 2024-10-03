@@ -1,3 +1,4 @@
+import { list_get } from "./list_get.mjs";
 import { date_month_names } from "./date_month_names.mjs";
 import { each_index } from "./each_index.mjs";
 import { date_now_parts } from "./date_now_parts.mjs";
@@ -21,6 +22,11 @@ export function app_sleep_main(context) {
       let { year, month_index, month, month_padded, month_name, day, now } =
         date_now_parts();
       let names = date_month_names();
+      html_button_width_full_text_click(
+        root,
+        list_get(names, month_index),
+        () => {},
+      );
       each_index(names, (item, index) => {});
       html_button_width_full_text_click(root);
     },
