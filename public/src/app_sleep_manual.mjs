@@ -20,7 +20,7 @@ export function app_sleep_manual(context) {
     html_button_width_full_text_click_back(root, () =>
       app_sleep_manual(context),
     );
-    each_index(names, (name, index) => {
+    let buttons = each_index(names, (name, index) => {
       let b = html_button_width_full_text_click(root, name, () => {
         month_index = index;
       });
