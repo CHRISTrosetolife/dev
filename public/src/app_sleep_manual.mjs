@@ -44,6 +44,7 @@ export function app_sleep_manual(context) {
     string_combine_multiple([html_button_previous_text(), " day"]),
     () => {
       day = day - 1;
+      refresh();
     },
   );
   html_list_chooser(
