@@ -15,6 +15,7 @@ export function app_sleep_manual(context) {
   let { year, month_index, day, hours, minutes, now } = date_now_parts();
   let pm = "pm";
   let am = "am";
+  let ampms = [am, pm];
   let ampm = hours >= 12 ? pm : am;
   let names = date_month_names();
   html_p_text(root, year);
