@@ -17,6 +17,7 @@ export function app_sleep_manual(context) {
   let { root } = context;
   html_clear_scroll_top_context(context);
   html_button_width_full_text_click_back(root, () => app_sleep_main(context));
+  let parts = date_now_parts();
   let { year, month_index, day, hours, minutes, now } = date_now_parts();
   let names = date_month_names();
   let pm = "pm";
