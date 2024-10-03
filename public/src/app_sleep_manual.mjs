@@ -20,9 +20,10 @@ export function app_sleep_manual(context) {
   let ampms = [am, pm];
   let hours_count = 12;
   let ampm = hours >= hours_count ? pm : am;
+  let ampm_index = list_index(ampms, ampm);
   let hours_12 = hours > hours_count ? hours - hours_count : hours;
   let hours_12_choices = range_1(hours_count);
-  let ampm_index = list_index(ampms, ampm);
+  let hours_12_index = list_index(hours_12_choices, hours_12);
   let names = date_month_names();
   html_p_text(root, year);
   html_list_chooser(root, names, month_index, refresh, (value) => {
@@ -36,9 +37,15 @@ export function app_sleep_manual(context) {
       day = day - 1;
     },
   );
-  html_list_chooser(root, names, month_index, refresh, (value) => {
-    month_index = value;
-  });
+  html_list_chooser(
+    root,
+    hours_12_choices,
+    hours_12_index,
+    refresh,
+    (value) => {
+      hours_12_index = value;
+    },
+  );
   html_list_chooser(root, ampms, ampm_index, refresh, (value) => {
     ampm_index = value;
   });
