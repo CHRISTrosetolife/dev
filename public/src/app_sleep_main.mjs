@@ -20,7 +20,8 @@ export function app_sleep_main(context) {
       html_clear_scroll_top_context(context);
       let { year, month_index, month, month_padded, month_name, day, now } =
         date_now_parts();
-      each_index(date_month_names(), (item, index) => {});
+      let names = date_month_names();
+      each_index(names, (item, index) => {});
       html_button_width_full_text_click(root);
     },
   );
