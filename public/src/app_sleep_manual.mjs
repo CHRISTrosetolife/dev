@@ -19,8 +19,9 @@ export function app_sleep_manual(context) {
       app_sleep_manual(context),
     );
     each_index(names, (item, index) => {
-      html_button_width_full_text_click(root, list_get(names, index), () => {});
-      month_index = index;
+      html_button_width_full_text_click(root, list_get(names, index), () => {
+        month_index = index;
+      });
     });
   });
 }
