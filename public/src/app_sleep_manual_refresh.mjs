@@ -1,3 +1,4 @@
+import { round } from "./round.mjs";
 import { equal } from "./equal.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -17,7 +18,7 @@ import { html_button_width_full_text_click_back } from "./html_button_width_full
 import { html_clear_scroll_top_context } from "./html_clear_scroll_top_context.mjs";
 import { list_get } from "./list_get.mjs";
 export function app_sleep_manual_refresh(context, parts) {
-  let { year, month_index, month_name, hours, now } = parts;
+  let { year, month_index, month_name, hours, minutes, now } = parts;
   let { root } = context;
   html_clear_scroll_top_context(context);
   html_button_width_full_text_click_back(root, () => app_sleep_main(context));
@@ -36,7 +37,7 @@ export function app_sleep_manual_refresh(context, parts) {
   let minutes_choices = list_map(range(minutes_count / minutes_division), (m) =>
     number_pad_2(m * minutes_division),
   );
-  let minutes_index = 0;
+  let minutes_index = round(minutes / minutes_division) * minutes_division;
   html_p_text(root, year);
   html_p_text(root, month_name);
   if (false) {
@@ -70,6 +71,7 @@ export function app_sleep_manual_refresh(context, parts) {
   });
   html_list_chooser(root, minutes_choices, minutes_index, refresh, (value) => {
     minutes_index = value;
+    minutes;
   });
   function hours_compute() {
     ampm = list_get(ampms, ampm_index);
