@@ -1,6 +1,7 @@
+import { app_sleep_save } from "./app_sleep_save.mjs";
+import { app_sleep_today_download } from "./app_sleep_today_download.mjs";
 import { app_sleep_wakeups } from "./app_sleep_wakeups.mjs";
 import { app_sleep_woke_up } from "./app_sleep_woke_up.mjs";
-import { app_sleep_manual } from "./app_sleep_manual.mjs";
 import { app_sleep_manual_text } from "./app_sleep_manual_text.mjs";
 import { round } from "./round.mjs";
 import { equal } from "./equal.mjs";
@@ -82,8 +83,9 @@ export function app_sleep_manual_refresh(context, parts) {
       list_get(minutes_choices, minutes_index),
     );
   });
-  html_button_width_full_text_click(root, app_sleep_manual_text(), () => {
-    app_sleep_manual(context);
+  html_button_width_full_text_click(root, app_sleep_manual_text(), async () => {
+    let { today, now, month_path, data } = await app_sleep_today_download();
+    await app_sleep_save(today, list_name, now, month_path, data, result);
   });
   let sleep_type_index = object_property_get(parts, "sleep_type_index");
   html_list_chooser(
