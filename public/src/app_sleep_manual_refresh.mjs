@@ -92,10 +92,10 @@ export function app_sleep_manual_refresh(context, parts) {
     sleep_type_index,
     refresh,
     (value) => {
-      minutes_index = value;
+      sleep_type_index = value;
       object_property_set(
         parts,
-        "sleep_type",
+        "sleep_type_index",
         list_get(minutes_choices, minutes_index),
       );
     },
