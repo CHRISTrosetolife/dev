@@ -13,7 +13,7 @@ export function app_sleep_main(context) {
   app_sleep_record(context, "🌙 sleep", "sleeps");
   html_button_width_full_text_click(
     root,
-    string_combine_multiple([emoji_add(), " add"]),
+    string_combine_multiple([emoji_add(), " add manual"]),
     async () => {},
   );
   let result;
