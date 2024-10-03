@@ -1,3 +1,4 @@
+import { equal } from "./equal.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_sleep_manual } from "./app_sleep_manual.mjs";
@@ -66,7 +67,7 @@ export function app_sleep_manual_refresh(context, parts) {
   html_list_chooser(root, ampms, ampm_index, refresh, (value) => {
     ampm_index = value;
     ampm = list_get(ampms, ampm_index);
-    if (false) {
+    if (equal(left, right)) {
     }
   });
   html_list_chooser(root, minutes_choices, minutes_index, refresh, (value) => {
