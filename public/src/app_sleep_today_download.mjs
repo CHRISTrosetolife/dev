@@ -10,9 +10,9 @@ export async function app_sleep_today_download() {
   let now = date_now();
   let year = date_year_get(now);
   let month = date_month_get(now);
+  let day = date_day_get(now);
   let month_path = file_name_json(path_join(["sleep", year, month]));
   let data = await firebase_storage_initialize(month_path);
-  let day = date_day_get(now);
   let today = object_property_initialize(data, day, {});
   return {
     today,
