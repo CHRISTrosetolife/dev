@@ -124,6 +124,7 @@ export function app_sleep_manual_refresh(context, parts) {
       }
     }
     object_property_set(parts, "hours", hours);
+    refresh();
   }
   function refresh() {
     app_sleep_manual_refresh(context, parts);
