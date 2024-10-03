@@ -37,9 +37,11 @@ export function app_sleep_manual_refresh(context, parts) {
   );
   let minutes_index = 0;
   html_p_text(root, year);
-  html_list_chooser(root, names, month_index, refresh, (value) => {
-    month_index = value;
-  });
+  if (false) {
+    html_list_chooser(root, names, month_index, refresh, (value) => {
+      month_index = value;
+    });
+  }
   let day = object_property_get(parts, "day");
   html_p_text(root, day);
   html_button_width_full_text_click(
