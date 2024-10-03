@@ -51,6 +51,7 @@ export function function_aliases() {
     s: "function_search",
     sb: "sandbox",
     si: "functions_identifier",
+    sr: "sermon_references_combine",
     ss: "functions_string",
     sn: "sermon_new",
     so: "function_search_open",
