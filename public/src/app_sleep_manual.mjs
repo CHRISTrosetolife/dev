@@ -1,3 +1,4 @@
+import { html_style_success } from "./html_style_success.mjs";
 import { equal } from "./equal.mjs";
 import { each_index } from "./each_index.mjs";
 import { list_get } from "./list_get.mjs";
@@ -23,7 +24,8 @@ export function app_sleep_manual(context) {
       let b = html_button_width_full_text_click(root, name, () => {
         month_index = index;
       });
-      if (equal(left, right)) {
+      if (equal(index, month_index)) {
+        html_style_success();
       }
     });
   });
