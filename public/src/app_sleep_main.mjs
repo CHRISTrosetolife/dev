@@ -12,10 +12,10 @@ export function app_sleep_main(context) {
   app_sleep_record(context, "🌅 woke up", "wakeups");
   app_sleep_record(context, "🌙 sleep", "sleeps");
   html_button_width_full_text_click(
-    root,
     string_combine_multiple([emoji_add(), " add manual"]),
     () => {
       html_clear_scroll_top_context(context);
+      html_button_width_full_text_click();
     },
   );
   let result;
