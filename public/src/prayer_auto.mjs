@@ -8,6 +8,7 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each } from "./each.mjs";
 import { countries } from "./countries.mjs";
 export async function prayer_auto() {
+  let bible_folder = "engbsb";
   let chapters = await list_adder_async(async (la) => {
     await bible_books_chapter_each("engbsb", async (chapter_code) => {
       let chapter = await bible_chapter(bible_folder, chapter_code);
