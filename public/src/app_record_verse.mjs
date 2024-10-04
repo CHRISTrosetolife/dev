@@ -1,3 +1,4 @@
+import { bible_book_chapter_text } from "./bible_book_chapter_text.mjs";
 import { object_replace } from "./object_replace.mjs";
 import { app_record } from "./app_record.mjs";
 import { app_save_change } from "./app_save_change.mjs";
@@ -50,12 +51,7 @@ export async function app_record_verse(
   app_record_chapter_buttons(context, book_code);
   html_button_width_full_text_click(
     root,
-    string_combine_multiple([
-      "📖 chapter ",
-      bible_book_name(book_code),
-      " ",
-      chapter,
-    ]),
+    bible_book_chapter_text(book_code, chapter),
     async () => await app_record_chapter(context, book_code, chapter),
   );
   html_hr(root);
