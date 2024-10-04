@@ -17,7 +17,7 @@ export function app_list_choose(body) {
   let split = storage_local_get(app_list, "list");
   let chosen = storage_local_initialize(app_list, "chosen", {});
   html_button_width_full_text_click_hr(body, "items", () => {
-    ms=list_map_index(split, (line, index) => {
+    let ms = list_map_index(split, (line, index) => {
       return {
         choice: chosen[index],
         line,
@@ -50,3 +50,4 @@ export function app_list_choose(body) {
     });
     last = app_list_choice_update(index, b, last);
   });
+}
