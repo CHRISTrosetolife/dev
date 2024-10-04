@@ -2,6 +2,7 @@ import { sleep } from "./sleep.mjs";
 import { error } from "./error.mjs";
 export async function retry(retries, lambda, retry_if_lambda) {
   let delay = 10;
+  let errors = [];
   while (retries >= 1) {
     retries--;
     try {
