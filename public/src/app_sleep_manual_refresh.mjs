@@ -117,10 +117,10 @@ export function app_sleep_manual_refresh(context, parts) {
       now,
     );
     let month_path = app_sleep_month_path(year, month_padded);
-    let sleep_type = list_get(sleep_types);
+    let sleep_type = list_get(sleep_types, sleep_type_index);
     await app_sleep_save(
       today,
-      list_map_property(sleep_types, "list_name"),
+      object_property_get(object, "property_name"),
       now,
       month_path,
       data,
