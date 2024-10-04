@@ -1,3 +1,4 @@
+import { html_style_green } from "./html_style_green.mjs";
 import { equal } from "./equal.mjs";
 import { bible_book_chapter_text } from "./bible_book_chapter_text.mjs";
 import { object_replace } from "./object_replace.mjs";
@@ -65,6 +66,7 @@ export async function app_record_verse(
   );
   html_style_bold(vn);
   if (equal(verse_number, "1")) {
+    html_style_green(vn);
   }
   each(tokens, (token) => {
     html_spacer(root);
