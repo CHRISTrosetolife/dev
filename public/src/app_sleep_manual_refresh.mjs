@@ -1,3 +1,4 @@
+import { html_div } from "./html_div.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { app_sleep_sleeps } from "./app_sleep_sleeps.mjs";
 import { app_sleep_today_download_parts } from "./app_sleep_today_download_parts.mjs";
@@ -109,6 +110,7 @@ export function app_sleep_manual_refresh(context, parts) {
       object_property_set(parts, "sleep_type_index", sleep_type_index);
     },
   );
+  let result;
   html_button_width_full_text_click(root, app_sleep_manual_text(), async () => {
     now.setFullYear(year);
     now.setMonth(month_index);
@@ -132,6 +134,7 @@ export function app_sleep_manual_refresh(context, parts) {
       result,
     );
   });
+  result = html_div();
   function hours_compute() {
     ampm = list_get(ampms, ampm_index);
     hours_12 = list_get(hours_12_choices, hours_12_index);
