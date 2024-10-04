@@ -28,7 +28,7 @@ export async function prayer_auto() {
     let c_name = object_property_get(c, "name");
     let requests = ["bless", "save each person in"];
     let verbs = ["understand", "obey"];
-    list_adder((la) => {
+    let verse_requests = list_adder((la) => {
       each(verse_texts, (t) => {
         each(verbs, (verb) =>
           la(
@@ -45,7 +45,6 @@ export async function prayer_auto() {
         );
       });
     });
-    let verse_requests = list_map(verse_texts, (t) => {});
     each(list_concat(requests, verse_requests), (request) => {
       let prayer_body = string_combine_multiple([
         request,
