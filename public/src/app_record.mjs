@@ -19,7 +19,7 @@ export async function app_record() {
     context.mr = await html_recorder_media();
     await app_context_books_bible(context);
     let lookup = html_hash_lookup();
-    let save = app_save_get(app_fn);
+    let save = app_save_get(app_record);
     object_merge(lookup, save);
     let hash_book = object_property_get_or(lookup, "book", null);
     if (hash_book !== null) {
