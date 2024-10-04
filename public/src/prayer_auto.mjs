@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { bible_books_chapters } from "./bible_books_chapters.mjs";
 import { prayer_log } from "./prayer_log.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -6,6 +7,10 @@ import { each } from "./each.mjs";
 import { countries } from "./countries.mjs";
 export async function prayer_auto() {
   let chapters = await bible_books_chapters("engbsb");
+  log({
+    chapters,
+  });
+  return;
   let cs = countries();
   each(cs, (c) => {
     let requests = ["bless", "save each person in"];
