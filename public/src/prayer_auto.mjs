@@ -23,18 +23,18 @@ export async function prayer_auto() {
     list_join_space(object_property_get(v, "tokens")),
   );
   log(verse_texts);
-  let verse_requests = list_map(verse_texts, (t) =>
-    string_combine_multiple([
-      "let each person in the country of ",
-      name,
-      " understand and obey these words: ",
-      t,
-    ]),
-  );
   return;
   let cs = countries();
   each(cs, (c) => {
     let requests = ["bless", "save each person in"];
+    let verse_requests = list_map(verse_texts, (t) =>
+      string_combine_multiple([
+        "let each person in the country of ",
+        name,
+        " understand and obey these words: ",
+        t,
+      ]),
+    );
     each(requests, (request) => {
       let prayer_body = string_combine_multiple([
         request,
