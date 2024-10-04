@@ -20,7 +20,6 @@ export async function sandbox_3() {
   let urls = list_map(hrefs, (h) =>
     string_combine(prefix_url, string_prefix_without(h, prefix)),
   );
-  return urls;
   await each_async(urls, async (url) => {
     let location = await http_file(url);
     log({
