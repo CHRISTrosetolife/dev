@@ -11,6 +11,6 @@ export function app_record_chapter_buttons(context, book_code) {
   html_button_width_full_text_click(
     root,
     string_combine_multiple(["📖 book ", bible_book_name(book_code)]),
-    () => app_record_book(context, book_code),
+    async () => await app_record_book(context, book_code),
   );
 }
