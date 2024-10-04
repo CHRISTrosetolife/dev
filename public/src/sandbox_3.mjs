@@ -6,7 +6,6 @@ export async function sandbox_3() {
   let url = string_combine_multiple([prefix_url, "pt00.htm"]);
   let p = await http_cache_parse_parsed(url);
   let { root } = p;
-  let prefix = "../../mp3/";
-  let hrefs = html_parse_a_href_starts_with_hrefs(root, prefix);
+  let hrefs = html_parse_a_href_starts_with_hrefs(root, "../../mp3/");
   return hrefs;
 }
