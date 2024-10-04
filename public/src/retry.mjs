@@ -1,6 +1,7 @@
 import { sleep } from "./sleep.mjs";
 import { error } from "./error.mjs";
 import { list_add } from "./list_add.mjs";
+import { list_join_space } from "./list_join_space.mjs";
 export async function retry(retries, lambda, retry_if_lambda) {
   let delay = 10;
   let errors = [];
@@ -18,5 +19,5 @@ export async function retry(retries, lambda, retry_if_lambda) {
       throw e;
     }
   }
-  error("no retries left");
+  error("no retries left: ", list_join_space(errors));
 }
