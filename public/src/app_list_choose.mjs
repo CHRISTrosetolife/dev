@@ -55,4 +55,5 @@ export function app_list_choose(body) {
       last = app_list_choice_update(index, b, last);
     });
     last = app_list_choice_update(index, b, last);
-  })
+  });
+}
