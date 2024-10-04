@@ -16,6 +16,17 @@ export function app_list_choose(body) {
   let split = storage_local_get(app_list, "list");
   let chosen = storage_local_initialize(app_list, "chosen", {});
   html_button_width_full_text_click_hr(body, "items", () => {
+    each_index(split, (line, index) => {
+      let b = html_button_width_full_text_click(body, line, () => {
+        chosen[index] = !chosen[index];
+        storage_local_set(app_list, "chosen", chosen);
+        log({
+          c: storage_local_get(app_list, "chosen"),
+        });
+        let last = app_list_choice_update(index, b, last);
+      });
+      let last = app_list_choice_update(index, b, last);
+    });
     navigator.clipboard.writeText();
   });
   let last = null;
