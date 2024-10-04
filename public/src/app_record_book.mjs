@@ -1,3 +1,4 @@
+import { html_p_text } from "./html_p_text.mjs";
 import { object_replace } from "./object_replace.mjs";
 import { app_record } from "./app_record.mjs";
 import { app_save_change } from "./app_save_change.mjs";
@@ -12,6 +13,7 @@ export async function app_record_book(context, book_code) {
   );
   let lambda_top = () => {
     app_record_home_button(context);
+    html_p_text(book_code);
   };
   let app_record_book_on_click = app_record_chapter;
   app_record_book_generic(
