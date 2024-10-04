@@ -1,3 +1,4 @@
+import { list_map_index } from "./list_map_index.mjs";
 import { html_button_width_full_text_click_hr } from "./html_button_width_full_text_click_hr.mjs";
 import { app_list_choice_update } from "./app_list_choice_update.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
@@ -16,7 +17,7 @@ export function app_list_choose(body) {
   let split = storage_local_get(app_list, "list");
   let chosen = storage_local_initialize(app_list, "chosen", {});
   html_button_width_full_text_click_hr(body, "items", () => {
-    each_index(split, (line, index) => {
+    list_map_index(split, (line, index) => {
       let b = html_button_width_full_text_click(body, line, () => {
         chosen[index] = !chosen[index];
         storage_local_set(app_list, "chosen", chosen);
