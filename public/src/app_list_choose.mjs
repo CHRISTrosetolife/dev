@@ -23,7 +23,7 @@ export function app_list_choose(body) {
   html_button_width_full_text_click_hr(body, "items", () => {
     let ms = list_map_index(split, (line, index) => {
       return {
-        choice: chosen[index],
+        choice: chosen[index] || false,
         line,
       };
     });
