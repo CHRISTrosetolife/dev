@@ -111,7 +111,9 @@ export async function app_ceb_upload() {
         }
       }
     });
-    groups = list_take(groups, 4);
+    if (false) {
+      groups = list_take(groups, 4);
+    }
     await app_language_group_upload(profile, "index", {
       groups: list_map(groups, (g) => ({
         first: list_first_nested(g),
