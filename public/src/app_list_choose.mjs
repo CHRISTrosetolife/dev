@@ -1,3 +1,4 @@
+import { clipboard_copy_web } from "./clipboard_copy_web.mjs";
 import { list_join_comma } from "./list_join_comma.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { list_map_index } from "./list_map_index.mjs";
@@ -29,7 +30,7 @@ export function app_list_choose(body) {
     let f = list_filter_property(ms, "choice");
     let ms2 = list_map_property(f, "line");
     let text = list_join_comma(ms2);
-    navigator.clipboard.writeText(text);
+    clipboard_copy_web(text);
   });
   let last = null;
   html_button_width_full_text_click_hr(body, "scroll", () => {
