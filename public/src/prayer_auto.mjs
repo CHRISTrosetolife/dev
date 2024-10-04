@@ -6,6 +6,7 @@ import { countries } from "./countries.mjs";
 export function prayer_auto() {
   let cs = countries();
   each(cs, (c) => {
+    let request = "bless";
     let prayer_body = string_combine_multiple([
       "bless",
       " the country of ",
