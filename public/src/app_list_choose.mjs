@@ -14,7 +14,8 @@ import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered
 export function app_list_choose(body) {
   html_clear_scroll_top_centered(body);
   let lambda = () => {};
-  html_button_width_full_text_click(body, "scroll", lambda);
+  let text = "scroll";
+  html_button_width_full_text_click(body, text, lambda);
   html_hr(body);
   let last = null;
   html_button_width_full_text_click(body, "scroll", () => {
