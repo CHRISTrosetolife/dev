@@ -1,3 +1,5 @@
+import { app_record } from "./app_record.mjs";
+import { app_save_change } from "./app_save_change.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { list_single } from "./list_single.mjs";
@@ -37,6 +39,7 @@ export async function app_record_verse(
   verse_number,
 ) {
   let { root } = context;
+  await app_save_change(app_record);
   app_record_chapter_buttons(context, book_code);
   html_button_width_full_text_click(
     root,
