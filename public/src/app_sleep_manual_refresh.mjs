@@ -98,11 +98,13 @@ export function app_sleep_manual_refresh(context, parts) {
     await app_sleep_save(today, list_name, now, month_path, data, result);
   });
   let sleep_type_index = object_property_get(parts, "sleep_type_index");
-  [
+  let sleep_types = [
     {
+      label: app_sleep_woke_up(),
       list_name: app_sleep_wakeups(),
     },
     {
+      label: app_sleep_wakeups(),
       list_name: app_sleep_sleeps(),
     },
   ];
