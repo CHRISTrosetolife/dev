@@ -16,10 +16,8 @@ export async function prayer_auto() {
       la(verses);
     });
   });
-  let verses = list_denest(verses);
-  log({
-    chapters,
-  });
+  let verses = list_denest(chapters);
+  log(verses);
   return;
   let cs = countries();
   each(cs, (c) => {
