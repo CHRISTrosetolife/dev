@@ -1,3 +1,4 @@
+import { html_style_green } from "./html_style_green.mjs";
 import { list_size } from "./list_size.mjs";
 import { html_spaced_tokens } from "./html_spaced_tokens.mjs";
 import { html_div } from "./html_div.mjs";
@@ -67,9 +68,3 @@ export function app_bible() {
     });
   }
 }
-function html_style_green(second) {
-    html_style(second, {
-        color: "green",
-    });
-}
-
