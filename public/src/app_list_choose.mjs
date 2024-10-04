@@ -16,7 +16,7 @@ export function app_list_choose(body) {
   let lambda = () => {};
   let text = "scroll";
   let parent = body;
-  html_button_width_full_text_click(body, text, lambda);
+  html_button_width_full_text_click(parent, text, lambda);
   html_hr(body);
   let last = null;
   html_button_width_full_text_click(body, "scroll", () => {
