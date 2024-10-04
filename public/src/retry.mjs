@@ -1,5 +1,6 @@
 import { sleep } from "./sleep.mjs";
 import { error } from "./error.mjs";
+import { list_add } from "./list_add.mjs";
 export async function retry(retries, lambda, retry_if_lambda) {
   let delay = 10;
   let errors = [];
@@ -11,6 +12,7 @@ export async function retry(retries, lambda, retry_if_lambda) {
       if (retry_if_lambda(e)) {
         await sleep(delay * 1000);
         delay *= 2;
+        list_add(errors, e);
         continue;
       }
       throw e;
