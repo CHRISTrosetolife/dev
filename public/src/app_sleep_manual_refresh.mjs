@@ -88,24 +88,6 @@ export function app_sleep_manual_refresh(context, parts) {
     );
     refresh();
   });
-  html_button_width_full_text_click(root, app_sleep_manual_text(), async () => {
-    let { today, data } = await app_sleep_today_download_parts(
-      year,
-      month_padded,
-      day,
-      now,
-    );
-    let month_path = app_sleep_month_path(year, month_padded);
-    let sleep_type = list_get(sleep_types);
-    await app_sleep_save(
-      today,
-      list_map_property(sleep_types, "list_name"),
-      now,
-      month_path,
-      data,
-      result,
-    );
-  });
   let sleep_type_index = object_property_get(parts, "sleep_type_index");
   let sleep_types = [
     {
@@ -127,6 +109,24 @@ export function app_sleep_manual_refresh(context, parts) {
       object_property_set(parts, "sleep_type_index", sleep_type_index);
     },
   );
+  html_button_width_full_text_click(root, app_sleep_manual_text(), async () => {
+    let { today, data } = await app_sleep_today_download_parts(
+      year,
+      month_padded,
+      day,
+      now,
+    );
+    let month_path = app_sleep_month_path(year, month_padded);
+    let sleep_type = list_get(sleep_types);
+    await app_sleep_save(
+      today,
+      list_map_property(sleep_types, "list_name"),
+      now,
+      month_path,
+      data,
+      result,
+    );
+  });
   function hours_compute() {
     ampm = list_get(ampms, ampm_index);
     hours_12 = list_get(hours_12_choices, hours_12_index);
