@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { html_div } from "./html_div.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { app_sleep_sleeps } from "./app_sleep_sleeps.mjs";
@@ -117,6 +118,10 @@ export function app_sleep_manual_refresh(context, parts) {
     now.setDate(day);
     now.setHours(day);
     now.setMinutes(minutes);
+    log({
+      now,
+    });
+    return;
     let { today, data } = await app_sleep_today_download_parts(
       year,
       month_padded,
