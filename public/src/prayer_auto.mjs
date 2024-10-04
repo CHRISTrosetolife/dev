@@ -6,15 +6,10 @@ import { countries } from "./countries.mjs";
 export function prayer_auto() {
   let cs = countries();
   each(cs, (c) => {
-    log(
-      string_combine_multiple([
-        "God ",
-        string_combine_multiple([
-          "bless the country of ",
-          object_property_get(c, "name"),
-        ]),
-        " amen",
-      ]),
-    );
+    let prayer_body = string_combine_multiple([
+      "bless the country of ",
+      object_property_get(c, "name"),
+    ]);
+    log(string_combine_multiple(["God ", prayer_body, " amen"]));
   });
 }
