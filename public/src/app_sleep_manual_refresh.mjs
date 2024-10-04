@@ -1,3 +1,4 @@
+import { list_map_property } from "./list_map_property.mjs";
 import { app_sleep_sleeps } from "./app_sleep_sleeps.mjs";
 import { app_sleep_today_download_parts } from "./app_sleep_today_download_parts.mjs";
 import { app_sleep_month_path } from "./app_sleep_month_path.mjs";
@@ -110,7 +111,7 @@ export function app_sleep_manual_refresh(context, parts) {
   ];
   html_list_chooser(
     root,
-    [app_sleep_woke_up(), app_sleep_wakeups()],
+    list_map_property(sleep_types, "label"),
     sleep_type_index,
     refresh,
     (value) => {
