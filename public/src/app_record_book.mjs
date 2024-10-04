@@ -16,7 +16,7 @@ export async function app_record_book(context, book_code) {
   let lambda_top = () => {
     app_record_home_button(context);
     let { root } = context;
-    let b = html_p_text(root, string_combine_multiple([book_code]));
+    let b = html_p_text(root, string_combine_multiple(["book ", book_code]));
     html_style_centered(b);
   };
   let app_record_book_on_click = app_record_chapter;
