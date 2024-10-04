@@ -15,6 +15,7 @@ export function app_list_choose(body) {
   html_clear_scroll_top_centered(body);
   let lambda = () => {};
   let text = "scroll";
+  let parent = body;
   html_button_width_full_text_click(body, text, lambda);
   html_hr(body);
   let last = null;
