@@ -98,7 +98,14 @@ export function app_sleep_manual_refresh(context, parts) {
     await app_sleep_save(today, list_name, now, month_path, data, result);
   });
   let sleep_type_index = object_property_get(parts, "sleep_type_index");
-  [app_sleep_wakeups(), app_sleep_sleeps()];
+  [
+    {
+      list_name: app_sleep_wakeups(),
+    },
+    {
+      list_name: app_sleep_sleeps(),
+    },
+  ];
   html_list_chooser(
     root,
     [app_sleep_woke_up(), app_sleep_wakeups()],
