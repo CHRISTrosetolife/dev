@@ -1,3 +1,4 @@
+import { equal } from "./equal.mjs";
 import { bible_book_chapter_text } from "./bible_book_chapter_text.mjs";
 import { object_replace } from "./object_replace.mjs";
 import { app_record } from "./app_record.mjs";
@@ -63,6 +64,8 @@ export async function app_record_verse(
     bible_reference(bible_book_name(book_code), chapter, verse_number),
   );
   html_style_bold(vn);
+  if (equal(left, right)) {
+  }
   each(tokens, (token) => {
     html_spacer(root);
     let mapped = bible_search_symbols_map([token]);
