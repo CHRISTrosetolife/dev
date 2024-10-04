@@ -31,6 +31,9 @@ import { object_property_initialize } from "./object_property_initialize.mjs";
 export function app_sleep_manual_refresh(context, parts) {
   let { year, month_index, month_name, month_padded, hours, minutes, now } =
     parts;
+  log({
+    now,
+  });
   let { root } = context;
   html_clear_scroll_top_context(context);
   html_button_width_full_text_click_back(root, () => app_sleep_main(context));
