@@ -2,7 +2,6 @@ import { html_button_width_full_text_click_hr } from "./html_button_width_full_t
 import { app_list_choice_update } from "./app_list_choice_update.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
 import { html_scroll_center } from "./html_scroll_center.mjs";
-import { html_hr } from "./html_hr.mjs";
 import { app_list_root } from "./app_list_root.mjs";
 import { storage_local_remove } from "./storage_local_remove.mjs";
 import { log } from "./log.mjs";
@@ -19,18 +18,16 @@ export function app_list_choose(body) {
   let parent = body;
   html_button_width_full_text_click_hr(parent, text, lambda);
   let last = null;
-  html_button_width_full_text_click(body, "scroll", () => {
+  html_button_width_full_text_click_hr(body, "scroll", () => {
     if (last === null) {
       return;
     }
     html_scroll_center(last);
   });
-  html_hr(body);
-  html_button_width_full_text_click(body, "clear list", () => {
+  html_button_width_full_text_click_hr(body, "clear list", () => {
     storage_local_remove(app_list, "list");
     app_list_root(body);
   });
-  html_hr(body);
   let split = storage_local_get(app_list, "list");
   let chosen = storage_local_initialize(app_list, "chosen", {});
   log({
