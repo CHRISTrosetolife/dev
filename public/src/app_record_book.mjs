@@ -15,8 +15,7 @@ export async function app_record_book(context, book_code) {
   let lambda_top = () => {
     app_record_home_button(context);
     let { root } = context;
-    let text = bible_book_name_text(book_code);
-    html_p_text_centered(root, text);
+    html_p_text_centered(root, bible_book_name_text(book_code));
   };
   let app_record_book_on_click = app_record_chapter;
   app_record_book_generic(
