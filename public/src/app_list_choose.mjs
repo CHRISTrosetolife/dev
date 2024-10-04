@@ -13,6 +13,8 @@ import { storage_local_get } from "./storage_local_get.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 export function app_list_choose(body) {
   html_clear_scroll_top_centered(body);
+  let split = storage_local_get(app_list, "list");
+  let chosen = storage_local_initialize(app_list, "chosen", {});
   html_button_width_full_text_click_hr(body, "items", () => {
     navigator.clipboard.writeText();
   });
@@ -27,8 +29,6 @@ export function app_list_choose(body) {
     storage_local_remove(app_list, "list");
     app_list_root(body);
   });
-  let split = storage_local_get(app_list, "list");
-  let chosen = storage_local_initialize(app_list, "chosen", {});
   log({
     chosen,
   });
