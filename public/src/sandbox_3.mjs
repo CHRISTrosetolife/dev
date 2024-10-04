@@ -10,6 +10,6 @@ export async function sandbox_3() {
   let p = await http_cache_parse_parsed(url);
   let { root } = p;
   let links = html_parse_a_href_starts_with(root, "../../mp3/");
-  list_map(links, html_parse_href);
+  let hrefs = list_map(links, html_parse_href);
   return list_size(links);
 }
