@@ -7,10 +7,10 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each } from "./each.mjs";
 import { countries } from "./countries.mjs";
 export async function prayer_auto() {
-  await list_adder_async(async (la) => {
+  let chapters = await list_adder_async(async (la) => {
     await bible_books_chapter_each("engbsb", la);
   });
-  let chapters = log({
+  log({
     chapters,
   });
   return;
