@@ -12,7 +12,7 @@ export async function sandbox_3() {
   let p = await http_cache_parse_parsed(url);
   let { root } = p;
   let hrefs = html_parse_a_href_starts_with_hrefs(root, "../../mp3/");
-  let urls = list_map(hrefs, (h) => string_combine(url, h));
+  let urls = list_map(hrefs, (h) => string_combine(prefix_url, h));
   await each_async(urls, async (url) => {
     let location = await http_file(url);
     log({
