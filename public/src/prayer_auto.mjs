@@ -7,6 +7,7 @@ export function prayer_auto() {
   let cs = countries();
   each(cs, (c) => {
     let requests = ["bless", "save each person in"];
+    each(list, (item) => {});
     let request = "bless";
     let prayer_body = string_combine_multiple([
       request,
