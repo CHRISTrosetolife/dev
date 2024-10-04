@@ -1,3 +1,4 @@
+import { list_join_comma } from "./list_join_comma.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { list_map_index } from "./list_map_index.mjs";
 import { html_button_width_full_text_click_hr } from "./html_button_width_full_text_click_hr.mjs";
@@ -27,7 +28,8 @@ export function app_list_choose(body) {
     });
     let f = list_filter_property(ms, "choice");
     let ms2 = list_map_property(f, "line");
-    navigator.clipboard.writeText();
+    let text = list_join_comma(ms2);
+    navigator.clipboard.writeText(text);
   });
   let last = null;
   html_button_width_full_text_click_hr(body, "scroll", () => {
@@ -53,5 +55,4 @@ export function app_list_choose(body) {
       last = app_list_choice_update(index, b, last);
     });
     last = app_list_choice_update(index, b, last);
-  });
-}
+  })
