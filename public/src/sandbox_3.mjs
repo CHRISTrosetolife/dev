@@ -1,3 +1,4 @@
+import { http_file } from "./http_file.mjs";
 import { each_async } from "./each_async.mjs";
 import { list_map } from "./list_map.mjs";
 import { html_parse_a_href_starts_with_hrefs } from "./html_parse_a_href_starts_with_hrefs.mjs";
@@ -11,6 +12,8 @@ export async function sandbox_3() {
   let { root } = p;
   let hrefs = html_parse_a_href_starts_with_hrefs(root, "../../mp3/");
   let urls = list_map(hrefs, (h) => string_combine(url, h));
-  await each_async(list, async (item) => {});
+  await each_async(urls, async (url) => {
+    await http_file();
+  });
   return hrefs;
 }
