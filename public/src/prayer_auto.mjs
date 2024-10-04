@@ -7,7 +7,8 @@ export function prayer_auto() {
   let cs = countries();
   each(cs, (c) => {
     let prayer_body = string_combine_multiple([
-      "bless the country of ",
+      "bless",
+      " the country of ",
       object_property_get(c, "name"),
     ]);
     prayer_log(prayer_body);
