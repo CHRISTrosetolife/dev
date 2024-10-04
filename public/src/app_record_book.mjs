@@ -16,7 +16,7 @@ export async function app_record_book(context, book_code) {
     app_record_home_button(context);
     let { root } = context;
     let b = html_p_text(root, book_code);
-    html_style_centered(p);
+    html_style_centered(b);
   };
   let app_record_book_on_click = app_record_chapter;
   app_record_book_generic(
