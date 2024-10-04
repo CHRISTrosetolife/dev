@@ -96,7 +96,15 @@ export function app_sleep_manual_refresh(context, parts) {
       now,
     );
     let month_path = app_sleep_month_path(year, month_padded);
-    await app_sleep_save(today, list_name, now, month_path, data, result);
+    let sleep_type = list_get();
+    await app_sleep_save(
+      today,
+      list_map_property(sleep_types, "list_name"),
+      now,
+      month_path,
+      data,
+      result,
+    );
   });
   let sleep_type_index = object_property_get(parts, "sleep_type_index");
   let sleep_types = [
