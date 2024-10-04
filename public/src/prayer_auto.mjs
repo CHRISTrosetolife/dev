@@ -30,7 +30,17 @@ export async function prayer_auto() {
     let verbs = ["understand", "obey"];
     list_adder((la) => {
       each(verse_texts, (t) => {
-        each(list, (item) => {});
+        each(verbs, (verb) =>
+          la(
+            string_combine_multiple([
+              "let each person in the country of ",
+              c_name,
+              " understand and obey these words: `",
+              t,
+              "`",
+            ]),
+          ),
+        );
       });
     });
     let verse_requests = list_map(verse_texts, (t) => {});
