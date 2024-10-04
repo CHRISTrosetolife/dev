@@ -1,3 +1,4 @@
+import { path_resolve } from "./path_resolve.mjs";
 import { log } from "./log.mjs";
 import { http_file } from "./http_file.mjs";
 import { each_async } from "./each_async.mjs";
@@ -12,7 +13,11 @@ export async function sandbox_3() {
   let p = await http_cache_parse_parsed(url);
   let { root } = p;
   let hrefs = html_parse_a_href_starts_with_hrefs(root, "../../mp3/");
-  let urls = list_map(hrefs, (h) => string_combine(prefix_url, h));
+  let urls = list_map(
+    hrefs,
+    async (h) => await path_resolve(string_combine(prefix_url, h)),
+  );
+  return urls;
   await each_async(urls, async (url) => {
     let location = await http_file(url);
     log({
