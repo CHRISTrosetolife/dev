@@ -111,7 +111,9 @@ export function app_sleep_manual_refresh(context, parts) {
   );
   html_button_width_full_text_click(root, app_sleep_manual_text(), async () => {
     now.setMonth(month_index);
-    now.setDate();
+    now.setDate(day);
+    now.setHours(day);
+    now.setMinutes(minutes);
     let { today, data } = await app_sleep_today_download_parts(
       year,
       month_padded,
