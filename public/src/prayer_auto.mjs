@@ -1,3 +1,4 @@
+import { list_denest } from "./list_denest.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
 import { list_adder_async } from "./list_adder_async.mjs";
 import { bible_books_chapter_each } from "./bible_books_chapter_each.mjs";
@@ -15,6 +16,7 @@ export async function prayer_auto() {
       la(verses);
     });
   });
+  let verses = list_denest(verses);
   log({
     chapters,
   });
