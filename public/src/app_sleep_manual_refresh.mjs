@@ -134,7 +134,7 @@ export function app_sleep_manual_refresh(context, parts) {
       result,
     );
   });
-  result = html_div();
+  result = html_div(root);
   function hours_compute() {
     ampm = list_get(ampms, ampm_index);
     hours_12 = list_get(hours_12_choices, hours_12_index);
