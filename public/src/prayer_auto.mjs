@@ -23,13 +23,13 @@ export async function prayer_auto() {
     list_join_space(object_property_get(v, "tokens")),
   );
   log(verse_texts);
-  let verse_requests = list_map(
-    verse_texts,
-    (t) => $s,
-    "let each person in the country of ",
-    name,
-    " understand and obey these words: ",
-    t,
+  let verse_requests = list_map(verse_texts, (t) =>
+    string_combine_multiple([
+      "let each person in the country of ",
+      name,
+      " understand and obey these words: ",
+      t,
+    ]),
   );
   return;
   let cs = countries();
