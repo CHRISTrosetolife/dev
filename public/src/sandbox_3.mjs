@@ -4,5 +4,5 @@ export async function sandbox_3() {
   let url = "https://mechon-mamre.org/p/pt/pt00.htm";
   let p = await http_cache_parse_parsed(url);
   let { root } = p;
-  return html_parse_a_href_starts_with(root, "../../mp3/");
+  let links = html_parse_a_href_starts_with(root, "../../mp3/");
 }
