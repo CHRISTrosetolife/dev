@@ -1,3 +1,4 @@
+import { list_map_property } from "./list_map_property.mjs";
 import { list_map_index } from "./list_map_index.mjs";
 import { html_button_width_full_text_click_hr } from "./html_button_width_full_text_click_hr.mjs";
 import { app_list_choice_update } from "./app_list_choice_update.mjs";
@@ -25,6 +26,7 @@ export function app_list_choose(body) {
       };
     });
     let f = list_filter_property(ms, "choice");
+    let ms2 = list_map_property(f, "line");
     navigator.clipboard.writeText();
   });
   let last = null;
