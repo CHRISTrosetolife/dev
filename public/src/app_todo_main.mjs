@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { app_todo_completed_view } from "./app_todo_completed_view.mjs";
 import { list_add } from "./list_add.mjs";
 import { app_todo_item_name } from "./app_todo_item_name.mjs";
@@ -47,6 +48,9 @@ export function app_todo_main(context) {
     function on_complete(value) {
       let items = app_todo_items(context);
       list_add(items, app_todo_item(value));
+      log({
+        items,
+      });
     },
     function on_save() {
       app_todo_main(context);
