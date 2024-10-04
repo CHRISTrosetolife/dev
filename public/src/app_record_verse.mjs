@@ -64,7 +64,7 @@ export async function app_record_verse(
     bible_reference(bible_book_name(book_code), chapter, verse_number),
   );
   html_style_bold(vn);
-  if (equal(left, right)) {
+  if (equal(verse_number, "1")) {
   }
   each(tokens, (token) => {
     html_spacer(root);
