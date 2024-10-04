@@ -13,12 +13,8 @@ import { storage_local_get } from "./storage_local_get.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 export function app_list_choose(body) {
   html_clear_scroll_top_centered(body);
-  html_button_width_full_text_click(body, "scroll", () => {
-    if (last === null) {
-      return;
-    }
-    html_scroll_center(last);
-  });
+  let lambda = () => {};
+  html_button_width_full_text_click(body, "scroll", lambda);
   html_hr(body);
   let last = null;
   html_button_width_full_text_click(body, "scroll", () => {
