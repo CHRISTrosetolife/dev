@@ -4,7 +4,6 @@ import { list_denest } from "./list_denest.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
 import { list_adder_async } from "./list_adder_async.mjs";
 import { bible_books_chapter_each } from "./bible_books_chapter_each.mjs";
-import { log } from "./log.mjs";
 import { prayer_log } from "./prayer_log.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -22,8 +21,6 @@ export async function prayer_auto() {
   let verse_texts = list_map(verses, (v) =>
     list_join_space(object_property_get(v, "tokens")),
   );
-  log(verse_texts);
-  return;
   let cs = countries();
   each(cs, (c) => {
     let requests = ["bless", "save each person in"];
@@ -36,10 +33,11 @@ export async function prayer_auto() {
       ]),
     );
     each(requests, (request) => {
+      let c_name = object_property_get(c, "name");
       let prayer_body = string_combine_multiple([
         request,
         " the country of ",
-        object_property_get(c, "name"),
+        c_name,
       ]);
       prayer_log(prayer_body);
     });
