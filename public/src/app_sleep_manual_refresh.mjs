@@ -1,3 +1,4 @@
+import { app_sleep_sleep } from "./app_sleep_sleep.mjs";
 import { log } from "./log.mjs";
 import { html_div } from "./html_div.mjs";
 import { list_map_property } from "./list_map_property.mjs";
@@ -26,6 +27,7 @@ import { app_sleep_main } from "./app_sleep_main.mjs";
 import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
 import { html_clear_scroll_top_context } from "./html_clear_scroll_top_context.mjs";
 import { list_get } from "./list_get.mjs";
+import { object_property_initialize } from "./object_property_initialize.mjs";
 export function app_sleep_manual_refresh(context, parts) {
   let { year, month_index, month_name, month_padded, hours, minutes, now } =
     parts;
@@ -90,14 +92,18 @@ export function app_sleep_manual_refresh(context, parts) {
     );
     refresh();
   });
-  let sleep_type_index = object_property_get(parts, "sleep_type_index");
+  let sleep_type_index = object_property_initialize(
+    parts,
+    "sleep_type_index",
+    0,
+  );
   let sleep_types = [
     {
       label: app_sleep_woke_up(),
       list_name: app_sleep_wakeups(),
     },
     {
-      label: app_sleep_wakeups(),
+      label: app_sleep_sleep(),
       list_name: app_sleep_sleeps(),
     },
   ];
