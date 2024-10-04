@@ -87,7 +87,7 @@ export function app_sleep_manual_refresh(context, parts) {
     refresh();
   });
   html_button_width_full_text_click(root, app_sleep_manual_text(), async () => {
-    let { today, now, data } = await app_sleep_today_download_parts(
+    let { today, data } = await app_sleep_today_download_parts(
       year,
       month_padded,
       day,
