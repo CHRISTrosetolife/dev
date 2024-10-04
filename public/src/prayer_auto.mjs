@@ -1,3 +1,5 @@
+import { list_join_space } from "./list_join_space.mjs";
+import { list_map } from "./list_map.mjs";
 import { list_denest } from "./list_denest.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
 import { list_adder_async } from "./list_adder_async.mjs";
@@ -17,6 +19,9 @@ export async function prayer_auto() {
     });
   });
   let verses = list_denest(chapters);
+  let verse_texts = list_map(verses, (v) =>
+    list_join_space(object_property_get(object, "property_name")),
+  );
   log(verses);
   return;
   let cs = countries();
