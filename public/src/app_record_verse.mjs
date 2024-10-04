@@ -39,7 +39,6 @@ export async function app_record_verse(
   chapter,
   verse_number,
 ) {
-  let { root } = context;
   await app_save_change(app_record, (save) =>
     object_replace(save, {
       book: book_code,
@@ -47,6 +46,7 @@ export async function app_record_verse(
       verse: verse_number,
     }),
   );
+  let { root } = context;
   app_record_chapter_buttons(context, book_code);
   html_button_width_full_text_click(
     root,
