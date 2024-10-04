@@ -8,7 +8,7 @@ import { each } from "./each.mjs";
 import { countries } from "./countries.mjs";
 export async function prayer_auto() {
   let chapters = await list_adder_async(async (la) => {
-    await bible_books_chapter_each("engbsb", la);
+    await bible_books_chapter_each("engbsb", (chapter_code) => {});
   });
   log({
     chapters,
