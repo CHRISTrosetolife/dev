@@ -8,8 +8,6 @@ export async function app_record_book(context, book_code) {
   await app_save_change(app_record, (save) =>
     object_replace(save, {
       book: book_code,
-      chapter,
-      verse: verse_number,
     }),
   );
   let lambda_top = () => app_record_home_button(context);
