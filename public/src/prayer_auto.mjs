@@ -20,9 +20,9 @@ export async function prayer_auto() {
   });
   let verses = list_denest(chapters);
   let verse_texts = list_map(verses, (v) =>
-    list_join_space(object_property_get(object, "property_name")),
+    list_join_space(object_property_get(v, "tokens")),
   );
-  log(verses);
+  log(verse_texts);
   return;
   let cs = countries();
   each(cs, (c) => {
