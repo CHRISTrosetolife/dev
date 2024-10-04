@@ -32,7 +32,7 @@ export async function app_record() {
           await app_record_chapter(context, hash_book, hash_chapter);
         }
       } else {
-        app_record_book(context, hash_book);
+        await app_record_book(context, hash_book);
       }
     } else {
       app_record_home(context);
