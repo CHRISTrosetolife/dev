@@ -8,7 +8,8 @@ export function prayer_auto() {
   each(cs, (c) => {
     log(
       string_combine_multiple([
-        "God bless the country of ",
+        "God ",
+        "bless the country of ",
         object_property_get(c, "name"),
         " amen",
       ]),
