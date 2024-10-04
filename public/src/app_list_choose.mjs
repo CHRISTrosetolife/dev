@@ -27,7 +27,7 @@ export function app_list_choose(body) {
         line,
       };
     });
-    let f = list_filter_property(ms, "choice");
+    let f = list_filter_property(ms, "choice", true);
     let ms2 = list_map_property(f, "line");
     let text = list_join_comma(ms2);
     log({
