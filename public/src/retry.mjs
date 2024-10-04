@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { sleep } from "./sleep.mjs";
 import { error } from "./error.mjs";
 import { list_add } from "./list_add.mjs";
@@ -19,5 +20,7 @@ export async function retry(retries, lambda, retry_if_lambda) {
       throw e;
     }
   }
-  error("no retries left: ", list_join_space(errors));
+  error(
+    string_combine_multiple(["no retries left: ", list_join_space(errors)]),
+  );
 }
