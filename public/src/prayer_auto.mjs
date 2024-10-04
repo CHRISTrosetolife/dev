@@ -10,7 +10,7 @@ import { countries } from "./countries.mjs";
 export async function prayer_auto() {
   let chapters = await list_adder_async(async (la) => {
     await bible_books_chapter_each("engbsb", async (chapter_code) => {
-      await bible_chapter();
+      await bible_chapter(bible_folder, chapter_code);
     });
   });
   log({
