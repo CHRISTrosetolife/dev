@@ -5,7 +5,7 @@ export function list_denest_recursive(list, la) {
     if (list_is(item)) {
       list_denest_recursive(item, la);
     } else {
+      la(item);
     }
-    la(item);
   });
 }
