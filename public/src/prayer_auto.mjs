@@ -1,3 +1,4 @@
+import { bible_chapter } from "./bible_chapter.mjs";
 import { list_adder_async } from "./list_adder_async.mjs";
 import { bible_books_chapter_each } from "./bible_books_chapter_each.mjs";
 import { log } from "./log.mjs";
@@ -8,7 +9,9 @@ import { each } from "./each.mjs";
 import { countries } from "./countries.mjs";
 export async function prayer_auto() {
   let chapters = await list_adder_async(async (la) => {
-    await bible_books_chapter_each("engbsb", (chapter_code) => {});
+    await bible_books_chapter_each("engbsb", async (chapter_code) => {
+      await bible_chapter();
+    });
   });
   log({
     chapters,
