@@ -1,3 +1,4 @@
+import { app_save_get } from "./app_save_get.mjs";
 import { html_style_a_plain } from "./html_style_a_plain.mjs";
 import { app_firebase } from "./app_firebase.mjs";
 import { app_context_books_bible } from "./app_context_books_bible.mjs";
@@ -17,6 +18,7 @@ export async function app_record() {
     context.mr = await html_recorder_media();
     await app_context_books_bible(context);
     let lookup = html_hash_lookup();
+    let save = app_save_get(app_fn);
     let hash_book = object_property_get_or(lookup, "book", null);
     if (hash_book !== null) {
       let hash_chapter = object_property_get_or(lookup, "chapter", null);
