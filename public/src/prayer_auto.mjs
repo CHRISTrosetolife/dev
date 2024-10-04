@@ -19,6 +19,10 @@ export async function prayer_auto() {
     });
   });
   let verses = list_denest(chapters);
+  log({
+    verses,
+  });
+  return;
   let verse_texts = list_map(verses, (v) =>
     list_join_space(object_property_get(v, "tokens")),
   );
