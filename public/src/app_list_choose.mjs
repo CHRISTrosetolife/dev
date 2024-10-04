@@ -12,6 +12,7 @@ import { html_button_width_full_text_click } from "./html_button_width_full_text
 import { app_list } from "./app_list.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
+import { list_filter_property } from "./list_filter_property.mjs";
 export function app_list_choose(body) {
   html_clear_scroll_top_centered(body);
   let split = storage_local_get(app_list, "list");
@@ -23,6 +24,7 @@ export function app_list_choose(body) {
         line,
       };
     });
+    let f = list_filter_property(ms, "choice");
     navigator.clipboard.writeText();
   });
   let last = null;
