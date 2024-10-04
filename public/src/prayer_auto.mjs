@@ -11,8 +11,8 @@ export async function prayer_auto() {
   let bible_folder = "engbsb";
   let chapters = await list_adder_async(async (la) => {
     await bible_books_chapter_each(bible_folder, async (chapter_code) => {
-      let chapter = await bible_chapter(bible_folder, chapter_code);
-      la(chapter);
+      let verses = await bible_chapter(bible_folder, chapter_code);
+      la(verses);
     });
   });
   log({
