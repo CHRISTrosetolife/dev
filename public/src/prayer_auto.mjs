@@ -9,8 +9,10 @@ export function prayer_auto() {
     log(
       string_combine_multiple([
         "God ",
-        "bless the country of ",
-        object_property_get(c, "name"),
+        string_combine_multiple([
+          "bless the country of ",
+          object_property_get(c, "name"),
+        ]),
         " amen",
       ]),
     );
