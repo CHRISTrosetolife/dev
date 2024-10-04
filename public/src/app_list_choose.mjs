@@ -13,10 +13,7 @@ import { storage_local_get } from "./storage_local_get.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 export function app_list_choose(body) {
   html_clear_scroll_top_centered(body);
-  let lambda = () => {};
-  let text = "scroll";
-  let parent = body;
-  html_button_width_full_text_click_hr(parent, text, lambda);
+  html_button_width_full_text_click_hr(body, "items", lambda);
   let last = null;
   html_button_width_full_text_click_hr(body, "scroll", () => {
     if (last === null) {
