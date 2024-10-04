@@ -1,3 +1,4 @@
+import { list_adder } from "./list_adder.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { list_map } from "./list_map.mjs";
@@ -26,12 +27,14 @@ export async function prayer_auto() {
   each(cs, (c) => {
     let c_name = object_property_get(c, "name");
     let requests = ["bless", "save each person in"];
+    list_adder((la) => {});
     let verse_requests = list_map(verse_texts, (t) =>
       string_combine_multiple([
         "let each person in the country of ",
         c_name,
-        " understand and obey these words: ",
+        " understand and obey these words: `",
         t,
+        "`",
       ]),
     );
     each(list_concat(requests, verse_requests), (request) => {
