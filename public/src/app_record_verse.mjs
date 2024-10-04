@@ -1,3 +1,4 @@
+import { object_replace } from "./object_replace.mjs";
 import { app_record } from "./app_record.mjs";
 import { app_save_change } from "./app_save_change.mjs";
 import { html_hr } from "./html_hr.mjs";
@@ -39,7 +40,13 @@ export async function app_record_verse(
   verse_number,
 ) {
   let { root } = context;
-  await app_save_change(app_record);
+  await app_save_change(app_record, (save) =>
+    object_replace(save, {
+      book: book_code,
+      chapter,
+      verse: verse_number,
+    }),
+  );
   app_record_chapter_buttons(context, book_code);
   html_button_width_full_text_click(
     root,
