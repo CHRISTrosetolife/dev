@@ -5,6 +5,6 @@ import { countries } from "./countries.mjs";
 export function prayer_auto() {
   let cs = countries();
   each(cs, (c) => {
-    log(string_combine_multiple(["God bless the country of ", c]));
+    log(string_combine_multiple(["God bless the country of ", c, " amen"]));
   });
 }
