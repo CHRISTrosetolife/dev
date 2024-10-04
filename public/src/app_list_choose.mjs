@@ -1,3 +1,4 @@
+import { html_button_width_full_text_click_hr } from "./html_button_width_full_text_click_hr.mjs";
 import { app_list_choice_update } from "./app_list_choice_update.mjs";
 import { storage_local_initialize } from "./storage_local_initialize.mjs";
 import { html_scroll_center } from "./html_scroll_center.mjs";
@@ -16,8 +17,7 @@ export function app_list_choose(body) {
   let lambda = () => {};
   let text = "scroll";
   let parent = body;
-  html_button_width_full_text_click(parent, text, lambda);
-  html_hr(body);
+  html_button_width_full_text_click_hr(parent, text, lambda);
   let last = null;
   html_button_width_full_text_click(body, "scroll", () => {
     if (last === null) {
