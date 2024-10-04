@@ -35,7 +35,9 @@ export async function prayer_auto() {
             string_combine_multiple([
               "let each person in the country of ",
               c_name,
-              " understand and obey these words: `",
+              " ",
+              verb,
+              " these words: `",
               t,
               "`",
             ]),
