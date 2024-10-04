@@ -5,7 +5,7 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each } from "./each.mjs";
 import { countries } from "./countries.mjs";
 export async function prayer_auto() {
-  await bible_books_chapters();
+  let chapters = await bible_books_chapters("engbsb");
   let cs = countries();
   each(cs, (c) => {
     let requests = ["bless", "save each person in"];
