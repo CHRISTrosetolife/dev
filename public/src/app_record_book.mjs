@@ -10,7 +10,9 @@ export async function app_record_book(context, book_code) {
       book: book_code,
     }),
   );
-  let lambda_top = () => app_record_home_button(context);
+  let lambda_top = () => {
+    app_record_home_button(context);
+  };
   let app_record_book_on_click = app_record_chapter;
   app_record_book_generic(
     context,
