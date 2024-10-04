@@ -30,6 +30,9 @@ export function app_list_choose(body) {
     let f = list_filter_property(ms, "choice");
     let ms2 = list_map_property(f, "line");
     let text = list_join_comma(ms2);
+    log({
+      text,
+    });
     clipboard_copy_web(text);
   });
   let last = null;
