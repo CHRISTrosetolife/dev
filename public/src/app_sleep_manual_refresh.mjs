@@ -110,6 +110,7 @@ export function app_sleep_manual_refresh(context, parts) {
     },
   );
   html_button_width_full_text_click(root, app_sleep_manual_text(), async () => {
+    now.setFullYear(year);
     now.setMonth(month_index);
     now.setDate(day);
     now.setHours(day);
