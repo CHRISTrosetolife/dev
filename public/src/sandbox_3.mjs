@@ -12,7 +12,10 @@ export async function sandbox_3() {
   let url = string_combine_multiple([prefix_url, "p/pt/pt00.htm"]);
   let p = await http_cache_parse_parsed(url);
   let { root } = p;
-  let hrefs = html_parse_a_href_starts_with_hrefs(root, "../../mp3/");
+  let hrefs = html_parse_a_href_starts_with_hrefs(
+    root,
+    string_combine_multiple(["../../", "mp3/"]),
+  );
   let urls = await list_wait(
     hrefs,
     async (h) => await path_resolve(string_combine(prefix_url, h)),
