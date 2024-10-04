@@ -9,6 +9,7 @@ import { app_record_verse } from "./app_record_verse.mjs";
 import { object_property_get_or } from "./object_property_get_or.mjs";
 import { html_hash_lookup } from "./html_hash_lookup.mjs";
 import { html_recorder_media } from "./html_recorder_media.mjs";
+import { object_merge } from "./object_merge.mjs";
 export async function app_record() {
   await app_firebase({
     on_logged_in,
@@ -19,6 +20,7 @@ export async function app_record() {
     await app_context_books_bible(context);
     let lookup = html_hash_lookup();
     let save = app_save_get(app_fn);
+    object_merge(lookup, save);
     let hash_book = object_property_get_or(lookup, "book", null);
     if (hash_book !== null) {
       let hash_chapter = object_property_get_or(lookup, "chapter", null);
