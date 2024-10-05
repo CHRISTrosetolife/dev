@@ -6,5 +6,6 @@ export async function app_bible_search_upload() {
   log({
     i,
   });
+  return i;
   await storage_upload_object_gitignore();
 }
