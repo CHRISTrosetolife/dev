@@ -6,11 +6,11 @@ import { list_size } from "./list_size.mjs";
 export async function each_object_async(object, lambda) {
   let keys = object_properties(object);
   for (let key of keys) {
-    let value = object_property_get(object, key);
-    await lambda(key, value);
     log({
       i: list_index(keys, key),
       s: list_size(keys),
     });
+    let value = object_property_get(object, key);
+    await lambda(key, value);
   }
 }
