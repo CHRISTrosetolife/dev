@@ -8,7 +8,7 @@ export async function app_bible_search_upload() {
   let i = await bible_search_index_cache();
   let properties = object_properties(i);
   await list_chunk_each(properties, async (chunk) => {
-    await each_async(list, async (item) => {
+    await each_async(chunk, async (word) => {
       await bible_storage_version_upload("search", word, value);
     });
   });
