@@ -3,7 +3,6 @@ import { list_wait } from "./list_wait.mjs";
 import { list_map } from "./list_map.mjs";
 import { bible_storage_version_upload } from "./bible_storage_version_upload.mjs";
 import { list_chunk_each } from "./list_chunk_each.mjs";
-import { each_object_async } from "./each_object_async.mjs";
 import { bible_search_index_cache } from "./bible_search_index_cache.mjs";
 import { object_properties } from "./object_properties.mjs";
 export async function app_bible_search_upload() {
@@ -16,5 +15,4 @@ export async function app_bible_search_upload() {
     });
     await list_wait(mapped);
   });
-  await each_object_async(i, async (word, value) => {});
 }
