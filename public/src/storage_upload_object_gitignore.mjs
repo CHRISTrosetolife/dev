@@ -13,6 +13,7 @@ export async function storage_upload_object_gitignore(
   if (await file_exists(existing_path)) {
     let result_existing = await file_read_json(existing_path);
     if (equal_json(result_existing, result_new)) {
+      log({});
       return;
     }
   }
