@@ -63,9 +63,9 @@ export async function app_ceb_upload() {
       }
       if (audio_upload_run) {
         await each_async(list_chunk(group, 20), async (chunk) => {
-          await each_chunk(chunk, profile);
+          await each_chunk(chunk);
         });
-        async function each_chunk(chunk, profile) {
+        async function each_chunk(chunk) {
           let mapped = list_map(chunk, async (atom) => {
             let createds = await list_map_async(atom, async (pair) => {
               let b = list_first(pair);
