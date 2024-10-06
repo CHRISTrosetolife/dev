@@ -1,3 +1,4 @@
+import { list_chunk_each } from "./list_chunk_each.mjs";
 import { list_wait } from "./list_wait.mjs";
 import { list_take } from "./list_take.mjs";
 import { ceb_bible_words_definitions_atoms_cache } from "./ceb_bible_words_definitions_atoms_cache.mjs";
@@ -62,10 +63,7 @@ export async function app_ceb_upload() {
         return;
       }
       if (audio_upload_run) {
-        await each_async(list_chunk(group, 20), async (chunk) => {
-          await each_chunk(chunk);
-        });
-        async function each_chunk(chunk) {
+        await list_chunk_each(group, async function each_chunk(chunk) {
           let mapped = list_map(chunk, async (atom) => {
             let createds = await list_map_async(atom, async (pair) => {
               let b = list_first(pair);
@@ -78,7 +76,7 @@ export async function app_ceb_upload() {
           if (object_property_get(list_any_created(createds), "created")) {
             log("chunk finished");
           }
-        }
+        });
       }
       if (audio_only) {
         return;
