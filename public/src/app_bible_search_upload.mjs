@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { list_wait } from "./list_wait.mjs";
 import { list_map } from "./list_map.mjs";
 import { bible_storage_version_upload } from "./bible_storage_version_upload.mjs";
@@ -10,6 +11,7 @@ export async function app_bible_search_upload() {
   let properties = object_properties(i);
   await list_chunk_each(properties, async (chunk) => {
     let mapped = list_map(chunk, async (word) => {
+      let value = object_property_get(object, "property_name");
       await bible_storage_version_upload("search", word, value);
     });
     await list_wait(mapped);
