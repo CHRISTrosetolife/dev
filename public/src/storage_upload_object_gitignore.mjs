@@ -1,3 +1,4 @@
+import { equal_json } from "./equal_json.mjs";
 import { log } from "./log.mjs";
 import { file_overwrite_json } from "./file_overwrite_json.mjs";
 import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
@@ -11,7 +12,7 @@ export async function storage_upload_object_gitignore(
   let existing_path = folder_gitignore_path(storage_path);
   if (await file_exists(existing_path)) {
     let result_existing = await file_read_json(existing_path);
-    if (json_equal(result_existing)) {
+    if (equal_json(result_existing, result_new)) {
       return;
     }
   }
