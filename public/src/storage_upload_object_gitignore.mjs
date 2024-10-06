@@ -1,3 +1,4 @@
+import { exit } from "./exit.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { equal_json } from "./equal_json.mjs";
 import { log } from "./log.mjs";
@@ -21,6 +22,7 @@ export async function storage_upload_object_gitignore(
       return;
     }
   }
+  exit();
   await storage_upload_object(result_new, storage_path);
   await file_overwrite_json(existing_path, result_new);
   return existing_path;
