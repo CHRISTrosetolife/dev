@@ -6,8 +6,9 @@ export async function storage_upload_object_gitignore(
   storage_path,
   result_new,
 ) {
-  await storage_upload_object(result_new, storage_path);
   let existing_path = folder_gitignore_path(storage_path);
+  $b;
+  await storage_upload_object(result_new, storage_path);
   await file_overwrite_json(existing_path, result_new);
   log({
     existing_path,
