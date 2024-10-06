@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { equal_json } from "./equal_json.mjs";
 import { log } from "./log.mjs";
 import { file_overwrite_json } from "./file_overwrite_json.mjs";
@@ -16,7 +17,7 @@ export async function storage_upload_object_gitignore(
   if (await file_exists(existing_path)) {
     let result_existing = await file_read_json(existing_path);
     if (equal_json(result_existing, result_new)) {
-      log("same; not uploading");
+      log(string_combine_multiple(["same; not uploading: ", existing_path]));
       return;
     }
   }
