@@ -15,6 +15,8 @@ export async function bible_search_index() {
         let mapped = bible_search_symbols_map(tokens);
         let us = list_unique(mapped);
         each(us, (u) => {
+          if (false) {
+          }
           let chapter_codes = object_property_initialize(i, u, {});
           let verse_numbers = object_property_initialize(
             chapter_codes,
