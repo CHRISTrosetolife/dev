@@ -26,6 +26,9 @@ export async function app_search() {
       word_to_results,
       tautology,
     );
+    log({
+      filtered,
+    });
   });
   async function word_to_results(word) {
     let destination = bible_storage_path_file_version(
