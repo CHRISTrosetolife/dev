@@ -9,7 +9,8 @@ import { object_properties } from "./object_properties.mjs";
 export async function app_bible_search_upload() {
   let i = await bible_search_index_cache();
   let properties = object_properties(i);
-  return string_symbols_multiple(properties);
+  let s = string_symbols_multiple(properties);
+  return s;
   await list_chunk_each(properties, async (chunk) => {
     let mapped = list_map(chunk, async (word) => {
       let value = object_property_get(i, word);
