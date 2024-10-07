@@ -1,3 +1,4 @@
+import { each_object } from "./each_object.mjs";
 import { app_sleep_sleeps } from "./app_sleep_sleeps.mjs";
 import { app_sleep_wakeups } from "./app_sleep_wakeups.mjs";
 import { app_sleep_sleep } from "./app_sleep_sleep.mjs";
@@ -23,6 +24,7 @@ export function app_sleep_main(context) {
   let result;
   html_button_width_full_text_click(root, "📃 data this month", async () => {
     let { data } = await app_sleep_today_download();
+    each_object(object, (key, value) => {});
     html_inner_set(result, json_format_to(data));
   });
   result = html_element(root, "pre");
