@@ -5,7 +5,7 @@ import { bible_storage_version_upload } from "./bible_storage_version_upload.mjs
 import { list_chunk_each } from "./list_chunk_each.mjs";
 import { bible_search_index_cache } from "./bible_search_index_cache.mjs";
 import { object_properties } from "./object_properties.mjs";
-export async function app_bible_search_upload() {
+export async function app_search_upload() {
   let i = await bible_search_index_cache();
   let properties = object_properties(i);
   await list_chunk_each(properties, async (chunk) => {
