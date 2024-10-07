@@ -1,13 +1,10 @@
-import { app_sleep_sleep } from "./app_sleep_sleep.mjs";
+import { app_sleep_types } from "./app_sleep_types.mjs";
 import { log } from "./log.mjs";
 import { html_div } from "./html_div.mjs";
 import { list_map_property } from "./list_map_property.mjs";
-import { app_sleep_sleeps } from "./app_sleep_sleeps.mjs";
 import { app_sleep_today_download_parts } from "./app_sleep_today_download_parts.mjs";
 import { app_sleep_month_path } from "./app_sleep_month_path.mjs";
 import { app_sleep_save } from "./app_sleep_save.mjs";
-import { app_sleep_wakeups } from "./app_sleep_wakeups.mjs";
-import { app_sleep_woke_up } from "./app_sleep_woke_up.mjs";
 import { app_sleep_manual_text } from "./app_sleep_manual_text.mjs";
 import { round } from "./round.mjs";
 import { equal } from "./equal.mjs";
@@ -100,16 +97,7 @@ export function app_sleep_manual_refresh(context, parts) {
     "sleep_type_index",
     0,
   );
-  let sleep_types = [
-    {
-      label: app_sleep_woke_up(),
-      list_name: app_sleep_wakeups(),
-    },
-    {
-      label: app_sleep_sleep(),
-      list_name: app_sleep_sleeps(),
-    },
-  ];
+  let sleep_types = app_sleep_types();
   html_list_chooser(
     root,
     list_map_property(sleep_types, "label"),
