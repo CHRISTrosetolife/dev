@@ -1,3 +1,3 @@
-export async function list_wait(mapped) {
-  return await Promise.all(mapped);
+export async function list_wait(promises_list) {
+  return await Promise.all(promises_list);
 }
