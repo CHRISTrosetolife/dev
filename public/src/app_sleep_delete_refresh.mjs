@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { firebase_save } from "./firebase_save.mjs";
 import { app_sleep_month_path } from "./app_sleep_month_path.mjs";
 import { list_remove } from "./list_remove.mjs";
@@ -24,6 +25,10 @@ export async function app_sleep_delete_refresh(parent) {
           html_button_width_full_text_click(parent, item, async () => {
             list_remove(list, item);
             let month_path = app_sleep_month_path(year, month_padded);
+            log({
+              month_path,
+            });
+            return;
             await firebase_save(month_path, data);
             await app_sleep_delete_refresh(parent);
           });
