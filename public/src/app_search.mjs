@@ -1,4 +1,6 @@
+import { bible_search_results } from "./bible_search_results.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
-export function app_search() {
+export async function app_search() {
   let body = html_style_default_initialize();
+  let filtered = await bible_search_results(split, word_to_results, filter);
 }
