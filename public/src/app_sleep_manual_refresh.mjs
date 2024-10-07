@@ -147,6 +147,7 @@ export function app_sleep_manual_refresh(context, parts) {
       }
     } else {
       if (equal(hours_12, 12)) {
+        log({});
         hours = 0;
       } else {
         hours = hours_12;
