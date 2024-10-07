@@ -12,7 +12,7 @@ import { string_split_comma } from "./string_split_comma.mjs";
 export async function bible_search_generic(words, filter) {
   let split = string_split_comma(words);
   let i = await bible_search_index_cache();
-  let filtered = await bible_search_results(split, lambda_map, filter);
+  let filtered = await bible_search_results(split, word_to_results, filter);
   let cap = 10;
   let mapped3 = list_take_soft(filtered, cap);
   let t = await list_map_unordered(mapped3, async (verse) => {
@@ -24,7 +24,7 @@ export async function bible_search_generic(words, filter) {
     return string_combine_multiple([r, " ", list_join_space(tokens)]);
   });
   return t;
-  function lambda_map(m) {
+  function word_to_results(m) {
     return object_property_get(i, m);
   }
 }
