@@ -26,7 +26,7 @@ export async function bible_search_generic(words, filter) {
     return object_property_get(i, m);
   });
   let results = await list_wait(results_promises);
-  let mapped2 = list_map(results_promises, (word) =>
+  let mapped2 = list_map(results, (word) =>
     list_adder((la) => {
       each_object(word, (chapter_code, chapter) => {
         each_object(chapter, (verse_number, versions) => {
