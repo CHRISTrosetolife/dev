@@ -1,3 +1,4 @@
+import { firebase_save } from "./firebase_save.mjs";
 import { log } from "./log.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { html_clear } from "./html_clear.mjs";
@@ -39,8 +40,9 @@ export function app_sleep_main(context) {
           html_p_text_centered(result, list_name);
           let list = object_property_get(data_day, list_name);
           each(list, (item) => {
-            html_button_width_full_text_click(result, item, () => {
+            html_button_width_full_text_click(result, item, async () => {
               list_remove(list, item);
+              await firebase_save(month_path, data);
             });
           });
         }
