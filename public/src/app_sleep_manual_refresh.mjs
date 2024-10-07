@@ -141,11 +141,6 @@ export function app_sleep_manual_refresh(context, parts) {
   function hours_compute() {
     ampm = list_get(ampms, ampm_index);
     hours_12 = list_get(hours_12_choices, hours_12_index);
-    log({
-      hours,
-      hours_12,
-      hours_12_index,
-    });
     if (equal(ampm, pm)) {
       if (equal(hours_12, 12)) {
         hours = hours_12;
@@ -154,15 +149,11 @@ export function app_sleep_manual_refresh(context, parts) {
       }
     } else {
       if (equal(hours_12, 12)) {
-        log("here");
         hours = 0;
       } else {
         hours = hours_12;
       }
     }
-    log({
-      hours,
-    });
     object_property_set(parts, "hours", hours);
     refresh();
   }
