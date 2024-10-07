@@ -8,10 +8,12 @@ import { firebase_download } from "./firebase_download.mjs";
 import { bible_search_results } from "./bible_search_results.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { tautology } from "./tautology.mjs";
+import { html_p_text_centered } from "./html_p_text_centered.mjs";
 export async function app_search() {
   let root = html_style_default_initialize();
   await html_script_axios(root);
   firebase_initialize();
+  html_p_text_centered(root, "enter words separated by spaces");
   html_input_width_full_focus(root);
   let filtered = await bible_search_results(
     ["micah"],
