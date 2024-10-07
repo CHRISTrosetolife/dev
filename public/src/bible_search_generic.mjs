@@ -23,7 +23,7 @@ export async function bible_search_generic(words, filter) {
   let i = await bible_search_index_cache();
   let mapped = bible_search_symbols_map(s);
   let results_promises = list_map(mapped, (m) => {
-    return object_property_get(i, m);
+    return lambda_map(m);
   });
   let results = await list_wait(results_promises);
   let mapped2 = list_map(results, (word) =>
@@ -70,4 +70,7 @@ export async function bible_search_generic(words, filter) {
     return string_combine_multiple([r, " ", list_join_space(tokens)]);
   });
   return t;
+  function lambda_map(m) {
+    return object_property_get(i, m);
+  }
 }
