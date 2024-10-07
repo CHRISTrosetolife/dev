@@ -7,7 +7,11 @@ import { html_style_default_initialize } from "./html_style_default_initialize.m
 import { tautology } from "./tautology.mjs";
 export async function app_search() {
   let body = html_style_default_initialize();
-  let filtered = await bible_search_results(split, word_to_results, tautology);
+  let filtered = await bible_search_results(
+    ["jesus"],
+    word_to_results,
+    tautology,
+  );
   async function word_to_results(word) {
     let destination = bible_storage_path_file_version(
       word,
