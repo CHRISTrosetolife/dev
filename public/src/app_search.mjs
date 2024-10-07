@@ -37,7 +37,4 @@ export async function app_search() {
     );
     return await firebase_download(destination);
   }
-  log({
-    filtered,
-  });
 }
