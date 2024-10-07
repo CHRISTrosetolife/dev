@@ -17,13 +17,14 @@ export async function app_search() {
   firebase_initialize();
   html_p_text_centered(root, "enter words separated by spaces");
   let i = html_input_width_full_focus(root);
-  html_button_width_full_text_click(root, "search", () => {});
-  let v = html_value_get(i);
-  let filtered = await bible_search_results(
-    ["micah"],
-    word_to_results,
-    tautology,
-  );
+  html_button_width_full_text_click(root, "search", async () => {
+    let v = html_value_get(i);
+    let filtered = await bible_search_results(
+      ["micah"],
+      word_to_results,
+      tautology,
+    );
+  });
   async function word_to_results(word) {
     let destination = bible_storage_path_file_version(
       word,
