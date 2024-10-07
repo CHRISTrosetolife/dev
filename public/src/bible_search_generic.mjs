@@ -22,11 +22,11 @@ export async function bible_search_generic(words, filter) {
   let s = string_split_comma(words);
   let i = await bible_search_index_cache();
   let mapped = bible_search_symbols_map(s);
-  let results = list_map(mapped, (m) => {
+  let results_promises = list_map(mapped, (m) => {
     return object_property_get(i, m);
   });
-  await list_wait(results);
-  let mapped2 = list_map(results, (word) =>
+  let results = await list_wait(results_promises);
+  let mapped2 = list_map(results_promises, (word) =>
     list_adder((la) => {
       each_object(word, (chapter_code, chapter) => {
         each_object(chapter, (verse_number, versions) => {
