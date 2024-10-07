@@ -11,6 +11,7 @@ export async function app_sleep_today_download_parts(
   let data = await firebase_storage_initialize(month_path);
   let today = object_property_initialize(data, day, {});
   return {
+    year,
     today,
     now,
     month_path,
