@@ -18,6 +18,7 @@ import { html_button_width_full_text_click } from "./html_button_width_full_text
 import { app_sleep_record } from "./app_sleep_record.mjs";
 import { html_clear_scroll_top_context } from "./html_clear_scroll_top_context.mjs";
 import { html_div } from "./html_div.mjs";
+import { list_remove } from "./list_remove.mjs";
 export function app_sleep_main(context) {
   let root = html_clear_scroll_top_context(context);
   app_sleep_record(context, app_sleep_woke_up(), app_sleep_wakeups());
@@ -38,7 +39,9 @@ export function app_sleep_main(context) {
           html_p_text_centered(result, list_name);
           let list = object_property_get(data_day, list_name);
           each(list, (item) => {
-            html_button_width_full_text_click(result, item, () => {});
+            html_button_width_full_text_click(result, item, () => {
+              list_remove(list, item);
+            });
           });
         }
       });
