@@ -32,7 +32,7 @@ export function app_sleep_main(context) {
   let result = html_div(root);
   html_button_width_full_text_click(root, "📃 data this month", async () => {
     html_clear(result);
-    let { data } = await app_sleep_today_download();
+    let { year, month_padded, data } = await app_sleep_today_download();
     each_object(data, (day, data_day) => {
       html_p_text_centered(result, day);
       each(app_sleep_types(), (sleep_type) => {
