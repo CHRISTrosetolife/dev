@@ -25,7 +25,7 @@ export async function app_sleep_delete_refresh(parent) {
             list_remove(list, item);
             let month_path = app_sleep_month_path(year, month_padded);
             await firebase_save(month_path, data);
-            app_sleep_delete_refresh(parent);
+            await app_sleep_delete_refresh(parent);
           });
         });
       }
