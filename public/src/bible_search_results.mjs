@@ -11,8 +11,8 @@ import { list_map } from "./list_map.mjs";
 import { bible_search_symbols_map } from "./bible_search_symbols_map.mjs";
 export async function bible_search_results(split, word_to_results, filter) {
   let mapped = bible_search_symbols_map(split);
-  let results_promises = list_map(mapped, (m) => {
-    return word_to_results(m);
+  let results_promises = list_map(mapped, async (m) => {
+    return await word_to_results(m);
   });
   let results = await list_wait(results_promises);
   let mapped2 = list_map(results, (word) =>
