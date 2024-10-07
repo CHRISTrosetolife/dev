@@ -11,6 +11,7 @@ import { tautology } from "./tautology.mjs";
 import { html_p_text_centered } from "./html_p_text_centered.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
+import { string_split_space } from "./string_split_space.mjs";
 export async function app_search() {
   let root = html_style_default_initialize();
   await html_script_axios(root);
@@ -19,6 +20,7 @@ export async function app_search() {
   let i = html_input_width_full_focus(root);
   html_button_width_full_text_click(root, "search", async () => {
     let v = html_value_get(i);
+    string_split_space(i);
     let filtered = await bible_search_results(
       ["micah"],
       word_to_results,
