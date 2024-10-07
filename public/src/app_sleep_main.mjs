@@ -1,3 +1,4 @@
+import { html_p_text_centered } from "./html_p_text_centered.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_sleep_types } from "./app_sleep_types.mjs";
 import { each } from "./each.mjs";
@@ -28,6 +29,7 @@ export function app_sleep_main(context) {
   html_button_width_full_text_click(root, "📃 data this month", async () => {
     let { data } = await app_sleep_today_download();
     each_object(data, (day, data_day) => {
+      html_p_text_centered(result, day);
       each(app_sleep_types(), (sleep_type) => {
         let list_name = object_property_get(sleep_type, "list_name");
         let list = object_property_get(data_day, list_name);
