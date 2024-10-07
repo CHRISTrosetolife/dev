@@ -8,7 +8,7 @@ import { tautology } from "./tautology.mjs";
 export async function app_search() {
   let body = html_style_default_initialize();
   let filtered = await bible_search_results(
-    ["jesus"],
+    ["micah"],
     word_to_results,
     tautology,
   );
