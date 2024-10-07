@@ -1,3 +1,4 @@
+import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { string_digits_is } from "./string_digits_is.mjs";
 import { json_from } from "./json_from.mjs";
@@ -10,7 +11,8 @@ import { list_wait } from "./list_wait.mjs";
 import { list_map } from "./list_map.mjs";
 import { bible_search_symbols_map } from "./bible_search_symbols_map.mjs";
 export async function bible_search_results(split, word_to_results, filter) {
-  let mapped = bible_search_symbols_map(split);
+  let f = list_filter(split, string_empty_not_is);
+  let mapped = bible_search_symbols_map(f);
   let results_promises = list_map(mapped, async (m) => {
     return await word_to_results(m);
   });
