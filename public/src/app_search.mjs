@@ -10,12 +10,14 @@ import { html_style_default_initialize } from "./html_style_default_initialize.m
 import { tautology } from "./tautology.mjs";
 import { html_p_text_centered } from "./html_p_text_centered.mjs";
 import { html_value_get } from "./html_value_get.mjs";
+import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export async function app_search() {
   let root = html_style_default_initialize();
   await html_script_axios(root);
   firebase_initialize();
   html_p_text_centered(root, "enter words separated by spaces");
   let i = html_input_width_full_focus(root);
+  html_button_width_full_text_click();
   let v = html_value_get(i);
   let filtered = await bible_search_results(
     ["micah"],
