@@ -1,3 +1,4 @@
+import { exit } from "./exit.mjs";
 import { log } from "./log.mjs";
 import { bible_search_symbols_map } from "./bible_search_symbols_map.mjs";
 import { list_add } from "./list_add.mjs";
@@ -23,6 +24,7 @@ export async function bible_search_index() {
               chapter_code,
               bible_folder,
             });
+            exit();
           }
           let chapter_codes = object_property_initialize(i, u, {});
           let verse_numbers = object_property_initialize(
