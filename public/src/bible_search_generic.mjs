@@ -17,6 +17,7 @@ import { list_map } from "./list_map.mjs";
 import { bible_search_index_cache } from "./bible_search_index_cache.mjs";
 import { bible_search_symbols_map } from "./bible_search_symbols_map.mjs";
 import { string_split_comma } from "./string_split_comma.mjs";
+import { list_wait } from "./list_wait.mjs";
 export async function bible_search_generic(words, filter) {
   let s = string_split_comma(words);
   let i = await bible_search_index_cache();
@@ -24,6 +25,7 @@ export async function bible_search_generic(words, filter) {
   let results = list_map(mapped, (m) => {
     return object_property_get(i, m);
   });
+  await list_wait(results);
   let mapped2 = list_map(results, (word) =>
     list_adder((la) => {
       each_object(word, (chapter_code, chapter) => {
