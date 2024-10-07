@@ -9,10 +9,10 @@ import { list_adder } from "./list_adder.mjs";
 import { list_wait } from "./list_wait.mjs";
 import { list_map } from "./list_map.mjs";
 import { bible_search_symbols_map } from "./bible_search_symbols_map.mjs";
-export async function bible_search_results(split, lambda_map, filter) {
+export async function bible_search_results(split, word_to_results, filter) {
   let mapped = bible_search_symbols_map(split);
   let results_promises = list_map(mapped, (m) => {
-    return lambda_map(m);
+    return word_to_results(m);
   });
   let results = await list_wait(results_promises);
   let mapped2 = list_map(results, (word) =>
