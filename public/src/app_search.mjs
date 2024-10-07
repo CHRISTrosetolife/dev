@@ -1,3 +1,4 @@
+import { html_input_width_full_focus } from "./html_input_width_full_focus.mjs";
 import { html_script_axios } from "./html_script_axios.mjs";
 import { firebase_initialize } from "./firebase_initialize.mjs";
 import { log } from "./log.mjs";
@@ -11,6 +12,7 @@ export async function app_search() {
   let root = html_style_default_initialize();
   await html_script_axios(root);
   firebase_initialize();
+  html_input_width_full_focus(root);
   let filtered = await bible_search_results(
     ["micah"],
     word_to_results,
