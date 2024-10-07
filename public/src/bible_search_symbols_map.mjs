@@ -1,7 +1,8 @@
-import { bible_words_map } from "./bible_words_map.mjs";
+import { string_trim } from "./string_trim.mjs";
+import { bible_words_map_generic } from "./bible_words_map_generic.mjs";
 import { bible_search_symbols } from "./bible_search_symbols.mjs";
 export function bible_search_symbols_map(tokens) {
   let symbols = bible_search_symbols();
-  let mapped = bible_words_map(tokens, symbols);
+  let mapped = bible_words_map_generic(string_trim, all, symbols);
   return mapped;
 }
