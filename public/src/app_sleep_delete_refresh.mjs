@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { firebase_save } from "./firebase_save.mjs";
 import { list_remove } from "./list_remove.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
@@ -23,10 +22,6 @@ export async function app_sleep_delete_refresh(parent) {
         each(list, (item) => {
           html_button_width_full_text_click(parent, item, async () => {
             list_remove(list, item);
-            log({
-              month_path,
-            });
-            return;
             await firebase_save(month_path, data);
             await app_sleep_delete_refresh(parent);
           });
