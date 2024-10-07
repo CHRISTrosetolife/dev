@@ -19,9 +19,9 @@ import { bible_search_symbols_map } from "./bible_search_symbols_map.mjs";
 import { string_split_comma } from "./string_split_comma.mjs";
 import { list_wait } from "./list_wait.mjs";
 export async function bible_search_generic(words, filter) {
-  let s = string_split_comma(words);
+  let split = string_split_comma(words);
   let i = await bible_search_index_cache();
-  let mapped = bible_search_symbols_map(s);
+  let mapped = bible_search_symbols_map(split);
   let results_promises = list_map(mapped, (m) => {
     return lambda_map(m);
   });
