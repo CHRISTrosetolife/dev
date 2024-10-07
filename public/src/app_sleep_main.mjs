@@ -29,7 +29,8 @@ export function app_sleep_main(context) {
     let { data } = await app_sleep_today_download();
     each_object(data, (day, data_day) => {
       each(app_sleep_types(), (sleep_type) => {
-        let list = object_property_get(object, "property_name");
+        let list_name = object_property_get(object, "property_name");
+        let list = object_property_get(data_day, "property_name");
       });
     });
     html_inner_set(result, json_format_to(data));
