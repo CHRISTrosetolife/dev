@@ -75,9 +75,6 @@ export function app_sleep_manual_refresh(context, parts) {
     hours_12_index,
     refresh,
     (value) => {
-      log({
-        value,
-      });
       hours_12_index = value;
       hours_compute();
     },
