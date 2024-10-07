@@ -32,8 +32,8 @@ export function app_sleep_main(context) {
     each_object(data, (day, data_day) => {
       html_p_text_centered(result, day);
       each(app_sleep_types(), (sleep_type) => {
-        html_p_text_centered(result, sleep_type);
         let list_name = object_property_get(sleep_type, "list_name");
+        html_p_text_centered(result, list_name);
         if (object_property_exists(data_day, list_name)) {
           let list = object_property_get(data_day, list_name);
           each(list, (item) => {
