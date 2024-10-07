@@ -18,7 +18,11 @@ export async function bible_search_index() {
         let us = list_unique(mapped);
         each(us, (u) => {
           if (string_includes(u, "?")) {
-            log({});
+            log({
+              tokens,
+              chapter_code,
+              bible_folder,
+            });
           }
           let chapter_codes = object_property_initialize(i, u, {});
           let verse_numbers = object_property_initialize(
