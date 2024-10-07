@@ -1,3 +1,4 @@
+import { app_sleep_month_path } from "./app_sleep_month_path.mjs";
 import { firebase_save } from "./firebase_save.mjs";
 import { log } from "./log.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
@@ -42,6 +43,7 @@ export function app_sleep_main(context) {
           each(list, (item) => {
             html_button_width_full_text_click(result, item, async () => {
               list_remove(list, item);
+              let month_path = app_sleep_month_path(year, month_padded);
               await firebase_save(month_path, data);
             });
           });
