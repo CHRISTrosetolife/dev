@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { app_search_folder } from "./app_search_folder.mjs";
 import { bible_storage_path_file_version } from "./bible_storage_path_file_version.mjs";
 import { firebase_download } from "./firebase_download.mjs";
@@ -13,4 +14,7 @@ export async function app_search() {
     );
     return await firebase_download(destination);
   }
+  log({
+    filtered,
+  });
 }
