@@ -1,3 +1,4 @@
+import { html_clear } from "./html_clear.mjs";
 import { html_p_text_centered } from "./html_p_text_centered.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_sleep_types } from "./app_sleep_types.mjs";
@@ -10,13 +11,13 @@ import { app_sleep_woke_up } from "./app_sleep_woke_up.mjs";
 import { app_sleep_manual_text } from "./app_sleep_manual_text.mjs";
 import { app_sleep_manual } from "./app_sleep_manual.mjs";
 import { html_hr } from "./html_hr.mjs";
-import { html_element } from "./html_element.mjs";
 import { json_format_to } from "./json_format_to.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 import { app_sleep_today_download } from "./app_sleep_today_download.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { app_sleep_record } from "./app_sleep_record.mjs";
 import { html_clear_scroll_top_context } from "./html_clear_scroll_top_context.mjs";
+import { html_div } from "./html_div.mjs";
 export function app_sleep_main(context) {
   let root = html_clear_scroll_top_context(context);
   app_sleep_record(context, app_sleep_woke_up(), app_sleep_wakeups());
@@ -25,8 +26,9 @@ export function app_sleep_main(context) {
     app_sleep_manual(context);
   });
   html_hr(root);
-  let result;
+  let result = html_div(root);
   html_button_width_full_text_click(root, "📃 data this month", async () => {
+    html_clear(result);
     let { data } = await app_sleep_today_download();
     each_object(data, (day, data_day) => {
       html_p_text_centered(result, day);
@@ -38,5 +40,4 @@ export function app_sleep_main(context) {
     });
     html_inner_set(result, json_format_to(data));
   });
-  result = html_element(root, "pre");
 }
