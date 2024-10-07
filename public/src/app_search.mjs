@@ -23,7 +23,7 @@ export async function app_search() {
   html_button_width_full_text_click(root, "search", async () => {
     let v = html_value_get(i);
     let split = string_split_space(v);
-    list_filter(split, string_empty_not_is);
+    let f = list_filter(split, string_empty_not_is);
     let filtered = await bible_search_results(
       ["micah"],
       word_to_results,
