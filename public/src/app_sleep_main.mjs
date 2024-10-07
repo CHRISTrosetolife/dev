@@ -1,3 +1,6 @@
+import { object_property_get } from "./object_property_get.mjs";
+import { app_sleep_types } from "./app_sleep_types.mjs";
+import { each } from "./each.mjs";
 import { each_object } from "./each_object.mjs";
 import { app_sleep_sleeps } from "./app_sleep_sleeps.mjs";
 import { app_sleep_wakeups } from "./app_sleep_wakeups.mjs";
@@ -25,7 +28,9 @@ export function app_sleep_main(context) {
   html_button_width_full_text_click(root, "📃 data this month", async () => {
     let { data } = await app_sleep_today_download();
     each_object(data, (day, data_day) => {
-      each_object(data, (day, data_day) => {});
+      each(app_sleep_types(), (sleep_type) => {
+        let list = object_property_get(object, "property_name");
+      });
     });
     html_inner_set(result, json_format_to(data));
   });
