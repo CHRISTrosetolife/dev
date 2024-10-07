@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { html_p_text_centered } from "./html_p_text_centered.mjs";
@@ -41,6 +42,9 @@ export function app_sleep_main(context) {
           });
         }
       });
+    });
+    log({
+      data,
     });
   });
 }
