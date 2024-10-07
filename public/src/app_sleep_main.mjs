@@ -31,6 +31,7 @@ export function app_sleep_main(context) {
       each(app_sleep_types(), (sleep_type) => {
         let list_name = object_property_get(sleep_type, "list_name");
         let list = object_property_get(data_day, list_name);
+        each(list2, (item) => {});
       });
     });
     html_inner_set(result, json_format_to(data));
