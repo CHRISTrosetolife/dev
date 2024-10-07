@@ -24,11 +24,7 @@ export async function app_search() {
     let v = html_value_get(i);
     let split = string_split_space(v);
     let f = list_filter(split, string_empty_not_is);
-    let filtered = await bible_search_results(
-      ["micah"],
-      word_to_results,
-      tautology,
-    );
+    let filtered = await bible_search_results(f, word_to_results, tautology);
   });
   async function word_to_results(word) {
     let destination = bible_storage_path_file_version(
