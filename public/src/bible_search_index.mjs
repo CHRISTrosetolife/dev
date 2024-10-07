@@ -19,10 +19,10 @@ export async function bible_search_index() {
         let us = list_unique(mapped);
         each(us, (u) => {
           if (string_includes(u, "?")) {
-            log({
+            log({us,
               tokens,
               chapter_code,
-              bible_folder,
+              bible_folder,u
             });
             exit();
           }
