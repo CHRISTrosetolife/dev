@@ -1,3 +1,4 @@
+import { firebase_initialize } from "./firebase_initialize.mjs";
 import { log } from "./log.mjs";
 import { app_search_folder } from "./app_search_folder.mjs";
 import { bible_storage_path_file_version } from "./bible_storage_path_file_version.mjs";
@@ -6,6 +7,7 @@ import { bible_search_results } from "./bible_search_results.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { tautology } from "./tautology.mjs";
 export async function app_search() {
+  firebase_initialize();
   let body = html_style_default_initialize();
   let filtered = await bible_search_results(
     ["micah"],
