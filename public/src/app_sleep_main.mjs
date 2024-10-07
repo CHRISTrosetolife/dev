@@ -12,8 +12,6 @@ import { app_sleep_woke_up } from "./app_sleep_woke_up.mjs";
 import { app_sleep_manual_text } from "./app_sleep_manual_text.mjs";
 import { app_sleep_manual } from "./app_sleep_manual.mjs";
 import { html_hr } from "./html_hr.mjs";
-import { json_format_to } from "./json_format_to.mjs";
-import { html_inner_set } from "./html_inner_set.mjs";
 import { app_sleep_today_download } from "./app_sleep_today_download.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { app_sleep_record } from "./app_sleep_record.mjs";
@@ -44,6 +42,5 @@ export function app_sleep_main(context) {
         }
       });
     });
-    html_inner_set(result, json_format_to(data));
   });
 }
