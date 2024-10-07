@@ -41,7 +41,12 @@ export function app_sleep_manual_refresh(context, parts) {
   let hours_count = 12;
   let ampm = hours >= hours_count ? pm : am;
   let ampm_index = list_index(ampms, ampm);
-  let hours_12 = hours > hours_count ? hours - hours_count : hours;
+  let hours_12 =
+    hours > hours_count
+      ? hours - hours_count
+      : hours === 0
+        ? hours_count
+        : hours;
   let hours_12_choices = range_1(hours_count);
   let hours_12_index = list_index(hours_12_choices, hours_12);
   let minutes_count = 60;
