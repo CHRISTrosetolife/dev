@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
 import { log } from "./log.mjs";
 import { html_parse_visit_class_single } from "./html_parse_visit_class_single.mjs";
@@ -11,5 +12,5 @@ export async function lg_definition() {
   log({
     d,
   });
-  each(list, (item) => {});
+  each(object_property_get(object, "property_name"), (item) => {});
 }
