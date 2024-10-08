@@ -1,3 +1,4 @@
+import { html_style_hidden } from "./html_style_hidden.mjs";
 import { html_div } from "./html_div.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { bible_reference_code } from "./bible_reference_code.mjs";
@@ -40,6 +41,7 @@ export async function app_search() {
       let r = bible_reference_code(chapter_code, verse_number);
       let result = html_div(root);
       let b = html_button_width_full_text_click(root, r, async () => {
+        html_style_hidden(b);
         let storage_path = bible_verses_upload_path(
           app_search_bible_folder(),
           chapter_code,
