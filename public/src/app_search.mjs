@@ -1,3 +1,4 @@
+import { clipboard_copy_web } from "./clipboard_copy_web.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_style_hidden } from "./html_style_hidden.mjs";
 import { html_div } from "./html_div.mjs";
@@ -57,11 +58,15 @@ export async function app_search() {
           verse_number,
         );
         let { tokens } = await firebase_download(storage_path);
-        html_button_width_full_text_click(result, "📋 copy", () => {});
-        html_p_text_centered(
-          result,
-          string_combine_multiple([reference, " ", list_join_space(tokens)]),
-        );
+        let text = string_combine_multiple([
+          reference,
+          " ",
+          list_join_space(tokens),
+        ]);
+        html_button_width_full_text_click(result, "📋 copy", () => {
+          clipboard_copy_web(text);
+        });
+        html_p_text_centered(result, text);
       });
     });
   });
