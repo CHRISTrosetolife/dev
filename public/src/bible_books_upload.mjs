@@ -1,6 +1,6 @@
+import { bible_chapter_unpadded } from "./bible_chapter_unpadded.mjs";
 import { log } from "./log.mjs";
 import { bible_storage_version_upload } from "./bible_storage_version_upload.mjs";
-import { string_prefix_without_multiple } from "./string_prefix_without_multiple.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 import { list_add } from "./list_add.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -27,11 +27,7 @@ export async function bible_books_upload(bible_folder) {
       list_add(books, book);
     }
     let chapter_name_padded = string_prefix_without(chapter_code, book_code);
-    let prefix = "0";
-    let chapter_name = string_prefix_without_multiple(
-      chapter_name_padded,
-      prefix,
-    );
+    let chapter_name = bible_chapter_unpadded(chapter_name_padded);
     list_add(book.chapters, chapter_name);
   });
   await bible_storage_version_upload(bible_folder, "books", {
