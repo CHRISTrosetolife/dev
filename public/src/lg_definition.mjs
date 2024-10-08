@@ -23,17 +23,17 @@ export async function lg_definition() {
   each(object_property_get(d, "children"), (c) => {
     let t = html_parse_text_lower(c);
     let symbols = "-;!?.'\"()";
-    t = string_trim(t, symbols);
-    if (string_includes_multiple(t, symbols)) {
-      log({
-        t,
-      });
-    }
     if (string_starts_with(t, first)) {
       first_found = true;
     }
     if (!first_found || !html_parse_tag_named(c, "b")) {
       return;
+    }
+    t = string_trim(t, symbols);
+    if (string_includes_multiple(t, symbols)) {
+      log({
+        t,
+      });
     }
     let { next } = c;
     let n = html_parse_text_lower(next);
