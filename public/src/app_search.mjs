@@ -39,7 +39,7 @@ export async function app_search() {
       word_to_results,
       tautology,
     );
-    each(filtered, () => {
+    each(filtered, (f) => {
       let { chapter_code, verse_number } = f;
       let reference = bible_reference_code(chapter_code, verse_number);
       object_merge(f, {
