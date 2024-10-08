@@ -25,7 +25,7 @@ export async function lg_definition() {
       return;
     }
     let { next } = c;
-    let n = html_parse_text(next);
+    let n = html_parse_text_lower(next);
     log({
       t,
     });
