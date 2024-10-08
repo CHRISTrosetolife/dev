@@ -1,3 +1,5 @@
+import { log } from "./log.mjs";
+import { string_includes_multiple } from "./string_includes_multiple.mjs";
 import { string_trim } from "./string_trim.mjs";
 import { string_symbols_multiple } from "./string_symbols_multiple.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -22,7 +24,10 @@ export async function lg_definition() {
     let t = html_parse_text_lower(c);
     let symbols = "-;!?.'\"()";
     t = string_trim(t, symbols);
-    if (false) {
+    if (string_includes_multiple(t, symbols)) {
+      log({
+        t,
+      });
     }
     if (string_starts_with(t, first)) {
       first_found = true;
