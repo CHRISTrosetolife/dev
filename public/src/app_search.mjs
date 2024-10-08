@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { html_input_width_full_focus } from "./html_input_width_full_focus.mjs";
 import { html_script_axios } from "./html_script_axios.mjs";
 import { firebase_initialize } from "./firebase_initialize.mjs";
@@ -27,6 +28,7 @@ export async function app_search() {
       word_to_results,
       tautology,
     );
+    each(list, (item) => {});
   });
   async function word_to_results(word) {
     let destination = bible_storage_path_file_version(
