@@ -19,9 +19,9 @@ export async function bible_verses_upload() {
       log({
         storage_path,
       });
-      exit();
       return;
       await storage_upload_object_gitignore(storage_path, data);
     });
+    exit();
   });
 }
