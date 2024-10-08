@@ -30,6 +30,8 @@ export async function lg_definition() {
       return;
     }
     t = string_trim(t, symbols);
+    if (false) {
+    }
     if (string_includes_multiple(t, symbols)) {
       log({
         t,
