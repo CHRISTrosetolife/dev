@@ -57,10 +57,7 @@ export async function app_search() {
           verse_number,
         );
         let { tokens } = await firebase_download(storage_path);
-        html_button_width_full_text_click(
-          result,
-          string_combine_multiple(["📋 copy"]),
-        );
+        html_button_width_full_text_click(result, "📋 copy", () => {});
         html_p_text_centered(
           result,
           string_combine_multiple([reference, " ", list_join_space(tokens)]),
