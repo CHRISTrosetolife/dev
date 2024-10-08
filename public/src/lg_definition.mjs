@@ -12,12 +12,15 @@ export async function lg_definition() {
   let { parsed, root } = await http_cache_parse_parsed(u);
   let d = html_parse_visit_class_single(root, "container");
   let first = "abandon";
+  let first_found = false;
   each(object_property_get(d, "children"), (c) => {
     let t = html_parse_text(c);
     if (string_starts_with(t, first)) {
       log({
         c,
       });
+    }
+    if (false) {
     }
   });
 }
