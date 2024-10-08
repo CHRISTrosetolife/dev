@@ -1,3 +1,4 @@
+import { html_parse_text } from "./html_parse_text.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
 import { log } from "./log.mjs";
@@ -12,5 +13,7 @@ export async function lg_definition() {
   log({
     d,
   });
-  each(object_property_get(d, "children"), (c) => {});
+  each(object_property_get(d, "children"), (c) => {
+    let t = html_parse_text(c);
+  });
 }
