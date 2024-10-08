@@ -1,3 +1,4 @@
+import { string_case_lower } from "./string_case_lower.mjs";
 import { log } from "./log.mjs";
 import { html_parse_tag_named } from "./html_parse_tag_named.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
@@ -17,6 +18,7 @@ export async function lg_definition() {
   d = {};
   each(object_property_get(d, "children"), (c) => {
     let t = html_parse_text(c);
+    t = string_case_lower(t);
     if (string_starts_with(t, first)) {
       first_found = true;
     }
