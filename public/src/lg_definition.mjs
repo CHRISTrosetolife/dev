@@ -1,3 +1,4 @@
+import { string_index } from "./string_index.mjs";
 import { log } from "./log.mjs";
 import { string_includes_multiple } from "./string_includes_multiple.mjs";
 import { string_trim } from "./string_trim.mjs";
@@ -31,6 +32,7 @@ export async function lg_definition() {
     }
     t = string_trim(t, symbols);
     if (string_includes_multiple(t, "()")) {
+      let l = string_index(t, "(");
     }
     if (string_includes_multiple(t, symbols)) {
       log({
