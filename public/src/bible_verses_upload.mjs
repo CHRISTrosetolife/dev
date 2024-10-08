@@ -7,6 +7,8 @@ export async function bible_verses_upload() {
   await bible_books_chapter_each(bible_folder, async (chapter) => {
     let { book_code, chapter_code } = bible_chapter_name_parse(chapter);
     let verses = await bible_chapter(bible_folder, chapter);
-    await each_async(verses, async (verse) => {});
+    await each_async(verses, async (verse) => {
+      let verse_number = verse;
+    });
   });
 }
