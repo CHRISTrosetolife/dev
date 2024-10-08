@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { html_style_hidden } from "./html_style_hidden.mjs";
 import { html_div } from "./html_div.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -22,7 +23,6 @@ import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
-import { identity } from "./identity.mjs";
 export async function app_search() {
   let root = html_style_default_initialize();
   await html_script_axios(root);
@@ -45,7 +45,9 @@ export async function app_search() {
         reference,
       });
     });
-    list_sort_string(filtered, identity);
+    list_sort_string(filtered, (f) =>
+      object_property_get(object, "property_name"),
+    );
     each(filtered, (f) => {
       let { chapter_code, verse_number, reference } = f;
       let result = html_div(root);
