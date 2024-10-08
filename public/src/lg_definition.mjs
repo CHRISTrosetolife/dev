@@ -23,6 +23,7 @@ export async function lg_definition() {
       return;
     }
     let { next } = c;
+    let n = html_parse_text(next);
     log({
       c,
     });
