@@ -22,6 +22,8 @@ export async function lg_definition() {
     let t = html_parse_text_lower(c);
     let symbols = "-;!?.'\"()";
     t = string_trim(t, symbols);
+    if (false) {
+    }
     if (string_starts_with(t, first)) {
       first_found = true;
     }
