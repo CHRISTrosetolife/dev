@@ -1,3 +1,4 @@
+import { string_substring } from "./string_substring.mjs";
 import { string_index_last } from "./string_index_last.mjs";
 import { string_index } from "./string_index.mjs";
 import { log } from "./log.mjs";
@@ -35,7 +36,7 @@ export async function lg_definition() {
     if (string_includes_multiple(t, "()")) {
       let l = string_index(t, "(");
       let r = string_index_last(t, ")");
-      t = string_slice();
+      t = string_substring();
     }
     if (string_includes_multiple(t, symbols)) {
       log({
