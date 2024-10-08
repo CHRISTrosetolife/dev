@@ -36,7 +36,11 @@ export async function app_search() {
       word_to_results,
       tautology,
     );
-    let mapped = list_map(filtered, () => {});
+    let mapped = list_map(filtered, () => {
+      let { chapter_code, verse_number } = f;
+      let r = bible_reference_code(chapter_code, verse_number);
+      return r;
+    });
     each(filtered, (f) => {
       let { chapter_code, verse_number } = f;
       let r = bible_reference_code(chapter_code, verse_number);
