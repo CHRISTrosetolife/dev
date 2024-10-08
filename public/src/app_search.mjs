@@ -34,6 +34,7 @@ export async function app_search() {
   html_button_width_full_text_click(root, "🔎 search", async () => {
     let v = html_value_get(i);
     html_clear_scroll_top(root);
+    html_p_text_centered(root, v);
     let split = string_split_space(v);
     let filtered = await bible_search_results(
       split,
