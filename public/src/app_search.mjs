@@ -35,7 +35,7 @@ export async function app_search() {
       let { chapter_code, verse_number } = f;
       html_button_width_full_text_click(
         root,
-        bible_reference_code(),
+        bible_reference_code(chapter_code, verse_number),
         async () => {
           let storage_path = bible_verses_upload_path(
             app_search_bible_folder(),
