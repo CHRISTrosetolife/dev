@@ -44,10 +44,9 @@ export async function app_search() {
       });
     });
     each(filtered, (f) => {
-      let { chapter_code, verse_number } = f;
-      let r = bible_reference_code(chapter_code, verse_number);
+      let { chapter_code, verse_number, reference } = f;
       let result = html_div(root);
-      let b = html_button_width_full_text_click(root, r, async () => {
+      let b = html_button_width_full_text_click(root, reference, async () => {
         html_style_hidden(b);
         let storage_path = bible_verses_upload_path(
           app_search_bible_folder(),
@@ -57,7 +56,7 @@ export async function app_search() {
         let { tokens } = await firebase_download(storage_path);
         html_p_text_centered(
           result,
-          string_combine_multiple([r, " ", list_join_space(tokens)]),
+          string_combine_multiple([reference, " ", list_join_space(tokens)]),
         );
       });
     });
