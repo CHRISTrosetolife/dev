@@ -22,8 +22,9 @@ export async function lg_definition() {
     if (!first_found || !html_parse_tag_named(c, "b")) {
       return;
     }
-    let {next} = c;
+    let { next } = c;
     log({
       c,
     });
   });
+}
