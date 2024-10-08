@@ -1,6 +1,6 @@
+import { bible_reference_code } from "./bible_reference_code.mjs";
 import { app_search_bible_folder } from "./app_search_bible_folder.mjs";
 import { bible_verses_upload_path } from "./bible_verses_upload_path.mjs";
-import { json_to } from "./json_to.mjs";
 import { each } from "./each.mjs";
 import { html_input_width_full_focus } from "./html_input_width_full_focus.mjs";
 import { html_script_axios } from "./html_script_axios.mjs";
@@ -32,15 +32,19 @@ export async function app_search() {
       tautology,
     );
     each(filtered, (f) => {
-      html_button_width_full_text_click(root, json_to(f), async () => {
-        let { chapter_code, verse_number } = f;
-        let storage_path = bible_verses_upload_path(
-          app_search_bible_folder(),
-          chapter_code,
-          verse_number,
-        );
-        let tokens = await firebase_download(storage_path);
-      });
+      let { chapter_code, verse_number } = f;
+      html_button_width_full_text_click(
+        root,
+        bible_reference_code(),
+        async () => {
+          let storage_path = bible_verses_upload_path(
+            app_search_bible_folder(),
+            chapter_code,
+            verse_number,
+          );
+          let tokens = await firebase_download(storage_path);
+        },
+      );
     });
   });
   async function word_to_results(word) {
