@@ -20,6 +20,7 @@ export async function lg_definition() {
     if (!first_found) {
       return;
     }
-    $b;
+    if (false) {
+    }
   });
 }
