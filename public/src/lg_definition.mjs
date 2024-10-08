@@ -11,9 +11,6 @@ export async function lg_definition() {
   let u = string_combine_multiple([url_secure(), "learnluganda.com/concise"]);
   let { parsed, root } = await http_cache_parse_parsed(u);
   let d = html_parse_visit_class_single(root, "container");
-  log({
-    d,
-  });
   let first = "abandon";
   each(object_property_get(d, "children"), (c) => {
     let t = html_parse_text(c);
