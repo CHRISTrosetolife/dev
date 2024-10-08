@@ -12,14 +12,13 @@ export async function bible_verses_upload() {
     let verses = await bible_chapter(bible_folder, chapter);
     await folder_parent_exists_ensure(
       folder_gitignore_path(
-        bible_verses_upload_path(book_code, chapter_code, "1", bible_folder),
+        bible_verses_upload_path(chapter, "1", bible_folder),
       ),
     );
     let mapped = list_map(verses, async (verse) => {
       let { verse_number, tokens } = verse;
       let storage_path = bible_verses_upload_path(
-        book_code,
-        chapter_code,
+        chapter,
         verse_number,
         bible_folder,
       );
