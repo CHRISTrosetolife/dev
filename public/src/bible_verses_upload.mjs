@@ -1,3 +1,4 @@
+import { app_search_bible_folder } from "./app_search_bible_folder.mjs";
 import { folder_parent_exists_ensure } from "./folder_parent_exists_ensure.mjs";
 import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
 import { bible_verses_upload_path } from "./bible_verses_upload_path.mjs";
@@ -7,7 +8,7 @@ import { bible_books_chapter_each } from "./bible_books_chapter_each.mjs";
 import { list_map } from "./list_map.mjs";
 import { list_wait } from "./list_wait.mjs";
 export async function bible_verses_upload() {
-  let bible_folder = "engbsb";
+  let bible_folder = app_search_bible_folder();
   await bible_books_chapter_each(bible_folder, async (chapter) => {
     let verses = await bible_chapter(bible_folder, chapter);
     ("seems to be a race condition; code errors when multiple threads create folder; therefore create folder outside of loop");
