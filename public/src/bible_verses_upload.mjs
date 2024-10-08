@@ -1,3 +1,4 @@
+import { folder_exists_ensure } from "./folder_exists_ensure.mjs";
 import { storage_upload_object_gitignore } from "./storage_upload_object_gitignore.mjs";
 import { bible_storage_path_file_version } from "./bible_storage_path_file_version.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
@@ -11,6 +12,7 @@ export async function bible_verses_upload() {
   await bible_books_chapter_each(bible_folder, async (chapter) => {
     let { book_code, chapter_code } = bible_chapter_name_parse(chapter);
     let verses = await bible_chapter(bible_folder, chapter);
+    await folder_exists_ensure();
     let mapped = list_map(verses, async (verse) => {
       let { verse_number, tokens } = verse;
       let key = path_join([book_code, chapter_code, verse_number]);
