@@ -33,18 +33,15 @@ export async function app_search() {
     );
     each(filtered, (f) => {
       let { chapter_code, verse_number } = f;
-      html_button_width_full_text_click(
-        root,
-        bible_reference_code(chapter_code, verse_number),
-        async () => {
-          let storage_path = bible_verses_upload_path(
-            app_search_bible_folder(),
-            chapter_code,
-            verse_number,
-          );
-          let tokens = await firebase_download(storage_path);
-        },
-      );
+      let r = bible_reference_code(chapter_code, verse_number);
+      html_button_width_full_text_click(root, r, async () => {
+        let storage_path = bible_verses_upload_path(
+          app_search_bible_folder(),
+          chapter_code,
+          verse_number,
+        );
+        let tokens = await firebase_download(storage_path);
+      });
     });
   });
   async function word_to_results(word) {
