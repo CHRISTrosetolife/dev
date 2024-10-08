@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { bible_reference_code } from "./bible_reference_code.mjs";
 import { app_search_bible_folder } from "./app_search_bible_folder.mjs";
 import { bible_verses_upload_path } from "./bible_verses_upload_path.mjs";
@@ -16,6 +17,8 @@ import { html_value_get } from "./html_value_get.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
+import { html_inner_set } from "./html_inner_set.mjs";
+import { list_join_space } from "./list_join_space.mjs";
 export async function app_search() {
   let root = html_style_default_initialize();
   await html_script_axios(root);
@@ -40,7 +43,11 @@ export async function app_search() {
           chapter_code,
           verse_number,
         );
-        let tokens = await firebase_download(storage_path);
+        let { tokens } = await firebase_download(storage_path);
+        html_inner_set(
+          b,
+          string_combine_multiple([r, " ", list_join_space(tokens)]),
+        );
       });
     });
   });
