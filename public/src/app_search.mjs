@@ -24,6 +24,7 @@ import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
+import { html_hr } from "./html_hr.mjs";
 export async function app_search() {
   let root = html_style_default_initialize();
   await html_script_axios(root);
@@ -49,6 +50,7 @@ export async function app_search() {
     list_sort_string(filtered, (f) => object_property_get(f, "reference"));
     each(filtered, (f) => {
       let { chapter_code, verse_number, reference } = f;
+      html_hr(root);
       let result = html_div(root);
       let b = html_button_width_full_text_click(root, reference, async () => {
         html_style_hidden(b);
