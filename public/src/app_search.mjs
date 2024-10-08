@@ -1,4 +1,3 @@
-import { list_map } from "./list_map.mjs";
 import { html_style_hidden } from "./html_style_hidden.mjs";
 import { html_div } from "./html_div.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -37,7 +36,7 @@ export async function app_search() {
       word_to_results,
       tautology,
     );
-    list_map(filtered, () => {
+    each(filtered, () => {
       let { chapter_code, verse_number } = f;
       let reference = bible_reference_code(chapter_code, verse_number);
       object_merge(f, {
