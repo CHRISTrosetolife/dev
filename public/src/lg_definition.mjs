@@ -2,7 +2,6 @@ import { html_parse_text_lower } from "./html_parse_text_lower.mjs";
 import { log } from "./log.mjs";
 import { html_parse_tag_named } from "./html_parse_tag_named.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
-import { html_parse_text } from "./html_parse_text.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
 import { html_parse_visit_class_single } from "./html_parse_visit_class_single.mjs";
