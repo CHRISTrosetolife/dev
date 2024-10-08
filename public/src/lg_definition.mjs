@@ -39,7 +39,10 @@ export async function lg_definition() {
       let l = string_index(t, "(");
       let right = ")";
       let r = string_index_last(t, right);
-      (t = string_take(t, l)), string_skip(t, t + string_size(right));
+      t = string_combine_multiple([
+        string_take(t, l),
+        string_skip(t, t + string_size(right)),
+      ]);
     }
     if (string_includes_multiple(t, symbols)) {
       log({
