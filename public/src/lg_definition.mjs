@@ -1,1 +1,3 @@
-export function lg_definition() {}
+export function lg_definition() {
+  "https://learnluganda.com/concise";
+}
