@@ -18,10 +18,10 @@ export async function lg_definition() {
     if (string_starts_with(t, first)) {
       first_found = true;
     }
-    if (!first_found) {
+    if (!first_found || !html_parse_tag_is(node)) {
       return;
     }
-    if (html_parse_tag_is(node)) {
+    if (x) {
     }
   });
 }
