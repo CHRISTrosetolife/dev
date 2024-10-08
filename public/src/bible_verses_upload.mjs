@@ -14,6 +14,7 @@ export async function bible_verses_upload() {
       let { verse_number } = verse;
       let key = path_join([book_code, chapter_code, verse_number]);
       let storage_path = bible_storage_path_file_version(key, bible_folder);
+      return;
       await storage_upload_object_gitignore(storage_path, data);
     });
   });
