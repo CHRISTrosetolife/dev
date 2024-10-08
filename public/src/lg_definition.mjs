@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { html_parse_tag_named } from "./html_parse_tag_named.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
@@ -21,7 +22,8 @@ export async function lg_definition() {
     if (!first_found || !html_parse_tag_named(node, "b")) {
       return;
     }
-    if (x) {
-    }
+    log({
+      c,
+    });
   });
 }
