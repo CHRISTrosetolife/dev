@@ -30,7 +30,9 @@ export async function app_search() {
       tautology,
     );
     each(filtered, (f) => {
-      html_button_width_full_text_click(root, json_to(f), () => {});
+      html_button_width_full_text_click(root, json_to(f), () => {
+        let chapter_code = f;
+      });
     });
   });
   async function word_to_results(word) {
