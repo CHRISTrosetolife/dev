@@ -1,3 +1,4 @@
+import { string_symbols_multiple } from "./string_symbols_multiple.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { html_parse_text_lower } from "./html_parse_text_lower.mjs";
 import { html_parse_tag_named } from "./html_parse_tag_named.mjs";
@@ -29,4 +30,5 @@ export async function lg_definition() {
     object_property_set(dictionary, t, n);
   });
   let p = object_properties(dictionary);
+  return string_symbols_multiple(p);
 }
