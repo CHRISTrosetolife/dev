@@ -12,5 +12,5 @@ export async function lg_definition() {
   log({
     d,
   });
-  each(object_property_get(object, "property_name"), (item) => {});
+  each(object_property_get(d, "children"), (c) => {});
 }
