@@ -1,3 +1,4 @@
+import { html_parse_tag_is } from "./html_parse_tag_is.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -20,7 +21,7 @@ export async function lg_definition() {
     if (!first_found) {
       return;
     }
-    if (false) {
+    if (html_parse_tag_is(node)) {
     }
   });
 }
