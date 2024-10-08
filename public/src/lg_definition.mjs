@@ -35,6 +35,7 @@ export async function lg_definition() {
     if (string_includes_multiple(t, "()")) {
       let l = string_index(t, "(");
       let r = string_index_last(t, ")");
+      t = string_slice();
     }
     if (string_includes_multiple(t, symbols)) {
       log({
