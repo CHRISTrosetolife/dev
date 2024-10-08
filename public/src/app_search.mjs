@@ -32,13 +32,14 @@ export async function app_search() {
       tautology,
     );
     each(filtered, (f) => {
-      html_button_width_full_text_click(root, json_to(f), () => {
+      html_button_width_full_text_click(root, json_to(f), async () => {
         let { chapter_code, verse_number } = f;
         let storage_path = bible_verses_upload_path(
           app_search_bible_folder(),
           chapter_code,
           verse_number,
         );
+        await firebase_download(storage_path);
       });
     });
   });
