@@ -39,7 +39,7 @@ export async function app_search() {
           chapter_code,
           verse_number,
         );
-        await firebase_download(storage_path);
+        let tokens = await firebase_download(storage_path);
       });
     });
   });
