@@ -28,7 +28,9 @@ export async function app_search() {
       word_to_results,
       tautology,
     );
-    each(list, (item) => {});
+    each(filtered, (f) => {
+      html_button_width_full_text_click(root, f, () => {});
+    });
   });
   async function word_to_results(word) {
     let destination = bible_storage_path_file_version(
