@@ -1,3 +1,4 @@
+import { string_trim } from "./string_trim.mjs";
 import { string_symbols_multiple } from "./string_symbols_multiple.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { html_parse_text_lower } from "./html_parse_text_lower.mjs";
@@ -19,6 +20,7 @@ export async function lg_definition() {
   let dictionary = {};
   each(object_property_get(d, "children"), (c) => {
     let t = html_parse_text_lower(c);
+    t = string_trim();
     if (string_starts_with(t, first)) {
       first_found = true;
     }
