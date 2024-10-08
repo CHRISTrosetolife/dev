@@ -12,7 +12,11 @@ export async function bible_verses_upload() {
   await bible_books_chapter_each(bible_folder, async (chapter) => {
     let { book_code, chapter_code } = bible_chapter_name_parse(chapter);
     let verses = await bible_chapter(bible_folder, chapter);
-    await folder_exists_ensure(folder_gitignore_path(storage_path));
+    await folder_exists_ensure(
+      folder_gitignore_path(
+        bible_verses_upload_path(book_code, chapter_code, "1", bible_folder),
+      ),
+    );
     let mapped = list_map(verses, async (verse) => {
       let { verse_number, tokens } = verse;
       let storage_path = bible_verses_upload_path(
