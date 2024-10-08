@@ -20,7 +20,8 @@ export async function lg_definition() {
   let dictionary = {};
   each(object_property_get(d, "children"), (c) => {
     let t = html_parse_text_lower(c);
-    t = string_trim(t, "-;!?.'\"()");
+    let symbols = "-;!?.'\"()";
+    t = string_trim(t, symbols);
     if (string_starts_with(t, first)) {
       first_found = true;
     }
