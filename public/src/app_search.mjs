@@ -21,6 +21,8 @@ import { string_split_space } from "./string_split_space.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { object_merge } from "./object_merge.mjs";
+import { list_sort_string } from "./list_sort_string.mjs";
+import { identity } from "./identity.mjs";
 export async function app_search() {
   let root = html_style_default_initialize();
   await html_script_axios(root);
@@ -43,6 +45,7 @@ export async function app_search() {
         reference,
       });
     });
+    list_sort_string(filtered, identity);
     each(filtered, (f) => {
       let { chapter_code, verse_number, reference } = f;
       let result = html_div(root);
