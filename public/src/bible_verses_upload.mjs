@@ -1,6 +1,6 @@
+import { folder_parent_exists_ensure } from "./folder_parent_exists_ensure.mjs";
 import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
 import { bible_verses_upload_path } from "./bible_verses_upload_path.mjs";
-import { folder_exists_ensure } from "./folder_exists_ensure.mjs";
 import { storage_upload_object_gitignore } from "./storage_upload_object_gitignore.mjs";
 import { bible_chapter } from "./bible_chapter.mjs";
 import { bible_chapter_name_parse } from "./bible_chapter_name_parse.mjs";
@@ -12,7 +12,7 @@ export async function bible_verses_upload() {
   await bible_books_chapter_each(bible_folder, async (chapter) => {
     let { book_code, chapter_code } = bible_chapter_name_parse(chapter);
     let verses = await bible_chapter(bible_folder, chapter);
-    await folder_exists_ensure(
+    await folder_parent_exists_ensure(
       folder_gitignore_path(
         bible_verses_upload_path(book_code, chapter_code, "1", bible_folder),
       ),
