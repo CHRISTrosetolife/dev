@@ -1,3 +1,4 @@
+import { html_parse_tag_named } from "./html_parse_tag_named.mjs";
 import { html_parse_visit_tag_first } from "./html_parse_visit_tag_first.mjs";
 import { log } from "./log.mjs";
 import { list_join_space } from "./list_join_space.mjs";
@@ -14,7 +15,6 @@ import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 import { list_remove } from "./list_remove.mjs";
-import { html_parse_tag } from "./html_parse_tag.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { each } from "./each.mjs";
 import { html_parse_children } from "./html_parse_children.mjs";
@@ -43,7 +43,7 @@ export async function bible_copyright(bible_folder) {
   let description = list_join_space(mapped);
   let children = html_parse_children(main);
   each(["h1", "h2", "div"], (tag) => {
-    let tags = list_filter(children, (c) => html_parse_tag(c, tag));
+    let tags = list_filter(children, (c) => html_parse_tag_named(c, tag));
     list_remove_multiple(children, tags);
   });
   let tnav = html_parse_visit_class_single(main, "tnav");

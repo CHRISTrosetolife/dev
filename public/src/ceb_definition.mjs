@@ -1,3 +1,4 @@
+import { html_parse_tag_named } from "./html_parse_tag_named.mjs";
 import { list_pairs_to_lookup } from "./list_pairs_to_lookup.mjs";
 import { string_to_url } from "./string_to_url.mjs";
 import { list_size } from "./list_size.mjs";
@@ -21,7 +22,6 @@ import { list_filter_async } from "./list_filter_async.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 import { list_filter_starts_with } from "./list_filter_starts_with.mjs";
 import { html_parse_href } from "./html_parse_href.mjs";
-import { html_parse_tag } from "./html_parse_tag.mjs";
 import { html_parse_parent } from "./html_parse_parent.mjs";
 import { html_parse_tag_not } from "./html_parse_tag_not.mjs";
 import { ceb_form1 } from "./ceb_form1.mjs";
@@ -266,7 +266,7 @@ export async function ceb_definition(word) {
             let { children: children_sense } =
               await ceb_html_cache_parse_form1(url_sense);
             let filtered7 = list_filter(children_sense, (c) =>
-              html_parse_tag(c, "a"),
+              html_parse_tag_named(c, "a"),
             );
             let mapped7 = list_map(filtered7, html_parse_href);
             let filtered8 = list_filter(mapped7, (m) =>
@@ -342,13 +342,15 @@ export async function ceb_definition(word) {
     let url = string_combine(prefix_2, d);
     url = string_to_url(url);
     let { children: children2 } = await ceb_html_cache_parse_form1(url);
-    let as = list_filter(children2, (c) => html_parse_tag(c, "a"));
+    let as = list_filter(children2, (c) => html_parse_tag_named(c, "a"));
     let mapped5 = list_map(as, html_parse_href);
     let filtered5 = list_filter_starts_with(mapped5, prefix_1);
     let mapped6 = list_map(filtered5, (f) =>
       string_prefix_without(f, prefix_1),
     );
-    let tables = list_filter(children2, (c) => html_parse_tag(c, "table"));
+    let tables = list_filter(children2, (c) =>
+      html_parse_tag_named(c, "table"),
+    );
     let tables_length = list_size(tables);
     assert(less_than_equal, [tables_length, 3]);
     if (0) {
