@@ -31,7 +31,7 @@ export async function app_search() {
     );
     each(filtered, (f) => {
       html_button_width_full_text_click(root, json_to(f), () => {
-        let chapter_code = f;
+        let { chapter_code, verse_number } = f;
       });
     });
   });
