@@ -14,7 +14,7 @@ export async function lg_definition() {
   let d = html_parse_visit_class_single(root, "container");
   let first = "abandon";
   let first_found = false;
-  d = {};
+  let dictionary = {};
   each(object_property_get(d, "children"), (c) => {
     let t = html_parse_text_lower(c);
     if (string_starts_with(t, first)) {
@@ -25,6 +25,6 @@ export async function lg_definition() {
     }
     let { next } = c;
     let n = html_parse_text_lower(next);
-    object_property_set(object, "property_name", value);
+    object_property_set(dictionary, t, value);
   });
 }
