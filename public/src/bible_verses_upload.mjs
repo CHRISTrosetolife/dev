@@ -1,5 +1,4 @@
 import { exit } from "./exit.mjs";
-import { log } from "./log.mjs";
 import { storage_upload_object_gitignore } from "./storage_upload_object_gitignore.mjs";
 import { bible_storage_path_file_version } from "./bible_storage_path_file_version.mjs";
 import { each_async } from "./each_async.mjs";
@@ -13,14 +12,12 @@ export async function bible_verses_upload() {
     let { book_code, chapter_code } = bible_chapter_name_parse(chapter);
     let verses = await bible_chapter(bible_folder, chapter);
     await each_async(verses, async (verse) => {
-      let { verse_number } = verse;
+      let { verse_number, tokens } = verse;
       let key = path_join([book_code, chapter_code, verse_number]);
       let storage_path = bible_storage_path_file_version(key, bible_folder);
-      log({
-        storage_path,
+      await storage_upload_object_gitignore(storage_path, {
+        tokens,
       });
-      return;
-      await storage_upload_object_gitignore(storage_path, data);
     });
     exit();
   });
