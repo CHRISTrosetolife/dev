@@ -45,9 +45,7 @@ export async function app_search() {
         reference,
       });
     });
-    list_sort_string(filtered, (f) =>
-      object_property_get(object, "property_name"),
-    );
+    list_sort_string(filtered, (f) => object_property_get(f, "reference"));
     each(filtered, (f) => {
       let { chapter_code, verse_number, reference } = f;
       let result = html_div(root);
