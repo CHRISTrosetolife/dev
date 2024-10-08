@@ -13,6 +13,7 @@ export async function lg_definition() {
   log({
     d,
   });
+  let first = "abandon";
   each(object_property_get(d, "children"), (c) => {
     let t = html_parse_text(c);
   });
