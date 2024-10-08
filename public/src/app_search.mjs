@@ -21,6 +21,7 @@ import { html_button_width_full_text_click } from "./html_button_width_full_text
 import { string_split_space } from "./string_split_space.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { list_join_space } from "./list_join_space.mjs";
+import { object_merge } from "./object_merge.mjs";
 export async function app_search() {
   let root = html_style_default_initialize();
   await html_script_axios(root);
@@ -36,10 +37,12 @@ export async function app_search() {
       word_to_results,
       tautology,
     );
-    let mapped = list_map(filtered, () => {
+    list_map(filtered, () => {
       let { chapter_code, verse_number } = f;
-      let r = bible_reference_code(chapter_code, verse_number);
-      return r;
+      let reference = bible_reference_code(chapter_code, verse_number);
+      object_merge(f, {
+        reference,
+      });
     });
     each(filtered, (f) => {
       let { chapter_code, verse_number } = f;
