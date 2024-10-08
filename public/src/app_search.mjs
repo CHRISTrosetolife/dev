@@ -36,7 +36,7 @@ export async function app_search() {
         let storage_path = bible_verses_upload_path(
           chapter_code,
           verse_number,
-          bible_folder,
+          app_search_bible_folder(),
         );
       });
     });
