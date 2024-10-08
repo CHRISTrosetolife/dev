@@ -19,7 +19,7 @@ export async function lg_definition() {
     if (string_starts_with(t, first)) {
       first_found = true;
     }
-    if (!first_found || !html_parse_tag_named(node, "b")) {
+    if (!first_found || !html_parse_tag_named(c, "b")) {
       return;
     }
     log({
