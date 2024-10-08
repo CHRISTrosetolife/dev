@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { log } from "./log.mjs";
 import { html_parse_visit_class_single } from "./html_parse_visit_class_single.mjs";
 import { http_cache_parse_parsed } from "./http_cache_parse_parsed.mjs";
@@ -10,4 +11,5 @@ export async function lg_definition() {
   log({
     d,
   });
+  each(list, (item) => {});
 }
