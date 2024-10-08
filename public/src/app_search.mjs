@@ -1,3 +1,4 @@
+import { json_to } from "./json_to.mjs";
 import { each } from "./each.mjs";
 import { html_input_width_full_focus } from "./html_input_width_full_focus.mjs";
 import { html_script_axios } from "./html_script_axios.mjs";
@@ -29,7 +30,7 @@ export async function app_search() {
       tautology,
     );
     each(filtered, (f) => {
-      html_button_width_full_text_click(root, f, () => {});
+      html_button_width_full_text_click(root, json_to(f), () => {});
     });
   });
   async function word_to_results(word) {
