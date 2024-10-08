@@ -1,5 +1,5 @@
+import { object_property_set } from "./object_property_set.mjs";
 import { html_parse_text_lower } from "./html_parse_text_lower.mjs";
-import { log } from "./log.mjs";
 import { html_parse_tag_named } from "./html_parse_tag_named.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -25,8 +25,6 @@ export async function lg_definition() {
     }
     let { next } = c;
     let n = html_parse_text_lower(next);
-    log({
-      t,
-    });
+    object_property_set(object, "property_name", value);
   });
 }
