@@ -14,15 +14,15 @@ export async function bible_verses_upload() {
     ("seems to be a race condition; code errors when multiple threads create folder; therefore create folder outside of loop");
     await folder_parent_exists_ensure(
       folder_gitignore_path(
-        bible_verses_upload_path(chapter, "1", bible_folder),
+        bible_verses_upload_path(bible_folder, chapter, "1"),
       ),
     );
     let mapped = list_map(verses, async (verse) => {
       let { verse_number, tokens } = verse;
       let storage_path = bible_verses_upload_path(
+        bible_folder,
         chapter,
         verse_number,
-        bible_folder,
       );
       await storage_upload_object_gitignore(storage_path, {
         tokens,
