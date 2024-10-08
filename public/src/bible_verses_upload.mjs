@@ -10,6 +10,7 @@ export async function bible_verses_upload() {
   let bible_folder = "engbsb";
   await bible_books_chapter_each(bible_folder, async (chapter) => {
     let verses = await bible_chapter(bible_folder, chapter);
+    ("seems to be a race condition; code errors when multiple threads create folder; therefore create folder outside of loop");
     await folder_parent_exists_ensure(
       folder_gitignore_path(
         bible_verses_upload_path(chapter, "1", bible_folder),
