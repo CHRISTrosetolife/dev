@@ -1,6 +1,6 @@
+import { html_remove } from "./html_remove.mjs";
 import { clipboard_copy_web } from "./clipboard_copy_web.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { html_style_hidden } from "./html_style_hidden.mjs";
 import { html_div } from "./html_div.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { bible_reference_code } from "./bible_reference_code.mjs";
@@ -54,7 +54,7 @@ export async function app_search() {
       html_hr(root);
       let result = html_div(root);
       let b = html_button_width_full_text_click(root, reference, async () => {
-        html_style_hidden(b);
+        html_remove(b);
         let storage_path = bible_verses_upload_path(
           app_search_bible_folder(),
           chapter_code,
