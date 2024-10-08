@@ -1,3 +1,4 @@
+import { bible_verses_upload_path } from "./bible_verses_upload_path.mjs";
 import { json_to } from "./json_to.mjs";
 import { each } from "./each.mjs";
 import { html_input_width_full_focus } from "./html_input_width_full_focus.mjs";
@@ -32,6 +33,11 @@ export async function app_search() {
     each(filtered, (f) => {
       html_button_width_full_text_click(root, json_to(f), () => {
         let { chapter_code, verse_number } = f;
+        let storage_path = bible_verses_upload_path(
+          chapter_code,
+          verse_number,
+          bible_folder,
+        );
       });
     });
   });
