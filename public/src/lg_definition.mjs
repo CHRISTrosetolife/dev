@@ -1,4 +1,4 @@
-import { string_suffix_without_try } from "./string_suffix_without_try.mjs";
+import { string_suffix_without } from "./string_suffix_without.mjs";
 import { string_size } from "./string_size.mjs";
 import { string_skip } from "./string_skip.mjs";
 import { string_take } from "./string_take.mjs";
@@ -20,6 +20,7 @@ import { url_secure } from "./url_secure.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { object_properties } from "./object_properties.mjs";
 import { string_combine } from "./string_combine.mjs";
+import { string_ends_with } from "./string_ends_with.mjs";
 export async function lg_definition() {
   let u = string_combine_multiple([url_secure(), "learnluganda.com/concise"]);
   let { parsed, root } = await http_cache_parse_parsed(u);
@@ -46,7 +47,7 @@ export async function lg_definition() {
     }
     let symbols = ";!?.'\"()";
     let symbols_space = string_combine(symbols, " -");
-    t = string_trim(t, symbols_space);
+    t = string_trim(t, symbols_space);$ag
     let suffix = "! int";
     t = string_suffix_without_try(suffix, t);
     if (string_includes_multiple(t, symbols)) {
@@ -61,3 +62,10 @@ export async function lg_definition() {
   let p = object_properties(dictionary);
   return string_symbols_multiple(p);
 }
+function string_suffix_without_try(suffix, t) {
+    if (string_ends_with(suffix)) {
+        t = string_suffix_without(t, suffix);
+    }
+    return t;
+}
+
