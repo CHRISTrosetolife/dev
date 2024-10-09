@@ -217,8 +217,8 @@ export function js_dollar(ast) {
               let arg = object_property_get(e, "argument");
               await js_dollar_expand(ast, arg, null, a, parent);
             } else {
+              await js_dollar_expand(ast, init, id, a, parent);
             }
-            await js_dollar_expand(ast, init, id, a, parent);
           });
         }
       }
