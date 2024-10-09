@@ -16,5 +16,5 @@ export async function sandbox_3() {
     eng: w,
     lg: object_property_get(dictionary, w),
   }));
-  return ts;
+  return ms2;
 }
