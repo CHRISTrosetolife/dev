@@ -67,10 +67,10 @@ export async function lg_definitions() {
     n = string_trim(n, " \n");
     n = string_replace_multiple(
       n,
-      list_map(
+      list_concat(list_map(
         ["adv", "v", "conj", "n", "prep", "adj", "inter"],
         string_combine_dot,
-      ),
+      ),['use']),
       "",
     );
     let ns = string_split(n, ";");
