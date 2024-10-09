@@ -221,12 +221,6 @@ export function js_dollar(ast) {
               parent,
               async () => await js_dollar_expand(ast, init, id, a, parent),
             );
-            if (js_node_type_is(e, "AwaitExpression")) {
-              let arg = object_property_get(e, "argument");
-              await js_dollar_expand(ast, arg, id, a, parent);
-            } else {
-              await js_dollar_expand(ast, init, id, a, parent);
-            }
           });
         }
       }
