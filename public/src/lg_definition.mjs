@@ -1,3 +1,4 @@
+import { string_prefix_without_try } from "./string_prefix_without_try.mjs";
 import { string_first } from "./string_first.mjs";
 import { string_suffix_without_try } from "./string_suffix_without_try.mjs";
 import { string_size } from "./string_size.mjs";
@@ -55,7 +56,7 @@ export async function lg_definition() {
     }
     t = string_trim(t, symbols_space);
     t = string_suffix_without_try(t, "! int");
-    t = string_suffix_without_try(t, "! int");
+    t = string_prefix_without_try(t, "okuwaluka omusaayi; ");
     if (string_includes_multiple(t, symbols)) {
       log({
         t,
