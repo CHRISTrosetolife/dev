@@ -47,7 +47,7 @@ export async function function_rename(fn_name_from, fn_name_to) {
     await file_js_unparse(file_path, ast);
   });
   let functions_matching_strings = await functions_string(fn_name_from);
-  let functions_fn_name = await functions_identifier(fn_name.name);
+  let functions_fn_name = await functions_identifier(fn_name("fn_name"));
   let intersected = object_properties_intersect(
     functions_matching_strings,
     functions_fn_name,
@@ -55,9 +55,9 @@ export async function function_rename(fn_name_from, fn_name_to) {
   assert_message(list_empty_is, [intersected], () =>
     string_combine_multiple([
       "if this assert fails, then ",
-      function_rename.name,
+      fn_name("function_rename"),
       " needs to handle ",
-      fn_name.name,
+      fn_name("fn_name"),
       " with ",
       fn_name_from,
       " passed into it because of these functions : ",
