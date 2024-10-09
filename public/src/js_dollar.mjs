@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { js_dollar_expand_await } from "./js_dollar_expand_await.mjs";
 import { noop } from "./noop.mjs";
 import { js_dollar_expand } from "./js_dollar_expand.mjs";
@@ -212,7 +211,6 @@ export function js_dollar(ast) {
             await js_dollar_expand_await(e, ast, id, a, parent, noop);
           }
           await js_node_if_declaration(next, async (d) => {
-            log("here");
             let { init, id } = d;
             await js_dollar_expand_await(
               init,
