@@ -1,6 +1,4 @@
 import { js_dollar_expand_await } from "./js_dollar_expand_await.mjs";
-import { noop } from "./noop.mjs";
-import { js_dollar_expand } from "./js_dollar_expand.mjs";
 import { object_copy_replace } from "./object_copy_replace.mjs";
 import { js_visit_identifiers_named } from "./js_visit_identifiers_named.mjs";
 import { js_node_if_declaration } from "./js_node_if_declaration.mjs";
