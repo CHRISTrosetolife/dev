@@ -61,7 +61,7 @@ export async function lg_definitions() {
     ns = list_map(ns, string_parenthesis_remove);
     ns = list_map(ns, (m) => string_split(m, ","));
     ns = list_denest(ns);
-    ns = list_map(ns, (m) => string_trim(m, " ,"));
+    ns = list_map(ns, (m) => string_trim(m, " ,."));
     ns = list_filter(ns, string_empty_not_is);
     object_property_set(dictionary, t, ns);
     previous = t;
