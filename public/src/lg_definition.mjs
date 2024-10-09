@@ -1,3 +1,4 @@
+import { string_first } from "./string_first.mjs";
 import { string_suffix_without_try } from "./string_suffix_without_try.mjs";
 import { string_size } from "./string_size.mjs";
 import { string_skip } from "./string_skip.mjs";
@@ -49,7 +50,8 @@ export async function lg_definition() {
     let symbols_space = string_combine(symbols, " -");
     t = string_trim(t, symbols_space);
     t = string_suffix_without_try(t, "! int");
-    if (false) {
+    if (previous !== null) {
+      (abbreviation = $s), string_first(previous), ".";
     }
     if (string_includes_multiple(t, symbols)) {
       log({
