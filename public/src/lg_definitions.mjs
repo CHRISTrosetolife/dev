@@ -71,9 +71,10 @@ export async function lg_definitions() {
       let result;
       let index = string_index(n, ".");
       if (index < 0) {
-        return n;
+        result = n;
+      } else {
       }
-      return string_take(n, index);
+      result = string_take(n, index);
     });
     object_property_set(dictionary, t, ns);
     previous = t;
