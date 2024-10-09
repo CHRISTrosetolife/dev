@@ -71,7 +71,7 @@ export async function bible_ceb_chapter(chapter_name) {
   assert(equal_by, [eng, foreign, list_size]);
   let definitions = {};
   let data = {
-    ceb: foreign,
+    foreign,
     eng,
     definitions,
   };
