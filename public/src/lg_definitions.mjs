@@ -57,7 +57,7 @@ export async function lg_definitions() {
     let ns = string_split(n, ";");
     let ms = list_map(ns, string_parenthesis_remove);
     let ms2 = list_map(ms, (m) => string_trim(m, " "));
-    object_property_set(dictionary, t, ms);
+    object_property_set(dictionary, t, ms2);
     previous = t;
   });
   return dictionary;
