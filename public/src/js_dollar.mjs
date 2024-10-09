@@ -215,7 +215,7 @@ export function js_dollar(ast) {
             let { init, id } = d;
             if (js_node_type_is(e, "AwaitExpression")) {
               let arg = object_property_get(e, "argument");
-              await js_dollar_expand(ast, arg, null, a, parent);
+              await js_dollar_expand(ast, arg, id, a, parent);
             } else {
               await js_dollar_expand(ast, init, id, a, parent);
             }
