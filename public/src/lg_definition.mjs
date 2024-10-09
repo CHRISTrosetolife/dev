@@ -57,6 +57,7 @@ export async function lg_definition() {
     let { next } = c;
     let n = html_parse_text_lower(next);
     object_property_set(dictionary, t, n);
+    previous = t;
   });
   let p = object_properties(dictionary);
   return string_symbols_multiple(p);
