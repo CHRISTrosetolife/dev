@@ -10,8 +10,6 @@ import { bible_engbsb_chapter } from "./bible_engbsb_chapter.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { list_adder_unique } from "./list_adder_unique.mjs";
 import { string_replace_multiple } from "./string_replace_multiple.mjs";
-import { ceb_definition } from "./ceb_definition.mjs";
-import { object_property_set } from "./object_property_set.mjs";
 import { equal_by } from "./equal_by.mjs";
 import { assert } from "./assert.mjs";
 import { list_difference } from "./list_difference.mjs";
@@ -93,12 +91,6 @@ export async function bible_ceb_chapter(chapter_name) {
     }
   });
   let definitions = {};
-  if (0) {
-    for (let w of words_unique) {
-      let d = await ceb_definition(w);
-      object_property_set(definitions, w, d);
-    }
-  }
   let data = {
     ceb,
     eng,
