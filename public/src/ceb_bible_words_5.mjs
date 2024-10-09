@@ -21,7 +21,8 @@ export async function ceb_bible_words_5(args) {
           book_name,
         });
         await bible_chapters_each("engbsb", book_name, async (chapter_name) => {
-          let { foreign } = await bible_ceb_chapter(chapter_name);
+          let { foreign } = r;
+          let r = await bible_ceb_chapter(chapter_name);
           each(foreign, (v) =>
             each(v.tokens, (t) => {
               la(t);
