@@ -215,7 +215,7 @@ export function js_dollar(ast) {
             log("here");
             let { init, id } = d;
             await js_dollar_expand_await(
-              e,
+              init,
               ast,
               id,
               a,
