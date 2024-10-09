@@ -5,7 +5,6 @@ import { each } from "./each.mjs";
 import { each_object } from "./each_object.mjs";
 import { object_property_get_curry } from "./object_property_get_curry.mjs";
 import { list_map_property } from "./list_map_property.mjs";
-import { log } from "./log.mjs";
 import { bible_engbsb_chapter } from "./bible_engbsb_chapter.mjs";
 import { equal_by } from "./equal_by.mjs";
 import { assert } from "./assert.mjs";
@@ -14,11 +13,6 @@ import { list_empty_is } from "./list_empty_is.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 export async function bible_ceb_chapter(chapter_name) {
-  if (0) {
-    log({
-      chapter_name,
-    });
-  }
   let eng = await bible_engbsb_chapter(chapter_name);
   let missing = {
     MAT17: ["21"],
