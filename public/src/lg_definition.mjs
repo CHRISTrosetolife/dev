@@ -34,7 +34,6 @@ export async function lg_definition() {
     if (!first_found || !html_parse_tag_named(c, "b")) {
       return;
     }
-    t = string_trim(t, symbols);
     if (string_includes_multiple(t, "()")) {
       let l = string_index(t, "(");
       let right = ")";
@@ -44,6 +43,7 @@ export async function lg_definition() {
         string_skip(t, r + string_size(right)),
       ]);
     }
+    t = string_trim(t, symbols);
     if (string_includes_multiple(t, symbols)) {
       log({
         t,
