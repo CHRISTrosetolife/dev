@@ -48,7 +48,9 @@ export async function lg_definition() {
     let symbols_space = string_combine(symbols, " -");
     t = string_trim(t, symbols_space);
     let suffix = "! int";
-    t = string_suffix_without(t, suffix);
+    if (false) {
+      t = string_suffix_without(t, suffix);
+    }
     if (string_includes_multiple(t, symbols)) {
       log({
         t,
