@@ -21,6 +21,7 @@ import { url_secure } from "./url_secure.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { object_properties } from "./object_properties.mjs";
 import { string_combine } from "./string_combine.mjs";
+import { string_replace } from "./string_replace.mjs";
 export async function lg_definition() {
   let u = string_combine_multiple([url_secure(), "learnluganda.com/concise"]);
   let { parsed, root } = await http_cache_parse_parsed(u);
@@ -52,6 +53,7 @@ export async function lg_definition() {
     t = string_suffix_without_try(t, "! int");
     if (previous !== null) {
       let abbreviation = string_combine_multiple([string_first(previous), "."]);
+      t = string_replace(input, abbreviation, previous);
     }
     if (string_includes_multiple(t, symbols)) {
       log({
