@@ -26,7 +26,7 @@ import { list_filter } from "./list_filter.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { string_includes } from "./string_includes.mjs";
 export async function lg_definitions() {
-  let words = await bible_words_eng_score();
+  let eng = await bible_words_eng_score();
   let u = string_combine_multiple([url_secure(), "learnluganda.com/concise"]);
   let { parsed, root } = await http_cache_parse_parsed(u);
   let d = html_parse_visit_class_single(root, "container");
