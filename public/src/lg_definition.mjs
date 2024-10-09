@@ -27,7 +27,6 @@ export async function lg_definition() {
   let dictionary = {};
   each(object_property_get(d, "children"), (c) => {
     let t = html_parse_text_lower(c);
-    let symbols = "-;!?.'\"() ";
     if (string_starts_with(t, first)) {
       first_found = true;
     }
@@ -43,6 +42,7 @@ export async function lg_definition() {
         string_skip(t, r + string_size(right)),
       ]);
     }
+    let symbols = "-;!?.'\"() ";
     t = string_trim(t, symbols);
     if (string_includes_multiple(t, symbols)) {
       log({
