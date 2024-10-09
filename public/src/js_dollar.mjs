@@ -213,7 +213,14 @@ export function js_dollar(ast) {
           }
           await js_node_if_declaration(next, async (d) => {
             let { init, id } = d;
-            await js_dollar_expand_await(e, ast, id, a, parent, () => {});
+            await js_dollar_expand_await(
+              e,
+              ast,
+              id,
+              a,
+              parent,
+              async () => await js_dollar_expand(ast, init, id, a, parent),
+            );
             if (js_node_type_is(e, "AwaitExpression")) {
               let arg = object_property_get(e, "argument");
               await js_dollar_expand(ast, arg, id, a, parent);
