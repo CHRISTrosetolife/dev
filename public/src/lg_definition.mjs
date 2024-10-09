@@ -19,7 +19,6 @@ import { html_parse_visit_class_single } from "./html_parse_visit_class_single.m
 import { http_cache_parse_parsed } from "./http_cache_parse_parsed.mjs";
 import { url_secure } from "./url_secure.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { object_properties } from "./object_properties.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { string_replace } from "./string_replace.mjs";
 export async function lg_definition(word) {
@@ -62,6 +61,5 @@ export async function lg_definition(word) {
     object_property_set(dictionary, t, n);
     previous = t;
   });
-  let p = object_properties(dictionary);
-  return object_property_get(p, word);
+  return object_property_get(dictionary, word);
 }
