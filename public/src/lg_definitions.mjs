@@ -62,7 +62,7 @@ export async function lg_definitions() {
     let ms2 = list_map(ms, (m) => string_trim(m, " ,"));
     let ms3 = list_map(ms2, (m) => string_split(m, ","));
     let dn = list_denest(ms3);
-    let f = list_filter(ms3, string_empty_not_is);
+    let f = list_filter(dn, string_empty_not_is);
     object_property_set(dictionary, t, f);
     previous = t;
   });
