@@ -14,7 +14,7 @@ export async function sandbox_3() {
   let ts = list_take(fs, 96);
   let ms2 = list_map(ts, (w) => ({
     eng: w,
-    lg: object_property_get(object, "property_name"),
+    lg: object_property_get(dictionary, w),
   }));
   return ts;
 }
