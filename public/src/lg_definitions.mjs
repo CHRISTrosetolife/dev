@@ -1,3 +1,4 @@
+import { list_map_property } from "./list_map_property.mjs";
 import { bible_words_eng_score } from "./bible_words_eng_score.mjs";
 import { string_take_find } from "./string_take_find.mjs";
 import { string_first_combine_dot } from "./string_first_combine_dot.mjs";
@@ -27,6 +28,7 @@ import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { string_includes } from "./string_includes.mjs";
 export async function lg_definitions() {
   let eng = await bible_words_eng_score();
+  let eng_list = list_map_property(eng, "word");
   let u = string_combine_multiple([url_secure(), "learnluganda.com/concise"]);
   let { parsed, root } = await http_cache_parse_parsed(u);
   let d = html_parse_visit_class_single(root, "container");
