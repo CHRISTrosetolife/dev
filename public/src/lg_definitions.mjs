@@ -83,6 +83,7 @@ export async function lg_definitions() {
     ns = list_map(ns, (n) => string_take_find(n, "."));
     ns = list_filter(ns, string_empty_not_is);
     if (list_empty_is(ns)) {
+      return;
     }
     let list = object_property_initialize(dictionary, t, []);
     list_add_multiple(list, ns);
