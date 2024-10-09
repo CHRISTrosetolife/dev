@@ -47,8 +47,8 @@ export async function lg_definition() {
         string_skip(t, r + string_size(right)),
       ]);
     }
-    let symbols = ";!?.'\"()";
-    let symbols_space = string_combine(symbols, " -");
+    let symbols = ';!?."()';
+    let symbols_space = string_combine(symbols, " -'");
     if (previous !== null) {
       let abbreviation = string_combine_multiple([string_first(previous), "."]);
       t = string_replace(t, abbreviation, previous);
