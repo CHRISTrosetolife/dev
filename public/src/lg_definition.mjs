@@ -8,7 +8,6 @@ import { string_index_last } from "./string_index_last.mjs";
 import { string_index } from "./string_index.mjs";
 import { string_includes_multiple } from "./string_includes_multiple.mjs";
 import { string_trim } from "./string_trim.mjs";
-import { string_symbols_multiple } from "./string_symbols_multiple.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { html_parse_text_lower } from "./html_parse_text_lower.mjs";
 import { html_parse_tag_named } from "./html_parse_tag_named.mjs";
@@ -62,5 +61,5 @@ export async function lg_definition() {
     previous = t;
   });
   let p = object_properties(dictionary);
-  return string_symbols_multiple(p);
+  return object_property_get(object, "property_name");
 }
