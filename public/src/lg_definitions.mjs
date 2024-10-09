@@ -1,3 +1,4 @@
+import { string_replace_multiple } from "./string_replace_multiple.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { string_prefix_without_try } from "./string_prefix_without_try.mjs";
 import { string_suffix_without_try } from "./string_suffix_without_try.mjs";
@@ -57,6 +58,7 @@ export async function lg_definitions() {
     let { next } = c;
     let n = html_parse_text_lower(next);
     n = string_trim(n, " \n");
+    string_replace_multiple();
     object_property_set(dictionary, t, n);
     previous = t;
   });
