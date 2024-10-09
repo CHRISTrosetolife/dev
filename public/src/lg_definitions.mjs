@@ -1,3 +1,4 @@
+import { list_empty_is } from "./list_empty_is.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { set_includes } from "./set_includes.mjs";
 import { list_all } from "./list_all.mjs";
@@ -81,7 +82,7 @@ export async function lg_definitions() {
     );
     ns = list_map(ns, (n) => string_take_find(n, "."));
     ns = list_filter(ns, string_empty_not_is);
-    if (false) {
+    if (list_empty_is(ns)) {
     }
     let list = object_property_initialize(dictionary, t, []);
     list_add_multiple(list, ns);
