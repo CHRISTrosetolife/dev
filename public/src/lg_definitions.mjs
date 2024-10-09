@@ -67,7 +67,7 @@ export async function lg_definitions() {
       list_map(["v", "conj", "n"], string_combine_dot),
       "",
     );
-    let ns = string_split(ns, ";");
+    let ns = string_split(n, ";");
     object_property_set(dictionary, t, n);
     previous = t;
   });
