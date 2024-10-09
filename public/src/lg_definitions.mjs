@@ -1,3 +1,4 @@
+import { list_denest } from "./list_denest.mjs";
 import { string_parenthesis_remove } from "./string_parenthesis_remove.mjs";
 import { string_split } from "./string_split.mjs";
 import { list_map } from "./list_map.mjs";
@@ -60,6 +61,7 @@ export async function lg_definitions() {
     let ms = list_map(ns, string_parenthesis_remove);
     let ms2 = list_map(ms, (m) => string_trim(m, " ,"));
     let ms3 = list_map(ms2, (m) => string_split(m, ","));
+    let dn = list_denest(ms3);
     let f = list_filter(ms3, string_empty_not_is);
     object_property_set(dictionary, t, f);
     previous = t;
