@@ -6,7 +6,7 @@ import { list_map } from "./list_map.mjs";
 import { range_1 } from "./range_1.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each_async } from "./each_async.mjs";
-export async function ceb_bible_words(args) {
+export async function bible_words_language(args) {
   let count = 5;
   let fn_names = list_map(range_1(count), (i) =>
     string_combine_multiple([fn_name("ceb_bible_words"), "_", i]),
