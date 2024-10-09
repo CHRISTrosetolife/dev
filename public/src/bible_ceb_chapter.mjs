@@ -49,29 +49,29 @@ export async function bible_ceb_chapter(chapter_name) {
     list_sort_string(eng, object_property_get_curry("verse_number"));
   }
   let eng_verse_numbers = list_map_property(eng, "verse_number");
-  let ceb = await bible_chapter(bible_folder, chapter_name);
-  let ceb_verse_numbers = list_map_property(ceb, "verse_number");
-  let ceb_verse_numbers_difference = list_difference(
-    ceb_verse_numbers,
+  let foreign = await bible_chapter(bible_folder, chapter_name);
+  let foreign_verse_numbers = list_map_property(foreign, "verse_number");
+  let foreign_verse_numbers_difference = list_difference(
+    foreign_verse_numbers,
     eng_verse_numbers,
   );
   let eng_verse_numbers_difference = list_difference(
     eng_verse_numbers,
-    ceb_verse_numbers,
+    foreign_verse_numbers,
   );
-  assert_message(list_empty_is, [ceb_verse_numbers_difference], () => {
+  assert_message(list_empty_is, [foreign_verse_numbers_difference], () => {
     return {
       eng_verse_numbers_difference,
-      ceb_verse_numbers_difference,
-      ceb_verse_numbers,
+      foreign_verse_numbers_difference,
+      foreign_verse_numbers,
       eng_verse_numbers,
       chapter_name,
     };
   });
-  assert(equal_by, [eng, ceb, list_size]);
+  assert(equal_by, [eng, foreign, list_size]);
   let definitions = {};
   let data = {
-    ceb,
+    ceb: foreign,
     eng,
     definitions,
   };
