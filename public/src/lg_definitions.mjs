@@ -58,12 +58,12 @@ export async function lg_definitions() {
       "",
     );
     let ns = string_split(n, ";");
-    let ms = list_map(ns, string_parenthesis_remove);
-    let ms2 = list_map(ms, (m) => string_trim(m, " ,"));
-    let ms3 = list_map(ms2, (m) => string_split(m, ","));
-    let dn = list_denest(ms3);
-    let f = list_filter(dn, string_empty_not_is);
-    object_property_set(dictionary, t, f);
+    ns = list_map(ns, string_parenthesis_remove);
+    ns = list_map(ns, (m) => string_split(m, ","));
+    ns = list_denest(ns);
+    ns = list_map(ns, (m) => string_trim(m, " ,"));
+    ns = list_filter(ns, string_empty_not_is);
+    object_property_set(dictionary, t, ns);
     previous = t;
   });
   return dictionary;
