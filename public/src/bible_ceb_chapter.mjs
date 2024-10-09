@@ -7,9 +7,6 @@ import { object_property_get_curry } from "./object_property_get_curry.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { log } from "./log.mjs";
 import { bible_engbsb_chapter } from "./bible_engbsb_chapter.mjs";
-import { string_case_lower } from "./string_case_lower.mjs";
-import { list_adder_unique } from "./list_adder_unique.mjs";
-import { string_replace_multiple } from "./string_replace_multiple.mjs";
 import { equal_by } from "./equal_by.mjs";
 import { assert } from "./assert.mjs";
 import { list_difference } from "./list_difference.mjs";
@@ -77,19 +74,6 @@ export async function bible_ceb_chapter(chapter_name) {
     };
   });
   assert(equal_by, [eng, ceb, list_size]);
-  let symbols = [",", "1", "2", ".", ";", "“", "”", ":"];
-  let words_unique = list_adder_unique((la) => {
-    for (let m of ceb) {
-      let { tokens } = m;
-      for (let token of tokens) {
-        let mapped3 = string_case_lower(token);
-        let mapped4 = string_replace_multiple(mapped3, symbols, "");
-        if (mapped4.length >= 1) {
-          la(mapped4);
-        }
-      }
-    }
-  });
   let definitions = {};
   let data = {
     ceb,
