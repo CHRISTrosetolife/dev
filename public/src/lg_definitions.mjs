@@ -1,3 +1,4 @@
+import { string_first_combine_dot } from "./string_first_combine_dot.mjs";
 import { list_denest } from "./list_denest.mjs";
 import { string_parenthesis_remove } from "./string_parenthesis_remove.mjs";
 import { string_split } from "./string_split.mjs";
@@ -9,7 +10,6 @@ import { string_prefix_without_try } from "./string_prefix_without_try.mjs";
 import { string_suffix_without_try } from "./string_suffix_without_try.mjs";
 import { string_trim } from "./string_trim.mjs";
 import { string_replace } from "./string_replace.mjs";
-import { string_first } from "./string_first.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { html_parse_tag_named } from "./html_parse_tag_named.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
@@ -42,8 +42,7 @@ export async function lg_definitions() {
     let symbols = ';!?."()';
     let symbols_all = string_combine(symbols, " -'");
     if (previous !== null) {
-      let previous_first = string_first(previous);
-      let abbreviation = string_combine_dot(previous_first);
+      let abbreviation = string_first_combine_dot(previous);
       t = string_replace(t, abbreviation, previous);
     }
     t = string_trim(t, symbols_all);
@@ -62,6 +61,7 @@ export async function lg_definitions() {
     ns = list_map(ns, (m) => string_split(m, ","));
     ns = list_denest(ns);
     ns = list_map(ns, (m) => string_trim(m, " ,"));
+    let abbreviation = string_first_combine_dot(t);
     ns = list_filter(ns, string_empty_not_is);
     object_property_set(dictionary, t, ns);
     previous = t;
