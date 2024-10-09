@@ -68,7 +68,8 @@ export async function lg_definitions() {
     ns = list_filter(ns, (n) => !string_includes(n, abbreviation));
     ns = list_filter(ns, string_empty_not_is);
     ns = list_map(ns, (n) => {
-      return string_take(n, string_index(n, "."));
+      let index = string_index(n, ".");
+      return string_take(n, index);
     });
     object_property_set(dictionary, t, ns);
     previous = t;
