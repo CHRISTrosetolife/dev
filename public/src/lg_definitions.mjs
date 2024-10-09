@@ -79,7 +79,7 @@ export async function lg_definitions() {
     ns = list_filter(ns, (n) =>
       list_all(string_split(n, " "), (s) => !set_includes(eng_set, s)),
     );
-    ns = list_map(ns, string_take_find);
+    ns = list_map(ns, (n) => string_take_find(n, "."));
     ns = list_filter(ns, string_empty_not_is);
     let list = object_property_initialize(dictionary, t, []);
     list_add_multiple(list, ns);
