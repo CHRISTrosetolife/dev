@@ -1,3 +1,4 @@
+import { object_property_initialize } from "./object_property_initialize.mjs";
 import { set_includes } from "./set_includes.mjs";
 import { list_all } from "./list_all.mjs";
 import { list_map_property } from "./list_map_property.mjs";
@@ -10,7 +11,6 @@ import { string_split } from "./string_split.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_combine_dot } from "./string_combine_dot.mjs";
 import { string_replace_multiple } from "./string_replace_multiple.mjs";
-import { object_property_set } from "./object_property_set.mjs";
 import { string_prefix_without_try } from "./string_prefix_without_try.mjs";
 import { string_suffix_without_try } from "./string_suffix_without_try.mjs";
 import { string_trim } from "./string_trim.mjs";
@@ -30,6 +30,7 @@ import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { string_includes } from "./string_includes.mjs";
 import { set_new } from "./set_new.mjs";
 import { set_add } from "./set_add.mjs";
+import { list_add_multiple } from "./list_add_multiple.mjs";
 export async function lg_definitions() {
   let eng = await bible_words_eng_score();
   let eng_list = list_map_property(eng, "word");
@@ -80,7 +81,8 @@ export async function lg_definitions() {
     );
     ns = list_filter(ns, string_empty_not_is);
     ns = list_map(ns, string_take_find);
-    object_property_set(dictionary, t, ns);
+    let list = object_property_initialize(dictionary, t, []);
+    list_add_multiple(list, ns);
     previous = t;
   });
   return dictionary;
