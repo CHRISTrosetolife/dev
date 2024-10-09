@@ -48,6 +48,7 @@ export async function bible_ceb_chapter(chapter_name) {
     list_sort_string(eng, object_property_get_curry("verse_number"));
   }
   let eng_verse_numbers = list_map_property(eng, "verse_number");
+  $ex;
   let ceb = await bible_cebulb_chapter(chapter_name);
   let ceb_verse_numbers = list_map_property(ceb, "verse_number");
   let ceb_verse_numbers_difference = list_difference(
