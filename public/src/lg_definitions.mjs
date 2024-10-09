@@ -56,6 +56,7 @@ export async function lg_definitions() {
     t = string_prefix_without_try(t, "okuwaluka omusaayi; ");
     let { next } = c;
     let n = html_parse_text_lower(next);
+    n = string_trim(n, " \n");
     object_property_set(dictionary, t, n);
     previous = t;
   });
