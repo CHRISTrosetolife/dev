@@ -8,10 +8,7 @@ export async function sandbox_3() {
   let dictionary = await lg_definitions();
   let words = await bible_words_eng_score();
   list_filter(words, (w) =>
-    object_property_exists(
-      dictionary,
-      object_property_get(object, "property_name"),
-    ),
+    object_property_exists(dictionary, object_property_get(w, "word")),
   );
   list_adder((la) => {});
 }
