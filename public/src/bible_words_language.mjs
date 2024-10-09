@@ -9,7 +9,7 @@ import { each_async } from "./each_async.mjs";
 export async function bible_words_language(args) {
   let count = 5;
   let fn_names = list_map(range_1(count), (i) =>
-    string_combine_multiple([fn_name("ceb_bible_words"), "_", i]),
+    string_combine_multiple([fn_name("bible_words_language"), "_", i]),
   );
   let all = await list_adder_multiple_async(async (la) => {
     await each_async(fn_names, async (fn_name) => {
