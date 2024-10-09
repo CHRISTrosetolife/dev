@@ -49,12 +49,12 @@ export async function lg_definition() {
     }
     let symbols = ";!?.'\"()";
     let symbols_space = string_combine(symbols, " -");
-    t = string_trim(t, symbols_space);
     t = string_suffix_without_try(t, "! int");
     if (previous !== null) {
       let abbreviation = string_combine_multiple([string_first(previous), "."]);
       t = string_replace(t, abbreviation, previous);
     }
+    t = string_trim(t, symbols_space);
     if (string_includes_multiple(t, symbols)) {
       log({
         t,
