@@ -208,9 +208,8 @@ export function js_dollar(ast) {
           let { next } = a;
           if (js_node_type_is(next, "ExpressionStatement")) {
             let e = object_property_get(next, "expression");
-            let lambda_else = noop;
             let id = null;
-            await js_dollar_expand_await(e, ast, id, a, parent, lambda_else);
+            await js_dollar_expand_await(e, ast, id, a, parent, noop);
           }
           await js_node_if_declaration(next, async (d) => {
             let { init, id } = d;
