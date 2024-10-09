@@ -1,3 +1,4 @@
+import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { string_prefix_without_try } from "./string_prefix_without_try.mjs";
 import { string_first } from "./string_first.mjs";
 import { string_suffix_without_try } from "./string_suffix_without_try.mjs";
@@ -21,7 +22,8 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { object_properties } from "./object_properties.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { string_replace } from "./string_replace.mjs";
-export async function lg_definition() {
+export async function lg_definition(word) {
+  assert_arguments_length(arguments, 1);
   let u = string_combine_multiple([url_secure(), "learnluganda.com/concise"]);
   let { parsed, root } = await http_cache_parse_parsed(u);
   let d = html_parse_visit_class_single(root, "container");
@@ -61,5 +63,5 @@ export async function lg_definition() {
     previous = t;
   });
   let p = object_properties(dictionary);
-  return object_property_get(object, "property_name");
+  return object_property_get(p, word);
 }
