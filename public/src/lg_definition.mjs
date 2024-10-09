@@ -6,7 +6,6 @@ import { string_skip } from "./string_skip.mjs";
 import { string_take } from "./string_take.mjs";
 import { string_index_last } from "./string_index_last.mjs";
 import { string_index } from "./string_index.mjs";
-import { log } from "./log.mjs";
 import { string_includes_multiple } from "./string_includes_multiple.mjs";
 import { string_trim } from "./string_trim.mjs";
 import { string_symbols_multiple } from "./string_symbols_multiple.mjs";
@@ -57,11 +56,6 @@ export async function lg_definition() {
     t = string_trim(t, symbols_space);
     t = string_suffix_without_try(t, "! int");
     t = string_prefix_without_try(t, "okuwaluka omusaayi; ");
-    if (string_includes_multiple(t, symbols)) {
-      log({
-        t,
-      });
-    }
     let { next } = c;
     let n = html_parse_text_lower(next);
     object_property_set(dictionary, t, n);
