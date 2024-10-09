@@ -10,4 +10,5 @@ export async function sandbox_3() {
   let ms = list_map_property(words, "word");
   let fs = list_filter(ms, (w) => object_property_exists(dictionary, w));
   let ts = list_take(fs, 96);
+  return ts;
 }
