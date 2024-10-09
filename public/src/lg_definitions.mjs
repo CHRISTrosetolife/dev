@@ -68,7 +68,7 @@ export async function lg_definitions() {
       "",
     );
     let ns = string_split(n, ";");
-    object_property_set(dictionary, t, n);
+    object_property_set(dictionary, t, ns);
     previous = t;
   });
   return dictionary;
