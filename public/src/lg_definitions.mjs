@@ -19,6 +19,8 @@ import { html_parse_visit_class_single } from "./html_parse_visit_class_single.m
 import { http_cache_parse_parsed } from "./http_cache_parse_parsed.mjs";
 import { url_secure } from "./url_secure.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { list_filter } from "./list_filter.mjs";
+import { string_empty_not_is } from "./string_empty_not_is.mjs";
 export async function lg_definitions() {
   let u = string_combine_multiple([url_secure(), "learnluganda.com/concise"]);
   let { parsed, root } = await http_cache_parse_parsed(u);
@@ -57,7 +59,8 @@ export async function lg_definitions() {
     let ns = string_split(n, ";");
     let ms = list_map(ns, string_parenthesis_remove);
     let ms2 = list_map(ms, (m) => string_trim(m, " "));
-    object_property_set(dictionary, t, ms2);
+    let f = list_filter(ms2, string_empty_not_is);
+    object_property_set(dictionary, t, f);
     previous = t;
   });
   return dictionary;
