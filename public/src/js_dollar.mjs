@@ -1,3 +1,4 @@
+import { noop } from "./noop.mjs";
 import { js_dollar_expand } from "./js_dollar_expand.mjs";
 import { object_copy_replace } from "./object_copy_replace.mjs";
 import { js_visit_identifiers_named } from "./js_visit_identifiers_named.mjs";
@@ -206,10 +207,13 @@ export function js_dollar(ast) {
           let { next } = a;
           if (js_node_type_is(next, "ExpressionStatement")) {
             let e = object_property_get(next, "expression");
+            let lambda = noop;
             let id = null;
             if (js_node_type_is(e, "AwaitExpression")) {
               let arg = object_property_get(e, "argument");
               await js_dollar_expand(ast, arg, id, a, parent);
+            } else {
+              await lambda();
             }
           }
           await js_node_if_declaration(next, async (d) => {
