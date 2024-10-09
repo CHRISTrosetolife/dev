@@ -1,8 +1,8 @@
+import { bible_chapter_foreign } from "./bible_chapter_foreign.mjs";
 import { bible_chapters_each } from "./bible_chapters_each.mjs";
 import { bible_books_index_old_is } from "./bible_books_index_old_is.mjs";
 import { each_index_async } from "./each_index_async.mjs";
 import { log } from "./log.mjs";
-import { bible_ceb_chapter } from "./bible_ceb_chapter.mjs";
 import { bible_books } from "./bible_books.mjs";
 import { list_adder_unique_async } from "./list_adder_unique_async.mjs";
 import { each } from "./each.mjs";
@@ -21,7 +21,7 @@ export async function ceb_bible_words_5(args) {
           book_name,
         });
         await bible_chapters_each("engbsb", book_name, async (chapter_name) => {
-          let r = await bible_ceb_chapter(chapter_name);
+          let r = await bible_chapter_foreign(chapter_name, "cebulb");
           let { foreign } = r;
           each(foreign, (v) =>
             each(v.tokens, (t) => {
