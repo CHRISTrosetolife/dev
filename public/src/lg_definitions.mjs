@@ -1,3 +1,4 @@
+import { string_split } from "./string_split.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_combine_dot } from "./string_combine_dot.mjs";
 import { string_replace_multiple } from "./string_replace_multiple.mjs";
@@ -66,6 +67,7 @@ export async function lg_definitions() {
       list_map(["v", "conj", "n"], string_combine_dot),
       "",
     );
+    let ns = string_split(ns, ";");
     object_property_set(dictionary, t, n);
     previous = t;
   });
