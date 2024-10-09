@@ -13,6 +13,7 @@ import { list_empty_is } from "./list_empty_is.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 export async function bible_ceb_chapter(chapter_name) {
+  let bible_folder = "cebulb";
   let eng = await bible_engbsb_chapter(chapter_name);
   let missing = {
     MAT17: ["21"],
@@ -48,7 +49,6 @@ export async function bible_ceb_chapter(chapter_name) {
     list_sort_string(eng, object_property_get_curry("verse_number"));
   }
   let eng_verse_numbers = list_map_property(eng, "verse_number");
-  let bible_folder = "cebulb";
   let ceb = await bible_chapter(bible_folder, chapter_name);
   let ceb_verse_numbers = list_map_property(ceb, "verse_number");
   let ceb_verse_numbers_difference = list_difference(
