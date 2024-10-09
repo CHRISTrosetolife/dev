@@ -61,7 +61,7 @@ export async function lg_definitions() {
     let { next } = c;
     let n = html_parse_text_lower(next);
     n = string_trim(n, " \n");
-    string_replace_multiple(n, list_map(["v", "conj"], string_combine_dot));
+    string_replace_multiple(n, list_map(["v", "conj"], string_combine_dot), "");
     object_property_set(dictionary, t, n);
     previous = t;
   });
