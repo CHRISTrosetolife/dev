@@ -1,3 +1,4 @@
+import { set_includes } from "./set_includes.mjs";
 import { list_all } from "./list_all.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { bible_words_eng_score } from "./bible_words_eng_score.mjs";
@@ -75,7 +76,7 @@ export async function lg_definitions() {
     let abbreviation = string_first_combine_dot(t);
     ns = list_filter(ns, (n) => !string_includes(n, abbreviation));
     ns = list_filter(ns, (n) =>
-      list_all(string_split(n, " "), (s) => !set_has(eng_set, s)),
+      list_all(string_split(n, " "), (s) => !set_includes(eng_set, s)),
     );
     ns = list_filter(ns, string_empty_not_is);
     ns = list_map(ns, string_take_find);
