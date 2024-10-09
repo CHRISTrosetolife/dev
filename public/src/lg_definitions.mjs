@@ -22,6 +22,7 @@ import { url_secure } from "./url_secure.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
+import { string_includes } from "./string_includes.mjs";
 export async function lg_definitions() {
   let u = string_combine_multiple([url_secure(), "learnluganda.com/concise"]);
   let { parsed, root } = await http_cache_parse_parsed(u);
@@ -62,6 +63,7 @@ export async function lg_definitions() {
     ns = list_denest(ns);
     ns = list_map(ns, (m) => string_trim(m, " ,"));
     let abbreviation = string_first_combine_dot(t);
+    ns = list_filter(ns, n=>!string_includes(n,abbreviation));
     ns = list_filter(ns, string_empty_not_is);
     object_property_set(dictionary, t, ns);
     previous = t;
