@@ -48,12 +48,12 @@ export async function lg_definition() {
       ]);
     }
     let symbols = ';!?."()';
-    let symbols_space = string_combine(symbols, " -'");
+    let symbols_other = string_combine(symbols, " -'");
     if (previous !== null) {
       let abbreviation = string_combine_multiple([string_first(previous), "."]);
       t = string_replace(t, abbreviation, previous);
     }
-    t = string_trim(t, symbols_space);
+    t = string_trim(t, symbols_other);
     t = string_suffix_without_try(t, "! int");
     t = string_prefix_without_try(t, "okuwaluka omusaayi; ");
     let { next } = c;
