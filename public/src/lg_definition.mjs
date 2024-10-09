@@ -51,7 +51,7 @@ export async function lg_definition() {
     t = string_trim(t, symbols_space);
     t = string_suffix_without_try(t, "! int");
     if (previous !== null) {
-      (abbreviation = $s), string_first(previous), ".";
+      let abbreviation = string_combine_multiple([string_first(previous), "."]);
     }
     if (string_includes_multiple(t, symbols)) {
       log({
