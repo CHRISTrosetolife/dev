@@ -1,3 +1,4 @@
+import { string_parenthesis_remove } from "./string_parenthesis_remove.mjs";
 import { string_split } from "./string_split.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_combine_dot } from "./string_combine_dot.mjs";
@@ -9,12 +10,6 @@ import { string_trim } from "./string_trim.mjs";
 import { string_replace } from "./string_replace.mjs";
 import { string_first } from "./string_first.mjs";
 import { string_combine } from "./string_combine.mjs";
-import { string_size } from "./string_size.mjs";
-import { string_skip } from "./string_skip.mjs";
-import { string_take } from "./string_take.mjs";
-import { string_index_last } from "./string_index_last.mjs";
-import { string_index } from "./string_index.mjs";
-import { string_includes_multiple } from "./string_includes_multiple.mjs";
 import { html_parse_tag_named } from "./html_parse_tag_named.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
 import { html_parse_text_lower } from "./html_parse_text_lower.mjs";
@@ -40,15 +35,7 @@ export async function lg_definitions() {
     if (!first_found || !html_parse_tag_named(c, "b")) {
       return;
     }
-    if (string_includes_multiple(t, "()")) {
-      let l = string_index(t, "(");
-      let right = ")";
-      let r = string_index_last(t, right);
-      t = string_combine_multiple([
-        string_take(t, l),
-        string_skip(t, r + string_size(right)),
-      ]);
-    }
+    t = string_parenthesis_remove(t);
     let symbols = ';!?."()';
     let symbols_all = string_combine(symbols, " -'");
     if (previous !== null) {
@@ -68,6 +55,7 @@ export async function lg_definitions() {
       "",
     );
     let ns = string_split(n, ";");
+    let ms = list_map(ns, string_parenthesis_remove);
     object_property_set(dictionary, t, ns);
     previous = t;
   });
