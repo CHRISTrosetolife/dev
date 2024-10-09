@@ -1,4 +1,4 @@
-import { bible_foreign_words } from "./bible_foreign_words.mjs";
+import { bible_words_foreign } from "./bible_words_foreign.mjs";
 export async function ceb_bible_words_5(args) {
-  return await bible_foreign_words(args, "cebulb");
+  return await bible_words_foreign(args, "cebulb");
 }
