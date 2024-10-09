@@ -69,7 +69,8 @@ export async function lg_definitions() {
     ns = list_filter(ns, string_empty_not_is);
     ns = list_map(ns, (n) => {
       let index = string_index(n, ".");
-      if (false) {
+      if (index < 0) {
+        return n;
       }
       return string_take(n, index);
     });
