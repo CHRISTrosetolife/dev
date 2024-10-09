@@ -1,3 +1,5 @@
+import { object_property_get } from "./object_property_get.mjs";
+import { list_map } from "./list_map.mjs";
 import { list_take } from "./list_take.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
@@ -10,5 +12,9 @@ export async function sandbox_3() {
   let ms = list_map_property(words, "word");
   let fs = list_filter(ms, (w) => object_property_exists(dictionary, w));
   let ts = list_take(fs, 96);
+  let ms2 = list_map(ts, (w) => ({
+    eng: w,
+    lg: object_property_get(object, "property_name"),
+  }));
   return ts;
 }
