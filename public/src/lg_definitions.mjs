@@ -63,7 +63,7 @@ export async function lg_definitions() {
     n = string_trim(n, " \n");
     n = string_replace_multiple(
       n,
-      list_map(["v", "conj"], string_combine_dot),
+      list_map(["v", "conj", "n"], string_combine_dot),
       "",
     );
     object_property_set(dictionary, t, n);
