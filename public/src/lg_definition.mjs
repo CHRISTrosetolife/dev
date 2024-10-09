@@ -1,3 +1,4 @@
+import { string_suffix_without } from "./string_suffix_without.mjs";
 import { string_size } from "./string_size.mjs";
 import { string_skip } from "./string_skip.mjs";
 import { string_take } from "./string_take.mjs";
@@ -46,6 +47,7 @@ export async function lg_definition() {
     let symbols = ";!?.'\"()";
     let symbols_space = string_combine(symbols, " -");
     t = string_trim(t, symbols_space);
+    t = string_suffix_without(t, "! int");
     if (string_includes_multiple(t, symbols)) {
       log({
         t,
