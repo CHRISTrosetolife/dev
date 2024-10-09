@@ -73,8 +73,9 @@ export async function lg_definitions() {
       if (index < 0) {
         result = n;
       } else {
+        result = string_take(n, index);
       }
-      result = string_take(n, index);
+      return result;
     });
     object_property_set(dictionary, t, ns);
     previous = t;
