@@ -1,3 +1,4 @@
+import { list_concat } from "./list_concat.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { set_includes } from "./set_includes.mjs";
@@ -67,10 +68,13 @@ export async function lg_definitions() {
     n = string_trim(n, " \n");
     n = string_replace_multiple(
       n,
-      list_concat(list_map(
-        ["adv", "v", "conj", "n", "prep", "adj", "inter"],
-        string_combine_dot,
-      ),['use']),
+      list_concat(
+        list_map(
+          ["adv", "v", "conj", "n", "prep", "adj", "inter"],
+          string_combine_dot,
+        ),
+        ["use"],
+      ),
       "",
     );
     let ns = string_split(n, ";");
