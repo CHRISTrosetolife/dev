@@ -1,3 +1,5 @@
+import { list_map } from "./list_map.mjs";
+import { string_combine_dot } from "./string_combine_dot.mjs";
 import { string_replace_multiple } from "./string_replace_multiple.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { string_prefix_without_try } from "./string_prefix_without_try.mjs";
@@ -49,7 +51,8 @@ export async function lg_definitions() {
     let symbols = ';!?."()';
     let symbols_all = string_combine(symbols, " -'");
     if (previous !== null) {
-      let abbreviation = string_combine_multiple([string_first(previous), "."]);
+      let previous_first = string_first(previous);
+      let abbreviation = string_combine_dot(previous_first);
       t = string_replace(t, abbreviation, previous);
     }
     t = string_trim(t, symbols_all);
@@ -58,7 +61,7 @@ export async function lg_definitions() {
     let { next } = c;
     let n = html_parse_text_lower(next);
     n = string_trim(n, " \n");
-    string_replace_multiple();
+    string_replace_multiple(n, list_map(["v", "conj"], string_combine_dot));
     object_property_set(dictionary, t, n);
     previous = t;
   });
