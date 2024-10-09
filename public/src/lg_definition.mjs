@@ -41,7 +41,7 @@ export async function lg_definition() {
       let r = string_index_last(t, right);
       t = string_combine_multiple([
         string_take(t, l),
-        string_skip(t, t + string_size(right)),
+        string_skip(t, r + string_size(right)),
       ]);
     }
     if (string_includes_multiple(t, symbols)) {
