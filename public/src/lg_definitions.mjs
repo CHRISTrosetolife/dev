@@ -1,5 +1,4 @@
-import { list_intersect } from "./list_intersect.mjs";
-import { list_empty_not_is } from "./list_empty_not_is.mjs";
+import { list_all } from "./list_all.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 import { bible_words_eng_score } from "./bible_words_eng_score.mjs";
 import { string_take_find } from "./string_take_find.mjs";
@@ -76,7 +75,7 @@ export async function lg_definitions() {
     let abbreviation = string_first_combine_dot(t);
     ns = list_filter(ns, (n) => !string_includes(n, abbreviation));
     ns = list_filter(ns, (n) =>
-      list_empty_not_is(list_intersect(eng_list, string_split(n, " "))),
+      list_all(string_split(n, " "), (s) => !set_has(eng_set, s)),
     );
     ns = list_filter(ns, string_empty_not_is);
     ns = list_map(ns, string_take_find);
