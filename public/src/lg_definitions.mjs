@@ -1,3 +1,4 @@
+import { string_take } from "./string_take.mjs";
 import { string_first_combine_dot } from "./string_first_combine_dot.mjs";
 import { list_denest } from "./list_denest.mjs";
 import { string_parenthesis_remove } from "./string_parenthesis_remove.mjs";
@@ -23,6 +24,7 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { string_includes } from "./string_includes.mjs";
+import { string_index } from "./string_index.mjs";
 export async function lg_definitions() {
   let u = string_combine_multiple([url_secure(), "learnluganda.com/concise"]);
   let { parsed, root } = await http_cache_parse_parsed(u);
@@ -63,8 +65,9 @@ export async function lg_definitions() {
     ns = list_denest(ns);
     ns = list_map(ns, (m) => string_trim(m, " ,"));
     let abbreviation = string_first_combine_dot(t);
-    ns = list_filter(ns, n=>!string_includes(n,abbreviation));
+    ns = list_filter(ns, (n) => !string_includes(n, abbreviation));
     ns = list_filter(ns, string_empty_not_is);
+    ns = list_map(ns, (n) => string_take(n, string_index(n, abbreviation)));
     object_property_set(dictionary, t, ns);
     previous = t;
   });
