@@ -16,12 +16,15 @@ export async function bible_words_language_rename() {
       let without = string_prefix_without(fn_old, prefix_old);
       let p = integer_parse_try(without);
       if (number_is(p)) {
-        let fn_new = string_combine(prefix_new, without);
-        log({
-          fn_new,
-        });
-        await function_rename(fn_old, fn_new);
+        await lambda(without, fn_old);
       }
     }
   });
+  async function lambda(without, fn_old) {
+    let fn_new = string_combine(prefix_new, without);
+    log({
+      fn_new,
+    });
+    await function_rename(fn_old, fn_new);
+  }
 }
