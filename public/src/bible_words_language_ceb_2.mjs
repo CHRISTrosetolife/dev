@@ -4,7 +4,7 @@ import { list_adder_unique_async } from "./list_adder_unique_async.mjs";
 import { each } from "./each.mjs";
 import { bible_ceb_2_book } from "./bible_ceb_2_book.mjs";
 import { bible_ceb_2_books_hrefs } from "./bible_ceb_2_books_hrefs.mjs";
-export async function ceb_bible_words_2(args) {
+export async function bible_words_language_ceb_2(args) {
   let book_hrefs = await bible_ceb_2_books_hrefs();
   if (args.new) {
     book_hrefs = list_take_bible_books_new(book_hrefs);
