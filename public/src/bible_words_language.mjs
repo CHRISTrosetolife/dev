@@ -1,3 +1,6 @@
+import { string_starts_with } from "./string_starts_with.mjs";
+import { function_names_each } from "./function_names_each.mjs";
+import { list_adder } from "./list_adder.mjs";
 import { string_underscore_trail } from "./string_underscore_trail.mjs";
 import { function_import } from "./function_import.mjs";
 import { function_cache } from "./function_cache.mjs";
@@ -8,6 +11,12 @@ import { range_1 } from "./range_1.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each_async } from "./each_async.mjs";
 export async function bible_words_language(args) {
+  list_adder((la) => {});
+  await function_names_each(async (fn_old) => {
+    if (string_starts_with(fn_old, prefix_old)) {
+      la;
+    }
+  });
   let count = 5;
   let prefix = string_underscore_trail(fn_name("bible_words_language"));
   let fn_names = list_map(range_1(count), (i) =>
