@@ -1,3 +1,4 @@
+import { string_underscore_trail } from "./string_underscore_trail.mjs";
 import { function_import } from "./function_import.mjs";
 import { function_cache } from "./function_cache.mjs";
 import { fn_name } from "./fn_name.mjs";
@@ -8,7 +9,7 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each_async } from "./each_async.mjs";
 export async function bible_words_language(args) {
   let count = 5;
-  let prefix = string_combine_multiple([fn_name("bible_words_language"), "_"]);
+  let prefix = string_underscore_trail(fn_name("bible_words_language"), "_");
   let fn_names = list_map(range_1(count), (i) =>
     string_combine_multiple([prefix, i]),
   );
