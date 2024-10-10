@@ -10,12 +10,13 @@ import { string_combine } from "./string_combine.mjs";
 export async function bible_words_language_rename() {
   let prefix_old = string_underscore_trail(fn_name("ceb_bible_words"));
   let prefix_new = string_underscore_trail(fn_name("bible_words_language"));
-  await function_names_each(async (fn) => {
-    if (string_starts_with(fn, prefix_old)) {
-      let without = string_prefix_without(fn, prefix_old);
+  await function_names_each(async (fn_old) => {
+    if (string_starts_with(fn_old, prefix_old)) {
+      let without = string_prefix_without(fn_old, prefix_old);
       let p = integer_parse_try(without);
       if (number_is(p)) {
-        await function_rename(fn, string_combine(prefix_new, without));
+        let fn_new = string_combine(prefix_new, without);
+        await function_rename(fn_old, fn_new);
       }
     }
   });
