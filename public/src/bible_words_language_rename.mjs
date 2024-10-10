@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { number_is } from "./number_is.mjs";
 import { integer_parse_try } from "./integer_parse_try.mjs";
 import { function_names_each } from "./function_names_each.mjs";
@@ -16,6 +17,10 @@ export async function bible_words_language_rename() {
       let p = integer_parse_try(without);
       if (number_is(p)) {
         let fn_new = string_combine(prefix_new, without);
+        log({
+          fn_new,
+        });
+        return;
         await function_rename(fn_old, fn_new);
       }
     }
