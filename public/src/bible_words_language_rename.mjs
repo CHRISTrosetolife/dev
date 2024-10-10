@@ -10,7 +10,7 @@ import { function_rename } from "./function_rename.mjs";
 import { string_combine } from "./string_combine.mjs";
 export async function bible_words_language_rename() {
   let prefix_old = string_underscore_trail(fn_name("ceb_bible_words"));
-  let prefix_new = string_underscore_trail(fn_name("bible_words_language"));
+  let prefix_new = string_underscore_trail(fn_name("bible_words_language_ceb"));
   await function_names_each(async (fn_old) => {
     if (string_starts_with(fn_old, prefix_old)) {
       let without = string_prefix_without(fn_old, prefix_old);
@@ -20,7 +20,6 @@ export async function bible_words_language_rename() {
         log({
           fn_new,
         });
-        return;
         await function_rename(fn_old, fn_new);
       }
     }
