@@ -8,11 +8,9 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each_async } from "./each_async.mjs";
 export async function bible_words_language(args) {
   let count = 5;
+  let prefix = string_combine_multiple([fn_name("bible_words_language"), "_"]);
   let fn_names = list_map(range_1(count), (i) =>
-    string_combine_multiple([
-      string_combine_multiple([fn_name("bible_words_language"), "_"]),
-      i,
-    ]),
+    string_combine_multiple([prefix, i]),
   );
   let all = await list_adder_multiple_async(async (la) => {
     await each_async(fn_names, async (fn_name) => {
