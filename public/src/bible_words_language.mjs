@@ -9,7 +9,7 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each_async } from "./each_async.mjs";
 export async function bible_words_language(args) {
   let count = 5;
-  let prefix = string_underscore_trail(fn_name("bible_words_language"), "_");
+  let prefix = string_underscore_trail(fn_name("bible_words_language"));
   let fn_names = list_map(range_1(count), (i) =>
     string_combine_multiple([prefix, i]),
   );
