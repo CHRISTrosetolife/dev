@@ -1,3 +1,4 @@
+import { integer_parse_try } from "./integer_parse_try.mjs";
 import { function_names_each } from "./function_names_each.mjs";
 import { string_underscore_trail } from "./string_underscore_trail.mjs";
 import { fn_name } from "./fn_name.mjs";
@@ -8,6 +9,7 @@ export async function bible_words_language_rename() {
   await function_names_each((fn) => {
     if (string_starts_with(fn, prefix)) {
       let without = string_prefix_without(fn, prefix);
+      let p = integer_parse_try(without);
       if (without) {
       }
     }
