@@ -6,6 +6,7 @@ import { fn_name } from "./fn_name.mjs";
 import { string_starts_with } from "./string_starts_with.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 import { function_rename } from "./function_rename.mjs";
+import { string_combine } from "./string_combine.mjs";
 export async function bible_words_language_rename() {
   let prefix_old = string_underscore_trail(fn_name("ceb_bible_words"));
   let prefix_new = string_underscore_trail(fn_name("bible_words_language"));
@@ -14,7 +15,7 @@ export async function bible_words_language_rename() {
       let without = string_prefix_without(fn, prefix_old);
       let p = integer_parse_try(without);
       if (number_is(p)) {
-        await function_rename(prefix_old, prefix_new);
+        await function_rename(fn, string_combine(prefix_new, without));
       }
     }
   });
