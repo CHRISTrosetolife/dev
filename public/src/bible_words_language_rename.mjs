@@ -10,7 +10,7 @@ export async function bible_words_language_rename() {
     if (string_starts_with(fn, prefix)) {
       let without = string_prefix_without(fn, prefix);
       let p = integer_parse_try(without);
-      if (without) {
+      if (p) {
       }
     }
   });
