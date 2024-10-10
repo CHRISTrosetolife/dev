@@ -1,7 +1,4 @@
 import { function_names_prefix_number_each } from "./function_names_prefix_number_each.mjs";
-import { list_adder_async } from "./list_adder_async.mjs";
-import { string_starts_with } from "./string_starts_with.mjs";
-import { function_names_each } from "./function_names_each.mjs";
 import { function_import } from "./function_import.mjs";
 import { function_cache } from "./function_cache.mjs";
 import { fn_name } from "./fn_name.mjs";
@@ -18,13 +15,6 @@ export async function bible_words_language(args) {
     "_",
   ]);
   await function_names_prefix_number_each(prefix, (without, fn) => {});
-  await list_adder_async(async (la) => {
-    await function_names_each(async (fn) => {
-      if (string_starts_with(fn, prefix)) {
-        la(fn);
-      }
-    });
-  });
   let fn_names = list_map(range_1(count), (i) =>
     string_combine_multiple([prefix, i]),
   );
