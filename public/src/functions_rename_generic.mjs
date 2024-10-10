@@ -1,9 +1,7 @@
+import { function_names_each } from "./function_names_each.mjs";
 import { function_rename } from "./function_rename.mjs";
-import { each_async } from "./each_async.mjs";
-import { function_names } from "./function_names.mjs";
 export async function functions_rename_generic(fn_new_get) {
-  let fns = await function_names();
-  await each_async(fns, lambda);
+  await function_names_each(lambda);
   async function lambda(fn) {
     let fn_new = await fn_new_get(fn);
     if (fn_new !== fn) {
