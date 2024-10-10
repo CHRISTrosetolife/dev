@@ -14,16 +14,16 @@ export async function bible_words_language(args) {
     language,
     "_",
   ]);
-  await function_names_prefix_number_each(prefix, (without, fn) => {});
+  await function_names_prefix_number_each(prefix, async (without, fn) => {
+    let imported = await function_import(fn);
+    let words = await function_cache(imported, [args]);
+    la(words);
+  });
   let fn_names = list_map(range_1(count), (i) =>
     string_combine_multiple([prefix, i]),
   );
   let all = await list_adder_multiple_async(async (la) => {
-    await each_async(fn_names, async (fn_name) => {
-      let fn = await function_import(fn_name);
-      let words = await function_cache(fn, [args]);
-      la(words);
-    });
+    await each_async(fn_names, async (fn_name) => {});
   });
   return all;
 }
