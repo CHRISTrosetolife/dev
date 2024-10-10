@@ -11,11 +11,12 @@ import { range_1 } from "./range_1.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each_async } from "./each_async.mjs";
 export async function bible_words_language(args) {
-  await list_adder_async(async (la) => {});
-  await function_names_each(async (fn_old) => {
-    if (string_starts_with(fn_old, prefix_old)) {
-      la;
-    }
+  await list_adder_async(async (la) => {
+    await function_names_each(async (fn) => {
+      if (string_starts_with(fn, prefix_old)) {
+        la(fn);
+      }
+    });
   });
   let count = 5;
   let prefix = string_underscore_trail(fn_name("bible_words_language"));
