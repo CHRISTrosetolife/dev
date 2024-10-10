@@ -1,5 +1,5 @@
 import { string_underscore_trail } from "./string_underscore_trail.mjs";
 import { fn_name } from "./fn_name.mjs";
 export function bible_words_language_rename() {
-  let prefix = string_underscore_trail(fn_name("bible_words_language"), "_");
+  let prefix = string_underscore_trail(fn_name("bible_words_language"));
 }
