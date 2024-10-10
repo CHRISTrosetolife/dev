@@ -1,4 +1,4 @@
-import { ceb_bible_words_count_cache } from "./ceb_bible_words_count_cache.mjs";
+import { bible_words_language_count_cache } from "./bible_words_language_count_cache.mjs";
 import { log } from "./log.mjs";
 import { each_index_async } from "./each_index_async.mjs";
 import { list_size } from "./list_size.mjs";
@@ -8,7 +8,7 @@ import { ceb_definition } from "./ceb_definition.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { list_add } from "./list_add.mjs";
 export async function ceb_bible_words_definitions_map() {
-  let words_ceb = await ceb_bible_words_count_cache({
+  let words_ceb = await bible_words_language_count_cache({
     new: false,
   });
   let result = {};
