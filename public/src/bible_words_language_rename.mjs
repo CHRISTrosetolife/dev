@@ -8,7 +8,7 @@ export async function bible_words_language_rename() {
   await function_names_each((fn) => {
     if (string_starts_with(fn, prefix)) {
       let without = string_prefix_without(fn, prefix);
-      if (false) {
+      if (without) {
       }
     }
   });
