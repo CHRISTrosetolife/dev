@@ -12,8 +12,10 @@ import { range_1 } from "./range_1.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { each_async } from "./each_async.mjs";
 export async function bible_words_language(args) {
-  let language = args;
-  let prefix = string_underscore_trail(string_combine("bible_words_language_"));
+  let { language } = args;
+  let prefix = string_underscore_trail(
+    string_combine("bible_words_language_", language),
+  );
   await list_adder_async(async (la) => {
     await function_names_each(async (fn) => {
       if (string_starts_with(fn, prefix)) {
