@@ -14,6 +14,8 @@ export function grace_good_morning() {
     list_between(
       [
         list_size_random(count, crosses),
+        list_size_random(count, green),
+        list_size_random(count, hugs),
         "Good morning love 😇",
         "I love you 💚",
       ],
