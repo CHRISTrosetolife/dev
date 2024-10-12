@@ -31,7 +31,7 @@ export function grace_good_morning() {
         let shuffled = string_shuffle(items);
         let list = list_to(shuffled);
         let count = integer_random(7, list_size(list));
-        list_take(list, count);
+        let taken = list_take(list, count);
       }),
       "",
       "I love you 💚",
