@@ -29,7 +29,7 @@ export function grace_good_morning() {
       list_map([love, faces, colors], (items) => {
         let shuffled = string_shuffle(items);
         let list = list_to(shuffled);
-        integer_random(7, list_size(list));
+        let count = integer_random(7, list_size(list));
       }),
       "",
       "I love you 💚",
