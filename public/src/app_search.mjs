@@ -51,7 +51,7 @@ export async function app_search() {
     });
     list_sort_string(filtered, (f) => object_property_get(f, "reference"));
     html_hr(root);
-    html_button_width_full_text_click(root, "expand all");
+    html_button_width_full_text_click(root, "expand all", expand_all);
     let on_clicks = list_map(filtered, (f) => {
       let { chapter_code, verse_number, reference } = f;
       html_hr(root);
@@ -77,6 +77,9 @@ export async function app_search() {
       let b = html_button_width_full_text_click(root, reference, on_click);
       return on_click;
     });
+    function expand_all() {
+      each(list, (item) => {});
+    }
   });
   async function word_to_results(word) {
     let destination = bible_storage_path_file_version(
