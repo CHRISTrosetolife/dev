@@ -3,7 +3,7 @@ import { html_hr } from "./html_hr.mjs";
 import { app_sleep_today_download } from "./app_sleep_today_download.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_element } from "./html_element.mjs";
-export function app_sleep_record(context, button_text, list_name) {
+export function app_sleep_record(context, button_text, list_name, message) {
   let { root } = context;
   let result;
   html_button_width_full_text_click(root, button_text, async () => {
