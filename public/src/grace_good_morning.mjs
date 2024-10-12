@@ -1,3 +1,4 @@
+import { list_to } from "./list_to.mjs";
 import { list_size_randoms } from "./list_size_randoms.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { list_join_empty } from "./list_join_empty.mjs";
@@ -21,9 +22,9 @@ export function grace_good_morning() {
     "Good morning love 😇",
     "I love you 💚",
     list_join_empty(
-      list_map([crosses, green, hugs], (items) =>
-        list_size_randoms(counts, items),
-      ),
+      list_map([emojis, faces, colors], (items) => {
+        let list = list_to(items);
+      }),
     ),
   ]);
 }
