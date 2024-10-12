@@ -1,3 +1,4 @@
+import { list_shuffle } from "./list_shuffle.mjs";
 import { list_to } from "./list_to.mjs";
 import { list_size_randoms } from "./list_size_randoms.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
@@ -24,6 +25,7 @@ export function grace_good_morning() {
     list_join_empty(
       list_map([emojis, faces, colors], (items) => {
         let list = list_to(items);
+        list_shuffle(list);
       }),
     ),
   ]);
