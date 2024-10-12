@@ -24,7 +24,7 @@ export function grace_good_morning() {
       "Good morning love 😇",
       "",
       list_map([love, faces, colors], (items) => {
-        return string_shuffle(items);
+        let shuffled = string_shuffle(items);
       }),
       "",
       "I love you 💚",
