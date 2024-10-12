@@ -1,3 +1,4 @@
+import { list_map } from "./list_map.mjs";
 import { html_remove } from "./html_remove.mjs";
 import { clipboard_copy_web } from "./clipboard_copy_web.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -51,7 +52,7 @@ export async function app_search() {
     list_sort_string(filtered, (f) => object_property_get(f, "reference"));
     html_hr(root);
     html_button_width_full_text_click(root, "expand all");
-    each(filtered, (f) => {
+    let on_clicks = list_map(filtered, (f) => {
       let { chapter_code, verse_number, reference } = f;
       html_hr(root);
       let result = html_div(root);
