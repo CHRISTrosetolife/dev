@@ -21,7 +21,7 @@ export function grace_good_morning() {
         ),
       ),
       "",
-      "Good morning love 😇",
+      "Good morning, love 😇",
       "",
       list_map([love, faces, colors], string_shuffle),
       "",
