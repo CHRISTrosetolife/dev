@@ -7,7 +7,7 @@ export function app_good() {
   let messages = ["morning", "night"];
   each(messages, (message) => {
     html_button_width_full_text_click(body, message, () => {
-      grace_good_generic_copy();
+      grace_good_generic_copy(message);
     });
   });
 }
