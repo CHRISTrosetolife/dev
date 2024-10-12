@@ -1,4 +1,4 @@
-import { invoke_multiple } from "./invoke_multiple.mjs";
+import { invoke_multiple_async } from "./invoke_multiple_async.mjs";
 import { list_map } from "./list_map.mjs";
 import { html_remove } from "./html_remove.mjs";
 import { clipboard_copy_web } from "./clipboard_copy_web.mjs";
@@ -78,8 +78,8 @@ export async function app_search() {
       let b = html_button_width_full_text_click(root, reference, on_click);
       return on_click;
     });
-    function expand_all() {
-        invoke_multiple_async(on_clicks);
+    async function expand_all() {
+      await invoke_multiple_async(on_clicks);
     }
   });
   async function word_to_results(word) {
