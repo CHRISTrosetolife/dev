@@ -1,3 +1,4 @@
+import { invoke } from "./invoke.mjs";
 import { list_map } from "./list_map.mjs";
 import { html_remove } from "./html_remove.mjs";
 import { clipboard_copy_web } from "./clipboard_copy_web.mjs";
@@ -78,7 +79,7 @@ export async function app_search() {
       return on_click;
     });
     function expand_all() {
-      each(on_clicks, (item) => {});
+      each(on_clicks, invoke);
     }
   });
   async function word_to_results(word) {
