@@ -55,7 +55,7 @@ export async function app_search() {
       let { chapter_code, verse_number, reference } = f;
       html_hr(root);
       let result = html_div(root);
-      let b = html_button_width_full_text_click(root, reference, async () => {
+      let on_click = async () => {
         html_remove(b);
         let storage_path = bible_verses_upload_path(
           app_search_bible_folder(),
@@ -72,7 +72,8 @@ export async function app_search() {
           clipboard_copy_web(text);
         });
         html_p_text_centered(result, text);
-      });
+      };
+      let b = html_button_width_full_text_click(root, reference, on_click);
     });
   });
   async function word_to_results(word) {
