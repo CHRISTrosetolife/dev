@@ -31,7 +31,7 @@ export function grace_good_morning() {
       }),
       family,
       list_join_empty(
-        list_map([crosses, green, hugs], (items) =>
+        list_map([hugs, green, crosses], (items) =>
           list_size_randoms(counts, items),
         ),
       ),
