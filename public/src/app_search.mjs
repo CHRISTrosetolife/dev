@@ -49,6 +49,7 @@ export async function app_search() {
       });
     });
     list_sort_string(filtered, (f) => object_property_get(f, "reference"));
+    html_button_width_full_text_click();
     each(filtered, (f) => {
       let { chapter_code, verse_number, reference } = f;
       html_hr(root);
