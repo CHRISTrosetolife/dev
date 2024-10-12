@@ -5,6 +5,7 @@ import { list_join_newline } from "./list_join_newline.mjs";
 import { list_join_empty } from "./list_join_empty.mjs";
 import { list_map } from "./list_map.mjs";
 export function grace_good_morning() {
+  let text = "morning";
   let crosses = ["✝", "☦"];
   let green = ["💚"];
   let hugs = ["🫂", "🤗"];
