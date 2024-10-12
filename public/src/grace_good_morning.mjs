@@ -14,6 +14,7 @@ export function grace_good_morning() {
   return list_join_newline(
     list_between(
       [
+        "Good morning love",
         range_map_join_empty(count, () => {
           return list_random_item(crosses);
         }),
