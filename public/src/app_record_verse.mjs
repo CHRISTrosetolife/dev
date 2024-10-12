@@ -51,9 +51,10 @@ export async function app_record_verse(
   );
   let { root } = context;
   app_record_chapter_buttons(context, book_code);
+  let chapter_text = bible_book_chapter_text(book_code, chapter);
   html_button_width_full_text_click(
     root,
-    bible_book_chapter_text(book_code, chapter),
+    chapter_text,
     async () => await app_record_chapter(context, book_code, chapter),
   );
   html_hr(root);
