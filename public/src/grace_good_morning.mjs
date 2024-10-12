@@ -14,11 +14,11 @@ export function grace_good_morning() {
   return list_join_newline(
     list_between(
       [
-        "Good morning love 😇",
-        "I love you 💚",
         range_map_join_empty(count, () => {
           return list_random_item(crosses);
         }),
+        "Good morning love 😇",
+        "I love you 💚",
       ],
       "",
     ),
