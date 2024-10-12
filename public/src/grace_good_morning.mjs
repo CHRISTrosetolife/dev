@@ -20,5 +20,10 @@ export function grace_good_morning() {
     ),
     "Good morning love 😇",
     "I love you 💚",
+    list_join_empty(
+      list_map([crosses, green, hugs], (items) =>
+        list_size_randoms(counts, items),
+      ),
+    ),
   ]);
 }
