@@ -15,6 +15,7 @@ export function grace_good_morning() {
     list_between(
       [
         "Good morning love 😇",
+        "I love you",
         range_map_join_empty(count, () => {
           return list_random_item(crosses);
         }),
