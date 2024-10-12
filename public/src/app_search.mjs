@@ -78,7 +78,7 @@ export async function app_search() {
       return on_click;
     });
     function expand_all() {
-      each(list, (item) => {});
+      each(on_clicks, (item) => {});
     }
   });
   async function word_to_results(word) {
