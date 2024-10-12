@@ -29,6 +29,12 @@ export function grace_good_morning() {
         list_shuffle(list);
         return list_join_empty(list);
       }),
+      family,
+      list_join_empty(
+        list_map([crosses, green, hugs], (items) =>
+          list_size_randoms(counts, items),
+        ),
+      ),
     ]),
   );
 }
