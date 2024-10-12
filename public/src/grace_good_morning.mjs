@@ -23,13 +23,14 @@ export function grace_good_morning() {
       ),
       "",
       "Good morning love 😇",
-      "I love you 💚",
       "",
       list_map([emojis, faces, colors], (items) => {
         let list = list_to(items);
         list_shuffle(list);
         return list_join_empty(list);
       }),
+      "",
+      "I love you 💚",
       "",
       family,
       "",
