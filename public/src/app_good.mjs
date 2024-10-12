@@ -6,10 +6,11 @@ import { html_style_default_initialize } from "./html_style_default_initialize.m
 export function app_good() {
   let body = html_style_default_initialize();
   let messages = ["morning", "night"];
-  each(list, (item) => {});
-  html_button_width_full_text_click(body, "morning", () => {
-    let message = grace_good_morning();
-    clipboard_copy_web(message);
+  each(messages, (message) => {
+    html_button_width_full_text_click(body, "morning", () => {
+      let message = grace_good_morning();
+      clipboard_copy_web(message);
+    });
   });
   html_button_width_full_text_click(body, "morning", () => {
     let message = grace_good_morning();
