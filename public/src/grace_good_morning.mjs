@@ -1,3 +1,4 @@
 export function grace_good_morning() {
-  let emojis = "😍💓♥️💕💖💗💘💞😘❤️🏩👫👬👭💋💙💚💛💜💟❣️";
+  let emojis = "😍💓♥️💕💖💗💘💞😘❤️🏩💋💙💚👫💛💜💟👰💒💍🌷🌹❣️";
+  let family = "🏡";
 }
