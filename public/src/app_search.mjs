@@ -79,7 +79,7 @@ export async function app_search() {
       return on_click;
     });
     async function expand_all() {
-      await invoke_multiple(on_clicks);
+      invoke_multiple(on_clicks);
     }
   });
   async function word_to_results(word) {
