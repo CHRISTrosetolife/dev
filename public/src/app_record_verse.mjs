@@ -1,3 +1,4 @@
+import { clipboard_copy_web } from "./clipboard_copy_web.mjs";
 import { bible_search_symbols_map_single } from "./bible_search_symbols_map_single.mjs";
 import { html_style_green } from "./html_style_green.mjs";
 import { equal } from "./equal.mjs";
@@ -153,11 +154,13 @@ export async function app_record_verse(
   recording_not = [start, previous];
   each(recording, html_style_display_none);
   async function chapter_next_go() {
-    string_combine_multiple([
-      "Finished reading ",
-      chapter_text,
-      " and recording audio for audio Bible",
-    ]);
+    clipboard_copy_web(
+      string_combine_multiple([
+        "Finished reading ",
+        chapter_text,
+        " and recording audio for audio Bible",
+      ]),
+    );
     let { books } = context;
     let book = list_find_property(books, "book_code", book_code);
     let { chapters } = book;
