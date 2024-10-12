@@ -1,4 +1,4 @@
 export function grace_good_morning() {
-  let emojis = "😍💓♥️💕💖💗💘💞😘❤️🏩💋💙💚👫💛💜💟👰💒💍🌷🌹❣️";
-  let family = "🏡";
+  let emojis = "😍💓♥️💕💖💗💘💞😘❤️🏩💙🧡💝🤍🤎🫶🖤💚💛🤟🏿💌💜💟🌷🌹❣️";
+  let family = "👫🫂💍👰🤵💋💒🏡🛏🤰👶🤱👨‍🍼🍼👨‍👩‍👦👨‍👩‍👧‍👦😇";
 }
