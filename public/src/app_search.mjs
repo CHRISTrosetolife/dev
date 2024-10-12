@@ -74,6 +74,7 @@ export async function app_search() {
         html_p_text_centered(result, text);
       };
       let b = html_button_width_full_text_click(root, reference, on_click);
+      return on_click;
     });
   });
   async function word_to_results(word) {
