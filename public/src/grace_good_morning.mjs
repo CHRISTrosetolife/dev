@@ -11,8 +11,8 @@ export function grace_good_morning() {
   let colors = "❤️💙🧡🤍🤎🖤💚💛💜";
   let family = "👫🫂👩🏾‍❤‍💋‍👨🏾💍👰🤵💋💒🏡🛏🤰👼👶🤱👨‍🍼🍼👨‍👩‍👦👨‍👩‍👧‍👦😇";
   let count = 5;
-  let m = () => {
+  let mapper = () => {
     return list_random_item(crosses);
   };
-  return string_combine_multiple([list_map(range(count))]);
+  return string_combine_multiple([list_map(range(count), mapper)]);
 }
