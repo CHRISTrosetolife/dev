@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { range } from "./range.mjs";
 import { list_map } from "./list_map.mjs";
 export function grace_good_morning() {
@@ -8,5 +9,6 @@ export function grace_good_morning() {
   let faces = "😊😍😘😗😙😁🙂😀😇😇😇";
   let colors = "❤️💙🧡🤍🤎🖤💚💛💜";
   let family = "👫🫂👩🏾‍❤‍💋‍👨🏾💍👰🤵💋💒🏡🛏🤰👼👶🤱👨‍🍼🍼👨‍👩‍👦👨‍👩‍👧‍👦😇";
-  return $s, list_map(range());
+  let count = 5;
+  return string_combine_multiple([list_map(range())]);
 }
