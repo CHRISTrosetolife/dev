@@ -1,7 +1,6 @@
+import { list_size_random } from "./list_size_random.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { list_between } from "./list_between.mjs";
-import { range_map_join_empty } from "./range_map_join_empty.mjs";
-import { list_random_item } from "./list_random_item.mjs";
 export function grace_good_morning() {
   let crosses = "✝☦";
   let green = "💚";
@@ -14,9 +13,7 @@ export function grace_good_morning() {
   return list_join_newline(
     list_between(
       [
-        range_map_join_empty(count, () => {
-          return list_random_item(crosses);
-        }),
+        list_size_random(count, crosses),
         "Good morning love 😇",
         "I love you 💚",
       ],
