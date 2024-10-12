@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_shuffle } from "./string_shuffle.mjs";
 import { list_denest } from "./list_denest.mjs";
 import { list_size_randoms } from "./list_size_randoms.mjs";
@@ -22,7 +23,7 @@ export function grace_good_morning() {
         ),
       ),
       "",
-      "Good morning, love 😇",
+      string_combine_multiple(["Good ", text, " love 😇"]),
       "",
       list_map([love, faces, colors], string_shuffle),
       "",
