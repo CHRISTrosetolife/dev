@@ -156,9 +156,8 @@ export async function app_record_verse(
   async function chapter_next_go() {
     clipboard_copy_web(
       string_combine_multiple([
-        "Finished reading ",
         chapter_text,
-        " and recording audio for audio Bible",
+        ": Finished reading and recording audio for audio Bible",
       ]),
     );
     let { books } = context;
