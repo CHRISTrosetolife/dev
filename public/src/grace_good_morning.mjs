@@ -1,3 +1,4 @@
+import { list_take } from "./list_take.mjs";
 import { integer_random } from "./integer_random.mjs";
 import { list_to } from "./list_to.mjs";
 import { string_shuffle } from "./string_shuffle.mjs";
@@ -30,6 +31,7 @@ export function grace_good_morning() {
         let shuffled = string_shuffle(items);
         let list = list_to(shuffled);
         let count = integer_random(7, list_size(list));
+        list_take(list, count);
       }),
       "",
       "I love you 💚",
