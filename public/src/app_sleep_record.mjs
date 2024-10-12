@@ -8,9 +8,9 @@ export function app_sleep_record(context, button_text, list_name, message) {
   let { root } = context;
   let result;
   html_button_width_full_text_click(root, button_text, async () => {
+    grace_good_generic_copy(message);
     let { today, now, month_path, data } = await app_sleep_today_download();
     await app_sleep_save(today, list_name, now, month_path, data, result);
-    grace_good_generic_copy(message);
   });
   result = html_element(root, "pre");
   html_hr(root);
