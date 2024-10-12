@@ -21,14 +21,18 @@ export function grace_good_morning() {
           list_size_randoms(counts, items),
         ),
       ),
+      "",
       "Good morning love 😇",
       "I love you 💚",
+      "",
       list_map([emojis, faces, colors], (items) => {
         let list = list_to(items);
         list_shuffle(list);
         return list_join_empty(list);
       }),
+      "",
       family,
+      "",
       list_join_empty(
         list_map([hugs, green, crosses], (items) =>
           list_size_randoms(counts, items),
