@@ -179,6 +179,7 @@ export async function app_record_verse(
       } else {
         book_next_book = list_next(books, book);
       }
+      book_next_code = object_property_get(object, "property_name");
       let { chapters } = book_next_book;
       chapter_next = list_first(chapters);
     } else {
