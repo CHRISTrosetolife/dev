@@ -172,23 +172,23 @@ export async function app_record_verse(
     let { books } = context;
     let book = list_find_property(books, "book_code", book_code);
     let { chapters } = book;
-    let chapter_next, book_next;
+    let chapter_next, book_next_code, book_next_book;
     if (list_last_is(chapters, chapter)) {
       if (list_last_is(books, book)) {
-        book_next = list_first(books);
+        book_next_book = list_first(books);
       } else {
-        book_next = list_next(books, book);
+        book_next_book = list_next(books, book);
       }
-      let { chapters } = book_next;
+      let { chapters } = book_next_book;
       chapter_next = list_first(chapters);
     } else {
-      book_next = book_code;
+      book_next_code = book_code;
       chapter_next = list_next(chapters, chapter);
     }
     let verses_next = await app_record_verses(book_code, chapter_next);
     await app_record_verse(
       context,
-      book_next,
+      book_next_code,
       chapter_next,
       object_property_get(list_first(verses_next), "verse_number"),
     );
