@@ -1,3 +1,4 @@
+import { html_button_next_text } from "./html_button_next_text.mjs";
 import { clipboard_copy_web } from "./clipboard_copy_web.mjs";
 import { bible_search_symbols_map_single } from "./bible_search_symbols_map_single.mjs";
 import { html_style_green } from "./html_style_green.mjs";
@@ -84,7 +85,7 @@ export async function app_record_verse(
     }
   });
   html_hr(root);
-  let start, previous, save, cancel, restart, recording, recording_not;
+  let start, previous, next, save, cancel, restart, recording, recording_not;
   start = html_button_width_full_text_click(root, "⏺️ start recording", () => {
     each(recording_not, html_style_display_none);
     html_recorder_media_start(context.mr);
@@ -93,6 +94,19 @@ export async function app_record_verse(
   previous = html_button_width_full_text_click(
     root,
     "⬅️ previous verse",
+    async () => {
+      let verse_previous = list_previous(verses, verse);
+      await app_record_verse(
+        context,
+        book_code,
+        chapter,
+        object_property_get(verse_previous, "verse_number"),
+      );
+    },
+  );
+  previous = html_button_width_full_text_click(
+    root,
+    string_combine_multiple([html_button_next_text(), " verse"]),
     async () => {
       let verse_previous = list_previous(verses, verse);
       await app_record_verse(
