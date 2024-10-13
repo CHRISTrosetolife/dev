@@ -104,18 +104,10 @@ export async function app_record_verse(
       );
     },
   );
-  previous = html_button_width_full_text_click(
+  next = html_button_width_full_text_click(
     root,
     string_combine_multiple([html_button_next_text(), " verse"]),
-    async () => {
-      let verse_previous = list_previous(verses, verse);
-      await app_record_verse(
-        context,
-        book_code,
-        chapter,
-        object_property_get(verse_previous, "verse_number"),
-      );
-    },
+    verse_next_go,
   );
   save = html_button_width_full_text_click(
     root,
@@ -133,16 +125,7 @@ export async function app_record_verse(
         string_combine_multiple([when, ".mp3"]),
       ]);
       await firebase_upload_bytes(storage_path, blob);
-      if (list_last_is(verses, verse)) {
-        await chapter_next_go();
-      } else {
-        let verse_number_next = list_find_property_next_property(
-          verses,
-          "verse_number",
-          verse_number,
-        );
-        await app_record_verse(context, book_code, chapter, verse_number_next);
-      }
+      await verse_next_go();
     },
   );
   restart = html_button_width_full_text_click(
@@ -165,8 +148,20 @@ export async function app_record_verse(
     },
   );
   recording = [save, restart, cancel];
-  recording_not = [start, previous];
+  recording_not = [start, previous, next];
   each(recording, html_style_display_none);
+  async function verse_next_go() {
+    if (list_last_is(verses, verse)) {
+      await chapter_next_go();
+    } else {
+      let verse_number_next = list_find_property_next_property(
+        verses,
+        "verse_number",
+        verse_number,
+      );
+      await app_record_verse(context, book_code, chapter, verse_number_next);
+    }
+  }
   async function chapter_next_go() {
     clipboard_copy_web(
       string_combine_multiple([
