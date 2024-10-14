@@ -33,7 +33,7 @@ export async function function_rename(fn_name_from, fn_name_to) {
   let existing = object_property_get(identifiers, fn_name_from);
   list_remove(existing, fn_name_from);
   await function_transform_args_split_lambda(
-    fn_name_to,
+    fn_name_from,
     [js_identifier_rename],
     [fn_name_from, fn_name_to],
   );
