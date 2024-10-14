@@ -12,8 +12,13 @@ import { html_clear_scroll_top_context } from "./html_clear_scroll_top_context.m
 import { html_div } from "./html_div.mjs";
 export function app_sleep_main(context) {
   let root = html_clear_scroll_top_context(context);
-  app_sleep_record(context, app_sleep_woke_up(), app_sleep_wakeups(), "");
-  app_sleep_record(context, app_sleep_sleep(), app_sleep_sleeps(), "");
+  app_sleep_record(
+    context,
+    app_sleep_woke_up(),
+    app_sleep_wakeups(),
+    "morning",
+  );
+  app_sleep_record(context, app_sleep_sleep(), app_sleep_sleeps(), "night");
   html_button_width_full_text_click(root, app_sleep_manual_text(), () => {
     app_sleep_manual(context);
   });
