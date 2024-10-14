@@ -6,6 +6,6 @@ export async function bible_words_definitions_all(language) {
     new: false,
     language,
   });
-  let result = await bible_words_definitions_get(words, language);
+  let result = await bible_words_definitions_get(words, error());
   return result;
 }
