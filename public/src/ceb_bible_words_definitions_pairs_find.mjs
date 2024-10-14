@@ -4,7 +4,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
 import { each_index } from "./each_index.mjs";
 export async function ceb_bible_words_definitions_pairs_find(query) {
-  let pairs = await bible_words_definitions_pairs_compute();
+  let pairs = await bible_words_definitions_pairs_compute(language);
   each_index(pairs, (pair, index) => {
     each(["eng", "ceb"], (language) => {
       if (
