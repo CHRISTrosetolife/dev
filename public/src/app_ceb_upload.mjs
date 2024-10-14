@@ -34,7 +34,7 @@ export async function app_ceb_upload() {
   let group_local_compare_to_new = false;
   let group_count = app_language_group_size();
   let { atoms, definitions, inverted } =
-    await ceb_bible_words_definitions_atoms_cache();
+    await ceb_bible_words_definitions_atoms_cache(from);
   let groups = list_chunk(atoms, group_count);
   let profiles = [
     {
