@@ -4,7 +4,7 @@ import { list_add } from "./list_add.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_property_exists_not } from "./object_property_exists_not.mjs";
-export async function bible_words_definitions_get(list) {
+export async function bible_words_definitions_get(list, language) {
   let existing = {};
   let result = [];
   let definition_get = await function_definition(language);
