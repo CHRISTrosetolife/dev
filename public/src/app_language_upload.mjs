@@ -24,7 +24,7 @@ import { list_reverse } from "./list_reverse.mjs";
 import { each_async } from "./each_async.mjs";
 import { object_list_invert } from "./object_list_invert.mjs";
 import { app_language_group_size } from "./app_language_group_size.mjs";
-export async function app_ceb_upload() {
+export async function app_language_upload() {
   let from = "ceb";
   let to = "en";
   let audio_only = false;
