@@ -68,7 +68,7 @@ export async function bible_chapter_foreign(chapter_name, bible_folder) {
       chapter_name,
     };
   });
-  if (equal_by(list_size(eng, foreign))) {
+  if (!equal_by(list_size(eng, foreign))) {
     log({
       eng,
       foreign,
