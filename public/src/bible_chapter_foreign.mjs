@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_size } from "./list_size.mjs";
 import { equal_by } from "./equal_by.mjs";
 import { assert } from "./assert.mjs";
@@ -66,6 +67,9 @@ export async function bible_chapter_foreign(chapter_name, bible_folder) {
       eng_verse_numbers,
       chapter_name,
     };
+  });
+  log({
+    eng,foreign
   });
   assert(equal_by, [eng, foreign, list_size]);
   let definitions = {};
