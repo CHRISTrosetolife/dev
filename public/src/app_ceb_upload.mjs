@@ -1,7 +1,7 @@
+import { bible_words_definitions_atoms_cache } from "./bible_words_definitions_atoms_cache.mjs";
 import { list_chunk_each } from "./list_chunk_each.mjs";
 import { list_wait } from "./list_wait.mjs";
 import { list_take } from "./list_take.mjs";
-import { ceb_bible_words_definitions_atoms_cache } from "./ceb_bible_words_definitions_atoms_cache.mjs";
 import { list_any_created } from "./list_any_created.mjs";
 import { list_map_async } from "./list_map_async.mjs";
 import { list_last_nested } from "./list_last_nested.mjs";
@@ -34,7 +34,7 @@ export async function app_ceb_upload() {
   let group_local_compare_to_new = false;
   let group_count = app_language_group_size();
   let { atoms, definitions, inverted } =
-    await ceb_bible_words_definitions_atoms_cache(from);
+    await bible_words_definitions_atoms_cache(from);
   let groups = list_chunk(atoms, group_count);
   let profiles = [
     {
