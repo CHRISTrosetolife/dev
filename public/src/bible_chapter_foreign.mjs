@@ -72,7 +72,8 @@ export async function bible_chapter_foreign(chapter_name, bible_folder) {
     eng,
     foreign,
   });
-  error()
+  if (false) {
+  }
   assert(equal_by, [eng, foreign, list_size]);
   let definitions = {};
   let data = {
