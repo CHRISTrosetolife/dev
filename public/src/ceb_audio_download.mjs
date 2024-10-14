@@ -10,7 +10,7 @@ import { each_async } from "./each_async.mjs";
 export async function ceb_audio_download() {
   let from = "ceb";
   let to = "en";
-  let words = await bible_words_definitions_all_cache();
+  let words = await bible_words_definitions_all_cache(language);
   let chunks = list_chunk(words, 20);
   let chunks_size = list_size(chunks);
   await each_index_async(chunks, async (chunk, index) => {
