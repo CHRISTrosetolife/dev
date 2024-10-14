@@ -32,6 +32,7 @@ export async function function_rename(fn_name_from, fn_name_to) {
   let fn_path_to = function_name_to_path(fn_name_to);
   let existing = object_property_get(identifiers, fn_name_from);
   list_remove(existing, fn_name_from);
+  await file_rename(fn_path_from, fn_path_to);
   await function_transform_args_split_lambda(
     fn_name_from,
     [js_identifier_rename],
@@ -45,7 +46,6 @@ export async function function_rename(fn_name_from, fn_name_to) {
     js_imports_add_specified(ast, [fn_name_to]);
     await file_js_unparse(file_path, ast);
   });
-  await file_rename(fn_path_from, fn_path_to);
   let functions_matching_strings = await functions_string(fn_name_from);
   let functions_fn_name = await functions_identifier(fn_name("fn_name"));
   let intersected = object_properties_intersect(
