@@ -1,4 +1,4 @@
-import { bible_words_score } from "./bible_words_score.mjs";
+import { bible_words_score_language } from "./bible_words_score_language.mjs";
 import { number_power } from "./number_power.mjs";
 import { list_to_lookup_key_value_property } from "./list_to_lookup_key_value_property.mjs";
 import { list_reverse } from "./list_reverse.mjs";
@@ -18,7 +18,7 @@ import { object_property_exists } from "./object_property_exists.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { list_includes } from "./list_includes.mjs";
 export async function bible_words_definitions_pairs_compute(language) {
-  let ceb_scores = await bible_words_score(language);
+  let ceb_scores = await bible_words_score_language(language);
   let pairs = list_adder((la) =>
     each(ceb_scores, (w) =>
       each(object_property_get(w, "definitions"), (d) => {
