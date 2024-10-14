@@ -10,11 +10,11 @@ import { object_property_get } from "./object_property_get.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { object_merge } from "./object_merge.mjs";
 export async function bible_words_score_language(language) {
-  let words_ceb = await bible_words_language_count_cache({
+  let words = await bible_words_language_count_cache({
     new: false,
     language,
   });
-  let lookup = list_to_lookup_key_value_property(words_ceb, "word", "count");
+  let lookup = list_to_lookup_key_value_property(words, "word", "count");
   let map = await bible_words_definitions_map_cache(language);
   let definitions = await bible_words_definitions_all_cache(language);
   each(definitions, (d) => {
