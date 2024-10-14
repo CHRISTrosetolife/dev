@@ -9,9 +9,10 @@ import { each } from "./each.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { object_merge } from "./object_merge.mjs";
-export async function bible_words_score(language, language) {
+export async function bible_words_score(language) {
   let words_ceb = await bible_words_language_count_cache({
     new: false,
+    language,
   });
   let lookup = list_to_lookup_key_value_property(words_ceb, "word", "count");
   let map = await ceb_bible_words_definitions_map_cache();
