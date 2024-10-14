@@ -128,7 +128,7 @@ export async function function_aliases_generate() {
   alias_add(sermon_references_combine, ["sr"]);
   alias_add(functions_string, ["ss"]);
   alias_add(sermon_new, ["sn"]);
-  alias_add(sermon_open, ["sop"]);
+  alias_add(sermon_open, ["sp"]);
   alias_add(function_search_open, ["so"]);
   alias_add(terminal, ["t"]);
   alias_add(terminal_data_history, ["th"]);
