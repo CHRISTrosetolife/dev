@@ -1,4 +1,3 @@
-import { sermon_open } from "./sermon_open.mjs";
 import { sermon_references_combine } from "./sermon_references_combine.mjs";
 import { bible_search_book } from "./bible_search_book.mjs";
 import { bible_chapter_text } from "./bible_chapter_text.mjs";
@@ -67,6 +66,7 @@ import { function_transform } from "./function_transform.mjs";
 import { http_server } from "./http_server.mjs";
 import { command_line } from "./command_line.mjs";
 import { fn_name } from "./fn_name.mjs";
+import { sermon_open } from "./sermon_open.mjs";
 export async function function_aliases_generate() {
   let all = {};
   function alias_add(fn, aliases) {
