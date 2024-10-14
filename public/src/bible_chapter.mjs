@@ -8,9 +8,12 @@ export async function bible_chapter(bible_folder, chapter_name) {
   chapter_name = string_case_upper(chapter_name);
   let root = await bible_chapter_parsed(bible_folder, chapter_name);
   let attribute_values = [
-    "p",
+    "d",
     "m",
+    "nb",
+    "p",
     "pc",
+    "pi",
     "pm",
     "pmo",
     "q",
@@ -19,8 +22,6 @@ export async function bible_chapter(bible_folder, chapter_name) {
     "li2",
     "li3",
     "li4",
-    "d",
-    "nb",
   ];
   let verses = html_parse_visit_classes_list(root, attribute_values);
   let eng = bible_verses_parse(verses);
