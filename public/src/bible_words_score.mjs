@@ -9,7 +9,7 @@ import { each } from "./each.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { object_merge } from "./object_merge.mjs";
-export async function ceb_bible_words_score() {
+export async function bible_words_score() {
   let words_ceb = await bible_words_language_count_cache({
     new: false,
   });
