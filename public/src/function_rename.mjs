@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { assert_message } from "./assert_message.mjs";
 import { object_properties_intersect } from "./object_properties_intersect.mjs";
@@ -34,12 +35,15 @@ export async function function_rename(fn_name_from, fn_name_to) {
   list_remove(existing, fn_name_from);
   await file_rename(fn_path_from, fn_path_to);
   await function_transform_args_split_lambda(
-    fn_name_from,
+    fn_name_to,
     [js_identifier_rename],
     [fn_name_from, fn_name_to],
   );
   await each_async(existing, async (e) => {
     let file_path = function_name_to_path(e);
+    log({
+      file_path,
+    });
     let ast = await file_js_parse(file_path);
     js_import_remove(ast, fn_name_from);
     js_identifier_rename(ast, fn_name_from, fn_name_to);
