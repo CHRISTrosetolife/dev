@@ -7,7 +7,7 @@ import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { ceb_definition } from "./ceb_definition.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { list_add } from "./list_add.mjs";
-export async function bible_words_definitions_map() {
+export async function bible_words_definitions_map(language) {
   let words_ceb = await bible_words_language_count_cache({
     new: false,
     language,
