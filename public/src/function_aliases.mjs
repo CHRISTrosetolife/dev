@@ -54,7 +54,7 @@ export function function_aliases() {
     sr: "sermon_references_combine",
     ss: "functions_string",
     sn: "sermon_new",
-    sop: "sermon_open",
+    sp: "sermon_open",
     so: "function_search_open",
     t: "terminal",
     th: "terminal_data_history",
