@@ -10,7 +10,7 @@ import { object_property_set } from "./object_property_set.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { null_not_is } from "./null_not_is.mjs";
 export async function bible_words_definitions_pairs(language) {
-  let scores = await bible_words_score();
+  let scores = await bible_words_score(language);
   let lookup = list_to_lookup_property(scores, "word");
   let pairs = await bible_words_definitions_pairs_compute();
   let concise = list_map(pairs, (p) =>
