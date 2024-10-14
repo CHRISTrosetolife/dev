@@ -1,3 +1,4 @@
+import { bible_words_definitions_pairs } from "./bible_words_definitions_pairs.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { object_list_invert } from "./object_list_invert.mjs";
 import { list_to_lookup_key_value_property } from "./list_to_lookup_key_value_property.mjs";
@@ -9,7 +10,6 @@ import { list_add_beginning } from "./list_add_beginning.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { subtract_1 } from "./subtract_1.mjs";
 import { each } from "./each.mjs";
-import { ceb_bible_words_definitions_pairs } from "./ceb_bible_words_definitions_pairs.mjs";
 import { equal } from "./equal.mjs";
 import { list_add } from "./list_add.mjs";
 import { list_remove } from "./list_remove.mjs";
@@ -26,7 +26,7 @@ export async function bible_words_definitions_atoms(language) {
   let take_count = 16;
   let atom_count = app_language_atom_count();
   let { pairs, definitions: definitions_list } =
-    await ceb_bible_words_definitions_pairs();
+    await bible_words_definitions_pairs();
   let definitions = list_to_lookup_key_value_property(
     definitions_list,
     "word",
