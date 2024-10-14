@@ -29,7 +29,7 @@ export async function bible_words_definitions_pairs_compute(language) {
           return;
         }
         la({
-          ceb: object_properties_new(w, ["word", "score"]),
+          language: object_properties_new(w, ["word", "score"]),
           eng: {
             word: d,
           },
@@ -52,7 +52,7 @@ export async function bible_words_definitions_pairs_compute(language) {
         });
       }
     }
-    let { ceb, eng } = pair;
+    let { language, eng } = pair;
     let eng_word = eng.word;
     eng_word = string_case_lower(eng_word);
     if (object_property_exists(eng_lookup, eng_word)) {
@@ -61,10 +61,13 @@ export async function bible_words_definitions_pairs_compute(language) {
       eng.score = 0;
     }
     assert(number_is, [eng.score]);
-    let [eng_score, ceb_score] = list_map_property([eng, ceb], "score");
+    let [eng_score, language_score] = list_map_property(
+      [eng, language],
+      "score",
+    );
     let n = 1;
     pair.score = number_power(
-      number_power(eng_score, n) + number_power(ceb_score, n),
+      number_power(eng_score, n) + number_power(language_score, n),
       1 / n,
     );
   });
