@@ -26,7 +26,7 @@ export async function bible_words_definitions_atoms(language) {
   let take_count = 16;
   let atom_count = app_language_atom_count();
   let { pairs, definitions: definitions_list } =
-    await bible_words_definitions_pairs();
+    await bible_words_definitions_pairs(language);
   let definitions = list_to_lookup_key_value_property(
     definitions_list,
     "word",
