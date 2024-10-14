@@ -9,6 +9,7 @@ import { object_property_initialize } from "./object_property_initialize.mjs";
 import { list_add } from "./list_add.mjs";
 export async function bible_words_definitions_map() {
   let words_ceb = await bible_words_language_count_cache({
+    language,
     new: false,
   });
   let result = {};
