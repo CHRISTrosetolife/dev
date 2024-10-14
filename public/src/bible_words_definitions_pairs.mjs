@@ -14,7 +14,7 @@ export async function bible_words_definitions_pairs(language) {
   let lookup = list_to_lookup_property(scores, "word");
   let pairs = await bible_words_definitions_pairs_compute_inner(scores);
   let concise = list_map(pairs, (p) =>
-    list_map(["ceb", "eng"], (language) =>
+    list_map(["foreign", "fluent"], (language) =>
       object_property_get(p[language], "word"),
     ),
   );
