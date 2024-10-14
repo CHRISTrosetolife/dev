@@ -34,6 +34,7 @@ export async function app_language_upload(from) {
   let group_count = app_language_group_size();
   let { atoms, definitions, inverted } =
     await bible_words_definitions_atoms_cache(from);
+  return;
   let groups = list_chunk(atoms, group_count);
   let profiles = [
     {
