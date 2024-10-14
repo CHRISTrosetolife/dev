@@ -14,19 +14,19 @@ export async function bible_words_definitions_map(language) {
   });
   let result = {};
   let size = list_size(words);
-  await each_index_async(words, async (word_ceb, index) => {
+  await each_index_async(words, async (word_language, index) => {
     if (index % 100 === 0) {
       log({
         size,
         index,
       });
     }
-    let { word, definitions } = await ceb_definition(word_ceb.word);
+    let { word, definitions } = await ceb_definition(word_language.word);
     if (object_property_exists_not(result, word)) {
       if (list_empty_not_is(definitions)) {
-        if (word_ceb.word !== word) {
+        if (word_language.word !== word) {
           let words = object_property_initialize(result, word, []);
-          list_add(words, word_ceb.word);
+          list_add(words, word_language.word);
         }
       }
     }
