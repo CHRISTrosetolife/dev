@@ -29,8 +29,8 @@ export async function bible_words_definitions_pairs_compute(language) {
           return;
         }
         la({
-          language: object_properties_new(w, ["word", "score"]),
-          eng: {
+          foreign: object_properties_new(w, ["word", "score"]),
+          fluent: {
             word: d,
           },
         });
@@ -38,7 +38,7 @@ export async function bible_words_definitions_pairs_compute(language) {
     ),
   );
   let eng_scores = await bible_words_eng_score();
-  let eng_lookup = list_to_lookup_key_value_property(
+  let fluent_lookup = list_to_lookup_key_value_property(
     eng_scores,
     "word",
     "score",
@@ -52,22 +52,22 @@ export async function bible_words_definitions_pairs_compute(language) {
         });
       }
     }
-    let { language, eng } = pair;
-    let eng_word = eng.word;
-    eng_word = string_case_lower(eng_word);
-    if (object_property_exists(eng_lookup, eng_word)) {
-      eng.score = object_property_get(eng_lookup, eng_word);
+    let { foreign, fluent } = pair;
+    let fluent_word = fluent.word;
+    fluent_word = string_case_lower(fluent_word);
+    if (object_property_exists(fluent_lookup, fluent_word)) {
+      fluent.score = object_property_get(fluent_lookup, fluent_word);
     } else {
-      eng.score = 0;
+      fluent.score = 0;
     }
-    assert(number_is, [eng.score]);
-    let [eng_score, language_score] = list_map_property(
-      [eng, language],
+    assert(number_is, [fluent.score]);
+    let [fluent_score, foreign_score] = list_map_property(
+      [fluent, foreign],
       "score",
     );
     let n = 1;
     pair.score = number_power(
-      number_power(eng_score, n) + number_power(language_score, n),
+      number_power(fluent_score, n) + number_power(foreign_score, n),
       1 / n,
     );
   });
