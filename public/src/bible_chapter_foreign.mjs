@@ -72,6 +72,7 @@ export async function bible_chapter_foreign(chapter_name, bible_folder) {
     log({
       eng,
       foreign,
+      chapter_name,
     });
   }
   assert(equal_by, [eng, foreign, list_size]);
