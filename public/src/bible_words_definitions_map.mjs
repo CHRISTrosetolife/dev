@@ -5,7 +5,6 @@ import { each_index_async } from "./each_index_async.mjs";
 import { list_size } from "./list_size.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { object_property_exists_not } from "./object_property_exists_not.mjs";
-import { ceb_definition } from "./ceb_definition.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { list_add } from "./list_add.mjs";
 import { function_import } from "./function_import.mjs";
@@ -26,7 +25,7 @@ export async function bible_words_definitions_map(language) {
         index,
       });
     }
-    let { word, definitions } = await ceb_definition(word_language.word);
+    let { word, definitions } = await definition_get(word_language.word);
     if (object_property_exists_not(result, word)) {
       if (list_empty_not_is(definitions)) {
         if (word_language.word !== word) {
