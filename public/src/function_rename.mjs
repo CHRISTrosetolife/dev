@@ -36,6 +36,9 @@ export async function function_rename(fn_name_from, fn_name_to) {
     existing,
   });
   list_remove(existing, fn_name_from);
+  log({
+    existing,
+  });
   await file_rename(fn_path_from, fn_path_to);
   await function_transform_args_split_lambda(
     fn_name_to,
