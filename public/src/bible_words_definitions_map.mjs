@@ -8,13 +8,13 @@ import { ceb_definition } from "./ceb_definition.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { list_add } from "./list_add.mjs";
 export async function bible_words_definitions_map(language) {
-  let words_ceb = await bible_words_language_count_cache({
+  let words = await bible_words_language_count_cache({
     new: false,
     language,
   });
   let result = {};
-  let size = list_size(words_ceb);
-  await each_index_async(words_ceb, async (word_ceb, index) => {
+  let size = list_size(words);
+  await each_index_async(words, async (word_ceb, index) => {
     if (index % 100 === 0) {
       log({
         size,
