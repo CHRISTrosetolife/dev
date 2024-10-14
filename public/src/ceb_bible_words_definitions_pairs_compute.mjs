@@ -17,7 +17,7 @@ import { list_adder } from "./list_adder.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { string_case_lower } from "./string_case_lower.mjs";
 import { list_includes } from "./list_includes.mjs";
-export async function ceb_bible_words_definitions_pairs_compute() {
+export async function bible_words_definitions_pairs_compute() {
   let ceb_scores = await bible_words_score();
   let pairs = list_adder((la) =>
     each(ceb_scores, (w) =>
