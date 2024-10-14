@@ -15,7 +15,7 @@ export async function bible_words_score_language(language) {
     language,
   });
   let lookup = list_to_lookup_key_value_property(words_ceb, "word", "count");
-  let map = await bible_words_definitions_map_cache();
+  let map = await bible_words_definitions_map_cache(language);
   let definitions = await ceb_bible_words_definitions_all_cache();
   each(definitions, (d) => {
     let choices = ceb_bible_words_definitions_map_choices(map, d);
