@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { bible_words_foreign_book } from "./bible_words_foreign_book.mjs";
 import { bible_books_index_old_is } from "./bible_books_index_old_is.mjs";
 import { bible_books } from "./bible_books.mjs";
@@ -15,6 +16,7 @@ export async function bible_words_foreign(args, bible_folder) {
           }
         }
         let r = await bible_words_foreign_book(book_name, bible_folder, la);
+        each(list, (item) => {});
       },
     );
   });
