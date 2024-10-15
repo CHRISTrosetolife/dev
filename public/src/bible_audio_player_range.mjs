@@ -1,3 +1,4 @@
+import { bible_audio_player_drive_letter } from "./bible_audio_player_drive_letter.mjs";
 import { invoke_multiple_async } from "./invoke_multiple_async.mjs";
 import { drive_format } from "./drive_format.mjs";
 import { drive_remove } from "./drive_remove.mjs";
@@ -19,7 +20,7 @@ import { assert } from "./assert.mjs";
 export async function bible_audio_player_range(book_from, book_to) {
   let disk_format_eject = true;
   await bible_audio_player_unzip();
-  let drive_letter = "E";
+  let drive_letter = bible_audio_player_drive_letter();
   if (disk_format_eject) {
     await drive_format(drive_letter);
   }
