@@ -1,3 +1,4 @@
+import { object_merge } from "./object_merge.mjs";
 import { log } from "./log.mjs";
 import { list_size } from "./list_size.mjs";
 import { equal_by } from "./equal_by.mjs";
@@ -36,7 +37,7 @@ export async function bible_chapter_foreign(bible_folder, chapter_name) {
   let missing_lug = {
     MAT23: ["14"],
   };
-  object_extend();
+  object_merge();
   let missing_is = false;
   each_object(missing, (chapter_name_missing, verse_numbers) => {
     if (chapter_name === chapter_name_missing) {
