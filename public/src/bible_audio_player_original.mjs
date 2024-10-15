@@ -10,11 +10,17 @@ import { file_copy_path } from "./file_copy_path.mjs";
 export async function bible_audio_player_original() {
   let drive_letter = bible_audio_player_drive_letter();
   await drive_format(drive_letter);
-  await bible_audio_player_language("greek");
-  let output = bible_audio_player_output_path();
-  await each_async(await bible_hebrew_audio_download(), async (hebrew_path) => {
-    let file_path_new = file_copy_path(hebrew_path, output);
-    await file_copy_closed(hebrew_path, file_path_new);
-  });
+  await lambda();
   await drive_remove(drive_letter);
+  async function lambda() {
+    await bible_audio_player_language("greek");
+    let output = bible_audio_player_output_path();
+    await each_async(
+      await bible_hebrew_audio_download(),
+      async (hebrew_path) => {
+        let file_path_new = file_copy_path(hebrew_path, output);
+        await file_copy_closed(hebrew_path, file_path_new);
+      },
+    );
+  }
 }
