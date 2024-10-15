@@ -90,15 +90,17 @@ export async function bible_chapter_foreign(bible_folder, chapter_name) {
       eng_verse_numbers,
       chapter_name,
     };
-  });  let difference_pther = list_difference(
-      eng_verse_numbers,
+  });
+  let difference_other = list_difference(
+    eng_verse_numbers,
     foreign_verse_numbers,
   );
   if (!equal_by(eng, foreign, list_size)) {
     log({
       eng,
       foreign,
-      chapter_name,difference_pther
+      chapter_name,
+      difference_other,
     });
   }
   assert(equal_by, [eng, foreign, list_size]);
