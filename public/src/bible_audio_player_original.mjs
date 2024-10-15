@@ -11,7 +11,10 @@ export async function bible_audio_player_original() {
   let folders = await folder_read_shallow_names(p, "");
   await bible_audio_player_generic_multiple(p, folders);
   let output = bible_audio_player_output_path();
-  await each_async(list, async (item) => {});
+  await each_async(
+    sandbox_bible_hebrew_audio_download(),
+    async (hebrew_path) => {},
+  );
   let file_path_new = file_copy_path(file_path, output);
   await file_copy_closed(from, to_mapped);
 }
