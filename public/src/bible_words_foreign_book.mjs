@@ -9,9 +9,6 @@ export async function bible_words_foreign_book(bible_folder, book_name) {
   });
   return await list_adder_async(async (la) => {
     await bible_chapters_each("engbsb", book_name, async (chapter_name) => {
-      log({
-        chapter_name,
-      });
       let r = await bible_chapter_foreign(bible_folder, chapter_name);
       let { foreign } = r;
       each(foreign, (v) =>
