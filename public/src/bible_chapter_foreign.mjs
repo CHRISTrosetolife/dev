@@ -36,6 +36,7 @@ export async function bible_chapter_foreign(chapter_name, bible_folder) {
   let missing = {
     MAT17: ["21"],
     MAT18: ["11"],
+    MAT23: ["14"],
     MRK07: ["16"],
     MRK09: ["44", "46"],
     MRK11: ["26"],
