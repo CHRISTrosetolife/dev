@@ -1,3 +1,4 @@
+import { drive_format } from "./drive_format.mjs";
 import { bible_audio_player_drive_letter } from "./bible_audio_player_drive_letter.mjs";
 import { drive_remove } from "./drive_remove.mjs";
 import { each_async } from "./each_async.mjs";
@@ -9,6 +10,7 @@ import { bible_audio_player_path } from "./bible_audio_player_path.mjs";
 import { bible_audio_player_generic_multiple } from "./bible_audio_player_generic_multiple.mjs";
 export async function bible_audio_player_original() {
   let drive_letter = bible_audio_player_drive_letter();
+  await drive_format(drive_letter);
   let name = "greek";
   let p = bible_audio_player_path(name);
   let folders = await folder_read_shallow_names(p, "");
