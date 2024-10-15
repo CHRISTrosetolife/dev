@@ -16,7 +16,7 @@ import { each_object } from "./each_object.mjs";
 import { bible_engbsb_chapter } from "./bible_engbsb_chapter.mjs";
 export async function bible_chapter_foreign(bible_folder, chapter_name) {
   let eng = await bible_engbsb_chapter(chapter_name);
-  let missing_ceb = {
+  let missing = {
     MAT17: ["21"],
     MAT18: ["11"],
     MRK07: ["16"],
