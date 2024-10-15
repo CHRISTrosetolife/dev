@@ -10,8 +10,7 @@ import { file_copy_path } from "./file_copy_path.mjs";
 export async function bible_audio_player_original() {
   let drive_letter = bible_audio_player_drive_letter();
   await drive_format(drive_letter);
-  let name = "greek";
-  await bible_audio_player_language(name);
+  await bible_audio_player_language("greek");
   let output = bible_audio_player_output_path();
   await each_async(await bible_hebrew_audio_download(), async (hebrew_path) => {
     let file_path_new = file_copy_path(hebrew_path, output);
