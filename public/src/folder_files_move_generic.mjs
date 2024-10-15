@@ -1,6 +1,5 @@
+import { file_copy_path } from "./file_copy_path.mjs";
 import { folder_read_each_generic } from "./folder_read_each_generic.mjs";
-import { path_join } from "./path_join.mjs";
-import { path_parse_base } from "./path_parse_base.mjs";
 export async function folder_files_move_generic(
   input_directory,
   file_extension,
@@ -15,8 +14,7 @@ export async function folder_files_move_generic(
     filter,
   );
   async function lambda_each(file_path) {
-    let file_name = path_parse_base(file_path);
-    let file_path_new = path_join([output_directory, file_name]);
+    let file_path_new = file_copy_path(file_path, output_directory);
     await lambda(file_path, file_path_new);
   }
 }
