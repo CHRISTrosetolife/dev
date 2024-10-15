@@ -6,7 +6,7 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { http_cache_parse_parsed } from "./http_cache_parse_parsed.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
-export async function sandbox_bible_hebrew_audio_download() {
+export async function bible_hebrew_audio_download() {
   let prefix_url = "https://mechon-mamre.org/";
   let url = string_combine_multiple([prefix_url, "p/pt/pt00.htm"]);
   let p = await http_cache_parse_parsed(url);
