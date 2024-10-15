@@ -16,7 +16,7 @@ export async function bible_words_foreign(args, bible_folder) {
           }
         }
         let r = await bible_words_foreign_book(book_name, bible_folder, la);
-        each(list, la);
+        each(r, la);
       },
     );
   });
