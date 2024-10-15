@@ -34,6 +34,8 @@ export async function bible_chapter_foreign(bible_folder, chapter_name) {
     "3JN01": ["15"],
     REV12: ["18"],
   };
+  if (false) {
+  }
   let missing_lug = {
     MAT23: ["14"],
   };
