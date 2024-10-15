@@ -30,6 +30,6 @@ export async function bible_chapter(bible_folder, chapter_name) {
   let main = html_parse_visit_class_single(root, "main");
   let verses_table = html_parse_visit_tag_list(main, "td");
   let c = list_concat(verses, verses_table);
-  let eng = bible_verses_parse(verses);
+  let eng = bible_verses_parse(c);
   return eng;
 }
