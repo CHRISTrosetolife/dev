@@ -21,6 +21,7 @@ export async function bible_chapter(bible_folder, chapter_name) {
     "pmo",
     "q",
     "q2",
+    "qm",
     "li",
     "li2",
     "li3",
