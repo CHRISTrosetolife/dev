@@ -1,7 +1,4 @@
-import { each } from "./each.mjs";
-import { bible_chapter_foreign } from "./bible_chapter_foreign.mjs";
-import { bible_chapters_each } from "./bible_chapters_each.mjs";
-import { log } from "./log.mjs";
+import { bible_words_foreign_book } from "./bible_words_foreign_book.mjs";
 import { bible_books_index_old_is } from "./bible_books_index_old_is.mjs";
 import { bible_books } from "./bible_books.mjs";
 import { each_index_async } from "./each_index_async.mjs";
@@ -17,18 +14,7 @@ export async function bible_words_foreign(args, bible_folder) {
             return;
           }
         }
-        log({
-          book_name,
-        });
-        await bible_chapters_each("engbsb", book_name, async (chapter_name) => {
-          let r = await bible_chapter_foreign(chapter_name, bible_folder);
-          let { foreign } = r;
-          each(foreign, (v) =>
-            each(v.tokens, (t) => {
-              la(t);
-            }),
-          );
-        });
+        await bible_words_foreign_book(book_name, bible_folder, la);
       },
     );
   });
