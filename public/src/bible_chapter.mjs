@@ -1,3 +1,4 @@
+import { html_parse_visit_class_single } from "./html_parse_visit_class_single.mjs";
 import { html_parse_visit_tag_list } from "./html_parse_visit_tag_list.mjs";
 import { string_case_upper } from "./string_case_upper.mjs";
 import { bible_verses_parse } from "./bible_verses_parse.mjs";
@@ -25,6 +26,7 @@ export async function bible_chapter(bible_folder, chapter_name) {
     "li4",
   ];
   let verses = html_parse_visit_classes_list(root, attribute_values);
+  let main = html_parse_visit_class_single(root, "main");
   let verses_table = html_parse_visit_tag_list();
   let eng = bible_verses_parse(verses);
   return eng;
