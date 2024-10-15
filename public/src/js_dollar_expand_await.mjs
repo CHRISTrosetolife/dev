@@ -6,6 +6,6 @@ export async function js_dollar_expand_await(e, ast, id, a, parent) {
     let arg = object_property_get(e, "argument");
     await js_dollar_expand(ast, arg, id, a, parent);
   } else {
-    await js_dollar_expand(ast, init, id, a, parent);
+    await js_dollar_expand(ast, e, id, a, parent);
   }
 }
