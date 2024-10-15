@@ -15,7 +15,27 @@ import { each_object } from "./each_object.mjs";
 import { bible_engbsb_chapter } from "./bible_engbsb_chapter.mjs";
 export async function bible_chapter_foreign(chapter_name, bible_folder) {
   let eng = await bible_engbsb_chapter(chapter_name);
+  let missing_ceb = {
+    MAT17: ["21"],
+    MAT18: ["11"],
+    MRK07: ["16"],
+    MRK09: ["44", "46"],
+    MRK11: ["26"],
+    MRK15: ["28"],
+    LUK17: ["36"],
+    LUK23: ["17"],
+    JHN05: ["4"],
+    ACT08: ["37"],
+    ACT15: ["34"],
+    ACT24: ["7"],
+    ACT28: ["29"],
+    ROM16: ["24"],
+    "3JN01": ["15"],
+    REV12: ["18"],
+  };
   let missing = {
+    MAT17: ["21"],
+    MAT18: ["11"],
     MRK07: ["16"],
     MRK09: ["44", "46"],
     MRK11: ["26"],
