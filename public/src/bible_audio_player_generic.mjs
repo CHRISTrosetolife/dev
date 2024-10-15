@@ -1,3 +1,4 @@
+import { bible_audio_player_output_path } from "./bible_audio_player_output_path.mjs";
 import { uuid } from "./uuid.mjs";
 import { folder_files_copy_generic } from "./folder_files_copy_generic.mjs";
 import { path_join } from "./path_join.mjs";
@@ -9,10 +10,7 @@ export async function bible_audio_player_generic(
   filter,
 ) {
   let joined = path_join([path_language, download_folder]);
-  let output = "E:\\";
-  if (0) {
-    output = "..\\bible\\english\\test";
-  }
+  let output = bible_audio_player_output_path();
   let extension = ".mp3";
   await folder_files_copy_generic(
     joined,
