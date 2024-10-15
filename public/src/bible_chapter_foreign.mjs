@@ -33,25 +33,10 @@ export async function bible_chapter_foreign(bible_folder, chapter_name) {
     "3JN01": ["15"],
     REV12: ["18"],
   };
-  let missing = {
-    MAT17: ["21"],
-    MAT18: ["11"],
+  let missing_lug = {
     MAT23: ["14"],
-    MRK07: ["16"],
-    MRK09: ["44", "46"],
-    MRK11: ["26"],
-    MRK15: ["28"],
-    LUK17: ["36"],
-    LUK23: ["17"],
-    JHN05: ["4"],
-    ACT08: ["37"],
-    ACT15: ["34"],
-    ACT24: ["7"],
-    ACT28: ["29"],
-    ROM16: ["24"],
-    "3JN01": ["15"],
-    REV12: ["18"],
   };
+  object_extend();
   let missing_is = false;
   each_object(missing, (chapter_name_missing, verse_numbers) => {
     if (chapter_name === chapter_name_missing) {
