@@ -1,3 +1,4 @@
+import { drive_remove } from "./drive_remove.mjs";
 import { each_async } from "./each_async.mjs";
 import { bible_audio_player_output_path } from "./bible_audio_player_output_path.mjs";
 import { file_copy_closed } from "./file_copy_closed.mjs";
@@ -18,4 +19,5 @@ export async function bible_audio_player_original() {
       await file_copy_closed(hebrew_path, file_path_new);
     },
   );
+  await drive_remove(drive_letter);
 }
