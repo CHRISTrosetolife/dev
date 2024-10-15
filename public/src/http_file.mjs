@@ -8,7 +8,7 @@ import { file_exists } from "./file_exists.mjs";
 export async function http_file(url) {
   let file_path_output = http_file_path(url);
   if (await file_exists(file_path_output)) {
-    return;
+    return file_path_output;
   }
   let streamPipeline = promisify(pipeline);
   await folder_parent_exists_ensure(file_path_output);
