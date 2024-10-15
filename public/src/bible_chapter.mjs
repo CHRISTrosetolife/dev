@@ -27,7 +27,7 @@ export async function bible_chapter(bible_folder, chapter_name) {
   ];
   let verses = html_parse_visit_classes_list(root, attribute_values);
   let main = html_parse_visit_class_single(root, "main");
-  let verses_table = html_parse_visit_tag_list();
+  let verses_table = html_parse_visit_tag_list(main, "td");
   let eng = bible_verses_parse(verses);
   return eng;
 }
