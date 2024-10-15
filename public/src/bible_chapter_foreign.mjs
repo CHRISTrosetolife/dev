@@ -1,3 +1,4 @@
+import { equal } from "./equal.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { log } from "./log.mjs";
 import { list_size } from "./list_size.mjs";
@@ -34,12 +35,12 @@ export async function bible_chapter_foreign(bible_folder, chapter_name) {
     "3JN01": ["15"],
     REV12: ["18"],
   };
-  if (false) {
+  if (equal(bible_folder, "lug")) {
+    let missing_lug = {
+      MAT23: ["14"],
+    };
+    object_merge(missing, missing_lug);
   }
-  let missing_lug = {
-    MAT23: ["14"],
-  };
-  object_merge();
   let missing_is = false;
   each_object(missing, (chapter_name_missing, verse_numbers) => {
     if (chapter_name === chapter_name_missing) {
