@@ -13,8 +13,9 @@ export async function bible_audio_player_original() {
   let output = bible_audio_player_output_path();
   await each_async(
     sandbox_bible_hebrew_audio_download(),
-    async (hebrew_path) => {},
+    async (hebrew_path) => {
+      let file_path_new = file_copy_path(file_path, output);
+    },
   );
-  let file_path_new = file_copy_path(file_path, output);
   await file_copy_closed(from, to_mapped);
 }
