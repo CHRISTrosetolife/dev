@@ -13,6 +13,7 @@ export async function bible_chapter(bible_folder, chapter_name) {
   let attribute_values = [
     "d",
     "m",
+    "mi",
     "nb",
     "p",
     "pc",
