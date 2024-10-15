@@ -8,4 +8,5 @@ export async function lg_definition(word) {
   if (object_property_exists(dictionary, word)) {
     return object_property_get(dictionary, word);
   }
+  return [];
 }
