@@ -5,10 +5,14 @@ import { object_property_get } from "./object_property_get.mjs";
 export async function lg_definition(word) {
   assert_arguments_length(arguments, 1);
   let dictionary = await lg_definitions();
-  let definitions = [];
+  let definitions;
   if (object_property_exists(dictionary, word)) {
     definitions = object_property_get(dictionary, word);
   } else {
+    definitions = [];
   }
-  return [];
+  return {
+    word,
+    definitions,
+  };
 }
