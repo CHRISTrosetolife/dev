@@ -1,7 +1,6 @@
+import { list_map_async } from "./list_map_async.mjs";
 import { list_map } from "./list_map.mjs";
-import { log } from "./log.mjs";
 import { http_file } from "./http_file.mjs";
-import { each_async } from "./each_async.mjs";
 import { html_parse_a_href_starts_with_hrefs } from "./html_parse_a_href_starts_with_hrefs.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { http_cache_parse_parsed } from "./http_cache_parse_parsed.mjs";
@@ -20,10 +19,6 @@ export async function sandbox_bible_hebrew_audio_download() {
   let urls = list_map(hrefs, (h) =>
     string_combine(prefix_url, string_prefix_without(h, prefix)),
   );
-  await each_async(urls, async (url) => {
-    let location = await http_file(url);
-    log({
-      location,
-    });
-  });
+  let locations = await list_map_async(urls, http_file);
+  return locations;
 }
