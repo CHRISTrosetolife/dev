@@ -41,6 +41,7 @@ export function function_aliases() {
     oh: "function_open_app_html",
     of: "function_output_file",
     ofa: "function_output_file_args",
+    ofe: "function_output_file_args_expression",
     p: "function_param_new",
     pn: "function_param_new_at",
     pb: "function_param_move_beginning",
