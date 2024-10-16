@@ -1,9 +1,11 @@
+import { string_split_comma } from "./string_split_comma.mjs";
 import { file_overwrite_gitignore } from "./file_overwrite_gitignore.mjs";
 import { json_format_to } from "./json_format_to.mjs";
 import { string_is } from "./string_is.mjs";
 import { function_run } from "./function_run.mjs";
 export async function function_output_file(function_name) {
   let args = [];
+  let args_list = string_split_comma("");
   let result = await function_run(function_name, args);
   if (!string_is(result)) {
     result = json_format_to(result);
