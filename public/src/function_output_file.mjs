@@ -9,8 +9,8 @@ export async function function_output_file(function_name) {
   if (args === "") {
     args_list = [];
   } else {
+    args_list = string_split_comma(args);
   }
-  args_list = string_split_comma(args);
   let result = await function_run(function_name, args);
   if (!string_is(result)) {
     result = json_format_to(result);
