@@ -6,7 +6,7 @@ export function function_output_file_args_expression(function_name, args) {
   let mapped = list_map(split, eval);
   let a = eval("{}");
   log({
-    aa,
+    a,
   });
   return a;
 }
