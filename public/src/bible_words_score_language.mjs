@@ -1,7 +1,7 @@
+import { bible_words_definitions_map_choices } from "./bible_words_definitions_map_choices.mjs";
 import { bible_words_definitions_all_cache } from "./bible_words_definitions_all_cache.mjs";
 import { bible_words_definitions_map_cache } from "./bible_words_definitions_map_cache.mjs";
 import { bible_words_language_count_cache } from "./bible_words_language_count_cache.mjs";
-import { ceb_bible_words_definitions_map_choices } from "./ceb_bible_words_definitions_map_choices.mjs";
 import { list_to_lookup_key_value_property } from "./list_to_lookup_key_value_property.mjs";
 import { summation } from "./summation.mjs";
 import { bible_words_score_generic } from "./bible_words_score_generic.mjs";
@@ -18,7 +18,7 @@ export async function bible_words_score_language(language) {
   let map = await bible_words_definitions_map_cache(language);
   let definitions = await bible_words_definitions_all_cache(language);
   each(definitions, (d) => {
-    let choices = ceb_bible_words_definitions_map_choices(map, d);
+    let choices = bible_words_definitions_map_choices(map, d);
     let count = summation((s) => {
       each(choices, (choice) => {
         if (object_property_exists(lookup, choice)) {
