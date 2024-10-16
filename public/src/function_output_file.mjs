@@ -6,7 +6,9 @@ import { function_run } from "./function_run.mjs";
 export async function function_output_file(function_name) {
   let args = "";
   let args_list;
-  if (false) {
+  if (args === "") {
+    args_list = [];
+  } else {
   }
   args_list = string_split_comma(args);
   let result = await function_run(function_name, args);
