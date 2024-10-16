@@ -1,3 +1,4 @@
+import { function_output_file_args_expression } from "./function_output_file_args_expression.mjs";
 import { function_output_file_args } from "./function_output_file_args.mjs";
 import { sermon_references_combine } from "./sermon_references_combine.mjs";
 import { bible_search_book } from "./bible_search_book.mjs";
@@ -116,6 +117,7 @@ export async function function_aliases_generate() {
   alias_add(function_open_app_html, ["oh"]);
   alias_add(function_output_file, ["of"]);
   alias_add(function_output_file_args, ["ofa"]);
+  alias_add(function_output_file_args_expression, ["ofe"]);
   alias_add(function_param_new, ["p"]);
   alias_add(function_param_new_at, ["pn"]);
   alias_add(function_param_move_beginning, ["pb"]);
