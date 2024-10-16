@@ -117,6 +117,9 @@ export async function app_language_upload(from) {
     if (false) {
       groups = list_take(groups, 4);
     }
+    log({
+      groups,
+    });
     await app_language_group_upload(profile, "index", {
       groups: list_map(groups, (g) => ({
         first: list_first_nested(g),
