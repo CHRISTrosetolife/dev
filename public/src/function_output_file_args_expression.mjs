@@ -4,5 +4,5 @@ export function function_output_file_args_expression(function_name, args) {
   let split = string_split_comma(args);
   let mapped = list_map(split, eval);
   let a = eval("{}");
-  () => {};
+  return a;
 }
