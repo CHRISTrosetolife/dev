@@ -1,4 +1,4 @@
-import { function_output_file_args } from "./function_output_file_args.mjs";
+import { function_output_file_args_list } from "./function_output_file_args_list.mjs";
 import { js_code_statement_return } from "./js_code_statement_return.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_split_comma } from "./string_split_comma.mjs";
@@ -10,5 +10,5 @@ export async function function_output_file_args_expression(
   let mapped = list_map(split, (s) =>
     new Function(js_code_statement_return(s))(),
   );
-  return await function_output_file_args(function_name, mapped);
+  return await function_output_file_args_list(function_name, mapped);
 }
