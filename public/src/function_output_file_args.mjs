@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { file_overwrite_gitignore } from "./file_overwrite_gitignore.mjs";
 import { function_output_file } from "./function_output_file.mjs";
 import { json_format_to } from "./json_format_to.mjs";
@@ -6,9 +5,6 @@ import { string_is } from "./string_is.mjs";
 import { function_run } from "./function_run.mjs";
 import { string_split_comma } from "./string_split_comma.mjs";
 export async function function_output_file_args(function_name, args) {
-  log({
-    args,
-  });
   let args_list;
   if (args === "") {
     args_list = [];
