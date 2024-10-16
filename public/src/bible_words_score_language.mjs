@@ -1,7 +1,7 @@
+import { bible_words_language_count_cache_all } from "./bible_words_language_count_cache_all.mjs";
 import { bible_words_definitions_map_choices } from "./bible_words_definitions_map_choices.mjs";
 import { bible_words_definitions_all_cache } from "./bible_words_definitions_all_cache.mjs";
 import { bible_words_definitions_map_cache } from "./bible_words_definitions_map_cache.mjs";
-import { bible_words_language_count_cache } from "./bible_words_language_count_cache.mjs";
 import { list_to_lookup_key_value_property } from "./list_to_lookup_key_value_property.mjs";
 import { summation } from "./summation.mjs";
 import { bible_words_score_generic } from "./bible_words_score_generic.mjs";
@@ -10,10 +10,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { object_merge } from "./object_merge.mjs";
 export async function bible_words_score_language(language) {
-  let words = await bible_words_language_count_cache({
-    new: false,
-    language,
-  });
+  let words = await bible_words_language_count_cache_all(language);
   let lookup = list_to_lookup_key_value_property(words, "word", "count");
   let map = await bible_words_definitions_map_cache(language);
   let definitions = await bible_words_definitions_all_cache(language);
