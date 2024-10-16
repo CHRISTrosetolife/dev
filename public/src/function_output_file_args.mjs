@@ -4,7 +4,7 @@ import { json_format_to } from "./json_format_to.mjs";
 import { string_is } from "./string_is.mjs";
 import { function_run } from "./function_run.mjs";
 import { string_split_comma } from "./string_split_comma.mjs";
-export async function function_output_file_args(args, function_name) {
+export async function function_output_file_args(function_name, args) {
   let args_list;
   if (args === "") {
     args_list = [];
