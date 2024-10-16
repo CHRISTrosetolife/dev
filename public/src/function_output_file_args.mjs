@@ -11,7 +11,7 @@ export async function function_output_file_args(function_name, args) {
   } else {
     args_list = string_split_comma(args);
   }
-  let result = await function_run(function_name, args);
+  let result = await function_run(function_name, args_list);
   if (!string_is(result)) {
     result = json_format_to(result);
   }
