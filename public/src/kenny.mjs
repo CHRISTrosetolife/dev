@@ -1,6 +1,4 @@
-import { file_write } from "./file_write.mjs";
-import { log } from "./log.mjs";
+import { kkkk } from "./kkkk.mjs";
 export async function kenny() {
-  log({});
-  await file_write();
+  await kkkk();
 }
