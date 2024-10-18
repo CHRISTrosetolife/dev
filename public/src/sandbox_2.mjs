@@ -13,6 +13,7 @@ export async function sandbox_2() {
       high: 52,
     },
   ];
+  await each_async(list, async (item2) => {});
   await each_async(range_from(low, high), async (item) => {
     await bible_chapter_video(
       "calm",
