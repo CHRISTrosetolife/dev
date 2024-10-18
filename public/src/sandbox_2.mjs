@@ -14,11 +14,11 @@ export async function sandbox_2() {
     },
   ];
   await each_async(as, async (a) => {
-    await each_async(range_from(low, high), async (item) => {
+    await each_async(range_from(a.low, a.high), async (item) => {
       await bible_chapter_video(
         "calm",
         "engbsb",
-        app_gs_bible_chapter_name(book_id, item),
+        app_gs_bible_chapter_name(a.book_id, item),
       );
     });
   });
