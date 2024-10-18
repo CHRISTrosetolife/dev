@@ -5,9 +5,9 @@ export async function audio_to_wav(path_input, path_output) {
   if (await file_exists(path_output)) {
     return;
   }
-  let ffmpeg = await import_node("fluent-ffmpeg");
   await new Promise(async (resolve, reject) => {
     await assert_async(file_exists, [path_input]);
+    let ffmpeg = await import_node("fluent-ffmpeg");
     ffmpeg(path_input)
       .toFormat("wav")
       .on("error", (err) => {
