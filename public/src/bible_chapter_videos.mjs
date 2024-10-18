@@ -1,3 +1,4 @@
+import { fn_name } from "./fn_name.mjs";
 import { audio_to_video } from "./audio_to_video.mjs";
 import { each_async } from "./each_async.mjs";
 import { bible_image_resolutions } from "./bible_image_resolutions.mjs";
@@ -22,6 +23,7 @@ export async function bible_chapter_videos(
   let output_path_folder = bible_chapter_folder_parent_gitignore(
     "video",
     bible_folder,
+    project_name,
     chapter_name,
   );
   let verses = await bible_chapter(bible_folder, chapter_name);
@@ -55,7 +57,7 @@ export async function bible_chapter_videos(
         }
       }
       log({
-        fn: bible_chapter_videos.name,
+        fn: fn_name("bible_chapter_videos"),
         hv,
         verse,
       });
