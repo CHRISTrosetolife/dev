@@ -19,6 +19,21 @@ export async function sandbox_2() {
       low: 1,
       high: 11,
     },
+    {
+      book_id: "MAT",
+      low: 1,
+      high: 28,
+    },
+    {
+      book_id: "MRK",
+      low: 1,
+      high: 16,
+    },
+    {
+      book_id: "LUK",
+      low: 1,
+      high: 7,
+    },
   ];
   await each_async(as, async (a) => {
     await each_async(range_from(a.low, a.high), async (item) => {
