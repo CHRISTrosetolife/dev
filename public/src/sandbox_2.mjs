@@ -6,6 +6,13 @@ export async function sandbox_2() {
   let book_id = "JER";
   let low = 18;
   let high = 52;
+  let a = [
+    {
+      book_id: "JER",
+      low: 18,
+      high: 52,
+    },
+  ];
   await each_async(range_from(low, high), async (item) => {
     await bible_chapter_video(
       "calm",
