@@ -6,7 +6,7 @@ export async function sandbox_2() {
   let book_id = "JER";
   let low = 18;
   let high = 52;
-  let a = [
+  let as = [
     {
       book_id: "JER",
       low: 18,
