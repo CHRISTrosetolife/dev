@@ -1,3 +1,4 @@
+import { fn_name } from "./fn_name.mjs";
 import { log } from "./log.mjs";
 import { video_concat } from "./video_concat.mjs";
 import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
@@ -29,7 +30,7 @@ export async function bible_chapter_video(
   await each_async(hvs, async (hv) => {
     let hv_name = object_property_get(hv, "name");
     let output_path_folder = folder_gitignore_path(
-      path_join(["video", bible_folder]),
+      path_join(["video", bible_folder, project_name]),
     );
     let { book_code, chapter_code } = bible_chapter_name_parse(chapter_name);
     let chapter_number = string_trim_front(chapter_code, "0");
@@ -53,7 +54,7 @@ export async function bible_chapter_video(
       ),
     }));
     log({
-      fn: bible_chapter_video.name,
+      fn: fn_name("bible_chapter_video"),
       hv,
       bible_folder,
       chapter_name,
