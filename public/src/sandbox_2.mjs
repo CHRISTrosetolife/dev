@@ -1,3 +1,4 @@
+import { bible_chapter_images } from "./bible_chapter_images.mjs";
 import { range_from } from "./range_from.mjs";
 import { app_gs_bible_chapter_name } from "./app_gs_bible_chapter_name.mjs";
 import { each_async } from "./each_async.mjs";
@@ -37,11 +38,11 @@ export async function sandbox_2() {
   ];
   await each_async(as, async (a) => {
     await each_async(range_from(a.low, a.high), async (item) => {
-      await bible_chapter_video(
-        "calm",
-        "engbsb",
-        app_gs_bible_chapter_name(a.book_id, item),
-      );
+      let bible_folder = "engbsb";
+      let chapter_name = app_gs_bible_chapter_name(a.book_id, item);
+      let images = await bible_chapter_images(bible_folder, chapter_name);
+      return;
+      await bible_chapter_video("calm", bible_folder, chapter_name);
     });
   });
 }
