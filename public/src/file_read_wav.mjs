@@ -8,7 +8,8 @@ export async function file_read_wav(input_path) {
     default: { WaveFile },
   } = wavefile;
   log({
-    WaveFile,default
+    WaveFile,
+    wavefile,
   });
   let w = new WaveFile(await file_read_binary(input_path));
   let { fmt } = w;
