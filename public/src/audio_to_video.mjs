@@ -1,10 +1,12 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { import_node } from "./import_node.mjs";
 import { log } from "./log.mjs";
 import { folder_parent_exists_ensure } from "./folder_parent_exists_ensure.mjs";
 import { assert_async } from "./assert_async.mjs";
 import { file_exists } from "./file_exists.mjs";
 export async function audio_to_video(path_audio, image_path, path_output) {
-  let videoshow = await import_node("videoshow");
+  let v = await import_node("videoshow");
+  let videoshow = object_property_get(v, "default");
   let { getAudioDurationInSeconds } = await import_node("get-audio-duration");
   log({
     path_audio,
