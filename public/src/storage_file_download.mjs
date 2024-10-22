@@ -5,7 +5,7 @@ export async function storage_file_download(firebase_file) {
   let destination = storage_file_download_path(firebase_file);
   if (await file_exists_not(destination)) {
     await folder_parent_exists_ensure(destination);
-    firebase_file.download({
+    let p = firebase_file.download({
       destination,
     });
   }
