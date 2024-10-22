@@ -10,7 +10,7 @@ export async function file_read_wav(input_path) {
   let w = new WaveFileReader();
   w.fromBuffer(await file_read_binary(input_path));
   let { fmt } = w;
-  let samples = list_to(w.getSamples());
+  let samples = list_to(w.data.samples);
   return {
     fmt,
     samples,
