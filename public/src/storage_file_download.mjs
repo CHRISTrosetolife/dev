@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { storage_file_download_path } from "./storage_file_download_path.mjs";
 import { folder_parent_exists_ensure } from "./folder_parent_exists_ensure.mjs";
 import { file_exists_not } from "./file_exists_not.mjs";
@@ -8,5 +9,9 @@ export async function storage_file_download(firebase_file) {
     let p = firebase_file.download({
       destination,
     });
+    log({
+      p,
+    });
+    await p;
   }
 }
