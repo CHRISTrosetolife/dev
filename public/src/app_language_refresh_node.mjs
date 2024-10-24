@@ -1,3 +1,4 @@
+import { html_button_back } from "./html_button_back.mjs";
 import { html_button_up_text } from "./html_button_up_text.mjs";
 import { app_language_text_group_previous } from "./app_language_text_group_previous.mjs";
 import { app_language_text_group_next } from "./app_language_text_group_next.mjs";
@@ -75,7 +76,7 @@ export async function app_language_refresh_node(context) {
     );
   }
   html_button_width_full_text_click(root, "🛟 help", async () => {
-    html_button_back(root,$a );
+    html_button_back(root, () => {});
     await app_language_refresh_node(context);
     let atom_size = app_language_atom_size();
     let group_pair_count = app_language_group_size() * atom_size;
