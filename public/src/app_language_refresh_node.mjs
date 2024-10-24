@@ -1,3 +1,4 @@
+import { html_p_text } from "./html_p_text.mjs";
 import { each } from "./each.mjs";
 import { app_language_refresh_quiz_text_ready } from "./app_language_refresh_quiz_text_ready.mjs";
 import { app_language_text_quiz } from "./app_language_text_quiz.mjs";
@@ -112,7 +113,9 @@ export async function app_language_refresh_node(context) {
         " words, then choose ",
       ]),
     ];
-    each(list, (item2) => {});
+    each(paragraphs, (p) => {
+      html_p_text(root, p);
+    });
   });
   let srl = subtract(right, left);
   let j = 1;
