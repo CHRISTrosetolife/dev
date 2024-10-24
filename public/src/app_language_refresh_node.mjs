@@ -82,7 +82,10 @@ export async function app_language_refresh_node(context) {
       "then you will read the first 6 words and their definitions",
       string_combine_multiple([
         "then if you are ready to be quizzed on these 6 words, tap or click: ",
-        await app_language_text_quiz(item, language_fluent),
+        await app_language_text_quiz(
+          app_language_quiz_easy_very(),
+          language_fluent,
+        ),
       ]),
     ];
     await app_language_text_learn(language_fluent);
