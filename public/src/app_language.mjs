@@ -37,10 +37,10 @@ export async function app_language(
     app_language_position_initial(context),
   );
   let screen = storage_local_initialize(context.app_fn, "screen", "node");
-  let fn_name = string_combine_multiple([
+  let f = string_combine_multiple([
     fn_name("app_language"),
     "_refresh_",
     screen,
   ]);
-  await function_run(fn_name, [context]);
+  await function_run(f, [context]);
 }
