@@ -69,8 +69,12 @@ export async function app_language_refresh_node(context) {
     );
   }
   html_button_width_full_text_click(root, "🛟 help", () => {
+    let group_pair_count = app_language_group_size() * app_language_atom_size();
     html_clear_scroll_top_centered(root);
-    let paragraphs = [];
+    let paragraphs = [
+      "this app teaches Cebuano",
+      "this app teaches vocabularly words",
+    ];
   });
   let srl = subtract(right, left);
   let j = 1;
