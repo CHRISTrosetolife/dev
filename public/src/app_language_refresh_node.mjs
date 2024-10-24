@@ -117,8 +117,9 @@ export async function app_language_refresh_node(context) {
       root,
       string_combine_multiple([
         j,
+        ". ",
         string_combine_multiple([
-          ". 🎓 ",
+          "🎓 ",
           await app_language_text(language_fluent, "learn"),
         ]),
       ]),
