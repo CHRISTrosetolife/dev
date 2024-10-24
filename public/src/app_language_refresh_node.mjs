@@ -74,7 +74,7 @@ export async function app_language_refresh_node(context) {
       "this app teaches vocabularly words",
       string_combine_multiple([
         "if this is the first time you are using this app, then, to get started, tap or click this button: ",
-        html_button_begin_text(),
+        html_button_begin_text(app_language_refresh_node_begin_text()),
       ]),
     ];
   });
