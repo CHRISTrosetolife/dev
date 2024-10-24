@@ -1,3 +1,4 @@
+import { app_language_refresh_learn_0 } from "./app_language_refresh_learn_0.mjs";
 import { app_language_atom_size } from "./app_language_atom_size.mjs";
 import { app_language_refresh_node_left_right } from "./app_language_refresh_node_left_right.mjs";
 import { html_button_begin } from "./html_button_begin.mjs";
@@ -14,7 +15,6 @@ import { app_language_group_size } from "./app_language_group_size.mjs";
 import { log } from "./log.mjs";
 import { each_async } from "./each_async.mjs";
 import { app_language_quizzes_start } from "./app_language_quizzes_start.mjs";
-import { app_language_refresh_learn } from "./app_language_refresh_learn.mjs";
 import { app_language_refresh_review } from "./app_language_refresh_review.mjs";
 import { app_language_level_size } from "./app_language_level_size.mjs";
 import { app_language_title } from "./app_language_title.mjs";
@@ -61,6 +61,7 @@ export async function app_language_refresh_node(context) {
       string_combine_multiple(["( learn words 1 - ", atom_count, " )"]),
       async () => {
         await app_language_refresh_node_left_right(context, 0, 0);
+        app_language_refresh_learn_0(context);
       },
     );
   }
@@ -105,7 +106,7 @@ export async function app_language_refresh_node(context) {
         await app_language_text(language_fluent, "learn"),
       ]),
       () => {
-        app_language_refresh_learn(context, 0);
+        app_language_refresh_learn_0(context);
       },
     );
   }
