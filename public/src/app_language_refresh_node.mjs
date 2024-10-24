@@ -164,7 +164,7 @@ export async function app_language_refresh_node(context) {
         "Another way to go to a previous group is to keep choosing: ",
         html_button_up_text(),
       ]),
-      "Then you can choose from all groups",
+      "Then you can choose any group you want",
     ];
     each(paragraphs, (p) => {
       html_p_text(root, p);
