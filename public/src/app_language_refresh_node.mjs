@@ -167,7 +167,7 @@ export async function app_language_refresh_node(context) {
       string_combine_multiple([
         "Then, you can choose any group of ",
         group_pair_count,
-        " words you want",
+        " words you want.",
       ]),
     ];
     each(paragraphs, (p) => {
