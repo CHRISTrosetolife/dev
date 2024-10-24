@@ -1,5 +1,5 @@
+import { app_language_refresh_node_begin_text } from "./app_language_refresh_node_begin_text.mjs";
 import { html_button_begin_text } from "./html_button_begin_text.mjs";
-import { html_replace_nb_parenthesis } from "./html_replace_nb_parenthesis.mjs";
 import { app_language_refresh_learn_0 } from "./app_language_refresh_learn_0.mjs";
 import { app_language_atom_size } from "./app_language_atom_size.mjs";
 import { app_language_refresh_node_left_right } from "./app_language_refresh_node_left_right.mjs";
@@ -57,10 +57,7 @@ export async function app_language_refresh_node(context) {
   let { left, right } = storage_local_get(app_ceb, "position");
   let top_is = left === 0 && right === app_language_group_size() - 1;
   if (top_is) {
-    let atom_count = app_language_atom_size();
-    let begin_text = html_replace_nb_parenthesis(
-      string_combine_multiple(["( learn words 1 - ", atom_count, " )"]),
-    );
+    let begin_text = app_language_refresh_node_begin_text();
     html_button_begin(root, begin_text, async () => {
       await app_language_refresh_node_left_right(context, 0, 0);
       app_language_refresh_learn_0(context);
