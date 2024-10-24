@@ -1,3 +1,4 @@
+import { html_style_a_plain } from "./html_style_a_plain.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { html_div } from "./html_div.mjs";
@@ -23,6 +24,7 @@ export async function app_language(
     language_fluent,
     invert,
   };
+  html_style_a_plain();
   let body = html_style_default_initialize();
   html_css_flags(body);
   let root = html_div(body);
