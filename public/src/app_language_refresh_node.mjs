@@ -55,11 +55,7 @@ export async function app_language_refresh_node(context) {
   let top_is = left === 0 && right === app_language_group_size() - 1;
   if (top_is) {
     html_button_begin(root, async () => {
-      await app_language_refresh_node_left_right(
-        context,
-        left_next,
-        right_next,
-      );
+      await app_language_refresh_node_left_right(context, 0, 0);
     });
   }
   let srl = subtract(right, left);
