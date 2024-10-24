@@ -191,7 +191,7 @@ export async function app_language_refresh_node(context) {
     }
   }
   html_button_width_full_text_click_up(root, up_onclick);
-  html_button_width_full_text_click(root, "email", () => {});
+  html_button_width_full_text_click(root, "email developer", () => {});
   async function up_onclick() {
     if (top_is) {
       await app_language_refresh_menu(context);
