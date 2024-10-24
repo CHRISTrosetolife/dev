@@ -29,7 +29,7 @@ export async function app_language_upload(from) {
   let audio_only = false;
   let audio_upload_run = false;
   let index_only = false;
-  let group_upload = false;
+  let group_upload = true;
   let group_local_compare_to_new = false;
   let group_count = app_language_group_size();
   let { atoms, definitions, inverted } =
