@@ -1,7 +1,7 @@
+import { html_button_begin } from "./html_button_begin.mjs";
 import { string_size } from "./string_size.mjs";
 import { html_scripts_load } from "./html_scripts_load.mjs";
 import { summation } from "./summation.mjs";
-import { html_style_font_size } from "./html_style_font_size.mjs";
 import { list_size } from "./list_size.mjs";
 import { html_buttons_next_previous } from "./html_buttons_next_previous.mjs";
 import { html_button_width_full_text_click_home } from "./html_button_width_full_text_click_home.mjs";
@@ -127,14 +127,7 @@ export async function app_learn_code() {
       'if you want to start from the beginning , choose "begin" : ',
     );
     let begin_onclick = async () => await refresh_lesson_screen(0);
-    let begin = html_button_width_full_text_click(
-      root,
-      "🚀 begin",
-      begin_onclick,
-    );
-    let font_size_bigger = multiply(default_font_size, 1.2);
-    html_style_font_size(begin, font_size_bigger);
-    html_style_bold(begin);
+    let begin = html_button_begin(root, begin_onclick);
     html_p_text(root, "or choose a module below :");
     each_index(modules, (module, index) => {
       let index_1_s = add_1_string(index);
