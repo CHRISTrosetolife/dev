@@ -155,6 +155,8 @@ export async function app_language_refresh_node(context) {
         group_pair_count,
         " words.",
       ]),
+      "After you complete a second group or beyond, it is recommended to review any previous groups.",
+      "Once way to go to a previous group is to choose: ",
     ];
     each(paragraphs, (p) => {
       html_p_text(root, p);
