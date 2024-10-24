@@ -144,10 +144,12 @@ export async function app_language_refresh_node(context) {
         group_pair_count,
         " words.",
       ]),
-      "Once you have completed your first group of ",
-      group_pair_count,
-      " words, then choose: ",
-      await app_language_text_group_next(language_fluent),
+      string_combine_multiple([
+        "Once you have completed your first group of ",
+        group_pair_count,
+        " words, then choose: ",
+        await app_language_text_group_next(language_fluent),
+      ]),
     ];
     each(paragraphs, (p) => {
       html_p_text(root, p);
