@@ -1,3 +1,4 @@
+import { app_language_text_group_next } from "./app_language_text_group_next.mjs";
 import { app_language_text_group } from "./app_language_text_group.mjs";
 import { app_language_text_next } from "./app_language_text_next.mjs";
 import { html_p_text } from "./html_p_text.mjs";
@@ -34,7 +35,6 @@ import { html_button_width_full_text_click_up } from "./html_button_width_full_t
 import { mod_last_is } from "./mod_last_is.mjs";
 import { number_power } from "./number_power.mjs";
 import { integer_log } from "./integer_log.mjs";
-import { html_button_next_text } from "./html_button_next_text.mjs";
 import { app_language_text } from "./app_language_text.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
@@ -249,10 +249,7 @@ export async function app_language_refresh_node(context) {
     if (group_index < groups_size - 1) {
       html_button_width_full_text_click(
         root,
-        string_combine_multiple([
-          await app_language_text(language_fluent, html_button_next_text()),
-          app_language_text_group(),
-        ]),
+        await app_language_text_group_next(language_fluent),
         async () => {
           await app_language_group_index_set(context, group_index + 1);
         },
