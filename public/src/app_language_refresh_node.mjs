@@ -82,7 +82,9 @@ export async function app_language_refresh_node(context) {
         html_button_begin_text(app_language_refresh_node_begin_text()),
       ]),
       string_combine_multiple([
-        "then you will read the first 6 words and their definitions",
+        "then you will read the first ",
+        atom_size,
+        " words and their definitions",
       ]),
       string_combine_multiple([
         "if you want to read the words and their definitions again before being quizzed, tap or click: ",
