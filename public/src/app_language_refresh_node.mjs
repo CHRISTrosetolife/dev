@@ -93,7 +93,7 @@ export async function app_language_refresh_node(context) {
         await app_language_text_learn(language_fluent),
       ]),
       string_combine_multiple([
-        "then if you are ready to be quizzed on these ",
+        "then , when you are ready to be quizzed on these ",
         atom_size,
         " words, tap or click: ",
         await app_language_text_quiz(
