@@ -8,7 +8,7 @@ export function html_button_begin(root, text, begin_onclick) {
   let default_font_size = html_style_default_font_size_value();
   let begin = html_button_width_full_text_click(
     root,
-    string_combine_multiple(["🚀 begin"]),
+    string_combine_multiple(["🚀 begin ", text]),
     begin_onclick,
   );
   let font_size_bigger = multiply(default_font_size, 1.2);
