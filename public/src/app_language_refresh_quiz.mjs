@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_language_refresh_quiz_text_ready } from "./app_language_refresh_quiz_text_ready.mjs";
 import { string_size } from "./string_size.mjs";
 import { list_without } from "./list_without.mjs";
@@ -145,7 +146,10 @@ export async function app_language_refresh_quiz(context) {
   html_flag(button_ready, app_language_flag_answer());
   html_span_text(
     button_ready,
-    $s,' ',await app_language_refresh_quiz_text_ready(language_fluent),
+    string_combine_multiple([
+      " ",
+      await app_language_refresh_quiz_text_ready(language_fluent),
+    ]),
   );
   quiz_container = html_div(root);
   let component_display_none;
