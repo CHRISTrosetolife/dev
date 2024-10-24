@@ -81,7 +81,9 @@ export async function app_language_refresh_node(context) {
         "if this is the first time you are using this app, then, to get started, tap or click this button: ",
         html_button_begin_text(app_language_refresh_node_begin_text()),
       ]),
-      "then you will read the first 6 words and their definitions",
+      string_combine_multiple([
+        "then you will read the first 6 words and their definitions",
+      ]),
       string_combine_multiple([
         "if you want to read the words and their definitions again before being quizzed, tap or click: ",
         await app_language_text_learn(language_fluent),
