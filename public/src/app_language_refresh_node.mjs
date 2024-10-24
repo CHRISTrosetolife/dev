@@ -135,9 +135,7 @@ export async function app_language_refresh_node(context) {
       string_combine_multiple([
         "Then, you can quiz on the first ",
         atom_size * 2,
-        " words ",
-        atom_size,
-        " as a review.",
+        " words as a review.",
       ]),
       string_combine_multiple([
         "Then, you continue to learn, quiz and next until you are reviewing ",
