@@ -231,14 +231,13 @@ export async function app_language_refresh_node(context) {
     j++;
   });
   if (top_is) {
-    let group_suffix = app_language_text_group();
     let group_index = app_language_group_index_get(context);
     if (group_index >= 1) {
       html_button_width_full_text_click(
         root,
         string_combine_multiple([
           await app_language_text(language_fluent, html_button_previous_text()),
-          group_suffix,
+          app_language_text_group(),
         ]),
         async () => {
           await app_language_group_index_set(context, group_index - 1);
@@ -252,7 +251,7 @@ export async function app_language_refresh_node(context) {
         root,
         string_combine_multiple([
           await app_language_text(language_fluent, html_button_next_text()),
-          group_suffix,
+          app_language_text_group(),
         ]),
         async () => {
           await app_language_group_index_set(context, group_index + 1);
