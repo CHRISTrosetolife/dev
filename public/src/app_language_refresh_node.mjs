@@ -97,6 +97,7 @@ export async function app_language_refresh_node(context) {
         await app_language_refresh_quiz_text_ready(language_fluent),
         "; then the choices will appear; choose the correct choice",
       ]),
+      "it is recommended to keep quizzing until you are comfortable with all of the words and their definitions",
     ];
     await app_language_text_learn(language_fluent);
   });
