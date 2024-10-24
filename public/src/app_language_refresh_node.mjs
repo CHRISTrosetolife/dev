@@ -1,3 +1,4 @@
+import { html_button_up_text } from "./html_button_up_text.mjs";
 import { app_language_text_group_previous } from "./app_language_text_group_previous.mjs";
 import { app_language_text_group_next } from "./app_language_text_group_next.mjs";
 import { app_language_text_next } from "./app_language_text_next.mjs";
@@ -159,7 +160,8 @@ export async function app_language_refresh_node(context) {
         "One way to go to a previous group is to choose: ",
         await app_language_text_group_previous(language_fluent),
       ]),
-      'Another way to go to a previous group is to keep choosing: ', html_button_up_text()
+      "Another way to go to a previous group is to keep choosing: ",
+      html_button_up_text(),
     ];
     each(paragraphs, (p) => {
       html_p_text(root, p);
