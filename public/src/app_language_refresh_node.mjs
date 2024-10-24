@@ -1,3 +1,4 @@
+import { app_language_text_group } from "./app_language_text_group.mjs";
 import { app_language_text_next } from "./app_language_text_next.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { each } from "./each.mjs";
@@ -143,6 +144,9 @@ export async function app_language_refresh_node(context) {
         group_pair_count,
         " words.",
       ]),
+      "Once you have completed your first group of ",
+      group_pair_count,
+      " words, then choose ",
     ];
     each(paragraphs, (p) => {
       html_p_text(root, p);
@@ -227,7 +231,7 @@ export async function app_language_refresh_node(context) {
     j++;
   });
   if (top_is) {
-    let group_suffix = " group";
+    let group_suffix = app_language_text_group();
     let group_index = app_language_group_index_get(context);
     if (group_index >= 1) {
       html_button_width_full_text_click(
@@ -310,6 +314,4 @@ export async function app_language_refresh_node(context) {
         break;
       }
     }
-    await app_language_refresh_node(context);
-  }
-}
+    await app_langu
