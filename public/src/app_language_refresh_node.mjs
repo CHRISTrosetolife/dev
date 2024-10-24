@@ -95,6 +95,7 @@ export async function app_language_refresh_node(context) {
       string_combine_multiple([
         "while you are quizzing, you will see a word; try to remember its translation; this will help you learn the words; then, once you have tried to remember the translation, then choose: ",
         await app_language_refresh_quiz_text_ready(language_fluent),
+        "; then the choices will appear; choose the correct choice",
       ]),
     ];
     await app_language_text_learn(language_fluent);
