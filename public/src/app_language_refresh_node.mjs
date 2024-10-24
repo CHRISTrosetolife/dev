@@ -1,3 +1,4 @@
+import { html_style_email } from "./html_style_email.mjs";
 import { html_button_width_full_text } from "./html_button_width_full_text.mjs";
 import { list_size } from "./list_size.mjs";
 import { app_language_group_get } from "./app_language_group_get.mjs";
@@ -196,6 +197,7 @@ export async function app_language_refresh_node(context) {
     root,
     "📨 contact developer email",
   );
+  html_style_email();
   async function up_onclick() {
     if (top_is) {
       await app_language_refresh_menu(context);
