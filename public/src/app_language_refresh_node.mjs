@@ -1,4 +1,4 @@
-import { html_button_back } from "./html_button_back.mjs";
+import { app_language_refresh_node_back } from "./app_language_refresh_node_back.mjs";
 import { html_button_up_text } from "./html_button_up_text.mjs";
 import { app_language_text_group_previous } from "./app_language_text_group_previous.mjs";
 import { app_language_text_group_next } from "./app_language_text_group_next.mjs";
@@ -76,9 +76,7 @@ export async function app_language_refresh_node(context) {
     );
   }
   html_button_width_full_text_click(root, "🛟 help", async () => {
-    html_button_back(root, async () => {
-      await app_language_refresh_node(context);
-    });
+    app_language_refresh_node_back(context);
     let atom_size = app_language_atom_size();
     let group_pair_count = app_language_group_size() * atom_size;
     html_clear_scroll_top_centered(root);
@@ -177,6 +175,7 @@ export async function app_language_refresh_node(context) {
     each(paragraphs, (p) => {
       html_p_text(root, p);
     });
+    app_language_refresh_node_back(context);
   });
   let srl = subtract(right, left);
   let j = 1;
