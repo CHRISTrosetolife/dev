@@ -314,4 +314,6 @@ export async function app_language_refresh_node(context) {
         break;
       }
     }
-    await app_langu
+    await app_language_refresh_node(context);
+  }
+}
