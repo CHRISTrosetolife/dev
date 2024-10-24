@@ -76,6 +76,7 @@ export async function app_language_refresh_node(context) {
         "if this is the first time you are using this app, then, to get started, tap or click this button: ",
         html_button_begin_text(app_language_refresh_node_begin_text()),
       ]),
+      "then you will be learning the first 6 words",
     ];
   });
   let srl = subtract(right, left);
