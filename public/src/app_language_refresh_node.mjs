@@ -50,6 +50,7 @@ export async function app_language_refresh_node(context) {
   html_clear_scroll_top_centered(root);
   app_language_title(context);
   let { left, right } = storage_local_get(app_ceb, "position");
+  let top_is = left === 0 && right === app_language_group_size() - 1;
   let srl = subtract(right, left);
   let j = 1;
   if (equal_not(srl, 0)) {
@@ -131,7 +132,6 @@ export async function app_language_refresh_node(context) {
       },
     );
   });
-  let top_is = left === 0 && right === app_language_group_size() - 1;
   if (top_is) {
     let group_suffix = " group";
     let group_index = app_language_group_index_get(context);
