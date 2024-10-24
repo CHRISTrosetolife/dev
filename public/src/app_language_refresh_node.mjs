@@ -74,7 +74,7 @@ export async function app_language_refresh_node(context) {
     let paragraphs = [
       "this app teaches Cebuano",
       "this app teaches vocabularly words",
-      "if this is the first time you are using this app, then tap or click this button: ",
+      "if this is the first time you are using this app, then, to get started, tap or click this button: ",
     ];
   });
   let srl = subtract(right, left);
