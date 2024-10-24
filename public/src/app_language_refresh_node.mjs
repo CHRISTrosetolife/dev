@@ -117,7 +117,7 @@ export async function app_language_refresh_node(context) {
         await app_language_text_next(language_fluent),
       ]),
       string_combine_multiple([
-        "Then, you can learn and quiz on the next ",
+        "Then, you can learn and quiz on the second ",
         atom_size,
         " words, just like you did on the first ",
         atom_size,
