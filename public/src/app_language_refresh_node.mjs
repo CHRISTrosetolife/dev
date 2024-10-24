@@ -156,7 +156,8 @@ export async function app_language_refresh_node(context) {
       ]),
       "After you complete a second group or beyond, it is recommended to review any previous groups.",
       string_combine_multiple([
-        "Once way to go to a previous group is to choose: ",await app_language_text_group_previous(language_fluent)
+        "One way to go to a previous group is to choose: ",
+        await app_language_text_group_previous(language_fluent),
       ]),
     ];
     each(paragraphs, (p) => {
