@@ -126,10 +126,11 @@ export async function app_learn_code() {
       root,
       'if you want to start from the beginning , choose "begin" : ',
     );
+    let begin_onclick = async () => await refresh_lesson_screen(0);
     let begin = html_button_width_full_text_click(
       root,
       "🚀 begin",
-      async () => await refresh_lesson_screen(0),
+      begin_onclick,
     );
     let font_size_bigger = multiply(default_font_size, 1.2);
     html_style_font_size(begin, font_size_bigger);
@@ -186,9 +187,12 @@ export async function app_learn_code() {
         async () => await refresh_lesson_screen(add(index_first, index)),
       );
       if (equal(index, 0)) {
-        let begin_lesson = html_span_text(button, `begin the lesson`);
+        let begin_lesson = html_span_text(
+          button,
+          string_combine_multiple(["begin the lesson"]),
+        );
         html_style_bold(begin_lesson);
-        html_span_text(button, ` ( ${message} )`);
+        html_span_text(button, string_combine_multiple([" ( ", message, " )"]));
       } else {
         html_span_text(button, message);
       }
