@@ -160,8 +160,10 @@ export async function app_language_refresh_node(context) {
         "One way to go to a previous group is to choose: ",
         await app_language_text_group_previous(language_fluent),
       ]),
-      "Another way to go to a previous group is to keep choosing: ",
-      html_button_up_text(),
+      string_combine_multiple([
+        "Another way to go to a previous group is to keep choosing: ",
+        html_button_up_text(),
+      ]),
       "Then you can choose from all groups",
     ];
     each(paragraphs, (p) => {
