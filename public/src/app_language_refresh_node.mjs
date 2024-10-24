@@ -75,9 +75,9 @@ export async function app_language_refresh_node(context) {
         string_combine_multiple([j, ". ", text]),
         async function on_click() {
           await app_language_refresh_node_left_right(
+            context,
             left_next,
             right_next,
-            context,
           );
         },
       );
