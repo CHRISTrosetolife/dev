@@ -1,3 +1,4 @@
+import { app_language_text_quiz } from "./app_language_text_quiz.mjs";
 import { app_language_quiz_easy_very } from "./app_language_quiz_easy_very.mjs";
 import { app_language_text_learn } from "./app_language_text_learn.mjs";
 import { app_language_refresh_node_begin_text } from "./app_language_refresh_node_begin_text.mjs";
@@ -153,13 +154,7 @@ export async function app_language_refresh_node(context) {
       string_combine_multiple([
         j,
         ". ",
-        string_combine_multiple([
-          "📝 quiz ( ",
-          item.emoji,
-          " ",
-          await app_language_text(language_fluent, item.text),
-          " )",
-        ]),
+        await app_language_text_quiz(item, language_fluent),
       ]),
       async () => {
         await app_language_quizzes_start(context, [item.chunk_size]);
