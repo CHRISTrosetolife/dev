@@ -1,3 +1,4 @@
+import { app_language_atom_size } from "./app_language_atom_size.mjs";
 import { app_language_refresh_node_left_right } from "./app_language_refresh_node_left_right.mjs";
 import { html_button_begin } from "./html_button_begin.mjs";
 import { me_email } from "./me_email.mjs";
@@ -54,9 +55,10 @@ export async function app_language_refresh_node(context) {
   let { left, right } = storage_local_get(app_ceb, "position");
   let top_is = left === 0 && right === app_language_group_size() - 1;
   if (top_is) {
+    let atom_count = app_language_atom_size();
     html_button_begin(
       root,
-      string_combine_multiple(["( learn words 1 - ", ")"]),
+      string_combine_multiple(["( learn words 1 - ", atom_count, ")"]),
       async () => {
         await app_language_refresh_node_left_right(context, 0, 0);
       },
