@@ -93,7 +93,7 @@ export async function app_language_refresh_node(context) {
         await app_language_text_learn(language_fluent),
       ]),
       string_combine_multiple([
-        "then, when you are ready to be quizzed on these ",
+        "Then, when you are ready to be quizzed on these ",
         atom_size,
         " words, tap or click: ",
         await app_language_text_quiz(
@@ -102,9 +102,9 @@ export async function app_language_refresh_node(context) {
         ),
       ]),
       string_combine_multiple([
-        "while you are quizzing, you will see a word; try to remember its translation; this will help you learn the words; then, once you have tried to remember the translation, then choose: ",
+        "While you are quizzing, first, you will see a word. Try to remember the translation of the word and how to spell it. Remembering like this will help you learn the words. Then, once you have tried to remember the translation, choose: ",
         await app_language_refresh_quiz_text_ready(language_fluent),
-        "; then the choices will appear; choose the correct choice",
+        ". Then the choices will appear. Choose the correct choice.",
       ]),
       "it is recommended to keep quizzing until you are comfortable with all of the words and their definitions",
       string_combine_multiple([
