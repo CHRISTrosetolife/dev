@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { app_language_refresh_quiz_text_ready } from "./app_language_refresh_quiz_text_ready.mjs";
 import { app_language_text_quiz } from "./app_language_text_quiz.mjs";
 import { app_language_quiz_easy_very } from "./app_language_quiz_easy_very.mjs";
@@ -111,7 +112,7 @@ export async function app_language_refresh_node(context) {
         " words, then choose ",
       ]),
     ];
-    await app_language_text_learn(language_fluent);
+    each(list, (item2) => {});
   });
   let srl = subtract(right, left);
   let j = 1;
