@@ -1,3 +1,4 @@
+import { app_language_refresh_quiz_text_ready } from "./app_language_refresh_quiz_text_ready.mjs";
 import { string_size } from "./string_size.mjs";
 import { list_without } from "./list_without.mjs";
 import { json_to } from "./json_to.mjs";
@@ -62,7 +63,6 @@ import { equal_1 } from "./equal_1.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_style_display_block } from "./html_style_display_block.mjs";
 import { html_style_display_none } from "./html_style_display_none.mjs";
-import { app_language_text } from "./app_language_text.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { list_first } from "./list_first.mjs";
 import { app_language_word_native } from "./app_language_word_native.mjs";
@@ -287,8 +287,4 @@ export async function app_language_refresh_quiz(context) {
       }
     });
   }
-}
-
-async function app_language_refresh_quiz_text_ready(language_fluent) {
-    return "👌 " + (await app_language_text(language_fluent, "ready"));
 }
