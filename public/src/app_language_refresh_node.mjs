@@ -54,7 +54,7 @@ export async function app_language_refresh_node(context) {
   let { left, right } = storage_local_get(app_ceb, "position");
   let top_is = left === 0 && right === app_language_group_size() - 1;
   if (top_is) {
-    html_button_begin(root, async () => {
+    html_button_begin(root, "", async () => {
       await app_language_refresh_node_left_right(context, 0, 0);
     });
   }

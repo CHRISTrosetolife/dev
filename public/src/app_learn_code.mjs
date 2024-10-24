@@ -125,7 +125,7 @@ export async function app_learn_code() {
       root,
       'if you want to start from the beginning , choose "begin" : ',
     );
-    html_button_begin(root, async () => await refresh_lesson_screen(0));
+    html_button_begin(root, "", async () => await refresh_lesson_screen(0));
     html_p_text(root, "or choose a module below :");
     each_index(modules, (module, index) => {
       let index_1_s = add_1_string(index);
