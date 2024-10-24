@@ -56,7 +56,7 @@ export async function app_language_refresh_node(context) {
   if (top_is) {
     html_button_begin(
       root,
-      string_combine_multiple(["( learn words 1 - )"]),
+      string_combine_multiple(["( learn words 1 - ", ")"]),
       async () => {
         await app_language_refresh_node_left_right(context, 0, 0);
       },
