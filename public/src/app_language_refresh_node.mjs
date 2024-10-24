@@ -56,12 +56,15 @@ export async function app_language_refresh_node(context) {
   app_language_title(context);
   let { left, right } = storage_local_get(app_ceb, "position");
   let top_is = left === 0 && right === app_language_group_size() - 1;
-  if (top_is) {$ag
-    let begin_text = app_language_refresh_node_begin_text();
-    html_button_begin(root, begin_text, async () => {
-      await app_language_refresh_node_left_right(context, 0, 0);
-      app_language_refresh_learn_0(context);
-    });
+  if (top_is) {
+    html_button_begin(
+      root,
+      app_language_refresh_node_begin_text(),
+      async () => {
+        await app_language_refresh_node_left_right(context, 0, 0);
+        app_language_refresh_learn_0(context);
+      },
+    );
   }
   html_button_width_full_text_click(root, "🛟 help", () => {
     let group_pair_count = app_language_group_size() * app_language_atom_size();
