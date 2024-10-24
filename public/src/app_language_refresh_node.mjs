@@ -70,7 +70,7 @@ export async function app_language_refresh_node(context) {
     );
   }
   html_button_width_full_text_click(root, "🛟 help", async () => {
-    await app_language_refresh_help(root, context);
+    await app_language_refresh_help(context);
   });
   let srl = subtract(right, left);
   let j = 1;
