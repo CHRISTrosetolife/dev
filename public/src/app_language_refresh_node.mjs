@@ -68,7 +68,7 @@ export async function app_language_refresh_node(context) {
       },
     );
   }
-  html_button_width_full_text_click();
+  html_button_width_full_text_click(root);
   let srl = subtract(right, left);
   let j = 1;
   if (equal_not(srl, 0)) {
