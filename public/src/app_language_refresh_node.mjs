@@ -146,7 +146,8 @@ export async function app_language_refresh_node(context) {
       ]),
       "Once you have completed your first group of ",
       group_pair_count,
-      " words, then choose ",
+      " words, then choose: ",
+      await app_language_text_group_next(language_fluent),
     ];
     each(paragraphs, (p) => {
       html_p_text(root, p);
