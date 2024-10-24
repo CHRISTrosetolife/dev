@@ -106,9 +106,11 @@ export async function app_language_refresh_node(context) {
         await app_language_refresh_quiz_text_ready(language_fluent),
         ". Then the choices will appear. Choose the correct choice.",
       ]),
-      "it is recommended to keep quizzing until you are comfortable with all of the words and their definitions",
+      "It is recommended to keep quizzing until you are comfortable with all of the words and their definitions.",
+      "The other quiz difficulties will test you on the spelling of the words.",
+      "It is okay to skip these difficulties.",
       string_combine_multiple([
-        "once you have learned the first ",
+        "Once you have learned the first ",
         atom_size,
         " words, then choose ",
       ]),
