@@ -150,6 +150,11 @@ export async function app_language_refresh_node(context) {
         " words, then choose: ",
         await app_language_text_group_next(language_fluent),
       ]),
+      string_combine_multiple([
+        "Then, you can do everything all over for the second group of ",
+        group_pair_count,
+        " words.",
+      ]),
     ];
     each(paragraphs, (p) => {
       html_p_text(root, p);
