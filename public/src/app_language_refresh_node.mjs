@@ -136,11 +136,13 @@ export async function app_language_refresh_node(context) {
         atom_size,
         " as a review.",
       ]),
-      "Then, you continue to repeat learn, quiz and next until you are reviewing ",
-      group_pair_count,
-      " words at once. This will be your first group of ",
-      group_pair_count,
-      " words.",
+      string_combine_multiple([
+        "Then, you continue to learn, quiz and next until you are reviewing ",
+        group_pair_count,
+        " words at once. This will be your first group of ",
+        group_pair_count,
+        " words.",
+      ]),
     ];
     each(paragraphs, (p) => {
       html_p_text(root, p);
