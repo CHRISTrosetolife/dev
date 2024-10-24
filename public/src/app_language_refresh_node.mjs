@@ -76,7 +76,8 @@ export async function app_language_refresh_node(context) {
         "if this is the first time you are using this app, then, to get started, tap or click this button: ",
         html_button_begin_text(app_language_refresh_node_begin_text()),
       ]),
-      "then you will be learning the first 6 words",
+      "then you will read the first 6 words and their definitions",
+      "then you can choose learn to read them again",
     ];
   });
   let srl = subtract(right, left);
@@ -115,15 +116,18 @@ export async function app_language_refresh_node(context) {
     html_button_width_full_text_click(
       root,
       string_combine_multiple([
-        j++,
-        ". 🎓 ",
-        await app_language_text(language_fluent, "learn"),
+        j,
+        string_combine_multiple([
+          ". 🎓 ",
+          await app_language_text(language_fluent, "learn"),
+        ]),
       ]),
       () => {
         app_language_refresh_learn_0(context);
       },
     );
   }
+  j++;
   ("🟠");
   let quizzes_list = [];
   list_add(quizzes_list, {
