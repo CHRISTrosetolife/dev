@@ -105,7 +105,7 @@ export async function app_language_refresh_node(context) {
         "; then the choices will appear; choose the correct choice",
       ]),
       "it is recommended to keep quizzing until you are comfortable with all of the words and their definitions",
-      "once you have learned the first 6",
+      string_combine_multiple(["once you have learned the first 6"]),
     ];
     await app_language_text_learn(language_fluent);
   });
