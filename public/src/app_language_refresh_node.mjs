@@ -1,3 +1,4 @@
+import { html_button_begin_text } from "./html_button_begin_text.mjs";
 import { html_replace_nb_parenthesis } from "./html_replace_nb_parenthesis.mjs";
 import { app_language_refresh_learn_0 } from "./app_language_refresh_learn_0.mjs";
 import { app_language_atom_size } from "./app_language_atom_size.mjs";
@@ -73,8 +74,11 @@ export async function app_language_refresh_node(context) {
     html_clear_scroll_top_centered(root);
     let paragraphs = [
       "this app teaches Cebuano",
-      "this app teaches vocabularly words",$s1,
-      "if this is the first time you are using this app, then, to get started, tap or click this button: ",html_button_begin_text() 
+      "this app teaches vocabularly words",
+      string_combine_multiple([
+        "if this is the first time you are using this app, then, to get started, tap or click this button: ",
+      ]),
+      html_button_begin_text(),
     ];
   });
   let srl = subtract(right, left);
