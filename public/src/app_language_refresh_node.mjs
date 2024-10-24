@@ -108,7 +108,7 @@ export async function app_language_refresh_node(context) {
       ]),
       "It is recommended to keep quizzing until you are comfortable with all of the words and their definitions.",
       "The other quiz difficulties will test you on the spelling of the words.",
-      "It is okay to skip these difficulties.",
+      "It is okay to completely skip these difficulties.",
       string_combine_multiple([
         "Once you have learned the first ",
         atom_size,
