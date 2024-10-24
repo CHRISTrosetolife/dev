@@ -77,10 +77,10 @@ export async function app_language_refresh_node(context) {
     let group_pair_count = app_language_group_size() * atom_size;
     html_clear_scroll_top_centered(root);
     let paragraphs = [
-      "this app teaches Cebuano",
-      "this app teaches vocabularly words",
+      "This app teaches Cebuano.",
+      "This app teaches vocabularly words.",
       string_combine_multiple([
-        "if this is the first time you are using this app, then, to get started, tap or click this button: ",
+        "If this is the first time you are using this app, then, to get started, tap or click this button: ",
         html_button_begin_text(app_language_refresh_node_begin_text()),
       ]),
       string_combine_multiple([
