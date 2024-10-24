@@ -71,7 +71,8 @@ export async function app_language_refresh_node(context) {
     );
   }
   html_button_width_full_text_click(root, "🛟 help", async () => {
-    let group_pair_count = app_language_group_size() * app_language_atom_size();
+    let atom_size = app_language_atom_size();
+    let group_pair_count = app_language_group_size() * atom_size;
     html_clear_scroll_top_centered(root);
     let paragraphs = [
       "this app teaches Cebuano",
@@ -86,7 +87,9 @@ export async function app_language_refresh_node(context) {
         await app_language_text_learn(language_fluent),
       ]),
       string_combine_multiple([
-        "then if you are ready to be quizzed on these 6 words, tap or click: ",
+        "then if you are ready to be quizzed on these ",
+        atom_size,
+        " words, tap or click: ",
         await app_language_text_quiz(
           app_language_quiz_easy_very(),
           language_fluent,
@@ -98,6 +101,7 @@ export async function app_language_refresh_node(context) {
         "; then the choices will appear; choose the correct choice",
       ]),
       "it is recommended to keep quizzing until you are comfortable with all of the words and their definitions",
+      "once you have learned the first 6",
     ];
     await app_language_text_learn(language_fluent);
   });
