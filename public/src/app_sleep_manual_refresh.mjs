@@ -1,3 +1,4 @@
+import { html_button_back } from "./html_button_back.mjs";
 import { app_sleep_types } from "./app_sleep_types.mjs";
 import { log } from "./log.mjs";
 import { html_div } from "./html_div.mjs";
@@ -21,7 +22,6 @@ import { range_1 } from "./range_1.mjs";
 import { list_index } from "./list_index.mjs";
 import { date_month_names } from "./date_month_names.mjs";
 import { app_sleep_main } from "./app_sleep_main.mjs";
-import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
 import { html_clear_scroll_top_context } from "./html_clear_scroll_top_context.mjs";
 import { list_get } from "./list_get.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
@@ -33,7 +33,7 @@ export function app_sleep_manual_refresh(context, parts) {
   });
   let { root } = context;
   html_clear_scroll_top_context(context);
-  html_button_width_full_text_click_back(root, () => app_sleep_main(context));
+  html_button_back(root, () => app_sleep_main(context));
   let names = date_month_names();
   let pm = "pm";
   let am = "am";

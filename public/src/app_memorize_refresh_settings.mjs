@@ -1,3 +1,4 @@
+import { html_button_back } from "./html_button_back.mjs";
 import { html_style_success_if } from "./html_style_success_if.mjs";
 import { app_memorize_refresh_settings_version } from "./app_memorize_refresh_settings_version.mjs";
 import { html_button_next_text } from "./html_button_next_text.mjs";
@@ -12,7 +13,6 @@ import { http_storage_get } from "./http_storage_get.mjs";
 import { bible_storage_path_copyrights } from "./bible_storage_path_copyrights.mjs";
 import { bible_eng_versions_each } from "./bible_eng_versions_each.mjs";
 import { app_memorize_refresh_memorize_load } from "./app_memorize_refresh_memorize_load.mjs";
-import { html_button_width_full_text_click_back } from "./html_button_width_full_text_click_back.mjs";
 import { app_memorize_chapter_get } from "./app_memorize_chapter_get.mjs";
 import { app_memorize_book_code_get } from "./app_memorize_book_code_get.mjs";
 import { app_memorize_refresh_settings_chapter } from "./app_memorize_refresh_settings_chapter.mjs";
@@ -39,7 +39,7 @@ export async function app_memorize_refresh_settings(context) {
   let { root } = context;
   html_clear_scroll_top(root);
   let save = app_memorize_save_get(context);
-  html_button_width_full_text_click_back(root, async () => {
+  html_button_back(root, async () => {
     await app_memorize_refresh_memorize(context);
   });
   let version_code_current = app_memorize_version_code_get(context);
