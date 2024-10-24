@@ -58,7 +58,7 @@ export async function app_language_refresh_node(context) {
     let atom_count = app_language_atom_size();
     html_button_begin(
       root,
-      string_combine_multiple(["( learn words 1 - ", atom_count, ")"]),
+      string_combine_multiple(["( learn words 1 - ", atom_count, " )"]),
       async () => {
         await app_language_refresh_node_left_right(context, 0, 0);
       },
