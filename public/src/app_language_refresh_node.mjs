@@ -151,7 +151,7 @@ export async function app_language_refresh_node(context) {
     html_button_width_full_text_click(
       root,
       string_combine_multiple([
-        j++,
+        j,
         ". ",
         "📝 quiz ( ",
         item.emoji,
@@ -163,6 +163,7 @@ export async function app_language_refresh_node(context) {
         await app_language_quizzes_start(context, [item.chunk_size]);
       },
     );
+    j++;
   });
   if (top_is) {
     let group_suffix = " group";
