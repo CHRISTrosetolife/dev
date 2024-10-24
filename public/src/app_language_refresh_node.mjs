@@ -1,5 +1,5 @@
+import { app_language_text_group_previous } from "./app_language_text_group_previous.mjs";
 import { app_language_text_group_next } from "./app_language_text_group_next.mjs";
-import { app_language_text_group } from "./app_language_text_group.mjs";
 import { app_language_text_next } from "./app_language_text_next.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { each } from "./each.mjs";
@@ -18,7 +18,6 @@ import { html_style_email } from "./html_style_email.mjs";
 import { html_button_width_full_text } from "./html_button_width_full_text.mjs";
 import { list_size } from "./list_size.mjs";
 import { app_language_group_get } from "./app_language_group_get.mjs";
-import { html_button_previous_text } from "./html_button_previous_text.mjs";
 import { app_language_group_index_get } from "./app_language_group_index_get.mjs";
 import { app_language_group_index_set } from "./app_language_group_index_set.mjs";
 import { app_language_refresh_menu } from "./app_language_refresh_menu.mjs";
@@ -245,10 +244,7 @@ export async function app_language_refresh_node(context) {
     if (group_index >= 1) {
       html_button_width_full_text_click(
         root,
-        string_combine_multiple([
-          await app_language_text(language_fluent, html_button_previous_text()),
-          app_language_text_group(),
-        ]),
+        await app_language_text_group_previous(language_fluent),
         async () => {
           await app_language_group_index_set(context, group_index - 1);
         },
