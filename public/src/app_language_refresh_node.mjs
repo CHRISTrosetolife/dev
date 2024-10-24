@@ -1,3 +1,4 @@
+import { app_language_refresh_node_left_right } from "./app_language_refresh_node_left_right.mjs";
 import { noop } from "./noop.mjs";
 import { html_button_begin } from "./html_button_begin.mjs";
 import { me_email } from "./me_email.mjs";
@@ -73,11 +74,11 @@ export async function app_language_refresh_node(context) {
         app_language_atom_title_patterns(),
         string_combine_multiple([j, ". ", text]),
         async function on_click() {
-          storage_local_set(app_ceb, "position", {
-            left: left_next,
-            right: right_next,
-          });
-          await app_language_refresh_node(context);
+          await app_language_refresh_node_left_right(
+            left_next,
+            right_next,
+            context,
+          );
         },
       );
       j++;
