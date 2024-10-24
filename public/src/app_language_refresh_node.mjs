@@ -67,7 +67,7 @@ export async function app_language_refresh_node(context) {
       },
     );
   }
-  html_button_width_full_text_click(root, "🛟 help", () => {
+  html_button_width_full_text_click(root, "🛟 help", async () => {
     let group_pair_count = app_language_group_size() * app_language_atom_size();
     html_clear_scroll_top_centered(root);
     let paragraphs = [
@@ -78,8 +78,9 @@ export async function app_language_refresh_node(context) {
         html_button_begin_text(app_language_refresh_node_begin_text()),
       ]),
       "then you will read the first 6 words and their definitions",
-      "then you can choose learn to read them again",
+      "then if you are ready to be quizzed",
     ];
+    await app_language_text_learn(language_fluent);
   });
   let srl = subtract(right, left);
   let j = 1;
