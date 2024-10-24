@@ -155,7 +155,7 @@ export async function app_language_refresh_node(context) {
         group_pair_count,
         " words.",
       ]),
-      "After you complete a second group or beyond, it is recommended to review any previous groups.",
+      "After you complete a second group or beyond, it is recommended to review previous groups.",
       string_combine_multiple([
         "One way to go to a previous group is to choose: ",
         await app_language_text_group_previous(language_fluent),
