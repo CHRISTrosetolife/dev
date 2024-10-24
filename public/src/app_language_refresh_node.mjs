@@ -1,3 +1,4 @@
+import { html_button_width_full_text } from "./html_button_width_full_text.mjs";
 import { list_size } from "./list_size.mjs";
 import { app_language_group_get } from "./app_language_group_get.mjs";
 import { html_button_previous_text } from "./html_button_previous_text.mjs";
@@ -191,7 +192,7 @@ export async function app_language_refresh_node(context) {
     }
   }
   html_button_width_full_text_click_up(root, up_onclick);
-  html_button_width_full_text_click(root, "email developer", () => {});
+  html_button_width_full_text(root, "email developer");
   async function up_onclick() {
     if (top_is) {
       await app_language_refresh_menu(context);
