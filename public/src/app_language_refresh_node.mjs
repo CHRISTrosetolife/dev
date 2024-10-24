@@ -116,11 +116,13 @@ export async function app_language_refresh_node(context) {
         " words, then choose: ",
         await app_language_text_next(language_fluent),
       ]),
-      "Then, you can learn and quiz on the next ",
-      atom_size,
-      " words, just like you did on the first ",
-      atom_size,
-      " words.",
+      string_combine_multiple([
+        "Then, you can learn and quiz on the next ",
+        atom_size,
+        " words, just like you did on the first ",
+        atom_size,
+        " words.",
+      ]),
     ];
     each(paragraphs, (p) => {
       html_p_text(root, p);
