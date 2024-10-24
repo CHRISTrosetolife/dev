@@ -91,6 +91,9 @@ export async function app_language_refresh_node(context) {
           language_fluent,
         ),
       ]),
+      string_combine_multiple([
+        "while you are quizzing, you will see a word; try to remember its translation; this will help you learn; then, once you have tried to remember the translation, then choose: ",
+      ]),
     ];
     await app_language_text_learn(language_fluent);
   });
