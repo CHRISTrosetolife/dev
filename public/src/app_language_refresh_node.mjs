@@ -1,5 +1,4 @@
 import { app_language_refresh_node_left_right } from "./app_language_refresh_node_left_right.mjs";
-import { noop } from "./noop.mjs";
 import { html_button_begin } from "./html_button_begin.mjs";
 import { me_email } from "./me_email.mjs";
 import { html_style_email } from "./html_style_email.mjs";
@@ -55,7 +54,7 @@ export async function app_language_refresh_node(context) {
   let { left, right } = storage_local_get(app_ceb, "position");
   let top_is = left === 0 && right === app_language_group_size() - 1;
   if (top_is) {
-    html_button_begin(root, noop);
+    html_button_begin(root, () => {});
   }
   let srl = subtract(right, left);
   let j = 1;
