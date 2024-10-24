@@ -1,3 +1,4 @@
+import { me_email } from "./me_email.mjs";
 import { html_style_a_plain } from "./html_style_a_plain.mjs";
 import { html_style_default_font_size } from "./html_style_default_font_size.mjs";
 import { html_p_text } from "./html_p_text.mjs";
@@ -38,7 +39,7 @@ export function app_resume() {
   html_spacer_bullet(row);
   html_phone(row, "+1 (904) 314-4052");
   html_spacer_bullet(row);
-  html_email(row, "JESUSrosetolife@protonmail.com");
+  html_email(row, me_email());
   app_resume_header_2(root, "Projects");
   let dev = app_resume_header_3(root, "Development Tools");
   html_cycle_p(
