@@ -1,3 +1,4 @@
+import { app_language_text_next } from "./app_language_text_next.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { each } from "./each.mjs";
 import { app_language_refresh_quiz_text_ready } from "./app_language_refresh_quiz_text_ready.mjs";
@@ -112,7 +113,8 @@ export async function app_language_refresh_node(context) {
       string_combine_multiple([
         "Once you have learned the first ",
         atom_size,
-        " words, then choose ",
+        " words, then choose: ",
+        await app_language_text_next(language_fluent),
       ]),
     ];
     each(paragraphs, (p) => {
@@ -232,7 +234,7 @@ export async function app_language_refresh_node(context) {
       string_combine_multiple([
         j++,
         ". ",
-        await app_language_text(language_fluent, html_button_next_text()),
+        await app_language_text_next(language_fluent),
       ]),
       async () => {
         app_ceb_next();
