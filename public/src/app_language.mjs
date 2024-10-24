@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { html_div } from "./html_div.mjs";
 import { html_css_flags } from "./html_css_flags.mjs";
@@ -36,6 +37,6 @@ export async function app_language(
     app_language_position_initial(context),
   );
   let screen = storage_local_initialize(context.app_fn, "screen", "node");
-  let fn_name = "app_language_refresh_" + screen;
+  let fn_name = string_combine_multiple(["app_language_refresh_", screen]);
   await function_run(fn_name, [context]);
 }
