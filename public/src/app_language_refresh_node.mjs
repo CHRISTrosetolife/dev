@@ -165,7 +165,7 @@ export async function app_language_refresh_node(context) {
         html_button_up_text(),
       ]),
       string_combine_multiple([
-        "Then you can choose any group of ",
+        "Then, you can choose any group of ",
         group_pair_count,
         " words you want",
       ]),
