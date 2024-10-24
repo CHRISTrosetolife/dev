@@ -123,6 +123,12 @@ export async function app_language_refresh_node(context) {
         atom_size,
         " words.",
       ]),
+      string_combine_multiple([
+        "Once you have learned the second ",
+        atom_size,
+        " words, then choose: ",
+        await app_language_text_next(language_fluent),
+      ]),
     ];
     each(paragraphs, (p) => {
       html_p_text(root, p);
