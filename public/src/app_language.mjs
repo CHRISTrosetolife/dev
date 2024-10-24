@@ -24,8 +24,8 @@ export async function app_language(
     language_fluent,
     invert,
   };
-  html_style_a_plain();
   let body = html_style_default_initialize();
+  html_style_a_plain();
   html_css_flags(body);
   let root = html_div(body);
   object_merge(context, {
