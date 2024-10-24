@@ -15,11 +15,7 @@ import { app_language_refresh_node_back } from "./app_language_refresh_node_back
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { app_language_group_size } from "./app_language_group_size.mjs";
 import { app_language_atom_size } from "./app_language_atom_size.mjs";
-export async function app_language_refresh_help(
-  roott,
-  context,
-  language_fluentt,
-) {
+export async function app_language_refresh_help(roott, context) {
   let { root, language_fluent } = context;
   let atom_size = app_language_atom_size();
   let group_pair_count = app_language_group_size() * atom_size;
