@@ -58,16 +58,13 @@ export async function app_language_refresh_node(context) {
   let top_is = left === 0 && right === app_language_group_size() - 1;
   if (top_is) {
     let atom_count = app_language_atom_size();
-    html_button_begin(
-      root,
-      html_replace_nb_parenthesis(
-        string_combine_multiple(["( learn words 1 - ", atom_count, " )"]),
-      ),
-      async () => {
-        await app_language_refresh_node_left_right(context, 0, 0);
-        app_language_refresh_learn_0(context);
-      },
+    let begin_text = html_replace_nb_parenthesis(
+      string_combine_multiple(["( learn words 1 - ", atom_count, " )"]),
     );
+    html_button_begin(root, begin_text, async () => {
+      await app_language_refresh_node_left_right(context, 0, 0);
+      app_language_refresh_learn_0(context);
+    });
   }
   html_button_width_full_text_click(root, "🛟 help", () => {
     let group_pair_count = app_language_group_size() * app_language_atom_size();
