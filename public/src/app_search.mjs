@@ -26,7 +26,7 @@ import { object_merge } from "./object_merge.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { html_hr } from "./html_hr.mjs";
 export async function app_search() {
-  await firebase_initialize_axios();
+  let root = await firebase_initialize_axios();
   html_p_text_centered(root, "enter words separated by spaces");
   let i = html_input_width_full_focus(root);
   html_button_width_full_text_click(root, "🔎 search", async () => {
