@@ -6,4 +6,5 @@ export async function bible_interlinear_upload() {
   let chapters = list_adder((la) => {
     bible_interlinear_each_chapter(books, la);
   });
+  return chapters;
 }
