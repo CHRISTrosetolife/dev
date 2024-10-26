@@ -3,7 +3,8 @@ import { each } from "./each.mjs";
 export function bible_interlinear_each_chapter(books, chapter_each) {
   each(books, (book) => {
     each(book.chapters, (chapter) => {
-      chapter_each(chapter, object_property_get(object, "property_name"));
+      let book_name = object_property_get(book, "book_name");
+      chapter_each(chapter, book_name);
     });
   });
 }
