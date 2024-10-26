@@ -5,10 +5,10 @@ import { object_merge } from "./object_merge.mjs";
 export async function bible_interlinear_upload() {
   let books = await bible_interlinear_cache_new();
   let chapters = list_adder((la) => {
-    bible_interlinear_each_chapter(books, (chapter, book) => {
+    bible_interlinear_each_chapter(books, (chapter, book_name) => {
       let r = object_merge(
         {
-          book,
+          book_name,
         },
         chapter,
       );
