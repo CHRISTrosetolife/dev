@@ -6,9 +6,13 @@ export async function bible_interlinear_upload() {
   let books = await bible_interlinear_cache_new();
   let chapters = list_adder((la) => {
     bible_interlinear_each_chapter(books, (chapter, book) => {
-      object_merge(chapter, {
-        book,
-      });
+      let r = object_merge(
+        {
+          book,
+        },
+        chapter,
+      );
+      la(r);
     });
   });
   return chapters;
