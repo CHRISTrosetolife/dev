@@ -1,3 +1,4 @@
+import { list_first } from "./list_first.mjs";
 import { bible_storage_version_upload } from "./bible_storage_version_upload.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { bible_interlinear_cache_new } from "./bible_interlinear_cache_new.mjs";
@@ -17,6 +18,7 @@ export async function bible_interlinear_upload() {
       la(r);
     });
   });
+  let chapter = list_first(chapters);
   await bible_storage_version_upload(
     path_join(["interlinear", book_name]),
     chapter_name,
