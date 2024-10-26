@@ -1,3 +1,4 @@
+import { function_cache_refresh_args } from "./function_cache_refresh_args.mjs";
 import { function_output_file_args_expression } from "./function_output_file_args_expression.mjs";
 import { function_output_file_args } from "./function_output_file_args.mjs";
 import { sermon_references_combine } from "./sermon_references_combine.mjs";
@@ -97,6 +98,7 @@ export async function function_aliases_generate() {
   alias_add(function_cache_delete, ["fcd"]);
   alias_add(function_cache_new, ["fcn"]);
   alias_add(function_cache_path_open, ["fco"]);
+  alias_add(function_cache_refresh_args, ["fca"]);
   alias_add(function_cache_refresh, ["fcr"]);
   alias_add(function_transform, ["ft"]);
   alias_add(function_transform_all, ["fta"]);
