@@ -5,5 +5,5 @@ export async function function_cache_refresh_args(function_name, args_list) {
   let args = list_split_comma(args_list);
   await function_cache_delete_if_exists(function_name);
   let cache_name = function_cache_name(function_name);
-  return await function_run(cache_name, []);
+  return await function_run(cache_name, args);
 }
