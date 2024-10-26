@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { list_first } from "./list_first.mjs";
 import { bible_storage_version_upload } from "./bible_storage_version_upload.mjs";
 import { list_adder } from "./list_adder.mjs";
@@ -20,7 +21,7 @@ export async function bible_interlinear_upload() {
   });
   let chapter = list_first(chapters);
   await bible_storage_version_upload(
-    path_join(["interlinear", book_name]),
+    path_join(["interlinear", object_property_get(object, "property_name")]),
     chapter_name,
     chapter,
   );
