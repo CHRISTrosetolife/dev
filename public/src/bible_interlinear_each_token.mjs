@@ -1,10 +1,7 @@
+import { bible_interlinear_each_chapter } from "./bible_interlinear_each_chapter.mjs";
 import { each } from "./each.mjs";
 export function bible_interlinear_each_token(new_testament_books, lambda) {
-  each(new_testament_books, (book) => {
-    each(book.chapters, (chapter) => {
-      chapter_each(chapter);
-    });
-  });
+  bible_interlinear_each_chapter(new_testament_books, chapter_each);
   function chapter_each(chapter) {
     each(chapter.verses, (verse) => {
       each(verse.tokens, (token) => {
