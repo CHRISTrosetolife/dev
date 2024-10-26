@@ -12,13 +12,13 @@ export async function bible_words_definitions_get(language, list) {
   return result;
   async function lambda(item) {
     let { word, definitions } = await definition_get(item.word);
+    list_add(result, {
+      word,
+      definitions,
+    });
     if (object_property_exists_not(existing, word)) {
       object_property_set(existing, word, true);
       if (list_empty_not_is(definitions)) {
-        list_add(result, {
-          word,
-          definitions,
-        });
       }
     }
   }
