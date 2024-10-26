@@ -14,6 +14,8 @@ export async function bible_words_score_language(language) {
   let lookup = list_to_lookup_key_value_property(words, "word", "count");
   let map = await bible_words_definitions_map_cache(language);
   let definitions = await bible_words_definitions_all_cache(language);
+  if (false) {
+  }
   each(definitions, (d) => {
     let choices = bible_words_definitions_map_choices(map, d);
     let count = summation((s) => {
