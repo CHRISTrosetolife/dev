@@ -9,7 +9,7 @@ export async function bible_words_definitions_get(language, list) {
   return result;
   async function lambda(item) {
     let { word, definitions } = await definition_get(item.word);
-    if (list_empty_not_is(definitions) || language === "lg") {
+    if (list_empty_not_is(definitions)) {
       list_add(result, {
         word,
         definitions,
