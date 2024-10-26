@@ -1,3 +1,4 @@
+import { firebase_download_bible } from "./firebase_download_bible.mjs";
 import { invoke_multiple } from "./invoke_multiple.mjs";
 import { list_map } from "./list_map.mjs";
 import { html_remove } from "./html_remove.mjs";
@@ -13,7 +14,6 @@ import { html_input_width_full_focus } from "./html_input_width_full_focus.mjs";
 import { html_script_axios } from "./html_script_axios.mjs";
 import { firebase_initialize } from "./firebase_initialize.mjs";
 import { app_search_folder } from "./app_search_folder.mjs";
-import { bible_storage_path_file_version } from "./bible_storage_path_file_version.mjs";
 import { firebase_download } from "./firebase_download.mjs";
 import { bible_search_results } from "./bible_search_results.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
@@ -85,7 +85,6 @@ export async function app_search() {
   async function word_to_results(word) {
     let key = word;
     let version_folder = app_search_folder();
-    let destination = bible_storage_path_file_version(key, version_folder);
-    return await firebase_download(destination);
+    return firebase_download_bible(key, version_folder);
   }
 }
