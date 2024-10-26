@@ -1,3 +1,4 @@
+import { bible_storage_version_upload } from "./bible_storage_version_upload.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { bible_interlinear_cache_new } from "./bible_interlinear_cache_new.mjs";
 import { bible_interlinear_each_chapter } from "./bible_interlinear_each_chapter.mjs";
@@ -15,5 +16,6 @@ export async function bible_interlinear_upload() {
       la(r);
     });
   });
+  await bible_storage_version_upload();
   return chapters;
 }
