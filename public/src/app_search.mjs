@@ -1,3 +1,4 @@
+import { firebase_initialize_axios } from "./firebase_initialize_axios.mjs";
 import { firebase_download_bible } from "./firebase_download_bible.mjs";
 import { invoke_multiple } from "./invoke_multiple.mjs";
 import { list_map } from "./list_map.mjs";
@@ -11,8 +12,6 @@ import { app_search_bible_folder } from "./app_search_bible_folder.mjs";
 import { bible_verses_upload_path } from "./bible_verses_upload_path.mjs";
 import { each } from "./each.mjs";
 import { html_input_width_full_focus } from "./html_input_width_full_focus.mjs";
-import { html_script_axios } from "./html_script_axios.mjs";
-import { firebase_initialize } from "./firebase_initialize.mjs";
 import { app_search_folder } from "./app_search_folder.mjs";
 import { firebase_download } from "./firebase_download.mjs";
 import { bible_search_results } from "./bible_search_results.mjs";
@@ -29,8 +28,7 @@ import { list_sort_string } from "./list_sort_string.mjs";
 import { html_hr } from "./html_hr.mjs";
 export async function app_search() {
   let root = html_style_default_initialize();
-  await html_script_axios(root);
-  firebase_initialize();
+  await firebase_initialize_axios(root);
   html_p_text_centered(root, "enter words separated by spaces");
   let i = html_input_width_full_focus(root);
   html_button_width_full_text_click(root, "🔎 search", async () => {
