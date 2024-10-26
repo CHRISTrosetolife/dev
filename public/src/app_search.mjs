@@ -84,7 +84,8 @@ export async function app_search() {
   });
   async function word_to_results(word) {
     let key = word;
-    let destination = bible_storage_path_file_version(key, app_search_folder());
+    let version_folder = app_search_folder();
+    let destination = bible_storage_path_file_version(key, version_folder);
     return await firebase_download(destination);
   }
 }
