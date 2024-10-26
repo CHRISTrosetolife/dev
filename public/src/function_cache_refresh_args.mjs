@@ -8,5 +8,5 @@ export async function function_cache_refresh_args(function_name, args_list) {
     args,
     file_delete_if_exists,
   );
-  return function_run_cache(function_name, args);
+  return await function_run_cache(function_name, args);
 }
