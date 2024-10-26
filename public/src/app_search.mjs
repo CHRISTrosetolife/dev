@@ -15,7 +15,6 @@ import { html_input_width_full_focus } from "./html_input_width_full_focus.mjs";
 import { app_search_folder } from "./app_search_folder.mjs";
 import { firebase_download } from "./firebase_download.mjs";
 import { bible_search_results } from "./bible_search_results.mjs";
-import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 import { tautology } from "./tautology.mjs";
 import { html_p_text_centered } from "./html_p_text_centered.mjs";
 import { html_value_get } from "./html_value_get.mjs";
@@ -27,8 +26,7 @@ import { object_merge } from "./object_merge.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { html_hr } from "./html_hr.mjs";
 export async function app_search() {
-  let root = html_style_default_initialize();
-  await firebase_initialize_axios(root);
+  await firebase_initialize_axios();
   html_p_text_centered(root, "enter words separated by spaces");
   let i = html_input_width_full_focus(root);
   html_button_width_full_text_click(root, "🔎 search", async () => {
