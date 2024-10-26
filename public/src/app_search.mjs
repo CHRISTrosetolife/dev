@@ -83,6 +83,6 @@ export async function app_search() {
     }
   });
   async function word_to_results(word) {
-    return await firebase_download_bible(word, app_search_folder());
+    return await firebase_download_bible(app_search_folder(), word);
   }
 }
