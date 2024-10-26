@@ -21,9 +21,8 @@ export async function bible_interlinear_upload() {
   });
   let chapter = list_first(chapters);
   await bible_storage_version_upload(
-    path_join(["interlinear", object_property_get(object, "property_name")]),
-    chapter_name,
+    path_join(["interlinear", object_property_get(chapter, "book_name")]),
+    object_property_get(chapter, "chapter_name"),
     chapter,
   );
-  return chapters;
 }
