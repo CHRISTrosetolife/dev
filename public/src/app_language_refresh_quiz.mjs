@@ -1,3 +1,4 @@
+import { percent_to } from "./percent_to.mjs";
 import { html_style_success_background } from "./html_style_success_background.mjs";
 import { html_button_width_full_text } from "./html_button_width_full_text.mjs";
 import { list_index_by } from "./list_index_by.mjs";
@@ -118,9 +119,9 @@ export async function app_language_refresh_quiz(context) {
       "linear-gradient(90deg, ",
       html_style_success_background(),
       " ",
-      60,
+      percent_to(progress_percent),
       "%, white ",
-      60,
+      percent_to(progress_percent),
       "%)",
     ]),
   });
