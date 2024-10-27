@@ -1,5 +1,4 @@
 import { app_record_verse } from "./app_record_verse.mjs";
-import { app_record } from "./app_record.mjs";
 import { html_bible_verse_navigation } from "./html_bible_verse_navigation.mjs";
 import { html_select_none } from "./html_select_none.mjs";
 import { html_style_a_plain } from "./html_style_a_plain.mjs";
@@ -75,7 +74,7 @@ export async function app_bible() {
     html_hr(root);
   });
   let n = await html_bible_verse_navigation(
-    app_record,
+    app_bible,
     app_record_verse,
     context,
     book_code,
