@@ -27,9 +27,8 @@ export async function app_record_verse(
   book_code,
   chapter,
   verse_number,
-) {$ag
-  let app_fn = app_record;
-  await app_save_change_bible(app_fn, book_code, chapter, verse_number);
+) {
+  await app_save_change_bible(app_record, book_code, chapter, verse_number);
   let { root } = context;
   app_record_chapter_buttons(context, book_code);
   let chapter_text = bible_book_chapter_text(book_code, chapter);
