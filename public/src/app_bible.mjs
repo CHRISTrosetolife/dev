@@ -36,33 +36,32 @@ export async function app_bible() {
   );
   let { verses: verses_interlinear } = chapter_interlinear;
   each(list_zip([verses, verses_interlinear]), (z) => {
-    let verse = z;
-  });
-  let verse_interlinear = list_first(verses_interlinear);
-  let { tokens } = verse_interlinear;
-  let filter = bible_interlinear_words_greek_audio_upload_filter();
-  each(tokens, (token) => {
-    let d = html_div(root);
-    let word = object_property_get(token, "word");
-    let word_component = html_span_text(d, word);
-    html_style_bold(word_component);
-    html_style_green(word_component);
-    html_on_click(word_component, async () => {
-      let ms = bible_interlinear_words_audio_upload_map([word], filter);
-      let m = list_first(ms);
-      await app_language_audio(language_code_greek(), string_encoded_to(m));
+    let { verse, verse_interlinear } = z;
+    let { tokens } = verse_interlinear;
+    let filter = bible_interlinear_words_greek_audio_upload_filter();
+    each(tokens, (token) => {
+      let d = html_div(root);
+      let word = object_property_get(token, "word");
+      let word_component = html_span_text(d, word);
+      html_style_bold(word_component);
+      html_style_green(word_component);
+      html_on_click(word_component, async () => {
+        let ms = bible_interlinear_words_audio_upload_map([word], filter);
+        let m = list_first(ms);
+        await app_language_audio(language_code_greek(), string_encoded_to(m));
+      });
+      html_spacer(d);
+      let transliteration = html_span_text(
+        d,
+        object_property_get(token, "transliteration"),
+      );
+      html_style_italic(transliteration);
+      html_style_font_color_gray(transliteration);
+      html_spacer(d);
+      let translation = html_span_text(
+        d,
+        object_property_get(token, "translation"),
+      );
     });
-    html_spacer(d);
-    let transliteration = html_span_text(
-      d,
-      object_property_get(token, "transliteration"),
-    );
-    html_style_italic(transliteration);
-    html_style_font_color_gray(transliteration);
-    html_spacer(d);
-    let translation = html_span_text(
-      d,
-      object_property_get(token, "translation"),
-    );
   });
 }
