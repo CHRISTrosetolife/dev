@@ -23,6 +23,7 @@ import { list_first } from "./list_first.mjs";
 import { firebase_initialize_axios } from "./firebase_initialize_axios.mjs";
 import { bible_storage_interlinear_book_path } from "./bible_storage_interlinear_book_path.mjs";
 import { firebase_download_bible } from "./firebase_download_bible.mjs";
+import { html_hr } from "./html_hr.mjs";
 export async function app_bible() {
   let root = await firebase_initialize_axios();
   html_style_a_plain();
@@ -64,5 +65,6 @@ export async function app_bible() {
         object_property_get(token, "translation"),
       );
     });
+    html_hr(root);
   });
 }
