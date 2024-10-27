@@ -59,6 +59,7 @@ export async function app_record_verse(
     chapter,
     verse_number,
     "reading and recording audio for audio Bible",
+    true,
   );
   previous = object_property_get(n, "previous");
   next = object_property_get(n, "next");
