@@ -4,6 +4,9 @@ import { firebase_initialize_axios } from "./firebase_initialize_axios.mjs";
 export async function app_bible() {
   let root = await firebase_initialize_axios();
   html_style_a_plain();
+  let book_code = "MAT";
+  let chapter = "1";
+  let verse_number = "1";
   await app_bible_verse(
     {
       root,
