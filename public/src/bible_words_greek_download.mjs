@@ -14,7 +14,7 @@ export async function bible_words_greek_download() {
   let html = await bible_interlinear_strongs_cache(language, strong);
   let p = await html_parse(html);
   let leftbox = html_parse_visit_id(p, "leftbox");
-  html_parse_visit_class_list(leftbox, "tophdg");
+  let tophdg = html_parse_visit_class_list(leftbox, "tophdg");
   await each_async(strongs, async (strong) => {
     log({
       last: list_last(strongs),
