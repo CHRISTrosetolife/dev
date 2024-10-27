@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { app_save_set } from "./app_save_set.mjs";
 import { app_save_get } from "./app_save_get.mjs";
 import { app_context_books_bible } from "./app_context_books_bible.mjs";
@@ -13,6 +14,9 @@ export async function app_bible() {
   };
   await app_context_books_bible(context);
   let save = app_save_get(app_bible);
+  log({
+    save,
+  });
   let book_code = object_property_initialize(save, "book", "MAT");
   let chapter = object_property_initialize(save, "chapter", "1");
   let verse_number = object_property_initialize(save, "verse", "1");
