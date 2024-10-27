@@ -1,4 +1,3 @@
-import { app_record_verse } from "./app_record_verse.mjs";
 import { app_bible } from "./app_bible.mjs";
 import { html_bible_verse_navigation } from "./html_bible_verse_navigation.mjs";
 import { html_style_font_color_gray } from "./html_style_font_color_gray.mjs";
@@ -78,7 +77,7 @@ export async function app_bible_verse(
   html_hr(root);
   let n = await html_bible_verse_navigation(
     app_bible,
-    app_record_verse,
+    app_bible_verse,
     context,
     book_code,
     chapter,
