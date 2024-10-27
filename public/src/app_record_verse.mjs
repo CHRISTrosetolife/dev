@@ -75,7 +75,7 @@ export async function app_record_verse(
     context,
     copy_message,
   ) {
-    previous = html_button_width_full_text_click(
+    let previous = html_button_width_full_text_click(
       root,
       "⬅️ previous verse",
       async () => {
@@ -88,7 +88,7 @@ export async function app_record_verse(
         );
       },
     );
-    next = html_button_width_full_text_click(
+    let next = html_button_width_full_text_click(
       root,
       string_combine_multiple([html_button_next_text(), " verse"]),
       verse_next_go,
@@ -134,6 +134,7 @@ export async function app_record_verse(
         object_property_get(list_first(verses_next), "verse_number"),
       );
     }
+    return {};
   }
   save = html_button_width_full_text_click(
     root,
