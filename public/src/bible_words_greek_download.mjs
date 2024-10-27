@@ -18,6 +18,7 @@ export async function bible_words_greek_download() {
   let tophdg = html_parse_visit_class_list(leftbox, "tophdg");
   let definition = list_get(tophdg, 3);
   log({
+    strong,
     definition,
   });
   return;
