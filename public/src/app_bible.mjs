@@ -1,3 +1,4 @@
+import { html_div } from "./html_div.mjs";
 import { each } from "./each.mjs";
 import { list_first } from "./list_first.mjs";
 import { firebase_initialize_axios } from "./firebase_initialize_axios.mjs";
@@ -11,6 +12,8 @@ export async function app_bible() {
   );
   let { verses } = chapter_interlinear;
   let verse_interlinear = list_first(verses);
-  let tokens = verse_interlinear;
-  each(verse_interlinear, (item) => {});
+  let { tokens } = verse_interlinear;
+  each(tokens, (token) => {
+    let d = html_div(root);
+  });
 }
