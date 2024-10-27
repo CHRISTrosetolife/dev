@@ -7,6 +7,7 @@ import { each_async } from "./each_async.mjs";
 import { bible_interlinear_strongs_greek } from "./bible_interlinear_strongs_greek.mjs";
 export async function bible_words_greek_download() {
   let strongs = await bible_interlinear_strongs_greek();
+  let language = "greek";
   await each_async(strongs, async (strong) => {
     log({
       last: list_last(strongs),
@@ -14,7 +15,9 @@ export async function bible_words_greek_download() {
     });
     let url = string_combine_multiple([
       url_secure_w3(),
-      "openbible.com/strongs/greek/",
+      "openbible.com/strongs/",
+      language,
+      "/",
       strong,
       ".htm",
     ]);
