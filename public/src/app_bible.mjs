@@ -1,3 +1,4 @@
+import { html_spacer } from "./html_spacer.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_div } from "./html_div.mjs";
@@ -17,6 +18,7 @@ export async function app_bible() {
   let { tokens } = verse_interlinear;
   each(tokens, (token) => {
     let d = html_div(root);
-    html_span_text(d, object_property_get(object, "property_name"));
+    html_span_text(d, object_property_get(d, "word"));
+    html_spacer(d);
   });
 }
