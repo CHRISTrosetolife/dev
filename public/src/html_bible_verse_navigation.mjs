@@ -25,7 +25,7 @@ export async function html_bible_verse_navigation(
   let verses = await app_verses_generic(app_fn, book_code, chapter);
   let verse = list_find_property(verses, "verse_number", verse_number);
   let previous;
-  if (false) {
+  if (previous_first) {
     previous_create();
   }
   let next = html_button_width_full_text_click(
@@ -33,6 +33,9 @@ export async function html_bible_verse_navigation(
     string_combine_multiple([html_button_next_text(), " verse"]),
     verse_next,
   );
+  if (!previous_first) {
+    previous_create();
+  }
   function previous_create() {
     previous = html_button_width_full_text_click(
       root,
