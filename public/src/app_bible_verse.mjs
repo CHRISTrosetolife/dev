@@ -1,3 +1,4 @@
+import { html_clear_scroll_top_context } from "./html_clear_scroll_top_context.mjs";
 import { app_bible } from "./app_bible.mjs";
 import { html_bible_verse_navigation } from "./html_bible_verse_navigation.mjs";
 import { html_style_font_color_gray } from "./html_style_font_color_gray.mjs";
@@ -31,6 +32,7 @@ export async function app_bible_verse(
   chapter,
   verse_number,
 ) {
+  html_clear_scroll_top_context(context);
   let { root } = context;
   let book_name = object_property_get(bible_books_prefix_to_name(), book_code);
   let verses = await app_verses_generic(app_record_verses, book_code, chapter);
