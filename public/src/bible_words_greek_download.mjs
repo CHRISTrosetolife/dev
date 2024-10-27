@@ -8,6 +8,7 @@ export async function bible_words_greek_download() {
   let strongs = await bible_interlinear_strongs_greek();
   let language = "greek";
   let strong = list_first(strongs);
+  return await bible_interlinear_strongs_cache(language, strong);
   await each_async(strongs, async (strong) => {
     log({
       last: list_last(strongs),
