@@ -119,6 +119,7 @@ export async function app_record_verse(
       }
     }
     async function chapter_next_go() {
+      let chapter_text = bible_book_chapter_text(book_code, chapter);
       clipboard_copy_web(
         string_combine_multiple([chapter_text, ": Finished ", copy_message]),
       );
