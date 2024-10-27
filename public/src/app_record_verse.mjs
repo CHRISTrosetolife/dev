@@ -68,7 +68,12 @@ export async function app_record_verse(
   let verse_refresh = app_record_verse;
   let app_fn = app_record;
   let copy_message = "reading and recording audio for audio Bible";
-  html_bible_verse_navigation(app_fn, verse_refresh, context, copy_message);
+  let n = html_bible_verse_navigation(
+    app_fn,
+    verse_refresh,
+    context,
+    copy_message,
+  );
   function html_bible_verse_navigation(
     app_fn,
     verse_refresh,
@@ -91,9 +96,9 @@ export async function app_record_verse(
     let next = html_button_width_full_text_click(
       root,
       string_combine_multiple([html_button_next_text(), " verse"]),
-      verse_next_go,
+      verse_next,
     );
-    async function verse_next_go() {
+    async function verse_next() {
       if (list_last_is(verses, verse)) {
         await chapter_next_go();
       } else {
@@ -134,7 +139,11 @@ export async function app_record_verse(
         object_property_get(list_first(verses_next), "verse_number"),
       );
     }
-    return {};
+    return {
+      previous,
+      next,
+      verse_next,
+    };
   }
   save = html_button_width_full_text_click(
     root,
@@ -152,7 +161,7 @@ export async function app_record_verse(
         string_combine_multiple([when, ".mp3"]),
       ]);
       await firebase_upload_bytes(storage_path, blob);
-      await verse_next_go();
+      await verse_next();
     },
   );
   restart = html_button_width_full_text_click(
