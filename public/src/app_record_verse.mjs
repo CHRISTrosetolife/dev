@@ -1,7 +1,6 @@
-import { html_bible_verse_number } from "./html_bible_verse_number.mjs";
+import { html_bible_verse } from "./html_bible_verse.mjs";
 import { html_button_next_text } from "./html_button_next_text.mjs";
 import { clipboard_copy_web } from "./clipboard_copy_web.mjs";
-import { bible_search_symbols_map_single } from "./bible_search_symbols_map_single.mjs";
 import { html_style_green } from "./html_style_green.mjs";
 import { equal } from "./equal.mjs";
 import { bible_book_chapter_text } from "./bible_book_chapter_text.mjs";
@@ -9,10 +8,6 @@ import { object_replace } from "./object_replace.mjs";
 import { app_record } from "./app_record.mjs";
 import { app_save_change } from "./app_save_change.mjs";
 import { html_hr } from "./html_hr.mjs";
-import { list_empty_not_is } from "./list_empty_not_is.mjs";
-import { list_single } from "./list_single.mjs";
-import { html_a } from "./html_a.mjs";
-import { html_spacer } from "./html_spacer.mjs";
 import { firebase_upload_bytes } from "./firebase_upload_bytes.mjs";
 import { list_next } from "./list_next.mjs";
 import { list_previous } from "./list_previous.mjs";
@@ -34,7 +29,6 @@ import { list_find_property } from "./list_find_property.mjs";
 import { app_record_verses } from "./app_record_verses.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { list_first } from "./list_first.mjs";
-import { google_search_url } from "./google_search_url.mjs";
 export async function app_record_verse(
   context,
   book_code,
@@ -59,22 +53,7 @@ export async function app_record_verse(
   html_hr(root);
   let verses = await app_record_verses(book_code, chapter);
   let verse = list_find_property(verses, "verse_number", verse_number);
-  let { tokens } = verse;
-  let vn = html_bible_verse_number(root, book_code, chapter, verse_number);
-  each(tokens, (token) => {
-    html_spacer(root);
-    let mapped = bible_search_symbols_map_single(token);
-    if (list_empty_not_is(mapped)) {
-      html_a(
-        root,
-        token,
-        google_search_url(
-          string_combine_multiple(["define: ", list_single(mapped)]),
-        ),
-      );
-    }
-  });
-  html_hr(root);
+  let vn = html_bible_verse(root, book_code, chapter, verse);
   if (equal(verse_number, "1")) {
     html_style_green(vn);
   }
