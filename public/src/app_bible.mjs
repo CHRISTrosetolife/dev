@@ -1,3 +1,4 @@
+import { app_save_get } from "./app_save_get.mjs";
 import { app_context_books_bible } from "./app_context_books_bible.mjs";
 import { app_bible_verse } from "./app_bible_verse.mjs";
 import { html_style_a_plain } from "./html_style_a_plain.mjs";
@@ -12,5 +13,6 @@ export async function app_bible() {
     root,
   };
   await app_context_books_bible(context);
+  let save = app_save_get(app_bible_verse);
   await app_bible_verse(context, book_code, chapter, verse_number);
 }
