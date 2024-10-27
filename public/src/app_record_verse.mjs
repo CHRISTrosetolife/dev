@@ -1,11 +1,10 @@
+import { app_save_change_bible } from "./app_save_change_bible.mjs";
 import { html_bible_verse_navigation } from "./html_bible_verse_navigation.mjs";
 import { html_bible_verse } from "./html_bible_verse.mjs";
 import { html_style_green } from "./html_style_green.mjs";
 import { equal } from "./equal.mjs";
 import { bible_book_chapter_text } from "./bible_book_chapter_text.mjs";
-import { object_replace } from "./object_replace.mjs";
 import { app_record } from "./app_record.mjs";
-import { app_save_change } from "./app_save_change.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { firebase_upload_bytes } from "./firebase_upload_bytes.mjs";
 import { app_record_chapter } from "./app_record_chapter.mjs";
@@ -30,13 +29,7 @@ export async function app_record_verse(
   verse_number,
 ) {
   let app_fn = app_record;
-  await app_save_change(app_fn, (save) =>
-    object_replace(save, {
-      book: book_code,
-      chapter,
-      verse: verse_number,
-    }),
-  );
+  await app_save_change_bible(app_fn, book_code, chapter, verse_number);
   let { root } = context;
   app_record_chapter_buttons(context, book_code);
   let chapter_text = bible_book_chapter_text(book_code, chapter);
