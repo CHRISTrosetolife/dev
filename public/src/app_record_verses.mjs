@@ -3,5 +3,5 @@ import { assert_arguments_length } from "./assert_arguments_length.mjs";
 export async function app_record_verses(book_code, chapter) {
   assert_arguments_length(arguments, 2);
   let app_fn = app_record_verses;
-  return await app_verses_generic(book_code, chapter, app_fn);
+  return await app_verses_generic(app_fn, book_code, chapter);
 }
