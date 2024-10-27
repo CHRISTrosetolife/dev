@@ -20,5 +20,8 @@ export async function app_bible() {
     let d = html_div(root);
     html_span_text(d, object_property_get(d, "word"));
     html_spacer(d);
+    html_span_text(d, object_property_get(d, "transliteration"));
+    html_spacer(d);
+    html_span_text(d, object_property_get(d, "translation"));
   });
 }
