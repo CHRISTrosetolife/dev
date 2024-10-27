@@ -61,9 +61,6 @@ export async function app_record_verse(
   let verse = list_find_property(verses, "verse_number", verse_number);
   let { tokens } = verse;
   let vn = html_bible_verse_number(root, book_code, chapter, verse_number);
-  if (equal(verse_number, "1")) {
-    html_style_green(vn);
-  }
   each(tokens, (token) => {
     html_spacer(root);
     let mapped = bible_search_symbols_map_single(token);
@@ -78,6 +75,9 @@ export async function app_record_verse(
     }
   });
   html_hr(root);
+  if (equal(verse_number, "1")) {
+    html_style_green(vn);
+  }
   let start, previous, next, save, cancel, restart, recording, recording_not;
   start = html_button_width_full_text_click(root, "⏺️ start recording", () => {
     each(recording_not, html_style_display_none);
