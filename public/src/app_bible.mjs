@@ -1,3 +1,4 @@
+import { list_first } from "./list_first.mjs";
 import { firebase_initialize_axios } from "./firebase_initialize_axios.mjs";
 import { log } from "./log.mjs";
 import { bible_storage_interlinear_book_path } from "./bible_storage_interlinear_book_path.mjs";
@@ -8,7 +9,8 @@ export async function app_bible() {
     bible_storage_interlinear_book_path("Matthew"),
     "1",
   );
+  let verse_interlinear = list_first(chapter_interlinear);
   log({
-    chapter_interlinear,
+    verse_interlinear,
   });
 }
