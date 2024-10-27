@@ -1,3 +1,4 @@
+import { html_style } from "./html_style.mjs";
 import { html_style_a_plain } from "./html_style_a_plain.mjs";
 import { html_bible_verse } from "./html_bible_verse.mjs";
 import { list_zip } from "./list_zip.mjs";
@@ -46,6 +47,12 @@ export async function app_bible() {
       let d = html_div(root);
       let word = object_property_get(token, "word");
       let word_component = html_span_text(d, word);
+      html_style(word_component, {
+        "user-select": none,
+        "-moz-user-select": none,
+        "-webkit-user-select": none,
+        "-ms-user-select": none,
+      });
       html_style_bold(word_component);
       html_style_green(word_component);
       html_on_click(word_component, async () => {
