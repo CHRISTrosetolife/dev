@@ -102,16 +102,18 @@ export async function app_language_refresh_quiz(context) {
   html_clear_scroll_top_centered(root);
   app_language_group_index_component(context);
   let settings_index = list_index_by(settings_choices, settings, equal_json);
+  let settings_choices_size = list_size(settings_choices);
   let progress = html_button_width_full_text(
     root,
     string_combine_multiple([
       "question ",
       add_1(settings_index),
       " of ",
-      list_size(settings_choices),
+      settings_choices_size,
     ]),
   );
   html_style_success(progress);
+  let progress_percent = settings_index / settings_choices_size;
   html_style(progress, {
     background: string_combine_multiple([
       "linear-gradient(90deg, ",
