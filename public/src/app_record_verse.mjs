@@ -1,3 +1,4 @@
+import { html_bible_verse_number } from "./html_bible_verse_number.mjs";
 import { html_button_next_text } from "./html_button_next_text.mjs";
 import { clipboard_copy_web } from "./clipboard_copy_web.mjs";
 import { bible_search_symbols_map_single } from "./bible_search_symbols_map_single.mjs";
@@ -17,8 +18,6 @@ import { list_next } from "./list_next.mjs";
 import { list_previous } from "./list_previous.mjs";
 import { app_record_chapter } from "./app_record_chapter.mjs";
 import { app_record_chapter_buttons } from "./app_record_chapter_buttons.mjs";
-import { bible_book_name } from "./bible_book_name.mjs";
-import { bible_reference } from "./bible_reference.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { path_join } from "./path_join.mjs";
 import { list_last_is } from "./list_last_is.mjs";
@@ -31,8 +30,6 @@ import { html_style_display_block } from "./html_style_display_block.mjs";
 import { html_style_display_none } from "./html_style_display_none.mjs";
 import { html_recorder_media_start } from "./html_recorder_media_start.mjs";
 import { html_recorder_media_stop } from "./html_recorder_media_stop.mjs";
-import { html_style_bold } from "./html_style_bold.mjs";
-import { html_span_text } from "./html_span_text.mjs";
 import { list_find_property } from "./list_find_property.mjs";
 import { app_record_verses } from "./app_record_verses.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
@@ -63,11 +60,7 @@ export async function app_record_verse(
   let verses = await app_record_verses(book_code, chapter);
   let verse = list_find_property(verses, "verse_number", verse_number);
   let { tokens } = verse;
-  let vn = html_span_text(
-    root,
-    bible_reference(bible_book_name(book_code), chapter, verse_number),
-  );
-  html_style_bold(vn);
+  let vn = html_bible_verse_number(root, book_code, chapter, verse_number);
   if (equal(verse_number, "1")) {
     html_style_green(vn);
   }
