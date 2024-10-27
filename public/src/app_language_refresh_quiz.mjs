@@ -81,6 +81,7 @@ import { number_is } from "./number_is.mjs";
 import { assert } from "./assert.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { list_size } from "./list_size.mjs";
+import { html_style } from "./html_style.mjs";
 export async function app_language_refresh_quiz(context) {
   let {
     root,
@@ -100,7 +101,7 @@ export async function app_language_refresh_quiz(context) {
   html_clear_scroll_top_centered(root);
   app_language_group_index_component(context);
   let settings_index = list_index_by(settings_choices, settings, equal_json);
-  html_button_width_full_text(
+  let progress = html_button_width_full_text(
     root,
     string_combine_multiple([
       "question ",
@@ -109,6 +110,9 @@ export async function app_language_refresh_quiz(context) {
       list_size(settings_choices),
     ]),
   );
+  html_style(progress, {
+    background: "linear-gradient(90deg, #FFC0CB 50%, #00FFFF 50%)",
+  });
   html_spacer_vertical_2(root);
   let no_mistakes = true;
   let { pair, chunk_size, forwards } = settings;
