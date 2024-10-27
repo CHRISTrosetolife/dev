@@ -17,6 +17,7 @@ export async function html_bible_verse_navigation(
   context,
   book_code,
   chapter,
+  verse_number,
   copy_message,
 ) {
   let { root } = context;
