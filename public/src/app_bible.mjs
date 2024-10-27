@@ -26,10 +26,11 @@ export async function app_bible() {
   let { tokens } = verse_interlinear;
   each(tokens, (token) => {
     let d = html_div(root);
-    let word = html_span_text(d, object_property_get(token, "word"));
-    html_style_bold(word);
-    html_style_green(word);
-    html_on_click(word, async () => {
+    let word = object_property_get(token, "word");
+    let word_component = html_span_text(d, word);
+    html_style_bold(word_component);
+    html_style_green(word_component);
+    html_on_click(word_component, async () => {
       log({});
       await app_language_audio(language_code_greek(), word);
     });
