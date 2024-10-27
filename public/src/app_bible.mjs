@@ -1,3 +1,4 @@
+import { html_style_bold } from "./html_style_bold.mjs";
 import { html_spacer } from "./html_spacer.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_span_text } from "./html_span_text.mjs";
@@ -19,6 +20,7 @@ export async function app_bible() {
   each(tokens, (token) => {
     let d = html_div(root);
     let word = html_span_text(d, object_property_get(token, "word"));
+    html_style_bold(word);
     html_spacer(d);
     let transliteration = html_span_text(
       d,
