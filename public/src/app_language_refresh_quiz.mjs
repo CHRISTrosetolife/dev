@@ -1,3 +1,4 @@
+import { html_spacer_vertical } from "./html_spacer_vertical.mjs";
 import { html_button_width_full_text } from "./html_button_width_full_text.mjs";
 import { list_index_by } from "./list_index_by.mjs";
 import { app_language_group_index_component } from "./app_language_group_index_component.mjs";
@@ -109,6 +110,7 @@ export async function app_language_refresh_quiz(context) {
       list_size(settings_choices),
     ]),
   );
+  html_spacer_vertical(root);
   let no_mistakes = true;
   let { pair, chunk_size, forwards } = settings;
   assert(number_is, [chunk_size]);
