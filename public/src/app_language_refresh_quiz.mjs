@@ -118,9 +118,9 @@ export async function app_language_refresh_quiz(context) {
       "linear-gradient(90deg, ",
       html_style_success_background(),
       " ",
-      50,
+      60,
       "%, white ",
-      50,
+      60,
       "%)",
     ]),
   });
