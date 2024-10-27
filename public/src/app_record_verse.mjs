@@ -67,6 +67,7 @@ export async function app_record_verse(
   });
   let verse_refresh = app_record_verse;
   let app_fn = app_record;
+  let copy_message = "reading and recording audio for audio Bible";
   previous = html_button_width_full_text_click(
     root,
     "⬅️ previous verse",
@@ -99,11 +100,7 @@ export async function app_record_verse(
   }
   async function chapter_next_go() {
     clipboard_copy_web(
-      string_combine_multiple([
-        chapter_text,
-        ": Finished ",
-        "reading and recording audio for audio Bible",
-      ]),
+      string_combine_multiple([chapter_text, ": Finished ", copy_message]),
     );
     let { books } = context;
     let book = list_find_property(books, "book_code", book_code);
