@@ -20,6 +20,7 @@ export async function app_bible() {
   let book_code = object_property_initialize(save, "book", "MAT");
   let chapter = object_property_initialize(save, "chapter", "1");
   let verse_number = object_property_initialize(save, "verse", "1");
+  verse_number = "25";
   app_save_set(app_bible, save);
   await app_bible_verse(context, book_code, chapter, verse_number);
 }
