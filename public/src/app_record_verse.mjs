@@ -64,6 +64,7 @@ export async function app_record_verse(
     html_recorder_media_start(context.mr);
     each(recording, html_style_display_block);
   });
+  let verse_refresh = app_record_verse;
   previous = html_button_width_full_text_click(
     root,
     "⬅️ previous verse",
