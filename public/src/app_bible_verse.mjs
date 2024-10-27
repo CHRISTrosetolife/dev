@@ -18,7 +18,6 @@ import { html_div } from "./html_div.mjs";
 import { bible_interlinear_words_greek_audio_upload_filter } from "./bible_interlinear_words_greek_audio_upload_filter.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { html_bible_verse } from "./html_bible_verse.mjs";
-import { list_zip } from "./list_zip.mjs";
 import { each } from "./each.mjs";
 import { bible_storage_interlinear_book_path } from "./bible_storage_interlinear_book_path.mjs";
 import { firebase_download_bible } from "./firebase_download_bible.mjs";
@@ -26,6 +25,7 @@ import { app_record_verses } from "./app_record_verses.mjs";
 import { app_verses_generic } from "./app_verses_generic.mjs";
 import { bible_books_prefix_to_name } from "./bible_books_prefix_to_name.mjs";
 import { object_property_get } from "./object_property_get.mjs";
+import { list_find_property } from "./list_find_property.mjs";
 export async function app_bible_verse(
   context,
   book_code,
@@ -40,40 +40,42 @@ export async function app_bible_verse(
     chapter,
   );
   let { verses: verses_interlinear } = chapter_interlinear;
-  each(list_zip([verses, verses_interlinear]), (z) => {
-    let [verse, verse_interlinear] = z;
-    html_bible_verse(root, book_code, chapter, verse);
-    html_hr(root);
-    let { tokens } = verse_interlinear;
-    let filter = bible_interlinear_words_greek_audio_upload_filter();
-    each(tokens, (token) => {
-      let d = html_div(root);
-      let word = object_property_get(token, "word");
-      let word_component = html_span_text(d, word);
-      html_select_none(word_component);
-      html_style_bold(word_component);
-      html_style_green(word_component);
-      html_on_click(word_component, async () => {
-        let ms = bible_interlinear_words_audio_upload_map([word], filter);
-        let m = list_first(ms);
-        await app_language_audio(language_code_greek(), string_encoded_to(m));
-      });
-      html_spacer(d);
-      let transliteration = html_span_text(
-        d,
-        object_property_get(token, "transliteration"),
-      );
-      html_style_italic(transliteration);
-      html_style_font_color_gray(transliteration);
-      html_spacer(d);
-      let translation = html_span_text(
-        d,
-        object_property_get(token, "translation"),
-      );
+  let verse = list_find_property(verses, "verse_number", verse_number);
+  let verse_interlinear = list_find_property(
+    verses_interlinear,
+    "verse_number",
+    verse_number,
+  );
+  html_bible_verse(root, book_code, chapter, verse);
+  html_hr(root);
+  let { tokens } = verse_interlinear;
+  let filter = bible_interlinear_words_greek_audio_upload_filter();
+  each(tokens, (token) => {
+    let d = html_div(root);
+    let word = object_property_get(token, "word");
+    let word_component = html_span_text(d, word);
+    html_select_none(word_component);
+    html_style_bold(word_component);
+    html_style_green(word_component);
+    html_on_click(word_component, async () => {
+      let ms = bible_interlinear_words_audio_upload_map([word], filter);
+      let m = list_first(ms);
+      await app_language_audio(language_code_greek(), string_encoded_to(m));
     });
-    html_hr(root);
-    html_hr(root);
+    html_spacer(d);
+    let transliteration = html_span_text(
+      d,
+      object_property_get(token, "transliteration"),
+    );
+    html_style_italic(transliteration);
+    html_style_font_color_gray(transliteration);
+    html_spacer(d);
+    let translation = html_span_text(
+      d,
+      object_property_get(token, "translation"),
+    );
   });
+  html_hr(root);
   let n = await html_bible_verse_navigation(
     app_bible,
     app_record_verse,
