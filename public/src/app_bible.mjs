@@ -18,10 +18,10 @@ export async function app_bible() {
   let { tokens } = verse_interlinear;
   each(tokens, (token) => {
     let d = html_div(root);
-    html_span_text(d, object_property_get(d, "word"));
+    html_span_text(d, object_property_get(token, "word"));
     html_spacer(d);
-    html_span_text(d, object_property_get(d, "transliteration"));
+    html_span_text(d, object_property_get(token, "transliteration"));
     html_spacer(d);
-    html_span_text(d, object_property_get(d, "translation"));
+    html_span_text(d, object_property_get(token, "translation"));
   });
 }
