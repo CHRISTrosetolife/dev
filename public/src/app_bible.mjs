@@ -29,7 +29,7 @@ export async function app_bible() {
       d,
       object_property_get(token, "transliteration"),
     );
-    html_style_italic(transliteration);
+    html_style_italic(transliteration);html_style_green_dark(transliteration)
     html_spacer(d);
     let translation = html_span_text(
       d,
