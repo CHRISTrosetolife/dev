@@ -1,3 +1,4 @@
+import { list_index_by } from "./list_index_by.mjs";
 import { app_language_group_index_component } from "./app_language_group_index_component.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_language_refresh_quiz_text_ready } from "./app_language_refresh_quiz_text_ready.mjs";
@@ -96,6 +97,7 @@ export async function app_language_refresh_quiz(context) {
   let settings = storage_local_get(context.app_fn, "quiz_settings");
   html_clear_scroll_top_centered(root);
   app_language_group_index_component(context);
+  let settings_index = list_index_by(settings_choices, settings, equal_json);
   let no_mistakes = true;
   let { pair, chunk_size, forwards } = settings;
   assert(number_is, [chunk_size]);
