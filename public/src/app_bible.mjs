@@ -28,7 +28,7 @@ export async function app_bible() {
     bible_books_prefix_to_name(),
     "property_name",
   );
-  await app_verses_generic(app_record_verses, book_code, chapter);
+  let verses = await app_verses_generic(app_record_verses, book_code, chapter);
   let chapter_interlinear = await firebase_download_bible(
     bible_storage_interlinear_book_path(book_name),
     chapter,
