@@ -70,7 +70,7 @@ export async function app_record_verse(
     "⬅️ previous verse",
     async () => {
       let verse_previous = list_previous(verses, verse);
-      await app_record_verse(
+      await verse_refresh(
         context,
         book_code,
         chapter,
@@ -92,7 +92,7 @@ export async function app_record_verse(
         "verse_number",
         verse_number,
       );
-      await app_record_verse(context, book_code, chapter, verse_number_next);
+      await verse_refresh(context, book_code, chapter, verse_number_next);
     }
   }
   async function chapter_next_go() {
@@ -120,7 +120,7 @@ export async function app_record_verse(
       chapter_next = list_next(chapters, chapter);
     }
     let verses_next = await app_record_verses(book_code, chapter_next);
-    await app_record_verse(
+    await verse_refresh(
       context,
       book_next_code,
       chapter_next,
