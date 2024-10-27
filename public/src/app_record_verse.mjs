@@ -81,10 +81,13 @@ export async function app_record_verse(
     app_fn,
     verse_refresh,
     context,
+    book_code,
+    chapter,
     copy_message,
   ) {
     let { root } = context;
     let verses = await app_verses_generic(app_fn, book_code, chapter);
+    let verse = list_find_property(verses, "verse_number", verse_number);
     let previous = html_button_width_full_text_click(
       root,
       "⬅️ previous verse",
