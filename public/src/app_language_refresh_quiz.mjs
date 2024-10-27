@@ -116,7 +116,11 @@ export async function app_language_refresh_quiz(context) {
     background: string_combine_multiple([
       "linear-gradient(90deg, ",
       html_style_success_background(),
-      " 50%, white 50%)",
+      " ",
+      progress_percent,
+      "%, white ",
+      progress_percent,
+      "%)",
     ]),
   });
   html_spacer_vertical_2(root);
