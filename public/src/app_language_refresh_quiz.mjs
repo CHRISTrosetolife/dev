@@ -1,3 +1,4 @@
+import { html_style_success_background } from "./html_style_success_background.mjs";
 import { html_button_width_full_text } from "./html_button_width_full_text.mjs";
 import { list_index_by } from "./list_index_by.mjs";
 import { app_language_group_index_component } from "./app_language_group_index_component.mjs";
@@ -111,7 +112,11 @@ export async function app_language_refresh_quiz(context) {
     ]),
   );
   html_style(progress, {
-    background: "linear-gradient(90deg, green 50%, white 50%)",
+    background: string_combine_multiple([
+      "linear-gradient(90deg, ",
+      html_style_success_background(),
+      " 50%, white 50%)",
+    ]),
   });
   html_spacer_vertical_2(root);
   let no_mistakes = true;
