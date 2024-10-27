@@ -111,6 +111,7 @@ export async function app_language_refresh_quiz(context) {
       list_size(settings_choices),
     ]),
   );
+  html_style_success(progress);
   html_style(progress, {
     background: string_combine_multiple([
       "linear-gradient(90deg, ",
