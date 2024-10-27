@@ -1,3 +1,4 @@
+import { integer_parse_try } from "./integer_parse_try.mjs";
 import { identity } from "./identity.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { bible_interlinear_each_token } from "./bible_interlinear_each_token.mjs";
@@ -7,8 +8,10 @@ export async function bible_interlinear_strongs_generic(books_get) {
   let strongs = list_adder_unique((la) => {
     bible_interlinear_each_token(books, lambda);
     function lambda(token) {
+      let s = token.strong;
+      let p = integer_parse_try(s);
       if (false) {
-        la(token.strong);
+        la(s);
       }
     }
   });
