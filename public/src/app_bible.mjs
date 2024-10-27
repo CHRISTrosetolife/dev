@@ -24,6 +24,7 @@ export async function app_bible() {
   let root = await firebase_initialize_axios();
   let book_name = "Matthew";
   bible_books_prefix_to_name();
+  object_property_get(object, "property_name");
   await app_verses_generic(app_record_verses, book_code, chapter);
   let chapter_interlinear = await firebase_download_bible(
     bible_storage_interlinear_book_path(book_name),
