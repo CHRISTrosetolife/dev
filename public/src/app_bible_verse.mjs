@@ -87,6 +87,6 @@ export async function app_bible_verse(
     chapter,
     verse_number,
     "reading and recording audio for audio Bible",
-    true,
+    false,
   );
 }
