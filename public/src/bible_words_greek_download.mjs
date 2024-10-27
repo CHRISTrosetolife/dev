@@ -1,3 +1,5 @@
+import { equal } from "./equal.mjs";
+import { assert } from "./assert.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
 import { html_parse_text } from "./html_parse_text.mjs";
 import { html_parse_visit_class_list } from "./html_parse_visit_class_list.mjs";
@@ -21,6 +23,7 @@ export async function bible_words_greek_download() {
   let definition = list_get(tophdg, 4);
   let definition_text = html_parse_text(definition);
   definition_text = string_trim_whitespace(definition_text);
+  assert(equal, [definition_text, "Short Definition:"]);
   log(definition_text);
   let { next } = definition;
   log(html_parse_text(next));
