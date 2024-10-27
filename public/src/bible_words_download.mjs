@@ -7,6 +7,6 @@ export async function bible_words_download(language) {
     language,
   );
   await each_log_async(strongs, async (strong) => {
-    await bible_interlinear_strongs_cache(language, strong);
+    let html = await bible_interlinear_strongs_cache(language, strong);
   });
 }
