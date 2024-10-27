@@ -1,3 +1,4 @@
+import { html_style_green } from "./html_style_green.mjs";
 import { html_style_italic } from "./html_style_italic.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { html_spacer } from "./html_spacer.mjs";
@@ -22,6 +23,7 @@ export async function app_bible() {
     let d = html_div(root);
     let word = html_span_text(d, object_property_get(token, "word"));
     html_style_bold(word);
+    html_style_green(word);
     html_spacer(d);
     let transliteration = html_span_text(
       d,
