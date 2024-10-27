@@ -220,7 +220,9 @@ export async function app_language_refresh_quiz(context) {
             html_style_hidden(button);
             if (last_is) {
               html_style_success(answer_element);
-              await app_language_audio(language_learn, word_f);
+              if (false) {
+                await app_language_audio(language_learn, word_f);
+              }
               let settings2 = storage_local_get(
                 context.app_fn,
                 "quiz_settings",
