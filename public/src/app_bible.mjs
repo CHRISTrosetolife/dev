@@ -1,3 +1,4 @@
+import { html_on_click } from "./html_on_click.mjs";
 import { html_style_font_color_gray } from "./html_style_font_color_gray.mjs";
 import { html_style_green } from "./html_style_green.mjs";
 import { html_style_italic } from "./html_style_italic.mjs";
@@ -25,6 +26,7 @@ export async function app_bible() {
     let word = html_span_text(d, object_property_get(token, "word"));
     html_style_bold(word);
     html_style_green(word);
+    html_on_click(word, () => {});
     html_spacer(d);
     let transliteration = html_span_text(
       d,
