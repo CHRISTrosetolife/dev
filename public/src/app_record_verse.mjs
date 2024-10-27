@@ -66,6 +66,7 @@ export async function app_record_verse(
     each(recording, html_style_display_block);
   });
   let verse_refresh = app_record_verse;
+  let app_fn = app_record;
   previous = html_button_width_full_text_click(
     root,
     "⬅️ previous verse",
@@ -120,7 +121,7 @@ export async function app_record_verse(
       book_next_code = book_code;
       chapter_next = list_next(chapters, chapter);
     }
-    let verses_next = await app_verses_generic(app_record, book_code, chapter);
+    let verses_next = await app_verses_generic(app_fn, book_code, chapter);
     await verse_refresh(
       context,
       book_next_code,
