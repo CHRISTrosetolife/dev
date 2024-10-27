@@ -1,3 +1,5 @@
+import { app_record_verses } from "./app_record_verses.mjs";
+import { app_verses_generic } from "./app_verses_generic.mjs";
 import { string_encoded_to } from "./string_encoded_to.mjs";
 import { bible_interlinear_words_audio_upload_map } from "./bible_interlinear_words_audio_upload_map.mjs";
 import { bible_interlinear_words_greek_audio_upload_filter } from "./bible_interlinear_words_greek_audio_upload_filter.mjs";
@@ -19,6 +21,7 @@ import { bible_storage_interlinear_book_path } from "./bible_storage_interlinear
 import { firebase_download_bible } from "./firebase_download_bible.mjs";
 export async function app_bible() {
   let root = await firebase_initialize_axios();
+  await app_verses_generic(app_record_verses, book_code, chapter);
   let chapter_interlinear = await firebase_download_bible(
     bible_storage_interlinear_book_path("Matthew"),
     "1",
