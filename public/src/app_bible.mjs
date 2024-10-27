@@ -1,4 +1,4 @@
-import { html_style_green_dark } from "./html_style_green_dark.mjs";
+import { html_style_font_color_gray } from "./html_style_font_color_gray.mjs";
 import { html_style_green } from "./html_style_green.mjs";
 import { html_style_italic } from "./html_style_italic.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
@@ -31,7 +31,7 @@ export async function app_bible() {
       object_property_get(token, "transliteration"),
     );
     html_style_italic(transliteration);
-    html_style_green_dark(transliteration);
+    html_style_font_color_gray(transliteration);
     html_spacer(d);
     let translation = html_span_text(
       d,
