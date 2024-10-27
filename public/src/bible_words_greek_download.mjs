@@ -26,7 +26,8 @@ export async function bible_words_greek_download() {
   assert(equal, [definition_text, "Short Definition:"]);
   log(definition_text);
   let { next } = definition;
-  log(html_parse_text(next));
+  let next_text = html_parse_text(next);
+  log(next_text);
   return;
   await each_async(strongs, async (strong) => {
     log({
