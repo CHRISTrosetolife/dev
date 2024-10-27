@@ -24,7 +24,8 @@ export async function html_bible_verse_navigation(
   let { root } = context;
   let verses = await app_verses_generic(app_fn, book_code, chapter);
   let verse = list_find_property(verses, "verse_number", verse_number);
-  let previous = html_button_width_full_text_click(
+  let previous;
+  previous = html_button_width_full_text_click(
     root,
     "⬅️ previous verse",
     async () => {
