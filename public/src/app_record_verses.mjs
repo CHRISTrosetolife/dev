@@ -7,7 +7,7 @@ export async function app_record_verses(book_code, chapter) {
   assert_arguments_length(arguments, 2);
   let app_fn = app_record_verses;
   let chapter_code = app_gs_bible_chapter_name(book_code, chapter);
-  let a = await global_function_initialize(app_record_verses, () => ({}));
+  let a = await global_function_initialize(app_fn, () => ({}));
   let verses = await object_property_get_or_async(
     a,
     chapter_code,
