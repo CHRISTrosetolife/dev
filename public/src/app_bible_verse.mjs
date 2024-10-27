@@ -27,7 +27,7 @@ import { app_verses_generic } from "./app_verses_generic.mjs";
 import { bible_books_prefix_to_name } from "./bible_books_prefix_to_name.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 export async function app_bible_verse(context) {
-  let root = context;
+  let { root } = context;
   let book_code = "MAT";
   let chapter = "1";
   let book_name = object_property_get(bible_books_prefix_to_name(), book_code);
