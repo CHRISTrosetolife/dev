@@ -34,6 +34,7 @@ export async function app_bible() {
     chapter,
   );
   let { verses: verses_interlinear } = chapter_interlinear;
+  each(list, (item) => {});
   let verse_interlinear = list_first(verses_interlinear);
   let { tokens } = verse_interlinear;
   let filter = bible_interlinear_words_greek_audio_upload_filter();
