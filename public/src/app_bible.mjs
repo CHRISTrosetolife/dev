@@ -9,7 +9,7 @@ export async function app_bible() {
     bible_storage_interlinear_book_path("Matthew"),
     "1",
   );
-  let verses = chapter_interlinear;
+  let { verses } = chapter_interlinear;
   let verse_interlinear = list_first(chapter_interlinear);
   log({
     verse_interlinear,
