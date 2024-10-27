@@ -1,3 +1,4 @@
+import { html_parse_text } from "./html_parse_text.mjs";
 import { html_parse_visit_class_list } from "./html_parse_visit_class_list.mjs";
 import { html_parse_visit_id } from "./html_parse_visit_id.mjs";
 import { html_parse } from "./html_parse.mjs";
@@ -17,11 +18,8 @@ export async function bible_words_greek_download() {
   let leftbox = html_parse_visit_id(p, "leftbox");
   let tophdg = html_parse_visit_class_list(leftbox, "tophdg");
   let definition = list_get(tophdg, 3);
-  let next = definition;
-  log({
-    strong,
-    definition,
-  });
+  let { next } = definition;
+  log(html_parse_text(next));
   return;
   await each_async(strongs, async (strong) => {
     log({
