@@ -68,64 +68,71 @@ export async function app_record_verse(
   let verse_refresh = app_record_verse;
   let app_fn = app_record;
   let copy_message = "reading and recording audio for audio Bible";
-  previous = html_button_width_full_text_click(
-    root,
-    "⬅️ previous verse",
-    async () => {
-      let verse_previous = list_previous(verses, verse);
+  function html_bible_verse_navigation(
+    app_fn,
+    verse_refresh,
+    context,
+    copy_message,
+  ) {
+    previous = html_button_width_full_text_click(
+      root,
+      "⬅️ previous verse",
+      async () => {
+        let verse_previous = list_previous(verses, verse);
+        await verse_refresh(
+          context,
+          book_code,
+          chapter,
+          object_property_get(verse_previous, "verse_number"),
+        );
+      },
+    );
+    next = html_button_width_full_text_click(
+      root,
+      string_combine_multiple([html_button_next_text(), " verse"]),
+      verse_next_go,
+    );
+    async function verse_next_go() {
+      if (list_last_is(verses, verse)) {
+        await chapter_next_go();
+      } else {
+        let verse_number_next = list_find_property_next_property(
+          verses,
+          "verse_number",
+          verse_number,
+        );
+        await verse_refresh(context, book_code, chapter, verse_number_next);
+      }
+    }
+    async function chapter_next_go() {
+      clipboard_copy_web(
+        string_combine_multiple([chapter_text, ": Finished ", copy_message]),
+      );
+      let { books } = context;
+      let book = list_find_property(books, "book_code", book_code);
+      let { chapters } = book;
+      let chapter_next, book_next_code, book_next_book;
+      if (list_last_is(chapters, chapter)) {
+        if (list_last_is(books, book)) {
+          book_next_book = list_first(books);
+        } else {
+          book_next_book = list_next(books, book);
+        }
+        book_next_code = object_property_get(book_next_book, "book_code");
+        let { chapters } = book_next_book;
+        chapter_next = list_first(chapters);
+      } else {
+        book_next_code = book_code;
+        chapter_next = list_next(chapters, chapter);
+      }
+      let verses_next = await app_verses_generic(app_fn, book_code, chapter);
       await verse_refresh(
         context,
-        book_code,
-        chapter,
-        object_property_get(verse_previous, "verse_number"),
+        book_next_code,
+        chapter_next,
+        object_property_get(list_first(verses_next), "verse_number"),
       );
-    },
-  );
-  next = html_button_width_full_text_click(
-    root,
-    string_combine_multiple([html_button_next_text(), " verse"]),
-    verse_next_go,
-  );
-  async function verse_next_go() {
-    if (list_last_is(verses, verse)) {
-      await chapter_next_go();
-    } else {
-      let verse_number_next = list_find_property_next_property(
-        verses,
-        "verse_number",
-        verse_number,
-      );
-      await verse_refresh(context, book_code, chapter, verse_number_next);
     }
-  }
-  async function chapter_next_go() {
-    clipboard_copy_web(
-      string_combine_multiple([chapter_text, ": Finished ", copy_message]),
-    );
-    let { books } = context;
-    let book = list_find_property(books, "book_code", book_code);
-    let { chapters } = book;
-    let chapter_next, book_next_code, book_next_book;
-    if (list_last_is(chapters, chapter)) {
-      if (list_last_is(books, book)) {
-        book_next_book = list_first(books);
-      } else {
-        book_next_book = list_next(books, book);
-      }
-      book_next_code = object_property_get(book_next_book, "book_code");
-      let { chapters } = book_next_book;
-      chapter_next = list_first(chapters);
-    } else {
-      book_next_code = book_code;
-      chapter_next = list_next(chapters, chapter);
-    }
-    let verses_next = await app_verses_generic(app_fn, book_code, chapter);
-    await verse_refresh(
-      context,
-      book_next_code,
-      chapter_next,
-      object_property_get(list_first(verses_next), "verse_number"),
-    );
   }
   save = html_button_width_full_text_click(
     root,
