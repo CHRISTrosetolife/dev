@@ -111,7 +111,7 @@ export async function app_language_refresh_quiz(context) {
     ]),
   );
   html_style(progress, {
-    background: "linear-gradient(90deg, #FFC0CB 50%, #00FFFF 50%)",
+    background: "linear-gradient(90deg, green 50%, white 50%)",
   });
   html_spacer_vertical_2(root);
   let no_mistakes = true;
