@@ -113,7 +113,6 @@ export async function app_language_refresh_quiz(context) {
       settings_choices_size,
     ]),
   );
-  html_style_success(progress);
   let progress_percent = settings_index / settings_choices_size;
   html_style(progress, {
     background: string_combine_multiple([
