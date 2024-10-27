@@ -1,3 +1,4 @@
+import { html_style_italic } from "./html_style_italic.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
 import { html_spacer } from "./html_spacer.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -26,6 +27,7 @@ export async function app_bible() {
       d,
       object_property_get(token, "transliteration"),
     );
+    html_style_italic(transliteration);
     html_spacer(d);
     let translation = html_span_text(
       d,
