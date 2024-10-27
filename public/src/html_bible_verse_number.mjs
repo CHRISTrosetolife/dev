@@ -7,8 +7,9 @@ export function html_bible_verse_number(
   chapter,
   verse_number,
 ) {
-  return html_span_text(
+  let s = html_span_text(
     root,
     bible_reference(bible_book_name(book_code), chapter, verse_number),
   );
+  return r;
 }
