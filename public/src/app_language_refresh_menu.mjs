@@ -12,6 +12,8 @@ export async function app_language_refresh_menu(context) {
   html_clear_scroll_top_centered(root);
   let { groups } = await app_language_group_get(context, "index");
   await each_index_async(groups, async (group_info, group_index) => {
+    if (false) {
+    }
     let button = html_button_width_full_text_click(root, "", async () => {
       await app_language_group_index_set(context, group_index);
     });
