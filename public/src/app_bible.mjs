@@ -35,7 +35,7 @@ export async function app_bible() {
   );
   let { verses: verses_interlinear } = chapter_interlinear;
   each(list_zip([verses, verses_interlinear]), (z) => {
-    let { verse, verse_interlinear } = z;
+    let [verse, verse_interlinear] = z;
     html_div_text(root, json_to(verse));
     let { tokens } = verse_interlinear;
     let filter = bible_interlinear_words_greek_audio_upload_filter();
