@@ -10,7 +10,7 @@ export async function app_bible() {
     "1",
   );
   let { verses } = chapter_interlinear;
-  let verse_interlinear = list_first(chapter_interlinear);
+  let verse_interlinear = list_first(verses);
   log({
     verse_interlinear,
   });
