@@ -1,3 +1,4 @@
+import { html_style_a_plain } from "./html_style_a_plain.mjs";
 import { html_bible_verse } from "./html_bible_verse.mjs";
 import { list_zip } from "./list_zip.mjs";
 import { bible_books_prefix_to_name } from "./bible_books_prefix_to_name.mjs";
@@ -24,6 +25,7 @@ import { bible_storage_interlinear_book_path } from "./bible_storage_interlinear
 import { firebase_download_bible } from "./firebase_download_bible.mjs";
 export async function app_bible() {
   let root = await firebase_initialize_axios();
+  html_style_a_plain();
   let book_code = "MAT";
   let chapter = "1";
   let book_name = object_property_get(bible_books_prefix_to_name(), book_code);
