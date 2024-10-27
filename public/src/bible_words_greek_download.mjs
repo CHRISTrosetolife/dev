@@ -1,3 +1,4 @@
+import { html_parse } from "./html_parse.mjs";
 import { bible_interlinear_strongs_cache } from "./bible_interlinear_strongs_cache.mjs";
 import { list_last } from "./list_last.mjs";
 import { log } from "./log.mjs";
@@ -8,7 +9,8 @@ export async function bible_words_greek_download() {
   let strongs = await bible_interlinear_strongs_greek();
   let language = "greek";
   let strong = list_first(strongs);
-  return await bible_interlinear_strongs_cache(language, strong);
+  let html = await bible_interlinear_strongs_cache(language, strong);
+  let p = await html_parse(html);
   await each_async(strongs, async (strong) => {
     log({
       last: list_last(strongs),
