@@ -1,3 +1,4 @@
+import { list_zip } from "./list_zip.mjs";
 import { bible_books_prefix_to_name } from "./bible_books_prefix_to_name.mjs";
 import { app_record_verses } from "./app_record_verses.mjs";
 import { app_verses_generic } from "./app_verses_generic.mjs";
@@ -34,7 +35,9 @@ export async function app_bible() {
     chapter,
   );
   let { verses: verses_interlinear } = chapter_interlinear;
-  each(list, (item) => {});
+  each(list_zip([verses, verses_interlinear]), (z) => {
+    let verse = z;
+  });
   let verse_interlinear = list_first(verses_interlinear);
   let { tokens } = verse_interlinear;
   let filter = bible_interlinear_words_greek_audio_upload_filter();
