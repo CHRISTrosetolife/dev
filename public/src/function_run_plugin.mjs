@@ -1,7 +1,4 @@
-import { function_run } from "./function_run.mjs";
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { function_run_plugin_string } from "./function_run_plugin_string.mjs";
 export async function function_run_plugin(fn, plugin_suffix) {
   let prefix = fn.name;
-  let function_name = string_combine_multiple([prefix, "_", plugin_suffix]);
-  return await function_run(function_name, []);
-}
+  return function_run_plugin_string(prefix, plugin_suffix);  
