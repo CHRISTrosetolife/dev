@@ -48,10 +48,10 @@ export async function app_bible() {
       let word = object_property_get(token, "word");
       let word_component = html_span_text(d, word);
       html_style(word_component, {
-        "user-select": none,
-        "-moz-user-select": none,
-        "-webkit-user-select": none,
-        "-ms-user-select": none,
+        "user-select": "none",
+        "-moz-user-select": "none",
+        "-webkit-user-select": "none",
+        "-ms-user-select": "none",
       });
       html_style_bold(word_component);
       html_style_green(word_component);
