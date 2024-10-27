@@ -1,3 +1,5 @@
+import { bible_interlinear_words_audio_upload_map } from "./bible_interlinear_words_audio_upload_map.mjs";
+import { bible_interlinear_words_greek_audio_upload_filter } from "./bible_interlinear_words_greek_audio_upload_filter.mjs";
 import { language_code_greek } from "./language_code_greek.mjs";
 import { app_language_audio } from "./app_language_audio.mjs";
 import { html_on_click } from "./html_on_click.mjs";
@@ -23,6 +25,7 @@ export async function app_bible() {
   let { verses } = chapter_interlinear;
   let verse_interlinear = list_first(verses);
   let { tokens } = verse_interlinear;
+  let filter = bible_interlinear_words_greek_audio_upload_filter();
   each(tokens, (token) => {
     let d = html_div(root);
     let word = object_property_get(token, "word");
@@ -30,7 +33,9 @@ export async function app_bible() {
     html_style_bold(word_component);
     html_style_green(word_component);
     html_on_click(word_component, async () => {
-      await app_language_audio(language_code_greek(), word);
+      let ms = bible_interlinear_words_audio_upload_map([word], filter);
+      let m = list_first(ms);
+      await app_language_audio(language_code_greek(), m);
     });
     html_spacer(d);
     let transliteration = html_span_text(
