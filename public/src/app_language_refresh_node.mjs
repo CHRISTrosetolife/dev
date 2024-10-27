@@ -1,3 +1,4 @@
+import { app_language_group_index_component } from "./app_language_group_index_component.mjs";
 import { app_language_refresh_help } from "./app_language_refresh_help.mjs";
 import { app_language_text_group_previous } from "./app_language_text_group_previous.mjs";
 import { app_language_text_group_next } from "./app_language_text_group_next.mjs";
@@ -51,14 +52,12 @@ import { app_ceb } from "./app_ceb.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { list_add } from "./list_add.mjs";
-import { html_p_text } from "./html_p_text.mjs";
 export async function app_language_refresh_node(context) {
   let { root, group, invert, language_fluent } = context;
   storage_local_set(context.app_fn, "screen", "node");
   let level_size = app_language_level_size();
   html_clear_scroll_top_centered(root);
-  let group_index = app_language_group_index_get(context);
-  html_p_text(root, string_combine_multiple(["group ", add_1(group_index)]));
+  app_language_group_index_component(context);
   app_language_title(context);
   let { left, right } = storage_local_get(app_ceb, "position");
   let top_is = left === 0 && right === app_language_group_size() - 1;
