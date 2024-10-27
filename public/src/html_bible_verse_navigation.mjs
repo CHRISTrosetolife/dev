@@ -25,24 +25,29 @@ export async function html_bible_verse_navigation(
   let verses = await app_verses_generic(app_fn, book_code, chapter);
   let verse = list_find_property(verses, "verse_number", verse_number);
   let previous;
-  previous = html_button_width_full_text_click(
-    root,
-    "⬅️ previous verse",
-    async () => {
-      let verse_previous = list_previous(verses, verse);
-      await verse_refresh(
-        context,
-        book_code,
-        chapter,
-        object_property_get(verse_previous, "verse_number"),
-      );
-    },
-  );
+  if (false) {
+    previous_create();
+  }
   let next = html_button_width_full_text_click(
     root,
     string_combine_multiple([html_button_next_text(), " verse"]),
     verse_next,
   );
+  function previous_create() {
+    previous = html_button_width_full_text_click(
+      root,
+      "⬅️ previous verse",
+      async () => {
+        let verse_previous = list_previous(verses, verse);
+        await verse_refresh(
+          context,
+          book_code,
+          chapter,
+          object_property_get(verse_previous, "verse_number"),
+        );
+      },
+    );
+  }
   async function verse_next() {
     if (list_last_is(verses, verse)) {
       await chapter_next_go();
