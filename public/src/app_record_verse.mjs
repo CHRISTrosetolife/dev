@@ -1,3 +1,4 @@
+import { app_verses_generic } from "./app_verses_generic.mjs";
 import { html_bible_verse } from "./html_bible_verse.mjs";
 import { html_button_next_text } from "./html_button_next_text.mjs";
 import { clipboard_copy_web } from "./clipboard_copy_web.mjs";
@@ -119,7 +120,7 @@ export async function app_record_verse(
       book_next_code = book_code;
       chapter_next = list_next(chapters, chapter);
     }
-    let verses_next = await app_record_verses(book_code, chapter_next);
+    let verses_next = await app_verses_generic(app_record, book_code, chapter);
     await verse_refresh(
       context,
       book_next_code,
