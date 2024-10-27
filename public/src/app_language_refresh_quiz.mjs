@@ -80,6 +80,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { number_is } from "./number_is.mjs";
 import { assert } from "./assert.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
+import { list_size } from "./list_size.mjs";
 export async function app_language_refresh_quiz(context) {
   let {
     root,
@@ -99,7 +100,15 @@ export async function app_language_refresh_quiz(context) {
   html_clear_scroll_top_centered(root);
   app_language_group_index_component(context);
   let settings_index = list_index_by(settings_choices, settings, equal_json);
-  html_p_text();
+  html_p_text(
+    root,
+    string_combine_multiple([
+      "question ",
+      add_1(settings_index),
+      " of ",
+      list_size(settings_choices),
+    ]),
+  );
   let no_mistakes = true;
   let { pair, chunk_size, forwards } = settings;
   assert(number_is, [chunk_size]);
