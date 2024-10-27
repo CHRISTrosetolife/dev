@@ -82,47 +82,6 @@ export async function app_record_verse(
     string_combine_multiple([html_button_next_text(), " verse"]),
     verse_next_go,
   );
-  save = html_button_width_full_text_click(
-    root,
-    "💾 save recording and ➡️ next verse",
-    async () => {
-      each(recording, html_style_display_none);
-      let blob = await html_recorder_media_stop(context.mr);
-      let when = date_string_iso_file();
-      let storage_path = path_join([
-        folder_audio_bible(),
-        "calm",
-        book_code,
-        chapter,
-        verse_number,
-        string_combine_multiple([when, ".mp3"]),
-      ]);
-      await firebase_upload_bytes(storage_path, blob);
-      await verse_next_go();
-    },
-  );
-  restart = html_button_width_full_text_click(
-    root,
-    "↩️ restart recording",
-    async () => {
-      each(recording, html_style_display_none);
-      await html_recorder_media_stop(context.mr);
-      html_recorder_media_start(context.mr);
-      each(recording, html_style_display_block);
-    },
-  );
-  cancel = html_button_width_full_text_click(
-    root,
-    "🚫 cancel recording",
-    async () => {
-      each(recording, html_style_display_none);
-      await html_recorder_media_stop(context.mr);
-      each(recording_not, html_style_display_block);
-    },
-  );
-  recording = [save, restart, cancel];
-  recording_not = [start, previous, next];
-  each(recording, html_style_display_none);
   async function verse_next_go() {
     if (list_last_is(verses, verse)) {
       await chapter_next_go();
@@ -167,4 +126,45 @@ export async function app_record_verse(
       object_property_get(list_first(verses_next), "verse_number"),
     );
   }
+  save = html_button_width_full_text_click(
+    root,
+    "💾 save recording and ➡️ next verse",
+    async () => {
+      each(recording, html_style_display_none);
+      let blob = await html_recorder_media_stop(context.mr);
+      let when = date_string_iso_file();
+      let storage_path = path_join([
+        folder_audio_bible(),
+        "calm",
+        book_code,
+        chapter,
+        verse_number,
+        string_combine_multiple([when, ".mp3"]),
+      ]);
+      await firebase_upload_bytes(storage_path, blob);
+      await verse_next_go();
+    },
+  );
+  restart = html_button_width_full_text_click(
+    root,
+    "↩️ restart recording",
+    async () => {
+      each(recording, html_style_display_none);
+      await html_recorder_media_stop(context.mr);
+      html_recorder_media_start(context.mr);
+      each(recording, html_style_display_block);
+    },
+  );
+  cancel = html_button_width_full_text_click(
+    root,
+    "🚫 cancel recording",
+    async () => {
+      each(recording, html_style_display_none);
+      await html_recorder_media_stop(context.mr);
+      each(recording_not, html_style_display_block);
+    },
+  );
+  recording = [save, restart, cancel];
+  recording_not = [start, previous, next];
+  each(recording, html_style_display_none);
 }
