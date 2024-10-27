@@ -59,10 +59,9 @@ export async function app_record_verse(
     each(recording, html_style_display_block);
   });
   let verse_refresh = app_record_verse;
-  let app_fn = app_record;
   let copy_message = "reading and recording audio for audio Bible";
   let n = await html_bible_verse_navigation(
-    app_fn,
+    app_record,
     verse_refresh,
     context,
     book_code,
