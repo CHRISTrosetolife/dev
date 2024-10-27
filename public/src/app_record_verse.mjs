@@ -68,6 +68,7 @@ export async function app_record_verse(
   let verse_refresh = app_record_verse;
   let app_fn = app_record;
   let copy_message = "reading and recording audio for audio Bible";
+  html_bible_verse_navigation(app_fn, verse_refresh, context, copy_message);
   function html_bible_verse_navigation(
     app_fn,
     verse_refresh,
