@@ -39,6 +39,7 @@ export async function app_bible() {
   each(list_zip([verses, verses_interlinear]), (z) => {
     let [verse, verse_interlinear] = z;
     html_bible_verse(root, book_code, chapter, verse);
+    html_hr(root);
     let { tokens } = verse_interlinear;
     let filter = bible_interlinear_words_greek_audio_upload_filter();
     each(tokens, (token) => {
@@ -65,6 +66,7 @@ export async function app_bible() {
         object_property_get(token, "translation"),
       );
     });
+    html_hr(root);
     html_hr(root);
   });
 }
