@@ -1,5 +1,4 @@
 import { html_bible_verse } from "./html_bible_verse.mjs";
-import { html_div_text } from "./html_div_text.mjs";
 import { list_zip } from "./list_zip.mjs";
 import { bible_books_prefix_to_name } from "./bible_books_prefix_to_name.mjs";
 import { app_record_verses } from "./app_record_verses.mjs";
@@ -23,7 +22,6 @@ import { list_first } from "./list_first.mjs";
 import { firebase_initialize_axios } from "./firebase_initialize_axios.mjs";
 import { bible_storage_interlinear_book_path } from "./bible_storage_interlinear_book_path.mjs";
 import { firebase_download_bible } from "./firebase_download_bible.mjs";
-import { json_to } from "./json_to.mjs";
 export async function app_bible() {
   let root = await firebase_initialize_axios();
   let book_code = "MAT";
@@ -37,8 +35,7 @@ export async function app_bible() {
   let { verses: verses_interlinear } = chapter_interlinear;
   each(list_zip([verses, verses_interlinear]), (z) => {
     let [verse, verse_interlinear] = z;
-    html_bible_verse(root, book_code, chapter, verse_interlinear);
-    html_div_text(root, json_to(verse));
+    html_bible_verse(root, book_code, chapter, verse);
     let { tokens } = verse_interlinear;
     let filter = bible_interlinear_words_greek_audio_upload_filter();
     each(tokens, (token) => {
