@@ -54,11 +54,11 @@ import { list_add } from "./list_add.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 export async function app_language_refresh_node(context) {
   let { root, group, invert, language_fluent } = context;
-  let group_index = app_language_group_index_get(context);
-  html_p_text(root, string_combine_multiple(["group ", add_1(group_index)]));
   storage_local_set(context.app_fn, "screen", "node");
   let level_size = app_language_level_size();
   html_clear_scroll_top_centered(root);
+  let group_index = app_language_group_index_get(context);
+  html_p_text(root, string_combine_multiple(["group ", add_1(group_index)]));
   app_language_title(context);
   let { left, right } = storage_local_get(app_ceb, "position");
   let top_is = left === 0 && right === app_language_group_size() - 1;
