@@ -7,6 +7,7 @@ export async function bible_interlinear_strongs_generic(books_get) {
   let strongs = list_adder_unique((la) => {
     bible_interlinear_each_token(books, lambda);
     function lambda(token) {
+        $i
       la(token.strong);
     }
   });
