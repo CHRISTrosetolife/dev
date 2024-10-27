@@ -74,7 +74,9 @@ export async function app_record_verse(
     context,
     copy_message,
   );
-  previous = object_property_get(object, "property_name");
+  previous = object_property_get(n, "previous");
+  next = object_property_get(n, "next");
+  let verse_next = object_property_get(n, "verse_next");
   function html_bible_verse_navigation(
     app_fn,
     verse_refresh,
