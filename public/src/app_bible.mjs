@@ -1,3 +1,4 @@
+import { string_encoded_to } from "./string_encoded_to.mjs";
 import { bible_interlinear_words_audio_upload_map } from "./bible_interlinear_words_audio_upload_map.mjs";
 import { bible_interlinear_words_greek_audio_upload_filter } from "./bible_interlinear_words_greek_audio_upload_filter.mjs";
 import { language_code_greek } from "./language_code_greek.mjs";
@@ -35,7 +36,7 @@ export async function app_bible() {
     html_on_click(word_component, async () => {
       let ms = bible_interlinear_words_audio_upload_map([word], filter);
       let m = list_first(ms);
-      await app_language_audio(language_code_greek(), m);
+      await app_language_audio(language_code_greek(), string_encoded_to(m));
     });
     html_spacer(d);
     let transliteration = html_span_text(
