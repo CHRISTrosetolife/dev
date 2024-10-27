@@ -29,6 +29,7 @@ export async function app_record_verse(
   chapter,
   verse_number,
 ) {
+  let app_fn = app_record;
   await app_save_change(app_record, (save) =>
     object_replace(save, {
       book: book_code,
