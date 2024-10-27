@@ -10,5 +10,5 @@ export async function bible_interlinear_strongs_cache(language, strong) {
     strong,
     ".htm",
   ]);
-  await http_cache(url);
+  return await http_cache(url);
 }
