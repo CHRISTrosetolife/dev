@@ -13,6 +13,6 @@ export async function app_bible() {
     root,
   };
   await app_context_books_bible(context);
-  let save = app_save_get(app_bible_verse);
+  let save = app_save_get(app_bible);
   await app_bible_verse(context, book_code, chapter, verse_number);
 }
