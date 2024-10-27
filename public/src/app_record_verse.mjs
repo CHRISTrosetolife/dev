@@ -54,6 +54,7 @@ export async function app_record_verse(
   let verses = await app_record_verses(book_code, chapter);
   let verse = list_find_property(verses, "verse_number", verse_number);
   let vn = html_bible_verse(root, book_code, chapter, verse);
+  html_hr(root);
   if (equal(verse_number, "1")) {
     html_style_green(vn);
   }

@@ -1,4 +1,3 @@
-import { html_hr } from "./html_hr.mjs";
 import { list_single } from "./list_single.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { google_search_url } from "./google_search_url.mjs";
@@ -24,6 +23,5 @@ export function html_bible_verse(root, book_code, chapter, verse) {
       );
     }
   });
-  html_hr(root);
   return vn;
 }
