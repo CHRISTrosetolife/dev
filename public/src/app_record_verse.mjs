@@ -77,12 +77,14 @@ export async function app_record_verse(
   previous = object_property_get(n, "previous");
   next = object_property_get(n, "next");
   let verse_next = object_property_get(n, "verse_next");
-  function html_bible_verse_navigation(
+  async function html_bible_verse_navigation(
     app_fn,
     verse_refresh,
     context,
     copy_message,
   ) {
+    let { root } = context;
+    let verses = await app_verses_generic(app_fn, book_code, chapter);
     let previous = html_button_width_full_text_click(
       root,
       "⬅️ previous verse",
