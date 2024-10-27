@@ -1,3 +1,4 @@
+import { language_code_greek } from "./language_code_greek.mjs";
 import { app_language_audio } from "./app_language_audio.mjs";
 import { html_on_click } from "./html_on_click.mjs";
 import { html_style_font_color_gray } from "./html_style_font_color_gray.mjs";
@@ -28,7 +29,7 @@ export async function app_bible() {
     html_style_bold(word);
     html_style_green(word);
     html_on_click(word, async () => {
-      await app_language_audio();
+      await app_language_audio(language_code_greek(), word);
     });
     html_spacer(d);
     let transliteration = html_span_text(
