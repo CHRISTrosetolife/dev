@@ -27,8 +27,8 @@ export async function app_todo_command() {
     app_todo_not_completed(),
   );
   let mapped = list_map_property(filtered, "name");
-  list_map_index(mapped, (item, index) =>
+  let mapped2 = list_map_index(mapped, (item, index) =>
     string_combine_multiple([add_1(index), " ", item]),
   );
-  log_list(mapped);
+  log_list(mapped2);
 }
