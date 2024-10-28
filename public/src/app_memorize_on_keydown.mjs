@@ -1,3 +1,4 @@
+import { html_style_red } from "./html_style_red.mjs";
 import { html_data_set } from "./html_data_set.mjs";
 import { app_memorize_save_get } from "./app_memorize_save_get.mjs";
 import { app_memorize_keyboard_reset } from "./app_memorize_keyboard_reset.mjs";
@@ -10,7 +11,6 @@ import { error } from "./error.mjs";
 import { app_memorize_refresh_memorize } from "./app_memorize_refresh_memorize.mjs";
 import { html_style_wrong } from "./html_style_wrong.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { html_style_font_color } from "./html_style_font_color.mjs";
 import { html_style_visible } from "./html_style_visible.mjs";
 import { html_style } from "./html_style.mjs";
 import { app_memorize_update_colors } from "./app_memorize_update_colors.mjs";
@@ -111,7 +111,3 @@ export async function app_memorize_on_keydown(context, key) {
     app_memorize_save(context);
   }
 }
-function html_style_red(c) {
-    html_style_font_color(c, "red");
-}
-

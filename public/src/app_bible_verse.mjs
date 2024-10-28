@@ -1,3 +1,4 @@
+import { html_style_red } from "./html_style_red.mjs";
 import { bible_storage_interlinear_chapter_definitions_property } from "./bible_storage_interlinear_chapter_definitions_property.mjs";
 import { log } from "./log.mjs";
 import { bible_storage_interlinear_chapter_definitions_name } from "./bible_storage_interlinear_chapter_definitions_name.mjs";
@@ -108,7 +109,4 @@ export async function app_bible_verse(
     book_code,
     chapter,
     verse_number,
-    "reading and recording audio for audio Bible",
-    false,
-  );
-}
+    "reading an
