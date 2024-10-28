@@ -23,5 +23,6 @@ export async function app_todo_command_items() {
   );
   return {
     filtered,
+    items,
   };
 }
