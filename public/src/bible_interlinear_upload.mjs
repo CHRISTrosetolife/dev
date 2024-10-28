@@ -42,7 +42,7 @@ export async function bible_interlinear_upload() {
     let strongs = list_map_property(tokens, "strong");
     strongs = list_unique(strongs);
     let definitions = await list_to_lookup_value_async(strongs, async (s) => ({
-      definition: await bible_interlinear_definition(language, s),
+      ["definition"]: await bible_interlinear_definition(language, s),
     }));
     await bible_storage_version_upload(
       bible_storage_interlinear_chapter_definitions_path(
