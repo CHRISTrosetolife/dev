@@ -125,9 +125,16 @@ export async function bible_audio_player_range(book_from, book_to) {
   let digits = string_size(string_to(size));
   await each_index_async(denested, async (d, index) => {
     let b = path_parse_base(d);
-    b = string_combine_multiple([number_pad(add_1(index), digits), "_", b]);
+    b = base_map(b);
     let file_path_new = path_join([to, b]);
     await file_copy_closed(d, file_path_new);
+    function base_map() {
+      return string_combine_multiple([
+        number_pad(add_1(index), digits),
+        "_",
+        b,
+      ]);
+    }
   });
   let download_folders_regular_computer_voice = [
     "NHEB_NT_audio",
