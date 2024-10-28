@@ -397,6 +397,7 @@ export function js_dollar(ast) {
           property_name,
           parent,
         });
+        log({});
         if (false) {
           object_replace(node, e);
         }
