@@ -124,7 +124,7 @@ export async function bible_audio_player_range(book_from, book_to) {
   let size = list_size(denested);
   let digits = string_size(string_to(size));
   await each_index_async(denested, async (d, index) => {
-    let file_path_new = file_copy_path_generic(d, base_map, to);
+    let file_path_new = file_copy_path_generic(d, to, base_map);
     await file_copy_closed(d, file_path_new);
     function base_map(b) {
       return string_combine_multiple([
