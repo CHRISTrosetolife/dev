@@ -1,3 +1,4 @@
+import { string_delimit } from "./string_delimit.mjs";
 import { object_property_get_code } from "./object_property_get_code.mjs";
 import { object_property_get_expression } from "./object_property_get_expression.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
@@ -386,7 +387,7 @@ export function js_dollar(ast) {
         let e = object_property_get_expression(
           ast,
           "object",
-          '"property_name"',
+          string_delimit("property_name"),
         );
         object_replace(node, e);
       }
