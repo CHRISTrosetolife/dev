@@ -232,9 +232,10 @@ export function js_dollar(ast) {
         object_replace(node, e);
       }
       if (remaining === get_prefix) {
+        let object_variable_name = "object";
         let e = js_parse_expression(
           js_code_call_args(fn_name("object_property_get"), [
-            js_name_unique(ast, "object"),
+            js_name_unique(ast, object_variable_name),
             '"property_name"',
           ]),
         );
@@ -398,7 +399,7 @@ export function js_dollar(ast) {
           property_name,
           parent,
         });
-        log(js_code_statement_let_assign("a", "b"));
+        log(js_code_statement_let_assign(variable_name, "b"));
         if (false) {
           object_replace(node, e);
         }
