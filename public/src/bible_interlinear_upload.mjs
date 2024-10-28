@@ -30,9 +30,10 @@ export async function bible_interlinear_upload() {
   });
   await each_async(chapters, async (chapter) => {
     let book_name = object_property_get(chapter, "book_name");
+    let chapter_name = object_property_get(chapter, "chapter_name");
     await bible_storage_version_upload(
       bible_storage_interlinear_book_path(book_name),
-      object_property_get(chapter, "chapter_name"),
+      chapter_name,
       chapter,
     );
     let tokens = list_adder_unique((la) => {
