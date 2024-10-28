@@ -403,7 +403,7 @@ export function js_dollar(ast) {
             string_delimit(property_name),
           ),
         );
-        let r = js_parse_statement(c);
+        let r = js_parse_first(c);
         log({
           stack,
           r,
