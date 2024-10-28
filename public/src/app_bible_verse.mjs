@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { bible_storage_interlinear_chapter_definitions_name } from "./bible_storage_interlinear_chapter_definitions_name.mjs";
 import { bible_storage_interlinear_chapter_definitions_path } from "./bible_storage_interlinear_chapter_definitions_path.mjs";
 import { app_save_change_bible } from "./app_save_change_bible.mjs";
@@ -48,6 +49,9 @@ export async function app_bible_verse(
     bible_storage_interlinear_chapter_definitions_path(book_name, chapter_name),
     bible_storage_interlinear_chapter_definitions_name(),
   );
+  log({
+    chapter_definitions,
+  });
   let { verses: verses_interlinear } = chapter_interlinear;
   let verse = list_find_property(verses, "verse_number", verse_number);
   let verse_interlinear = list_find_property(
