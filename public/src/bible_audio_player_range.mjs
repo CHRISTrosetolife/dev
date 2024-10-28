@@ -1,10 +1,10 @@
+import { path_join } from "./path_join.mjs";
 import { log } from "./log.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { add_1 } from "./add_1.mjs";
 import { each_index_async } from "./each_index_async.mjs";
 import { string_to } from "./string_to.mjs";
 import { string_size } from "./string_size.mjs";
-import { file_copy_path } from "./file_copy_path.mjs";
 import { list_size } from "./list_size.mjs";
 import { file_copy_closed } from "./file_copy_closed.mjs";
 import { bible_audio_player_output_path } from "./bible_audio_player_output_path.mjs";
@@ -125,15 +125,16 @@ export async function bible_audio_player_range(book_from, book_to) {
   let size = list_size(denested);
   let digits = string_size(string_to(size));
   await each_index_async(denested, async (d, index) => {
-    let to_path = file_copy_path(d, to);
-    let b = path_parse_base(to_path);
+    let b = path_parse_base(d);
     b = string_combine_multiple([number_pad(add_1(index), digits), "_", b]);
+    let file_path_new = path_join([to, b]);
     log({
-      b,
+      file_path_new,
     });
     return;
     await file_copy_closed(d, to_path);
   });
+  return;
   let download_folders_regular_computer_voice = [
     "NHEB_NT_audio",
     "NHEB_OT_audio",
