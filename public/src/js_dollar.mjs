@@ -1,3 +1,4 @@
+import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 import { log } from "./log.mjs";
 import { string_split_dollar } from "./string_split_dollar.mjs";
 import { js_dollar_expand_await } from "./js_dollar_expand_await.mjs";
@@ -397,7 +398,7 @@ export function js_dollar(ast) {
           property_name,
           parent,
         });
-        log({});
+        log(js_code_statement_let_assign());
         if (false) {
           object_replace(node, e);
         }
