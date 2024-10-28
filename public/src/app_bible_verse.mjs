@@ -46,7 +46,7 @@ export async function app_bible_verse(
     chapter,
   );
   let chapter_definitions = await firebase_download_bible(
-    bible_storage_interlinear_chapter_definitions_path(book_name, chapter_name),
+    bible_storage_interlinear_chapter_definitions_path(book_name, chapter),
     bible_storage_interlinear_chapter_definitions_name(),
   );
   log({
