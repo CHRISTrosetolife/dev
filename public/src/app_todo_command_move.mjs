@@ -1,3 +1,5 @@
+import { list_remove_at } from "./list_remove_at.mjs";
+import { list_insert } from "./list_insert.mjs";
 import { list_index } from "./list_index.mjs";
 import { list_get } from "./list_get.mjs";
 import { app_todo_command_items } from "./app_todo_command_items.mjs";
@@ -14,4 +16,6 @@ export async function app_todo_command_move(index_from, index_to) {
     let item_to = list_get(filtered, index_to);
     items_index_to = list_index(items, item_to);
   }
+  list_insert(items, items_index_to, item_from);
+  list_remove_at();
 }
