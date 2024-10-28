@@ -19,5 +19,6 @@ export async function app_todo_command_items() {
     filtered,
     items,
     index,
+    index_path,
   };
 }
