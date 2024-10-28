@@ -1,3 +1,4 @@
+import { exit } from "./exit.mjs";
 import { log } from "./log.mjs";
 import { bible_interlinear_chapter_each_token } from "./bible_interlinear_chapter_each_token.mjs";
 import { list_adder_unique } from "./list_adder_unique.mjs";
@@ -35,5 +36,6 @@ export async function bible_interlinear_upload() {
     log({
       tokens,
     });
+    exit();
   });
 }
