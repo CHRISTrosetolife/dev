@@ -1,3 +1,4 @@
+import { list_denest } from "./list_denest.mjs";
 import { bible_audio_player_drive_letter } from "./bible_audio_player_drive_letter.mjs";
 import { invoke_multiple_async } from "./invoke_multiple_async.mjs";
 import { drive_format } from "./drive_format.mjs";
@@ -108,7 +109,7 @@ export async function bible_audio_player_range(book_from, book_to) {
     path_parse_base_starts_with,
     fns,
   );
-  return fns;
+  return list_denest(fns);
   list_shuffle(fns);
   await invoke_multiple_async(fns);
   let download_folders_regular_computer_voice = [
