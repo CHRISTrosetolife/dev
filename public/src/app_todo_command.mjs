@@ -13,4 +13,5 @@ export async function app_todo_command() {
   let path = storage_file_download_path(last);
   let i = await file_read_json(path);
   let items = object_property_get(i, "items");
+  return items;
 }
