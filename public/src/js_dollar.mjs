@@ -393,7 +393,8 @@ export function js_dollar(ast) {
         let s = string_split_dollar(remaining);
         let [variable_name, property_name] = s;
         log({
-          s,
+          variable_name,
+          property_name,
         });
         if (false) {
           object_replace(node, e);
