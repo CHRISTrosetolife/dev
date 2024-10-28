@@ -41,7 +41,7 @@ export async function bible_interlinear_upload() {
     strongs = list_unique(strongs);
     await list_to_lookup_value_async(
       strongs,
-      async (s) => await bible_interlinear_definition("", s),
+      async (s) => await bible_interlinear_definition(language, s),
     );
     exit();
   });
