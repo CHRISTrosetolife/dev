@@ -1,3 +1,4 @@
+import { bible_storage_interlinear_chapter_definitions_property } from "./bible_storage_interlinear_chapter_definitions_property.mjs";
 import { log } from "./log.mjs";
 import { bible_storage_interlinear_chapter_definitions_name } from "./bible_storage_interlinear_chapter_definitions_name.mjs";
 import { bible_storage_interlinear_chapter_definitions_path } from "./bible_storage_interlinear_chapter_definitions_path.mjs";
@@ -89,7 +90,13 @@ export async function app_bible_verse(
     );
     let strong = object_property_get(token, "strong");
     let definition_entry = object_property_get(chapter_definitions, strong);
-    html_span_text(d, definition_entry);
+   definition= html_span_text(
+      d,
+      object_property_get(
+        definition_entry,
+        bible_storage_interlinear_chapter_definitions_property(),
+      ),
+    );
   });
   html_hr(root);
   let n = await html_bible_verse_navigation(
@@ -100,6 +107,4 @@ export async function app_bible_verse(
     chapter,
     verse_number,
     "reading and recording audio for audio Bible",
-    false,
-  );
-}
+    fal
