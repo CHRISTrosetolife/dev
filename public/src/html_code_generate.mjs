@@ -1,3 +1,5 @@
+import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
+import { fn_name } from "./fn_name.mjs";
 import { html_code_generate_parent } from "./html_code_generate_parent.mjs";
 import { js_unparse } from "./js_unparse.mjs";
 import { js_parse } from "./js_parse.mjs";
@@ -5,12 +7,9 @@ import { list_join_empty } from "./list_join_empty.mjs";
 import { list_map } from "./list_map.mjs";
 import { string_delimit } from "./string_delimit.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
-import { js_code_statement_declare_assign } from "./js_code_statement_declare_assign.mjs";
-import { html_attribute_set } from "./html_attribute_set.mjs";
 import { js_code_statement_call_args } from "./js_code_statement_call_args.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
 import { html_parse } from "./html_parse.mjs";
-import { html_element } from "./html_element.mjs";
 import { list_add } from "./list_add.mjs";
 import { each_object } from "./each_object.mjs";
 import { list_concat } from "./list_concat.mjs";
@@ -22,9 +21,9 @@ export async function html_code_generate(tag_name, input) {
   let { attribs } = c;
   let variable_name = "c";
   let statements = [
-    js_code_statement_declare_assign(
+    js_code_statement_let_assign(
       variable_name,
-      js_code_call_args(html_element.name, [
+      js_code_call_args(fn_name("html_element"), [
         html_code_generate_parent(),
         string_delimit(tag_name),
       ]),
@@ -32,7 +31,7 @@ export async function html_code_generate(tag_name, input) {
   ];
   each_object(attribs, (key, value) => {
     let s = js_code_statement_call_args(
-      html_attribute_set.name,
+      fn_name("html_attribute_set"),
       list_concat([variable_name], list_map([key, value], string_delimit)),
     );
     list_add(statements, s);
