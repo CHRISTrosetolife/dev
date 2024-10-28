@@ -404,10 +404,7 @@ export function js_dollar(ast) {
           ),
         );
         let r = js_parse_first(c);
-        log({
-          stack,
-          r,
-        });
+
         object_replace(parent, r);
       }
       let log_prefix_start_is = remaining === log_prefix_start;
