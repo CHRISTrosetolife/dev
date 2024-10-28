@@ -1,3 +1,4 @@
+import { bible_audio_player_output_path } from "./bible_audio_player_output_path.mjs";
 import { list_denest } from "./list_denest.mjs";
 import { bible_audio_player_drive_letter } from "./bible_audio_player_drive_letter.mjs";
 import { invoke_multiple_async } from "./invoke_multiple_async.mjs";
@@ -109,6 +110,7 @@ export async function bible_audio_player_range(book_from, book_to) {
     path_parse_base_starts_with,
     fns,
   );
+  let to = bible_audio_player_output_path();
   return list_denest(fns);
   list_shuffle(fns);
   await invoke_multiple_async(fns);
