@@ -389,9 +389,7 @@ export function js_dollar(ast) {
       }
       if (prefix_use(remaining, get_prefix, prefixes)) {
         remaining = string_prefix_without(remaining, lambda_prefix);
-        let e = js_parse_expression(
-          js_code_arrow_block_args(string_split_dollar(remaining), ""),
-        );
+        string_split_dollar(remaining);
         object_replace(node, e);
       }
       let log_prefix_start_is = remaining === log_prefix_start;
