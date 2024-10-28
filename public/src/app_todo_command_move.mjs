@@ -1,3 +1,4 @@
+import { storage_upload_object } from "./storage_upload_object.mjs";
 import { integer_parse } from "./integer_parse.mjs";
 import { add_1 } from "./add_1.mjs";
 import { app_todo_command_log } from "./app_todo_command_log.mjs";
@@ -25,5 +26,6 @@ export async function app_todo_command_move(index_from, index_to) {
   }
   list_insert(items, items_index_to, item_from);
   filtered = app_todo_command_items_filter(items);
+  await storage_upload_object();
   app_todo_command_log(filtered);
 }
