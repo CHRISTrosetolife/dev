@@ -88,6 +88,8 @@ export async function app_bible_verse(
       object_property_get(token, "translation"),
     );
     let strong = object_property_get(token, "strong");
+    let definition_entry = object_property_get(chapter_definitions, strong);
+    html_span_text(d, definition_entry);
   });
   html_hr(root);
   let n = await html_bible_verse_navigation(
