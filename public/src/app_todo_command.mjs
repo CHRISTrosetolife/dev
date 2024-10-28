@@ -1,3 +1,6 @@
+import { app_todo_not_completed } from "./app_todo_not_completed.mjs";
+import { app_todo_completed_property } from "./app_todo_completed_property.mjs";
+import { list_filter_property } from "./list_filter_property.mjs";
 import { app_todo_items_object } from "./app_todo_items_object.mjs";
 import { list_single } from "./list_single.mjs";
 import { storage_file_download_path } from "./storage_file_download_path.mjs";
@@ -13,5 +16,10 @@ export async function app_todo_command() {
   let path = storage_file_download_path(last);
   let index = await file_read_json(path);
   let items = app_todo_items_object(index);
-  return items;
+  let filtered = list_filter_property(
+    items,
+    app_todo_completed_property(),
+    app_todo_not_completed(),
+  );
+  return filtered;
 }
