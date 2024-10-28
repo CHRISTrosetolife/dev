@@ -1,3 +1,4 @@
+import { list_unique } from "./list_unique.mjs";
 import { exit } from "./exit.mjs";
 import { log } from "./log.mjs";
 import { bible_interlinear_chapter_each_token } from "./bible_interlinear_chapter_each_token.mjs";
@@ -35,8 +36,9 @@ export async function bible_interlinear_upload() {
       bible_interlinear_chapter_each_token(chapter, la);
     });
     let strongs = list_map_property(tokens, "strong");
+    strongs = list_unique(strongs);
     log({
-      tokens,
+        strongs,
     });
     exit();
   });
