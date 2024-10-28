@@ -1,3 +1,4 @@
+import { log_logs } from "./log_logs.mjs";
 import { app_todo_not_completed } from "./app_todo_not_completed.mjs";
 import { app_todo_completed_property } from "./app_todo_completed_property.mjs";
 import { list_filter_property } from "./list_filter_property.mjs";
@@ -23,4 +24,5 @@ export async function app_todo_command() {
     app_todo_not_completed(),
   );
   let mapped = list_map_property(filtered, "name");
+  log_logs();
 }
