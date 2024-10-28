@@ -22,5 +22,5 @@ export async function app_todo_command() {
     app_todo_completed_property(),
     app_todo_not_completed(),
   );
-  return list_map_property(filtered, "name");
+  let mapped = list_map_property(filtered, "name");
 }
