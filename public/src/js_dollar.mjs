@@ -399,8 +399,8 @@ export function js_dollar(ast) {
           property_name,
           parent,
         });
-        log(js_code_statement_let_assign());
-        log(js_code_statement_declare_assign());
+        log(js_code_statement_let_assign("a", "b"));
+        log(js_code_statement_declare_assign("a", "b"));
         if (false) {
           object_replace(node, e);
         }
