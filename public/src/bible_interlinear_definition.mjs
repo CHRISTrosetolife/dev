@@ -1,4 +1,4 @@
-import { log } from "./log.mjs";
+import { list_find } from "./list_find.mjs";
 import { equal } from "./equal.mjs";
 import { assert } from "./assert.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
@@ -13,8 +13,8 @@ export async function bible_interlinear_definition(language, strong) {
   let p = await html_parse(html);
   let leftbox = html_parse_visit_id(p, "leftbox");
   let tophdg = html_parse_visit_class_list(leftbox, "tophdg");
-  log({
-    strong,
+  list_find(tophdg, (t) => {
+    html_parse_text(definition);
   });
   let definition = list_get(tophdg, 4);
   let definition_text = html_parse_text(definition);
