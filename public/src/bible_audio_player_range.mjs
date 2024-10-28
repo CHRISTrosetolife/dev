@@ -1,3 +1,4 @@
+import { file_copy_closed } from "./file_copy_closed.mjs";
 import { each_async } from "./each_async.mjs";
 import { bible_audio_player_output_path } from "./bible_audio_player_output_path.mjs";
 import { list_denest } from "./list_denest.mjs";
@@ -113,7 +114,9 @@ export async function bible_audio_player_range(book_from, book_to) {
   );
   let to = bible_audio_player_output_path();
   return list_denest(paths);
-  await each_async(list, async (item) => {});
+  await each_async(list, async (item) => {
+    await file_copy_closed(from, to_mapped);
+  });
   list_shuffle(paths);
   await invoke_multiple_async(paths);
   let download_folders_regular_computer_voice = [
