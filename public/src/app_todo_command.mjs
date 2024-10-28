@@ -8,6 +8,7 @@ import { storage_file_download } from "./storage_file_download.mjs";
 import { app_todo_firebase_path_index } from "./app_todo_firebase_path_index.mjs";
 import { storage_files } from "./storage_files.mjs";
 import { file_read_json } from "./file_read_json.mjs";
+import { list_map_property } from "./list_map_property.mjs";
 export async function app_todo_command() {
   let index_path = app_todo_firebase_path_index();
   let files = await storage_files(index_path);
@@ -21,5 +22,5 @@ export async function app_todo_command() {
     app_todo_completed_property(),
     app_todo_not_completed(),
   );
-  return filtered;
+  return list_map_property(filtered, "name");
 }
