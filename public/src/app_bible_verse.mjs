@@ -42,6 +42,10 @@ export async function app_bible_verse(
     bible_storage_interlinear_book_path(book_name),
     chapter,
   );
+  let chapter_definitions = await firebase_download_bible(
+    bible_storage_interlinear_book_path(book_name),
+    chapter,
+  );
   let { verses: verses_interlinear } = chapter_interlinear;
   let verse = list_find_property(verses, "verse_number", verse_number);
   let verse_interlinear = list_find_property(
