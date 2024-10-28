@@ -1,4 +1,3 @@
-import { js_code_statement_declare_assign } from "./js_code_statement_declare_assign.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 import { log } from "./log.mjs";
 import { string_split_dollar } from "./string_split_dollar.mjs";
@@ -400,7 +399,6 @@ export function js_dollar(ast) {
           parent,
         });
         log(js_code_statement_let_assign("a", "b"));
-        log(js_code_statement_declare_assign("a", "b"));
         if (false) {
           object_replace(node, e);
         }
