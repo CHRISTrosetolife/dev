@@ -1,4 +1,4 @@
-import { path_join } from "./path_join.mjs";
+import { file_copy_path_generic } from "./file_copy_path_generic.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { add_1 } from "./add_1.mjs";
 import { each_index_async } from "./each_index_async.mjs";
@@ -124,11 +124,9 @@ export async function bible_audio_player_range(book_from, book_to) {
   let size = list_size(denested);
   let digits = string_size(string_to(size));
   await each_index_async(denested, async (d, index) => {
-    let b = path_parse_base(d);
-    b = base_map(b);
-    let file_path_new = path_join([to, b]);
+    let file_path_new = file_copy_path_generic(d, base_map, to);
     await file_copy_closed(d, file_path_new);
-    function base_map() {
+    function base_map(b) {
       return string_combine_multiple([
         number_pad(add_1(index), digits),
         "_",
