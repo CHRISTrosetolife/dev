@@ -10,6 +10,7 @@ import { list_adder } from "./list_adder.mjs";
 import { bible_interlinear_cache_new } from "./bible_interlinear_cache_new.mjs";
 import { bible_interlinear_each_chapter } from "./bible_interlinear_each_chapter.mjs";
 import { object_merge } from "./object_merge.mjs";
+import { list_map_property } from "./list_map_property.mjs";
 export async function bible_interlinear_upload() {
   let books = await bible_interlinear_cache_new();
   let chapters = list_adder((la) => {
@@ -33,6 +34,7 @@ export async function bible_interlinear_upload() {
     let tokens = list_adder_unique((la) => {
       bible_interlinear_chapter_each_token(chapter, la);
     });
+    let strongs = list_map_property(tokens, "strong");
     log({
       tokens,
     });
