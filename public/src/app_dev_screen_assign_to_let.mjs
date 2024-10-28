@@ -1,6 +1,7 @@
+import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
+import { fn_name } from "./fn_name.mjs";
 import { html_cycle_code } from "./html_cycle_code.mjs";
 import { html_cycle_code_span } from "./html_cycle_code_span.mjs";
-import { js_code_statement_declare_assign } from "./js_code_statement_declare_assign.mjs";
 import { list_join_empty } from "./list_join_empty.mjs";
 import { js_code_statement_assign } from "./js_code_statement_assign.mjs";
 import { function_transform } from "./function_transform.mjs";
@@ -41,7 +42,7 @@ export function app_dev_screen_assign_to_let() {
         "a",
         list_join_empty([
           js_code_statement_assign("a", 1),
-          js_code_statement_declare_assign("b", 2),
+          js_code_statement_let_assign("b", 2),
           js_code_statement_assign("b", 3),
           js_code_statement_assign("c", 4),
         ]),
@@ -56,7 +57,7 @@ export function app_dev_screen_assign_to_let() {
         "adding `let`",
         string_delimit_backtick(
           string_combine_multiple([
-            function_transform.name,
+            fn_name("function_transform"),
             " ",
             fn.name,
             " ",
