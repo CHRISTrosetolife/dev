@@ -232,14 +232,6 @@ export function js_dollar(ast) {
         );
         object_replace(node, e);
       }
-      if (remaining === get_prefix) {
-        let e = object_property_get_expression(
-          ast,
-          "object",
-          '"property_name"',
-        );
-        object_replace(node, e);
-      }
       if (remaining === "gl") {
         let e = js_parse_expression(
           js_code_call_args(fn_name("list_get"), [
@@ -387,6 +379,14 @@ export function js_dollar(ast) {
         let this_name = js_declaration_to_name(d);
         let code = js_code_dot(this_name, js_function_property_name());
         let e = js_parse_expression(code);
+        object_replace(node, e);
+      }
+      if (remaining === get_prefix) {
+        let e = object_property_get_expression(
+          ast,
+          "object",
+          '"property_name"',
+        );
         object_replace(node, e);
       }
       if (prefix_use(remaining, get_prefix, prefixes)) {
