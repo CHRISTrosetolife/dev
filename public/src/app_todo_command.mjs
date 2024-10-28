@@ -11,5 +11,4 @@ export async function app_todo_command() {
   await storage_file_download(last);
   let path = storage_file_download_path(last);
   let i = await file_read_json(path);
-  let { items } = i;
 }
