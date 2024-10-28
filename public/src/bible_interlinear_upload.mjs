@@ -44,9 +44,13 @@ export async function bible_interlinear_upload() {
       definition: await bible_interlinear_definition(language, s),
     }));
     await bible_storage_version_upload(
-      path_join([bible_storage_interlinear_book_path(book_name), chapter_name]),
+      bible_storage_interlinear_chapter_definitions_path(book_name, chapter_name),
       "definitions",
       definitions,
     );
   });
 }
+function bible_storage_interlinear_chapter_definitions_path(book_name, chapter_name) {
+    return path_join([bible_storage_interlinear_book_path(book_name), chapter_name]);
+}
+
