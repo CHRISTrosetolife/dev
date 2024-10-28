@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { add_1 } from "./add_1.mjs";
 import { each_index_async } from "./each_index_async.mjs";
 import { string_to } from "./string_to.mjs";
@@ -125,7 +126,7 @@ export async function bible_audio_player_range(book_from, book_to) {
   await each_index_async(denested, async (d, index) => {
     let to_path = file_copy_path(d, to);
     let b = path_parse_base(to_path);
-    number_pad(add_1(index), digits);
+    b = string_combine_multiple([number_pad(add_1(index), digits), b]);
     return;
     await file_copy_closed(d, to_path);
   });
