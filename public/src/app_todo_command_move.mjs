@@ -17,7 +17,7 @@ export async function app_todo_command_move(index_from, index_to) {
   let items_index_from = list_index(items, item_from);
   list_remove_at(items, items_index_from);
   let items_index_to;
-  if (index_to === filtered_size) {
+  if (index_to >= filtered_size) {
     items_index_to = list_size(items);
   } else {
     let item_to = list_get(filtered, index_to);
