@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { folder_read_filter } from "./folder_read_filter.mjs";
 import { bible_audio_player_output_path } from "./bible_audio_player_output_path.mjs";
 import { uuid } from "./uuid.mjs";
@@ -13,6 +14,9 @@ export async function bible_audio_player_generic(
   let from = path_join([path_language, download_folder]);
   let extension = ".mp3";
   let filtered = await folder_read_filter(from, extension, filter);
+  log({
+    filtered,
+  });
   return filtered;
   let to = bible_audio_player_output_path();
   await folder_files_copy_generic(from, extension, to, filter, async (to) => {
