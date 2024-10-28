@@ -1,3 +1,6 @@
+import { log } from "./log.mjs";
+import { bible_interlinear_chapter_each_token } from "./bible_interlinear_chapter_each_token.mjs";
+import { list_adder_unique } from "./list_adder_unique.mjs";
 import { each_async } from "./each_async.mjs";
 import { bible_storage_interlinear_book_path } from "./bible_storage_interlinear_book_path.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -26,5 +29,11 @@ export async function bible_interlinear_upload() {
       object_property_get(chapter, "chapter_name"),
       chapter,
     );
+    let tokens = list_adder_unique((la) => {
+      bible_interlinear_chapter_each_token(chapter, la);
+    });
+    log({
+      tokens,
+    });
   });
 }
