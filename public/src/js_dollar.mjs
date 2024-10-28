@@ -389,7 +389,7 @@ export function js_dollar(ast) {
         object_replace(node, e);
       }
       if (prefix_use(remaining, get_prefix, prefixes)) {
-        remaining = string_prefix_without(remaining, lambda_prefix);
+        remaining = string_prefix_without(remaining, get_prefix);
         let s = string_split_dollar(remaining);
         log({
           s,
