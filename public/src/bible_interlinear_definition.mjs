@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { equal } from "./equal.mjs";
 import { assert } from "./assert.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
@@ -17,7 +16,6 @@ export async function bible_interlinear_definition(language, strong) {
   let definition_text = html_parse_text(definition);
   definition_text = string_trim_whitespace(definition_text);
   assert(equal, [definition_text, "Short Definition:"]);
-  log(definition_text);
   let { next } = definition;
   let next_text = html_parse_text(next);
   return next_text;
