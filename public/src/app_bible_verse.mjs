@@ -97,6 +97,7 @@ export async function app_bible_verse(
         bible_storage_interlinear_chapter_definitions_property(),
       ),
     );
+    html_style_green(definition);
   });
   html_hr(root);
   let n = await html_bible_verse_navigation(
@@ -107,4 +108,6 @@ export async function app_bible_verse(
     chapter,
     verse_number,
     "reading and recording audio for audio Bible",
-    fal
+    false,
+  );
+}
