@@ -1,3 +1,4 @@
+import { bible_interlinear_definition } from "./bible_interlinear_definition.mjs";
 import { list_to_lookup_value_async } from "./list_to_lookup_value_async.mjs";
 import { list_unique } from "./list_unique.mjs";
 import { exit } from "./exit.mjs";
@@ -13,6 +14,7 @@ import { bible_interlinear_each_chapter } from "./bible_interlinear_each_chapter
 import { object_merge } from "./object_merge.mjs";
 import { list_map_property } from "./list_map_property.mjs";
 export async function bible_interlinear_upload() {
+  let language = "greek";
   let books = await bible_interlinear_cache_new();
   let chapters = list_adder((la) => {
     bible_interlinear_each_chapter(books, (chapter, book_name) => {
@@ -37,7 +39,10 @@ export async function bible_interlinear_upload() {
     });
     let strongs = list_map_property(tokens, "strong");
     strongs = list_unique(strongs);
-    await list_to_lookup_value_async(strongs);
+    await list_to_lookup_value_async(
+      strongs,
+      async (s) => await bible_interlinear_definition("", s),
+    );
     exit();
   });
 }
