@@ -16,11 +16,12 @@ export async function bible_interlinear_definition(language, strong) {
   list_find(tophdg, (t) => {
     let t_text = html_parse_text(t);
     t_text = string_trim_whitespace(t_text);
+    return equal(definition_text, "Short Definition:");
   });
   let definition = list_get(tophdg, 4);
   let definition_text = html_parse_text(definition);
   definition_text = string_trim_whitespace(definition_text);
-  assert(equal, [definition_text, "Short Definition:"]);
+  assert();
   let { next } = definition;
   let next_text = html_parse_text(next);
   return next_text;
