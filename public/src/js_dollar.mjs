@@ -1,3 +1,4 @@
+import { object_property_get_expression } from "./object_property_get_expression.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 import { log } from "./log.mjs";
 import { string_split_dollar } from "./string_split_dollar.mjs";
@@ -234,11 +235,10 @@ export function js_dollar(ast) {
       if (remaining === get_prefix) {
         let object_variable_name = "object";
         let property_name_code = '"property_name"';
-        let e = js_parse_expression(
-          js_code_call_args(fn_name("object_property_get"), [
-            js_name_unique(ast, object_variable_name),
-            property_name_code,
-          ]),
+        let e = object_property_get_expression(
+          ast,
+          object_variable_name,
+          property_name_code,
         );
         object_replace(node, e);
       }
