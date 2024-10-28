@@ -1,3 +1,5 @@
+import { string_to } from "./string_to.mjs";
+import { string_size } from "./string_size.mjs";
 import { file_copy_path } from "./file_copy_path.mjs";
 import { list_size } from "./list_size.mjs";
 import { file_copy_closed } from "./file_copy_closed.mjs";
@@ -117,6 +119,7 @@ export async function bible_audio_player_range(book_from, book_to) {
   let to = bible_audio_player_output_path();
   let denested = list_denest(paths);
   let size = list_size(denested);
+  let digits = string_size(string_to(size));
   await each_async(denested, async (d) => {
     let to_path = file_copy_path(d, to);
     let b = path_parse_base(to_path);
