@@ -393,6 +393,11 @@ export function js_dollar(ast) {
         remaining = string_prefix_without(remaining, get_prefix);
         let s = string_split_dollar(remaining);
         let [variable_name, property_name] = s;
+        let e = object_property_get_expression(
+          ast,
+          "object",
+          '"property_name"',
+        );
         log({
           variable_name,
           property_name,
