@@ -233,11 +233,10 @@ export function js_dollar(ast) {
         object_replace(node, e);
       }
       if (remaining === get_prefix) {
-        let object_variable_name = "object";
         let property_name_code = '"property_name"';
         let e = object_property_get_expression(
           ast,
-          object_variable_name,
+          "object",
           property_name_code,
         );
         object_replace(node, e);
