@@ -117,7 +117,7 @@ export async function bible_audio_player_range(book_from, book_to) {
   let denested = list_denest(paths);
   let size = list_size(denested);
   await each_async(denested, async (item) => {
-    await file_copy_closed(from, to_mapped);
+    await file_copy_closed(item, to_mapped);
   });
   list_shuffle(paths);
   await invoke_multiple_async(paths);
