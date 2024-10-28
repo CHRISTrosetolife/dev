@@ -10,6 +10,7 @@ export async function bible_audio_player_generic(
   filter,
 ) {
   let from = path_join([path_language, download_folder]);
+  return from;
   let to = bible_audio_player_output_path();
   let extension = ".mp3";
   await folder_files_copy_generic(from, extension, to, filter, async (to) => {
