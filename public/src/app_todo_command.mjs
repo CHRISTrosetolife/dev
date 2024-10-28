@@ -8,5 +8,5 @@ export async function app_todo_command() {
   let files = await storage_files(index_path);
   let last = list_single(files);
   await storage_file_download(last);
-  storage_file_download_path(last);
+  let path = storage_file_download_path(last);
 }
