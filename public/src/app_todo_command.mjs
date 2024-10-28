@@ -1,3 +1,5 @@
+import { add_1 } from "./add_1.mjs";
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_map_index } from "./list_map_index.mjs";
 import { log_list } from "./log_list.mjs";
 import { app_todo_not_completed } from "./app_todo_not_completed.mjs";
@@ -25,6 +27,8 @@ export async function app_todo_command() {
     app_todo_not_completed(),
   );
   let mapped = list_map_property(filtered, "name");
-  list_map_index();
+  list_map_index(mapped, (item, index) =>
+    string_combine_multiple([add_1(index), " ", item]),
+  );
   log_list(mapped);
 }
