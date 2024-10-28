@@ -1,8 +1,6 @@
-import { log } from "./log.mjs";
 import { bible_interlinear_definition } from "./bible_interlinear_definition.mjs";
 import { list_to_lookup_value_async } from "./list_to_lookup_value_async.mjs";
 import { list_unique } from "./list_unique.mjs";
-import { exit } from "./exit.mjs";
 import { bible_interlinear_chapter_each_token } from "./bible_interlinear_chapter_each_token.mjs";
 import { list_adder_unique } from "./list_adder_unique.mjs";
 import { each_async } from "./each_async.mjs";
@@ -50,9 +48,5 @@ export async function bible_interlinear_upload() {
       "definitions",
       definitions,
     );
-    log({
-      lookup: definitions,
-    });
-    exit();
   });
 }
