@@ -1,3 +1,4 @@
+import { bible_storage_interlinear_chapter_definitions_property } from "./bible_storage_interlinear_chapter_definitions_property.mjs";
 import { bible_storage_interlinear_chapter_definitions_name } from "./bible_storage_interlinear_chapter_definitions_name.mjs";
 import { bible_storage_interlinear_chapter_definitions_path } from "./bible_storage_interlinear_chapter_definitions_path.mjs";
 import { bible_interlinear_definition } from "./bible_interlinear_definition.mjs";
@@ -42,7 +43,8 @@ export async function bible_interlinear_upload() {
     let strongs = list_map_property(tokens, "strong");
     strongs = list_unique(strongs);
     let definitions = await list_to_lookup_value_async(strongs, async (s) => ({
-      ["definition"]: await bible_interlinear_definition(language, s),
+      [bible_storage_interlinear_chapter_definitions_property()]:
+        await bible_interlinear_definition(language, s),
     }));
     await bible_storage_version_upload(
       bible_storage_interlinear_chapter_definitions_path(
