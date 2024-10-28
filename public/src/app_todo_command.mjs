@@ -1,3 +1,4 @@
+import { file_open } from "./file_open.mjs";
 import { list_single } from "./list_single.mjs";
 import { storage_file_download_path } from "./storage_file_download_path.mjs";
 import { storage_file_download } from "./storage_file_download.mjs";
@@ -9,4 +10,5 @@ export async function app_todo_command() {
   let last = list_single(files);
   await storage_file_download(last);
   let path = storage_file_download_path(last);
+  await file_open(path);
 }
