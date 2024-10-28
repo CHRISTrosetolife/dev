@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { list_single } from "./list_single.mjs";
 import { storage_file_download_path } from "./storage_file_download_path.mjs";
 import { storage_file_download } from "./storage_file_download.mjs";
@@ -11,5 +12,5 @@ export async function app_todo_command() {
   await storage_file_download(last);
   let path = storage_file_download_path(last);
   let i = await file_read_json(path);
-  $gi$items;
+  let items = object_property_get(i, "items");
 }
