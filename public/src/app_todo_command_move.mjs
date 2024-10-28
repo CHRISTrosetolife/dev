@@ -17,5 +17,5 @@ export async function app_todo_command_move(index_from, index_to) {
     items_index_to = list_index(items, item_to);
   }
   list_insert(items, items_index_to, item_from);
-  list_remove_at();
+  list_remove_at(items, items_index_from);
 }
