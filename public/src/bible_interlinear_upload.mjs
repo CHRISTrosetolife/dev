@@ -1,3 +1,4 @@
+import { bible_storage_interlinear_chapter_definitions_path } from "./bible_storage_interlinear_chapter_definitions_path.mjs";
 import { bible_interlinear_definition } from "./bible_interlinear_definition.mjs";
 import { list_to_lookup_value_async } from "./list_to_lookup_value_async.mjs";
 import { list_unique } from "./list_unique.mjs";
@@ -12,7 +13,6 @@ import { bible_interlinear_cache_new } from "./bible_interlinear_cache_new.mjs";
 import { bible_interlinear_each_chapter } from "./bible_interlinear_each_chapter.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { list_map_property } from "./list_map_property.mjs";
-import { path_join } from "./path_join.mjs";
 export async function bible_interlinear_upload() {
   let language = "greek";
   let books = await bible_interlinear_cache_new();
@@ -44,13 +44,12 @@ export async function bible_interlinear_upload() {
       definition: await bible_interlinear_definition(language, s),
     }));
     await bible_storage_version_upload(
-      bible_storage_interlinear_chapter_definitions_path(book_name, chapter_name),
+      bible_storage_interlinear_chapter_definitions_path(
+        book_name,
+        chapter_name,
+      ),
       "definitions",
       definitions,
     );
   });
 }
-function bible_storage_interlinear_chapter_definitions_path(book_name, chapter_name) {
-    return path_join([bible_storage_interlinear_book_path(book_name), chapter_name]);
-}
-
