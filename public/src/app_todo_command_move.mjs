@@ -1,5 +1,4 @@
 import { add_1 } from "./add_1.mjs";
-import { log } from "./log.mjs";
 import { app_todo_command_log } from "./app_todo_command_log.mjs";
 import { app_todo_command_items_filter } from "./app_todo_command_items_filter.mjs";
 import { list_remove_at } from "./list_remove_at.mjs";
@@ -14,6 +13,7 @@ export async function app_todo_command_move(index_from, index_to) {
   let filtered_size = list_size(filtered);
   let item_from = list_get(filtered, index_from);
   let items_index_from = list_index(items, item_from);
+  list_remove_at(items, items_index_from);
   let items_index_to;
   if (index_to === filtered_size) {
     items_index_to = list_size(items);
@@ -21,11 +21,7 @@ export async function app_todo_command_move(index_from, index_to) {
     let item_to = list_get(filtered, index_to);
     items_index_to = list_index(items, item_to);
   }
-  log({
-    items_index_to,
-  });
   list_insert(items, items_index_to, item_from);
-  list_remove_at(items, items_index_from);
   filtered = app_todo_command_items_filter(items);
   app_todo_command_log(filtered);
 }
