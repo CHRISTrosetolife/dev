@@ -403,10 +403,12 @@ export function js_dollar(ast) {
             string_delimit(property_name),
           ),
         );
+        let r = js_parse_expression(c);
         log({
           stack,
+          r,
         });
-        object_replace(parent, js_parse_expression(c));
+        object_replace(parent, r);
       }
       let log_prefix_start_is = remaining === log_prefix_start;
       if (log_prefix_start_is || prefix_use(remaining, log_prefix, prefixes)) {
