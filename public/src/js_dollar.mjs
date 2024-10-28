@@ -81,6 +81,7 @@ export function js_dollar(ast) {
         scm_prefix,
         sermon_prefix,
         log_prefix,
+        get_prefix,
       ];
       let remaining = string_prefix_without(name, prefix);
       if (remaining === "aa") {
@@ -383,6 +384,13 @@ export function js_dollar(ast) {
         let this_name = js_declaration_to_name(d);
         let code = js_code_dot(this_name, js_function_property_name());
         let e = js_parse_expression(code);
+        object_replace(node, e);
+      }
+      if (prefix_use(remaining, get_prefix, prefixes)) {
+        remaining = string_prefix_without(remaining, lambda_prefix);
+        let e = js_parse_expression(
+          js_code_arrow_block_args(string_split(remaining, "$"), ""),
+        );
         object_replace(node, e);
       }
       let log_prefix_start_is = remaining === log_prefix_start;
