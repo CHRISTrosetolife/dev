@@ -1,3 +1,4 @@
+import { object_property_get_code } from "./object_property_get_code.mjs";
 import { object_property_get_expression } from "./object_property_get_expression.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 import { log } from "./log.mjs";
@@ -403,7 +404,15 @@ export function js_dollar(ast) {
           property_name,
           parent,
         });
-        log(js_code_statement_let_assign(variable_name, "b"));
+        log(
+          js_code_statement_let_assign(
+            variable_name,
+            object_property_get_code(
+              object_variable_name_unique,
+              property_name_code,
+            ),
+          ),
+        );
         if (false) {
           object_replace(node, e);
         }
