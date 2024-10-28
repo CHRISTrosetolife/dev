@@ -15,6 +15,7 @@ export async function bible_interlinear_definition(language, strong) {
   let tophdg = html_parse_visit_class_list(leftbox, "tophdg");
   list_find(tophdg, (t) => {
     let t_text = html_parse_text(t);
+    t_text = string_trim_whitespace(t_text);
   });
   let definition = list_get(tophdg, 4);
   let definition_text = html_parse_text(definition);
