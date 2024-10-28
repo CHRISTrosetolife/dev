@@ -87,6 +87,7 @@ export async function app_bible_verse(
       d,
       object_property_get(token, "translation"),
     );
+    let strong = object_property_get(token, "strong");
   });
   html_hr(root);
   let n = await html_bible_verse_navigation(
