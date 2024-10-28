@@ -2,7 +2,6 @@ import { string_delimit } from "./string_delimit.mjs";
 import { object_property_get_code } from "./object_property_get_code.mjs";
 import { object_property_get_expression } from "./object_property_get_expression.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
-import { log } from "./log.mjs";
 import { string_split_dollar } from "./string_split_dollar.mjs";
 import { js_dollar_expand_await } from "./js_dollar_expand_await.mjs";
 import { object_copy_replace } from "./object_copy_replace.mjs";
@@ -396,23 +395,14 @@ export function js_dollar(ast) {
         let s = string_split_dollar(remaining);
         let [variable_name, property_name] = s;
         let e = object_property_get_expression(ast, "object");
-        log({
-          variable_name,
-          property_name,
-          parent,
-        });
-        log(
-          js_code_statement_let_assign(
-            js_name_unique(ast, property_name),
-            object_property_get_code(
-              variable_name,
-              string_delimit(property_name),
-            ),
+        let c = js_code_statement_let_assign(
+          js_name_unique(ast, property_name),
+          object_property_get_code(
+            variable_name,
+            string_delimit(property_name),
           ),
         );
-        if (false) {
-          object_replace(node, e);
-        }
+        object_replace(parent, js_parse_expression(c));
       }
       let log_prefix_start_is = remaining === log_prefix_start;
       if (log_prefix_start_is || prefix_use(remaining, log_prefix, prefixes)) {
