@@ -1,3 +1,4 @@
+import { bible_storage_interlinear_chapter_definitions_name } from "./bible_storage_interlinear_chapter_definitions_name.mjs";
 import { bible_storage_interlinear_chapter_definitions_path } from "./bible_storage_interlinear_chapter_definitions_path.mjs";
 import { bible_interlinear_definition } from "./bible_interlinear_definition.mjs";
 import { list_to_lookup_value_async } from "./list_to_lookup_value_async.mjs";
@@ -48,7 +49,7 @@ export async function bible_interlinear_upload() {
         book_name,
         chapter_name,
       ),
-      "definitions",
+      bible_storage_interlinear_chapter_definitions_name(),
       definitions,
     );
   });
