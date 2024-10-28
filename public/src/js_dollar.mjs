@@ -1,3 +1,4 @@
+import { string_split_dollar } from "./string_split_dollar.mjs";
 import { js_dollar_expand_await } from "./js_dollar_expand_await.mjs";
 import { object_copy_replace } from "./object_copy_replace.mjs";
 import { js_visit_identifiers_named } from "./js_visit_identifiers_named.mjs";
@@ -389,7 +390,7 @@ export function js_dollar(ast) {
       if (prefix_use(remaining, get_prefix, prefixes)) {
         remaining = string_prefix_without(remaining, lambda_prefix);
         let e = js_parse_expression(
-          js_code_arrow_block_args(string_split(remaining, "$"), ""),
+          js_code_arrow_block_args(string_split_dollar(remaining), ""),
         );
         object_replace(node, e);
       }
