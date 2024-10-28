@@ -1,3 +1,4 @@
+import { list_size } from "./list_size.mjs";
 import { file_copy_closed } from "./file_copy_closed.mjs";
 import { each_async } from "./each_async.mjs";
 import { bible_audio_player_output_path } from "./bible_audio_player_output_path.mjs";
@@ -113,7 +114,9 @@ export async function bible_audio_player_range(book_from, book_to) {
     paths,
   );
   let to = bible_audio_player_output_path();
-  await each_async(list_denest(paths), async (item) => {
+  let denested = list_denest(paths);
+  let size = list_size(denested);
+  await each_async(denested, async (item) => {
     await file_copy_closed(from, to_mapped);
   });
   list_shuffle(paths);
