@@ -403,7 +403,7 @@ export function js_dollar(ast) {
           ),
         );
         log({
-          c,
+          stack,
         });
         object_replace(parent, js_parse_expression(c));
       }
