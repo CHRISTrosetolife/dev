@@ -1,3 +1,4 @@
+import { each_async } from "./each_async.mjs";
 import { bible_audio_player_output_path } from "./bible_audio_player_output_path.mjs";
 import { list_denest } from "./list_denest.mjs";
 import { bible_audio_player_drive_letter } from "./bible_audio_player_drive_letter.mjs";
@@ -48,7 +49,7 @@ export async function bible_audio_player_range(book_from, book_to) {
   });
   let numbers_nt_s = list_map_number_pad_2(numbers_nt);
   let download_folders_fcbh_underscore = ["ENGESVO2DA", "ENGESVN2DA"];
-  let fns = [];
+  let paths = [];
   await bible_audio_player_english_folders_numbers(
     download_folders_fcbh_underscore,
     numbers_fcbh,
@@ -59,7 +60,7 @@ export async function bible_audio_player_range(book_from, book_to) {
         path_parse_base_starts_with(file_path, n)
       );
     },
-    fns,
+    paths,
   );
   let download_folders_fcbh = [
     "ENGNLTO2DA",
@@ -85,14 +86,14 @@ export async function bible_audio_player_range(book_from, book_to) {
     download_folders_fcbh,
     numbers_fcbh,
     path_parse_base_starts_with,
-    fns,
+    paths,
   );
   let download_folders_regular_nt = ["all_files_english_contemporary", "rsv"];
   await bible_audio_player_english_folders_numbers(
     download_folders_regular_nt,
     numbers_nt_s,
     path_parse_base_starts_with,
-    fns,
+    paths,
   );
   let download_folders_regular = [
     "WEBD_OT",
@@ -108,12 +109,13 @@ export async function bible_audio_player_range(book_from, book_to) {
     download_folders_regular,
     numbers_s,
     path_parse_base_starts_with,
-    fns,
+    paths,
   );
   let to = bible_audio_player_output_path();
-  return list_denest(fns);
-  list_shuffle(fns);
-  await invoke_multiple_async(fns);
+  return list_denest(paths);
+  await each_async(list, async (item) => {});
+  list_shuffle(paths);
+  await invoke_multiple_async(paths);
   let download_folders_regular_computer_voice = [
     "NHEB_NT_audio",
     "NHEB_OT_audio",
