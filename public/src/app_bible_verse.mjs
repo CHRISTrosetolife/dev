@@ -1,3 +1,5 @@
+import { bible_storage_interlinear_chapter_definitions_name } from "./bible_storage_interlinear_chapter_definitions_name.mjs";
+import { bible_storage_interlinear_chapter_definitions_path } from "./bible_storage_interlinear_chapter_definitions_path.mjs";
 import { app_save_change_bible } from "./app_save_change_bible.mjs";
 import { html_clear_scroll_top_context } from "./html_clear_scroll_top_context.mjs";
 import { app_bible } from "./app_bible.mjs";
@@ -43,11 +45,8 @@ export async function app_bible_verse(
     chapter,
   );
   let chapter_definitions = await firebase_download_bible(
-    bible_storage_interlinear_chapter_definitions_path(
-        book_name,
-        chapter_name,
-      ),
-      bible_storage_interlinear_chapter_definitions_name(),
+    bible_storage_interlinear_chapter_definitions_path(book_name, chapter_name),
+    bible_storage_interlinear_chapter_definitions_name(),
   );
   let { verses: verses_interlinear } = chapter_interlinear;
   let verse = list_find_property(verses, "verse_number", verse_number);
