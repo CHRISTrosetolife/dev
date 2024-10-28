@@ -9,23 +9,17 @@ export async function bible_audio_player_generic(
   download_folder,
   filter,
 ) {
-  let joined = path_join([path_language, download_folder]);
-  let output = bible_audio_player_output_path();
+  let from = path_join([path_language, download_folder]);
+  let to = bible_audio_player_output_path();
   let extension = ".mp3";
-  await folder_files_copy_generic(
-    joined,
-    extension,
-    output,
-    filter,
-    async (to) => {
-      let without = string_suffix_without(to, extension);
-      let with_id = string_combine_multiple([
-        without,
-        "_",
-        await uuid(),
-        extension,
-      ]);
-      return with_id;
-    },
-  );
+  await folder_files_copy_generic(from, extension, to, filter, async (to) => {
+    let without = string_suffix_without(to, extension);
+    let with_id = string_combine_multiple([
+      without,
+      "_",
+      await uuid(),
+      extension,
+    ]);
+    return with_id;
+  });
 }
