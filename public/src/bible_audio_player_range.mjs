@@ -1,9 +1,10 @@
+import { add_1 } from "./add_1.mjs";
+import { each_index_async } from "./each_index_async.mjs";
 import { string_to } from "./string_to.mjs";
 import { string_size } from "./string_size.mjs";
 import { file_copy_path } from "./file_copy_path.mjs";
 import { list_size } from "./list_size.mjs";
 import { file_copy_closed } from "./file_copy_closed.mjs";
-import { each_async } from "./each_async.mjs";
 import { bible_audio_player_output_path } from "./bible_audio_player_output_path.mjs";
 import { list_denest } from "./list_denest.mjs";
 import { bible_audio_player_drive_letter } from "./bible_audio_player_drive_letter.mjs";
@@ -25,6 +26,7 @@ import { list_map } from "./list_map.mjs";
 import { range_from } from "./range_from.mjs";
 import { less_than_equal } from "./less_than_equal.mjs";
 import { assert } from "./assert.mjs";
+import { number_pad } from "./number_pad.mjs";
 export async function bible_audio_player_range(book_from, book_to) {
   let disk_format_eject = true;
   await bible_audio_player_unzip();
@@ -120,9 +122,10 @@ export async function bible_audio_player_range(book_from, book_to) {
   let denested = list_denest(paths);
   let size = list_size(denested);
   let digits = string_size(string_to(size));
-  await each_async(denested, async (d) => {
+  await each_index_async(denested, async (d, index) => {
     let to_path = file_copy_path(d, to);
     let b = path_parse_base(to_path);
+    number_pad(add_1(index), digits);
     return;
     await file_copy_closed(d, to_path);
   });
