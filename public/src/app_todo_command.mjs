@@ -1,3 +1,4 @@
+import { list_map_index } from "./list_map_index.mjs";
 import { log_list } from "./log_list.mjs";
 import { app_todo_not_completed } from "./app_todo_not_completed.mjs";
 import { app_todo_completed_property } from "./app_todo_completed_property.mjs";
@@ -24,5 +25,6 @@ export async function app_todo_command() {
     app_todo_not_completed(),
   );
   let mapped = list_map_property(filtered, "name");
+  list_map_index();
   log_list(mapped);
 }
