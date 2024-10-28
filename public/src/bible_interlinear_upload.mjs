@@ -1,4 +1,4 @@
-import { list_to_lookup } from "./list_to_lookup.mjs";
+import { list_to_lookup_value } from "./list_to_lookup_value.mjs";
 import { list_unique } from "./list_unique.mjs";
 import { exit } from "./exit.mjs";
 import { bible_interlinear_chapter_each_token } from "./bible_interlinear_chapter_each_token.mjs";
@@ -37,7 +37,7 @@ export async function bible_interlinear_upload() {
     });
     let strongs = list_map_property(tokens, "strong");
     strongs = list_unique(strongs);
-    list_to_lookup(strongs);
+    list_to_lookup_value(strongs);
     exit();
   });
 }
