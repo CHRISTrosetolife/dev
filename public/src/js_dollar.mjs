@@ -403,7 +403,7 @@ export function js_dollar(ast) {
         });
         log(
           js_code_statement_let_assign(
-            variable_name,
+            js_name_unique(ast, property_name),
             object_property_get_code(
               variable_name,
               string_delimit(property_name),
