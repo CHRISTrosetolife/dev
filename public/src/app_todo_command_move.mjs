@@ -20,4 +20,5 @@ export async function app_todo_command_move(index_from, index_to) {
   list_insert(items, items_index_to, item_from);
   list_remove_at(items, items_index_from);
   filtered = app_todo_command_items_filter(items);
+  app_todo_command_log(filtered);
 }
