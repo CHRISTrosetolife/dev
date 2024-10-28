@@ -407,10 +407,7 @@ export function js_dollar(ast) {
         log(
           js_code_statement_let_assign(
             variable_name,
-            object_property_get_code(
-              object_variable_name_unique,
-              property_name_code,
-            ),
+            object_property_get_code(variable_name, property_name),
           ),
         );
         if (false) {
