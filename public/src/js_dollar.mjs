@@ -398,7 +398,7 @@ export function js_dollar(ast) {
         let e = object_property_get_expression(
           ast,
           "object",
-          '"property_name"',
+          string_delimit("property_name"),
         );
         log({
           variable_name,
