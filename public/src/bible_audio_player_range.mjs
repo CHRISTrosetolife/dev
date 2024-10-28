@@ -47,7 +47,7 @@ export async function bible_audio_player_range(book_from, book_to) {
   let numbers_nt_s = list_map_number_pad_2(numbers_nt);
   let download_folders_fcbh_underscore = ["ENGESVO2DA", "ENGESVN2DA"];
   let fns = [];
-  bible_audio_player_english_folders_numbers(
+  await bible_audio_player_english_folders_numbers(
     download_folders_fcbh_underscore,
     numbers_fcbh,
     (file_path, n) => {
@@ -79,14 +79,14 @@ export async function bible_audio_player_range(book_from, book_to) {
     "ENGNLVN1DA",
     "ENGNRSN1DA",
   ];
-  bible_audio_player_english_folders_numbers(
+  await bible_audio_player_english_folders_numbers(
     download_folders_fcbh,
     numbers_fcbh,
     path_parse_base_starts_with,
     fns,
   );
   let download_folders_regular_nt = ["all_files_english_contemporary", "rsv"];
-  bible_audio_player_english_folders_numbers(
+  await bible_audio_player_english_folders_numbers(
     download_folders_regular_nt,
     numbers_nt_s,
     path_parse_base_starts_with,
@@ -102,7 +102,7 @@ export async function bible_audio_player_range(book_from, book_to) {
     "00_Bible in Basic English Old Testament Audio MP3 Files",
     "00_Bible in Basic English New Testament Audio MP3 Files",
   ];
-  bible_audio_player_english_folders_numbers(
+  await bible_audio_player_english_folders_numbers(
     download_folders_regular,
     numbers_s,
     path_parse_base_starts_with,
