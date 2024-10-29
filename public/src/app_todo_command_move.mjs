@@ -10,6 +10,8 @@ import { list_get } from "./list_get.mjs";
 import { app_todo_command_items } from "./app_todo_command_items.mjs";
 import { list_size } from "./list_size.mjs";
 export async function app_todo_command_move(index_from, index_to) {
+  if (false) {
+  }
   index_to = integer_parse(index_to);
   index_to = add_1(index_to);
   let { filtered, items, index, index_path } = await app_todo_command_items();
