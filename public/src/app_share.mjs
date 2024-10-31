@@ -1,4 +1,4 @@
-import { string_split } from "./string_split.mjs";
+import { string_split_plus } from "./string_split_plus.mjs";
 import { list_add } from "./list_add.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
@@ -32,7 +32,7 @@ export async function app_share() {
     lookup,
     app_share_bible_folders(),
   );
-  let bible_folders = string_split(bible_folders_text, "+");
+  let bible_folders = string_split_plus(bible_folders_text);
   let texts = await list_map_async(bible_folders, async (bible_folder) => {
     let text = await firebase_download_bible_verse(
       bible_folder,
