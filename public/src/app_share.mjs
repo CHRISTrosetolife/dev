@@ -1,3 +1,4 @@
+import { list_map_async } from "./list_map_async.mjs";
 import { html_style_link } from "./html_style_link.mjs";
 import { html_hash_unparse } from "./html_hash_unparse.mjs";
 import { bible_chapter_name_parse } from "./bible_chapter_name_parse.mjs";
@@ -12,7 +13,6 @@ import { html_bible_verse_navigation_next } from "./html_bible_verse_navigation_
 import { html_button_copy } from "./html_button_copy.mjs";
 import { string_split_comma } from "./string_split_comma.mjs";
 import { firebase_initialize_axios } from "./firebase_initialize_axios.mjs";
-import { each_async } from "./each_async.mjs";
 import { firebase_download_bible_verse } from "./firebase_download_bible_verse.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_hash_lookup } from "./html_hash_lookup.mjs";
@@ -30,13 +30,13 @@ export async function app_share() {
     app_share_bible_folders(),
   );
   let bible_folders = string_split_comma(bible_folders_text);
-  await each_async(bible_folders, async (bible_folder) => {
+  await list_map_async(bible_folders, async (bible_folder) => {
     let text = await firebase_download_bible_verse(
       bible_folder,
       chapter,
       verse_number,
     );
-    html_p_text(root, text);
+    return text;
   });
   let p = bible_chapter_name_parse(chapter);
   let book_code = object_property_get(p, "book_code");
