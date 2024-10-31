@@ -1,3 +1,4 @@
+import { app_gs_bible_chapter_name } from "./app_gs_bible_chapter_name.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { app_share_bible_folders } from "./app_share_bible_folders.mjs";
 import { app_share_verse } from "./app_share_verse.mjs";
@@ -45,11 +46,15 @@ export async function app_share() {
         on_chapter_next,
       );
     });
-    let book_code2 = object_property_get(next, "book_code");
+    let book_code_next = object_property_get(next, "book_code");
     let chapter_next = object_property_get(next, "chapter");
     let verse_number_next = object_property_get(next, "verse_number_next");
     let lookup_next = {};
-    object_property_set(lookup, app_share_chapter());
+    object_property_set(
+      lookup,
+      app_share_chapter(),
+      app_gs_bible_chapter_name(book_code_next, chapter_next),
+    );
     object_property_set(lookup, app_share_verse());
     object_property_set(lookup, app_share_bible_folders());
     let location = object_property_get(window, "location");
