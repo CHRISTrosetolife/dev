@@ -76,7 +76,7 @@ export async function app_share() {
     let origin = object_property_get(location, "origin");
     let without_hash = string_combine_multiple([origin, pathname]);
     let properties = object_properties(lookup_next);
-    list_map(properties, () => {});
+    list_map(properties, (p) => string_combine_multiple([p, "="]));
     html_button_copy(result, text);
   });
 }
