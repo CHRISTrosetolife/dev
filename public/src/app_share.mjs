@@ -1,3 +1,4 @@
+import { html_button_copy } from "./html_button_copy.mjs";
 import { string_split_comma } from "./string_split_comma.mjs";
 import { firebase_initialize_axios } from "./firebase_initialize_axios.mjs";
 import { each_async } from "./each_async.mjs";
@@ -19,5 +20,6 @@ export async function app_share() {
       verse,
     );
     html_p_text(body, text);
+    html_button_copy(result, text);
   });
 }
