@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { list_map_async } from "./list_map_async.mjs";
 import { html_style_link } from "./html_style_link.mjs";
@@ -39,6 +40,7 @@ export async function app_share() {
     );
     return text;
   });
+  each(list, (item) => {});
   let p = bible_chapter_name_parse(chapter);
   let book_code = object_property_get(p, "book_code");
   let chapter_code = object_property_get(p, "chapter_code");
