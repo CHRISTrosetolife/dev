@@ -1,3 +1,4 @@
+import { list_add } from "./list_add.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
@@ -85,5 +86,6 @@ export async function app_share() {
   html_span_text(root, next_text);
   let next_url_component = html_span_text(root, url_next);
   html_style_link(url_next)(next_url_component);
+  list_add(texts, string_combine_multiple([next_text, url_next]));
   html_button_copy(root, list_join_newline(texts));
 }
