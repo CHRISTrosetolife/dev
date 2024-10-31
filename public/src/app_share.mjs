@@ -21,7 +21,7 @@ export async function app_share() {
       verse,
     );
     html_p_text(body, text);
-    new Promise(async (resolve) => {
+    let next = await new Promise(async (resolve) => {
       await html_bible_verse_navigation_next(
         app_fn,
         book_code,
