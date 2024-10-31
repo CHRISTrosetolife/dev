@@ -6,8 +6,8 @@ export async function firebase_download_bible_verse_search(
 ) {
   let bible_folder = app_search_bible_folder();
   return await firebase_download_bible_verse(
+    bible_folder,
     chapter_code,
     verse_number,
-    bible_folder,
   );
 }
