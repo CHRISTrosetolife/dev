@@ -1,3 +1,4 @@
+import { noop } from "./noop.mjs";
 import { app_gs_bible_chapter_name } from "./app_gs_bible_chapter_name.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { app_share_bible_folders } from "./app_share_bible_folders.mjs";
@@ -43,7 +44,7 @@ export async function app_share() {
             verse_number_next,
           }),
         context,
-        on_chapter_next,
+        noop,
       );
     });
     let book_code_next = object_property_get(next, "book_code");
