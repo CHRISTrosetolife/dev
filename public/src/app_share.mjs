@@ -22,8 +22,8 @@ export async function app_share() {
     html_p_text(body, text);
     await html_bible_verse_navigation_next(
       app_fn,
-      verse_number,
       book_code,
+      verse_number,
       chapter,
       verse_refresh,
       context,
