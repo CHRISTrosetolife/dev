@@ -63,36 +63,36 @@ export async function html_bible_verse_navigation(
       );
       await verse_refresh(context, book_code, chapter, verse_number_next);
     }
-  }
-  async function chapter_next_go() {
-    let chapter_text = bible_book_chapter_text(book_code, chapter);
-    clipboard_copy_web(
-      string_combine_multiple([chapter_text, ": Finished ", copy_message]),
-    );
-    let { books } = context;
-    let book = list_find_property(books, "book_code", book_code);
-    let { chapters } = book;
-    let chapter_next, book_next_code, book_next_book;
-    if (list_last_is(chapters, chapter)) {
-      if (list_last_is(books, book)) {
-        book_next_book = list_first(books);
+    async function chapter_next_go() {
+      let chapter_text = bible_book_chapter_text(book_code, chapter);
+      clipboard_copy_web(
+        string_combine_multiple([chapter_text, ": Finished ", copy_message]),
+      );
+      let { books } = context;
+      let book = list_find_property(books, "book_code", book_code);
+      let { chapters } = book;
+      let chapter_next, book_next_code, book_next_book;
+      if (list_last_is(chapters, chapter)) {
+        if (list_last_is(books, book)) {
+          book_next_book = list_first(books);
+        } else {
+          book_next_book = list_next(books, book);
+        }
+        book_next_code = object_property_get(book_next_book, "book_code");
+        let { chapters } = book_next_book;
+        chapter_next = list_first(chapters);
       } else {
-        book_next_book = list_next(books, book);
+        book_next_code = book_code;
+        chapter_next = list_next(chapters, chapter);
       }
-      book_next_code = object_property_get(book_next_book, "book_code");
-      let { chapters } = book_next_book;
-      chapter_next = list_first(chapters);
-    } else {
-      book_next_code = book_code;
-      chapter_next = list_next(chapters, chapter);
+      let verses_next = await app_verses_generic(app_fn, book_code, chapter);
+      await verse_refresh(
+        context,
+        book_next_code,
+        chapter_next,
+        object_property_get(list_first(verses_next), "verse_number"),
+      );
     }
-    let verses_next = await app_verses_generic(app_fn, book_code, chapter);
-    await verse_refresh(
-      context,
-      book_next_code,
-      chapter_next,
-      object_property_get(list_first(verses_next), "verse_number"),
-    );
   }
   return {
     previous,
