@@ -1,3 +1,4 @@
+import { firebase_download_bible_verse } from "./firebase_download_bible_verse.mjs";
 import { firebase_initialize_axios } from "./firebase_initialize_axios.mjs";
 import { firebase_download_bible } from "./firebase_download_bible.mjs";
 import { invoke_multiple } from "./invoke_multiple.mjs";
@@ -6,14 +7,10 @@ import { html_remove } from "./html_remove.mjs";
 import { clipboard_copy_web } from "./clipboard_copy_web.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_div } from "./html_div.mjs";
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { bible_reference_code } from "./bible_reference_code.mjs";
-import { app_search_bible_folder } from "./app_search_bible_folder.mjs";
-import { bible_verses_upload_path } from "./bible_verses_upload_path.mjs";
 import { each } from "./each.mjs";
 import { html_input_width_full_focus } from "./html_input_width_full_focus.mjs";
 import { app_search_folder } from "./app_search_folder.mjs";
-import { firebase_download } from "./firebase_download.mjs";
 import { bible_search_results } from "./bible_search_results.mjs";
 import { tautology } from "./tautology.mjs";
 import { html_p_text_centered } from "./html_p_text_centered.mjs";
@@ -21,7 +18,6 @@ import { html_value_get } from "./html_value_get.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
-import { list_join_space } from "./list_join_space.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { list_sort_string } from "./list_sort_string.mjs";
 import { html_hr } from "./html_hr.mjs";
@@ -55,17 +51,10 @@ export async function app_search() {
       let result = html_div(root);
       let on_click = async () => {
         html_remove(b);
-        let storage_path = bible_verses_upload_path(
-          app_search_bible_folder(),
+        let text = await firebase_download_bible_verse(
           chapter_code,
           verse_number,
         );
-        let { tokens } = await firebase_download(storage_path);
-        let text = string_combine_multiple([
-          reference,
-          " ",
-          list_join_space(tokens),
-        ]);
         html_button_width_full_text_click(result, "📋 copy", () => {
           clipboard_copy_web(text);
         });
