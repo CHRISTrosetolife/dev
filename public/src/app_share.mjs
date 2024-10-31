@@ -1,3 +1,4 @@
+import { string_split_comma } from "./string_split_comma.mjs";
 import { firebase_initialize_axios } from "./firebase_initialize_axios.mjs";
 import { each_async } from "./each_async.mjs";
 import { firebase_download_bible_verse } from "./firebase_download_bible_verse.mjs";
@@ -9,7 +10,8 @@ export async function app_share() {
   let lookup = html_hash_lookup();
   let chapter = object_property_get(lookup, "c");
   let verse = object_property_get(lookup, "v");
-  let bible_folders = object_property_get(lookup, "f");
+  let bible_folders_text = object_property_get(lookup, "f");
+  let bible_folders = string_split_comma();
   await each_async(bible_folders, async (bible_folder) => {
     let text = await firebase_download_bible_verse(
       bible_folder,
