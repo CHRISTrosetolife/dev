@@ -1,3 +1,5 @@
+import { list_add_beginning } from "./list_add_beginning.mjs";
+import { bible_reference_code } from "./bible_reference_code.mjs";
 import { string_split_plus } from "./string_split_plus.mjs";
 import { list_add } from "./list_add.mjs";
 import { html_span_text } from "./html_span_text.mjs";
@@ -41,6 +43,8 @@ export async function app_share() {
     );
     return text;
   });
+  let reference = bible_reference_code(chapter_code, verse_number);
+  list_add_beginning(texts, reference);
   html_p_text_multiple(root, texts);
   let p = bible_chapter_name_parse(chapter);
   let book_code = object_property_get(p, "book_code");
