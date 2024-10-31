@@ -86,6 +86,7 @@ export async function app_share() {
   html_span_text(root, next_text);
   let next_url_component = html_span_text(root, url_next);
   html_style_link(url_next)(next_url_component);
+  list_add(texts, "");
   list_add(texts, string_combine_multiple([next_text, url_next]));
   html_button_copy(root, list_join_newline(texts));
 }
