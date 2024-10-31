@@ -37,7 +37,7 @@ export async function app_share() {
         on_chapter_next,
       );
     });
-    let verse_number_next2 = object_property_get(next, "verse_number_next");
+    let verse_number_next = object_property_get(next, "verse_number_next");
     html_button_copy(result, text);
   });
 }
