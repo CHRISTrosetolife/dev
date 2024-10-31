@@ -38,6 +38,7 @@ export async function app_share() {
       );
     });
     let verse_number_next = object_property_get(next, "verse_number_next");
+    let location = object_property_get(window, "location");
     html_button_copy(result, text);
   });
 }
