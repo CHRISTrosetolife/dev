@@ -36,13 +36,13 @@ export async function app_share() {
     );
     html_p_text(root, text);
     let p = bible_chapter_name_parse(chapter);
-    let book_code2 = object_property_get(p, "book_code");
+    let book_code = object_property_get(p, "book_code");
     let chapter_code = object_property_get(p, "chapter_code");
     let next = await new Promise(async (resolve) => {
       await html_bible_verse_navigation_next(
         app_share,
         book_code,
-        chapter,
+        chapter_code,
         verse_number,
         (book_code, chapter, verse_number_next) =>
           resolve({
@@ -55,7 +55,7 @@ export async function app_share() {
       );
     });
     let book_code_next = object_property_get(next, "book_code");
-    let chapter_next = object_property_get(next, "chapter");
+    let chapter_code_next = object_property_get(next, "chapter");
     let verse_number_next = object_property_get(next, "verse_number_next");
     let lookup_next = {};
     object_property_set(
@@ -66,7 +66,7 @@ export async function app_share() {
     object_property_set(
       lookup_next,
       app_share_chapter(),
-      app_gs_bible_chapter_name(book_code_next, chapter_next),
+      app_gs_bible_chapter_name(book_code_next, chapter_code_next),
     );
     object_property_set(lookup_next, app_share_verse(), verse_number_next);
     let location = object_property_get(window, "location");
