@@ -389,8 +389,7 @@ export function js_dollar(ast) {
           string_delimit("property_name"),
         );
         object_replace(node, e);
-      }
-      if (prefix_use(remaining, get_prefix, prefixes)) {
+      }else if (prefix_use(remaining, get_prefix, prefixes)) {
         let { stack } = v;
         remaining = string_prefix_without(remaining, get_prefix);
         let s = string_split_dollar(remaining);
@@ -405,6 +404,7 @@ export function js_dollar(ast) {
         let r = js_parse_first(c);
         object_replace(parent, r);
       }
+      
       let log_prefix_start_is = remaining === log_prefix_start;
       if (log_prefix_start_is || prefix_use(remaining, log_prefix, prefixes)) {
         let inside;
