@@ -1,3 +1,4 @@
+import { html_style_link } from "./html_style_link.mjs";
 import { html_hash_unparse } from "./html_hash_unparse.mjs";
 import { bible_chapter_name_parse } from "./bible_chapter_name_parse.mjs";
 import { noop } from "./noop.mjs";
@@ -76,6 +77,7 @@ export async function app_share() {
     let without_hash = string_combine_multiple([origin, pathname]);
     let joined = html_hash_unparse(lookup_next);
     let url_next = string_combine_multiple([without_hash, "#", joined]);
+    html_style_link(url_next);
     html_button_copy(result, text);
   });
 }
