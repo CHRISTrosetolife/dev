@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_copy } from "./html_button_copy.mjs";
 import { firebase_download_bible_verse_search } from "./firebase_download_bible_verse_search.mjs";
 import { firebase_initialize_axios } from "./firebase_initialize_axios.mjs";
@@ -51,10 +52,11 @@ export async function app_search() {
       let result = html_div(root);
       let on_click = async () => {
         html_remove(b);
-        let text = await firebase_download_bible_verse_search(
+        let joined = await firebase_download_bible_verse_search(
           chapter_code,
           verse_number,
         );
+        let text = string_combine_multiple([reference, " ", joined]);
         html_button_copy(result, text);
         html_p_text_centered(result, text);
       };
