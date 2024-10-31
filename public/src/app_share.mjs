@@ -77,11 +77,7 @@ export async function app_share() {
     let without_hash = string_combine_multiple([origin, pathname]);
     let properties = object_properties(lookup_next);
     list_map(properties, (p) =>
-      string_combine_multiple([
-        p,
-        "=",
-        object_property_get(object, "property_name"),
-      ]),
+      string_combine_multiple([p, "=", object_property_get(lookup_next, p)]),
     );
     html_button_copy(result, text);
   });
