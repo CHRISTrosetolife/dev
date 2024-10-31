@@ -65,10 +65,7 @@ export async function html_bible_verse_navigation(
       await verse_refresh(context, book_code, chapter, verse_number_next);
     }
     async function chapter_next_go() {
-      let chapter_text = bible_book_chapter_text(book_code, chapter);
-      clipboard_copy_web(
-        string_combine_multiple([chapter_text, ": Finished ", copy_message]),
-      );
+      on_chapter_next();
       let { books } = context;
       let book = list_find_property(books, "book_code", book_code);
       let { chapters } = book;
@@ -100,4 +97,10 @@ export async function html_bible_verse_navigation(
     next,
     verse_next,
   };
+  function on_chapter_next() {
+    let chapter_text = bible_book_chapter_text(book_code, chapter);
+    clipboard_copy_web(
+      string_combine_multiple([chapter_text, ": Finished ", copy_message]),
+    );
+  }
 }
