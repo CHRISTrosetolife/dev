@@ -1,3 +1,4 @@
+import { html_bible_verse_navigation_next } from "./html_bible_verse_navigation_next.mjs";
 import { html_button_copy } from "./html_button_copy.mjs";
 import { string_split_comma } from "./string_split_comma.mjs";
 import { firebase_initialize_axios } from "./firebase_initialize_axios.mjs";
@@ -20,15 +21,22 @@ export async function app_share() {
       verse,
     );
     html_p_text(body, text);
-    await html_bible_verse_navigation_next(
-      app_fn,
-      book_code,
-      chapter,
-      verse_number,
-      on_verse_next,
-      context,
-      on_chapter_next,
-    );
+    new Promise(async (resolve) => {
+      await html_bible_verse_navigation_next(
+        app_fn,
+        book_code,
+        chapter,
+        verse_number,
+        (book_code, chapter, verse_number_next) =>
+          resolve({
+            book_code,
+            chapter,
+            verse_number_next,
+          }),
+        context,
+        on_chapter_next,
+      );
+    });
     html_button_copy(result, text);
   });
 }
