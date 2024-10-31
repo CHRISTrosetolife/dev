@@ -4,7 +4,7 @@ import { firebase_download } from "./firebase_download.mjs";
 import { app_search_bible_folder } from "./app_search_bible_folder.mjs";
 import { bible_verses_upload_path } from "./bible_verses_upload_path.mjs";
 import { bible_reference_code } from "./bible_reference_code.mjs";
-export async function firebase_download_bible_verse(
+export async function firebase_download_bible_verse_search(
   chapter_code,
   verse_number,
 ) {

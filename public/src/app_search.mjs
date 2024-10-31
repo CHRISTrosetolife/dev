@@ -1,4 +1,4 @@
-import { firebase_download_bible_verse } from "./firebase_download_bible_verse.mjs";
+import { firebase_download_bible_verse_search } from "./firebase_download_bible_verse_search.mjs";
 import { firebase_initialize_axios } from "./firebase_initialize_axios.mjs";
 import { firebase_download_bible } from "./firebase_download_bible.mjs";
 import { invoke_multiple } from "./invoke_multiple.mjs";
@@ -51,7 +51,7 @@ export async function app_search() {
       let result = html_div(root);
       let on_click = async () => {
         html_remove(b);
-        let text = await firebase_download_bible_verse(
+        let text = await firebase_download_bible_verse_search(
           chapter_code,
           verse_number,
         );
