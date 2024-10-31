@@ -11,8 +11,8 @@ import { html_p_text } from "./html_p_text.mjs";
 export async function app_share() {
   let body = await firebase_initialize_axios();
   let lookup = html_hash_lookup();
-  let chapter = object_property_get(lookup, "c");
-  let verse = object_property_get(lookup, "v");
+  let chapter = object_property_get(lookup, app_share_chapter());
+  let verse = object_property_get(lookup, app_share_verse());
   let bible_folders_text = object_property_get(lookup, "f");
   let bible_folders = string_split_comma(bible_folders_text);
   await each_async(bible_folders, async (bible_folder) => {
@@ -46,3 +46,11 @@ export async function app_share() {
     html_button_copy(result, text);
   });
 }
+function app_share_verse() {
+    return "v";
+}
+
+function app_share_chapter() {
+    return "c";
+}
+
