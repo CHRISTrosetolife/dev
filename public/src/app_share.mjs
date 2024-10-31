@@ -81,6 +81,7 @@ export async function app_share() {
       string_combine_multiple([p, "=", object_property_get(lookup_next, p)]),
     );
     let joined = list_join_comma(mapped);
+    let url_next = string_combine_multiple([without_hash, "#", joined]);
     html_button_copy(result, text);
   });
 }
