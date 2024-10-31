@@ -15,6 +15,7 @@ export async function firebase_download_bible_verse(
     verse_number,
   );
   let { tokens } = await firebase_download(storage_path);
-  let text = string_combine_multiple([reference, " ", list_join_space(tokens)]);
+  let joined = list_join_space(tokens);
+  let text = string_combine_multiple([reference, " ", joined]);
   return text;
 }
