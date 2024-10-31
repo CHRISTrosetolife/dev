@@ -52,11 +52,15 @@ export async function app_share() {
     let lookup_next = {};
     object_property_set(
       lookup_next,
+      app_share_bible_folders(),
+      bible_folders_text,
+    );
+    object_property_set(
+      lookup_next,
       app_share_chapter(),
       app_gs_bible_chapter_name(book_code_next, chapter_next),
     );
     object_property_set(lookup_next, app_share_verse(), verse_number_next);
-    object_property_set(lookup_next, app_share_bible_folders());
     let location = object_property_get(window, "location");
     let pathname = object_property_get(location, "pathname");
     let origin = object_property_get(location, "origin");
