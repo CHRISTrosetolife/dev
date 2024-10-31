@@ -1,3 +1,4 @@
+import { list_join_newline } from "./list_join_newline.mjs";
 import { list_map_async } from "./list_map_async.mjs";
 import { html_style_link } from "./html_style_link.mjs";
 import { html_hash_unparse } from "./html_hash_unparse.mjs";
@@ -80,5 +81,5 @@ export async function app_share() {
   let url_next = string_combine_multiple([without_hash, "#", joined]);
   let next_text = html_p_text(root, url_next);
   html_style_link(url_next)(next_text);
-  html_button_copy(root, text);
+  html_button_copy(root, list_join_newline(texts));
 }
