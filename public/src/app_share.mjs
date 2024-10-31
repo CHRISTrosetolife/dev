@@ -15,7 +15,10 @@ import { object_property_get } from "./object_property_get.mjs";
 import { html_hash_lookup } from "./html_hash_lookup.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 export async function app_share() {
-  let body = await firebase_initialize_axios();
+  let root = await firebase_initialize_axios();
+  let context = {
+    root,
+  };
   let lookup = html_hash_lookup();
   let chapter = object_property_get(lookup, app_share_chapter());
   let verse = object_property_get(lookup, app_share_verse());
@@ -30,7 +33,7 @@ export async function app_share() {
       chapter,
       verse,
     );
-    html_p_text(body, text);
+    html_p_text(root, text);
     let next = await new Promise(async (resolve) => {
       await html_bible_verse_navigation_next(
         app_fn,
