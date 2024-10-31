@@ -1,4 +1,4 @@
-import { each } from "./each.mjs";
+import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { list_map_async } from "./list_map_async.mjs";
 import { html_style_link } from "./html_style_link.mjs";
@@ -40,9 +40,7 @@ export async function app_share() {
     );
     return text;
   });
-  each(texts, (text) => {
-    html_p_text(root, text);
-  });
+  html_p_text_multiple(root, texts);
   let p = bible_chapter_name_parse(chapter);
   let book_code = object_property_get(p, "book_code");
   let chapter_code = object_property_get(p, "chapter_code");
