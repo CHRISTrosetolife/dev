@@ -50,10 +50,10 @@ export async function html_bible_verse_navigation(
   }
   async function verse_next() {
     await html_bible_verse_navigation_next(
-      verse_number,
       app_fn,
       book_code,
       chapter,
+      verse_number,
       (book_code, chapter, verse_number_next) =>
         verse_refresh(context, book_code, chapter, verse_number_next),
       context,

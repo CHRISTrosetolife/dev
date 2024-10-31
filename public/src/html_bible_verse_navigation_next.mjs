@@ -6,10 +6,10 @@ import { list_last_is } from "./list_last_is.mjs";
 import { app_verses_generic } from "./app_verses_generic.mjs";
 import { list_find_property } from "./list_find_property.mjs";
 export async function html_bible_verse_navigation_next(
-  verse_number,
   app_fn,
   book_code,
   chapter,
+  verse_number,
   on_verse_next,
   context,
   on_chapter_next,
