@@ -8,9 +8,10 @@ export async function firebase_download_bible_verse(
   chapter_code,
   verse_number,
 ) {
+  let bible_folder = app_search_bible_folder();
   let reference = bible_reference_code(chapter_code, verse_number);
   let storage_path = bible_verses_upload_path(
-    app_search_bible_folder(),
+    bible_folder,
     chapter_code,
     verse_number,
   );
