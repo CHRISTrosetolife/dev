@@ -39,7 +39,8 @@ export async function app_share() {
     });
     let verse_number_next = object_property_get(next, "verse_number_next");
     let location = object_property_get(window, "location");
-    let href = object_property_get(location, "href");$glocation$origin
+    let href = object_property_get(location, "href");
+    let origin = object_property_get(location, "origin");
     html_button_copy(result, text);
   });
 }
