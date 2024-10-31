@@ -52,6 +52,7 @@ export async function html_bible_verse_navigation(
     );
   }
   async function verse_next() {
+    let verse = list_find_property(verses, "verse_number", verse_number);
     let verses = await app_verses_generic(app_fn, book_code, chapter);
     if (list_last_is(verses, verse)) {
       await chapter_next_go();
