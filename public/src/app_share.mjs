@@ -7,5 +7,5 @@ export async function app_share() {
   let lookup = html_hash_lookup();
   let verse = object_property_get(lookup, "verse");
   let chapter = object_property_get(lookup, "chapter");
-  let text = await firebase_download_bible_verse(c, verse);
+  let text = await firebase_download_bible_verse(chapter, verse);
 }
