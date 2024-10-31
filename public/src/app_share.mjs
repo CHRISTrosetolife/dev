@@ -1,3 +1,4 @@
+import { list_join_comma } from "./list_join_comma.mjs";
 import { list_map } from "./list_map.mjs";
 import { object_properties } from "./object_properties.mjs";
 import { bible_chapter_name_parse } from "./bible_chapter_name_parse.mjs";
@@ -79,7 +80,7 @@ export async function app_share() {
     let mapped = list_map(properties, (p) =>
       string_combine_multiple([p, "=", object_property_get(lookup_next, p)]),
     );
-    list_join_(mapped, ",");
+    let joined = list_join_comma(mapped);
     html_button_copy(result, text);
   });
 }
