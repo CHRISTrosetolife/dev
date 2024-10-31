@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { string_delimit } from "./string_delimit.mjs";
 import { object_property_get_code } from "./object_property_get_code.mjs";
 import { object_property_get_expression } from "./object_property_get_expression.mjs";
