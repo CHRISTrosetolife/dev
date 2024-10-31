@@ -43,7 +43,7 @@ export async function app_share() {
     );
     return text;
   });
-  let reference = bible_reference_code(chapter_code, verse_number);
+  let reference = bible_reference_code(chapter, verse_number);
   list_add_beginning(texts, reference);
   html_p_text_multiple(root, texts);
   let p = bible_chapter_name_parse(chapter);
