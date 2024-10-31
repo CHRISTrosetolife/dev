@@ -80,5 +80,5 @@ export async function app_share() {
   let url_next = string_combine_multiple([without_hash, "#", joined]);
   let next_text = html_p_text(root, url_next);
   html_style_link(url_next)(next_text);
-  html_button_copy(result, text);
+  html_button_copy(root, text);
 }
