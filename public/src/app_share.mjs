@@ -5,6 +5,7 @@ import { html_style_default_initialize } from "./html_style_default_initialize.m
 export async function app_share() {
   let body = html_style_default_initialize();
   let lookup = html_hash_lookup();
-  let verse = object_property_get(lookup, "verse");$glookup$chapter
+  let verse = object_property_get(lookup, "verse");
+  let chapter = object_property_get(lookup, "chapter");
   let text = await firebase_download_bible_verse(c, verse);
 }
