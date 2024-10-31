@@ -1,3 +1,4 @@
+import { string_split } from "./string_split.mjs";
 import { list_add } from "./list_add.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
@@ -15,7 +16,6 @@ import { app_share_chapter } from "./app_share_chapter.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_bible_verse_navigation_next } from "./html_bible_verse_navigation_next.mjs";
 import { html_button_copy } from "./html_button_copy.mjs";
-import { string_split_comma } from "./string_split_comma.mjs";
 import { firebase_initialize_axios } from "./firebase_initialize_axios.mjs";
 import { firebase_download_bible_verse } from "./firebase_download_bible_verse.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -32,7 +32,7 @@ export async function app_share() {
     lookup,
     app_share_bible_folders(),
   );
-  let bible_folders = string_split_comma(bible_folders_text);
+  let bible_folders = string_split(bible_folders_text, "+");
   let texts = await list_map_async(bible_folders, async (bible_folder) => {
     let text = await firebase_download_bible_verse(
       bible_folder,
