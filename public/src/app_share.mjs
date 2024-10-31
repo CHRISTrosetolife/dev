@@ -1,6 +1,4 @@
-import { list_join_comma } from "./list_join_comma.mjs";
-import { list_map } from "./list_map.mjs";
-import { object_properties } from "./object_properties.mjs";
+import { html_hash_unparse } from "./html_hash_unparse.mjs";
 import { bible_chapter_name_parse } from "./bible_chapter_name_parse.mjs";
 import { noop } from "./noop.mjs";
 import { app_gs_bible_chapter_name } from "./app_gs_bible_chapter_name.mjs";
@@ -76,11 +74,7 @@ export async function app_share() {
     let pathname = object_property_get(location, "pathname");
     let origin = object_property_get(location, "origin");
     let without_hash = string_combine_multiple([origin, pathname]);
-    let properties = object_properties(lookup_next);
-    let mapped = list_map(properties, (p) =>
-      string_combine_multiple([p, "=", object_property_get(lookup_next, p)]),
-    );
-    let joined = list_join_comma(mapped);
+    let joined = html_hash_unparse(lookup_next);
     let url_next = string_combine_multiple([without_hash, "#", joined]);
     html_button_copy(result, text);
   });
