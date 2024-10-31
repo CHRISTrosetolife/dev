@@ -24,7 +24,7 @@ export async function app_share() {
   };
   let lookup = html_hash_lookup();
   let chapter = object_property_get(lookup, app_share_chapter());
-  let verse = object_property_get(lookup, app_share_verse());
+  let verse_number = object_property_get(lookup, app_share_verse());
   let bible_folders_text = object_property_get(
     lookup,
     app_share_bible_folders(),
@@ -34,7 +34,7 @@ export async function app_share() {
     let text = await firebase_download_bible_verse(
       bible_folder,
       chapter,
-      verse,
+      verse_number,
     );
     html_p_text(root, text);
   });
