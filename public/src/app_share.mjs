@@ -40,7 +40,9 @@ export async function app_share() {
     );
     return text;
   });
-  each(list, (item) => {});
+  each(texts, (text) => {
+    html_p_text(root, text);
+  });
   let p = bible_chapter_name_parse(chapter);
   let book_code = object_property_get(p, "book_code");
   let chapter_code = object_property_get(p, "chapter_code");
