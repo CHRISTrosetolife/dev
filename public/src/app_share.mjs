@@ -43,10 +43,10 @@ export async function app_share() {
   let chapter_code = object_property_get(p, "chapter_code");
   let next = await new Promise(async (resolve) => {
     await html_bible_verse_navigation_next(
+      app_share,
       book_code,
       chapter_code,
       verse_number,
-      app_share,
       (book_code, chapter, verse_number_next) =>
         resolve({
           book_code,
