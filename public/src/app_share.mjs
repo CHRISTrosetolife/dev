@@ -55,7 +55,7 @@ export async function app_share() {
       app_share_chapter(),
       app_gs_bible_chapter_name(book_code_next, chapter_next),
     );
-    object_property_set(lookup, app_share_verse());
+    object_property_set(lookup, app_share_verse(), verse_number_next);
     object_property_set(lookup, app_share_bible_folders());
     let location = object_property_get(window, "location");
     let pathname = object_property_get(location, "pathname");
