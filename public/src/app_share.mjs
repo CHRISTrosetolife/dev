@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_bible_verse_navigation_next } from "./html_bible_verse_navigation_next.mjs";
 import { html_button_copy } from "./html_button_copy.mjs";
 import { string_split_comma } from "./string_split_comma.mjs";
@@ -41,6 +42,7 @@ export async function app_share() {
     let location = object_property_get(window, "location");
     let href = object_property_get(location, "href");
     let origin = object_property_get(location, "origin");
+    string_combine_multiple([origin, href]);
     html_button_copy(result, text);
   });
 }
