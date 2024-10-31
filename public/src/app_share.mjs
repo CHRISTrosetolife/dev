@@ -23,8 +23,8 @@ export async function app_share() {
     await html_bible_verse_navigation_next(
       app_fn,
       book_code,
-      verse_number,
       chapter,
+      verse_number,
       verse_refresh,
       context,
       on_chapter_next,
