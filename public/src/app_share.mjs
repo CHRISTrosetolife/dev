@@ -1,3 +1,4 @@
+import { object_properties } from "./object_properties.mjs";
 import { bible_chapter_name_parse } from "./bible_chapter_name_parse.mjs";
 import { noop } from "./noop.mjs";
 import { app_gs_bible_chapter_name } from "./app_gs_bible_chapter_name.mjs";
@@ -73,6 +74,7 @@ export async function app_share() {
     let pathname = object_property_get(location, "pathname");
     let origin = object_property_get(location, "origin");
     let without_hash = string_combine_multiple([origin, pathname]);
+    let properties = object_properties(lookup_next);
     html_button_copy(result, text);
   });
 }
