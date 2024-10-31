@@ -77,7 +77,7 @@ export async function app_share() {
     let without_hash = string_combine_multiple([origin, pathname]);
     let joined = html_hash_unparse(lookup_next);
     let url_next = string_combine_multiple([without_hash, "#", joined]);
-    html_style_link(url_next);
-    html_button_copy(result, text);
   });
+  html_style_link(url_next);
+  html_button_copy(result, text);
 }
