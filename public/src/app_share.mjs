@@ -3,6 +3,7 @@ import { firebase_download_bible_verse } from "./firebase_download_bible_verse.m
 import { object_property_get } from "./object_property_get.mjs";
 import { html_hash_lookup } from "./html_hash_lookup.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
+import { html_p_text } from "./html_p_text.mjs";
 export async function app_share() {
   let body = html_style_default_initialize();
   let lookup = html_hash_lookup();
@@ -15,5 +16,6 @@ export async function app_share() {
       chapter,
       verse,
     );
+    html_p_text(body, text);
   });
 }
