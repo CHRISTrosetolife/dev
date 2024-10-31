@@ -25,7 +25,7 @@ export async function app_share() {
       book_code,
       chapter,
       verse_number,
-      verse_refresh,
+      on_verse_next,
       context,
       on_chapter_next,
     );
