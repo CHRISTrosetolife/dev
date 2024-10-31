@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { string_delimit } from "./string_delimit.mjs";
 import { object_property_get_code } from "./object_property_get_code.mjs";
 import { object_property_get_expression } from "./object_property_get_expression.mjs";
@@ -391,6 +392,7 @@ export function js_dollar(ast) {
         object_replace(node, e);
       }
       if (prefix_use(remaining, get_prefix, prefixes)) {
+        log({});
         let { stack } = v;
         remaining = string_prefix_without(remaining, get_prefix);
         let s = string_split_dollar(remaining);
