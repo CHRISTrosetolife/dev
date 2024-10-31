@@ -54,7 +54,8 @@ export async function html_bible_verse_navigation(
       app_fn,
       book_code,
       chapter,
-      verse_refresh,
+      (book_code, chapter, verse_number_next) =>
+        verse_refresh(context, book_code, chapter, verse_number_next),
       context,
       on_chapter_next,
     );
