@@ -1,4 +1,4 @@
-import { app_share_bible_folder } from "./app_share_bible_folder.mjs";
+import { app_share_bible_folders } from "./app_share_bible_folders.mjs";
 import { app_share_verse } from "./app_share_verse.mjs";
 import { app_share_chapter } from "./app_share_chapter.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -18,7 +18,7 @@ export async function app_share() {
   let verse = object_property_get(lookup, app_share_verse());
   let bible_folders_text = object_property_get(
     lookup,
-    app_share_bible_folder(),
+    app_share_bible_folders(),
   );
   let bible_folders = string_split_comma(bible_folders_text);
   await each_async(bible_folders, async (bible_folder) => {
