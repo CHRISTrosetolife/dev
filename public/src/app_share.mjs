@@ -1,3 +1,4 @@
+import { html_span_text } from "./html_span_text.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { list_map_async } from "./list_map_async.mjs";
@@ -18,7 +19,6 @@ import { firebase_initialize_axios } from "./firebase_initialize_axios.mjs";
 import { firebase_download_bible_verse } from "./firebase_download_bible_verse.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_hash_lookup } from "./html_hash_lookup.mjs";
-import { html_p_text } from "./html_p_text.mjs";
 export async function app_share() {
   let root = await firebase_initialize_axios();
   let context = {
@@ -81,7 +81,9 @@ export async function app_share() {
   let without_hash = string_combine_multiple([origin, pathname]);
   let joined = html_hash_unparse(lookup_next);
   let url_next = string_combine_multiple([without_hash, "#", joined]);
-  let next_text = html_p_text(root, url_next);
-  html_style_link(url_next)(next_text);
+  let next_text = "Next verse: ";
+  html_span_text(root, next_text);
+  let next_url_component = html_span_text(root, url_next);
+  html_style_link(url_next)(next_url_component);
   html_button_copy(root, list_join_newline(texts));
 }
