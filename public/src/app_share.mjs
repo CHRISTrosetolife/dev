@@ -1,3 +1,5 @@
+import { app_share_verse } from "./app_share_verse.mjs";
+import { app_share_chapter } from "./app_share_chapter.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_bible_verse_navigation_next } from "./html_bible_verse_navigation_next.mjs";
 import { html_button_copy } from "./html_button_copy.mjs";
@@ -46,11 +48,3 @@ export async function app_share() {
     html_button_copy(result, text);
   });
 }
-function app_share_verse() {
-    return "v";
-}
-
-function app_share_chapter() {
-    return "c";
-}
-
