@@ -20,6 +20,15 @@ export async function app_share() {
       verse,
     );
     html_p_text(body, text);
+    await html_bible_verse_navigation_next(
+      verse_number,
+      app_fn,
+      book_code,
+      chapter,
+      verse_refresh,
+      context,
+      on_chapter_next,
+    );
     html_button_copy(result, text);
   });
 }
