@@ -42,7 +42,7 @@ export async function app_share() {
     let location = object_property_get(window, "location");
     let pathname = object_property_get(location, "pathname");
     let origin = object_property_get(location, "origin");
-    string_combine_multiple([origin, pathname]);
+    let without_hash = string_combine_multiple([origin, pathname]);
     html_button_copy(result, text);
   });
 }
