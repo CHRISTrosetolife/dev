@@ -9,7 +9,7 @@ export async function app_share() {
   let chapter = object_property_get(lookup, "c");
   let verse = object_property_get(lookup, "v");
   let bible_folders = object_property_get(lookup, "f");
-  await each_async(list, async (item) => {
+  await each_async(bible_folders, async (bible_folder) => {
     let text = await firebase_download_bible_verse(
       bible_folder,
       chapter,
