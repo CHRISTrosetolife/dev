@@ -30,7 +30,7 @@ export async function app_share() {
     app_share_bible_folders(),
   );
   let bible_folders = string_split_comma(bible_folders_text);
-  await list_map_async(bible_folders, async (bible_folder) => {
+  let texts = await list_map_async(bible_folders, async (bible_folder) => {
     let text = await firebase_download_bible_verse(
       bible_folder,
       chapter,
