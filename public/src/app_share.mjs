@@ -1,3 +1,4 @@
+import { bible_chapter_name_parse } from "./bible_chapter_name_parse.mjs";
 import { noop } from "./noop.mjs";
 import { app_gs_bible_chapter_name } from "./app_gs_bible_chapter_name.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -34,6 +35,7 @@ export async function app_share() {
       verse,
     );
     html_p_text(root, text);
+    bible_chapter_name_parse();
     let next = await new Promise(async (resolve) => {
       await html_bible_verse_navigation_next(
         app_share,
