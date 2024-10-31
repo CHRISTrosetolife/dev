@@ -10,7 +10,7 @@ export async function html_bible_verse_navigation_next(
   app_fn,
   book_code,
   chapter,
-  verse_refresh,
+  on_verse_next,
   context,
   on_chapter_next,
 ) {
@@ -24,7 +24,7 @@ export async function html_bible_verse_navigation_next(
       "verse_number",
       verse_number,
     );
-    await verse_refresh(context, book_code, chapter, verse_number_next);
+    await on_verse_next(book_code, chapter, verse_number_next);
   }
   async function chapter_next_go() {
     on_chapter_next();
@@ -46,7 +46,7 @@ export async function html_bible_verse_navigation_next(
       chapter_next = list_next(chapters, chapter);
     }
     let verses_next = await app_verses_generic(app_fn, book_code, chapter);
-    await verse_refresh(
+    await on_verse_next(
       context,
       book_next_code,
       chapter_next,
