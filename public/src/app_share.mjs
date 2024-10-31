@@ -35,7 +35,9 @@ export async function app_share() {
       verse,
     );
     html_p_text(root, text);
-    bible_chapter_name_parse();
+    let p = bible_chapter_name_parse(chapter);
+    let book_code2 = object_property_get(p, "book_code");
+    let chapter_code = object_property_get(p, "chapter_code");
     let next = await new Promise(async (resolve) => {
       await html_bible_verse_navigation_next(
         app_share,
