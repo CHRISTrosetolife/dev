@@ -71,13 +71,13 @@ export async function app_share() {
     app_share_chapter(),
     app_gs_bible_chapter_name(book_code_next, chapter_code_next),
   );
+  object_property_set(lookup_next, app_share_verse(), verse_number_next);
   let location = object_property_get(window, "location");
   let pathname = object_property_get(location, "pathname");
   let origin = object_property_get(location, "origin");
   let without_hash = string_combine_multiple([origin, pathname]);
   let joined = html_hash_unparse(lookup_next);
   let url_next = string_combine_multiple([without_hash, "#", joined]);
-  object_property_set(lookup_next, app_share_verse(), verse_number_next);
   html_style_link(url_next);
   html_button_copy(result, text);
 }
