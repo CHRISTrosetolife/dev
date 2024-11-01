@@ -1,4 +1,3 @@
-import { list_single } from "./list_single.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { google_search_url } from "./google_search_url.mjs";
 import { html_a } from "./html_a.mjs";
@@ -13,9 +12,7 @@ export function html_bible_verse(root, book_code, chapter, verse) {
     html_a(
       root,
       token,
-      google_search_url(
-        string_combine_multiple(["define: ", list_single(tokens)]),
-      ),
+      google_search_url(string_combine_multiple(["define: ", token])),
     );
   });
   return vn;
