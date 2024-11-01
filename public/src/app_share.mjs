@@ -1,3 +1,4 @@
+import { app_share_verse_download } from "./app_share_verse_download.mjs";
 import { emoji_add } from "./emoji_add.mjs";
 import { list_add_beginning } from "./list_add_beginning.mjs";
 import { bible_reference_code } from "./bible_reference_code.mjs";
@@ -35,7 +36,11 @@ export async function app_share() {
     app_share_bible_folders(),
   );
   let bible_folders = string_split_plus(bible_folders_text);
-  let texts = await app_share_verse(bible_folders, chapter, verse_number);
+  let texts = await app_share_verse_download(
+    bible_folders,
+    chapter,
+    verse_number,
+  );
   let reference = bible_reference_code(chapter, verse_number);
   list_add_beginning(texts, reference);
   html_p_text_multiple(root, texts);
