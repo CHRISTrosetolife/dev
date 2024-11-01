@@ -1,3 +1,4 @@
+import { html_button_copy_get } from "./html_button_copy_get.mjs";
 import { html_p } from "./html_p.mjs";
 import { app_share_verse_download } from "./app_share_verse_download.mjs";
 import { emoji_add } from "./emoji_add.mjs";
@@ -17,7 +18,6 @@ import { app_share_verse } from "./app_share_verse.mjs";
 import { app_share_chapter } from "./app_share_chapter.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_bible_verse_navigation_next } from "./html_bible_verse_navigation_next.mjs";
-import { html_button_copy } from "./html_button_copy.mjs";
 import { firebase_initialize_axios } from "./firebase_initialize_axios.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_hash_lookup } from "./html_hash_lookup.mjs";
@@ -103,8 +103,7 @@ export async function app_share() {
   html_span_text(root, next_text);
   let next_url_component = html_span_text(root, url_next);
   html_style_link(url_next)(next_url_component);
-  html_button_copy(
-    root,
+  html_button_copy_get(root, () =>
     list_join_newline([
       texts,
       "",
