@@ -60,10 +60,6 @@ export async function app_share() {
   let pathname = object_property_get(location, "pathname");
   let origin = object_property_get(location, "origin");
   let without_hash = string_combine_multiple([origin, pathname]);
-  let joined = html_hash_unparse(lookup_next);
-  let url_next = string_combine_multiple([without_hash, "#", joined]);
-  html_inner_set(next_url_component, url_next);
-  html_style_link(url_next)(next_url_component);
   html_button_copy_get(root, () =>
     list_join_newline(
       list_concat([
@@ -111,5 +107,9 @@ export async function app_share() {
     );
     object_property_set(lookup_next, app_share_chapter(), chapter_next);
     object_property_set(lookup_next, app_share_verse(), verse_number_next);
+    let joined = html_hash_unparse(lookup_next);
+    let url_next = string_combine_multiple([without_hash, "#", joined]);
+    html_inner_set(next_url_component, url_next);
+    html_style_link(url_next)(next_url_component);
   }
 }
