@@ -22,6 +22,7 @@ import { firebase_initialize_axios } from "./firebase_initialize_axios.mjs";
 import { firebase_download_bible_verse } from "./firebase_download_bible_verse.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_hash_lookup } from "./html_hash_lookup.mjs";
+import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export async function app_share() {
   let root = await firebase_initialize_axios();
   let context = {
@@ -65,6 +66,7 @@ export async function app_share() {
       noop,
     );
   });
+  html_button_width_full_text_click(root, "add verse");
   let book_code_next = object_property_get(next, "book_code");
   let chapter_code_next = object_property_get(next, "chapter");
   let verse_number_next = object_property_get(next, "verse_number_next");
