@@ -6,7 +6,6 @@ import { bible_reference_code } from "./bible_reference_code.mjs";
 import { string_split_plus } from "./string_split_plus.mjs";
 import { list_add } from "./list_add.mjs";
 import { html_span_text } from "./html_span_text.mjs";
-import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 import { html_style_link } from "./html_style_link.mjs";
 import { html_hash_unparse } from "./html_hash_unparse.mjs";
@@ -38,6 +37,8 @@ export async function app_share() {
   );
   let bible_folders = string_split_plus(bible_folders_text);
   let texts = [];
+  let reference = bible_reference_code(chapter, verse_number);
+  list_add_beginning(texts, reference);
   let verses_component = html_p(root);
   await app_share_verse_download(
     bible_folders,
@@ -46,9 +47,6 @@ export async function app_share() {
     texts,
     verses_component,
   );
-  let reference = bible_reference_code(chapter, verse_number);
-  list_add_beginning(texts, reference);
-  html_p_text_multiple(root, texts);
   let p = bible_chapter_name_parse(chapter);
   let book_code = object_property_get(p, "book_code");
   let chapter_code = object_property_get(p, "chapter_code");
