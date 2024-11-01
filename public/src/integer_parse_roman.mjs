@@ -82,5 +82,5 @@ export function integer_parse_roman(input) {
     "ⅬⅩⅩⅨ",
     "ⅬⅩⅩⅩ",
   ];
-  return list_index(key, input);
+  return list_index(key, input) + 1;
 }
