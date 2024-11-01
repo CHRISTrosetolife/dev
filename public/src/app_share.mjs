@@ -85,7 +85,7 @@ export async function app_share() {
         app_share,
         book_code,
         chapter_code,
-        verse_number,
+        verse_number_next,
         (book_code, chapter, verse_number_next) =>
           resolve({
             book_code,
