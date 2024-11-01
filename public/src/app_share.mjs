@@ -1,3 +1,4 @@
+import { html_span } from "./html_span.mjs";
 import { html_button_copy_get } from "./html_button_copy_get.mjs";
 import { html_p } from "./html_p.mjs";
 import { app_share_verse_download } from "./app_share_verse_download.mjs";
@@ -44,6 +45,9 @@ export async function app_share() {
   let chapter_code_next;
   let chapter_next;
   let verse_number_next;
+  let next_text = "Next verse: ";
+  html_span_text(root, next_text);
+  let next_url_component = html_span(root);
   await download();
   html_button_width_full_text_click(
     root,
@@ -64,9 +68,6 @@ export async function app_share() {
   let without_hash = string_combine_multiple([origin, pathname]);
   let joined = html_hash_unparse(lookup_next);
   let url_next = string_combine_multiple([without_hash, "#", joined]);
-  let next_text = "Next verse: ";
-  html_span_text(root, next_text);
-  let next_url_component = html_span_text(root, url_next);
   html_style_link(url_next)(next_url_component);
   html_button_copy_get(root, () =>
     list_join_newline(
