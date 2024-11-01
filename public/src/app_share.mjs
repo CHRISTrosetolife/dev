@@ -32,11 +32,11 @@ export async function app_share() {
     root,
   };
   let lookup = html_hash_lookup();
-  let chapter = object_property_get(lookup, app_share_chapter());
+  let chapter_next;
   let book_code_next;
   let chapter_code_next;
-  let chapter_next;
   let verse_number_next;
+  chapter_next = object_property_get(lookup, app_share_chapter());
   let verse_numbers = [];
   verse_number_next = object_property_get(lookup, app_share_verse());
   list_add(verse_numbers, verse_number_next);
