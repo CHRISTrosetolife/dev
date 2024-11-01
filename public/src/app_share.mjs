@@ -66,13 +66,14 @@ export async function app_share() {
       noop,
     );
   });
-  let book_code_next = object_property_get(next, "book_code");
-  let chapter_code_next = object_property_get(next, "chapter");
-  let chapter_next = app_gs_bible_chapter_name(
-    book_code_next,
-    chapter_code_next,
-  );
-  let verse_number_next = object_property_get(next, "verse_number_next");
+  let book_code_next;
+  let chapter_code_next;
+  let chapter_next;
+  let verse_number_next;
+  book_code_next = object_property_get(next, "book_code");
+  chapter_code_next = object_property_get(next, "chapter");
+  chapter_next = app_gs_bible_chapter_name(book_code_next, chapter_code_next);
+  verse_number_next = object_property_get(next, "verse_number_next");
   html_button_width_full_text_click(
     root,
     string_combine_multiple([emoji_add(), " add verse"]),
