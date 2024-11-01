@@ -78,8 +78,8 @@ export async function app_share() {
     async () => {
       await app_share_verse_download(
         bible_folders,
-        chapter,
-        verse_number,
+        chapter_next,
+        verse_number_next,
         texts,
         verses_component,
       );
