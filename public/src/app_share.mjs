@@ -48,9 +48,7 @@ export async function app_share() {
   html_button_width_full_text_click(
     root,
     string_combine_multiple([emoji_add(), " add verse"]),
-    async () => {
-      await download();
-    },
+    download,
   );
   let lookup_next = {};
   object_property_set(
