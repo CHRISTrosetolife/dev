@@ -50,16 +50,16 @@ export async function app_share() {
   let next_text = "Next verse: ";
   html_span_text(root, next_text);
   let next_url_component = html_span(root);
+  let location = object_property_get(window, "location");
+  let pathname = object_property_get(location, "pathname");
+  let origin = object_property_get(location, "origin");
+  let without_hash = string_combine_multiple([origin, pathname]);
   await download();
   html_button_width_full_text_click(
     root,
     string_combine_multiple([emoji_add(), " add verse"]),
     download,
   );
-  let location = object_property_get(window, "location");
-  let pathname = object_property_get(location, "pathname");
-  let origin = object_property_get(location, "origin");
-  let without_hash = string_combine_multiple([origin, pathname]);
   html_button_copy_get(root, () =>
     list_join_newline(
       list_concat([
