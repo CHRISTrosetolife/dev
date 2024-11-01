@@ -65,6 +65,13 @@ export async function app_share() {
       noop,
     );
   });
+  let book_code_next = object_property_get(next, "book_code");
+  let chapter_code_next = object_property_get(next, "chapter");
+  let chapter_next = app_gs_bible_chapter_name(
+    book_code_next,
+    chapter_code_next,
+  );
+  let verse_number_next = object_property_get(next, "verse_number_next");
   html_button_width_full_text_click(
     root,
     string_combine_multiple([emoji_add(), " add verse"]),
@@ -78,20 +85,13 @@ export async function app_share() {
       );
     },
   );
-  let book_code_next = object_property_get(next, "book_code");
-  let chapter_code_next = object_property_get(next, "chapter");
-  let verse_number_next = object_property_get(next, "verse_number_next");
   let lookup_next = {};
   object_property_set(
     lookup_next,
     app_share_bible_folders(),
     bible_folders_text,
   );
-  object_property_set(
-    lookup_next,
-    app_share_chapter(),
-    app_gs_bible_chapter_name(book_code_next, chapter_code_next),
-  );
+  object_property_set(lookup_next, app_share_chapter(), chapter_next);
   object_property_set(lookup_next, app_share_verse(), verse_number_next);
   let location = object_property_get(window, "location");
   let pathname = object_property_get(location, "pathname");
