@@ -1,3 +1,4 @@
+import { list_add } from "./list_add.mjs";
 import { html_span } from "./html_span.mjs";
 import { html_button_copy_get } from "./html_button_copy_get.mjs";
 import { html_p } from "./html_p.mjs";
@@ -32,7 +33,9 @@ export async function app_share() {
   };
   let lookup = html_hash_lookup();
   let chapter = object_property_get(lookup, app_share_chapter());
+  let verse_numbers = [];
   let verse_number = object_property_get(lookup, app_share_verse());
+  list_add(verse_numbers, verse_number);
   let bible_folders_text = object_property_get(
     lookup,
     app_share_bible_folders(),
