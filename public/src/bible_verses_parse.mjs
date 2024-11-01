@@ -12,6 +12,7 @@ import { string_whitespace_normalize } from "./string_whitespace_normalize.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { string_empty_not_is } from "./string_empty_not_is.mjs";
 import { number_is } from "./number_is.mjs";
+import { string_to } from "./string_to.mjs";
 export function bible_verses_parse(verses) {
   let result = list_adder((la) => {
     let verse_number, tokens;
@@ -25,7 +26,7 @@ export function bible_verses_parse(verses) {
             verse_number = string_trim_whitespace(verse_number);
             let verse_number_parsed = integer_parse_try(verse_number);
             if (!number_is(verse_number_parsed)) {
-              verse_number = integer_parse_roman(verse_number);
+              verse_number = integer_parse_roman(verse_number);verse_number=string_to(verse_number)
             }
             tokens = [];
             la({
