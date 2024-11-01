@@ -36,7 +36,7 @@ export async function app_share() {
     app_share_bible_folders(),
   );
   let bible_folders = string_split_plus(bible_folders_text);
-  let texts;
+  let texts = [];
   await app_share_verse_download(bible_folders, chapter, verse_number, texts);
   let reference = bible_reference_code(chapter, verse_number);
   list_add_beginning(texts, reference);
@@ -64,7 +64,7 @@ export async function app_share() {
     root,
     string_combine_multiple([emoji_add(), " add verse"]),
     async () => {
-      let texts = await app_share_verse_download(
+      await app_share_verse_download(
         bible_folders,
         chapter,
         verse_number,
