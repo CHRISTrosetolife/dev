@@ -46,6 +46,7 @@ export async function app_share() {
   let chapter_code_next;
   let chapter_next;
   let verse_number_next;
+  let lookup_next;
   let next_text = "Next verse: ";
   html_span_text(root, next_text);
   let next_url_component = html_span(root);
@@ -55,14 +56,6 @@ export async function app_share() {
     string_combine_multiple([emoji_add(), " add verse"]),
     download,
   );
-  let lookup_next = {};
-  object_property_set(
-    lookup_next,
-    app_share_bible_folders(),
-    bible_folders_text,
-  );
-  object_property_set(lookup_next, app_share_chapter(), chapter_next);
-  object_property_set(lookup_next, app_share_verse(), verse_number_next);
   let location = object_property_get(window, "location");
   let pathname = object_property_get(location, "pathname");
   let origin = object_property_get(location, "origin");
@@ -110,5 +103,13 @@ export async function app_share() {
     chapter_code_next = object_property_get(next, "chapter");
     chapter_next = app_gs_bible_chapter_name(book_code_next, chapter_code_next);
     verse_number_next = object_property_get(next, "verse_number_next");
+    lookup_next = {};
+    object_property_set(
+      lookup_next,
+      app_share_bible_folders(),
+      bible_folders_text,
+    );
+    object_property_set(lookup_next, app_share_chapter(), chapter_next);
+    object_property_set(lookup_next, app_share_verse(), verse_number_next);
   }
 }
