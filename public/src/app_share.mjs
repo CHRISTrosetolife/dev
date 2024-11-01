@@ -1,3 +1,4 @@
+import { emoji_add } from "./emoji_add.mjs";
 import { list_add_beginning } from "./list_add_beginning.mjs";
 import { bible_reference_code } from "./bible_reference_code.mjs";
 import { string_split_plus } from "./string_split_plus.mjs";
@@ -66,7 +67,10 @@ export async function app_share() {
       noop,
     );
   });
-  html_button_width_full_text_click(root, "add verse");
+  html_button_width_full_text_click(
+    root,
+    string_combine_multiple([emoji_add(), " add verse"]),
+  );
   let book_code_next = object_property_get(next, "book_code");
   let chapter_code_next = object_property_get(next, "chapter");
   let verse_number_next = object_property_get(next, "verse_number_next");
