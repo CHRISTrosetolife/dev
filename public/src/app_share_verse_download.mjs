@@ -6,6 +6,7 @@ export async function app_share_verse_download(
   chapter,
   verse_number,
   texts,
+  verses_component,
 ) {
   let result = await list_map_async(bible_folders, async (bible_folder) => {
     let text = await firebase_download_bible_verse(

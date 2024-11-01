@@ -39,7 +39,13 @@ export async function app_share() {
   let bible_folders = string_split_plus(bible_folders_text);
   let texts = [];
   let verses_component = html_p(root);
-  await app_share_verse_download(bible_folders, chapter, verse_number, texts);
+  await app_share_verse_download(
+    bible_folders,
+    chapter,
+    verse_number,
+    texts,
+    verses_component,
+  );
   let reference = bible_reference_code(chapter, verse_number);
   list_add_beginning(texts, reference);
   html_p_text_multiple(root, texts);
@@ -71,6 +77,7 @@ export async function app_share() {
         chapter,
         verse_number,
         texts,
+        verses_component,
       );
     },
   );
