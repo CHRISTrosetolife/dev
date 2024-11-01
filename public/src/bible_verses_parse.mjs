@@ -1,3 +1,4 @@
+import { integer_parse_try } from "./integer_parse_try.mjs";
 import { html_parse_class_is } from "./html_parse_class_is.mjs";
 import { string_split_multiple } from "./string_split_multiple.mjs";
 import { string_trim_whitespace } from "./string_trim_whitespace.mjs";
@@ -20,6 +21,7 @@ export function bible_verses_parse(verses) {
           if (html_parse_class_is(c, "verse")) {
             verse_number = html_parse_text(c);
             verse_number = string_trim_whitespace(verse_number);
+            let verse_number_parsed = integer_parse_try(verse_number);
             tokens = [];
             la({
               verse_number,
