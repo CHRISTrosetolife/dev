@@ -63,7 +63,7 @@ export async function app_share() {
   html_button_copy_get(root, () =>
     list_join_newline(
       list_concat_multiple([
-        bible_reference_code(chapter_next, verse_numbers),
+        [bible_reference_code(chapter_next, verse_numbers)],
         texts,
         ["", string_combine_multiple([next_text, url_next])],
       ]),
