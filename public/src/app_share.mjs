@@ -24,6 +24,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { html_hash_lookup } from "./html_hash_lookup.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { list_concat } from "./list_concat.mjs";
+import { html_inner_set } from "./html_inner_set.mjs";
 export async function app_share() {
   let root = await firebase_initialize_axios();
   let context = {
@@ -68,6 +69,7 @@ export async function app_share() {
   let without_hash = string_combine_multiple([origin, pathname]);
   let joined = html_hash_unparse(lookup_next);
   let url_next = string_combine_multiple([without_hash, "#", joined]);
+  html_inner_set(next_url_component, url_next);
   html_style_link(url_next)(next_url_component);
   html_button_copy_get(root, () =>
     list_join_newline(
