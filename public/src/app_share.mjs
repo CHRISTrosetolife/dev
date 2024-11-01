@@ -33,22 +33,22 @@ export async function app_share() {
   };
   let lookup = html_hash_lookup();
   let chapter = object_property_get(lookup, app_share_chapter());
+  let book_code_next;
+  let chapter_code_next;
+  let chapter_next;
+  let verse_number_next;
   let verse_numbers = [];
-  let verse_number = object_property_get(lookup, app_share_verse());
-  list_add(verse_numbers, verse_number);
+  verse_number_next = object_property_get(lookup, app_share_verse());
+  list_add(verse_numbers, verse_number_next);
   let bible_folders_text = object_property_get(
     lookup,
     app_share_bible_folders(),
   );
   let bible_folders = string_split_plus(bible_folders_text);
   let texts = [];
-  let reference = bible_reference_code(chapter, verse_number);
+  let reference = bible_reference_code(chapter, verse_number_next);
   list_add_beginning(texts, reference);
   let verses_component = html_p(root);
-  let book_code_next;
-  let chapter_code_next;
-  let chapter_next;
-  let verse_number_next;
   let lookup_next;
   let next_text = "Next verse: ";
   html_span_text(root, next_text);
@@ -73,6 +73,7 @@ export async function app_share() {
     ),
   );
   async function download() {
+    list_add(verse_numbers, verse_number);
     await app_share_verse_download(
       bible_folders,
       chapter,
