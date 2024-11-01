@@ -1,3 +1,4 @@
+import { list_index } from "./list_index.mjs";
 export function integer_parse_roman(input) {
   let key = [
     "Ⅰ",
@@ -81,4 +82,5 @@ export function integer_parse_roman(input) {
     "ⅬⅩⅩⅨ",
     "ⅬⅩⅩⅩ",
   ];
+  return list_index(key, input);
 }
