@@ -1,3 +1,5 @@
+import { bible_reference_code } from "./bible_reference_code.mjs";
+import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { list_add } from "./list_add.mjs";
 import { html_span } from "./html_span.mjs";
 import { html_button_copy_get } from "./html_button_copy_get.mjs";
@@ -22,7 +24,6 @@ import { firebase_initialize_axios } from "./firebase_initialize_axios.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_hash_lookup } from "./html_hash_lookup.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
-import { list_concat } from "./list_concat.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 export async function app_share() {
   let root = await firebase_initialize_axios();
@@ -61,7 +62,11 @@ export async function app_share() {
   );
   html_button_copy_get(root, () =>
     list_join_newline(
-      list_concat(texts, ["", string_combine_multiple([next_text, url_next])]),
+      list_concat_multiple([
+        bible_reference_code(chapter_next, verse_numbers),
+        texts,
+        ["", string_combine_multiple([next_text, url_next])],
+      ]),
     ),
   );
   async function download() {
