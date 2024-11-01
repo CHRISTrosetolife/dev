@@ -72,7 +72,7 @@ export async function app_share() {
     ),
   );
   async function download() {
-    list_add(verse_numbers, verse_number);
+    list_add(verse_numbers, verse_number_next);
     await app_share_verse_download(
       bible_folders,
       chapter,
