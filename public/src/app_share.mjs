@@ -66,8 +66,12 @@ export async function app_share() {
   html_button_width_full_text_click(
     root,
     string_combine_multiple([emoji_add(), " add verse"]),
-    () => {
-      let texts = app_share_verse(bible_folders, chapter, verse_number);
+    async () => {
+      let texts = await app_share_verse_download(
+        bible_folders,
+        chapter,
+        verse_number,
+      );
     },
   );
   let book_code_next = object_property_get(next, "book_code");
