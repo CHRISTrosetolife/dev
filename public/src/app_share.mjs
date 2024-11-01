@@ -36,8 +36,8 @@ export async function app_share() {
   let book_code_next;
   let chapter_code_next;
   let verse_number_next;
-  chapter_next = object_property_get(lookup, app_share_chapter());
   let verse_numbers = [];
+  chapter_next = object_property_get(lookup, app_share_chapter());
   verse_number_next = object_property_get(lookup, app_share_verse());
   list_add(verse_numbers, verse_number_next);
   let bible_folders_text = object_property_get(
