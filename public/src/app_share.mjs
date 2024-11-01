@@ -22,6 +22,7 @@ import { firebase_initialize_axios } from "./firebase_initialize_axios.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_hash_lookup } from "./html_hash_lookup.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
+import { list_concat } from "./list_concat.mjs";
 export async function app_share() {
   let root = await firebase_initialize_axios();
   let context = {
@@ -104,10 +105,11 @@ export async function app_share() {
   let next_url_component = html_span_text(root, url_next);
   html_style_link(url_next)(next_url_component);
   html_button_copy_get(root, () =>
-    list_join_newline([
-      texts,
-      "",
-      string_combine_multiple([next_text, url_next]),
-    ]),
+    list_join_newline(
+      list_concat([
+        texts,
+        ["", string_combine_multiple([next_text, url_next])],
+      ]),
+    ),
   );
 }
