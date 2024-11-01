@@ -1,5 +1,5 @@
 export function integer_parse_roman(input) {
-  [
+  let key = [
     "Ⅰ",
     "Ⅱ",
     "Ⅲ",
