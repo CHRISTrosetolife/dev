@@ -77,7 +77,7 @@ export async function app_share() {
       verses_component,
       verse_numbers,
     );
-    let p = bible_chapter_name_parse(chapter);
+    let p = bible_chapter_name_parse(chapter_next);
     let book_code = object_property_get(p, "book_code");
     let chapter_code = object_property_get(p, "chapter_code");
     let next = await new Promise(async (resolve) => {
