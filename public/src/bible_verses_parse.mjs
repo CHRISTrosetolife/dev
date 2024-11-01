@@ -22,6 +22,8 @@ export function bible_verses_parse(verses) {
             verse_number = html_parse_text(c);
             verse_number = string_trim_whitespace(verse_number);
             let verse_number_parsed = integer_parse_try(verse_number);
+            if (false) {
+            }
             tokens = [];
             la({
               verse_number,
