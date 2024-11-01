@@ -70,6 +70,7 @@ export async function app_share() {
   html_button_width_full_text_click(
     root,
     string_combine_multiple([emoji_add(), " add verse"]),
+    () => {},
   );
   let book_code_next = object_property_get(next, "book_code");
   let chapter_code_next = object_property_get(next, "chapter");
