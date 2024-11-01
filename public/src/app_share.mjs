@@ -61,10 +61,7 @@ export async function app_share() {
   );
   html_button_copy_get(root, () =>
     list_join_newline(
-      list_concat([
-        texts,
-        ["", string_combine_multiple([next_text, url_next])],
-      ]),
+      list_concat(texts, ["", string_combine_multiple([next_text, url_next])]),
     ),
   );
   async function download() {
