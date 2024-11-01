@@ -44,47 +44,12 @@ export async function app_share() {
   let chapter_code_next;
   let chapter_next;
   let verse_number_next;
-  await app_share_verse_download(
-    bible_folders,
-    chapter,
-    verse_number,
-    texts,
-    verses_component,
-  );
-  let p = bible_chapter_name_parse(chapter);
-  let book_code = object_property_get(p, "book_code");
-  let chapter_code = object_property_get(p, "chapter_code");
-  let next = await new Promise(async (resolve) => {
-    await html_bible_verse_navigation_next(
-      app_share,
-      book_code,
-      chapter_code,
-      verse_number,
-      (book_code, chapter, verse_number_next) =>
-        resolve({
-          book_code,
-          chapter,
-          verse_number_next,
-        }),
-      context,
-      noop,
-    );
-  });
-  book_code_next = object_property_get(next, "book_code");
-  chapter_code_next = object_property_get(next, "chapter");
-  chapter_next = app_gs_bible_chapter_name(book_code_next, chapter_code_next);
-  verse_number_next = object_property_get(next, "verse_number_next");
+  await download();
   html_button_width_full_text_click(
     root,
     string_combine_multiple([emoji_add(), " add verse"]),
     async () => {
-      await app_share_verse_download(
-        bible_folders,
-        chapter_next,
-        verse_number_next,
-        texts,
-        verses_component,
-      );
+      await download();
     },
   );
   let lookup_next = {};
@@ -113,4 +78,36 @@ export async function app_share() {
       ]),
     ),
   );
+  async function download() {
+    await app_share_verse_download(
+      bible_folders,
+      chapter,
+      verse_number,
+      texts,
+      verses_component,
+    );
+    let p = bible_chapter_name_parse(chapter);
+    let book_code = object_property_get(p, "book_code");
+    let chapter_code = object_property_get(p, "chapter_code");
+    let next = await new Promise(async (resolve) => {
+      await html_bible_verse_navigation_next(
+        app_share,
+        book_code,
+        chapter_code,
+        verse_number,
+        (book_code, chapter, verse_number_next) =>
+          resolve({
+            book_code,
+            chapter,
+            verse_number_next,
+          }),
+        context,
+        noop,
+      );
+    });
+    book_code_next = object_property_get(next, "book_code");
+    chapter_code_next = object_property_get(next, "chapter");
+    chapter_next = app_gs_bible_chapter_name(book_code_next, chapter_code_next);
+    verse_number_next = object_property_get(next, "verse_number_next");
+  }
 }
