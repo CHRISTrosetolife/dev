@@ -75,6 +75,7 @@ export async function app_share() {
       verse_number_next,
       texts,
       verses_component,
+      verse_numbers,
     );
     let p = bible_chapter_name_parse(chapter);
     let book_code = object_property_get(p, "book_code");
