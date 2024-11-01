@@ -6,7 +6,6 @@ import { list_add } from "./list_add.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
-import { list_map_async } from "./list_map_async.mjs";
 import { html_style_link } from "./html_style_link.mjs";
 import { html_hash_unparse } from "./html_hash_unparse.mjs";
 import { bible_chapter_name_parse } from "./bible_chapter_name_parse.mjs";
@@ -20,7 +19,6 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_bible_verse_navigation_next } from "./html_bible_verse_navigation_next.mjs";
 import { html_button_copy } from "./html_button_copy.mjs";
 import { firebase_initialize_axios } from "./firebase_initialize_axios.mjs";
-import { firebase_download_bible_verse } from "./firebase_download_bible_verse.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_hash_lookup } from "./html_hash_lookup.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
@@ -37,14 +35,7 @@ export async function app_share() {
     app_share_bible_folders(),
   );
   let bible_folders = string_split_plus(bible_folders_text);
-  let texts = await list_map_async(bible_folders, async (bible_folder) => {
-    let text = await firebase_download_bible_verse(
-      bible_folder,
-      chapter,
-      verse_number,
-    );
-    return text;
-  });
+  let texts = await app_share_verse(bible_folders, chapter, verse_number);
   let reference = bible_reference_code(chapter, verse_number);
   list_add_beginning(texts, reference);
   html_p_text_multiple(root, texts);
@@ -70,7 +61,9 @@ export async function app_share() {
   html_button_width_full_text_click(
     root,
     string_combine_multiple([emoji_add(), " add verse"]),
-    () => {},
+    () => {
+      let texts = app_share_verse(bible_folders, chapter, verse_number);
+    },
   );
   let book_code_next = object_property_get(next, "book_code");
   let chapter_code_next = object_property_get(next, "chapter");
