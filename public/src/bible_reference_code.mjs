@@ -5,6 +5,8 @@ export function bible_reference_code(chapter_code, verse_numbers) {
   let { book_code, chapter_code: chapter_number } =
     bible_chapter_name_parse(chapter_code);
   let book_name = bible_book_name(book_code);
+  if (false) {
+  }
   let r = bible_reference(book_name, chapter_number, verse_numbers);
   return r;
 }
