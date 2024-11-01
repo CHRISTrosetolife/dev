@@ -105,7 +105,7 @@ export async function sermon_references_combine(sermon_name) {
       }
       let { book, chapter_name } = first;
       let m = list_map_property(ns, "verse_number");
-      let r = bible_reference_multiple(m, book, chapter_name);
+      let r = bible_reference_multiple(book, chapter_name, m);
       let rs = list_map_property(group, "remaining");
       list_add_beginning(rs, r);
       let j2 = list_join_space(rs);
