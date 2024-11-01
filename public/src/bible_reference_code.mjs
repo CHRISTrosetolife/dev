@@ -16,6 +16,6 @@ export function bible_reference_code(chapter_code, verse_numbers) {
   } else {
     vr = list_join_dash([list_first(verse_numbers), list_last(verse_numbers)]);
   }
-  let r = bible_reference(book_name, chapter_number, verse_numbers);
+  let r = bible_reference(book_name, chapter_number, vr);
   return r;
 }
