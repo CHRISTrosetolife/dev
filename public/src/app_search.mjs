@@ -38,7 +38,7 @@ export async function app_search() {
     );
     each(filtered, (f) => {
       let { chapter_code, verse_number } = f;
-      let reference = bible_reference_code(chapter_code, verse_number);
+      let reference = bible_reference_code(chapter_code, [verse_number]);
       object_merge(f, {
         reference,
       });
