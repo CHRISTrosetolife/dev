@@ -20,7 +20,7 @@ export async function bible_search_generic(words, filter) {
     let chapter = await bible_chapter("engbsb", chapter_code);
     let v = list_find_property(chapter, "verse_number", verse_number);
     let { tokens } = v;
-    let r = bible_reference_code(chapter_code, verse_number);
+    let r = bible_reference_code(chapter_code, [verse_number]);
     return string_combine_multiple([r, " ", list_join_space(tokens)]);
   });
   return t;
