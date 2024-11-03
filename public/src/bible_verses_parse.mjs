@@ -1,3 +1,4 @@
+import { string_replace } from "./string_replace.mjs";
 import { integer_parse_roman } from "./integer_parse_roman.mjs";
 import { integer_parse_try } from "./integer_parse_try.mjs";
 import { html_parse_class_is } from "./html_parse_class_is.mjs";
@@ -47,6 +48,7 @@ export function bible_verses_parse(verses) {
       if (undefined_not_is(verse_number)) {
         let text = html_parse_text(c);
         let n = string_trim_whitespace(string_whitespace_normalize(text));
+        let r = string_replace(n, "—", " — ");
         let s = string_split_multiple(n, [" ", "—"]);
         s = list_filter(s, string_empty_not_is);
         list_add_multiple(tokens, s);
