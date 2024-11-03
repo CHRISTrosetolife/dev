@@ -47,7 +47,6 @@ export async function html_bible_verse_navigation_next(
     }
     let verses_next = await app_verses_generic(app_fn, book_code, chapter);
     await on_verse_next(
-      context,
       book_next_code,
       chapter_next,
       object_property_get(list_first(verses_next), "verse_number"),
