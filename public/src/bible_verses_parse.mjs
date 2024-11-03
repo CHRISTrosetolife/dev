@@ -48,7 +48,8 @@ export function bible_verses_parse(verses) {
       if (undefined_not_is(verse_number)) {
         let text = html_parse_text(c);
         let n = string_trim_whitespace(string_whitespace_normalize(text));
-        let r = string_replace_pad(n, "—");
+          const dash = "—";
+        let r = string_replace_pad(n, dash);
         let s = string_split(r, " ");
         s = list_filter(s, string_empty_not_is);
         list_add_multiple(tokens, s);
