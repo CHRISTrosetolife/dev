@@ -1,5 +1,4 @@
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { string_replace } from "./string_replace.mjs";
+import { string_replace_pad } from "./string_replace_pad.mjs";
 import { integer_parse_roman } from "./integer_parse_roman.mjs";
 import { integer_parse_try } from "./integer_parse_try.mjs";
 import { html_parse_class_is } from "./html_parse_class_is.mjs";
@@ -50,11 +49,7 @@ export function bible_verses_parse(verses) {
         let text = html_parse_text(c);
         let n = string_trim_whitespace(string_whitespace_normalize(text));
         let dash = "—";
-        let r = string_replace(
-          n,
-          dash,
-          string_combine_multiple([" ", dash, " "]),
-        );
+        let r = string_replace_pad(n, dash);
         let s = string_split_multiple(n, [" ", "—"]);
         s = list_filter(s, string_empty_not_is);
         list_add_multiple(tokens, s);
