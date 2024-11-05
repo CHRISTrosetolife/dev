@@ -18,7 +18,12 @@ export async function app_sleep_view_refresh(parent) {
         if (object_property_exists(data_day, list_name)) {
           html_p_text_centered(parent, list_name);
           let list = object_property_get(data_day, list_name);
-          each(list, (item) => {});
+          each(list, (item) =>
+            la({
+              when: item,
+              sleep_type: list_name,
+            }),
+          );
         }
       });
     });
