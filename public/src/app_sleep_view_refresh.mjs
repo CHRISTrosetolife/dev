@@ -40,6 +40,6 @@ export async function app_sleep_view_refresh(parent) {
         });
       });
     });
-    list_sort();
+    list_sort(items, (i) => object_property_get(object, "property_name"));
   });
 }
