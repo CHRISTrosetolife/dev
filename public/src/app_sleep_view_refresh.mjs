@@ -1,3 +1,4 @@
+import { list_sort } from "./list_sort.mjs";
 import { list_adder_async } from "./list_adder_async.mjs";
 import { each_async } from "./each_async.mjs";
 import { date_month_previous } from "./date_month_previous.mjs";
@@ -39,5 +40,6 @@ export async function app_sleep_view_refresh(parent) {
         });
       });
     });
+    list_sort();
   });
 }
