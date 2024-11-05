@@ -10,7 +10,7 @@ import { html_clear } from "./html_clear.mjs";
 export async function app_sleep_view_refresh(parent) {
   html_clear(parent);
   let { month_path, data } = await app_sleep_today_download();
-  list_adder((la) => {
+  let items = list_adder((la) => {
     each_object(data, (day, data_day) => {
       html_p_text_centered(parent, day);
       each(app_sleep_types(), (sleep_type) => {
