@@ -1,8 +1,8 @@
+import { list_adder_async } from "./list_adder_async.mjs";
 import { each_async } from "./each_async.mjs";
 import { date_month_previous } from "./date_month_previous.mjs";
 import { app_sleep_date_download } from "./app_sleep_date_download.mjs";
 import { date_now } from "./date_now.mjs";
-import { list_adder } from "./list_adder.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { app_sleep_types } from "./app_sleep_types.mjs";
@@ -17,9 +17,9 @@ export async function app_sleep_view_refresh(parent) {
   let now = date_now();
   let previous_month = date_month_previous(now);
   let dates = [now, previous_month];
-  await each_async(dates, async (d) => {
-    let { month_path, data } = await app_sleep_date_download(d);
-    let items = list_adder((la) => {
+  let items = await list_adder_async(async (la) => {
+    await each_async(dates, async (d) => {
+      let { month_path, data } = await app_sleep_date_download(d);
       each_object(data, (day, data_day) => {
         html_p_text_centered(parent, day);
         each(app_sleep_types(), (sleep_type) => {
