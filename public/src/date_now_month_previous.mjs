@@ -6,4 +6,5 @@ export function date_now_month_previous() {
   while (d.getMonth() === month) {
     d.setDate(d.getDate() - 1);
   }
+  return d;
 }
