@@ -17,25 +17,26 @@ export async function app_sleep_view_refresh(parent) {
   let now = date_now();
   let previous_month = date_month_previous(now);
   let dates = [now, previous_month];
-  await each_async(list2, async (item2) => {});
-  let { month_path, data } = await app_sleep_date_download(now);
-  let items = list_adder((la) => {
-    each_object(data, (day, data_day) => {
-      html_p_text_centered(parent, day);
-      each(app_sleep_types(), (sleep_type) => {
-        let list_name = object_property_get(sleep_type, "list_name");
-        if (object_property_exists(data_day, list_name)) {
-          html_p_text_centered(parent, list_name);
-          let list = object_property_get(data_day, list_name);
-          each(list, (item) => {
-            let entry = {
-              when: item,
-              sleep_type: list_name,
-            };
-            html_p_text(parent, json_to(entry));
-            la(entry);
-          });
-        }
+  await each_async(dates, async (d) => {
+    let { month_path, data } = await app_sleep_date_download(now);
+    let items = list_adder((la) => {
+      each_object(data, (day, data_day) => {
+        html_p_text_centered(parent, day);
+        each(app_sleep_types(), (sleep_type) => {
+          let list_name = object_property_get(sleep_type, "list_name");
+          if (object_property_exists(data_day, list_name)) {
+            html_p_text_centered(parent, list_name);
+            let list = object_property_get(data_day, list_name);
+            each(list, (item) => {
+              let entry = {
+                when: item,
+                sleep_type: list_name,
+              };
+              html_p_text(parent, json_to(entry));
+              la(entry);
+            });
+          }
+        });
       });
     });
   });
