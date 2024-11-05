@@ -16,7 +16,7 @@ export async function app_sleep_view_refresh(parent) {
   html_clear(parent);
   let now = date_now();
   let previous_month = date_month_previous(now);
-  let dates = [now, previous_month];
+  let dates = [previous_month, now];
   let items = await list_adder_async(async (la) => {
     await each_async(dates, async (d) => {
       let { month_path, data } = await app_sleep_date_download(d);
