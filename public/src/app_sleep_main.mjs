@@ -1,3 +1,4 @@
+import { app_sleep_view_refresh } from "./app_sleep_view_refresh.mjs";
 import { app_sleep_delete_refresh } from "./app_sleep_delete_refresh.mjs";
 import { app_sleep_sleeps } from "./app_sleep_sleeps.mjs";
 import { app_sleep_wakeups } from "./app_sleep_wakeups.mjs";
@@ -25,7 +26,7 @@ export function app_sleep_main(context) {
   html_hr(root);
   let result = html_div(root);
   html_button_width_full_text_click(root, "view", async () => {
-    await app_sleep_delete_refresh(result);
+    await app_sleep_view_refresh(result);
   });
   html_button_width_full_text_click(root, "delete", async () => {
     await app_sleep_delete_refresh(result);
