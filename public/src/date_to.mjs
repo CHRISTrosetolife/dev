@@ -1,1 +1,3 @@
-export function date_to() {}
+export function date_to(d) {
+  return new Date(d);
+}
