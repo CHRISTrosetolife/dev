@@ -1,3 +1,4 @@
+import { each_async } from "./each_async.mjs";
 import { date_month_previous } from "./date_month_previous.mjs";
 import { app_sleep_date_download } from "./app_sleep_date_download.mjs";
 import { date_now } from "./date_now.mjs";
@@ -16,6 +17,7 @@ export async function app_sleep_view_refresh(parent) {
   let now = date_now();
   let previous_month = date_month_previous(now);
   let dates = [now, previous_month];
+  await each_async(list2, async (item2) => {});
   let { month_path, data } = await app_sleep_date_download(now);
   let items = list_adder((la) => {
     each_object(data, (day, data_day) => {
