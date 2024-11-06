@@ -1,3 +1,4 @@
+import { bible_chapter_unpadded } from "./bible_chapter_unpadded.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_next } from "./list_next.mjs";
 import { list_first } from "./list_first.mjs";
@@ -14,6 +15,7 @@ export async function html_bible_verse_navigation_next(
   context,
   on_chapter_next,
 ) {
+  chapter = bible_chapter_unpadded(chapter);
   let verses = await app_verses_generic(app_fn, book_code, chapter);
   let verse = list_find_property(verses, "verse_number", verse_number);
   if (list_last_is(verses, verse)) {
