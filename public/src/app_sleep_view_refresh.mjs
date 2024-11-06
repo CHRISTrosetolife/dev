@@ -1,3 +1,4 @@
+import { html_style_bold } from "./html_style_bold.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { round_2 } from "./round_2.mjs";
 import { date_now_month_previous } from "./date_now_month_previous.mjs";
@@ -76,6 +77,7 @@ export async function app_sleep_view_refresh(parent) {
           parent,
           string_combine_multiple([hours, " hours"]),
         );
+        html_style_bold(hours_component);
         sleep_start = null;
       }
     }
