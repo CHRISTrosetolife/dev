@@ -1,7 +1,7 @@
+import { app_context_books_bible_generic } from "./app_context_books_bible_generic.mjs";
 import { app_save_get } from "./app_save_get.mjs";
 import { html_style_a_plain } from "./html_style_a_plain.mjs";
 import { app_firebase } from "./app_firebase.mjs";
-import { app_context_books_bible } from "./app_context_books_bible.mjs";
 import { app_record_home } from "./app_record_home.mjs";
 import { app_record_book } from "./app_record_book.mjs";
 import { app_record_chapter } from "./app_record_chapter.mjs";
@@ -17,7 +17,7 @@ export async function app_record() {
   });
   async function on_logged_in(context) {
     context.mr = await html_recorder_media();
-    await app_context_books_bible(context);
+    await app_context_books_bible_generic(context);
     let lookup = html_hash_lookup();
     let save = app_save_get(app_record);
     object_merge(lookup, save);
