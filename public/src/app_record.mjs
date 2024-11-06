@@ -17,6 +17,7 @@ export async function app_record() {
   });
   async function on_logged_in(context) {
     context.mr = await html_recorder_media();
+    let version_code = "engwebu";
     await app_context_books_bible_generic(context);
     let lookup = html_hash_lookup();
     let save = app_save_get(app_record);
