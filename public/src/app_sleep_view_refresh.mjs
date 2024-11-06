@@ -45,6 +45,7 @@ export async function app_sleep_view_refresh(parent) {
     list_sort(items, (i) =>
       date_to(object_property_get(object, when_property)),
     );
+    let sleeping = false;
     each(items, (item) => {});
   });
 }
