@@ -16,6 +16,7 @@ import { each_object } from "./each_object.mjs";
 import { html_clear } from "./html_clear.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { json_to } from "./json_to.mjs";
+import { app_sleep_sleeps } from "./app_sleep_sleeps.mjs";
 export async function app_sleep_view_refresh(parent) {
   html_clear(parent);
   let now = date_now();
@@ -57,6 +58,8 @@ export async function app_sleep_view_refresh(parent) {
         if (sleep_type === app_sleep_wakeups()) {
         }
       } else {
+        if (sleep_type === app_sleep_sleeps()) {
+        }
       }
     });
   });
