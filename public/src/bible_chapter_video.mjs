@@ -1,10 +1,10 @@
-import { string_prefix_without_multiple } from "./string_prefix_without_multiple.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { log } from "./log.mjs";
 import { video_concat } from "./video_concat.mjs";
 import { folder_gitignore_path } from "./folder_gitignore_path.mjs";
 import { string_case_upper_first } from "./string_case_upper_first.mjs";
 import { bible_book_name } from "./bible_book_name.mjs";
+import { string_trim_front } from "./string_trim_front.mjs";
 import { bible_chapter_name_parse } from "./bible_chapter_name_parse.mjs";
 import { each_async } from "./each_async.mjs";
 import { bible_image_resolutions } from "./bible_image_resolutions.mjs";
@@ -33,7 +33,7 @@ export async function bible_chapter_video(
       path_join(["video", bible_folder, project_name]),
     );
     let { book_code, chapter_code } = bible_chapter_name_parse(chapter_name);
-    let chapter_number = string_prefix_without_multiple(chapter_code, "0");
+    let chapter_number = string_trim_front(chapter_code, "0");
     let output_file_name = string_combine_multiple([
       bible_book_name(book_code),
       " ",
