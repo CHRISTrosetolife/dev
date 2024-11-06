@@ -56,11 +56,9 @@ export async function app_sleep_view_refresh(parent) {
       if (sleep_start === null) {
         if (sleep_type === app_sleep_sleeps()) {
           sleep_start = when;
-        } else {
         }
       } else {
         if (sleep_type === app_sleep_wakeups()) {
-        } else {
         }
       }
     });
