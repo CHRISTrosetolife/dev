@@ -15,9 +15,9 @@ export async function html_bible_verse_navigation_next(
   context,
   on_chapter_next,
 ) {
-  let verse = bible_chapter_unpadded(verse);
   let verses = await app_verses_generic(app_fn, book_code, chapter);
   let verse = list_find_property(verses, "verse_number", verse_number);
+  verse = bible_chapter_unpadded(verse);
   if (list_last_is(verses, verse)) {
     await chapter_next_go();
   } else {
