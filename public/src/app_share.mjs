@@ -1,3 +1,4 @@
+import { app_context_books_bible } from "./app_context_books_bible.mjs";
 import { bible_reference_code } from "./bible_reference_code.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { list_add } from "./list_add.mjs";
@@ -30,6 +31,7 @@ export async function app_share() {
   let context = {
     root,
   };
+  await app_context_books_bible(context);
   let lookup = html_hash_lookup();
   let chapter_next;
   let book_code_next;
