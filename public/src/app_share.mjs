@@ -33,6 +33,7 @@ export async function app_share() {
   };
   await app_context_books_bible(context);
   let lookup = html_hash_lookup();
+  let chapter;
   let chapter_next;
   let book_code_next;
   let chapter_code_next;
