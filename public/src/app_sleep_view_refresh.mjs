@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { app_sleep_when_get } from "./app_sleep_when_get.mjs";
 import { app_sleep_when } from "./app_sleep_when.mjs";
 import { app_sleep_wakeups } from "./app_sleep_wakeups.mjs";
@@ -60,8 +59,8 @@ export async function app_sleep_view_refresh(parent) {
         }
       } else {
         if (sleep_type === app_sleep_wakeups()) {
+        } else {
         }
-        log({});
       }
     });
   });
