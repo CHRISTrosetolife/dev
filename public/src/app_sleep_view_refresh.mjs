@@ -1,4 +1,4 @@
-import { round } from "./round.mjs";
+import { round_2 } from "./round_2.mjs";
 import { date_now_month_previous } from "./date_now_month_previous.mjs";
 import { log } from "./log.mjs";
 import { date_difference_hours } from "./date_difference_hours.mjs";
@@ -70,7 +70,7 @@ export async function app_sleep_view_refresh(parent) {
         let dateString = when.toLocaleDateString("en-US", options);
         html_p_text(parent, dateString);
         let hours = date_difference_hours(sleep_start, when);
-        hours = round((hours + Number.EPSILON) * 100) / 100;
+        hours = round_2(hours);
         html_p_text(parent, hours);
         sleep_start = null;
       }
