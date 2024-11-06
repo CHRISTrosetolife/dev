@@ -56,6 +56,13 @@ export async function app_sleep_view_refresh(parent) {
       }
     } else {
       if (sleep_type === app_sleep_wakeups()) {
+        let options = {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        };
+        let dateString = today.toLocaleDateString("en-US", options);
         let hours = date_difference_hours(sleep_start, when);
         html_p_text(parent, hours);
         sleep_start = null;
