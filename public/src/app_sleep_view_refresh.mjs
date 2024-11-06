@@ -1,3 +1,4 @@
+import { app_sleep_list_name } from "./app_sleep_list_name.mjs";
 import { date_to } from "./date_to.mjs";
 import { list_sort } from "./list_sort.mjs";
 import { list_adder_async } from "./list_adder_async.mjs";
@@ -26,7 +27,10 @@ export async function app_sleep_view_refresh(parent) {
       each_object(data, (day, data_day) => {
         html_p_text_centered(parent, day);
         each(app_sleep_types(), (sleep_type) => {
-          let list_name = object_property_get(sleep_type, "list_name");
+          let list_name = object_property_get(
+            sleep_type,
+            app_sleep_list_name(),
+          );
           if (object_property_exists(data_day, list_name)) {
             html_p_text_centered(parent, list_name);
             let list = object_property_get(data_day, list_name);
@@ -48,7 +52,7 @@ export async function app_sleep_view_refresh(parent) {
     let sleeping = false;
     each(items, (item) => {
       if (sleeping) {
-        if (false) {
+        if (object_property_get(object, when_property)) {
         }
       }
     });
