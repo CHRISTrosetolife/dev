@@ -72,7 +72,10 @@ export async function app_sleep_view_refresh(parent) {
         html_p_text(parent, dateString);
         let hours = date_difference_hours(sleep_start, when);
         hours = round_2(hours);
-        html_p_text(parent, string_combine_multiple([hours, " hours"]));
+        let hours_component = html_p_text(
+          parent,
+          string_combine_multiple([hours, " hours"]),
+        );
         sleep_start = null;
       }
     }
