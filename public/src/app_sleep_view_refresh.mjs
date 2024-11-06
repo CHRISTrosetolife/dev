@@ -70,7 +70,7 @@ export async function app_sleep_view_refresh(parent) {
         let dateString = when.toLocaleDateString("en-US", options);
         html_p_text(parent, dateString);
         let hours = date_difference_hours(sleep_start, when);
-        Math.round((num + Number.EPSILON) * 100) / 100;
+        hours = round((hours + Number.EPSILON) * 100) / 100;
         html_p_text(parent, hours);
         sleep_start = null;
       }
