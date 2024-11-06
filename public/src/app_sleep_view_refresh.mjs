@@ -52,7 +52,7 @@ export async function app_sleep_view_refresh(parent) {
     let sleeping = false;
     each(items, (item) => {
       if (sleeping) {
-        if (object_property_get(object, when_property)) {
+        if (object_property_get(item, app_sleep_list_name())) {
         }
       }
     });
