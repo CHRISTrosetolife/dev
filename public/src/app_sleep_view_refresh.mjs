@@ -51,10 +51,10 @@ export async function app_sleep_view_refresh(parent) {
     list_sort(items, (i) =>
       date_to(object_property_get(object, when_property)),
     );
-    let sleeping = false;
+    let sleep_start = null;
     each(items, (item) => {
       let sleep_type = object_property_get(item, app_sleep_list_name());
-      if (sleeping) {
+      if (sleep_start === null) {
         if (sleep_type === app_sleep_wakeups()) {
         }
       } else {
