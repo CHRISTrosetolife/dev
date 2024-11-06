@@ -1,3 +1,4 @@
+import { app_sleep_wakeups } from "./app_sleep_wakeups.mjs";
 import { app_sleep_list_name } from "./app_sleep_list_name.mjs";
 import { date_to } from "./date_to.mjs";
 import { list_sort } from "./list_sort.mjs";
@@ -53,8 +54,9 @@ export async function app_sleep_view_refresh(parent) {
     each(items, (item) => {
       let sleep_type = object_property_get(item, app_sleep_list_name());
       if (sleeping) {
-        if (sleep_type) {
+        if (sleep_type === app_sleep_wakeups()) {
         }
+      } else {
       }
     });
   });
