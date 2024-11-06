@@ -23,7 +23,6 @@ export async function app_sleep_view_refresh(parent) {
   let now = date_now();
   let previous_month = date_month_previous(now);
   let dates = [previous_month, now];
-  let when_property = app_sleep_when();
   let items = await list_adder_async(async (la) => {
     await each_async(dates, async (d) => {
       let { month_path, data } = await app_sleep_date_download(d);
@@ -39,7 +38,7 @@ export async function app_sleep_view_refresh(parent) {
             let list = object_property_get(data_day, list_name);
             each(list, (item) => {
               let entry = {
-                [when_property]: item,
+                [app_sleep_when()]: item,
                 [app_sleep_list_name()]: list_name,
               };
               html_p_text(parent, json_to(entry));
@@ -50,7 +49,7 @@ export async function app_sleep_view_refresh(parent) {
       });
     });
     list_sort(items, (i) =>
-      date_to(object_property_get(object, when_property)),
+      date_to(object_property_get(object, app_sleep_when())),
     );
     let sleep_start = null;
     each(items, (item) => {
