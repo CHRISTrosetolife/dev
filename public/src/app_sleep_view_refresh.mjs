@@ -47,7 +47,7 @@ export async function app_sleep_view_refresh(parent) {
     );
     let sleeping = false;
     each(items, (item) => {
-      if (false) {
+      if (sleeping) {
       }
     });
   });
