@@ -51,8 +51,8 @@ export async function app_sleep_view_refresh(parent) {
     );
     let sleeping = false;
     each(items, (item) => {
+      let sleep_type = object_property_get(item, app_sleep_list_name());
       if (sleeping) {
-        let sleep_type = object_property_get(item, app_sleep_list_name());
         if (sleep_type) {
         }
       }
