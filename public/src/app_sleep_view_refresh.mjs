@@ -61,6 +61,11 @@ export async function app_sleep_view_refresh(parent) {
         if (sleep_type === app_sleep_wakeups()) {
         }
       }
+      function getHourDifference(date1, date2) {
+        let diffInMilliseconds = date2.getTime() - date1.getTime();
+        let diffInHours = diffInMilliseconds / (1000 * 60 * 60);
+        return diffInHours;
+      }
     });
   });
 }
