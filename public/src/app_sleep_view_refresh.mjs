@@ -1,3 +1,4 @@
+import { date_difference_hours } from "./date_difference_hours.mjs";
 import { app_sleep_when_get } from "./app_sleep_when_get.mjs";
 import { app_sleep_when } from "./app_sleep_when.mjs";
 import { app_sleep_wakeups } from "./app_sleep_wakeups.mjs";
@@ -62,11 +63,6 @@ export async function app_sleep_view_refresh(parent) {
           let hours = date_difference_hours(sleep_start, item);
           sleep_start = null;
         }
-      }
-      function date_difference_hours(date1, date2) {
-        let diffInMilliseconds = date2.getTime() - date1.getTime();
-        let diffInHours = diffInMilliseconds / (1000 * 60 * 60);
-        return diffInHours;
       }
     });
   });
