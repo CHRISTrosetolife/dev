@@ -59,6 +59,7 @@ export async function app_sleep_view_refresh(parent) {
         }
       } else {
         if (sleep_type === app_sleep_wakeups()) {
+          getHourDifference(sleep_start, item);
           sleep_start = null;
         }
       }
