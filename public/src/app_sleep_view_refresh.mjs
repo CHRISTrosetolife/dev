@@ -1,3 +1,4 @@
+import { app_sleep_when } from "./app_sleep_when.mjs";
 import { app_sleep_wakeups } from "./app_sleep_wakeups.mjs";
 import { app_sleep_list_name } from "./app_sleep_list_name.mjs";
 import { date_to } from "./date_to.mjs";
@@ -22,7 +23,7 @@ export async function app_sleep_view_refresh(parent) {
   let now = date_now();
   let previous_month = date_month_previous(now);
   let dates = [previous_month, now];
-  let when_property = "when";
+  let when_property = app_sleep_when();
   let items = await list_adder_async(async (la) => {
     await each_async(dates, async (d) => {
       let { month_path, data } = await app_sleep_date_download(d);
