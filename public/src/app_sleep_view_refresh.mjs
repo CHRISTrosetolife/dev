@@ -55,10 +55,11 @@ export async function app_sleep_view_refresh(parent) {
     each(items, (item) => {
       let sleep_type = object_property_get(item, app_sleep_list_name());
       if (sleep_start === null) {
-        if (sleep_type === app_sleep_wakeups()) {
+        if (sleep_type === app_sleep_sleeps()) {
+          sleep_start = when;
         }
       } else {
-        if (sleep_type === app_sleep_sleeps()) {
+        if (sleep_type === app_sleep_wakeups()) {
         }
       }
     });
