@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { date_difference_hours } from "./date_difference_hours.mjs";
 import { app_sleep_when_get } from "./app_sleep_when_get.mjs";
 import { app_sleep_when } from "./app_sleep_when.mjs";
@@ -24,6 +25,9 @@ export async function app_sleep_view_refresh(parent) {
   let dates = [now];
   let items = await list_adder_async(async (la) => {
     await each_async(dates, async (d) => {
+      log({
+        d,
+      });
       let { month_path, data } = await app_sleep_date_download(d);
       each_object(data, (day, data_day) => {
         each(app_sleep_types(), (sleep_type) => {
