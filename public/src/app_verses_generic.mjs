@@ -5,7 +5,7 @@ import { app_gs_bible_chapter_name } from "./app_gs_bible_chapter_name.mjs";
 export async function app_verses_generic(app_fn, book_code, chapter) {
   let chapter_code = app_gs_bible_chapter_name(book_code, chapter);
   let a = await global_function_initialize(app_fn, () => ({}));
-  let version_code = "engbsb";
+  let version_code = app_record_version_code();
   let verses = await object_property_get_or_async(
     a,
     chapter_code,
