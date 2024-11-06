@@ -37,7 +37,7 @@ export async function app_sleep_view_refresh(parent) {
             each(list, (item) => {
               let entry = {
                 [when_property]: item,
-                sleep_type: list_name,
+                [app_sleep_list_name()]: list_name,
               };
               html_p_text(parent, json_to(entry));
               la(entry);
