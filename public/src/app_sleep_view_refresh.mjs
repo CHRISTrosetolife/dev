@@ -46,6 +46,9 @@ export async function app_sleep_view_refresh(parent) {
       date_to(object_property_get(object, when_property)),
     );
     let sleeping = false;
-    each(items, (item) => {});
+    each(items, (item) => {
+      if (false) {
+      }
+    });
   });
 }
