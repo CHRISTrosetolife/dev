@@ -1,3 +1,4 @@
+import { app_record_version_code } from "./app_record_version_code.mjs";
 import { app_context_books_bible_generic } from "./app_context_books_bible_generic.mjs";
 import { app_save_get } from "./app_save_get.mjs";
 import { html_style_a_plain } from "./html_style_a_plain.mjs";
@@ -17,8 +18,8 @@ export async function app_record() {
   });
   async function on_logged_in(context) {
     context.mr = await html_recorder_media();
-    let version_code = "engwebu";
-    await app_context_books_bible_generic(context);
+    let version_code = app_record_version_code();
+    await app_context_books_bible_generic(context, version_code);
     let lookup = html_hash_lookup();
     let save = app_save_get(app_record);
     object_merge(lookup, save);
