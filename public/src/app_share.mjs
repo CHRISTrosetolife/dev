@@ -40,6 +40,7 @@ export async function app_share() {
   let verse_number_next;
   let verse_numbers = [];
   chapter_next = object_property_get(lookup, app_share_chapter());
+  chapter = chapter_next;
   verse_number_next = object_property_get(lookup, app_share_verse());
   let bible_folders_text = object_property_get(
     lookup,
