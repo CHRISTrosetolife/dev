@@ -51,6 +51,7 @@ export async function app_sleep_view_refresh(parent) {
     list_sort(items, app_sleep_when_get);
     let sleep_start = null;
     each(items, (item) => {
+      let when = app_sleep_when_get(item);
       let sleep_type = object_property_get(item, app_sleep_list_name());
       if (sleep_start === null) {
         if (sleep_type === app_sleep_sleeps()) {
