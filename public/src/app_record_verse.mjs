@@ -1,3 +1,4 @@
+import { html_audio } from "./html_audio.mjs";
 import { app_record_project_name } from "./app_record_project_name.mjs";
 import { app_save_change_bible } from "./app_save_change_bible.mjs";
 import { html_bible_verse_navigation } from "./html_bible_verse_navigation.mjs";
@@ -77,10 +78,7 @@ export async function app_record_verse(
   listen = html_button_width_full_text_click(root, "👂 listen", async () => {
     await record_stop();
     let blobUrl = URL.createObjectURL(blob);
-    let audio = new Audio();
-    audio.src = blobUrl;
-    audio.controls = true;
-    document.body.appendChild(audio);
+    await html_audio(blobUrl);
   });
   save = html_button_width_full_text_click(
     root,
