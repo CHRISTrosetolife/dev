@@ -124,12 +124,11 @@ export async function app_learn_code() {
     html_clear_scroll_top(root);
     let begin_text_post = "";
     let begin_text = html_button_begin_text(begin_text_post);
-    let list = [
+    html_p_text_combine(root, [
       'If you want to start from the beginning, then choose "',
       begin_text,
       '" : ',
-    ];
-    html_p_text_combine(root, list);
+    ]);
     html_button_begin(
       root,
       begin_text_post,
