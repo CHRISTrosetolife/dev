@@ -121,15 +121,15 @@ export async function app_learn_code() {
   }
   function refresh_main() {
     html_clear_scroll_top(root);
-    let begin_text = "";
+    let begin_text_post = "";
+    let begin_text = html_button_begin_text(begin_text_post);
     html_p_text(
       root,
       'If you want to start from the beginning, then choose "begin" : ',
     );
-    html_button_begin_text(begin_text);
     html_button_begin(
       root,
-      begin_text,
+      begin_text_post,
       async () => await refresh_lesson_screen(0),
     );
     html_p_text(root, "or choose a module below :");
