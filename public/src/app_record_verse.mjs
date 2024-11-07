@@ -76,7 +76,6 @@ export async function app_record_verse(
   let verse_next = object_property_get(n, "verse_next");
   listen = html_button_width_full_text_click(root, "👂 listen", async () => {
     await record_stop();
-    let response = await fetch("http://path/to/audio.wav");
     let blobUrl = URL.createObjectURL(blob);
     let audio = new Audio();
     audio.src = blobUrl;
