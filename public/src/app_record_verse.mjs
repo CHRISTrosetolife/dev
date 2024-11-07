@@ -53,7 +53,7 @@ export async function app_record_verse(
     restart,
     recording,
     recording_not,
-    review;
+    listen;
   let blob = null;
   start = html_button_width_full_text_click(root, "⏺️ start recording", () => {
     each(recording_not, html_style_display_none);
@@ -73,7 +73,7 @@ export async function app_record_verse(
   previous = object_property_get(n, "previous");
   next = object_property_get(n, "next");
   let verse_next = object_property_get(n, "verse_next");
-  review = html_button_width_full_text_click(root, "review");
+  listen = html_button_width_full_text_click(root, "review");
   save = html_button_width_full_text_click(
     root,
     "💾 save recording and ➡️ next verse",
@@ -114,7 +114,7 @@ export async function app_record_verse(
       each(recording_not, html_style_display_block);
     },
   );
-  recording = [review, save, restart, cancel];
+  recording = [listen, save, restart, cancel];
   recording_not = [start, previous, next];
   each(recording, html_style_display_none);
   function record_start() {
