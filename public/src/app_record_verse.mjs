@@ -1,3 +1,4 @@
+import { html_button_width_full_text_click_br } from "./html_button_width_full_text_click_br.mjs";
 import { html_audio } from "./html_audio.mjs";
 import { app_record_project_name } from "./app_record_project_name.mjs";
 import { app_save_change_bible } from "./app_save_change_bible.mjs";
@@ -75,12 +76,12 @@ export async function app_record_verse(
   previous = object_property_get(n, "previous");
   next = object_property_get(n, "next");
   let verse_next = object_property_get(n, "verse_next");
-  listen = html_button_width_full_text_click(root, "👂 listen", async () => {
+  listen = html_button_width_full_text_click_br(root, "👂 listen", async () => {
     await record_stop();
     let blobUrl = URL.createObjectURL(blob);
     await html_audio(blobUrl);
   });
-  save = html_button_width_full_text_click(
+  save = html_button_width_full_text_click_br(
     root,
     "💾 save recording and ➡️ next verse",
     async () => {
@@ -99,7 +100,7 @@ export async function app_record_verse(
       await verse_next();
     },
   );
-  restart = html_button_width_full_text_click(
+  restart = html_button_width_full_text_click_br(
     root,
     "↩️ restart recording",
     async () => {
@@ -109,7 +110,7 @@ export async function app_record_verse(
       each(recording, html_style_display_block);
     },
   );
-  cancel = html_button_width_full_text_click(
+  cancel = html_button_width_full_text_click_br(
     root,
     "🚫 cancel recording",
     async () => {
