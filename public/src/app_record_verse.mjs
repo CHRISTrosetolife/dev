@@ -78,7 +78,9 @@ export async function app_record_verse(
     "💾 save recording and ➡️ next verse",
     async () => {
       each(recording, html_style_display_none);
-      blob = await html_recorder_media_stop(context.mr);
+      if (false) {
+        blob = await html_recorder_media_stop(context.mr);
+      }
       let when = date_string_iso_file();
       let storage_path = path_join([
         folder_audio_bible(),
