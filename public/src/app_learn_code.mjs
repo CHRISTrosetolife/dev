@@ -125,7 +125,11 @@ export async function app_learn_code() {
     let begin_text = html_button_begin_text(begin_text_post);
     html_p_text(
       root,
-      'If you want to start from the beginning, then choose "begin" : ',
+      string_combine_multiple([
+        'If you want to start from the beginning, then choose "',
+        begin_text,
+        '" : ',
+      ]),
     );
     html_button_begin(
       root,
