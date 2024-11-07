@@ -98,7 +98,7 @@ export async function app_record_verse(
     async () => {
       each(recording, html_style_display_none);
       await html_recorder_media_stop(context.mr);
-      html_recorder_media_start(context.mr);
+      record_start();
       each(recording, html_style_display_block);
     },
   );
