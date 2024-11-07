@@ -127,7 +127,7 @@ export async function app_learn_code() {
     html_p_text_combine(root, [
       'If you want to start from the beginning, then choose "',
       begin_text,
-      '" : ',
+      '": ',
     ]);
     html_button_begin(
       root,
