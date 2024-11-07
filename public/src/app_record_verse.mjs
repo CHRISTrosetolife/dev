@@ -54,7 +54,7 @@ export async function app_record_verse(
     recording,
     recording_not,
     review;
-  let blob;
+  let blob = null;
   start = html_button_width_full_text_click(root, "⏺️ start recording", () => {
     each(recording_not, html_style_display_none);
     html_recorder_media_start(context.mr);
