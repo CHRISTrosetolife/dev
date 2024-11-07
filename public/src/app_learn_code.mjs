@@ -1,3 +1,4 @@
+import { string_delimit_double } from "./string_delimit_double.mjs";
 import { html_p_text_combine } from "./html_p_text_combine.mjs";
 import { html_button_begin_text } from "./html_button_begin_text.mjs";
 import { html_button_begin } from "./html_button_begin.mjs";
@@ -125,9 +126,9 @@ export async function app_learn_code() {
     let begin_text_post = "";
     let begin_text = html_button_begin_text(begin_text_post);
     html_p_text_combine(root, [
-      'If you want to start from the beginning, then choose "',
-      begin_text,
-      '": ',
+      "If you want to start from the beginning, then choose ",
+      string_delimit_double(begin_text),
+      ": ",
     ]);
     html_button_begin(
       root,
