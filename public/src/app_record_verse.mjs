@@ -57,8 +57,7 @@ export async function app_record_verse(
   let blob = null;
   start = html_button_width_full_text_click(root, "⏺️ start recording", () => {
     each(recording_not, html_style_display_none);
-    html_recorder_media_start(context.mr);
-    blob = null;
+    record_start();
     each(recording, html_style_display_block);
   });
   let n = await html_bible_verse_navigation(
@@ -115,4 +114,8 @@ export async function app_record_verse(
   recording = [review, save, restart, cancel];
   recording_not = [start, previous, next];
   each(recording, html_style_display_none);
+  function record_start() {
+    html_recorder_media_start(context.mr);
+    blob = null;
+  }
 }
