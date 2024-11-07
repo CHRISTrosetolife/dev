@@ -1,3 +1,4 @@
+import { html_button_begin_text } from "./html_button_begin_text.mjs";
 import { html_button_begin } from "./html_button_begin.mjs";
 import { string_size } from "./string_size.mjs";
 import { html_scripts_load } from "./html_scripts_load.mjs";
@@ -120,11 +121,12 @@ export async function app_learn_code() {
   }
   function refresh_main() {
     html_clear_scroll_top(root);
+    let begin_text = "";
     html_p_text(
       root,
       'If you want to start from the beginning, then choose "begin" : ',
     );
-    let begin_text = "";
+    html_button_begin_text(begin_text);
     html_button_begin(
       root,
       begin_text,
