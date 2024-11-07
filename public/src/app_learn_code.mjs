@@ -1,3 +1,4 @@
+import { html_p_text_combine } from "./html_p_text_combine.mjs";
 import { html_button_begin_text } from "./html_button_begin_text.mjs";
 import { html_button_begin } from "./html_button_begin.mjs";
 import { string_size } from "./string_size.mjs";
@@ -128,7 +129,7 @@ export async function app_learn_code() {
       begin_text,
       '" : ',
     ];
-    html_p_text(root, string_combine_multiple(list));
+    html_p_text_combine(root, list);
     html_button_begin(
       root,
       begin_text_post,
