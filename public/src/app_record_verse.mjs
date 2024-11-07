@@ -110,7 +110,7 @@ export async function app_record_verse(
       each(recording_not, html_style_display_block);
     },
   );
-  recording = [save, restart, cancel];
+  recording = [review, save, restart, cancel];
   recording_not = [start, previous, next];
   each(recording, html_style_display_none);
 }
