@@ -6,7 +6,7 @@ import { html_ul } from "./html_ul.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 export function lesson_console_log_analogy_paper(parent) {
-  html_p_text(parent, "suppose there is paper");
+  html_p_text(parent, "Suppose there is paper");
   html_img_limited_centered(parent, "paper.jpg");
   html_p_text(parent, "and suppose someone folds the paper into origami");
   html_img_limited_centered(parent, "paper_folding.jpg");
