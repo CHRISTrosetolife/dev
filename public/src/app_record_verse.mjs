@@ -73,8 +73,8 @@ export async function app_record_verse(
   previous = object_property_get(n, "previous");
   next = object_property_get(n, "next");
   let verse_next = object_property_get(n, "verse_next");
-  listen = html_button_width_full_text_click(root, "👂 listen", () => {
-    record_stop();
+  listen = html_button_width_full_text_click(root, "👂 listen", async () => {
+    await record_stop();
   });
   save = html_button_width_full_text_click(
     root,
