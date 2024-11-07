@@ -73,15 +73,15 @@ export async function app_record_verse(
   previous = object_property_get(n, "previous");
   next = object_property_get(n, "next");
   let verse_next = object_property_get(n, "verse_next");
-  listen = html_button_width_full_text_click(root, "👂 listen", () => {});
+  listen = html_button_width_full_text_click(root, "👂 listen", () => {
+    record_stop();
+  });
   save = html_button_width_full_text_click(
     root,
     "💾 save recording and ➡️ next verse",
     async () => {
       each(recording, html_style_display_none);
-      if (blob === null) {
-        blob = await html_recorder_media_stop(context.mr);
-      }
+      await record_stop();
       let when = date_string_iso_file();
       let storage_path = path_join([
         folder_audio_bible(),
@@ -117,6 +117,11 @@ export async function app_record_verse(
   recording = [listen, save, restart, cancel];
   recording_not = [start, previous, next];
   each(recording, html_style_display_none);
+  async function record_stop() {
+    if (blob === null) {
+      blob = await html_recorder_media_stop(context.mr);
+    }
+  }
   function record_start() {
     html_recorder_media_start(context.mr);
     blob = null;
