@@ -1,3 +1,4 @@
+import { app_record_project_name } from "./app_record_project_name.mjs";
 import { bible_chapter_images } from "./bible_chapter_images.mjs";
 import { range_from } from "./range_from.mjs";
 import { app_gs_bible_chapter_name } from "./app_gs_bible_chapter_name.mjs";
@@ -42,7 +43,11 @@ export async function sandbox_2() {
       let chapter_name = app_gs_bible_chapter_name(a.book_id, item);
       let images = await bible_chapter_images(bible_folder, chapter_name);
       return;
-      await bible_chapter_video("calm", bible_folder, chapter_name);
+      await bible_chapter_video(
+        app_record_project_name(),
+        bible_folder,
+        chapter_name,
+      );
     });
   });
 }
