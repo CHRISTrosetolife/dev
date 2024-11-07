@@ -89,7 +89,7 @@ import { lesson_for_iterations_log_outside_large } from "./lesson_for_iterations
 export function app_learn_code_modules() {
   let modules = [];
   let module_current;
-  module_current = module_new(modules, "output , processes , statements");
+  module_current = module_new(modules, "output, processes, statements");
   list_add(module_current, lesson_console_log);
   list_add(module_current, lesson_log_number);
   if (0) {
@@ -185,7 +185,7 @@ export function app_learn_code_modules() {
   list_add(module_current, lesson_object_property_shorthand);
   list_add(module_current, lesson_object_properties_shorthand_two);
   list_add(module_current, lesson_object_properties_shorthand_three);
-  module_current = module_new(modules, "arrays ( lists )");
+  module_current = module_new(modules, "arrays (lists)");
   list_add(module_current, lesson_array_two);
   marker();
   return modules;
