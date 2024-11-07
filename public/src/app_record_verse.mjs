@@ -45,7 +45,15 @@ export async function app_record_verse(
   if (equal(verse_number, "1")) {
     html_style_green(vn);
   }
-  let start, previous, next, save, cancel, restart, recording, recording_not;
+  let start,
+    previous,
+    next,
+    save,
+    cancel,
+    restart,
+    recording,
+    recording_not,
+    review;
   start = html_button_width_full_text_click(root, "⏺️ start recording", () => {
     each(recording_not, html_style_display_none);
     html_recorder_media_start(context.mr);
