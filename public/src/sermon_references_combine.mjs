@@ -49,7 +49,7 @@ export async function sermon_references_combine(sermon_name) {
       let { first: chapter_verse, remaining: remaining2 } =
         list_first_remaining(s);
       let chapter_verse_first = string_first(chapter_verse);
-      if (!string_digits_is()) {
+      if (!string_digits_is(chapter_verse_first)) {
       }
       let { chapter_name, verse_number } =
         bible_chapter_verse_parse(chapter_verse);
