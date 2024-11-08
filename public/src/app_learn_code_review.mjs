@@ -23,7 +23,7 @@ export function app_learn_code_review(lessons) {
         let filtered = list_filter(lessons, (l) =>
           object_property_exists(l, quiz_property),
         );
-        let mapped = list_map(lessons, (lesson) =>
+        let mapped = list_map(filtered, (lesson) =>
           object_property_get(lesson, quiz_property),
         );
         let quizzes = list_filter(mapped, undefined_not_is);
