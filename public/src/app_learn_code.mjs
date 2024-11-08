@@ -1,3 +1,4 @@
+import { html_button_me_email } from "./html_button_me_email.mjs";
 import { string_delimit_double } from "./string_delimit_double.mjs";
 import { html_p_text_combine } from "./html_p_text_combine.mjs";
 import { html_button_begin_text } from "./html_button_begin_text.mjs";
@@ -147,6 +148,7 @@ export async function app_learn_code() {
     });
     html_hr(root);
     html_button_width_full_text_click(root, "⚙️ settings", refresh_settings);
+    html_button_me_email(root);
   }
   function refresh_module(module) {
     html_clear_scroll_top(root);
