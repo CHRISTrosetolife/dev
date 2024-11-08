@@ -1,3 +1,4 @@
+import { html_button_me_email } from "./html_button_me_email.mjs";
 import { app_language_group_index_component } from "./app_language_group_index_component.mjs";
 import { app_language_refresh_help } from "./app_language_refresh_help.mjs";
 import { app_language_text_group_previous } from "./app_language_text_group_previous.mjs";
@@ -10,9 +11,6 @@ import { app_language_refresh_node_begin_text } from "./app_language_refresh_nod
 import { app_language_refresh_learn_0 } from "./app_language_refresh_learn_0.mjs";
 import { app_language_refresh_node_left_right } from "./app_language_refresh_node_left_right.mjs";
 import { html_button_begin } from "./html_button_begin.mjs";
-import { me_email } from "./me_email.mjs";
-import { html_style_email } from "./html_style_email.mjs";
-import { html_button_width_full_text } from "./html_button_width_full_text.mjs";
 import { list_size } from "./list_size.mjs";
 import { app_language_group_get } from "./app_language_group_get.mjs";
 import { app_language_group_index_get } from "./app_language_group_index_get.mjs";
@@ -207,11 +205,7 @@ export async function app_language_refresh_node(context) {
     }
   }
   html_button_width_full_text_click_up(root, up_onclick);
-  let email_button = html_button_width_full_text(
-    root,
-    "📨 contact developer email",
-  );
-  html_style_email(me_email())(email_button);
+  html_button_me_email(root);
   async function up_onclick() {
     if (top_is) {
       await app_language_refresh_menu(context);
