@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { bible_reference_multiple } from "./bible_reference_multiple.mjs";
 import { list_add_beginning } from "./list_add_beginning.mjs";
 import { list_map_property } from "./list_map_property.mjs";
@@ -46,6 +47,9 @@ export async function sermon_references_combine(sermon_name) {
       let s = string_split_space(remaining);
       let { first: chapter_verse, remaining: remaining2 } =
         list_first_remaining(s);
+      log({
+        chapter_verse,
+      });
       let { chapter_name, verse_number } =
         bible_chapter_verse_parse(chapter_verse);
       return {
