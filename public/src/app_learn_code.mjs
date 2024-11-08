@@ -1,3 +1,4 @@
+import { html_style_a_plain } from "./html_style_a_plain.mjs";
 import { html_button_me_email } from "./html_button_me_email.mjs";
 import { string_delimit_double } from "./string_delimit_double.mjs";
 import { html_p_text_combine } from "./html_p_text_combine.mjs";
@@ -50,6 +51,7 @@ import { list_single } from "./list_single.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 export async function app_learn_code() {
   let root = html_style_default_initialize();
+  html_style_a_plain();
   await html_scripts_load(root, ["acorn", "astring"]);
   let modules = app_learn_code_modules();
   html_hash({
