@@ -19,11 +19,12 @@ export function app_learn_code_review(lessons) {
     screens: [
       function app_learn_code_review_inner(parent) {
         let div = html_div(parent);
+        let quiz_property = "quiz";
         let filtered = list_filter(lessons, (l) =>
-          object_property_exists(object, "property_name"),
+          object_property_exists(l, quiz_property),
         );
         let mapped = list_map(lessons, (lesson) =>
-          object_property_get(lesson, "quiz"),
+          object_property_get(lesson, quiz_property),
         );
         let quizzes = list_filter(mapped, undefined_not_is);
         let wrongs;
