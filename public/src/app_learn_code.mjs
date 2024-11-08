@@ -149,8 +149,8 @@ export async function app_learn_code() {
       );
     });
     html_hr(root);
-    html_button_width_full_text_click(root, "⚙️ settings", refresh_settings);
     html_button_me_email(root);
+    html_button_width_full_text_click(root, "⚙️ settings", refresh_settings);
   }
   function refresh_module(module) {
     html_clear_scroll_top(root);
