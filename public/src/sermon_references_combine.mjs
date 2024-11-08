@@ -34,11 +34,12 @@ export async function sermon_references_combine(sermon_name) {
       let f = list_filter(books, (book) =>
         string_starts_with(line, bible_book_to_reference_prefix(book)),
       );
+      let reference_not = {
+        line,
+        reference_is: false,
+      };
       if (list_empty_is(f)) {
-        return {
-          line,
-          reference_is: false,
-        };
+        return reference_not;
       }
       let book = list_single(f);
       let remaining = string_prefix_without(
@@ -50,6 +51,7 @@ export async function sermon_references_combine(sermon_name) {
         list_first_remaining(s);
       let chapter_verse_first = string_first(chapter_verse);
       if (!string_digits_is(chapter_verse_first)) {
+        return reference_not;
       }
       let { chapter_name, verse_number } =
         bible_chapter_verse_parse(chapter_verse);
