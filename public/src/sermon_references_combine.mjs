@@ -1,3 +1,4 @@
+import { string_digits_is } from "./string_digits_is.mjs";
 import { string_first } from "./string_first.mjs";
 import { bible_reference_multiple } from "./bible_reference_multiple.mjs";
 import { list_add_beginning } from "./list_add_beginning.mjs";
@@ -48,7 +49,7 @@ export async function sermon_references_combine(sermon_name) {
       let { first: chapter_verse, remaining: remaining2 } =
         list_first_remaining(s);
       let chapter_verse_first = string_first(chapter_verse);
-      if (false) {
+      if (!string_digits_is()) {
       }
       let { chapter_name, verse_number } =
         bible_chapter_verse_parse(chapter_verse);
