@@ -17,7 +17,7 @@ export async function firebase_download(storage_path) {
     if (error.code === "storage/object-not-found") {
       return null;
     } else {
-      console.error("Error:", error);
+      throw e;
     }
   }
 }
