@@ -1,5 +1,4 @@
 import { bible_audio_download_mp3 } from "./bible_audio_download_mp3.mjs";
-import { log } from "./log.mjs";
 import { each_async } from "./each_async.mjs";
 export async function bible_audio_download_divinerevelations() {
   let prefix_url =
@@ -11,8 +10,6 @@ export async function bible_audio_download_divinerevelations() {
   ];
   await each_async(versions, async (version) => {
     let r = await bible_audio_download_mp3(prefix_url, version);
-    log({
-      r,
-    });
+    await each_async(list, async (item) => {});
   });
 }
