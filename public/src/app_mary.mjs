@@ -23,8 +23,8 @@ export async function app_mary() {
       html_value_set(t, prayer);
       html_button_add(root, "word", async () => {
         let name = file_name_json(date_string_iso_file());
-        let index_path = string_combine("mary/", name);
-        await firebase_save(index_path, index);
+        let file_path = string_combine("mary/", name);
+        await firebase_save(file_path, index);
       });
     },
   });
