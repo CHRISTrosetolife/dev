@@ -5,6 +5,9 @@ export async function firebase_download(storage_path) {
   let storage = getStorage();
   let storageRef = ref(storage, storage_path);
   let snapshot = await get(storageRef);
+  if (snapshot.exists()) {
+    return;
+  }
   let url = await getDownloadURL(storageRef);
   return await http_get(url);
 }
