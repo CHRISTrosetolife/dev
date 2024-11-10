@@ -1,3 +1,4 @@
+import { button_add_text } from "./button_add_text.mjs";
 import { app_context_books_bible } from "./app_context_books_bible.mjs";
 import { bible_reference_code } from "./bible_reference_code.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
@@ -6,7 +7,6 @@ import { html_span } from "./html_span.mjs";
 import { html_button_copy_get } from "./html_button_copy_get.mjs";
 import { html_p } from "./html_p.mjs";
 import { app_share_verse_download } from "./app_share_verse_download.mjs";
-import { emoji_add } from "./emoji_add.mjs";
 import { string_split_plus } from "./string_split_plus.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
@@ -59,11 +59,7 @@ export async function app_share() {
   let without_hash = string_combine_multiple([origin, pathname]);
   let url_next;
   await download();
-  html_button_width_full_text_click(
-    root,
-    string_combine_multiple([emoji_add(), " add verse"]),
-    download,
-  );
+  html_button_width_full_text_click(root, button_add_text("verse"), download);
   html_button_copy_get(root, () =>
     list_join_newline(
       list_concat_multiple([
