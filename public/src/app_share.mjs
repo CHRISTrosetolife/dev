@@ -59,7 +59,8 @@ export async function app_share() {
   let without_hash = string_combine_multiple([origin, pathname]);
   let url_next;
   await download();
-  html_button_width_full_text_click(root, button_add_text("verse"), download);
+  let text = "verse";
+  html_button_width_full_text_click(root, button_add_text(text), download);
   html_button_copy_get(root, () =>
     list_join_newline(
       list_concat_multiple([
