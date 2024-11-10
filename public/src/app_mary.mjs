@@ -15,5 +15,5 @@ export async function app_mary() {
   html_p_text(body, response);
   let t = html_textarea_width_full(body);
   html_value_set(t, prayer);
-  html_button_add(root, "word", download);
+  html_button_add(root, "word", $ag);
 }
