@@ -59,6 +59,7 @@ export async function app_share() {
   let url_next;
   await download();
   let text = "verse";
+  $ag;
   html_button_add(root, text, download);
   html_button_copy_get(root, () =>
     list_join_newline(
