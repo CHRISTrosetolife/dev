@@ -9,9 +9,9 @@ import { string_prefix_without } from "./string_prefix_without.mjs";
 export async function bible_hebrew_audio_download() {
   let prefix_url = "https://mechon-mamre.org/";
   let url = string_combine_multiple([prefix_url, "p/pt/pt00.htm"]);
+  let prefix = "../../";
   let p = await http_cache_parse_parsed(url);
   let { root } = p;
-  let prefix = "../../";
   let hrefs = bible_audio_download_hrefs_get(root);
   let urls = list_map(hrefs, (h) =>
     string_combine(prefix_url, string_prefix_without(h, prefix)),
