@@ -49,7 +49,7 @@ export function function_aliases() {
     pd: "function_param_delete",
     pf: "function_param_move_first",
     pm: "function_param_move",
-    r: "function_rename",
+    r: "function_rename_open",
     re: "computer_restart",
     s: "function_search",
     sb: "sandbox",
