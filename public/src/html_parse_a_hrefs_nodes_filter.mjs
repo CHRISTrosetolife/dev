@@ -10,7 +10,7 @@ export function html_parse_a_hrefs_nodes_filter(root, condition) {
       if (object_property_exists(attribs, "href")) {
         let href = html_parse_href(node);
         if (condition(href)) {
-          la(href);
+          la(node);
         }
       }
     }),
