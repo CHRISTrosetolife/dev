@@ -9,6 +9,7 @@ import { html_style_default_initialize } from "./html_style_default_initialize.m
 export async function app_mary() {
   await app_firebase({
     on_logged_in: async (context) => {
+      let root = context;
       let body = html_style_default_initialize();
       let prayer = await clipboard_paste_web();
       let response =
