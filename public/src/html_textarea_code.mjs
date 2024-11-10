@@ -6,10 +6,10 @@ import { app_learn_code_style_code_color } from "./app_learn_code_style_code_col
 import { html_textarea } from "./html_textarea.mjs";
 export function html_textarea_code(root) {
   let textarea = html_textarea(root);
+  html_style_width_full(textarea);
   app_learn_code_style_code_color(textarea);
   app_learn_code_style_code(textarea);
   app_learn_code_code_background_set(textarea);
-  html_style_width_full(textarea);
   html_attribute_set(textarea, "spellcheck", "false");
   return textarea;
 }
