@@ -9,5 +9,5 @@ export function app_mary() {
   clipboard_copy_web(response);
   html_p_text(body, "Response copied to clipboard:");
   html_p_text(body, response);
-  html_textarea();
+  html_textarea(body);
 }
