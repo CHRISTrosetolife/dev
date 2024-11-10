@@ -7,7 +7,8 @@ export async function bible_audio_download_divinerevelations_esv() {
     "https://www.divinerevelations.info/documents/bible/english_mp3_bible/";
   let url = string_combine_multiple([
     prefix_url,
-    "english_standard_version_v2/",
+    "english_standard_version_v2",
+    "/",
   ]);
   return await bible_audio_download_generic(
     url,
