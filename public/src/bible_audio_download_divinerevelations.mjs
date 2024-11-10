@@ -19,6 +19,7 @@ export async function bible_audio_download_divinerevelations() {
         chapter_path,
         path_join([bible_audio_player_english_path(), version]),
       );
+      return;
       await file_copy_closed();
     });
   });
