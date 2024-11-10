@@ -1,6 +1,5 @@
-import { emoji_add } from "./emoji_add.mjs";
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { button_add_text } from "./button_add_text.mjs";
 export function app_sleep_manual_text() {
   let after = "manual";
-  return string_combine_multiple([emoji_add(), " add ", after]);
+  return button_add_text(after);
 }
