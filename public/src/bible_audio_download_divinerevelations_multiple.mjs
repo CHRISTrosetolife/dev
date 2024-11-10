@@ -10,7 +10,7 @@ export async function bible_audio_download_divinerevelations_multiple() {
   await each_async(versions, async (version) => {
     let prefix_url =
       "https://www.divinerevelations.info/documents/bible/english_mp3_bible/";
-    return await bible_audio_download_mp3(prefix_url, version);
+    let r = await bible_audio_download_mp3(prefix_url, version);
     log({
       r,
     });
