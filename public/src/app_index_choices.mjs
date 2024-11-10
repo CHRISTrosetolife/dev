@@ -47,6 +47,10 @@ export function app_index_choices() {
     page: "record",
   });
   list_add(choices, {
+    text: "🧎🏿 words",
+    page: "list",
+  });
+  list_add(choices, {
     text: "🎥 audio bible videos",
     href: url_audio_bible(),
   });
