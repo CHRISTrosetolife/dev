@@ -24,7 +24,7 @@ export async function bible_hebrew_audio_download() {
       string_combine_multiple([prefix, "mp3/"]),
     );
   }
-  function bible_audio_download_hrefs_map(url_Base, href) {
-    return string_combine(url_Base, string_prefix_without(href, prefix));
+  function bible_audio_download_hrefs_map(url_base, href) {
+    return string_combine(url_base, string_prefix_without(href, prefix));
   }
 }
