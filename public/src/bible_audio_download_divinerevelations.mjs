@@ -1,7 +1,7 @@
 import { bible_audio_download_mp3 } from "./bible_audio_download_mp3.mjs";
 import { log } from "./log.mjs";
 import { each_async } from "./each_async.mjs";
-export async function bible_audio_download_divinerevelations_multiple() {
+export async function bible_audio_download_divinerevelations() {
   let prefix_url =
     "https://www.divinerevelations.info/documents/bible/english_mp3_bible/";
   let versions = [
