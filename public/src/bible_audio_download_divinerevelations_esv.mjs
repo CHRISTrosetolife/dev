@@ -16,10 +16,7 @@ export async function bible_audio_download_divinerevelations_esv() {
   let p = await http_cache_parse_parsed(url);
   let { root } = p;
   let prefix = "../../";
-  let hrefs = html_parse_a_href_ends_with_hrefs(
-    root,
-    string_combine_multiple([prefix, "mp3/"]),
-  );
+  let hrefs = html_parse_a_href_ends_with_hrefs(root, ".mp3");
   let urls = list_map(hrefs, (h) =>
     string_combine(prefix_url, string_prefix_without(h, prefix)),
   );
