@@ -13,18 +13,20 @@ export async function app_mary() {
   await app_firebase({
     on_logged_in: async (context) => {
       let { root } = context;
-      let prayer = await clipboard_paste_web();
+      let word = await clipboard_paste_web();
       let response =
         "Behold, I am an unworthy servant of the LORD. May the word of the LORD come true.";
       await clipboard_copy_web(response);
       html_p_text(root, "Response copied to clipboard:");
       html_p_text(root, response);
       let t = html_textarea_width_full(root);
-      html_value_set(t, prayer);
+      html_value_set(t, word);
       html_button_add(root, "word", async () => {
         let name = file_name_json(date_string_iso_file());
         let file_path = string_combine("mary/", name);
-        await firebase_save(file_path, index);
+        await firebase_save(file_path, {
+          word,
+        });
       });
     },
   });
