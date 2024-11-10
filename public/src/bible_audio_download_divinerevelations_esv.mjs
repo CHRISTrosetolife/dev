@@ -1,4 +1,3 @@
-import { string_prefix_without } from "./string_prefix_without.mjs";
 import { bible_audio_download_generic } from "./bible_audio_download_generic.mjs";
 import { html_parse_a_href_ends_with_hrefs } from "./html_parse_a_href_ends_with_hrefs.mjs";
 import { list_map } from "./list_map.mjs";
@@ -25,6 +24,6 @@ export async function bible_audio_download_divinerevelations_esv() {
     return html_parse_a_href_ends_with_hrefs(root, ".mp3");
   }
   function bible_audio_download_hrefs_map(href) {
-    return string_combine(prefix_url, string_prefix_without(href, prefix));
+    return string_combine(url, h);
   }
 }
