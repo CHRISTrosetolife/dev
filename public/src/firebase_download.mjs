@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { http_get } from "./http_get.mjs";
 import {
@@ -13,6 +14,9 @@ export async function firebase_download(storage_path) {
     let url = await getDownloadURL(storageRef);
     return await http_get(url);
   } catch (e) {
+    log({
+      e,
+    });
     if (e.code === "storage/object-not-found") {
       return null;
     } else {
