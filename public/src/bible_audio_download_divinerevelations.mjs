@@ -17,7 +17,7 @@ export async function bible_audio_download_divinerevelations() {
     await each_async(chapter_paths, async (chapter_path) => {
       file_copy_path(
         chapter_path,
-        path_join([bible_audio_player_english_path]),
+        path_join([bible_audio_player_english_path(), version]),
       );
       await file_copy_closed();
     });
