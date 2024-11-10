@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { each_async } from "./each_async.mjs";
 import { bible_audio_download_divinerevelations_generic } from "./bible_audio_download_divinerevelations_generic.mjs";
 export async function bible_audio_download_divinerevelations_multiple() {
@@ -7,6 +8,9 @@ export async function bible_audio_download_divinerevelations_multiple() {
     "english_contemporary_english_version_drama",
   ];
   await each_async(versions, async (version) => {
-    await bible_audio_download_divinerevelations_generic(version);
+    let r = await bible_audio_download_divinerevelations_generic(version);
+    log({
+      r,
+    });
   });
 }
