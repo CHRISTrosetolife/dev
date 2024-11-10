@@ -1,5 +1,5 @@
+import { app_todo_firebase_path_combine } from "./app_todo_firebase_path_combine.mjs";
 import { firebase_save } from "./firebase_save.mjs";
-import { app_todo_firebase_path_index } from "./app_todo_firebase_path_index.mjs";
 import { app_firebase } from "./app_firebase.mjs";
 import { html_button_add } from "./html_button_add.mjs";
 import { html_textarea_width_full } from "./html_textarea_width_full.mjs";
@@ -20,7 +20,7 @@ export async function app_mary() {
       let t = html_textarea_width_full(root);
       html_value_set(t, prayer);
       html_button_add(root, "word", async () => {
-        let index_path = app_todo_firebase_path_index();
+        let index_path = app_todo_firebase_path_combine("index.json");
         await firebase_save(index_path, index);
       });
     },
