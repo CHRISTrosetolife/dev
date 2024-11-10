@@ -1,5 +1,5 @@
+import { file_name_json } from "./file_name_json.mjs";
 import { date_string_iso_file } from "./date_string_iso_file.mjs";
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { string_combine } from "./string_combine.mjs";
 import { firebase_save } from "./firebase_save.mjs";
 import { app_firebase } from "./app_firebase.mjs";
@@ -22,7 +22,7 @@ export async function app_mary() {
       let t = html_textarea_width_full(root);
       html_value_set(t, prayer);
       html_button_add(root, "word", async () => {
-        let name = string_combine_multiple([date_string_iso_file()]);
+        let name = file_name_json(date_string_iso_file());
         let index_path = string_combine("mary/", name);
         await firebase_save(index_path, index);
       });
