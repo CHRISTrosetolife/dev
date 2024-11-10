@@ -13,7 +13,7 @@ export async function firebase_save(storage_path, object_data) {
   );
   let existing = await firebase_download(storage_path);
   let version_previous;
-  if (object_property_exists(existing, version_property)) {
+  if (existing !== null && object_property_exists(existing, version_property)) {
     version_previous = object_property_get(existing, version_property);
   } else {
     version_previous = 0;
