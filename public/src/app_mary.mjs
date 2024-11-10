@@ -4,7 +4,7 @@ import { clipboard_copy_web } from "./clipboard_copy_web.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 export async function app_mary() {
   let body = html_style_default_initialize();
-  let text = clipboard_past_web();
+  let text = clipboard_paste_web();
   let response =
     "Behold, I am an unworthy servant of the LORD. May the word of the LORD come true.";
   await clipboard_copy_web(response);
