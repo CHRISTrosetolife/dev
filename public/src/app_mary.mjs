@@ -12,6 +12,6 @@ export async function app_mary() {
   await clipboard_copy_web(response);
   html_p_text(body, "Response copied to clipboard:");
   html_p_text(body, response);
-  let t = html_textarea(body);
+  let t = html_textarea_width_full(body);
   html_value_set(t, prayer);
 }
