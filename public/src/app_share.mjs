@@ -58,9 +58,7 @@ export async function app_share() {
   let without_hash = string_combine_multiple([origin, pathname]);
   let url_next;
   await download();
-  let text = "verse";
-  $ag;
-  html_button_add(root, text, download);
+  html_button_add(root, "verse", download);
   html_button_copy_get(root, () =>
     list_join_newline(
       list_concat_multiple([
