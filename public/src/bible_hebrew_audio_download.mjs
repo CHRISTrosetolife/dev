@@ -12,13 +12,16 @@ export async function bible_hebrew_audio_download() {
   let p = await http_cache_parse_parsed(url);
   let { root } = p;
   let prefix = "../../";
-  let hrefs = html_parse_a_href_starts_with_hrefs(
-    root,
-    string_combine_multiple([prefix, "mp3/"]),
-  );
+  let hrefs = bible_audio_download_hrefs_get(root);
   let urls = list_map(hrefs, (h) =>
     string_combine(prefix_url, string_prefix_without(h, prefix)),
   );
   let locations = await list_map_async(urls, http_file);
   return locations;
+  function bible_audio_download_hrefs_get(root) {
+    return html_parse_a_href_starts_with_hrefs(
+      root,
+      string_combine_multiple([prefix, "mp3/"]),
+    );
+  }
 }
