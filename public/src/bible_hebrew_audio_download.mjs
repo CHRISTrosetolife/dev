@@ -14,7 +14,7 @@ export async function bible_hebrew_audio_download() {
   let { root } = p;
   let hrefs = bible_audio_download_hrefs_get(root);
   let urls = list_map(hrefs, (h) =>
-    string_combine(prefix_url, string_prefix_without(h, prefix)),
+    bible_audio_download_hrefs_map(prefix_url, h, prefix),
   );
   let locations = await list_map_async(urls, http_file);
   return locations;
@@ -23,5 +23,8 @@ export async function bible_hebrew_audio_download() {
       root,
       string_combine_multiple([prefix, "mp3/"]),
     );
+  }
+  function bible_audio_download_hrefs_map(url_Base, href, prefix) {
+    return string_combine(url_Base, string_prefix_without(href, prefix));
   }
 }
