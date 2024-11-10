@@ -6,5 +6,6 @@ export function app_mary() {
   let response =
     "Behold, I am an unworthy servant of the LORD. May the word of the LORD come true.";
   clipboard_copy_web(response);
+  html_p_text(body, "Response copied to clipboard:");
   html_p_text(body, response);
 }
