@@ -1,3 +1,3 @@
 export async function clipboard_copy_web(text) {
-  navigator.clipboard.writeText(text);
+  await navigator.clipboard.writeText(text);
 }
