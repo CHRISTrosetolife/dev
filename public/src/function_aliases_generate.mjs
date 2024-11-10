@@ -1,3 +1,4 @@
+import { function_rename_open } from "./function_rename_open.mjs";
 import { function_cache_refresh_args } from "./function_cache_refresh_args.mjs";
 import { function_output_file_args_expression } from "./function_output_file_args_expression.mjs";
 import { function_output_file_args } from "./function_output_file_args.mjs";
@@ -47,7 +48,6 @@ import { npm_install_global } from "./npm_install_global.mjs";
 import { npm_install } from "./npm_install.mjs";
 import { firebase_deploy } from "./firebase_deploy.mjs";
 import { function_delete } from "./function_delete.mjs";
-import { function_rename } from "./function_rename.mjs";
 import { app_dev_screenshots } from "./app_dev_screenshots.mjs";
 import { function_new_args } from "./function_new_args.mjs";
 import { function_new } from "./function_new.mjs";
@@ -126,7 +126,7 @@ export async function function_aliases_generate() {
   alias_add(function_param_delete, ["pd"]);
   alias_add(function_param_move_first, ["pf"]);
   alias_add(function_param_move, ["pm"]);
-  alias_add(function_rename, [function_rename_alias()]);
+  alias_add(function_rename_open, [function_rename_alias()]);
   alias_add(computer_restart, ["re"]);
   alias_add(function_search, ["s"]);
   alias_add(sandbox, ["sb"]);
