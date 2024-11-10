@@ -9,6 +9,7 @@ import { html_value_set } from "./html_value_set.mjs";
 import { clipboard_paste_web } from "./clipboard_paste_web.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { clipboard_copy_web } from "./clipboard_copy_web.mjs";
+import { html_value_get } from "./html_value_get.mjs";
 export async function app_mary() {
   await app_firebase({
     on_logged_in: async (context) => {
@@ -25,7 +26,7 @@ export async function app_mary() {
         let name = file_name_json(date_string_iso_file());
         let file_path = string_combine("mary/", name);
         await firebase_save(file_path, {
-          word,
+          word: html_value_get(t),
         });
       });
     },
