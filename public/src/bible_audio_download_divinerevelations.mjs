@@ -1,3 +1,4 @@
+import { file_exists_not } from "./file_exists_not.mjs";
 import { string_size } from "./string_size.mjs";
 import { string_slash_encoded } from "./string_slash_encoded.mjs";
 import { string_last_index } from "./string_last_index.mjs";
@@ -8,7 +9,6 @@ import { file_copy_closed } from "./file_copy_closed.mjs";
 import { bible_audio_download_mp3 } from "./bible_audio_download_mp3.mjs";
 import { each_async } from "./each_async.mjs";
 import { string_skip } from "./string_skip.mjs";
-import { file_exists } from "./file_exists.mjs";
 export async function bible_audio_download_divinerevelations() {
   let prefix_url =
     "https://www.divinerevelations.info/documents/bible/english_mp3_bible/";
@@ -27,7 +27,7 @@ export async function bible_audio_download_divinerevelations() {
         remaining,
         path_join([bible_audio_player_english_path(), version]),
       );
-      if (await file_exists(p)) {
+      if (await file_exists_not(p)) {
         return;
       }
       await file_copy_closed(chapter_path, p);
