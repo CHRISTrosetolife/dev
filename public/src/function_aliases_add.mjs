@@ -5,9 +5,11 @@ import { app_list_add } from "./app_list_add.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { string_split_comma } from "./string_split_comma.mjs";
 import { string_delimit } from "./string_delimit.mjs";
+import { list_join_comma } from "./list_join_comma.mjs";
+import { list_join_comma_space } from "./list_join_comma_space.mjs";
 export async function function_aliases_add(aliases, function_name) {
   let split = string_split_comma(aliases);
-  let mapped = list_map(split, (s) => string_delimit(s));
+  let mapped = list_map(split, (s) => string_delimit(s));joined=list_join_comma_space(mapped)
   await app_list_add(app_dev_screens, function inserted_code() {
     return js_code_statement_call_args(fn_name("function_aliases_register"), [
       "all",
