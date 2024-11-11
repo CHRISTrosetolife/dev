@@ -1,4 +1,3 @@
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { list_map } from "./list_map.mjs";
 import { js_code_statement_call_args } from "./js_code_statement_call_args.mjs";
 import { app_dev_screens } from "./app_dev_screens.mjs";
@@ -11,7 +10,7 @@ export async function function_aliases_add(aliases, function_name) {
     return js_code_statement_call_args(fn_name("function_aliases_register"), [
       "all",
       js_code_statement_call_args(fn_name("fn_name"), [function_name]),
-      list_map(split, string_combine_multiple([])),
+      list_map(split, (f) => {}),
     ]);
   });
 }
