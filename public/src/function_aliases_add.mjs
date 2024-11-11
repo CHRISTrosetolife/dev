@@ -1,3 +1,4 @@
+import { js_code_call_args } from "./js_code_call_args.mjs";
 import { log } from "./log.mjs";
 import { js_code_array_string } from "./js_code_array_string.mjs";
 import { js_code_statement_call_args } from "./js_code_statement_call_args.mjs";
@@ -12,9 +13,7 @@ export async function function_aliases_add(aliases, function_name) {
   await app_list_add(app_dev_screens, function inserted_code() {
     let c = js_code_statement_call_args(fn_name("function_aliases_register"), [
       "all",
-      js_code_statement_call_args(fn_name("fn_name"), [
-        string_delimit(function_name),
-      ]),
+      js_code_call_args(fn_name("fn_name"), [string_delimit(function_name)]),
       list_code,
     ]);
     log({
