@@ -9,8 +9,8 @@ export async function functions_rename_identifier(
   let matches = await functions_identifier_list(identifier_from);
   await each_async(matches, async (m) => {
     await function_transform_args_split_split(
-      m,
       [fn_name("js_identifier_rename")],
+      m,
       [identifier_from, identifier_to],
     );
   });
