@@ -1,18 +1,12 @@
+import { function_aliases_add } from "./function_aliases_add.mjs";
 import { marker } from "./marker.mjs";
 import { function_rename_alias } from "./function_rename_alias.mjs";
 import { exit_aliases } from "./exit_aliases.mjs";
-import { object_property_set } from "./object_property_set.mjs";
-import { object_property_exists_not } from "./object_property_exists_not.mjs";
-import { assert } from "./assert.mjs";
-import { each } from "./each.mjs";
 import { fn_name } from "./fn_name.mjs";
 export function function_aliases() {
   let all = {};
   function alias_add(name, aliases) {
-    each(aliases, (a) => {
-      assert(object_property_exists_not, [all, a]);
-      object_property_set(all, a, name);
-    });
+    function_aliases_add(aliases, all, name);
   }
   alias_add(fn_name("function_auto"), ["a"]);
   alias_add(fn_name("function_alias_expand"), ["ae"]);
