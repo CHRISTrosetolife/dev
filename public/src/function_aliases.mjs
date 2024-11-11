@@ -68,9 +68,7 @@ export function function_aliases() {
     function_aliases_register(all, fn_name("terminal_data_history_clear"), ["thc"]);
     function_aliases_register(all, fn_name("watch"), ["w"]);
     function_aliases_register(all, fn_name("server"), ["v"]);
-    function_aliases_register(all, fn_name("todo"), ["zzz"]);
     function_aliases_register(all, fn_name("function_aliases_add"), ["aa"]);
-    function_aliases_register(all, fn_name('todo'), ['zzz']);
     marker();
     return all;
 }
