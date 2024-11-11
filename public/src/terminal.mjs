@@ -90,10 +90,8 @@ export async function terminal() {
       let counts = object_property_initialize(d, "counts", {});
       let parts = string_split_space(item);
       let first = list_first(parts);
-      let u = function_unalias(first);
-      log({
-        u,
-      });
+      let f_name_item = function_unalias(first);
+      object_property_initialize(counts, f_name_item, 0);
       let history = object_property_initialize(d, "history", []);
       function predicate(h) {
         return h === item;
