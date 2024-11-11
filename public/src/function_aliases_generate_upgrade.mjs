@@ -14,6 +14,8 @@ export async function function_aliases_generate_upgrade() {
         js_visit_node(ast, "CallExpression", (e) => {
           let node = object_property_get(e, "node");
           let callee = object_property_get(node, "callee");
+          if (false) {
+          }
           let args = object_property_get(node, "arguments");
           let first = list_first(args);
           log({
