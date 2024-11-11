@@ -87,6 +87,9 @@ export async function terminal() {
     await terminal_data_transform(function (d) {
       let counts = object_property_initialize(d, "counts", {});
       let parts = string_split_space(item);
+      log({
+        parts,
+      });
       let history = object_property_initialize(d, "history", []);
       function predicate(h) {
         return h === item;
