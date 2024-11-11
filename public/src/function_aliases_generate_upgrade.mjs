@@ -11,6 +11,7 @@ export async function function_aliases_generate_upgrade() {
         let t = js_node_types(ast);
         js_visit_node(ast, "CallExpression", (e) => {
           let callee = object_property_get(e, "callee");
+          let args = object_property_get(e, "args");
         });
       },
     ],
