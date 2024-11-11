@@ -1,5 +1,4 @@
-import { add_1 } from "./add_1.mjs";
-import { object_property_change } from "./object_property_change.mjs";
+import { object_property_add_1 } from "./object_property_add_1.mjs";
 import { json_to } from "./json_to.mjs";
 import { log_error } from "./log_error.mjs";
 import { fn_name } from "./fn_name.mjs";
@@ -94,7 +93,7 @@ export async function terminal() {
       let first = list_first(parts);
       let f_name_item = function_unalias(first);
       object_property_initialize(counts, f_name_item, 0);
-      object_property_change(counts, f_name_item, add_1);
+      object_property_add_1(counts, f_name_item);
       let history = object_property_initialize(d, "history", []);
       function predicate(h) {
         return h === item;
