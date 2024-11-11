@@ -50,6 +50,7 @@ export function function_aliases() {
     pf: "function_param_move_first",
     pm: "function_param_move",
     r: "function_rename_open",
+    ri: "functions_rename_identifier",
     re: "computer_restart",
     s: "function_search",
     sb: "sandbox",
