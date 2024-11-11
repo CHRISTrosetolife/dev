@@ -5,6 +5,7 @@ export async function functions_rename_identifier(
   identifier_from,
   identifier_to,
 ) {
+    let function_names_result = await function_names();
   await function_transform_all_args(
     fn_name("js_identifier_rename"),
     list_join_comma([identifier_from, identifier_to]),
