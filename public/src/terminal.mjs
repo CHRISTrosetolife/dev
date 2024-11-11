@@ -39,6 +39,7 @@ import { list_remove_at } from "./list_remove_at.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { string_split_space } from "./string_split_space.mjs";
 import { list_first } from "./list_first.mjs";
+import { function_unalias } from "./function_unalias.mjs";
 export async function terminal() {
   let prompt = chalk().greenBright("✟") + " ";
   let context = {
@@ -89,6 +90,7 @@ export async function terminal() {
       let counts = object_property_initialize(d, "counts", {});
       let parts = string_split_space(item);
       let first = list_first(parts);
+      let u = function_unalias(first);
       log({
         parts,
       });
