@@ -12,7 +12,7 @@ export async function function_aliases_generate_upgrade() {
         log({
           t,
         });
-        js_visit_node(ast, "CallExpression", () => {});
+        js_visit_node(ast, "CallExpression", (e) => {});
       },
     ],
     [],
