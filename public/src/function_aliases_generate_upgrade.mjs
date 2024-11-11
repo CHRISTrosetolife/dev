@@ -7,6 +7,7 @@ import { js_node_types } from "./js_node_types.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { function_transform_args_split_lambda } from "./function_transform_args_split_lambda.mjs";
 import { js_parse_expression } from "./js_parse_expression.mjs";
+import { object_replace } from "./object_replace.mjs";
 export async function function_aliases_generate_upgrade() {
   await function_transform_args_split_lambda(
     fn_name("function_aliases_generate"),
@@ -32,6 +33,7 @@ export async function function_aliases_generate_upgrade() {
           let m = js_parse_expression(
             string_combine_multiple([name_first, ".name"]),
           );
+          object_replace(first, m);
         });
       },
     ],
