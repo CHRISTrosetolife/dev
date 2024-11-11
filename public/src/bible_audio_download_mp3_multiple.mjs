@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { file_copy_closed_if_exists_not } from "./file_copy_closed_if_exists_not.mjs";
 import { bible_audio_player_english_path } from "./bible_audio_player_english_path.mjs";
 import { path_join } from "./path_join.mjs";
@@ -25,6 +26,10 @@ export async function bible_audio_download_mp3_multiple(
         remaining,
         path_join([bible_audio_player_english_path(), mapper_version(version)]),
       );
+      log({
+        p,
+      });
+      return;
       await file_copy_closed_if_exists_not(p, chapter_path);
     });
   });
