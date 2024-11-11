@@ -1,3 +1,5 @@
+import { bible_audio_download_divinerevelations_versions } from "./bible_audio_download_divinerevelations_versions.mjs";
+import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { file_copy_path_generic } from "./file_copy_path_generic.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { add_1 } from "./add_1.mjs";
@@ -112,6 +114,10 @@ export async function bible_audio_player_range(book_from, book_to) {
     "00_Bible in Basic English Old Testament Audio MP3 Files",
     "00_Bible in Basic English New Testament Audio MP3 Files",
   ];
+  download_folders_regular = list_concat_multiple([
+    download_folders_regular,
+    bible_audio_download_divinerevelations_versions(),
+  ]);
   await bible_audio_player_english_folders_numbers(
     download_folders_regular,
     numbers_s,
