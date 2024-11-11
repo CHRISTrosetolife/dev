@@ -23,7 +23,7 @@ export async function bible_audio_download_divinerevelations() {
       let i = string_last_index(chapter_path, s);
       let remaining = string_skip(chapter_path, i + string_length(s));
       let p = file_copy_path(
-        chapter_path,
+        remaining,
         path_join([bible_audio_player_english_path(), version]),
       );
       log({
