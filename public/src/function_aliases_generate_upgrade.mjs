@@ -26,12 +26,12 @@ export async function function_aliases_generate_upgrade() {
           }
           let args = object_property_get(node, "arguments");
           let first = list_first(args);
+          log({
+            first,
+          });
           js_parse_expression(string_combine_multiple([first, ".name"]));
           log({
             callee,
-          });
-          log({
-            first,
           });
         });
       },
