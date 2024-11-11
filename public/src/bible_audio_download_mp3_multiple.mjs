@@ -12,6 +12,7 @@ export async function bible_audio_download_mp3_multiple(
   prefix_url,
   versions,
   mapper_name,
+  mapper_version,
 ) {
   await each_async(versions, async (version) => {
     let chapter_paths = await bible_audio_download_mp3(prefix_url, version);
