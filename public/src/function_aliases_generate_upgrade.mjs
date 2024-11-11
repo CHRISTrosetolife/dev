@@ -20,7 +20,7 @@ export async function function_aliases_generate_upgrade() {
             callee,
           });
           log({
-            args,
+            first,
           });
         });
       },
