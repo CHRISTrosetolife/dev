@@ -4,7 +4,7 @@ import { app_list_add } from "./app_list_add.mjs";
 import { fn_name } from "./fn_name.mjs";
 export async function function_aliases_add(aliases, function_name) {
   await app_list_add(app_dev_screens, function inserted_code() {
-    return js_code_statement_call_args(fn_name("list_add"), [
+    return js_code_statement_call_args(fn_name("function_aliases_register"), [
       "result",
       screen_name,
     ]);
