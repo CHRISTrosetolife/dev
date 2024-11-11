@@ -11,7 +11,7 @@ import { each_async } from "./each_async.mjs";
 export async function bible_audio_download_mp3_multiple(
   prefix_url,
   versions,
-  mapper,
+  mapper_name,
 ) {
   await each_async(versions, async (version) => {
     let chapter_paths = await bible_audio_download_mp3(prefix_url, version);
@@ -19,7 +19,7 @@ export async function bible_audio_download_mp3_multiple(
       let s = string_slash_encoded();
       let i = string_last_index(chapter_path, s);
       let remaining = string_skip(chapter_path, i + string_size(s));
-      remaining = mapper(remaining);
+      remaining = mapper_name(remaining);
       let p = file_copy_path(
         remaining,
         path_join([bible_audio_player_english_path(), version]),
