@@ -9,10 +9,6 @@ export async function bible_audio_download_openbible() {
     "souer_books",
     "gilbert_music_books",
   ];
-  await each_async(versions, async (version) => {
-    let r = await bible_audio_download_mp3(prefix_url, version);
-    log({
-      r,
-    });
-  });
+
+  await bible_audio_download_mp3_multiple(prefix_url, versions);
 }
