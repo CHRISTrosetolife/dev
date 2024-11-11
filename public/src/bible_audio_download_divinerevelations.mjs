@@ -1,7 +1,6 @@
 import { string_size } from "./string_size.mjs";
 import { string_slash_encoded } from "./string_slash_encoded.mjs";
 import { string_last_index } from "./string_last_index.mjs";
-import { log } from "./log.mjs";
 import { bible_audio_player_english_path } from "./bible_audio_player_english_path.mjs";
 import { path_join } from "./path_join.mjs";
 import { file_copy_path } from "./file_copy_path.mjs";
@@ -27,11 +26,7 @@ export async function bible_audio_download_divinerevelations() {
         remaining,
         path_join([bible_audio_player_english_path(), version]),
       );
-      log({
-        p,
-      });
-      return;
-      await file_copy_closed();
+      await file_copy_closed(chapter_path, p);
     });
   });
 }
