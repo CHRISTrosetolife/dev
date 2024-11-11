@@ -50,7 +50,7 @@ export function app_resume() {
           fn_name("function_transform_args"),
           fn_name("js_parse"),
           fn_name("terminal"),
-          fn_name("function_aliases_generate"),
+          fn_name("function_aliases"),
           fn_name("js_dollar"),
           fn_name("watch"),
           fn_name("function_rename"),
