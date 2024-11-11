@@ -27,7 +27,7 @@ export function terminal_commands(context) {
     keyboard_type,
     log_buffer_clear,
     buffer_to_string,
-    tokens_get,
+    terminal_tokens_get,
     log_clear_write_prompt,
     buffer_clear,
     buffer_get,
@@ -85,7 +85,7 @@ export function terminal_commands(context) {
       },
       action: () => {
         let input = buffer_to_string();
-        let tokens = tokens_get(input);
+        let tokens = terminal_tokens_get(input);
         let mapped = list_map(tokens, string_split_underscore);
         let extra = "";
         if (list_empty_not_is(mapped)) {
@@ -136,7 +136,7 @@ export function terminal_commands(context) {
       },
       action: (key) => {
         let input = buffer_to_string();
-        let tokens = tokens_get(input);
+        let tokens = terminal_tokens_get(input);
         let extra = "";
         if (list_empty_not_is(tokens)) {
           list_pop(tokens);
