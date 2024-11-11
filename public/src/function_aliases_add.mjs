@@ -1,6 +1,5 @@
 import { function_aliases } from "./function_aliases.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
-import { log } from "./log.mjs";
 import { js_code_array_string } from "./js_code_array_string.mjs";
 import { js_code_statement_call_args } from "./js_code_statement_call_args.mjs";
 import { app_list_add } from "./app_list_add.mjs";
