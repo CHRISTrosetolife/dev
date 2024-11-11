@@ -6,7 +6,7 @@ export async function function_aliases_add(aliases, function_name) {
   await app_list_add(app_dev_screens, function inserted_code() {
     return js_code_statement_call_args(fn_name("function_aliases_register"), [
       "all",
-      js_code_statement_call_args(fn_name("fn_name"), []),
+      js_code_statement_call_args(fn_name("fn_name"), [function_name]),
       screen_name,
     ]);
   });
