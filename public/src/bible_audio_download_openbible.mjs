@@ -9,6 +9,8 @@ export async function bible_audio_download_openbible() {
     prefix_url,
     versions,
     (name) => string_prefix_without(name, "BSB_"),
-    (name) => string_suffix_without(name, "_books"),
+    function bible_audio_download_openbible(name) {
+      return string_suffix_without(name, "_books");
+    },
   );
 }

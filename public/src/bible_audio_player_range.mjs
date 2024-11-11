@@ -116,7 +116,7 @@ export async function bible_audio_player_range(book_from, book_to) {
   ];
   download_folders_regular = list_concat_multiple([
     download_folders_regular,
-    bible_audio_download_divinerevelations_versions(),
+    bible_audio_download_divinerevelations_versions(),bible_audio_download_openbible_versions()
   ]);
   await bible_audio_player_english_folders_numbers(
     download_folders_regular,
