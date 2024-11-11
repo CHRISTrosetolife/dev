@@ -18,6 +18,7 @@ export async function function_aliases_generate_upgrade() {
           if (!js_node_type_is(callee, "Identifier")) {
             return;
           }
+          let name = object_property_get(callee, "name");
           if (false) {
           }
           let args = object_property_get(node, "arguments");
