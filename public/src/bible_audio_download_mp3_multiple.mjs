@@ -23,7 +23,7 @@ export async function bible_audio_download_mp3_multiple(
       remaining = mapper_name(remaining);
       let p = file_copy_path(
         remaining,
-        path_join([bible_audio_player_english_path(), version]),
+        path_join([bible_audio_player_english_path(), mapper_version(version)]),
       );
       await file_copy_closed_if_exists_not(p, chapter_path);
     });
