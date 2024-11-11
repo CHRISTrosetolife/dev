@@ -19,7 +19,8 @@ export async function function_aliases_generate_upgrade() {
             return;
           }
           let name = object_property_get(callee, "name");
-          if (false) {
+          if (name !== "alias_add") {
+            return;
           }
           let args = object_property_get(node, "arguments");
           let first = list_first(args);
