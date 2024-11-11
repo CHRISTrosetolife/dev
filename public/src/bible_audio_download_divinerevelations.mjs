@@ -7,5 +7,5 @@ export async function bible_audio_download_divinerevelations() {
     "english_new_revised_standard_version_drama",
     "english_contemporary_english_version_drama",
   ];
-  await bible_audio_download_mp3_multiple(versions, prefix_url);
+  await bible_audio_download_mp3_multiple(prefix_url, versions);
 }
