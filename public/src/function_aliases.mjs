@@ -5,7 +5,7 @@ import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { assert } from "./assert.mjs";
 import { each } from "./each.mjs";
 import { fn_name } from "./fn_name.mjs";
-export function function_aliases_generate() {
+export function function_aliases() {
   let all = {};
   function alias_add(name, aliases) {
     each(aliases, (a) => {
