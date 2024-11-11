@@ -38,6 +38,7 @@ import { undefined_not_is } from "./undefined_not_is.mjs";
 import { list_remove_at } from "./list_remove_at.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
 import { string_split_space } from "./string_split_space.mjs";
+import { list_first } from "./list_first.mjs";
 export async function terminal() {
   let prompt = chalk().greenBright("✟") + " ";
   let context = {
@@ -87,6 +88,7 @@ export async function terminal() {
     await terminal_data_transform(function (d) {
       let counts = object_property_initialize(d, "counts", {});
       let parts = string_split_space(item);
+      let first = list_first(parts);
       log({
         parts,
       });
