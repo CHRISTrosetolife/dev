@@ -7,10 +7,11 @@ export async function functions_rename_identifier(
   identifier_to,
 ) {
   let matches = await functions_identifier(identifier_from);
-  await each_async(list, async (item) => {});
-  let r = await function_transform_args_split(
-    [fn_name("js_identifier_rename")],
-    function_name,
-    [identifier_from, identifier_to],
-  );
+  await each_async(matches, async (m) => {
+    let r = await function_transform_args_split(
+      [fn_name("js_identifier_rename")],
+      function_name,
+      [identifier_from, identifier_to],
+    );
+  });
 }
