@@ -94,7 +94,7 @@ export async function terminal() {
       let f_name_item = function_unalias(first);
       let c = object_property_add_1_initialize(counts, f_name_item);
       log({
-        c,
+        counts,
       });
       let history = object_property_initialize(d, "history", []);
       function predicate(h) {
