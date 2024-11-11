@@ -1,13 +1,9 @@
 import { function_rename_alias } from "./function_rename_alias.mjs";
-import { js_code_statement_return } from "./js_code_statement_return.mjs";
 import { exit_aliases } from "./exit_aliases.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { object_property_exists_not } from "./object_property_exists_not.mjs";
 import { assert } from "./assert.mjs";
 import { each } from "./each.mjs";
-import { file_overwrite } from "./file_overwrite.mjs";
-import { function_new_generic } from "./function_new_generic.mjs";
-import { json_to } from "./json_to.mjs";
 import { fn_name } from "./fn_name.mjs";
 export async function function_aliases_generate() {
   let all = {};
@@ -81,14 +77,5 @@ export async function function_aliases_generate() {
   alias_add(fn_name("terminal_data_history_clear"), ["thc"]);
   alias_add(fn_name("watch"), ["w"]);
   alias_add(fn_name("server"), ["v"]);
-  let name = fn_name("function_aliases");
-  await function_new_generic(
-    name,
-    "",
-    js_code_statement_return(json_to(all)),
-    false,
-    [],
-    false,
-    file_overwrite,
-  );
+  return all;
 }
