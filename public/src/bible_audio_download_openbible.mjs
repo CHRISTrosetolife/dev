@@ -1,4 +1,4 @@
-import { identity } from "./identity.mjs";
+import { string_suffix_without } from "./string_suffix_without.mjs";
 import { bible_audio_download_mp3_multiple } from "./bible_audio_download_mp3_multiple.mjs";
 import { string_prefix_without } from "./string_prefix_without.mjs";
 export async function bible_audio_download_openbible() {
@@ -13,6 +13,6 @@ export async function bible_audio_download_openbible() {
     prefix_url,
     versions,
     (name) => string_prefix_without(name, "BSB_"),
-    identity,
+    (name) => string_suffix_without(name, "_books"),
   );
 }
