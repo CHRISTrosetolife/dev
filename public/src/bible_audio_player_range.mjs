@@ -1,3 +1,4 @@
+import { bible_audio_download_openbible_mapper_version } from "./bible_audio_download_openbible_mapper_version.mjs";
 import { bible_audio_download_openbible_versions } from "./bible_audio_download_openbible_versions.mjs";
 import { bible_audio_download_divinerevelations_versions } from "./bible_audio_download_divinerevelations_versions.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
@@ -118,7 +119,10 @@ export async function bible_audio_player_range(book_from, book_to) {
   download_folders_regular = list_concat_multiple([
     download_folders_regular,
     bible_audio_download_divinerevelations_versions(),
-    bible_audio_download_openbible_versions(),
+    list_map(
+      bible_audio_download_openbible_versions(),
+      bible_audio_download_openbible_mapper_version,
+    ),
   ]);
   await bible_audio_player_english_folders_numbers(
     download_folders_regular,
