@@ -20,6 +20,7 @@ export async function bible_audio_download_mp3_multiple(
       let s = string_slash_encoded();
       let i = string_last_index(chapter_path, s);
       let remaining = string_skip(chapter_path, i + string_size(s));
+      remaining = mapper(remaining);
       log({
         remaining,
       });
