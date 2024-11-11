@@ -28,9 +28,8 @@ export async function bible_audio_download_divinerevelations() {
         path_join([bible_audio_player_english_path(), version]),
       );
       if (await file_exists_not(p)) {
-        return;
+        await file_copy_closed(chapter_path, p);
       }
-      await file_copy_closed(chapter_path, p);
     });
   });
 }
