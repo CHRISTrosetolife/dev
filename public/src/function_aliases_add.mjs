@@ -11,7 +11,7 @@ export async function function_aliases_add(aliases, function_name) {
   let split = string_split_comma(aliases);
   let mapped = list_map(split, (s) => string_delimit(s));
   let joined = list_join_comma_space(mapped);
-  js_code_brackets_inside();
+  js_code_brackets_inside(joined);
   await app_list_add(app_dev_screens, function inserted_code() {
     return js_code_statement_call_args(fn_name("function_aliases_register"), [
       "all",
