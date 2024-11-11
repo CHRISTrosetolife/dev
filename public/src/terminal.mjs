@@ -92,7 +92,7 @@ export async function terminal() {
       let first = list_first(parts);
       let u = function_unalias(first);
       log({
-        parts,
+        u,
       });
       let history = object_property_initialize(d, "history", []);
       function predicate(h) {
