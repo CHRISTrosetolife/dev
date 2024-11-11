@@ -9,10 +9,11 @@ export async function function_aliases_generate_upgrade() {
     [
       (ast) => {
         let t = js_node_types(ast);
-        log({
-          t,
+        js_visit_node(ast, "CallExpression", (e) => {
+          log({
+            e,
+          });
         });
-        js_visit_node(ast, "CallExpression", (e) => {});
       },
     ],
     [],
