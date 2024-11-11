@@ -16,9 +16,6 @@ export async function function_aliases_add(aliases, function_name) {
       js_code_call_args(fn_name("fn_name"), [string_delimit(function_name)]),
       list_code,
     ]);
-    log({
-      c,
-    });
     return c;
   });
 }
