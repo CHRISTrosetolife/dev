@@ -7,8 +7,8 @@ import { string_split_comma } from "./string_split_comma.mjs";
 import { string_delimit } from "./string_delimit.mjs";
 export async function function_aliases_add(aliases, function_name) {
   let split = string_split_comma(aliases);
+  let mapped = list_map(split, (s) => string_delimit(s));
   await app_list_add(app_dev_screens, function inserted_code() {
-    let mapped = list_map(split, (s) => string_delimit(s));
     return js_code_statement_call_args(fn_name("function_aliases_register"), [
       "all",
       js_code_statement_call_args(fn_name("fn_name"), [function_name]),
