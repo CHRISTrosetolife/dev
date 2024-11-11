@@ -1,7 +1,6 @@
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { js_node_type_is } from "./js_node_type_is.mjs";
 import { list_first } from "./list_first.mjs";
-import { log } from "./log.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { js_visit_node } from "./js_visit_node.mjs";
 import { js_node_types } from "./js_node_types.mjs";
@@ -33,12 +32,6 @@ export async function function_aliases_generate_upgrade() {
           let m = js_parse_expression(
             string_combine_multiple([name_first, ".name"]),
           );
-          log({
-            callee,
-          });
-          log({
-            m,
-          });
         });
       },
     ],
