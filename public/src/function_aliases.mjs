@@ -5,9 +5,6 @@ import { exit_aliases } from "./exit_aliases.mjs";
 import { fn_name } from "./fn_name.mjs";
 export function function_aliases() {
   let all = {};
-  function function_aliases_add(name, aliases) {
-    function_aliases_add(aliases, all, name);
-  }
   function_aliases_add(fn_name("function_auto"), ["a"]);
   function_aliases_add(fn_name("function_alias_expand"), ["ae"]);
   function_aliases_add(fn_name("function_aliases"), ["al"]);
