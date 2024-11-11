@@ -1,3 +1,4 @@
+import { list_first } from "./list_first.mjs";
 import { log } from "./log.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { js_visit_node } from "./js_visit_node.mjs";
@@ -14,6 +15,7 @@ export async function function_aliases_generate_upgrade() {
           let node = object_property_get(e, "node");
           let callee = object_property_get(node, "callee");
           let args = object_property_get(node, "arguments");
+          let first = list_first(args);
           log({
             callee,
           });
