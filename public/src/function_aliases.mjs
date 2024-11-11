@@ -1,3 +1,4 @@
+import { marker } from "./marker.mjs";
 import { function_rename_alias } from "./function_rename_alias.mjs";
 import { exit_aliases } from "./exit_aliases.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -76,5 +77,6 @@ export function function_aliases() {
   alias_add(fn_name("terminal_data_history_clear"), ["thc"]);
   alias_add(fn_name("watch"), ["w"]);
   alias_add(fn_name("server"), ["v"]);
+  marker();
   return all;
 }
