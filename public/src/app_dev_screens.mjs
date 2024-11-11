@@ -1,5 +1,3 @@
-import { fn_name } from "./fn_name.mjs";
-import { function_aliases_register } from "./function_aliases_register.mjs";
 import { app_dev_screen_rename } from "./app_dev_screen_rename.mjs";
 import { app_dev_screen_function_auto } from "./app_dev_screen_function_auto.mjs";
 import { app_dev_screen_if_to_block } from "./app_dev_screen_if_to_block.mjs";
@@ -32,7 +30,6 @@ export function app_dev_screens() {
   list_add(result, app_dev_screen_if_to_block);
   list_add(result, app_dev_screen_function_auto);
   list_add(result, app_dev_screen_rename);
-  function_aliases_register(all, fn_name("todo"), ["zzz"]);
   marker();
   return result;
 }
