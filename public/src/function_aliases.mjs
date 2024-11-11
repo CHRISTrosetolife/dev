@@ -15,7 +15,7 @@ export function function_aliases() {
   }
   alias_add(fn_name("function_auto"), ["a"]);
   alias_add(fn_name("function_alias_expand"), ["ae"]);
-  alias_add(fn_name("function_aliases_generate"), ["al"]);
+  alias_add(fn_name("function_aliases"), ["al"]);
   alias_add(fn_name("app_new"), ["an"]);
   alias_add(fn_name("bible_search"), ["b"]);
   alias_add(fn_name("bible_search_book"), ["bb"]);
