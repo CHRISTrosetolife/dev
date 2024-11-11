@@ -1,3 +1,4 @@
+import { function_rename_identifier } from "./function_rename_identifier.mjs";
 import { function_rename_open } from "./function_rename_open.mjs";
 import { function_cache_refresh_args } from "./function_cache_refresh_args.mjs";
 import { function_output_file_args_expression } from "./function_output_file_args_expression.mjs";
@@ -127,6 +128,7 @@ export async function function_aliases_generate() {
   alias_add(function_param_move_first, ["pf"]);
   alias_add(function_param_move, ["pm"]);
   alias_add(function_rename_open, [function_rename_alias()]);
+  alias_add(function_rename_identifier, ["ri"]);
   alias_add(computer_restart, ["re"]);
   alias_add(function_search, ["s"]);
   alias_add(sandbox, ["sb"]);
