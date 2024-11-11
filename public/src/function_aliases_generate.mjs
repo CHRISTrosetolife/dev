@@ -7,8 +7,7 @@ import { each } from "./each.mjs";
 import { fn_name } from "./fn_name.mjs";
 export async function function_aliases_generate() {
   let all = {};
-  function alias_add(fn, aliases) {
-    let { name } = fn;
+  function alias_add(name, aliases) {
     each(aliases, (a) => {
       assert(object_property_exists_not, [all, a]);
       object_property_set(all, a, name);
