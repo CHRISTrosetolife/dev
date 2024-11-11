@@ -8,9 +8,9 @@ export async function functions_rename_identifier(
 ) {
   let matches = await functions_identifier(identifier_from);
   await each_async(matches, async (m) => {
-    let r = await function_transform_args_split(
+     await function_transform_args_split(
       [fn_name("js_identifier_rename")],
-      function_name,
+      m,
       [identifier_from, identifier_to],
     );
   });
