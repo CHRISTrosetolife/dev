@@ -84,6 +84,7 @@ export async function terminal() {
   }
   async function history_add(item) {
     await terminal_data_transform(function (d) {
+      let counts = object_property_initialize(d, "counts", {});
       let history = object_property_initialize(d, "history", []);
       function predicate(h) {
         return h === item;
