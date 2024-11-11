@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { js_visit_node } from "./js_visit_node.mjs";
 import { js_node_types } from "./js_node_types.mjs";
@@ -12,6 +13,12 @@ export async function function_aliases_generate_upgrade() {
         js_visit_node(ast, "CallExpression", (e) => {
           let callee = object_property_get(e, "callee");
           let args = object_property_get(e, "arguments");
+          log({
+            callee,
+          });
+          log({
+            args,
+          });
         });
       },
     ],
