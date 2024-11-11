@@ -6,7 +6,7 @@ export async function function_aliases_generate_upgrade() {
     fn_name("function_aliases_generate"),
     [
       (ast) => {
-        js_node_types();
+        js_node_types(ast);
       },
     ],
     [],
