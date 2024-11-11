@@ -10,7 +10,7 @@ export async function function_aliases_add(aliases, function_name) {
     return js_code_statement_call_args(fn_name("function_aliases_register"), [
       "all",
       js_code_statement_call_args(fn_name("fn_name"), [function_name]),
-      list_map(split, (f) => {}),
+      list_map(split, (s) => {}),
     ]);
   });
 }
