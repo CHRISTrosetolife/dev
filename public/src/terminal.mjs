@@ -37,6 +37,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { undefined_not_is } from "./undefined_not_is.mjs";
 import { list_remove_at } from "./list_remove_at.mjs";
 import { list_empty_is } from "./list_empty_is.mjs";
+import { string_split_space } from "./string_split_space.mjs";
 export async function terminal() {
   let prompt = chalk().greenBright("✟") + " ";
   let context = {
@@ -85,6 +86,7 @@ export async function terminal() {
   async function history_add(item) {
     await terminal_data_transform(function (d) {
       let counts = object_property_initialize(d, "counts", {});
+      let parts = string_split_space(item);
       let history = object_property_initialize(d, "history", []);
       function predicate(h) {
         return h === item;
