@@ -116,7 +116,7 @@ export async function bible_audio_player_range(book_from, book_to) {
     "00_Bible in Basic English Old Testament Audio MP3 Files",
     "00_Bible in Basic English New Testament Audio MP3 Files",
   ];
-  download_folders_regular = list_concat_multiple([
+  let download_folders_regular_concat = list_concat_multiple([
     download_folders_regular,
     bible_audio_download_divinerevelations_versions(),
     list_map(
@@ -125,7 +125,7 @@ export async function bible_audio_player_range(book_from, book_to) {
     ),
   ]);
   await bible_audio_player_english_folders_numbers(
-    download_folders_regular,
+    download_folders_regular_concat,
     numbers_s,
     path_parse_base_starts_with,
     paths,
