@@ -4,6 +4,7 @@ export function app_pray() {
   let root = html_style_default_initialize();
   html_p_text_multiple(root, [
     "Heavenly Father,",
-    "in the name of the Trinity,",
+    "in the name of the Trinity:",
+    "Cause me to perfectly worship You;",
   ]);
 }
