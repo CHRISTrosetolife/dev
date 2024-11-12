@@ -5,10 +5,10 @@ export function app_pray() {
   html_p_text_multiple(root, [
     "Heavenly Father,",
     "in the name of the Trinity:",
-    "Cause me to perfectly worship You;",
     "Cause the word of God to be perfectly engrafted into my heart;",
+    "Cause me to perfectly worship You;",
     "Cause me to be a perfect hearer of the word of God;",
-    "Cause my eyes and ears to perfectly be opened up to Scripture and truth",
+    "Cause my eyes and ears to perfectly be opened up to Scripture and truth;",
     "Cause me to be a perfect doer of the word of God;",
     "Cause me to sing perfectly;",
     "Cause me to compose perfectly;",
