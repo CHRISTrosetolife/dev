@@ -1,3 +1,4 @@
+import { html_button_previous_text } from "./html_button_previous_text.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_previous } from "./list_previous.mjs";
 import { html_button_next_text } from "./html_button_next_text.mjs";
@@ -29,7 +30,7 @@ export function app_pray() {
   );
   let previous = html_button_width_full_text_click(
     root,
-    "⬅️ previous prayer",
+    string_combine_multiple([html_button_previous_text(), " verse"]),
     async () => {
       let verse_previous = list_previous(verses, verse);
       await verse_refresh(
