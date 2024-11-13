@@ -12,7 +12,7 @@ export function app_pray_music(index) {
   let root = html_document_body();
   let prayers = [
     [
-      "Thank You for (previous);",
+      "Thank You for helping me upload;",
       "Cause the word of God to be perfectly engrafted into my heart;",
       "Cause me to perfectly worship You;",
       "Cause me to be a perfect hearer of the word of God;",
@@ -21,8 +21,9 @@ export function app_pray_music(index) {
       "Cause me to sing perfectly;",
       "Cause me to compose perfectly;",
       "Cause me to play piano perfectly;",
-      "Help me video;",
+      "Please help me video;",
     ],
+    ["Thank You for helping me video;", "Please help me review"],
   ];
   index = index % list_size(prayers);
   html_clear_scroll_top_centered(root);
