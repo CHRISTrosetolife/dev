@@ -1,3 +1,4 @@
+import { html_button_previous_text } from "./html_button_previous_text.mjs";
 import { html_bible_verse_navigation_next } from "./html_bible_verse_navigation_next.mjs";
 import { clipboard_copy_web } from "./clipboard_copy_web.mjs";
 import { bible_book_chapter_text } from "./bible_book_chapter_text.mjs";
@@ -36,7 +37,7 @@ export async function html_bible_verse_navigation(
   function previous_create() {
     previous = html_button_width_full_text_click(
       root,
-      string_combine_multiple(["⬅️ previous", " verse"]),
+      string_combine_multiple([html_button_previous_text(), " verse"]),
       async () => {
         let verse_previous = list_previous(verses, verse);
         await verse_refresh(
