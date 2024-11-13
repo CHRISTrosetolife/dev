@@ -38,7 +38,9 @@ export function app_pray() {
   let next = html_button_width_full_text_click(
     root,
     string_combine_multiple([html_button_next_text(), " prayer"]),
-    () => {},
+    () => {
+      index++;
+    },
   );
   let previous = html_button_width_full_text_click(
     root,
