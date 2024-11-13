@@ -10,6 +10,7 @@ import { html_style_default_initialize } from "./html_style_default_initialize.m
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { list_get } from "./list_get.mjs";
 export function app_pray() {
+  let index = 0;
   let root = html_style_default_initialize();
   let prayers = [
     [
@@ -25,7 +26,6 @@ export function app_pray() {
       "Help me video;",
     ],
   ];
-  let index = 0;
   html_clear_scroll_top_centered(root);
   html_p_text_multiple(
     root,
