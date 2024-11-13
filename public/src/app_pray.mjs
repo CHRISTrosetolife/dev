@@ -24,12 +24,12 @@ export function app_pray() {
   ]);
   let next = html_button_width_full_text_click(
     root,
-    string_combine_multiple([html_button_next_text(), " verse"]),
+    string_combine_multiple([html_button_next_text(), " prayer"]),
     verse_next,
   );
   let previous = html_button_width_full_text_click(
     root,
-    "⬅️ previous verse",
+    "⬅️ previous prayer",
     async () => {
       let verse_previous = list_previous(verses, verse);
       await verse_refresh(
