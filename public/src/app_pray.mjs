@@ -23,6 +23,7 @@ export function app_pray() {
       "Help me video;",
     ],
   ];
+  let index = 0;
   html_clear_scroll_top_centered(root);
   html_p_text_multiple(root, [
     "Heavenly Father,",
