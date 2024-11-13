@@ -23,7 +23,8 @@ export function app_pray_music(index) {
       "Cause me to play piano perfectly;",
       "Please help me video;",
     ],
-    ["Thank You for helping me video;", "Please help me review"],
+    ["Thank You for helping me video;", "Please help me review;"],
+    ["Thank You for helping me review;", "Please help me upload;"],
   ];
   index = index % list_size(prayers);
   html_clear_scroll_top_centered(root);
