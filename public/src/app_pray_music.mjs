@@ -31,7 +31,11 @@ export function app_pray_music(index) {
   html_p_text_multiple(
     root,
     list_concat_multiple([
-      ["Heavenly Father,", "in the name of the Trinity:"],
+      [
+        "Heavenly Father,",
+        "in the name of the Trinity:",
+        "Have mercy on me, a sinner;",
+      ],
       list_get(prayers, index),
       ["Amen"],
     ]),
