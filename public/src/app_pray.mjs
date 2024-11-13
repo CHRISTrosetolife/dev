@@ -30,7 +30,7 @@ export function app_pray() {
   );
   let previous = html_button_width_full_text_click(
     root,
-    string_combine_multiple([html_button_previous_text(), " verse"]),
+    string_combine_multiple([html_button_previous_text(), " prayer"]),
     async () => {
       let verse_previous = list_previous(verses, verse);
       await verse_refresh(
