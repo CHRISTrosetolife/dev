@@ -5,6 +5,7 @@ export function app_pray() {
   html_p_text_multiple(root, [
     "Heavenly Father,",
     "in the name of the Trinity:",
+    "Thank You for (previous);",
     "Cause the word of God to be perfectly engrafted into my heart;",
     "Cause me to perfectly worship You;",
     "Cause me to be a perfect hearer of the word of God;",
@@ -13,6 +14,7 @@ export function app_pray() {
     "Cause me to sing perfectly;",
     "Cause me to compose perfectly;",
     "Cause me to play piano perfectly;",
+    "Help me video;",
     "Amen",
   ]);
 }
