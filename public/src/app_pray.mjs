@@ -31,7 +31,8 @@ export function app_pray() {
     root,
     list_concat_multiple([
       ["Heavenly Father,", "in the name of the Trinity:"],
-      list_get(prayers, 0)["Amen"],
+      list_get(prayers, 0),
+      ["Amen"],
     ]),
   );
   let next = html_button_width_full_text_click(
