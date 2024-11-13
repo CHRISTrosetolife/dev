@@ -8,7 +8,9 @@ import { list_get } from "./list_get.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
-export function app_pray_music(root, index) {
+import { html_document_body } from "./html_document_body.mjs";
+export function app_pray_music(index) {
+  let root = html_document_body();
   let prayers = [
     [
       "Thank You for (previous);",
