@@ -31,7 +31,7 @@ export function app_pray() {
     root,
     list_concat_multiple([
       ["Heavenly Father,", "in the name of the Trinity:"],
-      list_get(prayers, 0),
+      list_get(prayers, index),
       ["Amen"],
     ]),
   );
