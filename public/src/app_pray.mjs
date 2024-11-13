@@ -1,3 +1,4 @@
+import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { html_button_previous_text } from "./html_button_previous_text.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_previous } from "./list_previous.mjs";
@@ -8,6 +9,7 @@ import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 export function app_pray() {
   let root = html_style_default_initialize();
+  html_clear_scroll_top_centered();
   html_p_text_multiple(root, [
     "Heavenly Father,",
     "in the name of the Trinity:",
