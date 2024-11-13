@@ -10,19 +10,23 @@ import { html_style_default_initialize } from "./html_style_default_initialize.m
 export function app_pray() {
   let root = html_style_default_initialize();
   html_clear_scroll_top_centered(root);
+  let prayers = [
+    [
+      "Thank You for (previous);",
+      "Cause the word of God to be perfectly engrafted into my heart;",
+      "Cause me to perfectly worship You;",
+      "Cause me to be a perfect hearer of the word of God;",
+      "Cause my eyes and ears to perfectly be opened up to Scripture and truth;",
+      "Cause me to be a perfect doer of the word of God;",
+      "Cause me to sing perfectly;",
+      "Cause me to compose perfectly;",
+      "Cause me to play piano perfectly;",
+      "Help me video;",
+    ],
+  ];
   html_p_text_multiple(root, [
     "Heavenly Father,",
     "in the name of the Trinity:",
-    "Thank You for (previous);",
-    "Cause the word of God to be perfectly engrafted into my heart;",
-    "Cause me to perfectly worship You;",
-    "Cause me to be a perfect hearer of the word of God;",
-    "Cause my eyes and ears to perfectly be opened up to Scripture and truth;",
-    "Cause me to be a perfect doer of the word of God;",
-    "Cause me to sing perfectly;",
-    "Cause me to compose perfectly;",
-    "Cause me to play piano perfectly;",
-    "Help me video;",
     "Amen",
   ]);
   let next = html_button_width_full_text_click(
