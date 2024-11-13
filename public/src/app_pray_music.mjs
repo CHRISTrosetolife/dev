@@ -41,6 +41,7 @@ export function app_pray_music(index) {
     string_combine_multiple([html_button_next_text(), " prayer"]),
     () => {
       index++;
+      app_pray_music(index);
     },
   );
   let previous = html_button_width_full_text_click(
@@ -48,6 +49,7 @@ export function app_pray_music(index) {
     string_combine_multiple([html_button_previous_text(), " prayer"]),
     async () => {
       index--;
+      app_pray_music(index);
     },
   );
   return index;
