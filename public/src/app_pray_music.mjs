@@ -12,7 +12,7 @@ export function app_pray_music(index) {
   let root = html_document_body();
   let prayers = [
     [
-      "Thank You for helping me upload;",
+      "Thank You for helping me (previous or:) upload;",
       "Cause the word of God to be perfectly engrafted into my heart;",
       "Cause me to perfectly worship You;",
       "Cause me to be a perfect hearer of the word of God;",
