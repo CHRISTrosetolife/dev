@@ -1,3 +1,8 @@
+import { object_property_get } from "./object_property_get.mjs";
+import { list_previous } from "./list_previous.mjs";
+import { html_button_next_text } from "./html_button_next_text.mjs";
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
 export function app_pray() {
@@ -17,4 +22,22 @@ export function app_pray() {
     "Help me video;",
     "Amen",
   ]);
+  let next = html_button_width_full_text_click(
+    root,
+    string_combine_multiple([html_button_next_text(), " verse"]),
+    verse_next,
+  );
+  let previous = html_button_width_full_text_click(
+    root,
+    "⬅️ previous verse",
+    async () => {
+      let verse_previous = list_previous(verses, verse);
+      await verse_refresh(
+        context,
+        book_code,
+        chapter,
+        object_property_get(verse_previous, "verse_number"),
+      );
+    },
+  );
 }
