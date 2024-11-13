@@ -36,7 +36,7 @@ export async function html_bible_verse_navigation(
   function previous_create() {
     previous = html_button_width_full_text_click(
       root,
-      "⬅️ previous verse",
+      string_combine_multiple(["⬅️ previous verse"]),
       async () => {
         let verse_previous = list_previous(verses, verse);
         await verse_refresh(
@@ -65,9 +65,9 @@ export async function html_bible_verse_navigation(
     next,
     verse_next,
   };
-  function on_chapter_next() {
+  async function on_chapter_next() {
     let chapter_text = bible_book_chapter_text(book_code, chapter);
-    clipboard_copy_web(
+    await clipboard_copy_web(
       string_combine_multiple([chapter_text, ": Finished ", copy_message]),
     );
   }
