@@ -26,12 +26,7 @@ export function app_pray() {
   ];
   let index = 0;
   html_clear_scroll_top_centered(root);
-  html_p_text_multiple(
-    root,
-    list_concat_multiple([
-      ["Heavenly Father,", "in the name of the Trinity:", "Amen"],
-    ]),
-  );
+  html_p_text_multiple(root, list_concat_multiple([, , ,]));
   let next = html_button_width_full_text_click(
     root,
     string_combine_multiple([html_button_next_text(), " prayer"]),
