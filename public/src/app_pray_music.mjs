@@ -33,7 +33,7 @@ export function app_pray_music(index) {
     list_concat_multiple([
       [
         "Heavenly Father,",
-        "in the name of the Trinity:",
+        "In the name of the Trinity:",
         "Have mercy on me, a sinner;",
       ],
       list_get(prayers, index),
