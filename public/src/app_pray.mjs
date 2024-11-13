@@ -7,6 +7,7 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_p_text_multiple } from "./html_p_text_multiple.mjs";
 import { html_style_default_initialize } from "./html_style_default_initialize.mjs";
+import { list_concat_multiple } from "./list_concat_multiple.mjs";
 export function app_pray() {
   let root = html_style_default_initialize();
   let prayers = [
@@ -25,11 +26,12 @@ export function app_pray() {
   ];
   let index = 0;
   html_clear_scroll_top_centered(root);
-  html_p_text_multiple(root, [
-    "Heavenly Father,",
-    "in the name of the Trinity:",
-    "Amen",
-  ]);
+  html_p_text_multiple(
+    root,
+    list_concat_multiple([
+      ["Heavenly Father,", "in the name of the Trinity:", "Amen"],
+    ]),
+  );
   let next = html_button_width_full_text_click(
     root,
     string_combine_multiple([html_button_next_text(), " prayer"]),
