@@ -36,7 +36,7 @@ export async function html_bible_verse_navigation(
   function previous_create() {
     previous = html_button_width_full_text_click(
       root,
-      string_combine_multiple(["⬅️ previous verse"]),
+      string_combine_multiple(["⬅️ previous", " verse"]),
       async () => {
         let verse_previous = list_previous(verses, verse);
         await verse_refresh(
