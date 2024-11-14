@@ -31,7 +31,7 @@ export async function app_record_verse(
 ) {
   await app_save_change_bible(app_record, book_code, chapter, verse_number);
   let { root } = context;
-  app_record_verse_buttons(context, book_code, chapter, root);
+  app_record_verse_buttons(context, book_code, chapter);
   let verses = await app_record_verses(book_code, chapter);
   let verse = list_find_property(verses, "verse_number", verse_number);
   let vn = html_bible_verse(root, book_code, chapter, verse);
