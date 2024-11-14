@@ -1,3 +1,4 @@
+import { app_record_verse } from "./app_record_verse.mjs";
 import { app_record_verse_buttons } from "./app_record_verse_buttons.mjs";
 import { html_button_add } from "./html_button_add.mjs";
 import { app_context_books_bible } from "./app_context_books_bible.mjs";
@@ -48,6 +49,7 @@ export async function app_share() {
     context,
     object_property_get(p, "book_code"),
     object_property_get(p, "chapter_code"),
+    app_record_verse,
   );
   let bible_folders_text = object_property_get(
     lookup,
