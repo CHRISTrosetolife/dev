@@ -11,7 +11,12 @@ import { html_style_bold } from "./html_style_bold.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { each } from "./each.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
-export async function app_record_chapter(context, book_code, chapter) {
+export async function app_record_chapter(
+  context,
+  book_code,
+  chapter,
+  on_verse,
+) {
   await app_save_change(app_record, (save) =>
     object_replace(save, {
       book: book_code,

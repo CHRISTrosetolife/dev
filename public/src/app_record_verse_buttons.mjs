@@ -1,3 +1,4 @@
+import { app_record_verse } from "./app_record_verse.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { app_record_chapter } from "./app_record_chapter.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
@@ -10,7 +11,8 @@ export function app_record_verse_buttons(context, book_code, chapter) {
   html_button_width_full_text_click(
     root,
     chapter_text,
-    async () => await app_record_chapter(context, book_code, chapter),
+    async () =>
+      await app_record_chapter(context, book_code, chapter, app_record_verse),
   );
   html_hr(root);
 }

@@ -31,7 +31,12 @@ export async function app_record() {
         if (hash_verse !== null) {
           await app_record_verse(context, hash_book, hash_chapter, hash_verse);
         } else {
-          await app_record_chapter(context, hash_book, hash_chapter);
+          await app_record_chapter(
+            context,
+            hash_book,
+            hash_chapter,
+            app_record_verse,
+          );
         }
       } else {
         await app_record_book(context, hash_book);
