@@ -1,3 +1,4 @@
+import { app_record_verse_buttons } from "./app_record_verse_buttons.mjs";
 import { html_button_width_full_text_click_br } from "./html_button_width_full_text_click_br.mjs";
 import { html_audio } from "./html_audio.mjs";
 import { app_record_project_name } from "./app_record_project_name.mjs";
@@ -6,12 +7,9 @@ import { html_bible_verse_navigation } from "./html_bible_verse_navigation.mjs";
 import { html_bible_verse } from "./html_bible_verse.mjs";
 import { html_style_green } from "./html_style_green.mjs";
 import { equal } from "./equal.mjs";
-import { bible_book_chapter_text } from "./bible_book_chapter_text.mjs";
 import { app_record } from "./app_record.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { firebase_upload_bytes } from "./firebase_upload_bytes.mjs";
-import { app_record_chapter } from "./app_record_chapter.mjs";
-import { app_record_chapter_buttons } from "./app_record_chapter_buttons.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { path_join } from "./path_join.mjs";
 import { folder_audio_bible } from "./folder_audio_bible.mjs";
@@ -33,14 +31,7 @@ export async function app_record_verse(
 ) {
   await app_save_change_bible(app_record, book_code, chapter, verse_number);
   let { root } = context;
-  app_record_chapter_buttons(context, book_code);
-  let chapter_text = bible_book_chapter_text(book_code, chapter);
-  html_button_width_full_text_click(
-    root,
-    chapter_text,
-    async () => await app_record_chapter(context, book_code, chapter),
-  );
-  html_hr(root);
+  app_record_verse_buttons(context, book_code, chapter, root);
   let verses = await app_record_verses(book_code, chapter);
   let verse = list_find_property(verses, "verse_number", verse_number);
   let vn = html_bible_verse(root, book_code, chapter, verse);
