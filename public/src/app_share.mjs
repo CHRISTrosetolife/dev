@@ -47,7 +47,7 @@ export async function app_share() {
   app_record_verse_buttons(
     context,
     object_property_get(p, "book_code"),
-    chapter_next,
+    object_property_get(p, "chapter_code"),
   );
   let bible_folders_text = object_property_get(
     lookup,
