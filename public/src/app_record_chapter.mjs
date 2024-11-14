@@ -4,7 +4,6 @@ import { object_replace } from "./object_replace.mjs";
 import { app_record } from "./app_record.mjs";
 import { app_save_change } from "./app_save_change.mjs";
 import { app_record_chapter_buttons } from "./app_record_chapter_buttons.mjs";
-import { app_record_verse } from "./app_record_verse.mjs";
 import { app_record_verses } from "./app_record_verses.mjs";
 import { list_join_space } from "./list_join_space.mjs";
 import { html_style_bold } from "./html_style_bold.mjs";
