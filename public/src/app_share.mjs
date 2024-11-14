@@ -1,3 +1,4 @@
+import { app_record_verse_buttons } from "./app_record_verse_buttons.mjs";
 import { html_button_add } from "./html_button_add.mjs";
 import { app_context_books_bible } from "./app_context_books_bible.mjs";
 import { bible_reference_code } from "./bible_reference_code.mjs";
@@ -39,8 +40,15 @@ export async function app_share() {
   let verse_number_next;
   let verse_numbers = [];
   chapter_next = object_property_get(lookup, app_share_chapter());
+  let p;
+  p = bible_chapter_name_parse(chapter_next);
   chapter = chapter_next;
   verse_number_next = object_property_get(lookup, app_share_verse());
+  app_record_verse_buttons(
+    context,
+    object_property_get(p, "book_code"),
+    chapter_next,
+  );
   let bible_folders_text = object_property_get(
     lookup,
     app_share_bible_folders(),
@@ -78,7 +86,7 @@ export async function app_share() {
       verses_component,
       verse_numbers,
     );
-    let p = bible_chapter_name_parse(chapter_next);
+    p = bible_chapter_name_parse(chapter_next);
     let book_code = object_property_get(p, "book_code");
     let chapter_code = object_property_get(p, "chapter_code");
     let next = await new Promise(async (resolve) => {
