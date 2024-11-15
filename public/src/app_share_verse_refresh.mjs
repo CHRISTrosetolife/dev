@@ -1,3 +1,4 @@
+import { list_includes } from "./list_includes.mjs";
 import { html_list_chooser } from "./html_list_chooser.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_hash_lookup } from "./html_hash_lookup.mjs";
@@ -54,10 +55,11 @@ export async function app_share_verse_refresh(
   );
   html_button_width_full_text_click(root, "versions", () => {
     html_clear_scroll_top(root);
+    let f = "engbsb";
     html_list_chooser(
       root,
-      ["engbsb", "urdgvu+engbsb"],
-      bible_folders_text,
+      [f, "urdgvu+engbsb"],
+      list_includes(bible_folders_text) ? bible_folders_text : f,
       async () =>
         await app_share_verse_refresh(
           context,
