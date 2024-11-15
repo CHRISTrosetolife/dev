@@ -1,3 +1,4 @@
+import { app_record_verse } from "./app_record_verse.mjs";
 import { bible_book_chapter_text } from "./bible_book_chapter_text.mjs";
 import { html_p_text_centered } from "./html_p_text_centered.mjs";
 import { object_replace } from "./object_replace.mjs";
@@ -24,7 +25,7 @@ export async function app_record_chapter(
   );
   let { root } = context;
   let verses = await app_record_verses(book_code, chapter);
-  app_record_chapter_buttons(context, book_code);
+  app_record_chapter_buttons(context, book_code, app_record_verse);
   html_p_text_centered(root, bible_book_chapter_text(book_code, chapter));
   each(verses, (verse) => {
     let { tokens, verse_number } = verse;

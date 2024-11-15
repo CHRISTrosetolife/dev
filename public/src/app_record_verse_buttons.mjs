@@ -1,3 +1,4 @@
+import { app_record_verse } from "./app_record_verse.mjs";
 import { html_hr } from "./html_hr.mjs";
 import { app_record_chapter } from "./app_record_chapter.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
@@ -10,7 +11,7 @@ export function app_record_verse_buttons(
   on_verse,
 ) {
   let { root } = context;
-  app_record_chapter_buttons(context, book_code);
+  app_record_chapter_buttons(context, book_code, app_record_verse);
   let chapter_text = bible_book_chapter_text(book_code, chapter);
   html_button_width_full_text_click(
     root,
