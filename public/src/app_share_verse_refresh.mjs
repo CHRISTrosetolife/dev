@@ -51,7 +51,8 @@ export async function app_share_verse_refresh(
     lookup,
     app_share_bible_folders(),
   );
-  let bible_folders = string_split_plus(bible_folders_text);
+  let bible_folders;
+  bible_folders = string_split_plus(bible_folders_text);
   html_button_width_full_text_click(root, "versions", () => {
     html_clear_scroll_top(root);
     html_list_chooser(
