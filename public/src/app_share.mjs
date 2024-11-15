@@ -38,8 +38,7 @@ export async function app_share() {
   chapter_next = object_property_get(lookup, app_share_chapter());
   let verse_number_next;
   verse_number_next = object_property_get(lookup, app_share_verse());
-  let p;
-  p = bible_chapter_name_parse(chapter_next);
+  let p = bible_chapter_name_parse(chapter_next);
   let book_code = object_property_get(p, "book_code");
   let chapter_code = object_property_get(p, "chapter_code");
   let chapter;
@@ -85,7 +84,7 @@ export async function app_share() {
       verses_component,
       verse_numbers,
     );
-    p = bible_chapter_name_parse(chapter_next);
+    let p = bible_chapter_name_parse(chapter_next);
     book_code = object_property_get(p, "book_code");
     chapter_code = object_property_get(p, "chapter_code");
     let next = await new Promise(async (resolve) => {
