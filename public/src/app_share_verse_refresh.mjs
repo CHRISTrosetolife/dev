@@ -1,3 +1,4 @@
+import { html_hash_lookup } from "./html_hash_lookup.mjs";
 import { html_style_link } from "./html_style_link.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 import { html_hash_unparse } from "./html_hash_unparse.mjs";
@@ -29,9 +30,9 @@ export async function app_share_verse_refresh(
   context,
   book_code,
   chapter_code,
-  lookup,
   verse_number_next,
 ) {
+  let lookup = html_hash_lookup();
   let { root } = context;
   let chapter = string_combine_multiple([book_code, chapter_code]);
   let chapter_next = chapter;

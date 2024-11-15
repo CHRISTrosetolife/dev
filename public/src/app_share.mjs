@@ -24,7 +24,6 @@ export async function app_share() {
     context,
     book_code,
     chapter_code,
-    lookup,
     verse_number_next,
   );
 }
