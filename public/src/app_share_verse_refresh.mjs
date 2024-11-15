@@ -58,7 +58,13 @@ export async function app_share_verse_refresh(
       root,
       ["engbsb", "urdgvu+engbsb"],
       bible_folders_text,
-      () => {},
+      async () =>
+        await app_share_verse_refresh(
+          context,
+          book_code,
+          chapter_code,
+          verse_number_next,
+        ),
     );
   });
   let texts = [];
