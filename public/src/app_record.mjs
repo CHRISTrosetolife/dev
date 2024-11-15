@@ -39,7 +39,7 @@ export async function app_record() {
           );
         }
       } else {
-        await app_record_book(context, hash_book);
+        await app_record_book(context, hash_book, app_record_verse);
       }
     } else {
       await app_record_home(context);
