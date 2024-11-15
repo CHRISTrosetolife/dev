@@ -24,7 +24,6 @@ import { html_p } from "./html_p.mjs";
 import { string_split_plus } from "./string_split_plus.mjs";
 import { app_share_bible_folders } from "./app_share_bible_folders.mjs";
 import { object_property_get } from "./object_property_get.mjs";
-import { app_record_verse } from "./app_record_verse.mjs";
 import { app_record_verse_buttons } from "./app_record_verse_buttons.mjs";
 export async function app_share_verse_refresh(
   context,
@@ -39,7 +38,12 @@ export async function app_share_verse_refresh(
   let book_code_next;
   let chapter_code_next;
   let verse_numbers = [];
-  app_record_verse_buttons(context, book_code, chapter_code, app_record_verse);
+  app_record_verse_buttons(
+    context,
+    book_code,
+    chapter_code,
+    app_share_verse_refresh,
+  );
   let bible_folders_text = object_property_get(
     lookup,
     app_share_bible_folders(),
