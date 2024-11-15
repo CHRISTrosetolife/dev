@@ -47,10 +47,8 @@ export async function app_share_verse_refresh(
     chapter_code,
     app_share_verse_refresh,
   );
-  let bible_folders_text = object_property_get(
-    lookup,
-    app_share_bible_folders(),
-  );
+  let bible_folders_text;
+  bible_folders_text = object_property_get(lookup, app_share_bible_folders());
   let bible_folders;
   bible_folders_text_changed();
   html_button_width_full_text_click(root, "versions", () => {
