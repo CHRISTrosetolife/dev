@@ -17,5 +17,11 @@ export async function app_record_book(context, book_code) {
     let { root } = context;
     html_p_text_centered(root, bible_book_name_text(book_code));
   };
-  app_record_book_generic(context, lambda_top, book_code, app_record_chapter);
+  app_record_book_generic(
+    context,
+    lambda_top,
+    book_code,
+    async (context, book_code, chapter) =>
+      await app_record_chapter(context, book_code, chapter, on_verse),
+  );
 }
