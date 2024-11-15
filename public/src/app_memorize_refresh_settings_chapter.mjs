@@ -22,7 +22,7 @@ export function app_memorize_refresh_settings_chapter(context) {
       );
     },
     book_code,
-    async (context, book_code, chapter, on_verse) => {
+    async (context, book_code, chapter) => {
       app_memorize_chapter_set(context, chapter);
       await app_memorize_refresh_memorize(context);
     },
