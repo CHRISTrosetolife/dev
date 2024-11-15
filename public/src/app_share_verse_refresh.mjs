@@ -1,3 +1,4 @@
+import { app_gs_bible_chapter_code } from "./app_gs_bible_chapter_code.mjs";
 import { html_hash_lookup } from "./html_hash_lookup.mjs";
 import { html_style_link } from "./html_style_link.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
@@ -33,7 +34,7 @@ export async function app_share_verse_refresh(
 ) {
   let lookup = html_hash_lookup();
   let { root } = context;
-  let chapter = string_combine_multiple([book_code, chapter_code]);
+  let chapter = app_gs_bible_chapter_code(book_code, chapter_code);
   let chapter_next = chapter;
   let book_code_next;
   let chapter_code_next;
