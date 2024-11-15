@@ -65,6 +65,9 @@ export async function app_share_verse_refresh(
           chapter_code,
           verse_number_next,
         ),
+      (value) => {
+        bible_folders_text = value;
+      },
     );
   });
   let texts = [];
