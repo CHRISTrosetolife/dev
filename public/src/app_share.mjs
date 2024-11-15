@@ -22,7 +22,6 @@ export async function app_share() {
   let chapter_code = object_property_get(p, "chapter_code");
   await app_share_verse_refresh(
     context,
-    chapter_next,
     book_code,
     chapter_code,
     lookup,
