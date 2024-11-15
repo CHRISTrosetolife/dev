@@ -18,7 +18,7 @@ export function app_record_book_generic(
   let book = list_find_property(books, "book_code", book_code);
   each(book.chapters, (chapter) => {
     let b = html_button_text_click(root, chapter, async () => {
-      await app_record_book_on_click(context, book_code, chapter, on_verse);
+      await app_record_book_on_click(context, book_code, chapter);
     });
     html_style_success_if(b, chapter_selected, chapter);
   });
