@@ -36,17 +36,17 @@ export async function app_share() {
   let lookup = html_hash_lookup();
   let chapter_next;
   chapter_next = object_property_get(lookup, app_share_chapter());
+  let verse_number_next;
+  verse_number_next = object_property_get(lookup, app_share_verse());
   let chapter;
   let book_code_next;
   let chapter_code_next;
-  let verse_number_next;
   let verse_numbers = [];
   let p;
   p = bible_chapter_name_parse(chapter_next);
   let book_code = object_property_get(p, "book_code");
   let chapter_code = object_property_get(p, "chapter_code");
   chapter = chapter_next;
-  verse_number_next = object_property_get(lookup, app_share_verse());
   app_record_verse_buttons(context, book_code, chapter_code, app_record_verse);
   let bible_folders_text = object_property_get(
     lookup,
