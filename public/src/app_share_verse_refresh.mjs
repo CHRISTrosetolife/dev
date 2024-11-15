@@ -34,11 +34,10 @@ export async function app_share_verse_refresh(
   verse_number_next,
 ) {
   let { root } = context;
-  let chapter;
+  let chapter = string_combine_multiple([book_code, chapter_code]);
   let book_code_next;
   let chapter_code_next;
   let verse_numbers = [];
-  chapter = chapter_next;
   app_record_verse_buttons(context, book_code, chapter_code, app_record_verse);
   let bible_folders_text = object_property_get(
     lookup,
