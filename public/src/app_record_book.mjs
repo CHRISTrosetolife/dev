@@ -1,4 +1,3 @@
-import { app_record_verse } from "./app_record_verse.mjs";
 import { html_p_text_centered } from "./html_p_text_centered.mjs";
 import { bible_book_name_text } from "./bible_book_name_text.mjs";
 import { object_replace } from "./object_replace.mjs";
@@ -14,7 +13,7 @@ export async function app_record_book(context, book_code, on_verse) {
     }),
   );
   let lambda_top = () => {
-    app_record_home_button(context, app_record_verse);
+    app_record_home_button(context, on_verse);
     let { root } = context;
     html_p_text_centered(root, bible_book_name_text(book_code));
   };
