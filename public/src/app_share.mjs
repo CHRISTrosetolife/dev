@@ -26,7 +26,6 @@ export async function app_share() {
     book_code,
     chapter_code,
     lookup,
-    root,
     verse_number_next,
   );
 }
