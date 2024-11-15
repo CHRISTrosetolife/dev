@@ -53,23 +53,25 @@ export async function app_share_verse_refresh(
   bible_folders_text_set(
     object_property_get(lookup, app_share_bible_folders()),
   );
-  html_button_width_full_text_click(root, "versions", () => {
-    html_clear_scroll_top(root);
-    let f = "engbsb";
-    html_list_chooser(
-      root,
-      [f, "urdgvu+engbsb"],
-      list_includes(bible_folders_text) ? bible_folders_text : f,
-      async () =>
-        await app_share_verse_refresh(
-          context,
-          book_code,
-          chapter_code,
-          verse_number_next,
-        ),
-      bible_folders_text_set,
-    );
-  });
+  if (false) {
+    html_button_width_full_text_click(root, "versions", () => {
+      html_clear_scroll_top(root);
+      let f = "engbsb";
+      html_list_chooser(
+        root,
+        [f, "urdgvu+engbsb"],
+        list_includes(bible_folders_text) ? bible_folders_text : f,
+        async () =>
+          await app_share_verse_refresh(
+            context,
+            book_code,
+            chapter_code,
+            verse_number_next,
+          ),
+        bible_folders_text_set,
+      );
+    });
+  }
   let texts = [];
   let verses_component = html_p(root);
   let lookup_next;
