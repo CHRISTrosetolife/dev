@@ -20,14 +20,13 @@ export async function app_share() {
   let p = bible_chapter_name_parse(chapter_next);
   let book_code = object_property_get(p, "book_code");
   let chapter_code = object_property_get(p, "chapter_code");
-  ({ chapter_next, book_code, chapter_code, verse_number_next } =
-    await app_share_verse_refresh(
-      chapter_next,
-      context,
-      book_code,
-      chapter_code,
-      lookup,
-      root,
-      verse_number_next,
-    ));
+  await app_share_verse_refresh(
+    chapter_next,
+    context,
+    book_code,
+    chapter_code,
+    lookup,
+    root,
+    verse_number_next,
+  );
 }
