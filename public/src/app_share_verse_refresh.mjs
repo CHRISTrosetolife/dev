@@ -34,6 +34,7 @@ export async function app_share_verse_refresh(
   root,
   verse_number_next,
 ) {
+  root = context;
   let chapter;
   let book_code_next;
   let chapter_code_next;
