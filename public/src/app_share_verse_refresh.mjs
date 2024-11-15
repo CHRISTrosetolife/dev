@@ -54,7 +54,12 @@ export async function app_share_verse_refresh(
   let bible_folders = string_split_plus(bible_folders_text);
   html_button_width_full_text_click(root, "versions", () => {
     html_clear_scroll_top(root);
-    html_list_chooser();
+    html_list_chooser(
+      root,
+      ["engbsb", "urdgvu+engbsb"],
+      bible_folders_text,
+      () => {},
+    );
   });
   let texts = [];
   let verses_component = html_p(root);
