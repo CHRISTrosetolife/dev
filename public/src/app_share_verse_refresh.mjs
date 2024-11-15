@@ -26,8 +26,8 @@ import { object_property_get } from "./object_property_get.mjs";
 import { app_record_verse } from "./app_record_verse.mjs";
 import { app_record_verse_buttons } from "./app_record_verse_buttons.mjs";
 export async function app_share_verse_refresh(
-  chapter_next,
   context,
+  chapter_next,
   book_code,
   chapter_code,
   lookup,
