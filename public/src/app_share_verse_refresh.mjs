@@ -35,6 +35,7 @@ export async function app_share_verse_refresh(
 ) {
   let { root } = context;
   let chapter = string_combine_multiple([book_code, chapter_code]);
+  chapter_next = chapter;
   let book_code_next;
   let chapter_code_next;
   let verse_numbers = [];
