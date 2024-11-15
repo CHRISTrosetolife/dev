@@ -49,8 +49,8 @@ export async function app_share_verse_refresh(
     lookup,
     app_share_bible_folders(),
   );
-  html_button_width_full_text_click(root, "versions", () => {});
   let bible_folders = string_split_plus(bible_folders_text);
+  html_button_width_full_text_click(root, "versions", () => {});
   let texts = [];
   let verses_component = html_p(root);
   let lookup_next;
