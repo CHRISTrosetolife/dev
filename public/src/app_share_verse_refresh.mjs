@@ -48,9 +48,10 @@ export async function app_share_verse_refresh(
     app_share_verse_refresh,
   );
   let bible_folders_text;
-  bible_folders_text = object_property_get(lookup, app_share_bible_folders());
   let bible_folders;
-  bible_folders_text_changed();
+  bible_folders_text_set(
+    object_property_get(lookup, app_share_bible_folders()),
+  );
   html_button_width_full_text_click(root, "versions", () => {
     html_clear_scroll_top(root);
     html_list_chooser(
@@ -64,10 +65,7 @@ export async function app_share_verse_refresh(
           chapter_code,
           verse_number_next,
         ),
-      (value) => {
-        bible_folders_text = value;
-        bible_folders_text_changed();
-      },
+      bible_folders_text_set,
     );
   });
   let texts = [];
@@ -92,7 +90,8 @@ export async function app_share_verse_refresh(
       ]),
     ),
   );
-  function bible_folders_text_changed() {
+  function bible_folders_text_set(value) {
+    bible_folders_text = value;
     bible_folders = string_split_plus(bible_folders_text);
   }
   async function download() {
