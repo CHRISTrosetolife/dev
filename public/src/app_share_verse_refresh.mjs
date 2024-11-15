@@ -112,10 +112,4 @@ export async function app_share_verse_refresh(
     html_inner_set(next_url_component, url_next);
     html_style_link(url_next)(next_url_component);
   }
-  return {
-    chapter_next,
-    book_code,
-    chapter_code,
-    verse_number_next,
-  };
 }
