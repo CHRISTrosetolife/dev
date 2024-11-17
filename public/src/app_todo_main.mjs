@@ -1,5 +1,5 @@
+import { app_todo_item_add } from "./app_todo_item_add.mjs";
 import { app_todo_completed_view } from "./app_todo_completed_view.mjs";
-import { list_add } from "./list_add.mjs";
 import { app_todo_item_name } from "./app_todo_item_name.mjs";
 import { app_todo_index_save_main } from "./app_todo_index_save_main.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -11,7 +11,6 @@ import { app_todo_completed_property } from "./app_todo_completed_property.mjs";
 import { app_todo_not_completed } from "./app_todo_not_completed.mjs";
 import { app_todo_list } from "./app_todo_list.mjs";
 import { each } from "./each.mjs";
-import { app_todo_item } from "./app_todo_item.mjs";
 import { app_todo_items } from "./app_todo_items.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
@@ -46,7 +45,7 @@ export function app_todo_main(context) {
     "",
     function on_complete(value) {
       let items = app_todo_items(context);
-      list_add(items, app_todo_item(value));
+      app_todo_item_add(items, value);
     },
     function on_save() {
       app_todo_main(context);
