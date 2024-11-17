@@ -1,37 +1,16 @@
+import { app_todo_command_move_transform } from "./app_todo_command_move_transform.mjs";
 import { add_1_integer } from "./add_1_integer.mjs";
 import { storage_upload_object } from "./storage_upload_object.mjs";
 import { app_todo_command_log } from "./app_todo_command_log.mjs";
 import { app_todo_command_items_filter } from "./app_todo_command_items_filter.mjs";
-import { list_remove_at } from "./list_remove_at.mjs";
-import { list_insert } from "./list_insert.mjs";
-import { list_index } from "./list_index.mjs";
-import { list_get } from "./list_get.mjs";
 import { app_todo_command_items } from "./app_todo_command_items.mjs";
-import { list_size } from "./list_size.mjs";
 export async function app_todo_command_move(index_from, index_to) {
   if (false) {
     index_to = add_1_integer(index_to);
   }
   let { filtered, items, index, index_path } = await app_todo_command_items();
-  app_todo_command_move_transform();
+  app_todo_command_move_transform(filtered, index_to, index_from, items);
   filtered = app_todo_command_items_filter(items);
   await storage_upload_object(index, index_path);
   app_todo_command_log(filtered);
-  function app_todo_command_move_transform() {
-    let filtered_size = list_size(filtered);
-    let item_to;
-    if (index_to < filtered_size) {
-      item_to = list_get(filtered, index_to);
-    }
-    let item_from = list_get(filtered, index_from);
-    let items_index_from = list_index(items, item_from);
-    list_remove_at(items, items_index_from);
-    let items_index_to;
-    if (index_to >= filtered_size) {
-      items_index_to = list_size(items);
-    } else {
-      items_index_to = list_index(items, item_to);
-    }
-    list_insert(items, items_index_to, item_from);
-  }
 }
