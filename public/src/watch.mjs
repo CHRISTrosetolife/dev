@@ -70,10 +70,11 @@ export async function watch() {
     } finally {
       object_property_set(c, "processing", false);
     }
-    if (processed) {
-      object_property_set(c, "contents", after);
-      await git_ac_message(list_join_space(list_concat([fn.name], args)));
-      await git_push();
+    if (!processed) {
+      return;
     }
+    object_property_set(c, "contents", after);
+    await git_ac_message(list_join_space(list_concat([fn.name], args)));
+    await git_push();
   }
 }
