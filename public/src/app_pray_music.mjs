@@ -27,7 +27,8 @@ export function app_pray_music(index) {
     ["Thank You for helping me video;", "Please help me review;"],
     ["Thank You for helping me review;", "Please help me upload;"],
   ];
-  index = index % list_size(prayers);
+  let prayers_size = list_size(prayers);
+  index = index % prayers_size;
   html_clear_scroll_top_centered(root);
   html_p_text_multiple(
     root,
