@@ -28,6 +28,9 @@ export function app_pray_music(index) {
     ["Thank You for helping me review;", "Please help me upload;"],
   ];
   let prayers_size = list_size(prayers);
+  while (index < 0) {
+    index += prayers_size;
+  }
   index = index % prayers_size;
   html_clear_scroll_top_centered(root);
   html_p_text_multiple(
