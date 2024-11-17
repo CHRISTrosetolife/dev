@@ -30,7 +30,10 @@ export async function watch() {
     let fn = function_auto_after;
     let result = chokidar
       .watch(fps)
-      .on("all", (event, path) => (base = base.then(on_watch(event, path))));
+      .on(
+        "all",
+        (event, path) => (base = base.then(on_watch(event, path, fn))),
+      );
     return result;
   }
   async function on_watch(event, path, fn) {
