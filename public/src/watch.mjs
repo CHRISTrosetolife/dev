@@ -1,4 +1,4 @@
-import { sermon_path_suffix } from "./sermon_path_suffix.mjs";
+import { sermon_path_to_name } from "./sermon_path_to_name.mjs";
 import { function_auto_after_path } from "./function_auto_after_path.mjs";
 import { noop } from "./noop.mjs";
 import { sermon_folder } from "./sermon_folder.mjs";
@@ -19,14 +19,13 @@ import { object_property_initialize } from "./object_property_initialize.mjs";
 import { import_node } from "./import_node.mjs";
 import { folder_path_src } from "./folder_path_src.mjs";
 import { function_path_to_name } from "./function_path_to_name.mjs";
-import { string_without_surround } from "./string_without_surround.mjs";
 export async function watch() {
   let chokidar = await import_node("chokidar");
   let cache = {};
   let base = Promise.resolve();
   start(folder_path_src(), function_auto_after_path, function_path_to_name);
   start(sermon_folder(), noop, (path) => {
-    return string_without_surround(path, sermon_folder(), sermon_path_suffix());
+    return sermon_path_to_name(path);
   });
   async function start(folder_path, fn, message_get) {
     let result = chokidar
