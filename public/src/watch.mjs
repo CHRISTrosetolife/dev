@@ -22,11 +22,11 @@ export async function watch() {
   let cache = {};
   let base = Promise.resolve();
   let fps = folder_path_src();
-  start();
+  start(fps);
   log(
     string_combine_multiple([fn_name("watch"), " ", await path_resolve(fps)]),
   );
-  function start() {
+  function start(fps) {
     let fn = function_auto_after;
     let result = chokidar
       .watch(fps)
