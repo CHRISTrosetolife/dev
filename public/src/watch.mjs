@@ -1,3 +1,4 @@
+import { sermon_path_suffix } from "./sermon_path_suffix.mjs";
 import { function_auto_after_path } from "./function_auto_after_path.mjs";
 import { noop } from "./noop.mjs";
 import { sermon_folder } from "./sermon_folder.mjs";
@@ -25,7 +26,7 @@ export async function watch() {
   let base = Promise.resolve();
   start(folder_path_src(), function_auto_after_path, function_path_to_name);
   start(sermon_folder(), noop, (path) =>
-    string_without_surround(path, "", ".txt"),
+    string_without_surround(path, "", sermon_path_suffix()),
   );
   async function start(folder_path, fn, message_get) {
     let result = chokidar
