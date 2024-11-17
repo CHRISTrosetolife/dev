@@ -27,12 +27,13 @@ export async function watch() {
     string_combine_multiple([fn_name("watch"), " ", await path_resolve(fps)]),
   );
   function start() {
+    let fn = function_auto_after;
     let result = chokidar
       .watch(fps)
       .on("all", (event, path) => (base = base.then(on_watch(event, path))));
     return result;
   }
-  async function on_watch(event, path) {
+  async function on_watch(event, path, fn) {
     if (event !== "change") {
       return;
     }
@@ -51,7 +52,6 @@ export async function watch() {
       return;
     }
     let function_name = function_path_to_name(path);
-    let fn = function_auto_after;
     let args = [function_name];
     let processed = false;
     let after;
