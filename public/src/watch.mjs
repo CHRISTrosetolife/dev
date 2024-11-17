@@ -29,7 +29,7 @@ export async function watch() {
     log({
       path,
     });
-    return string_without_surround(path, "", sermon_path_suffix());
+    return string_without_surround(path, sermon_folder(), sermon_path_suffix());
   });
   async function start(folder_path, fn, message_get) {
     let result = chokidar
