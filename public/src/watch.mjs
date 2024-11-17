@@ -18,19 +18,22 @@ import { object_property_initialize } from "./object_property_initialize.mjs";
 import { import_node } from "./import_node.mjs";
 import { folder_path_src } from "./folder_path_src.mjs";
 import { function_path_to_name } from "./function_path_to_name.mjs";
-import { identity } from "./identity.mjs";
+import { string_without_surround } from "./string_without_surround.mjs";
 export async function watch() {
   let chokidar = await import_node("chokidar");
   let cache = {};
   let base = Promise.resolve();
   start(folder_path_src(), function_auto_after_path, function_path_to_name);
-  start(sermon_folder(), noop, identity);
+  start(sermon_folder(), noop, (path) =>
+    string_without_surround(path, "", ".txt"),
+  );
   async function start(folder_path, fn, message_get) {
     let result = chokidar
       .watch(folder_path)
       .on(
         "all",
-        (event, path) => (base = base.then(on_watch(event, path, fn, message_get))),
+        (event, path) =>
+          (base = base.then(on_watch(event, path, fn, message_get))),
       );
     log(
       string_combine_multiple([
