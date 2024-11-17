@@ -14,6 +14,7 @@ export function app_pray_music(index) {
     [
       "Thank You for helping me (previous or:) upload;",
       "Cause the word of God to be perfectly engrafted into my heart;",
+      "Cause planting and watering of the word of God to have perfectly maximized increase;",
       "Cause me to perfectly worship You;",
       "Cause me to be a perfect hearer of the word of God;",
       "Cause my eyes and ears to perfectly be opened up to Scripture and truth;",
