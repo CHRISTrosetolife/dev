@@ -33,46 +33,47 @@ export async function watch() {
     return result;
   }
   async function on_watch(event, path) {
-    if (event === "change") {
-      path = string_replace(path, "\\", "/");
-      path = folder_current_prefix_combine(path);
-      object_property_initialize(cache, path, {});
-      let c = object_property_get(cache, path);
-      let { contents, processing } = c;
-      if (processing) {
-        return;
-      }
-      object_property_set(c, "processing", true);
-      let before = await file_read(path);
-      if (before === contents) {
-        object_property_set(c, "processing", false);
-        return;
-      }
-      let function_name = function_path_to_name(path);
-      let fn = function_auto_after;
-      let args = [function_name];
-      let processed = false;
-      let after;
-      try {
-        after = await fn(...args);
-        processed = true;
-      } catch (e) {
-        log_error(
-          string_combine_multiple([
-            fn_name("watch"),
-            ": error while processing: ",
-            function_name,
-          ]),
-        );
-        log_error(e);
-      } finally {
-        object_property_set(c, "processing", false);
-      }
-      if (processed) {
-        object_property_set(c, "contents", after);
-        await git_ac_message(list_join_space(list_concat([fn.name], args)));
-        await git_push();
-      }
+    if (event !== "change") {
+      return;
+    }
+    path = string_replace(path, "\\", "/");
+    path = folder_current_prefix_combine(path);
+    object_property_initialize(cache, path, {});
+    let c = object_property_get(cache, path);
+    let { contents, processing } = c;
+    if (processing) {
+      return;
+    }
+    object_property_set(c, "processing", true);
+    let before = await file_read(path);
+    if (before === contents) {
+      object_property_set(c, "processing", false);
+      return;
+    }
+    let function_name = function_path_to_name(path);
+    let fn = function_auto_after;
+    let args = [function_name];
+    let processed = false;
+    let after;
+    try {
+      after = await fn(...args);
+      processed = true;
+    } catch (e) {
+      log_error(
+        string_combine_multiple([
+          fn_name("watch"),
+          ": error while processing: ",
+          function_name,
+        ]),
+      );
+      log_error(e);
+    } finally {
+      object_property_set(c, "processing", false);
+    }
+    if (processed) {
+      object_property_set(c, "contents", after);
+      await git_ac_message(list_join_space(list_concat([fn.name], args)));
+      await git_push();
     }
   }
 }
