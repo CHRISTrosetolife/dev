@@ -13,12 +13,12 @@ export function app_pray_music(index) {
   let prayers = [
     [
       "Thank You for helping me (previous or:) upload;",
-      "Cause the word of God to be perfectly engrafted into my heart;",
+      "Cause the word of God to be perfectly engrafted into all hearts;",
       "Cause the planting and watering of the word of God to have perfectly maximized increase;",
-      "Cause me to perfectly worship You;",
-      "Cause me to be a perfect hearer of the word of God;",
-      "Cause my eyes and ears to perfectly be opened up to Scripture and truth;",
-      "Cause me to be a perfect doer of the word of God;",
+      "Cause all to perfectly worship You;",
+      "Cause all to be a perfect hearer of the word of God;",
+      "Cause the eyes and ears of all to perfectly be opened up to Scripture and truth;",
+      "Cause all to be a perfect doer of the word of God;",
       "Cause me to sing perfectly;",
       "Cause me to compose perfectly;",
       "Cause me to play piano perfectly;",
