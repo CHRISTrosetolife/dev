@@ -1,3 +1,4 @@
+import { sermon_path } from "./sermon_path.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { path_resolve } from "./path_resolve.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -22,6 +23,7 @@ export async function watch() {
   let cache = {};
   let base = Promise.resolve();
   let fps = folder_path_src();
+  sermon_path;
   start(fps, function_auto_after);
   log(
     string_combine_multiple([fn_name("watch"), " ", await path_resolve(fps)]),
