@@ -18,12 +18,13 @@ import { object_property_get } from "./object_property_get.mjs";
 import { object_property_initialize } from "./object_property_initialize.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { import_node } from "./import_node.mjs";
+import { folder_path_src } from "./folder_path_src.mjs";
 export async function watch() {
   let chokidar = await import_node("chokidar");
   let cache = {};
   let base = Promise.resolve();
   let sf = sermon_folder();
-  start(fps, function_auto_after);
+  start(folder_path_src(), function_auto_after);
   start(sf, noop);
   async function start(folder_path, fn) {
     let result = chokidar
