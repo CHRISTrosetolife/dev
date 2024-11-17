@@ -80,9 +80,8 @@ export async function watch() {
       return;
     }
     object_property_set(c, "contents", after);
-    await git_ac_message(
-      list_join_space([fn_name("watch"), " ", function_path_to_name(path)]),
-    );
+    let message = function_path_to_name(path);
+    await git_ac_message(list_join_space([fn_name("watch"), " ", message]));
     await git_push();
   }
 }
