@@ -25,12 +25,16 @@ export async function watch() {
   let sf = sermon_folder();
   start(fps, function_auto_after);
   start(sf, noop);
-  log(
-    string_combine_multiple([fn_name("watch"), " ", await path_resolve(fps)]),
-  );
-  function start(fps, fn) {
+  async function start(folder_path, fn) {
+    log(
+      string_combine_multiple([
+        fn_name("watch"),
+        " ",
+        await path_resolve(folder_path),
+      ]),
+    );
     let result = chokidar
-      .watch(fps)
+      .watch(folder_path)
       .on(
         "all",
         (event, path) => (base = base.then(on_watch(event, path, fn))),
