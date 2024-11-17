@@ -26,6 +26,12 @@ export async function watch() {
   start(fps, function_auto_after);
   start(sf, noop);
   async function start(folder_path, fn) {
+    let result = chokidar
+      .watch(folder_path)
+      .on(
+        "all",
+        (event, path) => (base = base.then(on_watch(event, path, fn))),
+      );
     log(
       string_combine_multiple([
         fn_name("watch"),
@@ -33,12 +39,6 @@ export async function watch() {
         await path_resolve(folder_path),
       ]),
     );
-    let result = chokidar
-      .watch(folder_path)
-      .on(
-        "all",
-        (event, path) => (base = base.then(on_watch(event, path, fn))),
-      );
     return result;
   }
   async function on_watch(event, path, fn) {
