@@ -1,4 +1,5 @@
-import { sermon_path } from "./sermon_path.mjs";
+import { noop } from "./noop.mjs";
+import { sermon_folder } from "./sermon_folder.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { path_resolve } from "./path_resolve.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -11,7 +12,6 @@ import { git_ac_message } from "./git_ac_message.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { log } from "./log.mjs";
 import { function_path_to_name } from "./function_path_to_name.mjs";
-import { folder_path_src } from "./folder_path_src.mjs";
 import { string_replace } from "./string_replace.mjs";
 import { file_read } from "./file_read.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -22,9 +22,9 @@ export async function watch() {
   let chokidar = await import_node("chokidar");
   let cache = {};
   let base = Promise.resolve();
-  let fps = folder_path_src();
-  sermon_path;
+  let sf = sermon_folder();
   start(fps, function_auto_after);
+  start(sf, noop);
   log(
     string_combine_multiple([fn_name("watch"), " ", await path_resolve(fps)]),
   );
