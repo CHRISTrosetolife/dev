@@ -25,9 +25,9 @@ export async function watch() {
   let cache = {};
   let base = Promise.resolve();
   start(folder_path_src(), function_auto_after_path, function_path_to_name);
-  start(sermon_folder(), noop, (path) =>
-    string_without_surround(path, "", sermon_path_suffix()),
-  );
+  start(sermon_folder(), noop, (path) => {
+    return string_without_surround(path, "", sermon_path_suffix());
+  });
   async function start(folder_path, fn, message_get) {
     let result = chokidar
       .watch(folder_path)
