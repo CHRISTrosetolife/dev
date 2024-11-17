@@ -18,19 +18,19 @@ import { object_property_initialize } from "./object_property_initialize.mjs";
 import { import_node } from "./import_node.mjs";
 import { folder_path_src } from "./folder_path_src.mjs";
 import { function_path_to_name } from "./function_path_to_name.mjs";
+import { identity } from "./identity.mjs";
 export async function watch() {
   let chokidar = await import_node("chokidar");
   let cache = {};
   let base = Promise.resolve();
-  let sf = sermon_folder();
-  start(folder_path_src(), function_auto_after_path);
-  start(sf, noop);
-  async function start(folder_path, fn) {
+  start(folder_path_src(), function_auto_after_path, function_path_to_name);
+  start(sermon_folder(), noop, identity);
+  async function start(folder_path, fn, message_get) {
     let result = chokidar
       .watch(folder_path)
       .on(
         "all",
-        (event, path) => (base = base.then(on_watch(event, path, fn))),
+        (event, path) => (base = base.then(on_watch(event, path, fn, message_get))),
       );
     log(
       string_combine_multiple([
@@ -41,7 +41,7 @@ export async function watch() {
     );
     return result;
   }
-  async function on_watch(event, path, fn) {
+  async function on_watch(event, path, fn, message_get) {
     if (event !== "change") {
       return;
     }
@@ -61,6 +61,7 @@ export async function watch() {
     }
     let processed = false;
     let after;
+    let message = message_get(path);
     try {
       after = await fn(path);
       processed = true;
@@ -69,7 +70,7 @@ export async function watch() {
         string_combine_multiple([
           fn_name("watch"),
           ": error while processing: ",
-          function_name,
+          message,
         ]),
       );
       log_error(e);
@@ -80,7 +81,6 @@ export async function watch() {
       return;
     }
     object_property_set(c, "contents", after);
-    let message = function_path_to_name(path);
     await git_ac_message(list_join_space([fn_name("watch"), " ", message]));
     await git_push();
   }
