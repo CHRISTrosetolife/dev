@@ -8,5 +8,4 @@ export async function app_todo_command_transform(transform) {
   filtered = app_todo_command_items_filter(items);
   await storage_upload_object(index, index_path);
   app_todo_command_log(filtered);
-  return index_to;
 }
