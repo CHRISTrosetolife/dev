@@ -47,6 +47,10 @@ export function app_index_choices() {
     page: "record",
   });
   list_add(choices, {
+    text: "🔍 search bible",
+    page: "search",
+  });
+  list_add(choices, {
     text: "🧎🏿 words",
     page: "list",
   });
