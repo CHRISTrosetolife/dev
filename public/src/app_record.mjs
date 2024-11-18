@@ -18,38 +18,44 @@ import { app_pray_word } from "./app_pray_word.mjs";
 export async function app_record() {
   let root = html_document_body();
   html_prayer(root, app_pray_word());
-  html_button_next(root, () => {});
-  await app_firebase({
-    on_logged_in,
-    on_initialized: html_style_a_plain,
-  });
-  async function on_logged_in(context) {
-    context.mr = await html_recorder_media();
-    let version_code = app_record_version_code();
-    await app_context_books_bible_generic(context, version_code);
-    let lookup = html_hash_lookup();
-    let save = app_save_get(app_record);
-    object_merge(lookup, save);
-    let hash_book = object_property_get_or(lookup, "book", null);
-    if (hash_book !== null) {
-      let hash_chapter = object_property_get_or(lookup, "chapter", null);
-      if (hash_chapter !== null) {
-        let hash_verse = object_property_get_or(lookup, "verse", null);
-        if (hash_verse !== null) {
-          await app_record_verse(context, hash_book, hash_chapter, hash_verse);
+  html_button_next(root, async () => {
+    await app_firebase({
+      on_logged_in,
+      on_initialized: html_style_a_plain,
+    });
+    async function on_logged_in(context) {
+      context.mr = await html_recorder_media();
+      let version_code = app_record_version_code();
+      await app_context_books_bible_generic(context, version_code);
+      let lookup = html_hash_lookup();
+      let save = app_save_get(app_record);
+      object_merge(lookup, save);
+      let hash_book = object_property_get_or(lookup, "book", null);
+      if (hash_book !== null) {
+        let hash_chapter = object_property_get_or(lookup, "chapter", null);
+        if (hash_chapter !== null) {
+          let hash_verse = object_property_get_or(lookup, "verse", null);
+          if (hash_verse !== null) {
+            await app_record_verse(
+              context,
+              hash_book,
+              hash_chapter,
+              hash_verse,
+            );
+          } else {
+            await app_record_chapter(
+              context,
+              hash_book,
+              hash_chapter,
+              app_record_verse,
+            );
+          }
         } else {
-          await app_record_chapter(
-            context,
-            hash_book,
-            hash_chapter,
-            app_record_verse,
-          );
+          await app_record_book(context, hash_book, app_record_verse);
         }
       } else {
-        await app_record_book(context, hash_book, app_record_verse);
+        await app_record_home(context, app_record_verse);
       }
-    } else {
-      await app_record_home(context, app_record_verse);
     }
-  }
+  });
 }
