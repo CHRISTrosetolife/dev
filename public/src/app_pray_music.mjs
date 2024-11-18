@@ -1,3 +1,4 @@
+import { app_pray_word } from "./app_pray_word.mjs";
 import { html_prayer } from "./html_prayer.mjs";
 import { html_button_previous_text } from "./html_button_previous_text.mjs";
 import { html_button_next_text } from "./html_button_next_text.mjs";
@@ -16,13 +17,7 @@ export function app_pray_music(index) {
         "Thank You for helping me (previous or:) upload;",
         "Cause all to perfectly worship You;",
       ],
-      [
-        "Cause the word of God to be perfectly engrafted into all hearts;",
-        "Cause the planting and watering of the word of God to have perfectly maximized increase;",
-        "Cause all to be a perfect hearer of the word of God;",
-        "Cause the eyes and ears of all to perfectly be opened up to Scripture and truth;",
-        "Cause all to be a perfect doer of the word of God;",
-      ],
+      app_pray_word(),
       [
         "Cause me to sing perfectly;",
         "Cause me to compose perfectly;",
