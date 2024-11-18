@@ -13,7 +13,6 @@ import { html_hash_lookup } from "./html_hash_lookup.mjs";
 import { html_recorder_media } from "./html_recorder_media.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { html_prayer } from "./html_prayer.mjs";
-import { html_document_body } from "./html_document_body.mjs";
 import { app_pray_word } from "./app_pray_word.mjs";
 export async function app_record() {
   await app_firebase({
@@ -21,7 +20,7 @@ export async function app_record() {
     on_initialized: html_style_a_plain,
   });
   async function on_logged_in(context) {
-    let root = html_document_body();
+    let [root] = context;
     html_prayer(root, app_pray_word());
     html_button_next(root, async () => {
       context.mr = await html_recorder_media();
