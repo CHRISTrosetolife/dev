@@ -7,22 +7,25 @@ import { list_get } from "./list_get.mjs";
 import { html_clear_scroll_top_centered } from "./html_clear_scroll_top_centered.mjs";
 import { html_document_body } from "./html_document_body.mjs";
 import { list_size } from "./list_size.mjs";
+import { list_concat_multiple } from "./list_concat_multiple.mjs";
 export function app_pray_music(index) {
   let root = html_document_body();
   let prayers = [
-    [
-      "Thank You for helping me (previous or:) upload;",
-      "Cause all to perfectly worship You;",
-      "Cause the word of God to be perfectly engrafted into all hearts;",
-      "Cause the planting and watering of the word of God to have perfectly maximized increase;",
-      "Cause all to be a perfect hearer of the word of God;",
-      "Cause the eyes and ears of all to perfectly be opened up to Scripture and truth;",
-      "Cause all to be a perfect doer of the word of God;",
-      "Cause me to sing perfectly;",
-      "Cause me to compose perfectly;",
-      "Cause me to play piano perfectly;",
-      "Please help me video;",
-    ],
+    list_concat_multiple([
+      [
+        "Thank You for helping me (previous or:) upload;",
+        "Cause all to perfectly worship You;",
+        "Cause the word of God to be perfectly engrafted into all hearts;",
+        "Cause the planting and watering of the word of God to have perfectly maximized increase;",
+        "Cause all to be a perfect hearer of the word of God;",
+        "Cause the eyes and ears of all to perfectly be opened up to Scripture and truth;",
+        "Cause all to be a perfect doer of the word of God;",
+        "Cause me to sing perfectly;",
+        "Cause me to compose perfectly;",
+        "Cause me to play piano perfectly;",
+        "Please help me video;",
+      ],
+    ]),
     ["Thank You for helping me video;", "Please help me review;"],
     ["Thank You for helping me review;", "Please help me upload;"],
   ];
