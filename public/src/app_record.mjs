@@ -1,3 +1,4 @@
+import { html_button_next } from "./html_button_next.mjs";
 import { app_record_version_code } from "./app_record_version_code.mjs";
 import { app_context_books_bible_generic } from "./app_context_books_bible_generic.mjs";
 import { app_save_get } from "./app_save_get.mjs";
@@ -15,7 +16,8 @@ import { html_prayer } from "./html_prayer.mjs";
 import { html_document_body } from "./html_document_body.mjs";
 import { app_pray_word } from "./app_pray_word.mjs";
 export async function app_record() {
-  html_prayer(html_document_body(), app_pray_word());
+  let root = html_document_body();
+  html_prayer(root, app_pray_word());
   html_button_next();
   await app_firebase({
     on_logged_in,
