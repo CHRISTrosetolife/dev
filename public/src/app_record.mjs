@@ -18,7 +18,7 @@ import { app_pray_word } from "./app_pray_word.mjs";
 export async function app_record() {
   let root = html_document_body();
   html_prayer(root, app_pray_word());
-  html_button_next();
+  html_button_next(root, () => {});
   await app_firebase({
     on_logged_in,
     on_initialized: html_style_a_plain,
