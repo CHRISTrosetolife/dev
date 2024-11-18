@@ -33,6 +33,7 @@ export function app_pray_music(index) {
   }
   index = index % prayers_size;
   html_clear_scroll_top_centered(root);
+  let prayer = list_get(prayers, index);
   html_p_text_multiple(
     root,
     list_concat_multiple([
@@ -41,7 +42,7 @@ export function app_pray_music(index) {
         "In the name of the Trinity:",
         "Have mercy on me, a sinner;",
       ],
-      list_get(prayers, index),
+      prayer,
       ["Amen"],
     ]),
   );
