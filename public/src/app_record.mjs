@@ -16,14 +16,14 @@ import { html_prayer } from "./html_prayer.mjs";
 import { html_document_body } from "./html_document_body.mjs";
 import { app_pray_word } from "./app_pray_word.mjs";
 export async function app_record() {
-  let root = html_document_body();
-  html_prayer(root, app_pray_word());
-  html_button_next(root, async () => {
-    await app_firebase({
-      on_logged_in,
-      on_initialized: html_style_a_plain,
-    });
-    async function on_logged_in(context) {
+  await app_firebase({
+    on_logged_in,
+    on_initialized: html_style_a_plain,
+  });
+  async function on_logged_in(context) {
+    let root = html_document_body();
+    html_prayer(root, app_pray_word());
+    html_button_next(root, async () => {
       context.mr = await html_recorder_media();
       let version_code = app_record_version_code();
       await app_context_books_bible_generic(context, version_code);
@@ -56,6 +56,6 @@ export async function app_record() {
       } else {
         await app_record_home(context, app_record_verse);
       }
-    }
-  });
+    });
+  }
 }
