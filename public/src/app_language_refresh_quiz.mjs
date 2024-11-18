@@ -1,3 +1,4 @@
+import { html_button_next } from "./html_button_next.mjs";
 import { html_style_success_background } from "./html_style_success_background.mjs";
 import { html_button_width_full_text } from "./html_button_width_full_text.mjs";
 import { list_index_by } from "./list_index_by.mjs";
@@ -14,7 +15,6 @@ import { list_after_json } from "./list_after_json.mjs";
 import { storage_local_set } from "./storage_local_set.mjs";
 import { storage_local_get } from "./storage_local_get.mjs";
 import { html_style_visible } from "./html_style_visible.mjs";
-import { html_button_width_full_text_click_next } from "./html_button_width_full_text_click_next.mjs";
 import { html_flag } from "./html_flag.mjs";
 import { html_style_success } from "./html_style_success.mjs";
 import { app_language_refresh_node } from "./app_language_refresh_node.mjs";
@@ -286,7 +286,7 @@ export async function app_language_refresh_quiz(context) {
       html_style_click_width_min(button);
     });
   });
-  next_button = html_button_width_full_text_click_next(root, next);
+  next_button = html_button_next(root, next);
   html_style_hidden(next_button);
   update_partials();
   html_spacer_vertical_2(root);
