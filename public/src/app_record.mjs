@@ -20,7 +20,7 @@ export async function app_record() {
     on_initialized: html_style_a_plain,
   });
   async function on_logged_in(context) {
-    let [root] = context;
+    let { root } = context;
     html_prayer(root, app_pray_word());
     html_button_next(root, async () => {
       context.mr = await html_recorder_media();
