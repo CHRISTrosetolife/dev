@@ -1,3 +1,4 @@
+import { list_shuffle } from "./list_shuffle.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { list_concat } from "./list_concat.mjs";
 import { list_join_space } from "./list_join_space.mjs";
@@ -24,7 +25,7 @@ export async function prayer_auto() {
     list_join_space(object_property_get(v, "tokens")),
   );
   let cs = countries();
-  list_suffle(cs);
+  list_shuffle(cs);
   each(cs, (c) => {
     let c_name = object_property_get(c, "name");
     let requests = ["bless", "save each person in"];
