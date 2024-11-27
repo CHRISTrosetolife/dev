@@ -31,6 +31,7 @@ export async function prayer_auto() {
     let requests = ["bless", "save each person in"];
     let verbs = ["understand", "obey"];
     let verse_requests = list_adder((la) => {
+      list_shuffle(verse_texts);
       each(verse_texts, (t) => {
         each(verbs, (verb) =>
           la(
