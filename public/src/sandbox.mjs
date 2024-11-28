@@ -1,3 +1,4 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_parse_parsed } from "./html_parse_parsed.mjs";
 import { string_suffix_without } from "./string_suffix_without.mjs";
 import { string_slash_normalize_right } from "./string_slash_normalize_right.mjs";
@@ -8,7 +9,7 @@ import { folder_read_shallow } from "./folder_read_shallow.mjs";
 export async function sandbox() {
   let p = folder_path_public();
   let e = ".html";
-  await html_parse_parsed();
+  await html_parse_parsed(string_combine_multiple([p, "test", e]));
   let paths = await folder_read_shallow(p, e);
   paths = list_map(paths, string_slash_normalize_right);
   paths = list_map(paths, (q) => string_prefix_without(q, p));
