@@ -12,15 +12,15 @@ import { folder_read_shallow } from "./folder_read_shallow.mjs";
 export async function sandbox() {
   let p = folder_path_public();
   let e = ".html";
-  let test_path = string_combine_multiple([p, "test", e]);
-  let html = await file_read(test_path);
-  p = await html_parse_parsed(html);
-  let parsed = object_property_get(p, "parsed");
-  return parsed.xml();
   let paths = await folder_read_shallow(p, e);
   paths = list_map(paths, string_slash_normalize_right);
   paths = list_map(paths, (q) => string_prefix_without(q, p));
   paths = list_map(paths, (q) => string_suffix_without(q, e));
-  await each_async(list, async (item) => {});
+  await each_async(paths, async (q) => {
+    let test_path = string_combine_multiple([p, "test", e]);
+    let html = await file_read(test_path);
+    p = await html_parse_parsed(html);
+    let parsed = object_property_get(p, "parsed");
+  });
   return paths;
 }
