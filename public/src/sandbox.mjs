@@ -15,7 +15,7 @@ export async function sandbox() {
   let html = await file_read(test_path);
   p = await html_parse_parsed(html);
   let parsed = object_property_get(p, "parsed");
-  return parsed;
+  return parsed.xml();
   let paths = await folder_read_shallow(p, e);
   paths = list_map(paths, string_slash_normalize_right);
   paths = list_map(paths, (q) => string_prefix_without(q, p));
