@@ -1,4 +1,4 @@
-import { each } from "./each.mjs";
+import { each_async } from "./each_async.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { file_read } from "./file_read.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -21,6 +21,6 @@ export async function sandbox() {
   paths = list_map(paths, string_slash_normalize_right);
   paths = list_map(paths, (q) => string_prefix_without(q, p));
   paths = list_map(paths, (q) => string_suffix_without(q, e));
-  each(list, (item) => {});
+  await each_async(list, async (item) => {});
   return paths;
 }
