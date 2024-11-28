@@ -2,7 +2,7 @@ import { file_read_json_previous } from "./file_read_json_previous.mjs";
 import { sleep } from "./sleep.mjs";
 import { Builder, Browser, By, Key, until } from "selenium-webdriver";
 export async function sandbox() {
-  let service_account = await file_read_json_previous("secret");
+  let secret = await file_read_json_previous("secret");
   let driver = await new Builder().forBrowser(Browser.EDGE).build();
   try {
     await driver.get("https://www.facebook.com/");
