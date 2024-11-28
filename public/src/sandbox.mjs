@@ -1,10 +1,13 @@
-import { app_language_upload } from "./app_language_upload.mjs";
-import { assert_arguments_length } from "./assert_arguments_length.mjs";
-import { bible_words_greek_download } from "./bible_words_greek_download.mjs";
+import { Builder, Browser, By, Key, until } from "selenium-webdriver";
 export async function sandbox() {
-  assert_arguments_length(arguments, 0);
-  if (0) {
-    await bible_words_greek_download();
-  }
-  await app_language_upload();
+  (async function example() {
+    let driver = await new Builder().forBrowser(Browser.FIREFOX).build();
+    try {
+      await driver.get("https://www.google.com/ncr");
+      await driver.findElement(By.name("q")).sendKeys("webdriver", Key.RETURN);
+      await driver.wait(until.titleIs("webdriver - Google Search"), 1000);
+    } finally {
+      await driver.quit();
+    }
+  })();
 }
