@@ -1,3 +1,4 @@
+import { js_import_remove_try } from "./js_import_remove_try.mjs";
 import { log } from "./log.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { assert_message } from "./assert_message.mjs";
@@ -6,7 +7,6 @@ import { fn_name } from "./fn_name.mjs";
 import { functions_identifier } from "./functions_identifier.mjs";
 import { functions_string } from "./functions_string.mjs";
 import { function_paths } from "./function_paths.mjs";
-import { js_import_remove } from "./js_import_remove.mjs";
 import { data_remove } from "./data_remove.mjs";
 import { data_update_multiple_transform } from "./data_update_multiple_transform.mjs";
 import { data_transform } from "./data_transform.mjs";
@@ -53,7 +53,7 @@ export async function function_rename(fn_name_from, fn_name_to) {
       e,
     });
     let ast = await file_js_parse(file_path);
-    js_import_remove(ast, fn_name_from);
+    js_import_remove_try(ast, fn_name_from);
     js_identifier_rename(ast, fn_name_from, fn_name_to);
     js_imports_add_specified(ast, [fn_name_to]);
     await file_js_unparse(file_path, ast);
