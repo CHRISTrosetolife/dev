@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { file_read } from "./file_read.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { html_parse_parsed } from "./html_parse_parsed.mjs";
@@ -12,7 +13,8 @@ export async function sandbox() {
   let e = ".html";
   let test_path = string_combine_multiple([p, "test", e]);
   let html = await file_read(test_path);
-  await html_parse_parsed(html);
+  p = await html_parse_parsed(html);
+  let parsed = object_property_get(p, "parsed");
   return;
   let paths = await folder_read_shallow(p, e);
   paths = list_map(paths, string_slash_normalize_right);
