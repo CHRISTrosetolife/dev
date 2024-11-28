@@ -1,3 +1,4 @@
+import { file_transform } from "./file_transform.mjs";
 import { each_async } from "./each_async.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { file_read } from "./file_read.mjs";
@@ -17,10 +18,11 @@ export async function sandbox() {
   paths = list_map(paths, (q) => string_prefix_without(q, p));
   paths = list_map(paths, (q) => string_suffix_without(q, e));
   await each_async(paths, async (q) => {
-    let test_path = string_combine_multiple([p, "test", e]);
+    let test_path = string_combine_multiple([p, q, e]);
     let html = await file_read(test_path);
-    p = await html_parse_parsed(html);
-    let parsed = object_property_get(p, "parsed");
+    let r = await html_parse_parsed(html);
+    let parsed = object_property_get(r, "parsed");
+    await file_transform();
   });
   return paths;
 }
