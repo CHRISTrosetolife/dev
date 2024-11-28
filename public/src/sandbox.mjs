@@ -5,7 +5,7 @@ export async function sandbox() {
   try {
     await driver.get("https://www.facebook.com/");
     await driver.findElement(By.id("email")).sendKeys("9043144052");
-    await sleep(10000);
+    await sleep(100000);
     return;
     await driver.findElement(By.name("q")).sendKeys("webdriver", Key.RETURN);
     await driver.wait(until.titleIs("webdriver - Google Search"), 1000);
