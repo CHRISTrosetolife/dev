@@ -1,7 +1,7 @@
 import { Builder, Browser, By, Key, until } from "selenium-webdriver";
 export async function sandbox() {
   (async function example() {
-    let driver = await new Builder().forBrowser(Browser.FIREFOX).build();
+    let driver = await new Builder().forBrowser(Browser.EDGE).build();
     try {
       await driver.get("https://www.google.com/ncr");
       await driver.findElement(By.name("q")).sendKeys("webdriver", Key.RETURN);
