@@ -16,7 +16,6 @@ export async function sandbox() {
   paths = list_map(paths, string_slash_normalize_right);
   paths = list_map(paths, (q) => string_prefix_without(q, p));
   paths = list_map(paths, (q) => string_suffix_without(q, e));
-  paths = ["test"];
   await each_async(paths, async (q) => {
     let test_path = string_combine_multiple([p, q, e]);
     await file_transform(
