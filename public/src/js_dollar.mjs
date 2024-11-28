@@ -403,7 +403,7 @@ export function js_dollar(ast) {
         );
         let r = js_parse_first(c);
         object_replace(parent, r);
-      }
+      }else {
       
       let log_prefix_start_is = remaining === log_prefix_start;
       if (log_prefix_start_is || prefix_use(remaining, log_prefix, prefixes)) {
@@ -464,6 +464,7 @@ export function js_dollar(ast) {
         object_replace(node, e);
       }
     }
+}
   });
   function remaining_count_get(remaining, question_prefix) {
     remaining = string_prefix_without(remaining, question_prefix);
