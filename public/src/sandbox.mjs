@@ -23,7 +23,7 @@ export async function sandbox() {
       async (text) => {
         let r = await html_parse_parsed(text);
         let parsed = object_property_get(r, "parsed");
-        return parsed.xml();
+        return parsed.html();
       },
       test_path,
       [],
