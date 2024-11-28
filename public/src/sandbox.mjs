@@ -10,9 +10,9 @@ export async function sandbox() {
   try {
     await driver.get("https://www.facebook.com/");
     await each_object_async(facebook, async (key, value) => {
-      await driver.findElement(By.id("email")).sendKeys("9043144052");
+      await driver.findElement(By.id(key)).sendKeys(value);
     });
-    await driver.findElement(By.id("pass")).sendKeys("9043144052");
+    await driver.findElement(By.name("email")).sendKeys(Key.RETURN);
     await sleep(100000);
     return;
     await driver.findElement(By.name("q")).sendKeys("webdriver", Key.RETURN);
