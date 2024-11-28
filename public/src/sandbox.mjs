@@ -1,3 +1,4 @@
+import { each_object } from "./each_object.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { file_read_json_previous } from "./file_read_json_previous.mjs";
 import { sleep } from "./sleep.mjs";
@@ -8,6 +9,7 @@ export async function sandbox() {
   let driver = await new Builder().forBrowser(Browser.EDGE).build();
   try {
     await driver.get("https://www.facebook.com/");
+    each_object(object, (key, value) => {});
     await driver.findElement(By.id("email")).sendKeys("9043144052");
     await driver.findElement(By.id("pass")).sendKeys("9043144052");
     await sleep(100000);
