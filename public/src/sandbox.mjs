@@ -9,8 +9,9 @@ export async function sandbox() {
   let driver = await new Builder().forBrowser(Browser.EDGE).build();
   try {
     await driver.get("https://www.facebook.com/");
-    await each_object_async(facebook, (key, value) => {});
-    await driver.findElement(By.id("email")).sendKeys("9043144052");
+    await each_object_async(facebook, async (key, value) => {
+      await driver.findElement(By.id("email")).sendKeys("9043144052");
+    });
     await driver.findElement(By.id("pass")).sendKeys("9043144052");
     await sleep(100000);
     return;
