@@ -1,1 +1,1 @@
-export function sb() {}
+export function sandbox() {}
