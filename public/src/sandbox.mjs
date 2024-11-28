@@ -7,6 +7,5 @@ export async function sandbox() {
   let p = folder_path_public();
   let paths = await folder_read_shallow(p, ".html");
   paths = list_map(paths, string_slash_normalize_right);
-  return p;
   return list_map(paths, (q) => string_prefix_without(q, p));
 }
