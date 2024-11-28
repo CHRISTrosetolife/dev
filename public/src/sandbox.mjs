@@ -7,8 +7,8 @@ import { folder_path_public } from "./folder_path_public.mjs";
 import { folder_read_shallow } from "./folder_read_shallow.mjs";
 export async function sandbox() {
   let p = folder_path_public();
-  await html_parse_parsed();
   let e = ".html";
+  await html_parse_parsed();
   let paths = await folder_read_shallow(p, e);
   paths = list_map(paths, string_slash_normalize_right);
   paths = list_map(paths, (q) => string_prefix_without(q, p));
