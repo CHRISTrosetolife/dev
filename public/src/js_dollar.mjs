@@ -389,7 +389,7 @@ export function js_dollar(ast) {
           string_delimit("property_name"),
         );
         object_replace(node, e);
-      }else if (prefix_use(remaining, get_prefix, prefixes)) {
+      } else if (prefix_use(remaining, get_prefix, prefixes)) {
         let { stack } = v;
         remaining = string_prefix_without(remaining, get_prefix);
         let s = string_split_dollar(remaining);
@@ -403,68 +403,70 @@ export function js_dollar(ast) {
         );
         let r = js_parse_first(c);
         object_replace(parent, r);
-      }else {
-      
-      let log_prefix_start_is = remaining === log_prefix_start;
-      if (log_prefix_start_is || prefix_use(remaining, log_prefix, prefixes)) {
-        let inside;
-        if (log_prefix_start_is) {
-          inside = "";
-        } else {
-          remaining = string_prefix_without(remaining, log_prefix);
-          inside = remaining;
-        }
-        let e = js_parse_expression(
-          js_code_call_args(fn_name("log"), [js_code_braces_inside(inside)]),
-        );
-        object_replace(node, e);
-      }
-      if (remaining === lambda_prefix_start) {
-        let e = js_parse_expression(js_code_arrow_block());
-        object_replace(node, e);
-      }
-      if (prefix_use(remaining, lambda_prefix, prefixes)) {
-        remaining = string_prefix_without(remaining, lambda_prefix);
-        let e = js_parse_expression(
-          js_code_arrow_block_args(string_split(remaining, "$"), ""),
-        );
-        object_replace(node, e);
-      }
-      if (prefix_use(remaining, scm_prefix, prefixes)) {
-        if (list_is(parent)) {
-          let e = js_parse_expression(
-            js_code_call_args(fn_name("string_combine_multiple"), [
-              js_code_array_empty(),
-            ]),
-          );
-          let es = list_first(e.arguments).elements;
-          let index = list_index(parent, node);
-          let next_index = index + 1;
-          remaining = string_prefix_without(remaining, scm_prefix);
-          let count = integer_parse_try(remaining);
-          if (!number_is(count)) {
-            count = list_index_last(parent) - index;
+      } else {
+        let log_prefix_start_is = remaining === log_prefix_start;
+        if (
+          log_prefix_start_is ||
+          prefix_use(remaining, log_prefix, prefixes)
+        ) {
+          let inside;
+          if (log_prefix_start_is) {
+            inside = "";
+          } else {
+            remaining = string_prefix_without(remaining, log_prefix);
+            inside = remaining;
           }
-          each_range(count, () => {
-            let removed = list_remove_at(parent, next_index);
-            list_add(es, removed);
-          });
+          let e = js_parse_expression(
+            js_code_call_args(fn_name("log"), [js_code_braces_inside(inside)]),
+          );
+          object_replace(node, e);
+        }
+        if (remaining === lambda_prefix_start) {
+          let e = js_parse_expression(js_code_arrow_block());
+          object_replace(node, e);
+        }
+        if (prefix_use(remaining, lambda_prefix, prefixes)) {
+          remaining = string_prefix_without(remaining, lambda_prefix);
+          let e = js_parse_expression(
+            js_code_arrow_block_args(string_split(remaining, "$"), ""),
+          );
+          object_replace(node, e);
+        }
+        if (prefix_use(remaining, scm_prefix, prefixes)) {
+          if (list_is(parent)) {
+            let e = js_parse_expression(
+              js_code_call_args(fn_name("string_combine_multiple"), [
+                js_code_array_empty(),
+              ]),
+            );
+            let es = list_first(e.arguments).elements;
+            let index = list_index(parent, node);
+            let next_index = index + 1;
+            remaining = string_prefix_without(remaining, scm_prefix);
+            let count = integer_parse_try(remaining);
+            if (!number_is(count)) {
+              count = list_index_last(parent) - index;
+            }
+            each_range(count, () => {
+              let removed = list_remove_at(parent, next_index);
+              list_add(es, removed);
+            });
+            object_replace(node, e);
+          }
+        }
+        if (prefix_use(remaining, sermon_prefix, prefixes)) {
+          let count = remaining_count_get(remaining, sermon_prefix);
+          let e = js_parse_expression(
+            string_combine_multiple(["{sermon:'',count:", count, "}"]),
+          );
+          object_replace(node, e);
+        }
+        if (remaining === "x") {
+          let e = js_parse_expression(js_code_call(fn_name("exit")));
           object_replace(node, e);
         }
       }
-      if (prefix_use(remaining, sermon_prefix, prefixes)) {
-        let count = remaining_count_get(remaining, sermon_prefix);
-        let e = js_parse_expression(
-          string_combine_multiple(["{sermon:'',count:", count, "}"]),
-        );
-        object_replace(node, e);
-      }
-      if (remaining === "x") {
-        let e = js_parse_expression(js_code_call(fn_name("exit")));
-        object_replace(node, e);
-      }
     }
-}
   });
   function remaining_count_get(remaining, question_prefix) {
     remaining = string_prefix_without(remaining, question_prefix);
