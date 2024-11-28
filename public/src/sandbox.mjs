@@ -18,10 +18,14 @@ export async function sandbox() {
   paths = list_map(paths, (q) => string_suffix_without(q, e));
   await each_async(paths, async (q) => {
     let test_path = string_combine_multiple([p, q, e]);
-    await file_transform(async (text) => {
-      let r = await html_parse_parsed(html);
-      let parsed = object_property_get(r, "parsed");
-    }, test_path);
+    await file_transform(
+      async (text) => {
+        let r = await html_parse_parsed(html);
+        let parsed = object_property_get(r, "parsed");
+      },
+      test_path,
+      [],
+    );
   });
   return paths;
 }
