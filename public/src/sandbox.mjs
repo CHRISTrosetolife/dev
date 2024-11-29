@@ -29,7 +29,7 @@ export async function sandbox() {
         let root = object_property_get(r, "root");
         let body = html_parse_visit_tag_single(root, "body");
         let cs = html_parse_children(body);
-        list_map(cs, (c) => html_parse_tag_named(c, "script"));
+        let mapped = list_map(cs, (c) => html_parse_tag_named(c, "script"));
         log({
           body,
         });
