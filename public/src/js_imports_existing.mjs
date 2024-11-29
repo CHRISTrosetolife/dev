@@ -1,3 +1,4 @@
+import { js_import_declaration_source_value } from "./js_import_declaration_source_value.mjs";
 import { list_get_end_1 } from "./list_get_end_1.mjs";
 import { log } from "./log.mjs";
 import { list_adder } from "./list_adder.mjs";
@@ -7,8 +8,9 @@ export function js_imports_existing(ast) {
     js_visit_node(ast, "ImportSpecifier", (v) => {
       let { node } = v;
       let { stack } = v;
+      let e = list_get_end_1(stack);
       log({
-        p: list_get_end_1(stack),
+        p: js_import_declaration_source_value(e),
       });
       let { imported } = node;
       if (imported.type === "Identifier") {
