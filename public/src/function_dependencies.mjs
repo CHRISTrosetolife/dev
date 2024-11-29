@@ -43,15 +43,16 @@ export async function function_dependencies(function_name) {
       "onAuthStateChanged",
     ],
   };
-  each_object(object, (key, value) => {});
-  object_property_set(
-    e,
-    from,
-    js_code_import_generic(
-      js_code_braces_inside(list_join_comma_space(identifiers)),
-      js_code_string(from),
-    ),
-  );
+  each_object(object, (from, identifiers) => {
+    object_property_set(
+      e,
+      from,
+      js_code_import_generic(
+        js_code_braces_inside(list_join_comma_space(identifiers)),
+        js_code_string(from),
+      ),
+    );
+  });
   let standard = ["chalk"];
   each(standard, (s) => {
     object_property_set(e, s, js_code_import_generic(s, s));
