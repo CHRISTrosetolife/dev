@@ -17,6 +17,7 @@ import { function_imports } from "./function_imports.mjs";
 import { object_properties } from "./object_properties.mjs";
 import { list_map_async } from "./list_map_async.mjs";
 import { list_concat } from "./list_concat.mjs";
+import { list_is } from "./list_is.mjs";
 export async function function_dependencies(function_name) {
   let map = await function_imports(function_name);
   let externals = list_adder_unique((la) => {
@@ -47,8 +48,9 @@ export async function function_dependencies(function_name) {
   };
   each_object(froms, (from, identifiers) => {
     let imported;
-    if (false) {
+    if (list_is(identifiers)) {
       imported = js_code_braces_inside(list_join_comma_space(identifiers));
+    } else {
     }
     object_property_set(e, from, js_code_import_generic(imported, from));
   });
