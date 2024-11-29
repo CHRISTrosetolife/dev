@@ -1,3 +1,5 @@
+import { html_scripts_load } from "./html_scripts_load.mjs";
+import { fn_name } from "./fn_name.mjs";
 import { each } from "./each.mjs";
 import { http_get } from "./http_get.mjs";
 import { file_write_json } from "./file_write_json.mjs";
@@ -32,6 +34,7 @@ export async function app_dev() {
     object_property_set(files, fp, "");
   });
   let root = html_style_default_initialize();
+  await html_scripts_load(root, ["axios", "acorn", "astring"]);
   let screens_functions = app_dev_screens();
   let screens = list_map(screens_functions, (s) => s());
   home();
@@ -49,7 +52,7 @@ export async function app_dev() {
       html_span_text(b, string_combine(add_1(index), ". "));
       s.name(b);
     });
-    html_button_view_sorce(root, app_dev.name);
+    html_button_view_sorce(root, fn_name("app_dev"));
   }
   async function screen(index) {
     html_clear_scroll_top(root);
