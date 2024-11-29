@@ -37,7 +37,7 @@ export async function app_record() {
         if (hash_chapter !== null) {
           let hash_verse = object_property_get_or(lookup, "verse", null);
           if (hash_verse !== null) {
-            await app_record_verse(
+            await app_verse_lambda(
               context,
               hash_book,
               hash_chapter,
@@ -48,14 +48,14 @@ export async function app_record() {
               context,
               hash_book,
               hash_chapter,
-              app_record_verse,
+              app_verse_lambda,
             );
           }
         } else {
-          await app_record_book(context, hash_book, app_record_verse);
+          await app_record_book(context, hash_book, app_verse_lambda);
         }
       } else {
-        await app_record_home(context, app_record_verse);
+        await app_record_home(context, app_verse_lambda);
       }
     });
   }
