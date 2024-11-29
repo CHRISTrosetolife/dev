@@ -31,7 +31,7 @@ export async function sandbox() {
         let body = html_parse_visit_tag_single(root, "body");
         let cs = html_parse_children(body);
         let f = list_filter(cs, (c) => html_parse_tag_named(c, "script"));
-        log(f.length + " " + cs.length);
+        log(cs);
         return parsed.html();
       },
       test_path,
