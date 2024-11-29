@@ -25,14 +25,6 @@ import { object_property_set } from "./object_property_set.mjs";
 import { data_path } from "./data_path.mjs";
 import { data_file_name } from "./data_file_name.mjs";
 export async function app_dev() {
-  let { files } = global_files_initialize({});
-  let d = await http_get(data_file_name());
-  await file_write_json(data_path(), d);
-  let fl = functions_list();
-  each(fl, (f) => {
-    let fp = function_name_to_path(f);
-    object_property_set(files, fp, "");
-  });
   let root = html_style_default_initialize();
   await html_scripts_load(root, [
     "axios",
@@ -41,6 +33,14 @@ export async function app_dev() {
     "prettier_standalone",
     "prettier_parser_babel",
   ]);
+  let { files } = global_files_initialize({});
+  let d = await http_get(data_file_name());
+  await file_write_json(data_path(), d);
+  let fl = functions_list();
+  each(fl, (f) => {
+    let fp = function_name_to_path(f);
+    object_property_set(files, fp, "");
+  });
   let screens_functions = app_dev_screens();
   let screens = list_map(screens_functions, (s) => s());
   home();
