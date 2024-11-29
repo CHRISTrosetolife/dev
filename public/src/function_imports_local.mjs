@@ -1,4 +1,4 @@
-import { string_starts_with } from "./string_starts_with.mjs";
+import { js_import_external_is } from "./js_import_external_is.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { js_imports_sources } from "./js_imports_sources.mjs";
 import { js_imports_existing } from "./js_imports_existing.mjs";
@@ -7,7 +7,7 @@ export async function function_imports_local(function_name) {
   let ast = await function_parse(function_name);
   let imports = js_imports_existing(ast);
   let sources = js_imports_sources(ast);
-  sources = list_filter(sources, (s) => !string_starts_with(s, "."));
+  sources = list_filter(sources, (s) => js_import_external_is(s));
   return {
     imports,
     sources,
