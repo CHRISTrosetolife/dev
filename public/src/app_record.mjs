@@ -26,8 +26,9 @@ export async function app_record() {
       context.mr = await html_recorder_media();
       let version_code = app_record_version_code();
       await app_context_books_bible_generic(context, version_code);
+      let app_lambda = app_record;
       let lookup = html_hash_lookup();
-      let save = app_save_get(app_record);
+      let save = app_save_get(app_lambda);
       object_merge(lookup, save);
       let hash_book = object_property_get_or(lookup, "book", null);
       if (hash_book !== null) {
