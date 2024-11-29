@@ -1,7 +1,6 @@
 import { each_object } from "./each_object.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
 import { js_code_braces_inside } from "./js_code_braces_inside.mjs";
-import { js_code_string } from "./js_code_string.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { file_overwrite_gitignore } from "./file_overwrite_gitignore.mjs";
@@ -49,7 +48,7 @@ export async function function_dependencies(function_name) {
       from,
       js_code_import_generic(
         js_code_braces_inside(list_join_comma_space(identifiers)),
-        js_code_string(from),
+        from,
       ),
     );
   });
