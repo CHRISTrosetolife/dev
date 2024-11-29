@@ -1,5 +1,3 @@
-import { app_record_verse } from "./app_record_verse.mjs";
-import { app_record } from "./app_record.mjs";
 import { app_record_verse_generic } from "./app_record_verse_generic.mjs";
 import { html_style_red } from "./html_style_red.mjs";
 import { bible_storage_interlinear_chapter_definitions_property } from "./bible_storage_interlinear_chapter_definitions_property.mjs";
@@ -42,12 +40,12 @@ export async function app_bible_verse(
   verse_number,
 ) {
   let { middle, navigation } = await app_record_verse_generic(
-    app_record,
+    app_bible,
     book_code,
     chapter,
     verse_number,
     context,
-    app_record_verse,
+    app_bible_verse,
   );
   await app_save_change_bible(app_bible, book_code, chapter, verse_number);
   html_clear_scroll_top_context(context);
