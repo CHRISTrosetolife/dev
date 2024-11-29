@@ -21,7 +21,6 @@ import { html_span_text } from "./html_span_text.mjs";
 import { html_div } from "./html_div.mjs";
 import { bible_interlinear_words_greek_audio_upload_filter } from "./bible_interlinear_words_greek_audio_upload_filter.mjs";
 import { html_hr } from "./html_hr.mjs";
-import { html_bible_verse } from "./html_bible_verse.mjs";
 import { each } from "./each.mjs";
 import { bible_storage_interlinear_book_path } from "./bible_storage_interlinear_book_path.mjs";
 import { firebase_download_bible } from "./firebase_download_bible.mjs";
@@ -58,14 +57,11 @@ export async function app_bible_verse(
     chapter_definitions,
   });
   let { verses: verses_interlinear } = chapter_interlinear;
-  let verse = list_find_property(verses, "verse_number", verse_number);
   let verse_interlinear = list_find_property(
     verses_interlinear,
     "verse_number",
     verse_number,
   );
-  html_bible_verse(middle, book_code, chapter, verse);
-  html_hr(middle);
   let { tokens } = verse_interlinear;
   let filter = bible_interlinear_words_greek_audio_upload_filter();
   each(tokens, (token) => {
