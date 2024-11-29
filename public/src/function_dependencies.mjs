@@ -44,6 +44,7 @@ export async function function_dependencies(function_name) {
       "onAuthStateChanged",
     ],
     ["https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"]: ["getAuth"],
+    ["https://jspm.dev/extendable-media-recorder"]: ["connect"],
     ["https://cdn.jsdelivr.net/npm/@breezystack/lamejs@1.2.7/+esm"]:
       "breezystacklamejs",
   };
