@@ -21,14 +21,13 @@ export async function app_record_verse(
   chapter,
   verse_number,
 ) {
-  let app_verse_lambda = app_record_verse;
   let { middle, navigation } = await app_record_verse_generic(
     app_record,
     book_code,
     chapter,
     verse_number,
     context,
-    app_verse_lambda,
+    app_record_verse,
   );
   let root = object_property_get(context, "root");
   let start,
