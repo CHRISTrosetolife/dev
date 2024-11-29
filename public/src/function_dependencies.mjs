@@ -43,7 +43,7 @@ export async function function_dependencies(function_name) {
       "onAuthStateChanged",
     ],
   };
-  each_object(object, (from, identifiers) => {
+  each_object(froms, (from, identifiers) => {
     object_property_set(
       e,
       from,
