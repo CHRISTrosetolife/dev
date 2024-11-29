@@ -1,3 +1,4 @@
+import { each_object } from "./each_object.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
 import { js_code_braces_inside } from "./js_code_braces_inside.mjs";
 import { js_code_string } from "./js_code_string.mjs";
@@ -42,6 +43,7 @@ export async function function_dependencies(function_name) {
       "onAuthStateChanged",
     ],
   };
+  each_object(object, (key, value) => {});
   object_property_set(
     e,
     from,
