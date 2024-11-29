@@ -4,8 +4,6 @@ import { bible_storage_interlinear_chapter_definitions_property } from "./bible_
 import { log } from "./log.mjs";
 import { bible_storage_interlinear_chapter_definitions_name } from "./bible_storage_interlinear_chapter_definitions_name.mjs";
 import { bible_storage_interlinear_chapter_definitions_path } from "./bible_storage_interlinear_chapter_definitions_path.mjs";
-import { app_save_change_bible } from "./app_save_change_bible.mjs";
-import { html_clear_scroll_top_context } from "./html_clear_scroll_top_context.mjs";
 import { app_bible } from "./app_bible.mjs";
 import { html_style_font_color_gray } from "./html_style_font_color_gray.mjs";
 import { html_style_italic } from "./html_style_italic.mjs";
@@ -46,8 +44,6 @@ export async function app_bible_verse(
     context,
     app_bible_verse,
   );
-  await app_save_change_bible(app_bible, book_code, chapter, verse_number);
-  html_clear_scroll_top_context(context);
   let book_name = object_property_get(bible_books_prefix_to_name(), book_code);
   let verses = await app_verses_generic(app_record_verses, book_code, chapter);
   let chapter_interlinear = await firebase_download_bible(
