@@ -16,14 +16,14 @@ export async function apps_html_transform(transform) {
   paths = list_map(paths, string_slash_normalize_right);
   paths = list_map(paths, (q) => string_prefix_without(q, p));
   paths = list_map(paths, (q) => string_suffix_without(q, e));
-  await each_async(paths, async (q) => {
-    let test_path = string_combine_multiple([p, q, e]);
+  await each_async(paths, async (name) => {
+    let test_path = string_combine_multiple([p, name, e]);
     await file_transform(
       async (text) => {
         let r = await html_parse_parsed(text);
         let parsed = object_property_get(r, "parsed");
         let root = object_property_get(r, "root");
-        transform(root, q);
+        transform(root, name);
         return parsed.html();
       },
       test_path,
