@@ -7,7 +7,6 @@ import { bible_storage_interlinear_chapter_definitions_path } from "./bible_stor
 import { app_save_change_bible } from "./app_save_change_bible.mjs";
 import { html_clear_scroll_top_context } from "./html_clear_scroll_top_context.mjs";
 import { app_bible } from "./app_bible.mjs";
-import { html_bible_verse_navigation } from "./html_bible_verse_navigation.mjs";
 import { html_style_font_color_gray } from "./html_style_font_color_gray.mjs";
 import { html_style_italic } from "./html_style_italic.mjs";
 import { html_spacer } from "./html_spacer.mjs";
@@ -49,7 +48,6 @@ export async function app_bible_verse(
   );
   await app_save_change_bible(app_bible, book_code, chapter, verse_number);
   html_clear_scroll_top_context(context);
-  let { root } = context;
   let book_name = object_property_get(bible_books_prefix_to_name(), book_code);
   let verses = await app_verses_generic(app_record_verses, book_code, chapter);
   let chapter_interlinear = await firebase_download_bible(
@@ -70,12 +68,12 @@ export async function app_bible_verse(
     "verse_number",
     verse_number,
   );
-  html_bible_verse(root, book_code, chapter, verse);
-  html_hr(root);
+  html_bible_verse(middle, book_code, chapter, verse);
+  html_hr(middle);
   let { tokens } = verse_interlinear;
   let filter = bible_interlinear_words_greek_audio_upload_filter();
   each(tokens, (token) => {
-    let d = html_div(root);
+    let d = html_div(middle);
     let word = object_property_get(token, "word");
     let word_component = html_span_text(d, word);
     html_select_none(word_component);
@@ -110,15 +108,5 @@ export async function app_bible_verse(
     );
     html_style_green(definition);
   });
-  html_hr(root);
-  let n = await html_bible_verse_navigation(
-    app_bible,
-    app_bible_verse,
-    context,
-    book_code,
-    chapter,
-    verse_number,
-    "reading interlinear Bible",
-    false,
-  );
+  html_hr(middle);
 }
