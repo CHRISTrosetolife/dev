@@ -21,10 +21,9 @@ export async function app_record_verse(
   chapter,
   verse_number,
 ) {
-  let app_lambda = app_record;
   let app_verse_lambda = app_record_verse;
   let { middle, navigation } = await app_record_verse_generic(
-    app_lambda,
+    app_record,
     book_code,
     chapter,
     verse_number,
