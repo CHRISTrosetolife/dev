@@ -25,9 +25,9 @@ export async function app_record() {
     html_button_next(root, async () => {
       context.mr = await html_recorder_media();
       let version_code = app_record_version_code();
-      await app_context_books_bible_generic(context, version_code);
       let app_lambda = app_record;
       let app_verse_lambda = app_record_verse;
+      await app_context_books_bible_generic(context, version_code);
       let lookup = html_hash_lookup();
       let save = app_save_get(app_lambda);
       object_merge(lookup, save);
