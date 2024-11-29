@@ -1,3 +1,4 @@
+import { list_filter } from "./list_filter.mjs";
 import { html_parse_tag_named } from "./html_parse_tag_named.mjs";
 import { html_parse_children } from "./html_parse_children.mjs";
 import { log } from "./log.mjs";
@@ -29,10 +30,8 @@ export async function sandbox() {
         let root = object_property_get(r, "root");
         let body = html_parse_visit_tag_single(root, "body");
         let cs = html_parse_children(body);
-        let mapped = list_map(cs, (c) => html_parse_tag_named(c, "script"));
-        log({
-          body,
-        });
+        let f = list_filter(cs, (c) => html_parse_tag_named(c, "script"));
+        log(f.length + " " + cs.length);
         return parsed.html();
       },
       test_path,
