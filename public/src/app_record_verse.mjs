@@ -1,3 +1,5 @@
+import { app_verses_generic } from "./app_verses_generic.mjs";
+import { assert_arguments_length } from "./assert_arguments_length.mjs";
 import { app_record_verse_buttons } from "./app_record_verse_buttons.mjs";
 import { html_button_width_full_text_click_br } from "./html_button_width_full_text_click_br.mjs";
 import { html_audio } from "./html_audio.mjs";
@@ -21,7 +23,6 @@ import { html_style_display_none } from "./html_style_display_none.mjs";
 import { html_recorder_media_start } from "./html_recorder_media_start.mjs";
 import { html_recorder_media_stop } from "./html_recorder_media_stop.mjs";
 import { list_find_property } from "./list_find_property.mjs";
-import { app_record_verses } from "./app_record_verses.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export async function app_record_verse(
   context,
@@ -32,7 +33,8 @@ export async function app_record_verse(
   await app_save_change_bible(app_record, book_code, chapter, verse_number);
   let { root } = context;
   app_record_verse_buttons(context, book_code, chapter, app_record_verse);
-  let verses = await app_record_verses(book_code, chapter);
+  assert_arguments_length(arguments, 2);
+  let verses = await app_verses_generic(app_record, book_code, chapter);
   let verse = list_find_property(verses, "verse_number", verse_number);
   let vn = html_bible_verse(root, book_code, chapter, verse);
   html_hr(root);
