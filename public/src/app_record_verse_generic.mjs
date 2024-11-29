@@ -41,6 +41,5 @@ export async function app_record_verse_generic(
   return {
     middle,
     navigation,
-    root,
   };
 }
