@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { each_object } from "./each_object.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
 import { js_code_braces_inside } from "./js_code_braces_inside.mjs";
@@ -51,8 +52,13 @@ export async function function_dependencies(function_name) {
     if (list_is(identifiers)) {
       imported = js_code_braces_inside(list_join_comma_space(identifiers));
     } else {
+      imported = identifiers;
     }
-    object_property_set(e, from, js_code_import_generic(imported, from));
+    let code = js_code_import_generic(imported, from);
+    object_property_set(e, from, code);
+    log({
+      code,
+    });
   });
   let standard = ["chalk"];
   each(standard, (s) => {
