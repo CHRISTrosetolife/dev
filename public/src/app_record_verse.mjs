@@ -30,8 +30,8 @@ export async function app_record_verse(
   chapter,
   verse_number,
 ) {
-  let app_verse_lambda = app_record_verse;
   let app_lambda = app_record;
+  let app_verse_lambda = app_record_verse;
   await app_save_change_bible(app_lambda, book_code, chapter, verse_number);
   let { root } = context;
   app_record_verse_buttons(context, book_code, chapter, app_verse_lambda);
