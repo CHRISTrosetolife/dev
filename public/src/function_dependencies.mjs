@@ -56,9 +56,6 @@ export async function function_dependencies(function_name) {
     }
     let code = js_code_import_generic(imported, from);
     object_property_set(e, from, code);
-    log({
-      code,
-    });
   });
   let standard = ["chalk"];
   each(standard, (s) => {
