@@ -34,7 +34,13 @@ export async function app_dev() {
     object_property_set(files, fp, "");
   });
   let root = html_style_default_initialize();
-  await html_scripts_load(root, ["axios", "acorn", "astring", "prettier"]);
+  await html_scripts_load(root, [
+    "axios",
+    "acorn",
+    "astring",
+    "prettier_standalone",
+    "prettier_parser_babel",
+  ]);
   let screens_functions = app_dev_screens();
   let screens = list_map(screens_functions, (s) => s());
   home();
