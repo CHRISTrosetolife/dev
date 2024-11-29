@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_adder } from "./list_adder.mjs";
 import { js_visit_node } from "./js_visit_node.mjs";
 export function js_imports_existing(ast) {
@@ -5,7 +6,9 @@ export function js_imports_existing(ast) {
     js_visit_node(ast, "ImportSpecifier", (v) => {
       let { node } = v;
       let { parent } = v;
-      $_parent;
+      log({
+        parent,
+      });
       let { imported } = node;
       if (imported.type === "Identifier") {
         la(imported.name);
