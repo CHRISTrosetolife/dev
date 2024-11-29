@@ -42,6 +42,8 @@ export async function function_dependencies(function_name) {
       "onAuthStateChanged",
     ],
     ["https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"]: ["getAuth"],
+    ["https://cdn.jsdelivr.net/npm/@breezystack/lamejs@1.2.7/+esm"]:
+      "breezystacklamejs",
   };
   each_object(froms, (from, identifiers) => {
     object_property_set(
