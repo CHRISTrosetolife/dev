@@ -109,7 +109,7 @@ export async function app_bible_verse(
     book_code,
     chapter,
     verse_number,
-    "reading and recording audio for audio Bible",
+    "reading interlinear Bible",
     false,
   );
 }
