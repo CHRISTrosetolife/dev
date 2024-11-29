@@ -21,7 +21,6 @@ export async function sandbox() {
   paths = list_map(paths, string_slash_normalize_right);
   paths = list_map(paths, (q) => string_prefix_without(q, p));
   paths = list_map(paths, (q) => string_suffix_without(q, e));
-  paths = ["bible"];
   await each_async(paths, async (q) => {
     let test_path = string_combine_multiple([p, q, e]);
     await file_transform(
@@ -32,7 +31,7 @@ export async function sandbox() {
         let body = html_parse_visit_tag_single(root, "body");
         let cs = html_parse_children(body);
         let f = list_filter(cs, (c) => html_parse_tag_named(c, "script"));
-        log(f);
+        log(f.length);
         return parsed.html();
       },
       test_path,
