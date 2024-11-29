@@ -24,8 +24,6 @@ import { html_hr } from "./html_hr.mjs";
 import { each } from "./each.mjs";
 import { bible_storage_interlinear_book_path } from "./bible_storage_interlinear_book_path.mjs";
 import { firebase_download_bible } from "./firebase_download_bible.mjs";
-import { app_record_verses } from "./app_record_verses.mjs";
-import { app_verses_generic } from "./app_verses_generic.mjs";
 import { bible_books_prefix_to_name } from "./bible_books_prefix_to_name.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { list_find_property } from "./list_find_property.mjs";
@@ -44,7 +42,6 @@ export async function app_bible_verse(
     app_bible_verse,
   );
   let book_name = object_property_get(bible_books_prefix_to_name(), book_code);
-  let verses = await app_verses_generic(app_record_verses, book_code, chapter);
   let chapter_interlinear = await firebase_download_bible(
     bible_storage_interlinear_book_path(book_name),
     chapter,
