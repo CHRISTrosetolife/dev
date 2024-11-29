@@ -1,3 +1,4 @@
+import { html_script_axios } from "./html_script_axios.mjs";
 import { html_style_a_plain } from "./html_style_a_plain.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { fn_name } from "./fn_name.mjs";
@@ -25,6 +26,7 @@ export async function app_language(
     invert,
   };
   let body = html_style_default_initialize();
+  await html_script_axios();
   html_style_a_plain();
   html_css_flags(body);
   let root = html_div(body);
