@@ -1,3 +1,4 @@
+import { fn_name } from "./fn_name.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { file_overwrite_gitignore } from "./file_overwrite_gitignore.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -34,7 +35,7 @@ export async function function_dependencies(function_name) {
   let text = list_join_newline(c);
   await file_overwrite_gitignore(
     function_name,
-    function_dependencies.name,
+    fn_name("function_dependencies"),
     text,
   );
 }
