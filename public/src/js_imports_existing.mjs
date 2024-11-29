@@ -9,6 +9,8 @@ export function js_imports_existing(ast) {
       let { stack } = v;
       let e = list_get_end_1(stack);
       let sv = js_import_declaration_source_value(e);
+      if (false) {
+      }
       let { imported } = node;
       if (imported.type === "Identifier") {
         la(imported.name);
