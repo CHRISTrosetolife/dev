@@ -33,8 +33,7 @@ export async function app_record_verse(
   let app_lambda = app_record;
   let app_verse_lambda = app_record_verse;
   await app_save_change_bible(app_lambda, book_code, chapter, verse_number);
-  let { root } = context;
-  let root2 = object_property_get(context, "root");
+  let root = object_property_get(context, "root");
   app_record_verse_buttons(context, book_code, chapter, app_verse_lambda);
   let verses = await app_verses_generic(app_lambda, book_code, chapter);
   let verse = list_find_property(verses, "verse_number", verse_number);
