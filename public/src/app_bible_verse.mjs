@@ -33,7 +33,7 @@ export async function app_bible_verse(
   chapter,
   verse_number,
 ) {
-  let { middle, navigation } = await app_record_verse_generic(
+  let { middle } = await app_record_verse_generic(
     app_bible,
     book_code,
     chapter,
