@@ -23,7 +23,11 @@ export async function function_dependencies(function_name) {
     });
   });
   let e = {};
-  [getStorage, ref, uploadBytes, uploadString, listAll, getDownloadURL];
+  let from =
+    "https://cdnjs.cloudflare.com/ajax/libs/firebase/10.12.2/firebase-storage.min.js"[
+      (getStorage, ref, uploadBytes, uploadString, listAll, getDownloadURL)
+    ];
+  object_property_set(e, s, js_code_import_generic(s, s));
   let standard = ["chalk"];
   each(standard, (s) => {
     object_property_set(e, s, js_code_import_generic(s, s));
