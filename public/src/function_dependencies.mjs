@@ -41,11 +41,7 @@ export async function function_dependencies(function_name) {
       "getAuth",
       "onAuthStateChanged",
     ],
-    ["https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"]: [
-      "signInWithEmailAndPassword",
-      "getAuth",
-      "onAuthStateChanged",
-    ],
+    ["https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"]: ["getAuth"],
   };
   each_object(froms, (from, identifiers) => {
     object_property_set(
