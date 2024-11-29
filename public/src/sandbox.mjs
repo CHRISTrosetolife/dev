@@ -24,7 +24,7 @@ export async function sandbox() {
         let r = await html_parse_parsed(text);
         let parsed = object_property_get(r, "parsed");
         let root = object_property_get(r, "root");
-        html_parse_visit_tag_single();
+        html_parse_visit_tag_single(root, "body");
         return parsed.html();
       },
       test_path,
