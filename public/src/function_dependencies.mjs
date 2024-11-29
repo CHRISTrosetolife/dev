@@ -27,22 +27,21 @@ export async function function_dependencies(function_name) {
   });
   let e = {};
   let froms = {
+    ["https://cdnjs.cloudflare.com/ajax/libs/firebase/10.12.2/firebase-storage.min.js"]:
+      [
+        "getStorage",
+        "ref",
+        "uploadBytes",
+        "uploadString",
+        "listAll",
+        "getDownloadURL",
+      ],
     ["https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js"]: [
       "signInWithEmailAndPassword",
       "getAuth",
       "onAuthStateChanged",
     ],
   };
-  let from =
-    "https://cdnjs.cloudflare.com/ajax/libs/firebase/10.12.2/firebase-storage.min.js";
-  let identifiers = [
-    "getStorage",
-    "ref",
-    "uploadBytes",
-    "uploadString",
-    "listAll",
-    "getDownloadURL",
-  ];
   object_property_set(
     e,
     from,
