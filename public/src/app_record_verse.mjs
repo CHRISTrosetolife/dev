@@ -41,7 +41,7 @@ export async function app_record_verse(
     html_style_green(vn);
   }
   let middle = html_div(root);
-  let n = await html_bible_verse_navigation(
+  let navigation = await html_bible_verse_navigation(
     app_record,
     app_record_verse,
     context,
@@ -70,9 +70,9 @@ export async function app_record_verse(
       each(recording, html_style_display_block);
     },
   );
-  previous = object_property_get(n, "previous");
-  next = object_property_get(n, "next");
-  let verse_next = object_property_get(n, "verse_next");
+  previous = object_property_get(navigation, "previous");
+  next = object_property_get(navigation, "next");
+  let verse_next = object_property_get(navigation, "verse_next");
   listen = html_button_width_full_text_click_br(root, "👂 listen", async () => {
     await record_stop();
     let blobUrl = URL.createObjectURL(blob);
