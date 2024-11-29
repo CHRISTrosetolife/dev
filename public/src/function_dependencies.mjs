@@ -1,3 +1,5 @@
+import { list_join_comma_space } from "./list_join_comma_space.mjs";
+import { js_code_braces_inside } from "./js_code_braces_inside.mjs";
 import { js_code_string } from "./js_code_string.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -34,7 +36,14 @@ export async function function_dependencies(function_name) {
     "listAll",
     "getDownloadURL",
   ];
-  object_property_set(e, s, js_code_import_generic(s, js_code_string(from)));
+  object_property_set(
+    e,
+    s,
+    js_code_import_generic(
+      js_code_braces_inside(list_join_comma_space()),
+      js_code_string(from),
+    ),
+  );
   let standard = ["chalk"];
   each(standard, (s) => {
     object_property_set(e, s, js_code_import_generic(s, s));
