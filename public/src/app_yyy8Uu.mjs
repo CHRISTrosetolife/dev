@@ -1,3 +1,4 @@
+import { html_script_axios } from "./html_script_axios.mjs";
 import { list_size } from "./list_size.mjs";
 import { html_spacer_vertical_2 } from "./html_spacer_vertical_2.mjs";
 import { html_button_width_full_text_click_home } from "./html_button_width_full_text_click_home.mjs";
@@ -28,6 +29,7 @@ import { list_index_last } from "./list_index_last.mjs";
 import { html_buttons_next_previous_hr_none } from "./html_buttons_next_previous_hr_none.mjs";
 export async function app_yyy8Uu() {
   let root = html_style_default_initialize();
+  await html_script_axios(root);
   let file_path = yyy8Uu_storage_path("chapter_names");
   let { chapter_names } = await http_storage(file_path);
   let index_last = list_index_last(chapter_names);
