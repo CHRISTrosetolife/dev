@@ -26,7 +26,7 @@ export async function app_language(
     invert,
   };
   let body = html_style_default_initialize();
-  await html_script_axios();
+  await html_script_axios(body);
   html_style_a_plain();
   html_css_flags(body);
   let root = html_div(body);
