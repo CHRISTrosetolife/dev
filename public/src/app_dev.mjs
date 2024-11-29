@@ -34,7 +34,7 @@ export async function app_dev() {
     object_property_set(files, fp, "");
   });
   let root = html_style_default_initialize();
-  await html_scripts_load(root, ["axios", "acorn", "astring"]);
+  await html_scripts_load(root, ["axios", "acorn", "astring", "prettier"]);
   let screens_functions = app_dev_screens();
   let screens = list_map(screens_functions, (s) => s());
   home();
