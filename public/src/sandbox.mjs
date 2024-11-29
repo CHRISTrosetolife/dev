@@ -13,7 +13,8 @@ export async function sandbox() {
     if (list_size(f) !== 2) {
       return;
     }
-    if (false) {
+    if (name !== "bible") {
+      return;
     }
   }
 }
