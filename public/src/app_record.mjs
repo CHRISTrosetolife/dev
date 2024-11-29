@@ -9,6 +9,8 @@ import { html_prayer } from "./html_prayer.mjs";
 import { app_pray_word } from "./app_pray_word.mjs";
 export async function app_record() {
   let version_code = app_record_version_code();
+  let app_lambda = app_record;
+  let app_verse_lambda = app_record_verse;
   await app_firebase({
     on_logged_in,
     on_initialized: html_style_a_plain,
@@ -18,8 +20,6 @@ export async function app_record() {
     html_prayer(root, app_pray_word());
     html_button_next(root, async () => {
       context.mr = await html_recorder_media();
-      let app_lambda = app_record;
-      let app_verse_lambda = app_record_verse;
       await app_record_lookup(
         context,
         version_code,
