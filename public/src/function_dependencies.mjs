@@ -26,6 +26,7 @@ export async function function_dependencies(function_name) {
     });
   });
   let e = {};
+  let froms = {};
   let from =
     "https://cdnjs.cloudflare.com/ajax/libs/firebase/10.12.2/firebase-storage.min.js";
   let identifiers = [
