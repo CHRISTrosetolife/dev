@@ -46,7 +46,10 @@ export async function function_dependencies(function_name) {
       "breezystacklamejs",
   };
   each_object(froms, (from, identifiers) => {
-    let imported = js_code_braces_inside(list_join_comma_space(identifiers));
+    let imported;
+    if (false) {
+      imported = js_code_braces_inside(list_join_comma_space(identifiers));
+    }
     object_property_set(e, from, js_code_import_generic(imported, from));
   });
   let standard = ["chalk"];
