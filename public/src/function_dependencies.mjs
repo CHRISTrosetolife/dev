@@ -1,3 +1,4 @@
+import { js_code_string } from "./js_code_string.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { object_property_set } from "./object_property_set.mjs";
 import { file_overwrite_gitignore } from "./file_overwrite_gitignore.mjs";
@@ -33,7 +34,7 @@ export async function function_dependencies(function_name) {
     "listAll",
     "getDownloadURL",
   ];
-  object_property_set(e, s, js_code_import_generic(s, s));
+  object_property_set(e, s, js_code_import_generic(s, js_code_string(from)));
   let standard = ["chalk"];
   each(standard, (s) => {
     object_property_set(e, s, js_code_import_generic(s, s));
