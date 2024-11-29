@@ -51,11 +51,15 @@ export async function app_record_verse(
     recording_not,
     listen;
   let blob = null;
-  start = html_button_width_full_text_click(root, "⏺️ start recording", () => {
-    each(recording_not, html_style_display_none);
-    record_start();
-    each(recording, html_style_display_block);
-  });
+  start = html_button_width_full_text_click(
+    middle,
+    "⏺️ start recording",
+    () => {
+      each(recording_not, html_style_display_none);
+      record_start();
+      each(recording, html_style_display_block);
+    },
+  );
   let n = await html_bible_verse_navigation(
     app_record,
     app_record_verse,
