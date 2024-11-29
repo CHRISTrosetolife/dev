@@ -23,7 +23,7 @@ export async function app_record_verse(
 ) {
   let app_lambda = app_record;
   let app_verse_lambda = app_record_verse;
-  let { middle, navigation, root } = await app_record_verse_generic(
+  let { middle, navigation } = await app_record_verse_generic(
     app_lambda,
     book_code,
     chapter,
@@ -31,6 +31,7 @@ export async function app_record_verse(
     context,
     app_verse_lambda,
   );
+  let root = object_property_get(context, "root");
   let start,
     previous,
     next,
