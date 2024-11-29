@@ -1,7 +1,6 @@
 import { list_filter } from "./list_filter.mjs";
 import { html_parse_tag_named } from "./html_parse_tag_named.mjs";
 import { html_parse_children } from "./html_parse_children.mjs";
-import { log } from "./log.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
 import { file_transform } from "./file_transform.mjs";
 import { each_async } from "./each_async.mjs";
@@ -28,10 +27,7 @@ export async function sandbox() {
         let r = await html_parse_parsed(text);
         let parsed = object_property_get(r, "parsed");
         let root = object_property_get(r, "root");
-        let body = html_parse_visit_tag_single(root, "body");
-        let cs = html_parse_children(body);
-        let f = list_filter(cs, (c) => html_parse_tag_named(c, "script"));
-        log(string_combine_multiple([f.length, " ", q]));
+        transform(root);
         return parsed.html();
       },
       test_path,
@@ -39,4 +35,9 @@ export async function sandbox() {
     );
   });
   return paths;
+  function transform(root) {
+    let body = html_parse_visit_tag_single(root, "body");
+    let cs = html_parse_children(body);
+    let f = list_filter(cs, (c) => html_parse_tag_named(c, "script"));
+  }
 }
