@@ -26,7 +26,13 @@ export async function function_dependencies(function_name) {
     });
   });
   let e = {};
-  let froms = {};
+  let froms = {
+    ["https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js"]: [
+      "signInWithEmailAndPassword",
+      "getAuth",
+      "onAuthStateChanged",
+    ],
+  };
   let from =
     "https://cdnjs.cloudflare.com/ajax/libs/firebase/10.12.2/firebase-storage.min.js";
   let identifiers = [
