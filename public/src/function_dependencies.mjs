@@ -23,6 +23,7 @@ export async function function_dependencies(function_name) {
     });
   });
   let e = {};
+  [getStorage, ref, uploadBytes, uploadString, listAll, getDownloadURL];
   let standard = ["chalk"];
   each(standard, (s) => {
     object_property_set(e, s, js_code_import_generic(s, s));
