@@ -23,7 +23,7 @@ export async function apps_html_transform(transform) {
         let r = await html_parse_parsed(text);
         let parsed = object_property_get(r, "parsed");
         let root = object_property_get(r, "root");
-        transform(root);
+        transform(root, q);
         return parsed.html();
       },
       test_path,
