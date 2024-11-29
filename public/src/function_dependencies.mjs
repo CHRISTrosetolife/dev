@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { each_object } from "./each_object.mjs";
 import { list_join_comma_space } from "./list_join_comma_space.mjs";
 import { js_code_braces_inside } from "./js_code_braces_inside.mjs";
@@ -44,7 +43,11 @@ export async function function_dependencies(function_name) {
       "onAuthStateChanged",
     ],
     ["https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"]: ["getAuth"],
-    ["https://jspm.dev/extendable-media-recorder"]: ["connect"],
+    ["https://jspm.dev/extendable-media-recorder"]: [
+      "MediaRecorder",
+      "register",
+    ],
+    ["https://jspm.dev/extendable-media-recorder-wav-encoder"]: ["connect"],
     ["https://cdn.jsdelivr.net/npm/@breezystack/lamejs@1.2.7/+esm"]:
       "breezystacklamejs",
   };
