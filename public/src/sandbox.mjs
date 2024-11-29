@@ -1,3 +1,4 @@
+import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
 import { file_transform } from "./file_transform.mjs";
 import { each_async } from "./each_async.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -23,6 +24,7 @@ export async function sandbox() {
         let r = await html_parse_parsed(text);
         let parsed = object_property_get(r, "parsed");
         let root = object_property_get(r, "root");
+        html_parse_visit_tag_single();
         return parsed.html();
       },
       test_path,
