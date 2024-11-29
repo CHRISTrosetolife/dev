@@ -1,3 +1,4 @@
+import { html_div } from "./html_div.mjs";
 import { app_verses_generic } from "./app_verses_generic.mjs";
 import { app_record_verse_buttons } from "./app_record_verse_buttons.mjs";
 import { html_button_width_full_text_click_br } from "./html_button_width_full_text_click_br.mjs";
@@ -39,6 +40,7 @@ export async function app_record_verse(
   if (equal(verse_number, "1")) {
     html_style_green(vn);
   }
+  let middle = html_div(root);
   let start,
     previous,
     next,
