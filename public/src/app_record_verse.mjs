@@ -41,6 +41,16 @@ export async function app_record_verse(
     html_style_green(vn);
   }
   let middle = html_div(root);
+  let n = await html_bible_verse_navigation(
+    app_record,
+    app_record_verse,
+    context,
+    book_code,
+    chapter,
+    verse_number,
+    "reading and recording audio for audio Bible",
+    true,
+  );
   let start,
     previous,
     next,
@@ -59,16 +69,6 @@ export async function app_record_verse(
       record_start();
       each(recording, html_style_display_block);
     },
-  );
-  let n = await html_bible_verse_navigation(
-    app_record,
-    app_record_verse,
-    context,
-    book_code,
-    chapter,
-    verse_number,
-    "reading and recording audio for audio Bible",
-    true,
   );
   previous = object_property_get(n, "previous");
   next = object_property_get(n, "next");
