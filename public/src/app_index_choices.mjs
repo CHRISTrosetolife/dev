@@ -53,7 +53,7 @@ export function app_index_choices() {
     });
   }
   list_add(choices, {
-    text: "📃 personal links",
+    text: "📃 personal links :)",
     page: "links",
   });
   return choices;
