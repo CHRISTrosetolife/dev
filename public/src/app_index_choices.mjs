@@ -28,12 +28,8 @@ export function app_index_choices() {
     page: "memorize",
   });
   list_add(choices, {
-    text: "📃 TODO list",
-    page: "todo",
-  });
-  list_add(choices, {
-    text: "😴 sleep tracker",
-    page: "sleep",
+    text: "📃 personal links",
+    page: "links",
   });
   list_add(choices, {
     text: string_combine_multiple([
@@ -43,16 +39,8 @@ export function app_index_choices() {
     page: "en",
   });
   list_add(choices, {
-    text: "⏺️ record bible",
-    page: "record",
-  });
-  list_add(choices, {
     text: "🔍 search bible",
     page: "search",
-  });
-  list_add(choices, {
-    text: "🧎🏿 words",
-    page: "list",
   });
   list_add(choices, {
     text: "🎥 audio bible videos",
@@ -62,13 +50,11 @@ export function app_index_choices() {
     text: "📙 book syntagmatis theologiae christianae",
     page: "yyy8Uu",
   });
-  list_add(choices, {
-    text: "🎮 game",
-    page: "gs",
-  });
-  list_add(choices, {
-    text: "📃 list",
-    page: "list",
-  });
+  if (false) {
+    list_add(choices, {
+      text: "🎮 game",
+      page: "gs",
+    });
+  }
   return choices;
 }
