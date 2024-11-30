@@ -15,10 +15,6 @@ export async function app_mary() {
     on_logged_in: async (context) => {
       let { root } = context;
       let word = await clipboard_paste_web();
-      let response =
-        "Behold, I am an unworthy servant of the LORD. May the word of the LORD come true.";
-      html_p_text(root, "Response copied to clipboard:");
-      html_p_text(root, response);
       let t = html_textarea_width_full(root);
       html_value_set(t, word);
       html_button_add(root, "word", async () => {
@@ -28,6 +24,10 @@ export async function app_mary() {
           word: html_value_get(t),
         });
         await clipboard_copy_web(response);
+        let response =
+          "Behold, I am an unworthy servant of the LORD. May the word of the LORD come true.";
+        html_p_text(root, "Response copied to clipboard:");
+        html_p_text(root, response);
       });
     },
   });
