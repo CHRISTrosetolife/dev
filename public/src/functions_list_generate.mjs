@@ -5,6 +5,5 @@ export async function functions_list_generate() {
   await generate_list_fn_name(
     function_names,
     fn_name("functions_list_generate"),
-    fn_name("functions_list_generate"),
   );
 }
