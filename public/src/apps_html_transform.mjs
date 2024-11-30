@@ -1,3 +1,4 @@
+import { app_extension } from "./app_extension.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { html_parse_parsed } from "./html_parse_parsed.mjs";
 import { file_transform } from "./file_transform.mjs";
@@ -11,7 +12,7 @@ import { folder_read_shallow } from "./folder_read_shallow.mjs";
 import { folder_path_public } from "./folder_path_public.mjs";
 export async function apps_html_transform(transform) {
   let p = folder_path_public();
-  let e = ".html";
+  let e = app_extension();
   let paths = await folder_read_shallow(p, e);
   paths = list_map(paths, string_slash_normalize_right);
   paths = list_map(paths, (q) => string_prefix_without(q, p));
