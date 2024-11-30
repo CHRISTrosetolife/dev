@@ -8,5 +8,5 @@ export function app_links() {
     text: p,
     page: p,
   }));
-  app_index_choices_buttons(root, choices);
+  app_index_choices_buttons(body, choices);
 }
