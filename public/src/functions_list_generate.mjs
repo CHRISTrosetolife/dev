@@ -3,6 +3,5 @@ import { fn_name } from "./fn_name.mjs";
 import { function_names } from "./function_names.mjs";
 export async function functions_list_generate() {
   let fn = fn_name("functions_list_generate");
-  let get = function_names;
-  await generate_list_fn_name(get, fn);
+  await generate_list_fn_name(function_names, fn);
 }
