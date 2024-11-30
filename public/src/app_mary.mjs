@@ -20,9 +20,11 @@ export async function app_mary() {
       html_button_add(root, "word", async () => {
         let name = file_name_json(date_string_iso_file());
         let file_path = string_combine("mary/", name);
-        await firebase_save(file_path, {
-          word: html_value_get(t),
-        });
+        if (false) {
+          await firebase_save(file_path, {
+            word: html_value_get(t),
+          });
+        }
         await clipboard_copy_web(response);
         let response =
           "Behold, I am an unworthy servant of the LORD. May the word of the LORD come true.";
