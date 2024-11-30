@@ -6,6 +6,7 @@ export function app_links() {
   let body = html_style_default_initialize();
   let choices = list_map(apps_list(), (p) => ({
     text: p,
+    page: p,
   }));
   app_index_choices_buttons(root, choices);
 }
