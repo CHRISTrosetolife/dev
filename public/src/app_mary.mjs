@@ -17,7 +17,6 @@ export async function app_mary() {
       let word = await clipboard_paste_web();
       let response =
         "Behold, I am an unworthy servant of the LORD. May the word of the LORD come true.";
-      await clipboard_copy_web(response);
       html_p_text(root, "Response copied to clipboard:");
       html_p_text(root, response);
       let t = html_textarea_width_full(root);
@@ -28,6 +27,7 @@ export async function app_mary() {
         await firebase_save(file_path, {
           word: html_value_get(t),
         });
+        await clipboard_copy_web(response);
       });
     },
   });
