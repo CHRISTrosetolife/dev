@@ -28,10 +28,6 @@ export function app_index_choices() {
     page: "memorize",
   });
   list_add(choices, {
-    text: "📃 personal links",
-    page: "links",
-  });
-  list_add(choices, {
     text: string_combine_multiple([
       "🎓 learn language english ",
       html_replace_nb("( from cebuano )"),
@@ -56,5 +52,9 @@ export function app_index_choices() {
       page: "gs",
     });
   }
+  list_add(choices, {
+    text: "📃 personal links",
+    page: "links",
+  });
   return choices;
 }
