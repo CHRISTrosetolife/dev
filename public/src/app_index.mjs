@@ -6,5 +6,5 @@ export function app_index() {
   let root = html_style_default_initialize();
   html_clear_scroll_top_centered(root);
   let choices = app_index_choices();
-  app_index_choices_buttons(choices, root);
+  app_index_choices_buttons(root, choices);
 }

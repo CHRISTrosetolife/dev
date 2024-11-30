@@ -4,7 +4,7 @@ import { object_property_get } from "./object_property_get.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { object_property_exists } from "./object_property_exists.mjs";
 import { each } from "./each.mjs";
-export function app_index_choices_buttons(choices, root) {
+export function app_index_choices_buttons(root, choices) {
   each(choices, (choice) => {
     let url;
     if (object_property_exists(choice, "page")) {
