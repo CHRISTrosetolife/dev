@@ -53,7 +53,7 @@ export async function function_dependencies_string(function_name) {
   let dependency_names = object_properties(map);
   let ds = await list_map_async(dependency_names, function_declaration);
   let us = list_map(ds, js_unparse);
-  let c = list_concat_multiple([imports, e_code]);
+  let c = list_concat_multiple([[imports], e_code]);
   let text = list_join_newline(c);
-  return imports;
+  return text;
 }
