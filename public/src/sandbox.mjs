@@ -1,3 +1,4 @@
+import { each } from "./each.mjs";
 import { log } from "./log.mjs";
 import { list_size } from "./list_size.mjs";
 import { apps_html_transform } from "./apps_html_transform.mjs";
@@ -17,6 +18,7 @@ export async function sandbox() {
     if (name !== "bible") {
       return;
     }
+    each(list, (item) => {});
     log({
       name,
     });
