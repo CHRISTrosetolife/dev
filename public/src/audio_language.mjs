@@ -6,6 +6,6 @@ import { audio_language_list } from "./audio_language_list.mjs";
 export function audio_language(language) {
   let list = audio_language_list();
   let target = function_name_combine(fn_name("audio_language"), language);
-  list_filter(list, (e) => object_property_get(object, "property_name"));
+  list_filter(list, (e) => object_property_get(e, "name") === target);
   return list;
 }
