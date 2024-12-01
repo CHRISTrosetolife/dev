@@ -1,3 +1,4 @@
+import { app_html_generate_global } from "./app_html_generate_global.mjs";
 import { file_overwrite } from "./file_overwrite.mjs";
 import { js_code_call } from "./js_code_call.mjs";
 import { js_code_import_path } from "./js_code_import_path.mjs";
@@ -18,7 +19,7 @@ export async function app_html_generate_generic(name, folder, output_path_get) {
     '\n    <!DOCTYPE html>\n    <html>\n      <head>\n        <meta charset="utf-8">\n        <meta name="viewport" content="width=device-width, initial-scale=1">\n        <title>',
     name,
     "</title>\n      </head>\n      <body>\n        <script>",
-    "let global = {};",
+    app_html_generate_global(),
     '</script>\n        <script type="module">\n          ',
     js_code_import_path(import_path, name_prefixed),
     "\n          ",
