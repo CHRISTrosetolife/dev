@@ -6,6 +6,7 @@ import { html_parse_visit_tag_list } from "./html_parse_visit_tag_list.mjs";
 import { html_parse_remove } from "./html_parse_remove.mjs";
 import { each } from "./each.mjs";
 import { apps_html_transform } from "./apps_html_transform.mjs";
+import { list_join_newline } from "./list_join_newline.mjs";
 export async function sandbox() {
   return await apps_html_transform(transform);
   async function transform(root, name, parsed) {
@@ -22,5 +23,6 @@ export async function sandbox() {
         string_combine_multiple([app_prefix(), name]),
       ),
     ];
+    let content = list_join_newline(lines);
   }
 }
