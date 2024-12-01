@@ -1,3 +1,4 @@
+import { html_parse_unparse } from "./html_parse_unparse.mjs";
 import { html_parse_parsed } from "./html_parse_parsed.mjs";
 import { log } from "./log.mjs";
 import { object_property_get } from "./object_property_get.mjs";
@@ -16,6 +17,7 @@ export async function sandbox() {
   let p = await html_parse_parsed("<b>hi</b>");
   let parsed = object_property_get(p, "parsed");
   let root = object_property_get(p, "root");
+  return html_parse_unparse(parsed);
   parsed(head).append("<test />");
   return await apps_html_transform(transform);
   async function transform(root, name, parsed) {
