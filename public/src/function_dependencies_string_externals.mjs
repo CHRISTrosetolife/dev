@@ -24,6 +24,7 @@ export function function_dependencies_string_externals() {
     let code = js_code_statement_let_assign(imported, js_code_await(import_));
     object_property_set(e, from, {
       code,
+      import_,
     });
   });
   let standard = ["chalk"];
