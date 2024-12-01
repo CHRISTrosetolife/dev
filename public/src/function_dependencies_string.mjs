@@ -54,5 +54,5 @@ export async function function_dependencies_string(function_name) {
   let us = list_map(ds, js_unparse);
   let c = list_concat_multiple([imports, e_code]);
   let text = list_join_newline(c);
-  return text;
+  return imports;
 }
