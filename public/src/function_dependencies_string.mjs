@@ -21,7 +21,7 @@ export async function function_dependencies_string(function_name) {
   });
   let e = function_dependencies_string_externals();
   let e_code = list_map(externals, (n) => {
-    return object_property_get(e, n);
+    let en = object_property_get(e, n);
   });
   if (false) {
     return e_code;
