@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_add } from "./list_add.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { repository_name } from "./repository_name.mjs";
@@ -44,5 +45,8 @@ export async function sandbox() {
     };
     let children = object_property_get(head, "children");
     list_add(children, tag);
+    log({
+      head,
+    });
   }
 }
