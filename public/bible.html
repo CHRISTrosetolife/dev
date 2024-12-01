@@ -2,7 +2,2044 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bible</title>
-  </head>
+  <script id="CHRISTrosetolife_app">let global = {};
+await list_wait([ import("https://cdnjs.cloudflare.com/ajax/libs/firebase/10.12.2/firebase-storage.min.js"), import("https://cdn.jsdelivr.net/npm/@breezystack/lamejs@1.2.7/+esm"), import("https://jspm.dev/extendable-media-recorder"), import("https://jspm.dev/extendable-media-recorder-wav-encoder"), import("https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js"), import("https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js") ])
+let { getStorage, ref, uploadBytes, uploadString, listAll, getDownloadURL } = await import("https://cdnjs.cloudflare.com/ajax/libs/firebase/10.12.2/firebase-storage.min.js");
+let breezystacklamejs = await import("https://cdn.jsdelivr.net/npm/@breezystack/lamejs@1.2.7/+esm");
+let { MediaRecorder, register } = await import("https://jspm.dev/extendable-media-recorder");
+let { connect } = await import("https://jspm.dev/extendable-media-recorder-wav-encoder");
+let { signInWithEmailAndPassword, getAuth, onAuthStateChanged } = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js");
+let { getAuth } = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js");
+async function app_bible() {
+    await app_record_generic("engbsb", app_bible, app_bible_verse);
+}
+async function app_record_generic(version_code, app_lambda, app_verse_lambda) {
+    await app_firebase({
+        on_logged_in,
+        on_initialized: html_style_a_plain
+    });
+    async function on_logged_in(context) {
+        let {root} = context;
+        html_prayer(root, app_pray_word());
+        html_button_next(root, async () => {
+            context.mr = await html_recorder_media();
+            await app_record_lookup(context, version_code, app_lambda, app_verse_lambda);
+        });
+    }
+}
+async function app_record_lookup(context, version_code, app_lambda, app_verse_lambda) {
+    await app_context_books_bible_generic(context, version_code);
+    let lookup = html_hash_lookup();
+    let save = app_save_get(app_lambda);
+    object_merge(lookup, save);
+    let hash_book = object_property_get_or(lookup, "book", null);
+    if (hash_book !== null) {
+        let hash_chapter = object_property_get_or(lookup, "chapter", null);
+        if (hash_chapter !== null) {
+            let hash_verse = object_property_get_or(lookup, "verse", null);
+            if (hash_verse !== null) {
+                await app_verse_lambda(context, hash_book, hash_chapter, hash_verse);
+            } else {
+                await app_record_chapter(context, hash_book, hash_chapter, app_verse_lambda);
+            }
+        } else {
+            await app_record_book(context, hash_book, app_verse_lambda);
+        }
+    } else {
+        await app_record_home(context, app_verse_lambda);
+    }
+}
+async function app_record_home(context, on_verse) {
+    await app_save_change(app_record, save => object_replace(save, {}));
+    let app_record_home_on_click = async (context, book_code) => await app_record_book(context, book_code, on_verse);
+    app_record_home_generic(context, noop, app_record_home_on_click, null);
+}
+function object_replace(original, replacement) {
+    object_property_delete_all(original);
+    object_merge(original, replacement);
+}
+function object_property_delete_all(object) {
+    for (let property of object_properties(object)) {
+        object_property_delete(object, property);
+    }
+}
+function object_property_delete(object, property) {
+    delete object[property];
+}
+function object_properties(object) {
+    return Object.keys(object);
+}
+function object_merge(to, from) {
+    let from_properties = object_properties(from);
+    object_merge_properties(to, from, from_properties);
+    return to;
+}
+function object_merge_properties(to, from, properties) {
+    assert_arguments_length(arguments, 3);
+    each(properties, p => {
+        let value = object_property_get(from, p);
+        object_property_set(to, p, value);
+    });
+    return to;
+}
+function each(list, lambda) {
+    assert_arguments_length(arguments, 2);
+    for (let item of list) {
+        if (lambda(item) === true) {
+            return;
+        }
+    }
+}
+function assert_arguments_length(args, expected) {
+    assert(equal, [arguments.length, 2]);
+    let actual = args.length;
+    assert_message(equal, [actual, expected], () => ({
+        message: "expecting different argument count",
+        expected,
+        actual
+    }));
+}
+function equal(a, b) {
+    return a === b;
+}
+function assert(fn, args) {
+    returns(fn, true, args);
+}
+function returns(fn, expected, args) {
+    returns_message(fn, expected, args, message_get);
+    function message_get() {
+        return json_to(args);
+    }
+}
+function returns_message(fn, expected, args, message_get) {
+    let actual = fn(...args);
+    let e = equal(actual, expected);
+    assert_boolean_message(e, message_get);
+}
+function assert_boolean_message(condition, message_get) {
+    if (condition === false) {
+        error(message_get());
+    }
+}
+function error(message) {
+    throw new Error(message);
+}
+function json_to(object) {
+    return JSON.stringify(object);
+}
+function assert_message(fn, args, message_get) {
+    return assert_message_string(fn, args, () => {
+        let j = json_to(message_get());
+        let limit = 1000;
+        if (string_size(j > limit)) {
+            return string_take(j, limit);
+        }
+        return j;
+    });
+}
+function string_size(input) {
+    return input.length;
+}
+function assert_message_string(fn, args, message_get) {
+    returns_message(fn, true, args, message_get);
+}
+function string_take(input, count) {
+    let length = string_size(input);
+    assert_message(less_than_equal, [count, length], () => ({
+        input,
+        count,
+        length
+    }));
+    return string_substring(input, 0, count);
+}
+function less_than_equal(a, b) {
+    return a <= b;
+}
+function string_substring(input, start, end) {
+    assert_arguments_length(arguments, 3);
+    return input.substring(start, end);
+}
+function object_property_set(object, property_name, value) {
+    object[property_name] = value;
+}
+function object_property_get(object, property_name) {
+    let result = object[property_name];
+    assert_message(undefined_not_is, [result], () => ({
+        property_name,
+        object
+    }));
+    return result;
+}
+function undefined_not_is(previous_token) {
+    return !undefined_is(previous_token);
+}
+function undefined_is(input) {
+    return typeof input === "undefined";
+}
+async function app_record() {
+    await app_record_generic(app_record_version_code(), app_record, app_record_verse);
+}
+function app_record_version_code() {
+    return "engwebu";
+}
+async function app_record_verse(context, book_code, chapter, verse_number) {
+    let {middle, navigation} = await app_record_verse_generic(app_record, book_code, chapter, verse_number, context, app_record_verse);
+    let root = object_property_get(context, "root");
+    let start, previous, next, save, cancel, restart, recording, recording_not, listen;
+    let blob = null;
+    start = html_button_width_full_text_click(middle, "⏺️ start recording", () => {
+        each(recording_not, html_style_display_none);
+        record_start();
+        each(recording, html_style_display_block);
+    });
+    previous = object_property_get(navigation, "previous");
+    next = object_property_get(navigation, "next");
+    let verse_next = object_property_get(navigation, "verse_next");
+    listen = html_button_width_full_text_click_br(root, "👂 listen", async () => {
+        await record_stop();
+        let blobUrl = URL.createObjectURL(blob);
+        await html_audio(blobUrl);
+    });
+    save = html_button_width_full_text_click_br(root, "💾 save recording and ➡️ next verse", async () => {
+        each(recording, html_style_display_none);
+        await record_stop();
+        let when = date_string_iso_file();
+        let storage_path = path_join([folder_audio_bible(), app_record_project_name(), book_code, chapter, verse_number, string_combine_multiple([when, ".mp3"])]);
+        await firebase_upload_bytes(storage_path, blob);
+        await verse_next();
+    });
+    restart = html_button_width_full_text_click_br(root, "↩️ restart recording", async () => {
+        each(recording, html_style_display_none);
+        await html_recorder_media_stop(context.mr);
+        record_start();
+        each(recording, html_style_display_block);
+    });
+    cancel = html_button_width_full_text_click_br(root, "🚫 cancel recording", async () => {
+        each(recording, html_style_display_none);
+        await html_recorder_media_stop(context.mr);
+        each(recording_not, html_style_display_block);
+    });
+    recording = [listen, save, restart, cancel];
+    recording_not = [start, previous, next];
+    each(recording, html_style_display_none);
+    async function record_stop() {
+        if (blob === null) {
+            blob = await html_recorder_media_stop(context.mr);
+        }
+    }
+    function record_start() {
+        html_recorder_media_start(context.mr);
+        blob = null;
+    }
+}
+async function app_record_verse_generic(app_lambda, book_code, chapter, verse_number, context, app_verse_lambda) {
+    await app_save_change_bible(app_lambda, book_code, chapter, verse_number);
+    let root = object_property_get(context, "root");
+    app_record_verse_buttons(context, book_code, chapter, app_verse_lambda);
+    let verses = await app_verses_generic(app_lambda, book_code, chapter);
+    let verse = list_find_property(verses, "verse_number", verse_number);
+    let vn = html_bible_verse(root, book_code, chapter, verse);
+    html_hr(root);
+    if (equal(verse_number, "1")) {
+        html_style_green(vn);
+    }
+    let middle = html_div(root);
+    let navigation = await html_bible_verse_navigation(app_lambda, app_verse_lambda, context, book_code, chapter, verse_number, "reading and recording audio for audio Bible", true);
+    return {
+        middle,
+        navigation
+    };
+}
+async function html_bible_verse_navigation(app_fn, verse_refresh, context, book_code, chapter, verse_number, copy_message, previous_first) {
+    let {root} = context;
+    let verses = await app_verses_generic(app_fn, book_code, chapter);
+    let verse = list_find_property(verses, "verse_number", verse_number);
+    let previous;
+    if (previous_first) {
+        previous_create();
+    }
+    let next = html_button_width_full_text_click(root, string_combine_multiple([html_button_next_text(), " verse"]), verse_next);
+    if (!previous_first) {
+        previous_create();
+    }
+    function previous_create() {
+        previous = html_button_width_full_text_click(root, string_combine_multiple([html_button_previous_text(), " verse"]), async () => {
+            let verse_previous = list_previous(verses, verse);
+            await verse_refresh(context, book_code, chapter, object_property_get(verse_previous, "verse_number"));
+        });
+    }
+    async function verse_next() {
+        await html_bible_verse_navigation_next(app_fn, book_code, chapter, verse_number, (book_code, chapter, verse_number_next) => verse_refresh(context, book_code, chapter, verse_number_next), context, on_chapter_next);
+    }
+    return {
+        previous,
+        next,
+        verse_next
+    };
+    async function on_chapter_next() {
+        let chapter_text = bible_book_chapter_text(book_code, chapter);
+        await clipboard_copy_web(string_combine_multiple([chapter_text, ": Finished ", copy_message]));
+    }
+}
+function html_button_previous_text() {
+    return "⬅️ previous";
+}
+async function html_bible_verse_navigation_next(app_fn, book_code, chapter, verse_number, on_verse_next, context, on_chapter_next) {
+    chapter = bible_chapter_unpadded(chapter);
+    let verses = await app_verses_generic(app_fn, book_code, chapter);
+    let verse = list_find_property(verses, "verse_number", verse_number);
+    if (list_last_is(verses, verse)) {
+        await chapter_next_go();
+    } else {
+        let verse_number_next = list_find_property_next_property(verses, "verse_number", verse_number);
+        await on_verse_next(book_code, chapter, verse_number_next);
+    }
+    async function chapter_next_go() {
+        on_chapter_next();
+        let {books} = context;
+        let book = list_find_property(books, "book_code", book_code);
+        let {chapters} = book;
+        let chapter_next, book_next_code, book_next_book;
+        if (list_last_is(chapters, chapter)) {
+            if (list_last_is(books, book)) {
+                book_next_book = list_first(books);
+            } else {
+                book_next_book = list_next(books, book);
+            }
+            book_next_code = object_property_get(book_next_book, "book_code");
+            let {chapters} = book_next_book;
+            chapter_next = list_first(chapters);
+        } else {
+            book_next_code = book_code;
+            chapter_next = list_next(chapters, chapter);
+        }
+        let verses_next = await app_verses_generic(app_fn, book_code, chapter);
+        await on_verse_next(book_next_code, chapter_next, object_property_get(list_first(verses_next), "verse_number"));
+    }
+}
+function bible_chapter_unpadded(chapter_name_padded) {
+    let prefix = "0";
+    let chapter_name = string_prefix_without_multiple(chapter_name_padded, prefix);
+    return chapter_name;
+}
+function string_prefix_without_multiple(chapter_name, prefix) {
+    while (string_starts_with(chapter_name, prefix)) {
+        chapter_name = string_prefix_without(chapter_name, prefix);
+    }
+    return chapter_name;
+}
+function string_prefix_without(input, prefix) {
+    assert_boolean(string_starts_with(input, prefix));
+    let prefix_length = string_size(prefix);
+    return string_skip(input, prefix_length);
+}
+function string_skip(input, count) {
+    let length = string_size(input);
+    assert_boolean(count <= length);
+    return input.substring(count);
+}
+function assert_boolean(condition) {
+    assert_boolean_message(condition, assert_message_error);
+}
+function assert_message_error() {
+    return "assert";
+}
+function string_starts_with(input, prefix) {
+    let string_get_lambda = string_get;
+    return string_starts_with_generic(string_get_lambda, input, prefix);
+}
+function string_get(input, index) {
+    return input[index];
+}
+function string_starts_with_generic(string_get_lambda, input, prefix) {
+    let input_length = string_size(input);
+    let prefix_length = string_size(prefix);
+    if (input_length < prefix_length) {
+        return false;
+    }
+    for (let i of range(prefix_length)) {
+        if (string_get_lambda(input, i) !== string_get_lambda(prefix, i)) {
+            return false;
+        }
+    }
+    return true;
+}
+function range(count) {
+    assert_arguments_length(arguments, 1);
+    let offset = 0;
+    return range_generic(count, offset);
+}
+function range_generic(count, offset) {
+    return list_adder(la => {
+        for (let i = 0; i < count; i++) {
+            la(add(i, offset));
+        }
+    });
+}
+function add(a, b) {
+    return a + b;
+}
+function list_adder(lambda) {
+    let result = [];
+    lambda(item => list_add(result, item));
+    return result;
+}
+function list_add(list, item) {
+    assert_arguments_length(arguments, 2);
+    list.push(item);
+}
+function list_next(list, item) {
+    let item_index_next = list_index_next(list, item);
+    let item_next = list_get(list, item_index_next);
+    return item_next;
+}
+function list_get(list, index) {
+    assert(list_index_is, [list, index]);
+    return list[index];
+}
+function list_index_is(list, index) {
+    return greater_than_equal(index, 0) && less_than(index, list_size(list));
+}
+function list_size(list) {
+    assert_arguments_length(arguments, 1);
+    assert(list_is, [list]);
+    return list.length;
+}
+function list_is(candidate) {
+    return Array.isArray(candidate);
+}
+function less_than(a, b) {
+    return a < b;
+}
+function greater_than_equal(a, b) {
+    return a >= b;
+}
+function list_index_next(list, item) {
+    return list_index_change(list, item, add_1);
+}
+function list_index_change(list, item, lambda) {
+    let chapter_index = list_index(list, item);
+    let chapter_index_next = lambda(chapter_index);
+    return chapter_index_next;
+}
+function list_index(list, element) {
+    return list_index_by(list, element, equal);
+}
+function list_index_by(list, element, lambda_equal) {
+    let index = -1;
+    each_index(list, (candidate, candidate_index) => {
+        if (lambda_equal(candidate, element)) {
+            index = candidate_index;
+            return true;
+        }
+    });
+    assert_not(number_less_than, [index, 0]);
+    return index;
+}
+function each_index(list, lambda) {
+    let index = 0;
+    for (let element of list) {
+        if (lambda(element, index) === true) {
+            return;
+        }
+        index++;
+    }
+}
+function number_less_than(a, b) {
+    return a < b;
+}
+function assert_not(fn, args) {
+    returns(fn, false, args);
+}
+function add_1(input) {
+    return add(input, 1);
+}
+function list_first(list) {
+    return list_get(list, 0);
+}
+function list_find_property_next_property(list, property_name, target_value) {
+    let next_item = list_find_property_next(list, property_name, target_value);
+    let value = object_property_get(next_item, property_name);
+    return value;
+}
+function list_find_property_next(list, property_name, target_value) {
+    let next = list_find_property_index_next(list, property_name, target_value);
+    let verse_next = list_get(list, next);
+    return verse_next;
+}
+function list_find_property_index_next(list, property_name, target_value) {
+    let index = list_find_property_index(list, property_name, target_value);
+    let next = add_1(index);
+    return next;
+}
+function list_find_property_index(verses, property_name, target_value) {
+    let indices = list_filter_property_index(verses, property_name, target_value);
+    let index = list_single(indices);
+    return index;
+}
+function list_single(list) {
+    let message_get = () => json_to({
+        fn: fn_name("list_single"),
+        list
+    });
+    return list_single_message(list, message_get);
+}
+function fn_name(name) {
+    return name;
+}
+function list_single_message(list, message_get) {
+    assert_message(list_size_1, [list], message_get);
+    return list_first(list);
+}
+function list_size_1(list) {
+    let length = list_size(list);
+    return equal_1(length);
+}
+function equal_1(length) {
+    return equal(length, 1);
+}
+function list_filter_property_index(verses, property_name, target_value) {
+    return list_filter_index(verses, verse => {
+        let value = object_property_get(verse, property_name);
+        if (value === target_value) {
+            return true;
+        }
+        return false;
+    });
+}
+function list_filter_index(list, filter) {
+    let mapped = list_map_index(list, (item, index) => ({
+        item,
+        index
+    }));
+    let filtered = list_filter(mapped, m => filter(m.item));
+    return list_map_property(filtered, "index");
+}
+function list_filter(list, filter) {
+    return list.filter(item => filter(item));
+}
+function list_map_index(list, mapper) {
+    return list.map((element, index) => mapper(element, index));
+}
+function list_map_property(list, property_name) {
+    return list_map(list, object_property_get_curry(property_name));
+}
+function object_property_get_curry(property_name) {
+    return l => object_property_get(l, property_name);
+}
+function list_map(list, mapper) {
+    assert_arguments_length(arguments, 2);
+    return list.map(element => mapper(element));
+}
+function list_last_is(list, item) {
+    return list_index(list, item) === list_index_last(list);
+}
+function list_index_last(list) {
+    let length = list_size(list);
+    let index_last = length - 1;
+    assert(greater_than_equal, [index_last, 0]);
+    return index_last;
+}
+async function app_verses_generic(app_fn, book_code, chapter) {
+    let chapter_code = app_gs_bible_chapter_name(book_code, chapter);
+    let a = await global_function_initialize(app_fn, () => ({}));
+    let version_code = app_record_version_code();
+    let verses = await object_property_get_or_async(a, chapter_code, async () => await bible_storage_version_http_get(chapter_code, version_code));
+    return verses;
+}
+async function bible_storage_version_http_get(chapter_code, version_code) {
+    let file_path = bible_storage_path_file_version(chapter_code, version_code);
+    let verses = await http_storage_get(file_path);
+    return verses;
+}
+async function http_storage_get(file_path) {
+    return await http_get(storage_url(file_path));
+}
+function storage_url(file_path) {
+    let replaced = string_replace(file_path, "/", string_slash_encoded());
+    return string_combine_multiple(["https://firebasestorage.googleapis.com/v0/b/letjesusbeexalted.appspot.com/o/", replaced, "?alt=media"]);
+}
+function string_combine_multiple(list) {
+    assert_arguments_length(arguments, 1);
+    assert(list_is, [list]);
+    let result = "";
+    for (let l of list) {
+        result = string_combine(result, l);
+    }
+    return result;
+}
+function string_combine(a, b) {
+    assert_arguments_length(arguments, 2);
+    return a + b;
+}
+function string_slash_encoded() {
+    return "%2F";
+}
+function string_replace(input, from, to) {
+    let split = string_split(input, from);
+    let joined = list_join(split, to);
+    return joined;
+}
+function string_split(input, delimeter) {
+    assert_arguments_length(arguments, 2);
+    return input.split(delimeter);
+}
+function list_join(list, join_by) {
+    return list.join(join_by);
+}
+async function http_get(url) {
+    let axios = await import_multi("axios", "axios");
+    if (web_not_is()) {
+        axios = axios.default;
+    }
+    let result = await axios.get(url);
+    return http_data_get(result);
+}
+function web_not_is() {
+    return typeof window === "undefined";
+}
+function http_data_get(result) {
+    let {status, data} = result;
+    assert(equal, [status, 200]);
+    return data;
+}
+async function import_multi(libary_to_import, variable_to_eval) {
+    let a;
+    if (web_is()) {
+        a = eval(variable_to_eval);
+    } else {
+        a = await import(libary_to_import);
+    }
+    return a;
+}
+function web_is() {
+    return !web_not_is();
+}
+function bible_storage_path_file_version(key, version_code) {
+    let file_name = file_name_json(key);
+    return string_combine(bible_storage_path_version(version_code), file_name);
+}
+function bible_storage_path_version(version_code) {
+    return string_combine_multiple([bible_storage_path(), version_code, "/"]);
+}
+function bible_storage_path() {
+    assert_arguments_length(arguments, 0);
+    return "bible/";
+}
+function file_name_json(without_extension) {
+    return string_combine(without_extension, ".json");
+}
+async function object_property_get_or_async(n, property_name, default_value_get) {
+    let result;
+    if (object_property_exists_not(n, property_name)) {
+        result = await default_value_get();
+    } else {
+        result = object_property_get(n, property_name);
+    }
+    return result;
+}
+function object_property_exists_not(lookup, right) {
+    assert_arguments_length(arguments, 2);
+    return not(object_property_exists(lookup, right));
+}
+function object_property_exists(object, property_name) {
+    return Object.hasOwn(object, property_name);
+}
+function not(b) {
+    return !b;
+}
+function global_function_initialize(fn, value_get) {
+    let g = global_get();
+    let counts = object_property_initialize_get(g, fn.name, value_get);
+    return counts;
+}
+function object_property_initialize_get(lookup, key, initial) {
+    if (object_property_exists_not(lookup, key)) {
+        object_property_set(lookup, key, initial());
+    }
+    return object_property_get(lookup, key);
+}
+function global_get() {
+    if (web_is()) {
+        return global;
+    }
+    return g;
+}
+function app_gs_bible_chapter_name(book_id, chapter) {
+    chapter = app_gs_bible_chapter_code(book_id, chapter);
+    return string_combine_multiple([book_id, chapter]);
+}
+function app_gs_bible_chapter_code(book_id, chapter) {
+    if (book_id === "PSA") {
+        chapter = number_pad(chapter, 3);
+    } else {
+        chapter = number_pad_2(chapter);
+    }
+    return chapter;
+}
+function number_pad_2(chapter) {
+    return number_pad(chapter, 2);
+}
+function number_pad(input, padding_count) {
+    assert_arguments_length(arguments, 2);
+    return input.toString().padStart(padding_count, "0");
+}
+function list_find_property(list, property_name, value) {
+    return list_find_property_or_generic(list, property_name, value, null, false);
+}
+function list_find_property_or_generic(list, property_name, value, or_value, use_or) {
+    let results = list_filter_property(list, property_name, value);
+    if (list_size_1(results)) {
+        let npc = list_single(results);
+        return npc;
+    }
+    if (use_or) {
+        return or_value;
+    }
+    error();
+}
+function list_filter_property(list, property_name, value) {
+    assert_arguments_length(arguments, 3);
+    return list_filter(list, m => equal(object_property_get(m, property_name), value));
+}
+async function clipboard_copy_web(text) {
+    await navigator.clipboard.writeText(text);
+}
+function bible_book_chapter_text(book_code, chapter) {
+    return string_combine_multiple(["📖 chapter ", bible_book_name(book_code), " ", chapter]);
+}
+function bible_book_name(book_id) {
+    assert_arguments_length(arguments, 1);
+    return object_property_get(bible_books_prefix_to_name(), string_case_upper(book_id));
+}
+function string_case_upper(input) {
+    return input.toUpperCase();
+}
+function bible_books_prefix_to_name() {
+    return {
+        GEN: "Genesis",
+        EXO: "Exodus",
+        LEV: "Leviticus",
+        NUM: "Numbers",
+        DEU: "Deuteronomy",
+        JOS: "Joshua",
+        JDG: "Judges",
+        RUT: "Ruth",
+        "1SA": "1 Samuel",
+        "2SA": "2 Samuel",
+        "1KI": "1 Kings",
+        "2KI": "2 Kings",
+        "1CH": "1 Chronicles",
+        "2CH": "2 Chronicles",
+        EZR: "Ezra",
+        NEH: "Nehemiah",
+        EST: "Esther",
+        JOB: "Job",
+        PSA: "Psalms",
+        PRO: "Proverbs",
+        ECC: "Ecclesiastes",
+        SNG: "Song of Solomon",
+        ISA: "Isaiah",
+        JER: "Jeremiah",
+        LAM: "Lamentations",
+        EZK: "Ezekiel",
+        DAN: "Daniel",
+        HOS: "Hosea",
+        JOL: "Joel",
+        AMO: "Amos",
+        OBA: "Obadiah",
+        JON: "Jonah",
+        MIC: "Micah",
+        NAM: "Nahum",
+        HAB: "Habakkuk",
+        ZEP: "Zephaniah",
+        HAG: "Haggai",
+        ZEC: "Zechariah",
+        MAL: "Malachi",
+        TOB: "Tobit",
+        JDT: "Judith",
+        ESG: "Esther (Greek)",
+        DAG: "Daniel (Greek)",
+        WIS: "Wisdom",
+        SIR: "Sirach",
+        BAR: "Baruch",
+        "1MA": "1 Maccabees",
+        "2MA": "2 Maccabees",
+        "1ES": "1 Esdras",
+        MAN: "Prayer of Manasses",
+        PS2: "Psalm 151",
+        "3MA": "3 Maccabees",
+        "2ES": "2 Esdras",
+        "4MA": "4 Maccabees",
+        MAT: "Matthew",
+        MRK: "Mark",
+        LUK: "Luke",
+        JHN: "John",
+        ACT: "Acts",
+        ROM: "Romans",
+        "1CO": "1 Corinthians",
+        "2CO": "2 Corinthians",
+        GAL: "Galatians",
+        EPH: "Ephesians",
+        PHP: "Philippians",
+        COL: "Colossians",
+        "1TH": "1 Thessalonians",
+        "2TH": "2 Thessalonians",
+        "1TI": "1 Timothy",
+        "2TI": "2 Timothy",
+        TIT: "Titus",
+        PHM: "Philemon",
+        HEB: "Hebrews",
+        JAS: "James",
+        "1PE": "1 Peter",
+        "2PE": "2 Peter",
+        "1JN": "1 John",
+        "2JN": "2 John",
+        "3JN": "3 John",
+        JUD: "Jude",
+        REV: "Revelation"
+    };
+}
+function html_button_next_text() {
+    return "➡️ next";
+}
+function list_previous(list, item) {
+    let previous_index = list_index_previous(list, item);
+    let previous = list_get(list, previous_index);
+    return previous;
+}
+function list_index_previous(list, item) {
+    return list_index_change(list, item, subtract_1);
+}
+function subtract_1(input) {
+    return subtract(input, 1);
+}
+function subtract(a, b) {
+    return a - b;
+}
+function html_button_width_full_text_click(parent, text, on_click) {
+    assert_arguments_length(arguments, 3);
+    let b = html_button_width_full_text(parent, text);
+    html_on_click(b, on_click);
+    return b;
+}
+function html_on_click(component, lambda) {
+    html_on(component, "click", lambda);
+}
+function html_on(component, type, lambda) {
+    let {element} = component;
+    html_event_listener(element, type, lambda);
+}
+function html_event_listener(element, type, lambda) {
+    element.addEventListener(type, lambda);
+}
+function html_button_width_full_text(parent, button_text) {
+    assert_arguments_length(arguments, 2);
+    let button_previous = html_button_width_full(parent);
+    html_inner_set(button_previous, button_text);
+    return button_previous;
+}
+function html_inner_set(component, text) {
+    let {element} = component;
+    element.innerHTML = text;
+}
+function html_button_width_full(parent) {
+    let b = html_button(parent);
+    html_style_width_full(b);
+    return b;
+}
+function html_style_width_full(component) {
+    let value = "100%";
+    html_style_width(component, value);
+}
+function html_style_width(component, value) {
+    html_style(component, {
+        width: value
+    });
+}
+function html_style(component, styles) {
+    let {element} = component;
+    object_merge(element.style, styles);
+}
+function html_button(root) {
+    let result = html_element(root, "button");
+    html_style_button_default(result);
+    return result;
+}
+function html_style_button_default(component_button) {
+    html_style(component_button, html_style_button_default_value());
+}
+function html_style_button_default_value() {
+    return d;
+}
+function html_element(parent, tag_name) {
+    assert_arguments_length(arguments, 2);
+    let {element} = parent;
+    let e = document.createElement(tag_name);
+    element.appendChild(e);
+    let result = {
+        element: e
+    };
+    html_style_font_color_default_set(result);
+    html_style(result, html_style_default());
+    html_id(result);
+    return result;
+}
+function html_id(component) {
+    if (html_attribute_has(component, "id")) {
+        return html_attribute_get(component, "id");
+    }
+    let data = global_function(html_scrollable_hide);
+    let id_next = object_property_initialize(data, "id_next", 0);
+    let id = number_to_letters(id_next);
+    html_attribute_set(component, "id", id);
+    id_next++;
+    object_property_set(data, "id_next", id_next);
+    return id;
+}
+function html_attribute_get(component, name) {
+    let {element} = component;
+    return element.getAttribute(name);
+}
+function html_attribute_has(button, value) {
+    let {element} = button;
+    let result = element.hasAttribute(value);
+    return result;
+}
+function html_attribute_set(component, name, value) {
+    let {element} = component;
+    element.setAttribute(name, value);
+}
+function number_to_letters(input) {
+    let alphabet = keyboard_keys_sorted();
+    input = integer_parse(input);
+    let b26 = input.toString(26);
+    let r10 = list_map(range(10), string_to);
+    let input_alphabet = list_concat(r10, alphabet);
+    let result = list_map(string_split_empty(b26), i => {
+        let index = list_index(input_alphabet, i);
+        return list_get(alphabet, index);
+    });
+    return list_join_empty(result);
+}
+function list_join_empty(symbols) {
+    return list_join(symbols, "");
+}
+function string_split_empty(input) {
+    return string_split(input, "");
+}
+function string_to(input) {
+    return input.toString();
+}
+function keyboard_keys_sorted() {
+    let letters = keyboard_keys();
+    list_sort_string(letters, identity);
+    return letters;
+}
+function identity(input) {
+    return input;
+}
+function list_sort_string(list, element_mapper) {
+    var collator = new Intl.Collator([], {
+        numeric: true
+    });
+    list.sort((a, b) => collator.compare(element_mapper(a), element_mapper(b)));
+}
+function keyboard_keys() {
+    let ks = keyboard_keys_rows();
+    let concat = list_concat_multiple(ks);
+    return concat;
+}
+function keyboard_keys_rows() {
+    return ["qwertyuiop", "asdfghjkl", "zxcvbnm"];
+}
+function list_concat_multiple(lists) {
+    let result = [];
+    for (let list of lists) {
+        list_add_multiple(result, list);
+    }
+    return result;
+}
+function list_add_multiple(list, other) {
+    for (let o of other) {
+        list_add(list, o);
+    }
+}
+function list_concat(a, b) {
+    assert_arguments_length(arguments, 2);
+    return a.concat(b);
+}
+function integer_parse(input) {
+    let result = integer_parse_try(input);
+    assert(number_is, [result]);
+    return result;
+}
+function integer_parse_try(verse_number) {
+    return parseInt(verse_number, 10);
+}
+function number_is(value) {
+    return typeof value === "number" && !isNaN(value);
+}
+function object_property_initialize(object, key, initial) {
+    return object_property_initialize_get(object, key, () => initial);
+}
+function html_scrollable_hide(context) {
+    html_style(context.root, {
+        overflow: "hidden"
+    });
+    return;
+    let style = html_element(context.root, "style");
+    let id = html_id(context.root);
+    html_inner_set(style, `#${id}::-webkit-scrollbar {
+  display: none;
+}`);
+    html_style(context.map_c, {
+        overflow: "scroll",
+        "scrollbar-width": "none",
+        "-ms-overflow-style": "none"
+    });
+}
+function global_function(fn) {
+    return global_function_initialize(fn, () => ({}));
+}
+function html_style_font_color_default_set(component) {
+    html_style_font_color(component, html_style_font_color_default());
+}
+function html_style_font_color_default() {
+    return "black";
+}
+function html_style_font_color(component, color) {
+    html_style(component, {
+        [html_style_font_color_property()]: color
+    });
+}
+function html_style_font_color_property() {
+    return "color";
+}
+function html_style_default() {
+    return object_property_initialize(global_get(), html_style_default.name, {});
+}
+function html_div(root_component) {
+    return html_element(root_component, "div");
+}
+function html_style_green(second) {
+    html_style(second, {
+        color: "green"
+    });
+}
+function html_hr(parent) {
+    return html_element(parent, "hr");
+}
+function html_bible_verse(root, book_code, chapter, verse) {
+    let {tokens, verse_number} = verse;
+    let vn = html_bible_verse_number(root, book_code, chapter, verse_number);
+    each(tokens, token => {
+        html_spacer(root);
+        html_a(root, token, google_search_url(string_combine_multiple(["define: ", token])));
+    });
+    return vn;
+}
+function google_search_url(query) {
+    return string_combine_multiple([url_secure_w3(), "google.com/search?q=", query]);
+}
+function url_secure_w3() {
+    assert_arguments_length(arguments, 0);
+    return string_combine(url_secure(), "www.");
+}
+function url_secure() {
+    return "https://";
+}
+function html_a(e, text, url) {
+    let a = html_element(e, "a");
+    html_inner_set(a, text);
+    html_attribute_set(a, "href", url);
+    html_attribute_set(a, "target", "_blank");
+    html_a_style(a);
+    return a;
+}
+function html_a_style(a) {
+    html_style(a, html_style_default_a());
+}
+function html_style_default_a() {
+    return object_property_initialize(global_get(), html_style_default_a.name, {});
+}
+function html_spacer(root) {
+    html_span_text(root, " ");
+}
+function html_span_text(parent, text) {
+    let a = html_span(parent);
+    html_inner_set(a, text);
+    return a;
+}
+function html_span(parent) {
+    return html_element(parent, "span");
+}
+function html_bible_verse_number(root, book_code, chapter, verse_number) {
+    let vn = html_span_text(root, bible_reference(bible_book_name(book_code), chapter, verse_number));
+    html_style_bold(vn);
+    return vn;
+}
+function html_style_bold(component) {
+    return html_style(component, {
+        "font-weight": "bold"
+    });
+}
+function bible_reference(book_name, chapter, verse_number) {
+    chapter = bible_chapter_unpadded(chapter);
+    return string_combine_multiple([book_name, " ", chapter, ":", verse_number]);
+}
+function app_record_verse_buttons(context, book_code, chapter, on_verse) {
+    let {root} = context;
+    app_record_chapter_buttons(context, book_code, on_verse);
+    let chapter_text = bible_book_chapter_text(book_code, chapter);
+    html_button_width_full_text_click(root, chapter_text, async () => await app_record_chapter(context, book_code, chapter, on_verse));
+    html_hr(root);
+}
+async function app_record_chapter(context, book_code, chapter, on_verse) {
+    await app_save_change(app_record, save => object_replace(save, {
+        book: book_code,
+        chapter
+    }));
+    let {root} = context;
+    let verses = await app_record_verses(book_code, chapter);
+    app_record_chapter_buttons(context, book_code, app_record_verse);
+    html_p_text_centered(root, bible_book_chapter_text(book_code, chapter));
+    each(verses, verse => {
+        let {tokens, verse_number} = verse;
+        let p = html_button_width_full_text_click(root, "", async () => {
+            await on_verse(context, book_code, chapter, verse_number);
+        });
+        let vn = html_span_text(p, verse_number);
+        html_style_bold(vn);
+        html_span_text(p, " ");
+        html_span_text(p, list_join_space(tokens));
+    });
+}
+function html_p_text_centered(root, text) {
+    let b = html_p_text(root, text);
+    html_style_centered(b);
+}
+function html_style_centered(component) {
+    let value = "center";
+    html_style_text_align(component, value);
+}
+function html_style_text_align(component, value) {
+    html_style(component, {
+        "text-align": value
+    });
+}
+function html_p_text(parent, text) {
+    assert_arguments_length(arguments, 2);
+    let p = html_p(parent);
+    html_inner_set(p, text);
+    return p;
+}
+function html_p(parent) {
+    return html_element(parent, "p");
+}
+async function app_save_change(app_fn, lambda) {
+    let save = app_save_get(app_fn);
+    await lambda(save);
+    app_save_set(app_fn, save);
+    return save;
+}
+function app_save_set(app_fn, save) {
+    storage_local_set(app_fn, "save", save);
+}
+function storage_local_set(fn_namespace, key, value) {
+    let json = json_to(value);
+    localStorage.setItem(storage_local_key(fn_namespace, key), json);
+}
+function storage_local_key(fn_namespace, key) {
+    return list_join_space([fn_namespace.name, key]);
+}
+function list_join_space(list) {
+    return list_join(list, " ");
+}
+function app_save_get(app_fn) {
+    if (storage_local_exists_not(app_fn, "save")) {
+        storage_local_set(app_fn, "save", {});
+    }
+    let save = storage_local_get(app_fn, "save");
+    return save;
+}
+function storage_local_get(fn_namespace, key) {
+    let json = localStorage.getItem(storage_local_key(fn_namespace, key));
+    let item = json_from(json);
+    return item;
+}
+function json_from(input) {
+    return JSON.parse(input);
+}
+function storage_local_exists_not(fn_namespace, key) {
+    return !storage_local_exists(fn_namespace, key);
+}
+function storage_local_exists(fn_namespace, key) {
+    return storage_local_get(fn_namespace, key) !== null;
+}
+function app_record_chapter_buttons(context, book_code, on_verse) {
+    let {root} = context;
+    html_clear_scroll_top(root);
+    app_record_home_button(context, on_verse);
+    html_button_width_full_text_click(root, bible_book_name_text(book_code), async () => await app_record_book(context, book_code, on_verse));
+}
+function bible_book_name_text(book_code) {
+    return string_combine_multiple(["📖 book ", bible_book_name(book_code)]);
+}
+function html_clear_scroll_top(root) {
+    html_clear(root);
+    html_scroll_top();
+}
+function html_scroll_top() {
+    window.scrollTo({
+        top: 0
+    });
+}
+function html_clear(root) {
+    html_inner_set(root, "");
+}
+async function app_record_book(context, book_code, on_verse) {
+    await app_save_change(app_record, save => object_replace(save, {
+        book: book_code
+    }));
+    let lambda_top = () => {
+        app_record_home_button(context, on_verse);
+        let {root} = context;
+        html_p_text_centered(root, bible_book_name_text(book_code));
+    };
+    app_record_book_generic(context, lambda_top, book_code, async (context, book_code, chapter) => await app_record_chapter(context, book_code, chapter, on_verse));
+}
+function app_record_home_button(context, on_verse) {
+    let {root} = context;
+    html_button_width_full_text_click_home(root, async () => await app_record_home(context, on_verse));
+}
+function html_button_width_full_text_click_home(root, home_on_click) {
+    html_button_width_full_text_click(root, "🏠 go back home", home_on_click);
+}
+function app_record_book_generic(context, lambda_top, book_code, app_record_book_on_click) {
+    let chapter_selected = app_memorize_chapter_get(context);
+    let {root} = context;
+    html_clear_scroll_top(root);
+    lambda_top();
+    let {books} = context;
+    let book = list_find_property(books, "book_code", book_code);
+    each(book.chapters, chapter => {
+        let b = html_button_text_click(root, chapter, async () => {
+            await app_record_book_on_click(context, book_code, chapter);
+        });
+        html_style_success_if(b, chapter_selected, chapter);
+    });
+}
+function app_memorize_chapter_get(context) {
+    let save = app_memorize_save_get(context);
+    let {chapter} = save;
+    return chapter;
+}
+function app_memorize_save_get(context) {
+    return object_property_initialize(context, "save", {});
+}
+function html_style_success_if(button, expected, actual) {
+    if (equal_json(actual, expected)) {
+        html_style_success(button);
+    }
+}
+function equal_json(a, b) {
+    return equal_by(a, b, json_to);
+}
+function equal_by(a, b, mapper) {
+    return equal(mapper(a), mapper(b));
+}
+function html_style_success(component) {
+    html_style(component, {
+        "background-color": html_style_success_background(),
+        "border-color": "MediumSeaGreen"
+    });
+}
+function html_style_success_background() {
+    return "lightgreen";
+}
+function html_button_text_click(container, text, lambda) {
+    let b = html_button_text(container, text);
+    html_on_click(b, lambda);
+    return b;
+}
+function html_button_text(container, text) {
+    let b = html_button(container);
+    html_inner_set(b, text);
+    return b;
+}
+async function app_record_verses(book_code, chapter) {
+    assert_arguments_length(arguments, 2);
+    return await app_verses_generic(app_record, book_code, chapter);
+}
+async function app_save_change_bible(app_fn, book_code, chapter, verse_number) {
+    await app_save_change(app_fn, save => object_replace(save, {
+        book: book_code,
+        chapter,
+        verse: verse_number
+    }));
+}
+function html_button_width_full_text_click_br(parent, text, lambda) {
+    let result = html_button_width_full_text_click(parent, text, lambda);
+    html_br(parent);
+    return result;
+}
+function html_br(root) {
+    return html_element(root, "br");
+}
+async function html_audio(src) {
+    let a = new Audio(src);
+    let result = new Promise(resolve => {
+        a.addEventListener("ended", function () {
+            a.currentTime = 0;
+            resolve();
+        });
+    });
+    await a.play();
+    return await result;
+}
+function app_record_project_name() {
+    return "third";
+}
+async function firebase_upload_bytes(storage_path, blob) {
+    assert_arguments_length(arguments, 2);
+    let storage = getStorage();
+    let storageRef = ref(storage, storage_path);
+    let snapshot = await uploadBytes(storageRef, blob);
+}
+function path_join(paths) {
+    let joined = list_join(paths, "/");
+    return string_replace(joined, "//", "/");
+}
+function folder_audio_bible() {
+    return "audio/bible/";
+}
+function date_string_iso_file() {
+    let d = date_string_iso();
+    d = string_replace_multiple(d, [":", "."], "_");
+    d = string_replace(d, "Z", "");
+    return d;
+}
+function string_replace_multiple(input, froms, to) {
+    for (let from of froms) {
+        input = string_replace(input, from, to);
+    }
+    return input;
+}
+function date_string_iso() {
+    return date_now().toISOString();
+}
+function date_now() {
+    return new Date();
+}
+function html_style_display_block(container_bottom) {
+    html_style(container_bottom, {
+        display: "block"
+    });
+}
+function html_style_display_none(container_bottom) {
+    html_style(container_bottom, {
+        display: "none"
+    });
+}
+function html_recorder_media_start(mr) {
+    let AudioContext = window.AudioContext || window.webkitAudioContext;
+    let audioContext = new AudioContext();
+    let {media_recorder} = mr;
+    media_recorder.start();
+}
+async function html_recorder_media_stop(mr) {
+    let {media_recorder, chunks} = mr;
+    let type = "stop";
+    return await new Promise(resolve => {
+        html_event_listener(media_recorder, type, async function on_stop() {
+            html_event_listener_remove(media_recorder, type, on_stop);
+            let blob = new Blob(chunks, {
+                type: chunks[0].type
+            });
+            let blob_mp3 = await html_wav_to_mp3(blob);
+            list_remove_all(chunks);
+            resolve(blob_mp3);
+        });
+        media_recorder.stop();
+    });
+}
+function html_event_listener_remove(element, type, on_load) {
+    element.removeEventListener(type, on_load);
+}
+async function html_wav_to_mp3(wav_blob) {
+    return await new Promise((resolve, reject) => {
+        let reader = new FileReader();
+        reader.onload = function () {
+            let arrayBuffer = this.result;
+            let wavDecoder = breezystacklamejs.WavHeader.readHeader(new DataView(arrayBuffer));
+            let wavSamples = new Int16Array(arrayBuffer, wavDecoder.dataOffset, wavDecoder.dataLen / 2);
+            let mp3Encoder = new breezystacklamejs.Mp3Encoder(wavDecoder.channels, wavDecoder.sampleRate, 128);
+            let mp3Buffer = mp3Encoder.encodeBuffer(wavSamples);
+            let mp3Data = mp3Encoder.flush();
+            let mp3BufferWithHeader = new Uint8Array(mp3Buffer.length + mp3Data.length);
+            mp3BufferWithHeader.set(mp3Buffer, 0);
+            mp3BufferWithHeader.set(mp3Data, mp3Buffer.length);
+            let mp3Blob = new Blob([mp3BufferWithHeader], {
+                type: "audio/mp3"
+            });
+            resolve(mp3Blob);
+        };
+        reader.onerror = function (e) {
+            reject(e);
+        };
+        reader.readAsArrayBuffer(wav_blob);
+    });
+}
+function list_remove_all(nexts) {
+    nexts.length = 0;
+}
+function noop() {}
+function app_record_home_generic(context, lambda_before, app_record_home_on_click, highlight) {
+    let {root} = context;
+    let {books} = context;
+    html_clear_scroll_top(root);
+    lambda_before(root);
+    each(books, book => {
+        let {book_code} = book;
+        let b = html_button_text_click(root, book_code, async function () {
+            await app_record_home_on_click(context, book_code);
+        });
+        html_style_success_if(b, highlight, book_code);
+    });
+}
+function object_property_get_or(o, property_name, default_value) {
+    let result;
+    if (object_property_exists_not(o, property_name)) {
+        result = default_value;
+    } else {
+        result = object_property_get(o, property_name);
+    }
+    return result;
+}
+function html_hash_lookup() {
+    let lookup = {};
+    let hash = html_hash_get();
+    if (html_hash_exists()) {
+        let hash_no_tag = string_prefix_without(hash, "#");
+        let split = string_split_comma(hash_no_tag);
+        for (let s of split) {
+            let split2 = string_split_equal(s);
+            let s2_length = list_size(split2);
+            assert(equal, [s2_length, 2]);
+            let key = list_get(split2, 0);
+            let value = list_get(split2, 1);
+            object_property_set(lookup, key, value);
+        }
+    }
+    return lookup;
+}
+function string_split_equal(s) {
+    return string_split(s, "=");
+}
+function string_split_comma(input) {
+    return string_split(input, ",");
+}
+function html_hash_exists() {
+    return greater_than(string_size(html_hash_get()), 0);
+}
+function html_hash_get() {
+    return window.location.hash;
+}
+function greater_than(a, b) {
+    return a > b;
+}
+async function app_context_books_bible_generic(context, version_code) {
+    let {books} = await bible_storage_version_http_get("books", version_code);
+    object_merge(context, {
+        books
+    });
+}
+async function html_recorder_media() {
+    let port = await connect();
+    await register(port);
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        error("getUserMedia not supported on your browser!");
+    }
+    let stream = await navigator.mediaDevices.getUserMedia({
+        audio: true
+    });
+    let media_recorder = new MediaRecorder(stream, {
+        mimeType: "audio/wav"
+    });
+    let result = {
+        media_recorder,
+        chunks: []
+    };
+    media_recorder.ondataavailable = function (e) {
+        result.chunks.push(e.data);
+    };
+    return result;
+}
+function html_button_next(root, next_on_click) {
+    return html_button_width_full_text_click(root, html_button_next_text(), next_on_click);
+}
+function app_pray_word() {
+    return ["Cause the word of God to be perfectly engrafted into all hearts;", "Cause the planting and watering of the word of God to have perfectly maximized increase;", "Cause all to be a perfect hearer of the word of God;", "Cause the eyes and ears of all to perfectly be opened up to Scripture and truth;", "Cause all to be a perfect doer of the word of God;"];
+}
+function html_prayer(root, prayer) {
+    html_p_text_multiple(root, list_concat_multiple([["Heavenly Father,", "In the name of the Trinity:", "Have mercy on me, a sinner;"], prayer, ["Amen"]]));
+}
+function html_p_text_multiple(parent, paragraphs) {
+    for (let p of paragraphs) {
+        html_p_text(parent, p);
+    }
+}
+function html_style_a_plain() {
+    html_style_default_a_merge({
+        [html_style_text_decoration_property()]: "none",
+        [html_style_font_color_property()]: "black"
+    });
+}
+function html_style_text_decoration_property() {
+    return "text-decoration";
+}
+function html_style_default_a_merge(e) {
+    object_merge(html_style_default_a(), e);
+}
+async function app_firebase(a) {
+    let {on_logged_in, on_initialized} = a;
+    on_initialized = on_initialized || noop;
+    let root = html_style_default_initialize();
+    on_initialized();
+    await html_script_axios(root);
+    firebase_initialize();
+    let auth = firebase_auth();
+    onAuthStateChanged(auth, async user => {
+        if (user) {
+            await on_logged_in({
+                root
+            });
+        } else {
+            app_record_login(root);
+        }
+    });
+    return root;
+}
+function app_record_login(parent) {
+    html_clear_scroll_top(parent);
+    let email = html_input_width_full_focus(parent);
+    let password = html_input_width_full(parent);
+    html_attribute_set(password, "type", "password");
+    let error_message;
+    html_button_width_full_text_click(parent, "login", async () => {
+        try {
+            await firebase_login(html_value_get(email), html_value_get(password));
+        } catch (e) {
+            html_inner_set(error_message, e.message);
+            html_style_visible(error_message);
+        }
+    });
+    error_message = html_p(parent);
+    html_style_hidden(error_message);
+    html_style_rounded_padded(error_message);
+    html_style(error_message, html_style_button_default_border());
+    html_style_wrong(error_message);
+}
+function html_input_width_full_focus(parent) {
+    let input = html_input_width_full(parent);
+    html_focus(input);
+    return input;
+}
+function html_focus(input) {
+    let {element} = input;
+    element.focus();
+}
+function html_input_width_full(root) {
+    let input = html_input(root);
+    html_style_rounded_padded(input);
+    html_spellcheck_none(input);
+    html_style_width_full(input);
+    return input;
+}
+function html_style_rounded_padded(component) {
+    html_style(component, html_style_rounded_padded_style());
+}
+function html_style_rounded_padded_style() {
+    return {
+        padding: html_style_units(2),
+        "border-radius": html_style_units(5)
+    };
+}
+function html_style_units(units) {
+    return 0.1 * units + "rem";
+}
+function html_spellcheck_none(ta) {
+    let {element} = ta;
+    element.spellcheck = false;
+}
+function html_input(root) {
+    let input = html_element(root, "input");
+    html_style_border_box(input);
+    return input;
+}
+function html_style_border_box(input) {
+    html_style(input, html_style_border_box_get());
+}
+function html_style_border_box_get() {
+    return {
+        "box-sizing": "border-box"
+    };
+}
+function html_style_button_default_border() {
+    let color = html_style_button_default_border_color();
+    return html_style_default_border_value(color);
+}
+function html_style_default_border_value(color) {
+    return {
+        border: string_combine("solid 0.5dvh ", color)
+    };
+}
+function html_style_button_default_border_color() {
+    return "dodgerblue";
+}
+function html_style_wrong(button) {
+    html_style(button, {
+        "border-color": "red"
+    });
+    html_style_background_color(button, "salmon");
+}
+function html_style_background_color(container, color) {
+    assert_arguments_length(arguments, 2);
+    html_style(container, {
+        "background-color": color
+    });
+}
+function html_value_get(component) {
+    let {element} = component;
+    return object_property_get(element, "value");
+}
+async function firebase_login(email, password) {
+    let auth = firebase_auth();
+    let {user} = await signInWithEmailAndPassword(auth, email, password);
+    return user;
+}
+function firebase_auth() {
+    let {firebase} = global_get();
+    let {auth} = firebase;
+    return auth;
+}
+function html_style_hidden(code) {
+    html_style(code, {
+        visibility: "hidden"
+    });
+}
+function html_style_visible(component) {
+    html_style(component, {
+        visibility: "visible"
+    });
+}
+function firebase_initialize() {
+    let firebaseConfig = {
+        apiKey: "AIzaSyBzIDxtdV44GoO3NH_a6KSw7iJ9Oa-trQU",
+        authDomain: "letjesusbeexalted.firebaseapp.com",
+        projectId: "letjesusbeexalted",
+        storageBucket: "letjesusbeexalted.appspot.com",
+        messagingSenderId: "1088010912651",
+        appId: "1:1088010912651:web:99fe9a26960793a702658e"
+    };
+    let app = initializeApp(firebaseConfig);
+    let auth = getAuth(app);
+    object_merge(global_get(), {
+        firebase: {
+            app,
+            auth
+        }
+    });
+}
+async function html_script_axios(root) {
+    let c = html_element(root, "script");
+    html_attribute_set(c, "src", "https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js");
+    html_attribute_set(c, "integrity", "sha512-PJa3oQSLWRB7wHZ7GQ/g+qyv6r4mbuhmiDb8BjSFZ8NZ2a42oTtAq5n0ucWAwcQDlikAtkub+tPVCw4np27WCg==");
+    html_attribute_set(c, "crossorigin", "anonymous");
+    html_attribute_set(c, "referrerpolicy", "no-referrer");
+    await html_load_wait(c);
+    return c;
+}
+async function html_load_wait(component) {
+    await new Promise(function (resolve) {
+        let type = "load";
+        html_on(component, type, function on_load() {
+            html_on_remove(component, type, on_load);
+            resolve();
+        });
+    });
+}
+function html_on_remove(component, type, on_load) {
+    let {element} = component;
+    html_event_listener_remove(element, type, on_load);
+}
+function html_style_default_initialize() {
+    let root = html_document_body();
+    html_style_sans_serif(root);
+    object_merge(html_style_default(), html_style_border_box_get());
+    html_style_default_font_size(html_style_default_font_size_value());
+    html_style_button_default_initialize();
+    let e = {
+        [html_style_font_color_property()]: "darkblue"
+    };
+    html_style_default_a_merge(e);
+    return root;
+}
+function html_document_body() {
+    let result = {
+        element: document.body
+    };
+    html_id(result);
+    return result;
+}
+function html_style_button_default_initialize() {
+    let d = html_style_button_default_value();
+    html_style_default_border_margin(d);
+    object_merge(html_style_button_default_value(), {
+        "background-color": html_style_button_default_background_color()
+    });
+}
+function html_style_default_border_margin(d) {
+    object_merge(d, html_style_rounded_padded_style());
+    object_merge(d, html_style_margin_default_value());
+    object_merge(d, html_style_button_default_border());
+    return d;
+}
+function html_style_margin_default_value() {
+    return {
+        margin: "0.5dvh"
+    };
+}
+function html_style_button_default_background_color() {
+    return "lightblue";
+}
+function html_style_default_font_size_value() {
+    return 3;
+}
+function html_style_default_font_size(default_font_size) {
+    object_merge(html_style_default(), html_style_font_size_object(default_font_size));
+}
+function html_style_font_size_object(default_font_size) {
+    return {
+        [html_style_font_size_property()]: html_style_default_font_size_value_get(default_font_size)
+    };
+}
+function html_style_font_size_property() {
+    return "font-size";
+}
+function html_style_default_font_size_value_get(default_font_size) {
+    return string_combine(default_font_size.toString(), "vh");
+}
+function html_style_sans_serif(root) {
+    html_style(root, {
+        "font-family": "sans-serif"
+    });
+}
+async function app_bible_verse(context, book_code, chapter, verse_number) {
+    let {middle} = await app_record_verse_generic(app_bible, book_code, chapter, verse_number, context, app_bible_verse);
+    let book_name = object_property_get(bible_books_prefix_to_name(), book_code);
+    let chapter_interlinear = await firebase_download_bible(bible_storage_interlinear_book_path(book_name), chapter);
+    let chapter_definitions = await firebase_download_bible(bible_storage_interlinear_chapter_definitions_path(book_name, chapter), bible_storage_interlinear_chapter_definitions_name());
+    log({
+        chapter_definitions
+    });
+    let {verses: verses_interlinear} = chapter_interlinear;
+    let verse_interlinear = list_find_property(verses_interlinear, "verse_number", verse_number);
+    let {tokens} = verse_interlinear;
+    let filter = bible_interlinear_words_greek_audio_upload_filter();
+    each(tokens, token => {
+        let d = html_div(middle);
+        let word = object_property_get(token, "word");
+        let word_component = html_span_text(d, word);
+        html_select_none(word_component);
+        html_style_bold(word_component);
+        html_style_red(word_component);
+        html_on_click(word_component, async () => {
+            let ms = bible_interlinear_words_audio_upload_map([word], filter);
+            let m = list_first(ms);
+            await app_language_audio(language_code_greek(), string_encoded_to(m));
+        });
+        html_spacer(d);
+        let transliteration = html_span_text(d, object_property_get(token, "transliteration"));
+        html_style_italic(transliteration);
+        html_style_font_color_gray(transliteration);
+        html_spacer(d);
+        let translation = html_span_text(d, object_property_get(token, "translation"));
+        html_spacer(d);
+        let strong = object_property_get(token, "strong");
+        let definition_entry = object_property_get(chapter_definitions, strong);
+        let definition = html_span_text(d, object_property_get(definition_entry, bible_storage_interlinear_chapter_definitions_property()));
+        html_style_green(definition);
+    });
+    html_hr(middle);
+}
+function html_style_red(c) {
+    html_style_font_color(c, "red");
+}
+function bible_storage_interlinear_chapter_definitions_property() {
+    return "definition";
+}
+function log(message) {
+    let logs = log_logs();
+    list_add(logs, message);
+    console.log(message);
+}
+function log_logs() {
+    let g = global_get();
+    return object_property_initialize(g, log.name, []);
+}
+function bible_storage_interlinear_chapter_definitions_name() {
+    return "definitions";
+}
+function bible_storage_interlinear_chapter_definitions_path(book_name, chapter_name) {
+    return path_join([bible_storage_interlinear_book_path(book_name), chapter_name]);
+}
+function bible_storage_interlinear_book_path(book_name) {
+    return path_join(["interlinear", book_name]);
+}
+function html_style_font_color_gray(button) {
+    html_style_font_color(button, "gray");
+}
+function html_style_italic(component) {
+    return html_style(component, {
+        "font-style": "italic"
+    });
+}
+function string_encoded_to(input) {
+    return encodeURIComponent(input);
+}
+function language_code_greek() {
+    return "el";
+}
+async function app_language_audio(language, text) {
+    assert_arguments_length(arguments, 2);
+    let {voices} = await audio_language(language);
+    let counts = global_function(app_language_audio);
+    let voices_index_last = list_index_last(voices);
+    let count = object_property_initialize(counts, text, integer_random(0, voices_index_last));
+    count = add_1(count);
+    if (greater_than_equal(count, voices_index_last)) {
+        let length = list_size(voices);
+        count = mod(count, length);
+    }
+    object_property_set(counts, text, count);
+    let file_path = await audio_path(language, count, text);
+    return await html_audio(storage_url(file_path));
+}
+async function audio_language(language) {
+    return await function_run_plugin(audio_language, language);
+}
+async function function_run_plugin(fn, plugin_suffix) {
+    let prefix = fn.name;
+    return await function_run_plugin_string(prefix, plugin_suffix);
+}
+async function function_run_plugin_string(prefix, plugin_suffix) {
+    let function_name = string_combine_multiple([prefix, "_", plugin_suffix]);
+    return await function_run(function_name, []);
+}
+async function function_run(function_name, args) {
+    let imported_function = await function_import(function_name);
+    let result = await imported_function(...args);
+    return result;
+}
+async function function_import(function_name) {
+    function_name = function_unalias(function_name);
+    let function_file_name = function_name_to_file_name(function_name);
+    let function_file_name_path = string_combine(folder_current_prefix(), function_file_name);
+    let imported = await import(function_file_name_path);
+    let imported_function = object_property_get(imported, function_name);
+    return imported_function;
+}
+function function_unalias(first) {
+    let aliases = function_aliases();
+    if (object_property_exists(aliases, first)) {
+        first = object_property_get(aliases, first);
+    }
+    return first;
+}
+function function_aliases() {
+    let all = {};
+    function_aliases_register(all, fn_name("function_auto"), ["a"]);
+    function_aliases_register(all, fn_name("function_alias_expand"), ["ae"]);
+    function_aliases_register(all, fn_name("function_aliases"), ["al"]);
+    function_aliases_register(all, fn_name("app_new"), ["an"]);
+    function_aliases_register(all, fn_name("bible_search"), ["b"]);
+    function_aliases_register(all, fn_name("bible_search_book"), ["bb"]);
+    function_aliases_register(all, fn_name("bible_audio_player_book"), ["bp"]);
+    function_aliases_register(all, fn_name("bible_chapter_text"), ["bt"]);
+    function_aliases_register(all, fn_name("function_copy"), ["c"]);
+    function_aliases_register(all, fn_name("command_line"), ["cl"]);
+    function_aliases_register(all, fn_name("data_update"), ["d"]);
+    function_aliases_register(all, fn_name("function_delete"), ["de"]);
+    function_aliases_register(all, fn_name("app_dev_screenshots"), ["ds"]);
+    function_aliases_register(all, fn_name("exit"), exit_aliases());
+    function_aliases_register(all, fn_name("firebase_deploy"), ["f"]);
+    function_aliases_register(all, fn_name("function_cache_new_run"), ["fc"]);
+    function_aliases_register(all, fn_name("function_cache_delete"), ["fcd"]);
+    function_aliases_register(all, fn_name("function_cache_new"), ["fcn"]);
+    function_aliases_register(all, fn_name("function_cache_path_open"), ["fco"]);
+    function_aliases_register(all, fn_name("function_cache_refresh_args"), ["fca"]);
+    function_aliases_register(all, fn_name("function_cache_refresh"), ["fcr"]);
+    function_aliases_register(all, fn_name("function_transform"), ["ft"]);
+    function_aliases_register(all, fn_name("function_transform_all"), ["fta"]);
+    function_aliases_register(all, fn_name("function_transform_all_args"), ["ftaa"]);
+    function_aliases_register(all, fn_name("git_acp"), ["g"]);
+    function_aliases_register(all, fn_name("google_search"), ["go"]);
+    function_aliases_register(all, fn_name("google_search_lucky"), ["gl"]);
+    function_aliases_register(all, fn_name("git_index_lock_delete"), ["gx"]);
+    function_aliases_register(all, fn_name("hub"), ["h"]);
+    function_aliases_register(all, fn_name("http_server"), ["hs"]);
+    function_aliases_register(all, fn_name("npm_install"), ["i"]);
+    function_aliases_register(all, fn_name("npm_install_global"), ["ig"]);
+    function_aliases_register(all, fn_name("on_keypress_log"), ["k"]);
+    function_aliases_register(all, fn_name("function_new"), ["n"]);
+    function_aliases_register(all, fn_name("function_new_args"), ["na"]);
+    function_aliases_register(all, fn_name("function_open"), ["o"]);
+    function_aliases_register(all, fn_name("function_open_app"), ["oa"]);
+    function_aliases_register(all, fn_name("function_open_app_html"), ["oh"]);
+    function_aliases_register(all, fn_name("function_output_file"), ["of"]);
+    function_aliases_register(all, fn_name("function_output_file_args"), ["ofa"]);
+    function_aliases_register(all, fn_name("function_output_file_args_expression"), ["ofe"]);
+    function_aliases_register(all, fn_name("function_param_new"), ["p"]);
+    function_aliases_register(all, fn_name("function_param_new_at"), ["pn"]);
+    function_aliases_register(all, fn_name("function_param_move_beginning"), ["pb"]);
+    function_aliases_register(all, fn_name("function_param_delete"), ["pd"]);
+    function_aliases_register(all, fn_name("function_param_move_first"), ["pf"]);
+    function_aliases_register(all, fn_name("function_param_move"), ["pm"]);
+    function_aliases_register(all, fn_name("function_rename_open"), [function_rename_alias()]);
+    function_aliases_register(all, fn_name("functions_rename_identifier"), ["ri"]);
+    function_aliases_register(all, fn_name("computer_restart"), ["re"]);
+    function_aliases_register(all, fn_name("function_search"), ["s"]);
+    function_aliases_register(all, fn_name("sandbox"), ["sb"]);
+    function_aliases_register(all, fn_name("functions_identifier"), ["si"]);
+    function_aliases_register(all, fn_name("sermon_references_combine"), ["sr"]);
+    function_aliases_register(all, fn_name("functions_string"), ["ss"]);
+    function_aliases_register(all, fn_name("sermon_new"), ["sn"]);
+    function_aliases_register(all, fn_name("sermon_open"), ["sp"]);
+    function_aliases_register(all, fn_name("function_search_open"), ["so"]);
+    function_aliases_register(all, fn_name("terminal"), ["t"]);
+    function_aliases_register(all, fn_name("terminal_data_history"), ["th"]);
+    function_aliases_register(all, fn_name("terminal_data_history_clear"), ["thc"]);
+    function_aliases_register(all, fn_name("watch"), ["w"]);
+    function_aliases_register(all, fn_name("server"), ["v"]);
+    function_aliases_register(all, fn_name("function_aliases_add"), ["aa"]);
+    marker();
+    return all;
+}
+function function_aliases_register(all, name, aliases) {
+    each(aliases, a => {
+        assert(object_property_exists_not, [all, a]);
+        object_property_set(all, a, name);
+    });
+}
+function marker() {
+    "this allows a file to have a function that can be searched for programmatically to change syntax tree automatedly";
+}
+function function_rename_alias() {
+    return "r";
+}
+function exit_aliases() {
+    return ["e", "q", "x"];
+}
+function folder_current_prefix() {
+    return folder_current() + "/";
+}
+function folder_current() {
+    return `.`;
+}
+function function_name_to_file_name(function_name) {
+    return string_combine_multiple([function_name, function_path_suffix()]);
+}
+function function_path_suffix() {
+    return `.${function_extension()}`;
+}
+function function_extension() {
+    let extension = "mjs";
+    return extension;
+}
+async function audio_path(language, voice_index, text) {
+    assert_arguments_length(arguments, 3);
+    let {language_code, voices} = await audio_language(language);
+    let {code} = list_get(voices, voice_index);
+    let file_path = gcloud_audio_path(language_code, text, code);
+    return file_path;
+}
+function gcloud_audio_path(language_code, text, voice) {
+    return string_combine_multiple(["audio/", language_code, "/", string_encoded_to(text), "/", voice, ".mp3"]);
+}
+function mod(index, pattern_length) {
+    return index % pattern_length;
+}
+function integer_random(low, high) {
+    return floor(random() * (high - low + 1) + low);
+}
+function random() {
+    return Math.random();
+}
+function floor(n) {
+    return Math.floor(n);
+}
+function bible_interlinear_words_audio_upload_map(words, filter) {
+    let m1 = list_map(words, string_case_lower);
+    let m2 = list_map(m1, word => string_filter(word, filter));
+    return m2;
+}
+function string_filter(word, lambda) {
+    let l = list_to(word);
+    let f = list_filter(l, lambda);
+    return list_join_empty(f);
+}
+function list_to(value) {
+    return Array.from(value);
+}
+function string_case_lower(input) {
+    return input.toLowerCase();
+}
+function html_select_none(word_component) {
+    html_style(word_component, {
+        "user-select": "none",
+        "-moz-user-select": "none",
+        "-webkit-user-select": "none",
+        "-ms-user-select": "none"
+    });
+}
+function bible_interlinear_words_greek_audio_upload_filter() {
+    let alphabet = keyboard_greek();
+    let filter = character => string_includes(alphabet, character);
+    return filter;
+}
+function string_includes(string, value) {
+    return string.includes(value);
+}
+function keyboard_greek() {
+    return "αΑἀἈἄἌᾄἂἆἎἁἉἅἍᾅἃἋάάᾴὰᾶᾷᾳβΒγΓδΔεΕἐἘἔἜἑἙἕἝἓἛέέὲζΖηΗἠἨἤἬᾔἢἪἦἮᾖᾐἡἩἥἭἣἫἧᾗᾑήήῄὴῆῇῃθΘιΙἰἸἴἼἶἱἹἵἽἳἷίίὶῖϊΐΐῒκΚλΛμΜνΝξΞοΟὀὈὄὌὂὁὉὅὍὃὋόόὸπΠρΡῥῬσΣςτΤυΥὐὔὒὖὑὙὕὝὓὗὟύύὺῦϋΰῢφΦχΧψΨωΩὠὨὤὬὢὪὦὮᾠὡὩὥὭὧὯᾧώώῴὼῶῷῳ";
+}
+async function firebase_download_bible(version_folder, key) {
+    let destination = bible_storage_path_file_version(key, version_folder);
+    return await firebase_download(destination);
+}
+async function firebase_download(storage_path) {
+    assert_arguments_length(arguments, 1);
+    let storage = getStorage();
+    let storageRef = ref(storage, storage_path);
+    try {
+        let url = await getDownloadURL(storageRef);
+        return await http_get(url);
+    } catch (e) {
+        log({
+            e
+        });
+        if (e.code === "storage/object-not-found") {
+            return null;
+        } else {
+            throw e;
+        }
+    }
+}
+async function list_wait(promises_list) {
+    return await Promise.all(promises_list);
+}</script></head>
   <body>
     
     
