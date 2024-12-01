@@ -36,7 +36,7 @@ export async function sandbox() {
       type: "tag",
       name: "script",
       attribs: {
-        id: string_combine_multiple([repository_name()]),
+        id: string_combine_multiple([repository_name(), "_app"]),
       },
       chilren: [
         {
