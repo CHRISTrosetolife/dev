@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { js_code_array } from "./js_code_array.mjs";
 import { function_imports_recursive } from "./function_imports_recursive.mjs";
 import { list_empty_not_is } from "./list_empty_not_is.mjs";
@@ -37,9 +36,6 @@ export async function function_dependencies_string(function_name) {
   let e_import = list_map(mapped, (en) => {
     let import_ = object_property_get(en, "import_");
     return import_;
-  });
-  log({
-    a: js_code_array(e_import),
   });
   let imports = js_code_await(
     js_code_call_args(fn_name("list_wait"), [js_code_array(e_import)]),
