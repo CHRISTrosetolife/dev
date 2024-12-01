@@ -1,3 +1,4 @@
+import { function_imports_multiple } from "./function_imports_multiple.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { function_dependencies_string_externals } from "./function_dependencies_string_externals.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
@@ -11,12 +12,13 @@ import { list_map } from "./list_map.mjs";
 import { object_values } from "./object_values.mjs";
 import { each } from "./each.mjs";
 import { list_adder_unique } from "./list_adder_unique.mjs";
-import { function_imports } from "./function_imports.mjs";
 import { js_code_await } from "./js_code_await.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 export async function function_dependencies_string(function_name) {
-  let map = await function_imports(function_name);
-  await function_imports_recursive(map, fn_name("list_wait"));
+  let map = await function_imports_multiple([
+    function_name,
+    fn_name("list_wait"),
+  ]);
   let externals = list_adder_unique((la) => {
     each(object_values(map), (mapped) => {
       let { sources } = mapped;
