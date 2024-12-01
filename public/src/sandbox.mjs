@@ -48,6 +48,6 @@ export async function sandbox() {
       ],
     };
     let children = object_property_get(head, "children");
-    list_add(children, head);
+    list_add(children, tag);
   }
 }
