@@ -1,4 +1,3 @@
-import { log } from "./log.mjs";
 import { html_parse_unparse } from "./html_parse_unparse.mjs";
 import { apps_paths } from "./apps_paths.mjs";
 import { app_extension_html } from "./app_extension_html.mjs";
@@ -21,9 +20,6 @@ export async function apps_html_transform(transform) {
         let root = object_property_get(r, "root");
         await transform(root, name, parsed);
         let u = html_parse_unparse(parsed);
-        log({
-          u,
-        });
         return u;
       },
       test_path,
