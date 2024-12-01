@@ -1,3 +1,4 @@
+import { js_code_await } from "./js_code_await.mjs";
 import { js_code_string } from "./js_code_string.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
@@ -21,7 +22,7 @@ export function function_dependencies_string_externals() {
     }
     let code = js_code_statement_let_assign(
       imported,
-      js_code_call_args("import", [js_code_string(from)]),
+      js_code_await(js_code_call_args("import", [js_code_string(from)])),
     );
     object_property_set(e, from, code);
   });
