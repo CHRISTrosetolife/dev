@@ -24,7 +24,7 @@ export async function function_dependencies_string(function_name) {
     let en = object_property_get(e, n);
     let code = object_property_get(en, "code");
     let import_ = object_property_get(en, "import_");
-    return code;
+    return import_;
   });
   if (true) {
     return e_code;
