@@ -1,5 +1,4 @@
 import { each } from "./each.mjs";
-import { log } from "./log.mjs";
 import { apps_html_transform } from "./apps_html_transform.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { html_parse_tag_named } from "./html_parse_tag_named.mjs";
@@ -15,9 +14,6 @@ export async function sandbox() {
       return;
     }
     each(f, (g) => {
-      log({
-        g,
-      });
       parsed(g).remove();
     });
   }
