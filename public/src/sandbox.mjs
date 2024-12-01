@@ -63,8 +63,7 @@ export async function sandbox() {
       ]),
     );
     log({
-      head,
-      children,
+      a: "here",
     });
   }
 }
