@@ -36,15 +36,14 @@ export async function sandbox() {
     ];
     let content = list_join_newline(lines);
     let head = html_parse_visit_tag_single(root, "head");
-    parsed(head).append(
-      string_combine_multiple([
-        '<script id="',
-        string_combine_multiple([repository_name(), "_app"]),
-        '">',
-        content,
-        "</script>",
-      ]),
-    );
+    let script_html = string_combine_multiple([
+      '<script id="',
+      string_combine_multiple([repository_name(), "_app"]),
+      '">',
+      content,
+      "</script>",
+    ]);
+    parsed(head).append(script_html);
     log({
       a: "here",
     });
