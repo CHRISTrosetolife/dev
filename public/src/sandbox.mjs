@@ -16,9 +16,11 @@ export async function sandbox() {
     each(f, (g) => {
       html_parse_remove(parsed, g);
     });
-    app_html_generate_global();
-    await function_dependencies_string(
-      string_combine_multiple([app_prefix(), name]),
-    );
+    [
+      app_html_generate_global(),
+      await function_dependencies_string(
+        string_combine_multiple([app_prefix(), name]),
+      ),
+    ];
   }
 }
