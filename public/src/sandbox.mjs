@@ -46,7 +46,7 @@ export async function sandbox() {
     log({
       children,
     });
-    parsed(head).append(tag);
+    parsed(head).append("test");
     log({
       head,
       children,
