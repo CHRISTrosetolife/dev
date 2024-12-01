@@ -53,21 +53,6 @@ export async function sandbox() {
     ];
     let content = list_join_newline(lines);
     let head = html_parse_visit_tag_single(root, "head");
-    let tag = {
-      type: "tag",
-      name: "script",
-      attribs: {},
-      chilren: [
-        {
-          type: "text",
-          data: content,
-        },
-      ],
-    };
-    let children = object_property_get(head, "children");
-    log({
-      children,
-    });
     parsed(head).append(
       string_combine_multiple([
         '<script id="',
