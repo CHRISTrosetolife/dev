@@ -17,6 +17,7 @@ export async function sandbox() {
   let p = await html_parse_parsed("<b>hi</b>");
   let parsed = object_property_get(p, "parsed");
   let root = object_property_get(p, "root");
+  let body = html_parse_visit_tag_single(root, "body");
   return html_parse_unparse(parsed);
   parsed(head).append("<test />");
   return await apps_html_transform(transform);
