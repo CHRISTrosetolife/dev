@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { repository_name } from "./repository_name.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
 import { log } from "./log.mjs";
@@ -16,7 +17,6 @@ export async function sandbox() {
     if (name !== "bible") {
       return;
     }
-    let body = html_parse_visit_tag_single(root, "body");
     log({
       body,
     });
@@ -32,6 +32,7 @@ export async function sandbox() {
       ),
     ];
     let content = list_join_newline(lines);
+    let head = html_parse_visit_tag_single(root, "head");
     let tag = {
       type: "tag",
       name: "script",
@@ -45,5 +46,6 @@ export async function sandbox() {
         },
       ],
     };
+    let children = object_property_get(head, "children");
   }
 }
