@@ -17,15 +17,15 @@ import { list_adder_unique } from "./list_adder_unique.mjs";
 import { js_code_await } from "./js_code_await.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 export async function function_dependencies_string(function_name) {
-  let map = await function_imports(function_name, fn_name("list_wait"));
+  let map = await function_imports(function_name);
   let externals = list_adder_unique((la) => {
     each(object_values(map), (mapped) => {
       let { sources } = mapped;
       each(sources, la);
     });
   });
-  if (list_empty_not_is()) {
-    await function_imports_recursive(found, function_name);
+  if (list_empty_not_is(externals)) {
+    await function_imports_recursive(found, fn_name("list_wait"));
   }
   let e = function_dependencies_string_externals();
   let mapped = list_map(externals, (n) => {
