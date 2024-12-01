@@ -6,6 +6,9 @@ export function audio_language(language) {
   let name = generate_list_prefix_name(fn_name("audio_language"));
   let name_fn = eval(name);
   let list = name_fn();
-  string_combine_multiple([generate_list_prefix_prefix(prefix), language]);
+  let target = string_combine_multiple([
+    generate_list_prefix_prefix(prefix),
+    language,
+  ]);
   return list;
 }
