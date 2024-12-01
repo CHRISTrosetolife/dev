@@ -12,6 +12,8 @@ import { object_values } from "./object_values.mjs";
 import { each } from "./each.mjs";
 import { list_adder_unique } from "./list_adder_unique.mjs";
 import { function_imports } from "./function_imports.mjs";
+import { js_code_await } from "./js_code_await.mjs";
+import { js_code_call_args } from "./js_code_call_args.mjs";
 export async function function_dependencies_string(function_name) {
   let map = await function_imports(function_name);
   await function_imports_recursive(map, fn_name("list_wait"));
@@ -30,6 +32,12 @@ export async function function_dependencies_string(function_name) {
     let import_ = object_property_get(en, "import_");
     return import_;
   });
+  let imports = js_code_await(
+    js_code_call_args(fn_name("list_wait"), e_import),
+  );
+  if (true) {
+    return imports;
+  }
   let e_code = list_map(mapped, (en) => {
     let code = object_property_get(en, "code");
     return code;
