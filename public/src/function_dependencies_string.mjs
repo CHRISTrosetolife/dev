@@ -40,16 +40,10 @@ export async function function_dependencies_string(function_name) {
   let imports = js_code_await(
     js_code_call_args(fn_name("list_wait"), [js_code_array(e_import)]),
   );
-  if (false) {
-    return imports;
-  }
   let e_code = list_map(mapped, (en) => {
     let code = object_property_get(en, "code");
     return code;
   });
-  if (false) {
-    return e_code;
-  }
   let dependency_names = object_properties(map);
   let ds = await list_map_async(dependency_names, function_declaration);
   let us = list_map(ds, js_unparse);
