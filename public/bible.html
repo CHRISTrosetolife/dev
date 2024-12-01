@@ -9,7 +9,7 @@ let breezystacklamejs = await import("https://cdn.jsdelivr.net/npm/@breezystack/
 let { MediaRecorder, register } = await import("https://jspm.dev/extendable-media-recorder");
 let { connect } = await import("https://jspm.dev/extendable-media-recorder-wav-encoder");
 let { signInWithEmailAndPassword, getAuth, onAuthStateChanged } = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js");
-let { getAuth } = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js");
+let { initializeApp } = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js");
 async function app_bible() {
     await app_record_generic("engbsb", app_bible, app_bible_verse);
 }
