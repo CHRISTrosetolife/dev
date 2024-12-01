@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { js_code_export_function_declare } from "./js_code_export_function_declare.mjs";
 import { js_code_format } from "./js_code_format.mjs";
 import { js_imports_fix } from "./js_imports_fix.mjs";
@@ -33,6 +34,9 @@ export async function function_new_generic(
   let unparsed = js_unparse(parsed);
   unparsed = await js_code_format(unparsed);
   let file_path = function_name_to_path(function_name);
+  log({
+    file_path,
+  });
   await writer(file_path, unparsed);
   if (open) {
     await file_open(file_path);
