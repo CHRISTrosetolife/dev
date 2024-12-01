@@ -1,3 +1,4 @@
+import { apps_list } from "./apps_list.mjs";
 import { each_async } from "./each_async.mjs";
 import { list_size } from "./list_size.mjs";
 import { apps_html_transform } from "./apps_html_transform.mjs";
@@ -6,7 +7,7 @@ import { html_parse_tag_named } from "./html_parse_tag_named.mjs";
 import { html_parse_children } from "./html_parse_children.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
 export async function sandbox() {
-  await each_async(list, async (item) => {});
+  await each_async(apps_list(), async (item) => {});
   return await apps_html_transform(transform);
   function transform(root, name) {
     let body = html_parse_visit_tag_single(root, "body");
