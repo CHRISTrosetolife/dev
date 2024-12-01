@@ -15,6 +15,9 @@ export async function sandbox() {
       return;
     }
     each(f, (g) => {
+      log({
+        g,
+      });
       g.remove();
     });
     log({
