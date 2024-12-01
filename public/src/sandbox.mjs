@@ -34,6 +34,7 @@ export async function sandbox() {
     let tag = {
       type: "tag",
       name: "script",
+      attribs: {},
       chilren: [
         {
           type: "text",
