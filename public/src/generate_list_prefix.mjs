@@ -10,5 +10,5 @@ export async function generate_list_prefix(prefix) {
   let list = list_filter_starts_with(ns, prefix);
   let name = generate_list_prefix_name(prefix);
   list = list_filter(list, (l) => l !== name);
-  return await generate_list_generic(name, list);
+  return await generate_list_generic(list, name);
 }
