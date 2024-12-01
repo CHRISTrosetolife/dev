@@ -24,7 +24,9 @@ export function function_dependencies_string_externals() {
       imported,
       js_code_await(js_code_call_args("import", [js_code_string(from)])),
     );
-    object_property_set(e, from, code);
+    object_property_set(e, from, {
+      code,
+    });
   });
   let standard = ["chalk"];
   each(standard, (s) => {
