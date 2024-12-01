@@ -19,7 +19,7 @@ export async function sandbox() {
   let head = html_parse_visit_tag_single(root, "head");
   let body = html_parse_visit_tag_single(root, "body");
   parsed(head).append("<test />");
-  return await apps_html_transform(transform);
+  await apps_html_transform(transform);
   async function transform(root, name, parsed) {
     if (name !== "bible") {
       return;
