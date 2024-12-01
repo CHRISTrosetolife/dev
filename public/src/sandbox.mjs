@@ -19,6 +19,8 @@ export async function sandbox() {
   let root = object_property_get(p, "root");
   let body = html_parse_visit_tag_single(root, "body");
   parsed(body).append("<test />");
+  if (false) {
+  }
   return html_parse_unparse(parsed);
   parsed(head).append("<test />");
   return await apps_html_transform(transform);
