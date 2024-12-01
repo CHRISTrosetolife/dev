@@ -1,3 +1,4 @@
+import { list_add } from "./list_add.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { repository_name } from "./repository_name.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
@@ -47,5 +48,6 @@ export async function sandbox() {
       ],
     };
     let children = object_property_get(head, "children");
+    list_add(children, head);
   }
 }
