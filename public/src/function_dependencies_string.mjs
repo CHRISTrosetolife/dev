@@ -25,7 +25,7 @@ export async function function_dependencies_string(function_name) {
     });
   });
   if (list_empty_not_is(externals)) {
-    await function_imports_recursive(found, fn_name("list_wait"));
+    await function_imports_recursive(map, fn_name("list_wait"));
   }
   let e = function_dependencies_string_externals();
   let mapped = list_map(externals, (n) => {
