@@ -1,3 +1,4 @@
+import { repository_name } from "./repository_name.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
 import { log } from "./log.mjs";
 import { app_prefix } from "./app_prefix.mjs";
@@ -34,7 +35,9 @@ export async function sandbox() {
     let tag = {
       type: "tag",
       name: "script",
-      attribs: {},
+      attribs: {
+        id: repository_name(),
+      },
       chilren: [
         {
           type: "text",
