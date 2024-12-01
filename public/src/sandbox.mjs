@@ -1,5 +1,4 @@
 import { html_parse_append } from "./html_parse_append.mjs";
-import { log } from "./log.mjs";
 import { repository_name } from "./repository_name.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
 import { app_prefix } from "./app_prefix.mjs";
@@ -37,8 +36,5 @@ export async function sandbox() {
       "</script>",
     ]);
     html_parse_append(parsed, head, script_html);
-    log({
-      script_html,
-    });
   }
 }
