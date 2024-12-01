@@ -1,3 +1,4 @@
+import { js_code_call_args } from "./js_code_call_args.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 import { each } from "./each.mjs";
 import { object_property_set } from "./object_property_set.mjs";
@@ -17,7 +18,7 @@ export function function_dependencies_string_externals() {
     } else {
       imported = identifiers;
     }
-    let code = js_code_statement_let_assign(imported, from);
+    let code = js_code_statement_let_assign(imported, js_code_call_args());
     object_property_set(e, from, code);
   });
   let standard = ["chalk"];
