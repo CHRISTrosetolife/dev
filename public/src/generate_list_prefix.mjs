@@ -5,5 +5,6 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export async function generate_list_prefix(prefix) {
   prefix = string_combine_multiple([prefix, function_name_separator()]);
   let ns = await function_names();
-  list_filter_starts_with(ns, prefix);
+  let filtered = list_filter_starts_with(ns, prefix);
+  return filtered;
 }
