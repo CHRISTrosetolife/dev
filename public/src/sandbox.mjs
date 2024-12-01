@@ -17,7 +17,7 @@ export async function sandbox() {
     }
     let body = html_parse_visit_tag_single(root, "body");
     log({
-      b: body.children,
+      body,
     });
     return;
     let f = html_parse_visit_tag_list(root, "script");
