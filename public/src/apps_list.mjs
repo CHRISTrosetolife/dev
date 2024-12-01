@@ -1,6 +1,5 @@
 export function apps_list() {
   return [
-    "404",
     "bible",
     "ceb",
     "code",
