@@ -1,3 +1,4 @@
+import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
 import { log } from "./log.mjs";
 import { app_prefix } from "./app_prefix.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -14,7 +15,7 @@ export async function sandbox() {
     if (name !== "bible") {
       return;
     }
-    let body = html_parse_visit_tag_list(root, "body");
+    let body = html_parse_visit_tag_single(root, "body");
     log({
       body,
     });
