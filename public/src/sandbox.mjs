@@ -45,7 +45,7 @@ export async function sandbox() {
     ]);
     parsed(head).append(script_html);
     log({
-      a: "here",
+      script_html,
     });
   }
 }
