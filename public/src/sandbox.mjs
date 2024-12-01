@@ -18,7 +18,7 @@ export async function sandbox() {
       log({
         g,
       });
-      g.remove();
+      parsed(g).remove();
     });
     log({
       name,
