@@ -1,7 +1,4 @@
-import { string_combine_multiple } from "./string_combine_multiple.mjs";
-import { folder_name_public } from "./folder_name_public.mjs";
-import { path_join } from "./path_join.mjs";
-import { app_html_generate_generic } from "./app_html_generate_generic.mjs";
+import { app_html_generate_dev } from "./app_html_generate_dev.mjs";
 import { apps_list } from "./apps_list.mjs";
 import { each_async } from "./each_async.mjs";
 import { list_size } from "./list_size.mjs";
@@ -12,13 +9,7 @@ import { html_parse_children } from "./html_parse_children.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
 export async function sandbox() {
   await each_async(apps_list(), async (name) => {
-    await app_html_generate_generic(name, "..", (name) =>
-      path_join([
-        folder_name_public(),
-        "dev",
-        string_combine_multiple([name, ".html"]),
-      ]),
-    );
+    await app_html_generate_dev(name);
   });
   return;
   return await apps_html_transform(transform);
