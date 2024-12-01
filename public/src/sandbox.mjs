@@ -70,7 +70,7 @@ export async function sandbox() {
     log({
       children,
     });
-    parsed(head).append("<test />");
+    parsed(head).append(string_combine_multiple(["<test />"]));
     log({
       head,
       children,
