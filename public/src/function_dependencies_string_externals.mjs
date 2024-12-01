@@ -20,10 +20,8 @@ export function function_dependencies_string_externals() {
     } else {
       imported = identifiers;
     }
-    let code = js_code_statement_let_assign(
-      imported,
-      js_code_await(js_code_call_args("import", [js_code_string(from)])),
-    );
+    let import_ = js_code_call_args("import", [js_code_string(from)]);
+    let code = js_code_statement_let_assign(imported, js_code_await(import_));
     object_property_set(e, from, {
       code,
     });
