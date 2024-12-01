@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { app_prefix } from "./app_prefix.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { function_dependencies_string } from "./function_dependencies_string.mjs";
@@ -10,10 +11,15 @@ import { list_join_newline } from "./list_join_newline.mjs";
 export async function sandbox() {
   return await apps_html_transform(transform);
   async function transform(root, name, parsed) {
-    let f = html_parse_visit_tag_list(root, "script");
     if (name !== "bible") {
       return;
     }
+    let body = html_parse_visit_tag_list(root, "body");
+    log({
+      body,
+    });
+    return;
+    let f = html_parse_visit_tag_list(root, "script");
     each(f, (g) => {
       html_parse_remove(parsed, g);
     });
