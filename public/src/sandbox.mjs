@@ -1,3 +1,7 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { folder_name_public } from "./folder_name_public.mjs";
+import { path_join } from "./path_join.mjs";
+import { app_html_generate_generic } from "./app_html_generate_generic.mjs";
 import { log } from "./log.mjs";
 import { apps_list } from "./apps_list.mjs";
 import { each_async } from "./each_async.mjs";
@@ -12,6 +16,13 @@ export async function sandbox() {
     log({
       name,
     });
+    await app_html_generate_generic(name, "..", (name) =>
+      path_join([
+        folder_name_public(),
+        "dev",
+        string_combine_multiple([name, ".html"]),
+      ]),
+    );
   });
   return;
   return await apps_html_transform(transform);
