@@ -56,9 +56,7 @@ export async function sandbox() {
     let tag = {
       type: "tag",
       name: "script",
-      attribs: {
-        id: string_combine_multiple([repository_name(), "_app"]),
-      },
+      attribs: {},
       chilren: [
         {
           type: "text",
@@ -70,7 +68,13 @@ export async function sandbox() {
     log({
       children,
     });
-    parsed(head).append(string_combine_multiple(["<test />"]));
+    parsed(head).append(
+      string_combine_multiple([
+        '<script id="',
+        string_combine_multiple([repository_name(), "_app"]),
+        '">',
+      ]),
+    );
     log({
       head,
       children,
