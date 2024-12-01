@@ -2,7 +2,6 @@ import { list_add } from "./list_add.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { repository_name } from "./repository_name.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
-import { log } from "./log.mjs";
 import { app_prefix } from "./app_prefix.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { function_dependencies_string } from "./function_dependencies_string.mjs";
@@ -18,10 +17,6 @@ export async function sandbox() {
     if (name !== "bible") {
       return;
     }
-    log({
-      body,
-    });
-    return;
     let f = html_parse_visit_tag_list(root, "script");
     each(f, (g) => {
       html_parse_remove(parsed, g);
