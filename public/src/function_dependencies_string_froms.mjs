@@ -14,7 +14,9 @@ export function function_dependencies_string_froms() {
       "getAuth",
       "onAuthStateChanged",
     ],
-    ["https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"]: ["getAuth"],
+    ["https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"]: [
+      "initializeApp",
+    ],
     ["https://jspm.dev/extendable-media-recorder"]: [
       "MediaRecorder",
       "register",
