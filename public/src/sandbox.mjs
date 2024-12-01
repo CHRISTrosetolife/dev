@@ -1,3 +1,4 @@
+import { js_code_call } from "./js_code_call.mjs";
 import { html_parse_append } from "./html_parse_append.mjs";
 import { repository_name } from "./repository_name.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
@@ -24,6 +25,7 @@ export async function sandbox() {
     let lines = [
       app_html_generate_global(),
       await function_dependencies_string(name_prefixed),
+      js_code_call(name_prefixed),
     ];
     let content = list_join_newline(lines);
     let head = html_parse_visit_tag_single(root, "head");
