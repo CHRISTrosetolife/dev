@@ -73,6 +73,8 @@ export async function sandbox() {
         '<script id="',
         string_combine_multiple([repository_name(), "_app"]),
         '">',
+        content,
+        "</script>",
       ]),
     );
     log({
