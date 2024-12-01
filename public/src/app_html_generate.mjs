@@ -9,10 +9,11 @@ import { string_combine } from "./string_combine.mjs";
 import { app_prefix } from "./app_prefix.mjs";
 export async function app_html_generate(name) {
   let output_path_get = app_html_path;
+  let folder = folder_current();
   let prefix = app_prefix();
   let name_prefixed = string_combine(prefix, name);
   let import_path = string_combine_multiple([
-    folder_current(),
+    folder,
     "/",
     folder_name_src(),
     "/",
