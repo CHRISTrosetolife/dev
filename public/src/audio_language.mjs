@@ -7,5 +7,5 @@ export function audio_language(language) {
   let list = audio_language_list();
   let target = function_name_combine(fn_name("audio_language"), language);
   let match = list_find(list, (e) => object_property_get(e, "name") === target);
-  return list;
+  return match();
 }
