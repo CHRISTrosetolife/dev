@@ -1,3 +1,4 @@
+import { html_parse_remove } from "./html_parse_remove.mjs";
 import { each } from "./each.mjs";
 import { apps_html_transform } from "./apps_html_transform.mjs";
 import { list_filter } from "./list_filter.mjs";
@@ -14,7 +15,7 @@ export async function sandbox() {
       return;
     }
     each(f, (g) => {
-      parsed(g).remove();
+      html_parse_remove(parsed, g);
     });
   }
 }
