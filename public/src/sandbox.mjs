@@ -1,3 +1,4 @@
+import { log } from "./log.mjs";
 import { list_size } from "./list_size.mjs";
 import { apps_html_transform } from "./apps_html_transform.mjs";
 import { list_filter } from "./list_filter.mjs";
@@ -16,5 +17,8 @@ export async function sandbox() {
     if (name !== "bible") {
       return;
     }
+    log({
+      name,
+    });
   }
 }
