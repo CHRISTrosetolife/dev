@@ -30,7 +30,7 @@ export async function sandbox() {
     let content = list_join_newline(lines);
     let head = html_parse_visit_tag_single(root, "head");
     let script_html = string_combine_multiple([
-      '<script id="',
+      '<script type="module" id="',
       string_combine_multiple([repository_name(), "_app"]),
       '">',
       content,
