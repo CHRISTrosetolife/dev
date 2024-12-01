@@ -1,3 +1,3 @@
-export function html_parse_remove(parsed, g) {
-  parsed(g).remove();
+export function html_parse_remove(parsed, element) {
+  parsed(element).remove();
 }
