@@ -1827,136 +1827,92 @@ async function app_language_audio(language, text) {
     let file_path = await audio_path(language, count, text);
     return await html_audio(storage_url(file_path));
 }
-async function audio_language(language) {
-    return await function_run_plugin(audio_language, language);
+function audio_language(language) {
+    let list = audio_language_list();
+    let target = function_name_combine(fn_name("audio_language"), language);
+    let match = list_find(list, e => object_property_get(e, "name") === target);
+    return match();
 }
-async function function_run_plugin(fn, plugin_suffix) {
-    let prefix = fn.name;
-    return await function_run_plugin_string(prefix, plugin_suffix);
+function list_find(list, predicate) {
+    let filtered = list_filter(list, predicate);
+    let s = list_single(filtered);
+    return s;
 }
-async function function_run_plugin_string(prefix, plugin_suffix) {
-    let function_name = string_combine_multiple([prefix, "_", plugin_suffix]);
-    return await function_run(function_name, []);
+function function_name_combine(function_name_base, j) {
+    return string_combine_multiple([function_name_base, function_name_separator(), j]);
 }
-async function function_run(function_name, args) {
-    let imported_function = await function_import(function_name);
-    let result = await imported_function(...args);
-    return result;
+function function_name_separator() {
+    return "_";
 }
-async function function_import(function_name) {
-    function_name = function_unalias(function_name);
-    let function_file_name = function_name_to_file_name(function_name);
-    let function_file_name_path = string_combine(folder_current_prefix(), function_file_name);
-    let imported = await import(function_file_name_path);
-    let imported_function = object_property_get(imported, function_name);
-    return imported_function;
+function audio_language_list() {
+    return [audio_language_ceb, audio_language_el, audio_language_en, audio_language_he];
 }
-function function_unalias(first) {
-    let aliases = function_aliases();
-    if (object_property_exists(aliases, first)) {
-        first = object_property_get(aliases, first);
-    }
-    return first;
+function audio_language_he() {
+    return {
+        language_code: "he-IL",
+        voices: [{
+            code: "Wavenet-B",
+            male: true
+        }],
+        voices2: [{
+            code: "Wavenet-C",
+            male: false
+        }, {
+            code: "Wavenet-D",
+            male: true
+        }, {
+            code: "Wavenet-A",
+            male: false
+        }]
+    };
 }
-function function_aliases() {
-    let all = {};
-    function_aliases_register(all, fn_name("function_auto"), ["a"]);
-    function_aliases_register(all, fn_name("function_alias_expand"), ["ae"]);
-    function_aliases_register(all, fn_name("function_aliases"), ["al"]);
-    function_aliases_register(all, fn_name("app_new"), ["an"]);
-    function_aliases_register(all, fn_name("bible_search"), ["b"]);
-    function_aliases_register(all, fn_name("bible_search_book"), ["bb"]);
-    function_aliases_register(all, fn_name("bible_audio_player_book"), ["bp"]);
-    function_aliases_register(all, fn_name("bible_chapter_text"), ["bt"]);
-    function_aliases_register(all, fn_name("function_copy"), ["c"]);
-    function_aliases_register(all, fn_name("command_line"), ["cl"]);
-    function_aliases_register(all, fn_name("data_update"), ["d"]);
-    function_aliases_register(all, fn_name("function_delete"), ["de"]);
-    function_aliases_register(all, fn_name("app_dev_screenshots"), ["ds"]);
-    function_aliases_register(all, fn_name("exit"), exit_aliases());
-    function_aliases_register(all, fn_name("firebase_deploy"), ["f"]);
-    function_aliases_register(all, fn_name("function_cache_new_run"), ["fc"]);
-    function_aliases_register(all, fn_name("function_cache_delete"), ["fcd"]);
-    function_aliases_register(all, fn_name("function_cache_new"), ["fcn"]);
-    function_aliases_register(all, fn_name("function_cache_path_open"), ["fco"]);
-    function_aliases_register(all, fn_name("function_cache_refresh_args"), ["fca"]);
-    function_aliases_register(all, fn_name("function_cache_refresh"), ["fcr"]);
-    function_aliases_register(all, fn_name("function_transform"), ["ft"]);
-    function_aliases_register(all, fn_name("function_transform_all"), ["fta"]);
-    function_aliases_register(all, fn_name("function_transform_all_args"), ["ftaa"]);
-    function_aliases_register(all, fn_name("git_acp"), ["g"]);
-    function_aliases_register(all, fn_name("google_search"), ["go"]);
-    function_aliases_register(all, fn_name("google_search_lucky"), ["gl"]);
-    function_aliases_register(all, fn_name("git_index_lock_delete"), ["gx"]);
-    function_aliases_register(all, fn_name("hub"), ["h"]);
-    function_aliases_register(all, fn_name("http_server"), ["hs"]);
-    function_aliases_register(all, fn_name("npm_install"), ["i"]);
-    function_aliases_register(all, fn_name("npm_install_global"), ["ig"]);
-    function_aliases_register(all, fn_name("on_keypress_log"), ["k"]);
-    function_aliases_register(all, fn_name("function_new"), ["n"]);
-    function_aliases_register(all, fn_name("function_new_args"), ["na"]);
-    function_aliases_register(all, fn_name("function_open"), ["o"]);
-    function_aliases_register(all, fn_name("function_open_app"), ["oa"]);
-    function_aliases_register(all, fn_name("function_open_app_html"), ["oh"]);
-    function_aliases_register(all, fn_name("function_output_file"), ["of"]);
-    function_aliases_register(all, fn_name("function_output_file_args"), ["ofa"]);
-    function_aliases_register(all, fn_name("function_output_file_args_expression"), ["ofe"]);
-    function_aliases_register(all, fn_name("function_param_new"), ["p"]);
-    function_aliases_register(all, fn_name("function_param_new_at"), ["pn"]);
-    function_aliases_register(all, fn_name("function_param_move_beginning"), ["pb"]);
-    function_aliases_register(all, fn_name("function_param_delete"), ["pd"]);
-    function_aliases_register(all, fn_name("function_param_move_first"), ["pf"]);
-    function_aliases_register(all, fn_name("function_param_move"), ["pm"]);
-    function_aliases_register(all, fn_name("function_rename_open"), [function_rename_alias()]);
-    function_aliases_register(all, fn_name("functions_rename_identifier"), ["ri"]);
-    function_aliases_register(all, fn_name("computer_restart"), ["re"]);
-    function_aliases_register(all, fn_name("function_search"), ["s"]);
-    function_aliases_register(all, fn_name("sandbox"), ["sb"]);
-    function_aliases_register(all, fn_name("functions_identifier"), ["si"]);
-    function_aliases_register(all, fn_name("sermon_references_combine"), ["sr"]);
-    function_aliases_register(all, fn_name("functions_string"), ["ss"]);
-    function_aliases_register(all, fn_name("sermon_new"), ["sn"]);
-    function_aliases_register(all, fn_name("sermon_open"), ["sp"]);
-    function_aliases_register(all, fn_name("function_search_open"), ["so"]);
-    function_aliases_register(all, fn_name("terminal"), ["t"]);
-    function_aliases_register(all, fn_name("terminal_data_history"), ["th"]);
-    function_aliases_register(all, fn_name("terminal_data_history_clear"), ["thc"]);
-    function_aliases_register(all, fn_name("watch"), ["w"]);
-    function_aliases_register(all, fn_name("server"), ["v"]);
-    function_aliases_register(all, fn_name("function_aliases_add"), ["aa"]);
-    marker();
-    return all;
+function audio_language_en() {
+    return {
+        language_code: "en-US",
+        voices: [{
+            code: "Standard-J",
+            male: true
+        }, {
+            code: "Standard-H",
+            male: false
+        }, {
+            code: "Standard-I",
+            male: true
+        }, {
+            code: "Standard-F",
+            male: false
+        }]
+    };
 }
-function function_aliases_register(all, name, aliases) {
-    each(aliases, a => {
-        assert(object_property_exists_not, [all, a]);
-        object_property_set(all, a, name);
-    });
+function audio_language_el() {
+    return {
+        language_code: "el-GR",
+        voices: [{
+            code: "Wavenet-A",
+            male: false
+        }, {
+            code: "Standard-A",
+            male: false
+        }]
+    };
 }
-function marker() {
-    "this allows a file to have a function that can be searched for programmatically to change syntax tree automatedly";
-}
-function function_rename_alias() {
-    return "r";
-}
-function exit_aliases() {
-    return ["e", "q", "x"];
-}
-function folder_current_prefix() {
-    return folder_current() + "/";
-}
-function folder_current() {
-    return `.`;
-}
-function function_name_to_file_name(function_name) {
-    return string_combine_multiple([function_name, function_path_suffix()]);
-}
-function function_path_suffix() {
-    return `.${function_extension()}`;
-}
-function function_extension() {
-    let extension = "mjs";
-    return extension;
+function audio_language_ceb() {
+    return {
+        language_code: "fil-PH",
+        voices: [{
+            code: "Standard-D",
+            male: true
+        }, {
+            code: "Standard-A",
+            male: false
+        }, {
+            code: "Standard-C",
+            male: true
+        }, {
+            code: "Standard-B",
+            male: false
+        }]
+    };
 }
 async function audio_path(language, voice_index, text) {
     assert_arguments_length(arguments, 3);
