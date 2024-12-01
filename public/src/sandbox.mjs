@@ -18,7 +18,9 @@ export async function sandbox() {
     if (name !== "bible") {
       return;
     }
-    each(list, (item) => {});
+    each(f, (g) => {
+      g.remove();
+    });
     log({
       name,
     });
