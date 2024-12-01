@@ -1,3 +1,5 @@
+import { function_imports_recursive } from "./function_imports_recursive.mjs";
+import { list_empty_not_is } from "./list_empty_not_is.mjs";
 import { function_imports } from "./function_imports.mjs";
 import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { fn_name } from "./fn_name.mjs";
@@ -22,7 +24,8 @@ export async function function_dependencies_string(function_name) {
       each(sources, la);
     });
   });
-  if (false) {
+  if (list_empty_not_is()) {
+    await function_imports_recursive(found, function_name);
   }
   let e = function_dependencies_string_externals();
   let mapped = list_map(externals, (n) => {
