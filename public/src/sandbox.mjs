@@ -1,3 +1,5 @@
+import { app_prefix } from "./app_prefix.mjs";
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { function_dependencies_string } from "./function_dependencies_string.mjs";
 import { app_html_generate_global } from "./app_html_generate_global.mjs";
 import { html_parse_visit_tag_list } from "./html_parse_visit_tag_list.mjs";
@@ -15,6 +17,8 @@ export async function sandbox() {
       html_parse_remove(parsed, g);
     });
     app_html_generate_global();
-    await function_dependencies_string();
+    await function_dependencies_string(
+      string_combine_multiple([app_prefix(), name]),
+    );
   }
 }
