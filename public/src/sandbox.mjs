@@ -21,8 +21,8 @@ export async function sandbox() {
   let body = html_parse_visit_tag_single(root, "body");
   parsed(head).append("<test />");
   if (false) {
+    return html_parse_unparse(parsed);
   }
-  return html_parse_unparse(parsed);
   parsed(head).append("<test />");
   return await apps_html_transform(transform);
   async function transform(root, name, parsed) {
