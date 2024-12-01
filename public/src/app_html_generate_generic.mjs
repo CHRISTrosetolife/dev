@@ -17,7 +17,7 @@ export async function app_html_generate_generic(name, folder, output_path_get) {
   let html = string_combine_multiple([
     '\n    <!DOCTYPE html>\n    <html>\n      <head>\n        <meta charset="utf-8">\n        <meta name="viewport" content="width=device-width, initial-scale=1">\n        <title>',
     name,
-    '</title>\n      </head>\n      <body>\n        <script>\n          let global = {};\n        </script>\n        <script type="module">\n          ',
+    '</title>\n      </head>\n      <body>\n        <script>let global = {};</script>\n        <script type="module">\n          ',
     js_code_import_path(import_path, name_prefixed),
     "\n          ",
     js_code_call(name_prefixed),
