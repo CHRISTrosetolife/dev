@@ -24,5 +24,9 @@ export async function sandbox() {
       ),
     ];
     let content = list_join_newline(lines);
+    let tag = {
+      type: "tag",
+      name: "script",
+    };
   }
 }
