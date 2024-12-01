@@ -20,8 +20,5 @@ export async function sandbox() {
       });
       parsed(g).remove();
     });
-    log({
-      name,
-    });
   }
 }
