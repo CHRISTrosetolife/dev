@@ -1828,11 +1828,18 @@ async function app_language_audio(language, text) {
     return await html_audio(storage_url(file_path));
 }
 function audio_language(language) {
-    let fn = audio_language_list;
+    return generate_list_prefix_plugin(audio_language_list, language);
+}
+function generate_list_prefix_plugin(fn, language) {
     let list = fn();
     let target = function_name_combine(string_suffix_without(object_property_get(fn, "name"), generate_list_prefix_suffix()), language);
     let match = list_find(list, e => object_property_get(e, "name") === target);
     return match();
+}
+function list_find(list, predicate) {
+    let filtered = list_filter(list, predicate);
+    let s = list_single(filtered);
+    return s;
 }
 function generate_list_prefix_suffix() {
     return string_combine_multiple([function_name_separator(), "list"]);
@@ -1840,10 +1847,26 @@ function generate_list_prefix_suffix() {
 function function_name_separator() {
     return "_";
 }
-function list_find(list, predicate) {
-    let filtered = list_filter(list, predicate);
-    let s = list_single(filtered);
-    return s;
+function string_suffix_without(input, suffix) {
+    assert_boolean(string_ends_with(input, suffix));
+    let prefix_length = string_size(suffix);
+    let input_length = string_size(input);
+    let difference = input_length - prefix_length;
+    return string_take(input, difference);
+}
+function string_ends_with(input, prefix) {
+    assert_arguments_length(arguments, 2);
+    let string_get_lambda = string_get_reverse;
+    return string_starts_with_generic(string_get_lambda, input, prefix);
+}
+function string_get_reverse(input, index) {
+    let last = string_index_last(input);
+    return input[last - index];
+}
+function string_index_last(input) {
+    let length = string_size(input);
+    let index_last = length - 1;
+    return index_last;
 }
 function function_name_combine(function_name_base, j) {
     return string_combine_multiple([function_name_base, function_name_separator(), j]);
@@ -1917,27 +1940,6 @@ function audio_language_ceb() {
             male: false
         }]
     };
-}
-function string_suffix_without(input, suffix) {
-    assert_boolean(string_ends_with(input, suffix));
-    let prefix_length = string_size(suffix);
-    let input_length = string_size(input);
-    let difference = input_length - prefix_length;
-    return string_take(input, difference);
-}
-function string_ends_with(input, prefix) {
-    assert_arguments_length(arguments, 2);
-    let string_get_lambda = string_get_reverse;
-    return string_starts_with_generic(string_get_lambda, input, prefix);
-}
-function string_get_reverse(input, index) {
-    let last = string_index_last(input);
-    return input[last - index];
-}
-function string_index_last(input) {
-    let length = string_size(input);
-    let index_last = length - 1;
-    return index_last;
 }
 async function audio_path(language, voice_index, text) {
     assert_arguments_length(arguments, 3);
