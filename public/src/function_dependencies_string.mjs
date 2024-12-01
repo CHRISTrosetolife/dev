@@ -42,7 +42,7 @@ export async function function_dependencies_string(function_name) {
     a: js_code_array(e_import),
   });
   let imports = js_code_await(
-    js_code_call_args(fn_name("list_wait"), js_code_array(e_import)),
+    js_code_call_args(fn_name("list_wait"), [js_code_array(e_import)]),
   );
   if (false) {
     return imports;
