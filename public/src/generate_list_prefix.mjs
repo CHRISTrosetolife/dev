@@ -10,6 +10,5 @@ export async function generate_list_prefix(prefix) {
   let list = list_filter_starts_with(ns, prefix);
   let name = string_combine_multiple([prefix, "list"]);
   list = list_filter(list, (l) => l !== name);
-  return name;
-  await generate_list_generic(list, name);
+  return await generate_list_generic(list, name);
 }
