@@ -22,6 +22,8 @@ export async function function_dependencies_string(function_name) {
       each(sources, la);
     });
   });
+  if (false) {
+  }
   let e = function_dependencies_string_externals();
   let mapped = list_map(externals, (n) => {
     let en = object_property_get(e, n);
