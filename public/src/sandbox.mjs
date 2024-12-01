@@ -1,6 +1,4 @@
-import { html_parse_parsed } from "./html_parse_parsed.mjs";
 import { log } from "./log.mjs";
-import { object_property_get } from "./object_property_get.mjs";
 import { repository_name } from "./repository_name.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
 import { app_prefix } from "./app_prefix.mjs";
@@ -13,12 +11,6 @@ import { each } from "./each.mjs";
 import { apps_html_transform } from "./apps_html_transform.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 export async function sandbox() {
-  let p = await html_parse_parsed("<b>hi</b>");
-  let parsed = object_property_get(p, "parsed");
-  let root = object_property_get(p, "root");
-  let head = html_parse_visit_tag_single(root, "head");
-  let body = html_parse_visit_tag_single(root, "body");
-  parsed(head).append("<test />");
   await apps_html_transform(transform);
   async function transform(root, name, parsed) {
     if (name !== "bible") {
