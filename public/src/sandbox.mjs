@@ -26,7 +26,6 @@ export async function sandbox() {
     }
     let f = html_parse_visit_tag_list(root, "script");
     each(f, (g) => {
-      return;
       html_parse_remove(parsed, g);
     });
     let lines = [
