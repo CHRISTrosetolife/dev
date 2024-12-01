@@ -1,3 +1,4 @@
+import { app_html_generate_global } from "./app_html_generate_global.mjs";
 import { html_parse_visit_tag_list } from "./html_parse_visit_tag_list.mjs";
 import { html_parse_remove } from "./html_parse_remove.mjs";
 import { each } from "./each.mjs";
@@ -12,5 +13,6 @@ export async function sandbox() {
     each(f, (g) => {
       html_parse_remove(parsed, g);
     });
+    app_html_generate_global();
   }
 }
