@@ -46,10 +46,10 @@ export async function sandbox() {
     log({
       children,
     });
-    let a = parsed(head).append;
-    a("<test />");
+    parsed(head).append("<test />");
     log({
-      a,
+      head,
+      children,
     });
   }
 }
