@@ -7,5 +7,6 @@ export async function generate_list_prefix(prefix) {
   prefix = string_combine_multiple([prefix, function_name_separator()]);
   let ns = await function_names();
   let list = list_filter_starts_with(ns, prefix);
-  await generate_list_generic(list, string_combine_multiple([prefix, "list"]));
+  let name = string_combine_multiple([prefix, "list"]);
+  await generate_list_generic(list, name);
 }
