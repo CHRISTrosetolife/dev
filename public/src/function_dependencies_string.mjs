@@ -1,8 +1,8 @@
+import { list_concat_multiple } from "./list_concat_multiple.mjs";
 import { function_imports_multiple } from "./function_imports_multiple.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { function_dependencies_string_externals } from "./function_dependencies_string_externals.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
-import { list_concat } from "./list_concat.mjs";
 import { js_unparse } from "./js_unparse.mjs";
 import { function_declaration } from "./function_declaration.mjs";
 import { list_map_async } from "./list_map_async.mjs";
@@ -37,20 +37,20 @@ export async function function_dependencies_string(function_name) {
   let imports = js_code_await(
     js_code_call_args(fn_name("list_wait"), e_import),
   );
-  if (true) {
+  if (false) {
     return imports;
   }
   let e_code = list_map(mapped, (en) => {
     let code = object_property_get(en, "code");
     return code;
   });
-  if (true) {
+  if (false) {
     return e_code;
   }
   let dependency_names = object_properties(map);
   let ds = await list_map_async(dependency_names, function_declaration);
   let us = list_map(ds, js_unparse);
-  let c = list_concat(e_code, us);
+  let c = list_concat_multiple([imports, e_code, us]);
   let text = list_join_newline(c);
   return text;
 }
