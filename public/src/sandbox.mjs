@@ -14,6 +14,8 @@ import { apps_html_transform } from "./apps_html_transform.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
 export async function sandbox() {
   let p = await html_parse_parsed(text);
+  let parsed = object_property_get(p, "parsed");
+  let root = object_property_get(p, "root");
   return await apps_html_transform(transform);
   async function transform(root, name, parsed) {
     if (name !== "bible") {
