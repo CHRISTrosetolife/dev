@@ -1,6 +1,5 @@
 import { each } from "./each.mjs";
 import { log } from "./log.mjs";
-import { list_size } from "./list_size.mjs";
 import { apps_html_transform } from "./apps_html_transform.mjs";
 import { list_filter } from "./list_filter.mjs";
 import { html_parse_tag_named } from "./html_parse_tag_named.mjs";
@@ -12,9 +11,6 @@ export async function sandbox() {
     let body = html_parse_visit_tag_single(root, "body");
     let cs = html_parse_children(body);
     let f = list_filter(cs, (c) => html_parse_tag_named(c, "script"));
-    if (list_size(f) !== 2) {
-      return;
-    }
     if (name !== "bible") {
       return;
     }
