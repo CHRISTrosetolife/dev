@@ -870,7 +870,7 @@ function html_style_button_default(component_button) {
     html_style(component_button, html_style_button_default_value());
 }
 function html_style_button_default_value() {
-    return d;
+    return global_function_initialize(html_style_button_default_value, () => ({}));
 }
 function html_element(parent, tag_name) {
     assert_arguments_length(arguments, 2);
