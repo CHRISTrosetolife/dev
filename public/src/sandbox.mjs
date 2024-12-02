@@ -24,10 +24,20 @@ export async function sandbox() {
     each(f, (g) => {
       html_parse_remove(parsed, g);
     });
+    html_parse_append(
+      parsed,
+      head,
+      string_combine_multiple([
+        '<script id="',
+        string_combine_multiple([repository_name(), "_global"]),
+        '">',
+        app_html_generate_global(),
+        "</script>",
+      ]),
+    );
     let import_path = app_html_generate_import_path(folder_current());
     let lines = [
       js_code_import_path(import_path, fn_name("app_load")),
-      app_html_generate_global(),
       js_code_call_args(fn_name("app_load"), [js_code_string(name)]),
     ];
     let content = list_join_newline(lines);
