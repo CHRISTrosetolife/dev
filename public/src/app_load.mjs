@@ -1,3 +1,4 @@
+import { js_code_call } from "./js_code_call.mjs";
 import { function_deploy_path } from "./function_deploy_path.mjs";
 import { html_document_body } from "./html_document_body.mjs";
 import { html_script_axios } from "./html_script_axios.mjs";
@@ -15,4 +16,5 @@ export async function app_load(name) {
     function_deploy_path(name_prefixed, version),
   );
   eval(script);
+  await eval(js_code_call(name_prefixed));
 }
