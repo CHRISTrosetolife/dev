@@ -24,12 +24,13 @@ export async function sandbox() {
       html_parse_remove(parsed, g);
     });
     let name_prefixed = string_combine_multiple([app_prefix(), name]);
-    let awaited_code = js_code_call_args(fn_name("http_storage_get"), [
-      function_deploy_path_version(name_prefixed),
-    ]);
     let lines = [
       app_html_generate_global(),
-      js_code_await_statement(awaited_code),
+      js_code_await_statement(
+        js_code_call_args(fn_name("http_storage_get"), [
+          function_deploy_path_version(name_prefixed),
+        ]),
+      ),
     ];
     let content = list_join_newline(lines);
     let head = html_parse_visit_tag_single(root, "head");
