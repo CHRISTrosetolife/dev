@@ -1,3 +1,4 @@
+import { js_code_import_generic } from "./js_code_import_generic.mjs";
 import { js_code_await } from "./js_code_await.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 import { function_deploy_path_version } from "./function_deploy_path_version.mjs";
@@ -27,6 +28,7 @@ export async function sandbox() {
     let name_prefixed = string_combine_multiple([app_prefix(), name]);
     let lines = [
       app_html_generate_global(),
+      js_code_import_generic(),
       js_code_statement_let_assign(
         "v",
         js_code_await(
