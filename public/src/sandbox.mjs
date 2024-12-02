@@ -1,5 +1,4 @@
-import { js_code_statement } from "./js_code_statement.mjs";
-import { js_code_await } from "./js_code_await.mjs";
+import { js_code_await_statement } from "./js_code_await_statement.mjs";
 import { function_deploy_path_version } from "./function_deploy_path_version.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { html_parse_append } from "./html_parse_append.mjs";
@@ -30,7 +29,7 @@ export async function sandbox() {
     ]);
     let lines = [
       app_html_generate_global(),
-      js_code_statement(js_code_await(awaited_code)),
+      js_code_await_statement(awaited_code),
     ];
     let content = list_join_newline(lines);
     let head = html_parse_visit_tag_single(root, "head");
