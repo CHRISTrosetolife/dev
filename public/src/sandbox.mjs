@@ -50,7 +50,7 @@ export async function sandbox() {
       ),
       "</script>",
     ];
-    let content = list_join_newline(lines);
+    let script_html = list_join_newline(lines);
     html_parse_append(parsed, head, script_html);
   }
 }
