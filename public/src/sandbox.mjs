@@ -26,7 +26,7 @@ export async function sandbox() {
     let name_prefixed = string_combine_multiple([app_prefix(), name]);
     let lines = [
       app_html_generate_global(),
-      js_code_await_statement(
+      js_code_await(
         js_code_call_args(fn_name("http_storage_get"), [
           function_deploy_path_version(name_prefixed),
         ]),
