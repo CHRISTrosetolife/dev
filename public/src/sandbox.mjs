@@ -1,10 +1,6 @@
+import { js_code_import_path } from "./js_code_import_path.mjs";
 import { folder_current } from "./folder_current.mjs";
 import { app_html_generate_import_path } from "./app_html_generate_import_path.mjs";
-import { js_code_import_generic } from "./js_code_import_generic.mjs";
-import { js_code_await } from "./js_code_await.mjs";
-import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
-import { function_deploy_path_version } from "./function_deploy_path_version.mjs";
-import { fn_name } from "./fn_name.mjs";
 import { html_parse_append } from "./html_parse_append.mjs";
 import { repository_name } from "./repository_name.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
@@ -16,7 +12,6 @@ import { html_parse_remove } from "./html_parse_remove.mjs";
 import { each } from "./each.mjs";
 import { apps_html_transform } from "./apps_html_transform.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
-import { js_code_call_args } from "./js_code_call_args.mjs";
 export async function sandbox() {
   await apps_html_transform(transform);
   async function transform(root, name, parsed) {
@@ -31,18 +26,7 @@ export async function sandbox() {
     let import_path = app_html_generate_import_path(folder_current());
     let lines = [
       app_html_generate_global(),
-      js_code_import_generic(
-        fn_name("http_storage_get"),
-        fn_name("http_storage_get"),
-      ),
-      js_code_statement_let_assign(
-        "v",
-        js_code_await(
-          js_code_call_args(fn_name("http_storage_get"), [
-            function_deploy_path_version(name_prefixed),
-          ]),
-        ),
-      ),
+      js_code_import_path(import_path, name_prefixed),
     ];
     let content = list_join_newline(lines);
     let head = html_parse_visit_tag_single(root, "head");
