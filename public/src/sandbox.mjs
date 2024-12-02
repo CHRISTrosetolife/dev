@@ -5,7 +5,6 @@ import { app_html_generate_import_path } from "./app_html_generate_import_path.m
 import { html_parse_append } from "./html_parse_append.mjs";
 import { repository_name } from "./repository_name.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
-import { app_prefix } from "./app_prefix.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_html_generate_global } from "./app_html_generate_global.mjs";
 import { html_parse_visit_tag_list } from "./html_parse_visit_tag_list.mjs";
@@ -24,7 +23,6 @@ export async function sandbox() {
     each(f, (g) => {
       html_parse_remove(parsed, g);
     });
-    let name_prefixed = string_combine_multiple([app_prefix(), name]);
     let import_path = app_html_generate_import_path(folder_current());
     let lines = [
       js_code_import_path(import_path, name_prefixed),
