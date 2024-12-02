@@ -1,3 +1,4 @@
+import { file_name_json } from "./file_name_json.mjs";
 import { storage_upload_object } from "./storage_upload_object.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { date_string_iso_file } from "./date_string_iso_file.mjs";
@@ -16,6 +17,6 @@ export async function function_deploy(name) {
       name,
       version,
     },
-    path_join(["function", name, "version.json"]),
+    path_join(["function", name, file_name_json("version")]),
   );
 }
