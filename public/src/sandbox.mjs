@@ -1,3 +1,4 @@
+import { js_code_call } from "./js_code_call.mjs";
 import { js_code_import_path } from "./js_code_import_path.mjs";
 import { folder_current } from "./folder_current.mjs";
 import { app_html_generate_import_path } from "./app_html_generate_import_path.mjs";
@@ -27,6 +28,7 @@ export async function sandbox() {
     let lines = [
       app_html_generate_global(),
       js_code_import_path(import_path, name_prefixed),
+      js_code_call(name_prefixed),
     ];
     let content = list_join_newline(lines);
     let head = html_parse_visit_tag_single(root, "head");
