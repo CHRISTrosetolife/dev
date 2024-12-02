@@ -28,7 +28,10 @@ export async function sandbox() {
     let name_prefixed = string_combine_multiple([app_prefix(), name]);
     let lines = [
       app_html_generate_global(),
-      js_code_import_generic(),
+      js_code_import_generic(
+        fn_name("http_storage_get"),
+        fn_name("http_storage_get"),
+      ),
       js_code_statement_let_assign(
         "v",
         js_code_await(
