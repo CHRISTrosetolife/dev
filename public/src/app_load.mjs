@@ -1,6 +1,6 @@
+import { function_deploy_path } from "./function_deploy_path.mjs";
 import { html_document_body } from "./html_document_body.mjs";
 import { html_script_axios } from "./html_script_axios.mjs";
-import { log } from "./log.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { function_deploy_path_version } from "./function_deploy_path_version.mjs";
 import { http_storage_get } from "./http_storage_get.mjs";
@@ -11,7 +11,7 @@ export async function app_load(name) {
   let name_prefixed = string_combine_multiple([app_prefix(), name]);
   let v = await http_storage_get(function_deploy_path_version(name_prefixed));
   let version = object_property_get(v, "version");
-  log({
-    version,
-  });
+  let script = await http_storage_get(
+    function_deploy_path(name_prefixed, version),
+  );
 }
