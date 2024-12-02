@@ -28,6 +28,7 @@ export async function sandbox() {
     let lines = [
       app_html_generate_global(),
       js_code_statement_let_assign(
+        "v",
         js_code_await(
           js_code_call_args(fn_name("http_storage_get"), [
             function_deploy_path_version(name_prefixed),
