@@ -1,4 +1,4 @@
-import { http_storage_get } from "./http_storage_get.mjs";
+import { fn_name } from "./fn_name.mjs";
 import { html_parse_append } from "./html_parse_append.mjs";
 import { repository_name } from "./repository_name.mjs";
 import { html_parse_visit_tag_single } from "./html_parse_visit_tag_single.mjs";
@@ -24,7 +24,7 @@ export async function sandbox() {
     let name_prefixed = string_combine_multiple([app_prefix(), name]);
     let lines = [
       app_html_generate_global(),
-      js_code_call_args(http_storage_get, []),
+      js_code_call_args(fn_name("http_storage_get"), []),
     ];
     let content = list_join_newline(lines);
     let head = html_parse_visit_tag_single(root, "head");
