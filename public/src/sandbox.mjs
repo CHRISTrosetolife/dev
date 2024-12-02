@@ -29,10 +29,12 @@ export async function sandbox() {
     html_parse_append(
       parsed,
       head,
-      string_combine_multiple([
-        '<script id="',
-        string_combine_multiple([repository_name(), "_global"]),
-        '">',
+      list_join_newline([
+        string_combine_multiple([
+          '<script id="',
+          string_combine_multiple([repository_name(), "_global"]),
+          '">',
+        ]),
         app_html_generate_global(),
         "</script>",
       ]),
