@@ -24,6 +24,7 @@ export async function sandbox() {
     each(f, (g) => {
       html_parse_remove(parsed, g);
     });
+    let head = html_parse_visit_tag_single(root, "head");
     html_parse_append(
       parsed,
       head,
@@ -41,7 +42,6 @@ export async function sandbox() {
       js_code_call_args(fn_name("app_load"), [js_code_string(name)]),
     ];
     let content = list_join_newline(lines);
-    let head = html_parse_visit_tag_single(root, "head");
     let script_html = string_combine_multiple([
       '<script type="module" id="',
       string_combine_multiple([repository_name(), "_app"]),
