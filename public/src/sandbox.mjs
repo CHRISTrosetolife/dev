@@ -1,3 +1,5 @@
+import { folder_current } from "./folder_current.mjs";
+import { app_html_generate_import_path } from "./app_html_generate_import_path.mjs";
 import { js_code_import_generic } from "./js_code_import_generic.mjs";
 import { js_code_await } from "./js_code_await.mjs";
 import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
@@ -26,6 +28,7 @@ export async function sandbox() {
       html_parse_remove(parsed, g);
     });
     let name_prefixed = string_combine_multiple([app_prefix(), name]);
+    let import_path = app_html_generate_import_path(folder_current());
     let lines = [
       app_html_generate_global(),
       js_code_import_generic(
