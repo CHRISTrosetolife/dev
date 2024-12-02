@@ -16,6 +16,6 @@ export async function function_deploy(name) {
       name,
       version,
     },
-    path_join(["function", name, string_combine_multiple([version, ".js"])]),
+    path_join(["function", name, "version.json"]),
   );
 }
