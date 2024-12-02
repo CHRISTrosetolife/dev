@@ -9,7 +9,7 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export async function app_load(name) {
   await html_script_axios(html_document_body());
   let name_prefixed = string_combine_multiple([app_prefix(), name]);
-  let v = await http_storage_get(function_deploy_path_version(name));
+  let v = await http_storage_get(function_deploy_path_version(name_prefixed));
   let version = object_property_get(v, "version");
   log({
     version,
