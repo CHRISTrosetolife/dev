@@ -1,3 +1,4 @@
+import { fn_name } from "./fn_name.mjs";
 import { js_code_call_args } from "./js_code_call_args.mjs";
 import { js_code_import_path } from "./js_code_import_path.mjs";
 import { folder_current } from "./folder_current.mjs";
@@ -25,9 +26,9 @@ export async function sandbox() {
     });
     let import_path = app_html_generate_import_path(folder_current());
     let lines = [
-      js_code_import_path(import_path, name_prefixed),
+      js_code_import_path(import_path, fn_name("app_load")),
       app_html_generate_global(),
-      js_code_call_args(name_prefixed, [js_code_string(name)]),
+      js_code_call_args(fn_name("app_load"), [js_code_string(name)]),
     ];
     let content = list_join_newline(lines);
     let head = html_parse_visit_tag_single(root, "head");
