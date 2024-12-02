@@ -1,4 +1,5 @@
-import { js_code_await_statement } from "./js_code_await_statement.mjs";
+import { js_code_await } from "./js_code_await.mjs";
+import { js_code_statement_let_assign } from "./js_code_statement_let_assign.mjs";
 import { function_deploy_path_version } from "./function_deploy_path_version.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { html_parse_append } from "./html_parse_append.mjs";
@@ -26,10 +27,12 @@ export async function sandbox() {
     let name_prefixed = string_combine_multiple([app_prefix(), name]);
     let lines = [
       app_html_generate_global(),
-      js_code_await(
-        js_code_call_args(fn_name("http_storage_get"), [
-          function_deploy_path_version(name_prefixed),
-        ]),
+      js_code_statement_let_assign(
+        js_code_await(
+          js_code_call_args(fn_name("http_storage_get"), [
+            function_deploy_path_version(name_prefixed),
+          ]),
+        ),
       ),
     ];
     let content = list_join_newline(lines);
