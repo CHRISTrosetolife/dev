@@ -27,8 +27,8 @@ export async function sandbox() {
     let name_prefixed = string_combine_multiple([app_prefix(), name]);
     let import_path = app_html_generate_import_path(folder_current());
     let lines = [
-      app_html_generate_global(),
       js_code_import_path(import_path, name_prefixed),
+      app_html_generate_global(),
       js_code_call_args(name_prefixed, [js_code_string(name)]),
     ];
     let content = list_join_newline(lines);
