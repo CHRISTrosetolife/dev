@@ -39,19 +39,18 @@ export async function sandbox() {
     );
     let import_path = app_html_generate_import_path(folder_current());
     let lines = [
+      string_combine_multiple([
+        '<script type="module" id="',
+        string_combine_multiple([repository_name(), "_app"]),
+        '">',
+      ]),
       js_code_import_path(import_path, fn_name("app_load")),
       js_code_statement(
         js_code_call_args(fn_name("app_load"), [js_code_string(name)]),
       ),
+      "</script>",
     ];
     let content = list_join_newline(lines);
-    let script_html = string_combine_multiple([
-      '<script type="module" id="',
-      string_combine_multiple([repository_name(), "_app"]),
-      '">',
-      content,
-      "</script>",
-    ]);
     html_parse_append(parsed, head, script_html);
   }
 }
