@@ -1,4 +1,4 @@
-import { js_code_call } from "./js_code_call.mjs";
+import { js_code_call_args } from "./js_code_call_args.mjs";
 import { js_code_import_path } from "./js_code_import_path.mjs";
 import { folder_current } from "./folder_current.mjs";
 import { app_html_generate_import_path } from "./app_html_generate_import_path.mjs";
@@ -13,6 +13,7 @@ import { html_parse_remove } from "./html_parse_remove.mjs";
 import { each } from "./each.mjs";
 import { apps_html_transform } from "./apps_html_transform.mjs";
 import { list_join_newline } from "./list_join_newline.mjs";
+import { js_code_string } from "./js_code_string.mjs";
 export async function sandbox() {
   await apps_html_transform(transform);
   async function transform(root, name, parsed) {
@@ -28,7 +29,7 @@ export async function sandbox() {
     let lines = [
       app_html_generate_global(),
       js_code_import_path(import_path, name_prefixed),
-      js_code_call(name_prefixed),
+      js_code_call_args(name_prefixed, [js_code_string(name)]),
     ];
     let content = list_join_newline(lines);
     let head = html_parse_visit_tag_single(root, "head");
