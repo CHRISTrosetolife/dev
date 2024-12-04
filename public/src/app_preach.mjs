@@ -1,5 +1,5 @@
+import { sermon_folder_name } from "./sermon_folder_name.mjs";
 import { sermon_path_suffix } from "./sermon_path_suffix.mjs";
-import { sermon_folder } from "./sermon_folder.mjs";
 import { log } from "./log.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { path_join } from "./path_join.mjs";
