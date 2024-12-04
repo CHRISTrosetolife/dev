@@ -6,6 +6,6 @@ export function app_preach() {
   let body = html_style_default_initialize();
   let ss = sermons_list();
   each(ss, (s) => {
-    html_button_width_full_text_click;
+    html_button_width_full_text_click(body, s, () => {});
   });
 }
