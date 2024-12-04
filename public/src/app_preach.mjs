@@ -15,7 +15,7 @@ export async function app_preach() {
     html_button_width_full_text_click(root, s, async () => {
       html_clear_scroll_top(root);
       await http_get(
-        path_join([string_combine_multiple(["/", sermons_path()])]),
+        path_join([string_combine_multiple(["/", sermons_path()]), s]),
       );
     });
   });
