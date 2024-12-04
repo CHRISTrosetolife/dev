@@ -24,7 +24,6 @@ export function sermons_list() {
     "treasure_ur",
     "treasure",
     "women",
-    "works",
     "wren",
   ];
 }
