@@ -1,3 +1,5 @@
+import { string_combine_multiple } from "./string_combine_multiple.mjs";
+import { path_join } from "./path_join.mjs";
 import { http_get } from "./http_get.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_script_axios } from "./html_script_axios.mjs";
@@ -12,7 +14,9 @@ export async function app_preach() {
   each(ss, (s) => {
     html_button_width_full_text_click(root, s, async () => {
       html_clear_scroll_top(root);
-      await http_get();
+      await http_get(
+        path_join([string_combine_multiple(["/", sermons_path()])]),
+      );
     });
   });
 }
