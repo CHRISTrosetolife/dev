@@ -15,6 +15,7 @@ export function apps_list() {
     "mary",
     "memorize",
     "pray",
+    "preach",
     "read",
     "record",
     "resume",
