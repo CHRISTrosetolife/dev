@@ -1,3 +1,4 @@
+import { written_extension } from "./written_extension.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { path_join } from "./path_join.mjs";
 import { http_get } from "./http_get.mjs";
@@ -15,7 +16,10 @@ export async function app_preach() {
     html_button_width_full_text_click(root, s, async () => {
       html_clear_scroll_top(root);
       await http_get(
-        path_join([string_combine_multiple(["/", sermons_path()]), s]),
+        path_join([
+          string_combine_multiple(["/", sermons_path()]),
+          string_combine_multiple([s, written_extension()]),
+        ]),
       );
     });
   });
