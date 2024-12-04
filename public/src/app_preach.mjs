@@ -19,7 +19,7 @@ export async function app_preach() {
       html_clear_scroll_top(root);
       let t = await http_get(
         path_join([
-          string_combine_multiple(["/", sermon_folder()]),
+          string_combine_multiple(["/", sermon_folder_name()]),
           string_combine_multiple([s, sermon_path_suffix()]),
         ]),
       );
