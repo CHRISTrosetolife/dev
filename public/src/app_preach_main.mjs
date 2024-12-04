@@ -9,11 +9,12 @@ import { html_button_width_full_text_click } from "./html_button_width_full_text
 import { each } from "./each.mjs";
 import { sermons_list } from "./sermons_list.mjs";
 export function app_preach_main(root) {
+  html_clear_scroll_top(root);
   let ss = sermons_list();
   each(ss, (s) => {
     html_button_width_full_text_click(root, s, async () => {
       html_clear_scroll_top(root);
-      html_button_width_full_text_click(root, s, async () => {});
+      html_button_width_full_text_click(root, s, () => app_preach_main(root));
       let t = await http_get(
         path_join([
           string_combine_multiple(["/", sermon_folder_name()]),
