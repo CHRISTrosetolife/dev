@@ -1,3 +1,4 @@
+import { html_style_pre_wrap } from "./html_style_pre_wrap.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { sermon_path_suffix } from "./sermon_path_suffix.mjs";
 import { sermon_folder_name } from "./sermon_folder_name.mjs";
@@ -21,7 +22,8 @@ export function app_preach_main(root) {
           string_combine_multiple([s, sermon_path_suffix()]),
         ]),
       );
-      html_p_text(root, t);
+      let p = html_p_text(root, t);
+      html_style_pre_wrap(p);
     });
   });
 }
