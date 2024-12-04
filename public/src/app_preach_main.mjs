@@ -1,3 +1,4 @@
+import { html_button_back } from "./html_button_back.mjs";
 import { html_style_pre_wrap } from "./html_style_pre_wrap.mjs";
 import { html_p_text } from "./html_p_text.mjs";
 import { sermon_path_suffix } from "./sermon_path_suffix.mjs";
@@ -15,7 +16,7 @@ export function app_preach_main(root) {
   each(ss, (s) => {
     html_button_width_full_text_click(root, s, async () => {
       html_clear_scroll_top(root);
-      html_button_width_full_text_click(root, s, () => app_preach_main(root));
+      html_button_back(root, s, () => app_preach_main(root));
       let t = await http_get(
         path_join([
           string_combine_multiple(["/", sermon_folder_name()]),
@@ -24,6 +25,7 @@ export function app_preach_main(root) {
       );
       let p = html_p_text(root, t);
       html_style_pre_wrap(p);
+      html_button_back(root, s, () => app_preach_main(root));
     });
   });
 }
