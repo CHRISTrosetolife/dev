@@ -21,7 +21,7 @@ export function app_preach_main(root) {
           string_combine_multiple([s, sermon_path_suffix()]),
         ]),
       );
-      html_p_text(t);
+      html_p_text(root, t);
     });
   });
 }
