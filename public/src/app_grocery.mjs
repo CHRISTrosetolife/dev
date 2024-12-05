@@ -6,7 +6,7 @@ import { app_firebase } from "./app_firebase.mjs";
 export async function app_grocery() {
   await app_firebase({
     on_logged_in: async (context) => {
-      let index_path = app_todo_firebase_path_index();
+      let index_path = 'grocery/index.json'
       let index = await firebase_storage_initialize(index_path);
       object_merge(context, {
         index,
