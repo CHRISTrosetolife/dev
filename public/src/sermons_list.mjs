@@ -2,6 +2,7 @@ export function sermons_list() {
   return [
     "1cor7",
     "child",
+    "child2",
     "forsake",
     "forsake30",
     "healed",
