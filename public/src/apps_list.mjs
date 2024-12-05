@@ -7,6 +7,7 @@ export function apps_list() {
     "dev",
     "en",
     "good",
+    "grocery",
     "gs",
     "index",
     "learn_code",
