@@ -20,6 +20,7 @@ export function sermons_list() {
     "righteousness",
     "rom",
     "rom1",
+    "slave",
     "suffering",
     "treasure_en_ur",
     "treasure_ur",
