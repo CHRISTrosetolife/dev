@@ -6,5 +6,5 @@ export function app_grocery_main(context) {
   let root = object_property_get(context, "root");
   let index = object_property_get(context, "index");
   html_p_text(root, json_to(index));
-  let items = object_property_initialize(index, "items");
+  let items = object_property_initialize(index, "items", []);
 }
