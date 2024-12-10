@@ -81,8 +81,11 @@ export async function watch() {
     if (!processed) {
       return;
     }
+    log({processed});
     object_property_set(c, "contents", after);
+    log({processed});
     await git_ac_message(list_join_space([fn_name("watch"), " ", message]));
+    log({processed});
     await git_push();
     log({processed});
   }
