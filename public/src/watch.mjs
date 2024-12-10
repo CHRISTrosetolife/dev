@@ -78,6 +78,7 @@ export async function watch() {
     } finally {
       object_property_set(c, "processing", false);
     }
+    log({});
     if (!processed) {
       return;
     }
