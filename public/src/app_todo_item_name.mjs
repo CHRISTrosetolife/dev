@@ -15,6 +15,7 @@ export function app_todo_item_name(
   on_save,
 ) {
   let app_main_lambda = app_todo_main;
+  let index_path = app_todo_firebase_path_index();
   let { root } = context;
   html_button_width_full_text_click(root, button_text_first, () => {
     app_button_back_main(context, app_main_lambda);
@@ -23,7 +24,6 @@ export function app_todo_item_name(
     html_button_width_full_text_click(root, button_text_second, async () => {
       let value = html_value_get(input);
       on_complete(value);
-      let index_path = app_todo_firebase_path_index();
       await firebase_save_index(context, index_path);
       on_save();
     });
