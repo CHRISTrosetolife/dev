@@ -6,6 +6,6 @@ export function app_todo_button_back_main(context) {
   let { root } = context;
   html_clear_scroll_top(root);
   html_button_back(root, () => {
-    app_todo_main(context);
+    app_main_lambda(context);
   });
 }
