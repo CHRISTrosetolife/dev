@@ -4,4 +4,5 @@ import { html_p_text } from "./html_p_text.mjs";
 export function app_grocery_main(context) {
   let root = object_property_get(context, "root");
   html_p_text(root, json_to(object_property_get(context, "index")));
+  let index = object_property_get(context, "index");
 }
