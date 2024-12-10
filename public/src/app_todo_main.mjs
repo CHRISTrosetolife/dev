@@ -1,3 +1,4 @@
+import { string_add_item } from "./string_add_item.mjs";
 import { app_todo_item_add } from "./app_todo_item_add.mjs";
 import { app_todo_completed_view } from "./app_todo_completed_view.mjs";
 import { app_todo_item_name } from "./app_todo_item_name.mjs";
@@ -37,7 +38,7 @@ export function app_todo_main(context) {
     });
     await app_todo_index_save_main(context);
   });
-  let add_item = "➕ add item";
+  let add_item = string_add_item();
   app_todo_item_name(
     context,
     add_item,
