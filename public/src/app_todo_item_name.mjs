@@ -1,8 +1,9 @@
+import { app_todo_main } from "./app_todo_main.mjs";
+import { app_button_back_main } from "./app_button_back_main.mjs";
 import { app_todo_index_save } from "./app_todo_index_save.mjs";
 import { html_value_set } from "./html_value_set.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { html_input_width_full_focus } from "./html_input_width_full_focus.mjs";
-import { app_todo_button_back_main } from "./app_todo_button_back_main.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 export function app_todo_item_name(
   context,
@@ -14,7 +15,7 @@ export function app_todo_item_name(
 ) {
   let { root } = context;
   html_button_width_full_text_click(root, button_text_first, () => {
-    app_todo_button_back_main(context);
+    app_button_back_main(context, app_todo_main);
     let input = html_input_width_full_focus(root);
     html_value_set(input, value_initial);
     html_button_width_full_text_click(root, button_text_second, async () => {
