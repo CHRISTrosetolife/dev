@@ -1,7 +1,7 @@
+import { html_button_back_main } from "./html_button_back_main.mjs";
 import { firebase_save_index } from "./firebase_save_index.mjs";
 import { app_todo_firebase_path_index } from "./app_todo_firebase_path_index.mjs";
 import { app_todo_main } from "./app_todo_main.mjs";
-import { app_button_back_main } from "./app_button_back_main.mjs";
 import { html_value_set } from "./html_value_set.mjs";
 import { html_value_get } from "./html_value_get.mjs";
 import { html_input_width_full_focus } from "./html_input_width_full_focus.mjs";
@@ -18,7 +18,7 @@ export function app_todo_item_name(
   let index_path = app_todo_firebase_path_index();
   let { root } = context;
   html_button_width_full_text_click(root, button_text_first, () => {
-    app_button_back_main(context, app_main_lambda);
+    html_button_back_main(context, app_main_lambda);
     let input = html_input_width_full_focus(root);
     html_value_set(input, value_initial);
     html_button_width_full_text_click(root, button_text_second, async () => {
