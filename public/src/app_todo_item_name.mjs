@@ -13,6 +13,7 @@ export function app_todo_item_name(
   on_complete,
   on_save,
 ) {
+  let app_main_lambda = app_todo_main;
   let { root } = context;
   html_button_width_full_text_click(root, button_text_first, () => {
     app_button_back_main(context, app_todo_main);
