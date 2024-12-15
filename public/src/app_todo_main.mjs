@@ -41,11 +41,10 @@ export function app_todo_main(context) {
   });
   let add_item = string_add_item();
   let value_initial = "";
-  let app_main_lambda = app_todo_main;
   html_item_add(
     context,
     add_item,
-    app_main_lambda,
+    app_todo_main,
     value_initial,
     add_item,
     on_complete,
