@@ -4,6 +4,6 @@ export function html_style_link(url) {
   let html_a_lambda = html_a_blank;
   return (c) => {
     let text = html_clear_inner_get(c);
-    html_a_blank(c, text, url);
+    html_a_lambda(c, text, url);
   };
 }
