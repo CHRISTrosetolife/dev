@@ -1,7 +1,6 @@
-import { html_item_add_generic } from "./html_item_add_generic.mjs";
+import { html_item_add } from "./html_item_add.mjs";
 import { app_todo_list_filtered } from "./app_todo_list_filtered.mjs";
 import { app_todo_firebase_path_index } from "./app_todo_firebase_path_index.mjs";
-import { string_add_item } from "./string_add_item.mjs";
 import { app_todo_item_add } from "./app_todo_item_add.mjs";
 import { app_todo_completed_view } from "./app_todo_completed_view.mjs";
 import { app_todo_index_save_main } from "./app_todo_index_save_main.mjs";
@@ -38,19 +37,17 @@ export function app_todo_main(context) {
     });
     await app_todo_index_save_main(context);
   });
-  let refresh = () => app_todo_main(context);
-  let add_item = string_add_item();
-  let value_initial = "";
-  html_item_add_generic(
+  html_item_add(
     context,
-    add_item,
     app_todo_main,
-    value_initial,
-    add_item,
-    on_complete,
     app_todo_firebase_path_index(),
-    refresh,
+    on_complete,
   );
+  function on_complete(value) {
+    let items = app_todo_items(context);
+    app_todo_item_add(items, value);
+  }
+  let refresh = () => app_todo_main(context);
   app_todo_list_filtered(
     context,
     items,
@@ -58,8 +55,4 @@ export function app_todo_main(context) {
     app_todo_not_completed(),
     refresh,
   );
-  function on_complete(value) {
-    let items = app_todo_items(context);
-    app_todo_item_add(items, value);
-  }
 }
