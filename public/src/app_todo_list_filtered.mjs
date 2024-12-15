@@ -7,7 +7,6 @@ export function app_todo_list_filtered(
   value,
   refresh,
 ) {
-  app_todo_list(context, items, refresh, (items) =>
-    list_filter_property(items, property_name, value),
-  );
+  let filtered = list_filter_property(items, property_name, value);
+  app_todo_list(context, filtered, refresh);
 }
