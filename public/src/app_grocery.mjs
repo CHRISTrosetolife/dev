@@ -1,5 +1,5 @@
+import { app_grocery_items_list } from "./app_grocery_items_list.mjs";
 import { app_grocery_firebase_path_index } from "./app_grocery_firebase_path_index.mjs";
-import { app_grocery_main } from "./app_grocery_main.mjs";
 import { object_merge } from "./object_merge.mjs";
 import { firebase_storage_initialize } from "./firebase_storage_initialize.mjs";
 import { app_firebase } from "./app_firebase.mjs";
@@ -11,7 +11,7 @@ export async function app_grocery() {
       object_merge(context, {
         index,
       });
-      app_grocery_main(context);
+      app_grocery_items_list(context);
     },
   });
 }
