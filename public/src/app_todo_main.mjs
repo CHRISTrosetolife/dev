@@ -49,7 +49,7 @@ export function app_todo_main(context) {
     add_item,
     on_complete,
     app_todo_firebase_path_index(),
-    on_save,
+    refresh,
   );
   app_todo_list_filtered(
     context,
