@@ -11,5 +11,5 @@ export function app_todo_list_filtered(
   let { root } = context;
   html_hr(root);
   let filtered = list_filter_property(items, property_name, value);
-  app_todo_list(filtered, root, context, refresh);
+  app_todo_list(filtered, context, refresh);
 }
