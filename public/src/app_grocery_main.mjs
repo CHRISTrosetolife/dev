@@ -8,4 +8,7 @@ export function app_grocery_main(context) {
   html_button_width_full_text_click(root, "items", () => {
     app_grocery_items_list(context);
   });
+  html_button_width_full_text_click(root, "need", () => {
+    app_grocery_items_list(context);
+  });
 }
