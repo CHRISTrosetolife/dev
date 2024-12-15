@@ -17,7 +17,6 @@ import { app_todo_items } from "./app_todo_items.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 export function app_todo_main(context) {
-  let refresh = () => app_todo_main(context);
   let { root } = context;
   html_clear_scroll_top(root);
   let items = app_todo_items(context);
@@ -39,6 +38,7 @@ export function app_todo_main(context) {
     });
     await app_todo_index_save_main(context);
   });
+  let refresh = () => app_todo_main(context);
   let add_item = string_add_item();
   let value_initial = "";
   html_item_add(
