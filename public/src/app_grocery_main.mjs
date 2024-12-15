@@ -13,7 +13,7 @@ export function app_grocery_main(context) {
   let items = object_property_initialize(index, "items", []);
   let app_main_lambda = app_todo_main;
   let index_path = app_todo_firebase_path_index();
-  html_item_add(app_main_lambda, context, index_path);
+  html_item_add(context, app_main_lambda, index_path);
   let refresh = () => app_main_lambda(context);
   app_todo_list(context, items, refresh);
 }
