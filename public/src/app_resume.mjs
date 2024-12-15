@@ -1,3 +1,4 @@
+import { html_style_link_blank } from "./html_style_link_blank.mjs";
 import { me_email } from "./me_email.mjs";
 import { html_style_a_plain } from "./html_style_a_plain.mjs";
 import { html_style_default_font_size } from "./html_style_default_font_size.mjs";
@@ -11,7 +12,6 @@ import { string_combine_multiple } from "./string_combine_multiple.mjs";
 import { app_resume_audio_bible } from "./app_resume_audio_bible.mjs";
 import { noop } from "./noop.mjs";
 import { html_cycle_p } from "./html_cycle_p.mjs";
-import { html_style_link } from "./html_style_link.mjs";
 import { app_resume_header_3 } from "./app_resume_header_3.mjs";
 import { app_resume_header_2 } from "./app_resume_header_2.mjs";
 import { app_resume_header } from "./app_resume_header.mjs";
@@ -67,17 +67,17 @@ export function app_resume() {
       "` that renames a function across all files, including fixing all JavaScript imports",
     ]),
   );
-  html_style_link("dev.html")(dev);
+  html_style_link_blank("dev.html")(dev);
   html_cycle_p(root, [noop], "");
   let learn_code = app_resume_header_3(root, "Learn to Code");
-  html_style_link("learn_code.html")(learn_code);
+  html_style_link_blank("learn_code.html")(learn_code);
   html_cycle_p(
     root,
     [noop],
     "User is presented with JavaScript programming concepts; For each concept: User is presented with randomly generated source code and output examples; Then user chooses correct output given randomly generated source code; Then user chooses correct source code given a randomly generated output",
   );
   let ceb = app_resume_header_3(root, "Learn Cebuano Language");
-  html_style_link("ceb.html")(ceb);
+  html_style_link_blank("ceb.html")(ceb);
   html_cycle_p(
     root,
     [noop],
@@ -85,7 +85,7 @@ export function app_resume() {
   );
   app_resume_audio_bible(root);
   let memorize = app_resume_header_3(root, "Memorize Bible");
-  html_style_link("memorize.html")(memorize);
+  html_style_link_blank("memorize.html")(memorize);
   html_cycle_p(
     root,
     [

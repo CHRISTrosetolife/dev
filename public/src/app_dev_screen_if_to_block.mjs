@@ -1,3 +1,4 @@
+import { html_style_link_blank } from "./html_style_link_blank.mjs";
 import { app_dev_screen_if_to_block_if_else } from "./app_dev_screen_if_to_block_if_else.mjs";
 import { function_transform } from "./function_transform.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
@@ -16,7 +17,6 @@ import { app_dev_p_transformer } from "./app_dev_p_transformer.mjs";
 import { js_if_to_block } from "./js_if_to_block.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 import { html_cycle_p } from "./html_cycle_p.mjs";
-import { html_style_link } from "./html_style_link.mjs";
 export function app_dev_screen_if_to_block() {
   return {
     name: function if_to_block_name(root) {
@@ -27,7 +27,7 @@ export function app_dev_screen_if_to_block() {
         root,
         [
           noop,
-          html_style_link(
+          html_style_link_blank(
             `https://google.github.io/styleguide/jsguide.html#formatting-braces-all`,
           ),
           noop,

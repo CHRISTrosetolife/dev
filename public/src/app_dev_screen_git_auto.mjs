@@ -1,3 +1,4 @@
+import { html_style_link_blank } from "./html_style_link_blank.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { git_ac_message_commit } from "./git_ac_message_commit.mjs";
 import { git_ac_message_add } from "./git_ac_message_add.mjs";
@@ -5,7 +6,6 @@ import { html_cycle_code } from "./html_cycle_code.mjs";
 import { html_cycle_code_multiple } from "./html_cycle_code_multiple.mjs";
 import { html_cycle_p } from "./html_cycle_p.mjs";
 import { url_repository_commit } from "./url_repository_commit.mjs";
-import { html_style_link } from "./html_style_link.mjs";
 import { noop } from "./noop.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
 import { run_git } from "./run_git.mjs";
@@ -37,7 +37,7 @@ export function app_dev_screen_git_auto() {
         root,
         [
           noop,
-          html_style_link(
+          html_style_link_blank(
             url_repository_commit("7df7f06b7d48b423cc103c23f4b3573295f694ee"),
           ),
         ],

@@ -1,45 +1,51 @@
+import { html_style_link_blank } from "./html_style_link_blank.mjs";
 import { noop } from "./noop.mjs";
 import { fn_name } from "./fn_name.mjs";
 import { function_name_to_url_github } from "./function_name_to_url_github.mjs";
 import { html_cycle_p } from "./html_cycle_p.mjs";
 import { url_audio_bible } from "./url_audio_bible.mjs";
-import { html_style_link } from "./html_style_link.mjs";
 import { app_resume_header_3 } from "./app_resume_header_3.mjs";
 export function app_resume_audio_bible(root) {
   let audio_bible = app_resume_header_3(root, "Audio Bible");
-  html_style_link(url_audio_bible())(audio_bible);
+  html_style_link_blank(url_audio_bible())(audio_bible);
   html_cycle_p(
     root,
     [
-      html_style_link(function_name_to_url_github(fn_name("app_record"))),
+      html_style_link_blank(function_name_to_url_github(fn_name("app_record"))),
       noop,
-      html_style_link(function_name_to_url_github(fn_name("app_record_verse"))),
+      html_style_link_blank(
+        function_name_to_url_github(fn_name("app_record_verse")),
+      ),
       noop,
-      html_style_link(function_name_to_url_github(fn_name("html_wav_to_mp3"))),
+      html_style_link_blank(
+        function_name_to_url_github(fn_name("html_wav_to_mp3")),
+      ),
       noop,
-      html_style_link(function_name_to_url_github(fn_name("firebase_upload"))),
+      html_style_link_blank(
+        function_name_to_url_github(fn_name("firebase_upload")),
+      ),
       noop,
-      html_style_link(
+      html_style_link_blank(
         function_name_to_url_github(fn_name("bible_chapter_audio_download")),
       ),
       noop,
-      html_style_link(
+      html_style_link_blank(
         function_name_to_url_github(fn_name("bible_chapter_audio_to_wav")),
       ),
       noop,
-      html_style_link(
+      html_style_link_blank(
         function_name_to_url_github(fn_name("bible_chapter_audio_trim")),
       ),
       noop,
-      html_style_link(
+      html_style_link_blank(
         function_name_to_url_github(fn_name("bible_verse_images")),
       ),
       noop,
-      html_style_link(
+      html_style_link_blank(
         function_name_to_url_github(fn_name("bible_chapter_videos")),
       ),
       noop,
-      html_style_link(
+      html_style_link_blank(
         function_name_to_url_github(fn_name("bible_chapter_video")),
       ),
       noop,

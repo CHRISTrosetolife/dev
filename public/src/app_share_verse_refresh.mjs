@@ -1,8 +1,8 @@
+import { html_style_link_blank } from "./html_style_link_blank.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { html_list_chooser } from "./html_list_chooser.mjs";
 import { html_clear_scroll_top } from "./html_clear_scroll_top.mjs";
 import { html_hash_lookup } from "./html_hash_lookup.mjs";
-import { html_style_link } from "./html_style_link.mjs";
 import { html_inner_set } from "./html_inner_set.mjs";
 import { html_hash_unparse } from "./html_hash_unparse.mjs";
 import { app_share_verse } from "./app_share_verse.mjs";
@@ -142,6 +142,6 @@ export async function app_share_verse_refresh(
     let joined = html_hash_unparse(lookup_next);
     url_next = string_combine_multiple([without_hash, "#", joined]);
     html_inner_set(next_url_component, url_next);
-    html_style_link(url_next)(next_url_component);
+    html_style_link_blank(url_next)(next_url_component);
   }
 }
