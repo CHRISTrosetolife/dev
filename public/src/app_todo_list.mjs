@@ -8,7 +8,8 @@ import { html_button_width_full_text_click } from "./html_button_width_full_text
 import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
 import { app_todo_properties } from "./app_todo_properties.mjs";
-export function app_todo_list(filtered, root, context, refresh) {
+export function app_todo_list(filtered, context, refresh) {
+  let { root } = context;
   let properties = app_todo_properties();
   each(filtered, (item) => {
     let name = object_property_get(item, "name");
