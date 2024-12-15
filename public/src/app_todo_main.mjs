@@ -42,7 +42,6 @@ export function app_todo_main(context) {
   let add_item = string_add_item();
   let value_initial = "";
   let app_main_lambda = app_todo_main;
-  let index_path = app_todo_firebase_path_index();
   html_item_add(
     context,
     add_item,
@@ -50,7 +49,7 @@ export function app_todo_main(context) {
     value_initial,
     add_item,
     on_complete,
-    index_path,
+    app_todo_firebase_path_index(),
     on_save,
   );
   function on_complete(value) {
