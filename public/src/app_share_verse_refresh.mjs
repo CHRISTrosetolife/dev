@@ -1,5 +1,4 @@
 import { html_on_click } from "./html_on_click.mjs";
-import { window_location_reload } from "./window_location_reload.mjs";
 import { html_style_link } from "./html_style_link.mjs";
 import { list_includes } from "./list_includes.mjs";
 import { html_list_chooser } from "./html_list_chooser.mjs";
@@ -145,6 +144,6 @@ export async function app_share_verse_refresh(
     url_next = string_combine_multiple([without_hash, "#", joined]);
     html_inner_set(next_url_component, url_next);
     html_style_link(url_next)(next_url_component);
-    html_on_click(next_url_component, window_location_reload);
+    html_on_click(next_url_component, () => {});
   }
 }
