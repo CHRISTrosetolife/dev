@@ -20,7 +20,7 @@ export function app_grocery_main(context) {
   html_item_add(
     context,
     add_item,
-    app_todo_main,
+    app_main_lambda,
     value_initial,
     add_item,
     on_complete,
