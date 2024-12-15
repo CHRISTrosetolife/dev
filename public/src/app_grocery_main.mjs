@@ -1,3 +1,4 @@
+import { tautology } from "./tautology.mjs";
 import { html_item_add_generic } from "./html_item_add_generic.mjs";
 import { app_todo_list } from "./app_todo_list.mjs";
 import { app_todo_firebase_path_index } from "./app_todo_firebase_path_index.mjs";
@@ -27,5 +28,5 @@ export function app_grocery_main(context) {
     index_path,
     refresh,
   );
-  app_todo_list(context, items, refresh);
+  app_todo_list(context, items, refresh, tautology);
 }
