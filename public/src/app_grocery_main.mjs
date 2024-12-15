@@ -13,9 +13,9 @@ export function app_grocery_main(context) {
   html_p_text(root, json_to(index));
   let items = object_property_initialize(index, "items", []);
   let refresh = () => app_todo_main(context);
+  let index_path = app_todo_firebase_path_index();
   let add_item = string_add_item();
   let value_initial = "";
-  let index_path = app_todo_firebase_path_index();
   html_item_add(
     context,
     add_item,
