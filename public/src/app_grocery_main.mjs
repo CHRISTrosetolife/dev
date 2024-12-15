@@ -1,6 +1,5 @@
 import { app_grocery_items } from "./app_grocery_items.mjs";
 import { app_todo_item_add } from "./app_todo_item_add.mjs";
-import { app_todo_items } from "./app_todo_items.mjs";
 import { app_grocery_firebase_path_index } from "./app_grocery_firebase_path_index.mjs";
 import { html_item_add } from "./html_item_add.mjs";
 import { app_todo_list } from "./app_todo_list.mjs";
@@ -21,7 +20,7 @@ export function app_grocery_main(context) {
   let refresh = () => app_grocery_main(context);
   app_todo_list(context, items, refresh);
   function on_complete(value) {
-    let items = app_todo_items(context);
+    let items = app_grocery_items(context);
     app_todo_item_add(items, value);
   }
 }
