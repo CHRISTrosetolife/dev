@@ -62,7 +62,4 @@ export function app_todo_main(context) {
     let items = app_todo_items(context);
     app_todo_item_add(items, value);
   }
-  function on_save() {
-    app_todo_main(context);
-  }
 }
