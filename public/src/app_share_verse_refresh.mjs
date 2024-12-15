@@ -144,6 +144,13 @@ export async function app_share_verse_refresh(
     url_next = string_combine_multiple([without_hash, "#", joined]);
     html_inner_set(next_url_component, url_next);
     html_style_link(url_next)(next_url_component);
-    html_on_click(next_url_component, () => {});
+    html_on_click(next_url_component, async () => {
+      await app_share_verse_refresh(
+        context,
+        book_code_next,
+        chapter_code_next,
+        verse_number_next,
+      );
+    });
   }
 }
