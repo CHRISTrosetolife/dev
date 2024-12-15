@@ -1,3 +1,4 @@
+import { app_grocery_items } from "./app_grocery_items.mjs";
 import { app_todo_item_add } from "./app_todo_item_add.mjs";
 import { app_todo_items } from "./app_todo_items.mjs";
 import { app_grocery_firebase_path_index } from "./app_grocery_firebase_path_index.mjs";
@@ -6,12 +7,11 @@ import { app_todo_list } from "./app_todo_list.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { json_to } from "./json_to.mjs";
 import { html_p_text } from "./html_p_text.mjs";
-import { object_property_initialize } from "./object_property_initialize.mjs";
 export function app_grocery_main(context) {
   let root = object_property_get(context, "root");
+  let items = app_grocery_items(context);
   let index = object_property_get(context, "index");
   html_p_text(root, json_to(index));
-  let items = object_property_initialize(index, "items", []);
   html_item_add(
     context,
     app_grocery_main,
