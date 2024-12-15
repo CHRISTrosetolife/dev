@@ -1,3 +1,4 @@
+import { app_todo_list_filtered } from "./app_todo_list_filtered.mjs";
 import { html_item_add } from "./html_item_add.mjs";
 import { app_todo_firebase_path_index } from "./app_todo_firebase_path_index.mjs";
 import { string_add_item } from "./string_add_item.mjs";
@@ -11,7 +12,6 @@ import { list_filter_property } from "./list_filter_property.mjs";
 import { app_todo_completed_value } from "./app_todo_completed_value.mjs";
 import { app_todo_completed_property } from "./app_todo_completed_property.mjs";
 import { app_todo_not_completed } from "./app_todo_not_completed.mjs";
-import { app_todo_list } from "./app_todo_list.mjs";
 import { each } from "./each.mjs";
 import { app_todo_items } from "./app_todo_items.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
@@ -58,7 +58,7 @@ export function app_todo_main(context) {
   function on_save() {
     app_todo_main(context);
   }
-  app_todo_list(
+  app_todo_list_filtered(
     context,
     items,
     app_todo_completed_property(),
