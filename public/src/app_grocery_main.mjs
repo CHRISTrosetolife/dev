@@ -1,6 +1,8 @@
+import { app_todo_list } from "./app_todo_list.mjs";
+import { list_filter_property } from "./list_filter_property.mjs";
+import { html_hr } from "./html_hr.mjs";
 import { app_todo_not_completed } from "./app_todo_not_completed.mjs";
 import { app_todo_completed_property } from "./app_todo_completed_property.mjs";
-import { app_todo_list_filtered } from "./app_todo_list_filtered.mjs";
 import { app_todo_firebase_path_index } from "./app_todo_firebase_path_index.mjs";
 import { html_item_add } from "./html_item_add.mjs";
 import { string_add_item } from "./string_add_item.mjs";
@@ -29,5 +31,8 @@ export function app_grocery_main(context) {
   );
   let a = app_todo_completed_property();
   let b = app_todo_not_completed();
-  app_todo_list_filtered(context, items, a, b, refresh);
+  let { root2 } = context;
+  html_hr(root2);
+  let filtered = list_filter_property(items, a, b);
+  app_todo_list(context, filtered, refresh);
 }
