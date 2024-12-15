@@ -4,7 +4,7 @@ import { html_value_set } from "./html_value_set.mjs";
 import { html_input_width_full_focus } from "./html_input_width_full_focus.mjs";
 import { html_button_back_main } from "./html_button_back_main.mjs";
 import { html_button_width_full_text_click } from "./html_button_width_full_text_click.mjs";
-export function html_item_add(
+export function html_item_add_generic(
   context,
   button_text_first,
   app_main_lambda,

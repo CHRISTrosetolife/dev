@@ -1,5 +1,5 @@
+import { html_item_add_generic } from "./html_item_add_generic.mjs";
 import { app_todo_list_filtered } from "./app_todo_list_filtered.mjs";
-import { html_item_add } from "./html_item_add.mjs";
 import { app_todo_firebase_path_index } from "./app_todo_firebase_path_index.mjs";
 import { string_add_item } from "./string_add_item.mjs";
 import { app_todo_item_add } from "./app_todo_item_add.mjs";
@@ -41,7 +41,7 @@ export function app_todo_main(context) {
   let refresh = () => app_todo_main(context);
   let add_item = string_add_item();
   let value_initial = "";
-  html_item_add(
+  html_item_add_generic(
     context,
     add_item,
     app_todo_main,
