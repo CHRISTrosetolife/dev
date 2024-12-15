@@ -1,3 +1,4 @@
+import { fn_name } from "./fn_name.mjs";
 import { html_style_link_blank } from "./html_style_link_blank.mjs";
 import { app_dev_screen_if_to_block_if_else } from "./app_dev_screen_if_to_block_if_else.mjs";
 import { function_transform } from "./function_transform.mjs";
@@ -28,7 +29,9 @@ export function app_dev_screen_if_to_block() {
         [
           noop,
           html_style_link_blank(
-            `https://google.github.io/styleguide/jsguide.html#formatting-braces-all`,
+            string_combine_multiple([
+              "https://google.github.io/styleguide/jsguide.html#formatting-braces-all",
+            ]),
           ),
           noop,
           html_style_code,
@@ -65,7 +68,7 @@ export function app_dev_screen_if_to_block() {
         "adding braces to `if`",
         string_delimit_backtick(
           string_combine_multiple([
-            function_transform.name,
+            fn_name("function_transform"),
             " ",
             fn.name,
             " ",

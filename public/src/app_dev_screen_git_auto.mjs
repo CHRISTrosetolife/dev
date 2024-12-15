@@ -8,8 +8,6 @@ import { html_cycle_p } from "./html_cycle_p.mjs";
 import { url_repository_commit } from "./url_repository_commit.mjs";
 import { noop } from "./noop.mjs";
 import { app_dev_screen_img } from "./app_dev_screen_img.mjs";
-import { run_git } from "./run_git.mjs";
-import { run } from "./run.mjs";
 import { html_span_text } from "./html_span_text.mjs";
 import { string_combine_multiple } from "./string_combine_multiple.mjs";
 export function app_dev_screen_git_auto() {
@@ -22,9 +20,9 @@ export function app_dev_screen_git_auto() {
         "suppose we want to create a `function` named `greetings_to_the_world",
         "suppose we also want to commit this new `function` to git",
         "then we can change `" +
-          run.name +
+          fn_name("run") +
           ".mjs` to `" +
-          run_git.name +
+          fn_name("run_git") +
           ".mjs` and run `" +
           fn_name("function_new") +
           "` ...",
@@ -54,13 +52,13 @@ export function app_dev_screen_git_auto() {
         ]),
         "the commit message is a timestamp and the name of the command and its arguments",
         "waiting for `git push` after each command slows development , so `git push` is omitted from `" +
-          run_git.name +
+          fn_name("run_git") +
           ".mjs",
       ]);
       html_cycle_code(
         root,
         "using `" +
-          run_git.name +
+          fn_name("run_git") +
           ".mjs` , anytime a `function` is ran from the command-line that updates files , then git can be automatically updated",
       );
     },
