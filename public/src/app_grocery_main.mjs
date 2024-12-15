@@ -9,7 +9,6 @@ export function app_grocery_main(context) {
   let root = object_property_get(context, "root");
   html_clear_scroll_top(root);
   let items = app_grocery_items(context);
-  let index = object_property_get(context, "index");
   html_item_add(
     context,
     app_grocery_main,
