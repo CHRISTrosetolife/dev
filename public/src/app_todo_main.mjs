@@ -51,13 +51,6 @@ export function app_todo_main(context) {
     app_todo_firebase_path_index(),
     on_save,
   );
-  function on_complete(value) {
-    let items = app_todo_items(context);
-    app_todo_item_add(items, value);
-  }
-  function on_save() {
-    app_todo_main(context);
-  }
   app_todo_list_filtered(
     context,
     items,
@@ -65,4 +58,11 @@ export function app_todo_main(context) {
     app_todo_not_completed(),
     refresh,
   );
+  function on_complete(value) {
+    let items = app_todo_items(context);
+    app_todo_item_add(items, value);
+  }
+  function on_save() {
+    app_todo_main(context);
+  }
 }
