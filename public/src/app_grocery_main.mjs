@@ -1,7 +1,6 @@
 import { app_grocery_firebase_path_index } from "./app_grocery_firebase_path_index.mjs";
 import { html_item_add } from "./html_item_add.mjs";
 import { app_todo_list } from "./app_todo_list.mjs";
-import { app_todo_main } from "./app_todo_main.mjs";
 import { object_property_get } from "./object_property_get.mjs";
 import { json_to } from "./json_to.mjs";
 import { html_p_text } from "./html_p_text.mjs";
@@ -19,3 +18,4 @@ export function app_grocery_main(context) {
   );
   let refresh = () => app_grocery_main(context);
   app_todo_list(context, items, refresh);
+}
