@@ -12,9 +12,9 @@ export function app_grocery_main(context) {
   let index = object_property_get(context, "index");
   html_p_text(root, json_to(index));
   let items = object_property_initialize(index, "items", []);
+  let app_main_lambda = app_todo_main;
   let index_path = app_todo_firebase_path_index();
   let add_item = string_add_item();
-  let app_main_lambda = app_todo_main;
   let refresh = () => app_main_lambda(context);
   let value_initial = "";
   html_item_add(
