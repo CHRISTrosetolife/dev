@@ -6,7 +6,7 @@ export function html_a(e, text, url) {
   let a = html_element(e, "a");
   html_inner_set(a, text);
   html_attribute_set(a, "href", url);
-  html_attribute_set(a, "target", "_blank");
   html_a_style(a);
+  html_attribute_set(a, "target", "_blank");
   return a;
 }
