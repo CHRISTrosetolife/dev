@@ -26,12 +26,8 @@ export function app_grocery_main(context) {
     on_complete,
     app_todo_firebase_path_index(),
     refresh,
-  );$ex
-  app_todo_list_filtered(
-    context,
-    items,
-    app_todo_completed_property(),
-    app_todo_not_completed(),
-    refresh,
   );
+  let a = app_todo_completed_property();
+  let b = app_todo_not_completed();
+  app_todo_list_filtered(context, items, a, b, refresh);
 }
