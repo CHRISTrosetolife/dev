@@ -10,6 +10,7 @@ import { each } from "./each.mjs";
 import { app_todo_properties } from "./app_todo_properties.mjs";
 export function app_todo_list(context, filtered, refresh) {
   let { root } = context;
+  html_hr(root);
   let properties = app_todo_properties();
   each(filtered, (item) => {
     let name = object_property_get(item, "name");
