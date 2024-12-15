@@ -8,7 +8,6 @@ import { object_property_get } from "./object_property_get.mjs";
 export function app_grocery_main(context) {
   let root = object_property_get(context, "root");
   html_clear_scroll_top(root);
-  let items = app_grocery_items(context);
   html_item_add(
     context,
     app_grocery_main,
@@ -16,6 +15,7 @@ export function app_grocery_main(context) {
     on_complete,
   );
   let refresh = () => app_grocery_main(context);
+  let items = app_grocery_items(context);
   app_todo_list(context, items, refresh);
   function on_complete(value) {
     let items = app_grocery_items(context);
