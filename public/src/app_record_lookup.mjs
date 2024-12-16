@@ -1,3 +1,4 @@
+import { object_property_get } from "./object_property_get.mjs";
 import { app_record_home } from "./app_record_home.mjs";
 import { app_record_book } from "./app_record_book.mjs";
 import { app_record_chapter } from "./app_record_chapter.mjs";
@@ -7,7 +8,10 @@ import { app_save_get } from "./app_save_get.mjs";
 import { html_hash_lookup } from "./html_hash_lookup.mjs";
 import { app_context_books_bible_generic } from "./app_context_books_bible_generic.mjs";
 export async function app_record_lookup(context, app_lambda, app_verse_lambda) {
-  await app_context_books_bible_generic(context, version_code);
+  await app_context_books_bible_generic(
+    context,
+    object_property_get(object, "property_name"),
+  );
   let lookup = html_hash_lookup();
   let save = app_save_get(app_lambda);
   object_merge(lookup, save);
