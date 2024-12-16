@@ -41,7 +41,7 @@ export async function app_record_verse_generic(
     chapter,
     verse_number,
     "reading",
-    true,
+    false,
   );
   (" and recording audio for audio Bible");
   return {
