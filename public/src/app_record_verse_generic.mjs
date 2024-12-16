@@ -40,9 +40,10 @@ export async function app_record_verse_generic(
     book_code,
     chapter,
     verse_number,
-    "reading and recording audio for audio Bible",
+    "reading",
     true,
   );
+  (" and recording audio for audio Bible");
   return {
     middle,
     navigation,
