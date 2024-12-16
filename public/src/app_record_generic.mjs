@@ -1,3 +1,4 @@
+import { object_property_set } from "./object_property_set.mjs";
 import { app_record_lookup } from "./app_record_lookup.mjs";
 import { html_recorder_media } from "./html_recorder_media.mjs";
 import { html_button_next } from "./html_button_next.mjs";
@@ -19,7 +20,7 @@ export async function app_record_generic(
     html_prayer(root, app_pray_word());
     html_button_next(root, async () => {
       context.mr = await html_recorder_media();
-      $s;
+      object_property_set(object, "property_name", value);
       await app_record_lookup(
         context,
         version_code,
