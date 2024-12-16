@@ -1,3 +1,4 @@
+import { object_property_set } from "./object_property_set.mjs";
 import { app_share_verse_refresh } from "./app_share_verse_refresh.mjs";
 import { app_context_books_bible } from "./app_context_books_bible.mjs";
 import { bible_chapter_name_parse } from "./bible_chapter_name_parse.mjs";
@@ -11,6 +12,7 @@ export async function app_share() {
   let context = {
     root,
   };
+  object_property_set(context, "version_code", "engbsb");
   await app_context_books_bible(context);
   let lookup = html_hash_lookup();
   let chapter_next;
