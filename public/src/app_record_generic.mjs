@@ -20,7 +20,7 @@ export async function app_record_generic(
     html_prayer(root, app_pray_word());
     html_button_next(root, async () => {
       context.mr = await html_recorder_media();
-      object_property_set(object, "property_name", value);
+      object_property_set(context, "version_code", version_code);
       await app_record_lookup(
         context,
         version_code,
