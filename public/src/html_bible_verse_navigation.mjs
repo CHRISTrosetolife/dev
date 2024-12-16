@@ -20,7 +20,7 @@ export async function html_bible_verse_navigation(
   previous_first,
 ) {
   let { root } = context;
-  let verses = await app_verses_generic(app_fn, book_code, chapter);
+  let verses = await app_verses_generic(context, app_fn, book_code, chapter);
   let verse = list_find_property(verses, "verse_number", verse_number);
   let previous;
   if (previous_first) {

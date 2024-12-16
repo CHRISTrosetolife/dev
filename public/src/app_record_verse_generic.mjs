@@ -20,7 +20,12 @@ export async function app_record_verse_generic(
   await app_save_change_bible(app_lambda, book_code, chapter, verse_number);
   let root = object_property_get(context, "root");
   app_record_verse_buttons(context, book_code, chapter, app_verse_lambda);
-  let verses = await app_verses_generic(app_lambda, book_code, chapter);
+  let verses = await app_verses_generic(
+    context,
+    app_lambda,
+    book_code,
+    chapter,
+  );
   let verse = list_find_property(verses, "verse_number", verse_number);
   let vn = html_bible_verse(root, book_code, chapter, verse);
   html_hr(root);
