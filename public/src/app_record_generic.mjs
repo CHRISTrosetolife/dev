@@ -21,12 +21,7 @@ export async function app_record_generic(
     html_button_next(root, async () => {
       context.mr = await html_recorder_media();
       object_property_set(context, "version_code", version_code);
-      await app_record_lookup(
-        context,
-        version_code,
-        app_lambda,
-        app_verse_lambda,
-      );
+      await app_record_lookup(context, app_lambda, app_verse_lambda);
     });
   }
 }
