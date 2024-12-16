@@ -10,7 +10,7 @@ import { app_context_books_bible_generic } from "./app_context_books_bible_gener
 export async function app_record_lookup(context, app_lambda, app_verse_lambda) {
   await app_context_books_bible_generic(
     context,
-    object_property_get(object, "property_name"),
+    object_property_get(context, "version_code"),
   );
   let lookup = html_hash_lookup();
   let save = app_save_get(app_lambda);
