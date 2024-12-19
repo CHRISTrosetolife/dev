@@ -18,6 +18,8 @@ export async function bible_search_generic(words, filter) {
   let mapped3 = list_take_soft(filtered, cap);
   let t = await list_map_unordered(mapped3, async (verse) => {
     let { chapter_code, verse_number } = verse;
+    try {
+    } catch (e) {}
     let chapter = await bible_chapter("engbsb", chapter_code);
     let v = list_find_property(chapter, "verse_number", verse_number);
     let { tokens } = v;
