@@ -3,6 +3,7 @@ export function sermons_list() {
     "1cor7",
     "child",
     "child2",
+    "faith_works",
     "forsake",
     "forsake30",
     "healed",
