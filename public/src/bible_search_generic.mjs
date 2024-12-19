@@ -14,6 +14,7 @@ export async function bible_search_generic(words, filter) {
   let i = await bible_search_index_cache();
   let filtered = await bible_search_results(split, word_to_results, filter);
   let cap = 10;
+  cap = Infinity;
   let mapped3 = list_take_soft(filtered, cap);
   let t = await list_map_unordered(mapped3, async (verse) => {
     let { chapter_code, verse_number } = verse;
