@@ -19,12 +19,14 @@ export async function bible_search_generic(words, filter) {
   let t = await list_map_unordered(mapped3, async (verse) => {
     let { chapter_code, verse_number } = verse;
     try {
-    } catch (e) {}
-    let chapter = await bible_chapter("engbsb", chapter_code);
-    let v = list_find_property(chapter, "verse_number", verse_number);
-    let { tokens } = v;
-    let r = bible_reference_code(chapter_code, [verse_number]);
-    return string_combine_multiple([r, " ", list_join_space(tokens)]);
+      let chapter = await bible_chapter("engbsb", chapter_code);
+      let v = list_find_property(chapter, "verse_number", verse_number);
+      let { tokens } = v;
+      let r = bible_reference_code(chapter_code, [verse_number]);
+      return string_combine_multiple([r, " ", list_join_space(tokens)]);
+    } catch (e) {
+      return null;
+    }
   });
   return t;
   function word_to_results(m) {
