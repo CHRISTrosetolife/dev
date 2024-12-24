@@ -17,7 +17,7 @@ export async function app_record_generic(
   });
   async function on_logged_in(context) {
     let { root } = context;
-    object_property_set(object, "property_name", value);
+    object_property_set(context, "app_lambda", app_lambda);
     html_prayer(root, app_pray_word());
     html_button_next(root, async () => {
       context.mr = await html_recorder_media();
