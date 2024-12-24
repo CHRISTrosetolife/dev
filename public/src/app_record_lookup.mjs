@@ -7,7 +7,7 @@ import { object_merge } from "./object_merge.mjs";
 import { app_save_get } from "./app_save_get.mjs";
 import { html_hash_lookup } from "./html_hash_lookup.mjs";
 import { app_context_books_bible_generic } from "./app_context_books_bible_generic.mjs";
-export async function app_record_lookup(context, app_lambda, app_verse_lambda) {
+export async function app_record_lookup(context, app_verse_lambda) {
   await app_context_books_bible_generic(
     context,
     object_property_get(context, "version_code"),
