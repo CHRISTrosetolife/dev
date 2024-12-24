@@ -13,6 +13,7 @@ export async function app_record_lookup(context, app_verse_lambda) {
     object_property_get(context, "version_code"),
   );
   let lookup = html_hash_lookup();
+  let app_lambda = object_property_get(object, "property_name");
   let save = app_save_get(app_lambda);
   object_merge(lookup, save);
   let hash_book = object_property_get_or(lookup, "book", null);
