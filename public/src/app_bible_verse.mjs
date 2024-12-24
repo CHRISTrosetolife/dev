@@ -33,7 +33,7 @@ export async function app_bible_verse(
   verse_number,
 ) {
   let { middle } = await app_record_verse_generic(
-    object_property_get(object, "property_name"),
+    object_property_get(context, "app_lambda"),
     book_code,
     chapter,
     verse_number,
