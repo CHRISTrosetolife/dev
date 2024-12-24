@@ -21,7 +21,7 @@ export async function app_record_generic(
     object_property_set(context, "app_lambda", app_lambda);
     html_prayer(root, app_pray_word());
     html_button_next(root, async () => {
-      if (false) {
+      if (mr_initialize) {
         context.mr = await html_recorder_media();
       }
       object_property_set(context, "version_code", version_code);
