@@ -4,7 +4,6 @@ import { bible_storage_interlinear_chapter_definitions_property } from "./bible_
 import { log } from "./log.mjs";
 import { bible_storage_interlinear_chapter_definitions_name } from "./bible_storage_interlinear_chapter_definitions_name.mjs";
 import { bible_storage_interlinear_chapter_definitions_path } from "./bible_storage_interlinear_chapter_definitions_path.mjs";
-import { app_bible } from "./app_bible.mjs";
 import { html_style_font_color_gray } from "./html_style_font_color_gray.mjs";
 import { html_style_italic } from "./html_style_italic.mjs";
 import { html_spacer } from "./html_spacer.mjs";
@@ -34,7 +33,7 @@ export async function app_bible_verse(
   verse_number,
 ) {
   let { middle } = await app_record_verse_generic(
-    app_bible,
+    object_property_get(object, "property_name"),
     book_code,
     chapter,
     verse_number,
