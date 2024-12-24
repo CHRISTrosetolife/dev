@@ -6,5 +6,6 @@ export async function app_record() {
     app_record_version_code(),
     app_record,
     app_record_verse,
+    true,
   );
 }

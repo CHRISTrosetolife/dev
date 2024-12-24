@@ -10,6 +10,7 @@ export async function app_record_generic(
   version_code,
   app_lambda,
   app_verse_lambda,
+  mr_initialize,
 ) {
   await app_firebase({
     on_logged_in,
