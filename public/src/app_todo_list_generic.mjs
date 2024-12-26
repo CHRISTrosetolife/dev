@@ -9,7 +9,13 @@ import { html_button_width_full_text_click } from "./html_button_width_full_text
 import { object_property_get } from "./object_property_get.mjs";
 import { each } from "./each.mjs";
 import { html_hr } from "./html_hr.mjs";
-export function app_todo_list_generic(context, filtered, refresh, properties) {
+export function app_todo_list_generic(
+  context,
+  filtered,
+  refresh,
+  properties,
+  index_path,
+) {
   let { root } = context;
   html_hr(root);
   each(filtered, (item) => {

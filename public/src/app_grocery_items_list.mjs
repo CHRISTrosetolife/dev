@@ -1,3 +1,4 @@
+import { app_todo_firebase_path_index } from "./app_todo_firebase_path_index.mjs";
 import { app_todo_list_generic } from "./app_todo_list_generic.mjs";
 import { app_grocery_main } from "./app_grocery_main.mjs";
 import { html_button_back_main } from "./html_button_back_main.mjs";
@@ -15,7 +16,13 @@ export function app_grocery_items_list(context) {
   );
   let refresh = () => app_grocery_items_list(context);
   let items = app_grocery_items(context);
-  app_todo_list_generic(context, items, refresh, []);
+  app_todo_list_generic(
+    context,
+    items,
+    refresh,
+    [],
+    app_todo_firebase_path_index(),
+  );
   function on_complete(value) {
     let items = app_grocery_items(context);
     app_todo_item_add(items, value);
